@@ -1,6 +1,5 @@
 import Link from "next/link"
-import { Button } from "@/components/ui/button"
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
+import { GCard } from "@/components/globalcomponents/gcard"
 import { ArrowRight, Calendar, Hash, Cake, PartyPopper, Code, Globe, Calculator } from "lucide-react"
 import { Breadcrumbs } from "@/components/breadcrumbs"
 import { AdSpace } from "@/components/ad-space"
@@ -11,35 +10,35 @@ export const metadata: Metadata = {
   description:
     "Fun and entertaining online tools: Love Calculator, Future Age Predictor, Birthday Countdown, Anniversary Calculator. Free and easy to use!",
   keywords: [
-      "fun tools",
-      "free online tools",
-      "love calculator",
-      "future age predictor",
-      "birthday countdown",
-      "anniversary calculator",
-      "hashtag counter",
-      "entertainment tools",
-      "social media tools",
-      "relationship tools",
-      "celebration tools",
-      "party tools",
-      "fun calculators",
-      "entertainment calculators",
-      "social tools",
-      "trending tools",
-      "viral tools",
-      "fun apps",
-      "entertainment apps",
-      "online fun tools",
-      "free fun tools online",
-      "online entertainment tools",
-      "online social media tools",
-      "online party tools",
-      "free online calculators",
-      "online celebration tools",
-      "free online fun apps",
-      "online viral tools",
-      "online trending tools"
+    "fun tools",
+    "free online tools",
+    "love calculator",
+    "future age predictor",
+    "birthday countdown",
+    "anniversary calculator",
+    "hashtag counter",
+    "entertainment tools",
+    "social media tools",
+    "relationship tools",
+    "celebration tools",
+    "party tools",
+    "fun calculators",
+    "entertainment calculators",
+    "social tools",
+    "trending tools",
+    "viral tools",
+    "fun apps",
+    "entertainment apps",
+    "online fun tools",
+    "free fun tools online",
+    "online entertainment tools",
+    "online social media tools",
+    "online party tools",
+    "free online calculators",
+    "online celebration tools",
+    "free online fun apps",
+    "online viral tools",
+    "online trending tools"
   ],
   openGraph: {
     title: "Free Fun Tools | Love Calculator, Birthday Countdown & More | FastTools",
@@ -189,35 +188,15 @@ export default function FunToolsPage() {
                   <AdSpace slot="header" className="w-full h-24 border border-border rounded-xl shadow-sm bg-card" />
                 </div>
 
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
-                  {tools.map((tool, index) => (
-                    <Card
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
+                  {tools.map((tool) => (
+                    <GCard
                       key={`fun-tools-${tool.href}`}
-                      className="border border-border shadow-lg bg-card hover:shadow-xl transition-all duration-300 hover:-translate-y-1 hover:border-primary/50 animate-fade-in-up group"
-                      style={{ animationDelay: `${index * 100}ms` }}
-                    >
-                      <CardHeader className="p-3 pb-1">
-                        <div className="flex items-start gap-3">
-                          <div className="h-9 w-9 rounded-lg flex items-center justify-center shadow-sm group-hover:scale-105 transition-transform duration-300 flex-shrink-0 bg-primary/10 border border-primary/20">
-                            <tool.icon className="h-4 w-4 text-primary" />
-                          </div>
-                          <div className="flex-1 min-w-0">
-                            <CardTitle className="text-sm md:text-base font-semibold text-card-foreground mb-1 group-hover:text-primary transition-colors duration-300 line-clamp-2">{tool.title}</CardTitle>
-                            <CardDescription className="leading-relaxed text-[11px] md:text-xs text-muted-foreground line-clamp-2">
-                              {tool.description}
-                            </CardDescription>
-                          </div>
-                        </div>
-                      </CardHeader>
-                      <CardContent className="p-3 pt-0">
-                        <Button asChild className="w-full h-8 text-xs font-semibold shadow hover:shadow-md transition-all duration-300 bg-primary hover:bg-primary/90 text-white group-hover:bg-accent group-hover:text-white">
-                          <Link href={tool.href} className="flex items-center justify-center gap-1">
-                            Use Tool
-                            <ArrowRight className="h-3 w-3 group-hover:translate-x-0.5 transition-transform duration-300" />
-                          </Link>
-                        </Button>
-                      </CardContent>
-                    </Card>
+                      title={tool.title}
+                      description={tool.description}
+                      href={tool.href}
+                      icon={tool.icon}
+                    />
                   ))}
                 </div>
 

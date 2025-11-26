@@ -1,8 +1,7 @@
 import type { Metadata } from "next"
 import Link from "next/link"
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
-import { Button } from "@/components/ui/button"
-import { Code2, FileJson, Palette, Hash, FileCode, Braces, Code, Globe, ArrowRight } from "lucide-react"
+import { GCard } from "@/components/globalcomponents/gcard"
+import { Code2, FileJson, Palette, Hash, FileCode, Braces, Code, Globe } from "lucide-react"
 import { Breadcrumbs } from "@/components/breadcrumbs"
 import { AdSpace } from "@/components/ad-space"
 import { GHeader } from "@/components/globalcomponents/gheader"
@@ -47,7 +46,7 @@ export const metadata: Metadata = {
     "developer tools mac safari",
     "developer tools on ipad",
     "developer tools google",
-    
+
     // Additional platform & browser keywords
     "developer tools access",
     "developer tools discord",
@@ -84,13 +83,13 @@ export const metadata: Metadata = {
     "developer tools tutorial",
     "developer tool kit",
     "developer command line tools",
-    
+
     // Year-specific & AI keywords
     "developer tools 2025",
     "ai developer tools 2025",
     "developer tools 2024",
     "developer tools ai",
-    
+
     // Application & integration keywords
     "developer tools app",
     "developer tools bhutan",
@@ -123,7 +122,7 @@ export const metadata: Metadata = {
     "developer tools keyboard shortcut",
     "developer tools windows 10",
     "microsoft developer tools 365",
-    
+
     // Technical & troubleshooting keywords
     "developer tools for upnp technologies",
     "developer tools for xcode macos",
@@ -195,7 +194,7 @@ export const metadata: Metadata = {
     "developer tools office 365",
     "firefox developer tools 3d view",
     "windows developer tools 3.2",
-    
+
     // Advanced technical & version-specific keywords
     "edge developer tools 3d view",
     "developer tools excel 365",
@@ -302,7 +301,7 @@ export const metadata: Metadata = {
     "developer tools vue",
     "developer tools vencord",
     "developer tools vc",
-    
+
     // Extended platform & utility keywords
     "developer tools view",
     "developer tools view headers",
@@ -402,7 +401,7 @@ export const metadata: Metadata = {
     "quest developer tools",
     "facebook react developer tools 5.1 0",
     "developer tools ha",
-    
+
     // High-value core keywords
     "oracle developer tools",
     "chrome developer tools",
@@ -545,7 +544,7 @@ export const metadata: Metadata = {
     "extension react developer tools",
     "developer tools salesforce",
     "what is developer tools in chrome",
-    
+
     // Shortcuts & operations keywords
     "near tool shop",
     "developer tools examples",
@@ -603,7 +602,7 @@ export const metadata: Metadata = {
     "keyboard shortcut for developer tools",
     "close developer tools firefox",
     "close developer tool to see page",
-    
+
     // High-traffic browser & platform keywords
     "developer tools safari",
     "developer tools chrome android",
@@ -625,7 +624,7 @@ export const metadata: Metadata = {
     "developer tools vs code",
     "developer tools and platforms",
     "developer tools and frameworks",
-    
+
     // Comparison keywords
     "firefox developer tools vs chrome devtools",
     "chrome developer tools vs firefox",
@@ -639,7 +638,7 @@ export const metadata: Metadata = {
     "safari developer tools like chrome",
     "tools i use as a developer",
     "react developer tools vs code",
-    
+
     // Core keywords
     "developer tools",
     "free developer tools",
@@ -787,12 +786,12 @@ export default function DevToolsPage() {
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
       <div className="min-h-screen bg-background">
-      <div className="container mx-auto px-4 py-8">
-      <Breadcrumbs
-        items={[
-          { label: "Developer Tools", href: "/dev-tools" },
-        ]}
-      />
+        <div className="container mx-auto px-4 py-8">
+          <Breadcrumbs
+            items={[
+              { label: "Developer Tools", href: "/dev-tools" },
+            ]}
+          />
 
           <div className="max-w-7xl mx-auto">
             <div className="flex flex-col lg:flex-row gap-8">
@@ -812,37 +811,17 @@ export default function DevToolsPage() {
                   <AdSpace slot="content" className="h-12 xs:h-16 sm:h-20 md:h-24 lg:h-28" />
                 </div>
 
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
-                  {devTools.map((tool, index) => (
-                    <Card
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
+                  {devTools.map((tool) => (
+                    <GCard
                       key={`dev-tools-${tool.href}`}
-                      className="border border-border shadow-lg bg-card hover:shadow-xl transition-all duration-300 hover:-translate-y-1 hover:border-primary/50 animate-fade-in-up group"
-                      style={{ animationDelay: `${index * 100}ms` }}
-                    >
-                      <CardHeader className="p-3 pb-1">
-                        <div className="flex items-start gap-3">
-                          <div className="h-9 w-9 rounded-lg flex items-center justify-center shadow-sm group-hover:scale-105 transition-transform duration-300 flex-shrink-0 bg-primary/10 border border-primary/20">
-                            <tool.icon className="h-4 w-4 text-primary" />
-                  </div>
-                          <div className="flex-1 min-w-0">
-                            <CardTitle className="text-sm md:text-base font-semibold text-foreground mb-1 group-hover:text-primary transition-colors duration-300 line-clamp-2">{tool.title}</CardTitle>
-                            <CardDescription className="leading-relaxed text-[11px] md:text-xs text-muted-foreground line-clamp-2">
-                  {tool.description}
-                </CardDescription>
-                  </div>
+                      title={tool.title}
+                      description={tool.description}
+                      href={tool.href}
+                      icon={tool.icon}
+                    />
+                  ))}
                 </div>
-              </CardHeader>
-                      <CardContent className="p-3 pt-0">
-                        <Button asChild className="w-full h-8 text-xs font-semibold shadow hover:shadow-md transition-all duration-300 bg-primary hover:bg-primary/90 text-white group-hover:bg-accent group-hover:text-foreground">
-                          <Link href={tool.href} className="flex items-center justify-center gap-1">
-                    Use Tool
-                            <ArrowRight className="h-3 w-3 group-hover:translate-x-0.5 transition-transform duration-300" />
-            </Link>
-                </Button>
-              </CardContent>
-              </Card>
-          ))}
-        </div>
 
                 {/* Content Sections */}
                 <div className="space-y-5 animate-fade-in-up animation-delay-200">
@@ -861,7 +840,7 @@ export default function DevToolsPage() {
                     <p className="text-sm text-muted-foreground leading-relaxed">
                       Access developer tools safari with 9.9k monthly searches. Learn how to open safari developer tools, safari open developer tools, safari turn on developer tools, and show developer tools in safari on Mac. Use developer tools safari mac, developer tools safari iphone, developer tools safari ipad, safari iphone developer tools, and safari ipad developer tools for iOS debugging. Enable with developer tools safari shortcut and access what are developer tools for inspecting web pages on Apple devices.
                     </p>
-        </div>
+                  </div>
 
                   <div className="p-5 rounded-lg bg-card border border-border shadow">
                     <h2 className="text-xl font-bold mb-4 text-foreground">React Developer Tools - Extensions & Debugging</h2>
@@ -895,7 +874,7 @@ export default function DevToolsPage() {
                     <p className="text-sm text-muted-foreground leading-relaxed">
                       Use developer tools for android, developer tools android browser, developer tools chrome mobile android, and developer tools google chrome android. Access developer tools chrome mobile iphone, developer tools iphone, developer tools safari mobile, and developer tools browser ios. Platform-specific tools include developer tools for windows, developer tools windows 10, developer tools windows 11, developer tools windows shortcut, developer tools windows chrome, developer tools ubuntu, and developer tools linux. Mobile devices support developer tools mobile, developer tools phone, developer tools on ipad, developer tools chrome ipad, developer tools pixel 7, developer tools pixel 8, developer tools pixel 9, developer tools xiaomi, developer tools vivo, and developer tools samsung.
                     </p>
-        </div>
+                  </div>
 
                   <div className="p-5 rounded-lg bg-card border border-border shadow">
                     <h2 className="text-xl font-bold mb-4 text-foreground">React Developer Tools & Framework Integration</h2>
@@ -912,7 +891,7 @@ export default function DevToolsPage() {
                     <p className="text-sm text-muted-foreground leading-relaxed">
                       JWT decoder for inspecting tokens, debugging authentication issues, understanding token structure, and developer tools detected enter the authentication key. Essential for API development and security auditing.
                     </p>
-          </div>
+                  </div>
 
                   <div className="p-5 rounded-lg bg-card border border-border shadow">
                     <h2 className="text-xl font-bold mb-4 text-foreground">Microsoft & Office Developer Tools - Enterprise Solutions</h2>
@@ -1013,8 +992,8 @@ export default function DevToolsPage() {
                     <h3 className="text-lg font-bold mb-3 text-heading-accent">Developer Tools Career & Learning</h3>
                     <p className="text-sm text-muted-foreground leading-relaxed">
                       Advance your career with developer tools for resume, developer tools examples for resume, developer tools to put on resume, tools developer job description, developer tools jobs, developer tools jobs in seattle, developer tools jobs remote, developer tools engineer, and developer tools support engineer 1. Learn through developer tools tutorial, chrome developer tools tutorial, developer tools guide, developer tools explained, developer tools youtube, react developer tools youtube, developer tools yt music, developer tools youtube music, and developer tools https www udacity com. Resources include developer tools reddit, developer tools hub, developer tool kit, programmer tools kit, and tool developer qualification course.
-            </p>
-          </div>
+                    </p>
+                  </div>
 
                   <div className="p-5 rounded-lg bg-card border border-border shadow">
                     <h2 className="text-xl font-bold mb-4 text-foreground">Developer Tools Downloads & Installation</h2>
@@ -1036,16 +1015,16 @@ export default function DevToolsPage() {
                   {/* Comprehensive FAQ Section */}
                   <div className="p-5 rounded-lg bg-card border border-border shadow">
                     <h2 className="text-xl font-bold mb-4 text-foreground">Developer Tools FAQ - Comprehensive Guide</h2>
-                    
+
                     <div className="space-y-6">
-          <div>
+                      <div>
                         <h3 className="text-lg font-bold mb-2 text-heading-accent">What are developer tools?</h3>
                         <p className="text-sm text-muted-foreground leading-relaxed">
                           Developer tools are built-in browser features that allow developers to inspect, debug, and analyze web pages and applications. What are developer tools in a browser? They provide access to the HTML structure, CSS styling, JavaScript console, network activity, and performance metrics of any website. What's developer tools functionality includes DOM inspection, console logging, network monitoring, JavaScript debugging with breakpoints, performance profiling, and mobile device simulation. What is developer tool bar provides quick access to these features through an integrated interface in your browser. Developer tools benefits include faster debugging, better understanding of website structure, performance optimization, security testing, and learning from other websites' code implementations.
                         </p>
-          </div>
+                      </div>
 
-          <div>
+                      <div>
                         <h3 className="text-lg font-bold mb-2 text-heading-accent">How to open developer tools in Chrome?</h3>
                         <p className="text-sm text-muted-foreground leading-relaxed">
                           How to access developer tools in chrome: Press F12, Ctrl+Shift+I (Windows/Linux), or Cmd+Option+I (Mac). How to open developer tools in chrome shortcut is the fastest method. Alternatively, right-click any element and select "Inspect" or access through Chrome menu &gt; More Tools &gt; Developer Tools. How open developer tools in chrome on mobile: Chrome Android doesn&apos;t have built-in DevTools, but you can use remote debugging by connecting your device to a computer via USB and accessing chrome://inspect. How to open developer tools in chrome android mobile requires enabling USB debugging in Android developer options first. Where is developer tools in chrome? Look for the three-dot menu icon in the top-right corner, then navigate to More Tools &gt; Developer Tools. Where are developer tools in chrome can also be found through the View menu. What is developer tools in chrome provides comprehensive web development capabilities including element inspection, console, network monitoring, performance profiling, and JavaScript debugging.
@@ -1091,73 +1070,73 @@ export default function DevToolsPage() {
                         <h3 className="text-lg font-bold mb-2 text-heading-accent">Where is developer tools in Excel?</h3>
                         <p className="text-sm text-muted-foreground leading-relaxed">
                           Where is developer tools in excel and where are developer tools in excel: Go to File &gt; Options &gt; Customize Ribbon, then check "Developer" in the right column under Main Tabs. How to developer tools in excel enables VBA programming, macros, form controls, and add-in management. The Developer tab appears in the ribbon after enabling it. What is developer tools in resume for Excel includes VBA automation, macro development, and custom function creation.
-            </p>
-          </div>
+                        </p>
+                      </div>
 
-          <div>
+                      <div>
                         <h3 className="text-lg font-bold mb-2 text-heading-accent">Where is developer tools in Word?</h3>
                         <p className="text-sm text-muted-foreground leading-relaxed">
                           Where is developer tools in word and where are developer tools in word: Similar to Excel, go to File &gt; Options &gt; Customize Ribbon and enable "Developer" tab. Developer tools in word provides access to macros, form controls, XML mapping, and document templates for advanced document automation.
                         </p>
-              </div>
+                      </div>
 
                       <div>
                         <h3 className="text-lg font-bold mb-2 text-heading-accent">Can you use developer tools on mobile?</h3>
                         <p className="text-sm text-muted-foreground leading-relaxed">
                           Can you open developer tools on mobile? Limited direct access exists, but remote debugging is available. Can you use developer tools on iphone? Yes, connect to Mac Safari for remote inspection. Can you open developer tools on iphone requires Mac connection. Can you use developer tools on ipad works the same way. Can you use developer tools on mobile Android requires USB debugging and Chrome remote debugging. Where is developer tools in chrome mobile doesn't have native DevTools, but chrome://inspect on desktop enables remote debugging. Where is developer tools in instagram and other mobile apps requires specialized tools or device simulators.
                         </p>
-              </div>
+                      </div>
 
                       <div>
                         <h3 className="text-lg font-bold mb-2 text-heading-accent">What is React developer tools?</h3>
                         <p className="text-sm text-muted-foreground leading-relaxed">
                           What is react developer tools: A browser extension that adds React-specific debugging capabilities to your browser's developer tools. It provides a "Components" tab showing the React component hierarchy, props, state, and hooks. The extension enables component inspection, state/props editing, performance profiling with the Profiler tab, and component highlighting. Available for Chrome, Firefox, and Edge, it's essential for React development and debugging React applications efficiently.
                         </p>
-              </div>
+                      </div>
 
                       <div>
                         <h3 className="text-lg font-bold mb-2 text-heading-accent">How can developer tools be used by attackers?</h3>
                         <p className="text-sm text-muted-foreground leading-relaxed">
                           How can developer tools be used by attackers and how can developer tools be used by attackers quizlet: Attackers can inspect page source to find vulnerabilities, modify client-side validation to bypass security checks, analyze network requests to intercept sensitive data, manipulate cookies and local storage, identify API endpoints for exploitation, reverse engineer JavaScript code, test for XSS vulnerabilities, and discover hidden functionality. Can websites detect developer tools? Some sites implement detection scripts that monitor for DevTools opening, but these can be bypassed. This is why proper server-side validation and security measures are crucial - never rely solely on client-side security.
                         </p>
-              </div>
+                      </div>
 
                       <div>
                         <h3 className="text-lg font-bold mb-2 text-heading-accent">Why are developer tools disabled?</h3>
                         <p className="text-sm text-muted-foreground leading-relaxed">
                           Why are developer tools disabled and why is developer tools greyed out: Common causes include corporate IT policies restricting browser features, certain browser extensions blocking DevTools, websites attempting to prevent inspection (though this can be bypassed), browser profiles with restricted permissions, or browser corruption requiring reinstallation. Can't open developer tools or chrome can't open developer tools may indicate corrupted browser settings or conflicting extensions. Try opening in Incognito mode, disabling extensions, or resetting browser settings to default.
                         </p>
-              </div>
+                      </div>
 
                       <div>
                         <h3 className="text-lg font-bold mb-2 text-heading-accent">What tools do developers use?</h3>
                         <p className="text-sm text-muted-foreground leading-relaxed">
                           What tools do developers use and what programming tools: Modern developers use IDEs (VS Code, IntelliJ, WebStorm), version control (Git, GitHub, GitLab), browser DevTools (Chrome, Firefox, Safari), package managers (npm, yarn, pip), build tools (Webpack, Vite, Rollup), testing frameworks (Jest, Pytest, JUnit), containerization (Docker, Kubernetes), CI/CD platforms (Jenkins, GitHub Actions), API testing (Postman, Insomnia), database tools (DBeaver, pgAdmin), and collaboration tools (Slack, Jira, Confluence). Tools development with 590 monthly searches shows demand for custom development tooling.
                         </p>
-              </div>
+                      </div>
 
                       <div>
                         <h3 className="text-lg font-bold mb-2 text-heading-accent">What are developer tools used for?</h3>
                         <p className="text-sm text-muted-foreground leading-relaxed">
                           What are developer tools used for: Debugging JavaScript errors and logic issues, inspecting and modifying HTML/CSS in real-time, analyzing network performance and API calls, testing responsive designs across different screen sizes, monitoring page load performance and optimization, examining cookies, local storage, and session data, debugging mobile layouts through device emulation, analyzing SEO implementations, testing accessibility features, and learning from other websites' implementations. What is developer tools access enables all these capabilities through browser-integrated interfaces.
                         </p>
-            </div>
+                      </div>
 
                       <div>
                         <h3 className="text-lg font-bold mb-2 text-heading-accent">What are developer tools in resume?</h3>
                         <p className="text-sm text-muted-foreground leading-relaxed">
                           What are developer tools in resume: List specific technologies like "Chrome DevTools, React Developer Tools, Redux DevTools" under technical skills. Mention proficiency with browser developer tools, debugging complex JavaScript applications, performance optimization using browser profilers, network analysis and API debugging, mobile responsive testing with device emulation, and accessibility testing with browser tools. Include specific accomplishments like "Reduced page load time by 40% using Chrome DevTools Performance profiler" or "Debugged complex React state issues using React Developer Tools."
                         </p>
-          </div>
+                      </div>
 
-          <div>
+                      <div>
                         <h3 className="text-lg font-bold mb-2 text-heading-accent">What is developer tools console?</h3>
                         <p className="text-sm text-muted-foreground leading-relaxed">
                           What is developer tools console: The console is a command-line interface within browser DevTools that executes JavaScript code, displays error messages and warnings, logs debugging information from console.log() statements, shows network errors and security warnings, allows DOM manipulation through direct JavaScript commands, provides autocomplete for available functions and objects, and enables real-time interaction with page variables. It's the primary tool for JavaScript debugging and testing code snippets directly in the browser context.
                         </p>
-          </div>
+                      </div>
 
-          <div>
+                      <div>
                         <h3 className="text-lg font-bold mb-2 text-heading-accent">What is developer tools in AWS?</h3>
                         <p className="text-sm text-muted-foreground leading-relaxed">
                           What is developer tools in aws: AWS Developer Tools is a suite of services for building, testing, and deploying applications on AWS. It includes AWS CodeCommit (Git repository hosting), CodeBuild (continuous integration), CodeDeploy (automated deployment), CodePipeline (continuous delivery), CodeStar (project management), Cloud9 (cloud-based IDE), X-Ray (application debugging and tracing), and CloudShell (command-line access). These tools streamline development workflows, enable CI/CD pipelines, and facilitate collaborative cloud development.
@@ -1183,21 +1162,21 @@ export default function DevToolsPage() {
                         <p className="text-sm text-muted-foreground leading-relaxed">
                           How many developers use ai tools: According to recent surveys, over 92% of developers use or plan to use AI-powered tools in 2024-2025. Popular AI developer tools include GitHub Copilot, ChatGPT, Claude AI, Google Bard, Amazon CodeWhisperer, and Tabnine. These tools assist with code completion, bug fixing, documentation generation, code review, and learning new technologies. How many developers are in the world: Approximately 27-28 million professional software developers globally as of 2024, with the number growing 20% annually. How many programmers are there in pakistan: Estimated 300,000+ software developers.
                         </p>
-          </div>
+                      </div>
 
                       <div>
                         <h3 className="text-lg font-bold mb-2 text-heading-accent">Developer tools benefits and best practices</h3>
                         <p className="text-sm text-muted-foreground leading-relaxed">
                           Developer tools benefits include faster debugging (saving hours per week), better code quality through inspection and testing, improved performance optimization, enhanced learning by studying other websites, efficient responsive design testing, comprehensive network analysis, real-time CSS/HTML modifications, JavaScript debugging with breakpoints, and accessibility testing. When are development tools commonly used: Throughout the entire development lifecycle - during initial development, debugging, testing, optimization, and maintenance. Developers tricks include using console.table() for data visualization, network throttling for testing slow connections, DOM breakpoints for tracking changes, and local overrides for testing changes without deploying.
                         </p>
-        </div>
+                      </div>
 
                       <div>
                         <h3 className="text-lg font-bold mb-2 text-heading-accent">Common troubleshooting: Can't find developer tools</h3>
                         <p className="text-sm text-muted-foreground leading-relaxed">
                           Can&apos;t find developer tools on mac: Enable in Safari Preferences &gt; Advanced &gt; Show Develop menu. Can&apos;t open developer tools: Try keyboard shortcuts (F12), check if disabled by IT policy, restart browser, disable conflicting extensions, or reset browser settings. Where is developer tools and where is developer tools in inspect: Right-click any element and select "Inspect" or "Inspect Element" to open DevTools directly. What is developer tools on mac specifically refers to Safari&apos;s Web Inspector, which requires manual enabling in preferences before first use.
                         </p>
-        </div>
+                      </div>
 
                       <div>
                         <h3 className="text-lg font-bold mb-2 text-heading-accent">How many DevOps tools are there?</h3>
@@ -1332,11 +1311,11 @@ export default function DevToolsPage() {
               <div className="hidden lg:block w-72">
                 <div className="sticky top-32 space-y-6">
                   <AdSpace slot="sidebar" className="w-full h-96 border border-border rounded-xl shadow-sm bg-card" />
-              </div>
+                </div>
               </div>
             </div>
+          </div>
         </div>
-      </div>
       </div>
     </>
   )

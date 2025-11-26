@@ -1,8 +1,7 @@
 import type { Metadata } from "next"
 import Link from "next/link"
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
-import { Button } from "@/components/ui/button"
-import { FileText, Beer as Blur, Crop, FileStack, Unlock, ArrowRight, Code, Globe, Focus, DollarSign } from "lucide-react"
+import { GCard } from "@/components/globalcomponents/gcard"
+import { FileText, Beer as Blur, Crop, FileStack, Unlock, Code, Globe, Focus, DollarSign } from "lucide-react"
 import { Breadcrumbs } from "@/components/breadcrumbs"
 import { AdSpace } from "@/components/ad-space"
 import { GHeader } from "@/components/globalcomponents/gheader"
@@ -21,7 +20,7 @@ export const metadata: Metadata = {
     "free image editor software download",
     "free image editor best",
     "free image editor app",
-    
+
     // Platform specific
     "free image editor for mac",
     "free image editor mac",
@@ -36,14 +35,14 @@ export const metadata: Metadata = {
     "free image editor windows 7",
     "best free image editor iphone",
     "free mac image editor like paint",
-    
+
     // AI powered
     "free image editor ai",
     "free ai image editor no sign up",
     "free ai image editor like chatgpt",
     "free image tools ai",
     "free image generation tools",
-    
+
     // Alternative to popular software
     "free image editor online like photoshop",
     "free image editor like photoshop",
@@ -55,7 +54,7 @@ export const metadata: Metadata = {
     "free image editor like lightroom",
     "free image editor like paint",
     "free image editor photoshop",
-    
+
     // Online tools
     "image tools online free",
     "free image tools online",
@@ -63,7 +62,7 @@ export const metadata: Metadata = {
     "free tool online",
     "free image editor no download",
     "free tools.com",
-    
+
     // Features & functionality
     "free image editor and download",
     "free image editor and generator ai",
@@ -78,7 +77,7 @@ export const metadata: Metadata = {
     "free image annotation tools",
     "free image compression tools",
     "free image creation tools",
-    
+
     // Specific tools
     "free image editor pixlr",
     "free image editor gimp",
@@ -86,7 +85,7 @@ export const metadata: Metadata = {
     "free image text editor online",
     "image tool software",
     "free image recovery tool",
-    
+
     // Quality & comparison
     "what is the highest quality image file",
     "image comparison tools",
@@ -95,7 +94,7 @@ export const metadata: Metadata = {
     "where can i find free images to download",
     "where to find free images to use",
     "best image to vector software",
-    
+
     // AI features & restrictions
     "free ai image editor no restrictions",
     "free ai image editor no login",
@@ -114,7 +113,7 @@ export const metadata: Metadata = {
     "free image generation tools ai",
     "free ai tools image to video generator",
     "free tools image to video",
-    
+
     // Online & software
     "free online image editor software",
     "free online image editor no sign up",
@@ -125,7 +124,7 @@ export const metadata: Metadata = {
     "free photo tools",
     "free photo tools online",
     "free image editor software for windows 10",
-    
+
     // Specific features
     "free image eraser tool",
     "free image eraser tool online",
@@ -153,7 +152,7 @@ export const metadata: Metadata = {
     "free image design tools",
     "free image processing tools",
     "free image converter tools",
-    
+
     // Platform specific (additional)
     "free image editor osx",
     "free image editor browser",
@@ -182,7 +181,7 @@ export const metadata: Metadata = {
     "free image editor on iphone",
     "free image editor portable",
     "free image editor phone",
-    
+
     // App specific
     "free image editor app android",
     "free image editor app iphone",
@@ -204,18 +203,18 @@ export const metadata: Metadata = {
     "free image editor pdf",
     "free image editor paint",
     "free image editor pixel",
-    
+
     // Year specific
     "best free image editor 2025",
     "best free image editor 2024",
-    
+
     // Other tools
     "tools to create 3d models",
     "3u tool free download for windows 10",
     "freehand 9.0 software free download",
     "free download windows 7 image file",
     "chatpy image editor free",
-    
+
     // Advanced editing features
     "free image healing tool",
     "free image eraser tool",
@@ -240,7 +239,7 @@ export const metadata: Metadata = {
     "free image editor rotate",
     "free image editor filter",
     "free image resizing tool download",
-    
+
     // No copyright & resources
     "free tool images no copyright",
     "free image of tools",
@@ -248,7 +247,7 @@ export const metadata: Metadata = {
     "tool kit pic",
     "image j tool",
     "imagej tool download",
-    
+
     // Creator & generator tools
     "free image editor creator",
     "free image background editor ai",
@@ -312,7 +311,7 @@ export const metadata: Metadata = {
     "free image editing tools for mac",
     "free image editor easy",
     "free ai image editor iphone",
-    
+
     // Social media & commercial use
     "free image tools for social media",
     "name of tools with picture",
@@ -320,7 +319,7 @@ export const metadata: Metadata = {
     "what images can i use for free",
     "can i use free images for commercial use",
     "name of tools with images",
-    
+
     // Online editor variants
     "online free image editor photoshop",
     "free online image editor remove background",
@@ -335,7 +334,7 @@ export const metadata: Metadata = {
     "free online image editor transparent background",
     "free online image editor dot screen halftone",
     "is a free image editor",
-    
+
     // Text to image & conversion
     "text to image free tools",
     "ai text to image free tools",
@@ -344,7 +343,7 @@ export const metadata: Metadata = {
     "free image to video tools ai",
     "free image to animation tools",
     "pdf to image free tool",
-    
+
     // Additional tool keywords from research
     "free image tools ai",
     "free image manipulation tools",
@@ -413,16 +412,16 @@ const jsonLd = {
   description: "Free image tools: OCR converter, photo editor, background blur, image processing. Professional results, 100% secure.",
   url: "https://www.fasttools.store/image-tools",
   mainEntity: {
-  "@type": "ItemList",
-  name: "Image Tools Collection",
-  description: "Comprehensive collection of free online image processing and editing tools for OCR, photo editing, and visual content creation",
-  numberOfItems: 3,
-  itemListElement: [
-    { "@type": "ListItem", position: 1, name: "Image to Text (OCR)", description: "Extract text from images using OCR technology", url: "https://www.fasttools.store/image-tools/image-to-text" },
-    { "@type": "ListItem", position: 2, name: "Image Background Remover", description: "Remove image backgrounds with AI technology", url: "https://www.fasttools.store/image-tools/image-background-remover" },
-    { "@type": "ListItem", position: 3, name: "Image Background Blur", description: "Blur image backgrounds with AI portrait mode for professional photos", url: "https://www.fasttools.store/image-tools/image-blur" }
-  ]
-},
+    "@type": "ItemList",
+    name: "Image Tools Collection",
+    description: "Comprehensive collection of free online image processing and editing tools for OCR, photo editing, and visual content creation",
+    numberOfItems: 3,
+    itemListElement: [
+      { "@type": "ListItem", position: 1, name: "Image to Text (OCR)", description: "Extract text from images using OCR technology", url: "https://www.fasttools.store/image-tools/image-to-text" },
+      { "@type": "ListItem", position: 2, name: "Image Background Remover", description: "Remove image backgrounds with AI technology", url: "https://www.fasttools.store/image-tools/image-background-remover" },
+      { "@type": "ListItem", position: 3, name: "Image Background Blur", description: "Blur image backgrounds with AI portrait mode for professional photos", url: "https://www.fasttools.store/image-tools/image-blur" }
+    ]
+  },
   breadcrumb: {
     "@type": "BreadcrumbList",
     itemListElement: [
@@ -447,12 +446,12 @@ export default function ImageToolsPage() {
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
       <div className="min-h-screen bg-background">
-      <div className="container mx-auto px-4 py-8">
-      <Breadcrumbs
-        items={[
-          { label: "Image Tools", href: "/image-tools" },
-        ]}
-      />
+        <div className="container mx-auto px-4 py-8">
+          <Breadcrumbs
+            items={[
+              { label: "Image Tools", href: "/image-tools" },
+            ]}
+          />
 
           <div className="max-w-7xl mx-auto">
             <div className="flex flex-col lg:flex-row gap-8">
@@ -472,37 +471,17 @@ export default function ImageToolsPage() {
                   <AdSpace slot="content" className="h-12 xs:h-16 sm:h-20 md:h-24 lg:h-28" />
                 </div>
 
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
-                  {imageTools.map((tool, index) => (
-                    <Card
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
+                  {imageTools.map((tool) => (
+                    <GCard
                       key={`image-tools-${tool.href}`}
-                      className="border border-border shadow-lg bg-card hover:shadow-xl transition-all duration-300 hover:-translate-y-1 hover:border-primary/50 animate-fade-in-up group"
-                      style={{ animationDelay: `${index * 100}ms` }}
-                    >
-                      <CardHeader className="p-3 pb-1">
-                        <div className="flex items-start gap-3">
-                          <div className="h-9 w-9 rounded-lg flex items-center justify-center shadow-sm group-hover:scale-105 transition-transform duration-300 flex-shrink-0 bg-primary/10 border border-primary/20">
-                            <tool.icon className="h-4 w-4 text-primary" />
-                          </div>
-                          <div className="flex-1 min-w-0">
-                            <CardTitle className="text-sm md:text-base font-semibold text-foreground mb-1 group-hover:text-primary transition-colors duration-300 line-clamp-2">{tool.title}</CardTitle>
-                            <CardDescription className="leading-relaxed text-[11px] md:text-xs text-muted-foreground line-clamp-2">
-                  {tool.description}
-                </CardDescription>
-                          </div>
-                        </div>
-              </CardHeader>
-                      <CardContent className="p-3 pt-0">
-                        <Button asChild className="w-full h-8 text-xs font-semibold shadow hover:shadow-md transition-all duration-300 bg-primary hover:bg-primary/90 text-white group-hover:bg-accent group-hover:text-foreground">
-                          <Link href={tool.href} className="flex items-center justify-center gap-1">
-                    Use Tool
-                            <ArrowRight className="h-3 w-3 group-hover:translate-x-0.5 transition-transform duration-300" />
-                  </Link>
-                </Button>
-              </CardContent>
-            </Card>
-          ))}
-        </div>
+                      title={tool.title}
+                      description={tool.description}
+                      href={tool.href}
+                      icon={tool.icon}
+                    />
+                  ))}
+                </div>
 
                 {/* Content Sections */}
                 <div className="space-y-5 animate-fade-in-up animation-delay-200">
@@ -698,47 +677,47 @@ export default function ImageToolsPage() {
                       <div>
                         <h3 className="text-lg font-bold mb-2 text-heading-accent">What are the best free OCR tools for text extraction?</h3>
                         <p className="text-sm text-muted-foreground leading-relaxed">Our OCR tool online uses advanced optical character recognition technology to extract text from images and scanned documents with high accuracy. It supports multiple languages, various fonts, and different text orientations. The tool is perfect for digitizing paper documents and converting images to editable text. It works entirely in your browser, ensuring complete privacy and security for sensitive documents. The OCR engine handles complex layouts, handwritten text, and low-quality images while maintaining professional accuracy standards.</p>
-          </div>
+                      </div>
 
-          <div>
+                      <div>
                         <h3 className="text-lg font-bold mb-2 text-heading-accent">How does background blur work and what makes it professional?</h3>
                         <p className="text-sm text-muted-foreground leading-relaxed">Our background blur tool uses sophisticated edge detection algorithms to identify subjects and create natural-looking blur effects. It automatically detects the main subject in your image and applies selective blurring to the background while keeping the subject sharp and clear. The tool offers adjustable blur intensity, allowing you to create subtle or dramatic effects depending on your needs. Professional photographers and content creators use this technique to create depth, focus attention on subjects, and produce studio-quality results. The algorithm works best with portraits and objects that have clear separation from their backgrounds.</p>
-              </div>
+                      </div>
 
                       <div>
                         <h3 className="text-lg font-bold mb-2 text-heading-accent">What's the best way to use PDF tools for document management?</h3>
                         <p className="text-sm text-muted-foreground leading-relaxed">Our PDF tools provide comprehensive document management capabilities including splitting large PDFs into smaller sections, merging multiple documents into one file, and removing password protection from locked PDFs. These tools are essential for organizing large document collections, creating custom document packages, and accessing password-protected files. The splitter helps break down lengthy documents into manageable sections, while the merger combines related documents for easier distribution. The unlocker safely removes password protection while maintaining document integrity. All operations happen locally in your browser, ensuring complete privacy and security for sensitive documents.</p>
-              </div>
+                      </div>
 
                       <div>
-              </div>
+                      </div>
 
                       <div>
                         <h3 className="text-lg font-bold mb-2 text-heading-accent">Are these tools safe to use with sensitive documents and images?</h3>
                         <p className="text-sm text-muted-foreground leading-relaxed">Yes, all our image and file tools prioritize user privacy and security by operating entirely within your browser. Your files never leave your device, ensuring complete privacy and security. We don't store, track, or transmit any of your data, making our tools safe for sensitive documents, personal images, and confidential business materials. This client-side processing eliminates concerns about data breaches, unauthorized access, or unwanted data collection. Users can confidently process sensitive documents, personal photos, and confidential business materials without worrying about privacy implications. The local processing also ensures faster performance and eliminates dependency on internet connectivity for core functionality.</p>
-              </div>
+                      </div>
 
                       <div>
                         <h3 className="text-lg font-bold mb-2 text-heading-accent">How can I integrate these tools into my business workflow effectively?</h3>
                         <p className="text-sm text-muted-foreground leading-relaxed">Integrating image and file tools into your business workflow can significantly improve efficiency and productivity. Use OCR tools during document digitization processes, employ background blur for professional product photography, utilize PDF tools for document organization and distribution, and incorporate image cropping for consistent branding across all marketing materials. These tools work best when used consistently as part of established business processes rather than randomly. Set specific workflows for document processing, image editing, and file management. The key is to view these tools as enhancements to existing business activities rather than standalone solutions. They can serve as efficiency boosters, quality enhancers, and professional presentation aids when used strategically in your business operations.</p>
-              </div>
+                      </div>
 
                       <div>
                         <h3 className="text-lg font-bold mb-2 text-heading-accent">What makes these tools different from other image processing software?</h3>
                         <p className="text-sm text-muted-foreground leading-relaxed">Our image and file tools distinguish themselves through their focus on professional application, user experience, and privacy-first design. Unlike traditional software that requires downloads or cloud uploads, these tools operate entirely in your browser, ensuring complete privacy and instant access. They're designed with business use in mind, featuring outputs that are both high-quality and suitable for professional presentation. The tools prioritize speed and simplicity, delivering instant results without complex setup or learning curves. They're optimized for mobile use, ensuring consistent performance across all devices. The combination of privacy-focused design, professional-quality results, and practical utility creates a unique user experience that serves both personal and business needs. Each tool is crafted to provide maximum value with minimal effort, making them accessible to users of all technical skill levels.</p>
-            </div>
+                      </div>
 
                       <div>
                         <h3 className="text-lg font-bold mb-2 text-heading-accent">Can these tools help with business growth and professional development?</h3>
                         <p className="text-sm text-muted-foreground leading-relaxed">Absolutely! These tools are invaluable for business growth, professional development, and competitive advantage. OCR tools help digitize and organize business documents, improving operational efficiency. Background blur creates professional product photography without expensive equipment. PDF tools streamline document management and client communications. Image cropping ensures consistent branding across all marketing materials. The tools provide professional-quality results that enhance business presentations, client communications, and marketing materials. They also help businesses maintain professional standards in visual communications and document management. The tools generate outputs that can be used in business presentations, client deliverables, and professional communications, contributing to overall business credibility and growth.</p>
-          </div>
+                      </div>
 
-          <div>
+                      <div>
                         <h3 className="text-lg font-bold mb-2 text-heading-accent">How do I choose the right image tool for my specific business needs?</h3>
                         <p className="text-sm text-muted-foreground leading-relaxed">Selecting the appropriate image tool depends on your business type, content needs, and specific use cases. For content creators and marketers, background blur and image cropping are essential for professional visual content. Document-heavy businesses benefit most from OCR tools and PDF management utilities. E-commerce businesses should prioritize image cropping for product photos and background blur for professional presentations. Consider your primary business activities: are you creating content, managing documents, selling products, or building brand presence? Each tool excels in specific scenarios. OCR tools work best for document digitization and data extraction. Background blur serves content creators and photographers. Image cropping is ideal for social media management and branding. PDF tools are essential for document-heavy businesses and professional services.</p>
-          </div>
+                      </div>
 
-          <div>
+                      <div>
                         <h3 className="text-lg font-bold mb-2 text-heading-accent">What are the most creative ways to use these tools beyond their basic functions?</h3>
                         <p className="text-sm text-muted-foreground leading-relaxed">These tools offer numerous creative applications beyond their primary purposes. Use OCR tools to extract text from competitor websites for market research, convert handwritten notes into digital text, or digitize old documents for archival purposes. Background blur can create artistic effects, simulate depth of field, or enhance product photography. Image cropping works for creating custom graphics, designing social media templates, or preparing images for presentations. PDF tools can be used for creating custom document packages, organizing research materials, or preparing client deliverables. Content creators can use these tools to provide image editing tutorials, create educational content, or develop visual resources. Teachers can incorporate these tools into digital literacy lessons, creative projects, or document management courses. The key is to think beyond traditional uses and explore how these tools can enhance various aspects of business operations and creative projects.</p>
                       </div>
@@ -860,7 +839,7 @@ export default function ImageToolsPage() {
               </div>
             </div>
           </div>
-      </div>
+        </div>
       </div>
     </>
   )

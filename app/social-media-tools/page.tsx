@@ -1,7 +1,6 @@
 import Link from "next/link"
-import { Button } from "@/components/ui/button"
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
-import { ArrowRight, Youtube, Instagram, Music, Tag, LinkIcon, Search, Hash, Code, Globe, Calculator, Download, Facebook, MessageSquare } from "lucide-react"
+import { GCard } from "@/components/globalcomponents/gcard"
+import { Youtube, Instagram, Music, Tag, LinkIcon, Search, Hash, Code, Globe, Calculator, Download, Facebook, MessageSquare } from "lucide-react"
 import { Breadcrumbs } from "@/components/breadcrumbs"
 import { AdSpace } from "@/components/ad-space"
 import { GHeader } from "@/components/globalcomponents/gheader"
@@ -143,35 +142,15 @@ export default function SocialMediaToolsPage() {
                 <AdSpace slot="content" className="h-12 xs:h-16 sm:h-20 md:h-24 lg:h-28" />
               </div>
 
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
-                {tools.map((tool, index) => (
-                  <Card
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
+                {tools.map((tool) => (
+                  <GCard
                     key={`social-tools-${tool.href}`}
-                    className="border border-border shadow-lg bg-card hover:shadow-xl transition-all duration-300 hover:-translate-y-1 hover:border-primary/50 animate-fade-in-up group"
-                    style={{ animationDelay: `${index * 100}ms` }}
-                  >
-                    <CardHeader className="p-3 pb-1">
-                      <div className="flex items-start gap-3">
-                        <div className="h-9 w-9 rounded-lg flex items-center justify-center shadow-sm group-hover:scale-105 transition-transform duration-300 flex-shrink-0 bg-primary/10 border border-primary/20">
-                          <tool.icon className="h-4 w-4 text-primary" />
-                        </div>
-                        <div className="flex-1 min-w-0">
-                          <CardTitle className="text-sm md:text-base font-semibold text-foreground mb-1 group-hover:text-primary transition-colors duration-300 line-clamp-2">{tool.title}</CardTitle>
-                          <CardDescription className="leading-relaxed text-[11px] md:text-xs text-muted-foreground line-clamp-2">
-                            {tool.description}
-                          </CardDescription>
-                        </div>
-                      </div>
-                    </CardHeader>
-                    <CardContent className="p-3 pt-0">
-                      <Button asChild className="w-full h-8 text-xs font-semibold shadow hover:shadow-md transition-all duration-300 bg-primary hover:bg-primary/90 text-white group-hover:bg-accent group-hover:text-foreground">
-                        <Link href={tool.href} className="flex items-center justify-center gap-1">
-                          Use Tool
-                          <ArrowRight className="h-3 w-3 group-hover:translate-x-0.5 transition-transform duration-300" />
-                        </Link>
-                      </Button>
-                    </CardContent>
-                  </Card>
+                    title={tool.title}
+                    description={tool.description}
+                    href={tool.href}
+                    icon={tool.icon}
+                  />
                 ))}
               </div>
 
@@ -181,20 +160,20 @@ export default function SocialMediaToolsPage() {
                 <div className="p-5 rounded-lg bg-card border border-border shadow">
                   <h2 className="text-xl font-bold mb-4 text-foreground">How Our Social Media Tools Work</h2>
                   <p className="text-sm text-muted-foreground leading-relaxed mb-4">
-                    Our advanced social media toolkit leverages cutting-edge web technologies and API integrations 
-                    to provide real-time access to social media data. Each tool is designed with user privacy and 
+                    Our advanced social media toolkit leverages cutting-edge web technologies and API integrations
+                    to provide real-time access to social media data. Each tool is designed with user privacy and
                     platform compliance in mind.
                   </p>
 
                   <h3 className="text-lg font-bold mb-3 text-heading-accent">Smart Data Extraction</h3>
                   <p className="text-sm text-muted-foreground leading-relaxed mb-4">
-                    Our tools use secure API endpoints and advanced parsing techniques to extract public data 
+                    Our tools use secure API endpoints and advanced parsing techniques to extract public data
                     from social media platforms while respecting terms of service and user privacy.
                   </p>
 
                   <h3 className="text-lg font-bold mb-3 text-heading-accent">AI-Powered Analysis</h3>
                   <p className="text-sm text-muted-foreground leading-relaxed">
-                    Generate intelligent insights using AI technology. Our hashtag counter analyzes content 
+                    Generate intelligent insights using AI technology. Our hashtag counter analyzes content
                     and suggests trending, niche, and platform-specific hashtags for maximum reach.
                   </p>
                 </div>
@@ -202,19 +181,19 @@ export default function SocialMediaToolsPage() {
                 <div className="p-5 rounded-lg bg-card border border-border shadow">
                   <h2 className="text-xl font-bold mb-4 text-foreground">Perfect for Content Creators & Marketers</h2>
                   <p className="text-sm text-muted-foreground leading-relaxed mb-4">
-                    Use these tools for YouTube content optimization, Instagram profile analysis, TikTok video 
+                    Use these tools for YouTube content optimization, Instagram profile analysis, TikTok video
                     research, and cross-platform social media strategy development.
                   </p>
 
                   <h3 className="text-lg font-bold mb-3 text-heading-accent">Platform-Specific Optimization</h3>
                   <p className="text-sm text-muted-foreground leading-relaxed mb-4">
-                    Get tools tailored for each platform. YouTube thumbnail analysis, Instagram profile research, 
+                    Get tools tailored for each platform. YouTube thumbnail analysis, Instagram profile research,
                     TikTok content extraction, and comprehensive hashtag strategies for all social networks.
                   </p>
 
                   <h3 className="text-lg font-bold mb-3 text-heading-accent">Creator Benefits</h3>
                   <p className="text-sm text-muted-foreground leading-relaxed">
-                    Save time with instant data extraction, avoid manual research, and discover new trending 
+                    Save time with instant data extraction, avoid manual research, and discover new trending
                     content patterns to boost your social media performance and audience growth.
                   </p>
                 </div>

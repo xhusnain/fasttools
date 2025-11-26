@@ -1,8 +1,7 @@
 import type { Metadata } from "next"
 import Link from "next/link"
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
-import { Button } from "@/components/ui/button"
-import { FileText, FileStack, Unlock, ArrowRight, Code, Globe, File, Minimize2, Image, RefreshCw, FileSignature, DollarSign } from "lucide-react"
+import { GCard } from "@/components/globalcomponents/gcard"
+import { FileText, FileStack, Unlock, Code, Globe, File, Minimize2, Image, RefreshCw, FileSignature, DollarSign } from "lucide-react"
 import { Breadcrumbs } from "@/components/breadcrumbs"
 import { AdSpace } from "@/components/ad-space"
 import { GHeader } from "@/components/globalcomponents/gheader"
@@ -342,12 +341,12 @@ export default function PDFToolsPage() {
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
       <div className="min-h-screen bg-background">
-      <div className="container mx-auto px-4 py-8">
-      <Breadcrumbs
-        items={[
-          { label: "PDF Tools", href: "/pdf-tools" },
-        ]}
-      />
+        <div className="container mx-auto px-4 py-8">
+          <Breadcrumbs
+            items={[
+              { label: "PDF Tools", href: "/pdf-tools" },
+            ]}
+          />
 
           <div className="max-w-7xl mx-auto">
             <div className="flex flex-col lg:flex-row gap-8">
@@ -367,37 +366,17 @@ export default function PDFToolsPage() {
                   <AdSpace slot="content" className="h-12 xs:h-16 sm:h-20 md:h-24 lg:h-28" />
                 </div>
 
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
-                  {pdfTools.map((tool, index) => (
-                    <Card
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
+                  {pdfTools.map((tool) => (
+                    <GCard
                       key={`pdf-tools-${tool.href}`}
-                      className="border border-border shadow-lg bg-card hover:shadow-xl transition-all duration-300 hover:-translate-y-1 hover:border-primary/50 animate-fade-in-up group"
-                      style={{ animationDelay: `${index * 100}ms` }}
-                    >
-                      <CardHeader className="p-3 pb-1">
-                        <div className="flex items-start gap-3">
-                          <div className="h-9 w-9 rounded-lg flex items-center justify-center shadow-sm group-hover:scale-105 transition-transform duration-300 flex-shrink-0 bg-primary/10 border border-primary/20">
-                            <tool.icon className="h-4 w-4 text-primary" />
-                          </div>
-                          <div className="flex-1 min-w-0">
-                            <CardTitle className="text-sm md:text-base font-semibold text-foreground mb-1 group-hover:text-primary transition-colors duration-300 line-clamp-2">{tool.title}</CardTitle>
-                            <CardDescription className="leading-relaxed text-[11px] md:text-xs text-muted-foreground line-clamp-2">
-                  {tool.description}
-                </CardDescription>
-                          </div>
-                        </div>
-              </CardHeader>
-                      <CardContent className="p-3 pt-0">
-                        <Button asChild className="w-full h-8 text-xs font-semibold shadow hover:shadow-md transition-all duration-300 bg-primary hover:bg-primary/90 text-white group-hover:bg-accent group-hover:text-foreground">
-                          <Link href={tool.href} className="flex items-center justify-center gap-1">
-                    Use Tool
-                            <ArrowRight className="h-3 w-3 group-hover:translate-x-0.5 transition-transform duration-300" />
-                  </Link>
-                </Button>
-              </CardContent>
-            </Card>
-          ))}
-        </div>
+                      title={tool.title}
+                      description={tool.description}
+                      href={tool.href}
+                      icon={tool.icon}
+                    />
+                  ))}
+                </div>
 
 
                 {/* Content Sections */}
@@ -658,49 +637,49 @@ export default function PDFToolsPage() {
                       <div>
                         <h3 className="text-lg font-bold mb-2 text-heading-accent">What are the best free PDF tools for document management?</h3>
                         <p className="text-sm text-muted-foreground leading-relaxed">Our PDF tools provide comprehensive document management capabilities including splitting large PDFs into smaller sections, merging multiple documents into one file, removing password protection, compressing file sizes, and converting PDFs to images. These tools are essential for organizing large document collections, creating custom document packages, and accessing password-protected files. All operations happen locally in your browser, ensuring complete privacy and security for sensitive documents.</p>
-          </div>
+                      </div>
 
-          <div>
+                      <div>
                         <h3 className="text-lg font-bold mb-2 text-heading-accent">How does PDF compression work and what makes it effective?</h3>
                         <p className="text-sm text-muted-foreground leading-relaxed">Our PDF compressor online uses advanced algorithms to reduce file size while maintaining document quality. It optimizes images, removes unnecessary data, and compresses text efficiently. The tool offers adjustable compression levels, allowing you to balance file size reduction with quality preservation. Professional users rely on this for email attachments, web uploads, and storage optimization. The algorithm works best with documents containing images and maintains readability across different compression settings.</p>
-              </div>
+                      </div>
 
                       <div>
                         <h3 className="text-lg font-bold mb-2 text-heading-accent">What's the best way to use PDF splitter and merger tools?</h3>
                         <p className="text-sm text-muted-foreground leading-relaxed">PDF splitter online helps break down lengthy documents into manageable sections, while PDF merger free combines related documents for easier distribution. The splitter is ideal for extracting specific pages or chapters, while the merger creates comprehensive documents from multiple sources. These tools are essential for organizing large document collections, creating custom packages, and managing document workflows. All operations preserve document formatting and maintain professional quality.</p>
-              </div>
+                      </div>
 
                       <div>
                         <h3 className="text-lg font-bold mb-2 text-heading-accent">How secure are PDF unlocker tools for sensitive documents?</h3>
                         <p className="text-sm text-muted-foreground leading-relaxed">Our PDF unlocker tool safely removes password protection while maintaining document integrity. The tool operates entirely within your browser, ensuring your files never leave your device. This client-side processing eliminates concerns about data breaches or unauthorized access. Users can confidently unlock sensitive business documents, legal files, and personal PDFs without compromising security. The unlocker preserves all document content and formatting while removing access restrictions.</p>
-              </div>
+                      </div>
 
                       <div>
                         <h3 className="text-lg font-bold mb-2 text-heading-accent">Are these PDF tools safe to use with confidential business documents?</h3>
                         <p className="text-sm text-muted-foreground leading-relaxed">Yes, all our PDF tools prioritize user privacy and security by operating entirely within your browser. Your files never leave your device, ensuring complete privacy and security. We don't store, track, or transmit any of your data, making our tools safe for sensitive documents, confidential business materials, and legal files. This client-side processing eliminates concerns about data breaches, unauthorized access, or unwanted data collection. Users can confidently process sensitive PDFs without worrying about privacy implications.</p>
-              </div>
+                      </div>
 
                       <div>
                         <h3 className="text-lg font-bold mb-2 text-heading-accent">How can I integrate PDF tools into my business workflow effectively?</h3>
                         <p className="text-sm text-muted-foreground leading-relaxed">Integrating PDF tools into your business workflow can significantly improve efficiency and productivity. Use PDF splitter online for document organization, PDF merger free for creating comprehensive reports, PDF unlocker tool for accessing locked files, PDF compressor online for optimizing file sizes, and PDF to image converter for content extraction. These tools work best when used consistently as part of established business processes. Set specific workflows for document processing, file management, and distribution. The key is to view these tools as enhancements to existing business activities rather than standalone solutions.</p>
-              </div>
+                      </div>
 
                       <div>
                         <h3 className="text-lg font-bold mb-2 text-heading-accent">What makes these PDF tools different from other document processing software?</h3>
                         <p className="text-sm text-muted-foreground leading-relaxed">Our PDF tools distinguish themselves through their focus on professional application, user experience, and privacy-first design. Unlike traditional software that requires downloads or cloud uploads, these tools operate entirely in your browser, ensuring complete privacy and instant access. They're designed with business use in mind, featuring outputs that are both high-quality and suitable for professional presentation. The tools prioritize speed and simplicity, delivering instant results without complex setup or learning curves. They're optimized for mobile use, ensuring consistent performance across all devices.</p>
-            </div>
+                      </div>
 
                       <div>
                         <h3 className="text-lg font-bold mb-2 text-heading-accent">Can PDF tools help with business growth and professional development?</h3>
                         <p className="text-sm text-muted-foreground leading-relaxed">Absolutely! PDF tools are invaluable for business growth, professional development, and competitive advantage. PDF splitter online and PDF merger free help organize and distribute business documents efficiently. PDF unlocker tool provides access to password-protected files. PDF compressor online optimizes file sizes for faster sharing. PDF to image converter extracts content for various uses. These tools provide professional-quality results that enhance business presentations, client communications, and document management. They help businesses maintain professional standards in document handling and contribute to overall business credibility and growth.</p>
-          </div>
+                      </div>
 
-          <div>
+                      <div>
                         <h3 className="text-lg font-bold mb-2 text-heading-accent">How do I choose the right PDF tool for my specific business needs?</h3>
                         <p className="text-sm text-muted-foreground leading-relaxed">Selecting the appropriate PDF tool depends on your business type, document needs, and specific use cases. Document-heavy businesses benefit most from PDF splitter online and PDF merger free utilities. Legal and financial services should prioritize PDF unlocker tool for accessing protected documents. Marketing and content teams need PDF compressor online for optimizing file sizes. Consider your primary business activities: are you managing documents, creating presentations, or distributing materials? Each tool excels in specific scenarios. PDF tools are essential for document-heavy businesses and professional services.</p>
-          </div>
+                      </div>
 
-          <div>
+                      <div>
                         <h3 className="text-lg font-bold mb-2 text-heading-accent">What are the most creative ways to use PDF tools beyond their basic functions?</h3>
                         <p className="text-sm text-muted-foreground leading-relaxed">PDF tools offer numerous creative applications beyond their primary purposes. Use PDF splitter online to extract specific sections for targeted distribution, PDF merger free to create custom document packages, PDF unlocker tool to access legacy documents, PDF compressor online to optimize files for web sharing, and PDF to image converter to extract graphics or create thumbnails. Content creators can use these tools to prepare materials for different platforms, organize research documents, or create presentation materials. The key is to think beyond traditional uses and explore how these tools can enhance various aspects of business operations and document management.</p>
                       </div>
@@ -731,7 +710,7 @@ export default function PDFToolsPage() {
               </div>
             </div>
           </div>
-      </div>
+        </div>
       </div>
     </>
   )

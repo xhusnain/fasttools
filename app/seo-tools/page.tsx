@@ -1,7 +1,6 @@
 import Link from "next/link"
-import { Button } from "@/components/ui/button"
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
-import { ArrowRight, Code, FileText, Hash, Lightbulb, Search, Globe, Calculator } from "lucide-react"
+import { GCard } from "@/components/globalcomponents/gcard"
+import { Code, FileText, Hash, Lightbulb, Search, Globe, Calculator } from "lucide-react"
 import { Breadcrumbs } from "@/components/breadcrumbs"
 import { AdSpace } from "@/components/ad-space"
 import { GHeader } from "@/components/globalcomponents/gheader"
@@ -105,37 +104,17 @@ export default function SEOToolsPage() {
                 <AdSpace slot="content" className="h-12 xs:h-16 sm:h-20 md:h-24 lg:h-28" />
               </div>
 
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
-            {tools.map((tool, index) => (
-              <Card
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
+                {tools.map((tool) => (
+                  <GCard
                     key={`seo-tools-${tool.href}`}
-                    className="border border-border shadow-lg bg-card hover:shadow-xl transition-all duration-300 hover:-translate-y-1 hover:border-primary/50 animate-fade-in-up group"
-                    style={{ animationDelay: `${index * 100}ms` }}
-                  >
-                    <CardHeader className="p-3 pb-1">
-                      <div className="flex items-start gap-3">
-                        <div className="h-9 w-9 rounded-lg flex items-center justify-center shadow-sm group-hover:scale-105 transition-transform duration-300 flex-shrink-0 bg-primary/10 border border-primary/20">
-                          <tool.icon className="h-4 w-4 text-primary" />
-                  </div>
-                        <div className="flex-1 min-w-0">
-                          <CardTitle className="text-sm md:text-base font-semibold text-foreground mb-1 group-hover:text-primary transition-colors duration-300 line-clamp-2">{tool.title}</CardTitle>
-                          <CardDescription className="leading-relaxed text-[11px] md:text-xs text-muted-foreground line-clamp-2">
-                    {tool.description}
-                  </CardDescription>
-                        </div>
-                      </div>
-                </CardHeader>
-                    <CardContent className="p-3 pt-0">
-                      <Button asChild className="w-full h-8 text-xs font-semibold shadow hover:shadow-md transition-all duration-300 bg-primary hover:bg-primary/90 text-white group-hover:bg-accent group-hover:text-foreground">
-                        <Link href={tool.href} className="flex items-center justify-center gap-1">
-                      Use Tool
-                          <ArrowRight className="h-3 w-3 group-hover:translate-x-0.5 transition-transform duration-300" />
-                    </Link>
-                  </Button>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
+                    title={tool.title}
+                    description={tool.description}
+                    href={tool.href}
+                    icon={tool.icon}
+                  />
+                ))}
+              </div>
 
 
               {/* Research and Use Cases */}
@@ -143,9 +122,9 @@ export default function SEOToolsPage() {
                 <div className="p-5 rounded-lg bg-card border border-border shadow">
                   <h2 className="text-xl font-bold mb-4 text-foreground">Our SEO Tool Technology</h2>
                   <p className="text-sm text-muted-foreground leading-relaxed mb-4">
-                    Our tools combine intuitive interfaces with sophisticated processing engines. We validate user inputs, 
-                    examine content structures, and implement specialized optimization techniques to deliver consistent, 
-                    reliable results. When real-time data is required (like trending hashtags), we synchronize information 
+                    Our tools combine intuitive interfaces with sophisticated processing engines. We validate user inputs,
+                    examine content structures, and implement specialized optimization techniques to deliver consistent,
+                    reliable results. When real-time data is required (like trending hashtags), we synchronize information
                     across consistent timeframes to prevent erratic outputs.
                   </p>
 
@@ -158,8 +137,8 @@ export default function SEOToolsPage() {
 
                   <h3 className="text-lg font-bold mb-3 text-heading-accent">Precision-Focused Design</h3>
                   <p className="text-sm text-muted-foreground leading-relaxed">
-                    Our calculations employ reliable formulas, appropriate character constraints, and SEO-focused accuracy. 
-                    Meta tags follow search engine standards; keyword analysis provides detailed frequency data and timestamps; 
+                    Our calculations employ reliable formulas, appropriate character constraints, and SEO-focused accuracy.
+                    Meta tags follow search engine standards; keyword analysis provides detailed frequency data and timestamps;
                     and all results remain reproducible with identical inputs.
                   </p>
                 </div>
@@ -172,22 +151,22 @@ export default function SEOToolsPage() {
 
                   <h3 className="text-lg font-bold mb-3 text-heading-accent">Streamlined Workflow</h3>
                   <p className="text-sm text-muted-foreground leading-relaxed mb-4">
-                    Leverage meta tag utilities to maintain consistent titles and descriptions throughout your website. Combine keyword 
-                    analysis with content reviews when enhancing existing pages. For content strategy, utilize blog title creators to 
+                    Leverage meta tag utilities to maintain consistent titles and descriptions throughout your website. Combine keyword
+                    analysis with content reviews when enhancing existing pages. For content strategy, utilize blog title creators to
                     develop multiple headline options for performance testing.
                   </p>
 
                   <h3 className="text-lg font-bold mb-3 text-heading-accent">Content Strategy</h3>
                   <p className="text-sm text-muted-foreground leading-relaxed mb-4">
                     Develop engaging titles using clear SEO principles, then verify hashtag relevance for social platforms.
-                    Lorem ipsum utilities assist in creating uniform placeholder content while keyword analysis guarantees ideal 
+                    Lorem ipsum utilities assist in creating uniform placeholder content while keyword analysis guarantees ideal
                     distribution without uncertainty.
                   </p>
 
                   <h3 className="text-lg font-bold mb-3 text-heading-accent">Multi-Platform Optimization</h3>
                   <p className="text-sm text-muted-foreground leading-relaxed">
-                    Professionals can efficiently verify content optimization and social media effectiveness. Content creators can 
-                    strategize across platforms using dependable meta tag and hashtag utilities. Developers can maintain content 
+                    Professionals can efficiently verify content optimization and social media effectiveness. Content creators can
+                    strategize across platforms using dependable meta tag and hashtag utilities. Developers can maintain content
                     uniformity across platforms with reliable SEO tools.
                   </p>
                 </div>
