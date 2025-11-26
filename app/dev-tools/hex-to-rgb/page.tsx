@@ -11,34 +11,13 @@ const baseMetadata = createMetadata({
   breadcrumbs: [
     { label: "Developer Tools", href: "/dev-tools" },
     { label: "Color Converter - Hex to RGB", href: "/dev-tools/hex-to-rgb" }
-  ]
-})
-
-export const metadata: Metadata = {
-  ...baseMetadata,
-  applicationName: "FastTools",
-  category: "Developer Tools",
-}
-
-// Structured data for SoftwareApplication and WebPage
-const jsonLd = [
-  {
-    "@context": "https://schema.org",
-    "@type": "SoftwareApplication",
+  ],
+  schemaOptions: {
     name: "Color Converter - Hex to RGB, RGB to Hex, HSL Converter",
     alternateName: "Best Free Online Color Code Converter",
     applicationCategory: "DeveloperApplication",
-    operatingSystem: "Web Browser",
-    url: "https://www.fasttools.store/dev-tools/hex-to-rgb",
-    description: "Free online color converter tool. Convert Hex to RGB, RGB to Hex, HSL, RGBA, HSLA instantly. Color picker, hex to decimal converter, alpha channel support. Best color code converter for web developers and designers with live preview and one-click copy.",
-    inLanguage: "en",
-    isAccessibleForFree: true,
-    offers: {
-      "@type": "Offer",
-      price: "0",
-      priceCurrency: "USD",
-      availability: "https://schema.org/InStock"
-    },
+    ratingValue: "4.9",
+    ratingCount: "3421",
     featureList: [
       "Hex to RGB conversion",
       "RGB to Hex conversion",
@@ -56,88 +35,16 @@ const jsonLd = [
       "Quick sample colors",
       "Input validation",
       "All color format outputs"
-    ],
-    author: {
-      "@type": "Organization",
-      name: "FastTools",
-      url: "https://www.fasttools.store"
-    },
-    publisher: {
-      "@type": "Organization",
-      name: "FastTools",
-      url: "https://www.fasttools.store",
-      logo: {
-        "@type": "ImageObject",
-        url: "https://www.fasttools.store/logo.svg",
-        width: 320,
-        height: 80
-      }
-    },
-    datePublished: "2024-01-01",
-    dateModified: new Date().toISOString().split('T')[0],
-    version: "2.0",
-    softwareVersion: "2.0",
-    downloadUrl: "https://www.fasttools.store/dev-tools/hex-to-rgb",
-    screenshot: "https://www.fasttools.store/og-image.svg",
-    keywords: "color converter, hex to rgb, rgb to hex, hsl to rgb, rgb to hsl, hex to hsl, hsl to hex, rgba converter, hsla converter, hex to decimal, color picker, css color converter, color code converter, hex to cmyk, rgb to cmyk, pantone converter",
-    aggregateRating: {
-      "@type": "AggregateRating",
-      ratingValue: "4.9",
-      ratingCount: "3421",
-      bestRating: "5",
-      worstRating: "1"
-    },
-    about: {
-      "@type": "Thing",
-      name: "Color Conversion & Color Code Conversion",
-      description: "Free online tools for converting between all major color formats: Hex, RGB, HSL, RGBA, HSLA, CMYK, Pantone with alpha channel support, hex to decimal, and color picker"
-    },
-    isPartOf: {
-      "@type": "WebSite",
-      name: "FastTools",
-      url: "https://www.fasttools.store"
-    }
-  },
-  {
-    "@context": "https://schema.org",
-    "@type": "WebPage",
-    "@id": "https://www.fasttools.store/dev-tools/hex-to-rgb#webpage",
-    url: "https://www.fasttools.store/dev-tools/hex-to-rgb",
-    name: "Color Converter - Hex to RGB, RGB to Hex, HSL Online Free",
-    description: "Free online color converter tool. Convert Hex to RGB, RGB to Hex, HSL, RGBA, HSLA instantly. Color picker, hex to decimal, alpha channel support. Best color code converter for web developers and designers.",
-    inLanguage: "en-US",
-    isPartOf: {
-      "@type": "WebSite",
-      "@id": "https://www.fasttools.store/#website",
-      url: "https://www.fasttools.store",
-      name: "FastTools"
-    },
-    breadcrumb: {
-      "@id": "https://www.fasttools.store/dev-tools/hex-to-rgb#breadcrumb"
-    },
-    about: [
-      {
-        "@type": "Thing",
-        name: "Hex to RGB Conversion"
-      },
-      {
-        "@type": "Thing",
-        name: "RGB to Hex Conversion"
-      },
-      {
-        "@type": "Thing",
-        name: "Color Code Converter"
-      },
-      {
-        "@type": "Thing",
-        name: "Hex to Decimal Converter"
-      }
-    ],
-    mainEntity: {
-      "@id": "https://www.fasttools.store/dev-tools/hex-to-rgb#softwareapplication"
-    }
+    ]
   }
-]
+})
+
+export const metadata: Metadata = {
+  ...baseMetadata,
+  applicationName: "FastTools",
+  category: "Developer Tools",
+}
+
 
 export default function HexToRGBPage() {
   const toolContent = {
@@ -364,32 +271,28 @@ export default function HexToRGBPage() {
   }
 
   return (
-    <>
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
-
-      <ToolPageLayout
-        header={{
-          title: "Color Converter - Hex to RGB, RGB to Hex, HSL Online Free",
-          description: "Convert Hex to RGB, RGB to Hex, HSL, RGBA, HSLA instantly with our free online color converter. Features color picker, hex to decimal converter, alpha channel support, live preview, and one-click copy. Best color code converter for web developers and designers. No signup required.",
-          titleSize: "medium",
-          descriptionSize: "small"
-        }}
-        breadcrumbs={[
-          { label: "Developer Tools", href: "/dev-tools" },
-          { label: "Color Converter - Hex to RGB", href: "/dev-tools/hex-to-rgb" }
-        ]}
-        toolComponent={
-          <div className="p-3 sm:p-4 md:p-5 rounded-lg bg-card border border-border shadow">
-            <HexToRGB />
-          </div>
-        }
-        toolContent={toolContent}
-        expectedMetadata={{
-          title: "Color Converter | Free Hex to RGB, RGB to Hex, HSL Tool",
-          description: "Free online color converter tool. Convert Hex to RGB, RGB to Hex, HSL, RGBA, HSLA instantly. Color picker, hex to decimal, alpha channel support. Best color code converter for web developers, designers. No signup required.",
-          path: "/dev-tools/hex-to-rgb"
-        }}
-      />
-    </>
+    <ToolPageLayout
+      header={{
+        title: "Color Converter - Hex to RGB, RGB to Hex, HSL Online Free",
+        description: "Convert Hex to RGB, RGB to Hex, HSL, RGBA, HSLA instantly with our free online color converter. Features color picker, hex to decimal converter, alpha channel support, live preview, and one-click copy. Best color code converter for web developers and designers. No signup required.",
+        titleSize: "medium",
+        descriptionSize: "small"
+      }}
+      breadcrumbs={[
+        { label: "Developer Tools", href: "/dev-tools" },
+        { label: "Color Converter - Hex to RGB", href: "/dev-tools/hex-to-rgb" }
+      ]}
+      toolComponent={
+        <div className="p-3 sm:p-4 md:p-5 rounded-lg bg-card border border-border shadow">
+          <HexToRGB />
+        </div>
+      }
+      toolContent={toolContent}
+      expectedMetadata={{
+        title: "Color Converter | Free Hex to RGB, RGB to Hex, HSL Tool",
+        description: "Free online color converter tool. Convert Hex to RGB, RGB to Hex, HSL, RGBA, HSLA instantly. Color picker, hex to decimal, alpha channel support. Best color code converter for web developers, designers. No signup required.",
+        path: "/dev-tools/hex-to-rgb"
+      }}
+    />
   )
 }
