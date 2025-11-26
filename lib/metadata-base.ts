@@ -42,6 +42,11 @@ export const globalViewport: Viewport = {
     colorScheme: "dark light",
 }
 
+export interface BreadcrumbItem {
+    label: string
+    href: string
+}
+
 export interface MetadataOptions {
     title: string
     description: string
@@ -61,6 +66,7 @@ export interface MetadataOptions {
     }>
     howToSteps?: string[]
     toolName?: string
+    breadcrumbs?: BreadcrumbItem[]
 }
 
 export interface MetadataWithSchema {
@@ -69,7 +75,7 @@ export interface MetadataWithSchema {
 }
 
 export function createMetadata(options: MetadataOptions): Metadata & { softwareSchema?: ReturnType<typeof createSoftwareAppSchema> } {
-    const { title, description, path, ogImageAlt, noIndex, ogTitle, ogDescription, twitterTitle, twitterDescription, twitterCreator, includeSchema = true, schemaOptions, faqs, howToSteps, toolName } = options
+    const { title, description, path, ogImageAlt, noIndex, ogTitle, ogDescription, twitterTitle, twitterDescription, twitterCreator, includeSchema = true, schemaOptions, faqs, howToSteps, toolName, breadcrumbs } = options
     const cleanPath = path.startsWith("/") ? path : `/${path}`
     const titleWithBranding = title === "FastTools" ? title : `${title} | FastTools`
     const fullTitle = addYearToTitle(titleWithBranding, cleanPath)
@@ -153,6 +159,10 @@ export function createMetadata(options: MetadataOptions): Metadata & { softwareS
                 text: step,
             })),
         })
+    }
+
+    if (breadcrumbs && breadcrumbs.length > 0) {
+        schemas.push(createBreadcrumbSchema(breadcrumbs, cleanPath))
     }
 
     const metadata: Metadata = {
@@ -248,6 +258,30 @@ export function getWebsiteSchema(searchUrl?: string) {
             target: searchUrl || `${BASE_URL}/?q={search_term_string}`,
             "query-input": "required name=search_term_string",
         },
+    }
+}
+
+export function createBreadcrumbSchema(breadcrumbs: BreadcrumbItem[], currentPath: string) {
+    const items = [
+        {
+            "@type": "ListItem",
+            position: 1,
+            name: "Home",
+            item: BASE_URL
+        },
+        ...breadcrumbs.map((crumb, index) => ({
+            "@type": "ListItem",
+            position: index + 2,
+            name: crumb.label,
+            item: crumb.href.startsWith('http') ? crumb.href : `${BASE_URL}${crumb.href.startsWith('/') ? crumb.href : `/${crumb.href}`}`
+        }))
+    ]
+
+    return {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "@id": `${getCanonicalUrl(currentPath)}#breadcrumb`,
+        itemListElement: items
     }
 }
 

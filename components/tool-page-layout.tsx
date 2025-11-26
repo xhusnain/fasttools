@@ -56,10 +56,35 @@ export function ToolPageLayout({
         })),
     }
 
+    // Generate BreadcrumbList schema if breadcrumbs are provided
+    const breadcrumbSchema = breadcrumbs && breadcrumbs.length > 0 ? {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        itemListElement: [
+            {
+                "@type": "ListItem",
+                position: 1,
+                name: "Home",
+                item: "https://www.fasttools.store"
+            },
+            ...breadcrumbs.map((crumb, index) => ({
+                "@type": "ListItem",
+                position: index + 2,
+                name: crumb.label,
+                item: crumb.href.startsWith('http')
+                    ? crumb.href
+                    : `https://www.fasttools.store${crumb.href.startsWith('/') ? crumb.href : `/${crumb.href}`}`
+            }))
+        ]
+    } : null
+
     return (
         <div className={`min-h-screen bg-background ${className}`}>
             <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
             <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(howToSchema) }} />
+            {breadcrumbSchema && (
+                <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
+            )}
 
             <div className="container mx-auto px-4 py-6 max-w-6xl">
                 {breadcrumbs && breadcrumbs.length > 0 && (
