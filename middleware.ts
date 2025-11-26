@@ -1,6 +1,7 @@
 import { NextResponse } from 'next/server'
 import type { NextRequest } from 'next/server'
 import { isGoneUrl } from './lib/gone'
+import { redirects } from './lib/redirects'
 import { env } from './lib/env'
 
 function isAllowedOrigin(origin: string | null): boolean {
@@ -86,6 +87,13 @@ export function middleware(request: NextRequest) {
             statusText: 'Gone',
             headers: { 'Content-Type': 'text/html' }
         })
+    }
+
+    // Check for 301 redirects
+    if (redirects.has(pathname)) {
+        const targetUrl = redirects.get(pathname)!
+        const url = new URL(targetUrl, request.url)
+        return NextResponse.redirect(url, 301)
     }
 
     const redirectResponse = handleRedirects(request)

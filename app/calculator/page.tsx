@@ -108,88 +108,11 @@ const tools = [
     color: "yellow"
   },
   {
-    title: "Loan Calculator",
-    description: "Calculate monthly loan payments, total interest, and amortization schedules. Perfect for car loans, personal loans, and mortgages.",
-    icon: DollarSign,
-    href: "/calculator/loan-calculator",
-    color: "indigo"
-  },
-  {
-    title: "Mortgage Calculator",
-    description: "Estimate monthly mortgage payments including principal, interest, taxes, and insurance. Plan your home purchase with confidence.",
-    icon: Home,
-    href: "/calculator/mortgage-calculator",
-    color: "teal"
-  },
-  {
-    title: "Tax Calculator",
-    description: "Calculate income tax, GST, or VAT. Supports inclusive and exclusive tax calculations for accurate financial planning.",
-    icon: FileText,
-    href: "/calculator/tax-calculator",
-    color: "emerald"
-  },
-  {
-    title: "Sales Tax Calculator",
-    description: "Calculate sales tax for any US state or custom rate. Get total costs instantly for budgeting and purchasing.",
-    icon: BadgePercent,
-    href: "/calculator/sales-tax-calculator",
-    color: "cyan"
-  },
-  {
-    title: "Discount Calculator",
-    description: "Calculate final prices after discounts. Compare multiple discount offers to find the best deal.",
-    icon: BadgeDollarSign,
-    href: "/calculator/discount-calculator",
-    color: "lime"
-  },
-  {
-    title: "Tip Calculator",
-    description: "Calculate tips per person and split bills easily. Perfect for dining out and shared expenses.",
-    icon: HandCoins,
-    href: "/calculator/tip-calculator",
-    color: "amber"
-  },
-  {
-    title: "Retirement Calculator",
-    description: "Plan your financial future. Estimate retirement savings growth and determine if you're on track for your goals.",
-    icon: PiggyBank,
-    href: "/calculator/retirement-calculator",
-    color: "sky"
-  },
-  {
-    title: "Investment Calculator",
-    description: "Project investment growth over time with compound interest. Compare different return rates and contribution strategies.",
-    icon: ChartLine,
-    href: "/calculator/investment-calculator",
-    color: "violet"
-  },
-  {
-    title: "Compound Interest Calculator",
-    description: "Visualize the power of compound interest. See how your money grows over time with reinvested earnings.",
-    icon: Coins,
-    href: "/calculator/compound-interest",
-    color: "fuchsia"
-  },
-  {
-    title: "Simple Interest Calculator",
-    description: "Calculate simple interest for loans or savings. Understand the basic cost of borrowing or return on savings.",
-    icon: PercentCircle,
-    href: "/calculator/simple-interest-calculator",
-    color: "rose"
-  },
-  {
     title: "GPA Calculator",
     description: "Calculate your Grade Point Average. Track academic performance and plan for target grades.",
     icon: BookOpen,
     href: "/calculator/gpa-calculator",
     color: "blue"
-  },
-  {
-    title: "Grade Calculator",
-    description: "Calculate weighted grades and final scores. Know exactly what you need on the final exam to pass.",
-    icon: Pencil,
-    href: "/calculator/grade-calculator",
-    color: "indigo"
   },
   {
     title: "Concrete Calculator",
@@ -204,13 +127,6 @@ const tools = [
     icon: Router,
     href: "/calculator/ip-subnet-calculator",
     color: "slate"
-  },
-  {
-    title: "Password Strength Calculator",
-    description: "Test password security and entropy. Ensure your accounts are protected with strong, unguessable passwords.",
-    icon: ShieldCheck,
-    href: "/calculator/password-strength",
-    color: "zinc"
   },
   {
     title: "Age Calculator",
@@ -234,27 +150,6 @@ const tools = [
     color: "rose"
   },
   {
-    title: "Ovulation Calculator",
-    description: "Track ovulation cycles and fertility windows. Maximize chances of conception with precise timing.",
-    icon: CalendarClock,
-    href: "/calculator/ovulation-calculator",
-    color: "red"
-  },
-  {
-    title: "Period Calculator",
-    description: "Track menstrual cycles and predict next periods. Monitor cycle health and regularity.",
-    icon: CalendarDays,
-    href: "/calculator/period-calculator",
-    color: "rose"
-  },
-  {
-    title: "Due Date Calculator",
-    description: "Calculate pregnancy due date with high accuracy. Adjust for cycle length and other factors.",
-    icon: CalendarCheck,
-    href: "/calculator/due-date-calculator",
-    color: "pink"
-  },
-  {
     title: "Fraction Calculator",
     description: "Add, subtract, multiply, and divide fractions. Simplifies results and converts to decimals.",
     icon: Binary,
@@ -276,33 +171,13 @@ const tools = [
     color: "indigo"
   },
   {
-    title: "Volume Calculator",
-    description: "Calculate volume for various 3D shapes. Supports cubes, cylinders, spheres, and more.",
-    icon: Cuboid,
-    href: "/calculator/volume-calculator",
-    color: "cyan"
-  },
-  {
-    title: "Speed Calculator",
-    description: "Calculate speed, distance, or time. Essential for physics problems and travel planning.",
-    icon: Gauge,
-    href: "/calculator/speed-calculator",
-    color: "amber"
-  },
-  {
     title: "Pace Calculator",
     description: "Calculate running or cycling pace. Plan training targets and race strategies.",
     icon: Footprints,
     href: "/calculator/pace-calculator",
     color: "emerald"
   },
-  {
-    title: "Amortization Calculator",
-    description: "Generate detailed amortization schedules for loans. See principal and interest breakdown for each payment period.",
-    icon: ScrollText,
-    href: "/calculator/amortization-calculator",
-    color: "blue"
-  },
+
   {
     title: "Body Fat Calculator",
     description: "Estimate body fat percentage using various measurement methods. Track fitness progress beyond weight alone.",
@@ -318,54 +193,11 @@ const tools = [
     color: "teal"
   },
   {
-    title: "Finance Calculator",
-    description: "Comprehensive financial calculations for investments, loans, and savings. All-in-one financial planning tool.",
-    icon: Landmark,
-    href: "/calculator/finance-calculator",
-    color: "emerald"
-  },
-  {
-    title: "Inflation Calculator",
-    description: "Calculate the impact of inflation on purchasing power over time. Understand real value of money.",
-    icon: TrendingDown,
-    href: "/calculator/inflation-calculator",
-    color: "red"
-  },
-  {
-    title: "Interest Rate Calculator",
-    description: "Calculate interest rates for loans and investments. Determine APR, APY, and effective rates.",
-    icon: Banknote,
-    href: "/calculator/interest-rate-calculator",
-    color: "indigo"
-  },
-  {
     title: "Love Calculator",
     description: "Fun compatibility calculator based on names. Entertainment tool for calculating love percentages.",
     icon: Heart,
     href: "/calculator/love-calculator",
     color: "pink"
-  },
-  {
-    title: "Payment Calculator",
-    description: "Calculate payment amounts for various loan types. Plan monthly budgets with accurate payment estimates.",
-    icon: CreditCard,
-    href: "/calculator/payment-calculator",
-    color: "cyan"
-  },
-  {
-    title: "Salary Calculator",
-    description: "Convert between hourly, weekly, monthly, and annual salary. Calculate take-home pay after taxes.",
-    icon: Banknote,
-    href: "/calculator/salary-calculator",
-    color: "lime"
-  },
-
-  {
-    title: "Data Transfer Calculator",
-    description: "Estimate file upload and download times. Plan data transfers based on internet speed.",
-    icon: Database,
-    href: "/calculator/data-transfer-calculator",
-    color: "blue"
   }
 ]
 

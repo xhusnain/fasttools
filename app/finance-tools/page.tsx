@@ -1,7 +1,7 @@
 import Link from "next/link"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
-import { ArrowRight, FileText, DollarSign, Percent, Calculator, Target, TrendingUp, Users, CreditCard, Code, Globe } from "lucide-react"
+import { ArrowRight, FileText, DollarSign, Percent, Calculator, Target, TrendingUp, Users, CreditCard, Code, Globe, Home, BadgePercent, PiggyBank, ChartLine, Coins, ScrollText, Landmark, TrendingDown, Banknote } from "lucide-react"
 import { Breadcrumbs } from "@/components/breadcrumbs"
 import { AdSpace } from "@/components/ad-space"
 import type { Metadata } from "next"
@@ -10,37 +10,37 @@ export const metadata: Metadata = {
   title: "Free Online Finance Tools – Budget, Investment & Expense Calculators",
   description:
     "Free finance tools: budget calculators, savings trackers, loan calculators, investment planners. Perfect for financial planning.",
-  keywords:[
-      "finance tools",
-      "financial management tools",
-      "personal finance tools",
-      "financial planning tools",
-      "online finance tools",
-      "AI finance tools",
-      "budget calculator",
-      "loan calculator",
-      "savings calculator",
-      "investment calculator",
-      "expense tracker",
-      "finance tools for business",
-      "financial analysis tools",
-      "free finance tools",
-      "finance calculator online",
-      "money management tools",
-      "budget planner",
-      "cash flow calculator",
-      "income tax calculator",
-      "retirement calculator",
-      "AI financial tools 2025",
-      "business finance tools",
-      "accounting tools online",
-      "financial forecasting tools",
-      "financial software for small business",
-      "top finance apps 2025",
-      "digital finance tools",
-      "finance automation tools",
-      "financial management software",
-      "finance dashboard tools"
+  keywords: [
+    "finance tools",
+    "financial management tools",
+    "personal finance tools",
+    "financial planning tools",
+    "online finance tools",
+    "AI finance tools",
+    "budget calculator",
+    "loan calculator",
+    "savings calculator",
+    "investment calculator",
+    "expense tracker",
+    "finance tools for business",
+    "financial analysis tools",
+    "free finance tools",
+    "finance calculator online",
+    "money management tools",
+    "budget planner",
+    "cash flow calculator",
+    "income tax calculator",
+    "retirement calculator",
+    "AI financial tools 2025",
+    "business finance tools",
+    "accounting tools online",
+    "financial forecasting tools",
+    "financial software for small business",
+    "top finance apps 2025",
+    "digital finance tools",
+    "finance automation tools",
+    "financial management software",
+    "finance dashboard tools"
   ],
   openGraph: {
     title: "Free Online Finance Tools – Budget, Investment & Expense Calculators",
@@ -169,19 +169,110 @@ export default function FinanceToolsPage() {
       href: "/finance-tools/credit-card-payoff",
       popular: false,
     },
+    {
+      title: "Loan Calculator",
+      description: "Calculate monthly loan payments, total interest, and amortization schedules. Perfect for car loans, personal loans, and mortgages.",
+      icon: DollarSign,
+      href: "/finance-tools/loan-calculator",
+      popular: true,
+    },
+    {
+      title: "Mortgage Calculator",
+      description: "Estimate monthly mortgage payments including principal, interest, taxes, and insurance. Plan your home purchase with confidence.",
+      icon: Home,
+      href: "/finance-tools/mortgage-calculator",
+      popular: true,
+    },
+    {
+      title: "Tax Calculator",
+      description: "Calculate income tax, GST, or VAT. Supports inclusive and exclusive tax calculations for accurate financial planning.",
+      icon: FileText,
+      href: "/finance-tools/tax-calculator",
+      popular: false,
+    },
+    {
+      title: "Sales Tax Calculator",
+      description: "Calculate sales tax for any US state or custom rate. Get total costs instantly for budgeting and purchasing.",
+      icon: BadgePercent,
+      href: "/finance-tools/sales-tax-calculator",
+      popular: false,
+    },
+    {
+      title: "Retirement Calculator",
+      description: "Plan your financial future. Estimate retirement savings growth and determine if you're on track for your goals.",
+      icon: PiggyBank,
+      href: "/finance-tools/retirement-calculator",
+      popular: true,
+    },
+    {
+      title: "Investment Calculator",
+      description: "Project investment growth over time with compound interest. Compare different return rates and contribution strategies.",
+      icon: ChartLine,
+      href: "/finance-tools/investment-calculator",
+      popular: false,
+    },
+    {
+      title: "Compound Interest Calculator",
+      description: "Visualize the power of compound interest. See how your money grows over time with reinvested earnings.",
+      icon: Coins,
+      href: "/finance-tools/compound-interest",
+      popular: true,
+    },
+    {
+      title: "Amortization Calculator",
+      description: "Generate detailed amortization schedules for loans. See principal and interest breakdown for each payment period.",
+      icon: ScrollText,
+      href: "/finance-tools/amortization-calculator",
+      popular: false,
+    },
+    {
+      title: "Finance Calculator",
+      description: "Comprehensive financial calculations for investments, loans, and savings. All-in-one financial planning tool.",
+      icon: Landmark,
+      href: "/finance-tools/finance-calculator",
+      popular: true,
+    },
+    {
+      title: "Inflation Calculator",
+      description: "Calculate the impact of inflation on purchasing power over time. Understand real value of money.",
+      icon: TrendingDown,
+      href: "/finance-tools/inflation-calculator",
+      popular: false,
+    },
+    {
+      title: "Interest Rate Calculator",
+      description: "Calculate interest rates for loans and investments. Determine APR, APY, and effective rates.",
+      icon: Banknote,
+      href: "/finance-tools/interest-rate-calculator",
+      popular: false,
+    },
+    {
+      title: "Payment Calculator",
+      description: "Calculate payment amounts for various loan types. Plan monthly budgets with accurate payment estimates.",
+      icon: CreditCard,
+      href: "/finance-tools/payment-calculator",
+      popular: false,
+    },
+    {
+      title: "Salary Calculator",
+      description: "Convert between hourly, weekly, monthly, and annual salary. Calculate take-home pay after taxes.",
+      icon: Banknote,
+      href: "/finance-tools/salary-calculator",
+      popular: true,
+    },
   ]
 
   return (
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
       <div className="min-h-screen bg-background">
-      <div className="container mx-auto px-4 py-8">
-      <Breadcrumbs
-        items={[
-          { label: "Home", href: "/" },
-          { label: "Finance Tools", href: "/finance-tools" },
-        ]}
-      />
+        <div className="container mx-auto px-4 py-8">
+          <Breadcrumbs
+            items={[
+              { label: "Home", href: "/" },
+              { label: "Finance Tools", href: "/finance-tools" },
+            ]}
+          />
 
           <div className="max-w-7xl mx-auto">
             <div className="flex flex-col lg:flex-row gap-8">
@@ -192,7 +283,7 @@ export default function FinanceToolsPage() {
                     <Code className="h-4 w-4 animate-pulse" />
                     <span>Finance & Business Tools</span>
                     <div className="h-2 w-2 bg-secondary-accent rounded-full animate-ping"></div>
-        </div>
+                  </div>
 
                   <h1 className="text-3xl md:text-4xl lg:text-5xl font-extrabold text-foreground leading-tight">
                     Finance Tools & Calculators
@@ -220,7 +311,7 @@ export default function FinanceToolsPage() {
                       <span className="text-secondary-accent font-medium text-sm">Business Ready</span>
                     </div>
                   </div>
-        </div>
+                </div>
 
                 {/* Mobile/Tablet Ad - Top of Page */}
                 <div className="block xl:hidden mb-6">
@@ -245,30 +336,30 @@ export default function FinanceToolsPage() {
                           <div className="flex-1 min-w-0">
                             <CardTitle className="text-sm md:text-base font-semibold text-card-foreground mb-1 group-hover:text-primary transition-colors duration-300 line-clamp-2">{tool.title}</CardTitle>
                             <CardDescription className="leading-relaxed text-[11px] md:text-xs text-muted-foreground line-clamp-2">
-                  {tool.description}
-                </CardDescription>
+                              {tool.description}
+                            </CardDescription>
                           </div>
                         </div>
-              </CardHeader>
+                      </CardHeader>
                       <CardContent className="p-3 pt-0">
                         <Button asChild className="w-full h-8 text-xs font-semibold shadow hover:shadow-md transition-all duration-300 bg-primary hover:bg-primary/90 text-white group-hover:bg-accent group-hover:text-white">
                           <Link href={tool.href} className="flex items-center justify-center gap-1">
-                    Use Tool
+                            Use Tool
                             <ArrowRight className="h-3 w-3 group-hover:translate-x-0.5 transition-transform duration-300" />
-                  </Link>
-                </Button>
-              </CardContent>
-            </Card>
-          ))}
-        </div>
+                          </Link>
+                        </Button>
+                      </CardContent>
+                    </Card>
+                  ))}
+                </div>
 
                 {/* Mobile/Tablet Ad - After cards */}
                 <div className="block xl:hidden my-8">
                   <div className="text-center mb-2">
                     <span className="text-xs text-muted-foreground font-medium">Advertisement</span>
-        </div>
+                  </div>
                   <AdSpace slot="content" className="w-full h-32 border border-border rounded-xl shadow-sm bg-card" />
-          </div>
+                </div>
 
                 {/* Content Sections */}
                 <div className="space-y-5 animate-fade-in-up animation-delay-200">
@@ -318,54 +409,54 @@ export default function FinanceToolsPage() {
                       <div>
                         <h3 className="text-lg font-bold mb-2 text-card-foreground">What are the best free invoice generators and PayPal fee calculators?</h3>
                         <p className="text-sm text-muted-foreground leading-relaxed">Our free invoice generator creates professional business invoices with automatic tax calculations, itemized billing, and PDF export capabilities. The PayPal fee calculator accurately computes transaction fees (2.9% + $0.30 domestic, 3.9% + fixed fee international) helping businesses set proper pricing and maintain profit margins. These tools are essential for freelancers, small businesses, and e-commerce operations requiring accurate financial calculations without expensive software. The invoice generator includes customizable templates, client management features, and professional formatting suitable for business use. The PayPal fee calculator handles complex scenarios including currency conversion fees, merchant rates, and bulk transaction discounts, ensuring accurate profit calculations across all payment methods.</p>
-          </div>
+                      </div>
 
-          <div>
+                      <div>
                         <h3 className="text-lg font-bold mb-2 text-card-foreground">How do invoice generators work and what makes them professional?</h3>
                         <p className="text-sm text-muted-foreground leading-relaxed">Invoice generators use structured templates and automated calculations to create professional invoices that meet business standards. They typically include fields for client information, itemized services or products, tax calculations, discounts, and payment terms. Professional invoice generators ensure compliance with accounting standards, provide proper formatting for business records, and include all necessary legal information. The tools calculate totals automatically, apply taxes correctly, and generate invoices in formats suitable for business use. They're designed to save time while maintaining professional appearance and accuracy. Many include features like invoice numbering, due date tracking, and payment status management to streamline business operations.</p>
-              </div>
+                      </div>
 
                       <div>
                         <h3 className="text-lg font-bold mb-2 text-card-foreground">What's the best way to use PayPal fee calculators for business?</h3>
                         <p className="text-sm text-muted-foreground leading-relaxed">PayPal fee calculators are essential for online businesses to understand true transaction costs and set appropriate pricing. Use them to determine net amounts after fees, calculate required charges to achieve target amounts, and compare different payment processing options. They're particularly valuable for freelancers setting project rates, e-commerce businesses pricing products, and service providers determining service costs. The calculators help businesses maintain profit margins by accounting for transaction fees in their pricing strategies. They're also useful for international transactions where fees vary by country and currency. Regular use helps businesses optimize their payment processing and make informed decisions about pricing and payment methods.</p>
-              </div>
+                      </div>
 
                       <div>
                         <h3 className="text-lg font-bold mb-2 text-card-foreground">How can retirement planners help with long-term financial planning?</h3>
                         <p className="text-sm text-muted-foreground leading-relaxed">Retirement planners use compound interest calculations and financial projections to help individuals understand how their savings will grow over time. They help users set realistic retirement goals, determine required monthly contributions, and visualize the impact of different investment strategies. These tools are particularly valuable for understanding the power of compound interest, comparing different savings scenarios, and making informed decisions about retirement planning. They help users see how starting early, increasing contributions, or adjusting investment returns affects long-term outcomes. The planners provide concrete numbers that make retirement planning more tangible and actionable. They're essential for anyone serious about financial security and retirement preparation.</p>
-              </div>
+                      </div>
 
                       <div>
                         <h3 className="text-lg font-bold mb-2 text-card-foreground">Why are savings goal trackers essential for financial success?</h3>
                         <p className="text-sm text-muted-foreground leading-relaxed">Savings goal trackers provide motivation, accountability, and clear timelines for achieving financial objectives. They help users break down large financial goals into manageable milestones, track progress over time, and adjust strategies as needed. These tools are particularly valuable for planning major purchases, building emergency funds, saving for vacations, or preparing for life events. They provide visual progress indicators that maintain motivation and help users stay focused on their financial goals. The trackers also help users understand how different contribution amounts and timelines affect goal achievement. For businesses, they're useful for planning capital expenditures, building cash reserves, or preparing for growth investments.</p>
-              </div>
+                      </div>
 
                       <div>
                         <h3 className="text-lg font-bold mb-2 text-card-foreground">Are these tools safe to use and do they protect my privacy?</h3>
                         <p className="text-sm text-muted-foreground leading-relaxed">Our finance tools prioritize user privacy and security by operating entirely within your browser. All calculations, invoice generation, and financial analyses happen locally on your device, meaning no personal or financial data is transmitted to external servers. This client-side processing ensures that your business information, financial details, and client data remain completely private. The tools don't require account creation, email addresses, or any personal information beyond what you choose to input. This approach eliminates concerns about data breaches, unauthorized access, or unwanted marketing communications. Users can confidently use these tools for sensitive business and personal financial tasks without worrying about privacy implications. The local processing also ensures faster performance and eliminates dependency on internet connectivity for core functionality.</p>
-              </div>
+                      </div>
 
                       <div>
                         <h3 className="text-lg font-bold mb-2 text-card-foreground">How can I integrate these tools into my business workflow effectively?</h3>
                         <p className="text-sm text-muted-foreground leading-relaxed">Integrating finance tools into your business workflow can significantly improve efficiency and accuracy. Use invoice generators during client onboarding and project completion, employ fee calculators when setting project rates or pricing products, and utilize savings trackers for business financial planning. These tools work best when used consistently as part of established business processes rather than randomly. Set specific times for invoice generation, use calculators during pricing decisions, and incorporate savings tracking into regular financial reviews. The key is to view these tools as enhancements to existing business activities rather than standalone solutions. They can serve as efficiency boosters, accuracy enhancers, and professional presentation aids when used strategically in your business operations.</p>
-              </div>
+                      </div>
 
                       <div>
                         <h3 className="text-lg font-bold mb-2 text-card-foreground">What makes these tools different from other financial calculators?</h3>
                         <p className="text-sm text-muted-foreground leading-relaxed">Our finance tools distinguish themselves through their focus on professional application, user experience, and business-ready outputs. Unlike traditional calculators that prioritize only functionality, these tools combine accuracy with professional formatting and business-appropriate results. They're designed with business use in mind, featuring outputs that are both accurate and suitable for professional presentation. The tools prioritize speed and simplicity, delivering instant results without complex setup or learning curves. They're optimized for mobile use, ensuring consistent performance across all devices. The combination of privacy-focused design, professional formatting, and practical utility creates a unique user experience that serves both personal and business financial needs. Each tool is crafted to provide maximum value with minimal effort, making them accessible to users of all technical skill levels.</p>
-            </div>
+                      </div>
 
                       <div>
                         <h3 className="text-lg font-bold mb-2 text-card-foreground">Can these tools help with business growth and financial planning?</h3>
                         <p className="text-sm text-muted-foreground leading-relaxed">Absolutely! These tools are invaluable for business growth, financial planning, and strategic decision-making. Invoice generators help maintain professional client relationships and ensure timely payments. Fee calculators optimize pricing strategies and improve profit margins. Savings trackers help businesses plan for growth investments and maintain financial stability. Retirement planners assist business owners in personal financial planning while building their companies. The tools provide data-driven insights that help businesses make informed decisions about pricing, investments, and financial strategies. They also help businesses maintain professional standards in financial communications and record-keeping. The tools generate professional outputs that can be used in business presentations, client communications, and financial planning documents.</p>
-          </div>
+                      </div>
 
-          <div>
+                      <div>
                         <h3 className="text-lg font-bold mb-2 text-card-foreground">How do I choose the right finance tool for my specific business needs?</h3>
                         <p className="text-sm text-muted-foreground leading-relaxed">Selecting the appropriate finance tool depends on your business type, financial goals, and specific use cases. For service-based businesses and freelancers, invoice generators and fee calculators are essential for client management and pricing optimization. E-commerce businesses benefit most from fee calculators for payment processing and discount calculators for sales strategies. Financial planning and investment businesses should prioritize retirement planners and savings trackers for client consultations. Consider your primary business activities: are you providing services, selling products, managing investments, or planning for growth? Each tool excels in specific scenarios. Invoice generators work best for service providers and consultants. Fee calculators are ideal for online businesses and payment processing. Savings trackers serve businesses planning for growth and capital investments. Retirement planners are essential for financial advisors and long-term planning.</p>
-          </div>
+                      </div>
 
-          <div>
+                      <div>
                         <h3 className="text-lg font-bold mb-2 text-card-foreground">What are the most creative ways to use these tools beyond their basic functions?</h3>
                         <p className="text-sm text-muted-foreground leading-relaxed">These tools offer numerous creative applications beyond their primary purposes. Use invoice generators as templates for proposals, contracts, or project estimates. Fee calculators can analyze competitor pricing strategies, evaluate different business models, or optimize subscription pricing. Savings trackers work for tracking business metrics, monitoring project budgets, or planning product launches. Retirement planners can model business growth scenarios, investment returns, or long-term financial projections. Content creators can use these tools to provide financial education content, create business tutorials, or develop financial planning resources. Teachers can incorporate these tools into business education, financial literacy lessons, or entrepreneurship courses. The key is to think beyond traditional uses and explore how these tools can enhance various aspects of business operations and financial management.</p>
                       </div>
@@ -410,10 +501,10 @@ export default function FinanceToolsPage() {
                     <AdSpace slot="sidebar" className="w-full h-80 border border-border rounded-xl shadow-sm bg-card" />
                   </div>
                 </div>
+              </div>
+            </div>
           </div>
         </div>
-        </div>
-      </div>
       </div>
     </>
   )

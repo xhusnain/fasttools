@@ -1,0 +1,15 @@
+export const redirects = new Map([
+    ['/calculator/amortization-calculator', '/finance-tools/amortization-calculator'],
+    ['/calculator/compound-interest', '/finance-tools/compound-interest'],
+    ['/calculator/finance-calculator', '/finance-tools/finance-calculator'],
+    ['/calculator/inflation-calculator', '/finance-tools/inflation-calculator'],
+    ['/calculator/interest-rate-calculator', '/finance-tools/interest-rate-calculator'],
+    ['/calculator/investment-calculator', '/finance-tools/investment-calculator'],
+    ['/calculator/loan-calculator', '/finance-tools/loan-calculator'],
+    ['/calculator/mortgage-calculator', '/finance-tools/mortgage-calculator'],
+    ['/calculator/payment-calculator', '/finance-tools/payment-calculator'],
+    ['/calculator/retirement-calculator', '/finance-tools/retirement-calculator'],
+    ['/calculator/salary-calculator', '/finance-tools/salary-calculator'],
+    ['/calculator/sales-tax-calculator', '/finance-tools/sales-tax-calculator'],
+    ['/calculator/tax-calculator', '/finance-tools/tax-calculator'],
+])
