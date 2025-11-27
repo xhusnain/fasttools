@@ -666,7 +666,7 @@ const toolConfig = createToolConfig({
       Business & Finance: MarketMover, WealthWisdom, The Startup Blueprint, FiscalFocus, MoneyMindset [Name], VentureVision, ProfitPath, The Strategy Room.
 
       How to Change Your YouTube Channel Name (Step-by-Step)
-      Already have a channel but hate the name? Don't worry, you can change it. Here is exactly how to change YouTube channel name on desktop and mobile:
+      Already have a channel but dislike the name? Don't worry, you can change it. Here is exactly how to change YouTube channel name on desktop and mobile:
       On Desktop (YouTube Studio):
       1. Sign in to YouTube Studio.
       2. From the left menu, select Customization.
