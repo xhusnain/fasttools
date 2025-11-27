@@ -2,10 +2,10 @@
 
 import { useState } from "react"
 import { Button } from "@/components/ui/button"
-import { Input } from "@/components/ui/input"
+import { Textarea } from "@/components/ui/textarea"
 import { Label } from "@/components/ui/label"
 import { Card } from "@/components/ui/card"
-import { Search, CheckCircle, XCircle, Lightbulb, Copy, ExternalLink, Users, Video, AlertCircle } from "lucide-react"
+import { Search, CheckCircle, XCircle, Lightbulb, Copy, ExternalLink, Users, Video, AlertCircle, Upload } from "lucide-react"
 import { LoadingSpinner } from "@/components/loading-spinner"
 
 interface ChannelCheckResult {
@@ -47,6 +47,29 @@ export function YoutubeChannelChecker() {
     return suggestions.slice(0, 8)
   }
 
+  const handleFileUpload = (event: React.ChangeEvent<HTMLInputElement>) => {
+    const file = event.target.files?.[0]
+    if (!file) return
+
+    const reader = new FileReader()
+    reader.onload = (e) => {
+      const content = e.target?.result as string
+      if (!content) return
+
+      // Split by newlines or commas and clean up
+      const names = content
+        .split(/[\n,]/)
+        .map(name => name.trim())
+        .filter(name => name.length > 0)
+        .join(', ')
+
+      setChannelNames(prev => prev ? `${prev}, ${names}` : names)
+    }
+    reader.readAsText(file)
+    // Reset input
+    event.target.value = ''
+  }
+
   const handleCheck = async () => {
     if (!channelNames.trim()) return
 
@@ -58,20 +81,14 @@ export function YoutubeChannelChecker() {
     setCheckingProgress(null)
 
     try {
-      // Parse comma-separated channel names
+      // Parse comma-separated or newline-separated channel names
       const namesArray = channelNames
-        .split(',')
+        .split(/[\n,]/)
         .map(name => name.trim())
         .filter(name => name.length > 0)
 
       if (namesArray.length === 0) {
         setError('Please enter at least one channel name')
-        setLoading(false)
-        return
-      }
-
-      if (namesArray.length > 10) {
-        setError('Maximum 10 channel names allowed per request')
         setLoading(false)
         return
       }
@@ -87,7 +104,7 @@ export function YoutubeChannelChecker() {
       // Check each channel name with 15-second delay
       for (let i = 0; i < namesArray.length; i++) {
         const currentName = namesArray[i]
-        
+
         // Update progress
         setCheckingProgress({
           current: i + 1,
@@ -99,11 +116,11 @@ export function YoutubeChannelChecker() {
         // Start countdown timer
         let countdown = 15
         setTimeRemaining(countdown)
-        
+
         const timer = setInterval(() => {
           countdown--
           setTimeRemaining(countdown)
-          
+
           if (countdown <= 0) {
             clearInterval(timer)
           }
@@ -186,19 +203,36 @@ export function YoutubeChannelChecker() {
       <Card className="p-6 bg-card border-border shadow-sm">
         <div className="space-y-4">
           <div>
-            <Label htmlFor="channel-names" className="text-sm font-medium text-foreground">
-              Channel Names (comma-separated)
-            </Label>
-            <Input
+            <div className="flex items-center justify-between mb-2">
+              <Label htmlFor="channel-names" className="text-sm font-medium text-foreground">
+                Channel Names
+              </Label>
+              <div className="relative">
+                <input
+                  type="file"
+                  id="file-upload"
+                  className="hidden"
+                  accept=".txt,.csv"
+                  onChange={handleFileUpload}
+                />
+                <Label
+                  htmlFor="file-upload"
+                  className="flex items-center gap-1.5 text-xs text-primary hover:text-primary/80 cursor-pointer transition-colors"
+                >
+                  <Upload className="h-3.5 w-3.5" />
+                  Import from File
+                </Label>
+              </div>
+            </div>
+            <Textarea
               id="channel-names"
-              type="text"
-              placeholder="Enter channel names separated by commas (e.g., MyChannel, TechReviews, GamingTV)"
+              placeholder="Enter channel names separated by commas or new lines (e.g., MyChannel, TechReviews, GamingTV)"
               value={channelNames}
               onChange={(e) => setChannelNames(e.target.value)}
-              className="mt-2 h-11 text-base"
+              className="min-h-[150px] text-base resize-y"
             />
             <p className="text-xs text-muted-foreground mt-1">
-              Enter multiple channel names separated by commas. Maximum 10 names per check.
+              Enter multiple channel names separated by commas or new lines. No limit on the number of checks.
             </p>
           </div>
 
@@ -232,7 +266,7 @@ export function YoutubeChannelChecker() {
                     {checkingProgress.currentName}
                   </span>
                 </div>
-                
+
                 {timeRemaining > 0 && (
                   <div className="space-y-2">
                     <div className="flex items-center justify-between text-sm">
@@ -242,7 +276,7 @@ export function YoutubeChannelChecker() {
                       </span>
                     </div>
                     <div className="w-full bg-muted rounded-full h-2">
-                      <div 
+                      <div
                         className="bg-primary h-2 rounded-full transition-all duration-1000"
                         style={{ width: `${((15 - timeRemaining) / 15) * 100}%` }}
                       />
@@ -272,9 +306,8 @@ export function YoutubeChannelChecker() {
           <h3 className="text-lg font-semibold text-foreground">Check Results</h3>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
             {results.map((result, index) => (
-            <Card key={index} className={`p-4 bg-card border-border shadow-sm animate-fade-in ${
-              currentCheckingIndex === index ? 'ring-2 ring-primary bg-muted/30' : ''
-            }`}>
+              <Card key={index} className={`p-4 bg-card border-border shadow-sm animate-fade-in ${currentCheckingIndex === index ? 'ring-2 ring-primary bg-muted/30' : ''
+                }`}>
                 <div className="space-y-3">
                   {/* Status Icon and Channel Name */}
                   <div className="flex items-center gap-2">
