@@ -36,8 +36,8 @@ export const globalViewport: Viewport = {
     maximumScale: 5,
     viewportFit: "cover",
     themeColor: [
-        { media: "(prefers-color-scheme: light)", color: "#3D348B" },
-        { media: "(prefers-color-scheme: dark)", color: "#3D348B" },
+        { media: "(prefers-color-scheme: light)", color: "#ffffff" },
+        { media: "(prefers-color-scheme: dark)", color: "#110f0f" },
     ],
     colorScheme: "dark light",
 }
@@ -184,6 +184,31 @@ export function createMetadata(options: MetadataOptions): Metadata & { softwareS
                 follow: true,
             },
         verification: VERIFICATION,
+        icons: {
+            icon: [
+                { url: "/favicon.ico" },
+                { url: "/favicon.svg", type: "image/svg+xml" },
+                { url: "/favicon-96x96.png", type: "image/png", sizes: "96x96" }
+            ],
+            shortcut: "/favicon.ico",
+            apple: [
+                { url: "/apple-touch-icon.png", sizes: "180x180", type: "image/png" }
+            ],
+            other: [
+                {
+                    rel: "icon",
+                    type: "image/png",
+                    sizes: "192x192",
+                    url: "/web-app-manifest-192x192.png",
+                },
+                {
+                    rel: "icon",
+                    type: "image/png",
+                    sizes: "512x512",
+                    url: "/web-app-manifest-512x512.png",
+                },
+            ],
+        },
         ...(schemas.length > 0 && {
             other: {
                 "application/ld+json": JSON.stringify(schemas.length === 1 ? schemas[0] : schemas)
