@@ -6,10 +6,19 @@ import { GHeader } from "@/components/globalcomponents/gheader"
 import { Search, Zap, Target, Shield, Globe, Clock, FileText, Hash, Lightbulb, Copy, Users, Code, Download } from "lucide-react"
 import { createMetadata } from "@/lib/metadata-base"
 
-export const metadata = createMetadata({
+const baseMetadata = createMetadata({
   title: "YouTube Tag Extractor | Free Extract Video Tags Tool",
   description: "FastTools YouTube Tag Extractor - Extract YouTube video tags, hashtags, and keywords instantly. Our free YouTube Tag Extractor helps you find competitor tags, boost SEO, and improve video ranking.",
   path: "/social-media-tools/youtube-tags",
+  ogTitle: "YouTube Tag Extractor – Extract Video Tags | FastTools",
+  ogDescription: "Extract YouTube video tags, hashtags, and keywords instantly. Our free YouTube Tag Extractor helps you find competitor tags, boost SEO, and improve your video ranking on YouTube. Works on all devices.",
+  ogImageAlt: "YouTube Tag Extractor – Extract Video Tags for SEO Research & Content Ideas Free",
+  twitterTitle: "YouTube Tag Extractor – Extract Video Tags | FastTools",
+  twitterDescription: "Extract YouTube video tags, hashtags, and keywords instantly. Our free YouTube Tag Extractor helps you find competitor tags, boost SEO, and improve your video ranking on YouTube.",
+})
+
+export const metadata: Metadata = {
+  ...baseMetadata,
   keywords: [
     "fasttools",
     "fast tools",
@@ -92,23 +101,18 @@ export const metadata = createMetadata({
     "youtube url tag generator",
     "generate tags from youtube url"
   ],
-  ogTitle: "YouTube Tag Extractor – Extract Video Tags | FastTools",
-  ogDescription: "Extract YouTube video tags, hashtags, and keywords instantly. Our free YouTube Tag Extractor helps you find competitor tags, boost SEO, and improve your video ranking on YouTube. Works on all devices.",
-  ogImageAlt: "YouTube Tag Extractor – Extract Video Tags for SEO Research & Content Ideas Free",
-  twitterTitle: "YouTube Tag Extractor – Extract Video Tags | FastTools",
-  twitterDescription: "Extract YouTube video tags, hashtags, and keywords instantly. Our free YouTube Tag Extractor helps you find competitor tags, boost SEO, and improve your video ranking on YouTube.",
-})
+}
 
 export default function YoutubeTagsPage() {
   return (
     <div className="min-h-screen bg-background">
       <div className="container mx-auto px-4 py-8 max-w-7xl">
-      <Breadcrumbs
-        items={[
-          { label: "Social Media Tools", href: "/social-media-tools" },
-          { label: "YouTube Tag Extractor", href: "/social-media-tools/youtube-tags" },
-        ]}
-      />
+        <Breadcrumbs
+          items={[
+            { label: "Social Media Tools", href: "/social-media-tools" },
+            { label: "YouTube Tag Extractor", href: "/social-media-tools/youtube-tags" },
+          ]}
+        />
 
         {/* Hero Section */}
         <div className="text-center mb-8">
@@ -129,7 +133,7 @@ export default function YoutubeTagsPage() {
         <div className="flex flex-col lg:flex-row gap-8">
           {/* Main Content */}
           <div className="flex-1 space-y-8">
-      <YoutubeTagExtractor />
+            <YoutubeTagExtractor />
 
             {/* How to Use Section */}
             <div className="p-5 rounded-lg bg-card border border-border shadow animate-fade-in-up animation-delay-200">
@@ -436,7 +440,7 @@ export default function YoutubeTagsPage() {
               <AdSpace slot="sidebar" className="w-full h-96 border border-border rounded-xl shadow-sm bg-card" />
             </div>
           </div>
-      </div>
+        </div>
 
         {/* Related Tools Section */}
         <div className="mt-12 p-5 rounded-lg bg-card border border-border shadow animate-fade-in-up animation-delay-600">
