@@ -3,6 +3,7 @@ import { GHeader } from "./globalcomponents/gheader"
 import { AdSpace } from "./ad-space"
 import { Breadcrumbs } from "./breadcrumbs"
 import { AdSenseComplianceChecker } from "./AdSenseComplianceChecker"
+import { env } from "@/lib/env"
 import {
     Lightbulb,
     Package,
@@ -102,7 +103,7 @@ export function ToolPageLayout({
                             color={header.color}
                         />
 
-                        {showMobileAd && (
+                        {showMobileAd && !env.isProduction && (
                             <div className="lg:hidden mt-6">
                                 <div className="text-center mb-2">
                                     <span className="text-xs text-muted-foreground font-medium">Advertisement</span>
@@ -262,7 +263,7 @@ export function ToolPageLayout({
                             )}
                         </div>
 
-                        {showSidebarAd && (
+                        {showSidebarAd && !env.isProduction && (
                             <div className="space-y-6">
                                 <div className="sticky top-32 space-y-6 hidden lg:block">
                                     <div>
