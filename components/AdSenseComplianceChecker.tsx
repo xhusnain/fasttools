@@ -100,12 +100,14 @@ export function AdSenseComplianceChecker({ data }: { data: ContentData }) {
                                 <span className="bg-black/20 px-2 py-0.5 rounded text-[10px] font-mono font-medium">
                                     {wordCount} words
                                 </span>
-                                <span className="bg-black/20 px-2 py-0.5 rounded text-[10px] font-mono font-medium">
-                                    {criticalErrors.length} Critical
-                                </span>
-                                {criticalCategories.length > 0 && (
-                                    <span className="bg-black/20 px-2 py-0.5 rounded text-[10px] font-mono font-medium flex items-center gap-1">
-                                        in {criticalCategories.join(', ')}
+                                {criticalErrors.length > 0 && (
+                                    <span className="bg-red-900/40 px-2 py-0.5 rounded text-[10px] font-mono font-medium flex items-center gap-1">
+                                        {criticalErrors.length} Critical
+                                    </span>
+                                )}
+                                {warnings.length > 0 && (
+                                    <span className="bg-amber-900/40 px-2 py-0.5 rounded text-[10px] font-mono font-medium flex items-center gap-1">
+                                        {warnings.length} Warning{warnings.length !== 1 ? 's' : ''}
                                     </span>
                                 )}
                             </div>
@@ -122,21 +124,27 @@ export function AdSenseComplianceChecker({ data }: { data: ContentData }) {
                     <div className="flex border-b border-slate-200 dark:border-slate-800 bg-slate-50 dark:bg-slate-950/50 overflow-x-auto shrink-0">
                         <button
                             onClick={() => setActiveTab('CONTENT')}
-                            className={`flex-1 py-3 px-4 text-xs font-bold uppercase tracking-wider flex items-center justify-center gap-1.5 border-b-2 transition-colors ${activeTab === 'CONTENT' ? 'border-blue-500 text-blue-600 dark:text-blue-400' : 'border-transparent text-slate-500 hover:text-slate-800 dark:hover:text-slate-200'}`}
+                            className={`flex-1 py-3 px-4 text-xs font-bold uppercase tracking-wider flex items-center justify-center gap-1.5 border-b-2 transition-colors relative ${activeTab === 'CONTENT' ? 'border-blue-500 text-blue-600 dark:text-blue-400' : 'border-transparent text-slate-500 hover:text-slate-800 dark:hover:text-slate-200'}`}
                         >
                             <FileText className="h-3.5 w-3.5" /> Content
+                            {results.some(r => r.category === 'CONTENT' && r.type === 'CRITICAL') && <span className="absolute top-2 right-2 w-1.5 h-1.5 bg-red-500 rounded-full" />}
+                            {results.some(r => r.category === 'CONTENT' && r.type === 'WARNING') && <span className="absolute top-2 right-2 w-1.5 h-1.5 bg-amber-500 rounded-full" />}
                         </button>
                         <button
                             onClick={() => setActiveTab('POLICY')}
-                            className={`flex-1 py-3 px-4 text-xs font-bold uppercase tracking-wider flex items-center justify-center gap-1.5 border-b-2 transition-colors ${activeTab === 'POLICY' ? 'border-blue-500 text-blue-600 dark:text-blue-400' : 'border-transparent text-slate-500 hover:text-slate-800 dark:hover:text-slate-200'}`}
+                            className={`flex-1 py-3 px-4 text-xs font-bold uppercase tracking-wider flex items-center justify-center gap-1.5 border-b-2 transition-colors relative ${activeTab === 'POLICY' ? 'border-blue-500 text-blue-600 dark:text-blue-400' : 'border-transparent text-slate-500 hover:text-slate-800 dark:hover:text-slate-200'}`}
                         >
                             <Scale className="h-3.5 w-3.5" /> Policy
+                            {results.some(r => r.category === 'POLICY' && r.type === 'CRITICAL') && <span className="absolute top-2 right-2 w-1.5 h-1.5 bg-red-500 rounded-full" />}
+                            {results.some(r => r.category === 'POLICY' && r.type === 'WARNING') && <span className="absolute top-2 right-2 w-1.5 h-1.5 bg-amber-500 rounded-full" />}
                         </button>
                         <button
                             onClick={() => setActiveTab('SEO')}
-                            className={`flex-1 py-3 px-4 text-xs font-bold uppercase tracking-wider flex items-center justify-center gap-1.5 border-b-2 transition-colors ${activeTab === 'SEO' ? 'border-blue-500 text-blue-600 dark:text-blue-400' : 'border-transparent text-slate-500 hover:text-slate-800 dark:hover:text-slate-200'}`}
+                            className={`flex-1 py-3 px-4 text-xs font-bold uppercase tracking-wider flex items-center justify-center gap-1.5 border-b-2 transition-colors relative ${activeTab === 'SEO' ? 'border-blue-500 text-blue-600 dark:text-blue-400' : 'border-transparent text-slate-500 hover:text-slate-800 dark:hover:text-slate-200'}`}
                         >
                             <Search className="h-3.5 w-3.5" /> SEO
+                            {results.some(r => r.category === 'SEO' && r.type === 'CRITICAL') && <span className="absolute top-2 right-2 w-1.5 h-1.5 bg-red-500 rounded-full" />}
+                            {results.some(r => r.category === 'SEO' && r.type === 'WARNING') && <span className="absolute top-2 right-2 w-1.5 h-1.5 bg-amber-500 rounded-full" />}
                         </button>
                     </div>
 
