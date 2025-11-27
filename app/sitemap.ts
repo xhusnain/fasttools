@@ -427,6 +427,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
       lastModified: getFreshnessDate(1),
       changeFrequency: "daily" as const,
       priority: 0.95,
+      images: [
+        "https://www.fasttools.store/youtube_channel_checker_hero_1764246981481.png",
+        "https://www.fasttools.store/youtube_branding_guide_1764247018385.png",
+        "https://www.fasttools.store/youtube_handles_vs_urls_infographic_1764248999897.png",
+        "https://www.fasttools.store/youtube_gaming_branding_ideas_1764248964347.png",
+      ],
     },
     {
       url: "https://www.fasttools.store/social-media-tools/hashtag-counter",
