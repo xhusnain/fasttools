@@ -1,47 +1,27 @@
-import type { Metadata } from "next"
 import { ToolPageLayout } from "@/components/tool-page-layout"
 import { JWTDecoder } from "@/components/jwt-decoder"
-import { createMetadata } from "@/lib/metadata-base"
+import { createToolConfig } from "@/lib/create-tool-config"
 
-const baseMetadata = createMetadata({
-  title: "JWT Decoder | Free JSON Web Token Decoder & Debugger Online",
-  description:
-    "Decode and inspect JWT tokens instantly in your browser. View header, payload, and signature with our secure, client-side JWT decoder. Debug JSON Web Tokens for free.",
+const toolConfig = createToolConfig({
+  toolName: "JWT Decoder",
+  description: "Decode and inspect JWT tokens instantly in your browser. View header, payload, and signature with our secure, client-side JWT decoder. Debug JSON Web Tokens for free.",
+  metaTitle: "JWT Decoder | Free JSON Web Token Decoder & Debugger Online",
+  metaDescription: "Decode and inspect JWT tokens instantly in your browser. View header, payload, and signature with our secure, client-side JWT decoder. Debug JSON Web Tokens for free.",
   path: "/dev-tools/jwt-decoder",
+
+  header: {
+    title: "Decode & Inspect JSON Web Tokens",
+    description: "Instantly decode JWT tokens in your browser. View header, payload, and signature with our secure, client-side decoder.",
+    titleSize: "medium",
+    descriptionSize: "small",
+  },
+
   breadcrumbs: [
     { label: "Developer Tools", href: "/dev-tools" },
-    { label: "JWT Decoder", href: "/dev-tools/jwt-decoder" }
+    { label: "JWT Decoder", href: "/dev-tools/jwt-decoder" },
   ],
-  schemaOptions: {
-    name: "JWT Decoder - JSON Web Token Decoder & Debugger",
-    alternateName: "Free JWT Decoder Online",
-    applicationCategory: "DeveloperApplication",
-    ratingValue: "4.9",
-    ratingCount: "6245",
-    featureList: [
-      "Decode JWT header and payload instantly",
-      "Client-side processing - tokens never leave your browser",
-      "View all JWT claims and metadata",
-      "Base64URL decoding",
-      "Support for all JWT algorithms (HS256, RS256, ES256)",
-      "JWT inspection and debugging tools",
-      "Token validation and verification",
-      "Copy decoded JSON with one click",
-      "OAuth and OIDC token support",
-      "No signup required"
-    ]
-  }
-})
 
-export const metadata: Metadata = {
-  ...baseMetadata,
-  applicationName: "FastTools",
-  category: "Developer Tools",
-}
-
-export default function JWTDecoderPage() {
-  const toolContent = {
-    toolName: "JWT Decoder",
+  content: {
     overview: "Decode and inspect JSON Web Tokens (JWT) instantly in your browser. Our free JWT decoder reveals token header, payload, and signature components with complete claims visualization. Perfect for debugging authentication, validating JWT tokens, and understanding JWT structure. All processing happens client-side for maximum security.",
 
     howToSteps: [
@@ -229,30 +209,18 @@ export default function JWTDecoderPage() {
       { name: "All Developer Tools", href: "/dev-tools" }
     ]
   }
+})
 
+export const metadata = toolConfig.metadata
+
+export default function JWTDecoderPage() {
   return (
     <ToolPageLayout
-      header={{
-        title: "Decode & Inspect JSON Web Tokens",
-        description: "Instantly decode JWT tokens in your browser. View header, payload, and signature with our secure, client-side decoder.",
-        titleSize: "medium",
-        descriptionSize: "small"
-      }}
-      breadcrumbs={[
-        { label: "Developer Tools", href: "/dev-tools" },
-        { label: "JWT Decoder", href: "/dev-tools/jwt-decoder" }
-      ]}
-      toolComponent={
+      {...toolConfig.getLayoutProps(
         <div className="p-3 sm:p-4 md:p-5 rounded-lg bg-card border border-border shadow">
           <JWTDecoder />
         </div>
-      }
-      toolContent={toolContent}
-      expectedMetadata={{
-        title: "JWT Decoder | Free JSON Web Token Decoder & Debugger Online",
-        description: "Decode and inspect JWT tokens instantly in your browser. View header, payload, and signature with our secure, client-side JWT decoder. Debug JSON Web Tokens for free.",
-        path: "/dev-tools/jwt-decoder"
-      }}
+      )}
     />
   )
 }

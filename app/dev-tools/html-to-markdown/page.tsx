@@ -1,45 +1,27 @@
-import type { Metadata } from "next"
 import { ToolPageLayout } from "@/components/tool-page-layout"
 import { HTMLToMarkdown } from "@/components/html-to-markdown"
-import { createMetadata } from "@/lib/metadata-base"
+import { createToolConfig } from "@/lib/create-tool-config"
 
-const baseMetadata = createMetadata({
-  title: "HTML to Markdown Converter | Free Convert HTML to Markdown Online",
-  description:
-    "Convert HTML to Markdown online free. Transform HTML code to clean Markdown format instantly. Best HTML to MD converter with support for tables, lists, and formatting.",
+const toolConfig = createToolConfig({
+  toolName: "HTML to Markdown Converter",
+  description: "Convert HTML to Markdown online free. Transform HTML code to clean Markdown format instantly. Best HTML to MD converter with support for tables, lists, and formatting.",
+  metaTitle: "HTML to Markdown Converter | Free Convert HTML to Markdown Online",
+  metaDescription: "Convert HTML to Markdown online free. Transform HTML code to clean Markdown format instantly. Best HTML to MD converter with support for tables, lists, and formatting.",
   path: "/dev-tools/html-to-markdown",
+
+  header: {
+    title: "HTML to Markdown Converter - Convert HTML to MD Online Free",
+    description: "Convert HTML to Markdown online free. Transform HTML code to clean Markdown format instantly. Best HTML to MD converter with support for tables, lists, and formatting.",
+    titleSize: "medium",
+    descriptionSize: "small",
+  },
+
   breadcrumbs: [
     { label: "Developer Tools", href: "/dev-tools" },
-    { label: "HTML to Markdown Converter", href: "/dev-tools/html-to-markdown" }
+    { label: "HTML to Markdown Converter", href: "/dev-tools/html-to-markdown" },
   ],
-  schemaOptions: {
-    name: "HTML to Markdown Converter - Convert HTML to MD Online Free",
-    alternateName: "Best HTML to Markdown Converter",
-    applicationCategory: "DeveloperApplication",
-    ratingValue: "4.8",
-    ratingCount: "3215",
-    featureList: [
-      "Convert HTML to Markdown instantly",
-      "Support for tables, lists, and formatting",
-      "Preserve heading hierarchy",
-      "Handle nested HTML structures",
-      "One-click copy to clipboard",
-      "Download as .md file",
-      "Clean Markdown output",
-      "No signup required"
-    ]
-  }
-})
 
-export const metadata: Metadata = {
-  ...baseMetadata,
-  applicationName: "FastTools",
-  category: "Developer Tools",
-}
-
-export default function HTMLToMarkdownPage() {
-  const toolContent = {
-    toolName: "HTML to Markdown Converter",
+  content: {
     overview: "Convert HTML to Markdown online free with our instant converter. Transform HTML code into clean, readable Markdown format. Perfect for converting web content, documentation, and HTML pages to Markdown. Supports tables, lists, headings, links, and all standard HTML elements.",
 
     howToSteps: [
@@ -158,30 +140,18 @@ export default function HTMLToMarkdownPage() {
       { name: "All Developer Tools", href: "/dev-tools" }
     ]
   }
+})
 
+export const metadata = toolConfig.metadata
+
+export default function HTMLToMarkdownPage() {
   return (
     <ToolPageLayout
-      header={{
-        title: "HTML to Markdown Converter - Convert HTML to MD Online Free",
-        description: "Convert HTML to Markdown online free. Transform HTML code to clean Markdown format instantly. Best HTML to MD converter with support for tables, lists, and formatting.",
-        titleSize: "medium",
-        descriptionSize: "small"
-      }}
-      breadcrumbs={[
-        { label: "Developer Tools", href: "/dev-tools" },
-        { label: "HTML to Markdown Converter", href: "/dev-tools/html-to-markdown" }
-      ]}
-      toolComponent={
+      {...toolConfig.getLayoutProps(
         <div className="p-3 sm:p-4 md:p-5 rounded-lg bg-card border border-border shadow">
           <HTMLToMarkdown />
         </div>
-      }
-      toolContent={toolContent}
-      expectedMetadata={{
-        title: "HTML to Markdown Converter | Free Convert HTML to Markdown Online",
-        description: "Convert HTML to Markdown online free. Transform HTML code to clean Markdown format instantly. Best HTML to MD converter with support for tables, lists, and formatting.",
-        path: "/dev-tools/html-to-markdown"
-      }}
+      )}
     />
   )
 }

@@ -1,51 +1,27 @@
-import type { Metadata } from "next"
 import { ToolPageLayout } from "@/components/tool-page-layout"
 import { JSONToCSV } from "@/components/json-to-csv"
-import { createMetadata } from "@/lib/metadata-base"
+import { createToolConfig } from "@/lib/create-tool-config"
 
-const baseMetadata = createMetadata({
-  title: "JSON to CSV Converter | Free Convert JSON to CSV Online",
-  description:
-    "Convert JSON to CSV online free with instant download. Transform JSON data to Excel-ready CSV format. Supports nested JSON & arrays. Best for developers.",
+const toolConfig = createToolConfig({
+  toolName: "JSON to CSV Converter",
+  description: "Convert JSON to CSV online free with instant download. Transform JSON data to Excel-ready CSV format. Supports nested JSON & arrays. Best for developers.",
+  metaTitle: "JSON to CSV Converter | Free Convert JSON to CSV Online",
+  metaDescription: "Convert JSON to CSV online free with instant download. Transform JSON data to Excel-ready CSV format. Supports nested JSON & arrays. Best for developers.",
   path: "/dev-tools/json-to-csv",
+
+  header: {
+    title: "JSON to CSV Converter - Convert JSON to CSV Online Free",
+    description: "Convert JSON to CSV online free with instant download. Transform JSON data, arrays, and nested objects into Excel-ready CSV format. Supports custom delimiters, UTF-8 encoding, and handles complex JSON structures. Best converter for developers and data analysts.",
+    titleSize: "medium",
+    descriptionSize: "small",
+  },
+
   breadcrumbs: [
     { label: "Developer Tools", href: "/dev-tools" },
-    { label: "JSON to CSV Converter", href: "/dev-tools/json-to-csv" }
+    { label: "JSON to CSV Converter", href: "/dev-tools/json-to-csv" },
   ],
-  schemaOptions: {
-    name: "JSON to CSV Converter - Convert JSON to CSV Online Free",
-    alternateName: "Best JSON to CSV Converter Online",
-    applicationCategory: "DeveloperApplication",
-    ratingValue: "4.9",
-    ratingCount: "4127",
-    featureList: [
-      "Convert JSON to CSV online free",
-      "Instant JSON to CSV conversion",
-      "Support for nested JSON structures",
-      "JSON array to CSV conversion",
-      "Customizable delimiter options (comma, semicolon)",
-      "Header row control",
-      "Download CSV files instantly",
-      "Copy to clipboard functionality",
-      "Handles complex JSON data",
-      "Excel-compatible output",
-      "No file size limits",
-      "UTF-8 encoding support",
-      "Browser-based processing for privacy",
-      "No signup required"
-    ]
-  }
-})
 
-export const metadata: Metadata = {
-  ...baseMetadata,
-  applicationName: "FastTools",
-  category: "Developer Tools",
-}
-
-export default function JSONToCSVPage() {
-  const toolContent = {
-    toolName: "JSON to CSV Converter",
+  content: {
     overview: "Convert JSON to CSV online free with our instant converter tool. Transform JSON data, arrays, and nested objects into Excel-ready CSV format. Supports custom delimiters, header controls, and handles complex JSON structures. Perfect for developers, data analysts, and anyone working with structured data.",
 
     howToSteps: [
@@ -266,30 +242,18 @@ export default function JSONToCSVPage() {
       { name: "All Developer Tools", href: "/dev-tools" }
     ]
   }
+})
 
+export const metadata = toolConfig.metadata
+
+export default function JSONToCSVPage() {
   return (
     <ToolPageLayout
-      header={{
-        title: "JSON to CSV Converter - Convert JSON to CSV Online Free",
-        description: "Convert JSON to CSV online free with instant download. Transform JSON data, arrays, and nested objects into Excel-ready CSV format. Supports custom delimiters, UTF-8 encoding, and handles complex JSON structures. Best converter for developers and data analysts.",
-        titleSize: "medium",
-        descriptionSize: "small"
-      }}
-      breadcrumbs={[
-        { label: "Developer Tools", href: "/dev-tools" },
-        { label: "JSON to CSV Converter", href: "/dev-tools/json-to-csv" }
-      ]}
-      toolComponent={
+      {...toolConfig.getLayoutProps(
         <div className="p-3 sm:p-4 md:p-5 rounded-lg bg-card border border-border shadow">
           <JSONToCSV />
         </div>
-      }
-      toolContent={toolContent}
-      expectedMetadata={{
-        title: "JSON to CSV Converter | Free Convert JSON to CSV Online",
-        description: "Convert JSON to CSV online free with instant download. Transform JSON data to Excel-ready CSV format. Supports nested JSON & arrays. Best for developers.",
-        path: "/dev-tools/json-to-csv"
-      }}
+      )}
     />
   )
 }

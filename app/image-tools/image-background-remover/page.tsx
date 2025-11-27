@@ -2,7 +2,6 @@ import type { Metadata } from "next"
 import { Breadcrumbs } from "@/components/breadcrumbs"
 import { ImageBackgroundRemover } from "@/components/image-background-remover"
 import { AdSpace } from "@/components/ad-space"
-import { ToolContentEnhancement } from "@/components/tool-content-enhancement"
 import { createMetadata } from "@/lib/metadata-base"
 import { FileText, ArrowRight, Code, Globe, Zap, Shield } from "lucide-react"
 import { GHeader } from "@/components/globalcomponents/gheader"
@@ -492,14 +491,14 @@ export default function ImageBackgroundRemoverPage() {
     return (
         <>
             <div className="container mx-auto px-4 py-6 sm:py-8 lg:py-12">
-                    <Breadcrumbs
-                        items={[
-                            { label: "Image Tools", href: "/image-tools" },
-                            { label: "Image Background Remover", href: "/image-tools/image-background-remover" },
-                        ]}
-                    />
+                <Breadcrumbs
+                    items={[
+                        { label: "Image Tools", href: "/image-tools" },
+                        { label: "Image Background Remover", href: "/image-tools/image-background-remover" },
+                    ]}
+                />
 
-                    <div className="max-w-[1600px] mx-auto">
+                <div className="max-w-[1600px] mx-auto">
                     <div className="text-center space-y-5 mb-6 sm:mb-8">
                         <GHeader
                             title="Free Photo Background Remover"
@@ -524,7 +523,7 @@ export default function ImageBackgroundRemoverPage() {
                                     <span className="hidden sm:inline text-foreground">Why Our AI Remover is the Best Free Tool</span>
                                     <span className="sm:hidden text-foreground">AI Features</span>
                                 </h2>
-                                
+
                                 <p className="text-sm sm:text-base text-muted-foreground leading-relaxed mb-6">
                                     Our image background remover uses cutting-edge AI technology for high accuracy and superior privacy, processing everything locally in your browser.
                                 </p>
@@ -595,8 +594,8 @@ export default function ImageBackgroundRemoverPage() {
                                                         />
                                                     </div>
                                                     <p className="text-sm font-semibold text-slate-700 dark:text-foreground">After</p>
-                                        </div>
-                                        </div>
+                                                </div>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
@@ -641,10 +640,10 @@ export default function ImageBackgroundRemoverPage() {
                                                     </div>
                                                     <p className="text-sm font-semibold text-slate-700 dark:text-foreground">After</p>
                                                 </div>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
-                                                </div>
-                                            </div>
 
                                 {/* Example 3 - Objects */}
                                 <div className="bg-card rounded-xl p-6 sm:p-8 lg:p-10 border border-border">
@@ -749,7 +748,7 @@ export default function ImageBackgroundRemoverPage() {
                                     <span className="hidden sm:inline text-foreground">Frequently Asked Questions</span>
                                     <span className="sm:hidden text-foreground">FAQ</span>
                                 </h2>
-                                
+
                                 <div className="space-y-4 sm:space-y-6">
                                     <div className="bg-card rounded-lg p-4 sm:p-5 lg:p-6 border border-border">
                                         <h3 className="text-lg sm:text-xl font-semibold text-heading-accent mb-3 sm:mb-4">How accurate is the background removal?</h3>
@@ -918,7 +917,7 @@ export default function ImageBackgroundRemoverPage() {
                                         <p className="text-sm text-muted-foreground leading-relaxed">
                                             Export as photo background remover png, photo background remover jpeg, photo background remover heic, photo background remover in jpg, photo background remover to png, or photo to background remover png. Our photo background remover png maker and photo background remover png free options support all major formats.
                                         </p>
-                                        </div>
+                                    </div>
 
                                     <div className="bg-card rounded-lg p-4 border border-border">
                                         <h3 className="text-lg font-semibold text-heading-accent mb-2">Background Color Options</h3>
@@ -957,30 +956,30 @@ export default function ImageBackgroundRemoverPage() {
                                         <h3 className="text-lg font-semibold text-heading-accent mb-3">Manual Control & Precision Tools</h3>
                                         <p className="text-sm text-muted-foreground leading-relaxed">
                                             Use photo background remover manual controls, photo background remover brush tools, image bg remover manual editing, photo background remover cutout precision, photo background remover eraser functionality, and remove bg photo editing features for perfect results.
-                                                </p>
-                                            </div>
+                                        </p>
+                                    </div>
 
                                     <div className="bg-card rounded-lg p-4 border border-border">
                                         <h3 className="text-lg font-semibold text-heading-accent mb-3">Bulk Processing & Batch Operations</h3>
                                         <p className="text-sm text-muted-foreground leading-relaxed">
                                             Process multiple images with photo background remover bulk, photo background remover in bulk, photo background remover batch, bulk photo bg remover, image bg remover bulk, and multiple photo bg remover capabilities. Perfect for high-volume photo background remover people photography and commercial use.
-                                                </p>
-                                            </div>
+                                        </p>
+                                    </div>
 
                                     <div className="bg-card rounded-lg p-4 border border-border">
                                         <h3 className="text-lg font-semibold text-heading-accent mb-3">Combined Features & Enhancements</h3>
                                         <p className="text-sm text-muted-foreground leading-relaxed">
                                             Enjoy photo background remover and changer, photo background remover and changer online, change photo background remove, photo background remover change online, photo background remover changer, photo background remover and change, photo background remover and enhancer, photo background remover and enhancer free, photo enhancer bg remover, photo background remover and adder, photo background remover and add features.
-                                                </p>
-                                            </div>
+                                        </p>
+                                    </div>
 
                                     <div className="bg-card rounded-lg p-4 border border-border">
                                         <h3 className="text-lg font-semibold text-heading-accent mb-3">Sizing & Cropping Tools</h3>
                                         <p className="text-sm text-muted-foreground leading-relaxed">
                                             Access photo background remover and size adjustment, photo background remover and resizer, photo background remover and crop, and photo background remover and dress change capabilities for complete image control.
-                                                </p>
-                                            </div>
-                                        </div>
+                                        </p>
+                                    </div>
+                                </div>
                             </section>
 
                             {/* Specialized Removal Features */}
@@ -1024,7 +1023,7 @@ export default function ImageBackgroundRemoverPage() {
                             <section className="mt-8 sm:mt-10 lg:mt-12 bg-card border border-border rounded-lg p-4 sm:p-6 lg:p-8">
                                 <h2 className="text-xl sm:text-2xl lg:text-3xl font-bold mb-6 sm:mb-8 flex items-center gap-2 sm:gap-3">
                                     <span className="text-foreground">Developer & Integration Tools</span>
-                                        </h2>
+                                </h2>
 
                                 <div className="space-y-4">
                                     <div className="bg-card rounded-lg p-4 border border-border">
@@ -1032,14 +1031,14 @@ export default function ImageBackgroundRemoverPage() {
                                         <p className="text-sm text-muted-foreground leading-relaxed">
                                             Developers can implement image bg remove in css, image bg remover css techniques, and use our image bg remove tool programmatically. Perfect for web developers needing automated background removal solutions.
                                         </p>
-                                            </div>
+                                    </div>
 
                                     <div className="bg-card rounded-lg p-4 border border-border">
                                         <h3 className="text-lg font-semibold text-heading-accent mb-3">Open Source & Community</h3>
                                         <p className="text-sm text-muted-foreground leading-relaxed">
                                             Check our photo background remover github projects, photo background remover reddit community discussions, passport photo background remover reddit reviews, ai photo background remover reddit recommendations, best photo background remover reddit threads, and best free photo background remover reddit suggestions for community-driven insights.
                                         </p>
-                                            </div>
+                                    </div>
 
                                     <div className="bg-card rounded-lg p-4 border border-border">
                                         <h3 className="text-lg font-semibold text-heading-accent mb-3">Professional Software Integration</h3>
@@ -1069,29 +1068,29 @@ export default function ImageBackgroundRemoverPage() {
                                         <p className="text-sm text-muted-foreground leading-relaxed">
                                             We provide photo background remover free without login, photo background remover no sign up, free photo background remover without watermark, photo background remover without watermark, and photo background remover free reddit approved quality.
                                         </p>
-                                            </div>
+                                    </div>
 
                                     <div className="bg-card rounded-lg p-4 border border-border">
                                         <h3 className="text-lg font-semibold text-heading-accent mb-3">Software Solutions</h3>
                                         <p className="text-sm text-muted-foreground leading-relaxed">
                                             Unlike paid software such as leawo photo bg remover, leawo photo bg remover crack versions, softorbits photo background remover license key requirements, or photo background remover crack searches, we offer completely free access. Our tool matches photo background remover 3.2, photo background remover 10.2, photo background remover 11, photo background remove 1.4, and other version-specific software capabilities.
                                         </p>
-                                            </div>
+                                    </div>
 
                                     <div className="bg-card rounded-lg p-4 border border-border">
                                         <h3 className="text-lg font-semibold text-heading-accent mb-3">Online Platforms & Services</h3>
                                         <p className="text-sm text-muted-foreground leading-relaxed">
                                             Compare with photo background remover canva, photo background remover fotor, photo background remover pixlr, photo background remover adobe express, photo background remover microsoft, photo background remover i love pdf, photo background remover google, online photo background remove bg, photo remove bg com, and other popular platforms. We offer the best photo background remover website experience according to photo background remover review feedback.
                                         </p>
-                                            </div>
+                                    </div>
 
                                     <div className="bg-card rounded-lg p-4 border border-border">
                                         <h3 className="text-lg font-semibold text-heading-accent mb-3">Advanced & Specialized Tools</h3>
                                         <p className="text-sm text-muted-foreground leading-relaxed">
                                             Our tool serves as photo background remover bot functionality, photo background remover program alternative, photo background remover generator, photo background remover tool free access, photo background remover tool free download option, photo background remover exe equivalent, photo background remover portable solution, and photo background remover web application. Also handles bg remove 3d, remove background color from video projects, and ai photo bg remover video processing.
                                         </p>
-                                            </div>
-                                        </div>
+                                    </div>
+                                </div>
                             </section>
 
                             {/* Access Methods & Download Options */}
@@ -1153,7 +1152,7 @@ export default function ImageBackgroundRemoverPage() {
                                     </div>
                                 </div>
                             </section>
-                            </div>
+                        </div>
 
                         <div className="space-y-6">
                             {/* Desktop Sticky Sidebar Container */}

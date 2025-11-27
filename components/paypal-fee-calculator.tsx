@@ -28,7 +28,7 @@ const PAYPAL_FEES = {
       amexSend: { percentage: 5.0, fixed: 0.99, min: 0.99, max: 4.99 }
     }
   },
-  
+
   // Commercial Transaction Fees
   commercial: {
     domestic: {
@@ -191,7 +191,7 @@ export function PayPalFeeCalculator() {
       const isDomestic = !isInternational
 
       let feeStructure: any = {}
-      let baseFee = { percentage: 0, fixed: 0 }
+      let baseFee: { percentage: number; fixed: number; min?: number; max?: number } = { percentage: 0, fixed: 0 }
 
       // Get base fee structure based on transaction type
       if (transactionType === 'personal') {
@@ -200,7 +200,7 @@ export function PayPalFeeCalculator() {
       } else if (transactionType === 'commercial') {
         feeStructure = isDomestic ? PAYPAL_FEES.commercial.domestic : PAYPAL_FEES.commercial.international
         baseFee = feeStructure[paymentMethod] || { percentage: 0, fixed: 0 }
-        
+
         // Add international fee for commercial transactions
         if (isInternational && feeStructure.additionalFee) {
           baseFee.percentage += feeStructure.additionalFee
@@ -208,14 +208,14 @@ export function PayPalFeeCalculator() {
       } else if (transactionType === 'donations') {
         feeStructure = isDomestic ? PAYPAL_FEES.donations.domestic : PAYPAL_FEES.donations.international
         baseFee = feeStructure[paymentMethod] || { percentage: 0, fixed: 0 }
-        
+
         // Add international fee for donations
         if (isInternational && feeStructure.additionalFee) {
           baseFee.percentage += feeStructure.additionalFee
         }
       } else if (transactionType === 'cryptocurrency') {
         // Cryptocurrency fee calculation
-        const cryptoFee = PAYPAL_FEES.cryptocurrency.buying.find(tier => 
+        const cryptoFee = PAYPAL_FEES.cryptocurrency.buying.find(tier =>
           amountNum >= tier.min && amountNum <= tier.max
         )
         baseFee = cryptoFee ? { percentage: cryptoFee.percentage, fixed: 0 } : { percentage: 1.50, fixed: 0 }
@@ -243,8 +243,8 @@ export function PayPalFeeCalculator() {
       // Currency conversion fee (if applicable)
       let currencyConversionFee = 0
       if (isInternational && transactionType !== 'cryptocurrency') {
-        const conversionRate = transactionType === 'commercial' ? 
-          PAYPAL_FEES.currencyConversion.goodsAndServices : 
+        const conversionRate = transactionType === 'commercial' ?
+          PAYPAL_FEES.currencyConversion.goodsAndServices :
           PAYPAL_FEES.currencyConversion.other
         currencyConversionFee = (amountNum * conversionRate) / 100
       }
@@ -342,7 +342,7 @@ International: ${result.isInternational ? 'Yes' : 'No'}`
                 <Settings className="h-4 w-4 text-foreground" />
                 Transaction Details
               </h3>
-              
+
               {/* Transaction Type & Payment Method */}
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                 <div className="space-y-1">
@@ -432,35 +432,35 @@ International: ${result.isInternational ? 'Yes' : 'No'}`
 
                 <div className="space-y-1">
                   <Label className="text-xs font-medium text-muted-foreground">Amount ({currency})</Label>
-            <Input
-              type="number"
-              placeholder="100.00"
-              value={amount}
-              onChange={(e) => setAmount(e.target.value)}
-              min="0"
-              step="0.01"
+                  <Input
+                    type="number"
+                    placeholder="100.00"
+                    value={amount}
+                    onChange={(e) => setAmount(e.target.value)}
+                    min="0"
+                    step="0.01"
                     className="h-9 text-sm border-2 border-orange-300 focus:border-orange-400 focus:ring-2 focus:ring-orange-400/20 bg-background text-foreground placeholder:text-muted-foreground"
-            />
+                  />
                 </div>
-          </div>
+              </div>
 
-          <Button
-            onClick={calculateFee}
-            disabled={loading || !amount || Number.parseFloat(amount) <= 0}
+              <Button
+                onClick={calculateFee}
+                disabled={loading || !amount || Number.parseFloat(amount) <= 0}
                 className="w-full h-9 text-sm font-medium shadow-sm hover:shadow-md transition-all bg-primary hover:bg-primary text-white"
-          >
-            {loading ? (
-              <>
-                <LoadingSpinner className="mr-2" />
-                Calculating...
-              </>
-            ) : (
-              <>
+              >
+                {loading ? (
+                  <>
+                    <LoadingSpinner className="mr-2" />
+                    Calculating...
+                  </>
+                ) : (
+                  <>
                     <Calculator className="mr-2 h-4 w-4" />
-                Calculate Fee
-              </>
-            )}
-          </Button>
+                    Calculate Fee
+                  </>
+                )}
+              </Button>
             </div>
 
             {/* Right Column - Results */}
@@ -471,7 +471,7 @@ International: ${result.isInternational ? 'Yes' : 'No'}`
               </h3>
 
               {result ? (
-            <div className="space-y-3">
+                <div className="space-y-3">
                   {/* Transaction Summary */}
                   <div className="p-3 bg-card rounded-lg border-2 border-orange-300">
                     <div className="grid grid-cols-2 gap-2 text-xs">
@@ -542,14 +542,14 @@ International: ${result.isInternational ? 'Yes' : 'No'}`
                     </div>
                   </div>
 
-            <Button
-              onClick={copyResult}
-              variant="outline"
+                  <Button
+                    onClick={copyResult}
+                    variant="outline"
                     className="w-full h-8 text-xs font-medium hover:bg-accent transition-all bg-transparent border-orange-300"
-            >
+                  >
                     <Copy className="mr-2 h-3 w-3" />
-              Copy Results
-            </Button>
+                    Copy Results
+                  </Button>
                 </div>
               ) : (
                 <div className="p-6 text-center text-muted-foreground border-2 border-dashed border-orange-300 rounded-lg">
@@ -559,8 +559,8 @@ International: ${result.isInternational ? 'Yes' : 'No'}`
               )}
             </div>
           </div>
-          </CardContent>
-        </Card>
+        </CardContent>
+      </Card>
     </div>
   )
 }

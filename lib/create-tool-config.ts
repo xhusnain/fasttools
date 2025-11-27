@@ -23,8 +23,8 @@ export interface UnifiedToolConfig {
     }>
     content: {
         overview: string
-        howToSteps: string[]
-        features: string[]
+        howToSteps?: string[]
+        features?: string[]
         aboutTool: string | React.ReactNode
         aboutToolText?: string
         proTip?: string
@@ -51,7 +51,7 @@ export function createToolConfig(config: UnifiedToolConfig) {
         path: config.path,
         toolName: config.toolName,
         faqs: config.content.faqs,
-        howToSteps: config.content.howToSteps,
+        howToSteps: config.content.howToSteps || [],
     })
 
     const getLayoutProps = (toolComponent: React.ReactNode): ToolPageLayoutProps => ({
@@ -61,8 +61,8 @@ export function createToolConfig(config: UnifiedToolConfig) {
         toolContent: {
             toolName: config.toolName,
             overview: config.content.overview,
-            howToSteps: config.content.howToSteps,
-            features: config.content.features,
+            howToSteps: config.content.howToSteps || [],
+            features: config.content.features || [],
             aboutTool: config.content.aboutTool,
             aboutToolText: config.content.aboutToolText,
             proTip: config.content.proTip,

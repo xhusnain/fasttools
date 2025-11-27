@@ -1,49 +1,27 @@
-import type { Metadata } from "next"
 import { ToolPageLayout } from "@/components/tool-page-layout"
 import { RegexTester } from "@/components/regex-tester"
-import { createMetadata } from "@/lib/metadata-base"
+import { createToolConfig } from "@/lib/create-tool-config"
 
-const baseMetadata = createMetadata({
-  title: "Regex Tester | Free Test Regular Expressions with Live Results",
-  description:
-    "Test regex patterns online with instant visual matching, capture groups, and multi-language code generation. Debug and validate regular expressions for JavaScript, Python, Java, PHP, and more. Free regex testing tool with find & replace and live preview.",
+const toolConfig = createToolConfig({
+  toolName: "Regex Tester",
+  description: "Test regex patterns online with instant visual matching, capture groups, and multi-language code generation. Debug and validate regular expressions for JavaScript, Python, Java, PHP, and more. Free regex testing tool with find & replace and live preview.",
+  metaTitle: "Regex Tester | Free Test Regular Expressions with Live Results",
+  metaDescription: "Test regex patterns online with instant visual matching, capture groups, and multi-language code generation. Debug and validate regular expressions for JavaScript, Python, Java, PHP, and more. Free regex testing tool with find & replace and live preview.",
   path: "/dev-tools/regex-tester",
+
+  header: {
+    title: "Regex Tester - Test Regular Expressions Online Free",
+    description: "Test regex patterns online with instant visual matching, capture groups, and multi-language code generation. Debug and validate regular expressions for JavaScript, Python, Java, PHP, and more. Free regex testing tool with find & replace, pattern explanations, and live preview.",
+    titleSize: "medium",
+    descriptionSize: "small",
+  },
+
   breadcrumbs: [
     { label: "Developer Tools", href: "/dev-tools" },
-    { label: "Regex Tester", href: "/dev-tools/regex-tester" }
+    { label: "Regex Tester", href: "/dev-tools/regex-tester" },
   ],
-  schemaOptions: {
-    name: "Regex Tester - Test Regular Expressions Online Free",
-    alternateName: "Free Regex Pattern Tester & Validator",
-    applicationCategory: "DeveloperApplication",
-    ratingValue: "4.9",
-    ratingCount: "5832",
-    featureList: [
-      "Test regex patterns online with live matching",
-      "Visual regex highlighter with color-coded matches",
-      "Multi-language code generation (JavaScript, Python, Java, PHP)",
-      "Capture groups visualization and extraction",
-      "Regex find and replace functionality",
-      "Pattern explanation and debugging",
-      "Common regex pattern library",
-      "Real-time pattern validation",
-      "Support for all regex flags (g, i, m, s, u, y)",
-      "Email, URL, phone number regex patterns",
-      "No signup required",
-      "Browser-based testing for privacy"
-    ]
-  }
-})
 
-export const metadata: Metadata = {
-  ...baseMetadata,
-  applicationName: "FastTools",
-  category: "Developer Tools",
-}
-
-export default function RegexTesterPage() {
-  const toolContent = {
-    toolName: "Regex Tester",
+  content: {
     overview: "Test regex patterns online with our free regular expression tester. Validate and debug regex with instant visual matching, capture groups, and multi-language code generation. Perfect for testing JavaScript regex, Python regex, Java regex, PHP regex, and more. Features live preview, pattern explanations, and common regex examples.",
 
     howToSteps: [
@@ -239,30 +217,18 @@ export default function RegexTesterPage() {
       { name: "All Developer Tools", href: "/dev-tools" }
     ]
   }
+})
 
+export const metadata = toolConfig.metadata
+
+export default function RegexTesterPage() {
   return (
     <ToolPageLayout
-      header={{
-        title: "Regex Tester - Test Regular Expressions Online Free",
-        description: "Test regex patterns online with instant visual matching, capture groups, and multi-language code generation. Debug and validate regular expressions for JavaScript, Python, Java, PHP, and more. Free regex testing tool with find & replace, pattern explanations, and live preview.",
-        titleSize: "medium",
-        descriptionSize: "small"
-      }}
-      breadcrumbs={[
-        { label: "Developer Tools", href: "/dev-tools" },
-        { label: "Regex Tester", href: "/dev-tools/regex-tester" }
-      ]}
-      toolComponent={
+      {...toolConfig.getLayoutProps(
         <div className="p-3 sm:p-4 md:p-5 rounded-lg bg-card border border-border shadow">
           <RegexTester />
         </div>
-      }
-      toolContent={toolContent}
-      expectedMetadata={{
-        title: "Regex Tester | Free Test Regular Expressions with Live Results",
-        description: "Test regex patterns online with instant visual matching, capture groups, and multi-language code generation. Debug and validate regular expressions for JavaScript, Python, Java, PHP, and more. Free regex testing tool with find & replace and live preview.",
-        path: "/dev-tools/regex-tester"
-      }}
+      )}
     />
   )
 }

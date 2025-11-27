@@ -1,46 +1,28 @@
-import type { Metadata } from "next"
 import { ToolPageLayout } from "@/components/tool-page-layout"
 import { MarkdownPreviewer } from "@/components/markdown-previewer"
-import { createMetadata } from "@/lib/metadata-base"
+import { createToolConfig } from "@/lib/create-tool-config"
 
-const baseMetadata = createMetadata({
-  title: "Markdown Previewer | Free Online Markdown Editor with Live Preview",
-  description:
-    "Free online Markdown previewer with live preview. Edit and preview Markdown in real-time with GitHub Flavored Markdown support. Best Markdown editor for README files and documentation.",
+const toolConfig = createToolConfig({
+  toolName: "Markdown Previewer",
+  description: "Free online Markdown previewer with live preview. Edit and preview Markdown in real-time with GitHub Flavored Markdown support. Best Markdown editor for README files and documentation.",
+  metaTitle: "Markdown Previewer | Free Online Markdown Editor with Live Preview",
+  metaDescription: "Free online Markdown previewer with live preview. Edit and preview Markdown in real-time with GitHub Flavored Markdown support. Best Markdown editor for README files and documentation.",
   path: "/dev-tools/markdown-previewer",
+
+  header: {
+    title: "Markdown Previewer - Free Online Markdown Editor with Live Preview",
+    description: "Free online Markdown previewer with live preview. Edit and preview Markdown in real-time with GitHub Flavored Markdown support. Best Markdown editor for README files and documentation.",
+    titleSize: "medium",
+    descriptionSize: "small",
+  },
+
   breadcrumbs: [
     { label: "Developer Tools", href: "/dev-tools" },
-    { label: "Markdown Previewer", href: "/dev-tools/markdown-previewer" }
+    { label: "Markdown Previewer", href: "/dev-tools/markdown-previewer" },
   ],
-  schemaOptions: {
-    name: "Markdown Previewer - Free Online Markdown Editor with Live Preview",
-    alternateName: "Best Markdown Previewer Online",
-    applicationCategory: "DeveloperApplication",
-    ratingValue: "4.9",
-    ratingCount: "4567",
-    featureList: [
-      "Live Markdown preview in real-time",
-      "GitHub Flavored Markdown (GFM) support",
-      "Split view editor with syntax highlighting",
-      "Support for tables, code blocks, task lists",
-      "Emoji support and automatic URL linking",
-      "Export to HTML",
-      "Copy formatted output",
-      "No signup required"
-    ]
-  }
-})
 
-export const metadata: Metadata = {
-  ...baseMetadata,
-  applicationName: "FastTools",
-  category: "Developer Tools",
-}
-
-export default function MarkdownPreviewerPage() {
-  const toolContent = {
-    toolName: "Markdown Previewer",
-    overview: "Free online Markdown previewer with live preview functionality. Edit Markdown and see formatted output instantly with our split-view editor. Supports GitHub Flavored Markdown (GFM), tables, task lists, code blocks, and emojis. Perfect for creating READMEfiles, documentation, and blog posts.",
+  content: {
+    overview: "Free online Markdown previewer with live preview functionality. Edit Markdown and see formatted output instantly with our split-view editor. Supports GitHub Flavored Markdown (GFM), tables, task lists, code blocks, and emojis. Perfect for creating README files, documentation, and blog posts.",
 
     howToSteps: [
       "Type or paste Markdown text in the editor",
@@ -182,30 +164,18 @@ export default function MarkdownPreviewerPage() {
       { name: "All Developer Tools", href: "/dev-tools" }
     ]
   }
+})
 
+export const metadata = toolConfig.metadata
+
+export default function MarkdownPreviewerPage() {
   return (
     <ToolPageLayout
-      header={{
-        title: "Markdown Previewer - Free Online Markdown Editor with Live Preview",
-        description: "Free online Markdown previewer with live preview. Edit and preview Markdown in real-time with GitHub Flavored Markdown support. Best Markdown editor for README files and documentation.",
-        titleSize: "medium",
-        descriptionSize: "small"
-      }}
-      breadcrumbs={[
-        { label: "Developer Tools", href: "/dev-tools" },
-        { label: "Markdown Previewer", href: "/dev-tools/markdown-previewer" }
-      ]}
-      toolComponent={
+      {...toolConfig.getLayoutProps(
         <div className="p-3 sm:p-4 md:p-5 rounded-lg bg-card border border-border shadow">
           <MarkdownPreviewer />
         </div>
-      }
-      toolContent={toolContent}
-      expectedMetadata={{
-        title: "Markdown Previewer | Free Online Markdown Editor with Live Preview",
-        description: "Free online Markdown previewer with live preview. Edit and preview Markdown in real-time with GitHub Flavored Markdown support. Best Markdown editor for README files and documentation.",
-        path: "/dev-tools/markdown-previewer"
-      }}
+      )}
     />
   )
 }

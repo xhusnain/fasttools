@@ -1,45 +1,27 @@
-import type { Metadata } from "next"
 import { ToolPageLayout } from "@/components/tool-page-layout"
 import { ColorPaletteGenerator } from "@/components/color-palette-generator"
-import { createMetadata } from "@/lib/metadata-base"
+import { createToolConfig } from "@/lib/create-tool-config"
 
-const baseMetadata = createMetadata({
-  title: "Color Palette Generator | Free Random Color Palette Creator Online",
-  description:
-    "Generate beautiful color palettes instantly. Free random color palette generator for designers and developers. Create harmonious color schemes with hex codes. Best color palette tool online.",
+const toolConfig = createToolConfig({
+  toolName: "Color Palette Generator",
+  description: "Generate beautiful color palettes instantly. Free random color palette generator for designers and developers. Create harmonious color schemes with hex codes. Best color palette tool online.",
+  metaTitle: "Color Palette Generator | Free Random Color Palette Creator Online",
+  metaDescription: "Generate beautiful color palettes instantly. Free random color palette generator for designers and developers. Create harmonious color schemes with hex codes. Best color palette tool online.",
   path: "/dev-tools/color-palette",
+
+  header: {
+    title: "Color Palette Generator - Random Color Scheme Creator",
+    description: "Generate beautiful color palettes instantly. Free random color palette generator for designers and developers. Create harmonious color schemes with hex codes.",
+    titleSize: "medium",
+    descriptionSize: "small",
+  },
+
   breadcrumbs: [
     { label: "Developer Tools", href: "/dev-tools" },
-    { label: "Color Palette Generator", href: "/dev-tools/color-palette" }
+    { label: "Color Palette Generator", href: "/dev-tools/color-palette" },
   ],
-  schemaOptions: {
-    name: "Color Palette Generator - Random Color Scheme Creator",
-    alternateName: "Best Color Palette Generator Online",
-    applicationCategory: "DeveloperApplication",
-    ratingValue: "4.9",
-    ratingCount: "5789",
-    featureList: [
-      "Generate random color palettes instantly",
-      "Copy hex codes with one click",
-      "Lock colors to keep favorites",
-      "Export palettes for design tools",
-      "Harmonious color scheme generation",
-      "RGB, HEX, HSL color format support",
-      "Color accessibility checking",
-      "No signup required"
-    ]
-  }
-})
 
-export const metadata: Metadata = {
-  ...baseMetadata,
-  applicationName: "FastTools",
-  category: "Developer Tools",
-}
-
-export default function ColorPalettePage() {
-  const toolContent = {
-    toolName: "Color Palette Generator",
+  content: {
     overview: "Generate beautiful, harmonious color palettes instantly with our free color palette generator. Create perfect color combinations for websites, designs, and branding. Lock favorite colors, copy hex codes, and export palettes. Perfect for designers and developers seeking color inspiration.",
 
     howToSteps: [
@@ -208,30 +190,18 @@ export default function ColorPalettePage() {
       { name: "All Developer Tools", href: "/dev-tools" }
     ]
   }
+})
 
+export const metadata = toolConfig.metadata
+
+export default function ColorPalettePage() {
   return (
     <ToolPageLayout
-      header={{
-        title: "Color Palette Generator - Random Color Scheme Creator",
-        description: "Generate beautiful color palettes instantly. Free random color palette generator for designers and developers. Create harmonious color schemes with hex codes.",
-        titleSize: "medium",
-        descriptionSize: "small"
-      }}
-      breadcrumbs={[
-        { label: "Developer Tools", href: "/dev-tools" },
-        { label: "Color Palette Generator", href: "/dev-tools/color-palette" }
-      ]}
-      toolComponent={
+      {...toolConfig.getLayoutProps(
         <div className="p-3 sm:p-4 md:p-5 rounded-lg bg-card border border-border shadow">
           <ColorPaletteGenerator />
         </div>
-      }
-      toolContent={toolContent}
-      expectedMetadata={{
-        title: "Color Palette Generator | Free Random Color Palette Creator Online",
-        description: "Generate beautiful color palettes instantly. Free random color palette generator for designers and developers. Create harmonious color schemes with hex codes. Best color palette tool online.",
-        path: "/dev-tools/color-palette"
-      }}
+      )}
     />
   )
 }

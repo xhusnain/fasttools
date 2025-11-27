@@ -1,51 +1,27 @@
-import type { Metadata } from "next"
 import { ToolPageLayout } from "@/components/tool-page-layout"
 import { HTMLBeautifier } from "@/components/html-beautifier"
-import { createMetadata } from "@/lib/metadata-base"
+import { createToolConfig } from "@/lib/create-tool-config"
 
-const baseMetadata = createMetadata({
-  title: "HTML Beautifier | Free Beautify & Minify HTML Code Online",
-  description:
-    "Free online HTML beautifier and minifier tool. Beautify HTML code with proper formatting or minify HTML to compress file size. Best HTML formatter online with instant results, download, and validation.",
+const toolConfig = createToolConfig({
+  toolName: "HTML Beautifier & Minifier",
+  description: "Free online HTML beautifier and minifier tool. Beautify HTML code with proper formatting or minify HTML to compress file size. Best HTML formatter online with instant results, download, and validation.",
+  metaTitle: "HTML Beautifier | Free Beautify & Minify HTML Code Online",
+  metaDescription: "Free online HTML beautifier and minifier tool. Beautify HTML code with proper formatting or minify HTML to compress file size. Best HTML formatter online with instant results, download, and validation.",
   path: "/dev-tools/html-beautifier",
+
+  header: {
+    title: "Free HTML Beautifier Online - Beautify HTML & Minify HTML Code",
+    description: "Free online HTML beautifier and minifier tool. Beautify HTML code with proper formatting or minify HTML to compress file size instantly. Best HTML formatter online with download, validation, code statistics, and no signup required.",
+    titleSize: "medium",
+    descriptionSize: "small",
+  },
+
   breadcrumbs: [
     { label: "Developer Tools", href: "/dev-tools" },
-    { label: "Free HTML Beautifier Online", href: "/dev-tools/html-beautifier" }
+    { label: "Free HTML Beautifier Online", href: "/dev-tools/html-beautifier" },
   ],
-  schemaOptions: {
-    name: "Free HTML Beautifier Online - Beautify HTML & Minify HTML Code",
-    alternateName: "HTML Formatter Online Free",
-    applicationCategory: "DeveloperApplication",
-    ratingValue: "4.8",
-    ratingCount: "2547",
-    featureList: [
-      "Beautify HTML online with proper indentation",
-      "Minify HTML code to compress file size",
-      "HTML formatter online with live preview",
-      "Free HTML beautifier with no signup",
-      "Download formatted HTML instantly",
-      "HTML validation and error checking",
-      "Code statistics (lines, characters, size)",
-      "Customizable indent size (2, 4, or 8 spaces)",
-      "Remove HTML comments option",
-      "Copy results to clipboard instantly",
-      "Browser-based processing for privacy",
-      "HTML compression and optimization",
-      "Format HTML free with unlimited use",
-      "Support for all HTML tags and HTML5"
-    ]
-  }
-})
 
-export const metadata: Metadata = {
-  ...baseMetadata,
-  applicationName: "FastTools",
-  category: "Developer Tools",
-}
-
-export default function HTMLBeautifierPage() {
-  const toolContent = {
-    toolName: "HTML Beautifier & Minifier",
+  content: {
     overview: "Our HTML beautifier and minifier tool makes formatting and compressing HTML code simple. Choose beautify mode to format HTML with proper indentation, or minify mode to compress HTML and reduce file size for production. Professional-grade tool supporting all HTML tags, HTML5, and advanced formatting options.",
 
     howToSteps: [
@@ -192,30 +168,18 @@ export default function HTMLBeautifierPage() {
       { name: "All Developer Tools", href: "/dev-tools" }
     ]
   }
+})
 
+export const metadata = toolConfig.metadata
+
+export default function HTMLBeautifierPage() {
   return (
     <ToolPageLayout
-      header={{
-        title: "Free HTML Beautifier Online - Beautify HTML & Minify HTML Code",
-        description: "Free online HTML beautifier and minifier tool. Beautify HTML code with proper formatting or minify HTML to compress file size instantly. Best HTML formatter online with download, validation, code statistics, and no signup required.",
-        titleSize: "medium",
-        descriptionSize: "small"
-      }}
-      breadcrumbs={[
-        { label: "Developer Tools", href: "/dev-tools" },
-        { label: "Free HTML Beautifier Online", href: "/dev-tools/html-beautifier" }
-      ]}
-      toolComponent={
+      {...toolConfig.getLayoutProps(
         <div className="p-3 sm:p-4 md:p-5 rounded-lg bg-card border border-border shadow">
           <HTMLBeautifier />
         </div>
-      }
-      toolContent={toolContent}
-      expectedMetadata={{
-        title: "HTML Beautifier | Free Beautify & Minify HTML Code Online",
-        description: "Free online HTML beautifier and minifier tool. Beautify HTML code with proper formatting or minify HTML to compress file size. Best HTML formatter online with instant results, download, and validation.",
-        path: "/dev-tools/html-beautifier"
-      }}
+      )}
     />
   )
 }
