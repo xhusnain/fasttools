@@ -12,6 +12,9 @@ export interface ContentData {
     faqs: Array<{ question: string; answer: string }>
     metaTitle?: string
     metaDescription?: string
+    metaRobots?: string
+    canonicalUrl?: string
+    url?: string
 }
 
 export type ValidationCategory = 'CONTENT' | 'POLICY' | 'SEO' | 'TECHNICAL'
@@ -326,6 +329,71 @@ export function validateAdSenseCompliance(data: ContentData): ValidationResult[]
             fix: 'Reduce usage of the tool name. Use synonyms.'
         })
     }
+
+    // E. TECHNICAL SEO CHECKS
+    // 1. URL marked 'noindex'
+    if (data.metaRobots && data.metaRobots.toLowerCase().includes('noindex')) {
+        results.push({
+            type: 'CRITICAL',
+            category: 'TECHNICAL',
+            message: 'Page is marked as "noindex"',
+            fix: 'Remove "noindex" from meta robots tag to allow indexing.'
+        })
+    }
+
+    // 2. Canonical URL
+    if (!data.canonicalUrl) {
+        results.push({
+            type: 'WARNING',
+            category: 'TECHNICAL',
+            message: 'Missing Canonical URL',
+            fix: 'Add a self-referencing canonical URL to prevent duplicate content issues.'
+        })
+    }
+
+    // 3. Manual Verification Checklist (Informational/Warning)
+    // These are checks that require manual verification or server-side analysis
+    results.push({
+        type: 'WARNING',
+        category: 'TECHNICAL',
+        message: 'Check: Server Errors (5xx)',
+        fix: 'Verify no 500-level errors in Search Console.'
+    })
+
+    results.push({
+        type: 'WARNING',
+        category: 'TECHNICAL',
+        message: 'Check: Redirect Errors',
+        fix: 'Ensure no redirect loops or chains > 3 hops.'
+    })
+
+    results.push({
+        type: 'WARNING',
+        category: 'TECHNICAL',
+        message: 'Check: Robots.txt Blocking',
+        fix: 'Verify URL is not blocked in robots.txt.'
+    })
+
+    results.push({
+        type: 'WARNING',
+        category: 'TECHNICAL',
+        message: 'Check: Soft 404',
+        fix: 'Ensure 404 pages return actual 404 status code.'
+    })
+
+    results.push({
+        type: 'WARNING',
+        category: 'TECHNICAL',
+        message: 'Check: Unauthorized (401/403)',
+        fix: 'Ensure Googlebot can access the page without auth.'
+    })
+
+    results.push({
+        type: 'WARNING',
+        category: 'TECHNICAL',
+        message: 'Check: Not Found (404)',
+        fix: 'Verify the page exists and does not return 404.'
+    })
 
     return results
 }

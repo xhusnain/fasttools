@@ -12,7 +12,8 @@ import {
     Scale,
     Search,
     CheckSquare,
-    ExternalLink
+    ExternalLink,
+    Settings
 } from 'lucide-react'
 import { ContentData, validateAdSenseCompliance, ValidationCategory } from '@/lib/adsense-validator'
 
@@ -143,8 +144,15 @@ export function AdSenseComplianceChecker({ data }: { data: ContentData }) {
                             className={`flex-1 py-3 px-4 text-xs font-bold uppercase tracking-wider flex items-center justify-center gap-1.5 border-b-2 transition-colors relative ${activeTab === 'SEO' ? 'border-primary text-primary' : 'border-transparent text-muted-foreground hover:text-foreground'}`}
                         >
                             <Search className="h-3.5 w-3.5" /> SEO
-                            {results.some(r => r.category === 'SEO' && r.type === 'CRITICAL') && <span className="absolute top-2 right-2 w-1.5 h-1.5 bg-destructive rounded-full" />}
                             {results.some(r => r.category === 'SEO' && r.type === 'WARNING') && <span className="absolute top-2 right-2 w-1.5 h-1.5 bg-tertiary-accent rounded-full" />}
+                        </button>
+                        <button
+                            onClick={() => setActiveTab('TECHNICAL')}
+                            className={`flex-1 py-3 px-4 text-xs font-bold uppercase tracking-wider flex items-center justify-center gap-1.5 border-b-2 transition-colors relative ${activeTab === 'TECHNICAL' ? 'border-primary text-primary' : 'border-transparent text-muted-foreground hover:text-foreground'}`}
+                        >
+                            <Settings className="h-3.5 w-3.5" /> Tech
+                            {results.some(r => r.category === 'TECHNICAL' && r.type === 'CRITICAL') && <span className="absolute top-2 right-2 w-1.5 h-1.5 bg-destructive rounded-full" />}
+                            {results.some(r => r.category === 'TECHNICAL' && r.type === 'WARNING') && <span className="absolute top-2 right-2 w-1.5 h-1.5 bg-tertiary-accent rounded-full" />}
                         </button>
                     </div>
 

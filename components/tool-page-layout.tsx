@@ -282,7 +282,9 @@ export function ToolPageLayout({
                 data={{
                     ...toolContent,
                     metaTitle: expectedMetadata?.title,
-                    metaDescription: expectedMetadata?.description
+                    metaDescription: expectedMetadata?.description,
+                    metaRobots: expectedMetadata?.robots || "index, follow",
+                    canonicalUrl: expectedMetadata?.canonical || `https://www.fasttools.store${header.title ? `/tool/${header.title.toLowerCase().replace(/\s+/g, '-')}` : ''}`
                 }}
             />
         </div>
