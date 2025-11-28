@@ -61,6 +61,13 @@ export const goneUrls = new Set([
   '/guides/age-in-hours-calculator-guide',
   '/guides/color-palette-generator-guide',
   '/guides/hex-to-rgb-converter-guide',
+  '/guides/body-fat-calculator-guide',
+  '/guides/calorie-calculator-guide',
+  '/guides/ai-caption-generator-guide',
+  '/guides/concrete-calculator-guide',
+  '/guides/youtube-thumbnail-downloader-guide',
+  '/guides/date-to-day-finder-guide',
+  '/guides/conversion-calculator-guide',
 
   // Tool pages that were removed or renamed
   '/tools/body-fat-calculator',
@@ -68,14 +75,13 @@ export const goneUrls = new Set([
   '/tools/bmr-calculator',
   '/tools/interest-rate-calculator',
   '/tools/scientific-calculator',
-  
+
   // AI Tools that were removed
   '/ai-tools/meme-generator',
   '/ai-tools/hashtag-suggester',
   '/tools/calorie-calculator',
   '/tools/gpa-calculator',
   '/tools/sales-tax-calculator',
-  '/tools/pregnancy-calculator',
   '/tools/investment-calculator',
   '/tools/payment-calculator',
   '/tools/conversion-calculator',

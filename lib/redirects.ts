@@ -12,4 +12,7 @@ export const redirects = new Map([
     ['/calculator/salary-calculator', '/finance-tools/salary-calculator'],
     ['/calculator/sales-tax-calculator', '/finance-tools/sales-tax-calculator'],
     ['/calculator/tax-calculator', '/finance-tools/tax-calculator'],
+    ['/tools/pregnancy-calculator', '/calculator/pregnancy-calculator'],
+    ['/tools/fraction-calculator', '/calculator/fraction-calculator'],
+    ['/tools/ip-subnet-calculator', '/calculator/ip-subnet-calculator'],
 ])
