@@ -71,7 +71,7 @@ Split ${numPeople} ways: $${result.perPerson} per person`
             onChange={(e) => setTotalBill(e.target.value)}
             min="0"
             step="0.01"
-            className="h-9 text-sm border-2 border-orange-300 focus:border-orange-400 focus:ring-2 focus:ring-orange-400/20 bg-background text-foreground placeholder:text-muted-foreground"
+            className="h-9 text-sm border-2 border-primary/30 focus:border-primary focus:ring-2 focus:ring-primary/20 bg-background text-foreground placeholder:text-muted-foreground"
           />
         </div>
 
@@ -87,7 +87,7 @@ Split ${numPeople} ways: $${result.perPerson} per person`
             onChange={(e) => setNumPeople(e.target.value)}
             min="1"
             step="1"
-            className="h-9 text-sm border-2 border-orange-300 focus:border-orange-400 focus:ring-2 focus:ring-orange-400/20 bg-background text-foreground placeholder:text-muted-foreground"
+            className="h-9 text-sm border-2 border-primary/30 focus:border-primary focus:ring-2 focus:ring-primary/20 bg-background text-foreground placeholder:text-muted-foreground"
           />
         </div>
 
@@ -104,7 +104,7 @@ Split ${numPeople} ways: $${result.perPerson} per person`
             min="0"
             max="100"
             step="1"
-            className="h-9 text-sm border-2 border-orange-300 focus:border-orange-400 focus:ring-2 focus:ring-orange-400/20 bg-background text-foreground placeholder:text-muted-foreground"
+            className="h-9 text-sm border-2 border-primary/30 focus:border-primary focus:ring-2 focus:ring-primary/20 bg-background text-foreground placeholder:text-muted-foreground"
           />
           <div className="flex gap-2 flex-wrap">
             {quickTipButtons.map((percent) => (
@@ -169,12 +169,12 @@ Split ${numPeople} ways: $${result.perPerson} per person`
               <span className="text-sm font-bold text-foreground">${result.totalWithTip}</span>
             </div>
 
-            <div className="flex justify-between items-center p-3 bg-green-500/10 rounded-lg border border-green-500/20">
+            <div className="flex justify-between items-center p-3 bg-secondary-accent/10 rounded-lg border border-secondary-accent/20">
               <span className="text-xs font-medium text-foreground">Each Person Pays:</span>
               <span className="text-xl font-bold text-heading-accent">${result.perPerson}</span>
             </div>
 
-            <div className="p-3 bg-blue-500/10 rounded-lg border border-blue-500/20">
+            <div className="p-3 bg-primary/10 rounded-lg border border-primary/20">
               <p className="text-xs text-muted-foreground mb-1">Breakdown per person:</p>
               <p className="text-xs font-medium text-foreground">
                 Bill: ${(Number.parseFloat(totalBill) / Number.parseInt(numPeople)).toFixed(2)} + Tip: ${result.tipPerPerson}

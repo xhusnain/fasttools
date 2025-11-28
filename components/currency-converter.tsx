@@ -155,7 +155,7 @@ export function CurrencyConverter() {
               placeholder="Enter amount"
               value={amount}
               onChange={(e) => setAmount(e.target.value)}
-              className="w-full px-3 py-2 border-2 border-primary rounded-md bg-background text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-orange-500/20 focus:border-primary"
+              className="w-full px-3 py-2 border-2 border-primary rounded-md bg-background text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary"
             />
           </div>
 
@@ -187,7 +187,7 @@ export function CurrencyConverter() {
             <select
               value={fromCurrency}
               onChange={(e) => setFromCurrency(e.target.value)}
-              className="w-full px-3 py-2 border-2 border-primary rounded-md bg-background text-foreground focus:outline-none focus:ring-2 focus:ring-orange-500/20 focus:border-primary"
+              className="w-full px-3 py-2 border-2 border-primary rounded-md bg-background text-foreground focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary"
             >
               {currencies.map((currency) => (
                 <option key={currency.code} value={currency.code}>
@@ -202,7 +202,7 @@ export function CurrencyConverter() {
             <select
               value={toCurrency}
               onChange={(e) => setToCurrency(e.target.value)}
-              className="w-full px-3 py-2 border-2 border-primary rounded-md bg-background text-foreground focus:outline-none focus:ring-2 focus:ring-orange-500/20 focus:border-primary"
+              className="w-full px-3 py-2 border-2 border-primary rounded-md bg-background text-foreground focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary"
             >
               {currencies.map((currency) => (
                 <option key={currency.code} value={currency.code}>
@@ -215,7 +215,7 @@ export function CurrencyConverter() {
 
         {/* Error Display */}
         {error && (
-          <div className="mt-4 p-3 bg-red-50 dark:bg-red-950/20 rounded-md border border-red-200 dark:border-red-800">
+          <div className="mt-4 p-3 bg-destructive/10 rounded-md border border-destructive/30">
             <p className="text-sm text-foreground text-center">
               {error}
             </p>

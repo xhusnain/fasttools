@@ -614,7 +614,7 @@ Purchasing Power: ${result.purchasingPower.toFixed(1)}%`
                       <span className="font-medium text-foreground text-xs sm:text-sm break-words">{scenario.scenario}</span>
                       <p className="text-xs text-foreground break-words">${scenario.adjustedAmount.toFixed(2)}</p>
                     </div>
-                    <Badge className={scenario.difference > 0 ? "bg-green-500/20 text-heading-accent border-green-500" : "bg-red-500/20 text-foreground border-red-500"} variant="outline">
+                    <Badge className={scenario.difference > 0 ? "bg-secondary-accent/20 text-heading-accent border-secondary-accent" : "bg-destructive/20 text-foreground border-destructive"} variant="outline">
                       {scenario.difference > 0 ? "+" : ""}${scenario.difference.toFixed(2)}
                     </Badge>
                   </div>

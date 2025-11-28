@@ -238,7 +238,7 @@ Next Birthday: ${result.nextBirthday}`
         <Card className="shadow-lg border-primary/20 animate-fade-in-up bg-card">
           <CardHeader className="pb-4">
             <CardTitle className="text-2xl flex items-center gap-3">
-              <div className="p-2 bg-green-100 dark:bg-green-900/30 rounded-lg">
+              <div className="p-2 bg-secondary-accent/10 dark:bg-secondary-accent/30 rounded-lg">
                 <Heart className="h-6 w-6 text-heading-accent" />
               </div>
               Your Age Results

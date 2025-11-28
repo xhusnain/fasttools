@@ -83,7 +83,7 @@ export function BirthdayCountdown() {
       <Card className="border-2 border-white/20 bg-gradient-to-br from-white/10 to-white/5 backdrop-blur-xl shadow-2xl">
         <CardHeader className="text-center space-y-3 sm:space-y-4 p-4 sm:p-6">
           <div className="flex flex-col sm:flex-row items-center justify-center gap-3 mb-4">
-            <div className="h-10 w-10 sm:h-12 sm:w-12 rounded-xl bg-gradient-to-br from-pink-500 to-purple-500 flex items-center justify-center shadow-lg">
+            <div className="h-10 w-10 sm:h-12 sm:w-12 rounded-xl bg-gradient-to-br from-primary to-secondary-accent flex items-center justify-center shadow-lg">
               <Cake className="h-5 w-5 sm:h-6 sm:w-6 text-white" />
             </div>
             <div className="text-center sm:text-left">
@@ -117,26 +117,26 @@ export function BirthdayCountdown() {
           </div>
 
           {result && (
-            <div className="p-4 sm:p-6 rounded-lg bg-gradient-to-br from-pink-500/20 to-purple-500/20 border border-pink-400/30 space-y-4 sm:space-y-6 animate-fade-in">
+            <div className="p-4 sm:p-6 rounded-lg bg-gradient-to-br from-primary/20 to-secondary-accent/20 border border-primary/30 space-y-4 sm:space-y-6 animate-fade-in">
               <div className="text-center space-y-2 sm:space-y-3">
                 <Cake className="h-8 w-8 sm:h-12 sm:w-12 text-foreground mx-auto" />
                 <p className="text-sm sm:text-base text-foreground">Next Birthday: {result.nextBirthday}</p>
               </div>
 
               <div className="grid grid-cols-2 sm:grid-cols-4 gap-2 sm:gap-3">
-                <div className="p-3 sm:p-4 rounded-lg bg-gradient-to-br from-blue-500/20 to-blue-600/20 border border-blue-400/30 text-center">
+                <div className="p-3 sm:p-4 rounded-lg bg-gradient-to-br from-primary/20 to-primary/30 border border-primary/30 text-center">
                   <p className="text-xl sm:text-2xl font-bold text-foreground">{result.days}</p>
                   <p className="text-xs sm:text-sm text-foreground">Days</p>
                 </div>
-                <div className="p-3 sm:p-4 rounded-lg bg-gradient-to-br from-purple-500/20 to-purple-600/20 border border-purple-400/30 text-center">
+                <div className="p-3 sm:p-4 rounded-lg bg-gradient-to-br from-secondary-accent/20 to-secondary-accent/30 border border-secondary-accent/30 text-center">
                   <p className="text-xl sm:text-2xl font-bold text-foreground">{result.hours}</p>
                   <p className="text-xs sm:text-sm text-foreground">Hours</p>
                 </div>
-                <div className="p-3 sm:p-4 rounded-lg bg-gradient-to-br from-green-500/20 to-green-600/20 border border-green-400/30 text-center">
+                <div className="p-3 sm:p-4 rounded-lg bg-gradient-to-br from-secondary-accent/20 to-secondary-accent/30 border border-secondary-accent/30 text-center">
                   <p className="text-xl sm:text-2xl font-bold text-heading-accent">{result.minutes}</p>
                   <p className="text-xs sm:text-sm text-heading-accent">Minutes</p>
                 </div>
-                <div className="p-3 sm:p-4 rounded-lg bg-gradient-to-br from-primary/20 to-primary/90/20 border border-orange-400/30 text-center">
+                <div className="p-3 sm:p-4 rounded-lg bg-gradient-to-br from-primary/20 to-primary/30 border border-primary/30 text-center">
                   <p className="text-xl sm:text-2xl font-bold text-foreground">{result.seconds}</p>
                   <p className="text-xs sm:text-sm text-foreground">Seconds</p>
                 </div>
@@ -164,7 +164,7 @@ export function BirthdayCountdown() {
                 </GButton>
                 <GButton
                   onClick={shareResult}
-                  className="flex-1 h-10 sm:h-11 text-sm font-medium bg-gradient-to-r from-purple-500 to-pink-500 hover:from-purple-600 hover:to-pink-600 text-white shadow-lg hover:shadow-xl transition-all duration-300"
+                  className="flex-1 h-10 sm:h-11 text-sm font-medium bg-gradient-to-r from-primary to-secondary-accent hover:from-primary/90 hover:to-secondary-accent/90 text-white shadow-lg hover:shadow-xl transition-all duration-300"
                 >
                   <span className="hidden sm:inline">Share Countdown</span>
                   <span className="sm:hidden">Share</span>

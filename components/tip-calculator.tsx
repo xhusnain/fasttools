@@ -72,7 +72,7 @@ Split ${numPeople} ways: $${result.perPerson} per person`
             onChange={(e) => setBillAmount(e.target.value)}
             min="0"
             step="0.01"
-            className="h-9 text-sm border-2 border-orange-300 focus:border-orange-400 focus:ring-2 focus:ring-orange-400/20 bg-background text-foreground placeholder:text-muted-foreground"
+            className="h-9 text-sm border-2 border-primary/30 focus:border-primary focus:ring-2 focus:ring-primary/20 bg-background text-foreground placeholder:text-muted-foreground"
           />
         </div>
 
@@ -90,7 +90,7 @@ Split ${numPeople} ways: $${result.perPerson} per person`
             min="0"
             max="100"
             step="1"
-            className="h-9 text-sm border-2 border-orange-300 focus:border-orange-400 focus:ring-2 focus:ring-orange-400/20 bg-background text-foreground placeholder:text-muted-foreground"
+            className="h-9 text-sm border-2 border-primary/30 focus:border-primary focus:ring-2 focus:ring-primary/20 bg-background text-foreground placeholder:text-muted-foreground"
           />
           <div className="flex gap-2 flex-wrap">
             {quickTipButtons.map((percent) => (
@@ -120,7 +120,7 @@ Split ${numPeople} ways: $${result.perPerson} per person`
             onChange={(e) => setNumPeople(e.target.value)}
             min="1"
             step="1"
-            className="h-9 text-sm border-2 border-orange-300 focus:border-orange-400 focus:ring-2 focus:ring-orange-400/20 bg-background text-foreground placeholder:text-muted-foreground"
+            className="h-9 text-sm border-2 border-primary/30 focus:border-primary focus:ring-2 focus:ring-primary/20 bg-background text-foreground placeholder:text-muted-foreground"
           />
         </div>
 

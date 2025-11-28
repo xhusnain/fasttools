@@ -348,14 +348,14 @@ International: ${result.isInternational ? 'Yes' : 'No'}`
                 <div className="space-y-1">
                   <Label className="text-xs font-medium text-muted-foreground">Transaction Type</Label>
                   <Select value={transactionType} onValueChange={setTransactionType}>
-                    <SelectTrigger className="h-9 border-2 border-orange-300 focus:border-orange-400 focus:ring-2 focus:ring-orange-400/20 bg-background text-foreground text-sm">
+                    <SelectTrigger className="h-9 border-2 border-primary/30 focus:border-primary focus:ring-2 focus:ring-primary/20 bg-background text-foreground text-sm">
                       <SelectValue placeholder="Select type" />
                     </SelectTrigger>
-                    <SelectContent className="bg-background border-2 border-orange-300">
-                      <SelectItem value="personal" className="text-foreground hover:bg-orange-100 text-sm">Personal</SelectItem>
-                      <SelectItem value="commercial" className="text-foreground hover:bg-orange-100 text-sm">Commercial</SelectItem>
-                      <SelectItem value="donations" className="text-foreground hover:bg-orange-100 text-sm">Donations</SelectItem>
-                      <SelectItem value="cryptocurrency" className="text-foreground hover:bg-orange-100 text-sm">Cryptocurrency</SelectItem>
+                    <SelectContent className="bg-background border-2 border-primary/30">
+                      <SelectItem value="personal" className="text-foreground hover:bg-primary/10 text-sm">Personal</SelectItem>
+                      <SelectItem value="commercial" className="text-foreground hover:bg-primary/10 text-sm">Commercial</SelectItem>
+                      <SelectItem value="donations" className="text-foreground hover:bg-primary/10 text-sm">Donations</SelectItem>
+                      <SelectItem value="cryptocurrency" className="text-foreground hover:bg-primary/10 text-sm">Cryptocurrency</SelectItem>
                     </SelectContent>
                   </Select>
                 </div>
@@ -363,12 +363,12 @@ International: ${result.isInternational ? 'Yes' : 'No'}`
                 <div className="space-y-1">
                   <Label className="text-xs font-medium text-muted-foreground">Payment Method</Label>
                   <Select value={paymentMethod} onValueChange={setPaymentMethod}>
-                    <SelectTrigger className="h-9 border-2 border-orange-300 focus:border-orange-400 focus:ring-2 focus:ring-orange-400/20 bg-background text-foreground text-sm">
+                    <SelectTrigger className="h-9 border-2 border-primary/30 focus:border-primary focus:ring-2 focus:ring-primary/20 bg-background text-foreground text-sm">
                       <SelectValue placeholder="Select method" />
                     </SelectTrigger>
-                    <SelectContent className="bg-background border-2 border-orange-300">
+                    <SelectContent className="bg-background border-2 border-primary/30">
                       {getPaymentMethodOptions().map((option) => (
-                        <SelectItem key={option.value} value={option.value} className="text-foreground hover:bg-orange-100 text-sm">
+                        <SelectItem key={option.value} value={option.value} className="text-foreground hover:bg-primary/10 text-sm">
                           {option.label}
                         </SelectItem>
                       ))}
@@ -382,12 +382,12 @@ International: ${result.isInternational ? 'Yes' : 'No'}`
                 <div className="space-y-1">
                   <Label className="text-xs font-medium text-muted-foreground">From Country</Label>
                   <Select value={senderCountry} onValueChange={setSenderCountry}>
-                    <SelectTrigger className="h-9 border-2 border-orange-300 focus:border-orange-400 focus:ring-2 focus:ring-orange-400/20 bg-background text-foreground text-sm">
+                    <SelectTrigger className="h-9 border-2 border-primary/30 focus:border-primary focus:ring-2 focus:ring-primary/20 bg-background text-foreground text-sm">
                       <SelectValue placeholder="Select country" />
                     </SelectTrigger>
-                    <SelectContent className="bg-background border-2 border-orange-300">
+                    <SelectContent className="bg-background border-2 border-primary/30">
                       {Object.entries(COUNTRIES).map(([code, data]) => (
-                        <SelectItem key={code} value={code} className="text-foreground hover:bg-orange-100 text-sm">
+                        <SelectItem key={code} value={code} className="text-foreground hover:bg-primary/10 text-sm">
                           {data.name}
                         </SelectItem>
                       ))}
@@ -398,12 +398,12 @@ International: ${result.isInternational ? 'Yes' : 'No'}`
                 <div className="space-y-1">
                   <Label className="text-xs font-medium text-muted-foreground">To Country</Label>
                   <Select value={receiverCountry} onValueChange={setReceiverCountry}>
-                    <SelectTrigger className="h-9 border-2 border-orange-300 focus:border-orange-400 focus:ring-2 focus:ring-orange-400/20 bg-background text-foreground text-sm">
+                    <SelectTrigger className="h-9 border-2 border-primary/30 focus:border-primary focus:ring-2 focus:ring-primary/20 bg-background text-foreground text-sm">
                       <SelectValue placeholder="Select country" />
                     </SelectTrigger>
-                    <SelectContent className="bg-background border-2 border-orange-300">
+                    <SelectContent className="bg-background border-2 border-primary/30">
                       {Object.entries(COUNTRIES).map(([code, data]) => (
-                        <SelectItem key={code} value={code} className="text-foreground hover:bg-orange-100 text-sm">
+                        <SelectItem key={code} value={code} className="text-foreground hover:bg-primary/10 text-sm">
                           {data.name}
                         </SelectItem>
                       ))}
@@ -417,12 +417,12 @@ International: ${result.isInternational ? 'Yes' : 'No'}`
                 <div className="space-y-1">
                   <Label className="text-xs font-medium text-muted-foreground">Currency</Label>
                   <Select value={currency} onValueChange={setCurrency}>
-                    <SelectTrigger className="h-9 border-2 border-orange-300 focus:border-orange-400 focus:ring-2 focus:ring-orange-400/20 bg-background text-foreground text-sm">
+                    <SelectTrigger className="h-9 border-2 border-primary/30 focus:border-primary focus:ring-2 focus:ring-primary/20 bg-background text-foreground text-sm">
                       <SelectValue placeholder="Select currency" />
                     </SelectTrigger>
-                    <SelectContent className="bg-background border-2 border-orange-300">
+                    <SelectContent className="bg-background border-2 border-primary/30">
                       {Object.entries(FIXED_FEES_BY_CURRENCY).map(([code, fee]) => (
-                        <SelectItem key={code} value={code} className="text-foreground hover:bg-orange-100 text-sm">
+                        <SelectItem key={code} value={code} className="text-foreground hover:bg-primary/10 text-sm">
                           {code} {fee > 0 ? `(${fee})` : ''}
                         </SelectItem>
                       ))}
@@ -439,7 +439,7 @@ International: ${result.isInternational ? 'Yes' : 'No'}`
                     onChange={(e) => setAmount(e.target.value)}
                     min="0"
                     step="0.01"
-                    className="h-9 text-sm border-2 border-orange-300 focus:border-orange-400 focus:ring-2 focus:ring-orange-400/20 bg-background text-foreground placeholder:text-muted-foreground"
+                    className="h-9 text-sm border-2 border-primary/30 focus:border-primary focus:ring-2 focus:ring-primary/20 bg-background text-foreground placeholder:text-muted-foreground"
                   />
                 </div>
               </div>
@@ -469,7 +469,7 @@ International: ${result.isInternational ? 'Yes' : 'No'}`
               {result ? (
                 <div className="space-y-3">
                   {/* Transaction Summary */}
-                  <div className="p-3 bg-card rounded-lg border-2 border-orange-300">
+                  <div className="p-3 bg-card rounded-lg border-2 border-primary/30">
                     <div className="grid grid-cols-2 gap-2 text-xs">
                       <div className="flex justify-between">
                         <span className="text-muted-foreground">Type:</span>
@@ -494,23 +494,23 @@ International: ${result.isInternational ? 'Yes' : 'No'}`
 
                   {/* Amount & Fees */}
                   <div className="space-y-2">
-                    <div className="flex justify-between items-center p-2 bg-card rounded border border-orange-300">
+                    <div className="flex justify-between items-center p-2 bg-card rounded border border-primary/30">
                       <span className="text-sm text-muted-foreground">Transaction Amount:</span>
                       <span className="text-sm font-bold text-foreground">{result.currency} {result.amount}</span>
                     </div>
 
-                    <div className="flex justify-between items-center p-2 bg-card rounded border border-orange-300">
+                    <div className="flex justify-between items-center p-2 bg-card rounded border border-primary/30">
                       <span className="text-sm text-muted-foreground">Percentage Fee:</span>
                       <span className="text-sm font-bold text-foreground">{result.currency} {result.percentageFee}</span>
                     </div>
 
-                    <div className="flex justify-between items-center p-2 bg-card rounded border border-orange-300">
+                    <div className="flex justify-between items-center p-2 bg-card rounded border border-primary/30">
                       <span className="text-sm text-muted-foreground">Fixed Fee:</span>
                       <span className="text-sm font-bold text-foreground">{result.currency} {result.fixedFee}</span>
                     </div>
 
                     {result.currencyConversionFee && (
-                      <div className="flex justify-between items-center p-2 bg-card rounded border border-orange-300">
+                      <div className="flex justify-between items-center p-2 bg-card rounded border border-primary/30">
                         <span className="text-sm text-muted-foreground">Currency Conversion:</span>
                         <span className="text-sm font-bold text-foreground">{result.currency} {result.currencyConversionFee}</span>
                       </div>
@@ -524,13 +524,13 @@ International: ${result.isInternational ? 'Yes' : 'No'}`
                   </div>
 
                   {/* You Receive */}
-                  <div className="flex justify-between items-center p-3 bg-green-500/10 rounded-lg border-2 border-green-500">
+                  <div className="flex justify-between items-center p-3 bg-secondary-accent/10 rounded-lg border-2 border-secondary-accent">
                     <span className="text-sm font-medium text-foreground">You Receive:</span>
                     <span className="text-lg font-bold text-heading-accent">{result.currency} {result.netAmount}</span>
                   </div>
 
                   {/* Amount to Charge */}
-                  <div className="p-3 bg-blue-500/10 rounded-lg border-2 border-blue-500">
+                  <div className="p-3 bg-primary/10 rounded-lg border-2 border-primary">
                     <p className="text-xs text-muted-foreground mb-1">To receive exactly {result.currency} {result.amount}:</p>
                     <div className="flex justify-between items-center">
                       <span className="text-sm font-medium text-foreground">Charge:</span>
@@ -541,14 +541,14 @@ International: ${result.isInternational ? 'Yes' : 'No'}`
                   <GButton
                     onClick={copyResult}
                     variant="outline"
-                    className="w-full h-8 text-xs font-medium hover:bg-accent transition-all bg-transparent border-orange-300"
+                    className="w-full h-8 text-xs font-medium hover:bg-accent transition-all bg-transparent border-primary/30"
                   >
                     <Copy className="mr-2 h-3 w-3" />
                     Copy Results
                   </GButton>
                 </div>
               ) : (
-                <div className="p-6 text-center text-muted-foreground border-2 border-dashed border-orange-300 rounded-lg">
+                <div className="p-6 text-center text-muted-foreground border-2 border-dashed border-primary/30 rounded-lg">
                   <Calculator className="h-8 w-8 mx-auto mb-2 opacity-50" />
                   <p className="text-sm">Enter transaction details and click "Calculate Fee" to see results</p>
                 </div>
