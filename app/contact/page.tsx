@@ -328,6 +328,32 @@ export default function ContactPage() {
                   </Accordion>
                 </div>
               </div>
+
+              {/* Additional Static Content for SEO */}
+              <div className="lg:col-span-5 mt-12 grid md:grid-cols-2 gap-8 pt-12 border-t border-border">
+                <div>
+                  <h2 className="text-2xl font-bold text-foreground mb-4">Why Contact FastTools?</h2>
+                  <div className="prose prose-sm text-muted-foreground">
+                    <p className="mb-4">
+                      At FastTools, we believe in building utilities that truly serve our users. Your feedback is the cornerstone of our development process. Whether you've found a bug in our <strong>IP Subnet Calculator</strong>, have a feature request for our <strong>Image Tools</strong>, or simply want to say hello, we value your input.
+                    </p>
+                    <p>
+                      Our dedicated team of developers and network engineers reviews every message. We are committed to maintaining a high standard of quality across all our free online tools. By contacting us, you help ensure that FastTools remains accurate, fast, and reliable for professionals and students worldwide.
+                    </p>
+                  </div>
+                </div>
+                <div>
+                  <h2 className="text-2xl font-bold text-foreground mb-4">Business & Partnership Inquiries</h2>
+                  <div className="prose prose-sm text-muted-foreground">
+                    <p className="mb-4">
+                      Are you interested in partnering with FastTools? We are open to collaborations that bring value to our users. If you have a proposal regarding advertising, tool integration, or educational content sharing, please select "Business Inquiry" in the subject line of the contact form.
+                    </p>
+                    <p>
+                      We also welcome educational institutions and coding bootcamps to use our tools in their curriculum. If you need specific features or bulk usage guidelines, don't hesitate to reach out. We are here to support the developer and engineering community.
+                    </p>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </div>
