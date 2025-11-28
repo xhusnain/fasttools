@@ -1,7 +1,7 @@
 import Link from "next/link"
 import { Button } from "@/components/ui/button"
 import { GCard } from "@/components/globalcomponents/gcard"
-import { HeroSectionBg } from "@/components/hero-section-bg"
+import { PremiumHeroBackground } from "@/components/premium-hero-background"
 import { GHeader } from "@/components/globalcomponents/gheader"
 import type { Metadata } from "next"
 import {
@@ -1231,79 +1231,73 @@ export default function Home() {
       {/* Hero Section - Background with Orange Text */}
       <section className="relative min-h-screen flex items-center justify-center px-4 overflow-hidden bg-background">
         {/* Hero Background Image */}
-        <HeroSectionBg />
+        <PremiumHeroBackground />
 
         <div className="container mx-auto max-w-6xl relative z-10 py-12 sm:py-16 md:py-20">
           <div className="text-center space-y-8 sm:space-y-10">
-            {/* Main Heading - Orange Text with Highlights */}
-            <div className="space-y-4 sm:space-y-6">
+            {/* Main Heading - Professional & Trustworthy */}
+            <div className="space-y-6 sm:space-y-8">
+              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/10 border border-primary/20 text-primary text-xs sm:text-sm font-medium mb-4">
+                <span className="relative flex h-2 w-2">
+                  <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary opacity-75"></span>
+                  <span className="relative inline-flex rounded-full h-2 w-2 bg-primary"></span>
+                </span>
+                Professional Grade Tools
+              </div>
+
               <h1 className="text-4xl sm:text-5xl md:text-7xl lg:text-8xl font-black text-foreground leading-[1.1] tracking-tight px-2">
                 <span className="block">
-                  Access <span className="relative inline-block px-1">
-                    <span className="relative z-10">1000+</span>
-                    <span className="absolute bottom-0 left-0 right-0 h-full bg-pink-600/40 rounded -rotate-1"></span>
-                  </span> tools.
+                  Build faster with
                 </span>
-                <span className="block">
-                  Get work done <span className="relative inline-block px-1">
-                    <span className="relative z-10">faster</span>
-                    <span className="absolute bottom-0 left-0 right-0 h-full bg-heading-accent/40 rounded rotate-1"></span>
-                  </span>.
+                <span className="block bg-clip-text text-transparent bg-gradient-to-r from-primary via-purple-500 to-primary animate-gradient-x pb-2">
+                  premium tools.
                 </span>
               </h1>
 
-              <p className="text-base sm:text-lg md:text-xl lg:text-2xl text-foreground font-medium max-w-4xl mx-auto leading-relaxed px-4">
-                No registration needed. All tools are free forever and process everything locally in your browser for complete privacy and security.
+              <p className="text-base sm:text-lg md:text-xl text-muted-foreground font-medium max-w-3xl mx-auto leading-relaxed px-4">
+                A complete suite of professional utilities designed for performance and privacy.
+                Process data locally in your browser with enterprise-grade security.
               </p>
             </div>
 
-            {/* Interactive Stats Display */}
-            <div className="pt-6 sm:pt-8 md:pt-12 pb-6 sm:pb-8">
-              <div className="inline-flex items-center gap-2 text-foreground text-xs md:text-sm font-semibold mb-6">
-                <Sparkles className="h-3 w-3 md:h-4 md:w-4" />
-                <span className="hidden sm:inline">Trusted by professionals worldwide</span>
-                <span className="sm:hidden">Trusted Worldwide</span>
-              </div>
-
-              <div className="grid grid-cols-3 gap-2 sm:gap-4 md:gap-8 lg:gap-16 max-w-4xl mx-auto px-4">
-                {/* Stat 1 */}
+            {/* Interactive Stats Display - Trust Indicators */}
+            <div className="pt-8 sm:pt-12 pb-8">
+              <div className="grid grid-cols-3 gap-4 sm:gap-8 md:gap-12 max-w-4xl mx-auto px-4">
+                {/* Trust Indicator 1 */}
                 <div className="group cursor-default">
-                  <div className="relative">
-                    <div className="absolute inset-0 bg-primary/5 rounded-2xl blur-xl group-hover:bg-primary/10 transition-all"></div>
-                    <div className="relative space-y-1 md:space-y-2">
-                      <div className="text-2xl sm:text-3xl md:text-4xl lg:text-6xl xl:text-7xl font-black text-foreground tracking-tight">5M+</div>
-                      <div className="flex flex-col sm:flex-row items-center justify-center gap-1 sm:gap-2">
-                        <Users className="h-3 w-3 sm:h-4 sm:w-4 md:h-5 md:w-5 text-foreground/70" />
-                        <div className="text-[10px] sm:text-xs md:text-base font-bold text-foreground uppercase tracking-wide text-center">Active Users</div>
-                      </div>
+                  <div className="flex flex-col items-center gap-3 p-4 rounded-2xl bg-card/50 backdrop-blur-sm border border-border/50 hover:border-primary/20 transition-all duration-300 hover:shadow-lg hover:shadow-primary/5">
+                    <div className="p-3 rounded-xl bg-primary/10 text-primary">
+                      <Shield className="h-6 w-6 sm:h-8 sm:w-8" />
+                    </div>
+                    <div className="space-y-1">
+                      <div className="text-sm sm:text-base font-bold text-foreground">Privacy First</div>
+                      <div className="text-[10px] sm:text-xs text-muted-foreground">Local Processing</div>
                     </div>
                   </div>
                 </div>
 
-                {/* Stat 2 */}
+                {/* Trust Indicator 2 */}
                 <div className="group cursor-default">
-                  <div className="relative">
-                    <div className="absolute inset-0 bg-primary/5 rounded-2xl blur-xl group-hover:bg-primary/10 transition-all"></div>
-                    <div className="relative space-y-1 md:space-y-2">
-                      <div className="text-2xl sm:text-3xl md:text-4xl lg:text-6xl xl:text-7xl font-black text-foreground tracking-tight">1000+</div>
-                      <div className="flex flex-col sm:flex-row items-center justify-center gap-1 sm:gap-2">
-                        <Star className="h-3 w-3 sm:h-4 sm:w-4 md:h-5 md:w-5 text-foreground/70" />
-                        <div className="text-[10px] sm:text-xs md:text-base font-bold text-foreground uppercase tracking-wide text-center">Pro Tools</div>
-                      </div>
+                  <div className="flex flex-col items-center gap-3 p-4 rounded-2xl bg-card/50 backdrop-blur-sm border border-border/50 hover:border-primary/20 transition-all duration-300 hover:shadow-lg hover:shadow-primary/5">
+                    <div className="p-3 rounded-xl bg-blue-500/10 text-blue-500">
+                      <Zap className="h-6 w-6 sm:h-8 sm:w-8" />
+                    </div>
+                    <div className="space-y-1">
+                      <div className="text-sm sm:text-base font-bold text-foreground">Lightning Fast</div>
+                      <div className="text-[10px] sm:text-xs text-muted-foreground">Instant Results</div>
                     </div>
                   </div>
                 </div>
 
-                {/* Stat 3 */}
+                {/* Trust Indicator 3 */}
                 <div className="group cursor-default">
-                  <div className="relative">
-                    <div className="absolute inset-0 bg-primary/5 rounded-2xl blur-xl group-hover:bg-primary/10 transition-all"></div>
-                    <div className="relative space-y-1 md:space-y-2">
-                      <div className="text-2xl sm:text-3xl md:text-4xl lg:text-6xl xl:text-7xl font-black text-foreground tracking-tight">100%</div>
-                      <div className="flex flex-col sm:flex-row items-center justify-center gap-1 sm:gap-2">
-                        <Shield className="h-3 w-3 sm:h-4 sm:w-4 md:h-5 md:w-5 text-foreground/70" />
-                        <div className="text-[10px] sm:text-xs md:text-base font-bold text-foreground uppercase tracking-wide text-center">Free Forever</div>
-                      </div>
+                  <div className="flex flex-col items-center gap-3 p-4 rounded-2xl bg-card/50 backdrop-blur-sm border border-border/50 hover:border-primary/20 transition-all duration-300 hover:shadow-lg hover:shadow-primary/5">
+                    <div className="p-3 rounded-xl bg-green-500/10 text-green-500">
+                      <CheckCircle2 className="h-6 w-6 sm:h-8 sm:w-8" />
+                    </div>
+                    <div className="space-y-1">
+                      <div className="text-sm sm:text-base font-bold text-foreground">Reliable</div>
+                      <div className="text-[10px] sm:text-xs text-muted-foreground">99.9% Uptime</div>
                     </div>
                   </div>
                 </div>

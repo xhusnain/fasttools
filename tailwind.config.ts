@@ -84,6 +84,28 @@ const config: Config = {
         sans: ['var(--font-roboto)', 'Roboto', 'system-ui', 'sans-serif'],
         mono: ['monospace'],
       },
+      animation: {
+        'pulse-slow': 'pulse 8s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+        'float': 'float 6s ease-in-out infinite',
+        'float-delayed': 'float 6s ease-in-out 3s infinite',
+        'aurora-1': 'aurora 20s linear infinite',
+        'aurora-2': 'aurora 25s linear infinite reverse',
+        'twinkle': 'twinkle 4s ease-in-out infinite',
+      },
+      keyframes: {
+        float: {
+          '0%, 100%': { transform: 'translateY(0)' },
+          '50%': { transform: 'translateY(-20px)' },
+        },
+        aurora: {
+          '0%': { transform: 'rotate(0deg)' },
+          '100%': { transform: 'rotate(360deg)' },
+        },
+        twinkle: {
+          '0%, 100%': { opacity: '0.2', transform: 'scale(1)' },
+          '50%': { opacity: '1', transform: 'scale(1.2)' },
+        },
+      },
     },
   },
   plugins: [],
