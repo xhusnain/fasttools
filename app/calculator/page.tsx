@@ -1,5 +1,4 @@
 import React from 'react'
-import Link from "next/link"
 import Image from "next/image"
 import { GCard } from "@/components/globalcomponents/gcard"
 import {
@@ -7,7 +6,6 @@ import {
 
   Calendar,
   Activity,
-  DollarSign,
   Percent,
   Clock,
   TrendingUp,
@@ -15,43 +13,22 @@ import {
   BarChart3,
   Heart,
   Flame,
-  Home,
   Zap,
   Target,
   Users,
   Utensils,
   ArrowRightLeft,
-  ShieldCheck,
-  CalendarCheck,
-  PiggyBank,
-  Landmark,
-  FileText,
-  BadgePercent,
-  CreditCard,
-  Coins,
-  ChartLine,
   BookOpen,
-  Pencil,
   Blocks,
   Router,
   Cake,
   Stethoscope,
   HeartPulse,
-  CalendarClock,
   CalendarHeart,
-  CalendarDays,
   Binary,
   Sigma,
-  Cuboid,
-  Gauge,
-  Footprints,
-  ScrollText,
-  Banknote,
-  TrendingDown,
-  PercentCircle,
-  HandCoins,
-  BadgeDollarSign,
-  Database
+  Footprints
+
 } from "lucide-react"
 import { ToolPageLayout } from "@/components/tool-page-layout"
 import { createToolConfig } from "@/lib/create-tool-config"
@@ -955,6 +932,7 @@ All calculator tools undergo rigorous testing with multiple validation methods. 
     })
   }
 })
+export const metadata = toolConfig.metadata
 
 export default function ToolsPage() {
   return <ToolPageLayout {...toolConfig.getLayoutProps(<CalculatorGrid />)} />
