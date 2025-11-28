@@ -174,7 +174,7 @@ const toolConfig = createToolConfig({
       { name: "Instagram Downloader", href: "/social-media-tools/instagram-downloader" },
       { name: "TikTok Downloader", href: "/social-media-tools/tiktok-downloader" },
       { name: "YouTube Tag Extractor", href: "/social-media-tools/youtube-tags" },
-      { name: "Blog Title Generator", href: "/text-tools/blog-title-generator" },
+      { name: "Blog Title Generator", href: "/seo-tools/blog-titles" },
       { name: "Hashtag Generator", href: "/social-media-tools/hashtag-counter" }
     ]
   }

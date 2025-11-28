@@ -141,8 +141,7 @@ export default function CalorieCalculatorPage() {
     relatedTools: [
       { name: "BMI Calculator", href: "/calculator/bmi-calculator" },
       { name: "BMR Calculator", href: "/calculator/bmr-calculator" },
-      { name: "Body Fat Calculator", href: "/calculator/body-fat-calculator" },
-      { name: "Ideal Weight Calculator", href: "/calculator/ideal-weight-calculator" }
+      { name: "Body Fat Calculator", href: "/calculator/body-fat-calculator" }
     ]
   }
 
