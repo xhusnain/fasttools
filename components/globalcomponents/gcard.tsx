@@ -2,11 +2,11 @@ import Link from "next/link"
 import { ArrowRight, type LucideIcon } from "lucide-react"
 import { cn } from "@/lib/utils"
 
-interface GCardProps {
-    title: string
-    description: string
-    href: string
-    icon: LucideIcon
+interface GCardProps extends React.HTMLAttributes<HTMLDivElement> {
+    title?: string
+    description?: string
+    href?: string
+    icon?: LucideIcon
     badge?: string
     badgeColor?: string
     iconBg?: string
@@ -16,6 +16,7 @@ interface GCardProps {
     glowColor?: string
     className?: string
     ctaText?: string
+    children?: React.ReactNode
 }
 
 export function GCard({
@@ -32,9 +33,19 @@ export function GCard({
     glowColor = "hover:shadow-green-500/20",
     className,
     ctaText = "Use Tool",
+    children,
+    ...props
 }: GCardProps) {
+    if (children) {
+        return (
+            <div className={cn("relative rounded-2xl border bg-card transition-all duration-300", className)} {...props}>
+                {children}
+            </div>
+        )
+    }
+
     return (
-        <Link href={href} className={cn("group block h-full", className)}>
+        <Link href={href!} className={cn("group block h-full", className)}>
             <div
                 className={cn(
                     "relative h-full rounded-2xl border bg-card p-6 space-y-4 transition-all duration-300",
@@ -69,7 +80,7 @@ export function GCard({
                             borderColor
                         )}
                     >
-                        <Icon className={cn("h-6 w-6", iconColor)} />
+                        {Icon && <Icon className={cn("h-6 w-6", iconColor)} />}
                     </div>
                 </div>
 

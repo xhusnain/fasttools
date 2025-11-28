@@ -4,7 +4,7 @@ import { useState } from "react"
 import { GButton } from "@/components/globalcomponents/gbutton"
 import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
-import { Card } from "@/components/ui/card"
+import { GCard } from "@/components/globalcomponents/gcard"
 import { Download, AlertTriangle, Music, Image, Video } from "lucide-react"
 import { LoadingSpinner } from "@/components/loading-spinner"
 
@@ -246,7 +246,7 @@ export function InstagramDownloader({ compact = false }: InstagramDownloaderProp
   return (
     <div className="space-y-4 sm:space-y-6">
       {!compact && (
-        <Card className="p-4 sm:p-5 md:p-6 bg-card border border-border shadow-sm">
+        <GCard className="p-4 sm:p-5 md:p-6 bg-card border border-border shadow-sm">
           <div className="flex gap-2 sm:gap-3">
             <AlertTriangle className="h-4 w-4 sm:h-5 sm:w-5 text-primary flex-shrink-0 mt-0.5" />
             <div className="space-y-1 sm:space-y-2">
@@ -258,10 +258,10 @@ export function InstagramDownloader({ compact = false }: InstagramDownloaderProp
               </p>
             </div>
           </div>
-        </Card>
+        </GCard>
       )}
 
-      <Card className={`p-4 sm:p-5 md:p-6 bg-card border-border shadow-sm ${compact ? "" : ""}`}>
+      <GCard className={`p-4 sm:p-5 md:p-6 bg-card border-border shadow-sm ${compact ? "" : ""}`}>
         <div className="space-y-3 sm:space-y-4">
           <div>
             <Label htmlFor="post-url" className="text-xs sm:text-sm font-medium text-foreground">
@@ -277,7 +277,7 @@ export function InstagramDownloader({ compact = false }: InstagramDownloaderProp
             />
           </div>
 
-          <Button
+          <GButton
             onClick={handleFetch}
             disabled={!postUrl || loading}
             className={`w-full ${compact ? "h-10 sm:h-11" : "h-12 sm:h-14"} text-sm sm:text-base font-medium shadow-sm hover:shadow-md transition-all`}
@@ -294,7 +294,7 @@ export function InstagramDownloader({ compact = false }: InstagramDownloaderProp
                 Get Download Links
               </>
             )}
-          </Button>
+          </GButton>
 
           {error && (
             <div className="text-sm text-muted-foreground bg-muted/50 border border-border rounded-md p-3">
@@ -315,7 +315,7 @@ export function InstagramDownloader({ compact = false }: InstagramDownloaderProp
                       <li>Try copying the URL directly from Instagram app</li>
                     </ul>
                   </div>
-                  <Button
+                  <GButton
                     onClick={handleFetch}
                     disabled={loading}
                     variant="outline"
@@ -333,7 +333,7 @@ export function InstagramDownloader({ compact = false }: InstagramDownloaderProp
                         Try Again
                       </>
                     )}
-                  </Button>
+                  </GButton>
                 </div>
               </div>
             </div>
@@ -517,10 +517,10 @@ export function InstagramDownloader({ compact = false }: InstagramDownloaderProp
             </div>
           )}
         </div>
-      </Card>
+      </GCard>
 
       {!compact && (
-        <Card className="p-6 bg-card border border-border shadow-sm">
+        <GCard className="p-6 bg-card border border-border shadow-sm">
           <h3 className="text-base font-semibold text-foreground mb-3">Important Information</h3>
           <ul className="space-y-2 text-sm text-muted-foreground leading-relaxed">
             <li>• How to use: paste Instagram link → Get Download Links → choose Download Video or Download Image.</li>
@@ -528,7 +528,7 @@ export function InstagramDownloader({ compact = false }: InstagramDownloaderProp
             <li>• Use downloads responsibly; you are responsible for permissions and compliance.</li>
             <li>• Only download your own content or content you are authorized to use.</li>
           </ul>
-        </Card>
+        </GCard>
       )}
     </div>
   )

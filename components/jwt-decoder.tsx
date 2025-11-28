@@ -3,10 +3,10 @@
 import { useState, useEffect } from "react"
 import { GButton } from "@/components/globalcomponents/gbutton"
 import { Textarea } from "@/components/ui/textarea"
-import { Card } from "@/components/ui/card"
+import { GCard } from "@/components/globalcomponents/gcard"
 import { Input } from "@/components/ui/input"
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
-import { Copy, Check, X, AlertCircle, CheckCircle2, Sparkles, Share2, Link2, Code2, ChevronDown, Shield, ShieldAlert, ShieldCheck, AlertTriangle, Info, Clock, GitCompare, Minimize2, TrendingDown, Download, FileJson, FileText, FileCode, Zap, Activity, BarChart3, Timer, BookOpen, GraduationCap, Lightbulb, ChevronRight } from "lucide-react"
+import { Copy, Check, X, AlertCircle, CheckCircle2, Sparkles, Share2, Code2, Shield, Clock, GitCompare, Minimize2, Download, Zap } from "lucide-react"
 import { Label } from "@/components/ui/label"
 import { Switch } from "@/components/ui/switch"
 
@@ -103,7 +103,7 @@ export function JWTDecoder() {
       secret: "ES512 requires elliptic curve key pair"
     },
     PS256: {
-      token: "eyJhbGciOiJQUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiYWRtaW4iOnRydWUsImlhdCI6MTUxNjIzOTAyMiwiZXhwIjoxNzM1Njg5NjAwfQ.Yx3J5PqhQvL8j5PnFqRx3TbMvKhQvJ8sPdLhQxvJn8MqTbXnPwQzXhJvKqLz7xKbGhQvL8j5PnFqRx3TbMvKhQvJ8s5PnFqRx3TbMvKhQvJ8sPdLhQxvJn8MqTbXnPwQzXhJvKqLz7xKbGhQvL8j5PnFqRx3TbMvKhQvJ8s",
+      token: "eyJhbGciOiJQUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiYWRtaW4iOnRydWUsImlhdCI6MTUxNjIzOTAyMiwiZXhwIjoxNzM1Njg5NjAwfQ.Yx3J5PqhQvL8j5PnFqRx3TbMvKhQvJ8s5PnFqRx3TbMvKhQvJ8sPdLhQxvJn8MqTbXnPwQzXhJvKqLz7xKbGhQvL8j5PnFqRx3TbMvKhQvJ8s",
       secret: "PS256 requires RSA-PSS key pair"
     },
     PS384: {
@@ -402,1375 +402,6 @@ from datetime import datetime, timedelta
 token = '${token.substring(0, 50)}...'
 
 # Your secret key
-secret_key = '${secretKey}'
-
-try:
-    # Verify and decode the JWT token
-    decoded = jwt.decode(
-        token,
-        secret_key,
-        algorithms=['${algo}']
-    )
-    
-    print('Token is valid!')
-    print('Decoded payload:', decoded)
-except jwt.ExpiredSignatureError:
-    print('Token has expired')
-except jwt.InvalidTokenError as e:
-    print(f'Token verification failed: {str(e)}')
-
-# Generate a new JWT token
-payload = {
-    'sub': '1234567890',
-    'name': 'John Doe',
-    'iat': datetime.utcnow(),
-    'exp': datetime.utcnow() + timedelta(hours=1)
-}
-
-new_token = jwt.encode(payload, secret_key, algorithm='${algo}')
-print('New token:', new_token)`,
-
-      java: `// Java - Using jjwt
-import io.jsonwebtoken.*;
-import io.jsonwebtoken.security.Keys;
-import java.security.Key;
-import java.util.Date;
-
-public class JWTExample {
-    public static void main(String[] args) {
-        // Your JWT token
-        String token = "${token.substring(0, 50)}...";
-        
-        // Your secret key
-        String secretKey = "${secretKey}";
-        Key key = Keys.hmacShaKeyFor(secretKey.getBytes());
-        
-        try {
-            // Verify and decode the JWT token
-            Claims claims = Jwts.parserBuilder()
-                .setSigningKey(key)
-                .build()
-                .parseClaimsJws(token)
-                .getBody();
-            
-            System.out.println("Token is valid!");
-            System.out.println("Subject: " + claims.getSubject());
-            System.out.println("Claims: " + claims);
-        } catch (JwtException e) {
-            System.err.println("Token verification failed: " + e.getMessage());
-        }
-        
-        // Generate a new JWT token
-        String newToken = Jwts.builder()
-            .setSubject("1234567890")
-            .claim("name", "John Doe")
-            .setIssuedAt(new Date())
-            .setExpiration(new Date(System.currentTimeMillis() + 3600000))
-            .signWith(key, SignatureAlgorithm.${algo})
-            .compact();
-        
-        System.out.println("New token: " + newToken);
-    }
-}`,
-
-      php: `<?php
-// PHP - Using firebase/php-jwt
-require_once 'vendor/autoload.php';
-use Firebase\\JWT\\JWT;
-use Firebase\\JWT\\Key;
-
-// Your JWT token
-$token = '${token.substring(0, 50)}...';
-
-// Your secret key
-$secretKey = '${secretKey}';
-
-try {
-    // Verify and decode the JWT token
-    $decoded = JWT::decode($token, new Key($secretKey, '${algo}'));
-    
-    echo "Token is valid!\\n";
-    echo "Decoded payload:\\n";
-    print_r($decoded);
-} catch (Exception $e) {
-    echo "Token verification failed: " . $e->getMessage() . "\\n";
-}
-
-// Generate a new JWT token
-$payload = [
-    'sub' => '1234567890',
-    'name' => 'John Doe',
-    'iat' => time(),
-    'exp' => time() + 3600
-];
-
-$newToken = JWT::encode($payload, $secretKey, '${algo}');
-echo "New token: " . $newToken . "\\n";
-?>`,
-
-      go: `// Go - Using golang-jwt
-package main
-
-import (
-    "fmt"
-    "time"
-    "github.com/golang-jwt/jwt/v5"
-)
-
-func main() {
-    // Your JWT token
-    token := "${token.substring(0, 50)}..."
-    
-    // Your secret key
-    secretKey := []byte("${secretKey}")
-    
-    // Verify and decode the JWT token
-    parsedToken, err := jwt.Parse(token, func(token *jwt.Token) (interface{}, error) {
-        if _, ok := token.Method.(*jwt.SigningMethod${algo.startsWith('HS') ? 'HMAC' : 'RSA'}); !ok {
-            return nil, fmt.Errorf("unexpected signing method: %v", token.Header["alg"])
-        }
-        return secretKey, nil
-    })
-    
-    if err != nil {
-        fmt.Println("Token verification failed:", err)
-    } else if claims, ok := parsedToken.Claims.(jwt.MapClaims); ok && parsedToken.Valid {
-        fmt.Println("Token is valid!")
-        fmt.Printf("Decoded payload: %v\\n", claims)
-    }
-    
-    // Generate a new JWT token
-    newToken := jwt.NewWithClaims(jwt.SigningMethod${algo}, jwt.MapClaims{
-        "sub":  "1234567890",
-        "name": "John Doe",
-        "iat":  time.Now().Unix(),
-        "exp":  time.Now().Add(time.Hour * 1).Unix(),
-    })
-    
-    tokenString, err := newToken.SignedString(secretKey)
-    if err != nil {
-        fmt.Println("Token generation failed:", err)
-    } else {
-        fmt.Println("New token:", tokenString)
-    }
-}`,
-
-      csharp: `// C# - Using System.IdentityModel.Tokens.Jwt
-using System;
-using System.IdentityModel.Tokens.Jwt;
-using System.Security.Claims;
-using System.Text;
-using Microsoft.IdentityModel.Tokens;
-
-class Program
-{
-    static void Main()
-    {
-        // Your JWT token
-        string token = "${token.substring(0, 50)}...";
-        
-        // Your secret key
-        string secretKey = "${secretKey}";
-        var key = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(secretKey));
-        
-        var tokenHandler = new JwtSecurityTokenHandler();
-        
-        try
-        {
-            // Verify and decode the JWT token
-            var validationParameters = new TokenValidationParameters
-            {
-                ValidateIssuerSigningKey = true,
-                IssuerSigningKey = key,
-                ValidateIssuer = false,
-                ValidateAudience = false,
-                ValidateLifetime = true,
-                ClockSkew = TimeSpan.Zero
-            };
-            
-            var principal = tokenHandler.ValidateToken(token, validationParameters, out var validatedToken);
-            
-            Console.WriteLine("Token is valid!");
-            Console.WriteLine($"Claims: {string.Join(", ", principal.Claims)}");
-        }
-        catch (Exception ex)
-        {
-            Console.WriteLine($"Token verification failed: {ex.Message}");
-        }
-        
-        // Generate a new JWT token
-        var claims = new[]
-        {
-            new Claim("sub", "1234567890"),
-            new Claim("name", "John Doe"),
-            new Claim("iat", DateTimeOffset.UtcNow.ToUnixTimeSeconds().ToString())
-        };
-        
-        var credentials = new SigningCredentials(key, SecurityAlgorithms.${algo === 'HS256' ? 'HmacSha256' : algo === 'HS384' ? 'HmacSha384' : 'HmacSha512'});
-        var tokenDescriptor = new SecurityTokenDescriptor
-        {
-            Subject = new ClaimsIdentity(claims),
-            Expires = DateTime.UtcNow.AddHours(1),
-            SigningCredentials = credentials
-        };
-        
-        var newToken = tokenHandler.CreateToken(tokenDescriptor);
-        Console.WriteLine($"New token: {tokenHandler.WriteToken(newToken)}");
-    }
-}`
-    };
-
-    return codeTemplates[language] || codeTemplates.nodejs;
-  }
-
-  // Open code generator
-  const openCodeGenerator = () => {
-    const code = generateCodeSnippet(selectedLanguage)
-    setGeneratedCode(code)
-    setShowCodeGenerator(true)
-  }
-
-  // Copy generated code
-  const copyGeneratedCode = () => {
-    navigator.clipboard.writeText(generatedCode)
-    setCodeCopied(true)
-    setTimeout(() => setCodeCopied(false), 2000)
-  }
-
-  // Format time remaining
-  const formatTimeRemaining = (seconds: number) => {
-    if (seconds < 0) {
-      const absSeconds = Math.abs(seconds)
-      if (absSeconds < 60) return `Expired ${absSeconds}s ago`
-      if (absSeconds < 3600) return `Expired ${Math.floor(absSeconds / 60)}m ago`
-      if (absSeconds < 86400) return `Expired ${Math.floor(absSeconds / 3600)}h ago`
-      return `Expired ${Math.floor(absSeconds / 86400)}d ago`
-    }
-
-    if (seconds < 60) return `${seconds}s`
-    if (seconds < 3600) return `${Math.floor(seconds / 60)}m ${seconds % 60}s`
-    if (seconds < 86400) return `${Math.floor(seconds / 3600)}h ${Math.floor((seconds % 3600) / 60)}m`
-    return `${Math.floor(seconds / 86400)}d ${Math.floor((seconds % 86400) / 3600)}h`
-  }
-
-  // Get color based on time remaining
-  const getExpirationColor = (seconds: number | null) => {
-    if (seconds === null) return 'text-muted-foreground'
-    if (seconds < 0) return 'text-foreground'
-    if (seconds < 300) return 'text-foreground' // < 5 minutes
-    if (seconds < 3600) return 'text-foreground' // < 1 hour
-    return 'text-heading-accent'
-  }
-
-  // Open comparison tool
-  const openComparison = () => {
-    setToken1(token)
-    setToken2("")
-    setDecoded1(decoded)
-    setDecoded2(null)
-    setShowComparison(true)
-  }
-
-  // Decode token for comparison
-  const decodeComparisonToken = (tokenToDecode: string, tokenNumber: 1 | 2) => {
-    try {
-      const parts = tokenToDecode.split(".")
-      if (parts.length !== 3) {
-        return null
-      }
-
-      const base64UrlDecode = (str: string) => {
-        const base64 = str.replace(/-/g, '+').replace(/_/g, '/')
-        const pad = str.length % 4
-        if (pad) {
-          if (pad === 1) throw new Error('Invalid base64url string')
-          str += new Array(5 - pad).join('=')
-        }
-        return atob(base64.replace(/-/g, '+').replace(/_/g, '/'))
-      }
-
-      const header = JSON.parse(base64UrlDecode(parts[0]))
-      const payload = JSON.parse(base64UrlDecode(parts[1]))
-      const signature = parts[2]
-
-      const decodedResult = { header, payload, signature }
-
-      if (tokenNumber === 1) {
-        setDecoded1(decodedResult)
-      } else {
-        setDecoded2(decodedResult)
-      }
-
-      return decodedResult
-    } catch (err) {
-      return null
-    }
-  }
-
-  // Compare objects and find differences
-  const compareObjects = (obj1: any, obj2: any) => {
-    const differences: { key: string; value1: any; value2: any; status: 'changed' | 'added' | 'removed' | 'same' }[] = []
-    const allKeys = new Set([...Object.keys(obj1 || {}), ...Object.keys(obj2 || {})])
-
-    allKeys.forEach(key => {
-      const hasKey1 = obj1 && key in obj1
-      const hasKey2 = obj2 && key in obj2
-
-      if (hasKey1 && hasKey2) {
-        if (JSON.stringify(obj1[key]) !== JSON.stringify(obj2[key])) {
-          differences.push({ key, value1: obj1[key], value2: obj2[key], status: 'changed' })
-        } else {
-          differences.push({ key, value1: obj1[key], value2: obj2[key], status: 'same' })
-        }
-      } else if (hasKey1 && !hasKey2) {
-        differences.push({ key, value1: obj1[key], value2: undefined, status: 'removed' })
-      } else if (!hasKey1 && hasKey2) {
-        differences.push({ key, value1: undefined, value2: obj2[key], status: 'added' })
-      }
-    })
-
-    return differences
-  }
-
-  // Calculate token size
-  const getTokenSize = (tokenStr: string) => {
-    const bytes = new Blob([tokenStr]).size
-    return {
-      bytes,
-      kb: (bytes / 1024).toFixed(2)
-    }
-  }
-
-  // Format bytes to readable string
-  const formatBytes = (bytes: number) => {
-    if (bytes < 1024) return `${bytes} bytes`
-    return `${(bytes / 1024).toFixed(2)} KB`
-  }
-
-  // Open optimizer
-  const openOptimizer = () => {
-    if (!token || !decoded) return
-
-    const suggestions: Array<{ type: string, title: string, description: string, savings: number }> = []
-
-    // Check for long claim names
-    const longClaimNames = Object.keys(decoded.payload).filter(key => key.length > 3)
-    if (longClaimNames.length > 0) {
-      const estimatedSavings = longClaimNames.reduce((acc, key) => acc + (key.length - 1), 0)
-      suggestions.push({
-        type: 'shorten-claims',
-        title: 'Shorten Claim Names',
-        description: `Found ${longClaimNames.length} claim(s) with long names: ${longClaimNames.join(', ')}. Use shorter names like single letters or 2-3 char abbreviations.`,
-        savings: estimatedSavings
-      })
-    }
-
-    // Check for unnecessary standard claims
-    const optionalClaims = ['jti', 'nbf', 'aud', 'iss']
-    const unnecessaryClaims = optionalClaims.filter(claim => claim in decoded.payload)
-    if (unnecessaryClaims.length > 0) {
-      const estimatedSavings = unnecessaryClaims.reduce((acc, claim) => {
-        const value = decoded.payload[claim]
-        return acc + claim.length + JSON.stringify(value).length + 3
-      }, 0)
-      suggestions.push({
-        type: 'remove-claims',
-        title: 'Remove Optional Claims',
-        description: `Found ${unnecessaryClaims.length} optional claim(s): ${unnecessaryClaims.join(', ')}. Remove if not strictly required.`,
-        savings: estimatedSavings
-      })
-    }
-
-    // Check algorithm
-    const currentAlg = decoded.header.alg
-    const algSuggestions: { [key: string]: { shorter: string, savings: number } } = {
-      'HS256': { shorter: 'none', savings: 0 },
-      'HS384': { shorter: 'HS256', savings: 48 },
-      'HS512': { shorter: 'HS256', savings: 64 },
-      'RS256': { shorter: 'HS256', savings: 200 },
-      'RS384': { shorter: 'HS256', savings: 250 },
-      'RS512': { shorter: 'HS256', savings: 300 },
-      'ES256': { shorter: 'HS256', savings: 100 },
-      'ES384': { shorter: 'HS256', savings: 150 },
-      'ES512': { shorter: 'HS256', savings: 180 },
-      'PS256': { shorter: 'HS256', savings: 250 },
-      'PS384': { shorter: 'HS256', savings: 300 },
-      'PS512': { shorter: 'HS256', savings: 350 }
-    }
-
-    if (currentAlg in algSuggestions && algSuggestions[currentAlg].savings > 0) {
-      suggestions.push({
-        type: 'algorithm',
-        title: 'Use Shorter Algorithm',
-        description: `Current: ${currentAlg}. Consider ${algSuggestions[currentAlg].shorter} for smaller tokens (if security requirements allow).`,
-        savings: algSuggestions[currentAlg].savings
-      })
-    }
-
-    // Check for large values
-    const largeValues = Object.entries(decoded.payload).filter(([key, value]) => {
-      const strValue = JSON.stringify(value)
-      return strValue.length > 50
-    })
-    if (largeValues.length > 0) {
-      const estimatedSavings = largeValues.reduce((acc, [key, value]) => {
-        return acc + Math.floor(JSON.stringify(value).length * 0.3)
-      }, 0)
-      suggestions.push({
-        type: 'large-values',
-        title: 'Reduce Large Values',
-        description: `Found ${largeValues.length} claim(s) with large values. Consider using references/IDs instead of full objects.`,
-        savings: estimatedSavings
-      })
-    }
-
-    // Check for redundant header fields
-    const redundantHeaders = Object.keys(decoded.header).filter(key => key !== 'alg' && key !== 'typ')
-    if (redundantHeaders.length > 0) {
-      const estimatedSavings = redundantHeaders.reduce((acc, key) => {
-        return acc + key.length + JSON.stringify(decoded.header[key]).length + 3
-      }, 0)
-      suggestions.push({
-        type: 'header-fields',
-        title: 'Remove Redundant Header Fields',
-        description: `Found ${redundantHeaders.length} non-standard header field(s): ${redundantHeaders.join(', ')}. Only 'alg' and 'typ' are required.`,
-        savings: estimatedSavings
-      })
-    }
-
-    setOptimizationSuggestions(suggestions)
-    setAppliedOptimizations(new Set())
-    setOptimizedToken("")
-    setShowOptimizer(true)
-  }
-
-  // Apply optimizations
-  const applyOptimizations = (types: Set<string>) => {
-    if (!decoded) return
-
-    let optimizedHeader = { ...decoded.header }
-    let optimizedPayload = { ...decoded.payload }
-
-    // Apply shorten claims
-    if (types.has('shorten-claims')) {
-      const claimMapping: { [key: string]: string } = {
-        'username': 'u',
-        'email': 'e',
-        'userId': 'uid',
-        'name': 'n',
-        'role': 'r',
-        'permissions': 'p',
-        'firstName': 'fn',
-        'lastName': 'ln'
-      }
-      const newPayload: any = {}
-      Object.entries(optimizedPayload).forEach(([key, value]) => {
-        const shortKey = claimMapping[key] || (key.length > 3 ? key.substring(0, 1) : key)
-        newPayload[shortKey] = value
-      })
-      optimizedPayload = newPayload
-    }
-
-    // Apply remove claims
-    if (types.has('remove-claims')) {
-      const optionalClaims = ['jti', 'nbf', 'aud', 'iss']
-      optionalClaims.forEach(claim => {
-        delete optimizedPayload[claim]
-      })
-    }
-
-    // Apply algorithm change
-    if (types.has('algorithm')) {
-      optimizedHeader.alg = 'HS256'
-    }
-
-    // Apply large values optimization (示例: 截断)
-    if (types.has('large-values')) {
-      Object.entries(optimizedPayload).forEach(([key, value]) => {
-        if (typeof value === 'string' && value.length > 50) {
-          optimizedPayload[key] = value.substring(0, 47) + '...'
-        } else if (typeof value === 'object' && JSON.stringify(value).length > 50) {
-          optimizedPayload[key] = '[Reduced]'
-        }
-      })
-    }
-
-    // Apply header fields removal
-    if (types.has('header-fields')) {
-      const standardFields = ['alg', 'typ']
-      Object.keys(optimizedHeader).forEach(key => {
-        if (!standardFields.includes(key)) {
-          delete optimizedHeader[key]
-        }
-      })
-    }
-
-    // Encode optimized token
-    const base64UrlEncode = (str: string) => {
-      return btoa(str)
-        .replace(/\+/g, '-')
-        .replace(/\//g, '_')
-        .replace(/=/g, '')
-    }
-
-    const headerEncoded = base64UrlEncode(JSON.stringify(optimizedHeader))
-    const payloadEncoded = base64UrlEncode(JSON.stringify(optimizedPayload))
-    const signature = 'optimized_signature'
-
-    const newToken = `${headerEncoded}.${payloadEncoded}.${signature}`
-    setOptimizedToken(newToken)
-  }
-
-  // Toggle optimization
-  const toggleOptimization = (type: string) => {
-    const newSet = new Set(appliedOptimizations)
-    if (newSet.has(type)) {
-      newSet.delete(type)
-    } else {
-      newSet.add(type)
-    }
-    setAppliedOptimizations(newSet)
-    applyOptimizations(newSet)
-  }
-
-  // Export functions
-  const exportAsJSON = () => {
-    if (!decoded) return
-
-    const data = {
-      token,
-      decoded: {
-        header: decoded.header,
-        payload: decoded.payload,
-        signature: decoded.signature
-      },
-      metadata: {
-        algorithm: decoded.header.alg,
-        type: decoded.header.typ || 'JWT',
-        exportedAt: new Date().toISOString()
-      }
-    }
-
-    const blob = new Blob([JSON.stringify(data, null, 2)], { type: 'application/json' })
-    const url = URL.createObjectURL(blob)
-    const a = document.createElement('a')
-    a.href = url
-    a.download = `jwt-decoded-${Date.now()}.json`
-    a.click()
-    URL.revokeObjectURL(url)
-  }
-
-  const exportAsCSV = () => {
-    if (!decoded) return
-
-    const rows = [
-      ['Type', 'Key', 'Value'],
-      ...Object.entries(decoded.header).map(([key, value]) => ['Header', key, JSON.stringify(value)]),
-      ...Object.entries(decoded.payload).map(([key, value]) => ['Payload', key, JSON.stringify(value)])
-    ]
-
-    const csv = rows.map(row => row.map(cell => `"${cell}"`).join(',')).join('\n')
-
-    const blob = new Blob([csv], { type: 'text/csv' })
-    const url = URL.createObjectURL(blob)
-    const a = document.createElement('a')
-    a.href = url
-    a.download = `jwt-decoded-${Date.now()}.csv`
-    a.click()
-    URL.revokeObjectURL(url)
-  }
-
-  const exportAsXML = () => {
-    if (!decoded) return
-
-    const escapeXML = (str: string) => {
-      return str.replace(/[<>&'"]/g, (c) => {
-        switch (c) {
-          case '<': return '&lt;'
-          case '>': return '&gt;'
-          case '&': return '&amp;'
-          case "'": return '&apos;'
-          case '"': return '&quot;'
-          default: return c
-        }
-      })
-    }
-
-    const xml = `<?xml version="1.0" encoding="UTF-8"?>
-<jwt>
-  <token>${escapeXML(token)}</token>
-  <decoded>
-    <header>
-${Object.entries(decoded.header).map(([key, value]) => `      <${key}>${escapeXML(JSON.stringify(value))}</${key}>`).join('\n')}
-    </header>
-    <payload>
-${Object.entries(decoded.payload).map(([key, value]) => `      <${key}>${escapeXML(JSON.stringify(value))}</${key}>`).join('\n')}
-    </payload>
-    <signature>${escapeXML(decoded.signature)}</signature>
-  </decoded>
-  <metadata>
-    <algorithm>${decoded.header.alg}</algorithm>
-    <type>${decoded.header.typ || 'JWT'}</type>
-    <exportedAt>${new Date().toISOString()}</exportedAt>
-  </metadata>
-</jwt>`
-
-    const blob = new Blob([xml], { type: 'application/xml' })
-    const url = URL.createObjectURL(blob)
-    const a = document.createElement('a')
-    a.href = url
-    a.download = `jwt-decoded-${Date.now()}.xml`
-    a.click()
-    URL.revokeObjectURL(url)
-  }
-
-  const exportAsYAML = () => {
-    if (!decoded) return
-
-    const indent = (level: number) => '  '.repeat(level)
-
-    const toYAML = (obj: any, level: number = 0): string => {
-      return Object.entries(obj).map(([key, value]) => {
-        if (value === null) return `${indent(level)}${key}: null`
-        if (typeof value === 'object' && !Array.isArray(value)) {
-          return `${indent(level)}${key}:\n${toYAML(value, level + 1)}`
-        }
-        if (Array.isArray(value)) {
-          return `${indent(level)}${key}:\n${value.map(v => `${indent(level + 1)}- ${JSON.stringify(v)}`).join('\n')}`
-        }
-        return `${indent(level)}${key}: ${JSON.stringify(value)}`
-      }).join('\n')
-    }
-
-    const yaml = `token: "${token}"
-decoded:
-  header:
-${toYAML(decoded.header, 2)}
-  payload:
-${toYAML(decoded.payload, 2)}
-  signature: "${decoded.signature}"
-metadata:
-  algorithm: "${decoded.header.alg}"
-  type: "${decoded.header.typ || 'JWT'}"
-  exportedAt: "${new Date().toISOString()}"`
-
-    const blob = new Blob([yaml], { type: 'text/yaml' })
-    const url = URL.createObjectURL(blob)
-    const a = document.createElement('a')
-    a.href = url
-    a.download = `jwt-decoded-${Date.now()}.yaml`
-    a.click()
-    URL.revokeObjectURL(url)
-  }
-
-  const exportAsPDF = () => {
-    if (!decoded) return
-
-    // Create a simple HTML template for PDF
-    const htmlContent = `
-<!DOCTYPE html>
-<html>
-<head>
-  <meta charset="UTF-8">
-  <title>JWT Decoded Report</title>
-  <style>
-    body { font-family: Arial, sans-serif; padding: 40px; color: #333; }
-    h1 { color: #2563eb; border-bottom: 3px solid #2563eb; padding-bottom: 10px; }
-    h2 { color: #0284c7; margin-top: 30px; border-bottom: 2px solid #0284c7; padding-bottom: 5px; }
-    .section { margin: 20px 0; }
-    .token { background: #f3f4f6; padding: 15px; border-radius: 8px; word-break: break-all; font-family: monospace; font-size: 12px; }
-    table { width: 100%; border-collapse: collapse; margin: 15px 0; }
-    th { background: #e5e7eb; padding: 10px; text-align: left; border: 1px solid #d1d5db; font-weight: bold; }
-    td { padding: 10px; border: 1px solid #d1d5db; }
-    .key { font-weight: bold; color: #0284c7; }
-    .footer { margin-top: 50px; text-align: center; color: #6b7280; font-size: 12px; border-top: 1px solid #e5e7eb; padding-top: 20px; }
-  </style>
-</head>
-<body>
-  <h1>🔐 JWT Decoded Report</h1>
-  
-  <div class="section">
-    <h2>Token Information</h2>
-    <p><strong>Algorithm:</strong> ${decoded.header.alg}</p>
-    <p><strong>Type:</strong> ${decoded.header.typ || 'JWT'}</p>
-    <p><strong>Generated:</strong> ${new Date().toLocaleString()}</p>
-  </div>
-
-  <div class="section">
-    <h2>Original Token</h2>
-    <div class="token">${token}</div>
-  </div>
-
-  <div class="section">
-    <h2>Header</h2>
-    <table>
-      <thead>
-        <tr>
-          <th>Key</th>
-          <th>Value</th>
-        </tr>
-      </thead>
-      <tbody>
-        ${Object.entries(decoded.header).map(([key, value]) => `
-          <tr>
-            <td class="key">${key}</td>
-            <td>${JSON.stringify(value)}</td>
-          </tr>
-        `).join('')}
-      </tbody>
-    </table>
-  </div>
-
-  <div class="section">
-    <h2>Payload (Claims)</h2>
-    <table>
-      <thead>
-        <tr>
-          <th>Claim</th>
-          <th>Value</th>
-          <th>Description</th>
-        </tr>
-      </thead>
-      <tbody>
-        ${Object.entries(decoded.payload).map(([key, value]) => {
-      let description = ''
-      if (key === 'exp') description = 'Expiration Time'
-      else if (key === 'iat') description = 'Issued At'
-      else if (key === 'nbf') description = 'Not Before'
-      else if (key === 'sub') description = 'Subject'
-      else if (key === 'aud') description = 'Audience'
-      else if (key === 'iss') description = 'Issuer'
-      else if (key === 'jti') description = 'JWT ID'
-
-      return `
-          <tr>
-            <td class="key">${key}</td>
-            <td>${typeof value === 'number' && (key === 'exp' || key === 'iat' || key === 'nbf') ?
-          `${value} (${new Date(value * 1000).toLocaleString()})` :
-          JSON.stringify(value)}</td>
-            <td>${description}</td>
-          </tr>
-        `}).join('')}
-      </tbody>
-    </table>
-  </div>
-
-  <div class="section">
-    <h2>Signature</h2>
-    <div class="token">${decoded.signature}</div>
-  </div>
-
-  <div class="footer">
-    <p>Generated by FastTools JWT Decoder | ${new Date().toISOString()}</p>
-    <p>🔒 Your tokens are processed locally in your browser for maximum security</p>
-  </div>
-</body>
-</html>`
-
-    // Create blob and download
-    const blob = new Blob([htmlContent], { type: 'text/html' })
-    const url = URL.createObjectURL(blob)
-    const a = document.createElement('a')
-    a.href = url
-    a.download = `jwt-report-${Date.now()}.html`
-    a.click()
-    URL.revokeObjectURL(url)
-  }
-
-  const handleExport = () => {
-    switch (selectedExportFormat) {
-      case 'json':
-        exportAsJSON()
-        break
-      case 'csv':
-        exportAsCSV()
-        break
-      case 'xml':
-        exportAsXML()
-        break
-      case 'yaml':
-        exportAsYAML()
-        break
-      case 'pdf':
-        exportAsPDF()
-        break
-    }
-
-    setTimeout(() => setShowExport(false), 500)
-  }
-
-  // Performance metrics
-  const analyzePerformance = () => {
-    if (!token || !decoded) return
-
-    const startDecode = performance.now()
-    // Simulate decode measurement
-    try {
-      const parts = token.split('.')
-      JSON.parse(atob(parts[0].replace(/-/g, '+').replace(/_/g, '/')))
-      JSON.parse(atob(parts[1].replace(/-/g, '+').replace(/_/g, '/')))
-    } catch (e) {
-      // ignore
-    }
-    const decodeTime = performance.now() - startDecode
-
-    const startEncode = performance.now()
-    // Simulate encode measurement
-    try {
-      btoa(JSON.stringify(decoded.header))
-      btoa(JSON.stringify(decoded.payload))
-    } catch (e) {
-      // ignore
-    }
-    const encodeTime = performance.now() - startEncode
-
-    const parts = token.split('.')
-    const headerSize = parts[0].length
-    const payloadSize = parts[1].length
-    const signatureSize = parts[2].length
-    const tokenSize = token.length
-
-    setPerformanceMetrics({
-      decodeTime,
-      encodeTime,
-      tokenSize,
-      headerSize,
-      payloadSize,
-      signatureSize
-    })
-
-    setShowPerformance(true)
-  }
-
-  // Get performance rating
-  const getPerformanceRating = () => {
-    const size = performanceMetrics.tokenSize
-    if (size < 200) return { rating: 'Excellent', color: 'text-heading-accent', bgColor: 'bg-card', borderColor: 'border-green-200 dark:border-green-800' }
-    if (size < 512) return { rating: 'Good', color: 'text-foreground', bgColor: 'bg-card', borderColor: 'border-blue-200 dark:border-blue-800' }
-    if (size < 1024) return { rating: 'Fair', color: 'text-foreground', bgColor: 'bg-card', borderColor: 'border-yellow-200 dark:border-yellow-800' }
-    if (size < 4096) return { rating: 'Large', color: 'text-foreground', bgColor: 'bg-card', borderColor: 'border-primary/20' }
-    return { rating: 'Too Large', color: 'text-foreground', bgColor: 'bg-card', borderColor: 'border-red-200 dark:border-red-800' }
-  }
-
-  // Calculate network impact
-  const calculateNetworkImpact = () => {
-    const tokenSize = performanceMetrics.tokenSize
-    // Typical HTTP header overhead
-    const httpHeaderOverhead = 200 // bytes
-    const authHeaderKey = 'Authorization: Bearer '.length
-    const totalPerRequest = httpHeaderOverhead + authHeaderKey + tokenSize
-
-    const requestsPerDay = [100, 1000, 10000, 100000, 1000000]
-    const dataTransfer = requestsPerDay.map(requests => ({
-      requests,
-      daily: (totalPerRequest * requests / 1024 / 1024).toFixed(2), // MB
-      monthly: (totalPerRequest * requests * 30 / 1024 / 1024 / 1024).toFixed(2) // GB
-    }))
-
-    return dataTransfer
-  }
-
-  // Security Analyzer
-  const analyzeSecurity = () => {
-    if (!token || !decoded) return
-
-    const issues: Array<{ severity: 'critical' | 'high' | 'medium' | 'low' | 'info', message: string, recommendation: string }> = []
-    let score = 100
-
-    // Check algorithm
-    const algo = decoded.header.alg
-    if (algo === 'none') {
-      issues.push({
-        severity: 'critical',
-        message: '❌ Algorithm set to "none" - No signature verification',
-        recommendation: 'Use a secure algorithm like HS256, RS256, or ES256'
-      })
-      score -= 50
-    } else if (algo === 'HS256' || algo === 'HS384' || algo === 'HS512') {
-      if (secret && secret.length < 32) {
-        issues.push({
-          severity: 'high',
-          message: '⚠️ Weak secret key (less than 32 characters)',
-          recommendation: 'Use a secret key with at least 32 characters for HS256+'
-        })
-        score -= 25
-      }
-      issues.push({
-        severity: 'info',
-        message: `ℹ️ Using ${algo} (symmetric algorithm)`,
-        recommendation: 'Consider using asymmetric algorithms (RS256, ES256) for better security'
-      })
-    }
-
-    // Check token expiration
-    const now = Math.floor(Date.now() / 1000)
-    if (decoded.payload.exp) {
-      if (decoded.payload.exp < now) {
-        issues.push({
-          severity: 'high',
-          message: '⚠️ Token has expired',
-          recommendation: 'Token should be refreshed or regenerated'
-        })
-        score -= 20
-      } else {
-        const expiresIn = decoded.payload.exp - now
-        if (expiresIn > 86400 * 30) { // 30 days
-          issues.push({
-            severity: 'medium',
-            message: '⚠️ Token expiration is very long (>30 days)',
-            recommendation: 'Consider shorter expiration times for better security'
-          })
-          score -= 10
-        }
-      }
-    } else {
-      issues.push({
-        severity: 'high',
-        message: '⚠️ Missing "exp" (expiration) claim',
-        recommendation: 'Always set an expiration time for tokens'
-      })
-      score -= 20
-    }
-
-    // Check issued at
-    if (!decoded.payload.iat) {
-      issues.push({
-        severity: 'medium',
-        message: '⚠️ Missing "iat" (issued at) claim',
-        recommendation: 'Include "iat" to track when the token was created'
-      })
-      score -= 10
-    }
-
-    // Check not before
-    if (decoded.payload.nbf && decoded.payload.nbf > now) {
-      issues.push({
-        severity: 'low',
-        message: '⚠️ Token not valid yet (nbf claim)',
-        recommendation: 'Token cannot be used until the "nbf" time'
-      })
-      score -= 5
-    }
-
-    // Check token size
-    const tokenSize = token.length
-    if (tokenSize > 8192) {
-      issues.push({
-        severity: 'medium',
-        message: `⚠️ Token size is excessive (${tokenSize} bytes > 8KB)`,
-        recommendation: 'Reduce payload size to improve performance and compatibility'
-      })
-      score -= 15
-    } else if (tokenSize > 4096) {
-      issues.push({
-        severity: 'low',
-        message: `ℹ️ Token size is large (${tokenSize} bytes > 4KB)`,
-        recommendation: 'Consider reducing payload size if possible'
-      })
-      score -= 5
-    }
-
-    // Check for sensitive data
-    const sensitiveFields = ['password', 'ssn', 'credit_card', 'api_key', 'secret', 'private_key', 'access_token']
-    const payloadString = JSON.stringify(decoded.payload).toLowerCase()
-    const foundSensitive = sensitiveFields.filter(field => payloadString.includes(field))
-
-    if (foundSensitive.length > 0) {
-      issues.push({
-        severity: 'critical',
-        message: `❌ Sensitive data detected in payload: ${foundSensitive.join(', ')}`,
-        recommendation: 'Never store sensitive data in JWT payload - it is not encrypted'
-      })
-      score -= 30
-    }
-
-    // Check for standard claims
-    if (!decoded.payload.sub && !decoded.payload.user_id && !decoded.payload.userId) {
-      issues.push({
-        severity: 'low',
-        message: 'ℹ️ Missing subject identifier (sub, user_id, userId)',
-        recommendation: 'Include a subject claim to identify the token owner'
-      })
-      score -= 5
-    }
-
-    // Email format check
-    if (decoded.payload.email && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(decoded.payload.email)) {
-      issues.push({
-        severity: 'low',
-        message: 'ℹ️ Email format appears invalid',
-        recommendation: 'Validate email format before including in token'
-      })
-      score -= 5
-    }
-
-    // If no issues, add a success message
-    if (issues.length === 0) {
-      issues.push({
-        severity: 'info',
-        message: '✅ No security issues detected',
-        recommendation: 'Token follows security best practices'
-      })
-    }
-
-    // Ensure score doesn't go below 0
-    setSecurityScore(Math.max(0, score))
-    setSecurityIssues(issues)
-    setShowSecurityAnalyzer(true)
-  }
-
-  return (
-    <div className="space-y-6 w-full max-w-full overflow-hidden">
-      <Tabs value={mode} onValueChange={(v) => setMode(v as "decode" | "encode")} className="w-full max-w-full">
-        <TabsList className="grid w-full grid-cols-2">
-          <TabsTrigger value="decode">Decoder</TabsTrigger>
-          <TabsTrigger value="encode">Encoder</TabsTrigger>
-        </TabsList>
-
-        {/* Shared Token Notification */}
-        {isSharedToken && (
-          <div className="mt-4 p-4 bg-gradient-to-r from-blue-50 to-purple-50 dark:from-blue-950/20 dark:to-purple-950/20 border-2 border-blue-300 dark:border-blue-700 rounded-lg flex items-start gap-3 animate-in fade-in slide-in-from-top-2 duration-500">
-            <Share2 className="h-5 w-5 text-foreground mt-0.5 shrink-0" />
-            <div className="flex-1">
-              <p className="text-sm font-semibold text-foreground">
-                🎉 Shared Token Loaded Successfully!
-              </p>
-              <p className="text-xs text-foreground mt-1">
-                You&apos;re viewing a JWT token shared by someone. Sensitive data may be masked for privacy.
-              </p>
-            </div>
-            <GButton
-              variant="ghost"
-              size="sm"
-              onClick={() => setIsSharedToken(false)}
-              className="h-6 w-6 p-0 text-foreground hover:text-foreground"
-            >
-              <X className="h-4 w-4" />
-            </GButton>
-          </div>
-        )}
-
-        <TabsContent value="decode" className="space-y-6">
-          {/* Token Input */}
-          <div className="space-y-3">
-            <div className="flex items-center justify-between flex-wrap gap-3">
-              <Label className="text-base font-semibold text-foreground">Encoded JWT Token</Label>
-              <div className="flex items-center gap-2 flex-wrap">
-                <div className="flex items-center gap-2">
-                  <Label className="text-sm text-muted-foreground whitespace-nowrap">Algorithm:</Label>
-                  <select
-                    value={selectedAlgorithm}
-                    onChange={(e) => setSelectedAlgorithm(e.target.value)}
-                    className="px-3 py-1.5 text-sm border-2 border-orange-300 rounded-md bg-background focus:border-primary focus:outline-none cursor-pointer w-24"
-                    style={{ wordBreak: 'normal' }}
-                  >
-                    <option value="HS256">HS256</option>
-                    <option value="HS384">HS384</option>
-                    <option value="HS512">HS512</option>
-                    <option value="RS256">RS256</option>
-                    <option value="RS384">RS384</option>
-                    <option value="RS512">RS512</option>
-                    <option value="ES256">ES256</option>
-                    <option value="ES384">ES384</option>
-                    <option value="ES512">ES512</option>
-                    <option value="PS256">PS256</option>
-                    <option value="PS384">PS384</option>
-                    <option value="PS512">PS512</option>
-                  </select>
-                </div>
-                <div className="flex items-center gap-2">
-                  <Label className="text-sm text-muted-foreground whitespace-nowrap">Language:</Label>
-                  <select
-                    value={selectedLanguage}
-                    onChange={(e) => setSelectedLanguage(e.target.value)}
-                    className="px-3 py-1.5 text-sm border-2 border-green-300 rounded-md bg-background focus:border-green-500 focus:outline-none cursor-pointer"
-                    style={{ wordBreak: 'normal' }}
-                  >
-                    <option value="nodejs">Node.js</option>
-                    <option value="python">Python</option>
-                    <option value="java">Java</option>
-                    <option value="php">PHP</option>
-                    <option value="go">Go</option>
-                    <option value="csharp">C#</option>
-                  </select>
-                </div>
-                <GButton
-                  variant="outline"
-                  size="sm"
-                  onClick={generateExample}
-                  className="text-xs"
-                >
-                  <Sparkles className="h-3 w-3 mr-1" />
-                  Generate Example
-                </GButton>
-                {token && decoded && (
-                  <>
-                    <GButton
-                      variant="outline"
-                      size="sm"
-                      onClick={analyzePerformance}
-                      className="text-xs bg-gradient-to-r from-yellow-500 to-orange-500 text-white hover:from-yellow-600 hover:to-primary/90 border-0"
-                    >
-                      <Zap className="h-3 w-3 mr-1" />
-                      Performance
-                    </GButton>
-                    <GButton
-                      variant="outline"
-                      size="sm"
-                      onClick={() => setShowExport(true)}
-                      className="text-xs bg-gradient-to-r from-indigo-500 to-purple-500 text-white hover:from-indigo-600 hover:to-purple-600 border-0"
-                    >
-                      <Download className="h-3 w-3 mr-1" />
-                      Export
-                    </GButton>
-                    <GButton
-                      variant="outline"
-                      size="sm"
-                      onClick={openOptimizer}
-                      className="text-xs bg-gradient-to-r from-cyan-500 to-blue-500 text-white hover:from-cyan-600 hover:to-blue-600 border-0"
-                    >
-                      <Minimize2 className="h-3 w-3 mr-1" />
-                      Optimize
-                    </GButton>
-                    <GButton
-                      variant="outline"
-                      size="sm"
-                      onClick={openComparison}
-                      className="text-xs bg-gradient-to-r from-purple-500 to-pink-500 text-white hover:from-purple-600 hover:to-pink-600 border-0"
-                    >
-                      <GitCompare className="h-3 w-3 mr-1" />
-                      Compare
-                    </GButton>
-                    <GButton
-                      variant="outline"
-                      size="sm"
-                      onClick={analyzeSecurity}
-                      className="text-xs bg-gradient-to-r from-red-500 to-orange-500 text-white hover:from-red-600 hover:to-primary/90 border-0"
-                    >
-                      <Shield className="h-3 w-3 mr-1" />
-                      Security
-                    </GButton>
-                    <GButton
-                      variant="outline"
-                      size="sm"
-                      onClick={openCodeGenerator}
-                      className="text-xs bg-gradient-to-r from-green-500 to-emerald-500 text-white hover:from-green-600 hover:to-emerald-600 border-0"
-                    >
-                      <Code2 className="h-3 w-3 mr-1" />
-                      Get Code
-                    </GButton>
-                    <GButton
-                      variant="outline"
-                      size="sm"
-                      onClick={generateShareLink}
-                      className="text-xs bg-gradient-to-r from-blue-500 to-purple-500 text-white hover:from-blue-600 hover:to-purple-600 border-0"
-                    >
-                      <Share2 className="h-3 w-3 mr-1" />
-                      Share
-                    </GButton>
-                    <GButton
-                      variant="ghost"
-                      size="sm"
-                      onClick={clearToken}
-                      className="text-xs"
-                    >
-                      <X className="h-3 w-3 mr-1" />
-                      Clear
-                    </GButton>
-                  </>
-                )}
-              </div>
-            </div>
-
-            <div className="relative w-full">
-              <Textarea
-                placeholder="Paste your JWT token here..."
-                value={token}
-                onChange={(e) => setToken(e.target.value)}
-                className="!h-32 !max-h-32 !min-h-32 !w-full resize-none overflow-y-auto overflow-x-hidden font-mono text-base pr-20 border-2 border-orange-300 focus:border-primary"
-                style={{
-                  wordBreak: 'break-all',
-                  overflowWrap: 'break-word',
-                  whiteSpace: 'normal',
-                  height: '128px !important',
-                  maxHeight: '128px !important',
-                  minHeight: '128px !important',
-                  width: '100%',
-                  boxSizing: 'border-box'
-                }}
-              />
-              {token && (
-                <div className="absolute top-3 right-3">
-                  {isValid ? (
-                    <div className="flex items-center gap-1 text-heading-accent text-xs">
-                      <CheckCircle2 className="h-4 w-4" />
-                      <span>Valid</span>
-                    </div>
-                  ) : error ? (
-                    <div className="flex items-center gap-1 text-destructive text-xs">
-                      <AlertCircle className="h-4 w-4" />
-                      <span>Invalid</span>
-                    </div>
-                  ) : null}
-                </div>
-              )}
-            </div>
-
-          </div>
-
-          {error && !decoded && (
-            <div className="p-4 bg-destructive/10 border border-destructive/20 rounded-lg flex items-start gap-2">
-              <AlertCircle className="h-5 w-5 text-destructive mt-0.5 flex-shrink-0" />
-              <p className="text-sm text-destructive">{error}</p>
-            </div>
-          )}
-
-          {decoded && (
-            <div className="space-y-4 w-full max-w-full overflow-hidden">
-              {/* Algorithm Info */}
-              {decoded.header.alg && (
-                <div className="p-4 bg-card border border-blue-200 dark:border-blue-800 rounded-lg w-full max-w-full overflow-hidden">
-                  <div className="flex items-center justify-between gap-4">
-                    <p className="text-base font-medium text-foreground break-words">
-                      <strong>Algorithm:</strong> {decoded.header.alg} | <strong>Type:</strong> {decoded.header.typ || "JWT"}
-                    </p>
-                    {timeRemaining !== null && (
-                      <div className="flex items-center gap-2 shrink-0">
-                        <Clock className={`h-4 w-4 ${getExpirationColor(timeRemaining)}`} />
-                        <span className={`text-sm font-semibold ${getExpirationColor(timeRemaining)} whitespace-nowrap`}>
-                          {formatTimeRemaining(timeRemaining)}
-                        </span>
-                      </div>
-                    )}
-                  </div>
-                </div>
-              )}
-
-              {/* Header */}
-              <Card className="p-5 space-y-4 border-blue-200 dark:border-blue-800 w-full max-w-full overflow-hidden">
-                <div className="flex items-center justify-between">
-                  <h3 className="text-lg font-bold text-foreground flex items-center gap-2">
-                    Decoded Header
-                    <span className="text-sm text-muted-foreground">(Algorithm & Token Type)</span>
-                  </h3>
-                  <GButton
-                    variant="ghost"
-                    size="sm"
-                    onClick={() => copyToClipboard(JSON.stringify(decoded.header, null, 2), "header")}
-                  >
-                    {copied === "header" ? <Check className="h-5 w-5" /> : <Copy className="h-5 w-5" />}
-                  </GButton>
-                </div>
-                <Tabs value={headerView} onValueChange={(v) => setHeaderView(v as "json" | "table")} className="w-full">
-                  <TabsList className="grid w-full grid-cols-2">
-                    <TabsTrigger value="json" className="text-sm font-medium">JSON</TabsTrigger>
-                    <TabsTrigger value="table" className="text-sm font-medium">CLAIMS TABLE</TabsTrigger>
-                  </TabsList>
-                  <TabsContent value="json" className="mt-3">
-                    <pre className="p-4 bg-muted rounded-md overflow-x-hidden text-sm font-mono break-all" style={{ wordBreak: 'break-all', overflowWrap: 'break-word', whiteSpace: 'pre-wrap' }}>
-                      {JSON.stringify(decoded.header, null, 2)}
-                    </pre>
-                  </TabsContent>
-                  <TabsContent value="table" className="mt-3">
-                    <div className="border rounded-md overflow-hidden w-full max-w-full overflow-x-auto">
-                      <table className="w-full text-sm">
-                        <thead className="bg-muted">
-                          <tr>
-                            <th className="text-left p-3 font-bold">Claim</th>
-                            <th className="text-left p-3 font-bold">Value</th>
-                            <th className="text-left p-3 font-bold">Description</th>
-                          </tr>
-                        </thead>
-                        <tbody>
-                          {Object.entries(decoded.header).map(([key, value]) => (
-                            <tr key={key} className="border-t">
-                              <td className="p-3 font-mono font-semibold break-words">{key}</td>
-                              <td className="p-3 font-mono break-words">{String(value)}</td>
-                              <td className="p-3 text-muted-foreground break-words">
-                                {key === 'alg' && 'The algorithm used to sign the JWT'}
-                                {key === 'typ' && 'The media type of this complete JWT'}
-                                {key === 'kid' && 'Key ID - identifies which key was used'}
-                                {!['alg', 'typ', 'kid'].includes(key) && 'Custom header claim'}
-                              </td>
-                            </tr>
-                          ))}
-                        </tbody>
-                      </table>
-                    </div>
-                  </TabsContent>
-                </Tabs>
-              </Card>
-
-              {/* Payload */}
-              <Card className="p-5 space-y-4 border-purple-200 dark:border-purple-800 w-full max-w-full overflow-hidden">
-                <div className="flex items-center justify-between">
-                  <h3 className="text-lg font-bold text-foreground flex items-center gap-2">
-                    Decoded Payload
-                    <span className="text-sm text-muted-foreground">(Claims & Data)</span>
-                  </h3>
-                  <GButton
-                    variant="ghost"
-                    size="sm"
-                    onClick={() => copyToClipboard(JSON.stringify(decoded.payload, null, 2), "payload")}
-                  >
-                    {copied === "payload" ? <Check className="h-5 w-5" /> : <Copy className="h-5 w-5" />}
-                  </GButton>
-                </div>
-                <Tabs value={payloadView} onValueChange={(v) => setPayloadView(v as "json" | "table")} className="w-full">
-                  <TabsList className="grid w-full grid-cols-2">
-                    <TabsTrigger value="json" className="text-sm font-medium">JSON</TabsTrigger>
-                    <TabsTrigger value="table" className="text-sm font-medium">CLAIMS TABLE</TabsTrigger>
-                  </TabsList>
-                  <TabsContent value="json" className="mt-3">
-                    <pre className="p-4 bg-muted rounded-md overflow-x-hidden text-sm font-mono break-all" style={{ wordBreak: 'break-all', overflowWrap: 'break-word', whiteSpace: 'pre-wrap' }}>
-                      {JSON.stringify(decoded.payload, null, 2)}
-                    </pre>
-                  </TabsContent>
-                  <TabsContent value="table" className="mt-3">
-                    <div className="border rounded-md overflow-hidden w-full max-w-full overflow-x-auto">
-                      <table className="w-full text-sm">
-                        <thead className="bg-muted">
-                          <tr>
-                            <th className="text-left p-3 font-bold">Claim</th>
-                            <th className="text-left p-3 font-bold">Value</th>
-                            <th className="text-left p-3 font-bold">Description</th>
-                          </tr>
-                        </thead>
-                        <tbody>
-                          {Object.entries(decoded.payload).map(([key, value]) => {
-                            // Format value based on type
-                            let displayValue = String(value)
-                            let description = 'Custom claim'
-
-                            // Standard JWT claims descriptions
-                            if (key === 'sub') description = 'The subject of the JWT (the user)'
-                            else if (key === 'iss') description = 'Issuer - who created and signed this token'
-                            else if (key === 'aud') description = 'Audience - who this token is intended for'
-                            else if (key === 'exp') {
-                              description = 'Expiration time - when this token expires'
-                              try {
-                                const date = new Date(Number(value) * 1000)
-                                displayValue = `${value} (${date.toUTCString()})`
-                              } catch (e) { }
-                            }
-                            else if (key === 'nbf') {
-                              description = 'Not Before - token should not be accepted before this time'
-                              try {
-                                const date = new Date(Number(value) * 1000)
-                                displayValue = `${value} (${date.toUTCString()})`
-                              } catch (e) { }
-                            }
-                            else if (key === 'iat') {
-                              description = 'Issued At - when this token was created'
-                              try {
-                                const date = new Date(Number(value) * 1000)
-                                displayValue = `${value} (${date.toUTCString()})`
-                              } catch (e) { }
-                            }
-                            else if (key === 'jti') description = 'JWT ID - unique identifier for this token'
-                            else if (key === 'name') description = 'Name of the user'
-                            else if (key === 'email') description = 'Email address of the user'
-                            else if (key === 'admin') description = 'Admin status'
                             else if (key === 'role' || key === 'roles') description = 'User role(s)'
 
                             return (
@@ -1786,10 +417,10 @@ metadata:
                     </div>
                   </TabsContent>
                 </Tabs>
-              </Card>
+              </GCard>
 
               {/* Signature */}
-              <Card className="p-5 space-y-4 border-cyan-200 dark:border-cyan-800 w-full max-w-full overflow-hidden">
+              <GCard className="p-5 space-y-4 border-cyan-200 dark:border-cyan-800 w-full max-w-full overflow-hidden">
                 <div className="flex items-center justify-between">
                   <h3 className="text-lg font-bold text-foreground">Signature</h3>
                   <GButton variant="ghost" size="sm" onClick={() => copyToClipboard(decoded.signature, "signature")}>
@@ -1799,10 +430,10 @@ metadata:
                 <pre className="p-4 bg-muted rounded-md overflow-x-hidden text-sm font-mono break-all" style={{ wordBreak: 'break-all', overflowWrap: 'break-word', whiteSpace: 'pre-wrap' }}>
                   {decoded.signature}
                 </pre>
-              </Card>
+              </GCard>
 
               {/* Signature Verification */}
-              <Card className="p-5 space-y-4 w-full max-w-full overflow-hidden">
+              <GCard className="p-5 space-y-4 w-full max-w-full overflow-hidden">
                 <div className="space-y-4">
                   <h3 className="text-lg font-bold text-foreground">Verify Signature (Optional)</h3>
                   <p className="text-sm text-muted-foreground">
@@ -1830,10 +461,11 @@ metadata:
                   </div>
 
                   {isVerified !== null && (
-                    <div className={`p-4 rounded-lg flex items-center gap-3 ${isVerified
-                      ? "bg-card border border-border"
-                      : "bg-destructive/10 border border-destructive/20"
-                      }`}>
+                    <div className={`p- 4 rounded-lg flex items - center gap - 3 ${
+      isVerified
+        ? "bg-card border border-border"
+        : "bg-destructive/10 border border-destructive/20"
+    } `}>
                       {isVerified ? (
                         <>
                           <CheckCircle2 className="h-6 w-6 text-heading-accent" />
@@ -1848,7 +480,7 @@ metadata:
                     </div>
                   )}
                 </div>
-              </Card>
+              </GCard>
             </div>
           )}
         </TabsContent>
@@ -1909,7 +541,7 @@ metadata:
           </GButton>
 
           {encodedToken && (
-            <Card className="p-4 space-y-3 w-full max-w-full overflow-hidden">
+            <GCard className="p-4 space-y-3 w-full max-w-full overflow-hidden">
               <div className="flex items-center justify-between">
                 <h3 className="font-semibold text-foreground">Encoded JWT</h3>
                 <GButton
@@ -1923,7 +555,7 @@ metadata:
               <pre className="p-3 bg-muted rounded-md overflow-x-hidden text-xs font-mono break-all" style={{ wordBreak: 'break-all', overflowWrap: 'break-word', whiteSpace: 'pre-wrap' }}>
                 {encodedToken}
               </pre>
-            </Card>
+            </GCard>
           )}
         </TabsContent>
       </Tabs>
@@ -1938,7 +570,7 @@ metadata:
       {/* Share Modal */}
       {showShareModal && (
         <div className="fixed inset-0 bg-card/50 backdrop-blur-sm flex items-center justify-center z-50 p-4" onClick={() => setShowShareModal(false)}>
-          <Card className="w-full max-w-2xl p-6 space-y-5 animate-in fade-in zoom-in duration-200" onClick={(e) => e.stopPropagation()}>
+          <GCard className="w-full max-w-2xl p-6 space-y-5 animate-in fade-in zoom-in duration-200" onClick={(e) => e.stopPropagation()}>
             <div className="flex items-center justify-between">
               <div className="flex items-center gap-3">
                 <div className="p-3 bg-gradient-to-r from-blue-500 to-purple-500 rounded-lg">
@@ -1977,7 +609,7 @@ metadata:
                     // Regenerate link with new masking preference
                     const tokenToShare = checked ? maskSensitiveFields(token) : token
                     const encodedToken = btoa(tokenToShare)
-                    const url = `${window.location.origin}${window.location.pathname}?token=${encodedToken}`
+                    const url = `${ window.location.origin }${ window.location.pathname }?token = ${ encodedToken } `
                     setShareLink(url)
                   }}
                   className="data-[state=checked]:bg-blue-500"
@@ -2069,14 +701,14 @@ metadata:
                 Copy Link & Close
               </GButton>
             </div>
-          </Card>
+          </GCard>
         </div>
       )}
 
       {/* Code Generator Modal */}
       {showCodeGenerator && (
         <div className="fixed inset-0 bg-card/50 backdrop-blur-sm flex items-center justify-center z-50 p-4" onClick={() => setShowCodeGenerator(false)}>
-          <Card className="w-full max-w-4xl max-h-[90vh] flex flex-col p-6 space-y-5 animate-in fade-in zoom-in duration-200" onClick={(e) => e.stopPropagation()}>
+          <GCard className="w-full max-w-4xl max-h-[90vh] flex flex-col p-6 space-y-5 animate-in fade-in zoom-in duration-200" onClick={(e) => e.stopPropagation()}>
             <div className="flex items-center justify-between">
               <div className="flex items-center gap-3">
                 <div className="p-3 bg-gradient-to-r from-green-500 to-emerald-500 rounded-lg">
@@ -2219,20 +851,21 @@ metadata:
                 Copy Code & Close
               </GButton>
             </div>
-          </Card>
+          </GCard>
         </div>
       )}
 
       {/* Security Analyzer Modal */}
       {showSecurityAnalyzer && (
         <div className="fixed inset-0 bg-card/50 backdrop-blur-sm flex items-center justify-center z-50 p-4" onClick={() => setShowSecurityAnalyzer(false)}>
-          <Card className="w-full max-w-4xl p-5 space-y-3 animate-in fade-in zoom-in duration-200" onClick={(e) => e.stopPropagation()}>
+          <GCard className="w-full max-w-4xl p-5 space-y-3 animate-in fade-in zoom-in duration-200" onClick={(e) => e.stopPropagation()}>
             <div className="flex items-center justify-between">
               <div className="flex items-center gap-3">
-                <div className={`p-3 rounded-lg ${securityScore >= 80 ? 'bg-gradient-to-r from-green-500 to-emerald-500' :
-                  securityScore >= 60 ? 'bg-gradient-to-r from-yellow-500 to-orange-500' :
-                    'bg-gradient-to-r from-red-500 to-rose-500'
-                  }`}>
+                <div className={`p - 3 rounded - lg ${
+      securityScore >= 80 ? 'bg-gradient-to-r from-green-500 to-emerald-500' :
+      securityScore >= 60 ? 'bg-gradient-to-r from-yellow-500 to-orange-500' :
+        'bg-gradient-to-r from-red-500 to-rose-500'
+    } `}>
                   {securityScore >= 80 ? <ShieldCheck className="h-6 w-6 text-white" /> :
                     securityScore >= 60 ? <Shield className="h-6 w-6 text-white" /> :
                       <ShieldAlert className="h-6 w-6 text-white" />}
@@ -2253,26 +886,29 @@ metadata:
             </div>
 
             {/* Security Score */}
-            <div className={`p-4 rounded-lg border-2 ${securityScore >= 80 ? 'bg-card border-green-300 dark:border-green-700' :
-              securityScore >= 60 ? 'bg-card border-yellow-300 dark:border-yellow-700' :
-                'bg-card border-red-300 dark:border-destructive'
-              }`}>
+            <div className={`p - 4 rounded - lg border - 2 ${
+      securityScore >= 80 ? 'bg-card border-green-300 dark:border-green-700' :
+      securityScore >= 60 ? 'bg-card border-yellow-300 dark:border-yellow-700' :
+        'bg-card border-red-300 dark:border-destructive'
+    } `}>
               <div className="flex items-center justify-between">
                 <div>
                   <p className="text-xs font-semibold text-muted-foreground mb-1">Security Score</p>
                   <div className="flex items-baseline gap-2">
-                    <p className={`text-4xl font-bold ${securityScore >= 80 ? 'text-heading-accent' :
-                      securityScore >= 60 ? 'text-foreground' :
-                        'text-foreground'
-                      }`}>
+                    <p className={`text - 4xl font - bold ${
+      securityScore >= 80 ? 'text-heading-accent' :
+      securityScore >= 60 ? 'text-foreground' :
+        'text-foreground'
+    } `}>
                       {securityScore}
                     </p>
                     <p className="text-xl text-muted-foreground">/100</p>
                   </div>
-                  <p className={`text-xs font-medium mt-1 ${securityScore >= 80 ? 'text-heading-accent' :
-                    securityScore >= 60 ? 'text-foreground' :
-                      'text-foreground'
-                    }`}>
+                  <p className={`text - xs font - medium mt - 1 ${
+      securityScore >= 80 ? 'text-heading-accent' :
+      securityScore >= 60 ? 'text-foreground' :
+        'text-foreground'
+    } `}>
                     {securityScore >= 80 ? '✅ Excellent - Token is secure' :
                       securityScore >= 60 ? '⚠️ Good - Minor improvements needed' :
                         securityScore >= 40 ? '⚠️ Fair - Security issues detected' :
@@ -2297,8 +933,8 @@ metadata:
                       stroke="currentColor"
                       strokeWidth="10"
                       fill="none"
-                      strokeDasharray={`${2 * Math.PI * 40}`}
-                      strokeDashoffset={`${2 * Math.PI * 40 * (1 - securityScore / 100)}`}
+                      strokeDasharray={`${ 2 * Math.PI * 40 } `}
+                      strokeDashoffset={`${ 2 * Math.PI * 40 * (1 - securityScore / 100) } `}
                       className={
                         securityScore >= 80 ? 'text-heading-accent' :
                           securityScore >= 60 ? 'text-foreground' :
@@ -2318,12 +954,13 @@ metadata:
                 {securityIssues.map((issue, index) => (
                   <div
                     key={index}
-                    className={`p-3 rounded-lg border-l-4 ${issue.severity === 'critical' ? 'bg-card border-red-500' :
-                      issue.severity === 'high' ? 'bg-card border-primary' :
-                        issue.severity === 'medium' ? 'bg-card border-yellow-500' :
-                          issue.severity === 'low' ? 'bg-card border-blue-500' :
-                            'bg-card border-green-500'
-                      }`}
+                    className={`p - 3 rounded - lg border - l - 4 ${
+      issue.severity === 'critical' ? 'bg-card border-red-500' :
+      issue.severity === 'high' ? 'bg-card border-primary' :
+        issue.severity === 'medium' ? 'bg-card border-yellow-500' :
+          issue.severity === 'low' ? 'bg-card border-blue-500' :
+            'bg-card border-green-500'
+    } `}
                   >
                     <div className="flex items-start gap-2">
                       {issue.severity === 'critical' ? <AlertTriangle className="h-4 w-4 text-foreground mt-0.5 shrink-0" /> :
@@ -2337,12 +974,13 @@ metadata:
                           <strong>Recommendation:</strong> {issue.recommendation}
                         </p>
                       </div>
-                      <span className={`px-2 py-1 text-xs font-semibold rounded shrink-0 ${issue.severity === 'critical' ? 'bg-red-100 dark:bg-red-900/50 text-foreground' :
-                        issue.severity === 'high' ? 'bg-orange-100 dark:bg-orange-900/50 text-foreground' :
-                          issue.severity === 'medium' ? 'bg-yellow-100 dark:bg-yellow-900/50 text-foreground' :
-                            issue.severity === 'low' ? 'bg-blue-100 dark:bg-blue-900/50 text-foreground' :
-                              'bg-green-100 dark:bg-green-900/50 text-heading-accent'
-                        }`}>
+                      <span className={`px - 2 py - 1 text - xs font - semibold rounded shrink - 0 ${
+      issue.severity === 'critical' ? 'bg-red-100 dark:bg-red-900/50 text-foreground' :
+      issue.severity === 'high' ? 'bg-orange-100 dark:bg-orange-900/50 text-foreground' :
+        issue.severity === 'medium' ? 'bg-yellow-100 dark:bg-yellow-900/50 text-foreground' :
+          issue.severity === 'low' ? 'bg-blue-100 dark:bg-blue-900/50 text-foreground' :
+            'bg-green-100 dark:bg-green-900/50 text-heading-accent'
+    } `}>
                         {issue.severity.toUpperCase()}
                       </span>
                     </div>
@@ -2395,14 +1033,14 @@ metadata:
                 Re-scan Security
               </GButton>
             </div>
-          </Card>
+          </GCard>
         </div>
       )}
 
       {/* Token Comparison Modal */}
       {showComparison && (
         <div className="fixed inset-0 bg-card/50 backdrop-blur-sm flex items-center justify-center z-50 p-4" onClick={() => setShowComparison(false)}>
-          <Card className="w-full max-w-6xl p-5 space-y-3 max-h-[90vh] overflow-y-auto" onClick={(e) => e.stopPropagation()}>
+          <GCard className="w-full max-w-6xl p-5 space-y-3 max-h-[90vh] overflow-y-auto" onClick={(e) => e.stopPropagation()}>
             {/* Header */}
             <div className="flex items-center justify-between border-b pb-3">
               <div className="flex items-center gap-3">
@@ -2509,10 +1147,10 @@ metadata:
                       <tbody>
                         {compareObjects(decoded1.header, decoded2.header).map((diff, idx) => (
                           <tr key={idx} className={`
-                            ${diff.status === 'changed' ? 'bg-card' : ''}
-                            ${diff.status === 'added' ? 'bg-card' : ''}
-                            ${diff.status === 'removed' ? 'bg-card' : ''}
-                          `}>
+                            ${ diff.status === 'changed' ? 'bg-card' : '' }
+                            ${ diff.status === 'added' ? 'bg-card' : '' }
+                            ${ diff.status === 'removed' ? 'bg-card' : '' }
+    `}>
                             <td className="px-3 py-2 font-mono font-semibold">{diff.key}</td>
                             <td className="px-3 py-2 font-mono break-all">
                               {diff.value1 !== undefined ? JSON.stringify(diff.value1) : '-'}
@@ -2549,10 +1187,10 @@ metadata:
                       <tbody>
                         {compareObjects(decoded1.payload, decoded2.payload).map((diff, idx) => (
                           <tr key={idx} className={`
-                            ${diff.status === 'changed' ? 'bg-card' : ''}
-                            ${diff.status === 'added' ? 'bg-card' : ''}
-                            ${diff.status === 'removed' ? 'bg-card' : ''}
-                          `}>
+                            ${ diff.status === 'changed' ? 'bg-card' : '' }
+                            ${ diff.status === 'added' ? 'bg-card' : '' }
+                            ${ diff.status === 'removed' ? 'bg-card' : '' }
+    `}>
                             <td className="px-3 py-2 font-mono font-semibold">{diff.key}</td>
                             <td className="px-3 py-2 font-mono break-all">
                               {diff.value1 !== undefined ? (
@@ -2676,14 +1314,14 @@ metadata:
                 Clear Both
               </GButton>
             </div>
-          </Card>
+          </GCard>
         </div>
       )}
 
       {/* Token Size Optimizer Modal */}
       {showOptimizer && (
         <div className="fixed inset-0 bg-card/50 backdrop-blur-sm flex items-center justify-center z-50 p-4" onClick={() => setShowOptimizer(false)}>
-          <Card className="w-full max-w-5xl p-5 space-y-3 max-h-[90vh] overflow-y-auto" onClick={(e) => e.stopPropagation()}>
+          <GCard className="w-full max-w-5xl p-5 space-y-3 max-h-[90vh] overflow-y-auto" onClick={(e) => e.stopPropagation()}>
             {/* Header */}
             <div className="flex items-center justify-between border-b pb-3">
               <div className="flex items-center gap-3">
@@ -2726,10 +1364,11 @@ metadata:
                   {optimizationSuggestions.map((suggestion, idx) => (
                     <div
                       key={idx}
-                      className={`p-3 border rounded-lg cursor-pointer transition-all ${appliedOptimizations.has(suggestion.type)
-                        ? 'bg-card border-cyan-300 dark:border-cyan-700'
-                        : 'bg-card border-gray-200 dark:border-gray-700 hover:border-cyan-300'
-                        }`}
+                      className={`p - 3 border rounded - lg cursor - pointer transition - all ${
+      appliedOptimizations.has(suggestion.type)
+      ? 'bg-card border-cyan-300 dark:border-cyan-700'
+      : 'bg-card border-gray-200 dark:border-gray-700 hover:border-cyan-300'
+    } `}
                       onClick={() => toggleOptimization(suggestion.type)}
                     >
                       <div className="flex items-start justify-between gap-3">
@@ -2890,14 +1529,14 @@ metadata:
                 </GButton>
               )}
             </div>
-          </Card>
+          </GCard>
         </div>
       )}
 
       {/* Performance Metrics Modal */}
       {showPerformance && performanceMetrics.tokenSize > 0 && (
         <div className="fixed inset-0 bg-card/50 backdrop-blur-sm flex items-center justify-center z-50 p-4" onClick={() => setShowPerformance(false)}>
-          <Card className="w-full max-w-4xl p-5 space-y-3 max-h-[90vh] overflow-y-auto" onClick={(e) => e.stopPropagation()}>
+          <GCard className="w-full max-w-4xl p-5 space-y-3 max-h-[90vh] overflow-y-auto" onClick={(e) => e.stopPropagation()}>
             {/* Header */}
             <div className="flex items-center justify-between border-b pb-3">
               <div className="flex items-center gap-3">
@@ -2919,13 +1558,13 @@ metadata:
             </div>
 
             {/* Performance Rating */}
-            <div className={`p-3 border rounded-lg ${getPerformanceRating().bgColor} ${getPerformanceRating().borderColor}`}>
+            <div className={`p - 3 border rounded - lg ${ getPerformanceRating().bgColor } ${ getPerformanceRating().borderColor } `}>
               <div className="flex items-center justify-between">
                 <div className="flex items-center gap-3">
-                  <Activity className={`h-8 w-8 ${getPerformanceRating().color}`} />
+                  <Activity className={`h - 8 w - 8 ${ getPerformanceRating().color } `} />
                   <div>
                     <h4 className="text-sm font-bold text-foreground">Overall Performance</h4>
-                    <p className={`text-2xl font-bold ${getPerformanceRating().color}`}>{getPerformanceRating().rating}</p>
+                    <p className={`text - 2xl font - bold ${ getPerformanceRating().color } `}>{getPerformanceRating().rating}</p>
                   </div>
                 </div>
                 <div className="text-right">
@@ -2969,7 +1608,7 @@ metadata:
                     <span className="text-xs font-bold text-foreground">{performanceMetrics.headerSize} bytes ({((performanceMetrics.headerSize / performanceMetrics.tokenSize) * 100).toFixed(1)}%)</span>
                   </div>
                   <div className="w-full bg-gray-200 dark:bg-gray-700 rounded-full h-2">
-                    <div className="bg-blue-600 h-2 rounded-full" style={{ width: `${(performanceMetrics.headerSize / performanceMetrics.tokenSize) * 100}%` }}></div>
+                    <div className="bg-blue-600 h-2 rounded-full" style={{ width: `${ (performanceMetrics.headerSize / performanceMetrics.tokenSize) * 100 }% ` }}></div>
                   </div>
                 </div>
 
@@ -2980,7 +1619,7 @@ metadata:
                     <span className="text-xs font-bold text-heading-accent">{performanceMetrics.payloadSize} bytes ({((performanceMetrics.payloadSize / performanceMetrics.tokenSize) * 100).toFixed(1)}%)</span>
                   </div>
                   <div className="w-full bg-gray-200 dark:bg-gray-700 rounded-full h-2">
-                    <div className="bg-green-600 h-2 rounded-full" style={{ width: `${(performanceMetrics.payloadSize / performanceMetrics.tokenSize) * 100}%` }}></div>
+                    <div className="bg-green-600 h-2 rounded-full" style={{ width: `${ (performanceMetrics.payloadSize / performanceMetrics.tokenSize) * 100 }% ` }}></div>
                   </div>
                 </div>
 
@@ -2991,7 +1630,7 @@ metadata:
                     <span className="text-xs font-bold text-foreground">{performanceMetrics.signatureSize} bytes ({((performanceMetrics.signatureSize / performanceMetrics.tokenSize) * 100).toFixed(1)}%)</span>
                   </div>
                   <div className="w-full bg-gray-200 dark:bg-gray-700 rounded-full h-2">
-                    <div className="bg-primary h-2 rounded-full" style={{ width: `${(performanceMetrics.signatureSize / performanceMetrics.tokenSize) * 100}%` }}></div>
+                    <div className="bg-primary h-2 rounded-full" style={{ width: `${ (performanceMetrics.signatureSize / performanceMetrics.tokenSize) * 100 }% ` }}></div>
                   </div>
                 </div>
               </div>
@@ -3035,22 +1674,22 @@ metadata:
                 Industry Benchmarks
               </h4>
               <div className="grid grid-cols-4 gap-2">
-                <div className={`p-2 border rounded-lg text-center ${performanceMetrics.tokenSize < 200 ? 'bg-card border-green-300 dark:border-green-700' : 'bg-card border-gray-200 dark:border-gray-700'}`}>
+                <div className={`p - 2 border rounded - lg text - center ${ performanceMetrics.tokenSize < 200 ? 'bg-card border-green-300 dark:border-green-700' : 'bg-card border-gray-200 dark:border-gray-700' } `}>
                   <p className="text-xs font-semibold text-foreground">Excellent</p>
                   <p className="text-lg font-bold text-heading-accent">&lt;200B</p>
                   <p className="text-xs text-muted-foreground">Minimal</p>
                 </div>
-                <div className={`p-2 border rounded-lg text-center ${performanceMetrics.tokenSize >= 200 && performanceMetrics.tokenSize < 512 ? 'bg-card border-blue-300 dark:border-blue-700' : 'bg-card border-gray-200 dark:border-gray-700'}`}>
+                <div className={`p - 2 border rounded - lg text - center ${ performanceMetrics.tokenSize >= 200 && performanceMetrics.tokenSize < 512 ? 'bg-card border-blue-300 dark:border-blue-700' : 'bg-card border-gray-200 dark:border-gray-700' } `}>
                   <p className="text-xs font-semibold text-foreground">Good</p>
                   <p className="text-lg font-bold text-foreground">200-512B</p>
                   <p className="text-xs text-muted-foreground">Standard</p>
                 </div>
-                <div className={`p-2 border rounded-lg text-center ${performanceMetrics.tokenSize >= 512 && performanceMetrics.tokenSize < 1024 ? 'bg-card border-yellow-300 dark:border-yellow-700' : 'bg-card border-gray-200 dark:border-gray-700'}`}>
+                <div className={`p - 2 border rounded - lg text - center ${ performanceMetrics.tokenSize >= 512 && performanceMetrics.tokenSize < 1024 ? 'bg-card border-yellow-300 dark:border-yellow-700' : 'bg-card border-gray-200 dark:border-gray-700' } `}>
                   <p className="text-xs font-semibold text-foreground">Fair</p>
                   <p className="text-lg font-bold text-foreground">512B-1KB</p>
                   <p className="text-xs text-muted-foreground">Above Avg</p>
                 </div>
-                <div className={`p-2 border rounded-lg text-center ${performanceMetrics.tokenSize >= 1024 ? 'bg-card border-red-300 dark:border-destructive' : 'bg-card border-gray-200 dark:border-gray-700'}`}>
+                <div className={`p - 2 border rounded - lg text - center ${ performanceMetrics.tokenSize >= 1024 ? 'bg-card border-red-300 dark:border-destructive' : 'bg-card border-gray-200 dark:border-gray-700' } `}>
                   <p className="text-xs font-semibold text-foreground">Large</p>
                   <p className="text-lg font-bold text-foreground">&gt;1KB</p>
                   <p className="text-xs text-muted-foreground">Optimize!</p>
@@ -3127,7 +1766,7 @@ metadata:
                 Optimize Token
               </GButton>
             </div>
-          </Card>
+          </GCard>
         </div>
       )}
 
@@ -3368,25 +2007,25 @@ metadata:
                 <pre className="bg-muted text-gray-100 p-3 rounded text-xs overflow-x-auto">
                   {`const jwt = require('jsonwebtoken');
 
-// Create a JWT
-const payload = {
-  userId: 123,
-  username: 'johndoe',
-  role: 'user'
-};
-const secretKey = 'your-secret-key-keep-it-safe';
-const token = jwt.sign(payload, secretKey, { expiresIn: '1h' });
+    // Create a JWT
+    const payload = {
+      userId: 123,
+      username: 'johndoe',
+      role: 'user'
+    };
+    const secretKey = 'your-secret-key-keep-it-safe';
+    const token = jwt.sign(payload, secretKey, { expiresIn: '1h' });
 
-console.log('Generated Token:', token);
+    console.log('Generated Token:', token);
 
-// Verify a JWT
-try {
-  const decoded = jwt.verify(token, secretKey);
-  console.log('Decoded:', decoded);
-  // You can now access: decoded.userId, decoded.username, etc.
-} catch (error) {
-  console.error('Invalid token:', error.message);
-}`}
+    // Verify a JWT
+    try {
+      const decoded = jwt.verify(token, secretKey);
+      console.log('Decoded:', decoded);
+      // You can now access: decoded.userId, decoded.username, etc.
+    } catch (error) {
+      console.error('Invalid token:', error.message);
+    } `}
                 </pre>
               </div>
 
@@ -3402,20 +2041,20 @@ try {
 import datetime
 
 # Create a JWT
-payload = {
-    'user_id': 123,
-    'username': 'johndoe',
-    'role': 'user',
-    'exp': datetime.datetime.utcnow() + datetime.timedelta(hours=1)
-}
-secret_key = 'your-secret-key-keep-it-safe'
-token = jwt.encode(payload, secret_key, algorithm='HS256')
+    payload = {
+      'user_id': 123,
+      'username': 'johndoe',
+      'role': 'user',
+      'exp': datetime.datetime.utcnow() + datetime.timedelta(hours = 1)
+    }
+    secret_key = 'your-secret-key-keep-it-safe'
+    token = jwt.encode(payload, secret_key, algorithm = 'HS256')
 
-print(f'Generated Token: {token}')
+    print(f'Generated Token: {token}')
 
 # Verify a JWT
-try:
-    decoded = jwt.decode(token, secret_key, algorithms=['HS256'])
+    try:
+    decoded = jwt.decode(token, secret_key, algorithms = ['HS256'])
     print(f'Decoded: {decoded}')
     # Access: decoded['user_id'], decoded['username'], etc.
 except jwt.ExpiredSignatureError:
@@ -3664,7 +2303,7 @@ except jwt.InvalidTokenError:
       {/* Export Modal */}
       {showExport && (
         <div className="fixed inset-0 bg-card/50 backdrop-blur-sm flex items-center justify-center z-50 p-4" onClick={() => setShowExport(false)}>
-          <Card className="w-full max-w-2xl p-5 space-y-4" onClick={(e) => e.stopPropagation()}>
+          <GCard className="w-full max-w-2xl p-5 space-y-4" onClick={(e) => e.stopPropagation()}>
             {/* Header */}
             <div className="flex items-center justify-between border-b pb-3">
               <div className="flex items-center gap-3">
@@ -3691,15 +2330,16 @@ except jwt.InvalidTokenError:
               <div className="grid grid-cols-1 gap-2">
                 {/* JSON Format */}
                 <div
-                  className={`p-3 border rounded-lg cursor-pointer transition-all ${selectedExportFormat === 'json'
-                    ? 'bg-indigo-50 dark:bg-indigo-950/20 border-indigo-300 dark:border-indigo-700'
-                    : 'bg-card border-gray-200 dark:border-gray-700 hover:border-indigo-300'
-                    }`}
+                  className={`p - 3 border rounded - lg cursor - pointer transition - all ${
+      selectedExportFormat === 'json'
+      ? 'bg-indigo-50 dark:bg-indigo-950/20 border-indigo-300 dark:border-indigo-700'
+      : 'bg-card border-gray-200 dark:border-gray-700 hover:border-indigo-300'
+    } `}
                   onClick={() => setSelectedExportFormat('json')}
                 >
                   <div className="flex items-center justify-between">
                     <div className="flex items-center gap-3">
-                      <div className={`p-2 rounded-lg ${selectedExportFormat === 'json' ? 'bg-indigo-100 dark:bg-indigo-900' : 'bg-gray-100 dark:bg-muted'}`}>
+                      <div className={`p - 2 rounded - lg ${ selectedExportFormat === 'json' ? 'bg-indigo-100 dark:bg-indigo-900' : 'bg-gray-100 dark:bg-muted' } `}>
                         <FileJson className="h-5 w-5 text-indigo-600" />
                       </div>
                       <div>
@@ -3715,15 +2355,16 @@ except jwt.InvalidTokenError:
 
                 {/* CSV Format */}
                 <div
-                  className={`p-3 border rounded-lg cursor-pointer transition-all ${selectedExportFormat === 'csv'
-                    ? 'bg-card border-green-300 dark:border-green-700'
-                    : 'bg-card border-gray-200 dark:border-gray-700 hover:border-green-300'
-                    }`}
+                  className={`p - 3 border rounded - lg cursor - pointer transition - all ${
+      selectedExportFormat === 'csv'
+      ? 'bg-card border-green-300 dark:border-green-700'
+      : 'bg-card border-gray-200 dark:border-gray-700 hover:border-green-300'
+    } `}
                   onClick={() => setSelectedExportFormat('csv')}
                 >
                   <div className="flex items-center justify-between">
                     <div className="flex items-center gap-3">
-                      <div className={`p-2 rounded-lg ${selectedExportFormat === 'csv' ? 'bg-green-100 dark:bg-green-900' : 'bg-gray-100 dark:bg-muted'}`}>
+                      <div className={`p - 2 rounded - lg ${ selectedExportFormat === 'csv' ? 'bg-green-100 dark:bg-green-900' : 'bg-gray-100 dark:bg-muted' } `}>
                         <FileText className="h-5 w-5 text-heading-accent" />
                       </div>
                       <div>
@@ -3739,15 +2380,16 @@ except jwt.InvalidTokenError:
 
                 {/* XML Format */}
                 <div
-                  className={`p-3 border rounded-lg cursor-pointer transition-all ${selectedExportFormat === 'xml'
-                    ? 'bg-card border-orange-300 dark:border-primary'
-                    : 'bg-card border-gray-200 dark:border-gray-700 hover:border-orange-300'
-                    }`}
+                  className={`p - 3 border rounded - lg cursor - pointer transition - all ${
+      selectedExportFormat === 'xml'
+      ? 'bg-card border-orange-300 dark:border-primary'
+      : 'bg-card border-gray-200 dark:border-gray-700 hover:border-orange-300'
+    } `}
                   onClick={() => setSelectedExportFormat('xml')}
                 >
                   <div className="flex items-center justify-between">
                     <div className="flex items-center gap-3">
-                      <div className={`p-2 rounded-lg ${selectedExportFormat === 'xml' ? 'bg-orange-100 dark:bg-orange-900' : 'bg-gray-100 dark:bg-muted'}`}>
+                      <div className={`p - 2 rounded - lg ${ selectedExportFormat === 'xml' ? 'bg-orange-100 dark:bg-orange-900' : 'bg-gray-100 dark:bg-muted' } `}>
                         <FileCode className="h-5 w-5 text-foreground" />
                       </div>
                       <div>
@@ -3763,15 +2405,16 @@ except jwt.InvalidTokenError:
 
                 {/* YAML Format */}
                 <div
-                  className={`p-3 border rounded-lg cursor-pointer transition-all ${selectedExportFormat === 'yaml'
-                    ? 'bg-card border-blue-300 dark:border-blue-700'
-                    : 'bg-card border-gray-200 dark:border-gray-700 hover:border-blue-300'
-                    }`}
+                  className={`p - 3 border rounded - lg cursor - pointer transition - all ${
+      selectedExportFormat === 'yaml'
+      ? 'bg-card border-blue-300 dark:border-blue-700'
+      : 'bg-card border-gray-200 dark:border-gray-700 hover:border-blue-300'
+    } `}
                   onClick={() => setSelectedExportFormat('yaml')}
                 >
                   <div className="flex items-center justify-between">
                     <div className="flex items-center gap-3">
-                      <div className={`p-2 rounded-lg ${selectedExportFormat === 'yaml' ? 'bg-blue-100 dark:bg-blue-900' : 'bg-gray-100 dark:bg-muted'}`}>
+                      <div className={`p - 2 rounded - lg ${ selectedExportFormat === 'yaml' ? 'bg-blue-100 dark:bg-blue-900' : 'bg-gray-100 dark:bg-muted' } `}>
                         <FileText className="h-5 w-5 text-foreground" />
                       </div>
                       <div>
@@ -3787,15 +2430,16 @@ except jwt.InvalidTokenError:
 
                 {/* PDF Report */}
                 <div
-                  className={`p-3 border rounded-lg cursor-pointer transition-all ${selectedExportFormat === 'pdf'
-                    ? 'bg-card border-red-300 dark:border-destructive'
-                    : 'bg-card border-gray-200 dark:border-gray-700 hover:border-red-300'
-                    }`}
+                  className={`p - 3 border rounded - lg cursor - pointer transition - all ${
+      selectedExportFormat === 'pdf'
+      ? 'bg-card border-red-300 dark:border-destructive'
+      : 'bg-card border-gray-200 dark:border-gray-700 hover:border-red-300'
+    } `}
                   onClick={() => setSelectedExportFormat('pdf')}
                 >
                   <div className="flex items-center justify-between">
                     <div className="flex items-center gap-3">
-                      <div className={`p-2 rounded-lg ${selectedExportFormat === 'pdf' ? 'bg-red-100 dark:bg-red-900' : 'bg-gray-100 dark:bg-muted'}`}>
+                      <div className={`p - 2 rounded - lg ${ selectedExportFormat === 'pdf' ? 'bg-red-100 dark:bg-red-900' : 'bg-gray-100 dark:bg-muted' } `}>
                         <FileText className="h-5 w-5 text-foreground" />
                       </div>
                       <div>
@@ -3859,7 +2503,7 @@ except jwt.InvalidTokenError:
                 Download {selectedExportFormat.toUpperCase()}
               </GButton>
             </div>
-          </Card>
+          </GCard>
         </div>
       )}
     </div>

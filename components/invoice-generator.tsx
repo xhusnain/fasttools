@@ -3,10 +3,7 @@
 import { useState, useEffect } from "react"
 import { GButton } from "@/components/globalcomponents/gbutton"
 import { Input } from "@/components/ui/input"
-import { Label } from "@/components/ui/label"
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Copy, Download, Plus, Trash2, Printer, FileText, Palette, Save, Upload, Calendar } from "lucide-react"
-import { LoadingSpinner } from "@/components/loading-spinner"
 import { currencies, languages, getCurrencySymbol } from "./countries-list"
 
 interface InvoiceItem {
@@ -987,14 +984,14 @@ Total: ${getCurrencySymbol(currency)}${calculateTotal().toFixed(2)}
                     </td>
                     <td className="p-1 sm:p-2 text-center">
                       {items.length > 1 && (
-                        <Button
+                        <GButton
                           onClick={() => removeItem(item.id)}
                           variant="outline"
                           size="sm"
                           className="h-6 w-6 sm:h-8 sm:w-8 p-0 text-foreground border-red-400 hover:bg-red-400 hover:text-white bg-transparent"
                         >
                           <Trash2 className="h-3 w-3 sm:h-4 sm:w-4" />
-                        </Button>
+                        </GButton>
                       )}
                     </td>
                   </tr>
@@ -1002,7 +999,7 @@ Total: ${getCurrencySymbol(currency)}${calculateTotal().toFixed(2)}
               </tbody>
             </table>
 
-            <Button
+            <GButton
               onClick={addItem}
               variant="outline"
               size="sm"
@@ -1010,7 +1007,7 @@ Total: ${getCurrencySymbol(currency)}${calculateTotal().toFixed(2)}
             >
               <Plus className="h-3 w-3 sm:h-4 sm:w-4 mr-1 sm:mr-2" />
               {t('invoice.items.addItem')}
-            </Button>
+            </GButton>
           </div>
 
           {/* Discount Controls */}
@@ -1094,8 +1091,8 @@ Total: ${getCurrencySymbol(currency)}${calculateTotal().toFixed(2)}
                         key={theme.name}
                         onClick={() => setSelectedTheme(theme.name)}
                         className={`w-6 h-6 sm:w-8 sm:h-8 rounded-full border-2 transition-all ${selectedTheme === theme.name
-                            ? 'border-white scale-110'
-                            : 'border-slate-500 hover:border-slate-300'
+                          ? 'border-white scale-110'
+                          : 'border-slate-500 hover:border-slate-300'
                           }`}
                         style={{ backgroundColor: theme.color }}
                       />
@@ -1121,14 +1118,14 @@ Total: ${getCurrencySymbol(currency)}${calculateTotal().toFixed(2)}
               </div>
 
               {/* Download Button */}
-              <Button
+              <GButton
                 onClick={downloadPDF}
                 disabled={loading}
                 className="h-8 sm:h-11 px-3 sm:px-6 text-xs sm:text-sm font-medium shadow-sm hover:shadow-md transition-all bg-white hover:bg-gray-100 text-gray-900 border border-gray-300 w-full sm:w-auto"
               >
                 <Download className="mr-1 sm:mr-2 h-3 w-3 sm:h-4 sm:w-4" />
                 {t('invoice.controls.download')}
-              </Button>
+              </GButton>
             </div>
           </div>
         </div>
