@@ -13,6 +13,7 @@ const nextConfig = {
   images: {
     unoptimized: true,
   },
+  transpilePackages: ['lucide-react'],
   webpack: (config, { isServer, dev }) => {
     // Handle Fabric.js properly
     if (!isServer) {
@@ -57,7 +58,7 @@ const nextConfig = {
             chunks: "all",
             maxSize: 244000,
           },
-          
+
           workers: {
             test: /[\\/]workers[\\/]/,
             name: "workers",
