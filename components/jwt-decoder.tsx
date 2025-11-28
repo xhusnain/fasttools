@@ -1439,14 +1439,14 @@ metadata:
                 You&apos;re viewing a JWT token shared by someone. Sensitive data may be masked for privacy.
               </p>
             </div>
-            <Button
+            <GButton
               variant="ghost"
               size="sm"
               onClick={() => setIsSharedToken(false)}
               className="h-6 w-6 p-0 text-foreground hover:text-foreground"
             >
               <X className="h-4 w-4" />
-            </Button>
+            </GButton>
           </div>
         )}
 
@@ -1494,7 +1494,7 @@ metadata:
                     <option value="csharp">C#</option>
                   </select>
                 </div>
-                <Button
+                <GButton
                   variant="outline"
                   size="sm"
                   onClick={generateExample}
@@ -1502,10 +1502,10 @@ metadata:
                 >
                   <Sparkles className="h-3 w-3 mr-1" />
                   Generate Example
-                </Button>
+                </GButton>
                 {token && decoded && (
                   <>
-                    <Button
+                    <GButton
                       variant="outline"
                       size="sm"
                       onClick={analyzePerformance}
@@ -1513,8 +1513,8 @@ metadata:
                     >
                       <Zap className="h-3 w-3 mr-1" />
                       Performance
-                    </Button>
-                    <Button
+                    </GButton>
+                    <GButton
                       variant="outline"
                       size="sm"
                       onClick={() => setShowExport(true)}
@@ -1522,8 +1522,8 @@ metadata:
                     >
                       <Download className="h-3 w-3 mr-1" />
                       Export
-                    </Button>
-                    <Button
+                    </GButton>
+                    <GButton
                       variant="outline"
                       size="sm"
                       onClick={openOptimizer}
@@ -1531,8 +1531,8 @@ metadata:
                     >
                       <Minimize2 className="h-3 w-3 mr-1" />
                       Optimize
-                    </Button>
-                    <Button
+                    </GButton>
+                    <GButton
                       variant="outline"
                       size="sm"
                       onClick={openComparison}
@@ -1540,8 +1540,8 @@ metadata:
                     >
                       <GitCompare className="h-3 w-3 mr-1" />
                       Compare
-                    </Button>
-                    <Button
+                    </GButton>
+                    <GButton
                       variant="outline"
                       size="sm"
                       onClick={analyzeSecurity}
@@ -1549,8 +1549,8 @@ metadata:
                     >
                       <Shield className="h-3 w-3 mr-1" />
                       Security
-                    </Button>
-                    <Button
+                    </GButton>
+                    <GButton
                       variant="outline"
                       size="sm"
                       onClick={openCodeGenerator}
@@ -1558,8 +1558,8 @@ metadata:
                     >
                       <Code2 className="h-3 w-3 mr-1" />
                       Get Code
-                    </Button>
-                    <Button
+                    </GButton>
+                    <GButton
                       variant="outline"
                       size="sm"
                       onClick={generateShareLink}
@@ -1567,8 +1567,8 @@ metadata:
                     >
                       <Share2 className="h-3 w-3 mr-1" />
                       Share
-                    </Button>
-                    <Button
+                    </GButton>
+                    <GButton
                       variant="ghost"
                       size="sm"
                       onClick={clearToken}
@@ -1576,7 +1576,7 @@ metadata:
                     >
                       <X className="h-3 w-3 mr-1" />
                       Clear
-                    </Button>
+                    </GButton>
                   </>
                 )}
               </div>
@@ -1653,13 +1653,13 @@ metadata:
                     Decoded Header
                     <span className="text-sm text-muted-foreground">(Algorithm & Token Type)</span>
                   </h3>
-                  <Button
+                  <GButton
                     variant="ghost"
                     size="sm"
                     onClick={() => copyToClipboard(JSON.stringify(decoded.header, null, 2), "header")}
                   >
                     {copied === "header" ? <Check className="h-5 w-5" /> : <Copy className="h-5 w-5" />}
-                  </Button>
+                  </GButton>
                 </div>
                 <Tabs value={headerView} onValueChange={(v) => setHeaderView(v as "json" | "table")} className="w-full">
                   <TabsList className="grid w-full grid-cols-2">
@@ -1708,13 +1708,13 @@ metadata:
                     Decoded Payload
                     <span className="text-sm text-muted-foreground">(Claims & Data)</span>
                   </h3>
-                  <Button
+                  <GButton
                     variant="ghost"
                     size="sm"
                     onClick={() => copyToClipboard(JSON.stringify(decoded.payload, null, 2), "payload")}
                   >
                     {copied === "payload" ? <Check className="h-5 w-5" /> : <Copy className="h-5 w-5" />}
-                  </Button>
+                  </GButton>
                 </div>
                 <Tabs value={payloadView} onValueChange={(v) => setPayloadView(v as "json" | "table")} className="w-full">
                   <TabsList className="grid w-full grid-cols-2">
@@ -1792,9 +1792,9 @@ metadata:
               <Card className="p-5 space-y-4 border-cyan-200 dark:border-cyan-800 w-full max-w-full overflow-hidden">
                 <div className="flex items-center justify-between">
                   <h3 className="text-lg font-bold text-foreground">Signature</h3>
-                  <Button variant="ghost" size="sm" onClick={() => copyToClipboard(decoded.signature, "signature")}>
+                  <GButton variant="ghost" size="sm" onClick={() => copyToClipboard(decoded.signature, "signature")}>
                     {copied === "signature" ? <Check className="h-5 w-5" /> : <Copy className="h-5 w-5" />}
-                  </Button>
+                  </GButton>
                 </div>
                 <pre className="p-4 bg-muted rounded-md overflow-x-hidden text-sm font-mono break-all" style={{ wordBreak: 'break-all', overflowWrap: 'break-word', whiteSpace: 'pre-wrap' }}>
                   {decoded.signature}
@@ -1819,13 +1819,13 @@ metadata:
                         className="font-mono text-base border-2 border-orange-300 focus:border-primary"
                         style={{ wordBreak: 'break-all', overflowWrap: 'anywhere' }}
                       />
-                      <Button
+                      <GButton
                         onClick={() => verifySignature(token, secret, decoded.header.alg)}
                         disabled={!secret}
                         className="text-base px-6"
                       >
                         Verify
-                      </Button>
+                      </GButton>
                     </div>
                   </div>
 
@@ -1912,13 +1912,13 @@ metadata:
             <Card className="p-4 space-y-3 w-full max-w-full overflow-hidden">
               <div className="flex items-center justify-between">
                 <h3 className="font-semibold text-foreground">Encoded JWT</h3>
-                <Button
+                <GButton
                   variant="ghost"
                   size="sm"
                   onClick={() => copyToClipboard(encodedToken, "encoded")}
                 >
                   {copied === "encoded" ? <Check className="h-4 w-4" /> : <Copy className="h-4 w-4" />}
-                </Button>
+                </GButton>
               </div>
               <pre className="p-3 bg-muted rounded-md overflow-x-hidden text-xs font-mono break-all" style={{ wordBreak: 'break-all', overflowWrap: 'break-word', whiteSpace: 'pre-wrap' }}>
                 {encodedToken}
@@ -1949,14 +1949,14 @@ metadata:
                   <p className="text-sm text-muted-foreground">Generate a shareable link for your JWT token</p>
                 </div>
               </div>
-              <Button
+              <GButton
                 variant="ghost"
                 size="sm"
                 onClick={() => setShowShareModal(false)}
                 className="h-8 w-8 p-0"
               >
                 <X className="h-4 w-4" />
-              </Button>
+              </GButton>
             </div>
 
             {/* Mask Sensitive Data Toggle */}
@@ -1995,7 +1995,7 @@ metadata:
                   className="font-mono text-sm bg-muted"
                   onClick={(e) => e.currentTarget.select()}
                 />
-                <Button
+                <GButton
                   onClick={copyShareLink}
                   className="shrink-0"
                   variant={shareLinkCopied ? "default" : "outline"}
@@ -2011,7 +2011,7 @@ metadata:
                       Copy Link
                     </>
                   )}
-                </Button>
+                </GButton>
               </div>
               <p className="text-xs text-muted-foreground">
                 📌 This link never expires and can be shared with anyone. The token data is encoded in the URL.
@@ -2052,14 +2052,14 @@ metadata:
 
             {/* Action Buttons */}
             <div className="flex gap-2 pt-2">
-              <Button
+              <GButton
                 onClick={() => setShowShareModal(false)}
                 variant="outline"
                 className="flex-1"
               >
                 Close
-              </Button>
-              <Button
+              </GButton>
+              <GButton
                 onClick={() => {
                   copyShareLink()
                   setTimeout(() => setShowShareModal(false), 1000)
@@ -2067,7 +2067,7 @@ metadata:
                 className="flex-1 bg-gradient-to-r from-blue-500 to-purple-500 hover:from-blue-600 hover:to-purple-600"
               >
                 Copy Link & Close
-              </Button>
+              </GButton>
             </div>
           </Card>
         </div>
@@ -2087,14 +2087,14 @@ metadata:
                   <p className="text-sm text-muted-foreground">Ready-to-use code for {selectedLanguage === 'nodejs' ? 'Node.js' : selectedLanguage === 'python' ? 'Python' : selectedLanguage === 'java' ? 'Java' : selectedLanguage === 'php' ? 'PHP' : selectedLanguage === 'go' ? 'Go' : 'C#'}</p>
                 </div>
               </div>
-              <Button
+              <GButton
                 variant="ghost"
                 size="sm"
                 onClick={() => setShowCodeGenerator(false)}
                 className="h-8 w-8 p-0"
               >
                 <X className="h-4 w-4" />
-              </Button>
+              </GButton>
             </div>
 
             {/* Language Selector in Modal */}
@@ -2109,7 +2109,7 @@ metadata:
                   { value: 'go', label: 'Go', icon: '🔵' },
                   { value: 'csharp', label: 'C#', icon: '💠' }
                 ].map(lang => (
-                  <Button
+                  <GButton
                     key={lang.value}
                     variant={selectedLanguage === lang.value ? "default" : "outline"}
                     size="sm"
@@ -2121,7 +2121,7 @@ metadata:
                   >
                     <span className="mr-1">{lang.icon}</span>
                     {lang.label}
-                  </Button>
+                  </GButton>
                 ))}
               </div>
             </div>
@@ -2130,7 +2130,7 @@ metadata:
             <div className="flex-1 overflow-hidden flex flex-col space-y-3">
               <div className="flex items-center justify-between">
                 <Label className="text-base font-semibold text-foreground">Generated Code</Label>
-                <Button
+                <GButton
                   onClick={copyGeneratedCode}
                   size="sm"
                   variant={codeCopied ? "default" : "outline"}
@@ -2146,7 +2146,7 @@ metadata:
                       Copy Code
                     </>
                   )}
-                </Button>
+                </GButton>
               </div>
               <div className="flex-1 overflow-auto border-2 border-green-300 dark:border-green-700 rounded-lg">
                 <pre className="p-4 bg-muted/50 text-xs font-mono h-full" style={{ whiteSpace: 'pre-wrap', wordBreak: 'break-word' }}>
@@ -2202,14 +2202,14 @@ metadata:
 
             {/* Action Buttons */}
             <div className="flex gap-2 pt-2">
-              <Button
+              <GButton
                 onClick={() => setShowCodeGenerator(false)}
                 variant="outline"
                 className="flex-1"
               >
                 Close
-              </Button>
-              <Button
+              </GButton>
+              <GButton
                 onClick={() => {
                   copyGeneratedCode()
                   setTimeout(() => setShowCodeGenerator(false), 1000)
@@ -2217,7 +2217,7 @@ metadata:
                 className="flex-1 bg-gradient-to-r from-green-500 to-emerald-500 hover:from-green-600 hover:to-emerald-600"
               >
                 Copy Code & Close
-              </Button>
+              </GButton>
             </div>
           </Card>
         </div>
@@ -2242,14 +2242,14 @@ metadata:
                   <p className="text-sm text-muted-foreground">Comprehensive security scan results</p>
                 </div>
               </div>
-              <Button
+              <GButton
                 variant="ghost"
                 size="sm"
                 onClick={() => setShowSecurityAnalyzer(false)}
                 className="h-8 w-8 p-0"
               >
                 <X className="h-4 w-4" />
-              </Button>
+              </GButton>
             </div>
 
             {/* Security Score */}
@@ -2381,19 +2381,19 @@ metadata:
 
             {/* Action Button */}
             <div className="flex gap-2">
-              <Button
+              <GButton
                 onClick={() => setShowSecurityAnalyzer(false)}
                 variant="outline"
                 className="flex-1"
               >
                 Close
-              </Button>
-              <Button
+              </GButton>
+              <GButton
                 onClick={analyzeSecurity}
                 className="flex-1 bg-gradient-to-r from-red-500 to-orange-500 hover:from-red-600 hover:to-primary/90"
               >
                 Re-scan Security
-              </Button>
+              </GButton>
             </div>
           </Card>
         </div>
@@ -2414,13 +2414,13 @@ metadata:
                   <p className="text-xs text-muted-foreground">Compare two JWT tokens side-by-side</p>
                 </div>
               </div>
-              <Button
+              <GButton
                 variant="ghost"
                 size="sm"
                 onClick={() => setShowComparison(false)}
               >
                 <X className="h-4 w-4" />
-              </Button>
+              </GButton>
             </div>
 
             {/* Token Inputs */}
@@ -2656,14 +2656,14 @@ metadata:
 
             {/* Action Buttons */}
             <div className="flex gap-2 pt-2">
-              <Button
+              <GButton
                 onClick={() => setShowComparison(false)}
                 variant="outline"
                 className="flex-1"
               >
                 Close
-              </Button>
-              <Button
+              </GButton>
+              <GButton
                 onClick={() => {
                   setToken1("")
                   setToken2("")
@@ -2674,7 +2674,7 @@ metadata:
                 className="flex-1"
               >
                 Clear Both
-              </Button>
+              </GButton>
             </div>
           </Card>
         </div>
@@ -2695,13 +2695,13 @@ metadata:
                   <p className="text-xs text-muted-foreground">Reduce token size for better performance</p>
                 </div>
               </div>
-              <Button
+              <GButton
                 variant="ghost"
                 size="sm"
                 onClick={() => setShowOptimizer(false)}
               >
                 <X className="h-4 w-4" />
-              </Button>
+              </GButton>
             </div>
 
             {/* Current Size */}
@@ -2820,7 +2820,7 @@ metadata:
                   <p className="text-xs text-muted-foreground flex-1">
                     Copy the optimized token and update your application code with the new claim names and structure.
                   </p>
-                  <Button
+                  <GButton
                     size="sm"
                     onClick={() => {
                       navigator.clipboard.writeText(optimizedToken)
@@ -2829,7 +2829,7 @@ metadata:
                   >
                     <Copy className="h-3 w-3 mr-1" />
                     Copy
-                  </Button>
+                  </GButton>
                 </div>
               </>
             )}
@@ -2871,15 +2871,15 @@ metadata:
 
             {/* Action Buttons */}
             <div className="flex gap-2 pt-2">
-              <Button
+              <GButton
                 onClick={() => setShowOptimizer(false)}
                 variant="outline"
                 className="flex-1"
               >
                 Close
-              </Button>
+              </GButton>
               {optimizedToken && (
-                <Button
+                <GButton
                   onClick={() => {
                     navigator.clipboard.writeText(optimizedToken)
                     setTimeout(() => setShowOptimizer(false), 1000)
@@ -2887,7 +2887,7 @@ metadata:
                   className="flex-1 bg-gradient-to-r from-cyan-500 to-blue-500 hover:from-cyan-600 hover:to-blue-600"
                 >
                   Copy Optimized & Close
-                </Button>
+                </GButton>
               )}
             </div>
           </Card>
@@ -2909,13 +2909,13 @@ metadata:
                   <p className="text-xs text-muted-foreground">Analyze processing time, size impact & optimization opportunities</p>
                 </div>
               </div>
-              <Button
+              <GButton
                 variant="ghost"
                 size="sm"
                 onClick={() => setShowPerformance(false)}
               >
                 <X className="h-4 w-4" />
-              </Button>
+              </GButton>
             </div>
 
             {/* Performance Rating */}
@@ -3110,14 +3110,14 @@ metadata:
 
             {/* Action Buttons */}
             <div className="flex gap-2 pt-2">
-              <Button
+              <GButton
                 onClick={() => setShowPerformance(false)}
                 variant="outline"
                 className="flex-1"
               >
                 Close
-              </Button>
-              <Button
+              </GButton>
+              <GButton
                 onClick={() => {
                   setShowPerformance(false)
                   openOptimizer()
@@ -3125,7 +3125,7 @@ metadata:
                 className="flex-1 bg-gradient-to-r from-yellow-500 to-orange-500 hover:from-yellow-600 hover:to-primary/90"
               >
                 Optimize Token
-              </Button>
+              </GButton>
             </div>
           </Card>
         </div>
@@ -3676,13 +3676,13 @@ except jwt.InvalidTokenError:
                   <p className="text-xs text-muted-foreground">Download decoded token in multiple formats</p>
                 </div>
               </div>
-              <Button
+              <GButton
                 variant="ghost"
                 size="sm"
                 onClick={() => setShowExport(false)}
               >
                 <X className="h-4 w-4" />
-              </Button>
+              </GButton>
             </div>
 
             {/* Format Selection */}
@@ -3844,20 +3844,20 @@ except jwt.InvalidTokenError:
 
             {/* Action Buttons */}
             <div className="flex gap-2 pt-2">
-              <Button
+              <GButton
                 onClick={() => setShowExport(false)}
                 variant="outline"
                 className="flex-1"
               >
                 Cancel
-              </Button>
-              <Button
+              </GButton>
+              <GButton
                 onClick={handleExport}
                 className="flex-1 bg-gradient-to-r from-indigo-500 to-purple-500 hover:from-indigo-600 hover:to-purple-600"
               >
                 <Download className="h-4 w-4 mr-2" />
                 Download {selectedExportFormat.toUpperCase()}
-              </Button>
+              </GButton>
             </div>
           </Card>
         </div>
