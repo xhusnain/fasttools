@@ -286,7 +286,7 @@ export function PercentageCalculator() {
           <div className="space-y-4">
             <div className="space-y-2">
               <Label htmlFor="value1" className="text-sm font-medium flex items-center gap-2 text-heading-accent">
-                <div className="p-1 bg-green-500/10 rounded">
+                <div className="p-1 bg-secondary-accent/10 rounded">
                   <Calculator className="h-3 w-3 text-heading-accent" />
                 </div>
                 {inputLabels.label1}
@@ -303,7 +303,7 @@ export function PercentageCalculator() {
 
             <div className="space-y-2">
               <Label htmlFor="percentage" className="text-sm font-medium flex items-center gap-2 text-heading-accent">
-                <div className="p-1 bg-green-500/10 rounded">
+                <div className="p-1 bg-secondary-accent/10 rounded">
                   <Percent className="h-3 w-3 text-heading-accent" />
                 </div>
                 {inputLabels.label2}
@@ -321,7 +321,7 @@ export function PercentageCalculator() {
             {calculationType === "compound" && (
               <div className="space-y-2">
                 <Label htmlFor="value2" className="text-sm font-medium flex items-center gap-2 text-heading-accent">
-                  <div className="p-1 bg-green-500/10 rounded">
+                  <div className="p-1 bg-secondary-accent/10 rounded">
                     <Target className="h-3 w-3 text-heading-accent" />
                   </div>
                   {inputLabels.label3}
@@ -393,16 +393,16 @@ export function PercentageCalculator() {
             <div className="space-y-3 p-4 sm:p-6 bg-card rounded-lg border border-border">
               <div className="text-base sm:text-lg font-semibold mb-3 sm:mb-4 text-heading-accent">Calculation Details</div>
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4">
-                <div className="flex justify-between items-center p-3 bg-card rounded-lg border border-blue-700">
+                <div className="flex justify-between items-center p-3 bg-card rounded-lg border border-accent">
                   <span className="text-sm text-foreground">Original Value</span>
                   <span className="font-semibold text-sm text-foreground">{result.originalValue.toLocaleString()}</span>
                 </div>
-                <div className="flex justify-between items-center p-3 bg-card rounded-lg border border-green-700">
+                <div className="flex justify-between items-center p-3 bg-card rounded-lg border border-secondary-accent">
                   <span className="text-sm text-heading-accent">Percentage</span>
                   <span className="font-semibold text-sm text-heading-accent">{result.percentage}%</span>
                 </div>
                 {result.newValue && (
-                  <div className="flex justify-between items-center p-3 bg-card rounded-lg border border-purple-700">
+                  <div className="flex justify-between items-center p-3 bg-card rounded-lg border border-primary">
                     <span className="text-sm text-foreground">Final Value</span>
                     <span className="font-semibold text-sm text-foreground">{result.newValue.toLocaleString()}</span>
                   </div>
@@ -428,7 +428,7 @@ export function PercentageCalculator() {
             <div className="flex flex-col sm:flex-row gap-2 sm:gap-3">
               <GButton
                 onClick={copyResult}
-                className="flex-1 h-10 sm:h-12 text-sm sm:text-base font-semibold transition-all duration-300 border border-green-700 hover:bg-secondary text-heading-accent bg-card"
+                className="flex-1 h-10 sm:h-12 text-sm sm:text-base font-semibold transition-all duration-300 border border-secondary-accent hover:bg-secondary text-heading-accent bg-card"
               >
                 {copied ? (
                   <>

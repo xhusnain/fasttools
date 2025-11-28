@@ -40,15 +40,15 @@ export function AdSenseComplianceChecker({ data }: { data: ContentData }) {
 
     const criticalCategories = Array.from(new Set(criticalErrors.map(r => r.category)))
 
-    const statusColor = !isClean ? 'bg-red-600' : warnings.length > 0 ? 'bg-amber-500' : 'bg-emerald-600'
-    const statusIcon = !isClean ? <XCircle className="h-6 w-6 text-white" /> : warnings.length > 0 ? <AlertTriangle className="h-6 w-6 text-white" /> : <CheckCircle className="h-6 w-6 text-white" />
+    const statusColor = !isClean ? 'bg-destructive' : warnings.length > 0 ? 'bg-tertiary-accent' : 'bg-secondary-accent'
+    const statusIcon = !isClean ? <XCircle className="h-6 w-6 text-destructive-foreground" /> : warnings.length > 0 ? <AlertTriangle className="h-6 w-6 text-tertiary-accent-foreground" /> : <CheckCircle className="h-6 w-6 text-secondary-accent-foreground" />
 
     const renderTabContent = () => {
         const tabResults = results.filter(r => r.category === activeTab)
 
         if (tabResults.length === 0) {
             return (
-                <div className="flex flex-col items-center justify-center py-12 text-center text-slate-400">
+                <div className="flex flex-col items-center justify-center py-12 text-center text-muted-foreground">
                     <CheckCircle className="h-12 w-12 mb-3 opacity-20" />
                     <p className="text-sm">No issues found in this category.</p>
                 </div>
@@ -58,21 +58,21 @@ export function AdSenseComplianceChecker({ data }: { data: ContentData }) {
         return (
             <div className="space-y-3 p-4">
                 {tabResults.map((res, i) => (
-                    <div key={i} className={`flex gap-3 items-start p-3 rounded-lg ${res.type === 'CRITICAL' ? 'bg-red-50 dark:bg-red-900/10 border border-red-100 dark:border-red-900/30' :
-                        res.type === 'WARNING' ? 'bg-amber-50 dark:bg-amber-900/10 border border-amber-100 dark:border-amber-900/30' :
-                            'bg-emerald-50 dark:bg-emerald-900/10 border border-emerald-100 dark:border-emerald-900/30'
+                    <div key={i} className={`flex gap-3 items-start p-3 rounded-lg ${res.type === 'CRITICAL' ? 'bg-destructive/10 border border-destructive/20' :
+                        res.type === 'WARNING' ? 'bg-tertiary-accent/10 border border-tertiary-accent/20' :
+                            'bg-secondary-accent/10 border border-secondary-accent/20'
                         }`}>
                         <div className="mt-0.5 shrink-0">
-                            {res.type === 'CRITICAL' ? <XCircle className="h-5 w-5 text-red-500" /> :
-                                res.type === 'WARNING' ? <AlertTriangle className="h-5 w-5 text-amber-500" /> :
-                                    <CheckCircle className="h-5 w-5 text-emerald-500" />}
+                            {res.type === 'CRITICAL' ? <XCircle className="h-5 w-5 text-destructive" /> :
+                                res.type === 'WARNING' ? <AlertTriangle className="h-5 w-5 text-tertiary-accent" /> :
+                                    <CheckCircle className="h-5 w-5 text-secondary-accent" />}
                         </div>
                         <div>
-                            <p className="text-sm font-medium text-slate-800 dark:text-slate-200 leading-tight">
+                            <p className="text-sm font-medium text-foreground leading-tight">
                                 {res.message}
                             </p>
                             {res.fix && (
-                                <p className="text-xs text-slate-500 dark:text-slate-400 mt-1.5 pl-2 border-l-2 border-slate-200 dark:border-slate-700">
+                                <p className="text-xs text-muted-foreground mt-1.5 pl-2 border-l-2 border-border">
                                     {res.fix}
                                 </p>
                             )}
@@ -87,10 +87,10 @@ export function AdSenseComplianceChecker({ data }: { data: ContentData }) {
         <div className="fixed bottom-6 right-6 z-[9999] font-sans">
 
             {isOpen && (
-                <div className="absolute bottom-16 right-0 w-[400px] bg-white dark:bg-slate-900 rounded-2xl shadow-2xl border border-slate-200 dark:border-slate-800 overflow-hidden animate-in slide-in-from-bottom-5 fade-in duration-200 flex flex-col max-h-[80vh]">
+                <div className="absolute bottom-16 right-0 w-[400px] bg-card rounded-2xl shadow-2xl border border-border overflow-hidden animate-in slide-in-from-bottom-5 fade-in duration-200 flex flex-col max-h-[80vh]">
 
 
-                    <div className={`${statusColor} p-4 text-white flex justify-between items-start shrink-0`}>
+                    <div className={`${statusColor} p-4 text-primary-foreground flex justify-between items-start shrink-0`}>
                         <div>
                             <h3 className="font-bold text-lg flex items-center gap-2">
                                 <ShieldAlert className="h-5 w-5" />
@@ -101,12 +101,12 @@ export function AdSenseComplianceChecker({ data }: { data: ContentData }) {
                                     {wordCount} words
                                 </span>
                                 {criticalErrors.length > 0 && (
-                                    <span className="bg-red-900/40 px-2 py-0.5 rounded text-[10px] font-mono font-medium flex items-center gap-1">
+                                    <span className="bg-destructive/40 px-2 py-0.5 rounded text-[10px] font-mono font-medium flex items-center gap-1">
                                         {criticalErrors.length} Critical
                                     </span>
                                 )}
                                 {warnings.length > 0 && (
-                                    <span className="bg-amber-900/40 px-2 py-0.5 rounded text-[10px] font-mono font-medium flex items-center gap-1">
+                                    <span className="bg-tertiary-accent/40 px-2 py-0.5 rounded text-[10px] font-mono font-medium flex items-center gap-1">
                                         {warnings.length} Warning{warnings.length !== 1 ? 's' : ''}
                                     </span>
                                 )}
@@ -121,41 +121,41 @@ export function AdSenseComplianceChecker({ data }: { data: ContentData }) {
                     </div>
 
 
-                    <div className="flex border-b border-slate-200 dark:border-slate-800 bg-slate-50 dark:bg-slate-950/50 overflow-x-auto shrink-0">
+                    <div className="flex border-b border-border bg-muted/50 overflow-x-auto shrink-0">
                         <button
                             onClick={() => setActiveTab('CONTENT')}
-                            className={`flex-1 py-3 px-4 text-xs font-bold uppercase tracking-wider flex items-center justify-center gap-1.5 border-b-2 transition-colors relative ${activeTab === 'CONTENT' ? 'border-blue-500 text-blue-600 dark:text-blue-400' : 'border-transparent text-slate-500 hover:text-slate-800 dark:hover:text-slate-200'}`}
+                            className={`flex-1 py-3 px-4 text-xs font-bold uppercase tracking-wider flex items-center justify-center gap-1.5 border-b-2 transition-colors relative ${activeTab === 'CONTENT' ? 'border-primary text-primary' : 'border-transparent text-muted-foreground hover:text-foreground'}`}
                         >
                             <FileText className="h-3.5 w-3.5" /> Content
-                            {results.some(r => r.category === 'CONTENT' && r.type === 'CRITICAL') && <span className="absolute top-2 right-2 w-1.5 h-1.5 bg-red-500 rounded-full" />}
-                            {results.some(r => r.category === 'CONTENT' && r.type === 'WARNING') && <span className="absolute top-2 right-2 w-1.5 h-1.5 bg-amber-500 rounded-full" />}
+                            {results.some(r => r.category === 'CONTENT' && r.type === 'CRITICAL') && <span className="absolute top-2 right-2 w-1.5 h-1.5 bg-destructive rounded-full" />}
+                            {results.some(r => r.category === 'CONTENT' && r.type === 'WARNING') && <span className="absolute top-2 right-2 w-1.5 h-1.5 bg-tertiary-accent rounded-full" />}
                         </button>
                         <button
                             onClick={() => setActiveTab('POLICY')}
-                            className={`flex-1 py-3 px-4 text-xs font-bold uppercase tracking-wider flex items-center justify-center gap-1.5 border-b-2 transition-colors relative ${activeTab === 'POLICY' ? 'border-blue-500 text-blue-600 dark:text-blue-400' : 'border-transparent text-slate-500 hover:text-slate-800 dark:hover:text-slate-200'}`}
+                            className={`flex-1 py-3 px-4 text-xs font-bold uppercase tracking-wider flex items-center justify-center gap-1.5 border-b-2 transition-colors relative ${activeTab === 'POLICY' ? 'border-primary text-primary' : 'border-transparent text-muted-foreground hover:text-foreground'}`}
                         >
                             <Scale className="h-3.5 w-3.5" /> Policy
-                            {results.some(r => r.category === 'POLICY' && r.type === 'CRITICAL') && <span className="absolute top-2 right-2 w-1.5 h-1.5 bg-red-500 rounded-full" />}
-                            {results.some(r => r.category === 'POLICY' && r.type === 'WARNING') && <span className="absolute top-2 right-2 w-1.5 h-1.5 bg-amber-500 rounded-full" />}
+                            {results.some(r => r.category === 'POLICY' && r.type === 'CRITICAL') && <span className="absolute top-2 right-2 w-1.5 h-1.5 bg-destructive rounded-full" />}
+                            {results.some(r => r.category === 'POLICY' && r.type === 'WARNING') && <span className="absolute top-2 right-2 w-1.5 h-1.5 bg-tertiary-accent rounded-full" />}
                         </button>
                         <button
                             onClick={() => setActiveTab('SEO')}
-                            className={`flex-1 py-3 px-4 text-xs font-bold uppercase tracking-wider flex items-center justify-center gap-1.5 border-b-2 transition-colors relative ${activeTab === 'SEO' ? 'border-blue-500 text-blue-600 dark:text-blue-400' : 'border-transparent text-slate-500 hover:text-slate-800 dark:hover:text-slate-200'}`}
+                            className={`flex-1 py-3 px-4 text-xs font-bold uppercase tracking-wider flex items-center justify-center gap-1.5 border-b-2 transition-colors relative ${activeTab === 'SEO' ? 'border-primary text-primary' : 'border-transparent text-muted-foreground hover:text-foreground'}`}
                         >
                             <Search className="h-3.5 w-3.5" /> SEO
-                            {results.some(r => r.category === 'SEO' && r.type === 'CRITICAL') && <span className="absolute top-2 right-2 w-1.5 h-1.5 bg-red-500 rounded-full" />}
-                            {results.some(r => r.category === 'SEO' && r.type === 'WARNING') && <span className="absolute top-2 right-2 w-1.5 h-1.5 bg-amber-500 rounded-full" />}
+                            {results.some(r => r.category === 'SEO' && r.type === 'CRITICAL') && <span className="absolute top-2 right-2 w-1.5 h-1.5 bg-destructive rounded-full" />}
+                            {results.some(r => r.category === 'SEO' && r.type === 'WARNING') && <span className="absolute top-2 right-2 w-1.5 h-1.5 bg-tertiary-accent rounded-full" />}
                         </button>
                     </div>
 
 
-                    <div className="overflow-y-auto flex-1 bg-white dark:bg-slate-900">
+                    <div className="overflow-y-auto flex-1 bg-card">
                         {renderTabContent()}
                     </div>
 
 
-                    <div className="p-2 bg-slate-50 dark:bg-slate-950 border-t border-slate-200 dark:border-slate-800 text-center shrink-0">
-                        <p className="text-[10px] text-slate-400 uppercase tracking-widest font-bold">
+                    <div className="p-2 bg-muted/50 border-t border-border text-center shrink-0">
+                        <p className="text-[10px] text-muted-foreground uppercase tracking-widest font-bold">
                             Developer Mode • AdSense Auditor v2.0
                         </p>
                     </div>
@@ -168,7 +168,7 @@ export function AdSenseComplianceChecker({ data }: { data: ContentData }) {
                 className={`${statusColor} w-14 h-14 rounded-full shadow-lg shadow-black/20 flex items-center justify-center transition-transform hover:scale-110 active:scale-95 ring-4 ring-white/20 dark:ring-black/20`}
                 aria-label="Toggle AdSense Auditor"
             >
-                {isOpen ? <X className="h-6 w-6 text-white" /> : statusIcon}
+                {isOpen ? <X className="h-6 w-6 text-primary-foreground" /> : statusIcon}
             </button>
         </div>
     )

@@ -407,7 +407,7 @@ Aggressive (1.5 lb/week): ${result.weightGain.aggressive} calories/day`
                 </div>
                 <div className="text-center">
                   <div className="text-sm text-muted-foreground">Activity Level</div>
-                  <div className="text-lg font-semibold text-indigo-600">{result.activityLevel}</div>
+                  <div className="text-lg font-semibold text-primary">{result.activityLevel}</div>
                 </div>
               </div>
 

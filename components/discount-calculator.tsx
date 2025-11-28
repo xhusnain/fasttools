@@ -163,7 +163,7 @@ Effective Discount Rate: ${result.effectiveDiscountRate.toFixed(2)}%`
                   onChange={(e) => setOriginalPrice(e.target.value)}
                   min="0"
                   step="0.01"
-                  className="h-9 text-sm border-2 border-orange-300 focus:border-orange-400 focus:ring-2 focus:ring-orange-400/20 bg-background text-foreground placeholder:text-muted-foreground"
+                  className="h-9 text-sm border-2 border-primary/50 focus:border-primary focus:ring-2 focus:ring-primary/20 bg-background text-foreground placeholder:text-muted-foreground"
                 />
               </div>
 
@@ -182,7 +182,7 @@ Effective Discount Rate: ${result.effectiveDiscountRate.toFixed(2)}%`
                     min="0"
                     max="100"
                     step="0.1"
-                    className="h-9 text-sm border-2 border-orange-300 focus:border-orange-400 focus:ring-2 focus:ring-orange-400/20 bg-background text-foreground placeholder:text-muted-foreground"
+                    className="h-9 text-sm border-2 border-primary/50 focus:border-primary focus:ring-2 focus:ring-primary/20 bg-background text-foreground placeholder:text-muted-foreground"
                   />
                 </div>
                 <div className="space-y-2">
@@ -190,7 +190,7 @@ Effective Discount Rate: ${result.effectiveDiscountRate.toFixed(2)}%`
                     Tax Application
                   </Label>
                   <Select value={taxInclusive ? "inclusive" : "exclusive"} onValueChange={(value) => setTaxInclusive(value === "inclusive")}>
-                    <SelectTrigger className="h-9 border-2 border-orange-300 focus:border-orange-400 focus:ring-2 focus:ring-orange-400/20 bg-background text-foreground">
+                    <SelectTrigger className="h-9 border-2 border-primary/50 focus:border-primary focus:ring-2 focus:ring-primary/20 bg-background text-foreground">
                       <SelectValue />
                     </SelectTrigger>
                     <SelectContent>
@@ -233,7 +233,7 @@ Effective Discount Rate: ${result.effectiveDiscountRate.toFixed(2)}%`
                               value={discount.name}
                               onChange={(e) => updateDiscount(discount.id, 'name', e.target.value)}
                               placeholder="Name"
-                              className="h-7 text-xs border border-border focus:border-orange-400 flex-1"
+                              className="h-7 text-xs border border-border focus:border-primary flex-1"
                             />
                             <GButton
                               onClick={() => removeDiscount(discount.id)}
@@ -246,7 +246,7 @@ Effective Discount Rate: ${result.effectiveDiscountRate.toFixed(2)}%`
                           </div>
                           <div className="grid grid-cols-2 gap-2">
                             <Select value={discount.type} onValueChange={(value: 'percentage' | 'fixed') => updateDiscount(discount.id, 'type', value)}>
-                              <SelectTrigger className="h-7 text-xs border border-border focus:border-orange-400">
+                              <SelectTrigger className="h-7 text-xs border border-border focus:border-primary">
                                 <SelectValue />
                               </SelectTrigger>
                               <SelectContent>
@@ -261,7 +261,7 @@ Effective Discount Rate: ${result.effectiveDiscountRate.toFixed(2)}%`
                               placeholder={discount.type === 'percentage' ? "20" : "10"}
                               min="0"
                               step={discount.type === 'percentage' ? "0.1" : "0.01"}
-                              className="h-7 text-xs border border-border focus:border-orange-400"
+                              className="h-7 text-xs border border-border focus:border-primary"
                             />
                           </div>
                         </div>
@@ -351,7 +351,7 @@ Effective Discount Rate: ${result.effectiveDiscountRate.toFixed(2)}%`
                     </div>
 
                     {result.totalSavings > 0 && (
-                      <div className="p-3 bg-green-500/10 rounded-lg border border-green-500/20">
+                      <div className="p-3 bg-secondary-accent/10 rounded-lg border border-secondary-accent/20">
                         <div className="flex justify-between items-center">
                           <span className="text-xs font-medium text-heading-accent">Total Savings:</span>
                           <span className="text-lg font-bold text-heading-accent">${result.totalSavings.toFixed(2)}</span>

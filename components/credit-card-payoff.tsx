@@ -105,7 +105,7 @@ Payoff Date: ${result.payoffDate}`
             onChange={(e) => setBalance(e.target.value)}
             min="0"
             step="100"
-            className="h-9 text-sm border-2 border-orange-300 focus:border-orange-400 focus:ring-2 focus:ring-orange-400/20 bg-background text-foreground placeholder:text-muted-foreground"
+            className="h-9 text-sm border-2 border-primary/50 focus:border-primary focus:ring-2 focus:ring-primary/20 bg-background text-foreground placeholder:text-muted-foreground"
           />
         </div>
 
@@ -122,7 +122,7 @@ Payoff Date: ${result.payoffDate}`
             min="0"
             max="100"
             step="0.01"
-            className="h-9 text-sm border-2 border-orange-300 focus:border-orange-400 focus:ring-2 focus:ring-orange-400/20 bg-background text-foreground placeholder:text-muted-foreground"
+            className="h-9 text-sm border-2 border-primary/50 focus:border-primary focus:ring-2 focus:ring-primary/20 bg-background text-foreground placeholder:text-muted-foreground"
           />
         </div>
 
@@ -138,7 +138,7 @@ Payoff Date: ${result.payoffDate}`
             onChange={(e) => setMonthlyPayment(e.target.value)}
             min="0"
             step="10"
-            className="h-9 text-sm border-2 border-orange-300 focus:border-orange-400 focus:ring-2 focus:ring-orange-400/20 bg-background text-foreground placeholder:text-muted-foreground"
+            className="h-9 text-sm border-2 border-primary/50 focus:border-primary focus:ring-2 focus:ring-primary/20 bg-background text-foreground placeholder:text-muted-foreground"
           />
           <p className="text-xs text-muted-foreground">Minimum payment is usually 2-3% of balance</p>
         </div>
@@ -185,7 +185,7 @@ Payoff Date: ${result.payoffDate}`
               <span className="text-sm font-bold text-foreground">${balance}</span>
             </div>
 
-            <div className="flex justify-between items-center p-3 bg-green-500/10 rounded-lg border border-green-500/20">
+            <div className="flex justify-between items-center p-3 bg-secondary-accent/10 rounded-lg border border-secondary-accent/20">
               <span className="text-xs font-medium text-foreground">Months to Payoff:</span>
               <span className="text-xl font-bold text-heading-accent">{result.monthsToPayoff}</span>
             </div>
@@ -200,7 +200,7 @@ Payoff Date: ${result.payoffDate}`
               <span className="text-sm font-bold text-foreground">${result.totalInterest}</span>
             </div>
 
-            <div className="flex justify-between items-center p-3 bg-blue-500/10 rounded-lg border border-blue-500/20">
+            <div className="flex justify-between items-center p-3 bg-accent/10 rounded-lg border border-accent/20">
               <span className="text-xs font-medium text-foreground">Total Amount Paid:</span>
               <span className="text-lg font-bold text-foreground">${result.totalPaid}</span>
             </div>

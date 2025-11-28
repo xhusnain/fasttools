@@ -177,9 +177,9 @@ Time Period: ${result.years} years`
     <div className="space-y-3">
       {/* Warning Alert */}
       {showWarning && (
-        <Alert className="border-amber-700 bg-card py-2 [&>svg]:top-2">
-          <AlertTriangle className="h-3 w-3 text-amber-400" />
-          <AlertDescription className="text-[10px] text-amber-300 leading-tight">
+        <Alert className="border-tertiary-accent/30 bg-card py-2 [&>svg]:top-2">
+          <AlertTriangle className="h-3 w-3 text-tertiary-accent" />
+          <AlertDescription className="text-[10px] text-tertiary-accent leading-tight">
             <strong>Note:</strong> Interest rates change frequently. Verify with your financial institution for accuracy.
           </AlertDescription>
         </Alert>
@@ -376,7 +376,7 @@ Time Period: ${result.years} years`
                 Investment Breakdown
               </div>
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
-                <div className="flex flex-col sm:flex-row sm:justify-between sm:items-center p-2 bg-card rounded-lg border border-blue-700 gap-1">
+                <div className="flex flex-col sm:flex-row sm:justify-between sm:items-center p-2 bg-card rounded-lg border border-primary/30 gap-1">
                   <span className="text-xs text-foreground">Principal</span>
                   <span className="font-semibold text-xs text-foreground break-words text-right sm:text-left">
                     {result.currency} {result.principal > 1e15
@@ -385,7 +385,7 @@ Time Period: ${result.years} years`
                     }
                   </span>
                 </div>
-                <div className="flex flex-col sm:flex-row sm:justify-between sm:items-center p-2 bg-card rounded-lg border border-green-700 gap-1">
+                <div className="flex flex-col sm:flex-row sm:justify-between sm:items-center p-2 bg-card rounded-lg border border-secondary-accent/30 gap-1">
                   <span className="text-xs text-heading-accent">Interest Earned</span>
                   <span className="font-semibold text-xs text-heading-accent break-words text-right sm:text-left">
                     +{result.currency} {result.totalInterest > 1e15
@@ -394,7 +394,7 @@ Time Period: ${result.years} years`
                     }
                   </span>
                 </div>
-                <div className="flex flex-col sm:flex-row sm:justify-between sm:items-center p-2 bg-card rounded-lg border border-purple-700 gap-1">
+                <div className="flex flex-col sm:flex-row sm:justify-between sm:items-center p-2 bg-card rounded-lg border border-accent/30 gap-1">
                   <span className="text-xs text-foreground">Growth Rate</span>
                   <span className="font-semibold text-xs text-foreground break-words text-right sm:text-left">
                     {result.totalInterest > 1e15 || result.principal === 0
@@ -435,7 +435,7 @@ Time Period: ${result.years} years`
             <div className="flex flex-col sm:flex-row gap-2">
               <GButton
                 onClick={copyResult}
-                className="flex-1 h-9 text-xs font-medium transition-all duration-300 border border-green-700 hover:bg-secondary text-heading-accent bg-card"
+                className="flex-1 h-9 text-xs font-medium transition-all duration-300 border border-secondary-accent hover:bg-secondary text-heading-accent bg-card"
               >
                 {copied ? (
                   <>

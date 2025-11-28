@@ -172,8 +172,8 @@ export function DateDifferenceCalculator() {
                   size="sm"
                   onClick={() => setDateFormat(format.value)}
                   className={`h-9 text-xs font-medium transition-all ${dateFormat === format.value
-                      ? 'bg-primary text-primary-foreground shadow-md'
-                      : 'hover:bg-muted'
+                    ? 'bg-primary text-primary-foreground shadow-md'
+                    : 'hover:bg-muted'
                     }`}
                 >
                   <div className="text-center w-full">
@@ -276,7 +276,7 @@ export function DateDifferenceCalculator() {
         <Card className="shadow-lg border-primary/20 animate-fade-in-up bg-card">
           <CardHeader className="pb-3">
             <CardTitle className="text-lg flex items-center gap-2">
-              <div className="p-1.5 bg-green-900/30 rounded-lg">
+              <div className="p-1.5 bg-secondary-accent/30 rounded-lg">
                 <Calendar className="h-4 w-4 text-heading-accent" />
               </div>
               Results

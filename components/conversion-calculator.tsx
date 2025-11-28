@@ -361,8 +361,8 @@ export function ConversionCalculator() {
       <Card className="bg-card border border-border shadow-lg rounded-xl">
         <CardHeader className="pb-4">
           <CardTitle className="flex items-center gap-3 text-xl font-bold">
-            <div className="p-3 bg-gradient-to-r from-yellow-500 to-orange-500 rounded-xl shadow-md">
-              <Calculator className="h-6 w-6 text-white" />
+            <div className="p-3 bg-gradient-to-r from-tertiary-accent to-primary rounded-xl shadow-md">
+              <Calculator className="h-6 w-6 text-primary-foreground" />
             </div>
             <span className="text-foreground">
               Universal Conversion Calculator
@@ -374,12 +374,12 @@ export function ConversionCalculator() {
           <div className="space-y-2">
             <Label className="text-sm font-medium">Conversion Category</Label>
             <Tabs value={selectedCategory} onValueChange={(value) => setSelectedCategory(value as keyof typeof conversionCategories)}>
-              <TabsList className="grid w-full grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-2 p-1 bg-gradient-to-r from-yellow-50 to-orange-50 dark:from-yellow-950/20 dark:to-orange-950/20 rounded-lg border border-yellow-200 dark:border-yellow-800">
+              <TabsList className="grid w-full grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-2 p-1 bg-gradient-to-r from-tertiary-accent/10 to-primary/10 dark:from-tertiary-accent/20 dark:to-primary/20 rounded-lg border border-tertiary-accent/30">
                 {Object.entries(conversionCategories).map(([key, category]) => (
                   <TabsTrigger
                     key={key}
                     value={key}
-                    className="flex flex-col items-center gap-1 text-xs px-2 py-2 sm:flex-row sm:gap-2 sm:px-3 sm:py-2 min-h-[60px] sm:min-h-[40px] data-[state=active]:!bg-yellow-500 data-[state=active]:!text-white data-[state=active]:!border-yellow-500 hover:bg-yellow-100 dark:hover:bg-yellow-900/20"
+                    className="flex flex-col items-center gap-1 text-xs px-2 py-2 sm:flex-row sm:gap-2 sm:px-3 sm:py-2 min-h-[60px] sm:min-h-[40px] data-[state=active]:!bg-tertiary-accent data-[state=active]:!text-primary-foreground data-[state=active]:!border-tertiary-accent hover:bg-tertiary-accent/20 dark:hover:bg-tertiary-accent/20"
                   >
                     <category.icon className="h-4 w-4 flex-shrink-0" />
                     <span className="text-xs font-medium text-center sm:text-left">{category.name}</span>
@@ -393,28 +393,28 @@ export function ConversionCalculator() {
           <div className="space-y-4 sm:space-y-0 sm:grid sm:grid-cols-2 sm:gap-4">
             <div className="space-y-2">
               <Label htmlFor="from-unit" className="text-sm font-semibold text-foreground flex items-center gap-2">
-                <div className="w-2 h-2 bg-blue-500 rounded-full"></div>
+                <div className="w-2 h-2 bg-primary rounded-full"></div>
                 From
               </Label>
               <Select value={fromUnit} onValueChange={setFromUnit}>
-                <SelectTrigger className="w-full h-12 border-2 border-yellow-300 dark:border-yellow-700 rounded-lg [&>svg]:text-foreground [&>svg]:hover:text-foreground data-[state=open]:border-yellow-500 data-[state=open]:ring-yellow-500 focus:border-yellow-500">
+                <SelectTrigger className="w-full h-12 border-2 border-tertiary-accent/50 rounded-lg [&>svg]:text-foreground [&>svg]:hover:text-foreground data-[state=open]:border-tertiary-accent data-[state=open]:ring-tertiary-accent focus:border-tertiary-accent">
                   <SelectValue placeholder="Select unit" />
                 </SelectTrigger>
-                <SelectContent className="max-h-60 overflow-y-auto [&>div]:data-[highlighted]:bg-yellow-500 [&>div]:data-[highlighted]:text-white">
+                <SelectContent className="max-h-60 overflow-y-auto [&>div]:data-[highlighted]:bg-tertiary-accent [&>div]:data-[highlighted]:text-primary-foreground">
                   {getUnitOptions()}
                 </SelectContent>
               </Select>
             </div>
             <div className="space-y-2">
               <Label htmlFor="to-unit" className="text-sm font-semibold text-foreground flex items-center gap-2">
-                <div className="w-2 h-2 bg-green-500 rounded-full"></div>
+                <div className="w-2 h-2 bg-secondary-accent rounded-full"></div>
                 To
               </Label>
               <Select value={toUnit} onValueChange={setToUnit}>
-                <SelectTrigger className="w-full h-12 border-2 border-yellow-300 dark:border-yellow-700 rounded-lg [&>svg]:text-foreground [&>svg]:hover:text-foreground data-[state=open]:border-yellow-500 data-[state=open]:ring-yellow-500 focus:border-yellow-500">
+                <SelectTrigger className="w-full h-12 border-2 border-tertiary-accent/50 rounded-lg [&>svg]:text-foreground [&>svg]:hover:text-foreground data-[state=open]:border-tertiary-accent data-[state=open]:ring-tertiary-accent focus:border-tertiary-accent">
                   <SelectValue placeholder="Select unit" />
                 </SelectTrigger>
-                <SelectContent className="max-h-60 overflow-y-auto [&>div]:data-[highlighted]:bg-yellow-500 [&>div]:data-[highlighted]:text-white">
+                <SelectContent className="max-h-60 overflow-y-auto [&>div]:data-[highlighted]:bg-tertiary-accent [&>div]:data-[highlighted]:text-primary-foreground">
                   {getUnitOptions()}
                 </SelectContent>
               </Select>
@@ -424,7 +424,7 @@ export function ConversionCalculator() {
           {/* Value Input */}
           <div className="space-y-2">
             <Label htmlFor="input-value" className="text-sm font-medium text-foreground flex items-center gap-2">
-              <div className="w-2 h-2 bg-yellow-500 rounded-full"></div>
+              <div className="w-2 h-2 bg-tertiary-accent rounded-full"></div>
               Value to Convert
             </Label>
             <div className="flex flex-col sm:flex-row gap-3">
@@ -450,7 +450,7 @@ export function ConversionCalculator() {
 
           {/* Result Display */}
           {result !== null && (
-            <div className="p-6 bg-gradient-to-r from-green-50 to-emerald-50 dark:from-green-950/30 dark:to-green-900/30 rounded-xl border-2 border-green-200 dark:border-green-800 shadow-md">
+            <div className="p-6 bg-gradient-to-r from-secondary-accent/10 to-secondary-accent/20 dark:from-secondary-accent/20 dark:to-secondary-accent/30 rounded-xl border-2 border-secondary-accent/30 shadow-md">
               <div className="space-y-3">
                 <div className="flex-1">
                   <div className="text-sm text-heading-accent mb-1">Converted Result</div>
@@ -490,8 +490,8 @@ export function ConversionCalculator() {
         <Card className="bg-card border border-border shadow-lg rounded-xl">
           <CardHeader className="pb-4">
             <CardTitle className="flex items-center gap-3 text-xl font-bold">
-              <div className="p-2 bg-gradient-to-r from-yellow-500 to-orange-500 rounded-lg">
-                <History className="h-5 w-5 text-white" />
+              <div className="p-2 bg-gradient-to-r from-tertiary-accent to-primary rounded-lg">
+                <History className="h-5 w-5 text-primary-foreground" />
               </div>
               Conversion History
             </CardTitle>
@@ -501,7 +501,7 @@ export function ConversionCalculator() {
               {history.map((item) => (
                 <div
                   key={item.id}
-                  className="p-3 bg-slate-50 dark:bg-border/50 rounded-lg border border-slate-200 dark:border-border cursor-pointer hover:bg-slate-100 dark:hover:bg-border transition-colors"
+                  className="p-3 bg-card rounded-lg border border-border cursor-pointer hover:bg-accent transition-colors"
                   onClick={() => loadFromHistory(item)}
                 >
                   <div className="space-y-2">

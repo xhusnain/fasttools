@@ -95,25 +95,25 @@ export default function BodyFatCalculator() {
       name: "Essential Fat",
       range: "2-5% (Men) / 10-13% (Women)",
       description: "Minimum required for basic physiological functions",
-      color: "bg-red-500"
+      color: "bg-destructive"
     },
     {
       name: "Athletes",
       range: "6-13% (Men) / 14-20% (Women)",
       description: "Elite athletic performance range",
-      color: "bg-yellow-500"
+      color: "bg-tertiary-accent"
     },
     {
       name: "Fitness",
       range: "14-17% (Men) / 21-24% (Women)",
       description: "Healthy, fit individuals",
-      color: "bg-green-500"
+      color: "bg-secondary-accent"
     },
     {
       name: "Average",
       range: "18-24% (Men) / 25-31% (Women)",
       description: "General population average",
-      color: "bg-blue-500"
+      color: "bg-primary"
     },
     {
       name: "Obese",
@@ -628,7 +628,7 @@ Fat to Lose: ${result.idealBodyFat.fatToLose} kg`
               <CardContent>
                 <div className="space-y-2">
                   {result.healthRisks.map((risk, index) => (
-                    <div key={index} className="flex items-start gap-2 p-3 bg-card border border-red-800 rounded-lg">
+                    <div key={index} className="flex items-start gap-2 p-3 bg-card border border-destructive/30 rounded-lg">
                       <AlertCircle className="h-4 w-4 text-foreground mt-0.5 flex-shrink-0" />
                       <span className="text-sm text-foreground">{risk}</span>
                     </div>

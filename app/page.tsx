@@ -16,7 +16,7 @@ import {
   Image,
   Smile,
   Globe,
-  Zap,
+
   Wrench,
   Music,
   QrCode,
@@ -34,9 +34,9 @@ import {
   TrendingUp,
   Rocket,
   Award,
-  Shield,
+
   Clock,
-  CheckCircle2,
+
   BookOpen,
   Youtube,
 } from "lucide-react"
@@ -1085,59 +1085,7 @@ export default function Home() {
               </p>
             </div>
 
-            {/* Interactive Stats Display - Trust Indicators */}
-            <div className="pt-8 sm:pt-12 pb-8">
-              <div className="grid grid-cols-3 gap-4 sm:gap-8 md:gap-12 max-w-4xl mx-auto px-4">
-                {/* Trust Indicator 1 */}
-                <div className="group cursor-default">
-                  <div className="flex flex-col items-center gap-3 p-4 rounded-2xl bg-card/50 backdrop-blur-sm border border-border/50 hover:border-primary/20 transition-all duration-300 hover:shadow-lg hover:shadow-primary/5">
-                    <div className="p-3 rounded-xl bg-primary/10 text-primary">
-                      <Shield className="h-6 w-6 sm:h-8 sm:w-8" />
-                    </div>
-                    <div className="space-y-1">
-                      <div className="text-sm sm:text-base font-bold text-foreground">Privacy First</div>
-                      <div className="text-[10px] sm:text-xs text-muted-foreground">Local Processing</div>
-                    </div>
-                  </div>
-                </div>
 
-                {/* Trust Indicator 2 */}
-                <div className="group cursor-default">
-                  <div className="flex flex-col items-center gap-3 p-4 rounded-2xl bg-card/50 backdrop-blur-sm border border-border/50 hover:border-primary/20 transition-all duration-300 hover:shadow-lg hover:shadow-primary/5">
-                    <div className="p-3 rounded-xl bg-blue-500/10 text-blue-500">
-                      <Zap className="h-6 w-6 sm:h-8 sm:w-8" />
-                    </div>
-                    <div className="space-y-1">
-                      <div className="text-sm sm:text-base font-bold text-foreground">Lightning Fast</div>
-                      <div className="text-[10px] sm:text-xs text-muted-foreground">Instant Results</div>
-                    </div>
-                  </div>
-                </div>
-
-                {/* Trust Indicator 3 */}
-                <div className="group cursor-default">
-                  <div className="flex flex-col items-center gap-3 p-4 rounded-2xl bg-card/50 backdrop-blur-sm border border-border/50 hover:border-primary/20 transition-all duration-300 hover:shadow-lg hover:shadow-primary/5">
-                    <div className="p-3 rounded-xl bg-green-500/10 text-green-500">
-                      <CheckCircle2 className="h-6 w-6 sm:h-8 sm:w-8" />
-                    </div>
-                    <div className="space-y-1">
-                      <div className="text-sm sm:text-base font-bold text-foreground">Reliable</div>
-                      <div className="text-[10px] sm:text-xs text-muted-foreground">99.9% Uptime</div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            {/* Scroll Indicator */}
-            <div className="pt-8 sm:pt-12">
-              <Link href="#tools" className="group inline-flex flex-col items-center gap-2 sm:gap-3 text-foreground hover:text-primary transition-colors">
-                <div className="text-xs sm:text-sm font-semibold uppercase tracking-wider">Explore Tools</div>
-                <div className="flex flex-col items-center animate-bounce">
-                  <ArrowRight className="h-5 w-5 sm:h-6 sm:w-6 rotate-90" />
-                </div>
-              </Link>
-            </div>
           </div>
         </div>
       </section>

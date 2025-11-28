@@ -306,15 +306,15 @@ export function AiPetNameGenerator() {
 
           <div className="grid grid-cols-2 gap-3 text-sm">
             <div className="flex items-center gap-2 text-muted-foreground">
-              <div className="h-2 w-2 bg-green-500 rounded-full animate-pulse" />
+              <div className="h-2 w-2 bg-secondary-accent rounded-full animate-pulse" />
               Analyzing preferences
             </div>
             <div className="flex items-center gap-2 text-muted-foreground">
-              <div className="h-2 w-2 bg-blue-500 rounded-full animate-pulse animation-delay-200" />
+              <div className="h-2 w-2 bg-primary rounded-full animate-pulse animation-delay-200" />
               Searching cultural names
             </div>
             <div className="flex items-center gap-2 text-muted-foreground">
-              <div className="h-2 w-2 bg-purple-500 rounded-full animate-pulse animation-delay-400" />
+              <div className="h-2 w-2 bg-accent rounded-full animate-pulse animation-delay-400" />
               Finding meanings
             </div>
             <div className="flex items-center gap-2 text-muted-foreground">
@@ -356,24 +356,24 @@ export function AiPetNameGenerator() {
 
             const categoryStyles: Record<string, { border: string; bg: string; text: string }> = {
               traditional: {
-                border: "border-blue-500/30",
-                bg: "bg-blue-500/20",
+                border: "border-primary/30",
+                bg: "bg-primary/20",
                 text: "text-foreground"
               },
               modern: {
-                border: "border-green-500/30",
-                bg: "bg-green-500/20",
+                border: "border-secondary-accent/30",
+                bg: "bg-secondary-accent/20",
                 text: "text-heading-accent"
               },
               unique: {
-                border: "border-purple-500/30",
-                bg: "bg-purple-500/20",
+                border: "border-accent/30",
+                bg: "bg-accent/20",
                 text: "text-foreground"
               },
               nature: {
-                border: "border-emerald-500/30",
-                bg: "bg-emerald-500/20",
-                text: "text-emerald-600 dark:text-emerald-400"
+                border: "border-secondary-accent/30",
+                bg: "bg-secondary-accent/20",
+                text: "text-secondary-accent"
               },
               cultural: {
                 border: "border-primary/30",
@@ -381,26 +381,26 @@ export function AiPetNameGenerator() {
                 text: "text-foreground"
               },
               celebrity: {
-                border: "border-pink-500/30",
-                bg: "bg-pink-500/20",
+                border: "border-destructive/30",
+                bg: "bg-destructive/20",
                 text: "text-foreground"
               },
               food: {
-                border: "border-yellow-500/30",
-                bg: "bg-yellow-500/20",
+                border: "border-tertiary-accent/30",
+                bg: "bg-tertiary-accent/20",
                 text: "text-foreground"
               },
               mythological: {
-                border: "border-indigo-500/30",
-                bg: "bg-indigo-500/20",
-                text: "text-indigo-600 dark:text-indigo-400"
+                border: "border-primary/30",
+                bg: "bg-primary/20",
+                text: "text-primary"
               }
             }
 
             const styles = categoryStyles[category] || {
-              border: "border-gray-500/30",
-              bg: "bg-gray-500/20",
-              text: "text-gray-600 dark:text-gray-400"
+              border: "border-muted-foreground/30",
+              bg: "bg-muted-foreground/20",
+              text: "text-muted-foreground"
             }
 
             return (

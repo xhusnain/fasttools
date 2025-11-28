@@ -583,7 +583,7 @@ Aggressive (1.5 lb/week): ${result.weightGain.aggressive} calories/day`
                 </div>
                 <div className="text-center">
                   <div className="text-xs sm:text-sm text-muted-foreground">Activity Level</div>
-                  <div className="text-sm sm:text-base md:text-lg font-semibold text-indigo-400">{result.activityLevel}</div>
+                  <div className="text-sm sm:text-base md:text-lg font-semibold text-primary">{result.activityLevel}</div>
                 </div>
               </div>
 
@@ -606,26 +606,26 @@ Aggressive (1.5 lb/week): ${result.weightGain.aggressive} calories/day`
                 </CardTitle>
               </CardHeader>
               <CardContent className="space-y-2 px-2 sm:px-3 md:px-4">
-                <div className="flex justify-between items-center p-2 sm:p-2.5 bg-card border border-red-800 rounded-lg">
+                <div className="flex justify-between items-center p-2 sm:p-2.5 bg-card border border-destructive/30 rounded-lg">
                   <div>
                     <span className="font-medium text-foreground text-xs sm:text-sm">Mild Deficit</span>
                     <p className="text-xs text-foreground">0.5 lb/week</p>
                   </div>
-                  <Badge variant="destructive" className="bg-red-900 text-foreground text-xs">{result.weightLoss.mild.toLocaleString()} cal/day</Badge>
+                  <Badge variant="destructive" className="bg-destructive/20 text-foreground text-xs">{result.weightLoss.mild.toLocaleString()} cal/day</Badge>
                 </div>
-                <div className="flex justify-between items-center p-2 sm:p-2.5 bg-card border border-red-800 rounded-lg">
+                <div className="flex justify-between items-center p-2 sm:p-2.5 bg-card border border-destructive/30 rounded-lg">
                   <div>
                     <span className="font-medium text-foreground text-xs sm:text-sm">Moderate Deficit</span>
                     <p className="text-xs text-foreground">1 lb/week</p>
                   </div>
-                  <Badge variant="destructive" className="bg-red-900 text-foreground text-xs">{result.weightLoss.moderate.toLocaleString()} cal/day</Badge>
+                  <Badge variant="destructive" className="bg-destructive/20 text-foreground text-xs">{result.weightLoss.moderate.toLocaleString()} cal/day</Badge>
                 </div>
-                <div className="flex justify-between items-center p-2 sm:p-2.5 bg-card border border-red-800 rounded-lg">
+                <div className="flex justify-between items-center p-2 sm:p-2.5 bg-card border border-destructive/30 rounded-lg">
                   <div>
                     <span className="font-medium text-foreground text-xs sm:text-sm">Aggressive Deficit</span>
                     <p className="text-xs text-foreground">1.5 lb/week</p>
                   </div>
-                  <Badge variant="destructive" className="bg-red-900 text-foreground text-xs">{result.weightLoss.aggressive.toLocaleString()} cal/day</Badge>
+                  <Badge variant="destructive" className="bg-destructive/20 text-foreground text-xs">{result.weightLoss.aggressive.toLocaleString()} cal/day</Badge>
                 </div>
               </CardContent>
             </Card>
@@ -638,26 +638,26 @@ Aggressive (1.5 lb/week): ${result.weightGain.aggressive} calories/day`
                 </CardTitle>
               </CardHeader>
               <CardContent className="space-y-2 px-2 sm:px-3 md:px-4">
-                <div className="flex justify-between items-center p-2 sm:p-2.5 bg-card border border-green-800 rounded-lg">
+                <div className="flex justify-between items-center p-2 sm:p-2.5 bg-card border border-secondary-accent/30 rounded-lg">
                   <div>
                     <span className="font-medium text-heading-accent text-xs sm:text-sm">Mild Surplus</span>
                     <p className="text-xs text-foreground">0.5 lb/week</p>
                   </div>
-                  <Badge variant="default" className="bg-green-900 text-heading-accent text-xs">{result.weightGain.mild.toLocaleString()} cal/day</Badge>
+                  <Badge variant="default" className="bg-secondary-accent/20 text-heading-accent text-xs">{result.weightGain.mild.toLocaleString()} cal/day</Badge>
                 </div>
-                <div className="flex justify-between items-center p-2 sm:p-2.5 bg-card border border-green-800 rounded-lg">
+                <div className="flex justify-between items-center p-2 sm:p-2.5 bg-card border border-secondary-accent/30 rounded-lg">
                   <div>
                     <span className="font-medium text-heading-accent text-xs sm:text-sm">Moderate Surplus</span>
                     <p className="text-xs text-foreground">1 lb/week</p>
                   </div>
-                  <Badge variant="default" className="bg-green-900 text-heading-accent text-xs">{result.weightGain.moderate.toLocaleString()} cal/day</Badge>
+                  <Badge variant="default" className="bg-secondary-accent/20 text-heading-accent text-xs">{result.weightGain.moderate.toLocaleString()} cal/day</Badge>
                 </div>
-                <div className="flex justify-between items-center p-2 sm:p-2.5 bg-card border border-green-800 rounded-lg">
+                <div className="flex justify-between items-center p-2 sm:p-2.5 bg-card border border-secondary-accent/30 rounded-lg">
                   <div>
                     <span className="font-medium text-heading-accent text-xs sm:text-sm">Aggressive Surplus</span>
                     <p className="text-xs text-foreground">1.5 lb/week</p>
                   </div>
-                  <Badge variant="default" className="bg-green-900 text-heading-accent text-xs">{result.weightGain.aggressive.toLocaleString()} cal/day</Badge>
+                  <Badge variant="default" className="bg-secondary-accent/20 text-heading-accent text-xs">{result.weightGain.aggressive.toLocaleString()} cal/day</Badge>
                 </div>
               </CardContent>
             </Card>
@@ -673,12 +673,12 @@ Aggressive (1.5 lb/week): ${result.weightGain.aggressive} calories/day`
             </CardHeader>
             <CardContent className="space-y-3 px-2 sm:px-3 md:px-4">
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 sm:gap-3">
-                <div className="p-2 sm:p-2.5 bg-card border border-purple-800 rounded-lg">
+                <div className="p-2 sm:p-2.5 bg-card border border-accent/30 rounded-lg">
                   <h3 className="font-semibold text-heading-accent mb-1 text-xs sm:text-sm">High Calorie Days</h3>
                   <div className="text-lg sm:text-xl md:text-2xl font-bold text-foreground">{result.zigzagPlan.high.toLocaleString()} cal</div>
                   <p className="text-xs text-foreground">2 days per week</p>
                 </div>
-                <div className="p-2 sm:p-2.5 bg-card border border-blue-800 rounded-lg">
+                <div className="p-2 sm:p-2.5 bg-card border border-primary/30 rounded-lg">
                   <h3 className="font-semibold text-heading-accent mb-1 text-xs sm:text-sm">Low Calorie Days</h3>
                   <div className="text-lg sm:text-xl md:text-2xl font-bold text-foreground">{result.zigzagPlan.low.toLocaleString()} cal</div>
                   <p className="text-xs text-foreground">5 days per week</p>

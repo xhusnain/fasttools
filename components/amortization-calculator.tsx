@@ -405,11 +405,11 @@ Interest Rate: ${result.interestRate.toFixed(2)}%`
             </CardHeader>
             <CardContent className="space-y-4">
               <div className="grid md:grid-cols-2 gap-4">
-                <div className="p-4 bg-muted rounded-lg border border-green-200 dark:border-green-800">
+                <div className="p-4 bg-muted rounded-lg border border-secondary-accent/30">
                   <h3 className="font-semibold text-heading-accent mb-2">Principal</h3>
                   <div className="text-2xl font-bold text-heading-accent">{result.principalPercentage.toFixed(1)}%</div>
                 </div>
-                <div className="p-4 bg-red-50 dark:bg-red-950/20 rounded-lg border border-red-200 dark:border-red-800">
+                <div className="p-4 bg-destructive/10 rounded-lg border border-destructive/30">
                   <h3 className="font-semibold text-foreground mb-2">Interest</h3>
                   <div className="text-2xl font-bold text-foreground">{result.interestPercentage.toFixed(1)}%</div>
                 </div>
@@ -428,11 +428,11 @@ Interest Rate: ${result.interestRate.toFixed(2)}%`
               </CardHeader>
               <CardContent>
                 <div className="grid md:grid-cols-2 gap-4">
-                  <div className="p-4 bg-muted rounded-lg border border-blue-200 dark:border-blue-800">
+                  <div className="p-4 bg-muted rounded-lg border border-primary/30">
                     <h3 className="font-semibold text-foreground mb-2">Interest Savings</h3>
                     <div className="text-2xl font-bold text-foreground">${result.extraPaymentAnalysis.savings.toFixed(2)}</div>
                   </div>
-                  <div className="p-4 bg-muted rounded-lg border border-green-200 dark:border-green-800">
+                  <div className="p-4 bg-muted rounded-lg border border-secondary-accent/30">
                     <h3 className="font-semibold text-heading-accent mb-2">Time Saved</h3>
                     <div className="text-2xl font-bold text-heading-accent">{result.extraPaymentAnalysis.timeSaved} months</div>
                   </div>
@@ -451,22 +451,22 @@ Interest Rate: ${result.interestRate.toFixed(2)}%`
             </CardHeader>
             <CardContent>
               <div className="overflow-x-auto">
-                <table className="w-full border-collapse border border-gray-300 dark:border-gray-600">
+                <table className="w-full border-collapse border border-border">
                   <thead>
                     <tr className="bg-muted">
-                      <th className="border border-gray-300 dark:border-gray-600 p-3 text-left">Year</th>
-                      <th className="border border-gray-300 dark:border-gray-600 p-3 text-right">Interest</th>
-                      <th className="border border-gray-300 dark:border-gray-600 p-3 text-right">Principal</th>
-                      <th className="border border-gray-300 dark:border-gray-600 p-3 text-right">Ending Balance</th>
+                      <th className="border border-border p-3 text-left">Year</th>
+                      <th className="border border-border p-3 text-right">Interest</th>
+                      <th className="border border-border p-3 text-right">Principal</th>
+                      <th className="border border-border p-3 text-right">Ending Balance</th>
                     </tr>
                   </thead>
                   <tbody>
                     {result.amortizationSchedule.map((row, index) => (
                       <tr key={index}>
-                        <td className="border border-gray-300 dark:border-gray-600 p-3">{row.year}</td>
-                        <td className="border border-gray-300 dark:border-gray-600 p-3 text-right">${row.interest.toFixed(2)}</td>
-                        <td className="border border-gray-300 dark:border-gray-600 p-3 text-right">${row.principal.toFixed(2)}</td>
-                        <td className="border border-gray-300 dark:border-gray-600 p-3 text-right">${row.endingBalance.toFixed(2)}</td>
+                        <td className="border border-border p-3">{row.year}</td>
+                        <td className="border border-border p-3 text-right">${row.interest.toFixed(2)}</td>
+                        <td className="border border-border p-3 text-right">${row.principal.toFixed(2)}</td>
+                        <td className="border border-border p-3 text-right">${row.endingBalance.toFixed(2)}</td>
                       </tr>
                     ))}
                   </tbody>
@@ -485,24 +485,24 @@ Interest Rate: ${result.interestRate.toFixed(2)}%`
             </CardHeader>
             <CardContent>
               <div className="overflow-x-auto">
-                <table className="w-full border-collapse border border-gray-300 dark:border-gray-600">
+                <table className="w-full border-collapse border border-border">
                   <thead>
                     <tr className="bg-muted">
-                      <th className="border border-gray-300 dark:border-gray-600 p-3 text-left">Month</th>
-                      <th className="border border-gray-300 dark:border-gray-600 p-3 text-right">Payment</th>
-                      <th className="border border-gray-300 dark:border-gray-600 p-3 text-right">Principal</th>
-                      <th className="border border-gray-300 dark:border-gray-600 p-3 text-right">Interest</th>
-                      <th className="border border-gray-300 dark:border-gray-600 p-3 text-right">Balance</th>
+                      <th className="border border-border p-3 text-left">Month</th>
+                      <th className="border border-border p-3 text-right">Payment</th>
+                      <th className="border border-border p-3 text-right">Principal</th>
+                      <th className="border border-border p-3 text-right">Interest</th>
+                      <th className="border border-border p-3 text-right">Balance</th>
                     </tr>
                   </thead>
                   <tbody>
                     {result.monthlySchedule.map((row, index) => (
                       <tr key={index}>
-                        <td className="border border-gray-300 dark:border-gray-600 p-3">{row.month}</td>
-                        <td className="border border-gray-300 dark:border-gray-600 p-3 text-right">${row.payment.toFixed(2)}</td>
-                        <td className="border border-gray-300 dark:border-gray-600 p-3 text-right">${row.principal.toFixed(2)}</td>
-                        <td className="border border-gray-300 dark:border-gray-600 p-3 text-right">${row.interest.toFixed(2)}</td>
-                        <td className="border border-gray-300 dark:border-gray-600 p-3 text-right">${row.balance.toFixed(2)}</td>
+                        <td className="border border-border p-3">{row.month}</td>
+                        <td className="border border-border p-3 text-right">${row.payment.toFixed(2)}</td>
+                        <td className="border border-border p-3 text-right">${row.principal.toFixed(2)}</td>
+                        <td className="border border-border p-3 text-right">${row.interest.toFixed(2)}</td>
+                        <td className="border border-border p-3 text-right">${row.balance.toFixed(2)}</td>
                       </tr>
                     ))}
                   </tbody>
@@ -604,7 +604,7 @@ Interest Rate: ${result.interestRate.toFixed(2)}%`
           </CardTitle>
         </CardHeader>
         <CardContent className="space-y-3">
-          <div className="p-4 bg-muted rounded-lg border border-blue-200 dark:border-blue-800">
+          <div className="p-4 bg-muted rounded-lg border border-primary/30">
             <div className="flex items-start gap-2">
               <Info className="h-4 w-4 text-foreground mt-0.5 flex-shrink-0" />
               <div className="text-sm">

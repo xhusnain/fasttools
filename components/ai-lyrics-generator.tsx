@@ -259,7 +259,7 @@ export function AiLyricsGenerator() {
           </Button>
 
           <div className="flex items-center gap-2 text-xs text-muted-foreground">
-            <div className="h-1 w-1 rounded-full bg-green-500" />
+            <div className="h-1 w-1 rounded-full bg-secondary-accent" />
             <span>Powered by Gemini AI • 100% Original • Commercial Use Allowed</span>
           </div>
         </div>
@@ -319,9 +319,9 @@ export function AiLyricsGenerator() {
             />
           </div>
 
-          <div className="flex items-start gap-3 p-4 rounded-lg bg-green-50 dark:bg-green-950/30 border border-green-500/30">
+          <div className="flex items-start gap-3 p-4 rounded-lg bg-secondary-accent/10 border border-secondary-accent/30">
             <div className="flex-shrink-0 mt-0.5">
-              <div className="h-5 w-5 rounded-full bg-green-500 flex items-center justify-center">
+              <div className="h-5 w-5 rounded-full bg-secondary-accent flex items-center justify-center">
                 <Check className="h-3 w-3 text-white" />
               </div>
             </div>

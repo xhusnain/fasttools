@@ -531,7 +531,7 @@ Total Tax Rate: ${result.totalTaxRate.toFixed(2)}%`
                       <span className="font-medium text-foreground text-xs sm:text-sm">{state.state}</span>
                       <p className="text-xs text-foreground">{state.rate.toFixed(2)}% tax rate</p>
                     </div>
-                    <Badge className={state.difference > 0 ? "bg-red-500/20 text-foreground border-red-500" : "bg-border text-foreground"} variant="outline">
+                    <Badge className={state.difference > 0 ? "bg-destructive/20 text-foreground border-destructive" : "bg-border text-foreground"} variant="outline">
                       {state.difference > 0 ? "+" : ""}{state.difference.toFixed(2)}%
                     </Badge>
                   </div>

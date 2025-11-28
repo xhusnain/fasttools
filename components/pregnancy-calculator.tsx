@@ -536,9 +536,9 @@ Next Milestone: ${result.nextMilestone}`
                   <span className="font-medium">Pregnancy Progress</span>
                   <span className="text-sm text-muted-foreground">{result.pregnancyProgress.toFixed(1)}%</span>
                 </div>
-                <div className="w-full bg-gray-200 rounded-full h-2">
+                <div className="w-full bg-muted rounded-full h-2">
                   <div
-                    className="bg-gradient-to-r from-pink-500 to-purple-500 h-2 rounded-full transition-all duration-300"
+                    className="bg-gradient-to-r from-primary to-secondary-accent h-2 rounded-full transition-all duration-300"
                     style={{ width: `${result.pregnancyProgress}%` }}
                   ></div>
                 </div>
@@ -570,7 +570,7 @@ Next Milestone: ${result.nextMilestone}`
                 </CardTitle>
               </CardHeader>
               <CardContent>
-                <div className="p-4 bg-muted rounded-lg border border-green-200 dark:border-green-800">
+                <div className="p-4 bg-muted rounded-lg border border-secondary-accent/30">
                   <div className="text-sm">
                     <p className="font-medium text-heading-accent mb-2">
                       Recommended Weight Gain: {result.weightGainRecommendation.min}-{result.weightGainRecommendation.max} pounds
@@ -628,7 +628,7 @@ Next Milestone: ${result.nextMilestone}`
           <Card>
             <CardHeader>
               <CardTitle className="flex items-center gap-2">
-                <Calendar className="h-5 w-5 text-indigo-500" />
+                <Calendar className="h-5 w-5 text-primary" />
                 Upcoming Appointments
               </CardTitle>
             </CardHeader>
@@ -636,7 +636,7 @@ Next Milestone: ${result.nextMilestone}`
               <ul className="space-y-2">
                 {result.upcomingAppointments.map((appointment, index) => (
                   <li key={index} className="flex items-start gap-2 text-sm">
-                    <Clock className="h-4 w-4 text-indigo-500 mt-0.5 flex-shrink-0" />
+                    <Clock className="h-4 w-4 text-primary mt-0.5 flex-shrink-0" />
                     <span>{appointment}</span>
                   </li>
                 ))}
@@ -730,7 +730,7 @@ Next Milestone: ${result.nextMilestone}`
         <Card>
           <CardHeader>
             <CardTitle className="flex items-center gap-2">
-              <Clock className="h-5 w-5 text-gray-500" />
+              <Clock className="h-5 w-5 text-muted-foreground" />
               Recent Calculations
             </CardTitle>
           </CardHeader>
@@ -769,7 +769,7 @@ Next Milestone: ${result.nextMilestone}`
           </CardTitle>
         </CardHeader>
         <CardContent className="space-y-3">
-          <div className="p-4 bg-muted rounded-lg border border-blue-200 dark:border-blue-800">
+          <div className="p-4 bg-muted rounded-lg border border-accent/30">
             <div className="flex items-start gap-2">
               <Info className="h-4 w-4 text-foreground mt-0.5 flex-shrink-0" />
               <div className="text-sm">

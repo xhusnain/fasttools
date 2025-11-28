@@ -10,7 +10,7 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@
 import { Slider } from "@/components/ui/slider"
 import { Switch } from "@/components/ui/switch"
 import { Textarea } from "@/components/ui/textarea"
-import { Download, QrCode, Upload, Image as ImageIcon, Sparkles, Wifi, Mail, Phone, MessageSquare, User, MapPin, FileText, Zap, Globe, ListOrdered, Archive } from "lucide-react"
+import { Download, QrCode, Image as ImageIcon, Sparkles, Wifi, Mail, Phone, MessageSquare, User, MapPin, FileText, Zap, Globe, ListOrdered, Archive } from "lucide-react"
 import { LoadingSpinner } from "@/components/loading-spinner"
 import QRCode from "qrcode"
 import JSZip from "jszip"
@@ -165,7 +165,7 @@ END:VCARD`
         },
       }
 
-      let qrDataUrl = await QRCode.toDataURL(content, options)
+      let qrDataUrl = await QRCode.toDataURL(content, options as any) as unknown as string
 
       // Apply logo if uploaded
       if (logoImage) {
@@ -321,7 +321,7 @@ END:VCARD`
           },
         }
 
-        let qrDataUrl = await QRCode.toDataURL(item.trim(), options)
+        let qrDataUrl = await QRCode.toDataURL(item.trim(), options as any) as unknown as string
 
         // Apply logo if uploaded
         if (logoImage) {
@@ -443,43 +443,43 @@ END:VCARD`
           </h3>
           <Tabs value={qrType} onValueChange={(v) => setQrType(v as QRType)} className="w-full">
             <TabsList className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-1.5 h-auto p-1 bg-muted">
-              <TabsTrigger value="url" className="flex items-center gap-1.5 text-xs py-2 data-[state=active]:bg-blue-500 data-[state=active]:text-white">
+              <TabsTrigger value="url" className="flex items-center gap-1.5 text-xs py-2 data-[state=active]:bg-primary data-[state=active]:text-primary-foreground">
                 <Globe className="h-3.5 w-3.5 text-foreground" />
                 <span>URL</span>
               </TabsTrigger>
-              <TabsTrigger value="wifi" className="flex items-center gap-1.5 text-xs py-2 data-[state=active]:bg-green-500 data-[state=active]:text-white">
-                <Wifi className="h-3.5 w-3.5 text-heading-accent" />
+              <TabsTrigger value="wifi" className="flex items-center gap-1.5 text-xs py-2 data-[state=active]:bg-primary data-[state=active]:text-primary-foreground">
+                <Wifi className="h-3.5 w-3.5 text-foreground" />
                 <span>WiFi</span>
               </TabsTrigger>
-              <TabsTrigger value="vcard" className="flex items-center gap-1.5 text-xs py-2 data-[state=active]:bg-purple-500 data-[state=active]:text-white">
+              <TabsTrigger value="vcard" className="flex items-center gap-1.5 text-xs py-2 data-[state=active]:bg-primary data-[state=active]:text-primary-foreground">
                 <User className="h-3.5 w-3.5 text-foreground" />
                 <span>vCard</span>
               </TabsTrigger>
-              <TabsTrigger value="email" className="flex items-center gap-1.5 text-xs py-2 data-[state=active]:bg-red-500 data-[state=active]:text-white">
+              <TabsTrigger value="email" className="flex items-center gap-1.5 text-xs py-2 data-[state=active]:bg-primary data-[state=active]:text-primary-foreground">
                 <Mail className="h-3.5 w-3.5 text-foreground" />
                 <span>Email</span>
               </TabsTrigger>
-              <TabsTrigger value="sms" className="flex items-center gap-1.5 text-xs py-2 data-[state=active]:bg-amber-500 data-[state=active]:text-white">
-                <MessageSquare className="h-3.5 w-3.5 text-amber-500" />
+              <TabsTrigger value="sms" className="flex items-center gap-1.5 text-xs py-2 data-[state=active]:bg-primary data-[state=active]:text-primary-foreground">
+                <MessageSquare className="h-3.5 w-3.5 text-foreground" />
                 <span>SMS</span>
               </TabsTrigger>
-              <TabsTrigger value="whatsapp" className="flex items-center gap-1.5 text-xs py-2 data-[state=active]:bg-emerald-600 data-[state=active]:text-white">
-                <Phone className="h-3.5 w-3.5 text-emerald-600" />
+              <TabsTrigger value="whatsapp" className="flex items-center gap-1.5 text-xs py-2 data-[state=active]:bg-primary data-[state=active]:text-primary-foreground">
+                <Phone className="h-3.5 w-3.5 text-foreground" />
                 <span>WhatsApp</span>
               </TabsTrigger>
-              <TabsTrigger value="phone" className="flex items-center gap-1.5 text-xs py-2 data-[state=active]:bg-cyan-500 data-[state=active]:text-white">
+              <TabsTrigger value="phone" className="flex items-center gap-1.5 text-xs py-2 data-[state=active]:bg-primary data-[state=active]:text-primary-foreground">
                 <Phone className="h-3.5 w-3.5 text-foreground" />
                 <span>Phone</span>
               </TabsTrigger>
-              <TabsTrigger value="location" className="flex items-center gap-1.5 text-xs py-2 data-[state=active]:bg-pink-500 data-[state=active]:text-white">
+              <TabsTrigger value="location" className="flex items-center gap-1.5 text-xs py-2 data-[state=active]:bg-primary data-[state=active]:text-primary-foreground">
                 <MapPin className="h-3.5 w-3.5 text-foreground" />
                 <span>Location</span>
               </TabsTrigger>
-              <TabsTrigger value="text" className="flex items-center gap-1.5 text-xs py-2 data-[state=active]:bg-indigo-500 data-[state=active]:text-white">
-                <FileText className="h-3.5 w-3.5 text-indigo-500" />
+              <TabsTrigger value="text" className="flex items-center gap-1.5 text-xs py-2 data-[state=active]:bg-primary data-[state=active]:text-primary-foreground">
+                <FileText className="h-3.5 w-3.5 text-foreground" />
                 <span>Text</span>
               </TabsTrigger>
-              <TabsTrigger value="bulk" className="flex items-center gap-1.5 text-xs py-2 data-[state=active]:bg-primary data-[state=active]:text-white">
+              <TabsTrigger value="bulk" className="flex items-center gap-1.5 text-xs py-2 data-[state=active]:bg-primary data-[state=active]:text-primary-foreground">
                 <ListOrdered className="h-3.5 w-3.5 text-foreground" />
                 <span>Bulk</span>
               </TabsTrigger>
@@ -728,7 +728,7 @@ END:VCARD`
 
             {/* Bulk QR Generation */}
             <TabsContent value="bulk" className="space-y-3 mt-3">
-              <div className="p-3 rounded-lg bg-orange-50 dark:bg-orange-950/30 border border-primary/30">
+              <div className="p-3 rounded-lg bg-primary/10 border border-primary/30">
                 <p className="text-xs font-semibold text-foreground">
                   🚀 Generate hundreds of QR codes at once! Enter URLs/text (one per line) or upload CSV.
                 </p>

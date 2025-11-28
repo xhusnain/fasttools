@@ -215,7 +215,7 @@ Risk Level: ${result.riskLevel}`
                 value={weight}
                 onChange={(e) => setWeight(e.target.value)}
                 placeholder={unit === "metric" ? "70" : "154"}
-                className="h-10 sm:h-12 text-sm sm:text-base bg-card border-border text-foreground focus:border-primary focus:ring-orange-500"
+                className="h-10 sm:h-12 text-sm sm:text-base bg-card border-border text-foreground focus:border-primary focus:ring-primary"
               />
             </div>
 
@@ -230,7 +230,7 @@ Risk Level: ${result.riskLevel}`
                 value={height}
                 onChange={(e) => setHeight(e.target.value)}
                 placeholder={unit === "metric" ? "170" : "67"}
-                className="h-10 sm:h-12 text-sm sm:text-base bg-card border-border text-foreground focus:border-primary focus:ring-orange-500"
+                className="h-10 sm:h-12 text-sm sm:text-base bg-card border-border text-foreground focus:border-primary focus:ring-primary"
               />
             </div>
           </div>
@@ -250,7 +250,7 @@ Risk Level: ${result.riskLevel}`
                 placeholder="25"
                 min="2"
                 max="120"
-                className="h-10 sm:h-12 text-sm sm:text-base bg-card border-border text-foreground focus:border-primary focus:ring-orange-500"
+                className="h-10 sm:h-12 text-sm sm:text-base bg-card border-border text-foreground focus:border-primary focus:ring-primary"
               />
             </div>
 
@@ -335,7 +335,7 @@ Risk Level: ${result.riskLevel}`
                 Advanced Metrics
               </h3>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-3 sm:gap-4">
-                <div className="flex justify-between items-center p-3 bg-card rounded-lg border border-blue-700">
+                <div className="flex justify-between items-center p-3 bg-card rounded-lg border border-primary/30">
                   <span className="text-sm font-medium text-foreground">BMI Prime</span>
                   <span className="font-bold text-sm text-foreground">{result.bmiPrime}</span>
                 </div>
@@ -343,7 +343,7 @@ Risk Level: ${result.riskLevel}`
                   <span className="text-sm font-medium text-foreground">Ponderal Index</span>
                   <span className="font-bold text-sm text-foreground">{result.ponderalIndex}</span>
                 </div>
-                <div className="flex justify-between items-center p-3 bg-card rounded-lg border border-green-700">
+                <div className="flex justify-between items-center p-3 bg-card rounded-lg border border-secondary-accent/30">
                   <span className="text-sm font-medium text-heading-accent">Healthy Range</span>
                   <span className="font-bold text-sm text-heading-accent">{result.healthyRange}</span>
                 </div>
@@ -360,7 +360,7 @@ Risk Level: ${result.riskLevel}`
                 <Target className="h-4 w-4 sm:h-5 sm:w-5 text-heading-accent" />
                 Healthy Weight Range
               </h3>
-              <div className="text-center p-4 bg-card rounded-lg border border-green-700">
+              <div className="text-center p-4 bg-card rounded-lg border border-secondary-accent/30">
                 <div className="text-lg sm:text-xl font-bold text-heading-accent">{result.healthyWeightRange}</div>
                 <div className="text-sm text-muted-foreground mt-1">Recommended weight for your height</div>
               </div>
@@ -383,10 +383,10 @@ Risk Level: ${result.riskLevel}`
             </div>
 
             {/* Disclaimer */}
-            <div className="p-4 bg-card rounded-xl border-2 border-amber-700">
+            <div className="p-4 bg-card rounded-xl border-2 border-tertiary-accent/30">
               <div className="flex items-start gap-2">
-                <Info className="h-4 w-4 text-amber-400 mt-0.5 flex-shrink-0" />
-                <div className="text-sm text-amber-300">
+                <Info className="h-4 w-4 text-tertiary-accent mt-0.5 flex-shrink-0" />
+                <div className="text-sm text-tertiary-accent">
                   <strong>Disclaimer:</strong> BMI is a screening tool and should not be used as the sole indicator of health.
                   Consult a healthcare provider for personalized health advice and comprehensive health assessment.
                 </div>

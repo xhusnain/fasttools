@@ -141,7 +141,7 @@ export function AnniversaryCalculator() {
       <Card className="border-2 border-white/20 bg-gradient-to-br from-white/10 to-white/5 backdrop-blur-xl shadow-2xl">
         <CardHeader className="text-center space-y-3 sm:space-y-4 p-4 sm:p-6">
           <div className="flex flex-col sm:flex-row items-center justify-center gap-3 mb-4">
-            <div className="h-10 w-10 sm:h-12 sm:w-12 rounded-xl bg-gradient-to-br from-pink-500 to-red-500 flex items-center justify-center shadow-lg">
+            <div className="h-10 w-10 sm:h-12 sm:w-12 rounded-xl bg-gradient-to-br from-destructive to-primary flex items-center justify-center shadow-lg">
               <Heart className="h-5 w-5 sm:h-6 sm:w-6 text-white fill-white" />
             </div>
             <div className="text-center sm:text-left">
@@ -174,7 +174,7 @@ export function AnniversaryCalculator() {
               onClick={calculateAnniversary}
               disabled={!startDate || isCalculating}
               isLoading={isCalculating}
-              className="w-full h-10 sm:h-11 text-sm font-medium bg-gradient-to-r from-pink-500 to-red-500 hover:from-pink-600 hover:to-red-600 text-white shadow-lg hover:shadow-xl transition-all duration-300"
+              className="w-full h-10 sm:h-11 text-sm font-medium bg-gradient-to-r from-destructive to-primary hover:from-destructive/90 hover:to-primary/90 text-white shadow-lg hover:shadow-xl transition-all duration-300"
             >
               {isCalculating ? (
                 <>
@@ -192,12 +192,12 @@ export function AnniversaryCalculator() {
           </div>
 
           {result && (
-            <div className="p-4 sm:p-6 rounded-lg bg-gradient-to-br from-pink-500/20 to-red-500/20 border border-pink-400/30 space-y-4 sm:space-y-6 animate-fade-in">
+            <div className="p-4 sm:p-6 rounded-lg bg-gradient-to-br from-destructive/20 to-primary/20 border border-destructive/30 space-y-4 sm:space-y-6 animate-fade-in">
               <div className="text-center space-y-2 sm:space-y-3">
                 <div className="relative">
-                  <Heart className="h-8 w-8 sm:h-12 sm:w-12 text-foreground fill-pink-300 mx-auto" />
+                  <Heart className="h-8 w-8 sm:h-12 sm:w-12 text-foreground fill-destructive/50 mx-auto" />
                   {isLiveTimer && (
-                    <div className="absolute -top-1 -right-1 h-3 w-3 bg-green-400 rounded-full border-2 border-white animate-pulse"></div>
+                    <div className="absolute -top-1 -right-1 h-3 w-3 bg-secondary-accent rounded-full border-2 border-white animate-pulse"></div>
                   )}
                 </div>
                 <p className="text-sm sm:text-base text-foreground">
@@ -209,27 +209,27 @@ export function AnniversaryCalculator() {
               </div>
 
               <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-2 sm:gap-3">
-                <div className="p-3 sm:p-4 rounded-lg bg-gradient-to-br from-blue-500/20 to-blue-600/20 border border-blue-400/30 text-center">
+                <div className="p-3 sm:p-4 rounded-lg bg-gradient-to-br from-primary/20 to-primary/30 border border-primary/30 text-center">
                   <p className={`text-xl sm:text-2xl font-bold text-foreground transition-all duration-500 ${isLiveTimer ? 'transform' : ''}`}>{result.years}</p>
                   <p className="text-xs sm:text-sm text-foreground">Years</p>
                 </div>
-                <div className="p-3 sm:p-4 rounded-lg bg-gradient-to-br from-purple-500/20 to-purple-600/20 border border-purple-400/30 text-center">
+                <div className="p-3 sm:p-4 rounded-lg bg-gradient-to-br from-accent/20 to-accent/30 border border-accent/30 text-center">
                   <p className={`text-xl sm:text-2xl font-bold text-foreground transition-all duration-500 ${isLiveTimer ? 'transform' : ''}`}>{result.months}</p>
                   <p className="text-xs sm:text-sm text-foreground">Months</p>
                 </div>
-                <div className="p-3 sm:p-4 rounded-lg bg-gradient-to-br from-green-500/20 to-green-600/20 border border-green-400/30 text-center">
+                <div className="p-3 sm:p-4 rounded-lg bg-gradient-to-br from-secondary-accent/20 to-secondary-accent/30 border border-secondary-accent/30 text-center">
                   <p className={`text-xl sm:text-2xl font-bold text-heading-accent transition-all duration-500 ${isLiveTimer ? 'transform' : ''}`}>{result.days}</p>
                   <p className="text-xs sm:text-sm text-heading-accent">Days</p>
                 </div>
-                <div className="p-3 sm:p-4 rounded-lg bg-gradient-to-br from-primary/20 to-primary/90/20 border border-orange-400/30 text-center">
+                <div className="p-3 sm:p-4 rounded-lg bg-gradient-to-br from-tertiary-accent/20 to-tertiary-accent/30 border border-tertiary-accent/30 text-center">
                   <p className={`text-xl sm:text-2xl font-bold text-foreground transition-all duration-500 ${isLiveTimer ? 'transform' : ''}`}>{result.hours}</p>
                   <p className="text-xs sm:text-sm text-foreground">Hours</p>
                 </div>
-                <div className="p-3 sm:p-4 rounded-lg bg-gradient-to-br from-pink-500/20 to-pink-600/20 border border-pink-400/30 text-center">
+                <div className="p-3 sm:p-4 rounded-lg bg-gradient-to-br from-destructive/20 to-destructive/30 border border-destructive/30 text-center">
                   <p className={`text-xl sm:text-2xl font-bold text-foreground transition-all duration-500 ${isLiveTimer ? 'transform' : ''}`}>{result.minutes}</p>
                   <p className="text-xs sm:text-sm text-foreground">Minutes</p>
                 </div>
-                <div className="p-3 sm:p-4 rounded-lg bg-gradient-to-br from-cyan-500/20 to-cyan-600/20 border border-cyan-400/30 text-center">
+                <div className="p-3 sm:p-4 rounded-lg bg-gradient-to-br from-primary/20 to-primary/30 border border-primary/30 text-center">
                   <p className={`text-xl sm:text-2xl font-bold text-foreground transition-all duration-500 ${isLiveTimer ? 'transform' : ''}`}>{result.seconds}</p>
                   <p className="text-xs sm:text-sm text-foreground">Seconds</p>
                 </div>
@@ -284,7 +284,7 @@ export function AnniversaryCalculator() {
                 </Button>
                 <Button
                   onClick={shareResult}
-                  className="flex-1 h-10 sm:h-11 text-sm font-medium bg-gradient-to-r from-pink-500 to-red-500 hover:from-pink-600 hover:to-red-600 text-white shadow-lg hover:shadow-xl transition-all duration-300"
+                  className="flex-1 h-10 sm:h-11 text-sm font-medium bg-gradient-to-r from-destructive to-primary hover:from-destructive/90 hover:to-primary/90 text-white shadow-lg hover:shadow-xl transition-all duration-300"
                 >
                   <span className="hidden sm:inline">Share Result</span>
                   <span className="sm:hidden">Share</span>

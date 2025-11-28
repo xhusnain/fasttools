@@ -513,7 +513,7 @@ Working Days: ${result.adjustedWorkingDays} days/year`
                       <span className="font-medium text-foreground text-xs sm:text-sm break-words">{industry.industry}</span>
                       <p className="text-xs text-foreground break-words">Average: ${industry.averageSalary.toLocaleString()}</p>
                     </div>
-                    <Badge className={industry.difference > 0 ? "bg-green-500/20 text-heading-accent border-green-500" : "bg-red-500/20 text-foreground border-red-500"} variant="outline">
+                    <Badge className={industry.difference > 0 ? "bg-secondary-accent/20 text-heading-accent border-secondary-accent" : "bg-destructive/20 text-foreground border-destructive"} variant="outline">
                       {industry.difference > 0 ? "+" : ""}${industry.difference.toLocaleString()}
                     </Badge>
                   </div>
