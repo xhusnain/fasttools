@@ -142,7 +142,7 @@ Split ${numPeople} ways: $${result.perPerson} per person`
                 Calculate Tip
               </>
             )}
-          </Button>
+          </GButton>
           <GButton
             onClick={() => {
               setBillAmount("")
