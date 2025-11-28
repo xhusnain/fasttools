@@ -42,20 +42,30 @@ import {
 } from "lucide-react"
 
 export const metadata: Metadata = {
-  title: "Free Online Tools Store | Digital Tools, AI & Calculators",
+  title: "FastTools - Free Online Tools & Productivity Platform",
   description:
-    "Free online tools for everyday tasks: calculators, converters, SEO tools, AI generators, PDF and image utilities, and more. Fast, accurate, no registration required.",
-  // Keep metadata focused and avoid keyword stuffing that can look spammy or low quality
-  keywords: [
-    "free online tools",
-    "online calculators",
-    "converter tools",
-    "AI tools",
-    "SEO tools",
-    "image tools",
-    "PDF tools",
-    "developer tools",
-  ],
+    "FastTools is your ultimate productivity platform offering 1000+ free online tools. Access AI generators, calculators, converters, and SEO tools instantly. No registration required.",
+  applicationName: "FastTools",
+  authors: [{ name: "FastTools Team", url: "https://www.fasttools.store" }],
+  generator: "Next.js",
+  referrer: "origin-when-cross-origin",
+  creator: "FastTools",
+  publisher: "FastTools",
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+    },
+  },
+  alternates: {
+    canonical: "https://www.fasttools.store",
+  },
+  category: "productivity",
   openGraph: {
     title: "FastTools | Free Online Tools, Calculators & Generators",
     description:
@@ -69,7 +79,7 @@ export const metadata: Metadata = {
 const categories = [
   {
     id: "calculators",
-    name: "Professional Calculators",
+    name: "Free Online Calculators & Finance Tools",
     description: "Accurate calculators for finance, health, and more",
     icon: Calculator,
     href: "/calculator",
@@ -211,7 +221,7 @@ const categories = [
   },
   {
     id: "ai-tools",
-    name: "AI-Powered Tools",
+    name: "Free AI Tools & Content Generators",
     description: "Intelligent tools powered by artificial intelligence",
     icon: Sparkles,
     href: "/ai-tools",
@@ -257,7 +267,7 @@ const categories = [
   },
   {
     id: "converters",
-    name: "Smart Converters",
+    name: "Online Unit & Currency Converters",
     description: "Convert between units, formats, and currencies instantly",
     icon: Wrench,
     href: "/converters",
@@ -319,7 +329,7 @@ const categories = [
   },
   {
     id: "dev-tools",
-    name: "Developer Tools",
+    name: "Web Developer Tools & Utilities",
     description: "Professional tools for developers and designers",
     icon: Code,
     href: "/dev-tools",
@@ -397,7 +407,7 @@ const categories = [
   },
   {
     id: "image-tools",
-    name: "Image Tools",
+    name: "Free Image Editing & OCR Tools",
     description: "Professional image editing powered by AI",
     icon: Image,
     href: "/image-tools",
@@ -435,7 +445,7 @@ const categories = [
   },
   {
     id: "pdf-tools",
-    name: "PDF Tools",
+    name: "Online PDF Converters & Editors",
     description: "Complete PDF management solution",
     icon: FileText,
     href: "/pdf-tools",
@@ -489,7 +499,7 @@ const categories = [
   },
   {
     id: "seo-tools",
-    name: "SEO Tools",
+    name: "Free SEO Analysis & Optimization Tools",
     description: "Optimize content for search engines",
     icon: Search,
     href: "/seo-tools",
@@ -543,7 +553,7 @@ const categories = [
   },
   {
     id: "social-media",
-    name: "Social Media Tools",
+    name: "Social Media Downloaders & Tools",
     description: "Powerful social media management tools",
     icon: Globe,
     href: "/social-media-tools",
@@ -629,7 +639,7 @@ const categories = [
   },
   {
     id: "finance-tools",
-    name: "Finance Tools",
+    name: "Business & Finance Calculators",
     description: "Business-ready calculators for payments, savings, and planning",
     icon: DollarSign,
     href: "/finance-tools",
@@ -675,7 +685,7 @@ const categories = [
   },
   {
     id: "fun-tools",
-    name: "Fun Tools",
+    name: "Fun & Entertainment Calculators",
     description: "Entertaining tools for celebrations and social content",
     icon: Smile,
     href: "/fun-tools",
@@ -774,169 +784,6 @@ export default function Home() {
     description: "FastTools is a free online tools store offering 1000+ digital tools including AI generators, calculators, converters, SEO tools, image tools, developer tools, and productivity utilities. Fast, accurate, easy to use digital tools with no registration required. Access tools store online for instant results.",
     url: "https://www.fasttools.store",
     image: "https://www.fasttools.store/banner.png",
-    keywords: [
-      "fasttools",
-      "fast tools",
-      "free online tools",
-      "free fast tools",
-      "online tools platform",
-      "web tools",
-      "productivity tools",
-      "AI tools",
-      "meme generator",
-      "caption generator",
-      "currency converter",
-      "text case converter",
-      "unit converter",
-      "online calculator",
-      "free calculator",
-      "calculator tools",
-      "free seo tools",
-      "meta tag generator",
-      "keyword density checker",
-      "image tools",
-      "image to text",
-      "finance tools",
-      "budget calculator",
-      "loan calculator",
-      "social media tools",
-      "tiktok downloader",
-      "youtube tools",
-      "developer tools",
-      "JWT decoder",
-      "regex tester",
-      "date tools",
-      "time tools",
-      "age calculator",
-      "fun tools",
-      "love calculator",
-      "birthday countdown",
-      "age calculator",
-      "BMI calculator",
-      "loan EMI calculator",
-      "mortgage calculator",
-      "compound interest calculator",
-      "tax calculator",
-      "retirement calculator",
-      "retirement planner",
-      "retirement planner vs financial planner",
-      "retirement planner vs financial advisor",
-      "new retirement planner vs maxifi planner",
-      "maxifi planner vs new retirement",
-      "investment calculator",
-      "calorie calculator",
-      "percentage calculator",
-      "AI meme generator",
-      "AI caption generator",
-      "AI lyrics generator",
-      "AI hashtag generator",
-      "AI pet name generator",
-      "meta tag generator",
-      "keyword density checker",
-      "blog title generator",
-      "lorem ipsum generator",
-      "QR code generator",
-      "PDF tools",
-      "color picker",
-      "word counter",
-      "character counter",
-      "random number generator",
-      "free color palettes",
-      "color palette library",
-      "invoice generator",
-      "online tools free",
-      "web based tools",
-      "browser tools",
-      "instant tools",
-      "no download tools",
-      "digital tools",
-      "web applications",
-      "online utilities",
-      "free web apps",
-      "browser utilities",
-      "online software",
-      "web services",
-      "digital utilities",
-      "online generators",
-      "web calculators",
-      "online converters",
-      "free generators",
-      "web formatters",
-      "online validators",
-      "web analyzers",
-      "digital converters",
-      "online processors",
-      "web editors",
-      "online formatters",
-      "digital calculators",
-      "web validators",
-      "online analyzers",
-      "free web tools",
-      "instant web tools",
-      "no registration tools",
-      "privacy focused tools",
-      "secure online tools",
-      "fast web tools",
-      "reliable online tools",
-      "professional web tools",
-      "business web tools",
-      "marketing tools online",
-      "content creation tools",
-      "productivity web tools",
-      "efficiency tools",
-      "workflow tools",
-      "automation tools",
-      "digital productivity",
-      "online efficiency",
-      "web productivity",
-      "digital workflow",
-      "online automation",
-      "web efficiency",
-      "digital solutions",
-      "online solutions",
-      "web solutions",
-      "digital services",
-      "online services",
-      "web services free",
-      "digital platform",
-      "online platform",
-      "web platform",
-      "tool platform",
-      "utility platform",
-      "conversion platform",
-      "calculation platform",
-      "generation platform",
-      "processing platform",
-      "analysis platform",
-      "optimization platform",
-      "automation platform",
-      "productivity platform",
-      "efficiency platform",
-      "workflow platform",
-      "digital toolkit",
-      "online toolkit",
-      "web toolkit",
-      "professional toolkit",
-      "business toolkit",
-      "marketing toolkit",
-      "content toolkit",
-      "development toolkit",
-      "design toolkit",
-      "finance toolkit",
-      "social media toolkit",
-      "SEO toolkit",
-      "analytics toolkit",
-      "conversion toolkit",
-      "automation toolkit",
-      "productivity toolkit",
-      "efficiency toolkit",
-      "workflow toolkit",
-      "digital resources",
-      "online resources",
-      "web resources",
-      "free resources",
-      "digital assets",
-    ],
     author: {
       "@type": "Organization",
       name: "FastTools",
@@ -1246,6 +1093,9 @@ export default function Home() {
               </div>
 
               <h1 className="text-4xl sm:text-5xl md:text-7xl lg:text-8xl font-black text-foreground leading-[1.1] tracking-tight px-2">
+                <span className="block text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-muted-foreground mb-2 sm:mb-4 tracking-normal">
+                  FastTools: 1000+ Free Online Tools
+                </span>
                 <span className="block">
                   Build faster with
                 </span>
@@ -1255,8 +1105,9 @@ export default function Home() {
               </h1>
 
               <p className="text-base sm:text-lg md:text-xl text-muted-foreground font-medium max-w-3xl mx-auto leading-relaxed px-4">
-                A complete suite of professional utilities designed for performance and privacy.
-                Process data locally in your browser with enterprise-grade security.
+                Welcome to <strong className="text-foreground">FastTools</strong>, the premier <strong className="text-foreground">online tools platform</strong> designed for efficiency.
+                Explore our massive collection of <strong className="text-foreground">web tools</strong> including <strong className="text-foreground">productivity tools</strong>, developer utilities, and AI generators.
+                Experience the power of a complete digital toolkit that processes data locally for maximum security and speed.
               </p>
             </div>
 
@@ -1410,61 +1261,66 @@ export default function Home() {
             {[
               {
                 number: "01",
-                question: "Do I need to create an account to use FastTools?",
-                answer: "No! All tools are completely free and require no registration. Simply visit any tool and start using it immediately. Your privacy is our priority, and we never require personal information."
+                question: "What AI tools are available for free content generation?",
+                answer: "Our free AI tools include AI caption generator for social media posts, AI meme generator for viral content, AI hashtag suggester for better reach, AI song lyrics generator for creative writing, and AI pet name generator for naming pets. All tools use advanced AI technology to generate high-quality, relevant content instantly without any cost."
               },
               {
                 number: "02",
-                question: "Are the tools really 100% free forever?",
-                answer: "Yes, absolutely! All 1000+ tools are completely free with no hidden costs, no trial periods, and no premium tiers. We believe powerful tools should be accessible to everyone without barriers."
+                question: "How accurate are the currency exchange rates in your converter?",
+                answer: "Our currency converter provides real-time exchange rates updated every minute from reliable financial data sources. We support 160+ currencies including USD, EUR, GBP, JPY, and more. The rates are accurate for travel, business, and investment purposes, with historical data and trend analysis available for informed decision-making."
               },
               {
                 number: "03",
-                question: "Is my data safe when using FastTools?",
-                answer: "Completely safe! All processing happens locally in your browser. Your files and data never leave your device or get uploaded to our servers. We don't track, store, or share any of your information."
+                question: "What financial calculators can help with loan and investment planning?",
+                answer: "We offer comprehensive financial calculators including loan calculator for mortgage planning, EMI calculator for monthly payments, investment calculator for returns analysis, retirement calculator for long-term planning, compound interest calculator for savings growth, and tax calculator for income tax estimation. All calculators use professional-grade formulas compatible with BA II Plus and HP 12CP financial calculators."
               },
               {
                 number: "04",
-                question: "Can I use FastTools on mobile devices?",
-                answer: "Yes! All tools are fully responsive and work seamlessly on smartphones, tablets, laptops, and desktop computers. Access FastTools from any device with a modern web browser."
+                question: "How can SEO tools improve my website's search engine rankings?",
+                answer: "Our SEO tools help optimize your website with meta tag generator for better search snippets, keyword density checker for content optimization, hashtag generator for social media reach, and blog title generator for click-worthy headlines. These tools analyze your content, suggest improvements, and help you rank higher in Google search results for better organic traffic."
               },
               {
                 number: "05",
-                question: "How fast are the tools?",
-                answer: "Lightning fast! Most tools load and process in under 0.1 seconds. We've optimized every tool for maximum performance and minimal loading times, ensuring you get instant results."
+                question: "What image processing tools are available for free?",
+                answer: "Our image tools include image cropper for resizing and cropping photos, image converter for format conversion, image to text OCR for extracting text from images, background blur for photo editing, and QR code generator for creating QR codes. All tools work in your browser without uploading files, ensuring complete privacy and security."
               },
               {
                 number: "06",
-                question: "What types of tools does FastTools offer?",
-                answer: "We offer 1000+ tools across multiple categories: AI generators (QR codes, lyrics, captions), calculators (BMI, loan, mortgage), converters (currency, text, units), dev tools, image editors, PDF tools, SEO tools, and social media tools."
+                question: "What developer tools can help with coding and web development?",
+                answer: "Our developer tools include HTML beautifier for code formatting, JSON formatter for data validation, regex tester for pattern matching, JWT decoder for token analysis, base64 encoder/decoder for data encoding, and 1000+ free color palettes with HEX codes for design. These tools help developers write better code, debug more effectively, and streamline their development workflow."
               },
               {
                 number: "07",
-                question: "How to use tool app",
-                answer: "A tool app helps you perform a specific digital task such as editing, generating, or managing files. To use a tool app effectively, start by identifying what problem it solves — for example, resizing images, converting files, or generating content. On FastTools, no account is required — simply visit the tool you need, follow the intuitive interface, and start working immediately. All tools provide instant results with export, save, and sharing options so your output can be used across other platforms."
+                question: "Is my data safe when using these online tools?",
+                answer: "Yes, your data is completely safe. All our tools process data locally in your browser without uploading files to our servers. We use privacy-first architecture where sensitive information like documents, images, and personal data never leaves your device. No registration required, no data collection, and no tracking - just pure, secure tool functionality."
               },
               {
                 number: "08",
-                question: "How to use digital tools",
-                answer: "Digital tools are online applications designed to make your work faster and more efficient. Begin by choosing a reliable tool that matches your goal — such as design, writing, analytics, or automation. On FastTools, you can access 1000+ digital tools without registration. Learn each tool's interface through our simple, user-friendly design, and integrate them into your daily workflow. All our tools work directly in your browser and process data locally, helping you stay organized and productive wherever you work."
+                question: "What categories of tools are available on FastTools?",
+                answer: "We offer 10+ categories including AI Tools for content generation, Calculators for financial planning, Converters for data transformation, SEO Tools for website optimization, Image Tools for photo editing, Developer Tools for coding, Finance Tools for business calculations, Social Media Tools for marketing, and Fun Tools for entertainment. Each category contains 15-50+ specialized tools for different use cases."
               },
               {
                 number: "09",
-                question: "What are the most used digital tools",
-                answer: "The most used digital tools on FastTools include AI generators for content creation (caption generator, lyrics generator, hashtag generator), currency and unit converters for data transformation, financial calculators (loan, mortgage, investment, tax calculators), SEO tools (meta tag generator, keyword density checker), image processing tools (background remover, image converter, OCR), and developer tools (HTML beautifier, JSON formatter, JWT decoder). FastTools offers 1000+ free tools that simplify complex tasks and improve efficiency across all fields — all accessible instantly without registration."
+                question: "Can businesses use these tools for professional purposes?",
+                answer: "Absolutely! Our tools are designed for professional use with business-grade accuracy and reliability. Many businesses use our financial calculators for loan analysis, currency converter for international trade, SEO tools for digital marketing, AI tools for content creation, and developer tools for web development. All tools are free for commercial use with no restrictions or watermarks."
               },
               {
                 number: "10",
-                question: "How to organize or store your digital tools",
-                answer: "To organize your digital tools, start by categorizing them — for example: design, writing, analytics, and automation. FastTools makes this easy with clear categories like AI Tools, Calculators, Converters, SEO Tools, Image Tools, Developer Tools, and more. Bookmark your favorite FastTools pages in your browser for quick access. Since all tools work directly in your browser without requiring accounts or installations, you can access them instantly from any device. Regularly explore our tool directory to discover new tools that can streamline your workflow and keep your digital toolkit efficient and up-to-date."
+                question: "Do these tools work on mobile devices and tablets?",
+                answer: "Yes, all our tools are mobile-optimized and work perfectly on smartphones, tablets, and desktop computers. Our responsive design ensures optimal performance across all devices with touch-friendly interfaces, fast loading times, and offline functionality for many tools. Access your favorite tools anywhere, anytime without any app downloads or installations."
               },
             ].map((faq, i) => (
               <div
                 key={i}
-                className="bg-card backdrop-blur-sm rounded-2xl border-2 border-heading-accent-border hover:border-heading-accent-border-hover transition-all overflow-hidden p-4 sm:p-5 md:p-8"
+                className="group relative bg-card/50 backdrop-blur-md rounded-2xl border border-border/50 hover:border-primary/50 transition-all duration-300 hover:shadow-lg hover:shadow-primary/5 overflow-hidden p-6 sm:p-8"
               >
-                <h3 className="text-sm sm:text-base md:text-lg lg:text-xl font-bold text-heading-accent leading-tight mb-2 sm:mb-3 md:mb-4">{faq.question}</h3>
-                <p className="text-xs sm:text-sm md:text-base text-muted-foreground leading-relaxed">{faq.answer}</p>
+                <div className="absolute -top-4 -right-4 opacity-[0.03] group-hover:opacity-[0.08] transition-opacity select-none">
+                  <span className="text-9xl font-black text-primary">{faq.number}</span>
+                </div>
+                <div className="relative z-10">
+                  <h3 className="text-lg sm:text-xl font-bold text-foreground mb-3 pr-4">{faq.question}</h3>
+                  <p className="text-sm sm:text-base text-muted-foreground leading-relaxed">{faq.answer}</p>
+                </div>
               </div>
             ))}
           </div>
