@@ -16,7 +16,17 @@ export const metadata = {
     description: "FastTools provides 1000+ free online tools: YouTube downloader, PDF tools (compress, convert, sign, merge), image tools (background remover, blur, OCR), calculators (BMI, loan, tax), AI generators, social media tools, SEO tools, converters, and developer utilities. 100% free, no registration, works on all devices.",
     path: "/",
   }),
-  manifest: "/manifest.json"
+  manifest: "/manifest.json",
+  icons: {
+    icon: [
+      { url: '/favicon.ico' },
+      { url: '/favicon.svg', type: 'image/svg+xml' },
+      { url: '/favicon-96x96.png', type: 'image/png', sizes: '96x96' }
+    ],
+    apple: [
+      { url: '/apple-touch-icon.png', sizes: '180x180', type: 'image/png' }
+    ]
+  }
 }
 
 export default function RootLayout({
