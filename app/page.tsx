@@ -1054,11 +1054,14 @@ export default function Home() {
         {/* Hero Background Image */}
         <PremiumHeroBackground />
 
-        <div className="container mx-auto max-w-6xl relative z-10 py-12 sm:py-16 md:py-20">
-          <div className="text-center space-y-8 sm:space-y-10">
+        <div className="container mx-auto max-w-7xl relative z-10 py-8 sm:py-12 lg:py-16 grid lg:grid-cols-2 gap-8 lg:gap-12 items-center">
+          {/* Left Column - Spacer for Hexagon */}
+          <div className="hidden lg:block" />
+
+          <div className="text-center lg:text-left space-y-6 sm:space-y-8">
             {/* Main Heading - Professional & Trustworthy */}
-            <div className="space-y-6 sm:space-y-8">
-              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/10 border border-primary/20 text-primary text-xs sm:text-sm font-medium mb-4">
+            <div className="space-y-4 sm:space-y-6">
+              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/10 border border-primary/20 text-primary text-xs sm:text-sm font-medium mb-2 mx-auto lg:mx-0">
                 <span className="relative flex h-2 w-2">
                   <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary opacity-75"></span>
                   <span className="relative inline-flex rounded-full h-2 w-2 bg-primary"></span>
@@ -1066,8 +1069,8 @@ export default function Home() {
                 Professional Grade Tools
               </div>
 
-              <h1 className="text-4xl sm:text-5xl md:text-7xl lg:text-8xl font-black text-foreground leading-[1.1] tracking-tight px-2">
-                <span className="block text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-muted-foreground mb-2 sm:mb-4 tracking-normal">
+              <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-black text-foreground leading-[1.1] tracking-tight px-2 lg:px-0">
+                <span className="block text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold text-muted-foreground mb-2 tracking-normal">
                   FastTools: 1000+ Free Online Tools
                 </span>
                 <span className="block">
@@ -1078,7 +1081,7 @@ export default function Home() {
                 </span>
               </h1>
 
-              <p className="text-base sm:text-lg md:text-xl text-muted-foreground font-medium max-w-3xl mx-auto leading-relaxed px-4">
+              <p className="text-base sm:text-lg md:text-xl text-muted-foreground font-medium max-w-3xl mx-auto lg:mx-0 leading-relaxed px-4 lg:px-0">
                 Welcome to <strong className="text-foreground">FastTools</strong>, the premier <strong className="text-foreground">online tools platform</strong> designed for efficiency.
                 Explore our massive collection of <strong className="text-foreground">web tools</strong> including <strong className="text-foreground">productivity tools</strong>, developer utilities, and AI generators.
                 Experience the power of a complete digital toolkit that processes data locally for maximum security and speed.
