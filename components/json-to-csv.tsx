@@ -1,7 +1,7 @@
 "use client"
 
 import { useState } from "react"
-import { Button } from "@/components/ui/button"
+import { GButton } from "@/components/globalcomponents/gbutton"
 import { Textarea } from "@/components/ui/textarea"
 import { Download, Copy, Check, Sparkles } from "lucide-react"
 
@@ -114,15 +114,15 @@ export function JSONToCSV() {
       <div className="space-y-2">
         <div className="flex items-center justify-between">
           <label className="text-sm font-medium text-foreground">JSON Input</label>
-          <Button 
-            variant="outline" 
-            size="sm" 
+          <GButton
+            variant="outline"
+            size="sm"
             onClick={loadSampleData}
             className="gap-1.5 text-xs"
           >
             <Sparkles className="h-3.5 w-3.5" />
             Try Sample Data
-          </Button>
+          </GButton>
         </div>
         <Textarea
           placeholder='[{"name": "John", "age": 30}, {"name": "Jane", "age": 25}]'
@@ -132,9 +132,9 @@ export function JSONToCSV() {
         />
       </div>
 
-      <Button onClick={convertToCSV} className="w-full">
+      <GButton onClick={convertToCSV} className="w-full">
         Convert to CSV
-      </Button>
+      </GButton>
 
       {error && (
         <div className="p-4 bg-destructive/10 border border-destructive/20 rounded-lg">
@@ -147,7 +147,7 @@ export function JSONToCSV() {
           <div className="flex items-center justify-between">
             <label className="text-sm font-medium text-foreground">CSV Output</label>
             <div className="flex gap-2">
-              <Button variant="outline" size="sm" onClick={copyToClipboard}>
+              <GButton variant="outline" size="sm" onClick={copyToClipboard}>
                 {copied ? (
                   <>
                     <Check className="h-4 w-4 mr-2" />
@@ -159,11 +159,11 @@ export function JSONToCSV() {
                     Copy
                   </>
                 )}
-              </Button>
-              <Button variant="outline" size="sm" onClick={downloadCSV}>
+              </GButton>
+              <GButton variant="outline" size="sm" onClick={downloadCSV}>
                 <Download className="h-4 w-4 mr-2" />
                 Download
-              </Button>
+              </GButton>
             </div>
           </div>
           <Textarea value={csv} readOnly className="min-h-48 font-mono text-sm border-2 border-green-300 focus:border-green-500" />

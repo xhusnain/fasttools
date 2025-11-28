@@ -2,10 +2,10 @@
 
 import { useState } from "react"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
-import { Button } from "@/components/ui/button"
+import { GButton } from "@/components/globalcomponents/gbutton"
 import { Label } from "@/components/ui/label"
 import { Calendar, Copy, Share2, Check, Clock, Heart, Gift, Target, Settings, Calculator, Sparkles } from "lucide-react"
-import { LoadingSpinner } from "@/components/loading-spinner"
+
 
 interface AgeResult {
   years: number
@@ -151,11 +151,11 @@ Next Birthday: ${result.nextBirthday}`
             </div>
             <div className="text-center">
               <div className="font-bold text-lg text-foreground">
-                {new Date().toLocaleDateString('en-US', { 
-                  weekday: 'long', 
-                  year: 'numeric', 
-                  month: 'long', 
-                  day: 'numeric' 
+                {new Date().toLocaleDateString('en-US', {
+                  weekday: 'long',
+                  year: 'numeric',
+                  month: 'long',
+                  day: 'numeric'
                 })}
               </div>
               <div className="text-sm text-muted-foreground">
@@ -212,14 +212,14 @@ Next Birthday: ${result.nextBirthday}`
             </div>
           </div>
 
-          <Button
+          <GButton
             onClick={calculateAge}
             className="w-full h-12 sm:h-14 text-base sm:text-lg font-semibold shadow-lg hover:shadow-xl transition-all duration-300 bg-gradient-to-r from-primary to-primary/90 hover:from-primary/90 hover:to-primary"
             disabled={!birthDate || isCalculating}
+            isLoading={isCalculating}
           >
             {isCalculating ? (
               <>
-                <LoadingSpinner size="sm" className="mr-2 sm:mr-3" />
                 <span className="hidden sm:inline">Calculating Age...</span>
                 <span className="sm:hidden">Calculating...</span>
               </>
@@ -230,7 +230,7 @@ Next Birthday: ${result.nextBirthday}`
                 <span className="sm:hidden">Calculate</span>
               </>
             )}
-          </Button>
+          </GButton>
         </CardContent>
       </Card>
 
@@ -244,7 +244,7 @@ Next Birthday: ${result.nextBirthday}`
               Your Age Results
             </CardTitle>
             <CardDescription className="text-base">
-              Born on: {new Date(birthDate).toLocaleDateString()} | 
+              Born on: {new Date(birthDate).toLocaleDateString()} |
               Age on: {targetDate ? new Date(targetDate).toLocaleDateString() : 'Today'}
             </CardDescription>
           </CardHeader>
@@ -358,20 +358,20 @@ Next Birthday: ${result.nextBirthday}`
                   readOnly
                   className="flex-1 px-3 sm:px-4 py-2 sm:py-3 text-xs sm:text-sm border-2 border-border rounded-lg bg-background text-foreground"
                 />
-                <Button
+                <GButton
                   onClick={copyLink}
                   variant="outline"
                   size="sm"
                   className="h-10 sm:h-12 px-3 sm:px-4 border-2 border-border"
                 >
                   {copied ? <Check className="h-4 w-4" /> : <Copy className="h-4 w-4" />}
-                </Button>
+                </GButton>
               </div>
             </div>
 
             {/* Action Buttons */}
             <div className="flex flex-col sm:flex-row gap-2 sm:gap-3">
-              <Button
+              <GButton
                 onClick={copyResult}
                 variant="outline"
                 className="flex-1 h-10 sm:h-12 text-sm sm:text-base font-semibold transition-all duration-300 border-2 border-border"
@@ -389,8 +389,8 @@ Next Birthday: ${result.nextBirthday}`
                     <span className="sm:hidden">Copy Result</span>
                   </>
                 )}
-              </Button>
-              <Button
+              </GButton>
+              <GButton
                 onClick={shareResult}
                 variant="outline"
                 className="flex-1 h-10 sm:h-12 text-sm sm:text-base font-semibold transition-all duration-300 border-2 border-border"
@@ -398,7 +398,7 @@ Next Birthday: ${result.nextBirthday}`
                 <Share2 className="mr-2 sm:mr-3 h-4 w-4 sm:h-5 sm:w-5" />
                 <span className="hidden sm:inline">Share Results</span>
                 <span className="sm:hidden">Share</span>
-              </Button>
+              </GButton>
             </div>
           </CardContent>
         </Card>

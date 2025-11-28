@@ -1,18 +1,18 @@
 "use client"
 
 import { useState, useCallback, useEffect } from "react"
-import { Button } from "@/components/ui/button"
+import { GButton } from "@/components/globalcomponents/gbutton"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
 import { Badge } from "@/components/ui/badge"
-import { 
-  Calculator, 
-  Plus, 
-  Minus, 
-  X, 
-  Divide, 
+import {
+  Calculator,
+  Plus,
+  Minus,
+  X,
+  Divide,
   Copy,
   RotateCcw,
   AlertCircle,
@@ -59,7 +59,7 @@ export default function FractionCalculator() {
   // Helper function to simplify fraction
   const simplifyFraction = (numerator: number, denominator: number): Fraction => {
     if (denominator === 0) return { numerator: 0, denominator: 1 }
-    
+
     const divisor = gcd(Math.abs(numerator), Math.abs(denominator))
     return {
       numerator: numerator / divisor,
@@ -70,10 +70,10 @@ export default function FractionCalculator() {
   // Helper function to convert to mixed number
   const toMixedNumber = (numerator: number, denominator: number): string => {
     if (denominator === 0) return "Undefined"
-    
+
     const whole = Math.floor(numerator / denominator)
     const remainder = numerator % denominator
-    
+
     if (whole === 0) {
       return `${numerator}/${denominator}`
     } else if (remainder === 0) {
@@ -172,7 +172,7 @@ export default function FractionCalculator() {
       }
 
       setResult(newResult)
-      
+
       // Add to history
       setHistory(prev => [newResult, ...prev.slice(0, 9)])
     } catch (error) {
@@ -204,7 +204,7 @@ Result: ${result.result.numerator}/${result.result.denominator}
 Decimal: ${result.decimal}
 Percentage: ${result.percentage}%
 Mixed Number: ${result.mixedNumber}`
-      
+
       navigator.clipboard.writeText(resultText)
     }
   }
@@ -291,9 +291,9 @@ Mixed Number: ${result.mixedNumber}`
           {/* Fraction Inputs */}
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
             {/* First Fraction */}
-              <div className="space-y-3">
+            <div className="space-y-3">
               <Label className="text-sm font-semibold text-heading-accent">First Fraction</Label>
-                <div className="space-y-2">
+              <div className="space-y-2">
                 <div className="space-y-1">
                   <Label htmlFor="numerator1" className="text-[10px] text-muted-foreground">Numerator</Label>
                   <Input
@@ -323,9 +323,9 @@ Mixed Number: ${result.mixedNumber}`
             </div>
 
             {/* Second Fraction */}
-              <div className="space-y-3">
+            <div className="space-y-3">
               <Label className="text-sm font-semibold text-heading-accent">Second Fraction</Label>
-                <div className="space-y-2">
+              <div className="space-y-2">
                 <div className="space-y-1">
                   <Label htmlFor="numerator2" className="text-[10px] text-muted-foreground">Numerator</Label>
                   <Input
@@ -357,22 +357,22 @@ Mixed Number: ${result.mixedNumber}`
 
           {/* Action Buttons */}
           <div className="flex flex-col sm:flex-row gap-2">
-            <Button 
-              onClick={calculateFraction} 
+            <GButton
+              onClick={calculateFraction}
               className="flex-1 h-9 text-xs font-medium bg-gradient-to-r from-primary to-primary/90 hover:from-primary/90 hover:to-primary text-primary-foreground"
             >
               <Calculator className="h-3 w-3 mr-1" />
               Calculate
-            </Button>
-            <Button variant="outline" onClick={resetCalculator} className="h-9 text-xs border-border bg-card text-foreground hover:bg-secondary">
+            </GButton>
+            <GButton variant="outline" onClick={resetCalculator} className="h-9 text-xs border-border bg-card text-foreground hover:bg-secondary">
               <RotateCcw className="h-3 w-3 mr-1" />
               Clear
-            </Button>
+            </GButton>
             {result && (
-              <Button variant="outline" onClick={copyResult} className="h-9 text-xs border-border bg-card text-foreground hover:bg-secondary">
+              <GButton variant="outline" onClick={copyResult} className="h-9 text-xs border-border bg-card text-foreground hover:bg-secondary">
                 <Copy className="h-3 w-3 mr-1" />
                 Copy
-              </Button>
+              </GButton>
             )}
           </div>
         </CardContent>
@@ -468,7 +468,7 @@ Mixed Number: ${result.mixedNumber}`
                       = {calc.result.numerator}/{calc.result.denominator} ({formatNumber(calc.decimal)})
                     </div>
                   </div>
-                  <Button
+                  <GButton
                     variant="ghost"
                     size="sm"
                     onClick={() => {
@@ -478,7 +478,7 @@ Mixed Number: ${result.mixedNumber}`
                     className="h-7 w-7 p-0 text-muted-foreground hover:text-heading-accent hover:bg-secondary"
                   >
                     <Copy className="h-3 w-3" />
-                  </Button>
+                  </GButton>
                 </div>
               ))}
             </div>

@@ -1,54 +1,54 @@
 "use client"
 
 import { useState, useEffect } from "react"
-import { Button } from "@/components/ui/button"
+import { GButton } from "@/components/globalcomponents/gbutton"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
 import { Badge } from "@/components/ui/badge"
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
-import { 
-  Calculator, 
-  DollarSign, 
-  Percent, 
-  Calendar, 
-  TrendingUp, 
-  TrendingDown, 
-  Info, 
-  AlertCircle, 
-  CheckCircle, 
-  Copy, 
-  Download, 
-  History, 
-  Star, 
-  Globe, 
-  Shield, 
-  FileText, 
-  BarChart3, 
-  PieChart, 
-  Target, 
-  Zap, 
-  Clock, 
-  Users, 
-  Home, 
-  Car, 
-  ShoppingBag, 
-  CreditCard, 
-  Banknote, 
-  Coins, 
-  Wallet, 
-  Briefcase, 
-  Store, 
-  Truck, 
-  Package, 
-  Tag, 
-  ShoppingCart, 
-  HandHeart, 
-  Gift, 
-  Award, 
-  Trophy, 
-  TrendingUp as TrendingUpIcon, 
+import {
+  Calculator,
+  DollarSign,
+  Percent,
+  Calendar,
+  TrendingUp,
+  TrendingDown,
+  Info,
+  AlertCircle,
+  CheckCircle,
+  Copy,
+  Download,
+  History,
+  Star,
+  Globe,
+  Shield,
+  FileText,
+  BarChart3,
+  PieChart,
+  Target,
+  Zap,
+  Clock,
+  Users,
+  Home,
+  Car,
+  ShoppingBag,
+  CreditCard,
+  Banknote,
+  Coins,
+  Wallet,
+  Briefcase,
+  Store,
+  Truck,
+  Package,
+  Tag,
+  ShoppingCart,
+  HandHeart,
+  Gift,
+  Award,
+  Trophy,
+  TrendingUp as TrendingUpIcon,
   TrendingDown as TrendingDownIcon,
   Stethoscope,
   Brain,
@@ -156,9 +156,9 @@ export default function InvestmentCalculator() {
       const periods = length
       const compoundPeriods = getCompoundPeriods(compoundFrequency)
       const effectiveRate = Math.pow(1 + annualRate / compoundPeriods, compoundPeriods) - 1
-      
+
       let futureValue = starting * Math.pow(1 + effectiveRate, periods)
-      
+
       if (additional > 0) {
         const contributionFactor = contributionTiming === "beginning" ? (1 + effectiveRate) : 1
         if (effectiveRate === 0) {
@@ -194,53 +194,53 @@ export default function InvestmentCalculator() {
       const targetAmount = end
       const periods = length
       const compoundPeriods = getCompoundPeriods(compoundFrequency)
-      
+
       let rateGuess = 0.05 // Start with 5%
       let tolerance = 0.0001
       let maxIterations = 50
       let iteration = 0
-      
+
       while (iteration < maxIterations) {
         const f = (r: number) => {
           const effectiveRate = Math.pow(1 + r / compoundPeriods, compoundPeriods) - 1
           let futureValue = starting * Math.pow(1 + effectiveRate, periods)
-          
+
           if (additional > 0) {
             const contributionFactor = contributionTiming === "beginning" ? (1 + effectiveRate) : 1
             const annuityFactor = ((Math.pow(1 + effectiveRate, periods) - 1) / effectiveRate) * contributionFactor
             futureValue += additional * annuityFactor
           }
-          
+
           return futureValue - targetAmount
         }
-        
+
         const fPrime = (r: number) => {
           const effectiveRate = Math.pow(1 + r / compoundPeriods, compoundPeriods) - 1
           let derivative = starting * periods * Math.pow(1 + effectiveRate, periods - 1) * (1 / compoundPeriods) * Math.pow(1 + r / compoundPeriods, compoundPeriods - 1)
-          
+
           if (additional > 0) {
             const contributionFactor = contributionTiming === "beginning" ? (1 + effectiveRate) : 1
             const annuityDerivative = ((periods * Math.pow(1 + effectiveRate, periods - 1) * (1 / compoundPeriods) * Math.pow(1 + r / compoundPeriods, compoundPeriods - 1) * periods - (Math.pow(1 + effectiveRate, periods) - 1) * (1 / compoundPeriods) * Math.pow(1 + r / compoundPeriods, compoundPeriods - 1)) / (effectiveRate * effectiveRate)) * contributionFactor
             derivative += additional * annuityDerivative
           }
-          
+
           return derivative
         }
-        
+
         const fValue = f(rateGuess)
         const fPrimeValue = fPrime(rateGuess)
-        
+
         if (Math.abs(fValue) < tolerance) break
-        
+
         if (fPrimeValue === 0) break
-        
+
         const newRateGuess = rateGuess - fValue / fPrimeValue
-        
+
         // Bounds checking to prevent extreme values
         if (newRateGuess < 0 || newRateGuess > 2) {
           break
         }
-        
+
         rateGuess = newRateGuess
         iteration++
       }
@@ -248,9 +248,9 @@ export default function InvestmentCalculator() {
       const finalRate = Math.min(Math.max(rateGuess * 100, 0), 200) // Cap between 0% and 200%
       const annualRate = finalRate / 100
       const effectiveRate = Math.pow(1 + annualRate / compoundPeriods, compoundPeriods) - 1
-      
+
       let futureValue = starting * Math.pow(1 + effectiveRate, periods)
-      
+
       if (additional > 0) {
         const contributionFactor = contributionTiming === "beginning" ? (1 + effectiveRate) : 1
         if (effectiveRate === 0) {
@@ -287,7 +287,7 @@ export default function InvestmentCalculator() {
       const periods = length
       const compoundPeriods = getCompoundPeriods(compoundFrequency)
       const effectiveRate = Math.pow(1 + annualRate / compoundPeriods, compoundPeriods) - 1
-      
+
       let annuityValue = 0
       if (additional > 0) {
         const contributionFactor = contributionTiming === "beginning" ? (1 + effectiveRate) : 1
@@ -298,7 +298,7 @@ export default function InvestmentCalculator() {
           annuityValue = additional * annuityFactor
         }
       }
-      
+
       const requiredStarting = (end - annuityValue) / Math.pow(1 + effectiveRate, periods)
 
       calculatedResult = {
@@ -326,10 +326,10 @@ export default function InvestmentCalculator() {
       const periods = length
       const compoundPeriods = getCompoundPeriods(compoundFrequency)
       const effectiveRate = Math.pow(1 + annualRate / compoundPeriods, compoundPeriods) - 1
-      
+
       const startingValue = starting * Math.pow(1 + effectiveRate, periods)
       const remainingAmount = end - startingValue
-      
+
       let requiredContribution = 0
       if (remainingAmount > 0) {
         const contributionFactor = contributionTiming === "beginning" ? (1 + effectiveRate) : 1
@@ -365,7 +365,7 @@ export default function InvestmentCalculator() {
       const annualRate = rate / 100
       const compoundPeriods = getCompoundPeriods(compoundFrequency)
       const effectiveRate = Math.pow(1 + annualRate / compoundPeriods, compoundPeriods) - 1
-      
+
       let periods = 0
       if (effectiveRate === 0) {
         // If no interest, just divide by contributions
@@ -423,14 +423,14 @@ export default function InvestmentCalculator() {
     const annualRate = rate / 100
     const compoundPeriods = getCompoundPeriods(frequency)
     const effectiveRate = Math.pow(1 + annualRate / compoundPeriods, compoundPeriods) - 1
-    
+
     let balance = starting
-    
+
     for (let year = 1; year <= Math.min(length, 50); year++) { // Cap at 50 years
       const deposit = additional
       const interest = balance * effectiveRate
       balance = balance + deposit + interest
-      
+
       schedule.push({
         year,
         deposit: formatNumber(starting + (additional * year)),
@@ -438,7 +438,7 @@ export default function InvestmentCalculator() {
         endingBalance: formatNumber(balance)
       })
     }
-    
+
     return schedule
   }
 
@@ -526,7 +526,7 @@ Total Interest: $${result.calculations.totalInterest.toFixed(2)}`
           {/* Calculation Type Selection */}
           <div>
             <Label className="text-heading-accent text-xs sm:text-sm mb-2 block break-words">Calculate</Label>
-            
+
             {/* Mobile Dropdown */}
             <div className="block md:hidden mb-4">
               <Select value={calculationType} onValueChange={setCalculationType}>
@@ -835,13 +835,17 @@ Total Interest: $${result.calculations.totalInterest.toFixed(2)}`
           </div>
 
           <div className="flex flex-col sm:flex-row gap-2 w-full">
-            <Button onClick={calculateInvestment} className="w-full sm:w-auto text-sm sm:text-base">
-              <Calculator className="mr-2 h-4 w-4" />
-              Calculate
-            </Button>
-            <Button variant="outline" onClick={clearAll} className="w-full sm:w-auto text-sm sm:text-base border-border bg-card text-foreground hover:bg-muted">
+            <GButton
+              onClick={calculateInvestment}
+              className="w-full h-12 sm:h-14 text-base sm:text-lg font-semibold shadow-lg hover:shadow-xl transition-all duration-300 bg-gradient-to-r from-primary to-primary/90 hover:from-primary/90 hover:to-primary text-white"
+            >
+              <Calculator className="mr-2 sm:mr-3 h-4 w-4 sm:h-5 sm:w-5" />
+              <span className="hidden sm:inline">Calculate Investment</span>
+              <span className="sm:hidden">Calculate</span>
+            </GButton>
+            <GButton variant="outline" onClick={clearAll} className="w-full sm:w-auto text-sm sm:text-base border-border bg-card text-foreground hover:bg-muted">
               Clear All
-            </Button>
+            </GButton>
           </div>
         </CardContent>
       </Card>
@@ -889,10 +893,24 @@ Total Interest: $${result.calculations.totalInterest.toFixed(2)}`
               </div>
 
               <div className="flex flex-col sm:flex-row gap-2 pt-4 w-full">
-                <Button onClick={copyResult} variant="outline" size="sm" className="w-full sm:w-auto text-sm sm:text-base border-border bg-card text-foreground hover:bg-muted">
-                  <Copy className="mr-2 h-4 w-4" />
-                  Copy Results
-                </Button>
+                <GButton
+                  onClick={copyResult}
+                  className="flex-1 h-10 sm:h-12 text-sm sm:text-base font-semibold transition-all duration-300 border border-green-700 hover:bg-secondary text-heading-accent bg-card"
+                >
+                  {copied ? (
+                    <>
+                      <Check className="mr-2 sm:mr-3 h-4 w-4 sm:h-5 sm:w-5" />
+                      <span className="hidden sm:inline">Copied!</span>
+                      <span className="sm:hidden">Copied!</span>
+                    </>
+                  ) : (
+                    <>
+                      <Copy className="mr-2 sm:mr-3 h-4 w-4 sm:h-5 sm:w-5" />
+                      <span className="hidden sm:inline">Copy Result</span>
+                      <span className="sm:hidden">Copy</span>
+                    </>
+                  )}
+                </GButton>
               </div>
             </CardContent>
           </Card>
@@ -1052,14 +1070,14 @@ Total Interest: $${result.calculations.totalInterest.toFixed(2)}`
                       {item.returnRate.toFixed(1)}% over {item.investmentLength.toFixed(0)} years
                     </div>
                   </div>
-                  <Button
+                  <GButton
                     variant="ghost"
                     size="sm"
                     onClick={() => setResult(item)}
-                    className="text-foreground hover:bg-muted hover:text-foreground border border-border w-full sm:w-auto text-xs sm:text-sm"
+                    className="text-xs sm:text-sm flex-shrink-0"
                   >
                     View Details
-                  </Button>
+                  </GButton>
                 </div>
               ))}
             </div>
@@ -1089,7 +1107,7 @@ Total Interest: $${result.calculations.totalInterest.toFixed(2)}`
               </div>
             </div>
           </div>
-          
+
           <div className="text-xs sm:text-sm text-foreground space-y-2">
             <p className="break-words">
               <strong className="text-heading-accent">Multiple Calculation Modes:</strong> Calculate end amount, return rate, starting amount, additional contributions, or investment length.

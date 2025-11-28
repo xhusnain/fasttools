@@ -1,7 +1,7 @@
 "use client"
 
 import { useState } from "react"
-import { Button } from "@/components/ui/button"
+import { GButton as Button } from "@/components/globalcomponents/gbutton"
 import { Label } from "@/components/ui/label"
 import { Input } from "@/components/ui/input"
 import { Textarea } from "@/components/ui/textarea"
@@ -33,7 +33,7 @@ export function AiLyricsGenerator() {
       // Convert "any" to empty string for optional fields
       const selectedGenre = genre === "any" ? "" : genre.trim()
       const selectedMood = mood === "any" ? "" : mood.trim()
-      
+
       // Convert duration to number, handle "standard" as null
       let selectedDuration = null
       if (duration && duration !== "standard") {
@@ -43,9 +43,9 @@ export function AiLyricsGenerator() {
       const response = await fetch("/api/ai/generate-lyrics", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ 
-          theme: theme.trim(), 
-          genre: selectedGenre, 
+        body: JSON.stringify({
+          theme: theme.trim(),
+          genre: selectedGenre,
           mood: selectedMood,
           duration: selectedDuration,
           language: language
@@ -53,11 +53,11 @@ export function AiLyricsGenerator() {
       })
 
       const data = await response.json()
-      
+
       if (!response.ok || !data.success) {
         throw new Error(data.error || "Failed to generate lyrics")
       }
-      
+
       setLyrics(data.lyrics)
     } catch (error) {
       console.error("Error generating lyrics:", error)
@@ -240,9 +240,9 @@ export function AiLyricsGenerator() {
             </div>
           )}
 
-          <Button 
-            onClick={generateLyrics} 
-            disabled={loading || !theme.trim()} 
+          <Button
+            onClick={generateLyrics}
+            disabled={loading || !theme.trim()}
             className="w-full h-12 text-base bg-primary hover:bg-primary font-semibold"
           >
             {loading ? (
@@ -281,9 +281,9 @@ export function AiLyricsGenerator() {
               </p>
             </div>
             <div className="flex gap-2">
-              <Button 
-                variant="outline" 
-                size="sm" 
+              <Button
+                variant="outline"
+                size="sm"
                 onClick={copyLyrics}
                 className="h-9"
               >
@@ -299,9 +299,9 @@ export function AiLyricsGenerator() {
                   </>
                 )}
               </Button>
-              <Button 
-                variant="outline" 
-                size="sm" 
+              <Button
+                variant="outline"
+                size="sm"
                 onClick={downloadLyrics}
                 className="h-9"
               >
@@ -312,9 +312,9 @@ export function AiLyricsGenerator() {
           </div>
 
           <div className="relative">
-            <Textarea 
-              value={lyrics} 
-              readOnly 
+            <Textarea
+              value={lyrics}
+              readOnly
               className="min-h-[400px] font-mono text-sm leading-relaxed resize-none border-2 border-primary/20 bg-muted/30"
             />
           </div>

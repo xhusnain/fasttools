@@ -1,54 +1,54 @@
 "use client"
 
 import { useState, useEffect } from "react"
-import { Button } from "@/components/ui/button"
+import { GButton as Button } from "@/components/globalcomponents/gbutton"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
 import { Badge } from "@/components/ui/badge"
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
-import { 
-  Calculator, 
-  DollarSign, 
-  Percent, 
-  Calendar, 
-  TrendingUp, 
-  TrendingDown, 
-  Info, 
-  AlertCircle, 
-  CheckCircle, 
-  Copy, 
-  Download, 
-  History, 
-  Star, 
-  Globe, 
-  Shield, 
-  FileText, 
-  BarChart3, 
-  PieChart, 
-  Target, 
-  Zap, 
-  Clock, 
-  Users, 
-  Home, 
-  Car, 
-  ShoppingBag, 
-  CreditCard, 
-  Banknote, 
-  Coins, 
-  Wallet, 
-  Briefcase, 
-  Store, 
-  Truck, 
-  Package, 
-  Tag, 
-  ShoppingCart, 
-  HandHeart, 
-  Gift, 
-  Award, 
-  Trophy, 
-  TrendingUp as TrendingUpIcon, 
+import {
+  Calculator,
+  DollarSign,
+  Percent,
+  Calendar,
+  TrendingUp,
+  TrendingDown,
+  Info,
+  AlertCircle,
+  CheckCircle,
+  Copy,
+  Download,
+  History,
+  Star,
+  Globe,
+  Shield,
+  FileText,
+  BarChart3,
+  PieChart,
+  Target,
+  Zap,
+  Clock,
+  Users,
+  Home,
+  Car,
+  ShoppingBag,
+  CreditCard,
+  Banknote,
+  Coins,
+  Wallet,
+  Briefcase,
+  Store,
+  Truck,
+  Package,
+  Tag,
+  ShoppingCart,
+  HandHeart,
+  Gift,
+  Award,
+  Trophy,
+  TrendingUp as TrendingUpIcon,
   TrendingDown as TrendingDownIcon,
   Stethoscope,
   Brain,
@@ -216,9 +216,9 @@ export default function RetirementCalculator() {
       const futureIncome = income * Math.pow(1 + incomeInc / 100, yearsToRetirement)
       const neededIncome = (futureIncome * retirementIncome / 100) - (otherInc * 12)
       const targetAmount = neededIncome / (annualRate) * (1 - Math.pow(1 + annualRate, -yearsInRetirement))
-      
-      const monthlyContribNeeded = (targetAmount - savings * Math.pow(1 + annualRate, yearsToRetirement)) / 
-                                   ((Math.pow(1 + annualRate, yearsToRetirement) - 1) / annualRate)
+
+      const monthlyContribNeeded = (targetAmount - savings * Math.pow(1 + annualRate, yearsToRetirement)) /
+        ((Math.pow(1 + annualRate, yearsToRetirement) - 1) / annualRate)
 
       calculatedResult = {
         calculationType: "howMuchToSave",
@@ -255,9 +255,9 @@ export default function RetirementCalculator() {
       }
     } else if (calculationType === "howMuchCanWithdraw") {
       // Calculate how much can be withdrawn
-      const futureValue = savings * Math.pow(1 + annualRate, yearsToRetirement) + 
-                          (monthlyContrib * 12 * ((Math.pow(1 + annualRate, yearsToRetirement) - 1) / annualRate))
-      
+      const futureValue = savings * Math.pow(1 + annualRate, yearsToRetirement) +
+        (monthlyContrib * 12 * ((Math.pow(1 + annualRate, yearsToRetirement) - 1) / annualRate))
+
       const monthlyWithdrawAmount = futureValue * (monthlyRate / (1 - Math.pow(1 + monthlyRate, -yearsInRetirement * 12)))
 
       calculatedResult = {
@@ -830,7 +830,7 @@ Investment Return: ${result.investmentReturn.toFixed(2)}%`
               </div>
             </div>
           </div>
-          
+
           <div className="text-sm text-muted-foreground space-y-2">
             <p>
               <strong>Multiple Calculation Modes:</strong> Calculate how much to save, how much you can withdraw, or how long your money will last.

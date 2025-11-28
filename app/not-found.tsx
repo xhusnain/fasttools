@@ -1,5 +1,5 @@
 import Link from "next/link"
-import { Button } from "@/components/ui/button"
+import { GButton } from "@/components/globalcomponents/gbutton"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Calculator, Home, Search, ArrowLeft } from "lucide-react"
 import type { Metadata } from "next"
@@ -83,18 +83,18 @@ export default function NotFound() {
 
           {/* Action Buttons */}
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-            <Button asChild size="lg" className="w-full sm:w-auto">
-              <Link href="/">
+            <Link href="/">
+              <GButton size="lg" className="w-full sm:w-auto">
                 <Home className="mr-2 h-4 w-4" />
                 Go Home
-              </Link>
-            </Button>
-            <Button asChild variant="outline" size="lg" className="w-full sm:w-auto">
-              <Link href="/calculator">
+              </GButton>
+            </Link>
+            <Link href="/calculator">
+              <GButton variant="outline" size="lg" className="w-full sm:w-auto">
                 <Search className="mr-2 h-4 w-4" />
                 Browse All Tools
-              </Link>
-            </Button>
+              </GButton>
+            </Link>
           </div>
 
           {/* Help Text */}

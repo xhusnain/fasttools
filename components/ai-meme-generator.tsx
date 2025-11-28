@@ -1,7 +1,7 @@
 "use client"
 
 import { useState } from "react"
-import { Button } from "@/components/ui/button"
+import { GButton } from "@/components/globalcomponents/gbutton"
 import { Label } from "@/components/ui/label"
 import { Input } from "@/components/ui/input"
 import { Card } from "@/components/ui/card"
@@ -65,7 +65,7 @@ export function AiMemeGenerator() {
           />
         </div>
 
-        <Button onClick={generateMeme} disabled={loading || !topic.trim()} className="w-full h-11 text-base">
+        <GButton onClick={generateMeme} disabled={loading || !topic.trim()} className="w-full h-11 text-base">
           {loading ? (
             <>
               <LoadingSpinner className="mr-2" />
@@ -77,17 +77,17 @@ export function AiMemeGenerator() {
               Generate Meme Text
             </>
           )}
-        </Button>
+        </GButton>
       </div>
 
       {memeText && (
         <Card className="p-6 space-y-4 animate-fade-in">
           <div className="flex items-center justify-between">
             <h3 className="font-semibold text-lg">Generated Meme Text</h3>
-            <Button variant="outline" size="sm" onClick={copyText}>
+            <GButton variant="outline" size="sm" onClick={copyText}>
               <Copy className="h-4 w-4 mr-2" />
               Copy
-            </Button>
+            </GButton>
           </div>
 
           <div className="space-y-4">

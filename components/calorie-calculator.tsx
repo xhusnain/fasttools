@@ -1,22 +1,22 @@
 "use client"
 
 import { useState, useEffect } from "react"
-import { Button } from "@/components/ui/button"
+import { GButton } from "@/components/globalcomponents/gbutton"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
 import { Badge } from "@/components/ui/badge"
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
-import { 
-  Calculator, 
-  Clock, 
-  Activity, 
-  Target, 
-  TrendingUp, 
-  Heart, 
-  Zap, 
-  Trophy, 
+import {
+  Calculator,
+  Clock,
+  Activity,
+  Target,
+  TrendingUp,
+  Heart,
+  Zap,
+  Trophy,
   Users,
   Timer,
   BarChart3,
@@ -489,13 +489,13 @@ Aggressive (1.5 lb/week): ${result.weightGain.aggressive} calories/day`
           </div>
 
           <div className="flex flex-col sm:flex-row gap-2 w-full pt-1">
-            <Button onClick={calculateCalories} className="flex-1 w-full sm:w-auto text-xs sm:text-sm h-9">
+            <GButton onClick={calculateCalories} className="flex-1 w-full sm:w-auto text-xs sm:text-sm h-9">
               <Calculator className="mr-1.5 h-3.5 w-3.5 sm:h-4 sm:w-4" />
               Calculate Calories
-            </Button>
-            <Button variant="outline" onClick={clearAll} className="w-full sm:w-auto text-xs sm:text-sm h-9">
+            </GButton>
+            <GButton variant="outline" onClick={clearAll} className="w-full sm:w-auto text-xs sm:text-sm h-9">
               Clear All
-            </Button>
+            </GButton>
           </div>
         </CardContent>
       </Card>
@@ -533,10 +533,10 @@ Aggressive (1.5 lb/week): ${result.weightGain.aggressive} calories/day`
               />
             </div>
           </div>
-          <Button onClick={convertCalories} className="w-full text-xs sm:text-sm h-9">
+          <GButton onClick={convertCalories} className="w-full text-xs sm:text-sm h-9">
             <Calculator className="mr-1.5 h-3.5 w-3.5 sm:h-4 sm:w-4" />
             Convert Energy Units
-          </Button>
+          </GButton>
           <div className="text-xs sm:text-sm text-foreground text-center">
             1 Calorie = 4.1868 Kilojoules
           </div>
@@ -588,10 +588,10 @@ Aggressive (1.5 lb/week): ${result.weightGain.aggressive} calories/day`
               </div>
 
               <div className="flex gap-2 pt-2">
-                <Button onClick={copyResult} variant="outline" size="sm" className="text-xs sm:text-sm h-8">
+                <GButton onClick={copyResult} variant="outline" size="sm" className="text-xs sm:text-sm h-8">
                   <Copy className="mr-1.5 h-3.5 w-3.5 sm:h-4 sm:w-4" />
                   Copy Results
-                </Button>
+                </GButton>
               </div>
             </CardContent>
           </Card>
@@ -883,7 +883,7 @@ Aggressive (1.5 lb/week): ${result.weightGain.aggressive} calories/day`
               </div>
             </div>
           </div>
-          
+
           <div className="text-xs sm:text-sm text-foreground space-y-1.5">
             <p>
               <strong className="text-foreground">BMR:</strong> Basal Metabolic Rate - calories burned at rest for basic body functions.

@@ -1,7 +1,7 @@
 "use client"
 
 import { useState, useEffect } from "react"
-import { Button } from "@/components/ui/button"
+import { GButton } from "@/components/globalcomponents/gbutton"
 import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
@@ -604,14 +604,14 @@ Total: ${getCurrencySymbol(currency)}${calculateTotal().toFixed(2)}
 
   const downloadPDF = () => {
     setLoading(true)
-    
+
     // Create a new window for printing/downloading
     const printWindow = window.open('', '_blank')
     if (printWindow) {
       const invoiceHTML = generateInvoiceHTML()
       printWindow.document.write(invoiceHTML)
       printWindow.document.close()
-      
+
       // Wait for content to load then trigger print dialog
       setTimeout(() => {
         printWindow.print()
@@ -628,7 +628,7 @@ Total: ${getCurrencySymbol(currency)}${calculateTotal().toFixed(2)}
       const invoiceHTML = generateInvoiceHTML()
       printWindow.document.write(invoiceHTML)
       printWindow.document.close()
-      
+
       setTimeout(() => {
         printWindow.print()
       }, 500)
@@ -640,7 +640,7 @@ Total: ${getCurrencySymbol(currency)}${calculateTotal().toFixed(2)}
     const itemTaxes = calculateTotalItemTax()
     const total = calculateTotal()
     const currencySymbol = getCurrencySymbol(currency)
-    
+
     return `
     <!DOCTYPE html>
     <html>
@@ -753,385 +753,384 @@ Total: ${getCurrencySymbol(currency)}${calculateTotal().toFixed(2)}
       <div className="w-full max-w-6xl mx-auto">
         {/* Invoice Preview */}
         <div className="bg-secondary border border-border rounded-lg p-3 sm:p-4 lg:p-6 shadow-sm text-white">
-              {/* Header */}
-              <div className="flex flex-col lg:flex-row justify-between items-start gap-4 mb-4 sm:mb-6">
-                <div className="flex flex-col sm:flex-row items-start gap-3 sm:gap-4 w-full lg:w-auto">
-                  {/* Logo Display */}
-                  <div className="w-16 h-16 sm:w-20 sm:h-20 lg:w-24 lg:h-24 bg-border rounded-lg flex items-center justify-center border-2 border-dashed border-slate-500 flex-shrink-0">
-                    {logoUrl ? (
-                      <img src={logoUrl} alt="Logo" className="w-full h-full object-contain rounded-lg" />
-                    ) : (
-                      <div className="text-center">
-                        <Upload className="h-4 w-4 sm:h-6 sm:w-6 lg:h-8 lg:w-8 text-muted-foreground mx-auto mb-1 sm:mb-2" />
-                        <span className="text-xs sm:text-sm text-muted-foreground">Upload Logo</span>
-                      </div>
-                    )}
+          {/* Header */}
+          <div className="flex flex-col lg:flex-row justify-between items-start gap-4 mb-4 sm:mb-6">
+            <div className="flex flex-col sm:flex-row items-start gap-3 sm:gap-4 w-full lg:w-auto">
+              {/* Logo Display */}
+              <div className="w-16 h-16 sm:w-20 sm:h-20 lg:w-24 lg:h-24 bg-border rounded-lg flex items-center justify-center border-2 border-dashed border-slate-500 flex-shrink-0">
+                {logoUrl ? (
+                  <img src={logoUrl} alt="Logo" className="w-full h-full object-contain rounded-lg" />
+                ) : (
+                  <div className="text-center">
+                    <Upload className="h-4 w-4 sm:h-6 sm:w-6 lg:h-8 lg:w-8 text-muted-foreground mx-auto mb-1 sm:mb-2" />
+                    <span className="text-xs sm:text-sm text-muted-foreground">Upload Logo</span>
                   </div>
-                  <div>
-                    <input
-                      type="file"
-                      accept="image/*"
-                      onChange={handleLogoUpload}
-                      className="hidden"
-                      id="logo-upload"
-                    />
-                    <label htmlFor="logo-upload" className="cursor-pointer">
-                      <Button 
-                        size="sm" 
-                        className="bg-purple-600 hover:bg-purple-700 text-white text-xs sm:text-sm px-2 sm:px-4 py-1 sm:py-2 rounded-lg"
-                        onClick={(e) => {
-                          e.preventDefault()
-                          document.getElementById('logo-upload')?.click()
-                        }}
-                      >
-                        Upload
-                      </Button>
-                    </label>
-                    <p className="text-xs text-muted-foreground mt-1 sm:mt-2 hidden sm:block">240 x 240 pixels @ 72 DPI<br />Maximum size of 1MB</p>
-                    <p className="text-xs text-muted-foreground mt-1 sm:hidden">Max 1MB</p>
+                )}
+              </div>
+              <div>
+                <input
+                  type="file"
+                  accept="image/*"
+                  onChange={handleLogoUpload}
+                  className="hidden"
+                  id="logo-upload"
+                />
+                <label htmlFor="logo-upload" className="cursor-pointer">
+                  <GButton
+                    size="sm"
+                    className="bg-purple-600 hover:bg-purple-700 text-white text-xs sm:text-sm px-2 sm:px-4 py-1 sm:py-2 rounded-lg"
+                    onClick={(e) => {
+                      e.preventDefault()
+                      document.getElementById('logo-upload')?.click()
+                    }}
+                  >
+                    Upload
+                  </GButton>
+                </label>
+                <p className="text-xs text-muted-foreground mt-1 sm:mt-2 hidden sm:block">240 x 240 pixels @ 72 DPI<br />Maximum size of 1MB</p>
+                <p className="text-xs text-muted-foreground mt-1 sm:hidden">Max 1MB</p>
+              </div>
+            </div>
+
+            {/* Language Selection */}
+            <div className="flex flex-col sm:flex-row items-start sm:items-center gap-2 w-full lg:w-auto">
+              <span className="text-xs sm:text-sm font-medium text-foreground">{t('invoice.controls.language')}:</span>
+              <select
+                value={language}
+                onChange={(e) => setLanguage(e.target.value)}
+                className="border border-orange-300 bg-border text-white rounded-lg px-2 sm:px-3 py-1 sm:py-2 text-xs sm:text-sm focus:outline-none focus:ring-2 focus:ring-orange-500 w-full sm:w-auto min-w-0"
+              >
+                {languages.map((lang) => (
+                  <option key={lang.code} value={lang.code} className="bg-border">
+                    {lang.native} - {lang.name}
+                  </option>
+                ))}
+              </select>
+            </div>
+
+            <div className="text-center w-full max-w-xs sm:max-w-sm">
+              <Input
+                value={companyName}
+                onChange={(e) => setCompanyName(e.target.value)}
+                placeholder={t('invoice.companyName')}
+                className="border border-orange-300 p-2 sm:p-3 text-xl sm:text-2xl lg:text-3xl font-bold text-white bg-transparent text-center placeholder-slate-300 rounded-lg w-full"
+              />
+            </div>
+          </div>
+
+          {/* Company and Client Info */}
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 sm:gap-6 lg:gap-8 mb-4 sm:mb-6">
+            <div>
+              <h3 className="text-sm font-semibold text-foreground mb-3">{t('invoice.sections.yourCompany')}</h3>
+              <Input
+                value={businessName}
+                onChange={(e) => setBusinessName(e.target.value)}
+                className="border border-orange-300 p-2 text-sm font-medium text-white bg-transparent mb-2 rounded-lg"
+                placeholder="Your Company"
+              />
+              <Input
+                value={businessAddress}
+                onChange={(e) => setBusinessAddress(e.target.value)}
+                className="border border-orange-300 p-2 text-sm text-foreground bg-transparent mb-2 rounded-lg"
+                placeholder="Company's Address"
+              />
+              <Input
+                value={businessCity}
+                onChange={(e) => setBusinessCity(e.target.value)}
+                className="border border-orange-300 p-2 text-sm text-foreground bg-transparent mb-2 rounded-lg"
+                placeholder="City, State Zip"
+              />
+              <Input
+                value={businessCountry}
+                onChange={(e) => setBusinessCountry(e.target.value)}
+                className="border border-orange-300 p-2 text-sm text-foreground bg-transparent rounded-lg"
+                placeholder="U.S.A."
+              />
+            </div>
+            <div>
+              <h3 className="text-sm font-semibold text-foreground mb-3">{t('invoice.sections.billTo')}</h3>
+              <Input
+                value={clientName}
+                onChange={(e) => setClientName(e.target.value)}
+                className="border border-orange-300 p-2 text-sm font-medium text-white bg-transparent mb-2 rounded-lg"
+                placeholder="Your Client's Company"
+              />
+              <Input
+                value={clientAddress}
+                onChange={(e) => setClientAddress(e.target.value)}
+                className="border border-orange-300 p-2 text-sm text-foreground bg-transparent mb-2 rounded-lg"
+                placeholder="Client's Address"
+              />
+              <Input
+                value={clientCity}
+                onChange={(e) => setClientCity(e.target.value)}
+                className="border border-orange-300 p-2 text-sm text-foreground bg-transparent mb-2 rounded-lg"
+                placeholder="City, State Zip"
+              />
+              <Input
+                value={clientCountry}
+                onChange={(e) => setClientCountry(e.target.value)}
+                className="border border-orange-300 p-2 text-sm text-foreground bg-transparent rounded-lg"
+                placeholder="U.S.A."
+              />
+            </div>
+          </div>
+
+          {/* Invoice Details */}
+          <div className="flex justify-end mb-4 sm:mb-6">
+            <div className="flex flex-col sm:flex-row gap-4 sm:gap-6 lg:gap-8 w-full sm:w-auto">
+              <div className="w-full sm:w-auto">
+                <label className="text-xs sm:text-sm font-semibold text-foreground">{t('invoice.invoiceNumber')}</label>
+                <Input
+                  value={invoiceNumber}
+                  onChange={(e) => setInvoiceNumber(e.target.value)}
+                  className="border border-orange-300 p-1 sm:p-2 text-xs sm:text-sm font-medium text-white bg-transparent rounded-lg w-full"
+                  placeholder="INV-12"
+                />
+              </div>
+              <div className="w-full sm:w-auto">
+                <label className="text-xs sm:text-sm font-semibold text-foreground">{t('invoice.date')}</label>
+                <div className="flex items-center gap-1 sm:gap-2">
+                  <Input
+                    type="date"
+                    value={invoiceDate}
+                    onChange={(e) => setInvoiceDate(e.target.value)}
+                    className="border border-orange-300 p-1 sm:p-2 text-xs sm:text-sm text-foreground bg-transparent rounded-lg w-full"
+                  />
+                  <Calendar className="h-3 w-3 sm:h-4 sm:w-4 text-muted-foreground" />
+                </div>
+              </div>
+              <div className="w-full sm:w-auto">
+                <label className="text-xs sm:text-sm font-semibold text-foreground">{t('invoice.dueDate')}</label>
+                <div className="flex items-center gap-1 sm:gap-2">
+                  <Input
+                    type="date"
+                    value={dueDate}
+                    onChange={(e) => setDueDate(e.target.value)}
+                    className="border border-orange-300 p-1 sm:p-2 text-xs sm:text-sm text-foreground bg-transparent rounded-lg w-full"
+                  />
+                  <Calendar className="h-3 w-3 sm:h-4 sm:w-4 text-muted-foreground" />
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* Items Table */}
+          <div className="mb-6 sm:mb-8 overflow-x-auto">
+            <table className="w-full border-collapse min-w-[600px]">
+              <thead>
+                <tr
+                  className="text-white"
+                  style={{
+                    backgroundColor: selectedTheme === 'red' ? '#dc2626' :
+                      selectedTheme === 'blue' ? '#2563eb' :
+                        selectedTheme === 'green' ? '#16a34a' :
+                          selectedTheme === 'orange' ? '#ea580c' :
+                            selectedTheme === 'purple' ? '#9333ea' : '#dc2626'
+                  }}
+                >
+                  <th className="text-left p-1 sm:p-2 font-semibold text-xs sm:text-sm">{t('invoice.items.description')}</th>
+                  <th className="text-center p-1 sm:p-2 font-semibold text-xs sm:text-sm">{t('invoice.items.quantity')}</th>
+                  <th className="text-center p-1 sm:p-2 font-semibold text-xs sm:text-sm">{t('invoice.items.rate')}</th>
+                  <th className="text-center p-1 sm:p-2 font-semibold text-xs sm:text-sm">{t('invoice.totals.tax')}</th>
+                  <th className="text-right p-1 sm:p-2 font-semibold text-xs sm:text-sm">{t('invoice.items.amount')}</th>
+                  <th className="text-center p-1 sm:p-2 font-semibold text-xs sm:text-sm">{t('invoice.items.action')}</th>
+                </tr>
+              </thead>
+              <tbody>
+                {items.map((item, index) => (
+                  <tr key={item.id} className="border-b border-border">
+                    <td className="p-1 sm:p-2">
+                      <Input
+                        value={item.description}
+                        onChange={(e) => updateItem(item.id, "description", e.target.value)}
+                        className="border border-orange-300 p-1 text-xs sm:text-sm text-white bg-transparent w-full rounded-lg"
+                        placeholder="Enter item name/description"
+                      />
+                    </td>
+                    <td className="p-1 sm:p-2 text-center">
+                      <Input
+                        type="number"
+                        value={item.quantity}
+                        onChange={(e) => updateItem(item.id, "quantity", Number(e.target.value) || 1)}
+                        className="border border-orange-300 p-1 text-xs sm:text-sm text-white bg-transparent text-center w-16 sm:w-20 rounded-lg"
+                        min="1"
+                      />
+                    </td>
+                    <td className="p-1 sm:p-2 text-center">
+                      <Input
+                        type="number"
+                        value={item.rate}
+                        onChange={(e) => updateItem(item.id, "rate", Number(e.target.value) || 0)}
+                        className="border border-orange-300 p-1 text-xs sm:text-sm text-white bg-transparent text-center w-20 sm:w-24 rounded-lg"
+                        step="0.01"
+                      />
+                    </td>
+                    <td className="p-1 sm:p-2 text-center">
+                      <div className="space-y-2">
+                        <Input
+                          type="number"
+                          value={item.taxRate}
+                          onChange={(e) => updateItem(item.id, "taxRate", Number(e.target.value) || 0)}
+                          className="border border-orange-300 p-1 text-xs sm:text-sm text-white bg-transparent text-center w-12 sm:w-16 rounded-lg"
+                          min="0"
+                          max="100"
+                          step="0.01"
+                        />
+                        <span className="text-xs text-muted-foreground">{getCurrencySymbol(currency)}{calculateItemTax(item).toFixed(2)}</span>
+                      </div>
+                    </td>
+                    <td className="p-1 sm:p-2 text-right">
+                      <span className="text-xs sm:text-sm font-medium text-white">
+                        {getCurrencySymbol(currency)}{(item.quantity * item.rate).toFixed(2)}
+                      </span>
+                    </td>
+                    <td className="p-1 sm:p-2 text-center">
+                      {items.length > 1 && (
+                        <Button
+                          onClick={() => removeItem(item.id)}
+                          variant="outline"
+                          size="sm"
+                          className="h-6 w-6 sm:h-8 sm:w-8 p-0 text-foreground border-red-400 hover:bg-red-400 hover:text-white bg-transparent"
+                        >
+                          <Trash2 className="h-3 w-3 sm:h-4 sm:w-4" />
+                        </Button>
+                      )}
+                    </td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+
+            <Button
+              onClick={addItem}
+              variant="outline"
+              size="sm"
+              className="mt-4 sm:mt-6 text-foreground border-blue-400 hover:bg-blue-400 hover:text-white bg-transparent text-xs sm:text-sm px-3 sm:px-4 py-2"
+            >
+              <Plus className="h-3 w-3 sm:h-4 sm:w-4 mr-1 sm:mr-2" />
+              {t('invoice.items.addItem')}
+            </Button>
+          </div>
+
+          {/* Discount Controls */}
+          <div className="flex justify-end mb-4 sm:mb-6">
+            <div className="w-full sm:w-64">
+              <div className="flex flex-col sm:flex-row justify-between items-center gap-2 sm:gap-0">
+                <label className="text-xs sm:text-sm text-foreground">{t('invoice.totals.discountRate')}</label>
+                <Input
+                  type="number"
+                  min="0"
+                  max="100"
+                  step="0.01"
+                  value={discount}
+                  onChange={(e) => setDiscount(parseFloat(e.target.value) || 0)}
+                  className="w-16 sm:w-20 h-6 sm:h-8 text-xs sm:text-sm text-center border border-orange-300 p-1 rounded-lg bg-secondary text-white"
+                />
+              </div>
+            </div>
+          </div>
+
+          {/* Totals */}
+          <div className="flex justify-end mb-4 sm:mb-6">
+            <div className="w-full sm:w-64">
+              <div className="flex justify-between text-xs sm:text-sm mb-2 sm:mb-3">
+                <span className="text-foreground">{t('invoice.totals.subtotal')}</span>
+                <span className="font-medium text-white">{getCurrencySymbol(currency)}{subtotal.toFixed(2)}</span>
+              </div>
+              <div className="flex justify-between text-xs sm:text-sm mb-2 sm:mb-3">
+                <span className="text-foreground">{t('invoice.totals.discount')} ({discount}%)</span>
+                <span className="font-medium text-white">{getCurrencySymbol(currency)}{(subtotal * (discount / 100)).toFixed(2)}</span>
+              </div>
+              <div className="flex justify-between text-xs sm:text-sm mb-2 sm:mb-3">
+                <span className="text-foreground">{t('invoice.totals.tax')} (Items)</span>
+                <span className="font-medium text-white">{getCurrencySymbol(currency)}{calculateTotalItemTax().toFixed(2)}</span>
+              </div>
+              <div className="flex justify-between text-sm sm:text-xl font-bold border-t border-border pt-2 sm:pt-3">
+                <span className="text-white">{t('invoice.totals.total')}</span>
+                <span className="text-foreground">{getCurrencySymbol(currency)} {total.toFixed(2)}</span>
+              </div>
+            </div>
+          </div>
+
+          {/* Notes and Terms */}
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 sm:gap-6 lg:gap-8 mb-4 sm:mb-6">
+            <div>
+              <h4 className="text-xs sm:text-sm font-semibold text-foreground mb-2 sm:mb-3">{t('invoice.notes')}</h4>
+              <textarea
+                value={notes}
+                onChange={(e) => setNotes(e.target.value)}
+                className="border border-orange-300 p-2 sm:p-3 text-xs sm:text-sm text-foreground bg-transparent rounded-lg w-full h-20 sm:h-24 resize-none"
+                placeholder="Enter your notes here..."
+              />
+            </div>
+            <div>
+              <h4 className="text-xs sm:text-sm font-semibold text-foreground mb-2 sm:mb-3">{t('invoice.terms')}</h4>
+              <textarea
+                value={terms}
+                onChange={(e) => setTerms(e.target.value)}
+                className="border border-orange-300 p-2 sm:p-3 text-xs sm:text-sm text-foreground bg-transparent rounded-lg w-full h-20 sm:h-24 resize-none"
+                placeholder="Enter terms and conditions here..."
+              />
+            </div>
+          </div>
+
+          {/* Controls Section */}
+          <div className="mt-4 sm:mt-6 pt-3 sm:pt-4 border-t border-border">
+            <div className="flex flex-col lg:flex-row items-center justify-between gap-3 sm:gap-4">
+              <div className="flex flex-col sm:flex-row items-center gap-3 sm:gap-4 w-full lg:w-auto">
+                {/* Theme Selection */}
+                <div className="flex flex-col sm:flex-row items-center gap-2 sm:gap-4">
+                  <span className="text-xs sm:text-sm font-medium text-foreground">{t('invoice.controls.theme')}:</span>
+                  <div className="flex gap-1 sm:gap-2">
+                    {[
+                      { name: 'red', color: '#dc2626' },
+                      { name: 'blue', color: '#2563eb' },
+                      { name: 'green', color: '#16a34a' },
+                      { name: 'orange', color: '#ea580c' },
+                      { name: 'purple', color: '#9333ea' }
+                    ].map((theme) => (
+                      <button
+                        key={theme.name}
+                        onClick={() => setSelectedTheme(theme.name)}
+                        className={`w-6 h-6 sm:w-8 sm:h-8 rounded-full border-2 transition-all ${selectedTheme === theme.name
+                            ? 'border-white scale-110'
+                            : 'border-slate-500 hover:border-slate-300'
+                          }`}
+                        style={{ backgroundColor: theme.color }}
+                      />
+                    ))}
                   </div>
                 </div>
-                
-                {/* Language Selection */}
-                <div className="flex flex-col sm:flex-row items-start sm:items-center gap-2 w-full lg:w-auto">
-                  <span className="text-xs sm:text-sm font-medium text-foreground">{t('invoice.controls.language')}:</span>
+
+                {/* Currency Selection */}
+                <div className="flex flex-col sm:flex-row items-center gap-2 sm:gap-4">
+                  <span className="text-xs sm:text-sm font-medium text-foreground">{t('invoice.controls.currency')}:</span>
                   <select
-                    value={language}
-                    onChange={(e) => setLanguage(e.target.value)}
+                    value={currency}
+                    onChange={(e) => setCurrency(e.target.value)}
                     className="border border-orange-300 bg-border text-white rounded-lg px-2 sm:px-3 py-1 sm:py-2 text-xs sm:text-sm focus:outline-none focus:ring-2 focus:ring-orange-500 w-full sm:w-auto min-w-0"
                   >
-                    {languages.map((lang) => (
-                      <option key={lang.code} value={lang.code} className="bg-border">
-                        {lang.native} - {lang.name}
+                    {currencies.map((curr) => (
+                      <option key={curr.code} value={curr.code} className="bg-border">
+                        {curr.code} - {curr.name}
                       </option>
                     ))}
                   </select>
                 </div>
-                
-                <div className="text-center w-full max-w-xs sm:max-w-sm">
-                  <Input
-                    value={companyName}
-                    onChange={(e) => setCompanyName(e.target.value)}
-                    placeholder={t('invoice.companyName')}
-                    className="border border-orange-300 p-2 sm:p-3 text-xl sm:text-2xl lg:text-3xl font-bold text-white bg-transparent text-center placeholder-slate-300 rounded-lg w-full"
-                  />
-                </div>
               </div>
 
-              {/* Company and Client Info */}
-              <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 sm:gap-6 lg:gap-8 mb-4 sm:mb-6">
-                <div>
-                  <h3 className="text-sm font-semibold text-foreground mb-3">{t('invoice.sections.yourCompany')}</h3>
-              <Input
-                value={businessName}
-                onChange={(e) => setBusinessName(e.target.value)}
-                    className="border border-orange-300 p-2 text-sm font-medium text-white bg-transparent mb-2 rounded-lg"
-                    placeholder="Your Company"
-                  />
-                  <Input
-                    value={businessAddress}
-                    onChange={(e) => setBusinessAddress(e.target.value)}
-                    className="border border-orange-300 p-2 text-sm text-foreground bg-transparent mb-2 rounded-lg"
-                    placeholder="Company's Address"
-                  />
-                  <Input
-                    value={businessCity}
-                    onChange={(e) => setBusinessCity(e.target.value)}
-                    className="border border-orange-300 p-2 text-sm text-foreground bg-transparent mb-2 rounded-lg"
-                    placeholder="City, State Zip"
-                  />
-              <Input
-                    value={businessCountry}
-                    onChange={(e) => setBusinessCountry(e.target.value)}
-                    className="border border-orange-300 p-2 text-sm text-foreground bg-transparent rounded-lg"
-                    placeholder="U.S.A."
-              />
-            </div>
-                <div>
-                  <h3 className="text-sm font-semibold text-foreground mb-3">{t('invoice.sections.billTo')}</h3>
-              <Input
-                value={clientName}
-                onChange={(e) => setClientName(e.target.value)}
-                    className="border border-orange-300 p-2 text-sm font-medium text-white bg-transparent mb-2 rounded-lg"
-                    placeholder="Your Client's Company"
-                  />
-                  <Input
-                    value={clientAddress}
-                    onChange={(e) => setClientAddress(e.target.value)}
-                    className="border border-orange-300 p-2 text-sm text-foreground bg-transparent mb-2 rounded-lg"
-                    placeholder="Client's Address"
-                  />
-                  <Input
-                    value={clientCity}
-                    onChange={(e) => setClientCity(e.target.value)}
-                    className="border border-orange-300 p-2 text-sm text-foreground bg-transparent mb-2 rounded-lg"
-                    placeholder="City, State Zip"
-                  />
-              <Input
-                    value={clientCountry}
-                    onChange={(e) => setClientCountry(e.target.value)}
-                    className="border border-orange-300 p-2 text-sm text-foreground bg-transparent rounded-lg"
-                    placeholder="U.S.A."
-                  />
-                </div>
-            </div>
-
-              {/* Invoice Details */}
-              <div className="flex justify-end mb-4 sm:mb-6">
-                <div className="flex flex-col sm:flex-row gap-4 sm:gap-6 lg:gap-8 w-full sm:w-auto">
-                  <div className="w-full sm:w-auto">
-                    <label className="text-xs sm:text-sm font-semibold text-foreground">{t('invoice.invoiceNumber')}</label>
-              <Input
-                value={invoiceNumber}
-                onChange={(e) => setInvoiceNumber(e.target.value)}
-                      className="border border-orange-300 p-1 sm:p-2 text-xs sm:text-sm font-medium text-white bg-transparent rounded-lg w-full"
-                      placeholder="INV-12"
-              />
-            </div>
-                  <div className="w-full sm:w-auto">
-                    <label className="text-xs sm:text-sm font-semibold text-foreground">{t('invoice.date')}</label>
-                    <div className="flex items-center gap-1 sm:gap-2">
-              <Input
-                type="date"
-                value={invoiceDate}
-                onChange={(e) => setInvoiceDate(e.target.value)}
-                        className="border border-orange-300 p-1 sm:p-2 text-xs sm:text-sm text-foreground bg-transparent rounded-lg w-full"
-              />
-                      <Calendar className="h-3 w-3 sm:h-4 sm:w-4 text-muted-foreground" />
-                    </div>
-            </div>
-                  <div className="w-full sm:w-auto">
-                    <label className="text-xs sm:text-sm font-semibold text-foreground">{t('invoice.dueDate')}</label>
-                    <div className="flex items-center gap-1 sm:gap-2">
-              <Input
-                type="date"
-                value={dueDate}
-                onChange={(e) => setDueDate(e.target.value)}
-                        className="border border-orange-300 p-1 sm:p-2 text-xs sm:text-sm text-foreground bg-transparent rounded-lg w-full"
-              />
-                      <Calendar className="h-3 w-3 sm:h-4 sm:w-4 text-muted-foreground" />
-                    </div>
-            </div>
+              {/* Download Button */}
+              <Button
+                onClick={downloadPDF}
+                disabled={loading}
+                className="h-8 sm:h-11 px-3 sm:px-6 text-xs sm:text-sm font-medium shadow-sm hover:shadow-md transition-all bg-white hover:bg-gray-100 text-gray-900 border border-gray-300 w-full sm:w-auto"
+              >
+                <Download className="mr-1 sm:mr-2 h-3 w-3 sm:h-4 sm:w-4" />
+                {t('invoice.controls.download')}
+              </Button>
             </div>
           </div>
-
-              {/* Items Table */}
-              <div className="mb-6 sm:mb-8 overflow-x-auto">
-                <table className="w-full border-collapse min-w-[600px]">
-                  <thead>
-                    <tr 
-                      className="text-white"
-                      style={{ 
-                        backgroundColor: selectedTheme === 'red' ? '#dc2626' : 
-                                       selectedTheme === 'blue' ? '#2563eb' : 
-                                       selectedTheme === 'green' ? '#16a34a' : 
-                                       selectedTheme === 'orange' ? '#ea580c' : 
-                                       selectedTheme === 'purple' ? '#9333ea' : '#dc2626'
-                      }}
-                    >
-                      <th className="text-left p-1 sm:p-2 font-semibold text-xs sm:text-sm">{t('invoice.items.description')}</th>
-                      <th className="text-center p-1 sm:p-2 font-semibold text-xs sm:text-sm">{t('invoice.items.quantity')}</th>
-                      <th className="text-center p-1 sm:p-2 font-semibold text-xs sm:text-sm">{t('invoice.items.rate')}</th>
-                      <th className="text-center p-1 sm:p-2 font-semibold text-xs sm:text-sm">{t('invoice.totals.tax')}</th>
-                      <th className="text-right p-1 sm:p-2 font-semibold text-xs sm:text-sm">{t('invoice.items.amount')}</th>
-                      <th className="text-center p-1 sm:p-2 font-semibold text-xs sm:text-sm">{t('invoice.items.action')}</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-          {items.map((item, index) => (
-                      <tr key={item.id} className="border-b border-border">
-                        <td className="p-1 sm:p-2">
-                <Input
-                  value={item.description}
-                  onChange={(e) => updateItem(item.id, "description", e.target.value)}
-                            className="border border-orange-300 p-1 text-xs sm:text-sm text-white bg-transparent w-full rounded-lg"
-                            placeholder="Enter item name/description"
-                          />
-                        </td>
-                        <td className="p-1 sm:p-2 text-center">
-                <Input
-                  type="number"
-                            value={item.quantity}
-                            onChange={(e) => updateItem(item.id, "quantity", Number(e.target.value) || 1)}
-                            className="border border-orange-300 p-1 text-xs sm:text-sm text-white bg-transparent text-center w-16 sm:w-20 rounded-lg"
-                  min="1"
-                          />
-                        </td>
-                        <td className="p-1 sm:p-2 text-center">
-                <Input
-                  type="number"
-                            value={item.rate}
-                            onChange={(e) => updateItem(item.id, "rate", Number(e.target.value) || 0)}
-                            className="border border-orange-300 p-1 text-xs sm:text-sm text-white bg-transparent text-center w-20 sm:w-24 rounded-lg"
-                  step="0.01"
-                          />
-                        </td>
-                        <td className="p-1 sm:p-2 text-center">
-                          <div className="space-y-2">
-                            <Input
-                              type="number"
-                              value={item.taxRate}
-                              onChange={(e) => updateItem(item.id, "taxRate", Number(e.target.value) || 0)}
-                              className="border border-orange-300 p-1 text-xs sm:text-sm text-white bg-transparent text-center w-12 sm:w-16 rounded-lg"
-                              min="0"
-                              max="100"
-                              step="0.01"
-                            />
-                            <span className="text-xs text-muted-foreground">{getCurrencySymbol(currency)}{calculateItemTax(item).toFixed(2)}</span>
-              </div>
-                        </td>
-                        <td className="p-1 sm:p-2 text-right">
-                          <span className="text-xs sm:text-sm font-medium text-white">
-                            {getCurrencySymbol(currency)}{(item.quantity * item.rate).toFixed(2)}
-                          </span>
-                        </td>
-                        <td className="p-1 sm:p-2 text-center">
-                          {items.length > 1 && (
-                            <Button
-                              onClick={() => removeItem(item.id)}
-                              variant="outline"
-                              size="sm"
-                              className="h-6 w-6 sm:h-8 sm:w-8 p-0 text-foreground border-red-400 hover:bg-red-400 hover:text-white bg-transparent"
-                            >
-                              <Trash2 className="h-3 w-3 sm:h-4 sm:w-4" />
-                            </Button>
-                          )}
-                        </td>
-                      </tr>
-                    ))}
-                  </tbody>
-                </table>
-                
-                <Button
-                  onClick={addItem}
-                  variant="outline"
-                  size="sm"
-                  className="mt-4 sm:mt-6 text-foreground border-blue-400 hover:bg-blue-400 hover:text-white bg-transparent text-xs sm:text-sm px-3 sm:px-4 py-2"
-                >
-                  <Plus className="h-3 w-3 sm:h-4 sm:w-4 mr-1 sm:mr-2" />
-                  {t('invoice.items.addItem')}
-                </Button>
-              </div>
-
-              {/* Discount Controls */}
-              <div className="flex justify-end mb-4 sm:mb-6">
-                <div className="w-full sm:w-64">
-                  <div className="flex flex-col sm:flex-row justify-between items-center gap-2 sm:gap-0">
-                    <label className="text-xs sm:text-sm text-foreground">{t('invoice.totals.discountRate')}</label>
-                    <Input
-                      type="number"
-                      min="0"
-                      max="100"
-                      step="0.01"
-                      value={discount}
-                      onChange={(e) => setDiscount(parseFloat(e.target.value) || 0)}
-                      className="w-16 sm:w-20 h-6 sm:h-8 text-xs sm:text-sm text-center border border-orange-300 p-1 rounded-lg bg-secondary text-white"
-                    />
-                  </div>
-                </div>
-              </div>
-
-              {/* Totals */}
-              <div className="flex justify-end mb-4 sm:mb-6">
-                <div className="w-full sm:w-64">
-                  <div className="flex justify-between text-xs sm:text-sm mb-2 sm:mb-3">
-                    <span className="text-foreground">{t('invoice.totals.subtotal')}</span>
-                    <span className="font-medium text-white">{getCurrencySymbol(currency)}{subtotal.toFixed(2)}</span>
-                  </div>
-                  <div className="flex justify-between text-xs sm:text-sm mb-2 sm:mb-3">
-                    <span className="text-foreground">{t('invoice.totals.discount')} ({discount}%)</span>
-                    <span className="font-medium text-white">{getCurrencySymbol(currency)}{(subtotal * (discount / 100)).toFixed(2)}</span>
-                  </div>
-                  <div className="flex justify-between text-xs sm:text-sm mb-2 sm:mb-3">
-                    <span className="text-foreground">{t('invoice.totals.tax')} (Items)</span>
-                    <span className="font-medium text-white">{getCurrencySymbol(currency)}{calculateTotalItemTax().toFixed(2)}</span>
-                  </div>
-                  <div className="flex justify-between text-sm sm:text-xl font-bold border-t border-border pt-2 sm:pt-3">
-                    <span className="text-white">{t('invoice.totals.total')}</span>
-                    <span className="text-foreground">{getCurrencySymbol(currency)} {total.toFixed(2)}</span>
-                  </div>
-                </div>
-              </div>
-
-              {/* Notes and Terms */}
-              <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 sm:gap-6 lg:gap-8 mb-4 sm:mb-6">
-                <div>
-                  <h4 className="text-xs sm:text-sm font-semibold text-foreground mb-2 sm:mb-3">{t('invoice.notes')}</h4>
-                  <textarea
-                    value={notes}
-                    onChange={(e) => setNotes(e.target.value)}
-                    className="border border-orange-300 p-2 sm:p-3 text-xs sm:text-sm text-foreground bg-transparent rounded-lg w-full h-20 sm:h-24 resize-none"
-                    placeholder="Enter your notes here..."
-                  />
-                </div>
-                <div>
-                  <h4 className="text-xs sm:text-sm font-semibold text-foreground mb-2 sm:mb-3">{t('invoice.terms')}</h4>
-                  <textarea
-                    value={terms}
-                    onChange={(e) => setTerms(e.target.value)}
-                    className="border border-orange-300 p-2 sm:p-3 text-xs sm:text-sm text-foreground bg-transparent rounded-lg w-full h-20 sm:h-24 resize-none"
-                    placeholder="Enter terms and conditions here..."
-                  />
-              </div>
-            </div>
-
-              {/* Controls Section */}
-              <div className="mt-4 sm:mt-6 pt-3 sm:pt-4 border-t border-border">
-                <div className="flex flex-col lg:flex-row items-center justify-between gap-3 sm:gap-4">
-                  <div className="flex flex-col sm:flex-row items-center gap-3 sm:gap-4 w-full lg:w-auto">
-                    {/* Theme Selection */}
-                    <div className="flex flex-col sm:flex-row items-center gap-2 sm:gap-4">
-                      <span className="text-xs sm:text-sm font-medium text-foreground">{t('invoice.controls.theme')}:</span>
-                      <div className="flex gap-1 sm:gap-2">
-                        {[
-                          { name: 'red', color: '#dc2626' },
-                          { name: 'blue', color: '#2563eb' },
-                          { name: 'green', color: '#16a34a' },
-                          { name: 'orange', color: '#ea580c' },
-                          { name: 'purple', color: '#9333ea' }
-                        ].map((theme) => (
-                          <button
-                            key={theme.name}
-                            onClick={() => setSelectedTheme(theme.name)}
-                            className={`w-6 h-6 sm:w-8 sm:h-8 rounded-full border-2 transition-all ${
-                              selectedTheme === theme.name 
-                                ? 'border-white scale-110' 
-                                : 'border-slate-500 hover:border-slate-300'
-                            }`}
-                            style={{ backgroundColor: theme.color }}
-                          />
-                        ))}
-            </div>
-            </div>
-
-                    {/* Currency Selection */}
-                    <div className="flex flex-col sm:flex-row items-center gap-2 sm:gap-4">
-                      <span className="text-xs sm:text-sm font-medium text-foreground">{t('invoice.controls.currency')}:</span>
-                      <select
-                        value={currency}
-                        onChange={(e) => setCurrency(e.target.value)}
-                        className="border border-orange-300 bg-border text-white rounded-lg px-2 sm:px-3 py-1 sm:py-2 text-xs sm:text-sm focus:outline-none focus:ring-2 focus:ring-orange-500 w-full sm:w-auto min-w-0"
-                      >
-                        {currencies.map((curr) => (
-                          <option key={curr.code} value={curr.code} className="bg-border">
-                            {curr.code} - {curr.name}
-                          </option>
-                        ))}
-                      </select>
-            </div>
-          </div>
-
-                  {/* Download Button */}
-        <Button
-                    onClick={downloadPDF}
-                    disabled={loading}
-                    className="h-8 sm:h-11 px-3 sm:px-6 text-xs sm:text-sm font-medium shadow-sm hover:shadow-md transition-all bg-white hover:bg-gray-100 text-gray-900 border border-gray-300 w-full sm:w-auto"
-                  >
-              <Download className="mr-1 sm:mr-2 h-3 w-3 sm:h-4 sm:w-4" />
-                    {t('invoice.controls.download')}
-        </Button>
-                </div>
-              </div>
         </div>
       </div>
     </div>

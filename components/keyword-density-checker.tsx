@@ -1,7 +1,7 @@
 "use client"
 
 import { useState } from "react"
-import { Button } from "@/components/ui/button"
+import { GButton } from "@/components/globalcomponents/gbutton"
 import { Textarea } from "@/components/ui/textarea"
 import { Label } from "@/components/ui/label"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
@@ -76,7 +76,7 @@ export function KeywordDensityChecker() {
             <p className="text-xs text-muted-foreground">{text.split(/\s+/).filter(Boolean).length} words</p>
           </div>
 
-          <Button
+          <GButton
             onClick={analyzeText}
             disabled={!text || isAnalyzing}
             className="w-full h-10 text-sm font-medium shadow-sm hover:shadow-md transition-all"
@@ -89,7 +89,7 @@ export function KeywordDensityChecker() {
             ) : (
               "Analyze Keyword Density"
             )}
-          </Button>
+          </GButton>
         </CardContent>
       </Card>
 

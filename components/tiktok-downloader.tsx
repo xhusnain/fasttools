@@ -1,7 +1,7 @@
 "use client"
 
 import { useState } from "react"
-import { Button } from "@/components/ui/button"
+import { GButton as Button } from "@/components/globalcomponents/gbutton"
 import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
 import { Card } from "@/components/ui/card"
@@ -19,18 +19,18 @@ export function TiktokDownloader({ compact = false }: TiktokDownloaderProps) {
   const [result, setResult] = useState<
     | null
     | {
-        noWatermarkUrl: string
-        watermarkUrl?: string
-        musicUrl?: string
-        coverUrl?: string
-        title?: string
-        downloading?: boolean
-        downloadStarted?: boolean
-        imageUrl?: string
-        images?: string[]
-        isImage?: boolean
-        type?: string
-      }
+      noWatermarkUrl: string
+      watermarkUrl?: string
+      musicUrl?: string
+      coverUrl?: string
+      title?: string
+      downloading?: boolean
+      downloadStarted?: boolean
+      imageUrl?: string
+      images?: string[]
+      isImage?: boolean
+      type?: string
+    }
   >(null)
   const [downloadingStates, setDownloadingStates] = useState<{
     video?: boolean
@@ -95,18 +95,18 @@ export function TiktokDownloader({ compact = false }: TiktokDownloaderProps) {
           `https://www.tiktok.com/oembed?url=${encodeURIComponent(videoUrl.trim())}`,
           { method: "GET", mode: "cors", headers: { Accept: "application/json" } },
         )
-        .then(oembedRes => {
-          if (oembedRes.ok) {
-            return oembedRes.json()
-          }
-          return null
-        })
-        .then(oembed => {
-          if (oembed && oembed.thumbnail_url) {
-            setResult(prev => prev ? { ...prev, coverUrl: oembed.thumbnail_url } : null)
-          }
-        })
-        .catch(() => {}) // Silently fail - thumbnail is not critical
+          .then(oembedRes => {
+            if (oembedRes.ok) {
+              return oembedRes.json()
+            }
+            return null
+          })
+          .then(oembed => {
+            if (oembed && oembed.thumbnail_url) {
+              setResult(prev => prev ? { ...prev, coverUrl: oembed.thumbnail_url } : null)
+            }
+          })
+          .catch(() => { }) // Silently fail - thumbnail is not critical
       }
 
       setResult({
@@ -152,13 +152,13 @@ export function TiktokDownloader({ compact = false }: TiktokDownloaderProps) {
     const countdownInterval = setInterval(() => {
       countdown--
       setCountdownStates(prev => ({ ...prev, [downloadType]: countdown }))
-      
+
       if (countdown <= 0) {
         clearInterval(countdownInterval)
         setCountdownStates(prev => ({ ...prev, [downloadType]: undefined }))
         setDownloadingStates(prev => ({ ...prev, [downloadType]: true }))
         console.log('Countdown finished, starting download for:', downloadType)
-        
+
         // Start actual download
         performDownload(url, sanitizedFilename, downloadType)
       }
@@ -183,10 +183,10 @@ export function TiktokDownloader({ compact = false }: TiktokDownloaderProps) {
 
         if (response.ok) {
           const blob = await response.blob()
-          
+
           if (blob.size > 0) {
             // Store the blob for later use
-            ;(window as any)[`downloadedBlob_${downloadType}`] = blob
+            ; (window as any)[`downloadedBlob_${downloadType}`] = blob
             console.log('Background download completed for:', downloadType)
             return
           }
@@ -206,11 +206,11 @@ export function TiktokDownloader({ compact = false }: TiktokDownloaderProps) {
           filename: filename
         })
       })
-      
+
       if (response.ok) {
         const blob = await response.blob()
         if (blob.size > 0) {
-          ;(window as any)[`downloadedBlob_${downloadType}`] = blob
+          ; (window as any)[`downloadedBlob_${downloadType}`] = blob
           console.log('Background proxy download completed for:', downloadType)
         }
       }
@@ -223,40 +223,40 @@ export function TiktokDownloader({ compact = false }: TiktokDownloaderProps) {
     try {
       // Check if we already have the blob from background download
       const preDownloadedBlob = (window as any)[`downloadedBlob_${downloadType}`]
-      
+
       if (preDownloadedBlob) {
         console.log('Using pre-downloaded blob for:', downloadType)
         const objectUrl = URL.createObjectURL(preDownloadedBlob)
-        
+
         // Create download link
         const link = document.createElement("a")
         link.href = objectUrl
         link.download = filename
         link.style.display = 'none'
-        
+
         // Add to DOM, click, and remove
         document.body.appendChild(link)
         link.click()
         document.body.removeChild(link)
-        
+
         // Clean up object URL and stored blob
         setTimeout(() => {
           URL.revokeObjectURL(objectUrl)
           delete (window as any)[`downloadedBlob_${downloadType}`]
         }, 1000)
-        
+
         // Show success message
         setTimeout(() => {
           setDownloadingStates(prev => ({ ...prev, [downloadType]: false }))
           setResult(prev => prev ? { ...prev, downloadStarted: true } : null)
         }, 500)
-        
+
         return
       }
 
       // If no pre-downloaded blob, download now
       console.log('No pre-downloaded blob, downloading now for:', downloadType)
-      
+
       // Try direct download first
       try {
         const response = await fetch(url, {
@@ -270,32 +270,32 @@ export function TiktokDownloader({ compact = false }: TiktokDownloaderProps) {
 
         if (response.ok) {
           const blob = await response.blob()
-          
+
           if (blob.size > 0) {
             const objectUrl = URL.createObjectURL(blob)
-            
+
             // Create download link
             const link = document.createElement("a")
             link.href = objectUrl
             link.download = filename
             link.style.display = 'none'
-            
+
             // Add to DOM, click, and remove
             document.body.appendChild(link)
             link.click()
             document.body.removeChild(link)
-            
+
             // Clean up object URL
             setTimeout(() => {
               URL.revokeObjectURL(objectUrl)
             }, 1000)
-            
+
             // Show success message
             setTimeout(() => {
               setDownloadingStates(prev => ({ ...prev, [downloadType]: false }))
               setResult(prev => prev ? { ...prev, downloadStarted: true } : null)
             }, 500)
-            
+
             return
           }
         }
@@ -314,41 +314,41 @@ export function TiktokDownloader({ compact = false }: TiktokDownloaderProps) {
           filename: filename
         })
       })
-      
+
       if (!response.ok) {
         throw new Error('Download failed')
       }
-      
+
       const blob = await response.blob()
-      
+
       if (blob.size === 0) {
         throw new Error('Empty file received. The content may be private or restricted.')
       }
-      
+
       const objectUrl = URL.createObjectURL(blob)
-      
+
       // Create download link
       const link = document.createElement("a")
       link.href = objectUrl
       link.download = filename
       link.style.display = 'none'
-      
+
       // Add to DOM, click, and remove
       document.body.appendChild(link)
       link.click()
       document.body.removeChild(link)
-      
+
       // Clean up object URL
       setTimeout(() => {
         URL.revokeObjectURL(objectUrl)
       }, 1000)
-      
+
       // Show success message
       setTimeout(() => {
         setDownloadingStates(prev => ({ ...prev, [downloadType]: false }))
         setResult(prev => prev ? { ...prev, downloadStarted: true } : null)
       }, 500)
-      
+
     } catch (e) {
       // Show error
       const errorMessage = e instanceof Error ? e.message : "Download failed. Please try again."
@@ -394,11 +394,11 @@ export function TiktokDownloader({ compact = false }: TiktokDownloaderProps) {
           <Button
             onClick={handleFetch}
             disabled={!videoUrl || loading}
-            className={`w-full ${compact ? "h-11" : "h-14"} text-base font-medium shadow-sm hover:shadow-md transition-all`}
+            isLoading={loading}
+            className={`w-full ${compact ? "h-10 sm:h-11" : "h-12 sm:h-14"} text-sm sm:text-base font-medium shadow-sm hover:shadow-md transition-all`}
           >
             {loading ? (
               <>
-                <LoadingSpinner className="mr-2" />
                 Processing content... (Usually takes 1-3 seconds)
               </>
             ) : (
@@ -434,13 +434,9 @@ export function TiktokDownloader({ compact = false }: TiktokDownloaderProps) {
                     variant="outline"
                     size="sm"
                     className="mt-3"
+                    isLoading={loading}
                   >
-                    {loading ? (
-                      <>
-                        <LoadingSpinner className="mr-2 h-3 w-3" />
-                        Retrying...
-                      </>
-                    ) : (
+                    {loading ? "Retrying..." : (
                       <>
                         <Download className="mr-2 h-3 w-3" />
                         Try Again

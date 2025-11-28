@@ -2,7 +2,7 @@
 
 import { useState } from "react"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
-import { Button } from "@/components/ui/button"
+import { GButton } from "@/components/globalcomponents/gbutton"
 import { Label } from "@/components/ui/label"
 import { Input } from "@/components/ui/input"
 import { Activity, Copy, Check, Calculator, Heart, Target, Scale, TrendingUp, AlertTriangle, CheckCircle, Info, Zap, Sparkles } from "lucide-react"
@@ -116,7 +116,7 @@ export function BMICalculator({ onResultChange }: BMICalculatorProps = {}) {
       if (unit === "metric") {
         ponderalIndex = w / Math.pow(h / 100, 3)
       } else {
-        ponderalIndex = h / Math.pow(w, 1/3)
+        ponderalIndex = h / Math.pow(w, 1 / 3)
       }
 
       // Calculate healthy weight range
@@ -144,7 +144,7 @@ export function BMICalculator({ onResultChange }: BMICalculatorProps = {}) {
         age: age ? Number.parseInt(age) : undefined,
         gender: gender
       }
-      
+
       setResult(resultData)
       onResultChange?.(resultData)
       setIsCalculating(false)
@@ -187,17 +187,15 @@ Risk Level: ${result.riskLevel}`
             <div className="flex gap-2 p-1 bg-card border border-border rounded-lg">
               <button
                 onClick={() => setUnit("metric")}
-                className={`flex-1 py-3 px-4 rounded-md text-sm font-medium transition-all ${
-                  unit === "metric" ? "bg-primary text-white shadow-sm" : "bg-card text-muted-foreground hover:bg-secondary border border-border"
-                }`}
+                className={`flex-1 py-3 px-4 rounded-md text-sm font-medium transition-all ${unit === "metric" ? "bg-primary text-white shadow-sm" : "bg-card text-muted-foreground hover:bg-secondary border border-border"
+                  }`}
               >
                 Metric (kg/cm)
               </button>
               <button
                 onClick={() => setUnit("imperial")}
-                className={`flex-1 py-3 px-4 rounded-md text-sm font-medium transition-all ${
-                  unit === "imperial" ? "bg-primary text-white shadow-sm" : "bg-card text-muted-foreground hover:bg-secondary border border-border"
-                }`}
+                className={`flex-1 py-3 px-4 rounded-md text-sm font-medium transition-all ${unit === "imperial" ? "bg-primary text-white shadow-sm" : "bg-card text-muted-foreground hover:bg-secondary border border-border"
+                  }`}
               >
                 Imperial (lbs/in)
               </button>
@@ -264,25 +262,22 @@ Risk Level: ${result.riskLevel}`
               <div className="flex gap-2">
                 <button
                   onClick={() => setGender("male")}
-                  className={`flex-1 py-2 px-3 rounded-md text-sm font-medium transition-all ${
-                    gender === "male" ? "bg-primary text-white shadow-sm" : "bg-card text-muted-foreground hover:bg-secondary border border-border"
-                  }`}
+                  className={`flex-1 py-2 px-3 rounded-md text-sm font-medium transition-all ${gender === "male" ? "bg-primary text-white shadow-sm" : "bg-card text-muted-foreground hover:bg-secondary border border-border"
+                    }`}
                 >
                   Male
                 </button>
                 <button
                   onClick={() => setGender("female")}
-                  className={`flex-1 py-2 px-3 rounded-md text-sm font-medium transition-all ${
-                    gender === "female" ? "bg-primary text-white shadow-sm" : "bg-card text-muted-foreground hover:bg-secondary border border-border"
-                  }`}
+                  className={`flex-1 py-2 px-3 rounded-md text-sm font-medium transition-all ${gender === "female" ? "bg-primary text-white shadow-sm" : "bg-card text-muted-foreground hover:bg-secondary border border-border"
+                    }`}
                 >
                   Female
                 </button>
                 <button
                   onClick={() => setGender("other")}
-                  className={`flex-1 py-2 px-3 rounded-md text-sm font-medium transition-all ${
-                    gender === "other" ? "bg-primary text-white shadow-sm" : "bg-card text-muted-foreground hover:bg-secondary border border-border"
-                  }`}
+                  className={`flex-1 py-2 px-3 rounded-md text-sm font-medium transition-all ${gender === "other" ? "bg-primary text-white shadow-sm" : "bg-card text-muted-foreground hover:bg-secondary border border-border"
+                    }`}
                 >
                   Other
                 </button>
@@ -290,7 +285,7 @@ Risk Level: ${result.riskLevel}`
             </div>
           </div>
 
-          <Button
+          <GButton
             onClick={calculateBMI}
             className="w-full h-12 sm:h-14 text-base sm:text-lg font-semibold shadow-lg hover:shadow-xl transition-all duration-300 bg-gradient-to-r from-primary to-primary/90 hover:from-primary/90 hover:to-primary text-white"
             disabled={!weight || !height || isCalculating}
@@ -308,7 +303,7 @@ Risk Level: ${result.riskLevel}`
                 <span className="sm:hidden">Calculate</span>
               </>
             )}
-          </Button>
+          </GButton>
         </CardContent>
       </Card>
 
@@ -392,14 +387,14 @@ Risk Level: ${result.riskLevel}`
               <div className="flex items-start gap-2">
                 <Info className="h-4 w-4 text-amber-400 mt-0.5 flex-shrink-0" />
                 <div className="text-sm text-amber-300">
-                  <strong>Disclaimer:</strong> BMI is a screening tool and should not be used as the sole indicator of health. 
+                  <strong>Disclaimer:</strong> BMI is a screening tool and should not be used as the sole indicator of health.
                   Consult a healthcare provider for personalized health advice and comprehensive health assessment.
                 </div>
               </div>
             </div>
 
             {/* Action Button */}
-            <Button
+            <GButton
               onClick={copyResult}
               variant="outline"
               className="w-full h-10 sm:h-12 text-sm sm:text-base font-semibold hover:bg-secondary transition-all duration-300 border-2 border-border text-foreground hover:text-white"
@@ -417,7 +412,7 @@ Risk Level: ${result.riskLevel}`
                   <span className="sm:hidden">Copy Result</span>
                 </>
               )}
-            </Button>
+            </GButton>
           </CardContent>
         </Card>
       )}

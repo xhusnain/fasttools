@@ -1,16 +1,16 @@
 "use client"
 
 import { useState, useEffect, useRef, useCallback } from "react"
-import { Button } from "@/components/ui/button"
+import { GButton as Button } from "@/components/globalcomponents/gbutton"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
 import { Badge } from "@/components/ui/badge"
-import { 
-  Calculator, 
-  Triangle, 
-  Ruler, 
+import {
+  Calculator,
+  Triangle,
+  Ruler,
   Info,
   Copy,
   RotateCcw,
@@ -68,13 +68,13 @@ export default function TriangleCalculator() {
     angleB: null,
     angleC: null
   })
-  
+
   const [angleUnit, setAngleUnit] = useState<"degree" | "radian">("degree")
   const [result, setResult] = useState<TriangleResult | null>(null)
   const [history, setHistory] = useState<TriangleResult[]>([])
   const [isCalculating, setIsCalculating] = useState(false)
   const [showAdvanced, setShowAdvanced] = useState(false)
-  
+
   const calculatorRef = useRef<HTMLDivElement>(null)
 
   useEffect(() => {
@@ -113,10 +113,10 @@ export default function TriangleCalculator() {
 
   const calculateTriangle = useCallback(async () => {
     setIsCalculating(true)
-    
+
     try {
       const data = { ...inputData }
-      
+
       // Convert angles to radians for calculations
       if (angleUnit === "degree") {
         if (data.angleA !== null) data.angleA = toRadians(data.angleA)
@@ -126,7 +126,7 @@ export default function TriangleCalculator() {
 
       const result = await calculateTriangleValues(data)
       setResult(result)
-      
+
       if (result.isValid) {
         setHistory(prev => [result, ...prev.slice(0, 9)]) // Keep last 10 calculations
       }
@@ -142,11 +142,11 @@ export default function TriangleCalculator() {
       setTimeout(() => {
         try {
           const { sideA, sideB, sideC, angleA, angleB, angleC } = data
-          
+
           // Count provided values
           const providedSides = [sideA, sideB, sideC].filter(v => v !== null && v > 0).length
           const providedAngles = [angleA, angleB, angleC].filter(v => v !== null && v > 0).length
-          
+
           if (providedSides + providedAngles < 3) {
             resolve({
               sides: { a: 0, b: 0, c: 0 },
@@ -189,12 +189,12 @@ export default function TriangleCalculator() {
               })
               return
             }
-            
+
             // Calculate angles using Law of Cosines
             const cosA = (b * b + c * c - a * a) / (2 * b * c)
             const cosB = (a * a + c * c - b * b) / (2 * a * c)
             const cosC = (a * a + b * b - c * c) / (2 * a * b)
-            
+
             // Check if angles are valid (cosine values must be between -1 and 1)
             if (Math.abs(cosA) > 1 || Math.abs(cosB) > 1 || Math.abs(cosC) > 1) {
               resolve({
@@ -213,7 +213,7 @@ export default function TriangleCalculator() {
               })
               return
             }
-            
+
             A = Math.acos(cosA)
             B = Math.acos(cosB)
             C = Math.acos(cosC)
@@ -260,7 +260,7 @@ export default function TriangleCalculator() {
           // Calculate additional properties
           const perimeter = a + b + c
           const semiperimeter = perimeter / 2
-          
+
           // Calculate area using Heron's formula with validation
           const heronValue = semiperimeter * (semiperimeter - a) * (semiperimeter - b) * (semiperimeter - c)
           let area = 0
@@ -271,21 +271,21 @@ export default function TriangleCalculator() {
             // For now, set area to NaN if invalid
             area = NaN
           }
-          
+
           // Heights (with validation)
           const heightA = (a > 0 && !isNaN(area)) ? (2 * area) / a : NaN
           const heightB = (b > 0 && !isNaN(area)) ? (2 * area) / b : NaN
           const heightC = (c > 0 && !isNaN(area)) ? (2 * area) / c : NaN
-          
+
           // Medians (with validation)
           const medianA = (a > 0 && b > 0 && c > 0) ? 0.5 * Math.sqrt(2 * b * b + 2 * c * c - a * a) : NaN
           const medianB = (a > 0 && b > 0 && c > 0) ? 0.5 * Math.sqrt(2 * a * a + 2 * c * c - b * b) : NaN
           const medianC = (a > 0 && b > 0 && c > 0) ? 0.5 * Math.sqrt(2 * a * a + 2 * b * b - c * c) : NaN
-          
+
           // Inradius and circumradius (with validation)
           const inradius = (!isNaN(area) && semiperimeter > 0) ? area / semiperimeter : NaN
           const circumradius = (!isNaN(area) && area > 0) ? (a * b * c) / (4 * area) : NaN
-          
+
           // Determine triangle type
           let triangleType = "Scalene"
           if (Math.abs(a - b) < 0.001 && Math.abs(b - c) < 0.001) {
@@ -293,7 +293,7 @@ export default function TriangleCalculator() {
           } else if (Math.abs(a - b) < 0.001 || Math.abs(b - c) < 0.001 || Math.abs(a - c) < 0.001) {
             triangleType = "Isosceles"
           }
-          
+
           // Check for right triangle
           const angles = [A, B, C]
           if (angles.some(angle => Math.abs(angle - 90) < 0.001)) {
@@ -310,15 +310,15 @@ export default function TriangleCalculator() {
             area: Number(area.toFixed(6)),
             perimeter: Number(perimeter.toFixed(6)),
             semiperimeter: Number(semiperimeter.toFixed(6)),
-            height: { 
-              a: Number(heightA.toFixed(6)), 
-              b: Number(heightB.toFixed(6)), 
-              c: Number(heightC.toFixed(6)) 
+            height: {
+              a: Number(heightA.toFixed(6)),
+              b: Number(heightB.toFixed(6)),
+              c: Number(heightC.toFixed(6))
             },
-            median: { 
-              a: Number(medianA.toFixed(6)), 
-              b: Number(medianB.toFixed(6)), 
-              c: Number(medianC.toFixed(6)) 
+            median: {
+              a: Number(medianA.toFixed(6)),
+              b: Number(medianB.toFixed(6)),
+              c: Number(medianC.toFixed(6))
             },
             inradius: Number(inradius.toFixed(6)),
             circumradius: Number(circumradius.toFixed(6)),
@@ -359,14 +359,14 @@ export default function TriangleCalculator() {
 
   const copyResult = () => {
     if (!result) return
-    
+
     const resultText = `Triangle Calculator Results:
 Sides: a=${result.sides.a}, b=${result.sides.b}, c=${result.sides.c}
 Angles: A=${result.angles.A}°, B=${result.angles.B}°, C=${result.angles.C}°
 Area: ${result.area}
 Perimeter: ${result.perimeter}
 Type: ${result.triangleType}`
-    
+
     navigator.clipboard.writeText(resultText)
   }
 
@@ -394,19 +394,19 @@ Type: ${result.triangleType}`
     const { sideA, sideB, sideC, angleA, angleB, angleC } = inputData
     const providedSides = [sideA, sideB, sideC].filter(v => v !== null && v > 0).length
     const providedAngles = [angleA, angleB, angleC].filter(v => v !== null && v > 0).length
-    
+
     if (providedSides + providedAngles >= 3 && providedSides >= 1) {
       // Debounce the calculation to avoid too many calls
       const timeoutId = setTimeout(() => {
         calculateTriangle()
       }, 500)
-      
+
       return () => clearTimeout(timeoutId)
     }
   }, [inputData, calculateTriangle])
 
   return (
-    <div 
+    <div
       ref={calculatorRef}
       tabIndex={0}
       className="space-y-4 focus:outline-none"
@@ -543,8 +543,8 @@ Type: ${result.triangleType}`
 
           {/* Action Buttons */}
           <div className="flex flex-wrap gap-2">
-            <Button 
-              onClick={calculateTriangle} 
+            <Button
+              onClick={calculateTriangle}
               disabled={isCalculating}
               className="flex-1 min-w-[100px] h-9 text-xs font-medium bg-gradient-to-r from-primary to-primary/90 hover:from-primary/90 hover:to-primary text-primary-foreground"
             >
@@ -622,7 +622,7 @@ Type: ${result.triangleType}`
                       </div>
                     </div>
                   </div>
-                  
+
                   <div className="space-y-2 p-3 bg-card rounded-lg border border-border">
                     <h3 className="text-sm font-semibold text-heading-accent mb-2">Angles</h3>
                     <div className="space-y-1.5">
@@ -661,7 +661,7 @@ Type: ${result.triangleType}`
                       </div>
                     </div>
                   </div>
-                  
+
                   <div className="space-y-2 p-3 bg-card rounded-lg border border-border">
                     <h3 className="text-sm font-semibold text-heading-accent mb-2">Radii</h3>
                     <div className="space-y-1.5">
@@ -696,7 +696,7 @@ Type: ${result.triangleType}`
                       </div>
                     </div>
                   </div>
-                  
+
                   <div className="space-y-2 p-3 bg-card rounded-lg border border-border">
                     <h3 className="text-sm font-semibold text-heading-accent mb-2">Medians</h3>
                     <div className="space-y-1.5">
@@ -741,10 +741,10 @@ Type: ${result.triangleType}`
         <Card className="bg-card border-border">
           <CardHeader className="pb-2 px-3 sm:px-6">
             <div className="flex items-center justify-between">
-            <CardTitle className="flex items-center gap-2 text-base text-foreground">
-              <Calculator className="h-4 w-4" />
-              Recent Calculations
-            </CardTitle>
+              <CardTitle className="flex items-center gap-2 text-base text-foreground">
+                <Calculator className="h-4 w-4" />
+                Recent Calculations
+              </CardTitle>
               <Button variant="outline" size="sm" onClick={clearHistory} className="h-8 text-xs border-border bg-card text-foreground hover:bg-secondary">
                 Clear
               </Button>
@@ -767,8 +767,8 @@ Type: ${result.triangleType}`
                       </div>
                     </div>
                   </div>
-                  <Button 
-                    variant="ghost" 
+                  <Button
+                    variant="ghost"
                     size="sm"
                     onClick={() => {
                       const resultText = `Triangle: a=${calc.sides.a}, b=${calc.sides.b}, c=${calc.sides.c}, Area=${calc.area}`

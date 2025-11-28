@@ -3,7 +3,7 @@
 import type React from "react"
 
 import { useState, useEffect, useRef } from "react"
-import { Button } from "@/components/ui/button"
+import { GButton } from "@/components/globalcomponents/gbutton"
 import { Card } from "@/components/ui/card"
 import { Upload, Download, RotateCcw, FileText, Zap, Image as ImageIcon, Palette } from "lucide-react"
 import { LoadingSpinner } from "@/components/loading-spinner"
@@ -57,7 +57,7 @@ export function ImageBackgroundRemover() {
     const reader = new FileReader()
     reader.onload = async (event) => {
       const imageUrl = event.target?.result as string
-      
+
       // Create HTMLImageElement
       const img = new Image()
       img.crossOrigin = "anonymous"
@@ -150,7 +150,7 @@ export function ImageBackgroundRemover() {
     reset()
     setImageLoaded(false)
     setImageDimensions(null)
-    
+
     // Reset the file input
     const fileInput = document.getElementById("image-upload-bg") as HTMLInputElement
     if (fileInput) {
@@ -174,7 +174,7 @@ export function ImageBackgroundRemover() {
                   </span>
                 )}
               </div>
-              
+
               <div className="relative">
                 <label
                   htmlFor="image-upload-bg"
@@ -182,10 +182,10 @@ export function ImageBackgroundRemover() {
                 >
                   {imageUrl ? (
                     <div className="w-full h-full flex items-center justify-center p-4 bg-white">
-                      <img 
-                        src={imageUrl || "/placeholder.svg"} 
-                        alt="Original" 
-                        className="max-w-full max-h-full object-contain" 
+                      <img
+                        src={imageUrl || "/placeholder.svg"}
+                        alt="Original"
+                        className="max-w-full max-h-full object-contain"
                       />
                     </div>
                   ) : (
@@ -221,10 +221,10 @@ export function ImageBackgroundRemover() {
 
               {imageUrl && !isProcessing && !result && (
                 <div className="flex justify-center">
-                  <Button size="sm" variant="outline" onClick={resetAll} className="gap-2">
+                  <GButton size="sm" variant="outline" onClick={resetAll} className="gap-2">
                     <RotateCcw className="h-4 w-4" />
                     Upload Different Image
-                  </Button>
+                  </GButton>
                 </div>
               )}
             </div>
@@ -241,7 +241,7 @@ export function ImageBackgroundRemover() {
                 )}
               </div>
 
-              <div 
+              <div
                 className="relative w-full h-[220px] sm:h-[340px] md:h-[420px] lg:h-[500px] border-2 border-slate-200 dark:border-border rounded-xl overflow-hidden"
                 style={bgMode === 'color' ? { backgroundColor: bgColor } : bgMode === 'image' && bgImageUrl ? { backgroundImage: `url(${bgImageUrl})`, backgroundSize: 'cover', backgroundPosition: 'center' } : {
                   background: '#ffffff',
@@ -284,9 +284,9 @@ export function ImageBackgroundRemover() {
 
                 {result && !isProcessing && (
                   <div className="w-full h-full flex items-center justify-center p-4">
-                    <img 
-                      src={result.resultUrl} 
-                      alt="Background removed" 
+                    <img
+                      src={result.resultUrl}
+                      alt="Background removed"
                       className="max-w-full max-h-full object-contain drop-shadow-2xl"
                     />
                   </div>
@@ -296,13 +296,13 @@ export function ImageBackgroundRemover() {
               {result && !isProcessing && (
                 <div className="space-y-3">
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
-                    <Button 
-                      onClick={downloadImage} 
+                    <GButton
+                      onClick={downloadImage}
                       className="w-full gap-2 bg-gradient-to-r from-purple-500 to-blue-500 hover:from-purple-600 hover:to-blue-600 text-white font-semibold py-6 text-base"
                     >
                       <Download className="h-5 w-5" />
                       Download PNG
-                    </Button>
+                    </GButton>
                     <div className="flex items-center justify-center gap-3 flex-wrap md:flex-nowrap relative">
                       <div id="bg-mode-select" className="relative inline-flex w-auto">
                         <button
@@ -354,7 +354,7 @@ export function ImageBackgroundRemover() {
                           {isColorMenuOpen && (
                             <div className="absolute z-30 mt-2 left-1/2 -translate-x-1/2 md:left-auto md:right-0 w-64 max-w-[calc(100vw-3rem)] rounded-xl border border-slate-200 dark:border-border bg-white dark:bg-secondary p-3 shadow-xl">
                               <div className="grid grid-cols-8 gap-2 mb-3">
-                                {['#ffffff','#f3f4f6','#000000','#ef4444','#3b82f6','#10b981','#a855f7','#f59e0b','#14b8a6','#e11d48','#7c3aed','#475569'].map(c => (
+                                {['#ffffff', '#f3f4f6', '#000000', '#ef4444', '#3b82f6', '#10b981', '#a855f7', '#f59e0b', '#14b8a6', '#e11d48', '#7c3aed', '#475569'].map(c => (
                                   <button key={c} title={c} onClick={() => { setBgColor(c); setIsColorMenuOpen(false) }} className="h-6 w-6 rounded-full border border-slate-300 dark:border-border" style={{ backgroundColor: c }} />
                                 ))}
                               </div>
@@ -392,7 +392,7 @@ export function ImageBackgroundRemover() {
                       )}
                     </div>
                   </div>
-                  
+
                   <div className="flex items-center justify-between text-xs text-muted-foreground dark:text-muted-foreground">
                     <div className="flex items-center gap-2">
                       <div className="w-2 h-2 bg-green-500 rounded-full"></div>
@@ -401,15 +401,15 @@ export function ImageBackgroundRemover() {
                     <span>Processing time: {result.processingTime.toFixed(0)}ms</span>
                   </div>
 
-                  <Button 
-                    size="sm" 
-                    variant="outline" 
-                    onClick={resetAll} 
+                  <GButton
+                    size="sm"
+                    variant="outline"
+                    onClick={resetAll}
                     className="w-full gap-2"
                   >
                     <RotateCcw className="h-4 w-4" />
                     Process New Image
-                  </Button>
+                  </GButton>
                 </div>
               )}
             </div>
@@ -429,14 +429,14 @@ export function ImageBackgroundRemover() {
                 <div>
                   <h3 className="text-lg font-bold text-foreground mb-2">Oops! Something went wrong</h3>
                   <p className="text-sm text-foreground mb-4 max-w-md">{status.message}</p>
-                  <Button 
-                    onClick={resetAll} 
+                  <GButton
+                    onClick={resetAll}
                     variant="outline"
                     className="gap-2 border-red-300 text-foreground hover:bg-red-100 dark:border-destructive dark:text-foreground dark:hover:bg-red-900/30"
                   >
                     <RotateCcw className="h-4 w-4" />
                     Try Again
-                  </Button>
+                  </GButton>
                 </div>
               </div>
             </div>

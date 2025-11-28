@@ -1,7 +1,7 @@
 "use client"
 
 import React, { useState } from "react"
-import { Button } from "@/components/ui/button"
+import { GButton as Button } from "@/components/globalcomponents/gbutton"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
 import { Input } from "@/components/ui/input"
@@ -73,7 +73,7 @@ export function AnnouncementManager() {
 
   const addAnnouncement = () => {
     if (!newAnnouncement.title || !newAnnouncement.description || !newAnnouncement.href) return
-    
+
     const announcement: Announcement = {
       id: Date.now().toString(),
       title: newAnnouncement.title,
@@ -85,7 +85,7 @@ export function AnnouncementManager() {
       isLive: newAnnouncement.isLive,
       isActive: newAnnouncement.isActive
     }
-    
+
     setAnnouncements([announcement, ...announcements])
     setNewAnnouncement({
       title: "",
@@ -100,8 +100,8 @@ export function AnnouncementManager() {
   }
 
   const toggleActive = (id: string) => {
-    setAnnouncements(prev => 
-      prev.map(ann => 
+    setAnnouncements(prev =>
+      prev.map(ann =>
         ann.id === id ? { ...ann, isActive: !ann.isActive } : ann
       )
     )
@@ -170,7 +170,7 @@ export function AnnouncementManager() {
               />
             </div>
           </div>
-          
+
           <div>
             <Label htmlFor="description">Description</Label>
             <Textarea

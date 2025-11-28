@@ -1,7 +1,7 @@
 "use client"
 
 import { useState } from "react"
-import { Button } from "@/components/ui/button"
+import { GButton as Button } from "@/components/globalcomponents/gbutton"
 import { Textarea } from "@/components/ui/textarea"
 import { Label } from "@/components/ui/label"
 import { Copy, Check, Download, Sparkles, AlertCircle, CheckCircle2 } from "lucide-react"
@@ -35,7 +35,7 @@ export function HTMLBeautifier() {
 
   const beautifyHTML = (html: string) => {
     let processedHTML = html
-    
+
     // Remove comments if option is enabled
     if (removeComments) {
       processedHTML = processedHTML.replace(/<!--[\s\S]*?-->/g, "")
@@ -56,12 +56,12 @@ export function HTMLBeautifier() {
 
   const minifyHTML = (html: string) => {
     let processedHTML = html
-    
+
     // Remove comments if option is enabled
     if (removeComments) {
       processedHTML = processedHTML.replace(/<!--[\s\S]*?-->/g, "")
     }
-    
+
     return processedHTML.replace(/\s+/g, " ").replace(/>\s+</g, "><").trim()
   }
 
@@ -71,19 +71,19 @@ export function HTMLBeautifier() {
       const openTags = html.match(/<\w+[^>]*>/g) || []
       const closeTags = html.match(/<\/\w+>/g) || []
       const selfClosing = html.match(/<\w+[^>]*\/>/g) || []
-      
+
       // Extract tag names
       const openTagNames = openTags.map(tag => tag.match(/<(\w+)/)?.[1]).filter(Boolean)
       const closeTagNames = closeTags.map(tag => tag.match(/<\/(\w+)>/)?.[1]).filter(Boolean)
-      
+
       // Check if opening and closing tags roughly match (excluding self-closing)
       const hasDoctype = html.toLowerCase().includes('<!doctype')
       const hasBasicStructure = html.includes('<html') || html.includes('<div') || html.includes('<span')
-      
+
       if (!hasBasicStructure) {
         return false
       }
-      
+
       return true
     } catch (error) {
       return false
@@ -98,7 +98,7 @@ export function HTMLBeautifier() {
 
   const downloadHTML = () => {
     if (!output) return
-    
+
     const blob = new Blob([output], { type: "text/html" })
     const url = URL.createObjectURL(blob)
     const a = document.createElement("a")
@@ -196,9 +196,9 @@ export function HTMLBeautifier() {
       <div className="space-y-2">
         <div className="flex items-center justify-between">
           <label className="text-sm font-medium text-foreground">HTML Input</label>
-          <Button 
-            variant="outline" 
-            size="sm" 
+          <Button
+            variant="outline"
+            size="sm"
             onClick={loadSampleHTML}
             className="gap-1.5 text-xs"
           >
@@ -228,11 +228,10 @@ export function HTMLBeautifier() {
 
       {/* Validation Status */}
       {isValid !== null && (
-        <div className={`flex items-center gap-2 p-3 rounded-lg border ${
-          isValid 
-            ? "bg-muted border-green-200 dark:border-green-900" 
+        <div className={`flex items-center gap-2 p-3 rounded-lg border ${isValid
+            ? "bg-muted border-green-200 dark:border-green-900"
             : "bg-yellow-50 dark:bg-yellow-950/20 border-yellow-200 dark:border-yellow-900"
-        }`}>
+          }`}>
           {isValid ? (
             <>
               <CheckCircle2 className="h-4 w-4 text-heading-accent flex-shrink-0" />

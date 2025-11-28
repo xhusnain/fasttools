@@ -2,18 +2,18 @@
 
 import type React from "react"
 import { useState, useRef } from "react"
-import { Button } from "@/components/ui/button"
+import { GButton as Button } from "@/components/globalcomponents/gbutton"
 import { Card } from "@/components/ui/card"
 import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
 import { Progress } from "@/components/ui/progress"
-import { 
-  Upload, 
-  Download, 
-  FileText, 
-  Scissors, 
-  Merge, 
-  X, 
+import {
+  Upload,
+  Download,
+  FileText,
+  Scissors,
+  Merge,
+  X,
   GripVertical,
   AlertCircle,
   CheckCircle2,
@@ -82,7 +82,7 @@ export function PDFToolsAdvanced() {
   // Handle file upload
   const handleFileUpload = async (e: React.ChangeEvent<HTMLInputElement>) => {
     const uploadedFiles = Array.from(e.target.files || [])
-    
+
     if (mode === "split" && uploadedFiles.length > 1) {
       showToast("warning", "Only one PDF for splitting")
       return
@@ -92,11 +92,11 @@ export function PDFToolsAdvanced() {
     setProgress(0)
 
     const validFiles: FileWithId[] = []
-    
+
     for (let i = 0; i < uploadedFiles.length; i++) {
       const file = uploadedFiles[i]
       setProgress(((i + 1) / uploadedFiles.length) * 50)
-      
+
       const isValid = await validatePDFFile(file)
       if (isValid) {
         const pageCount = await getPageCount(file)
@@ -114,16 +114,16 @@ export function PDFToolsAdvanced() {
     } else {
       setFiles(validFiles.slice(0, 1))
     }
-    
+
     setProgress(0)
     setLoading(false)
-    
+
     if (validFiles.length > 0) {
       const totalFiles = mode === "merge" ? files.length + validFiles.length : validFiles.length
-      showToast("success", mode === "merge" 
+      showToast("success", mode === "merge"
         ? `${validFiles.length} PDF added (${totalFiles} total)`
         : `PDF loaded (${validFiles[0].pageCount} pages)`)
-      
+
       // Update page range for split mode
       if (mode === "split" && validFiles[0].pageCount) {
         setPageRange({ start: 1, end: validFiles[0].pageCount })
@@ -164,11 +164,11 @@ export function PDFToolsAdvanced() {
     setProgress(0)
 
     const validFiles: FileWithId[] = []
-    
+
     for (let i = 0; i < droppedFiles.length; i++) {
       const file = droppedFiles[i]
       setProgress(((i + 1) / droppedFiles.length) * 50)
-      
+
       const isValid = await validatePDFFile(file)
       if (isValid) {
         const pageCount = await getPageCount(file)
@@ -186,16 +186,16 @@ export function PDFToolsAdvanced() {
     } else {
       setFiles(validFiles.slice(0, 1))
     }
-    
+
     setProgress(0)
     setLoading(false)
-    
+
     if (validFiles.length > 0) {
       const totalFiles = mode === "merge" ? files.length + validFiles.length : validFiles.length
-      showToast("success", mode === "merge" 
+      showToast("success", mode === "merge"
         ? `${validFiles.length} PDF added (${totalFiles} total)`
         : `PDF loaded (${validFiles[0].pageCount} pages)`)
-      
+
       if (mode === "split" && validFiles[0].pageCount) {
         setPageRange({ start: 1, end: validFiles[0].pageCount })
       }
@@ -240,11 +240,11 @@ export function PDFToolsAdvanced() {
 
     try {
       const mergedPdf = await PDFDocument.create()
-      
+
       for (let i = 0; i < files.length; i++) {
         const file = files[i].file
         setProgress(((i + 1) / files.length) * 90)
-        
+
         const arrayBuffer = await file.arrayBuffer()
         const pdf = await PDFDocument.load(arrayBuffer)
         const copiedPages = await mergedPdf.copyPages(pdf, pdf.getPageIndices())
@@ -263,9 +263,9 @@ export function PDFToolsAdvanced() {
 
       URL.revokeObjectURL(url)
       setProgress(100)
-      
+
       showToast("success", `Merged ${files.length} PDFs successfully!`)
-      
+
       // Reset after successful merge
       setTimeout(() => {
         setFiles([])
@@ -288,7 +288,7 @@ export function PDFToolsAdvanced() {
 
     for (let i = 0; i < pageCount; i++) {
       setProgress(((i + 1) / pageCount) * 90)
-      
+
       const newPdf = await PDFDocument.create()
       const [copiedPage] = await newPdf.copyPages(pdf, [i])
       newPdf.addPage(copiedPage)
@@ -303,7 +303,7 @@ export function PDFToolsAdvanced() {
       link.click()
 
       URL.revokeObjectURL(url)
-      
+
       // Small delay to prevent browser blocking downloads
       await new Promise(resolve => setTimeout(resolve, 100))
     }
@@ -316,7 +316,7 @@ export function PDFToolsAdvanced() {
   const splitPDFRange = async () => {
     const { start, end } = pageRange
     const fileWithId = files[0]
-    
+
     if (start < 1 || end > (fileWithId.pageCount || 0) || start > end) {
       showToast("error", `Invalid range (1-${fileWithId.pageCount})`)
       return
@@ -324,10 +324,10 @@ export function PDFToolsAdvanced() {
 
     const arrayBuffer = await fileWithId.file.arrayBuffer()
     const pdf = await PDFDocument.load(arrayBuffer)
-    
+
     const newPdf = await PDFDocument.create()
     const pageIndices = Array.from({ length: end - start + 1 }, (_, i) => start - 1 + i)
-    
+
     setProgress(50)
     const copiedPages = await newPdf.copyPages(pdf, pageIndices)
     copiedPages.forEach((page) => newPdf.addPage(page))
@@ -344,7 +344,7 @@ export function PDFToolsAdvanced() {
 
     URL.revokeObjectURL(url)
     setProgress(100)
-    
+
     showToast("success", `Extracted pages ${start}-${end}!`)
   }
 
@@ -365,10 +365,10 @@ export function PDFToolsAdvanced() {
 
     const arrayBuffer = await fileWithId.file.arrayBuffer()
     const pdf = await PDFDocument.load(arrayBuffer)
-    
+
     const newPdf = await PDFDocument.create()
     const pageIndices = pageNumbers.map(p => p - 1)
-    
+
     setProgress(50)
     const copiedPages = await newPdf.copyPages(pdf, pageIndices)
     copiedPages.forEach((page) => newPdf.addPage(page))
@@ -385,7 +385,7 @@ export function PDFToolsAdvanced() {
 
     URL.revokeObjectURL(url)
     setProgress(100)
-    
+
     showToast("success", `Extracted ${pageNumbers.length} pages!`)
   }
 
@@ -407,7 +407,7 @@ export function PDFToolsAdvanced() {
       } else if (splitMode === "extract") {
         await splitPDFExtract()
       }
-      
+
       // Reset after successful split
       setTimeout(() => {
         setFiles([])
@@ -548,7 +548,7 @@ export function PDFToolsAdvanced() {
         {/* File Upload Area */}
         <Card className="p-6 border-border shadow-sm hover:shadow-md transition-shadow">
           <div className="space-y-4">
-            <div 
+            <div
               className="flex items-center justify-center w-full"
               onDragOver={handleDragOver}
               onDrop={handleDrop}
@@ -563,8 +563,8 @@ export function PDFToolsAdvanced() {
                     <span className="font-semibold">Click to upload</span> or drag and drop
                   </p>
                   <p className="text-xs text-muted-foreground">
-                    {mode === "merge" 
-                      ? "Upload multiple PDFs to merge (max 100MB each)" 
+                    {mode === "merge"
+                      ? "Upload multiple PDFs to merge (max 100MB each)"
                       : "Upload one PDF to split (max 100MB)"}
                   </p>
                 </div>
@@ -605,7 +605,7 @@ export function PDFToolsAdvanced() {
                     </p>
                   )}
                 </div>
-                
+
                 <div className="space-y-2">
                   {files.map((fileWithId, index) => (
                     <div
@@ -614,9 +614,8 @@ export function PDFToolsAdvanced() {
                       onDragStart={() => handleDragStart(index)}
                       onDragEnter={() => handleDragEnter(index)}
                       onDragEnd={handleDragEnd}
-                      className={`flex items-center gap-2 p-3 bg-muted/30 rounded-lg border border-border transition-all ${
-                        mode === "merge" ? "cursor-move hover:bg-muted/50" : ""
-                      } ${draggedIndex === index ? "opacity-50" : ""}`}
+                      className={`flex items-center gap-2 p-3 bg-muted/30 rounded-lg border border-border transition-all ${mode === "merge" ? "cursor-move hover:bg-muted/50" : ""
+                        } ${draggedIndex === index ? "opacity-50" : ""}`}
                     >
                       {mode === "merge" && (
                         <GripVertical className="h-4 w-4 text-muted-foreground flex-shrink-0" />
@@ -642,8 +641,8 @@ export function PDFToolsAdvanced() {
                 </div>
 
                 {/* Process Button */}
-                <Button 
-                  onClick={processPDF} 
+                <Button
+                  onClick={processPDF}
                   disabled={loading || files.length === 0}
                   className="w-full h-10 text-sm font-medium shadow-sm"
                 >
@@ -655,9 +654,9 @@ export function PDFToolsAdvanced() {
                   ) : (
                     <>
                       <Download className="h-4 w-4 mr-2" />
-                      {mode === "merge" 
-                        ? `Merge ${files.length} PDF${files.length !== 1 ? 's' : ''}` 
-                        : splitMode === "all" 
+                      {mode === "merge"
+                        ? `Merge ${files.length} PDF${files.length !== 1 ? 's' : ''}`
+                        : splitMode === "all"
                           ? `Split into ${files[0]?.pageCount || 0} Pages`
                           : splitMode === "range"
                             ? "Extract Page Range"
@@ -780,8 +779,8 @@ export function PDFToolsAdvanced() {
                   <span className="text-xs font-bold text-primary">3</span>
                 </div>
                 <p className="text-sm text-muted-foreground leading-relaxed">
-                  <strong className="text-card-foreground">Configure:</strong> {splitMode === "range" 
-                    ? "Enter the start and end page numbers for the range you want to extract (e.g., pages 1-10)" 
+                  <strong className="text-card-foreground">Configure:</strong> {splitMode === "range"
+                    ? "Enter the start and end page numbers for the range you want to extract (e.g., pages 1-10)"
                     : splitMode === "extract"
                       ? "Type the specific page numbers you want to extract, separated by commas (e.g., 1, 3, 5, 7)"
                       : "All pages will be automatically split into separate PDF files - no configuration needed"}

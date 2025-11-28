@@ -1,7 +1,7 @@
 "use client"
 
 import { useState } from "react"
-import { Button } from "@/components/ui/button"
+import { GButton as Button } from "@/components/globalcomponents/gbutton"
 import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
@@ -43,16 +43,16 @@ export function RetirementPlanner() {
   const [currentSalary, setCurrentSalary] = useState("")
   const [inflationRate, setInflationRate] = useState("3.0")
   const [expectedLifespan, setExpectedLifespan] = useState("85")
-  
+
   // Government-specific
   const [dspFunds, setDspFunds] = useState<PensionFund[]>([])
   const [pensionMultiplier, setPensionMultiplier] = useState("2.5")
   const [yearsOfService, setYearsOfService] = useState("")
   const [highThreeSalary, setHighThreeSalary] = useState("")
-  
+
   // Private sector
   const [retirementAccounts, setRetirementAccounts] = useState<RetirementAccount[]>([])
-  
+
   // Social Security
   const [socialSecurity, setSocialSecurity] = useState<SocialSecurity>({
     estimatedMonthlyBenefit: 0,
@@ -60,7 +60,7 @@ export function RetirementPlanner() {
     earlyRetirementAge: 62,
     delayedRetirementAge: 70
   })
-  
+
   const [result, setResult] = useState<{
     yearsToRetirement: number
     totalRetirementIncome: number
@@ -92,7 +92,7 @@ export function RetirementPlanner() {
   }
 
   const updateDspFund = (id: string, field: keyof PensionFund, value: any) => {
-    setDspFunds(dspFunds.map(fund => 
+    setDspFunds(dspFunds.map(fund =>
       fund.id === id ? { ...fund, [field]: value } : fund
     ))
   }
@@ -115,7 +115,7 @@ export function RetirementPlanner() {
   }
 
   const updateRetirementAccount = (id: string, field: keyof RetirementAccount, value: any) => {
-    setRetirementAccounts(retirementAccounts.map(account => 
+    setRetirementAccounts(retirementAccounts.map(account =>
       account.id === id ? { ...account, [field]: value } : account
     ))
   }
@@ -148,7 +148,7 @@ export function RetirementPlanner() {
         if (account.isActive) {
           const monthlyRate = account.annualReturn / 100 / 12
           const futureValueCurrent = account.currentBalance * Math.pow(1 + monthlyRate, months)
-          const futureValueContributions = (account.monthlyContribution + account.employerMatch) * 
+          const futureValueContributions = (account.monthlyContribution + account.employerMatch) *
             ((Math.pow(1 + monthlyRate, months) - 1) / monthlyRate)
           const accountValue = futureValueCurrent + futureValueContributions
           const accountContributions = account.currentBalance + (account.monthlyContribution + account.employerMatch) * months
@@ -181,7 +181,7 @@ export function RetirementPlanner() {
           const monthsActive = yearsActive * 12
           const monthlyRate = 7 / 100 / 12 // Assuming 7% return for DSP
           const fundValue = contributionAmount * ((Math.pow(1 + monthlyRate, monthsActive) - 1) / monthlyRate)
-          
+
           totalRetirementIncome += fundValue
           pensionBreakdown[fund.name || 'DSP Fund'] = fundValue
         }
@@ -261,8 +261,8 @@ ${result.recommendations.map(rec => `• ${rec}`).join('\n')}`
         </CardTitle>
         <CardDescription className="text-base text-muted-foreground">
           Comprehensive retirement planning for government employees (DSP, pension) and private sector (401k, IRA) with Social Security integration
-          </CardDescription>
-        </CardHeader>
+        </CardDescription>
+      </CardHeader>
       <CardContent>
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
           {/* Left Column - Inputs */}
@@ -290,51 +290,51 @@ ${result.recommendations.map(rec => `• ${rec}`).join('\n')}`
               <div className="space-y-2">
                 <Label htmlFor="currentAge" className="text-xs font-medium text-foreground">
                   Current Age
-              </Label>
-              <Input
-                id="currentAge"
-                type="number"
-                placeholder="30"
-                value={currentAge}
-                onChange={(e) => setCurrentAge(e.target.value)}
-                min="18"
-                max="100"
+                </Label>
+                <Input
+                  id="currentAge"
+                  type="number"
+                  placeholder="30"
+                  value={currentAge}
+                  onChange={(e) => setCurrentAge(e.target.value)}
+                  min="18"
+                  max="100"
                   className="h-9 text-sm border-2 border-orange-300 focus:border-orange-400 focus:ring-2 focus:ring-orange-400/20 bg-background text-foreground placeholder:text-muted-foreground"
-              />
-            </div>
-            <div className="space-y-2">
+                />
+              </div>
+              <div className="space-y-2">
                 <Label htmlFor="retirementAge" className="text-xs font-medium text-foreground">
-                Retirement Age
-              </Label>
-              <Input
-                id="retirementAge"
-                type="number"
-                placeholder="65"
-                value={retirementAge}
-                onChange={(e) => setRetirementAge(e.target.value)}
-                min="50"
-                max="100"
+                  Retirement Age
+                </Label>
+                <Input
+                  id="retirementAge"
+                  type="number"
+                  placeholder="65"
+                  value={retirementAge}
+                  onChange={(e) => setRetirementAge(e.target.value)}
+                  min="50"
+                  max="100"
                   className="h-9 text-sm border-2 border-orange-300 focus:border-orange-400 focus:ring-2 focus:ring-orange-400/20 bg-background text-foreground placeholder:text-muted-foreground"
-              />
+                />
+              </div>
             </div>
-          </div>
 
-          <div className="space-y-2">
+            <div className="space-y-2">
               <Label htmlFor="currentSalary" className="text-xs font-medium text-foreground flex items-center gap-2">
                 <DollarSign className="h-4 w-4" />
                 Current Annual Salary ($)
-            </Label>
-            <Input
+              </Label>
+              <Input
                 id="currentSalary"
-              type="number"
+                type="number"
                 placeholder="75000"
                 value={currentSalary}
                 onChange={(e) => setCurrentSalary(e.target.value)}
-              min="0"
-              step="1000"
+                min="0"
+                step="1000"
                 className="h-9 text-sm border-2 border-orange-300 focus:border-orange-400 focus:ring-2 focus:ring-orange-400/20 bg-background text-foreground placeholder:text-muted-foreground"
-            />
-          </div>
+              />
+            </div>
 
             {/* Government-specific fields */}
             {employmentType === 'government' && (
@@ -345,21 +345,21 @@ ${result.recommendations.map(rec => `• ${rec}`).join('\n')}`
                     Government Pension Details
                   </h4>
                   <div className="grid grid-cols-2 gap-4">
-          <div className="space-y-2">
+                    <div className="space-y-2">
                       <Label htmlFor="yearsOfService" className="text-xs font-medium text-foreground">
                         Years of Service
-            </Label>
-            <Input
+                      </Label>
+                      <Input
                         id="yearsOfService"
-              type="number"
+                        type="number"
                         placeholder="10"
                         value={yearsOfService}
                         onChange={(e) => setYearsOfService(e.target.value)}
-              min="0"
+                        min="0"
                         className="h-9 text-sm border-2 border-orange-300 focus:border-orange-400 focus:ring-2 focus:ring-orange-400/20 bg-background text-foreground placeholder:text-muted-foreground"
-            />
-          </div>
-          <div className="space-y-2">
+                      />
+                    </div>
+                    <div className="space-y-2">
                       <Label htmlFor="pensionMultiplier" className="text-xs font-medium text-foreground">
                         Pension Multiplier (%)
                       </Label>
@@ -377,14 +377,14 @@ ${result.recommendations.map(rec => `• ${rec}`).join('\n')}`
                   <div className="space-y-2 mt-3">
                     <Label htmlFor="highThreeSalary" className="text-xs font-medium text-foreground">
                       High-3 Average Salary ($)
-            </Label>
-            <Input
+                    </Label>
+                    <Input
                       id="highThreeSalary"
-              type="number"
+                      type="number"
                       placeholder="80000"
                       value={highThreeSalary}
                       onChange={(e) => setHighThreeSalary(e.target.value)}
-              min="0"
+                      min="0"
                       step="1000"
                       className="h-9 text-sm border-2 border-orange-300 focus:border-orange-400 focus:ring-2 focus:ring-orange-400/20 bg-background text-foreground placeholder:text-muted-foreground"
                     />
@@ -545,7 +545,7 @@ ${result.recommendations.map(rec => `• ${rec}`).join('\n')}`
                   type="number"
                   placeholder="Estimated Monthly Benefit"
                   value={socialSecurity.estimatedMonthlyBenefit}
-                  onChange={(e) => setSocialSecurity({...socialSecurity, estimatedMonthlyBenefit: Number(e.target.value)})}
+                  onChange={(e) => setSocialSecurity({ ...socialSecurity, estimatedMonthlyBenefit: Number(e.target.value) })}
                   className="h-9 text-sm border-2 border-orange-300 focus:border-orange-400 focus:ring-2 focus:ring-orange-400/20 bg-background text-foreground placeholder:text-muted-foreground"
                 />
                 <p className="text-xs text-muted-foreground">Check your Social Security statement for accurate estimates</p>
@@ -585,32 +585,32 @@ ${result.recommendations.map(rec => `• ${rec}`).join('\n')}`
                   className="h-9 text-sm border-2 border-orange-300 focus:border-orange-400 focus:ring-2 focus:ring-orange-400/20 bg-background text-foreground placeholder:text-muted-foreground"
                 />
               </div>
-          </div>
+            </div>
 
-          <Button
-            onClick={calculateRetirement}
+            <Button
+              onClick={calculateRetirement}
               disabled={loading || !currentAge || !retirementAge || !currentSalary}
               className="w-full h-9 text-sm font-medium shadow-sm hover:shadow-md transition-all"
-          >
-            {loading ? (
-              <>
+            >
+              {loading ? (
+                <>
                   <LoadingSpinner className="mr-2 h-3 w-3" />
-                Calculating...
-              </>
-            ) : (
-              <>
+                  Calculating...
+                </>
+              ) : (
+                <>
                   <Calculator className="mr-2 h-4 w-4" />
-                Calculate Retirement Plan
-              </>
-            )}
-          </Button>
+                  Calculate Retirement Plan
+                </>
+              )}
+            </Button>
           </div>
 
           {/* Right Column - Results */}
           <div className="space-y-4">
             {result ? (
               <>
-            <div className="space-y-3">
+                <div className="space-y-3">
                   <div className="flex justify-between items-center p-2 rounded-lg bg-card border border-border">
                     <span className="text-xs text-muted-foreground">Years to Retirement:</span>
                     <span className="text-sm font-bold text-foreground">{result.yearsToRetirement} years</span>
@@ -619,19 +619,19 @@ ${result.recommendations.map(rec => `• ${rec}`).join('\n')}`
                   <div className="flex justify-between items-center p-2 rounded-lg bg-card border border-border">
                     <span className="text-xs text-muted-foreground">Monthly Retirement Income:</span>
                     <span className="text-sm font-bold text-heading-accent">${result.monthlyRetirementIncome.toLocaleString()}</span>
-              </div>
+                  </div>
 
                   <div className="flex justify-between items-center p-2 rounded-lg bg-card border border-border">
                     <span className="text-xs text-muted-foreground">Replacement Ratio:</span>
                     <span className={`text-sm font-bold ${result.replacementRatio >= 70 ? 'text-heading-accent' : 'text-foreground'}`}>
                       {result.replacementRatio}%
-                </span>
-              </div>
+                    </span>
+                  </div>
 
                   <div className="flex justify-between items-center p-3 rounded-lg bg-primary/5 border-2 border-primary/20">
                     <span className="text-xs font-medium text-foreground">Total Retirement Value:</span>
                     <span className="text-xl font-bold text-primary">${result.totalRetirementIncome.toLocaleString()}</span>
-              </div>
+                  </div>
 
                   {result.shortfall > 0 && (
                     <div className="flex justify-between items-center p-2 rounded-lg bg-red-500/10 border border-red-500/20">
@@ -663,7 +663,7 @@ ${result.recommendations.map(rec => `• ${rec}`).join('\n')}`
                           <span className="text-foreground">${value.toLocaleString()}</span>
                         </div>
                       ))}
-              </div>
+                    </div>
                   )}
 
                   {/* Social Security */}
@@ -673,7 +673,7 @@ ${result.recommendations.map(rec => `• ${rec}`).join('\n')}`
                       <div className="flex justify-between text-xs">
                         <span className="text-muted-foreground">Total Value:</span>
                         <span className="text-foreground">${result.socialSecurityBreakdown.toLocaleString()}</span>
-              </div>
+                      </div>
                     </div>
                   )}
 
@@ -689,16 +689,16 @@ ${result.recommendations.map(rec => `• ${rec}`).join('\n')}`
                       ))}
                     </div>
                   )}
-            </div>
+                </div>
 
-            <Button
-              onClick={copyResult}
-              variant="outline"
+                <Button
+                  onClick={copyResult}
+                  variant="outline"
                   className="w-full h-8 text-xs font-medium hover:bg-accent transition-all bg-transparent"
-            >
+                >
                   <Copy className="mr-2 h-3 w-3" />
                   Copy Retirement Plan
-            </Button>
+                </Button>
               </>
             ) : (
               <div className="flex items-center justify-center h-48">
@@ -711,7 +711,7 @@ ${result.recommendations.map(rec => `• ${rec}`).join('\n')}`
             )}
           </div>
         </div>
-          </CardContent>
-        </Card>
+      </CardContent>
+    </Card>
   )
 }

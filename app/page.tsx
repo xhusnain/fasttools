@@ -1,5 +1,5 @@
 import Link from "next/link"
-import { Button } from "@/components/ui/button"
+import { GButton } from "@/components/globalcomponents/gbutton"
 import { GCard } from "@/components/globalcomponents/gcard"
 import { PremiumHeroBackground } from "@/components/premium-hero-background"
 import { GHeader } from "@/components/globalcomponents/gheader"
@@ -740,10 +740,10 @@ function CategorySection({ category }: { category: typeof categories[0] }) {
       {/* View All Button - Bottom Center */}
       <div className="flex justify-center mt-8">
         <Link href={category.href}>
-          <Button size="lg" className="bg-primary hover:bg-primary/90 text-primary-foreground font-semibold shadow-lg gap-2 px-8">
+          <GButton size="lg" className="bg-primary hover:bg-primary/90 text-primary-foreground font-semibold shadow-lg gap-2 px-8">
             View All
             <ArrowRight className="h-5 w-5" />
-          </Button>
+          </GButton>
         </Link>
       </div>
     </section>
@@ -1206,10 +1206,10 @@ export default function Home() {
                 </div>
                 <div className="flex justify-center mt-6 sm:mt-8">
                   <Link href={category.href}>
-                    <Button size="lg" className="bg-primary hover:bg-primary/90 text-primary-foreground font-semibold shadow-lg gap-2 px-6 sm:px-8">
+                    <GButton size="lg" className="bg-primary hover:bg-primary/90 text-primary-foreground font-semibold shadow-lg gap-2 px-6 sm:px-8">
                       View All
                       <ArrowRight className="h-4 w-4 sm:h-5 sm:w-5" />
-                    </Button>
+                    </GButton>
                   </Link>
                 </div>
               </div>

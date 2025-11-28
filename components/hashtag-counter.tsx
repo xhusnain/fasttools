@@ -1,16 +1,16 @@
 "use client"
 
 import { useState, useEffect } from "react"
-import { Button } from "@/components/ui/button"
+import { GButton } from "@/components/globalcomponents/gbutton"
 import { Textarea } from "@/components/ui/textarea"
 import { Label } from "@/components/ui/label"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
-import { 
-  Hash, 
-  Copy, 
-  Check, 
-  Sparkles, 
+import {
+  Hash,
+  Copy,
+  Check,
+  Sparkles,
   Loader2,
   Instagram,
   Twitter,
@@ -82,7 +82,7 @@ export function HashtagCounter() {
       }
 
       const data = await response.json()
-      
+
       if (data.hashtags && Array.isArray(data.hashtags) && data.hashtags.length > 0) {
         setResult(prev => ({
           ...prev,
@@ -135,7 +135,7 @@ export function HashtagCounter() {
               </CardDescription>
             </div>
           </div>
-          
+
           {/* Platform Selector */}
           <div className="flex flex-col items-center gap-2 sm:gap-3">
             <Label className="text-foreground font-medium text-sm sm:text-base">Choose Platform:</Label>
@@ -151,19 +151,16 @@ export function HashtagCounter() {
                 <button
                   key={value}
                   onClick={() => setPlatform(value)}
-                  className={`group relative flex flex-col items-center gap-1 p-2 sm:p-3 rounded-lg transition-all duration-300 hover:scale-105 ${
-                    platform === value 
-                      ? 'bg-gradient-to-br from-primary to-primary/90 shadow-lg' 
+                  className={`group relative flex flex-col items-center gap-1 p-2 sm:p-3 rounded-lg transition-all duration-300 hover:scale-105 ${platform === value
+                      ? 'bg-gradient-to-br from-primary to-primary/90 shadow-lg'
                       : 'bg-secondary hover:bg-secondary/80 border border-border'
-                  }`}
+                    }`}
                   title={label}
                 >
-                  <Icon className={`h-5 w-5 sm:h-6 sm:w-6 ${
-                    platform === value ? 'text-primary-foreground' : 'text-muted-foreground group-hover:text-foreground'
-                  } transition-colors duration-300`} />
-                  <span className={`text-xs font-medium ${
-                    platform === value ? 'text-primary-foreground' : 'text-muted-foreground group-hover:text-foreground'
-                  } transition-colors duration-300 hidden sm:block`}>
+                  <Icon className={`h-5 w-5 sm:h-6 sm:w-6 ${platform === value ? 'text-primary-foreground' : 'text-muted-foreground group-hover:text-foreground'
+                    } transition-colors duration-300`} />
+                  <span className={`text-xs font-medium ${platform === value ? 'text-primary-foreground' : 'text-muted-foreground group-hover:text-foreground'
+                    } transition-colors duration-300 hidden sm:block`}>
                     {label}
                   </span>
                   {platform === value && (
@@ -193,7 +190,7 @@ export function HashtagCounter() {
 
             {/* Action Button */}
             <div className="flex justify-center">
-              <Button
+              <GButton
                 onClick={generateHashtags}
                 disabled={!text || isGenerating}
                 className="w-full max-w-xs h-10 sm:h-12 bg-gradient-to-r from-primary to-primary/90 hover:from-primary/90 hover:to-primary text-primary-foreground font-semibold shadow-lg hover:shadow-xl transition-all duration-300 text-sm sm:text-base"
@@ -211,7 +208,7 @@ export function HashtagCounter() {
                     <span className="sm:hidden">AI Hashtags</span>
                   </>
                 )}
-              </Button>
+              </GButton>
             </div>
           </div>
 
@@ -224,14 +221,14 @@ export function HashtagCounter() {
                   <div className="text-xl sm:text-2xl font-bold text-foreground">{result.count}</div>
                   <div className="text-xs sm:text-sm text-muted-foreground">Existing Hashtags</div>
                 </div>
-                
+
                 {result.generatedHashtags && result.generatedHashtags.length > 0 && (
                   <div className="p-3 sm:p-4 rounded-xl bg-muted border border-border text-center">
                     <div className="text-xl sm:text-2xl font-bold text-foreground">{result.generatedHashtags.length}</div>
                     <div className="text-xs sm:text-sm text-muted-foreground">AI Generated</div>
                   </div>
                 )}
-                
+
                 <div className="p-3 sm:p-4 rounded-xl bg-primary/10 border border-primary/20 text-center sm:col-span-2 lg:col-span-1">
                   <div className="text-xl sm:text-2xl font-bold text-foreground">
                     {result.count + (result.generatedHashtags ? result.generatedHashtags.length : 0)}
@@ -250,7 +247,7 @@ export function HashtagCounter() {
                         <Hash className="h-4 w-4 text-foreground" />
                         Existing Hashtags ({result.hashtags.length})
                       </h3>
-                      <Button
+                      <GButton
                         onClick={() => copyHashtags(result.hashtags)}
                         variant="outline"
                         size="sm"
@@ -269,7 +266,7 @@ export function HashtagCounter() {
                             <span className="sm:hidden">Copy</span>
                           </>
                         )}
-                      </Button>
+                      </GButton>
                     </div>
                     <div className="flex flex-wrap gap-1.5 sm:gap-2">
                       {result.hashtags.map((tag, index) => (
@@ -292,7 +289,7 @@ export function HashtagCounter() {
                         <Sparkles className="h-4 w-4 text-foreground" />
                         AI Generated Hashtags ({result.generatedHashtags.length})
                       </h3>
-                      <Button
+                      <GButton
                         onClick={() => result.generatedHashtags && copyHashtags(result.generatedHashtags)}
                         variant="outline"
                         size="sm"
@@ -311,7 +308,7 @@ export function HashtagCounter() {
                             <span className="sm:hidden">Copy</span>
                           </>
                         )}
-                      </Button>
+                      </GButton>
                     </div>
                     <div className="flex flex-wrap gap-1.5 sm:gap-2">
                       {result.generatedHashtags.map((tag, index) => (
@@ -329,7 +326,7 @@ export function HashtagCounter() {
                 {/* Copy All Combined Button */}
                 {(result.hashtags.length > 0 || (result.generatedHashtags && result.generatedHashtags.length > 0)) && (
                   <div className="flex justify-center pt-2">
-                    <Button
+                    <GButton
                       onClick={() => {
                         const allHashtags = [...result.hashtags, ...(result.generatedHashtags || [])]
                         copyHashtags(allHashtags)
@@ -338,7 +335,7 @@ export function HashtagCounter() {
                     >
                       <Copy className="mr-2 h-4 w-4" />
                       Copy All Hashtags ({result.hashtags.length + (result.generatedHashtags?.length || 0)})
-                    </Button>
+                    </GButton>
                   </div>
                 )}
 

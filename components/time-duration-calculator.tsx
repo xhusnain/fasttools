@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from "react"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
-import { Button } from "@/components/ui/button"
+import { GButton as Button } from "@/components/globalcomponents/gbutton"
 import { Label } from "@/components/ui/label"
 import { Input } from "@/components/ui/input"
 import { Clock, Copy, Check, Calculator, Calendar, Globe, Timer, Zap, Target, TrendingUp, BarChart3, PieChart, ArrowUp, ArrowDown, Minus, Plus, Settings, Sparkles } from "lucide-react"
@@ -67,16 +67,16 @@ export function TimeDurationCalculator() {
           if (!startTime || !endTime) return
           const [startHour, startMin] = startTime.split(":").map(Number)
           const [endHour, endMin] = endTime.split(":").map(Number)
-          
+
           let totalMinutes = endHour * 60 + endMin - (startHour * 60 + startMin)
           if (totalMinutes < 0) totalMinutes += 24 * 60
-          
+
           const hours = Math.floor(totalMinutes / 60)
           const minutes = totalMinutes % 60
           const seconds = 0
           const totalSeconds = totalMinutes * 60
           const totalHours = totalMinutes / 60
-          
+
           calculationResult = {
             hours,
             minutes,
@@ -98,11 +98,11 @@ export function TimeDurationCalculator() {
           if (!startTime || !timeToAdd) return
           const [addStartH, addStartM] = startTime.split(":").map(Number)
           const [addH, addM] = timeToAdd.split(":").map(Number)
-          
+
           let newMinutes = (addStartH * 60 + addStartM) + (addH * 60 + addM)
           const newHours = Math.floor(newMinutes / 60) % 24
           const newMins = newMinutes % 60
-          
+
           calculationResult = {
             hours: newHours,
             minutes: newMins,
@@ -124,13 +124,13 @@ export function TimeDurationCalculator() {
           if (!startTime || !timeToSubtract) return
           const [startHSub, startMSub] = startTime.split(":").map(Number)
           const [subH, subM] = timeToSubtract.split(":").map(Number)
-          
+
           let subMinutes = (startHSub * 60 + startMSub) - (subH * 60 + subM)
           if (subMinutes < 0) subMinutes += 24 * 60
-          
+
           const subHours = Math.floor(subMinutes / 60)
           const subMins = subMinutes % 60
-          
+
           calculationResult = {
             hours: subHours,
             minutes: subMins,
@@ -154,12 +154,12 @@ export function TimeDurationCalculator() {
           const [busEndH, busEndM] = businessEnd.split(":").map(Number)
           const [busStartH2, busStartM2] = startTime.split(":").map(Number)
           const [busEndH2, busEndM2] = endTime.split(":").map(Number)
-          
+
           const businessStartMinutes = busStartH * 60 + busStartM
           const businessEndMinutes = busEndH * 60 + busEndM
           const startMinutes = busStartH2 * 60 + busStartM2
           const endMinutes = busEndH2 * 60 + busEndM2
-          
+
           let businessMinutes = 0
           if (startMinutes >= businessStartMinutes && endMinutes <= businessEndMinutes) {
             businessMinutes = endMinutes - startMinutes
@@ -170,10 +170,10 @@ export function TimeDurationCalculator() {
           } else if (startMinutes >= businessStartMinutes && endMinutes > businessEndMinutes) {
             businessMinutes = businessEndMinutes - startMinutes
           }
-          
+
           const busHours = Math.floor(businessMinutes / 60)
           const busMins = businessMinutes % 60
-          
+
           calculationResult = {
             hours: busHours,
             minutes: busMins,
@@ -195,14 +195,14 @@ export function TimeDurationCalculator() {
           if (!startTime || !endTime) return
           const [otStartH, otStartM] = startTime.split(":").map(Number)
           const [otEndH, otEndM] = endTime.split(":").map(Number)
-          
+
           const otTotalMinutes = (otEndH * 60 + otEndM) - (otStartH * 60 + otStartM)
           const otTotalHours = otTotalMinutes / 60
           const threshold = Number.parseFloat(overtimeThreshold)
-          
+
           const regularH = Math.min(otTotalHours, threshold)
           const overtimeH = Math.max(0, otTotalHours - threshold)
-          
+
           calculationResult = {
             hours: Math.floor(otTotalHours),
             minutes: Math.round((otTotalHours % 1) * 60),
@@ -229,7 +229,7 @@ export function TimeDurationCalculator() {
           const tzNewMinutes = (tzStartMinutes + tzOffset * 60) % (24 * 60)
           const tzNewHours = Math.floor(tzNewMinutes / 60)
           const tzNewMins = tzNewMinutes % 60
-          
+
           calculationResult = {
             hours: tzNewHours,
             minutes: tzNewMins,
@@ -254,7 +254,7 @@ export function TimeDurationCalculator() {
           const diffTime = end.getTime() - start.getTime()
           const diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24))
           const workDaysCount = Math.max(0, diffDays - Math.floor(diffDays / 7) * 2) // Exclude weekends
-          
+
           calculationResult = {
             hours: 0,
             minutes: 0,
@@ -372,11 +372,10 @@ export function TimeDurationCalculator() {
                 key={type}
                 variant={calculationType === type ? "default" : "outline"}
                 onClick={() => setCalculationType(type as CalculationType)}
-                className={`h-9 text-xs font-medium transition-all duration-300 ${
-                  calculationType === type
+                className={`h-9 text-xs font-medium transition-all duration-300 ${calculationType === type
                     ? "bg-gradient-to-r from-primary to-primary/90 text-white shadow-lg border-border"
                     : "hover:bg-secondary border-border bg-card text-muted-foreground hover:text-heading-accent"
-                }`}
+                  }`}
               >
                 <Icon className="h-3 w-3 mr-1" />
                 <span className="hidden sm:inline">{label}</span>

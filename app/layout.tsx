@@ -3,7 +3,6 @@ import "./globals.css"
 import { Header } from "@/components/header"
 import { Footer } from "@/components/footer"
 import { CookieConsent } from "@/components/cookie-consent"
-import { GlobalLoading } from "@/components/global-loading"
 import { ThemeProvider } from "@/components/theme-provider"
 import Script from "next/script"
 import { env } from "@/lib/env"
@@ -157,7 +156,6 @@ export default function RootLayout({
           <a href="#main-content" className="skip-link">
             Skip to main content
           </a>
-          <GlobalLoading />
           <Header />
           <main id="main-content" role="main">
             {children}

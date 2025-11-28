@@ -1,13 +1,13 @@
 "use client"
 
 import { useState } from "react"
-import { Button } from "@/components/ui/button"
+import { GButton } from "@/components/globalcomponents/gbutton"
 import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
 import { Copy, DollarSign, Calculator, Globe, CreditCard, Banknote, Coins, TrendingUp, Info, Settings } from "lucide-react"
-import { LoadingSpinner } from "@/components/loading-spinner"
+
 
 // Comprehensive PayPal fee data structure
 const PAYPAL_FEES = {
@@ -444,23 +444,19 @@ International: ${result.isInternational ? 'Yes' : 'No'}`
                 </div>
               </div>
 
-              <Button
+              <GButton
                 onClick={calculateFee}
                 disabled={loading || !amount || Number.parseFloat(amount) <= 0}
+                isLoading={loading}
                 className="w-full h-9 text-sm font-medium shadow-sm hover:shadow-md transition-all bg-primary hover:bg-primary text-white"
               >
-                {loading ? (
-                  <>
-                    <LoadingSpinner className="mr-2" />
-                    Calculating...
-                  </>
-                ) : (
+                {loading ? "Calculating..." : (
                   <>
                     <Calculator className="mr-2 h-4 w-4" />
                     Calculate Fee
                   </>
                 )}
-              </Button>
+              </GButton>
             </div>
 
             {/* Right Column - Results */}
@@ -542,14 +538,14 @@ International: ${result.isInternational ? 'Yes' : 'No'}`
                     </div>
                   </div>
 
-                  <Button
+                  <GButton
                     onClick={copyResult}
                     variant="outline"
                     className="w-full h-8 text-xs font-medium hover:bg-accent transition-all bg-transparent border-orange-300"
                   >
                     <Copy className="mr-2 h-3 w-3" />
                     Copy Results
-                  </Button>
+                  </GButton>
                 </div>
               ) : (
                 <div className="p-6 text-center text-muted-foreground border-2 border-dashed border-orange-300 rounded-lg">

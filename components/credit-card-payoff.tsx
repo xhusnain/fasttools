@@ -1,7 +1,7 @@
 "use client"
 
 import { useState } from "react"
-import { Button } from "@/components/ui/button"
+import { GButton } from "@/components/globalcomponents/gbutton"
 import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
@@ -144,7 +144,7 @@ Payoff Date: ${result.payoffDate}`
         </div>
 
         <div className="flex gap-2">
-          <Button
+          <GButton
             onClick={calculatePayoff}
             disabled={loading || !balance || !apr || !monthlyPayment}
             className="flex-1 h-9 text-sm font-medium shadow-sm hover:shadow-md transition-all"
@@ -160,8 +160,8 @@ Payoff Date: ${result.payoffDate}`
                 Calculate Payoff
               </>
             )}
-          </Button>
-          <Button
+          </GButton>
+          <GButton
             onClick={() => {
               setBalance("")
               setApr("")
@@ -172,7 +172,7 @@ Payoff Date: ${result.payoffDate}`
             className="h-9 text-sm font-medium"
           >
             Reset
-          </Button>
+          </GButton>
         </div>
       </div>
 
@@ -212,14 +212,14 @@ Payoff Date: ${result.payoffDate}`
               </p>
             </div>
 
-            <Button
+            <GButton
               onClick={copyResult}
               variant="outline"
               className="w-full h-8 text-xs font-medium hover:bg-accent transition-all bg-transparent"
             >
               <Copy className="mr-2 h-3 w-3" />
               Copy Results
-            </Button>
+            </GButton>
           </div>
         ) : (
           <div className="text-center py-8 text-muted-foreground">

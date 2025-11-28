@@ -1,7 +1,7 @@
 "use client"
 
 import { useState } from "react"
-import { Button } from "@/components/ui/button"
+import { GButton } from "@/components/globalcomponents/gbutton"
 import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
@@ -94,7 +94,7 @@ Split ${numPeople} ways: $${result.perPerson} per person`
           />
           <div className="flex gap-2 flex-wrap">
             {quickTipButtons.map((percent) => (
-              <Button
+              <GButton
                 key={percent}
                 onClick={() => setTipPercent(percent)}
                 variant={tipPercent === percent ? "default" : "outline"}
@@ -102,7 +102,7 @@ Split ${numPeople} ways: $${result.perPerson} per person`
                 className="h-7 text-xs font-medium"
               >
                 {percent}%
-              </Button>
+              </GButton>
             ))}
           </div>
         </div>
@@ -126,7 +126,7 @@ Split ${numPeople} ways: $${result.perPerson} per person`
 
         {/* Action Buttons */}
         <div className="flex gap-2">
-          <Button
+          <GButton
             onClick={calculateTip}
             disabled={loading || !billAmount || Number.parseFloat(billAmount) <= 0}
             className="flex-1 h-9 text-xs font-medium shadow-sm hover:shadow-md transition-all"
@@ -143,7 +143,7 @@ Split ${numPeople} ways: $${result.perPerson} per person`
               </>
             )}
           </Button>
-          <Button
+          <GButton
             onClick={() => {
               setBillAmount("")
               setTipPercent("15")
@@ -154,7 +154,7 @@ Split ${numPeople} ways: $${result.perPerson} per person`
             className="h-9 text-xs font-medium"
           >
             Reset
-          </Button>
+          </GButton>
         </div>
       </div>
 
@@ -206,14 +206,14 @@ Split ${numPeople} ways: $${result.perPerson} per person`
             </div>
 
             {/* Copy Button */}
-            <Button
+            <GButton
               onClick={copyResult}
               variant="outline"
               className="w-full h-8 text-xs font-medium hover:bg-accent transition-all bg-transparent"
             >
               <Copy className="mr-1 h-3 w-3" />
               Copy Results
-            </Button>
+            </GButton>
           </>
         ) : (
           <div className="flex items-center justify-center h-64">

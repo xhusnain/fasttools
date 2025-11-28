@@ -2,7 +2,7 @@
 
 import { useState } from "react"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
-import { Button } from "@/components/ui/button"
+import { GButton } from "@/components/globalcomponents/gbutton"
 import { Label } from "@/components/ui/label"
 import { Input } from "@/components/ui/input"
 import { DollarSign, Copy, Check } from "lucide-react"
@@ -109,7 +109,7 @@ export function LoanCalculator() {
             />
           </div>
 
-          <Button
+          <GButton
             onClick={calculateLoan}
             className="w-full h-11 text-sm font-medium shadow-md hover:shadow-lg transition-all"
             disabled={!principal || !rate || !tenure || isCalculating}
@@ -122,7 +122,7 @@ export function LoanCalculator() {
             ) : (
               "Calculate EMI"
             )}
-          </Button>
+          </GButton>
         </CardContent>
       </Card>
 
@@ -153,7 +153,7 @@ export function LoanCalculator() {
               </div>
             </div>
 
-            <Button
+            <GButton
               onClick={copyResult}
               variant="outline"
               className="w-full h-10 text-sm font-medium hover:bg-accent transition-all bg-transparent"
@@ -169,7 +169,7 @@ export function LoanCalculator() {
                   Copy Result
                 </>
               )}
-            </Button>
+            </GButton>
           </CardContent>
         </Card>
       )}

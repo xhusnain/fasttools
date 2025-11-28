@@ -1,7 +1,7 @@
 "use client"
 
 import { useState, useEffect } from "react"
-import { Button } from "@/components/ui/button"
+import { GButton } from "@/components/globalcomponents/gbutton"
 import { DollarSign, ArrowLeftRight, RefreshCw } from "lucide-react"
 
 interface Currency {
@@ -35,7 +35,7 @@ export function CurrencyConverter() {
       try {
         const response = await fetch('/api/currency_converter/currencies')
         const data = await response.json()
-        
+
         if (data.success) {
           setCurrencies(data.data)
         } else {
@@ -69,7 +69,7 @@ export function CurrencyConverter() {
         ])
       }
     }
-    
+
     fetchCurrencies()
   }, [])
 
@@ -145,7 +145,7 @@ export function CurrencyConverter() {
           <DollarSign className="h-4 w-4 text-foreground" />
           <h3 className="text-lg font-semibold text-card-foreground">Currency Converter</h3>
         </div>
-        
+
         <div className="grid grid-cols-1 md:grid-cols-3 gap-4 items-end">
           {/* Amount Input */}
           <div className="space-y-2">
@@ -161,14 +161,14 @@ export function CurrencyConverter() {
 
           {/* Swap Button */}
           <div className="flex justify-center">
-            <Button 
-              onClick={swapCurrencies} 
-              variant="outline" 
-              size="sm" 
+            <GButton
+              onClick={swapCurrencies}
+              variant="outline"
+              size="sm"
               className="h-8 w-8 p-0 border-primary hover:bg-primary hover:text-white"
             >
               <ArrowLeftRight className="h-4 w-4" />
-            </Button>
+            </GButton>
           </div>
 
           {/* Result Display */}
@@ -249,8 +249,8 @@ export function CurrencyConverter() {
       <div className="bg-card border border-border rounded-lg p-5 shadow-sm">
         <h4 className="text-sm font-semibold text-card-foreground mb-2">About FastTools Currency Converter</h4>
         <p className="text-xs text-muted-foreground">
-          FastTools.store provides real-time currency conversion with accurate exchange rates updated regularly. 
-          Our free currency converter supports 100+ currencies and is perfect for travel, business, and personal use. 
+          FastTools.store provides real-time currency conversion with accurate exchange rates updated regularly.
+          Our free currency converter supports 100+ currencies and is perfect for travel, business, and personal use.
           Always verify rates with your bank or exchange service before making transactions.
         </p>
       </div>

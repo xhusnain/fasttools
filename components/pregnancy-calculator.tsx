@@ -1,7 +1,7 @@
 "use client"
 
 import { useState, useEffect } from "react"
-import { Button } from "@/components/ui/button"
+import { GButton } from "@/components/globalcomponents/gbutton"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
@@ -265,7 +265,7 @@ export default function PregnancyCalculator() {
       const preWeight = parseFloat(prePregnancyWeight)
       const heightInMeters = parseFloat(height) / 100
       const bmi = preWeight / (heightInMeters * heightInMeters)
-      
+
       let weightGainRecommendation = { min: 0, max: 0, category: "" }
       if (bmi < 18.5) {
         weightGainRecommendation = { min: 28, max: 40, category: "Underweight (BMI < 18.5)" }
@@ -479,13 +479,13 @@ Next Milestone: ${result.nextMilestone}`
             </div>
 
             <div className="flex gap-2">
-              <Button onClick={calculatePregnancy} className="flex-1 h-9 text-xs font-medium bg-gradient-to-r from-primary to-primary/90 hover:from-primary/90 hover:to-primary text-white">
+              <GButton onClick={calculatePregnancy} className="flex-1 h-9 text-xs font-medium bg-gradient-to-r from-primary to-primary/90 hover:from-primary/90 hover:to-primary text-white">
                 <Calculator className="mr-1 h-3 w-3" />
                 Calculate
-              </Button>
-              <Button variant="outline" onClick={clearAll} className="h-9 text-xs border-border bg-card text-foreground hover:bg-secondary">
+              </GButton>
+              <GButton variant="outline" onClick={clearAll} className="h-9 text-xs border-border bg-card text-foreground hover:bg-secondary">
                 Clear
-              </Button>
+              </GButton>
             </div>
           </div>
         </CardContent>
@@ -537,7 +537,7 @@ Next Milestone: ${result.nextMilestone}`
                   <span className="text-sm text-muted-foreground">{result.pregnancyProgress.toFixed(1)}%</span>
                 </div>
                 <div className="w-full bg-gray-200 rounded-full h-2">
-                  <div 
+                  <div
                     className="bg-gradient-to-r from-pink-500 to-purple-500 h-2 rounded-full transition-all duration-300"
                     style={{ width: `${result.pregnancyProgress}%` }}
                   ></div>
@@ -553,9 +553,9 @@ Next Milestone: ${result.nextMilestone}`
               </div>
 
               <div className="flex gap-2 pt-4">
-                <Button onClick={copyResult} variant="outline" size="sm">
+                <GButton onClick={copyResult} variant="outline" size="sm">
                   Copy Results
-                </Button>
+                </GButton>
               </div>
             </CardContent>
           </Card>
@@ -746,13 +746,13 @@ Next Milestone: ${result.nextMilestone}`
                       {item.weeksPregnant} weeks, {item.daysPregnant} days
                     </div>
                   </div>
-                  <Button
+                  <GButton
                     variant="ghost"
                     size="sm"
                     onClick={() => setResult(item)}
                   >
                     View Details
-                  </Button>
+                  </GButton>
                 </div>
               ))}
             </div>
@@ -782,7 +782,7 @@ Next Milestone: ${result.nextMilestone}`
               </div>
             </div>
           </div>
-          
+
           <div className="text-xs text-muted-foreground space-y-2">
             <p>
               <strong className="text-heading-accent">Baby's Anticipated Arrival:</strong> This shows the projected birth date, usually calculated as roughly 280 days (or about nine calendar months) from when your last period started.

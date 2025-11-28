@@ -1,54 +1,54 @@
 "use client"
 
 import { useState, useEffect } from "react"
-import { Button } from "@/components/ui/button"
+import { GButton } from "@/components/globalcomponents/gbutton"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
 import { Badge } from "@/components/ui/badge"
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
-import { 
-  Calculator, 
-  DollarSign, 
-  Percent, 
-  Calendar, 
-  TrendingUp, 
-  TrendingDown, 
-  Info, 
-  AlertCircle, 
-  CheckCircle, 
-  Copy, 
-  Download, 
-  History, 
-  Star, 
-  Globe, 
-  Shield, 
-  FileText, 
-  BarChart3, 
-  PieChart, 
-  Target, 
-  Zap, 
-  Clock, 
-  Users, 
-  Home, 
-  Car, 
-  ShoppingBag, 
-  CreditCard, 
-  Banknote, 
-  Coins, 
-  Wallet, 
-  Briefcase, 
-  Store, 
-  Truck, 
-  Package, 
-  Tag, 
-  ShoppingCart, 
-  HandHeart, 
-  Gift, 
-  Award, 
-  Trophy, 
-  TrendingUp as TrendingUpIcon, 
+import {
+  Calculator,
+  DollarSign,
+  Percent,
+  Calendar,
+  TrendingUp,
+  TrendingDown,
+  Info,
+  AlertCircle,
+  CheckCircle,
+  Copy,
+  Download,
+  History,
+  Star,
+  Globe,
+  Shield,
+  FileText,
+  BarChart3,
+  PieChart,
+  Target,
+  Zap,
+  Clock,
+  Users,
+  Home,
+  Car,
+  ShoppingBag,
+  CreditCard,
+  Banknote,
+  Coins,
+  Wallet,
+  Briefcase,
+  Store,
+  Truck,
+  Package,
+  Tag,
+  ShoppingCart,
+  HandHeart,
+  Gift,
+  Award,
+  Trophy,
+  TrendingUp as TrendingUpIcon,
   TrendingDown as TrendingDownIcon,
   Stethoscope,
   Brain,
@@ -136,31 +136,31 @@ export default function AmortizationCalculator() {
 
     const monthlyRate = rate / 100 / 12
     const totalMonths = termYears * 12
-    
+
     // Calculate monthly payment
-    const monthlyPayment = (principal * monthlyRate * Math.pow(1 + monthlyRate, totalMonths)) / 
-                          (Math.pow(1 + monthlyRate, totalMonths) - 1)
-    
+    const monthlyPayment = (principal * monthlyRate * Math.pow(1 + monthlyRate, totalMonths)) /
+      (Math.pow(1 + monthlyRate, totalMonths) - 1)
+
     const totalPayment = monthlyPayment * totalMonths
     const totalInterest = totalPayment - principal
-    
+
     // Generate amortization schedule
     const monthlySchedule = []
     const annualSchedule = []
     let balance = principal
     let totalInterestPaid = 0
     let totalPrincipalPaid = 0
-    
+
     for (let month = 1; month <= totalMonths; month++) {
       const interestPayment = balance * monthlyRate
       const principalPayment = monthlyPayment - interestPayment
       const extraPrincipal = extra
       const totalPrincipalPayment = principalPayment + extraPrincipal
-      
+
       balance = Math.max(0, balance - totalPrincipalPayment)
       totalInterestPaid += interestPayment
       totalPrincipalPaid += totalPrincipalPayment
-      
+
       monthlySchedule.push({
         month,
         payment: monthlyPayment + extra,
@@ -168,7 +168,7 @@ export default function AmortizationCalculator() {
         interest: interestPayment,
         balance: balance
       })
-      
+
       // Create annual summary
       if (month % 12 === 0 || month === totalMonths) {
         const year = Math.ceil(month / 12)
@@ -182,13 +182,13 @@ export default function AmortizationCalculator() {
         totalPrincipalPaid = 0
       }
     }
-    
+
     // Calculate extra payment analysis
     const withoutExtraTotal = monthlyPayment * totalMonths
     const withExtraTotal = monthlySchedule.reduce((sum, payment) => sum + payment.payment, 0)
     const savings = withoutExtraTotal - withExtraTotal
     const timeSaved = totalMonths - monthlySchedule.length
-    
+
     const calculatedResult: AmortizationResult = {
       loanAmount: principal,
       loanTerm: termYears,
@@ -333,13 +333,13 @@ Interest Rate: ${result.interestRate.toFixed(2)}%`
           </div>
 
           <div className="flex gap-2">
-            <Button onClick={calculateAmortization} className="flex-1">
+            <GButton onClick={calculateAmortization} className="flex-1">
               <Calculator className="mr-2 h-4 w-4" />
               Calculate
-            </Button>
-            <Button variant="outline" onClick={clearAll}>
+            </GButton>
+            <GButton variant="outline" onClick={clearAll}>
               Clear All
-            </Button>
+            </GButton>
           </div>
         </CardContent>
       </Card>
@@ -387,10 +387,10 @@ Interest Rate: ${result.interestRate.toFixed(2)}%`
               </div>
 
               <div className="flex gap-2 pt-4">
-                <Button onClick={copyResult} variant="outline" size="sm">
+                <GButton onClick={copyResult} variant="outline" size="sm">
                   <Copy className="mr-2 h-4 w-4" />
                   Copy Results
-                </Button>
+                </GButton>
               </div>
             </CardContent>
           </Card>
@@ -581,13 +581,13 @@ Interest Rate: ${result.interestRate.toFixed(2)}%`
                       ${item.monthlyPayment.toFixed(2)}/month
                     </div>
                   </div>
-                  <Button
+                  <GButton
                     variant="ghost"
                     size="sm"
                     onClick={() => setResult(item)}
                   >
                     View Details
-                  </Button>
+                  </GButton>
                 </div>
               ))}
             </div>
@@ -617,7 +617,7 @@ Interest Rate: ${result.interestRate.toFixed(2)}%`
               </div>
             </div>
           </div>
-          
+
           <div className="text-sm text-muted-foreground space-y-2">
             <p>
               <strong>Detailed Schedules:</strong> Complete annual and monthly amortization schedules with principal and interest breakdowns.

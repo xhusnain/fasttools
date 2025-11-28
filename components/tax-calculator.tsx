@@ -2,15 +2,15 @@
 
 import { useState, useEffect } from "react"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
-import { Button } from "@/components/ui/button"
+import { GButton } from "@/components/globalcomponents/gbutton"
 import { Label } from "@/components/ui/label"
 import { Input } from "@/components/ui/input"
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
 import { Checkbox } from "@/components/ui/checkbox"
 import { Alert, AlertDescription } from "@/components/ui/alert"
-import { 
-  Wallet, Copy, Check, Calculator, Globe, AlertTriangle, 
-  TrendingUp, DollarSign, Percent, Building, Users, 
+import {
+  Wallet, Copy, Check, Calculator, Globe, AlertTriangle,
+  TrendingUp, DollarSign, Percent, Building, Users,
   Target, BarChart3, PieChart, Info, Zap, Sparkles
 } from "lucide-react"
 import { LoadingSpinner } from "@/components/loading-spinner"
@@ -215,7 +215,7 @@ export function TaxCalculator() {
     setTimeout(() => {
       const gross = Number.parseFloat(salary)
       const countryData = countryTaxData[selectedCountry]
-      
+
       let tax = 0
       let taxBreakdown: { bracket: string; amount: number; rate: number }[] = []
       let marginalRate = 0
@@ -237,11 +237,11 @@ export function TaxCalculator() {
             const taxableInBracket = Math.min(gross, bracket.max) - bracket.min
             const bracketTax = taxableInBracket * bracket.rate
             tax += bracketTax
-            
+
             if (gross >= bracket.min && gross <= bracket.max) {
               marginalRate = bracket.rate * 100
             }
-            
+
             taxBreakdown.push({
               bracket: `${bracket.min.toLocaleString()} - ${bracket.max === Infinity ? '∞' : bracket.max.toLocaleString()}`,
               amount: bracketTax,
@@ -312,7 +312,7 @@ Effective Tax Rate: ${result.effectiveTaxRate}%`
         <Alert className="border-amber-700 bg-card">
           <AlertTriangle className="h-3.5 w-3.5 text-amber-400" />
           <AlertDescription className="text-amber-300 text-xs">
-            <strong>Important:</strong> Tax rates and percentages may change or be updated according to your country's latest tax laws. 
+            <strong>Important:</strong> Tax rates and percentages may change or be updated according to your country's latest tax laws.
             Please verify with your local tax authority for the most accurate and up-to-date information.
           </AlertDescription>
         </Alert>
@@ -375,9 +375,9 @@ Effective Tax Rate: ${result.effectiveTaxRate}%`
           {/* Custom Tax Rate Option */}
           <div className="space-y-3 p-3 bg-card rounded-xl border border-border">
             <div className="flex items-center space-x-2">
-              <Checkbox 
-                id="custom-rate" 
-                checked={useCustomRate} 
+              <Checkbox
+                id="custom-rate"
+                checked={useCustomRate}
                 onCheckedChange={(checked) => setUseCustomRate(checked === true)}
               />
               <Label htmlFor="custom-rate" className="text-xs font-medium flex items-center gap-1.5 text-heading-accent">
@@ -387,7 +387,7 @@ Effective Tax Rate: ${result.effectiveTaxRate}%`
                 Use Custom Tax Rate (Override Country Default)
               </Label>
             </div>
-            
+
             {useCustomRate && (
               <div className="space-y-1.5">
                 <Label htmlFor="custom-tax-rate" className="text-xs font-medium text-heading-accent">
@@ -409,7 +409,7 @@ Effective Tax Rate: ${result.effectiveTaxRate}%`
           </div>
 
           {/* Calculate Button */}
-          <Button
+          <GButton
             onClick={calculateTax}
             className="w-full h-10 text-sm font-medium shadow-lg hover:shadow-xl transition-all duration-300 bg-gradient-to-r from-primary to-primary/90 hover:from-primary/90 hover:to-primary text-white"
             disabled={!salary || isCalculating}
@@ -425,7 +425,7 @@ Effective Tax Rate: ${result.effectiveTaxRate}%`
                 <span>Calculate Tax</span>
               </>
             )}
-          </Button>
+          </GButton>
         </CardContent>
       </Card>
 
@@ -529,7 +529,7 @@ Effective Tax Rate: ${result.effectiveTaxRate}%`
 
             {/* Action Buttons */}
             <div className="flex flex-col sm:flex-row gap-2">
-              <Button
+              <GButton
                 onClick={copyResult}
                 className="flex-1 h-9 text-xs font-medium transition-all duration-300 border border-green-700 hover:bg-secondary text-heading-accent bg-card"
               >
@@ -544,7 +544,7 @@ Effective Tax Rate: ${result.effectiveTaxRate}%`
                     <span>Copy Result</span>
                   </>
                 )}
-              </Button>
+              </GButton>
             </div>
           </CardContent>
         </Card>

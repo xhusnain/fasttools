@@ -2,7 +2,7 @@
 
 import { useState } from "react"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
-import { Button } from "@/components/ui/button"
+import { GButton } from "@/components/globalcomponents/gbutton"
 import { Label } from "@/components/ui/label"
 import { Input } from "@/components/ui/input"
 import { Percent, Copy, Check, Calculator, TrendingUp, TrendingDown, Target, DollarSign, BarChart3, PieChart, ArrowUp, ArrowDown, Minus, Plus } from "lucide-react"
@@ -267,19 +267,18 @@ export function PercentageCalculator() {
               { type: "margin", label: "Margin", icon: BarChart3 },
               { type: "compound", label: "Compound", icon: PieChart }
             ].map(({ type, label, icon: Icon }) => (
-              <Button
+              <GButton
                 key={type}
                 variant={calculationType === type ? "default" : "outline"}
                 onClick={() => setCalculationType(type as CalculationType)}
-                className={`h-10 text-xs sm:text-sm font-medium transition-all duration-300 ${
-                  calculationType === type
-                    ? "bg-gradient-to-r from-primary to-primary/90 text-white shadow-lg border-primary"
-                    : "hover:bg-secondary border-border bg-card text-muted-foreground hover:text-foreground"
-                }`}
+                className={`h-10 text-xs sm:text-sm font-medium transition-all duration-300 ${calculationType === type
+                  ? "bg-gradient-to-r from-primary to-primary/90 text-white shadow-lg border-primary"
+                  : "hover:bg-secondary border-border bg-card text-muted-foreground hover:text-foreground"
+                  }`}
               >
                 <Icon className="h-3 w-3 sm:h-4 sm:w-4 mr-1 sm:mr-2" />
                 <span className="hidden sm:inline">{label}</span>
-              </Button>
+              </GButton>
             ))}
           </div>
 
@@ -339,7 +338,7 @@ export function PercentageCalculator() {
             )}
           </div>
 
-          <Button
+          <GButton
             onClick={calculatePercentage}
             className="w-full h-12 sm:h-14 text-base sm:text-lg font-semibold shadow-lg hover:shadow-xl transition-all duration-300 bg-gradient-to-r from-primary to-primary/90 hover:from-primary/90 hover:to-primary text-white"
             disabled={!isFormValid() || isCalculating}
@@ -357,7 +356,7 @@ export function PercentageCalculator() {
                 <span className="sm:hidden">Calculate</span>
               </>
             )}
-          </Button>
+          </GButton>
         </CardContent>
       </Card>
 
@@ -427,7 +426,7 @@ export function PercentageCalculator() {
 
             {/* Action Buttons */}
             <div className="flex flex-col sm:flex-row gap-2 sm:gap-3">
-              <Button
+              <GButton
                 onClick={copyResult}
                 className="flex-1 h-10 sm:h-12 text-sm sm:text-base font-semibold transition-all duration-300 border border-green-700 hover:bg-secondary text-heading-accent bg-card"
               >
@@ -444,7 +443,7 @@ export function PercentageCalculator() {
                     <span className="sm:hidden">Copy</span>
                   </>
                 )}
-              </Button>
+              </GButton>
             </div>
           </CardContent>
         </Card>

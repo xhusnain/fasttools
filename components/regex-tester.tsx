@@ -5,16 +5,16 @@ import { Input } from "@/components/ui/input"
 import { Textarea } from "@/components/ui/textarea"
 import { Card } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
-import { Button } from "@/components/ui/button"
+import { GButton, GButton as Button } from "@/components/globalcomponents/gbutton"
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
 import { Label } from "@/components/ui/label"
-import { 
-  Copy, 
-  Check, 
-  Code2, 
-  Lightbulb, 
-  Replace, 
-  Sparkles, 
+import {
+  Copy,
+  Check,
+  Code2,
+  Lightbulb,
+  Replace,
+  Sparkles,
   BookOpen,
   Download,
   AlertCircle,
@@ -69,15 +69,15 @@ export function RegexTester() {
     try {
       const regex = new RegExp(newPattern, newFlags)
       const foundMatches = newTestString.match(regex)
-      
+
       if (foundMatches) {
         setMatches(foundMatches)
-        
+
         // Get detailed match information
         const details: MatchDetail[] = []
         const regexForExec = new RegExp(newPattern, newFlags)
         let execResult
-        
+
         while ((execResult = regexForExec.exec(newTestString)) !== null) {
           details.push({
             match: execResult[0],
@@ -85,10 +85,10 @@ export function RegexTester() {
             groups: execResult.slice(1),
             namedGroups: execResult.groups
           })
-          
+
           if (!newFlags.includes('g')) break
         }
-        
+
         setMatchDetails(details)
       }
 
@@ -131,7 +131,7 @@ export function RegexTester() {
 
   const generateCodeSnippet = (language: string) => {
     const escapedPattern = pattern.replace(/\\/g, '\\\\').replace(/"/g, '\\"')
-    
+
     const snippets: Record<string, string> = {
       javascript: `// JavaScript Regex Pattern
 const regex = /${pattern}/${flags};
@@ -282,9 +282,9 @@ puts replaced`
 
   const explainPattern = (pattern: string): string => {
     if (!pattern) return "Enter a regex pattern to see explanation"
-    
+
     let explanation = "Regex Pattern Breakdown:\n\n"
-    
+
     // Basic patterns
     if (pattern.includes('^')) explanation += "^ - Matches start of string/line\n"
     if (pattern.includes('$')) explanation += "$ - Matches end of string/line\n"
@@ -299,25 +299,25 @@ puts replaced`
     if (pattern.includes('(') && pattern.includes(')')) explanation += "() - Defines a capture group\n"
     if (pattern.includes('[') && pattern.includes(']')) explanation += "[] - Defines a character set\n"
     if (pattern.includes('{') && pattern.includes('}')) explanation += "{n,m} - Matches between n and m of the preceding token\n"
-    
+
     // Character classes
     if (pattern.includes('[a-z]')) explanation += "[a-z] - Matches any lowercase letter\n"
     if (pattern.includes('[A-Z]')) explanation += "[A-Z] - Matches any uppercase letter\n"
     if (pattern.includes('[0-9]')) explanation += "[0-9] - Matches any digit\n"
-    
+
     // Lookahead/lookbehind
     if (pattern.includes('(?=')) explanation += "(?=...) - Positive lookahead\n"
     if (pattern.includes('(?!')) explanation += "(?!...) - Negative lookahead\n"
     if (pattern.includes('(?<=')) explanation += "(?<=...) - Positive lookbehind\n"
     if (pattern.includes('(?<!')) explanation += "(?<!...) - Negative lookbehind\n"
-    
+
     // Named groups
     if (pattern.includes('(?<')) explanation += "(?<name>...) - Named capture group\n"
-    
+
     if (explanation === "Regex Pattern Breakdown:\n\n") {
       explanation += "This pattern uses literal characters for matching."
     }
-    
+
     return explanation
   }
 
@@ -353,7 +353,7 @@ puts replaced`
       const regex = new RegExp(pattern, flags)
       let lastIndex = 0
       const parts: { text: string; isMatch: boolean }[] = []
-      
+
       matchDetails.forEach((detail) => {
         if (detail.index > lastIndex) {
           parts.push({ text: testString.slice(lastIndex, detail.index), isMatch: false })
@@ -361,11 +361,11 @@ puts replaced`
         parts.push({ text: detail.match, isMatch: true })
         lastIndex = detail.index + detail.match.length
       })
-      
+
       if (lastIndex < testString.length) {
         parts.push({ text: testString.slice(lastIndex), isMatch: false })
       }
-      
+
       return parts
     } catch {
       return testString
@@ -438,13 +438,13 @@ puts replaced`
       {/* Test String & Tabs */}
       <Tabs value={activeTab} onValueChange={setActiveTab} className="w-full">
         <TabsList className="grid w-full grid-cols-2 bg-card p-1">
-          <TabsTrigger 
-            value="test" 
+          <TabsTrigger
+            value="test"
             className="data-[state=active]:bg-primary data-[state=active]:text-primary-foreground data-[state=active]:shadow-sm font-semibold"
           >
             Test & Match
           </TabsTrigger>
-          <TabsTrigger 
+          <TabsTrigger
             value="replace"
             className="data-[state=active]:bg-primary data-[state=active]:text-primary-foreground data-[state=active]:shadow-sm font-semibold"
           >
@@ -514,7 +514,7 @@ puts replaced`
                     <div className="font-mono text-sm p-2 bg-muted rounded break-all">
                       {detail.match}
                     </div>
-                    
+
                     {/* Capture Groups */}
                     {detail.groups.length > 0 && detail.groups.some(g => g !== undefined) && (
                       <div className="mt-2 pt-2 border-t border-border">
@@ -608,10 +608,10 @@ puts replaced`
 
       {/* Action Buttons */}
       <div className="flex flex-wrap gap-2">
-        <Button onClick={openCodeGenerator} className="gap-2 bg-gradient-to-r from-green-600 to-emerald-600 hover:from-green-700 hover:to-emerald-700">
+        <GButton onClick={openCodeGenerator} className="gap-2 bg-gradient-to-r from-green-600 to-emerald-600 hover:from-green-700 hover:to-emerald-700">
           <Code2 className="h-4 w-4" />
           Generate Code
-        </Button>
+        </GButton>
         <Button onClick={openExplanation} variant="outline" className="gap-2">
           <BookOpen className="h-4 w-4" />
           Explain Pattern

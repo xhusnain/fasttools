@@ -1,6 +1,7 @@
 "use client"
 
 import { useState } from "react"
+import { GButton } from "@/components/globalcomponents/gbutton"
 import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
@@ -49,7 +50,7 @@ export function TimezoneConverter() {
       const hh = String(now.getHours()).padStart(2, "0")
       const mm = String(now.getMinutes()).padStart(2, "0")
       setTime(`${hh}:${mm}`)
-    } catch {}
+    } catch { }
   }
 
   const resetFields = () => {
@@ -79,15 +80,15 @@ export function TimezoneConverter() {
                 className="h-11 text-sm border-2 border-primary focus-visible:ring-0 focus:border-primary"
               />
               <div className="flex items-center gap-2">
-                <button type="button" onClick={setCurrentLocalTime} className="h-8 px-3 rounded-md text-xs font-medium bg-primary text-white hover:bg-primary/90 w-max">
+                <GButton type="button" onClick={setCurrentLocalTime} size="sm" className="h-8 px-3 text-xs w-max">
                   Use My Current Time
-                </button>
-                <button type="button" onClick={resetFields} className="h-8 px-3 rounded-md text-xs font-medium border border-border text-foreground hover:bg-accent/10 w-max">
+                </GButton>
+                <GButton type="button" onClick={resetFields} variant="outline" size="sm" className="h-8 px-3 text-xs w-max">
                   Reset
-                </button>
-                <button type="button" onClick={() => setUseAmPm((v) => !v)} className="h-8 px-3 rounded-md text-xs font-medium border border-border text-foreground hover:bg-accent/10 w-max">
+                </GButton>
+                <GButton type="button" onClick={() => setUseAmPm((v) => !v)} variant="outline" size="sm" className="h-8 px-3 text-xs w-max">
                   {useAmPm ? "Use 24‑hour" : "Use AM/PM"}
-                </button>
+                </GButton>
               </div>
             </div>
             <div className="space-y-2">

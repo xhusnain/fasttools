@@ -1,7 +1,7 @@
 "use client"
 
 import { useState, useEffect } from "react"
-import { Button } from "@/components/ui/button"
+import { GButton as Button } from "@/components/globalcomponents/gbutton"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
@@ -76,15 +76,15 @@ export function StandardDeviationCalculator({ onResultChange }: StandardDeviatio
     const mean = data.reduce((sum, val) => sum + val, 0) / n
 
     // Variance calculation
-    const variance = data.reduce((sum, val) => sum + Math.pow(val - mean, 2), 0) / 
+    const variance = data.reduce((sum, val) => sum + Math.pow(val - mean, 2), 0) /
       (mode === "population" ? n : n - 1)
 
     const standardDeviation = Math.sqrt(variance)
-    const sampleStandardDeviation = mode === "sample" ? standardDeviation : 
+    const sampleStandardDeviation = mode === "sample" ? standardDeviation :
       Math.sqrt(data.reduce((sum, val) => sum + Math.pow(val - mean, 2), 0) / (n - 1))
 
     // Median calculation
-    const median = n % 2 === 0 
+    const median = n % 2 === 0
       ? (sortedData[n / 2 - 1] + sortedData[n / 2]) / 2
       : sortedData[Math.floor(n / 2)]
 
@@ -114,7 +114,7 @@ export function StandardDeviationCalculator({ onResultChange }: StandardDeviatio
     const q1Index = Math.floor(n * 0.25)
     const q2Index = Math.floor(n * 0.5)
     const q3Index = Math.floor(n * 0.75)
-    
+
     const q1 = sortedData[q1Index]
     const q2 = median
     const q3 = sortedData[q3Index]
@@ -232,7 +232,7 @@ export function StandardDeviationCalculator({ onResultChange }: StandardDeviatio
             Standard Deviation Calculator
           </CardTitle>
           <CardDescription className="text-muted-foreground text-xs">
-            Calculate standard deviation, variance, mean, and comprehensive statistical analysis. 
+            Calculate standard deviation, variance, mean, and comprehensive statistical analysis.
           </CardDescription>
         </CardHeader>
         <CardContent className="space-y-3 px-3 sm:px-6">
@@ -250,7 +250,7 @@ export function StandardDeviationCalculator({ onResultChange }: StandardDeviatio
                 Input values with commas, spaces, or line breaks.
               </p>
             </div>
-            
+
             <div className="space-y-1">
               <Label htmlFor="calculation-mode" className="text-[11px] font-medium text-heading-accent">Calculation Mode</Label>
               <Select value={calculationMode} onValueChange={(value: "population" | "sample") => setCalculationMode(value)}>
@@ -292,8 +292,8 @@ export function StandardDeviationCalculator({ onResultChange }: StandardDeviatio
           </div>
 
           <div className="flex gap-2">
-            <Button 
-              onClick={handleCalculate} 
+            <Button
+              onClick={handleCalculate}
               disabled={dataPoints.length < 2 || isCalculating}
               className="flex-1 h-9 text-xs font-medium bg-gradient-to-r from-primary to-primary/90 hover:from-primary/90 hover:to-primary text-primary-foreground"
             >
@@ -383,26 +383,26 @@ export function StandardDeviationCalculator({ onResultChange }: StandardDeviatio
           {/* Detailed Results */}
           <Tabs value={activeTab} onValueChange={setActiveTab} className="w-full">
             <TabsList className="grid w-full grid-cols-4 bg-primary/10 border border-primary/20">
-              <TabsTrigger 
-                value="basic" 
+              <TabsTrigger
+                value="basic"
                 className="data-[state=active]:bg-primary data-[state=active]:text-primary-foreground text-foreground hover:bg-secondary"
               >
                 Basic Stats
               </TabsTrigger>
-              <TabsTrigger 
-                value="advanced" 
+              <TabsTrigger
+                value="advanced"
                 className="data-[state=active]:bg-primary data-[state=active]:text-primary-foreground text-foreground hover:bg-secondary"
               >
                 Advanced
               </TabsTrigger>
-              <TabsTrigger 
-                value="distribution" 
+              <TabsTrigger
+                value="distribution"
                 className="data-[state=active]:bg-primary data-[state=active]:text-primary-foreground text-foreground hover:bg-secondary"
               >
                 Distribution
               </TabsTrigger>
-              <TabsTrigger 
-                value="confidence" 
+              <TabsTrigger
+                value="confidence"
                 className="data-[state=active]:bg-primary data-[state=active]:text-primary-foreground text-foreground hover:bg-secondary"
               >
                 Confidence
@@ -657,7 +657,7 @@ export function StandardDeviationCalculator({ onResultChange }: StandardDeviatio
       {history.length > 0 && (
         <Card className="bg-card border-border">
           <CardHeader>
-              <CardTitle className="flex items-center gap-2 text-foreground text-base">
+            <CardTitle className="flex items-center gap-2 text-foreground text-base">
               <Brain className="h-4 w-4 text-foreground" />
               Calculation History
             </CardTitle>
@@ -672,8 +672,8 @@ export function StandardDeviationCalculator({ onResultChange }: StandardDeviatio
                       Mean: {calc.mean.toFixed(2)}, Std Dev: {calc.standardDeviation.toFixed(2)}
                     </span>
                   </div>
-                  <Button 
-                    size="sm" 
+                  <Button
+                    size="sm"
                     variant="ghost"
                     onClick={() => setResult(calc)}
                   >

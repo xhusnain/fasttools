@@ -1,22 +1,22 @@
 "use client"
 
 import { useState, useEffect } from "react"
-import { Button } from "@/components/ui/button"
+import { GButton, GButton as Button } from "@/components/globalcomponents/gbutton"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
 import { Badge } from "@/components/ui/badge"
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
-import { 
-  Calculator, 
-  Clock, 
-  MapPin, 
-  Target, 
-  TrendingUp, 
-  Heart, 
-  Zap, 
-  Trophy, 
+import {
+  Calculator,
+  Clock,
+  MapPin,
+  Target,
+  TrendingUp,
+  Heart,
+  Zap,
+  Trophy,
   Activity,
   Timer,
   Route,
@@ -71,13 +71,13 @@ export default function PaceCalculator() {
   const formatTimeInput = (value: string) => {
     // Remove all non-numeric characters
     const numbers = value.replace(/\D/g, '')
-    
+
     // If empty, return empty string
     if (!numbers) return ''
-    
+
     // Limit to 6 digits (hhmmss)
     const limitedNumbers = numbers.slice(0, 6)
-    
+
     // Format based on length
     if (limitedNumbers.length <= 2) {
       return limitedNumbers
@@ -97,13 +97,13 @@ export default function PaceCalculator() {
   const formatMinutesSecondsInput = (value: string) => {
     // Remove all non-numeric characters
     const numbers = value.replace(/\D/g, '')
-    
+
     // If empty, return empty string
     if (!numbers) return ''
-    
+
     // Limit to 4 digits (mmss)
     const limitedNumbers = numbers.slice(0, 4)
-    
+
     // Format based on length
     if (limitedNumbers.length <= 2) {
       return limitedNumbers
@@ -180,7 +180,7 @@ export default function PaceCalculator() {
       const pacePerKm = timeInSeconds / segment.distance
       const paceFormatted = formatPace(pacePerKm)
 
-      const split = index === 0 ? segment.time : 
+      const split = index === 0 ? segment.time :
         formatTime(parseTimeToSeconds(segment.time) - parseTimeToSeconds(multipointSegments[index - 1]?.time || "0:00"))
 
       return {
@@ -271,7 +271,7 @@ export default function PaceCalculator() {
 
   const calculateRacePredictions = (pacePerKm: number): { [key: string]: string } => {
     const predictions: { [key: string]: string } = {}
-    
+
     const distances = {
       "5K": 5,
       "10K": 10,
@@ -292,7 +292,7 @@ export default function PaceCalculator() {
   }
 
   const updateMultipointSegment = (index: number, field: keyof MultipointSegment, value: string | number) => {
-    setMultipointSegments(prev => prev.map((segment, i) => 
+    setMultipointSegments(prev => prev.map((segment, i) =>
       i === index ? { ...segment, [field]: value } : segment
     ))
   }
@@ -416,10 +416,10 @@ VO2 Max: ${result.vo2Max}`
               </div>
 
               <div className="flex flex-col sm:flex-row gap-2 w-full">
-                <Button onClick={calculatePace} className="flex-1 w-full sm:w-auto text-sm sm:text-base">
+                <GButton onClick={calculatePace} className="flex-1 w-full sm:w-auto text-sm sm:text-base">
                   <Calculator className="mr-2 h-4 w-4" />
                   Calculate Pace
-                </Button>
+                </GButton>
                 <Button variant="outline" onClick={clearAll} className="w-full sm:w-auto text-sm sm:text-base">
                   Clear All
                 </Button>
@@ -500,11 +500,11 @@ VO2 Max: ${result.vo2Max}`
 
               <div className="text-center p-3 sm:p-4 bg-card border border-border rounded-lg w-full overflow-hidden">
                 <div className="text-2xl font-bold">
-                  {pace && paceUnit === "perMile" 
+                  {pace && paceUnit === "perMile"
                     ? formatPace(parseTimeToSeconds(pace) * 1.60934)
                     : pace && paceUnit === "perKm"
-                    ? formatPace(parseTimeToSeconds(pace) / 1.60934)
-                    : "?"
+                      ? formatPace(parseTimeToSeconds(pace) / 1.60934)
+                      : "?"
                   }
                 </div>
                 <div className="text-sm text-muted-foreground">
@@ -731,7 +731,7 @@ VO2 Max: ${result.vo2Max}`
               </div>
             </div>
           </div>
-          
+
           <div className="text-sm text-muted-foreground space-y-2">
             <p>
               <strong>Pace:</strong> Time per unit distance (e.g., minutes per mile or kilometer).

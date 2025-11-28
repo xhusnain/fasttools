@@ -5,19 +5,19 @@ import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
-import { Button } from "@/components/ui/button"
+import { GButton } from "@/components/globalcomponents/gbutton"
 import { Badge } from "@/components/ui/badge"
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
 import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "@/components/ui/tooltip"
-import { 
-  HardDrive, 
-  Copy, 
-  Check, 
-  Calculator, 
-  FileText, 
-  Image, 
-  Video, 
-  Music, 
+import {
+  HardDrive,
+  Copy,
+  Check,
+  Calculator,
+  FileText,
+  Image,
+  Video,
+  Music,
   Archive,
   Database,
   Code,
@@ -34,7 +34,7 @@ export function FileSizeConverter() {
 
   // Decimal units (SI Standard) - exact values in bytes
   const decimalUnits = {
-    "Bit (b)": 1/8, // 1 bit = 1/8 byte
+    "Bit (b)": 1 / 8, // 1 bit = 1/8 byte
     "Byte (B)": 1,
     "Kilobyte (KB)": 1000, // 10³ bytes
     "Megabyte (MB)": 1000000, // 10⁶ bytes
@@ -50,7 +50,7 @@ export function FileSizeConverter() {
 
   // Binary units (IEC Standard) - exact values in bytes
   const binaryUnits = {
-    "Bit (b)": 1/8, // 1 bit = 1/8 byte
+    "Bit (b)": 1 / 8, // 1 bit = 1/8 byte
     "Byte (B)": 1,
     "Kibibyte (KiB)": 1024, // 2¹⁰ bytes
     "Mebibyte (MiB)": 1048576, // 2²⁰ bytes
@@ -182,7 +182,7 @@ export function FileSizeConverter() {
                     </div>
                     <div className="flex items-center justify-between">
                       <span className="text-sm text-muted-foreground font-mono truncate">{convert(unit)}</span>
-                      <Button
+                      <GButton
                         variant="ghost"
                         size="sm"
                         onClick={() => copyToClipboard(convert(unit), index)}
@@ -193,7 +193,7 @@ export function FileSizeConverter() {
                         ) : (
                           <Copy className="h-3 w-3" />
                         )}
-                      </Button>
+                      </GButton>
                     </div>
                   </div>
                 ))}
@@ -420,7 +420,7 @@ export function FileSizeConverter() {
                 <div className="space-y-1">
                   <div className="p-2 bg-muted rounded border border-blue-200 dark:border-blue-800">
                     <p className="text-xs text-foreground">
-                      <strong>All abbreviations:</strong><br/>
+                      <strong>All abbreviations:</strong><br />
                       b, B, KB, KiB, MB, MiB, GB, GiB, TB, TiB, PB, PiB, EB, EiB, ZB, ZiB, YB, YiB, RB, RiB, QB, QiB
                     </p>
                   </div>
@@ -446,34 +446,34 @@ export function FileSizeConverter() {
                     <div className="p-4 bg-muted rounded-lg border border-blue-200 dark:border-blue-800">
                       <h4 className="font-semibold text-foreground mb-2">Decimal (SI) Formula</h4>
                       <p className="text-sm text-foreground">
-                        <strong>Size in bytes = Value × 10^n</strong><br/>
+                        <strong>Size in bytes = Value × 10^n</strong><br />
                         Where n = 3, 6, 9, 12, 15, 18, 21, 24, 27, 30
                       </p>
                     </div>
                     <div className="p-4 bg-muted rounded-lg border border-green-200 dark:border-green-800">
                       <h4 className="font-semibold text-heading-accent mb-2">Binary (IEC) Formula</h4>
                       <p className="text-sm text-heading-accent">
-                        <strong>Size in bytes = Value × 2^n</strong><br/>
+                        <strong>Size in bytes = Value × 2^n</strong><br />
                         Where n = 10, 20, 30, 40, 50, 60, 70, 80, 90, 100
                       </p>
                     </div>
                   </div>
                 </div>
-                
+
                 <div className="space-y-4">
                   <h3 className="text-lg font-semibold text-foreground">Conversion Examples</h3>
                   <div className="space-y-3">
                     <div className="p-4 bg-muted rounded-lg border border-primary/20">
                       <h4 className="font-semibold text-foreground mb-2">1 GB to MB</h4>
                       <p className="text-sm text-foreground">
-                        <strong>Decimal:</strong> 1 GB = 1,000 MB<br/>
+                        <strong>Decimal:</strong> 1 GB = 1,000 MB<br />
                         <strong>Binary:</strong> 1 GiB = 1,024 MiB
                       </p>
                     </div>
                     <div className="p-4 bg-muted rounded-lg border border-purple-200 dark:border-purple-800">
                       <h4 className="font-semibold text-foreground mb-2">Bit to Byte</h4>
                       <p className="text-sm text-foreground">
-                        <strong>1 Byte = 8 bits</strong><br/>
+                        <strong>1 Byte = 8 bits</strong><br />
                         <strong>1 bit = 0.125 bytes</strong>
                       </p>
                     </div>
@@ -554,7 +554,7 @@ export function FileSizeConverter() {
                 <div className="p-4 bg-muted rounded-lg">
                   <h4 className="font-semibold text-foreground mb-2">Q1: Why is there a difference between decimal and binary units?</h4>
                   <p className="text-sm text-muted-foreground">
-                    <strong>A:</strong> Decimal units use base-10 (powers of 10) while binary units use base-2 (powers of 2). 
+                    <strong>A:</strong> Decimal units use base-10 (powers of 10) while binary units use base-2 (powers of 2).
                     This creates a difference because 1,000 ≠ 1,024. For example, 1 GB = 1,000 MB (decimal) but 1 GiB = 1,024 MiB (binary).
                     This difference becomes significant with larger units and affects storage capacity calculations.
                   </p>
@@ -563,7 +563,7 @@ export function FileSizeConverter() {
                 <div className="p-4 bg-muted rounded-lg">
                   <h4 className="font-semibold text-foreground mb-2">Q2: Which system should I use for file sizes?</h4>
                   <p className="text-sm text-muted-foreground">
-                    <strong>A:</strong> Use binary units (KiB, MiB, GiB) for file sizes as operating systems use binary calculations. 
+                    <strong>A:</strong> Use binary units (KiB, MiB, GiB) for file sizes as operating systems use binary calculations.
                     Use decimal units (KB, MB, GB) for network speeds and storage device marketing specifications.
                   </p>
                 </div>
@@ -571,7 +571,7 @@ export function FileSizeConverter() {
                 <div className="p-4 bg-muted rounded-lg">
                   <h4 className="font-semibold text-foreground mb-2">Q3: How do I convert between decimal and binary units?</h4>
                   <p className="text-sm text-muted-foreground">
-                    <strong>A:</strong> Use the conversion factor: 1 GiB = 1.073741824 GB. 
+                    <strong>A:</strong> Use the conversion factor: 1 GiB = 1.073741824 GB.
                     Multiply decimal by 1.024 to get binary, or divide binary by 1.024 to get decimal.
                     For example: 100 GB × 1.024 = 102.4 GiB.
                   </p>
@@ -580,8 +580,8 @@ export function FileSizeConverter() {
                 <div className="p-4 bg-muted rounded-lg">
                   <h4 className="font-semibold text-foreground mb-2">Q4: What's the difference between bits and bytes?</h4>
                   <p className="text-sm text-muted-foreground">
-                    <strong>A:</strong> A bit is the smallest unit of data (0 or 1). A byte consists of 8 bits. 
-                    Network speeds are measured in bits per second (bps), while storage is measured in bytes. 
+                    <strong>A:</strong> A bit is the smallest unit of data (0 or 1). A byte consists of 8 bits.
+                    Network speeds are measured in bits per second (bps), while storage is measured in bytes.
                     To convert: 1 byte = 8 bits, so 1 Mbps = 0.125 MB/s.
                   </p>
                 </div>
@@ -589,7 +589,7 @@ export function FileSizeConverter() {
                 <div className="p-4 bg-muted rounded-lg">
                   <h4 className="font-semibold text-foreground mb-2">Q5: Why do I see less storage than advertised?</h4>
                   <p className="text-sm text-muted-foreground">
-                    <strong>A:</strong> Storage manufacturers use decimal units (GB) while operating systems use binary units (GiB). 
+                    <strong>A:</strong> Storage manufacturers use decimal units (GB) while operating systems use binary units (GiB).
                     A 1 TB drive shows as ~931 GB in Windows because 1 TB = 1,000,000,000,000 bytes = 931.32 GiB.
                     This is normal and not a defect.
                   </p>
@@ -598,8 +598,8 @@ export function FileSizeConverter() {
                 <div className="p-4 bg-muted rounded-lg">
                   <h4 className="font-semibold text-foreground mb-2">Q6: How much data can a DVD hold?</h4>
                   <p className="text-sm text-muted-foreground">
-                    <strong>A:</strong> A standard single-layer DVD holds 4.7 GB (decimal) or 4.38 GiB (binary). 
-                    Dual-layer DVDs hold 8.5 GB (decimal) or 7.92 GiB (binary). 
+                    <strong>A:</strong> A standard single-layer DVD holds 4.7 GB (decimal) or 4.38 GiB (binary).
+                    Dual-layer DVDs hold 8.5 GB (decimal) or 7.92 GiB (binary).
                     The difference between decimal and binary affects actual usable space.
                   </p>
                 </div>
@@ -607,8 +607,8 @@ export function FileSizeConverter() {
                 <div className="p-4 bg-muted rounded-lg">
                   <h4 className="font-semibold text-foreground mb-2">Q7: What are the largest data units used today?</h4>
                   <p className="text-sm text-muted-foreground">
-                    <strong>A:</strong> Currently, petabytes (PB) and exabytes (EB) are used for large-scale data centers. 
-                    Zettabytes (ZB) are used for global data measurements. 
+                    <strong>A:</strong> Currently, petabytes (PB) and exabytes (EB) are used for large-scale data centers.
+                    Zettabytes (ZB) are used for global data measurements.
                     Yottabytes (YB) are theoretical units for future massive data storage.
                   </p>
                 </div>
@@ -616,7 +616,7 @@ export function FileSizeConverter() {
                 <div className="p-4 bg-muted rounded-lg">
                   <h4 className="font-semibold text-foreground mb-2">Q8: How do I calculate network transfer time?</h4>
                   <p className="text-sm text-muted-foreground">
-                    <strong>A:</strong> Time = File Size ÷ Network Speed. Convert units first: 
+                    <strong>A:</strong> Time = File Size ÷ Network Speed. Convert units first:
                     If file is 1 GB and speed is 100 Mbps: 1 GB = 8,000 Mb, so 8,000 ÷ 100 = 80 seconds.
                     Remember: 1 byte = 8 bits for speed calculations.
                   </p>
@@ -625,8 +625,8 @@ export function FileSizeConverter() {
                 <div className="p-4 bg-muted rounded-lg">
                   <h4 className="font-semibold text-foreground mb-2">Q9: What's the difference between RAM and storage?</h4>
                   <p className="text-sm text-muted-foreground">
-                    <strong>A:</strong> RAM (Random Access Memory) is temporary storage measured in GB/GiB, 
-                    while storage (hard drives, SSDs) is permanent storage measured in TB/TiB. 
+                    <strong>A:</strong> RAM (Random Access Memory) is temporary storage measured in GB/GiB,
+                    while storage (hard drives, SSDs) is permanent storage measured in TB/TiB.
                     RAM is faster but volatile, storage is slower but persistent.
                   </p>
                 </div>
@@ -634,8 +634,8 @@ export function FileSizeConverter() {
                 <div className="p-4 bg-muted rounded-lg">
                   <h4 className="font-semibold text-foreground mb-2">Q10: How do I choose the right storage size?</h4>
                   <p className="text-sm text-muted-foreground">
-                    <strong>A:</strong> Consider your needs: Documents (MB), Photos (GB), Videos (GB-TB), 
-                    Games (GB), Operating System (GB). Add 20-30% buffer for future needs. 
+                    <strong>A:</strong> Consider your needs: Documents (MB), Photos (GB), Videos (GB-TB),
+                    Games (GB), Operating System (GB). Add 20-30% buffer for future needs.
                     Use binary units (GiB, TiB) for accurate calculations as that's what your OS uses.
                   </p>
                 </div>
@@ -645,7 +645,7 @@ export function FileSizeConverter() {
         </TabsContent>
 
       </Tabs>
-      
+
     </div>
   )
 }

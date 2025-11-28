@@ -1,7 +1,7 @@
 "use client"
 
 import { useState } from "react"
-import { Button } from "@/components/ui/button"
+import { GButton } from "@/components/globalcomponents/gbutton"
 import { Textarea } from "@/components/ui/textarea"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Copy, Check, Type, Download, RotateCcw, Settings, Zap } from "lucide-react"
@@ -22,7 +22,7 @@ export function TextCaseConverter() {
 
   const convertCase = (type: "upper" | "lower" | "title" | "sentence" | "camel" | "snake" | "kebab" | "pascal" | "dot" | "swap") => {
     if (!text) return ""
-    
+
     const processedText = cleanText(text)
 
     switch (type) {
@@ -80,11 +80,11 @@ export function TextCaseConverter() {
       { type: "dot" as const, label: "dot.case" },
       { type: "swap" as const, label: "Swap Case" }
     ]
-    
-    const content = cases.map(caseItem => 
+
+    const content = cases.map(caseItem =>
       `${caseItem.label}:\n${convertCase(caseItem.type)}\n`
     ).join("\n")
-    
+
     const blob = new Blob([content], { type: "text/plain" })
     const url = URL.createObjectURL(blob)
     const a = document.createElement("a")
@@ -117,7 +117,7 @@ export function TextCaseConverter() {
               Characters: {text.length} | Words: {text.trim() ? text.trim().split(/\s+/).length : 0}
             </p>
             <div className="flex items-center gap-2">
-              <Button
+              <GButton
                 onClick={() => setText("")}
                 size="sm"
                 variant="outline"
@@ -125,8 +125,8 @@ export function TextCaseConverter() {
               >
                 <RotateCcw className="h-3 w-3 mr-1" />
                 Clear
-              </Button>
-              <Button
+              </GButton>
+              <GButton
                 onClick={downloadAll}
                 disabled={!text}
                 size="sm"
@@ -134,7 +134,7 @@ export function TextCaseConverter() {
               >
                 <Download className="h-3 w-3 mr-1" />
                 Download All
-              </Button>
+              </GButton>
             </div>
           </div>
         </CardContent>
@@ -197,7 +197,7 @@ export function TextCaseConverter() {
                 <div className="min-h-[80px] p-3 bg-card rounded-md text-sm break-words text-card-foreground border border-border">
                   {converted || <span className="text-muted-foreground">Result will appear here</span>}
                 </div>
-                <Button
+                <GButton
                   onClick={() => copyToClipboard(converted)}
                   disabled={!text}
                   size="sm"
@@ -214,7 +214,7 @@ export function TextCaseConverter() {
                       Copy
                     </>
                   )}
-                </Button>
+                </GButton>
               </CardContent>
             </Card>
           )

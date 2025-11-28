@@ -1,7 +1,7 @@
 "use client"
 
 import { useState, useRef } from "react"
-import { Button } from "@/components/ui/button"
+import { GButton } from "@/components/globalcomponents/gbutton"
 import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
 import { Progress } from "@/components/ui/progress"
@@ -334,7 +334,7 @@ export function PDFToImage() {
                     </p>
                   </div>
                 </div>
-                <Button
+                <GButton
                   variant="ghost"
                   size="icon"
                   onClick={removeFile}
@@ -342,14 +342,14 @@ export function PDFToImage() {
                   className="flex-shrink-0 hover:bg-destructive/10 hover:text-destructive"
                 >
                   <X className="h-4 w-4" />
-                </Button>
+                </GButton>
               </div>
 
               {/* Conversion Mode */}
               <div className="space-y-3">
                 <Label className="text-sm font-medium text-foreground">Conversion Mode</Label>
                 <div className="grid grid-cols-2 gap-2">
-                  <Button
+                  <GButton
                     type="button"
                     variant={mode === "all" ? "default" : "outline"}
                     size="sm"
@@ -358,8 +358,8 @@ export function PDFToImage() {
                     className={mode === "all" ? "bg-primary text-white" : ""}
                   >
                     All Pages ({totalPages})
-                  </Button>
-                  <Button
+                  </GButton>
+                  <GButton
                     type="button"
                     variant={mode === "specific" ? "default" : "outline"}
                     size="sm"
@@ -368,7 +368,7 @@ export function PDFToImage() {
                     className={mode === "specific" ? "bg-primary text-white" : ""}
                   >
                     Specific Pages
-                  </Button>
+                  </GButton>
                 </div>
               </div>
 
@@ -397,45 +397,42 @@ export function PDFToImage() {
               <div className="space-y-3">
                 <Label className="text-sm font-medium text-foreground">Image Format</Label>
                 <div className="grid grid-cols-3 gap-2">
-                  <Button
+                  <GButton
                     type="button"
                     variant={format === "jpeg" ? "default" : "outline"}
                     size="sm"
                     onClick={() => setFormat("jpeg")}
                     disabled={loading}
-                    className={`h-auto py-3 flex flex-col items-center gap-1 ${
-                      format === "jpeg" ? "bg-primary text-white" : ""
-                    }`}
+                    className={`h-auto py-3 flex flex-col items-center gap-1 ${format === "jpeg" ? "bg-primary text-white" : ""
+                      }`}
                   >
                     <span className="text-xs font-bold">JPG</span>
                     <span className="text-[10px] opacity-80">Smaller Size</span>
-                  </Button>
-                  <Button
+                  </GButton>
+                  <GButton
                     type="button"
                     variant={format === "png" ? "default" : "outline"}
                     size="sm"
                     onClick={() => setFormat("png")}
                     disabled={loading}
-                    className={`h-auto py-3 flex flex-col items-center gap-1 ${
-                      format === "png" ? "bg-primary text-white" : ""
-                    }`}
+                    className={`h-auto py-3 flex flex-col items-center gap-1 ${format === "png" ? "bg-primary text-white" : ""
+                      }`}
                   >
                     <span className="text-xs font-bold">PNG</span>
                     <span className="text-[10px] opacity-80">Lossless</span>
-                  </Button>
-                  <Button
+                  </GButton>
+                  <GButton
                     type="button"
                     variant={format === "webp" ? "default" : "outline"}
                     size="sm"
                     onClick={() => setFormat("webp")}
                     disabled={loading}
-                    className={`h-auto py-3 flex flex-col items-center gap-1 ${
-                      format === "webp" ? "bg-primary text-white" : ""
-                    }`}
+                    className={`h-auto py-3 flex flex-col items-center gap-1 ${format === "webp" ? "bg-primary text-white" : ""
+                      }`}
                   >
                     <span className="text-xs font-bold">WEBP</span>
                     <span className="text-[10px] opacity-80">Modern</span>
-                  </Button>
+                  </GButton>
                 </div>
               </div>
 
@@ -443,45 +440,42 @@ export function PDFToImage() {
               <div className="space-y-3">
                 <Label className="text-sm font-medium text-foreground">Quality Level</Label>
                 <div className="grid grid-cols-3 gap-2">
-                  <Button
+                  <GButton
                     type="button"
                     variant={quality === "low" ? "default" : "outline"}
                     size="sm"
                     onClick={() => setQuality("low")}
                     disabled={loading}
-                    className={`h-auto py-3 flex flex-col items-center gap-1 ${
-                      quality === "low" ? "bg-primary text-white" : ""
-                    }`}
+                    className={`h-auto py-3 flex flex-col items-center gap-1 ${quality === "low" ? "bg-primary text-white" : ""
+                      }`}
                   >
                     <span className="text-xs font-bold">Low</span>
                     <span className="text-[10px] opacity-80">Fastest</span>
-                  </Button>
-                  <Button
+                  </GButton>
+                  <GButton
                     type="button"
                     variant={quality === "medium" ? "default" : "outline"}
                     size="sm"
                     onClick={() => setQuality("medium")}
                     disabled={loading}
-                    className={`h-auto py-3 flex flex-col items-center gap-1 ${
-                      quality === "medium" ? "bg-primary text-white" : ""
-                    }`}
+                    className={`h-auto py-3 flex flex-col items-center gap-1 ${quality === "medium" ? "bg-primary text-white" : ""
+                      }`}
                   >
                     <span className="text-xs font-bold">Medium</span>
                     <span className="text-[10px] opacity-80">Balanced</span>
-                  </Button>
-                  <Button
+                  </GButton>
+                  <GButton
                     type="button"
                     variant={quality === "high" ? "default" : "outline"}
                     size="sm"
                     onClick={() => setQuality("high")}
                     disabled={loading}
-                    className={`h-auto py-3 flex flex-col items-center gap-1 ${
-                      quality === "high" ? "bg-primary text-white" : ""
-                    }`}
+                    className={`h-auto py-3 flex flex-col items-center gap-1 ${quality === "high" ? "bg-primary text-white" : ""
+                      }`}
                   >
                     <span className="text-xs font-bold">High</span>
                     <span className="text-[10px] opacity-80">Best Quality</span>
-                  </Button>
+                  </GButton>
                 </div>
               </div>
 
@@ -498,7 +492,7 @@ export function PDFToImage() {
 
               {/* Convert Button */}
               {!convertedImages.length && (
-                <Button
+                <GButton
                   onClick={convertToImages}
                   disabled={loading}
                   className="w-full h-12 text-base font-semibold bg-primary hover:bg-primary/90"
@@ -514,7 +508,7 @@ export function PDFToImage() {
                       Convert to Images
                     </>
                   )}
-                </Button>
+                </GButton>
               )}
             </div>
           )}
@@ -527,14 +521,14 @@ export function PDFToImage() {
               <h3 className="text-lg font-semibold text-card-foreground">
                 Converted Images ({convertedImages.length})
               </h3>
-              <Button
+              <GButton
                 onClick={downloadAllAsZip}
                 size="sm"
                 className="bg-accent hover:bg-accent/90 text-white"
               >
                 <FolderArchive className="mr-2 h-4 w-4" />
                 Download All as ZIP
-              </Button>
+              </GButton>
             </div>
 
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
@@ -559,7 +553,7 @@ export function PDFToImage() {
                         {Math.round(image.blob.size / 1024)} KB
                       </span>
                     </div>
-                    <Button
+                    <GButton
                       onClick={() => downloadImage(image)}
                       size="sm"
                       className="w-full"
@@ -567,13 +561,13 @@ export function PDFToImage() {
                     >
                       <Download className="mr-2 h-4 w-4" />
                       Download
-                    </Button>
+                    </GButton>
                   </div>
                 </div>
               ))}
             </div>
 
-            <Button
+            <GButton
               onClick={() => {
                 setConvertedImages([])
                 removeFile()
@@ -582,7 +576,7 @@ export function PDFToImage() {
               className="w-full"
             >
               Convert Another PDF
-            </Button>
+            </GButton>
           </div>
         )}
       </div>

@@ -1,12 +1,12 @@
 "use client"
 
 import { useState } from "react"
-import { Button } from "@/components/ui/button"
+import { GButton } from "@/components/globalcomponents/gbutton"
 import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Copy, Check, FileText } from "lucide-react"
-import { LoadingSpinner } from "@/components/loading-spinner"
+
 
 export function LoremIpsumGenerator() {
   const [paragraphs, setParagraphs] = useState("3")
@@ -68,20 +68,14 @@ export function LoremIpsumGenerator() {
             />
           </div>
 
-          <Button
+          <GButton
             onClick={generateLorem}
             disabled={!paragraphs || isGenerating}
+            isLoading={isGenerating}
             className="w-full h-10 text-sm font-medium shadow-sm hover:shadow-md transition-all"
           >
-            {isGenerating ? (
-              <>
-                <LoadingSpinner className="mr-2" />
-                Generating...
-              </>
-            ) : (
-              "Generate Lorem Ipsum"
-            )}
-          </Button>
+            {isGenerating ? "Generating..." : "Generate Lorem Ipsum"}
+          </GButton>
         </CardContent>
       </Card>
 
@@ -90,7 +84,7 @@ export function LoremIpsumGenerator() {
           <CardHeader>
             <div className="flex items-center justify-between">
               <CardTitle className="text-lg text-foreground">Generated Text</CardTitle>
-              <Button
+              <GButton
                 onClick={copyToClipboard}
                 variant="outline"
                 size="sm"
@@ -107,7 +101,7 @@ export function LoremIpsumGenerator() {
                     Copy
                   </>
                 )}
-              </Button>
+              </GButton>
             </div>
           </CardHeader>
           <CardContent>

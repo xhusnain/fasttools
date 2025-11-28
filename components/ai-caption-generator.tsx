@@ -1,7 +1,7 @@
 "use client"
 
 import { useState } from "react"
-import { Button } from "@/components/ui/button"
+import { GButton } from "@/components/globalcomponents/gbutton"
 import { Label } from "@/components/ui/label"
 import { Textarea } from "@/components/ui/textarea"
 import { Card } from "@/components/ui/card"
@@ -103,11 +103,10 @@ export function AiCaptionGenerator() {
                 key={p.value}
                 onClick={() => setPlatform(p.value)}
                 disabled={loading}
-                className={`p-3 rounded-lg border-2 transition-all duration-200 text-left hover:scale-105 ${
-                  platform === p.value
+                className={`p-3 rounded-lg border-2 transition-all duration-200 text-left hover:scale-105 ${platform === p.value
                     ? "border-primary bg-primary/10 shadow-md"
                     : "border-border hover:border-primary/50"
-                } ${loading ? "opacity-50 cursor-not-allowed" : "cursor-pointer"}`}
+                  } ${loading ? "opacity-50 cursor-not-allowed" : "cursor-pointer"}`}
               >
                 <div className="flex items-center gap-2 mb-1">
                   <span className="text-lg">{p.icon}</span>
@@ -119,9 +118,9 @@ export function AiCaptionGenerator() {
           </div>
         </div>
 
-        <Button 
-          onClick={generateCaptions} 
-          disabled={loading || !description.trim()} 
+        <GButton
+          onClick={generateCaptions}
+          disabled={loading || !description.trim()}
           className="w-full h-12 text-base font-semibold"
           size="lg"
         >
@@ -136,7 +135,7 @@ export function AiCaptionGenerator() {
               Generate {selectedPlatform?.label} Captions
             </>
           )}
-        </Button>
+        </GButton>
       </div>
 
       {/* Error Display */}
@@ -155,7 +154,7 @@ export function AiCaptionGenerator() {
               <CheckCircle className="h-5 w-5 text-heading-accent" />
               Generated Captions
             </h3>
-            <Button
+            <GButton
               variant="outline"
               size="sm"
               onClick={generateCaptions}
@@ -164,17 +163,17 @@ export function AiCaptionGenerator() {
             >
               <RefreshCw className="h-4 w-4" />
               Regenerate
-            </Button>
+            </GButton>
           </div>
-          
+
           <div className="grid gap-4">
             {captions.map((caption, index) => (
               <Card key={index} className="p-4 hover:shadow-md transition-shadow">
                 <div className="flex items-start justify-between gap-4">
                   <p className="text-sm leading-relaxed flex-1 font-medium">{caption}</p>
-                  <Button 
-                    variant="outline" 
-                    size="sm" 
+                  <GButton
+                    variant="outline"
+                    size="sm"
                     onClick={() => copyCaption(caption, index)}
                     className="flex-shrink-0"
                   >
@@ -183,7 +182,7 @@ export function AiCaptionGenerator() {
                     ) : (
                       <Copy className="h-4 w-4" />
                     )}
-                  </Button>
+                  </GButton>
                 </div>
                 <div className="mt-2 text-xs text-muted-foreground">
                   Platform: {selectedPlatform?.label} • Length: {caption.length} characters

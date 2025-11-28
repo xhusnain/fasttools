@@ -2,27 +2,27 @@
 
 import { useState } from "react"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
-import { Button } from "@/components/ui/button"
+import { GButton } from "@/components/globalcomponents/gbutton"
 import { Label } from "@/components/ui/label"
 import { Input } from "@/components/ui/input"
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
 import { Alert, AlertDescription } from "@/components/ui/alert"
-import { 
-  GraduationCap, 
-  Copy, 
-  Check, 
-  Plus, 
-  Trash2, 
-  Calculator, 
-  Target, 
-  BookOpen, 
-  Award, 
-  BarChart3, 
-  PieChart, 
-  Lightbulb, 
+import {
+  GraduationCap,
+  Copy,
+  Check,
+  Plus,
+  Trash2,
+  Calculator,
+  Target,
+  BookOpen,
+  Award,
+  BarChart3,
+  PieChart,
+  Lightbulb,
   Settings
 } from "lucide-react"
-import { LoadingSpinner } from "@/components/loading-spinner"
+
 
 interface Course {
   id: string
@@ -116,7 +116,7 @@ export function GPACalculator() {
     setShowAdvanced(true)
 
     setTimeout(() => {
-      const validCourses = courses.filter(course => 
+      const validCourses = courses.filter(course =>
         course.name.trim() && course.credits > 0 && course.grade !== ""
       )
 
@@ -286,10 +286,10 @@ ${result.courses.map(course => `${course.name}: ${course.grade} (${course.credit
                 <BookOpen className="h-2.5 w-2.5 text-heading-accent" />
                 Courses
               </Label>
-              <Button onClick={addCourse} size="sm" className="h-7 text-xs px-2 bg-primary hover:bg-primary/90 text-primary-foreground">
+              <GButton onClick={addCourse} size="sm" className="h-7 text-xs px-2 bg-primary hover:bg-primary/90 text-primary-foreground">
                 <Plus className="h-3 w-3 mr-1" />
                 Add
-              </Button>
+              </GButton>
             </div>
 
             <div className="space-y-2">
@@ -343,14 +343,14 @@ ${result.courses.map(course => `${course.name}: ${course.grade} (${course.credit
                     </Select>
                   </div>
                   <div className="flex items-end">
-                    <Button
+                    <GButton
                       onClick={() => removeCourse(course.id)}
                       variant="outline"
                       size="sm"
                       className="h-7 w-7 p-0 text-foreground hover:text-destructive hover:bg-secondary border-destructive bg-card"
                     >
                       <Trash2 className="h-3 w-3" />
-                    </Button>
+                    </GButton>
                   </div>
                 </div>
               ))}
@@ -358,138 +358,136 @@ ${result.courses.map(course => `${course.name}: ${course.grade} (${course.credit
           </div>
 
           {/* Calculate Button */}
-          <Button
+          <GButton
             onClick={calculateGPA}
             className="w-full h-9 text-xs font-medium shadow-lg hover:shadow-xl transition-all duration-300 bg-gradient-to-r from-primary to-primary/90 hover:from-primary/90 hover:to-primary text-primary-foreground"
             disabled={courses.length === 0 || isCalculating}
+            isLoading={isCalculating}
           >
             {isCalculating ? (
-              <>
-                <LoadingSpinner size="sm" className="mr-1 h-3 w-3" />
-                <span>Calculating...</span>
-              </>
+              <span>Calculating...</span>
             ) : (
               <>
                 <Calculator className="mr-1 h-3 w-3" />
                 <span>Calculate GPA</span>
               </>
             )}
-          </Button>
+          </GButton>
 
           {/* Plan Your GPA Button */}
-          <Button
+          <GButton
             onClick={() => setShowGPAPlanner(!showGPAPlanner)}
             variant="outline"
             className="w-full h-9 text-xs font-medium border-border hover:bg-secondary text-heading-accent bg-card transition-all duration-300"
           >
             <Target className="mr-1 h-3 w-3" />
             <span>{showGPAPlanner ? "Hide GPA Planner" : "Plan Your GPA"}</span>
-          </Button>
+          </GButton>
         </CardContent>
       </Card>
 
       {/* GPA Planning Calculator */}
       {showGPAPlanner && (
-      <Card className="shadow-lg border-border hover:shadow-xl transition-all duration-300 bg-card">
-        <CardHeader className="pb-2 px-3 sm:px-6">
-          <CardTitle className="flex items-center gap-1.5 text-base text-foreground">
-            <div className="p-1 bg-primary/10 rounded">
-              <Target className="h-3.5 w-3.5 text-foreground" />
-            </div>
-            GPA Planning Calculator
-          </CardTitle>
-          <CardDescription className="text-xs text-muted-foreground">
-            Determine minimum GPA required to reach your target
-          </CardDescription>
-        </CardHeader>
-        <CardContent className="space-y-4 px-3 sm:px-6">
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
-            <div className="space-y-1">
-              <Label htmlFor="current-gpa" className="text-[11px] font-medium text-heading-accent">Current GPA</Label>
-              <Input
-                id="current-gpa"
-                type="number"
-                step="0.01"
-                value={currentGPA}
-                onChange={(e) => setCurrentGPA(e.target.value)}
-                placeholder="2.8"
-                className="h-8 text-xs border-border bg-background text-foreground focus-visible:ring-primary focus:border-primary"
-              />
-            </div>
-            <div className="space-y-1">
-              <Label htmlFor="target-gpa" className="text-[11px] font-medium text-heading-accent">Target GPA</Label>
-              <Input
-                id="target-gpa"
-                type="number"
-                step="0.01"
-                value={targetGPA}
-                onChange={(e) => setTargetGPA(e.target.value)}
-                placeholder="3.0"
-                className="h-8 text-xs border-border bg-background text-foreground focus-visible:ring-primary focus:border-primary"
-              />
-            </div>
-            <div className="space-y-1">
-              <Label htmlFor="current-credits" className="text-[11px] font-medium text-heading-accent">Current Credits</Label>
-              <Input
-                id="current-credits"
-                type="number"
-                value={currentCredits}
-                onChange={(e) => setCurrentCredits(e.target.value)}
-                placeholder="25"
-                className="h-8 text-xs border-border bg-background text-foreground focus-visible:ring-primary focus:border-primary"
-              />
-            </div>
-            <div className="space-y-1">
-              <Label htmlFor="additional-credits" className="text-[11px] font-medium text-heading-accent">Additional Credits</Label>
-              <Input
-                id="additional-credits"
-                type="number"
-                value={additionalCredits}
-                onChange={(e) => setAdditionalCredits(e.target.value)}
-                placeholder="15"
-                className="h-8 text-xs border-border bg-background text-foreground focus-visible:ring-primary focus:border-primary"
-              />
-            </div>
-          </div>
-
-          <Button
-            onClick={calculateGPAPlanning}
-            className="w-full h-8 text-xs font-medium bg-gradient-to-r from-primary to-primary/90 hover:from-primary/90 hover:to-primary text-primary-foreground"
-            disabled={!currentGPA || !targetGPA || !currentCredits || !additionalCredits}
-          >
-            <Target className="mr-1 h-3 w-3" />
-            Calculate Required GPA
-          </Button>
-
-          {planningResult && (
-            <div className="p-3 bg-card rounded-lg border border-border">
-              <h3 className="font-semibold text-heading-accent mb-2 text-sm">Planning Results</h3>
-              <div className="space-y-1.5 text-xs">
-                <div className="flex justify-between">
-                  <span className="text-muted-foreground">Required GPA:</span>
-                  <span className="font-semibold text-foreground">{planningResult.requiredGPA}</span>
-                </div>
-                <div className="flex justify-between">
-                  <span className="text-muted-foreground">Achievable:</span>
-                  <span className={`font-semibold ${planningResult.achievable ? 'text-heading-accent' : 'text-foreground'}`}>
-                    {planningResult.achievable ? 'Yes' : 'No'}
-                  </span>
-                </div>
+        <Card className="shadow-lg border-border hover:shadow-xl transition-all duration-300 bg-card">
+          <CardHeader className="pb-2 px-3 sm:px-6">
+            <CardTitle className="flex items-center gap-1.5 text-base text-foreground">
+              <div className="p-1 bg-primary/10 rounded">
+                <Target className="h-3.5 w-3.5 text-foreground" />
               </div>
-              {planningResult.recommendations.length > 0 && (
-                <div className="mt-2">
-                  <h4 className="font-medium text-heading-accent mb-1 text-xs">Recommendations:</h4>
-                  <ul className="text-[10px] text-muted-foreground space-y-0.5">
-                    {planningResult.recommendations.map((rec, index) => (
-                      <li key={index}>• {rec}</li>
-                    ))}
-                  </ul>
-                </div>
-              )}
+              GPA Planning Calculator
+            </CardTitle>
+            <CardDescription className="text-xs text-muted-foreground">
+              Determine minimum GPA required to reach your target
+            </CardDescription>
+          </CardHeader>
+          <CardContent className="space-y-4 px-3 sm:px-6">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
+              <div className="space-y-1">
+                <Label htmlFor="current-gpa" className="text-[11px] font-medium text-heading-accent">Current GPA</Label>
+                <Input
+                  id="current-gpa"
+                  type="number"
+                  step="0.01"
+                  value={currentGPA}
+                  onChange={(e) => setCurrentGPA(e.target.value)}
+                  placeholder="2.8"
+                  className="h-8 text-xs border-border bg-background text-foreground focus-visible:ring-primary focus:border-primary"
+                />
+              </div>
+              <div className="space-y-1">
+                <Label htmlFor="target-gpa" className="text-[11px] font-medium text-heading-accent">Target GPA</Label>
+                <Input
+                  id="target-gpa"
+                  type="number"
+                  step="0.01"
+                  value={targetGPA}
+                  onChange={(e) => setTargetGPA(e.target.value)}
+                  placeholder="3.0"
+                  className="h-8 text-xs border-border bg-background text-foreground focus-visible:ring-primary focus:border-primary"
+                />
+              </div>
+              <div className="space-y-1">
+                <Label htmlFor="current-credits" className="text-[11px] font-medium text-heading-accent">Current Credits</Label>
+                <Input
+                  id="current-credits"
+                  type="number"
+                  value={currentCredits}
+                  onChange={(e) => setCurrentCredits(e.target.value)}
+                  placeholder="25"
+                  className="h-8 text-xs border-border bg-background text-foreground focus-visible:ring-primary focus:border-primary"
+                />
+              </div>
+              <div className="space-y-1">
+                <Label htmlFor="additional-credits" className="text-[11px] font-medium text-heading-accent">Additional Credits</Label>
+                <Input
+                  id="additional-credits"
+                  type="number"
+                  value={additionalCredits}
+                  onChange={(e) => setAdditionalCredits(e.target.value)}
+                  placeholder="15"
+                  className="h-8 text-xs border-border bg-background text-foreground focus-visible:ring-primary focus:border-primary"
+                />
+              </div>
             </div>
-          )}
-        </CardContent>
-      </Card>
+
+            <GButton
+              onClick={calculateGPAPlanning}
+              className="w-full h-8 text-xs font-medium bg-gradient-to-r from-primary to-primary/90 hover:from-primary/90 hover:to-primary text-primary-foreground"
+              disabled={!currentGPA || !targetGPA || !currentCredits || !additionalCredits}
+            >
+              <Target className="mr-1 h-3 w-3" />
+              Calculate Required GPA
+            </GButton>
+
+            {planningResult && (
+              <div className="p-3 bg-card rounded-lg border border-border">
+                <h3 className="font-semibold text-heading-accent mb-2 text-sm">Planning Results</h3>
+                <div className="space-y-1.5 text-xs">
+                  <div className="flex justify-between">
+                    <span className="text-muted-foreground">Required GPA:</span>
+                    <span className="font-semibold text-foreground">{planningResult.requiredGPA}</span>
+                  </div>
+                  <div className="flex justify-between">
+                    <span className="text-muted-foreground">Achievable:</span>
+                    <span className={`font-semibold ${planningResult.achievable ? 'text-heading-accent' : 'text-foreground'}`}>
+                      {planningResult.achievable ? 'Yes' : 'No'}
+                    </span>
+                  </div>
+                </div>
+                {planningResult.recommendations.length > 0 && (
+                  <div className="mt-2">
+                    <h4 className="font-medium text-heading-accent mb-1 text-xs">Recommendations:</h4>
+                    <ul className="text-[10px] text-muted-foreground space-y-0.5">
+                      {planningResult.recommendations.map((rec, index) => (
+                        <li key={index}>• {rec}</li>
+                      ))}
+                    </ul>
+                  </div>
+                )}
+              </div>
+            )}
+          </CardContent>
+        </Card>
       )}
 
       {/* Results Section */}
@@ -582,7 +580,7 @@ ${result.courses.map(course => `${course.name}: ${course.grade} (${course.credit
 
             {/* Action Buttons */}
             <div className="flex flex-col sm:flex-row gap-2">
-              <Button
+              <GButton
                 onClick={copyResult}
                 variant="outline"
                 className="flex-1 h-9 text-xs font-medium transition-all duration-300 border-border hover:bg-secondary text-heading-accent bg-card"
@@ -598,7 +596,7 @@ ${result.courses.map(course => `${course.name}: ${course.grade} (${course.credit
                     <span>Copy Results</span>
                   </>
                 )}
-              </Button>
+              </GButton>
             </div>
           </CardContent>
         </Card>

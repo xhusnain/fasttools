@@ -1,7 +1,7 @@
 "use client"
 
 import { useState } from "react"
-import { Button } from "@/components/ui/button"
+import { GButton } from "@/components/globalcomponents/gbutton"
 import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
@@ -176,7 +176,7 @@ export function BlogTitleGenerator() {
     setTimeout(() => {
       const allTitles: string[] = []
       const capitalizedKeyword = keyword.charAt(0).toUpperCase() + keyword.slice(1)
-      
+
       // Generate titles from each category
       Object.values(templates).forEach(categoryTemplates => {
         categoryTemplates.forEach(template => {
@@ -184,7 +184,7 @@ export function BlogTitleGenerator() {
           allTitles.push(title)
         })
       })
-      
+
       // Shuffle and take 30 titles for maximum variety
       const shuffledTitles = allTitles.sort(() => Math.random() - 0.5)
       setResult(shuffledTitles.slice(0, 30))
@@ -224,7 +224,7 @@ export function BlogTitleGenerator() {
             />
           </div>
 
-          <Button
+          <GButton
             onClick={generateTitles}
             disabled={!keyword || isGenerating}
             className="w-full h-10 text-sm font-medium shadow-sm hover:shadow-md transition-all"
@@ -240,7 +240,7 @@ export function BlogTitleGenerator() {
                 Generate Titles
               </>
             )}
-          </Button>
+          </GButton>
         </CardContent>
       </Card>
 
@@ -268,10 +268,10 @@ export function BlogTitleGenerator() {
                       {title.length} characters • SEO optimized
                     </div>
                   </div>
-                  <Button
-                    onClick={() => copyToClipboard(title, index)}
+                  <GButton
                     variant="ghost"
                     size="sm"
+                    onClick={() => copyToClipboard(title, index)}
                     className="h-8 w-8 p-0 opacity-0 group-hover:opacity-100 transition-opacity"
                   >
                     {copied === index ? (
@@ -279,13 +279,13 @@ export function BlogTitleGenerator() {
                     ) : (
                       <Copy className="h-4 w-4" />
                     )}
-                  </Button>
+                  </GButton>
                 </div>
               ))}
             </div>
             <div className="mt-4 p-3 bg-accent/10 rounded-lg border border-accent/20">
               <p className="text-xs text-muted-foreground">
-                💡 <strong>Pro Tip:</strong> These titles are optimized for search engines and designed to increase click-through rates. 
+                💡 <strong>Pro Tip:</strong> These titles are optimized for search engines and designed to increase click-through rates.
                 Choose titles that best match your content and target audience.
               </p>
             </div>

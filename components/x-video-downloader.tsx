@@ -1,7 +1,7 @@
 "use client"
 
 import { useState } from "react"
-import { Button } from "@/components/ui/button"
+import { GButton } from "@/components/globalcomponents/gbutton"
 import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
 import { Card } from "@/components/ui/card"
@@ -19,15 +19,15 @@ export function XVideoDownloader({ compact = false }: XVideoDownloaderProps) {
   const [result, setResult] = useState<
     | null
     | {
-        type?: 'video' | 'image' | 'mixed'
-        videoUrl?: string
-        imageUrl?: string
-        images?: (string | { url?: string; media_url?: string; url_https?: string })[]
-        thumbnail?: string
-        title?: string
-        downloading?: boolean
-        downloadStarted?: boolean
-      }
+      type?: 'video' | 'image' | 'mixed'
+      videoUrl?: string
+      imageUrl?: string
+      images?: (string | { url?: string; media_url?: string; url_https?: string })[]
+      thumbnail?: string
+      title?: string
+      downloading?: boolean
+      downloadStarted?: boolean
+    }
   >(null)
   const [downloadingStates, setDownloadingStates] = useState<{
     video?: boolean
@@ -198,7 +198,7 @@ export function XVideoDownloader({ compact = false }: XVideoDownloaderProps) {
     const filenameWithExt = filename.trim()
     let fileExtension: string
     let cleanFilename = filename
-    
+
     // Check if filename already has an extension
     const extMatch = filenameWithExt.match(/\.(mp4|jpg|jpeg|png|gif|webp)$/i)
     if (extMatch) {
@@ -246,7 +246,7 @@ export function XVideoDownloader({ compact = false }: XVideoDownloaderProps) {
     const finalFilename = sanitizedFilename + fileExtension
 
     setError(null)
-    
+
     // Skip countdown for proxy URLs - they download directly
     if (urlString.includes('dl.snapcdn.app') || urlString.includes('download?token=')) {
       setDownloadingStates(prev => ({ ...prev, [downloadType]: true }))
@@ -261,12 +261,12 @@ export function XVideoDownloader({ compact = false }: XVideoDownloaderProps) {
     const countdownInterval = setInterval(() => {
       countdown--
       setCountdownStates(prev => ({ ...prev, [downloadType]: countdown }))
-      
+
       if (countdown <= 0) {
         clearInterval(countdownInterval)
         setCountdownStates(prev => ({ ...prev, [downloadType]: undefined }))
         setDownloadingStates(prev => ({ ...prev, [downloadType]: true }))
-        
+
         void performDownload(urlString, finalFilename, downloadType)
       }
     }, 1000)
@@ -279,7 +279,7 @@ export function XVideoDownloader({ compact = false }: XVideoDownloaderProps) {
     if (url.includes('dl.snapcdn.app') || url.includes('download?token=')) {
       return
     }
-    
+
     try {
       const response = await fetch(url, {
         method: 'GET',
@@ -293,7 +293,7 @@ export function XVideoDownloader({ compact = false }: XVideoDownloaderProps) {
       if (response.ok) {
         const blob = await response.blob()
         if (blob.size > 0) {
-          ;(window as any)[`downloadedBlob_${downloadType}`] = blob
+          ; (window as any)[`downloadedBlob_${downloadType}`] = blob
         }
       }
     } catch (error) {
@@ -304,29 +304,29 @@ export function XVideoDownloader({ compact = false }: XVideoDownloaderProps) {
   const performDownload = async (url: string, filename: string, downloadType: string) => {
     try {
       const preDownloadedBlob = (window as any)[`downloadedBlob_${downloadType}`]
-      
+
       if (preDownloadedBlob) {
         const objectUrl = URL.createObjectURL(preDownloadedBlob)
-        
+
         const link = document.createElement("a")
         link.href = objectUrl
         link.download = filename
         link.style.display = 'none'
-        
+
         document.body.appendChild(link)
         link.click()
         document.body.removeChild(link)
-        
+
         setTimeout(() => {
           URL.revokeObjectURL(objectUrl)
           delete (window as any)[`downloadedBlob_${downloadType}`]
         }, 1000)
-        
+
         setTimeout(() => {
           setDownloadingStates(prev => ({ ...prev, [downloadType]: false }))
           setResult(prev => prev ? { ...prev, downloadStarted: true } : null)
         }, 500)
-        
+
         return
       }
 
@@ -339,16 +339,16 @@ export function XVideoDownloader({ compact = false }: XVideoDownloaderProps) {
           link.target = '_blank'
           link.rel = 'noopener noreferrer'
           link.style.display = 'none'
-          
+
           document.body.appendChild(link)
           link.click()
           document.body.removeChild(link)
-          
+
           setTimeout(() => {
             setDownloadingStates(prev => ({ ...prev, [downloadType]: false }))
             setResult(prev => prev ? { ...prev, downloadStarted: true } : null)
           }, 500)
-          
+
           return
         } catch (linkError) {
           throw new Error('Download failed. Please try again.')
@@ -369,28 +369,28 @@ export function XVideoDownloader({ compact = false }: XVideoDownloaderProps) {
 
         if (response.ok) {
           const blob = await response.blob()
-          
+
           if (blob.size > 0) {
             const objectUrl = URL.createObjectURL(blob)
-            
+
             const link = document.createElement("a")
             link.href = objectUrl
             link.download = filename
             link.style.display = 'none'
-            
+
             document.body.appendChild(link)
             link.click()
             document.body.removeChild(link)
-            
+
             setTimeout(() => {
               URL.revokeObjectURL(objectUrl)
             }, 1000)
-            
+
             setTimeout(() => {
               setDownloadingStates(prev => ({ ...prev, [downloadType]: false }))
               setResult(prev => prev ? { ...prev, downloadStarted: true } : null)
             }, 500)
-            
+
             return
           }
         }
@@ -403,16 +403,16 @@ export function XVideoDownloader({ compact = false }: XVideoDownloaderProps) {
           link.target = '_blank'
           link.rel = 'noopener noreferrer'
           link.style.display = 'none'
-          
+
           document.body.appendChild(link)
           link.click()
           document.body.removeChild(link)
-          
+
           setTimeout(() => {
             setDownloadingStates(prev => ({ ...prev, [downloadType]: false }))
             setResult(prev => prev ? { ...prev, downloadStarted: true } : null)
           }, 500)
-          
+
           return
         } catch (linkError) {
           // Fall through to error
@@ -420,7 +420,7 @@ export function XVideoDownloader({ compact = false }: XVideoDownloaderProps) {
       }
 
       throw new Error('Download failed. The media URL may be expired or inaccessible.')
-      
+
     } catch (e) {
       const errorMessage = e instanceof Error ? e.message : "Download failed. Please try again."
       setError(errorMessage)
@@ -462,7 +462,7 @@ export function XVideoDownloader({ compact = false }: XVideoDownloaderProps) {
             />
           </div>
 
-          <Button
+          <GButton
             onClick={handleFetch}
             disabled={!postUrl || loading}
             className={`w-full ${compact ? "h-10 xs:h-11 sm:h-12" : "h-11 xs:h-12 sm:h-[52px] md:h-14"} text-xs xs:text-sm sm:text-base md:text-lg font-medium shadow-sm hover:shadow-md transition-all px-4 xs:px-6`}
@@ -480,7 +480,7 @@ export function XVideoDownloader({ compact = false }: XVideoDownloaderProps) {
                 <span className="text-xs xs:text-sm sm:text-base">Get Download Links</span>
               </>
             )}
-          </Button>
+          </GButton>
 
           {error && (
             <div className="text-xs xs:text-sm text-muted-foreground bg-muted/50 border border-border rounded-md p-2.5 xs:p-3 sm:p-4">
@@ -502,7 +502,7 @@ export function XVideoDownloader({ compact = false }: XVideoDownloaderProps) {
                       <li>Try copying the URL directly from X/Twitter app</li>
                     </ul>
                   </div>
-                  <Button
+                  <GButton
                     onClick={handleFetch}
                     disabled={loading}
                     variant="outline"
@@ -520,7 +520,7 @@ export function XVideoDownloader({ compact = false }: XVideoDownloaderProps) {
                         Try Again
                       </>
                     )}
-                  </Button>
+                  </GButton>
                 </div>
               </div>
             </div>
@@ -534,7 +534,7 @@ export function XVideoDownloader({ compact = false }: XVideoDownloaderProps) {
                   Debug: videoUrl={result.videoUrl ? 'exists' : 'null'}, imageUrl={result.imageUrl ? 'exists' : 'null'}, images={result.images?.length || 0}
                 </div>
               )}
-              
+
               {/* Show video preview if we have a video URL */}
               {result.videoUrl && !videoLoadError && (
                 <div className="flex justify-center px-1">
@@ -551,7 +551,7 @@ export function XVideoDownloader({ compact = false }: XVideoDownloaderProps) {
                   </div>
                 </div>
               )}
-              
+
               {/* Show image preview if we have images */}
               {!result.videoUrl && (result.imageUrl || (result.images && result.images.length > 0)) && (
                 <div className="flex justify-center px-1">
@@ -559,8 +559,8 @@ export function XVideoDownloader({ compact = false }: XVideoDownloaderProps) {
                     {result.images && result.images.length > 1 ? (
                       <div className="grid grid-cols-2 gap-0.5 xs:gap-1">
                         {result.images.slice(0, 4).map((img, idx) => {
-                          const imgSrc = typeof img === 'string' 
-                            ? img 
+                          const imgSrc = typeof img === 'string'
+                            ? img
                             : (typeof img === 'object' && img !== null && 'url' in img && typeof img.url === 'string')
                               ? img.url
                               : String(img)
@@ -580,14 +580,14 @@ export function XVideoDownloader({ compact = false }: XVideoDownloaderProps) {
                       </div>
                     ) : (
                       <img
-                        src={result.imageUrl || 
-                          (result.images && result.images[0] 
-                            ? (typeof result.images[0] === 'string' 
-                                ? result.images[0] 
-                                : (typeof result.images[0] === 'object' && result.images[0] !== null && 'url' in result.images[0] && typeof result.images[0].url === 'string'
-                                  ? result.images[0].url 
-                                  : undefined))
-                            : undefined) || 
+                        src={result.imageUrl ||
+                          (result.images && result.images[0]
+                            ? (typeof result.images[0] === 'string'
+                              ? result.images[0]
+                              : (typeof result.images[0] === 'object' && result.images[0] !== null && 'url' in result.images[0] && typeof result.images[0].url === 'string'
+                                ? result.images[0].url
+                                : undefined))
+                            : undefined) ||
                           result.thumbnail}
                         alt={result.title || "X post image"}
                         className={`${compact ? "h-32 xs:h-36 sm:h-40" : "h-36 xs:h-40 sm:h-48 md:h-56 lg:h-64"} w-full object-cover`}
@@ -599,7 +599,7 @@ export function XVideoDownloader({ compact = false }: XVideoDownloaderProps) {
                   </div>
                 </div>
               )}
-              
+
               {/* Fallback to thumbnail if available */}
               {(videoLoadError || (!result.videoUrl && !result.imageUrl && (!result.images || result.images.length === 0))) && result.thumbnail && (
                 <div className="flex justify-center px-1">
@@ -613,17 +613,17 @@ export function XVideoDownloader({ compact = false }: XVideoDownloaderProps) {
                   />
                 </div>
               )}
-              
+
               <div className="space-y-2 xs:space-y-2.5 sm:space-y-3">
                 {result.downloadStarted && (
                   <div className="text-center p-2.5 xs:p-3 sm:p-4 bg-muted/50 border border-border rounded-md">
                     <p className="text-xs xs:text-sm sm:text-base text-foreground font-medium">✅ Download started! Check your downloads folder.</p>
                   </div>
                 )}
-                
+
                 {/* Video download button */}
                 {result.videoUrl && (
-                  <button
+                  <GButton
                     type="button"
                     onClick={async () => {
                       const title = result.title || "x_video"
@@ -648,12 +648,12 @@ export function XVideoDownloader({ compact = false }: XVideoDownloaderProps) {
                         <span className="text-xs xs:text-sm sm:text-base">Download Video</span>
                       </>
                     )}
-                  </button>
+                  </GButton>
                 )}
-                
+
                 {/* Single image download button */}
                 {result.imageUrl && !result.images && (
-                  <button
+                  <GButton
                     type="button"
                     onClick={async () => {
                       const title = result.title || "x_image"
@@ -678,54 +678,54 @@ export function XVideoDownloader({ compact = false }: XVideoDownloaderProps) {
                         <span className="text-xs xs:text-sm sm:text-base">Download Image</span>
                       </>
                     )}
-                  </button>
+                  </GButton>
                 )}
-                
+
                 {/* Multiple images download buttons */}
                 {result.images && result.images.length > 0 && (
                   <div className="space-y-2 xs:space-y-2.5">
                     {result.images.map((img, idx) => {
                       // Ensure img is a string
-                      const imgUrl = typeof img === 'string' 
-                        ? img 
+                      const imgUrl = typeof img === 'string'
+                        ? img
                         : (typeof img === 'object' && img !== null && 'url' in img && typeof img.url === 'string')
                           ? img.url
                           : String(img)
                       if (!imgUrl || !imgUrl.startsWith('http')) return null
-                      
+
                       return (
-                      <button
-                        key={idx}
-                        type="button"
-                        onClick={async () => {
-                          const title = result.title ? `${result.title}_${idx + 1}` : `x_image_${idx + 1}`
-                          await startCountdownAndDownload(imgUrl, title, `image-${idx}`)
-                        }}
-                        disabled={downloadingStates[`image-${idx}`] || countdownStates[`image-${idx}`] !== undefined}
-                        className="inline-flex items-center justify-center w-full h-10 xs:h-11 sm:h-12 md:h-[52px] rounded-md bg-primary text-primary-foreground font-medium hover:opacity-90 transition-opacity text-xs xs:text-sm sm:text-base disabled:opacity-50 disabled:cursor-not-allowed px-3 xs:px-4 sm:px-6"
-                      >
-                        {countdownStates[`image-${idx}`] !== undefined ? (
-                          <>
-                            <LoadingSpinner className="mr-1.5 xs:mr-2 h-3.5 w-3.5 xs:h-4 xs:w-4 sm:h-5 sm:w-5" />
-                            <span className="text-xs xs:text-sm">Preparing Download... ({countdownStates[`image-${idx}`]}s)</span>
-                          </>
-                        ) : downloadingStates[`image-${idx}`] ? (
-                          <>
-                            <LoadingSpinner className="mr-1.5 xs:mr-2 h-3.5 w-3.5 xs:h-4 xs:w-4 sm:h-5 sm:w-5" />
-                            <span className="text-xs xs:text-sm">Downloading Image {idx + 1}...</span>
-                          </>
-                        ) : (
-                          <>
-                            <ImageIcon className="mr-1.5 xs:mr-2 h-3.5 w-3.5 xs:h-4 xs:w-4 sm:h-5 sm:w-5" />
-                            <span className="text-xs xs:text-sm sm:text-base">Download Image {idx + 1}</span>
-                          </>
-                        )}
-                      </button>
+                        <GButton
+                          key={idx}
+                          type="button"
+                          onClick={async () => {
+                            const title = result.title ? `${result.title}_${idx + 1}` : `x_image_${idx + 1}`
+                            await startCountdownAndDownload(imgUrl, title, `image-${idx}`)
+                          }}
+                          disabled={downloadingStates[`image-${idx}`] || countdownStates[`image-${idx}`] !== undefined}
+                          className="inline-flex items-center justify-center w-full h-10 xs:h-11 sm:h-12 md:h-[52px] rounded-md bg-primary text-primary-foreground font-medium hover:opacity-90 transition-opacity text-xs xs:text-sm sm:text-base disabled:opacity-50 disabled:cursor-not-allowed px-3 xs:px-4 sm:px-6"
+                        >
+                          {countdownStates[`image-${idx}`] !== undefined ? (
+                            <>
+                              <LoadingSpinner className="mr-1.5 xs:mr-2 h-3.5 w-3.5 xs:h-4 xs:w-4 sm:h-5 sm:w-5" />
+                              <span className="text-xs xs:text-sm">Preparing Download... ({countdownStates[`image-${idx}`]}s)</span>
+                            </>
+                          ) : downloadingStates[`image-${idx}`] ? (
+                            <>
+                              <LoadingSpinner className="mr-1.5 xs:mr-2 h-3.5 w-3.5 xs:h-4 xs:w-4 sm:h-5 sm:w-5" />
+                              <span className="text-xs xs:text-sm">Downloading Image {idx + 1}...</span>
+                            </>
+                          ) : (
+                            <>
+                              <ImageIcon className="mr-1.5 xs:mr-2 h-3.5 w-3.5 xs:h-4 xs:w-4 sm:h-5 sm:w-5" />
+                              <span className="text-xs xs:text-sm sm:text-base">Download Image {idx + 1}</span>
+                            </>
+                          )}
+                        </GButton>
                       )
                     })}
                   </div>
                 )}
-                
+
                 {/* Show message if result exists but no valid media URLs */}
                 {!result.videoUrl && !result.imageUrl && (!result.images || result.images.length === 0) && (
                   <div className="text-center p-3 xs:p-4 sm:p-5 bg-muted/50 border border-border rounded-md">

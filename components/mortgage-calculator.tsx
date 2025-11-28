@@ -1,53 +1,53 @@
 "use client"
 
 import { useState, useEffect } from "react"
-import { Button } from "@/components/ui/button"
+import { GButton } from "@/components/globalcomponents/gbutton"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
 import { Badge } from "@/components/ui/badge"
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
-import { 
-  Calculator, 
-  DollarSign, 
-  Percent, 
-  Calendar, 
-  TrendingUp, 
-  TrendingDown, 
-  Info, 
-  AlertCircle, 
-  CheckCircle, 
-  Copy, 
-  Download, 
-  History, 
-  Star, 
-  Globe, 
-  Shield, 
-  FileText, 
-  BarChart3, 
-  PieChart, 
-  Target, 
-  Zap, 
-  Clock, 
-  Users, 
-  Home, 
-  Car, 
-  ShoppingBag, 
-  CreditCard, 
-  Banknote, 
-  Coins, 
-  Wallet, 
-  Briefcase, 
-  Store, 
-  Truck, 
-  Package, 
-  Tag, 
-  ShoppingCart, 
-  HandHeart, 
-  Gift, 
-  Award, 
-  Trophy, 
+import {
+  Calculator,
+  DollarSign,
+  Percent,
+  Calendar,
+  TrendingUp,
+  TrendingDown,
+  Info,
+  AlertCircle,
+  CheckCircle,
+  Copy,
+  Download,
+  History,
+  Star,
+  Globe,
+  Shield,
+  FileText,
+  BarChart3,
+  PieChart,
+  Target,
+  Zap,
+  Clock,
+  Users,
+  Home,
+  Car,
+  ShoppingBag,
+  CreditCard,
+  Banknote,
+  Coins,
+  Wallet,
+  Briefcase,
+  Store,
+  Truck,
+  Package,
+  Tag,
+  ShoppingCart,
+  HandHeart,
+  Gift,
+  Award,
+  Trophy,
   Stethoscope,
   Brain,
   Dumbbell,
@@ -186,9 +186,9 @@ export default function MortgageCalculator() {
     const totalMonths = term * 12
 
     // Calculate monthly mortgage payment
-    const monthlyPayment = loanAmount * (monthlyRate * Math.pow(1 + monthlyRate, totalMonths)) / 
-                          (Math.pow(1 + monthlyRate, totalMonths) - 1)
-    
+    const monthlyPayment = loanAmount * (monthlyRate * Math.pow(1 + monthlyRate, totalMonths)) /
+      (Math.pow(1 + monthlyRate, totalMonths) - 1)
+
     const totalPayments = monthlyPayment * totalMonths
     const totalInterest = totalPayments - loanAmount
 
@@ -199,8 +199,8 @@ export default function MortgageCalculator() {
     const monthlyHoa = hoa / 12
     const monthlyOtherCosts = other / 12
 
-    const totalMonthlyPayment = monthlyPayment + monthlyPropertyTax + monthlyHomeInsurance + 
-                               monthlyPmi + monthlyHoa + monthlyOtherCosts
+    const totalMonthlyPayment = monthlyPayment + monthlyPropertyTax + monthlyHomeInsurance +
+      monthlyPmi + monthlyHoa + monthlyOtherCosts
     const totalOutOfPocket = totalMonthlyPayment * totalMonths
 
     // Calculate percentages
@@ -348,29 +348,29 @@ export default function MortgageCalculator() {
   const generateScenarios = (amount: number, rate: number, term: number, payment: number) => {
     const monthlyRate = rate / 100 / 12
     const totalMonths = term * 12
-    
+
     return [
-      { 
-        scenario: "Current Payment", 
-        monthlyPayment: payment, 
+      {
+        scenario: "Current Payment",
+        monthlyPayment: payment,
         totalInterest: (payment * totalMonths) - amount,
         savings: 0
       },
-      { 
-        scenario: "+$100 Extra", 
-        monthlyPayment: payment + 100, 
+      {
+        scenario: "+$100 Extra",
+        monthlyPayment: payment + 100,
         totalInterest: ((payment + 100) * totalMonths) - amount,
         savings: 0
       },
-      { 
-        scenario: "+$200 Extra", 
-        monthlyPayment: payment + 200, 
+      {
+        scenario: "+$200 Extra",
+        monthlyPayment: payment + 200,
         totalInterest: ((payment + 200) * totalMonths) - amount,
         savings: 0
       },
-      { 
-        scenario: "Bi-weekly", 
-        monthlyPayment: payment * 1.083, 
+      {
+        scenario: "Bi-weekly",
+        monthlyPayment: payment * 1.083,
         totalInterest: ((payment * 1.083) * totalMonths) - amount,
         savings: 0
       }
@@ -534,13 +534,13 @@ Loan Term: ${result.loanTerm.toFixed(1)} years`
           </div>
 
           <div className="flex gap-2">
-            <Button onClick={calculateMortgage} className="flex-1">
+            <GButton onClick={calculateMortgage} className="flex-1">
               <Calculator className="mr-2 h-4 w-4" />
               Calculate
-            </Button>
-            <Button variant="outline" onClick={clearAll}>
+            </GButton>
+            <GButton variant="outline" onClick={clearAll}>
               Clear All
-            </Button>
+            </GButton>
           </div>
         </CardContent>
       </Card>
@@ -592,10 +592,10 @@ Loan Term: ${result.loanTerm.toFixed(1)} years`
               </div>
 
               <div className="flex gap-2 pt-4">
-                <Button onClick={copyResult} variant="outline" size="sm">
+                <GButton onClick={copyResult} variant="outline" size="sm">
                   <Copy className="mr-2 h-4 w-4" />
                   Copy Results
-                </Button>
+                </GButton>
               </div>
             </CardContent>
           </Card>
@@ -773,13 +773,13 @@ Loan Term: ${result.loanTerm.toFixed(1)} years`
                       {item.loanTerm.toFixed(1)} years at {item.interestRate.toFixed(2)}%
                     </div>
                   </div>
-                  <Button
+                  <GButton
                     variant="ghost"
                     size="sm"
                     onClick={() => setResult(item)}
                   >
                     View Details
-                  </Button>
+                  </GButton>
                 </div>
               ))}
             </div>
@@ -809,7 +809,7 @@ Loan Term: ${result.loanTerm.toFixed(1)} years`
               </div>
             </div>
           </div>
-          
+
           <div className="text-sm text-muted-foreground space-y-2">
             <p>
               <strong>Mortgage Payments:</strong> Principal, interest, property taxes, insurance, and other costs.

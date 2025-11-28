@@ -1,54 +1,54 @@
 "use client"
 
 import { useState, useEffect } from "react"
-import { Button } from "@/components/ui/button"
+import { GButton } from "@/components/globalcomponents/gbutton"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
 import { Badge } from "@/components/ui/badge"
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
-import { 
-  Calculator, 
-  DollarSign, 
-  Percent, 
-  Calendar, 
-  TrendingUp, 
-  TrendingDown, 
-  Info, 
-  AlertCircle, 
-  CheckCircle, 
-  Copy, 
-  Download, 
-  History, 
-  Star, 
-  Globe, 
-  Shield, 
-  FileText, 
-  BarChart3, 
-  PieChart, 
-  Target, 
-  Zap, 
-  Clock, 
-  Users, 
-  Home, 
-  Car, 
-  ShoppingBag, 
-  CreditCard, 
-  Banknote, 
-  Coins, 
-  Wallet, 
-  Briefcase, 
-  Store, 
-  Truck, 
-  Package, 
-  Tag, 
-  ShoppingCart, 
-  HandHeart, 
-  Gift, 
-  Award, 
-  Trophy, 
-  TrendingUp as TrendingUpIcon, 
+import {
+  Calculator,
+  DollarSign,
+  Percent,
+  Calendar,
+  TrendingUp,
+  TrendingDown,
+  Info,
+  AlertCircle,
+  CheckCircle,
+  Copy,
+  Download,
+  History,
+  Star,
+  Globe,
+  Shield,
+  FileText,
+  BarChart3,
+  PieChart,
+  Target,
+  Zap,
+  Clock,
+  Users,
+  Home,
+  Car,
+  ShoppingBag,
+  CreditCard,
+  Banknote,
+  Coins,
+  Wallet,
+  Briefcase,
+  Store,
+  Truck,
+  Package,
+  Tag,
+  ShoppingCart,
+  HandHeart,
+  Gift,
+  Award,
+  Trophy,
+  TrendingUp as TrendingUpIcon,
   TrendingDown as TrendingDownIcon,
   Stethoscope,
   Brain,
@@ -125,24 +125,24 @@ export default function FinanceCalculator() {
     const iyValue = parseFloat(iy) || 0
     const nValue = parseFloat(n) || 0
     const pvValue = parseFloat(pv) || 0
-    
+
     // Calculate the missing value
     let calculatedValue = 0
     let calculatedField = ""
-    
+
     if (!fv && pmtValue && iyValue && nValue && pvValue) {
       // Calculate FV
       const rate = iyValue / 100
       const periods = nValue
       const presentValue = pvValue
       const payment = pmtValue
-      
+
       if (paymentTiming === "beginning") {
-        calculatedValue = presentValue * Math.pow(1 + rate, periods) + 
-                        payment * ((Math.pow(1 + rate, periods) - 1) / rate) * (1 + rate)
+        calculatedValue = presentValue * Math.pow(1 + rate, periods) +
+          payment * ((Math.pow(1 + rate, periods) - 1) / rate) * (1 + rate)
       } else {
-        calculatedValue = presentValue * Math.pow(1 + rate, periods) + 
-                        payment * ((Math.pow(1 + rate, periods) - 1) / rate)
+        calculatedValue = presentValue * Math.pow(1 + rate, periods) +
+          payment * ((Math.pow(1 + rate, periods) - 1) / rate)
       }
       calculatedField = "fv"
     } else if (!pv && fvValue && iyValue && nValue && pmtValue) {
@@ -151,7 +151,7 @@ export default function FinanceCalculator() {
       const periods = nValue
       const futureValue = fvValue
       const payment = pmtValue
-      
+
       if (paymentTiming === "beginning") {
         calculatedValue = (futureValue - payment * ((Math.pow(1 + rate, periods) - 1) / rate) * (1 + rate)) / Math.pow(1 + rate, periods)
       } else {
@@ -164,13 +164,13 @@ export default function FinanceCalculator() {
       const periods = nValue
       const futureValue = fvValue
       const presentValue = pvValue
-      
+
       if (paymentTiming === "beginning") {
-        calculatedValue = (futureValue - presentValue * Math.pow(1 + rate, periods)) / 
-                         (((Math.pow(1 + rate, periods) - 1) / rate) * (1 + rate))
+        calculatedValue = (futureValue - presentValue * Math.pow(1 + rate, periods)) /
+          (((Math.pow(1 + rate, periods) - 1) / rate) * (1 + rate))
       } else {
-        calculatedValue = (futureValue - presentValue * Math.pow(1 + rate, periods)) / 
-                         ((Math.pow(1 + rate, periods) - 1) / rate)
+        calculatedValue = (futureValue - presentValue * Math.pow(1 + rate, periods)) /
+          ((Math.pow(1 + rate, periods) - 1) / rate)
       }
       calculatedField = "pmt"
     } else if (!iy && fvValue && pmtValue && nValue && pvValue) {
@@ -179,42 +179,42 @@ export default function FinanceCalculator() {
       const futureValue = fvValue
       const payment = pmtValue
       const presentValue = pvValue
-      
+
       let rate = 0.01 // Start with 1%
       let tolerance = 0.0001
       let maxIterations = 100
       let iteration = 0
-      
+
       while (iteration < maxIterations) {
         const f = (r: number) => {
           if (r === 0) {
             return presentValue + payment * periods - futureValue
           }
           const factor = paymentTiming === "beginning" ? (1 + r) : 1
-          return presentValue * Math.pow(1 + r, periods) + 
-                 payment * ((Math.pow(1 + r, periods) - 1) / r) * factor - futureValue
+          return presentValue * Math.pow(1 + r, periods) +
+            payment * ((Math.pow(1 + r, periods) - 1) / r) * factor - futureValue
         }
-        
+
         const fPrime = (r: number) => {
           if (r === 0) {
             return presentValue * periods + payment * periods * (periods + 1) / 2
           }
           const factor = paymentTiming === "beginning" ? (1 + r) : 1
-          return presentValue * periods * Math.pow(1 + r, periods - 1) + 
-                 payment * ((periods * Math.pow(1 + r, periods - 1) * r - (Math.pow(1 + r, periods) - 1)) / (r * r)) * factor
+          return presentValue * periods * Math.pow(1 + r, periods - 1) +
+            payment * ((periods * Math.pow(1 + r, periods - 1) * r - (Math.pow(1 + r, periods) - 1)) / (r * r)) * factor
         }
-        
+
         const fValue = f(rate)
         const fPrimeValue = fPrime(rate)
-        
+
         if (Math.abs(fValue) < tolerance) break
-        
+
         if (fPrimeValue === 0) break
-        
+
         rate = rate - fValue / fPrimeValue
         iteration++
       }
-      
+
       calculatedValue = rate * 100
       calculatedField = "iy"
     } else if (!n && fvValue && pmtValue && iyValue && pvValue) {
@@ -223,7 +223,7 @@ export default function FinanceCalculator() {
       const futureValue = fvValue
       const payment = pmtValue
       const presentValue = pvValue
-      
+
       if (rate === 0) {
         calculatedValue = (futureValue - presentValue) / payment
       } else {
@@ -234,7 +234,7 @@ export default function FinanceCalculator() {
       }
       calculatedField = "n"
     }
-    
+
     // Generate amortization schedule
     const schedule = generateAmortizationSchedule(
       calculatedField === "pv" ? calculatedValue : pvValue,
@@ -243,7 +243,7 @@ export default function FinanceCalculator() {
       calculatedField === "n" ? calculatedValue : nValue,
       calculatedField === "fv" ? calculatedValue : fvValue
     )
-    
+
     const newResult: FinanceResult = {
       fv: calculatedField === "fv" ? calculatedValue : fvValue,
       pmt: calculatedField === "pmt" ? calculatedValue : pmtValue,
@@ -268,7 +268,7 @@ export default function FinanceCalculator() {
       recommendations: generateRecommendations(calculatedField === "fv" ? calculatedValue : fvValue, calculatedField === "iy" ? calculatedValue : iyValue),
       comparison: generateComparison(calculatedField === "fv" ? calculatedValue : fvValue, calculatedField === "iy" ? calculatedValue : iyValue)
     }
-    
+
     setResult(newResult)
     setHistory(prev => [newResult, ...prev.slice(0, 4)])
   }
@@ -277,12 +277,12 @@ export default function FinanceCalculator() {
     const schedule = []
     const rate = iy / 100
     let balance = pv
-    
+
     for (let i = 1; i <= n; i++) {
       const interest = balance * rate
       const principal = pmt - interest
       balance = balance + principal
-      
+
       schedule.push({
         period: i,
         presentValue: balance - principal,
@@ -291,7 +291,7 @@ export default function FinanceCalculator() {
         futureValue: balance
       })
     }
-    
+
     return schedule
   }
 
@@ -449,13 +449,13 @@ Total Interest: $${result.summary.totalInterest.toFixed(2)}`
           </div>
 
           <div className="flex flex-col sm:flex-row gap-2 w-full">
-            <Button onClick={calculateFinance} className="w-full sm:w-auto text-sm sm:text-base">
+            <GButton onClick={calculateFinance} className="w-full sm:w-auto text-sm sm:text-base">
               <Calculator className="mr-2 h-3.5 w-3.5 sm:h-4 sm:w-4" />
               Calculate
-            </Button>
-            <Button variant="outline" onClick={clearAll} className="w-full sm:w-auto text-sm sm:text-base">
+            </GButton>
+            <GButton variant="outline" onClick={clearAll} className="w-full sm:w-auto text-sm sm:text-base">
               Clear All
-            </Button>
+            </GButton>
           </div>
         </CardContent>
       </Card>
@@ -503,10 +503,10 @@ Total Interest: $${result.summary.totalInterest.toFixed(2)}`
               </div>
 
               <div className="flex gap-2 pt-2 sm:pt-4">
-                <Button onClick={copyResult} variant="outline" size="sm" className="text-xs sm:text-sm">
+                <GButton onClick={copyResult} variant="outline" size="sm" className="text-xs sm:text-sm">
                   <Copy className="mr-2 h-3 w-3 sm:h-3.5 sm:w-3.5" />
                   Copy Results
-                </Button>
+                </GButton>
               </div>
             </CardContent>
           </Card>
@@ -668,14 +668,14 @@ Total Interest: $${result.summary.totalInterest.toFixed(2)}`
                       {item.iy.toFixed(1)}% for {item.n.toFixed(0)} periods
                     </div>
                   </div>
-                  <Button
+                  <GButton
                     variant="ghost"
                     size="sm"
                     onClick={() => setResult(item)}
                     className="text-xs sm:text-sm flex-shrink-0"
                   >
                     View Details
-                  </Button>
+                  </GButton>
                 </div>
               ))}
             </div>
@@ -705,7 +705,7 @@ Total Interest: $${result.summary.totalInterest.toFixed(2)}`
               </div>
             </div>
           </div>
-          
+
           <div className="text-xs sm:text-sm text-foreground space-y-1.5 sm:space-y-2">
             <p className="break-words">
               <strong className="text-heading-accent">Time Value of Money:</strong> Calculate present value, future value, payments, interest rates, and periods.

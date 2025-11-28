@@ -3,7 +3,7 @@
 import { useState, useEffect } from "react"
 import { Input } from "@/components/ui/input"
 import { Card } from "@/components/ui/card"
-import { Button } from "@/components/ui/button"
+import { GButton } from "@/components/globalcomponents/gbutton"
 import { Label } from "@/components/ui/label"
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
 import { Copy, Check, Palette, Sparkles } from "lucide-react"
@@ -23,7 +23,7 @@ const SAMPLE_COLORS = [
 
 export function HexToRGB() {
   const [inputMode, setInputMode] = useState<"hex" | "rgb" | "hsl">("hex")
-  
+
   // Input states
   const [hexInput, setHexInput] = useState("#2563eb")
   const [rgbR, setRgbR] = useState("37")
@@ -33,12 +33,12 @@ export function HexToRGB() {
   const [hslS, setHslS] = useState("83")
   const [hslL, setHslL] = useState("53")
   const [alpha, setAlpha] = useState("1")
-  
+
   // Output states
   const [hex, setHex] = useState("#2563eb")
   const [rgb, setRgb] = useState({ r: 37, g: 99, b: 235 })
   const [hsl, setHsl] = useState({ h: 217, s: 83, l: 53 })
-  
+
   const [copied, setCopied] = useState<CopiedState>({})
   const [error, setError] = useState("")
 
@@ -146,7 +146,7 @@ export function HexToRGB() {
   useEffect(() => {
     try {
       setError("")
-      
+
       if (inputMode === "hex") {
         const rgbResult = hexToRgb(hexInput)
         if (rgbResult) {
@@ -161,12 +161,12 @@ export function HexToRGB() {
         const r = parseInt(rgbR) || 0
         const g = parseInt(rgbG) || 0
         const b = parseInt(rgbB) || 0
-        
+
         if (r < 0 || r > 255 || g < 0 || g > 255 || b < 0 || b > 255) {
           setError("RGB values must be between 0-255")
           return
         }
-        
+
         setRgb({ r, g, b })
         setHex(rgbToHex(r, g, b))
         const hslResult = rgbToHsl(r, g, b)
@@ -175,12 +175,12 @@ export function HexToRGB() {
         const h = parseInt(hslH) || 0
         const s = parseInt(hslS) || 0
         const l = parseInt(hslL) || 0
-        
+
         if (h < 0 || h > 360 || s < 0 || s > 100 || l < 0 || l > 100) {
           setError("HSL values out of range")
           return
         }
-        
+
         setHsl({ h, s, l })
         const rgbResult = hslToRgb(h, s, l)
         setRgb(rgbResult)
@@ -412,7 +412,7 @@ export function HexToRGB() {
       {/* Output Formats */}
       <Card className="p-6 space-y-4">
         <h3 className="font-semibold text-lg">All Color Formats</h3>
-        
+
         <div className="space-y-3">
           {/* Hex */}
           <div className="flex items-center justify-between p-3 bg-muted/30 rounded-lg border border-border">
@@ -420,11 +420,11 @@ export function HexToRGB() {
               <p className="text-sm text-muted-foreground">Hex</p>
               <p className="font-mono text-base font-medium">{hex}</p>
             </div>
-            <Button
+            <GButton
               variant="outline"
               size="sm"
               onClick={() => copyToClipboard(hex, "hex")}
-              style={{ 
+              style={{
                 backgroundColor: hex,
                 borderColor: hex,
                 color: hsl.l > 50 ? '#000000' : '#FFFFFF'
@@ -432,7 +432,7 @@ export function HexToRGB() {
               className="hover:opacity-80 transition-opacity"
             >
               {copied.hex ? <Check className="h-4 w-4" /> : <Copy className="h-4 w-4" />}
-            </Button>
+            </GButton>
           </div>
 
           {/* RGB */}
@@ -441,11 +441,11 @@ export function HexToRGB() {
               <p className="text-sm text-muted-foreground">RGB</p>
               <p className="font-mono text-base font-medium">rgb({rgb.r}, {rgb.g}, {rgb.b})</p>
             </div>
-            <Button
+            <GButton
               variant="outline"
               size="sm"
               onClick={() => copyToClipboard(`rgb(${rgb.r}, ${rgb.g}, ${rgb.b})`, "rgb")}
-              style={{ 
+              style={{
                 backgroundColor: hex,
                 borderColor: hex,
                 color: hsl.l > 50 ? '#000000' : '#FFFFFF'
@@ -453,7 +453,7 @@ export function HexToRGB() {
               className="hover:opacity-80 transition-opacity"
             >
               {copied.rgb ? <Check className="h-4 w-4" /> : <Copy className="h-4 w-4" />}
-            </Button>
+            </GButton>
           </div>
 
           {/* RGBA */}
@@ -462,11 +462,11 @@ export function HexToRGB() {
               <p className="text-sm text-muted-foreground">RGBA</p>
               <p className="font-mono text-base font-medium">rgba({rgb.r}, {rgb.g}, {rgb.b}, {alphaValue})</p>
             </div>
-            <Button
+            <GButton
               variant="outline"
               size="sm"
               onClick={() => copyToClipboard(`rgba(${rgb.r}, ${rgb.g}, ${rgb.b}, ${alphaValue})`, "rgba")}
-              style={{ 
+              style={{
                 backgroundColor: hex,
                 borderColor: hex,
                 color: hsl.l > 50 ? '#000000' : '#FFFFFF'
@@ -474,7 +474,7 @@ export function HexToRGB() {
               className="hover:opacity-80 transition-opacity"
             >
               {copied.rgba ? <Check className="h-4 w-4" /> : <Copy className="h-4 w-4" />}
-            </Button>
+            </GButton>
           </div>
 
           {/* HSL */}
@@ -483,11 +483,11 @@ export function HexToRGB() {
               <p className="text-sm text-muted-foreground">HSL</p>
               <p className="font-mono text-base font-medium">hsl({hsl.h}, {hsl.s}%, {hsl.l}%)</p>
             </div>
-            <Button
+            <GButton
               variant="outline"
               size="sm"
               onClick={() => copyToClipboard(`hsl(${hsl.h}, ${hsl.s}%, ${hsl.l}%)`, "hsl")}
-              style={{ 
+              style={{
                 backgroundColor: hex,
                 borderColor: hex,
                 color: hsl.l > 50 ? '#000000' : '#FFFFFF'
@@ -495,7 +495,7 @@ export function HexToRGB() {
               className="hover:opacity-80 transition-opacity"
             >
               {copied.hsl ? <Check className="h-4 w-4" /> : <Copy className="h-4 w-4" />}
-            </Button>
+            </GButton>
           </div>
 
           {/* HSLA */}
@@ -504,11 +504,11 @@ export function HexToRGB() {
               <p className="text-sm text-muted-foreground">HSLA</p>
               <p className="font-mono text-base font-medium">hsla({hsl.h}, {hsl.s}%, {hsl.l}%, {alphaValue})</p>
             </div>
-            <Button
+            <GButton
               variant="outline"
               size="sm"
               onClick={() => copyToClipboard(`hsla(${hsl.h}, ${hsl.s}%, ${hsl.l}%, ${alphaValue})`, "hsla")}
-              style={{ 
+              style={{
                 backgroundColor: hex,
                 borderColor: hex,
                 color: hsl.l > 50 ? '#000000' : '#FFFFFF'
@@ -516,7 +516,7 @@ export function HexToRGB() {
               className="hover:opacity-80 transition-opacity"
             >
               {copied.hsla ? <Check className="h-4 w-4" /> : <Copy className="h-4 w-4" />}
-            </Button>
+            </GButton>
           </div>
 
           {/* CSS Variable */}
@@ -525,11 +525,11 @@ export function HexToRGB() {
               <p className="text-sm text-muted-foreground">CSS Variable</p>
               <p className="font-mono text-base font-medium">--color-primary: {hex};</p>
             </div>
-            <Button
+            <GButton
               variant="outline"
               size="sm"
               onClick={() => copyToClipboard(`--color-primary: ${hex};`, "css")}
-              style={{ 
+              style={{
                 backgroundColor: hex,
                 borderColor: hex,
                 color: hsl.l > 50 ? '#000000' : '#FFFFFF'
@@ -537,7 +537,7 @@ export function HexToRGB() {
               className="hover:opacity-80 transition-opacity"
             >
               {copied.css ? <Check className="h-4 w-4" /> : <Copy className="h-4 w-4" />}
-            </Button>
+            </GButton>
           </div>
         </div>
       </Card>

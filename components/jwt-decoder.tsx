@@ -1,7 +1,7 @@
 "use client"
 
 import { useState, useEffect } from "react"
-import { Button } from "@/components/ui/button"
+import { GButton } from "@/components/globalcomponents/gbutton"
 import { Textarea } from "@/components/ui/textarea"
 import { Card } from "@/components/ui/card"
 import { Input } from "@/components/ui/input"
@@ -31,7 +31,7 @@ export function JWTDecoder() {
   const [codeCopied, setCodeCopied] = useState(false)
   const [showSecurityAnalyzer, setShowSecurityAnalyzer] = useState(false)
   const [securityScore, setSecurityScore] = useState(0)
-  const [securityIssues, setSecurityIssues] = useState<Array<{severity: 'critical' | 'high' | 'medium' | 'low' | 'info', message: string, recommendation: string}>>([])
+  const [securityIssues, setSecurityIssues] = useState<Array<{ severity: 'critical' | 'high' | 'medium' | 'low' | 'info', message: string, recommendation: string }>>([])
   const [timeRemaining, setTimeRemaining] = useState<number | null>(null)
   const [showComparison, setShowComparison] = useState(false)
   const [token1, setToken1] = useState("")
@@ -40,7 +40,7 @@ export function JWTDecoder() {
   const [decoded2, setDecoded2] = useState<{ header: any; payload: any; signature: string } | null>(null)
   const [showOptimizer, setShowOptimizer] = useState(false)
   const [optimizedToken, setOptimizedToken] = useState("")
-  const [optimizationSuggestions, setOptimizationSuggestions] = useState<Array<{type: string, title: string, description: string, savings: number}>>([])
+  const [optimizationSuggestions, setOptimizationSuggestions] = useState<Array<{ type: string, title: string, description: string, savings: number }>>([])
   const [appliedOptimizations, setAppliedOptimizations] = useState<Set<string>>(new Set())
   const [showExport, setShowExport] = useState(false)
   const [selectedExportFormat, setSelectedExportFormat] = useState<'json' | 'csv' | 'xml' | 'yaml' | 'pdf'>('json')
@@ -54,11 +54,11 @@ export function JWTDecoder() {
     signatureSize: 0
   })
 
-  
+
   // For header/payload view toggles
   const [headerView, setHeaderView] = useState<"json" | "table">("json")
   const [payloadView, setPayloadView] = useState<"json" | "table">("json")
-  
+
   // For encoding mode
   const [headerInput, setHeaderInput] = useState('{\n  "alg": "HS256",\n  "typ": "JWT"\n}')
   const [payloadInput, setPayloadInput] = useState('{\n  "sub": "1234567890",\n  "name": "John Doe",\n  "iat": 1516239022\n}')
@@ -213,7 +213,7 @@ export function JWTDecoder() {
 
       setDecoded({ header, payload, signature })
       setIsValid(true)
-      
+
       // Try to verify if secret is provided
       if (secret) {
         verifySignature(jwtToken, secret, header.alg)
@@ -252,7 +252,7 @@ export function JWTDecoder() {
     try {
       const header = JSON.parse(headerInput)
       const payload = JSON.parse(payloadInput)
-      
+
       const base64UrlEncode = (str: string) => {
         return btoa(str)
           .replace(/\+/g, '-')
@@ -262,7 +262,7 @@ export function JWTDecoder() {
 
       const encodedHeader = base64UrlEncode(JSON.stringify(header))
       const encodedPayload = base64UrlEncode(JSON.stringify(payload))
-      
+
       // Note: This creates an unsigned token. Real signing requires crypto libraries
       const unsignedToken = `${encodedHeader}.${encodedPayload}.SIGNATURE_HERE`
       setEncodedToken(unsignedToken)
@@ -310,10 +310,10 @@ export function JWTDecoder() {
       }
 
       const payload = JSON.parse(base64UrlDecode(parts[1]))
-      
+
       // List of sensitive fields to mask
       const sensitiveFields = ['email', 'phone', 'password', 'secret', 'apiKey', 'token', 'key', 'ssn', 'credit_card']
-      
+
       // Mask sensitive fields
       Object.keys(payload).forEach(key => {
         if (sensitiveFields.some(field => key.toLowerCase().includes(field.toLowerCase()))) {
@@ -341,7 +341,7 @@ export function JWTDecoder() {
     const tokenToShare = maskSensitiveData ? maskSensitiveFields(token) : token
     const encodedToken = btoa(tokenToShare)
     const url = `${window.location.origin}${window.location.pathname}?token=${encodedToken}`
-    
+
     setShareLink(url)
     setShowShareModal(true)
   }
@@ -357,7 +357,7 @@ export function JWTDecoder() {
   const generateCodeSnippet = (language: string): string => {
     const algo = decoded?.header.alg || selectedAlgorithm
     const secretKey = secret || "your-secret-key"
-    
+
     const codeTemplates: Record<string, string> = {
       nodejs: `// Node.js - Using jsonwebtoken
 const jwt = require('jsonwebtoken');
@@ -646,7 +646,7 @@ class Program
       if (absSeconds < 86400) return `Expired ${Math.floor(absSeconds / 3600)}h ago`
       return `Expired ${Math.floor(absSeconds / 86400)}d ago`
     }
-    
+
     if (seconds < 60) return `${seconds}s`
     if (seconds < 3600) return `${Math.floor(seconds / 60)}m ${seconds % 60}s`
     if (seconds < 86400) return `${Math.floor(seconds / 3600)}h ${Math.floor((seconds % 3600) / 60)}m`
@@ -694,7 +694,7 @@ class Program
       const signature = parts[2]
 
       const decodedResult = { header, payload, signature }
-      
+
       if (tokenNumber === 1) {
         setDecoded1(decodedResult)
       } else {
@@ -751,8 +751,8 @@ class Program
   const openOptimizer = () => {
     if (!token || !decoded) return
 
-    const suggestions: Array<{type: string, title: string, description: string, savings: number}> = []
-    
+    const suggestions: Array<{ type: string, title: string, description: string, savings: number }> = []
+
     // Check for long claim names
     const longClaimNames = Object.keys(decoded.payload).filter(key => key.length > 3)
     if (longClaimNames.length > 0) {
@@ -783,7 +783,7 @@ class Program
 
     // Check algorithm
     const currentAlg = decoded.header.alg
-    const algSuggestions: {[key: string]: {shorter: string, savings: number}} = {
+    const algSuggestions: { [key: string]: { shorter: string, savings: number } } = {
       'HS256': { shorter: 'none', savings: 0 },
       'HS384': { shorter: 'HS256', savings: 48 },
       'HS512': { shorter: 'HS256', savings: 64 },
@@ -853,7 +853,7 @@ class Program
 
     // Apply shorten claims
     if (types.has('shorten-claims')) {
-      const claimMapping: {[key: string]: string} = {
+      const claimMapping: { [key: string]: string } = {
         'username': 'u',
         'email': 'e',
         'userId': 'uid',
@@ -1028,7 +1028,7 @@ ${Object.entries(decoded.payload).map(([key, value]) => `      <${key}>${escapeX
     if (!decoded) return
 
     const indent = (level: number) => '  '.repeat(level)
-    
+
     const toYAML = (obj: any, level: number = 0): string => {
       return Object.entries(obj).map(([key, value]) => {
         if (value === null) return `${indent(level)}${key}: null`
@@ -1133,21 +1133,21 @@ metadata:
       </thead>
       <tbody>
         ${Object.entries(decoded.payload).map(([key, value]) => {
-          let description = ''
-          if (key === 'exp') description = 'Expiration Time'
-          else if (key === 'iat') description = 'Issued At'
-          else if (key === 'nbf') description = 'Not Before'
-          else if (key === 'sub') description = 'Subject'
-          else if (key === 'aud') description = 'Audience'
-          else if (key === 'iss') description = 'Issuer'
-          else if (key === 'jti') description = 'JWT ID'
-          
-          return `
+      let description = ''
+      if (key === 'exp') description = 'Expiration Time'
+      else if (key === 'iat') description = 'Issued At'
+      else if (key === 'nbf') description = 'Not Before'
+      else if (key === 'sub') description = 'Subject'
+      else if (key === 'aud') description = 'Audience'
+      else if (key === 'iss') description = 'Issuer'
+      else if (key === 'jti') description = 'JWT ID'
+
+      return `
           <tr>
             <td class="key">${key}</td>
-            <td>${typeof value === 'number' && (key === 'exp' || key === 'iat' || key === 'nbf') ? 
-              `${value} (${new Date(value * 1000).toLocaleString()})` : 
-              JSON.stringify(value)}</td>
+            <td>${typeof value === 'number' && (key === 'exp' || key === 'iat' || key === 'nbf') ?
+          `${value} (${new Date(value * 1000).toLocaleString()})` :
+          JSON.stringify(value)}</td>
             <td>${description}</td>
           </tr>
         `}).join('')}
@@ -1195,7 +1195,7 @@ metadata:
         exportAsPDF()
         break
     }
-    
+
     setTimeout(() => setShowExport(false), 500)
   }
 
@@ -1259,7 +1259,7 @@ metadata:
     const httpHeaderOverhead = 200 // bytes
     const authHeaderKey = 'Authorization: Bearer '.length
     const totalPerRequest = httpHeaderOverhead + authHeaderKey + tokenSize
-    
+
     const requestsPerDay = [100, 1000, 10000, 100000, 1000000]
     const dataTransfer = requestsPerDay.map(requests => ({
       requests,
@@ -1274,7 +1274,7 @@ metadata:
   const analyzeSecurity = () => {
     if (!token || !decoded) return
 
-    const issues: Array<{severity: 'critical' | 'high' | 'medium' | 'low' | 'info', message: string, recommendation: string}> = []
+    const issues: Array<{ severity: 'critical' | 'high' | 'medium' | 'low' | 'info', message: string, recommendation: string }> = []
     let score = 100
 
     // Check algorithm
@@ -1374,7 +1374,7 @@ metadata:
     const sensitiveFields = ['password', 'ssn', 'credit_card', 'api_key', 'secret', 'private_key', 'access_token']
     const payloadString = JSON.stringify(decoded.payload).toLowerCase()
     const foundSensitive = sensitiveFields.filter(field => payloadString.includes(field))
-    
+
     if (foundSensitive.length > 0) {
       issues.push({
         severity: 'critical',
@@ -1581,16 +1581,16 @@ metadata:
                 )}
               </div>
             </div>
-            
+
             <div className="relative w-full">
-        <Textarea
-          placeholder="Paste your JWT token here..."
-          value={token}
-          onChange={(e) => setToken(e.target.value)}
+              <Textarea
+                placeholder="Paste your JWT token here..."
+                value={token}
+                onChange={(e) => setToken(e.target.value)}
                 className="!h-32 !max-h-32 !min-h-32 !w-full resize-none overflow-y-auto overflow-x-hidden font-mono text-base pr-20 border-2 border-orange-300 focus:border-primary"
-                style={{ 
-                  wordBreak: 'break-all', 
-                  overflowWrap: 'break-word', 
+                style={{
+                  wordBreak: 'break-all',
+                  overflowWrap: 'break-word',
                   whiteSpace: 'normal',
                   height: '128px !important',
                   maxHeight: '128px !important',
@@ -1614,18 +1614,18 @@ metadata:
                   ) : null}
                 </div>
               )}
-      </div>
+            </div>
 
           </div>
 
           {error && !decoded && (
             <div className="p-4 bg-destructive/10 border border-destructive/20 rounded-lg flex items-start gap-2">
               <AlertCircle className="h-5 w-5 text-destructive mt-0.5 flex-shrink-0" />
-          <p className="text-sm text-destructive">{error}</p>
-        </div>
-      )}
+              <p className="text-sm text-destructive">{error}</p>
+            </div>
+          )}
 
-      {decoded && (
+          {decoded && (
             <div className="space-y-4 w-full max-w-full overflow-hidden">
               {/* Algorithm Info */}
               {decoded.header.alg && (
@@ -1648,19 +1648,19 @@ metadata:
 
               {/* Header */}
               <Card className="p-5 space-y-4 border-blue-200 dark:border-blue-800 w-full max-w-full overflow-hidden">
-            <div className="flex items-center justify-between">
+                <div className="flex items-center justify-between">
                   <h3 className="text-lg font-bold text-foreground flex items-center gap-2">
                     Decoded Header
                     <span className="text-sm text-muted-foreground">(Algorithm & Token Type)</span>
                   </h3>
-              <Button
-                variant="ghost"
-                size="sm"
+                  <Button
+                    variant="ghost"
+                    size="sm"
                     onClick={() => copyToClipboard(JSON.stringify(decoded.header, null, 2), "header")}
-              >
+                  >
                     {copied === "header" ? <Check className="h-5 w-5" /> : <Copy className="h-5 w-5" />}
-              </Button>
-            </div>
+                  </Button>
+                </div>
                 <Tabs value={headerView} onValueChange={(v) => setHeaderView(v as "json" | "table")} className="w-full">
                   <TabsList className="grid w-full grid-cols-2">
                     <TabsTrigger value="json" className="text-sm font-medium">JSON</TabsTrigger>
@@ -1668,8 +1668,8 @@ metadata:
                   </TabsList>
                   <TabsContent value="json" className="mt-3">
                     <pre className="p-4 bg-muted rounded-md overflow-x-hidden text-sm font-mono break-all" style={{ wordBreak: 'break-all', overflowWrap: 'break-word', whiteSpace: 'pre-wrap' }}>
-              {JSON.stringify(decoded.header, null, 2)}
-            </pre>
+                      {JSON.stringify(decoded.header, null, 2)}
+                    </pre>
                   </TabsContent>
                   <TabsContent value="table" className="mt-3">
                     <div className="border rounded-md overflow-hidden w-full max-w-full overflow-x-auto">
@@ -1699,23 +1699,23 @@ metadata:
                     </div>
                   </TabsContent>
                 </Tabs>
-          </Card>
+              </Card>
 
               {/* Payload */}
               <Card className="p-5 space-y-4 border-purple-200 dark:border-purple-800 w-full max-w-full overflow-hidden">
-            <div className="flex items-center justify-between">
+                <div className="flex items-center justify-between">
                   <h3 className="text-lg font-bold text-foreground flex items-center gap-2">
                     Decoded Payload
                     <span className="text-sm text-muted-foreground">(Claims & Data)</span>
                   </h3>
-              <Button
-                variant="ghost"
-                size="sm"
+                  <Button
+                    variant="ghost"
+                    size="sm"
                     onClick={() => copyToClipboard(JSON.stringify(decoded.payload, null, 2), "payload")}
-              >
+                  >
                     {copied === "payload" ? <Check className="h-5 w-5" /> : <Copy className="h-5 w-5" />}
-              </Button>
-            </div>
+                  </Button>
+                </div>
                 <Tabs value={payloadView} onValueChange={(v) => setPayloadView(v as "json" | "table")} className="w-full">
                   <TabsList className="grid w-full grid-cols-2">
                     <TabsTrigger value="json" className="text-sm font-medium">JSON</TabsTrigger>
@@ -1723,8 +1723,8 @@ metadata:
                   </TabsList>
                   <TabsContent value="json" className="mt-3">
                     <pre className="p-4 bg-muted rounded-md overflow-x-hidden text-sm font-mono break-all" style={{ wordBreak: 'break-all', overflowWrap: 'break-word', whiteSpace: 'pre-wrap' }}>
-              {JSON.stringify(decoded.payload, null, 2)}
-            </pre>
+                      {JSON.stringify(decoded.payload, null, 2)}
+                    </pre>
                   </TabsContent>
                   <TabsContent value="table" className="mt-3">
                     <div className="border rounded-md overflow-hidden w-full max-w-full overflow-x-auto">
@@ -1741,7 +1741,7 @@ metadata:
                             // Format value based on type
                             let displayValue = String(value)
                             let description = 'Custom claim'
-                            
+
                             // Standard JWT claims descriptions
                             if (key === 'sub') description = 'The subject of the JWT (the user)'
                             else if (key === 'iss') description = 'Issuer - who created and signed this token'
@@ -1751,28 +1751,28 @@ metadata:
                               try {
                                 const date = new Date(Number(value) * 1000)
                                 displayValue = `${value} (${date.toUTCString()})`
-                              } catch (e) {}
+                              } catch (e) { }
                             }
                             else if (key === 'nbf') {
                               description = 'Not Before - token should not be accepted before this time'
                               try {
                                 const date = new Date(Number(value) * 1000)
                                 displayValue = `${value} (${date.toUTCString()})`
-                              } catch (e) {}
+                              } catch (e) { }
                             }
                             else if (key === 'iat') {
                               description = 'Issued At - when this token was created'
                               try {
                                 const date = new Date(Number(value) * 1000)
                                 displayValue = `${value} (${date.toUTCString()})`
-                              } catch (e) {}
+                              } catch (e) { }
                             }
                             else if (key === 'jti') description = 'JWT ID - unique identifier for this token'
                             else if (key === 'name') description = 'Name of the user'
                             else if (key === 'email') description = 'Email address of the user'
                             else if (key === 'admin') description = 'Admin status'
                             else if (key === 'role' || key === 'roles') description = 'User role(s)'
-                            
+
                             return (
                               <tr key={key} className="border-t">
                                 <td className="p-3 font-mono font-semibold break-words">{key}</td>
@@ -1786,24 +1786,24 @@ metadata:
                     </div>
                   </TabsContent>
                 </Tabs>
-          </Card>
+              </Card>
 
               {/* Signature */}
               <Card className="p-5 space-y-4 border-cyan-200 dark:border-cyan-800 w-full max-w-full overflow-hidden">
-            <div className="flex items-center justify-between">
+                <div className="flex items-center justify-between">
                   <h3 className="text-lg font-bold text-foreground">Signature</h3>
                   <Button variant="ghost" size="sm" onClick={() => copyToClipboard(decoded.signature, "signature")}>
                     {copied === "signature" ? <Check className="h-5 w-5" /> : <Copy className="h-5 w-5" />}
-              </Button>
-            </div>
+                  </Button>
+                </div>
                 <pre className="p-4 bg-muted rounded-md overflow-x-hidden text-sm font-mono break-all" style={{ wordBreak: 'break-all', overflowWrap: 'break-word', whiteSpace: 'pre-wrap' }}>
-              {decoded.signature}
-            </pre>
-          </Card>
+                  {decoded.signature}
+                </pre>
+              </Card>
 
               {/* Signature Verification */}
               <Card className="p-5 space-y-4 w-full max-w-full overflow-hidden">
-        <div className="space-y-4">
+                <div className="space-y-4">
                   <h3 className="text-lg font-bold text-foreground">Verify Signature (Optional)</h3>
                   <p className="text-sm text-muted-foreground">
                     Enter the secret key to verify the JWT signature. Note: This is for demonstration only. Always verify signatures server-side.
@@ -1819,22 +1819,21 @@ metadata:
                         className="font-mono text-base border-2 border-orange-300 focus:border-primary"
                         style={{ wordBreak: 'break-all', overflowWrap: 'anywhere' }}
                       />
-                      <Button 
+                      <Button
                         onClick={() => verifySignature(token, secret, decoded.header.alg)}
                         disabled={!secret}
                         className="text-base px-6"
                       >
                         Verify
                       </Button>
-        </div>
+                    </div>
                   </div>
-                  
+
                   {isVerified !== null && (
-                    <div className={`p-4 rounded-lg flex items-center gap-3 ${
-                      isVerified 
-                        ? "bg-card border border-border" 
-                        : "bg-destructive/10 border border-destructive/20"
-                    }`}>
+                    <div className={`p-4 rounded-lg flex items-center gap-3 ${isVerified
+                      ? "bg-card border border-border"
+                      : "bg-destructive/10 border border-destructive/20"
+                      }`}>
                       {isVerified ? (
                         <>
                           <CheckCircle2 className="h-6 w-6 text-heading-accent" />
@@ -1845,8 +1844,8 @@ metadata:
                           <AlertCircle className="h-6 w-6 text-destructive" />
                           <span className="text-base font-medium text-destructive">Invalid Signature</span>
                         </>
-      )}
-    </div>
+                      )}
+                    </div>
                   )}
                 </div>
               </Card>
@@ -1869,9 +1868,9 @@ metadata:
                 value={headerInput}
                 onChange={(e) => setHeaderInput(e.target.value)}
                 className="!h-40 !max-h-40 !min-h-40 !w-full resize-none overflow-y-auto overflow-x-hidden font-mono text-base border-2 border-orange-300 focus:border-primary"
-                style={{ 
-                  wordBreak: 'break-all', 
-                  overflowWrap: 'break-word', 
+                style={{
+                  wordBreak: 'break-all',
+                  overflowWrap: 'break-word',
                   whiteSpace: 'normal',
                   height: '160px !important',
                   maxHeight: '160px !important',
@@ -1890,9 +1889,9 @@ metadata:
                 value={payloadInput}
                 onChange={(e) => setPayloadInput(e.target.value)}
                 className="!h-40 !max-h-40 !min-h-40 !w-full resize-none overflow-y-auto overflow-x-hidden font-mono text-base border-2 border-orange-300 focus:border-primary"
-                style={{ 
-                  wordBreak: 'break-all', 
-                  overflowWrap: 'break-word', 
+                style={{
+                  wordBreak: 'break-all',
+                  overflowWrap: 'break-word',
                   whiteSpace: 'normal',
                   height: '160px !important',
                   maxHeight: '160px !important',
@@ -1905,9 +1904,9 @@ metadata:
             </div>
           </div>
 
-          <Button onClick={encodeJWT} className="w-full">
+          <GButton onClick={encodeJWT} className="w-full">
             Encode to JWT
-          </Button>
+          </GButton>
 
           {encodedToken && (
             <Card className="p-4 space-y-3 w-full max-w-full overflow-hidden">
@@ -2152,7 +2151,7 @@ metadata:
               <div className="flex-1 overflow-auto border-2 border-green-300 dark:border-green-700 rounded-lg">
                 <pre className="p-4 bg-muted/50 text-xs font-mono h-full" style={{ whiteSpace: 'pre-wrap', wordBreak: 'break-word' }}>
                   {generatedCode}
-            </pre>
+                </pre>
               </div>
             </div>
 
@@ -2230,14 +2229,13 @@ metadata:
           <Card className="w-full max-w-4xl p-5 space-y-3 animate-in fade-in zoom-in duration-200" onClick={(e) => e.stopPropagation()}>
             <div className="flex items-center justify-between">
               <div className="flex items-center gap-3">
-                <div className={`p-3 rounded-lg ${
-                  securityScore >= 80 ? 'bg-gradient-to-r from-green-500 to-emerald-500' :
+                <div className={`p-3 rounded-lg ${securityScore >= 80 ? 'bg-gradient-to-r from-green-500 to-emerald-500' :
                   securityScore >= 60 ? 'bg-gradient-to-r from-yellow-500 to-orange-500' :
-                  'bg-gradient-to-r from-red-500 to-rose-500'
-                }`}>
+                    'bg-gradient-to-r from-red-500 to-rose-500'
+                  }`}>
                   {securityScore >= 80 ? <ShieldCheck className="h-6 w-6 text-white" /> :
-                   securityScore >= 60 ? <Shield className="h-6 w-6 text-white" /> :
-                   <ShieldAlert className="h-6 w-6 text-white" />}
+                    securityScore >= 60 ? <Shield className="h-6 w-6 text-white" /> :
+                      <ShieldAlert className="h-6 w-6 text-white" />}
                 </div>
                 <div>
                   <h2 className="text-2xl font-bold text-foreground">JWT Security Analysis</h2>
@@ -2255,33 +2253,30 @@ metadata:
             </div>
 
             {/* Security Score */}
-            <div className={`p-4 rounded-lg border-2 ${
-              securityScore >= 80 ? 'bg-card border-green-300 dark:border-green-700' :
+            <div className={`p-4 rounded-lg border-2 ${securityScore >= 80 ? 'bg-card border-green-300 dark:border-green-700' :
               securityScore >= 60 ? 'bg-card border-yellow-300 dark:border-yellow-700' :
-              'bg-card border-red-300 dark:border-destructive'
-            }`}>
+                'bg-card border-red-300 dark:border-destructive'
+              }`}>
               <div className="flex items-center justify-between">
                 <div>
                   <p className="text-xs font-semibold text-muted-foreground mb-1">Security Score</p>
                   <div className="flex items-baseline gap-2">
-                    <p className={`text-4xl font-bold ${
-                      securityScore >= 80 ? 'text-heading-accent' :
+                    <p className={`text-4xl font-bold ${securityScore >= 80 ? 'text-heading-accent' :
                       securityScore >= 60 ? 'text-foreground' :
-                      'text-foreground'
-                    }`}>
+                        'text-foreground'
+                      }`}>
                       {securityScore}
                     </p>
                     <p className="text-xl text-muted-foreground">/100</p>
                   </div>
-                  <p className={`text-xs font-medium mt-1 ${
-                    securityScore >= 80 ? 'text-heading-accent' :
+                  <p className={`text-xs font-medium mt-1 ${securityScore >= 80 ? 'text-heading-accent' :
                     securityScore >= 60 ? 'text-foreground' :
-                    'text-foreground'
-                  }`}>
+                      'text-foreground'
+                    }`}>
                     {securityScore >= 80 ? '✅ Excellent - Token is secure' :
-                     securityScore >= 60 ? '⚠️ Good - Minor improvements needed' :
-                     securityScore >= 40 ? '⚠️ Fair - Security issues detected' :
-                     '❌ Poor - Critical issues found'}
+                      securityScore >= 60 ? '⚠️ Good - Minor improvements needed' :
+                        securityScore >= 40 ? '⚠️ Fair - Security issues detected' :
+                          '❌ Poor - Critical issues found'}
                   </p>
                 </div>
                 <div className="h-20 w-20">
@@ -2306,8 +2301,8 @@ metadata:
                       strokeDashoffset={`${2 * Math.PI * 40 * (1 - securityScore / 100)}`}
                       className={
                         securityScore >= 80 ? 'text-heading-accent' :
-                        securityScore >= 60 ? 'text-foreground' :
-                        'text-foreground'
+                          securityScore >= 60 ? 'text-foreground' :
+                            'text-foreground'
                       }
                       strokeLinecap="round"
                     />
@@ -2323,33 +2318,31 @@ metadata:
                 {securityIssues.map((issue, index) => (
                   <div
                     key={index}
-                    className={`p-3 rounded-lg border-l-4 ${
-                      issue.severity === 'critical' ? 'bg-card border-red-500' :
+                    className={`p-3 rounded-lg border-l-4 ${issue.severity === 'critical' ? 'bg-card border-red-500' :
                       issue.severity === 'high' ? 'bg-card border-primary' :
-                      issue.severity === 'medium' ? 'bg-card border-yellow-500' :
-                      issue.severity === 'low' ? 'bg-card border-blue-500' :
-                      'bg-card border-green-500'
-                    }`}
+                        issue.severity === 'medium' ? 'bg-card border-yellow-500' :
+                          issue.severity === 'low' ? 'bg-card border-blue-500' :
+                            'bg-card border-green-500'
+                      }`}
                   >
                     <div className="flex items-start gap-2">
                       {issue.severity === 'critical' ? <AlertTriangle className="h-4 w-4 text-foreground mt-0.5 shrink-0" /> :
-                       issue.severity === 'high' ? <AlertCircle className="h-4 w-4 text-foreground mt-0.5 shrink-0" /> :
-                       issue.severity === 'medium' ? <AlertCircle className="h-4 w-4 text-foreground mt-0.5 shrink-0" /> :
-                       issue.severity === 'low' ? <Info className="h-4 w-4 text-foreground mt-0.5 shrink-0" /> :
-                       <CheckCircle2 className="h-4 w-4 text-heading-accent mt-0.5 shrink-0" />}
+                        issue.severity === 'high' ? <AlertCircle className="h-4 w-4 text-foreground mt-0.5 shrink-0" /> :
+                          issue.severity === 'medium' ? <AlertCircle className="h-4 w-4 text-foreground mt-0.5 shrink-0" /> :
+                            issue.severity === 'low' ? <Info className="h-4 w-4 text-foreground mt-0.5 shrink-0" /> :
+                              <CheckCircle2 className="h-4 w-4 text-heading-accent mt-0.5 shrink-0" />}
                       <div className="flex-1">
                         <p className="text-xs font-semibold text-foreground mb-0.5">{issue.message}</p>
                         <p className="text-xs text-muted-foreground">
                           <strong>Recommendation:</strong> {issue.recommendation}
                         </p>
                       </div>
-                      <span className={`px-2 py-1 text-xs font-semibold rounded shrink-0 ${
-                        issue.severity === 'critical' ? 'bg-red-100 dark:bg-red-900/50 text-foreground' :
+                      <span className={`px-2 py-1 text-xs font-semibold rounded shrink-0 ${issue.severity === 'critical' ? 'bg-red-100 dark:bg-red-900/50 text-foreground' :
                         issue.severity === 'high' ? 'bg-orange-100 dark:bg-orange-900/50 text-foreground' :
-                        issue.severity === 'medium' ? 'bg-yellow-100 dark:bg-yellow-900/50 text-foreground' :
-                        issue.severity === 'low' ? 'bg-blue-100 dark:bg-blue-900/50 text-foreground' :
-                        'bg-green-100 dark:bg-green-900/50 text-heading-accent'
-                      }`}>
+                          issue.severity === 'medium' ? 'bg-yellow-100 dark:bg-yellow-900/50 text-foreground' :
+                            issue.severity === 'low' ? 'bg-blue-100 dark:bg-blue-900/50 text-foreground' :
+                              'bg-green-100 dark:bg-green-900/50 text-heading-accent'
+                        }`}>
                         {issue.severity.toUpperCase()}
                       </span>
                     </div>
@@ -2733,11 +2726,10 @@ metadata:
                   {optimizationSuggestions.map((suggestion, idx) => (
                     <div
                       key={idx}
-                      className={`p-3 border rounded-lg cursor-pointer transition-all ${
-                        appliedOptimizations.has(suggestion.type)
-                          ? 'bg-card border-cyan-300 dark:border-cyan-700'
-                          : 'bg-card border-gray-200 dark:border-gray-700 hover:border-cyan-300'
-                      }`}
+                      className={`p-3 border rounded-lg cursor-pointer transition-all ${appliedOptimizations.has(suggestion.type)
+                        ? 'bg-card border-cyan-300 dark:border-cyan-700'
+                        : 'bg-card border-gray-200 dark:border-gray-700 hover:border-cyan-300'
+                        }`}
                       onClick={() => toggleOptimization(suggestion.type)}
                     >
                       <div className="flex items-start justify-between gap-3">
@@ -3154,227 +3146,227 @@ metadata:
           </p>
         </div>
 
-            {/* Table of Contents */}
-            <div className="p-4 bg-card border border-border rounded-lg">
-              <h3 className="text-base font-bold text-foreground mb-3 flex items-center gap-2">
-                <BookOpen className="h-5 w-5 text-teal-600" />
-                What You&apos;ll Learn
-              </h3>
-              <div className="grid grid-cols-2 gap-2 text-sm">
-                <div className="flex items-center gap-2">
-                  <ChevronRight className="h-4 w-4 text-teal-600" />
-                  <span>What is JWT and why use it</span>
+        {/* Table of Contents */}
+        <div className="p-4 bg-card border border-border rounded-lg">
+          <h3 className="text-base font-bold text-foreground mb-3 flex items-center gap-2">
+            <BookOpen className="h-5 w-5 text-teal-600" />
+            What You&apos;ll Learn
+          </h3>
+          <div className="grid grid-cols-2 gap-2 text-sm">
+            <div className="flex items-center gap-2">
+              <ChevronRight className="h-4 w-4 text-teal-600" />
+              <span>What is JWT and why use it</span>
+            </div>
+            <div className="flex items-center gap-2">
+              <ChevronRight className="h-4 w-4 text-teal-600" />
+              <span>JWT structure explained</span>
+            </div>
+            <div className="flex items-center gap-2">
+              <ChevronRight className="h-4 w-4 text-teal-600" />
+              <span>How to create & verify JWTs</span>
+            </div>
+            <div className="flex items-center gap-2">
+              <ChevronRight className="h-4 w-4 text-teal-600" />
+              <span>Code examples (6 languages)</span>
+            </div>
+            <div className="flex items-center gap-2">
+              <ChevronRight className="h-4 w-4 text-teal-600" />
+              <span>Using our JWT Decoder features</span>
+            </div>
+            <div className="flex items-center gap-2">
+              <ChevronRight className="h-4 w-4 text-teal-600" />
+              <span>Common mistakes & solutions</span>
+            </div>
+          </div>
+        </div>
+
+        <div className="space-y-6">
+          {/* Section 1: What is JWT */}
+          <div className="space-y-3">
+            <h3 className="text-xl font-bold text-foreground flex items-center gap-2">
+              <span className="flex items-center justify-center w-8 h-8 rounded-full bg-teal-100 dark:bg-teal-900 text-teal-600 dark:text-teal-400 text-sm font-bold">1</span>
+              What is a JSON Web Token (JWT)?
+            </h3>
+            <div className="pl-10 space-y-3 text-sm text-muted-foreground">
+              <p>
+                A JSON Web Token (JWT) is a compact and secure way to transmit information between two parties. Think of it like a digital ID card that proves who you are without constantly asking for your username and password.
+              </p>
+              <p>
+                When you log into a website, the server creates a JWT containing your user information (like your user ID and permissions). This token is then sent to your browser, and your browser includes it with every request to prove you&apos;re authenticated. It&apos;s much faster than checking the database every single time!
+              </p>
+              <div className="p-3 bg-card border border-blue-200 dark:border-blue-800 rounded-lg">
+                <p className="font-semibold text-foreground mb-2">Why are JWTs so popular?</p>
+                <ul className="space-y-1 text-foreground">
+                  <li>• <strong>Stateless:</strong> The server doesn&apos;t need to store sessions - everything is in the token</li>
+                  <li>• <strong>Compact:</strong> Small size makes them perfect for HTTP headers and mobile apps</li>
+                  <li>• <strong>Self-contained:</strong> All user info is inside the token itself</li>
+                  <li>• <strong>Secure:</strong> Digitally signed to prevent tampering</li>
+                  <li>• <strong>Cross-domain:</strong> Works across different websites and services</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          {/* Section 2: JWT Structure */}
+          <div className="space-y-3">
+            <h3 className="text-xl font-bold text-foreground flex items-center gap-2">
+              <span className="flex items-center justify-center w-8 h-8 rounded-full bg-teal-100 dark:bg-teal-900 text-teal-600 dark:text-teal-400 text-sm font-bold">2</span>
+              Understanding JWT Structure
+            </h3>
+            <div className="pl-10 space-y-3 text-sm text-muted-foreground">
+              <p>
+                A JWT looks like a long random string, but it&apos;s actually three parts separated by dots (.). Each part has a specific purpose. Let&apos;s break it down:
+              </p>
+
+              <div className="p-3 bg-gray-100 dark:bg-muted rounded-lg font-mono text-xs break-all">
+                <span className="text-foreground">eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9</span>
+                .
+                <span className="text-heading-accent">eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIn0</span>
+                .
+                <span className="text-foreground">SflKxwRJSMeKKF2QT4fwpMeJf36POk6yJV_adQssw5c</span>
+              </div>
+
+              {/* Header */}
+              <div className="p-3 bg-card border border-border rounded-lg">
+                <h4 className="font-semibold text-white mb-2">Part 1: Header (Blue)</h4>
+                <p className="text-gray-400 mb-2">
+                  The header tells us what type of token this is and how it&apos;s signed. It&apos;s like the envelope that says &quot;This is a JWT, signed with HS256&quot;.
+                </p>
+                <div className="bg-card p-2 rounded font-mono text-xs">
+                  &#123;<br />
+                  &nbsp;&nbsp;&quot;alg&quot;: &quot;HS256&quot;,  // Algorithm used (HMAC SHA-256)<br />
+                  &nbsp;&nbsp;&quot;typ&quot;: &quot;JWT&quot;      // Token type<br />
+                  &#125;
                 </div>
-                <div className="flex items-center gap-2">
-                  <ChevronRight className="h-4 w-4 text-teal-600" />
-                  <span>JWT structure explained</span>
+              </div>
+
+              {/* Payload */}
+              <div className="p-3 bg-card border border-border rounded-lg">
+                <h4 className="font-semibold text-white mb-2">Part 2: Payload (Green)</h4>
+                <p className="text-gray-400 mb-2">
+                  The payload is the actual data - your user ID, name, permissions, expiration time, etc. This is where you store the information you want to share. Think of it as the content of a letter.
+                </p>
+                <div className="bg-card p-2 rounded font-mono text-xs">
+                  &#123;<br />
+                  &nbsp;&nbsp;&quot;sub&quot;: &quot;1234567890&quot;,  // Subject (user ID)<br />
+                  &nbsp;&nbsp;&quot;name&quot;: &quot;John Doe&quot;,     // User name<br />
+                  &nbsp;&nbsp;&quot;email&quot;: &quot;john@example.com&quot;,<br />
+                  &nbsp;&nbsp;&quot;role&quot;: &quot;admin&quot;,         // User role<br />
+                  &nbsp;&nbsp;&quot;iat&quot;: 1516239022,     // Issued at timestamp<br />
+                  &nbsp;&nbsp;&quot;exp&quot;: 1516242622      // Expiration timestamp<br />
+                  &#125;
                 </div>
-                <div className="flex items-center gap-2">
-                  <ChevronRight className="h-4 w-4 text-teal-600" />
-                  <span>How to create & verify JWTs</span>
-                </div>
-                <div className="flex items-center gap-2">
-                  <ChevronRight className="h-4 w-4 text-teal-600" />
-                  <span>Code examples (6 languages)</span>
-                </div>
-                <div className="flex items-center gap-2">
-                  <ChevronRight className="h-4 w-4 text-teal-600" />
-                  <span>Using our JWT Decoder features</span>
-                </div>
-                <div className="flex items-center gap-2">
-                  <ChevronRight className="h-4 w-4 text-teal-600" />
-                  <span>Common mistakes & solutions</span>
+                <p className="text-gray-400 mt-2 text-xs">
+                  <strong>Important:</strong> The payload is NOT encrypted, only encoded! Anyone can decode it and read it. Never put passwords or credit card numbers here!
+                </p>
+              </div>
+
+              {/* Signature */}
+              <div className="p-3 bg-card border border-border rounded-lg">
+                <h4 className="font-semibold text-white mb-2">Part 3: Signature (Orange)</h4>
+                <p className="text-gray-400 mb-2">
+                  The signature is like a tamper-proof seal. It&apos;s created by combining the header, payload, and a secret key that only the server knows. If someone tries to change even one character in the header or payload, the signature won&apos;t match!
+                </p>
+                <div className="bg-card p-2 rounded font-mono text-xs">
+                  HMACSHA256(<br />
+                  &nbsp;&nbsp;base64UrlEncode(header) + &quot;.&quot; +<br />
+                  &nbsp;&nbsp;base64UrlEncode(payload),<br />
+                  &nbsp;&nbsp;your-secret-key<br />
+                  )
                 </div>
               </div>
             </div>
+          </div>
 
-            <div className="space-y-6">
-              {/* Section 1: What is JWT */}
-              <div className="space-y-3">
-                <h3 className="text-xl font-bold text-foreground flex items-center gap-2">
-                  <span className="flex items-center justify-center w-8 h-8 rounded-full bg-teal-100 dark:bg-teal-900 text-teal-600 dark:text-teal-400 text-sm font-bold">1</span>
-                  What is a JSON Web Token (JWT)?
-                </h3>
-                <div className="pl-10 space-y-3 text-sm text-muted-foreground">
-                  <p>
-                    A JSON Web Token (JWT) is a compact and secure way to transmit information between two parties. Think of it like a digital ID card that proves who you are without constantly asking for your username and password.
-                  </p>
-                  <p>
-                    When you log into a website, the server creates a JWT containing your user information (like your user ID and permissions). This token is then sent to your browser, and your browser includes it with every request to prove you&apos;re authenticated. It&apos;s much faster than checking the database every single time!
-                  </p>
-                  <div className="p-3 bg-card border border-blue-200 dark:border-blue-800 rounded-lg">
-                    <p className="font-semibold text-foreground mb-2">Why are JWTs so popular?</p>
-                    <ul className="space-y-1 text-foreground">
-                      <li>• <strong>Stateless:</strong> The server doesn&apos;t need to store sessions - everything is in the token</li>
-                      <li>• <strong>Compact:</strong> Small size makes them perfect for HTTP headers and mobile apps</li>
-                      <li>• <strong>Self-contained:</strong> All user info is inside the token itself</li>
-                      <li>• <strong>Secure:</strong> Digitally signed to prevent tampering</li>
-                      <li>• <strong>Cross-domain:</strong> Works across different websites and services</li>
-                    </ul>
+          {/* Section 3: How JWT Works */}
+          <div className="space-y-3">
+            <h3 className="text-xl font-bold text-foreground flex items-center gap-2">
+              <span className="flex items-center justify-center w-8 h-8 rounded-full bg-teal-100 dark:bg-teal-900 text-teal-600 dark:text-teal-400 text-sm font-bold">3</span>
+              How JWT Authentication Works
+            </h3>
+            <div className="pl-10 space-y-3 text-sm text-muted-foreground">
+              <p>Let&apos;s walk through a real-world example of how JWTs are used in a web application:</p>
+
+              <div className="space-y-2">
+                <div className="flex items-start gap-3 p-3 bg-card rounded-lg">
+                  <div className="flex items-center justify-center w-6 h-6 rounded-full bg-blue-500 text-white text-xs font-bold shrink-0">1</div>
+                  <div>
+                    <p className="font-semibold text-foreground">User logs in</p>
+                    <p className="text-xs">You enter your username and password on a login form and click &quot;Sign In&quot;.</p>
+                  </div>
+                </div>
+
+                <div className="flex items-start gap-3 p-3 bg-card rounded-lg">
+                  <div className="flex items-center justify-center w-6 h-6 rounded-full bg-blue-500 text-white text-xs font-bold shrink-0">2</div>
+                  <div>
+                    <p className="font-semibold text-foreground">Server verifies credentials</p>
+                    <p className="text-xs">The server checks if your username and password are correct by looking them up in the database.</p>
+                  </div>
+                </div>
+
+                <div className="flex items-start gap-3 p-3 bg-card rounded-lg">
+                  <div className="flex items-center justify-center w-6 h-6 rounded-full bg-green-500 text-white text-xs font-bold shrink-0">3</div>
+                  <div>
+                    <p className="font-semibold text-foreground">Server creates JWT</p>
+                    <p className="text-xs">If credentials are valid, the server creates a JWT with your user info (ID, name, role) and signs it with a secret key.</p>
+                  </div>
+                </div>
+
+                <div className="flex items-start gap-3 p-3 bg-card rounded-lg">
+                  <div className="flex items-center justify-center w-6 h-6 rounded-full bg-green-500 text-white text-xs font-bold shrink-0">4</div>
+                  <div>
+                    <p className="font-semibold text-foreground">Token sent to browser</p>
+                    <p className="text-xs">The server sends this JWT back to your browser, which stores it (usually in localStorage or a cookie).</p>
+                  </div>
+                </div>
+
+                <div className="flex items-start gap-3 p-3 bg-card rounded-lg">
+                  <div className="flex items-center justify-center w-6 h-6 rounded-full bg-purple-500 text-white text-xs font-bold shrink-0">5</div>
+                  <div>
+                    <p className="font-semibold text-foreground">Browser includes token in requests</p>
+                    <p className="text-xs">Every time you make a request (like loading your profile), the browser includes this JWT in the Authorization header.</p>
+                  </div>
+                </div>
+
+                <div className="flex items-start gap-3 p-3 bg-card rounded-lg">
+                  <div className="flex items-center justify-center w-6 h-6 rounded-full bg-purple-500 text-white text-xs font-bold shrink-0">6</div>
+                  <div>
+                    <p className="font-semibold text-foreground">Server verifies token</p>
+                    <p className="text-xs">The server checks the signature to make sure the token wasn&apos;t tampered with, checks if it&apos;s expired, and extracts your user info.</p>
+                  </div>
+                </div>
+
+                <div className="flex items-start gap-3 p-3 bg-card rounded-lg">
+                  <div className="flex items-center justify-center w-6 h-6 rounded-full bg-primary text-white text-xs font-bold shrink-0">7</div>
+                  <div>
+                    <p className="font-semibold text-foreground">Server processes request</p>
+                    <p className="text-xs">If the token is valid, the server processes your request and sends back the data you asked for.</p>
                   </div>
                 </div>
               </div>
+            </div>
+          </div>
 
-              {/* Section 2: JWT Structure */}
-              <div className="space-y-3">
-                <h3 className="text-xl font-bold text-foreground flex items-center gap-2">
-                  <span className="flex items-center justify-center w-8 h-8 rounded-full bg-teal-100 dark:bg-teal-900 text-teal-600 dark:text-teal-400 text-sm font-bold">2</span>
-                  Understanding JWT Structure
-                </h3>
-                <div className="pl-10 space-y-3 text-sm text-muted-foreground">
-                  <p>
-                    A JWT looks like a long random string, but it&apos;s actually three parts separated by dots (.). Each part has a specific purpose. Let&apos;s break it down:
-                  </p>
-                  
-                  <div className="p-3 bg-gray-100 dark:bg-muted rounded-lg font-mono text-xs break-all">
-                    <span className="text-foreground">eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9</span>
-                    .
-                    <span className="text-heading-accent">eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIn0</span>
-                    .
-                    <span className="text-foreground">SflKxwRJSMeKKF2QT4fwpMeJf36POk6yJV_adQssw5c</span>
-                  </div>
+          {/* Code Examples */}
+          <div className="space-y-3">
+            <h3 className="text-xl font-bold text-foreground flex items-center gap-2">
+              <span className="flex items-center justify-center w-8 h-8 rounded-full bg-teal-100 dark:bg-teal-900 text-teal-600 dark:text-teal-400 text-sm font-bold">4</span>
+              Creating & Verifying JWTs - Code Examples
+            </h3>
+            <p className="pl-10 text-sm text-muted-foreground mb-4">
+              Let&apos;s see how to create and verify JWTs in different programming languages. These are real, working code examples you can use in your projects! Our tool provides these code snippets automatically - just click the &quot;Get Code&quot; button after decoding a token.
+            </p>
 
-                  {/* Header */}
-                  <div className="p-3 bg-card border border-border rounded-lg">
-                    <h4 className="font-semibold text-white mb-2">Part 1: Header (Blue)</h4>
-                    <p className="text-gray-400 mb-2">
-                      The header tells us what type of token this is and how it&apos;s signed. It&apos;s like the envelope that says &quot;This is a JWT, signed with HS256&quot;.
-                    </p>
-                    <div className="bg-card p-2 rounded font-mono text-xs">
-                      &#123;<br />
-                      &nbsp;&nbsp;&quot;alg&quot;: &quot;HS256&quot;,  // Algorithm used (HMAC SHA-256)<br />
-                      &nbsp;&nbsp;&quot;typ&quot;: &quot;JWT&quot;      // Token type<br />
-                      &#125;
-                    </div>
-                  </div>
-
-                  {/* Payload */}
-                  <div className="p-3 bg-card border border-border rounded-lg">
-                    <h4 className="font-semibold text-white mb-2">Part 2: Payload (Green)</h4>
-                    <p className="text-gray-400 mb-2">
-                      The payload is the actual data - your user ID, name, permissions, expiration time, etc. This is where you store the information you want to share. Think of it as the content of a letter.
-                    </p>
-                    <div className="bg-card p-2 rounded font-mono text-xs">
-                      &#123;<br />
-                      &nbsp;&nbsp;&quot;sub&quot;: &quot;1234567890&quot;,  // Subject (user ID)<br />
-                      &nbsp;&nbsp;&quot;name&quot;: &quot;John Doe&quot;,     // User name<br />
-                      &nbsp;&nbsp;&quot;email&quot;: &quot;john@example.com&quot;,<br />
-                      &nbsp;&nbsp;&quot;role&quot;: &quot;admin&quot;,         // User role<br />
-                      &nbsp;&nbsp;&quot;iat&quot;: 1516239022,     // Issued at timestamp<br />
-                      &nbsp;&nbsp;&quot;exp&quot;: 1516242622      // Expiration timestamp<br />
-                      &#125;
-                    </div>
-                    <p className="text-gray-400 mt-2 text-xs">
-                      <strong>Important:</strong> The payload is NOT encrypted, only encoded! Anyone can decode it and read it. Never put passwords or credit card numbers here!
-                    </p>
-                  </div>
-
-                  {/* Signature */}
-                  <div className="p-3 bg-card border border-border rounded-lg">
-                    <h4 className="font-semibold text-white mb-2">Part 3: Signature (Orange)</h4>
-                    <p className="text-gray-400 mb-2">
-                      The signature is like a tamper-proof seal. It&apos;s created by combining the header, payload, and a secret key that only the server knows. If someone tries to change even one character in the header or payload, the signature won&apos;t match!
-                    </p>
-                    <div className="bg-card p-2 rounded font-mono text-xs">
-                      HMACSHA256(<br />
-                      &nbsp;&nbsp;base64UrlEncode(header) + &quot;.&quot; +<br />
-                      &nbsp;&nbsp;base64UrlEncode(payload),<br />
-                      &nbsp;&nbsp;your-secret-key<br />
-                      )
-                    </div>
-                  </div>
+            {/* Node.js Example */}
+            <div className="pl-10 space-y-2">
+              <div className="p-3 bg-card border border-border rounded-lg">
+                <div className="flex items-center gap-2 mb-2">
+                  <FileCode className="h-5 w-5 text-heading-accent" />
+                  <h4 className="font-semibold text-heading-accent">Node.js (JavaScript)</h4>
                 </div>
-              </div>
-
-              {/* Section 3: How JWT Works */}
-              <div className="space-y-3">
-                <h3 className="text-xl font-bold text-foreground flex items-center gap-2">
-                  <span className="flex items-center justify-center w-8 h-8 rounded-full bg-teal-100 dark:bg-teal-900 text-teal-600 dark:text-teal-400 text-sm font-bold">3</span>
-                  How JWT Authentication Works
-                </h3>
-                <div className="pl-10 space-y-3 text-sm text-muted-foreground">
-                  <p>Let&apos;s walk through a real-world example of how JWTs are used in a web application:</p>
-                  
-                  <div className="space-y-2">
-                    <div className="flex items-start gap-3 p-3 bg-card rounded-lg">
-                      <div className="flex items-center justify-center w-6 h-6 rounded-full bg-blue-500 text-white text-xs font-bold shrink-0">1</div>
-                      <div>
-                        <p className="font-semibold text-foreground">User logs in</p>
-                        <p className="text-xs">You enter your username and password on a login form and click &quot;Sign In&quot;.</p>
-                      </div>
-                    </div>
-
-                    <div className="flex items-start gap-3 p-3 bg-card rounded-lg">
-                      <div className="flex items-center justify-center w-6 h-6 rounded-full bg-blue-500 text-white text-xs font-bold shrink-0">2</div>
-                      <div>
-                        <p className="font-semibold text-foreground">Server verifies credentials</p>
-                        <p className="text-xs">The server checks if your username and password are correct by looking them up in the database.</p>
-                      </div>
-                    </div>
-
-                    <div className="flex items-start gap-3 p-3 bg-card rounded-lg">
-                      <div className="flex items-center justify-center w-6 h-6 rounded-full bg-green-500 text-white text-xs font-bold shrink-0">3</div>
-                      <div>
-                        <p className="font-semibold text-foreground">Server creates JWT</p>
-                        <p className="text-xs">If credentials are valid, the server creates a JWT with your user info (ID, name, role) and signs it with a secret key.</p>
-                      </div>
-                    </div>
-
-                    <div className="flex items-start gap-3 p-3 bg-card rounded-lg">
-                      <div className="flex items-center justify-center w-6 h-6 rounded-full bg-green-500 text-white text-xs font-bold shrink-0">4</div>
-                      <div>
-                        <p className="font-semibold text-foreground">Token sent to browser</p>
-                        <p className="text-xs">The server sends this JWT back to your browser, which stores it (usually in localStorage or a cookie).</p>
-                      </div>
-                    </div>
-
-                    <div className="flex items-start gap-3 p-3 bg-card rounded-lg">
-                      <div className="flex items-center justify-center w-6 h-6 rounded-full bg-purple-500 text-white text-xs font-bold shrink-0">5</div>
-                      <div>
-                        <p className="font-semibold text-foreground">Browser includes token in requests</p>
-                        <p className="text-xs">Every time you make a request (like loading your profile), the browser includes this JWT in the Authorization header.</p>
-                      </div>
-                    </div>
-
-                    <div className="flex items-start gap-3 p-3 bg-card rounded-lg">
-                      <div className="flex items-center justify-center w-6 h-6 rounded-full bg-purple-500 text-white text-xs font-bold shrink-0">6</div>
-                      <div>
-                        <p className="font-semibold text-foreground">Server verifies token</p>
-                        <p className="text-xs">The server checks the signature to make sure the token wasn&apos;t tampered with, checks if it&apos;s expired, and extracts your user info.</p>
-                      </div>
-                    </div>
-
-                    <div className="flex items-start gap-3 p-3 bg-card rounded-lg">
-                      <div className="flex items-center justify-center w-6 h-6 rounded-full bg-primary text-white text-xs font-bold shrink-0">7</div>
-                      <div>
-                        <p className="font-semibold text-foreground">Server processes request</p>
-                        <p className="text-xs">If the token is valid, the server processes your request and sends back the data you asked for.</p>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              {/* Code Examples */}
-              <div className="space-y-3">
-                <h3 className="text-xl font-bold text-foreground flex items-center gap-2">
-                  <span className="flex items-center justify-center w-8 h-8 rounded-full bg-teal-100 dark:bg-teal-900 text-teal-600 dark:text-teal-400 text-sm font-bold">4</span>
-                  Creating & Verifying JWTs - Code Examples
-                </h3>
-                <p className="pl-10 text-sm text-muted-foreground mb-4">
-                  Let&apos;s see how to create and verify JWTs in different programming languages. These are real, working code examples you can use in your projects! Our tool provides these code snippets automatically - just click the &quot;Get Code&quot; button after decoding a token.
-                </p>
-
-                {/* Node.js Example */}
-                <div className="pl-10 space-y-2">
-                  <div className="p-3 bg-card border border-border rounded-lg">
-                    <div className="flex items-center gap-2 mb-2">
-                      <FileCode className="h-5 w-5 text-heading-accent" />
-                      <h4 className="font-semibold text-heading-accent">Node.js (JavaScript)</h4>
-                    </div>
-                    <p className="text-xs text-gray-400 mb-2">Install: <code className="bg-green-100 dark:bg-green-900 px-2 py-1 rounded">npm install jsonwebtoken</code></p>
-                    <pre className="bg-muted text-gray-100 p-3 rounded text-xs overflow-x-auto">
-{`const jwt = require('jsonwebtoken');
+                <p className="text-xs text-gray-400 mb-2">Install: <code className="bg-green-100 dark:bg-green-900 px-2 py-1 rounded">npm install jsonwebtoken</code></p>
+                <pre className="bg-muted text-gray-100 p-3 rounded text-xs overflow-x-auto">
+                  {`const jwt = require('jsonwebtoken');
 
 // Create a JWT
 const payload = {
@@ -3395,18 +3387,18 @@ try {
 } catch (error) {
   console.error('Invalid token:', error.message);
 }`}
-                    </pre>
-                  </div>
+                </pre>
+              </div>
 
-                  {/* Python Example */}
-                  <div className="p-3 bg-card border border-blue-200 dark:border-blue-800 rounded-lg">
-                    <div className="flex items-center gap-2 mb-2">
-                      <FileCode className="h-5 w-5 text-foreground" />
-                      <h4 className="font-semibold text-foreground">Python</h4>
-                    </div>
-                    <p className="text-xs text-foreground mb-2">Install: <code className="bg-blue-100 dark:bg-blue-900 px-2 py-1 rounded">pip install PyJWT</code></p>
-                    <pre className="bg-muted text-gray-100 p-3 rounded text-xs overflow-x-auto">
-{`import jwt
+              {/* Python Example */}
+              <div className="p-3 bg-card border border-blue-200 dark:border-blue-800 rounded-lg">
+                <div className="flex items-center gap-2 mb-2">
+                  <FileCode className="h-5 w-5 text-foreground" />
+                  <h4 className="font-semibold text-foreground">Python</h4>
+                </div>
+                <p className="text-xs text-foreground mb-2">Install: <code className="bg-blue-100 dark:bg-blue-900 px-2 py-1 rounded">pip install PyJWT</code></p>
+                <pre className="bg-muted text-gray-100 p-3 rounded text-xs overflow-x-auto">
+                  {`import jwt
 import datetime
 
 # Create a JWT
@@ -3430,244 +3422,244 @@ except jwt.ExpiredSignatureError:
     print('Token has expired')
 except jwt.InvalidTokenError:
     print('Invalid token')`}
-                    </pre>
-                  </div>
-
-                  {/* Using Our JWT Decoder Tool */}
-                  <div className="p-4 bg-card border border-border rounded-lg">
-                    <h4 className="font-semibold text-white mb-2 flex items-center gap-2">
-                      <Lightbulb className="h-5 w-5 text-white" />
-                      Quick Tip: Use Our Tool to Get Code!
-                    </h4>
-                    <p className="text-xs text-gray-400">
-                      Don&apos;t want to write this code manually? Our JWT Decoder has a &quot;Get Code&quot; button that generates ready-to-use code snippets for all 6 languages (Node.js, Python, Java, PHP, Go, C#). Just decode your token and click the green &quot;Get Code&quot; button!
-                    </p>
-                  </div>
-                </div>
+                </pre>
               </div>
 
-              {/* Using Our JWT Decoder Features */}
-              <div className="space-y-3">
-                <h3 className="text-xl font-bold text-foreground flex items-center gap-2">
-                  <span className="flex items-center justify-center w-8 h-8 rounded-full bg-teal-100 dark:bg-teal-900 text-teal-600 dark:text-teal-400 text-sm font-bold">5</span>
-                  Mastering Our JWT Decoder Tool
-                </h3>
-                <div className="pl-10 space-y-3 text-sm text-muted-foreground">
-                  <p>Our JWT Decoder is packed with powerful features to make working with JWTs easy. Let&apos;s explore each one:</p>
-
-                  <div className="space-y-3">
-                    {/* Feature 1: Instant Decode */}
-                    <div className="p-3 bg-card rounded-lg">
-                      <h4 className="font-semibold text-foreground mb-2">🔍 Instant Decoding</h4>
-                      <p className="text-xs">Just paste your JWT token in the text box and it automatically decodes! You&apos;ll see the header, payload, and signature split into three color-coded sections. We show both JSON format and a Claims Table view for easier reading.</p>
-                    </div>
-
-                    {/* Feature 2: Algorithm Selector */}
-                    <div className="p-3 bg-card rounded-lg">
-                      <h4 className="font-semibold text-foreground mb-2">⚙️ Algorithm Selector & Examples</h4>
-                      <p className="text-xs">Use the dropdown menu to select from 12 different algorithms (HS256, RS256, ES256, etc.). Click &quot;Generate Example&quot; to create a sample token for that algorithm - perfect for learning or testing!</p>
-                    </div>
-
-                    {/* Feature 3: Expiration Countdown */}
-                    <div className="p-3 bg-card rounded-lg">
-                      <h4 className="font-semibold text-foreground mb-2">⏰ Live Expiration Countdown</h4>
-                      <p className="text-xs">If your token has an expiration time (exp claim), you&apos;ll see a live countdown timer showing exactly how much time is left. The color changes from green to yellow to red as expiration approaches - so you never get caught with an expired token!</p>
-                    </div>
-
-                    {/* Feature 4: Performance Metrics */}
-                    <div className="p-3 bg-card rounded-lg">
-                      <h4 className="font-semibold text-foreground mb-2">⚡ Performance Metrics</h4>
-                      <p className="text-xs">Click the yellow &quot;Performance&quot; button to see how your token performs. We show decode/encode times, size breakdown (header vs payload vs signature), network impact projections, and compare against industry benchmarks. Learn if your token is too large!</p>
-                    </div>
-
-                    {/* Feature 5: Export */}
-                    <div className="p-3 bg-card rounded-lg">
-                      <h4 className="font-semibold text-foreground mb-2">📤 Export to Multiple Formats</h4>
-                      <p className="text-xs">Need to save your decoded token? Click &quot;Export&quot; to download in JSON, CSV, XML, YAML, or even a professional PDF report! Perfect for documentation or sharing with your team.</p>
-                    </div>
-
-                    {/* Feature 6: Size Optimizer */}
-                    <div className="p-3 bg-card rounded-lg">
-                      <h4 className="font-semibold text-foreground mb-2">📊 Token Size Optimizer</h4>
-                      <p className="text-xs">Got a large token? Click &quot;Optimize&quot; to get smart suggestions on how to reduce its size. We&apos;ll show you exactly how many bytes you can save by shortening claim names, removing unnecessary data, or using a different algorithm. You can even preview the optimized token before using it!</p>
-                    </div>
-
-                    {/* Feature 7: Compare Tokens */}
-                    <div className="p-3 bg-card rounded-lg">
-                      <h4 className="font-semibold text-foreground mb-2">🔄 Token Comparison Tool</h4>
-                      <p className="text-xs">Need to compare two tokens side-by-side? Click &quot;Compare&quot; to paste a second token and see exactly what changed. We highlight added, removed, and modified claims in different colors. Super useful for debugging token refresh issues or checking what changed between environments!</p>
-                    </div>
-
-                    {/* Feature 8: Security Analyzer */}
-                    <div className="p-3 bg-card rounded-lg">
-                      <h4 className="font-semibold text-foreground mb-2">🛡️ Security Analyzer</h4>
-                      <p className="text-xs">Click the red &quot;Security&quot; button to scan your token for vulnerabilities. We check for weak algorithms, expired tokens, missing critical claims, sensitive data in the payload, and more. You&apos;ll get a security score from 0-100 plus specific recommendations to improve your token&apos;s security.</p>
-                    </div>
-
-                    {/* Feature 9: Code Generator */}
-                    <div className="p-3 bg-card rounded-lg">
-                      <h4 className="font-semibold text-foreground mb-2">💻 Multi-Language Code Generator</h4>
-                      <p className="text-xs">Click &quot;Get Code&quot; to generate ready-to-use code snippets for verifying your token. Choose from Node.js, Python, Java, PHP, Go, or C#. Each snippet includes installation instructions and is ready to copy-paste into your project!</p>
-                    </div>
-
-                    {/* Feature 10: Share Anonymously */}
-                    <div className="p-3 bg-card rounded-lg">
-                      <h4 className="font-semibold text-foreground mb-2">🔗 Share Token Anonymously</h4>
-                      <p className="text-xs">Need to debug with your team? Click &quot;Share&quot; to generate a shareable link. You can choose to mask sensitive data (like emails or passwords) before sharing. The link never expires and your token is encoded in the URL - no data stored on our servers!</p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              {/* Common Mistakes */}
-              <div className="space-y-3">
-                <h3 className="text-xl font-bold text-foreground flex items-center gap-2">
-                  <span className="flex items-center justify-center w-8 h-8 rounded-full bg-teal-100 dark:bg-teal-900 text-teal-600 dark:text-teal-400 text-sm font-bold">6</span>
-                  Common Mistakes & How to Fix Them
-                </h3>
-                <div className="pl-10 space-y-3 text-sm text-muted-foreground">
-                  <p>Everyone makes mistakes when learning JWT. Here are the most common ones and how to avoid them:</p>
-
-                  <div className="space-y-2">
-                    {/* Mistake 1 */}
-                    <div className="p-3 bg-card border border-border rounded-lg">
-                      <h4 className="font-semibold text-white mb-2 flex items-center gap-2">
-                        <AlertCircle className="h-4 w-4" />
-                        Storing Sensitive Data in the Payload
-                      </h4>
-                      <p className="text-xs text-gray-400 mb-2">
-                        <strong>Problem:</strong> Putting passwords, credit card numbers, or API keys directly in the JWT payload.
-                      </p>
-                      <p className="text-xs text-gray-400">
-                        <strong>Solution:</strong> Remember, JWTs are encoded, NOT encrypted! Anyone can decode them and read the payload. Only include non-sensitive information like user IDs, usernames, and permissions. Use our Security Analyzer to check for sensitive data!
-                      </p>
-                    </div>
-
-                    {/* Mistake 2 */}
-                    <div className="p-3 bg-card border border-border rounded-lg">
-                      <h4 className="font-semibold text-white mb-2 flex items-center gap-2">
-                        <AlertCircle className="h-4 w-4" />
-                        Not Checking Token Expiration
-                      </h4>
-                      <p className="text-xs text-gray-400 mb-2">
-                        <strong>Problem:</strong> Accepting tokens without verifying if they&apos;ve expired.
-                      </p>
-                      <p className="text-xs text-gray-400">
-                        <strong>Solution:</strong> Always check the &quot;exp&quot; claim and reject expired tokens. Our Live Expiration Countdown shows exactly when your token will expire, and the Security Analyzer will warn you about expired tokens!
-                      </p>
-                    </div>
-
-                    {/* Mistake 3 */}
-                    <div className="p-3 bg-card border border-border rounded-lg">
-                      <h4 className="font-semibold text-white mb-2 flex items-center gap-2">
-                        <AlertCircle className="h-4 w-4" />
-                        Using Weak or No Signature
-                      </h4>
-                      <p className="text-xs text-gray-400 mb-2">
-                        <strong>Problem:</strong> Using the &quot;none&quot; algorithm or a weak secret key (like &quot;secret&quot; or &quot;password123&quot;).
-                      </p>
-                      <p className="text-xs text-gray-400">
-                        <strong>Solution:</strong> Always use a strong algorithm (HS256 minimum) and a long, random secret key (at least 256 bits for HS256). Our Security Analyzer flags weak algorithms and short secrets!
-                      </p>
-                    </div>
-
-                    {/* Mistake 4 */}
-                    <div className="p-3 bg-card border border-border rounded-lg">
-                      <h4 className="font-semibold text-white mb-2 flex items-center gap-2">
-                        <AlertCircle className="h-4 w-4" />
-                        Creating Tokens That Are Too Large
-                      </h4>
-                      <p className="text-xs text-gray-400 mb-2">
-                        <strong>Problem:</strong> Including too much data in the payload, resulting in tokens over 1KB or even 4KB+.
-                      </p>
-                      <p className="text-xs text-gray-400">
-                        <strong>Solution:</strong> Keep your tokens lean! Only include essential data. Use our Performance Metrics to check token size and get benchmarked against industry standards. If your token is large, click &quot;Optimize&quot; for suggestions on reducing its size.</p>
-                    </div>
-
-                    {/* Mistake 5 */}
-                    <div className="p-3 bg-card border border-border rounded-lg">
-                      <h4 className="font-semibold text-white mb-2 flex items-center gap-2">
-                        <AlertCircle className="h-4 w-4" />
-                        Not Validating the Signature
-                      </h4>
-                      <p className="text-xs text-gray-400 mb-2">
-                        <strong>Problem:</strong> Just decoding the JWT without verifying its signature, allowing tampered tokens to be accepted.
-                      </p>
-                      <p className="text-xs text-gray-400">
-                        <strong>Solution:</strong> Always verify the signature on the server side! Our Code Generator provides complete examples including signature verification for all 6 programming languages.</p>
-                    </div>
-
-                    {/* Mistake 6 */}
-                    <div className="p-3 bg-card border border-border rounded-lg">
-                      <h4 className="font-semibold text-white mb-2 flex items-center gap-2">
-                        <AlertCircle className="h-4 w-4" />
-                        Storing JWTs in LocalStorage (XSS Risk)
-                      </h4>
-                      <p className="text-xs text-gray-400 mb-2">
-                        <strong>Problem:</strong> Storing tokens in browser localStorage makes them vulnerable to XSS (Cross-Site Scripting) attacks.
-                      </p>
-                      <p className="text-xs text-gray-400">
-                        <strong>Solution:</strong> For maximum security, store JWTs in httpOnly cookies that JavaScript can&apos;t access. If you must use localStorage, implement strong Content Security Policy (CSP) headers to prevent XSS attacks.</p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              {/* Best Practices */}
-              <div className="space-y-3">
-                <h3 className="text-xl font-bold text-foreground flex items-center gap-2">
-                  <span className="flex items-center justify-center w-8 h-8 rounded-full bg-teal-100 dark:bg-teal-900 text-teal-600 dark:text-teal-400 text-sm font-bold">7</span>
-                  JWT Best Practices
-                </h3>
-                <div className="pl-10 space-y-2 text-sm text-muted-foreground">
-                  <div className="p-3 bg-card border border-border rounded-lg">
-                    <ul className="space-y-2 text-gray-400">
-                      <li className="flex items-start gap-2">
-                        <CheckCircle2 className="h-4 w-4 mt-0.5 shrink-0" />
-                        <span><strong>Use short expiration times:</strong> 15 minutes to 1 hour for access tokens. Use refresh tokens for longer sessions.</span>
-                      </li>
-                      <li className="flex items-start gap-2">
-                        <CheckCircle2 className="h-4 w-4 mt-0.5 shrink-0" />
-                        <span><strong>Always verify signatures:</strong> Never trust a token without checking its signature matches.</span>
-                      </li>
-                      <li className="flex items-start gap-2">
-                        <CheckCircle2 className="h-4 w-4 mt-0.5 shrink-0" />
-                        <span><strong>Use strong secret keys:</strong> At least 256 bits (32 characters) of random data.</span>
-                      </li>
-                      <li className="flex items-start gap-2">
-                        <CheckCircle2 className="h-4 w-4 mt-0.5 shrink-0" />
-                        <span><strong>Include standard claims:</strong> Always use exp (expiration), iat (issued at), and sub (subject).</span>
-                      </li>
-                      <li className="flex items-start gap-2">
-                        <CheckCircle2 className="h-4 w-4 mt-0.5 shrink-0" />
-                        <span><strong>Keep payloads small:</strong> Under 512 bytes is ideal. Use our Size Optimizer to trim excess data.</span>
-                      </li>
-                      <li className="flex items-start gap-2">
-                        <CheckCircle2 className="h-4 w-4 mt-0.5 shrink-0" />
-                        <span><strong>Use HTTPS only:</strong> Never send JWTs over unsecured HTTP connections.</span>
-                      </li>
-                      <li className="flex items-start gap-2">
-                        <CheckCircle2 className="h-4 w-4 mt-0.5 shrink-0" />
-                        <span><strong>Implement token refresh:</strong> Use short-lived access tokens with refresh tokens for better security.</span>
-                      </li>
-                      <li className="flex items-start gap-2">
-                        <CheckCircle2 className="h-4 w-4 mt-0.5 shrink-0" />
-                        <span><strong>Test with our tools:</strong> Use our Security Analyzer, Performance Metrics, and Comparison tools regularly!</span>
-                      </li>
-                    </ul>
-                  </div>
-                </div>
-              </div>
-
-              {/* Final Note */}
+              {/* Using Our JWT Decoder Tool */}
               <div className="p-4 bg-card border border-border rounded-lg">
-                <h3 className="text-base font-bold text-foreground mb-2">🎓 Start Decoding JWTs Now!</h3>
-                <p className="text-sm text-muted-foreground">
-                  Now that you understand JWTs, scroll up and paste a token to try our interactive features! Use all the powerful tools we&apos;ve built - Performance Metrics, Security Analyzer, Size Optimizer, Code Generator, and more. Your tokens are processed locally in your browser for maximum security.
+                <h4 className="font-semibold text-white mb-2 flex items-center gap-2">
+                  <Lightbulb className="h-5 w-5 text-white" />
+                  Quick Tip: Use Our Tool to Get Code!
+                </h4>
+                <p className="text-xs text-gray-400">
+                  Don&apos;t want to write this code manually? Our JWT Decoder has a &quot;Get Code&quot; button that generates ready-to-use code snippets for all 6 languages (Node.js, Python, Java, PHP, Go, C#). Just decode your token and click the green &quot;Get Code&quot; button!
                 </p>
               </div>
             </div>
           </div>
+
+          {/* Using Our JWT Decoder Features */}
+          <div className="space-y-3">
+            <h3 className="text-xl font-bold text-foreground flex items-center gap-2">
+              <span className="flex items-center justify-center w-8 h-8 rounded-full bg-teal-100 dark:bg-teal-900 text-teal-600 dark:text-teal-400 text-sm font-bold">5</span>
+              Mastering Our JWT Decoder Tool
+            </h3>
+            <div className="pl-10 space-y-3 text-sm text-muted-foreground">
+              <p>Our JWT Decoder is packed with powerful features to make working with JWTs easy. Let&apos;s explore each one:</p>
+
+              <div className="space-y-3">
+                {/* Feature 1: Instant Decode */}
+                <div className="p-3 bg-card rounded-lg">
+                  <h4 className="font-semibold text-foreground mb-2">🔍 Instant Decoding</h4>
+                  <p className="text-xs">Just paste your JWT token in the text box and it automatically decodes! You&apos;ll see the header, payload, and signature split into three color-coded sections. We show both JSON format and a Claims Table view for easier reading.</p>
+                </div>
+
+                {/* Feature 2: Algorithm Selector */}
+                <div className="p-3 bg-card rounded-lg">
+                  <h4 className="font-semibold text-foreground mb-2">⚙️ Algorithm Selector & Examples</h4>
+                  <p className="text-xs">Use the dropdown menu to select from 12 different algorithms (HS256, RS256, ES256, etc.). Click &quot;Generate Example&quot; to create a sample token for that algorithm - perfect for learning or testing!</p>
+                </div>
+
+                {/* Feature 3: Expiration Countdown */}
+                <div className="p-3 bg-card rounded-lg">
+                  <h4 className="font-semibold text-foreground mb-2">⏰ Live Expiration Countdown</h4>
+                  <p className="text-xs">If your token has an expiration time (exp claim), you&apos;ll see a live countdown timer showing exactly how much time is left. The color changes from green to yellow to red as expiration approaches - so you never get caught with an expired token!</p>
+                </div>
+
+                {/* Feature 4: Performance Metrics */}
+                <div className="p-3 bg-card rounded-lg">
+                  <h4 className="font-semibold text-foreground mb-2">⚡ Performance Metrics</h4>
+                  <p className="text-xs">Click the yellow &quot;Performance&quot; button to see how your token performs. We show decode/encode times, size breakdown (header vs payload vs signature), network impact projections, and compare against industry benchmarks. Learn if your token is too large!</p>
+                </div>
+
+                {/* Feature 5: Export */}
+                <div className="p-3 bg-card rounded-lg">
+                  <h4 className="font-semibold text-foreground mb-2">📤 Export to Multiple Formats</h4>
+                  <p className="text-xs">Need to save your decoded token? Click &quot;Export&quot; to download in JSON, CSV, XML, YAML, or even a professional PDF report! Perfect for documentation or sharing with your team.</p>
+                </div>
+
+                {/* Feature 6: Size Optimizer */}
+                <div className="p-3 bg-card rounded-lg">
+                  <h4 className="font-semibold text-foreground mb-2">📊 Token Size Optimizer</h4>
+                  <p className="text-xs">Got a large token? Click &quot;Optimize&quot; to get smart suggestions on how to reduce its size. We&apos;ll show you exactly how many bytes you can save by shortening claim names, removing unnecessary data, or using a different algorithm. You can even preview the optimized token before using it!</p>
+                </div>
+
+                {/* Feature 7: Compare Tokens */}
+                <div className="p-3 bg-card rounded-lg">
+                  <h4 className="font-semibold text-foreground mb-2">🔄 Token Comparison Tool</h4>
+                  <p className="text-xs">Need to compare two tokens side-by-side? Click &quot;Compare&quot; to paste a second token and see exactly what changed. We highlight added, removed, and modified claims in different colors. Super useful for debugging token refresh issues or checking what changed between environments!</p>
+                </div>
+
+                {/* Feature 8: Security Analyzer */}
+                <div className="p-3 bg-card rounded-lg">
+                  <h4 className="font-semibold text-foreground mb-2">🛡️ Security Analyzer</h4>
+                  <p className="text-xs">Click the red &quot;Security&quot; button to scan your token for vulnerabilities. We check for weak algorithms, expired tokens, missing critical claims, sensitive data in the payload, and more. You&apos;ll get a security score from 0-100 plus specific recommendations to improve your token&apos;s security.</p>
+                </div>
+
+                {/* Feature 9: Code Generator */}
+                <div className="p-3 bg-card rounded-lg">
+                  <h4 className="font-semibold text-foreground mb-2">💻 Multi-Language Code Generator</h4>
+                  <p className="text-xs">Click &quot;Get Code&quot; to generate ready-to-use code snippets for verifying your token. Choose from Node.js, Python, Java, PHP, Go, or C#. Each snippet includes installation instructions and is ready to copy-paste into your project!</p>
+                </div>
+
+                {/* Feature 10: Share Anonymously */}
+                <div className="p-3 bg-card rounded-lg">
+                  <h4 className="font-semibold text-foreground mb-2">🔗 Share Token Anonymously</h4>
+                  <p className="text-xs">Need to debug with your team? Click &quot;Share&quot; to generate a shareable link. You can choose to mask sensitive data (like emails or passwords) before sharing. The link never expires and your token is encoded in the URL - no data stored on our servers!</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* Common Mistakes */}
+          <div className="space-y-3">
+            <h3 className="text-xl font-bold text-foreground flex items-center gap-2">
+              <span className="flex items-center justify-center w-8 h-8 rounded-full bg-teal-100 dark:bg-teal-900 text-teal-600 dark:text-teal-400 text-sm font-bold">6</span>
+              Common Mistakes & How to Fix Them
+            </h3>
+            <div className="pl-10 space-y-3 text-sm text-muted-foreground">
+              <p>Everyone makes mistakes when learning JWT. Here are the most common ones and how to avoid them:</p>
+
+              <div className="space-y-2">
+                {/* Mistake 1 */}
+                <div className="p-3 bg-card border border-border rounded-lg">
+                  <h4 className="font-semibold text-white mb-2 flex items-center gap-2">
+                    <AlertCircle className="h-4 w-4" />
+                    Storing Sensitive Data in the Payload
+                  </h4>
+                  <p className="text-xs text-gray-400 mb-2">
+                    <strong>Problem:</strong> Putting passwords, credit card numbers, or API keys directly in the JWT payload.
+                  </p>
+                  <p className="text-xs text-gray-400">
+                    <strong>Solution:</strong> Remember, JWTs are encoded, NOT encrypted! Anyone can decode them and read the payload. Only include non-sensitive information like user IDs, usernames, and permissions. Use our Security Analyzer to check for sensitive data!
+                  </p>
+                </div>
+
+                {/* Mistake 2 */}
+                <div className="p-3 bg-card border border-border rounded-lg">
+                  <h4 className="font-semibold text-white mb-2 flex items-center gap-2">
+                    <AlertCircle className="h-4 w-4" />
+                    Not Checking Token Expiration
+                  </h4>
+                  <p className="text-xs text-gray-400 mb-2">
+                    <strong>Problem:</strong> Accepting tokens without verifying if they&apos;ve expired.
+                  </p>
+                  <p className="text-xs text-gray-400">
+                    <strong>Solution:</strong> Always check the &quot;exp&quot; claim and reject expired tokens. Our Live Expiration Countdown shows exactly when your token will expire, and the Security Analyzer will warn you about expired tokens!
+                  </p>
+                </div>
+
+                {/* Mistake 3 */}
+                <div className="p-3 bg-card border border-border rounded-lg">
+                  <h4 className="font-semibold text-white mb-2 flex items-center gap-2">
+                    <AlertCircle className="h-4 w-4" />
+                    Using Weak or No Signature
+                  </h4>
+                  <p className="text-xs text-gray-400 mb-2">
+                    <strong>Problem:</strong> Using the &quot;none&quot; algorithm or a weak secret key (like &quot;secret&quot; or &quot;password123&quot;).
+                  </p>
+                  <p className="text-xs text-gray-400">
+                    <strong>Solution:</strong> Always use a strong algorithm (HS256 minimum) and a long, random secret key (at least 256 bits for HS256). Our Security Analyzer flags weak algorithms and short secrets!
+                  </p>
+                </div>
+
+                {/* Mistake 4 */}
+                <div className="p-3 bg-card border border-border rounded-lg">
+                  <h4 className="font-semibold text-white mb-2 flex items-center gap-2">
+                    <AlertCircle className="h-4 w-4" />
+                    Creating Tokens That Are Too Large
+                  </h4>
+                  <p className="text-xs text-gray-400 mb-2">
+                    <strong>Problem:</strong> Including too much data in the payload, resulting in tokens over 1KB or even 4KB+.
+                  </p>
+                  <p className="text-xs text-gray-400">
+                    <strong>Solution:</strong> Keep your tokens lean! Only include essential data. Use our Performance Metrics to check token size and get benchmarked against industry standards. If your token is large, click &quot;Optimize&quot; for suggestions on reducing its size.</p>
+                </div>
+
+                {/* Mistake 5 */}
+                <div className="p-3 bg-card border border-border rounded-lg">
+                  <h4 className="font-semibold text-white mb-2 flex items-center gap-2">
+                    <AlertCircle className="h-4 w-4" />
+                    Not Validating the Signature
+                  </h4>
+                  <p className="text-xs text-gray-400 mb-2">
+                    <strong>Problem:</strong> Just decoding the JWT without verifying its signature, allowing tampered tokens to be accepted.
+                  </p>
+                  <p className="text-xs text-gray-400">
+                    <strong>Solution:</strong> Always verify the signature on the server side! Our Code Generator provides complete examples including signature verification for all 6 programming languages.</p>
+                </div>
+
+                {/* Mistake 6 */}
+                <div className="p-3 bg-card border border-border rounded-lg">
+                  <h4 className="font-semibold text-white mb-2 flex items-center gap-2">
+                    <AlertCircle className="h-4 w-4" />
+                    Storing JWTs in LocalStorage (XSS Risk)
+                  </h4>
+                  <p className="text-xs text-gray-400 mb-2">
+                    <strong>Problem:</strong> Storing tokens in browser localStorage makes them vulnerable to XSS (Cross-Site Scripting) attacks.
+                  </p>
+                  <p className="text-xs text-gray-400">
+                    <strong>Solution:</strong> For maximum security, store JWTs in httpOnly cookies that JavaScript can&apos;t access. If you must use localStorage, implement strong Content Security Policy (CSP) headers to prevent XSS attacks.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* Best Practices */}
+          <div className="space-y-3">
+            <h3 className="text-xl font-bold text-foreground flex items-center gap-2">
+              <span className="flex items-center justify-center w-8 h-8 rounded-full bg-teal-100 dark:bg-teal-900 text-teal-600 dark:text-teal-400 text-sm font-bold">7</span>
+              JWT Best Practices
+            </h3>
+            <div className="pl-10 space-y-2 text-sm text-muted-foreground">
+              <div className="p-3 bg-card border border-border rounded-lg">
+                <ul className="space-y-2 text-gray-400">
+                  <li className="flex items-start gap-2">
+                    <CheckCircle2 className="h-4 w-4 mt-0.5 shrink-0" />
+                    <span><strong>Use short expiration times:</strong> 15 minutes to 1 hour for access tokens. Use refresh tokens for longer sessions.</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <CheckCircle2 className="h-4 w-4 mt-0.5 shrink-0" />
+                    <span><strong>Always verify signatures:</strong> Never trust a token without checking its signature matches.</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <CheckCircle2 className="h-4 w-4 mt-0.5 shrink-0" />
+                    <span><strong>Use strong secret keys:</strong> At least 256 bits (32 characters) of random data.</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <CheckCircle2 className="h-4 w-4 mt-0.5 shrink-0" />
+                    <span><strong>Include standard claims:</strong> Always use exp (expiration), iat (issued at), and sub (subject).</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <CheckCircle2 className="h-4 w-4 mt-0.5 shrink-0" />
+                    <span><strong>Keep payloads small:</strong> Under 512 bytes is ideal. Use our Size Optimizer to trim excess data.</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <CheckCircle2 className="h-4 w-4 mt-0.5 shrink-0" />
+                    <span><strong>Use HTTPS only:</strong> Never send JWTs over unsecured HTTP connections.</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <CheckCircle2 className="h-4 w-4 mt-0.5 shrink-0" />
+                    <span><strong>Implement token refresh:</strong> Use short-lived access tokens with refresh tokens for better security.</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <CheckCircle2 className="h-4 w-4 mt-0.5 shrink-0" />
+                    <span><strong>Test with our tools:</strong> Use our Security Analyzer, Performance Metrics, and Comparison tools regularly!</span>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          {/* Final Note */}
+          <div className="p-4 bg-card border border-border rounded-lg">
+            <h3 className="text-base font-bold text-foreground mb-2">🎓 Start Decoding JWTs Now!</h3>
+            <p className="text-sm text-muted-foreground">
+              Now that you understand JWTs, scroll up and paste a token to try our interactive features! Use all the powerful tools we&apos;ve built - Performance Metrics, Security Analyzer, Size Optimizer, Code Generator, and more. Your tokens are processed locally in your browser for maximum security.
+            </p>
+          </div>
+        </div>
+      </div>
 
       {/* Export Modal */}
       {showExport && (
@@ -3699,11 +3691,10 @@ except jwt.InvalidTokenError:
               <div className="grid grid-cols-1 gap-2">
                 {/* JSON Format */}
                 <div
-                  className={`p-3 border rounded-lg cursor-pointer transition-all ${
-                    selectedExportFormat === 'json'
-                      ? 'bg-indigo-50 dark:bg-indigo-950/20 border-indigo-300 dark:border-indigo-700'
-                      : 'bg-card border-gray-200 dark:border-gray-700 hover:border-indigo-300'
-                  }`}
+                  className={`p-3 border rounded-lg cursor-pointer transition-all ${selectedExportFormat === 'json'
+                    ? 'bg-indigo-50 dark:bg-indigo-950/20 border-indigo-300 dark:border-indigo-700'
+                    : 'bg-card border-gray-200 dark:border-gray-700 hover:border-indigo-300'
+                    }`}
                   onClick={() => setSelectedExportFormat('json')}
                 >
                   <div className="flex items-center justify-between">
@@ -3724,11 +3715,10 @@ except jwt.InvalidTokenError:
 
                 {/* CSV Format */}
                 <div
-                  className={`p-3 border rounded-lg cursor-pointer transition-all ${
-                    selectedExportFormat === 'csv'
-                      ? 'bg-card border-green-300 dark:border-green-700'
-                      : 'bg-card border-gray-200 dark:border-gray-700 hover:border-green-300'
-                  }`}
+                  className={`p-3 border rounded-lg cursor-pointer transition-all ${selectedExportFormat === 'csv'
+                    ? 'bg-card border-green-300 dark:border-green-700'
+                    : 'bg-card border-gray-200 dark:border-gray-700 hover:border-green-300'
+                    }`}
                   onClick={() => setSelectedExportFormat('csv')}
                 >
                   <div className="flex items-center justify-between">
@@ -3749,11 +3739,10 @@ except jwt.InvalidTokenError:
 
                 {/* XML Format */}
                 <div
-                  className={`p-3 border rounded-lg cursor-pointer transition-all ${
-                    selectedExportFormat === 'xml'
-                      ? 'bg-card border-orange-300 dark:border-primary'
-                      : 'bg-card border-gray-200 dark:border-gray-700 hover:border-orange-300'
-                  }`}
+                  className={`p-3 border rounded-lg cursor-pointer transition-all ${selectedExportFormat === 'xml'
+                    ? 'bg-card border-orange-300 dark:border-primary'
+                    : 'bg-card border-gray-200 dark:border-gray-700 hover:border-orange-300'
+                    }`}
                   onClick={() => setSelectedExportFormat('xml')}
                 >
                   <div className="flex items-center justify-between">
@@ -3774,11 +3763,10 @@ except jwt.InvalidTokenError:
 
                 {/* YAML Format */}
                 <div
-                  className={`p-3 border rounded-lg cursor-pointer transition-all ${
-                    selectedExportFormat === 'yaml'
-                      ? 'bg-card border-blue-300 dark:border-blue-700'
-                      : 'bg-card border-gray-200 dark:border-gray-700 hover:border-blue-300'
-                  }`}
+                  className={`p-3 border rounded-lg cursor-pointer transition-all ${selectedExportFormat === 'yaml'
+                    ? 'bg-card border-blue-300 dark:border-blue-700'
+                    : 'bg-card border-gray-200 dark:border-gray-700 hover:border-blue-300'
+                    }`}
                   onClick={() => setSelectedExportFormat('yaml')}
                 >
                   <div className="flex items-center justify-between">
@@ -3799,11 +3787,10 @@ except jwt.InvalidTokenError:
 
                 {/* PDF Report */}
                 <div
-                  className={`p-3 border rounded-lg cursor-pointer transition-all ${
-                    selectedExportFormat === 'pdf'
-                      ? 'bg-card border-red-300 dark:border-destructive'
-                      : 'bg-card border-gray-200 dark:border-gray-700 hover:border-red-300'
-                  }`}
+                  className={`p-3 border rounded-lg cursor-pointer transition-all ${selectedExportFormat === 'pdf'
+                    ? 'bg-card border-red-300 dark:border-destructive'
+                    : 'bg-card border-gray-200 dark:border-gray-700 hover:border-red-300'
+                    }`}
                   onClick={() => setSelectedExportFormat('pdf')}
                 >
                   <div className="flex items-center justify-between">

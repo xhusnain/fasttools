@@ -1,7 +1,7 @@
 "use client"
 
 import { useState } from "react"
-import { Button } from "@/components/ui/button"
+import { GButton } from "@/components/globalcomponents/gbutton"
 import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
 import { Card } from "@/components/ui/card"
@@ -19,18 +19,18 @@ export function InstagramDownloader({ compact = false }: InstagramDownloaderProp
   const [result, setResult] = useState<
     | null
     | {
-        videoUrl?: string
-        imageUrl?: string
-        thumbnail?: string
-        title?: string
-        downloading?: boolean
-        downloadStarted?: boolean
-        media?: any[]
-        videos?: string[]
-        images?: string[]
-        isMultiple?: boolean
-        type?: string
-      }
+      videoUrl?: string
+      imageUrl?: string
+      thumbnail?: string
+      title?: string
+      downloading?: boolean
+      downloadStarted?: boolean
+      media?: any[]
+      videos?: string[]
+      images?: string[]
+      isMultiple?: boolean
+      type?: string
+    }
   >(null)
   const [downloadingStates, setDownloadingStates] = useState<{
     video?: boolean
@@ -123,12 +123,12 @@ export function InstagramDownloader({ compact = false }: InstagramDownloaderProp
     const countdownInterval = setInterval(() => {
       countdown--
       setCountdownStates(prev => ({ ...prev, [downloadType]: countdown }))
-      
+
       if (countdown <= 0) {
         clearInterval(countdownInterval)
         setCountdownStates(prev => ({ ...prev, [downloadType]: undefined }))
         setDownloadingStates(prev => ({ ...prev, [downloadType]: true }))
-        
+
         performDownload(url, sanitizedFilename, downloadType)
       }
     }, 1000)
@@ -150,9 +150,9 @@ export function InstagramDownloader({ compact = false }: InstagramDownloaderProp
 
         if (response.ok) {
           const blob = await response.blob()
-          
+
           if (blob.size > 0) {
-            ;(window as any)[`downloadedBlob_${downloadType}`] = blob
+            ; (window as any)[`downloadedBlob_${downloadType}`] = blob
             return
           }
         }
@@ -167,29 +167,29 @@ export function InstagramDownloader({ compact = false }: InstagramDownloaderProp
   const performDownload = async (url: string, filename: string, downloadType: string) => {
     try {
       const preDownloadedBlob = (window as any)[`downloadedBlob_${downloadType}`]
-      
+
       if (preDownloadedBlob) {
         const objectUrl = URL.createObjectURL(preDownloadedBlob)
-        
+
         const link = document.createElement("a")
         link.href = objectUrl
         link.download = filename
         link.style.display = 'none'
-        
+
         document.body.appendChild(link)
         link.click()
         document.body.removeChild(link)
-        
+
         setTimeout(() => {
           URL.revokeObjectURL(objectUrl)
           delete (window as any)[`downloadedBlob_${downloadType}`]
         }, 1000)
-        
+
         setTimeout(() => {
           setDownloadingStates(prev => ({ ...prev, [downloadType]: false }))
           setResult(prev => prev ? { ...prev, downloadStarted: true } : null)
         }, 500)
-        
+
         return
       }
 
@@ -205,28 +205,28 @@ export function InstagramDownloader({ compact = false }: InstagramDownloaderProp
 
         if (response.ok) {
           const blob = await response.blob()
-          
+
           if (blob.size > 0) {
             const objectUrl = URL.createObjectURL(blob)
-            
+
             const link = document.createElement("a")
             link.href = objectUrl
             link.download = filename
             link.style.display = 'none'
-            
+
             document.body.appendChild(link)
             link.click()
             document.body.removeChild(link)
-            
+
             setTimeout(() => {
               URL.revokeObjectURL(objectUrl)
             }, 1000)
-            
+
             setTimeout(() => {
               setDownloadingStates(prev => ({ ...prev, [downloadType]: false }))
               setResult(prev => prev ? { ...prev, downloadStarted: true } : null)
             }, 500)
-            
+
             return
           }
         }
@@ -235,7 +235,7 @@ export function InstagramDownloader({ compact = false }: InstagramDownloaderProp
       }
 
       throw new Error('Download failed')
-      
+
     } catch (e) {
       const errorMessage = e instanceof Error ? e.message : "Download failed. Please try again."
       setError(errorMessage)

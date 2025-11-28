@@ -2,21 +2,21 @@
 
 import { useState } from "react"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
-import { Button } from "@/components/ui/button"
+import { GButton } from "@/components/globalcomponents/gbutton"
 import { Label } from "@/components/ui/label"
 import { Input } from "@/components/ui/input"
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
 import { Alert, AlertDescription } from "@/components/ui/alert"
-import { 
-  Calculator, 
-  Copy, 
-  Check, 
-  Building, 
-  Ruler, 
-  Weight, 
-  Volume, 
-  Target, 
-  Info, 
+import {
+  Calculator,
+  Copy,
+  Check,
+  Building,
+  Ruler,
+  Weight,
+  Volume,
+  Target,
+  Info,
   AlertTriangle,
   TrendingUp,
   BarChart3,
@@ -176,8 +176,8 @@ export function ConcreteCalculator() {
           volume = (outerVolume - innerVolume) * qty
           formula = `V = π × ((d1/2)² - (d2/2)²) × h × qty = π × ((${od}/2)² - (${id}/2)²) × ${ht} × ${qty} = ${volume.toFixed(2)} ${unit === "metric" ? "m³" : "ft³"}`
           explanation = "Volume = π × ((Outer Diameter/2)² - (Inner Diameter/2)²) × Height × Quantity"
-            // @ts-ignore
-            dimensions = { length: od, width: od, height: ht, diameter: od, innerDiameter: id }
+          // @ts-ignore
+          dimensions = { length: od, width: od, height: ht, diameter: od, innerDiameter: id }
           break
 
         case "stairs":
@@ -851,13 +851,13 @@ Calculated with FastTools Concrete Calculator`
 
           {/* Action Buttons */}
           <div className="flex flex-col sm:flex-row gap-3">
-            <Button onClick={calculateConcrete} disabled={isCalculating} className="flex-1 h-9 text-xs font-medium bg-gradient-to-r from-primary to-primary/90 hover:from-primary/90 hover:to-primary text-primary-foreground">
+            <GButton onClick={calculateConcrete} disabled={isCalculating} className="w-full flex-1 h-9 text-xs font-medium bg-gradient-to-r from-primary to-primary/90 hover:from-primary/90 hover:to-primary text-primary-foreground">
               {isCalculating ? <LoadingSpinner size="sm" className="mr-1 h-3 w-3" /> : <Calculator className="mr-1 h-3 w-3" />}
-              Calculate
-            </Button>
-            <Button variant="outline" onClick={clearForm} className="w-full sm:w-auto h-9 text-xs border-border bg-card text-foreground hover:bg-secondary">
+              Calculate Concrete Needed
+            </GButton>
+            <GButton variant="outline" onClick={clearForm} className="w-full sm:w-auto h-9 text-xs border-border bg-card text-foreground hover:bg-secondary">
               Clear
-            </Button>
+            </GButton>
           </div>
         </CardContent>
       </Card>
@@ -986,7 +986,7 @@ Calculated with FastTools Concrete Calculator`
 
             {/* Action Buttons */}
             <div className="flex gap-3">
-              <Button onClick={copyResult} variant="outline" className="flex-1 h-9 text-xs font-medium border border-border hover:bg-secondary text-heading-accent bg-card">
+              <GButton onClick={copyResult} variant="outline" className="flex-1 h-9 text-xs font-medium border border-border hover:bg-secondary text-heading-accent bg-card">
                 {copied ? (
                   <>
                     <Check className="mr-1.5 h-3.5 w-3.5" />
@@ -998,7 +998,7 @@ Calculated with FastTools Concrete Calculator`
                     Copy Results
                   </>
                 )}
-              </Button>
+              </GButton>
             </div>
           </CardContent>
         </Card>

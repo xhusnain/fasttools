@@ -1,12 +1,12 @@
 "use client"
 
 import { useState } from "react"
-import { Button } from "@/components/ui/button"
+import { GButton } from "@/components/globalcomponents/gbutton"
 import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Copy, Users } from "lucide-react"
-import { LoadingSpinner } from "@/components/loading-spinner"
+
 
 export function BillSplitter() {
   const [loading, setLoading] = useState(false)
@@ -108,7 +108,7 @@ Split ${numPeople} ways: $${result.perPerson} per person`
           />
           <div className="flex gap-2 flex-wrap">
             {quickTipButtons.map((percent) => (
-              <Button
+              <GButton
                 key={percent}
                 onClick={() => setTipPercent(percent)}
                 variant={tipPercent === percent ? "default" : "outline"}
@@ -116,30 +116,26 @@ Split ${numPeople} ways: $${result.perPerson} per person`
                 className="h-7 text-xs font-medium"
               >
                 {percent}%
-              </Button>
+              </GButton>
             ))}
           </div>
         </div>
 
         <div className="flex gap-2">
-          <Button
+          <GButton
             onClick={splitBill}
             disabled={loading || !totalBill || !numPeople || Number.parseInt(numPeople) < 1}
+            isLoading={loading}
             className="flex-1 h-9 text-sm font-medium shadow-sm hover:shadow-md transition-all"
           >
-            {loading ? (
-              <>
-                <LoadingSpinner className="mr-2 h-3 w-3" />
-                Calculating...
-              </>
-            ) : (
+            {loading ? "Calculating..." : (
               <>
                 <Users className="mr-2 h-4 w-4" />
                 Split Bill
               </>
             )}
-          </Button>
-          <Button
+          </GButton>
+          <GButton
             onClick={() => {
               setTotalBill("")
               setNumPeople("")
@@ -150,7 +146,7 @@ Split ${numPeople} ways: $${result.perPerson} per person`
             className="h-9 text-sm font-medium"
           >
             Reset
-          </Button>
+          </GButton>
         </div>
       </div>
 
@@ -185,14 +181,14 @@ Split ${numPeople} ways: $${result.perPerson} per person`
               </p>
             </div>
 
-            <Button
+            <GButton
               onClick={copyResult}
               variant="outline"
               className="w-full h-8 text-xs font-medium hover:bg-accent transition-all bg-transparent"
             >
               <Copy className="mr-2 h-3 w-3" />
               Copy Results
-            </Button>
+            </GButton>
           </div>
         ) : (
           <div className="text-center py-8 text-muted-foreground">

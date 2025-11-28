@@ -1,7 +1,7 @@
 "use client"
 
 import { useState, useRef, useEffect } from "react"
-import { Button } from "@/components/ui/button"
+import { GButton as Button } from "@/components/globalcomponents/gbutton"
 import { Label } from "@/components/ui/label"
 import { Input } from "@/components/ui/input"
 import { Card } from "@/components/ui/card"
@@ -42,7 +42,7 @@ export function PDFSign() {
   const [pdfArrayBuffer, setPdfArrayBuffer] = useState<ArrayBuffer | null>(null)
   const [draggedSignature, setDraggedSignature] = useState<string | null>(null)
   const [dragOffset, setDragOffset] = useState({ x: 0, y: 0 })
-  
+
   const fileInputRef = useRef<HTMLInputElement>(null)
   const pdfCanvasRef = useRef<HTMLCanvasElement>(null)
   const drawingCanvasRef = useRef<HTMLCanvasElement>(null)
@@ -399,7 +399,7 @@ export function PDFSign() {
 
       setProgress(100)
       showToast("success", `✅ Signed PDF downloaded successfully!`)
-      
+
       // Reset after successful download
       setTimeout(() => {
         setProgress(0)
@@ -468,7 +468,7 @@ export function PDFSign() {
             <>
               <div className="space-y-4">
                 <Label className="text-sm font-medium">Create Your Signature</Label>
-                
+
                 {/* Mode Selector */}
                 <div className="flex gap-2">
                   <Button
@@ -630,7 +630,7 @@ export function PDFSign() {
                   </div>
                 </div>
 
-                <div 
+                <div
                   className="relative border-2 border-border rounded-lg overflow-auto max-h-[600px] bg-gray-100"
                   onMouseMove={handleCanvasMouseMove}
                   onMouseUp={handleCanvasMouseUp}

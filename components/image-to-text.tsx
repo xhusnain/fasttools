@@ -3,7 +3,7 @@
 import type React from "react"
 
 import { useState } from "react"
-import { Button } from "@/components/ui/button"
+import { GButton } from "@/components/globalcomponents/gbutton"
 import { Card } from "@/components/ui/card"
 import { Upload, Copy, Check, FileText, RotateCcw } from "lucide-react"
 import { LoadingSpinner } from "@/components/loading-spinner"
@@ -91,13 +91,13 @@ export function ImageToText() {
                 <input id="image-upload" type="file" className="hidden" accept="image/*" onChange={handleImageUpload} />
               </label>
             </div>
-            
+
             {image && (
               <div className="flex justify-center">
-                <Button size="sm" variant="outline" onClick={resetAll} className="h-8 text-xs bg-transparent">
+                <GButton size="sm" variant="outline" onClick={resetAll} className="h-8 text-xs bg-transparent">
                   <RotateCcw className="h-3 w-3 mr-1" />
                   Reset & Upload New Image
-                </Button>
+                </GButton>
               </div>
             )}
           </div>
@@ -125,7 +125,7 @@ export function ImageToText() {
                   Extracted Text
                 </h3>
                 <div className="flex items-center gap-2">
-                  <Button size="sm" variant="outline" onClick={copyToClipboard} className="h-8 text-xs bg-transparent">
+                  <GButton size="sm" variant="outline" onClick={copyToClipboard} className="h-8 text-xs bg-transparent">
                     {copied ? (
                       <>
                         <Check className="h-3 w-3 mr-1" />
@@ -137,11 +137,11 @@ export function ImageToText() {
                         Copy
                       </>
                     )}
-                  </Button>
-                  <Button size="sm" variant="outline" onClick={resetAll} className="h-8 text-xs bg-transparent">
+                  </GButton>
+                  <GButton size="sm" variant="outline" onClick={resetAll} className="h-8 text-xs bg-transparent">
                     <RotateCcw className="h-3 w-3 mr-1" />
                     Reset
-                  </Button>
+                  </GButton>
                 </div>
               </div>
               <div className="p-4 bg-muted/30 rounded-lg border border-border max-h-96 overflow-y-auto">

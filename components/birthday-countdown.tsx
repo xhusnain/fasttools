@@ -1,7 +1,7 @@
 "use client"
 
 import { useState, useEffect } from "react"
-import { Button } from "@/components/ui/button"
+import { GButton } from "@/components/globalcomponents/gbutton"
 import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
@@ -143,7 +143,7 @@ export function BirthdayCountdown() {
               </div>
 
               <div className="flex flex-col sm:flex-row gap-2 sm:gap-3">
-                <Button
+                <GButton
                   onClick={copyResult}
                   variant="outline"
                   className="flex-1 h-10 sm:h-11 text-sm font-medium bg-white/10 border-white/20 text-white hover:bg-white/20 transition-all"
@@ -161,14 +161,14 @@ export function BirthdayCountdown() {
                       <span className="sm:hidden">Copy</span>
                     </>
                   )}
-                </Button>
-                <Button
+                </GButton>
+                <GButton
                   onClick={shareResult}
                   className="flex-1 h-10 sm:h-11 text-sm font-medium bg-gradient-to-r from-purple-500 to-pink-500 hover:from-purple-600 hover:to-pink-600 text-white shadow-lg hover:shadow-xl transition-all duration-300"
                 >
                   <span className="hidden sm:inline">Share Countdown</span>
                   <span className="sm:hidden">Share</span>
-                </Button>
+                </GButton>
               </div>
             </div>
           )}

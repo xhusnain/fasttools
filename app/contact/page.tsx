@@ -1,6 +1,6 @@
 "use client"
 
-import { Button } from "@/components/ui/button"
+import { GButton } from "@/components/globalcomponents/gbutton"
 import { Label } from "@/components/ui/label"
 import { Input } from "@/components/ui/input"
 import { Textarea } from "@/components/ui/textarea"
@@ -186,13 +186,13 @@ export default function ContactPage() {
                     <p className="text-sm sm:text-base text-muted-foreground mb-4 sm:mb-6 px-4">
                       Your message has been sent successfully. We appreciate you reaching out and will get back to you soon.
                     </p>
-                    <Button
+                    <GButton
                       onClick={() => setIsSubmitted(false)}
                       variant="outline"
                       className="h-10 sm:h-12 px-6 sm:px-8 text-sm sm:text-base"
                     >
                       Send Another Message
-                    </Button>
+                    </GButton>
                   </div>
                 ) : (
                   <form onSubmit={handleSubmit} className="space-y-4 sm:space-y-6">
@@ -262,23 +262,14 @@ export default function ContactPage() {
                       {errors.message && <p className="text-xs sm:text-sm text-destructive mt-1">{errors.message}</p>}
                     </div>
 
-                    <Button
-                      type="submit"
-                      disabled={isSubmitting}
-                      className="w-full h-10 sm:h-12 bg-primary hover:bg-primary/90 text-foreground font-semibold disabled:opacity-50 text-sm sm:text-base"
-                    >
-                      {isSubmitting ? (
+                    <GButton type="submit" className="w-full" disabled={isSubmitting} isLoading={isSubmitting}>
+                      {isSubmitting ? "Sending..." : (
                         <>
-                          <div className="animate-spin rounded-full h-3 w-3 sm:h-4 sm:w-4 border-b-2 border-white mr-2"></div>
-                          Sending...
-                        </>
-                      ) : (
-                        <>
-                          <Send className="mr-2 h-3 w-3 sm:h-4 sm:w-4" />
+                          <Send className="mr-2 h-4 w-4" />
                           Send Message
                         </>
                       )}
-                    </Button>
+                    </GButton>
                   </form>
                 )}
               </div>

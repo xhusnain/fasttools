@@ -1,54 +1,54 @@
 "use client"
 
 import { useState, useEffect } from "react"
-import { Button } from "@/components/ui/button"
+import { GButton as Button } from "@/components/globalcomponents/gbutton"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
 import { Badge } from "@/components/ui/badge"
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
-import { 
-  Calculator, 
-  DollarSign, 
-  Percent, 
-  Calendar, 
-  TrendingUp, 
-  TrendingDown, 
-  Info, 
-  AlertCircle, 
-  CheckCircle, 
-  Copy, 
-  Download, 
-  History, 
-  Star, 
-  Globe, 
-  Shield, 
-  FileText, 
-  BarChart3, 
-  PieChart, 
-  Target, 
-  Zap, 
-  Clock, 
-  Users, 
-  Home, 
-  Car, 
-  ShoppingBag, 
-  CreditCard, 
-  Banknote, 
-  Coins, 
-  Wallet, 
-  Briefcase, 
-  Store, 
-  Truck, 
-  Package, 
-  Tag, 
-  ShoppingCart, 
-  HandHeart, 
-  Gift, 
-  Award, 
-  Trophy, 
-  TrendingUp as TrendingUpIcon, 
+import {
+  Calculator,
+  DollarSign,
+  Percent,
+  Calendar,
+  TrendingUp,
+  TrendingDown,
+  Info,
+  AlertCircle,
+  CheckCircle,
+  Copy,
+  Download,
+  History,
+  Star,
+  Globe,
+  Shield,
+  FileText,
+  BarChart3,
+  PieChart,
+  Target,
+  Zap,
+  Clock,
+  Users,
+  Home,
+  Car,
+  ShoppingBag,
+  CreditCard,
+  Banknote,
+  Coins,
+  Wallet,
+  Briefcase,
+  Store,
+  Truck,
+  Package,
+  Tag,
+  ShoppingCart,
+  HandHeart,
+  Gift,
+  Award,
+  Trophy,
+  TrendingUp as TrendingUpIcon,
   TrendingDown as TrendingDownIcon,
   Stethoscope,
   Brain,
@@ -168,9 +168,9 @@ export default function PaymentCalculator() {
         return
       }
 
-      const monthlyPaymentAmount = amount * (monthlyRate * Math.pow(1 + monthlyRate, totalMonths)) / 
-                                  (Math.pow(1 + monthlyRate, totalMonths) - 1)
-      
+      const monthlyPaymentAmount = amount * (monthlyRate * Math.pow(1 + monthlyRate, totalMonths)) /
+        (Math.pow(1 + monthlyRate, totalMonths) - 1)
+
       const totalPayments = monthlyPaymentAmount * totalMonths
       const totalInterest = totalPayments - amount
       const principalPercentage = (amount / totalPayments) * 100
@@ -206,7 +206,7 @@ export default function PaymentCalculator() {
         // No interest case
         const months = Math.ceil(amount / payment)
         const years = months / 12
-        
+
         calculatedResult = {
           calculationType: "fixedPayment",
           loanAmount: amount,
@@ -225,7 +225,7 @@ export default function PaymentCalculator() {
       } else {
         // Calculate months needed to pay off loan
         const months = Math.log(1 + (amount * monthlyRate) / payment) / Math.log(1 + monthlyRate)
-        
+
         if (months <= 0 || !isFinite(months)) {
           alert("Monthly payment is too low to pay off the loan. Please increase payment amount or decrease loan amount.")
           return
@@ -363,32 +363,32 @@ export default function PaymentCalculator() {
   const generateScenarios = (amount: number, rate: number, term: number) => {
     const monthlyRate = rate / 100 / 12
     const totalMonths = term * 12
-    
-    const basePayment = amount * (monthlyRate * Math.pow(1 + monthlyRate, totalMonths)) / 
-                       (Math.pow(1 + monthlyRate, totalMonths) - 1)
-    
+
+    const basePayment = amount * (monthlyRate * Math.pow(1 + monthlyRate, totalMonths)) /
+      (Math.pow(1 + monthlyRate, totalMonths) - 1)
+
     return [
-      { 
-        scenario: "Current Payment", 
-        monthlyPayment: basePayment, 
+      {
+        scenario: "Current Payment",
+        monthlyPayment: basePayment,
         totalInterest: (basePayment * totalMonths) - amount,
         savings: 0
       },
-      { 
-        scenario: "+$100 Extra", 
-        monthlyPayment: basePayment + 100, 
+      {
+        scenario: "+$100 Extra",
+        monthlyPayment: basePayment + 100,
         totalInterest: ((basePayment + 100) * totalMonths) - amount,
         savings: 0
       },
-      { 
-        scenario: "+$200 Extra", 
-        monthlyPayment: basePayment + 200, 
+      {
+        scenario: "+$200 Extra",
+        monthlyPayment: basePayment + 200,
         totalInterest: ((basePayment + 200) * totalMonths) - amount,
         savings: 0
       },
-      { 
-        scenario: "Bi-weekly", 
-        monthlyPayment: basePayment * 1.083, 
+      {
+        scenario: "Bi-weekly",
+        monthlyPayment: basePayment * 1.083,
         totalInterest: ((basePayment * 1.083) * totalMonths) - amount,
         savings: 0
       }
@@ -756,7 +756,7 @@ Loan Term: ${result.loanTerm.toFixed(1)} years`
               </div>
             </div>
           </div>
-          
+
           <div className="text-sm text-muted-foreground space-y-2">
             <p>
               <strong>Fixed Term Mode:</strong> Calculate monthly payment for a fixed loan term.

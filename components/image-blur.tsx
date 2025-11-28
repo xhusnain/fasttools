@@ -3,7 +3,7 @@
 import type React from "react"
 
 import { useState, useEffect } from "react"
-import { Button } from "@/components/ui/button"
+import { GButton as Button } from "@/components/globalcomponents/gbutton"
 import { Card } from "@/components/ui/card"
 import { Slider } from "@/components/ui/slider"
 import { Upload, Download, RotateCcw, FileText, Zap, Image as ImageIcon } from "lucide-react"
@@ -39,7 +39,7 @@ export function ImageBlur() {
     const reader = new FileReader()
     reader.onload = async (event) => {
       const imageUrl = event.target?.result as string
-      
+
       // Create HTMLImageElement
       const img = new Image()
       img.crossOrigin = "anonymous"
@@ -72,7 +72,7 @@ export function ImageBlur() {
     reset()
     setImageLoaded(false)
     setImageDimensions(null)
-    
+
     // Reset the file input
     const fileInput = document.getElementById("image-upload-blur") as HTMLInputElement
     if (fileInput) {
@@ -127,7 +127,7 @@ export function ImageBlur() {
                     <input
                       id="image-upload-blur"
                       type="file"
-                      
+
                       onChange={handleImageUpload}
                       className="hidden"
                     />
@@ -296,8 +296,8 @@ export function ImageBlur() {
                 <div>
                   <h3 className="text-lg font-bold text-foreground mb-2">Oops! Something went wrong</h3>
                   <p className="text-sm text-foreground mb-4 max-w-md">{status.message}</p>
-                  <Button 
-                    onClick={resetAll} 
+                  <Button
+                    onClick={resetAll}
                     variant="outline"
                     className="gap-2 border-red-300 text-foreground hover:bg-red-100 dark:border-destructive dark:text-foreground dark:hover:bg-red-900/30"
                   >

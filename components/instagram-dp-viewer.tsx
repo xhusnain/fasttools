@@ -23,7 +23,7 @@
  */
 
 import { useState, useEffect } from "react"
-import { Button } from "@/components/ui/button"
+import { GButton as Button } from "@/components/globalcomponents/gbutton"
 import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
 import { Card } from "@/components/ui/card"
@@ -59,24 +59,24 @@ export function InstagramDpViewer() {
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ username: username.replace('@', '').trim() })
       })
-      
+
       const data = await response.json()
-      
+
       if (data.success) {
         setRequestId(data.requestId)
         setTimerActive(true)
         setRemainingTime(data.remainingTime)
         setTimerProgress(0)
-        
+
         // Start countdown interval
         const interval = setInterval(async () => {
           const statusResponse = await fetch(`/api/instagram/timer?requestId=${data.requestId}`)
           const statusData = await statusResponse.json()
-          
+
           if (statusData.success) {
             setRemainingTime(statusData.remainingTime)
             setTimerProgress(statusData.progress)
-            
+
             if (!statusData.isActive) {
               // Timer finished, fetch the actual data
               setTimerActive(false)
@@ -86,7 +86,7 @@ export function InstagramDpViewer() {
             }
           }
         }, 1000)
-        
+
         setTimerInterval(interval)
       } else {
         setError(data.error || 'Failed to start timer')
@@ -134,7 +134,7 @@ export function InstagramDpViewer() {
 
       // Start the timer-based rate limiting
       await startTimer()
-      
+
     } catch (error) {
       console.error('Error:', error)
       setError("An error occurred while processing your request")
@@ -146,7 +146,7 @@ export function InstagramDpViewer() {
   const fetchInstagramProfile = async (username: string) => {
     try {
       console.log(`Fetching profile for: ${username}`)
-      
+
       const response = await fetch(`/api/instagram/profile?username=${encodeURIComponent(username)}`, {
         method: 'GET',
         headers: {
@@ -164,13 +164,13 @@ export function InstagramDpViewer() {
 
       const data = await response.json()
       console.log('API Response:', data)
-      
+
       if (!data.success || !data.data) {
         throw new Error('Invalid response from server')
       }
 
       return data.data
-      
+
     } catch (error) {
       console.error('Instagram API Error:', error)
       throw error
@@ -181,7 +181,7 @@ export function InstagramDpViewer() {
     if (!profileData?.profilePicUrl) return
 
     setDownloading(true)
-    
+
     try {
       // Method 1: Try to fetch and create blob URL for direct download
       try {
@@ -192,45 +192,45 @@ export function InstagramDpViewer() {
             'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36'
           }
         })
-        
+
         if (response.ok) {
           const blob = await response.blob()
           const url = window.URL.createObjectURL(blob)
-          
+
           const link = document.createElement('a')
           link.href = url
           link.download = `${profileData.username}-profile-picture.jpg`
           link.style.display = 'none'
-          
+
           document.body.appendChild(link)
           link.click()
           document.body.removeChild(link)
-          
+
           // Clean up the blob URL
           setTimeout(() => {
             window.URL.revokeObjectURL(url)
           }, 1000)
-          
+
           setDownloading(false)
           return
         }
       } catch (fetchError) {
         console.log('Direct fetch failed, trying alternative method')
       }
-      
+
       // Method 2: Use window.open with download attribute
       const link = document.createElement('a')
       link.href = profileData.profilePicUrl
       link.download = `${profileData.username}-profile-picture.jpg`
       link.target = '_blank'
       link.style.display = 'none'
-      
+
       document.body.appendChild(link)
       link.click()
       document.body.removeChild(link)
-      
+
       setDownloading(false)
-      
+
     } catch (error) {
       console.error('Download error:', error)
       setError('Failed to download image. Please try right-clicking on the image and selecting "Save image as".')
@@ -273,23 +273,23 @@ export function InstagramDpViewer() {
             </div>
           </div>
 
-        <div className="space-y-4">
+          <div className="space-y-4">
             <div className="space-y-2">
               <Label htmlFor="username" className="text-sm font-medium text-foreground">
-              Instagram Username
-            </Label>
-            <Input
-              id="username"
-              type="text"
-              placeholder="@username or username"
-              value={username}
-              onChange={(e) => setUsername(e.target.value)}
+                Instagram Username
+              </Label>
+              <Input
+                id="username"
+                type="text"
+                placeholder="@username or username"
+                value={username}
+                onChange={(e) => setUsername(e.target.value)}
                 className="h-10 sm:h-11 text-sm bg-background border-border text-foreground placeholder:text-muted-foreground"
-            />
-          </div>
+              />
+            </div>
 
-          <Button
-            onClick={handleView}
+            <Button
+              onClick={handleView}
               disabled={!username || loading || timerActive}
               className="w-full h-10 sm:h-11 text-sm font-medium bg-gradient-to-r from-primary to-primary/90 hover:from-primary/90 hover:to-primary text-primary-foreground shadow-lg hover:shadow-xl transition-all duration-300"
             >
@@ -300,19 +300,19 @@ export function InstagramDpViewer() {
                   <span className="sm:hidden">{remainingTime}s</span>
                 </>
               ) : loading ? (
-              <>
-                <LoadingSpinner className="mr-2" />
+                <>
+                  <LoadingSpinner className="mr-2" />
                   <span className="hidden sm:inline">Loading Profile Picture...</span>
                   <span className="sm:hidden">Loading...</span>
-              </>
-            ) : (
+                </>
+              ) : (
                 <>
                   <Eye className="mr-2 h-4 w-4" />
                   <span className="hidden sm:inline">View Profile Picture</span>
                   <span className="sm:hidden">View DP</span>
                 </>
-            )}
-          </Button>
+              )}
+            </Button>
 
             {/* Timer Progress Bar */}
             {timerActive && (
@@ -322,7 +322,7 @@ export function InstagramDpViewer() {
                   <span>{timerProgress}%</span>
                 </div>
                 <div className="w-full bg-muted rounded-full h-2">
-                  <div 
+                  <div
                     className="bg-gradient-to-r from-primary to-primary/90 h-2 rounded-full transition-all duration-1000 ease-out"
                     style={{ width: `${timerProgress}%` }}
                   ></div>
@@ -352,7 +352,7 @@ export function InstagramDpViewer() {
         <Card className="p-4 sm:p-6 bg-card border border-border shadow-lg hover:shadow-xl transition-all duration-300 animate-fade-in">
           <div className="space-y-4 sm:space-y-6">
             <h3 className="text-lg sm:text-xl font-semibold text-foreground text-center">Profile Information</h3>
-            
+
             {/* Profile Picture */}
             <div className="flex flex-col items-center gap-4 sm:gap-6">
               <div className="relative">
@@ -370,37 +370,37 @@ export function InstagramDpViewer() {
                           'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36'
                         }
                       })
-                      
+
                       if (response.ok) {
                         const blob = await response.blob()
                         const url = window.URL.createObjectURL(blob)
-                        
+
                         const link = document.createElement('a')
                         link.href = url
                         link.download = `${profileData.username}-profile-picture.jpg`
                         link.style.display = 'none'
-                        
+
                         document.body.appendChild(link)
                         link.click()
                         document.body.removeChild(link)
-                        
+
                         setTimeout(() => {
                           window.URL.revokeObjectURL(url)
                         }, 1000)
-                        
+
                         return
                       }
                     } catch (fetchError) {
                       console.log('Direct fetch failed, trying alternative method')
                     }
-                    
+
                     // Fallback: Use direct link
                     const link = document.createElement('a')
                     link.href = profileData.profilePicUrl
                     link.download = `${profileData.username}-profile-picture.jpg`
                     link.target = '_blank'
                     link.style.display = 'none'
-                    
+
                     document.body.appendChild(link)
                     link.click()
                     document.body.removeChild(link)
@@ -419,13 +419,13 @@ export function InstagramDpViewer() {
                   </div>
                 )}
               </div>
-              
+
               {/* Download Instructions */}
               <p className="text-xs text-muted-foreground text-center">
-                💡 Click the image above or use the download button below<br/>
+                💡 Click the image above or use the download button below<br />
                 <span className="text-foreground">⚠️ May open in new tab due to browser security</span>
               </p>
-              
+
               {/* Profile Details */}
               <div className="text-center space-y-2">
                 <h4 className="text-lg sm:text-xl font-bold text-foreground">{profileData.fullName}</h4>
@@ -442,7 +442,7 @@ export function InstagramDpViewer() {
                   </div>
                 )}
               </div>
-              
+
               {/* Stats */}
               <div className="grid grid-cols-3 gap-4 text-center">
                 <div className="bg-muted rounded-lg p-3">
@@ -458,9 +458,9 @@ export function InstagramDpViewer() {
                   <p className="text-xs sm:text-sm text-muted-foreground">Following</p>
                 </div>
               </div>
-              
+
               {/* Download Button */}
-              <Button 
+              <Button
                 onClick={downloadImage}
                 disabled={downloading}
                 className="w-full max-w-sm sm:max-w-md h-10 sm:h-11 text-sm font-medium bg-gradient-to-r from-primary to-primary/90 hover:from-primary/90 hover:to-primary text-primary-foreground shadow-lg hover:shadow-xl transition-all duration-300"

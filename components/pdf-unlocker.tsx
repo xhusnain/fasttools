@@ -3,13 +3,13 @@
 import type React from "react"
 
 import { useState, useRef } from "react"
-import { Button } from "@/components/ui/button"
+import { GButton } from "@/components/globalcomponents/gbutton"
 import { Card } from "@/components/ui/card"
 import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
 import { Progress } from "@/components/ui/progress"
 import { Upload, Download, Unlock, CheckCircle2, AlertCircle, FileText, X, Shield } from "lucide-react"
-import { LoadingSpinner } from "@/components/loading-spinner"
+
 import { useToast } from "@/components/ui/toast"
 import { PDFDocument } from "pdf-lib"
 import * as pdfjsLib from "pdfjs-dist"
@@ -39,22 +39,22 @@ export function PDFUnlocker() {
   const detectEncryptionType = async (pdfFile: File): Promise<"none" | "owner" | "user"> => {
     try {
       const arrayBuffer = await pdfFile.arrayBuffer()
-      
+
       try {
         // Try loading without password
         const loadingTask = pdfjsLib.getDocument({ data: arrayBuffer })
         const pdfDoc = await loadingTask.promise
-        
+
         if (pdfDoc.numPages > 0) {
           // Check if encrypted
           const data = await pdfDoc.getData()
           const isEncrypted = String.fromCharCode.apply(null, Array.from(data.slice(0, 1000))).includes('/Encrypt')
-          
+
           return isEncrypted ? "owner" : "none"
         }
-        
+
         return "none"
-        
+
       } catch (error: any) {
         // Password exception means user password required
         if (error.name === 'PasswordException' || error.message?.includes('password')) {
@@ -79,16 +79,16 @@ export function PDFUnlocker() {
         showToast("error", "File size must be less than 50MB")
         return
       }
-      
+
       setFile(uploadedFile)
       setUnlocked(false)
       setUnlockedPdfBytes(null)
       setPassword("")
       setProgress(0)
-      
+
       const encType = await detectEncryptionType(uploadedFile)
       setEncryptionType(encType)
-      
+
       if (encType === "none") {
         showToast("success", "✅ PDF loaded - no protection found")
       } else if (encType === "owner") {
@@ -111,16 +111,16 @@ export function PDFUnlocker() {
         showToast("error", "File size must be less than 50MB")
         return
       }
-      
+
       setFile(droppedFile)
       setUnlocked(false)
       setUnlockedPdfBytes(null)
       setPassword("")
       setProgress(0)
-      
+
       const encType = await detectEncryptionType(droppedFile)
       setEncryptionType(encType)
-      
+
       if (encType === "none") {
         showToast("success", "✅ PDF loaded - no protection found")
       } else if (encType === "owner") {
@@ -153,7 +153,7 @@ export function PDFUnlocker() {
    */
   const renderPDFToImages = async (arrayBuffer: ArrayBuffer, userPassword?: string): Promise<Uint8Array> => {
     setProgress(5)
-    
+
     // Load PDF with password (if provided)
     let pdfDoc
     try {
@@ -168,38 +168,38 @@ export function PDFUnlocker() {
       }
       throw error
     }
-    
+
     const numPages = pdfDoc.numPages
     setProgress(10)
-    
+
     // Create new PDF
     const newPdf = await PDFDocument.create()
     setProgress(15)
-    
+
     // Render each page to image
     for (let pageNum = 1; pageNum <= numPages; pageNum++) {
       const page = await pdfDoc.getPage(pageNum)
       const viewport = page.getViewport({ scale: 2.0 })
-      
+
       // Create canvas
       const canvas = document.createElement('canvas')
       canvas.width = viewport.width
       canvas.height = viewport.height
       const context = canvas.getContext('2d', { alpha: false })
-      
+
       if (!context) throw new Error("Failed to get canvas context")
-      
+
       // White background
       context.fillStyle = 'white'
       context.fillRect(0, 0, canvas.width, canvas.height)
-      
+
       // Render PDF page to canvas
       await page.render({
         canvasContext: context,
         viewport: viewport,
         intent: 'print'
       }).promise
-      
+
       // Convert canvas to JPEG
       const blob = await new Promise<Blob>((resolve, reject) => {
         canvas.toBlob(
@@ -208,9 +208,9 @@ export function PDFUnlocker() {
           0.95
         )
       })
-      
+
       const imageBytes = new Uint8Array(await blob.arrayBuffer())
-      
+
       // Embed in new PDF
       const jpegImage = await newPdf.embedJpg(imageBytes)
       const pdfPage = newPdf.addPage([viewport.width, viewport.height])
@@ -220,18 +220,18 @@ export function PDFUnlocker() {
         width: viewport.width,
         height: viewport.height
       })
-      
+
       // Update progress
       const pageProgress = 15 + ((pageNum / numPages) * 75)
       setProgress(Math.round(pageProgress))
     }
-    
+
     setProgress(95)
-    
+
     // Save new PDF
     const pdfBytes = await newPdf.save()
     setProgress(100)
-    
+
     return pdfBytes
   }
 
@@ -240,45 +240,45 @@ export function PDFUnlocker() {
    */
   const unlockPDF = async () => {
     if (!file) return
-    
+
     // Check if password required
     if (encryptionType === "user" && (!password || password.trim() === "")) {
       showToast("error", "Password is required to unlock this PDF")
       return
     }
-    
+
     if (encryptionType === "none") {
       showToast("error", "This PDF has no protection to remove")
       return
     }
-    
+
     setLoading(true)
     setProgress(10)
-    
+
     try {
       const arrayBuffer = await file.arrayBuffer()
-      
+
       // Render PDF to images (works for both owner and user passwords)
       const pdfBytes = await renderPDFToImages(
         arrayBuffer,
         encryptionType === "user" ? password : undefined
       )
-      
+
       if (!pdfBytes || pdfBytes.length < 1000) {
         throw new Error("Generated PDF is empty")
       }
-      
+
       setUnlockedPdfBytes(pdfBytes)
       setUnlocked(true)
-      
+
       const fileSizeKB = (pdfBytes.length / 1024).toFixed(0)
-      
+
       if (encryptionType === "owner") {
         showToast("success", `✅ Restrictions removed! (${fileSizeKB} KB)`)
       } else {
         showToast("success", `✅ Password removed! (${fileSizeKB} KB)`)
       }
-      
+
     } catch (error: any) {
       if (error.message === "INCORRECT_PASSWORD") {
         showToast("error", "🔒 Wrong password! Please enter the correct password and try again.", 5000)
@@ -291,7 +291,7 @@ export function PDFUnlocker() {
         console.error("Error unlocking PDF:", error)
         showToast("error", `❌ Failed to unlock: ${error?.message || 'Unknown error'}`, 5000)
       }
-      
+
       // Clear password field on error
       if (error.message === "INCORRECT_PASSWORD" || error.message?.toLowerCase().includes("password")) {
         setPassword("")
@@ -304,7 +304,7 @@ export function PDFUnlocker() {
 
   const downloadUnlockedPDF = () => {
     if (!unlockedPdfBytes || !file) return
-    
+
     const blob = new Blob([unlockedPdfBytes], { type: "application/pdf" })
     const url = URL.createObjectURL(blob)
     const link = document.createElement("a")
@@ -314,7 +314,7 @@ export function PDFUnlocker() {
     link.click()
     document.body.removeChild(link)
     URL.revokeObjectURL(url)
-    
+
     showToast("success", "PDF downloaded successfully!")
   }
 
@@ -323,9 +323,9 @@ export function PDFUnlocker() {
       <ToastContainer />
       <div className="space-y-6">
         <Card className="p-6 shadow-lg border-border">
-    <div className="space-y-6">
+          <div className="space-y-6">
             {/* Upload Area */}
-          {!file ? (
+            {!file ? (
               <div
                 onDrop={handleDrop}
                 onDragOver={handleDragOver}
@@ -346,9 +346,9 @@ export function PDFUnlocker() {
                   onChange={handleFileUpload}
                   className="hidden"
                 />
-            </div>
-          ) : (
-            <div className="space-y-4">
+              </div>
+            ) : (
+              <div className="space-y-4">
                 {/* File Info */}
                 <div className="p-4 rounded-lg bg-muted/50 border border-border">
                   <div className="flex items-center justify-between">
@@ -362,26 +362,25 @@ export function PDFUnlocker() {
                         </p>
                       </div>
                     </div>
-                    <Button
+                    <GButton
                       variant="ghost"
                       size="sm"
                       onClick={removeFile}
                       className="h-8 w-8 p-0 hover:bg-destructive/10 hover:text-destructive"
                     >
                       <X className="h-4 w-4" />
-                    </Button>
+                    </GButton>
                   </div>
-                  
+
                   {/* Encryption Type Badge */}
                   {!unlocked && (
                     <div className="flex items-center gap-2 mt-3">
-                      <div className={`inline-flex items-center gap-1.5 px-3 py-1.5 rounded-md text-xs font-medium ${
-                        encryptionType === "none" 
-                          ? "bg-green-100 text-heading-accent dark:bg-green-900/30 dark:text-heading-accent"
-                          : encryptionType === "owner"
+                      <div className={`inline-flex items-center gap-1.5 px-3 py-1.5 rounded-md text-xs font-medium ${encryptionType === "none"
+                        ? "bg-green-100 text-heading-accent dark:bg-green-900/30 dark:text-heading-accent"
+                        : encryptionType === "owner"
                           ? "bg-blue-100 text-foreground dark:bg-blue-900/30 dark:text-foreground"
                           : "bg-yellow-100 text-foreground dark:bg-yellow-900/30 dark:text-foreground"
-                      }`}>
+                        }`}>
                         {encryptionType === "none" && "✓ No Protection"}
                         {encryptionType === "owner" && "🔓 Has Restrictions (Can Unlock!)"}
                         {encryptionType === "user" && "🔒 Password Protected (Can Unlock!)"}
@@ -389,17 +388,17 @@ export function PDFUnlocker() {
                     </div>
                   )}
                 </div>
-                
+
                 {/* Info for Owner Password PDFs */}
                 {!unlocked && encryptionType === "owner" && (
                   <div className="p-3 rounded-lg bg-blue-50 dark:bg-blue-900/20 border border-blue-200 dark:border-blue-800">
                     <p className="text-sm text-foreground">
-                      <strong>✅ Good news!</strong> This PDF only has restrictions (can't print, can't copy, can't edit). 
+                      <strong>✅ Good news!</strong> This PDF only has restrictions (can't print, can't copy, can't edit).
                       We can remove these restrictions <strong>without any password</strong>!
                     </p>
-              </div>
+                  </div>
                 )}
-                
+
                 {/* Info for User Password PDFs */}
                 {!unlocked && encryptionType === "user" && (
                   <div className="p-3 rounded-lg bg-yellow-50 dark:bg-yellow-900/20 border border-yellow-200 dark:border-yellow-800">
@@ -446,45 +445,43 @@ export function PDFUnlocker() {
                 {/* Action Buttons */}
                 <div className="space-y-3">
                   {!unlocked ? (
-                    <Button 
-                      onClick={unlockPDF} 
-                      disabled={loading || encryptionType === "none"} 
+                    <GButton
+                      onClick={unlockPDF}
+                      disabled={loading || encryptionType === "none"}
+                      isLoading={loading}
                       className="w-full h-11 text-sm font-semibold shadow-sm"
                       size="lg"
                     >
-                    {loading ? (
-                      <>
-                        <LoadingSpinner />
-                          <span className="ml-2">
-                            {encryptionType === "user" ? "Unlocking..." : "Removing restrictions..."}
-                          </span>
-                      </>
-                    ) : (
-                      <>
+                      {loading ? (
+                        <span className="ml-2">
+                          {encryptionType === "user" ? "Unlocking..." : "Removing restrictions..."}
+                        </span>
+                      ) : (
+                        <>
                           <Unlock className="h-5 w-5 mr-2" />
-                          {encryptionType === "owner" 
-                            ? "Remove Restrictions" 
+                          {encryptionType === "owner"
+                            ? "Remove Restrictions"
                             : encryptionType === "user"
-                            ? "Unlock PDF with Password"
-                            : "No Protection to Remove"}
-                      </>
-                    )}
-                  </Button>
+                              ? "Unlock PDF with Password"
+                              : "No Protection to Remove"}
+                        </>
+                      )}
+                    </GButton>
                   ) : (
-                    <Button 
+                    <GButton
                       onClick={downloadUnlockedPDF}
                       className="w-full h-11 text-sm font-semibold shadow-sm bg-green-600 hover:bg-green-700"
                       size="lg"
                     >
                       <Download className="h-5 w-5 mr-2" />
-                  Download Unlocked PDF
-                </Button>
-              )}
+                      Download Unlocked PDF
+                    </GButton>
+                  )}
                 </div>
-            </div>
-          )}
-        </div>
-      </Card>
+              </div>
+            )}
+          </div>
+        </Card>
 
         {/* Features */}
         <div className="p-5 rounded-lg bg-card border border-border shadow">
@@ -563,7 +560,7 @@ export function PDFUnlocker() {
             </div>
           </div>
         </div>
-    </div>
+      </div>
     </>
   )
 }

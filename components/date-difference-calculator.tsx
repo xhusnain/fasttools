@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from "react"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
-import { Button } from "@/components/ui/button"
+import { GButton } from "@/components/globalcomponents/gbutton"
 import { Label } from "@/components/ui/label"
 import { Checkbox } from "@/components/ui/checkbox"
 import { Calendar, Copy, Check, Clock, Briefcase, Settings, Calculator } from "lucide-react"
@@ -65,7 +65,7 @@ export function DateDifferenceCalculator() {
   const calculateBusinessDays = (start: Date, end: Date): number => {
     let count = 0
     const current = new Date(start)
-    
+
     while (current <= end) {
       const dayOfWeek = current.getDay()
       if (businessDaysOnly) {
@@ -85,7 +85,7 @@ export function DateDifferenceCalculator() {
       }
       current.setDate(current.getDate() + 1)
     }
-    
+
     return count
   }
 
@@ -166,64 +166,63 @@ export function DateDifferenceCalculator() {
             </div>
             <div className="grid grid-cols-3 gap-2">
               {dateFormats.map((format) => (
-                <Button
+                <GButton
                   key={format.value}
                   variant={dateFormat === format.value ? "default" : "outline"}
                   size="sm"
                   onClick={() => setDateFormat(format.value)}
-                  className={`h-9 text-xs font-medium transition-all ${
-                    dateFormat === format.value 
-                      ? 'bg-primary text-primary-foreground shadow-md' 
+                  className={`h-9 text-xs font-medium transition-all ${dateFormat === format.value
+                      ? 'bg-primary text-primary-foreground shadow-md'
                       : 'hover:bg-muted'
-                  }`}
+                    }`}
                 >
                   <div className="text-center w-full">
                     <div className="font-semibold text-xs">{format.label}</div>
                     <div className="text-[10px] opacity-75">{format.example}</div>
                   </div>
-                </Button>
+                </GButton>
               ))}
             </div>
           </div>
 
-                  {/* Date Inputs */}
-                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
-                    <div className="space-y-2">
-                      <Label htmlFor="startdate" className="text-sm font-semibold flex items-center gap-1.5">
-                        <Calendar className="h-3.5 w-3.5 text-primary" />
-                        Start Date
-                      </Label>
-                      <input
-                        id="startdate"
-                        type="date"
-                        value={startDate}
-                        onChange={(e) => setStartDate(e.target.value)}
-                        className="flex h-10 w-full rounded-lg border border-input bg-background px-3 py-2 text-sm font-medium ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-1 disabled:cursor-not-allowed disabled:opacity-50 transition-all hover:border-primary/50"
-                      />
-                    </div>
+          {/* Date Inputs */}
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+            <div className="space-y-2">
+              <Label htmlFor="startdate" className="text-sm font-semibold flex items-center gap-1.5">
+                <Calendar className="h-3.5 w-3.5 text-primary" />
+                Start Date
+              </Label>
+              <input
+                id="startdate"
+                type="date"
+                value={startDate}
+                onChange={(e) => setStartDate(e.target.value)}
+                className="flex h-10 w-full rounded-lg border border-input bg-background px-3 py-2 text-sm font-medium ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-1 disabled:cursor-not-allowed disabled:opacity-50 transition-all hover:border-primary/50"
+              />
+            </div>
 
-                    <div className="space-y-2">
-                      <Label htmlFor="enddate" className="text-sm font-semibold flex items-center gap-1.5">
-                        <Calendar className="h-3.5 w-3.5 text-primary" />
-                        End Date
-                      </Label>
-                      <input
-                        id="enddate"
-                        type="date"
-                        value={endDate}
-                        onChange={(e) => setEndDate(e.target.value)}
-                        className="flex h-10 w-full rounded-lg border border-input bg-background px-3 py-2 text-sm font-medium ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-1 disabled:cursor-not-allowed disabled:opacity-50 transition-all hover:border-primary/50"
-                      />
-                    </div>
-                  </div>
+            <div className="space-y-2">
+              <Label htmlFor="enddate" className="text-sm font-semibold flex items-center gap-1.5">
+                <Calendar className="h-3.5 w-3.5 text-primary" />
+                End Date
+              </Label>
+              <input
+                id="enddate"
+                type="date"
+                value={endDate}
+                onChange={(e) => setEndDate(e.target.value)}
+                className="flex h-10 w-full rounded-lg border border-input bg-background px-3 py-2 text-sm font-medium ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-1 disabled:cursor-not-allowed disabled:opacity-50 transition-all hover:border-primary/50"
+              />
+            </div>
+          </div>
 
-                  {/* Business Days Options */}
-                  <div className="space-y-2 p-3 bg-card rounded-lg border border-border">
-                    <div className="flex items-center gap-2 mb-2">
-                      <Briefcase className="h-3.5 w-3.5 text-primary" />
-                      <h3 className="text-sm font-semibold text-heading-accent">Business Days</h3>
-                    </div>
-            
+          {/* Business Days Options */}
+          <div className="space-y-2 p-3 bg-card rounded-lg border border-border">
+            <div className="flex items-center gap-2 mb-2">
+              <Briefcase className="h-3.5 w-3.5 text-primary" />
+              <h3 className="text-sm font-semibold text-heading-accent">Business Days</h3>
+            </div>
+
             <div className="space-y-2">
               <div className="flex items-center space-x-2 p-2 bg-card rounded border border-border">
                 <Checkbox
@@ -236,7 +235,7 @@ export function DateDifferenceCalculator() {
                   Exclude Weekends
                 </Label>
               </div>
-              
+
               {businessDaysOnly && (
                 <div className="flex items-center space-x-2 p-2 bg-card rounded ml-3 border-l-2 border-border border border-border">
                   <Checkbox
@@ -253,23 +252,23 @@ export function DateDifferenceCalculator() {
             </div>
           </div>
 
-                  <Button
-                    onClick={calculateDifference}
-                    className="w-full h-10 text-sm font-semibold shadow-md hover:shadow-lg transition-all duration-300"
-                    disabled={!startDate || !endDate || isCalculating}
-                  >
-                    {isCalculating ? (
-                      <>
-                        <LoadingSpinner size="sm" className="mr-2" />
-                        <span>Calculating...</span>
-                      </>
-                    ) : (
-                      <>
-                        <Calculator className="mr-2 h-4 w-4" />
-                        <span>Calculate Difference</span>
-                      </>
-                    )}
-                  </Button>
+          <GButton
+            onClick={calculateDifference}
+            className="w-full h-10 text-sm font-semibold shadow-md hover:shadow-lg transition-all duration-300"
+            disabled={!startDate || !endDate || isCalculating}
+          >
+            {isCalculating ? (
+              <>
+                <LoadingSpinner size="sm" className="mr-2" />
+                <span>Calculating...</span>
+              </>
+            ) : (
+              <>
+                <Calculator className="mr-2 h-4 w-4" />
+                <span>Calculate Difference</span>
+              </>
+            )}
+          </GButton>
         </CardContent>
       </Card>
 
@@ -287,21 +286,21 @@ export function DateDifferenceCalculator() {
             </CardDescription>
           </CardHeader>
           <CardContent className="space-y-4">
-                    {/* Main Results Grid */}
-                    <div className="grid grid-cols-3 gap-2">
-                      <div className="text-center p-3 rounded-lg bg-card border border-border hover:shadow-md transition-all">
-                        <div className="text-2xl font-bold text-foreground mb-1">{result.years}</div>
-                        <div className="text-xs font-semibold text-foreground">Years</div>
-                      </div>
-                      <div className="text-center p-3 rounded-lg bg-card border border-border hover:shadow-md transition-all">
-                        <div className="text-2xl font-bold text-foreground mb-1">{result.months}</div>
-                        <div className="text-xs font-semibold text-foreground">Months</div>
-                      </div>
-                      <div className="text-center p-3 rounded-lg bg-card border border-border hover:shadow-md transition-all">
-                        <div className="text-2xl font-bold text-heading-accent mb-1">{result.days}</div>
-                        <div className="text-xs font-semibold text-heading-accent">Days</div>
-                      </div>
-                    </div>
+            {/* Main Results Grid */}
+            <div className="grid grid-cols-3 gap-2">
+              <div className="text-center p-3 rounded-lg bg-card border border-border hover:shadow-md transition-all">
+                <div className="text-2xl font-bold text-foreground mb-1">{result.years}</div>
+                <div className="text-xs font-semibold text-foreground">Years</div>
+              </div>
+              <div className="text-center p-3 rounded-lg bg-card border border-border hover:shadow-md transition-all">
+                <div className="text-2xl font-bold text-foreground mb-1">{result.months}</div>
+                <div className="text-xs font-semibold text-foreground">Months</div>
+              </div>
+              <div className="text-center p-3 rounded-lg bg-card border border-border hover:shadow-md transition-all">
+                <div className="text-2xl font-bold text-heading-accent mb-1">{result.days}</div>
+                <div className="text-xs font-semibold text-heading-accent">Days</div>
+              </div>
+            </div>
 
             {/* Detailed Breakdown */}
             <div className="space-y-2 p-3 bg-card rounded-lg border border-border">
@@ -351,24 +350,24 @@ export function DateDifferenceCalculator() {
               </div>
             </div>
 
-                    <Button
-                      onClick={copyResult}
-                      variant="outline"
-                      size="sm"
-                      className="w-full h-9 text-xs font-semibold hover:bg-accent transition-all"
-                    >
-                      {copied ? (
-                        <>
-                          <Check className="mr-2 h-3.5 w-3.5" />
-                          <span>Copied!</span>
-                        </>
-                      ) : (
-                        <>
-                          <Copy className="mr-2 h-3.5 w-3.5" />
-                          <span>Copy Result</span>
-                        </>
-                      )}
-                    </Button>
+            <GButton
+              onClick={copyResult}
+              variant="outline"
+              size="sm"
+              className="w-full h-9 text-xs font-semibold hover:bg-accent transition-all"
+            >
+              {copied ? (
+                <>
+                  <Check className="mr-2 h-3.5 w-3.5" />
+                  <span>Copied!</span>
+                </>
+              ) : (
+                <>
+                  <Copy className="mr-2 h-3.5 w-3.5" />
+                  <span>Copy Result</span>
+                </>
+              )}
+            </GButton>
           </CardContent>
         </Card>
       )}

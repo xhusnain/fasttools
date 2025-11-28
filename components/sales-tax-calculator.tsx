@@ -1,57 +1,57 @@
 "use client"
 
 import { useState, useEffect } from "react"
-import { Button } from "@/components/ui/button"
+import { GButton } from "@/components/globalcomponents/gbutton"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
 import { Badge } from "@/components/ui/badge"
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
-import { 
-  Calculator, 
-  DollarSign, 
-  Percent, 
-  Receipt, 
-  Building, 
-  MapPin, 
-  TrendingUp, 
-  TrendingDown, 
-  Info, 
-  AlertCircle, 
-  CheckCircle, 
-  Copy, 
-  Download, 
-  History, 
-  Star, 
-  Globe, 
-  Shield, 
-  FileText, 
-  BarChart3, 
-  PieChart, 
-  Target, 
-  Zap, 
-  Clock, 
-  Calendar, 
-  Users, 
-  Home, 
-  Car, 
-  ShoppingBag, 
-  CreditCard, 
-  Banknote, 
-  Coins, 
-  Wallet, 
-  Briefcase, 
-  Store, 
-  Truck, 
-  Package, 
-  Tag, 
-  ShoppingCart, 
-  HandHeart, 
-  Gift, 
-  Award, 
-  Trophy, 
-  TrendingUp as TrendingUpIcon, 
+import {
+  Calculator,
+  DollarSign,
+  Percent,
+  Receipt,
+  Building,
+  MapPin,
+  TrendingUp,
+  TrendingDown,
+  Info,
+  AlertCircle,
+  CheckCircle,
+  Copy,
+  Download,
+  History,
+  Star,
+  Globe,
+  Shield,
+  FileText,
+  BarChart3,
+  PieChart,
+  Target,
+  Zap,
+  Clock,
+  Calendar,
+  Users,
+  Home,
+  Car,
+  ShoppingBag,
+  CreditCard,
+  Banknote,
+  Coins,
+  Wallet,
+  Briefcase,
+  Store,
+  Truck,
+  Package,
+  Tag,
+  ShoppingCart,
+  HandHeart,
+  Gift,
+  Award,
+  Trophy,
+  TrendingUp as TrendingUpIcon,
   TrendingDown as TrendingDownIcon
 } from "lucide-react"
 
@@ -160,11 +160,11 @@ export default function SalesTaxCalculator() {
       const rate = parseFloat(taxRate)
       const taxAmount = (price * rate) / 100
       const afterTax = price + taxAmount
-      
+
       const stateData = stateTaxRates.find(s => s.state === selectedState)
       const localTax = stateData ? stateData.localTax : 0
       const totalTaxRate = rate + localTax
-      
+
       const newResult: SalesTaxResult = {
         beforeTaxPrice: price,
         taxRate: rate,
@@ -183,7 +183,7 @@ export default function SalesTaxCalculator() {
         recommendations: generateRecommendations(price, rate, selectedState),
         comparison: generateComparison(rate, selectedState)
       }
-      
+
       setResult(newResult)
       setHistory(prev => [newResult, ...prev.slice(0, 4)])
     } else if (calculationMethod === "reverse" && afterTaxPrice && taxRate) {
@@ -191,11 +191,11 @@ export default function SalesTaxCalculator() {
       const rate = parseFloat(taxRate)
       const beforeTax = price / (1 + rate / 100)
       const taxAmount = price - beforeTax
-      
+
       const stateData = stateTaxRates.find(s => s.state === selectedState)
       const localTax = stateData ? stateData.localTax : 0
       const totalTaxRate = rate + localTax
-      
+
       const newResult: SalesTaxResult = {
         beforeTaxPrice: beforeTax,
         taxRate: rate,
@@ -214,7 +214,7 @@ export default function SalesTaxCalculator() {
         recommendations: generateRecommendations(beforeTax, rate, selectedState),
         comparison: generateComparison(rate, selectedState)
       }
-      
+
       setResult(newResult)
       setHistory(prev => [newResult, ...prev.slice(0, 4)])
     } else if (calculationMethod === "rate" && beforeTaxPrice && afterTaxPrice) {
@@ -222,11 +222,11 @@ export default function SalesTaxCalculator() {
       const afterTax = parseFloat(afterTaxPrice)
       const taxAmount = afterTax - beforeTax
       const rate = (taxAmount / beforeTax) * 100
-      
+
       const stateData = stateTaxRates.find(s => s.state === selectedState)
       const localTax = stateData ? stateData.localTax : 0
       const totalTaxRate = rate + localTax
-      
+
       const newResult: SalesTaxResult = {
         beforeTaxPrice: beforeTax,
         taxRate: rate,
@@ -245,7 +245,7 @@ export default function SalesTaxCalculator() {
         recommendations: generateRecommendations(beforeTax, rate, selectedState),
         comparison: generateComparison(rate, selectedState)
       }
-      
+
       setResult(newResult)
       setHistory(prev => [newResult, ...prev.slice(0, 4)])
     }
@@ -424,13 +424,13 @@ Total Tax Rate: ${result.totalTaxRate.toFixed(2)}%`
           )}
 
           <div className="flex flex-col sm:flex-row gap-2 w-full">
-            <Button onClick={calculateSalesTax} className="w-full sm:w-auto text-sm sm:text-base">
+            <GButton onClick={calculateSalesTax} className="w-full sm:w-auto text-sm sm:text-base">
               <Calculator className="mr-2 h-3.5 w-3.5 sm:h-4 sm:w-4" />
               Calculate Sales Tax
-            </Button>
-            <Button variant="outline" onClick={clearAll} className="w-full sm:w-auto text-sm sm:text-base">
+            </GButton>
+            <GButton variant="outline" onClick={clearAll} className="w-full sm:w-auto text-sm sm:text-base">
               Clear All
-            </Button>
+            </GButton>
           </div>
         </CardContent>
       </Card>
@@ -478,10 +478,10 @@ Total Tax Rate: ${result.totalTaxRate.toFixed(2)}%`
               </div>
 
               <div className="flex gap-2 pt-3">
-                <Button onClick={copyResult} variant="outline" size="sm" className="text-xs sm:text-sm">
+                <GButton onClick={copyResult} variant="outline" size="sm" className="text-xs sm:text-sm">
                   <Copy className="mr-2 h-3 w-3 sm:h-3.5 sm:w-3.5" />
                   Copy Results
-                </Button>
+                </GButton>
               </div>
             </CardContent>
           </Card>
@@ -610,14 +610,14 @@ Total Tax Rate: ${result.totalTaxRate.toFixed(2)}%`
                       {item.taxRate.toFixed(2)}% tax - {item.state}
                     </div>
                   </div>
-                  <Button
+                  <GButton
                     variant="ghost"
                     size="sm"
                     onClick={() => setResult(item)}
                     className="text-xs sm:text-sm"
                   >
                     View Details
-                  </Button>
+                  </GButton>
                 </div>
               ))}
             </div>
@@ -647,7 +647,7 @@ Total Tax Rate: ${result.totalTaxRate.toFixed(2)}%`
               </div>
             </div>
           </div>
-          
+
           <div className="text-xs sm:text-sm text-foreground space-y-1">
             <p className="break-words">
               <strong className="text-heading-accent">Forward Calculation:</strong> Calculate the final price after adding sales tax to the before-tax price.

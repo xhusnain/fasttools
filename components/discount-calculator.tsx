@@ -1,7 +1,7 @@
 "use client"
 
 import { useState } from "react"
-import { Button } from "@/components/ui/button"
+import { GButton } from "@/components/globalcomponents/gbutton"
 import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
@@ -48,7 +48,7 @@ export function DiscountCalculator() {
   }
 
   const updateDiscount = (id: string, field: keyof DiscountItem, value: string | number) => {
-    setDiscounts(discounts.map(d => 
+    setDiscounts(discounts.map(d =>
       d.id === id ? { ...d, [field]: value } : d
     ))
   }
@@ -58,7 +58,7 @@ export function DiscountCalculator() {
     setTimeout(() => {
       const price = Number.parseFloat(originalPrice) || 0
       const tax = Number.parseFloat(taxRate) || 0
-      
+
       let subtotal = price
       let totalDiscounts = 0
       let discountedSubtotal = price
@@ -207,7 +207,7 @@ Effective Discount Rate: ${result.effectiveDiscountRate.toFixed(2)}%`
                   <Label className="text-xs font-medium text-foreground">
                     Discounts ({discounts.length})
                   </Label>
-                  <Button
+                  <GButton
                     onClick={addDiscount}
                     variant="outline"
                     size="sm"
@@ -215,7 +215,7 @@ Effective Discount Rate: ${result.effectiveDiscountRate.toFixed(2)}%`
                   >
                     <Plus className="h-3 w-3 mr-1" />
                     Add
-                  </Button>
+                  </GButton>
                 </div>
 
                 {discounts.length === 0 ? (
@@ -235,14 +235,14 @@ Effective Discount Rate: ${result.effectiveDiscountRate.toFixed(2)}%`
                               placeholder="Name"
                               className="h-7 text-xs border border-border focus:border-orange-400 flex-1"
                             />
-                            <Button
+                            <GButton
                               onClick={() => removeDiscount(discount.id)}
                               variant="outline"
                               size="sm"
                               className="h-7 px-2 text-xs text-destructive hover:text-destructive"
                             >
                               <Trash2 className="h-3 w-3" />
-                            </Button>
+                            </GButton>
                           </div>
                           <div className="grid grid-cols-2 gap-2">
                             <Select value={discount.type} onValueChange={(value: 'percentage' | 'fixed') => updateDiscount(discount.id, 'type', value)}>
@@ -273,11 +273,11 @@ Effective Discount Rate: ${result.effectiveDiscountRate.toFixed(2)}%`
 
               {/* Action Buttons */}
               <div className="flex gap-2">
-              <Button
-                onClick={calculateDiscount}
-                disabled={loading || !originalPrice}
-                className="flex-1 h-9 text-xs font-medium shadow-sm hover:shadow-md transition-all"
-              >
+                <GButton
+                  onClick={calculateDiscount}
+                  disabled={loading || !originalPrice}
+                  className="flex-1 h-9 text-xs font-medium shadow-sm hover:shadow-md transition-all"
+                >
                   {loading ? (
                     <>
                       <LoadingSpinner className="mr-1 h-3 w-3" />
@@ -289,14 +289,14 @@ Effective Discount Rate: ${result.effectiveDiscountRate.toFixed(2)}%`
                       Calculate
                     </>
                   )}
-                </Button>
-                <Button
+                </GButton>
+                <GButton
                   onClick={resetCalculator}
                   variant="outline"
                   className="h-9 px-3 text-xs"
                 >
                   Reset
-                </Button>
+                </GButton>
               </div>
             </div>
 
@@ -364,14 +364,14 @@ Effective Discount Rate: ${result.effectiveDiscountRate.toFixed(2)}%`
                   </div>
 
                   {/* Copy Button */}
-                  <Button
+                  <GButton
                     onClick={copyResult}
                     variant="outline"
                     className="w-full h-8 text-xs font-medium hover:bg-accent transition-all bg-transparent"
                   >
                     <Copy className="mr-1 h-3 w-3" />
                     Copy Results
-                  </Button>
+                  </GButton>
                 </>
               ) : (
                 <div className="flex items-center justify-center h-64">

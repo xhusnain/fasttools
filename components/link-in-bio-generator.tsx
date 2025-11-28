@@ -1,7 +1,7 @@
 "use client"
 
 import React, { useState } from "react"
-import { Button } from "@/components/ui/button"
+import { GButton } from "@/components/globalcomponents/gbutton"
 import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
 import { Card } from "@/components/ui/card"
@@ -272,8 +272,8 @@ export function LinkInBioGenerator() {
     ${links.filter(link => link.type === "social" && link.logo && (link.displayMode === "icon" || link.displayMode === "both" || !link.displayMode)).length > 0 ? `
     <div class="social-icons" style="display: flex; flex-wrap: wrap; justify-content: center; gap: 12px; margin-bottom: 20px;">
     ${links
-        .filter(link => link.type === "social" && link.logo && (link.displayMode === "icon" || link.displayMode === "both" || !link.displayMode))
-        .map(link => `
+          .filter(link => link.type === "social" && link.logo && (link.displayMode === "icon" || link.displayMode === "both" || !link.displayMode))
+          .map(link => `
         <div class="social-icon" style="width: 40px; height: 40px; border-radius: 50%; background: white; box-shadow: 0 2px 8px rgba(0,0,0,0.1); display: flex; align-items: center; justify-content: center; cursor: pointer; transition: transform 0.2s;" title="${link.title}">
           <img src="${link.logo}" alt="${link.title}" style="width: 24px; height: 24px; object-fit: contain;" />
         </div>
@@ -281,20 +281,20 @@ export function LinkInBioGenerator() {
     </div>
     ` : ''}
     ${links
-      .filter((link) => link.title && link.url && (link.displayMode === "text" || link.displayMode === "both" || !link.displayMode))
-      .map((link) => {
-        let logoHtml = ""
-        let textHtml = link.title
-        
-        if (link.displayMode === "both" || link.displayMode === "text" || !link.displayMode) {
-          logoHtml = link.logo 
-            ? `<img src="${link.logo}" alt="Platform logo" style="width: 20px; height: 20px; object-fit: contain; margin-right: 8px; vertical-align: middle;" />`
-            : `<span style="font-size: 16px; margin-right: 8px; vertical-align: middle;">🔗</span>`
-        }
-        
-        return `<a href="${link.url}" class="link" target="_blank" style="display: flex; align-items: center;">${logoHtml}${textHtml}</a>`
-      })
-      .join("\n    ")}
+        .filter((link) => link.title && link.url && (link.displayMode === "text" || link.displayMode === "both" || !link.displayMode))
+        .map((link) => {
+          let logoHtml = ""
+          let textHtml = link.title
+
+          if (link.displayMode === "both" || link.displayMode === "text" || !link.displayMode) {
+            logoHtml = link.logo
+              ? `<img src="${link.logo}" alt="Platform logo" style="width: 20px; height: 20px; object-fit: contain; margin-right: 8px; vertical-align: middle;" />`
+              : `<span style="font-size: 16px; margin-right: 8px; vertical-align: middle;">🔗</span>`
+          }
+
+          return `<a href="${link.url}" class="link" target="_blank" style="display: flex; align-items: center;">${logoHtml}${textHtml}</a>`
+        })
+        .join("\n    ")}
     ${footer ? `
     <div class="footer" style="margin-top: 24px; text-align: center;">
       <p style="font-size: ${textSizes.footer}px; opacity: 0.7; color: ${theme.textColor}; margin: 0;">${footer}</p>
@@ -318,65 +318,65 @@ export function LinkInBioGenerator() {
       <Card className="p-4 sm:p-6 bg-card border-border shadow-sm">
         <div className="space-y-6">
           {/* Basic Information */}
-        <div className="space-y-4">
+          <div className="space-y-4">
             <h3 className="text-lg font-semibold text-foreground flex items-center gap-2">
               <Settings className="h-5 w-5" />
               Basic Information
             </h3>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-          <div>
-            <Label htmlFor="profile-name" className="text-sm font-medium text-foreground">
-              Profile Name
-            </Label>
-            <Input
-              id="profile-name"
-              type="text"
-              placeholder="Your Name or Brand"
-              value={profileName}
-              onChange={(e) => setProfileName(e.target.value)}
-                  className="mt-2 h-11 text-base border-2 border-primary focus:border-orange-600 focus:ring-2 focus:ring-orange-200"
-            />
-          </div>
-          <div>
-            <Label htmlFor="bio" className="text-sm font-medium text-foreground">
-              Bio / Description
-            </Label>
-            <Input
-              id="bio"
-              type="text"
-              placeholder="A short description about you"
-              value={bio}
-              onChange={(e) => setBio(e.target.value)}
-              className="mt-2 h-11 text-base border-2 border-primary focus:border-orange-600 focus:ring-2 focus:ring-orange-200"
-            />
-          </div>
-          <div>
-            <Label htmlFor="website-url" className="text-sm font-medium text-foreground">
-              Website URL (Optional)
-            </Label>
-            <Input
-              id="website-url"
-              type="url"
-              placeholder="https://yourwebsite.com"
-              value={websiteUrl}
-              onChange={(e) => setWebsiteUrl(e.target.value)}
-              className="mt-2 h-11 text-base border-2 border-primary focus:border-orange-600 focus:ring-2 focus:ring-orange-200"
-            />
-          </div>
-          <div>
-            <Label htmlFor="footer" className="text-sm font-medium text-foreground">
-              Footer Text (Optional)
-            </Label>
+              <div>
+                <Label htmlFor="profile-name" className="text-sm font-medium text-foreground">
+                  Profile Name
+                </Label>
                 <Input
-              id="footer"
+                  id="profile-name"
                   type="text"
-              placeholder="Footer text (e.g., © 2024 Your Name)"
-              value={footer}
-              onChange={(e) => setFooter(e.target.value)}
-              className="mt-2 h-11 text-base border-2 border-primary focus:border-orange-600 focus:ring-2 focus:ring-orange-200"
-            />
-          </div>
-        </div>
+                  placeholder="Your Name or Brand"
+                  value={profileName}
+                  onChange={(e) => setProfileName(e.target.value)}
+                  className="mt-2 h-11 text-base border-2 border-primary focus:border-orange-600 focus:ring-2 focus:ring-orange-200"
+                />
+              </div>
+              <div>
+                <Label htmlFor="bio" className="text-sm font-medium text-foreground">
+                  Bio / Description
+                </Label>
+                <Input
+                  id="bio"
+                  type="text"
+                  placeholder="A short description about you"
+                  value={bio}
+                  onChange={(e) => setBio(e.target.value)}
+                  className="mt-2 h-11 text-base border-2 border-primary focus:border-orange-600 focus:ring-2 focus:ring-orange-200"
+                />
+              </div>
+              <div>
+                <Label htmlFor="website-url" className="text-sm font-medium text-foreground">
+                  Website URL (Optional)
+                </Label>
+                <Input
+                  id="website-url"
+                  type="url"
+                  placeholder="https://yourwebsite.com"
+                  value={websiteUrl}
+                  onChange={(e) => setWebsiteUrl(e.target.value)}
+                  className="mt-2 h-11 text-base border-2 border-primary focus:border-orange-600 focus:ring-2 focus:ring-orange-200"
+                />
+              </div>
+              <div>
+                <Label htmlFor="footer" className="text-sm font-medium text-foreground">
+                  Footer Text (Optional)
+                </Label>
+                <Input
+                  id="footer"
+                  type="text"
+                  placeholder="Footer text (e.g., © 2024 Your Name)"
+                  value={footer}
+                  onChange={(e) => setFooter(e.target.value)}
+                  className="mt-2 h-11 text-base border-2 border-primary focus:border-orange-600 focus:ring-2 focus:ring-orange-200"
+                />
+              </div>
+            </div>
           </div>
 
           {/* Theme Selection */}
@@ -390,11 +390,10 @@ export function LinkInBioGenerator() {
                 <button
                   key={theme.id}
                   onClick={() => setSelectedTheme(theme.id)}
-                  className={`p-3 rounded-lg border-2 transition-all ${
-                    selectedTheme === theme.id
+                  className={`p-3 rounded-lg border-2 transition-all ${selectedTheme === theme.id
                       ? "border-primary bg-primary/10"
                       : "border-border hover:border-primary/50"
-                  }`}
+                    }`}
                 >
                   <div className="space-y-2">
                     <div
@@ -420,11 +419,10 @@ export function LinkInBioGenerator() {
               ))}
               <button
                 onClick={() => setSelectedTheme("custom")}
-                className={`p-3 rounded-lg border-2 transition-all ${
-                  selectedTheme === "custom"
+                className={`p-3 rounded-lg border-2 transition-all ${selectedTheme === "custom"
                     ? "border-primary bg-primary/10"
                     : "border-border hover:border-primary/50"
-                }`}
+                  }`}
               >
                 <div className="space-y-2">
                   <div className="w-full h-8 rounded bg-gradient-to-r from-red-500 via-yellow-500 via-green-500 via-blue-500 to-purple-500" />
@@ -452,36 +450,36 @@ export function LinkInBioGenerator() {
             <div className="space-y-4">
               <h3 className="text-lg font-semibold text-foreground flex items-center gap-2">
                 <Palette className="h-5 w-5" />
-              Custom Colors
-            </h3>
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                Custom Colors
+              </h3>
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 <ColorPicker
                   value={customColors.background}
-                  onChange={(color) => setCustomColors({...customColors, background: color})}
+                  onChange={(color) => setCustomColors({ ...customColors, background: color })}
                   label="Background Color"
                   id="custom-background"
                 />
                 <ColorPicker
                   value={customColors.cardBg}
-                  onChange={(color) => setCustomColors({...customColors, cardBg: color})}
+                  onChange={(color) => setCustomColors({ ...customColors, cardBg: color })}
                   label="Card Background"
                   id="custom-card-bg"
                 />
                 <ColorPicker
                   value={customColors.textColor}
-                  onChange={(color) => setCustomColors({...customColors, textColor: color})}
+                  onChange={(color) => setCustomColors({ ...customColors, textColor: color })}
                   label="Text Color"
                   id="custom-text-color"
                 />
                 <ColorPicker
                   value={customColors.linkBg}
-                  onChange={(color) => setCustomColors({...customColors, linkBg: color})}
+                  onChange={(color) => setCustomColors({ ...customColors, linkBg: color })}
                   label="Link Background"
                   id="custom-link-bg"
                 />
                 <ColorPicker
                   value={customColors.linkHover}
-                  onChange={(color) => setCustomColors({...customColors, linkHover: color})}
+                  onChange={(color) => setCustomColors({ ...customColors, linkHover: color })}
                   label="Link Hover Color"
                   id="custom-link-hover"
                 />
@@ -506,7 +504,7 @@ export function LinkInBioGenerator() {
                   min="14"
                   max="32"
                   value={textSizes.heading}
-                  onChange={(e) => setTextSizes({...textSizes, heading: parseInt(e.target.value)})}
+                  onChange={(e) => setTextSizes({ ...textSizes, heading: parseInt(e.target.value) })}
                   className="mt-2 w-full h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer slider"
                 />
               </div>
@@ -520,7 +518,7 @@ export function LinkInBioGenerator() {
                   min="8"
                   max="18"
                   value={textSizes.bio}
-                  onChange={(e) => setTextSizes({...textSizes, bio: parseInt(e.target.value)})}
+                  onChange={(e) => setTextSizes({ ...textSizes, bio: parseInt(e.target.value) })}
                   className="mt-2 w-full h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer slider"
                 />
               </div>
@@ -534,7 +532,7 @@ export function LinkInBioGenerator() {
                   min="6"
                   max="16"
                   value={textSizes.footer}
-                  onChange={(e) => setTextSizes({...textSizes, footer: parseInt(e.target.value)})}
+                  onChange={(e) => setTextSizes({ ...textSizes, footer: parseInt(e.target.value) })}
                   className="mt-2 w-full h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer slider"
                 />
               </div>
@@ -548,7 +546,7 @@ export function LinkInBioGenerator() {
                   min="8"
                   max="18"
                   value={textSizes.linkButton}
-                  onChange={(e) => setTextSizes({...textSizes, linkButton: parseInt(e.target.value)})}
+                  onChange={(e) => setTextSizes({ ...textSizes, linkButton: parseInt(e.target.value) })}
                   className="mt-2 w-full h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer slider"
                 />
               </div>
@@ -561,181 +559,177 @@ export function LinkInBioGenerator() {
               <Plus className="h-5 w-5" />
               Links
             </h3>
-          <div className="space-y-4">
-            {/* Platform Selection */}
-            <div className="flex gap-2">
-              <select
-                value={selectedPlatform}
-                onChange={(e) => setSelectedPlatform(e.target.value)}
-                className="flex-1 h-11 px-3 rounded-lg border-2 border-primary focus:border-orange-600 focus:ring-2 focus:ring-orange-200 bg-background text-foreground"
-              >
-                <option value="social">Social Media</option>
-                <option value="email">Email</option>
-              </select>
-              
-                  <Button
-                    variant="outline"
-                onClick={() => setShowAddDropdown(!showAddDropdown)}
-                className="h-11 px-4 border-2 border-primary hover:border-orange-600"
-                  >
-                <Plus className="h-4 w-4 mr-2" />
-                Add {selectedPlatform === "custom" ? "Link" : selectedPlatform === "social" ? "Social" : "Email"}
-                  </Button>
-            </div>
+            <div className="space-y-4">
+              {/* Platform Selection */}
+              <div className="flex gap-2">
+                <select
+                  value={selectedPlatform}
+                  onChange={(e) => setSelectedPlatform(e.target.value)}
+                  className="flex-1 h-11 px-3 rounded-lg border-2 border-primary focus:border-orange-600 focus:ring-2 focus:ring-orange-200 bg-background text-foreground"
+                >
+                  <option value="social">Social Media</option>
+                  <option value="email">Email</option>
+                </select>
 
-            {/* Dropdown for Social Media and Email */}
-            {showAddDropdown && (
-              <div className="p-4 rounded-lg bg-muted/30 border border-border">
-                {selectedPlatform === "social" && (
-                  <div>
-                    <h4 className="text-sm font-medium text-foreground mb-3">Select Social Media Platform</h4>
-                    <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-2">
-                      {socialMediaPlatforms.map((platform) => (
-                        <button
-                          key={platform.id}
-                          onClick={() => platform.id === "custom" ? addSocialMediaLink() : addSocialMediaLink(platform)}
-                          className="flex items-center gap-2 p-3 rounded-lg border border-border hover:border-primary hover:bg-primary/10 transition-colors"
-                        >
-                          <img src={platform.logo} alt={platform.name} className="w-5 h-5 object-contain" />
-                          <span className="text-sm font-medium text-foreground">{platform.name}</span>
-                        </button>
-                      ))}
-                    </div>
-                  </div>
-                )}
-
-                {selectedPlatform === "email" && (
-                  <div>
-                    <h4 className="text-sm font-medium text-foreground mb-3">Select Email Provider</h4>
-                    <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-3">
-                      {emailProviders.map((provider) => (
-                        <button
-                          key={provider.id}
-                          onClick={() => {
-                            const email = prompt(`Enter your ${provider.name} email:`)
-                            if (email) {
-                              addEmailLink(provider, email)
-                            }
-                          }}
-                          className="flex flex-col items-center gap-2 p-3 rounded-lg border border-border hover:border-primary hover:bg-primary/10 transition-colors"
-                        >
-                          <img src={provider.logo} alt={provider.name} className="w-6 h-6 object-contain" />
-                          <span className="text-xs font-medium text-foreground text-center">{provider.name}</span>
-                        </button>
-                      ))}
-                    </div>
-                  </div>
-                )}
+                <GButton
+                  variant="outline"
+                  onClick={() => setShowAddDropdown(!showAddDropdown)}
+                  className="h-11 px-4 border-2 border-primary hover:border-orange-600"
+                >
+                  <Plus className="h-4 w-4 mr-2" />
+                  Add {selectedPlatform === "custom" ? "Link" : selectedPlatform === "social" ? "Social" : "Email"}
+                </GButton>
               </div>
-            )}
 
-            {/* Links List */}
-            <div className="space-y-3">
-            {links.map((link, index) => (
-                <div key={link.id} className="p-4 rounded-lg bg-muted/30 border border-border">
-                  <div className="flex items-center gap-3 mb-3">
-                    {/* Logo Display */}
-                    <div className="flex items-center gap-2">
-                      {link.customLogo ? (
-                        <img src={link.customLogo} alt="Custom logo" className="w-6 h-6 rounded object-cover" />
-                      ) : link.logo ? (
-                        <span className="text-lg">{link.logo}</span>
-                      ) : (
-                        <div className="w-6 h-6 rounded bg-muted flex items-center justify-center">
-                          <span className="text-xs">🔗</span>
-                        </div>
-                      )}
-                    </div>
-
-                    {/* Link Type Badge */}
-                    <div className="flex gap-2">
-                      <span className={`px-2 py-1 rounded text-xs font-medium ${
-                        link.type === "social" ? "bg-blue-100 text-foreground" :
-                        link.type === "email" ? "bg-green-100 text-heading-accent" :
-                        "bg-gray-100 text-gray-800"
-                      }`}>
-                        {link.type === "social" ? "Social" : link.type === "email" ? "Email" : "Custom"}
-                      </span>
-                    </div>
-
-                    {/* Remove Button */}
-                    <Button
-                      variant="ghost"
-                      size="sm"
-                      onClick={() => removeLink(link.id)}
-                      className="ml-auto h-8 w-8 p-0 text-muted-foreground hover:text-destructive"
-                    >
-                      <Trash2 className="h-4 w-4" />
-                    </Button>
-                  </div>
-
-                  <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
+              {/* Dropdown for Social Media and Email */}
+              {showAddDropdown && (
+                <div className="p-4 rounded-lg bg-muted/30 border border-border">
+                  {selectedPlatform === "social" && (
                     <div>
-                      <Label className="text-sm font-medium text-foreground">Title</Label>
-                <Input
-                  value={link.title}
-                  onChange={(e) => updateLink(link.id, "title", e.target.value)}
-                        placeholder="Link title"
-                        className="mt-1 h-10 text-sm border-2 border-primary focus:border-orange-600 focus:ring-2 focus:ring-orange-200"
-                />
+                      <h4 className="text-sm font-medium text-foreground mb-3">Select Social Media Platform</h4>
+                      <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-2">
+                        {socialMediaPlatforms.map((platform) => (
+                          <button
+                            key={platform.id}
+                            onClick={() => platform.id === "custom" ? addSocialMediaLink() : addSocialMediaLink(platform)}
+                            className="flex items-center gap-2 p-3 rounded-lg border border-border hover:border-primary hover:bg-primary/10 transition-colors"
+                          >
+                            <img src={platform.logo} alt={platform.name} className="w-5 h-5 object-contain" />
+                            <span className="text-sm font-medium text-foreground">{platform.name}</span>
+                          </button>
+                        ))}
+                      </div>
                     </div>
+                  )}
+
+                  {selectedPlatform === "email" && (
                     <div>
-                      <Label className="text-sm font-medium text-foreground">URL</Label>
-                <Input
-                  value={link.url}
-                  onChange={(e) => updateLink(link.id, "url", e.target.value)}
-                        placeholder="https://example.com"
-                        className="mt-1 h-10 text-sm border-2 border-primary focus:border-orange-600 focus:ring-2 focus:ring-orange-200"
-                      />
+                      <h4 className="text-sm font-medium text-foreground mb-3">Select Email Provider</h4>
+                      <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-3">
+                        {emailProviders.map((provider) => (
+                          <button
+                            key={provider.id}
+                            onClick={() => {
+                              const email = prompt(`Enter your ${provider.name} email:`)
+                              if (email) {
+                                addEmailLink(provider, email)
+                              }
+                            }}
+                            className="flex flex-col items-center gap-2 p-3 rounded-lg border border-border hover:border-primary hover:bg-primary/10 transition-colors"
+                          >
+                            <img src={provider.logo} alt={provider.name} className="w-6 h-6 object-contain" />
+                            <span className="text-xs font-medium text-foreground text-center">{provider.name}</span>
+                          </button>
+                        ))}
+                      </div>
                     </div>
-                  </div>
+                  )}
+                </div>
+              )}
 
-                  {/* Display Mode Selector */}
-                  <div className="mt-3">
-                    <Label className="text-sm font-medium text-foreground">Display Mode</Label>
-                    <div className="flex gap-2 mt-2">
-                      <button
-                        onClick={() => updateLink(link.id, "displayMode", "both")}
-                        className={`px-3 py-2 rounded-md text-sm font-medium transition-colors ${
-                          (link.displayMode || "both") === "both"
-                            ? "bg-primary text-primary-foreground"
-                            : "bg-muted text-muted-foreground hover:bg-muted/80"
-                        }`}
+              {/* Links List */}
+              <div className="space-y-3">
+                {links.map((link, index) => (
+                  <div key={link.id} className="p-4 rounded-lg bg-muted/30 border border-border">
+                    <div className="flex items-center gap-3 mb-3">
+                      {/* Logo Display */}
+                      <div className="flex items-center gap-2">
+                        {link.customLogo ? (
+                          <img src={link.customLogo} alt="Custom logo" className="w-6 h-6 rounded object-cover" />
+                        ) : link.logo ? (
+                          <span className="text-lg">{link.logo}</span>
+                        ) : (
+                          <div className="w-6 h-6 rounded bg-muted flex items-center justify-center">
+                            <span className="text-xs">🔗</span>
+                          </div>
+                        )}
+                      </div>
+
+                      {/* Link Type Badge */}
+                      <div className="flex gap-2">
+                        <span className={`px-2 py-1 rounded text-xs font-medium ${link.type === "social" ? "bg-blue-100 text-foreground" :
+                            link.type === "email" ? "bg-green-100 text-heading-accent" :
+                              "bg-gray-100 text-gray-800"
+                          }`}>
+                          {link.type === "social" ? "Social" : link.type === "email" ? "Email" : "Custom"}
+                        </span>
+                      </div>
+
+                      {/* Remove Button */}
+                      <GButton
+                        variant="ghost"
+                        size="sm"
+                        onClick={() => removeLink(link.id)}
+                        className="ml-auto h-8 w-8 p-0 text-muted-foreground hover:text-destructive"
                       >
-                        Both
-                      </button>
-                      <button
-                        onClick={() => updateLink(link.id, "displayMode", "icon")}
-                        className={`px-3 py-2 rounded-md text-sm font-medium transition-colors ${
-                          link.displayMode === "icon"
-                            ? "bg-primary text-primary-foreground"
-                            : "bg-muted text-muted-foreground hover:bg-muted/80"
-                        }`}
-                      >
-                        Icon Only
-                      </button>
-                      <button
-                        onClick={() => updateLink(link.id, "displayMode", "text")}
-                        className={`px-3 py-2 rounded-md text-sm font-medium transition-colors ${
-                          link.displayMode === "text"
-                            ? "bg-primary text-primary-foreground"
-                            : "bg-muted text-muted-foreground hover:bg-muted/80"
-                        }`}
-                      >
-                        Text Only
-                      </button>
+                        <Trash2 className="h-4 w-4" />
+                      </GButton>
                     </div>
-                  </div>
 
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
+                      <div>
+                        <Label className="text-sm font-medium text-foreground">Title</Label>
+                        <Input
+                          value={link.title}
+                          onChange={(e) => updateLink(link.id, "title", e.target.value)}
+                          placeholder="Link title"
+                          className="mt-1 h-10 text-sm border-2 border-primary focus:border-orange-600 focus:ring-2 focus:ring-orange-200"
+                        />
+                      </div>
+                      <div>
+                        <Label className="text-sm font-medium text-foreground">URL</Label>
+                        <Input
+                          value={link.url}
+                          onChange={(e) => updateLink(link.id, "url", e.target.value)}
+                          placeholder="https://example.com"
+                          className="mt-1 h-10 text-sm border-2 border-primary focus:border-orange-600 focus:ring-2 focus:ring-orange-200"
+                        />
+                      </div>
+                    </div>
+
+                    {/* Display Mode Selector */}
+                    <div className="mt-3">
+                      <Label className="text-sm font-medium text-foreground">Display Mode</Label>
+                      <div className="flex gap-2 mt-2">
+                        <button
+                          onClick={() => updateLink(link.id, "displayMode", "both")}
+                          className={`px-3 py-2 rounded-md text-sm font-medium transition-colors ${(link.displayMode || "both") === "both"
+                              ? "bg-primary text-primary-foreground"
+                              : "bg-muted text-muted-foreground hover:bg-muted/80"
+                            }`}
+                        >
+                          Both
+                        </button>
+                        <button
+                          onClick={() => updateLink(link.id, "displayMode", "icon")}
+                          className={`px-3 py-2 rounded-md text-sm font-medium transition-colors ${link.displayMode === "icon"
+                              ? "bg-primary text-primary-foreground"
+                              : "bg-muted text-muted-foreground hover:bg-muted/80"
+                            }`}
+                        >
+                          Icon Only
+                        </button>
+                        <button
+                          onClick={() => updateLink(link.id, "displayMode", "text")}
+                          className={`px-3 py-2 rounded-md text-sm font-medium transition-colors ${link.displayMode === "text"
+                              ? "bg-primary text-primary-foreground"
+                              : "bg-muted text-muted-foreground hover:bg-muted/80"
+                            }`}
+                        >
+                          Text Only
+                        </button>
+                      </div>
+                    </div>
+
+                  </div>
+                ))}
               </div>
-            ))}
             </div>
-          </div>
           </div>
 
           {/* Action Buttons */}
           <div className="flex flex-col sm:flex-row gap-2">
-            <Button
+            <GButton
               onClick={() => {
                 setPreview(!preview)
                 if (!preview) {
@@ -747,8 +741,8 @@ export function LinkInBioGenerator() {
             >
               <Eye className="mr-2 h-5 w-5" />
               {preview ? "Hide Preview" : "Show Preview"}
-            </Button>
-            <Button
+            </GButton>
+            <GButton
               onClick={() => {
                 setShowHtml(!showHtml)
                 if (!showHtml) {
@@ -760,8 +754,8 @@ export function LinkInBioGenerator() {
             >
               <Code className="mr-2 h-5 w-5" />
               {showHtml ? "Hide HTML" : "Show HTML"}
-            </Button>
-            <Button onClick={copyHtml} className="flex-1 h-11 text-base font-medium">
+            </GButton>
+            <GButton onClick={copyHtml} className="flex-1 h-11 text-base font-medium">
               {copied ? (
                 <>
                   <Check className="mr-2 h-5 w-5" />
@@ -773,8 +767,8 @@ export function LinkInBioGenerator() {
                   Copy HTML
                 </>
               )}
-            </Button>
-            <Button
+            </GButton>
+            <GButton
               onClick={() => {
                 const blob = new Blob([generateHtml()], { type: 'text/html' })
                 const url = URL.createObjectURL(blob)
@@ -789,7 +783,7 @@ export function LinkInBioGenerator() {
             >
               <Download className="mr-2 h-5 w-5" />
               Download
-            </Button>
+            </GButton>
           </div>
         </div>
       </Card>
@@ -876,23 +870,23 @@ export function LinkInBioGenerator() {
                     <div className="w-full h-full bg-white">
                       <div
                         className="w-full h-full p-3 text-center overflow-y-auto"
-                        style={{ 
+                        style={{
                           background: getCurrentTheme().background
                         }}
                       >
                         {/* Mobile Profile Info */}
-                        <h1 
+                        <h1
                           className="font-bold mb-2"
-                          style={{ 
+                          style={{
                             color: getCurrentTheme().textColor,
                             fontSize: `${textSizes.heading}px`
                           }}
                         >
                           {profileName || "Your Name"}
                         </h1>
-                        <p 
+                        <p
                           className="mb-4 leading-relaxed"
-                          style={{ 
+                          style={{
                             color: getCurrentTheme().textColor,
                             fontSize: `${textSizes.bio}px`
                           }}
@@ -908,7 +902,7 @@ export function LinkInBioGenerator() {
                               target="_blank"
                               rel="noopener noreferrer"
                               className="inline-flex items-center gap-2 px-3 py-1.5 rounded-md transition-colors"
-                              style={{ 
+                              style={{
                                 backgroundColor: getCurrentTheme().linkBg,
                                 color: getCurrentTheme().textColor,
                                 fontSize: `${textSizes.linkButton}px`
@@ -946,7 +940,7 @@ export function LinkInBioGenerator() {
                                 <div
                                   key={link.id}
                                   className="p-1.5 rounded-md transition-colors cursor-pointer flex items-center gap-2"
-                                  style={{ 
+                                  style={{
                                     backgroundColor: getCurrentTheme().linkBg,
                                     color: getCurrentTheme().textColor,
                                     fontSize: `${textSizes.linkButton}px`
@@ -974,13 +968,13 @@ export function LinkInBioGenerator() {
                               ))}
                           </div>
                         )}
-                        
+
                         {/* Footer */}
                         {footer && (
                           <div className="mt-6 px-4">
-                            <p 
+                            <p
                               className="text-center opacity-70"
-                              style={{ 
+                              style={{
                                 color: getCurrentTheme().textColor,
                                 fontSize: `${textSizes.footer}px`
                               }}
@@ -1006,23 +1000,23 @@ export function LinkInBioGenerator() {
                     <div className="w-full h-full bg-white">
                       <div
                         className="w-full h-full p-4 text-center overflow-y-auto"
-                        style={{ 
+                        style={{
                           background: getCurrentTheme().background
                         }}
                       >
                         {/* Tablet Profile Info */}
-                        <h1 
+                        <h1
                           className="font-bold mb-3"
-                          style={{ 
+                          style={{
                             color: getCurrentTheme().textColor,
                             fontSize: `${textSizes.heading}px`
                           }}
                         >
                           {profileName || "Your Name"}
                         </h1>
-                        <p 
+                        <p
                           className="mb-6 leading-relaxed"
-                          style={{ 
+                          style={{
                             color: getCurrentTheme().textColor,
                             fontSize: `${textSizes.bio}px`
                           }}
@@ -1038,7 +1032,7 @@ export function LinkInBioGenerator() {
                               target="_blank"
                               rel="noopener noreferrer"
                               className="inline-flex items-center gap-2 px-4 py-2 rounded-lg transition-colors"
-                              style={{ 
+                              style={{
                                 backgroundColor: getCurrentTheme().linkBg,
                                 color: getCurrentTheme().textColor,
                                 fontSize: `${textSizes.linkButton}px`
@@ -1069,14 +1063,14 @@ export function LinkInBioGenerator() {
 
                         {/* Tablet Links - Only show if any link has text-only or both mode */}
                         {links.filter(link => link.title && link.url && (link.displayMode === "text" || link.displayMode === "both" || !link.displayMode)).length > 0 && (
-              <div className="space-y-3">
-                {links
+                          <div className="space-y-3">
+                            {links
                               .filter((link) => link.title && link.url && (link.displayMode === "text" || link.displayMode === "both" || !link.displayMode))
-                  .map((link) => (
-                    <div
-                      key={link.id}
+                              .map((link) => (
+                                <div
+                                  key={link.id}
                                   className="p-2.5 rounded-lg transition-colors cursor-pointer flex items-center gap-3"
-                                  style={{ 
+                                  style={{
                                     backgroundColor: getCurrentTheme().linkBg,
                                     color: getCurrentTheme().textColor,
                                     fontSize: `${textSizes.linkButton}px`
@@ -1100,26 +1094,26 @@ export function LinkInBioGenerator() {
                                   )}
                                   {/* Text Display */}
                                   <span className="flex-1">{link.title}</span>
-                    </div>
-                  ))}
-              </div>
+                                </div>
+                              ))}
+                          </div>
                         )}
-                        
+
                         {/* Footer */}
                         {footer && (
                           <div className="mt-6 px-4">
-                            <p 
+                            <p
                               className="text-center opacity-70"
-                              style={{ 
+                              style={{
                                 color: getCurrentTheme().textColor,
                                 fontSize: `${textSizes.footer}px`
                               }}
                             >
                               {footer}
                             </p>
-            </div>
+                          </div>
                         )}
-            </div>
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -1130,34 +1124,34 @@ export function LinkInBioGenerator() {
             {viewMode === "desktop" && (
               <div className="relative max-w-xl w-full">
                 {/* Desktop Preview */}
-                <div 
+                <div
                   className="border border-border rounded-lg overflow-hidden shadow-lg"
-                  style={{ 
+                  style={{
                     width: "350px",
                     maxWidth: "100%"
                   }}
                 >
                   <div
                     className="p-4 text-center"
-                    style={{ 
+                    style={{
                       background: getCurrentTheme().background,
                       minHeight: "400px",
                       fontSize: "16px" // Desktop font size
                     }}
                   >
                     {/* Desktop Profile Info */}
-                    <h1 
+                    <h1
                       className="font-bold mb-3"
-                      style={{ 
+                      style={{
                         color: getCurrentTheme().textColor,
                         fontSize: `${textSizes.heading}px`
                       }}
                     >
                       {profileName || "Your Name"}
                     </h1>
-                    <p 
+                    <p
                       className="mb-6 leading-relaxed"
-                      style={{ 
+                      style={{
                         color: getCurrentTheme().textColor,
                         fontSize: `${textSizes.bio}px`
                       }}
@@ -1173,7 +1167,7 @@ export function LinkInBioGenerator() {
                           target="_blank"
                           rel="noopener noreferrer"
                           className="inline-flex items-center gap-2 px-4 py-2 rounded-lg transition-colors"
-                          style={{ 
+                          style={{
                             backgroundColor: getCurrentTheme().linkBg,
                             color: getCurrentTheme().textColor,
                             fontSize: `${textSizes.linkButton}px`
@@ -1211,7 +1205,7 @@ export function LinkInBioGenerator() {
                             <div
                               key={link.id}
                               className="p-3 rounded-lg transition-colors cursor-pointer flex items-center gap-3"
-                              style={{ 
+                              style={{
                                 backgroundColor: getCurrentTheme().linkBg,
                                 color: getCurrentTheme().textColor,
                                 fontSize: `${textSizes.linkButton}px`
@@ -1239,13 +1233,13 @@ export function LinkInBioGenerator() {
                           ))}
                       </div>
                     )}
-                    
+
                     {/* Footer */}
                     {footer && (
                       <div className="mt-6">
-                        <p 
+                        <p
                           className="text-center opacity-70"
-                          style={{ 
+                          style={{
                             color: getCurrentTheme().textColor,
                             fontSize: `${textSizes.footer}px`
                           }}
@@ -1254,7 +1248,7 @@ export function LinkInBioGenerator() {
                         </p>
                       </div>
                     )}
-            </div>
+                  </div>
                 </div>
               </div>
             )}

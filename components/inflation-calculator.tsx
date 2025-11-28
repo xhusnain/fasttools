@@ -1,54 +1,54 @@
 "use client"
 
 import { useState, useEffect } from "react"
-import { Button } from "@/components/ui/button"
+import { GButton } from "@/components/globalcomponents/gbutton"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
 import { Badge } from "@/components/ui/badge"
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
-import { 
-  Calculator, 
-  DollarSign, 
-  Percent, 
-  Calendar, 
-  TrendingUp, 
-  TrendingDown, 
-  Info, 
-  AlertCircle, 
-  CheckCircle, 
-  Copy, 
-  Download, 
-  History, 
-  Star, 
-  Globe, 
-  Shield, 
-  FileText, 
-  BarChart3, 
-  PieChart, 
-  Target, 
-  Zap, 
-  Clock, 
-  Users, 
-  Home, 
-  Car, 
-  ShoppingBag, 
-  CreditCard, 
-  Banknote, 
-  Coins, 
-  Wallet, 
-  Briefcase, 
-  Store, 
-  Truck, 
-  Package, 
-  Tag, 
-  ShoppingCart, 
-  HandHeart, 
-  Gift, 
-  Award, 
-  Trophy, 
-  TrendingUp as TrendingUpIcon, 
+import {
+  Calculator,
+  DollarSign,
+  Percent,
+  Calendar,
+  TrendingUp,
+  TrendingDown,
+  Info,
+  AlertCircle,
+  CheckCircle,
+  Copy,
+  Download,
+  History,
+  Star,
+  Globe,
+  Shield,
+  FileText,
+  BarChart3,
+  PieChart,
+  Target,
+  Zap,
+  Clock,
+  Users,
+  Home,
+  Car,
+  ShoppingBag,
+  CreditCard,
+  Banknote,
+  Coins,
+  Wallet,
+  Briefcase,
+  Store,
+  Truck,
+  Package,
+  Tag,
+  ShoppingCart,
+  HandHeart,
+  Gift,
+  Award,
+  Trophy,
+  TrendingUp as TrendingUpIcon,
   TrendingDown as TrendingDownIcon,
   Stethoscope,
   Brain,
@@ -350,7 +350,7 @@ Purchasing Power: ${result.purchasingPower.toFixed(1)}%`
                 <TabsTrigger value="forward" className="text-xs sm:text-sm">Forward Rate</TabsTrigger>
                 <TabsTrigger value="backward" className="text-xs sm:text-sm">Backward Rate</TabsTrigger>
               </TabsList>
-              
+
               <TabsContent value="cpi" className="space-y-3 sm:space-y-4 mt-3 sm:mt-4">
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4">
                   <div className="space-y-1.5 w-full min-w-0">
@@ -388,7 +388,7 @@ Purchasing Power: ${result.purchasingPower.toFixed(1)}%`
                   />
                 </div>
               </TabsContent>
-              
+
               <TabsContent value="forward" className="space-y-3 sm:space-y-4 mt-3 sm:mt-4">
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4">
                   <div className="space-y-1.5 w-full min-w-0">
@@ -426,7 +426,7 @@ Purchasing Power: ${result.purchasingPower.toFixed(1)}%`
                   />
                 </div>
               </TabsContent>
-              
+
               <TabsContent value="backward" className="space-y-3 sm:space-y-4 mt-3 sm:mt-4">
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4">
                   <div className="space-y-1.5 w-full min-w-0">
@@ -467,13 +467,13 @@ Purchasing Power: ${result.purchasingPower.toFixed(1)}%`
           </div>
 
           <div className="flex flex-col sm:flex-row gap-2 w-full">
-            <Button onClick={calculateInflation} className="flex-1 w-full sm:w-auto text-sm sm:text-base">
+            <GButton onClick={calculateInflation} className="flex-1 w-full sm:w-auto text-sm sm:text-base">
               <Calculator className="mr-2 h-3.5 w-3.5 sm:h-4 sm:w-4" />
               Calculate
-            </Button>
-            <Button variant="outline" onClick={clearAll} className="w-full sm:w-auto text-sm sm:text-base">
+            </GButton>
+            <GButton variant="outline" onClick={clearAll} className="w-full sm:w-auto text-sm sm:text-base">
               Clear All
-            </Button>
+            </GButton>
           </div>
         </CardContent>
       </Card>
@@ -521,10 +521,10 @@ Purchasing Power: ${result.purchasingPower.toFixed(1)}%`
               </div>
 
               <div className="flex gap-2 pt-2 sm:pt-4">
-                <Button onClick={copyResult} variant="outline" size="sm" className="text-xs sm:text-sm">
+                <GButton onClick={copyResult} variant="outline" size="sm" className="text-xs sm:text-sm">
                   <Copy className="mr-2 h-3 w-3 sm:h-3.5 sm:w-3.5" />
                   Copy Results
-                </Button>
+                </GButton>
               </div>
             </CardContent>
           </Card>
@@ -693,14 +693,14 @@ Purchasing Power: ${result.purchasingPower.toFixed(1)}%`
                       {item.inflationRate.toFixed(1)}% over {item.yearsDifference} years
                     </div>
                   </div>
-                  <Button
+                  <GButton
                     variant="ghost"
                     size="sm"
                     onClick={() => setResult(item)}
                     className="text-xs sm:text-sm flex-shrink-0"
                   >
                     View Details
-                  </Button>
+                  </GButton>
                 </div>
               ))}
             </div>
@@ -730,7 +730,7 @@ Purchasing Power: ${result.purchasingPower.toFixed(1)}%`
               </div>
             </div>
           </div>
-          
+
           <div className="text-xs sm:text-sm text-foreground space-y-1.5 sm:space-y-2">
             <p className="break-words">
               <strong className="text-heading-accent">CPI Data:</strong> Uses historical Consumer Price Index data from 1913 to 2025.

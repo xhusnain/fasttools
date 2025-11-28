@@ -1,12 +1,12 @@
 "use client"
 
 import { useState } from "react"
-import { Button } from "@/components/ui/button"
+import { GButton } from "@/components/globalcomponents/gbutton"
 import { Textarea } from "@/components/ui/textarea"
 import { Label } from "@/components/ui/label"
 import { Card } from "@/components/ui/card"
 import { Search, CheckCircle, XCircle, Lightbulb, Copy, ExternalLink, Users, Video, AlertCircle, Upload } from "lucide-react"
-import { LoadingSpinner } from "@/components/loading-spinner"
+
 
 interface ChannelCheckResult {
   channelName: string
@@ -236,23 +236,21 @@ export function YoutubeChannelChecker() {
             </p>
           </div>
 
-          <Button
+          <GButton
             onClick={handleCheck}
             disabled={!channelNames.trim() || loading}
+            isLoading={loading}
             className="w-full h-11 text-base font-medium shadow-sm hover:shadow-md transition-all"
           >
             {loading ? (
-              <>
-                <LoadingSpinner className="mr-2" />
-                {checkingProgress ? `Checking ${checkingProgress.current}/${checkingProgress.total}` : 'Checking Availability...'}
-              </>
+              checkingProgress ? `Checking ${checkingProgress.current}/${checkingProgress.total}` : 'Checking Availability...'
             ) : (
               <>
                 <Search className="mr-2 h-5 w-5" />
                 Check Availability
               </>
             )}
-          </Button>
+          </GButton>
 
           {/* Progress and Timer Display */}
           {checkingProgress && (
@@ -349,7 +347,7 @@ export function YoutubeChannelChecker() {
 
                   {/* Action Button */}
                   {result.channelUrl && (
-                    <Button
+                    <GButton
                       variant="outline"
                       size="sm"
                       onClick={() => window.open(result.channelUrl, '_blank')}
@@ -357,7 +355,7 @@ export function YoutubeChannelChecker() {
                     >
                       <ExternalLink className="h-3 w-3 mr-1" />
                       View Channel
-                    </Button>
+                    </GButton>
                   )}
 
                   {/* Suggestions for Available Channels */}

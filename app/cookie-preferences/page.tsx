@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from "react"
 import { Breadcrumbs } from "@/components/breadcrumbs"
-import { Button } from "@/components/ui/button"
+import { GButton } from "@/components/globalcomponents/gbutton"
 import { Shield, Cookie, Eye, Settings, CheckCircle, AlertTriangle, ExternalLink, Lock, BarChart, Target } from "lucide-react"
 import Link from "next/link"
 
@@ -402,15 +402,15 @@ export default function CookiePreferencesPage() {
                 </div>
                 <div className="space-y-6">
                   <div className="flex flex-col sm:flex-row gap-3 sm:gap-4">
-                    <Button onClick={acceptAll} className="flex-1 h-10 sm:h-12 text-sm sm:text-base">
+                    <GButton onClick={acceptAll} className="flex-1 h-10 sm:h-12 text-sm sm:text-base">
                       Accept All Cookies
-                    </Button>
-                    <Button variant="outline" onClick={rejectAll} className="flex-1 h-10 sm:h-12 text-sm sm:text-base">
+                    </GButton>
+                    <GButton variant="outline" onClick={rejectAll} className="flex-1 h-10 sm:h-12 text-sm sm:text-base">
                       Reject All Non-Essential
-                    </Button>
-                    <Button onClick={savePreferences} className="flex-1 h-10 sm:h-12 text-sm sm:text-base">
-                      Save Current Preferences
-                    </Button>
+                    </GButton>
+                    <GButton onClick={savePreferences} className="w-full sm:w-auto">
+                      Save Preferences
+                    </GButton>
                   </div>
 
                   {saved && (

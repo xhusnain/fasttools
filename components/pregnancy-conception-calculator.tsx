@@ -1,7 +1,7 @@
 "use client"
 
 import { useState, useEffect } from "react"
-import { Button } from "@/components/ui/button"
+import { GButton } from "@/components/globalcomponents/gbutton"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
@@ -326,13 +326,13 @@ Next Milestone: ${result.nextMilestone}`
             )}
 
             <div className="flex gap-2">
-              <Button onClick={calculateConception} className="flex-1 h-9 text-xs font-medium bg-gradient-to-r from-primary to-primary/90 hover:from-primary/90 hover:to-primary text-white">
+              <GButton onClick={calculateConception} className="flex-1 h-9 text-xs font-medium bg-gradient-to-r from-primary to-primary/90 hover:from-primary/90 hover:to-primary text-white">
                 <Calculator className="mr-1 h-3 w-3" />
                 Calculate
-              </Button>
-              <Button variant="outline" onClick={clearAll} className="h-9 text-xs border-border bg-card text-foreground hover:bg-secondary">
+              </GButton>
+              <GButton variant="outline" onClick={clearAll} className="h-9 text-xs border-border bg-card text-foreground hover:bg-secondary">
                 Clear
-              </Button>
+              </GButton>
             </div>
           </div>
         </CardContent>
@@ -386,9 +386,9 @@ Next Milestone: ${result.nextMilestone}`
               </div>
 
               <div className="flex gap-2 pt-3">
-                <Button onClick={copyResult} variant="outline" size="sm" className="h-8 text-xs border-border bg-card text-foreground hover:bg-secondary">
+                <GButton onClick={copyResult} variant="outline" size="sm" className="h-8 text-xs border-border bg-card text-foreground hover:bg-secondary">
                   Copy Results
-                </Button>
+                </GButton>
               </div>
             </CardContent>
           </Card>
@@ -515,14 +515,14 @@ Next Milestone: ${result.nextMilestone}`
                       {item.weeksPregnant} weeks, {item.daysPregnant} days
                     </div>
                   </div>
-                  <Button
+                  <GButton
                     variant="ghost"
                     size="sm"
                     onClick={() => setResult(item)}
                     className="h-7 text-xs text-muted-foreground hover:text-heading-accent hover:bg-secondary"
                   >
                     View
-                  </Button>
+                  </GButton>
                 </div>
               ))}
             </div>
@@ -552,7 +552,7 @@ Next Milestone: ${result.nextMilestone}`
               </div>
             </div>
           </div>
-          
+
           <div className="text-xs text-muted-foreground space-y-2">
             <p>
               <strong className="text-heading-accent">Conception Date:</strong> The estimated date when fertilization occurred, typically 11-21 days after the first day of your last menstrual period.

@@ -1,54 +1,54 @@
 "use client"
 
 import { useState, useEffect } from "react"
-import { Button } from "@/components/ui/button"
+import { GButton } from "@/components/globalcomponents/gbutton"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
 import { Badge } from "@/components/ui/badge"
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
-import { 
-  Calculator, 
-  DollarSign, 
-  Percent, 
-  Calendar, 
-  TrendingUp, 
-  TrendingDown, 
-  Info, 
-  AlertCircle, 
-  CheckCircle, 
-  Copy, 
-  Download, 
-  History, 
-  Star, 
-  Globe, 
-  Shield, 
-  FileText, 
-  BarChart3, 
-  PieChart, 
-  Target, 
-  Zap, 
-  Clock, 
-  Users, 
-  Home, 
-  Car, 
-  ShoppingBag, 
-  CreditCard, 
-  Banknote, 
-  Coins, 
-  Wallet, 
-  Briefcase, 
-  Store, 
-  Truck, 
-  Package, 
-  Tag, 
-  ShoppingCart, 
-  HandHeart, 
-  Gift, 
-  Award, 
-  Trophy, 
-  TrendingUp as TrendingUpIcon, 
+import {
+  Calculator,
+  DollarSign,
+  Percent,
+  Calendar,
+  TrendingUp,
+  TrendingDown,
+  Info,
+  AlertCircle,
+  CheckCircle,
+  Copy,
+  Download,
+  History,
+  Star,
+  Globe,
+  Shield,
+  FileText,
+  BarChart3,
+  PieChart,
+  Target,
+  Zap,
+  Clock,
+  Users,
+  Home,
+  Car,
+  ShoppingBag,
+  CreditCard,
+  Banknote,
+  Coins,
+  Wallet,
+  Briefcase,
+  Store,
+  Truck,
+  Package,
+  Tag,
+  ShoppingCart,
+  HandHeart,
+  Gift,
+  Award,
+  Trophy,
+  TrendingUp as TrendingUpIcon,
   TrendingDown as TrendingDownIcon,
   Stethoscope,
   Brain,
@@ -128,14 +128,14 @@ export default function SalaryCalculator() {
       const days = parseFloat(daysPerWeek)
       const holidays = parseFloat(holidaysPerYear)
       const vacation = parseFloat(vacationDaysPerYear)
-      
+
       // Calculate working days per year (52 weeks * 5 days = 260 days)
       const workingDaysPerYear = 52 * days
       const adjustedWorkingDays = workingDaysPerYear - holidays - vacation
-      
+
       // Calculate hourly rate first
       let hourlyRate: number
-      
+
       switch (payFrequency) {
         case "hourly":
           hourlyRate = amount
@@ -164,7 +164,7 @@ export default function SalaryCalculator() {
         default:
           hourlyRate = amount
       }
-      
+
       // Calculate all pay frequencies
       const calculations = {
         hourly: {
@@ -200,7 +200,7 @@ export default function SalaryCalculator() {
           adjusted: hourlyRate * hours * 52
         }
       }
-      
+
       // Adjust for holidays and vacation days
       const adjustmentFactor = adjustedWorkingDays / workingDaysPerYear
       calculations.hourly.adjusted = hourlyRate * adjustmentFactor
@@ -211,7 +211,7 @@ export default function SalaryCalculator() {
       calculations.monthly.adjusted = calculations.monthly.unadjusted * adjustmentFactor
       calculations.quarterly.adjusted = calculations.quarterly.unadjusted * adjustmentFactor
       calculations.annual.adjusted = calculations.annual.unadjusted * adjustmentFactor
-      
+
       const newResult: SalaryResult = {
         salaryAmount: amount,
         payFrequency: payFrequency,
@@ -225,7 +225,7 @@ export default function SalaryCalculator() {
         recommendations: generateRecommendations(amount, payFrequency, calculations.annual.adjusted),
         comparison: generateComparison(calculations.annual.adjusted)
       }
-      
+
       setResult(newResult)
       setHistory(prev => [newResult, ...prev.slice(0, 4)])
     }
@@ -387,13 +387,13 @@ Working Days: ${result.adjustedWorkingDays} days/year`
           </div>
 
           <div className="flex flex-col sm:flex-row gap-2 w-full">
-            <Button onClick={calculateSalary} className="w-full sm:w-auto text-sm sm:text-base">
+            <GButton onClick={calculateSalary} className="w-full sm:w-auto text-sm sm:text-base">
               <Calculator className="mr-2 h-3.5 w-3.5 sm:h-4 sm:w-4" />
               Calculate Salary
-            </Button>
-            <Button variant="outline" onClick={clearAll} className="w-full sm:w-auto text-sm sm:text-base">
+            </GButton>
+            <GButton variant="outline" onClick={clearAll} className="w-full sm:w-auto text-sm sm:text-base">
               Clear All
-            </Button>
+            </GButton>
           </div>
         </CardContent>
       </Card>
@@ -465,10 +465,10 @@ Working Days: ${result.adjustedWorkingDays} days/year`
               </div>
 
               <div className="flex gap-2 pt-2 sm:pt-4">
-                <Button onClick={copyResult} variant="outline" size="sm" className="text-xs sm:text-sm">
+                <GButton onClick={copyResult} variant="outline" size="sm" className="text-xs sm:text-sm">
                   <Copy className="mr-2 h-3 w-3 sm:h-3.5 sm:w-3.5" />
                   Copy Results
-                </Button>
+                </GButton>
               </div>
             </CardContent>
           </Card>
@@ -592,14 +592,14 @@ Working Days: ${result.adjustedWorkingDays} days/year`
                       {item.adjustedWorkingDays} working days
                     </div>
                   </div>
-                  <Button
+                  <GButton
                     variant="ghost"
                     size="sm"
                     onClick={() => setResult(item)}
                     className="text-xs sm:text-sm flex-shrink-0"
                   >
                     View Details
-                  </Button>
+                  </GButton>
                 </div>
               ))}
             </div>
@@ -629,7 +629,7 @@ Working Days: ${result.adjustedWorkingDays} days/year`
               </div>
             </div>
           </div>
-          
+
           <div className="text-xs sm:text-sm text-foreground space-y-1.5 sm:space-y-2">
             <p className="break-words">
               <strong className="text-heading-accent">Pay Frequency Conversion:</strong> Convert between hourly, daily, weekly, bi-weekly, semi-monthly, monthly, quarterly, and annual pay.

@@ -1,13 +1,13 @@
 "use client"
 
 import { useState } from "react"
-import { Button } from "@/components/ui/button"
+import { GButton as Button } from "@/components/globalcomponents/gbutton"
 import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
 import { Copy, Target, Plus, Trash2, Calculator, TrendingUp, DollarSign, Percent, Calendar, PieChart, BarChart3, Wallet, CreditCard, Home, Car, Plane, ShoppingCart, GraduationCap, Heart, Briefcase, Shield, Zap } from "lucide-react"
-import { LoadingSpinner } from "@/components/loading-spinner"
+
 import { Progress } from "@/components/ui/progress"
 
 interface ExpenseItem {
@@ -38,7 +38,7 @@ export function SavingsGoalTracker() {
   const [interestRate, setInterestRate] = useState("4.0")
   const [openExpenseId, setOpenExpenseId] = useState<string | null>(null)
   const [openGoalId, setOpenGoalId] = useState<string | null>(null)
-  
+
   const [expenses, setExpenses] = useState<ExpenseItem[]>([
     { id: '1', category: 'Housing', name: 'Rent/Mortgage', amount: 0, frequency: 'monthly', priority: 'high', isTaxDeductible: false },
     { id: '2', category: 'Food', name: 'Groceries & Dining', amount: 0, frequency: 'monthly', priority: 'high', isTaxDeductible: false },
@@ -46,14 +46,14 @@ export function SavingsGoalTracker() {
     { id: '4', category: 'Utilities', name: 'Electricity, Water, Internet', amount: 0, frequency: 'monthly', priority: 'high', isTaxDeductible: false },
     { id: '5', category: 'Insurance', name: 'Health, Auto, Home', amount: 0, frequency: 'monthly', priority: 'high', isTaxDeductible: false },
   ])
-  
+
   const [goals, setGoals] = useState<GoalItem[]>([
     { id: '1', name: 'Emergency Fund', targetAmount: 0, currentAmount: 0, targetDate: '', priority: 'high', category: 'Emergency' },
     { id: '2', name: 'Vacation Fund', targetAmount: 0, currentAmount: 0, targetDate: '', priority: 'medium', category: 'Travel' },
     { id: '3', name: 'Car Purchase', targetAmount: 0, currentAmount: 0, targetDate: '', priority: 'medium', category: 'Transportation' },
     { id: '4', name: 'Home Down Payment', targetAmount: 0, currentAmount: 0, targetDate: '', priority: 'high', category: 'Housing' },
   ])
-  
+
   const [result, setResult] = useState<{
     monthlyExpenses: number
     monthlySavings: number
@@ -71,7 +71,7 @@ export function SavingsGoalTracker() {
   const addExpense = () => {
     // Close any open goal form
     setOpenGoalId(null)
-    
+
     const newExpense: ExpenseItem = {
       id: Date.now().toString(),
       category: 'Other',
@@ -93,7 +93,7 @@ export function SavingsGoalTracker() {
   }
 
   const updateExpense = (id: string, field: keyof ExpenseItem, value: any) => {
-    setExpenses(expenses.map(expense => 
+    setExpenses(expenses.map(expense =>
       expense.id === id ? { ...expense, [field]: value } : expense
     ))
   }
@@ -101,7 +101,7 @@ export function SavingsGoalTracker() {
   const addGoal = () => {
     // Close any open expense form
     setOpenExpenseId(null)
-    
+
     const newGoal: GoalItem = {
       id: Date.now().toString(),
       name: '',
@@ -123,7 +123,7 @@ export function SavingsGoalTracker() {
   }
 
   const updateGoal = (id: string, field: keyof GoalItem, value: any) => {
-    setGoals(goals.map(goal => 
+    setGoals(goals.map(goal =>
       goal.id === id ? { ...goal, [field]: value } : goal
     ))
   }
@@ -160,7 +160,7 @@ export function SavingsGoalTracker() {
       // Calculate inflation-adjusted goals
       const inflationAdjustedGoals = goals.reduce((total, goal) => {
         const remainingAmount = goal.targetAmount - goal.currentAmount
-        const yearsToGoal = goal.targetDate ? 
+        const yearsToGoal = goal.targetDate ?
           (new Date(goal.targetDate).getFullYear() - new Date().getFullYear()) : 5
         const adjustedAmount = remainingAmount * Math.pow(1 + (inflation / 100), yearsToGoal)
         return total + adjustedAmount
@@ -276,8 +276,8 @@ ${result.recommendations.map(rec => `• ${rec}`).join('\n')}`
         </CardTitle>
         <CardDescription className="text-base text-muted-foreground">
           Comprehensive financial planning with expenses, taxes, inflation, and multiple goal tracking
-          </CardDescription>
-        </CardHeader>
+        </CardDescription>
+      </CardHeader>
       <CardContent>
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
           {/* Left Column - Inputs */}
@@ -288,22 +288,22 @@ ${result.recommendations.map(rec => `• ${rec}`).join('\n')}`
                 <DollarSign className="h-4 w-4 text-primary" />
                 Income & Tax Configuration
               </h3>
-              
+
               <div className="grid grid-cols-2 gap-3">
-          <div className="space-y-2">
+                <div className="space-y-2">
                   <Label className="text-xs font-medium text-foreground">Monthly Income ($)</Label>
-            <Input
-              type="number"
+                  <Input
+                    type="number"
                     placeholder="5000"
                     value={monthlyIncome}
                     onChange={(e) => setMonthlyIncome(e.target.value)}
                     className="h-9 text-sm border-2 border-orange-300 focus:border-orange-400 focus:ring-2 focus:ring-orange-400/20 bg-background text-foreground placeholder:text-muted-foreground"
-            />
-          </div>
-          <div className="space-y-2">
+                  />
+                </div>
+                <div className="space-y-2">
                   <Label className="text-xs font-medium text-foreground">Tax Rate (%)</Label>
-            <Input
-              type="number"
+                  <Input
+                    type="number"
                     placeholder="25"
                     value={taxRate}
                     onChange={(e) => setTaxRate(e.target.value)}
@@ -333,8 +333,8 @@ ${result.recommendations.map(rec => `• ${rec}`).join('\n')}`
                     className="h-9 text-sm border-2 border-orange-300 focus:border-orange-400 focus:ring-2 focus:ring-orange-400/20 bg-background text-foreground placeholder:text-muted-foreground"
                   />
                 </div>
-                </div>
               </div>
+            </div>
 
             {/* Monthly Expenses */}
             <div className="space-y-3">
@@ -584,14 +584,10 @@ ${result.recommendations.map(rec => `• ${rec}`).join('\n')}`
             <Button
               onClick={calculateFinancialPlan}
               disabled={loading || !monthlyIncome}
+              isLoading={loading}
               className="w-full h-8 text-xs font-medium shadow-sm hover:shadow-md transition-all"
             >
-              {loading ? (
-                <>
-                  <LoadingSpinner className="mr-2 h-3 w-3" />
-                  Calculating...
-                </>
-              ) : (
+              {loading ? "Calculating..." : (
                 <>
                   <Calculator className="mr-2 h-3 w-3" />
                   Calculate Financial Plan
@@ -684,7 +680,7 @@ ${result.recommendations.map(rec => `• ${rec}`).join('\n')}`
             )}
           </div>
         </div>
-          </CardContent>
-        </Card>
+      </CardContent>
+    </Card>
   )
 }

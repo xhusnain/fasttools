@@ -1,22 +1,22 @@
 "use client"
 
 import { useState, useEffect } from "react"
-import { Button } from "@/components/ui/button"
+import { GButton } from "@/components/globalcomponents/gbutton"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
 import { Badge } from "@/components/ui/badge"
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
-import { 
-  Calculator, 
-  Clock, 
-  Activity, 
-  Target, 
-  TrendingUp, 
-  Heart, 
-  Zap, 
-  Trophy, 
+import {
+  Calculator,
+  Clock,
+  Activity,
+  Target,
+  TrendingUp,
+  Heart,
+  Zap,
+  Trophy,
   Users,
   Timer,
   BarChart3,
@@ -143,7 +143,7 @@ export default function BMRCalculator() {
 
       // Calculate TDEE for different activity levels
       const tdee = bmr * 1.55 // Moderate activity as default
-      
+
       // Weight management calculations
       const weightLoss = {
         mild: Math.round(bmr * 1.2 - 250), // 0.5 lb/week
@@ -356,13 +356,13 @@ Aggressive (1.5 lb/week): ${result.weightGain.aggressive} calories/day`
           )}
 
           <div className="flex flex-col sm:flex-row gap-2 w-full">
-            <Button onClick={calculateBMR} className="flex-1 w-full sm:w-auto text-sm sm:text-base">
+            <GButton onClick={calculateBMR} className="flex-1 w-full sm:w-auto text-sm sm:text-base">
               <Calculator className="mr-2 h-4 w-4" />
               Calculate BMR
-            </Button>
-            <Button variant="outline" onClick={clearAll} className="w-full sm:w-auto text-sm sm:text-base">
+            </GButton>
+            <GButton variant="outline" onClick={clearAll} className="w-full sm:w-auto text-sm sm:text-base">
               Clear All
-            </Button>
+            </GButton>
           </div>
         </CardContent>
       </Card>
@@ -412,10 +412,10 @@ Aggressive (1.5 lb/week): ${result.weightGain.aggressive} calories/day`
               </div>
 
               <div className="flex gap-2 pt-4">
-                <Button onClick={copyResult} variant="outline" size="sm">
+                <GButton onClick={copyResult} variant="outline" size="sm">
                   <Copy className="mr-2 h-4 w-4" />
                   Copy Results
-                </Button>
+                </GButton>
               </div>
             </CardContent>
           </Card>
@@ -582,13 +582,13 @@ Aggressive (1.5 lb/week): ${result.weightGain.aggressive} calories/day`
                       {item.equation} - {item.accuracy}
                     </div>
                   </div>
-                  <Button
+                  <GButton
                     variant="ghost"
                     size="sm"
                     onClick={() => setResult(item)}
                   >
                     View Details
-                  </Button>
+                  </GButton>
                 </div>
               ))}
             </div>
@@ -618,7 +618,7 @@ Aggressive (1.5 lb/week): ${result.weightGain.aggressive} calories/day`
               </div>
             </div>
           </div>
-          
+
           <div className="text-sm text-muted-foreground space-y-2">
             <p>
               <strong>BMR:</strong> Basal Metabolic Rate - calories burned at rest for basic body functions.

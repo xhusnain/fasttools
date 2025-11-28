@@ -1,12 +1,12 @@
 "use client"
 
 import { useState, useEffect } from "react"
-import { Button } from "@/components/ui/button"
+import { GButton as Button } from "@/components/globalcomponents/gbutton"
 import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Heart, Copy, Check } from "lucide-react"
-import { LoadingSpinner } from "@/components/loading-spinner"
+
 
 export function AnniversaryCalculator() {
   const [startDate, setStartDate] = useState("")
@@ -49,7 +49,7 @@ export function AnniversaryCalculator() {
 
     // Calculate total time difference in milliseconds
     const totalTimeDiff = today.getTime() - relationshipStartDate.getTime()
-    
+
     // Calculate total units
     const totalSeconds = Math.floor(totalTimeDiff / 1000)
     const totalMinutes = Math.floor(totalSeconds / 60)
@@ -173,11 +173,11 @@ export function AnniversaryCalculator() {
             <Button
               onClick={calculateAnniversary}
               disabled={!startDate || isCalculating}
+              isLoading={isCalculating}
               className="w-full h-10 sm:h-11 text-sm font-medium bg-gradient-to-r from-pink-500 to-red-500 hover:from-pink-600 hover:to-red-600 text-white shadow-lg hover:shadow-xl transition-all duration-300"
             >
               {isCalculating ? (
                 <>
-                  <LoadingSpinner className="mr-2" />
                   <span className="hidden sm:inline">Calculating...</span>
                   <span className="sm:hidden">Calculating</span>
                 </>

@@ -1,7 +1,7 @@
 "use client"
 
 import { useState } from "react"
-import { Button } from "@/components/ui/button"
+import { GButton, GButton as Button } from "@/components/globalcomponents/gbutton"
 import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
@@ -184,7 +184,7 @@ export function LengthConverter() {
             <div className="grid grid-cols-2 gap-4">
               {/* From Section */}
               <div className="space-y-3">
-              <Label htmlFor="from-value-tablet" className="text-card-foreground font-medium text-sm">From</Label>
+                <Label htmlFor="from-value-tablet" className="text-card-foreground font-medium text-sm">From</Label>
                 <Input
                   id="from-value-tablet"
                   type="number"
@@ -212,8 +212,8 @@ export function LengthConverter() {
 
               {/* To Section */}
               <div className="space-y-3">
-              <Label htmlFor="to-value-tablet" className="text-card-foreground font-medium text-sm">To</Label>
-              <div className="h-11 px-3 py-2 bg-card border border-border rounded-md flex items-center text-sm font-medium text-card-foreground">
+                <Label htmlFor="to-value-tablet" className="text-card-foreground font-medium text-sm">To</Label>
+                <div className="h-11 px-3 py-2 bg-card border border-border rounded-md flex items-center text-sm font-medium text-card-foreground">
                   {convert() || "0"}
                 </div>
                 <Select value={toUnit} onValueChange={setToUnit}>
@@ -304,10 +304,7 @@ export function LengthConverter() {
           </div>
 
           <div className="flex flex-col sm:flex-row gap-2 sm:gap-3 pt-2 sm:pt-4">
-            <Button onClick={copyResult} className="flex-1 h-8 sm:h-10 bg-primary hover:bg-primary/90 text-white font-medium text-xs sm:text-sm shadow hover:shadow-md">
-              <Copy className="h-3 w-3 sm:h-4 sm:w-4 mr-1 sm:mr-2" />
-              {copied ? "Copied!" : "Copy Result"}
-            </Button>
+            <GButton onClick={convert} className="w-full">Convert</GButton>
             <Button onClick={downloadResults} variant="outline" className="h-8 sm:h-10 px-2 sm:px-4 border-border text-foreground hover:bg-accent/10 text-xs sm:text-sm">
               <Download className="h-3 w-3 sm:h-4 sm:w-4 mr-1 sm:mr-2" />
               <span className="hidden sm:inline">Download</span>

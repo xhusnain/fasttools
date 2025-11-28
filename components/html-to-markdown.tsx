@@ -1,7 +1,7 @@
 "use client"
 
 import { useState } from "react"
-import { Button } from "@/components/ui/button"
+import { GButton } from "@/components/globalcomponents/gbutton"
 import { Textarea } from "@/components/ui/textarea"
 import { Copy, Check } from "lucide-react"
 
@@ -71,15 +71,15 @@ export function HTMLToMarkdown() {
         />
       </div>
 
-      <Button onClick={convertToMarkdown} className="w-full" disabled={!html.trim()}>
+      <GButton onClick={convertToMarkdown} className="w-full" disabled={!html.trim()}>
         Convert to Markdown
-      </Button>
+      </GButton>
 
       {markdown && (
         <div className="space-y-2">
           <div className="flex items-center justify-between">
             <label className="text-sm font-medium text-foreground">Markdown Output</label>
-            <Button variant="ghost" size="sm" onClick={copyToClipboard}>
+            <GButton variant="ghost" size="sm" onClick={copyToClipboard}>
               {copied ? (
                 <>
                   <Check className="h-4 w-4 mr-2" />
@@ -91,7 +91,7 @@ export function HTMLToMarkdown() {
                   Copy
                 </>
               )}
-            </Button>
+            </GButton>
           </div>
           <Textarea value={markdown} readOnly className="min-h-48 font-mono text-sm" />
         </div>

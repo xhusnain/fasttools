@@ -1,7 +1,7 @@
 "use client"
 
 import { useState, useRef, useEffect } from "react"
-import { Button } from "@/components/ui/button"
+import { GButton } from "@/components/globalcomponents/gbutton"
 import { Label } from "@/components/ui/label"
 import { Input } from "@/components/ui/input"
 import { Card } from "@/components/ui/card"
@@ -39,16 +39,16 @@ export function AiQrGenerator() {
   const [loading, setLoading] = useState(false)
   const fileInputRef = useRef<HTMLInputElement>(null)
   const csvInputRef = useRef<HTMLInputElement>(null)
-  
+
   // Bulk generation states
   const [bulkText, setBulkText] = useState("")
-  const [bulkQRCodes, setBulkQRCodes] = useState<Array<{text: string, image: string}>>([])
+  const [bulkQRCodes, setBulkQRCodes] = useState<Array<{ text: string, image: string }>>([])
   const [bulkLoading, setBulkLoading] = useState(false)
 
   // Basic inputs
   const [url, setUrl] = useState("")
   const [text, setText] = useState("")
-  
+
   // WiFi QR
   const [wifiSSID, setWifiSSID] = useState("")
   const [wifiPassword, setWifiPassword] = useState("")
@@ -108,14 +108,14 @@ export function AiQrGenerator() {
     switch (qrType) {
       case "url":
         return url.trim()
-      
+
       case "text":
         return text.trim()
-      
+
       case "wifi":
         const hidden = wifiHidden ? "H:true;" : ""
         return `WIFI:T:${wifiEncryption};S:${wifiSSID};P:${wifiPassword};${hidden};`
-      
+
       case "vcard":
         return `BEGIN:VCARD
 VERSION:3.0
@@ -124,22 +124,22 @@ TEL:${vcardPhone}
 EMAIL:${vcardEmail}
 ORG:${vcardCompany}
 END:VCARD`
-      
+
       case "email":
         return `mailto:${emailTo}?subject=${encodeURIComponent(emailSubject)}&body=${encodeURIComponent(emailBody)}`
-      
+
       case "sms":
         return `sms:${smsPhone}?body=${encodeURIComponent(smsMessage)}`
-      
+
       case "whatsapp":
         return `https://wa.me/${smsPhone.replace(/[^0-9]/g, "")}?text=${encodeURIComponent(smsMessage)}`
-      
+
       case "phone":
         return `tel:${phoneNumber}`
-      
+
       case "location":
         return `geo:${locationLat},${locationLng}`
-      
+
       default:
         return ""
     }
@@ -205,17 +205,17 @@ END:VCARD`
       }
 
       const qrImg = new Image()
-      
+
       qrImg.onload = () => {
         try {
           canvas.width = qrImg.width
           canvas.height = qrImg.height
-          
+
           // Draw QR code first
           ctx.drawImage(qrImg, 0, 0)
 
           const logoImg = new Image()
-          
+
           logoImg.onload = () => {
             try {
               const logoSizePercent = logoSize[0] / 100
@@ -239,24 +239,24 @@ END:VCARD`
               resolve(qrDataUrl)
             }
           }
-          
+
           logoImg.onerror = (e) => {
             console.error("Failed to load logo image:", e)
             resolve(canvas.toDataURL("image/png", 1.0))
           }
-          
+
           logoImg.src = logoImage
         } catch (error) {
           console.error("Error in QR image load:", error)
           resolve(qrDataUrl)
         }
       }
-      
+
       qrImg.onerror = (e) => {
         console.error("Failed to load QR image:", e)
         resolve(qrDataUrl)
       }
-      
+
       qrImg.src = qrDataUrl
     })
   }
@@ -291,7 +291,7 @@ END:VCARD`
           const firstColumn = line.split(',')[0].trim()
           return firstColumn
         }).filter(line => line)
-        
+
         setBulkText(lines.join('\n'))
       }
       reader.readAsText(file)
@@ -307,8 +307,8 @@ END:VCARD`
     setBulkQRCodes([])
 
     try {
-      const qrCodes: Array<{text: string, image: string}> = []
-      
+      const qrCodes: Array<{ text: string, image: string }> = []
+
       for (let i = 0; i < items.length; i++) {
         const item = items[i]
         const options: QROptions = {
@@ -322,15 +322,15 @@ END:VCARD`
         }
 
         let qrDataUrl = await QRCode.toDataURL(item.trim(), options)
-        
+
         // Apply logo if uploaded
         if (logoImage) {
           qrDataUrl = await applyLogoToQR(qrDataUrl)
         }
-        
+
         const newQR = { text: item.trim(), image: qrDataUrl }
         qrCodes.push(newQR)
-        
+
         // Update state progressively to show progress
         setBulkQRCodes([...qrCodes])
       }
@@ -359,7 +359,7 @@ END:VCARD`
       }
 
       // Generate ZIP file
-      const content = await zip.generateAsync({ 
+      const content = await zip.generateAsync({
         type: "blob",
         compression: "DEFLATE",
         compressionOptions: { level: 6 }
@@ -488,11 +488,11 @@ END:VCARD`
             {/* URL Input */}
             <TabsContent value="url" className="space-y-2 mt-3">
               <Label htmlFor="url" className={labelClass}>Website URL</Label>
-          <Input
-            id="url"
-            placeholder="https://example.com"
-            value={url}
-            onChange={(e) => setUrl(e.target.value)}
+              <Input
+                id="url"
+                placeholder="https://example.com"
+                value={url}
+                onChange={(e) => setUrl(e.target.value)}
                 className={inputClass}
               />
             </TabsContent>
@@ -739,7 +739,7 @@ END:VCARD`
                   </p>
                 )}
               </div>
-              
+
               <div className="space-y-2">
                 <Label htmlFor="bulk-text" className="text-sm font-medium">Enter URLs/Text (one per line)</Label>
                 <Textarea
@@ -788,7 +788,7 @@ END:VCARD`
             <Zap className="h-4 w-4" />
             Customize (Premium - FREE!)
           </h3>
-          
+
           <div className="space-y-3">
             {/* Colors */}
             <div className="grid grid-cols-2 gap-3">
@@ -801,37 +801,37 @@ END:VCARD`
                     onChange={(e) => setForegroundColor(e.target.value)}
                     className="h-9 w-12 p-1 border-2 border-primary/50"
                   />
-                  <Input 
-                    value={foregroundColor} 
-                    onChange={(e) => handleColorChange(e.target.value, setForegroundColor)} 
+                  <Input
+                    value={foregroundColor}
+                    onChange={(e) => handleColorChange(e.target.value, setForegroundColor)}
                     className="h-9 flex-1 border-2 border-primary/50 text-xs"
                     placeholder="#000000"
                     maxLength={7}
                   />
                 </div>
-        </div>
+              </div>
 
-        <div className="space-y-2">
+              <div className="space-y-2">
                 <Label className={labelClass}>Background</Label>
-          <div className="flex gap-2">
-            <Input
-              type="color"
+                <div className="flex gap-2">
+                  <Input
+                    type="color"
                     value={isValidHexColor(backgroundColor) ? backgroundColor : "#ffffff"}
                     onChange={(e) => setBackgroundColor(e.target.value)}
                     className="h-9 w-12 p-1 border-2 border-primary/50"
                     disabled={transparentBg}
                   />
-                  <Input 
-                    value={backgroundColor} 
-                    onChange={(e) => handleColorChange(e.target.value, setBackgroundColor)} 
+                  <Input
+                    value={backgroundColor}
+                    onChange={(e) => handleColorChange(e.target.value, setBackgroundColor)}
                     className="h-9 flex-1 border-2 border-primary/50 text-xs"
                     placeholder="#ffffff"
                     maxLength={7}
                     disabled={transparentBg}
                   />
                 </div>
-          </div>
-        </div>
+              </div>
+            </div>
 
             <div className="flex items-center gap-3 p-2 rounded-lg bg-background border border-primary/30">
               <Switch
@@ -906,9 +906,9 @@ END:VCARD`
                 <div className="space-y-2 p-3 rounded-lg bg-background border border-primary/20 mt-2">
                   <div className="flex items-center justify-between">
                     <Label className="text-sm font-medium">Logo Size: {logoSize[0]}%</Label>
-                    <Button 
-                      variant="ghost" 
-                      size="sm" 
+                    <GButton
+                      variant="ghost"
+                      size="sm"
                       onClick={() => {
                         setLogoImage(null)
                         if (fileInputRef.current) {
@@ -918,7 +918,7 @@ END:VCARD`
                       className="h-6 text-xs text-foreground hover:text-foreground"
                     >
                       Remove
-                    </Button>
+                    </GButton>
                   </div>
                   <Slider
                     min={10}
@@ -956,23 +956,23 @@ END:VCARD`
             {/* Bulk Generation Button */}
             {qrType === "bulk" && (
               <div className="pt-3 border-t border-border">
-                <Button 
-                  onClick={generateBulkQR} 
-                  disabled={bulkLoading || !bulkText.trim()} 
+                <GButton
+                  onClick={generateBulkQR}
+                  disabled={bulkLoading || !bulkText.trim()}
+                  isLoading={bulkLoading}
                   className="w-full h-10 text-sm bg-primary hover:bg-primary"
                 >
                   {bulkLoading ? (
                     <>
-                      <LoadingSpinner className="mr-2 h-4 w-4" />
                       Generating {bulkText.split('\n').filter(line => line.trim()).length} QR Codes...
-            </>
-          ) : (
-            <>
+                    </>
+                  ) : (
+                    <>
                       <ListOrdered className="mr-2 h-4 w-4" />
                       Generate Bulk QR Codes ({bulkText.split('\n').filter(line => line.trim()).length})
-            </>
-          )}
-        </Button>
+                    </>
+                  )}
+                </GButton>
                 {bulkLoading && (
                   <div className="mt-3 p-3 rounded-lg bg-orange-50 dark:bg-orange-950/30 border border-primary/30">
                     <div className="flex items-center gap-2 mb-2">
@@ -982,10 +982,10 @@ END:VCARD`
                       </p>
                     </div>
                     <div className="w-full bg-orange-200 dark:bg-orange-900/30 rounded-full h-2">
-                      <div 
+                      <div
                         className="bg-primary h-2 rounded-full transition-all duration-300"
-                        style={{ 
-                          width: `${(bulkQRCodes.length / bulkText.split('\n').filter(line => line.trim()).length) * 100}%` 
+                        style={{
+                          width: `${(bulkQRCodes.length / bulkText.split('\n').filter(line => line.trim()).length) * 100}%`
                         }}
                       />
                     </div>
@@ -1009,16 +1009,16 @@ END:VCARD`
               {qrType === "bulk" ? `Bulk QR Codes (${bulkQRCodes.length})` : "Your QR Code"} {(loading || bulkLoading) && "Generating..."}
             </h3>
             {qrType === "bulk" && bulkQRCodes.length > 0 && (
-              <Button variant="default" size="sm" onClick={downloadBulkQR} className="h-8 text-xs bg-primary hover:bg-primary">
+              <GButton variant="default" size="sm" onClick={downloadBulkQR} className="h-8 text-xs bg-primary hover:bg-primary">
                 <Archive className="h-3 w-3 mr-1.5" />
                 Download ZIP ({bulkQRCodes.length} files)
-              </Button>
+              </GButton>
             )}
             {qrType !== "bulk" && qrImage && (
-              <Button variant="default" size="sm" onClick={downloadQR} className="h-8 text-xs">
+              <GButton variant="default" size="sm" onClick={downloadQR} className="h-8 text-xs">
                 <Download className="h-3 w-3 mr-1.5" />
-              Download
-            </Button>
+                Download
+              </GButton>
             )}
           </div>
 
@@ -1040,28 +1040,28 @@ END:VCARD`
                           <div className="flex-1 min-w-0">
                             <p className="text-xs font-medium mb-1">QR Code #{index + 1}</p>
                             <p className="text-xs text-muted-foreground truncate">{qr.text}</p>
-                            <Button 
-                              variant="outline" 
-                              size="sm" 
+                            <GButton
+                              variant="outline"
+                              size="sm"
                               className="mt-2 h-7 text-xs"
                               onClick={() => downloadIndividualQR(qr.image, index)}
                             >
                               <Download className="h-3 w-3 mr-1" />
                               Download PNG
-                            </Button>
+                            </GButton>
                           </div>
                         </div>
                       </div>
                     ))}
                   </div>
                   <div className="space-y-2 mt-3">
-                    <Button 
+                    <GButton
                       onClick={downloadBulkQR}
                       className="w-full h-9 text-sm bg-primary hover:bg-primary"
                     >
                       <Archive className="h-4 w-4 mr-2" />
                       Download All as ZIP ({bulkQRCodes.length} files)
-                    </Button>
+                    </GButton>
                     <div className="p-3 rounded-lg bg-green-50 dark:bg-green-950/30 border border-green-500/30">
                       <p className="text-xs font-medium text-center text-heading-accent">
                         ✨ {bulkQRCodes.length} QR codes generated {logoImage && "• Logo included"} • No Watermark • 100% Free

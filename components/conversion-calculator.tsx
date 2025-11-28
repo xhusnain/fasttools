@@ -1,7 +1,7 @@
 "use client"
 
 import { useState, useEffect } from "react"
-import { Button } from "@/components/ui/button"
+import { GButton } from "@/components/globalcomponents/gbutton"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
@@ -183,27 +183,27 @@ const conversionCategories = {
 const convertTemperature = (value: number, from: string, to: string): number => {
   const conversions: { [key: string]: { [key: string]: (val: number) => number } } = {
     celsius: {
-      fahrenheit: (val) => (val * 9/5) + 32,
+      fahrenheit: (val) => (val * 9 / 5) + 32,
       kelvin: (val) => val + 273.15,
-      rankine: (val) => (val * 9/5) + 491.67
+      rankine: (val) => (val * 9 / 5) + 491.67
     },
     fahrenheit: {
-      celsius: (val) => (val - 32) * 5/9,
-      kelvin: (val) => ((val - 32) * 5/9) + 273.15,
+      celsius: (val) => (val - 32) * 5 / 9,
+      kelvin: (val) => ((val - 32) * 5 / 9) + 273.15,
       rankine: (val) => val + 459.67
     },
     kelvin: {
       celsius: (val) => val - 273.15,
-      fahrenheit: (val) => ((val - 273.15) * 9/5) + 32,
-      rankine: (val) => val * 9/5
+      fahrenheit: (val) => ((val - 273.15) * 9 / 5) + 32,
+      rankine: (val) => val * 9 / 5
     },
     rankine: {
-      celsius: (val) => (val - 491.67) * 5/9,
+      celsius: (val) => (val - 491.67) * 5 / 9,
       fahrenheit: (val) => val - 459.67,
-      kelvin: (val) => val * 5/9
+      kelvin: (val) => val * 5 / 9
     }
   }
-  
+
   if (from === to) return value
   return conversions[from]?.[to]?.(value) ?? value
 }
@@ -251,7 +251,7 @@ export function ConversionCalculator() {
     const defaults = defaultUnits[selectedCategory]
     const categoryUnits = conversionCategories[selectedCategory].units
     const unitKeys = Object.keys(categoryUnits)
-    
+
     if (defaults && unitKeys.includes(defaults.from) && unitKeys.includes(defaults.to)) {
       setFromUnit(defaults.from)
       setToUnit(defaults.to)
@@ -376,9 +376,9 @@ export function ConversionCalculator() {
             <Tabs value={selectedCategory} onValueChange={(value) => setSelectedCategory(value as keyof typeof conversionCategories)}>
               <TabsList className="grid w-full grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-2 p-1 bg-gradient-to-r from-yellow-50 to-orange-50 dark:from-yellow-950/20 dark:to-orange-950/20 rounded-lg border border-yellow-200 dark:border-yellow-800">
                 {Object.entries(conversionCategories).map(([key, category]) => (
-                  <TabsTrigger 
-                    key={key} 
-                    value={key} 
+                  <TabsTrigger
+                    key={key}
+                    value={key}
                     className="flex flex-col items-center gap-1 text-xs px-2 py-2 sm:flex-row sm:gap-2 sm:px-3 sm:py-2 min-h-[60px] sm:min-h-[40px] data-[state=active]:!bg-yellow-500 data-[state=active]:!text-white data-[state=active]:!border-yellow-500 hover:bg-yellow-100 dark:hover:bg-yellow-900/20"
                   >
                     <category.icon className="h-4 w-4 flex-shrink-0" />
@@ -436,7 +436,7 @@ export function ConversionCalculator() {
                 onChange={(e) => setInputValue(e.target.value)}
                 className="flex-1 w-full h-12 text-base rounded-lg"
               />
-              <Button
+              <GButton
                 variant="outline"
                 onClick={swapUnits}
                 title="Swap units"
@@ -444,7 +444,7 @@ export function ConversionCalculator() {
               >
                 <ArrowRight className="h-4 w-4 mr-2" />
                 <span className="sm:hidden">Swap Units</span>
-              </Button>
+              </GButton>
             </div>
           </div>
 
@@ -459,14 +459,14 @@ export function ConversionCalculator() {
                   </div>
                 </div>
                 <div className="flex gap-2">
-                  <Button
+                  <GButton
                     variant="outline"
                     onClick={copyResult}
                     className="text-heading-accent hover:text-heading-accent w-full h-10"
                   >
                     <Copy className="h-4 w-4 mr-2" />
                     Copy Result
-                  </Button>
+                  </GButton>
                 </div>
               </div>
             </div>
@@ -474,13 +474,13 @@ export function ConversionCalculator() {
 
           {/* Action Buttons */}
           <div className="flex flex-col sm:flex-row gap-3">
-            <Button onClick={clearAll} variant="outline" className="flex-1 w-full h-12 rounded-lg font-medium">
+            <GButton onClick={clearAll} variant="outline" className="flex-1 w-full h-12 rounded-lg font-medium">
               Clear All
-            </Button>
-            <Button onClick={() => setShowHistory(!showHistory)} variant="outline" className="flex-1 w-full h-12 rounded-lg font-medium">
+            </GButton>
+            <GButton onClick={() => setShowHistory(!showHistory)} variant="outline" className="flex-1 w-full h-12 rounded-lg font-medium">
               <History className="h-4 w-4 mr-2" />
               {showHistory ? 'Hide' : 'Show'} History
-            </Button>
+            </GButton>
           </div>
         </CardContent>
       </Card>

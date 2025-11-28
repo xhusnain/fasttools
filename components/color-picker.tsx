@@ -2,7 +2,7 @@
 
 import { useState, useRef, useEffect } from "react"
 import { Copy, Check } from "lucide-react"
-import { Button } from "@/components/ui/button"
+import { GButton } from "@/components/globalcomponents/gbutton"
 
 interface ColorPickerProps {
   value: string
@@ -35,13 +35,13 @@ const setGlobalOpenPicker = (id: string | null) => {
 
 const useGlobalOpenPicker = () => {
   const [openPickerId, setOpenPickerId] = useState<string | null>(globalOpenPickerId)
-  
+
   useEffect(() => {
     const listener = (id: string | null) => setOpenPickerId(id)
     listeners.add(listener)
     return () => listeners.delete(listener)
   }, [])
-  
+
   return openPickerId
 }
 
@@ -50,7 +50,7 @@ export function ColorPicker({ value, onChange, label, className = "", id }: Colo
   const [copied, setCopied] = useState<string | null>(null)
   const pickerRef = useRef<HTMLDivElement>(null)
   const globalOpenPickerId = useGlobalOpenPicker()
-  
+
   // Generate unique ID if not provided
   const pickerId = id || `color-picker-${Math.random().toString(36).substr(2, 9)}`
   const isOpen = globalOpenPickerId === pickerId
@@ -95,9 +95,9 @@ export function ColorPicker({ value, onChange, label, className = "", id }: Colo
     const hue2rgb = (p: number, q: number, t: number) => {
       if (t < 0) t += 1
       if (t > 1) t -= 1
-      if (t < 1/6) return p + (q - p) * 6 * t
-      if (t < 1/2) return q
-      if (t < 2/3) return p + (q - p) * (2/3 - t) * 6
+      if (t < 1 / 6) return p + (q - p) * 6 * t
+      if (t < 1 / 2) return q
+      if (t < 2 / 3) return p + (q - p) * (2 / 3 - t) * 6
       return p
     }
 
@@ -108,9 +108,9 @@ export function ColorPicker({ value, onChange, label, className = "", id }: Colo
     } else {
       const q = l < 0.5 ? l * (1 + s) : l + s - l * s
       const p = 2 * l - q
-      r = hue2rgb(p, q, h + 1/3)
+      r = hue2rgb(p, q, h + 1 / 3)
       g = hue2rgb(p, q, h)
-      b = hue2rgb(p, q, h - 1/3)
+      b = hue2rgb(p, q, h - 1 / 3)
     }
 
     const toHex = (c: number) => {
@@ -130,9 +130,9 @@ export function ColorPicker({ value, onChange, label, className = "", id }: Colo
     const hue2rgb = (p: number, q: number, t: number) => {
       if (t < 0) t += 1
       if (t > 1) t -= 1
-      if (t < 1/6) return p + (q - p) * 6 * t
-      if (t < 1/2) return q
-      if (t < 2/3) return p + (q - p) * (2/3 - t) * 6
+      if (t < 1 / 6) return p + (q - p) * 6 * t
+      if (t < 1 / 2) return q
+      if (t < 2 / 3) return p + (q - p) * (2 / 3 - t) * 6
       return p
     }
 
@@ -143,9 +143,9 @@ export function ColorPicker({ value, onChange, label, className = "", id }: Colo
     } else {
       const q = l < 0.5 ? l * (1 + s) : l + s - l * s
       const p = 2 * l - q
-      r = hue2rgb(p, q, h + 1/3)
+      r = hue2rgb(p, q, h + 1 / 3)
       g = hue2rgb(p, q, h)
-      b = hue2rgb(p, q, h - 1/3)
+      b = hue2rgb(p, q, h - 1 / 3)
     }
 
     return {
@@ -196,7 +196,7 @@ export function ColorPicker({ value, onChange, label, className = "", id }: Colo
     const y = e.clientY - rect.top
     const s = Math.round((x / rect.width) * 100)
     const l = Math.round(100 - (y / rect.height) * 100)
-    
+
     const newHsl = { ...hsl, s: Math.max(0, Math.min(100, s)), l: Math.max(0, Math.min(100, l)) }
     setHsl(newHsl)
     onChange(hslToHex(newHsl.h, newHsl.s, newHsl.l))
@@ -273,14 +273,14 @@ export function ColorPicker({ value, onChange, label, className = "", id }: Colo
           {/* Header */}
           <div className="flex items-center justify-between mb-4">
             <h3 className="text-sm font-semibold text-foreground">Color Picker</h3>
-            <Button
+            <GButton
               size="sm"
               variant="ghost"
               onClick={() => setGlobalOpenPicker(null)}
               className="h-6 w-6 p-0"
             >
               ×
-            </Button>
+            </GButton>
           </div>
 
           {/* Main Color Selection Area */}
@@ -353,21 +353,21 @@ export function ColorPicker({ value, onChange, label, className = "", id }: Colo
             {/* Color Format Display */}
             <div className="space-y-3">
               <h4 className="text-xs font-semibold text-foreground">Color Values</h4>
-              
+
               {/* HEX */}
               <div className="flex items-center gap-2">
                 <div className="w-12 text-xs font-medium text-muted-foreground">HEX</div>
                 <div className="flex-1 px-2 py-1 bg-muted/50 rounded text-xs font-mono text-foreground">
                   {currentHex.toUpperCase()}
                 </div>
-                <Button
+                <GButton
                   size="sm"
                   variant="ghost"
                   onClick={() => copyColor('hex', currentHex.toUpperCase())}
                   className="h-6 w-6 p-0"
                 >
                   {copied === 'hex' ? <Check className="h-3 w-3" /> : <Copy className="h-3 w-3" />}
-                </Button>
+                </GButton>
               </div>
 
               {/* RGB */}
@@ -376,14 +376,14 @@ export function ColorPicker({ value, onChange, label, className = "", id }: Colo
                 <div className="flex-1 px-2 py-1 bg-muted/50 rounded text-xs font-mono text-foreground">
                   {rgb.r}, {rgb.g}, {rgb.b}
                 </div>
-                <Button
+                <GButton
                   size="sm"
                   variant="ghost"
                   onClick={() => copyColor('rgb', `${rgb.r}, ${rgb.g}, ${rgb.b}`)}
                   className="h-6 w-6 p-0"
                 >
                   {copied === 'rgb' ? <Check className="h-3 w-3" /> : <Copy className="h-3 w-3" />}
-                </Button>
+                </GButton>
               </div>
 
               {/* CMYK */}
@@ -392,14 +392,14 @@ export function ColorPicker({ value, onChange, label, className = "", id }: Colo
                 <div className="flex-1 px-2 py-1 bg-muted/50 rounded text-xs font-mono text-foreground">
                   {cmyk.c}%, {cmyk.m}%, {cmyk.y}%, {cmyk.k}%
                 </div>
-                <Button
+                <GButton
                   size="sm"
                   variant="ghost"
                   onClick={() => copyColor('cmyk', `${cmyk.c}%, ${cmyk.m}%, ${cmyk.y}%, ${cmyk.k}%`)}
                   className="h-6 w-6 p-0"
                 >
                   {copied === 'cmyk' ? <Check className="h-3 w-3" /> : <Copy className="h-3 w-3" />}
-                </Button>
+                </GButton>
               </div>
 
               {/* HSV */}
@@ -408,14 +408,14 @@ export function ColorPicker({ value, onChange, label, className = "", id }: Colo
                 <div className="flex-1 px-2 py-1 bg-muted/50 rounded text-xs font-mono text-foreground">
                   {hsv.h}°, {hsv.s}%, {hsv.v}%
                 </div>
-                <Button
+                <GButton
                   size="sm"
                   variant="ghost"
                   onClick={() => copyColor('hsv', `${hsv.h}°, ${hsv.s}%, ${hsv.v}%`)}
                   className="h-6 w-6 p-0"
                 >
                   {copied === 'hsv' ? <Check className="h-3 w-3" /> : <Copy className="h-3 w-3" />}
-                </Button>
+                </GButton>
               </div>
 
               {/* HSL */}
@@ -424,14 +424,14 @@ export function ColorPicker({ value, onChange, label, className = "", id }: Colo
                 <div className="flex-1 px-2 py-1 bg-muted/50 rounded text-xs font-mono text-foreground">
                   {hsl.h}°, {hsl.s}%, {hsl.l}%
                 </div>
-                <Button
+                <GButton
                   size="sm"
                   variant="ghost"
                   onClick={() => copyColor('hsl', `${hsl.h}°, ${hsl.s}%, ${hsl.l}%`)}
                   className="h-6 w-6 p-0"
                 >
                   {copied === 'hsl' ? <Check className="h-3 w-3" /> : <Copy className="h-3 w-3" />}
-                </Button>
+                </GButton>
               </div>
             </div>
           </div>

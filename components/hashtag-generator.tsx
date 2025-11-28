@@ -1,7 +1,7 @@
 "use client"
 
 import { useState } from "react"
-import { Button } from "@/components/ui/button"
+import { GButton } from "@/components/globalcomponents/gbutton"
 import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
@@ -75,7 +75,7 @@ export function HashtagGenerator() {
             />
           </div>
 
-          <Button
+          <GButton
             onClick={generateHashtags}
             disabled={!topic || isGenerating}
             className="w-full h-10 text-sm font-medium shadow-sm hover:shadow-md transition-all"
@@ -88,7 +88,7 @@ export function HashtagGenerator() {
             ) : (
               "Generate Hashtags"
             )}
-          </Button>
+          </GButton>
         </CardContent>
       </Card>
 
@@ -97,7 +97,7 @@ export function HashtagGenerator() {
           <CardHeader>
             <div className="flex items-center justify-between">
               <CardTitle className="text-lg text-foreground">Generated Hashtags</CardTitle>
-              <Button
+              <GButton
                 onClick={copyToClipboard}
                 variant="outline"
                 size="sm"
@@ -114,7 +114,7 @@ export function HashtagGenerator() {
                     Copy All
                   </>
                 )}
-              </Button>
+              </GButton>
             </div>
           </CardHeader>
           <CardContent>

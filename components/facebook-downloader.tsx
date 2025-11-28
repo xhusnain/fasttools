@@ -1,7 +1,7 @@
 "use client"
 
 import { useState } from "react"
-import { Button } from "@/components/ui/button"
+import { GButton as Button } from "@/components/globalcomponents/gbutton"
 import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
 import { Card } from "@/components/ui/card"
@@ -19,14 +19,14 @@ export function FacebookDownloader({ compact = false }: FacebookDownloaderProps)
   const [result, setResult] = useState<
     | null
     | {
-        videoUrl?: string
-        hdUrl?: string
-        normalUrl?: string
-        thumbnail?: string
-        title?: string
-        downloading?: boolean
-        downloadStarted?: boolean
-      }
+      videoUrl?: string
+      hdUrl?: string
+      normalUrl?: string
+      thumbnail?: string
+      title?: string
+      downloading?: boolean
+      downloadStarted?: boolean
+    }
   >(null)
   const [downloadingStates, setDownloadingStates] = useState<{
     video?: boolean
@@ -110,7 +110,7 @@ export function FacebookDownloader({ compact = false }: FacebookDownloaderProps)
       || 'facebook_video'
 
     setError(null)
-    
+
     // Skip countdown for proxy URLs (like dl.snapcdn.app) - they download directly
     // This avoids CORS errors during countdown and makes download faster
     if (url.includes('dl.snapcdn.app') || url.includes('download?token=')) {
@@ -126,12 +126,12 @@ export function FacebookDownloader({ compact = false }: FacebookDownloaderProps)
     const countdownInterval = setInterval(() => {
       countdown--
       setCountdownStates(prev => ({ ...prev, [downloadType]: countdown }))
-      
+
       if (countdown <= 0) {
         clearInterval(countdownInterval)
         setCountdownStates(prev => ({ ...prev, [downloadType]: undefined }))
         setDownloadingStates(prev => ({ ...prev, [downloadType]: true }))
-        
+
         performDownload(url, sanitizedFilename, downloadType)
       }
     }, 1000)
@@ -144,7 +144,7 @@ export function FacebookDownloader({ compact = false }: FacebookDownloaderProps)
     if (url.includes('dl.snapcdn.app') || url.includes('download?token=')) {
       return
     }
-    
+
     try {
       const response = await fetch(url, {
         method: 'GET',
@@ -158,7 +158,7 @@ export function FacebookDownloader({ compact = false }: FacebookDownloaderProps)
       if (response.ok) {
         const blob = await response.blob()
         if (blob.size > 0) {
-          ;(window as any)[`downloadedBlob_${downloadType}`] = blob
+          ; (window as any)[`downloadedBlob_${downloadType}`] = blob
         }
       }
     } catch (error) {
@@ -169,29 +169,29 @@ export function FacebookDownloader({ compact = false }: FacebookDownloaderProps)
   const performDownload = async (url: string, filename: string, downloadType: string) => {
     try {
       const preDownloadedBlob = (window as any)[`downloadedBlob_${downloadType}`]
-      
+
       if (preDownloadedBlob) {
         const objectUrl = URL.createObjectURL(preDownloadedBlob)
-        
+
         const link = document.createElement("a")
         link.href = objectUrl
         link.download = filename
         link.style.display = 'none'
-        
+
         document.body.appendChild(link)
         link.click()
         document.body.removeChild(link)
-        
+
         setTimeout(() => {
           URL.revokeObjectURL(objectUrl)
           delete (window as any)[`downloadedBlob_${downloadType}`]
         }, 1000)
-        
+
         setTimeout(() => {
           setDownloadingStates(prev => ({ ...prev, [downloadType]: false }))
           setResult(prev => prev ? { ...prev, downloadStarted: true } : null)
         }, 500)
-        
+
         return
       }
 
@@ -205,16 +205,16 @@ export function FacebookDownloader({ compact = false }: FacebookDownloaderProps)
           link.target = '_blank'
           link.rel = 'noopener noreferrer'
           link.style.display = 'none'
-          
+
           document.body.appendChild(link)
           link.click()
           document.body.removeChild(link)
-          
+
           setTimeout(() => {
             setDownloadingStates(prev => ({ ...prev, [downloadType]: false }))
             setResult(prev => prev ? { ...prev, downloadStarted: true } : null)
           }, 500)
-          
+
           return
         } catch (linkError) {
           throw new Error('Download failed. Please try again.')
@@ -235,28 +235,28 @@ export function FacebookDownloader({ compact = false }: FacebookDownloaderProps)
 
         if (response.ok) {
           const blob = await response.blob()
-          
+
           if (blob.size > 0) {
             const objectUrl = URL.createObjectURL(blob)
-            
+
             const link = document.createElement("a")
             link.href = objectUrl
             link.download = filename
             link.style.display = 'none'
-            
+
             document.body.appendChild(link)
             link.click()
             document.body.removeChild(link)
-            
+
             setTimeout(() => {
               URL.revokeObjectURL(objectUrl)
             }, 1000)
-            
+
             setTimeout(() => {
               setDownloadingStates(prev => ({ ...prev, [downloadType]: false }))
               setResult(prev => prev ? { ...prev, downloadStarted: true } : null)
             }, 500)
-            
+
             return
           }
         }
@@ -269,16 +269,16 @@ export function FacebookDownloader({ compact = false }: FacebookDownloaderProps)
           link.target = '_blank'
           link.rel = 'noopener noreferrer'
           link.style.display = 'none'
-          
+
           document.body.appendChild(link)
           link.click()
           document.body.removeChild(link)
-          
+
           setTimeout(() => {
             setDownloadingStates(prev => ({ ...prev, [downloadType]: false }))
             setResult(prev => prev ? { ...prev, downloadStarted: true } : null)
           }, 500)
-          
+
           return
         } catch (linkError) {
           // Fall through to error
@@ -286,7 +286,7 @@ export function FacebookDownloader({ compact = false }: FacebookDownloaderProps)
       }
 
       throw new Error('Download failed. The video URL may be expired or inaccessible.')
-      
+
     } catch (e) {
       const errorMessage = e instanceof Error ? e.message : "Download failed. Please try again."
       setError(errorMessage)
@@ -331,11 +331,11 @@ export function FacebookDownloader({ compact = false }: FacebookDownloaderProps)
           <Button
             onClick={handleFetch}
             disabled={!videoUrl || loading}
+            isLoading={loading}
             className={`w-full ${compact ? "h-10 sm:h-11" : "h-12 sm:h-14"} text-sm sm:text-base font-medium shadow-sm hover:shadow-md transition-all`}
           >
             {loading ? (
               <>
-                <LoadingSpinner className="mr-2 h-4 w-4 sm:h-5 sm:w-5" />
                 <span className="hidden xs:inline">Processing content... (Usually takes 1-3 seconds)</span>
                 <span className="xs:hidden">Processing...</span>
               </>
@@ -372,13 +372,9 @@ export function FacebookDownloader({ compact = false }: FacebookDownloaderProps)
                     variant="outline"
                     size="sm"
                     className="mt-3"
+                    isLoading={loading}
                   >
-                    {loading ? (
-                      <>
-                        <LoadingSpinner className="mr-2 h-3 w-3" />
-                        Retrying...
-                      </>
-                    ) : (
+                    {loading ? "Retrying..." : (
                       <>
                         <Download className="mr-2 h-3 w-3" />
                         Try Again

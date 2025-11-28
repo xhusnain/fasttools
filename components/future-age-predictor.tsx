@@ -1,7 +1,7 @@
 "use client"
 
 import { useState } from "react"
-import { Button } from "@/components/ui/button"
+import { GButton } from "@/components/globalcomponents/gbutton"
 import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
@@ -164,7 +164,7 @@ export function FutureAgePredictor() {
             )}
           </div>
 
-          <Button
+          <GButton
             onClick={calculateFutureAge}
             disabled={!birthDate || !targetYear || isCalculating}
             className="w-full h-11 text-sm font-medium shadow-sm hover:shadow-md transition-all"
@@ -180,7 +180,7 @@ export function FutureAgePredictor() {
                 Predict My Future Age
               </>
             )}
-          </Button>
+          </GButton>
         </div>
 
         {result && (
@@ -196,7 +196,7 @@ export function FutureAgePredictor() {
             </div>
 
             <div className="flex gap-2">
-              <Button
+              <GButton
                 onClick={copyResult}
                 variant="outline"
                 className="flex-1 h-10 text-sm font-medium hover:bg-white/20 transition-all bg-white/10 border-white/30 text-white hover:text-white"
@@ -212,13 +212,13 @@ export function FutureAgePredictor() {
                     Copy
                   </>
                 )}
-              </Button>
-              <Button
+              </GButton>
+              <GButton
                 onClick={shareResult}
                 className="flex-1 h-10 text-sm font-medium shadow-sm hover:shadow-md transition-all bg-white text-foreground hover:bg-white/90"
               >
                 Share Result
-              </Button>
+              </GButton>
             </div>
           </div>
         )}

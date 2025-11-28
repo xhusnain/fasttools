@@ -1,22 +1,22 @@
 "use client"
 
 import { useState, useEffect } from "react"
-import { Button } from "@/components/ui/button"
+import { GButton } from "@/components/globalcomponents/gbutton"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
 import { Badge } from "@/components/ui/badge"
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
-import { 
-  Calculator, 
-  Clock, 
-  Activity, 
-  Target, 
-  TrendingUp, 
-  Heart, 
-  Zap, 
-  Trophy, 
+import {
+  Calculator,
+  Clock,
+  Activity,
+  Target,
+  TrendingUp,
+  Heart,
+  Zap,
+  Trophy,
   Users,
   Timer,
   BarChart3,
@@ -524,13 +524,13 @@ Fat to Lose: ${result.idealBodyFat.fatToLose} kg`
           </div>
 
           <div className="flex flex-col sm:flex-row gap-2 w-full">
-            <Button onClick={calculateBodyFat} className="flex-1 w-full sm:w-auto text-sm sm:text-base">
+            <GButton onClick={calculateBodyFat} className="flex-1 w-full sm:w-auto text-sm sm:text-base">
               <Calculator className="mr-2 h-4 w-4" />
               Calculate Body Fat
-            </Button>
-            <Button variant="outline" onClick={clearAll} className="w-full sm:w-auto text-sm sm:text-base">
+            </GButton>
+            <GButton variant="outline" onClick={clearAll} className="w-full sm:w-auto text-sm sm:text-base">
               Clear All
-            </Button>
+            </GButton>
           </div>
         </CardContent>
       </Card>
@@ -584,10 +584,10 @@ Fat to Lose: ${result.idealBodyFat.fatToLose} kg`
               </div>
 
               <div className="flex gap-2 pt-4">
-                <Button onClick={copyResult} variant="outline" size="sm">
+                <GButton onClick={copyResult} variant="outline" size="sm">
                   <Copy className="mr-2 h-4 w-4" />
                   Copy Results
-                </Button>
+                </GButton>
               </div>
             </CardContent>
           </Card>
@@ -744,13 +744,13 @@ Fat to Lose: ${result.idealBodyFat.fatToLose} kg`
                       BMI: {item.bmiMethod.percentage}% | Fat Mass: {item.navyMethod.fatMass} kg
                     </div>
                   </div>
-                  <Button
+                  <GButton
                     variant="ghost"
                     size="sm"
                     onClick={() => setResult(item)}
                   >
                     View Details
-                  </Button>
+                  </GButton>
                 </div>
               ))}
             </div>
@@ -780,7 +780,7 @@ Fat to Lose: ${result.idealBodyFat.fatToLose} kg`
               </div>
             </div>
           </div>
-          
+
           <div className="text-sm text-foreground space-y-2">
             <p>
               <strong className="text-foreground">U.S. Navy Method:</strong> Most accurate for general population using circumference measurements.

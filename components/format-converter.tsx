@@ -1,14 +1,14 @@
 "use client"
 
 import { useState, useEffect } from "react"
-import { Button } from "@/components/ui/button"
+import { GButton } from "@/components/globalcomponents/gbutton"
 import { Textarea } from "@/components/ui/textarea"
 import { Label } from "@/components/ui/label"
-import { 
-  Copy, 
-  Check, 
-  Download, 
-  AlertCircle, 
+import {
+  Copy,
+  Check,
+  Download,
+  AlertCircle,
   CheckCircle2,
   Sparkles,
   ArrowLeftRight
@@ -265,7 +265,7 @@ email = "jane@example.com"`,
       // Paragraphs
       .replace(/\n\n/g, "</p><p>")
       // Wrap in paragraph tags
-      .replace(/^(.+)$/gm, (match) => 
+      .replace(/^(.+)$/gm, (match) =>
         match.startsWith("<") ? match : `<p>${match}</p>`
       )
   }
@@ -333,19 +333,19 @@ email = "jane@example.com"`,
           stack.push({ obj, indent, currentKey: null })
           const [k, v] = value.split(":").map(s => s.trim())
           // @ts-ignore
-            obj[k] = parseValue(v)
+          obj[k] = parseValue(v)
         } else {
           parent.obj.push(parseValue(value))
         }
       } else if (trimmed.includes(":")) {
         const [key, value] = trimmed.split(":").map(s => s.trim())
-        
+
         while (stack.length > 1 && stack[stack.length - 1].indent >= indent) {
           stack.pop()
         }
 
         const parent = stack[stack.length - 1]
-        
+
         if (value) {
           parent.obj[key] = parseValue(value)
         } else {
@@ -510,7 +510,7 @@ email = "jane@example.com"`,
         if (value.length > 0 && typeof value[0] === "object") {
           arrays.push({ key: fullKey, value })
         } else {
-          toml += `${key} = [${value.map(v => 
+          toml += `${key} = [${value.map(v =>
             typeof v === "string" ? `"${v}"` : v
           ).join(", ")}]\n`
         }
@@ -550,7 +550,7 @@ email = "jane@example.com"`,
       if (trimmed.startsWith("[[") && trimmed.endsWith("]]")) {
         const path = trimmed.slice(2, -2).split(".")
         currentPath = path
-        
+
         let target = obj
         for (let i = 0; i < path.length; i++) {
           const key = path[i]
@@ -569,7 +569,7 @@ email = "jane@example.com"`,
       else if (trimmed.startsWith("[") && trimmed.endsWith("]")) {
         const path = trimmed.slice(1, -1).split(".")
         currentPath = path
-        
+
         let target = obj
         path.forEach((key) => {
           if (!target[key]) target[key] = {}
@@ -590,23 +590,23 @@ email = "jane@example.com"`,
 
   const parseTomlValue = (value: string): any => {
     // Remove quotes
-    if ((value.startsWith('"') && value.endsWith('"')) || 
-        (value.startsWith("'") && value.endsWith("'"))) {
+    if ((value.startsWith('"') && value.endsWith('"')) ||
+      (value.startsWith("'") && value.endsWith("'"))) {
       return value.slice(1, -1)
     }
-    
+
     // Array
     if (value.startsWith("[") && value.endsWith("]")) {
       return value.slice(1, -1).split(",").map(v => parseTomlValue(v.trim()))
     }
-    
+
     // Boolean
     if (value === "true") return true
     if (value === "false") return false
-    
+
     // Number
     if (!isNaN(Number(value))) return Number(value)
-    
+
     return value
   }
 
@@ -614,7 +614,7 @@ email = "jane@example.com"`,
   const convertToPdf = async (content: string, sourceFormat: Format): Promise<Blob> => {
     // Convert content to HTML first if needed
     let htmlContent = content
-    
+
     if (sourceFormat === "markdown") {
       htmlContent = markdownToHtml(content)
     } else if (sourceFormat === "json") {
@@ -636,7 +636,7 @@ email = "jane@example.com"`,
     } else if (sourceFormat === "toml") {
       htmlContent = `<pre style="font-family: monospace; background: #f5f5f5; padding: 15px; border-radius: 5px; overflow-wrap: break-word; white-space: pre-wrap;">${content}</pre>`
     }
-    
+
     // Create complete HTML document for iframe
     const fullHtml = `
       <!DOCTYPE html>
@@ -683,7 +683,7 @@ email = "jane@example.com"`,
       </body>
       </html>
     `
-    
+
     // Create completely hidden iframe
     const iframe = document.createElement("iframe")
     iframe.style.cssText = `
@@ -696,9 +696,9 @@ email = "jane@example.com"`,
       visibility: hidden !important;
       opacity: 0 !important;
     `
-    
+
     document.body.appendChild(iframe)
-    
+
     // Wait for iframe to be ready
     await new Promise<void>((resolve) => {
       if (iframe.contentWindow) {
@@ -708,16 +708,16 @@ email = "jane@example.com"`,
         iframe.contentWindow.document.close()
       }
     })
-    
+
     // Wait a bit for rendering
     await new Promise(resolve => setTimeout(resolve, 200))
-    
+
     try {
       const iframeBody = iframe.contentWindow?.document.body
       if (!iframeBody) {
         throw new Error("Failed to access iframe content")
       }
-      
+
       // Use html2canvas on the iframe body
       const canvas = await html2canvas(iframeBody, {
         scale: 2,
@@ -726,24 +726,24 @@ email = "jane@example.com"`,
         windowWidth: 800,
         windowHeight: iframeBody.scrollHeight,
       })
-      
+
       // Create PDF with jsPDF
       const pdf = new jsPDF({
         orientation: "portrait",
         unit: "mm",
         format: "a4",
       })
-      
+
       const imgWidth = 210 // A4 width in mm
       const pageHeight = 297 // A4 height in mm
       const imgHeight = (canvas.height * imgWidth) / canvas.width
       let heightLeft = imgHeight
       let position = 0
-      
+
       // Add first page
       pdf.addImage(canvas.toDataURL("image/png"), "PNG", 0, position, imgWidth, imgHeight)
       heightLeft -= pageHeight
-      
+
       // Add additional pages if content is longer than one page
       while (heightLeft > 0) {
         position = heightLeft - imgHeight
@@ -751,7 +751,7 @@ email = "jane@example.com"`,
         pdf.addImage(canvas.toDataURL("image/png"), "PNG", 0, position, imgWidth, imgHeight)
         heightLeft -= pageHeight
       }
-      
+
       // Return the PDF as a Blob
       return pdf.output("blob")
     } finally {
@@ -768,7 +768,7 @@ email = "jane@example.com"`,
       setError("")
       setPdfBlob(null)
       setIsPdfGenerated(false)
-      
+
       if (!input.trim()) {
         setOutput("")
         setIsValid(null)
@@ -778,7 +778,7 @@ email = "jane@example.com"`,
       // Validate input
       const valid = validateInput(sourceFormat, input)
       setIsValid(valid)
-      
+
       if (!valid && sourceFormat !== "html" && sourceFormat !== "markdown" && sourceFormat !== "pdf") {
         throw new Error(`Invalid ${sourceFormat.toUpperCase()} format`)
       }
@@ -787,10 +787,10 @@ email = "jane@example.com"`,
       if (targetFormat === "pdf") {
         setIsGeneratingPdf(true)
         setOutput("") // Clear output to show loading state
-        
+
         // Wait for React to render the loading UI before manipulating DOM
         await new Promise(resolve => setTimeout(resolve, 50))
-        
+
         try {
           const pdfBlobResult = await convertToPdf(input, sourceFormat)
           setPdfBlob(pdfBlobResult)
@@ -820,7 +820,7 @@ email = "jane@example.com"`,
           const parser = new DOMParser()
           const doc = parser.parseFromString(input, "text/html")
           const text = doc.body.textContent || ""
-          
+
           if (targetFormat === "json") {
             result = JSON.stringify({ content: text }, null, 2)
           } else if (targetFormat === "yaml") {
@@ -844,7 +844,7 @@ email = "jane@example.com"`,
           const parser = new DOMParser()
           const doc = parser.parseFromString(html, "text/html")
           const text = doc.body.textContent || ""
-          
+
           if (targetFormat === "json") {
             result = JSON.stringify({ content: text }, null, 2)
           } else if (targetFormat === "yaml") {
@@ -921,7 +921,7 @@ email = "jane@example.com"`,
 
   const downloadOutput = () => {
     const targetExt = formats.find(f => f.value === targetFormat)?.fileExtension || "txt"
-    
+
     // Handle PDF download
     if (targetFormat === "pdf" && pdfBlob) {
       const url = URL.createObjectURL(pdfBlob)
@@ -932,7 +932,7 @@ email = "jane@example.com"`,
       URL.revokeObjectURL(url)
       return
     }
-    
+
     // Handle other formats
     const blob = new Blob([output], { type: "text/plain" })
     const url = URL.createObjectURL(blob)
@@ -960,11 +960,11 @@ email = "jane@example.com"`,
       setTimeout(() => setError(""), 3000)
       return
     }
-    
+
     const tempFormat = sourceFormat
     setSourceFormat(targetFormat)
     setTargetFormat(tempFormat)
-    
+
     // Optionally swap input/output as well
     if (output && !isPdfGenerated) {
       setInput(output)
@@ -976,7 +976,7 @@ email = "jane@example.com"`,
     <div className="space-y-6 relative">
       {/* PDF Generation Overlay - Prevents any visual glitches */}
       {isGeneratingPdf && (
-        <div 
+        <div
           className="absolute inset-0 z-50 bg-background/95 backdrop-blur-sm flex items-center justify-center"
           style={{ minHeight: '400px' }}
         >
@@ -991,7 +991,7 @@ email = "jane@example.com"`,
           </div>
         </div>
       )}
-      
+
       {/* Format Selectors */}
       <Card className="p-4 sm:p-6 bg-gradient-to-r from-primary/5 to-secondary-accent/5 border-primary/20">
         <div className="grid grid-cols-1 md:grid-cols-[1fr_auto_1fr] gap-4 items-end">

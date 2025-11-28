@@ -1,12 +1,12 @@
 "use client"
 
 import { useState } from "react"
-import { Button } from "@/components/ui/button"
+import { GButton as Button } from "@/components/globalcomponents/gbutton"
 import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
 import { Card } from "@/components/ui/card"
 import { Download, Copy, Check, ImageIcon, AlertCircle } from "lucide-react"
-import { LoadingSpinner } from "@/components/loading-spinner"
+
 import { Alert, AlertDescription } from "@/components/ui/alert"
 
 export function YoutubeThumbnailDownloader() {
@@ -19,7 +19,7 @@ export function YoutubeThumbnailDownloader() {
 
   const extractVideoId = (url: string): string | null => {
     const trimmedUrl = url.trim()
-    
+
     const patterns = [
       // youtube.com/watch?v=VIDEO_ID
       /(?:youtube\.com\/watch\?v=)([a-zA-Z0-9_-]{11})/i,
@@ -84,7 +84,7 @@ export function YoutubeThumbnailDownloader() {
 
     // Validate URL first
     const validation = validateYouTubeUrl(videoUrl)
-    
+
     if (!validation.valid) {
       setError(validation.message || "Invalid YouTube URL")
       setIsValidating(false)
@@ -94,7 +94,7 @@ export function YoutubeThumbnailDownloader() {
 
     setLoading(true)
     setIsValidating(false)
-    
+
     setTimeout(() => {
       const videoId = extractVideoId(videoUrl)
 
@@ -187,9 +187,8 @@ export function YoutubeThumbnailDownloader() {
                     handleExtract()
                   }
                 }}
-                className={`h-10 sm:h-11 text-sm bg-background text-foreground placeholder:text-muted-foreground ${
-                  error ? "border-destructive focus-visible:ring-destructive" : "border-border"
-                }`}
+                className={`h-10 sm:h-11 text-sm bg-background text-foreground placeholder:text-muted-foreground ${error ? "border-destructive focus-visible:ring-destructive" : "border-border"
+                  }`}
               />
               {error && (
                 <Alert variant="destructive" className="mt-2">
@@ -202,11 +201,11 @@ export function YoutubeThumbnailDownloader() {
             <Button
               onClick={handleExtract}
               disabled={!videoUrl.trim() || loading || isValidating}
+              isLoading={loading}
               className="w-full h-10 sm:h-11 text-sm font-medium bg-gradient-to-r from-primary to-primary/90 hover:from-primary/90 hover:to-primary text-primary-foreground shadow-lg hover:shadow-xl transition-all duration-300"
             >
               {loading ? (
                 <>
-                  <LoadingSpinner className="mr-2" />
                   <span className="hidden sm:inline">Extracting Thumbnails...</span>
                   <span className="sm:hidden">Extracting...</span>
                 </>

@@ -2,7 +2,7 @@
 
 import { useState } from "react"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
-import { Button } from "@/components/ui/button"
+import { GButton } from "@/components/globalcomponents/gbutton"
 import { Label } from "@/components/ui/label"
 import { Input } from "@/components/ui/input"
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
@@ -118,7 +118,7 @@ export function CompoundInterestCalculator() {
       const p = Number.parseFloat(principal)
       const t = Number.parseFloat(time)
       const n = Number.parseFloat(frequency)
-      
+
       // Use country rate if selected, otherwise use manual rate
       let r: number
       if (useCountryRate) {
@@ -225,29 +225,29 @@ Time Period: ${result.years} years`
               <Label htmlFor="principal" className="text-[11px] font-medium flex items-center gap-1 text-heading-accent">
                 <DollarSign className="h-2.5 w-2.5 text-heading-accent" />
                 Principal ({countryRateData[selectedCountry]?.currency})
-            </Label>
-            <Input
-              id="principal"
-              type="number"
-              value={principal}
-              onChange={(e) => setPrincipal(e.target.value)}
-              placeholder="10000"
+              </Label>
+              <Input
+                id="principal"
+                type="number"
+                value={principal}
+                onChange={(e) => setPrincipal(e.target.value)}
+                placeholder="10000"
                 className="h-8 text-xs px-2 py-1.5 rounded-lg border-border bg-card text-foreground focus-visible:ring-primary focus:border-primary hover:border-primary/50 ring-offset-1"
-            />
-          </div>
+              />
+            </div>
             <div className="space-y-1">
               <Label htmlFor="time" className="text-[11px] font-medium flex items-center gap-1 text-heading-accent">
                 <Target className="h-2.5 w-2.5 text-heading-accent" />
                 Years
-            </Label>
-            <Input
-              id="time"
-              type="number"
-              value={time}
-              onChange={(e) => setTime(e.target.value)}
-              placeholder="10"
+              </Label>
+              <Input
+                id="time"
+                type="number"
+                value={time}
+                onChange={(e) => setTime(e.target.value)}
+                placeholder="10"
                 className="h-8 text-xs px-2 py-1.5 rounded-lg border-border bg-card text-foreground focus-visible:ring-primary focus:border-primary hover:border-primary/50 ring-offset-1"
-            />
+              />
             </div>
           </div>
 
@@ -274,10 +274,10 @@ Time Period: ${result.years} years`
           {/* Rate Selection */}
           <div className="space-y-2 p-2 bg-card rounded-lg border border-border">
             <div className="flex items-center space-x-1.5">
-              <input 
-                type="checkbox" 
-                id="use-country-rate" 
-                checked={useCountryRate} 
+              <input
+                type="checkbox"
+                id="use-country-rate"
+                checked={useCountryRate}
                 onChange={(e) => setUseCountryRate(e.target.checked)}
                 className="rounded border-gray-600 w-3 h-3"
               />
@@ -286,7 +286,7 @@ Time Period: ${result.years} years`
                 Use Country Rate ({countryRateData[selectedCountry]?.investmentRate}%)
               </Label>
             </div>
-            
+
             {!useCountryRate && (
               <div className="space-y-1">
                 <Label htmlFor="rate" className="text-[11px] font-medium text-heading-accent">
@@ -303,14 +303,14 @@ Time Period: ${result.years} years`
                 />
               </div>
             )}
-            
+
             <p className="text-[10px] text-foreground leading-tight">
               {countryRateData[selectedCountry]?.description}
             </p>
           </div>
 
           {/* Calculate Button */}
-          <Button
+          <GButton
             onClick={calculateCompoundInterest}
             className="w-full h-9 text-xs font-medium shadow-lg hover:shadow-xl transition-all duration-300 bg-gradient-to-r from-primary to-primary/90 hover:from-primary/90 hover:to-primary text-white"
             disabled={!principal || !time || isCalculating}
@@ -326,7 +326,7 @@ Time Period: ${result.years} years`
                 <span>Calculate</span>
               </>
             )}
-          </Button>
+          </GButton>
         </CardContent>
       </Card>
 
@@ -349,7 +349,7 @@ Time Period: ${result.years} years`
               <div className="text-lg sm:text-xl md:text-2xl font-bold text-foreground mb-1 break-words overflow-hidden">
                 <span className="block">{result.currency}</span>
                 <span className="block text-base sm:text-lg md:text-xl">
-                  {result.totalAmount > 1e15 
+                  {result.totalAmount > 1e15
                     ? result.totalAmount.toExponential(2)
                     : result.totalAmount.toLocaleString(undefined, { maximumFractionDigits: 2 })
                   }
@@ -361,7 +361,7 @@ Time Period: ${result.years} years`
               <div className="text-xs sm:text-sm font-semibold text-heading-accent mt-1 break-words px-2">
                 <span className="block">{result.currency}</span>
                 <span className="block">
-                  {result.monthlyAmount > 1e15 
+                  {result.monthlyAmount > 1e15
                     ? result.monthlyAmount.toExponential(2)
                     : result.monthlyAmount.toLocaleString(undefined, { maximumFractionDigits: 2 })
                   } / month equivalent
@@ -379,7 +379,7 @@ Time Period: ${result.years} years`
                 <div className="flex flex-col sm:flex-row sm:justify-between sm:items-center p-2 bg-card rounded-lg border border-blue-700 gap-1">
                   <span className="text-xs text-foreground">Principal</span>
                   <span className="font-semibold text-xs text-foreground break-words text-right sm:text-left">
-                    {result.currency} {result.principal > 1e15 
+                    {result.currency} {result.principal > 1e15
                       ? result.principal.toExponential(2)
                       : result.principal.toLocaleString(undefined, { maximumFractionDigits: 2 })
                     }
@@ -388,7 +388,7 @@ Time Period: ${result.years} years`
                 <div className="flex flex-col sm:flex-row sm:justify-between sm:items-center p-2 bg-card rounded-lg border border-green-700 gap-1">
                   <span className="text-xs text-heading-accent">Interest Earned</span>
                   <span className="font-semibold text-xs text-heading-accent break-words text-right sm:text-left">
-                    +{result.currency} {result.totalInterest > 1e15 
+                    +{result.currency} {result.totalInterest > 1e15
                       ? result.totalInterest.toExponential(2)
                       : result.totalInterest.toLocaleString(undefined, { maximumFractionDigits: 2 })
                     }
@@ -421,7 +421,7 @@ Time Period: ${result.years} years`
                   <div key={year.year} className="flex flex-col sm:flex-row sm:justify-between sm:items-center p-2 bg-card rounded border border-border gap-1">
                     <span className="text-xs text-muted-foreground">Year {year.year}</span>
                     <span className="text-xs font-semibold text-foreground break-words text-right sm:text-left">
-                      {result.currency} {year.balance > 1e15 
+                      {result.currency} {year.balance > 1e15
                         ? year.balance.toExponential(2)
                         : year.balance.toLocaleString(undefined, { maximumFractionDigits: 2 })
                       }
@@ -433,7 +433,7 @@ Time Period: ${result.years} years`
 
             {/* Action Buttons */}
             <div className="flex flex-col sm:flex-row gap-2">
-              <Button
+              <GButton
                 onClick={copyResult}
                 className="flex-1 h-9 text-xs font-medium transition-all duration-300 border border-green-700 hover:bg-secondary text-heading-accent bg-card"
               >
@@ -450,7 +450,7 @@ Time Period: ${result.years} years`
                     <span className="sm:hidden">Copy</span>
                   </>
                 )}
-              </Button>
+              </GButton>
             </div>
           </CardContent>
         </Card>

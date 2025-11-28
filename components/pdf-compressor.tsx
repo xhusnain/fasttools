@@ -3,7 +3,7 @@
 import type React from "react"
 
 import { useState, useRef } from "react"
-import { Button } from "@/components/ui/button"
+import { GButton as Button } from "@/components/globalcomponents/gbutton"
 import { Card } from "@/components/ui/card"
 import { Progress } from "@/components/ui/progress"
 import { Label } from "@/components/ui/label"
@@ -43,13 +43,13 @@ export function PDFCompressor() {
         showToast("error", "File size must be less than 2GB")
         return
       }
-      
+
       setFile(uploadedFile)
       setOriginalSize(uploadedFile.size)
       setCompressed(false)
       setCompressedPdfBytes(null)
       setProgress(0)
-      
+
       showToast("success", "✅ PDF loaded successfully")
     }
   }
@@ -66,13 +66,13 @@ export function PDFCompressor() {
         showToast("error", "File size must be less than 2GB")
         return
       }
-      
+
       setFile(droppedFile)
       setOriginalSize(droppedFile.size)
       setCompressed(false)
       setCompressedPdfBytes(null)
       setProgress(0)
-      
+
       showToast("success", "✅ PDF loaded successfully")
     }
   }
@@ -108,51 +108,51 @@ export function PDFCompressor() {
 
   const compressPDF = async () => {
     if (!file) return
-    
+
     setLoading(true)
     setProgress(5)
-    
+
     try {
       const arrayBuffer = await file.arrayBuffer()
       setProgress(10)
-      
+
       // Load PDF with PDF.js for rendering
       const loadingTask = pdfjsLib.getDocument({ data: arrayBuffer })
       const pdfDoc = await loadingTask.promise
       const numPages = pdfDoc.numPages
       setProgress(15)
-      
+
       // Create new compressed PDF
       const newPdf = await PDFDocument.create()
       setProgress(20)
-      
+
       // Get compression settings
       const settings = getCompressionQuality(compressionLevel)
-      
+
       // Render each page to canvas and compress
       for (let pageNum = 1; pageNum <= numPages; pageNum++) {
         const page = await pdfDoc.getPage(pageNum)
         const viewport = page.getViewport({ scale: settings.scale })
-        
+
         // Create canvas
         const canvas = document.createElement('canvas')
         canvas.width = viewport.width
         canvas.height = viewport.height
         const context = canvas.getContext('2d', { alpha: false })
-        
+
         if (!context) throw new Error("Failed to get canvas context")
-        
+
         // White background
         context.fillStyle = 'white'
         context.fillRect(0, 0, canvas.width, canvas.height)
-        
+
         // Render PDF page to canvas
         await page.render({
           canvasContext: context,
           viewport: viewport,
           intent: 'print'
         }).promise
-        
+
         // Convert canvas to JPEG with compression
         const blob = await new Promise<Blob>((resolve, reject) => {
           canvas.toBlob(
@@ -161,9 +161,9 @@ export function PDFCompressor() {
             settings.quality
           )
         })
-        
+
         const imageBytes = new Uint8Array(await blob.arrayBuffer())
-        
+
         // Embed in new PDF
         const jpegImage = await newPdf.embedJpg(imageBytes)
         const pdfPage = newPdf.addPage([viewport.width, viewport.height])
@@ -173,31 +173,31 @@ export function PDFCompressor() {
           width: viewport.width,
           height: viewport.height
         })
-        
+
         // Update progress
         const pageProgress = 20 + ((pageNum / numPages) * 75)
         setProgress(Math.round(pageProgress))
       }
-      
+
       setProgress(95)
-      
+
       // Save compressed PDF
       const pdfBytes = await newPdf.save()
       setProgress(100)
-      
+
       setCompressedSize(pdfBytes.length)
       setCompressedPdfBytes(pdfBytes)
       setCompressed(true)
-      
+
       const reduction = ((1 - (pdfBytes.length / originalSize)) * 100).toFixed(1)
       const savedKB = ((originalSize - pdfBytes.length) / 1024).toFixed(0)
-      
+
       if (pdfBytes.length >= originalSize) {
         showToast("warning", "⚠️ PDF is already optimized. Try a higher compression level.", 5000)
       } else {
         showToast("success", `✅ PDF compressed! Reduced by ${reduction}% (Saved ${savedKB} KB)`, 5000)
       }
-      
+
     } catch (error: any) {
       if (error.message?.includes("empty")) {
         showToast("error", "❌ Generated PDF is empty. Please try again.", 5000)
@@ -212,7 +212,7 @@ export function PDFCompressor() {
 
   const downloadCompressedPDF = () => {
     if (!compressedPdfBytes || !file) return
-    
+
     const blob = new Blob([compressedPdfBytes], { type: "application/pdf" })
     const url = URL.createObjectURL(blob)
     const link = document.createElement("a")
@@ -222,7 +222,7 @@ export function PDFCompressor() {
     link.click()
     document.body.removeChild(link)
     URL.revokeObjectURL(url)
-    
+
     showToast("success", "PDF downloaded successfully!")
   }
 
@@ -302,9 +302,8 @@ export function PDFCompressor() {
                         size="sm"
                         onClick={() => setCompressionLevel("low")}
                         disabled={loading}
-                        className={`h-auto py-3 flex flex-col items-center gap-1 ${
-                          compressionLevel === "low" ? "bg-primary text-white" : ""
-                        }`}
+                        className={`h-auto py-3 flex flex-col items-center gap-1 ${compressionLevel === "low" ? "bg-primary text-white" : ""
+                          }`}
                       >
                         <span className="text-xs font-bold">Low</span>
                         <span className="text-[10px] opacity-80">Best Quality</span>
@@ -316,9 +315,8 @@ export function PDFCompressor() {
                         size="sm"
                         onClick={() => setCompressionLevel("medium")}
                         disabled={loading}
-                        className={`h-auto py-3 flex flex-col items-center gap-1 ${
-                          compressionLevel === "medium" ? "bg-primary text-white" : ""
-                        }`}
+                        className={`h-auto py-3 flex flex-col items-center gap-1 ${compressionLevel === "medium" ? "bg-primary text-white" : ""
+                          }`}
                       >
                         <span className="text-xs font-bold">Medium</span>
                         <span className="text-[10px] opacity-80">Balanced</span>
@@ -330,9 +328,8 @@ export function PDFCompressor() {
                         size="sm"
                         onClick={() => setCompressionLevel("high")}
                         disabled={loading}
-                        className={`h-auto py-3 flex flex-col items-center gap-1 ${
-                          compressionLevel === "high" ? "bg-primary text-white" : ""
-                        }`}
+                        className={`h-auto py-3 flex flex-col items-center gap-1 ${compressionLevel === "high" ? "bg-primary text-white" : ""
+                          }`}
                       >
                         <span className="text-xs font-bold">High</span>
                         <span className="text-[10px] opacity-80">Max Compression</span>
@@ -359,9 +356,9 @@ export function PDFCompressor() {
                 {/* Action Buttons */}
                 <div className="space-y-3">
                   {!compressed ? (
-                    <Button 
-                      onClick={compressPDF} 
-                      disabled={loading} 
+                    <Button
+                      onClick={compressPDF}
+                      disabled={loading}
                       className="w-full h-11 text-sm font-semibold shadow-sm"
                       size="lg"
                     >
@@ -378,7 +375,7 @@ export function PDFCompressor() {
                       )}
                     </Button>
                   ) : (
-                    <Button 
+                    <Button
                       onClick={downloadCompressedPDF}
                       className="w-full h-11 text-sm font-semibold shadow-sm bg-green-600 hover:bg-green-700"
                       size="lg"

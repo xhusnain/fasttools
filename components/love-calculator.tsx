@@ -1,7 +1,7 @@
 "use client"
 
 import { useState, useEffect } from "react"
-import { Button } from "@/components/ui/button"
+import { GButton } from "@/components/globalcomponents/gbutton"
 import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
@@ -67,7 +67,7 @@ export function LoveCalculator() {
   useEffect(() => {
     const urlParams = new URLSearchParams(window.location.search)
     const resultParam = urlParams.get('result')
-    
+
     if (resultParam) {
       try {
         const decodedData = JSON.parse(decodeURIComponent(resultParam))
@@ -139,7 +139,7 @@ export function LoveCalculator() {
 
   const shareResult = () => {
     if (!result) return
-    
+
     // Create shareable URL with result data
     const shareData = {
       name1,
@@ -149,16 +149,16 @@ export function LoveCalculator() {
       emoji: result.emoji,
       theme
     }
-    
+
     // Encode the data for URL using encodeURIComponent to handle Unicode characters
     const jsonString = JSON.stringify(shareData)
     const encodedData = encodeURIComponent(jsonString)
     const shareUrl = `https://www.fasttools.store/calculator/love-calculator?result=${encodedData}`
-    
+
     const text = `Check out our love match! ${name1} + ${name2} = ${result.percentage}% Love Match! ${result.emoji}\n\nSee your own love match: ${shareUrl}`
-    
+
     if (navigator.share) {
-      navigator.share({ 
+      navigator.share({
         text,
         url: shareUrl
       })
@@ -214,7 +214,7 @@ export function LoveCalculator() {
               ))}
             </SelectContent>
           </Select>
-          
+
           {/* Theme Preview */}
           <div className={`p-3 rounded-lg bg-gradient-to-r ${currentTheme.bg} border ${currentTheme.border} mt-2`}>
             <div className="flex items-center gap-2 text-xs text-white/80">
@@ -263,7 +263,7 @@ export function LoveCalculator() {
             />
           </div>
 
-          <Button
+          <GButton
             onClick={calculateLove}
             disabled={!name1 || !name2 || isCalculating}
             className={`w-full h-12 text-sm font-bold shadow-lg hover:shadow-xl transition-all duration-300 bg-gradient-to-r ${currentTheme.button} text-white`}
@@ -285,7 +285,7 @@ export function LoveCalculator() {
                 </span>
               </>
             )}
-          </Button>
+          </GButton>
         </div>
 
         {result && (
@@ -309,7 +309,7 @@ export function LoveCalculator() {
             </div>
 
             <div className="flex flex-col sm:flex-row gap-3">
-              <Button
+              <GButton
                 onClick={copyResult}
                 variant="outline"
                 className="flex-1 h-11 text-sm font-medium hover:bg-white/20 transition-all bg-white/10 border-white/30 text-white"
@@ -325,27 +325,27 @@ export function LoveCalculator() {
                     Copy Text
                   </>
                 )}
-              </Button>
-              <Button
+              </GButton>
+              <GButton
                 onClick={shareResult}
                 className={`flex-1 h-11 text-sm font-medium shadow-lg hover:shadow-xl transition-all duration-300 bg-gradient-to-r ${currentTheme.button} text-white`}
               >
                 <Heart className="mr-2 h-4 w-4" />
                 Share URL
-              </Button>
+              </GButton>
             </div>
-            
+
             {/* Share URL Info */}
             <div className="p-3 rounded-lg bg-white/5 border border-white/10">
               <p className="text-xs text-white/70 text-center">
                 💕 Share this URL to let others see your love match result!
               </p>
             </div>
-            
+
             {/* Try Your Own Button for Shared Results */}
             {isSharedResult && (
               <div className="mt-4">
-                <Button
+                <GButton
                   onClick={() => {
                     setName1('')
                     setName2('')
@@ -358,7 +358,7 @@ export function LoveCalculator() {
                 >
                   <Sparkles className="mr-2 h-4 w-4" />
                   Try Your Own Love Match
-                </Button>
+                </GButton>
               </div>
             )}
           </div>

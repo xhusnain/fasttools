@@ -1,13 +1,13 @@
 "use client"
 
 import { useState } from "react"
-import { Button } from "@/components/ui/button"
+import { GButton } from "@/components/globalcomponents/gbutton"
 import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
 import { Textarea } from "@/components/ui/textarea"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Copy, Check, Code } from "lucide-react"
-import { LoadingSpinner } from "@/components/loading-spinner"
+
 
 export function MetaTagGenerator() {
   const [title, setTitle] = useState("")
@@ -153,20 +153,14 @@ ${twitterHandle ? `<meta name="twitter:creator" content="${twitterHandle}" />` :
             />
           </div>
 
-          <Button
+          <GButton
             onClick={generateMetaTags}
             disabled={!title || !description || isGenerating}
+            isLoading={isGenerating}
             className="w-full h-10 text-sm font-medium shadow-sm hover:shadow-md transition-all"
           >
-            {isGenerating ? (
-              <>
-                <LoadingSpinner className="mr-2" />
-                Generating...
-              </>
-            ) : (
-              "Generate Meta Tags"
-            )}
-          </Button>
+            {isGenerating ? "Generating..." : "Generate Meta Tags"}
+          </GButton>
         </CardContent>
       </Card>
 
@@ -175,7 +169,7 @@ ${twitterHandle ? `<meta name="twitter:creator" content="${twitterHandle}" />` :
           <CardHeader>
             <div className="flex items-center justify-between">
               <CardTitle className="text-lg text-foreground">Generated Meta Tags</CardTitle>
-              <Button
+              <GButton
                 onClick={copyToClipboard}
                 variant="outline"
                 size="sm"
@@ -192,7 +186,7 @@ ${twitterHandle ? `<meta name="twitter:creator" content="${twitterHandle}" />` :
                     Copy
                   </>
                 )}
-              </Button>
+              </GButton>
             </div>
           </CardHeader>
           <CardContent>
