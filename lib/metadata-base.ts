@@ -77,7 +77,7 @@ export interface MetadataWithSchema {
 export function createMetadata(options: MetadataOptions): Metadata & { softwareSchema?: ReturnType<typeof createSoftwareAppSchema> } {
     const { title, description, path, ogImageAlt, noIndex, ogTitle, ogDescription, twitterTitle, twitterDescription, twitterCreator, includeSchema = true, schemaOptions, faqs, howToSteps, toolName, breadcrumbs } = options
     const cleanPath = path.startsWith("/") ? path : `/${path}`
-    const titleWithBranding = title === "FastTools" ? title : `${title} | FastTools`
+    const titleWithBranding = title === "FastTools" || title.startsWith("FastTools -") ? title : `${title} | FastTools`
     const fullTitle = addYearToTitle(titleWithBranding, cleanPath)
     const canonicalUrl = getCanonicalUrl(cleanPath)
     const defaultOgImage = getDefaultOgImage("png")
@@ -186,7 +186,7 @@ export function createMetadata(options: MetadataOptions): Metadata & { softwareS
         verification: VERIFICATION,
         icons: {
             icon: [
-                { url: "/favicon.ico" },
+                { url: "/favicon.ico", sizes: "any" },
                 { url: "/favicon.svg", type: "image/svg+xml" },
                 { url: "/favicon-96x96.png", type: "image/png", sizes: "96x96" }
             ],
@@ -276,11 +276,14 @@ export function getWebsiteSchema(searchUrl?: string) {
         "@context": "https://schema.org",
         "@type": "WebSite",
         name: SITE_NAME,
-        alternateName: ["fasttools", "fast tools", "fasttools.store"],
+        alternateName: ["FastTools", "Fast Tools", "fasttools","fasttools.store", "FastTools Store"],
         url: `${BASE_URL}/`,
         potentialAction: {
             "@type": "SearchAction",
-            target: searchUrl || `${BASE_URL}/?q={search_term_string}`,
+            target: {
+                "@type": "EntryPoint",
+                urlTemplate: searchUrl || `${BASE_URL}/?q={search_term_string}`
+            },
             "query-input": "required name=search_term_string",
         },
     }

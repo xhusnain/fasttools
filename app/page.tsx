@@ -41,40 +41,14 @@ import {
   Youtube,
 } from "lucide-react"
 
-export const metadata: Metadata = {
+import { createMetadata } from "@/lib/metadata-base"
+
+export const metadata = createMetadata({
   title: "FastTools - Free Online Tools & Productivity Platform",
   description:
     "FastTools is your ultimate productivity platform offering 1000+ free online tools. Access AI generators, calculators, converters, and SEO tools instantly. No registration required.",
-  applicationName: "FastTools",
-  authors: [{ name: "FastTools Team", url: "https://www.fasttools.store" }],
-  generator: "Next.js",
-  referrer: "origin-when-cross-origin",
-  creator: "FastTools",
-  publisher: "FastTools",
-  robots: {
-    index: true,
-    follow: true,
-    googleBot: {
-      index: true,
-      follow: true,
-      "max-video-preview": -1,
-      "max-image-preview": "large",
-      "max-snippet": -1,
-    },
-  },
-  alternates: {
-    canonical: "https://www.fasttools.store",
-  },
-  category: "productivity",
-  openGraph: {
-    title: "FastTools | Free Online Tools, Calculators & Generators",
-    description:
-      "Use FastTools for free online calculators, converters, AI generators, SEO utilities, PDF and image tools in one fast, easy-to-use toolkit.",
-    type: "website",
-    url: "https://www.fasttools.store/",
-    siteName: "FastTools",
-  },
-}
+  path: "/",
+})
 
 const categories = [
   {
