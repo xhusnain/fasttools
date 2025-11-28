@@ -871,8 +871,7 @@ export default function QrGeneratorPage() {
       { name: "Caption Generator", href: "/ai-tools/caption-generator" },
       { name: "Lyrics Generator", href: "/ai-tools/lyrics-generator" },
       { name: "Pet Name Generator", href: "/ai-tools/pet-names" },
-      { name: "Link in Bio", href: "/social-media-tools/link-in-bio" },
-      { name: "Barcode Generator", href: "/finance-tools/barcode-generator" }
+      { name: "Link in Bio", href: "/social-media-tools/link-in-bio" }
     ],
     useCases: [
       "Restaurants creating digital menus",

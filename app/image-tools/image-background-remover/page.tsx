@@ -120,9 +120,7 @@ const toolConfig = createToolConfig({
 
         relatedTools: [
             { name: "Image Background Blur", href: "/image-tools/image-blur" },
-            { name: "Image to Text (OCR)", href: "/image-tools/image-to-text" },
-            { name: "Image Compressor", href: "/image-tools/compress" },
-            { name: "Image Resizer", href: "/image-tools/resize" }
+            { name: "Image to Text (OCR)", href: "/image-tools/image-to-text" }
         ],
     }
 })

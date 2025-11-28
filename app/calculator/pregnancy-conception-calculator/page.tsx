@@ -133,8 +133,7 @@ export default function PregnancyConceptionCalculatorPage() {
     relatedTools: [
       { name: "Pregnancy Calculator", href: "/calculator/pregnancy-calculator" },
       { name: "BMI Calculator", href: "/calculator/bmi-calculator" },
-      { name: "Calorie Calculator", href: "/calculator/calorie-calculator" },
-      { name: "Ideal Weight Calculator", href: "/calculator/ideal-weight-calculator" }
+      { name: "Calorie Calculator", href: "/calculator/calorie-calculator" }
     ]
   }
 

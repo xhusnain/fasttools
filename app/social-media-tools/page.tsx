@@ -252,8 +252,7 @@ const toolConfig = createToolConfig({
     relatedTools: [
       { name: "Image Tools", href: "/image-tools" },
       { name: "PDF Tools", href: "/pdf-tools" },
-      { name: "SEO Tools", href: "/seo-tools" },
-      { name: "Text Tools", href: "/text-tools" }
+      { name: "SEO Tools", href: "/seo-tools" }
     ]
   }
 })
