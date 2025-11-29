@@ -8,6 +8,8 @@ import Script from "next/script"
 import { env } from "@/lib/env"
 import { createMetadata, globalViewport, getWebsiteSchema } from "@/lib/metadata-base"
 import { roboto, montserrat } from "@/app/fonts"
+import { Analytics } from "@vercel/analytics/react"
+import { SpeedInsights } from "@vercel/speed-insights/next"
 
 export const viewport = globalViewport
 
@@ -180,6 +182,8 @@ export default function RootLayout({
           </main>
           <Footer />
           <CookieConsent />
+          <Analytics />
+          <SpeedInsights />
         </ThemeProvider>
       </body>
     </html>
