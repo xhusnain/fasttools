@@ -6,22 +6,16 @@ const MODEL_URL = 'https://github.com/danielgatis/rembg/releases/download/v0.0.0
 const MODEL_DIR = path.join(__dirname, '..', 'public', 'models');
 const MODEL_PATH = path.join(MODEL_DIR, 'u2net.onnx');
 
-// Create models directory if it doesn't exist
 if (!fs.existsSync(MODEL_DIR)) {
   fs.mkdirSync(MODEL_DIR, { recursive: true });
 }
 
-// Remove any existing model files to prevent corruption
 if (fs.existsSync(MODEL_PATH)) {
-  try {
-    fs.unlinkSync(MODEL_PATH);
-  } catch (err) {
-    console.error('⚠️  Warning: Could not remove existing model:', err.message);
-  }
+  console.log('✅ Model already exists, skipping download.');
+  process.exit(0);
 }
 
-// Check for and remove any partial downloads
-const partialFiles = fs.readdirSync(MODEL_DIR).filter(file => 
+const partialFiles = fs.readdirSync(MODEL_DIR).filter(file =>
   file.startsWith('u2net') && (file.endsWith('.tmp') || file.endsWith('.partial'))
 );
 if (partialFiles.length > 0) {
@@ -29,7 +23,6 @@ if (partialFiles.length > 0) {
     try {
       fs.unlinkSync(path.join(MODEL_DIR, file));
     } catch (err) {
-      // Silently ignore
     }
   });
 }
@@ -70,7 +63,7 @@ function handleDownload(response) {
   response.on('data', (chunk) => {
     downloadedBytes += chunk.length;
     const progress = Math.floor((downloadedBytes / totalBytes) * 100);
-    
+
     // Update progress every 5%
     if (progress >= lastProgress + 5 || progress === 100) {
       const downloaded = (downloadedBytes / 1024 / 1024).toFixed(2);
