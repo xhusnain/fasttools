@@ -57,26 +57,7 @@ function handleCORS(request: NextRequest): NextResponse | null {
     return response
 }
 
-function handleRedirects(request: NextRequest): NextResponse | null {
-    if (!env.isProduction) return null
 
-    const host = request.headers.get('host')?.toLowerCase() || ''
-    const protocol = request.headers.get('x-forwarded-proto') ||
-        (request.url.startsWith('http://') ? 'http' : 'https')
-
-    const TARGET_HOST = 'www.fasttools.store'
-
-    const isNakedDomain = host === 'fasttools.store'
-    const isHttp = protocol === 'http'
-    const isCorrectDomain = host === TARGET_HOST
-
-    if (isNakedDomain || (isCorrectDomain && isHttp)) {
-        const url = new URL(request.nextUrl.pathname + request.nextUrl.search, `https://${TARGET_HOST}`)
-        return NextResponse.redirect(url, 301)
-    }
-
-    return null
-}
 
 export default function proxy(request: NextRequest) {
     const pathname = request.nextUrl.pathname
@@ -95,8 +76,7 @@ export default function proxy(request: NextRequest) {
         return NextResponse.redirect(url, 301)
     }
 
-    const redirectResponse = handleRedirects(request)
-    if (redirectResponse) return redirectResponse
+
 
     if (pathname.startsWith('/api/')) {
         const corsResponse = handleCORS(request)
