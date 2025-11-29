@@ -38,7 +38,7 @@ export function PremiumHeroBackground() {
             </defs>
 
             {/* Outer Ring - Rotating */}
-            <g className="origin-center animate-[spin_20s_linear_infinite]">
+            <g className="origin-center animate-[spin_20s_linear_infinite] will-change-transform">
               <path
                 d="M100 10 L178 55 L178 145 L100 190 L22 145 L22 55 Z"
                 fill="none"
@@ -78,7 +78,7 @@ export function PremiumHeroBackground() {
             </g>
 
             {/* Decorative Particles */}
-            <circle cx="100" cy="100" r="65" fill="none" stroke="currentColor" strokeWidth="0.2" strokeDasharray="4 4" className="text-primary/30 animate-[spin_30s_linear_infinite_reverse] origin-center" />
+            <circle cx="100" cy="100" r="65" fill="none" stroke="currentColor" strokeWidth="0.2" strokeDasharray="4 4" className="text-primary/30 animate-[spin_30s_linear_infinite_reverse] origin-center will-change-transform" />
           </svg>
         </div>
       </div>

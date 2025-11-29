@@ -711,7 +711,7 @@ function CategorySection({ category }: { category: typeof categories[0] }) {
           </div>
           <div>
             <h2 className="text-2xl font-bold text-foreground">{category.name}</h2>
-            <p className="text-sm text-muted-foreground mt-0.5">{category.description}</p>
+            <p className="text-sm text-foreground/80 mt-0.5">{category.description}</p>
           </div>
         </div>
       </div>
@@ -1070,7 +1070,7 @@ export default function Home() {
               </div>
 
               <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-black text-foreground leading-[1.1] tracking-tight px-2 lg:px-0">
-                <span className="block text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold text-muted-foreground mb-2 tracking-normal">
+                <span className="block text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold text-foreground/80 mb-2 tracking-normal">
                   FastTools: 1000+ Free Online Tools
                 </span>
                 <span className="block">
@@ -1081,7 +1081,7 @@ export default function Home() {
                 </span>
               </h1>
 
-              <p className="text-base sm:text-lg md:text-xl text-muted-foreground font-medium max-w-3xl mx-auto lg:mx-0 leading-relaxed px-4 lg:px-0">
+              <p className="text-base sm:text-lg md:text-xl text-foreground/80 font-medium max-w-3xl mx-auto lg:mx-0 leading-relaxed px-4 lg:px-0">
                 Welcome to <strong className="text-foreground">FastTools</strong>, the premier <strong className="text-foreground">online tools platform</strong> designed for efficiency.
                 Explore our massive collection of <strong className="text-foreground">web tools</strong> including <strong className="text-foreground">productivity tools</strong>, developer utilities, and AI generators.
                 Experience the power of a complete digital toolkit that processes data locally for maximum security and speed.
@@ -1142,7 +1142,7 @@ export default function Home() {
                             <h3 className="text-base sm:text-lg font-bold text-foreground group-hover:text-primary transition-colors leading-tight">
                               {tool.title}
                             </h3>
-                            <p className="text-xs sm:text-sm text-muted-foreground leading-relaxed">
+                            <p className="text-xs sm:text-sm text-foreground/80 leading-relaxed">
                               {tool.description}
                             </p>
                           </div>
@@ -1179,6 +1179,7 @@ export default function Home() {
               titleSize="large"
               descriptionSize="medium"
               color="green"
+              as="h2"
             />
           </div>
 

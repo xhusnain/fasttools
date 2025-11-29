@@ -1,8 +1,8 @@
 import { Breadcrumbs } from "@/components/breadcrumbs"
 import { GHeader } from "@/components/globalcomponents/gheader"
-import { 
-  Search, 
-  CheckCircle, 
+import {
+  Search,
+  CheckCircle,
   Zap,
   Globe,
   Eye,
@@ -12,70 +12,14 @@ import {
 import Link from "next/link"
 import type { Metadata } from "next"
 
-export const metadata: Metadata = {
+import { createMetadata } from "@/lib/metadata-base"
+
+export const metadata = createMetadata({
   title: "About FastTools",
   description: "Discover FastTools, the comprehensive free online tools platform with 1000+ AI, converter, calculator, SEO and productivity utilities.",
-  keywords: [
-    "fasttools",
-    "free online tools",
-    "online tools platform",
-    "digital tools collection",
-    "productivity tools",
-    "AI tools",
-    "converter tools",
-    "calculator tools",
-    "SEO tools",
-    "business tools",
-    "developer tools",
-    "content creation tools",
-    "image tools",
-    "text tools",
-    "finance tools",
-    "date and time tools",
-    "fun tools",
-    "utility tools",
-    "web utilities",
-    "online calculators"
-  ],
-  openGraph: {
-    title: "About FastTools",
-    description: "Learn about FastTools and our mission to provide 1000+ reliable, free online tools across AI, conversion, calculation, SEO and productivity.",
-    type: "website",
-    url: "/about",
-    siteName: "FastTools",
-    images: [
-      {
-        url: "/og-image.png",
-        width: 1200,
-        height: 630,
-        alt: "FastTools - Free Online Tools Platform",
-        type: "image/png",
-      },
-    ],
-  },
-  twitter: {
-    card: "summary_large_image",
-    site: "@ZamanIsmail7",
-    creator: "@ZamanIsmail7",
-    title: "About FastTools",
-    description: "Learn about FastTools and our mission to deliver 1000+ reliable, free tools.",
-    images: ["/og-image.png"],
-  },
-  alternates: {
-    canonical: "/about",
-  },
-  robots: {
-    index: true,
-    follow: true,
-    googleBot: {
-      index: true,
-      follow: true,
-      "max-video-preview": -1,
-      "max-image-preview": "large",
-      "max-snippet": -1,
-    },
-  },
-}
+  path: "/about",
+  includeSchema: false // We provide custom schema below
+})
 
 export default function AboutPage() {
   const jsonLd = {
@@ -180,6 +124,7 @@ export default function AboutPage() {
 
             {/* Why FastTools Section */}
             <div className="bg-card border border-border/30 rounded-2xl p-8 md:p-12 mb-12 md:mb-16">
+              <h2 className="text-2xl md:text-3xl font-bold text-center mb-12 text-foreground">Why Choose FastTools</h2>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12">
                 {/* Hard to Find Tools */}
                 <div className="flex flex-col items-center text-center">
@@ -230,7 +175,7 @@ export default function AboutPage() {
             {/* Detailed Story Section */}
             <div className="bg-card border border-border/30 rounded-xl p-6 md:p-8 mb-12 md:mb-16">
               <h2 className="text-2xl md:text-3xl font-bold text-foreground mb-6 md:mb-8 text-center">Our Story: Building the World's Most Comprehensive Free Tools Platform</h2>
-              
+
               <div className="space-y-6 text-muted-foreground text-base md:text-lg leading-relaxed">
                 <p>
                   FastTools was born in 2024 from a simple but powerful observation: finding reliable, genuinely free online tools shouldn't be this hard. We noticed that millions of people worldwide struggle daily with broken links, fake free tools that require credit cards, outdated software, and cluttered interfaces filled with advertisements. Something had to change.
@@ -306,7 +251,7 @@ export default function AboutPage() {
                   </div>
                   <h2 className="text-xl md:text-2xl font-bold text-heading-accent">Vision</h2>
                 </div>
-                <p className="text-sm md:text-base text-muted-foreground leading-relaxed">
+                <p className="text-sm md:text-base text-foreground/80 leading-relaxed">
                   To lead the way in digital productivity by delivering innovative, sustainable, and accessible solutions that empower millions of users worldwide.
                 </p>
               </div>
@@ -319,7 +264,7 @@ export default function AboutPage() {
                   </div>
                   <h2 className="text-xl md:text-2xl font-bold text-heading-accent">Mission</h2>
                 </div>
-                <p className="text-sm md:text-base text-muted-foreground leading-relaxed">
+                <p className="text-sm md:text-base text-foreground/80 leading-relaxed">
                   To leverage our expertise, resources, and technology to create online tools that exceed industry standards and provide exceptional value to users everywhere.
                 </p>
               </div>

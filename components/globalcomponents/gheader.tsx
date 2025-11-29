@@ -8,6 +8,7 @@ interface GHeaderProps {
   descriptionSize?: 'small' | 'medium' | 'large'
   centered?: boolean
   color?: 'orange' | 'green' | 'blue' | 'purple' | 'pink' | 'red'
+  as?: 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6'
   className?: string
 }
 
@@ -18,6 +19,7 @@ export function GHeader({
   descriptionSize = 'small',
   centered = true,
   color = 'orange',
+  as: Component = 'h1',
   className
 }: GHeaderProps) {
   // Color classes
@@ -58,9 +60,9 @@ export function GHeader({
 
   return (
     <div className={cn(`${containerClass} space-y-4 sm:space-y-6 w-full`, className)}>
-      <h1 className={`${titleClasses[titleSize]} ${titleColors[color]} leading-tight px-2 break-words hyphens-auto`}>
+      <Component className={`${titleClasses[titleSize]} ${titleColors[color]} leading-tight px-2 break-words hyphens-auto`}>
         {title}
-      </h1>
+      </Component>
       <p className={`${descClasses[descriptionSize]} ${descColors[color]} leading-relaxed ${maxWidthClass} px-4 break-words`}>
         {description}
       </p>
