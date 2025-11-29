@@ -22,7 +22,7 @@ export function PremiumHeroBackground() {
       <div className="absolute inset-0 bg-[linear-gradient(to_right,#80808005_1px,transparent_1px),linear-gradient(to_bottom,#80808005_1px,transparent_1px)] bg-[size:40px_40px] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_0%,#000_70%,transparent_100%)]" />
 
       {/* Premium Hexagon Structure */}
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 lg:left-[25%] lg:translate-x-[-50%] w-[500px] h-[500px] sm:w-[600px] sm:h-[600px] opacity-100">
+      <div className="hidden lg:block absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 lg:left-[25%] lg:translate-x-[-50%] w-[500px] h-[500px] sm:w-[600px] sm:h-[600px] opacity-100">
         <div className="relative w-full h-full animate-float">
           {/* Hexagon SVG */}
           <svg viewBox="0 0 200 200" className="w-full h-full drop-shadow-2xl">
