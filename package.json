@@ -11,7 +11,11 @@
     "download-models": "node scripts/download-models.js",
     "prebuild": "node scripts/download-models.js",
     "indexnow": "node scripts/indexnow-cron.js",
-    "indexnow:service": "node scripts/indexnow-cron-service.js"
+    "indexnow:service": "node scripts/indexnow-cron-service.js",
+    "audit:page": "node scripts/lighthouse-audit.js --page",
+    "audit:all": "node scripts/lighthouse-audit.js --all",
+    "audit:desktop": "node scripts/lighthouse-audit.js --all --desktop",
+    "audit:mobile": "node scripts/lighthouse-audit.js --all"
   },
   "dependencies": {
     "@hookform/resolvers": "^3.10.0",
@@ -98,8 +102,10 @@
     "@types/qrcode": "^1.5.5",
     "@types/react": "^19",
     "@types/react-dom": "^19",
+    "chrome-launcher": "^1.2.1",
     "eslint": "^9.39.1",
     "eslint-config-next": "16.0.4",
+    "lighthouse": "^13.0.1",
     "postcss": "^8.5",
     "tailwindcss": "^4.1.9",
     "tw-animate-css": "1.3.3",
