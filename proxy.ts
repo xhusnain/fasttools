@@ -78,7 +78,7 @@ function handleRedirects(request: NextRequest): NextResponse | null {
     return null
 }
 
-export function middleware(request: NextRequest) {
+export default function proxy(request: NextRequest) {
     const pathname = request.nextUrl.pathname
 
     if (isGoneUrl(pathname)) {
@@ -89,7 +89,6 @@ export function middleware(request: NextRequest) {
         })
     }
 
-    // Check for 301 redirects
     if (redirects.has(pathname)) {
         const targetUrl = redirects.get(pathname)!
         const url = new URL(targetUrl, request.url)
@@ -108,7 +107,6 @@ export function middleware(request: NextRequest) {
 }
 
 export const config = {
-    // Updated matcher to exclude all common image formats and icons
     matcher: [
         '/((?!_next/static|_next/image|favicon.ico|.*\\.(?:svg|png|jpg|jpeg|gif|webp)$).*)',
     ],
