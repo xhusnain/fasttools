@@ -1,11 +1,13 @@
 import { NextResponse } from "next/server"
-import { geminiAPI } from "@/lib/gemini-api"
+import { aiTextGenerator } from "@/lib/ai-text-generator"
+import { PROMPTS } from "@/lib/prompts"
+import { LyricsRequest } from "@/lib/interfaces"
 
 export async function POST(req: Request) {
   try {
-    const { theme, genre, mood, duration, language } = await req.json()
+    const body: LyricsRequest = await req.json()
+    const { theme, genre, mood, duration, language } = body
 
-    // Validate required fields
     if (!theme || theme.trim().length === 0) {
       return NextResponse.json(
         { error: "Song theme is required" },
@@ -13,10 +15,8 @@ export async function POST(req: Request) {
       )
     }
 
-    // Default to English if no language specified
     const selectedLanguage = language || "english"
 
-    // Calculate approximate structure based on duration
     const getStructure = (minutes: number) => {
       if (minutes <= 2) {
         return "2 verses, 1 chorus (repeated), 1 bridge"
@@ -30,8 +30,7 @@ export async function POST(req: Request) {
     }
 
     const structure = duration ? getStructure(duration) : "2-3 verses, choruses, and a bridge"
-    
-    // Get language-specific instructions
+
     const getLanguageInstructions = (lang: string) => {
       const languageMap: { [key: string]: string } = {
         english: "Write lyrics in English. Use natural, flowing English language and idiomatic expressions.",
@@ -80,73 +79,27 @@ export async function POST(req: Request) {
     }
 
     const languageInstructions = getLanguageInstructions(selectedLanguage)
-    
-    // Create a production-level prompt for Gemini
-    const prompt = `You are a professional songwriter and lyricist with expertise in multiple languages. Generate original, creative, and emotionally resonant song lyrics based on the following specifications:
+    const prompt = PROMPTS.lyrics(languageInstructions, selectedLanguage, theme, genre, mood, duration, structure)
 
-**LANGUAGE REQUIREMENT (MOST IMPORTANT):**
-${languageInstructions}
-CRITICAL: The ENTIRE song lyrics MUST be written in ${selectedLanguage.toUpperCase()}. Do not mix languages. Every word, every line, every section must be in ${selectedLanguage}.
-
-**SONG SPECIFICATIONS:**
-- Theme/Topic: "${theme}"
-- Genre: ${genre || "General/Mixed"}
-- Mood/Emotion: ${mood || "Balanced"}
-- Approximate Duration: ${duration ? `${duration} minutes` : "Standard song length (3-4 minutes)"}
-- Song Structure: ${structure}
-
-**WRITING GUIDELINES:**
-1. Create original, unique lyrics that tell a story or convey deep emotions
-2. Use vivid imagery, metaphors, and sensory details
-3. Maintain consistent rhyme scheme appropriate for the ${genre || "chosen"} genre
-4. Ensure lyrics flow naturally when sung
-5. Make the chorus catchy, memorable, and repetitive
-6. Build emotional progression throughout the song
-7. Use genre-appropriate language, vocabulary, and themes
-8. Include proper verse, chorus, and bridge labels
-9. Make each section distinct yet cohesive with the overall song
-
-**FORMAT REQUIREMENTS:**
-- Clearly label each section: [Verse 1], [Chorus], [Verse 2], [Bridge], etc.
-- Use proper line breaks and spacing for readability
-- Make the chorus stand out with memorable hooks
-- Ensure the bridge provides contrast and emotional depth
-- End with a strong outro or final chorus
-
-**GENRE-SPECIFIC NOTES:**
-${genre === "hip-hop" || genre === "rap" ? "- Focus on rhythmic flow, internal rhymes, and wordplay\n- Use contemporary slang and cultural references\n- Create strong bars with clever punchlines" : ""}
-${genre === "country" ? "- Use storytelling elements and rural imagery\n- Include relatable, down-to-earth language\n- Focus on personal experiences and emotions" : ""}
-${genre === "pop" ? "- Keep lyrics simple, catchy, and universally relatable\n- Focus on memorable hooks and repetition\n- Use modern, contemporary language" : ""}
-${genre === "rock" ? "- Use powerful, emotive language\n- Include themes of rebellion, freedom, or intensity\n- Create strong, anthemic choruses" : ""}
-${genre === "R&B" || genre === "soul" ? "- Focus on love, relationships, and emotions\n- Use smooth, flowing language\n- Include sensual and romantic imagery" : ""}
-
-Generate the complete song lyrics now. Make it professional, original, and ready to be set to music.`
-
-    // Call Gemini API
-    const response = await geminiAPI.generateText({
+    const response = await aiTextGenerator.generateText({
       prompt,
       maxTokens: 2500,
-      temperature: 0.85, // Higher temperature for more creativity
-      model: "gemini-2.0-flash-lite"
+      temperature: 0.85,
     })
 
     if (!response.success) {
       console.error("Gemini API Error:", response.error)
-      // Return user-friendly error (already sanitized by gemini-api.ts)
       return NextResponse.json(
         { error: response.error || "Something went wrong. Please try again later." },
         { status: 500 }
       )
     }
 
-    // Clean up the response
     let lyrics = response.text.trim()
-    
-    // Remove markdown code blocks if present
     lyrics = lyrics.replace(/```[\w]*\n?/g, "")
     lyrics = lyrics.replace(/```/g, "")
-    
-    return NextResponse.json({ 
+
+    return NextResponse.json({
       lyrics,
       success: true,
       metadata: {
@@ -161,10 +114,8 @@ Generate the complete song lyrics now. Make it professional, original, and ready
 
   } catch (error) {
     console.error("Error generating lyrics:", error)
-    // Always return generic error messages to users
-    // Never expose internal error details
     return NextResponse.json(
-      { 
+      {
         error: "Something went wrong. Please try again later.",
         success: false
       },

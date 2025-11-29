@@ -14,33 +14,39 @@ export function HashtagGenerator() {
   const [copied, setCopied] = useState(false)
   const [isGenerating, setIsGenerating] = useState(false)
 
-  const generateHashtags = () => {
+  const generateHashtags = async () => {
     setIsGenerating(true)
 
-    setTimeout(() => {
-      const topicLower = topic.toLowerCase().trim()
-      const words = topicLower.split(" ")
+    try {
+      const response = await fetch("/api/ai/generate-hashtags", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          text: topic,
+          platform: "instagram"
+        }),
+      })
 
-      const hashtags = [
-        `#${words.join("")}`,
-        `#${topicLower.replace(/\s+/g, "")}`,
-        ...words.map((word) => `#${word}`),
-        `#${words[0]}tips`,
-        `#${words[0]}ideas`,
-        `#${words[0]}inspiration`,
-        `#${words[0]}community`,
-        `#${words[0]}daily`,
-        `#${words[0]}life`,
-        `#trending`,
-        `#viral`,
-        `#explore`,
-        `#instagood`,
-        `#photooftheday`,
-      ]
+      const data = await response.json()
 
-      setResult([...new Set(hashtags)].slice(0, 15))
+      if (!response.ok) {
+        throw new Error(data.error || "Failed to generate hashtags")
+      }
+
+      if (data.hashtags && Array.isArray(data.hashtags)) {
+        setResult(data.hashtags)
+      } else {
+        throw new Error("Invalid response format")
+      }
+    } catch (error) {
+      console.error("Error generating hashtags:", error)
+      alert(error instanceof Error ? error.message : "Failed to generate hashtags. Please try again.")
+      setResult([])
+    } finally {
       setIsGenerating(false)
-    }, 500)
+    }
   }
 
   const copyToClipboard = async () => {

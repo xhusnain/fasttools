@@ -20,3 +20,17 @@ export function getCurrentYear(): number {
 export function getCurrentYearString(): string {
   return new Date().getFullYear().toString()
 }
+
+export async function runCloudflareAI(input: any) {
+  const model = "@cf/meta/llama-3.1-8b-instruct-fast"
+  const response = await fetch(
+    `https://api.cloudflare.com/client/v4/accounts/c64b9be052fb497f7b1a3121316d4d9f/ai/run/${model}`,
+    {
+      headers: { Authorization: "Bearer ***REMOVED***" },
+      method: "POST",
+      body: JSON.stringify(input),
+    }
+  )
+  const result = await response.json()
+  return result
+}
