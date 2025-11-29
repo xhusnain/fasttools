@@ -5,43 +5,14 @@ import {
   ScrollText, Landmark, TrendingDown, Banknote
 } from "lucide-react"
 import { ToolPageLayout } from "@/components/tool-page-layout"
-import type { Metadata } from "next"
+import { createMetadata } from "@/lib/metadata-base"
 
-export const metadata: Metadata = {
+export const metadata = createMetadata({
   title: "Free Online Finance Tools – Budget, Investment & Expense Calculators",
   description: "Free finance tools: budget calculators, savings trackers, loan calculators, investment planners. Perfect for financial planning.",
-  keywords: [
-    "finance tools", "financial management tools", "personal finance tools",
-    "financial planning tools", "online finance tools", "AI finance tools",
-    "budget calculator", "loan calculator", "savings calculator",
-    "investment calculator", "expense tracker"
-  ],
-  openGraph: {
-    title: "Free Online Finance Tools – Budget, Investment & Expense Calculators",
-    description: "Explore free online finance tools to manage your money smarter. Calculate budgets, savings, loans, and investments instantly.",
-    url: "https://www.fasttools.store/finance-tools",
-    type: "website",
-    siteName: "FastTools",
-    images: [
-      {
-        url: "https://www.fasttools.store/og-image.svg",
-        width: 1200,
-        height: 630,
-        alt: "FastTools Free Online Finance Tools",
-        type: "image/svg+xml",
-      },
-    ],
-  },
-  twitter: {
-    card: "summary_large_image",
-    title: "Free Online Finance Tools – Budget, Investment & Expense Calculators",
-    description: "Explore free online finance tools to manage your money smarter. Calculate budgets, savings, loans, and investments instantly.",
-    images: ["https://www.fasttools.store/og-image.svg"],
-  },
-  alternates: {
-    canonical: "https://www.fasttools.store/finance-tools",
-  },
-}
+  path: "/finance-tools",
+  includeSchema: false
+})
 
 export default function FinanceToolsPage() {
   const tools = [

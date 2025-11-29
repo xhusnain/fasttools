@@ -7,88 +7,12 @@ import { ApiKeyGenerator } from "@/components/api-key-generator"
 import { GHeader } from "@/components/globalcomponents/gheader"
 import { Breadcrumbs } from "@/components/breadcrumbs"
 
-export const metadata: Metadata = {
-  metadataBase: new URL("https://www.fasttools.store"),
+export const metadata = createMetadata({
   title: "Currency API | Free Exchange Rate API Documentation",
   description: "Free currency exchange API with real-time rates, historical data & currency conversion. Get started with FastTools Currency API in minutes.",
-  keywords: [
-    "fasttools",
-    "fast tools",
-    "currency api",
-    "exchange rate api",
-    "free currency api",
-    "real-time exchange rates",
-    "currency conversion api",
-    "forex api",
-    "currency data api",
-    "fasttools api",
-      "currency converter API",
-      "free currency converter API",
-      "live currency converter API",
-      "real-time exchange rates API",
-      "currency conversion API",
-      "forex API",
-      "currency converter API",
-      "free currency converter API",
-      "live currency converter API",
-      "real-time exchange rates API",
-      "currency conversion API",
-      "forex API",
-      "exchange rate API",
-      "currency exchange API",
-      "currency API for developers",
-      "currency conversion API free",
-      "free currency API no key",
-      "currency API JSON",
-      "currency converter API JavaScript",
-      "free currency API GitHub",
-      "online currency conversion API",
-      "REST currency API",
-      "currency API for apps",
-      "historical currency API",
-      "currency conversion API tutorial",
-      "multi-currency API free",
-      "exchange rate API",
-      "currency exchange API",
-      "currency API for developers",
-      "currency conversion API free",
-      "free currency API no key",
-      "currency API JSON",
-      "currency converter API JavaScript",
-      "free currency API GitHub",
-      "online currency conversion API",
-      "REST currency API",
-      "currency API for apps",
-      "historical currency API",
-      "currency conversion API tutorial",
-      "multi-currency API free"
-  ],
-  openGraph: {
-    title: "Currency API Documentation | Free Currency Exchange API | FastTools",
-    description: "Free currency exchange API with real-time rates, historical data, and currency conversion. Get started with FastTools.store Currency API in minutes.",
-    url: "https://www.fasttools.store/converters/currency-api",
-    siteName: "FastTools.store",
-    images: [
-      {
-        url: "/api-currency-og.jpg",
-        width: 1200,
-        height: 630,
-        alt: "FastTools Currency API Documentation",
-      },
-    ],
-    locale: "en_US",
-    type: "website",
-  },
-  twitter: {
-    card: "summary_large_image",
-    title: "Currency API Documentation | Free Currency Exchange API | FastTools",
-    description: "Free currency exchange API with real-time rates, historical data, and currency conversion. Get started with FastTools.store Currency API in minutes.",
-    images: ["/api-currency-og.jpg"],
-  },
-  alternates: {
-    canonical: "https://www.fasttools.store/converters/currency-api",
-  },
-}
+  path: "/converters/currency-api",
+  includeSchema: false
+})
 
 export default function CurrencyAPIDocsPage() {
 

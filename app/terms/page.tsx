@@ -11,60 +11,14 @@ import {
   BookOpen,
   RefreshCw
 } from "lucide-react"
-import type { Metadata } from "next"
+import { createMetadata } from "@/lib/metadata-base"
 
-export const metadata: Metadata = {
+export const metadata = createMetadata({
   title: "Terms of Service | Google AdSense Compliant | FastTools",
   description: "Comprehensive terms of service for FastTools covering Google AdSense compliance, user agreements, and legal obligations for free online tools.",
-  keywords: [
-    "terms of service",
-    "terms and conditions",
-    "user agreement",
-    "Google AdSense terms",
-    "legal compliance",
-    "website terms",
-    "usage terms",
-    "online tools terms"
-  ],
-  openGraph: {
-    title: "Terms of Service - FastTools | Google AdSense Compliant",
-    description: "Comprehensive terms of service covering Google AdSense compliance, user agreements, and legal obligations for free online tools.",
-    type: "website",
-    url: "https://www.fasttools.store/terms",
-    siteName: "FastTools",
-    locale: "en_US",
-    images: [
-      {
-        url: "https://www.fasttools.store/og-image.svg",
-        width: 1200,
-        height: 630,
-        alt: "FastTools Terms of Service",
-        type: "image/svg+xml",
-      },
-    ],
-  },
-  twitter: {
-    card: "summary_large_image",
-    title: "Terms of Service - FastTools | Google AdSense Compliant",
-    description: "Comprehensive terms of service covering Google AdSense compliance, user agreements, and legal obligations for free online tools.",
-    creator: "@fasttools",
-    site: "@fasttools",
-  },
-  alternates: {
-    canonical: "https://www.fasttools.store/terms",
-  },
-  robots: {
-    index: true,
-    follow: true,
-    googleBot: {
-      index: true,
-      follow: true,
-      'max-video-preview': -1,
-      'max-image-preview': 'large',
-      'max-snippet': -1,
-    }
-  },
-}
+  path: "/terms",
+  includeSchema: false
+})
 
 export default function TermsPage() {
   const jsonLd = {

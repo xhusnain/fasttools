@@ -1,4 +1,4 @@
-import type { Metadata } from "next"
+import { createMetadata } from "@/lib/metadata-base"
 import { Breadcrumbs } from "@/components/breadcrumbs"
 import { GHeader } from "@/components/globalcomponents/gheader"
 import {
@@ -14,60 +14,12 @@ import {
     Star
 } from "lucide-react"
 
-export const metadata: Metadata = {
-    title: "FAQ",
-    description:
-        "Get answers to frequently asked questions about FastTools — learn about our tools, privacy, features, and more.",
-    keywords: [
-        "fasttools",
-        "free online tools FAQ",
-        "online tools questions",
-        "productivity tools FAQ",
-        "free tools help",
-        "calculator tools questions",
-        "converter tools FAQ",
-        "AI tools questions",
-        "SEO tools FAQ",
-        "PDF tools questions",
-        "image tools FAQ",
-        "digital tools help",
-        "web utilities FAQ"
-    ],
-    alternates: { canonical: "/faq" },
-    robots: {
-        index: true,
-        follow: true,
-        googleBot: {
-            index: true,
-            follow: true,
-            'max-video-preview': -1,
-            'max-image-preview': 'large',
-            'max-snippet': -1,
-        }
-    },
-    openGraph: {
-        title: "FAQ",
-        description: "Answers to common questions about FastTools — our tools, privacy, features, and more.",
-        url: "/faq",
-        type: "website",
-        siteName: "FastTools",
-        images: [
-            {
-                url: "/og-image.png",
-                width: 1200,
-                height: 630,
-                alt: "FastTools - Free Online Tools Platform",
-                type: "image/png",
-            },
-        ],
-    },
-    twitter: {
-        card: "summary_large_image",
-        title: "FAQ",
-        description: "Answers to common questions about FastTools — tools, privacy, features, and more.",
-        images: ["/og-image.png"],
-    },
-}
+export const metadata = createMetadata({
+  title: "FAQ",
+  description: "Get answers to frequently asked questions about FastTools — learn about our tools, privacy, features, and more.",
+  path: "/faq",
+  includeSchema: false
+})
 
 type QA = { question: string; answer: string }
 

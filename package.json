@@ -15,7 +15,8 @@
     "audit:page": "node scripts/lighthouse-audit.js --page",
     "audit:all": "node scripts/lighthouse-audit.js --all",
     "audit:desktop": "node scripts/lighthouse-audit.js --all --desktop",
-    "audit:mobile": "node scripts/lighthouse-audit.js --all"
+    "audit:mobile": "node scripts/lighthouse-audit.js --all",
+    "analyze-reports": "node scripts/analyze-lighthouse-reports.js"
   },
   "dependencies": {
     "@hookform/resolvers": "^3.10.0",

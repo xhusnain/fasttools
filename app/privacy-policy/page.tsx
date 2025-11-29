@@ -14,62 +14,14 @@ import {
   Clock,
   RefreshCw
 } from "lucide-react"
-import type { Metadata } from "next"
+import { createMetadata } from "@/lib/metadata-base"
 
-export const metadata: Metadata = {
+export const metadata = createMetadata({
   title: "Privacy Policy | GDPR & CCPA Compliant | FastTools",
   description: "Comprehensive privacy policy for FastTools covering GDPR, CCPA compliance, Google AdSense policies, data collection, and user rights for free online tools.",
-  keywords: [
-    "privacy policy",
-    "data protection",
-    "GDPR compliance",
-    "CCPA compliance", 
-    "Google AdSense privacy",
-    "cookie policy",
-    "data security",
-    "user privacy rights",
-    "online tools privacy",
-    "transparent data practices"
-  ],
-  openGraph: {
-    title: "Privacy Policy - FastTools | GDPR & CCPA Compliant",
-    description: "Comprehensive privacy policy covering GDPR, CCPA compliance, Google AdSense policies, and transparent data protection practices.",
-    type: "website",
-    url: "https://www.fasttools.store/privacy-policy",
-    siteName: "FastTools",
-    locale: "en_US",
-    images: [
-      {
-        url: "https://www.fasttools.store/og-image.svg",
-        width: 1200,
-        height: 630,
-        alt: "FastTools Privacy Policy",
-        type: "image/svg+xml",
-      },
-    ],
-  },
-  twitter: {
-    card: "summary_large_image",
-    title: "Privacy Policy - FastTools | GDPR & CCPA Compliant",
-    description: "Comprehensive privacy policy covering GDPR, CCPA compliance, Google AdSense policies, and transparent data protection practices.",
-    creator: "@fasttools",
-    site: "@fasttools",
-  },
-  alternates: {
-    canonical: "https://www.fasttools.store/privacy-policy",
-  },
-  robots: {
-    index: true,
-    follow: true,
-    googleBot: {
-      index: true,
-      follow: true,
-      'max-video-preview': -1,
-      'max-image-preview': 'large',
-      'max-snippet': -1,
-    }
-  },
-}
+  path: "/privacy-policy",
+  includeSchema: false
+})
 
 export default function PrivacyPolicyPage() {
   const jsonLd = {
