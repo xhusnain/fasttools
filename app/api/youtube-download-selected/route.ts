@@ -89,12 +89,27 @@ export async function POST(request: NextRequest) {
       const videoTitle = videoTitles?.[index] || `Video ${index + 1}`
       const outputPattern = path.join(tempDir, `video_${index + 1}`)
 
+      // Create a temporary cookies file if env var exists
+      let cookiesFilePath: string | null = null
+      if (process.env.YOUTUBE_COOKIES) {
+        const cookiesContent = process.env.YOUTUBE_COOKIES
+        const cookiesFileName = `cookies-${Date.now()}-${Math.random().toString(36).substring(7)}.txt`
+        cookiesFilePath = path.join(os.tmpdir(), cookiesFileName)
+        await fs.writeFile(cookiesFilePath, cookiesContent)
+      }
+
       let command: string
       if (format === 'mp3') {
-        command = `"${ytDlpPath}" -x --audio-format mp3 --audio-quality 0 -o "${outputPattern}.%(ext)s" --newline --progress --no-check-certificate --no-playlist "${videoUrl}"`
+        command = `"${ytDlpPath}" -x --audio-format mp3 --audio-quality 0 -o "${outputPattern}.%(ext)s" --newline --progress --no-check-certificate --no-playlist`
       } else {
-        command = `"${ytDlpPath}" -f "best[ext=mp4]/best[height<=720]/best" -o "${outputPattern}.%(ext)s" --newline --progress --no-check-certificate --no-playlist "${videoUrl}"`
+        command = `"${ytDlpPath}" -f "best[ext=mp4]/best[height<=720]/best" -o "${outputPattern}.%(ext)s" --newline --progress --no-check-certificate --no-playlist`
       }
+
+      if (cookiesFilePath) {
+        command += ` --cookies "${cookiesFilePath}"`
+      }
+
+      command += ` "${videoUrl}"`
 
       const commandParts = command.match(/"([^"]+)"|([^\s"]+)/g)?.map((part: string) =>
         part.replace(/^"|"$/g, '')
@@ -118,6 +133,15 @@ export async function POST(request: NextRequest) {
         })
 
         proc.on('close', async (code) => {
+          // Clean up cookies file
+          if (cookiesFilePath) {
+            try {
+              await fs.unlink(cookiesFilePath)
+            } catch (e) {
+              // Ignore cleanup error
+            }
+          }
+
           if (code !== 0) reject(new Error(`Process exited with code ${code}`))
           else {
             const files = await fs.readdir(tempDir)
@@ -127,7 +151,17 @@ export async function POST(request: NextRequest) {
           }
         })
 
-        proc.on('error', reject)
+        proc.on('error', async (err) => {
+          // Clean up cookies file
+          if (cookiesFilePath) {
+            try {
+              await fs.unlink(cookiesFilePath)
+            } catch (e) {
+              // Ignore cleanup error
+            }
+          }
+          reject(err)
+        })
       })
     }
 

@@ -2,6 +2,7 @@ import { NextRequest, NextResponse } from 'next/server'
 import { exec } from 'child_process'
 import { promises as fs } from 'fs'
 import path from 'path'
+import os from 'os'
 import { promisify } from 'util'
 
 const execAsync = promisify(exec)
@@ -90,7 +91,18 @@ export async function POST(request: NextRequest) {
       )
     }
 
+    // Create a temporary cookies file if env var exists
+    let cookiesFilePath: string | null = null
+
     try {
+      if (process.env.YOUTUBE_COOKIES) {
+        const cookiesContent = process.env.YOUTUBE_COOKIES
+        const cookiesFileName = `cookies-${Date.now()}-${Math.random().toString(36).substring(7)}.txt`
+        cookiesFilePath = path.join(os.tmpdir(), cookiesFileName)
+        await fs.writeFile(cookiesFilePath, cookiesContent)
+        console.log('✅ Created temporary cookies file at:', cookiesFilePath)
+      }
+
       // Build yt-dlp command to get direct URL (using -g flag)
       // IMPORTANT: Prefer combined video+audio formats (format 18, 22, etc.)
       // These formats have direct https URLs and don't require merging video/audio
@@ -109,9 +121,16 @@ export async function POST(request: NextRequest) {
       // Use -g flag to get direct URL without downloading
       // --no-check-certificate: Skip SSL certificate validation (may be needed)
       // --no-playlist: Only download the video, not the entire playlist
-      const command = `"${ytDlpPath}" -g -f "${formatSelector}" --no-check-certificate --no-playlist "${url}"`
+      let command = `"${ytDlpPath}" -g -f "${formatSelector}" --no-check-certificate --no-playlist`
 
-      console.log('Executing yt-dlp command to get URL:', command)
+      // Add cookies argument if file exists
+      if (cookiesFilePath) {
+        command += ` --cookies "${cookiesFilePath}"`
+      }
+
+      command += ` "${url}"`
+
+      console.log('Executing yt-dlp command to get URL:', command.replace(cookiesFilePath || 'NEVER_MATCH', 'COOKIES_FILE'))
 
       const { stdout, stderr } = await execAsync(command, {
         timeout: 30000, // 30 second timeout
@@ -151,7 +170,10 @@ export async function POST(request: NextRequest) {
         // Strategy 1: Try worst quality (often has direct URLs, not HLS)
         console.log('Strategy 1: Trying worst quality format...')
         try {
-          const worstCommand = `"${ytDlpPath}" -g -f "worst[ext=mp4]/worst" --no-check-certificate --no-playlist "${url}"`
+          let worstCommand = `"${ytDlpPath}" -g -f "worst[ext=mp4]/worst" --no-check-certificate --no-playlist`
+          if (cookiesFilePath) worstCommand += ` --cookies "${cookiesFilePath}"`
+          worstCommand += ` "${url}"`
+
           const worstOutput = await execAsync(worstCommand, { timeout: 30000 })
           const worstUrls = worstOutput.stdout.trim().split('\n').filter(line =>
             line.trim().startsWith('http') &&
@@ -172,7 +194,10 @@ export async function POST(request: NextRequest) {
           console.log('Strategy 2: Listing formats to find non-HLS option...')
           try {
             // List all available formats
-            const formatListCommand = `"${ytDlpPath}" -F --no-check-certificate --no-playlist "${url}"`
+            let formatListCommand = `"${ytDlpPath}" -F --no-check-certificate --no-playlist`
+            if (cookiesFilePath) formatListCommand += ` --cookies "${cookiesFilePath}"`
+            formatListCommand += ` "${url}"`
+
             const formatListOutput = await execAsync(formatListCommand, { timeout: 30000 })
 
             // Parse format list - look for formats that are mp4 and not HLS
@@ -197,7 +222,10 @@ export async function POST(request: NextRequest) {
               console.log(`Found ${candidateFormats.length} candidate formats, trying them...`)
               for (const fmt of candidateFormats) {
                 try {
-                  const fmtCommand = `"${ytDlpPath}" -g -f "${fmt.id}" --no-check-certificate --no-playlist "${url}"`
+                  let fmtCommand = `"${ytDlpPath}" -g -f "${fmt.id}" --no-check-certificate --no-playlist`
+                  if (cookiesFilePath) fmtCommand += ` --cookies "${cookiesFilePath}"`
+                  fmtCommand += ` "${url}"`
+
                   const fmtOutput = await execAsync(fmtCommand, { timeout: 30000 })
                   const fmtUrls = fmtOutput.stdout.trim().split('\n').filter(line =>
                     line.trim().startsWith('http') &&
@@ -241,7 +269,10 @@ export async function POST(request: NextRequest) {
 
       try {
         // Get video info for better filename
-        const infoCommand = `"${ytDlpPath}" --get-title --get-id --no-check-certificate --no-playlist "${url}"`
+        let infoCommand = `"${ytDlpPath}" --get-title --get-id --no-check-certificate --no-playlist`
+        if (cookiesFilePath) infoCommand += ` --cookies "${cookiesFilePath}"`
+        infoCommand += ` "${url}"`
+
         const infoOutput = await execAsync(infoCommand, { timeout: 10000 })
         const infoLines = infoOutput.stdout.trim().split('\n')
         if (infoLines[0]) {
@@ -321,6 +352,16 @@ export async function POST(request: NextRequest) {
         },
         { status: statusCode }
       )
+    } finally {
+      // Clean up cookies file
+      if (cookiesFilePath) {
+        try {
+          await fs.unlink(cookiesFilePath)
+          console.log('✅ Cleaned up cookies file')
+        } catch (e) {
+          console.error('❌ Failed to cleanup cookies file:', e)
+        }
+      }
     }
   } catch (error: any) {
     console.error('❌ YouTube download URL API error:', error)
