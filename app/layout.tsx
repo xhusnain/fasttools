@@ -128,6 +128,12 @@ export default function RootLayout({
 
   return (
     <html lang="en" className="antialiased" suppressHydrationWarning>
+      <head>
+        {/* Resource Hints for Performance */}
+        <link rel="preconnect" href="https://www.googletagmanager.com" />
+        <link rel="preconnect" href="https://static.cloudflareinsights.com" />
+        <link rel="dns-prefetch" href="https://www.google-analytics.com" />
+      </head>
       <body className="bg-background font-sans text-foreground">
         {/* Google Analytics */}
         {env.isProduction && (

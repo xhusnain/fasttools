@@ -1,0 +1,7 @@
+# Target modern browsers only - no legacy polyfills needed
+# This eliminates ~24 KiB of unnecessary transpilation
+> 0.5%
+last 2 versions
+not dead
+not IE 11
+not op_mini all

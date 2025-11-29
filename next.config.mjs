@@ -1,12 +1,25 @@
 import CopyPlugin from 'copy-webpack-plugin'
 
-/** @type {import('next').NextConfig} */
 const nextConfig = {
-  // Enable standalone output for Docker
   output: 'standalone',
-  eslint: {
-    ignoreDuringBuilds: true,
+
+  compiler: {
+    removeConsole: process.env.NODE_ENV === 'production' ? {
+      exclude: ['error', 'warn'],
+    } : false,
   },
+
+  experimental: {
+    optimizePackageImports: [
+      'lucide-react',
+      '@radix-ui/react-icons',
+      '@iconify/react',
+      'react-icons',
+    ],
+  },
+
+  turbopack: {},
+
   typescript: {
     ignoreBuildErrors: true,
   },
@@ -15,7 +28,6 @@ const nextConfig = {
   },
   transpilePackages: ['lucide-react'],
   webpack: (config, { isServer, dev }) => {
-    // Handle Fabric.js properly
     if (!isServer) {
       config.resolve.fallback = {
         ...config.resolve.fallback,
@@ -25,7 +37,6 @@ const nextConfig = {
         crypto: false,
       }
 
-      // Copy ONNX model files to static directory for deployment
       config.plugins.push(
         new CopyPlugin({
           patterns: [
@@ -39,7 +50,6 @@ const nextConfig = {
       )
     }
 
-    // Handle canvas module and other externals
     config.externals = config.externals || []
     config.externals.push({
       canvas: 'commonjs canvas',
@@ -47,23 +57,52 @@ const nextConfig = {
       bufferutil: 'commonjs bufferutil',
     })
 
-    // Optimize bundle splitting for production
     if (!dev && !isServer) {
       config.optimization.splitChunks = {
         chunks: "all",
+        maxInitialRequests: 25,
+        minSize: 20000,
         cacheGroups: {
+          framework: {
+            test: /[\\/]node_modules[\\/](react|react-dom|scheduler|next)[\\/]/,
+            name: "framework",
+            priority: 40,
+            enforce: true,
+          },
+
+          radix: {
+            test: /[\\/]node_modules[\\/]@radix-ui[\\/]/,
+            name: "radix",
+            priority: 30,
+            maxSize: 150000,
+          },
+
+          icons: {
+            test: /[\\/]node_modules[\\/](lucide-react|@iconify|react-icons)[\\/]/,
+            name: "icons",
+            priority: 25,
+            maxSize: 100000,
+          },
+
           vendor: {
             test: /[\\/]node_modules[\\/]/,
-            name: "vendors",
-            chunks: "all",
-            maxSize: 244000,
+            name: "vendor",
+            priority: 10,
+            maxSize: 200000,
+          },
+
+          common: {
+            minChunks: 2,
+            priority: 5,
+            reuseExistingChunk: true,
+            maxSize: 100000,
           },
 
           workers: {
             test: /[\\/]workers[\\/]/,
             name: "workers",
             chunks: "all",
-            priority: 5,
+            priority: 50,
           },
         },
       }
@@ -72,7 +111,6 @@ const nextConfig = {
     return config
   },
 
-  // Enterprise caching headers for model files
   async headers() {
     return [
       {
@@ -124,6 +162,23 @@ const nextConfig = {
           {
             key: "Content-Type",
             value: "image/svg+xml",
+          },
+        ],
+      },
+      {
+        source: "/:path*",
+        headers: [
+          {
+            key: "X-DNS-Prefetch-Control",
+            value: "on",
+          },
+          {
+            key: "X-Content-Type-Options",
+            value: "nosniff",
+          },
+          {
+            key: "Referrer-Policy",
+            value: "strict-origin-when-cross-origin",
           },
         ],
       },
