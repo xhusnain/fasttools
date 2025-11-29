@@ -24,7 +24,7 @@ const nextConfig = {
     ignoreBuildErrors: true,
   },
   images: {
-    unoptimized: true,
+    // unoptimized: true, // Removed for performance optimization
   },
   transpilePackages: ['lucide-react'],
   webpack: (config, { isServer, dev }) => {

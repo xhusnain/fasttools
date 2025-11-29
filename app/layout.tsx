@@ -7,6 +7,7 @@ import { ThemeProvider } from "@/components/theme-provider"
 import Script from "next/script"
 import { env } from "@/lib/env"
 import { createMetadata, globalViewport, getWebsiteSchema } from "@/lib/metadata-base"
+import { roboto, montserrat } from "@/app/fonts"
 
 export const viewport = globalViewport
 
@@ -127,7 +128,7 @@ export default function RootLayout({
   const websiteSchema = getWebsiteSchema()
 
   return (
-    <html lang="en" className="antialiased" suppressHydrationWarning>
+    <html lang="en" className={`antialiased ${roboto.variable} ${montserrat.variable}`} suppressHydrationWarning>
       <head>
         {/* Resource Hints for Performance */}
         <link rel="preconnect" href="https://www.googletagmanager.com" />

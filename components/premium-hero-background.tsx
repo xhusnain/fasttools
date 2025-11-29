@@ -1,18 +1,4 @@
-"use client"
-
-import { useTheme } from "next-themes"
-import { useEffect, useState } from "react"
-
 export function PremiumHeroBackground() {
-  const { theme } = useTheme()
-  const [mounted, setMounted] = useState(false)
-
-  useEffect(() => {
-    setMounted(true)
-  }, [])
-
-  if (!mounted) return null
-
   return (
     <div className="absolute inset-0 w-full h-full overflow-hidden pointer-events-none bg-background transition-colors duration-500">
       {/* Minimal Dark Base - Deep Void */}

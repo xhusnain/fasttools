@@ -99,8 +99,8 @@
 }
 
 :root {
-  --font-roboto: 'Roboto';
-  --font-montserrat: 'Montserrat';
+  --font-roboto: var(--font-roboto);
+  --font-montserrat: var(--font-montserrat);
   --background: #FAFAFA;
   --foreground: #1A1A1A;
   --card: #FFFFFF;
