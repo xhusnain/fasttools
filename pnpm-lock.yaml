@@ -4,7 +4,7 @@ settings:
   autoInstallPeers: true
   excludeLinksFromLockfile: false
 
-pnpmfileChecksum: sha256-drv7jiKT8h/r7gMa+HX0RtGKpipIpFGSJZDQN3ANqH8=
+pnpmfileChecksum: qldc7exxbvg5txdaphphp63j54
 
 importers:
 
@@ -8800,7 +8800,7 @@ snapshots:
 
   jest-worker@27.5.1:
     dependencies:
-      '@types/node': 22.19.1
+      '@types/node': 24.10.1
       merge-stream: 2.0.0
       supports-color: 8.1.1
 
