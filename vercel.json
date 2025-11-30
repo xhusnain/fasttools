@@ -1,7 +1,0 @@
-{
-    "functions": {
-        "app/api/**/*": {
-            "includeFiles": "node_modules/onnxruntime-node/bin/napi-v6/linux/x64/libonnxruntime.so.1"
-        }
-    }
-}
