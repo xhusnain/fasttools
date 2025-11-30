@@ -66,14 +66,14 @@ export function HashtagCounter() {
 
     setIsGenerating(true)
     try {
-      const response = await fetch('/api/ai/generate-hashtags', {
+      const response = await fetch('/api/ai', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
         },
         body: JSON.stringify({
-          text,
-          platform
+          action: 'generate-hashtags',
+          data: { text, platform }
         }),
       })
 
@@ -152,8 +152,8 @@ export function HashtagCounter() {
                   key={value}
                   onClick={() => setPlatform(value)}
                   className={`group relative flex flex-col items-center gap-1 p-2 sm:p-3 rounded-lg transition-all duration-300 hover:scale-105 ${platform === value
-                      ? 'bg-gradient-to-br from-primary to-primary/90 shadow-lg'
-                      : 'bg-secondary hover:bg-secondary/80 border border-border'
+                    ? 'bg-gradient-to-br from-primary to-primary/90 shadow-lg'
+                    : 'bg-secondary hover:bg-secondary/80 border border-border'
                     }`}
                   title={label}
                 >

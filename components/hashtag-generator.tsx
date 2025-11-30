@@ -18,14 +18,17 @@ export function HashtagGenerator() {
     setIsGenerating(true)
 
     try {
-      const response = await fetch("/api/ai/generate-hashtags", {
+      const response = await fetch("/api/ai", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
         },
         body: JSON.stringify({
-          text: topic,
-          platform: "instagram"
+          action: "generate-hashtags",
+          data: {
+            text: topic,
+            platform: "instagram"
+          }
         }),
       })
 

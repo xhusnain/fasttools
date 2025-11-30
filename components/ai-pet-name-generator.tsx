@@ -56,18 +56,21 @@ export function AiPetNameGenerator() {
     }, 500)
 
     try {
-      const response = await fetch("/api/ai/generate-pet-names", {
+      const response = await fetch("/api/ai", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
-          petType,
-          gender,
-          color,
-          age,
-          personality,
-          breed,
-          size,
-          additionalInfo
+          action: "generate-pet-names",
+          data: {
+            petType,
+            gender,
+            color,
+            age,
+            personality,
+            breed,
+            size,
+            additionalInfo
+          }
         }),
       })
 
