@@ -416,12 +416,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: "daily" as const,
       priority: 0.95,
     },
-    {
-      url: "https://www.fasttools.store/social-media-tools/youtube-downloader",
-      lastModified: getFreshnessDate(1),
-      changeFrequency: "daily" as const,
-      priority: 0.95, // High priority - popular YouTube video downloader tool
-    },
+
+
     {
       url: "https://www.fasttools.store/social-media-tools/channel-checker",
       lastModified: getFreshnessDate(1),

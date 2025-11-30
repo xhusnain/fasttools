@@ -17,13 +17,6 @@ const socialTools = [
     color: "red"
   },
   {
-    title: "YouTube Downloader",
-    description: "Download YouTube videos in HD quality and extract MP3 audio for educational purposes and content inspiration.",
-    icon: Download,
-    href: "/social-media-tools/youtube-downloader",
-    color: "red"
-  },
-  {
     title: "Instagram DP Viewer",
     description: "View and download Instagram profile pictures in HD quality for brand research and analysis.",
     icon: Instagram,
@@ -127,7 +120,7 @@ const toolConfig = createToolConfig({
     overview: "Our advanced social media toolkit leverages cutting-edge web technologies and API integrations to provide real-time access to social media data. Each tool is designed with user privacy and platform compliance in mind. Whether you're a YouTuber, Instagram influencer, or TikTok creator, our suite of tools helps you optimize your content, analyze competitors, and grow your audience effectively.",
 
     howToSteps: [
-      "Select the specific social media tool you need from the grid below (e.g., YouTube Downloader, Instagram DP Viewer).",
+      "Select the specific social media tool you need from the grid below (e.g., Instagram DP Viewer).",
       "Enter the required URL, username, or text into the input field provided by the tool.",
       "Click the action button (Download, Extract, Check, or Generate) to process your request.",
       "View the results instantly and download content, copy tags, or analyze data as needed."

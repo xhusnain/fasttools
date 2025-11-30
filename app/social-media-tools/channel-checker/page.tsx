@@ -800,7 +800,7 @@ const toolConfig = createToolConfig({
     relatedTools: [
       { name: "YouTube Thumbnail Downloader", href: "/social-media-tools/youtube-thumbnail" },
       { name: "YouTube Tag Extractor", href: "/social-media-tools/youtube-tags" },
-      { name: "YouTube Downloader", href: "/social-media-tools/youtube-downloader" },
+
       { name: "Link in Bio Generator", href: "/social-media-tools/link-in-bio" },
       { name: "Instagram Hashtag Counter", href: "/social-media-tools/hashtag-counter" }
     ]
