@@ -16,11 +16,7 @@ const nextConfig = {
       '@iconify/react',
       'react-icons',
     ],
-    outputFileTracingIncludes: {
-      '/api/bg-remover': ['./node_modules/onnxruntime-node/bin/**/*'],
-    },
   },
-  serverExternalPackages: ['onnxruntime-node'],
 
   turbopack: {},
 
