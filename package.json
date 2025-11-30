@@ -4,7 +4,6 @@
   "private": true,
   "scripts": {
     "build": "next build",
-    "postbuild": "node scripts/copy-bin-to-standalone.js",
     "dev": "next dev",
     "lint": "next lint",
     "start": "next start",
