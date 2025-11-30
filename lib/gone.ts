@@ -95,7 +95,8 @@ export const goneUrls = new Set([
 
   // Image tools removed
   '/image-tools/photo-editor',
-  '/social-media-tools/youtube-downloader'
+  '/social-media-tools/youtube-downloader',
+  '/seo-tools/hashtags'
 ])
 
 /**

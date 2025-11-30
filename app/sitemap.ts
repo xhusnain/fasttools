@@ -508,12 +508,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: "daily" as const,
       priority: 0.9,
     },
-    {
-      url: "https://www.fasttools.store/seo-tools/hashtags",
-      lastModified: getFreshnessDate(1),
-      changeFrequency: "daily" as const,
-      priority: 0.95,
-    },
+
     {
       url: "https://www.fasttools.store/seo-tools/blog-titles",
       lastModified: getFreshnessDate(1),

@@ -516,14 +516,7 @@ const categories = [
         badge: "Creative",
         badgeColor: "bg-pink-500/90",
       },
-      {
-        title: "Hashtag Generator",
-        description: "Generate trending hashtags for social media posts to boost engagement and reach across Instagram, Twitter, TikTok and more",
-        href: "/seo-tools/hashtags",
-        icon: Hash,
-        badge: "Viral",
-        badgeColor: "bg-pink-500/90",
-      },
+
     ],
   },
   {

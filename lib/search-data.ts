@@ -96,7 +96,7 @@ export const searchItems: SearchItem[] = [
   { name: "Keyword Density Checker", description: "Analyze keyword density in content", path: "/seo-tools/keyword-density", category: "SEO" },
   { name: "Lorem Ipsum Generator", description: "Generate placeholder text for design mockups", path: "/seo-tools/lorem-ipsum", category: "SEO" },
   { name: "Blog Title Generator", description: "Create catchy, SEO-friendly titles", path: "/seo-tools/blog-titles", category: "SEO" },
-  { name: "Hashtag Generator", description: "Generate trending hashtags for posts", path: "/seo-tools/hashtags", category: "SEO" },
+
 
   // Social Media Tools
   { name: "Instagram DP Viewer", description: "View and download Instagram profile pictures", path: "/social-media-tools/instagram-dp", category: "Social Media" },
