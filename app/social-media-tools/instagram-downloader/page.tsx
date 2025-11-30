@@ -520,7 +520,7 @@ const toolConfig = createToolConfig({
 
     relatedTools: [
       { name: "Instagram DP Viewer", href: "/social-media-tools/instagram-dp" },
-      { name: "YouTube Downloader", href: "/social-media-tools/youtube-downloader" },
+
       { name: "TikTok Downloader", href: "/social-media-tools/tiktok-downloader" },
       { name: "Facebook Downloader", href: "/social-media-tools/facebook-downloader" }
     ]

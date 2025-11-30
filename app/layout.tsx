@@ -17,7 +17,7 @@ export const metadata = {
   metadataBase: new URL("https://www.fasttools.store"),
   ...createMetadata({
     title: "FastTools",
-    description: "FastTools provides 1000+ free online tools: YouTube downloader, PDF tools (compress, convert, sign, merge), image tools (background remover, blur, OCR), calculators (BMI, loan, tax), AI generators, social media tools, SEO tools, converters, and developer utilities. 100% free, no registration, works on all devices.",
+    description: "FastTools provides 1000+ free online tools: PDF tools (compress, convert, sign, merge), image tools (background remover, blur, OCR), calculators (BMI, loan, tax), AI generators, social media tools, SEO tools, converters, and developer utilities. 100% free, no registration, works on all devices.",
     path: "/",
   }),
   manifest: "/manifest.json",

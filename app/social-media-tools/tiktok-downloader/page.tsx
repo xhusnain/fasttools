@@ -254,7 +254,7 @@ const toolConfig = createToolConfig({
 
     relatedTools: [
       { name: "Instagram Downloader", href: "/social-media-tools/instagram-downloader" },
-      { name: "YouTube Downloader", href: "/social-media-tools/youtube-downloader" },
+
       { name: "Facebook Downloader", href: "/social-media-tools/facebook-downloader" },
       { name: "X Video Downloader", href: "/social-media-tools/x-video-downloader" }
     ]

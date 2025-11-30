@@ -569,14 +569,7 @@ const categories = [
         badge: "YouTube",
         badgeColor: "bg-primary/90",
       },
-      {
-        title: "YouTube Downloader",
-        description: "Download YouTube videos in HD quality and extract MP3 audio for offline viewing, content creation, and sharing",
-        href: "/social-media-tools/youtube-downloader",
-        icon: Youtube,
-        badge: "New",
-        badgeColor: "bg-red-500/90",
-      },
+
       {
         title: "Hashtag Generator",
         description: "Generate trending hashtags for posts to maximize reach and engagement across Instagram, Twitter, TikTok, and other platforms",
