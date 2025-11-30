@@ -4,19 +4,9 @@ export interface ProcessingStatus {
   message: string;
 }
 
-export interface ModelInfo {
-  name: string;
-  url: string;
-  size: number;
-  loaded: boolean;
-}
-
 export interface ProcessingResult {
   resultUrl?: string;
   processingTime: number;
-  modelInfo: {
-    u2net: ModelInfo;
-  };
 }
 
 export interface EditorState {
@@ -37,10 +27,5 @@ export interface EditorState {
 export interface WorkerMessage {
   type: "progress" | "result" | "error" | "completed";
   payload?: any;
-}
-
-export interface ModelCache {
-  u2net: ArrayBuffer | null;
-  lastUpdated: number;
 }
 

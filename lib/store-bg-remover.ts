@@ -140,14 +140,6 @@ export const useBgRemoverStore = create<EditorStore>()(
           const result: ProcessingResult = {
             resultUrl,
             processingTime,
-            modelInfo: {
-              u2net: {
-                name: "U²-Net",
-                url: "/models/u2net.onnx",
-                size: 0,
-                loaded: true,
-              },
-            },
           };
 
           get().setResult(result);

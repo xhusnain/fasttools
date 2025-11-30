@@ -1,4 +1,4 @@
-import CopyPlugin from 'copy-webpack-plugin'
+
 
 const nextConfig = {
   output: 'standalone',
@@ -36,18 +36,6 @@ const nextConfig = {
         os: false,
         crypto: false,
       }
-
-      config.plugins.push(
-        new CopyPlugin({
-          patterns: [
-            {
-              from: 'public/models',
-              to: '../../static/models',
-              noErrorOnMissing: true,
-            },
-          ],
-        })
-      )
     }
 
     config.externals = config.externals || []
@@ -103,6 +91,7 @@ const nextConfig = {
             name: "workers",
             chunks: "all",
             priority: 50,
+            enforce: true,
           },
         },
       }
