@@ -16,8 +16,8 @@ const nextConfig = {
       '@iconify/react',
       'react-icons',
     ],
-    serverComponentsExternalPackages: ['onnxruntime-node'],
   },
+  serverExternalPackages: ['onnxruntime-node'],
 
   turbopack: {},
 
