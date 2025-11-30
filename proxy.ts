@@ -1,8 +1,99 @@
 import { NextResponse } from 'next/server'
 import type { NextRequest } from 'next/server'
-import { isGoneUrl } from './lib/gone'
 import { redirects } from './lib/redirects'
 import { env } from './lib/env'
+
+const goneUrls = new Set([
+    // Guide pages that were removed
+    '/guides/instagram-dp-viewer-guide',
+    '/guides/ai-qr-art-generator-guide',
+    '/guides/sales-tax-calculator-guide',
+    '/guides/markdown-previewer-guide',
+    '/guides/emi-calculator-guide',
+    '/guides/gpa-calculator-guide',
+    '/guides/jwt-decoder-guide',
+    '/guides/pace-calculator-guide',
+    '/guides/mortgage-calculator-guide',
+    '/guides/ai-pet-name-generator-guide',
+    '/guides/background-blur-guide',
+    '/guides/amortization-calculator-guide',
+    '/guides/salary-calculator-guide',
+    '/guides/ai-song-lyrics-generator-guide',
+    '/guides/year-end-countdown-guide',
+    '/guides/html-beautifier-guide',
+    '/guides/tip-calculator-guide',
+    '/guides/json-to-csv-converter-guide',
+    '/guides/regex-tester-guide',
+    '/guides/future-age-predictor-guide',
+    '/guides/temperature-converter-guide',
+    '/guides/lorem-ipsum-guide',
+    '/guides/qr-code-generator-guide',
+    '/guides/date-difference-calculator-guide',
+    '/guides/zodiac-sign-finder-guide',
+    '/guides/standard-deviation-guide',
+    '/guides/scientific-calculator-guide',
+    '/guides/image-to-text-ocr-guide',
+    '/guides/developer-tools-guide',
+    '/guides/bmr-calculator-guide',
+    '/guides/paypal-fee-calculator-guide',
+    '/guides/inflation-calculator-guide',
+    '/guides/meta-tags-guide',
+    '/guides/investment-calculator-guide',
+    '/guides/compound-interest-calculator-guide',
+    '/guides/retirement-calculator-guide',
+    '/guides/html-to-markdown-converter-guide',
+    '/guides/love-calculator-guide',
+    '/guides/ip-subnet-calculator-guide',
+    '/guides/percentage-calculator-guide',
+    '/guides/bmi-calculator-guide',
+    '/guides/finance-calculator-guide',
+    '/guides/ai-meme-generator-guide',
+    '/guides/interest-rate-calculator-guide',
+    '/guides/pregnancy-calculator-guide',
+    '/guides/age-in-hours-calculator-guide',
+    '/guides/color-palette-generator-guide',
+    '/guides/hex-to-rgb-converter-guide',
+    '/guides/body-fat-calculator-guide',
+    '/guides/calorie-calculator-guide',
+    '/guides/ai-caption-generator-guide',
+    '/guides/concrete-calculator-guide',
+    '/guides/youtube-thumbnail-downloader-guide',
+    '/guides/date-to-day-finder-guide',
+    '/guides/conversion-calculator-guide',
+
+    // Tool pages that were removed or renamed
+    '/tools/body-fat-calculator',
+    '/tools/mortgage-calculator',
+    '/tools/bmr-calculator',
+    '/tools/interest-rate-calculator',
+    '/tools/scientific-calculator',
+
+    // AI Tools that were removed
+    '/ai-tools/meme-generator',
+    '/ai-tools/hashtag-suggester',
+    '/tools/calorie-calculator',
+    '/tools/gpa-calculator',
+    '/tools/sales-tax-calculator',
+    '/tools/investment-calculator',
+    '/tools/payment-calculator',
+    '/tools/conversion-calculator',
+    '/tools/standard-deviation-calculator',
+    '/tools/finance-calculator',
+    '/tools/triangle-calculator',
+
+    // Other removed pages
+    '/resources',
+    '/announcements',
+
+    // Image tools removed
+    '/image-tools/photo-editor',
+    '/social-media-tools/youtube-downloader',
+    '/seo-tools/hashtags'
+])
+
+function isGoneUrl(pathname: string): boolean {
+    return goneUrls.has(pathname)
+}
 
 function isAllowedOrigin(origin: string | null): boolean {
     if (!origin) return false
@@ -63,81 +154,11 @@ export default function proxy(request: NextRequest) {
     const pathname = request.nextUrl.pathname
 
     if (isGoneUrl(pathname)) {
-        return new NextResponse(
-            `<!DOCTYPE html>
-            <html lang="en">
-            <head>
-                <meta charset="UTF-8">
-                <meta name="viewport" content="width=device-width, initial-scale=1.0">
-                <title>Service Discontinued - FastTools</title>
-                <style>
-                    body {
-                        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-                        background-color: #09090b;
-                        color: #e4e4e7;
-                        display: flex;
-                        flex-direction: column;
-                        align-items: center;
-                        justify-content: center;
-                        height: 100vh;
-                        margin: 0;
-                        text-align: center;
-                        padding: 20px;
-                    }
-                    .container {
-                        max-width: 600px;
-                        background: #18181b;
-                        padding: 40px;
-                        border-radius: 12px;
-                        border: 1px solid #27272a;
-                        box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
-                    }
-                    h1 {
-                        font-size: 24px;
-                        font-weight: 700;
-                        margin-bottom: 16px;
-                        color: #fff;
-                    }
-                    p {
-                        font-size: 16px;
-                        line-height: 1.6;
-                        color: #a1a1aa;
-                        margin-bottom: 24px;
-                    }
-                    .btn {
-                        display: inline-flex;
-                        align-items: center;
-                        justify-content: center;
-                        border-radius: 6px;
-                        font-size: 14px;
-                        font-weight: 500;
-                        height: 40px;
-                        padding: 0 16px;
-                        background-color: #fafafa;
-                        color: #18181b;
-                        text-decoration: none;
-                        transition: background-color 0.2s;
-                    }
-                    .btn:hover {
-                        background-color: #e4e4e7;
-                    }
-                </style>
-            </head>
-            <body>
-                <div class="container">
-                    <h1>Service Discontinued</h1>
-                    <p>The YouTube Video Downloader tool has been permanently removed from FastTools to comply with YouTube's Terms of Service and Google's policies.</p>
-                    <p>We remain committed to providing high-quality, compliant tools for content creators. Please explore our other available tools.</p>
-                    <a href="/" class="btn">Return Home</a>
-                </div>
-            </body>
-            </html>`,
-            {
-                status: 410,
-                statusText: 'Gone',
-                headers: { 'Content-Type': 'text/html' }
-            }
-        )
+        const url = request.nextUrl.clone()
+        url.pathname = '/404'
+        const response = NextResponse.rewrite(url, { status: 410 })
+        response.headers.set('x-gone', 'true')
+        return response
     }
 
     if (redirects.has(pathname)) {

@@ -8,8 +8,6 @@
     "dev": "next dev",
     "lint": "next lint",
     "start": "next start",
-    "indexnow": "node scripts/indexnow-cron.js",
-    "indexnow:service": "node scripts/indexnow-cron-service.js",
     "audit:page": "node scripts/lighthouse-audit.js --page",
     "audit:all": "node scripts/lighthouse-audit.js --all",
     "audit:desktop": "node scripts/lighthouse-audit.js --all --desktop",
