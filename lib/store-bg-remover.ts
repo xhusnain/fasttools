@@ -1,4 +1,6 @@
 import { create } from "zustand";
+import axios from "axios";
+import { apiService } from "./api-service";
 import type {
   EditorState,
   ProcessingStatus,
@@ -91,7 +93,7 @@ export const useBgRemoverStore = create<EditorStore>()(
         },
         result: null,
         isProcessing: false,
-        
+
       });
     },
 
@@ -123,44 +125,72 @@ export const useBgRemoverStore = create<EditorStore>()(
           },
         });
 
-        const form = new FormData();
-        form.append("image", blob, "input.png");
-
         const strengthQ = refineStrength ?? "strong";
-        const resp = await fetch(`/api/bg-remover?refine=depth&strength=${strengthQ}`, { method: "POST", body: form });
-        if (!resp.ok) {
-          const errText = await resp.text().catch(() => "");
-          // Temporary diagnostics
-          console.error("bg-remover response not ok:", resp.status, errText);
-          throw new Error(errText || `Server error ${resp.status}`);
-        }
-        const resultBlob = await resp.blob();
-        const resultUrl = URL.createObjectURL(resultBlob);
 
-        const processingTime = performance.now() - startTime;
-        const result: ProcessingResult = {
-          resultUrl,
-          processingTime,
-          modelInfo: {
-            u2net: {
-              name: "U²-Net",
-              url: "/models/u2net.onnx",
-              size: 0,
-              loaded: true,
+        try {
+          const resultBlob = await apiService.removeBackground({
+            image: blob,
+            refine: "depth",
+            strength: strengthQ,
+          });
+
+          const resultUrl = URL.createObjectURL(resultBlob);
+
+          const processingTime = performance.now() - startTime;
+          const result: ProcessingResult = {
+            resultUrl,
+            processingTime,
+            modelInfo: {
+              u2net: {
+                name: "U²-Net",
+                url: "/models/u2net.onnx",
+                size: 0,
+                loaded: true,
+              },
             },
-          },
-        };
+          };
 
-        get().setResult(result);
+          get().setResult(result);
+        } catch (error: any) {
+          // Temporary diagnostics
+          console.error("bg-remover client error:", error);
+
+          let errorMessage = "Something went wrong. Please try again.";
+
+          if (axios.isAxiosError(error)) {
+            if (error.response) {
+              // The request was made and the server responded with a status code
+              // that falls out of the range of 2xx
+              const errText = await error.response.data.text().catch(() => "");
+              errorMessage = errText || `Server error ${error.response.status}`;
+              console.error("bg-remover response not ok:", error.response.status, errText);
+            } else if (error.request) {
+              // The request was made but no response was received
+              errorMessage = "No response from server. Is the background remover service running on port 3001?";
+            } else {
+              // Something happened in setting up the request that triggered an Error
+              errorMessage = error.message;
+            }
+          }
+
+          set({
+            isProcessing: false,
+            status: {
+              stage: "error",
+              progress: 0,
+              message: errorMessage,
+            },
+          });
+        }
       } catch (error) {
-        // Temporary diagnostics
-        console.error("bg-remover client error:", error);
+        // Catch errors from canvas/blob creation
+        console.error("bg-remover preparation error:", error);
         set({
           isProcessing: false,
           status: {
             stage: "error",
             progress: 0,
-            message: "Something went wrong. Please try again.",
+            message: "Failed to prepare image for processing.",
           },
         });
       }

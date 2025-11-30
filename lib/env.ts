@@ -20,6 +20,9 @@ export const env = {
   youtubeApiKey: process.env.YOUTUBE_API_KEY,
   instagramApiKey: process.env.INSTAGRAM_API_KEY,
 
+  // API Configuration
+  apiUrl: process.env.NEXT_PUBLIC_API_URL || "http://localhost:3001",
+
   // Environment
   isDevelopment: process.env.NODE_ENV === "development",
   isProduction: process.env.NODE_ENV === "production",
