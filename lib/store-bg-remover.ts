@@ -144,8 +144,6 @@ export const useBgRemoverStore = create<EditorStore>()(
 
           get().setResult(result);
         } catch (error: any) {
-          // Temporary diagnostics
-          console.error("bg-remover client error:", error);
 
           let errorMessage = "Something went wrong. Please try again.";
 
@@ -155,7 +153,6 @@ export const useBgRemoverStore = create<EditorStore>()(
               // that falls out of the range of 2xx
               const errText = await error.response.data.text().catch(() => "");
               errorMessage = errText || `Server error ${error.response.status}`;
-              console.error("bg-remover response not ok:", error.response.status, errText);
             } else if (error.request) {
               // The request was made but no response was received
               errorMessage = "No response from server. Is the background remover service running on port 3001?";
@@ -176,7 +173,6 @@ export const useBgRemoverStore = create<EditorStore>()(
         }
       } catch (error) {
         // Catch errors from canvas/blob creation
-        console.error("bg-remover preparation error:", error);
         set({
           isProcessing: false,
           status: {

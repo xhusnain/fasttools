@@ -103,23 +103,6 @@ const nextConfig = {
   async headers() {
     return [
       {
-        source: "/models/:path*",
-        headers: [
-          {
-            key: "Content-Type",
-            value: "application/octet-stream",
-          },
-          {
-            key: "Cache-Control",
-            value: "public, max-age=31536000, immutable, s-maxage=31536000",
-          },
-          {
-            key: "CDN-Cache-Control",
-            value: "max-age=31536000",
-          },
-        ],
-      },
-      {
         source: "/_next/static/:path*",
         headers: [
           {

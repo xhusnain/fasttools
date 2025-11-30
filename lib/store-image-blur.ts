@@ -150,8 +150,6 @@ export const useImageBlurStore = create<EditorStore>()(
 
           get().setResult(result);
         } catch (error: any) {
-          console.error("bg-blur client error:", error);
-
           let errorMessage = "Something went wrong. Please try again.";
 
           // The apiService might still use axios internally, so keeping this check for now.
