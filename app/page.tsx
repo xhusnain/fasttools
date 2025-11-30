@@ -3,6 +3,7 @@ import { GButton } from "@/components/globalcomponents/gbutton"
 import { GCard } from "@/components/globalcomponents/gcard"
 import { PremiumHeroBackground } from "@/components/premium-hero-background"
 import { GHeader } from "@/components/globalcomponents/gheader"
+import { GBanner } from "@/components/g-banner"
 import type { Metadata } from "next"
 import {
   Calculator,
@@ -1030,6 +1031,15 @@ export default function Home() {
 
   return (
     <div className="bg-background">
+      <GBanner
+        variant="large"
+        title="⚠️ Service Update: The YouTube Video Downloader has been discontinued to comply with new safety policies. We apologize for the inconvenience and thank you for your continued support!"
+        animated={true}
+        animationDirection="rtl"
+        className="border-b-2 !bg-gradient-to-r !from-primary/10 !via-purple-500/10 !to-primary/10 backdrop-blur-xl"
+        style={{ borderImage: 'linear-gradient(to right, var(--primary), #a855f7, var(--primary)) 1' }}
+        showCloseButton={false}
+      />
       {/* JSON-LD Structured Data */}
       <script
         type="application/ld+json"

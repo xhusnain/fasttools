@@ -238,9 +238,6 @@ importers:
       vaul:
         specifier: ^0.9.9
         version: 0.9.9(@types/react-dom@19.2.3(@types/react@19.2.7))(@types/react@19.2.7)(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
-      ytsave:
-        specifier: ^1.0.7
-        version: 1.0.7
       zod:
         specifier: ^3.25.76
         version: 3.25.76
@@ -5150,10 +5147,6 @@ packages:
   yocto-queue@0.1.0:
     resolution: {integrity: sha512-rVksvsnNCdJ/ohGc6xgPwyN8eheCxsiLM8mxuE/t/mOVqJewPuO1miLpTHQiRgTKCLexL4MeAFVagts7HmNZ2Q==}
     engines: {node: '>=10'}
-
-  ytsave@1.0.7:
-    resolution: {integrity: sha512-yDwyAeiqxslM6oWeRBaoLx7LKQdl6vNDuS9jg5zOlNGDUie/iqpur9n8v/dPcHobRJpmDbKa6U62CXaZ8GoPpA==}
-    hasBin: true
 
   zip-stream@6.0.1:
     resolution: {integrity: sha512-zK7YHHz4ZXpW89AHXUPbQVGKI7uvkd3hzusTdotCg1UxyaVtg0zFJSTfW/Dq5f7OBBVnq6cZIaC8Ti4hb6dtCA==}
@@ -10464,8 +10457,6 @@ snapshots:
       fd-slicer: 1.1.0
 
   yocto-queue@0.1.0: {}
-
-  ytsave@1.0.7: {}
 
   zip-stream@6.0.1:
     dependencies:
