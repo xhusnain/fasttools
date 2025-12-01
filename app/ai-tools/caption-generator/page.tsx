@@ -112,7 +112,7 @@ export default function CaptionGeneratorPage() {
       { name: "QR Code Generator", href: "/ai-tools/qr-generator" },
       { name: "Lyrics Generator", href: "/ai-tools/lyrics-generator" },
       { name: "Pet Name Generator", href: "/ai-tools/pet-names" },
-      { name: "Hashtag Generator", href: "/seo-tools/hashtags" },
+
       { name: "Blog Title Generator", href: "/seo-tools/blog-titles" }
     ],
     useCases: [

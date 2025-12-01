@@ -113,7 +113,7 @@ export default function LyricsGeneratorPage() {
       { name: "Caption Generator", href: "/ai-tools/caption-generator" },
       { name: "QR Code Generator", href: "/ai-tools/qr-generator" },
       { name: "Pet Name Generator", href: "/ai-tools/pet-names" },
-      { name: "Hashtag Generator", href: "/seo-tools/hashtags" },
+
       { name: "Blog Title Generator", href: "/seo-tools/blog-titles" }
     ],
     useCases: [

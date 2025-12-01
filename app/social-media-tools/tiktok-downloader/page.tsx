@@ -1,13 +1,10 @@
-import { TiktokDownloader } from "@/components/tiktok-downloader"
 import { ToolPageLayout } from "@/components/tool-page-layout"
 import { createToolConfig } from "@/lib/create-tool-config"
 import {
-  Download, Shield, Zap, Target, AlertCircle, Globe, Music, Users, Clock,
-  ArrowRight, Code, FileText, Hash, Lightbulb, Search, Calculator, Type,
-  Ruler, HardDrive, DollarSign, Thermometer, Copy, Check, Image, Video,
-  CheckCircle, X, CheckCircle2
+ AlertCircle
 } from "lucide-react"
 import { getCurrentYear } from "@/lib/utils"
+import {TiktokDownloader} from "@/components/downloader-components/tiktok-downloader/tiktok-downloader";
 
 const toolConfig = createToolConfig({
   toolName: "TikTok Downloader",

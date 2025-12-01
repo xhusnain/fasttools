@@ -107,7 +107,7 @@ const toolConfig = createToolConfig({
     relatedTools: [
       { name: "Meta Tag Generator", href: "/seo-tools/meta-tags" },
       { name: "Keyword Density Checker", href: "/seo-tools/keyword-density" },
-      { name: "Hashtag Generator", href: "/seo-tools/hashtags" },
+
       { name: "Lorem Ipsum Generator", href: "/seo-tools/lorem-ipsum" }
     ]
   }

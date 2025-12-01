@@ -8,11 +8,9 @@ export default function robots(): MetadataRoute.Robots {
                 allow: "/",
                 disallow: [
                     "/api/",
-                    "/admin",
                     "/private",
                     "/temp",
                     "/_next",
-                    "/admin/announcements",
                 ],
             },
         ],

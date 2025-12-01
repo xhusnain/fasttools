@@ -1,4 +1,4 @@
-import { FacebookDownloader } from "@/components/facebook-downloader"
+import { FacebookDownloader } from "@/components/downloader-components/facebook-downloader/facebook-downloader"
 import { ToolPageLayout } from "@/components/tool-page-layout"
 import { createToolConfig } from "@/lib/create-tool-config"
 import {

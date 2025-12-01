@@ -40,15 +40,18 @@ export function AiLyricsGenerator() {
         selectedDuration = parseInt(duration)
       }
 
-      const response = await fetch("/api/ai/generate-lyrics", {
+      const response = await fetch("/api/ai", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
-          theme: theme.trim(),
-          genre: selectedGenre,
-          mood: selectedMood,
-          duration: selectedDuration,
-          language: language
+          action: "generate-lyrics",
+          data: {
+            theme: theme.trim(),
+            genre: selectedGenre,
+            mood: selectedMood,
+            duration: selectedDuration,
+            language: language
+          }
         }),
       })
 

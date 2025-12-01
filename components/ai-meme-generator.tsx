@@ -19,10 +19,13 @@ export function AiMemeGenerator() {
 
     setLoading(true)
     try {
-      const response = await fetch("/api/ai/generate-meme", {
+      const response = await fetch("/api/ai", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ topic, style }),
+        body: JSON.stringify({
+          action: "generate-meme",
+          data: { topic, style }
+        }),
       })
 
       const data = await response.json()

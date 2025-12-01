@@ -1,4 +1,6 @@
 import { create } from "zustand";
+import axios from "axios";
+import { apiService } from "./api-service";
 import type {
   EditorState,
   ProcessingStatus,
@@ -13,7 +15,6 @@ interface EditorStore extends EditorState {
 
 export const useBgRemoverStore = create<EditorStore>()(
   (set, get) => ({
-    // Initial state
     originalImage: null,
     imageUrl: null,
     status: {
@@ -27,9 +28,7 @@ export const useBgRemoverStore = create<EditorStore>()(
     refineStrength: "medium",
     setRefineStrength: (s) => set({ refineStrength: s }),
 
-    // Actions
     setImage: (image: HTMLImageElement, url: string) => {
-      // Clean up previous image URL
       const { imageUrl } = get();
       if (imageUrl) {
         URL.revokeObjectURL(imageUrl);
@@ -53,7 +52,6 @@ export const useBgRemoverStore = create<EditorStore>()(
     },
 
     setResult: (result: ProcessingResult) => {
-      // Clean up previous result URLs
       const currentResult = get().result;
       if (currentResult?.resultUrl) {
         URL.revokeObjectURL(currentResult.resultUrl);
@@ -73,7 +71,6 @@ export const useBgRemoverStore = create<EditorStore>()(
     reset: () => {
       const { imageUrl, result } = get();
 
-      // Clean up URLs
       if (imageUrl) {
         URL.revokeObjectURL(imageUrl);
       }
@@ -91,7 +88,7 @@ export const useBgRemoverStore = create<EditorStore>()(
         },
         result: null,
         isProcessing: false,
-        
+
       });
     },
 
@@ -123,44 +120,55 @@ export const useBgRemoverStore = create<EditorStore>()(
           },
         });
 
-        const form = new FormData();
-        form.append("image", blob, "input.png");
-
         const strengthQ = refineStrength ?? "strong";
-        const resp = await fetch(`/api/bg-remover?refine=depth&strength=${strengthQ}`, { method: "POST", body: form });
-        if (!resp.ok) {
-          const errText = await resp.text().catch(() => "");
-          // Temporary diagnostics
-          console.error("bg-remover response not ok:", resp.status, errText);
-          throw new Error(errText || `Server error ${resp.status}`);
-        }
-        const resultBlob = await resp.blob();
-        const resultUrl = URL.createObjectURL(resultBlob);
 
-        const processingTime = performance.now() - startTime;
-        const result: ProcessingResult = {
-          resultUrl,
-          processingTime,
-          modelInfo: {
-            u2net: {
-              name: "U²-Net",
-              url: "/models/u2net.onnx",
-              size: 0,
-              loaded: true,
+        try {
+          const resultBlob = await apiService.removeBackground({
+            image: blob,
+            refine: "depth",
+            strength: strengthQ,
+          });
+
+          const resultUrl = URL.createObjectURL(resultBlob);
+
+          const processingTime = performance.now() - startTime;
+          const result: ProcessingResult = {
+            resultUrl,
+            processingTime,
+          };
+
+          get().setResult(result);
+        } catch (error: any) {
+
+          let errorMessage = "Something went wrong. Please try again.";
+
+          if (axios.isAxiosError(error)) {
+            if (error.response) {
+              const errText = await error.response.data.text().catch(() => "");
+              errorMessage = errText || `Server error ${error.response.status}`;
+            } else if (error.request) {
+              errorMessage = "Something went wrong. Please try again.";
+            } else {
+              errorMessage = error.message;
+            }
+          }
+
+          set({
+            isProcessing: false,
+            status: {
+              stage: "error",
+              progress: 0,
+              message: errorMessage,
             },
-          },
-        };
-
-        get().setResult(result);
+          });
+        }
       } catch (error) {
-        // Temporary diagnostics
-        console.error("bg-remover client error:", error);
         set({
           isProcessing: false,
           status: {
             stage: "error",
             progress: 0,
-            message: "Something went wrong. Please try again.",
+            message: "Failed to prepare image for processing.",
           },
         });
       }

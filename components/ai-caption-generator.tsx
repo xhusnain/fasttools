@@ -35,10 +35,13 @@ export function AiCaptionGenerator() {
     setCaptions([])
 
     try {
-      const response = await fetch("/api/ai/generate-captions", {
+      const response = await fetch("/api/ai", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ description, platform }),
+        body: JSON.stringify({
+          action: "generate-captions",
+          data: { description, platform }
+        }),
       })
 
       const data = await response.json()
@@ -104,8 +107,8 @@ export function AiCaptionGenerator() {
                 onClick={() => setPlatform(p.value)}
                 disabled={loading}
                 className={`p-3 rounded-lg border-2 transition-all duration-200 text-left hover:scale-105 ${platform === p.value
-                    ? "border-primary bg-primary/10 shadow-md"
-                    : "border-border hover:border-primary/50"
+                  ? "border-primary bg-primary/10 shadow-md"
+                  : "border-border hover:border-primary/50"
                   } ${loading ? "opacity-50 cursor-not-allowed" : "cursor-pointer"}`}
               >
                 <div className="flex items-center gap-2 mb-1">

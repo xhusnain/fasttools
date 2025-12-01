@@ -7,41 +7,21 @@ import { Label } from "@/components/ui/label"
 import { GCard } from "@/components/globalcomponents/gcard"
 import { Download, AlertTriangle, Music, Image, Video } from "lucide-react"
 import { LoadingSpinner } from "@/components/loading-spinner"
-
-type InstagramDownloaderProps = {
-  compact?: boolean
-}
+import { igdl } from "ab-downloader"
+import type {
+  InstagramDownloaderProps,
+  InstagramMediaResult,
+  DownloadingStates,
+  CountdownStates
+} from "./types"
 
 export function InstagramDownloader({ compact = false }: InstagramDownloaderProps) {
   const [postUrl, setPostUrl] = useState("")
   const [loading, setLoading] = useState(false)
   const [error, setError] = useState<string | null>(null)
-  const [result, setResult] = useState<
-    | null
-    | {
-      videoUrl?: string
-      imageUrl?: string
-      thumbnail?: string
-      title?: string
-      downloading?: boolean
-      downloadStarted?: boolean
-      media?: any[]
-      videos?: string[]
-      images?: string[]
-      isMultiple?: boolean
-      type?: string
-    }
-  >(null)
-  const [downloadingStates, setDownloadingStates] = useState<{
-    video?: boolean
-    image?: boolean
-    [key: string]: boolean | undefined
-  }>({})
-  const [countdownStates, setCountdownStates] = useState<{
-    video?: number
-    image?: number
-    [key: string]: number | undefined
-  }>({})
+  const [result, setResult] = useState<InstagramMediaResult | null>(null)
+  const [downloadingStates, setDownloadingStates] = useState<DownloadingStates>({})
+  const [countdownStates, setCountdownStates] = useState<CountdownStates>({})
 
   const isLikelyInstagramUrl = (url: string) => {
     const pattern = /^(https?:\/\/)?(www\.)?(instagram\.com|instagr\.am)\/.+/i
@@ -51,54 +31,255 @@ export function InstagramDownloader({ compact = false }: InstagramDownloaderProp
   const handleFetch = async () => {
     setError(null)
     setResult(null)
-    if (!isLikelyInstagramUrl(postUrl)) {
+
+    const trimmedUrl = postUrl.trim()
+
+    if (!isLikelyInstagramUrl(trimmedUrl)) {
       setError("Please enter a valid Instagram post URL.")
       return
     }
 
     setLoading(true)
     try {
-      const response = await fetch('/api/instagram-download', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({
-          url: postUrl.trim()
+      const data = await igdl(trimmedUrl)
+
+      if (!data) {
+        throw new Error('No content found for this Instagram URL')
+      }
+
+      let result: any = {
+        success: true,
+      }
+
+      const extractUrl = (item: any, preferVideo: boolean = false): string | null => {
+        if (!item) return null
+        if (typeof item === 'string') return item
+
+        if (preferVideo) {
+          return item.video || item.videoUrl || item.url || item.download || item.downloadUrl ||
+            item.media || item.image || item.imageUrl || item.src || item.link || null
+        }
+
+        return item.url || item.video || item.videoUrl || item.image || item.imageUrl || item.media ||
+          item.download || item.downloadUrl || item.src || item.link || null
+      }
+
+      const isVideo = (item: any, url?: string | null): boolean => {
+        if (!item && !url) return false
+
+        if (item) {
+          if (item.type === 'video' || item.type === 'reel' || item.video || item.videoUrl || item.isVideo) return true
+          if (item.url && (item.url.includes('.mp4') || item.url.includes('video') || item.url.includes('reel'))) return true
+        }
+
+        if (url) {
+          if (url.includes('.mp4') || url.includes('/video/') || url.includes('reel') || url.includes('video')) return true
+        }
+
+        return false
+      }
+
+      const urlContainsReel = trimmedUrl.toLowerCase().includes('/reel/')
+      const urlContainsVideo = trimmedUrl.toLowerCase().includes('/p/') === false && (trimmedUrl.toLowerCase().includes('/reel/') || trimmedUrl.toLowerCase().includes('/tv/'))
+      const isDefinitelyVideo = urlContainsReel || urlContainsVideo
+
+      if (Array.isArray(data)) {
+        result.media = data
+        result.isMultiple = true
+
+        const allImages: string[] = []
+        const allVideos: string[] = []
+
+        data.forEach((item: any) => {
+          const url = extractUrl(item)
+          if (url) {
+            if (isDefinitelyVideo || isVideo(item, url)) {
+              allVideos.push(url)
+            } else {
+              allImages.push(url)
+            }
+          }
         })
-      })
 
-      if (!response.ok) {
-        const errorData = await response.json().catch(() => ({}))
-        throw new Error(errorData.message || `Server error: ${response.status}`)
+        result.images = allImages.length > 0 ? allImages : undefined
+        result.videos = allVideos.length > 0 ? allVideos : undefined
+
+        const firstItem = data[0]
+        if (firstItem) {
+          const firstUrl = extractUrl(firstItem)
+          const isFirstVideo = isDefinitelyVideo || isVideo(firstItem, firstUrl)
+
+          if (isFirstVideo) {
+            result.videoUrl = firstUrl
+            result.type = 'video'
+            result.thumbnail = firstItem.thumbnail || firstItem.cover || firstItem.preview || firstItem.image || firstItem.poster || undefined
+          } else {
+            result.imageUrl = firstUrl
+            result.type = 'image'
+            result.thumbnail = firstItem.thumbnail || firstItem.cover || firstItem.preview || firstItem.image || firstUrl
+          }
+          result.title = firstItem.title || firstItem.caption || firstItem.description
+        }
+
+        if (result.images && result.images.length > 1) {
+          result.isMultiple = true
+        }
+      } else if (typeof data === 'object') {
+        if (data.media && Array.isArray(data.media) && data.media.length > 1) {
+          result.media = data.media
+          result.isMultiple = true
+
+          const allImages: string[] = []
+          const allVideos: string[] = []
+
+          data.media.forEach((item: any) => {
+            const url = extractUrl(item)
+            if (url) {
+              if (isVideo(item, url)) {
+                allVideos.push(url)
+              } else {
+                allImages.push(url)
+              }
+            }
+          })
+
+          result.images = allImages.length > 0 ? allImages : undefined
+          result.videos = allVideos.length > 0 ? allVideos : undefined
+
+          const firstItem = data.media[0]
+          if (firstItem) {
+            const firstUrl = extractUrl(firstItem)
+            const isFirstVideo = isVideo(firstItem, firstUrl)
+
+            if (isFirstVideo) {
+              result.videoUrl = firstUrl
+              result.type = 'video'
+            } else {
+              result.imageUrl = firstUrl
+              result.type = 'image'
+            }
+          }
+        } else if (data.media && Array.isArray(data.media) && data.media.length === 1) {
+          const item = data.media[0]
+          const url = extractUrl(item)
+          const isItemVideo = isDefinitelyVideo || isVideo(item, url)
+
+          if (isItemVideo) {
+            result.videoUrl = url
+            result.type = 'video'
+            result.thumbnail = data.thumbnail || data.cover || data.preview || data.image || item.thumbnail || item.cover || undefined
+          } else {
+            result.imageUrl = url
+            result.type = 'image'
+            result.thumbnail = data.thumbnail || data.cover || data.preview || data.image || url
+          }
+        } else {
+          if (isDefinitelyVideo) {
+            const videoUrl = extractUrl(data, true) || data.video || data.videoUrl || data.url || data.download || data.downloadUrl
+            result.videoUrl = videoUrl
+            result.type = 'video'
+            result.thumbnail = data.thumbnail || data.cover || data.preview || data.image || data.poster || undefined
+          } else {
+            let videoUrl = data.video || data.videoUrl
+            let imageUrl = data.image || data.imageUrl
+            const url = extractUrl(data)
+            const isItemVideo = isVideo(data, url) || !!videoUrl
+
+            if (isItemVideo || videoUrl) {
+              result.videoUrl = videoUrl || url
+              result.type = 'video'
+              result.thumbnail = data.thumbnail || data.cover || data.preview || data.image || data.poster || undefined
+            } else {
+              result.imageUrl = imageUrl || url
+              result.type = 'image'
+              result.thumbnail = data.thumbnail || data.cover || data.preview || data.image || url
+            }
+          }
+        }
+
+        if (!result.thumbnail) {
+          result.thumbnail = data.thumbnail || data.cover || data.preview || data.image || (result.type === 'video' ? undefined : (result.imageUrl || result.videoUrl))
+        }
+        if (!result.title) {
+          result.title = data.title || data.caption || data.description
+        }
+        if (!result.type) {
+          result.type = data.type || (isDefinitelyVideo ? 'video' : (urlContainsReel ? 'video' : (result.videoUrl ? 'video' : 'image')))
+        }
+      } else if (typeof data === 'string') {
+        result.imageUrl = data
+        result.videoUrl = data
       }
 
-      const data = await response.json()
+      if (result.images && Array.isArray(result.images) && result.images.length > 0) {
+        result.images = result.images.filter((imgUrl: string) => {
+          if (!imgUrl) return false
+          const lowerUrl = imgUrl.toLowerCase()
+          return !lowerUrl.includes('.mp4') && !lowerUrl.includes('/video/') && !lowerUrl.includes('reel')
+        })
 
-      if (!data.success) {
-        throw new Error(data.message || "Failed to fetch download links")
+        if (result.images.length > 0) {
+          result.isMultiple = result.images.length > 1
+          if (result.images.length > 1) {
+            result.imageUrl = undefined
+          } else if (result.images.length === 1) {
+            result.imageUrl = result.images[0]
+          }
+        } else {
+          result.images = undefined
+        }
       }
 
-      if (!data.videoUrl && !data.imageUrl && !data.media) {
-        throw new Error("No downloadable content found for this URL")
+      if (result.videos && Array.isArray(result.videos) && result.videos.length > 0) {
+        result.videos = result.videos.filter((videoUrl: string) => {
+          if (!videoUrl) return false
+          const lowerUrl = videoUrl.toLowerCase()
+          return lowerUrl.includes('.mp4') || lowerUrl.includes('/video/') || lowerUrl.includes('reel') || lowerUrl.includes('video')
+        })
+
+        if (result.videos.length === 0) {
+          result.videos = undefined
+        }
+      }
+
+      if (result.videoUrl || result.type === 'video' || isDefinitelyVideo) {
+        result.imageUrl = undefined
+        result.type = 'video'
+        if (result.images && Array.isArray(result.images)) {
+          result.images = undefined
+        }
+        if (!result.videoUrl && isDefinitelyVideo) {
+          const videoUrl = extractUrl(data, true) || data.video || data.videoUrl || data.url || data.download || data.downloadUrl
+          if (videoUrl) {
+            result.videoUrl = videoUrl
+          }
+        }
       }
 
       setResult({
-        videoUrl: data.videoUrl,
-        imageUrl: data.imageUrl,
-        thumbnail: data.thumbnail,
-        title: data.title,
-        media: data.media,
-        videos: data.videos,
-        images: data.images,
-        isMultiple: data.isMultiple,
-        type: data.type,
+        videoUrl: result.videoUrl,
+        imageUrl: result.imageUrl,
+        thumbnail: result.thumbnail,
+        title: result.title,
+        media: result.media,
+        videos: result.videos,
+        images: result.images,
+        isMultiple: result.isMultiple,
+        type: result.type,
         downloading: false,
         downloadStarted: false
       })
 
     } catch (e: any) {
-      setError(e?.message || "Failed to fetch download links. Please try again.")
+      const errorMessage = e?.message || 'Failed to download Instagram content'
+
+      if (errorMessage.includes('private')) {
+        setError('This Instagram post appears to be private or restricted. Please ensure the post is public.')
+      } else if (errorMessage.includes('not found') || errorMessage.includes('404')) {
+        setError('Instagram post not found. Please check the URL and ensure the post exists and is public.')
+      } else {
+        setError(errorMessage)
+      }
     } finally {
       setLoading(false)
     }
@@ -157,10 +338,9 @@ export function InstagramDownloader({ compact = false }: InstagramDownloaderProp
           }
         }
       } catch (directError) {
-        // Silent fail - background download is not critical
+
       }
     } catch (error) {
-      // Silent fail - background download is not critical
     }
   }
 
@@ -231,7 +411,7 @@ export function InstagramDownloader({ compact = false }: InstagramDownloaderProp
           }
         }
       } catch (directError) {
-        // Fall through to proxy download
+
       }
 
       throw new Error('Download failed')
@@ -348,7 +528,7 @@ export function InstagramDownloader({ compact = false }: InstagramDownloaderProp
                     alt={result.title || "Instagram preview"}
                     className={`${compact ? "w-full max-w-xs h-32 object-cover rounded-md border" : "w-full max-w-sm h-40 xs:h-44 sm:h-48 object-cover rounded-md border"}`}
                     onError={(e) => {
-                      // Hide broken thumbnail for videos
+
                       if (result.type === 'video' || result.videoUrl) {
                         e.currentTarget.style.display = 'none'
                       }
@@ -362,7 +542,7 @@ export function InstagramDownloader({ compact = false }: InstagramDownloaderProp
                     <p className="text-sm text-foreground font-medium">✅ Download started! Check your downloads folder.</p>
                   </div>
                 )}
-                {/* Show video download button if it's a video */}
+
                 {(result.videoUrl || result.type === 'video') && (
                   <button
                     type="button"
@@ -390,9 +570,8 @@ export function InstagramDownloader({ compact = false }: InstagramDownloaderProp
                     )}
                   </button>
                 )}
-                {/* Only show images section if it's not a video and we have images */}
+
                 {result.images && result.images.length > 0 && result.type !== 'video' && !result.videoUrl ? (
-                  // Show multiple images in grid (like TikTok downloader)
                   <div className="space-y-4">
                     <p className="text-sm font-medium text-foreground">Multiple Images ({result.images.length}):</p>
                     <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
@@ -439,7 +618,7 @@ export function InstagramDownloader({ compact = false }: InstagramDownloaderProp
                     </div>
                   </div>
                 ) : result.imageUrl && !result.isMultiple && result.type !== 'video' && !result.videoUrl ? (
-                  // Show single image (only if not a video)
+
                   <div className="space-y-3">
                     <div className="relative group">
                       <img

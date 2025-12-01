@@ -19,10 +19,13 @@ export function AiHashtagSuggester() {
 
     setLoading(true)
     try {
-      const response = await fetch("/api/ai/generate-hashtags", {
+      const response = await fetch("/api/ai", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ caption, platform }),
+        body: JSON.stringify({
+          action: "generate-hashtags",
+          data: { text: caption, platform }
+        }),
       })
 
       const data = await response.json()

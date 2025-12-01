@@ -1,4 +1,4 @@
-import CopyPlugin from 'copy-webpack-plugin'
+
 
 const nextConfig = {
   output: 'standalone',
@@ -36,18 +36,6 @@ const nextConfig = {
         os: false,
         crypto: false,
       }
-
-      config.plugins.push(
-        new CopyPlugin({
-          patterns: [
-            {
-              from: 'public/models',
-              to: '../../static/models',
-              noErrorOnMissing: true,
-            },
-          ],
-        })
-      )
     }
 
     config.externals = config.externals || []
@@ -103,6 +91,7 @@ const nextConfig = {
             name: "workers",
             chunks: "all",
             priority: 50,
+            enforce: true,
           },
         },
       }
@@ -113,23 +102,6 @@ const nextConfig = {
 
   async headers() {
     return [
-      {
-        source: "/models/:path*",
-        headers: [
-          {
-            key: "Content-Type",
-            value: "application/octet-stream",
-          },
-          {
-            key: "Cache-Control",
-            value: "public, max-age=31536000, immutable, s-maxage=31536000",
-          },
-          {
-            key: "CDN-Cache-Control",
-            value: "max-age=31536000",
-          },
-        ],
-      },
       {
         source: "/_next/static/:path*",
         headers: [

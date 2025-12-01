@@ -68,34 +68,28 @@ export const goneUrls = new Set([
   '/guides/youtube-thumbnail-downloader-guide',
   '/guides/date-to-day-finder-guide',
   '/guides/conversion-calculator-guide',
-
-  // Tool pages that were removed or renamed
-  '/tools/body-fat-calculator',
-  '/tools/mortgage-calculator',
-  '/tools/bmr-calculator',
-  '/tools/interest-rate-calculator',
-  '/tools/scientific-calculator',
+  '/guides/triangle-calculator-guide',
+  '/guides/pregnancy-conception-calculator-guide',
+  '/guides/time-duration-calculator-guide',
+  '/guides/tax-calculator-guide',
+  '/guides/length-converter-guide',
+  '/guides/discount-calculator-guide',
+  '/guides/invoice-generator-guide',
 
   // AI Tools that were removed
   '/ai-tools/meme-generator',
   '/ai-tools/hashtag-suggester',
-  '/tools/calorie-calculator',
-  '/tools/gpa-calculator',
-  '/tools/sales-tax-calculator',
-  '/tools/investment-calculator',
-  '/tools/payment-calculator',
-  '/tools/conversion-calculator',
-  '/tools/standard-deviation-calculator',
-  '/tools/finance-calculator',
-  '/tools/triangle-calculator',
 
   // Other removed pages
   '/resources',
   '/announcements',
+  '/youtube-downloader',
 
   // Image tools removed
   '/image-tools/photo-editor',
-  '/social-media-tools/youtube-downloader'
+  '/image-tools/pdf-tools',
+  '/social-media-tools/youtube-downloader',
+  '/seo-tools/hashtags'
 ])
 
 /**

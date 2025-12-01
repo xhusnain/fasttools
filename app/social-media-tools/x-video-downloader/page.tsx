@@ -1,4 +1,4 @@
-import { XVideoDownloader } from "@/components/x-video-downloader"
+import { XDownloader } from "@/components/downloader-components/x-downloader/x-downloader"
 import { ToolPageLayout } from "@/components/tool-page-layout"
 import { createToolConfig } from "@/lib/create-tool-config"
 import {
@@ -389,5 +389,5 @@ const toolConfig = createToolConfig({
 export const metadata = toolConfig.metadata
 
 export default function XVideoDownloaderPage() {
-  return <ToolPageLayout {...toolConfig.getLayoutProps(<XVideoDownloader />)} />
+  return <ToolPageLayout {...toolConfig.getLayoutProps(<XDownloader />)} />
 }

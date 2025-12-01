@@ -1,13 +1,10 @@
-import { InstagramDownloader } from "@/components/instagram-downloader"
 import { ToolPageLayout } from "@/components/tool-page-layout"
 import { createToolConfig } from "@/lib/create-tool-config"
 import {
-  Download, Shield, Zap, Target, AlertCircle, Globe, Music, Users, Clock,
-  ArrowRight, Code, FileText, Hash, Lightbulb, Search, Calculator, Type,
-  Ruler, HardDrive, DollarSign, Thermometer, Copy, Check, Image, Video,
-  CheckCircle, X, CheckCircle2
+ X, CheckCircle2
 } from "lucide-react"
 import { getCurrentYear } from "@/lib/utils"
+import {InstagramDownloader} from "@/components/downloader-components/instagram-downloader/instagram-downloader";
 
 const toolConfig = createToolConfig({
   toolName: "Instagram Downloader",

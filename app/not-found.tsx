@@ -1,7 +1,8 @@
 import Link from "next/link"
+import { headers } from "next/headers"
 import { GButton } from "@/components/globalcomponents/gbutton"
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
-import { Calculator, Home, Search, ArrowLeft } from "lucide-react"
+import { GCard } from "@/components/globalcomponents/gcard"
+import { Calculator, Home, Search, AlertCircle, Activity, Calendar, DollarSign } from "lucide-react"
 import type { Metadata } from "next"
 
 export const metadata: Metadata = {
@@ -13,73 +14,83 @@ export const metadata: Metadata = {
   },
 }
 
-export default function NotFound() {
+export default async function NotFound() {
+  const headersList = await headers()
+  const isGone = headersList.get("x-gone") === "true"
+
   return (
     <div className="min-h-screen flex items-center justify-center bg-background">
       <div className="container mx-auto px-4 py-16">
         <div className="max-w-2xl mx-auto text-center space-y-8">
-          {/* 404 Icon */}
+          {/* Icon */}
           <div className="flex justify-center">
-            <div className="h-24 w-24 rounded-full bg-primary/10 flex items-center justify-center">
-              <Calculator className="h-12 w-12 text-primary" />
+            <div className={`h-24 w-24 rounded-full flex items-center justify-center ${isGone ? "bg-destructive/10" : "bg-primary/10"}`}>
+              {isGone ? (
+                <AlertCircle className="h-12 w-12 text-destructive" />
+              ) : (
+                <Calculator className="h-12 w-12 text-primary" />
+              )}
             </div>
           </div>
 
-          {/* 404 Content */}
+          {/* Content */}
           <div className="space-y-4">
-            <h1 className="text-6xl md:text-8xl font-bold text-primary">404</h1>
-            <h2 className="text-2xl md:text-3xl font-semibold text-foreground">
-              Page Not Found
-            </h2>
+            <h1 className={`text-6xl md:text-8xl font-bold ${isGone ? "text-foreground text-4xl md:text-5xl" : "text-primary"}`}>
+              {isGone ? "Service Discontinued" : "404"}
+            </h1>
+            {!isGone && (
+              <h2 className="text-2xl md:text-3xl font-semibold text-foreground">
+                Page Not Found
+              </h2>
+            )}
             <p className="text-lg text-muted-foreground max-w-lg mx-auto">
-              Sorry, the page you're looking for doesn't exist. It might have been moved, deleted, or you entered the wrong URL.
+              {isGone
+                ? "Oops! This tool has been discontinued and is no longer available. We are constantly updating our platform to provide the best tools."
+                : "Sorry, the page you're looking for doesn't exist. It might have been moved, deleted, or you entered the wrong URL."}
             </p>
           </div>
 
           {/* Popular Tools */}
-          <Card className="text-left">
-            <CardHeader>
-              <CardTitle className="flex items-center gap-2">
-                <Search className="h-5 w-5" />
-                Popular Tools
-              </CardTitle>
-              <CardDescription>
-                Try these popular free online tools instead
-              </CardDescription>
-            </CardHeader>
-            <CardContent className="space-y-3">
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
-                <Link
-                  href="/calculator/age-calculator"
-                  className="block p-3 rounded-lg border border-border hover:bg-accent transition-colors"
-                >
-                  <div className="font-medium text-sm">Age Calculator</div>
-                  <div className="text-xs text-muted-foreground">Calculate your exact age</div>
-                </Link>
-                <Link
-                  href="/calculator/bmi-calculator"
-                  className="block p-3 rounded-lg border border-border hover:bg-accent transition-colors"
-                >
-                  <div className="font-medium text-sm">BMI Calculator</div>
-                  <div className="text-xs text-muted-foreground">Calculate your body mass index</div>
-                </Link>
-                <Link
-                  href="/calculator/loan-calculator"
-                  className="block p-3 rounded-lg border border-border hover:bg-accent transition-colors"
-                >
-                  <div className="font-medium text-sm">Loan Calculator</div>
-                  <div className="text-xs text-muted-foreground">Calculate loan payments</div>
-                </Link>
-                <Link
-                  href="/converters/currency"
-                  className="block p-3 rounded-lg border border-border hover:bg-accent transition-colors"
-                >
-                  <div className="font-medium text-sm">Currency Converter</div>
-                  <div className="text-xs text-muted-foreground">Convert between currencies</div>
-                </Link>
-              </div>
-            </CardContent>
-          </Card>
+          <div className="text-left w-full">
+            <h2 className="text-2xl font-bold text-foreground mb-6 flex items-center gap-2">
+              <Search className="h-6 w-6" />
+              Popular Tools
+            </h2>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
+              <GCard
+                title="Age Calculator"
+                description="Calculate exact age in years, months, weeks, days, hours, minutes, and seconds with precision accuracy for any date"
+                href="/calculator/age-calculator"
+                icon={Calendar}
+                badge="Essential"
+                badgeColor="bg-primary/90"
+              />
+              <GCard
+                title="BMI Calculator"
+                description="Calculate your Body Mass Index with detailed health insights and personalized recommendations based on WHO and CDC standards"
+                href="/calculator/bmi-calculator"
+                icon={Activity}
+                badge="Popular"
+                badgeColor="bg-blue-500/90"
+              />
+              <GCard
+                title="Loan Calculator"
+                description="Calculate loan payments, total interest, amortization schedules, and compare different loan options easily"
+                href="/calculator/loan-calculator"
+                icon={DollarSign}
+                badge="Finance"
+                badgeColor="bg-emerald-500/90"
+              />
+              <GCard
+                title="Currency Converter"
+                description="Real-time currency conversion for 150+ world currencies with live exchange rates updated every minute for accurate international transactions"
+                href="/converters/currency"
+                icon={DollarSign}
+                badge="Live"
+                badgeColor="bg-red-500/90"
+              />
+            </div>
+          </div>
 
           {/* Action Buttons */}
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">

@@ -1,4 +1,6 @@
 import { create } from "zustand";
+import axios from "axios";
+import { apiService } from "./api-service";
 import type {
   EditorState,
   ProcessingStatus,
@@ -92,7 +94,7 @@ export const useImageBlurStore = create<EditorStore>()(
         result: null,
         isProcessing: false,
         blurIntensity: 10,
-        
+
       });
     },
 
@@ -128,42 +130,60 @@ export const useImageBlurStore = create<EditorStore>()(
           },
         });
 
-        const form = new FormData();
-        form.append("image", blob, "input.png");
-        form.append("intensity", String(blurIntensity));
-
         const strengthQ = refineStrength ?? "strong";
-        const resp = await fetch(`/api/image-blur?refine=depth&strength=${strengthQ}`, { method: "POST", body: form });
-        if (!resp.ok) {
-          const errText = await resp.text().catch(() => "");
-          throw new Error(errText || `Server error ${resp.status}`);
-        }
-        const resultBlob = await resp.blob();
-        const resultUrl = URL.createObjectURL(resultBlob);
 
-        const processingTime = performance.now() - startTime;
-        const result: ProcessingResult = {
-          resultUrl,
-          processingTime,
-          modelInfo: {
-            u2net: {
-              name: "U²-Net",
-              url: "/models/u2net.onnx",
-              size: 0,
-              loaded: true,
+        try {
+          const resultBlob = await apiService.blurBackground({
+            image: blob,
+            intensity: blurIntensity,
+            refine: "depth",
+            strength: strengthQ,
+          });
+
+          const resultUrl = URL.createObjectURL(resultBlob);
+
+          const processingTime = performance.now() - startTime;
+          const result: ProcessingResult = {
+            resultUrl,
+            processingTime,
+          };
+
+          get().setResult(result);
+        } catch (error: any) {
+          let errorMessage = "Something went wrong. Please try again.";
+
+          // The apiService might still use axios internally, so keeping this check for now.
+          // If apiService completely abstracts axios errors, this might need adjustment.
+          if (axios.isAxiosError(error)) { // Assuming apiService might re-throw axios errors or wrap them
+            if (error.response) {
+              const errText = await error.response.data.text().catch(() => "");
+              errorMessage = errText || `Server error ${error.response.status}`;
+            } else if (error.request) {
+              errorMessage = "No response from server. Is the background blur service running on port 3001?";
+            } else {
+              errorMessage = error.message;
+            }
+          } else if (error instanceof Error) {
+            errorMessage = error.message;
+          }
+
+
+          set({
+            isProcessing: false,
+            status: {
+              stage: "error",
+              progress: 0,
+              message: errorMessage,
             },
-          },
-        };
-
-        get().setResult(result);
-
+          });
+        }
       } catch (error) {
         set({
           isProcessing: false,
           status: {
             stage: "error",
             progress: 0,
-            message: "Something went wrong. Please try again.",
+            message: "Failed to prepare image for processing.",
           },
         });
       }

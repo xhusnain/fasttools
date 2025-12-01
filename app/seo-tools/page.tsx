@@ -16,12 +16,7 @@ const tools = [
     icon: FileText,
     href: "/seo-tools/lorem-ipsum",
   },
-  {
-    title: "Hashtag Generator",
-    description: "Discover trending hashtags for social media content across Instagram, Twitter, Facebook, and LinkedIn to expand your audience reach.",
-    icon: Hash,
-    href: "/seo-tools/hashtags",
-  },
+
   {
     title: "Blog Title Generator",
     description: "Craft compelling blog titles and headlines that capture attention and drive higher click-through rates from search results.",

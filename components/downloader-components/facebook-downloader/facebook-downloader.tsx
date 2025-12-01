@@ -7,35 +7,23 @@ import { Label } from "@/components/ui/label"
 import { Card } from "@/components/ui/card"
 import { Download, AlertTriangle, Video } from "lucide-react"
 import { LoadingSpinner } from "@/components/loading-spinner"
+import { fbdown } from "ab-downloader"
+import type {
+  FacebookDownloaderProps,
+  FacebookVideoResult,
+  DownloadingStates,
+  CountdownStates
+} from "./types"
 
-type FacebookDownloaderProps = {
-  compact?: boolean
-}
+
 
 export function FacebookDownloader({ compact = false }: FacebookDownloaderProps) {
   const [videoUrl, setVideoUrl] = useState("")
   const [loading, setLoading] = useState(false)
   const [error, setError] = useState<string | null>(null)
-  const [result, setResult] = useState<
-    | null
-    | {
-      videoUrl?: string
-      hdUrl?: string
-      normalUrl?: string
-      thumbnail?: string
-      title?: string
-      downloading?: boolean
-      downloadStarted?: boolean
-    }
-  >(null)
-  const [downloadingStates, setDownloadingStates] = useState<{
-    video?: boolean
-    [key: string]: boolean | undefined
-  }>({})
-  const [countdownStates, setCountdownStates] = useState<{
-    video?: number
-    [key: string]: number | undefined
-  }>({})
+  const [result, setResult] = useState<FacebookVideoResult | null>(null)
+  const [downloadingStates, setDownloadingStates] = useState<DownloadingStates>({})
+  const [countdownStates, setCountdownStates] = useState<CountdownStates>({})
   const [videoLoadError, setVideoLoadError] = useState(false)
 
   const isLikelyFacebookUrl = (url: string) => {
@@ -47,51 +35,132 @@ export function FacebookDownloader({ compact = false }: FacebookDownloaderProps)
     setError(null)
     setResult(null)
     setVideoLoadError(false)
-    if (!isLikelyFacebookUrl(videoUrl)) {
+
+    const trimmedUrl = videoUrl.trim()
+
+    if (!isLikelyFacebookUrl(trimmedUrl)) {
       setError("Please enter a valid Facebook video URL.")
       return
     }
 
     setLoading(true)
     try {
-      const response = await fetch('/api/facebook-download', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({
-          url: videoUrl.trim()
-        })
-      })
+      let data = null
+      try {
+        data = await fbdown(trimmedUrl)
+      } catch (firstError: any) {
 
-      if (!response.ok) {
-        const errorData = await response.json().catch(() => ({}))
-        throw new Error(errorData.message || `Server error: ${response.status}`)
+        const shareMatch = trimmedUrl.match(/facebook\.com\/share\/v\/([^\/\?]+)/i)
+        if (shareMatch) {
+          const watchUrl = `https://www.facebook.com/watch/?v=${shareMatch[1]}`
+          try {
+            data = await fbdown(watchUrl)
+          } catch (secondError: any) {
+            throw firstError
+          }
+        } else {
+          throw firstError
+        }
       }
 
-      const data = await response.json()
-
-      if (!data.success) {
-        throw new Error(data.message || "Failed to fetch download links")
+      if (!data) {
+        throw new Error('No video found for this Facebook URL. The video may be private or the URL format is not supported.')
       }
 
-      if (!data.videoUrl) {
-        throw new Error("No downloadable video found for this URL")
+
+      if (typeof data === 'object' && (data as any).error) {
+        throw new Error((data as any).error || 'Failed to download video')
+      }
+
+
+      if (typeof data === 'object' && (data as any).status === 'error') {
+        throw new Error((data as any).message || 'Failed to download video')
+      }
+
+
+      let videoUrl: string | null = null
+      let title: string | undefined = undefined
+      let thumbnail: string | undefined = undefined
+      let hdUrl: string | undefined = undefined
+      let normalUrl: string | undefined = undefined
+
+      if (typeof data === 'string') {
+
+        videoUrl = data
+      } else if (typeof data === 'object') {
+        const dataObj = data as any
+
+        videoUrl = dataObj.HD || dataObj.Normal_video || dataObj.hd || dataObj.normal_video ||
+          dataObj.url || dataObj.video || dataObj.videoUrl || dataObj.download || dataObj.sd || null
+        title = dataObj.title || dataObj.caption || dataObj.description
+        thumbnail = dataObj.thumbnail || dataObj.cover || dataObj.preview || dataObj.image
+        hdUrl = dataObj.HD
+        normalUrl = dataObj.Normal_video
+
+
+        if (!videoUrl) {
+          const findVideoUrl = (obj: any, depth: number = 0): string | null => {
+            if (!obj || depth > 5) return null
+
+            if (typeof obj === 'string') {
+
+              if ((obj.includes('.mp4') || obj.includes('video') || obj.includes('fbcdn') || obj.includes('fbexternal')) &&
+                (obj.startsWith('http://') || obj.startsWith('https://'))) {
+                return obj
+              }
+            }
+
+            if (typeof obj === 'object') {
+              for (const key in obj) {
+                const value = obj[key]
+                const keyLower = key.toLowerCase()
+
+
+                if (keyLower.includes('video') || keyLower.includes('url') || keyLower.includes('download') ||
+                  keyLower.includes('stream') || keyLower.includes('hd') || keyLower.includes('sd') || keyLower.includes('link')) {
+                  if (typeof value === 'string' &&
+                    (value.includes('.mp4') || value.includes('video') || value.includes('fbcdn') || value.includes('fbexternal')) &&
+                    (value.startsWith('http://') || value.startsWith('https://'))) {
+                    return value
+                  }
+                }
+
+                const found = findVideoUrl(value, depth + 1)
+                if (found) return found
+              }
+            }
+
+            return null
+          }
+          videoUrl = findVideoUrl(data)
+        }
+      }
+
+      if (!videoUrl) {
+        throw new Error('No video URL found in the response. The video may be private, restricted, or the URL format may not be supported. Please ensure the video is public and try again.')
       }
 
       setResult({
-        videoUrl: data.hdUrl || data.videoUrl, // Prefer HD URL
-        hdUrl: data.hdUrl,
-        normalUrl: data.normalUrl,
-        thumbnail: data.thumbnail,
-        title: data.title,
+        videoUrl: hdUrl || videoUrl,
+        hdUrl: hdUrl,
+        normalUrl: normalUrl,
+        thumbnail: thumbnail,
+        title: title,
         downloading: false,
         downloadStarted: false
       })
       setVideoLoadError(false)
 
     } catch (e: any) {
-      setError(e?.message || "Failed to fetch download links. Please try again.")
+      const errorMessage = e?.message || 'Failed to download Facebook video'
+
+      if (errorMessage.includes('private')) {
+        setError('This Facebook video appears to be private or restricted. Please ensure the video is public.')
+      } else if (errorMessage.includes('not found') || errorMessage.includes('404')) {
+        setError('Facebook video not found. Please check the URL and ensure the video exists and is public.')
+      } else {
+        setError(errorMessage)
+      }
     } finally {
       setLoading(false)
     }
@@ -111,15 +180,14 @@ export function FacebookDownloader({ compact = false }: FacebookDownloaderProps)
 
     setError(null)
 
-    // Skip countdown for proxy URLs (like dl.snapcdn.app) - they download directly
-    // This avoids CORS errors during countdown and makes download faster
+
     if (url.includes('dl.snapcdn.app') || url.includes('download?token=')) {
       setDownloadingStates(prev => ({ ...prev, [downloadType]: true }))
       performDownload(url, sanitizedFilename, downloadType)
       return
     }
 
-    // For direct URLs, use countdown
+
     setCountdownStates(prev => ({ ...prev, [downloadType]: 15 }))
 
     let countdown = 15
@@ -140,7 +208,7 @@ export function FacebookDownloader({ compact = false }: FacebookDownloaderProps)
   }
 
   const performBackgroundDownload = async (url: string, filename: string, downloadType: string) => {
-    // Skip background download for proxy URLs to avoid CORS errors
+
     if (url.includes('dl.snapcdn.app') || url.includes('download?token=')) {
       return
     }
@@ -162,7 +230,7 @@ export function FacebookDownloader({ compact = false }: FacebookDownloaderProps)
         }
       }
     } catch (error) {
-      // Silent fail - background download is not critical
+
     }
   }
 
@@ -195,8 +263,7 @@ export function FacebookDownloader({ compact = false }: FacebookDownloaderProps)
         return
       }
 
-      // For proxy URLs (like dl.snapcdn.app), use direct download without fetch
-      // This avoids CORS errors and works better with these URLs
+
       if (url.includes('dl.snapcdn.app') || url.includes('download?token=')) {
         try {
           const link = document.createElement("a")
@@ -221,7 +288,7 @@ export function FacebookDownloader({ compact = false }: FacebookDownloaderProps)
         }
       }
 
-      // For direct video URLs, try fetch first
+
       try {
         const response = await fetch(url, {
           method: 'GET',
@@ -261,7 +328,7 @@ export function FacebookDownloader({ compact = false }: FacebookDownloaderProps)
           }
         }
       } catch (directError) {
-        // If fetch fails, try direct link as fallback
+
         try {
           const link = document.createElement("a")
           link.href = url
@@ -281,7 +348,7 @@ export function FacebookDownloader({ compact = false }: FacebookDownloaderProps)
 
           return
         } catch (linkError) {
-          // Fall through to error
+
         }
       }
 
@@ -388,7 +455,7 @@ export function FacebookDownloader({ compact = false }: FacebookDownloaderProps)
 
           {result && (
             <div className="space-y-3">
-              {/* Show video preview if we have a video URL - prefer HD for preview */}
+
               {(result.hdUrl || result.videoUrl || result.normalUrl) && !videoLoadError && (
                 <div className="flex justify-center">
                   <div className={`relative ${compact ? "w-full max-w-xs" : "w-full max-w-sm"} rounded-md border overflow-hidden bg-black`}>
@@ -404,7 +471,7 @@ export function FacebookDownloader({ compact = false }: FacebookDownloaderProps)
                   </div>
                 </div>
               )}
-              {/* Fallback to thumbnail image if available */}
+
               {(videoLoadError || (!result.videoUrl && !result.hdUrl && !result.normalUrl)) && result.thumbnail && (
                 <div className="flex justify-center">
                   <img
