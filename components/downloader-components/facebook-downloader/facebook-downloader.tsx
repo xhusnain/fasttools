@@ -7,6 +7,7 @@ import { Label } from "@/components/ui/label"
 import { Card } from "@/components/ui/card"
 import { Download, AlertTriangle, Video } from "lucide-react"
 import { LoadingSpinner } from "@/components/loading-spinner"
+import { fbdown } from "ab-downloader"
 
 type FacebookDownloaderProps = {
   compact?: boolean
@@ -47,51 +48,136 @@ export function FacebookDownloader({ compact = false }: FacebookDownloaderProps)
     setError(null)
     setResult(null)
     setVideoLoadError(false)
-    if (!isLikelyFacebookUrl(videoUrl)) {
+
+    const trimmedUrl = videoUrl.trim()
+
+    if (!isLikelyFacebookUrl(trimmedUrl)) {
       setError("Please enter a valid Facebook video URL.")
       return
     }
 
     setLoading(true)
     try {
-      const response = await fetch('/api/facebook-download', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({
-          url: videoUrl.trim()
-        })
-      })
+      // Use ab-downloader's fbdown function directly
+      let data = null
 
-      if (!response.ok) {
-        const errorData = await response.json().catch(() => ({}))
-        throw new Error(errorData.message || `Server error: ${response.status}`)
+      // First try the URL as-is
+      try {
+        data = await fbdown(trimmedUrl)
+      } catch (firstError: any) {
+        // If it's a share URL and first attempt failed, try converting to watch format
+        const shareMatch = trimmedUrl.match(/facebook\.com\/share\/v\/([^\/\?]+)/i)
+        if (shareMatch) {
+          const watchUrl = `https://www.facebook.com/watch/?v=${shareMatch[1]}`
+          try {
+            data = await fbdown(watchUrl)
+          } catch (secondError: any) {
+            throw firstError // Throw original error
+          }
+        } else {
+          throw firstError
+        }
       }
 
-      const data = await response.json()
-
-      if (!data.success) {
-        throw new Error(data.message || "Failed to fetch download links")
+      if (!data) {
+        throw new Error('No video found for this Facebook URL. The video may be private or the URL format is not supported.')
       }
 
-      if (!data.videoUrl) {
-        throw new Error("No downloadable video found for this URL")
+      // Check if the response contains an error message
+      if (typeof data === 'object' && (data as any).error) {
+        throw new Error((data as any).error || 'Failed to download video')
+      }
+
+      // Check if response indicates failure
+      if (typeof data === 'object' && (data as any).status === 'error') {
+        throw new Error((data as any).message || 'Failed to download video')
+      }
+
+      // Handle the response - it could be a string (direct URL) or an object
+      let videoUrl: string | null = null
+      let title: string | undefined = undefined
+      let thumbnail: string | undefined = undefined
+      let hdUrl: string | undefined = undefined
+      let normalUrl: string | undefined = undefined
+
+      if (typeof data === 'string') {
+        // If it's a string, it's the direct video URL
+        videoUrl = data
+      } else if (typeof data === 'object') {
+        const dataObj = data as any
+        // Facebook fbdown returns Normal_video and HD properties (as per ab-downloader)
+        // Prefer HD, fallback to Normal_video
+        videoUrl = dataObj.HD || dataObj.Normal_video || dataObj.hd || dataObj.normal_video ||
+          dataObj.url || dataObj.video || dataObj.videoUrl || dataObj.download || dataObj.sd || null
+        title = dataObj.title || dataObj.caption || dataObj.description
+        thumbnail = dataObj.thumbnail || dataObj.cover || dataObj.preview || dataObj.image
+        hdUrl = dataObj.HD
+        normalUrl = dataObj.Normal_video
+
+        // If still no video URL, search recursively through the object
+        if (!videoUrl) {
+          const findVideoUrl = (obj: any, depth: number = 0): string | null => {
+            if (!obj || depth > 5) return null
+
+            if (typeof obj === 'string') {
+              // Check if it looks like a video URL
+              if ((obj.includes('.mp4') || obj.includes('video') || obj.includes('fbcdn') || obj.includes('fbexternal')) &&
+                (obj.startsWith('http://') || obj.startsWith('https://'))) {
+                return obj
+              }
+            }
+
+            if (typeof obj === 'object') {
+              for (const key in obj) {
+                const value = obj[key]
+                const keyLower = key.toLowerCase()
+
+                // Check property names that might contain video URLs
+                if (keyLower.includes('video') || keyLower.includes('url') || keyLower.includes('download') ||
+                  keyLower.includes('stream') || keyLower.includes('hd') || keyLower.includes('sd') || keyLower.includes('link')) {
+                  if (typeof value === 'string' &&
+                    (value.includes('.mp4') || value.includes('video') || value.includes('fbcdn') || value.includes('fbexternal')) &&
+                    (value.startsWith('http://') || value.startsWith('https://'))) {
+                    return value
+                  }
+                }
+
+                const found = findVideoUrl(value, depth + 1)
+                if (found) return found
+              }
+            }
+
+            return null
+          }
+          videoUrl = findVideoUrl(data)
+        }
+      }
+
+      if (!videoUrl) {
+        throw new Error('No video URL found in the response. The video may be private, restricted, or the URL format may not be supported. Please ensure the video is public and try again.')
       }
 
       setResult({
-        videoUrl: data.hdUrl || data.videoUrl, // Prefer HD URL
-        hdUrl: data.hdUrl,
-        normalUrl: data.normalUrl,
-        thumbnail: data.thumbnail,
-        title: data.title,
+        videoUrl: hdUrl || videoUrl, // Prefer HD URL
+        hdUrl: hdUrl,
+        normalUrl: normalUrl,
+        thumbnail: thumbnail,
+        title: title,
         downloading: false,
         downloadStarted: false
       })
       setVideoLoadError(false)
 
     } catch (e: any) {
-      setError(e?.message || "Failed to fetch download links. Please try again.")
+      const errorMessage = e?.message || 'Failed to download Facebook video'
+
+      if (errorMessage.includes('private')) {
+        setError('This Facebook video appears to be private or restricted. Please ensure the video is public.')
+      } else if (errorMessage.includes('not found') || errorMessage.includes('404')) {
+        setError('Facebook video not found. Please check the URL and ensure the video exists and is public.')
+      } else {
+        setError(errorMessage)
+      }
     } finally {
       setLoading(false)
     }
