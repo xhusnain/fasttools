@@ -15,7 +15,6 @@ interface EditorStore extends EditorState {
 
 export const useBgRemoverStore = create<EditorStore>()(
   (set, get) => ({
-    // Initial state
     originalImage: null,
     imageUrl: null,
     status: {
@@ -29,9 +28,7 @@ export const useBgRemoverStore = create<EditorStore>()(
     refineStrength: "medium",
     setRefineStrength: (s) => set({ refineStrength: s }),
 
-    // Actions
     setImage: (image: HTMLImageElement, url: string) => {
-      // Clean up previous image URL
       const { imageUrl } = get();
       if (imageUrl) {
         URL.revokeObjectURL(imageUrl);
@@ -55,7 +52,6 @@ export const useBgRemoverStore = create<EditorStore>()(
     },
 
     setResult: (result: ProcessingResult) => {
-      // Clean up previous result URLs
       const currentResult = get().result;
       if (currentResult?.resultUrl) {
         URL.revokeObjectURL(currentResult.resultUrl);
@@ -75,7 +71,6 @@ export const useBgRemoverStore = create<EditorStore>()(
     reset: () => {
       const { imageUrl, result } = get();
 
-      // Clean up URLs
       if (imageUrl) {
         URL.revokeObjectURL(imageUrl);
       }
@@ -149,15 +144,11 @@ export const useBgRemoverStore = create<EditorStore>()(
 
           if (axios.isAxiosError(error)) {
             if (error.response) {
-              // The request was made and the server responded with a status code
-              // that falls out of the range of 2xx
               const errText = await error.response.data.text().catch(() => "");
               errorMessage = errText || `Server error ${error.response.status}`;
             } else if (error.request) {
-              // The request was made but no response was received
-              errorMessage = "No response from server. Is the background remover service running on port 3001?";
+              errorMessage = "Something went wrong. Please try again.";
             } else {
-              // Something happened in setting up the request that triggered an Error
               errorMessage = error.message;
             }
           }
@@ -172,7 +163,6 @@ export const useBgRemoverStore = create<EditorStore>()(
           });
         }
       } catch (error) {
-        // Catch errors from canvas/blob creation
         set({
           isProcessing: false,
           status: {
