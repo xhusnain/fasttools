@@ -8,12 +8,17 @@ import { GHeader } from "@/components/globalcomponents/gheader"
 import { Breadcrumbs } from "@/components/breadcrumbs"
 import { createMetadata } from "@/lib/metadata-base"
 
-export const metadata = createMetadata({
+const baseMetadata = createMetadata({
   title: "Currency API | Free Exchange Rate API Documentation",
   description: "Free currency exchange API with real-time rates, historical data & currency conversion. Get started with FastTools Currency API in minutes.",
   path: "/converters/currency-api",
   includeSchema: false
 })
+
+export const metadata = {
+  ...baseMetadata,
+  title: "Currency API | Free Exchange Rate API Documentation"
+}
 
 export default function CurrencyAPIDocsPage() {
 

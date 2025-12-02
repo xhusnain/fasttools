@@ -30,6 +30,7 @@ const baseMetadata = createMetadata({
 
 export const metadata: Metadata = {
   ...baseMetadata,
+  title: "BMR Calculator | Free Basal Metabolic Rate Calculator",
   applicationName: "FastTools",
   category: "Health & Fitness",
 }

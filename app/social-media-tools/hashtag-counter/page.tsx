@@ -178,7 +178,10 @@ const toolConfig = createToolConfig({
   }
 })
 
-export const metadata = toolConfig.metadata
+export const metadata = {
+  ...toolConfig.metadata,
+  title: "Instagram AI Hashtag Generator & Counter (2025)"
+}
 
 export default function HashtagCounterPage() {
   return <ToolPageLayout {...toolConfig.getLayoutProps(<HashtagCounter />)} />

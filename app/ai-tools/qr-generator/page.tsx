@@ -15,6 +15,7 @@ const baseMetadata = createMetadata({
 
 export const metadata: Metadata = {
   ...baseMetadata,
+  title: "Free QR Code Generator 2025 - No Sign Up, No Expiration",
   category: "Utilities & Productivity",
   applicationName: "FastTools - Free QR Code Generator",
   formatDetection: {

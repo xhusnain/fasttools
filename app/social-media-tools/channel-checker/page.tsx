@@ -10,7 +10,7 @@ import {
 const toolConfig = createToolConfig({
   toolName: "YouTube Channel Name Checker",
   description: "Check if your desired YouTube channel name is available with our free YouTube Channel Name Checker. Instantly verify username availability and find unique channel ideas.",
-  metaTitle: `YouTube Channel Name Checker: Check Availability ${getCurrentYear()}`,
+  metaTitle: "YouTube Channel Name Checker",
   metaDescription: "Free YouTube Channel Name Checker: Instantly verify availability, check handles, and find unique ideas to secure your brand identity today.",
   path: "/social-media-tools/channel-checker",
 

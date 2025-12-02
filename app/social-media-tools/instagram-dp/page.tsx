@@ -140,7 +140,10 @@ const toolConfig = createToolConfig({
   }
 })
 
-export const metadata = toolConfig.metadata
+export const metadata = {
+  ...toolConfig.metadata,
+  title: "Instagram DP Viewer | View & Download Profile Pictures"
+}
 
 export default function InstagramDpPage() {
   return <ToolPageLayout {...toolConfig.getLayoutProps(<InstagramDpViewer />)} />

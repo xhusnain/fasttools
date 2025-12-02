@@ -5,7 +5,7 @@ import { createToolConfig } from "@/lib/create-tool-config"
 const toolConfig = createToolConfig({
     toolName: "Image Background Blur",
     description: "Blur image backgrounds with AI portrait mode. Create professional bokeh effects with adjustable blur intensity for stunning photos.",
-    metaTitle: "Blur Image Background Online Free | AI Photo Blur Tool",
+    metaTitle: "AI Photo Background Blur Tool | No App",
     metaDescription: "Blur image backgrounds online instantly with AI. Create portrait mode & DSLR bokeh effects. Free tool for iPhone, Android & desktop. No watermarks.",
     path: "/image-tools/image-blur",
 
