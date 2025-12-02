@@ -3,7 +3,7 @@ import { GHeader } from "./globalcomponents/gheader"
 import { AdSpace } from "./ad-space"
 import { Breadcrumbs } from "./breadcrumbs"
 import { AdSenseComplianceChecker } from "./AdSenseComplianceChecker"
-import { env } from "@/lib/env"
+import { env } from "@/config/env"
 import {
     Lightbulb,
     Package,

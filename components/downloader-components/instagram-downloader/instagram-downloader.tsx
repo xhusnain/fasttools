@@ -47,9 +47,10 @@ export function InstagramDownloader({ compact = false }: InstagramDownloaderProp
     setLoading(true)
 
     try {
-      const response = await API.Downloader.download('instagram', url.trim())
+      const response = await API.Downloader.download('instagram', url.trim()) as any
 
       if (response.status && response.result) {
+        // Handle both array and object results
         setResult(response.result)
       } else {
         setError("Failed to fetch download links. Please try again.")
@@ -124,26 +125,119 @@ export function InstagramDownloader({ compact = false }: InstagramDownloaderProp
                 <span>Download ready!</span>
               </div>
 
-              {result.thumbnail && (
-                <div className="relative w-full aspect-square max-w-md mx-auto rounded-lg overflow-hidden border">
-                  <img src={result.thumbnail} alt="Preview" className="w-full h-full object-cover" />
+              {/* Handle array results (multiple media items) */}
+              {Array.isArray(result) ? (
+                <div className="space-y-4">
+                  {result.length === 1 ? (
+                    // Single media item
+                    <div className="space-y-4">
+                      {result[0].thumbnail && (
+                        <div className="relative w-full aspect-video max-w-2xl mx-auto rounded-lg overflow-hidden border bg-black">
+                          <video
+                            src={result[0].url}
+                            poster={result[0].thumbnail}
+                            controls
+                            className="w-full h-full"
+                            preload="metadata"
+                          >
+                            Your browser does not support the video tag.
+                          </video>
+                        </div>
+                      )}
+                      <Button
+                        onClick={() => downloadFile(result[0].url, `instagram-${Date.now()}.mp4`)}
+                        className="w-full"
+                        size="lg"
+                      >
+                        <Download className="mr-2 h-5 w-5" />
+                        Download Video
+                      </Button>
+                    </div>
+                  ) : (
+                    // Multiple media items (carousel)
+                    <div className="space-y-2">
+                      <p className="text-sm font-medium">Carousel Post ({result.length} items)</p>
+                      <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 max-h-96 overflow-y-auto">
+                        {result.map((item: any, index: number) => (
+                          <div key={index} className="space-y-2">
+                            {item.thumbnail && (
+                              <div className="relative w-full aspect-video rounded-lg overflow-hidden border bg-black">
+                                <video
+                                  src={item.url}
+                                  poster={item.thumbnail}
+                                  controls
+                                  className="w-full h-full"
+                                  preload="metadata"
+                                >
+                                  Your browser does not support the video tag.
+                                </video>
+                              </div>
+                            )}
+                            <Button
+                              onClick={() => downloadFile(item.url, `instagram-${index + 1}-${Date.now()}.mp4`)}
+                              className="w-full"
+                              size="sm"
+                            >
+                              <Download className="mr-2 h-4 w-4" />
+                              Download Item {index + 1}
+                            </Button>
+                          </div>
+                        ))}
+                      </div>
+                      <Button
+                        onClick={() => {
+                          result.forEach((item: any, index: number) => {
+                            setTimeout(() => downloadFile(item.url, `instagram-${index + 1}-${Date.now()}.mp4`), index * 500)
+                          })
+                        }}
+                        className="w-full"
+                        variant="outline"
+                      >
+                        <Download className="mr-2 h-5 w-5" />
+                        Download All Items
+                      </Button>
+                    </div>
+                  )}
+                </div>
+              ) : (
+                // Handle single object result (legacy format)
+                <div className="space-y-4">
+                  {result.thumbnail && (
+                    <div className="relative w-full aspect-video max-w-2xl mx-auto rounded-lg overflow-hidden border bg-black">
+                      {result.url ? (
+                        <video
+                          src={result.url}
+                          poster={result.thumbnail}
+                          controls
+                          className="w-full h-full"
+                          preload="metadata"
+                        >
+                          Your browser does not support the video tag.
+                        </video>
+                      ) : (
+                        <img src={result.thumbnail} alt="Preview" className="w-full h-full object-cover" />
+                      )}
+                    </div>
+                  )}
+
+                  <div className="space-y-2">
+                    {result.title && (
+                      <p className="text-sm font-medium">{result.title}</p>
+                    )}
+
+                    {result.url && (
+                      <Button
+                        onClick={() => downloadFile(result.url, `instagram-${Date.now()}.mp4`)}
+                        className="w-full"
+                        size="lg"
+                      >
+                        <Download className="mr-2 h-5 w-5" />
+                        Download Video
+                      </Button>
+                    )}
+                  </div>
                 </div>
               )}
-
-              <div className="space-y-2">
-                {result.title && (
-                  <p className="text-sm font-medium">{result.title}</p>
-                )}
-
-                <Button
-                  onClick={() => downloadFile(result.url, `instagram-${Date.now()}.mp4`)}
-                  className="w-full"
-                  size="lg"
-                >
-                  <Download className="mr-2 h-5 w-5" />
-                  Download Video
-                </Button>
-              </div>
             </div>
           )}
         </div>

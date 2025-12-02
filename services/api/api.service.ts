@@ -4,11 +4,7 @@ import { YouTubeRepository } from "@/services";
 import { InstagramRepository } from "@/services";
 import { AIRepository } from "@/services";
 import { DownloaderRepository } from "../repositories/downloader.repository";
-
-type SocialMediaPlatform =
-  | 'instagram' | 'tiktok' | 'facebook' | 'twitter' | 'youtube'
-  | 'capcut' | 'pinterest' | 'spotify' | 'soundcloud' | 'threads'
-  | 'douyin' | 'xiaohongshu' | 'snackvideo' | 'cocofun' | 'gdrive';
+import type { SocialMediaPlatform } from "@/types/downloader";
 
 export const ImageService = {
   removeBackground: async (options: {

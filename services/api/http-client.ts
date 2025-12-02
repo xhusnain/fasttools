@@ -1,5 +1,5 @@
 import axios, { AxiosInstance, AxiosRequestConfig, AxiosResponse, AxiosError } from "axios";
-import { env } from "@/lib/env";
+import { env } from "@/config/env";
 import type { ApiResponse, ApiError } from "@/types/http-client.types";
 
 export type { ApiResponse, ApiError };

@@ -25,14 +25,10 @@ export function FacebookDownloader({ compact = false }: FacebookDownloaderProps)
       return false
     }
 
-    const facebookPatterns = [
-      /^https?:\/\/(www\.|web\.|m\.)?facebook\.com\/.*\/videos\//i,
-      /^https?:\/\/(www\.|web\.|m\.)?facebook\.com\/watch/i,
-      /^https?:\/\/(www\.|web\.|m\.)?facebook\.com\/.*\/posts\//i,
-      /^https?:\/\/fb\.watch\//i,
-    ]
+    const trimmedUrl = inputUrl.trim().toLowerCase()
 
-    if (!facebookPatterns.some(pattern => pattern.test(inputUrl.trim()))) {
+    // Check if URL contains facebook.com or fb.watch
+    if (!trimmedUrl.includes('facebook.com') && !trimmedUrl.includes('fb.watch')) {
       setError("Please enter a valid Facebook video URL")
       return false
     }
@@ -49,10 +45,16 @@ export function FacebookDownloader({ compact = false }: FacebookDownloaderProps)
     setLoading(true)
 
     try {
-      const response = await API.Downloader.download('facebook', url.trim())
+      const response = await API.Downloader.download('facebook', url.trim()) as any
 
-      if (response.status && response.result) {
-        setResult(response.result)
+      if (response.status && (response.Normal_video || response.HD || response.result)) {
+        // Handle direct response format (Normal_video/HD at root level)
+        if (response.Normal_video || response.HD) {
+          setResult(response)
+        } else if (response.result) {
+          // Handle nested result format
+          setResult(response.result)
+        }
       } else {
         setError("Failed to fetch download links. Please try again.")
       }
@@ -63,14 +65,35 @@ export function FacebookDownloader({ compact = false }: FacebookDownloaderProps)
     }
   }
 
-  const downloadFile = (fileUrl: string, filename: string) => {
-    const link = document.createElement("a")
-    link.href = fileUrl
-    link.download = filename
-    link.target = "_blank"
-    document.body.appendChild(link)
-    link.click()
-    document.body.removeChild(link)
+  const downloadFile = async (fileUrl: string, filename: string) => {
+    try {
+      // Fetch the file as a blob to handle cross-origin downloads
+      const response = await fetch(fileUrl)
+      const blob = await response.blob()
+
+      // Create a blob URL
+      const blobUrl = URL.createObjectURL(blob)
+
+      // Create and trigger download
+      const link = document.createElement("a")
+      link.href = blobUrl
+      link.download = filename
+      document.body.appendChild(link)
+      link.click()
+      document.body.removeChild(link)
+
+      // Clean up the blob URL
+      setTimeout(() => URL.revokeObjectURL(blobUrl), 100)
+    } catch (error) {
+      // Fallback to direct link if fetch fails
+      const link = document.createElement("a")
+      link.href = fileUrl
+      link.download = filename
+      link.target = "_blank"
+      document.body.appendChild(link)
+      link.click()
+      document.body.removeChild(link)
+    }
   }
 
   return (
@@ -137,14 +160,44 @@ export function FacebookDownloader({ compact = false }: FacebookDownloaderProps)
                   <p className="text-sm font-medium line-clamp-2">{result.title}</p>
                 )}
 
-                <Button
-                  onClick={() => downloadFile(result.url, `facebook-${Date.now()}.mp4`)}
-                  className="w-full"
-                  size="lg"
-                >
-                  <Download className="mr-2 h-5 w-5" />
-                  Download Video
-                </Button>
+                {/* Handle new format with Normal_video and HD */}
+                {(result.Normal_video || result.HD) ? (
+                  <div className="grid gap-2">
+                    {result.HD && (
+                      <Button
+                        onClick={async () => await downloadFile(result.HD, `facebook-hd-${Date.now()}.mp4`)}
+                        className="w-full"
+                        size="lg"
+                      >
+                        <Download className="mr-2 h-5 w-5" />
+                        Download HD Quality
+                      </Button>
+                    )}
+                    {result.Normal_video && (
+                      <Button
+                        onClick={async () => await downloadFile(result.Normal_video, `facebook-sd-${Date.now()}.mp4`)}
+                        variant="outline"
+                        className="w-full"
+                        size="lg"
+                      >
+                        <Download className="mr-2 h-5 w-5" />
+                        Download SD Quality
+                      </Button>
+                    )}
+                  </div>
+                ) : (
+                  /* Handle legacy format with result.url */
+                  result.url && (
+                    <Button
+                      onClick={async () => await downloadFile(result.url, `facebook-${Date.now()}.mp4`)}
+                      className="w-full"
+                      size="lg"
+                    >
+                      <Download className="mr-2 h-5 w-5" />
+                      Download Video
+                    </Button>
+                  )
+                )}
               </div>
             </div>
           )}

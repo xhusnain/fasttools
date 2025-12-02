@@ -1,7 +1,7 @@
-import { env } from "./env"
 import { runCloudflareAI } from "./utils"
 import { PROMPTS } from "./prompts"
 import { AIRequest, AIResponse } from "./interfaces"
+import {env} from "@/config";
 
 export class AITextGenerator {
     private apiKey: string

@@ -47,10 +47,14 @@ export function XDownloader({ compact = false }: XDownloaderProps) {
     setLoading(true)
 
     try {
-      const response = await API.Downloader.download('twitter', url.trim())
+      const response = await API.Downloader.download('twitter', url.trim()) as any
 
-      if (response.status && response.result) {
-        setResult(response.result)
+      if (response.status && (response.url || response.result)) {
+        if (response.url && Array.isArray(response.url)) {
+          setResult(response)
+        } else if (response.result) {
+          setResult(response.result)
+        }
       } else {
         setError("Failed to fetch download links. Please try again.")
       }
@@ -61,14 +65,30 @@ export function XDownloader({ compact = false }: XDownloaderProps) {
     }
   }
 
-  const downloadFile = (fileUrl: string, filename: string) => {
-    const link = document.createElement("a")
-    link.href = fileUrl
-    link.download = filename
-    link.target = "_blank"
-    document.body.appendChild(link)
-    link.click()
-    document.body.removeChild(link)
+  const downloadFile = async (fileUrl: string, filename: string) => {
+    try {
+      const response = await fetch(fileUrl)
+      const blob = await response.blob()
+
+      const blobUrl = URL.createObjectURL(blob)
+
+      const link = document.createElement("a")
+      link.href = blobUrl
+      link.download = filename
+      document.body.appendChild(link)
+      link.click()
+      document.body.removeChild(link)
+
+      setTimeout(() => URL.revokeObjectURL(blobUrl), 100)
+    } catch (error) {
+      const link = document.createElement("a")
+      link.href = fileUrl
+      link.download = filename
+      link.target = "_blank"
+      document.body.appendChild(link)
+      link.click()
+      document.body.removeChild(link)
+    }
   }
 
   return (
@@ -135,14 +155,39 @@ export function XDownloader({ compact = false }: XDownloaderProps) {
                   <p className="text-sm font-medium line-clamp-2">{result.title}</p>
                 )}
 
-                <Button
-                  onClick={() => downloadFile(result.url, `twitter-${Date.now()}.mp4`)}
-                  className="w-full"
-                  size="lg"
-                >
-                  <Download className="mr-2 h-5 w-5" />
-                  Download Video
-                </Button>
+                {Array.isArray(result.url) && result.url.length > 0 ? (
+                  <div className="grid gap-2">
+                    {result.url.map((quality: any, index: number) => {
+                      const isHD = quality.hd !== undefined
+                      const videoUrl = quality.hd || quality.sd
+                      const qualityLabel = isHD ? 'HD' : 'SD'
+
+                      return (
+                        <Button
+                          key={index}
+                          onClick={async () => await downloadFile(videoUrl, `x-${qualityLabel.toLowerCase()}-${Date.now()}.mp4`)}
+                          className="w-full"
+                          size="lg"
+                          variant={isHD ? "default" : "outline"}
+                        >
+                          <Download className="mr-2 h-5 w-5" />
+                          Download {qualityLabel} Quality
+                        </Button>
+                      )
+                    })}
+                  </div>
+                ) : (
+                  result.url && typeof result.url === 'string' && (
+                    <Button
+                      onClick={async () => await downloadFile(result.url, `x-${Date.now()}.mp4`)}
+                      className="w-full"
+                      size="lg"
+                    >
+                      <Download className="mr-2 h-5 w-5" />
+                      Download Video
+                    </Button>
+                  )
+                )}
               </div>
             </div>
           )}

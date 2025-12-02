@@ -164,21 +164,6 @@ export interface AILyricsRequest {
   length?: "short" | "medium" | "long";
 }
 
-export interface DownloadRequest {
-  url: string;
-  quality?: "hd" | "sd" | "auto";
-  format?: "mp4" | "mp3";
-}
-
-export interface DownloadResponse {
-  success: boolean;
-  downloadUrl?: string;
-  title?: string;
-  thumbnail?: string;
-  duration?: string;
-  fileSize?: number;
-  error?: string;
-}
 
 export interface ValidationError {
   field: string;

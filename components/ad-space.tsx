@@ -1,7 +1,7 @@
 "use client"
 
 import { useEffect, useRef, useState } from "react"
-import { env } from "@/lib/env"
+import { env } from "@/config/env"
 
 // Google AdSense type declarations
 declare global {
