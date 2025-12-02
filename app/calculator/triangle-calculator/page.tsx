@@ -246,9 +246,9 @@ export default function TriangleCalculatorPage() {
             { name: "BMI Calculator", href: "/calculator/bmi-calculator" },
             { name: "Age Calculator", href: "/calculator/age-calculator" },
             { name: "Percentage Calculator", href: "/calculator/percentage-calculator" },
-            { name: "Mortgage Calculator", href: "/calculator/mortgage-calculator" },
-            { name: "Loan Calculator", href: "/calculator/loan-calculator" },
-            { name: "Tax Calculator", href: "/calculator/tax-calculator" },
+            { name: "Mortgage Calculator", href: "/finance-tools/mortgage-calculator" },
+            { name: "Loan Calculator", href: "/finance-tools/loan-calculator" },
+            { name: "Tax Calculator", href: "/finance-tools/tax-calculator" },
             { name: "Scientific Calculator", href: "/calculator/scientific-calculator" },
             { name: "Time Duration", href: "/calculator/time-duration" }
         ]

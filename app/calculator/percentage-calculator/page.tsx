@@ -207,7 +207,7 @@ export default function PercentageCalculatorPage() {
     ],
 
     relatedTools: [
-      { name: "Loan Calculator", href: "/calculator/loan-calculator" },
+      { name: "Loan Calculator", href: "/finance-tools/loan-calculator" },
       { name: "GPA Calculator", href: "/calculator/gpa-calculator" },
       { name: "BMI Calculator", href: "/calculator/bmi-calculator" },
       { name: "All Calculators", href: "/calculator" }

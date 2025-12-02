@@ -76,7 +76,7 @@ export default async function NotFound() {
               <GCard
                 title="Loan Calculator"
                 description="Calculate loan payments, total interest, amortization schedules, and compare different loan options easily"
-                href="/calculator/loan-calculator"
+                href="/finance-tools/loan-calculator"
                 icon={DollarSign}
                 badge="Finance"
                 badgeColor="bg-emerald-500/90"

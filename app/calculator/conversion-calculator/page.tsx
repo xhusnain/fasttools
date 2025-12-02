@@ -285,11 +285,11 @@ export default function ConversionCalculatorPage() {
       { name: "BMI Calculator", href: "/calculator/bmi-calculator" },
       { name: "Age Calculator", href: "/calculator/age-calculator" },
       { name: "Time Duration", href: "/calculator/time-duration" },
-      { name: "Investment Calculator", href: "/calculator/investment-calculator" },
-      { name: "Retirement Calculator", href: "/calculator/retirement-calculator" },
-      { name: "Mortgage Calculator", href: "/calculator/mortgage-calculator" },
-      { name: "Loan Calculator", href: "/calculator/loan-calculator" },
-      { name: "Tax Calculator", href: "/calculator/tax-calculator" }
+      { name: "Investment Calculator", href: "/finance-tools/investment-calculator" },
+      { name: "Retirement Calculator", href: "/finance-tools/retirement-calculator" },
+      { name: "Mortgage Calculator", href: "/finance-tools/mortgage-calculator" },
+      { name: "Loan Calculator", href: "/finance-tools/loan-calculator" },
+      { name: "Tax Calculator", href: "/finance-tools/tax-calculator" }
     ]
   }
 

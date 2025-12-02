@@ -236,7 +236,7 @@ function answerForQuestion(q: string): { answer: string; links?: string[] } {
   if (lower.includes("retire") || lower.includes("social security")) {
     return {
       answer: "Plan your retirement timeline using our comprehensive Retirement Calculator. Enter your current age, desired retirement age, current savings, expected annual contributions, expected rate of return, and inflation assumptions. The calculator projects your retirement corpus, monthly income potential, and helps determine if you're on track to meet your retirement goals. For Social Security timing, consider factors like full retirement age (typically 66-67) and how early or delayed claiming affects benefits. The calculator provides actionable insights for adjusting savings strategies to achieve financial independence.",
-      links: ["/calculator/retirement-calculator"]
+      links: ["/finance-tools/retirement-calculator"]
     }
   }
 
@@ -292,7 +292,7 @@ function answerForQuestion(q: string): { answer: string; links?: string[] } {
   if (lower.includes("tax")) {
     return {
       answer: "Use our Tax Calculator and Sales Tax Calculator for comprehensive tax computations. The Tax Calculator handles income tax, GST, VAT calculations with support for inclusive and exclusive tax scenarios—providing gross amounts, net amounts, and tax amounts separately. The Sales Tax Calculator includes state-specific rates for all 50 US states with automatic rate application and detailed breakdowns. Both calculators are useful for budgeting, financial planning, business accounting, and understanding tax implications of purchases. Enter your amount and tax rate (or select your state) to get instant, accurate tax calculations.",
-      links: ["/calculator/tax-calculator", "/calculator/sales-tax-calculator"]
+      links: ["/finance-tools/tax-calculator", "/calculator/sales-tax-calculator"]
     }
   }
 
@@ -338,7 +338,7 @@ function answerForQuestion(q: string): { answer: string; links?: string[] } {
   if (lower.includes("buy")) {
     return {
       answer: "For physical calculators, purchase from reputable retailers including Target, Walmart, Staples, Best Buy, Office Depot, and online marketplaces. Popular brands include Casio (scientific and graphing models), Texas Instruments (TI-84, TI-30X series), and Sharp. Consider your needs: basic for everyday math, scientific for trigonometry and logarithms, or graphing for advanced mathematics. For most daily calculations, our free online calculators require no purchase—access our Scientific Calculator, Loan Calculator, BMI Calculator, and 50+ other tools from any device with internet.",
-      links: ["/calculator/scientific-calculator", "/calculator/loan-calculator", "/calculator/bmi-calculator"]
+      links: ["/calculator/scientific-calculator", "/finance-tools/loan-calculator", "/calculator/bmi-calculator"]
     }
   }
 
@@ -358,7 +358,7 @@ function answerForQuestion(q: string): { answer: string; links?: string[] } {
   if (lower.includes("tool cost")) {
     return {
       answer: "To calculate tool costs, ROI, and depreciation, use our Percentage Calculator for markup and discount calculations, and our Compound Interest Calculator for investment growth projections. For cost estimation: (1) Calculate percentage increases for price adjustments, (2) Use compound interest formulas to project tool investment returns over time, (3) Apply percentage discounts for bulk purchases. These calculators help determine tool pricing, estimate depreciation schedules, calculate profit margins, and analyze whether tool investments are financially viable over their expected lifespan.",
-      links: ["/calculator/percentage-calculator", "/calculator/compound-interest"]
+      links: ["/calculator/percentage-calculator", "/finance-tools/compound-interest"]
     }
   }
 
@@ -431,7 +431,7 @@ function answerForQuestion(q: string): { answer: string; links?: string[] } {
   if (lower.includes("where are calculators") || lower.includes("where sells calculators") || lower.includes("calculators near me")) {
     return {
       answer: "Physical calculators are sold at major retailers including Target (electronics section), Walmart (office supplies or electronics), Staples (calculators section), Best Buy (computers and tablets area), Office Depot, and online marketplaces like Amazon. Popular brands include Casio, Texas Instruments, and Sharp. For calculators near you, use store locators on retailer websites or search 'calculators near me' in Google Maps. However, our free online calculators require no purchase—access 50+ calculation tools including Scientific Calculator, Loan Calculator, BMI Calculator, and more from any device with internet, eliminating the need for physical purchases.",
-      links: ["/calculator/scientific-calculator", "/calculator/loan-calculator", "/calculator/bmi-calculator"]
+      links: ["/calculator/scientific-calculator", "/finance-tools/loan-calculator", "/calculator/bmi-calculator"]
     }
   }
 

@@ -262,10 +262,10 @@ export default function TimeDurationPage() {
     relatedTools: [
       { name: "Age Calculator", href: "/calculator/age-calculator" },
       { name: "Date Difference Calculator", href: "/calculator/date-difference" },
-      { name: "Loan EMI Calculator", href: "/calculator/loan-calculator" },
+      { name: "Loan EMI Calculator", href: "/finance-tools/loan-calculator" },
       { name: "Percentage Calculator", href: "/calculator/percentage-calculator" },
       { name: "BMI Calculator", href: "/calculator/bmi-calculator" },
-      { name: "Compound Interest Calculator", href: "/calculator/compound-interest" }
+      { name: "Compound Interest Calculator", href: "/finance-tools/compound-interest" }
     ]
   }
 

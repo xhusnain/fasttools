@@ -321,7 +321,7 @@ export default function AgeCalculatorPage() {
     relatedTools: [
       { name: "Date Difference", href: "/calculator/date-difference" },
       { name: "Time Duration", href: "/calculator/time-duration" },
-      { name: "Retirement Calculator", href: "/calculator/retirement-calculator" },
+      { name: "Retirement Calculator", href: "/finance-tools/retirement-calculator" },
       { name: "Pregnancy Calculator", href: "/calculator/pregnancy-calculator" }
     ]
   }

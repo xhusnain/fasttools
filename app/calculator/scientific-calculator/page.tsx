@@ -255,7 +255,7 @@ const toolConfig = createToolConfig({
       { name: "Percentage Calculator", href: "/calculator/percentage-calculator" },
       { name: "BMI Calculator", href: "/calculator/bmi-calculator" },
       { name: "Age Calculator", href: "/calculator/age-calculator" },
-      { name: "Loan Calculator", href: "/calculator/loan-calculator" }
+      { name: "Loan Calculator", href: "/finance-tools/loan-calculator" }
     ]
   }
 })

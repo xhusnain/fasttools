@@ -91,7 +91,7 @@ const categories = [
       {
         title: "Loan Calculator",
         description: "Calculate loan payments, total interest, amortization schedules, and compare different loan options easily",
-        href: "/calculator/loan-calculator",
+        href: "/finance-tools/loan-calculator",
         icon: DollarSign,
         badge: "Finance",
         badgeColor: "bg-emerald-500/90",
@@ -99,7 +99,7 @@ const categories = [
       {
         title: "Mortgage Calculator",
         description: "Calculate monthly mortgage payments including principal, interest, taxes, insurance, and HOA fees for homebuyers",
-        href: "/calculator/mortgage-calculator",
+        href: "/finance-tools/mortgage-calculator",
         icon: DollarSign,
         badge: "Popular",
         badgeColor: "bg-blue-500/90",
@@ -107,7 +107,7 @@ const categories = [
       {
         title: "Compound Interest Calculator",
         description: "Calculate investment growth with compound interest including regular contributions and different compounding frequencies",
-        href: "/calculator/compound-interest",
+        href: "/finance-tools/compound-interest",
         icon: TrendingUp,
         badge: "Investment",
         badgeColor: "bg-heading-accent/90",
@@ -115,7 +115,7 @@ const categories = [
       {
         title: "Retirement Calculator",
         description: "Plan your retirement with confidence by calculating savings needed, retirement income, and withdrawal strategies",
-        href: "/calculator/retirement-calculator",
+        href: "/finance-tools/retirement-calculator",
         icon: DollarSign,
         badge: "Planning",
         badgeColor: "bg-purple-500/90",
@@ -131,7 +131,7 @@ const categories = [
       {
         title: "Tax Calculator",
         description: "Calculate federal and state income taxes, estimate tax refunds, and optimize your tax strategy for the year",
-        href: "/calculator/tax-calculator",
+        href: "/finance-tools/tax-calculator",
         icon: DollarSign,
         badge: "Finance",
         badgeColor: "bg-primary/90",
@@ -139,7 +139,7 @@ const categories = [
       {
         title: "Investment Calculator",
         description: "Calculate investment returns, compare options, and plan investment strategy with detailed projections and analysis",
-        href: "/calculator/investment-calculator",
+        href: "/finance-tools/investment-calculator",
         icon: TrendingUp,
         badge: "Wealth",
         badgeColor: "bg-heading-accent/90",

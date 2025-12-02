@@ -692,10 +692,10 @@ export default function StandardDeviationCalculatorPage() {
       { name: "Fraction Calculator", href: "/calculator/fraction-calculator" },
       { name: "Age Calculator", href: "/calculator/age-calculator" },
       { name: "Time Duration", href: "/calculator/time-duration" },
-      { name: "Investment Calculator", href: "/calculator/investment-calculator" },
-      { name: "Retirement Calculator", href: "/calculator/retirement-calculator" },
-      { name: "Mortgage Calculator", href: "/calculator/mortgage-calculator" },
-      { name: "Tax Calculator", href: "/calculator/tax-calculator" },
+      { name: "Investment Calculator", href: "/finance-tools/investment-calculator" },
+      { name: "Retirement Calculator", href: "/finance-tools/retirement-calculator" },
+      { name: "Mortgage Calculator", href: "/finance-tools/mortgage-calculator" },
+      { name: "Tax Calculator", href: "/finance-tools/tax-calculator" },
       { name: "Currency Converter", href: "/converters/currency" },
       { name: "Temperature Converter", href: "/converters/temperature" }
     ]

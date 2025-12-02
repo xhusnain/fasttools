@@ -247,7 +247,7 @@ export default function GPACalculatorPage() {
       { name: "BMI Calculator", href: "/calculator/bmi-calculator" },
       { name: "Time Duration", href: "/calculator/time-duration" },
       { name: "Scientific Calculator", href: "/calculator/scientific-calculator" },
-      { name: "Loan Calculator", href: "/calculator/loan-calculator" }
+      { name: "Loan Calculator", href: "/finance-tools/loan-calculator" }
     ]
   }
 
