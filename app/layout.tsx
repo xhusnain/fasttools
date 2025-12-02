@@ -138,7 +138,9 @@ export default function RootLayout({
         <link rel="dns-prefetch" href="https://www.google-analytics.com" />
       </head>
       <body className="bg-background font-sans text-foreground">
-        <script src="https://quge5.com/88/tag.min.js" data-zone="189815" async data-cfasync="false"></script>
+        {env.isProduction && (
+          <script src="https://quge5.com/88/tag.min.js" data-zone="189818" async data-cfasync="false"></script>
+        )}
         {/* Google Analytics */}
         {env.isProduction && (
           <>
