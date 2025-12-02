@@ -5,7 +5,7 @@
 # the most valuable pages.
 # test
 
-# Main GPA Calculator Tool
+# Main GPA Calculator Tools
 https://www.fasttools.store/calculator/gpa-calculator
 Description: The main GPA calculator tool page, featuring the calculator itself, detailed explanations, and a comprehensive FAQ section. This is the most important page for GPA-related queries.
 
