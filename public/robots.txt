@@ -1,0 +1,9 @@
+User-agent: *
+Allow: /
+Disallow: /api/
+Disallow: /private
+Disallow: /temp
+Disallow: /_next
+
+Sitemap: https://www.fasttools.store/sitemap.xml
+Sitemap: https://www.fasttools.store/image-sitemap.xml
