@@ -276,7 +276,7 @@ export function getWebsiteSchema(searchUrl?: string) {
         "@context": "https://schema.org",
         "@type": "WebSite",
         name: SITE_NAME,
-        alternateName: ["FastTools", "Fast Tools", "fasttools","fasttools.store", "FastTools Store"],
+        alternateName: ["FastTools", "Fast Tools", "fasttools"],
         url: `${BASE_URL}/`,
         potentialAction: {
             "@type": "SearchAction",
