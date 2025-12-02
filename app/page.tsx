@@ -1,11 +1,17 @@
 import Link from "next/link"
+import dynamic from "next/dynamic"
 import { GButton } from "@/components/globalcomponents/gbutton"
 import { GCard } from "@/components/globalcomponents/gcard"
 import { PremiumHeroBackground } from "@/components/premium-hero-background"
 import { GHeader } from "@/components/globalcomponents/gheader"
+const HomeCategories = dynamic(() => import('@/components/home-categories').then(mod => ({ default: mod.HomeCategories })), {
+  loading: () => <div className="py-24 text-center">Loading tools...</div>
+})
+const HomeFAQSection = dynamic(() => import('@/components/home-faq-section').then(mod => ({ default: mod.HomeFAQSection })), {
+  loading: () => <div className="py-20 text-center">Loading FAQ...</div>
+})
 import {
   Calculator,
-  ArrowRight,
   Sparkles,
   Palette,
   Code,
@@ -970,165 +976,11 @@ export default function Home() {
         </div>
       </section>
 
-      {/* About FastTools - Complete Tools Directory */}
-      <section id="tools" className="py-12 sm:py-16 md:py-20 lg:py-24 px-4">
-        <div className="container mx-auto max-w-7xl">
-          <div className="text-center mb-12 sm:mb-16">
-            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 border border-primary/20 text-primary text-sm font-semibold mb-6">
-              <Award className="h-4 w-4" />
-              COMPLETE TOOLS DIRECTORY
-            </div>
+      {/* Categories Section - Lazy Loaded */}
+      <HomeCategories categories={categories} />
 
-            <GHeader
-              title="Every Tool We Offer"
-              description="Discover professional-grade tools designed to supercharge your productivity and creativity"
-              titleSize="medium"
-              descriptionSize="small"
-            />
-          </div>
-
-          {/* Display All Categories with All Tools */}
-          {categories.map((category) => {
-            const CategoryIcon = category.icon
-            return (
-              <div key={category.id} className="mb-12 sm:mb-16">
-                <div className="flex items-center gap-2 sm:gap-4 mb-6 sm:mb-8 px-2">
-                  <div className={`p-2 sm:p-3.5 rounded-xl ${category.iconBg} border ${category.borderColor}`}>
-                    <CategoryIcon className={`h-5 w-5 sm:h-7 sm:w-7 ${category.iconColor}`} />
-                  </div>
-                  <div>
-                    <h3 className="text-xl sm:text-2xl font-bold text-foreground">{category.name}</h3>
-                    <p className="text-xs sm:text-sm text-foreground/80 mt-0.5">{category.description}</p>
-                  </div>
-                </div>
-                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-5 px-2">
-                  {category.tools.map((tool, i) => {
-                    const ToolIcon = tool.icon
-                    return (
-                      <Link key={i} href={tool.href} className="group">
-                        <div className={`relative h-full rounded-xl border-2 ${category.borderColor} ${category.hoverBorder} bg-card p-4 sm:p-6 space-y-3 sm:space-y-4 transition-all duration-300 hover:shadow-xl ${category.glowColor}`}>
-                          <div className="flex items-start justify-between">
-                            <div className={`${tool.badgeColor} px-2 sm:px-2.5 py-0.5 sm:py-1 rounded-md text-white text-[10px] sm:text-xs font-semibold`}>
-                              {tool.badge}
-                            </div>
-                            <div className={`p-2 sm:p-2.5 rounded-lg ${category.iconBg} border ${category.borderColor}`}>
-                              <ToolIcon className={`h-4 w-4 sm:h-5 sm:w-5 ${category.iconColor}`} />
-                            </div>
-                          </div>
-                          <div className="space-y-2 sm:space-y-2.5">
-                            <h3 className="text-base sm:text-lg font-bold text-foreground group-hover:text-primary transition-colors leading-tight">
-                              {tool.title}
-                            </h3>
-                            <p className="text-xs sm:text-sm text-foreground/80 leading-relaxed">
-                              {tool.description}
-                            </p>
-                          </div>
-                          <div className="flex items-center gap-2 text-primary font-semibold text-xs sm:text-sm pt-1">
-                            <span>Try Now</span>
-                            <ArrowRight className="h-3 w-3 sm:h-4 sm:w-4 transition-transform group-hover:translate-x-1" />
-                          </div>
-                        </div>
-                      </Link>
-                    )
-                  })}
-                </div>
-                <div className="flex justify-center mt-6 sm:mt-8">
-                  <Link href={category.href}>
-                    <GButton size="lg" className="bg-primary hover:bg-primary/90 text-primary-foreground font-semibold shadow-lg gap-2 px-6 sm:px-8">
-                      View All
-                      <ArrowRight className="h-4 w-4 sm:h-5 sm:w-5" />
-                    </GButton>
-                  </Link>
-                </div>
-              </div>
-            )
-          })}
-        </div>
-      </section>
-
-      {/* FAQ Section */}
-      <section className="py-12 md:py-20 px-4 bg-background">
-        <div className="container mx-auto max-w-5xl">
-          <div className="mb-8 md:mb-12">
-            <GHeader
-              title="FAQ"
-              description="Find quick answers to common questions about FastTools. Get instant clarity on features, pricing, security, and how to make the most of our 1000+ free online tools. Everything you need to know in one place."
-              titleSize="large"
-              descriptionSize="medium"
-              color="green"
-              as="h2"
-            />
-          </div>
-
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 md:gap-6 px-2">
-            {[
-              {
-                number: "01",
-                question: "What AI tools are available for free content generation?",
-                answer: "Our free AI tools include AI caption generator for social media posts, AI meme generator for viral content, AI hashtag suggester for better reach, AI song lyrics generator for creative writing, and AI pet name generator for naming pets. All tools use advanced AI technology to generate high-quality, relevant content instantly without any cost."
-              },
-              {
-                number: "02",
-                question: "How accurate are the currency exchange rates in your converter?",
-                answer: "Our currency converter provides real-time exchange rates updated every minute from reliable financial data sources. We support 160+ currencies including USD, EUR, GBP, JPY, and more. The rates are accurate for travel, business, and investment purposes, with historical data and trend analysis available for informed decision-making."
-              },
-              {
-                number: "03",
-                question: "What financial calculators can help with loan and investment planning?",
-                answer: "We offer comprehensive financial calculators including loan calculator for mortgage planning, EMI calculator for monthly payments, investment calculator for returns analysis, retirement calculator for long-term planning, compound interest calculator for savings growth, and tax calculator for income tax estimation. All calculators use professional-grade formulas compatible with BA II Plus and HP 12CP financial calculators."
-              },
-              {
-                number: "04",
-                question: "How can SEO tools improve my website's search engine rankings?",
-                answer: "Our SEO tools help optimize your website with meta tag generator for better search snippets, keyword density checker for content optimization, hashtag generator for social media reach, and blog title generator for click-worthy headlines. These tools analyze your content, suggest improvements, and help you rank higher in Google search results for better organic traffic."
-              },
-              {
-                number: "05",
-                question: "What image processing tools are available for free?",
-                answer: "Our image tools include image cropper for resizing and cropping photos, image converter for format conversion, image to text OCR for extracting text from images, background blur for photo editing, and QR code generator for creating QR codes. All tools work in your browser without uploading files, ensuring complete privacy and security."
-              },
-              {
-                number: "06",
-                question: "What developer tools can help with coding and web development?",
-                answer: "Our developer tools include HTML beautifier for code formatting, JSON formatter for data validation, regex tester for pattern matching, JWT decoder for token analysis, base64 encoder/decoder for data encoding, and 1000+ free color palettes with HEX codes for design. These tools help developers write better code, debug more effectively, and streamline their development workflow."
-              },
-              {
-                number: "07",
-                question: "Is my data safe when using these online tools?",
-                answer: "Yes, your data is completely safe. All our tools process data locally in your browser without uploading files to our servers. We use privacy-first architecture where sensitive information like documents, images, and personal data never leaves your device. No registration required, no data collection, and no tracking - just pure, secure tool functionality."
-              },
-              {
-                number: "08",
-                question: "What categories of tools are available on FastTools?",
-                answer: "We offer 10+ categories including AI Tools for content generation, Calculators for financial planning, Converters for data transformation, SEO Tools for website optimization, Image Tools for photo editing, Developer Tools for coding, Finance Tools for business calculations, Social Media Tools for marketing, and Fun Tools for entertainment. Each category contains 15-50+ specialized tools for different use cases."
-              },
-              {
-                number: "09",
-                question: "Can businesses use these tools for professional purposes?",
-                answer: "Absolutely! Our tools are designed for professional use with business-grade accuracy and reliability. Many businesses use our financial calculators for loan analysis, currency converter for international trade, SEO tools for digital marketing, AI tools for content creation, and developer tools for web development. All tools are free for commercial use with no restrictions or watermarks."
-              },
-              {
-                number: "10",
-                question: "Do these tools work on mobile devices and tablets?",
-                answer: "Yes, all our tools are mobile-optimized and work perfectly on smartphones, tablets, and desktop computers. Our responsive design ensures optimal performance across all devices with touch-friendly interfaces, fast loading times, and offline functionality for many tools. Access your favorite tools anywhere, anytime without any app downloads or installations."
-              },
-            ].map((faq, i) => (
-              <div
-                key={i}
-                className="group relative bg-card/50 backdrop-blur-md rounded-2xl border border-border/50 hover:border-primary/50 transition-all duration-300 hover:shadow-lg hover:shadow-primary/5 overflow-hidden p-6 sm:p-8"
-              >
-                <div className="absolute -top-4 -right-4 opacity-[0.03] group-hover:opacity-[0.08] transition-opacity select-none">
-                  <span className="text-9xl font-black text-primary">{faq.number}</span>
-                </div>
-                <div className="relative z-10">
-                  <h3 className="text-lg sm:text-xl font-bold text-foreground mb-3 pr-4">{faq.question}</h3>
-                  <p className="text-sm sm:text-base text-muted-foreground leading-relaxed">{faq.answer}</p>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
+      {/* FAQ Section - Lazy Loaded */}
+      <HomeFAQSection />
     </div>
   )
 }
