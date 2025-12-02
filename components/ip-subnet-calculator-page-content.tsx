@@ -426,9 +426,7 @@ export function IPSubnetCalculatorPageContent() {
                   Explore our collection of related network and developer tools to enhance your networking capabilities:
                 </p>
                 <ul className="list-disc list-inside space-y-2 text-secondary">
-                  {/* <li><a href="/calculator/binary-calculator" className="text-foreground hover:text-foreground underline">Binary Calculator</a> - Convert between binary, decimal, and hexadecimal</li>
-                <li><a href="/calculator/hex-calculator" className="text-foreground hover:text-foreground underline">Hexadecimal Calculator</a> - Perform hex calculations and conversions</li>
-                <li><a href="/calculator/ascii-converter" className="text-foreground hover:text-foreground underline">ASCII Converter</a> - Convert between ASCII and other character encodings</li> */}
+
                   <li><a href="/dev-tools/regex-tester" className="text-foreground hover:text-foreground underline">Regex Tester</a> - Test and validate regular expressions</li>
                   <li><a href="/dev-tools/jwt-decoder" className="text-foreground hover:text-foreground underline">JWT Decoder</a> - Decode and analyze JSON Web Tokens</li>
                 </ul>
