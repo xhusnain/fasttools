@@ -11,7 +11,7 @@ import {
     Star,
     ChevronRight
 } from "lucide-react"
-import type { ToolPageLayoutProps } from "@/lib/tool-page-layout-types"
+import type { ToolPageLayoutProps } from "@/types/tool-page-layout.types"
 
 export function ToolPageLayout({
     header,

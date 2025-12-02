@@ -1,6 +1,6 @@
 import type { Metadata } from "next"
 import { createMetadata } from "./metadata-base"
-import type { ToolPageLayoutProps } from "./tool-page-layout-types"
+import type { ToolPageLayoutProps } from "@/types/tool-page-layout.types"
 
 export interface UnifiedToolConfig {
     toolName: string
