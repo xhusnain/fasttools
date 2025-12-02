@@ -72,6 +72,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: "monthly" as const,
       priority: 0.3,
     },
+    {
+      url: "https://www.fasttools.store/dmca",
+      lastModified: currentDate,
+      changeFrequency: "monthly" as const,
+      priority: 0.3,
+    },
   ]
 
   const categoryPages = [
