@@ -1,4 +1,3 @@
-"use client"
 
 import { Card } from "@/components/ui/card"
 import { Wrench, Clock, Sparkles } from "lucide-react"
