@@ -136,7 +136,6 @@ export default function RootLayout({
         <link rel="preconnect" href="https://www.googletagmanager.com" />
         <link rel="preconnect" href="https://static.cloudflareinsights.com" />
         <link rel="dns-prefetch" href="https://www.google-analytics.com" />
-        <meta name="monetag" content="684501ca5cfaf50fedefb16e2683c21d" />
       </head>
       <body className="bg-background font-sans text-foreground">
         <script src="https://quge5.com/88/tag.min.js" data-zone="189815" async data-cfasync="false"></script>
