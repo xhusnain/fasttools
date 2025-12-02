@@ -1,77 +1,165 @@
+"use client"
+
+import { useState } from "react"
 import { Card } from "@/components/ui/card"
-import { Wrench, Clock, Sparkles } from "lucide-react"
+import { Input } from "@/components/ui/input"
+import { Label } from "@/components/ui/label"
+import { GButton as Button } from "@/components/globalcomponents/gbutton"
+import { Download, Loader2, AlertCircle, Video } from "lucide-react"
+import { Alert, AlertDescription } from "@/components/ui/alert"
+import { API } from "@/services/api/api.service"
 
 export interface XDownloaderProps {
   compact?: boolean
 }
 
 export function XDownloader({ compact = false }: XDownloaderProps) {
+  const [url, setUrl] = useState("")
+  const [loading, setLoading] = useState(false)
+  const [error, setError] = useState<string | null>(null)
+  const [result, setResult] = useState<any>(null)
+
+  const validateUrl = (inputUrl: string): boolean => {
+    if (!inputUrl.trim()) {
+      setError("Please enter an X (Twitter) URL")
+      return false
+    }
+
+    const twitterPatterns = [
+      /^https?:\/\/(www\.)?(twitter|x)\.com\/[\w]+\/status\/\d+/i,
+      /^https?:\/\/t\.co\/[\w]+/i,
+    ]
+
+    if (!twitterPatterns.some(pattern => pattern.test(inputUrl.trim()))) {
+      setError("Please enter a valid X (Twitter) post URL")
+      return false
+    }
+
+    return true
+  }
+
+  const handleDownload = async () => {
+    setError(null)
+    setResult(null)
+
+    if (!validateUrl(url)) return
+
+    setLoading(true)
+
+    try {
+      const response = await API.Downloader.download('twitter', url.trim())
+
+      if (response.status && response.result) {
+        setResult(response.result)
+      } else {
+        setError("Failed to fetch download links. Please try again.")
+      }
+    } catch (err: any) {
+      setError(err.message || "Failed to download. Please check the URL and try again.")
+    } finally {
+      setLoading(false)
+    }
+  }
+
+  const downloadFile = (fileUrl: string, filename: string) => {
+    const link = document.createElement("a")
+    link.href = fileUrl
+    link.download = filename
+    link.target = "_blank"
+    document.body.appendChild(link)
+    link.click()
+    document.body.removeChild(link)
+  }
+
   return (
-    <div className="space-y-6">
-      <Card className="relative overflow-hidden border-2 border-primary/20 bg-gradient-to-br from-card via-card to-primary/5">
-        <div className="absolute top-0 right-0 w-64 h-64 bg-primary/5 rounded-full blur-3xl -mr-32 -mt-32"></div>
-        <div className="absolute bottom-0 left-0 w-64 h-64 bg-blue-500/5 rounded-full blur-3xl -ml-32 -mb-32"></div>
-
-        <div className="relative p-8 md:p-12">
-          <div className="flex flex-col items-center text-center space-y-6 max-w-2xl mx-auto">
-            <div className="relative">
-              <div className="absolute inset-0 bg-primary/20 blur-2xl rounded-full"></div>
-              <div className="relative bg-primary/10 p-6 rounded-2xl border-2 border-primary/20">
-                <Wrench className="h-12 w-12 text-primary animate-pulse" />
-              </div>
-            </div>
-
-            <div className="space-y-3">
-              <div className="flex items-center justify-center gap-2 mb-2">
-                <Sparkles className="h-5 w-5 text-primary animate-pulse" />
-                <span className="text-sm font-semibold text-primary uppercase tracking-wider">Under Maintenance</span>
-                <Sparkles className="h-5 w-5 text-primary animate-pulse" />
-              </div>
-
-              <h2 className="text-3xl md:text-4xl font-bold text-foreground">
-                We're Improving X (Twitter) Downloader
-              </h2>
-
-              <p className="text-base md:text-lg text-muted-foreground leading-relaxed">
-                Our X (Twitter) downloader is currently undergoing improvements to provide you with a better, faster, and more reliable experience. We appreciate your patience.
-              </p>
-            </div>
-
-            <div className="flex items-center gap-3 text-sm text-muted-foreground bg-muted/50 px-6 py-3 rounded-full border border-border">
-              <Clock className="h-4 w-4 text-primary" />
-              <span className="font-medium">Please check back soon</span>
+    <div className="w-full max-w-4xl mx-auto space-y-4 sm:space-y-6">
+      <Card className="p-6 sm:p-8">
+        <div className="space-y-6">
+          <div className="space-y-2">
+            <Label htmlFor="x-url" className="text-base font-semibold">
+              X (Twitter) URL
+            </Label>
+            <div className="flex gap-2">
+              <Input
+                id="x-url"
+                type="text"
+                placeholder="https://x.com/username/status/..."
+                value={url}
+                onChange={(e) => setUrl(e.target.value)}
+                onKeyDown={(e) => e.key === "Enter" && handleDownload()}
+                className="flex-1"
+                disabled={loading}
+              />
+              <Button
+                onClick={handleDownload}
+                disabled={loading || !url.trim()}
+                className="px-6"
+              >
+                {loading ? (
+                  <>
+                    <Loader2 className="mr-2 h-4 w-4 animate-spin" />
+                    Loading...
+                  </>
+                ) : (
+                  <>
+                    <Download className="mr-2 h-4 w-4" />
+                    Download
+                  </>
+                )}
+              </Button>
             </div>
           </div>
+
+          {error && (
+            <Alert variant="destructive">
+              <AlertCircle className="h-4 w-4" />
+              <AlertDescription>{error}</AlertDescription>
+            </Alert>
+          )}
+
+          {result && (
+            <div className="space-y-4">
+              <div className="flex items-center gap-2 text-sm text-muted-foreground">
+                <Video className="h-4 w-4" />
+                <span>Download ready!</span>
+              </div>
+
+              {result.thumbnail && (
+                <div className="relative w-full aspect-video max-w-md mx-auto rounded-lg overflow-hidden border">
+                  <img src={result.thumbnail} alt="Preview" className="w-full h-full object-cover" />
+                </div>
+              )}
+
+              <div className="space-y-2">
+                {result.title && (
+                  <p className="text-sm font-medium line-clamp-2">{result.title}</p>
+                )}
+
+                <Button
+                  onClick={() => downloadFile(result.url, `twitter-${Date.now()}.mp4`)}
+                  className="w-full"
+                  size="lg"
+                >
+                  <Download className="mr-2 h-5 w-5" />
+                  Download Video
+                </Button>
+              </div>
+            </div>
+          )}
         </div>
       </Card>
 
       {!compact && (
         <Card className="p-6 bg-card border border-border">
-          <h3 className="text-lg font-bold text-foreground mb-4 flex items-center gap-2">
-            <Sparkles className="h-5 w-5 text-primary" />
-            What's Coming
-          </h3>
-          <ul className="space-y-3 text-sm text-muted-foreground">
-            <li className="flex items-start gap-3">
-              <span className="text-primary mt-0.5">✓</span>
-              <span>Faster download speeds with optimized processing</span>
-            </li>
-            <li className="flex items-start gap-3">
-              <span className="text-primary mt-0.5">✓</span>
-              <span>Support for more video formats and quality options</span>
-            </li>
-            <li className="flex items-start gap-3">
-              <span className="text-primary mt-0.5">✓</span>
-              <span>Enhanced reliability and better error handling</span>
-            </li>
-            <li className="flex items-start gap-3">
-              <span className="text-primary mt-0.5">✓</span>
-              <span>Improved user interface with better feedback</span>
-            </li>
-          </ul>
+          <h3 className="text-lg font-bold text-foreground mb-4">How to Use</h3>
+          <ol className="space-y-3 text-sm text-muted-foreground list-decimal list-inside">
+            <li>Find the video tweet you want to download</li>
+            <li>Click on the share button and copy the link</li>
+            <li>Paste it into the input field above</li>
+            <li>Click Download to save the video</li>
+          </ol>
         </Card>
       )}
     </div>
   )
 }
-

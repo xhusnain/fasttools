@@ -1,8 +1,14 @@
-import { ImageRepository } from "../repositories/image.repository";
-import { CurrencyRepository } from "../repositories/currency.repository";
-import { YouTubeRepository } from "../repositories/youtube.repository";
-import { InstagramRepository } from "../repositories/instagram.repository";
-import { AIRepository } from "../repositories/ai.repository";
+import { ImageRepository } from "@/services";
+import { CurrencyRepository } from "@/services";
+import { YouTubeRepository } from "@/services";
+import { InstagramRepository } from "@/services";
+import { AIRepository } from "@/services";
+import { DownloaderRepository } from "../repositories/downloader.repository";
+
+type SocialMediaPlatform =
+  | 'instagram' | 'tiktok' | 'facebook' | 'twitter' | 'youtube'
+  | 'capcut' | 'pinterest' | 'spotify' | 'soundcloud' | 'threads'
+  | 'douyin' | 'xiaohongshu' | 'snackvideo' | 'cocofun' | 'gdrive';
 
 export const ImageService = {
   removeBackground: async (options: {
@@ -83,12 +89,19 @@ export const AIService = {
   },
 };
 
+export const DownloaderService = {
+  download: async (platform: SocialMediaPlatform, url: string) => {
+    return DownloaderRepository.download(platform, url);
+  },
+};
+
 export const API = {
   Image: ImageService,
   Currency: CurrencyService,
   YouTube: YouTubeService,
   Instagram: InstagramService,
   AI: AIService,
+  Downloader: DownloaderService,
 };
 
 export default API;

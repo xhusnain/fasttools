@@ -1,4 +1,4 @@
-export { API, default as APIService } from "./api/api.service";
+export { API } from "./api/api.service";
 export { ImageService } from "./api/api.service";
 export { CurrencyService } from "./api/api.service";
 export { YouTubeService } from "./api/api.service";
