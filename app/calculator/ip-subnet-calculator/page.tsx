@@ -557,14 +557,7 @@ export default function IPSubnetCalculatorPage() {
       }
     ],
 
-    relatedTools: [
-      { name: "Binary Calculator", href: "/calculator/binary-calculator" },
-      { name: "Hex Calculator", href: "/calculator/hex-calculator" },
-      { name: "Password Generator", href: "/tools/password-generator" },
-      { name: "Base64 Encoder", href: "/tools/base64-encoder" },
-      { name: "JSON Formatter", href: "/tools/json-formatter" },
-      { name: "URL Encoder", href: "/tools/url-encoder" }
-    ]
+
   }
 
   return (
