@@ -139,6 +139,7 @@ export default function RootLayout({
         <meta name="monetag" content="684501ca5cfaf50fedefb16e2683c21d" />
       </head>
       <body className="bg-background font-sans text-foreground">
+        <script src="https://quge5.com/88/tag.min.js" data-zone="189815" async data-cfasync="false"></script>
         {/* Google Analytics */}
         {env.isProduction && (
           <>
