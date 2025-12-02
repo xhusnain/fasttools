@@ -3,8 +3,6 @@ import { GButton } from "@/components/globalcomponents/gbutton"
 import { GCard } from "@/components/globalcomponents/gcard"
 import { PremiumHeroBackground } from "@/components/premium-hero-background"
 import { GHeader } from "@/components/globalcomponents/gheader"
-
-import type { Metadata } from "next"
 import {
   Calculator,
   ArrowRight,
@@ -17,7 +15,6 @@ import {
   Image,
   Smile,
   Globe,
-
   Wrench,
   Music,
   QrCode,
@@ -33,13 +30,7 @@ import {
   Users,
   Star,
   TrendingUp,
-  Rocket,
   Award,
-
-  Clock,
-
-  BookOpen,
-  Youtube,
 } from "lucide-react"
 
 import { createMetadata } from "@/lib/metadata-base"
@@ -49,6 +40,7 @@ export const metadata = createMetadata({
   description:
     "FastTools is your ultimate productivity platform offering 1000+ free online tools. Access AI generators, calculators, converters, and SEO tools instantly. No registration required.",
   path: "/",
+  includeSchema: false,
 })
 
 const categories = [
@@ -716,59 +708,6 @@ const categories = [
   },
 ]
 
-// Category Section Component
-function CategorySection({ category }: { category: typeof categories[0] }) {
-  const IconComponent = category.icon
-
-  return (
-    <section className="mb-16">
-      {/* Category Header */}
-      <div className="flex items-center justify-between mb-8">
-        <div className="flex items-center gap-4">
-          <div className={`p-3.5 rounded-xl ${category.iconBg} border ${category.borderColor}`}>
-            <IconComponent className={`h-7 w-7 ${category.iconColor}`} />
-          </div>
-          <div>
-            <h2 className="text-2xl font-bold text-foreground">{category.name}</h2>
-            <p className="text-sm text-foreground/80 mt-0.5">{category.description}</p>
-          </div>
-        </div>
-      </div>
-
-      {/* Tools Grid */}
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5">
-        {category.tools.map((tool) => (
-          <GCard
-            key={tool.href}
-            title={tool.title}
-            description={tool.description}
-            href={tool.href}
-            icon={tool.icon}
-            badge={tool.badge}
-            badgeColor={tool.badgeColor}
-            iconBg={category.iconBg}
-            iconColor={category.iconColor}
-            borderColor={category.borderColor}
-            hoverBorder={category.hoverBorder}
-            glowColor={category.glowColor}
-            ctaText="Try Now"
-          />
-        ))}
-      </div>
-
-      {/* View All Button - Bottom Center */}
-      <div className="flex justify-center mt-8">
-        <Link href={category.href}>
-          <GButton size="lg" className="bg-primary hover:bg-primary/90 text-primary-foreground font-semibold shadow-lg gap-2 px-8">
-            View All
-            <ArrowRight className="h-5 w-5" />
-          </GButton>
-        </Link>
-      </div>
-    </section>
-  )
-}
-
 export default function Home() {
   const jsonLd = {
     "@context": "https://schema.org",
@@ -803,6 +742,12 @@ export default function Home() {
     datePublished: "2024-01-01",
     dateModified: "2025-01-15",
     inLanguage: "en-US",
+    isFamilyFriendly: "true",
+    copyrightYear: new Date().getFullYear().toString(),
+    copyrightHolder: {
+      "@type": "Organization",
+      name: "FastTools"
+    },
     isAccessibleForFree: true,
     audience: {
       "@type": "Audience",
@@ -969,99 +914,12 @@ export default function Home() {
     }
   }
 
-  const websiteSchema = {
-    "@context": "https://schema.org",
-    "@type": "WebSite",
-    name: "FastTools",
-    alternateName: ["fasttools", "fast tools"],
-    url: "https://www.fasttools.store",
-    description: "FastTools offers 1000+ free online tools including AI generators, converters, calculators, SEO tools, and productivity utilities. Fast, accurate, easy to use, no registration required.",
-    publisher: {
-      "@type": "Organization",
-      name: "FastTools",
-      url: "https://www.fasttools.store"
-    },
-    potentialAction: {
-      "@type": "SearchAction",
-      target: "https://www.fasttools.store/search?q={search_term_string}",
-      "query-input": "required name=search_term_string"
-    },
-    mainEntity: {
-      "@type": "ItemList",
-      name: "Free Online Tools Collection",
-      description: "Comprehensive collection of free online tools and utilities",
-      numberOfItems: 1000,
-      itemListElement: [
-        {
-          "@type": "ListItem",
-          position: 1,
-          name: "AI Tools",
-          description: "AI-powered content generation tools including meme generators, caption generators, and hashtag suggesters",
-          url: "https://www.fasttools.store/ai-tools"
-        },
-        {
-          "@type": "ListItem",
-          position: 2,
-          name: "Converter Tools",
-          description: "Comprehensive conversion utilities for currency, units, text, and file formats",
-          url: "https://www.fasttools.store/converters"
-        },
-        {
-          "@type": "ListItem",
-          position: 3,
-          name: "Calculator Tools",
-          description: "Financial, business, and general purpose calculators for all your calculation needs",
-          url: "https://www.fasttools.store/calculator"
-        },
-        {
-          "@type": "ListItem",
-          position: 4,
-          name: "SEO Tools",
-          description: "SEO optimization tools including meta tag generators, keyword density checkers, and content analyzers",
-          url: "https://www.fasttools.store/seo-tools"
-        },
-        {
-          "@type": "ListItem",
-          position: 5,
-          name: "Image Tools",
-          description: "Image processing and editing tools including croppers, converters, and OCR text extraction",
-          url: "https://www.fasttools.store/image-tools"
-        }
-      ]
-    },
-    breadcrumb: {
-      "@type": "BreadcrumbList",
-      itemListElement: [
-        {
-          "@type": "ListItem",
-          position: 1,
-          name: "Home",
-          item: "https://www.fasttools.store"
-        },
-        {
-          "@type": "ListItem",
-          position: 2,
-          name: "Tools Store",
-          item: "https://www.fasttools.store"
-        },
-        {
-          "@type": "ListItem",
-          position: 3,
-          name: "Free Online Tools Store - Digital Tools",
-          item: "https://www.fasttools.store"
-        }
-      ]
-    }
-  }
+
 
   return (
     <div className="bg-background">
       {/* JSON-LD Structured Data */}
-      <script
-        type="application/ld+json"
-        suppressHydrationWarning
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteSchema) }}
-      />
+
       <script
         type="application/ld+json"
         suppressHydrationWarning
