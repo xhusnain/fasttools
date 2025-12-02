@@ -278,15 +278,17 @@ export function ToolPageLayout({
                     </div>
                 </div>
             </div>
-            <AdSenseComplianceChecker
-                data={{
-                    ...toolContent,
-                    metaTitle: expectedMetadata?.title,
-                    metaDescription: expectedMetadata?.description,
-                    metaRobots: expectedMetadata?.robots || "index, follow",
-                    canonicalUrl: expectedMetadata?.canonical || `https://www.fasttools.store${header.title ? `/tool/${header.title.toLowerCase().replace(/\s+/g, '-')}` : ''}`
-                }}
-            />
+            {process.env.NODE_ENV === "development" && (
+                <AdSenseComplianceChecker
+                    data={{
+                        ...toolContent,
+                        metaTitle: expectedMetadata?.title,
+                        metaDescription: expectedMetadata?.description,
+                        metaRobots:  "index, follow",
+                        canonicalUrl:  `https://www.fasttools.store${header.title ? `/tool/${header.title.toLowerCase().replace(/\s+/g, '-')}` : ''}`
+                    }}
+                />
+            )}
         </div>
     )
 }
