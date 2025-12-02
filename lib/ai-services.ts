@@ -5,7 +5,7 @@ import {
     HashtagsRequest,
     LyricsRequest,
     PetNameRequest
-} from "./interfaces"
+} from "@/types/ai.types"
 
 /**
  * Service function for generating social media captions

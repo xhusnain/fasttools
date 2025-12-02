@@ -1,4 +1,3 @@
-// AI Service Interfaces
 export interface AIResponse {
     text: string
     success: boolean
@@ -10,7 +9,6 @@ export interface AIRequest {
     maxTokens?: number
     temperature?: number
 }
-
 
 export interface HashtagsRequest {
     text: string
@@ -40,3 +38,4 @@ export interface CaptionsRequest {
     description: string
     platform: string
 }
+
