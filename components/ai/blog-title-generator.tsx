@@ -8,6 +8,7 @@ import { GCard, GCardContent, GCardDescription, GCardHeader, GCardTitle } from "
 
 import { Copy, Check, Lightbulb, RefreshCw } from "lucide-react"
 import { LoadingSpinner } from "@/components/common/loading-spinner"
+import type { BlogTitleTemplates } from "@/types/image-tool-types/blog-title-generator.types"
 
 export function BlogTitleGenerator() {
   const [keyword, setKeyword] = useState("")
@@ -15,7 +16,7 @@ export function BlogTitleGenerator() {
   const [copied, setCopied] = useState<number | null>(null)
   const [isGenerating, setIsGenerating] = useState(false)
 
-  const templates = {
+  const templates: BlogTitleTemplates = {
     howTo: [
       "How to {keyword}: A Complete Guide",
       "How to {keyword} in 2025: Step-by-Step Tutorial",

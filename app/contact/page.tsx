@@ -8,19 +8,7 @@ import { GAccordion, GAccordionContent, GAccordionItem, GAccordionTrigger } from
 
 import { Mail, MessageSquare, Clock, Users, HelpCircle, Send, CheckCircle, ChevronDown } from "lucide-react"
 import { useState } from "react"
-interface FormData {
-  name: string
-  email: string
-  subject: string
-  message: string
-}
-
-interface FormErrors {
-  name?: string
-  email?: string
-  subject?: string
-  message?: string
-}
+import type { ContactFormData, ContactFormErrors } from "@/types"
 
 const faqItems = [
   {
@@ -42,13 +30,13 @@ const faqItems = [
 ]
 
 export default function ContactPage() {
-  const [formData, setFormData] = useState<FormData>({
+  const [formData, setFormData] = useState<ContactFormData>({
     name: '',
     email: '',
     subject: '',
     message: ''
   })
-  const [errors, setErrors] = useState<FormErrors>({})
+  const [errors, setErrors] = useState<ContactFormErrors>({})
   const [isSubmitting, setIsSubmitting] = useState(false)
   const [isSubmitted, setIsSubmitted] = useState(false)
 
@@ -59,7 +47,7 @@ export default function ContactPage() {
       [name]: value
     }))
     // Clear error when user starts typing
-    if (errors[name as keyof FormErrors]) {
+    if (errors[name as keyof ContactFormErrors]) {
       setErrors(prev => ({
         ...prev,
         [name]: ''
@@ -68,7 +56,7 @@ export default function ContactPage() {
   }
 
   const validateForm = () => {
-    const newErrors: FormErrors = {}
+    const newErrors: ContactFormErrors = {}
 
     if (!formData.name.trim()) {
       newErrors.name = 'Name is required'

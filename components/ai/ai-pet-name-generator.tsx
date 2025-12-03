@@ -11,22 +11,7 @@ import { GSelect, GSelectContent, GSelectItem, GSelectTrigger, GSelectValue } fr
 import { Copy, Heart, Sparkles, Download } from "lucide-react"
 import { LoadingSpinner } from "@/components/common/loading-spinner"
 
-interface PetName {
-  name: string
-  meaning: string
-  origin: string
-}
-
-interface CategorizedNames {
-  traditional: PetName[]
-  modern: PetName[]
-  unique: PetName[]
-  nature: PetName[]
-  cultural: PetName[]
-  celebrity: PetName[]
-  food: PetName[]
-  mythological: PetName[]
-}
+import type { PetName, CategorizedNames } from "@/types/image-tool-types/ai-pet-name-generator.types"
 
 export function AiPetNameGenerator() {
   const [petType, setPetType] = useState("dog")
@@ -99,7 +84,7 @@ export function AiPetNameGenerator() {
   }
 
   const copyName = (name: string) => {
-    navigator.clipboard.writeText(name)
+    void navigator.clipboard.writeText(name)
     setCopiedName(name)
     setTimeout(() => setCopiedName(""), 2000)
   }
@@ -110,17 +95,17 @@ export function AiPetNameGenerator() {
     let content = "🐾 AI-Generated Pet Names\n"
     content += "=".repeat(50) + "\n\n"
 
-    Object.entries(categorizedNames).forEach(([category, names]) => {
-      if (names.length > 0) {
-        content += `\n${category.toUpperCase()} NAMES:\n`
-        content += "-".repeat(50) + "\n"
-        names.forEach((item) => {
-          content += `• ${item.name}\n`
-          content += `  Meaning: ${item.meaning}\n`
-          content += `  Origin: ${item.origin}\n\n`
-        })
-      }
-    })
+      ; (Object.entries(categorizedNames) as [string, PetName[]][]).forEach(([category, names]) => {
+        if (names.length > 0) {
+          content += `\n${category.toUpperCase()} NAMES:\n`
+          content += "-".repeat(50) + "\n"
+          names.forEach((item) => {
+            content += `• ${item.name}\n`
+            content += `  Meaning: ${item.meaning}\n`
+            content += `  Origin: ${item.origin}\n\n`
+          })
+        }
+      })
 
     const blob = new Blob([content], { type: "text/plain" })
     const url = URL.createObjectURL(blob)
@@ -355,7 +340,7 @@ export function AiPetNameGenerator() {
             </GButton>
           </div>
 
-          {Object.entries(categorizedNames).map(([category, names]) => {
+          {(Object.entries(categorizedNames) as [string, PetName[]][]).map(([category, names]) => {
             if (names.length === 0) return null
 
             const categoryStyles: Record<string, { border: string; bg: string; text: string }> = {

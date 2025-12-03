@@ -1,4 +1,5 @@
 import { createMetadata } from "@/lib/metadata-base"
+import type { FAQItem } from "@/types"
 import { Breadcrumbs } from "@/components/common/breadcrumbs"
 import { GHeader } from "@/ui/gheader"
 
@@ -16,15 +17,14 @@ import {
 } from "lucide-react"
 
 export const metadata = createMetadata({
-  title: "FAQ",
-  description: "Get answers to frequently asked questions about FastTools — learn about our tools, privacy, features, and more.",
-  path: "/faq",
-  includeSchema: false
+    title: "FAQ",
+    description: "Get answers to frequently asked questions about FastTools — learn about our tools, privacy, features, and more.",
+    path: "/faq",
+    includeSchema: false
 })
 
-type QA = { question: string; answer: string }
 
-const faqs: QA[] = [
+const faqs: FAQItem[] = [
     {
         question: "What is FastTools and what does it offer?",
         answer:

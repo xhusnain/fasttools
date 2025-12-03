@@ -16,23 +16,7 @@ import { LoadingSpinner } from "@/components/common/loading-spinner"
 import QRCode from "qrcode"
 import JSZip from "jszip"
 
-type QRType = "url" | "wifi" | "vcard" | "email" | "sms" | "whatsapp" | "phone" | "location" | "text" | "bulk"
-type ErrorCorrectionLevel = "L" | "M" | "Q" | "H"
-type DownloadFormat = "png" | "svg" | "jpg"
-
-interface QROptions {
-  width: number
-  margin: number
-  errorCorrectionLevel: ErrorCorrectionLevel
-  color: {
-    dark: string
-    light: string
-  }
-  type?: string
-  rendererOpts?: {
-    quality?: number
-  }
-}
+import type { QRType, ErrorCorrectionLevel, DownloadFormat, QROptions } from "@/types/image-tool-types/ai-qr-generator.types"
 
 export function AiQrGenerator() {
   const [qrType, setQrType] = useState<QRType>("url")
