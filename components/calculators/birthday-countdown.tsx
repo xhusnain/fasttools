@@ -8,15 +8,11 @@ import { GCard, GCardContent, GCardDescription, GCardHeader, GCardTitle } from "
 
 import { Cake, Copy, Check } from "lucide-react"
 
+import { BirthdayCountdownResult } from "@/types/calculator-types/birthday-countdown.types"
+
 export function BirthdayCountdown() {
   const [birthDate, setBirthDate] = useState("")
-  const [result, setResult] = useState<{
-    days: number
-    hours: number
-    minutes: number
-    seconds: number
-    nextBirthday: string
-  } | null>(null)
+  const [result, setResult] = useState<BirthdayCountdownResult | null>(null)
   const [copied, setCopied] = useState(false)
 
   useEffect(() => {

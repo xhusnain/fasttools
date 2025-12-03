@@ -12,14 +12,7 @@ import {
   RotateCcw
 } from "lucide-react"
 
-interface ScientificCalculatorProps {
-  history: string[]
-  setHistory: (history: string[] | ((prev: string[]) => string[])) => void
-  clearHistory: () => void
-  copyResult: () => void
-  currentDisplay: string
-  setCurrentDisplay: (display: string) => void
-}
+
 
 export function ScientificCalculator({ history, setHistory, clearHistory, copyResult, currentDisplay, setCurrentDisplay }: ScientificCalculatorProps) {
   const display = currentDisplay

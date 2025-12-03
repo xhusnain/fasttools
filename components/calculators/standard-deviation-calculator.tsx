@@ -12,36 +12,7 @@ import { GTabs, GTabsContent, GTabsList, GTabsTrigger } from "@/ui/gtabs"
 import { Calculator, BarChart3, TrendingUp, AlertCircle, Copy, RotateCcw, Download, FileText, Brain, Target, Check, Zap, Sparkles, Info, Settings } from "lucide-react"
 import { LoadingSpinner } from "@/components/common/loading-spinner"
 
-interface CalculationResult {
-  mean: number
-  median: number
-  mode: number[]
-  range: number
-  variance: number
-  standardDeviation: number
-  sampleStandardDeviation: number
-  coefficientOfVariation: number
-  skewness: number
-  kurtosis: number
-  quartiles: {
-    q1: number
-    q2: number
-    q3: number
-    iqr: number
-  }
-  outliers: number[]
-  confidenceInterval: {
-    lower: number
-    upper: number
-    marginOfError: number
-  }
-  zScores: number[]
-  percentiles: number[]
-}
-
-interface StandardDeviationCalculatorProps {
-  onResultChange?: (result: CalculationResult | null) => void
-}
+import { CalculationResult, StandardDeviationCalculatorProps } from "@/types/calculator-types/standard-deviation-calculator.types"
 
 export function StandardDeviationCalculator({ onResultChange }: StandardDeviationCalculatorProps = {}) {
   const [inputData, setInputData] = useState("")

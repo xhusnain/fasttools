@@ -8,25 +8,7 @@ import { GLabel } from "@/ui/glabel"
 import { Calendar, Copy, Share2, Check, Clock, Heart, Gift, Target, Settings, Calculator, Sparkles } from "lucide-react"
 
 
-interface AgeResult {
-  years: number
-  months: number
-  days: number
-  totalDays: number
-  nextBirthday: string
-  // Enhanced features
-  totalHours: number
-  totalMinutes: number
-  totalSeconds: number
-  decimalYears: number
-  weeks: number
-  daysUntilNextBirthday: number
-  ageLastBirthday: string
-  ageNextBirthday: string
-  ageNearestBirthday: string
-  ageOnToday: string
-  shareableLink: string
-}
+import { AgeResult } from "@/types/calculator-types/age-calculator.types"
 
 export function AgeCalculator() {
   const [birthDate, setBirthDate] = useState("")

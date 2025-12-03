@@ -9,23 +9,7 @@ import { GCheckbox } from "@/ui/gcheckbox"
 import { Calendar, Copy, Check, Clock, Briefcase, Settings, Calculator } from "lucide-react"
 import { LoadingSpinner } from "@/components/common/loading-spinner"
 
-interface DateDifferenceResult {
-  years: number
-  months: number
-  days: number
-  totalDays: number
-  businessDays: number
-  totalWeeks: number
-  totalHours: number
-  totalMinutes: number
-  totalSeconds: number
-}
-
-interface DateFormat {
-  value: string
-  label: string
-  example: string
-}
+import { DateDifferenceResult, DateFormat } from "@/types/calculator-types/date-difference-calculator.types"
 
 export function DateDifferenceCalculator() {
   const [startDate, setStartDate] = useState("")

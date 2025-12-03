@@ -9,14 +9,12 @@ import { GCard, GCardContent, GCardDescription, GCardHeader, GCardTitle } from "
 import { Calendar, Copy, Check } from "lucide-react"
 import { LoadingSpinner } from "@/components/common/loading-spinner"
 
+import { FutureAgeResult } from "@/types/calculator-types/future-age-predictor.types"
+
 export function FutureAgePredictor() {
   const [birthDate, setBirthDate] = useState("")
   const [targetYear, setTargetYear] = useState("")
-  const [result, setResult] = useState<{
-    age: number
-    year: number
-    message: string
-  } | null>(null)
+  const [result, setResult] = useState<FutureAgeResult | null>(null)
   const [isCalculating, setIsCalculating] = useState(false)
   const [copied, setCopied] = useState(false)
   const [errors, setErrors] = useState<{

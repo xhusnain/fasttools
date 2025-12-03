@@ -10,14 +10,12 @@ import { GSelect, GSelectContent, GSelectItem, GSelectTrigger, GSelectValue } fr
 import { Heart, Copy, Check, Sparkles, Star, Gift, Flower2, Palette } from "lucide-react"
 import { LoadingSpinner } from "@/components/common/loading-spinner"
 
+import { LoveResult } from "@/types/calculator-types/love-calculator.types"
+
 export function LoveCalculator() {
   const [name1, setName1] = useState("")
   const [name2, setName2] = useState("")
-  const [result, setResult] = useState<{
-    percentage: number
-    message: string
-    emoji: string
-  } | null>(null)
+  const [result, setResult] = useState<LoveResult | null>(null)
   const [isCalculating, setIsCalculating] = useState(false)
   const [copied, setCopied] = useState(false)
   const [theme, setTheme] = useState("pink")

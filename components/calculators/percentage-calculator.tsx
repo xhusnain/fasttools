@@ -9,18 +9,7 @@ import { GInput } from "@/ui/ginput"
 import { Percent, Copy, Check, Calculator, TrendingUp, TrendingDown, Target, DollarSign, BarChart3, PieChart, ArrowUp, ArrowDown, Minus, Plus } from "lucide-react"
 import { LoadingSpinner } from "@/components/common/loading-spinner"
 
-type CalculationType = "basic" | "increase" | "decrease" | "difference" | "markup" | "margin" | "compound"
-
-interface CalculationResult {
-  type: string
-  result: number
-  originalValue: number
-  percentage: number
-  newValue?: number
-  difference?: number
-  formula: string
-  explanation: string
-}
+import { CalculationType, CalculationResult } from "@/types/calculator-types/percentage-calculator.types"
 
 export function PercentageCalculator() {
   const [calculationType, setCalculationType] = useState<CalculationType>("basic")

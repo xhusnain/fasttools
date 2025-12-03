@@ -9,23 +9,7 @@ import { GInput } from "@/ui/ginput"
 import { Clock, Copy, Check, Calculator, Calendar, Globe, Timer, Zap, Target, TrendingUp, BarChart3, PieChart, ArrowUp, ArrowDown, Minus, Plus, Settings, Sparkles } from "lucide-react"
 import { LoadingSpinner } from "@/components/common/loading-spinner"
 
-type CalculationType = "time-duration" | "time-addition" | "time-subtraction" | "business-hours" | "timezone-conversion" | "work-days" | "overtime-calculator"
-
-interface TimeDurationResult {
-  hours: number
-  minutes: number
-  seconds: number
-  totalMinutes: number
-  totalSeconds: number
-  totalHours: number
-  businessDays: number
-  workDays: number
-  overtimeHours: number
-  regularHours: number
-  timezoneOffset: number
-  formula: string
-  explanation: string
-}
+import { CalculationType, TimeDurationResult } from "@/types/calculator-types/time-duration-calculator.types"
 
 export function TimeDurationCalculator() {
   const [calculationType, setCalculationType] = useState<CalculationType>("time-duration")
@@ -374,8 +358,8 @@ export function TimeDurationCalculator() {
                 variant={calculationType === type ? "default" : "outline"}
                 onClick={() => setCalculationType(type as CalculationType)}
                 className={`h-9 text-xs font-medium transition-all duration-300 ${calculationType === type
-                    ? "bg-gradient-to-r from-primary to-primary/90 text-white shadow-lg border-border"
-                    : "hover:bg-secondary border-border bg-card text-muted-foreground hover:text-heading-accent"
+                  ? "bg-gradient-to-r from-primary to-primary/90 text-white shadow-lg border-border"
+                  : "hover:bg-secondary border-border bg-card text-muted-foreground hover:text-heading-accent"
                   }`}
               >
                 <Icon className="h-3 w-3 mr-1" />

@@ -9,23 +9,12 @@ import { GCard, GCardContent, GCardDescription, GCardHeader, GCardTitle } from "
 import { Heart, Copy, Check } from "lucide-react"
 
 
+import { AnniversaryResult } from "@/types/calculator-types/anniversary-calculator.types"
+
 export function AnniversaryCalculator() {
   const [startDate, setStartDate] = useState("")
   const [relationshipStartDate, setRelationshipStartDate] = useState<Date | null>(null)
-  const [result, setResult] = useState<{
-    years: number
-    months: number
-    days: number
-    hours: number
-    minutes: number
-    seconds: number
-    totalDays: number
-    totalHours: number
-    totalMinutes: number
-    totalSeconds: number
-    nextAnniversary: string
-    daysUntilNext: number
-  } | null>(null)
+  const [result, setResult] = useState<AnniversaryResult | null>(null)
   const [isCalculating, setIsCalculating] = useState(false)
   const [copied, setCopied] = useState(false)
   const [isLiveTimer, setIsLiveTimer] = useState(false)

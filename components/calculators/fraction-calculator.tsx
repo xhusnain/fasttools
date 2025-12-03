@@ -22,22 +22,7 @@ import {
   Zap
 } from "lucide-react"
 
-interface Fraction {
-  numerator: number
-  denominator: number
-}
-
-interface FractionResult {
-  operation: string
-  fraction1: Fraction
-  fraction2: Fraction
-  result: Fraction
-  decimal: number
-  percentage: number
-  simplified: Fraction
-  mixedNumber: string
-  error?: string
-}
+import { Fraction, FractionResult } from "@/types/calculator-types/fraction-calculator.types"
 
 export default function FractionCalculator() {
   const [operation, setOperation] = useState("add")

@@ -29,28 +29,7 @@ import {
   Download
 } from "lucide-react"
 
-interface PaceResult {
-  pace: string
-  pacePerMile: string
-  pacePerKm: string
-  time: string
-  distance: number
-  speed: number
-  heartRateZone: string
-  trainingZone: string
-  caloriesBurned: number
-  vo2Max: number
-  racePrediction: {
-    [key: string]: string
-  }
-}
-
-interface MultipointSegment {
-  distance: number
-  time: string
-  pace: string
-  split: string
-}
+import { PaceResult, MultipointSegment } from "@/types/calculator-types/pace-calculator.types"
 
 export default function PaceCalculator() {
   const [calculationMode, setCalculationMode] = useState<"basic" | "multipoint" | "converter" | "finish">("basic")
