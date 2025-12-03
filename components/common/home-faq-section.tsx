@@ -86,7 +86,7 @@ export function HomeFAQSection() {
                             </div>
                             <div className="relative z-10">
                                 <h3 className="text-lg sm:text-xl font-bold text-foreground mb-3 pr-4">{faq.question}</h3>
-                                <p className="text-sm sm:text-base text-muted-foreground leading-relaxed">{faq.answer}</p>
+                                <p className="text-sm sm:text-base text-foreground leading-relaxed">{faq.answer}</p>
                             </div>
                         </div>
                     ))}

@@ -44,6 +44,7 @@ export function HomeCategories({ categories }: HomeCategoriesProps) {
                         description="Discover professional-grade tools designed to supercharge your productivity and creativity"
                         titleSize="medium"
                         descriptionSize="small"
+                        as="h2"
                     />
                 </div>
 
@@ -58,7 +59,7 @@ export function HomeCategories({ categories }: HomeCategoriesProps) {
                                 </div>
                                 <div>
                                     <h3 className="text-xl sm:text-2xl font-bold text-foreground">{category.name}</h3>
-                                    <p className="text-xs sm:text-sm text-foreground/80 mt-0.5">{category.description}</p>
+                                    <p className="text-xs sm:text-sm text-foreground mt-0.5">{category.description}</p>
                                 </div>
                             </div>
                             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-5 px-2">
@@ -76,10 +77,10 @@ export function HomeCategories({ categories }: HomeCategoriesProps) {
                                                     </div>
                                                 </div>
                                                 <div className="space-y-2 sm:space-y-2.5">
-                                                    <h3 className="text-base sm:text-lg font-bold text-foreground group-hover:text-primary transition-colors leading-tight">
+                                                    <h4 className="text-base sm:text-lg font-bold text-foreground group-hover:text-primary transition-colors leading-tight">
                                                         {tool.title}
-                                                    </h3>
-                                                    <p className="text-xs sm:text-sm text-foreground/80 leading-relaxed">
+                                                    </h4>
+                                                    <p className="text-xs sm:text-sm text-foreground leading-relaxed">
                                                         {tool.description}
                                                     </p>
                                                 </div>
