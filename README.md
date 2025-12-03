@@ -18,22 +18,22 @@ FastTools offers a wide range of free online tools to help with productivity, co
 ### Prerequisites
 
 - Node.js 18+ 
-- pnpm (or npm/yarn)
+- Bun
 
 ### Installation
 
 ```bash
 # Install dependencies
-pnpm install
+bun install
 
 # Run development server
-pnpm dev
+bun run dev
 
 # Build for production
-pnpm build
+bun run build
 
 # Start production server
-pnpm start
+bun run start
 ```
 
 ## Project Structure

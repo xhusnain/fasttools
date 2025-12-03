@@ -7,23 +7,23 @@ This directory contains Lighthouse audit reports for the project.
 ### Audit a Single Page
 ```bash
 # Audit the homepage
-pnpm audit:page /
+bun run audit:page /
 
 # Audit another page
-pnpm audit:page /about
+bun run audit:page /about
 ```
 
 ### Audit All Pages
 
 ```bash
 # Mobile audit (default)
-pnpm audit:all
+bun run audit:all
 
 # or explicitly
-pnpm audit:mobile
+bun run audit:mobile
 
 # Desktop audit
-pnpm audit:desktop
+bun run audit:desktop
 ```
 
 ## Report Files
@@ -51,7 +51,7 @@ Each page is scored in 5 categories (0-100):
 
 ## Fixing Issues
 
-1. Run `pnpm audit:all` to get a comprehensive overview
+1. Run `bun run audit:all` to get a comprehensive overview
 2. Open the `summary-*.html` file to see all pages at a glance
 3. Click on individual page reports to see specific issues
 4. Fix the issues in your code
