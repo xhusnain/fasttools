@@ -7,12 +7,12 @@
     "dev": "next dev",
     "lint": "next lint",
     "start": "next start",
-    "audit:page": "node scripts/lighthouse-audit.js --page",
-    "audit:all": "node scripts/lighthouse-audit.js --all",
-    "audit:desktop": "node scripts/lighthouse-audit.js --all --desktop",
-    "audit:mobile": "node scripts/lighthouse-audit.js --all",
-    "analyze-reports": "node scripts/analyze-lighthouse-reports.js",
-    "analyze:headings": "node scripts/analyze-headings.js"
+    "audit:page": "node scripts/lighthouse-scripts/lighthouse-audit.js --page",
+    "audit:all": "node scripts/lighthouse-scripts/lighthouse-audit.js --all",
+    "audit:desktop": "node scripts/lighthouse-scripts/lighthouse-audit.js --all --desktop",
+    "audit:mobile": "node scripts/lighthouse-scripts/lighthouse-audit.js --all",
+    "analyze-reports": "node scripts/lighthouse-scripts/analyze-lighthouse-reports.js",
+    "analyze:headings": "node scripts/lighthouse-scripts/analyze-headings.js"
   },
   "dependencies": {
     "@hookform/resolvers": "^3.10.0",

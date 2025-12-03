@@ -3,8 +3,8 @@
  * Lighthouse Report Analyzer
  * Analyzes Lighthouse JSON reports and displays key metrics and issues
  * 
- * Usage: node scripts/analyze-lighthouse-reports.js <report1.json> [report2.json] ...
- * Example: node scripts/analyze-lighthouse-reports.js lighthouse-reports/page-mobile.json lighthouse-reports/page-desktop.json
+ * Usage: node scripts/lighthouse-scripts/analyze-lighthouse-reports.js <report1.json> [report2.json] ...
+ * Example: node scripts/lighthouse-scripts/analyze-lighthouse-reports.js lighthouse-reports/page-mobile.json lighthouse-reports/page-desktop.json
  */
 
 const fs = require('fs');
@@ -70,8 +70,8 @@ function formatReport(filePath) {
 const args = process.argv.slice(2);
 
 if (args.length === 0) {
-    console.error('❌ Usage: node scripts/analyze-lighthouse-reports.js <report1.json> [report2.json] ...');
-    console.error('   Example: node scripts/analyze-lighthouse-reports.js lighthouse-reports/page-mobile.json');
+    console.error('❌ Usage: node scripts/lighthouse-scripts/analyze-lighthouse-reports.js <report1.json> [report2.json] ...');
+    console.error('   Example: node scripts/lighthouse-scripts/analyze-lighthouse-reports.js lighthouse-reports/page-mobile.json');
     process.exit(1);
 }
 

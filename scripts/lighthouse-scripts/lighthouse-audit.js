@@ -458,7 +458,7 @@ async function main() {
 
   } else if (command === '--help' || command === '-h') {
     console.log(`
-Usage: node lighthouse-audit.js [command] [options]
+Usage: node scripts/lighthouse-scripts/lighthouse-audit.js [command] [options]
 
 Commands:
   --all, -a              Audit all pages in the project (default)
@@ -473,10 +473,10 @@ Environment Variables:
   LIGHTHOUSE_FORM_FACTOR Form factor: mobile or desktop (default: mobile)
 
 Examples:
-  node lighthouse-audit.js --all
-  node lighthouse-audit.js --page /about
-  node lighthouse-audit.js --page / --desktop
-  node lighthouse-audit.js --all --desktop
+  node scripts/lighthouse-scripts/lighthouse-audit.js --all
+  node scripts/lighthouse-scripts/lighthouse-audit.js --page /about
+  node scripts/lighthouse-scripts/lighthouse-audit.js --page / --desktop
+  node scripts/lighthouse-scripts/lighthouse-audit.js --all --desktop
     `);
   } else {
     console.error(`❌ Unknown command: ${command}`);
