@@ -10,10 +10,7 @@ export interface RelatedTool {
     href: string
 }
 
-export interface BreadcrumbItem {
-    label: string
-    href: string
-}
+import { BreadcrumbItem } from "@/types/common-types/breadcrumbs.types"
 
 export interface ToolHeaderConfig {
     title: string

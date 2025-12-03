@@ -3,11 +3,7 @@
 import { useState } from "react"
 import { Copy, Check } from "lucide-react"
 
-interface CopyButtonProps {
-  text: string
-  id: string
-  className?: string
-}
+import { CopyButtonProps } from "@/types/common-types/copy-button.types"
 
 export function CopyButton({ text, id, className = "" }: CopyButtonProps) {
   const [copied, setCopied] = useState(false)
@@ -24,7 +20,7 @@ export function CopyButton({ text, id, className = "" }: CopyButtonProps) {
   }
 
   return (
-    <button 
+    <button
       onClick={copyToClipboard}
       onMouseEnter={() => setHovered(true)}
       onMouseLeave={() => setHovered(false)}

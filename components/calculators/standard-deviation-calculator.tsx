@@ -12,15 +12,15 @@ import { GTabs, GTabsContent, GTabsList, GTabsTrigger } from "@/ui/gtabs"
 import { Calculator, BarChart3, TrendingUp, AlertCircle, Copy, RotateCcw, Download, FileText, Brain, Target, Check, Zap, Sparkles, Info, Settings } from "lucide-react"
 import { LoadingSpinner } from "@/components/common/loading-spinner"
 
-import { CalculationResult, StandardDeviationCalculatorProps } from "@/types/calculator-types/standard-deviation-calculator.types"
+import { StandardDeviationResult, StandardDeviationCalculatorProps } from "@/types/calculator-types/standard-deviation-calculator.types"
 
 export function StandardDeviationCalculator({ onResultChange }: StandardDeviationCalculatorProps = {}) {
   const [inputData, setInputData] = useState("")
   const [dataPoints, setDataPoints] = useState<number[]>([])
   const [calculationMode, setCalculationMode] = useState<"population" | "sample">("population")
   const [confidenceLevel, setConfidenceLevel] = useState(95)
-  const [result, setResult] = useState<CalculationResult | null>(null)
-  const [history, setHistory] = useState<CalculationResult[]>([])
+  const [result, setResult] = useState<StandardDeviationResult | null>(null)
+  const [history, setHistory] = useState<StandardDeviationResult[]>([])
   const [isCalculating, setIsCalculating] = useState(false)
   const [activeTab, setActiveTab] = useState("basic")
 
@@ -38,7 +38,7 @@ export function StandardDeviationCalculator({ onResultChange }: StandardDeviatio
   }, [inputData])
 
   // Calculate comprehensive statistics
-  const calculateStatistics = (data: number[], mode: "population" | "sample"): CalculationResult => {
+  const calculateStatistics = (data: number[], mode: "population" | "sample"): StandardDeviationResult => {
     if (data.length === 0) {
       throw new Error("No valid data points provided")
     }

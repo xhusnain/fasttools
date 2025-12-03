@@ -1,4 +1,4 @@
-export type CalculationType = "time-duration" | "time-addition" | "time-subtraction" | "business-hours" | "timezone-conversion" | "work-days" | "overtime-calculator"
+export type TimeDurationCalculationType = "time-duration" | "time-addition" | "time-subtraction" | "business-hours" | "timezone-conversion" | "work-days" | "overtime-calculator"
 
 export interface TimeDurationResult {
     hours: number

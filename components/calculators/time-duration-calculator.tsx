@@ -9,10 +9,10 @@ import { GInput } from "@/ui/ginput"
 import { Clock, Copy, Check, Calculator, Calendar, Globe, Timer, Zap, Target, TrendingUp, BarChart3, PieChart, ArrowUp, ArrowDown, Minus, Plus, Settings, Sparkles } from "lucide-react"
 import { LoadingSpinner } from "@/components/common/loading-spinner"
 
-import { CalculationType, TimeDurationResult } from "@/types/calculator-types/time-duration-calculator.types"
+import { TimeDurationCalculationType, TimeDurationResult } from "@/types/calculator-types/time-duration-calculator.types"
 
 export function TimeDurationCalculator() {
-  const [calculationType, setCalculationType] = useState<CalculationType>("time-duration")
+  const [calculationType, setCalculationType] = useState<TimeDurationCalculationType>("time-duration")
   const [startTime, setStartTime] = useState("")
   const [endTime, setEndTime] = useState("")
   const [startDate, setStartDate] = useState("")
@@ -356,7 +356,7 @@ export function TimeDurationCalculator() {
               <GButton
                 key={type}
                 variant={calculationType === type ? "default" : "outline"}
-                onClick={() => setCalculationType(type as CalculationType)}
+                onClick={() => setCalculationType(type as TimeDurationCalculationType)}
                 className={`h-9 text-xs font-medium transition-all duration-300 ${calculationType === type
                   ? "bg-gradient-to-r from-primary to-primary/90 text-white shadow-lg border-border"
                   : "hover:bg-secondary border-border bg-card text-muted-foreground hover:text-heading-accent"

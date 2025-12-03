@@ -1,4 +1,4 @@
-export interface CalculationResult {
+export interface StandardDeviationResult {
     mean: number
     median: number
     mode: number[]
@@ -26,5 +26,5 @@ export interface CalculationResult {
 }
 
 export interface StandardDeviationCalculatorProps {
-    onResultChange?: (result: CalculationResult | null) => void
+    onResultChange?: (result: StandardDeviationResult | null) => void
 }

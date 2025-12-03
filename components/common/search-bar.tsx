@@ -8,14 +8,7 @@ import Link from "next/link"
 import Fuse from "fuse.js"
 import { searchItems, type SearchItem } from "@/lib/search-data"
 
-type SearchBarProps = {
-  className?: string
-  inputClassName?: string
-  autoFocus?: boolean
-  placeholder?: string
-  onBlur?: () => void
-  variant?: "default" | "pill"
-}
+import { SearchBarProps } from "@/types/common-types/search-bar.types"
 
 // Optimized Fuse.js configuration
 const fuseOptions = {
@@ -32,13 +25,13 @@ const fuseOptions = {
   ]
 }
 
-export function SearchBar({ 
-  className, 
-  inputClassName, 
-  autoFocus = false, 
-  placeholder = "Search tools...", 
-  onBlur, 
-  variant = "default" 
+export function SearchBar({
+  className,
+  inputClassName,
+  autoFocus = false,
+  placeholder = "Search tools...",
+  onBlur,
+  variant = "default"
 }: SearchBarProps) {
   const [query, setQuery] = useState("")
   const [filteredSuggestions, setFilteredSuggestions] = useState<SearchItem[]>([])
@@ -93,12 +86,12 @@ export function SearchBar({
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
       const target = event.target as Node
-      
+
       // Don't close if clicking inside the search container (input or suggestions)
       if (searchRef.current && searchRef.current.contains(target)) {
         return
       }
-      
+
       // Close suggestions if clicking outside
       setShowSuggestions(false)
     }
@@ -177,7 +170,7 @@ export function SearchBar({
       </form>
 
       {showSuggestions && filteredSuggestions.length > 0 && (
-        <div 
+        <div
           ref={suggestionsRef}
           className="absolute top-full mt-2 w-full bg-card border border-border rounded-lg shadow-lg overflow-hidden z-50 animate-fade-in max-h-[400px] overflow-y-auto"
         >

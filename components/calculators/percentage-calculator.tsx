@@ -9,14 +9,14 @@ import { GInput } from "@/ui/ginput"
 import { Percent, Copy, Check, Calculator, TrendingUp, TrendingDown, Target, DollarSign, BarChart3, PieChart, ArrowUp, ArrowDown, Minus, Plus } from "lucide-react"
 import { LoadingSpinner } from "@/components/common/loading-spinner"
 
-import { CalculationType, CalculationResult } from "@/types/calculator-types/percentage-calculator.types"
+import { PercentageCalculationType, PercentageCalculationResult } from "@/types/calculator-types/percentage-calculator.types"
 
 export function PercentageCalculator() {
-  const [calculationType, setCalculationType] = useState<CalculationType>("basic")
+  const [calculationType, setCalculationType] = useState<PercentageCalculationType>("basic")
   const [value1, setValue1] = useState("")
   const [value2, setValue2] = useState("")
   const [percentage, setPercentage] = useState("")
-  const [result, setResult] = useState<CalculationResult | null>(null)
+  const [result, setResult] = useState<PercentageCalculationResult | null>(null)
   const [copied, setCopied] = useState(false)
   const [isCalculating, setIsCalculating] = useState(false)
 
@@ -24,7 +24,7 @@ export function PercentageCalculator() {
     setIsCalculating(true)
 
     setTimeout(() => {
-      let calculationResult: CalculationResult
+      let calculationResult: PercentageCalculationResult
 
       switch (calculationType) {
         case "basic":
@@ -260,7 +260,7 @@ export function PercentageCalculator() {
               <GButton
                 key={type}
                 variant={calculationType === type ? "default" : "outline"}
-                onClick={() => setCalculationType(type as CalculationType)}
+                onClick={() => setCalculationType(type as PercentageCalculationType)}
                 className={`h-10 text-xs sm:text-sm font-medium transition-all duration-300 ${calculationType === type
                   ? "bg-gradient-to-r from-primary to-primary/90 text-white shadow-lg border-primary"
                   : "hover:bg-secondary border-border bg-card text-muted-foreground hover:text-foreground"

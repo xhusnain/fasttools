@@ -21,17 +21,7 @@ const bannerVariants = cva(
     }
 )
 
-export interface GBannerProps
-    extends React.HTMLAttributes<HTMLDivElement>,
-    VariantProps<typeof bannerVariants> {
-    title: string
-    description?: string
-    action?: React.ReactNode
-    animated?: boolean
-    animationDirection?: "ltr" | "rtl"
-    onClose?: () => void
-    showCloseButton?: boolean
-}
+import { GBannerProps } from "@/types/common-types/g-banner.types"
 
 export function GBanner({
     className,

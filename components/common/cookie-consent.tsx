@@ -5,12 +5,7 @@ import { GButton } from "@/ui/gbutton"
 
 import Link from "next/link"
 
-interface CookiePreferences {
-  essential: boolean
-  analytics: boolean
-  advertising: boolean
-  functional: boolean
-}
+import { CookiePreferences } from "@/types/common-types/cookie-consent.types"
 
 export function CookieConsent() {
   const [showConsent, setShowConsent] = useState(false)

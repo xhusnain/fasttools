@@ -1,6 +1,6 @@
-export type CalculationType = "basic" | "increase" | "decrease" | "difference" | "markup" | "margin" | "compound"
+export type PercentageCalculationType = "basic" | "increase" | "decrease" | "difference" | "markup" | "margin" | "compound"
 
-export interface CalculationResult {
+export interface PercentageCalculationResult {
     type: string
     result: number
     originalValue: number

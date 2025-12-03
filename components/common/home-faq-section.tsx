@@ -1,11 +1,7 @@
 import { GHeader } from "@/ui/gheader"
 
 
-interface FAQ {
-    number: string
-    question: string
-    answer: string
-}
+import { FAQ } from "@/types/common-types/home-faq-section.types"
 
 const faqs: FAQ[] = [
     {

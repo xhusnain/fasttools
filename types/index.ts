@@ -4,7 +4,7 @@ export * from "./image-processing.types";
 export * from "./ai.types";
 export * from "./tool-page-layout.types";
 export * from "./contact.types";
-export * from "./cookie-preferences.types";
+
 export * from "./image-tool-types/ai-pet-name-generator.types";
 export * from "./image-tool-types/ai-qr-generator.types";
 export * from "./image-tool-types/blog-title-generator.types";
@@ -25,4 +25,14 @@ export * from "./calculator-types/anniversary-calculator.types";
 export * from "./calculator-types/birthday-countdown.types";
 export * from "./calculator-types/future-age-predictor.types";
 export * from "./calculator-types/love-calculator.types";
+
+// Common Types
+export * from "./common-types/breadcrumbs.types";
+export * from "./common-types/cookie-consent.types";
+export * from "./common-types/copy-button.types";
+export * from "./common-types/g-banner.types";
+export * from "./common-types/home-categories.types";
+export * from "./common-types/home-faq-section.types";
+export * from "./common-types/loading-spinner.types";
+export * from "./common-types/search-bar.types";
 
