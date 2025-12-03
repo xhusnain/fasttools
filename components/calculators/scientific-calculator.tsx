@@ -4,13 +4,10 @@ import { useState, useEffect, useRef } from "react"
 import { GButton } from "@/ui/gbutton"
 import { GCard, GCardContent, GCardHeader, GCardTitle } from "@/ui/gcard"
 import { GBadge } from "@/ui/gbadge"
-
 import {
   Calculator,
-  History,
-  Copy,
-  RotateCcw
 } from "lucide-react"
+import {ScientificCalculatorProps} from "@/types";
 
 
 
