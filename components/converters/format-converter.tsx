@@ -18,14 +18,7 @@ import {
 import jsPDF from "jspdf"
 import html2canvas from "html2canvas"
 
-type Format = "html" | "markdown" | "json" | "yaml" | "xml" | "csv" | "toml" | "pdf"
-
-interface FormatOption {
-  value: Format
-  label: string
-  description: string
-  fileExtension: string
-}
+import { Format, FormatOption } from "@/types/converter-types/format-converter.types"
 
 const formats: FormatOption[] = [
   { value: "html", label: "HTML", description: "HyperText Markup Language", fileExtension: "html" },

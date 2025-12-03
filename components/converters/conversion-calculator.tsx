@@ -209,15 +209,7 @@ const convertTemperature = (value: number, from: string, to: string): number => 
   return conversions[from]?.[to]?.(value) ?? value
 }
 
-interface ConversionHistory {
-  id: string
-  category: string
-  fromUnit: string
-  toUnit: string
-  value: number
-  result: number
-  timestamp: Date
-}
+import { ConversionHistory } from "@/types/converter-types/conversion-calculator.types"
 
 // Default units for each category (From, To)
 const defaultUnits: { [key: string]: { from: string; to: string } } = {

@@ -5,20 +5,7 @@ import { GButton } from "@/ui/gbutton"
 
 import { DollarSign, ArrowLeftRight, RefreshCw } from "lucide-react"
 
-interface Currency {
-  code: string
-  name: string
-  symbol: string
-}
-
-interface ConversionResult {
-  from: string
-  to: string
-  amount: number
-  convertedAmount: number
-  rate: number
-  date: string
-}
+import { Currency, CurrencyConversionResult } from "@/types/converter-types/currency-converter.types"
 
 export function CurrencyConverter() {
   const [amount, setAmount] = useState("")
