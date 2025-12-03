@@ -1,5 +1,5 @@
-import { PDFToolsAdvanced } from "@/components/pdf-tools-advanced"
-import { ToolPageLayout } from "@/components/tool-page-layout"
+import { PDFToolsAdvanced } from "@/components/pdf/pdf-tools-advanced"
+import { ToolPageLayout } from "@/components/common/tool-page-layout"
 import { createToolConfig } from "@/lib/create-tool-config"
 
 const toolConfig = createToolConfig({

@@ -1,6 +1,6 @@
 import type { Metadata } from "next"
-import { ToolPageLayout } from "@/components/tool-page-layout"
-import { ConversionCalculator } from "@/components/conversion-calculator"
+import { ToolPageLayout } from "@/components/common/tool-page-layout"
+import { ConversionCalculator } from "@/components/converters/conversion-calculator"
 import { createMetadata } from "@/lib/metadata-base"
 import { Calculator, Zap, Target, TrendingUp, BookOpen, Users, CheckCircle, Info, Home, DollarSign, FileText, Percent, Clock, Award, BarChart3, Building, PieChart } from "lucide-react"
 import Link from "next/link"

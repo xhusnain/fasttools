@@ -1,5 +1,5 @@
 import { createMetadata } from "@/lib/metadata-base"
-import { Breadcrumbs } from "@/components/breadcrumbs"
+import { Breadcrumbs } from "@/components/common/breadcrumbs"
 import { GHeader } from "@/components/globalcomponents/gheader"
 import {
     CheckCircle,

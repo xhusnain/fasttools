@@ -1,5 +1,5 @@
-import { YoutubeTagExtractor } from "@/components/youtube-tag-extractor"
-import { ToolPageLayout } from "@/components/tool-page-layout"
+import { YoutubeTagExtractor } from "@/components/social-media/youtube-tag-extractor"
+import { ToolPageLayout } from "@/components/common/tool-page-layout"
 import { createToolConfig } from "@/lib/create-tool-config"
 import {
   Search, Zap, Target, Shield, Globe, Clock, FileText, Hash, Lightbulb,

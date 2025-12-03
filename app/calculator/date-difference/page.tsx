@@ -1,6 +1,6 @@
 import type { Metadata } from "next"
-import { ToolPageLayout } from "@/components/tool-page-layout"
-import { DateDifferenceCalculator } from "@/components/date-difference-calculator"
+import { ToolPageLayout } from "@/components/common/tool-page-layout"
+import { DateDifferenceCalculator } from "@/components/calculators/date-difference-calculator"
 import { createMetadata } from "@/lib/metadata-base"
 
 const baseMetadata = createMetadata({

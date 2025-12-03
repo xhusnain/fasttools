@@ -2,12 +2,12 @@ import Link from "next/link"
 import dynamic from "next/dynamic"
 import { GButton } from "@/components/globalcomponents/gbutton"
 import { GCard } from "@/components/globalcomponents/gcard"
-import { PremiumHeroBackground } from "@/components/premium-hero-background"
+import { PremiumHeroBackground } from "@/components/common/premium-hero-background"
 import { GHeader } from "@/components/globalcomponents/gheader"
-const HomeCategories = dynamic(() => import('@/components/home-categories').then(mod => ({ default: mod.HomeCategories })), {
+const HomeCategories = dynamic(() => import('@/components/common/home-categories').then(mod => ({ default: mod.HomeCategories })), {
   loading: () => <div className="py-24 text-center">Loading tools...</div>
 })
-const HomeFAQSection = dynamic(() => import('@/components/home-faq-section').then(mod => ({ default: mod.HomeFAQSection })), {
+const HomeFAQSection = dynamic(() => import('@/components/common/home-faq-section').then(mod => ({ default: mod.HomeFAQSection })), {
   loading: () => <div className="py-20 text-center">Loading FAQ...</div>
 })
 import {

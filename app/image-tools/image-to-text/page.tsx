@@ -1,5 +1,5 @@
-import { ImageToText } from "@/components/image-to-text"
-import { ToolPageLayout } from "@/components/tool-page-layout"
+import { ImageToText } from "@/components/image/image-to-text"
+import { ToolPageLayout } from "@/components/common/tool-page-layout"
 import { createToolConfig } from "@/lib/create-tool-config"
 
 const toolConfig = createToolConfig({

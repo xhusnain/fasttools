@@ -1,5 +1,5 @@
-import { LinkInBioGenerator } from "@/components/link-in-bio-generator"
-import { ToolPageLayout } from "@/components/tool-page-layout"
+import { LinkInBioGenerator } from "@/components/social-media/link-in-bio-generator"
+import { ToolPageLayout } from "@/components/common/tool-page-layout"
 import { createToolConfig } from "@/lib/create-tool-config"
 import {
   Link, Zap, Target, Shield, Globe, Clock, FileText, Hash, Lightbulb,

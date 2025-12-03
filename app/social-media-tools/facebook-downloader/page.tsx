@@ -1,5 +1,5 @@
-import { FacebookDownloader } from "@/components/downloader-components/facebook-downloader/facebook-downloader"
-import { ToolPageLayout } from "@/components/tool-page-layout"
+import { FacebookDownloader } from "@/components/social-media/facebook-downloader/facebook-downloader"
+import { ToolPageLayout } from "@/components/common/tool-page-layout"
 import { createToolConfig } from "@/lib/create-tool-config"
 import {
   Download, Shield, Zap, Target, AlertCircle, Globe, Video, CheckCircle,

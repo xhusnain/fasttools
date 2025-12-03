@@ -4,7 +4,7 @@ import {
   Users, CreditCard, Home, BadgePercent, PiggyBank, ChartLine, Coins,
   ScrollText, Landmark, TrendingDown, Banknote
 } from "lucide-react"
-import { ToolPageLayout } from "@/components/tool-page-layout"
+import { ToolPageLayout } from "@/components/common/tool-page-layout"
 import { createMetadata } from "@/lib/metadata-base"
 
 export const metadata = createMetadata({

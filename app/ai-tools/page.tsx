@@ -1,6 +1,6 @@
 import { createMetadata } from "@/lib/metadata-base"
 import { GCard } from "@/components/globalcomponents/gcard"
-import { ToolPageLayout } from "@/components/tool-page-layout"
+import { ToolPageLayout } from "@/components/common/tool-page-layout"
 import { QrCode, Music, ImageIcon, Heart } from "lucide-react"
 
 // Auto-update year

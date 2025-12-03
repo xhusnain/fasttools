@@ -1,5 +1,5 @@
-import { FutureAgePredictor } from "@/components/future-age-predictor"
-import { ToolPageLayout } from "@/components/tool-page-layout"
+import { FutureAgePredictor } from "@/components/calculators/future-age-predictor"
+import { ToolPageLayout } from "@/components/common/tool-page-layout"
 import { createToolConfig } from "@/lib/create-tool-config"
 import { getCurrentYear } from "@/lib/utils"
 import { Calendar, Globe, Calculator, ArrowRight, CheckCircle, HelpCircle, Star, Clock } from "lucide-react"

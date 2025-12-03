@@ -1,6 +1,6 @@
 import type { Metadata } from "next"
-import { AiPetNameGenerator } from "@/components/ai-pet-name-generator"
-import { ToolPageLayout } from "@/components/tool-page-layout"
+import { AiPetNameGenerator } from "@/components/ai/ai-pet-name-generator"
+import { ToolPageLayout } from "@/components/common/tool-page-layout"
 import { createMetadata } from "@/lib/metadata-base"
 
 // Auto-update year

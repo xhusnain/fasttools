@@ -1,6 +1,6 @@
 import type { Metadata } from "next"
-import { ToolPageLayout } from "@/components/tool-page-layout"
-import { TaxCalculator } from "@/components/tax-calculator"
+import { ToolPageLayout } from "@/components/common/tool-page-layout"
+import { TaxCalculator } from "@/components/finance/tax-calculator"
 import { createMetadata } from "@/lib/metadata-base"
 import { Calculator, Globe, DollarSign, TrendingUp, BarChart3, PieChart, Target, Building, Users, Award, CheckCircle, BookOpen, Zap, Sparkles, AlertTriangle } from "lucide-react"
 

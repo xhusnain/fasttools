@@ -1,4 +1,4 @@
-import { ToolPageLayout } from "@/components/tool-page-layout"
+import { ToolPageLayout } from "@/components/common/tool-page-layout"
 import { createToolConfig } from "@/lib/create-tool-config"
 import { GCard } from "@/components/globalcomponents/gcard"
 import { Type, Ruler, HardDrive, DollarSign, Globe, Thermometer } from "lucide-react"

@@ -1,5 +1,5 @@
-import { TemperatureConverter } from "@/components/temperature-converter"
-import { ToolPageLayout } from "@/components/tool-page-layout"
+import { TemperatureConverter } from "@/components/converters/temperature-converter"
+import { ToolPageLayout } from "@/components/common/tool-page-layout"
 import { createToolConfig } from "@/lib/create-tool-config"
 import Link from "next/link"
 

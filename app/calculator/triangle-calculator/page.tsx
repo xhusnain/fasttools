@@ -1,6 +1,6 @@
 import type { Metadata } from "next"
-import { ToolPageLayout } from "@/components/tool-page-layout"
-import TriangleCalculator from "@/components/triangle-calculator"
+import { ToolPageLayout } from "@/components/common/tool-page-layout"
+import TriangleCalculator from "@/components/calculators/triangle-calculator"
 import { createMetadata } from "@/lib/metadata-base"
 import { Calculator, Triangle, Brain, BookOpen, Square } from "lucide-react"
 

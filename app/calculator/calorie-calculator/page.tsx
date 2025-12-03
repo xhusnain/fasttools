@@ -1,6 +1,6 @@
 import type { Metadata } from "next"
-import { ToolPageLayout } from "@/components/tool-page-layout"
-import CalorieCalculator from "@/components/calorie-calculator"
+import { ToolPageLayout } from "@/components/common/tool-page-layout"
+import CalorieCalculator from "@/components/health/calorie-calculator"
 import { createMetadata } from "@/lib/metadata-base"
 
 const baseMetadata = createMetadata({

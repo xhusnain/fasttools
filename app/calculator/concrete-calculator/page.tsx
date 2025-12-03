@@ -1,6 +1,6 @@
 import type { Metadata } from "next"
-import { ToolPageLayout } from "@/components/tool-page-layout"
-import { ConcreteCalculator } from "@/components/concrete-calculator"
+import { ToolPageLayout } from "@/components/common/tool-page-layout"
+import { ConcreteCalculator } from "@/components/calculators/concrete-calculator"
 import { createMetadata } from "@/lib/metadata-base"
 import { Calculator, Building, Ruler, Weight, Volume, Target, Info, Globe, CheckCircle, Hammer, Truck, Package, Zap, TrendingUp, DollarSign, Clock, Home, FileText, Percent, Users, Award, BarChart3 } from "lucide-react"
 

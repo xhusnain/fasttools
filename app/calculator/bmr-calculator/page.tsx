@@ -1,6 +1,6 @@
 import type { Metadata } from "next"
-import { ToolPageLayout } from "@/components/tool-page-layout"
-import BMRCalculator from "@/components/bmr-calculator"
+import { ToolPageLayout } from "@/components/common/tool-page-layout"
+import BMRCalculator from "@/components/health/bmr-calculator"
 import { createMetadata } from "@/lib/metadata-base"
 
 const baseMetadata = createMetadata({

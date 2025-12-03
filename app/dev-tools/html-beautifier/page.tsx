@@ -1,5 +1,5 @@
-import { ToolPageLayout } from "@/components/tool-page-layout"
-import { HTMLBeautifier } from "@/components/html-beautifier"
+import { ToolPageLayout } from "@/components/common/tool-page-layout"
+import { HTMLBeautifier } from "@/components/dev-tools/html-beautifier"
 import { createToolConfig } from "@/lib/create-tool-config"
 
 const toolConfig = createToolConfig({

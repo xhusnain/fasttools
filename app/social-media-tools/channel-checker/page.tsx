@@ -1,5 +1,5 @@
-import { YoutubeChannelChecker } from "@/components/youtube-channel-checker"
-import { ToolPageLayout } from "@/components/tool-page-layout"
+import { YoutubeChannelChecker } from "@/components/social-media/youtube-channel-checker"
+import { ToolPageLayout } from "@/components/common/tool-page-layout"
 import { createToolConfig } from "@/lib/create-tool-config"
 import { getCurrentYear } from "@/lib/utils"
 import {

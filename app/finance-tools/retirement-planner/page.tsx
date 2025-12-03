@@ -1,5 +1,5 @@
-import { RetirementPlanner } from "@/components/retirement-planner"
-import { ToolPageLayout } from "@/components/tool-page-layout"
+import { RetirementPlanner } from "@/components/finance/retirement-planner"
+import { ToolPageLayout } from "@/components/common/tool-page-layout"
 import { createMetadata } from "@/lib/metadata-base"
 import { Calculator, PiggyBank, Receipt, CreditCard } from "lucide-react"
 import type { Metadata } from "next"

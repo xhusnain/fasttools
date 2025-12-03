@@ -1,5 +1,5 @@
-import { BirthdayCountdown } from "@/components/birthday-countdown"
-import { ToolPageLayout } from "@/components/tool-page-layout"
+import { BirthdayCountdown } from "@/components/calculators/birthday-countdown"
+import { ToolPageLayout } from "@/components/common/tool-page-layout"
 import { createToolConfig } from "@/lib/create-tool-config"
 import { getCurrentYear } from "@/lib/utils"
 import { Cake, Clock, Calendar, Gift, ArrowRight, CheckCircle, HelpCircle, Star } from "lucide-react"

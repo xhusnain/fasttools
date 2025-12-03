@@ -1,6 +1,6 @@
 import type { Metadata } from "next"
-import { ToolPageLayout } from "@/components/tool-page-layout"
-import PaceCalculator from "@/components/pace-calculator"
+import { ToolPageLayout } from "@/components/common/tool-page-layout"
+import PaceCalculator from "@/components/calculators/pace-calculator"
 import { createMetadata } from "@/lib/metadata-base"
 
 const baseMetadata = createMetadata({

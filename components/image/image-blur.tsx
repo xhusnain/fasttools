@@ -1,0 +1,332 @@
+"use client"
+
+import type React from "react"
+
+import { useState, useEffect } from "react"
+import { GButton as Button } from "@/components/globalcomponents/gbutton"
+import { Card } from "@/components/ui/card"
+import { Slider } from "@/components/ui/slider"
+import { Upload, Download, RotateCcw, FileText, Zap, Image as ImageIcon } from "lucide-react"
+import { LoadingSpinner } from "@/components/common/loading-spinner"
+import { useImageBlurStore } from "@/lib/store-image-blur"
+
+export function ImageBlur() {
+  const {
+    originalImage,
+    imageUrl,
+    status,
+    result,
+    isProcessing,
+    blurIntensity,
+    setImage,
+    setBlurIntensity,
+    startProcessing,
+    reset,
+    refineStrength,
+    setRefineStrength,
+  } = useImageBlurStore();
+
+  const [imageLoaded, setImageLoaded] = useState(false);
+  const [imageDimensions, setImageDimensions] = useState<{ width: number; height: number } | null>(null);
+  const [debounceId, setDebounceId] = useState<number | null>(null);
+
+  const handleImageUpload = async (e: React.ChangeEvent<HTMLInputElement>) => {
+    const file = e.target.files?.[0]
+    if (!file) return
+
+    // Accept any file; will fail gracefully if not an image when loading
+
+    const reader = new FileReader()
+    reader.onload = async (event) => {
+      const imageUrl = event.target?.result as string
+
+      // Create HTMLImageElement
+      const img = new Image()
+      img.crossOrigin = "anonymous"
+      img.onload = () => {
+        setImage(img, imageUrl)
+        setImageDimensions({ width: img.naturalWidth, height: img.naturalHeight })
+        setImageLoaded(true)
+        setTimeout(() => startProcessing(), 50)
+      }
+      img.onerror = () => {
+        alert("⚠️ Failed to load image.\n\nPlease try uploading a different image.")
+      }
+      img.src = imageUrl
+    }
+    reader.readAsDataURL(file)
+  }
+
+  const downloadImage = () => {
+    if (!result?.resultUrl) return
+
+    const link = document.createElement('a')
+    link.href = result.resultUrl
+    link.download = 'image-blurred.jpg'
+    document.body.appendChild(link)
+    link.click()
+    document.body.removeChild(link)
+  }
+
+  const resetAll = () => {
+    reset()
+    setImageLoaded(false)
+    setImageDimensions(null)
+
+    // Reset the file input
+    const fileInput = document.getElementById("image-upload-blur") as HTMLInputElement
+    if (fileInput) {
+      fileInput.value = ""
+    }
+  }
+
+  return (
+    <div className="w-full">
+      <Card className="shadow-lg w-full max-w-none border-border">
+        <div className="p-4 sm:p-6">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+            {/* Input Section */}
+            <div className="space-y-4">
+              <div className="flex items-center justify-between">
+                <h3 className="text-lg font-semibold text-foreground">Original Image</h3>
+                {imageUrl && (
+                  <Button
+                    onClick={resetAll}
+                    variant="outline"
+                    size="sm"
+                    className="gap-2"
+                  >
+                    <RotateCcw className="h-4 w-4" />
+                    Reset
+                  </Button>
+                )}
+              </div>
+
+              <div
+                className="relative w-full h-[300px] sm:h-[360px] md:h-[420px] lg:h-[500px] border-2 border-dashed border-border rounded-xl overflow-hidden bg-card"
+              >
+                {!imageUrl && (
+                  <label
+                    htmlFor="image-upload-blur"
+                    className="absolute inset-0 flex flex-col items-center justify-center cursor-pointer hover:bg-secondary transition-colors"
+                  >
+                    <div className="text-center px-6">
+                      <div className="relative mb-4">
+                        <div className="absolute inset-0 bg-gradient-to-r from-primary to-primary/90 rounded-full blur-lg opacity-20"></div>
+                        <div className="relative w-24 h-24 mx-auto rounded-full bg-gradient-to-br from-primary to-primary/90 flex items-center justify-center shadow-xl">
+                          <Upload className="w-12 h-12 text-primary-foreground" />
+                        </div>
+                      </div>
+                      <p className="text-base font-semibold text-foreground mb-2">
+                        Upload an image to blur background
+                      </p>
+                      <p className="text-sm text-muted-foreground">
+                        Supports JPEG, PNG, and WebP
+                      </p>
+                    </div>
+                    <input
+                      id="image-upload-blur"
+                      type="file"
+
+                      onChange={handleImageUpload}
+                      className="hidden"
+                    />
+                  </label>
+                )}
+
+                {imageUrl && (
+                  <div className="w-full h-full flex items-center justify-center p-4 bg-card">
+                    <img
+                      src={imageUrl}
+                      alt="Original"
+                      className="max-w-full max-h-full object-contain"
+                    />
+                  </div>
+                )}
+              </div>
+            </div>
+
+            {/* Output Section */}
+            <div className="space-y-4">
+              <div className="flex items-center justify-between">
+                <h3 className="text-lg font-semibold text-foreground">Blurred Result</h3>
+                {result && !isProcessing && (
+                  <Button
+                    onClick={downloadImage}
+                    className="gap-2 bg-gradient-to-r from-green-500 to-emerald-500 hover:from-green-600 hover:to-emerald-600"
+                  >
+                    <Download className="h-4 w-4" />
+                    Download
+                  </Button>
+                )}
+              </div>
+
+              <div
+                className="relative w-full h-[300px] sm:h-[360px] md:h-[420px] lg:h-[500px] border-2 border-border rounded-xl overflow-hidden bg-card"
+              >
+                {!imageUrl && !isProcessing && (
+                  <div className="flex items-center justify-center h-full">
+                    <div className="text-center px-6 bg-card/90 backdrop-blur-sm p-8 rounded-xl shadow-lg">
+                      <div className="relative mb-4">
+                        <div className="absolute inset-0 bg-gradient-to-r from-primary to-primary/90 rounded-full blur-lg opacity-20"></div>
+                        <div className="relative w-24 h-24 mx-auto rounded-full bg-gradient-to-br from-primary to-primary/90 flex items-center justify-center shadow-xl">
+                          <ImageIcon className="w-12 h-12 text-primary-foreground" />
+                        </div>
+                      </div>
+                      <p className="text-sm font-semibold text-foreground">
+                        Upload an image to see the result
+                      </p>
+                      <p className="text-xs text-muted-foreground mt-2">
+                        AI will blur only the background
+                      </p>
+                    </div>
+                  </div>
+                )}
+
+                {isProcessing && (
+                  <div className="flex flex-col items-center justify-center h-full">
+                    <div className="bg-card/90 backdrop-blur-sm p-8 rounded-xl shadow-lg">
+                      <div className="flex flex-col items-center space-y-4">
+                        <LoadingSpinner />
+                        <div className="text-center space-y-2">
+                          <p className="text-base font-semibold text-foreground">{status.message}</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                )}
+
+                {/* Show uploaded image (before AI processing) */}
+                {imageUrl && !result && !isProcessing && (
+                  <div className="w-full h-full flex items-center justify-center p-4 bg-card relative">
+                    <img
+                      src={imageUrl}
+                      alt="Original"
+                      className="max-w-full max-h-full object-contain"
+                    />
+                    <div className="absolute top-4 left-4 bg-muted-foreground text-primary-foreground px-3 py-1.5 rounded-full text-xs font-semibold shadow-lg">
+                      Original
+                    </div>
+                  </div>
+                )}
+
+                {/* AI-processed result (selective background blur) */}
+                {result && !isProcessing && (
+                  <div className="w-full h-full flex items-center justify-center p-4 bg-card relative">
+                    <img
+                      src={result.resultUrl}
+                      alt="Background blurred"
+                      className="max-w-full max-h-full object-contain drop-shadow-2xl"
+                    />
+                    <div className="absolute top-4 left-4 bg-green-500 text-white px-3 py-1.5 rounded-full text-xs font-semibold shadow-lg">
+                      AI Processed
+                    </div>
+                  </div>
+                )}
+              </div>
+            </div>
+          </div>
+
+          {/* Controls - auto reprocess */}
+          {imageUrl && (
+            <div className="mt-6 space-y-4">
+              <div className="flex items-center justify-between">
+                <label className="text-sm font-medium text-foreground">
+                  Blur Intensity: <span className="text-foreground font-semibold">{blurIntensity}px</span>
+                </label>
+                <span className="text-xs text-muted-foreground italic">Auto-applies</span>
+              </div>
+              <Slider
+                value={[blurIntensity]}
+                onValueChange={(value) => {
+                  setBlurIntensity(value[0])
+                  if (debounceId) window.clearTimeout(debounceId)
+                  const id = window.setTimeout(() => startProcessing(), 350)
+                  setDebounceId(id)
+                }}
+                min={1}
+                max={50}
+                step={1}
+                className="w-full"
+              />
+              <div className="flex justify-between text-xs text-muted-foreground">
+                <span>Minimal (1px)</span>
+                <span>Medium (25px)</span>
+                <span>Maximum (50px)</span>
+              </div>
+
+              <div className="flex items-center justify-between pt-2">
+                <label className="text-sm font-medium text-foreground">
+                  Cutout strength: <span className="text-foreground font-semibold">{refineStrength}</span>
+                </label>
+              </div>
+              <Slider
+                value={[refineStrength === "light" ? 0 : refineStrength === "medium" ? 1 : 2]}
+                onValueChange={(v) => {
+                  const s = v[0] === 0 ? "light" : v[0] === 1 ? "medium" : "strong";
+                  setRefineStrength?.(s)
+                  if (debounceId) window.clearTimeout(debounceId)
+                  const id = window.setTimeout(() => startProcessing(), 350)
+                  setDebounceId(id)
+                }}
+                min={0}
+                max={2}
+                step={1}
+                className="w-full"
+              />
+              <div className="flex justify-between text-xs text-muted-foreground">
+                <span>Light</span>
+                <span>Medium</span>
+                <span>Strong</span>
+              </div>
+            </div>
+          )}
+
+          {/* No button - auto processing */}
+
+          {/* Error State */}
+          {status.stage === "error" && (
+            <div className="mt-6 p-6 bg-red-50 dark:bg-red-900/20 border-2 border-red-200 dark:border-red-800 rounded-xl">
+              <div className="flex flex-col items-center text-center gap-4">
+                <div className="p-3 bg-red-100 dark:bg-red-900/40 rounded-full">
+                  <svg className="h-8 w-8 text-foreground" fill="currentColor" viewBox="0 0 20 20">
+                    <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z" clipRule="evenodd" />
+                  </svg>
+                </div>
+                <div>
+                  <h3 className="text-lg font-bold text-foreground mb-2">Oops! Something went wrong</h3>
+                  <p className="text-sm text-foreground mb-4 max-w-md">{status.message}</p>
+                  <Button
+                    onClick={resetAll}
+                    variant="outline"
+                    className="gap-2 border-red-300 text-foreground hover:bg-red-100 dark:border-destructive dark:text-foreground dark:hover:bg-red-900/30"
+                  >
+                    <RotateCcw className="h-4 w-4" />
+                    Try Again
+                  </Button>
+                </div>
+              </div>
+            </div>
+          )}
+
+          {/* Processing Info */}
+          {result && !isProcessing && (
+            <div className="mt-6 p-4 bg-muted rounded-lg border border-border">
+              <div className="flex items-center justify-between text-sm">
+                <span className="text-muted-foreground">Processing Time:</span>
+                <span className="font-semibold text-foreground">
+                  {(result.processingTime / 1000).toFixed(2)}s
+                </span>
+              </div>
+              <div className="flex items-center justify-between text-sm mt-2">
+                <span className="text-muted-foreground">Blur Intensity:</span>
+                <span className="font-semibold text-foreground">{blurIntensity}px</span>
+              </div>
+            </div>
+          )}
+        </div>
+      </Card>
+    </div>
+  )
+}
+

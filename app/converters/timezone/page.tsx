@@ -1,5 +1,5 @@
-import { TimezoneConverter } from "@/components/timezone-converter"
-import { ToolPageLayout } from "@/components/tool-page-layout"
+import { TimezoneConverter } from "@/components/converters/timezone-converter"
+import { ToolPageLayout } from "@/components/common/tool-page-layout"
 import { createToolConfig } from "@/lib/create-tool-config"
 
 const currentYear = new Date().getFullYear()

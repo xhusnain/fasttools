@@ -1,5 +1,5 @@
-import { ToolPageLayout } from "@/components/tool-page-layout"
-import { RegexTester } from "@/components/regex-tester"
+import { ToolPageLayout } from "@/components/common/tool-page-layout"
+import { RegexTester } from "@/components/dev-tools/regex-tester"
 import { createToolConfig } from "@/lib/create-tool-config"
 
 const toolConfig = createToolConfig({

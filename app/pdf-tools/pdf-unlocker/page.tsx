@@ -1,5 +1,5 @@
-import { PDFUnlocker } from "@/components/pdf-unlocker"
-import { ToolPageLayout } from "@/components/tool-page-layout"
+import { PDFUnlocker } from "@/components/pdf/pdf-unlocker"
+import { ToolPageLayout } from "@/components/common/tool-page-layout"
 import { createToolConfig } from "@/lib/create-tool-config"
 
 const toolConfig = createToolConfig({

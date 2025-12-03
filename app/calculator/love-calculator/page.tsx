@@ -1,6 +1,6 @@
 import type { Metadata } from "next"
-import { ToolPageLayout } from "@/components/tool-page-layout"
-import { LoveCalculator } from "@/components/love-calculator"
+import { ToolPageLayout } from "@/components/common/tool-page-layout"
+import { LoveCalculator } from "@/components/calculators/love-calculator"
 import { createMetadata } from "@/lib/metadata-base"
 import { Heart, Users, Zap, Target, Sparkles, Star, Gift, Flower2, Calculator, TrendingUp, BookOpen, Smile, AlertCircle, Percent, Hash, Clock } from "lucide-react"
 

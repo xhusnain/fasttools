@@ -1,5 +1,5 @@
-import { PDFWordConverter } from "@/components/pdf-word-converter"
-import { ToolPageLayout } from "@/components/tool-page-layout"
+import { PDFWordConverter } from "@/components/pdf/pdf-word-converter"
+import { ToolPageLayout } from "@/components/common/tool-page-layout"
 import { createToolConfig } from "@/lib/create-tool-config"
 
 const toolConfig = createToolConfig({

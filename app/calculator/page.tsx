@@ -30,7 +30,7 @@ import {
   Footprints
 
 } from "lucide-react"
-import { ToolPageLayout } from "@/components/tool-page-layout"
+import { ToolPageLayout } from "@/components/common/tool-page-layout"
 import { createToolConfig } from "@/lib/create-tool-config"
 
 const tools = [

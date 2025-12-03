@@ -1,5 +1,5 @@
-import { YoutubeThumbnailDownloader } from "@/components/youtube-thumbnail-downloader"
-import { ToolPageLayout } from "@/components/tool-page-layout"
+import { YoutubeThumbnailDownloader } from "@/components/social-media/youtube-thumbnail-downloader"
+import { ToolPageLayout } from "@/components/common/tool-page-layout"
 import { createToolConfig } from "@/lib/create-tool-config"
 
 const toolConfig = createToolConfig({

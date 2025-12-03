@@ -1,6 +1,6 @@
 import type { Metadata } from "next"
-import { ToolPageLayout } from "@/components/tool-page-layout"
-import AmortizationCalculator from "@/components/amortization-calculator"
+import { ToolPageLayout } from "@/components/common/tool-page-layout"
+import AmortizationCalculator from "@/components/finance/amortization-calculator"
 import { createMetadata } from "@/lib/metadata-base"
 
 const baseMetadata = createMetadata({

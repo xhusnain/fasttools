@@ -1,6 +1,6 @@
 import type { Metadata } from "next"
-import { ToolPageLayout } from "@/components/tool-page-layout"
-import SalaryCalculator from "@/components/salary-calculator"
+import { ToolPageLayout } from "@/components/common/tool-page-layout"
+import SalaryCalculator from "@/components/finance/salary-calculator"
 import { createMetadata } from "@/lib/metadata-base"
 import { Calculator, BarChart3, TrendingUp, BookOpen, Users, Clock, Target, Home, DollarSign, FileText, Award, Globe, PieChart, Percent, CreditCard, Wallet, Trophy } from "lucide-react"
 

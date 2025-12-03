@@ -1,4 +1,4 @@
-import { Breadcrumbs } from "@/components/breadcrumbs"
+import { Breadcrumbs } from "@/components/common/breadcrumbs"
 import { GHeader } from "@/components/globalcomponents/gheader"
 import { GCard } from "@/components/globalcomponents/gcard"
 import Link from "next/link"

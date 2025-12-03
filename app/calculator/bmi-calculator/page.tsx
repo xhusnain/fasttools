@@ -1,6 +1,6 @@
 import type { Metadata } from "next"
-import { ToolPageLayout } from "@/components/tool-page-layout"
-import { BMICalculatorPageContent } from "@/components/bmi-calculator-page-content"
+import { ToolPageLayout } from "@/components/common/tool-page-layout"
+import { BMICalculatorPageContent } from "@/components/health/bmi-calculator-page-content"
 import { createMetadata } from "@/lib/metadata-base"
 
 const baseMetadata = createMetadata({

@@ -1,10 +1,10 @@
-import { ToolPageLayout } from "@/components/tool-page-layout"
+import { ToolPageLayout } from "@/components/common/tool-page-layout"
 import { createToolConfig } from "@/lib/create-tool-config"
 import {
  AlertCircle
 } from "lucide-react"
 import { getCurrentYear } from "@/lib/utils"
-import {TiktokDownloader} from "@/components/downloader-components/tiktok-downloader/tiktok-downloader";
+import {TiktokDownloader} from "@/components/social-media/tiktok-downloader/tiktok-downloader";
 
 const toolConfig = createToolConfig({
   toolName: "TikTok Downloader",

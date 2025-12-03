@@ -1,5 +1,5 @@
-import { BlogTitleGenerator } from "@/components/blog-title-generator"
-import { ToolPageLayout } from "@/components/tool-page-layout"
+import { BlogTitleGenerator } from "@/components/ai/blog-title-generator"
+import { ToolPageLayout } from "@/components/common/tool-page-layout"
 import { createToolConfig } from "@/lib/create-tool-config"
 
 const toolConfig = createToolConfig({

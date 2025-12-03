@@ -1,5 +1,5 @@
-import { ScientificCalculatorWrapper } from "@/components/scientific-calculator-wrapper"
-import { ToolPageLayout } from "@/components/tool-page-layout"
+import { ScientificCalculatorWrapper } from "@/components/calculators/scientific-calculator-wrapper"
+import { ToolPageLayout } from "@/components/common/tool-page-layout"
 import { createToolConfig } from "@/lib/create-tool-config"
 import { Calculator, Brain, Pi } from "lucide-react"
 import Image from "next/image"

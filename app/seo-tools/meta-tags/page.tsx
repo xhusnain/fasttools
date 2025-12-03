@@ -1,5 +1,5 @@
-import { MetaTagGenerator } from "@/components/meta-tag-generator"
-import { ToolPageLayout } from "@/components/tool-page-layout"
+import { MetaTagGenerator } from "@/components/dev-tools/meta-tag-generator"
+import { ToolPageLayout } from "@/components/common/tool-page-layout"
 import { createToolConfig } from "@/lib/create-tool-config"
 
 const toolConfig = createToolConfig({
