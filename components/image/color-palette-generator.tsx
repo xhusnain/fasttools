@@ -1,9 +1,10 @@
 "use client"
 
 import { useState, useMemo } from "react"
-import { GButton as Button } from "@/components/globalcomponents/gbutton"
+import { GButton } from "@/ui/gbutton"
+import { GInput } from "@/ui/ginput"
+
 import { Copy, Check, MoreVertical, Search, Filter } from "lucide-react"
-import { Input } from "@/components/ui/input"
 import { COLOR_PALETTES } from "@/data/color-palettes"
 
 
@@ -78,7 +79,7 @@ export function ColorPaletteGenerator() {
       <div className="space-y-4">
         <div className="relative">
           <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 h-4 w-4 text-muted-foreground" />
-          <Input
+          <GInput
             type="text"
             placeholder="Search palettes by name or theme..."
             value={searchQuery}
@@ -92,7 +93,7 @@ export function ColorPaletteGenerator() {
           <Filter className="h-4 w-4 text-muted-foreground flex-shrink-0" />
           <div className="flex flex-wrap gap-2">
             {CATEGORIES.map((category) => (
-              <Button
+              <GButton
                 key={category}
                 variant={selectedCategory === category ? "default" : "outline"}
                 size="sm"
@@ -100,7 +101,7 @@ export function ColorPaletteGenerator() {
                 className="text-xs"
               >
                 {category}
-              </Button>
+              </GButton>
             ))}
           </div>
         </div>
@@ -161,13 +162,13 @@ export function ColorPaletteGenerator() {
                     ))}
                   </div>
                 </div>
-                <Button
+                <GButton
                   variant="ghost"
                   size="sm"
                   className="h-7 w-7 p-0 flex-shrink-0"
                 >
                   <MoreVertical className="h-4 w-4" />
-                </Button>
+                </GButton>
               </div>
             </div>
           </div>
@@ -178,9 +179,9 @@ export function ColorPaletteGenerator() {
       {filteredPalettes.length === 0 && (
         <div className="text-center py-12">
           <p className="text-muted-foreground mb-2">No palettes found</p>
-          <Button variant="outline" size="sm" onClick={() => { setSearchQuery(""); setSelectedCategory("All") }}>
+          <GButton variant="outline" size="sm" onClick={() => { setSearchQuery(""); setSelectedCategory("All") }}>
             Clear Filters
-          </Button>
+          </GButton>
         </div>
       )}
     </div>

@@ -1,12 +1,13 @@
 "use client"
 
 import { useState } from "react"
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
-import { GButton } from "@/components/globalcomponents/gbutton"
-import { Label } from "@/components/ui/label"
-import { Input } from "@/components/ui/input"
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
-import { Alert, AlertDescription } from "@/components/ui/alert"
+import { GCard, GCardContent, GCardDescription, GCardHeader, GCardTitle } from "@/ui/gcard"
+import { GButton } from "@/ui/gbutton"
+import { GLabel } from "@/ui/glabel"
+import { GInput } from "@/ui/ginput"
+import { GSelect, GSelectContent, GSelectItem, GSelectTrigger, GSelectValue } from "@/ui/gselect"
+import { GAlert, GAlertDescription } from "@/ui/galert"
+
 import {
   Calculator,
   Copy,
@@ -328,72 +329,72 @@ Calculated with FastTools Concrete Calculator`
 
   return (
     <div className="space-y-6">
-      {/* Main Calculator Card */}
-      <Card className="shadow-lg border-border hover:shadow-xl transition-all duration-300 bg-card">
-        <CardHeader className="pb-3 px-3 sm:px-6">
-          <CardTitle className="flex items-center gap-1.5 text-base">
+      {/* Main Calculator GCard */}
+      <GCard className="shadow-lg border-border hover:shadow-xl transition-all duration-300 bg-card">
+        <GCardHeader className="pb-3 px-3 sm:px-6">
+          <GCardTitle className="flex items-center gap-1.5 text-base">
             <div className="p-1 bg-primary/10 rounded">
               <Calculator className="h-3.5 w-3.5 text-foreground" />
             </div>
             Concrete Calculator
-          </CardTitle>
-          <CardDescription className="text-xs text-muted-foreground">
+          </GCardTitle>
+          <GCardDescription className="text-xs text-muted-foreground">
             Calculate volume, weight, materials, and cost.
-          </CardDescription>
-        </CardHeader>
-        <CardContent className="space-y-6 px-3 sm:px-6">
+          </GCardDescription>
+        </GCardHeader>
+        <GCardContent className="space-y-6 px-3 sm:px-6">
           {/* Calculation Type Selection */}
           <div className="space-y-2">
-            <Label className="text-[11px] font-medium text-heading-accent">Calculation Type</Label>
-            <Select value={calculationType} onValueChange={(value: CalculationType) => setCalculationType(value)}>
-              <SelectTrigger className="w-full h-8 text-xs border-border bg-background text-foreground">
-                <SelectValue placeholder="Select calculation type" />
-              </SelectTrigger>
-              <SelectContent>
-                <SelectItem value="slab">Slabs, Square Footings, or Walls</SelectItem>
-                <SelectItem value="column">Hole, Column, or Round Footings</SelectItem>
-                <SelectItem value="tube">Circular Slab or Tube</SelectItem>
-                <SelectItem value="curb">Curb and Gutter Barrier</SelectItem>
-                <SelectItem value="stairs">Stairs</SelectItem>
-                <SelectItem value="footing">Foundation Footings</SelectItem>
-                <SelectItem value="wall">Retaining Walls</SelectItem>
-                <SelectItem value="driveway">Driveways and Patios</SelectItem>
-              </SelectContent>
-            </Select>
+            <GLabel className="text-[11px] font-medium text-heading-accent">Calculation Type</GLabel>
+            <GSelect value={calculationType} onValueChange={(value: CalculationType) => setCalculationType(value)}>
+              <GSelectTrigger className="w-full h-8 text-xs border-border bg-background text-foreground">
+                <GSelectValue placeholder="GSelect calculation type" />
+              </GSelectTrigger>
+              <GSelectContent>
+                <GSelectItem value="slab">Slabs, Square Footings, or Walls</GSelectItem>
+                <GSelectItem value="column">Hole, Column, or Round Footings</GSelectItem>
+                <GSelectItem value="tube">Circular Slab or Tube</GSelectItem>
+                <GSelectItem value="curb">Curb and Gutter Barrier</GSelectItem>
+                <GSelectItem value="stairs">Stairs</GSelectItem>
+                <GSelectItem value="footing">Foundation Footings</GSelectItem>
+                <GSelectItem value="wall">Retaining Walls</GSelectItem>
+                <GSelectItem value="driveway">Driveways and Patios</GSelectItem>
+              </GSelectContent>
+            </GSelect>
           </div>
 
           {/* Unit Selection */}
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
             <div className="space-y-2">
-              <Label className="text-[11px] font-medium text-heading-accent">Unit System</Label>
-              <Select value={unit} onValueChange={(value: "metric" | "imperial") => setUnit(value)}>
-                <SelectTrigger className="h-8 text-xs border-border bg-background text-foreground">
-                  <SelectValue />
-                </SelectTrigger>
-                <SelectContent>
-                  <SelectItem value="imperial">Imperial (ft, in, lbs)</SelectItem>
-                  <SelectItem value="metric">Metric (m, cm, kg)</SelectItem>
-                </SelectContent>
-              </Select>
+              <GLabel className="text-[11px] font-medium text-heading-accent">Unit System</GLabel>
+              <GSelect value={unit} onValueChange={(value: "metric" | "imperial") => setUnit(value)}>
+                <GSelectTrigger className="h-8 text-xs border-border bg-background text-foreground">
+                  <GSelectValue />
+                </GSelectTrigger>
+                <GSelectContent>
+                  <GSelectItem value="imperial">Imperial (ft, in, lbs)</GSelectItem>
+                  <GSelectItem value="metric">Metric (m, cm, kg)</GSelectItem>
+                </GSelectContent>
+              </GSelect>
             </div>
             <div className="space-y-2">
-              <Label className="text-[11px] font-medium text-heading-accent">Concrete Mix</Label>
-              <Select value={concreteMix} onValueChange={setConcreteMix}>
-                <SelectTrigger className="h-8 text-xs border-border bg-background text-foreground">
-                  <SelectValue />
-                </SelectTrigger>
-                <SelectContent>
+              <GLabel className="text-[11px] font-medium text-heading-accent">Concrete Mix</GLabel>
+              <GSelect value={concreteMix} onValueChange={setConcreteMix}>
+                <GSelectTrigger className="h-8 text-xs border-border bg-background text-foreground">
+                  <GSelectValue />
+                </GSelectTrigger>
+                <GSelectContent>
                   {Object.entries(concreteMixes).map(([key, mix]) => (
-                    <SelectItem key={key} value={key}>
+                    <GSelectItem key={key} value={key}>
                       {mix.name} - {mix.strength}
-                    </SelectItem>
+                    </GSelectItem>
                   ))}
-                </SelectContent>
-              </Select>
+                </GSelectContent>
+              </GSelect>
             </div>
           </div>
 
-          {/* Dynamic Input Fields Based on Calculation Type */}
+          {/* Dynamic GInput Fields Based on Calculation Type */}
           <div className="space-y-4">
             <h3 className="font-semibold text-sm text-heading-accent flex items-center gap-1.5">
               {(() => {
@@ -406,9 +407,9 @@ Calculated with FastTools Concrete Calculator`
             {(calculationType === "slab" || calculationType === "footing" || calculationType === "wall" || calculationType === "driveway") && (
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                 <div className="space-y-1">
-                  <Label htmlFor="length" className="text-[10px] text-muted-foreground">Length (l)</Label>
+                  <GLabel htmlFor="length" className="text-[10px] text-muted-foreground">Length (l)</GLabel>
                   <div className="flex flex-col sm:flex-row gap-1.5">
-                    <Input
+                    <GInput
                       id="length"
                       type="number"
                       value={length}
@@ -416,22 +417,22 @@ Calculated with FastTools Concrete Calculator`
                       placeholder="5"
                       className="flex-1 h-7 text-xs border-border bg-background text-foreground focus-visible:ring-primary focus:border-primary"
                     />
-                    <Select defaultValue={unit === "metric" ? "meters" : "feet"}>
-                      <SelectTrigger className="w-full sm:w-16 h-7 text-xs border-border bg-background text-foreground">
-                        <SelectValue />
-                      </SelectTrigger>
-                      <SelectContent>
-                        <SelectItem value={unit === "metric" ? "meters" : "feet"}>
+                    <GSelect defaultValue={unit === "metric" ? "meters" : "feet"}>
+                      <GSelectTrigger className="w-full sm:w-16 h-7 text-xs border-border bg-background text-foreground">
+                        <GSelectValue />
+                      </GSelectTrigger>
+                      <GSelectContent>
+                        <GSelectItem value={unit === "metric" ? "meters" : "feet"}>
                           {unit === "metric" ? "m" : "ft"}
-                        </SelectItem>
-                      </SelectContent>
-                    </Select>
+                        </GSelectItem>
+                      </GSelectContent>
+                    </GSelect>
                   </div>
                 </div>
                 <div className="space-y-1">
-                  <Label htmlFor="width" className="text-[10px] text-muted-foreground">Width (w)</Label>
+                  <GLabel htmlFor="width" className="text-[10px] text-muted-foreground">Width (w)</GLabel>
                   <div className="flex flex-col sm:flex-row gap-1.5">
-                    <Input
+                    <GInput
                       id="width"
                       type="number"
                       value={width}
@@ -439,22 +440,22 @@ Calculated with FastTools Concrete Calculator`
                       placeholder="2.5"
                       className="flex-1 h-7 text-xs border-border bg-background text-foreground focus-visible:ring-primary focus:border-primary"
                     />
-                    <Select defaultValue={unit === "metric" ? "meters" : "feet"}>
-                      <SelectTrigger className="w-full sm:w-16 h-7 text-xs border-border bg-background text-foreground">
-                        <SelectValue />
-                      </SelectTrigger>
-                      <SelectContent>
-                        <SelectItem value={unit === "metric" ? "meters" : "feet"}>
+                    <GSelect defaultValue={unit === "metric" ? "meters" : "feet"}>
+                      <GSelectTrigger className="w-full sm:w-16 h-7 text-xs border-border bg-background text-foreground">
+                        <GSelectValue />
+                      </GSelectTrigger>
+                      <GSelectContent>
+                        <GSelectItem value={unit === "metric" ? "meters" : "feet"}>
                           {unit === "metric" ? "m" : "ft"}
-                        </SelectItem>
-                      </SelectContent>
-                    </Select>
+                        </GSelectItem>
+                      </GSelectContent>
+                    </GSelect>
                   </div>
                 </div>
                 <div className="space-y-1">
-                  <Label htmlFor="height" className="text-[10px] text-muted-foreground">Thickness or Height (h)</Label>
+                  <GLabel htmlFor="height" className="text-[10px] text-muted-foreground">Thickness or Height (h)</GLabel>
                   <div className="flex flex-col sm:flex-row gap-1.5">
-                    <Input
+                    <GInput
                       id="height"
                       type="number"
                       value={height}
@@ -462,21 +463,21 @@ Calculated with FastTools Concrete Calculator`
                       placeholder="5"
                       className="flex-1 h-7 text-xs border-border bg-background text-foreground focus-visible:ring-primary focus:border-primary"
                     />
-                    <Select defaultValue={unit === "metric" ? "centimeters" : "inches"}>
-                      <SelectTrigger className="w-full sm:w-16 h-7 text-xs border-border bg-background text-foreground">
-                        <SelectValue />
-                      </SelectTrigger>
-                      <SelectContent>
-                        <SelectItem value={unit === "metric" ? "centimeters" : "inches"}>
+                    <GSelect defaultValue={unit === "metric" ? "centimeters" : "inches"}>
+                      <GSelectTrigger className="w-full sm:w-16 h-7 text-xs border-border bg-background text-foreground">
+                        <GSelectValue />
+                      </GSelectTrigger>
+                      <GSelectContent>
+                        <GSelectItem value={unit === "metric" ? "centimeters" : "inches"}>
                           {unit === "metric" ? "cm" : "in"}
-                        </SelectItem>
-                      </SelectContent>
-                    </Select>
+                        </GSelectItem>
+                      </GSelectContent>
+                    </GSelect>
                   </div>
                 </div>
                 <div className="space-y-1">
-                  <Label htmlFor="quantity" className="text-[10px] text-muted-foreground">Quantity</Label>
-                  <Input
+                  <GLabel htmlFor="quantity" className="text-[10px] text-muted-foreground">Quantity</GLabel>
+                  <GInput
                     id="quantity"
                     type="number"
                     value={quantity}
@@ -491,9 +492,9 @@ Calculated with FastTools Concrete Calculator`
             {(calculationType === "column") && (
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                 <div className="space-y-1">
-                  <Label htmlFor="diameter" className="text-[10px] text-muted-foreground">Diameter (d)</Label>
+                  <GLabel htmlFor="diameter" className="text-[10px] text-muted-foreground">Diameter (d)</GLabel>
                   <div className="flex flex-col sm:flex-row gap-1.5">
-                    <Input
+                    <GInput
                       id="diameter"
                       type="number"
                       value={diameter}
@@ -501,22 +502,22 @@ Calculated with FastTools Concrete Calculator`
                       placeholder="2.5"
                       className="flex-1 h-7 text-xs border-border bg-background text-foreground focus-visible:ring-primary focus:border-primary"
                     />
-                    <Select defaultValue={unit === "metric" ? "meters" : "feet"}>
-                      <SelectTrigger className="w-full sm:w-16 h-7 text-xs border-border bg-background text-foreground">
-                        <SelectValue />
-                      </SelectTrigger>
-                      <SelectContent>
-                        <SelectItem value={unit === "metric" ? "meters" : "feet"}>
+                    <GSelect defaultValue={unit === "metric" ? "meters" : "feet"}>
+                      <GSelectTrigger className="w-full sm:w-16 h-7 text-xs border-border bg-background text-foreground">
+                        <GSelectValue />
+                      </GSelectTrigger>
+                      <GSelectContent>
+                        <GSelectItem value={unit === "metric" ? "meters" : "feet"}>
                           {unit === "metric" ? "m" : "ft"}
-                        </SelectItem>
-                      </SelectContent>
-                    </Select>
+                        </GSelectItem>
+                      </GSelectContent>
+                    </GSelect>
                   </div>
                 </div>
                 <div className="space-y-1">
-                  <Label htmlFor="height" className="text-[10px] text-muted-foreground">Depth or Height (h)</Label>
+                  <GLabel htmlFor="height" className="text-[10px] text-muted-foreground">Depth or Height (h)</GLabel>
                   <div className="flex flex-col sm:flex-row gap-1.5">
-                    <Input
+                    <GInput
                       id="height"
                       type="number"
                       value={height}
@@ -524,21 +525,21 @@ Calculated with FastTools Concrete Calculator`
                       placeholder="6"
                       className="flex-1 h-7 text-xs border-border bg-background text-foreground focus-visible:ring-primary focus:border-primary"
                     />
-                    <Select defaultValue={unit === "metric" ? "meters" : "feet"}>
-                      <SelectTrigger className="w-full sm:w-16 h-7 text-xs border-border bg-background text-foreground">
-                        <SelectValue />
-                      </SelectTrigger>
-                      <SelectContent>
-                        <SelectItem value={unit === "metric" ? "meters" : "feet"}>
+                    <GSelect defaultValue={unit === "metric" ? "meters" : "feet"}>
+                      <GSelectTrigger className="w-full sm:w-16 h-7 text-xs border-border bg-background text-foreground">
+                        <GSelectValue />
+                      </GSelectTrigger>
+                      <GSelectContent>
+                        <GSelectItem value={unit === "metric" ? "meters" : "feet"}>
                           {unit === "metric" ? "m" : "ft"}
-                        </SelectItem>
-                      </SelectContent>
-                    </Select>
+                        </GSelectItem>
+                      </GSelectContent>
+                    </GSelect>
                   </div>
                 </div>
                 <div className="space-y-1">
-                  <Label htmlFor="quantity" className="text-[10px] text-muted-foreground">Quantity</Label>
-                  <Input
+                  <GLabel htmlFor="quantity" className="text-[10px] text-muted-foreground">Quantity</GLabel>
+                  <GInput
                     id="quantity"
                     type="number"
                     value={quantity}
@@ -553,9 +554,9 @@ Calculated with FastTools Concrete Calculator`
             {(calculationType === "tube") && (
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                 <div className="space-y-1">
-                  <Label htmlFor="diameter" className="text-[10px] text-muted-foreground">Outer Diameter (d1)</Label>
+                  <GLabel htmlFor="diameter" className="text-[10px] text-muted-foreground">Outer Diameter (d1)</GLabel>
                   <div className="flex flex-col sm:flex-row gap-1.5">
-                    <Input
+                    <GInput
                       id="diameter"
                       type="number"
                       value={diameter}
@@ -563,22 +564,22 @@ Calculated with FastTools Concrete Calculator`
                       placeholder="5"
                       className="flex-1 h-7 text-xs border-border bg-background text-foreground focus-visible:ring-primary focus:border-primary"
                     />
-                    <Select defaultValue={unit === "metric" ? "meters" : "feet"}>
-                      <SelectTrigger className="w-full sm:w-16 h-7 text-xs border-border bg-background text-foreground">
-                        <SelectValue />
-                      </SelectTrigger>
-                      <SelectContent>
-                        <SelectItem value={unit === "metric" ? "meters" : "feet"}>
+                    <GSelect defaultValue={unit === "metric" ? "meters" : "feet"}>
+                      <GSelectTrigger className="w-full sm:w-16 h-7 text-xs border-border bg-background text-foreground">
+                        <GSelectValue />
+                      </GSelectTrigger>
+                      <GSelectContent>
+                        <GSelectItem value={unit === "metric" ? "meters" : "feet"}>
                           {unit === "metric" ? "m" : "ft"}
-                        </SelectItem>
-                      </SelectContent>
-                    </Select>
+                        </GSelectItem>
+                      </GSelectContent>
+                    </GSelect>
                   </div>
                 </div>
                 <div className="space-y-1">
-                  <Label htmlFor="innerDiameter" className="text-[10px] text-muted-foreground">Inner Diameter (d2)</Label>
+                  <GLabel htmlFor="innerDiameter" className="text-[10px] text-muted-foreground">Inner Diameter (d2)</GLabel>
                   <div className="flex flex-col sm:flex-row gap-1.5">
-                    <Input
+                    <GInput
                       id="innerDiameter"
                       type="number"
                       value={innerDiameter}
@@ -586,22 +587,22 @@ Calculated with FastTools Concrete Calculator`
                       placeholder="4"
                       className="flex-1 h-7 text-xs border-border bg-background text-foreground focus-visible:ring-primary focus:border-primary"
                     />
-                    <Select defaultValue={unit === "metric" ? "meters" : "feet"}>
-                      <SelectTrigger className="w-full sm:w-16 h-7 text-xs border-border bg-background text-foreground">
-                        <SelectValue />
-                      </SelectTrigger>
-                      <SelectContent>
-                        <SelectItem value={unit === "metric" ? "meters" : "feet"}>
+                    <GSelect defaultValue={unit === "metric" ? "meters" : "feet"}>
+                      <GSelectTrigger className="w-full sm:w-16 h-7 text-xs border-border bg-background text-foreground">
+                        <GSelectValue />
+                      </GSelectTrigger>
+                      <GSelectContent>
+                        <GSelectItem value={unit === "metric" ? "meters" : "feet"}>
                           {unit === "metric" ? "m" : "ft"}
-                        </SelectItem>
-                      </SelectContent>
-                    </Select>
+                        </GSelectItem>
+                      </GSelectContent>
+                    </GSelect>
                   </div>
                 </div>
                 <div className="space-y-1">
-                  <Label htmlFor="height" className="text-[10px] text-muted-foreground">Length or Height (h)</Label>
+                  <GLabel htmlFor="height" className="text-[10px] text-muted-foreground">Length or Height (h)</GLabel>
                   <div className="flex flex-col sm:flex-row gap-1.5">
-                    <Input
+                    <GInput
                       id="height"
                       type="number"
                       value={height}
@@ -609,21 +610,21 @@ Calculated with FastTools Concrete Calculator`
                       placeholder="6"
                       className="flex-1 h-7 text-xs border-border bg-background text-foreground focus-visible:ring-primary focus:border-primary"
                     />
-                    <Select defaultValue={unit === "metric" ? "centimeters" : "inches"}>
-                      <SelectTrigger className="w-full sm:w-16 h-7 text-xs border-border bg-background text-foreground">
-                        <SelectValue />
-                      </SelectTrigger>
-                      <SelectContent>
-                        <SelectItem value={unit === "metric" ? "centimeters" : "inches"}>
+                    <GSelect defaultValue={unit === "metric" ? "centimeters" : "inches"}>
+                      <GSelectTrigger className="w-full sm:w-16 h-7 text-xs border-border bg-background text-foreground">
+                        <GSelectValue />
+                      </GSelectTrigger>
+                      <GSelectContent>
+                        <GSelectItem value={unit === "metric" ? "centimeters" : "inches"}>
                           {unit === "metric" ? "cm" : "in"}
-                        </SelectItem>
-                      </SelectContent>
-                    </Select>
+                        </GSelectItem>
+                      </GSelectContent>
+                    </GSelect>
                   </div>
                 </div>
                 <div className="space-y-1">
-                  <Label htmlFor="quantity">Quantity</Label>
-                  <Input
+                  <GLabel htmlFor="quantity">Quantity</GLabel>
+                  <GInput
                     id="quantity"
                     type="number"
                     value={quantity}
@@ -637,9 +638,9 @@ Calculated with FastTools Concrete Calculator`
             {(calculationType === "stairs") && (
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                 <div className="space-y-1">
-                  <Label htmlFor="run" className="text-[10px] text-muted-foreground">Run</Label>
+                  <GLabel htmlFor="run" className="text-[10px] text-muted-foreground">Run</GLabel>
                   <div className="flex flex-col sm:flex-row gap-1.5">
-                    <Input
+                    <GInput
                       id="run"
                       type="number"
                       value={run}
@@ -647,20 +648,20 @@ Calculated with FastTools Concrete Calculator`
                       placeholder="12"
                       className="flex-1 h-7 text-xs border-border bg-background text-foreground focus-visible:ring-primary focus:border-primary"
                     />
-                    <Select defaultValue="inches">
-                      <SelectTrigger className="w-full sm:w-16 h-7 text-xs border-border bg-background text-foreground">
-                        <SelectValue />
-                      </SelectTrigger>
-                      <SelectContent>
-                        <SelectItem value="inches">in</SelectItem>
-                      </SelectContent>
-                    </Select>
+                    <GSelect defaultValue="inches">
+                      <GSelectTrigger className="w-full sm:w-16 h-7 text-xs border-border bg-background text-foreground">
+                        <GSelectValue />
+                      </GSelectTrigger>
+                      <GSelectContent>
+                        <GSelectItem value="inches">in</GSelectItem>
+                      </GSelectContent>
+                    </GSelect>
                   </div>
                 </div>
                 <div className="space-y-1">
-                  <Label htmlFor="rise" className="text-[10px] text-muted-foreground">Rise</Label>
+                  <GLabel htmlFor="rise" className="text-[10px] text-muted-foreground">Rise</GLabel>
                   <div className="flex flex-col sm:flex-row gap-1.5">
-                    <Input
+                    <GInput
                       id="rise"
                       type="number"
                       value={rise}
@@ -668,20 +669,20 @@ Calculated with FastTools Concrete Calculator`
                       placeholder="6"
                       className="flex-1 h-7 text-xs border-border bg-background text-foreground focus-visible:ring-primary focus:border-primary"
                     />
-                    <Select defaultValue="inches">
-                      <SelectTrigger className="w-full sm:w-16 h-7 text-xs border-border bg-background text-foreground">
-                        <SelectValue />
-                      </SelectTrigger>
-                      <SelectContent>
-                        <SelectItem value="inches">in</SelectItem>
-                      </SelectContent>
-                    </Select>
+                    <GSelect defaultValue="inches">
+                      <GSelectTrigger className="w-full sm:w-16 h-7 text-xs border-border bg-background text-foreground">
+                        <GSelectValue />
+                      </GSelectTrigger>
+                      <GSelectContent>
+                        <GSelectItem value="inches">in</GSelectItem>
+                      </GSelectContent>
+                    </GSelect>
                   </div>
                 </div>
                 <div className="space-y-1">
-                  <Label htmlFor="width" className="text-[10px] text-muted-foreground">Width</Label>
+                  <GLabel htmlFor="width" className="text-[10px] text-muted-foreground">Width</GLabel>
                   <div className="flex flex-col sm:flex-row gap-1.5">
-                    <Input
+                    <GInput
                       id="width"
                       type="number"
                       value={width}
@@ -689,19 +690,19 @@ Calculated with FastTools Concrete Calculator`
                       placeholder="50"
                       className="flex-1 h-7 text-xs border-border bg-background text-foreground focus-visible:ring-primary focus:border-primary"
                     />
-                    <Select defaultValue="inches">
-                      <SelectTrigger className="w-full sm:w-16 h-7 text-xs border-border bg-background text-foreground">
-                        <SelectValue />
-                      </SelectTrigger>
-                      <SelectContent>
-                        <SelectItem value="inches">in</SelectItem>
-                      </SelectContent>
-                    </Select>
+                    <GSelect defaultValue="inches">
+                      <GSelectTrigger className="w-full sm:w-16 h-7 text-xs border-border bg-background text-foreground">
+                        <GSelectValue />
+                      </GSelectTrigger>
+                      <GSelectContent>
+                        <GSelectItem value="inches">in</GSelectItem>
+                      </GSelectContent>
+                    </GSelect>
                   </div>
                 </div>
                 <div className="space-y-1">
-                  <Label htmlFor="steps" className="text-[10px] text-muted-foreground">Number of Steps</Label>
-                  <Input
+                  <GLabel htmlFor="steps" className="text-[10px] text-muted-foreground">Number of Steps</GLabel>
+                  <GInput
                     id="steps"
                     type="number"
                     value={steps}
@@ -711,23 +712,23 @@ Calculated with FastTools Concrete Calculator`
                   />
                 </div>
                 <div className="space-y-1">
-                  <Label htmlFor="platformDepth" className="text-[10px] text-muted-foreground">Platform Depth</Label>
+                  <GLabel htmlFor="platformDepth" className="text-[10px] text-muted-foreground">Platform Depth</GLabel>
                   <div className="flex flex-col sm:flex-row gap-1.5">
-                    <Input
+                    <GInput
                       id="platformDepth"
                       type="number"
                       value={platformDepth}
                       onChange={(e) => setPlatformDepth(e.target.value)}
                       placeholder="5"
                     />
-                    <Select defaultValue="inches">
-                      <SelectTrigger className="w-16 h-7 text-xs border-border bg-background text-foreground">
-                        <SelectValue />
-                      </SelectTrigger>
-                      <SelectContent>
-                        <SelectItem value="inches">in</SelectItem>
-                      </SelectContent>
-                    </Select>
+                    <GSelect defaultValue="inches">
+                      <GSelectTrigger className="w-16 h-7 text-xs border-border bg-background text-foreground">
+                        <GSelectValue />
+                      </GSelectTrigger>
+                      <GSelectContent>
+                        <GSelectItem value="inches">in</GSelectItem>
+                      </GSelectContent>
+                    </GSelect>
                   </div>
                 </div>
               </div>
@@ -736,108 +737,108 @@ Calculated with FastTools Concrete Calculator`
             {(calculationType === "curb") && (
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                 <div className="space-y-1">
-                  <Label htmlFor="curbDepth" className="text-[10px] text-muted-foreground">Curb Depth</Label>
+                  <GLabel htmlFor="curbDepth" className="text-[10px] text-muted-foreground">Curb Depth</GLabel>
                   <div className="flex flex-col sm:flex-row gap-1.5">
-                    <Input
+                    <GInput
                       id="curbDepth"
                       type="number"
                       value={curbDepth}
                       onChange={(e) => setCurbDepth(e.target.value)}
                       placeholder="4"
                     />
-                    <Select defaultValue="inches">
-                      <SelectTrigger className="w-16 h-7 text-xs border-border bg-background text-foreground">
-                        <SelectValue />
-                      </SelectTrigger>
-                      <SelectContent>
-                        <SelectItem value="inches">in</SelectItem>
-                      </SelectContent>
-                    </Select>
+                    <GSelect defaultValue="inches">
+                      <GSelectTrigger className="w-16 h-7 text-xs border-border bg-background text-foreground">
+                        <GSelectValue />
+                      </GSelectTrigger>
+                      <GSelectContent>
+                        <GSelectItem value="inches">in</GSelectItem>
+                      </GSelectContent>
+                    </GSelect>
                   </div>
                 </div>
                 <div className="space-y-1">
-                  <Label htmlFor="gutterWidth" className="text-[10px] text-muted-foreground">Gutter Width</Label>
+                  <GLabel htmlFor="gutterWidth" className="text-[10px] text-muted-foreground">Gutter Width</GLabel>
                   <div className="flex flex-col sm:flex-row gap-1.5">
-                    <Input
+                    <GInput
                       id="gutterWidth"
                       type="number"
                       value={gutterWidth}
                       onChange={(e) => setGutterWidth(e.target.value)}
                       placeholder="10"
                     />
-                    <Select defaultValue="inches">
-                      <SelectTrigger className="w-16 h-7 text-xs border-border bg-background text-foreground">
-                        <SelectValue />
-                      </SelectTrigger>
-                      <SelectContent>
-                        <SelectItem value="inches">in</SelectItem>
-                      </SelectContent>
-                    </Select>
+                    <GSelect defaultValue="inches">
+                      <GSelectTrigger className="w-16 h-7 text-xs border-border bg-background text-foreground">
+                        <GSelectValue />
+                      </GSelectTrigger>
+                      <GSelectContent>
+                        <GSelectItem value="inches">in</GSelectItem>
+                      </GSelectContent>
+                    </GSelect>
                   </div>
                 </div>
                 <div className="space-y-1">
-                  <Label htmlFor="curbHeight" className="text-[10px] text-muted-foreground">Curb Height</Label>
+                  <GLabel htmlFor="curbHeight" className="text-[10px] text-muted-foreground">Curb Height</GLabel>
                   <div className="flex flex-col sm:flex-row gap-1.5">
-                    <Input
+                    <GInput
                       id="curbHeight"
                       type="number"
                       value={curbHeight}
                       onChange={(e) => setCurbHeight(e.target.value)}
                       placeholder="4"
                     />
-                    <Select defaultValue="inches">
-                      <SelectTrigger className="w-16 h-7 text-xs border-border bg-background text-foreground">
-                        <SelectValue />
-                      </SelectTrigger>
-                      <SelectContent>
-                        <SelectItem value="inches">in</SelectItem>
-                      </SelectContent>
-                    </Select>
+                    <GSelect defaultValue="inches">
+                      <GSelectTrigger className="w-16 h-7 text-xs border-border bg-background text-foreground">
+                        <GSelectValue />
+                      </GSelectTrigger>
+                      <GSelectContent>
+                        <GSelectItem value="inches">in</GSelectItem>
+                      </GSelectContent>
+                    </GSelect>
                   </div>
                 </div>
                 <div className="space-y-1">
-                  <Label htmlFor="flagThickness" className="text-[10px] text-muted-foreground">Flag Thickness</Label>
+                  <GLabel htmlFor="flagThickness" className="text-[10px] text-muted-foreground">Flag Thickness</GLabel>
                   <div className="flex flex-col sm:flex-row gap-1.5">
-                    <Input
+                    <GInput
                       id="flagThickness"
                       type="number"
                       value={flagThickness}
                       onChange={(e) => setFlagThickness(e.target.value)}
                       placeholder="5"
                     />
-                    <Select defaultValue="inches">
-                      <SelectTrigger className="w-16 h-7 text-xs border-border bg-background text-foreground">
-                        <SelectValue />
-                      </SelectTrigger>
-                      <SelectContent>
-                        <SelectItem value="inches">in</SelectItem>
-                      </SelectContent>
-                    </Select>
+                    <GSelect defaultValue="inches">
+                      <GSelectTrigger className="w-16 h-7 text-xs border-border bg-background text-foreground">
+                        <GSelectValue />
+                      </GSelectTrigger>
+                      <GSelectContent>
+                        <GSelectItem value="inches">in</GSelectItem>
+                      </GSelectContent>
+                    </GSelect>
                   </div>
                 </div>
                 <div className="space-y-1">
-                  <Label htmlFor="length" className="text-[10px] text-muted-foreground">Length</Label>
+                  <GLabel htmlFor="length" className="text-[10px] text-muted-foreground">Length</GLabel>
                   <div className="flex flex-col sm:flex-row gap-1.5">
-                    <Input
+                    <GInput
                       id="length"
                       type="number"
                       value={length}
                       onChange={(e) => setLength(e.target.value)}
                       placeholder="10"
                     />
-                    <Select defaultValue="feet">
-                      <SelectTrigger className="w-16 h-7 text-xs border-border bg-background text-foreground">
-                        <SelectValue />
-                      </SelectTrigger>
-                      <SelectContent>
-                        <SelectItem value="feet">ft</SelectItem>
-                      </SelectContent>
-                    </Select>
+                    <GSelect defaultValue="feet">
+                      <GSelectTrigger className="w-16 h-7 text-xs border-border bg-background text-foreground">
+                        <GSelectValue />
+                      </GSelectTrigger>
+                      <GSelectContent>
+                        <GSelectItem value="feet">ft</GSelectItem>
+                      </GSelectContent>
+                    </GSelect>
                   </div>
                 </div>
                 <div className="space-y-1">
-                  <Label htmlFor="quantity">Quantity</Label>
-                  <Input
+                  <GLabel htmlFor="quantity">Quantity</GLabel>
+                  <GInput
                     id="quantity"
                     type="number"
                     value={quantity}
@@ -859,21 +860,21 @@ Calculated with FastTools Concrete Calculator`
               Clear
             </GButton>
           </div>
-        </CardContent>
-      </Card>
+        </GCardContent>
+      </GCard>
 
       {/* Results Section */}
       {result && (
-        <Card className="shadow-lg border-border bg-card">
-          <CardHeader className="pb-3 px-3 sm:px-6">
-            <CardTitle className="flex items-center gap-1.5 text-base sm:text-lg text-foreground">
+        <GCard className="shadow-lg border-border bg-card">
+          <GCardHeader className="pb-3 px-3 sm:px-6">
+            <GCardTitle className="flex items-center gap-1.5 text-base sm:text-lg text-foreground">
               <div className="p-1 sm:p-1.5 bg-primary/10 rounded-lg">
                 <BarChart3 className="h-3.5 sm:h-4 w-3.5 sm:w-4 text-foreground" />
               </div>
               Results
-            </CardTitle>
-          </CardHeader>
-          <CardContent className="space-y-6 px-3 sm:px-6">
+            </GCardTitle>
+          </GCardHeader>
+          <GCardContent className="space-y-6 px-3 sm:px-6">
             {/* Main Results */}
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3">
               <div className="bg-card p-3 rounded-lg border border-border">
@@ -1000,8 +1001,8 @@ Calculated with FastTools Concrete Calculator`
                 )}
               </GButton>
             </div>
-          </CardContent>
-        </Card>
+          </GCardContent>
+        </GCard>
       )}
     </div>
   )

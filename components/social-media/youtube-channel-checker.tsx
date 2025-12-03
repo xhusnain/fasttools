@@ -1,10 +1,11 @@
 "use client"
 
 import { useState } from "react"
-import { GButton } from "@/components/globalcomponents/gbutton"
-import { Textarea } from "@/components/ui/textarea"
-import { Label } from "@/components/ui/label"
-import { Card } from "@/components/ui/card"
+import { GButton } from "@/ui/gbutton"
+import { GTextarea } from "@/ui/gtextarea"
+import { GLabel } from "@/ui/glabel"
+import { GCard } from "@/ui/gcard"
+
 import { Search, CheckCircle, XCircle, Lightbulb, Copy, ExternalLink, Users, Video, AlertCircle, Upload } from "lucide-react"
 import { LoadingSpinner } from "@/components/common/loading-spinner"
 
@@ -201,13 +202,13 @@ export function YoutubeChannelChecker() {
 
   return (
     <div className="space-y-6">
-      <Card className="p-6 bg-card border-border shadow-sm">
+      <GCard className="p-6 bg-card border-border shadow-sm">
         <div className="space-y-4">
           <div>
             <div className="flex items-center justify-between mb-2">
-              <Label htmlFor="channel-names" className="text-sm font-medium text-foreground">
+              <GLabel htmlFor="channel-names" className="text-sm font-medium text-foreground">
                 Channel Names
-              </Label>
+              </GLabel>
               <div className="relative">
                 <input
                   type="file"
@@ -216,16 +217,16 @@ export function YoutubeChannelChecker() {
                   accept=".txt,.csv"
                   onChange={handleFileUpload}
                 />
-                <Label
+                <GLabel
                   htmlFor="file-upload"
                   className="flex items-center gap-1.5 text-xs text-primary hover:text-primary/80 cursor-pointer transition-colors"
                 >
                   <Upload className="h-3.5 w-3.5" />
                   Import from File
-                </Label>
+                </GLabel>
               </div>
             </div>
-            <Textarea
+            <GTextarea
               id="channel-names"
               placeholder="Enter channel names separated by commas or new lines (e.g., MyChannel, TechReviews, GamingTV)"
               value={channelNames}
@@ -255,7 +256,7 @@ export function YoutubeChannelChecker() {
 
           {/* Progress and Timer Display */}
           {checkingProgress && (
-            <Card className="p-4 bg-card border-primary shadow-sm">
+            <GCard className="p-4 bg-card border-primary shadow-sm">
               <div className="space-y-3">
                 <div className="flex items-center justify-between">
                   <h4 className="text-sm font-semibold text-primary">
@@ -283,13 +284,13 @@ export function YoutubeChannelChecker() {
                   </div>
                 )}
               </div>
-            </Card>
+            </GCard>
           )}
         </div>
-      </Card>
+      </GCard>
 
       {error && (
-        <Card className="p-6 bg-card border-red-500 shadow-sm animate-fade-in">
+        <GCard className="p-6 bg-card border-red-500 shadow-sm animate-fade-in">
           <div className="flex items-center gap-3">
             <AlertCircle className="h-6 w-6 text-foreground" />
             <div>
@@ -297,7 +298,7 @@ export function YoutubeChannelChecker() {
               <p className="text-sm text-foreground">{error}</p>
             </div>
           </div>
-        </Card>
+        </GCard>
       )}
 
       {results.length > 0 && (
@@ -305,7 +306,7 @@ export function YoutubeChannelChecker() {
           <h3 className="text-lg font-semibold text-foreground">Check Results</h3>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
             {results.map((result, index) => (
-              <Card key={index} className={`p-4 bg-card border-border shadow-sm animate-fade-in ${currentCheckingIndex === index ? 'ring-2 ring-primary bg-muted/30' : ''
+              <GCard key={index} className={`p-4 bg-card border-border shadow-sm animate-fade-in ${currentCheckingIndex === index ? 'ring-2 ring-primary bg-muted/30' : ''
                 }`}>
                 <div className="space-y-3">
                   {/* Status Icon and Channel Name */}
@@ -346,7 +347,7 @@ export function YoutubeChannelChecker() {
                   </div>
 
 
-                  {/* Action Button */}
+                  {/* Action GButton */}
                   {result.channelUrl && (
                     <GButton
                       variant="outline"
@@ -383,13 +384,13 @@ export function YoutubeChannelChecker() {
                     </div>
                   )}
                 </div>
-              </Card>
+              </GCard>
             ))}
           </div>
         </div>
       )}
 
-      <Card className="p-6 bg-muted/30 border-border">
+      <GCard className="p-6 bg-muted/30 border-border">
         <h3 className="text-base font-semibold text-foreground mb-3">How to Use</h3>
         <ul className="space-y-2 text-sm text-muted-foreground leading-relaxed">
           <li>• Enter multiple channel names separated by commas</li>
@@ -398,7 +399,7 @@ export function YoutubeChannelChecker() {
           <li>• Get alternative suggestions for available names</li>
           <li>• Copy suggested names with one click</li>
         </ul>
-      </Card>
+      </GCard>
     </div>
   )
 }

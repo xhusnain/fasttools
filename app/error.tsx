@@ -1,7 +1,8 @@
 'use client'
 
 import { useEffect } from 'react'
-import { Button } from '@/components/ui/button'
+import { GButton } from "@/ui/gbutton"
+
 import { AlertTriangle } from 'lucide-react'
 
 export default function Error({
@@ -25,17 +26,17 @@ export default function Error({
                 We apologize for the inconvenience. An unexpected error has occurred.
             </p>
             <div className="flex gap-4">
-                <Button
+                <GButton
                     onClick={() => window.location.reload()}
                     variant="outline"
                 >
                     Refresh Page
-                </Button>
-                <Button
+                </GButton>
+                <GButton
                     onClick={() => reset()}
                 >
                     Try Again
-                </Button>
+                </GButton>
             </div>
         </div>
     )

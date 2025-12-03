@@ -1,10 +1,11 @@
 "use client"
 
 import { useState } from "react"
-import { GButton } from "@/components/globalcomponents/gbutton"
-import { Input } from "@/components/ui/input"
-import { Label } from "@/components/ui/label"
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
+import { GButton } from "@/ui/gbutton"
+import { GInput } from "@/ui/ginput"
+import { GLabel } from "@/ui/glabel"
+import { GCard, GCardContent, GCardDescription, GCardHeader, GCardTitle } from "@/ui/gcard"
+
 import { Copy, Check, Lightbulb, RefreshCw } from "lucide-react"
 import { LoadingSpinner } from "@/components/common/loading-spinner"
 
@@ -200,22 +201,22 @@ export function BlogTitleGenerator() {
 
   return (
     <div className="space-y-6">
-      <Card className="border border-border shadow-sm">
-        <CardHeader>
-          <CardTitle className="text-xl text-foreground flex items-center gap-2">
+      <GCard className="border border-border shadow-sm">
+        <GCardHeader>
+          <GCardTitle className="text-xl text-foreground flex items-center gap-2">
             <Lightbulb className="h-5 w-5 text-primary" />
             Blog Title Generator
-          </CardTitle>
-          <CardDescription className="text-sm text-muted-foreground">
+          </GCardTitle>
+          <GCardDescription className="text-sm text-muted-foreground">
             Generate catchy blog titles for your content
-          </CardDescription>
-        </CardHeader>
-        <CardContent className="space-y-4">
+          </GCardDescription>
+        </GCardHeader>
+        <GCardContent className="space-y-4">
           <div className="space-y-2">
-            <Label htmlFor="keyword" className="text-sm font-medium text-foreground">
+            <GLabel htmlFor="keyword" className="text-sm font-medium text-foreground">
               Main Keyword or Topic
-            </Label>
-            <Input
+            </GLabel>
+            <GInput
               id="keyword"
               placeholder="e.g., SEO, content marketing, web design"
               value={keyword}
@@ -241,21 +242,21 @@ export function BlogTitleGenerator() {
               </>
             )}
           </GButton>
-        </CardContent>
-      </Card>
+        </GCardContent>
+      </GCard>
 
       {result.length > 0 && (
-        <Card className="border border-border shadow-sm animate-fade-in">
-          <CardHeader>
-            <CardTitle className="text-lg text-foreground flex items-center gap-2">
+        <GCard className="border border-border shadow-sm animate-fade-in">
+          <GCardHeader>
+            <GCardTitle className="text-lg text-foreground flex items-center gap-2">
               <Lightbulb className="h-5 w-5 text-primary" />
               Generated SEO-Optimized Blog Titles
-            </CardTitle>
-            <CardDescription className="text-sm text-muted-foreground">
+            </GCardTitle>
+            <GCardDescription className="text-sm text-muted-foreground">
               {result.length} AI-powered title suggestions ready to boost your content's visibility
-            </CardDescription>
-          </CardHeader>
-          <CardContent>
+            </GCardDescription>
+          </GCardHeader>
+          <GCardContent>
             <div className="space-y-3">
               {result.map((title, index) => (
                 <div
@@ -289,8 +290,8 @@ export function BlogTitleGenerator() {
                 Choose titles that best match your content and target audience.
               </p>
             </div>
-          </CardContent>
-        </Card>
+          </GCardContent>
+        </GCard>
       )}
     </div>
   )

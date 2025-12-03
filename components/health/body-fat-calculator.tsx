@@ -1,13 +1,14 @@
 "use client"
 
 import { useState, useEffect } from "react"
-import { GButton } from "@/components/globalcomponents/gbutton"
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
-import { Input } from "@/components/ui/input"
-import { Label } from "@/components/ui/label"
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
-import { Badge } from "@/components/ui/badge"
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
+import { GButton } from "@/ui/gbutton"
+import { GCard, GCardContent, GCardHeader, GCardTitle } from "@/ui/gcard"
+import { GInput } from "@/ui/ginput"
+import { GLabel } from "@/ui/glabel"
+import { GSelect, GSelectContent, GSelectItem, GSelectTrigger, GSelectValue } from "@/ui/gselect"
+import { GBadge } from "@/ui/gbadge"
+import { GTabs, GTabsContent, GTabsList, GTabsTrigger } from "@/ui/gtabs"
+
 import {
   Calculator,
   Clock,
@@ -392,47 +393,47 @@ Fat to Lose: ${result.idealBodyFat.fatToLose} kg`
   return (
     <div className="space-y-4 sm:space-y-6 md:space-y-8 bg-card rounded-xl p-3 sm:p-4 md:p-6 w-full overflow-hidden">
       {/* Main Calculator */}
-      <Card className="bg-card border-border w-full overflow-hidden">
-        <CardHeader className="px-3 sm:px-4 md:px-6 pb-3">
-          <CardTitle className="flex items-center gap-2 text-foreground text-base sm:text-lg md:text-xl break-words">
+      <GCard className="bg-card border-border w-full overflow-hidden">
+        <GCardHeader className="px-3 sm:px-4 md:px-6 pb-3">
+          <GCardTitle className="flex items-center gap-2 text-foreground text-base sm:text-lg md:text-xl break-words">
             <Scale className="h-4 w-4 sm:h-5 sm:w-5 text-foreground flex-shrink-0" />
             <span className="break-words">Advanced Body Fat Calculator</span>
-          </CardTitle>
-        </CardHeader>
-        <CardContent className="space-y-4 sm:space-y-6 px-3 sm:px-4 md:px-6">
+          </GCardTitle>
+        </GCardHeader>
+        <GCardContent className="space-y-4 sm:space-y-6 px-3 sm:px-4 md:px-6">
           {/* Unit System Selection */}
           <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 w-full overflow-hidden">
             <div className="flex-1 space-y-2 min-w-0 w-full sm:w-auto">
-              <Label className="text-heading-accent text-xs sm:text-sm">Unit System</Label>
-              <Select value={unitSystem} onValueChange={(value: "metric" | "imperial") => setUnitSystem(value)}>
-                <SelectTrigger className="border-border bg-card text-foreground w-full text-xs sm:text-sm">
-                  <SelectValue />
-                </SelectTrigger>
-                <SelectContent>
-                  <SelectItem value="metric">Metric (kg, cm)</SelectItem>
-                  <SelectItem value="imperial">Imperial (lbs, ft/in)</SelectItem>
-                </SelectContent>
-              </Select>
+              <GLabel className="text-heading-accent text-xs sm:text-sm">Unit System</GLabel>
+              <GSelect value={unitSystem} onValueChange={(value: "metric" | "imperial") => setUnitSystem(value)}>
+                <GSelectTrigger className="border-border bg-card text-foreground w-full text-xs sm:text-sm">
+                  <GSelectValue />
+                </GSelectTrigger>
+                <GSelectContent>
+                  <GSelectItem value="metric">Metric (kg, cm)</GSelectItem>
+                  <GSelectItem value="imperial">Imperial (lbs, ft/in)</GSelectItem>
+                </GSelectContent>
+              </GSelect>
             </div>
             <div className="flex-1 space-y-2 min-w-0 w-full sm:w-auto">
-              <Label className="text-heading-accent text-xs sm:text-sm">Gender</Label>
-              <Select value={gender} onValueChange={(value: "male" | "female") => setGender(value)}>
-                <SelectTrigger className="border-border bg-card text-foreground w-full text-xs sm:text-sm">
-                  <SelectValue />
-                </SelectTrigger>
-                <SelectContent>
-                  <SelectItem value="male">Male</SelectItem>
-                  <SelectItem value="female">Female</SelectItem>
-                </SelectContent>
-              </Select>
+              <GLabel className="text-heading-accent text-xs sm:text-sm">Gender</GLabel>
+              <GSelect value={gender} onValueChange={(value: "male" | "female") => setGender(value)}>
+                <GSelectTrigger className="border-border bg-card text-foreground w-full text-xs sm:text-sm">
+                  <GSelectValue />
+                </GSelectTrigger>
+                <GSelectContent>
+                  <GSelectItem value="male">Male</GSelectItem>
+                  <GSelectItem value="female">Female</GSelectItem>
+                </GSelectContent>
+              </GSelect>
             </div>
           </div>
 
-          {/* Input Fields */}
+          {/* GInput Fields */}
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4 w-full">
             <div className="space-y-2 w-full min-w-0">
-              <Label htmlFor="age" className="text-heading-accent text-xs sm:text-sm">Age</Label>
-              <Input
+              <GLabel htmlFor="age" className="text-heading-accent text-xs sm:text-sm">Age</GLabel>
+              <GInput
                 id="age"
                 type="number"
                 placeholder="25"
@@ -444,8 +445,8 @@ Fat to Lose: ${result.idealBodyFat.fatToLose} kg`
               />
             </div>
             <div className="space-y-2 w-full min-w-0">
-              <Label htmlFor="weight" className="text-heading-accent text-xs sm:text-sm">Weight</Label>
-              <Input
+              <GLabel htmlFor="weight" className="text-heading-accent text-xs sm:text-sm">Weight</GLabel>
+              <GInput
                 id="weight"
                 type="number"
                 placeholder={unitSystem === "metric" ? "70" : "154"}
@@ -461,8 +462,8 @@ Fat to Lose: ${result.idealBodyFat.fatToLose} kg`
 
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4 w-full">
             <div className="space-y-2 w-full min-w-0">
-              <Label htmlFor="height" className="text-heading-accent text-xs sm:text-sm">Height</Label>
-              <Input
+              <GLabel htmlFor="height" className="text-heading-accent text-xs sm:text-sm">Height</GLabel>
+              <GInput
                 id="height"
                 type="number"
                 placeholder={unitSystem === "metric" ? "178" : "5.9"}
@@ -475,8 +476,8 @@ Fat to Lose: ${result.idealBodyFat.fatToLose} kg`
               </p>
             </div>
             <div className="space-y-2 w-full min-w-0">
-              <Label htmlFor="neck" className="text-heading-accent text-xs sm:text-sm">Neck Circumference</Label>
-              <Input
+              <GLabel htmlFor="neck" className="text-heading-accent text-xs sm:text-sm">Neck Circumference</GLabel>
+              <GInput
                 id="neck"
                 type="number"
                 placeholder={unitSystem === "metric" ? "50" : "19.7"}
@@ -492,8 +493,8 @@ Fat to Lose: ${result.idealBodyFat.fatToLose} kg`
 
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4 w-full">
             <div className="space-y-2 w-full min-w-0">
-              <Label htmlFor="waist" className="text-heading-accent text-xs sm:text-sm">Waist Circumference</Label>
-              <Input
+              <GLabel htmlFor="waist" className="text-heading-accent text-xs sm:text-sm">Waist Circumference</GLabel>
+              <GInput
                 id="waist"
                 type="number"
                 placeholder={unitSystem === "metric" ? "96" : "37.8"}
@@ -507,8 +508,8 @@ Fat to Lose: ${result.idealBodyFat.fatToLose} kg`
             </div>
             {gender === "female" && (
               <div className="space-y-2 w-full min-w-0">
-                <Label htmlFor="hip" className="text-heading-accent text-xs sm:text-sm">Hip Circumference</Label>
-                <Input
+                <GLabel htmlFor="hip" className="text-heading-accent text-xs sm:text-sm">Hip Circumference</GLabel>
+                <GInput
                   id="hip"
                   type="number"
                   placeholder={unitSystem === "metric" ? "102" : "40.2"}
@@ -532,33 +533,33 @@ Fat to Lose: ${result.idealBodyFat.fatToLose} kg`
               Clear All
             </GButton>
           </div>
-        </CardContent>
-      </Card>
+        </GCardContent>
+      </GCard>
 
       {/* Results Section */}
       {result && (
         <div className="space-y-4 sm:space-y-6">
           {/* Main Results */}
-          <Card className="bg-card border-border">
-            <CardHeader>
-              <CardTitle className="flex items-center gap-2 text-foreground">
+          <GCard className="bg-card border-border">
+            <GCardHeader>
+              <GCardTitle className="flex items-center gap-2 text-foreground">
                 <Target className="h-5 w-5 text-foreground" />
                 Body Fat Analysis Results
-              </CardTitle>
-            </CardHeader>
-            <CardContent className="space-y-4">
+              </GCardTitle>
+            </GCardHeader>
+            <GCardContent className="space-y-4">
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 <div className="space-y-2">
-                  <Label className="text-sm font-medium text-foreground">U.S. Navy Method</Label>
+                  <GLabel className="text-sm font-medium text-foreground">U.S. Navy Method</GLabel>
                   <div className="text-2xl sm:text-3xl font-bold text-heading-accent">
                     {result.navyMethod.percentage}%
                   </div>
-                  <Badge variant="secondary" className="text-sm bg-border text-foreground">
+                  <GBadge variant="secondary" className="text-sm bg-border text-foreground">
                     {result.navyMethod.category}
-                  </Badge>
+                  </GBadge>
                 </div>
                 <div className="space-y-2">
-                  <Label className="text-sm font-medium text-foreground">BMI Method</Label>
+                  <GLabel className="text-sm font-medium text-foreground">BMI Method</GLabel>
                   <div className="text-2xl sm:text-3xl font-bold text-foreground">
                     {result.bmiMethod.percentage}%
                   </div>
@@ -589,18 +590,18 @@ Fat to Lose: ${result.idealBodyFat.fatToLose} kg`
                   Copy Results
                 </GButton>
               </div>
-            </CardContent>
-          </Card>
+            </GCardContent>
+          </GCard>
 
           {/* Body Fat Categories */}
-          <Card className="bg-card border-border">
-            <CardHeader>
-              <CardTitle className="flex items-center gap-2 text-foreground">
+          <GCard className="bg-card border-border">
+            <GCardHeader>
+              <GCardTitle className="flex items-center gap-2 text-foreground">
                 <BarChart3 className="h-5 w-5 text-foreground" />
                 Body Fat Categories
-              </CardTitle>
-            </CardHeader>
-            <CardContent>
+              </GCardTitle>
+            </GCardHeader>
+            <GCardContent>
               <div className="space-y-3">
                 {bodyFatCategories.map((category, index) => (
                   <div key={index} className="flex justify-between items-center p-3 bg-card border border-border rounded-lg">
@@ -613,19 +614,19 @@ Fat to Lose: ${result.idealBodyFat.fatToLose} kg`
                   </div>
                 ))}
               </div>
-            </CardContent>
-          </Card>
+            </GCardContent>
+          </GCard>
 
           {/* Health Risks */}
           {result.healthRisks.length > 0 && (
-            <Card className="bg-card border-border">
-              <CardHeader>
-                <CardTitle className="flex items-center gap-2 text-foreground">
+            <GCard className="bg-card border-border">
+              <GCardHeader>
+                <GCardTitle className="flex items-center gap-2 text-foreground">
                   <AlertCircle className="h-5 w-5 text-foreground" />
                   Health Considerations
-                </CardTitle>
-              </CardHeader>
-              <CardContent>
+                </GCardTitle>
+              </GCardHeader>
+              <GCardContent>
                 <div className="space-y-2">
                   {result.healthRisks.map((risk, index) => (
                     <div key={index} className="flex items-start gap-2 p-3 bg-card border border-destructive/30 rounded-lg">
@@ -634,19 +635,19 @@ Fat to Lose: ${result.idealBodyFat.fatToLose} kg`
                     </div>
                   ))}
                 </div>
-              </CardContent>
-            </Card>
+              </GCardContent>
+            </GCard>
           )}
 
           {/* Recommendations */}
-          <Card className="bg-card border-border">
-            <CardHeader>
-              <CardTitle className="flex items-center gap-2 text-foreground">
+          <GCard className="bg-card border-border">
+            <GCardHeader>
+              <GCardTitle className="flex items-center gap-2 text-foreground">
                 <Heart className="h-5 w-5 text-foreground" />
                 Personalized Recommendations
-              </CardTitle>
-            </CardHeader>
-            <CardContent>
+              </GCardTitle>
+            </GCardHeader>
+            <GCardContent>
               <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
                 <div>
                   <h4 className="font-semibold mb-3 text-heading-accent">Nutrition</h4>
@@ -682,18 +683,18 @@ Fat to Lose: ${result.idealBodyFat.fatToLose} kg`
                   </ul>
                 </div>
               </div>
-            </CardContent>
-          </Card>
+            </GCardContent>
+          </GCard>
 
           {/* Improvement Plan */}
-          <Card className="bg-card border-border">
-            <CardHeader>
-              <CardTitle className="flex items-center gap-2 text-foreground">
+          <GCard className="bg-card border-border">
+            <GCardHeader>
+              <GCardTitle className="flex items-center gap-2 text-foreground">
                 <Trophy className="h-5 w-5 text-foreground" />
                 Improvement Plan
-              </CardTitle>
-            </CardHeader>
-            <CardContent>
+              </GCardTitle>
+            </GCardHeader>
+            <GCardContent>
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6">
                 <div>
                   <h4 className="font-semibold mb-3 text-heading-accent">Short Term (1-3 months)</h4>
@@ -718,21 +719,21 @@ Fat to Lose: ${result.idealBodyFat.fatToLose} kg`
                   </ul>
                 </div>
               </div>
-            </CardContent>
-          </Card>
+            </GCardContent>
+          </GCard>
         </div>
       )}
 
       {/* History Section */}
       {history.length > 0 && (
-        <Card className="bg-card border-border">
-          <CardHeader>
-            <CardTitle className="flex items-center gap-2 text-foreground">
+        <GCard className="bg-card border-border">
+          <GCardHeader>
+            <GCardTitle className="flex items-center gap-2 text-foreground">
               <Clock className="h-5 w-5 text-foreground" />
               Recent Calculations
-            </CardTitle>
-          </CardHeader>
-          <CardContent>
+            </GCardTitle>
+          </GCardHeader>
+          <GCardContent>
             <div className="space-y-2">
               {history.map((item, index) => (
                 <div key={index} className="flex items-center justify-between p-3 bg-card border border-border rounded-lg">
@@ -754,19 +755,19 @@ Fat to Lose: ${result.idealBodyFat.fatToLose} kg`
                 </div>
               ))}
             </div>
-          </CardContent>
-        </Card>
+          </GCardContent>
+        </GCard>
       )}
 
       {/* Information Section */}
-      <Card className="bg-card border-border">
-        <CardHeader>
-          <CardTitle className="flex items-center gap-2 text-foreground">
+      <GCard className="bg-card border-border">
+        <GCardHeader>
+          <GCardTitle className="flex items-center gap-2 text-foreground">
             <Info className="h-5 w-5 text-foreground" />
             Body Fat Calculator Features
-          </CardTitle>
-        </CardHeader>
-        <CardContent className="space-y-3">
+          </GCardTitle>
+        </GCardHeader>
+        <GCardContent className="space-y-3">
           <div className="p-4 bg-card border border-border rounded-lg">
             <div className="flex items-start gap-2">
               <Info className="h-4 w-4 text-foreground mt-0.5 flex-shrink-0" />
@@ -795,8 +796,8 @@ Fat to Lose: ${result.idealBodyFat.fatToLose} kg`
               <strong className="text-foreground">Health Analysis:</strong> Personalized recommendations based on your body fat percentage and health goals.
             </p>
           </div>
-        </CardContent>
-      </Card>
+        </GCardContent>
+      </GCard>
     </div>
   )
 }

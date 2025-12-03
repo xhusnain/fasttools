@@ -1,5 +1,6 @@
 import { createMetadata } from "@/lib/metadata-base"
-import { GCard } from "@/components/globalcomponents/gcard"
+import { GToolCard } from "@/ui/gtool-card"
+
 import { ToolPageLayout } from "@/components/common/tool-page-layout"
 import { QrCode, Music, ImageIcon, Heart } from "lucide-react"
 
@@ -142,7 +143,7 @@ export default function AiToolsPage() {
       toolComponent={
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
           {aiTools.map((tool) => (
-            <GCard
+            <GToolCard
               key={`ai-tools-${tool.href}`}
               title={tool.title}
               description={tool.description}

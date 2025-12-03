@@ -1,7 +1,8 @@
 "use client"
 
 import { useState, useEffect } from "react"
-import { GButton } from "@/components/globalcomponents/gbutton"
+import { GButton } from "@/ui/gbutton"
+
 import { DollarSign, ArrowLeftRight, RefreshCw } from "lucide-react"
 
 interface Currency {
@@ -159,7 +160,7 @@ export function CurrencyConverter() {
             />
           </div>
 
-          {/* Swap Button */}
+          {/* Swap GButton */}
           <div className="flex justify-center">
             <GButton
               onClick={swapCurrencies}

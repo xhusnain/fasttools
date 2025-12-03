@@ -1,10 +1,11 @@
 "use client"
 
 import { useState } from "react"
-import { GButton as Button } from "@/components/globalcomponents/gbutton"
-import { Input } from "@/components/ui/input"
-import { Label } from "@/components/ui/label"
-import { Card } from "@/components/ui/card"
+import { GButton } from "@/ui/gbutton"
+import { GInput } from "@/ui/ginput"
+import { GLabel } from "@/ui/glabel"
+import { GCard } from "@/ui/gcard"
+
 import { Copy, Check, Tag, AlertCircle } from "lucide-react"
 import { LoadingSpinner } from "@/components/common/loading-spinner"
 
@@ -70,13 +71,13 @@ export function YoutubeTagExtractor() {
 
   return (
     <div className="space-y-6">
-      <Card className="p-6 bg-card border-border shadow-sm">
+      <GCard className="p-6 bg-card border-border shadow-sm">
         <div className="space-y-4">
           <div>
-            <Label htmlFor="video-url" className="text-sm font-medium text-foreground">
+            <GLabel htmlFor="video-url" className="text-sm font-medium text-foreground">
               YouTube Video URL
-            </Label>
-            <Input
+            </GLabel>
+            <GInput
               id="video-url"
               type="text"
               placeholder="https://www.youtube.com/watch?v=..."
@@ -86,7 +87,7 @@ export function YoutubeTagExtractor() {
             />
           </div>
 
-          <Button
+          <GButton
             onClick={handleExtract}
             disabled={!videoUrl.trim() || loading}
             className="w-full h-11 text-base font-medium shadow-sm hover:shadow-md transition-all"
@@ -102,12 +103,12 @@ export function YoutubeTagExtractor() {
                 Extract Tags
               </>
             )}
-          </Button>
+          </GButton>
         </div>
-      </Card>
+      </GCard>
 
       {error && (
-        <Card className="p-6 bg-red-50 border-red-200 shadow-sm animate-fade-in">
+        <GCard className="p-6 bg-red-50 border-red-200 shadow-sm animate-fade-in">
           <div className="flex items-start gap-3">
             <AlertCircle className="h-5 w-5 text-foreground mt-0.5" />
             <div>
@@ -115,17 +116,17 @@ export function YoutubeTagExtractor() {
               <p className="text-sm text-foreground">{error}</p>
             </div>
           </div>
-        </Card>
+        </GCard>
       )}
 
       {extractedData && extractedData.success && (
-        <Card className="p-6 bg-card border-border shadow-sm animate-fade-in">
+        <GCard className="p-6 bg-card border-border shadow-sm animate-fade-in">
           <div className="space-y-4">
             <div className="flex items-center justify-between">
               <h3 className="text-lg font-semibold text-foreground">
                 Extracted Tags ({extractedData.count})
               </h3>
-              <Button size="sm" variant="outline" onClick={copyAllTags} className="h-9 text-sm bg-transparent">
+              <GButton size="sm" variant="outline" onClick={copyAllTags} className="h-9 text-sm bg-transparent">
                 {copied ? (
                   <>
                     <Check className="mr-2 h-4 w-4" />
@@ -137,7 +138,7 @@ export function YoutubeTagExtractor() {
                     Copy All
                   </>
                 )}
-              </Button>
+              </GButton>
             </div>
 
             <div className="p-3 bg-muted/30 rounded-lg border border-border">
@@ -162,10 +163,10 @@ export function YoutubeTagExtractor() {
               <p className="text-sm text-muted-foreground font-mono break-all">{extractedData.tags.join(", ")}</p>
             </div>
           </div>
-        </Card>
+        </GCard>
       )}
 
-      <Card className="p-6 bg-muted/30 border-border">
+      <GCard className="p-6 bg-muted/30 border-border">
         <h3 className="text-base font-semibold text-foreground mb-3">How to Use</h3>
         <ul className="space-y-2 text-sm text-muted-foreground leading-relaxed">
           <li>• Paste a YouTube video URL (supports watch, shorts, and youtu.be links)</li>
@@ -174,7 +175,7 @@ export function YoutubeTagExtractor() {
           <li>• Use these tags for SEO research and content ideas</li>
           <li>• Works with public videos only (private/unlisted videos cannot be accessed)</li>
         </ul>
-      </Card>
+      </GCard>
     </div>
   )
 }

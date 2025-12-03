@@ -3,13 +3,14 @@
 import type React from "react"
 
 import { useState, useRef } from "react"
-import { GButton as Button } from "@/components/globalcomponents/gbutton"
-import { Card } from "@/components/ui/card"
-import { Progress } from "@/components/ui/progress"
-import { Label } from "@/components/ui/label"
+import { GButton } from "@/ui/gbutton"
+import { GCard } from "@/ui/gcard"
+import { GProgress } from "@/ui/gprogress"
+import { GLabel } from "@/ui/glabel"
+import { useToast } from "@/ui/gtoast"
+
 import { Upload, Download, Minimize2, CheckCircle2, FileText, X, Info } from "lucide-react"
 import { LoadingSpinner } from "@/components/common/loading-spinner"
-import { useToast } from "@/components/ui/toast"
 import { PDFDocument } from "pdf-lib"
 import * as pdfjsLib from "pdfjs-dist"
 
@@ -236,7 +237,7 @@ export function PDFCompressor() {
     <>
       <ToastContainer />
       <div className="space-y-6">
-        <Card className="p-6 shadow-lg border-border">
+        <GCard className="p-6 shadow-lg border-border">
           <div className="space-y-6">
             {/* Upload Area */}
             {!file ? (
@@ -280,23 +281,23 @@ export function PDFCompressor() {
                         </p>
                       </div>
                     </div>
-                    <Button
+                    <GButton
                       variant="ghost"
                       size="sm"
                       onClick={removeFile}
                       className="h-8 w-8 p-0 hover:bg-destructive/10 hover:text-destructive"
                     >
                       <X className="h-4 w-4" />
-                    </Button>
+                    </GButton>
                   </div>
                 </div>
 
                 {/* Compression Level Selector */}
                 {!compressed && (
                   <div className="space-y-3">
-                    <Label className="text-sm font-medium text-foreground">Compression Level</Label>
+                    <GLabel className="text-sm font-medium text-foreground">Compression Level</GLabel>
                     <div className="grid grid-cols-3 gap-2">
-                      <Button
+                      <GButton
                         type="button"
                         variant={compressionLevel === "low" ? "default" : "outline"}
                         size="sm"
@@ -308,8 +309,8 @@ export function PDFCompressor() {
                         <span className="text-xs font-bold">Low</span>
                         <span className="text-[10px] opacity-80">Best Quality</span>
                         <span className="text-[10px] opacity-70">~20-40% smaller</span>
-                      </Button>
-                      <Button
+                      </GButton>
+                      <GButton
                         type="button"
                         variant={compressionLevel === "medium" ? "default" : "outline"}
                         size="sm"
@@ -321,8 +322,8 @@ export function PDFCompressor() {
                         <span className="text-xs font-bold">Medium</span>
                         <span className="text-[10px] opacity-80">Balanced</span>
                         <span className="text-[10px] opacity-70">~50-70% smaller</span>
-                      </Button>
-                      <Button
+                      </GButton>
+                      <GButton
                         type="button"
                         variant={compressionLevel === "high" ? "default" : "outline"}
                         size="sm"
@@ -334,7 +335,7 @@ export function PDFCompressor() {
                         <span className="text-xs font-bold">High</span>
                         <span className="text-[10px] opacity-80">Max Compression</span>
                         <span className="text-[10px] opacity-70">~70-90% smaller</span>
-                      </Button>
+                      </GButton>
                     </div>
                     <p className="text-xs text-muted-foreground">
                       ℹ️ Actual compression depends on PDF content. Image-heavy PDFs compress better.
@@ -342,21 +343,21 @@ export function PDFCompressor() {
                   </div>
                 )}
 
-                {/* Progress Bar */}
+                {/* GProgress Bar */}
                 {loading && (
                   <div className="space-y-2">
                     <div className="flex items-center justify-between text-sm">
                       <span className="text-muted-foreground">Compressing PDF...</span>
                       <span className="font-medium text-foreground">{progress}%</span>
                     </div>
-                    <Progress value={progress} className="h-2" />
+                    <GProgress value={progress} className="h-2" />
                   </div>
                 )}
 
                 {/* Action Buttons */}
                 <div className="space-y-3">
                   {!compressed ? (
-                    <Button
+                    <GButton
                       onClick={compressPDF}
                       disabled={loading}
                       className="w-full h-11 text-sm font-semibold shadow-sm"
@@ -373,22 +374,22 @@ export function PDFCompressor() {
                           Compress PDF
                         </>
                       )}
-                    </Button>
+                    </GButton>
                   ) : (
-                    <Button
+                    <GButton
                       onClick={downloadCompressedPDF}
                       className="w-full h-11 text-sm font-semibold shadow-sm bg-green-600 hover:bg-green-700"
                       size="lg"
                     >
                       <Download className="h-5 w-5 mr-2" />
                       Download Compressed PDF
-                    </Button>
+                    </GButton>
                   )}
                 </div>
               </div>
             )}
           </div>
-        </Card>
+        </GCard>
 
         {/* Features */}
         <div className="p-5 rounded-lg bg-card border border-border shadow">

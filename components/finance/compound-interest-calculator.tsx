@@ -1,12 +1,13 @@
 "use client"
 
 import { useState } from "react"
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
-import { GButton } from "@/components/globalcomponents/gbutton"
-import { Label } from "@/components/ui/label"
-import { Input } from "@/components/ui/input"
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
-import { Alert, AlertDescription } from "@/components/ui/alert"
+import { GCard, GCardContent, GCardDescription, GCardHeader, GCardTitle } from "@/ui/gcard"
+import { GButton } from "@/ui/gbutton"
+import { GLabel } from "@/ui/glabel"
+import { GInput } from "@/ui/ginput"
+import { GSelect, GSelectContent, GSelectItem, GSelectTrigger, GSelectValue } from "@/ui/gselect"
+import { GAlert, GAlertDescription } from "@/ui/galert"
+
 import { TrendingUp, Copy, Check, Globe, AlertTriangle, DollarSign, Target, BarChart3, PieChart, Calculator } from "lucide-react"
 import { LoadingSpinner } from "@/components/common/loading-spinner"
 
@@ -175,58 +176,58 @@ Time Period: ${result.years} years`
 
   return (
     <div className="space-y-3">
-      {/* Warning Alert */}
+      {/* Warning GAlert */}
       {showWarning && (
-        <Alert className="border-tertiary-accent/30 bg-card py-2 [&>svg]:top-2">
+        <GAlert className="border-tertiary-accent/30 bg-card py-2 [&>svg]:top-2">
           <AlertTriangle className="h-3 w-3 text-tertiary-accent" />
-          <AlertDescription className="text-[10px] text-tertiary-accent leading-tight">
+          <GAlertDescription className="text-[10px] text-tertiary-accent leading-tight">
             <strong>Note:</strong> Interest rates change frequently. Verify with your financial institution for accuracy.
-          </AlertDescription>
-        </Alert>
+          </GAlertDescription>
+        </GAlert>
       )}
 
-      {/* Main Calculator Card */}
-      <Card className="shadow-lg border-border hover:shadow-xl transition-all duration-300 bg-card">
-        <CardHeader className="pb-2 px-3 sm:px-6">
-          <CardTitle className="flex items-center gap-1.5 text-sm sm:text-base text-foreground">
+      {/* Main Calculator GCard */}
+      <GCard className="shadow-lg border-border hover:shadow-xl transition-all duration-300 bg-card">
+        <GCardHeader className="pb-2 px-3 sm:px-6">
+          <GCardTitle className="flex items-center gap-1.5 text-sm sm:text-base text-foreground">
             <div className="p-1 bg-primary/10 rounded">
               <TrendingUp className="h-3 sm:h-3.5 w-3 sm:w-3.5 text-foreground" />
             </div>
             Compound Interest Calculator
-          </CardTitle>
-          <CardDescription className="text-[10px] sm:text-xs text-muted-foreground">
+          </GCardTitle>
+          <GCardDescription className="text-[10px] sm:text-xs text-muted-foreground">
             Calculate growth with country-specific rates
-          </CardDescription>
-        </CardHeader>
-        <CardContent className="space-y-3 px-3 sm:px-6">
+          </GCardDescription>
+        </GCardHeader>
+        <GCardContent className="space-y-3 px-3 sm:px-6">
           {/* Country Selection */}
           <div className="space-y-1">
-            <Label htmlFor="country" className="text-[11px] font-medium flex items-center gap-1 text-heading-accent">
+            <GLabel htmlFor="country" className="text-[11px] font-medium flex items-center gap-1 text-heading-accent">
               <Globe className="h-2.5 w-2.5 text-heading-accent" />
               Country
-            </Label>
-            <Select value={selectedCountry} onValueChange={setSelectedCountry}>
-              <SelectTrigger className="h-8 text-xs border-border bg-card text-foreground">
-                <SelectValue placeholder="Choose country" />
-              </SelectTrigger>
-              <SelectContent>
+            </GLabel>
+            <GSelect value={selectedCountry} onValueChange={setSelectedCountry}>
+              <GSelectTrigger className="h-8 text-xs border-border bg-card text-foreground">
+                <GSelectValue placeholder="Choose country" />
+              </GSelectTrigger>
+              <GSelectContent>
                 {Object.entries(countryRateData).map(([code, data]) => (
-                  <SelectItem key={code} value={code}>
+                  <GSelectItem key={code} value={code}>
                     {data.name} ({data.currency})
-                  </SelectItem>
+                  </GSelectItem>
                 ))}
-              </SelectContent>
-            </Select>
+              </GSelectContent>
+            </GSelect>
           </div>
 
           {/* Principal and Time Period in Grid */}
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
             <div className="space-y-1">
-              <Label htmlFor="principal" className="text-[11px] font-medium flex items-center gap-1 text-heading-accent">
+              <GLabel htmlFor="principal" className="text-[11px] font-medium flex items-center gap-1 text-heading-accent">
                 <DollarSign className="h-2.5 w-2.5 text-heading-accent" />
                 Principal ({countryRateData[selectedCountry]?.currency})
-              </Label>
-              <Input
+              </GLabel>
+              <GInput
                 id="principal"
                 type="number"
                 value={principal}
@@ -236,11 +237,11 @@ Time Period: ${result.years} years`
               />
             </div>
             <div className="space-y-1">
-              <Label htmlFor="time" className="text-[11px] font-medium flex items-center gap-1 text-heading-accent">
+              <GLabel htmlFor="time" className="text-[11px] font-medium flex items-center gap-1 text-heading-accent">
                 <Target className="h-2.5 w-2.5 text-heading-accent" />
                 Years
-              </Label>
-              <Input
+              </GLabel>
+              <GInput
                 id="time"
                 type="number"
                 value={time}
@@ -253,22 +254,22 @@ Time Period: ${result.years} years`
 
           {/* Compounding Frequency */}
           <div className="space-y-1">
-            <Label htmlFor="frequency" className="text-[11px] font-medium flex items-center gap-1 text-heading-accent">
+            <GLabel htmlFor="frequency" className="text-[11px] font-medium flex items-center gap-1 text-heading-accent">
               <BarChart3 className="h-2.5 w-2.5 text-heading-accent" />
               Frequency
-            </Label>
-            <Select value={frequency} onValueChange={setFrequency}>
-              <SelectTrigger className="h-8 text-xs border-border bg-card text-foreground">
-                <SelectValue placeholder="Select frequency" />
-              </SelectTrigger>
-              <SelectContent>
-                <SelectItem value="1">Annually (1x/year)</SelectItem>
-                <SelectItem value="2">Semi-Annually (2x/year)</SelectItem>
-                <SelectItem value="4">Quarterly (4x/year)</SelectItem>
-                <SelectItem value="12">Monthly (12x/year)</SelectItem>
-                <SelectItem value="365">Daily (365x/year)</SelectItem>
-              </SelectContent>
-            </Select>
+            </GLabel>
+            <GSelect value={frequency} onValueChange={setFrequency}>
+              <GSelectTrigger className="h-8 text-xs border-border bg-card text-foreground">
+                <GSelectValue placeholder="GSelect frequency" />
+              </GSelectTrigger>
+              <GSelectContent>
+                <GSelectItem value="1">Annually (1x/year)</GSelectItem>
+                <GSelectItem value="2">Semi-Annually (2x/year)</GSelectItem>
+                <GSelectItem value="4">Quarterly (4x/year)</GSelectItem>
+                <GSelectItem value="12">Monthly (12x/year)</GSelectItem>
+                <GSelectItem value="365">Daily (365x/year)</GSelectItem>
+              </GSelectContent>
+            </GSelect>
           </div>
 
           {/* Rate Selection */}
@@ -281,18 +282,18 @@ Time Period: ${result.years} years`
                 onChange={(e) => setUseCountryRate(e.target.checked)}
                 className="rounded border-gray-600 w-3 h-3"
               />
-              <Label htmlFor="use-country-rate" className="text-[11px] font-medium flex items-center gap-1 text-heading-accent">
+              <GLabel htmlFor="use-country-rate" className="text-[11px] font-medium flex items-center gap-1 text-heading-accent">
                 <Calculator className="h-2.5 w-2.5 text-heading-accent" />
                 Use Country Rate ({countryRateData[selectedCountry]?.investmentRate}%)
-              </Label>
+              </GLabel>
             </div>
 
             {!useCountryRate && (
               <div className="space-y-1">
-                <Label htmlFor="rate" className="text-[11px] font-medium text-heading-accent">
+                <GLabel htmlFor="rate" className="text-[11px] font-medium text-heading-accent">
                   Custom Rate (%)
-                </Label>
-                <Input
+                </GLabel>
+                <GInput
                   id="rate"
                   type="number"
                   step="0.1"
@@ -309,7 +310,7 @@ Time Period: ${result.years} years`
             </p>
           </div>
 
-          {/* Calculate Button */}
+          {/* Calculate GButton */}
           <GButton
             onClick={calculateCompoundInterest}
             className="w-full h-9 text-xs font-medium shadow-lg hover:shadow-xl transition-all duration-300 bg-gradient-to-r from-primary to-primary/90 hover:from-primary/90 hover:to-primary text-white"
@@ -327,23 +328,23 @@ Time Period: ${result.years} years`
               </>
             )}
           </GButton>
-        </CardContent>
-      </Card>
+        </GCardContent>
+      </GCard>
 
       {result && !isCalculating && (
-        <Card className="shadow-lg border-border animate-fade-in-up bg-card">
-          <CardHeader className="pb-3 px-3 sm:px-6">
-            <CardTitle className="text-base sm:text-lg flex items-center gap-2 text-foreground">
+        <GCard className="shadow-lg border-border animate-fade-in-up bg-card">
+          <GCardHeader className="pb-3 px-3 sm:px-6">
+            <GCardTitle className="text-base sm:text-lg flex items-center gap-2 text-foreground">
               <div className="p-1 sm:p-1.5 bg-primary/10 rounded-lg">
                 <TrendingUp className="h-3.5 sm:h-4 w-3.5 sm:w-4 text-foreground" />
               </div>
               <span className="break-words">Compound Interest Results - {result.country}</span>
-            </CardTitle>
-            <CardDescription className="text-xs sm:text-sm text-muted-foreground">
+            </GCardTitle>
+            <GCardDescription className="text-xs sm:text-sm text-muted-foreground">
               Your investment growth over {result.years} years with {result.effectiveRate}% effective rate
-            </CardDescription>
-          </CardHeader>
-          <CardContent className="space-y-4 px-3 sm:px-6">
+            </GCardDescription>
+          </GCardHeader>
+          <GCardContent className="space-y-4 px-3 sm:px-6">
             {/* Main Result Display */}
             <div className="text-center p-3 sm:p-4 rounded-xl bg-card border border-primary/20">
               <div className="text-lg sm:text-xl md:text-2xl font-bold text-foreground mb-1 break-words overflow-hidden">
@@ -452,8 +453,8 @@ Time Period: ${result.years} years`
                 )}
               </GButton>
             </div>
-          </CardContent>
-        </Card>
+          </GCardContent>
+        </GCard>
       )}
     </div>
   )

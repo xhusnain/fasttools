@@ -23,10 +23,11 @@
  */
 
 import { useState, useEffect } from "react"
-import { GButton as Button } from "@/components/globalcomponents/gbutton"
-import { Input } from "@/components/ui/input"
-import { Label } from "@/components/ui/label"
-import { Card } from "@/components/ui/card"
+import { GButton } from "@/ui/gbutton"
+import { GInput } from "@/ui/ginput"
+import { GLabel } from "@/ui/glabel"
+import { GCard } from "@/ui/gcard"
+
 import { Download, AlertCircle, User, Eye, Shield, Clock, CheckCircle } from "lucide-react"
 import { LoadingSpinner } from "@/components/common/loading-spinner"
 
@@ -240,8 +241,8 @@ export function InstagramDpViewer() {
 
   return (
     <div className="w-full max-w-4xl mx-auto space-y-4 sm:space-y-6">
-      {/* Important Notice Card */}
-      <Card className="p-4 sm:p-6 bg-gradient-to-br from-primary/20 to-primary/10 border border-primary/30 shadow-lg">
+      {/* Important Notice GCard */}
+      <GCard className="p-4 sm:p-6 bg-gradient-to-br from-primary/20 to-primary/10 border border-primary/30 shadow-lg">
         <div className="flex gap-3 sm:gap-4">
           <AlertCircle className="h-5 w-5 sm:h-6 sm:w-6 text-primary flex-shrink-0 mt-0.5" />
           <div className="space-y-2">
@@ -252,10 +253,10 @@ export function InstagramDpViewer() {
             </p>
           </div>
         </div>
-      </Card>
+      </GCard>
 
-      {/* Main Viewer Card */}
-      <Card className="border-2 border-border bg-card shadow-2xl">
+      {/* Main Viewer GCard */}
+      <GCard className="border-2 border-border bg-card shadow-2xl">
         <div className="p-4 sm:p-6 space-y-4 sm:space-y-6">
           <div className="text-center space-y-3 sm:space-y-4">
             <div className="flex flex-col sm:flex-row items-center justify-center gap-3 mb-4">
@@ -275,10 +276,10 @@ export function InstagramDpViewer() {
 
           <div className="space-y-4">
             <div className="space-y-2">
-              <Label htmlFor="username" className="text-sm font-medium text-foreground">
+              <GLabel htmlFor="username" className="text-sm font-medium text-foreground">
                 Instagram Username
-              </Label>
-              <Input
+              </GLabel>
+              <GInput
                 id="username"
                 type="text"
                 placeholder="@username or username"
@@ -288,7 +289,7 @@ export function InstagramDpViewer() {
               />
             </div>
 
-            <Button
+            <GButton
               onClick={handleView}
               disabled={!username || loading || timerActive}
               className="w-full h-10 sm:h-11 text-sm font-medium bg-gradient-to-r from-primary to-primary/90 hover:from-primary/90 hover:to-primary text-primary-foreground shadow-lg hover:shadow-xl transition-all duration-300"
@@ -312,7 +313,7 @@ export function InstagramDpViewer() {
                   <span className="sm:hidden">View DP</span>
                 </>
               )}
-            </Button>
+            </GButton>
 
             {/* Timer Progress Bar */}
             {timerActive && (
@@ -346,10 +347,10 @@ export function InstagramDpViewer() {
             )}
           </div>
         </div>
-      </Card>
+      </GCard>
 
       {profileData && (
-        <Card className="p-4 sm:p-6 bg-card border border-border shadow-lg hover:shadow-xl transition-all duration-300 animate-fade-in">
+        <GCard className="p-4 sm:p-6 bg-card border border-border shadow-lg hover:shadow-xl transition-all duration-300 animate-fade-in">
           <div className="space-y-4 sm:space-y-6">
             <h3 className="text-lg sm:text-xl font-semibold text-foreground text-center">Profile Information</h3>
 
@@ -459,8 +460,8 @@ export function InstagramDpViewer() {
                 </div>
               </div>
 
-              {/* Download Button */}
-              <Button
+              {/* Download GButton */}
+              <GButton
                 onClick={downloadImage}
                 disabled={downloading}
                 className="w-full max-w-sm sm:max-w-md h-10 sm:h-11 text-sm font-medium bg-gradient-to-r from-primary to-primary/90 hover:from-primary/90 hover:to-primary text-primary-foreground shadow-lg hover:shadow-xl transition-all duration-300"
@@ -478,13 +479,13 @@ export function InstagramDpViewer() {
                     <span className="sm:hidden">Download</span>
                   </>
                 )}
-              </Button>
+              </GButton>
             </div>
           </div>
-        </Card>
+        </GCard>
       )}
 
-      <Card className="p-4 sm:p-6 bg-card border border-border shadow-lg">
+      <GCard className="p-4 sm:p-6 bg-card border border-border shadow-lg">
         <h3 className="text-base sm:text-lg font-semibold text-foreground mb-3 sm:mb-4">How to Use</h3>
         <ul className="space-y-2 sm:space-y-3 text-sm sm:text-base text-muted-foreground leading-relaxed">
           <li>• Enter an Instagram username (with or without @)</li>
@@ -492,7 +493,7 @@ export function InstagramDpViewer() {
           <li>• Download the high-quality version if needed</li>
           <li>• Only works for public Instagram accounts</li>
         </ul>
-      </Card>
+      </GCard>
     </div>
   )
 }

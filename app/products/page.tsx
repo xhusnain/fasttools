@@ -1,6 +1,8 @@
 import { Breadcrumbs } from "@/components/common/breadcrumbs"
-import { GHeader } from "@/components/globalcomponents/gheader"
-import { GCard } from "@/components/globalcomponents/gcard"
+import { GHeader } from "@/ui/gheader"
+import { GToolCard } from "@/ui/gtool-card"
+import { GAccordion, GAccordionContent, GAccordionItem, GAccordionTrigger } from "@/ui/gaccordion"
+
 import Link from "next/link"
 import { createMetadata } from "@/lib/metadata-base"
 import {
@@ -17,13 +19,6 @@ import {
   Briefcase,
   GraduationCap
 } from "lucide-react"
-import {
-  Accordion,
-  AccordionContent,
-  AccordionItem,
-  AccordionTrigger,
-} from "@/components/ui/accordion"
-
 export const metadata = createMetadata({
   title: "100+ Free Online Tools for Every Need | FastTools",
   description: "Discover our full suite of 100+ free online tools. From calculators and converters to AI-powered utilities and developer tools, FastTools has a solution for every task. All tools are free, secure, and easy to use.",
@@ -207,7 +202,7 @@ export default function ProductsPage() {
               <h2 className="text-2xl md:text-3xl font-bold text-primary mb-8 text-center">Explore Our Tool Categories</h2>
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
                 {categories.map((category) => (
-                  <GCard
+                  <GToolCard
                     key={category.id}
                     title={category.name}
                     description={category.description}
@@ -258,18 +253,18 @@ export default function ProductsPage() {
 
             <div className="mt-12">
               <h2 className="text-2xl md:text-3xl font-bold text-primary mb-8 text-center">Frequently Asked Questions</h2>
-              <Accordion type="single" collapsible className="w-full max-w-2xl mx-auto">
+              <GAccordion type="single" collapsible className="w-full max-w-2xl mx-auto">
                 {faqItems.map((item, index) => (
-                  <AccordionItem value={`item-${index}`} key={index}>
-                    <AccordionTrigger className="text-left text-base font-semibold hover:no-underline">
+                  <GAccordionItem value={`item-${index}`} key={index}>
+                    <GAccordionTrigger className="text-left text-base font-semibold hover:no-underline">
                       {item.question}
-                    </AccordionTrigger>
-                    <AccordionContent className="text-base text-muted-foreground leading-relaxed">
+                    </GAccordionTrigger>
+                    <GAccordionContent className="text-base text-muted-foreground leading-relaxed">
                       {item.answer}
-                    </AccordionContent>
-                  </AccordionItem>
+                    </GAccordionContent>
+                  </GAccordionItem>
                 ))}
-              </Accordion>
+              </GAccordion>
             </div>
           </div>
         </div>

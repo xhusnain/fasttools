@@ -1,7 +1,8 @@
 "use client"
 
 import { useState } from "react"
-import { GButton } from "@/components/globalcomponents/gbutton"
+import { GButton } from "@/ui/gbutton"
+
 import { Thermometer, ArrowLeftRight } from "lucide-react"
 
 export function TemperatureConverter() {
@@ -58,7 +59,7 @@ export function TemperatureConverter() {
             />
           </div>
 
-          {/* Swap Button */}
+          {/* Swap GButton */}
           <div className="flex justify-center">
             <GButton
               onClick={swapValues}

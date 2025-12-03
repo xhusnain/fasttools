@@ -1,13 +1,14 @@
 "use client"
 
 import { useState, useEffect } from "react"
-import { GButton } from "@/components/globalcomponents/gbutton"
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
-import { Input } from "@/components/ui/input"
-import { Label } from "@/components/ui/label"
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
-import { Badge } from "@/components/ui/badge"
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
+import { GButton } from "@/ui/gbutton"
+import { GCard, GCardContent, GCardHeader, GCardTitle } from "@/ui/gcard"
+import { GInput } from "@/ui/ginput"
+import { GLabel } from "@/ui/glabel"
+import { GSelect, GSelectContent, GSelectItem, GSelectTrigger, GSelectValue } from "@/ui/gselect"
+import { GBadge } from "@/ui/gbadge"
+import { GTabs, GTabsContent, GTabsList, GTabsTrigger } from "@/ui/gtabs"
+
 import {
   Calculator,
   DollarSign,
@@ -126,7 +127,7 @@ export default function InvestmentCalculator() {
     const rate = parseFloat(returnRate) || 0
     const length = parseFloat(investmentLength) || 0
 
-    // Input validation
+    // GInput validation
     if (rate < 0) {
       alert("Return rate cannot be negative")
       return
@@ -515,52 +516,52 @@ Total Interest: $${result.calculations.totalInterest.toFixed(2)}`
   return (
     <div className="space-y-4 sm:space-y-6 md:space-y-8 bg-card rounded-xl p-2 sm:p-3 md:p-4 w-full overflow-hidden">
       {/* Main Calculator */}
-      <Card className="bg-card border-border w-full overflow-hidden">
-        <CardHeader>
-          <CardTitle className="flex items-center gap-2 text-foreground text-base sm:text-lg md:text-xl break-words">
+      <GCard className="bg-card border-border w-full overflow-hidden">
+        <GCardHeader>
+          <GCardTitle className="flex items-center gap-2 text-foreground text-base sm:text-lg md:text-xl break-words">
             <Calculator className="h-4 w-4 sm:h-5 sm:w-5 text-foreground" />
             Advanced Investment Calculator
-          </CardTitle>
-        </CardHeader>
-        <CardContent className="space-y-4 sm:space-y-6">
+          </GCardTitle>
+        </GCardHeader>
+        <GCardContent className="space-y-4 sm:space-y-6">
           {/* Calculation Type Selection */}
           <div>
-            <Label className="text-heading-accent text-xs sm:text-sm mb-2 block break-words">Calculate</Label>
+            <GLabel className="text-heading-accent text-xs sm:text-sm mb-2 block break-words">Calculate</GLabel>
 
             {/* Mobile Dropdown */}
             <div className="block md:hidden mb-4">
-              <Select value={calculationType} onValueChange={setCalculationType}>
-                <SelectTrigger className="border-border bg-card text-foreground w-full text-xs sm:text-sm h-9">
-                  <SelectValue />
-                </SelectTrigger>
-                <SelectContent>
-                  <SelectItem value="endAmount">End Amount</SelectItem>
-                  <SelectItem value="returnRate">Return Rate</SelectItem>
-                  <SelectItem value="startingAmount">Starting Amount</SelectItem>
-                  <SelectItem value="additionalContribution">Additional Contribution</SelectItem>
-                  <SelectItem value="investmentLength">Investment Length</SelectItem>
-                </SelectContent>
-              </Select>
+              <GSelect value={calculationType} onValueChange={setCalculationType}>
+                <GSelectTrigger className="border-border bg-card text-foreground w-full text-xs sm:text-sm h-9">
+                  <GSelectValue />
+                </GSelectTrigger>
+                <GSelectContent>
+                  <GSelectItem value="endAmount">End Amount</GSelectItem>
+                  <GSelectItem value="returnRate">Return Rate</GSelectItem>
+                  <GSelectItem value="startingAmount">Starting Amount</GSelectItem>
+                  <GSelectItem value="additionalContribution">Additional Contribution</GSelectItem>
+                  <GSelectItem value="investmentLength">Investment Length</GSelectItem>
+                </GSelectContent>
+              </GSelect>
             </div>
 
-            {/* Desktop Tabs */}
-            <Tabs value={calculationType} onValueChange={setCalculationType} className="w-full hidden md:block">
-              <TabsList className="grid w-full grid-cols-5 bg-card border border-border">
-                <TabsTrigger value="endAmount" className="text-xs sm:text-sm">End Amount</TabsTrigger>
-                <TabsTrigger value="returnRate" className="text-xs sm:text-sm">Return Rate</TabsTrigger>
-                <TabsTrigger value="startingAmount" className="text-xs sm:text-sm">Starting Amount</TabsTrigger>
-                <TabsTrigger value="additionalContribution" className="text-xs sm:text-sm">Additional Contribution</TabsTrigger>
-                <TabsTrigger value="investmentLength" className="text-xs sm:text-sm">Investment Length</TabsTrigger>
-              </TabsList>
-            </Tabs>
+            {/* Desktop GTabs */}
+            <GTabs value={calculationType} onValueChange={setCalculationType} className="w-full hidden md:block">
+              <GTabsList className="grid w-full grid-cols-5 bg-card border border-border">
+                <GTabsTrigger value="endAmount" className="text-xs sm:text-sm">End Amount</GTabsTrigger>
+                <GTabsTrigger value="returnRate" className="text-xs sm:text-sm">Return Rate</GTabsTrigger>
+                <GTabsTrigger value="startingAmount" className="text-xs sm:text-sm">Starting Amount</GTabsTrigger>
+                <GTabsTrigger value="additionalContribution" className="text-xs sm:text-sm">Additional Contribution</GTabsTrigger>
+                <GTabsTrigger value="investmentLength" className="text-xs sm:text-sm">Investment Length</GTabsTrigger>
+              </GTabsList>
+            </GTabs>
 
-            {/* Mobile/Desktop Input Fields */}
+            {/* Mobile/Desktop GInput Fields */}
             <div className="space-y-3 sm:space-y-4 mt-3 sm:mt-4">
               {calculationType === "endAmount" && (
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4">
                   <div className="space-y-1.5 w-full min-w-0">
-                    <Label htmlFor="startingAmount" className="text-heading-accent text-xs sm:text-sm">Starting Amount</Label>
-                    <Input
+                    <GLabel htmlFor="startingAmount" className="text-heading-accent text-xs sm:text-sm">Starting Amount</GLabel>
+                    <GInput
                       id="startingAmount"
                       type="number"
                       placeholder="20000"
@@ -570,8 +571,8 @@ Total Interest: $${result.calculations.totalInterest.toFixed(2)}`
                     />
                   </div>
                   <div className="space-y-1.5 w-full min-w-0">
-                    <Label htmlFor="returnRate" className="text-heading-accent text-xs sm:text-sm">Return Rate (%)</Label>
-                    <Input
+                    <GLabel htmlFor="returnRate" className="text-heading-accent text-xs sm:text-sm">Return Rate (%)</GLabel>
+                    <GInput
                       id="returnRate"
                       type="number"
                       placeholder="6"
@@ -581,8 +582,8 @@ Total Interest: $${result.calculations.totalInterest.toFixed(2)}`
                     />
                   </div>
                   <div className="space-y-1.5 w-full min-w-0">
-                    <Label htmlFor="investmentLength" className="text-heading-accent text-xs sm:text-sm">Investment Length (years)</Label>
-                    <Input
+                    <GLabel htmlFor="investmentLength" className="text-heading-accent text-xs sm:text-sm">Investment Length (years)</GLabel>
+                    <GInput
                       id="investmentLength"
                       type="number"
                       placeholder="10"
@@ -592,8 +593,8 @@ Total Interest: $${result.calculations.totalInterest.toFixed(2)}`
                     />
                   </div>
                   <div className="space-y-1.5 w-full min-w-0">
-                    <Label htmlFor="additionalContribution" className="text-heading-accent text-xs sm:text-sm">Additional Contribution</Label>
-                    <Input
+                    <GLabel htmlFor="additionalContribution" className="text-heading-accent text-xs sm:text-sm">Additional Contribution</GLabel>
+                    <GInput
                       id="additionalContribution"
                       type="number"
                       placeholder="1000"
@@ -608,8 +609,8 @@ Total Interest: $${result.calculations.totalInterest.toFixed(2)}`
               {calculationType === "returnRate" && (
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4">
                   <div className="space-y-1.5 w-full min-w-0">
-                    <Label htmlFor="endAmount" className="text-heading-accent text-xs sm:text-sm">End Amount</Label>
-                    <Input
+                    <GLabel htmlFor="endAmount" className="text-heading-accent text-xs sm:text-sm">End Amount</GLabel>
+                    <GInput
                       id="endAmount"
                       type="number"
                       placeholder="100000"
@@ -619,8 +620,8 @@ Total Interest: $${result.calculations.totalInterest.toFixed(2)}`
                     />
                   </div>
                   <div className="space-y-1.5 w-full min-w-0">
-                    <Label htmlFor="startingAmount" className="text-heading-accent text-xs sm:text-sm">Starting Amount</Label>
-                    <Input
+                    <GLabel htmlFor="startingAmount" className="text-heading-accent text-xs sm:text-sm">Starting Amount</GLabel>
+                    <GInput
                       id="startingAmount"
                       type="number"
                       placeholder="20000"
@@ -630,8 +631,8 @@ Total Interest: $${result.calculations.totalInterest.toFixed(2)}`
                     />
                   </div>
                   <div className="space-y-1.5 w-full min-w-0">
-                    <Label htmlFor="investmentLength" className="text-heading-accent text-xs sm:text-sm">Investment Length (years)</Label>
-                    <Input
+                    <GLabel htmlFor="investmentLength" className="text-heading-accent text-xs sm:text-sm">Investment Length (years)</GLabel>
+                    <GInput
                       id="investmentLength"
                       type="number"
                       placeholder="10"
@@ -641,8 +642,8 @@ Total Interest: $${result.calculations.totalInterest.toFixed(2)}`
                     />
                   </div>
                   <div className="space-y-1.5 w-full min-w-0">
-                    <Label htmlFor="additionalContribution" className="text-heading-accent text-xs sm:text-sm">Additional Contribution</Label>
-                    <Input
+                    <GLabel htmlFor="additionalContribution" className="text-heading-accent text-xs sm:text-sm">Additional Contribution</GLabel>
+                    <GInput
                       id="additionalContribution"
                       type="number"
                       placeholder="1000"
@@ -657,8 +658,8 @@ Total Interest: $${result.calculations.totalInterest.toFixed(2)}`
               {calculationType === "startingAmount" && (
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4">
                   <div className="space-y-1.5 w-full min-w-0">
-                    <Label htmlFor="endAmount" className="text-heading-accent text-xs sm:text-sm">End Amount</Label>
-                    <Input
+                    <GLabel htmlFor="endAmount" className="text-heading-accent text-xs sm:text-sm">End Amount</GLabel>
+                    <GInput
                       id="endAmount"
                       type="number"
                       placeholder="100000"
@@ -668,8 +669,8 @@ Total Interest: $${result.calculations.totalInterest.toFixed(2)}`
                     />
                   </div>
                   <div className="space-y-1.5 w-full min-w-0">
-                    <Label htmlFor="returnRate" className="text-heading-accent text-xs sm:text-sm">Return Rate (%)</Label>
-                    <Input
+                    <GLabel htmlFor="returnRate" className="text-heading-accent text-xs sm:text-sm">Return Rate (%)</GLabel>
+                    <GInput
                       id="returnRate"
                       type="number"
                       placeholder="6"
@@ -679,8 +680,8 @@ Total Interest: $${result.calculations.totalInterest.toFixed(2)}`
                     />
                   </div>
                   <div className="space-y-1.5 w-full min-w-0">
-                    <Label htmlFor="investmentLength" className="text-heading-accent text-xs sm:text-sm">Investment Length (years)</Label>
-                    <Input
+                    <GLabel htmlFor="investmentLength" className="text-heading-accent text-xs sm:text-sm">Investment Length (years)</GLabel>
+                    <GInput
                       id="investmentLength"
                       type="number"
                       placeholder="10"
@@ -690,8 +691,8 @@ Total Interest: $${result.calculations.totalInterest.toFixed(2)}`
                     />
                   </div>
                   <div className="space-y-1.5 w-full min-w-0">
-                    <Label htmlFor="additionalContribution" className="text-heading-accent text-xs sm:text-sm">Additional Contribution</Label>
-                    <Input
+                    <GLabel htmlFor="additionalContribution" className="text-heading-accent text-xs sm:text-sm">Additional Contribution</GLabel>
+                    <GInput
                       id="additionalContribution"
                       type="number"
                       placeholder="1000"
@@ -706,8 +707,8 @@ Total Interest: $${result.calculations.totalInterest.toFixed(2)}`
               {calculationType === "additionalContribution" && (
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4">
                   <div className="space-y-1.5 w-full min-w-0">
-                    <Label htmlFor="endAmount" className="text-heading-accent text-xs sm:text-sm">End Amount</Label>
-                    <Input
+                    <GLabel htmlFor="endAmount" className="text-heading-accent text-xs sm:text-sm">End Amount</GLabel>
+                    <GInput
                       id="endAmount"
                       type="number"
                       placeholder="100000"
@@ -717,8 +718,8 @@ Total Interest: $${result.calculations.totalInterest.toFixed(2)}`
                     />
                   </div>
                   <div className="space-y-1.5 w-full min-w-0">
-                    <Label htmlFor="startingAmount" className="text-heading-accent text-xs sm:text-sm">Starting Amount</Label>
-                    <Input
+                    <GLabel htmlFor="startingAmount" className="text-heading-accent text-xs sm:text-sm">Starting Amount</GLabel>
+                    <GInput
                       id="startingAmount"
                       type="number"
                       placeholder="20000"
@@ -728,8 +729,8 @@ Total Interest: $${result.calculations.totalInterest.toFixed(2)}`
                     />
                   </div>
                   <div className="space-y-1.5 w-full min-w-0">
-                    <Label htmlFor="returnRate" className="text-heading-accent text-xs sm:text-sm">Return Rate (%)</Label>
-                    <Input
+                    <GLabel htmlFor="returnRate" className="text-heading-accent text-xs sm:text-sm">Return Rate (%)</GLabel>
+                    <GInput
                       id="returnRate"
                       type="number"
                       placeholder="6"
@@ -739,8 +740,8 @@ Total Interest: $${result.calculations.totalInterest.toFixed(2)}`
                     />
                   </div>
                   <div className="space-y-1.5 w-full min-w-0">
-                    <Label htmlFor="investmentLength" className="text-heading-accent text-xs sm:text-sm">Investment Length (years)</Label>
-                    <Input
+                    <GLabel htmlFor="investmentLength" className="text-heading-accent text-xs sm:text-sm">Investment Length (years)</GLabel>
+                    <GInput
                       id="investmentLength"
                       type="number"
                       placeholder="10"
@@ -755,8 +756,8 @@ Total Interest: $${result.calculations.totalInterest.toFixed(2)}`
               {calculationType === "investmentLength" && (
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4">
                   <div className="space-y-1.5 w-full min-w-0">
-                    <Label htmlFor="endAmount" className="text-heading-accent text-xs sm:text-sm">End Amount</Label>
-                    <Input
+                    <GLabel htmlFor="endAmount" className="text-heading-accent text-xs sm:text-sm">End Amount</GLabel>
+                    <GInput
                       id="endAmount"
                       type="number"
                       placeholder="100000"
@@ -766,8 +767,8 @@ Total Interest: $${result.calculations.totalInterest.toFixed(2)}`
                     />
                   </div>
                   <div className="space-y-1.5 w-full min-w-0">
-                    <Label htmlFor="startingAmount" className="text-heading-accent text-xs sm:text-sm">Starting Amount</Label>
-                    <Input
+                    <GLabel htmlFor="startingAmount" className="text-heading-accent text-xs sm:text-sm">Starting Amount</GLabel>
+                    <GInput
                       id="startingAmount"
                       type="number"
                       placeholder="20000"
@@ -777,8 +778,8 @@ Total Interest: $${result.calculations.totalInterest.toFixed(2)}`
                     />
                   </div>
                   <div className="space-y-1.5 w-full min-w-0">
-                    <Label htmlFor="returnRate" className="text-heading-accent text-xs sm:text-sm">Return Rate (%)</Label>
-                    <Input
+                    <GLabel htmlFor="returnRate" className="text-heading-accent text-xs sm:text-sm">Return Rate (%)</GLabel>
+                    <GInput
                       id="returnRate"
                       type="number"
                       placeholder="6"
@@ -788,8 +789,8 @@ Total Interest: $${result.calculations.totalInterest.toFixed(2)}`
                     />
                   </div>
                   <div className="space-y-1.5 w-full min-w-0">
-                    <Label htmlFor="additionalContribution" className="text-heading-accent text-xs sm:text-sm">Additional Contribution</Label>
-                    <Input
+                    <GLabel htmlFor="additionalContribution" className="text-heading-accent text-xs sm:text-sm">Additional Contribution</GLabel>
+                    <GInput
                       id="additionalContribution"
                       type="number"
                       placeholder="1000"
@@ -806,31 +807,31 @@ Total Interest: $${result.calculations.totalInterest.toFixed(2)}`
           {/* Additional Settings */}
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4">
             <div className="space-y-1.5 w-full min-w-0">
-              <Label htmlFor="compoundFrequency" className="text-heading-accent text-xs sm:text-sm">Compound Frequency</Label>
-              <Select value={compoundFrequency} onValueChange={setCompoundFrequency}>
-                <SelectTrigger className="border-border bg-card text-foreground w-full text-xs sm:text-sm h-9">
-                  <SelectValue />
-                </SelectTrigger>
-                <SelectContent>
-                  <SelectItem value="annually">Annually</SelectItem>
-                  <SelectItem value="semi-annually">Semi-Annually</SelectItem>
-                  <SelectItem value="quarterly">Quarterly</SelectItem>
-                  <SelectItem value="monthly">Monthly</SelectItem>
-                  <SelectItem value="daily">Daily</SelectItem>
-                </SelectContent>
-              </Select>
+              <GLabel htmlFor="compoundFrequency" className="text-heading-accent text-xs sm:text-sm">Compound Frequency</GLabel>
+              <GSelect value={compoundFrequency} onValueChange={setCompoundFrequency}>
+                <GSelectTrigger className="border-border bg-card text-foreground w-full text-xs sm:text-sm h-9">
+                  <GSelectValue />
+                </GSelectTrigger>
+                <GSelectContent>
+                  <GSelectItem value="annually">Annually</GSelectItem>
+                  <GSelectItem value="semi-annually">Semi-Annually</GSelectItem>
+                  <GSelectItem value="quarterly">Quarterly</GSelectItem>
+                  <GSelectItem value="monthly">Monthly</GSelectItem>
+                  <GSelectItem value="daily">Daily</GSelectItem>
+                </GSelectContent>
+              </GSelect>
             </div>
             <div className="space-y-1.5 w-full min-w-0">
-              <Label htmlFor="contributionTiming" className="text-heading-accent text-xs sm:text-sm">Contribution Timing</Label>
-              <Select value={contributionTiming} onValueChange={setContributionTiming}>
-                <SelectTrigger className="border-border bg-card text-foreground w-full text-xs sm:text-sm h-9">
-                  <SelectValue />
-                </SelectTrigger>
-                <SelectContent>
-                  <SelectItem value="end">End of Period</SelectItem>
-                  <SelectItem value="beginning">Beginning of Period</SelectItem>
-                </SelectContent>
-              </Select>
+              <GLabel htmlFor="contributionTiming" className="text-heading-accent text-xs sm:text-sm">Contribution Timing</GLabel>
+              <GSelect value={contributionTiming} onValueChange={setContributionTiming}>
+                <GSelectTrigger className="border-border bg-card text-foreground w-full text-xs sm:text-sm h-9">
+                  <GSelectValue />
+                </GSelectTrigger>
+                <GSelectContent>
+                  <GSelectItem value="end">End of Period</GSelectItem>
+                  <GSelectItem value="beginning">Beginning of Period</GSelectItem>
+                </GSelectContent>
+              </GSelect>
             </div>
           </div>
 
@@ -847,30 +848,30 @@ Total Interest: $${result.calculations.totalInterest.toFixed(2)}`
               Clear All
             </GButton>
           </div>
-        </CardContent>
-      </Card>
+        </GCardContent>
+      </GCard>
 
       {/* Results Section */}
       {result && (
         <div className="space-y-4 sm:space-y-6">
           {/* Main Results */}
-          <Card className="bg-card border-border w-full overflow-hidden">
-            <CardHeader>
-              <CardTitle className="flex items-center gap-2 text-foreground text-base sm:text-lg md:text-xl break-words">
+          <GCard className="bg-card border-border w-full overflow-hidden">
+            <GCardHeader>
+              <GCardTitle className="flex items-center gap-2 text-foreground text-base sm:text-lg md:text-xl break-words">
                 <DollarSign className="h-4 w-4 sm:h-5 sm:w-5 text-foreground" />
                 Investment Calculation Results
-              </CardTitle>
-            </CardHeader>
-            <CardContent className="space-y-4">
+              </GCardTitle>
+            </GCardHeader>
+            <GCardContent className="space-y-4">
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 <div className="space-y-2">
-                  <Label className="text-heading-accent text-xs sm:text-sm">End Amount</Label>
+                  <GLabel className="text-heading-accent text-xs sm:text-sm">End Amount</GLabel>
                   <div className="text-xl sm:text-2xl md:text-3xl font-bold text-heading-accent">
                     ${result.endAmount.toFixed(2)}
                   </div>
                 </div>
                 <div className="space-y-2">
-                  <Label className="text-heading-accent text-xs sm:text-sm">Starting Amount</Label>
+                  <GLabel className="text-heading-accent text-xs sm:text-sm">Starting Amount</GLabel>
                   <div className="text-xl sm:text-2xl md:text-3xl font-bold text-foreground">
                     ${result.startingAmount.toFixed(2)}
                   </div>
@@ -912,18 +913,18 @@ Total Interest: $${result.calculations.totalInterest.toFixed(2)}`
                   )}
                 </GButton>
               </div>
-            </CardContent>
-          </Card>
+            </GCardContent>
+          </GCard>
 
           {/* Summary */}
-          <Card className="bg-card border-border w-full overflow-hidden">
-            <CardHeader>
-              <CardTitle className="flex items-center gap-2 text-foreground text-base sm:text-lg md:text-xl break-words">
+          <GCard className="bg-card border-border w-full overflow-hidden">
+            <GCardHeader>
+              <GCardTitle className="flex items-center gap-2 text-foreground text-base sm:text-lg md:text-xl break-words">
                 <BarChart3 className="h-4 w-4 sm:h-5 sm:w-5 text-foreground" />
                 Investment Summary
-              </CardTitle>
-            </CardHeader>
-            <CardContent className="space-y-4">
+              </GCardTitle>
+            </GCardHeader>
+            <GCardContent className="space-y-4">
               <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
                 <div className="p-3 sm:p-4 bg-card rounded-lg border border-border">
                   <h3 className="font-semibold text-heading-accent mb-2 text-xs sm:text-sm break-words">Total Contributions</h3>
@@ -938,18 +939,18 @@ Total Interest: $${result.calculations.totalInterest.toFixed(2)}`
                   <div className="text-xl sm:text-2xl font-bold text-foreground">{result.calculations.interestPercentage.toFixed(1)}%</div>
                 </div>
               </div>
-            </CardContent>
-          </Card>
+            </GCardContent>
+          </GCard>
 
           {/* Accumulation Schedule */}
-          <Card className="bg-card border-border w-full overflow-hidden">
-            <CardHeader>
-              <CardTitle className="flex items-center gap-2 text-foreground text-base sm:text-lg md:text-xl break-words">
+          <GCard className="bg-card border-border w-full overflow-hidden">
+            <GCardHeader>
+              <GCardTitle className="flex items-center gap-2 text-foreground text-base sm:text-lg md:text-xl break-words">
                 <Calendar className="h-4 w-4 sm:h-5 sm:w-5 text-foreground" />
                 Accumulation Schedule
-              </CardTitle>
-            </CardHeader>
-            <CardContent>
+              </GCardTitle>
+            </GCardHeader>
+            <GCardContent>
               <div className="overflow-x-auto">
                 <table className="w-full border-collapse border border-border">
                   <thead>
@@ -972,18 +973,18 @@ Total Interest: $${result.calculations.totalInterest.toFixed(2)}`
                   </tbody>
                 </table>
               </div>
-            </CardContent>
-          </Card>
+            </GCardContent>
+          </GCard>
 
           {/* Investment Scenarios */}
-          <Card className="bg-card border-border w-full overflow-hidden">
-            <CardHeader>
-              <CardTitle className="flex items-center gap-2 text-foreground text-base sm:text-lg md:text-xl break-words">
+          <GCard className="bg-card border-border w-full overflow-hidden">
+            <GCardHeader>
+              <GCardTitle className="flex items-center gap-2 text-foreground text-base sm:text-lg md:text-xl break-words">
                 <TrendingUp className="h-4 w-4 sm:h-5 sm:w-5 text-foreground" />
                 Investment Scenarios
-              </CardTitle>
-            </CardHeader>
-            <CardContent>
+              </GCardTitle>
+            </GCardHeader>
+            <GCardContent>
               <div className="space-y-2">
                 {result.comparison.scenarios.map((scenario, index) => (
                   <div key={index} className="flex justify-between items-center p-3 bg-card border border-border rounded-lg">
@@ -991,24 +992,24 @@ Total Interest: $${result.calculations.totalInterest.toFixed(2)}`
                       <span className="font-medium text-foreground text-xs sm:text-sm break-words">{scenario.scenario}</span>
                       <p className="text-xs sm:text-sm text-foreground break-words">${scenario.endAmount.toFixed(2)}</p>
                     </div>
-                    <Badge variant={scenario.difference > 0 ? "default" : "destructive"} className={scenario.difference > 0 ? "bg-green-500/20 text-heading-accent border-green-500" : "bg-red-500/20 text-foreground border-red-500"}>
+                    <GBadge variant={scenario.difference > 0 ? "default" : "destructive"} className={scenario.difference > 0 ? "bg-green-500/20 text-heading-accent border-green-500" : "bg-red-500/20 text-foreground border-red-500"}>
                       {scenario.difference > 0 ? "+" : ""}${scenario.difference.toFixed(2)}
-                    </Badge>
+                    </GBadge>
                   </div>
                 ))}
               </div>
-            </CardContent>
-          </Card>
+            </GCardContent>
+          </GCard>
 
           {/* Recommendations */}
-          <Card className="bg-card border-border w-full overflow-hidden">
-            <CardHeader>
-              <CardTitle className="flex items-center gap-2 text-foreground text-base sm:text-lg md:text-xl break-words">
+          <GCard className="bg-card border-border w-full overflow-hidden">
+            <GCardHeader>
+              <GCardTitle className="flex items-center gap-2 text-foreground text-base sm:text-lg md:text-xl break-words">
                 <Target className="h-4 w-4 sm:h-5 sm:w-5 text-foreground" />
                 Personalized Recommendations
-              </CardTitle>
-            </CardHeader>
-            <CardContent>
+              </GCardTitle>
+            </GCardHeader>
+            <GCardContent>
               <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 sm:gap-6">
                 <div>
                   <h4 className="font-semibold mb-3 text-heading-accent text-sm sm:text-base break-words">Investment Tips</h4>
@@ -1044,21 +1045,21 @@ Total Interest: $${result.calculations.totalInterest.toFixed(2)}`
                   </ul>
                 </div>
               </div>
-            </CardContent>
-          </Card>
+            </GCardContent>
+          </GCard>
         </div>
       )}
 
       {/* History Section */}
       {history.length > 0 && (
-        <Card className="bg-card border-border w-full overflow-hidden">
-          <CardHeader>
-            <CardTitle className="flex items-center gap-2 text-foreground text-base sm:text-lg md:text-xl break-words">
+        <GCard className="bg-card border-border w-full overflow-hidden">
+          <GCardHeader>
+            <GCardTitle className="flex items-center gap-2 text-foreground text-base sm:text-lg md:text-xl break-words">
               <History className="h-4 w-4 sm:h-5 sm:w-5 text-foreground" />
               Recent Calculations
-            </CardTitle>
-          </CardHeader>
-          <CardContent>
+            </GCardTitle>
+          </GCardHeader>
+          <GCardContent>
             <div className="space-y-2">
               {history.map((item, index) => (
                 <div key={index} className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-2 sm:gap-4 p-3 bg-card border border-border rounded-lg">
@@ -1081,19 +1082,19 @@ Total Interest: $${result.calculations.totalInterest.toFixed(2)}`
                 </div>
               ))}
             </div>
-          </CardContent>
-        </Card>
+          </GCardContent>
+        </GCard>
       )}
 
       {/* Information Section */}
-      <Card className="bg-card border-border w-full overflow-hidden">
-        <CardHeader>
-          <CardTitle className="flex items-center gap-2 text-foreground text-base sm:text-lg md:text-xl break-words">
+      <GCard className="bg-card border-border w-full overflow-hidden">
+        <GCardHeader>
+          <GCardTitle className="flex items-center gap-2 text-foreground text-base sm:text-lg md:text-xl break-words">
             <Info className="h-4 w-4 sm:h-5 sm:w-5 text-foreground" />
             Investment Calculator Features
-          </CardTitle>
-        </CardHeader>
-        <CardContent className="space-y-3">
+          </GCardTitle>
+        </GCardHeader>
+        <GCardContent className="space-y-3">
           <div className="p-3 sm:p-4 bg-card border border-border rounded-lg">
             <div className="flex items-start gap-2">
               <Info className="h-4 w-4 text-heading-accent mt-0.5 flex-shrink-0" />
@@ -1122,8 +1123,8 @@ Total Interest: $${result.calculations.totalInterest.toFixed(2)}`
               <strong className="text-heading-accent">Professional Recommendations:</strong> Personalized investment tips and portfolio strategies.
             </p>
           </div>
-        </CardContent>
-      </Card>
+        </GCardContent>
+      </GCard>
     </div>
   )
 }

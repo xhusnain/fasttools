@@ -1,10 +1,11 @@
 "use client"
 
 import { useState } from "react"
-import { GButton } from "@/components/globalcomponents/gbutton"
-import { Input } from "@/components/ui/input"
-import { Label } from "@/components/ui/label"
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
+import { GButton } from "@/ui/gbutton"
+import { GInput } from "@/ui/ginput"
+import { GLabel } from "@/ui/glabel"
+import { GCard, GCardContent, GCardDescription, GCardHeader, GCardTitle } from "@/ui/gcard"
+
 import { Copy, Users } from "lucide-react"
 
 
@@ -60,10 +61,10 @@ Split ${numPeople} ways: $${result.perPerson} per person`
       {/* Left Column - Inputs */}
       <div className="space-y-4">
         <div className="space-y-2">
-          <Label htmlFor="totalBill" className="text-xs font-medium text-foreground">
+          <GLabel htmlFor="totalBill" className="text-xs font-medium text-foreground">
             Total Bill Amount ($)
-          </Label>
-          <Input
+          </GLabel>
+          <GInput
             id="totalBill"
             type="number"
             placeholder="100.00"
@@ -76,10 +77,10 @@ Split ${numPeople} ways: $${result.perPerson} per person`
         </div>
 
         <div className="space-y-2">
-          <Label htmlFor="numPeople" className="text-xs font-medium text-foreground">
+          <GLabel htmlFor="numPeople" className="text-xs font-medium text-foreground">
             Number of People
-          </Label>
-          <Input
+          </GLabel>
+          <GInput
             id="numPeople"
             type="number"
             placeholder="4"
@@ -92,10 +93,10 @@ Split ${numPeople} ways: $${result.perPerson} per person`
         </div>
 
         <div className="space-y-2">
-          <Label htmlFor="tipPercent" className="text-xs font-medium text-foreground">
+          <GLabel htmlFor="tipPercent" className="text-xs font-medium text-foreground">
             Tip Percentage (%)
-          </Label>
-          <Input
+          </GLabel>
+          <GInput
             id="tipPercent"
             type="number"
             placeholder="15"

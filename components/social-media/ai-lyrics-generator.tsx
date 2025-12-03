@@ -1,12 +1,13 @@
 "use client"
 
 import { useState } from "react"
-import { GButton as Button } from "@/components/globalcomponents/gbutton"
-import { Label } from "@/components/ui/label"
-import { Input } from "@/components/ui/input"
-import { Textarea } from "@/components/ui/textarea"
-import { Card } from "@/components/ui/card"
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
+import { GButton } from "@/ui/gbutton"
+import { GLabel } from "@/ui/glabel"
+import { GInput } from "@/ui/ginput"
+import { GTextarea } from "@/ui/gtextarea"
+import { GCard } from "@/ui/gcard"
+import { GSelect, GSelectContent, GSelectItem, GSelectTrigger, GSelectValue } from "@/ui/gselect"
+
 import { Copy, Music, Download, Check } from "lucide-react"
 import { LoadingSpinner } from "@/components/common/loading-spinner"
 
@@ -90,13 +91,13 @@ export function AiLyricsGenerator() {
 
   return (
     <div className="space-y-6">
-      <Card className="p-6 border-2 border-primary/20">
+      <GCard className="p-6 border-2 border-primary/20">
         <div className="grid gap-4">
           <div className="space-y-2">
-            <Label htmlFor="theme" className="text-base font-semibold">
+            <GLabel htmlFor="theme" className="text-base font-semibold">
               Song Theme / Topic <span className="text-destructive">*</span>
-            </Label>
-            <Input
+            </GLabel>
+            <GInput
               id="theme"
               placeholder="e.g., falling in love, heartbreak, chasing dreams, summer nights"
               value={theme}
@@ -113,127 +114,127 @@ export function AiLyricsGenerator() {
 
           <div className="grid md:grid-cols-2 gap-4">
             <div className="space-y-2">
-              <Label htmlFor="genre" className="text-sm font-semibold">Genre (Optional)</Label>
-              <Select value={genre} onValueChange={setGenre}>
-                <SelectTrigger className="h-11 border-2 border-primary/50 focus:border-primary">
-                  <SelectValue placeholder="Select genre" />
-                </SelectTrigger>
-                <SelectContent>
-                  <SelectItem value="any">Any Genre</SelectItem>
-                  <SelectItem value="pop">Pop</SelectItem>
-                  <SelectItem value="rock">Rock</SelectItem>
-                  <SelectItem value="hip-hop">Hip-Hop</SelectItem>
-                  <SelectItem value="rap">Rap</SelectItem>
-                  <SelectItem value="country">Country</SelectItem>
-                  <SelectItem value="R&B">R&B</SelectItem>
-                  <SelectItem value="soul">Soul</SelectItem>
-                  <SelectItem value="jazz">Jazz</SelectItem>
-                  <SelectItem value="folk">Folk</SelectItem>
-                  <SelectItem value="blues">Blues</SelectItem>
-                  <SelectItem value="electronic">Electronic</SelectItem>
-                  <SelectItem value="indie">Indie</SelectItem>
-                  <SelectItem value="alternative">Alternative</SelectItem>
-                  <SelectItem value="metal">Metal</SelectItem>
-                  <SelectItem value="punk">Punk</SelectItem>
-                  <SelectItem value="reggae">Reggae</SelectItem>
-                  <SelectItem value="gospel">Gospel</SelectItem>
-                </SelectContent>
-              </Select>
+              <GLabel htmlFor="genre" className="text-sm font-semibold">Genre (Optional)</GLabel>
+              <GSelect value={genre} onValueChange={setGenre}>
+                <GSelectTrigger className="h-11 border-2 border-primary/50 focus:border-primary">
+                  <GSelectValue placeholder="GSelect genre" />
+                </GSelectTrigger>
+                <GSelectContent>
+                  <GSelectItem value="any">Any Genre</GSelectItem>
+                  <GSelectItem value="pop">Pop</GSelectItem>
+                  <GSelectItem value="rock">Rock</GSelectItem>
+                  <GSelectItem value="hip-hop">Hip-Hop</GSelectItem>
+                  <GSelectItem value="rap">Rap</GSelectItem>
+                  <GSelectItem value="country">Country</GSelectItem>
+                  <GSelectItem value="R&B">R&B</GSelectItem>
+                  <GSelectItem value="soul">Soul</GSelectItem>
+                  <GSelectItem value="jazz">Jazz</GSelectItem>
+                  <GSelectItem value="folk">Folk</GSelectItem>
+                  <GSelectItem value="blues">Blues</GSelectItem>
+                  <GSelectItem value="electronic">Electronic</GSelectItem>
+                  <GSelectItem value="indie">Indie</GSelectItem>
+                  <GSelectItem value="alternative">Alternative</GSelectItem>
+                  <GSelectItem value="metal">Metal</GSelectItem>
+                  <GSelectItem value="punk">Punk</GSelectItem>
+                  <GSelectItem value="reggae">Reggae</GSelectItem>
+                  <GSelectItem value="gospel">Gospel</GSelectItem>
+                </GSelectContent>
+              </GSelect>
             </div>
 
             <div className="space-y-2">
-              <Label htmlFor="mood" className="text-sm font-semibold">Mood (Optional)</Label>
-              <Select value={mood} onValueChange={setMood}>
-                <SelectTrigger className="h-11 border-2 border-primary/50 focus:border-primary">
-                  <SelectValue placeholder="Select mood" />
-                </SelectTrigger>
-                <SelectContent>
-                  <SelectItem value="any">Any Mood</SelectItem>
-                  <SelectItem value="happy">Happy</SelectItem>
-                  <SelectItem value="sad">Sad</SelectItem>
-                  <SelectItem value="energetic">Energetic</SelectItem>
-                  <SelectItem value="melancholic">Melancholic</SelectItem>
-                  <SelectItem value="romantic">Romantic</SelectItem>
-                  <SelectItem value="upbeat">Upbeat</SelectItem>
-                  <SelectItem value="mellow">Mellow</SelectItem>
-                  <SelectItem value="intense">Intense</SelectItem>
-                  <SelectItem value="peaceful">Peaceful</SelectItem>
-                  <SelectItem value="aggressive">Aggressive</SelectItem>
-                  <SelectItem value="nostalgic">Nostalgic</SelectItem>
-                  <SelectItem value="hopeful">Hopeful</SelectItem>
-                  <SelectItem value="dark">Dark</SelectItem>
-                  <SelectItem value="playful">Playful</SelectItem>
-                  <SelectItem value="empowering">Empowering</SelectItem>
-                </SelectContent>
-              </Select>
+              <GLabel htmlFor="mood" className="text-sm font-semibold">Mood (Optional)</GLabel>
+              <GSelect value={mood} onValueChange={setMood}>
+                <GSelectTrigger className="h-11 border-2 border-primary/50 focus:border-primary">
+                  <GSelectValue placeholder="GSelect mood" />
+                </GSelectTrigger>
+                <GSelectContent>
+                  <GSelectItem value="any">Any Mood</GSelectItem>
+                  <GSelectItem value="happy">Happy</GSelectItem>
+                  <GSelectItem value="sad">Sad</GSelectItem>
+                  <GSelectItem value="energetic">Energetic</GSelectItem>
+                  <GSelectItem value="melancholic">Melancholic</GSelectItem>
+                  <GSelectItem value="romantic">Romantic</GSelectItem>
+                  <GSelectItem value="upbeat">Upbeat</GSelectItem>
+                  <GSelectItem value="mellow">Mellow</GSelectItem>
+                  <GSelectItem value="intense">Intense</GSelectItem>
+                  <GSelectItem value="peaceful">Peaceful</GSelectItem>
+                  <GSelectItem value="aggressive">Aggressive</GSelectItem>
+                  <GSelectItem value="nostalgic">Nostalgic</GSelectItem>
+                  <GSelectItem value="hopeful">Hopeful</GSelectItem>
+                  <GSelectItem value="dark">Dark</GSelectItem>
+                  <GSelectItem value="playful">Playful</GSelectItem>
+                  <GSelectItem value="empowering">Empowering</GSelectItem>
+                </GSelectContent>
+              </GSelect>
             </div>
 
             <div className="space-y-2">
-              <Label htmlFor="duration" className="text-sm font-semibold">Duration (Optional)</Label>
-              <Select value={duration} onValueChange={setDuration}>
-                <SelectTrigger className="h-11 border-2 border-primary/50 focus:border-primary">
-                  <SelectValue placeholder="Song length" />
-                </SelectTrigger>
-                <SelectContent>
-                  <SelectItem value="standard">Standard (3-4 min)</SelectItem>
-                  <SelectItem value="2">Short (2 min)</SelectItem>
-                  <SelectItem value="3">Medium (3 min)</SelectItem>
-                  <SelectItem value="4">Long (4 min)</SelectItem>
-                  <SelectItem value="5">Extended (5+ min)</SelectItem>
-                </SelectContent>
-              </Select>
+              <GLabel htmlFor="duration" className="text-sm font-semibold">Duration (Optional)</GLabel>
+              <GSelect value={duration} onValueChange={setDuration}>
+                <GSelectTrigger className="h-11 border-2 border-primary/50 focus:border-primary">
+                  <GSelectValue placeholder="Song length" />
+                </GSelectTrigger>
+                <GSelectContent>
+                  <GSelectItem value="standard">Standard (3-4 min)</GSelectItem>
+                  <GSelectItem value="2">Short (2 min)</GSelectItem>
+                  <GSelectItem value="3">Medium (3 min)</GSelectItem>
+                  <GSelectItem value="4">Long (4 min)</GSelectItem>
+                  <GSelectItem value="5">Extended (5+ min)</GSelectItem>
+                </GSelectContent>
+              </GSelect>
             </div>
 
             <div className="space-y-2">
-              <Label htmlFor="language" className="text-sm font-semibold">Language</Label>
-              <Select value={language} onValueChange={setLanguage}>
-                <SelectTrigger className="h-11 border-2 border-primary/50 focus:border-primary">
-                  <SelectValue placeholder="Select language" />
-                </SelectTrigger>
-                <SelectContent className="max-h-[300px]">
-                  <SelectItem value="english">English</SelectItem>
-                  <SelectItem value="spanish">Spanish (Español)</SelectItem>
-                  <SelectItem value="french">French (Français)</SelectItem>
-                  <SelectItem value="german">German (Deutsch)</SelectItem>
-                  <SelectItem value="italian">Italian (Italiano)</SelectItem>
-                  <SelectItem value="portuguese">Portuguese (Português)</SelectItem>
-                  <SelectItem value="russian">Russian (Русский)</SelectItem>
-                  <SelectItem value="japanese">Japanese (日本語)</SelectItem>
-                  <SelectItem value="korean">Korean (한국어)</SelectItem>
-                  <SelectItem value="chinese">Chinese (中文)</SelectItem>
-                  <SelectItem value="arabic">Arabic (العربية)</SelectItem>
-                  <SelectItem value="hindi">Hindi (हिन्दी)</SelectItem>
-                  <SelectItem value="bengali">Bengali (বাংলা)</SelectItem>
-                  <SelectItem value="punjabi">Punjabi (ਪੰਜਾਬੀ)</SelectItem>
-                  <SelectItem value="urdu">Urdu (اردو)</SelectItem>
-                  <SelectItem value="turkish">Turkish (Türkçe)</SelectItem>
-                  <SelectItem value="dutch">Dutch (Nederlands)</SelectItem>
-                  <SelectItem value="polish">Polish (Polski)</SelectItem>
-                  <SelectItem value="swedish">Swedish (Svenska)</SelectItem>
-                  <SelectItem value="norwegian">Norwegian (Norsk)</SelectItem>
-                  <SelectItem value="danish">Danish (Dansk)</SelectItem>
-                  <SelectItem value="finnish">Finnish (Suomi)</SelectItem>
-                  <SelectItem value="greek">Greek (Ελληνικά)</SelectItem>
-                  <SelectItem value="hebrew">Hebrew (עברית)</SelectItem>
-                  <SelectItem value="thai">Thai (ไทย)</SelectItem>
-                  <SelectItem value="vietnamese">Vietnamese (Tiếng Việt)</SelectItem>
-                  <SelectItem value="indonesian">Indonesian (Bahasa Indonesia)</SelectItem>
-                  <SelectItem value="malay">Malay (Bahasa Melayu)</SelectItem>
-                  <SelectItem value="tagalog">Tagalog (Filipino)</SelectItem>
-                  <SelectItem value="swahili">Swahili (Kiswahili)</SelectItem>
-                  <SelectItem value="czech">Czech (Čeština)</SelectItem>
-                  <SelectItem value="hungarian">Hungarian (Magyar)</SelectItem>
-                  <SelectItem value="romanian">Romanian (Română)</SelectItem>
-                  <SelectItem value="ukrainian">Ukrainian (Українська)</SelectItem>
-                  <SelectItem value="persian">Persian (فارسی)</SelectItem>
-                  <SelectItem value="tamil">Tamil (தமிழ்)</SelectItem>
-                  <SelectItem value="telugu">Telugu (తెలుగు)</SelectItem>
-                  <SelectItem value="marathi">Marathi (मराठी)</SelectItem>
-                  <SelectItem value="gujarati">Gujarati (ગુજરાતી)</SelectItem>
-                  <SelectItem value="kannada">Kannada (ಕನ್ನಡ)</SelectItem>
-                  <SelectItem value="malayalam">Malayalam (മലയാളം)</SelectItem>
-                </SelectContent>
-              </Select>
+              <GLabel htmlFor="language" className="text-sm font-semibold">Language</GLabel>
+              <GSelect value={language} onValueChange={setLanguage}>
+                <GSelectTrigger className="h-11 border-2 border-primary/50 focus:border-primary">
+                  <GSelectValue placeholder="GSelect language" />
+                </GSelectTrigger>
+                <GSelectContent className="max-h-[300px]">
+                  <GSelectItem value="english">English</GSelectItem>
+                  <GSelectItem value="spanish">Spanish (Español)</GSelectItem>
+                  <GSelectItem value="french">French (Français)</GSelectItem>
+                  <GSelectItem value="german">German (Deutsch)</GSelectItem>
+                  <GSelectItem value="italian">Italian (Italiano)</GSelectItem>
+                  <GSelectItem value="portuguese">Portuguese (Português)</GSelectItem>
+                  <GSelectItem value="russian">Russian (Русский)</GSelectItem>
+                  <GSelectItem value="japanese">Japanese (日本語)</GSelectItem>
+                  <GSelectItem value="korean">Korean (한국어)</GSelectItem>
+                  <GSelectItem value="chinese">Chinese (中文)</GSelectItem>
+                  <GSelectItem value="arabic">Arabic (العربية)</GSelectItem>
+                  <GSelectItem value="hindi">Hindi (हिन्दी)</GSelectItem>
+                  <GSelectItem value="bengali">Bengali (বাংলা)</GSelectItem>
+                  <GSelectItem value="punjabi">Punjabi (ਪੰਜਾਬੀ)</GSelectItem>
+                  <GSelectItem value="urdu">Urdu (اردو)</GSelectItem>
+                  <GSelectItem value="turkish">Turkish (Türkçe)</GSelectItem>
+                  <GSelectItem value="dutch">Dutch (Nederlands)</GSelectItem>
+                  <GSelectItem value="polish">Polish (Polski)</GSelectItem>
+                  <GSelectItem value="swedish">Swedish (Svenska)</GSelectItem>
+                  <GSelectItem value="norwegian">Norwegian (Norsk)</GSelectItem>
+                  <GSelectItem value="danish">Danish (Dansk)</GSelectItem>
+                  <GSelectItem value="finnish">Finnish (Suomi)</GSelectItem>
+                  <GSelectItem value="greek">Greek (Ελληνικά)</GSelectItem>
+                  <GSelectItem value="hebrew">Hebrew (עברית)</GSelectItem>
+                  <GSelectItem value="thai">Thai (ไทย)</GSelectItem>
+                  <GSelectItem value="vietnamese">Vietnamese (Tiếng Việt)</GSelectItem>
+                  <GSelectItem value="indonesian">Indonesian (Bahasa Indonesia)</GSelectItem>
+                  <GSelectItem value="malay">Malay (Bahasa Melayu)</GSelectItem>
+                  <GSelectItem value="tagalog">Tagalog (Filipino)</GSelectItem>
+                  <GSelectItem value="swahili">Swahili (Kiswahili)</GSelectItem>
+                  <GSelectItem value="czech">Czech (Čeština)</GSelectItem>
+                  <GSelectItem value="hungarian">Hungarian (Magyar)</GSelectItem>
+                  <GSelectItem value="romanian">Romanian (Română)</GSelectItem>
+                  <GSelectItem value="ukrainian">Ukrainian (Українська)</GSelectItem>
+                  <GSelectItem value="persian">Persian (فارسی)</GSelectItem>
+                  <GSelectItem value="tamil">Tamil (தமிழ்)</GSelectItem>
+                  <GSelectItem value="telugu">Telugu (తెలుగు)</GSelectItem>
+                  <GSelectItem value="marathi">Marathi (मराठी)</GSelectItem>
+                  <GSelectItem value="gujarati">Gujarati (ગુજરાતી)</GSelectItem>
+                  <GSelectItem value="kannada">Kannada (ಕನ್ನಡ)</GSelectItem>
+                  <GSelectItem value="malayalam">Malayalam (മലയാളം)</GSelectItem>
+                </GSelectContent>
+              </GSelect>
             </div>
           </div>
 
@@ -243,7 +244,7 @@ export function AiLyricsGenerator() {
             </div>
           )}
 
-          <Button
+          <GButton
             onClick={generateLyrics}
             disabled={loading || !theme.trim()}
             className="w-full h-12 text-base bg-primary hover:bg-primary font-semibold"
@@ -259,17 +260,17 @@ export function AiLyricsGenerator() {
                 Generate Song Lyrics with AI
               </>
             )}
-          </Button>
+          </GButton>
 
           <div className="flex items-center gap-2 text-xs text-muted-foreground">
             <div className="h-1 w-1 rounded-full bg-secondary-accent" />
             <span>Powered by Gemini AI • 100% Original • Commercial Use Allowed</span>
           </div>
         </div>
-      </Card>
+      </GCard>
 
       {lyrics && (
-        <Card className="p-6 space-y-4 animate-fade-in border-2 border-primary/30 shadow-lg">
+        <GCard className="p-6 space-y-4 animate-fade-in border-2 border-primary/30 shadow-lg">
           <div className="flex items-center justify-between">
             <div>
               <h3 className="font-bold text-xl flex items-center gap-2">
@@ -284,7 +285,7 @@ export function AiLyricsGenerator() {
               </p>
             </div>
             <div className="flex gap-2">
-              <Button
+              <GButton
                 variant="outline"
                 size="sm"
                 onClick={copyLyrics}
@@ -301,8 +302,8 @@ export function AiLyricsGenerator() {
                     Copy
                   </>
                 )}
-              </Button>
-              <Button
+              </GButton>
+              <GButton
                 variant="outline"
                 size="sm"
                 onClick={downloadLyrics}
@@ -310,12 +311,12 @@ export function AiLyricsGenerator() {
               >
                 <Download className="h-4 w-4 mr-2" />
                 Download
-              </Button>
+              </GButton>
             </div>
           </div>
 
           <div className="relative">
-            <Textarea
+            <GTextarea
               value={lyrics}
               readOnly
               className="min-h-[400px] font-mono text-sm leading-relaxed resize-none border-2 border-primary/20 bg-muted/30"
@@ -339,7 +340,7 @@ export function AiLyricsGenerator() {
           </div>
 
           <div className="pt-2 border-t border-border">
-            <Button
+            <GButton
               variant="outline"
               onClick={() => {
                 setLyrics("")
@@ -352,9 +353,9 @@ export function AiLyricsGenerator() {
               className="w-full h-10"
             >
               Generate New Lyrics
-            </Button>
+            </GButton>
           </div>
-        </Card>
+        </GCard>
       )}
     </div>
   )

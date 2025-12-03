@@ -1,12 +1,12 @@
 import * as React from 'react'
 import { cn } from '@/lib/utils'
 
-interface LoaderProps {
+interface GLoaderProps {
   size?: 'sm' | 'md' | 'lg'
   className?: string
 }
 
-const Loader: React.FC<LoaderProps> = ({ size = 'md', className }) => {
+const GLoader: React.FC<GLoaderProps> = ({ size = 'md', className }) => {
   const sizeClasses = {
     sm: 'h-4 w-4',
     md: 'h-8 w-8',
@@ -24,4 +24,4 @@ const Loader: React.FC<LoaderProps> = ({ size = 'md', className }) => {
   )
 }
 
-export { Loader }
+export { GLoader }

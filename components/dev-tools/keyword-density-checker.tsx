@@ -1,10 +1,11 @@
 "use client"
 
 import { useState } from "react"
-import { GButton } from "@/components/globalcomponents/gbutton"
-import { Textarea } from "@/components/ui/textarea"
-import { Label } from "@/components/ui/label"
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
+import { GButton } from "@/ui/gbutton"
+import { GTextarea } from "@/ui/gtextarea"
+import { GLabel } from "@/ui/glabel"
+import { GCard, GCardContent, GCardDescription, GCardHeader, GCardTitle } from "@/ui/gcard"
+
 import { Search } from "lucide-react"
 import { LoadingSpinner } from "@/components/common/loading-spinner"
 
@@ -51,22 +52,22 @@ export function KeywordDensityChecker() {
 
   return (
     <div className="space-y-6">
-      <Card className="border border-border shadow-sm">
-        <CardHeader>
-          <CardTitle className="text-xl text-foreground flex items-center gap-2">
+      <GCard className="border border-border shadow-sm">
+        <GCardHeader>
+          <GCardTitle className="text-xl text-foreground flex items-center gap-2">
             <Search className="h-5 w-5 text-primary" />
             Keyword Density Checker
-          </CardTitle>
-          <CardDescription className="text-sm text-muted-foreground">
+          </GCardTitle>
+          <GCardDescription className="text-sm text-muted-foreground">
             Analyze keyword density in your content for SEO optimization
-          </CardDescription>
-        </CardHeader>
-        <CardContent className="space-y-4">
+          </GCardDescription>
+        </GCardHeader>
+        <GCardContent className="space-y-4">
           <div className="space-y-2">
-            <Label htmlFor="text" className="text-sm font-medium text-foreground">
+            <GLabel htmlFor="text" className="text-sm font-medium text-foreground">
               Your Content
-            </Label>
-            <Textarea
+            </GLabel>
+            <GTextarea
               id="text"
               placeholder="Paste your article or content here..."
               value={text}
@@ -90,18 +91,18 @@ export function KeywordDensityChecker() {
               "Analyze Keyword Density"
             )}
           </GButton>
-        </CardContent>
-      </Card>
+        </GCardContent>
+      </GCard>
 
       {result.length > 0 && (
-        <Card className="border border-border shadow-sm animate-fade-in">
-          <CardHeader>
-            <CardTitle className="text-lg text-foreground">Keyword Analysis</CardTitle>
-            <CardDescription className="text-sm text-muted-foreground">
+        <GCard className="border border-border shadow-sm animate-fade-in">
+          <GCardHeader>
+            <GCardTitle className="text-lg text-foreground">Keyword Analysis</GCardTitle>
+            <GCardDescription className="text-sm text-muted-foreground">
               Total words: {totalWords} | Top 10 keywords
-            </CardDescription>
-          </CardHeader>
-          <CardContent>
+            </GCardDescription>
+          </GCardHeader>
+          <GCardContent>
             <div className="space-y-3">
               {result.map((item, index) => (
                 <div
@@ -119,8 +120,8 @@ export function KeywordDensityChecker() {
                 </div>
               ))}
             </div>
-          </CardContent>
-        </Card>
+          </GCardContent>
+        </GCard>
       )}
     </div>
   )

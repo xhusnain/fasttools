@@ -1,13 +1,14 @@
 "use client"
 
 import { useState, useEffect } from "react"
-import { GButton as Button } from "@/components/globalcomponents/gbutton"
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
-import { Input } from "@/components/ui/input"
-import { Label } from "@/components/ui/label"
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
-import { Badge } from "@/components/ui/badge"
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
+import { GButton } from "@/ui/gbutton"
+import { GCard, GCardContent, GCardHeader, GCardTitle } from "@/ui/gcard"
+import { GInput } from "@/ui/ginput"
+import { GLabel } from "@/ui/glabel"
+import { GSelect, GSelectContent, GSelectItem, GSelectTrigger, GSelectValue } from "@/ui/gselect"
+import { GBadge } from "@/ui/gbadge"
+import { GTabs, GTabsContent, GTabsList, GTabsTrigger } from "@/ui/gtabs"
+
 import {
   Calculator,
   DollarSign,
@@ -169,7 +170,7 @@ export default function RetirementCalculator() {
     const monthlyContrib = parseFloat(monthlyContribution) || 0
     const monthlyWithdraw = parseFloat(monthlyWithdrawal) || 0
 
-    // Input validation
+    // GInput validation
     if (age <= 0) {
       alert("Current age must be greater than 0")
       return
@@ -425,31 +426,31 @@ Investment Return: ${result.investmentReturn.toFixed(2)}%`
   return (
     <div className="space-y-6">
       {/* Main Calculator */}
-      <Card>
-        <CardHeader className="pb-8">
-          <CardTitle className="flex items-center gap-2">
+      <GCard>
+        <GCardHeader className="pb-8">
+          <GCardTitle className="flex items-center gap-2">
             <Calculator className="h-5 w-5 text-foreground" />
             Advanced Retirement Calculator
-          </CardTitle>
-        </CardHeader>
-        <CardContent className="space-y-6">
+          </GCardTitle>
+        </GCardHeader>
+        <GCardContent className="space-y-6">
           {/* Calculation Type Selection */}
           <div>
-            <Label className="text-lg font-semibold mb-4 block">Calculation Type</Label>
-            <Tabs value={calculationType} onValueChange={setCalculationType}>
-              <TabsList className="grid w-full grid-cols-1 sm:grid-cols-3 gap-2 sm:gap-0">
-                <TabsTrigger value="howMuchToSave" className="text-xs sm:text-sm">How Much to Save</TabsTrigger>
-                <TabsTrigger value="howMuchCanWithdraw" className="text-xs sm:text-sm">How Much Can Withdraw</TabsTrigger>
-                <TabsTrigger value="howLongWillLast" className="text-xs sm:text-sm">How Long Will Last</TabsTrigger>
-              </TabsList>
-            </Tabs>
+            <GLabel className="text-lg font-semibold mb-4 block">Calculation Type</GLabel>
+            <GTabs value={calculationType} onValueChange={setCalculationType}>
+              <GTabsList className="grid w-full grid-cols-1 sm:grid-cols-3 gap-2 sm:gap-0">
+                <GTabsTrigger value="howMuchToSave" className="text-xs sm:text-sm">How Much to Save</GTabsTrigger>
+                <GTabsTrigger value="howMuchCanWithdraw" className="text-xs sm:text-sm">How Much Can Withdraw</GTabsTrigger>
+                <GTabsTrigger value="howLongWillLast" className="text-xs sm:text-sm">How Long Will Last</GTabsTrigger>
+              </GTabsList>
+            </GTabs>
           </div>
 
-          {/* Input Fields */}
+          {/* GInput Fields */}
           <div className="grid md:grid-cols-2 gap-4">
             <div className="space-y-2">
-              <Label htmlFor="currentAge">Current Age</Label>
-              <Input
+              <GLabel htmlFor="currentAge">Current Age</GLabel>
+              <GInput
                 id="currentAge"
                 type="number"
                 placeholder="35"
@@ -458,8 +459,8 @@ Investment Return: ${result.investmentReturn.toFixed(2)}%`
               />
             </div>
             <div className="space-y-2">
-              <Label htmlFor="retirementAge">Retirement Age</Label>
-              <Input
+              <GLabel htmlFor="retirementAge">Retirement Age</GLabel>
+              <GInput
                 id="retirementAge"
                 type="number"
                 placeholder="67"
@@ -471,8 +472,8 @@ Investment Return: ${result.investmentReturn.toFixed(2)}%`
 
           <div className="grid md:grid-cols-2 gap-4">
             <div className="space-y-2">
-              <Label htmlFor="lifeExpectancy">Life Expectancy</Label>
-              <Input
+              <GLabel htmlFor="lifeExpectancy">Life Expectancy</GLabel>
+              <GInput
                 id="lifeExpectancy"
                 type="number"
                 placeholder="85"
@@ -481,8 +482,8 @@ Investment Return: ${result.investmentReturn.toFixed(2)}%`
               />
             </div>
             <div className="space-y-2">
-              <Label htmlFor="currentIncome">Current Income</Label>
-              <Input
+              <GLabel htmlFor="currentIncome">Current Income</GLabel>
+              <GInput
                 id="currentIncome"
                 type="number"
                 placeholder="70000"
@@ -494,8 +495,8 @@ Investment Return: ${result.investmentReturn.toFixed(2)}%`
 
           <div className="grid md:grid-cols-2 gap-4">
             <div className="space-y-2">
-              <Label htmlFor="incomeIncrease">Income Increase (%/year)</Label>
-              <Input
+              <GLabel htmlFor="incomeIncrease">Income Increase (%/year)</GLabel>
+              <GInput
                 id="incomeIncrease"
                 type="number"
                 placeholder="3"
@@ -504,8 +505,8 @@ Investment Return: ${result.investmentReturn.toFixed(2)}%`
               />
             </div>
             <div className="space-y-2">
-              <Label htmlFor="retirementIncomeNeeded">Income Needed After Retirement (%)</Label>
-              <Input
+              <GLabel htmlFor="retirementIncomeNeeded">Income Needed After Retirement (%)</GLabel>
+              <GInput
                 id="retirementIncomeNeeded"
                 type="number"
                 placeholder="75"
@@ -517,8 +518,8 @@ Investment Return: ${result.investmentReturn.toFixed(2)}%`
 
           <div className="grid md:grid-cols-2 gap-4">
             <div className="space-y-2">
-              <Label htmlFor="investmentReturn">Investment Return (%/year)</Label>
-              <Input
+              <GLabel htmlFor="investmentReturn">Investment Return (%/year)</GLabel>
+              <GInput
                 id="investmentReturn"
                 type="number"
                 placeholder="6"
@@ -527,8 +528,8 @@ Investment Return: ${result.investmentReturn.toFixed(2)}%`
               />
             </div>
             <div className="space-y-2">
-              <Label htmlFor="inflationRate">Inflation Rate (%/year)</Label>
-              <Input
+              <GLabel htmlFor="inflationRate">Inflation Rate (%/year)</GLabel>
+              <GInput
                 id="inflationRate"
                 type="number"
                 placeholder="3"
@@ -540,8 +541,8 @@ Investment Return: ${result.investmentReturn.toFixed(2)}%`
 
           <div className="grid md:grid-cols-2 gap-4">
             <div className="space-y-2">
-              <Label htmlFor="otherIncome">Other Income After Retirement</Label>
-              <Input
+              <GLabel htmlFor="otherIncome">Other Income After Retirement</GLabel>
+              <GInput
                 id="otherIncome"
                 type="number"
                 placeholder="0"
@@ -550,8 +551,8 @@ Investment Return: ${result.investmentReturn.toFixed(2)}%`
               />
             </div>
             <div className="space-y-2">
-              <Label htmlFor="currentSavings">Current Retirement Savings</Label>
-              <Input
+              <GLabel htmlFor="currentSavings">Current Retirement Savings</GLabel>
+              <GInput
                 id="currentSavings"
                 type="number"
                 placeholder="30000"
@@ -564,8 +565,8 @@ Investment Return: ${result.investmentReturn.toFixed(2)}%`
           {calculationType === "howMuchToSave" && (
             <div className="grid md:grid-cols-2 gap-4">
               <div className="space-y-2">
-                <Label htmlFor="futureSavings">Future Savings (% of income)</Label>
-                <Input
+                <GLabel htmlFor="futureSavings">Future Savings (% of income)</GLabel>
+                <GInput
                   id="futureSavings"
                   type="number"
                   placeholder="10"
@@ -579,8 +580,8 @@ Investment Return: ${result.investmentReturn.toFixed(2)}%`
           {calculationType === "howMuchCanWithdraw" && (
             <div className="grid md:grid-cols-2 gap-4">
               <div className="space-y-2">
-                <Label htmlFor="monthlyContribution">Monthly Contribution</Label>
-                <Input
+                <GLabel htmlFor="monthlyContribution">Monthly Contribution</GLabel>
+                <GInput
                   id="monthlyContribution"
                   type="number"
                   placeholder="500"
@@ -594,8 +595,8 @@ Investment Return: ${result.investmentReturn.toFixed(2)}%`
           {calculationType === "howLongWillLast" && (
             <div className="grid md:grid-cols-2 gap-4">
               <div className="space-y-2">
-                <Label htmlFor="monthlyWithdrawal">Monthly Withdrawal</Label>
-                <Input
+                <GLabel htmlFor="monthlyWithdrawal">Monthly Withdrawal</GLabel>
+                <GInput
                   id="monthlyWithdrawal"
                   type="number"
                   placeholder="5000"
@@ -607,38 +608,38 @@ Investment Return: ${result.investmentReturn.toFixed(2)}%`
           )}
 
           <div className="flex gap-2">
-            <Button onClick={calculateRetirement} className="flex-1">
+            <GButton onClick={calculateRetirement} className="flex-1">
               <Calculator className="mr-2 h-4 w-4" />
               Calculate
-            </Button>
-            <Button variant="outline" onClick={clearAll}>
+            </GButton>
+            <GButton variant="outline" onClick={clearAll}>
               Clear All
-            </Button>
+            </GButton>
           </div>
-        </CardContent>
-      </Card>
+        </GCardContent>
+      </GCard>
 
       {/* Results Section */}
       {result && (
         <div className="space-y-6">
           {/* Main Results */}
-          <Card>
-            <CardHeader>
-              <CardTitle className="flex items-center gap-2">
+          <GCard>
+            <GCardHeader>
+              <GCardTitle className="flex items-center gap-2">
                 <DollarSign className="h-5 w-5 text-heading-accent" />
                 Retirement Analysis Results
-              </CardTitle>
-            </CardHeader>
-            <CardContent className="space-y-4">
+              </GCardTitle>
+            </GCardHeader>
+            <GCardContent className="space-y-4">
               <div className="grid md:grid-cols-2 gap-4">
                 <div className="space-y-2">
-                  <Label className="text-sm font-medium">Target Amount</Label>
+                  <GLabel className="text-sm font-medium">Target Amount</GLabel>
                   <div className="text-3xl font-bold text-heading-accent">
                     ${result.targetAmount.toFixed(2)}
                   </div>
                 </div>
                 <div className="space-y-2">
-                  <Label className="text-sm font-medium">Monthly Contribution</Label>
+                  <GLabel className="text-sm font-medium">Monthly Contribution</GLabel>
                   <div className="text-3xl font-bold text-foreground">
                     ${result.monthlyContribution.toFixed(2)}
                   </div>
@@ -661,23 +662,23 @@ Investment Return: ${result.investmentReturn.toFixed(2)}%`
               </div>
 
               <div className="flex gap-2 pt-4">
-                <Button onClick={copyResult} variant="outline" size="sm">
+                <GButton onClick={copyResult} variant="outline" size="sm">
                   <Copy className="mr-2 h-4 w-4" />
                   Copy Results
-                </Button>
+                </GButton>
               </div>
-            </CardContent>
-          </Card>
+            </GCardContent>
+          </GCard>
 
           {/* Detailed Calculations */}
-          <Card>
-            <CardHeader>
-              <CardTitle className="flex items-center gap-2">
+          <GCard>
+            <GCardHeader>
+              <GCardTitle className="flex items-center gap-2">
                 <BarChart3 className="h-5 w-5 text-foreground" />
                 Detailed Calculations
-              </CardTitle>
-            </CardHeader>
-            <CardContent className="space-y-4">
+              </GCardTitle>
+            </GCardHeader>
+            <GCardContent className="space-y-4">
               <div className="grid md:grid-cols-2 gap-4">
                 <div className="p-4 bg-muted rounded-lg border border-green-200 dark:border-green-800">
                   <h3 className="font-semibold text-heading-accent mb-2">Total Contributions</h3>
@@ -696,18 +697,18 @@ Investment Return: ${result.investmentReturn.toFixed(2)}%`
                   <div className="text-2xl font-bold text-foreground">{result.calculations.incomeReplacement.toFixed(1)}%</div>
                 </div>
               </div>
-            </CardContent>
-          </Card>
+            </GCardContent>
+          </GCard>
 
           {/* Scenarios */}
-          <Card>
-            <CardHeader>
-              <CardTitle className="flex items-center gap-2">
+          <GCard>
+            <GCardHeader>
+              <GCardTitle className="flex items-center gap-2">
                 <TrendingUp className="h-5 w-5 text-heading-accent" />
                 Return Scenarios
-              </CardTitle>
-            </CardHeader>
-            <CardContent>
+              </GCardTitle>
+            </GCardHeader>
+            <GCardContent>
               <div className="grid md:grid-cols-2 gap-4">
                 {result.scenarios.map((scenario, index) => (
                   <div key={index} className="p-4 bg-gray-50 dark:bg-gray-950/20 rounded-lg border border-gray-200 dark:border-gray-800">
@@ -721,18 +722,18 @@ Investment Return: ${result.investmentReturn.toFixed(2)}%`
                   </div>
                 ))}
               </div>
-            </CardContent>
-          </Card>
+            </GCardContent>
+          </GCard>
 
           {/* Recommendations */}
-          <Card>
-            <CardHeader>
-              <CardTitle className="flex items-center gap-2">
+          <GCard>
+            <GCardHeader>
+              <GCardTitle className="flex items-center gap-2">
                 <Target className="h-5 w-5 text-heading-accent" />
                 Personalized Recommendations
-              </CardTitle>
-            </CardHeader>
-            <CardContent>
+              </GCardTitle>
+            </GCardHeader>
+            <GCardContent>
               <div className="grid md:grid-cols-3 gap-6">
                 <div>
                   <h4 className="font-semibold mb-3 text-foreground">Savings Strategies</h4>
@@ -768,21 +769,21 @@ Investment Return: ${result.investmentReturn.toFixed(2)}%`
                   </ul>
                 </div>
               </div>
-            </CardContent>
-          </Card>
+            </GCardContent>
+          </GCard>
         </div>
       )}
 
       {/* History Section */}
       {history.length > 0 && (
-        <Card>
-          <CardHeader>
-            <CardTitle className="flex items-center gap-2">
+        <GCard>
+          <GCardHeader>
+            <GCardTitle className="flex items-center gap-2">
               <History className="h-5 w-5 text-gray-500" />
               Recent Calculations
-            </CardTitle>
-          </CardHeader>
-          <CardContent>
+            </GCardTitle>
+          </GCardHeader>
+          <GCardContent>
             <div className="space-y-2">
               {history.map((item, index) => (
                 <div key={index} className="flex items-center justify-between p-3 bg-muted rounded-lg">
@@ -794,29 +795,29 @@ Investment Return: ${result.investmentReturn.toFixed(2)}%`
                       ${item.monthlyContribution.toFixed(2)}/month contribution
                     </div>
                   </div>
-                  <Button
+                  <GButton
                     variant="ghost"
                     size="sm"
                     onClick={() => setResult(item)}
                   >
                     View Details
-                  </Button>
+                  </GButton>
                 </div>
               ))}
             </div>
-          </CardContent>
-        </Card>
+          </GCardContent>
+        </GCard>
       )}
 
       {/* Information Section */}
-      <Card>
-        <CardHeader>
-          <CardTitle className="flex items-center gap-2">
+      <GCard>
+        <GCardHeader>
+          <GCardTitle className="flex items-center gap-2">
             <Info className="h-5 w-5 text-foreground" />
             Retirement Calculator Features
-          </CardTitle>
-        </CardHeader>
-        <CardContent className="space-y-3">
+          </GCardTitle>
+        </GCardHeader>
+        <GCardContent className="space-y-3">
           <div className="p-4 bg-muted rounded-lg border border-blue-200 dark:border-blue-800">
             <div className="flex items-start gap-2">
               <Info className="h-4 w-4 text-foreground mt-0.5 flex-shrink-0" />
@@ -845,8 +846,8 @@ Investment Return: ${result.investmentReturn.toFixed(2)}%`
               <strong>Professional Recommendations:</strong> Personalized advice based on your specific situation and goals.
             </p>
           </div>
-        </CardContent>
-      </Card>
+        </GCardContent>
+      </GCard>
     </div>
   )
 }

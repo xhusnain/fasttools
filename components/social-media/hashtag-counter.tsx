@@ -1,11 +1,12 @@
 "use client"
 
 import { useState, useEffect } from "react"
-import { GButton } from "@/components/globalcomponents/gbutton"
-import { Textarea } from "@/components/ui/textarea"
-import { Label } from "@/components/ui/label"
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
-import { Badge } from "@/components/ui/badge"
+import { GButton } from "@/ui/gbutton"
+import { GTextarea } from "@/ui/gtextarea"
+import { GLabel } from "@/ui/glabel"
+import { GCard, GCardContent, GCardDescription, GCardHeader, GCardTitle } from "@/ui/gcard"
+import { GBadge } from "@/ui/gbadge"
+
 import {
   Hash,
   Copy,
@@ -113,9 +114,9 @@ export function HashtagCounter() {
 
   return (
     <div className="w-full max-w-4xl mx-auto space-y-4 sm:space-y-6">
-      {/* Main Calculator Card */}
-      <Card className="border-2 border-border bg-card shadow-2xl">
-        <CardHeader className="text-center space-y-3 sm:space-y-4 p-4 sm:p-6">
+      {/* Main Calculator GCard */}
+      <GCard className="border-2 border-border bg-card shadow-2xl">
+        <GCardHeader className="text-center space-y-3 sm:space-y-4 p-4 sm:p-6">
           <div className="flex flex-col sm:flex-row items-center justify-center gap-3 mb-4">
             <div className={`h-10 w-10 sm:h-12 sm:w-12 rounded-xl bg-gradient-to-br ${getPlatformColor(platform)} flex items-center justify-center shadow-lg`}>
               {platform === 'instagram' && <Instagram className="h-5 w-5 sm:h-6 sm:w-6 text-primary-foreground" />}
@@ -127,18 +128,18 @@ export function HashtagCounter() {
               {!['instagram', 'twitter', 'facebook', 'linkedin', 'youtube', 'tiktok'].includes(platform) && <Hash className="h-5 w-5 sm:h-6 sm:w-6 text-primary-foreground" />}
             </div>
             <div className="text-center sm:text-left">
-              <CardTitle className="text-xl sm:text-2xl font-bold text-foreground">
+              <GCardTitle className="text-xl sm:text-2xl font-bold text-foreground">
                 Hashtag Counter & Generator
-              </CardTitle>
-              <CardDescription className="text-muted-foreground text-sm sm:text-base">
+              </GCardTitle>
+              <GCardDescription className="text-muted-foreground text-sm sm:text-base">
                 Count existing hashtags and generate new ones with AI
-              </CardDescription>
+              </GCardDescription>
             </div>
           </div>
 
           {/* Platform Selector */}
           <div className="flex flex-col items-center gap-2 sm:gap-3">
-            <Label className="text-foreground font-medium text-sm sm:text-base">Choose Platform:</Label>
+            <GLabel className="text-foreground font-medium text-sm sm:text-base">Choose Platform:</GLabel>
             <div className="flex flex-wrap justify-center gap-2 sm:gap-3">
               {[
                 { value: 'instagram', icon: Instagram, label: 'Instagram' },
@@ -170,16 +171,16 @@ export function HashtagCounter() {
               ))}
             </div>
           </div>
-        </CardHeader>
+        </GCardHeader>
 
-        <CardContent className="space-y-4 sm:space-y-6 p-4 sm:p-6">
+        <GCardContent className="space-y-4 sm:space-y-6 p-4 sm:p-6">
           {/* Input Section */}
           <div className="space-y-4">
             <div className="space-y-2">
-              <Label htmlFor="text" className="text-sm font-medium text-foreground">
+              <GLabel htmlFor="text" className="text-sm font-medium text-foreground">
                 Your Post Content
-              </Label>
-              <Textarea
+              </GLabel>
+              <GTextarea
                 id="text"
                 placeholder="Paste your social media post content here..."
                 value={text}
@@ -188,7 +189,7 @@ export function HashtagCounter() {
               />
             </div>
 
-            {/* Action Button */}
+            {/* Action GButton */}
             <div className="flex justify-center">
               <GButton
                 onClick={generateHashtags}
@@ -270,12 +271,12 @@ export function HashtagCounter() {
                     </div>
                     <div className="flex flex-wrap gap-1.5 sm:gap-2">
                       {result.hashtags.map((tag, index) => (
-                        <Badge
+                        <GBadge
                           key={index}
                           className="px-2 sm:px-3 py-1 bg-muted text-foreground border border-border hover:bg-secondary transition-colors text-xs sm:text-sm"
                         >
                           {tag}
-                        </Badge>
+                        </GBadge>
                       ))}
                     </div>
                   </div>
@@ -312,18 +313,18 @@ export function HashtagCounter() {
                     </div>
                     <div className="flex flex-wrap gap-1.5 sm:gap-2">
                       {result.generatedHashtags.map((tag, index) => (
-                        <Badge
+                        <GBadge
                           key={index}
                           className="px-2 sm:px-3 py-1 bg-primary/10 text-foreground border border-primary/20 hover:bg-primary/20 transition-colors text-xs sm:text-sm"
                         >
                           {tag}
-                        </Badge>
+                        </GBadge>
                       ))}
                     </div>
                   </div>
                 )}
 
-                {/* Copy All Combined Button */}
+                {/* Copy All Combined GButton */}
                 {(result.hashtags.length > 0 || (result.generatedHashtags && result.generatedHashtags.length > 0)) && (
                   <div className="flex justify-center pt-2">
                     <GButton
@@ -350,8 +351,8 @@ export function HashtagCounter() {
               </div>
             </div>
           )}
-        </CardContent>
-      </Card>
+        </GCardContent>
+      </GCard>
 
     </div>
   )

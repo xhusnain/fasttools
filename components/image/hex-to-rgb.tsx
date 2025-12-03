@@ -1,11 +1,12 @@
 "use client"
 
 import { useState, useEffect } from "react"
-import { Input } from "@/components/ui/input"
-import { Card } from "@/components/ui/card"
-import { GButton } from "@/components/globalcomponents/gbutton"
-import { Label } from "@/components/ui/label"
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
+import { GInput } from "@/ui/ginput"
+import { GCard } from "@/ui/gcard"
+import { GButton } from "@/ui/gbutton"
+import { GLabel } from "@/ui/glabel"
+import { GTabs, GTabsContent, GTabsList, GTabsTrigger } from "@/ui/gtabs"
+
 import { Copy, Check, Palette, Sparkles } from "lucide-react"
 
 type CopiedState = {
@@ -24,7 +25,7 @@ const SAMPLE_COLORS = [
 export function HexToRGB() {
   const [inputMode, setInputMode] = useState<"hex" | "rgb" | "hsl">("hex")
 
-  // Input states
+  // GInput states
   const [hexInput, setHexInput] = useState("#2563eb")
   const [rgbR, setRgbR] = useState("37")
   const [rgbG, setRgbG] = useState("99")
@@ -212,7 +213,7 @@ export function HexToRGB() {
       <div className="space-y-2">
         <div className="flex items-center gap-2">
           <Sparkles className="h-4 w-4 text-primary" />
-          <Label>Quick Colors</Label>
+          <GLabel>Quick Colors</GLabel>
         </div>
         <div className="grid grid-cols-3 sm:grid-cols-6 gap-2">
           {SAMPLE_COLORS.map((sample) => (
@@ -233,20 +234,20 @@ export function HexToRGB() {
         </div>
       </div>
 
-      {/* Input Section */}
-      <Card className="p-4 sm:p-6">
-        <Tabs value={inputMode} onValueChange={(v) => setInputMode(v as any)}>
-          <TabsList className="grid w-full grid-cols-3">
-            <TabsTrigger value="hex">Hex</TabsTrigger>
-            <TabsTrigger value="rgb">RGB</TabsTrigger>
-            <TabsTrigger value="hsl">HSL</TabsTrigger>
-          </TabsList>
+      {/* GInput Section */}
+      <GCard className="p-4 sm:p-6">
+        <GTabs value={inputMode} onValueChange={(v) => setInputMode(v as any)}>
+          <GTabsList className="grid w-full grid-cols-3">
+            <GTabsTrigger value="hex">Hex</GTabsTrigger>
+            <GTabsTrigger value="rgb">RGB</GTabsTrigger>
+            <GTabsTrigger value="hsl">HSL</GTabsTrigger>
+          </GTabsList>
 
-          <TabsContent value="hex" className="space-y-4 mt-4">
+          <GTabsContent value="hex" className="space-y-4 mt-4">
             <div className="space-y-2">
-              <Label>Hex Color Code</Label>
+              <GLabel>Hex Color Code</GLabel>
               <div className="flex gap-2">
-                <Input
+                <GInput
                   type="text"
                   placeholder="#2563eb"
                   value={hexInput}
@@ -264,13 +265,13 @@ export function HexToRGB() {
                 />
               </div>
             </div>
-          </TabsContent>
+          </GTabsContent>
 
-          <TabsContent value="rgb" className="space-y-4 mt-4">
+          <GTabsContent value="rgb" className="space-y-4 mt-4">
             <div className="grid grid-cols-3 gap-3">
               <div className="space-y-2">
-                <Label>R (0-255)</Label>
-                <Input
+                <GLabel>R (0-255)</GLabel>
+                <GInput
                   type="number"
                   min="0"
                   max="255"
@@ -280,8 +281,8 @@ export function HexToRGB() {
                 />
               </div>
               <div className="space-y-2">
-                <Label>G (0-255)</Label>
-                <Input
+                <GLabel>G (0-255)</GLabel>
+                <GInput
                   type="number"
                   min="0"
                   max="255"
@@ -291,8 +292,8 @@ export function HexToRGB() {
                 />
               </div>
               <div className="space-y-2">
-                <Label>B (0-255)</Label>
-                <Input
+                <GLabel>B (0-255)</GLabel>
+                <GInput
                   type="number"
                   min="0"
                   max="255"
@@ -302,13 +303,13 @@ export function HexToRGB() {
                 />
               </div>
             </div>
-          </TabsContent>
+          </GTabsContent>
 
-          <TabsContent value="hsl" className="space-y-4 mt-4">
+          <GTabsContent value="hsl" className="space-y-4 mt-4">
             <div className="grid grid-cols-3 gap-3">
               <div className="space-y-2">
-                <Label>H (0-360)</Label>
-                <Input
+                <GLabel>H (0-360)</GLabel>
+                <GInput
                   type="number"
                   min="0"
                   max="360"
@@ -318,8 +319,8 @@ export function HexToRGB() {
                 />
               </div>
               <div className="space-y-2">
-                <Label>S (0-100)</Label>
-                <Input
+                <GLabel>S (0-100)</GLabel>
+                <GInput
                   type="number"
                   min="0"
                   max="100"
@@ -329,8 +330,8 @@ export function HexToRGB() {
                 />
               </div>
               <div className="space-y-2">
-                <Label>L (0-100)</Label>
-                <Input
+                <GLabel>L (0-100)</GLabel>
+                <GInput
                   type="number"
                   min="0"
                   max="100"
@@ -340,14 +341,14 @@ export function HexToRGB() {
                 />
               </div>
             </div>
-          </TabsContent>
-        </Tabs>
+          </GTabsContent>
+        </GTabs>
 
         {/* Alpha Channel */}
         <div className="mt-4 space-y-2">
-          <Label>Alpha / Opacity (0-1)</Label>
+          <GLabel>Alpha / Opacity (0-1)</GLabel>
           <div className="flex items-center gap-3">
-            <Input
+            <GInput
               type="number"
               min="0"
               max="1"
@@ -374,10 +375,10 @@ export function HexToRGB() {
             <p className="text-sm text-destructive">{error}</p>
           </div>
         )}
-      </Card>
+      </GCard>
 
       {/* Color Preview */}
-      <Card className="p-6">
+      <GCard className="p-6">
         <div className="flex items-center gap-4">
           <div
             className="h-32 w-32 rounded-lg border-2 border-border shadow-lg flex-shrink-0"
@@ -407,10 +408,10 @@ export function HexToRGB() {
             </div>
           </div>
         </div>
-      </Card>
+      </GCard>
 
       {/* Output Formats */}
-      <Card className="p-6 space-y-4">
+      <GCard className="p-6 space-y-4">
         <h3 className="font-semibold text-lg">All Color Formats</h3>
 
         <div className="space-y-3">
@@ -540,7 +541,7 @@ export function HexToRGB() {
             </GButton>
           </div>
         </div>
-      </Card>
+      </GCard>
     </div>
   )
 }

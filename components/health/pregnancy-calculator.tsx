@@ -1,12 +1,13 @@
 "use client"
 
 import { useState, useEffect } from "react"
-import { GButton } from "@/components/globalcomponents/gbutton"
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
-import { Input } from "@/components/ui/input"
-import { Label } from "@/components/ui/label"
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
-import { Badge } from "@/components/ui/badge"
+import { GButton } from "@/ui/gbutton"
+import { GCard, GCardContent, GCardHeader, GCardTitle } from "@/ui/gcard"
+import { GInput } from "@/ui/ginput"
+import { GLabel } from "@/ui/glabel"
+import { GSelect, GSelectContent, GSelectItem, GSelectTrigger, GSelectValue } from "@/ui/gselect"
+import { GBadge } from "@/ui/gbadge"
+
 import { Calendar, Calculator, Heart, Baby, Stethoscope, Clock, AlertCircle, CheckCircle, Info, TrendingUp, Target } from "lucide-react"
 
 interface PregnancyResult {
@@ -337,36 +338,36 @@ Next Milestone: ${result.nextMilestone}`
 
   return (
     <div className="space-y-4">
-      {/* Input Section */}
-      <Card className="bg-card border-border">
-        <CardHeader className="pb-2 px-3 sm:px-6">
-          <CardTitle className="flex items-center gap-2 text-foreground text-base sm:text-lg">
+      {/* GInput Section */}
+      <GCard className="bg-card border-border">
+        <GCardHeader className="pb-2 px-3 sm:px-6">
+          <GCardTitle className="flex items-center gap-2 text-foreground text-base sm:text-lg">
             <Calculator className="h-4 w-4 text-foreground" />
             Pregnancy Calculator
-          </CardTitle>
-        </CardHeader>
-        <CardContent className="space-y-4 px-3 sm:px-6">
+          </GCardTitle>
+        </GCardHeader>
+        <GCardContent className="space-y-4 px-3 sm:px-6">
           <div className="space-y-3">
             <div className="space-y-1">
-              <Label htmlFor="method" className="text-[11px] font-medium text-heading-accent">Calculation Method</Label>
-              <Select value={calculationMethod} onValueChange={(value: "dueDate" | "lmp" | "ultrasound" | "conception" | "ivf") => setCalculationMethod(value)}>
-                <SelectTrigger className="h-8 text-xs border-border bg-card text-foreground">
-                  <SelectValue />
-                </SelectTrigger>
-                <SelectContent>
-                  <SelectItem value="dueDate">Due Date</SelectItem>
-                  <SelectItem value="lmp">Last Menstrual Period</SelectItem>
-                  <SelectItem value="ultrasound">Ultrasound Date</SelectItem>
-                  <SelectItem value="conception">Conception Date</SelectItem>
-                  <SelectItem value="ivf">IVF Transfer Date</SelectItem>
-                </SelectContent>
-              </Select>
+              <GLabel htmlFor="method" className="text-[11px] font-medium text-heading-accent">Calculation Method</GLabel>
+              <GSelect value={calculationMethod} onValueChange={(value: "dueDate" | "lmp" | "ultrasound" | "conception" | "ivf") => setCalculationMethod(value)}>
+                <GSelectTrigger className="h-8 text-xs border-border bg-card text-foreground">
+                  <GSelectValue />
+                </GSelectTrigger>
+                <GSelectContent>
+                  <GSelectItem value="dueDate">Due Date</GSelectItem>
+                  <GSelectItem value="lmp">Last Menstrual Period</GSelectItem>
+                  <GSelectItem value="ultrasound">Ultrasound Date</GSelectItem>
+                  <GSelectItem value="conception">Conception Date</GSelectItem>
+                  <GSelectItem value="ivf">IVF Transfer Date</GSelectItem>
+                </GSelectContent>
+              </GSelect>
             </div>
 
             {calculationMethod === "dueDate" && (
               <div className="space-y-1">
-                <Label htmlFor="dueDate" className="text-[11px] font-medium text-heading-accent">Your Due Date</Label>
-                <Input
+                <GLabel htmlFor="dueDate" className="text-[11px] font-medium text-heading-accent">Your Due Date</GLabel>
+                <GInput
                   id="dueDate"
                   type="date"
                   value={dueDate}
@@ -378,8 +379,8 @@ Next Milestone: ${result.nextMilestone}`
 
             {calculationMethod === "lmp" && (
               <div className="space-y-1">
-                <Label htmlFor="lmpDate" className="text-[11px] font-medium text-heading-accent">First Day of Last Menstrual Period</Label>
-                <Input
+                <GLabel htmlFor="lmpDate" className="text-[11px] font-medium text-heading-accent">First Day of Last Menstrual Period</GLabel>
+                <GInput
                   id="lmpDate"
                   type="date"
                   value={lmpDate}
@@ -392,8 +393,8 @@ Next Milestone: ${result.nextMilestone}`
             {calculationMethod === "ultrasound" && (
               <div className="space-y-3">
                 <div className="space-y-1">
-                  <Label htmlFor="ultrasoundDate" className="text-[11px] font-medium text-heading-accent">Ultrasound Date</Label>
-                  <Input
+                  <GLabel htmlFor="ultrasoundDate" className="text-[11px] font-medium text-heading-accent">Ultrasound Date</GLabel>
+                  <GInput
                     id="ultrasoundDate"
                     type="date"
                     value={ultrasoundDate}
@@ -402,8 +403,8 @@ Next Milestone: ${result.nextMilestone}`
                   />
                 </div>
                 <div className="space-y-1">
-                  <Label htmlFor="gestationalAge" className="text-[11px] font-medium text-heading-accent">Gestational Age at Ultrasound (weeks)</Label>
-                  <Input
+                  <GLabel htmlFor="gestationalAge" className="text-[11px] font-medium text-heading-accent">Gestational Age at Ultrasound (weeks)</GLabel>
+                  <GInput
                     id="gestationalAge"
                     type="number"
                     placeholder="e.g., 12"
@@ -417,8 +418,8 @@ Next Milestone: ${result.nextMilestone}`
 
             {calculationMethod === "conception" && (
               <div className="space-y-1">
-                <Label htmlFor="conceptionDate" className="text-[11px] font-medium text-heading-accent">Conception Date</Label>
-                <Input
+                <GLabel htmlFor="conceptionDate" className="text-[11px] font-medium text-heading-accent">Conception Date</GLabel>
+                <GInput
                   id="conceptionDate"
                   type="date"
                   value={conceptionDate}
@@ -430,8 +431,8 @@ Next Milestone: ${result.nextMilestone}`
 
             {calculationMethod === "ivf" && (
               <div className="space-y-1">
-                <Label htmlFor="ivfDate" className="text-[11px] font-medium text-heading-accent">IVF Transfer Date</Label>
-                <Input
+                <GLabel htmlFor="ivfDate" className="text-[11px] font-medium text-heading-accent">IVF Transfer Date</GLabel>
+                <GInput
                   id="ivfDate"
                   type="date"
                   value={ivfDate}
@@ -444,8 +445,8 @@ Next Milestone: ${result.nextMilestone}`
             {/* Weight and Height for BMI calculation */}
             <div className="grid md:grid-cols-3 gap-3">
               <div className="space-y-1">
-                <Label htmlFor="prePregnancyWeight" className="text-[11px] font-medium text-heading-accent">Pre-Pregnancy Weight (kg)</Label>
-                <Input
+                <GLabel htmlFor="prePregnancyWeight" className="text-[11px] font-medium text-heading-accent">Pre-Pregnancy Weight (kg)</GLabel>
+                <GInput
                   id="prePregnancyWeight"
                   type="number"
                   placeholder="e.g., 65"
@@ -455,8 +456,8 @@ Next Milestone: ${result.nextMilestone}`
                 />
               </div>
               <div className="space-y-1">
-                <Label htmlFor="currentWeight" className="text-[11px] font-medium text-heading-accent">Current Weight (kg)</Label>
-                <Input
+                <GLabel htmlFor="currentWeight" className="text-[11px] font-medium text-heading-accent">Current Weight (kg)</GLabel>
+                <GInput
                   id="currentWeight"
                   type="number"
                   placeholder="e.g., 68"
@@ -466,8 +467,8 @@ Next Milestone: ${result.nextMilestone}`
                 />
               </div>
               <div className="space-y-1">
-                <Label htmlFor="height" className="text-[11px] font-medium text-heading-accent">Height (cm)</Label>
-                <Input
+                <GLabel htmlFor="height" className="text-[11px] font-medium text-heading-accent">Height (cm)</GLabel>
+                <GInput
                   id="height"
                   type="number"
                   placeholder="e.g., 165"
@@ -488,45 +489,45 @@ Next Milestone: ${result.nextMilestone}`
               </GButton>
             </div>
           </div>
-        </CardContent>
-      </Card>
+        </GCardContent>
+      </GCard>
 
       {/* Results Section */}
       {result && (
         <div className="space-y-6">
           {/* Main Results */}
-          <Card>
-            <CardHeader>
-              <CardTitle className="flex items-center gap-2">
+          <GCard>
+            <GCardHeader>
+              <GCardTitle className="flex items-center gap-2">
                 <Heart className="h-5 w-5 text-foreground" />
                 Pregnancy Results
-              </CardTitle>
-            </CardHeader>
-            <CardContent className="space-y-4">
+              </GCardTitle>
+            </GCardHeader>
+            <GCardContent className="space-y-4">
               <div className="grid md:grid-cols-2 gap-4">
                 <div className="space-y-2">
-                  <Label className="text-sm font-medium">Due Date</Label>
+                  <GLabel className="text-sm font-medium">Due Date</GLabel>
                   <div className="text-lg font-semibold text-foreground">
                     {formatDate(result.dueDate)}
                   </div>
                 </div>
                 <div className="space-y-2">
-                  <Label className="text-sm font-medium">Conception Date</Label>
+                  <GLabel className="text-sm font-medium">Conception Date</GLabel>
                   <div className="text-lg font-semibold text-heading-accent">
                     {formatDate(result.conceptionDate)}
                   </div>
                 </div>
                 <div className="space-y-2">
-                  <Label className="text-sm font-medium">Current Gestational Age</Label>
+                  <GLabel className="text-sm font-medium">Current Gestational Age</GLabel>
                   <div className="text-lg font-semibold text-foreground">
                     {result.weeksPregnant} weeks, {result.daysPregnant} days
                   </div>
                 </div>
                 <div className="space-y-2">
-                  <Label className="text-sm font-medium">Trimester</Label>
-                  <Badge variant="secondary" className="text-sm">
+                  <GLabel className="text-sm font-medium">Trimester</GLabel>
+                  <GBadge variant="secondary" className="text-sm">
                     {result.trimester}
-                  </Badge>
+                  </GBadge>
                 </div>
               </div>
 
@@ -557,19 +558,19 @@ Next Milestone: ${result.nextMilestone}`
                   Copy Results
                 </GButton>
               </div>
-            </CardContent>
-          </Card>
+            </GCardContent>
+          </GCard>
 
           {/* Weight Gain Recommendation */}
           {prePregnancyWeight && height && (
-            <Card>
-              <CardHeader>
-                <CardTitle className="flex items-center gap-2">
+            <GCard>
+              <GCardHeader>
+                <GCardTitle className="flex items-center gap-2">
                   <TrendingUp className="h-5 w-5 text-heading-accent" />
                   Weight Gain Recommendation
-                </CardTitle>
-              </CardHeader>
-              <CardContent>
+                </GCardTitle>
+              </GCardHeader>
+              <GCardContent>
                 <div className="p-4 bg-muted rounded-lg border border-secondary-accent/30">
                   <div className="text-sm">
                     <p className="font-medium text-heading-accent mb-2">
@@ -580,19 +581,19 @@ Next Milestone: ${result.nextMilestone}`
                     </p>
                   </div>
                 </div>
-              </CardContent>
-            </Card>
+              </GCardContent>
+            </GCard>
           )}
 
           {/* Current Symptoms */}
-          <Card>
-            <CardHeader>
-              <CardTitle className="flex items-center gap-2">
+          <GCard>
+            <GCardHeader>
+              <GCardTitle className="flex items-center gap-2">
                 <Stethoscope className="h-5 w-5 text-foreground" />
                 Common Symptoms This Week
-              </CardTitle>
-            </CardHeader>
-            <CardContent>
+              </GCardTitle>
+            </GCardHeader>
+            <GCardContent>
               <div className="grid md:grid-cols-2 gap-2">
                 {result.symptoms.map((symptom, index) => (
                   <div key={index} className="flex items-center gap-2 text-sm">
@@ -601,18 +602,18 @@ Next Milestone: ${result.nextMilestone}`
                   </div>
                 ))}
               </div>
-            </CardContent>
-          </Card>
+            </GCardContent>
+          </GCard>
 
           {/* Fetal Development */}
-          <Card>
-            <CardHeader>
-              <CardTitle className="flex items-center gap-2">
+          <GCard>
+            <GCardHeader>
+              <GCardTitle className="flex items-center gap-2">
                 <Baby className="h-5 w-5 text-foreground" />
                 Fetal Development This Week
-              </CardTitle>
-            </CardHeader>
-            <CardContent>
+              </GCardTitle>
+            </GCardHeader>
+            <GCardContent>
               <ul className="space-y-2">
                 {result.fetalDevelopment.map((development, index) => (
                   <li key={index} className="flex items-start gap-2 text-sm">
@@ -621,18 +622,18 @@ Next Milestone: ${result.nextMilestone}`
                   </li>
                 ))}
               </ul>
-            </CardContent>
-          </Card>
+            </GCardContent>
+          </GCard>
 
           {/* Upcoming Appointments */}
-          <Card>
-            <CardHeader>
-              <CardTitle className="flex items-center gap-2">
+          <GCard>
+            <GCardHeader>
+              <GCardTitle className="flex items-center gap-2">
                 <Calendar className="h-5 w-5 text-primary" />
                 Upcoming Appointments
-              </CardTitle>
-            </CardHeader>
-            <CardContent>
+              </GCardTitle>
+            </GCardHeader>
+            <GCardContent>
               <ul className="space-y-2">
                 {result.upcomingAppointments.map((appointment, index) => (
                   <li key={index} className="flex items-start gap-2 text-sm">
@@ -641,19 +642,19 @@ Next Milestone: ${result.nextMilestone}`
                   </li>
                 ))}
               </ul>
-            </CardContent>
-          </Card>
+            </GCardContent>
+          </GCard>
 
           {/* Recommendations */}
           <div className="grid md:grid-cols-2 gap-6">
-            <Card>
-              <CardHeader>
-                <CardTitle className="flex items-center gap-2">
+            <GCard>
+              <GCardHeader>
+                <GCardTitle className="flex items-center gap-2">
                   <Baby className="h-5 w-5 text-heading-accent" />
                   Nutrition Recommendations
-                </CardTitle>
-              </CardHeader>
-              <CardContent>
+                </GCardTitle>
+              </GCardHeader>
+              <GCardContent>
                 <ul className="space-y-2">
                   {result.recommendations.nutrition.map((rec, index) => (
                     <li key={index} className="flex items-start gap-2 text-sm">
@@ -662,17 +663,17 @@ Next Milestone: ${result.nextMilestone}`
                     </li>
                   ))}
                 </ul>
-              </CardContent>
-            </Card>
+              </GCardContent>
+            </GCard>
 
-            <Card>
-              <CardHeader>
-                <CardTitle className="flex items-center gap-2">
+            <GCard>
+              <GCardHeader>
+                <GCardTitle className="flex items-center gap-2">
                   <Heart className="h-5 w-5 text-foreground" />
                   Exercise Recommendations
-                </CardTitle>
-              </CardHeader>
-              <CardContent>
+                </GCardTitle>
+              </GCardHeader>
+              <GCardContent>
                 <ul className="space-y-2">
                   {result.recommendations.exercise.map((rec, index) => (
                     <li key={index} className="flex items-start gap-2 text-sm">
@@ -681,17 +682,17 @@ Next Milestone: ${result.nextMilestone}`
                     </li>
                   ))}
                 </ul>
-              </CardContent>
-            </Card>
+              </GCardContent>
+            </GCard>
 
-            <Card>
-              <CardHeader>
-                <CardTitle className="flex items-center gap-2">
+            <GCard>
+              <GCardHeader>
+                <GCardTitle className="flex items-center gap-2">
                   <Stethoscope className="h-5 w-5 text-foreground" />
                   Health Recommendations
-                </CardTitle>
-              </CardHeader>
-              <CardContent>
+                </GCardTitle>
+              </GCardHeader>
+              <GCardContent>
                 <ul className="space-y-2">
                   {result.recommendations.health.map((rec, index) => (
                     <li key={index} className="flex items-start gap-2 text-sm">
@@ -700,17 +701,17 @@ Next Milestone: ${result.nextMilestone}`
                     </li>
                   ))}
                 </ul>
-              </CardContent>
-            </Card>
+              </GCardContent>
+            </GCard>
 
-            <Card>
-              <CardHeader>
-                <CardTitle className="flex items-center gap-2">
+            <GCard>
+              <GCardHeader>
+                <GCardTitle className="flex items-center gap-2">
                   <Calendar className="h-5 w-5 text-foreground" />
                   Lifestyle Recommendations
-                </CardTitle>
-              </CardHeader>
-              <CardContent>
+                </GCardTitle>
+              </GCardHeader>
+              <GCardContent>
                 <ul className="space-y-2">
                   {result.recommendations.lifestyle.map((rec, index) => (
                     <li key={index} className="flex items-start gap-2 text-sm">
@@ -719,22 +720,22 @@ Next Milestone: ${result.nextMilestone}`
                     </li>
                   ))}
                 </ul>
-              </CardContent>
-            </Card>
+              </GCardContent>
+            </GCard>
           </div>
         </div>
       )}
 
       {/* History Section */}
       {history.length > 0 && (
-        <Card>
-          <CardHeader>
-            <CardTitle className="flex items-center gap-2">
+        <GCard>
+          <GCardHeader>
+            <GCardTitle className="flex items-center gap-2">
               <Clock className="h-5 w-5 text-muted-foreground" />
               Recent Calculations
-            </CardTitle>
-          </CardHeader>
-          <CardContent>
+            </GCardTitle>
+          </GCardHeader>
+          <GCardContent>
             <div className="space-y-2">
               {history.map((item, index) => (
                 <div key={index} className="flex items-center justify-between p-3 bg-muted rounded-lg">
@@ -756,19 +757,19 @@ Next Milestone: ${result.nextMilestone}`
                 </div>
               ))}
             </div>
-          </CardContent>
-        </Card>
+          </GCardContent>
+        </GCard>
       )}
 
       {/* Information Section */}
-      <Card>
-        <CardHeader>
-          <CardTitle className="flex items-center gap-2">
+      <GCard>
+        <GCardHeader>
+          <GCardTitle className="flex items-center gap-2">
             <Info className="h-5 w-5 text-foreground" />
             Important Information
-          </CardTitle>
-        </CardHeader>
-        <CardContent className="space-y-3">
+          </GCardTitle>
+        </GCardHeader>
+        <GCardContent className="space-y-3">
           <div className="p-4 bg-muted rounded-lg border border-accent/30">
             <div className="flex items-start gap-2">
               <Info className="h-4 w-4 text-foreground mt-0.5 flex-shrink-0" />
@@ -794,8 +795,8 @@ Next Milestone: ${result.nextMilestone}`
               <strong className="text-heading-accent">Healthy Weight Ranges:</strong> These suggestions factor in your body mass index from before conception and match guidelines from recognized health organizations.
             </p>
           </div>
-        </CardContent>
-      </Card>
+        </GCardContent>
+      </GCard>
     </div>
   )
 }

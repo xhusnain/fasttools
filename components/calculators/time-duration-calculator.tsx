@@ -1,10 +1,11 @@
 "use client"
 
 import { useState, useEffect } from "react"
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
-import { GButton as Button } from "@/components/globalcomponents/gbutton"
-import { Label } from "@/components/ui/label"
-import { Input } from "@/components/ui/input"
+import { GCard, GCardContent, GCardDescription, GCardHeader, GCardTitle } from "@/ui/gcard"
+import { GButton } from "@/ui/gbutton"
+import { GLabel } from "@/ui/glabel"
+import { GInput } from "@/ui/ginput"
+
 import { Clock, Copy, Check, Calculator, Calendar, Globe, Timer, Zap, Target, TrendingUp, BarChart3, PieChart, ArrowUp, ArrowDown, Minus, Plus, Settings, Sparkles } from "lucide-react"
 import { LoadingSpinner } from "@/components/common/loading-spinner"
 
@@ -335,28 +336,28 @@ export function TimeDurationCalculator() {
   return (
     <div className="space-y-4">
       {/* Current Time Display */}
-      <Card className="shadow-lg border-border hover:shadow-xl transition-all duration-300 bg-card">
-        <CardContent className="p-3">
+      <GCard className="shadow-lg border-border hover:shadow-xl transition-all duration-300 bg-card">
+        <GCardContent className="p-3">
           <div className="flex items-center gap-2 text-heading-accent">
             <Timer className="h-3.5 w-3.5 text-heading-accent" />
             <span className="text-xs font-medium text-foreground">Current Time (UTC):</span>
             <span className="text-sm font-bold text-heading-accent">{currentTime}</span>
           </div>
-        </CardContent>
-      </Card>
+        </GCardContent>
+      </GCard>
 
       {/* Calculation Type Selector */}
-      <Card className="shadow-lg border-border hover:shadow-xl transition-all duration-300 bg-card">
-        <CardHeader className="pb-3">
-          <CardTitle className="flex items-center gap-2 text-lg text-heading-accent">
+      <GCard className="shadow-lg border-border hover:shadow-xl transition-all duration-300 bg-card">
+        <GCardHeader className="pb-3">
+          <GCardTitle className="flex items-center gap-2 text-lg text-heading-accent">
             <div className="p-1.5 bg-primary/10 rounded-lg">
               <IconComponent className="h-4 w-4 text-heading-accent" />
             </div>
             {typeInfo.title}
-          </CardTitle>
-          <CardDescription className="text-sm text-muted-foreground">{typeInfo.description}</CardDescription>
-        </CardHeader>
-        <CardContent className="space-y-4">
+          </GCardTitle>
+          <GCardDescription className="text-sm text-muted-foreground">{typeInfo.description}</GCardDescription>
+        </GCardHeader>
+        <GCardContent className="space-y-4">
           {/* Calculation Type Buttons */}
           <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-2">
             {[
@@ -368,7 +369,7 @@ export function TimeDurationCalculator() {
               { type: "work-days", label: "Work Days", shortLabel: "Work", icon: Calendar },
               { type: "overtime-calculator", label: "Overtime", shortLabel: "OT", icon: TrendingUp }
             ].map(({ type, label, shortLabel, icon: Icon }) => (
-              <Button
+              <GButton
                 key={type}
                 variant={calculationType === type ? "default" : "outline"}
                 onClick={() => setCalculationType(type as CalculationType)}
@@ -380,22 +381,22 @@ export function TimeDurationCalculator() {
                 <Icon className="h-3 w-3 mr-1" />
                 <span className="hidden sm:inline">{label}</span>
                 <span className="sm:hidden">{shortLabel}</span>
-              </Button>
+              </GButton>
             ))}
           </div>
 
-          {/* Input Fields */}
+          {/* GInput Fields */}
           <div className="space-y-3">
             {calculationType === "time-duration" && (
               <>
                 <div className="space-y-1.5">
-                  <Label htmlFor="starttime" className="text-xs font-medium flex items-center gap-1.5 text-heading-accent">
+                  <GLabel htmlFor="starttime" className="text-xs font-medium flex items-center gap-1.5 text-heading-accent">
                     <div className="p-0.5 bg-green-500/10 rounded">
                       <Clock className="h-3 w-3 text-heading-accent" />
                     </div>
                     Start Time
-                  </Label>
-                  <Input
+                  </GLabel>
+                  <GInput
                     id="starttime"
                     type="time"
                     value={startTime}
@@ -404,13 +405,13 @@ export function TimeDurationCalculator() {
                   />
                 </div>
                 <div className="space-y-1.5">
-                  <Label htmlFor="endtime" className="text-xs font-medium flex items-center gap-1.5 text-heading-accent">
+                  <GLabel htmlFor="endtime" className="text-xs font-medium flex items-center gap-1.5 text-heading-accent">
                     <div className="p-0.5 bg-green-500/10 rounded">
                       <Target className="h-3 w-3 text-heading-accent" />
                     </div>
                     End Time
-                  </Label>
-                  <Input
+                  </GLabel>
+                  <GInput
                     id="endtime"
                     type="time"
                     value={endTime}
@@ -424,13 +425,13 @@ export function TimeDurationCalculator() {
             {calculationType === "time-addition" && (
               <>
                 <div className="space-y-2">
-                  <Label htmlFor="starttime" className="text-sm font-medium flex items-center gap-2 text-heading-accent">
+                  <GLabel htmlFor="starttime" className="text-sm font-medium flex items-center gap-2 text-heading-accent">
                     <div className="p-1 bg-green-500/10 rounded">
                       <Clock className="h-3 w-3 text-heading-accent" />
                     </div>
                     Start Time
-                  </Label>
-                  <Input
+                  </GLabel>
+                  <GInput
                     id="starttime"
                     type="time"
                     value={startTime}
@@ -439,13 +440,13 @@ export function TimeDurationCalculator() {
                   />
                 </div>
                 <div className="space-y-2">
-                  <Label htmlFor="timetoadd" className="text-xs font-medium flex items-center gap-1.5 text-heading-accent">
+                  <GLabel htmlFor="timetoadd" className="text-xs font-medium flex items-center gap-1.5 text-heading-accent">
                     <div className="p-0.5 bg-green-500/10 rounded">
                       <Plus className="h-3 w-3 text-heading-accent" />
                     </div>
                     Time to Add
-                  </Label>
-                  <Input
+                  </GLabel>
+                  <GInput
                     id="timetoadd"
                     type="time"
                     value={timeToAdd}
@@ -459,13 +460,13 @@ export function TimeDurationCalculator() {
             {calculationType === "time-subtraction" && (
               <>
                 <div className="space-y-2">
-                  <Label htmlFor="starttime" className="text-sm font-medium flex items-center gap-2 text-heading-accent">
+                  <GLabel htmlFor="starttime" className="text-sm font-medium flex items-center gap-2 text-heading-accent">
                     <div className="p-1 bg-green-500/10 rounded">
                       <Clock className="h-3 w-3 text-heading-accent" />
                     </div>
                     Start Time
-                  </Label>
-                  <Input
+                  </GLabel>
+                  <GInput
                     id="starttime"
                     type="time"
                     value={startTime}
@@ -474,13 +475,13 @@ export function TimeDurationCalculator() {
                   />
                 </div>
                 <div className="space-y-2">
-                  <Label htmlFor="timetosubtract" className="text-xs font-medium flex items-center gap-1.5 text-heading-accent">
+                  <GLabel htmlFor="timetosubtract" className="text-xs font-medium flex items-center gap-1.5 text-heading-accent">
                     <div className="p-0.5 bg-green-500/10 rounded">
                       <Minus className="h-3 w-3 text-heading-accent" />
                     </div>
                     Time to Subtract
-                  </Label>
-                  <Input
+                  </GLabel>
+                  <GInput
                     id="timetosubtract"
                     type="time"
                     value={timeToSubtract}
@@ -494,13 +495,13 @@ export function TimeDurationCalculator() {
             {calculationType === "business-hours" && (
               <>
                 <div className="space-y-1.5">
-                  <Label htmlFor="starttime" className="text-xs font-medium flex items-center gap-1.5 text-heading-accent">
+                  <GLabel htmlFor="starttime" className="text-xs font-medium flex items-center gap-1.5 text-heading-accent">
                     <div className="p-0.5 bg-green-500/10 rounded">
                       <Clock className="h-3 w-3 text-heading-accent" />
                     </div>
                     Start Time
-                  </Label>
-                  <Input
+                  </GLabel>
+                  <GInput
                     id="starttime"
                     type="time"
                     value={startTime}
@@ -509,13 +510,13 @@ export function TimeDurationCalculator() {
                   />
                 </div>
                 <div className="space-y-1.5">
-                  <Label htmlFor="endtime" className="text-xs font-medium flex items-center gap-1.5 text-heading-accent">
+                  <GLabel htmlFor="endtime" className="text-xs font-medium flex items-center gap-1.5 text-heading-accent">
                     <div className="p-0.5 bg-green-500/10 rounded">
                       <Target className="h-3 w-3 text-heading-accent" />
                     </div>
                     End Time
-                  </Label>
-                  <Input
+                  </GLabel>
+                  <GInput
                     id="endtime"
                     type="time"
                     value={endTime}
@@ -525,8 +526,8 @@ export function TimeDurationCalculator() {
                 </div>
                 <div className="grid grid-cols-2 gap-4">
                   <div className="space-y-2">
-                    <Label htmlFor="businessstart" className="text-xs font-medium text-heading-accent">Business Start</Label>
-                    <Input
+                    <GLabel htmlFor="businessstart" className="text-xs font-medium text-heading-accent">Business Start</GLabel>
+                    <GInput
                       id="businessstart"
                       type="time"
                       value={businessStart}
@@ -535,8 +536,8 @@ export function TimeDurationCalculator() {
                     />
                   </div>
                   <div className="space-y-2">
-                    <Label htmlFor="businessend" className="text-xs font-medium text-heading-accent">Business End</Label>
-                    <Input
+                    <GLabel htmlFor="businessend" className="text-xs font-medium text-heading-accent">Business End</GLabel>
+                    <GInput
                       id="businessend"
                       type="time"
                       value={businessEnd}
@@ -551,13 +552,13 @@ export function TimeDurationCalculator() {
             {calculationType === "overtime-calculator" && (
               <>
                 <div className="space-y-1.5">
-                  <Label htmlFor="starttime" className="text-xs font-medium flex items-center gap-1.5 text-heading-accent">
+                  <GLabel htmlFor="starttime" className="text-xs font-medium flex items-center gap-1.5 text-heading-accent">
                     <div className="p-0.5 bg-green-500/10 rounded">
                       <Clock className="h-3 w-3 text-heading-accent" />
                     </div>
                     Start Time
-                  </Label>
-                  <Input
+                  </GLabel>
+                  <GInput
                     id="starttime"
                     type="time"
                     value={startTime}
@@ -566,13 +567,13 @@ export function TimeDurationCalculator() {
                   />
                 </div>
                 <div className="space-y-1.5">
-                  <Label htmlFor="endtime" className="text-xs font-medium flex items-center gap-1.5 text-heading-accent">
+                  <GLabel htmlFor="endtime" className="text-xs font-medium flex items-center gap-1.5 text-heading-accent">
                     <div className="p-0.5 bg-green-500/10 rounded">
                       <Target className="h-3 w-3 text-heading-accent" />
                     </div>
                     End Time
-                  </Label>
-                  <Input
+                  </GLabel>
+                  <GInput
                     id="endtime"
                     type="time"
                     value={endTime}
@@ -581,13 +582,13 @@ export function TimeDurationCalculator() {
                   />
                 </div>
                 <div className="space-y-2">
-                  <Label htmlFor="overtimethreshold" className="text-xs font-medium flex items-center gap-1.5 text-heading-accent">
+                  <GLabel htmlFor="overtimethreshold" className="text-xs font-medium flex items-center gap-1.5 text-heading-accent">
                     <div className="p-0.5 bg-green-500/10 rounded">
                       <TrendingUp className="h-3 w-3 text-heading-accent" />
                     </div>
                     Overtime Threshold (hours)
-                  </Label>
-                  <Input
+                  </GLabel>
+                  <GInput
                     id="overtimethreshold"
                     type="number"
                     value={overtimeThreshold}
@@ -602,13 +603,13 @@ export function TimeDurationCalculator() {
             {calculationType === "timezone-conversion" && (
               <>
                 <div className="space-y-2">
-                  <Label htmlFor="starttime" className="text-sm font-medium flex items-center gap-2 text-heading-accent">
+                  <GLabel htmlFor="starttime" className="text-sm font-medium flex items-center gap-2 text-heading-accent">
                     <div className="p-1 bg-green-500/10 rounded">
                       <Clock className="h-3 w-3 text-heading-accent" />
                     </div>
                     Time
-                  </Label>
-                  <Input
+                  </GLabel>
+                  <GInput
                     id="starttime"
                     type="time"
                     value={startTime}
@@ -618,8 +619,8 @@ export function TimeDurationCalculator() {
                 </div>
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                   <div className="space-y-2">
-                    <Label htmlFor="timezone1" className="text-xs font-medium text-heading-accent">From Timezone</Label>
-                    <Input
+                    <GLabel htmlFor="timezone1" className="text-xs font-medium text-heading-accent">From Timezone</GLabel>
+                    <GInput
                       id="timezone1"
                       type="text"
                       value={timezone1}
@@ -629,8 +630,8 @@ export function TimeDurationCalculator() {
                     />
                   </div>
                   <div className="space-y-2">
-                    <Label htmlFor="timezone2" className="text-xs font-medium text-heading-accent">To Timezone</Label>
-                    <Input
+                    <GLabel htmlFor="timezone2" className="text-xs font-medium text-heading-accent">To Timezone</GLabel>
+                    <GInput
                       id="timezone2"
                       type="text"
                       value={timezone2}
@@ -646,13 +647,13 @@ export function TimeDurationCalculator() {
             {calculationType === "work-days" && (
               <>
                 <div className="space-y-2">
-                  <Label htmlFor="startdate" className="text-xs font-medium flex items-center gap-1.5 text-heading-accent">
+                  <GLabel htmlFor="startdate" className="text-xs font-medium flex items-center gap-1.5 text-heading-accent">
                     <div className="p-0.5 bg-green-500/10 rounded">
                       <Calendar className="h-3 w-3 text-heading-accent" />
                     </div>
                     Start Date
-                  </Label>
-                  <Input
+                  </GLabel>
+                  <GInput
                     id="startdate"
                     type="date"
                     value={startDate}
@@ -661,13 +662,13 @@ export function TimeDurationCalculator() {
                   />
                 </div>
                 <div className="space-y-2">
-                  <Label htmlFor="enddate" className="text-xs font-medium flex items-center gap-1.5 text-heading-accent">
+                  <GLabel htmlFor="enddate" className="text-xs font-medium flex items-center gap-1.5 text-heading-accent">
                     <div className="p-0.5 bg-green-500/10 rounded">
                       <Target className="h-3 w-3 text-heading-accent" />
                     </div>
                     End Date
-                  </Label>
-                  <Input
+                  </GLabel>
+                  <GInput
                     id="enddate"
                     type="date"
                     value={endDate}
@@ -679,7 +680,7 @@ export function TimeDurationCalculator() {
             )}
           </div>
 
-          <Button
+          <GButton
             onClick={calculateDuration}
             className="w-full h-10 text-sm font-medium shadow-lg hover:shadow-xl transition-all duration-300 bg-gradient-to-r from-primary to-primary/90 hover:from-primary/90 hover:to-primary text-white"
             disabled={!isFormValid() || isCalculating}
@@ -695,23 +696,23 @@ export function TimeDurationCalculator() {
                 <span>Calculate {typeInfo.title}</span>
               </>
             )}
-          </Button>
-        </CardContent>
-      </Card>
+          </GButton>
+        </GCardContent>
+      </GCard>
 
       {/* Results */}
       {result && !isCalculating && (
-        <Card className="shadow-lg border-border animate-fade-in-up bg-card">
-          <CardHeader className="pb-3">
-            <CardTitle className="text-lg flex items-center gap-2 text-heading-accent">
+        <GCard className="shadow-lg border-border animate-fade-in-up bg-card">
+          <GCardHeader className="pb-3">
+            <GCardTitle className="text-lg flex items-center gap-2 text-heading-accent">
               <div className="p-1.5 bg-primary/10 rounded-lg">
                 <IconComponent className="h-4 w-4 text-heading-accent" />
               </div>
               {typeInfo.title} Result
-            </CardTitle>
-            <CardDescription className="text-sm text-muted-foreground">{result.explanation}</CardDescription>
-          </CardHeader>
-          <CardContent className="space-y-4">
+            </GCardTitle>
+            <GCardDescription className="text-sm text-muted-foreground">{result.explanation}</GCardDescription>
+          </GCardHeader>
+          <GCardContent className="space-y-4">
             {/* Main Result Display */}
             <div className="text-center p-4 rounded-xl bg-card border border-border/20">
               <div className="text-2xl font-bold text-heading-accent mb-1">
@@ -767,7 +768,7 @@ export function TimeDurationCalculator() {
 
             {/* Action Buttons */}
             <div className="flex flex-col sm:flex-row gap-2">
-              <Button
+              <GButton
                 onClick={copyResult}
                 className="flex-1 h-9 text-xs font-medium transition-all duration-300 border border-border hover:bg-secondary text-heading-accent bg-card"
               >
@@ -782,10 +783,10 @@ export function TimeDurationCalculator() {
                     <span>Copy Result</span>
                   </>
                 )}
-              </Button>
+              </GButton>
             </div>
-          </CardContent>
-        </Card>
+          </GCardContent>
+        </GCard>
       )}
     </div>
   )

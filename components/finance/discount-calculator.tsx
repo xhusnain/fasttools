@@ -1,11 +1,12 @@
 "use client"
 
 import { useState } from "react"
-import { GButton } from "@/components/globalcomponents/gbutton"
-import { Input } from "@/components/ui/input"
-import { Label } from "@/components/ui/label"
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
+import { GButton } from "@/ui/gbutton"
+import { GInput } from "@/ui/ginput"
+import { GLabel } from "@/ui/glabel"
+import { GCard, GCardContent, GCardDescription, GCardHeader, GCardTitle } from "@/ui/gcard"
+import { GSelect, GSelectContent, GSelectItem, GSelectTrigger, GSelectValue } from "@/ui/gselect"
+
 import { Copy, Percent, DollarSign, Calculator, ShoppingCart, Tag, TrendingDown, Plus, Minus, Trash2, AlertCircle, CheckCircle } from "lucide-react"
 import { LoadingSpinner } from "@/components/common/loading-spinner"
 
@@ -135,27 +136,27 @@ Effective Discount Rate: ${result.effectiveDiscountRate.toFixed(2)}%`
 
   return (
     <div className="space-y-6">
-      {/* Main Calculator Card */}
-      <Card className="border border-border shadow-lg">
-        <CardHeader className="text-center pb-4">
-          <CardTitle className="text-2xl font-bold text-foreground flex items-center justify-center gap-2">
+      {/* Main Calculator GCard */}
+      <GCard className="border border-border shadow-lg">
+        <GCardHeader className="text-center pb-4">
+          <GCardTitle className="text-2xl font-bold text-foreground flex items-center justify-center gap-2">
             <Calculator className="h-6 w-6 text-primary" />
             Advanced Discount Calculator
-          </CardTitle>
-          <CardDescription className="text-base text-muted-foreground">
+          </GCardTitle>
+          <GCardDescription className="text-base text-muted-foreground">
             Calculate complex discounts with multiple types, tax options, and detailed breakdowns
-          </CardDescription>
-        </CardHeader>
-        <CardContent>
+          </GCardDescription>
+        </GCardHeader>
+        <GCardContent>
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
             {/* Left Column - Inputs */}
             <div className="space-y-6">
-              {/* Original Price Input */}
+              {/* Original Price GInput */}
               <div className="space-y-2">
-                <Label htmlFor="originalPrice" className="text-xs font-medium text-foreground">
+                <GLabel htmlFor="originalPrice" className="text-xs font-medium text-foreground">
                   Original Price ($)
-                </Label>
-                <Input
+                </GLabel>
+                <GInput
                   id="originalPrice"
                   type="number"
                   placeholder="99.99"
@@ -170,10 +171,10 @@ Effective Discount Rate: ${result.effectiveDiscountRate.toFixed(2)}%`
               {/* Tax Configuration */}
               <div className="space-y-4">
                 <div className="space-y-2">
-                  <Label htmlFor="taxRate" className="text-xs font-medium text-foreground">
+                  <GLabel htmlFor="taxRate" className="text-xs font-medium text-foreground">
                     Tax Rate (%)
-                  </Label>
-                  <Input
+                  </GLabel>
+                  <GInput
                     id="taxRate"
                     type="number"
                     placeholder="8.5"
@@ -186,27 +187,27 @@ Effective Discount Rate: ${result.effectiveDiscountRate.toFixed(2)}%`
                   />
                 </div>
                 <div className="space-y-2">
-                  <Label className="text-xs font-medium text-foreground">
+                  <GLabel className="text-xs font-medium text-foreground">
                     Tax Application
-                  </Label>
-                  <Select value={taxInclusive ? "inclusive" : "exclusive"} onValueChange={(value) => setTaxInclusive(value === "inclusive")}>
-                    <SelectTrigger className="h-9 border-2 border-primary/50 focus:border-primary focus:ring-2 focus:ring-primary/20 bg-background text-foreground">
-                      <SelectValue />
-                    </SelectTrigger>
-                    <SelectContent>
-                      <SelectItem value="exclusive">Tax Exclusive</SelectItem>
-                      <SelectItem value="inclusive">Tax Inclusive</SelectItem>
-                    </SelectContent>
-                  </Select>
+                  </GLabel>
+                  <GSelect value={taxInclusive ? "inclusive" : "exclusive"} onValueChange={(value) => setTaxInclusive(value === "inclusive")}>
+                    <GSelectTrigger className="h-9 border-2 border-primary/50 focus:border-primary focus:ring-2 focus:ring-primary/20 bg-background text-foreground">
+                      <GSelectValue />
+                    </GSelectTrigger>
+                    <GSelectContent>
+                      <GSelectItem value="exclusive">Tax Exclusive</GSelectItem>
+                      <GSelectItem value="inclusive">Tax Inclusive</GSelectItem>
+                    </GSelectContent>
+                  </GSelect>
                 </div>
               </div>
 
               {/* Discounts Section */}
               <div className="space-y-4">
                 <div className="flex items-center justify-between">
-                  <Label className="text-xs font-medium text-foreground">
+                  <GLabel className="text-xs font-medium text-foreground">
                     Discounts ({discounts.length})
-                  </Label>
+                  </GLabel>
                   <GButton
                     onClick={addDiscount}
                     variant="outline"
@@ -229,7 +230,7 @@ Effective Discount Rate: ${result.effectiveDiscountRate.toFixed(2)}%`
                       <div key={discount.id} className="p-3 rounded-lg border border-border bg-card">
                         <div className="space-y-2">
                           <div className="flex gap-2">
-                            <Input
+                            <GInput
                               value={discount.name}
                               onChange={(e) => updateDiscount(discount.id, 'name', e.target.value)}
                               placeholder="Name"
@@ -245,16 +246,16 @@ Effective Discount Rate: ${result.effectiveDiscountRate.toFixed(2)}%`
                             </GButton>
                           </div>
                           <div className="grid grid-cols-2 gap-2">
-                            <Select value={discount.type} onValueChange={(value: 'percentage' | 'fixed') => updateDiscount(discount.id, 'type', value)}>
-                              <SelectTrigger className="h-7 text-xs border border-border focus:border-primary">
-                                <SelectValue />
-                              </SelectTrigger>
-                              <SelectContent>
-                                <SelectItem value="percentage">%</SelectItem>
-                                <SelectItem value="fixed">$</SelectItem>
-                              </SelectContent>
-                            </Select>
-                            <Input
+                            <GSelect value={discount.type} onValueChange={(value: 'percentage' | 'fixed') => updateDiscount(discount.id, 'type', value)}>
+                              <GSelectTrigger className="h-7 text-xs border border-border focus:border-primary">
+                                <GSelectValue />
+                              </GSelectTrigger>
+                              <GSelectContent>
+                                <GSelectItem value="percentage">%</GSelectItem>
+                                <GSelectItem value="fixed">$</GSelectItem>
+                              </GSelectContent>
+                            </GSelect>
+                            <GInput
                               type="number"
                               value={discount.value}
                               onChange={(e) => updateDiscount(discount.id, 'value', Number.parseFloat(e.target.value) || 0)}
@@ -363,7 +364,7 @@ Effective Discount Rate: ${result.effectiveDiscountRate.toFixed(2)}%`
                     )}
                   </div>
 
-                  {/* Copy Button */}
+                  {/* Copy GButton */}
                   <GButton
                     onClick={copyResult}
                     variant="outline"
@@ -384,8 +385,8 @@ Effective Discount Rate: ${result.effectiveDiscountRate.toFixed(2)}%`
               )}
             </div>
           </div>
-        </CardContent>
-      </Card>
+        </GCardContent>
+      </GCard>
     </div>
   )
 }

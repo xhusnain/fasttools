@@ -1,11 +1,12 @@
 "use client"
 
 import { useState, useRef } from "react"
-import { GButton } from "@/components/globalcomponents/gbutton"
-import { Input } from "@/components/ui/input"
-import { Label } from "@/components/ui/label"
-import { Progress } from "@/components/ui/progress"
-import { useToast } from "@/components/ui/toast"
+import { GButton } from "@/ui/gbutton"
+import { GInput } from "@/ui/ginput"
+import { GLabel } from "@/ui/glabel"
+import { GProgress } from "@/ui/gprogress"
+import { useToast } from "@/ui/gtoast"
+
 import { Upload, X, Download, Image as ImageIcon, FileText, Loader2, FolderArchive } from "lucide-react"
 import * as pdfjsLib from "pdfjs-dist"
 import JSZip from "jszip"
@@ -313,7 +314,7 @@ export function PDFToImage() {
               <p className="text-xs text-muted-foreground">
                 Maximum file size: 2GB
               </p>
-              <Input
+              <GInput
                 ref={fileInputRef}
                 type="file"
                 accept="application/pdf"
@@ -347,7 +348,7 @@ export function PDFToImage() {
 
               {/* Conversion Mode */}
               <div className="space-y-3">
-                <Label className="text-sm font-medium text-foreground">Conversion Mode</Label>
+                <GLabel className="text-sm font-medium text-foreground">Conversion Mode</GLabel>
                 <div className="grid grid-cols-2 gap-2">
                   <GButton
                     type="button"
@@ -372,13 +373,13 @@ export function PDFToImage() {
                 </div>
               </div>
 
-              {/* Page Numbers Input */}
+              {/* Page Numbers GInput */}
               {mode === "specific" && (
                 <div className="space-y-2">
-                  <Label htmlFor="page-numbers" className="text-sm font-medium text-foreground">
+                  <GLabel htmlFor="page-numbers" className="text-sm font-medium text-foreground">
                     Page Numbers
-                  </Label>
-                  <Input
+                  </GLabel>
+                  <GInput
                     id="page-numbers"
                     type="text"
                     placeholder="e.g., 1,3,5-7,10"
@@ -395,7 +396,7 @@ export function PDFToImage() {
 
               {/* Image Format */}
               <div className="space-y-3">
-                <Label className="text-sm font-medium text-foreground">Image Format</Label>
+                <GLabel className="text-sm font-medium text-foreground">Image Format</GLabel>
                 <div className="grid grid-cols-3 gap-2">
                   <GButton
                     type="button"
@@ -438,7 +439,7 @@ export function PDFToImage() {
 
               {/* Quality Level */}
               <div className="space-y-3">
-                <Label className="text-sm font-medium text-foreground">Quality Level</Label>
+                <GLabel className="text-sm font-medium text-foreground">Quality Level</GLabel>
                 <div className="grid grid-cols-3 gap-2">
                   <GButton
                     type="button"
@@ -479,18 +480,18 @@ export function PDFToImage() {
                 </div>
               </div>
 
-              {/* Progress Bar */}
+              {/* GProgress Bar */}
               {loading && (
                 <div className="space-y-2">
                   <div className="flex items-center justify-between text-sm">
                     <span className="text-muted-foreground">Converting...</span>
                     <span className="font-medium text-primary">{progress}%</span>
                   </div>
-                  <Progress value={progress} className="h-2" />
+                  <GProgress value={progress} className="h-2" />
                 </div>
               )}
 
-              {/* Convert Button */}
+              {/* Convert GButton */}
               {!convertedImages.length && (
                 <GButton
                   onClick={convertToImages}

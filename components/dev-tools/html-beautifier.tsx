@@ -1,9 +1,10 @@
 "use client"
 
 import { useState } from "react"
-import { GButton as Button } from "@/components/globalcomponents/gbutton"
-import { Textarea } from "@/components/ui/textarea"
-import { Label } from "@/components/ui/label"
+import { GButton } from "@/ui/gbutton"
+import { GTextarea } from "@/ui/gtextarea"
+import { GLabel } from "@/ui/glabel"
+
 import { Copy, Check, Download, Sparkles, AlertCircle, CheckCircle2 } from "lucide-react"
 
 const SAMPLE_HTML = `<!DOCTYPE html>
@@ -144,20 +145,20 @@ export function HTMLBeautifier() {
     <div className="space-y-6">
       {/* Mode Selection */}
       <div className="flex gap-2">
-        <Button
+        <GButton
           variant={mode === "beautify" ? "default" : "outline"}
           onClick={() => setMode("beautify")}
           className="flex-1"
         >
           Beautify
-        </Button>
-        <Button
+        </GButton>
+        <GButton
           variant={mode === "minify" ? "default" : "outline"}
           onClick={() => setMode("minify")}
           className="flex-1"
         >
           Minify
-        </Button>
+        </GButton>
       </div>
 
       {/* Format Options */}
@@ -165,7 +166,7 @@ export function HTMLBeautifier() {
         <h3 className="text-sm font-semibold text-foreground">Format Options</h3>
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
           <div className="space-y-2">
-            <Label htmlFor="indent" className="text-sm">Indent Size</Label>
+            <GLabel htmlFor="indent" className="text-sm">Indent Size</GLabel>
             <select
               id="indent"
               value={indentSize}
@@ -178,7 +179,7 @@ export function HTMLBeautifier() {
             </select>
           </div>
           <div className="space-y-2">
-            <Label htmlFor="comments" className="text-sm">HTML Comments</Label>
+            <GLabel htmlFor="comments" className="text-sm">HTML Comments</GLabel>
             <select
               id="comments"
               value={removeComments ? "remove" : "keep"}
@@ -196,7 +197,7 @@ export function HTMLBeautifier() {
       <div className="space-y-2">
         <div className="flex items-center justify-between">
           <label className="text-sm font-medium text-foreground">HTML Input</label>
-          <Button
+          <GButton
             variant="outline"
             size="sm"
             onClick={loadSampleHTML}
@@ -204,9 +205,9 @@ export function HTMLBeautifier() {
           >
             <Sparkles className="h-3.5 w-3.5" />
             Try Sample HTML
-          </Button>
+          </GButton>
         </div>
-        <Textarea
+        <GTextarea
           placeholder="Paste your HTML here..."
           value={input}
           onChange={(e) => setInput(e.target.value)}
@@ -221,10 +222,10 @@ export function HTMLBeautifier() {
         )}
       </div>
 
-      {/* Process Button */}
-      <Button onClick={processHTML} className="w-full" disabled={!input.trim()}>
+      {/* Process GButton */}
+      <GButton onClick={processHTML} className="w-full" disabled={!input.trim()}>
         {mode === "beautify" ? "Beautify HTML" : "Minify HTML"}
-      </Button>
+      </GButton>
 
       {/* Validation Status */}
       {isValid !== null && (
@@ -252,7 +253,7 @@ export function HTMLBeautifier() {
           <div className="flex items-center justify-between">
             <label className="text-sm font-medium text-foreground">Output</label>
             <div className="flex gap-2">
-              <Button variant="ghost" size="sm" onClick={copyToClipboard}>
+              <GButton variant="ghost" size="sm" onClick={copyToClipboard}>
                 {copied ? (
                   <>
                     <Check className="h-4 w-4 mr-2" />
@@ -264,14 +265,14 @@ export function HTMLBeautifier() {
                     Copy
                   </>
                 )}
-              </Button>
-              <Button variant="ghost" size="sm" onClick={downloadHTML}>
+              </GButton>
+              <GButton variant="ghost" size="sm" onClick={downloadHTML}>
                 <Download className="h-4 w-4 mr-2" />
                 Download
-              </Button>
+              </GButton>
             </div>
           </div>
-          <Textarea value={output} readOnly className="min-h-48 font-mono text-sm border-2 border-green-300 focus:border-green-500" />
+          <GTextarea value={output} readOnly className="min-h-48 font-mono text-sm border-2 border-green-300 focus:border-green-500" />
           {outputStats && (
             <div className="flex gap-4 text-xs text-muted-foreground">
               <span>{outputStats.lines} lines</span>

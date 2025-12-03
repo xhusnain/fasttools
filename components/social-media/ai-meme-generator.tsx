@@ -1,10 +1,11 @@
 "use client"
 
 import { useState } from "react"
-import { GButton } from "@/components/globalcomponents/gbutton"
-import { Label } from "@/components/ui/label"
-import { Input } from "@/components/ui/input"
-import { Card } from "@/components/ui/card"
+import { GButton } from "@/ui/gbutton"
+import { GLabel } from "@/ui/glabel"
+import { GInput } from "@/ui/ginput"
+import { GCard } from "@/ui/gcard"
+
 import { Copy, Sparkles } from "lucide-react"
 import { LoadingSpinner } from "@/components/common/loading-spinner"
 
@@ -47,8 +48,8 @@ export function AiMemeGenerator() {
     <div className="space-y-6">
       <div className="grid gap-4">
         <div className="space-y-2">
-          <Label htmlFor="topic">Meme Topic</Label>
-          <Input
+          <GLabel htmlFor="topic">Meme Topic</GLabel>
+          <GInput
             id="topic"
             placeholder="e.g., Monday mornings, coding bugs, coffee addiction"
             value={topic}
@@ -58,8 +59,8 @@ export function AiMemeGenerator() {
         </div>
 
         <div className="space-y-2">
-          <Label htmlFor="style">Style (Optional)</Label>
-          <Input
+          <GLabel htmlFor="style">Style (Optional)</GLabel>
+          <GInput
             id="style"
             placeholder="e.g., sarcastic, wholesome, relatable"
             value={style}
@@ -84,7 +85,7 @@ export function AiMemeGenerator() {
       </div>
 
       {memeText && (
-        <Card className="p-6 space-y-4 animate-fade-in">
+        <GCard className="p-6 space-y-4 animate-fade-in">
           <div className="flex items-center justify-between">
             <h3 className="font-semibold text-lg">Generated Meme Text</h3>
             <GButton variant="outline" size="sm" onClick={copyText}>
@@ -108,7 +109,7 @@ export function AiMemeGenerator() {
           <p className="text-sm text-muted-foreground">
             Use these texts with your favorite meme template or meme generator!
           </p>
-        </Card>
+        </GCard>
       )}
     </div>
   )

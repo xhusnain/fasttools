@@ -1,12 +1,13 @@
 "use client"
 
 import { useState } from "react"
-import { Card } from "@/components/ui/card"
-import { Input } from "@/components/ui/input"
-import { Label } from "@/components/ui/label"
-import { GButton as Button } from "@/components/globalcomponents/gbutton"
+import { GCard } from "@/ui/gcard"
+import { GInput } from "@/ui/ginput"
+import { GLabel } from "@/ui/glabel"
+import { GButton } from "@/ui/gbutton"
+import { GAlert, GAlertDescription } from "@/ui/galert"
+
 import { Download, Loader2, AlertCircle, Video } from "lucide-react"
-import { Alert, AlertDescription } from "@/components/ui/alert"
 import { API } from "@/services/api/api.service"
 
 export interface InstagramDownloaderProps {
@@ -74,14 +75,14 @@ export function InstagramDownloader({ compact = false }: InstagramDownloaderProp
 
   return (
     <div className="w-full max-w-4xl mx-auto space-y-4 sm:space-y-6">
-      <Card className="p-6 sm:p-8">
+      <GCard className="p-6 sm:p-8">
         <div className="space-y-6">
           <div className="space-y-2">
-            <Label htmlFor="instagram-url" className="text-base font-semibold">
+            <GLabel htmlFor="instagram-url" className="text-base font-semibold">
               Instagram URL
-            </Label>
+            </GLabel>
             <div className="flex gap-2">
-              <Input
+              <GInput
                 id="instagram-url"
                 type="text"
                 placeholder="https://www.instagram.com/p/..."
@@ -91,7 +92,7 @@ export function InstagramDownloader({ compact = false }: InstagramDownloaderProp
                 className="flex-1"
                 disabled={loading}
               />
-              <Button
+              <GButton
                 onClick={handleDownload}
                 disabled={loading || !url.trim()}
                 className="px-6"
@@ -107,15 +108,15 @@ export function InstagramDownloader({ compact = false }: InstagramDownloaderProp
                     Download
                   </>
                 )}
-              </Button>
+              </GButton>
             </div>
           </div>
 
           {error && (
-            <Alert variant="destructive">
+            <GAlert variant="destructive">
               <AlertCircle className="h-4 w-4" />
-              <AlertDescription>{error}</AlertDescription>
-            </Alert>
+              <GAlertDescription>{error}</GAlertDescription>
+            </GAlert>
           )}
 
           {result && (
@@ -144,14 +145,14 @@ export function InstagramDownloader({ compact = false }: InstagramDownloaderProp
                           </video>
                         </div>
                       )}
-                      <Button
+                      <GButton
                         onClick={() => downloadFile(result[0].url, `instagram-${Date.now()}.mp4`)}
                         className="w-full"
                         size="lg"
                       >
                         <Download className="mr-2 h-5 w-5" />
                         Download Video
-                      </Button>
+                      </GButton>
                     </div>
                   ) : (
                     // Multiple media items (carousel)
@@ -173,18 +174,18 @@ export function InstagramDownloader({ compact = false }: InstagramDownloaderProp
                                 </video>
                               </div>
                             )}
-                            <Button
+                            <GButton
                               onClick={() => downloadFile(item.url, `instagram-${index + 1}-${Date.now()}.mp4`)}
                               className="w-full"
                               size="sm"
                             >
                               <Download className="mr-2 h-4 w-4" />
                               Download Item {index + 1}
-                            </Button>
+                            </GButton>
                           </div>
                         ))}
                       </div>
-                      <Button
+                      <GButton
                         onClick={() => {
                           result.forEach((item: any, index: number) => {
                             setTimeout(() => downloadFile(item.url, `instagram-${index + 1}-${Date.now()}.mp4`), index * 500)
@@ -195,7 +196,7 @@ export function InstagramDownloader({ compact = false }: InstagramDownloaderProp
                       >
                         <Download className="mr-2 h-5 w-5" />
                         Download All Items
-                      </Button>
+                      </GButton>
                     </div>
                   )}
                 </div>
@@ -226,14 +227,14 @@ export function InstagramDownloader({ compact = false }: InstagramDownloaderProp
                     )}
 
                     {result.url && (
-                      <Button
+                      <GButton
                         onClick={() => downloadFile(result.url, `instagram-${Date.now()}.mp4`)}
                         className="w-full"
                         size="lg"
                       >
                         <Download className="mr-2 h-5 w-5" />
                         Download Video
-                      </Button>
+                      </GButton>
                     )}
                   </div>
                 </div>
@@ -241,10 +242,10 @@ export function InstagramDownloader({ compact = false }: InstagramDownloaderProp
             </div>
           )}
         </div>
-      </Card>
+      </GCard>
 
       {!compact && (
-        <Card className="p-6 bg-card border border-border">
+        <GCard className="p-6 bg-card border border-border">
           <h3 className="text-lg font-bold text-foreground mb-4">How to Use</h3>
           <ol className="space-y-3 text-sm text-muted-foreground list-decimal list-inside">
             <li>Copy the Instagram post, reel, or video URL</li>
@@ -252,7 +253,7 @@ export function InstagramDownloader({ compact = false }: InstagramDownloaderProp
             <li>Click the Download button</li>
             <li>Save the video to your device</li>
           </ol>
-        </Card>
+        </GCard>
       )}
     </div>
   )

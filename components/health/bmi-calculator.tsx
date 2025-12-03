@@ -1,10 +1,11 @@
 "use client"
 
 import { useState } from "react"
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
-import { GButton } from "@/components/globalcomponents/gbutton"
-import { Label } from "@/components/ui/label"
-import { Input } from "@/components/ui/input"
+import { GCard, GCardContent, GCardDescription, GCardHeader, GCardTitle } from "@/ui/gcard"
+import { GButton } from "@/ui/gbutton"
+import { GLabel } from "@/ui/glabel"
+import { GInput } from "@/ui/ginput"
+
 import { Activity, Copy, Check, Calculator, Heart, Target, Scale, TrendingUp, AlertTriangle, CheckCircle, Info, Zap, Sparkles } from "lucide-react"
 import { LoadingSpinner } from "@/components/common/loading-spinner"
 
@@ -165,24 +166,24 @@ Risk Level: ${result.riskLevel}`
 
   return (
     <div className="space-y-8">
-      <Card className="shadow-lg border-border hover:shadow-xl transition-all duration-300 bg-card">
-        <CardHeader className="pb-4">
-          <CardTitle className="flex items-center gap-3 text-2xl text-foreground">
+      <GCard className="shadow-lg border-border hover:shadow-xl transition-all duration-300 bg-card">
+        <GCardHeader className="pb-4">
+          <GCardTitle className="flex items-center gap-3 text-2xl text-foreground">
             <div className="p-2 bg-primary/10 rounded-lg">
               <Activity className="h-6 w-6 text-foreground" />
             </div>
             BMI Calculator
-          </CardTitle>
-          <CardDescription className="text-base text-muted-foreground">
+          </GCardTitle>
+          <GCardDescription className="text-base text-muted-foreground">
             Calculate your Body Mass Index with advanced metrics including BMI Prime and Ponderal Index
-          </CardDescription>
-        </CardHeader>
-        <CardContent className="space-y-8">
+          </GCardDescription>
+        </GCardHeader>
+        <GCardContent className="space-y-8">
           {/* Unit Selection */}
           <div className="space-y-4">
             <div className="flex items-center gap-2">
               <Scale className="h-4 w-4 text-heading-accent" />
-              <Label className="text-base font-semibold text-foreground">Measurement Units</Label>
+              <GLabel className="text-base font-semibold text-foreground">Measurement Units</GLabel>
             </div>
             <div className="flex gap-2 p-1 bg-card border border-border rounded-lg">
               <button
@@ -202,14 +203,14 @@ Risk Level: ${result.riskLevel}`
             </div>
           </div>
 
-          {/* Input Fields */}
+          {/* GInput Fields */}
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6">
             <div className="space-y-3">
-              <Label htmlFor="weight" className="text-sm sm:text-base font-semibold flex items-center gap-2 text-heading-accent">
+              <GLabel htmlFor="weight" className="text-sm sm:text-base font-semibold flex items-center gap-2 text-heading-accent">
                 <Scale className="h-4 w-4 text-heading-accent" />
                 Weight {unit === "metric" ? "(kg)" : "(lbs)"}
-              </Label>
-              <Input
+              </GLabel>
+              <GInput
                 id="weight"
                 type="number"
                 value={weight}
@@ -220,11 +221,11 @@ Risk Level: ${result.riskLevel}`
             </div>
 
             <div className="space-y-3">
-              <Label htmlFor="height" className="text-sm sm:text-base font-semibold flex items-center gap-2 text-heading-accent">
+              <GLabel htmlFor="height" className="text-sm sm:text-base font-semibold flex items-center gap-2 text-heading-accent">
                 <Target className="h-4 w-4 text-heading-accent" />
                 Height {unit === "metric" ? "(cm)" : "(inches)"}
-              </Label>
-              <Input
+              </GLabel>
+              <GInput
                 id="height"
                 type="number"
                 value={height}
@@ -238,11 +239,11 @@ Risk Level: ${result.riskLevel}`
           {/* Additional Information */}
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6">
             <div className="space-y-3">
-              <Label htmlFor="age" className="text-sm sm:text-base font-semibold flex items-center gap-2 text-heading-accent">
+              <GLabel htmlFor="age" className="text-sm sm:text-base font-semibold flex items-center gap-2 text-heading-accent">
                 <Heart className="h-4 w-4 text-heading-accent" />
                 Age (Optional)
-              </Label>
-              <Input
+              </GLabel>
+              <GInput
                 id="age"
                 type="number"
                 value={age}
@@ -255,10 +256,10 @@ Risk Level: ${result.riskLevel}`
             </div>
 
             <div className="space-y-3">
-              <Label className="text-sm sm:text-base font-semibold flex items-center gap-2 text-heading-accent">
+              <GLabel className="text-sm sm:text-base font-semibold flex items-center gap-2 text-heading-accent">
                 <Zap className="h-4 w-4 text-heading-accent" />
                 Gender (Optional)
-              </Label>
+              </GLabel>
               <div className="flex gap-2">
                 <button
                   onClick={() => setGender("male")}
@@ -304,23 +305,23 @@ Risk Level: ${result.riskLevel}`
               </>
             )}
           </GButton>
-        </CardContent>
-      </Card>
+        </GCardContent>
+      </GCard>
 
       {result && !isCalculating && (
-        <Card className="shadow-lg border-border animate-fade-in-up bg-card">
-          <CardHeader className="pb-4">
-            <CardTitle className="text-2xl flex items-center gap-3 text-foreground">
+        <GCard className="shadow-lg border-border animate-fade-in-up bg-card">
+          <GCardHeader className="pb-4">
+            <GCardTitle className="text-2xl flex items-center gap-3 text-foreground">
               <div className="p-2 bg-primary/10 rounded-lg">
                 <Activity className="h-6 w-6 text-foreground" />
               </div>
               Your BMI Result
-            </CardTitle>
-            <CardDescription className="text-base text-muted-foreground">
+            </GCardTitle>
+            <GCardDescription className="text-base text-muted-foreground">
               Comprehensive Body Mass Index analysis with advanced metrics
-            </CardDescription>
-          </CardHeader>
-          <CardContent className="space-y-8">
+            </GCardDescription>
+          </GCardHeader>
+          <GCardContent className="space-y-8">
             {/* Main BMI Display */}
             <div className="text-center p-6 sm:p-8 rounded-xl bg-card border-2 border-primary/20">
               <div className="text-4xl sm:text-5xl font-bold text-foreground mb-2">{result.bmi}</div>
@@ -393,7 +394,7 @@ Risk Level: ${result.riskLevel}`
               </div>
             </div>
 
-            {/* Action Button */}
+            {/* Action GButton */}
             <GButton
               onClick={copyResult}
               variant="outline"
@@ -413,8 +414,8 @@ Risk Level: ${result.riskLevel}`
                 </>
               )}
             </GButton>
-          </CardContent>
-        </Card>
+          </GCardContent>
+        </GCard>
       )}
     </div>
   )

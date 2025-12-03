@@ -2,7 +2,8 @@
 
 import { useState, useRef, useEffect } from "react"
 import { Copy, Check } from "lucide-react"
-import { GButton } from "@/components/globalcomponents/gbutton"
+import { GButton } from "@/ui/gbutton"
+
 
 interface ColorPickerProps {
   value: string
@@ -247,7 +248,7 @@ export function ColorPicker({ value, onChange, label, className = "", id }: Colo
 
   return (
     <div className={`relative ${className}`}>
-      {/* Color Preview Button */}
+      {/* Color Preview GButton */}
       <button
         onClick={handleTogglePicker}
         className="flex items-center gap-2 w-full p-3 rounded-lg border-2 border-primary hover:border-orange-600 transition-colors"

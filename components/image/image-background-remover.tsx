@@ -3,8 +3,9 @@
 import type React from "react"
 
 import { useState, useEffect, useRef } from "react"
-import { GButton } from "@/components/globalcomponents/gbutton"
-import { Card } from "@/components/ui/card"
+import { GButton } from "@/ui/gbutton"
+import { GCard } from "@/ui/gcard"
+
 import { Upload, Download, RotateCcw, FileText, Zap, Image as ImageIcon, Palette } from "lucide-react"
 import { LoadingSpinner } from "@/components/common/loading-spinner"
 import { useBgRemoverStore } from "@/lib/store-bg-remover"
@@ -160,7 +161,7 @@ export function ImageBackgroundRemover() {
 
   return (
     <div className="w-full">
-      <Card className="shadow-lg w-full max-w-none border-slate-200 dark:border-border">
+      <GCard className="shadow-lg w-full max-w-none border-slate-200 dark:border-border">
         <div className="p-4 sm:p-6">
           {/* Side-by-Side Layout */}
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 lg:gap-6">
@@ -442,7 +443,7 @@ export function ImageBackgroundRemover() {
             </div>
           )}
         </div>
-      </Card>
+      </GCard>
     </div>
   )
 }

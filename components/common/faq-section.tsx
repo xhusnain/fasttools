@@ -2,7 +2,8 @@
 
 import { useState } from "react"
 import { ChevronDown } from "lucide-react"
-import { Card } from "@/components/ui/card"
+import { GCard } from "@/ui/gcard"
+
 
 const faqs = [
   {
@@ -82,7 +83,7 @@ export function FAQSection() {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
       <div className="space-y-4 animate-fade-in-up animation-delay-200">
         {faqs.map((faq, index) => (
-        <Card
+        <GCard
           key={index}
           className="bg-card border border-border/50 overflow-hidden transition-all hover:shadow-md hover:border-primary/30"
         >
@@ -100,7 +101,7 @@ export function FAQSection() {
           <div className={`overflow-hidden transition-all ${openIndex === index ? "max-h-96" : "max-h-0"}`}>
             <div className="px-6 pb-4 text-muted-foreground leading-relaxed">{faq.answer}</div>
           </div>
-        </Card>
+        </GCard>
       ))}
       </div>
     </>

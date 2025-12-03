@@ -1,10 +1,11 @@
 "use client"
 
 import React, { useState } from "react"
-import { GButton } from "@/components/globalcomponents/gbutton"
-import { Input } from "@/components/ui/input"
-import { Label } from "@/components/ui/label"
-import { Card } from "@/components/ui/card"
+import { GButton } from "@/ui/gbutton"
+import { GInput } from "@/ui/ginput"
+import { GLabel } from "@/ui/glabel"
+import { GCard } from "@/ui/gcard"
+
 import { Plus, Trash2, Eye, Copy, Check, Code, Palette, Download, Settings, Monitor, Smartphone, Tablet, ExternalLink } from "lucide-react"
 import { ColorPicker } from "@/components/image/color-picker"
 
@@ -314,8 +315,8 @@ export function LinkInBioGenerator() {
 
   return (
     <div className="space-y-6">
-      {/* Main Editor Card */}
-      <Card className="p-4 sm:p-6 bg-card border-border shadow-sm">
+      {/* Main Editor GCard */}
+      <GCard className="p-4 sm:p-6 bg-card border-border shadow-sm">
         <div className="space-y-6">
           {/* Basic Information */}
           <div className="space-y-4">
@@ -325,10 +326,10 @@ export function LinkInBioGenerator() {
             </h3>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
               <div>
-                <Label htmlFor="profile-name" className="text-sm font-medium text-foreground">
+                <GLabel htmlFor="profile-name" className="text-sm font-medium text-foreground">
                   Profile Name
-                </Label>
-                <Input
+                </GLabel>
+                <GInput
                   id="profile-name"
                   type="text"
                   placeholder="Your Name or Brand"
@@ -338,10 +339,10 @@ export function LinkInBioGenerator() {
                 />
               </div>
               <div>
-                <Label htmlFor="bio" className="text-sm font-medium text-foreground">
+                <GLabel htmlFor="bio" className="text-sm font-medium text-foreground">
                   Bio / Description
-                </Label>
-                <Input
+                </GLabel>
+                <GInput
                   id="bio"
                   type="text"
                   placeholder="A short description about you"
@@ -351,10 +352,10 @@ export function LinkInBioGenerator() {
                 />
               </div>
               <div>
-                <Label htmlFor="website-url" className="text-sm font-medium text-foreground">
+                <GLabel htmlFor="website-url" className="text-sm font-medium text-foreground">
                   Website URL (Optional)
-                </Label>
-                <Input
+                </GLabel>
+                <GInput
                   id="website-url"
                   type="url"
                   placeholder="https://yourwebsite.com"
@@ -364,10 +365,10 @@ export function LinkInBioGenerator() {
                 />
               </div>
               <div>
-                <Label htmlFor="footer" className="text-sm font-medium text-foreground">
+                <GLabel htmlFor="footer" className="text-sm font-medium text-foreground">
                   Footer Text (Optional)
-                </Label>
-                <Input
+                </GLabel>
+                <GInput
                   id="footer"
                   type="text"
                   placeholder="Footer text (e.g., © 2024 Your Name)"
@@ -462,7 +463,7 @@ export function LinkInBioGenerator() {
                 <ColorPicker
                   value={customColors.cardBg}
                   onChange={(color) => setCustomColors({ ...customColors, cardBg: color })}
-                  label="Card Background"
+                  label="GCard Background"
                   id="custom-card-bg"
                 />
                 <ColorPicker
@@ -495,9 +496,9 @@ export function LinkInBioGenerator() {
             </h3>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
               <div>
-                <Label htmlFor="heading-size" className="text-sm font-medium text-foreground">
+                <GLabel htmlFor="heading-size" className="text-sm font-medium text-foreground">
                   Heading Size: {textSizes.heading}px
-                </Label>
+                </GLabel>
                 <input
                   id="heading-size"
                   type="range"
@@ -509,9 +510,9 @@ export function LinkInBioGenerator() {
                 />
               </div>
               <div>
-                <Label htmlFor="bio-size" className="text-sm font-medium text-foreground">
+                <GLabel htmlFor="bio-size" className="text-sm font-medium text-foreground">
                   Bio Text Size: {textSizes.bio}px
-                </Label>
+                </GLabel>
                 <input
                   id="bio-size"
                   type="range"
@@ -523,9 +524,9 @@ export function LinkInBioGenerator() {
                 />
               </div>
               <div>
-                <Label htmlFor="footer-size" className="text-sm font-medium text-foreground">
+                <GLabel htmlFor="footer-size" className="text-sm font-medium text-foreground">
                   Footer Size: {textSizes.footer}px
-                </Label>
+                </GLabel>
                 <input
                   id="footer-size"
                   type="range"
@@ -537,9 +538,9 @@ export function LinkInBioGenerator() {
                 />
               </div>
               <div>
-                <Label htmlFor="link-size" className="text-sm font-medium text-foreground">
-                  Link Button Size: {textSizes.linkButton}px
-                </Label>
+                <GLabel htmlFor="link-size" className="text-sm font-medium text-foreground">
+                  Link GButton Size: {textSizes.linkButton}px
+                </GLabel>
                 <input
                   id="link-size"
                   type="range"
@@ -655,7 +656,7 @@ export function LinkInBioGenerator() {
                         </span>
                       </div>
 
-                      {/* Remove Button */}
+                      {/* Remove GButton */}
                       <GButton
                         variant="ghost"
                         size="sm"
@@ -668,8 +669,8 @@ export function LinkInBioGenerator() {
 
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
                       <div>
-                        <Label className="text-sm font-medium text-foreground">Title</Label>
-                        <Input
+                        <GLabel className="text-sm font-medium text-foreground">Title</GLabel>
+                        <GInput
                           value={link.title}
                           onChange={(e) => updateLink(link.id, "title", e.target.value)}
                           placeholder="Link title"
@@ -677,8 +678,8 @@ export function LinkInBioGenerator() {
                         />
                       </div>
                       <div>
-                        <Label className="text-sm font-medium text-foreground">URL</Label>
-                        <Input
+                        <GLabel className="text-sm font-medium text-foreground">URL</GLabel>
+                        <GInput
                           value={link.url}
                           onChange={(e) => updateLink(link.id, "url", e.target.value)}
                           placeholder="https://example.com"
@@ -689,7 +690,7 @@ export function LinkInBioGenerator() {
 
                     {/* Display Mode Selector */}
                     <div className="mt-3">
-                      <Label className="text-sm font-medium text-foreground">Display Mode</Label>
+                      <GLabel className="text-sm font-medium text-foreground">Display Mode</GLabel>
                       <div className="flex gap-2 mt-2">
                         <button
                           onClick={() => updateLink(link.id, "displayMode", "both")}
@@ -786,17 +787,17 @@ export function LinkInBioGenerator() {
             </GButton>
           </div>
         </div>
-      </Card>
+      </GCard>
 
       {/* HTML Code View */}
       {showHtml && (
-        <Card className="p-4 sm:p-6 bg-card border-border shadow-sm animate-fade-in max-w-4xl mx-auto">
+        <GCard className="p-4 sm:p-6 bg-card border-border shadow-sm animate-fade-in max-w-4xl mx-auto">
           <div className="flex items-center justify-between mb-4">
             <h3 className="text-lg font-semibold text-foreground flex items-center gap-2">
               <Code className="h-5 w-5" />
               Generated HTML Code
             </h3>
-            <Button
+            <GButton
               onClick={copyHtml}
               size="sm"
               variant="outline"
@@ -813,24 +814,24 @@ export function LinkInBioGenerator() {
                   Copy Code
                 </>
               )}
-            </Button>
+            </GButton>
           </div>
           <pre className="bg-muted/50 p-4 rounded-lg overflow-x-auto text-sm text-muted-foreground border border-border">
             <code>{generateHtml()}</code>
           </pre>
-        </Card>
+        </GCard>
       )}
 
       {/* Live Preview */}
       {preview && (
-        <Card className="p-4 sm:p-6 bg-card border-border shadow-sm animate-fade-in max-w-4xl mx-auto">
+        <GCard className="p-4 sm:p-6 bg-card border-border shadow-sm animate-fade-in max-w-4xl mx-auto">
           <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between mb-4 gap-2">
             <h3 className="text-lg font-semibold text-foreground flex items-center gap-2">
               <Eye className="h-5 w-5" />
               Live Preview
             </h3>
             <div className="flex flex-wrap gap-2 justify-center sm:justify-end">
-              <Button
+              <GButton
                 onClick={() => setViewMode("desktop")}
                 size="sm"
                 variant={viewMode === "desktop" ? "default" : "outline"}
@@ -838,8 +839,8 @@ export function LinkInBioGenerator() {
               >
                 <Monitor className="mr-1 h-3 w-3" />
                 Desktop
-              </Button>
-              <Button
+              </GButton>
+              <GButton
                 onClick={() => setViewMode("tablet")}
                 size="sm"
                 variant={viewMode === "tablet" ? "default" : "outline"}
@@ -847,8 +848,8 @@ export function LinkInBioGenerator() {
               >
                 <Tablet className="mr-1 h-3 w-3" />
                 Tablet
-              </Button>
-              <Button
+              </GButton>
+              <GButton
                 onClick={() => setViewMode("mobile")}
                 size="sm"
                 variant={viewMode === "mobile" ? "default" : "outline"}
@@ -856,7 +857,7 @@ export function LinkInBioGenerator() {
               >
                 <Smartphone className="mr-1 h-3 w-3" />
                 Mobile
-              </Button>
+              </GButton>
             </div>
           </div>
           <div className="flex justify-center overflow-hidden">
@@ -1253,11 +1254,11 @@ export function LinkInBioGenerator() {
               </div>
             )}
           </div>
-        </Card>
+        </GCard>
       )}
 
       {/* How to Use */}
-      <Card className="p-6 bg-muted/30 border-border">
+      <GCard className="p-6 bg-muted/30 border-border">
         <h3 className="text-base font-semibold text-foreground mb-3">How to Use</h3>
         <ul className="space-y-2 text-sm text-muted-foreground leading-relaxed">
           <li>• Enter your profile name and bio description</li>
@@ -1267,7 +1268,7 @@ export function LinkInBioGenerator() {
           <li>• Copy the HTML code or download as a file</li>
           <li>• Host the HTML file on any web hosting service</li>
         </ul>
-      </Card>
+      </GCard>
     </div>
   )
 }

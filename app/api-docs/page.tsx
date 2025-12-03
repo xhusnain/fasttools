@@ -1,5 +1,7 @@
 import { Breadcrumbs } from "@/components/common/breadcrumbs"
-import { GHeader } from "@/components/globalcomponents/gheader"
+import { GHeader } from "@/ui/gheader"
+import { GAccordion, GAccordionContent, GAccordionItem, GAccordionTrigger } from "@/ui/gaccordion"
+
 import Link from "next/link"
 import { createMetadata } from "@/lib/metadata-base"
 import {
@@ -11,13 +13,6 @@ import {
   ShieldCheck,
   Star
 } from "lucide-react"
-import {
-  Accordion,
-  AccordionContent,
-  AccordionItem,
-  AccordionTrigger,
-} from "@/components/ui/accordion"
-
 export const metadata = createMetadata({
   title: "Free RESTful API for Developers | FastTools",
   description: "Access free, reliable, and easy-to-use RESTful APIs for your applications. Get started with our developer-friendly API documentation, including a free currency conversion API. No API key required to start.",
@@ -223,18 +218,18 @@ export default function ApiDocsPage() {
 
             <div className="mb-16">
                 <h2 className="text-2xl md:text-3xl font-bold text-primary mb-8 text-center">Frequently Asked Questions</h2>
-                <Accordion type="single" collapsible className="w-full max-w-2xl mx-auto">
+                <GAccordion type="single" collapsible className="w-full max-w-2xl mx-auto">
                     {faqItems.map((item, index) => (
-                        <AccordionItem value={`item-${index}`} key={index}>
-                            <AccordionTrigger className="text-left text-base font-semibold hover:no-underline">
+                        <GAccordionItem value={`item-${index}`} key={index}>
+                            <GAccordionTrigger className="text-left text-base font-semibold hover:no-underline">
                                 {item.question}
-                            </AccordionTrigger>
-                            <AccordionContent className="text-base text-muted-foreground leading-relaxed">
+                            </GAccordionTrigger>
+                            <GAccordionContent className="text-base text-muted-foreground leading-relaxed">
                                 {item.answer}
-                            </AccordionContent>
-                        </AccordionItem>
+                            </GAccordionContent>
+                        </GAccordionItem>
                     ))}
-                </Accordion>
+                </GAccordion>
             </div>
           </div>
         </div>

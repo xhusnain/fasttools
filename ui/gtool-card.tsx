@@ -2,7 +2,7 @@ import Link from "next/link"
 import { ArrowRight, type LucideIcon } from "lucide-react"
 import { cn } from "@/lib/utils"
 
-interface GCardProps extends React.HTMLAttributes<HTMLDivElement> {
+interface GToolCardProps extends React.HTMLAttributes<HTMLDivElement> {
     title?: string
     description?: string
     href?: string
@@ -19,7 +19,7 @@ interface GCardProps extends React.HTMLAttributes<HTMLDivElement> {
     children?: React.ReactNode
 }
 
-export function GCard({
+export function GToolCard({
     title,
     description,
     href,
@@ -30,12 +30,12 @@ export function GCard({
     iconColor = "text-primary",
     borderColor = "border-border",
     hoverBorder = "hover:border-primary/50",
-    glowColor = "hover:shadow-green-500/20",
+    glowColor = "hover:shadow-[var(--secondary-accent)]/20",
     className,
     ctaText = "Use Tool",
     children,
     ...props
-}: GCardProps) {
+}: GToolCardProps) {
     if (children) {
         return (
             <div className={cn("relative rounded-2xl border bg-card transition-all duration-300", className)} {...props}>

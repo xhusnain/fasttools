@@ -1,13 +1,13 @@
 "use client"
 
 import { useState } from "react"
-import { GButton as Button } from "@/components/globalcomponents/gbutton"
-import { Input } from "@/components/ui/input"
-import { Label } from "@/components/ui/label"
-import { Card } from "@/components/ui/card"
-import { Download, Copy, Check, ImageIcon, AlertCircle } from "lucide-react"
+import { GButton } from "@/ui/gbutton"
+import { GInput } from "@/ui/ginput"
+import { GLabel } from "@/ui/glabel"
+import { GCard } from "@/ui/gcard"
+import { GAlert, GAlertDescription } from "@/ui/galert"
 
-import { Alert, AlertDescription } from "@/components/ui/alert"
+import { Download, Copy, Check, ImageIcon, AlertCircle } from "lucide-react"
 
 export function YoutubeThumbnailDownloader() {
   const [videoUrl, setVideoUrl] = useState("")
@@ -148,8 +148,8 @@ export function YoutubeThumbnailDownloader() {
 
   return (
     <div className="w-full max-w-4xl mx-auto space-y-4 sm:space-y-6">
-      {/* Main Downloader Card */}
-      <Card className="border-2 border-border bg-card shadow-2xl">
+      {/* Main Downloader GCard */}
+      <GCard className="border-2 border-border bg-card shadow-2xl">
         <div className="p-4 sm:p-6 space-y-4 sm:space-y-6">
           <div className="text-center space-y-3 sm:space-y-4">
             <div className="flex flex-col sm:flex-row items-center justify-center gap-3 mb-4">
@@ -169,10 +169,10 @@ export function YoutubeThumbnailDownloader() {
 
           <div className="space-y-4">
             <div className="space-y-2">
-              <Label htmlFor="video-url" className="text-sm font-medium text-foreground">
+              <GLabel htmlFor="video-url" className="text-sm font-medium text-foreground">
                 YouTube Video URL or ID
-              </Label>
-              <Input
+              </GLabel>
+              <GInput
                 id="video-url"
                 type="text"
                 placeholder="https://www.youtube.com/watch?v=dQw4w9WgXcQ or dQw4w9WgXcQ"
@@ -191,14 +191,14 @@ export function YoutubeThumbnailDownloader() {
                   }`}
               />
               {error && (
-                <Alert variant="destructive" className="mt-2">
+                <GAlert variant="destructive" className="mt-2">
                   <AlertCircle className="h-4 w-4" />
-                  <AlertDescription className="text-sm">{error}</AlertDescription>
-                </Alert>
+                  <GAlertDescription className="text-sm">{error}</GAlertDescription>
+                </GAlert>
               )}
             </div>
 
-            <Button
+            <GButton
               onClick={handleExtract}
               disabled={!videoUrl.trim() || loading || isValidating}
               isLoading={loading}
@@ -216,17 +216,17 @@ export function YoutubeThumbnailDownloader() {
                   <span className="sm:hidden">Get Thumbnails</span>
                 </>
               )}
-            </Button>
+            </GButton>
           </div>
         </div>
-      </Card>
+      </GCard>
 
       {thumbnails.length > 0 && (
         <div className="space-y-4 sm:space-y-6 animate-fade-in">
           <h3 className="text-lg sm:text-xl font-semibold text-foreground text-center">Available Thumbnails</h3>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-3 sm:gap-4">
             {thumbnails.map((thumbnail, index) => (
-              <Card key={index} className="p-3 sm:p-4 bg-card border border-border shadow-lg hover:shadow-xl transition-all duration-300">
+              <GCard key={index} className="p-3 sm:p-4 bg-card border border-border shadow-lg hover:shadow-xl transition-all duration-300">
                 <div className="space-y-3 sm:space-y-4">
                   <img
                     src={thumbnail.url || "/placeholder.svg"}
@@ -240,31 +240,31 @@ export function YoutubeThumbnailDownloader() {
                       <p className="text-xs sm:text-sm text-muted-foreground">{thumbnail.size}</p>
                     </div>
                     <div className="flex gap-2">
-                      <Button
+                      <GButton
                         size="sm"
                         variant="outline"
                         onClick={() => copyToClipboard(thumbnail.url)}
                         className="h-8 sm:h-9 text-xs sm:text-sm bg-card border-border text-foreground hover:bg-secondary"
                       >
                         {copied === thumbnail.url ? <Check className="h-3 w-3 sm:h-4 sm:w-4" /> : <Copy className="h-3 w-3 sm:h-4 sm:w-4" />}
-                      </Button>
-                      <Button
+                      </GButton>
+                      <GButton
                         size="sm"
                         onClick={() => downloadImage(thumbnail.url, thumbnail.quality)}
                         className="h-8 sm:h-9 text-xs sm:text-sm bg-gradient-to-r from-primary to-primary/90 hover:from-primary/90 hover:to-primary text-primary-foreground"
                       >
                         <Download className="h-3 w-3 sm:h-4 sm:w-4" />
-                      </Button>
+                      </GButton>
                     </div>
                   </div>
                 </div>
-              </Card>
+              </GCard>
             ))}
           </div>
         </div>
       )}
 
-      <Card className="p-4 sm:p-6 bg-card border border-border shadow-lg">
+      <GCard className="p-4 sm:p-6 bg-card border border-border shadow-lg">
         <h3 className="text-base sm:text-lg font-semibold text-foreground mb-3 sm:mb-4">How to Use</h3>
         <ul className="space-y-2 sm:space-y-3 text-sm sm:text-base text-muted-foreground leading-relaxed">
           <li>• Paste a YouTube video URL or video ID</li>
@@ -272,7 +272,7 @@ export function YoutubeThumbnailDownloader() {
           <li>• Download or copy the thumbnail URL you need</li>
           <li>• Maximum quality (1280x720) is recommended for best results</li>
         </ul>
-      </Card>
+      </GCard>
     </div>
   )
 }

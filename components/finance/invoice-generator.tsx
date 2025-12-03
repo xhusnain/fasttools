@@ -1,8 +1,9 @@
 "use client"
 
 import { useState, useEffect } from "react"
-import { GButton } from "@/components/globalcomponents/gbutton"
-import { Input } from "@/components/ui/input"
+import { GButton } from "@/ui/gbutton"
+import { GInput } from "@/ui/ginput"
+
 import { Copy, Download, Plus, Trash2, Printer, FileText, Palette, Save, Upload, Calendar } from "lucide-react"
 import { currencies, languages, getCurrencySymbol } from "@/components/common/countries-list"
 
@@ -806,7 +807,7 @@ Total: ${getCurrencySymbol(currency)}${calculateTotal().toFixed(2)}
             </div>
 
             <div className="text-center w-full max-w-xs sm:max-w-sm">
-              <Input
+              <GInput
                 value={companyName}
                 onChange={(e) => setCompanyName(e.target.value)}
                 placeholder={t('invoice.companyName')}
@@ -819,25 +820,25 @@ Total: ${getCurrencySymbol(currency)}${calculateTotal().toFixed(2)}
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 sm:gap-6 lg:gap-8 mb-4 sm:mb-6">
             <div>
               <h3 className="text-sm font-semibold text-foreground mb-3">{t('invoice.sections.yourCompany')}</h3>
-              <Input
+              <GInput
                 value={businessName}
                 onChange={(e) => setBusinessName(e.target.value)}
                 className="border border-orange-300 p-2 text-sm font-medium text-white bg-transparent mb-2 rounded-lg"
                 placeholder="Your Company"
               />
-              <Input
+              <GInput
                 value={businessAddress}
                 onChange={(e) => setBusinessAddress(e.target.value)}
                 className="border border-orange-300 p-2 text-sm text-foreground bg-transparent mb-2 rounded-lg"
                 placeholder="Company's Address"
               />
-              <Input
+              <GInput
                 value={businessCity}
                 onChange={(e) => setBusinessCity(e.target.value)}
                 className="border border-orange-300 p-2 text-sm text-foreground bg-transparent mb-2 rounded-lg"
                 placeholder="City, State Zip"
               />
-              <Input
+              <GInput
                 value={businessCountry}
                 onChange={(e) => setBusinessCountry(e.target.value)}
                 className="border border-orange-300 p-2 text-sm text-foreground bg-transparent rounded-lg"
@@ -846,25 +847,25 @@ Total: ${getCurrencySymbol(currency)}${calculateTotal().toFixed(2)}
             </div>
             <div>
               <h3 className="text-sm font-semibold text-foreground mb-3">{t('invoice.sections.billTo')}</h3>
-              <Input
+              <GInput
                 value={clientName}
                 onChange={(e) => setClientName(e.target.value)}
                 className="border border-orange-300 p-2 text-sm font-medium text-white bg-transparent mb-2 rounded-lg"
                 placeholder="Your Client's Company"
               />
-              <Input
+              <GInput
                 value={clientAddress}
                 onChange={(e) => setClientAddress(e.target.value)}
                 className="border border-orange-300 p-2 text-sm text-foreground bg-transparent mb-2 rounded-lg"
                 placeholder="Client's Address"
               />
-              <Input
+              <GInput
                 value={clientCity}
                 onChange={(e) => setClientCity(e.target.value)}
                 className="border border-orange-300 p-2 text-sm text-foreground bg-transparent mb-2 rounded-lg"
                 placeholder="City, State Zip"
               />
-              <Input
+              <GInput
                 value={clientCountry}
                 onChange={(e) => setClientCountry(e.target.value)}
                 className="border border-orange-300 p-2 text-sm text-foreground bg-transparent rounded-lg"
@@ -878,7 +879,7 @@ Total: ${getCurrencySymbol(currency)}${calculateTotal().toFixed(2)}
             <div className="flex flex-col sm:flex-row gap-4 sm:gap-6 lg:gap-8 w-full sm:w-auto">
               <div className="w-full sm:w-auto">
                 <label className="text-xs sm:text-sm font-semibold text-foreground">{t('invoice.invoiceNumber')}</label>
-                <Input
+                <GInput
                   value={invoiceNumber}
                   onChange={(e) => setInvoiceNumber(e.target.value)}
                   className="border border-orange-300 p-1 sm:p-2 text-xs sm:text-sm font-medium text-white bg-transparent rounded-lg w-full"
@@ -888,7 +889,7 @@ Total: ${getCurrencySymbol(currency)}${calculateTotal().toFixed(2)}
               <div className="w-full sm:w-auto">
                 <label className="text-xs sm:text-sm font-semibold text-foreground">{t('invoice.date')}</label>
                 <div className="flex items-center gap-1 sm:gap-2">
-                  <Input
+                  <GInput
                     type="date"
                     value={invoiceDate}
                     onChange={(e) => setInvoiceDate(e.target.value)}
@@ -900,7 +901,7 @@ Total: ${getCurrencySymbol(currency)}${calculateTotal().toFixed(2)}
               <div className="w-full sm:w-auto">
                 <label className="text-xs sm:text-sm font-semibold text-foreground">{t('invoice.dueDate')}</label>
                 <div className="flex items-center gap-1 sm:gap-2">
-                  <Input
+                  <GInput
                     type="date"
                     value={dueDate}
                     onChange={(e) => setDueDate(e.target.value)}
@@ -938,7 +939,7 @@ Total: ${getCurrencySymbol(currency)}${calculateTotal().toFixed(2)}
                 {items.map((item, index) => (
                   <tr key={item.id} className="border-b border-border">
                     <td className="p-1 sm:p-2">
-                      <Input
+                      <GInput
                         value={item.description}
                         onChange={(e) => updateItem(item.id, "description", e.target.value)}
                         className="border border-orange-300 p-1 text-xs sm:text-sm text-white bg-transparent w-full rounded-lg"
@@ -946,7 +947,7 @@ Total: ${getCurrencySymbol(currency)}${calculateTotal().toFixed(2)}
                       />
                     </td>
                     <td className="p-1 sm:p-2 text-center">
-                      <Input
+                      <GInput
                         type="number"
                         value={item.quantity}
                         onChange={(e) => updateItem(item.id, "quantity", Number(e.target.value) || 1)}
@@ -955,7 +956,7 @@ Total: ${getCurrencySymbol(currency)}${calculateTotal().toFixed(2)}
                       />
                     </td>
                     <td className="p-1 sm:p-2 text-center">
-                      <Input
+                      <GInput
                         type="number"
                         value={item.rate}
                         onChange={(e) => updateItem(item.id, "rate", Number(e.target.value) || 0)}
@@ -965,7 +966,7 @@ Total: ${getCurrencySymbol(currency)}${calculateTotal().toFixed(2)}
                     </td>
                     <td className="p-1 sm:p-2 text-center">
                       <div className="space-y-2">
-                        <Input
+                        <GInput
                           type="number"
                           value={item.taxRate}
                           onChange={(e) => updateItem(item.id, "taxRate", Number(e.target.value) || 0)}
@@ -1015,7 +1016,7 @@ Total: ${getCurrencySymbol(currency)}${calculateTotal().toFixed(2)}
             <div className="w-full sm:w-64">
               <div className="flex flex-col sm:flex-row justify-between items-center gap-2 sm:gap-0">
                 <label className="text-xs sm:text-sm text-foreground">{t('invoice.totals.discountRate')}</label>
-                <Input
+                <GInput
                   type="number"
                   min="0"
                   max="100"
@@ -1117,7 +1118,7 @@ Total: ${getCurrencySymbol(currency)}${calculateTotal().toFixed(2)}
                 </div>
               </div>
 
-              {/* Download Button */}
+              {/* Download GButton */}
               <GButton
                 onClick={downloadPDF}
                 disabled={loading}

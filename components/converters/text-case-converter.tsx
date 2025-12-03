@@ -1,9 +1,10 @@
 "use client"
 
 import { useState } from "react"
-import { GButton } from "@/components/globalcomponents/gbutton"
-import { Textarea } from "@/components/ui/textarea"
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
+import { GButton } from "@/ui/gbutton"
+import { GTextarea } from "@/ui/gtextarea"
+import { GCard, GCardContent, GCardDescription, GCardHeader, GCardTitle } from "@/ui/gcard"
+
 import { Copy, Check, Type, Download, RotateCcw, Settings, Zap } from "lucide-react"
 
 export function TextCaseConverter() {
@@ -97,16 +98,16 @@ export function TextCaseConverter() {
   return (
     <div className="space-y-6">
       {/* Input Section */}
-      <Card className="border border-border shadow bg-card">
-        <CardHeader>
-          <CardTitle className="text-lg flex items-center gap-2 text-card-foreground">
+      <GCard className="border border-border shadow bg-card">
+        <GCardHeader>
+          <GCardTitle className="text-lg flex items-center gap-2 text-card-foreground">
             <Type className="h-5 w-5 text-primary" />
             Input Text
-          </CardTitle>
-          <CardDescription className="text-muted-foreground">Enter or paste your text below</CardDescription>
-        </CardHeader>
-        <CardContent>
-          <Textarea
+          </GCardTitle>
+          <GCardDescription className="text-muted-foreground">Enter or paste your text below</GCardDescription>
+        </GCardHeader>
+        <GCardContent>
+          <GTextarea
             placeholder="Type or paste your text here..."
             value={text}
             onChange={(e) => setText(e.target.value)}
@@ -137,18 +138,18 @@ export function TextCaseConverter() {
               </GButton>
             </div>
           </div>
-        </CardContent>
-      </Card>
+        </GCardContent>
+      </GCard>
 
       {/* Advanced Options */}
-      <Card className="border border-border shadow bg-card">
-        <CardHeader>
-          <CardTitle className="text-lg flex items-center gap-2 text-card-foreground">
+      <GCard className="border border-border shadow bg-card">
+        <GCardHeader>
+          <GCardTitle className="text-lg flex items-center gap-2 text-card-foreground">
             <Settings className="h-5 w-5 text-primary" />
             Advanced Options
-          </CardTitle>
-        </CardHeader>
-        <CardContent>
+          </GCardTitle>
+        </GCardHeader>
+        <GCardContent>
           <div className="flex items-center gap-4">
             <label className="flex items-center gap-2 text-muted-foreground text-sm">
               <input
@@ -169,8 +170,8 @@ export function TextCaseConverter() {
               Preserve formatting
             </label>
           </div>
-        </CardContent>
-      </Card>
+        </GCardContent>
+      </GCard>
 
       {/* Conversion Results */}
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 2xl:grid-cols-4 gap-3 sm:gap-4">
@@ -188,12 +189,12 @@ export function TextCaseConverter() {
         ].map((item) => {
           const converted = convertCase(item.type)
           return (
-            <Card key={item.type} className="border border-border shadow bg-card hover:shadow-lg transition-all duration-300 hover:-translate-y-1 hover:border-primary/50">
-              <CardHeader>
-                <CardTitle className="text-base text-card-foreground">{item.label}</CardTitle>
-                <CardDescription className="text-xs text-muted-foreground">{item.desc}</CardDescription>
-              </CardHeader>
-              <CardContent className="space-y-3">
+            <GCard key={item.type} className="border border-border shadow bg-card hover:shadow-lg transition-all duration-300 hover:-translate-y-1 hover:border-primary/50">
+              <GCardHeader>
+                <GCardTitle className="text-base text-card-foreground">{item.label}</GCardTitle>
+                <GCardDescription className="text-xs text-muted-foreground">{item.desc}</GCardDescription>
+              </GCardHeader>
+              <GCardContent className="space-y-3">
                 <div className="min-h-[80px] p-3 bg-card rounded-md text-sm break-words text-card-foreground border border-border">
                   {converted || <span className="text-muted-foreground">Result will appear here</span>}
                 </div>
@@ -215,8 +216,8 @@ export function TextCaseConverter() {
                     </>
                   )}
                 </GButton>
-              </CardContent>
-            </Card>
+              </GCardContent>
+            </GCard>
           )
         })}
       </div>

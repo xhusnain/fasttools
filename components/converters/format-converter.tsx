@@ -1,9 +1,11 @@
 "use client"
 
 import { useState, useEffect } from "react"
-import { GButton } from "@/components/globalcomponents/gbutton"
-import { Textarea } from "@/components/ui/textarea"
-import { Label } from "@/components/ui/label"
+import { GButton } from "@/ui/gbutton"
+import { GTextarea } from "@/ui/gtextarea"
+import { GLabel } from "@/ui/glabel"
+import { GCard } from "@/ui/gcard"
+
 import {
   Copy,
   Check,
@@ -13,7 +15,6 @@ import {
   Sparkles,
   ArrowLeftRight
 } from "lucide-react"
-import { Card } from "@/components/ui/card"
 import jsPDF from "jspdf"
 import html2canvas from "html2canvas"
 
@@ -993,11 +994,11 @@ email = "jane@example.com"`,
       )}
 
       {/* Format Selectors */}
-      <Card className="p-4 sm:p-6 bg-gradient-to-r from-primary/5 to-secondary-accent/5 border-primary/20">
+      <GCard className="p-4 sm:p-6 bg-gradient-to-r from-primary/5 to-secondary-accent/5 border-primary/20">
         <div className="grid grid-cols-1 md:grid-cols-[1fr_auto_1fr] gap-4 items-end">
           {/* Source Format */}
           <div className="space-y-2">
-            <Label className="text-sm font-semibold">Convert From</Label>
+            <GLabel className="text-sm font-semibold">Convert From</GLabel>
             <select
               value={sourceFormat}
               onChange={(e) => setSourceFormat(e.target.value as Format)}
@@ -1011,9 +1012,9 @@ email = "jane@example.com"`,
             </select>
           </div>
 
-          {/* Swap Button */}
+          {/* Swap GButton */}
           <div className="hidden md:flex items-center justify-center pb-2">
-            <Button
+            <GButton
               type="button"
               onClick={swapFormats}
               variant="outline"
@@ -1022,12 +1023,12 @@ email = "jane@example.com"`,
               title="Swap formats"
             >
               <ArrowLeftRight className="h-5 w-5 text-primary group-hover:rotate-180 transition-transform duration-300" />
-            </Button>
+            </GButton>
           </div>
 
           {/* Target Format */}
           <div className="space-y-2">
-            <Label className="text-sm font-semibold">Convert To</Label>
+            <GLabel className="text-sm font-semibold">Convert To</GLabel>
             <select
               value={targetFormat}
               onChange={(e) => setTargetFormat(e.target.value as Format)}
@@ -1042,9 +1043,9 @@ email = "jane@example.com"`,
           </div>
         </div>
 
-        {/* Mobile Swap Button */}
+        {/* Mobile Swap GButton */}
         <div className="md:hidden flex justify-center -mt-2">
-          <Button
+          <GButton
             type="button"
             onClick={swapFormats}
             variant="outline"
@@ -1054,17 +1055,17 @@ email = "jane@example.com"`,
           >
             <ArrowLeftRight className="h-4 w-4 text-primary group-hover:rotate-180 transition-transform duration-300" />
             <span className="text-sm font-medium">Swap Formats</span>
-          </Button>
+          </GButton>
         </div>
-      </Card>
+      </GCard>
 
       {/* Input Section */}
       <div className="space-y-2">
         <div className="flex items-center justify-between">
-          <Label className="text-base font-semibold">
+          <GLabel className="text-base font-semibold">
             Input ({formats.find(f => f.value === sourceFormat)?.label})
-          </Label>
-          <Button
+          </GLabel>
+          <GButton
             variant="outline"
             size="sm"
             onClick={loadSampleData}
@@ -1072,9 +1073,9 @@ email = "jane@example.com"`,
           >
             <Sparkles className="h-4 w-4" />
             Try Sample
-          </Button>
+          </GButton>
         </div>
-        <Textarea
+        <GTextarea
           placeholder={`Paste your ${formats.find(f => f.value === sourceFormat)?.label} here...`}
           value={input}
           onChange={(e) => setInput(e.target.value)}
@@ -1112,12 +1113,12 @@ email = "jane@example.com"`,
       {output && !isGeneratingPdf && (
         <div className="space-y-2">
           <div className="flex items-center justify-between">
-            <Label className="text-base font-semibold">
+            <GLabel className="text-base font-semibold">
               Output ({formats.find(f => f.value === targetFormat)?.label})
-            </Label>
+            </GLabel>
             <div className="flex gap-2">
               {!isPdfGenerated && (
-                <Button
+                <GButton
                   variant="outline"
                   size="sm"
                   onClick={copyToClipboard}
@@ -1134,9 +1135,9 @@ email = "jane@example.com"`,
                       Copy
                     </>
                   )}
-                </Button>
+                </GButton>
               )}
-              <Button
+              <GButton
                 variant="outline"
                 size="sm"
                 onClick={downloadOutput}
@@ -1144,7 +1145,7 @@ email = "jane@example.com"`,
               >
                 <Download className="h-4 w-4" />
                 Download
-              </Button>
+              </GButton>
             </div>
           </div>
           {isPdfGenerated ? (
@@ -1158,7 +1159,7 @@ email = "jane@example.com"`,
               </div>
             </div>
           ) : (
-            <Textarea
+            <GTextarea
               value={output}
               readOnly
               className="min-h-64 font-mono text-sm border-2 border-green-500/30 bg-green-50/5"
@@ -1167,16 +1168,16 @@ email = "jane@example.com"`,
         </div>
       )}
 
-      {/* Action Button */}
+      {/* Action GButton */}
       {(input || output) && (
         <div className="flex justify-end">
-          <Button
+          <GButton
             onClick={clearAll}
             variant="outline"
             disabled={!input && !output}
           >
             Clear All
-          </Button>
+          </GButton>
         </div>
       )}
     </div>

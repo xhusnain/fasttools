@@ -1,4 +1,5 @@
-import { GHeader } from "@/components/globalcomponents/gheader"
+import { GHeader } from "@/ui/gheader"
+
 
 interface FAQ {
     number: string

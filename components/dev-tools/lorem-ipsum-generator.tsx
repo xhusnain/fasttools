@@ -1,10 +1,11 @@
 "use client"
 
 import { useState } from "react"
-import { GButton } from "@/components/globalcomponents/gbutton"
-import { Input } from "@/components/ui/input"
-import { Label } from "@/components/ui/label"
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
+import { GButton } from "@/ui/gbutton"
+import { GInput } from "@/ui/ginput"
+import { GLabel } from "@/ui/glabel"
+import { GCard, GCardContent, GCardDescription, GCardHeader, GCardTitle } from "@/ui/gcard"
+
 import { Copy, Check, FileText } from "lucide-react"
 
 
@@ -41,22 +42,22 @@ export function LoremIpsumGenerator() {
 
   return (
     <div className="space-y-6">
-      <Card className="border border-border shadow-sm">
-        <CardHeader>
-          <CardTitle className="text-xl text-foreground flex items-center gap-2">
+      <GCard className="border border-border shadow-sm">
+        <GCardHeader>
+          <GCardTitle className="text-xl text-foreground flex items-center gap-2">
             <FileText className="h-5 w-5 text-primary" />
             Lorem Ipsum Generator
-          </CardTitle>
-          <CardDescription className="text-sm text-muted-foreground">
+          </GCardTitle>
+          <GCardDescription className="text-sm text-muted-foreground">
             Generate placeholder text for your designs and mockups
-          </CardDescription>
-        </CardHeader>
-        <CardContent className="space-y-4">
+          </GCardDescription>
+        </GCardHeader>
+        <GCardContent className="space-y-4">
           <div className="space-y-2">
-            <Label htmlFor="paragraphs" className="text-sm font-medium text-foreground">
+            <GLabel htmlFor="paragraphs" className="text-sm font-medium text-foreground">
               Number of Paragraphs
-            </Label>
-            <Input
+            </GLabel>
+            <GInput
               id="paragraphs"
               type="number"
               min="1"
@@ -76,14 +77,14 @@ export function LoremIpsumGenerator() {
           >
             {isGenerating ? "Generating..." : "Generate Lorem Ipsum"}
           </GButton>
-        </CardContent>
-      </Card>
+        </GCardContent>
+      </GCard>
 
       {result && (
-        <Card className="border border-border shadow-sm animate-fade-in">
-          <CardHeader>
+        <GCard className="border border-border shadow-sm animate-fade-in">
+          <GCardHeader>
             <div className="flex items-center justify-between">
-              <CardTitle className="text-lg text-foreground">Generated Text</CardTitle>
+              <GCardTitle className="text-lg text-foreground">Generated Text</GCardTitle>
               <GButton
                 onClick={copyToClipboard}
                 variant="outline"
@@ -103,11 +104,11 @@ export function LoremIpsumGenerator() {
                 )}
               </GButton>
             </div>
-          </CardHeader>
-          <CardContent>
+          </GCardHeader>
+          <GCardContent>
             <div className="bg-muted p-4 rounded-lg text-sm leading-relaxed whitespace-pre-wrap">{result}</div>
-          </CardContent>
-        </Card>
+          </GCardContent>
+        </GCard>
       )}
     </div>
   )

@@ -3,14 +3,15 @@
 import type React from "react"
 
 import { useState, useRef } from "react"
-import { GButton } from "@/components/globalcomponents/gbutton"
-import { Card } from "@/components/ui/card"
-import { Input } from "@/components/ui/input"
-import { Label } from "@/components/ui/label"
-import { Progress } from "@/components/ui/progress"
+import { GButton } from "@/ui/gbutton"
+import { GCard } from "@/ui/gcard"
+import { GInput } from "@/ui/ginput"
+import { GLabel } from "@/ui/glabel"
+import { GProgress } from "@/ui/gprogress"
+import { useToast } from "@/ui/gtoast"
+
 import { Upload, Download, Unlock, CheckCircle2, AlertCircle, FileText, X, Shield } from "lucide-react"
 
-import { useToast } from "@/components/ui/toast"
 import { PDFDocument } from "pdf-lib"
 import * as pdfjsLib from "pdfjs-dist"
 
@@ -322,7 +323,7 @@ export function PDFUnlocker() {
     <>
       <ToastContainer />
       <div className="space-y-6">
-        <Card className="p-6 shadow-lg border-border">
+        <GCard className="p-6 shadow-lg border-border">
           <div className="space-y-6">
             {/* Upload Area */}
             {!file ? (
@@ -408,13 +409,13 @@ export function PDFUnlocker() {
                   </div>
                 )}
 
-                {/* Password Input */}
+                {/* Password GInput */}
                 {!unlocked && encryptionType === "user" && (
                   <div className="space-y-2">
-                    <Label htmlFor="pdf-password" className="text-sm font-medium">
+                    <GLabel htmlFor="pdf-password" className="text-sm font-medium">
                       PDF Password <span className="text-foreground">*</span>
-                    </Label>
-                    <Input
+                    </GLabel>
+                    <GInput
                       id="pdf-password"
                       type="password"
                       placeholder="Enter password"
@@ -429,7 +430,7 @@ export function PDFUnlocker() {
                   </div>
                 )}
 
-                {/* Progress Bar */}
+                {/* GProgress Bar */}
                 {loading && (
                   <div className="space-y-2">
                     <div className="flex items-center justify-between text-sm">
@@ -438,7 +439,7 @@ export function PDFUnlocker() {
                       </span>
                       <span className="font-medium text-foreground">{progress}%</span>
                     </div>
-                    <Progress value={progress} className="h-2" />
+                    <GProgress value={progress} className="h-2" />
                   </div>
                 )}
 
@@ -481,7 +482,7 @@ export function PDFUnlocker() {
               </div>
             )}
           </div>
-        </Card>
+        </GCard>
 
         {/* Features */}
         <div className="p-5 rounded-lg bg-card border border-border shadow">

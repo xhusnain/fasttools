@@ -1,13 +1,14 @@
 "use client"
 
 import { useState, useEffect } from "react"
-import { GButton as Button } from "@/components/globalcomponents/gbutton"
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
-import { Input } from "@/components/ui/input"
-import { Label } from "@/components/ui/label"
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
-import { Badge } from "@/components/ui/badge"
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
+import { GButton } from "@/ui/gbutton"
+import { GCard, GCardContent, GCardDescription, GCardHeader, GCardTitle } from "@/ui/gcard"
+import { GInput } from "@/ui/ginput"
+import { GLabel } from "@/ui/glabel"
+import { GSelect, GSelectContent, GSelectItem, GSelectTrigger, GSelectValue } from "@/ui/gselect"
+import { GBadge } from "@/ui/gbadge"
+import { GTabs, GTabsContent, GTabsList, GTabsTrigger } from "@/ui/gtabs"
+
 import { Calculator, BarChart3, TrendingUp, AlertCircle, Copy, RotateCcw, Download, FileText, Brain, Target, Check, Zap, Sparkles, Info, Settings } from "lucide-react"
 import { LoadingSpinner } from "@/components/common/loading-spinner"
 
@@ -224,22 +225,22 @@ export function StandardDeviationCalculator({ onResultChange }: StandardDeviatio
 
   return (
     <div className="space-y-4">
-      {/* Input Section */}
-      <Card className="bg-card border-border">
-        <CardHeader className="pb-2 px-3 sm:px-6">
-          <CardTitle className="flex items-center gap-2 text-foreground text-base sm:text-lg">
+      {/* GInput Section */}
+      <GCard className="bg-card border-border">
+        <GCardHeader className="pb-2 px-3 sm:px-6">
+          <GCardTitle className="flex items-center gap-2 text-foreground text-base sm:text-lg">
             <Calculator className="h-4 w-4 text-foreground" />
             Standard Deviation Calculator
-          </CardTitle>
-          <CardDescription className="text-muted-foreground text-xs">
+          </GCardTitle>
+          <GCardDescription className="text-muted-foreground text-xs">
             Calculate standard deviation, variance, mean, and comprehensive statistical analysis.
-          </CardDescription>
-        </CardHeader>
-        <CardContent className="space-y-3 px-3 sm:px-6">
+          </GCardDescription>
+        </GCardHeader>
+        <GCardContent className="space-y-3 px-3 sm:px-6">
           <div className="grid md:grid-cols-2 gap-3">
             <div className="space-y-1">
-              <Label htmlFor="data-input" className="text-[11px] font-medium text-heading-accent">Data Points</Label>
-              <Input
+              <GLabel htmlFor="data-input" className="text-[11px] font-medium text-heading-accent">Data Points</GLabel>
+              <GInput
                 id="data-input"
                 placeholder="10, 12, 23, 16"
                 value={inputData}
@@ -247,52 +248,52 @@ export function StandardDeviationCalculator({ onResultChange }: StandardDeviatio
                 className="font-mono h-7 text-xs border-border bg-background text-foreground focus-visible:ring-primary focus:border-primary"
               />
               <p className="text-[10px] text-muted-foreground">
-                Input values with commas, spaces, or line breaks.
+                GInput values with commas, spaces, or line breaks.
               </p>
             </div>
 
             <div className="space-y-1">
-              <Label htmlFor="calculation-mode" className="text-[11px] font-medium text-heading-accent">Calculation Mode</Label>
-              <Select value={calculationMode} onValueChange={(value: "population" | "sample") => setCalculationMode(value)}>
-                <SelectTrigger className="h-7 text-xs border-border bg-background text-foreground">
-                  <SelectValue />
-                </SelectTrigger>
-                <SelectContent>
-                  <SelectItem value="population">Population Standard Deviation</SelectItem>
-                  <SelectItem value="sample">Sample Standard Deviation</SelectItem>
-                </SelectContent>
-              </Select>
+              <GLabel htmlFor="calculation-mode" className="text-[11px] font-medium text-heading-accent">Calculation Mode</GLabel>
+              <GSelect value={calculationMode} onValueChange={(value: "population" | "sample") => setCalculationMode(value)}>
+                <GSelectTrigger className="h-7 text-xs border-border bg-background text-foreground">
+                  <GSelectValue />
+                </GSelectTrigger>
+                <GSelectContent>
+                  <GSelectItem value="population">Population Standard Deviation</GSelectItem>
+                  <GSelectItem value="sample">Sample Standard Deviation</GSelectItem>
+                </GSelectContent>
+              </GSelect>
             </div>
           </div>
 
           <div className="grid md:grid-cols-2 gap-3">
             <div className="space-y-1">
-              <Label htmlFor="confidence-level" className="text-[11px] font-medium text-heading-accent">Confidence Level</Label>
-              <Select value={confidenceLevel.toString()} onValueChange={(value) => setConfidenceLevel(parseInt(value))}>
-                <SelectTrigger className="h-7 text-xs border-border bg-background text-foreground">
-                  <SelectValue />
-                </SelectTrigger>
-                <SelectContent>
-                  <SelectItem value="90">90%</SelectItem>
-                  <SelectItem value="95">95%</SelectItem>
-                  <SelectItem value="99">99%</SelectItem>
-                </SelectContent>
-              </Select>
+              <GLabel htmlFor="confidence-level" className="text-[11px] font-medium text-heading-accent">Confidence Level</GLabel>
+              <GSelect value={confidenceLevel.toString()} onValueChange={(value) => setConfidenceLevel(parseInt(value))}>
+                <GSelectTrigger className="h-7 text-xs border-border bg-background text-foreground">
+                  <GSelectValue />
+                </GSelectTrigger>
+                <GSelectContent>
+                  <GSelectItem value="90">90%</GSelectItem>
+                  <GSelectItem value="95">95%</GSelectItem>
+                  <GSelectItem value="99">99%</GSelectItem>
+                </GSelectContent>
+              </GSelect>
             </div>
 
             <div className="flex items-end gap-2">
-              <Button onClick={handleLoadExample} variant="outline" size="sm" className="h-7 text-xs border-border bg-background text-foreground hover:bg-secondary">
+              <GButton onClick={handleLoadExample} variant="outline" size="sm" className="h-7 text-xs border-border bg-background text-foreground hover:bg-secondary">
                 Example
-              </Button>
-              <Button onClick={handleClear} variant="outline" size="sm" className="h-7 text-xs border-border bg-background text-foreground hover:bg-secondary">
+              </GButton>
+              <GButton onClick={handleClear} variant="outline" size="sm" className="h-7 text-xs border-border bg-background text-foreground hover:bg-secondary">
                 <RotateCcw className="h-3 w-3 mr-1" />
                 Clear
-              </Button>
+              </GButton>
             </div>
           </div>
 
           <div className="flex gap-2">
-            <Button
+            <GButton
               onClick={handleCalculate}
               disabled={dataPoints.length < 2 || isCalculating}
               className="flex-1 h-9 text-xs font-medium bg-gradient-to-r from-primary to-primary/90 hover:from-primary/90 hover:to-primary text-primary-foreground"
@@ -308,7 +309,7 @@ export function StandardDeviationCalculator({ onResultChange }: StandardDeviatio
                   Calculate
                 </>
               )}
-            </Button>
+            </GButton>
           </div>
 
           {dataPoints.length > 0 && (
@@ -324,21 +325,21 @@ export function StandardDeviationCalculator({ onResultChange }: StandardDeviatio
               </p>
             </div>
           )}
-        </CardContent>
-      </Card>
+        </GCardContent>
+      </GCard>
 
       {/* Results Section */}
       {result && (
         <div className="space-y-6">
           {/* Quick Stats */}
-          <Card className="bg-card border-border">
-            <CardHeader className="pb-2 px-3 sm:px-6">
-              <CardTitle className="flex items-center gap-2 text-foreground text-base">
+          <GCard className="bg-card border-border">
+            <GCardHeader className="pb-2 px-3 sm:px-6">
+              <GCardTitle className="flex items-center gap-2 text-foreground text-base">
                 <BarChart3 className="h-4 w-4 text-foreground" />
                 Quick Statistics
-              </CardTitle>
-            </CardHeader>
-            <CardContent>
+              </GCardTitle>
+            </GCardHeader>
+            <GCardContent>
               <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
                 <div className="text-center p-4 bg-card rounded-lg border border-border">
                   <div className="flex justify-center mb-2">
@@ -377,71 +378,71 @@ export function StandardDeviationCalculator({ onResultChange }: StandardDeviatio
                   <p className="text-xs text-heading-accent">Range</p>
                 </div>
               </div>
-            </CardContent>
-          </Card>
+            </GCardContent>
+          </GCard>
 
           {/* Detailed Results */}
-          <Tabs value={activeTab} onValueChange={setActiveTab} className="w-full">
-            <TabsList className="grid w-full grid-cols-4 bg-primary/10 border border-primary/20">
-              <TabsTrigger
+          <GTabs value={activeTab} onValueChange={setActiveTab} className="w-full">
+            <GTabsList className="grid w-full grid-cols-4 bg-primary/10 border border-primary/20">
+              <GTabsTrigger
                 value="basic"
                 className="data-[state=active]:bg-primary data-[state=active]:text-primary-foreground text-foreground hover:bg-secondary"
               >
                 Basic Stats
-              </TabsTrigger>
-              <TabsTrigger
+              </GTabsTrigger>
+              <GTabsTrigger
                 value="advanced"
                 className="data-[state=active]:bg-primary data-[state=active]:text-primary-foreground text-foreground hover:bg-secondary"
               >
                 Advanced
-              </TabsTrigger>
-              <TabsTrigger
+              </GTabsTrigger>
+              <GTabsTrigger
                 value="distribution"
                 className="data-[state=active]:bg-primary data-[state=active]:text-primary-foreground text-foreground hover:bg-secondary"
               >
                 Distribution
-              </TabsTrigger>
-              <TabsTrigger
+              </GTabsTrigger>
+              <GTabsTrigger
                 value="confidence"
                 className="data-[state=active]:bg-primary data-[state=active]:text-primary-foreground text-foreground hover:bg-secondary"
               >
                 Confidence
-              </TabsTrigger>
-            </TabsList>
+              </GTabsTrigger>
+            </GTabsList>
 
-            <TabsContent value="basic" className="space-y-4">
-              <Card className="bg-card border-border">
-                <CardHeader>
-                  <CardTitle className="text-foreground text-base">Basic Statistics</CardTitle>
-                </CardHeader>
-                <CardContent className="space-y-4">
+            <GTabsContent value="basic" className="space-y-4">
+              <GCard className="bg-card border-border">
+                <GCardHeader>
+                  <GCardTitle className="text-foreground text-base">Basic Statistics</GCardTitle>
+                </GCardHeader>
+                <GCardContent className="space-y-4">
                   <div className="grid md:grid-cols-2 gap-4">
                     <div className="space-y-3">
                       <div className="flex justify-between items-center p-3 bg-muted rounded-lg">
                         <span className="font-medium">Mean (Average)</span>
                         <div className="flex items-center gap-2">
                           <span className="font-mono">{result.mean.toFixed(4)}</span>
-                          <Button size="sm" variant="ghost" onClick={() => handleCopyResult(result.mean, "Mean")}>
+                          <GButton size="sm" variant="ghost" onClick={() => handleCopyResult(result.mean, "Mean")}>
                             <Copy className="h-3 w-3" />
-                          </Button>
+                          </GButton>
                         </div>
                       </div>
                       <div className="flex justify-between items-center p-3 bg-muted rounded-lg">
                         <span className="font-medium">Median</span>
                         <div className="flex items-center gap-2">
                           <span className="font-mono">{result.median.toFixed(4)}</span>
-                          <Button size="sm" variant="ghost" onClick={() => handleCopyResult(result.median, "Median")}>
+                          <GButton size="sm" variant="ghost" onClick={() => handleCopyResult(result.median, "Median")}>
                             <Copy className="h-3 w-3" />
-                          </Button>
+                          </GButton>
                         </div>
                       </div>
                       <div className="flex justify-between items-center p-3 bg-muted rounded-lg">
                         <span className="font-medium">Mode</span>
                         <div className="flex items-center gap-2">
                           <span className="font-mono">{result.mode.length > 0 ? result.mode.join(", ") : "No mode"}</span>
-                          <Button size="sm" variant="ghost" onClick={() => handleCopyResult(result.mode[0] || 0, "Mode")}>
+                          <GButton size="sm" variant="ghost" onClick={() => handleCopyResult(result.mode[0] || 0, "Mode")}>
                             <Copy className="h-3 w-3" />
-                          </Button>
+                          </GButton>
                         </div>
                       </div>
                     </div>
@@ -450,59 +451,59 @@ export function StandardDeviationCalculator({ onResultChange }: StandardDeviatio
                         <span className="font-medium">Range</span>
                         <div className="flex items-center gap-2">
                           <span className="font-mono">{result.range.toFixed(4)}</span>
-                          <Button size="sm" variant="ghost" onClick={() => handleCopyResult(result.range, "Range")}>
+                          <GButton size="sm" variant="ghost" onClick={() => handleCopyResult(result.range, "Range")}>
                             <Copy className="h-3 w-3" />
-                          </Button>
+                          </GButton>
                         </div>
                       </div>
                       <div className="flex justify-between items-center p-3 bg-muted rounded-lg">
                         <span className="font-medium">Variance</span>
                         <div className="flex items-center gap-2">
                           <span className="font-mono">{result.variance.toFixed(4)}</span>
-                          <Button size="sm" variant="ghost" onClick={() => handleCopyResult(result.variance, "Variance")}>
+                          <GButton size="sm" variant="ghost" onClick={() => handleCopyResult(result.variance, "Variance")}>
                             <Copy className="h-3 w-3" />
-                          </Button>
+                          </GButton>
                         </div>
                       </div>
                       <div className="flex justify-between items-center p-3 bg-muted rounded-lg">
                         <span className="font-medium">Standard Deviation</span>
                         <div className="flex items-center gap-2">
                           <span className="font-mono">{result.standardDeviation.toFixed(4)}</span>
-                          <Button size="sm" variant="ghost" onClick={() => handleCopyResult(result.standardDeviation, "Standard Deviation")}>
+                          <GButton size="sm" variant="ghost" onClick={() => handleCopyResult(result.standardDeviation, "Standard Deviation")}>
                             <Copy className="h-3 w-3" />
-                          </Button>
+                          </GButton>
                         </div>
                       </div>
                     </div>
                   </div>
-                </CardContent>
-              </Card>
-            </TabsContent>
+                </GCardContent>
+              </GCard>
+            </GTabsContent>
 
-            <TabsContent value="advanced" className="space-y-4">
-              <Card className="bg-card border-border">
-                <CardHeader>
-                  <CardTitle className="text-foreground text-base">Advanced Statistics</CardTitle>
-                </CardHeader>
-                <CardContent className="space-y-4">
+            <GTabsContent value="advanced" className="space-y-4">
+              <GCard className="bg-card border-border">
+                <GCardHeader>
+                  <GCardTitle className="text-foreground text-base">Advanced Statistics</GCardTitle>
+                </GCardHeader>
+                <GCardContent className="space-y-4">
                   <div className="grid md:grid-cols-2 gap-4">
                     <div className="space-y-3">
                       <div className="flex justify-between items-center p-3 bg-muted rounded-lg">
                         <span className="font-medium">Sample Std Dev</span>
                         <div className="flex items-center gap-2">
                           <span className="font-mono">{result.sampleStandardDeviation.toFixed(4)}</span>
-                          <Button size="sm" variant="ghost" onClick={() => handleCopyResult(result.sampleStandardDeviation, "Sample Standard Deviation")}>
+                          <GButton size="sm" variant="ghost" onClick={() => handleCopyResult(result.sampleStandardDeviation, "Sample Standard Deviation")}>
                             <Copy className="h-3 w-3" />
-                          </Button>
+                          </GButton>
                         </div>
                       </div>
                       <div className="flex justify-between items-center p-3 bg-muted rounded-lg">
                         <span className="font-medium">Coefficient of Variation</span>
                         <div className="flex items-center gap-2">
                           <span className="font-mono">{result.coefficientOfVariation.toFixed(2)}%</span>
-                          <Button size="sm" variant="ghost" onClick={() => handleCopyResult(result.coefficientOfVariation, "Coefficient of Variation")}>
+                          <GButton size="sm" variant="ghost" onClick={() => handleCopyResult(result.coefficientOfVariation, "Coefficient of Variation")}>
                             <Copy className="h-3 w-3" />
-                          </Button>
+                          </GButton>
                         </div>
                       </div>
                     </div>
@@ -511,32 +512,32 @@ export function StandardDeviationCalculator({ onResultChange }: StandardDeviatio
                         <span className="font-medium">Skewness</span>
                         <div className="flex items-center gap-2">
                           <span className="font-mono">{result.skewness.toFixed(4)}</span>
-                          <Button size="sm" variant="ghost" onClick={() => handleCopyResult(result.skewness, "Skewness")}>
+                          <GButton size="sm" variant="ghost" onClick={() => handleCopyResult(result.skewness, "Skewness")}>
                             <Copy className="h-3 w-3" />
-                          </Button>
+                          </GButton>
                         </div>
                       </div>
                       <div className="flex justify-between items-center p-3 bg-muted rounded-lg">
                         <span className="font-medium">Kurtosis</span>
                         <div className="flex items-center gap-2">
                           <span className="font-mono">{result.kurtosis.toFixed(4)}</span>
-                          <Button size="sm" variant="ghost" onClick={() => handleCopyResult(result.kurtosis, "Kurtosis")}>
+                          <GButton size="sm" variant="ghost" onClick={() => handleCopyResult(result.kurtosis, "Kurtosis")}>
                             <Copy className="h-3 w-3" />
-                          </Button>
+                          </GButton>
                         </div>
                       </div>
                     </div>
                   </div>
-                </CardContent>
-              </Card>
-            </TabsContent>
+                </GCardContent>
+              </GCard>
+            </GTabsContent>
 
-            <TabsContent value="distribution" className="space-y-4">
-              <Card className="bg-card border-border">
-                <CardHeader>
-                  <CardTitle className="text-foreground text-base">Distribution Analysis</CardTitle>
-                </CardHeader>
-                <CardContent className="space-y-4">
+            <GTabsContent value="distribution" className="space-y-4">
+              <GCard className="bg-card border-border">
+                <GCardHeader>
+                  <GCardTitle className="text-foreground text-base">Distribution Analysis</GCardTitle>
+                </GCardHeader>
+                <GCardContent className="space-y-4">
                   <div className="space-y-4">
                     <div>
                       <h4 className="font-semibold mb-2">Quartiles</h4>
@@ -594,28 +595,28 @@ export function StandardDeviationCalculator({ onResultChange }: StandardDeviatio
                       </div>
                     </div>
                   </div>
-                </CardContent>
-              </Card>
-            </TabsContent>
+                </GCardContent>
+              </GCard>
+            </GTabsContent>
 
-            <TabsContent value="confidence" className="space-y-4">
-              <Card className="bg-card border-border">
-                <CardHeader>
-                  <CardTitle className="text-foreground text-base">Confidence Interval</CardTitle>
-                </CardHeader>
-                <CardContent className="space-y-4">
+            <GTabsContent value="confidence" className="space-y-4">
+              <GCard className="bg-card border-border">
+                <GCardHeader>
+                  <GCardTitle className="text-foreground text-base">Confidence Interval</GCardTitle>
+                </GCardHeader>
+                <GCardContent className="space-y-4">
                   <div className="space-y-3">
                     <div className="flex justify-between items-center p-3 bg-muted rounded-lg">
                       <span className="font-medium">Confidence Level</span>
-                      <Badge variant="secondary">{confidenceLevel}%</Badge>
+                      <GBadge variant="secondary">{confidenceLevel}%</GBadge>
                     </div>
                     <div className="flex justify-between items-center p-3 bg-muted rounded-lg">
                       <span className="font-medium">Margin of Error</span>
                       <div className="flex items-center gap-2">
                         <span className="font-mono">{result.confidenceInterval.marginOfError.toFixed(4)}</span>
-                        <Button size="sm" variant="ghost" onClick={() => handleCopyResult(result.confidenceInterval.marginOfError, "Margin of Error")}>
+                        <GButton size="sm" variant="ghost" onClick={() => handleCopyResult(result.confidenceInterval.marginOfError, "Margin of Error")}>
                           <Copy className="h-3 w-3" />
-                        </Button>
+                        </GButton>
                       </div>
                     </div>
                     <div className="p-4 bg-muted rounded-lg">
@@ -630,60 +631,60 @@ export function StandardDeviationCalculator({ onResultChange }: StandardDeviatio
                       </p>
                     </div>
                   </div>
-                </CardContent>
-              </Card>
-            </TabsContent>
-          </Tabs>
+                </GCardContent>
+              </GCard>
+            </GTabsContent>
+          </GTabs>
 
           {/* Export and Actions */}
-          <Card className="bg-card border-border">
-            <CardContent className="pt-6">
+          <GCard className="bg-card border-border">
+            <GCardContent className="pt-6">
               <div className="flex flex-wrap gap-2">
-                <Button onClick={handleExportResults} variant="outline">
+                <GButton onClick={handleExportResults} variant="outline">
                   <Download className="h-4 w-4 mr-2" />
                   Export Results
-                </Button>
-                <Button onClick={() => navigator.clipboard.writeText(JSON.stringify(result, null, 2))} variant="outline">
+                </GButton>
+                <GButton onClick={() => navigator.clipboard.writeText(JSON.stringify(result, null, 2))} variant="outline">
                   <FileText className="h-4 w-4 mr-2" />
                   Copy JSON
-                </Button>
+                </GButton>
               </div>
-            </CardContent>
-          </Card>
+            </GCardContent>
+          </GCard>
         </div>
       )}
 
       {/* History Section */}
       {history.length > 0 && (
-        <Card className="bg-card border-border">
-          <CardHeader>
-            <CardTitle className="flex items-center gap-2 text-foreground text-base">
+        <GCard className="bg-card border-border">
+          <GCardHeader>
+            <GCardTitle className="flex items-center gap-2 text-foreground text-base">
               <Brain className="h-4 w-4 text-foreground" />
               Calculation History
-            </CardTitle>
-          </CardHeader>
-          <CardContent>
+            </GCardTitle>
+          </GCardHeader>
+          <GCardContent>
             <div className="space-y-2">
               {history.slice(0, 5).map((calc, index) => (
                 <div key={index} className="flex justify-between items-center p-3 bg-muted rounded-lg">
                   <div className="flex items-center gap-4">
-                    <Badge variant="outline">#{index + 1}</Badge>
+                    <GBadge variant="outline">#{index + 1}</GBadge>
                     <span className="text-sm">
                       Mean: {calc.mean.toFixed(2)}, Std Dev: {calc.standardDeviation.toFixed(2)}
                     </span>
                   </div>
-                  <Button
+                  <GButton
                     size="sm"
                     variant="ghost"
                     onClick={() => setResult(calc)}
                   >
                     View
-                  </Button>
+                  </GButton>
                 </div>
               ))}
             </div>
-          </CardContent>
-        </Card>
+          </GCardContent>
+        </GCard>
       )}
     </div>
   )

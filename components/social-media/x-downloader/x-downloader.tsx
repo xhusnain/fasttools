@@ -1,12 +1,13 @@
 "use client"
 
 import { useState } from "react"
-import { Card } from "@/components/ui/card"
-import { Input } from "@/components/ui/input"
-import { Label } from "@/components/ui/label"
-import { GButton as Button } from "@/components/globalcomponents/gbutton"
+import { GCard } from "@/ui/gcard"
+import { GInput } from "@/ui/ginput"
+import { GLabel } from "@/ui/glabel"
+import { GButton } from "@/ui/gbutton"
+import { GAlert, GAlertDescription } from "@/ui/galert"
+
 import { Download, Loader2, AlertCircle, Video } from "lucide-react"
-import { Alert, AlertDescription } from "@/components/ui/alert"
 import { API } from "@/services/api/api.service"
 
 export interface XDownloaderProps {
@@ -93,14 +94,14 @@ export function XDownloader({ compact = false }: XDownloaderProps) {
 
   return (
     <div className="w-full max-w-4xl mx-auto space-y-4 sm:space-y-6">
-      <Card className="p-6 sm:p-8">
+      <GCard className="p-6 sm:p-8">
         <div className="space-y-6">
           <div className="space-y-2">
-            <Label htmlFor="x-url" className="text-base font-semibold">
+            <GLabel htmlFor="x-url" className="text-base font-semibold">
               X (Twitter) URL
-            </Label>
+            </GLabel>
             <div className="flex gap-2">
-              <Input
+              <GInput
                 id="x-url"
                 type="text"
                 placeholder="https://x.com/username/status/..."
@@ -110,7 +111,7 @@ export function XDownloader({ compact = false }: XDownloaderProps) {
                 className="flex-1"
                 disabled={loading}
               />
-              <Button
+              <GButton
                 onClick={handleDownload}
                 disabled={loading || !url.trim()}
                 className="px-6"
@@ -126,15 +127,15 @@ export function XDownloader({ compact = false }: XDownloaderProps) {
                     Download
                   </>
                 )}
-              </Button>
+              </GButton>
             </div>
           </div>
 
           {error && (
-            <Alert variant="destructive">
+            <GAlert variant="destructive">
               <AlertCircle className="h-4 w-4" />
-              <AlertDescription>{error}</AlertDescription>
-            </Alert>
+              <GAlertDescription>{error}</GAlertDescription>
+            </GAlert>
           )}
 
           {result && (
@@ -163,7 +164,7 @@ export function XDownloader({ compact = false }: XDownloaderProps) {
                       const qualityLabel = isHD ? 'HD' : 'SD'
 
                       return (
-                        <Button
+                        <GButton
                           key={index}
                           onClick={async () => await downloadFile(videoUrl, `x-${qualityLabel.toLowerCase()}-${Date.now()}.mp4`)}
                           className="w-full"
@@ -172,30 +173,30 @@ export function XDownloader({ compact = false }: XDownloaderProps) {
                         >
                           <Download className="mr-2 h-5 w-5" />
                           Download {qualityLabel} Quality
-                        </Button>
+                        </GButton>
                       )
                     })}
                   </div>
                 ) : (
                   result.url && typeof result.url === 'string' && (
-                    <Button
+                    <GButton
                       onClick={async () => await downloadFile(result.url, `x-${Date.now()}.mp4`)}
                       className="w-full"
                       size="lg"
                     >
                       <Download className="mr-2 h-5 w-5" />
                       Download Video
-                    </Button>
+                    </GButton>
                   )
                 )}
               </div>
             </div>
           )}
         </div>
-      </Card>
+      </GCard>
 
       {!compact && (
-        <Card className="p-6 bg-card border border-border">
+        <GCard className="p-6 bg-card border border-border">
           <h3 className="text-lg font-bold text-foreground mb-4">How to Use</h3>
           <ol className="space-y-3 text-sm text-muted-foreground list-decimal list-inside">
             <li>Find the video tweet you want to download</li>
@@ -203,7 +204,7 @@ export function XDownloader({ compact = false }: XDownloaderProps) {
             <li>Paste it into the input field above</li>
             <li>Click Download to save the video</li>
           </ol>
-        </Card>
+        </GCard>
       )}
     </div>
   )

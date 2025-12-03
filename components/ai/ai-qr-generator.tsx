@@ -1,15 +1,16 @@
 "use client"
 
 import { useState, useRef, useEffect } from "react"
-import { GButton } from "@/components/globalcomponents/gbutton"
-import { Label } from "@/components/ui/label"
-import { Input } from "@/components/ui/input"
-import { Card } from "@/components/ui/card"
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
-import { Slider } from "@/components/ui/slider"
-import { Switch } from "@/components/ui/switch"
-import { Textarea } from "@/components/ui/textarea"
+import { GButton } from "@/ui/gbutton"
+import { GLabel } from "@/ui/glabel"
+import { GInput } from "@/ui/ginput"
+import { GCard } from "@/ui/gcard"
+import { GTabs, GTabsContent, GTabsList, GTabsTrigger } from "@/ui/gtabs"
+import { GSelect, GSelectContent, GSelectItem, GSelectTrigger, GSelectValue } from "@/ui/gselect"
+import { GSlider } from "@/ui/gslider"
+import { GSwitch } from "@/ui/gswitch"
+import { GTextarea } from "@/ui/gtextarea"
+
 import { Download, QrCode, Image as ImageIcon, Sparkles, Wifi, Mail, Phone, MessageSquare, User, MapPin, FileText, Zap, Globe, ListOrdered, Archive } from "lucide-react"
 import { LoadingSpinner } from "@/components/common/loading-spinner"
 import QRCode from "qrcode"
@@ -436,84 +437,84 @@ END:VCARD`
       {/* LEFT COLUMN - INPUTS */}
       <div className="space-y-4">
         {/* QR Type Selector */}
-        <Card className="p-4 border-2 border-primary/20">
+        <GCard className="p-4 border-2 border-primary/20">
           <h3 className="font-semibold text-sm mb-3 flex items-center gap-2 text-primary">
             <Sparkles className="h-4 w-4" />
             Choose QR Code Type
           </h3>
-          <Tabs value={qrType} onValueChange={(v) => setQrType(v as QRType)} className="w-full">
-            <TabsList className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-1.5 h-auto p-1 bg-muted">
-              <TabsTrigger value="url" className="flex items-center gap-1.5 text-xs py-2 data-[state=active]:bg-primary data-[state=active]:text-primary-foreground">
+          <GTabs value={qrType} onValueChange={(v) => setQrType(v as QRType)} className="w-full">
+            <GTabsList className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-1.5 h-auto p-1 bg-muted">
+              <GTabsTrigger value="url" className="flex items-center gap-1.5 text-xs py-2 data-[state=active]:bg-primary data-[state=active]:text-primary-foreground">
                 <Globe className="h-3.5 w-3.5 text-foreground" />
                 <span>URL</span>
-              </TabsTrigger>
-              <TabsTrigger value="wifi" className="flex items-center gap-1.5 text-xs py-2 data-[state=active]:bg-primary data-[state=active]:text-primary-foreground">
+              </GTabsTrigger>
+              <GTabsTrigger value="wifi" className="flex items-center gap-1.5 text-xs py-2 data-[state=active]:bg-primary data-[state=active]:text-primary-foreground">
                 <Wifi className="h-3.5 w-3.5 text-foreground" />
                 <span>WiFi</span>
-              </TabsTrigger>
-              <TabsTrigger value="vcard" className="flex items-center gap-1.5 text-xs py-2 data-[state=active]:bg-primary data-[state=active]:text-primary-foreground">
+              </GTabsTrigger>
+              <GTabsTrigger value="vcard" className="flex items-center gap-1.5 text-xs py-2 data-[state=active]:bg-primary data-[state=active]:text-primary-foreground">
                 <User className="h-3.5 w-3.5 text-foreground" />
                 <span>vCard</span>
-              </TabsTrigger>
-              <TabsTrigger value="email" className="flex items-center gap-1.5 text-xs py-2 data-[state=active]:bg-primary data-[state=active]:text-primary-foreground">
+              </GTabsTrigger>
+              <GTabsTrigger value="email" className="flex items-center gap-1.5 text-xs py-2 data-[state=active]:bg-primary data-[state=active]:text-primary-foreground">
                 <Mail className="h-3.5 w-3.5 text-foreground" />
                 <span>Email</span>
-              </TabsTrigger>
-              <TabsTrigger value="sms" className="flex items-center gap-1.5 text-xs py-2 data-[state=active]:bg-primary data-[state=active]:text-primary-foreground">
+              </GTabsTrigger>
+              <GTabsTrigger value="sms" className="flex items-center gap-1.5 text-xs py-2 data-[state=active]:bg-primary data-[state=active]:text-primary-foreground">
                 <MessageSquare className="h-3.5 w-3.5 text-foreground" />
                 <span>SMS</span>
-              </TabsTrigger>
-              <TabsTrigger value="whatsapp" className="flex items-center gap-1.5 text-xs py-2 data-[state=active]:bg-primary data-[state=active]:text-primary-foreground">
+              </GTabsTrigger>
+              <GTabsTrigger value="whatsapp" className="flex items-center gap-1.5 text-xs py-2 data-[state=active]:bg-primary data-[state=active]:text-primary-foreground">
                 <Phone className="h-3.5 w-3.5 text-foreground" />
                 <span>WhatsApp</span>
-              </TabsTrigger>
-              <TabsTrigger value="phone" className="flex items-center gap-1.5 text-xs py-2 data-[state=active]:bg-primary data-[state=active]:text-primary-foreground">
+              </GTabsTrigger>
+              <GTabsTrigger value="phone" className="flex items-center gap-1.5 text-xs py-2 data-[state=active]:bg-primary data-[state=active]:text-primary-foreground">
                 <Phone className="h-3.5 w-3.5 text-foreground" />
                 <span>Phone</span>
-              </TabsTrigger>
-              <TabsTrigger value="location" className="flex items-center gap-1.5 text-xs py-2 data-[state=active]:bg-primary data-[state=active]:text-primary-foreground">
+              </GTabsTrigger>
+              <GTabsTrigger value="location" className="flex items-center gap-1.5 text-xs py-2 data-[state=active]:bg-primary data-[state=active]:text-primary-foreground">
                 <MapPin className="h-3.5 w-3.5 text-foreground" />
                 <span>Location</span>
-              </TabsTrigger>
-              <TabsTrigger value="text" className="flex items-center gap-1.5 text-xs py-2 data-[state=active]:bg-primary data-[state=active]:text-primary-foreground">
+              </GTabsTrigger>
+              <GTabsTrigger value="text" className="flex items-center gap-1.5 text-xs py-2 data-[state=active]:bg-primary data-[state=active]:text-primary-foreground">
                 <FileText className="h-3.5 w-3.5 text-foreground" />
                 <span>Text</span>
-              </TabsTrigger>
-              <TabsTrigger value="bulk" className="flex items-center gap-1.5 text-xs py-2 data-[state=active]:bg-primary data-[state=active]:text-primary-foreground">
+              </GTabsTrigger>
+              <GTabsTrigger value="bulk" className="flex items-center gap-1.5 text-xs py-2 data-[state=active]:bg-primary data-[state=active]:text-primary-foreground">
                 <ListOrdered className="h-3.5 w-3.5 text-foreground" />
                 <span>Bulk</span>
-              </TabsTrigger>
-            </TabsList>
+              </GTabsTrigger>
+            </GTabsList>
 
-            {/* URL Input */}
-            <TabsContent value="url" className="space-y-2 mt-3">
-              <Label htmlFor="url" className={labelClass}>Website URL</Label>
-              <Input
+            {/* URL GInput */}
+            <GTabsContent value="url" className="space-y-2 mt-3">
+              <GLabel htmlFor="url" className={labelClass}>Website URL</GLabel>
+              <GInput
                 id="url"
                 placeholder="https://example.com"
                 value={url}
                 onChange={(e) => setUrl(e.target.value)}
                 className={inputClass}
               />
-            </TabsContent>
+            </GTabsContent>
 
-            {/* Text Input */}
-            <TabsContent value="text" className="space-y-2 mt-3">
-              <Label htmlFor="text" className={labelClass}>Plain Text</Label>
-              <Textarea
+            {/* Text GInput */}
+            <GTabsContent value="text" className="space-y-2 mt-3">
+              <GLabel htmlFor="text" className={labelClass}>Plain Text</GLabel>
+              <GTextarea
                 id="text"
                 placeholder="Enter any text..."
                 value={text}
                 onChange={(e) => setText(e.target.value)}
                 className="min-h-[60px] border-2 border-primary/50 focus:border-primary text-sm"
               />
-            </TabsContent>
+            </GTabsContent>
 
             {/* WiFi QR */}
-            <TabsContent value="wifi" className="space-y-2 mt-3">
+            <GTabsContent value="wifi" className="space-y-2 mt-3">
               <div className="space-y-2">
-                <Label htmlFor="wifi-ssid" className={labelClass}>Network Name (SSID) *</Label>
-                <Input
+                <GLabel htmlFor="wifi-ssid" className={labelClass}>Network Name (SSID) *</GLabel>
+                <GInput
                   id="wifi-ssid"
                   placeholder="My WiFi"
                   value={wifiSSID}
@@ -522,8 +523,8 @@ END:VCARD`
                 />
               </div>
               <div className="space-y-2">
-                <Label htmlFor="wifi-password" className={labelClass}>Password</Label>
-                <Input
+                <GLabel htmlFor="wifi-password" className={labelClass}>Password</GLabel>
+                <GInput
                   id="wifi-password"
                   type="password"
                   placeholder="Password"
@@ -534,35 +535,35 @@ END:VCARD`
               </div>
               <div className="grid grid-cols-2 gap-2">
                 <div className="space-y-2">
-                  <Label htmlFor="wifi-encryption" className={labelClass}>Encryption</Label>
-                  <Select value={wifiEncryption} onValueChange={(v) => setWifiEncryption(v as "WPA" | "WEP" | "nopass")}>
-                    <SelectTrigger className="h-9 border-2 border-primary/50">
-                      <SelectValue />
-                    </SelectTrigger>
-                    <SelectContent>
-                      <SelectItem value="WPA">WPA</SelectItem>
-                      <SelectItem value="WEP">WEP</SelectItem>
-                      <SelectItem value="nopass">None</SelectItem>
-                    </SelectContent>
-                  </Select>
+                  <GLabel htmlFor="wifi-encryption" className={labelClass}>Encryption</GLabel>
+                  <GSelect value={wifiEncryption} onValueChange={(v) => setWifiEncryption(v as "WPA" | "WEP" | "nopass")}>
+                    <GSelectTrigger className="h-9 border-2 border-primary/50">
+                      <GSelectValue />
+                    </GSelectTrigger>
+                    <GSelectContent>
+                      <GSelectItem value="WPA">WPA</GSelectItem>
+                      <GSelectItem value="WEP">WEP</GSelectItem>
+                      <GSelectItem value="nopass">None</GSelectItem>
+                    </GSelectContent>
+                  </GSelect>
                 </div>
                 <div className="flex items-center gap-2 p-2 rounded-lg bg-background border border-primary/30 mt-6">
-                  <Switch
+                  <GSwitch
                     id="wifi-hidden"
                     checked={wifiHidden}
                     onCheckedChange={setWifiHidden}
                     className="data-[state=checked]:bg-primary"
                   />
-                  <Label htmlFor="wifi-hidden" className="text-sm cursor-pointer font-medium">Hidden Network</Label>
+                  <GLabel htmlFor="wifi-hidden" className="text-sm cursor-pointer font-medium">Hidden Network</GLabel>
                 </div>
               </div>
-            </TabsContent>
+            </GTabsContent>
 
             {/* vCard QR */}
-            <TabsContent value="vcard" className="space-y-2 mt-3">
+            <GTabsContent value="vcard" className="space-y-2 mt-3">
               <div className="space-y-2">
-                <Label htmlFor="vcard-name" className={labelClass}>Full Name *</Label>
-                <Input
+                <GLabel htmlFor="vcard-name" className={labelClass}>Full Name *</GLabel>
+                <GInput
                   id="vcard-name"
                   placeholder="John Doe"
                   value={vcardName}
@@ -572,8 +573,8 @@ END:VCARD`
               </div>
               <div className="grid grid-cols-2 gap-2">
                 <div className="space-y-2">
-                  <Label htmlFor="vcard-phone" className={labelClass}>Phone</Label>
-                  <Input
+                  <GLabel htmlFor="vcard-phone" className={labelClass}>Phone</GLabel>
+                  <GInput
                     id="vcard-phone"
                     placeholder="+1234567890"
                     value={vcardPhone}
@@ -582,8 +583,8 @@ END:VCARD`
                   />
                 </div>
                 <div className="space-y-2">
-                  <Label htmlFor="vcard-email" className={labelClass}>Email</Label>
-                  <Input
+                  <GLabel htmlFor="vcard-email" className={labelClass}>Email</GLabel>
+                  <GInput
                     id="vcard-email"
                     type="email"
                     placeholder="email@example.com"
@@ -594,8 +595,8 @@ END:VCARD`
                 </div>
               </div>
               <div className="space-y-2">
-                <Label htmlFor="vcard-company" className={labelClass}>Company</Label>
-                <Input
+                <GLabel htmlFor="vcard-company" className={labelClass}>Company</GLabel>
+                <GInput
                   id="vcard-company"
                   placeholder="Company Name"
                   value={vcardCompany}
@@ -603,13 +604,13 @@ END:VCARD`
                   className={inputClass}
                 />
               </div>
-            </TabsContent>
+            </GTabsContent>
 
             {/* Email QR */}
-            <TabsContent value="email" className="space-y-2 mt-3">
+            <GTabsContent value="email" className="space-y-2 mt-3">
               <div className="space-y-2">
-                <Label htmlFor="email-to" className={labelClass}>Email Address *</Label>
-                <Input
+                <GLabel htmlFor="email-to" className={labelClass}>Email Address *</GLabel>
+                <GInput
                   id="email-to"
                   type="email"
                   placeholder="recipient@example.com"
@@ -619,8 +620,8 @@ END:VCARD`
                 />
               </div>
               <div className="space-y-2">
-                <Label htmlFor="email-subject" className={labelClass}>Subject</Label>
-                <Input
+                <GLabel htmlFor="email-subject" className={labelClass}>Subject</GLabel>
+                <GInput
                   id="email-subject"
                   placeholder="Email subject"
                   value={emailSubject}
@@ -629,8 +630,8 @@ END:VCARD`
                 />
               </div>
               <div className="space-y-2">
-                <Label htmlFor="email-body" className={labelClass}>Message</Label>
-                <Textarea
+                <GLabel htmlFor="email-body" className={labelClass}>Message</GLabel>
+                <GTextarea
                   id="email-body"
                   placeholder="Message..."
                   value={emailBody}
@@ -638,13 +639,13 @@ END:VCARD`
                   className="min-h-[60px] border-2 border-primary/50 focus:border-primary text-sm"
                 />
               </div>
-            </TabsContent>
+            </GTabsContent>
 
             {/* SMS QR */}
-            <TabsContent value="sms" className="space-y-2 mt-3">
+            <GTabsContent value="sms" className="space-y-2 mt-3">
               <div className="space-y-2">
-                <Label htmlFor="sms-phone" className={labelClass}>Phone Number *</Label>
-                <Input
+                <GLabel htmlFor="sms-phone" className={labelClass}>Phone Number *</GLabel>
+                <GInput
                   id="sms-phone"
                   placeholder="+1234567890"
                   value={smsPhone}
@@ -653,8 +654,8 @@ END:VCARD`
                 />
               </div>
               <div className="space-y-2">
-                <Label htmlFor="sms-message" className={labelClass}>Message</Label>
-                <Textarea
+                <GLabel htmlFor="sms-message" className={labelClass}>Message</GLabel>
+                <GTextarea
                   id="sms-message"
                   placeholder="SMS message..."
                   value={smsMessage}
@@ -662,13 +663,13 @@ END:VCARD`
                   className="min-h-[60px] border-2 border-primary/50 focus:border-primary text-sm"
                 />
               </div>
-            </TabsContent>
+            </GTabsContent>
 
             {/* WhatsApp QR */}
-            <TabsContent value="whatsapp" className="space-y-2 mt-3">
+            <GTabsContent value="whatsapp" className="space-y-2 mt-3">
               <div className="space-y-2">
-                <Label htmlFor="whatsapp-phone" className={labelClass}>Phone Number *</Label>
-                <Input
+                <GLabel htmlFor="whatsapp-phone" className={labelClass}>Phone Number *</GLabel>
+                <GInput
                   id="whatsapp-phone"
                   placeholder="+1234567890"
                   value={smsPhone}
@@ -677,8 +678,8 @@ END:VCARD`
                 />
               </div>
               <div className="space-y-2">
-                <Label htmlFor="whatsapp-message" className={labelClass}>Message</Label>
-                <Textarea
+                <GLabel htmlFor="whatsapp-message" className={labelClass}>Message</GLabel>
+                <GTextarea
                   id="whatsapp-message"
                   placeholder="Hello! I'd like to..."
                   value={smsMessage}
@@ -686,26 +687,26 @@ END:VCARD`
                   className="min-h-[60px] border-2 border-primary/50 focus:border-primary text-sm"
                 />
               </div>
-            </TabsContent>
+            </GTabsContent>
 
             {/* Phone QR */}
-            <TabsContent value="phone" className="space-y-2 mt-3">
-              <Label htmlFor="phone-number" className={labelClass}>Phone Number *</Label>
-              <Input
+            <GTabsContent value="phone" className="space-y-2 mt-3">
+              <GLabel htmlFor="phone-number" className={labelClass}>Phone Number *</GLabel>
+              <GInput
                 id="phone-number"
                 placeholder="+1234567890"
                 value={phoneNumber}
                 onChange={(e) => setPhoneNumber(e.target.value)}
                 className={inputClass}
               />
-            </TabsContent>
+            </GTabsContent>
 
             {/* Location QR */}
-            <TabsContent value="location" className="space-y-2 mt-3">
+            <GTabsContent value="location" className="space-y-2 mt-3">
               <div className="grid grid-cols-2 gap-2">
                 <div className="space-y-2">
-                  <Label htmlFor="location-lat" className={labelClass}>Latitude *</Label>
-                  <Input
+                  <GLabel htmlFor="location-lat" className={labelClass}>Latitude *</GLabel>
+                  <GInput
                     id="location-lat"
                     placeholder="40.7128"
                     value={locationLat}
@@ -714,8 +715,8 @@ END:VCARD`
                   />
                 </div>
                 <div className="space-y-2">
-                  <Label htmlFor="location-lng" className={labelClass}>Longitude *</Label>
-                  <Input
+                  <GLabel htmlFor="location-lng" className={labelClass}>Longitude *</GLabel>
+                  <GInput
                     id="location-lng"
                     placeholder="-74.0060"
                     value={locationLng}
@@ -724,10 +725,10 @@ END:VCARD`
                   />
                 </div>
               </div>
-            </TabsContent>
+            </GTabsContent>
 
             {/* Bulk QR Generation */}
-            <TabsContent value="bulk" className="space-y-3 mt-3">
+            <GTabsContent value="bulk" className="space-y-3 mt-3">
               <div className="p-3 rounded-lg bg-primary/10 border border-primary/30">
                 <p className="text-xs font-semibold text-foreground">
                   🚀 Generate hundreds of QR codes at once! Enter URLs/text (one per line) or upload CSV.
@@ -741,8 +742,8 @@ END:VCARD`
               </div>
 
               <div className="space-y-2">
-                <Label htmlFor="bulk-text" className="text-sm font-medium">Enter URLs/Text (one per line)</Label>
-                <Textarea
+                <GLabel htmlFor="bulk-text" className="text-sm font-medium">Enter URLs/Text (one per line)</GLabel>
+                <GTextarea
                   id="bulk-text"
                   placeholder={"https://example.com/page1\nhttps://example.com/page2\nhttps://example.com/page3"}
                   value={bulkText}
@@ -764,8 +765,8 @@ END:VCARD`
               </div>
 
               <div className="space-y-2">
-                <Label htmlFor="csv-upload" className="text-sm font-medium">Upload CSV File</Label>
-                <Input
+                <GLabel htmlFor="csv-upload" className="text-sm font-medium">Upload CSV File</GLabel>
+                <GInput
                   id="csv-upload"
                   type="file"
                   accept=".csv,.txt"
@@ -778,12 +779,12 @@ END:VCARD`
                 </p>
               </div>
 
-            </TabsContent>
-          </Tabs>
-        </Card>
+            </GTabsContent>
+          </GTabs>
+        </GCard>
 
         {/* Customization Options */}
-        <Card className="p-4 border-2 border-primary/20">
+        <GCard className="p-4 border-2 border-primary/20">
           <h3 className="font-semibold text-sm mb-3 flex items-center gap-2 text-primary">
             <Zap className="h-4 w-4" />
             Customize (Premium - FREE!)
@@ -793,15 +794,15 @@ END:VCARD`
             {/* Colors */}
             <div className="grid grid-cols-2 gap-3">
               <div className="space-y-2">
-                <Label className={labelClass}>Foreground</Label>
+                <GLabel className={labelClass}>Foreground</GLabel>
                 <div className="flex gap-2">
-                  <Input
+                  <GInput
                     type="color"
                     value={isValidHexColor(foregroundColor) ? foregroundColor : "#000000"}
                     onChange={(e) => setForegroundColor(e.target.value)}
                     className="h-9 w-12 p-1 border-2 border-primary/50"
                   />
-                  <Input
+                  <GInput
                     value={foregroundColor}
                     onChange={(e) => handleColorChange(e.target.value, setForegroundColor)}
                     className="h-9 flex-1 border-2 border-primary/50 text-xs"
@@ -812,16 +813,16 @@ END:VCARD`
               </div>
 
               <div className="space-y-2">
-                <Label className={labelClass}>Background</Label>
+                <GLabel className={labelClass}>Background</GLabel>
                 <div className="flex gap-2">
-                  <Input
+                  <GInput
                     type="color"
                     value={isValidHexColor(backgroundColor) ? backgroundColor : "#ffffff"}
                     onChange={(e) => setBackgroundColor(e.target.value)}
                     className="h-9 w-12 p-1 border-2 border-primary/50"
                     disabled={transparentBg}
                   />
-                  <Input
+                  <GInput
                     value={backgroundColor}
                     onChange={(e) => handleColorChange(e.target.value, setBackgroundColor)}
                     className="h-9 flex-1 border-2 border-primary/50 text-xs"
@@ -834,19 +835,19 @@ END:VCARD`
             </div>
 
             <div className="flex items-center gap-3 p-2 rounded-lg bg-background border border-primary/30">
-              <Switch
+              <GSwitch
                 id="transparent-bg"
                 checked={transparentBg}
                 onCheckedChange={setTransparentBg}
                 className="data-[state=checked]:bg-primary"
               />
-              <Label htmlFor="transparent-bg" className="text-sm cursor-pointer font-medium">Transparent Background</Label>
+              <GLabel htmlFor="transparent-bg" className="text-sm cursor-pointer font-medium">Transparent Background</GLabel>
             </div>
 
             {/* Size & Margin */}
             <div className="space-y-2 p-3 rounded-lg bg-background border border-primary/20">
-              <Label className="text-sm font-medium">Size: {size[0]}px</Label>
-              <Slider
+              <GLabel className="text-sm font-medium">Size: {size[0]}px</GLabel>
+              <GSlider
                 min={200}
                 max={800}
                 step={50}
@@ -857,8 +858,8 @@ END:VCARD`
             </div>
 
             <div className="space-y-2 p-3 rounded-lg bg-background border border-primary/20">
-              <Label className="text-sm font-medium">Margin: {margin[0]}</Label>
-              <Slider
+              <GLabel className="text-sm font-medium">Margin: {margin[0]}</GLabel>
+              <GSlider
                 min={0}
                 max={6}
                 step={1}
@@ -870,18 +871,18 @@ END:VCARD`
 
             {/* Error Correction */}
             <div className="space-y-2">
-              <Label className={labelClass}>Error Correction</Label>
-              <Select value={errorCorrection} onValueChange={(v) => setErrorCorrection(v as ErrorCorrectionLevel)}>
-                <SelectTrigger className="h-9 border-2 border-primary/50">
-                  <SelectValue />
-                </SelectTrigger>
-                <SelectContent>
-                  <SelectItem value="L">Low (7%)</SelectItem>
-                  <SelectItem value="M">Medium (15%) {!logoImage && "✓"}</SelectItem>
-                  <SelectItem value="Q">Quartile (25%) {logoImage && "✓ Best for logos"}</SelectItem>
-                  <SelectItem value="H">High (30%)</SelectItem>
-                </SelectContent>
-              </Select>
+              <GLabel className={labelClass}>Error Correction</GLabel>
+              <GSelect value={errorCorrection} onValueChange={(v) => setErrorCorrection(v as ErrorCorrectionLevel)}>
+                <GSelectTrigger className="h-9 border-2 border-primary/50">
+                  <GSelectValue />
+                </GSelectTrigger>
+                <GSelectContent>
+                  <GSelectItem value="L">Low (7%)</GSelectItem>
+                  <GSelectItem value="M">Medium (15%) {!logoImage && "✓"}</GSelectItem>
+                  <GSelectItem value="Q">Quartile (25%) {logoImage && "✓ Best for logos"}</GSelectItem>
+                  <GSelectItem value="H">High (30%)</GSelectItem>
+                </GSelectContent>
+              </GSelect>
               {logoImage && errorCorrection === "L" && (
                 <p className="text-xs text-foreground">
                   ⚠️ Use Q or H error correction for better logo visibility
@@ -891,11 +892,11 @@ END:VCARD`
 
             {/* Logo Upload */}
             <div className="space-y-2">
-              <Label className={labelClass}>
+              <GLabel className={labelClass}>
                 <ImageIcon className="h-3 w-3 inline mr-1" />
                 Add Logo (Premium - FREE!)
-              </Label>
-              <Input
+              </GLabel>
+              <GInput
                 type="file"
                 accept="image/*"
                 onChange={handleLogoUpload}
@@ -905,7 +906,7 @@ END:VCARD`
               {logoImage && (
                 <div className="space-y-2 p-3 rounded-lg bg-background border border-primary/20 mt-2">
                   <div className="flex items-center justify-between">
-                    <Label className="text-sm font-medium">Logo Size: {logoSize[0]}%</Label>
+                    <GLabel className="text-sm font-medium">Logo Size: {logoSize[0]}%</GLabel>
                     <GButton
                       variant="ghost"
                       size="sm"
@@ -920,7 +921,7 @@ END:VCARD`
                       Remove
                     </GButton>
                   </div>
-                  <Slider
+                  <GSlider
                     min={10}
                     max={35}
                     step={1}
@@ -940,20 +941,20 @@ END:VCARD`
 
             {/* Download Format */}
             <div className="space-y-2">
-              <Label className={labelClass}>Download Format</Label>
-              <Select value={downloadFormat} onValueChange={(v) => setDownloadFormat(v as DownloadFormat)}>
-                <SelectTrigger className="h-9 border-2 border-primary/50">
-                  <SelectValue />
-                </SelectTrigger>
-                <SelectContent>
-                  <SelectItem value="png">PNG (Recommended)</SelectItem>
-                  <SelectItem value="svg">SVG (Premium - FREE!)</SelectItem>
-                  <SelectItem value="jpg">JPG</SelectItem>
-                </SelectContent>
-              </Select>
+              <GLabel className={labelClass}>Download Format</GLabel>
+              <GSelect value={downloadFormat} onValueChange={(v) => setDownloadFormat(v as DownloadFormat)}>
+                <GSelectTrigger className="h-9 border-2 border-primary/50">
+                  <GSelectValue />
+                </GSelectTrigger>
+                <GSelectContent>
+                  <GSelectItem value="png">PNG (Recommended)</GSelectItem>
+                  <GSelectItem value="svg">SVG (Premium - FREE!)</GSelectItem>
+                  <GSelectItem value="jpg">JPG</GSelectItem>
+                </GSelectContent>
+              </GSelect>
             </div>
 
-            {/* Bulk Generation Button */}
+            {/* Bulk Generation GButton */}
             {qrType === "bulk" && (
               <div className="pt-3 border-t border-border">
                 <GButton
@@ -997,12 +998,12 @@ END:VCARD`
               </div>
             )}
           </div>
-        </Card>
+        </GCard>
       </div>
 
       {/* RIGHT COLUMN - QR OUTPUT */}
       <div className="space-y-4">
-        <Card className="p-6 border-2 border-primary/20 sticky top-4 max-h-[calc(100vh-100px)] overflow-y-auto">
+        <GCard className="p-6 border-2 border-primary/20 sticky top-4 max-h-[calc(100vh-100px)] overflow-y-auto">
           <div className="flex items-center justify-between mb-4">
             <h3 className="font-semibold text-sm flex items-center gap-2 text-primary">
               <QrCode className="h-4 w-4" />
@@ -1128,7 +1129,7 @@ END:VCARD`
               </div>
             </div>
           </div>
-        </Card>
+        </GCard>
       </div>
     </div>
   )

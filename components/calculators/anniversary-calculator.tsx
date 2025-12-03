@@ -1,10 +1,11 @@
 "use client"
 
 import { useState, useEffect } from "react"
-import { GButton as Button } from "@/components/globalcomponents/gbutton"
-import { Input } from "@/components/ui/input"
-import { Label } from "@/components/ui/label"
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
+import { GButton } from "@/ui/gbutton"
+import { GInput } from "@/ui/ginput"
+import { GLabel } from "@/ui/glabel"
+import { GCard, GCardContent, GCardDescription, GCardHeader, GCardTitle } from "@/ui/gcard"
+
 import { Heart, Copy, Check } from "lucide-react"
 
 
@@ -137,30 +138,30 @@ export function AnniversaryCalculator() {
 
   return (
     <div className="w-full max-w-4xl mx-auto space-y-4 sm:space-y-6">
-      {/* Main Calculator Card */}
-      <Card className="border-2 border-white/20 bg-gradient-to-br from-white/10 to-white/5 backdrop-blur-xl shadow-2xl">
-        <CardHeader className="text-center space-y-3 sm:space-y-4 p-4 sm:p-6">
+      {/* Main Calculator GCard */}
+      <GCard className="border-2 border-white/20 bg-gradient-to-br from-white/10 to-white/5 backdrop-blur-xl shadow-2xl">
+        <GCardHeader className="text-center space-y-3 sm:space-y-4 p-4 sm:p-6">
           <div className="flex flex-col sm:flex-row items-center justify-center gap-3 mb-4">
             <div className="h-10 w-10 sm:h-12 sm:w-12 rounded-xl bg-gradient-to-br from-destructive to-primary flex items-center justify-center shadow-lg">
               <Heart className="h-5 w-5 sm:h-6 sm:w-6 text-white fill-white" />
             </div>
             <div className="text-center sm:text-left">
-              <CardTitle className="text-xl sm:text-2xl font-bold text-white">
+              <GCardTitle className="text-xl sm:text-2xl font-bold text-white">
                 Anniversary Calculator
-              </CardTitle>
-              <CardDescription className="text-white/80 text-sm sm:text-base">
+              </GCardTitle>
+              <GCardDescription className="text-white/80 text-sm sm:text-base">
                 Calculate how long you've been together and when your next anniversary is
-              </CardDescription>
+              </GCardDescription>
             </div>
           </div>
-        </CardHeader>
-        <CardContent className="space-y-4 sm:space-y-6 p-4 sm:p-6">
+        </GCardHeader>
+        <GCardContent className="space-y-4 sm:space-y-6 p-4 sm:p-6">
           <div className="space-y-4">
             <div className="space-y-2">
-              <Label htmlFor="startDate" className="text-sm font-medium text-white">
+              <GLabel htmlFor="startDate" className="text-sm font-medium text-white">
                 Anniversary Start Date
-              </Label>
-              <Input
+              </GLabel>
+              <GInput
                 id="startDate"
                 type="date"
                 value={startDate}
@@ -170,7 +171,7 @@ export function AnniversaryCalculator() {
               />
             </div>
 
-            <Button
+            <GButton
               onClick={calculateAnniversary}
               disabled={!startDate || isCalculating}
               isLoading={isCalculating}
@@ -188,7 +189,7 @@ export function AnniversaryCalculator() {
                   <span className="sm:hidden">Calculate</span>
                 </>
               )}
-            </Button>
+            </GButton>
           </div>
 
           {result && (
@@ -263,7 +264,7 @@ export function AnniversaryCalculator() {
               </div>
 
               <div className="flex flex-col sm:flex-row gap-2 sm:gap-3">
-                <Button
+                <GButton
                   onClick={copyResult}
                   variant="outline"
                   className="flex-1 h-10 sm:h-11 text-sm font-medium bg-white/10 border-white/20 text-white hover:bg-white/20 transition-all"
@@ -281,19 +282,19 @@ export function AnniversaryCalculator() {
                       <span className="sm:hidden">Copy</span>
                     </>
                   )}
-                </Button>
-                <Button
+                </GButton>
+                <GButton
                   onClick={shareResult}
                   className="flex-1 h-10 sm:h-11 text-sm font-medium bg-gradient-to-r from-destructive to-primary hover:from-destructive/90 hover:to-primary/90 text-white shadow-lg hover:shadow-xl transition-all duration-300"
                 >
                   <span className="hidden sm:inline">Share Result</span>
                   <span className="sm:hidden">Share</span>
-                </Button>
+                </GButton>
               </div>
             </div>
           )}
-        </CardContent>
-      </Card>
+        </GCardContent>
+      </GCard>
     </div>
   )
 }

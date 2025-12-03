@@ -1,13 +1,14 @@
 "use client"
 
 import { useState, useEffect } from "react"
-import { GButton } from "@/components/globalcomponents/gbutton"
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
-import { Input } from "@/components/ui/input"
-import { Label } from "@/components/ui/label"
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
-import { Badge } from "@/components/ui/badge"
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
+import { GButton } from "@/ui/gbutton"
+import { GCard, GCardContent, GCardHeader, GCardTitle } from "@/ui/gcard"
+import { GInput } from "@/ui/ginput"
+import { GLabel } from "@/ui/glabel"
+import { GSelect, GSelectContent, GSelectItem, GSelectTrigger, GSelectValue } from "@/ui/gselect"
+import { GBadge } from "@/ui/gbadge"
+import { GTabs, GTabsContent, GTabsList, GTabsTrigger } from "@/ui/gtabs"
+
 import {
   Calculator,
   DollarSign,
@@ -162,7 +163,7 @@ export default function MortgageCalculator() {
     const hoa = parseFloat(hoaFee) || 0
     const other = parseFloat(otherCosts) || 0
 
-    // Input validation
+    // GInput validation
     if (price <= 0) {
       alert("Home price must be greater than $0")
       return
@@ -405,21 +406,21 @@ Loan Term: ${result.loanTerm.toFixed(1)} years`
   return (
     <div className="space-y-6">
       {/* Main Calculator */}
-      <Card>
-        <CardHeader className="pb-8">
-          <CardTitle className="flex items-center gap-2">
+      <GCard>
+        <GCardHeader className="pb-8">
+          <GCardTitle className="flex items-center gap-2">
             <Calculator className="h-5 w-5 text-foreground" />
             Advanced Mortgage Calculator
-          </CardTitle>
-        </CardHeader>
-        <CardContent className="space-y-6">
+          </GCardTitle>
+        </GCardHeader>
+        <GCardContent className="space-y-6">
           {/* Basic Loan Information */}
           <div>
-            <Label className="text-lg font-semibold mb-4 block">Basic Loan Information</Label>
+            <GLabel className="text-lg font-semibold mb-4 block">Basic Loan Information</GLabel>
             <div className="grid md:grid-cols-2 gap-4">
               <div className="space-y-2">
-                <Label htmlFor="homePrice">Home Price</Label>
-                <Input
+                <GLabel htmlFor="homePrice">Home Price</GLabel>
+                <GInput
                   id="homePrice"
                   type="number"
                   placeholder="400000"
@@ -428,8 +429,8 @@ Loan Term: ${result.loanTerm.toFixed(1)} years`
                 />
               </div>
               <div className="space-y-2">
-                <Label htmlFor="downPayment">Down Payment (%)</Label>
-                <Input
+                <GLabel htmlFor="downPayment">Down Payment (%)</GLabel>
+                <GInput
                   id="downPayment"
                   type="number"
                   placeholder="20"
@@ -442,11 +443,11 @@ Loan Term: ${result.loanTerm.toFixed(1)} years`
 
           {/* Loan Terms */}
           <div>
-            <Label className="text-lg font-semibold mb-4 block">Loan Terms</Label>
+            <GLabel className="text-lg font-semibold mb-4 block">Loan Terms</GLabel>
             <div className="grid md:grid-cols-3 gap-4">
               <div className="space-y-2">
-                <Label htmlFor="loanTerm">Loan Term (years)</Label>
-                <Input
+                <GLabel htmlFor="loanTerm">Loan Term (years)</GLabel>
+                <GInput
                   id="loanTerm"
                   type="number"
                   placeholder="30"
@@ -455,8 +456,8 @@ Loan Term: ${result.loanTerm.toFixed(1)} years`
                 />
               </div>
               <div className="space-y-2">
-                <Label htmlFor="interestRate">Interest Rate (%)</Label>
-                <Input
+                <GLabel htmlFor="interestRate">Interest Rate (%)</GLabel>
+                <GInput
                   id="interestRate"
                   type="number"
                   placeholder="6.337"
@@ -465,8 +466,8 @@ Loan Term: ${result.loanTerm.toFixed(1)} years`
                 />
               </div>
               <div className="space-y-2">
-                <Label htmlFor="startDate">Start Date</Label>
-                <Input
+                <GLabel htmlFor="startDate">Start Date</GLabel>
+                <GInput
                   id="startDate"
                   type="date"
                   value={startDate}
@@ -478,11 +479,11 @@ Loan Term: ${result.loanTerm.toFixed(1)} years`
 
           {/* Additional Costs */}
           <div>
-            <Label className="text-lg font-semibold mb-4 block">Annual Tax & Costs</Label>
+            <GLabel className="text-lg font-semibold mb-4 block">Annual Tax & Costs</GLabel>
             <div className="grid md:grid-cols-2 gap-4">
               <div className="space-y-2">
-                <Label htmlFor="propertyTax">Property Taxes (%)</Label>
-                <Input
+                <GLabel htmlFor="propertyTax">Property Taxes (%)</GLabel>
+                <GInput
                   id="propertyTax"
                   type="number"
                   placeholder="1.2"
@@ -491,8 +492,8 @@ Loan Term: ${result.loanTerm.toFixed(1)} years`
                 />
               </div>
               <div className="space-y-2">
-                <Label htmlFor="homeInsurance">Home Insurance ($)</Label>
-                <Input
+                <GLabel htmlFor="homeInsurance">Home Insurance ($)</GLabel>
+                <GInput
                   id="homeInsurance"
                   type="number"
                   placeholder="1500"
@@ -501,8 +502,8 @@ Loan Term: ${result.loanTerm.toFixed(1)} years`
                 />
               </div>
               <div className="space-y-2">
-                <Label htmlFor="pmiInsurance">PMI Insurance ($)</Label>
-                <Input
+                <GLabel htmlFor="pmiInsurance">PMI Insurance ($)</GLabel>
+                <GInput
                   id="pmiInsurance"
                   type="number"
                   placeholder="0"
@@ -511,8 +512,8 @@ Loan Term: ${result.loanTerm.toFixed(1)} years`
                 />
               </div>
               <div className="space-y-2">
-                <Label htmlFor="hoaFee">HOA Fee ($)</Label>
-                <Input
+                <GLabel htmlFor="hoaFee">HOA Fee ($)</GLabel>
+                <GInput
                   id="hoaFee"
                   type="number"
                   placeholder="0"
@@ -521,8 +522,8 @@ Loan Term: ${result.loanTerm.toFixed(1)} years`
                 />
               </div>
               <div className="space-y-2">
-                <Label htmlFor="otherCosts">Other Costs ($)</Label>
-                <Input
+                <GLabel htmlFor="otherCosts">Other Costs ($)</GLabel>
+                <GInput
                   id="otherCosts"
                   type="number"
                   placeholder="4000"
@@ -542,30 +543,30 @@ Loan Term: ${result.loanTerm.toFixed(1)} years`
               Clear All
             </GButton>
           </div>
-        </CardContent>
-      </Card>
+        </GCardContent>
+      </GCard>
 
       {/* Results Section */}
       {result && (
         <div className="space-y-6">
           {/* Main Results */}
-          <Card>
-            <CardHeader>
-              <CardTitle className="flex items-center gap-2">
+          <GCard>
+            <GCardHeader>
+              <GCardTitle className="flex items-center gap-2">
                 <DollarSign className="h-5 w-5 text-heading-accent" />
                 Mortgage Analysis Results
-              </CardTitle>
-            </CardHeader>
-            <CardContent className="space-y-4">
+              </GCardTitle>
+            </GCardHeader>
+            <GCardContent className="space-y-4">
               <div className="grid md:grid-cols-2 gap-4">
                 <div className="space-y-2">
-                  <Label className="text-sm font-medium">Monthly Payment</Label>
+                  <GLabel className="text-sm font-medium">Monthly Payment</GLabel>
                   <div className="text-3xl font-bold text-heading-accent">
                     ${result.monthlyPayment.toFixed(2)}
                   </div>
                 </div>
                 <div className="space-y-2">
-                  <Label className="text-sm font-medium">Total Out-of-Pocket</Label>
+                  <GLabel className="text-sm font-medium">Total Out-of-Pocket</GLabel>
                   <div className="text-3xl font-bold text-foreground">
                     ${result.totalMonthlyPayment.toFixed(2)}
                   </div>
@@ -597,18 +598,18 @@ Loan Term: ${result.loanTerm.toFixed(1)} years`
                   Copy Results
                 </GButton>
               </div>
-            </CardContent>
-          </Card>
+            </GCardContent>
+          </GCard>
 
           {/* Payment Breakdown */}
-          <Card>
-            <CardHeader>
-              <CardTitle className="flex items-center gap-2">
+          <GCard>
+            <GCardHeader>
+              <GCardTitle className="flex items-center gap-2">
                 <PieChart className="h-5 w-5 text-foreground" />
                 Payment Breakdown
-              </CardTitle>
-            </CardHeader>
-            <CardContent>
+              </GCardTitle>
+            </GCardHeader>
+            <GCardContent>
               <div className="grid md:grid-cols-2 gap-6">
                 <div className="space-y-4">
                   <div className="p-4 bg-muted rounded-lg border border-secondary-accent/30">
@@ -635,18 +636,18 @@ Loan Term: ${result.loanTerm.toFixed(1)} years`
                   </div>
                 </div>
               </div>
-            </CardContent>
-          </Card>
+            </GCardContent>
+          </GCard>
 
           {/* Amortization Schedule */}
-          <Card>
-            <CardHeader>
-              <CardTitle className="flex items-center gap-2">
+          <GCard>
+            <GCardHeader>
+              <GCardTitle className="flex items-center gap-2">
                 <BarChart3 className="h-5 w-5 text-heading-accent" />
                 Amortization Schedule
-              </CardTitle>
-            </CardHeader>
-            <CardContent>
+              </GCardTitle>
+            </GCardHeader>
+            <GCardContent>
               <div className="overflow-x-auto">
                 <table className="w-full text-sm">
                   <thead>
@@ -671,18 +672,18 @@ Loan Term: ${result.loanTerm.toFixed(1)} years`
                   </tbody>
                 </table>
               </div>
-            </CardContent>
-          </Card>
+            </GCardContent>
+          </GCard>
 
           {/* Scenarios */}
-          <Card>
-            <CardHeader>
-              <CardTitle className="flex items-center gap-2">
+          <GCard>
+            <GCardHeader>
+              <GCardTitle className="flex items-center gap-2">
                 <TrendingUp className="h-5 w-5 text-heading-accent" />
                 Payment Scenarios
-              </CardTitle>
-            </CardHeader>
-            <CardContent>
+              </GCardTitle>
+            </GCardHeader>
+            <GCardContent>
               <div className="grid md:grid-cols-2 gap-4">
                 {result.scenarios.map((scenario, index) => (
                   <div key={index} className="p-4 bg-card rounded-lg border border-border">
@@ -700,18 +701,18 @@ Loan Term: ${result.loanTerm.toFixed(1)} years`
                   </div>
                 ))}
               </div>
-            </CardContent>
-          </Card>
+            </GCardContent>
+          </GCard>
 
           {/* Recommendations */}
-          <Card>
-            <CardHeader>
-              <CardTitle className="flex items-center gap-2">
+          <GCard>
+            <GCardHeader>
+              <GCardTitle className="flex items-center gap-2">
                 <Target className="h-5 w-5 text-heading-accent" />
                 Personalized Recommendations
-              </CardTitle>
-            </CardHeader>
-            <CardContent>
+              </GCardTitle>
+            </GCardHeader>
+            <GCardContent>
               <div className="grid md:grid-cols-3 gap-6">
                 <div>
                   <h4 className="font-semibold mb-3 text-foreground">Mortgage Optimization</h4>
@@ -747,21 +748,21 @@ Loan Term: ${result.loanTerm.toFixed(1)} years`
                   </ul>
                 </div>
               </div>
-            </CardContent>
-          </Card>
+            </GCardContent>
+          </GCard>
         </div>
       )}
 
       {/* History Section */}
       {history.length > 0 && (
-        <Card>
-          <CardHeader>
-            <CardTitle className="flex items-center gap-2">
+        <GCard>
+          <GCardHeader>
+            <GCardTitle className="flex items-center gap-2">
               <History className="h-5 w-5 text-muted-foreground" />
               Recent Calculations
-            </CardTitle>
-          </CardHeader>
-          <CardContent>
+            </GCardTitle>
+          </GCardHeader>
+          <GCardContent>
             <div className="space-y-2">
               {history.map((item, index) => (
                 <div key={index} className="flex items-center justify-between p-3 bg-muted rounded-lg">
@@ -783,19 +784,19 @@ Loan Term: ${result.loanTerm.toFixed(1)} years`
                 </div>
               ))}
             </div>
-          </CardContent>
-        </Card>
+          </GCardContent>
+        </GCard>
       )}
 
       {/* Information Section */}
-      <Card>
-        <CardHeader>
-          <CardTitle className="flex items-center gap-2">
+      <GCard>
+        <GCardHeader>
+          <GCardTitle className="flex items-center gap-2">
             <Info className="h-5 w-5 text-foreground" />
             Mortgage Calculator Features
-          </CardTitle>
-        </CardHeader>
-        <CardContent className="space-y-3">
+          </GCardTitle>
+        </GCardHeader>
+        <GCardContent className="space-y-3">
           <div className="p-4 bg-muted rounded-lg border border-accent/30">
             <div className="flex items-start gap-2">
               <Info className="h-4 w-4 text-foreground mt-0.5 flex-shrink-0" />
@@ -824,8 +825,8 @@ Loan Term: ${result.loanTerm.toFixed(1)} years`
               <strong>Cost Optimization:</strong> Strategies to reduce total mortgage costs and payoff time.
             </p>
           </div>
-        </CardContent>
-      </Card>
+        </GCardContent>
+      </GCard>
     </div>
   )
 }

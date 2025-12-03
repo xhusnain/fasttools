@@ -1,10 +1,11 @@
 "use client"
 
 import { useState, useEffect } from "react"
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
-import { GButton as Button } from "@/components/globalcomponents/gbutton"
-import { Label } from "@/components/ui/label"
-import { Input } from "@/components/ui/input"
+import { GCard, GCardContent, GCardDescription, GCardHeader, GCardTitle } from "@/ui/gcard"
+import { GButton } from "@/ui/gbutton"
+import { GLabel } from "@/ui/glabel"
+import { GInput } from "@/ui/ginput"
+
 import { Calculator, Copy, Check, Download, Share2, TrendingUp, PieChart, BarChart3, Calendar, Home, Car, CreditCard, GraduationCap, DollarSign, Percent, Clock, Target, AlertCircle, Info } from "lucide-react"
 import { LoadingSpinner } from "@/components/common/loading-spinner"
 
@@ -180,26 +181,26 @@ export function EMICalculator() {
 
   return (
     <div className="space-y-8">
-      {/* Main Calculator Card */}
-      <Card className="shadow-lg border-border hover:shadow-xl transition-all duration-300 bg-card">
-        <CardHeader>
-          <CardTitle className="flex items-center gap-3 text-2xl text-foreground">
+      {/* Main Calculator GCard */}
+      <GCard className="shadow-lg border-border hover:shadow-xl transition-all duration-300 bg-card">
+        <GCardHeader>
+          <GCardTitle className="flex items-center gap-3 text-2xl text-foreground">
             <div className="p-2 bg-primary/10 rounded-lg">
               <Calculator className="h-6 w-6 text-foreground" />
             </div>
             EMI Calculator for {loanTypes.find(lt => lt.id === loanType)?.label}
-          </CardTitle>
-          <CardDescription className="text-base text-muted-foreground">
+          </GCardTitle>
+          <GCardDescription className="text-base text-muted-foreground">
             Calculate your Equated Monthly Installment with detailed breakdown and amortization schedule
-          </CardDescription>
-        </CardHeader>
-        <CardContent className="space-y-6">
+          </GCardDescription>
+        </GCardHeader>
+        <GCardContent className="space-y-6">
           {/* Loan Type Selection */}
           <div className="space-y-3">
-            <Label className="text-base font-semibold flex items-center gap-2 text-heading-accent">
+            <GLabel className="text-base font-semibold flex items-center gap-2 text-heading-accent">
               <Target className="h-4 w-4 text-heading-accent" />
               Loan Type
-            </Label>
+            </GLabel>
             <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
               {loanTypes.map((type) => {
                 const Icon = type.icon
@@ -220,14 +221,14 @@ export function EMICalculator() {
             </div>
           </div>
 
-          {/* Input Fields */}
+          {/* GInput Fields */}
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
             <div className="space-y-3">
-              <Label htmlFor="loanAmount" className="text-sm sm:text-base font-semibold flex items-center gap-2 text-heading-accent">
+              <GLabel htmlFor="loanAmount" className="text-sm sm:text-base font-semibold flex items-center gap-2 text-heading-accent">
                 <DollarSign className="h-4 w-4 text-heading-accent" />
                 Loan Amount (₹)
-              </Label>
-              <Input
+              </GLabel>
+              <GInput
                 id="loanAmount"
                 type="number"
                 value={loanAmount}
@@ -241,11 +242,11 @@ export function EMICalculator() {
             </div>
 
             <div className="space-y-3">
-              <Label htmlFor="interestRate" className="text-sm sm:text-base font-semibold flex items-center gap-2 text-heading-accent">
+              <GLabel htmlFor="interestRate" className="text-sm sm:text-base font-semibold flex items-center gap-2 text-heading-accent">
                 <Percent className="h-4 w-4 text-heading-accent" />
                 Interest Rate (%)
-              </Label>
-              <Input
+              </GLabel>
+              <GInput
                 id="interestRate"
                 type="number"
                 step="0.1"
@@ -260,11 +261,11 @@ export function EMICalculator() {
             </div>
 
             <div className="space-y-3">
-              <Label htmlFor="loanTenure" className="text-sm sm:text-base font-semibold flex items-center gap-2 text-heading-accent">
+              <GLabel htmlFor="loanTenure" className="text-sm sm:text-base font-semibold flex items-center gap-2 text-heading-accent">
                 <Clock className="h-4 w-4 text-heading-accent" />
                 Loan Tenure (Years)
-              </Label>
-              <Input
+              </GLabel>
+              <GInput
                 id="loanTenure"
                 type="number"
                 value={loanTenure}
@@ -281,10 +282,10 @@ export function EMICalculator() {
           {/* EMI in Advance Option (for Car Loans) */}
           {loanType === "car" && (
             <div className="space-y-3">
-              <Label className="text-sm font-semibold flex items-center gap-2 text-heading-accent">
+              <GLabel className="text-sm font-semibold flex items-center gap-2 text-heading-accent">
                 <Info className="h-4 w-4 text-heading-accent" />
                 EMI Payment Mode
-              </Label>
+              </GLabel>
               <div className="flex gap-4">
                 <button
                   onClick={() => setEmiInAdvance(false)}
@@ -308,8 +309,8 @@ export function EMICalculator() {
             </div>
           )}
 
-          {/* Calculate Button */}
-          <Button
+          {/* Calculate GButton */}
+          <GButton
             onClick={calculateEMI}
             disabled={isCalculating || !loanAmount || !interestRate || !loanTenure}
             className="w-full h-12 sm:h-14 text-base sm:text-lg font-semibold shadow-lg hover:shadow-xl transition-all duration-300 bg-gradient-to-r from-primary to-primary/90 hover:from-primary/90 hover:to-primary text-white"
@@ -325,23 +326,23 @@ export function EMICalculator() {
                 Calculate EMI
               </>
             )}
-          </Button>
-        </CardContent>
-      </Card>
+          </GButton>
+        </GCardContent>
+      </GCard>
 
       {/* Results Section */}
       <div className="space-y-4">
         {/* Main Results */}
-        <Card className="shadow-lg border-border animate-fade-in-up bg-card">
-          <CardHeader className="pb-3">
-            <CardTitle className="flex items-center gap-2 text-lg text-foreground">
+        <GCard className="shadow-lg border-border animate-fade-in-up bg-card">
+          <GCardHeader className="pb-3">
+            <GCardTitle className="flex items-center gap-2 text-lg text-foreground">
               <div className="p-1.5 bg-primary/10 rounded-lg">
                 <TrendingUp className="h-4 w-4 text-foreground" />
               </div>
               EMI Calculation Results
-            </CardTitle>
-          </CardHeader>
-          <CardContent className="space-y-4">
+            </GCardTitle>
+          </GCardHeader>
+          <GCardContent className="space-y-4">
             {/* Main EMI Display */}
             <div className="text-center p-4 rounded-xl bg-card border border-primary/20">
               <div className="text-2xl font-bold text-foreground mb-1">
@@ -396,7 +397,7 @@ export function EMICalculator() {
 
             {/* Action Buttons */}
             <div className="flex flex-col sm:flex-row gap-2">
-              <Button
+              <GButton
                 onClick={copyResult}
                 className="flex-1 h-9 text-xs font-medium transition-all duration-300 border border-green-700 hover:bg-secondary text-heading-accent bg-card"
               >
@@ -411,47 +412,47 @@ export function EMICalculator() {
                     Copy Results
                   </>
                 )}
-              </Button>
-              <Button
+              </GButton>
+              <GButton
                 onClick={() => {/* Share functionality */ }}
                 className="flex-1 h-9 text-xs font-medium transition-all duration-300 border border-blue-700 hover:bg-secondary text-foreground bg-card"
               >
                 <Share2 className="mr-1.5 h-3.5 w-3.5" />
                 Share
-              </Button>
+              </GButton>
             </div>
-          </CardContent>
-        </Card>
+          </GCardContent>
+        </GCard>
 
         {/* Amortization Schedule */}
-        <Card className="shadow-lg border-border bg-card">
-          <CardHeader className="pb-3">
-            <CardTitle className="flex items-center gap-2 text-lg text-foreground">
+        <GCard className="shadow-lg border-border bg-card">
+          <GCardHeader className="pb-3">
+            <GCardTitle className="flex items-center gap-2 text-lg text-foreground">
               <div className="p-1.5 bg-primary/10 rounded-lg">
                 <BarChart3 className="h-4 w-4 text-foreground" />
               </div>
               Payment Schedule
-            </CardTitle>
+            </GCardTitle>
             <div className="flex gap-2 mt-2">
-              <Button
+              <GButton
                 onClick={() => setShowYearlyView(true)}
                 variant={showYearlyView ? "default" : "outline"}
                 size="sm"
                 className="h-8 text-xs"
               >
                 Yearly View
-              </Button>
-              <Button
+              </GButton>
+              <GButton
                 onClick={() => setShowYearlyView(false)}
                 variant={!showYearlyView ? "default" : "outline"}
                 size="sm"
                 className="h-8 text-xs"
               >
                 Monthly View
-              </Button>
+              </GButton>
             </div>
-          </CardHeader>
-          <CardContent>
+          </GCardHeader>
+          <GCardContent>
             {/* Chart Section */}
             <div className="mb-4">
               <h3 className="text-sm font-semibold mb-3 flex items-center gap-1.5 text-heading-accent">
@@ -649,8 +650,8 @@ export function EMICalculator() {
                 </table>
               </div>
             )}
-          </CardContent>
-        </Card>
+          </GCardContent>
+        </GCard>
       </div>
     </div>
   )

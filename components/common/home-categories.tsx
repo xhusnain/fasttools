@@ -1,6 +1,7 @@
 import Link from "next/link"
-import { GButton } from "@/components/globalcomponents/gbutton"
-import { GHeader } from "@/components/globalcomponents/gheader"
+import { GButton } from "@/ui/gbutton"
+import { GHeader } from "@/ui/gheader"
+
 import { ArrowRight, Award } from "lucide-react"
 
 interface Category {

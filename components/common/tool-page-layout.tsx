@@ -1,5 +1,6 @@
 import Link from "next/link"
-import { GHeader } from "@/components/globalcomponents/gheader"
+import { GHeader } from "@/ui/gheader"
+
 import { AdSpace } from "@/components/dev-tools/ad-space"
 import { Breadcrumbs } from "@/components/common/breadcrumbs"
 import { AdSenseComplianceChecker } from "@/components/dev-tools/AdSenseComplianceChecker"

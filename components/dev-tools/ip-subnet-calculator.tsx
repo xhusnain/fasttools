@@ -2,11 +2,12 @@
 
 import { useState, useEffect, useRef } from "react"
 import { useRouter, useSearchParams, usePathname } from "next/navigation"
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
-import { GButton as Button } from "@/components/globalcomponents/gbutton"
-import { Label } from "@/components/ui/label"
-import { Input } from "@/components/ui/input"
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
+import { GCard, GCardContent, GCardDescription, GCardHeader, GCardTitle } from "@/ui/gcard"
+import { GButton } from "@/ui/gbutton"
+import { GLabel } from "@/ui/glabel"
+import { GInput } from "@/ui/ginput"
+import { GSelect, GSelectContent, GSelectItem, GSelectTrigger, GSelectValue } from "@/ui/gselect"
+
 import {
   Calculator,
   Copy,
@@ -469,25 +470,25 @@ export function IPSubnetCalculator({
 
   return (
     <div className="space-y-6">
-      {/* Main Calculator Card */}
-      <Card className="shadow-lg border-border hover:shadow-xl transition-all duration-300 bg-card">
-        <CardHeader className="pb-3 px-3 sm:px-6">
-          <CardTitle className="flex items-center gap-1.5 text-base">
+      {/* Main Calculator GCard */}
+      <GCard className="shadow-lg border-border hover:shadow-xl transition-all duration-300 bg-card">
+        <GCardHeader className="pb-3 px-3 sm:px-6">
+          <GCardTitle className="flex items-center gap-1.5 text-base">
             <div className="p-1 bg-primary/10 rounded">
               <Network className="h-3.5 w-3.5 text-foreground" />
             </div>
             IP Subnet Calculator
-          </CardTitle>
-          <CardDescription className="text-xs text-muted-foreground">
+          </GCardTitle>
+          <GCardDescription className="text-xs text-muted-foreground">
             Calculate IPv4 and IPv6 subnets with CIDR notation support.
-          </CardDescription>
-        </CardHeader>
-        <CardContent className="space-y-6 px-3 sm:px-6">
+          </GCardDescription>
+        </GCardHeader>
+        <GCardContent className="space-y-6 px-3 sm:px-6">
           {/* IP Version Selection */}
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
             <div className="space-y-2">
-              <Label className="text-[11px] font-medium text-heading-accent">IP Version</Label>
-              <Select value={ipVersion} onValueChange={(value: IPVersion) => {
+              <GLabel className="text-[11px] font-medium text-heading-accent">IP Version</GLabel>
+              <GSelect value={ipVersion} onValueChange={(value: IPVersion) => {
                 setIPVersion(value)
                 setHasUserInteracted(true)
                 // Clear validation errors when switching IP versions
@@ -500,42 +501,42 @@ export function IPSubnetCalculator({
                 setPrefixLength("")
                 setResult(null)
               }}>
-                <SelectTrigger className="h-8 text-xs border-border bg-background text-foreground">
-                  <SelectValue />
-                </SelectTrigger>
-                <SelectContent>
-                  <SelectItem value="ipv4">IPv4 (32-bit)</SelectItem>
-                  <SelectItem value="ipv6">IPv6 (128-bit)</SelectItem>
-                </SelectContent>
-              </Select>
+                <GSelectTrigger className="h-8 text-xs border-border bg-background text-foreground">
+                  <GSelectValue />
+                </GSelectTrigger>
+                <GSelectContent>
+                  <GSelectItem value="ipv4">IPv4 (32-bit)</GSelectItem>
+                  <GSelectItem value="ipv6">IPv6 (128-bit)</GSelectItem>
+                </GSelectContent>
+              </GSelect>
             </div>
             <div className="space-y-2">
-              <Label className="text-[11px] font-medium text-heading-accent">Calculation Type</Label>
-              <Select value={calculationType} onValueChange={(value: CalculationType) => {
+              <GLabel className="text-[11px] font-medium text-heading-accent">Calculation Type</GLabel>
+              <GSelect value={calculationType} onValueChange={(value: CalculationType) => {
                 setCalculationType(value)
                 setHasUserInteracted(true)
                 // Clear results when changing calculation type
                 setResult(null)
                 setIsCalculating(false)
               }}>
-                <SelectTrigger className="h-8 text-xs border-border bg-background text-foreground">
-                  <SelectValue />
-                </SelectTrigger>
-                <SelectContent>
-                  <SelectItem value="subnet">Subnet Calculation</SelectItem>
-                  <SelectItem value="supernet">Supernet Calculation</SelectItem>
-                  <SelectItem value="vlsm">VLSM (Variable Length)</SelectItem>
-                  <SelectItem value="flsm">FLSM (Fixed Length)</SelectItem>
-                  <SelectItem value="cidr">CIDR Analysis</SelectItem>
-                  <SelectItem value="wildcard">Wildcard Mask</SelectItem>
-                </SelectContent>
-              </Select>
+                <GSelectTrigger className="h-8 text-xs border-border bg-background text-foreground">
+                  <GSelectValue />
+                </GSelectTrigger>
+                <GSelectContent>
+                  <GSelectItem value="subnet">Subnet Calculation</GSelectItem>
+                  <GSelectItem value="supernet">Supernet Calculation</GSelectItem>
+                  <GSelectItem value="vlsm">VLSM (Variable Length)</GSelectItem>
+                  <GSelectItem value="flsm">FLSM (Fixed Length)</GSelectItem>
+                  <GSelectItem value="cidr">CIDR Analysis</GSelectItem>
+                  <GSelectItem value="wildcard">Wildcard Mask</GSelectItem>
+                </GSelectContent>
+              </GSelect>
             </div>
           </div>
 
-          {/* IP Address Input */}
+          {/* IP Address GInput */}
           <div className="space-y-2">
-            <Label htmlFor="ip-address" className="text-[11px] font-medium text-heading-accent">
+            <GLabel htmlFor="ip-address" className="text-[11px] font-medium text-heading-accent">
               IP Address {ipVersion === "ipv4" ? "(e.g., 192.168.1.1)" : "(e.g., 2001:db8::1)"}
               {isDetectingIP && (
                 <span className="ml-2 text-xs text-heading-accent flex items-center gap-1">
@@ -543,8 +544,8 @@ export function IPSubnetCalculator({
                   Detecting...
                 </span>
               )}
-            </Label>
-            <Input
+            </GLabel>
+            <GInput
               id="ip-address"
               type="text"
               value={ipAddress}
@@ -584,9 +585,9 @@ export function IPSubnetCalculator({
 
           {/* Quick Example Buttons */}
           <div className="bg-secondary/30 border border-border rounded-lg p-3">
-            <Label className="text-xs font-medium text-heading-accent mb-2 block">
+            <GLabel className="text-xs font-medium text-heading-accent mb-2 block">
               Try Quick Examples:
-            </Label>
+            </GLabel>
             <div className="flex flex-wrap gap-2">
               {[
                 { label: "Home Network", ip: "192.168.1.0", mask: "24" },
@@ -594,7 +595,7 @@ export function IPSubnetCalculator({
                 { label: "Class A", ip: "10.0.0.0", mask: "8" },
                 { label: "P2P Link", ip: "10.1.1.0", mask: "30" }
               ].map(({ label, ip, mask }) => (
-                <Button
+                <GButton
                   key={label}
                   variant="outline"
                   size="sm"
@@ -607,7 +608,7 @@ export function IPSubnetCalculator({
                   }}
                 >
                   {label}
-                </Button>
+                </GButton>
               ))}
             </div>
           </div>
@@ -615,8 +616,8 @@ export function IPSubnetCalculator({
           {/* Subnet Configuration */}
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
             <div className="space-y-2">
-              <Label htmlFor="subnet-mask" className="text-[11px] font-medium text-heading-accent">Subnet Mask</Label>
-              <Input
+              <GLabel htmlFor="subnet-mask" className="text-[11px] font-medium text-heading-accent">Subnet Mask</GLabel>
+              <GInput
                 id="subnet-mask"
                 type="text"
                 value={subnetMask}
@@ -641,8 +642,8 @@ export function IPSubnetCalculator({
               )}
             </div>
             <div className="space-y-2">
-              <Label htmlFor="prefix-length" className="text-[11px] font-medium text-heading-accent">CIDR Prefix Length</Label>
-              <Input
+              <GLabel htmlFor="prefix-length" className="text-[11px] font-medium text-heading-accent">CIDR Prefix Length</GLabel>
+              <GInput
                 id="prefix-length"
                 type="number"
                 value={prefixLength}
@@ -673,8 +674,8 @@ export function IPSubnetCalculator({
           {/* Advanced Options */}
           <div className="space-y-3">
             <div className="flex items-center justify-between">
-              <Label className="text-xs font-medium text-heading-accent">Advanced Options</Label>
-              <Button
+              <GLabel className="text-xs font-medium text-heading-accent">Advanced Options</GLabel>
+              <GButton
                 variant="outline"
                 size="sm"
                 onClick={() => setShowAdvanced(!showAdvanced)}
@@ -682,7 +683,7 @@ export function IPSubnetCalculator({
               >
                 {showAdvanced ? <ChevronUp className="h-3 w-3" /> : <ChevronDown className="h-3 w-3" />}
                 {showAdvanced ? "Hide" : "Show"}
-              </Button>
+              </GButton>
             </div>
 
             {showAdvanced && (
@@ -714,7 +715,7 @@ export function IPSubnetCalculator({
                       onChange={(e) => setShowBinary(e.target.checked)}
                       className="form-checkbox h-3.5 w-3.5 text-foreground rounded border-border bg-card"
                     />
-                    <Label htmlFor="show-binary" className="text-xs text-muted-foreground">Show Binary</Label>
+                    <GLabel htmlFor="show-binary" className="text-xs text-muted-foreground">Show Binary</GLabel>
                   </div>
                   <div className="flex items-center space-x-2">
                     <input
@@ -724,7 +725,7 @@ export function IPSubnetCalculator({
                       onChange={(e) => setShowHex(e.target.checked)}
                       className="form-checkbox h-3.5 w-3.5 text-foreground rounded border-border bg-card"
                     />
-                    <Label htmlFor="show-hex" className="text-xs text-muted-foreground">Show Hexadecimal</Label>
+                    <GLabel htmlFor="show-hex" className="text-xs text-muted-foreground">Show Hexadecimal</GLabel>
                   </div>
                   <div className="flex items-center space-x-2">
                     <input
@@ -733,7 +734,7 @@ export function IPSubnetCalculator({
                       className="form-checkbox h-3.5 w-3.5 text-foreground rounded border-border bg-card"
                       defaultChecked
                     />
-                    <Label htmlFor="show-reverse-dns" className="text-xs text-muted-foreground">Reverse DNS</Label>
+                    <GLabel htmlFor="show-reverse-dns" className="text-xs text-muted-foreground">Reverse DNS</GLabel>
                   </div>
                 </div>
               </div>
@@ -742,37 +743,37 @@ export function IPSubnetCalculator({
 
           {/* Action Buttons */}
           <div className="flex flex-col sm:flex-row gap-3">
-            <Button ref={calculateButtonRef} onClick={() => {
+            <GButton ref={calculateButtonRef} onClick={() => {
               setHasUserInteracted(true)
               calculateSubnet()
             }} disabled={isCalculating || !!validationError || !!subnetMaskError || !!cidrError} className="flex-1 h-9 text-xs font-medium bg-gradient-to-r from-primary to-primary/90 hover:from-primary/90 hover:to-primary text-primary-foreground">
               {isCalculating ? <LoadingSpinner size="sm" className="mr-1 h-3 w-3" /> : <Calculator className="mr-1 h-3 w-3" />}
               Calculate
-            </Button>
-            <Button variant="outline" onClick={shareResult} className="w-full sm:w-auto h-9 text-xs border-border bg-card text-foreground hover:bg-secondary">
+            </GButton>
+            <GButton variant="outline" onClick={shareResult} className="w-full sm:w-auto h-9 text-xs border-border bg-card text-foreground hover:bg-secondary">
               {copied ? <Check className="mr-1 h-3 w-3" /> : <Share2 className="mr-1 h-3 w-3" />}
               {copied ? "Copied Link" : "Share"}
-            </Button>
-            <Button variant="outline" onClick={clearForm} className="w-full sm:w-auto h-9 text-xs border-border bg-card text-foreground hover:bg-secondary">
+            </GButton>
+            <GButton variant="outline" onClick={clearForm} className="w-full sm:w-auto h-9 text-xs border-border bg-card text-foreground hover:bg-secondary">
               Clear
-            </Button>
+            </GButton>
           </div>
 
           {/* Results Section */}
           {result && (
-            <Card className="shadow-lg border-border bg-card">
-              <CardHeader className="pb-3 px-3 sm:px-6">
-                <CardTitle className="flex items-center gap-1.5 text-base sm:text-lg text-foreground">
+            <GCard className="shadow-lg border-border bg-card">
+              <GCardHeader className="pb-3 px-3 sm:px-6">
+                <GCardTitle className="flex items-center gap-1.5 text-base sm:text-lg text-foreground">
                   <div className="p-1 sm:p-1.5 bg-primary/10 rounded-lg">
                     <BarChart3 className="h-3.5 sm:h-4 w-3.5 sm:w-4 text-foreground" />
                   </div>
                   Results
-                </CardTitle>
-                <CardDescription className="text-xs sm:text-sm text-muted-foreground">
+                </GCardTitle>
+                <GCardDescription className="text-xs sm:text-sm text-muted-foreground">
                   Complete network analysis and subnet information.
-                </CardDescription>
-              </CardHeader>
-              <CardContent className="space-y-6 px-3 sm:px-6">
+                </GCardDescription>
+              </GCardHeader>
+              <GCardContent className="space-y-6 px-3 sm:px-6">
                 {/* Main Results */}
                 <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3">
                   <div className="bg-card p-3 rounded-lg border border-border group relative">
@@ -1003,7 +1004,7 @@ export function IPSubnetCalculator({
 
                 {/* Action Buttons */}
                 <div className="flex gap-3">
-                  <Button onClick={copyResult} variant="outline" className="flex-1 h-9 text-xs font-medium border border-border hover:bg-secondary text-heading-accent bg-card">
+                  <GButton onClick={copyResult} variant="outline" className="flex-1 h-9 text-xs font-medium border border-border hover:bg-secondary text-heading-accent bg-card">
                     {copied ? (
                       <>
                         <Check className="mr-1.5 h-3.5 w-3.5" />
@@ -1015,13 +1016,13 @@ export function IPSubnetCalculator({
                         Copy Results
                       </>
                     )}
-                  </Button>
+                  </GButton>
                 </div>
-              </CardContent>
-            </Card>
+              </GCardContent>
+            </GCard>
           )}
-        </CardContent>
-      </Card>
+        </GCardContent>
+      </GCard>
     </div>
   )
 }

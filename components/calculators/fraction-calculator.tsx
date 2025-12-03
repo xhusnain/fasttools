@@ -1,12 +1,13 @@
 "use client"
 
 import { useState, useCallback, useEffect } from "react"
-import { GButton } from "@/components/globalcomponents/gbutton"
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
-import { Input } from "@/components/ui/input"
-import { Label } from "@/components/ui/label"
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
-import { Badge } from "@/components/ui/badge"
+import { GButton } from "@/ui/gbutton"
+import { GCard, GCardContent, GCardHeader, GCardTitle } from "@/ui/gcard"
+import { GInput } from "@/ui/ginput"
+import { GLabel } from "@/ui/glabel"
+import { GSelect, GSelectContent, GSelectItem, GSelectTrigger, GSelectValue } from "@/ui/gselect"
+import { GBadge } from "@/ui/gbadge"
+
 import {
   Calculator,
   Plus,
@@ -231,8 +232,8 @@ Mixed Number: ${result.mixedNumber}`
   return (
     <div className="space-y-4">
       {/* Calculator Display */}
-      <Card className="bg-card border-border">
-        <CardHeader className="pb-2 px-3 sm:px-6">
+      <GCard className="bg-card border-border">
+        <GCardHeader className="pb-2 px-3 sm:px-6">
           <div className="flex items-center justify-between">
             <div className="flex items-center gap-2">
               <div className="w-8 h-8 bg-gradient-to-r from-primary to-primary/90 rounded-lg flex items-center justify-center">
@@ -244,59 +245,59 @@ Mixed Number: ${result.mixedNumber}`
               </div>
             </div>
             <div className="flex items-center gap-2">
-              <Badge variant="secondary" className="bg-primary/10 text-foreground border-primary/20 text-[10px] h-5">
+              <GBadge variant="secondary" className="bg-primary/10 text-foreground border-primary/20 text-[10px] h-5">
                 <Zap className="h-2.5 w-2.5 mr-1" />
                 Auto-calc
-              </Badge>
+              </GBadge>
             </div>
           </div>
-        </CardHeader>
-        <CardContent className="space-y-4 px-3 sm:px-6">
+        </GCardHeader>
+        <GCardContent className="space-y-4 px-3 sm:px-6">
           {/* Operation Selection */}
           <div className="space-y-1">
-            <Label htmlFor="operation" className="text-[11px] font-medium text-heading-accent">Operation</Label>
-            <Select value={operation} onValueChange={setOperation}>
-              <SelectTrigger className="h-8 text-xs border-border bg-background text-foreground">
-                <SelectValue placeholder="Select operation" />
-              </SelectTrigger>
-              <SelectContent>
-                <SelectItem value="add">
+            <GLabel htmlFor="operation" className="text-[11px] font-medium text-heading-accent">Operation</GLabel>
+            <GSelect value={operation} onValueChange={setOperation}>
+              <GSelectTrigger className="h-8 text-xs border-border bg-background text-foreground">
+                <GSelectValue placeholder="GSelect operation" />
+              </GSelectTrigger>
+              <GSelectContent>
+                <GSelectItem value="add">
                   <div className="flex items-center gap-2">
                     <Plus className="h-4 w-4" />
                     Addition
                   </div>
-                </SelectItem>
-                <SelectItem value="subtract">
+                </GSelectItem>
+                <GSelectItem value="subtract">
                   <div className="flex items-center gap-2">
                     <Minus className="h-4 w-4" />
                     Subtraction
                   </div>
-                </SelectItem>
-                <SelectItem value="multiply">
+                </GSelectItem>
+                <GSelectItem value="multiply">
                   <div className="flex items-center gap-2">
                     <X className="h-4 w-4" />
                     Multiplication
                   </div>
-                </SelectItem>
-                <SelectItem value="divide">
+                </GSelectItem>
+                <GSelectItem value="divide">
                   <div className="flex items-center gap-2">
                     <Divide className="h-4 w-4" />
                     Division
                   </div>
-                </SelectItem>
-              </SelectContent>
-            </Select>
+                </GSelectItem>
+              </GSelectContent>
+            </GSelect>
           </div>
 
           {/* Fraction Inputs */}
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
             {/* First Fraction */}
             <div className="space-y-3">
-              <Label className="text-sm font-semibold text-heading-accent">First Fraction</Label>
+              <GLabel className="text-sm font-semibold text-heading-accent">First Fraction</GLabel>
               <div className="space-y-2">
                 <div className="space-y-1">
-                  <Label htmlFor="numerator1" className="text-[10px] text-muted-foreground">Numerator</Label>
-                  <Input
+                  <GLabel htmlFor="numerator1" className="text-[10px] text-muted-foreground">Numerator</GLabel>
+                  <GInput
                     id="numerator1"
                     type="number"
                     value={fraction1.numerator === 0 ? "" : fraction1.numerator}
@@ -309,8 +310,8 @@ Mixed Number: ${result.mixedNumber}`
                   <div className="w-full h-px bg-border"></div>
                 </div>
                 <div className="space-y-1">
-                  <Label htmlFor="denominator1" className="text-[10px] text-muted-foreground">Denominator</Label>
-                  <Input
+                  <GLabel htmlFor="denominator1" className="text-[10px] text-muted-foreground">Denominator</GLabel>
+                  <GInput
                     id="denominator1"
                     type="number"
                     value={fraction1.denominator === 0 ? "" : fraction1.denominator}
@@ -324,11 +325,11 @@ Mixed Number: ${result.mixedNumber}`
 
             {/* Second Fraction */}
             <div className="space-y-3">
-              <Label className="text-sm font-semibold text-heading-accent">Second Fraction</Label>
+              <GLabel className="text-sm font-semibold text-heading-accent">Second Fraction</GLabel>
               <div className="space-y-2">
                 <div className="space-y-1">
-                  <Label htmlFor="numerator2" className="text-[10px] text-muted-foreground">Numerator</Label>
-                  <Input
+                  <GLabel htmlFor="numerator2" className="text-[10px] text-muted-foreground">Numerator</GLabel>
+                  <GInput
                     id="numerator2"
                     type="number"
                     value={fraction2.numerator === 0 ? "" : fraction2.numerator}
@@ -341,8 +342,8 @@ Mixed Number: ${result.mixedNumber}`
                   <div className="w-full h-px bg-border"></div>
                 </div>
                 <div className="space-y-1">
-                  <Label htmlFor="denominator2" className="text-[10px] text-muted-foreground">Denominator</Label>
-                  <Input
+                  <GLabel htmlFor="denominator2" className="text-[10px] text-muted-foreground">Denominator</GLabel>
+                  <GInput
                     id="denominator2"
                     type="number"
                     value={fraction2.denominator === 0 ? "" : fraction2.denominator}
@@ -375,23 +376,23 @@ Mixed Number: ${result.mixedNumber}`
               </GButton>
             )}
           </div>
-        </CardContent>
-      </Card>
+        </GCardContent>
+      </GCard>
 
       {/* Results Display */}
       {result && (
-        <Card className="bg-card border-border">
-          <CardHeader className="pb-2 px-3 sm:px-6">
+        <GCard className="bg-card border-border">
+          <GCardHeader className="pb-2 px-3 sm:px-6">
             <div className="flex items-center gap-2">
               {result.error ? (
                 <AlertCircle className="h-4 w-4 text-foreground" />
               ) : (
                 <CheckCircle className="h-4 w-4 text-heading-accent" />
               )}
-              <CardTitle className="text-base sm:text-lg text-foreground">Results</CardTitle>
+              <GCardTitle className="text-base sm:text-lg text-foreground">Results</GCardTitle>
             </div>
-          </CardHeader>
-          <CardContent className="space-y-4 px-3 sm:px-6">
+          </GCardHeader>
+          <GCardContent className="space-y-4 px-3 sm:px-6">
             {result.error ? (
               <div className="text-center py-6">
                 <AlertCircle className="h-10 w-10 text-foreground mx-auto mb-2" />
@@ -443,20 +444,20 @@ Mixed Number: ${result.mixedNumber}`
                 </div>
               </>
             )}
-          </CardContent>
-        </Card>
+          </GCardContent>
+        </GCard>
       )}
 
       {/* History */}
       {history.length > 0 && (
-        <Card className="bg-card border-border">
-          <CardHeader className="pb-2 px-3 sm:px-6">
-            <CardTitle className="flex items-center gap-2 text-base text-foreground">
+        <GCard className="bg-card border-border">
+          <GCardHeader className="pb-2 px-3 sm:px-6">
+            <GCardTitle className="flex items-center gap-2 text-base text-foreground">
               <Calculator className="h-4 w-4" />
               History
-            </CardTitle>
-          </CardHeader>
-          <CardContent className="px-3 sm:px-6">
+            </GCardTitle>
+          </GCardHeader>
+          <GCardContent className="px-3 sm:px-6">
             <div className="space-y-2 max-h-60 overflow-y-auto">
               {history.map((calc, index) => (
                 <div key={index} className="flex items-center justify-between p-2 bg-card rounded-lg border border-border">
@@ -482,8 +483,8 @@ Mixed Number: ${result.mixedNumber}`
                 </div>
               ))}
             </div>
-          </CardContent>
-        </Card>
+          </GCardContent>
+        </GCard>
       )}
     </div>
   )

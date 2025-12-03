@@ -1,14 +1,14 @@
 "use client"
 
 import { useState } from "react"
-import { GButton as Button } from "@/components/globalcomponents/gbutton"
-import { Input } from "@/components/ui/input"
-import { Label } from "@/components/ui/label"
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
-import { Copy, Target, Plus, Trash2, Calculator, TrendingUp, DollarSign, Percent, Calendar, PieChart, BarChart3, Wallet, CreditCard, Home, Car, Plane, ShoppingCart, GraduationCap, Heart, Briefcase, Shield, Zap } from "lucide-react"
+import { GButton } from "@/ui/gbutton"
+import { GInput } from "@/ui/ginput"
+import { GLabel } from "@/ui/glabel"
+import { GCard, GCardContent, GCardDescription, GCardHeader, GCardTitle } from "@/ui/gcard"
+import { GSelect, GSelectContent, GSelectItem, GSelectTrigger, GSelectValue } from "@/ui/gselect"
+import { GProgress } from "@/ui/gprogress"
 
-import { Progress } from "@/components/ui/progress"
+import { Copy, Target, Plus, Trash2, Calculator, TrendingUp, DollarSign, Percent, Calendar, PieChart, BarChart3, Wallet, CreditCard, Home, Car, Plane, ShoppingCart, GraduationCap, Heart, Briefcase, Shield, Zap } from "lucide-react"
 
 interface ExpenseItem {
   id: string
@@ -268,17 +268,17 @@ ${result.recommendations.map(rec => `• ${rec}`).join('\n')}`
   }
 
   return (
-    <Card className="border border-border shadow-lg">
-      <CardHeader className="text-center pb-4">
-        <CardTitle className="text-2xl font-bold text-foreground flex items-center justify-center gap-2">
+    <GCard className="border border-border shadow-lg">
+      <GCardHeader className="text-center pb-4">
+        <GCardTitle className="text-2xl font-bold text-foreground flex items-center justify-center gap-2">
           <Calculator className="h-6 w-6 text-primary" />
           Advanced Financial Goal Planner
-        </CardTitle>
-        <CardDescription className="text-base text-muted-foreground">
+        </GCardTitle>
+        <GCardDescription className="text-base text-muted-foreground">
           Comprehensive financial planning with expenses, taxes, inflation, and multiple goal tracking
-        </CardDescription>
-      </CardHeader>
-      <CardContent>
+        </GCardDescription>
+      </GCardHeader>
+      <GCardContent>
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
           {/* Left Column - Inputs */}
           <div className="space-y-4">
@@ -291,8 +291,8 @@ ${result.recommendations.map(rec => `• ${rec}`).join('\n')}`
 
               <div className="grid grid-cols-2 gap-3">
                 <div className="space-y-2">
-                  <Label className="text-xs font-medium text-foreground">Monthly Income ($)</Label>
-                  <Input
+                  <GLabel className="text-xs font-medium text-foreground">Monthly Income ($)</GLabel>
+                  <GInput
                     type="number"
                     placeholder="5000"
                     value={monthlyIncome}
@@ -301,8 +301,8 @@ ${result.recommendations.map(rec => `• ${rec}`).join('\n')}`
                   />
                 </div>
                 <div className="space-y-2">
-                  <Label className="text-xs font-medium text-foreground">Tax Rate (%)</Label>
-                  <Input
+                  <GLabel className="text-xs font-medium text-foreground">Tax Rate (%)</GLabel>
+                  <GInput
                     type="number"
                     placeholder="25"
                     value={taxRate}
@@ -314,8 +314,8 @@ ${result.recommendations.map(rec => `• ${rec}`).join('\n')}`
 
               <div className="grid grid-cols-2 gap-3">
                 <div className="space-y-2">
-                  <Label className="text-xs font-medium text-foreground">Inflation Rate (%)</Label>
-                  <Input
+                  <GLabel className="text-xs font-medium text-foreground">Inflation Rate (%)</GLabel>
+                  <GInput
                     type="number"
                     placeholder="2.5"
                     value={inflationRate}
@@ -324,8 +324,8 @@ ${result.recommendations.map(rec => `• ${rec}`).join('\n')}`
                   />
                 </div>
                 <div className="space-y-2">
-                  <Label className="text-xs font-medium text-foreground">Interest Rate (%)</Label>
-                  <Input
+                  <GLabel className="text-xs font-medium text-foreground">Interest Rate (%)</GLabel>
+                  <GInput
                     type="number"
                     placeholder="4.0"
                     value={interestRate}
@@ -343,10 +343,10 @@ ${result.recommendations.map(rec => `• ${rec}`).join('\n')}`
                   <ShoppingCart className="h-4 w-4 text-primary" />
                   Monthly Expenses
                 </h3>
-                <Button onClick={addExpense} size="sm" className="h-6 text-xs">
+                <GButton onClick={addExpense} size="sm" className="h-6 text-xs">
                   <Plus className="h-3 w-3 mr-1" />
                   Add
-                </Button>
+                </GButton>
               </div>
 
               <div className="space-y-2 max-h-48 overflow-y-auto">
@@ -361,36 +361,36 @@ ${result.recommendations.map(rec => `• ${rec}`).join('\n')}`
                       </div>
                       <div className="flex items-center gap-1">
                         {openExpenseId !== expense.id && (
-                          <Button
+                          <GButton
                             onClick={() => setOpenExpenseId(expense.id)}
                             variant="ghost"
                             size="sm"
                             className="h-5 w-5 p-0 text-foreground hover:text-foreground"
                           >
                             <Plus className="h-3 w-3" />
-                          </Button>
+                          </GButton>
                         )}
-                        <Button
+                        <GButton
                           onClick={() => removeExpense(expense.id)}
                           variant="ghost"
                           size="sm"
                           className="h-5 w-5 p-0 text-foreground hover:text-foreground"
                         >
                           <Trash2 className="h-3 w-3" />
-                        </Button>
+                        </GButton>
                       </div>
                     </div>
 
                     {openExpenseId === expense.id && (
                       <>
                         <div className="grid grid-cols-2 gap-2">
-                          <Input
+                          <GInput
                             placeholder="Expense name"
                             value={expense.name}
                             onChange={(e) => updateExpense(expense.id, 'name', e.target.value)}
                             className="h-6 text-xs border-2 border-orange-300 focus:border-orange-400 focus:ring-2 focus:ring-orange-400/20 bg-background text-foreground placeholder:text-muted-foreground"
                           />
-                          <Input
+                          <GInput
                             type="number"
                             placeholder="Amount"
                             value={expense.amount || ''}
@@ -400,44 +400,44 @@ ${result.recommendations.map(rec => `• ${rec}`).join('\n')}`
                         </div>
 
                         <div className="grid grid-cols-3 gap-1">
-                          <Select value={expense.category} onValueChange={(value) => updateExpense(expense.id, 'category', value)}>
-                            <SelectTrigger className="h-6 text-xs border-2 border-orange-300 focus:border-orange-400 focus:ring-2 focus:ring-orange-400/20 bg-background text-foreground">
-                              <SelectValue />
-                            </SelectTrigger>
-                            <SelectContent>
-                              <SelectItem value="Housing">Housing</SelectItem>
-                              <SelectItem value="Food">Food</SelectItem>
-                              <SelectItem value="Transportation">Transportation</SelectItem>
-                              <SelectItem value="Utilities">Utilities</SelectItem>
-                              <SelectItem value="Insurance">Insurance</SelectItem>
-                              <SelectItem value="Healthcare">Healthcare</SelectItem>
-                              <SelectItem value="Entertainment">Entertainment</SelectItem>
-                              <SelectItem value="Shopping">Shopping</SelectItem>
-                              <SelectItem value="Other">Other</SelectItem>
-                            </SelectContent>
-                          </Select>
+                          <GSelect value={expense.category} onValueChange={(value) => updateExpense(expense.id, 'category', value)}>
+                            <GSelectTrigger className="h-6 text-xs border-2 border-orange-300 focus:border-orange-400 focus:ring-2 focus:ring-orange-400/20 bg-background text-foreground">
+                              <GSelectValue />
+                            </GSelectTrigger>
+                            <GSelectContent>
+                              <GSelectItem value="Housing">Housing</GSelectItem>
+                              <GSelectItem value="Food">Food</GSelectItem>
+                              <GSelectItem value="Transportation">Transportation</GSelectItem>
+                              <GSelectItem value="Utilities">Utilities</GSelectItem>
+                              <GSelectItem value="Insurance">Insurance</GSelectItem>
+                              <GSelectItem value="Healthcare">Healthcare</GSelectItem>
+                              <GSelectItem value="Entertainment">Entertainment</GSelectItem>
+                              <GSelectItem value="Shopping">Shopping</GSelectItem>
+                              <GSelectItem value="Other">Other</GSelectItem>
+                            </GSelectContent>
+                          </GSelect>
 
-                          <Select value={expense.frequency} onValueChange={(value) => updateExpense(expense.id, 'frequency', value)}>
-                            <SelectTrigger className="h-6 text-xs border-2 border-orange-300 focus:border-orange-400 focus:ring-2 focus:ring-orange-400/20 bg-background text-foreground">
-                              <SelectValue />
-                            </SelectTrigger>
-                            <SelectContent>
-                              <SelectItem value="monthly">Monthly</SelectItem>
-                              <SelectItem value="yearly">Yearly</SelectItem>
-                              <SelectItem value="one-time">One-time</SelectItem>
-                            </SelectContent>
-                          </Select>
+                          <GSelect value={expense.frequency} onValueChange={(value) => updateExpense(expense.id, 'frequency', value)}>
+                            <GSelectTrigger className="h-6 text-xs border-2 border-orange-300 focus:border-orange-400 focus:ring-2 focus:ring-orange-400/20 bg-background text-foreground">
+                              <GSelectValue />
+                            </GSelectTrigger>
+                            <GSelectContent>
+                              <GSelectItem value="monthly">Monthly</GSelectItem>
+                              <GSelectItem value="yearly">Yearly</GSelectItem>
+                              <GSelectItem value="one-time">One-time</GSelectItem>
+                            </GSelectContent>
+                          </GSelect>
 
-                          <Select value={expense.priority} onValueChange={(value) => updateExpense(expense.id, 'priority', value)}>
-                            <SelectTrigger className="h-6 text-xs border-2 border-orange-300 focus:border-orange-400 focus:ring-2 focus:ring-orange-400/20 bg-background text-foreground">
-                              <SelectValue />
-                            </SelectTrigger>
-                            <SelectContent>
-                              <SelectItem value="high">High</SelectItem>
-                              <SelectItem value="medium">Medium</SelectItem>
-                              <SelectItem value="low">Low</SelectItem>
-                            </SelectContent>
-                          </Select>
+                          <GSelect value={expense.priority} onValueChange={(value) => updateExpense(expense.id, 'priority', value)}>
+                            <GSelectTrigger className="h-6 text-xs border-2 border-orange-300 focus:border-orange-400 focus:ring-2 focus:ring-orange-400/20 bg-background text-foreground">
+                              <GSelectValue />
+                            </GSelectTrigger>
+                            <GSelectContent>
+                              <GSelectItem value="high">High</GSelectItem>
+                              <GSelectItem value="medium">Medium</GSelectItem>
+                              <GSelectItem value="low">Low</GSelectItem>
+                            </GSelectContent>
+                          </GSelect>
                         </div>
 
                         <div className="flex items-center gap-2">
@@ -447,18 +447,18 @@ ${result.recommendations.map(rec => `• ${rec}`).join('\n')}`
                             onChange={(e) => updateExpense(expense.id, 'isTaxDeductible', e.target.checked)}
                             className="rounded border-2 border-orange-300"
                           />
-                          <Label className="text-xs text-muted-foreground">Tax Deductible</Label>
+                          <GLabel className="text-xs text-muted-foreground">Tax Deductible</GLabel>
                         </div>
 
                         <div className="flex justify-end">
-                          <Button
+                          <GButton
                             onClick={() => setOpenExpenseId(null)}
                             variant="outline"
                             size="sm"
                             className="h-6 text-xs"
                           >
                             Done
-                          </Button>
+                          </GButton>
                         </div>
                       </>
                     )}
@@ -474,10 +474,10 @@ ${result.recommendations.map(rec => `• ${rec}`).join('\n')}`
                   <Target className="h-4 w-4 text-primary" />
                   Financial Goals
                 </h3>
-                <Button onClick={addGoal} size="sm" className="h-6 text-xs">
+                <GButton onClick={addGoal} size="sm" className="h-6 text-xs">
                   <Plus className="h-3 w-3 mr-1" />
                   Add
-                </Button>
+                </GButton>
               </div>
 
               <div className="space-y-2 max-h-48 overflow-y-auto">
@@ -494,36 +494,36 @@ ${result.recommendations.map(rec => `• ${rec}`).join('\n')}`
                       </div>
                       <div className="flex items-center gap-1">
                         {openGoalId !== goal.id && (
-                          <Button
+                          <GButton
                             onClick={() => setOpenGoalId(goal.id)}
                             variant="ghost"
                             size="sm"
                             className="h-5 w-5 p-0 text-foreground hover:text-foreground"
                           >
                             <Plus className="h-3 w-3" />
-                          </Button>
+                          </GButton>
                         )}
-                        <Button
+                        <GButton
                           onClick={() => removeGoal(goal.id)}
                           variant="ghost"
                           size="sm"
                           className="h-5 w-5 p-0 text-foreground hover:text-foreground"
                         >
                           <Trash2 className="h-3 w-3" />
-                        </Button>
+                        </GButton>
                       </div>
                     </div>
 
                     {openGoalId === goal.id && (
                       <>
                         <div className="grid grid-cols-2 gap-2">
-                          <Input
+                          <GInput
                             placeholder="Goal name"
                             value={goal.name}
                             onChange={(e) => updateGoal(goal.id, 'name', e.target.value)}
                             className="h-6 text-xs border-2 border-orange-300 focus:border-orange-400 focus:ring-2 focus:ring-orange-400/20 bg-background text-foreground placeholder:text-muted-foreground"
                           />
-                          <Input
+                          <GInput
                             type="date"
                             value={goal.targetDate}
                             onChange={(e) => updateGoal(goal.id, 'targetDate', e.target.value)}
@@ -532,46 +532,46 @@ ${result.recommendations.map(rec => `• ${rec}`).join('\n')}`
                         </div>
 
                         <div className="grid grid-cols-3 gap-1">
-                          <Input
+                          <GInput
                             type="number"
                             placeholder="Target Amount"
                             value={goal.targetAmount || ''}
                             onChange={(e) => updateGoal(goal.id, 'targetAmount', Number.parseFloat(e.target.value) || 0)}
                             className="h-6 text-xs border-2 border-orange-300 focus:border-orange-400 focus:ring-2 focus:ring-orange-400/20 bg-background text-foreground placeholder:text-muted-foreground"
                           />
-                          <Input
+                          <GInput
                             type="number"
                             placeholder="Current Amount"
                             value={goal.currentAmount || ''}
                             onChange={(e) => updateGoal(goal.id, 'currentAmount', Number.parseFloat(e.target.value) || 0)}
                             className="h-6 text-xs border-2 border-orange-300 focus:border-orange-400 focus:ring-2 focus:ring-orange-400/20 bg-background text-foreground placeholder:text-muted-foreground"
                           />
-                          <Select value={goal.category} onValueChange={(value) => updateGoal(goal.id, 'category', value)}>
-                            <SelectTrigger className="h-6 text-xs border-2 border-orange-300 focus:border-orange-400 focus:ring-2 focus:ring-orange-400/20 bg-background text-foreground">
-                              <SelectValue />
-                            </SelectTrigger>
-                            <SelectContent>
-                              <SelectItem value="Emergency">Emergency</SelectItem>
-                              <SelectItem value="Housing">Housing</SelectItem>
-                              <SelectItem value="Transportation">Transportation</SelectItem>
-                              <SelectItem value="Travel">Travel</SelectItem>
-                              <SelectItem value="Education">Education</SelectItem>
-                              <SelectItem value="Wedding">Wedding</SelectItem>
-                              <SelectItem value="Business">Business</SelectItem>
-                              <SelectItem value="Other">Other</SelectItem>
-                            </SelectContent>
-                          </Select>
+                          <GSelect value={goal.category} onValueChange={(value) => updateGoal(goal.id, 'category', value)}>
+                            <GSelectTrigger className="h-6 text-xs border-2 border-orange-300 focus:border-orange-400 focus:ring-2 focus:ring-orange-400/20 bg-background text-foreground">
+                              <GSelectValue />
+                            </GSelectTrigger>
+                            <GSelectContent>
+                              <GSelectItem value="Emergency">Emergency</GSelectItem>
+                              <GSelectItem value="Housing">Housing</GSelectItem>
+                              <GSelectItem value="Transportation">Transportation</GSelectItem>
+                              <GSelectItem value="Travel">Travel</GSelectItem>
+                              <GSelectItem value="Education">Education</GSelectItem>
+                              <GSelectItem value="Wedding">Wedding</GSelectItem>
+                              <GSelectItem value="Business">Business</GSelectItem>
+                              <GSelectItem value="Other">Other</GSelectItem>
+                            </GSelectContent>
+                          </GSelect>
                         </div>
 
                         <div className="flex justify-end">
-                          <Button
+                          <GButton
                             onClick={() => setOpenGoalId(null)}
                             variant="outline"
                             size="sm"
                             className="h-6 text-xs"
                           >
                             Done
-                          </Button>
+                          </GButton>
                         </div>
                       </>
                     )}
@@ -580,8 +580,8 @@ ${result.recommendations.map(rec => `• ${rec}`).join('\n')}`
               </div>
             </div>
 
-            {/* Action Button */}
-            <Button
+            {/* Action GButton */}
+            <GButton
               onClick={calculateFinancialPlan}
               disabled={loading || !monthlyIncome}
               isLoading={loading}
@@ -593,7 +593,7 @@ ${result.recommendations.map(rec => `• ${rec}`).join('\n')}`
                   Calculate Financial Plan
                 </>
               )}
-            </Button>
+            </GButton>
           </div>
 
           {/* Right Column - Results */}
@@ -659,15 +659,15 @@ ${result.recommendations.map(rec => `• ${rec}`).join('\n')}`
                   </div>
                 )}
 
-                {/* Copy Button */}
-                <Button
+                {/* Copy GButton */}
+                <GButton
                   onClick={copyResult}
                   variant="outline"
                   className="w-full h-7 text-xs font-medium hover:bg-accent transition-all bg-transparent"
                 >
                   <Copy className="mr-2 h-3 w-3" />
                   Copy Financial Plan
-                </Button>
+                </GButton>
               </>
             ) : (
               <div className="flex items-center justify-center h-48">
@@ -680,7 +680,7 @@ ${result.recommendations.map(rec => `• ${rec}`).join('\n')}`
             )}
           </div>
         </div>
-      </CardContent>
-    </Card>
+      </GCardContent>
+    </GCard>
   )
 }

@@ -1,12 +1,13 @@
 "use client"
 
 import { useState } from "react"
-import { Card } from "@/components/ui/card"
-import { Input } from "@/components/ui/input"
-import { Label } from "@/components/ui/label"
-import { GButton as Button } from "@/components/globalcomponents/gbutton"
+import { GCard } from "@/ui/gcard"
+import { GInput } from "@/ui/ginput"
+import { GLabel } from "@/ui/glabel"
+import { GButton } from "@/ui/gbutton"
+import { GAlert, GAlertDescription } from "@/ui/galert"
+
 import { Download, Loader2, AlertCircle, Video } from "lucide-react"
-import { Alert, AlertDescription } from "@/components/ui/alert"
 import { API } from "@/services/api/api.service"
 
 export interface FacebookDownloaderProps {
@@ -98,14 +99,14 @@ export function FacebookDownloader({ compact = false }: FacebookDownloaderProps)
 
   return (
     <div className="w-full max-w-4xl mx-auto space-y-4 sm:space-y-6">
-      <Card className="p-6 sm:p-8">
+      <GCard className="p-6 sm:p-8">
         <div className="space-y-6">
           <div className="space-y-2">
-            <Label htmlFor="facebook-url" className="text-base font-semibold">
+            <GLabel htmlFor="facebook-url" className="text-base font-semibold">
               Facebook URL
-            </Label>
+            </GLabel>
             <div className="flex gap-2">
-              <Input
+              <GInput
                 id="facebook-url"
                 type="text"
                 placeholder="https://www.facebook.com/watch?v=..."
@@ -115,7 +116,7 @@ export function FacebookDownloader({ compact = false }: FacebookDownloaderProps)
                 className="flex-1"
                 disabled={loading}
               />
-              <Button
+              <GButton
                 onClick={handleDownload}
                 disabled={loading || !url.trim()}
                 className="px-6"
@@ -131,15 +132,15 @@ export function FacebookDownloader({ compact = false }: FacebookDownloaderProps)
                     Download
                   </>
                 )}
-              </Button>
+              </GButton>
             </div>
           </div>
 
           {error && (
-            <Alert variant="destructive">
+            <GAlert variant="destructive">
               <AlertCircle className="h-4 w-4" />
-              <AlertDescription>{error}</AlertDescription>
-            </Alert>
+              <GAlertDescription>{error}</GAlertDescription>
+            </GAlert>
           )}
 
           {result && (
@@ -164,17 +165,17 @@ export function FacebookDownloader({ compact = false }: FacebookDownloaderProps)
                 {(result.Normal_video || result.HD) ? (
                   <div className="grid gap-2">
                     {result.HD && (
-                      <Button
+                      <GButton
                         onClick={async () => await downloadFile(result.HD, `facebook-hd-${Date.now()}.mp4`)}
                         className="w-full"
                         size="lg"
                       >
                         <Download className="mr-2 h-5 w-5" />
                         Download HD Quality
-                      </Button>
+                      </GButton>
                     )}
                     {result.Normal_video && (
-                      <Button
+                      <GButton
                         onClick={async () => await downloadFile(result.Normal_video, `facebook-sd-${Date.now()}.mp4`)}
                         variant="outline"
                         className="w-full"
@@ -182,30 +183,30 @@ export function FacebookDownloader({ compact = false }: FacebookDownloaderProps)
                       >
                         <Download className="mr-2 h-5 w-5" />
                         Download SD Quality
-                      </Button>
+                      </GButton>
                     )}
                   </div>
                 ) : (
                   /* Handle legacy format with result.url */
                   result.url && (
-                    <Button
+                    <GButton
                       onClick={async () => await downloadFile(result.url, `facebook-${Date.now()}.mp4`)}
                       className="w-full"
                       size="lg"
                     >
                       <Download className="mr-2 h-5 w-5" />
                       Download Video
-                    </Button>
+                    </GButton>
                   )
                 )}
               </div>
             </div>
           )}
         </div>
-      </Card>
+      </GCard>
 
       {!compact && (
-        <Card className="p-6 bg-card border border-border">
+        <GCard className="p-6 bg-card border border-border">
           <h3 className="text-lg font-bold text-foreground mb-4">How to Use</h3>
           <ol className="space-y-3 text-sm text-muted-foreground list-decimal list-inside">
             <li>Go to Facebook and find the video you want to download</li>
@@ -213,7 +214,7 @@ export function FacebookDownloader({ compact = false }: FacebookDownloaderProps)
             <li>Copy the URL from your browser's address bar</li>
             <li>Paste it into the input field above and click Download</li>
           </ol>
-        </Card>
+        </GCard>
       )}
     </div>
   )

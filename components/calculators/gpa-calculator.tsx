@@ -1,12 +1,13 @@
 "use client"
 
 import { useState } from "react"
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
-import { GButton } from "@/components/globalcomponents/gbutton"
-import { Label } from "@/components/ui/label"
-import { Input } from "@/components/ui/input"
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
-import { Alert, AlertDescription } from "@/components/ui/alert"
+import { GCard, GCardContent, GCardDescription, GCardHeader, GCardTitle } from "@/ui/gcard"
+import { GButton } from "@/ui/gbutton"
+import { GLabel } from "@/ui/glabel"
+import { GInput } from "@/ui/ginput"
+import { GSelect, GSelectContent, GSelectItem, GSelectTrigger, GSelectValue } from "@/ui/gselect"
+import { GAlert, GAlertDescription } from "@/ui/galert"
+
 import {
   GraduationCap,
   Copy,
@@ -247,45 +248,45 @@ ${result.courses.map(course => `${course.name}: ${course.grade} (${course.credit
   return (
     <div className="space-y-4">
       {/* Main GPA Calculator */}
-      <Card className="shadow-lg border-border hover:shadow-xl transition-all duration-300 bg-card">
-        <CardHeader className="pb-2 px-3 sm:px-6">
-          <CardTitle className="flex items-center gap-1.5 text-base text-foreground">
+      <GCard className="shadow-lg border-border hover:shadow-xl transition-all duration-300 bg-card">
+        <GCardHeader className="pb-2 px-3 sm:px-6">
+          <GCardTitle className="flex items-center gap-1.5 text-base text-foreground">
             <div className="p-1 bg-primary/10 rounded">
               <GraduationCap className="h-3.5 w-3.5 text-foreground" />
             </div>
             GPA Calculator
-          </CardTitle>
-          <CardDescription className="text-xs text-muted-foreground">
+          </GCardTitle>
+          <GCardDescription className="text-xs text-muted-foreground">
             Calculate your Grade Point Average with comprehensive analysis
-          </CardDescription>
-        </CardHeader>
-        <CardContent className="space-y-4 px-3 sm:px-6">
+          </GCardDescription>
+        </GCardHeader>
+        <GCardContent className="space-y-4 px-3 sm:px-6">
           {/* Grading System Selection */}
           <div className="space-y-1">
-            <Label htmlFor="grading-system" className="text-[11px] font-medium flex items-center gap-1 text-heading-accent">
+            <GLabel htmlFor="grading-system" className="text-[11px] font-medium flex items-center gap-1 text-heading-accent">
               <Settings className="h-2.5 w-2.5 text-heading-accent" />
               Grading System
-            </Label>
-            <Select value={gradingSystem} onValueChange={setGradingSystem}>
-              <SelectTrigger className="h-8 text-xs border-border bg-background text-foreground">
-                <SelectValue placeholder="Select grading system" />
-              </SelectTrigger>
-              <SelectContent>
-                <SelectItem value="4.0">4.0 Scale (US Standard)</SelectItem>
-                <SelectItem value="4.3">4.3 Scale (A+ = 4.3)</SelectItem>
-                <SelectItem value="5.0">5.0 Scale (Weighted)</SelectItem>
-                <SelectItem value="100">Percentage Scale</SelectItem>
-              </SelectContent>
-            </Select>
+            </GLabel>
+            <GSelect value={gradingSystem} onValueChange={setGradingSystem}>
+              <GSelectTrigger className="h-8 text-xs border-border bg-background text-foreground">
+                <GSelectValue placeholder="GSelect grading system" />
+              </GSelectTrigger>
+              <GSelectContent>
+                <GSelectItem value="4.0">4.0 Scale (US Standard)</GSelectItem>
+                <GSelectItem value="4.3">4.3 Scale (A+ = 4.3)</GSelectItem>
+                <GSelectItem value="5.0">5.0 Scale (Weighted)</GSelectItem>
+                <GSelectItem value="100">Percentage Scale</GSelectItem>
+              </GSelectContent>
+            </GSelect>
           </div>
 
           {/* Courses Section */}
           <div className="space-y-3">
             <div className="flex items-center justify-between">
-              <Label className="text-[11px] font-medium flex items-center gap-1 text-heading-accent">
+              <GLabel className="text-[11px] font-medium flex items-center gap-1 text-heading-accent">
                 <BookOpen className="h-2.5 w-2.5 text-heading-accent" />
                 Courses
-              </Label>
+              </GLabel>
               <GButton onClick={addCourse} size="sm" className="h-7 text-xs px-2 bg-primary hover:bg-primary/90 text-primary-foreground">
                 <Plus className="h-3 w-3 mr-1" />
                 Add
@@ -296,8 +297,8 @@ ${result.courses.map(course => `${course.name}: ${course.grade} (${course.credit
               {courses.map((course, index) => (
                 <div key={course.id} className="grid grid-cols-1 sm:grid-cols-4 gap-2 p-2 bg-card rounded-lg border border-border">
                   <div className="space-y-1">
-                    <Label className="text-[10px] text-muted-foreground">Course Name</Label>
-                    <Input
+                    <GLabel className="text-[10px] text-muted-foreground">Course Name</GLabel>
+                    <GInput
                       value={course.name}
                       onChange={(e) => updateCourse(course.id, 'name', e.target.value)}
                       placeholder="Mathematics"
@@ -305,8 +306,8 @@ ${result.courses.map(course => `${course.name}: ${course.grade} (${course.credit
                     />
                   </div>
                   <div className="space-y-1">
-                    <Label className="text-[10px] text-muted-foreground">Credits</Label>
-                    <Input
+                    <GLabel className="text-[10px] text-muted-foreground">Credits</GLabel>
+                    <GInput
                       type="number"
                       value={course.credits}
                       onChange={(e) => updateCourse(course.id, 'credits', Number(e.target.value))}
@@ -316,31 +317,31 @@ ${result.courses.map(course => `${course.name}: ${course.grade} (${course.credit
                     />
                   </div>
                   <div className="space-y-1">
-                    <Label className="text-[10px] text-muted-foreground">Grade</Label>
-                    <Select value={course.grade} onValueChange={(value) => updateCourse(course.id, 'grade', value)}>
-                      <SelectTrigger className="h-7 text-xs border-border bg-background text-foreground">
-                        <SelectValue />
-                      </SelectTrigger>
-                      <SelectContent>
-                        <SelectItem value="A+">A+ (4.3)</SelectItem>
-                        <SelectItem value="A">A (4.0)</SelectItem>
-                        <SelectItem value="A-">A- (3.7)</SelectItem>
-                        <SelectItem value="B+">B+ (3.3)</SelectItem>
-                        <SelectItem value="B">B (3.0)</SelectItem>
-                        <SelectItem value="B-">B- (2.7)</SelectItem>
-                        <SelectItem value="C+">C+ (2.3)</SelectItem>
-                        <SelectItem value="C">C (2.0)</SelectItem>
-                        <SelectItem value="C-">C- (1.7)</SelectItem>
-                        <SelectItem value="D+">D+ (1.3)</SelectItem>
-                        <SelectItem value="D">D (1.0)</SelectItem>
-                        <SelectItem value="D-">D- (0.7)</SelectItem>
-                        <SelectItem value="F">F (0.0)</SelectItem>
-                        <SelectItem value="P">P (Pass)</SelectItem>
-                        <SelectItem value="NP">NP (No Pass)</SelectItem>
-                        <SelectItem value="I">I (Incomplete)</SelectItem>
-                        <SelectItem value="W">W (Withdrawal)</SelectItem>
-                      </SelectContent>
-                    </Select>
+                    <GLabel className="text-[10px] text-muted-foreground">Grade</GLabel>
+                    <GSelect value={course.grade} onValueChange={(value) => updateCourse(course.id, 'grade', value)}>
+                      <GSelectTrigger className="h-7 text-xs border-border bg-background text-foreground">
+                        <GSelectValue />
+                      </GSelectTrigger>
+                      <GSelectContent>
+                        <GSelectItem value="A+">A+ (4.3)</GSelectItem>
+                        <GSelectItem value="A">A (4.0)</GSelectItem>
+                        <GSelectItem value="A-">A- (3.7)</GSelectItem>
+                        <GSelectItem value="B+">B+ (3.3)</GSelectItem>
+                        <GSelectItem value="B">B (3.0)</GSelectItem>
+                        <GSelectItem value="B-">B- (2.7)</GSelectItem>
+                        <GSelectItem value="C+">C+ (2.3)</GSelectItem>
+                        <GSelectItem value="C">C (2.0)</GSelectItem>
+                        <GSelectItem value="C-">C- (1.7)</GSelectItem>
+                        <GSelectItem value="D+">D+ (1.3)</GSelectItem>
+                        <GSelectItem value="D">D (1.0)</GSelectItem>
+                        <GSelectItem value="D-">D- (0.7)</GSelectItem>
+                        <GSelectItem value="F">F (0.0)</GSelectItem>
+                        <GSelectItem value="P">P (Pass)</GSelectItem>
+                        <GSelectItem value="NP">NP (No Pass)</GSelectItem>
+                        <GSelectItem value="I">I (Incomplete)</GSelectItem>
+                        <GSelectItem value="W">W (Withdrawal)</GSelectItem>
+                      </GSelectContent>
+                    </GSelect>
                   </div>
                   <div className="flex items-end">
                     <GButton
@@ -357,7 +358,7 @@ ${result.courses.map(course => `${course.name}: ${course.grade} (${course.credit
             </div>
           </div>
 
-          {/* Calculate Button */}
+          {/* Calculate GButton */}
           <GButton
             onClick={calculateGPA}
             className="w-full h-9 text-xs font-medium shadow-lg hover:shadow-xl transition-all duration-300 bg-gradient-to-r from-primary to-primary/90 hover:from-primary/90 hover:to-primary text-primary-foreground"
@@ -374,7 +375,7 @@ ${result.courses.map(course => `${course.name}: ${course.grade} (${course.credit
             )}
           </GButton>
 
-          {/* Plan Your GPA Button */}
+          {/* Plan Your GPA GButton */}
           <GButton
             onClick={() => setShowGPAPlanner(!showGPAPlanner)}
             variant="outline"
@@ -383,28 +384,28 @@ ${result.courses.map(course => `${course.name}: ${course.grade} (${course.credit
             <Target className="mr-1 h-3 w-3" />
             <span>{showGPAPlanner ? "Hide GPA Planner" : "Plan Your GPA"}</span>
           </GButton>
-        </CardContent>
-      </Card>
+        </GCardContent>
+      </GCard>
 
       {/* GPA Planning Calculator */}
       {showGPAPlanner && (
-        <Card className="shadow-lg border-border hover:shadow-xl transition-all duration-300 bg-card">
-          <CardHeader className="pb-2 px-3 sm:px-6">
-            <CardTitle className="flex items-center gap-1.5 text-base text-foreground">
+        <GCard className="shadow-lg border-border hover:shadow-xl transition-all duration-300 bg-card">
+          <GCardHeader className="pb-2 px-3 sm:px-6">
+            <GCardTitle className="flex items-center gap-1.5 text-base text-foreground">
               <div className="p-1 bg-primary/10 rounded">
                 <Target className="h-3.5 w-3.5 text-foreground" />
               </div>
               GPA Planning Calculator
-            </CardTitle>
-            <CardDescription className="text-xs text-muted-foreground">
+            </GCardTitle>
+            <GCardDescription className="text-xs text-muted-foreground">
               Determine minimum GPA required to reach your target
-            </CardDescription>
-          </CardHeader>
-          <CardContent className="space-y-4 px-3 sm:px-6">
+            </GCardDescription>
+          </GCardHeader>
+          <GCardContent className="space-y-4 px-3 sm:px-6">
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
               <div className="space-y-1">
-                <Label htmlFor="current-gpa" className="text-[11px] font-medium text-heading-accent">Current GPA</Label>
-                <Input
+                <GLabel htmlFor="current-gpa" className="text-[11px] font-medium text-heading-accent">Current GPA</GLabel>
+                <GInput
                   id="current-gpa"
                   type="number"
                   step="0.01"
@@ -415,8 +416,8 @@ ${result.courses.map(course => `${course.name}: ${course.grade} (${course.credit
                 />
               </div>
               <div className="space-y-1">
-                <Label htmlFor="target-gpa" className="text-[11px] font-medium text-heading-accent">Target GPA</Label>
-                <Input
+                <GLabel htmlFor="target-gpa" className="text-[11px] font-medium text-heading-accent">Target GPA</GLabel>
+                <GInput
                   id="target-gpa"
                   type="number"
                   step="0.01"
@@ -427,8 +428,8 @@ ${result.courses.map(course => `${course.name}: ${course.grade} (${course.credit
                 />
               </div>
               <div className="space-y-1">
-                <Label htmlFor="current-credits" className="text-[11px] font-medium text-heading-accent">Current Credits</Label>
-                <Input
+                <GLabel htmlFor="current-credits" className="text-[11px] font-medium text-heading-accent">Current Credits</GLabel>
+                <GInput
                   id="current-credits"
                   type="number"
                   value={currentCredits}
@@ -438,8 +439,8 @@ ${result.courses.map(course => `${course.name}: ${course.grade} (${course.credit
                 />
               </div>
               <div className="space-y-1">
-                <Label htmlFor="additional-credits" className="text-[11px] font-medium text-heading-accent">Additional Credits</Label>
-                <Input
+                <GLabel htmlFor="additional-credits" className="text-[11px] font-medium text-heading-accent">Additional Credits</GLabel>
+                <GInput
                   id="additional-credits"
                   type="number"
                   value={additionalCredits}
@@ -486,25 +487,25 @@ ${result.courses.map(course => `${course.name}: ${course.grade} (${course.credit
                 )}
               </div>
             )}
-          </CardContent>
-        </Card>
+          </GCardContent>
+        </GCard>
       )}
 
       {/* Results Section */}
       {result && !isCalculating && (
-        <Card className="shadow-lg border-border animate-fade-in-up bg-card">
-          <CardHeader className="pb-3 px-3 sm:px-6">
-            <CardTitle className="text-base sm:text-lg flex items-center gap-2 text-foreground">
+        <GCard className="shadow-lg border-border animate-fade-in-up bg-card">
+          <GCardHeader className="pb-3 px-3 sm:px-6">
+            <GCardTitle className="text-base sm:text-lg flex items-center gap-2 text-foreground">
               <div className="p-1 sm:p-1.5 bg-primary/10 rounded-lg">
                 <Award className="h-3.5 sm:h-4 w-3.5 sm:w-4 text-foreground" />
               </div>
               GPA Results & Analysis
-            </CardTitle>
-            <CardDescription className="text-xs sm:text-sm text-muted-foreground">
+            </GCardTitle>
+            <GCardDescription className="text-xs sm:text-sm text-muted-foreground">
               Comprehensive GPA analysis with academic standing and improvement suggestions
-            </CardDescription>
-          </CardHeader>
-          <CardContent className="space-y-4 px-3 sm:px-6">
+            </GCardDescription>
+          </GCardHeader>
+          <GCardContent className="space-y-4 px-3 sm:px-6">
             {/* Main GPA Display */}
             <div className="text-center p-4 rounded-xl bg-card border border-primary/20">
               <div className="text-2xl sm:text-3xl font-bold text-foreground mb-1">
@@ -598,8 +599,8 @@ ${result.courses.map(course => `${course.name}: ${course.grade} (${course.credit
                 )}
               </GButton>
             </div>
-          </CardContent>
-        </Card>
+          </GCardContent>
+        </GCard>
       )}
     </div>
   )

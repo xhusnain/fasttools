@@ -1,10 +1,11 @@
 "use client"
 
 import { useState } from "react"
-import { GButton } from "@/components/globalcomponents/gbutton"
-import { Input } from "@/components/ui/input"
-import { Label } from "@/components/ui/label"
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
+import { GButton } from "@/ui/gbutton"
+import { GInput } from "@/ui/ginput"
+import { GLabel } from "@/ui/glabel"
+import { GCard, GCardContent, GCardDescription, GCardHeader, GCardTitle } from "@/ui/gcard"
+
 import { Copy, CreditCard } from "lucide-react"
 import { LoadingSpinner } from "@/components/common/loading-spinner"
 
@@ -77,7 +78,7 @@ export function CreditCardPayoff() {
 
   const copyResult = () => {
     if (result) {
-      const text = `Credit Card Payoff Plan:
+      const text = `Credit GCard Payoff Plan:
 Current Balance: $${balance}
 APR: ${apr}%
 Monthly Payment: $${monthlyPayment}
@@ -94,10 +95,10 @@ Payoff Date: ${result.payoffDate}`
       {/* Left Column - Inputs */}
       <div className="space-y-4">
         <div className="space-y-2">
-          <Label htmlFor="balance" className="text-xs font-medium text-foreground">
+          <GLabel htmlFor="balance" className="text-xs font-medium text-foreground">
             Current Balance ($)
-          </Label>
-          <Input
+          </GLabel>
+          <GInput
             id="balance"
             type="number"
             placeholder="5000"
@@ -110,10 +111,10 @@ Payoff Date: ${result.payoffDate}`
         </div>
 
         <div className="space-y-2">
-          <Label htmlFor="apr" className="text-xs font-medium text-foreground">
+          <GLabel htmlFor="apr" className="text-xs font-medium text-foreground">
             Annual Percentage Rate (APR %)
-          </Label>
-          <Input
+          </GLabel>
+          <GInput
             id="apr"
             type="number"
             placeholder="18.99"
@@ -127,10 +128,10 @@ Payoff Date: ${result.payoffDate}`
         </div>
 
         <div className="space-y-2">
-          <Label htmlFor="monthlyPayment" className="text-xs font-medium text-foreground">
+          <GLabel htmlFor="monthlyPayment" className="text-xs font-medium text-foreground">
             Monthly Payment ($)
-          </Label>
-          <Input
+          </GLabel>
+          <GInput
             id="monthlyPayment"
             type="number"
             placeholder="200"

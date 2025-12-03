@@ -1,13 +1,14 @@
 "use client"
 
 import { useState, useEffect } from "react"
-import { GButton as Button } from "@/components/globalcomponents/gbutton"
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
-import { Input } from "@/components/ui/input"
-import { Label } from "@/components/ui/label"
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
-import { Badge } from "@/components/ui/badge"
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
+import { GButton } from "@/ui/gbutton"
+import { GCard, GCardContent, GCardHeader, GCardTitle } from "@/ui/gcard"
+import { GInput } from "@/ui/ginput"
+import { GLabel } from "@/ui/glabel"
+import { GSelect, GSelectContent, GSelectItem, GSelectTrigger, GSelectValue } from "@/ui/gselect"
+import { GBadge } from "@/ui/gbadge"
+import { GTabs, GTabsContent, GTabsList, GTabsTrigger } from "@/ui/gtabs"
+
 import {
   Calculator,
   DollarSign,
@@ -142,7 +143,7 @@ export default function PaymentCalculator() {
     const rate = parseFloat(interestRate) || 0
     const payment = parseFloat(monthlyPayment) || 0
 
-    // Input validation
+    // GInput validation
     if (amount <= 0) {
       alert("Loan amount must be greater than $0")
       return
@@ -417,30 +418,30 @@ Loan Term: ${result.loanTerm.toFixed(1)} years`
   return (
     <div className="space-y-6">
       {/* Main Calculator */}
-      <Card>
-        <CardHeader className="pb-8">
-          <CardTitle className="flex items-center gap-2">
+      <GCard>
+        <GCardHeader className="pb-8">
+          <GCardTitle className="flex items-center gap-2">
             <Calculator className="h-5 w-5 text-foreground" />
             Advanced Payment Calculator
-          </CardTitle>
-        </CardHeader>
-        <CardContent className="space-y-6">
+          </GCardTitle>
+        </GCardHeader>
+        <GCardContent className="space-y-6">
           {/* Calculation Type Selection */}
           <div>
-            <Label className="text-lg font-semibold mb-4 block">Calculation Type</Label>
-            <Tabs value={calculationType} onValueChange={setCalculationType}>
-              <TabsList className="grid w-full grid-cols-2">
-                <TabsTrigger value="fixedTerm">Fixed Term</TabsTrigger>
-                <TabsTrigger value="fixedPayment">Fixed Payment</TabsTrigger>
-              </TabsList>
-            </Tabs>
+            <GLabel className="text-lg font-semibold mb-4 block">Calculation Type</GLabel>
+            <GTabs value={calculationType} onValueChange={setCalculationType}>
+              <GTabsList className="grid w-full grid-cols-2">
+                <GTabsTrigger value="fixedTerm">Fixed Term</GTabsTrigger>
+                <GTabsTrigger value="fixedPayment">Fixed Payment</GTabsTrigger>
+              </GTabsList>
+            </GTabs>
           </div>
 
-          {/* Input Fields */}
+          {/* GInput Fields */}
           <div className="grid md:grid-cols-2 gap-4">
             <div className="space-y-2">
-              <Label htmlFor="loanAmount">Loan Amount</Label>
-              <Input
+              <GLabel htmlFor="loanAmount">Loan Amount</GLabel>
+              <GInput
                 id="loanAmount"
                 type="number"
                 placeholder="200000"
@@ -449,8 +450,8 @@ Loan Term: ${result.loanTerm.toFixed(1)} years`
               />
             </div>
             <div className="space-y-2">
-              <Label htmlFor="interestRate">Interest Rate (%)</Label>
-              <Input
+              <GLabel htmlFor="interestRate">Interest Rate (%)</GLabel>
+              <GInput
                 id="interestRate"
                 type="number"
                 placeholder="6"
@@ -462,8 +463,8 @@ Loan Term: ${result.loanTerm.toFixed(1)} years`
 
           {calculationType === "fixedTerm" && (
             <div className="space-y-2">
-              <Label htmlFor="loanTerm">Loan Term (years)</Label>
-              <Input
+              <GLabel htmlFor="loanTerm">Loan Term (years)</GLabel>
+              <GInput
                 id="loanTerm"
                 type="number"
                 placeholder="15"
@@ -475,8 +476,8 @@ Loan Term: ${result.loanTerm.toFixed(1)} years`
 
           {calculationType === "fixedPayment" && (
             <div className="space-y-2">
-              <Label htmlFor="monthlyPayment">Monthly Payment</Label>
-              <Input
+              <GLabel htmlFor="monthlyPayment">Monthly Payment</GLabel>
+              <GInput
                 id="monthlyPayment"
                 type="number"
                 placeholder="1500"
@@ -487,38 +488,38 @@ Loan Term: ${result.loanTerm.toFixed(1)} years`
           )}
 
           <div className="flex gap-2">
-            <Button onClick={calculatePayment} className="flex-1">
+            <GButton onClick={calculatePayment} className="flex-1">
               <Calculator className="mr-2 h-4 w-4" />
               Calculate
-            </Button>
-            <Button variant="outline" onClick={clearAll}>
+            </GButton>
+            <GButton variant="outline" onClick={clearAll}>
               Clear All
-            </Button>
+            </GButton>
           </div>
-        </CardContent>
-      </Card>
+        </GCardContent>
+      </GCard>
 
       {/* Results Section */}
       {result && (
         <div className="space-y-6">
           {/* Main Results */}
-          <Card>
-            <CardHeader>
-              <CardTitle className="flex items-center gap-2">
+          <GCard>
+            <GCardHeader>
+              <GCardTitle className="flex items-center gap-2">
                 <DollarSign className="h-5 w-5 text-heading-accent" />
                 Payment Analysis Results
-              </CardTitle>
-            </CardHeader>
-            <CardContent className="space-y-4">
+              </GCardTitle>
+            </GCardHeader>
+            <GCardContent className="space-y-4">
               <div className="grid md:grid-cols-2 gap-4">
                 <div className="space-y-2">
-                  <Label className="text-sm font-medium">Monthly Payment</Label>
+                  <GLabel className="text-sm font-medium">Monthly Payment</GLabel>
                   <div className="text-3xl font-bold text-heading-accent">
                     ${result.monthlyPayment.toFixed(2)}
                   </div>
                 </div>
                 <div className="space-y-2">
-                  <Label className="text-sm font-medium">Total Interest</Label>
+                  <GLabel className="text-sm font-medium">Total Interest</GLabel>
                   <div className="text-3xl font-bold text-foreground">
                     ${result.totalInterest.toFixed(2)}
                   </div>
@@ -541,23 +542,23 @@ Loan Term: ${result.loanTerm.toFixed(1)} years`
               </div>
 
               <div className="flex gap-2 pt-4">
-                <Button onClick={copyResult} variant="outline" size="sm">
+                <GButton onClick={copyResult} variant="outline" size="sm">
                   <Copy className="mr-2 h-4 w-4" />
                   Copy Results
-                </Button>
+                </GButton>
               </div>
-            </CardContent>
-          </Card>
+            </GCardContent>
+          </GCard>
 
           {/* Payment Breakdown */}
-          <Card>
-            <CardHeader>
-              <CardTitle className="flex items-center gap-2">
+          <GCard>
+            <GCardHeader>
+              <GCardTitle className="flex items-center gap-2">
                 <PieChart className="h-5 w-5 text-foreground" />
                 Payment Breakdown
-              </CardTitle>
-            </CardHeader>
-            <CardContent>
+              </GCardTitle>
+            </GCardHeader>
+            <GCardContent>
               <div className="grid md:grid-cols-2 gap-6">
                 <div className="space-y-4">
                   <div className="p-4 bg-muted rounded-lg border border-border">
@@ -584,18 +585,18 @@ Loan Term: ${result.loanTerm.toFixed(1)} years`
                   </div>
                 </div>
               </div>
-            </CardContent>
-          </Card>
+            </GCardContent>
+          </GCard>
 
           {/* Amortization Schedule */}
-          <Card>
-            <CardHeader>
-              <CardTitle className="flex items-center gap-2">
+          <GCard>
+            <GCardHeader>
+              <GCardTitle className="flex items-center gap-2">
                 <BarChart3 className="h-5 w-5 text-heading-accent" />
                 Amortization Schedule
-              </CardTitle>
-            </CardHeader>
-            <CardContent>
+              </GCardTitle>
+            </GCardHeader>
+            <GCardContent>
               <div className="overflow-x-auto">
                 <table className="w-full text-sm">
                   <thead>
@@ -618,18 +619,18 @@ Loan Term: ${result.loanTerm.toFixed(1)} years`
                   </tbody>
                 </table>
               </div>
-            </CardContent>
-          </Card>
+            </GCardContent>
+          </GCard>
 
           {/* Scenarios */}
-          <Card>
-            <CardHeader>
-              <CardTitle className="flex items-center gap-2">
+          <GCard>
+            <GCardHeader>
+              <GCardTitle className="flex items-center gap-2">
                 <TrendingUp className="h-5 w-5 text-heading-accent" />
                 Payment Scenarios
-              </CardTitle>
-            </CardHeader>
-            <CardContent>
+              </GCardTitle>
+            </GCardHeader>
+            <GCardContent>
               <div className="grid md:grid-cols-2 gap-4">
                 {result.scenarios.map((scenario, index) => (
                   <div key={index} className="p-4 bg-muted rounded-lg border border-border">
@@ -647,18 +648,18 @@ Loan Term: ${result.loanTerm.toFixed(1)} years`
                   </div>
                 ))}
               </div>
-            </CardContent>
-          </Card>
+            </GCardContent>
+          </GCard>
 
           {/* Recommendations */}
-          <Card>
-            <CardHeader>
-              <CardTitle className="flex items-center gap-2">
+          <GCard>
+            <GCardHeader>
+              <GCardTitle className="flex items-center gap-2">
                 <Target className="h-5 w-5 text-heading-accent" />
                 Personalized Recommendations
-              </CardTitle>
-            </CardHeader>
-            <CardContent>
+              </GCardTitle>
+            </GCardHeader>
+            <GCardContent>
               <div className="grid md:grid-cols-3 gap-6">
                 <div>
                   <h4 className="font-semibold mb-3 text-foreground">Payment Strategies</h4>
@@ -694,21 +695,21 @@ Loan Term: ${result.loanTerm.toFixed(1)} years`
                   </ul>
                 </div>
               </div>
-            </CardContent>
-          </Card>
+            </GCardContent>
+          </GCard>
         </div>
       )}
 
       {/* History Section */}
       {history.length > 0 && (
-        <Card>
-          <CardHeader>
-            <CardTitle className="flex items-center gap-2">
+        <GCard>
+          <GCardHeader>
+            <GCardTitle className="flex items-center gap-2">
               <History className="h-5 w-5 text-muted-foreground" />
               Recent Calculations
-            </CardTitle>
-          </CardHeader>
-          <CardContent>
+            </GCardTitle>
+          </GCardHeader>
+          <GCardContent>
             <div className="space-y-2">
               {history.map((item, index) => (
                 <div key={index} className="flex items-center justify-between p-3 bg-muted rounded-lg">
@@ -720,29 +721,29 @@ Loan Term: ${result.loanTerm.toFixed(1)} years`
                       {item.loanTerm.toFixed(1)} years at {item.interestRate.toFixed(2)}%
                     </div>
                   </div>
-                  <Button
+                  <GButton
                     variant="ghost"
                     size="sm"
                     onClick={() => setResult(item)}
                   >
                     View Details
-                  </Button>
+                  </GButton>
                 </div>
               ))}
             </div>
-          </CardContent>
-        </Card>
+          </GCardContent>
+        </GCard>
       )}
 
       {/* Information Section */}
-      <Card>
-        <CardHeader>
-          <CardTitle className="flex items-center gap-2">
+      <GCard>
+        <GCardHeader>
+          <GCardTitle className="flex items-center gap-2">
             <Info className="h-5 w-5 text-foreground" />
             Payment Calculator Features
-          </CardTitle>
-        </CardHeader>
-        <CardContent className="space-y-3">
+          </GCardTitle>
+        </GCardHeader>
+        <GCardContent className="space-y-3">
           <div className="p-4 bg-muted rounded-lg border border-border">
             <div className="flex items-start gap-2">
               <Info className="h-4 w-4 text-foreground mt-0.5 flex-shrink-0" />
@@ -771,8 +772,8 @@ Loan Term: ${result.loanTerm.toFixed(1)} years`
               <strong>Scenario Analysis:</strong> Compare different payment strategies and their impact.
             </p>
           </div>
-        </CardContent>
-      </Card>
+        </GCardContent>
+      </GCard>
     </div>
   )
 }

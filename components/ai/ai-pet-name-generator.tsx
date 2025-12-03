@@ -1,12 +1,13 @@
 "use client"
 
 import { useState } from "react"
-import { GButton as Button } from "@/components/globalcomponents/gbutton"
-import { Label } from "@/components/ui/label"
-import { Input } from "@/components/ui/input"
-import { Textarea } from "@/components/ui/textarea"
-import { Card } from "@/components/ui/card"
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
+import { GButton } from "@/ui/gbutton"
+import { GLabel } from "@/ui/glabel"
+import { GInput } from "@/ui/ginput"
+import { GTextarea } from "@/ui/gtextarea"
+import { GCard } from "@/ui/gcard"
+import { GSelect, GSelectContent, GSelectItem, GSelectTrigger, GSelectValue } from "@/ui/gselect"
+
 import { Copy, Heart, Sparkles, Download } from "lucide-react"
 import { LoadingSpinner } from "@/components/common/loading-spinner"
 
@@ -140,52 +141,52 @@ export function AiPetNameGenerator() {
       <div className="grid gap-4 md:grid-cols-2">
         {/* Pet Type */}
         <div className="space-y-2">
-          <Label htmlFor="petType" className="text-sm font-medium">
+          <GLabel htmlFor="petType" className="text-sm font-medium">
             Pet Type <span className="text-foreground">*</span>
-          </Label>
-          <Select value={petType} onValueChange={setPetType}>
-            <SelectTrigger className="border-2 border-primary/50 focus:border-primary">
-              <SelectValue />
-            </SelectTrigger>
-            <SelectContent>
-              <SelectItem value="dog">Dog</SelectItem>
-              <SelectItem value="cat">Cat</SelectItem>
-              <SelectItem value="bird">Bird</SelectItem>
-              <SelectItem value="rabbit">Rabbit</SelectItem>
-              <SelectItem value="hamster">Hamster</SelectItem>
-              <SelectItem value="guinea pig">Guinea Pig</SelectItem>
-              <SelectItem value="fish">Fish</SelectItem>
-              <SelectItem value="turtle">Turtle</SelectItem>
-              <SelectItem value="snake">Snake</SelectItem>
-              <SelectItem value="lizard">Lizard</SelectItem>
-              <SelectItem value="ferret">Ferret</SelectItem>
-              <SelectItem value="chinchilla">Chinchilla</SelectItem>
-              <SelectItem value="parrot">Parrot</SelectItem>
-              <SelectItem value="horse">Horse</SelectItem>
-              <SelectItem value="other">Other</SelectItem>
-            </SelectContent>
-          </Select>
+          </GLabel>
+          <GSelect value={petType} onValueChange={setPetType}>
+            <GSelectTrigger className="border-2 border-primary/50 focus:border-primary">
+              <GSelectValue />
+            </GSelectTrigger>
+            <GSelectContent>
+              <GSelectItem value="dog">Dog</GSelectItem>
+              <GSelectItem value="cat">Cat</GSelectItem>
+              <GSelectItem value="bird">Bird</GSelectItem>
+              <GSelectItem value="rabbit">Rabbit</GSelectItem>
+              <GSelectItem value="hamster">Hamster</GSelectItem>
+              <GSelectItem value="guinea pig">Guinea Pig</GSelectItem>
+              <GSelectItem value="fish">Fish</GSelectItem>
+              <GSelectItem value="turtle">Turtle</GSelectItem>
+              <GSelectItem value="snake">Snake</GSelectItem>
+              <GSelectItem value="lizard">Lizard</GSelectItem>
+              <GSelectItem value="ferret">Ferret</GSelectItem>
+              <GSelectItem value="chinchilla">Chinchilla</GSelectItem>
+              <GSelectItem value="parrot">Parrot</GSelectItem>
+              <GSelectItem value="horse">Horse</GSelectItem>
+              <GSelectItem value="other">Other</GSelectItem>
+            </GSelectContent>
+          </GSelect>
         </div>
 
         {/* Gender */}
         <div className="space-y-2">
-          <Label htmlFor="gender" className="text-sm font-medium">Gender</Label>
-          <Select value={gender} onValueChange={setGender}>
-            <SelectTrigger className="border-2 border-primary/50 focus:border-primary">
-              <SelectValue />
-            </SelectTrigger>
-            <SelectContent>
-              <SelectItem value="any">Any / Unisex</SelectItem>
-              <SelectItem value="male">Male</SelectItem>
-              <SelectItem value="female">Female</SelectItem>
-            </SelectContent>
-          </Select>
+          <GLabel htmlFor="gender" className="text-sm font-medium">Gender</GLabel>
+          <GSelect value={gender} onValueChange={setGender}>
+            <GSelectTrigger className="border-2 border-primary/50 focus:border-primary">
+              <GSelectValue />
+            </GSelectTrigger>
+            <GSelectContent>
+              <GSelectItem value="any">Any / Unisex</GSelectItem>
+              <GSelectItem value="male">Male</GSelectItem>
+              <GSelectItem value="female">Female</GSelectItem>
+            </GSelectContent>
+          </GSelect>
         </div>
 
         {/* Color */}
         <div className="space-y-2">
-          <Label htmlFor="color" className="text-sm font-medium">Color / Appearance</Label>
-          <Input
+          <GLabel htmlFor="color" className="text-sm font-medium">Color / Appearance</GLabel>
+          <GInput
             id="color"
             placeholder="e.g., black, white, brown, golden, spotted"
             value={color}
@@ -196,43 +197,43 @@ export function AiPetNameGenerator() {
 
         {/* Age */}
         <div className="space-y-2">
-          <Label htmlFor="age" className="text-sm font-medium">Age</Label>
-          <Select value={age} onValueChange={setAge}>
-            <SelectTrigger className="border-2 border-primary/50 focus:border-primary">
-              <SelectValue />
-            </SelectTrigger>
-            <SelectContent>
-              <SelectItem value="any">Any Age</SelectItem>
-              <SelectItem value="baby">Baby / Puppy / Kitten</SelectItem>
-              <SelectItem value="young">Young (1-3 years)</SelectItem>
-              <SelectItem value="adult">Adult (3-7 years)</SelectItem>
-              <SelectItem value="senior">Senior (7+ years)</SelectItem>
-            </SelectContent>
-          </Select>
+          <GLabel htmlFor="age" className="text-sm font-medium">Age</GLabel>
+          <GSelect value={age} onValueChange={setAge}>
+            <GSelectTrigger className="border-2 border-primary/50 focus:border-primary">
+              <GSelectValue />
+            </GSelectTrigger>
+            <GSelectContent>
+              <GSelectItem value="any">Any Age</GSelectItem>
+              <GSelectItem value="baby">Baby / Puppy / Kitten</GSelectItem>
+              <GSelectItem value="young">Young (1-3 years)</GSelectItem>
+              <GSelectItem value="adult">Adult (3-7 years)</GSelectItem>
+              <GSelectItem value="senior">Senior (7+ years)</GSelectItem>
+            </GSelectContent>
+          </GSelect>
         </div>
 
         {/* Size */}
         <div className="space-y-2">
-          <Label htmlFor="size" className="text-sm font-medium">Size</Label>
-          <Select value={size} onValueChange={setSize}>
-            <SelectTrigger className="border-2 border-primary/50 focus:border-primary">
-              <SelectValue />
-            </SelectTrigger>
-            <SelectContent>
-              <SelectItem value="any">Any Size</SelectItem>
-              <SelectItem value="tiny">Tiny (under 10 lbs)</SelectItem>
-              <SelectItem value="small">Small (10-25 lbs)</SelectItem>
-              <SelectItem value="medium">Medium (25-50 lbs)</SelectItem>
-              <SelectItem value="large">Large (50-100 lbs)</SelectItem>
-              <SelectItem value="giant">Giant (100+ lbs)</SelectItem>
-            </SelectContent>
-          </Select>
+          <GLabel htmlFor="size" className="text-sm font-medium">Size</GLabel>
+          <GSelect value={size} onValueChange={setSize}>
+            <GSelectTrigger className="border-2 border-primary/50 focus:border-primary">
+              <GSelectValue />
+            </GSelectTrigger>
+            <GSelectContent>
+              <GSelectItem value="any">Any Size</GSelectItem>
+              <GSelectItem value="tiny">Tiny (under 10 lbs)</GSelectItem>
+              <GSelectItem value="small">Small (10-25 lbs)</GSelectItem>
+              <GSelectItem value="medium">Medium (25-50 lbs)</GSelectItem>
+              <GSelectItem value="large">Large (50-100 lbs)</GSelectItem>
+              <GSelectItem value="giant">Giant (100+ lbs)</GSelectItem>
+            </GSelectContent>
+          </GSelect>
         </div>
 
         {/* Breed */}
         <div className="space-y-2">
-          <Label htmlFor="breed" className="text-sm font-medium">Breed (Optional)</Label>
-          <Input
+          <GLabel htmlFor="breed" className="text-sm font-medium">Breed (Optional)</GLabel>
+          <GInput
             id="breed"
             placeholder="e.g., Golden Retriever, Persian, Cockatiel"
             value={breed}
@@ -244,10 +245,10 @@ export function AiPetNameGenerator() {
 
       {/* Personality */}
       <div className="space-y-2">
-        <Label htmlFor="personality" className="text-sm font-medium">
+        <GLabel htmlFor="personality" className="text-sm font-medium">
           Personality Traits
-        </Label>
-        <Textarea
+        </GLabel>
+        <GTextarea
           id="personality"
           placeholder="Describe your pet's personality: playful, calm, energetic, shy, friendly, independent, cuddly, adventurous, smart, lazy, protective, gentle..."
           value={personality}
@@ -258,10 +259,10 @@ export function AiPetNameGenerator() {
 
       {/* Additional Info */}
       <div className="space-y-2">
-        <Label htmlFor="additionalInfo" className="text-sm font-medium">
+        <GLabel htmlFor="additionalInfo" className="text-sm font-medium">
           Additional Preferences (Optional)
-        </Label>
-        <Textarea
+        </GLabel>
+        <GTextarea
           id="additionalInfo"
           placeholder="Any specific preferences? Short names, long names, specific cultural origins, name styles you prefer, special meanings you want, etc."
           value={additionalInfo}
@@ -270,7 +271,7 @@ export function AiPetNameGenerator() {
         />
       </div>
 
-      <Button
+      <GButton
         onClick={generateNames}
         disabled={loading}
         isLoading={loading}
@@ -282,7 +283,7 @@ export function AiPetNameGenerator() {
             Generate Pet Names with AI
           </>
         )}
-      </Button>
+      </GButton>
 
       {/* Loading Progress Indicator */}
       {loading && (
@@ -344,14 +345,14 @@ export function AiPetNameGenerator() {
                 Organized by category for easy browsing
               </p>
             </div>
-            <Button
+            <GButton
               variant="outline"
               onClick={downloadNames}
               className="flex items-center gap-2"
             >
               <Download className="h-4 w-4" />
               Download All
-            </Button>
+            </GButton>
           </div>
 
           {Object.entries(categorizedNames).map(([category, names]) => {
@@ -417,7 +418,7 @@ export function AiPetNameGenerator() {
 
                 <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
                   {names.map((item, index) => (
-                    <Card
+                    <GCard
                       key={index}
                       className="p-4 hover:shadow-lg transition-shadow border-2 border-border hover:border-primary/50"
                     >
@@ -433,7 +434,7 @@ export function AiPetNameGenerator() {
                             <span className="font-medium">Origin:</span> {item.origin}
                           </p>
                         </div>
-                        <Button
+                        <GButton
                           variant={copiedName === item.name ? "default" : "outline"}
                           size="sm"
                           onClick={() => copyName(item.name)}
@@ -444,9 +445,9 @@ export function AiPetNameGenerator() {
                           ) : (
                             <Copy className="h-3 w-3" />
                           )}
-                        </Button>
+                        </GButton>
                       </div>
-                    </Card>
+                    </GCard>
                   ))}
                 </div>
               </div>

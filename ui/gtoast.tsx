@@ -3,14 +3,14 @@
 import { useState, useEffect } from "react"
 import { X } from "lucide-react"
 
-interface ToastProps {
+interface GToastProps {
   type: "success" | "warning" | "error" | "info"
   message: string
   duration?: number
   onClose?: () => void
 }
 
-export function Toast({ type, message, duration = 3000, onClose }: ToastProps) {
+export function GToast({ type, message, duration = 3000, onClose }: GToastProps) {
   const [isVisible, setIsVisible] = useState(true)
 
   useEffect(() => {
@@ -28,42 +28,42 @@ export function Toast({ type, message, duration = 3000, onClose }: ToastProps) {
     switch (type) {
       case "success":
         return {
-          container: "bg-primary border-orange-600",
-          text: "text-white",
-          subtext: "text-white",
-          dot: "bg-white",
+          container: "bg-[var(--secondary-accent)] border-[var(--secondary-accent)]",
+          text: "text-[var(--secondary-accent-foreground)]",
+          subtext: "text-[var(--secondary-accent-foreground)]",
+          dot: "bg-[var(--secondary-accent-foreground)]",
           icon: "✅"
         }
       case "warning":
         return {
-          container: "bg-blue-500 border-blue-600",
-          text: "text-white",
-          subtext: "text-white",
-          dot: "bg-white",
+          container: "bg-[var(--tertiary-accent)] border-[var(--tertiary-accent)]",
+          text: "text-[var(--tertiary-accent-foreground)]",
+          subtext: "text-[var(--tertiary-accent-foreground)]",
+          dot: "bg-[var(--tertiary-accent-foreground)]",
           icon: "⚠️"
         }
       case "error":
         return {
-          container: "bg-red-500 border-red-600",
-          text: "text-white",
-          subtext: "text-white",
-          dot: "bg-white",
+          container: "bg-destructive border-destructive",
+          text: "text-destructive-foreground",
+          subtext: "text-destructive-foreground",
+          dot: "bg-destructive-foreground",
           icon: "❌"
         }
       case "info":
         return {
-          container: "bg-gray-500 border-gray-600",
-          text: "text-white",
-          subtext: "text-white",
-          dot: "bg-white",
+          container: "bg-primary border-primary",
+          text: "text-primary-foreground",
+          subtext: "text-primary-foreground",
+          dot: "bg-primary-foreground",
           icon: "ℹ️"
         }
       default:
         return {
-          container: "bg-gray-500 border-gray-600",
-          text: "text-white",
-          subtext: "text-white",
-          dot: "bg-white",
+          container: "bg-primary border-primary",
+          text: "text-primary-foreground",
+          subtext: "text-primary-foreground",
+          dot: "bg-primary-foreground",
           icon: "ℹ️"
         }
     }
@@ -85,7 +85,7 @@ export function Toast({ type, message, duration = 3000, onClose }: ToastProps) {
         >
           <X className="h-3.5 w-3.5" />
         </button>
-        
+
         <div className="flex items-center gap-2 pr-6">
           <p className={`text-sm font-medium ${theme.text}`}>
             {message}
@@ -110,11 +110,11 @@ export function useToast() {
     setToasts(prev => prev.filter(toast => toast.id !== id))
   }
 
-  const ToastContainer = () => (
+  const GToastContainer = () => (
     <div className="fixed top-4 right-4 z-[9999] space-y-2">
       {toasts.map((toast) => (
         <div key={toast.id}>
-          <Toast
+          <GToast
             type={toast.type}
             message={toast.message}
             duration={toast.duration}
@@ -125,5 +125,5 @@ export function useToast() {
     </div>
   )
 
-  return { showToast, ToastContainer }
+  return { showToast, ToastContainer: GToastContainer, GToastContainer }
 }

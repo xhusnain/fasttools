@@ -1,14 +1,14 @@
 "use client"
 
 import { useState } from "react"
-import { GButton } from "@/components/globalcomponents/gbutton"
-import { Label } from "@/components/ui/label"
-import { Textarea } from "@/components/ui/textarea"
-import { Card } from "@/components/ui/card"
+import { GButton } from "@/ui/gbutton"
+import { GLabel } from "@/ui/glabel"
+import { GTextarea } from "@/ui/gtextarea"
+import { GCard } from "@/ui/gcard"
+import { GAlert, GAlertDescription } from "@/ui/galert"
+
 import { Copy, ImageIcon, Sparkles, AlertCircle, CheckCircle, RefreshCw } from "lucide-react"
 import { LoadingSpinner } from "@/components/common/loading-spinner"
-import { Alert, AlertDescription } from "@/components/ui/alert"
-
 const PLATFORMS = [
   { value: "instagram", label: "Instagram", icon: "📸", description: "Visual storytelling with hashtags" },
   { value: "facebook", label: "Facebook", icon: "👥", description: "Community-focused content" },
@@ -80,10 +80,10 @@ export function AiCaptionGenerator() {
       {/* Input Section */}
       <div className="grid gap-8">
         <div className="space-y-4">
-          <Label htmlFor="description" className="text-base font-semibold">
+          <GLabel htmlFor="description" className="text-base font-semibold">
             Describe Your Content
-          </Label>
-          <Textarea
+          </GLabel>
+          <GTextarea
             id="description"
             placeholder="Describe your image or content... e.g., 'sunset at the beach with friends', 'coffee and laptop workspace', 'workout at the gym', 'delicious homemade pasta'"
             value={description}
@@ -97,9 +97,9 @@ export function AiCaptionGenerator() {
         </div>
 
         <div className="space-y-4">
-          <Label htmlFor="platform" className="text-base font-semibold">
+          <GLabel htmlFor="platform" className="text-base font-semibold">
             Choose Platform
-          </Label>
+          </GLabel>
           <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3">
             {PLATFORMS.map((p) => (
               <button
@@ -143,10 +143,10 @@ export function AiCaptionGenerator() {
 
       {/* Error Display */}
       {error && (
-        <Alert variant="destructive">
+        <GAlert variant="destructive">
           <AlertCircle className="h-4 w-4" />
-          <AlertDescription>{error}</AlertDescription>
-        </Alert>
+          <GAlertDescription>{error}</GAlertDescription>
+        </GAlert>
       )}
 
       {/* Results Section */}
@@ -171,7 +171,7 @@ export function AiCaptionGenerator() {
 
           <div className="grid gap-4">
             {captions.map((caption, index) => (
-              <Card key={index} className="p-4 hover:shadow-md transition-shadow">
+              <GCard key={index} className="p-4 hover:shadow-md transition-shadow">
                 <div className="flex items-start justify-between gap-4">
                   <p className="text-sm leading-relaxed flex-1 font-medium">{caption}</p>
                   <GButton
@@ -190,7 +190,7 @@ export function AiCaptionGenerator() {
                 <div className="mt-2 text-xs text-muted-foreground">
                   Platform: {selectedPlatform?.label} • Length: {caption.length} characters
                 </div>
-              </Card>
+              </GCard>
             ))}
           </div>
 

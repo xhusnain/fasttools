@@ -1,10 +1,11 @@
 "use client"
 
 import { useState, useEffect } from "react"
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
-import { GButton } from "@/components/globalcomponents/gbutton"
-import { Label } from "@/components/ui/label"
-import { Checkbox } from "@/components/ui/checkbox"
+import { GCard, GCardContent, GCardDescription, GCardHeader, GCardTitle } from "@/ui/gcard"
+import { GButton } from "@/ui/gbutton"
+import { GLabel } from "@/ui/glabel"
+import { GCheckbox } from "@/ui/gcheckbox"
+
 import { Calendar, Copy, Check, Clock, Briefcase, Settings, Calculator } from "lucide-react"
 import { LoadingSpinner } from "@/components/common/loading-spinner"
 
@@ -145,24 +146,24 @@ export function DateDifferenceCalculator() {
 
   return (
     <div className="space-y-4" data-calculator="date-difference">
-      <Card className="shadow-lg border-border hover:shadow-xl transition-all duration-300 bg-card">
-        <CardHeader className="pb-3">
-          <CardTitle className="flex items-center gap-2 text-xl">
+      <GCard className="shadow-lg border-border hover:shadow-xl transition-all duration-300 bg-card">
+        <GCardHeader className="pb-3">
+          <GCardTitle className="flex items-center gap-2 text-xl">
             <div className="p-1.5 bg-primary/10 rounded-lg">
               <Calendar className="h-5 w-5 text-primary" />
             </div>
             Date Difference Calculator
-          </CardTitle>
-          <CardDescription className="text-sm">
+          </GCardTitle>
+          <GCardDescription className="text-sm">
             Calculate the exact difference between two dates
-          </CardDescription>
-        </CardHeader>
-        <CardContent className="space-y-4">
+          </GCardDescription>
+        </GCardHeader>
+        <GCardContent className="space-y-4">
           {/* Date Format Selection */}
           <div className="space-y-2">
             <div className="flex items-center gap-2">
               <Settings className="h-3.5 w-3.5 text-muted-foreground" />
-              <Label className="text-sm font-semibold">Date Format</Label>
+              <GLabel className="text-sm font-semibold">Date Format</GLabel>
             </div>
             <div className="grid grid-cols-3 gap-2">
               {dateFormats.map((format) => (
@@ -188,10 +189,10 @@ export function DateDifferenceCalculator() {
           {/* Date Inputs */}
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
             <div className="space-y-2">
-              <Label htmlFor="startdate" className="text-sm font-semibold flex items-center gap-1.5">
+              <GLabel htmlFor="startdate" className="text-sm font-semibold flex items-center gap-1.5">
                 <Calendar className="h-3.5 w-3.5 text-primary" />
                 Start Date
-              </Label>
+              </GLabel>
               <input
                 id="startdate"
                 type="date"
@@ -202,10 +203,10 @@ export function DateDifferenceCalculator() {
             </div>
 
             <div className="space-y-2">
-              <Label htmlFor="enddate" className="text-sm font-semibold flex items-center gap-1.5">
+              <GLabel htmlFor="enddate" className="text-sm font-semibold flex items-center gap-1.5">
                 <Calendar className="h-3.5 w-3.5 text-primary" />
                 End Date
-              </Label>
+              </GLabel>
               <input
                 id="enddate"
                 type="date"
@@ -225,28 +226,28 @@ export function DateDifferenceCalculator() {
 
             <div className="space-y-2">
               <div className="flex items-center space-x-2 p-2 bg-card rounded border border-border">
-                <Checkbox
+                <GCheckbox
                   id="business-days"
                   checked={businessDaysOnly}
                   onCheckedChange={(checked) => setBusinessDaysOnly(checked as boolean)}
                   className="h-4 w-4"
                 />
-                <Label htmlFor="business-days" className="text-sm font-medium cursor-pointer">
+                <GLabel htmlFor="business-days" className="text-sm font-medium cursor-pointer">
                   Exclude Weekends
-                </Label>
+                </GLabel>
               </div>
 
               {businessDaysOnly && (
                 <div className="flex items-center space-x-2 p-2 bg-card rounded ml-3 border-l-2 border-border border border-border">
-                  <Checkbox
+                  <GCheckbox
                     id="saturday-business"
                     checked={saturdayIsBusinessDay}
                     onCheckedChange={(checked) => setSaturdayIsBusinessDay(checked as boolean)}
                     className="h-4 w-4"
                   />
-                  <Label htmlFor="saturday-business" className="text-sm font-medium cursor-pointer">
+                  <GLabel htmlFor="saturday-business" className="text-sm font-medium cursor-pointer">
                     Include Saturday
-                  </Label>
+                  </GLabel>
                 </div>
               )}
             </div>
@@ -269,23 +270,23 @@ export function DateDifferenceCalculator() {
               </>
             )}
           </GButton>
-        </CardContent>
-      </Card>
+        </GCardContent>
+      </GCard>
 
       {result && !isCalculating && (
-        <Card className="shadow-lg border-primary/20 animate-fade-in-up bg-card">
-          <CardHeader className="pb-3">
-            <CardTitle className="text-lg flex items-center gap-2">
+        <GCard className="shadow-lg border-primary/20 animate-fade-in-up bg-card">
+          <GCardHeader className="pb-3">
+            <GCardTitle className="text-lg flex items-center gap-2">
               <div className="p-1.5 bg-secondary-accent/30 rounded-lg">
                 <Calendar className="h-4 w-4 text-heading-accent" />
               </div>
               Results
-            </CardTitle>
-            <CardDescription className="text-sm">
+            </GCardTitle>
+            <GCardDescription className="text-sm">
               {businessDaysOnly ? "Business days calculation" : "Time breakdown"}
-            </CardDescription>
-          </CardHeader>
-          <CardContent className="space-y-4">
+            </GCardDescription>
+          </GCardHeader>
+          <GCardContent className="space-y-4">
             {/* Main Results Grid */}
             <div className="grid grid-cols-3 gap-2">
               <div className="text-center p-3 rounded-lg bg-card border border-border hover:shadow-md transition-all">
@@ -368,8 +369,8 @@ export function DateDifferenceCalculator() {
                 </>
               )}
             </GButton>
-          </CardContent>
-        </Card>
+          </GCardContent>
+        </GCard>
       )}
     </div>
   )

@@ -3,8 +3,9 @@
 import type React from "react"
 
 import { useState } from "react"
-import { GButton } from "@/components/globalcomponents/gbutton"
-import { Card } from "@/components/ui/card"
+import { GButton } from "@/ui/gbutton"
+import { GCard } from "@/ui/gcard"
+
 import { Upload, Copy, Check, FileText, RotateCcw } from "lucide-react"
 import { LoadingSpinner } from "@/components/common/loading-spinner"
 import Tesseract from "tesseract.js"
@@ -69,7 +70,7 @@ export function ImageToText() {
 
   return (
     <div className="space-y-6">
-      <Card className="p-6 border-border shadow-sm hover:shadow-md transition-shadow">
+      <GCard className="p-6 border-border shadow-sm hover:shadow-md transition-shadow">
         <div className="space-y-4">
           <div className="space-y-3">
             <div className="flex items-center justify-center w-full">
@@ -150,9 +151,9 @@ export function ImageToText() {
             </div>
           )}
         </div>
-      </Card>
+      </GCard>
 
-      <Card className="p-4 bg-muted/20 border-border">
+      <GCard className="p-4 bg-muted/20 border-border">
         <h3 className="text-sm font-semibold mb-2 text-foreground">How to Use:</h3>
         <ol className="text-sm text-muted-foreground space-y-1 list-decimal list-inside leading-relaxed">
           <li>Upload an image containing text (screenshot, document, photo)</li>
@@ -160,7 +161,7 @@ export function ImageToText() {
           <li>Copy the extracted text to your clipboard</li>
           <li>Use the text in your documents or applications</li>
         </ol>
-      </Card>
+      </GCard>
     </div>
   )
 }

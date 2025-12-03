@@ -1,6 +1,7 @@
 import React from 'react'
 import Image from "next/image"
-import { GCard } from "@/components/globalcomponents/gcard"
+import { GToolCard } from "@/ui/gtool-card"
+
 import {
   Calculator,
 
@@ -973,7 +974,7 @@ function CalculatorGrid() {
 
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
         {tools.map((tool, index) => (
-          <GCard
+          <GToolCard
             key={tool.href}
             title={tool.title}
             description={tool.description}

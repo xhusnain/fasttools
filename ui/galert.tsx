@@ -18,7 +18,7 @@ const alertVariants = cva(
   }
 )
 
-const Alert = React.forwardRef<
+const GAlert = React.forwardRef<
   HTMLDivElement,
   React.HTMLAttributes<HTMLDivElement> & VariantProps<typeof alertVariants>
 >(({ className, variant, ...props }, ref) => (
@@ -29,9 +29,9 @@ const Alert = React.forwardRef<
     {...props}
   />
 ))
-Alert.displayName = "Alert"
+GAlert.displayName = "Alert"
 
-const AlertTitle = React.forwardRef<
+const GAlertTitle = React.forwardRef<
   HTMLParagraphElement,
   React.HTMLAttributes<HTMLHeadingElement>
 >(({ className, ...props }, ref) => (
@@ -41,9 +41,9 @@ const AlertTitle = React.forwardRef<
     {...props}
   />
 ))
-AlertTitle.displayName = "AlertTitle"
+GAlertTitle.displayName = "GAlertTitle"
 
-const AlertDescription = React.forwardRef<
+const GAlertDescription = React.forwardRef<
   HTMLParagraphElement,
   React.HTMLAttributes<HTMLParagraphElement>
 >(({ className, ...props }, ref) => (
@@ -53,6 +53,6 @@ const AlertDescription = React.forwardRef<
     {...props}
   />
 ))
-AlertDescription.displayName = "AlertDescription"
+GAlertDescription.displayName = "GAlertDescription"
 
-export { Alert, AlertTitle, AlertDescription }
+export { GAlert, GAlertTitle, GAlertDescription }

@@ -1,8 +1,9 @@
 "use client"
 
 import { useState } from "react"
-import { GButton } from "@/components/globalcomponents/gbutton"
-import { Textarea } from "@/components/ui/textarea"
+import { GButton } from "@/ui/gbutton"
+import { GTextarea } from "@/ui/gtextarea"
+
 import { Copy, Check } from "lucide-react"
 
 export function HTMLToMarkdown() {
@@ -63,7 +64,7 @@ export function HTMLToMarkdown() {
     <div className="space-y-6">
       <div className="space-y-2">
         <label className="text-sm font-medium text-foreground">HTML Input</label>
-        <Textarea
+        <GTextarea
           placeholder="Paste your HTML here..."
           value={html}
           onChange={(e) => setHtml(e.target.value)}
@@ -93,7 +94,7 @@ export function HTMLToMarkdown() {
               )}
             </GButton>
           </div>
-          <Textarea value={markdown} readOnly className="min-h-48 font-mono text-sm" />
+          <GTextarea value={markdown} readOnly className="min-h-48 font-mono text-sm" />
         </div>
       )}
     </div>

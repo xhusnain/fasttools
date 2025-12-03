@@ -1,11 +1,12 @@
 "use client"
 
 import { useState } from "react"
-import { GButton as Button } from "@/components/globalcomponents/gbutton"
-import { Input } from "@/components/ui/input"
-import { Label } from "@/components/ui/label"
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
+import { GButton } from "@/ui/gbutton"
+import { GInput } from "@/ui/ginput"
+import { GLabel } from "@/ui/glabel"
+import { GCard, GCardContent, GCardDescription, GCardHeader, GCardTitle } from "@/ui/gcard"
+import { GSelect, GSelectContent, GSelectItem, GSelectTrigger, GSelectValue } from "@/ui/gselect"
+
 import { Copy, TrendingUp, DollarSign, Percent, Calendar, Building, User, Shield, PiggyBank, Target, BarChart3, Calculator, Plus, Minus, Trash2, Award, Users, Globe, Clock, Zap } from "lucide-react"
 import { LoadingSpinner } from "@/components/common/loading-spinner"
 
@@ -253,45 +254,45 @@ ${result.recommendations.map(rec => `• ${rec}`).join('\n')}`
   }
 
   return (
-    <Card className="border border-border shadow-lg">
-      <CardHeader className="text-center pb-4">
-        <CardTitle className="text-2xl font-bold text-foreground flex items-center justify-center gap-2">
+    <GCard className="border border-border shadow-lg">
+      <GCardHeader className="text-center pb-4">
+        <GCardTitle className="text-2xl font-bold text-foreground flex items-center justify-center gap-2">
           <Shield className="h-6 w-6 text-primary" />
           Advanced Retirement Planner
-        </CardTitle>
-        <CardDescription className="text-base text-muted-foreground">
+        </GCardTitle>
+        <GCardDescription className="text-base text-muted-foreground">
           Comprehensive retirement planning for government employees (DSP, pension) and private sector (401k, IRA) with Social Security integration
-        </CardDescription>
-      </CardHeader>
-      <CardContent>
+        </GCardDescription>
+      </GCardHeader>
+      <GCardContent>
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
           {/* Left Column - Inputs */}
           <div className="space-y-6">
             {/* Employment Type */}
             <div className="space-y-2">
-              <Label className="text-xs font-medium text-foreground flex items-center gap-2">
+              <GLabel className="text-xs font-medium text-foreground flex items-center gap-2">
                 <Building className="h-4 w-4" />
                 Employment Type
-              </Label>
-              <Select value={employmentType} onValueChange={(value: any) => setEmploymentType(value)}>
-                <SelectTrigger className="h-9 text-sm border-2 border-orange-300 focus:border-orange-400 focus:ring-2 focus:ring-orange-400/20 bg-background text-foreground">
-                  <SelectValue />
-                </SelectTrigger>
-                <SelectContent>
-                  <SelectItem value="government">Government Employee</SelectItem>
-                  <SelectItem value="private">Private Sector</SelectItem>
-                  <SelectItem value="self-employed">Self-Employed</SelectItem>
-                </SelectContent>
-              </Select>
+              </GLabel>
+              <GSelect value={employmentType} onValueChange={(value: any) => setEmploymentType(value)}>
+                <GSelectTrigger className="h-9 text-sm border-2 border-orange-300 focus:border-orange-400 focus:ring-2 focus:ring-orange-400/20 bg-background text-foreground">
+                  <GSelectValue />
+                </GSelectTrigger>
+                <GSelectContent>
+                  <GSelectItem value="government">Government Employee</GSelectItem>
+                  <GSelectItem value="private">Private Sector</GSelectItem>
+                  <GSelectItem value="self-employed">Self-Employed</GSelectItem>
+                </GSelectContent>
+              </GSelect>
             </div>
 
             {/* Basic Info */}
             <div className="grid grid-cols-2 gap-4">
               <div className="space-y-2">
-                <Label htmlFor="currentAge" className="text-xs font-medium text-foreground">
+                <GLabel htmlFor="currentAge" className="text-xs font-medium text-foreground">
                   Current Age
-                </Label>
-                <Input
+                </GLabel>
+                <GInput
                   id="currentAge"
                   type="number"
                   placeholder="30"
@@ -303,10 +304,10 @@ ${result.recommendations.map(rec => `• ${rec}`).join('\n')}`
                 />
               </div>
               <div className="space-y-2">
-                <Label htmlFor="retirementAge" className="text-xs font-medium text-foreground">
+                <GLabel htmlFor="retirementAge" className="text-xs font-medium text-foreground">
                   Retirement Age
-                </Label>
-                <Input
+                </GLabel>
+                <GInput
                   id="retirementAge"
                   type="number"
                   placeholder="65"
@@ -320,11 +321,11 @@ ${result.recommendations.map(rec => `• ${rec}`).join('\n')}`
             </div>
 
             <div className="space-y-2">
-              <Label htmlFor="currentSalary" className="text-xs font-medium text-foreground flex items-center gap-2">
+              <GLabel htmlFor="currentSalary" className="text-xs font-medium text-foreground flex items-center gap-2">
                 <DollarSign className="h-4 w-4" />
                 Current Annual Salary ($)
-              </Label>
-              <Input
+              </GLabel>
+              <GInput
                 id="currentSalary"
                 type="number"
                 placeholder="75000"
@@ -346,10 +347,10 @@ ${result.recommendations.map(rec => `• ${rec}`).join('\n')}`
                   </h4>
                   <div className="grid grid-cols-2 gap-4">
                     <div className="space-y-2">
-                      <Label htmlFor="yearsOfService" className="text-xs font-medium text-foreground">
+                      <GLabel htmlFor="yearsOfService" className="text-xs font-medium text-foreground">
                         Years of Service
-                      </Label>
-                      <Input
+                      </GLabel>
+                      <GInput
                         id="yearsOfService"
                         type="number"
                         placeholder="10"
@@ -360,10 +361,10 @@ ${result.recommendations.map(rec => `• ${rec}`).join('\n')}`
                       />
                     </div>
                     <div className="space-y-2">
-                      <Label htmlFor="pensionMultiplier" className="text-xs font-medium text-foreground">
+                      <GLabel htmlFor="pensionMultiplier" className="text-xs font-medium text-foreground">
                         Pension Multiplier (%)
-                      </Label>
-                      <Input
+                      </GLabel>
+                      <GInput
                         id="pensionMultiplier"
                         type="number"
                         placeholder="2.5"
@@ -375,10 +376,10 @@ ${result.recommendations.map(rec => `• ${rec}`).join('\n')}`
                     </div>
                   </div>
                   <div className="space-y-2 mt-3">
-                    <Label htmlFor="highThreeSalary" className="text-xs font-medium text-foreground">
+                    <GLabel htmlFor="highThreeSalary" className="text-xs font-medium text-foreground">
                       High-3 Average Salary ($)
-                    </Label>
-                    <Input
+                    </GLabel>
+                    <GInput
                       id="highThreeSalary"
                       type="number"
                       placeholder="80000"
@@ -394,29 +395,29 @@ ${result.recommendations.map(rec => `• ${rec}`).join('\n')}`
                 {/* DSP Funds */}
                 <div className="space-y-3">
                   <div className="flex items-center justify-between">
-                    <Label className="text-xs font-medium text-foreground flex items-center gap-2">
+                    <GLabel className="text-xs font-medium text-foreground flex items-center gap-2">
                       <PiggyBank className="h-4 w-4" />
                       DSP Funds
-                    </Label>
-                    <Button
+                    </GLabel>
+                    <GButton
                       onClick={addDspFund}
                       size="sm"
                       className="h-7 text-xs"
                     >
                       <Plus className="h-3 w-3 mr-1" />
                       Add Fund
-                    </Button>
+                    </GButton>
                   </div>
                   {dspFunds.map((fund) => (
                     <div key={fund.id} className="p-3 bg-accent/5 border border-accent/20 rounded-lg space-y-2">
                       <div className="grid grid-cols-2 gap-2">
-                        <Input
+                        <GInput
                           placeholder="Fund Name"
                           value={fund.name}
                           onChange={(e) => updateDspFund(fund.id, 'name', e.target.value)}
                           className="h-7 text-xs border-2 border-orange-300 focus:border-orange-400 focus:ring-2 focus:ring-orange-400/20 bg-background text-foreground placeholder:text-muted-foreground"
                         />
-                        <Input
+                        <GInput
                           type="number"
                           placeholder="Contribution %"
                           value={fund.contributionRate}
@@ -425,14 +426,14 @@ ${result.recommendations.map(rec => `• ${rec}`).join('\n')}`
                         />
                       </div>
                       <div className="grid grid-cols-2 gap-2">
-                        <Input
+                        <GInput
                           type="number"
                           placeholder="Start Year"
                           value={fund.startYear}
                           onChange={(e) => updateDspFund(fund.id, 'startYear', Number(e.target.value))}
                           className="h-7 text-xs border-2 border-orange-300 focus:border-orange-400 focus:ring-2 focus:ring-orange-400/20 bg-background text-foreground placeholder:text-muted-foreground"
                         />
-                        <Input
+                        <GInput
                           type="number"
                           placeholder="End Year"
                           value={fund.endYear}
@@ -441,14 +442,14 @@ ${result.recommendations.map(rec => `• ${rec}`).join('\n')}`
                         />
                       </div>
                       <div className="flex justify-end">
-                        <Button
+                        <GButton
                           onClick={() => removeDspFund(fund.id)}
                           size="sm"
                           variant="destructive"
                           className="h-6 text-xs"
                         >
                           <Trash2 className="h-3 w-3" />
-                        </Button>
+                        </GButton>
                       </div>
                     </div>
                   ))}
@@ -460,35 +461,35 @@ ${result.recommendations.map(rec => `• ${rec}`).join('\n')}`
             {employmentType !== 'government' && (
               <div className="space-y-3">
                 <div className="flex items-center justify-between">
-                  <Label className="text-xs font-medium text-foreground flex items-center gap-2">
+                  <GLabel className="text-xs font-medium text-foreground flex items-center gap-2">
                     <Target className="h-4 w-4" />
                     Retirement Accounts
-                  </Label>
-                  <Button
+                  </GLabel>
+                  <GButton
                     onClick={addRetirementAccount}
                     size="sm"
                     className="h-7 text-xs"
                   >
                     <Plus className="h-3 w-3 mr-1" />
                     Add Account
-                  </Button>
+                  </GButton>
                 </div>
                 {retirementAccounts.map((account) => (
                   <div key={account.id} className="p-3 bg-accent/5 border border-accent/20 rounded-lg space-y-2">
                     <div className="grid grid-cols-2 gap-2">
-                      <Select value={account.type} onValueChange={(value: any) => updateRetirementAccount(account.id, 'type', value)}>
-                        <SelectTrigger className="h-7 text-xs border-2 border-orange-300 focus:border-orange-400 focus:ring-2 focus:ring-orange-400/20 bg-background text-foreground">
-                          <SelectValue />
-                        </SelectTrigger>
-                        <SelectContent>
-                          <SelectItem value="401k">401(k)</SelectItem>
-                          <SelectItem value="IRA">Traditional IRA</SelectItem>
-                          <SelectItem value="Roth IRA">Roth IRA</SelectItem>
-                          <SelectItem value="TSP">TSP</SelectItem>
-                          <SelectItem value="Other">Other</SelectItem>
-                        </SelectContent>
-                      </Select>
-                      <Input
+                      <GSelect value={account.type} onValueChange={(value: any) => updateRetirementAccount(account.id, 'type', value)}>
+                        <GSelectTrigger className="h-7 text-xs border-2 border-orange-300 focus:border-orange-400 focus:ring-2 focus:ring-orange-400/20 bg-background text-foreground">
+                          <GSelectValue />
+                        </GSelectTrigger>
+                        <GSelectContent>
+                          <GSelectItem value="401k">401(k)</GSelectItem>
+                          <GSelectItem value="IRA">Traditional IRA</GSelectItem>
+                          <GSelectItem value="Roth IRA">Roth IRA</GSelectItem>
+                          <GSelectItem value="TSP">TSP</GSelectItem>
+                          <GSelectItem value="Other">Other</GSelectItem>
+                        </GSelectContent>
+                      </GSelect>
+                      <GInput
                         type="number"
                         placeholder="Current Balance"
                         value={account.currentBalance}
@@ -497,21 +498,21 @@ ${result.recommendations.map(rec => `• ${rec}`).join('\n')}`
                       />
                     </div>
                     <div className="grid grid-cols-3 gap-2">
-                      <Input
+                      <GInput
                         type="number"
                         placeholder="Monthly Contrib"
                         value={account.monthlyContribution}
                         onChange={(e) => updateRetirementAccount(account.id, 'monthlyContribution', Number(e.target.value))}
                         className="h-7 text-xs border-2 border-orange-300 focus:border-orange-400 focus:ring-2 focus:ring-orange-400/20 bg-background text-foreground placeholder:text-muted-foreground"
                       />
-                      <Input
+                      <GInput
                         type="number"
                         placeholder="Employer Match"
                         value={account.employerMatch}
                         onChange={(e) => updateRetirementAccount(account.id, 'employerMatch', Number(e.target.value))}
                         className="h-7 text-xs border-2 border-orange-300 focus:border-orange-400 focus:ring-2 focus:ring-orange-400/20 bg-background text-foreground placeholder:text-muted-foreground"
                       />
-                      <Input
+                      <GInput
                         type="number"
                         placeholder="Return %"
                         value={account.annualReturn}
@@ -520,14 +521,14 @@ ${result.recommendations.map(rec => `• ${rec}`).join('\n')}`
                       />
                     </div>
                     <div className="flex justify-end">
-                      <Button
+                      <GButton
                         onClick={() => removeRetirementAccount(account.id)}
                         size="sm"
                         variant="destructive"
                         className="h-6 text-xs"
                       >
                         <Trash2 className="h-3 w-3" />
-                      </Button>
+                      </GButton>
                     </div>
                   </div>
                 ))}
@@ -541,7 +542,7 @@ ${result.recommendations.map(rec => `• ${rec}`).join('\n')}`
                 Social Security
               </h4>
               <div className="space-y-2">
-                <Input
+                <GInput
                   type="number"
                   placeholder="Estimated Monthly Benefit"
                   value={socialSecurity.estimatedMonthlyBenefit}
@@ -555,11 +556,11 @@ ${result.recommendations.map(rec => `• ${rec}`).join('\n')}`
             {/* Additional settings */}
             <div className="grid grid-cols-2 gap-4">
               <div className="space-y-2">
-                <Label htmlFor="inflationRate" className="text-xs font-medium text-foreground flex items-center gap-2">
+                <GLabel htmlFor="inflationRate" className="text-xs font-medium text-foreground flex items-center gap-2">
                   <Percent className="h-4 w-4" />
                   Inflation Rate (%)
-                </Label>
-                <Input
+                </GLabel>
+                <GInput
                   id="inflationRate"
                   type="number"
                   placeholder="3.0"
@@ -570,11 +571,11 @@ ${result.recommendations.map(rec => `• ${rec}`).join('\n')}`
                 />
               </div>
               <div className="space-y-2">
-                <Label htmlFor="expectedLifespan" className="text-xs font-medium text-foreground flex items-center gap-2">
+                <GLabel htmlFor="expectedLifespan" className="text-xs font-medium text-foreground flex items-center gap-2">
                   <Clock className="h-4 w-4" />
                   Expected Lifespan
-                </Label>
-                <Input
+                </GLabel>
+                <GInput
                   id="expectedLifespan"
                   type="number"
                   placeholder="85"
@@ -587,7 +588,7 @@ ${result.recommendations.map(rec => `• ${rec}`).join('\n')}`
               </div>
             </div>
 
-            <Button
+            <GButton
               onClick={calculateRetirement}
               disabled={loading || !currentAge || !retirementAge || !currentSalary}
               className="w-full h-9 text-sm font-medium shadow-sm hover:shadow-md transition-all"
@@ -603,7 +604,7 @@ ${result.recommendations.map(rec => `• ${rec}`).join('\n')}`
                   Calculate Retirement Plan
                 </>
               )}
-            </Button>
+            </GButton>
           </div>
 
           {/* Right Column - Results */}
@@ -691,14 +692,14 @@ ${result.recommendations.map(rec => `• ${rec}`).join('\n')}`
                   )}
                 </div>
 
-                <Button
+                <GButton
                   onClick={copyResult}
                   variant="outline"
                   className="w-full h-8 text-xs font-medium hover:bg-accent transition-all bg-transparent"
                 >
                   <Copy className="mr-2 h-3 w-3" />
                   Copy Retirement Plan
-                </Button>
+                </GButton>
               </>
             ) : (
               <div className="flex items-center justify-center h-48">
@@ -711,7 +712,7 @@ ${result.recommendations.map(rec => `• ${rec}`).join('\n')}`
             )}
           </div>
         </div>
-      </CardContent>
-    </Card>
+      </GCardContent>
+    </GCard>
   )
 }

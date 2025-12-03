@@ -1,9 +1,10 @@
 "use client"
 
 import { useState } from "react"
-import { Textarea } from "@/components/ui/textarea"
-import { Card } from "@/components/ui/card"
-import { GButton as Button } from "@/components/globalcomponents/gbutton"
+import { GTextarea } from "@/ui/gtextarea"
+import { GCard } from "@/ui/gcard"
+import { GButton } from "@/ui/gbutton"
+
 import { marked } from "marked"
 import { RotateCcw } from "lucide-react"
 
@@ -30,20 +31,20 @@ export function MarkdownPreviewer() {
     <div className="space-y-4">
       {/* Action Buttons */}
       <div className="flex gap-3 justify-end">
-        <Button
+        <GButton
           onClick={resetMarkdown}
           variant="outline"
           className="gap-2"
         >
           <RotateCcw className="h-4 w-4" />
           Reset
-        </Button>
+        </GButton>
       </div>
 
       <div className="grid md:grid-cols-2 gap-6">
         <div className="space-y-2">
           <label className="text-sm font-medium text-foreground">Markdown Input</label>
-          <Textarea
+          <GTextarea
             value={markdown}
             onChange={(e) => setMarkdown(e.target.value)}
             className="min-h-96 font-mono text-sm border-2 border-orange-300 focus:border-primary"
@@ -53,7 +54,7 @@ export function MarkdownPreviewer() {
 
         <div className="space-y-2">
           <label className="text-sm font-medium text-foreground">Live Preview</label>
-          <Card className="p-6 min-h-96 overflow-auto prose prose-sm dark:prose-invert max-w-none">
+          <GCard className="p-6 min-h-96 overflow-auto prose prose-sm dark:prose-invert max-w-none">
             {markdown ? (
               <div dangerouslySetInnerHTML={{ __html: renderMarkdown(markdown) }} />
             ) : (
@@ -63,7 +64,7 @@ export function MarkdownPreviewer() {
                 </p>
               </div>
             )}
-          </Card>
+          </GCard>
         </div>
       </div>
     </div>

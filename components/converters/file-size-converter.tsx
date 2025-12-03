@@ -1,14 +1,15 @@
 "use client"
 
 import { useState, useEffect } from "react"
-import { Input } from "@/components/ui/input"
-import { Label } from "@/components/ui/label"
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
-import { GButton } from "@/components/globalcomponents/gbutton"
-import { Badge } from "@/components/ui/badge"
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
-import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "@/components/ui/tooltip"
+import { GInput } from "@/ui/ginput"
+import { GLabel } from "@/ui/glabel"
+import { GCard, GCardContent, GCardDescription, GCardHeader, GCardTitle } from "@/ui/gcard"
+import { GSelect, GSelectContent, GSelectItem, GSelectTrigger, GSelectValue } from "@/ui/gselect"
+import { GButton } from "@/ui/gbutton"
+import { GBadge } from "@/ui/gbadge"
+import { GTabs, GTabsContent, GTabsList, GTabsTrigger } from "@/ui/gtabs"
+import { GTooltip, GTooltipContent, GTooltipProvider, GTooltipTrigger } from "@/ui/gtooltip"
+
 import {
   HardDrive,
   Copy,
@@ -94,40 +95,40 @@ export function FileSizeConverter() {
 
   return (
     <div className="space-y-6">
-      <Tabs value={activeTab} onValueChange={setActiveTab} className="w-full">
-        <TabsList className="grid w-full grid-cols-2 sm:grid-cols-4 gap-2">
-          <TabsTrigger value="converter" className="flex items-center justify-center gap-2 text-xs sm:text-sm py-2">
+      <GTabs value={activeTab} onValueChange={setActiveTab} className="w-full">
+        <GTabsList className="grid w-full grid-cols-2 sm:grid-cols-4 gap-2">
+          <GTabsTrigger value="converter" className="flex items-center justify-center gap-2 text-xs sm:text-sm py-2">
             <Calculator className="h-4 w-4" />
             Converter
-          </TabsTrigger>
-          <TabsTrigger value="examples" className="flex items-center justify-center gap-2 text-xs sm:text-sm py-2">
+          </GTabsTrigger>
+          <GTabsTrigger value="examples" className="flex items-center justify-center gap-2 text-xs sm:text-sm py-2">
             <FileText className="h-4 w-4" />
             Examples
-          </TabsTrigger>
-          <TabsTrigger value="education" className="flex items-center justify-center gap-2 text-xs sm:text-sm py-2">
+          </GTabsTrigger>
+          <GTabsTrigger value="education" className="flex items-center justify-center gap-2 text-xs sm:text-sm py-2">
             <Database className="h-4 w-4" />
             Education
-          </TabsTrigger>
-          <TabsTrigger value="faq" className="flex items-center justify-center gap-2 text-xs sm:text-sm py-2">
+          </GTabsTrigger>
+          <GTabsTrigger value="faq" className="flex items-center justify-center gap-2 text-xs sm:text-sm py-2">
             <Code className="h-4 w-4" />
             FAQ
-          </TabsTrigger>
-        </TabsList>
+          </GTabsTrigger>
+        </GTabsList>
 
-        <TabsContent value="converter" className="space-y-6">
-          <Card className="border border-border shadow-sm">
-            <CardHeader>
-              <CardTitle className="text-lg flex items-center gap-2">
+        <GTabsContent value="converter" className="space-y-6">
+          <GCard className="border border-border shadow-sm">
+            <GCardHeader>
+              <GCardTitle className="text-lg flex items-center gap-2">
                 <HardDrive className="h-5 w-5 text-primary" />
                 File Size Converter
-              </CardTitle>
-              <CardDescription>Convert between decimal (SI) and binary (IEC) file size units</CardDescription>
-            </CardHeader>
-            <CardContent className="space-y-6">
+              </GCardTitle>
+              <GCardDescription>Convert between decimal (SI) and binary (IEC) file size units</GCardDescription>
+            </GCardHeader>
+            <GCardContent className="space-y-6">
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <div className="space-y-2">
-                  <Label htmlFor="value">Value</Label>
-                  <Input
+                  <GLabel htmlFor="value">Value</GLabel>
+                  <GInput
                     id="value"
                     type="number"
                     placeholder="Enter file size"
@@ -137,47 +138,47 @@ export function FileSizeConverter() {
                   />
                 </div>
                 <div className="space-y-2">
-                  <Label htmlFor="unit">From Unit</Label>
-                  <Select value={fromUnit} onValueChange={setFromUnit}>
-                    <SelectTrigger className="h-11 text-sm w-full border-2 border-primary focus:border-primary">
-                      <SelectValue />
-                    </SelectTrigger>
-                    <SelectContent>
+                  <GLabel htmlFor="unit">From Unit</GLabel>
+                  <GSelect value={fromUnit} onValueChange={setFromUnit}>
+                    <GSelectTrigger className="h-11 text-sm w-full border-2 border-primary focus:border-primary">
+                      <GSelectValue />
+                    </GSelectTrigger>
+                    <GSelectContent>
                       <div className="px-2 py-1.5 text-xs font-semibold text-muted-foreground">
                         Decimal Units (SI)
                       </div>
                       {Object.keys(decimalUnits).map((unit) => (
-                        <SelectItem key={unit} value={unit}>{unit}</SelectItem>
+                        <GSelectItem key={unit} value={unit}>{unit}</GSelectItem>
                       ))}
                       <div className="px-2 py-1.5 text-xs font-semibold text-muted-foreground mt-2">
                         Binary Units (IEC)
                       </div>
                       {Object.keys(binaryUnits).map((unit) => (
-                        <SelectItem key={unit} value={unit}>{unit}</SelectItem>
+                        <GSelectItem key={unit} value={unit}>{unit}</GSelectItem>
                       ))}
-                    </SelectContent>
-                  </Select>
+                    </GSelectContent>
+                  </GSelect>
                 </div>
               </div>
-            </CardContent>
-          </Card>
+            </GCardContent>
+          </GCard>
 
-          <Card className="border border-border shadow-sm">
-            <CardHeader>
-              <CardTitle className="text-base">
+          <GCard className="border border-border shadow-sm">
+            <GCardHeader>
+              <GCardTitle className="text-base">
                 Converted Values
-              </CardTitle>
-            </CardHeader>
-            <CardContent>
+              </GCardTitle>
+            </GCardHeader>
+            <GCardContent>
               <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-5 gap-3">
                 {Object.keys(allUnits).map((unit, index) => (
                   <div key={unit} className="flex flex-col p-3 bg-muted rounded-md group hover:bg-muted/80 transition-colors">
                     <div className="flex items-center justify-between mb-2">
                       <span className="text-sm font-medium text-foreground truncate">{unit}</span>
                       {unit.includes("KiB") || unit.includes("MiB") || unit.includes("GiB") || unit.includes("TiB") || unit.includes("PiB") || unit.includes("EiB") || unit.includes("ZiB") || unit.includes("YiB") || unit.includes("RiB") || unit.includes("QiB") ? (
-                        <Badge variant="secondary" className="text-xs ml-2 flex-shrink-0">Binary</Badge>
+                        <GBadge variant="secondary" className="text-xs ml-2 flex-shrink-0">Binary</GBadge>
                       ) : unit !== "Byte (B)" && unit !== "Bit (b)" ? (
-                        <Badge variant="outline" className="text-xs ml-2 flex-shrink-0">Decimal</Badge>
+                        <GBadge variant="outline" className="text-xs ml-2 flex-shrink-0">Decimal</GBadge>
                       ) : null}
                     </div>
                     <div className="flex items-center justify-between">
@@ -198,14 +199,14 @@ export function FileSizeConverter() {
                   </div>
                 ))}
               </div>
-            </CardContent>
-          </Card>
+            </GCardContent>
+          </GCard>
 
-          <Card className="border border-border shadow-sm bg-muted/30">
-            <CardHeader>
-              <CardTitle className="text-base">Quick Reference</CardTitle>
-            </CardHeader>
-            <CardContent>
+          <GCard className="border border-border shadow-sm bg-muted/30">
+            <GCardHeader>
+              <GCardTitle className="text-base">Quick Reference</GCardTitle>
+            </GCardHeader>
+            <GCardContent>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4 text-xs">
                 <div className="space-y-2">
                   <h4 className="font-semibold text-foreground">Decimal (SI) Units</h4>
@@ -245,19 +246,19 @@ export function FileSizeConverter() {
                   <li>• When in doubt, use exact numeric values</li>
                 </ul>
               </div>
-            </CardContent>
-          </Card>
-        </TabsContent>
+            </GCardContent>
+          </GCard>
+        </GTabsContent>
 
-        <TabsContent value="examples" className="space-y-6">
-          <Card className="border border-border shadow-sm">
-            <CardHeader>
-              <CardTitle className="text-base flex items-center gap-2">
+        <GTabsContent value="examples" className="space-y-6">
+          <GCard className="border border-border shadow-sm">
+            <GCardHeader>
+              <GCardTitle className="text-base flex items-center gap-2">
                 <FileText className="h-4 w-4" />
                 Real-World File Size Examples
-              </CardTitle>
-            </CardHeader>
-            <CardContent>
+              </GCardTitle>
+            </GCardHeader>
+            <GCardContent>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                 <div className="space-y-3">
                   <div className="flex items-center gap-2 p-3 bg-muted rounded-md">
@@ -320,14 +321,14 @@ export function FileSizeConverter() {
                   </div>
                 </div>
               </div>
-            </CardContent>
-          </Card>
+            </GCardContent>
+          </GCard>
 
-          <Card className="border border-border shadow-sm">
-            <CardHeader>
-              <CardTitle className="text-base">Platform Upload Limits</CardTitle>
-            </CardHeader>
-            <CardContent>
+          <GCard className="border border-border shadow-sm">
+            <GCardHeader>
+              <GCardTitle className="text-base">Platform Upload Limits</GCardTitle>
+            </GCardHeader>
+            <GCardContent>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4 text-sm">
                 <div className="space-y-2">
                   <div className="flex justify-between items-center p-2 bg-muted rounded">
@@ -358,14 +359,14 @@ export function FileSizeConverter() {
                   </div>
                 </div>
               </div>
-            </CardContent>
-          </Card>
+            </GCardContent>
+          </GCard>
 
-          <Card className="border border-border shadow-sm">
-            <CardHeader>
-              <CardTitle className="text-base">A-Z Unit Mapping</CardTitle>
-            </CardHeader>
-            <CardContent>
+          <GCard className="border border-border shadow-sm">
+            <GCardHeader>
+              <GCardTitle className="text-base">A-Z Unit Mapping</GCardTitle>
+            </GCardHeader>
+            <GCardContent>
               <div className="grid grid-cols-2 md:grid-cols-4 gap-2 text-xs">
                 <div className="space-y-1">
                   <div className="flex justify-between items-center p-1 bg-muted rounded">
@@ -426,19 +427,19 @@ export function FileSizeConverter() {
                   </div>
                 </div>
               </div>
-            </CardContent>
-          </Card>
-        </TabsContent>
+            </GCardContent>
+          </GCard>
+        </GTabsContent>
 
-        <TabsContent value="education" className="space-y-6">
-          <Card className="border border-border shadow-sm">
-            <CardHeader>
-              <CardTitle className="text-lg flex items-center gap-2">
+        <GTabsContent value="education" className="space-y-6">
+          <GCard className="border border-border shadow-sm">
+            <GCardHeader>
+              <GCardTitle className="text-lg flex items-center gap-2">
                 <Database className="h-5 w-5" />
                 Data Storage Fundamentals
-              </CardTitle>
-            </CardHeader>
-            <CardContent className="space-y-6">
+              </GCardTitle>
+            </GCardHeader>
+            <GCardContent className="space-y-6">
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <div className="space-y-4">
                   <h3 className="text-lg font-semibold text-foreground">Mathematical Formulas</h3>
@@ -537,19 +538,19 @@ export function FileSizeConverter() {
                   </div>
                 </div>
               </div>
-            </CardContent>
-          </Card>
-        </TabsContent>
+            </GCardContent>
+          </GCard>
+        </GTabsContent>
 
-        <TabsContent value="faq" className="space-y-6">
-          <Card className="border border-border shadow-sm">
-            <CardHeader>
-              <CardTitle className="text-lg flex items-center gap-2">
+        <GTabsContent value="faq" className="space-y-6">
+          <GCard className="border border-border shadow-sm">
+            <GCardHeader>
+              <GCardTitle className="text-lg flex items-center gap-2">
                 <Code className="h-5 w-5" />
                 Frequently Asked Questions
-              </CardTitle>
-            </CardHeader>
-            <CardContent className="space-y-6">
+              </GCardTitle>
+            </GCardHeader>
+            <GCardContent className="space-y-6">
               <div className="space-y-4">
                 <div className="p-4 bg-muted rounded-lg">
                   <h4 className="font-semibold text-foreground mb-2">Q1: Why is there a difference between decimal and binary units?</h4>
@@ -640,11 +641,11 @@ export function FileSizeConverter() {
                   </p>
                 </div>
               </div>
-            </CardContent>
-          </Card>
-        </TabsContent>
+            </GCardContent>
+          </GCard>
+        </GTabsContent>
 
-      </Tabs>
+      </GTabs>
 
     </div>
   )

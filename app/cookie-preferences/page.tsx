@@ -2,7 +2,8 @@
 
 import { useState, useEffect } from "react"
 import { Breadcrumbs } from "@/components/common/breadcrumbs"
-import { GButton } from "@/components/globalcomponents/gbutton"
+import { GButton } from "@/ui/gbutton"
+
 import { Shield, Cookie, Eye, Settings, CheckCircle, AlertTriangle, ExternalLink, Lock, BarChart, Target } from "lucide-react"
 import Link from "next/link"
 

@@ -3,9 +3,10 @@
 import type React from "react"
 
 import { useState, useEffect } from "react"
-import { GButton as Button } from "@/components/globalcomponents/gbutton"
-import { Card } from "@/components/ui/card"
-import { Slider } from "@/components/ui/slider"
+import { GButton } from "@/ui/gbutton"
+import { GCard } from "@/ui/gcard"
+import { GSlider } from "@/ui/gslider"
+
 import { Upload, Download, RotateCcw, FileText, Zap, Image as ImageIcon } from "lucide-react"
 import { LoadingSpinner } from "@/components/common/loading-spinner"
 import { useImageBlurStore } from "@/lib/store-image-blur"
@@ -82,7 +83,7 @@ export function ImageBlur() {
 
   return (
     <div className="w-full">
-      <Card className="shadow-lg w-full max-w-none border-border">
+      <GCard className="shadow-lg w-full max-w-none border-border">
         <div className="p-4 sm:p-6">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
             {/* Input Section */}
@@ -90,7 +91,7 @@ export function ImageBlur() {
               <div className="flex items-center justify-between">
                 <h3 className="text-lg font-semibold text-foreground">Original Image</h3>
                 {imageUrl && (
-                  <Button
+                  <GButton
                     onClick={resetAll}
                     variant="outline"
                     size="sm"
@@ -98,7 +99,7 @@ export function ImageBlur() {
                   >
                     <RotateCcw className="h-4 w-4" />
                     Reset
-                  </Button>
+                  </GButton>
                 )}
               </div>
 
@@ -151,13 +152,13 @@ export function ImageBlur() {
               <div className="flex items-center justify-between">
                 <h3 className="text-lg font-semibold text-foreground">Blurred Result</h3>
                 {result && !isProcessing && (
-                  <Button
+                  <GButton
                     onClick={downloadImage}
                     className="gap-2 bg-gradient-to-r from-green-500 to-emerald-500 hover:from-green-600 hover:to-emerald-600"
                   >
                     <Download className="h-4 w-4" />
                     Download
-                  </Button>
+                  </GButton>
                 )}
               </div>
 
@@ -236,7 +237,7 @@ export function ImageBlur() {
                 </label>
                 <span className="text-xs text-muted-foreground italic">Auto-applies</span>
               </div>
-              <Slider
+              <GSlider
                 value={[blurIntensity]}
                 onValueChange={(value) => {
                   setBlurIntensity(value[0])
@@ -260,7 +261,7 @@ export function ImageBlur() {
                   Cutout strength: <span className="text-foreground font-semibold">{refineStrength}</span>
                 </label>
               </div>
-              <Slider
+              <GSlider
                 value={[refineStrength === "light" ? 0 : refineStrength === "medium" ? 1 : 2]}
                 onValueChange={(v) => {
                   const s = v[0] === 0 ? "light" : v[0] === 1 ? "medium" : "strong";
@@ -296,14 +297,14 @@ export function ImageBlur() {
                 <div>
                   <h3 className="text-lg font-bold text-foreground mb-2">Oops! Something went wrong</h3>
                   <p className="text-sm text-foreground mb-4 max-w-md">{status.message}</p>
-                  <Button
+                  <GButton
                     onClick={resetAll}
                     variant="outline"
                     className="gap-2 border-red-300 text-foreground hover:bg-red-100 dark:border-destructive dark:text-foreground dark:hover:bg-red-900/30"
                   >
                     <RotateCcw className="h-4 w-4" />
                     Try Again
-                  </Button>
+                  </GButton>
                 </div>
               </div>
             </div>
@@ -325,7 +326,7 @@ export function ImageBlur() {
             </div>
           )}
         </div>
-      </Card>
+      </GCard>
     </div>
   )
 }

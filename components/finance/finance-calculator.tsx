@@ -1,13 +1,14 @@
 "use client"
 
 import { useState, useEffect } from "react"
-import { GButton } from "@/components/globalcomponents/gbutton"
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
-import { Input } from "@/components/ui/input"
-import { Label } from "@/components/ui/label"
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
-import { Badge } from "@/components/ui/badge"
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
+import { GButton } from "@/ui/gbutton"
+import { GCard, GCardContent, GCardHeader, GCardTitle } from "@/ui/gcard"
+import { GInput } from "@/ui/ginput"
+import { GLabel } from "@/ui/glabel"
+import { GSelect, GSelectContent, GSelectItem, GSelectTrigger, GSelectValue } from "@/ui/gselect"
+import { GBadge } from "@/ui/gbadge"
+import { GTabs, GTabsContent, GTabsList, GTabsTrigger } from "@/ui/gtabs"
+
 import {
   Calculator,
   DollarSign,
@@ -363,19 +364,19 @@ Total Interest: $${result.summary.totalInterest.toFixed(2)}`
   return (
     <div className="space-y-4 sm:space-y-6 md:space-y-8 w-full overflow-hidden">
       {/* Main Calculator */}
-      <Card className="bg-card border-border w-full overflow-hidden">
-        <CardHeader className="px-2 sm:px-3 md:px-4 pb-2">
-          <CardTitle className="flex items-center gap-2 text-sm sm:text-base md:text-lg break-words">
+      <GCard className="bg-card border-border w-full overflow-hidden">
+        <GCardHeader className="px-2 sm:px-3 md:px-4 pb-2">
+          <GCardTitle className="flex items-center gap-2 text-sm sm:text-base md:text-lg break-words">
             <Calculator className="h-3.5 w-3.5 sm:h-4 sm:w-4 text-foreground" />
             <span className="text-foreground">Advanced Finance Calculator</span>
-          </CardTitle>
-        </CardHeader>
-        <CardContent className="space-y-4 sm:space-y-6 px-2 sm:px-3 md:px-4">
-          {/* Input Fields */}
+          </GCardTitle>
+        </GCardHeader>
+        <GCardContent className="space-y-4 sm:space-y-6 px-2 sm:px-3 md:px-4">
+          {/* GInput Fields */}
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4">
             <div className="space-y-1.5 w-full min-w-0">
-              <Label htmlFor="fv" className="text-heading-accent text-xs sm:text-sm">FV (Future Value)</Label>
-              <Input
+              <GLabel htmlFor="fv" className="text-heading-accent text-xs sm:text-sm">FV (Future Value)</GLabel>
+              <GInput
                 id="fv"
                 type="number"
                 placeholder="0"
@@ -385,8 +386,8 @@ Total Interest: $${result.summary.totalInterest.toFixed(2)}`
               />
             </div>
             <div className="space-y-1.5 w-full min-w-0">
-              <Label htmlFor="pmt" className="text-heading-accent text-xs sm:text-sm">PMT (Periodic Payment)</Label>
-              <Input
+              <GLabel htmlFor="pmt" className="text-heading-accent text-xs sm:text-sm">PMT (Periodic Payment)</GLabel>
+              <GInput
                 id="pmt"
                 type="number"
                 placeholder="0"
@@ -399,8 +400,8 @@ Total Interest: $${result.summary.totalInterest.toFixed(2)}`
 
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4">
             <div className="space-y-1.5 w-full min-w-0">
-              <Label htmlFor="iy" className="text-heading-accent text-xs sm:text-sm">I/Y (Interest per Year) %</Label>
-              <Input
+              <GLabel htmlFor="iy" className="text-heading-accent text-xs sm:text-sm">I/Y (Interest per Year) %</GLabel>
+              <GInput
                 id="iy"
                 type="number"
                 placeholder="0"
@@ -410,8 +411,8 @@ Total Interest: $${result.summary.totalInterest.toFixed(2)}`
               />
             </div>
             <div className="space-y-1.5 w-full min-w-0">
-              <Label htmlFor="n" className="text-heading-accent text-xs sm:text-sm">N (# of Periods)</Label>
-              <Input
+              <GLabel htmlFor="n" className="text-heading-accent text-xs sm:text-sm">N (# of Periods)</GLabel>
+              <GInput
                 id="n"
                 type="number"
                 placeholder="0"
@@ -424,8 +425,8 @@ Total Interest: $${result.summary.totalInterest.toFixed(2)}`
 
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4">
             <div className="space-y-1.5 w-full min-w-0">
-              <Label htmlFor="pv" className="text-heading-accent text-xs sm:text-sm">PV (Present Value)</Label>
-              <Input
+              <GLabel htmlFor="pv" className="text-heading-accent text-xs sm:text-sm">PV (Present Value)</GLabel>
+              <GInput
                 id="pv"
                 type="number"
                 placeholder="0"
@@ -435,16 +436,16 @@ Total Interest: $${result.summary.totalInterest.toFixed(2)}`
               />
             </div>
             <div className="space-y-1.5 w-full min-w-0">
-              <Label htmlFor="paymentTiming" className="text-heading-accent text-xs sm:text-sm">Payment Timing</Label>
-              <Select value={paymentTiming} onValueChange={setPaymentTiming}>
-                <SelectTrigger className="border-border bg-card text-foreground w-full text-xs sm:text-sm h-9">
-                  <SelectValue />
-                </SelectTrigger>
-                <SelectContent>
-                  <SelectItem value="end">End of Period</SelectItem>
-                  <SelectItem value="beginning">Beginning of Period</SelectItem>
-                </SelectContent>
-              </Select>
+              <GLabel htmlFor="paymentTiming" className="text-heading-accent text-xs sm:text-sm">Payment Timing</GLabel>
+              <GSelect value={paymentTiming} onValueChange={setPaymentTiming}>
+                <GSelectTrigger className="border-border bg-card text-foreground w-full text-xs sm:text-sm h-9">
+                  <GSelectValue />
+                </GSelectTrigger>
+                <GSelectContent>
+                  <GSelectItem value="end">End of Period</GSelectItem>
+                  <GSelectItem value="beginning">Beginning of Period</GSelectItem>
+                </GSelectContent>
+              </GSelect>
             </div>
           </div>
 
@@ -457,30 +458,30 @@ Total Interest: $${result.summary.totalInterest.toFixed(2)}`
               Clear All
             </GButton>
           </div>
-        </CardContent>
-      </Card>
+        </GCardContent>
+      </GCard>
 
       {/* Results Section */}
       {result && (
         <div className="space-y-4 sm:space-y-6">
           {/* Main Results */}
-          <Card className="bg-card border-border w-full overflow-hidden">
-            <CardHeader className="px-2 sm:px-3 md:px-4 pb-2">
-              <CardTitle className="flex items-center gap-2 text-sm sm:text-base md:text-lg break-words">
+          <GCard className="bg-card border-border w-full overflow-hidden">
+            <GCardHeader className="px-2 sm:px-3 md:px-4 pb-2">
+              <GCardTitle className="flex items-center gap-2 text-sm sm:text-base md:text-lg break-words">
                 <DollarSign className="h-3.5 w-3.5 sm:h-4 sm:w-4 text-foreground" />
                 <span className="text-foreground">Finance Calculation Results</span>
-              </CardTitle>
-            </CardHeader>
-            <CardContent className="space-y-3 sm:space-y-4 px-2 sm:px-3 md:px-4">
+              </GCardTitle>
+            </GCardHeader>
+            <GCardContent className="space-y-3 sm:space-y-4 px-2 sm:px-3 md:px-4">
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4">
                 <div className="space-y-1.5">
-                  <Label className="text-xs sm:text-sm text-heading-accent">Future Value (FV)</Label>
+                  <GLabel className="text-xs sm:text-sm text-heading-accent">Future Value (FV)</GLabel>
                   <div className="text-xl sm:text-2xl md:text-3xl font-bold text-foreground">
                     ${result.fv.toFixed(2)}
                   </div>
                 </div>
                 <div className="space-y-1.5">
-                  <Label className="text-xs sm:text-sm text-heading-accent">Present Value (PV)</Label>
+                  <GLabel className="text-xs sm:text-sm text-heading-accent">Present Value (PV)</GLabel>
                   <div className="text-xl sm:text-2xl md:text-3xl font-bold text-foreground">
                     ${result.pv.toFixed(2)}
                   </div>
@@ -508,18 +509,18 @@ Total Interest: $${result.summary.totalInterest.toFixed(2)}`
                   Copy Results
                 </GButton>
               </div>
-            </CardContent>
-          </Card>
+            </GCardContent>
+          </GCard>
 
           {/* Summary */}
-          <Card className="bg-card border-border w-full overflow-hidden">
-            <CardHeader className="px-2 sm:px-3 md:px-4 pb-2">
-              <CardTitle className="flex items-center gap-2 text-sm sm:text-base md:text-lg break-words">
+          <GCard className="bg-card border-border w-full overflow-hidden">
+            <GCardHeader className="px-2 sm:px-3 md:px-4 pb-2">
+              <GCardTitle className="flex items-center gap-2 text-sm sm:text-base md:text-lg break-words">
                 <BarChart3 className="h-3.5 w-3.5 sm:h-4 sm:w-4 text-foreground" />
                 <span className="text-foreground">Financial Summary</span>
-              </CardTitle>
-            </CardHeader>
-            <CardContent className="space-y-3 sm:space-y-4 px-2 sm:px-3 md:px-4">
+              </GCardTitle>
+            </GCardHeader>
+            <GCardContent className="space-y-3 sm:space-y-4 px-2 sm:px-3 md:px-4">
               <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 sm:gap-4">
                 <div className="p-2 sm:p-3 md:p-4 bg-card border border-border rounded-lg">
                   <h3 className="font-semibold text-heading-accent mb-1.5 sm:mb-2 text-xs sm:text-sm break-words">Sum of Payments</h3>
@@ -534,18 +535,18 @@ Total Interest: $${result.summary.totalInterest.toFixed(2)}`
                   <div className="text-xl sm:text-2xl md:text-3xl font-bold text-foreground">${result.summary.principalAmount.toFixed(2)}</div>
                 </div>
               </div>
-            </CardContent>
-          </Card>
+            </GCardContent>
+          </GCard>
 
           {/* Amortization Schedule */}
-          <Card className="bg-card border-border w-full overflow-hidden">
-            <CardHeader className="px-2 sm:px-3 md:px-4 pb-2">
-              <CardTitle className="flex items-center gap-2 text-sm sm:text-base md:text-lg break-words">
+          <GCard className="bg-card border-border w-full overflow-hidden">
+            <GCardHeader className="px-2 sm:px-3 md:px-4 pb-2">
+              <GCardTitle className="flex items-center gap-2 text-sm sm:text-base md:text-lg break-words">
                 <Calendar className="h-3.5 w-3.5 sm:h-4 sm:w-4 text-foreground" />
                 <span className="text-foreground">Amortization Schedule</span>
-              </CardTitle>
-            </CardHeader>
-            <CardContent className="px-2 sm:px-3 md:px-4">
+              </GCardTitle>
+            </GCardHeader>
+            <GCardContent className="px-2 sm:px-3 md:px-4">
               <div className="overflow-x-auto">
                 <table className="w-full border-collapse border border-border">
                   <thead>
@@ -570,18 +571,18 @@ Total Interest: $${result.summary.totalInterest.toFixed(2)}`
                   </tbody>
                 </table>
               </div>
-            </CardContent>
-          </Card>
+            </GCardContent>
+          </GCard>
 
           {/* Investment Scenarios */}
-          <Card className="bg-card border-border w-full overflow-hidden">
-            <CardHeader className="px-2 sm:px-3 md:px-4 pb-2">
-              <CardTitle className="flex items-center gap-2 text-sm sm:text-base md:text-lg break-words">
+          <GCard className="bg-card border-border w-full overflow-hidden">
+            <GCardHeader className="px-2 sm:px-3 md:px-4 pb-2">
+              <GCardTitle className="flex items-center gap-2 text-sm sm:text-base md:text-lg break-words">
                 <TrendingUp className="h-3.5 w-3.5 sm:h-4 sm:w-4 text-foreground" />
                 <span className="text-foreground">Investment Scenarios</span>
-              </CardTitle>
-            </CardHeader>
-            <CardContent className="px-2 sm:px-3 md:px-4">
+              </GCardTitle>
+            </GCardHeader>
+            <GCardContent className="px-2 sm:px-3 md:px-4">
               <div className="space-y-2">
                 {result.comparison.scenarios.map((scenario, index) => (
                   <div key={index} className="flex justify-between items-center p-2 sm:p-3 bg-card border border-border rounded-lg">
@@ -589,24 +590,24 @@ Total Interest: $${result.summary.totalInterest.toFixed(2)}`
                       <span className="font-medium text-foreground text-xs sm:text-sm break-words">{scenario.scenario}</span>
                       <p className="text-xs text-foreground break-words">${scenario.futureValue.toFixed(2)}</p>
                     </div>
-                    <Badge className={scenario.difference > 0 ? "bg-green-500/20 text-heading-accent border-green-500" : "bg-red-500/20 text-foreground border-red-500"} variant="outline">
+                    <GBadge className={scenario.difference > 0 ? "bg-green-500/20 text-heading-accent border-green-500" : "bg-red-500/20 text-foreground border-red-500"} variant="outline">
                       {scenario.difference > 0 ? "+" : ""}${scenario.difference.toFixed(2)}
-                    </Badge>
+                    </GBadge>
                   </div>
                 ))}
               </div>
-            </CardContent>
-          </Card>
+            </GCardContent>
+          </GCard>
 
           {/* Recommendations */}
-          <Card className="bg-card border-border w-full overflow-hidden">
-            <CardHeader className="px-2 sm:px-3 md:px-4 pb-2">
-              <CardTitle className="flex items-center gap-2 text-sm sm:text-base md:text-lg break-words">
+          <GCard className="bg-card border-border w-full overflow-hidden">
+            <GCardHeader className="px-2 sm:px-3 md:px-4 pb-2">
+              <GCardTitle className="flex items-center gap-2 text-sm sm:text-base md:text-lg break-words">
                 <Target className="h-3.5 w-3.5 sm:h-4 sm:w-4 text-foreground" />
                 <span className="text-foreground">Personalized Recommendations</span>
-              </CardTitle>
-            </CardHeader>
-            <CardContent className="px-2 sm:px-3 md:px-4">
+              </GCardTitle>
+            </GCardHeader>
+            <GCardContent className="px-2 sm:px-3 md:px-4">
               <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
                 <div>
                   <h4 className="font-semibold mb-2 sm:mb-3 text-heading-accent text-xs sm:text-sm break-words">Investment Tips</h4>
@@ -642,21 +643,21 @@ Total Interest: $${result.summary.totalInterest.toFixed(2)}`
                   </ul>
                 </div>
               </div>
-            </CardContent>
-          </Card>
+            </GCardContent>
+          </GCard>
         </div>
       )}
 
       {/* History Section */}
       {history.length > 0 && (
-        <Card className="bg-card border-border w-full overflow-hidden">
-          <CardHeader className="px-2 sm:px-3 md:px-4 pb-2">
-            <CardTitle className="flex items-center gap-2 text-sm sm:text-base md:text-lg break-words">
+        <GCard className="bg-card border-border w-full overflow-hidden">
+          <GCardHeader className="px-2 sm:px-3 md:px-4 pb-2">
+            <GCardTitle className="flex items-center gap-2 text-sm sm:text-base md:text-lg break-words">
               <History className="h-3.5 w-3.5 sm:h-4 sm:w-4 text-foreground" />
               <span className="text-foreground">Recent Calculations</span>
-            </CardTitle>
-          </CardHeader>
-          <CardContent className="px-2 sm:px-3 md:px-4">
+            </GCardTitle>
+          </GCardHeader>
+          <GCardContent className="px-2 sm:px-3 md:px-4">
             <div className="space-y-2">
               {history.map((item, index) => (
                 <div key={index} className="flex items-center justify-between p-2 sm:p-3 bg-card border border-border rounded-lg">
@@ -679,19 +680,19 @@ Total Interest: $${result.summary.totalInterest.toFixed(2)}`
                 </div>
               ))}
             </div>
-          </CardContent>
-        </Card>
+          </GCardContent>
+        </GCard>
       )}
 
       {/* Information Section */}
-      <Card className="bg-card border-border w-full overflow-hidden">
-        <CardHeader className="px-2 sm:px-3 md:px-4 pb-2">
-          <CardTitle className="flex items-center gap-2 text-sm sm:text-base md:text-lg break-words">
+      <GCard className="bg-card border-border w-full overflow-hidden">
+        <GCardHeader className="px-2 sm:px-3 md:px-4 pb-2">
+          <GCardTitle className="flex items-center gap-2 text-sm sm:text-base md:text-lg break-words">
             <Info className="h-3.5 w-3.5 sm:h-4 sm:w-4 text-foreground" />
             <span className="text-foreground">Finance Calculator Features</span>
-          </CardTitle>
-        </CardHeader>
-        <CardContent className="space-y-3 px-2 sm:px-3 md:px-4">
+          </GCardTitle>
+        </GCardHeader>
+        <GCardContent className="space-y-3 px-2 sm:px-3 md:px-4">
           <div className="p-2 sm:p-3 md:p-4 bg-card border border-border rounded-lg">
             <div className="flex items-start gap-2">
               <Info className="h-3.5 w-3.5 sm:h-4 sm:w-4 text-foreground mt-0.5 flex-shrink-0" />
@@ -720,8 +721,8 @@ Total Interest: $${result.summary.totalInterest.toFixed(2)}`
               <strong className="text-heading-accent">Loan Calculations:</strong> Analyze loan payments, interest, and payoff strategies.
             </p>
           </div>
-        </CardContent>
-      </Card>
+        </GCardContent>
+      </GCard>
     </div>
   )
 }

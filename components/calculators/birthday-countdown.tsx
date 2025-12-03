@@ -1,10 +1,11 @@
 "use client"
 
 import { useState, useEffect } from "react"
-import { GButton } from "@/components/globalcomponents/gbutton"
-import { Input } from "@/components/ui/input"
-import { Label } from "@/components/ui/label"
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
+import { GButton } from "@/ui/gbutton"
+import { GInput } from "@/ui/ginput"
+import { GLabel } from "@/ui/glabel"
+import { GCard, GCardContent, GCardDescription, GCardHeader, GCardTitle } from "@/ui/gcard"
+
 import { Cake, Copy, Check } from "lucide-react"
 
 export function BirthdayCountdown() {
@@ -79,30 +80,30 @@ export function BirthdayCountdown() {
 
   return (
     <div className="w-full max-w-4xl mx-auto space-y-4 sm:space-y-6">
-      {/* Main Calculator Card */}
-      <Card className="border-2 border-white/20 bg-gradient-to-br from-white/10 to-white/5 backdrop-blur-xl shadow-2xl">
-        <CardHeader className="text-center space-y-3 sm:space-y-4 p-4 sm:p-6">
+      {/* Main Calculator GCard */}
+      <GCard className="border-2 border-white/20 bg-gradient-to-br from-white/10 to-white/5 backdrop-blur-xl shadow-2xl">
+        <GCardHeader className="text-center space-y-3 sm:space-y-4 p-4 sm:p-6">
           <div className="flex flex-col sm:flex-row items-center justify-center gap-3 mb-4">
             <div className="h-10 w-10 sm:h-12 sm:w-12 rounded-xl bg-gradient-to-br from-primary to-secondary-accent flex items-center justify-center shadow-lg">
               <Cake className="h-5 w-5 sm:h-6 sm:w-6 text-white" />
             </div>
             <div className="text-center sm:text-left">
-              <CardTitle className="text-xl sm:text-2xl font-bold text-white">
+              <GCardTitle className="text-xl sm:text-2xl font-bold text-white">
                 Birthday Countdown
-              </CardTitle>
-              <CardDescription className="text-white/80 text-sm sm:text-base">
+              </GCardTitle>
+              <GCardDescription className="text-white/80 text-sm sm:text-base">
                 Count down to your next birthday in real-time
-              </CardDescription>
+              </GCardDescription>
             </div>
           </div>
-        </CardHeader>
-        <CardContent className="space-y-4 sm:space-y-6 p-4 sm:p-6">
+        </GCardHeader>
+        <GCardContent className="space-y-4 sm:space-y-6 p-4 sm:p-6">
           <div className="space-y-4">
             <div className="space-y-2">
-              <Label htmlFor="birthDate" className="text-sm font-medium text-white">
+              <GLabel htmlFor="birthDate" className="text-sm font-medium text-white">
                 Your Birth Date
-              </Label>
-              <Input
+              </GLabel>
+              <GInput
                 id="birthDate"
                 type="date"
                 value={birthDate}
@@ -172,8 +173,8 @@ export function BirthdayCountdown() {
               </div>
             </div>
           )}
-        </CardContent>
-      </Card>
+        </GCardContent>
+      </GCard>
     </div>
   )
 }

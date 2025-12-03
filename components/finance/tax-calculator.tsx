@@ -1,13 +1,14 @@
 "use client"
 
 import { useState, useEffect } from "react"
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
-import { GButton } from "@/components/globalcomponents/gbutton"
-import { Label } from "@/components/ui/label"
-import { Input } from "@/components/ui/input"
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
-import { Checkbox } from "@/components/ui/checkbox"
-import { Alert, AlertDescription } from "@/components/ui/alert"
+import { GCard, GCardContent, GCardDescription, GCardHeader, GCardTitle } from "@/ui/gcard"
+import { GButton } from "@/ui/gbutton"
+import { GLabel } from "@/ui/glabel"
+import { GInput } from "@/ui/ginput"
+import { GSelect, GSelectContent, GSelectItem, GSelectTrigger, GSelectValue } from "@/ui/gselect"
+import { GCheckbox } from "@/ui/gcheckbox"
+import { GAlert, GAlertDescription } from "@/ui/galert"
+
 import {
   Wallet, Copy, Check, Calculator, Globe, AlertTriangle,
   TrendingUp, DollarSign, Percent, Building, Users,
@@ -307,62 +308,62 @@ Effective Tax Rate: ${result.effectiveTaxRate}%`
 
   return (
     <div className="space-y-4">
-      {/* Warning Alert */}
+      {/* Warning GAlert */}
       {showWarning && (
-        <Alert className="border-amber-700 bg-card">
+        <GAlert className="border-amber-700 bg-card">
           <AlertTriangle className="h-3.5 w-3.5 text-amber-400" />
-          <AlertDescription className="text-amber-300 text-xs">
+          <GAlertDescription className="text-amber-300 text-xs">
             <strong>Important:</strong> Tax rates and percentages may change or be updated according to your country's latest tax laws.
             Please verify with your local tax authority for the most accurate and up-to-date information.
-          </AlertDescription>
-        </Alert>
+          </GAlertDescription>
+        </GAlert>
       )}
 
-      {/* Main Calculator Card */}
-      <Card className="shadow-lg border-border hover:shadow-xl transition-all duration-300 bg-card">
-        <CardHeader className="pb-3">
-          <CardTitle className="flex items-center gap-2 text-lg text-foreground">
+      {/* Main Calculator GCard */}
+      <GCard className="shadow-lg border-border hover:shadow-xl transition-all duration-300 bg-card">
+        <GCardHeader className="pb-3">
+          <GCardTitle className="flex items-center gap-2 text-lg text-foreground">
             <div className="p-1.5 bg-primary/10 rounded-lg">
               <Calculator className="h-4 w-4 text-foreground" />
             </div>
             Advanced Tax Calculator
-          </CardTitle>
-          <CardDescription className="text-sm text-muted-foreground">
+          </GCardTitle>
+          <GCardDescription className="text-sm text-muted-foreground">
             Calculate income tax for multiple countries with real tax brackets and rates
-          </CardDescription>
-        </CardHeader>
-        <CardContent className="space-y-4">
+          </GCardDescription>
+        </GCardHeader>
+        <GCardContent className="space-y-4">
           {/* Country Selection */}
           <div className="space-y-1.5">
-            <Label htmlFor="country" className="text-xs font-medium flex items-center gap-1.5 text-heading-accent">
+            <GLabel htmlFor="country" className="text-xs font-medium flex items-center gap-1.5 text-heading-accent">
               <div className="p-0.5 bg-green-500/10 rounded">
                 <Globe className="h-3 w-3 text-heading-accent" />
               </div>
-              Select Country
-            </Label>
-            <Select value={selectedCountry} onValueChange={setSelectedCountry}>
-              <SelectTrigger className="h-9 text-sm border-border bg-card text-foreground">
-                <SelectValue placeholder="Choose your country" />
-              </SelectTrigger>
-              <SelectContent>
+              GSelect Country
+            </GLabel>
+            <GSelect value={selectedCountry} onValueChange={setSelectedCountry}>
+              <GSelectTrigger className="h-9 text-sm border-border bg-card text-foreground">
+                <GSelectValue placeholder="Choose your country" />
+              </GSelectTrigger>
+              <GSelectContent>
                 {Object.entries(countryTaxData).map(([code, data]) => (
-                  <SelectItem key={code} value={code}>
+                  <GSelectItem key={code} value={code}>
                     {data.name} ({data.currency})
-                  </SelectItem>
+                  </GSelectItem>
                 ))}
-              </SelectContent>
-            </Select>
+              </GSelectContent>
+            </GSelect>
           </div>
 
-          {/* Salary Input */}
+          {/* Salary GInput */}
           <div className="space-y-1.5">
-            <Label htmlFor="salary" className="text-xs font-medium flex items-center gap-1.5 text-heading-accent">
+            <GLabel htmlFor="salary" className="text-xs font-medium flex items-center gap-1.5 text-heading-accent">
               <div className="p-0.5 bg-green-500/10 rounded">
                 <DollarSign className="h-3 w-3 text-heading-accent" />
               </div>
               Annual Gross Salary ({countryTaxData[selectedCountry]?.currency})
-            </Label>
-            <Input
+            </GLabel>
+            <GInput
               id="salary"
               type="number"
               value={salary}
@@ -375,25 +376,25 @@ Effective Tax Rate: ${result.effectiveTaxRate}%`
           {/* Custom Tax Rate Option */}
           <div className="space-y-3 p-3 bg-card rounded-xl border border-border">
             <div className="flex items-center space-x-2">
-              <Checkbox
+              <GCheckbox
                 id="custom-rate"
                 checked={useCustomRate}
                 onCheckedChange={(checked) => setUseCustomRate(checked === true)}
               />
-              <Label htmlFor="custom-rate" className="text-xs font-medium flex items-center gap-1.5 text-heading-accent">
+              <GLabel htmlFor="custom-rate" className="text-xs font-medium flex items-center gap-1.5 text-heading-accent">
                 <div className="p-0.5 bg-green-500/10 rounded">
                   <Percent className="h-3 w-3 text-heading-accent" />
                 </div>
                 Use Custom Tax Rate (Override Country Default)
-              </Label>
+              </GLabel>
             </div>
 
             {useCustomRate && (
               <div className="space-y-1.5">
-                <Label htmlFor="custom-tax-rate" className="text-xs font-medium text-heading-accent">
+                <GLabel htmlFor="custom-tax-rate" className="text-xs font-medium text-heading-accent">
                   Custom Tax Rate (%)
-                </Label>
-                <Input
+                </GLabel>
+                <GInput
                   id="custom-tax-rate"
                   type="number"
                   value={customTaxRate}
@@ -408,7 +409,7 @@ Effective Tax Rate: ${result.effectiveTaxRate}%`
             )}
           </div>
 
-          {/* Calculate Button */}
+          {/* Calculate GButton */}
           <GButton
             onClick={calculateTax}
             className="w-full h-10 text-sm font-medium shadow-lg hover:shadow-xl transition-all duration-300 bg-gradient-to-r from-primary to-primary/90 hover:from-primary/90 hover:to-primary text-white"
@@ -426,24 +427,24 @@ Effective Tax Rate: ${result.effectiveTaxRate}%`
               </>
             )}
           </GButton>
-        </CardContent>
-      </Card>
+        </GCardContent>
+      </GCard>
 
       {/* Results */}
       {result && !isCalculating && (
-        <Card className="shadow-lg border-border animate-fade-in-up bg-card">
-          <CardHeader className="pb-3">
-            <CardTitle className="text-lg flex items-center gap-2 text-foreground">
+        <GCard className="shadow-lg border-border animate-fade-in-up bg-card">
+          <GCardHeader className="pb-3">
+            <GCardTitle className="text-lg flex items-center gap-2 text-foreground">
               <div className="p-1.5 bg-primary/10 rounded-lg">
                 <TrendingUp className="h-4 w-4 text-foreground" />
               </div>
               Tax Calculation Results - {result.country}
-            </CardTitle>
-            <CardDescription className="text-sm text-muted-foreground">
+            </GCardTitle>
+            <GCardDescription className="text-sm text-muted-foreground">
               Comprehensive tax breakdown with all deductions
-            </CardDescription>
-          </CardHeader>
-          <CardContent className="space-y-4">
+            </GCardDescription>
+          </GCardHeader>
+          <GCardContent className="space-y-4">
             {/* Main Result Display */}
             <div className="text-center p-4 rounded-xl bg-card border border-primary/20">
               <div className="text-2xl font-bold text-foreground mb-1">
@@ -546,8 +547,8 @@ Effective Tax Rate: ${result.effectiveTaxRate}%`
                 )}
               </GButton>
             </div>
-          </CardContent>
-        </Card>
+          </GCardContent>
+        </GCard>
       )}
     </div>
   )

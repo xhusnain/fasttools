@@ -1,10 +1,11 @@
 "use client"
 
 import { useState } from "react"
-import { GButton } from "@/components/globalcomponents/gbutton"
-import { Input } from "@/components/ui/input"
-import { Label } from "@/components/ui/label"
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
+import { GButton } from "@/ui/gbutton"
+import { GInput } from "@/ui/ginput"
+import { GLabel } from "@/ui/glabel"
+import { GCard, GCardContent, GCardDescription, GCardHeader, GCardTitle } from "@/ui/gcard"
+
 import { Calendar, Copy, Check } from "lucide-react"
 import { LoadingSpinner } from "@/components/common/loading-spinner"
 
@@ -110,20 +111,20 @@ export function FutureAgePredictor() {
   }
 
   return (
-    <Card className="border border-border shadow-sm">
-      <CardHeader>
-        <CardTitle className="text-xl text-foreground">Future Age Predictor</CardTitle>
-        <CardDescription className="text-sm text-muted-foreground">
+    <GCard className="border border-border shadow-sm">
+      <GCardHeader>
+        <GCardTitle className="text-xl text-foreground">Future Age Predictor</GCardTitle>
+        <GCardDescription className="text-sm text-muted-foreground">
           Discover how old you'll be in any future year
-        </CardDescription>
-      </CardHeader>
-      <CardContent className="space-y-6">
+        </GCardDescription>
+      </GCardHeader>
+      <GCardContent className="space-y-6">
         <div className="space-y-4">
           <div className="space-y-2">
-            <Label htmlFor="birthDate" className="text-sm font-medium text-foreground">
+            <GLabel htmlFor="birthDate" className="text-sm font-medium text-foreground">
               Your Birth Date
-            </Label>
-            <Input
+            </GLabel>
+            <GInput
               id="birthDate"
               type="date"
               value={birthDate}
@@ -142,10 +143,10 @@ export function FutureAgePredictor() {
           </div>
 
           <div className="space-y-2">
-            <Label htmlFor="targetYear" className="text-sm font-medium text-foreground">
+            <GLabel htmlFor="targetYear" className="text-sm font-medium text-foreground">
               Target Year
-            </Label>
-            <Input
+            </GLabel>
+            <GInput
               id="targetYear"
               type="number"
               placeholder="e.g., 2050"
@@ -222,7 +223,7 @@ export function FutureAgePredictor() {
             </div>
           </div>
         )}
-      </CardContent>
-    </Card>
+      </GCardContent>
+    </GCard>
   )
 }

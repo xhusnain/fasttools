@@ -1,39 +1,39 @@
 'use client'
 
 import * as React from 'react'
-import * as SelectPrimitive from '@radix-ui/react-select'
+import * as GSelectPrimitive from '@radix-ui/react-select'
 import { CheckIcon, ChevronDownIcon, ChevronUpIcon } from 'lucide-react'
 
 import { cn } from '@/lib/utils'
 
-function Select({
+function GSelect({
   ...props
-}: React.ComponentProps<typeof SelectPrimitive.Root>) {
-  return <SelectPrimitive.Root data-slot="select" {...props} />
+}: React.ComponentProps<typeof GSelectPrimitive.Root>) {
+  return <GSelectPrimitive.Root data-slot="select" {...props} />
 }
 
-function SelectGroup({
+function GSelectGroup({
   ...props
-}: React.ComponentProps<typeof SelectPrimitive.Group>) {
-  return <SelectPrimitive.Group data-slot="select-group" {...props} />
+}: React.ComponentProps<typeof GSelectPrimitive.Group>) {
+  return <GSelectPrimitive.Group data-slot="select-group" {...props} />
 }
 
-function SelectValue({
+function GSelectValue({
   ...props
-}: React.ComponentProps<typeof SelectPrimitive.Value>) {
-  return <SelectPrimitive.Value data-slot="select-value" {...props} />
+}: React.ComponentProps<typeof GSelectPrimitive.Value>) {
+  return <GSelectPrimitive.Value data-slot="select-value" {...props} />
 }
 
-function SelectTrigger({
+function GSelectTrigger({
   className,
   size = 'default',
   children,
   ...props
-}: React.ComponentProps<typeof SelectPrimitive.Trigger> & {
+}: React.ComponentProps<typeof GSelectPrimitive.Trigger> & {
   size?: 'sm' | 'default'
 }) {
   return (
-    <SelectPrimitive.Trigger
+    <GSelectPrimitive.Trigger
       data-slot="select-trigger"
       data-size={size}
       className={cn(
@@ -43,22 +43,22 @@ function SelectTrigger({
       {...props}
     >
       {children}
-      <SelectPrimitive.Icon asChild>
+      <GSelectPrimitive.Icon asChild>
         <ChevronDownIcon className="size-4 opacity-50" />
-      </SelectPrimitive.Icon>
-    </SelectPrimitive.Trigger>
+      </GSelectPrimitive.Icon>
+    </GSelectPrimitive.Trigger>
   )
 }
 
-function SelectContent({
+function GSelectContent({
   className,
   children,
   position = 'popper',
   ...props
-}: React.ComponentProps<typeof SelectPrimitive.Content>) {
+}: React.ComponentProps<typeof GSelectPrimitive.Content>) {
   return (
-    <SelectPrimitive.Portal>
-      <SelectPrimitive.Content
+    <GSelectPrimitive.Portal>
+      <GSelectPrimitive.Content
         data-slot="select-content"
         className={cn(
           'bg-popover text-popover-foreground data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0 data-[state=closed]:zoom-out-95 data-[state=open]:zoom-in-95 data-[side=bottom]:slide-in-from-top-2 data-[side=left]:slide-in-from-right-2 data-[side=right]:slide-in-from-left-2 data-[side=top]:slide-in-from-bottom-2 relative z-50 max-h-(--radix-select-content-available-height) min-w-[8rem] origin-(--radix-select-content-transform-origin) overflow-x-hidden overflow-y-auto rounded-md border shadow-md',
@@ -69,8 +69,8 @@ function SelectContent({
         position={position}
         {...props}
       >
-        <SelectScrollUpButton />
-        <SelectPrimitive.Viewport
+        <GSelectScrollUpButton />
+        <GSelectPrimitive.Viewport
           className={cn(
             'p-1',
             position === 'popper' &&
@@ -78,19 +78,19 @@ function SelectContent({
           )}
         >
           {children}
-        </SelectPrimitive.Viewport>
-        <SelectScrollDownButton />
-      </SelectPrimitive.Content>
-    </SelectPrimitive.Portal>
+        </GSelectPrimitive.Viewport>
+        <GSelectScrollDownButton />
+      </GSelectPrimitive.Content>
+    </GSelectPrimitive.Portal>
   )
 }
 
-function SelectLabel({
+function GSelectLabel({
   className,
   ...props
-}: React.ComponentProps<typeof SelectPrimitive.Label>) {
+}: React.ComponentProps<typeof GSelectPrimitive.Label>) {
   return (
-    <SelectPrimitive.Label
+    <GSelectPrimitive.Label
       data-slot="select-label"
       className={cn('text-muted-foreground px-2 py-1.5 text-xs', className)}
       {...props}
@@ -98,13 +98,13 @@ function SelectLabel({
   )
 }
 
-function SelectItem({
+function GSelectItem({
   className,
   children,
   ...props
-}: React.ComponentProps<typeof SelectPrimitive.Item>) {
+}: React.ComponentProps<typeof GSelectPrimitive.Item>) {
   return (
-    <SelectPrimitive.Item
+    <GSelectPrimitive.Item
       data-slot="select-item"
       className={cn(
         "focus:bg-accent focus:text-accent-foreground [&_svg:not([class*='text-'])]:text-muted-foreground relative flex w-full cursor-default items-center gap-2 rounded-sm py-1.5 pr-8 pl-2 text-sm outline-hidden select-none data-[disabled]:pointer-events-none data-[disabled]:opacity-50 [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-4 *:[span]:last:flex *:[span]:last:items-center *:[span]:last:gap-2",
@@ -113,21 +113,21 @@ function SelectItem({
       {...props}
     >
       <span className="absolute right-2 flex size-3.5 items-center justify-center">
-        <SelectPrimitive.ItemIndicator>
+        <GSelectPrimitive.ItemIndicator>
           <CheckIcon className="size-4" />
-        </SelectPrimitive.ItemIndicator>
+        </GSelectPrimitive.ItemIndicator>
       </span>
-      <SelectPrimitive.ItemText>{children}</SelectPrimitive.ItemText>
-    </SelectPrimitive.Item>
+      <GSelectPrimitive.ItemText>{children}</GSelectPrimitive.ItemText>
+    </GSelectPrimitive.Item>
   )
 }
 
-function SelectSeparator({
+function GSelectSeparator({
   className,
   ...props
-}: React.ComponentProps<typeof SelectPrimitive.Separator>) {
+}: React.ComponentProps<typeof GSelectPrimitive.Separator>) {
   return (
-    <SelectPrimitive.Separator
+    <GSelectPrimitive.Separator
       data-slot="select-separator"
       className={cn('bg-border pointer-events-none -mx-1 my-1 h-px', className)}
       {...props}
@@ -135,12 +135,12 @@ function SelectSeparator({
   )
 }
 
-function SelectScrollUpButton({
+function GSelectScrollUpButton({
   className,
   ...props
-}: React.ComponentProps<typeof SelectPrimitive.ScrollUpButton>) {
+}: React.ComponentProps<typeof GSelectPrimitive.ScrollUpButton>) {
   return (
-    <SelectPrimitive.ScrollUpButton
+    <GSelectPrimitive.ScrollUpButton
       data-slot="select-scroll-up-button"
       className={cn(
         'flex cursor-default items-center justify-center py-1',
@@ -149,16 +149,16 @@ function SelectScrollUpButton({
       {...props}
     >
       <ChevronUpIcon className="size-4" />
-    </SelectPrimitive.ScrollUpButton>
+    </GSelectPrimitive.ScrollUpButton>
   )
 }
 
-function SelectScrollDownButton({
+function GSelectScrollDownButton({
   className,
   ...props
-}: React.ComponentProps<typeof SelectPrimitive.ScrollDownButton>) {
+}: React.ComponentProps<typeof GSelectPrimitive.ScrollDownButton>) {
   return (
-    <SelectPrimitive.ScrollDownButton
+    <GSelectPrimitive.ScrollDownButton
       data-slot="select-scroll-down-button"
       className={cn(
         'flex cursor-default items-center justify-center py-1',
@@ -167,19 +167,19 @@ function SelectScrollDownButton({
       {...props}
     >
       <ChevronDownIcon className="size-4" />
-    </SelectPrimitive.ScrollDownButton>
+    </GSelectPrimitive.ScrollDownButton>
   )
 }
 
 export {
-  Select,
-  SelectContent,
-  SelectGroup,
-  SelectItem,
-  SelectLabel,
-  SelectScrollDownButton,
-  SelectScrollUpButton,
-  SelectSeparator,
-  SelectTrigger,
-  SelectValue,
+  GSelect,
+  GSelectContent,
+  GSelectGroup,
+  GSelectItem,
+  GSelectLabel,
+  GSelectScrollDownButton,
+  GSelectScrollUpButton,
+  GSelectSeparator,
+  GSelectTrigger,
+  GSelectValue,
 }

@@ -2,11 +2,13 @@
 
 import type React from "react"
 import { useState, useRef } from "react"
-import { GButton as Button } from "@/components/globalcomponents/gbutton"
-import { Card } from "@/components/ui/card"
-import { Input } from "@/components/ui/input"
-import { Label } from "@/components/ui/label"
-import { Progress } from "@/components/ui/progress"
+import { GButton } from "@/ui/gbutton"
+import { GCard } from "@/ui/gcard"
+import { GInput } from "@/ui/ginput"
+import { GLabel } from "@/ui/glabel"
+import { GProgress } from "@/ui/gprogress"
+import { useToast } from "@/ui/gtoast"
+
 import {
   Upload,
   Download,
@@ -21,7 +23,6 @@ import {
   ArrowUpDown
 } from "lucide-react"
 import { LoadingSpinner } from "@/components/common/loading-spinner"
-import { useToast } from "@/components/ui/toast"
 import { PDFDocument } from "pdf-lib"
 
 interface FileWithId {
@@ -437,7 +438,7 @@ export function PDFToolsAdvanced() {
       <div className="space-y-6">
         {/* Mode Selection */}
         <div className="flex gap-3">
-          <Button
+          <GButton
             variant={mode === "merge" ? "default" : "outline"}
             onClick={() => {
               setMode("merge")
@@ -448,8 +449,8 @@ export function PDFToolsAdvanced() {
           >
             <Merge className="h-4 w-4 mr-2" />
             Merge PDFs
-          </Button>
-          <Button
+          </GButton>
+          <GButton
             variant={mode === "split" ? "default" : "outline"}
             onClick={() => {
               setMode("split")
@@ -461,15 +462,15 @@ export function PDFToolsAdvanced() {
           >
             <Scissors className="h-4 w-4 mr-2" />
             Split PDF
-          </Button>
+          </GButton>
         </div>
 
         {/* Split Mode Options */}
         {mode === "split" && (
-          <Card className="p-4 border-border bg-muted/20">
-            <Label className="text-sm font-semibold mb-3 block">Split Options:</Label>
+          <GCard className="p-4 border-border bg-muted/20">
+            <GLabel className="text-sm font-semibold mb-3 block">Split Options:</GLabel>
             <div className="flex flex-wrap gap-2">
-              <Button
+              <GButton
                 variant={splitMode === "all" ? "default" : "outline"}
                 size="sm"
                 onClick={() => setSplitMode("all")}
@@ -477,8 +478,8 @@ export function PDFToolsAdvanced() {
               >
                 <FileStack className="h-3 w-3 mr-1" />
                 All Pages
-              </Button>
-              <Button
+              </GButton>
+              <GButton
                 variant={splitMode === "range" ? "default" : "outline"}
                 size="sm"
                 onClick={() => setSplitMode("range")}
@@ -486,8 +487,8 @@ export function PDFToolsAdvanced() {
               >
                 <ArrowUpDown className="h-3 w-3 mr-1" />
                 Page Range
-              </Button>
-              <Button
+              </GButton>
+              <GButton
                 variant={splitMode === "extract" ? "default" : "outline"}
                 size="sm"
                 onClick={() => setSplitMode("extract")}
@@ -495,15 +496,15 @@ export function PDFToolsAdvanced() {
               >
                 <Scissors className="h-3 w-3 mr-1" />
                 Extract Pages
-              </Button>
+              </GButton>
             </div>
 
-            {/* Range Input */}
+            {/* Range GInput */}
             {splitMode === "range" && files.length > 0 && (
               <div className="mt-4 grid grid-cols-2 gap-3">
                 <div>
-                  <Label className="text-xs mb-1 block">From Page</Label>
-                  <Input
+                  <GLabel className="text-xs mb-1 block">From Page</GLabel>
+                  <GInput
                     type="number"
                     min={1}
                     max={files[0]?.pageCount || 1}
@@ -513,8 +514,8 @@ export function PDFToolsAdvanced() {
                   />
                 </div>
                 <div>
-                  <Label className="text-xs mb-1 block">To Page</Label>
-                  <Input
+                  <GLabel className="text-xs mb-1 block">To Page</GLabel>
+                  <GInput
                     type="number"
                     min={pageRange.start}
                     max={files[0]?.pageCount || 1}
@@ -526,11 +527,11 @@ export function PDFToolsAdvanced() {
               </div>
             )}
 
-            {/* Extract Pages Input */}
+            {/* Extract Pages GInput */}
             {splitMode === "extract" && files.length > 0 && (
               <div className="mt-4">
-                <Label className="text-xs mb-1 block">Page Numbers (comma-separated)</Label>
-                <Input
+                <GLabel className="text-xs mb-1 block">Page Numbers (comma-separated)</GLabel>
+                <GInput
                   type="text"
                   placeholder="e.g., 1, 3, 5, 7-9"
                   value={extractPages}
@@ -542,11 +543,11 @@ export function PDFToolsAdvanced() {
                 </p>
               </div>
             )}
-          </Card>
+          </GCard>
         )}
 
         {/* File Upload Area */}
-        <Card className="p-6 border-border shadow-sm hover:shadow-md transition-shadow">
+        <GCard className="p-6 border-border shadow-sm hover:shadow-md transition-shadow">
           <div className="space-y-4">
             <div
               className="flex items-center justify-center w-full"
@@ -580,14 +581,14 @@ export function PDFToolsAdvanced() {
               </label>
             </div>
 
-            {/* Progress Bar */}
+            {/* GProgress Bar */}
             {loading && progress > 0 && (
               <div className="space-y-2">
                 <div className="flex items-center justify-between text-xs text-muted-foreground">
                   <span>Processing...</span>
                   <span>{Math.round(progress)}%</span>
                 </div>
-                <Progress value={progress} className="h-2" />
+                <GProgress value={progress} className="h-2" />
               </div>
             )}
 
@@ -628,20 +629,20 @@ export function PDFToolsAdvanced() {
                           {fileWithId.pageCount && ` • ${fileWithId.pageCount} page${fileWithId.pageCount !== 1 ? 's' : ''}`}
                         </p>
                       </div>
-                      <Button
+                      <GButton
                         variant="ghost"
                         size="sm"
                         onClick={() => removeFile(fileWithId.id)}
                         className="h-7 w-7 p-0 hover:bg-destructive/10 flex-shrink-0"
                       >
                         <X className="h-4 w-4" />
-                      </Button>
+                      </GButton>
                     </div>
                   ))}
                 </div>
 
-                {/* Process Button */}
-                <Button
+                {/* Process GButton */}
+                <GButton
                   onClick={processPDF}
                   disabled={loading || files.length === 0}
                   className="w-full h-10 text-sm font-medium shadow-sm"
@@ -663,11 +664,11 @@ export function PDFToolsAdvanced() {
                             : "Extract Pages"}
                     </>
                   )}
-                </Button>
+                </GButton>
               </div>
             )}
           </div>
-        </Card>
+        </GCard>
 
         {/* Features & Security */}
         <div className="p-5 rounded-lg bg-card border border-border shadow">

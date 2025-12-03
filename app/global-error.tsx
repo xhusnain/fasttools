@@ -1,7 +1,8 @@
 'use client'
 
 import { useEffect } from 'react'
-import { Button } from '@/components/ui/button'
+import { GButton } from "@/ui/gbutton"
+
 import { AlertTriangle } from 'lucide-react'
 
 export default function GlobalError({
@@ -26,11 +27,11 @@ export default function GlobalError({
                     <p className="text-muted-foreground mb-6 max-w-md">
                         A critical error occurred. Please try refreshing the page.
                     </p>
-                    <Button
+                    <GButton
                         onClick={() => reset()}
                     >
                         Try Again
-                    </Button>
+                    </GButton>
                 </div>
             </body>
         </html>

@@ -1,12 +1,13 @@
 "use client"
 
 import { useState, useEffect } from "react"
-import { GButton } from "@/components/globalcomponents/gbutton"
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
-import { Input } from "@/components/ui/input"
-import { Label } from "@/components/ui/label"
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
-import { Badge } from "@/components/ui/badge"
+import { GButton } from "@/ui/gbutton"
+import { GCard, GCardContent, GCardHeader, GCardTitle } from "@/ui/gcard"
+import { GInput } from "@/ui/ginput"
+import { GLabel } from "@/ui/glabel"
+import { GSelect, GSelectContent, GSelectItem, GSelectTrigger, GSelectValue } from "@/ui/gselect"
+import { GBadge } from "@/ui/gbadge"
+
 import { Calendar, Calculator, Heart, Baby, Stethoscope, Clock, AlertCircle, CheckCircle, Info } from "lucide-react"
 
 interface ConceptionResult {
@@ -249,34 +250,34 @@ Next Milestone: ${result.nextMilestone}`
 
   return (
     <div className="space-y-4">
-      {/* Input Section */}
-      <Card className="bg-card border-border">
-        <CardHeader className="pb-2 px-3 sm:px-6">
-          <CardTitle className="flex items-center gap-2 text-foreground text-base sm:text-lg">
+      {/* GInput Section */}
+      <GCard className="bg-card border-border">
+        <GCardHeader className="pb-2 px-3 sm:px-6">
+          <GCardTitle className="flex items-center gap-2 text-foreground text-base sm:text-lg">
             <Calculator className="h-4 w-4 text-foreground" />
             Pregnancy Conception Calculator
-          </CardTitle>
-        </CardHeader>
-        <CardContent className="space-y-4 px-3 sm:px-6">
+          </GCardTitle>
+        </GCardHeader>
+        <GCardContent className="space-y-4 px-3 sm:px-6">
           <div className="space-y-3">
             <div className="space-y-1">
-              <Label htmlFor="method" className="text-[11px] font-medium text-heading-accent">Calculation Method</Label>
-              <Select value={calculationMethod} onValueChange={(value: "dueDate" | "lmp" | "ultrasound") => setCalculationMethod(value)}>
-                <SelectTrigger className="h-8 text-xs border-border bg-card text-foreground">
-                  <SelectValue />
-                </SelectTrigger>
-                <SelectContent>
-                  <SelectItem value="dueDate">Due Date</SelectItem>
-                  <SelectItem value="lmp">Last Menstrual Period</SelectItem>
-                  <SelectItem value="ultrasound">Ultrasound Date</SelectItem>
-                </SelectContent>
-              </Select>
+              <GLabel htmlFor="method" className="text-[11px] font-medium text-heading-accent">Calculation Method</GLabel>
+              <GSelect value={calculationMethod} onValueChange={(value: "dueDate" | "lmp" | "ultrasound") => setCalculationMethod(value)}>
+                <GSelectTrigger className="h-8 text-xs border-border bg-card text-foreground">
+                  <GSelectValue />
+                </GSelectTrigger>
+                <GSelectContent>
+                  <GSelectItem value="dueDate">Due Date</GSelectItem>
+                  <GSelectItem value="lmp">Last Menstrual Period</GSelectItem>
+                  <GSelectItem value="ultrasound">Ultrasound Date</GSelectItem>
+                </GSelectContent>
+              </GSelect>
             </div>
 
             {calculationMethod === "dueDate" && (
               <div className="space-y-1">
-                <Label htmlFor="dueDate" className="text-[11px] font-medium text-heading-accent">Your Due Date</Label>
-                <Input
+                <GLabel htmlFor="dueDate" className="text-[11px] font-medium text-heading-accent">Your Due Date</GLabel>
+                <GInput
                   id="dueDate"
                   type="date"
                   value={dueDate}
@@ -288,8 +289,8 @@ Next Milestone: ${result.nextMilestone}`
 
             {calculationMethod === "lmp" && (
               <div className="space-y-1">
-                <Label htmlFor="lmpDate" className="text-[11px] font-medium text-heading-accent">First Day of Last Menstrual Period</Label>
-                <Input
+                <GLabel htmlFor="lmpDate" className="text-[11px] font-medium text-heading-accent">First Day of Last Menstrual Period</GLabel>
+                <GInput
                   id="lmpDate"
                   type="date"
                   value={lmpDate}
@@ -302,8 +303,8 @@ Next Milestone: ${result.nextMilestone}`
             {calculationMethod === "ultrasound" && (
               <div className="space-y-3">
                 <div className="space-y-1">
-                  <Label htmlFor="ultrasoundDate" className="text-[11px] font-medium text-heading-accent">Ultrasound Date</Label>
-                  <Input
+                  <GLabel htmlFor="ultrasoundDate" className="text-[11px] font-medium text-heading-accent">Ultrasound Date</GLabel>
+                  <GInput
                     id="ultrasoundDate"
                     type="date"
                     value={ultrasoundDate}
@@ -312,8 +313,8 @@ Next Milestone: ${result.nextMilestone}`
                   />
                 </div>
                 <div className="space-y-1">
-                  <Label htmlFor="gestationalAge" className="text-[11px] font-medium text-heading-accent">Gestational Age at Ultrasound (weeks)</Label>
-                  <Input
+                  <GLabel htmlFor="gestationalAge" className="text-[11px] font-medium text-heading-accent">Gestational Age at Ultrasound (weeks)</GLabel>
+                  <GInput
                     id="gestationalAge"
                     type="number"
                     placeholder="e.g., 12"
@@ -335,45 +336,45 @@ Next Milestone: ${result.nextMilestone}`
               </GButton>
             </div>
           </div>
-        </CardContent>
-      </Card>
+        </GCardContent>
+      </GCard>
 
       {/* Results Section */}
       {result && (
         <div className="space-y-4">
           {/* Main Results */}
-          <Card className="bg-card border-border">
-            <CardHeader className="pb-2 px-3 sm:px-6">
-              <CardTitle className="flex items-center gap-2 text-foreground text-base">
+          <GCard className="bg-card border-border">
+            <GCardHeader className="pb-2 px-3 sm:px-6">
+              <GCardTitle className="flex items-center gap-2 text-foreground text-base">
                 <Heart className="h-4 w-4 text-foreground" />
                 Conception Results
-              </CardTitle>
-            </CardHeader>
-            <CardContent className="space-y-3 px-3 sm:px-6">
+              </GCardTitle>
+            </GCardHeader>
+            <GCardContent className="space-y-3 px-3 sm:px-6">
               <div className="grid md:grid-cols-2 gap-3">
                 <div className="space-y-1 p-2 bg-card rounded-lg border border-border">
-                  <Label className="text-xs font-medium text-heading-accent">Estimated Conception Date</Label>
+                  <GLabel className="text-xs font-medium text-heading-accent">Estimated Conception Date</GLabel>
                   <div className="text-sm sm:text-base font-semibold text-foreground">
                     {formatDate(result.conceptionDate)}
                   </div>
                 </div>
                 <div className="space-y-1 p-2 bg-card rounded-lg border border-border">
-                  <Label className="text-xs font-medium text-heading-accent">Conception Range</Label>
+                  <GLabel className="text-xs font-medium text-heading-accent">Conception Range</GLabel>
                   <div className="text-xs text-muted-foreground">
                     {formatDate(result.conceptionRange.start)} - {formatDate(result.conceptionRange.end)}
                   </div>
                 </div>
                 <div className="space-y-1 p-2 bg-card rounded-lg border border-border">
-                  <Label className="text-xs font-medium text-heading-accent">Current Gestational Age</Label>
+                  <GLabel className="text-xs font-medium text-heading-accent">Current Gestational Age</GLabel>
                   <div className="text-sm sm:text-base font-semibold text-foreground">
                     {result.weeksPregnant} weeks, {result.daysPregnant} days
                   </div>
                 </div>
                 <div className="space-y-1 p-2 bg-card rounded-lg border border-border">
-                  <Label className="text-xs font-medium text-heading-accent">Trimester</Label>
-                  <Badge variant="secondary" className="text-xs bg-primary/10 text-foreground border-primary/20">
+                  <GLabel className="text-xs font-medium text-heading-accent">Trimester</GLabel>
+                  <GBadge variant="secondary" className="text-xs bg-primary/10 text-foreground border-primary/20">
                     {result.trimester}
-                  </Badge>
+                  </GBadge>
                 </div>
               </div>
 
@@ -390,18 +391,18 @@ Next Milestone: ${result.nextMilestone}`
                   Copy Results
                 </GButton>
               </div>
-            </CardContent>
-          </Card>
+            </GCardContent>
+          </GCard>
 
           {/* Current Symptoms */}
-          <Card className="bg-card border-border">
-            <CardHeader className="pb-2 px-3 sm:px-6">
-              <CardTitle className="flex items-center gap-2 text-foreground text-base">
+          <GCard className="bg-card border-border">
+            <GCardHeader className="pb-2 px-3 sm:px-6">
+              <GCardTitle className="flex items-center gap-2 text-foreground text-base">
                 <Stethoscope className="h-4 w-4 text-foreground" />
                 Common Symptoms This Week
-              </CardTitle>
-            </CardHeader>
-            <CardContent className="px-3 sm:px-6">
+              </GCardTitle>
+            </GCardHeader>
+            <GCardContent className="px-3 sm:px-6">
               <div className="grid md:grid-cols-2 gap-2">
                 {result.symptoms.map((symptom, index) => (
                   <div key={index} className="flex items-center gap-2 text-xs text-muted-foreground">
@@ -410,19 +411,19 @@ Next Milestone: ${result.nextMilestone}`
                   </div>
                 ))}
               </div>
-            </CardContent>
-          </Card>
+            </GCardContent>
+          </GCard>
 
           {/* Recommendations */}
           <div className="grid md:grid-cols-2 gap-4">
-            <Card className="bg-card border-border">
-              <CardHeader className="pb-2 px-3 sm:px-6">
-                <CardTitle className="flex items-center gap-2 text-foreground text-base">
+            <GCard className="bg-card border-border">
+              <GCardHeader className="pb-2 px-3 sm:px-6">
+                <GCardTitle className="flex items-center gap-2 text-foreground text-base">
                   <Baby className="h-4 w-4 text-foreground" />
                   Nutrition Recommendations
-                </CardTitle>
-              </CardHeader>
-              <CardContent className="px-3 sm:px-6">
+                </GCardTitle>
+              </GCardHeader>
+              <GCardContent className="px-3 sm:px-6">
                 <ul className="space-y-1.5">
                   {result.recommendations.nutrition.map((rec, index) => (
                     <li key={index} className="flex items-start gap-2 text-xs text-muted-foreground">
@@ -431,17 +432,17 @@ Next Milestone: ${result.nextMilestone}`
                     </li>
                   ))}
                 </ul>
-              </CardContent>
-            </Card>
+              </GCardContent>
+            </GCard>
 
-            <Card className="bg-card border-border">
-              <CardHeader className="pb-2 px-3 sm:px-6">
-                <CardTitle className="flex items-center gap-2 text-foreground text-base">
+            <GCard className="bg-card border-border">
+              <GCardHeader className="pb-2 px-3 sm:px-6">
+                <GCardTitle className="flex items-center gap-2 text-foreground text-base">
                   <Heart className="h-4 w-4 text-foreground" />
                   Exercise Recommendations
-                </CardTitle>
-              </CardHeader>
-              <CardContent className="px-3 sm:px-6">
+                </GCardTitle>
+              </GCardHeader>
+              <GCardContent className="px-3 sm:px-6">
                 <ul className="space-y-1.5">
                   {result.recommendations.exercise.map((rec, index) => (
                     <li key={index} className="flex items-start gap-2 text-xs text-muted-foreground">
@@ -450,17 +451,17 @@ Next Milestone: ${result.nextMilestone}`
                     </li>
                   ))}
                 </ul>
-              </CardContent>
-            </Card>
+              </GCardContent>
+            </GCard>
 
-            <Card className="bg-card border-border">
-              <CardHeader className="pb-2 px-3 sm:px-6">
-                <CardTitle className="flex items-center gap-2 text-foreground text-base">
+            <GCard className="bg-card border-border">
+              <GCardHeader className="pb-2 px-3 sm:px-6">
+                <GCardTitle className="flex items-center gap-2 text-foreground text-base">
                   <Stethoscope className="h-4 w-4 text-foreground" />
                   Health Recommendations
-                </CardTitle>
-              </CardHeader>
-              <CardContent className="px-3 sm:px-6">
+                </GCardTitle>
+              </GCardHeader>
+              <GCardContent className="px-3 sm:px-6">
                 <ul className="space-y-1.5">
                   {result.recommendations.health.map((rec, index) => (
                     <li key={index} className="flex items-start gap-2 text-xs text-muted-foreground">
@@ -469,17 +470,17 @@ Next Milestone: ${result.nextMilestone}`
                     </li>
                   ))}
                 </ul>
-              </CardContent>
-            </Card>
+              </GCardContent>
+            </GCard>
 
-            <Card className="bg-card border-border">
-              <CardHeader className="pb-2 px-3 sm:px-6">
-                <CardTitle className="flex items-center gap-2 text-foreground text-base">
+            <GCard className="bg-card border-border">
+              <GCardHeader className="pb-2 px-3 sm:px-6">
+                <GCardTitle className="flex items-center gap-2 text-foreground text-base">
                   <Calendar className="h-4 w-4 text-foreground" />
                   Lifestyle Recommendations
-                </CardTitle>
-              </CardHeader>
-              <CardContent className="px-3 sm:px-6">
+                </GCardTitle>
+              </GCardHeader>
+              <GCardContent className="px-3 sm:px-6">
                 <ul className="space-y-1.5">
                   {result.recommendations.lifestyle.map((rec, index) => (
                     <li key={index} className="flex items-start gap-2 text-xs text-muted-foreground">
@@ -488,22 +489,22 @@ Next Milestone: ${result.nextMilestone}`
                     </li>
                   ))}
                 </ul>
-              </CardContent>
-            </Card>
+              </GCardContent>
+            </GCard>
           </div>
         </div>
       )}
 
       {/* History Section */}
       {history.length > 0 && (
-        <Card className="bg-card border-border">
-          <CardHeader className="pb-2 px-3 sm:px-6">
-            <CardTitle className="flex items-center gap-2 text-foreground text-base">
+        <GCard className="bg-card border-border">
+          <GCardHeader className="pb-2 px-3 sm:px-6">
+            <GCardTitle className="flex items-center gap-2 text-foreground text-base">
               <Clock className="h-4 w-4 text-foreground" />
               Recent Calculations
-            </CardTitle>
-          </CardHeader>
-          <CardContent className="px-3 sm:px-6">
+            </GCardTitle>
+          </GCardHeader>
+          <GCardContent className="px-3 sm:px-6">
             <div className="space-y-2">
               {history.map((item, index) => (
                 <div key={index} className="flex items-center justify-between p-2 bg-card rounded-lg border border-border">
@@ -526,19 +527,19 @@ Next Milestone: ${result.nextMilestone}`
                 </div>
               ))}
             </div>
-          </CardContent>
-        </Card>
+          </GCardContent>
+        </GCard>
       )}
 
       {/* Information Section */}
-      <Card className="bg-card border-border">
-        <CardHeader className="pb-2 px-3 sm:px-6">
-          <CardTitle className="flex items-center gap-2 text-foreground text-base">
+      <GCard className="bg-card border-border">
+        <GCardHeader className="pb-2 px-3 sm:px-6">
+          <GCardTitle className="flex items-center gap-2 text-foreground text-base">
             <Info className="h-4 w-4 text-foreground" />
             Important Information
-          </CardTitle>
-        </CardHeader>
-        <CardContent className="space-y-3 px-3 sm:px-6">
+          </GCardTitle>
+        </GCardHeader>
+        <GCardContent className="space-y-3 px-3 sm:px-6">
           <div className="p-3 bg-card rounded-lg border border-border">
             <div className="flex items-start gap-2">
               <Info className="h-3.5 w-3.5 text-heading-accent mt-0.5 flex-shrink-0" />
@@ -564,8 +565,8 @@ Next Milestone: ${result.nextMilestone}`
               <strong className="text-heading-accent">Gestational Age:</strong> The age of the pregnancy calculated from the first day of the last menstrual period, not the actual conception date.
             </p>
           </div>
-        </CardContent>
-      </Card>
+        </GCardContent>
+      </GCard>
     </div>
   )
 }

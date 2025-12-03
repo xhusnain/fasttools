@@ -1,8 +1,9 @@
 "use client"
 
 import { useState } from "react"
-import { GButton } from "@/components/globalcomponents/gbutton"
-import { Textarea } from "@/components/ui/textarea"
+import { GButton } from "@/ui/gbutton"
+import { GTextarea } from "@/ui/gtextarea"
+
 import { Download, Copy, Check, Sparkles } from "lucide-react"
 
 const SAMPLE_JSON = `[
@@ -124,7 +125,7 @@ export function JSONToCSV() {
             Try Sample Data
           </GButton>
         </div>
-        <Textarea
+        <GTextarea
           placeholder='[{"name": "John", "age": 30}, {"name": "Jane", "age": 25}]'
           value={json}
           onChange={(e) => setJson(e.target.value)}
@@ -166,7 +167,7 @@ export function JSONToCSV() {
               </GButton>
             </div>
           </div>
-          <Textarea value={csv} readOnly className="min-h-48 font-mono text-sm border-2 border-green-300 focus:border-green-500" />
+          <GTextarea value={csv} readOnly className="min-h-48 font-mono text-sm border-2 border-green-300 focus:border-green-500" />
         </div>
       )}
     </div>

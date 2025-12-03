@@ -1,12 +1,13 @@
 "use client"
 
 import { useState, useEffect, useRef, useCallback } from "react"
-import { GButton as Button } from "@/components/globalcomponents/gbutton"
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
-import { Input } from "@/components/ui/input"
-import { Label } from "@/components/ui/label"
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
-import { Badge } from "@/components/ui/badge"
+import { GButton } from "@/ui/gbutton"
+import { GCard, GCardContent, GCardHeader, GCardTitle } from "@/ui/gcard"
+import { GInput } from "@/ui/ginput"
+import { GLabel } from "@/ui/glabel"
+import { GSelect, GSelectContent, GSelectItem, GSelectTrigger, GSelectValue } from "@/ui/gselect"
+import { GBadge } from "@/ui/gbadge"
+
 import {
   Calculator,
   Triangle,
@@ -417,8 +418,8 @@ Type: ${result.triangleType}`
       }}
     >
       {/* Calculator Display */}
-      <Card className="bg-card border-border">
-        <CardHeader className="pb-2 px-3 sm:px-6">
+      <GCard className="bg-card border-border">
+        <GCardHeader className="pb-2 px-3 sm:px-6">
           <div className="flex items-center justify-between">
             <div className="flex items-center gap-2">
               <div className="w-8 h-8 bg-gradient-to-r from-primary to-primary/90 rounded-lg flex items-center justify-center">
@@ -430,15 +431,15 @@ Type: ${result.triangleType}`
               </div>
             </div>
             <div className="flex items-center gap-2">
-              <Badge variant="secondary" className="bg-primary/10 text-foreground border-primary/20 text-[10px] h-5">
+              <GBadge variant="secondary" className="bg-primary/10 text-foreground border-primary/20 text-[10px] h-5">
                 <Zap className="h-3 w-3 mr-1" />
                 Advanced
-              </Badge>
+              </GBadge>
             </div>
           </div>
-        </CardHeader>
-        <CardContent className="space-y-4 px-3 sm:px-6">
-          {/* Input Section */}
+        </GCardHeader>
+        <GCardContent className="space-y-4 px-3 sm:px-6">
+          {/* GInput Section */}
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
             {/* Sides */}
             <div className="space-y-3">
@@ -448,8 +449,8 @@ Type: ${result.triangleType}`
               </h3>
               <div className="grid grid-cols-3 gap-2">
                 <div className="space-y-1">
-                  <Label htmlFor="sideA" className="text-[10px] font-medium text-muted-foreground">Side a</Label>
-                  <Input
+                  <GLabel htmlFor="sideA" className="text-[10px] font-medium text-muted-foreground">Side a</GLabel>
+                  <GInput
                     id="sideA"
                     type="number"
                     placeholder="0"
@@ -459,8 +460,8 @@ Type: ${result.triangleType}`
                   />
                 </div>
                 <div className="space-y-1">
-                  <Label htmlFor="sideB" className="text-[10px] font-medium text-muted-foreground">Side b</Label>
-                  <Input
+                  <GLabel htmlFor="sideB" className="text-[10px] font-medium text-muted-foreground">Side b</GLabel>
+                  <GInput
                     id="sideB"
                     type="number"
                     placeholder="0"
@@ -470,8 +471,8 @@ Type: ${result.triangleType}`
                   />
                 </div>
                 <div className="space-y-1">
-                  <Label htmlFor="sideC" className="text-[10px] font-medium text-muted-foreground">Side c</Label>
-                  <Input
+                  <GLabel htmlFor="sideC" className="text-[10px] font-medium text-muted-foreground">Side c</GLabel>
+                  <GInput
                     id="sideC"
                     type="number"
                     placeholder="0"
@@ -491,8 +492,8 @@ Type: ${result.triangleType}`
               </h3>
               <div className="grid grid-cols-3 gap-2">
                 <div className="space-y-1">
-                  <Label htmlFor="angleA" className="text-[10px] font-medium text-muted-foreground">Angle A</Label>
-                  <Input
+                  <GLabel htmlFor="angleA" className="text-[10px] font-medium text-muted-foreground">Angle A</GLabel>
+                  <GInput
                     id="angleA"
                     type="number"
                     placeholder="0"
@@ -502,8 +503,8 @@ Type: ${result.triangleType}`
                   />
                 </div>
                 <div className="space-y-1">
-                  <Label htmlFor="angleB" className="text-[10px] font-medium text-muted-foreground">Angle B</Label>
-                  <Input
+                  <GLabel htmlFor="angleB" className="text-[10px] font-medium text-muted-foreground">Angle B</GLabel>
+                  <GInput
                     id="angleB"
                     type="number"
                     placeholder="0"
@@ -513,8 +514,8 @@ Type: ${result.triangleType}`
                   />
                 </div>
                 <div className="space-y-1">
-                  <Label htmlFor="angleC" className="text-[10px] font-medium text-muted-foreground">Angle C</Label>
-                  <Input
+                  <GLabel htmlFor="angleC" className="text-[10px] font-medium text-muted-foreground">Angle C</GLabel>
+                  <GInput
                     id="angleC"
                     type="number"
                     placeholder="0"
@@ -529,21 +530,21 @@ Type: ${result.triangleType}`
 
           {/* Angle Unit Selection */}
           <div className="flex items-center gap-2">
-            <Label htmlFor="angleUnit" className="text-xs text-muted-foreground">Angle Unit:</Label>
-            <Select value={angleUnit} onValueChange={(value: "degree" | "radian") => setAngleUnit(value)}>
-              <SelectTrigger className="w-28 h-8 text-xs border-border bg-background text-foreground">
-                <SelectValue />
-              </SelectTrigger>
-              <SelectContent>
-                <SelectItem value="degree">Degree °</SelectItem>
-                <SelectItem value="radian">Radian</SelectItem>
-              </SelectContent>
-            </Select>
+            <GLabel htmlFor="angleUnit" className="text-xs text-muted-foreground">Angle Unit:</GLabel>
+            <GSelect value={angleUnit} onValueChange={(value: "degree" | "radian") => setAngleUnit(value)}>
+              <GSelectTrigger className="w-28 h-8 text-xs border-border bg-background text-foreground">
+                <GSelectValue />
+              </GSelectTrigger>
+              <GSelectContent>
+                <GSelectItem value="degree">Degree °</GSelectItem>
+                <GSelectItem value="radian">Radian</GSelectItem>
+              </GSelectContent>
+            </GSelect>
           </div>
 
           {/* Action Buttons */}
           <div className="flex flex-wrap gap-2">
-            <Button
+            <GButton
               onClick={calculateTriangle}
               disabled={isCalculating}
               className="flex-1 min-w-[100px] h-9 text-xs font-medium bg-gradient-to-r from-primary to-primary/90 hover:from-primary/90 hover:to-primary text-primary-foreground"
@@ -559,16 +560,16 @@ Type: ${result.triangleType}`
                   Calculate
                 </>
               )}
-            </Button>
-            <Button variant="outline" onClick={resetCalculator} className="h-9 text-xs border-border bg-card text-foreground hover:bg-secondary">
+            </GButton>
+            <GButton variant="outline" onClick={resetCalculator} className="h-9 text-xs border-border bg-card text-foreground hover:bg-secondary">
               <RotateCcw className="h-3 w-3 mr-1" />
               Reset
-            </Button>
+            </GButton>
             {result && (
-              <Button variant="outline" onClick={copyResult} className="h-9 text-xs border-border bg-card text-foreground hover:bg-secondary">
+              <GButton variant="outline" onClick={copyResult} className="h-9 text-xs border-border bg-card text-foreground hover:bg-secondary">
                 <Copy className="h-3 w-3 mr-1" />
                 Copy
-              </Button>
+              </GButton>
             )}
           </div>
 
@@ -584,23 +585,23 @@ Type: ${result.triangleType}`
               </div>
             </div>
           </div>
-        </CardContent>
-      </Card>
+        </GCardContent>
+      </GCard>
 
       {/* Results */}
       {result && (
-        <Card className="bg-card border-border">
-          <CardHeader className="pb-2 px-3 sm:px-6">
-            <CardTitle className="flex items-center gap-2 text-base text-foreground">
+        <GCard className="bg-card border-border">
+          <GCardHeader className="pb-2 px-3 sm:px-6">
+            <GCardTitle className="flex items-center gap-2 text-base text-foreground">
               {result.isValid ? (
                 <CheckCircle className="h-4 w-4 text-heading-accent" />
               ) : (
                 <AlertCircle className="h-4 w-4 text-foreground" />
               )}
               Triangle Results
-            </CardTitle>
-          </CardHeader>
-          <CardContent className="px-3 sm:px-6">
+            </GCardTitle>
+          </GCardHeader>
+          <GCardContent className="px-3 sm:px-6">
             {result.isValid ? (
               <div className="space-y-4">
                 {/* Basic Properties */}
@@ -732,25 +733,25 @@ Type: ${result.triangleType}`
                 <p className="text-foreground text-sm">{result.errorMessage}</p>
               </div>
             )}
-          </CardContent>
-        </Card>
+          </GCardContent>
+        </GCard>
       )}
 
       {/* History */}
       {history.length > 0 && (
-        <Card className="bg-card border-border">
-          <CardHeader className="pb-2 px-3 sm:px-6">
+        <GCard className="bg-card border-border">
+          <GCardHeader className="pb-2 px-3 sm:px-6">
             <div className="flex items-center justify-between">
-              <CardTitle className="flex items-center gap-2 text-base text-foreground">
+              <GCardTitle className="flex items-center gap-2 text-base text-foreground">
                 <Calculator className="h-4 w-4" />
                 Recent Calculations
-              </CardTitle>
-              <Button variant="outline" size="sm" onClick={clearHistory} className="h-8 text-xs border-border bg-card text-foreground hover:bg-secondary">
+              </GCardTitle>
+              <GButton variant="outline" size="sm" onClick={clearHistory} className="h-8 text-xs border-border bg-card text-foreground hover:bg-secondary">
                 Clear
-              </Button>
+              </GButton>
             </div>
-          </CardHeader>
-          <CardContent className="px-3 sm:px-6">
+          </GCardHeader>
+          <GCardContent className="px-3 sm:px-6">
             <div className="space-y-2">
               {history.slice(0, 5).map((calc, index) => (
                 <div key={index} className="flex items-center justify-between p-2 bg-card rounded-lg border border-border">
@@ -767,7 +768,7 @@ Type: ${result.triangleType}`
                       </div>
                     </div>
                   </div>
-                  <Button
+                  <GButton
                     variant="ghost"
                     size="sm"
                     onClick={() => {
@@ -777,12 +778,12 @@ Type: ${result.triangleType}`
                     className="h-7 w-7 p-0 text-muted-foreground hover:text-heading-accent hover:bg-secondary"
                   >
                     <Copy className="h-3 w-3" />
-                  </Button>
+                  </GButton>
                 </div>
               ))}
             </div>
-          </CardContent>
-        </Card>
+          </GCardContent>
+        </GCard>
       )}
     </div>
   )

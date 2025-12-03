@@ -1,13 +1,14 @@
 "use client"
 
 import { useState, useEffect } from "react"
-import { GButton } from "@/components/globalcomponents/gbutton"
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
-import { Input } from "@/components/ui/input"
-import { Label } from "@/components/ui/label"
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
-import { Badge } from "@/components/ui/badge"
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
+import { GButton } from "@/ui/gbutton"
+import { GCard, GCardContent, GCardHeader, GCardTitle } from "@/ui/gcard"
+import { GInput } from "@/ui/ginput"
+import { GLabel } from "@/ui/glabel"
+import { GSelect, GSelectContent, GSelectItem, GSelectTrigger, GSelectValue } from "@/ui/gselect"
+import { GBadge } from "@/ui/gbadge"
+import { GTabs, GTabsContent, GTabsList, GTabsTrigger } from "@/ui/gtabs"
+
 import {
   Calculator,
   DollarSign,
@@ -298,19 +299,19 @@ Working Days: ${result.adjustedWorkingDays} days/year`
   return (
     <div className="space-y-4 sm:space-y-6 md:space-y-8 w-full overflow-hidden">
       {/* Main Calculator */}
-      <Card className="bg-card border-border w-full overflow-hidden">
-        <CardHeader className="px-2 sm:px-3 md:px-4 pb-2">
-          <CardTitle className="flex items-center gap-2 text-sm sm:text-base md:text-lg break-words">
+      <GCard className="bg-card border-border w-full overflow-hidden">
+        <GCardHeader className="px-2 sm:px-3 md:px-4 pb-2">
+          <GCardTitle className="flex items-center gap-2 text-sm sm:text-base md:text-lg break-words">
             <Calculator className="h-3.5 w-3.5 sm:h-4 sm:w-4 text-foreground" />
             <span className="text-foreground">Advanced Salary Calculator</span>
-          </CardTitle>
-        </CardHeader>
-        <CardContent className="space-y-4 sm:space-y-6 px-2 sm:px-3 md:px-4">
-          {/* Input Fields */}
+          </GCardTitle>
+        </GCardHeader>
+        <GCardContent className="space-y-4 sm:space-y-6 px-2 sm:px-3 md:px-4">
+          {/* GInput Fields */}
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4">
             <div className="space-y-1.5 w-full min-w-0">
-              <Label htmlFor="salaryAmount" className="text-heading-accent text-xs sm:text-sm">Salary Amount ($)</Label>
-              <Input
+              <GLabel htmlFor="salaryAmount" className="text-heading-accent text-xs sm:text-sm">Salary Amount ($)</GLabel>
+              <GInput
                 id="salaryAmount"
                 type="number"
                 placeholder="50"
@@ -320,26 +321,26 @@ Working Days: ${result.adjustedWorkingDays} days/year`
               />
             </div>
             <div className="space-y-1.5 w-full min-w-0">
-              <Label htmlFor="payFrequency" className="text-heading-accent text-xs sm:text-sm">Pay Frequency</Label>
-              <Select value={payFrequency} onValueChange={setPayFrequency}>
-                <SelectTrigger className="border-border bg-card text-foreground w-full text-xs sm:text-sm h-9">
-                  <SelectValue />
-                </SelectTrigger>
-                <SelectContent>
+              <GLabel htmlFor="payFrequency" className="text-heading-accent text-xs sm:text-sm">Pay Frequency</GLabel>
+              <GSelect value={payFrequency} onValueChange={setPayFrequency}>
+                <GSelectTrigger className="border-border bg-card text-foreground w-full text-xs sm:text-sm h-9">
+                  <GSelectValue />
+                </GSelectTrigger>
+                <GSelectContent>
                   {payFrequencies.map((freq) => (
-                    <SelectItem key={freq.value} value={freq.value}>
+                    <GSelectItem key={freq.value} value={freq.value}>
                       {freq.label}
-                    </SelectItem>
+                    </GSelectItem>
                   ))}
-                </SelectContent>
-              </Select>
+                </GSelectContent>
+              </GSelect>
             </div>
           </div>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4">
             <div className="space-y-1.5 w-full min-w-0">
-              <Label htmlFor="hoursPerWeek" className="text-heading-accent text-xs sm:text-sm">Hours per Week</Label>
-              <Input
+              <GLabel htmlFor="hoursPerWeek" className="text-heading-accent text-xs sm:text-sm">Hours per Week</GLabel>
+              <GInput
                 id="hoursPerWeek"
                 type="number"
                 placeholder="40"
@@ -349,8 +350,8 @@ Working Days: ${result.adjustedWorkingDays} days/year`
               />
             </div>
             <div className="space-y-1.5 w-full min-w-0">
-              <Label htmlFor="daysPerWeek" className="text-heading-accent text-xs sm:text-sm">Days per Week</Label>
-              <Input
+              <GLabel htmlFor="daysPerWeek" className="text-heading-accent text-xs sm:text-sm">Days per Week</GLabel>
+              <GInput
                 id="daysPerWeek"
                 type="number"
                 placeholder="5"
@@ -363,8 +364,8 @@ Working Days: ${result.adjustedWorkingDays} days/year`
 
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4">
             <div className="space-y-1.5 w-full min-w-0">
-              <Label htmlFor="holidaysPerYear" className="text-heading-accent text-xs sm:text-sm">Holidays per Year</Label>
-              <Input
+              <GLabel htmlFor="holidaysPerYear" className="text-heading-accent text-xs sm:text-sm">Holidays per Year</GLabel>
+              <GInput
                 id="holidaysPerYear"
                 type="number"
                 placeholder="10"
@@ -374,8 +375,8 @@ Working Days: ${result.adjustedWorkingDays} days/year`
               />
             </div>
             <div className="space-y-1.5 w-full min-w-0">
-              <Label htmlFor="vacationDaysPerYear" className="text-heading-accent text-xs sm:text-sm">Vacation Days per Year</Label>
-              <Input
+              <GLabel htmlFor="vacationDaysPerYear" className="text-heading-accent text-xs sm:text-sm">Vacation Days per Year</GLabel>
+              <GInput
                 id="vacationDaysPerYear"
                 type="number"
                 placeholder="15"
@@ -395,21 +396,21 @@ Working Days: ${result.adjustedWorkingDays} days/year`
               Clear All
             </GButton>
           </div>
-        </CardContent>
-      </Card>
+        </GCardContent>
+      </GCard>
 
       {/* Results Section */}
       {result && (
         <div className="space-y-4 sm:space-y-6">
           {/* Main Results */}
-          <Card className="bg-card border-border w-full overflow-hidden">
-            <CardHeader className="px-2 sm:px-3 md:px-4 pb-2">
-              <CardTitle className="flex items-center gap-2 text-sm sm:text-base md:text-lg break-words">
+          <GCard className="bg-card border-border w-full overflow-hidden">
+            <GCardHeader className="px-2 sm:px-3 md:px-4 pb-2">
+              <GCardTitle className="flex items-center gap-2 text-sm sm:text-base md:text-lg break-words">
                 <DollarSign className="h-3.5 w-3.5 sm:h-4 sm:w-4 text-foreground" />
                 <span className="text-foreground">Salary Calculation Results</span>
-              </CardTitle>
-            </CardHeader>
-            <CardContent className="space-y-3 sm:space-y-4 px-2 sm:px-3 md:px-4">
+              </GCardTitle>
+            </GCardHeader>
+            <GCardContent className="space-y-3 sm:space-y-4 px-2 sm:px-3 md:px-4">
               <div className="overflow-x-auto">
                 <table className="w-full border-collapse border border-border">
                   <thead>
@@ -470,18 +471,18 @@ Working Days: ${result.adjustedWorkingDays} days/year`
                   Copy Results
                 </GButton>
               </div>
-            </CardContent>
-          </Card>
+            </GCardContent>
+          </GCard>
 
           {/* Working Days Summary */}
-          <Card className="bg-card border-border w-full overflow-hidden">
-            <CardHeader className="px-2 sm:px-3 md:px-4 pb-2">
-              <CardTitle className="flex items-center gap-2 text-sm sm:text-base md:text-lg break-words">
+          <GCard className="bg-card border-border w-full overflow-hidden">
+            <GCardHeader className="px-2 sm:px-3 md:px-4 pb-2">
+              <GCardTitle className="flex items-center gap-2 text-sm sm:text-base md:text-lg break-words">
                 <Calendar className="h-3.5 w-3.5 sm:h-4 sm:w-4 text-foreground" />
                 <span className="text-foreground">Working Days Summary</span>
-              </CardTitle>
-            </CardHeader>
-            <CardContent className="space-y-3 sm:space-y-4 px-2 sm:px-3 md:px-4">
+              </GCardTitle>
+            </GCardHeader>
+            <GCardContent className="space-y-3 sm:space-y-4 px-2 sm:px-3 md:px-4">
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4">
                 <div className="p-2 sm:p-3 md:p-4 bg-card border border-border rounded-lg">
                   <h3 className="font-semibold text-heading-accent mb-1.5 sm:mb-2 text-xs sm:text-sm break-words">Total Working Days</h3>
@@ -494,18 +495,18 @@ Working Days: ${result.adjustedWorkingDays} days/year`
                   <p className="text-xs sm:text-sm text-foreground break-words">After holidays and vacation</p>
                 </div>
               </div>
-            </CardContent>
-          </Card>
+            </GCardContent>
+          </GCard>
 
           {/* Industry Comparison */}
-          <Card className="bg-card border-border w-full overflow-hidden">
-            <CardHeader className="px-2 sm:px-3 md:px-4 pb-2">
-              <CardTitle className="flex items-center gap-2 text-sm sm:text-base md:text-lg break-words">
+          <GCard className="bg-card border-border w-full overflow-hidden">
+            <GCardHeader className="px-2 sm:px-3 md:px-4 pb-2">
+              <GCardTitle className="flex items-center gap-2 text-sm sm:text-base md:text-lg break-words">
                 <BarChart3 className="h-3.5 w-3.5 sm:h-4 sm:w-4 text-foreground" />
                 <span className="text-foreground">Industry Salary Comparison</span>
-              </CardTitle>
-            </CardHeader>
-            <CardContent className="px-2 sm:px-3 md:px-4">
+              </GCardTitle>
+            </GCardHeader>
+            <GCardContent className="px-2 sm:px-3 md:px-4">
               <div className="space-y-2">
                 {result.comparison.industryAverages.map((industry, index) => (
                   <div key={index} className="flex justify-between items-center p-2 sm:p-3 bg-card border border-border rounded-lg">
@@ -513,24 +514,24 @@ Working Days: ${result.adjustedWorkingDays} days/year`
                       <span className="font-medium text-foreground text-xs sm:text-sm break-words">{industry.industry}</span>
                       <p className="text-xs text-foreground break-words">Average: ${industry.averageSalary.toLocaleString()}</p>
                     </div>
-                    <Badge className={industry.difference > 0 ? "bg-secondary-accent/20 text-heading-accent border-secondary-accent" : "bg-destructive/20 text-foreground border-destructive"} variant="outline">
+                    <GBadge className={industry.difference > 0 ? "bg-secondary-accent/20 text-heading-accent border-secondary-accent" : "bg-destructive/20 text-foreground border-destructive"} variant="outline">
                       {industry.difference > 0 ? "+" : ""}${industry.difference.toLocaleString()}
-                    </Badge>
+                    </GBadge>
                   </div>
                 ))}
               </div>
-            </CardContent>
-          </Card>
+            </GCardContent>
+          </GCard>
 
           {/* Recommendations */}
-          <Card className="bg-card border-border w-full overflow-hidden">
-            <CardHeader className="px-2 sm:px-3 md:px-4 pb-2">
-              <CardTitle className="flex items-center gap-2 text-sm sm:text-base md:text-lg break-words">
+          <GCard className="bg-card border-border w-full overflow-hidden">
+            <GCardHeader className="px-2 sm:px-3 md:px-4 pb-2">
+              <GCardTitle className="flex items-center gap-2 text-sm sm:text-base md:text-lg break-words">
                 <Target className="h-3.5 w-3.5 sm:h-4 sm:w-4 text-foreground" />
                 <span className="text-foreground">Personalized Recommendations</span>
-              </CardTitle>
-            </CardHeader>
-            <CardContent className="px-2 sm:px-3 md:px-4">
+              </GCardTitle>
+            </GCardHeader>
+            <GCardContent className="px-2 sm:px-3 md:px-4">
               <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
                 <div>
                   <h4 className="font-semibold mb-2 sm:mb-3 text-heading-accent text-xs sm:text-sm break-words">Salary Optimization</h4>
@@ -566,21 +567,21 @@ Working Days: ${result.adjustedWorkingDays} days/year`
                   </ul>
                 </div>
               </div>
-            </CardContent>
-          </Card>
+            </GCardContent>
+          </GCard>
         </div>
       )}
 
       {/* History Section */}
       {history.length > 0 && (
-        <Card className="bg-card border-border w-full overflow-hidden">
-          <CardHeader className="px-2 sm:px-3 md:px-4 pb-2">
-            <CardTitle className="flex items-center gap-2 text-sm sm:text-base md:text-lg break-words">
+        <GCard className="bg-card border-border w-full overflow-hidden">
+          <GCardHeader className="px-2 sm:px-3 md:px-4 pb-2">
+            <GCardTitle className="flex items-center gap-2 text-sm sm:text-base md:text-lg break-words">
               <History className="h-3.5 w-3.5 sm:h-4 sm:w-4 text-foreground" />
               <span className="text-foreground">Recent Calculations</span>
-            </CardTitle>
-          </CardHeader>
-          <CardContent className="px-2 sm:px-3 md:px-4">
+            </GCardTitle>
+          </GCardHeader>
+          <GCardContent className="px-2 sm:px-3 md:px-4">
             <div className="space-y-2">
               {history.map((item, index) => (
                 <div key={index} className="flex items-center justify-between p-2 sm:p-3 bg-card border border-border rounded-lg">
@@ -603,19 +604,19 @@ Working Days: ${result.adjustedWorkingDays} days/year`
                 </div>
               ))}
             </div>
-          </CardContent>
-        </Card>
+          </GCardContent>
+        </GCard>
       )}
 
       {/* Information Section */}
-      <Card className="bg-card border-border w-full overflow-hidden">
-        <CardHeader className="px-2 sm:px-3 md:px-4 pb-2">
-          <CardTitle className="flex items-center gap-2 text-sm sm:text-base md:text-lg break-words">
+      <GCard className="bg-card border-border w-full overflow-hidden">
+        <GCardHeader className="px-2 sm:px-3 md:px-4 pb-2">
+          <GCardTitle className="flex items-center gap-2 text-sm sm:text-base md:text-lg break-words">
             <Info className="h-3.5 w-3.5 sm:h-4 sm:w-4 text-foreground" />
             <span className="text-foreground">Salary Calculator Features</span>
-          </CardTitle>
-        </CardHeader>
-        <CardContent className="space-y-3 px-2 sm:px-3 md:px-4">
+          </GCardTitle>
+        </GCardHeader>
+        <GCardContent className="space-y-3 px-2 sm:px-3 md:px-4">
           <div className="p-2 sm:p-3 md:p-4 bg-card border border-border rounded-lg">
             <div className="flex items-start gap-2">
               <Info className="h-3.5 w-3.5 sm:h-4 sm:w-4 text-foreground mt-0.5 flex-shrink-0" />
@@ -644,8 +645,8 @@ Working Days: ${result.adjustedWorkingDays} days/year`
               <strong className="text-heading-accent">Negotiation Support:</strong> Get personalized tips for salary negotiations and career advancement.
             </p>
           </div>
-        </CardContent>
-      </Card>
+        </GCardContent>
+      </GCard>
     </div>
   )
 }

@@ -1,12 +1,13 @@
 "use client"
 
 import { useState } from "react"
-import { Card } from "@/components/ui/card"
-import { Input } from "@/components/ui/input"
-import { Label } from "@/components/ui/label"
-import { GButton as Button } from "@/components/globalcomponents/gbutton"
+import { GCard } from "@/ui/gcard"
+import { GInput } from "@/ui/ginput"
+import { GLabel } from "@/ui/glabel"
+import { GButton } from "@/ui/gbutton"
+import { GAlert, GAlertDescription } from "@/ui/galert"
+
 import { Download, Loader2, AlertCircle, Video, Music } from "lucide-react"
-import { Alert, AlertDescription } from "@/components/ui/alert"
 import { API } from "@/services/api/api.service"
 
 export interface TiktokDownloaderProps {
@@ -101,14 +102,14 @@ export function TiktokDownloader({ compact = false }: TiktokDownloaderProps) {
 
   return (
     <div className="w-full max-w-4xl mx-auto space-y-4 sm:space-y-6">
-      <Card className="p-6 sm:p-8">
+      <GCard className="p-6 sm:p-8">
         <div className="space-y-6">
           <div className="space-y-2">
-            <Label htmlFor="tiktok-url" className="text-base font-semibold">
+            <GLabel htmlFor="tiktok-url" className="text-base font-semibold">
               TikTok URL
-            </Label>
+            </GLabel>
             <div className="flex gap-2">
-              <Input
+              <GInput
                 id="tiktok-url"
                 type="text"
                 placeholder="https://www.tiktok.com/@username/video/..."
@@ -118,7 +119,7 @@ export function TiktokDownloader({ compact = false }: TiktokDownloaderProps) {
                 className="flex-1"
                 disabled={loading}
               />
-              <Button
+              <GButton
                 onClick={handleDownload}
                 disabled={loading || !url.trim()}
                 className="px-6"
@@ -134,15 +135,15 @@ export function TiktokDownloader({ compact = false }: TiktokDownloaderProps) {
                     Download
                   </>
                 )}
-              </Button>
+              </GButton>
             </div>
           </div>
 
           {error && (
-            <Alert variant="destructive">
+            <GAlert variant="destructive">
               <AlertCircle className="h-4 w-4" />
-              <AlertDescription>{error}</AlertDescription>
-            </Alert>
+              <GAlertDescription>{error}</GAlertDescription>
+            </GAlert>
           )}
 
           {result && (
@@ -169,14 +170,14 @@ export function TiktokDownloader({ compact = false }: TiktokDownloaderProps) {
                     <>
                       {result.video.length === 1 ? (
                         // Single video
-                        <Button
+                        <GButton
                           onClick={async () => await downloadFile(result.video[0], `tiktok-video-${Date.now()}.mp4`)}
                           className="w-full"
                           size="lg"
                         >
                           <Download className="mr-2 h-5 w-5" />
                           Download Video
-                        </Button>
+                        </GButton>
                       ) : (
                         // Multiple images (photo carousel)
                         <div className="space-y-2">
@@ -189,17 +190,17 @@ export function TiktokDownloader({ compact = false }: TiktokDownloaderProps) {
                                   alt={`Image ${index + 1}`}
                                   className="w-full aspect-square object-cover rounded border"
                                 />
-                                <Button
+                                <GButton
                                   onClick={async () => await downloadFile(imageUrl, `tiktok-image-${index + 1}-${Date.now()}.jpg`)}
                                   size="sm"
                                   className="absolute bottom-2 right-2 opacity-0 group-hover:opacity-100 transition-opacity"
                                 >
                                   <Download className="h-4 w-4" />
-                                </Button>
+                                </GButton>
                               </div>
                             ))}
                           </div>
-                          <Button
+                          <GButton
                             onClick={async () => {
                               for (let index = 0; index < result.video.length; index++) {
                                 await downloadFile(result.video[index], `tiktok-image-${index + 1}-${Date.now()}.jpg`)
@@ -213,7 +214,7 @@ export function TiktokDownloader({ compact = false }: TiktokDownloaderProps) {
                           >
                             <Download className="mr-2 h-5 w-5" />
                             Download All Images
-                          </Button>
+                          </GButton>
                         </div>
                       )}
                     </>
@@ -221,19 +222,19 @@ export function TiktokDownloader({ compact = false }: TiktokDownloaderProps) {
 
                   {/* Handle legacy format with result.url */}
                   {result.url && !result.video && (
-                    <Button
+                    <GButton
                       onClick={async () => await downloadFile(result.url, `tiktok-${Date.now()}.mp4`)}
                       className="w-full"
                       size="lg"
                     >
                       <Download className="mr-2 h-5 w-5" />
                       Download Video
-                    </Button>
+                    </GButton>
                   )}
 
                   {/* Handle audio array or legacy music field */}
                   {((result.audio && Array.isArray(result.audio) && result.audio.length > 0) || result.music) && (
-                    <Button
+                    <GButton
                       onClick={async () => {
                         const audioUrl = result.audio && result.audio.length > 0 ? result.audio[0] : result.music
                         await downloadFile(audioUrl, `tiktok-audio-${Date.now()}.mp3`)
@@ -244,17 +245,17 @@ export function TiktokDownloader({ compact = false }: TiktokDownloaderProps) {
                     >
                       <Music className="mr-2 h-5 w-5" />
                       Download Audio
-                    </Button>
+                    </GButton>
                   )}
                 </div>
               </div>
             </div>
           )}
         </div>
-      </Card>
+      </GCard>
 
       {!compact && (
-        <Card className="p-6 bg-card border border-border">
+        <GCard className="p-6 bg-card border border-border">
           <h3 className="text-lg font-bold text-foreground mb-4">How to Use</h3>
           <ol className="space-y-3 text-sm text-muted-foreground list-decimal list-inside">
             <li>Open TikTok and find the video you want to download</li>
@@ -262,7 +263,7 @@ export function TiktokDownloader({ compact = false }: TiktokDownloaderProps) {
             <li>Paste it into the input field above</li>
             <li>Click Download to save the video</li>
           </ol>
-        </Card>
+        </GCard>
       )}
     </div>
   )

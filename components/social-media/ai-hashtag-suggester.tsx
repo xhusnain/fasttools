@@ -1,10 +1,11 @@
 "use client"
 
 import { useState } from "react"
-import { GButton as Button } from "@/components/globalcomponents/gbutton"
-import { Label } from "@/components/ui/label"
-import { Textarea } from "@/components/ui/textarea"
-import { Card } from "@/components/ui/card"
+import { GButton } from "@/ui/gbutton"
+import { GLabel } from "@/ui/glabel"
+import { GTextarea } from "@/ui/gtextarea"
+import { GCard } from "@/ui/gcard"
+
 import { Copy, Hash } from "lucide-react"
 import { LoadingSpinner } from "@/components/common/loading-spinner"
 
@@ -45,8 +46,8 @@ export function AiHashtagSuggester() {
     <div className="space-y-6">
       <div className="grid gap-4">
         <div className="space-y-2">
-          <Label htmlFor="caption">Your Caption or Post Content</Label>
-          <Textarea
+          <GLabel htmlFor="caption">Your Caption or Post Content</GLabel>
+          <GTextarea
             id="caption"
             placeholder="Paste your caption or describe your post content..."
             value={caption}
@@ -56,7 +57,7 @@ export function AiHashtagSuggester() {
         </div>
 
         <div className="space-y-2">
-          <Label htmlFor="platform">Platform</Label>
+          <GLabel htmlFor="platform">Platform</GLabel>
           <select
             id="platform"
             value={platform}
@@ -70,7 +71,7 @@ export function AiHashtagSuggester() {
           </select>
         </div>
 
-        <Button onClick={generateHashtags} disabled={loading || !caption.trim()} className="w-full h-11 text-base">
+        <GButton onClick={generateHashtags} disabled={loading || !caption.trim()} className="w-full h-11 text-base">
           {loading ? (
             <>
               <LoadingSpinner className="mr-2" />
@@ -82,17 +83,17 @@ export function AiHashtagSuggester() {
               Generate Hashtags
             </>
           )}
-        </Button>
+        </GButton>
       </div>
 
       {hashtags.length > 0 && (
-        <Card className="p-6 space-y-4 animate-fade-in">
+        <GCard className="p-6 space-y-4 animate-fade-in">
           <div className="flex items-center justify-between">
             <h3 className="font-semibold text-lg">Suggested Hashtags ({hashtags.length})</h3>
-            <Button variant="outline" size="sm" onClick={copyHashtags}>
+            <GButton variant="outline" size="sm" onClick={copyHashtags}>
               <Copy className="h-4 w-4 mr-2" />
               Copy All
-            </Button>
+            </GButton>
           </div>
 
           <div className="flex flex-wrap gap-2">
@@ -110,7 +111,7 @@ export function AiHashtagSuggester() {
           <p className="text-sm text-muted-foreground">
             Click any hashtag to copy it individually, or copy all at once.
           </p>
-        </Card>
+        </GCard>
       )}
     </div>
   )

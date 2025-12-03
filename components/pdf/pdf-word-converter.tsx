@@ -1,10 +1,11 @@
 "use client"
 
 import { useState } from "react"
-import { GButton } from "@/components/globalcomponents/gbutton"
-import { useToast } from "@/components/ui/toast"
+import { GButton } from "@/ui/gbutton"
+import { useToast } from "@/ui/gtoast"
+import { GCard } from "@/ui/gcard"
+
 import { Upload, X, Download, FileText, Loader2, RefreshCw } from "lucide-react"
-import { Card } from "@/components/ui/card"
 import * as pdfjsLib from "pdfjs-dist"
 import { Document, Packer, Paragraph, TextRun, HeadingLevel } from "docx"
 import { PDFDocument, rgb } from "pdf-lib"
@@ -345,7 +346,7 @@ export function PDFWordConverter() {
                 </GButton>
               </div>
 
-              {/* Convert Button */}
+              {/* Convert GButton */}
               {!converted && (
                 <GButton
                   onClick={handleConvert}
@@ -382,7 +383,7 @@ export function PDFWordConverter() {
                 </div>
               )}
 
-              {/* Download Button */}
+              {/* Download GButton */}
               {converted && convertedFileBytes && (
                 <GButton
                   onClick={downloadConvertedFile}
@@ -396,8 +397,8 @@ export function PDFWordConverter() {
           )}
         </div>
 
-        {/* Info Card */}
-        <Card className="p-4 bg-muted border-border">
+        {/* Info GCard */}
+        <GCard className="p-4 bg-muted border-border">
           <div className="flex items-start gap-3">
             <div className="flex-shrink-0 w-5 h-5 rounded-full bg-primary flex items-center justify-center mt-0.5">
               <span className="text-primary-foreground text-xs font-bold">i</span>
@@ -414,7 +415,7 @@ export function PDFWordConverter() {
               </p>
             </div>
           </div>
-        </Card>
+        </GCard>
 
         {/* Features List */}
         <div className="grid md:grid-cols-2 gap-4">

@@ -1,9 +1,10 @@
 "use client"
 
 import { useState, useEffect, useRef } from "react"
-import { GButton } from "@/components/globalcomponents/gbutton"
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
-import { Badge } from "@/components/ui/badge"
+import { GButton } from "@/ui/gbutton"
+import { GCard, GCardContent, GCardHeader, GCardTitle } from "@/ui/gcard"
+import { GBadge } from "@/ui/gbadge"
+
 import {
   Calculator,
   History,
@@ -405,24 +406,24 @@ export function ScientificCalculator({ history, setHistory, clearHistory, copyRe
     >
 
       {/* Calculator Display */}
-      <Card className="bg-card border-border">
-        <CardHeader className="pb-2 px-3 sm:px-6">
+      <GCard className="bg-card border-border">
+        <GCardHeader className="pb-2 px-3 sm:px-6">
           <div className="flex items-center justify-between">
-            <CardTitle className="flex items-center gap-1.5 text-base">
+            <GCardTitle className="flex items-center gap-1.5 text-base">
               <Calculator className="h-3.5 w-3.5 text-foreground" />
               Scientific Calculator
-            </CardTitle>
+            </GCardTitle>
             <div className="flex gap-2">
-              <Badge variant={angleMode === 'deg' ? 'default' : 'secondary'} className="text-[10px] h-6 bg-primary/10 text-foreground border-primary/20">
+              <GBadge variant={angleMode === 'deg' ? 'default' : 'secondary'} className="text-[10px] h-6 bg-primary/10 text-foreground border-primary/20">
                 {angleMode}
-              </Badge>
-              <Badge variant={isShift ? 'default' : 'secondary'} className="text-[10px] h-6 bg-secondary text-muted-foreground border-border">
+              </GBadge>
+              <GBadge variant={isShift ? 'default' : 'secondary'} className="text-[10px] h-6 bg-secondary text-muted-foreground border-border">
                 SHIFT
-              </Badge>
+              </GBadge>
             </div>
           </div>
-        </CardHeader>
-        <CardContent className="space-y-3 px-3 sm:px-6">
+        </GCardHeader>
+        <GCardContent className="space-y-3 px-3 sm:px-6">
           {/* Main Display */}
           <div className="bg-muted border border-border rounded-lg p-3 sm:p-3 text-right">
             <div className="text-2xl sm:text-xl md:text-2xl font-mono font-bold min-h-[3rem] sm:min-h-[2.5rem] break-all text-foreground">
@@ -457,22 +458,22 @@ export function ScientificCalculator({ history, setHistory, clearHistory, copyRe
               </GButton>
             </div>
           </div>
-        </CardContent>
-      </Card>
+        </GCardContent>
+      </GCard>
 
       {/* Calculator Grid */}
-      <Card className="bg-card border-border">
-        <CardContent className="p-4 sm:p-3 md:p-4">
+      <GCard className="bg-card border-border">
+        <GCardContent className="p-4 sm:p-3 md:p-4">
           <div className="space-y-3">
             {/* Mode Indicators */}
             <div className="flex justify-between items-center flex-wrap gap-2 text-sm sm:text-xs">
               <div className="flex gap-2">
-                <Badge variant={angleMode === 'deg' ? 'default' : 'secondary'} className="text-xs sm:text-[10px] h-6 sm:h-5 bg-primary/10 text-foreground border-primary/20 px-2 sm:px-1.5">
+                <GBadge variant={angleMode === 'deg' ? 'default' : 'secondary'} className="text-xs sm:text-[10px] h-6 sm:h-5 bg-primary/10 text-foreground border-primary/20 px-2 sm:px-1.5">
                   {angleMode}
-                </Badge>
-                <Badge variant="outline" className="text-xs sm:text-[10px] h-6 sm:h-5 border-border bg-muted text-muted-foreground px-2 sm:px-1.5">
+                </GBadge>
+                <GBadge variant="outline" className="text-xs sm:text-[10px] h-6 sm:h-5 border-border bg-muted text-muted-foreground px-2 sm:px-1.5">
                   Data: {dataSet.length}
-                </Badge>
+                </GBadge>
               </div>
               <div className="text-muted-foreground text-sm sm:text-xs">
                 Memory: {memory.toFixed(2)}
@@ -748,8 +749,8 @@ export function ScientificCalculator({ history, setHistory, clearHistory, copyRe
               </GButton>
             </div>
           </div>
-        </CardContent>
-      </Card>
+        </GCardContent>
+      </GCard>
     </div>
   )
 }

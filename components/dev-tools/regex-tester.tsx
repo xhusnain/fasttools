@@ -1,13 +1,13 @@
 "use client"
 
 import { useState, useMemo } from "react"
-import { Input } from "@/components/ui/input"
-import { Textarea } from "@/components/ui/textarea"
-import { Card } from "@/components/ui/card"
-import { Badge } from "@/components/ui/badge"
-import { GButton, GButton as Button } from "@/components/globalcomponents/gbutton"
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
-import { Label } from "@/components/ui/label"
+import { GInput } from "@/ui/ginput"
+import { GTextarea } from "@/ui/gtextarea"
+import { GCard } from "@/ui/gcard"
+import { GBadge } from "@/ui/gbadge"
+import { GTabs, GTabsContent, GTabsList, GTabsTrigger } from "@/ui/gtabs"
+import { GLabel } from "@/ui/glabel"
+
 import {
   Copy,
   Check,
@@ -16,11 +16,11 @@ import {
   Replace,
   Sparkles,
   BookOpen,
-  Download,
   AlertCircle,
   CheckCircle2,
   X
 } from "lucide-react"
+import { GButton } from "@/ui"
 
 interface MatchDetail {
   match: string
@@ -374,55 +374,55 @@ puts replaced`
 
   return (
     <div className="w-full max-w-full overflow-hidden space-y-4 sm:space-y-6">
-      {/* Pattern Input Section */}
+      {/* Pattern GInput Section */}
       <div className="grid grid-cols-1 md:grid-cols-2 gap-3 sm:gap-4">
         <div className="space-y-2">
-          <Label className="text-sm font-medium text-foreground">Regular Expression Pattern</Label>
+          <GLabel className="text-sm font-medium text-foreground">Regular Expression Pattern</GLabel>
           <div className="relative">
-            <Input
+            <GInput
               placeholder="e.g., \d{3}-\d{3}-\d{4}"
               value={pattern}
               onChange={(e) => handlePatternChange(e.target.value)}
               className="font-mono pr-10 border-2 border-orange-300 focus:border-primary"
             />
-            <Button
+            <GButton
               size="sm"
               variant="ghost"
               className="absolute right-1 top-1/2 -translate-y-1/2 h-7 w-7 p-0"
               onClick={copyPattern}
             >
               {patternCopied ? <Check className="h-3.5 w-3.5 text-heading-accent" /> : <Copy className="h-3.5 w-3.5" />}
-            </Button>
+            </GButton>
           </div>
         </div>
 
         <div className="space-y-2">
-          <Label className="text-sm font-medium text-foreground">Flags</Label>
+          <GLabel className="text-sm font-medium text-foreground">Flags</GLabel>
           <div className="flex gap-2">
-            <Input
+            <GInput
               placeholder="e.g., g, gi, gim"
               value={flags}
               onChange={(e) => handleFlagsChange(e.target.value)}
               className="font-mono flex-1 border-2 border-orange-300 focus:border-primary"
             />
-            <Button size="sm" onClick={openExplanation} className="flex-shrink-0 gap-1.5">
+            <GButton size="sm" onClick={openExplanation} className="flex-shrink-0 gap-1.5">
               <Lightbulb className="h-4 w-4" />
               Explain
-            </Button>
+            </GButton>
           </div>
           <p className="text-xs text-muted-foreground">g=global, i=ignoreCase, m=multiline, s=dotAll, u=unicode, y=sticky</p>
         </div>
       </div>
 
       {/* Quick Pattern Templates */}
-      <Card className="p-3 sm:p-4 bg-card">
+      <GCard className="p-3 sm:p-4 bg-card">
         <h3 className="text-sm font-semibold mb-2 text-foreground flex items-center gap-2">
           <Sparkles className="h-4 w-4 text-accent" />
           Quick Pattern Templates
         </h3>
         <div className="flex flex-wrap gap-2">
           {Object.keys(commonPatterns).map((key) => (
-            <Button
+            <GButton
               key={key}
               size="sm"
               variant="outline"
@@ -430,32 +430,32 @@ puts replaced`
               className="text-xs"
             >
               {key.charAt(0).toUpperCase() + key.slice(1)}
-            </Button>
+            </GButton>
           ))}
         </div>
-      </Card>
+      </GCard>
 
-      {/* Test String & Tabs */}
-      <Tabs value={activeTab} onValueChange={setActiveTab} className="w-full">
-        <TabsList className="grid w-full grid-cols-2 bg-card p-1">
-          <TabsTrigger
+      {/* Test String & GTabs */}
+      <GTabs value={activeTab} onValueChange={setActiveTab} className="w-full">
+        <GTabsList className="grid w-full grid-cols-2 bg-card p-1">
+          <GTabsTrigger
             value="test"
             className="data-[state=active]:bg-primary data-[state=active]:text-primary-foreground data-[state=active]:shadow-sm font-semibold"
           >
             Test & Match
-          </TabsTrigger>
-          <TabsTrigger
+          </GTabsTrigger>
+          <GTabsTrigger
             value="replace"
             className="data-[state=active]:bg-primary data-[state=active]:text-primary-foreground data-[state=active]:shadow-sm font-semibold"
           >
             Find & Replace
-          </TabsTrigger>
-        </TabsList>
+          </GTabsTrigger>
+        </GTabsList>
 
-        <TabsContent value="test" className="space-y-4 mt-4">
+        <GTabsContent value="test" className="space-y-4 mt-4">
           <div className="space-y-2">
-            <Label className="text-sm font-medium text-foreground">Test String</Label>
-            <Textarea
+            <GLabel className="text-sm font-medium text-foreground">Test String</GLabel>
+            <GTextarea
               placeholder="Enter text to test against your regex..."
               value={testString}
               onChange={(e) => handleTestStringChange(e.target.value)}
@@ -466,7 +466,7 @@ puts replaced`
 
           {/* Visual Highlighting */}
           {Array.isArray(highlightedText) && highlightedText.length > 0 && (
-            <Card className="p-4 bg-card">
+            <GCard className="p-4 bg-card">
               <h3 className="text-sm font-semibold mb-2 text-foreground">Visual Match Highlighting</h3>
               <div className="font-mono text-sm whitespace-pre-wrap break-words">
                 {highlightedText.map((part, idx) => (
@@ -478,7 +478,7 @@ puts replaced`
                   </span>
                 ))}
               </div>
-            </Card>
+            </GCard>
           )}
 
           {/* Error Display */}
@@ -494,22 +494,22 @@ puts replaced`
 
           {/* Matches Found */}
           {matches.length > 0 && (
-            <Card className="p-4 space-y-3">
+            <GCard className="p-4 space-y-3">
               <div className="flex items-center justify-between">
                 <h3 className="font-semibold text-foreground flex items-center gap-2">
                   <CheckCircle2 className="h-5 w-5 text-heading-accent" />
                   Matches Found
                 </h3>
-                <Badge variant="secondary" className="text-sm">{matches.length} match(es)</Badge>
+                <GBadge variant="secondary" className="text-sm">{matches.length} match(es)</GBadge>
               </div>
 
               {/* Match Details */}
               <div className="space-y-2">
                 {matchDetails.map((detail, index) => (
-                  <Card key={index} className="p-3 bg-card border">
+                  <GCard key={index} className="p-3 bg-card border">
                     <div className="flex items-start justify-between mb-2">
                       <span className="text-xs font-semibold text-muted-foreground">Match #{index + 1}</span>
-                      <Badge variant="outline" className="text-xs">Index: {detail.index}</Badge>
+                      <GBadge variant="outline" className="text-xs">Index: {detail.index}</GBadge>
                     </div>
                     <div className="font-mono text-sm p-2 bg-muted rounded break-all">
                       {detail.match}
@@ -544,10 +544,10 @@ puts replaced`
                         </div>
                       </div>
                     )}
-                  </Card>
+                  </GCard>
                 ))}
               </div>
-            </Card>
+            </GCard>
           )}
 
           {/* No Matches */}
@@ -557,12 +557,12 @@ puts replaced`
               <p className="text-sm text-muted-foreground">No matches found</p>
             </div>
           )}
-        </TabsContent>
+        </GTabsContent>
 
-        <TabsContent value="replace" className="space-y-4 mt-4">
+        <GTabsContent value="replace" className="space-y-4 mt-4">
           <div className="space-y-2">
-            <Label className="text-sm font-medium text-foreground">Test String</Label>
-            <Textarea
+            <GLabel className="text-sm font-medium text-foreground">Test String</GLabel>
+            <GTextarea
               placeholder="Enter text to test against your regex..."
               value={testString}
               onChange={(e) => handleTestStringChange(e.target.value)}
@@ -572,11 +572,11 @@ puts replaced`
           </div>
 
           <div className="space-y-2">
-            <Label className="text-sm font-medium text-foreground flex items-center gap-2">
+            <GLabel className="text-sm font-medium text-foreground flex items-center gap-2">
               <Replace className="h-4 w-4" />
               Replace With
-            </Label>
-            <Input
+            </GLabel>
+            <GInput
               placeholder="Replacement string (use $1, $2 for groups)"
               value={replaceString}
               onChange={(e) => handleReplaceStringChange(e.target.value)}
@@ -588,7 +588,7 @@ puts replaced`
           </div>
 
           {replaceResult && (
-            <Card className="p-4">
+            <GCard className="p-4">
               <h3 className="text-sm font-semibold mb-2 text-foreground flex items-center gap-2">
                 <CheckCircle2 className="h-4 w-4 text-heading-accent" />
                 Result After Replacement
@@ -601,10 +601,10 @@ puts replaced`
                   Replaced {matches.length} occurrence(s)
                 </p>
               </div>
-            </Card>
+            </GCard>
           )}
-        </TabsContent>
-      </Tabs>
+        </GTabsContent>
+      </GTabs>
 
       {/* Action Buttons */}
       <div className="flex flex-wrap gap-2">
@@ -612,31 +612,31 @@ puts replaced`
           <Code2 className="h-4 w-4" />
           Generate Code
         </GButton>
-        <Button onClick={openExplanation} variant="outline" className="gap-2">
+        <GButton onClick={openExplanation} variant="outline" className="gap-2">
           <BookOpen className="h-4 w-4" />
           Explain Pattern
-        </Button>
+        </GButton>
       </div>
 
       {/* Code Generator Modal */}
       {showCodeGenerator && (
         <div className="fixed inset-0 bg-card/50 flex items-center justify-center z-50 p-4">
-          <Card className="w-full max-w-3xl max-h-[90vh] overflow-y-auto">
+          <GCard className="w-full max-w-3xl max-h-[90vh] overflow-y-auto">
             <div className="p-4 sm:p-6 space-y-4">
               <div className="flex items-center justify-between">
                 <h2 className="text-xl font-bold text-foreground flex items-center gap-2">
                   <Code2 className="h-5 w-5 text-heading-accent" />
                   Code Generator
                 </h2>
-                <Button size="sm" variant="ghost" onClick={() => setShowCodeGenerator(false)}>
+                <GButton size="sm" variant="ghost" onClick={() => setShowCodeGenerator(false)}>
                   <X className="h-4 w-4" />
-                </Button>
+                </GButton>
               </div>
 
               {/* Language Selection */}
               <div className="flex flex-wrap gap-2">
                 {['javascript', 'python', 'java', 'php', 'go', 'csharp', 'ruby'].map((lang) => (
-                  <Button
+                  <GButton
                     key={lang}
                     size="sm"
                     variant={selectedLanguage === lang ? 'default' : 'outline'}
@@ -647,7 +647,7 @@ puts replaced`
                     className="text-xs"
                   >
                     {lang === 'csharp' ? 'C#' : lang.charAt(0).toUpperCase() + lang.slice(1)}
-                  </Button>
+                  </GButton>
                 ))}
               </div>
 
@@ -656,53 +656,53 @@ puts replaced`
                 <pre className="bg-muted p-4 rounded-lg overflow-x-auto text-xs font-mono whitespace-pre-wrap break-words">
                   {generatedCode}
                 </pre>
-                <Button
+                <GButton
                   size="sm"
                   className="absolute top-2 right-2"
                   onClick={copyGeneratedCode}
                 >
                   {codeCopied ? <Check className="h-4 w-4" /> : <Copy className="h-4 w-4" />}
-                </Button>
+                </GButton>
               </div>
 
               <div className="flex gap-2 justify-end">
-                <Button variant="outline" onClick={() => setShowCodeGenerator(false)}>
+                <GButton variant="outline" onClick={() => setShowCodeGenerator(false)}>
                   Close
-                </Button>
-                <Button onClick={copyGeneratedCode} className="gap-2">
+                </GButton>
+                <GButton onClick={copyGeneratedCode} className="gap-2">
                   {codeCopied ? <Check className="h-4 w-4" /> : <Copy className="h-4 w-4" />}
                   {codeCopied ? 'Copied!' : 'Copy Code'}
-                </Button>
+                </GButton>
               </div>
             </div>
-          </Card>
+          </GCard>
         </div>
       )}
 
       {/* Explanation Modal */}
       {showExplanation && (
         <div className="fixed inset-0 bg-card/50 flex items-center justify-center z-50 p-4">
-          <Card className="w-full max-w-2xl max-h-[90vh] overflow-y-auto">
+          <GCard className="w-full max-w-2xl max-h-[90vh] overflow-y-auto">
             <div className="p-4 sm:p-6 space-y-4">
               <div className="flex items-center justify-between">
                 <h2 className="text-xl font-bold text-foreground flex items-center gap-2">
                   <Lightbulb className="h-5 w-5 text-foreground" />
                   Pattern Explanation
                 </h2>
-                <Button size="sm" variant="ghost" onClick={() => setShowExplanation(false)}>
+                <GButton size="sm" variant="ghost" onClick={() => setShowExplanation(false)}>
                   <X className="h-4 w-4" />
-                </Button>
+                </GButton>
               </div>
 
               <div className="bg-muted p-4 rounded-lg">
                 <pre className="text-sm whitespace-pre-wrap text-foreground">{explanation}</pre>
               </div>
 
-              <Button variant="outline" onClick={() => setShowExplanation(false)} className="w-full">
+              <GButton variant="outline" onClick={() => setShowExplanation(false)} className="w-full">
                 Close
-              </Button>
+              </GButton>
             </div>
-          </Card>
+          </GCard>
         </div>
       )}
     </div>

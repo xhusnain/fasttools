@@ -1,7 +1,8 @@
 "use client"
 
 import { useState, useEffect } from "react"
-import { GButton } from "@/components/globalcomponents/gbutton"
+import { GButton } from "@/ui/gbutton"
+
 import Link from "next/link"
 
 interface CookiePreferences {

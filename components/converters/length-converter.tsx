@@ -1,11 +1,12 @@
 "use client"
 
 import { useState } from "react"
-import { GButton, GButton as Button } from "@/components/globalcomponents/gbutton"
-import { Input } from "@/components/ui/input"
-import { Label } from "@/components/ui/label"
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
+import { GButton } from "@/ui/gbutton"
+import { GInput } from "@/ui/ginput"
+import { GLabel } from "@/ui/glabel"
+import { GCard, GCardContent, GCardDescription, GCardHeader, GCardTitle } from "@/ui/gcard"
+import { GSelect, GSelectContent, GSelectItem, GSelectTrigger, GSelectValue } from "@/ui/gselect"
+
 import { Ruler, ArrowLeftRight, Copy, Download, RotateCcw, Settings, Calculator, Target, Users, Award } from "lucide-react"
 
 export function LengthConverter() {
@@ -72,48 +73,48 @@ export function LengthConverter() {
 
   return (
     <div className="space-y-6">
-      <Card className="border border-border shadow bg-card">
-        <CardHeader className="p-4 sm:p-6">
+      <GCard className="border border-border shadow bg-card">
+        <GCardHeader className="p-4 sm:p-6">
           <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3 sm:gap-0">
             <div className="flex items-center gap-2 sm:gap-3">
               <div className="h-10 w-10 sm:h-12 sm:w-12 rounded-xl bg-primary/10 flex items-center justify-center border border-primary/20 shadow">
                 <Ruler className="h-5 w-5 sm:h-6 sm:w-6 text-primary" />
               </div>
               <div className="flex-1 min-w-0">
-                <CardTitle className="text-lg sm:text-xl font-bold text-card-foreground truncate">Length Converter</CardTitle>
-                <CardDescription className="text-muted-foreground text-sm sm:text-base hidden sm:block">Convert between different length units with precision</CardDescription>
+                <GCardTitle className="text-lg sm:text-xl font-bold text-card-foreground truncate">Length Converter</GCardTitle>
+                <GCardDescription className="text-muted-foreground text-sm sm:text-base hidden sm:block">Convert between different length units with precision</GCardDescription>
               </div>
             </div>
             <div className="flex gap-1 sm:gap-2">
-              <Button onClick={() => setShowSettings(!showSettings)} variant="outline" size="sm" className="h-7 sm:h-8 px-2 sm:px-3 text-xs border-border text-foreground hover:bg-accent/10 flex-1 sm:flex-none">
+              <GButton onClick={() => setShowSettings(!showSettings)} variant="outline" size="sm" className="h-7 sm:h-8 px-2 sm:px-3 text-xs border-border text-foreground hover:bg-accent/10 flex-1 sm:flex-none">
                 <Settings className="h-3 w-3 sm:mr-1" />
                 <span className="hidden sm:inline">Settings</span>
-              </Button>
-              <Button onClick={resetConverter} variant="outline" size="sm" className="h-7 sm:h-8 px-2 sm:px-3 text-xs border-border text-foreground hover:bg-accent/10 flex-1 sm:flex-none">
+              </GButton>
+              <GButton onClick={resetConverter} variant="outline" size="sm" className="h-7 sm:h-8 px-2 sm:px-3 text-xs border-border text-foreground hover:bg-accent/10 flex-1 sm:flex-none">
                 <RotateCcw className="h-3 w-3 sm:mr-1" />
                 <span className="hidden sm:inline">Reset</span>
-              </Button>
+              </GButton>
             </div>
           </div>
-        </CardHeader>
-        <CardContent className="p-6 space-y-6">
+        </GCardHeader>
+        <GCardContent className="p-6 space-y-6">
           {showSettings && (
             <div className="p-4 bg-primary/5 rounded-lg border border-primary/20">
               <h3 className="text-sm font-semibold text-card-foreground mb-3">Precision Settings</h3>
               <div className="flex items-center gap-4">
-                <Label htmlFor="precision" className="text-muted-foreground text-sm">Decimal Places:</Label>
-                <Select value={precision.toString()} onValueChange={(value) => setPrecision(Number(value))}>
-                  <SelectTrigger className="w-24 h-8 text-xs bg-card border-border text-foreground">
-                    <SelectValue />
-                  </SelectTrigger>
-                  <SelectContent>
-                    <SelectItem value="2">2</SelectItem>
-                    <SelectItem value="4">4</SelectItem>
-                    <SelectItem value="6">6</SelectItem>
-                    <SelectItem value="8">8</SelectItem>
-                    <SelectItem value="10">10</SelectItem>
-                  </SelectContent>
-                </Select>
+                <GLabel htmlFor="precision" className="text-muted-foreground text-sm">Decimal Places:</GLabel>
+                <GSelect value={precision.toString()} onValueChange={(value) => setPrecision(Number(value))}>
+                  <GSelectTrigger className="w-24 h-8 text-xs bg-card border-border text-foreground">
+                    <GSelectValue />
+                  </GSelectTrigger>
+                  <GSelectContent>
+                    <GSelectItem value="2">2</GSelectItem>
+                    <GSelectItem value="4">4</GSelectItem>
+                    <GSelectItem value="6">6</GSelectItem>
+                    <GSelectItem value="8">8</GSelectItem>
+                    <GSelectItem value="10">10</GSelectItem>
+                  </GSelectContent>
+                </GSelect>
               </div>
             </div>
           )}
@@ -122,8 +123,8 @@ export function LengthConverter() {
           <div className="block sm:hidden space-y-3">
             {/* From Section */}
             <div className="space-y-1">
-              <Label htmlFor="from-value" className="text-card-foreground font-medium text-xs">From</Label>
-              <Input
+              <GLabel htmlFor="from-value" className="text-card-foreground font-medium text-xs">From</GLabel>
+              <GInput
                 id="from-value"
                 type="number"
                 placeholder="Enter value"
@@ -131,51 +132,51 @@ export function LengthConverter() {
                 onChange={(e) => setValue(e.target.value)}
                 className="h-9 text-sm bg-background border-border text-foreground placeholder:text-muted-foreground focus:border-primary"
               />
-              <Select value={fromUnit} onValueChange={setFromUnit}>
-                <SelectTrigger className="h-9 text-xs bg-card border-border text-foreground">
-                  <SelectValue />
-                </SelectTrigger>
-                <SelectContent>
-                  <SelectItem value="millimeter">Millimeter (mm)</SelectItem>
-                  <SelectItem value="centimeter">Centimeter (cm)</SelectItem>
-                  <SelectItem value="meter">Meter (m)</SelectItem>
-                  <SelectItem value="kilometer">Kilometer (km)</SelectItem>
-                  <SelectItem value="inch">Inch (in)</SelectItem>
-                  <SelectItem value="feet">Feet (ft)</SelectItem>
-                  <SelectItem value="yard">Yard (yd)</SelectItem>
-                  <SelectItem value="mile">Mile (mi)</SelectItem>
-                </SelectContent>
-              </Select>
+              <GSelect value={fromUnit} onValueChange={setFromUnit}>
+                <GSelectTrigger className="h-9 text-xs bg-card border-border text-foreground">
+                  <GSelectValue />
+                </GSelectTrigger>
+                <GSelectContent>
+                  <GSelectItem value="millimeter">Millimeter (mm)</GSelectItem>
+                  <GSelectItem value="centimeter">Centimeter (cm)</GSelectItem>
+                  <GSelectItem value="meter">Meter (m)</GSelectItem>
+                  <GSelectItem value="kilometer">Kilometer (km)</GSelectItem>
+                  <GSelectItem value="inch">Inch (in)</GSelectItem>
+                  <GSelectItem value="feet">Feet (ft)</GSelectItem>
+                  <GSelectItem value="yard">Yard (yd)</GSelectItem>
+                  <GSelectItem value="mile">Mile (mi)</GSelectItem>
+                </GSelectContent>
+              </GSelect>
             </div>
 
-            {/* Swap Button - Mobile */}
+            {/* Swap GButton - Mobile */}
             <div className="flex items-center justify-center py-0">
-              <Button onClick={swapUnits} variant="outline" size="icon" className="h-7 w-7 border-border text-foreground hover:bg-accent/10">
+              <GButton onClick={swapUnits} variant="outline" size="icon" className="h-7 w-7 border-border text-foreground hover:bg-accent/10">
                 <ArrowLeftRight className="h-3 w-3" />
-              </Button>
+              </GButton>
             </div>
 
             {/* To Section */}
             <div className="space-y-1">
-              <Label htmlFor="to-value" className="text-card-foreground font-medium text-xs">To</Label>
+              <GLabel htmlFor="to-value" className="text-card-foreground font-medium text-xs">To</GLabel>
               <div className="h-9 px-3 py-2 bg-card border border-border rounded-md flex items-center text-sm font-medium text-card-foreground">
                 {convert() || "0"}
               </div>
-              <Select value={toUnit} onValueChange={setToUnit}>
-                <SelectTrigger className="h-9 text-xs bg-card border-border text-foreground">
-                  <SelectValue />
-                </SelectTrigger>
-                <SelectContent>
-                  <SelectItem value="millimeter">Millimeter (mm)</SelectItem>
-                  <SelectItem value="centimeter">Centimeter (cm)</SelectItem>
-                  <SelectItem value="meter">Meter (m)</SelectItem>
-                  <SelectItem value="kilometer">Kilometer (km)</SelectItem>
-                  <SelectItem value="inch">Inch (in)</SelectItem>
-                  <SelectItem value="feet">Feet (ft)</SelectItem>
-                  <SelectItem value="yard">Yard (yd)</SelectItem>
-                  <SelectItem value="mile">Mile (mi)</SelectItem>
-                </SelectContent>
-              </Select>
+              <GSelect value={toUnit} onValueChange={setToUnit}>
+                <GSelectTrigger className="h-9 text-xs bg-card border-border text-foreground">
+                  <GSelectValue />
+                </GSelectTrigger>
+                <GSelectContent>
+                  <GSelectItem value="millimeter">Millimeter (mm)</GSelectItem>
+                  <GSelectItem value="centimeter">Centimeter (cm)</GSelectItem>
+                  <GSelectItem value="meter">Meter (m)</GSelectItem>
+                  <GSelectItem value="kilometer">Kilometer (km)</GSelectItem>
+                  <GSelectItem value="inch">Inch (in)</GSelectItem>
+                  <GSelectItem value="feet">Feet (ft)</GSelectItem>
+                  <GSelectItem value="yard">Yard (yd)</GSelectItem>
+                  <GSelectItem value="mile">Mile (mi)</GSelectItem>
+                </GSelectContent>
+              </GSelect>
             </div>
           </div>
 
@@ -184,8 +185,8 @@ export function LengthConverter() {
             <div className="grid grid-cols-2 gap-4">
               {/* From Section */}
               <div className="space-y-3">
-                <Label htmlFor="from-value-tablet" className="text-card-foreground font-medium text-sm">From</Label>
-                <Input
+                <GLabel htmlFor="from-value-tablet" className="text-card-foreground font-medium text-sm">From</GLabel>
+                <GInput
                   id="from-value-tablet"
                   type="number"
                   placeholder="Enter value"
@@ -193,52 +194,52 @@ export function LengthConverter() {
                   onChange={(e) => setValue(e.target.value)}
                   className="h-11 text-sm bg-background border-border text-foreground placeholder:text-muted-foreground focus:border-primary"
                 />
-                <Select value={fromUnit} onValueChange={setFromUnit}>
-                  <SelectTrigger className="h-11 text-sm bg-card border-border text-foreground">
-                    <SelectValue />
-                  </SelectTrigger>
-                  <SelectContent>
-                    <SelectItem value="millimeter">Millimeter (mm)</SelectItem>
-                    <SelectItem value="centimeter">Centimeter (cm)</SelectItem>
-                    <SelectItem value="meter">Meter (m)</SelectItem>
-                    <SelectItem value="kilometer">Kilometer (km)</SelectItem>
-                    <SelectItem value="inch">Inch (in)</SelectItem>
-                    <SelectItem value="feet">Feet (ft)</SelectItem>
-                    <SelectItem value="yard">Yard (yd)</SelectItem>
-                    <SelectItem value="mile">Mile (mi)</SelectItem>
-                  </SelectContent>
-                </Select>
+                <GSelect value={fromUnit} onValueChange={setFromUnit}>
+                  <GSelectTrigger className="h-11 text-sm bg-card border-border text-foreground">
+                    <GSelectValue />
+                  </GSelectTrigger>
+                  <GSelectContent>
+                    <GSelectItem value="millimeter">Millimeter (mm)</GSelectItem>
+                    <GSelectItem value="centimeter">Centimeter (cm)</GSelectItem>
+                    <GSelectItem value="meter">Meter (m)</GSelectItem>
+                    <GSelectItem value="kilometer">Kilometer (km)</GSelectItem>
+                    <GSelectItem value="inch">Inch (in)</GSelectItem>
+                    <GSelectItem value="feet">Feet (ft)</GSelectItem>
+                    <GSelectItem value="yard">Yard (yd)</GSelectItem>
+                    <GSelectItem value="mile">Mile (mi)</GSelectItem>
+                  </GSelectContent>
+                </GSelect>
               </div>
 
               {/* To Section */}
               <div className="space-y-3">
-                <Label htmlFor="to-value-tablet" className="text-card-foreground font-medium text-sm">To</Label>
+                <GLabel htmlFor="to-value-tablet" className="text-card-foreground font-medium text-sm">To</GLabel>
                 <div className="h-11 px-3 py-2 bg-card border border-border rounded-md flex items-center text-sm font-medium text-card-foreground">
                   {convert() || "0"}
                 </div>
-                <Select value={toUnit} onValueChange={setToUnit}>
-                  <SelectTrigger className="h-11 text-sm bg-card border-border text-foreground">
-                    <SelectValue />
-                  </SelectTrigger>
-                  <SelectContent>
-                    <SelectItem value="millimeter">Millimeter (mm)</SelectItem>
-                    <SelectItem value="centimeter">Centimeter (cm)</SelectItem>
-                    <SelectItem value="meter">Meter (m)</SelectItem>
-                    <SelectItem value="kilometer">Kilometer (km)</SelectItem>
-                    <SelectItem value="inch">Inch (in)</SelectItem>
-                    <SelectItem value="feet">Feet (ft)</SelectItem>
-                    <SelectItem value="yard">Yard (yd)</SelectItem>
-                    <SelectItem value="mile">Mile (mi)</SelectItem>
-                  </SelectContent>
-                </Select>
+                <GSelect value={toUnit} onValueChange={setToUnit}>
+                  <GSelectTrigger className="h-11 text-sm bg-card border-border text-foreground">
+                    <GSelectValue />
+                  </GSelectTrigger>
+                  <GSelectContent>
+                    <GSelectItem value="millimeter">Millimeter (mm)</GSelectItem>
+                    <GSelectItem value="centimeter">Centimeter (cm)</GSelectItem>
+                    <GSelectItem value="meter">Meter (m)</GSelectItem>
+                    <GSelectItem value="kilometer">Kilometer (km)</GSelectItem>
+                    <GSelectItem value="inch">Inch (in)</GSelectItem>
+                    <GSelectItem value="feet">Feet (ft)</GSelectItem>
+                    <GSelectItem value="yard">Yard (yd)</GSelectItem>
+                    <GSelectItem value="mile">Mile (mi)</GSelectItem>
+                  </GSelectContent>
+                </GSelect>
               </div>
             </div>
 
-            {/* Swap Button - Tablet */}
+            {/* Swap GButton - Tablet */}
             <div className="flex items-center justify-center mt-4">
-              <Button onClick={swapUnits} variant="outline" size="icon" className="h-10 w-10 border-border text-foreground hover:bg-accent/10">
+              <GButton onClick={swapUnits} variant="outline" size="icon" className="h-10 w-10 border-border text-foreground hover:bg-accent/10">
                 <ArrowLeftRight className="h-4 w-4" />
-              </Button>
+              </GButton>
             </div>
           </div>
 
@@ -246,8 +247,8 @@ export function LengthConverter() {
           <div className="hidden lg:grid grid-cols-3 gap-6">
             {/* From Section */}
             <div className="space-y-3">
-              <Label htmlFor="from-value-desktop" className="text-card-foreground font-medium">From</Label>
-              <Input
+              <GLabel htmlFor="from-value-desktop" className="text-card-foreground font-medium">From</GLabel>
+              <GInput
                 id="from-value-desktop"
                 type="number"
                 placeholder="Enter value"
@@ -255,73 +256,73 @@ export function LengthConverter() {
                 onChange={(e) => setValue(e.target.value)}
                 className="h-12 text-sm bg-background border-border text-foreground placeholder:text-muted-foreground focus:border-primary"
               />
-              <Select value={fromUnit} onValueChange={setFromUnit}>
-                <SelectTrigger className="h-12 text-sm bg-card border-border text-foreground">
-                  <SelectValue />
-                </SelectTrigger>
-                <SelectContent>
-                  <SelectItem value="millimeter">Millimeter (mm)</SelectItem>
-                  <SelectItem value="centimeter">Centimeter (cm)</SelectItem>
-                  <SelectItem value="meter">Meter (m)</SelectItem>
-                  <SelectItem value="kilometer">Kilometer (km)</SelectItem>
-                  <SelectItem value="inch">Inch (in)</SelectItem>
-                  <SelectItem value="feet">Feet (ft)</SelectItem>
-                  <SelectItem value="yard">Yard (yd)</SelectItem>
-                  <SelectItem value="mile">Mile (mi)</SelectItem>
-                </SelectContent>
-              </Select>
+              <GSelect value={fromUnit} onValueChange={setFromUnit}>
+                <GSelectTrigger className="h-12 text-sm bg-card border-border text-foreground">
+                  <GSelectValue />
+                </GSelectTrigger>
+                <GSelectContent>
+                  <GSelectItem value="millimeter">Millimeter (mm)</GSelectItem>
+                  <GSelectItem value="centimeter">Centimeter (cm)</GSelectItem>
+                  <GSelectItem value="meter">Meter (m)</GSelectItem>
+                  <GSelectItem value="kilometer">Kilometer (km)</GSelectItem>
+                  <GSelectItem value="inch">Inch (in)</GSelectItem>
+                  <GSelectItem value="feet">Feet (ft)</GSelectItem>
+                  <GSelectItem value="yard">Yard (yd)</GSelectItem>
+                  <GSelectItem value="mile">Mile (mi)</GSelectItem>
+                </GSelectContent>
+              </GSelect>
             </div>
 
-            {/* Swap Button - Desktop */}
+            {/* Swap GButton - Desktop */}
             <div className="flex items-center justify-center pt-8">
-              <Button onClick={swapUnits} variant="outline" size="icon" className="h-12 w-12 border-border text-foreground hover:bg-accent/10">
+              <GButton onClick={swapUnits} variant="outline" size="icon" className="h-12 w-12 border-border text-foreground hover:bg-accent/10">
                 <ArrowLeftRight className="h-5 w-5" />
-              </Button>
+              </GButton>
             </div>
 
             {/* To Section */}
             <div className="space-y-3">
-              <Label htmlFor="to-value-desktop" className="text-card-foreground font-medium">To</Label>
+              <GLabel htmlFor="to-value-desktop" className="text-card-foreground font-medium">To</GLabel>
               <div className="h-12 px-3 py-2 bg-card border border-border rounded-md flex items-center text-sm font-medium text-card-foreground">
                 {convert() || "0"}
               </div>
-              <Select value={toUnit} onValueChange={setToUnit}>
-                <SelectTrigger className="h-12 text-sm bg-card border-border text-foreground">
-                  <SelectValue />
-                </SelectTrigger>
-                <SelectContent>
-                  <SelectItem value="millimeter">Millimeter (mm)</SelectItem>
-                  <SelectItem value="centimeter">Centimeter (cm)</SelectItem>
-                  <SelectItem value="meter">Meter (m)</SelectItem>
-                  <SelectItem value="kilometer">Kilometer (km)</SelectItem>
-                  <SelectItem value="inch">Inch (in)</SelectItem>
-                  <SelectItem value="feet">Feet (ft)</SelectItem>
-                  <SelectItem value="yard">Yard (yd)</SelectItem>
-                  <SelectItem value="mile">Mile (mi)</SelectItem>
-                </SelectContent>
-              </Select>
+              <GSelect value={toUnit} onValueChange={setToUnit}>
+                <GSelectTrigger className="h-12 text-sm bg-card border-border text-foreground">
+                  <GSelectValue />
+                </GSelectTrigger>
+                <GSelectContent>
+                  <GSelectItem value="millimeter">Millimeter (mm)</GSelectItem>
+                  <GSelectItem value="centimeter">Centimeter (cm)</GSelectItem>
+                  <GSelectItem value="meter">Meter (m)</GSelectItem>
+                  <GSelectItem value="kilometer">Kilometer (km)</GSelectItem>
+                  <GSelectItem value="inch">Inch (in)</GSelectItem>
+                  <GSelectItem value="feet">Feet (ft)</GSelectItem>
+                  <GSelectItem value="yard">Yard (yd)</GSelectItem>
+                  <GSelectItem value="mile">Mile (mi)</GSelectItem>
+                </GSelectContent>
+              </GSelect>
             </div>
           </div>
 
           <div className="flex flex-col sm:flex-row gap-2 sm:gap-3 pt-2 sm:pt-4">
             <GButton onClick={convert} className="w-full">Convert</GButton>
-            <Button onClick={downloadResults} variant="outline" className="h-8 sm:h-10 px-2 sm:px-4 border-border text-foreground hover:bg-accent/10 text-xs sm:text-sm">
+            <GButton onClick={downloadResults} variant="outline" className="h-8 sm:h-10 px-2 sm:px-4 border-border text-foreground hover:bg-accent/10 text-xs sm:text-sm">
               <Download className="h-3 w-3 sm:h-4 sm:w-4 mr-1 sm:mr-2" />
               <span className="hidden sm:inline">Download</span>
               <span className="sm:hidden">Download</span>
-            </Button>
+            </GButton>
           </div>
-        </CardContent>
-      </Card>
+        </GCardContent>
+      </GCard>
 
-      <Card className="border border-border shadow bg-card">
-        <CardHeader className="p-2 sm:p-4">
-          <CardTitle className="text-sm sm:text-lg font-bold text-card-foreground flex items-center gap-1 sm:gap-2">
+      <GCard className="border border-border shadow bg-card">
+        <GCardHeader className="p-2 sm:p-4">
+          <GCardTitle className="text-sm sm:text-lg font-bold text-card-foreground flex items-center gap-1 sm:gap-2">
             <Calculator className="h-3 w-3 sm:h-5 sm:w-5 text-primary" />
             Quick Reference
-          </CardTitle>
-        </CardHeader>
-        <CardContent className="p-2 sm:p-4">
+          </GCardTitle>
+        </GCardHeader>
+        <GCardContent className="p-2 sm:p-4">
           <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-4 gap-1 sm:gap-3 md:gap-4 text-xs">
             <div className="p-1 sm:p-3 bg-primary/5 rounded border border-primary/20">
               <p className="font-semibold text-card-foreground text-xs">1 meter =</p>
@@ -340,8 +341,8 @@ export function LengthConverter() {
               <p className="text-muted-foreground text-xs">5280 ft</p>
             </div>
           </div>
-        </CardContent>
-      </Card>
+        </GCardContent>
+      </GCard>
     </div>
   )
 }

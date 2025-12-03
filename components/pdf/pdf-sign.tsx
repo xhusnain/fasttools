@@ -1,13 +1,14 @@
 "use client"
 
 import { useState, useRef, useEffect } from "react"
-import { GButton as Button } from "@/components/globalcomponents/gbutton"
-import { Label } from "@/components/ui/label"
-import { Input } from "@/components/ui/input"
-import { Card } from "@/components/ui/card"
-import { Progress } from "@/components/ui/progress"
+import { GButton } from "@/ui/gbutton"
+import { GLabel } from "@/ui/glabel"
+import { GInput } from "@/ui/ginput"
+import { GCard } from "@/ui/gcard"
+import { GProgress } from "@/ui/gprogress"
+import { useToast } from "@/ui/gtoast"
+
 import { Upload, FileText, Download, Loader2, X, Pencil, Type, Image as ImageIcon, Check, ChevronLeft, ChevronRight } from "lucide-react"
-import { useToast } from "@/components/ui/toast"
 import { PDFDocument } from "pdf-lib"
 import * as pdfjsLib from "pdfjs-dist"
 
@@ -416,7 +417,7 @@ export function PDFSign() {
   return (
     <>
       <ToastContainer />
-      <Card className="p-6 border-2 border-dashed border-border hover:border-primary/50 transition-colors">
+      <GCard className="p-6 border-2 border-dashed border-border hover:border-primary/50 transition-colors">
         <div className="space-y-6">
           {/* File Upload Area */}
           {!file ? (
@@ -452,14 +453,14 @@ export function PDFSign() {
                   </p>
                 </div>
               </div>
-              <Button
+              <GButton
                 variant="ghost"
                 size="sm"
                 onClick={removeFile}
                 disabled={loading}
               >
                 <X className="h-4 w-4" />
-              </Button>
+              </GButton>
             </div>
           )}
 
@@ -467,11 +468,11 @@ export function PDFSign() {
           {file && (
             <>
               <div className="space-y-4">
-                <Label className="text-sm font-medium">Create Your Signature</Label>
+                <GLabel className="text-sm font-medium">Create Your Signature</GLabel>
 
                 {/* Mode Selector */}
                 <div className="flex gap-2">
-                  <Button
+                  <GButton
                     type="button"
                     variant={signatureMode === "draw" ? "default" : "outline"}
                     size="sm"
@@ -480,8 +481,8 @@ export function PDFSign() {
                   >
                     <Pencil className="h-4 w-4 mr-2" />
                     Draw
-                  </Button>
-                  <Button
+                  </GButton>
+                  <GButton
                     type="button"
                     variant={signatureMode === "type" ? "default" : "outline"}
                     size="sm"
@@ -490,8 +491,8 @@ export function PDFSign() {
                   >
                     <Type className="h-4 w-4 mr-2" />
                     Type
-                  </Button>
-                  <Button
+                  </GButton>
+                  <GButton
                     type="button"
                     variant={signatureMode === "upload" ? "default" : "outline"}
                     size="sm"
@@ -500,7 +501,7 @@ export function PDFSign() {
                   >
                     <ImageIcon className="h-4 w-4 mr-2" />
                     Upload
-                  </Button>
+                  </GButton>
                 </div>
 
                 {/* Draw Mode */}
@@ -523,7 +524,7 @@ export function PDFSign() {
                       />
                     </div>
                     <div className="flex gap-2">
-                      <Button
+                      <GButton
                         type="button"
                         variant="outline"
                         size="sm"
@@ -531,8 +532,8 @@ export function PDFSign() {
                         className="flex-1"
                       >
                         Clear
-                      </Button>
-                      <Button
+                      </GButton>
+                      <GButton
                         type="button"
                         size="sm"
                         onClick={saveDrawnSignature}
@@ -540,7 +541,7 @@ export function PDFSign() {
                       >
                         <Check className="h-4 w-4 mr-2" />
                         Save Signature
-                      </Button>
+                      </GButton>
                     </div>
                   </div>
                 )}
@@ -548,7 +549,7 @@ export function PDFSign() {
                 {/* Type Mode */}
                 {signatureMode === "type" && (
                   <div className="space-y-3">
-                    <Input
+                    <GInput
                       type="text"
                       placeholder="Enter your name"
                       value={typedText}
@@ -556,7 +557,7 @@ export function PDFSign() {
                       className="text-center text-lg"
                       style={{ fontFamily: "'Dancing Script', cursive" }}
                     />
-                    <Button
+                    <GButton
                       type="button"
                       size="sm"
                       onClick={generateTypedSignature}
@@ -564,7 +565,7 @@ export function PDFSign() {
                     >
                       <Check className="h-4 w-4 mr-2" />
                       Create Signature
-                    </Button>
+                    </GButton>
                   </div>
                 )}
 
@@ -604,9 +605,9 @@ export function PDFSign() {
               {/* PDF Preview with Signatures */}
               <div className="space-y-3">
                 <div className="flex items-center justify-between">
-                  <Label className="text-sm font-medium">PDF Preview - Click to Place Signature</Label>
+                  <GLabel className="text-sm font-medium">PDF Preview - Click to Place Signature</GLabel>
                   <div className="flex items-center gap-2">
-                    <Button
+                    <GButton
                       type="button"
                       variant="outline"
                       size="sm"
@@ -614,11 +615,11 @@ export function PDFSign() {
                       disabled={currentPage === 1}
                     >
                       <ChevronLeft className="h-4 w-4" />
-                    </Button>
+                    </GButton>
                     <span className="text-sm text-muted-foreground">
                       Page {currentPage} of {pdfPages}
                     </span>
-                    <Button
+                    <GButton
                       type="button"
                       variant="outline"
                       size="sm"
@@ -626,7 +627,7 @@ export function PDFSign() {
                       disabled={currentPage === pdfPages}
                     >
                       <ChevronRight className="h-4 w-4" />
-                    </Button>
+                    </GButton>
                   </div>
                 </div>
 
@@ -690,7 +691,7 @@ export function PDFSign() {
               {/* Added Signatures */}
               {signatures.length > 0 && (
                 <div className="space-y-3">
-                  <Label className="text-sm font-medium">Added Signatures ({signatures.length})</Label>
+                  <GLabel className="text-sm font-medium">Added Signatures ({signatures.length})</GLabel>
                   <div className="space-y-2 max-h-40 overflow-y-auto">
                     {signatures.map((sig) => (
                       <div
@@ -701,32 +702,32 @@ export function PDFSign() {
                           <img src={sig.dataUrl} alt="Signature" className="h-8" />
                           <span className="text-sm">Page {sig.page}</span>
                         </div>
-                        <Button
+                        <GButton
                           variant="ghost"
                           size="sm"
                           onClick={() => removeSignature(sig.id)}
                         >
                           <X className="h-4 w-4" />
-                        </Button>
+                        </GButton>
                       </div>
                     ))}
                   </div>
                 </div>
               )}
 
-              {/* Progress Bar */}
+              {/* GProgress Bar */}
               {loading && progress > 0 && (
                 <div className="space-y-2">
                   <div className="flex justify-between text-sm">
                     <span className="text-muted-foreground">Signing PDF...</span>
                     <span className="text-primary font-medium">{progress}%</span>
                   </div>
-                  <Progress value={progress} className="h-2" />
+                  <GProgress value={progress} className="h-2" />
                 </div>
               )}
 
-              {/* Download Button */}
-              <Button
+              {/* Download GButton */}
+              <GButton
                 onClick={downloadSignedPDF}
                 disabled={loading || signatures.length === 0}
                 className="w-full h-12"
@@ -743,7 +744,7 @@ export function PDFSign() {
                     Download Signed PDF
                   </>
                 )}
-              </Button>
+              </GButton>
             </>
           )}
 
@@ -775,7 +776,7 @@ export function PDFSign() {
             </div>
           </div>
         </div>
-      </Card>
+      </GCard>
     </>
   )
 }

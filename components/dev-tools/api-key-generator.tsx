@@ -2,7 +2,8 @@
 
 import { useState } from "react"
 import { getRandomApiKey } from "@/lib/api-keys"
-import { GButton } from "@/components/globalcomponents/gbutton"
+import { GButton } from "@/ui/gbutton"
+
 
 export function ApiKeyGenerator() {
   const [apiKey, setApiKey] = useState<string>("")

@@ -1,10 +1,11 @@
 "use client"
 
 import { useState } from "react"
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
-import { GButton } from "@/components/globalcomponents/gbutton"
-import { Label } from "@/components/ui/label"
-import { Input } from "@/components/ui/input"
+import { GCard, GCardContent, GCardDescription, GCardHeader, GCardTitle } from "@/ui/gcard"
+import { GButton } from "@/ui/gbutton"
+import { GLabel } from "@/ui/glabel"
+import { GInput } from "@/ui/ginput"
+
 import { DollarSign, Copy, Check } from "lucide-react"
 import { LoadingSpinner } from "@/components/common/loading-spinner"
 
@@ -57,20 +58,20 @@ export function LoanCalculator() {
 
   return (
     <div className="space-y-6">
-      <Card className="shadow-lg border-border hover:shadow-xl transition-shadow duration-300">
-        <CardHeader>
-          <CardTitle className="flex items-center gap-2 text-xl">
+      <GCard className="shadow-lg border-border hover:shadow-xl transition-shadow duration-300">
+        <GCardHeader>
+          <GCardTitle className="flex items-center gap-2 text-xl">
             <DollarSign className="h-5 w-5 text-primary" />
             Calculate Loan EMI
-          </CardTitle>
-          <CardDescription className="text-sm">Enter loan details to calculate monthly payments</CardDescription>
-        </CardHeader>
-        <CardContent className="space-y-6">
+          </GCardTitle>
+          <GCardDescription className="text-sm">Enter loan details to calculate monthly payments</GCardDescription>
+        </GCardHeader>
+        <GCardContent className="space-y-6">
           <div className="space-y-2">
-            <Label htmlFor="principal" className="text-sm font-medium">
+            <GLabel htmlFor="principal" className="text-sm font-medium">
               Loan Amount ($)
-            </Label>
-            <Input
+            </GLabel>
+            <GInput
               id="principal"
               type="number"
               value={principal}
@@ -81,10 +82,10 @@ export function LoanCalculator() {
           </div>
 
           <div className="space-y-2">
-            <Label htmlFor="rate" className="text-sm font-medium">
+            <GLabel htmlFor="rate" className="text-sm font-medium">
               Annual Interest Rate (%)
-            </Label>
-            <Input
+            </GLabel>
+            <GInput
               id="rate"
               type="number"
               step="0.1"
@@ -96,10 +97,10 @@ export function LoanCalculator() {
           </div>
 
           <div className="space-y-2">
-            <Label htmlFor="tenure" className="text-sm font-medium">
+            <GLabel htmlFor="tenure" className="text-sm font-medium">
               Loan Tenure (Years)
-            </Label>
-            <Input
+            </GLabel>
+            <GInput
               id="tenure"
               type="number"
               value={tenure}
@@ -123,16 +124,16 @@ export function LoanCalculator() {
               "Calculate EMI"
             )}
           </GButton>
-        </CardContent>
-      </Card>
+        </GCardContent>
+      </GCard>
 
       {result && !isCalculating && (
-        <Card className="shadow-lg border-primary/20 animate-fade-in-up">
-          <CardHeader>
-            <CardTitle className="text-xl">Loan Breakdown</CardTitle>
-            <CardDescription className="text-sm">Your monthly payment details</CardDescription>
-          </CardHeader>
-          <CardContent className="space-y-6">
+        <GCard className="shadow-lg border-primary/20 animate-fade-in-up">
+          <GCardHeader>
+            <GCardTitle className="text-xl">Loan Breakdown</GCardTitle>
+            <GCardDescription className="text-sm">Your monthly payment details</GCardDescription>
+          </GCardHeader>
+          <GCardContent className="space-y-6">
             <div className="text-center p-6 rounded-lg bg-primary/5 border border-primary/10">
               <div className="text-sm text-muted-foreground mb-1">Monthly EMI</div>
               <div className="text-4xl font-bold text-primary">${result.monthlyPayment.toLocaleString()}</div>
@@ -170,8 +171,8 @@ export function LoanCalculator() {
                 </>
               )}
             </GButton>
-          </CardContent>
-        </Card>
+          </GCardContent>
+        </GCard>
       )}
     </div>
   )

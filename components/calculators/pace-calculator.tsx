@@ -1,13 +1,14 @@
 "use client"
 
 import { useState, useEffect } from "react"
-import { GButton, GButton as Button } from "@/components/globalcomponents/gbutton"
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
-import { Input } from "@/components/ui/input"
-import { Label } from "@/components/ui/label"
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
-import { Badge } from "@/components/ui/badge"
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
+import { GButton } from "@/ui/gbutton"
+import { GCard, GCardContent, GCardHeader, GCardTitle } from "@/ui/gcard"
+import { GInput } from "@/ui/ginput"
+import { GLabel } from "@/ui/glabel"
+import { GSelect, GSelectContent, GSelectItem, GSelectTrigger, GSelectValue } from "@/ui/gselect"
+import { GBadge } from "@/ui/gbadge"
+import { GTabs, GTabsContent, GTabsList, GTabsTrigger } from "@/ui/gtabs"
+
 import {
   Calculator,
   Clock,
@@ -328,28 +329,28 @@ VO2 Max: ${result.vo2Max}`
   return (
     <div className="space-y-4 sm:space-y-6 md:space-y-8 bg-card rounded-xl p-3 sm:p-4 md:p-6 w-full overflow-hidden">
       {/* Mode Selection */}
-      <Card className="bg-card border-border w-full overflow-hidden">
-        <CardHeader className="px-3 sm:px-4 md:px-6 pb-3">
-          <CardTitle className="flex items-center gap-2 text-foreground text-base sm:text-lg md:text-xl break-words">
+      <GCard className="bg-card border-border w-full overflow-hidden">
+        <GCardHeader className="px-3 sm:px-4 md:px-6 pb-3">
+          <GCardTitle className="flex items-center gap-2 text-foreground text-base sm:text-lg md:text-xl break-words">
             <Calculator className="h-4 w-4 sm:h-5 sm:w-5 text-foreground flex-shrink-0" />
             <span className="break-words">Advanced Pace Calculator</span>
-          </CardTitle>
-        </CardHeader>
-        <CardContent className="px-3 sm:px-4 md:px-6 space-y-4 sm:space-y-6">
-          <Tabs value={calculationMode} onValueChange={(value: "basic" | "multipoint" | "converter" | "finish") => setCalculationMode(value)}>
-            <TabsList className="grid w-full grid-cols-2 sm:grid-cols-4 bg-card border border-border">
-              <TabsTrigger value="basic" className="text-xs sm:text-sm">Basic Pace</TabsTrigger>
-              <TabsTrigger value="multipoint" className="text-xs sm:text-sm">Multipoint</TabsTrigger>
-              <TabsTrigger value="converter" className="text-xs sm:text-sm">Converter</TabsTrigger>
-              <TabsTrigger value="finish" className="text-xs sm:text-sm">Finish Time</TabsTrigger>
-            </TabsList>
+          </GCardTitle>
+        </GCardHeader>
+        <GCardContent className="px-3 sm:px-4 md:px-6 space-y-4 sm:space-y-6">
+          <GTabs value={calculationMode} onValueChange={(value: "basic" | "multipoint" | "converter" | "finish") => setCalculationMode(value)}>
+            <GTabsList className="grid w-full grid-cols-2 sm:grid-cols-4 bg-card border border-border">
+              <GTabsTrigger value="basic" className="text-xs sm:text-sm">Basic Pace</GTabsTrigger>
+              <GTabsTrigger value="multipoint" className="text-xs sm:text-sm">Multipoint</GTabsTrigger>
+              <GTabsTrigger value="converter" className="text-xs sm:text-sm">Converter</GTabsTrigger>
+              <GTabsTrigger value="finish" className="text-xs sm:text-sm">Finish Time</GTabsTrigger>
+            </GTabsList>
 
             {/* Basic Pace Calculator */}
-            <TabsContent value="basic" className="space-y-4 sm:space-y-6">
+            <GTabsContent value="basic" className="space-y-4 sm:space-y-6">
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4">
                 <div className="space-y-2 w-full min-w-0">
-                  <Label htmlFor="time" className="text-heading-accent text-xs sm:text-sm">Time (hh:mm:ss)</Label>
-                  <Input
+                  <GLabel htmlFor="time" className="text-heading-accent text-xs sm:text-sm">Time (hh:mm:ss)</GLabel>
+                  <GInput
                     id="time"
                     placeholder="0:50:25"
                     value={time}
@@ -358,32 +359,32 @@ VO2 Max: ${result.vo2Max}`
                   />
                 </div>
                 <div className="space-y-2 w-full min-w-0">
-                  <Label htmlFor="distance" className="text-heading-accent text-xs sm:text-sm">Distance</Label>
+                  <GLabel htmlFor="distance" className="text-heading-accent text-xs sm:text-sm">Distance</GLabel>
                   <div className="flex gap-2">
-                    <Input
+                    <GInput
                       id="distance"
                       placeholder="5"
                       value={distance}
                       onChange={(e) => setDistance(e.target.value)}
                       className="border-border bg-card text-foreground focus-visible:ring-primary focus:border-primary flex-1 text-sm"
                     />
-                    <Select value={distanceUnit} onValueChange={(value: "miles" | "km") => setDistanceUnit(value)}>
-                      <SelectTrigger className="w-20 sm:w-24 border-border bg-card text-foreground text-xs sm:text-sm">
-                        <SelectValue />
-                      </SelectTrigger>
-                      <SelectContent>
-                        <SelectItem value="km">km</SelectItem>
-                        <SelectItem value="miles">miles</SelectItem>
-                      </SelectContent>
-                    </Select>
+                    <GSelect value={distanceUnit} onValueChange={(value: "miles" | "km") => setDistanceUnit(value)}>
+                      <GSelectTrigger className="w-20 sm:w-24 border-border bg-card text-foreground text-xs sm:text-sm">
+                        <GSelectValue />
+                      </GSelectTrigger>
+                      <GSelectContent>
+                        <GSelectItem value="km">km</GSelectItem>
+                        <GSelectItem value="miles">miles</GSelectItem>
+                      </GSelectContent>
+                    </GSelect>
                   </div>
                 </div>
               </div>
 
               <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-4">
                 <div className="space-y-2 w-full min-w-0">
-                  <Label htmlFor="weight" className="text-heading-accent text-xs sm:text-sm">Weight (kg)</Label>
-                  <Input
+                  <GLabel htmlFor="weight" className="text-heading-accent text-xs sm:text-sm">Weight (kg)</GLabel>
+                  <GInput
                     id="weight"
                     placeholder="70"
                     value={weight}
@@ -392,8 +393,8 @@ VO2 Max: ${result.vo2Max}`
                   />
                 </div>
                 <div className="space-y-2 w-full min-w-0">
-                  <Label htmlFor="age" className="text-heading-accent text-xs sm:text-sm">Age</Label>
-                  <Input
+                  <GLabel htmlFor="age" className="text-heading-accent text-xs sm:text-sm">Age</GLabel>
+                  <GInput
                     id="age"
                     placeholder="30"
                     value={age}
@@ -402,16 +403,16 @@ VO2 Max: ${result.vo2Max}`
                   />
                 </div>
                 <div className="space-y-2 w-full min-w-0">
-                  <Label className="text-heading-accent text-xs sm:text-sm">Pace Unit</Label>
-                  <Select value={paceUnit} onValueChange={(value: "perMile" | "perKm") => setPaceUnit(value)}>
-                    <SelectTrigger className="border-border bg-card text-foreground w-full text-xs sm:text-sm">
-                      <SelectValue />
-                    </SelectTrigger>
-                    <SelectContent>
-                      <SelectItem value="perKm">Per Kilometer</SelectItem>
-                      <SelectItem value="perMile">Per Mile</SelectItem>
-                    </SelectContent>
-                  </Select>
+                  <GLabel className="text-heading-accent text-xs sm:text-sm">Pace Unit</GLabel>
+                  <GSelect value={paceUnit} onValueChange={(value: "perMile" | "perKm") => setPaceUnit(value)}>
+                    <GSelectTrigger className="border-border bg-card text-foreground w-full text-xs sm:text-sm">
+                      <GSelectValue />
+                    </GSelectTrigger>
+                    <GSelectContent>
+                      <GSelectItem value="perKm">Per Kilometer</GSelectItem>
+                      <GSelectItem value="perMile">Per Mile</GSelectItem>
+                    </GSelectContent>
+                  </GSelect>
                 </div>
               </div>
 
@@ -420,63 +421,63 @@ VO2 Max: ${result.vo2Max}`
                   <Calculator className="mr-2 h-4 w-4" />
                   Calculate Pace
                 </GButton>
-                <Button variant="outline" onClick={clearAll} className="w-full sm:w-auto text-sm sm:text-base">
+                <GButton variant="outline" onClick={clearAll} className="w-full sm:w-auto text-sm sm:text-base">
                   Clear All
-                </Button>
+                </GButton>
               </div>
-            </TabsContent>
+            </GTabsContent>
 
             {/* Multipoint Calculator */}
-            <TabsContent value="multipoint" className="space-y-4 sm:space-y-6">
+            <GTabsContent value="multipoint" className="space-y-4 sm:space-y-6">
               <div className="space-y-3 sm:space-y-4">
                 {multipointSegments.map((segment, index) => (
                   <div key={index} className="grid grid-cols-2 sm:grid-cols-4 gap-3 sm:gap-4 p-3 sm:p-4 border border-border rounded-lg bg-card w-full overflow-hidden">
                     <div className="space-y-2 w-full min-w-0">
-                      <Label className="text-heading-accent text-xs sm:text-sm">Distance (km)</Label>
-                      <Input
+                      <GLabel className="text-heading-accent text-xs sm:text-sm">Distance (km)</GLabel>
+                      <GInput
                         value={segment.distance}
                         onChange={(e) => updateMultipointSegment(index, 'distance', parseFloat(e.target.value) || 0)}
                         className="border-border bg-card text-foreground focus-visible:ring-primary focus:border-primary w-full text-sm"
                       />
                     </div>
                     <div className="space-y-2 w-full min-w-0">
-                      <Label className="text-heading-accent text-xs sm:text-sm">Time (mm:ss)</Label>
-                      <Input
+                      <GLabel className="text-heading-accent text-xs sm:text-sm">Time (mm:ss)</GLabel>
+                      <GInput
                         value={segment.time}
                         onChange={(e) => updateMultipointSegment(index, 'time', formatMinutesSecondsInput(e.target.value))}
                         className="border-border bg-card text-foreground focus-visible:ring-primary focus:border-primary w-full text-sm"
                       />
                     </div>
                     <div className="space-y-2 w-full min-w-0">
-                      <Label className="text-heading-accent text-xs sm:text-sm">Pace</Label>
-                      <Input value={segment.pace} disabled className="border-border bg-card text-foreground w-full text-sm" />
+                      <GLabel className="text-heading-accent text-xs sm:text-sm">Pace</GLabel>
+                      <GInput value={segment.pace} disabled className="border-border bg-card text-foreground w-full text-sm" />
                     </div>
                     <div className="space-y-2 w-full min-w-0">
-                      <Label className="text-heading-accent text-xs sm:text-sm">Split</Label>
-                      <Input value={segment.split} disabled className="border-border bg-card text-foreground w-full text-sm" />
+                      <GLabel className="text-heading-accent text-xs sm:text-sm">Split</GLabel>
+                      <GInput value={segment.split} disabled className="border-border bg-card text-foreground w-full text-sm" />
                     </div>
                   </div>
                 ))}
               </div>
 
               <div className="flex flex-col sm:flex-row gap-2 w-full">
-                <Button onClick={addMultipointSegment} className="w-full sm:w-auto text-sm sm:text-base">
+                <GButton onClick={addMultipointSegment} className="w-full sm:w-auto text-sm sm:text-base">
                   <Route className="mr-2 h-4 w-4" />
                   Add Segment
-                </Button>
-                <Button onClick={calculateMultipoint} className="w-full sm:w-auto text-sm sm:text-base">
+                </GButton>
+                <GButton onClick={calculateMultipoint} className="w-full sm:w-auto text-sm sm:text-base">
                   <Calculator className="mr-2 h-4 w-4" />
                   Calculate All
-                </Button>
+                </GButton>
               </div>
-            </TabsContent>
+            </GTabsContent>
 
             {/* Pace Converter */}
-            <TabsContent value="converter" className="space-y-4 sm:space-y-6">
+            <GTabsContent value="converter" className="space-y-4 sm:space-y-6">
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4">
                 <div className="space-y-2 w-full min-w-0">
-                  <Label htmlFor="paceInput" className="text-heading-accent text-xs sm:text-sm">Pace</Label>
-                  <Input
+                  <GLabel htmlFor="paceInput" className="text-heading-accent text-xs sm:text-sm">Pace</GLabel>
+                  <GInput
                     id="paceInput"
                     placeholder="5:30"
                     value={pace}
@@ -485,16 +486,16 @@ VO2 Max: ${result.vo2Max}`
                   />
                 </div>
                 <div className="space-y-2 w-full min-w-0">
-                  <Label className="text-heading-accent text-xs sm:text-sm">From</Label>
-                  <Select value={paceUnit} onValueChange={(value: "perMile" | "perKm") => setPaceUnit(value)}>
-                    <SelectTrigger className="border-border bg-card text-foreground w-full text-xs sm:text-sm">
-                      <SelectValue />
-                    </SelectTrigger>
-                    <SelectContent>
-                      <SelectItem value="perKm">Per Kilometer</SelectItem>
-                      <SelectItem value="perMile">Per Mile</SelectItem>
-                    </SelectContent>
-                  </Select>
+                  <GLabel className="text-heading-accent text-xs sm:text-sm">From</GLabel>
+                  <GSelect value={paceUnit} onValueChange={(value: "perMile" | "perKm") => setPaceUnit(value)}>
+                    <GSelectTrigger className="border-border bg-card text-foreground w-full text-xs sm:text-sm">
+                      <GSelectValue />
+                    </GSelectTrigger>
+                    <GSelectContent>
+                      <GSelectItem value="perKm">Per Kilometer</GSelectItem>
+                      <GSelectItem value="perMile">Per Mile</GSelectItem>
+                    </GSelectContent>
+                  </GSelect>
                 </div>
               </div>
 
@@ -511,14 +512,14 @@ VO2 Max: ${result.vo2Max}`
                   {paceUnit === "perMile" ? "Per Kilometer" : "Per Mile"}
                 </div>
               </div>
-            </TabsContent>
+            </GTabsContent>
 
             {/* Finish Time Calculator */}
-            <TabsContent value="finish" className="space-y-6">
+            <GTabsContent value="finish" className="space-y-6">
               <div className="grid md:grid-cols-3 gap-4">
                 <div className="space-y-2">
-                  <Label htmlFor="currentDistance" className="text-heading-accent">Current Distance (km)</Label>
-                  <Input
+                  <GLabel htmlFor="currentDistance" className="text-heading-accent">Current Distance (km)</GLabel>
+                  <GInput
                     id="currentDistance"
                     placeholder="1"
                     value={currentDistance}
@@ -527,8 +528,8 @@ VO2 Max: ${result.vo2Max}`
                   />
                 </div>
                 <div className="space-y-2">
-                  <Label htmlFor="elapsedTime" className="text-heading-accent">Elapsed Time (mm:ss)</Label>
-                  <Input
+                  <GLabel htmlFor="elapsedTime" className="text-heading-accent">Elapsed Time (mm:ss)</GLabel>
+                  <GInput
                     id="elapsedTime"
                     placeholder="6:15"
                     value={elapsedTime}
@@ -537,8 +538,8 @@ VO2 Max: ${result.vo2Max}`
                   />
                 </div>
                 <div className="space-y-2">
-                  <Label htmlFor="fullDistance" className="text-heading-accent">Full Distance (km)</Label>
-                  <Input
+                  <GLabel htmlFor="fullDistance" className="text-heading-accent">Full Distance (km)</GLabel>
+                  <GInput
                     id="fullDistance"
                     placeholder="5"
                     value={fullDistance}
@@ -548,48 +549,48 @@ VO2 Max: ${result.vo2Max}`
                 </div>
               </div>
 
-              <Button onClick={calculateFinishTime} className="w-full">
+              <GButton onClick={calculateFinishTime} className="w-full">
                 <Timer className="mr-2 h-4 w-4" />
                 Calculate Finish Time
-              </Button>
-            </TabsContent>
-          </Tabs>
-        </CardContent>
-      </Card>
+              </GButton>
+            </GTabsContent>
+          </GTabs>
+        </GCardContent>
+      </GCard>
 
       {/* Results Section */}
       {result && (
         <div className="space-y-6">
           {/* Main Results */}
-          <Card className="bg-card border-border">
-            <CardHeader>
-              <CardTitle className="flex items-center gap-2 text-foreground">
+          <GCard className="bg-card border-border">
+            <GCardHeader>
+              <GCardTitle className="flex items-center gap-2 text-foreground">
                 <Target className="h-5 w-5 text-foreground" />
                 Pace Analysis Results
-              </CardTitle>
-            </CardHeader>
-            <CardContent className="space-y-4">
+              </GCardTitle>
+            </GCardHeader>
+            <GCardContent className="space-y-4">
               <div className="grid md:grid-cols-2 gap-4">
                 <div className="space-y-2">
-                  <Label className="text-sm font-medium">Pace</Label>
+                  <GLabel className="text-sm font-medium">Pace</GLabel>
                   <div className="text-2xl font-bold text-foreground">
                     {result.pace} {paceUnit === "perKm" ? "per km" : "per mile"}
                   </div>
                 </div>
                 <div className="space-y-2">
-                  <Label className="text-sm font-medium">Speed</Label>
+                  <GLabel className="text-sm font-medium">Speed</GLabel>
                   <div className="text-2xl font-bold text-heading-accent">
                     {result.speed.toFixed(1)} {paceUnit === "perKm" ? "km/h" : "mph"}
                   </div>
                 </div>
                 <div className="space-y-2">
-                  <Label className="text-sm font-medium">Heart Rate Zone</Label>
+                  <GLabel className="text-sm font-medium">Heart Rate Zone</GLabel>
                   <div className="text-lg font-semibold text-foreground">
                     {result.heartRateZone}
                   </div>
                 </div>
                 <div className="space-y-2">
-                  <Label className="text-sm font-medium">Training Zone</Label>
+                  <GLabel className="text-sm font-medium">Training Zone</GLabel>
                   <div className="text-lg font-semibold text-foreground">
                     {result.trainingZone}
                   </div>
@@ -612,43 +613,43 @@ VO2 Max: ${result.vo2Max}`
               </div>
 
               <div className="flex gap-2 pt-4">
-                <Button onClick={copyResult} variant="outline" size="sm">
+                <GButton onClick={copyResult} variant="outline" size="sm">
                   <Copy className="mr-2 h-4 w-4" />
                   Copy Results
-                </Button>
+                </GButton>
               </div>
-            </CardContent>
-          </Card>
+            </GCardContent>
+          </GCard>
 
           {/* Race Predictions */}
-          <Card className="bg-card border-border">
-            <CardHeader>
-              <CardTitle className="flex items-center gap-2 text-foreground">
+          <GCard className="bg-card border-border">
+            <GCardHeader>
+              <GCardTitle className="flex items-center gap-2 text-foreground">
                 <Trophy className="h-5 w-5 text-foreground" />
                 Race Time Predictions
-              </CardTitle>
-            </CardHeader>
-            <CardContent>
+              </GCardTitle>
+            </GCardHeader>
+            <GCardContent>
               <div className="grid md:grid-cols-2 gap-4">
                 {Object.entries(result.racePrediction).map(([race, time]) => (
                   <div key={race} className="flex justify-between items-center p-3 bg-card border border-border rounded-lg">
                     <span className="font-medium">{race}</span>
-                    <Badge variant="secondary">{time}</Badge>
+                    <GBadge variant="secondary">{time}</GBadge>
                   </div>
                 ))}
               </div>
-            </CardContent>
-          </Card>
+            </GCardContent>
+          </GCard>
 
           {/* Training Zones */}
-          <Card className="bg-card border-border">
-            <CardHeader>
-              <CardTitle className="flex items-center gap-2 text-foreground">
+          <GCard className="bg-card border-border">
+            <GCardHeader>
+              <GCardTitle className="flex items-center gap-2 text-foreground">
                 <Heart className="h-5 w-5 text-foreground" />
                 Training Zones & Heart Rate
-              </CardTitle>
-            </CardHeader>
-            <CardContent>
+              </GCardTitle>
+            </GCardHeader>
+            <GCardContent>
               <div className="space-y-4">
                 <div className="grid md:grid-cols-2 gap-4">
                   <div className="p-3 bg-muted rounded-lg border border-green-200 dark:border-green-800">
@@ -669,21 +670,21 @@ VO2 Max: ${result.vo2Max}`
                   </div>
                 </div>
               </div>
-            </CardContent>
-          </Card>
+            </GCardContent>
+          </GCard>
         </div>
       )}
 
       {/* History Section */}
       {history.length > 0 && (
-        <Card className="bg-card border-border">
-          <CardHeader>
-            <CardTitle className="flex items-center gap-2 text-foreground">
+        <GCard className="bg-card border-border">
+          <GCardHeader>
+            <GCardTitle className="flex items-center gap-2 text-foreground">
               <Clock className="h-5 w-5 text-foreground" />
               Recent Calculations
-            </CardTitle>
-          </CardHeader>
-          <CardContent>
+            </GCardTitle>
+          </GCardHeader>
+          <GCardContent>
             <div className="space-y-2">
               {history.map((item, index) => (
                 <div key={index} className="flex items-center justify-between p-3 bg-card border border-border rounded-lg">
@@ -695,29 +696,29 @@ VO2 Max: ${result.vo2Max}`
                       {item.time} - {item.speed.toFixed(1)} {paceUnit === "perKm" ? "km/h" : "mph"}
                     </div>
                   </div>
-                  <Button
+                  <GButton
                     variant="ghost"
                     size="sm"
                     onClick={() => setResult(item)}
                   >
                     View Details
-                  </Button>
+                  </GButton>
                 </div>
               ))}
             </div>
-          </CardContent>
-        </Card>
+          </GCardContent>
+        </GCard>
       )}
 
       {/* Information Section */}
-      <Card className="bg-card border-border">
-        <CardHeader>
-          <CardTitle className="flex items-center gap-2 text-foreground">
+      <GCard className="bg-card border-border">
+        <GCardHeader>
+          <GCardTitle className="flex items-center gap-2 text-foreground">
             <Info className="h-5 w-5 text-foreground" />
             Advanced Pace Calculator Features
-          </CardTitle>
-        </CardHeader>
-        <CardContent className="space-y-3">
+          </GCardTitle>
+        </GCardHeader>
+        <GCardContent className="space-y-3">
           <div className="p-4 bg-card border border-border rounded-lg">
             <div className="flex items-start gap-2">
               <Info className="h-4 w-4 text-foreground mt-0.5 flex-shrink-0" />
@@ -746,8 +747,8 @@ VO2 Max: ${result.vo2Max}`
               <strong>Race Predictions:</strong> Estimated finish times for different race distances based on current pace.
             </p>
           </div>
-        </CardContent>
-      </Card>
+        </GCardContent>
+      </GCard>
     </div>
   )
 }

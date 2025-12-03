@@ -1,18 +1,13 @@
 "use client"
 
-import { GButton } from "@/components/globalcomponents/gbutton"
-import { Label } from "@/components/ui/label"
-import { Input } from "@/components/ui/input"
-import { Textarea } from "@/components/ui/textarea"
+import { GButton } from "@/ui/gbutton"
+import { GLabel } from "@/ui/glabel"
+import { GInput } from "@/ui/ginput"
+import { GTextarea } from "@/ui/gtextarea"
+import { GAccordion, GAccordionContent, GAccordionItem, GAccordionTrigger } from "@/ui/gaccordion"
+
 import { Mail, MessageSquare, Clock, Users, HelpCircle, Send, CheckCircle, ChevronDown } from "lucide-react"
 import { useState } from "react"
-import {
-  Accordion,
-  AccordionContent,
-  AccordionItem,
-  AccordionTrigger,
-} from "@/components/ui/accordion"
-
 interface FormData {
   name: string
   email: string
@@ -198,10 +193,10 @@ export default function ContactPage() {
                   <form onSubmit={handleSubmit} className="space-y-4 sm:space-y-6">
                     <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6">
                       <div>
-                        <Label htmlFor="name" className="text-xs sm:text-sm font-medium text-foreground mb-2 block">
+                        <GLabel htmlFor="name" className="text-xs sm:text-sm font-medium text-foreground mb-2 block">
                           Name <span className="text-destructive">*</span>
-                        </Label>
-                        <Input
+                        </GLabel>
+                        <GInput
                           id="name"
                           name="name"
                           value={formData.name}
@@ -213,10 +208,10 @@ export default function ContactPage() {
                         {errors.name && <p className="text-xs sm:text-sm text-destructive mt-1">{errors.name}</p>}
                       </div>
                       <div>
-                        <Label htmlFor="email" className="text-xs sm:text-sm font-medium text-foreground mb-2 block">
+                        <GLabel htmlFor="email" className="text-xs sm:text-sm font-medium text-foreground mb-2 block">
                           Email <span className="text-destructive">*</span>
-                        </Label>
-                        <Input
+                        </GLabel>
+                        <GInput
                           id="email"
                           name="email"
                           type="email"
@@ -231,10 +226,10 @@ export default function ContactPage() {
                     </div>
 
                     <div>
-                      <Label htmlFor="subject" className="text-xs sm:text-sm font-medium text-foreground mb-2 block">
+                      <GLabel htmlFor="subject" className="text-xs sm:text-sm font-medium text-foreground mb-2 block">
                         Subject <span className="text-destructive">*</span>
-                      </Label>
-                      <Input
+                      </GLabel>
+                      <GInput
                         id="subject"
                         name="subject"
                         value={formData.subject}
@@ -247,10 +242,10 @@ export default function ContactPage() {
                     </div>
 
                     <div>
-                      <Label htmlFor="message" className="text-xs sm:text-sm font-medium text-foreground mb-2 block">
+                      <GLabel htmlFor="message" className="text-xs sm:text-sm font-medium text-foreground mb-2 block">
                         Message <span className="text-destructive">*</span>
-                      </Label>
-                      <Textarea
+                      </GLabel>
+                      <GTextarea
                         id="message"
                         name="message"
                         value={formData.message}
@@ -314,18 +309,18 @@ export default function ContactPage() {
                 {/* FAQ Section */}
                 <div className="mt-10">
                   <h3 className="text-lg sm:text-xl font-bold text-foreground mb-4">Frequently Asked Questions</h3>
-                  <Accordion type="single" collapsible className="w-full">
+                  <GAccordion type="single" collapsible className="w-full">
                     {faqItems.map((item, index) => (
-                      <AccordionItem value={`item-${index}`} key={index}>
-                        <AccordionTrigger className="text-left text-sm sm:text-base font-semibold hover:no-underline">
+                      <GAccordionItem value={`item-${index}`} key={index}>
+                        <GAccordionTrigger className="text-left text-sm sm:text-base font-semibold hover:no-underline">
                           {item.question}
-                        </AccordionTrigger>
-                        <AccordionContent className="text-sm sm:text-base text-muted-foreground leading-relaxed">
+                        </GAccordionTrigger>
+                        <GAccordionContent className="text-sm sm:text-base text-muted-foreground leading-relaxed">
                           {item.answer}
-                        </AccordionContent>
-                      </AccordionItem>
+                        </GAccordionContent>
+                      </GAccordionItem>
                     ))}
-                  </Accordion>
+                  </GAccordion>
                 </div>
               </div>
 

@@ -1,13 +1,14 @@
 "use client"
 
 import { useState, useEffect } from "react"
-import { GButton } from "@/components/globalcomponents/gbutton"
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
-import { Input } from "@/components/ui/input"
-import { Label } from "@/components/ui/label"
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
-import { Badge } from "@/components/ui/badge"
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
+import { GButton } from "@/ui/gbutton"
+import { GCard, GCardContent, GCardHeader, GCardTitle } from "@/ui/gcard"
+import { GInput } from "@/ui/ginput"
+import { GLabel } from "@/ui/glabel"
+import { GSelect, GSelectContent, GSelectItem, GSelectTrigger, GSelectValue } from "@/ui/gselect"
+import { GBadge } from "@/ui/gbadge"
+import { GTabs, GTabsContent, GTabsList, GTabsTrigger } from "@/ui/gtabs"
+
 import {
   Calculator,
   DollarSign,
@@ -333,29 +334,29 @@ Purchasing Power: ${result.purchasingPower.toFixed(1)}%`
   return (
     <div className="space-y-4 sm:space-y-6 md:space-y-8 bg-card rounded-xl p-2 sm:p-3 md:p-4 w-full overflow-hidden">
       {/* Main Calculator */}
-      <Card className="bg-card border-border w-full overflow-hidden">
-        <CardHeader className="px-2 sm:px-3 md:px-4 pb-2">
-          <CardTitle className="flex items-center gap-2 text-sm sm:text-base md:text-lg break-words">
+      <GCard className="bg-card border-border w-full overflow-hidden">
+        <GCardHeader className="px-2 sm:px-3 md:px-4 pb-2">
+          <GCardTitle className="flex items-center gap-2 text-sm sm:text-base md:text-lg break-words">
             <Calculator className="h-3.5 w-3.5 sm:h-4 sm:w-4 text-foreground" />
             <span className="text-foreground">Advanced Inflation Calculator</span>
-          </CardTitle>
-        </CardHeader>
-        <CardContent className="space-y-4 sm:space-y-6 px-2 sm:px-3 md:px-4">
+          </GCardTitle>
+        </GCardHeader>
+        <GCardContent className="space-y-4 sm:space-y-6 px-2 sm:px-3 md:px-4">
           {/* Calculation Type Selection */}
           <div>
-            <Label className="text-xs sm:text-sm text-heading-accent mb-2 block">Calculation Type</Label>
-            <Tabs value={calculationType} onValueChange={setCalculationType} className="w-full">
-              <TabsList className="grid w-full grid-cols-3 bg-card border border-border">
-                <TabsTrigger value="cpi" className="text-xs sm:text-sm">CPI Data</TabsTrigger>
-                <TabsTrigger value="forward" className="text-xs sm:text-sm">Forward Rate</TabsTrigger>
-                <TabsTrigger value="backward" className="text-xs sm:text-sm">Backward Rate</TabsTrigger>
-              </TabsList>
+            <GLabel className="text-xs sm:text-sm text-heading-accent mb-2 block">Calculation Type</GLabel>
+            <GTabs value={calculationType} onValueChange={setCalculationType} className="w-full">
+              <GTabsList className="grid w-full grid-cols-3 bg-card border border-border">
+                <GTabsTrigger value="cpi" className="text-xs sm:text-sm">CPI Data</GTabsTrigger>
+                <GTabsTrigger value="forward" className="text-xs sm:text-sm">Forward Rate</GTabsTrigger>
+                <GTabsTrigger value="backward" className="text-xs sm:text-sm">Backward Rate</GTabsTrigger>
+              </GTabsList>
 
-              <TabsContent value="cpi" className="space-y-3 sm:space-y-4 mt-3 sm:mt-4">
+              <GTabsContent value="cpi" className="space-y-3 sm:space-y-4 mt-3 sm:mt-4">
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4">
                   <div className="space-y-1.5 w-full min-w-0">
-                    <Label htmlFor="amount" className="text-xs sm:text-sm text-heading-accent">Amount</Label>
-                    <Input
+                    <GLabel htmlFor="amount" className="text-xs sm:text-sm text-heading-accent">Amount</GLabel>
+                    <GInput
                       id="amount"
                       type="number"
                       placeholder="100"
@@ -365,8 +366,8 @@ Purchasing Power: ${result.purchasingPower.toFixed(1)}%`
                     />
                   </div>
                   <div className="space-y-1.5 w-full min-w-0">
-                    <Label htmlFor="startYear" className="text-xs sm:text-sm text-heading-accent">Start Year</Label>
-                    <Input
+                    <GLabel htmlFor="startYear" className="text-xs sm:text-sm text-heading-accent">Start Year</GLabel>
+                    <GInput
                       id="startYear"
                       type="number"
                       placeholder="2015"
@@ -377,8 +378,8 @@ Purchasing Power: ${result.purchasingPower.toFixed(1)}%`
                   </div>
                 </div>
                 <div className="space-y-1.5 w-full min-w-0">
-                  <Label htmlFor="endYear" className="text-xs sm:text-sm text-heading-accent">End Year</Label>
-                  <Input
+                  <GLabel htmlFor="endYear" className="text-xs sm:text-sm text-heading-accent">End Year</GLabel>
+                  <GInput
                     id="endYear"
                     type="number"
                     placeholder="2025"
@@ -387,13 +388,13 @@ Purchasing Power: ${result.purchasingPower.toFixed(1)}%`
                     className="border-border bg-card text-foreground focus-visible:ring-primary focus:border-primary w-full text-sm h-9"
                   />
                 </div>
-              </TabsContent>
+              </GTabsContent>
 
-              <TabsContent value="forward" className="space-y-3 sm:space-y-4 mt-3 sm:mt-4">
+              <GTabsContent value="forward" className="space-y-3 sm:space-y-4 mt-3 sm:mt-4">
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4">
                   <div className="space-y-1.5 w-full min-w-0">
-                    <Label htmlFor="amount" className="text-xs sm:text-sm text-heading-accent">Amount</Label>
-                    <Input
+                    <GLabel htmlFor="amount" className="text-xs sm:text-sm text-heading-accent">Amount</GLabel>
+                    <GInput
                       id="amount"
                       type="number"
                       placeholder="100"
@@ -403,8 +404,8 @@ Purchasing Power: ${result.purchasingPower.toFixed(1)}%`
                     />
                   </div>
                   <div className="space-y-1.5 w-full min-w-0">
-                    <Label htmlFor="inflationRate" className="text-xs sm:text-sm text-heading-accent">Inflation Rate (%)</Label>
-                    <Input
+                    <GLabel htmlFor="inflationRate" className="text-xs sm:text-sm text-heading-accent">Inflation Rate (%)</GLabel>
+                    <GInput
                       id="inflationRate"
                       type="number"
                       placeholder="3"
@@ -415,8 +416,8 @@ Purchasing Power: ${result.purchasingPower.toFixed(1)}%`
                   </div>
                 </div>
                 <div className="space-y-1.5 w-full min-w-0">
-                  <Label htmlFor="years" className="text-xs sm:text-sm text-heading-accent">Years</Label>
-                  <Input
+                  <GLabel htmlFor="years" className="text-xs sm:text-sm text-heading-accent">Years</GLabel>
+                  <GInput
                     id="years"
                     type="number"
                     placeholder="10"
@@ -425,13 +426,13 @@ Purchasing Power: ${result.purchasingPower.toFixed(1)}%`
                     className="border-border bg-card text-foreground focus-visible:ring-primary focus:border-primary w-full text-sm h-9"
                   />
                 </div>
-              </TabsContent>
+              </GTabsContent>
 
-              <TabsContent value="backward" className="space-y-3 sm:space-y-4 mt-3 sm:mt-4">
+              <GTabsContent value="backward" className="space-y-3 sm:space-y-4 mt-3 sm:mt-4">
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4">
                   <div className="space-y-1.5 w-full min-w-0">
-                    <Label htmlFor="amount" className="text-xs sm:text-sm text-heading-accent">Amount</Label>
-                    <Input
+                    <GLabel htmlFor="amount" className="text-xs sm:text-sm text-heading-accent">Amount</GLabel>
+                    <GInput
                       id="amount"
                       type="number"
                       placeholder="100"
@@ -441,8 +442,8 @@ Purchasing Power: ${result.purchasingPower.toFixed(1)}%`
                     />
                   </div>
                   <div className="space-y-1.5 w-full min-w-0">
-                    <Label htmlFor="inflationRate" className="text-xs sm:text-sm text-heading-accent">Inflation Rate (%)</Label>
-                    <Input
+                    <GLabel htmlFor="inflationRate" className="text-xs sm:text-sm text-heading-accent">Inflation Rate (%)</GLabel>
+                    <GInput
                       id="inflationRate"
                       type="number"
                       placeholder="3"
@@ -453,8 +454,8 @@ Purchasing Power: ${result.purchasingPower.toFixed(1)}%`
                   </div>
                 </div>
                 <div>
-                  <Label htmlFor="years">Years Ago</Label>
-                  <Input
+                  <GLabel htmlFor="years">Years Ago</GLabel>
+                  <GInput
                     id="years"
                     type="number"
                     placeholder="10"
@@ -462,8 +463,8 @@ Purchasing Power: ${result.purchasingPower.toFixed(1)}%`
                     onChange={(e) => setYears(e.target.value)}
                   />
                 </div>
-              </TabsContent>
-            </Tabs>
+              </GTabsContent>
+            </GTabs>
           </div>
 
           <div className="flex flex-col sm:flex-row gap-2 w-full">
@@ -475,30 +476,30 @@ Purchasing Power: ${result.purchasingPower.toFixed(1)}%`
               Clear All
             </GButton>
           </div>
-        </CardContent>
-      </Card>
+        </GCardContent>
+      </GCard>
 
       {/* Results Section */}
       {result && (
         <div className="space-y-6">
           {/* Main Results */}
-          <Card className="bg-card border-border w-full overflow-hidden">
-            <CardHeader className="px-2 sm:px-3 md:px-4 pb-2">
-              <CardTitle className="flex items-center gap-2 text-sm sm:text-base md:text-lg break-words">
+          <GCard className="bg-card border-border w-full overflow-hidden">
+            <GCardHeader className="px-2 sm:px-3 md:px-4 pb-2">
+              <GCardTitle className="flex items-center gap-2 text-sm sm:text-base md:text-lg break-words">
                 <DollarSign className="h-3.5 w-3.5 sm:h-4 sm:w-4 text-foreground" />
                 <span className="text-foreground">Inflation Calculation Results</span>
-              </CardTitle>
-            </CardHeader>
-            <CardContent className="space-y-3 sm:space-y-4 px-2 sm:px-3 md:px-4">
+              </GCardTitle>
+            </GCardHeader>
+            <GCardContent className="space-y-3 sm:space-y-4 px-2 sm:px-3 md:px-4">
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4">
                 <div className="space-y-1.5">
-                  <Label className="text-xs sm:text-sm text-heading-accent">Original Amount</Label>
+                  <GLabel className="text-xs sm:text-sm text-heading-accent">Original Amount</GLabel>
                   <div className="text-xl sm:text-2xl md:text-3xl font-bold text-foreground">
                     ${result.originalAmount.toFixed(2)}
                   </div>
                 </div>
                 <div className="space-y-1.5">
-                  <Label className="text-xs sm:text-sm text-heading-accent">Adjusted Amount</Label>
+                  <GLabel className="text-xs sm:text-sm text-heading-accent">Adjusted Amount</GLabel>
                   <div className="text-xl sm:text-2xl md:text-3xl font-bold text-foreground">
                     ${result.adjustedAmount.toFixed(2)}
                   </div>
@@ -526,18 +527,18 @@ Purchasing Power: ${result.purchasingPower.toFixed(1)}%`
                   Copy Results
                 </GButton>
               </div>
-            </CardContent>
-          </Card>
+            </GCardContent>
+          </GCard>
 
           {/* Summary */}
-          <Card className="bg-card border-border w-full overflow-hidden">
-            <CardHeader className="px-2 sm:px-3 md:px-4 pb-2">
-              <CardTitle className="flex items-center gap-2 text-sm sm:text-base md:text-lg break-words">
+          <GCard className="bg-card border-border w-full overflow-hidden">
+            <GCardHeader className="px-2 sm:px-3 md:px-4 pb-2">
+              <GCardTitle className="flex items-center gap-2 text-sm sm:text-base md:text-lg break-words">
                 <BarChart3 className="h-3.5 w-3.5 sm:h-4 sm:w-4 text-foreground" />
                 <span className="text-foreground">Inflation Analysis</span>
-              </CardTitle>
-            </CardHeader>
-            <CardContent className="space-y-3 sm:space-y-4 px-2 sm:px-3 md:px-4">
+              </GCardTitle>
+            </GCardHeader>
+            <GCardContent className="space-y-3 sm:space-y-4 px-2 sm:px-3 md:px-4">
               <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 sm:gap-4">
                 <div className="p-2 sm:p-3 md:p-4 bg-card border border-border rounded-lg">
                   <h3 className="font-semibold text-heading-accent mb-1.5 sm:mb-2 text-xs sm:text-sm break-words">Purchasing Power</h3>
@@ -557,19 +558,19 @@ Purchasing Power: ${result.purchasingPower.toFixed(1)}%`
                   <div className="text-xs sm:text-sm text-foreground break-words">method used</div>
                 </div>
               </div>
-            </CardContent>
-          </Card>
+            </GCardContent>
+          </GCard>
 
           {/* Historical Data */}
           {result.historicalData.length > 0 && (
-            <Card className="bg-card border-border w-full overflow-hidden">
-              <CardHeader className="px-2 sm:px-3 md:px-4 pb-2">
-                <CardTitle className="flex items-center gap-2 text-sm sm:text-base md:text-lg break-words">
+            <GCard className="bg-card border-border w-full overflow-hidden">
+              <GCardHeader className="px-2 sm:px-3 md:px-4 pb-2">
+                <GCardTitle className="flex items-center gap-2 text-sm sm:text-base md:text-lg break-words">
                   <Calendar className="h-3.5 w-3.5 sm:h-4 sm:w-4 text-foreground" />
                   <span className="text-foreground">Historical Inflation Data</span>
-                </CardTitle>
-              </CardHeader>
-              <CardContent className="px-2 sm:px-3 md:px-4">
+                </GCardTitle>
+              </GCardHeader>
+              <GCardContent className="px-2 sm:px-3 md:px-4">
                 <div className="overflow-x-auto">
                   <table className="w-full border-collapse border border-border">
                     <thead>
@@ -594,19 +595,19 @@ Purchasing Power: ${result.purchasingPower.toFixed(1)}%`
                     </tbody>
                   </table>
                 </div>
-              </CardContent>
-            </Card>
+              </GCardContent>
+            </GCard>
           )}
 
           {/* Inflation Scenarios */}
-          <Card className="bg-card border-border w-full overflow-hidden">
-            <CardHeader className="px-2 sm:px-3 md:px-4 pb-2">
-              <CardTitle className="flex items-center gap-2 text-sm sm:text-base md:text-lg break-words">
+          <GCard className="bg-card border-border w-full overflow-hidden">
+            <GCardHeader className="px-2 sm:px-3 md:px-4 pb-2">
+              <GCardTitle className="flex items-center gap-2 text-sm sm:text-base md:text-lg break-words">
                 <TrendingUp className="h-3.5 w-3.5 sm:h-4 sm:w-4 text-foreground" />
                 <span className="text-foreground">Inflation Scenarios</span>
-              </CardTitle>
-            </CardHeader>
-            <CardContent className="px-2 sm:px-3 md:px-4">
+              </GCardTitle>
+            </GCardHeader>
+            <GCardContent className="px-2 sm:px-3 md:px-4">
               <div className="space-y-2">
                 {result.comparison.scenarios.map((scenario, index) => (
                   <div key={index} className="flex justify-between items-center p-2 sm:p-3 bg-card border border-border rounded-lg">
@@ -614,24 +615,24 @@ Purchasing Power: ${result.purchasingPower.toFixed(1)}%`
                       <span className="font-medium text-foreground text-xs sm:text-sm break-words">{scenario.scenario}</span>
                       <p className="text-xs text-foreground break-words">${scenario.adjustedAmount.toFixed(2)}</p>
                     </div>
-                    <Badge className={scenario.difference > 0 ? "bg-secondary-accent/20 text-heading-accent border-secondary-accent" : "bg-destructive/20 text-foreground border-destructive"} variant="outline">
+                    <GBadge className={scenario.difference > 0 ? "bg-secondary-accent/20 text-heading-accent border-secondary-accent" : "bg-destructive/20 text-foreground border-destructive"} variant="outline">
                       {scenario.difference > 0 ? "+" : ""}${scenario.difference.toFixed(2)}
-                    </Badge>
+                    </GBadge>
                   </div>
                 ))}
               </div>
-            </CardContent>
-          </Card>
+            </GCardContent>
+          </GCard>
 
           {/* Recommendations */}
-          <Card className="bg-card border-border w-full overflow-hidden">
-            <CardHeader className="px-2 sm:px-3 md:px-4 pb-2">
-              <CardTitle className="flex items-center gap-2 text-sm sm:text-base md:text-lg break-words">
+          <GCard className="bg-card border-border w-full overflow-hidden">
+            <GCardHeader className="px-2 sm:px-3 md:px-4 pb-2">
+              <GCardTitle className="flex items-center gap-2 text-sm sm:text-base md:text-lg break-words">
                 <Target className="h-3.5 w-3.5 sm:h-4 sm:w-4 text-foreground" />
                 <span className="text-foreground">Personalized Recommendations</span>
-              </CardTitle>
-            </CardHeader>
-            <CardContent className="px-2 sm:px-3 md:px-4">
+              </GCardTitle>
+            </GCardHeader>
+            <GCardContent className="px-2 sm:px-3 md:px-4">
               <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
                 <div>
                   <h4 className="font-semibold mb-2 sm:mb-3 text-heading-accent text-xs sm:text-sm break-words">Investment Tips</h4>
@@ -667,21 +668,21 @@ Purchasing Power: ${result.purchasingPower.toFixed(1)}%`
                   </ul>
                 </div>
               </div>
-            </CardContent>
-          </Card>
+            </GCardContent>
+          </GCard>
         </div>
       )}
 
       {/* History Section */}
       {history.length > 0 && (
-        <Card className="bg-card border-border w-full overflow-hidden">
-          <CardHeader className="px-2 sm:px-3 md:px-4 pb-2">
-            <CardTitle className="flex items-center gap-2 text-sm sm:text-base md:text-lg break-words">
+        <GCard className="bg-card border-border w-full overflow-hidden">
+          <GCardHeader className="px-2 sm:px-3 md:px-4 pb-2">
+            <GCardTitle className="flex items-center gap-2 text-sm sm:text-base md:text-lg break-words">
               <History className="h-3.5 w-3.5 sm:h-4 sm:w-4 text-foreground" />
               <span className="text-foreground">Recent Calculations</span>
-            </CardTitle>
-          </CardHeader>
-          <CardContent className="px-2 sm:px-3 md:px-4">
+            </GCardTitle>
+          </GCardHeader>
+          <GCardContent className="px-2 sm:px-3 md:px-4">
             <div className="space-y-2">
               {history.map((item, index) => (
                 <div key={index} className="flex items-center justify-between p-2 sm:p-3 bg-card border border-border rounded-lg">
@@ -704,19 +705,19 @@ Purchasing Power: ${result.purchasingPower.toFixed(1)}%`
                 </div>
               ))}
             </div>
-          </CardContent>
-        </Card>
+          </GCardContent>
+        </GCard>
       )}
 
       {/* Information Section */}
-      <Card className="bg-card border-border w-full overflow-hidden">
-        <CardHeader className="px-2 sm:px-3 md:px-4 pb-2">
-          <CardTitle className="flex items-center gap-2 text-sm sm:text-base md:text-lg break-words">
+      <GCard className="bg-card border-border w-full overflow-hidden">
+        <GCardHeader className="px-2 sm:px-3 md:px-4 pb-2">
+          <GCardTitle className="flex items-center gap-2 text-sm sm:text-base md:text-lg break-words">
             <Info className="h-3.5 w-3.5 sm:h-4 sm:w-4 text-foreground" />
             <span className="text-foreground">Inflation Calculator Features</span>
-          </CardTitle>
-        </CardHeader>
-        <CardContent className="space-y-3 px-2 sm:px-3 md:px-4">
+          </GCardTitle>
+        </GCardHeader>
+        <GCardContent className="space-y-3 px-2 sm:px-3 md:px-4">
           <div className="p-2 sm:p-3 md:p-4 bg-card border border-border rounded-lg">
             <div className="flex items-start gap-2">
               <Info className="h-3.5 w-3.5 sm:h-4 sm:w-4 text-foreground mt-0.5 flex-shrink-0" />
@@ -745,8 +746,8 @@ Purchasing Power: ${result.purchasingPower.toFixed(1)}%`
               <strong className="text-heading-accent">Historical Analysis:</strong> Complete inflation data and trends for informed decision-making.
             </p>
           </div>
-        </CardContent>
-      </Card>
+        </GCardContent>
+      </GCard>
     </div>
   )
 }

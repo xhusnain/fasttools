@@ -1,11 +1,12 @@
 "use client"
 
 import { useState } from "react"
-import { GButton } from "@/components/globalcomponents/gbutton"
-import { Input } from "@/components/ui/input"
-import { Label } from "@/components/ui/label"
-import { Textarea } from "@/components/ui/textarea"
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
+import { GButton } from "@/ui/gbutton"
+import { GInput } from "@/ui/ginput"
+import { GLabel } from "@/ui/glabel"
+import { GTextarea } from "@/ui/gtextarea"
+import { GCard, GCardContent, GCardDescription, GCardHeader, GCardTitle } from "@/ui/gcard"
+
 import { Copy, Check, Code } from "lucide-react"
 
 
@@ -60,22 +61,22 @@ ${twitterHandle ? `<meta name="twitter:creator" content="${twitterHandle}" />` :
 
   return (
     <div className="space-y-6">
-      <Card className="border border-border shadow-sm">
-        <CardHeader>
-          <CardTitle className="text-xl text-foreground flex items-center gap-2">
+      <GCard className="border border-border shadow-sm">
+        <GCardHeader>
+          <GCardTitle className="text-xl text-foreground flex items-center gap-2">
             <Code className="h-5 w-5 text-primary" />
             Meta Tag Generator
-          </CardTitle>
-          <CardDescription className="text-sm text-muted-foreground">
+          </GCardTitle>
+          <GCardDescription className="text-sm text-muted-foreground">
             Generate SEO-friendly meta tags for your website
-          </CardDescription>
-        </CardHeader>
-        <CardContent className="space-y-4">
+          </GCardDescription>
+        </GCardHeader>
+        <GCardContent className="space-y-4">
           <div className="space-y-2">
-            <Label htmlFor="title" className="text-sm font-medium text-foreground">
+            <GLabel htmlFor="title" className="text-sm font-medium text-foreground">
               Page Title
-            </Label>
-            <Input
+            </GLabel>
+            <GInput
               id="title"
               placeholder="Enter your page title (50-60 characters)"
               value={title}
@@ -87,10 +88,10 @@ ${twitterHandle ? `<meta name="twitter:creator" content="${twitterHandle}" />` :
           </div>
 
           <div className="space-y-2">
-            <Label htmlFor="description" className="text-sm font-medium text-foreground">
+            <GLabel htmlFor="description" className="text-sm font-medium text-foreground">
               Meta Description
-            </Label>
-            <Textarea
+            </GLabel>
+            <GTextarea
               id="description"
               placeholder="Enter your meta description (150-160 characters)"
               value={description}
@@ -102,10 +103,10 @@ ${twitterHandle ? `<meta name="twitter:creator" content="${twitterHandle}" />` :
           </div>
 
           <div className="space-y-2">
-            <Label htmlFor="keywords" className="text-sm font-medium text-foreground">
+            <GLabel htmlFor="keywords" className="text-sm font-medium text-foreground">
               Keywords (Optional)
-            </Label>
-            <Input
+            </GLabel>
+            <GInput
               id="keywords"
               placeholder="keyword1, keyword2, keyword3"
               value={keywords}
@@ -115,10 +116,10 @@ ${twitterHandle ? `<meta name="twitter:creator" content="${twitterHandle}" />` :
           </div>
 
           <div className="space-y-2">
-            <Label htmlFor="author" className="text-sm font-medium text-foreground">
+            <GLabel htmlFor="author" className="text-sm font-medium text-foreground">
               Author (Optional)
-            </Label>
-            <Input
+            </GLabel>
+            <GInput
               id="author"
               placeholder="Your name or company name"
               value={author}
@@ -128,10 +129,10 @@ ${twitterHandle ? `<meta name="twitter:creator" content="${twitterHandle}" />` :
           </div>
 
           <div className="space-y-2">
-            <Label htmlFor="ogImage" className="text-sm font-medium text-foreground">
+            <GLabel htmlFor="ogImage" className="text-sm font-medium text-foreground">
               OG Image URL (Optional)
-            </Label>
-            <Input
+            </GLabel>
+            <GInput
               id="ogImage"
               placeholder="https://example.com/image.jpg"
               value={ogImage}
@@ -141,10 +142,10 @@ ${twitterHandle ? `<meta name="twitter:creator" content="${twitterHandle}" />` :
           </div>
 
           <div className="space-y-2">
-            <Label htmlFor="twitter" className="text-sm font-medium text-foreground">
+            <GLabel htmlFor="twitter" className="text-sm font-medium text-foreground">
               Twitter Handle (Optional)
-            </Label>
-            <Input
+            </GLabel>
+            <GInput
               id="twitter"
               placeholder="@yourusername"
               value={twitterHandle}
@@ -161,14 +162,14 @@ ${twitterHandle ? `<meta name="twitter:creator" content="${twitterHandle}" />` :
           >
             {isGenerating ? "Generating..." : "Generate Meta Tags"}
           </GButton>
-        </CardContent>
-      </Card>
+        </GCardContent>
+      </GCard>
 
       {result && (
-        <Card className="border border-border shadow-sm animate-fade-in">
-          <CardHeader>
+        <GCard className="border border-border shadow-sm animate-fade-in">
+          <GCardHeader>
             <div className="flex items-center justify-between">
-              <CardTitle className="text-lg text-foreground">Generated Meta Tags</CardTitle>
+              <GCardTitle className="text-lg text-foreground">Generated Meta Tags</GCardTitle>
               <GButton
                 onClick={copyToClipboard}
                 variant="outline"
@@ -188,13 +189,13 @@ ${twitterHandle ? `<meta name="twitter:creator" content="${twitterHandle}" />` :
                 )}
               </GButton>
             </div>
-          </CardHeader>
-          <CardContent>
+          </GCardHeader>
+          <GCardContent>
             <pre className="bg-muted p-4 rounded-lg overflow-x-auto text-xs leading-relaxed">
               <code>{result}</code>
             </pre>
-          </CardContent>
-        </Card>
+          </GCardContent>
+        </GCard>
       )}
     </div>
   )

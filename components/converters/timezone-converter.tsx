@@ -1,11 +1,12 @@
 "use client"
 
 import { useState } from "react"
-import { GButton } from "@/components/globalcomponents/gbutton"
-import { Input } from "@/components/ui/input"
-import { Label } from "@/components/ui/label"
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
+import { GButton } from "@/ui/gbutton"
+import { GInput } from "@/ui/ginput"
+import { GLabel } from "@/ui/glabel"
+import { GCard, GCardContent, GCardDescription, GCardHeader, GCardTitle } from "@/ui/gcard"
+import { GSelect, GSelectContent, GSelectItem, GSelectTrigger, GSelectValue } from "@/ui/gselect"
+
 import { Globe } from "lucide-react"
 
 export function TimezoneConverter() {
@@ -60,19 +61,19 @@ export function TimezoneConverter() {
 
   return (
     <div className="space-y-6">
-      <Card className="border border-border shadow-sm">
-        <CardHeader>
-          <CardTitle className="text-lg flex items-center gap-2">
+      <GCard className="border border-border shadow-sm">
+        <GCardHeader>
+          <GCardTitle className="text-lg flex items-center gap-2">
             <Globe className="h-5 w-5 text-primary" />
             Time Zone Converter
-          </CardTitle>
-          <CardDescription>Convert time between different time zones</CardDescription>
-        </CardHeader>
-        <CardContent className="space-y-6">
+          </GCardTitle>
+          <GCardDescription>Convert time between different time zones</GCardDescription>
+        </GCardHeader>
+        <GCardContent className="space-y-6">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             <div className="space-y-2">
-              <Label htmlFor="time">Time</Label>
-              <Input
+              <GLabel htmlFor="time">Time</GLabel>
+              <GInput
                 id="time"
                 type="time"
                 value={time}
@@ -92,29 +93,29 @@ export function TimezoneConverter() {
               </div>
             </div>
             <div className="space-y-2">
-              <Label htmlFor="from-timezone">From Timezone</Label>
-              <Select value={fromTimezone} onValueChange={setFromTimezone}>
-                <SelectTrigger className="h-11 text-sm border-2 border-primary focus:border-primary">
-                  <SelectValue />
-                </SelectTrigger>
-                <SelectContent>
+              <GLabel htmlFor="from-timezone">From Timezone</GLabel>
+              <GSelect value={fromTimezone} onValueChange={setFromTimezone}>
+                <GSelectTrigger className="h-11 text-sm border-2 border-primary focus:border-primary">
+                  <GSelectValue />
+                </GSelectTrigger>
+                <GSelectContent>
                   {timezones.map((tz) => (
-                    <SelectItem key={tz.value} value={tz.value}>
+                    <GSelectItem key={tz.value} value={tz.value}>
                       {tz.label}
-                    </SelectItem>
+                    </GSelectItem>
                   ))}
-                </SelectContent>
-              </Select>
+                </GSelectContent>
+              </GSelect>
             </div>
           </div>
-        </CardContent>
-      </Card>
+        </GCardContent>
+      </GCard>
 
-      <Card className="border border-border shadow-sm">
-        <CardHeader>
-          <CardTitle className="text-base">Converted Times</CardTitle>
-        </CardHeader>
-        <CardContent>
+      <GCard className="border border-border shadow-sm">
+        <GCardHeader>
+          <GCardTitle className="text-base">Converted Times</GCardTitle>
+        </GCardHeader>
+        <GCardContent>
           <div className="space-y-3">
             {timezones.map((tz) => (
               <div key={tz.value} className="flex justify-between items-center p-3 bg-muted rounded-md">
@@ -123,8 +124,8 @@ export function TimezoneConverter() {
               </div>
             ))}
           </div>
-        </CardContent>
-      </Card>
+        </GCardContent>
+      </GCard>
     </div>
   )
 }

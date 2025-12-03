@@ -1,9 +1,10 @@
 "use client"
 
 import { useState } from "react"
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
-import { GButton } from "@/components/globalcomponents/gbutton"
-import { Label } from "@/components/ui/label"
+import { GCard, GCardContent, GCardDescription, GCardHeader, GCardTitle } from "@/ui/gcard"
+import { GButton } from "@/ui/gbutton"
+import { GLabel } from "@/ui/glabel"
+
 import { Calendar, Copy, Share2, Check, Clock, Heart, Gift, Target, Settings, Calculator, Sparkles } from "lucide-react"
 
 
@@ -142,8 +143,8 @@ Next Birthday: ${result.nextBirthday}`
   return (
     <div className="space-y-8">
       {/* Today's Date Display */}
-      <Card className="shadow-lg border-border bg-card">
-        <CardContent className="p-6">
+      <GCard className="shadow-lg border-border bg-card">
+        <GCardContent className="p-6">
           <div className="flex items-center justify-center gap-3 text-sm">
             <div className="flex items-center gap-2">
               <Clock className="h-5 w-5 text-primary" />
@@ -163,29 +164,29 @@ Next Birthday: ${result.nextBirthday}`
               </div>
             </div>
           </div>
-        </CardContent>
-      </Card>
+        </GCardContent>
+      </GCard>
 
-      <Card className="shadow-lg border-border hover:shadow-xl transition-all duration-300 bg-card">
-        <CardHeader className="pb-4">
-          <CardTitle className="flex items-center gap-3 text-2xl">
+      <GCard className="shadow-lg border-border hover:shadow-xl transition-all duration-300 bg-card">
+        <GCardHeader className="pb-4">
+          <GCardTitle className="flex items-center gap-3 text-2xl">
             <div className="p-2 bg-primary/10 rounded-lg">
               <Calendar className="h-6 w-6 text-primary" />
             </div>
             Age Calculator
-          </CardTitle>
-          <CardDescription className="text-base">
+          </GCardTitle>
+          <GCardDescription className="text-base">
             Calculate your exact age in years, months, days, hours, minutes, and seconds with precision and accuracy
-          </CardDescription>
-        </CardHeader>
-        <CardContent className="space-y-8">
+          </GCardDescription>
+        </GCardHeader>
+        <GCardContent className="space-y-8">
           {/* Date Inputs */}
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6">
             <div className="space-y-3">
-              <Label htmlFor="birthdate" className="text-sm sm:text-base font-semibold flex items-center gap-2">
+              <GLabel htmlFor="birthdate" className="text-sm sm:text-base font-semibold flex items-center gap-2">
                 <Heart className="h-4 w-4 text-primary" />
                 Date of Birth
-              </Label>
+              </GLabel>
               <input
                 id="birthdate"
                 type="date"
@@ -197,10 +198,10 @@ Next Birthday: ${result.nextBirthday}`
             </div>
 
             <div className="space-y-3">
-              <Label htmlFor="targetdate" className="text-sm sm:text-base font-semibold flex items-center gap-2">
+              <GLabel htmlFor="targetdate" className="text-sm sm:text-base font-semibold flex items-center gap-2">
                 <Target className="h-4 w-4 text-primary" />
                 Find Age on (Optional)
-              </Label>
+              </GLabel>
               <input
                 id="targetdate"
                 type="date"
@@ -231,24 +232,24 @@ Next Birthday: ${result.nextBirthday}`
               </>
             )}
           </GButton>
-        </CardContent>
-      </Card>
+        </GCardContent>
+      </GCard>
 
       {result && !isCalculating && (
-        <Card className="shadow-lg border-primary/20 animate-fade-in-up bg-card">
-          <CardHeader className="pb-4">
-            <CardTitle className="text-2xl flex items-center gap-3">
+        <GCard className="shadow-lg border-primary/20 animate-fade-in-up bg-card">
+          <GCardHeader className="pb-4">
+            <GCardTitle className="text-2xl flex items-center gap-3">
               <div className="p-2 bg-secondary-accent/10 dark:bg-secondary-accent/30 rounded-lg">
                 <Heart className="h-6 w-6 text-heading-accent" />
               </div>
               Your Age Results
-            </CardTitle>
-            <CardDescription className="text-base">
+            </GCardTitle>
+            <GCardDescription className="text-base">
               Born on: {new Date(birthDate).toLocaleDateString()} |
               Age on: {targetDate ? new Date(targetDate).toLocaleDateString() : 'Today'}
-            </CardDescription>
-          </CardHeader>
-          <CardContent className="space-y-8">
+            </GCardDescription>
+          </GCardHeader>
+          <GCardContent className="space-y-8">
             {/* Main Age Display */}
             <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 sm:gap-4">
               <div className="text-center p-4 sm:p-6 rounded-xl bg-card border-2 border-border hover:shadow-lg transition-all duration-300">
@@ -400,8 +401,8 @@ Next Birthday: ${result.nextBirthday}`
                 <span className="sm:hidden">Share</span>
               </GButton>
             </div>
-          </CardContent>
-        </Card>
+          </GCardContent>
+        </GCard>
       )}
     </div>
   )

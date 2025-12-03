@@ -3,7 +3,7 @@
 import * as React from "react"
 import { cn } from "@/lib/utils"
 
-const TabsContext = React.createContext<{
+const GTabsContext = React.createContext<{
   value: string
   onValueChange: (value: string) => void
 }>({
@@ -11,20 +11,20 @@ const TabsContext = React.createContext<{
   onValueChange: () => {},
 })
 
-const Tabs = React.forwardRef<
+const GTabs = React.forwardRef<
   HTMLDivElement,
   React.HTMLAttributes<HTMLDivElement> & {
     value: string
     onValueChange: (value: string) => void
   }
 >(({ className, value, onValueChange, ...props }, ref) => (
-  <TabsContext.Provider value={{ value, onValueChange }}>
+  <GTabsContext.Provider value={{ value, onValueChange }}>
     <div ref={ref} className={cn("w-full", className)} {...props} />
-  </TabsContext.Provider>
+  </GTabsContext.Provider>
 ))
-Tabs.displayName = "Tabs"
+GTabs.displayName = "Tabs"
 
-const TabsList = React.forwardRef<
+const GTabsList = React.forwardRef<
   HTMLDivElement,
   React.HTMLAttributes<HTMLDivElement>
 >(({ className, ...props }, ref) => (
@@ -37,15 +37,15 @@ const TabsList = React.forwardRef<
     {...props}
   />
 ))
-TabsList.displayName = "TabsList"
+GTabsList.displayName = "GTabsList"
 
-const TabsTrigger = React.forwardRef<
+const GTabsTrigger = React.forwardRef<
   HTMLButtonElement,
   React.ButtonHTMLAttributes<HTMLButtonElement> & {
     value: string
   }
 >(({ className, value, ...props }, ref) => {
-  const { value: selectedValue, onValueChange } = React.useContext(TabsContext)
+  const { value: selectedValue, onValueChange } = React.useContext(GTabsContext)
   const isSelected = selectedValue === value
 
   return (
@@ -63,15 +63,15 @@ const TabsTrigger = React.forwardRef<
     />
   )
 })
-TabsTrigger.displayName = "TabsTrigger"
+GTabsTrigger.displayName = "GTabsTrigger"
 
-const TabsContent = React.forwardRef<
+const GTabsContent = React.forwardRef<
   HTMLDivElement,
   React.HTMLAttributes<HTMLDivElement> & {
     value: string
   }
 >(({ className, value, ...props }, ref) => {
-  const { value: selectedValue } = React.useContext(TabsContext)
+  const { value: selectedValue } = React.useContext(GTabsContext)
   
   if (selectedValue !== value) {
     return null
@@ -88,6 +88,6 @@ const TabsContent = React.forwardRef<
     />
   )
 })
-TabsContent.displayName = "TabsContent"
+GTabsContent.displayName = "GTabsContent"
 
-export { Tabs, TabsList, TabsTrigger, TabsContent }
+export { GTabs, GTabsList, GTabsTrigger, GTabsContent }

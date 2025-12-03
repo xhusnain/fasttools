@@ -1,13 +1,14 @@
 "use client"
 
 import { useState, useEffect } from "react"
-import { GButton } from "@/components/globalcomponents/gbutton"
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
-import { Input } from "@/components/ui/input"
-import { Label } from "@/components/ui/label"
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
-import { Badge } from "@/components/ui/badge"
+import { GButton } from "@/ui/gbutton"
+import { GCard, GCardContent, GCardHeader, GCardTitle } from "@/ui/gcard"
+import { GInput } from "@/ui/ginput"
+import { GLabel } from "@/ui/glabel"
+import { GSelect, GSelectContent, GSelectItem, GSelectTrigger, GSelectValue } from "@/ui/gselect"
+import { GTabs, GTabsContent, GTabsList, GTabsTrigger } from "@/ui/gtabs"
+import { GBadge } from "@/ui/gbadge"
+
 import { Copy, Download, History, RefreshCw, Calculator, Ruler, Thermometer, DollarSign, Clock, Weight, Volume, Square, Gauge, Zap, Globe, Target, TrendingUp, BookOpen, Star, ArrowRight } from "lucide-react"
 import { toast } from "sonner"
 
@@ -349,86 +350,86 @@ export function ConversionCalculator() {
   // Get unit options for current category
   const getUnitOptions = () => {
     return Object.entries(currentUnits).map(([key, unit]) => (
-      <SelectItem key={key} value={key}>
+      <GSelectItem key={key} value={key}>
         {unit.name}
-      </SelectItem>
+      </GSelectItem>
     ))
   }
 
   return (
     <div className="space-y-6">
       {/* Main Calculator */}
-      <Card className="bg-card border border-border shadow-lg rounded-xl">
-        <CardHeader className="pb-4">
-          <CardTitle className="flex items-center gap-3 text-xl font-bold">
+      <GCard className="bg-card border border-border shadow-lg rounded-xl">
+        <GCardHeader className="pb-4">
+          <GCardTitle className="flex items-center gap-3 text-xl font-bold">
             <div className="p-3 bg-gradient-to-r from-tertiary-accent to-primary rounded-xl shadow-md">
               <Calculator className="h-6 w-6 text-primary-foreground" />
             </div>
             <span className="text-foreground">
               Universal Conversion Calculator
             </span>
-          </CardTitle>
-        </CardHeader>
-        <CardContent className="space-y-6">
+          </GCardTitle>
+        </GCardHeader>
+        <GCardContent className="space-y-6">
           {/* Category Selection */}
           <div className="space-y-2">
-            <Label className="text-sm font-medium">Conversion Category</Label>
-            <Tabs value={selectedCategory} onValueChange={(value) => setSelectedCategory(value as keyof typeof conversionCategories)}>
-              <TabsList className="grid w-full grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-2 p-1 bg-gradient-to-r from-tertiary-accent/10 to-primary/10 dark:from-tertiary-accent/20 dark:to-primary/20 rounded-lg border border-tertiary-accent/30">
+            <GLabel className="text-sm font-medium">Conversion Category</GLabel>
+            <GTabs value={selectedCategory} onValueChange={(value) => setSelectedCategory(value as keyof typeof conversionCategories)}>
+              <GTabsList className="grid w-full grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-2 p-1 bg-gradient-to-r from-tertiary-accent/10 to-primary/10 dark:from-tertiary-accent/20 dark:to-primary/20 rounded-lg border border-tertiary-accent/30">
                 {Object.entries(conversionCategories).map(([key, category]) => (
-                  <TabsTrigger
+                  <GTabsTrigger
                     key={key}
                     value={key}
                     className="flex flex-col items-center gap-1 text-xs px-2 py-2 sm:flex-row sm:gap-2 sm:px-3 sm:py-2 min-h-[60px] sm:min-h-[40px] data-[state=active]:!bg-tertiary-accent data-[state=active]:!text-primary-foreground data-[state=active]:!border-tertiary-accent hover:bg-tertiary-accent/20 dark:hover:bg-tertiary-accent/20"
                   >
                     <category.icon className="h-4 w-4 flex-shrink-0" />
                     <span className="text-xs font-medium text-center sm:text-left">{category.name}</span>
-                  </TabsTrigger>
+                  </GTabsTrigger>
                 ))}
-              </TabsList>
-            </Tabs>
+              </GTabsList>
+            </GTabs>
           </div>
 
           {/* Conversion Inputs */}
           <div className="space-y-4 sm:space-y-0 sm:grid sm:grid-cols-2 sm:gap-4">
             <div className="space-y-2">
-              <Label htmlFor="from-unit" className="text-sm font-semibold text-foreground flex items-center gap-2">
+              <GLabel htmlFor="from-unit" className="text-sm font-semibold text-foreground flex items-center gap-2">
                 <div className="w-2 h-2 bg-primary rounded-full"></div>
                 From
-              </Label>
-              <Select value={fromUnit} onValueChange={setFromUnit}>
-                <SelectTrigger className="w-full h-12 border-2 border-tertiary-accent/50 rounded-lg [&>svg]:text-foreground [&>svg]:hover:text-foreground data-[state=open]:border-tertiary-accent data-[state=open]:ring-tertiary-accent focus:border-tertiary-accent">
-                  <SelectValue placeholder="Select unit" />
-                </SelectTrigger>
-                <SelectContent className="max-h-60 overflow-y-auto [&>div]:data-[highlighted]:bg-tertiary-accent [&>div]:data-[highlighted]:text-primary-foreground">
+              </GLabel>
+              <GSelect value={fromUnit} onValueChange={setFromUnit}>
+                <GSelectTrigger className="w-full h-12 border-2 border-tertiary-accent/50 rounded-lg [&>svg]:text-foreground [&>svg]:hover:text-foreground data-[state=open]:border-tertiary-accent data-[state=open]:ring-tertiary-accent focus:border-tertiary-accent">
+                  <GSelectValue placeholder="GSelect unit" />
+                </GSelectTrigger>
+                <GSelectContent className="max-h-60 overflow-y-auto [&>div]:data-[highlighted]:bg-tertiary-accent [&>div]:data-[highlighted]:text-primary-foreground">
                   {getUnitOptions()}
-                </SelectContent>
-              </Select>
+                </GSelectContent>
+              </GSelect>
             </div>
             <div className="space-y-2">
-              <Label htmlFor="to-unit" className="text-sm font-semibold text-foreground flex items-center gap-2">
+              <GLabel htmlFor="to-unit" className="text-sm font-semibold text-foreground flex items-center gap-2">
                 <div className="w-2 h-2 bg-secondary-accent rounded-full"></div>
                 To
-              </Label>
-              <Select value={toUnit} onValueChange={setToUnit}>
-                <SelectTrigger className="w-full h-12 border-2 border-tertiary-accent/50 rounded-lg [&>svg]:text-foreground [&>svg]:hover:text-foreground data-[state=open]:border-tertiary-accent data-[state=open]:ring-tertiary-accent focus:border-tertiary-accent">
-                  <SelectValue placeholder="Select unit" />
-                </SelectTrigger>
-                <SelectContent className="max-h-60 overflow-y-auto [&>div]:data-[highlighted]:bg-tertiary-accent [&>div]:data-[highlighted]:text-primary-foreground">
+              </GLabel>
+              <GSelect value={toUnit} onValueChange={setToUnit}>
+                <GSelectTrigger className="w-full h-12 border-2 border-tertiary-accent/50 rounded-lg [&>svg]:text-foreground [&>svg]:hover:text-foreground data-[state=open]:border-tertiary-accent data-[state=open]:ring-tertiary-accent focus:border-tertiary-accent">
+                  <GSelectValue placeholder="GSelect unit" />
+                </GSelectTrigger>
+                <GSelectContent className="max-h-60 overflow-y-auto [&>div]:data-[highlighted]:bg-tertiary-accent [&>div]:data-[highlighted]:text-primary-foreground">
                   {getUnitOptions()}
-                </SelectContent>
-              </Select>
+                </GSelectContent>
+              </GSelect>
             </div>
           </div>
 
-          {/* Value Input */}
+          {/* Value GInput */}
           <div className="space-y-2">
-            <Label htmlFor="input-value" className="text-sm font-medium text-foreground flex items-center gap-2">
+            <GLabel htmlFor="input-value" className="text-sm font-medium text-foreground flex items-center gap-2">
               <div className="w-2 h-2 bg-tertiary-accent rounded-full"></div>
               Value to Convert
-            </Label>
+            </GLabel>
             <div className="flex flex-col sm:flex-row gap-3">
-              <Input
+              <GInput
                 id="input-value"
                 type="number"
                 placeholder="Enter value"
@@ -482,21 +483,21 @@ export function ConversionCalculator() {
               {showHistory ? 'Hide' : 'Show'} History
             </GButton>
           </div>
-        </CardContent>
-      </Card>
+        </GCardContent>
+      </GCard>
 
       {/* Conversion History */}
       {showHistory && history.length > 0 && (
-        <Card className="bg-card border border-border shadow-lg rounded-xl">
-          <CardHeader className="pb-4">
-            <CardTitle className="flex items-center gap-3 text-xl font-bold">
+        <GCard className="bg-card border border-border shadow-lg rounded-xl">
+          <GCardHeader className="pb-4">
+            <GCardTitle className="flex items-center gap-3 text-xl font-bold">
               <div className="p-2 bg-gradient-to-r from-tertiary-accent to-primary rounded-lg">
                 <History className="h-5 w-5 text-primary-foreground" />
               </div>
               Conversion History
-            </CardTitle>
-          </CardHeader>
-          <CardContent>
+            </GCardTitle>
+          </GCardHeader>
+          <GCardContent>
             <div className="space-y-3 max-h-60 overflow-y-auto">
               {history.map((item) => (
                 <div
@@ -520,21 +521,21 @@ export function ConversionCalculator() {
                 </div>
               ))}
             </div>
-          </CardContent>
-        </Card>
+          </GCardContent>
+        </GCard>
       )}
 
       {/* Quick Conversions */}
-      <Card className="bg-card border border-border shadow-lg rounded-xl">
-        <CardHeader className="pb-4">
-          <CardTitle className="flex items-center gap-3 text-xl font-bold text-foreground">
+      <GCard className="bg-card border border-border shadow-lg rounded-xl">
+        <GCardHeader className="pb-4">
+          <GCardTitle className="flex items-center gap-3 text-xl font-bold text-foreground">
             <div className="p-2 bg-primary rounded-lg">
               <Star className="h-5 w-5 text-primary-foreground" />
             </div>
             Popular Conversions
-          </CardTitle>
-        </CardHeader>
-        <CardContent>
+          </GCardTitle>
+        </GCardHeader>
+        <GCardContent>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
             {[
               { from: "1 meter", to: "3.281 feet", category: "Length" },
@@ -557,8 +558,8 @@ export function ConversionCalculator() {
               </div>
             ))}
           </div>
-        </CardContent>
-      </Card>
+        </GCardContent>
+      </GCard>
     </div>
   )
 }

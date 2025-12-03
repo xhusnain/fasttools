@@ -1,15 +1,15 @@
 "use client"
 
 import * as React from "react"
-import * as SwitchPrimitives from "@radix-ui/react-switch"
+import * as GSwitchPrimitives from "@radix-ui/react-switch"
 
 import { cn } from "@/lib/utils"
 
-const Switch = React.forwardRef<
-  React.ElementRef<typeof SwitchPrimitives.Root>,
-  React.ComponentPropsWithoutRef<typeof SwitchPrimitives.Root>
+const GSwitch = React.forwardRef<
+  React.ElementRef<typeof GSwitchPrimitives.Root>,
+  React.ComponentPropsWithoutRef<typeof GSwitchPrimitives.Root>
 >(({ className, ...props }, ref) => (
-  <SwitchPrimitives.Root
+  <GSwitchPrimitives.Root
     className={cn(
       "peer inline-flex h-6 w-11 shrink-0 cursor-pointer items-center rounded-full border-2 border-transparent transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background disabled:cursor-not-allowed disabled:opacity-50 data-[state=checked]:bg-primary data-[state=unchecked]:bg-input",
       className
@@ -17,13 +17,13 @@ const Switch = React.forwardRef<
     {...props}
     ref={ref}
   >
-    <SwitchPrimitives.Thumb
+    <GSwitchPrimitives.Thumb
       className={cn(
         "pointer-events-none block h-5 w-5 rounded-full bg-background shadow-lg ring-0 transition-transform data-[state=checked]:translate-x-5 data-[state=unchecked]:translate-x-0"
       )}
     />
-  </SwitchPrimitives.Root>
+  </GSwitchPrimitives.Root>
 ))
-Switch.displayName = SwitchPrimitives.Root.displayName
+GSwitch.displayName = GSwitchPrimitives.Root.displayName
 
-export { Switch }
+export { GSwitch }

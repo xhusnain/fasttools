@@ -1,13 +1,14 @@
 "use client"
 
 import { useState, useEffect } from "react"
-import { GButton } from "@/components/globalcomponents/gbutton"
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
-import { Input } from "@/components/ui/input"
-import { Label } from "@/components/ui/label"
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
-import { Badge } from "@/components/ui/badge"
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
+import { GButton } from "@/ui/gbutton"
+import { GCard, GCardContent, GCardHeader, GCardTitle } from "@/ui/gcard"
+import { GInput } from "@/ui/ginput"
+import { GLabel } from "@/ui/glabel"
+import { GSelect, GSelectContent, GSelectItem, GSelectTrigger, GSelectValue } from "@/ui/gselect"
+import { GBadge } from "@/ui/gbadge"
+import { GTabs, GTabsContent, GTabsList, GTabsTrigger } from "@/ui/gtabs"
+
 import {
   Calculator,
   Clock,
@@ -240,48 +241,48 @@ Aggressive (1.5 lb/week): ${result.weightGain.aggressive} calories/day`
   return (
     <div className="space-y-4 sm:space-y-6 md:space-y-8 bg-card rounded-xl p-3 sm:p-4 md:p-6 w-full overflow-hidden">
       {/* Main Calculator */}
-      <Card className="bg-card border-border w-full overflow-hidden">
-        <CardHeader className="px-3 sm:px-4 md:px-6 pb-3">
-          <CardTitle className="flex items-center gap-2 text-foreground text-base sm:text-lg md:text-xl break-words">
+      <GCard className="bg-card border-border w-full overflow-hidden">
+        <GCardHeader className="px-3 sm:px-4 md:px-6 pb-3">
+          <GCardTitle className="flex items-center gap-2 text-foreground text-base sm:text-lg md:text-xl break-words">
             <Calculator className="h-4 w-4 sm:h-5 sm:w-5 text-foreground flex-shrink-0" />
             <span className="break-words">Advanced BMR Calculator</span>
-          </CardTitle>
-        </CardHeader>
-        <CardContent className="space-y-4 sm:space-y-6 px-3 sm:px-4 md:px-6">
+          </GCardTitle>
+        </GCardHeader>
+        <GCardContent className="space-y-4 sm:space-y-6 px-3 sm:px-4 md:px-6">
           {/* Unit System Selection */}
           <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 w-full overflow-hidden">
             <div className="flex-1 space-y-2 min-w-0 w-full sm:w-auto">
-              <Label className="text-heading-accent text-xs sm:text-sm">Unit System</Label>
-              <Select value={unitSystem} onValueChange={(value: "metric" | "imperial") => setUnitSystem(value)}>
-                <SelectTrigger className="border-border bg-card text-foreground w-full text-xs sm:text-sm">
-                  <SelectValue />
-                </SelectTrigger>
-                <SelectContent>
-                  <SelectItem value="metric">Metric (kg, cm)</SelectItem>
-                  <SelectItem value="imperial">Imperial (lbs, ft/in)</SelectItem>
-                </SelectContent>
-              </Select>
+              <GLabel className="text-heading-accent text-xs sm:text-sm">Unit System</GLabel>
+              <GSelect value={unitSystem} onValueChange={(value: "metric" | "imperial") => setUnitSystem(value)}>
+                <GSelectTrigger className="border-border bg-card text-foreground w-full text-xs sm:text-sm">
+                  <GSelectValue />
+                </GSelectTrigger>
+                <GSelectContent>
+                  <GSelectItem value="metric">Metric (kg, cm)</GSelectItem>
+                  <GSelectItem value="imperial">Imperial (lbs, ft/in)</GSelectItem>
+                </GSelectContent>
+              </GSelect>
             </div>
             <div className="flex-1 space-y-2 min-w-0 w-full sm:w-auto">
-              <Label className="text-heading-accent text-xs sm:text-sm">Calculation Method</Label>
-              <Select value={equation} onValueChange={(value: "mifflin" | "harris" | "katch") => setEquation(value)}>
-                <SelectTrigger className="border-border bg-card text-foreground w-full text-xs sm:text-sm">
-                  <SelectValue />
-                </SelectTrigger>
-                <SelectContent>
-                  <SelectItem value="mifflin">Mifflin-St Jeor (Most Accurate)</SelectItem>
-                  <SelectItem value="harris">Harris-Benedict (Classic)</SelectItem>
-                  <SelectItem value="katch">Katch-McArdle (Requires Body Fat %)</SelectItem>
-                </SelectContent>
-              </Select>
+              <GLabel className="text-heading-accent text-xs sm:text-sm">Calculation Method</GLabel>
+              <GSelect value={equation} onValueChange={(value: "mifflin" | "harris" | "katch") => setEquation(value)}>
+                <GSelectTrigger className="border-border bg-card text-foreground w-full text-xs sm:text-sm">
+                  <GSelectValue />
+                </GSelectTrigger>
+                <GSelectContent>
+                  <GSelectItem value="mifflin">Mifflin-St Jeor (Most Accurate)</GSelectItem>
+                  <GSelectItem value="harris">Harris-Benedict (Classic)</GSelectItem>
+                  <GSelectItem value="katch">Katch-McArdle (Requires Body Fat %)</GSelectItem>
+                </GSelectContent>
+              </GSelect>
             </div>
           </div>
 
-          {/* Input Fields */}
+          {/* GInput Fields */}
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4 w-full">
             <div className="space-y-2 w-full min-w-0">
-              <Label htmlFor="age" className="text-heading-accent text-xs sm:text-sm">Age</Label>
-              <Input
+              <GLabel htmlFor="age" className="text-heading-accent text-xs sm:text-sm">Age</GLabel>
+              <GInput
                 id="age"
                 type="number"
                 placeholder="25"
@@ -294,23 +295,23 @@ Aggressive (1.5 lb/week): ${result.weightGain.aggressive} calories/day`
               <p className="text-xs text-muted-foreground mt-1">ages 15 - 80</p>
             </div>
             <div className="space-y-2 w-full min-w-0">
-              <Label className="text-heading-accent text-xs sm:text-sm">Gender</Label>
-              <Select value={gender} onValueChange={(value: "male" | "female") => setGender(value)}>
-                <SelectTrigger className="border-border bg-card text-foreground w-full text-xs sm:text-sm">
-                  <SelectValue />
-                </SelectTrigger>
-                <SelectContent>
-                  <SelectItem value="male">Male</SelectItem>
-                  <SelectItem value="female">Female</SelectItem>
-                </SelectContent>
-              </Select>
+              <GLabel className="text-heading-accent text-xs sm:text-sm">Gender</GLabel>
+              <GSelect value={gender} onValueChange={(value: "male" | "female") => setGender(value)}>
+                <GSelectTrigger className="border-border bg-card text-foreground w-full text-xs sm:text-sm">
+                  <GSelectValue />
+                </GSelectTrigger>
+                <GSelectContent>
+                  <GSelectItem value="male">Male</GSelectItem>
+                  <GSelectItem value="female">Female</GSelectItem>
+                </GSelectContent>
+              </GSelect>
             </div>
           </div>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4 w-full">
             <div className="space-y-2 w-full min-w-0">
-              <Label htmlFor="height" className="text-heading-accent text-xs sm:text-sm">Height</Label>
-              <Input
+              <GLabel htmlFor="height" className="text-heading-accent text-xs sm:text-sm">Height</GLabel>
+              <GInput
                 id="height"
                 type="number"
                 placeholder={unitSystem === "metric" ? "180" : "5.9"}
@@ -323,8 +324,8 @@ Aggressive (1.5 lb/week): ${result.weightGain.aggressive} calories/day`
               </p>
             </div>
             <div className="space-y-2 w-full min-w-0">
-              <Label htmlFor="weight" className="text-heading-accent text-xs sm:text-sm">Weight</Label>
-              <Input
+              <GLabel htmlFor="weight" className="text-heading-accent text-xs sm:text-sm">Weight</GLabel>
+              <GInput
                 id="weight"
                 type="number"
                 placeholder={unitSystem === "metric" ? "70" : "154"}
@@ -340,8 +341,8 @@ Aggressive (1.5 lb/week): ${result.weightGain.aggressive} calories/day`
 
           {equation === "katch" && (
             <div className="space-y-2 w-full min-w-0">
-              <Label htmlFor="bodyFat" className="text-heading-accent text-xs sm:text-sm">Body Fat Percentage</Label>
-              <Input
+              <GLabel htmlFor="bodyFat" className="text-heading-accent text-xs sm:text-sm">Body Fat Percentage</GLabel>
+              <GInput
                 id="bodyFat"
                 type="number"
                 placeholder="15"
@@ -364,31 +365,31 @@ Aggressive (1.5 lb/week): ${result.weightGain.aggressive} calories/day`
               Clear All
             </GButton>
           </div>
-        </CardContent>
-      </Card>
+        </GCardContent>
+      </GCard>
 
       {/* Results Section */}
       {result && (
         <div className="space-y-6">
           {/* Main Results */}
-          <Card className="bg-card border-border">
-            <CardHeader>
-              <CardTitle className="flex items-center gap-2 text-foreground">
+          <GCard className="bg-card border-border">
+            <GCardHeader>
+              <GCardTitle className="flex items-center gap-2 text-foreground">
                 <Flame className="h-5 w-5 text-foreground" />
                 BMR Analysis Results
-              </CardTitle>
-            </CardHeader>
-            <CardContent className="space-y-4">
+              </GCardTitle>
+            </GCardHeader>
+            <GCardContent className="space-y-4">
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 <div className="space-y-2">
-                  <Label className="text-sm font-medium">Basal Metabolic Rate</Label>
+                  <GLabel className="text-sm font-medium">Basal Metabolic Rate</GLabel>
                   <div className="text-2xl sm:text-3xl font-bold text-foreground">
                     {result.bmr.toLocaleString()} calories/day
                   </div>
                   <p className="text-sm text-muted-foreground">Energy needed at rest</p>
                 </div>
                 <div className="space-y-2">
-                  <Label className="text-sm font-medium">Total Daily Energy Expenditure</Label>
+                  <GLabel className="text-sm font-medium">Total Daily Energy Expenditure</GLabel>
                   <div className="text-2xl sm:text-3xl font-bold text-foreground">
                     {result.tdee.toLocaleString()} calories/day
                   </div>
@@ -417,18 +418,18 @@ Aggressive (1.5 lb/week): ${result.weightGain.aggressive} calories/day`
                   Copy Results
                 </GButton>
               </div>
-            </CardContent>
-          </Card>
+            </GCardContent>
+          </GCard>
 
           {/* Activity Levels */}
-          <Card className="bg-card border-border">
-            <CardHeader>
-              <CardTitle className="flex items-center gap-2 text-foreground">
+          <GCard className="bg-card border-border">
+            <GCardHeader>
+              <GCardTitle className="flex items-center gap-2 text-foreground">
                 <Activity className="h-5 w-5 text-foreground" />
                 Daily Calorie Needs by Activity Level
-              </CardTitle>
-            </CardHeader>
-            <CardContent>
+              </GCardTitle>
+            </GCardHeader>
+            <GCardContent>
               <div className="space-y-3">
                 {activityLevels.map((level, index) => (
                   <div key={index} className="flex justify-between items-center p-3 bg-card border border-border rounded-lg">
@@ -436,91 +437,91 @@ Aggressive (1.5 lb/week): ${result.weightGain.aggressive} calories/day`
                       <span className="font-medium">{level.name}</span>
                       <p className="text-sm text-muted-foreground">{level.description}</p>
                     </div>
-                    <Badge variant="secondary">
+                    <GBadge variant="secondary">
                       {Math.round(result.bmr * level.multiplier).toLocaleString()} cal/day
-                    </Badge>
+                    </GBadge>
                   </div>
                 ))}
               </div>
-            </CardContent>
-          </Card>
+            </GCardContent>
+          </GCard>
 
           {/* Weight Management */}
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6">
-            <Card className="bg-card border-border">
-              <CardHeader>
-                <CardTitle className="flex items-center gap-2 text-foreground">
+            <GCard className="bg-card border-border">
+              <GCardHeader>
+                <GCardTitle className="flex items-center gap-2 text-foreground">
                   <TrendingUp className="h-5 w-5 text-foreground" />
                   Weight Loss Goals
-                </CardTitle>
-              </CardHeader>
-              <CardContent className="space-y-3">
+                </GCardTitle>
+              </GCardHeader>
+              <GCardContent className="space-y-3">
                 <div className="flex justify-between items-center p-3 bg-card border border-border rounded-lg">
                   <div>
                     <span className="font-medium text-foreground">Mild Deficit</span>
                     <p className="text-sm text-foreground">0.5 lb/week</p>
                   </div>
-                  <Badge variant="destructive">{result.weightLoss.mild.toLocaleString()} cal/day</Badge>
+                  <GBadge variant="destructive">{result.weightLoss.mild.toLocaleString()} cal/day</GBadge>
                 </div>
                 <div className="flex justify-between items-center p-3 bg-card border border-border rounded-lg">
                   <div>
                     <span className="font-medium text-foreground">Moderate Deficit</span>
                     <p className="text-sm text-foreground">1 lb/week</p>
                   </div>
-                  <Badge variant="destructive">{result.weightLoss.moderate.toLocaleString()} cal/day</Badge>
+                  <GBadge variant="destructive">{result.weightLoss.moderate.toLocaleString()} cal/day</GBadge>
                 </div>
                 <div className="flex justify-between items-center p-3 bg-card border border-border rounded-lg">
                   <div>
                     <span className="font-medium text-foreground">Aggressive Deficit</span>
                     <p className="text-sm text-foreground">1.5 lb/week</p>
                   </div>
-                  <Badge variant="destructive">{result.weightLoss.aggressive.toLocaleString()} cal/day</Badge>
+                  <GBadge variant="destructive">{result.weightLoss.aggressive.toLocaleString()} cal/day</GBadge>
                 </div>
-              </CardContent>
-            </Card>
+              </GCardContent>
+            </GCard>
 
-            <Card className="bg-card border-border">
-              <CardHeader>
-                <CardTitle className="flex items-center gap-2 text-foreground">
+            <GCard className="bg-card border-border">
+              <GCardHeader>
+                <GCardTitle className="flex items-center gap-2 text-foreground">
                   <Target className="h-5 w-5 text-foreground" />
                   Weight Gain Goals
-                </CardTitle>
-              </CardHeader>
-              <CardContent className="space-y-3">
+                </GCardTitle>
+              </GCardHeader>
+              <GCardContent className="space-y-3">
                 <div className="flex justify-between items-center p-3 bg-card border border-border rounded-lg">
                   <div>
                     <span className="font-medium text-heading-accent">Mild Surplus</span>
                     <p className="text-sm text-foreground">0.5 lb/week</p>
                   </div>
-                  <Badge variant="default">{result.weightGain.mild.toLocaleString()} cal/day</Badge>
+                  <GBadge variant="default">{result.weightGain.mild.toLocaleString()} cal/day</GBadge>
                 </div>
                 <div className="flex justify-between items-center p-3 bg-card border border-border rounded-lg">
                   <div>
                     <span className="font-medium text-heading-accent">Moderate Surplus</span>
                     <p className="text-sm text-foreground">1 lb/week</p>
                   </div>
-                  <Badge variant="default">{result.weightGain.moderate.toLocaleString()} cal/day</Badge>
+                  <GBadge variant="default">{result.weightGain.moderate.toLocaleString()} cal/day</GBadge>
                 </div>
                 <div className="flex justify-between items-center p-3 bg-card border border-border rounded-lg">
                   <div>
                     <span className="font-medium text-heading-accent">Aggressive Surplus</span>
                     <p className="text-sm text-foreground">1.5 lb/week</p>
                   </div>
-                  <Badge variant="default">{result.weightGain.aggressive.toLocaleString()} cal/day</Badge>
+                  <GBadge variant="default">{result.weightGain.aggressive.toLocaleString()} cal/day</GBadge>
                 </div>
-              </CardContent>
-            </Card>
+              </GCardContent>
+            </GCard>
           </div>
 
           {/* Recommendations */}
-          <Card className="bg-card border-border">
-            <CardHeader>
-              <CardTitle className="flex items-center gap-2 text-foreground">
+          <GCard className="bg-card border-border">
+            <GCardHeader>
+              <GCardTitle className="flex items-center gap-2 text-foreground">
                 <Heart className="h-5 w-5 text-foreground" />
                 Personalized Recommendations
-              </CardTitle>
-            </CardHeader>
-            <CardContent>
+              </GCardTitle>
+            </GCardHeader>
+            <GCardContent>
               <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
                 <div>
                   <h4 className="font-semibold mb-3 text-heading-accent">Nutrition</h4>
@@ -556,21 +557,21 @@ Aggressive (1.5 lb/week): ${result.weightGain.aggressive} calories/day`
                   </ul>
                 </div>
               </div>
-            </CardContent>
-          </Card>
+            </GCardContent>
+          </GCard>
         </div>
       )}
 
       {/* History Section */}
       {history.length > 0 && (
-        <Card className="bg-card border-border">
-          <CardHeader>
-            <CardTitle className="flex items-center gap-2 text-foreground">
+        <GCard className="bg-card border-border">
+          <GCardHeader>
+            <GCardTitle className="flex items-center gap-2 text-foreground">
               <Clock className="h-5 w-5 text-foreground" />
               Recent Calculations
-            </CardTitle>
-          </CardHeader>
-          <CardContent>
+            </GCardTitle>
+          </GCardHeader>
+          <GCardContent>
             <div className="space-y-2">
               {history.map((item, index) => (
                 <div key={index} className="flex items-center justify-between p-3 bg-card border border-border rounded-lg">
@@ -592,19 +593,19 @@ Aggressive (1.5 lb/week): ${result.weightGain.aggressive} calories/day`
                 </div>
               ))}
             </div>
-          </CardContent>
-        </Card>
+          </GCardContent>
+        </GCard>
       )}
 
       {/* Information Section */}
-      <Card className="bg-card border-border">
-        <CardHeader>
-          <CardTitle className="flex items-center gap-2 text-foreground">
+      <GCard className="bg-card border-border">
+        <GCardHeader>
+          <GCardTitle className="flex items-center gap-2 text-foreground">
             <Info className="h-5 w-5 text-foreground" />
             BMR Calculator Features
-          </CardTitle>
-        </CardHeader>
-        <CardContent className="space-y-3">
+          </GCardTitle>
+        </GCardHeader>
+        <GCardContent className="space-y-3">
           <div className="p-4 bg-card border border-border rounded-lg">
             <div className="flex items-start gap-2">
               <Info className="h-4 w-4 text-foreground mt-0.5 flex-shrink-0" />
@@ -633,8 +634,8 @@ Aggressive (1.5 lb/week): ${result.weightGain.aggressive} calories/day`
               <strong>Weight Management:</strong> Calorie targets for safe weight loss or gain goals.
             </p>
           </div>
-        </CardContent>
-      </Card>
+        </GCardContent>
+      </GCard>
     </div>
   )
 }

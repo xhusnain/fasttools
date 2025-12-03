@@ -1,11 +1,12 @@
 "use client"
 
 import { useState, useEffect } from "react"
-import { GButton } from "@/components/globalcomponents/gbutton"
-import { Input } from "@/components/ui/input"
-import { Label } from "@/components/ui/label"
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
+import { GButton } from "@/ui/gbutton"
+import { GInput } from "@/ui/ginput"
+import { GLabel } from "@/ui/glabel"
+import { GCard, GCardContent, GCardDescription, GCardHeader, GCardTitle } from "@/ui/gcard"
+import { GSelect, GSelectContent, GSelectItem, GSelectTrigger, GSelectValue } from "@/ui/gselect"
+
 import { Heart, Copy, Check, Sparkles, Star, Gift, Flower2, Palette } from "lucide-react"
 import { LoadingSpinner } from "@/components/common/loading-spinner"
 
@@ -171,17 +172,17 @@ export function LoveCalculator() {
   }
 
   return (
-    <Card className={`border-2 ${currentTheme.border} shadow-xl bg-gradient-to-br ${currentTheme.bg} backdrop-blur-xl`}>
-      <CardHeader className="text-center">
+    <GCard className={`border-2 ${currentTheme.border} shadow-xl bg-gradient-to-br ${currentTheme.bg} backdrop-blur-xl`}>
+      <GCardHeader className="text-center">
         <div className="flex items-center justify-center gap-2 mb-2">
           <Heart className={`h-6 w-6 ${currentTheme.icon} animate-pulse`} />
           <Sparkles className={`h-5 w-5 ${currentTheme.icon} animate-spin`} />
           <Heart className={`h-6 w-6 ${currentTheme.icon} animate-pulse`} />
         </div>
-        <CardTitle className="text-2xl font-bold text-white">Romantic Love Calculator</CardTitle>
-        <CardDescription className="text-sm text-white/80">
+        <GCardTitle className="text-2xl font-bold text-white">Romantic Love Calculator</GCardTitle>
+        <GCardDescription className="text-sm text-white/80">
           {isSharedResult ? "Viewing a shared love match result!" : "Calculate the love compatibility between two people (just for fun!)"}
-        </CardDescription>
+        </GCardDescription>
         {isSharedResult && (
           <div className="mt-2 px-3 py-1 rounded-full bg-gradient-to-r from-green-500/20 to-green-600/20 border border-green-400/30">
             <p className="text-xs text-heading-accent font-medium flex items-center gap-1">
@@ -190,30 +191,30 @@ export function LoveCalculator() {
             </p>
           </div>
         )}
-      </CardHeader>
-      <CardContent className="space-y-6">
+      </GCardHeader>
+      <GCardContent className="space-y-6">
         {/* Theme Selector */}
         <div className="space-y-2">
-          <Label className="text-sm font-medium text-white flex items-center gap-2">
+          <GLabel className="text-sm font-medium text-white flex items-center gap-2">
             <Palette className={`h-4 w-4 ${currentTheme.icon}`} />
             Choose Your Love Theme
             <div className={`ml-2 w-2 h-2 rounded-full bg-gradient-to-r ${currentTheme.gradient} animate-pulse`}></div>
-          </Label>
-          <Select value={theme} onValueChange={setTheme}>
-            <SelectTrigger className={`h-11 bg-white/10 border-2 ${currentTheme.border} text-white`}>
-              <SelectValue />
-            </SelectTrigger>
-            <SelectContent className="bg-muted/95 backdrop-blur-xl border-gray-700/50 shadow-xl">
+          </GLabel>
+          <GSelect value={theme} onValueChange={setTheme}>
+            <GSelectTrigger className={`h-11 bg-white/10 border-2 ${currentTheme.border} text-white`}>
+              <GSelectValue />
+            </GSelectTrigger>
+            <GSelectContent className="bg-muted/95 backdrop-blur-xl border-gray-700/50 shadow-xl">
               {Object.entries(themes).map(([key, themeData]) => (
-                <SelectItem key={key} value={key} className="text-white hover:bg-muted/50 focus:bg-muted/50">
+                <GSelectItem key={key} value={key} className="text-white hover:bg-muted/50 focus:bg-muted/50">
                   <div className="flex items-center gap-2">
                     <div className={`w-3 h-3 rounded-full bg-gradient-to-r ${themeData.gradient}`}></div>
                     <span className="text-white">{themeData.name}</span>
                   </div>
-                </SelectItem>
+                </GSelectItem>
               ))}
-            </SelectContent>
-          </Select>
+            </GSelectContent>
+          </GSelect>
 
           {/* Theme Preview */}
           <div className={`p-3 rounded-lg bg-gradient-to-r ${currentTheme.bg} border ${currentTheme.border} mt-2`}>
@@ -226,11 +227,11 @@ export function LoveCalculator() {
 
         <div className="space-y-4">
           <div className="space-y-2">
-            <Label htmlFor="name1" className="text-sm font-medium text-white flex items-center gap-2">
+            <GLabel htmlFor="name1" className="text-sm font-medium text-white flex items-center gap-2">
               <Star className="h-4 w-4" />
               First Name
-            </Label>
-            <Input
+            </GLabel>
+            <GInput
               id="name1"
               type="text"
               placeholder="Enter first name"
@@ -249,11 +250,11 @@ export function LoveCalculator() {
           </div>
 
           <div className="space-y-2">
-            <Label htmlFor="name2" className="text-sm font-medium text-white flex items-center gap-2">
+            <GLabel htmlFor="name2" className="text-sm font-medium text-white flex items-center gap-2">
               <Gift className="h-4 w-4" />
               Second Name
-            </Label>
-            <Input
+            </GLabel>
+            <GInput
               id="name2"
               type="text"
               placeholder="Enter second name"
@@ -342,7 +343,7 @@ export function LoveCalculator() {
               </p>
             </div>
 
-            {/* Try Your Own Button for Shared Results */}
+            {/* Try Your Own GButton for Shared Results */}
             {isSharedResult && (
               <div className="mt-4">
                 <GButton
@@ -363,7 +364,7 @@ export function LoveCalculator() {
             )}
           </div>
         )}
-      </CardContent>
-    </Card>
+      </GCardContent>
+    </GCard>
   )
 }

@@ -1,10 +1,11 @@
 "use client"
 
 import { useState } from "react"
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
-import { GButton } from "@/components/globalcomponents/gbutton"
-import { Label } from "@/components/ui/label"
-import { Input } from "@/components/ui/input"
+import { GCard, GCardContent, GCardDescription, GCardHeader, GCardTitle } from "@/ui/gcard"
+import { GButton } from "@/ui/gbutton"
+import { GLabel } from "@/ui/glabel"
+import { GInput } from "@/ui/ginput"
+
 import { Percent, Copy, Check, Calculator, TrendingUp, TrendingDown, Target, DollarSign, BarChart3, PieChart, ArrowUp, ArrowDown, Minus, Plus } from "lucide-react"
 import { LoadingSpinner } from "@/components/common/loading-spinner"
 
@@ -245,17 +246,17 @@ export function PercentageCalculator() {
   return (
     <div className="space-y-6">
       {/* Calculation Type Selector */}
-      <Card className="shadow-lg border-border hover:shadow-xl transition-all duration-300 bg-card">
-        <CardHeader>
-          <CardTitle className="flex items-center gap-2 text-xl text-foreground">
+      <GCard className="shadow-lg border-border hover:shadow-xl transition-all duration-300 bg-card">
+        <GCardHeader>
+          <GCardTitle className="flex items-center gap-2 text-xl text-foreground">
             <div className="p-2 bg-primary/10 rounded-lg">
               <IconComponent className="h-5 w-5 text-foreground" />
             </div>
             {typeInfo.title}
-          </CardTitle>
-          <CardDescription className="text-base text-muted-foreground">{typeInfo.description}</CardDescription>
-        </CardHeader>
-        <CardContent className="space-y-6">
+          </GCardTitle>
+          <GCardDescription className="text-base text-muted-foreground">{typeInfo.description}</GCardDescription>
+        </GCardHeader>
+        <GCardContent className="space-y-6">
           {/* Calculation Type Buttons */}
           <div className="grid grid-cols-2 sm:grid-cols-4 gap-2">
             {[
@@ -282,16 +283,16 @@ export function PercentageCalculator() {
             ))}
           </div>
 
-          {/* Input Fields */}
+          {/* GInput Fields */}
           <div className="space-y-4">
             <div className="space-y-2">
-              <Label htmlFor="value1" className="text-sm font-medium flex items-center gap-2 text-heading-accent">
+              <GLabel htmlFor="value1" className="text-sm font-medium flex items-center gap-2 text-heading-accent">
                 <div className="p-1 bg-secondary-accent/10 rounded">
                   <Calculator className="h-3 w-3 text-heading-accent" />
                 </div>
                 {inputLabels.label1}
-              </Label>
-              <Input
+              </GLabel>
+              <GInput
                 id="value1"
                 type="number"
                 value={value1}
@@ -302,13 +303,13 @@ export function PercentageCalculator() {
             </div>
 
             <div className="space-y-2">
-              <Label htmlFor="percentage" className="text-sm font-medium flex items-center gap-2 text-heading-accent">
+              <GLabel htmlFor="percentage" className="text-sm font-medium flex items-center gap-2 text-heading-accent">
                 <div className="p-1 bg-secondary-accent/10 rounded">
                   <Percent className="h-3 w-3 text-heading-accent" />
                 </div>
                 {inputLabels.label2}
-              </Label>
-              <Input
+              </GLabel>
+              <GInput
                 id="percentage"
                 type="number"
                 value={percentage}
@@ -320,13 +321,13 @@ export function PercentageCalculator() {
 
             {calculationType === "compound" && (
               <div className="space-y-2">
-                <Label htmlFor="value2" className="text-sm font-medium flex items-center gap-2 text-heading-accent">
+                <GLabel htmlFor="value2" className="text-sm font-medium flex items-center gap-2 text-heading-accent">
                   <div className="p-1 bg-secondary-accent/10 rounded">
                     <Target className="h-3 w-3 text-heading-accent" />
                   </div>
                   {inputLabels.label3}
-                </Label>
-                <Input
+                </GLabel>
+                <GInput
                   id="value2"
                   type="number"
                   value={value2}
@@ -357,22 +358,22 @@ export function PercentageCalculator() {
               </>
             )}
           </GButton>
-        </CardContent>
-      </Card>
+        </GCardContent>
+      </GCard>
 
       {/* Results */}
       {result && !isCalculating && (
-        <Card className="shadow-lg border-border animate-fade-in-up bg-card">
-          <CardHeader>
-            <CardTitle className="text-xl flex items-center gap-2 text-foreground">
+        <GCard className="shadow-lg border-border animate-fade-in-up bg-card">
+          <GCardHeader>
+            <GCardTitle className="text-xl flex items-center gap-2 text-foreground">
               <div className="p-2 bg-primary/10 rounded-lg">
                 <IconComponent className="h-5 w-5 text-foreground" />
               </div>
               {result.type} Result
-            </CardTitle>
-            <CardDescription className="text-base text-muted-foreground">{result.explanation}</CardDescription>
-          </CardHeader>
-          <CardContent className="space-y-6">
+            </GCardTitle>
+            <GCardDescription className="text-base text-muted-foreground">{result.explanation}</GCardDescription>
+          </GCardHeader>
+          <GCardContent className="space-y-6">
             {/* Main Result Display */}
             <div className="text-center p-6 sm:p-8 rounded-xl bg-card border border-primary/20">
               <div className="text-3xl sm:text-4xl font-bold text-foreground mb-2">
@@ -445,8 +446,8 @@ export function PercentageCalculator() {
                 )}
               </GButton>
             </div>
-          </CardContent>
-        </Card>
+          </GCardContent>
+        </GCard>
       )}
     </div>
   )

@@ -1,11 +1,12 @@
 "use client"
 
 import { useState } from "react"
-import { GButton } from "@/components/globalcomponents/gbutton"
-import { Input } from "@/components/ui/input"
-import { Label } from "@/components/ui/label"
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
+import { GButton } from "@/ui/gbutton"
+import { GInput } from "@/ui/ginput"
+import { GLabel } from "@/ui/glabel"
+import { GCard, GCardContent, GCardDescription, GCardHeader, GCardTitle } from "@/ui/gcard"
+import { GSelect, GSelectContent, GSelectItem, GSelectTrigger, GSelectValue } from "@/ui/gselect"
+
 import { Copy, DollarSign, Calculator, Globe, CreditCard, Banknote, Coins, TrendingUp, Info, Settings } from "lucide-react"
 
 
@@ -307,7 +308,7 @@ International: ${result.isInternational ? 'Yes' : 'No'}`
       ]
     } else if (transactionType === 'donations') {
       return [
-        { value: 'donateButton', label: 'Donate Button' },
+        { value: 'donateButton', label: 'Donate GButton' },
         { value: 'paypalCheckoutDonations', label: 'PayPal Checkout for Donations' }
       ]
     } else if (transactionType === 'cryptocurrency') {
@@ -323,20 +324,20 @@ International: ${result.isInternational ? 'Yes' : 'No'}`
 
   return (
     <div className="space-y-6">
-      <Card className="border border-border shadow-sm">
-        <CardHeader>
-          <CardTitle className="text-xl text-foreground flex items-center gap-2">
+      <GCard className="border border-border shadow-sm">
+        <GCardHeader>
+          <GCardTitle className="text-xl text-foreground flex items-center gap-2">
             <Calculator className="h-5 w-5 text-primary" />
             PayPal Fee Calculator
-          </CardTitle>
-          <CardDescription className="text-sm text-muted-foreground">
+          </GCardTitle>
+          <GCardDescription className="text-sm text-muted-foreground">
             Calculate PayPal fees for different transaction types, countries, and currencies
-          </CardDescription>
-        </CardHeader>
-        <CardContent className="space-y-4">
+          </GCardDescription>
+        </GCardHeader>
+        <GCardContent className="space-y-4">
           {/* Compact Form Layout */}
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
-            {/* Left Column - Input Fields */}
+            {/* Left Column - GInput Fields */}
             <div className="space-y-4">
               <h3 className="text-lg font-semibold text-foreground flex items-center gap-2">
                 <Settings className="h-4 w-4 text-foreground" />
@@ -346,93 +347,93 @@ International: ${result.isInternational ? 'Yes' : 'No'}`
               {/* Transaction Type & Payment Method */}
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                 <div className="space-y-1">
-                  <Label className="text-xs font-medium text-muted-foreground">Transaction Type</Label>
-                  <Select value={transactionType} onValueChange={setTransactionType}>
-                    <SelectTrigger className="h-9 border-2 border-primary/30 focus:border-primary focus:ring-2 focus:ring-primary/20 bg-background text-foreground text-sm">
-                      <SelectValue placeholder="Select type" />
-                    </SelectTrigger>
-                    <SelectContent className="bg-background border-2 border-primary/30">
-                      <SelectItem value="personal" className="text-foreground hover:bg-primary/10 text-sm">Personal</SelectItem>
-                      <SelectItem value="commercial" className="text-foreground hover:bg-primary/10 text-sm">Commercial</SelectItem>
-                      <SelectItem value="donations" className="text-foreground hover:bg-primary/10 text-sm">Donations</SelectItem>
-                      <SelectItem value="cryptocurrency" className="text-foreground hover:bg-primary/10 text-sm">Cryptocurrency</SelectItem>
-                    </SelectContent>
-                  </Select>
+                  <GLabel className="text-xs font-medium text-muted-foreground">Transaction Type</GLabel>
+                  <GSelect value={transactionType} onValueChange={setTransactionType}>
+                    <GSelectTrigger className="h-9 border-2 border-primary/30 focus:border-primary focus:ring-2 focus:ring-primary/20 bg-background text-foreground text-sm">
+                      <GSelectValue placeholder="GSelect type" />
+                    </GSelectTrigger>
+                    <GSelectContent className="bg-background border-2 border-primary/30">
+                      <GSelectItem value="personal" className="text-foreground hover:bg-primary/10 text-sm">Personal</GSelectItem>
+                      <GSelectItem value="commercial" className="text-foreground hover:bg-primary/10 text-sm">Commercial</GSelectItem>
+                      <GSelectItem value="donations" className="text-foreground hover:bg-primary/10 text-sm">Donations</GSelectItem>
+                      <GSelectItem value="cryptocurrency" className="text-foreground hover:bg-primary/10 text-sm">Cryptocurrency</GSelectItem>
+                    </GSelectContent>
+                  </GSelect>
                 </div>
 
                 <div className="space-y-1">
-                  <Label className="text-xs font-medium text-muted-foreground">Payment Method</Label>
-                  <Select value={paymentMethod} onValueChange={setPaymentMethod}>
-                    <SelectTrigger className="h-9 border-2 border-primary/30 focus:border-primary focus:ring-2 focus:ring-primary/20 bg-background text-foreground text-sm">
-                      <SelectValue placeholder="Select method" />
-                    </SelectTrigger>
-                    <SelectContent className="bg-background border-2 border-primary/30">
+                  <GLabel className="text-xs font-medium text-muted-foreground">Payment Method</GLabel>
+                  <GSelect value={paymentMethod} onValueChange={setPaymentMethod}>
+                    <GSelectTrigger className="h-9 border-2 border-primary/30 focus:border-primary focus:ring-2 focus:ring-primary/20 bg-background text-foreground text-sm">
+                      <GSelectValue placeholder="GSelect method" />
+                    </GSelectTrigger>
+                    <GSelectContent className="bg-background border-2 border-primary/30">
                       {getPaymentMethodOptions().map((option) => (
-                        <SelectItem key={option.value} value={option.value} className="text-foreground hover:bg-primary/10 text-sm">
+                        <GSelectItem key={option.value} value={option.value} className="text-foreground hover:bg-primary/10 text-sm">
                           {option.label}
-                        </SelectItem>
+                        </GSelectItem>
                       ))}
-                    </SelectContent>
-                  </Select>
+                    </GSelectContent>
+                  </GSelect>
                 </div>
               </div>
 
               {/* Countries */}
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                 <div className="space-y-1">
-                  <Label className="text-xs font-medium text-muted-foreground">From Country</Label>
-                  <Select value={senderCountry} onValueChange={setSenderCountry}>
-                    <SelectTrigger className="h-9 border-2 border-primary/30 focus:border-primary focus:ring-2 focus:ring-primary/20 bg-background text-foreground text-sm">
-                      <SelectValue placeholder="Select country" />
-                    </SelectTrigger>
-                    <SelectContent className="bg-background border-2 border-primary/30">
+                  <GLabel className="text-xs font-medium text-muted-foreground">From Country</GLabel>
+                  <GSelect value={senderCountry} onValueChange={setSenderCountry}>
+                    <GSelectTrigger className="h-9 border-2 border-primary/30 focus:border-primary focus:ring-2 focus:ring-primary/20 bg-background text-foreground text-sm">
+                      <GSelectValue placeholder="GSelect country" />
+                    </GSelectTrigger>
+                    <GSelectContent className="bg-background border-2 border-primary/30">
                       {Object.entries(COUNTRIES).map(([code, data]) => (
-                        <SelectItem key={code} value={code} className="text-foreground hover:bg-primary/10 text-sm">
+                        <GSelectItem key={code} value={code} className="text-foreground hover:bg-primary/10 text-sm">
                           {data.name}
-                        </SelectItem>
+                        </GSelectItem>
                       ))}
-                    </SelectContent>
-                  </Select>
+                    </GSelectContent>
+                  </GSelect>
                 </div>
 
                 <div className="space-y-1">
-                  <Label className="text-xs font-medium text-muted-foreground">To Country</Label>
-                  <Select value={receiverCountry} onValueChange={setReceiverCountry}>
-                    <SelectTrigger className="h-9 border-2 border-primary/30 focus:border-primary focus:ring-2 focus:ring-primary/20 bg-background text-foreground text-sm">
-                      <SelectValue placeholder="Select country" />
-                    </SelectTrigger>
-                    <SelectContent className="bg-background border-2 border-primary/30">
+                  <GLabel className="text-xs font-medium text-muted-foreground">To Country</GLabel>
+                  <GSelect value={receiverCountry} onValueChange={setReceiverCountry}>
+                    <GSelectTrigger className="h-9 border-2 border-primary/30 focus:border-primary focus:ring-2 focus:ring-primary/20 bg-background text-foreground text-sm">
+                      <GSelectValue placeholder="GSelect country" />
+                    </GSelectTrigger>
+                    <GSelectContent className="bg-background border-2 border-primary/30">
                       {Object.entries(COUNTRIES).map(([code, data]) => (
-                        <SelectItem key={code} value={code} className="text-foreground hover:bg-primary/10 text-sm">
+                        <GSelectItem key={code} value={code} className="text-foreground hover:bg-primary/10 text-sm">
                           {data.name}
-                        </SelectItem>
+                        </GSelectItem>
                       ))}
-                    </SelectContent>
-                  </Select>
+                    </GSelectContent>
+                  </GSelect>
                 </div>
               </div>
 
               {/* Currency & Amount */}
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                 <div className="space-y-1">
-                  <Label className="text-xs font-medium text-muted-foreground">Currency</Label>
-                  <Select value={currency} onValueChange={setCurrency}>
-                    <SelectTrigger className="h-9 border-2 border-primary/30 focus:border-primary focus:ring-2 focus:ring-primary/20 bg-background text-foreground text-sm">
-                      <SelectValue placeholder="Select currency" />
-                    </SelectTrigger>
-                    <SelectContent className="bg-background border-2 border-primary/30">
+                  <GLabel className="text-xs font-medium text-muted-foreground">Currency</GLabel>
+                  <GSelect value={currency} onValueChange={setCurrency}>
+                    <GSelectTrigger className="h-9 border-2 border-primary/30 focus:border-primary focus:ring-2 focus:ring-primary/20 bg-background text-foreground text-sm">
+                      <GSelectValue placeholder="GSelect currency" />
+                    </GSelectTrigger>
+                    <GSelectContent className="bg-background border-2 border-primary/30">
                       {Object.entries(FIXED_FEES_BY_CURRENCY).map(([code, fee]) => (
-                        <SelectItem key={code} value={code} className="text-foreground hover:bg-primary/10 text-sm">
+                        <GSelectItem key={code} value={code} className="text-foreground hover:bg-primary/10 text-sm">
                           {code} {fee > 0 ? `(${fee})` : ''}
-                        </SelectItem>
+                        </GSelectItem>
                       ))}
-                    </SelectContent>
-                  </Select>
+                    </GSelectContent>
+                  </GSelect>
                 </div>
 
                 <div className="space-y-1">
-                  <Label className="text-xs font-medium text-muted-foreground">Amount ({currency})</Label>
-                  <Input
+                  <GLabel className="text-xs font-medium text-muted-foreground">Amount ({currency})</GLabel>
+                  <GInput
                     type="number"
                     placeholder="100.00"
                     value={amount}
@@ -555,8 +556,8 @@ International: ${result.isInternational ? 'Yes' : 'No'}`
               )}
             </div>
           </div>
-        </CardContent>
-      </Card>
+        </GCardContent>
+      </GCard>
     </div>
   )
 }

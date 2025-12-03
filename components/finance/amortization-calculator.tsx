@@ -1,13 +1,14 @@
 "use client"
 
 import { useState, useEffect } from "react"
-import { GButton } from "@/components/globalcomponents/gbutton"
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
-import { Input } from "@/components/ui/input"
-import { Label } from "@/components/ui/label"
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
-import { Badge } from "@/components/ui/badge"
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
+import { GButton } from "@/ui/gbutton"
+import { GCard, GCardContent, GCardHeader, GCardTitle } from "@/ui/gcard"
+import { GInput } from "@/ui/ginput"
+import { GLabel } from "@/ui/glabel"
+import { GSelect, GSelectContent, GSelectItem, GSelectTrigger, GSelectValue } from "@/ui/gselect"
+import { GBadge } from "@/ui/gbadge"
+import { GTabs, GTabsContent, GTabsList, GTabsTrigger } from "@/ui/gtabs"
+
 import {
   Calculator,
   DollarSign,
@@ -116,7 +117,7 @@ export default function AmortizationCalculator() {
     const rate = parseFloat(interestRate) || 0
     const extra = parseFloat(extraPayment) || 0
 
-    // Input validation
+    // GInput validation
     if (principal <= 0) {
       alert("Loan amount must be greater than $0")
       return
@@ -277,19 +278,19 @@ Interest Rate: ${result.interestRate.toFixed(2)}%`
   return (
     <div className="space-y-6">
       {/* Main Calculator */}
-      <Card>
-        <CardHeader className="pb-8">
-          <CardTitle className="flex items-center gap-2">
+      <GCard>
+        <GCardHeader className="pb-8">
+          <GCardTitle className="flex items-center gap-2">
             <Calculator className="h-5 w-5 text-foreground" />
             Advanced Amortization Calculator
-          </CardTitle>
-        </CardHeader>
-        <CardContent className="space-y-6">
-          {/* Input Fields */}
+          </GCardTitle>
+        </GCardHeader>
+        <GCardContent className="space-y-6">
+          {/* GInput Fields */}
           <div className="grid md:grid-cols-2 gap-4">
             <div className="space-y-2">
-              <Label htmlFor="loanAmount">Loan Amount</Label>
-              <Input
+              <GLabel htmlFor="loanAmount">Loan Amount</GLabel>
+              <GInput
                 id="loanAmount"
                 type="number"
                 placeholder="200000"
@@ -298,8 +299,8 @@ Interest Rate: ${result.interestRate.toFixed(2)}%`
               />
             </div>
             <div className="space-y-2">
-              <Label htmlFor="loanTerm">Loan Term (years)</Label>
-              <Input
+              <GLabel htmlFor="loanTerm">Loan Term (years)</GLabel>
+              <GInput
                 id="loanTerm"
                 type="number"
                 placeholder="15"
@@ -311,8 +312,8 @@ Interest Rate: ${result.interestRate.toFixed(2)}%`
 
           <div className="grid md:grid-cols-2 gap-4">
             <div className="space-y-2">
-              <Label htmlFor="interestRate">Interest Rate (%)</Label>
-              <Input
+              <GLabel htmlFor="interestRate">Interest Rate (%)</GLabel>
+              <GInput
                 id="interestRate"
                 type="number"
                 placeholder="6"
@@ -321,8 +322,8 @@ Interest Rate: ${result.interestRate.toFixed(2)}%`
               />
             </div>
             <div className="space-y-2">
-              <Label htmlFor="extraPayment">Extra Payment (optional)</Label>
-              <Input
+              <GLabel htmlFor="extraPayment">Extra Payment (optional)</GLabel>
+              <GInput
                 id="extraPayment"
                 type="number"
                 placeholder="0"
@@ -341,30 +342,30 @@ Interest Rate: ${result.interestRate.toFixed(2)}%`
               Clear All
             </GButton>
           </div>
-        </CardContent>
-      </Card>
+        </GCardContent>
+      </GCard>
 
       {/* Results Section */}
       {result && (
         <div className="space-y-6">
           {/* Main Results */}
-          <Card>
-            <CardHeader>
-              <CardTitle className="flex items-center gap-2">
+          <GCard>
+            <GCardHeader>
+              <GCardTitle className="flex items-center gap-2">
                 <DollarSign className="h-5 w-5 text-heading-accent" />
                 Amortization Results
-              </CardTitle>
-            </CardHeader>
-            <CardContent className="space-y-4">
+              </GCardTitle>
+            </GCardHeader>
+            <GCardContent className="space-y-4">
               <div className="grid md:grid-cols-2 gap-4">
                 <div className="space-y-2">
-                  <Label className="text-sm font-medium">Monthly Payment</Label>
+                  <GLabel className="text-sm font-medium">Monthly Payment</GLabel>
                   <div className="text-3xl font-bold text-heading-accent">
                     ${result.monthlyPayment.toFixed(2)}
                   </div>
                 </div>
                 <div className="space-y-2">
-                  <Label className="text-sm font-medium">Total Interest</Label>
+                  <GLabel className="text-sm font-medium">Total Interest</GLabel>
                   <div className="text-3xl font-bold text-foreground">
                     ${result.totalInterest.toFixed(2)}
                   </div>
@@ -392,18 +393,18 @@ Interest Rate: ${result.interestRate.toFixed(2)}%`
                   Copy Results
                 </GButton>
               </div>
-            </CardContent>
-          </Card>
+            </GCardContent>
+          </GCard>
 
           {/* Payment Breakdown */}
-          <Card>
-            <CardHeader>
-              <CardTitle className="flex items-center gap-2">
+          <GCard>
+            <GCardHeader>
+              <GCardTitle className="flex items-center gap-2">
                 <PieChart className="h-5 w-5 text-foreground" />
                 Payment Breakdown
-              </CardTitle>
-            </CardHeader>
-            <CardContent className="space-y-4">
+              </GCardTitle>
+            </GCardHeader>
+            <GCardContent className="space-y-4">
               <div className="grid md:grid-cols-2 gap-4">
                 <div className="p-4 bg-muted rounded-lg border border-secondary-accent/30">
                   <h3 className="font-semibold text-heading-accent mb-2">Principal</h3>
@@ -414,19 +415,19 @@ Interest Rate: ${result.interestRate.toFixed(2)}%`
                   <div className="text-2xl font-bold text-foreground">{result.interestPercentage.toFixed(1)}%</div>
                 </div>
               </div>
-            </CardContent>
-          </Card>
+            </GCardContent>
+          </GCard>
 
           {/* Extra Payment Analysis */}
           {parseFloat(extraPayment) > 0 && (
-            <Card>
-              <CardHeader>
-                <CardTitle className="flex items-center gap-2">
+            <GCard>
+              <GCardHeader>
+                <GCardTitle className="flex items-center gap-2">
                   <TrendingUp className="h-5 w-5 text-heading-accent" />
                   Extra Payment Analysis
-                </CardTitle>
-              </CardHeader>
-              <CardContent>
+                </GCardTitle>
+              </GCardHeader>
+              <GCardContent>
                 <div className="grid md:grid-cols-2 gap-4">
                   <div className="p-4 bg-muted rounded-lg border border-primary/30">
                     <h3 className="font-semibold text-foreground mb-2">Interest Savings</h3>
@@ -437,19 +438,19 @@ Interest Rate: ${result.interestRate.toFixed(2)}%`
                     <div className="text-2xl font-bold text-heading-accent">{result.extraPaymentAnalysis.timeSaved} months</div>
                   </div>
                 </div>
-              </CardContent>
-            </Card>
+              </GCardContent>
+            </GCard>
           )}
 
           {/* Annual Amortization Schedule */}
-          <Card>
-            <CardHeader>
-              <CardTitle className="flex items-center gap-2">
+          <GCard>
+            <GCardHeader>
+              <GCardTitle className="flex items-center gap-2">
                 <Calendar className="h-5 w-5 text-foreground" />
                 Annual Amortization Schedule
-              </CardTitle>
-            </CardHeader>
-            <CardContent>
+              </GCardTitle>
+            </GCardHeader>
+            <GCardContent>
               <div className="overflow-x-auto">
                 <table className="w-full border-collapse border border-border">
                   <thead>
@@ -472,18 +473,18 @@ Interest Rate: ${result.interestRate.toFixed(2)}%`
                   </tbody>
                 </table>
               </div>
-            </CardContent>
-          </Card>
+            </GCardContent>
+          </GCard>
 
           {/* Monthly Schedule (First 12 months) */}
-          <Card>
-            <CardHeader>
-              <CardTitle className="flex items-center gap-2">
+          <GCard>
+            <GCardHeader>
+              <GCardTitle className="flex items-center gap-2">
                 <BarChart3 className="h-5 w-5 text-foreground" />
                 Monthly Schedule (First 12 Months)
-              </CardTitle>
-            </CardHeader>
-            <CardContent>
+              </GCardTitle>
+            </GCardHeader>
+            <GCardContent>
               <div className="overflow-x-auto">
                 <table className="w-full border-collapse border border-border">
                   <thead>
@@ -508,18 +509,18 @@ Interest Rate: ${result.interestRate.toFixed(2)}%`
                   </tbody>
                 </table>
               </div>
-            </CardContent>
-          </Card>
+            </GCardContent>
+          </GCard>
 
           {/* Recommendations */}
-          <Card>
-            <CardHeader>
-              <CardTitle className="flex items-center gap-2">
+          <GCard>
+            <GCardHeader>
+              <GCardTitle className="flex items-center gap-2">
                 <Target className="h-5 w-5 text-heading-accent" />
                 Personalized Recommendations
-              </CardTitle>
-            </CardHeader>
-            <CardContent>
+              </GCardTitle>
+            </GCardHeader>
+            <GCardContent>
               <div className="grid md:grid-cols-3 gap-6">
                 <div>
                   <h4 className="font-semibold mb-3 text-foreground">Payment Strategies</h4>
@@ -555,21 +556,21 @@ Interest Rate: ${result.interestRate.toFixed(2)}%`
                   </ul>
                 </div>
               </div>
-            </CardContent>
-          </Card>
+            </GCardContent>
+          </GCard>
         </div>
       )}
 
       {/* History Section */}
       {history.length > 0 && (
-        <Card>
-          <CardHeader>
-            <CardTitle className="flex items-center gap-2">
+        <GCard>
+          <GCardHeader>
+            <GCardTitle className="flex items-center gap-2">
               <History className="h-5 w-5 text-gray-500" />
               Recent Calculations
-            </CardTitle>
-          </CardHeader>
-          <CardContent>
+            </GCardTitle>
+          </GCardHeader>
+          <GCardContent>
             <div className="space-y-2">
               {history.map((item, index) => (
                 <div key={index} className="flex items-center justify-between p-3 bg-muted rounded-lg">
@@ -591,19 +592,19 @@ Interest Rate: ${result.interestRate.toFixed(2)}%`
                 </div>
               ))}
             </div>
-          </CardContent>
-        </Card>
+          </GCardContent>
+        </GCard>
       )}
 
       {/* Information Section */}
-      <Card>
-        <CardHeader>
-          <CardTitle className="flex items-center gap-2">
+      <GCard>
+        <GCardHeader>
+          <GCardTitle className="flex items-center gap-2">
             <Info className="h-5 w-5 text-foreground" />
             Amortization Calculator Features
-          </CardTitle>
-        </CardHeader>
-        <CardContent className="space-y-3">
+          </GCardTitle>
+        </GCardHeader>
+        <GCardContent className="space-y-3">
           <div className="p-4 bg-muted rounded-lg border border-primary/30">
             <div className="flex items-start gap-2">
               <Info className="h-4 w-4 text-foreground mt-0.5 flex-shrink-0" />
@@ -632,8 +633,8 @@ Interest Rate: ${result.interestRate.toFixed(2)}%`
               <strong>Professional Accuracy:</strong> Industry-standard calculations for mortgages, auto loans, and personal loans.
             </p>
           </div>
-        </CardContent>
-      </Card>
+        </GCardContent>
+      </GCard>
     </div>
   )
 }
