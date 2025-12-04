@@ -487,7 +487,7 @@ const toolConfig = createToolConfig({
             </div>
             <div className="p-4 bg-card border border-border rounded-lg">
               <h4 className="font-semibold mb-2">Offensive Language</h4>
-              <p className="text-sm text-muted-foreground">Names containing hateful speech, harassment, or sexually explicit language are strictly prohibited. YouTube's automated systems often flag these immediately.</p>
+              <p className="text-sm text-muted-foreground">Names containing offensive speech, harassment, or inappropriate language are strictly prohibited. YouTube's automated systems often flag these immediately.</p>
             </div>
             <div className="p-4 bg-card border border-border rounded-lg">
               <h4 className="font-semibold mb-2">Trademark Rights</h4>
