@@ -1,5 +1,5 @@
-import { PDFSign } from "@/components/pdf-sign"
-import { ToolPageLayout } from "@/components/tool-page-layout"
+import { PDFSign } from "@/components/pdf/pdf-sign"
+import { ToolPageLayout } from "@/components/common/tool-page-layout"
 import { createToolConfig } from "@/lib/create-tool-config"
 
 const toolConfig = createToolConfig({

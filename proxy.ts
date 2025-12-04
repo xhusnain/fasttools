@@ -1,7 +1,7 @@
 import { NextResponse } from 'next/server'
 import type { NextRequest } from 'next/server'
 import { redirects } from './lib/redirects'
-import { env } from './lib/env'
+import { env } from '@/config'
 import { isGoneUrl } from './lib/gone'
 
 function isAllowedOrigin(origin: string | null): boolean {

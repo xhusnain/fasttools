@@ -1,5 +1,5 @@
-import { ToolPageLayout } from "@/components/tool-page-layout"
-import { HTMLToMarkdown } from "@/components/html-to-markdown"
+import { ToolPageLayout } from "@/components/common/tool-page-layout"
+import { HTMLToMarkdown } from "@/components/dev-tools/html-to-markdown"
 import { createToolConfig } from "@/lib/create-tool-config"
 
 const toolConfig = createToolConfig({

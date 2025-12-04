@@ -1,6 +1,6 @@
 import type { Metadata } from "next"
-import { ToolPageLayout } from "@/components/tool-page-layout"
-import { IPSubnetCalculator } from "@/components/ip-subnet-calculator"
+import { ToolPageLayout } from "@/components/common/tool-page-layout"
+import { IPSubnetCalculator } from "@/components/dev-tools/ip-subnet-calculator"
 import { createMetadata } from "@/lib/metadata-base"
 import { Network, Globe, Shield, Layers, Hash, Info, Calculator, Lightbulb, Server, Database, Zap, Target, CheckCircle, BarChart3, Users, Clock, ShieldCheck, FileText } from "lucide-react"
 import Image from "next/image"

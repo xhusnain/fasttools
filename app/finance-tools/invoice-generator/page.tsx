@@ -1,5 +1,5 @@
-import { InvoiceGenerator } from "@/components/invoice-generator"
-import { ToolPageLayout } from "@/components/tool-page-layout"
+import { InvoiceGenerator } from "@/components/finance/invoice-generator"
+import { ToolPageLayout } from "@/components/common/tool-page-layout"
 import { createMetadata } from "@/lib/metadata-base"
 import { Code, Globe, Calculator, ArrowRight, FileText, DollarSign, Percent, Users } from "lucide-react"
 import type { Metadata } from "next"

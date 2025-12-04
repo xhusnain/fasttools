@@ -1,6 +1,6 @@
 import type { Metadata } from "next"
-import { ToolPageLayout } from "@/components/tool-page-layout"
-import { StandardDeviationCalculator } from "@/components/standard-deviation-calculator"
+import { ToolPageLayout } from "@/components/common/tool-page-layout"
+import { StandardDeviationCalculator } from "@/components/calculators/standard-deviation-calculator"
 import { createMetadata } from "@/lib/metadata-base"
 import { Calculator, BarChart3, TrendingUp, BookOpen, Users, Clock, Target, AlertCircle, Home, DollarSign, FileText, Percent, Award, Globe, PieChart } from "lucide-react"
 

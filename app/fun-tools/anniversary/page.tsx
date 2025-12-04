@@ -1,5 +1,5 @@
-import { AnniversaryCalculator } from "@/components/anniversary-calculator"
-import { ToolPageLayout } from "@/components/tool-page-layout"
+import { AnniversaryCalculator } from "@/components/calculators/anniversary-calculator"
+import { ToolPageLayout } from "@/components/common/tool-page-layout"
 import { createToolConfig } from "@/lib/create-tool-config"
 import { getCurrentYear } from "@/lib/utils"
 import { Heart, Calendar, Clock, Gift, ArrowRight, CheckCircle, HelpCircle, Star } from "lucide-react"

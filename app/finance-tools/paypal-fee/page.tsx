@@ -1,5 +1,5 @@
-import { PayPalFeeCalculator } from "@/components/paypal-fee-calculator"
-import { ToolPageLayout } from "@/components/tool-page-layout"
+import { PayPalFeeCalculator } from "@/components/finance/paypal-fee-calculator"
+import { ToolPageLayout } from "@/components/common/tool-page-layout"
 import { createMetadata } from "@/lib/metadata-base"
 import { Calculator, DollarSign, Target, TrendingUp, BarChart3, Copy, HelpCircle, Lightbulb, Star } from "lucide-react"
 import type { Metadata } from "next"

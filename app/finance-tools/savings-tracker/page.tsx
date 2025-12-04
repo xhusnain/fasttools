@@ -1,5 +1,5 @@
-import { SavingsGoalTracker } from "@/components/savings-goal-tracker"
-import { ToolPageLayout } from "@/components/tool-page-layout"
+import { SavingsGoalTracker } from "@/components/finance/savings-goal-tracker"
+import { ToolPageLayout } from "@/components/common/tool-page-layout"
 import { createMetadata } from "@/lib/metadata-base"
 import { Calculator, PiggyBank, CreditCard, FileText } from "lucide-react"
 import type { Metadata } from "next"

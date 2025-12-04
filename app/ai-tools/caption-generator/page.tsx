@@ -1,6 +1,6 @@
 import type { Metadata } from "next"
-import { AiCaptionGenerator } from "@/components/ai-caption-generator"
-import { ToolPageLayout } from "@/components/tool-page-layout"
+import { AiCaptionGenerator } from "@/components/social-media/ai-caption-generator"
+import { ToolPageLayout } from "@/components/common/tool-page-layout"
 import { createMetadata } from "@/lib/metadata-base"
 
 // Auto-update year

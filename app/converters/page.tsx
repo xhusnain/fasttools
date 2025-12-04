@@ -1,6 +1,7 @@
-import { ToolPageLayout } from "@/components/tool-page-layout"
+import { ToolPageLayout } from "@/components/common/tool-page-layout"
 import { createToolConfig } from "@/lib/create-tool-config"
-import { GCard } from "@/components/globalcomponents/gcard"
+import { GToolCard } from "@/ui/gtool-card"
+
 import { Type, Ruler, HardDrive, DollarSign, Globe, Thermometer } from "lucide-react"
 
 const converters = [
@@ -118,7 +119,7 @@ export default function ConvertersPage() {
       {...toolConfig.getLayoutProps(
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
           {converters.map((converter) => (
-            <GCard
+            <GToolCard
               key={`converters-${converter.href}`}
               title={converter.title}
               description={converter.description}

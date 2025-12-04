@@ -1,5 +1,5 @@
-import { DiscountCalculator } from "@/components/discount-calculator"
-import { ToolPageLayout } from "@/components/tool-page-layout"
+import { DiscountCalculator } from "@/components/finance/discount-calculator"
+import { ToolPageLayout } from "@/components/common/tool-page-layout"
 import { createMetadata } from "@/lib/metadata-base"
 import { Calculator, Percent, DollarSign, ShoppingCart, Tag, TrendingDown, Target, Zap, Shield, Globe, Clock, FileText, Palette, BarChart3, Smartphone, Settings, Eye, Code, Copy, ExternalLink, Users, Lightbulb, Search, CheckCircle, XCircle, Video, AlertCircle, Hash, ArrowRight, CreditCard, Banknote, Coins, TrendingUp, Receipt, Wallet, PiggyBank, ArrowUp, ArrowDown, Minus, Plus, Equal, HashIcon, HelpCircle, BookOpen, Star, Heart, Gift, PieChart, Award } from "lucide-react"
 import type { Metadata } from "next"

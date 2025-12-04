@@ -1,6 +1,6 @@
 import type { Metadata } from "next"
-import { ToolPageLayout } from "@/components/tool-page-layout"
-import InterestRateCalculator from "@/components/interest-rate-calculator"
+import { ToolPageLayout } from "@/components/common/tool-page-layout"
+import InterestRateCalculator from "@/components/finance/interest-rate-calculator"
 import { createMetadata } from "@/lib/metadata-base"
 import { Calculator, BarChart3, TrendingUp, BookOpen, Users, Clock, Target, Home } from "lucide-react"
 

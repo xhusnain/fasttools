@@ -1,4 +1,5 @@
-import { GHeader } from "@/components/globalcomponents/gheader"
+import { GHeader } from "@/ui/gheader"
+
 import { createMetadata } from "@/lib/metadata-base"
 import { Mail, FileText, AlertTriangle } from "lucide-react"
 

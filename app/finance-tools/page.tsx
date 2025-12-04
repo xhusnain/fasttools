@@ -1,10 +1,11 @@
-import { GCard } from "@/components/globalcomponents/gcard"
+import { GToolCard } from "@/ui/gtool-card"
+
 import {
   FileText, DollarSign, Percent, Calculator, Target, TrendingUp,
   Users, CreditCard, Home, BadgePercent, PiggyBank, ChartLine, Coins,
   ScrollText, Landmark, TrendingDown, Banknote
 } from "lucide-react"
-import { ToolPageLayout } from "@/components/tool-page-layout"
+import { ToolPageLayout } from "@/components/common/tool-page-layout"
 import { createMetadata } from "@/lib/metadata-base"
 
 export const metadata = createMetadata({
@@ -227,7 +228,7 @@ export default function FinanceToolsPage() {
       toolComponent={
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
           {tools.map((tool) => (
-            <GCard
+            <GToolCard
               key={`finance-tools-${tool.href}`}
               title={tool.title}
               description={tool.description}

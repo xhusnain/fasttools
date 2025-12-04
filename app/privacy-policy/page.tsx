@@ -1,5 +1,6 @@
-import { Breadcrumbs } from "@/components/breadcrumbs"
-import { GHeader } from "@/components/globalcomponents/gheader"
+import { Breadcrumbs } from "@/components/common/breadcrumbs"
+import { GHeader } from "@/ui/gheader"
+
 import { 
   Shield, 
   Lock, 

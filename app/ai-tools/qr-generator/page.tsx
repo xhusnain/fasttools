@@ -1,6 +1,6 @@
 import type { Metadata } from "next"
-import { AiQrGenerator } from "@/components/ai-qr-generator"
-import { ToolPageLayout } from "@/components/tool-page-layout"
+import { AiQrGenerator } from "@/components/ai/ai-qr-generator"
+import { ToolPageLayout } from "@/components/common/tool-page-layout"
 import { createMetadata } from "@/lib/metadata-base"
 
 // Auto-update year

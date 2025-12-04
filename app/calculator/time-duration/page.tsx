@@ -1,6 +1,6 @@
 import type { Metadata } from "next"
-import { ToolPageLayout } from "@/components/tool-page-layout"
-import { TimeDurationCalculator } from "@/components/time-duration-calculator"
+import { ToolPageLayout } from "@/components/common/tool-page-layout"
+import { TimeDurationCalculator } from "@/components/calculators/time-duration-calculator"
 import { createMetadata } from "@/lib/metadata-base"
 import { Clock, Calculator, Target, TrendingUp, Globe, Calendar, Plus, Minus, Zap, BarChart3, CheckCircle, BookOpen, Users, Award, Copy } from "lucide-react"
 

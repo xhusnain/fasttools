@@ -1,11 +1,12 @@
 import { Metadata } from "next"
 import Link from "next/link"
 import { ExternalLink, Code, Zap, Shield, Clock } from "lucide-react"
-import { CopyButton } from "@/components/copy-button"
-import { AdSpace } from "@/components/ad-space"
-import { ApiKeyGenerator } from "@/components/api-key-generator"
-import { GHeader } from "@/components/globalcomponents/gheader"
-import { Breadcrumbs } from "@/components/breadcrumbs"
+import { CopyButton } from "@/components/common/copy-button"
+import { AdSpace } from "@/components/dev-tools/ad-space"
+import { ApiKeyGenerator } from "@/components/dev-tools/api-key-generator"
+import { GHeader } from "@/ui/gheader"
+
+import { Breadcrumbs } from "@/components/common/breadcrumbs"
 import { createMetadata } from "@/lib/metadata-base"
 
 const baseMetadata = createMetadata({

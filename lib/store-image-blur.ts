@@ -1,16 +1,16 @@
 import { create } from "zustand";
 import axios from "axios";
-import { apiService } from "./api-service";
+import { ImageRepository } from "@/services/repositories/image.repository";
 import type {
-  EditorState,
+  ImageBlurEditorState,
   ProcessingStatus,
   ProcessingResult,
-} from "./types-image-blur";
+} from "@/types";
 
-interface EditorStore extends EditorState {
+interface EditorStore extends ImageBlurEditorState {
   _isInitialized: boolean;
-  refineStrength?: "light" | "medium" | "strong";
-  setRefineStrength?: (s: "light" | "medium" | "strong") => void;
+  refineStrength?: "weak" | "medium" | "strong";
+  setRefineStrength?: (s: "weak" | "medium" | "strong") => void;
 }
 
 export const useImageBlurStore = create<EditorStore>()(
@@ -133,7 +133,7 @@ export const useImageBlurStore = create<EditorStore>()(
         const strengthQ = refineStrength ?? "strong";
 
         try {
-          const resultBlob = await apiService.blurBackground({
+          const resultBlob = await ImageRepository.blurBackground({
             image: blob,
             intensity: blurIntensity,
             refine: "depth",
@@ -152,9 +152,8 @@ export const useImageBlurStore = create<EditorStore>()(
         } catch (error: any) {
           let errorMessage = "Something went wrong. Please try again.";
 
-          // The apiService might still use axios internally, so keeping this check for now.
-          // If apiService completely abstracts axios errors, this might need adjustment.
-          if (axios.isAxiosError(error)) { // Assuming apiService might re-throw axios errors or wrap them
+          // The ImageRepository uses HttpClient which internally uses axios
+          if (axios.isAxiosError(error)) {
             if (error.response) {
               const errText = await error.response.data.text().catch(() => "");
               errorMessage = errText || `Server error ${error.response.status}`;

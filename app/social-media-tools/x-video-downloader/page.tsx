@@ -1,5 +1,5 @@
-import { XDownloader } from "@/components/downloader-components/x-downloader/x-downloader"
-import { ToolPageLayout } from "@/components/tool-page-layout"
+import { XDownloader } from "@/components/social-media/x-downloader/x-downloader"
+import { ToolPageLayout } from "@/components/common/tool-page-layout"
 import { createToolConfig } from "@/lib/create-tool-config"
 import {
   Download, Shield, Zap, Target, AlertCircle, CheckCircle, FileText,

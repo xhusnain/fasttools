@@ -1,5 +1,5 @@
-import { LoremIpsumGenerator } from "@/components/lorem-ipsum-generator"
-import { ToolPageLayout } from "@/components/tool-page-layout"
+import { LoremIpsumGenerator } from "@/components/dev-tools/lorem-ipsum-generator"
+import { ToolPageLayout } from "@/components/common/tool-page-layout"
 import { createToolConfig } from "@/lib/create-tool-config"
 
 const toolConfig = createToolConfig({

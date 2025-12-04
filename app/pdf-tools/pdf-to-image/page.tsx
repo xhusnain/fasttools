@@ -1,5 +1,5 @@
-import { PDFToImage } from "@/components/pdf-to-image"
-import { ToolPageLayout } from "@/components/tool-page-layout"
+import { PDFToImage } from "@/components/pdf/pdf-to-image"
+import { ToolPageLayout } from "@/components/common/tool-page-layout"
 import { createToolConfig } from "@/lib/create-tool-config"
 
 const toolConfig = createToolConfig({

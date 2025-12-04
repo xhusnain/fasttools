@@ -1,5 +1,5 @@
-import { ImageBlur } from "@/components/image-blur"
-import { ToolPageLayout } from "@/components/tool-page-layout"
+import { ImageBlur } from "@/components/image/image-blur"
+import { ToolPageLayout } from "@/components/common/tool-page-layout"
 import { createToolConfig } from "@/lib/create-tool-config"
 
 const toolConfig = createToolConfig({

@@ -1,6 +1,6 @@
 import type { Metadata } from "next"
-import { ToolPageLayout } from "@/components/tool-page-layout"
-import { EMICalculator } from "@/components/emi-calculator"
+import { ToolPageLayout } from "@/components/common/tool-page-layout"
+import { EMICalculator } from "@/components/finance/emi-calculator"
 import { createMetadata } from "@/lib/metadata-base"
 import { Calculator, Target, CheckCircle, Home, Car, CreditCard, GraduationCap, TrendingUp, BarChart3, Clock, Shield, Info } from "lucide-react"
 

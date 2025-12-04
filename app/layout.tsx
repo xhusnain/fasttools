@@ -1,11 +1,11 @@
 import type React from "react"
 import "./globals.css"
-import { Header } from "@/components/header"
-import { Footer } from "@/components/footer"
-import { CookieConsent } from "@/components/cookie-consent"
-import { ThemeProvider } from "@/components/theme-provider"
+import { Header } from "@/components/common/header"
+import { Footer } from "@/components/common/footer"
+import { CookieConsent } from "@/components/common/cookie-consent"
+import { ThemeProvider } from "@/components/common/theme-provider"
 import Script from "next/script"
-import { env } from "@/lib/env"
+import { env } from "@/config/env"
 import { createMetadata, globalViewport, getWebsiteSchema } from "@/lib/metadata-base"
 import { roboto, montserrat } from "@/app/fonts"
 import { Analytics } from "@vercel/analytics/react"
@@ -136,12 +136,12 @@ export default function RootLayout({
         <link rel="preconnect" href="https://www.googletagmanager.com" />
         <link rel="preconnect" href="https://static.cloudflareinsights.com" />
         <link rel="dns-prefetch" href="https://www.google-analytics.com" />
+        {env.isProduction && (
+          <script dangerouslySetInnerHTML={{ __html: `(function(s){s.dataset.zone='10271866',s.src='https://al5sm.com/tag.min.js'})([document.documentElement, document.body].filter(Boolean).pop().appendChild(document.createElement('script')))` }} />
+        )}
       </head>
       <body className="bg-background font-sans text-foreground">
-        {env.isProduction && (
-          <script src="https://quge5.com/88/tag.min.js" data-zone="189818" async data-cfasync="false"></script>
-        )}
-        {/* Google Analytics */}
+
         {env.isProduction && (
           <>
             <Script

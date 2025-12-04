@@ -1,5 +1,5 @@
-import { CreditCardPayoff } from "@/components/credit-card-payoff"
-import { ToolPageLayout } from "@/components/tool-page-layout"
+import { CreditCardPayoff } from "@/components/finance/credit-card-payoff"
+import { ToolPageLayout } from "@/components/common/tool-page-layout"
 import { createMetadata } from "@/lib/metadata-base"
 import { Calculator, Target, TrendingUp, BarChart3, CreditCard, Award, DollarSign, Percent, Zap, HelpCircle, ExternalLink, PiggyBank } from "lucide-react"
 import type { Metadata } from "next"

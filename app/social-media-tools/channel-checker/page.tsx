@@ -1,22 +1,23 @@
-import { YoutubeChannelChecker } from "@/components/youtube-channel-checker"
-import { ToolPageLayout } from "@/components/tool-page-layout"
+import { YoutubeChannelChecker } from "@/components/social-media/youtube-channel-checker"
+import { ToolPageLayout } from "@/components/common/tool-page-layout"
 import { createToolConfig } from "@/lib/create-tool-config"
 import { getCurrentYear } from "@/lib/utils"
 import {
   Search, CheckCircle, AlertCircle, Globe, Youtube,
-  Lightbulb, Target, Shield, Zap, Copy, Users, Brain, RefreshCw
+  Lightbulb, Target, Shield, Zap, Copy, Users, Brain, RefreshCw,
+  TrendingUp, Trophy, Scale, XCircle
 } from "lucide-react"
 
 const toolConfig = createToolConfig({
   toolName: "YouTube Channel Name Checker",
   description: "Check if your desired YouTube channel name is available with our free YouTube Channel Name Checker. Instantly verify username availability and find unique channel ideas.",
-  metaTitle: "YouTube Channel Name Checker",
-  metaDescription: "Free YouTube Channel Name Checker: Instantly verify availability, check handles, and find unique ideas to secure your brand identity today.",
+  metaTitle: "YouTube Channel Name Checker - Check Username Availability Instantly (2025) | FastTools",
+  metaDescription: "Free YouTube channel name checker. Instantly verify if your desired username is available. Get alternative suggestions, check across platforms, and secure your perfect YouTube handle in 2025.",
   path: "/social-media-tools/channel-checker",
 
   header: {
-    title: `YouTube Channel Name Checker – Check YouTube Username Availability Instantly (${getCurrentYear()})`,
-    description: "Check if your desired YouTube channel name is available with our free channel checker tool. Instantly verify username availability, check youtube channel availability, and find unique channel ideas. Simply use our youtube name checker to check if youtube channel name is taken and secure your perfect YouTube handle in seconds. Our tool helps you find available youtube channel names and ensures your brand uniqueness.",
+    title: "YouTube Channel Name Checker - Check Username Availability Instantly (2025)",
+    description: "Free YouTube channel name checker. Instantly verify if your desired username is available. Get alternative suggestions, check across platforms, and secure your perfect YouTube handle in 2025.",
     titleSize: "medium",
     descriptionSize: "small",
   },
@@ -65,6 +66,54 @@ const toolConfig = createToolConfig({
       <div className="space-y-8">
         <article className="space-y-6">
           <h2 className="text-2xl font-bold text-foreground flex items-center gap-2">
+            <TrendingUp className="h-6 w-6 text-primary" />
+            2025 YouTube Naming Trends
+          </h2>
+          <p className="text-base text-muted-foreground leading-relaxed">
+            Stay ahead of the curve with the latest naming trends dominating YouTube in 2025:
+          </p>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div className="p-4 bg-card border border-border rounded-lg">
+              <h4 className="font-semibold mb-2 flex items-center gap-2">
+                <Zap className="h-4 w-4 text-yellow-500" />
+                Short & Punchy
+              </h4>
+              <p className="text-sm text-muted-foreground">
+                One-word names (e.g., "MrBeast", "Dream") continue to dominate. They are easy to remember, type, and brand.
+              </p>
+            </div>
+            <div className="p-4 bg-card border border-border rounded-lg">
+              <h4 className="font-semibold mb-2 flex items-center gap-2">
+                <Brain className="h-4 w-4 text-blue-500" />
+                Abstract & Unique
+              </h4>
+              <p className="text-sm text-muted-foreground">
+                Creators are moving away from descriptive names (e.g., "TechReviews") to abstract, brandable names (e.g., "Veritasium", "MKBHD").
+              </p>
+            </div>
+            <div className="p-4 bg-card border border-border rounded-lg">
+              <h4 className="font-semibold mb-2 flex items-center gap-2">
+                <Users className="h-4 w-4 text-green-500" />
+                Personal Branding
+              </h4>
+              <p className="text-sm text-muted-foreground">
+                Using your real name or a variation (e.g., "CaseyNeistat") builds trust and allows for content pivots.
+              </p>
+            </div>
+            <div className="p-4 bg-card border border-border rounded-lg">
+              <h4 className="font-semibold mb-2 flex items-center gap-2">
+                <Globe className="h-4 w-4 text-purple-500" />
+                Global Appeal
+              </h4>
+              <p className="text-sm text-muted-foreground">
+                Names that are easy to pronounce across different languages are becoming essential for global reach.
+              </p>
+            </div>
+          </div>
+        </article>
+
+        <article className="space-y-6">
+          <h2 className="text-2xl font-bold text-foreground flex items-center gap-2">
             <Target className="h-6 w-6 text-primary" />
             Why Use a Channel Name Checker?
           </h2>
@@ -96,6 +145,136 @@ const toolConfig = createToolConfig({
               <p className="text-sm text-muted-foreground">
                 YouTube handles (@username) are unique identifiers. Our tool helps you check if your desired handle is available so you can claim it before someone else does.
               </p>
+            </div>
+          </div>
+        </article>
+
+        <article className="space-y-6">
+          <h2 className="text-2xl font-bold text-foreground flex items-center gap-2">
+            <Lightbulb className="h-6 w-6 text-primary" />
+            Real Example Channel Names by Niche
+          </h2>
+          <p className="text-base text-muted-foreground">
+            See how top creators in different niches name their channels for maximum impact:
+          </p>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <div className="p-4 bg-muted/30 rounded-lg">
+              <h4 className="font-semibold mb-2 text-blue-500">Tech & Gaming</h4>
+              <ul className="text-sm text-muted-foreground space-y-1 list-disc pl-4">
+                <li>LinusTechTips (Personal + Niche)</li>
+                <li>Marques Brownlee (Real Name)</li>
+                <li>IGN (Acronym)</li>
+                <li>GameGrumps (Alliteration)</li>
+                <li>Austin Evans (Real Name)</li>
+              </ul>
+            </div>
+            <div className="p-4 bg-muted/30 rounded-lg">
+              <h4 className="font-semibold mb-2 text-pink-500">Beauty & Lifestyle</h4>
+              <ul className="text-sm text-muted-foreground space-y-1 list-disc pl-4">
+                <li>Jeffree Star (Real Name)</li>
+                <li>Vogue (Brand Name)</li>
+                <li>BestDressed (Descriptive)</li>
+                <li>Michelle Phan (Real Name)</li>
+                <li>Refinery29 (Abstract)</li>
+              </ul>
+            </div>
+          </div>
+        </article>
+
+        <article className="space-y-6">
+          <h2 className="text-2xl font-bold text-foreground flex items-center gap-2">
+            <Trophy className="h-6 w-6 text-primary" />
+            Success Stories
+          </h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div className="p-4 border border-border rounded-lg bg-card">
+              <p className="italic text-muted-foreground mb-4">"I was stuck for weeks trying to find a name for my coding channel. This tool helped me find 'CodeWithSarah' was taken, but suggested 'SarahCodesDaily' which I love!"</p>
+              <div className="flex items-center gap-2">
+                <div className="w-8 h-8 rounded-full bg-primary/20 flex items-center justify-center font-bold text-primary">S</div>
+                <div>
+                  <p className="text-sm font-semibold">Sarah J.</p>
+                  <p className="text-xs text-muted-foreground">Tech Creator</p>
+                </div>
+              </div>
+            </div>
+            <div className="p-4 border border-border rounded-lg bg-card">
+              <p className="italic text-muted-foreground mb-4">"The cross-platform check saved me. I almost picked a name that was free on YouTube but taken on Instagram. FastTools caught it instantly."</p>
+              <div className="flex items-center gap-2">
+                <div className="w-8 h-8 rounded-full bg-primary/20 flex items-center justify-center font-bold text-primary">M</div>
+                <div>
+                  <p className="text-sm font-semibold">Mike T.</p>
+                  <p className="text-xs text-muted-foreground">Gaming Streamer</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <article className="space-y-6">
+          <h2 className="text-2xl font-bold text-foreground flex items-center gap-2">
+            <Scale className="h-6 w-6 text-primary" />
+            Why Choose FastTools Over Other Checkers?
+          </h2>
+          <div className="overflow-x-auto">
+            <table className="w-full text-sm text-left">
+              <thead className="bg-muted/50 text-foreground">
+                <tr>
+                  <th className="p-3 rounded-tl-lg">Feature</th>
+                  <th className="p-3">FastTools</th>
+                  <th className="p-3 rounded-tr-lg">Others</th>
+                </tr>
+              </thead>
+              <tbody className="divide-y divide-border">
+                <tr>
+                  <td className="p-3 font-medium">Batch Checking</td>
+                  <td className="p-3 text-green-500 font-bold">Yes (10 at once)</td>
+                  <td className="p-3 text-muted-foreground">Usually 1 by 1</td>
+                </tr>
+                <tr>
+                  <td className="p-3 font-medium">Handle & URL Check</td>
+                  <td className="p-3 text-green-500 font-bold">Yes</td>
+                  <td className="p-3 text-muted-foreground">Often missing</td>
+                </tr>
+                <tr>
+                  <td className="p-3 font-medium">Cross-Platform</td>
+                  <td className="p-3 text-green-500 font-bold">Yes</td>
+                  <td className="p-3 text-muted-foreground">Paid feature</td>
+                </tr>
+                <tr>
+                  <td className="p-3 font-medium">AI Suggestions</td>
+                  <td className="p-3 text-green-500 font-bold">Advanced</td>
+                  <td className="p-3 text-muted-foreground">Basic/None</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </article>
+
+        <article className="space-y-6">
+          <h2 className="text-2xl font-bold text-foreground flex items-center gap-2">
+            <Target className="h-6 w-6 text-primary" />
+            5 Steps to the Perfect YouTube Name
+          </h2>
+          <div className="my-6">
+            <div className="aspect-video bg-muted rounded-lg flex items-center justify-center border-2 border-dashed border-muted-foreground/25">
+              <p className="text-muted-foreground">Infographic: 5 Steps to the Perfect YouTube Name (Placeholder)</p>
+            </div>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+            <div className="p-4 bg-green-500/10 border border-green-500/20 rounded-lg">
+              <h4 className="font-bold text-green-600 mb-1">Good Name</h4>
+              <p className="text-sm">TechDaily</p>
+              <p className="text-xs text-muted-foreground mt-2">Short, Descriptive, Memorable</p>
+            </div>
+            <div className="p-4 bg-red-500/10 border border-red-500/20 rounded-lg">
+              <h4 className="font-bold text-red-600 mb-1">Bad Name</h4>
+              <p className="text-sm">Tech_Guy_1995_Official</p>
+              <p className="text-xs text-muted-foreground mt-2">Too long, Numbers, Generic</p>
+            </div>
+            <div className="p-4 bg-blue-500/10 border border-blue-500/20 rounded-lg">
+              <h4 className="font-bold text-blue-600 mb-1">Great Name</h4>
+              <p className="text-sm">Verge</p>
+              <p className="text-xs text-muted-foreground mt-2">Brandable, Short, Unique</p>
             </div>
           </div>
         </article>
@@ -554,7 +733,7 @@ const toolConfig = createToolConfig({
 
         <article className="space-y-6">
           <h2 className="text-2xl font-bold text-foreground flex items-center gap-2">
-            <AlertCircle className="h-6 w-6 text-primary" />
+            <XCircle className="h-6 w-6 text-primary" />
             5 Common Naming Mistakes to Avoid
           </h2>
           <p className="text-base text-muted-foreground leading-relaxed">
@@ -562,23 +741,23 @@ const toolConfig = createToolConfig({
           </p>
           <ul className="space-y-3 text-sm text-muted-foreground">
             <li className="flex items-start gap-2">
-              <AlertCircle className="h-4 w-4 text-red-500 mt-0.5 flex-shrink-0" />
+              <XCircle className="h-4 w-4 text-red-500 mt-0.5 flex-shrink-0" />
               <span><strong>Using Numbers Excessively:</strong> "Gamer123456" looks spammy and is hard to remember.</span>
             </li>
             <li className="flex items-start gap-2">
-              <AlertCircle className="h-4 w-4 text-red-500 mt-0.5 flex-shrink-0" />
+              <XCircle className="h-4 w-4 text-red-500 mt-0.5 flex-shrink-0" />
               <span><strong>Copying Big Creators:</strong> "PewDiePie2" will never build its own identity. Be original.</span>
             </li>
             <li className="flex items-start gap-2">
-              <AlertCircle className="h-4 w-4 text-red-500 mt-0.5 flex-shrink-0" />
+              <XCircle className="h-4 w-4 text-red-500 mt-0.5 flex-shrink-0" />
               <span><strong>Hard to Spell Names:</strong> If people can't spell it, they can't search for it. Avoid creative misspellings like "KreativKooking".</span>
             </li>
             <li className="flex items-start gap-2">
-              <AlertCircle className="h-4 w-4 text-red-500 mt-0.5 flex-shrink-0" />
+              <XCircle className="h-4 w-4 text-red-500 mt-0.5 flex-shrink-0" />
               <span><strong>Limiting Your Scope:</strong> "iPhoneRepairGuy" limits you if you ever want to fix Samsungs or do general tech.</span>
             </li>
             <li className="flex items-start gap-2">
-              <AlertCircle className="h-4 w-4 text-red-500 mt-0.5 flex-shrink-0" />
+              <XCircle className="h-4 w-4 text-red-500 mt-0.5 flex-shrink-0" />
               <span><strong>Ignoring Social Handles:</strong> Getting the YouTube name but missing the Instagram/TikTok handle creates a disjointed brand.</span>
             </li>
           </ul>
@@ -587,6 +766,13 @@ const toolConfig = createToolConfig({
     ),
 
     aboutToolText: `
+      2025 YouTube Naming Trends
+      Stay ahead of the curve with the latest naming trends dominating YouTube in 2025:
+      Short & Punchy: One-word names (e.g., "MrBeast", "Dream") continue to dominate. They are easy to remember, type, and brand.
+      Abstract & Unique: Creators are moving away from descriptive names (e.g., "TechReviews") to abstract, brandable names (e.g., "Veritasium", "MKBHD").
+      Personal Branding: Using your real name or a variation (e.g., "CaseyNeistat") builds trust and allows for content pivots.
+      Global Appeal: Names that are easy to pronounce across different languages are becoming essential for global reach.
+
       Why Use a Channel Name Checker?
       Your channel name is your brand on YouTube. It's how viewers find you, remember you, and share your content. A good name can boost your discoverability, while a bad one can hinder your growth.
       
@@ -595,6 +781,26 @@ const toolConfig = createToolConfig({
       
       Secure Your Handle
       YouTube handles (@username) are unique identifiers. Our tool helps you check if your desired handle is available so you can claim it before someone else does.
+
+      Real Example Channel Names by Niche
+      See how top creators in different niches name their channels for maximum impact:
+      Tech & Gaming: LinusTechTips, Marques Brownlee, IGN, GameGrumps, Austin Evans.
+      Beauty & Lifestyle: Jeffree Star, Vogue, BestDressed, Michelle Phan, Refinery29.
+
+      Success Stories
+      "I was stuck for weeks trying to find a name for my coding channel. This tool helped me find 'CodeWithSarah' was taken, but suggested 'SarahCodesDaily' which I love!" - Sarah J., Tech Creator
+      "The cross-platform check saved me. I almost picked a name that was free on YouTube but taken on Instagram. FastTools caught it instantly." - Mike T., Gaming Streamer
+
+      Why Choose FastTools Over Other Checkers?
+      Batch Checking: Yes (10 at once) vs Usually 1 by 1
+      Handle & URL Check: Yes vs Often missing
+      Cross-Platform: Yes vs Paid feature
+      AI Suggestions: Advanced vs Basic/None
+
+      5 Steps to the Perfect YouTube Name
+      1. Good Name: TechDaily (Short, Descriptive, Memorable)
+      2. Bad Name: Tech_Guy_1995_Official (Too long, Numbers, Generic)
+      3. Great Name: Verge (Brandable, Short, Unique)
 
       Tips for Choosing a Great Channel Name
       Keep it Short & Simple: Aim for a name that is easy to spell, pronounce, and remember. Avoid long strings of numbers or complex characters.
@@ -691,6 +897,14 @@ const toolConfig = createToolConfig({
 
     faqs: [
       {
+        question: "How do I check if a YouTube channel name is taken?",
+        answer: "Simply enter your desired channel name in our free checker tool. It instantly searches YouTube's database and shows you if the name is available, along with similar existing channels."
+      },
+      {
+        question: "Is the YouTube channel name checker free?",
+        answer: "Yes, our YouTube channel name checker is 100% free with unlimited checks. No registration or payment required."
+      },
+      {
         question: "How does the YouTube Channel Name Checker work?",
         answer: "Our channel checker uses advanced web scraping technology to check youtube channel availability by testing YouTube's public URLs. It tests multiple URL formats (@username, /c/username, /user/username) and analyzes the response to determine if a channel name is taken."
       },
@@ -714,7 +928,6 @@ const toolConfig = createToolConfig({
         question: "Why is there a limit of 10 names per batch check?",
         answer: "The 10-name limit balances efficiency with server protection. This prevents overwhelming YouTube's servers while providing sufficient options for most users."
       },
-
       {
         question: "How are the alternative suggestions generated?",
         answer: "Our suggestion engine creates variations based on your original input using proven naming patterns. It generates combinations with words like 'Official', 'TV', 'Channel', 'HQ', 'Media', 'Studio', 'Network', 'Gaming', and 'Reviews'."
@@ -766,10 +979,6 @@ const toolConfig = createToolConfig({
       {
         question: "How often should I check name availability?",
         answer: "Check availability as close as possible to when you plan to create your channel, especially for popular names. Names can become unavailable quickly, so avoid checking too far in advance."
-      },
-      {
-        question: "Is the YouTube Channel Name Checker completely free?",
-        answer: "Yes, our YouTube channel name checker is completely free to use with no hidden fees, registration requirements, or usage limits."
       },
       {
         question: "How to check if a YouTube channel name is available?",

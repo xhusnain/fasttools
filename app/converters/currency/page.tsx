@@ -1,6 +1,6 @@
-import { CurrencyConverter } from "@/components/currency-converter"
-import { Top10CurrenciesTable } from "@/components/top10-currencies-table"
-import { ToolPageLayout } from "@/components/tool-page-layout"
+import { CurrencyConverter } from "@/components/converters/currency-converter"
+import { Top10CurrenciesTable } from "@/components/finance/top10-currencies-table"
+import { ToolPageLayout } from "@/components/common/tool-page-layout"
 import { createToolConfig } from "@/lib/create-tool-config"
 import Link from "next/link"
 

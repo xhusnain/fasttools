@@ -1,26 +1,20 @@
-FROM node:20-slim AS base
+FROM node:lts-alpine AS base
 WORKDIR /app
 
-FROM base AS system-deps
-RUN apt-get update && apt-get install -y --no-install-recommends \
-    ffmpeg \
-    python3 \
-    && rm -rf /var/lib/apt/lists/*
-
 FROM base AS deps
-RUN corepack enable && corepack prepare pnpm@10.18.0 --activate
-COPY package.json pnpm-lock.yaml* .pnpmfile.cjs* ./
-RUN pnpm install --no-frozen-lockfile
+RUN apk add --no-cache libc6-compat
+COPY package.json package-lock.json ./
+RUN npm ci
 
 FROM base AS builder
-RUN corepack enable && corepack prepare pnpm@10.18.0 --activate
+WORKDIR /app
 COPY --from=deps /app/node_modules ./node_modules
 COPY . .
 ENV NODE_ENV=production
 ENV NEXT_TELEMETRY_DISABLED=1
-RUN pnpm run download-models && pnpm run build
+RUN npm run build
 
-FROM system-deps AS runner
+FROM base AS runner
 WORKDIR /app
 
 ENV NODE_ENV=production
@@ -28,18 +22,22 @@ ENV NEXT_TELEMETRY_DISABLED=1
 ENV PORT=7000
 ENV HOSTNAME="0.0.0.0"
 
-RUN groupadd -r -g 1001 nodejs && useradd -r -u 1001 -g nodejs nextjs
+RUN addgroup --system --gid 1001 nodejs
+RUN adduser --system --uid 1001 nextjs
 
+COPY --from=builder /app/public ./public
+
+# Set the correct permission for prerender cache
+RUN mkdir .next
+RUN chown nextjs:nodejs .next
+
+# Automatically leverage output traces to reduce image size
+# https://nextjs.org/docs/advanced-features/output-file-tracing
 COPY --from=builder --chown=nextjs:nodejs /app/.next/standalone ./
 COPY --from=builder --chown=nextjs:nodejs /app/.next/static ./.next/static
-COPY --from=builder --chown=nextjs:nodejs /app/public ./public
-COPY --from=builder --chown=nextjs:nodejs /app/bin ./bin
-
-RUN if [ -f ./bin/yt-dlp ]; then \
-      chmod +x ./bin/yt-dlp && \
-      ./bin/yt-dlp --version > /dev/null 2>&1 || true; \
-    fi
 
 USER nextjs
+
 EXPOSE 7000
+
 CMD ["node", "server.js"]

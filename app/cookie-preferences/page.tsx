@@ -1,17 +1,13 @@
 "use client"
 
 import { useState, useEffect } from "react"
-import { Breadcrumbs } from "@/components/breadcrumbs"
-import { GButton } from "@/components/globalcomponents/gbutton"
+import type { CookiePreferences } from "@/types"
+import { Breadcrumbs } from "@/components/common/breadcrumbs"
+import { GButton } from "@/ui/gbutton"
+
 import { Shield, Cookie, Eye, Settings, CheckCircle, AlertTriangle, ExternalLink, Lock, BarChart, Target } from "lucide-react"
 import Link from "next/link"
 
-interface CookiePreferences {
-  essential: boolean
-  analytics: boolean
-  advertising: boolean
-  functional: boolean
-}
 
 export default function CookiePreferencesPage() {
   const [preferences, setPreferences] = useState<CookiePreferences>({

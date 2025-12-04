@@ -1,5 +1,5 @@
-import { BillSplitter } from "@/components/bill-splitter"
-import { ToolPageLayout } from "@/components/tool-page-layout"
+import { BillSplitter } from "@/components/finance/bill-splitter"
+import { ToolPageLayout } from "@/components/common/tool-page-layout"
 import { createMetadata } from "@/lib/metadata-base"
 import { Calculator, Target, TrendingUp, BarChart3, Receipt, Award, Users, DollarSign, Percent, Zap, FileText, HelpCircle, ExternalLink, PiggyBank, CreditCard } from "lucide-react"
 import type { Metadata } from "next"

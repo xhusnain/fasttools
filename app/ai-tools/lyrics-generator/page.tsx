@@ -1,6 +1,6 @@
 import type { Metadata } from "next"
-import { AiLyricsGenerator } from "@/components/ai-lyrics-generator"
-import { ToolPageLayout } from "@/components/tool-page-layout"
+import { AiLyricsGenerator } from "@/components/social-media/ai-lyrics-generator"
+import { ToolPageLayout } from "@/components/common/tool-page-layout"
 import { createMetadata } from "@/lib/metadata-base"
 
 // Auto-update year

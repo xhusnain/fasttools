@@ -1,10 +1,10 @@
-import { ToolPageLayout } from "@/components/tool-page-layout"
+import { ToolPageLayout } from "@/components/common/tool-page-layout"
 import { createToolConfig } from "@/lib/create-tool-config"
 import {
  X, CheckCircle2
 } from "lucide-react"
 import { getCurrentYear } from "@/lib/utils"
-import {InstagramDownloader} from "@/components/downloader-components/instagram-downloader/instagram-downloader";
+import {InstagramDownloader} from "@/components/social-media/instagram-downloader/instagram-downloader";
 
 const toolConfig = createToolConfig({
   toolName: "Instagram Downloader",

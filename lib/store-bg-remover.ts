@@ -1,16 +1,16 @@
 import { create } from "zustand";
 import axios from "axios";
-import { apiService } from "./api-service";
+import { ImageRepository } from "@/services/repositories/image.repository";
 import type {
-  EditorState,
+  BgRemoverEditorState,
   ProcessingStatus,
   ProcessingResult,
-} from "./types-bg-remover";
+} from "@/types";
 
-interface EditorStore extends EditorState {
+interface EditorStore extends BgRemoverEditorState {
   _isInitialized: boolean;
-  refineStrength?: "light" | "medium" | "strong";
-  setRefineStrength?: (s: "light" | "medium" | "strong") => void;
+  refineStrength?: "weak" | "medium" | "strong";
+  setRefineStrength?: (s: "weak" | "medium" | "strong") => void;
 }
 
 export const useBgRemoverStore = create<EditorStore>()(
@@ -120,10 +120,10 @@ export const useBgRemoverStore = create<EditorStore>()(
           },
         });
 
-        const strengthQ = refineStrength ?? "strong";
+        const strengthQ: "weak" | "medium" | "strong" = refineStrength ?? "strong";
 
         try {
-          const resultBlob = await apiService.removeBackground({
+          const resultBlob = await ImageRepository.removeBackground({
             image: blob,
             refine: "depth",
             strength: strengthQ,

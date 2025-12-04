@@ -1,5 +1,5 @@
-import { ToolPageLayout } from "@/components/tool-page-layout"
-import { JSONToCSV } from "@/components/json-to-csv"
+import { ToolPageLayout } from "@/components/common/tool-page-layout"
+import { JSONToCSV } from "@/components/dev-tools/json-to-csv"
 import { createToolConfig } from "@/lib/create-tool-config"
 
 const toolConfig = createToolConfig({

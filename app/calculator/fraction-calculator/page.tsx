@@ -1,6 +1,6 @@
 import type { Metadata } from "next"
-import { ToolPageLayout } from "@/components/tool-page-layout"
-import FractionCalculator from "@/components/fraction-calculator"
+import { ToolPageLayout } from "@/components/common/tool-page-layout"
+import FractionCalculator from "@/components/calculators/fraction-calculator"
 import { createMetadata } from "@/lib/metadata-base"
 import { Calculator, Plus, Minus, X, Divide, Brain, Square } from "lucide-react"
 

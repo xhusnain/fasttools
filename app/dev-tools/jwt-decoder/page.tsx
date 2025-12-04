@@ -1,5 +1,5 @@
-import { ToolPageLayout } from "@/components/tool-page-layout"
-import { JWTDecoder } from "@/components/jwt-decoder"
+import { ToolPageLayout } from "@/components/common/tool-page-layout"
+import { JWTDecoder } from "@/components/dev-tools/jwt-decoder"
 import { createToolConfig } from "@/lib/create-tool-config"
 
 const toolConfig = createToolConfig({

@@ -1,5 +1,5 @@
-import { TextCaseConverter } from "@/components/text-case-converter"
-import { ToolPageLayout } from "@/components/tool-page-layout"
+import { TextCaseConverter } from "@/components/converters/text-case-converter"
+import { ToolPageLayout } from "@/components/common/tool-page-layout"
 import { createToolConfig } from "@/lib/create-tool-config"
 
 const toolConfig = createToolConfig({

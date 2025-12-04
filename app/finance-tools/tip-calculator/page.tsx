@@ -1,5 +1,5 @@
-import { TipCalculator } from "@/components/tip-calculator"
-import { ToolPageLayout } from "@/components/tool-page-layout"
+import { TipCalculator } from "@/components/finance/tip-calculator"
+import { ToolPageLayout } from "@/components/common/tool-page-layout"
 import { createMetadata } from "@/lib/metadata-base"
 import { Calculator, Users, Receipt, Globe } from "lucide-react"
 import type { Metadata } from "next"

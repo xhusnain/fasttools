@@ -1,6 +1,7 @@
-import { ToolPageLayout } from "@/components/tool-page-layout"
+import { ToolPageLayout } from "@/components/common/tool-page-layout"
 import { createToolConfig } from "@/lib/create-tool-config"
-import { GCard } from "@/components/globalcomponents/gcard"
+import { GToolCard } from "@/ui/gtool-card"
+
 import { Code2, FileJson, Palette, Hash, FileCode, Braces } from "lucide-react"
 
 const devTools = [
@@ -527,7 +528,7 @@ export default function DevToolsPage() {
         {...toolConfig.getLayoutProps(
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
             {devTools.map((tool) => (
-              <GCard
+              <GToolCard
                 key={`dev-tools-${tool.href}`}
                 title={tool.title}
                 description={tool.description}

@@ -1,4 +1,0 @@
-enable-pre-post-scripts=true
-scripts-prepend-node-path=true
-allowed-scripts=@vercel/speed-insights,@vercel/analytics
-auto-install-peers=true

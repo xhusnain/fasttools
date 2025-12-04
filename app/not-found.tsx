@@ -1,7 +1,8 @@
 import Link from "next/link"
 import { headers } from "next/headers"
-import { GButton } from "@/components/globalcomponents/gbutton"
-import { GCard } from "@/components/globalcomponents/gcard"
+import { GButton } from "@/ui/gbutton"
+import { GToolCard } from "@/ui/gtool-card"
+
 import { Calculator, Home, Search, AlertCircle, Activity, Calendar, DollarSign } from "lucide-react"
 import type { Metadata } from "next"
 
@@ -57,7 +58,7 @@ export default async function NotFound() {
               Popular Tools
             </h2>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
-              <GCard
+              <GToolCard
                 title="Age Calculator"
                 description="Calculate exact age in years, months, weeks, days, hours, minutes, and seconds with precision accuracy for any date"
                 href="/calculator/age-calculator"
@@ -65,7 +66,7 @@ export default async function NotFound() {
                 badge="Essential"
                 badgeColor="bg-primary/90"
               />
-              <GCard
+              <GToolCard
                 title="BMI Calculator"
                 description="Calculate your Body Mass Index with detailed health insights and personalized recommendations based on WHO and CDC standards"
                 href="/calculator/bmi-calculator"
@@ -73,7 +74,7 @@ export default async function NotFound() {
                 badge="Popular"
                 badgeColor="bg-blue-500/90"
               />
-              <GCard
+              <GToolCard
                 title="Loan Calculator"
                 description="Calculate loan payments, total interest, amortization schedules, and compare different loan options easily"
                 href="/finance-tools/loan-calculator"
@@ -81,7 +82,7 @@ export default async function NotFound() {
                 badge="Finance"
                 badgeColor="bg-emerald-500/90"
               />
-              <GCard
+              <GToolCard
                 title="Currency Converter"
                 description="Real-time currency conversion for 150+ world currencies with live exchange rates updated every minute for accurate international transactions"
                 href="/converters/currency"

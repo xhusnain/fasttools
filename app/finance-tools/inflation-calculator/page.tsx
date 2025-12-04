@@ -1,6 +1,6 @@
 import type { Metadata } from "next"
-import { ToolPageLayout } from "@/components/tool-page-layout"
-import InflationCalculator from "@/components/inflation-calculator"
+import { ToolPageLayout } from "@/components/common/tool-page-layout"
+import InflationCalculator from "@/components/finance/inflation-calculator"
 import { createMetadata } from "@/lib/metadata-base"
 import { Calculator, BarChart3, TrendingUp, BookOpen, Users, Clock, Target, Home, DollarSign, FileText, Award, Globe, PieChart, Percent } from "lucide-react"
 

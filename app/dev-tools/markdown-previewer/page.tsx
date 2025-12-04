@@ -1,5 +1,5 @@
-import { ToolPageLayout } from "@/components/tool-page-layout"
-import { MarkdownPreviewer } from "@/components/markdown-previewer"
+import { ToolPageLayout } from "@/components/common/tool-page-layout"
+import { MarkdownPreviewer } from "@/components/dev-tools/markdown-previewer"
 import { createToolConfig } from "@/lib/create-tool-config"
 
 const toolConfig = createToolConfig({

@@ -1,5 +1,5 @@
-import { HashtagCounter } from "@/components/hashtag-counter"
-import { ToolPageLayout } from "@/components/tool-page-layout"
+import { HashtagCounter } from "@/components/social-media/hashtag-counter"
+import { ToolPageLayout } from "@/components/common/tool-page-layout"
 import { createToolConfig } from "@/lib/create-tool-config"
 import {
   Hash, Code, Globe, Calculator, ArrowRight, Target, Shield, Zap,

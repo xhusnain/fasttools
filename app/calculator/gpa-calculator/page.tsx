@@ -1,6 +1,6 @@
 import type { Metadata } from "next"
-import { ToolPageLayout } from "@/components/tool-page-layout"
-import { GPACalculator } from "@/components/gpa-calculator"
+import { ToolPageLayout } from "@/components/common/tool-page-layout"
+import { GPACalculator } from "@/components/calculators/gpa-calculator"
 import { createMetadata } from "@/lib/metadata-base"
 import { Calculator, Award, TrendingUp, Info, Globe, Target, Users, BarChart3, Building, Clock, DollarSign, Home, FileText, Percent, BookOpen, Shield, Star } from "lucide-react"
 

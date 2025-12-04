@@ -1,5 +1,6 @@
-import { Breadcrumbs } from "@/components/breadcrumbs"
-import { GHeader } from "@/components/globalcomponents/gheader"
+import { Breadcrumbs } from "@/components/common/breadcrumbs"
+import { GHeader } from "@/ui/gheader"
+
 import {
   Search,
   CheckCircle,
@@ -10,8 +11,6 @@ import {
   ArrowRight
 } from "lucide-react"
 import Link from "next/link"
-import type { Metadata } from "next"
-
 import { createMetadata } from "@/lib/metadata-base"
 
 export const metadata = createMetadata({
@@ -132,7 +131,7 @@ export default function AboutPage() {
                     <Search className="h-8 w-8 md:h-10 md:w-10 text-foreground" />
                   </div>
                   <h3 className="text-lg md:text-xl font-semibold text-heading-accent mb-2">Hard to Find</h3>
-                  <p className="text-sm md:text-base text-muted-foreground leading-relaxed">
+                  <p className="text-sm md:text-base text-foreground leading-relaxed">
                     Searching for reliable online tools is frustrating. Most results are broken links, outdated tools, or hidden behind paywalls. We've done the hard work of finding and curating only the best tools.
                   </p>
                 </div>
@@ -143,7 +142,7 @@ export default function AboutPage() {
                     <CheckCircle className="h-8 w-8 md:h-10 md:w-10 text-foreground" />
                   </div>
                   <h3 className="text-lg md:text-xl font-semibold text-heading-accent mb-2">Tools That Actually Work</h3>
-                  <p className="text-sm md:text-base text-muted-foreground leading-relaxed">
+                  <p className="text-sm md:text-base text-foreground leading-relaxed">
                     Every tool on FastTools is tested and verified to work perfectly. No broken features, no error messages, no wasted time. Just reliable, professional-grade tools ready to use instantly.
                   </p>
                 </div>
@@ -154,7 +153,7 @@ export default function AboutPage() {
                     <Zap className="h-8 w-8 md:h-10 md:w-10 text-foreground" />
                   </div>
                   <h3 className="text-lg md:text-xl font-semibold text-heading-accent mb-2">All in One Place</h3>
-                  <p className="text-sm md:text-base text-muted-foreground leading-relaxed">
+                  <p className="text-sm md:text-base text-foreground leading-relaxed">
                     Why waste hours searching across dozens of websites? We've consolidated 1000+ essential tools into one unified platform. Calculators, converters, generators, and more - all accessible instantly.
                   </p>
                 </div>
@@ -165,7 +164,7 @@ export default function AboutPage() {
                     <Globe className="h-8 w-8 md:h-10 md:w-10 text-foreground" />
                   </div>
                   <h3 className="text-lg md:text-xl font-semibold text-heading-accent mb-2">Trusted Worldwide</h3>
-                  <p className="text-sm md:text-base text-muted-foreground leading-relaxed">
+                  <p className="text-sm md:text-base text-foreground leading-relaxed">
                     Used by millions across 190+ countries. From students and freelancers to Fortune 500 companies, FastTools delivers the same reliable, professional tools to everyone - completely free, forever.
                   </p>
                 </div>
@@ -176,7 +175,7 @@ export default function AboutPage() {
             <div className="bg-card border border-border/30 rounded-xl p-6 md:p-8 mb-12 md:mb-16">
               <h2 className="text-2xl md:text-3xl font-bold text-foreground mb-6 md:mb-8 text-center">Our Story: Building the World's Most Comprehensive Free Tools Platform</h2>
 
-              <div className="space-y-6 text-muted-foreground text-base md:text-lg leading-relaxed">
+              <div className="space-y-6 text-foreground text-base md:text-lg leading-relaxed">
                 <p>
                   FastTools was born in 2024 from a simple but powerful observation: finding reliable, genuinely free online tools shouldn't be this hard. We noticed that millions of people worldwide struggle daily with broken links, fake free tools that require credit cards, outdated software, and cluttered interfaces filled with advertisements. Something had to change.
                 </p>
@@ -251,7 +250,7 @@ export default function AboutPage() {
                   </div>
                   <h2 className="text-xl md:text-2xl font-bold text-heading-accent">Vision</h2>
                 </div>
-                <p className="text-sm md:text-base text-foreground/80 leading-relaxed">
+                <p className="text-sm md:text-base text-foreground leading-relaxed">
                   To lead the way in digital productivity by delivering innovative, sustainable, and accessible solutions that empower millions of users worldwide.
                 </p>
               </div>
@@ -264,7 +263,7 @@ export default function AboutPage() {
                   </div>
                   <h2 className="text-xl md:text-2xl font-bold text-heading-accent">Mission</h2>
                 </div>
-                <p className="text-sm md:text-base text-foreground/80 leading-relaxed">
+                <p className="text-sm md:text-base text-foreground leading-relaxed">
                   To leverage our expertise, resources, and technology to create online tools that exceed industry standards and provide exceptional value to users everywhere.
                 </p>
               </div>

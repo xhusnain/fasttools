@@ -1,5 +1,5 @@
-import { InstagramDpViewer } from "@/components/instagram-dp-viewer"
-import { ToolPageLayout } from "@/components/tool-page-layout"
+import { InstagramDpViewer } from "@/components/social-media/instagram-dp-viewer"
+import { ToolPageLayout } from "@/components/common/tool-page-layout"
 import { createToolConfig } from "@/lib/create-tool-config"
 
 const toolConfig = createToolConfig({
