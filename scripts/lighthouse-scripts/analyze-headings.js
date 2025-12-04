@@ -4,7 +4,7 @@
  * Run with: node scripts/analyze-headings.js <url>
  */
 
-import { JSDOM } from 'jsdom';
+const { JSDOM } = require('jsdom');
 
 async function analyzeHeadings(url) {
     try {
@@ -71,11 +71,15 @@ async function analyzeHeadings(url) {
 }
 
 // Run from command line
-if (process.argv.length < 3) {
-    console.log('Usage: node scripts/analyze-headings.js <url>');
-    console.log('Example: node scripts/analyze-headings.js https://www.fasttools.store/');
-    process.exit(1);
+if (require.main === module) {
+    if (process.argv.length < 3) {
+        console.log('Usage: node scripts/analyze-headings.js <url>');
+        console.log('Example: node scripts/analyze-headings.js https://www.fasttools.store/');
+        process.exit(1);
+    }
+
+    const url = process.argv[2];
+    analyzeHeadings(url);
 }
 
-const url = process.argv[2];
-analyzeHeadings(url);
+module.exports = { analyzeHeadings };
