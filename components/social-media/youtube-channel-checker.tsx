@@ -8,17 +8,7 @@ import { GCard } from "@/ui/gcard"
 
 import { Search, CheckCircle, XCircle, Lightbulb, Copy, ExternalLink, Users, Video, AlertCircle, Upload } from "lucide-react"
 import { LoadingSpinner } from "@/components/common/loading-spinner"
-
-
-interface ChannelCheckResult {
-  channelName: string
-  available: boolean
-  channelId?: string
-  channelUrl?: string
-  subscriberCount?: number
-  videoCount?: number
-  error?: string
-}
+import { ChannelCheckResult } from "@/types"
 
 export function YoutubeChannelChecker() {
   const [channelNames, setChannelNames] = useState("")

@@ -1,5 +1,5 @@
 export * from "./api.types";
-export * from "./downloader";
+export * from "./social-media-types/downloader.types";
 export * from "./image-processing.types";
 export * from "./ai.types";
 export * from "./tool-page-layout.types";
@@ -40,4 +40,6 @@ export * from "./common-types/search-bar.types";
 export * from "./converter-types/conversion-calculator.types";
 export * from "./converter-types/currency-converter.types";
 export * from "./converter-types/format-converter.types";
+
+export * from "./social-media-types/youtube-channel-checker.types";
 
