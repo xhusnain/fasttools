@@ -136,9 +136,6 @@ export default function RootLayout({
         <link rel="preconnect" href="https://www.googletagmanager.com" />
         <link rel="preconnect" href="https://static.cloudflareinsights.com" />
         <link rel="dns-prefetch" href="https://www.google-analytics.com" />
-        {env.isProduction && (
-          <script dangerouslySetInnerHTML={{ __html: `(function(s){s.dataset.zone='10271866',s.src='https://al5sm.com/tag.min.js'})([document.documentElement, document.body].filter(Boolean).pop().appendChild(document.createElement('script')))` }} />
-        )}
       </head>
       <body className="bg-background font-sans text-foreground">
 
