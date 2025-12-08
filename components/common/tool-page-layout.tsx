@@ -104,12 +104,12 @@ export function ToolPageLayout({
                             color={header.color}
                         />
 
-                        {showMobileAd && !env.isProduction && (
+                        {showMobileAd && (
                             <div className="lg:hidden mt-6">
                                 <div className="text-center mb-2">
                                     <span className="text-xs text-muted-foreground font-medium">Advertisement</span>
                                 </div>
-                                <AdSpace slot="content" className="w-full h-64 border border-border rounded-xl shadow-sm bg-card" />
+                                <AdSpace format="square" className="w-full h-64 border border-border rounded-xl shadow-sm bg-card" />
                             </div>
                         )}
                     </div>
@@ -264,14 +264,14 @@ export function ToolPageLayout({
                             )}
                         </div>
 
-                        {showSidebarAd && !env.isProduction && (
+                        {showSidebarAd && (
                             <div className="space-y-6">
                                 <div className="sticky top-32 space-y-6 hidden lg:block">
                                     <div>
                                         <div className="text-center mb-2">
                                             <span className="text-xs text-muted-foreground font-medium">Advertisement</span>
                                         </div>
-                                        <AdSpace slot="sidebar" className="w-full h-80 border border-border rounded-xl shadow-sm bg-card" />
+                                        <AdSpace format="vertical" className="w-full h-80 border border-border rounded-xl shadow-sm bg-card" />
                                     </div>
                                 </div>
                             </div>
@@ -285,8 +285,8 @@ export function ToolPageLayout({
                         ...toolContent,
                         metaTitle: expectedMetadata?.title,
                         metaDescription: expectedMetadata?.description,
-                        metaRobots:  "index, follow",
-                        canonicalUrl:  `https://www.fasttools.store${header.title ? `/tool/${header.title.toLowerCase().replace(/\s+/g, '-')}` : ''}`
+                        metaRobots: "index, follow",
+                        canonicalUrl: `https://www.fasttools.store${header.title ? `/tool/${header.title.toLowerCase().replace(/\s+/g, '-')}` : ''}`
                     }}
                 />
             )}
