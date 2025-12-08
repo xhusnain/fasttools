@@ -22,132 +22,69 @@ const AD_SLOTS = {
 const AD_CLIENT = "ca-pub-6296569221534302"
 
 export function AdSpace({ className = "", format = "square" }: AdSpaceProps) {
-  const adRef = useRef<HTMLDivElement>(null)
-  const [scriptLoaded, setScriptLoaded] = useState(false)
-  const [adFailed, setAdFailed] = useState(false)
-  const [adInitialized, setAdInitialized] = useState(false)
-  const [isVisible, setIsVisible] = useState(false)
+  const adRef = useRef<HTMLModElement>(null)
+  const [shouldLoad, setShouldLoad] = useState(false)
 
   useEffect(() => {
-    if (typeof window === "undefined") return
-
-    const existing = document.querySelector(
-      `script[src^="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"]`
-    ) as HTMLScriptElement | null
-
-    if (existing) {
-      setScriptLoaded(true)
-      return
-    }
-
-    if (!(window as any).__adsenseScriptAppended) {
-      const script = document.createElement("script")
-      script.async = true
-      script.src = `https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=${AD_CLIENT}`
-      script.crossOrigin = "anonymous"
-      script.onload = () => setScriptLoaded(true)
-      document.head.appendChild(script)
-        ; (window as any).__adsenseScriptAppended = true
-    }
+    if (typeof window === "undefined" || (window as any).__adsenseScriptAppended) return
+    const script = document.createElement("script")
+    script.async = true
+    script.src = `https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=${AD_CLIENT}`
+    script.crossOrigin = "anonymous"
+    document.head.appendChild(script)
+      ; (window as any).__adsenseScriptAppended = true
   }, [])
 
   useEffect(() => {
-    if (!adRef.current) return
+    if (!adRef.current || shouldLoad) return
 
-    const observer = new ResizeObserver((entries) => {
-      for (const entry of entries) {
-        if (entry.contentRect.width > 0 && entry.contentRect.height > 0) {
-          setIsVisible(true)
-          observer.disconnect()
-        }
+    const observer = new IntersectionObserver((entries) => {
+      const entry = entries[0]
+      if (entry.isIntersecting && entry.intersectionRatio > 0) {
+        setShouldLoad(true)
+        observer.disconnect()
       }
     })
 
     observer.observe(adRef.current)
-
     return () => observer.disconnect()
-  }, [])
+  }, [shouldLoad])
 
   useEffect(() => {
-    if (
-      !scriptLoaded ||
-      !isVisible || // Wait for visibility
-      !adRef.current ||
-      typeof window === "undefined" ||
-      adInitialized
-    ) {
-      return
-    }
-
-    try {
-      if (adRef.current.querySelector("ins.adsbygoogle")) {
-        setAdInitialized(true)
-        return
-      }
-
+    if (shouldLoad && window.adsbygoogle) {
       try {
-        adRef.current.innerHTML = ""
-
-        const adElement = document.createElement("ins")
-        adElement.className = "adsbygoogle"
-        adElement.style.display = "block"
-        adElement.setAttribute("data-ad-client", AD_CLIENT)
-        adElement.setAttribute("data-ad-slot", AD_SLOTS[format])
-        adElement.setAttribute("data-ad-format", "auto")
-        adElement.setAttribute("data-full-width-responsive", "true")
-
-        adRef.current.appendChild(adElement)
-
-        if (window.adsbygoogle) {
-          window.adsbygoogle.push({})
-        }
-        setAdInitialized(true)
-
-        setTimeout(() => {
-          // If ad container is still empty (iframe not loaded), consider it failed
-          if (adRef.current && !adRef.current.querySelector("iframe") && !adRef.current.querySelector("ins")?.getAttribute("data-ad-status")) {
-            // data-ad-status="filled" is added by AdSense when filled. 
-            // Start a simple check first.
-            // Actually, waiting 3s might be aggressive if user is on slow connection, 
-            // but let's keep the existing logic.
-            // Note: AdSense might fill with an empty block if no ad is available (unfilled).
-          }
-        }, 3000)
-      } catch (error) {
-        console.warn("Ad init warning:", error)
-        setAdFailed(true)
+        window.adsbygoogle.push({})
+      } catch (e) {
+        console.error("AdSense error:", e)
       }
-    } catch { }
-  }, [scriptLoaded, isVisible, format, adInitialized])
+    }
+  }, [shouldLoad])
 
   if (process.env.NODE_ENV !== "production") {
-    // Only show dev placeholder if we think it should be visible or if we want to debug layout
     return (
       <div
-        ref={adRef}
         className={`${className} min-h-0 bg-card border border-border rounded-lg overflow-hidden flex items-center justify-center`}
-        aria-label="Advertisement (Development Mode)"
         style={{ minHeight: format === 'horizontal' ? '96px' : '250px' }}
       >
         <div className="text-muted-foreground text-sm font-medium text-center px-2">
-          <div>Ad Space</div>
-          <div className="text-xs opacity-75 mt-1">Format: {format}</div>
-          <div className="text-xs opacity-50 mt-1">{isVisible ? 'Visible' : 'Hidden'}</div>
+          <div>Ad Space ({format})</div>
+          <div className="text-xs opacity-50 mt-1">{shouldLoad ? 'Active' : 'Waiting via IntersectionObserver'}</div>
         </div>
       </div>
     )
   }
 
-  if (adFailed) {
-    return null
-  }
-
   return (
-    <div
-      ref={adRef}
-      className={`${className} min-h-0 rounded-lg overflow-hidden`}
-      aria-label="Advertisement"
-      style={{ minHeight: '0px' }}
-    />
+    <div className={`${className} min-h-0 rounded-lg overflow-hidden`}>
+      <ins
+        ref={adRef}
+        className="adsbygoogle"
+        style={{ display: "block" }}
+        data-ad-client={AD_CLIENT}
+        data-ad-slot={AD_SLOTS[format]}
+        data-ad-format="auto"
+        data-full-width-responsive="true"
+      />
+    </div>
   )
 }
