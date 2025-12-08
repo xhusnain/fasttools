@@ -34,11 +34,6 @@ export interface ToolContentData {
     relatedTools?: RelatedTool[]
 }
 
-export interface AdConfig {
-    showMobileAd?: boolean
-    showSidebarAd?: boolean
-}
-
 
 export interface ExpectedMetadata {
     title: string
@@ -51,7 +46,6 @@ export interface ToolPageLayoutProps {
     breadcrumbs?: BreadcrumbItem[]
     toolComponent: React.ReactNode
     toolContent: ToolContentData
-    adConfig?: AdConfig
     expectedMetadata?: ExpectedMetadata
     className?: string
 }

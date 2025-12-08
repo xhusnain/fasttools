@@ -2,7 +2,7 @@
 
 import { IPSubnetCalculator } from "@/components/dev-tools/ip-subnet-calculator"
 import { Breadcrumbs } from "@/components/common/breadcrumbs"
-import { AdSpace } from "@/components/dev-tools/ad-space"
+
 import { useState, useEffect } from "react"
 import {
   Network,
@@ -301,10 +301,7 @@ export function IPSubnetCalculatorPageContent() {
                 isDetectingIP={isDetectingIP}
               />
 
-              {/* Center Content Ad */}
-              <div className="my-8">
-                <AdSpace slot="content" className="w-full h-32" />
-              </div>
+
 
               {/* How to Use */}
               <div className="bg-white dark:bg-secondary p-6 rounded-xl border border-slate-200 dark:border-border">
@@ -337,10 +334,7 @@ export function IPSubnetCalculatorPageContent() {
                 </div>
               </div>
 
-              {/* Content Ad Between Sections */}
-              <div className="my-8">
-                <AdSpace slot="content" className="w-full h-32" />
-              </div>
+
 
               {/* Supported Features */}
               <div className="bg-white dark:bg-secondary p-6 rounded-xl border border-slate-200 dark:border-border">
@@ -489,7 +483,6 @@ export function IPSubnetCalculatorPageContent() {
                   <div className="bg-gradient-to-r from-blue-100 to-indigo-100 dark:from-blue-900/30 dark:to-indigo-900/30 rounded-lg border-2 border-dashed border-blue-300 dark:border-blue-700 p-4">
                     <div className="text-center">
                       <div className="text-sm font-medium text-foreground mb-2">Sponsored</div>
-                      <AdSpace slot="sidebar" className="w-full h-48" />
                     </div>
                   </div>
                 </div>

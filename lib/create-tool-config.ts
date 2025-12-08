@@ -38,10 +38,6 @@ export interface UnifiedToolConfig {
             href: string
         }>
     }
-    adConfig?: {
-        showMobileAd?: boolean
-        showSidebarAd?: boolean
-    }
 }
 
 export function createToolConfig(config: UnifiedToolConfig) {
@@ -70,7 +66,6 @@ export function createToolConfig(config: UnifiedToolConfig) {
             faqs: config.content.faqs,
             relatedTools: config.content.relatedTools,
         },
-        adConfig: config.adConfig,
         expectedMetadata: {
             title: config.metaTitle || config.toolName,
             description: config.metaDescription || config.description,

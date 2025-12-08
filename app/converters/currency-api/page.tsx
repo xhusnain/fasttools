@@ -2,7 +2,7 @@ import { Metadata } from "next"
 import Link from "next/link"
 import { ExternalLink, Code, Zap, Shield, Clock } from "lucide-react"
 import { CopyButton } from "@/components/common/copy-button"
-import { AdSpace } from "@/components/dev-tools/ad-space"
+
 import { ApiKeyGenerator } from "@/components/dev-tools/api-key-generator"
 import { GHeader } from "@/ui/gheader"
 
@@ -45,10 +45,7 @@ export default function CurrencyAPIDocsPage() {
                 />
               </div>
 
-              {/* Mobile Ad */}
-              <div className="lg:hidden">
-                <AdSpace slot="content" className="mb-8" />
-              </div>
+
 
               {/* Live Convert Button */}
               <div className="p-4 sm:p-6 md:p-8 rounded-lg bg-card border border-border shadow">
@@ -960,15 +957,8 @@ curl -X POST "https://www.fasttools.store/api/currency_converter/convert?api_key
             </div>
 
             {/* Desktop Sidebar */}
-            <div className="hidden lg:block w-56 xl:w-64 2xl:w-72">
-              <div className="sticky top-24 sm:top-28 space-y-4 sm:space-y-5">
-                {/* Ad Space */}
-                <AdSpace
-                  slot="sidebar"
-                  className="min-h-[250px]"
-                />
-              </div>
-            </div>
+            {/* Sidebar content removed */}
+
 
 
           </div>

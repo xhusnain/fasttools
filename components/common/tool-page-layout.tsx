@@ -1,10 +1,9 @@
 import Link from "next/link"
 import { GHeader } from "@/ui/gheader"
 
-import { AdSpace } from "@/components/dev-tools/ad-space"
+
 import { Breadcrumbs } from "@/components/common/breadcrumbs"
-import { AdSenseComplianceChecker } from "@/components/dev-tools/AdSenseComplianceChecker"
-import { env } from "@/config/env"
+
 import {
     Lightbulb,
     Package,
@@ -19,14 +18,10 @@ export function ToolPageLayout({
     breadcrumbs,
     toolComponent,
     toolContent,
-    adConfig,
     expectedMetadata,
     className
 }: ToolPageLayoutProps) {
-    const {
-        showMobileAd = true,
-        showSidebarAd = true,
-    } = adConfig || {}
+
 
     if (process.env.NODE_ENV === "development" && expectedMetadata) {
         console.group("🔍 ToolPageLayout - Metadata Validation")
@@ -104,14 +99,7 @@ export function ToolPageLayout({
                             color={header.color}
                         />
 
-                        {showMobileAd && (
-                            <div className="lg:hidden mt-6">
-                                <div className="text-center mb-2">
-                                    <span className="text-xs text-muted-foreground font-medium">Advertisement</span>
-                                </div>
-                                <AdSpace format="square" className="w-full h-64 border border-border rounded-xl shadow-sm bg-card" />
-                            </div>
-                        )}
+
                     </div>
 
                     <div className="grid lg:grid-cols-[1fr_350px] gap-4 lg:gap-8">
@@ -244,7 +232,7 @@ export function ToolPageLayout({
                             </section>
 
                             {toolContent.relatedTools && toolContent.relatedTools.length > 0 && (
-                                <section className="bg-card border border-border rounded-lg p-6">
+                                <section className="bg-card border border-border rounded-lg p-6 lg:hidden">
                                     <h2 className="text-2xl font-bold mb-4 text-foreground">
                                         Related Tools
                                     </h2>
@@ -264,31 +252,36 @@ export function ToolPageLayout({
                             )}
                         </div>
 
-                        {showSidebarAd && (
-                            <div className="space-y-6">
+                        <div className="space-y-6">
+                            {toolContent.relatedTools && toolContent.relatedTools.length > 0 && (
                                 <div className="sticky top-32 space-y-6 hidden lg:block">
-                                    <div>
-                                        <div className="text-center mb-2">
-                                            <span className="text-xs text-muted-foreground font-medium">Advertisement</span>
+                                    <section className="bg-card border border-border rounded-lg p-6 shadow-sm">
+                                        <h2 className="text-lg font-bold mb-4 text-foreground">
+                                            Related Tools
+                                        </h2>
+                                        <div className="space-y-3">
+                                            {(toolContent.relatedTools || []).map((tool) => (
+                                                <Link
+                                                    key={tool.href}
+                                                    href={tool.href}
+                                                    className="flex items-center gap-2 p-3 rounded-lg bg-muted/50 hover:bg-muted transition-colors border border-border hover:border-primary"
+                                                >
+                                                    <ChevronRight className="h-4 w-4 text-primary flex-shrink-0" />
+                                                    <span className="text-sm font-medium text-foreground">{tool.name}</span>
+                                                </Link>
+                                            ))}
                                         </div>
-                                        <AdSpace format="vertical" className="w-full h-80 border border-border rounded-xl shadow-sm bg-card" />
-                                    </div>
+                                    </section>
                                 </div>
-                            </div>
-                        )}
+                            )}
+                        </div>
                     </div>
                 </div>
             </div>
-            {process.env.NODE_ENV === "development" && (
-                <AdSenseComplianceChecker
-                    data={{
-                        ...toolContent,
-                        metaTitle: expectedMetadata?.title,
-                        metaDescription: expectedMetadata?.description,
-                        metaRobots: "index, follow",
-                        canonicalUrl: `https://www.fasttools.store${header.title ? `/tool/${header.title.toLowerCase().replace(/\s+/g, '-')}` : ''}`
-                    }}
-                />
+            {process.env.NODE_ENV === "development" && expectedMetadata && (
+                <div className="hidden">
+                    {/* Metadata validation placeholder if needed */}
+                </div>
             )}
         </div>
     )
