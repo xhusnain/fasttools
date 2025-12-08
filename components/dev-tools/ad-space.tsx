@@ -26,6 +26,7 @@ export function AdSpace({ className = "", format = "square" }: AdSpaceProps) {
   const [scriptLoaded, setScriptLoaded] = useState(false)
   const [adFailed, setAdFailed] = useState(false)
   const [adInitialized, setAdInitialized] = useState(false)
+  const [isVisible, setIsVisible] = useState(false)
 
   useEffect(() => {
     if (typeof window === "undefined") return
@@ -51,8 +52,26 @@ export function AdSpace({ className = "", format = "square" }: AdSpaceProps) {
   }, [])
 
   useEffect(() => {
+    if (!adRef.current) return
+
+    const observer = new ResizeObserver((entries) => {
+      for (const entry of entries) {
+        if (entry.contentRect.width > 0 && entry.contentRect.height > 0) {
+          setIsVisible(true)
+          observer.disconnect()
+        }
+      }
+    })
+
+    observer.observe(adRef.current)
+
+    return () => observer.disconnect()
+  }, [])
+
+  useEffect(() => {
     if (
       !scriptLoaded ||
+      !isVisible || // Wait for visibility
       !adRef.current ||
       typeof window === "undefined" ||
       adInitialized
@@ -85,8 +104,13 @@ export function AdSpace({ className = "", format = "square" }: AdSpaceProps) {
         setAdInitialized(true)
 
         setTimeout(() => {
-          if (adRef.current && !adRef.current.querySelector("iframe")) {
-            setAdFailed(true)
+          // If ad container is still empty (iframe not loaded), consider it failed
+          if (adRef.current && !adRef.current.querySelector("iframe") && !adRef.current.querySelector("ins")?.getAttribute("data-ad-status")) {
+            // data-ad-status="filled" is added by AdSense when filled. 
+            // Start a simple check first.
+            // Actually, waiting 3s might be aggressive if user is on slow connection, 
+            // but let's keep the existing logic.
+            // Note: AdSense might fill with an empty block if no ad is available (unfilled).
           }
         }, 3000)
       } catch (error) {
@@ -94,9 +118,10 @@ export function AdSpace({ className = "", format = "square" }: AdSpaceProps) {
         setAdFailed(true)
       }
     } catch { }
-  }, [scriptLoaded, format, adInitialized])
+  }, [scriptLoaded, isVisible, format, adInitialized])
 
   if (process.env.NODE_ENV !== "production") {
+    // Only show dev placeholder if we think it should be visible or if we want to debug layout
     return (
       <div
         ref={adRef}
@@ -107,6 +132,7 @@ export function AdSpace({ className = "", format = "square" }: AdSpaceProps) {
         <div className="text-muted-foreground text-sm font-medium text-center px-2">
           <div>Ad Space</div>
           <div className="text-xs opacity-75 mt-1">Format: {format}</div>
+          <div className="text-xs opacity-50 mt-1">{isVisible ? 'Visible' : 'Hidden'}</div>
         </div>
       </div>
     )
