@@ -11,4 +11,5 @@ export interface GBannerProps extends React.HTMLAttributes<HTMLDivElement> {
     animationDirection?: "ltr" | "rtl"
     onClose?: () => void
     showCloseButton?: boolean
+    autoClose?: number
 }

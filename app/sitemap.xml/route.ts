@@ -632,12 +632,7 @@ export async function GET() {
             changeFrequency: "weekly" as const,
             priority: 0.95,
         },
-        {
-            url: "https://www.fasttools.store/image-tools/image-blur",
-            lastModified: getFreshnessDate(1),
-            changeFrequency: "weekly" as const,
-            priority: 0.95,
-        },
+
         {
             url: "https://www.fasttools.store/image-tools/image-to-text",
             lastModified: getFreshnessDate(2),
@@ -889,41 +884,7 @@ export async function GET() {
                 }
             ]
         },
-        {
-            url: "https://www.fasttools.store/image-tools/image-blur",
-            images: [
-                {
-                    url: "https://www.fasttools.store/human-blur-before.png",
-                    title: "Human Photo Before Background Blur - Professional Portrait Photography",
-                    caption: "Professional portrait photo before AI-powered background blur showing original image with sharp background"
-                },
-                {
-                    url: "https://www.fasttools.store/human-blur-after.png",
-                    title: "Human Photo After Background Blur - Portrait Mode Bokeh Effect",
-                    caption: "Professional portrait with AI-blurred background showcasing natural bokeh effect and professional depth of field"
-                },
-                {
-                    url: "https://www.fasttools.store/dog-blur-before.png",
-                    title: "Pet Dog Photo Before Background Blur - Animal Photography",
-                    caption: "Pet dog photo before background blur showing original image with sharp background for pet photography"
-                },
-                {
-                    url: "https://www.fasttools.store/dog-blur-after.png",
-                    title: "Pet Dog Photo After Background Blur - Pet Portrait with Bokeh",
-                    caption: "Pet dog photo with AI-blurred background showcasing advanced edge detection for fur and perfect subject isolation"
-                },
-                {
-                    url: "https://www.fasttools.store/object-blur-before.png",
-                    title: "Product Object Photo Before Background Blur - E-commerce Photography",
-                    caption: "Product object photo before background blur showing original image for e-commerce and commercial photography"
-                },
-                {
-                    url: "https://www.fasttools.store/object-blur-after.png",
-                    title: "Product Object Photo After Background Blur - Professional Depth of Field",
-                    caption: "Product object with AI-blurred background perfect for e-commerce, marketing materials, and professional product photos"
-                }
-            ]
-        },
+
         {
             url: "https://www.fasttools.store/image-tools/image-to-text",
             images: [

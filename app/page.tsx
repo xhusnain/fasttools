@@ -3,6 +3,7 @@ import dynamic from "next/dynamic"
 import { GButton } from "@/ui/gbutton"
 import { GToolCard } from "@/ui/gtool-card"
 import { GHeader } from "@/ui/gheader"
+import { GBanner } from "@/components/common/g-banner"
 
 import { PremiumHeroBackground } from "@/components/common/premium-hero-background"
 const HomeCategories = dynamic(() => import('@/components/common/home-categories').then(mod => ({ default: mod.HomeCategories })), {
@@ -38,6 +39,7 @@ import {
   Star,
   TrendingUp,
   Award,
+  ArrowRight,
 } from "lucide-react"
 
 import { createMetadata } from "@/lib/metadata-base"
@@ -431,14 +433,7 @@ const categories = [
         badge: "AI",
         badgeColor: "bg-purple-500/90",
       },
-      {
-        title: "Image Blur Tool",
-        description: "Blur sensitive areas for privacy protection including faces, license plates, personal information, and confidential data in screenshots",
-        href: "/image-tools/image-blur",
-        icon: Image,
-        badge: "Privacy",
-        badgeColor: "bg-blue-500/90",
-      },
+
       {
         title: "Image to Text (OCR)",
         description: "Extract text from images with high-accuracy OCR technology to convert scanned documents, screenshots, and photos into editable text",
@@ -932,6 +927,25 @@ export default function Home() {
         suppressHydrationWarning
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
+      <GHeader />
+
+      <div className="pt-20">
+        <GBanner
+          variant="medium"
+          title="Image Background Remover is Live Again!"
+          description="Remove backgrounds instantly with our improved AI. Now faster and more accurate."
+          icon={<Sparkles className="h-4 w-4" />}
+          action={
+            <Link href="/image-tools/image-background-remover">
+              <GButton size="sm" variant="secondary" className="whitespace-nowrap">
+                Try it now <ArrowRight className="ml-2 h-4 w-4" />
+              </GButton>
+            </Link>
+          }
+          showCloseButton={false}
+          autoClose={8000}
+        />
+      </div>
 
       {/* Hero Section - Background with Orange Text */}
       <section className="relative min-h-screen flex items-center justify-center px-4 overflow-hidden bg-background">

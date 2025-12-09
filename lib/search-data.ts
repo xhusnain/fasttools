@@ -79,7 +79,7 @@ export const searchItems: SearchItem[] = [
 
   // Image Tools
   { name: "Background Remover", description: "Remove backgrounds automatically with AI-powered precision", path: "/image-tools/image-background-remover", category: "Image" },
-  { name: "Image Blur Tool", description: "Blur sensitive areas for privacy protection", path: "/image-tools/image-blur", category: "Image" },
+
   { name: "Image to Text (OCR)", description: "Extract text from images with OCR technology", path: "/image-tools/image-to-text", category: "Image" },
 
   // PDF Tools

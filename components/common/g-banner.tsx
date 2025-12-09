@@ -11,7 +11,7 @@ const bannerVariants = cva(
         variants: {
             variant: {
                 small: "h-10 bg-black text-white text-sm font-medium justify-center",
-                medium: "min-h-[60px] bg-gradient-to-r from-pink-100 via-purple-100 to-cyan-100 text-foreground px-4 py-3 sm:px-6",
+                medium: "min-h-[60px] bg-gradient-to-r from-pink-100 via-purple-100 to-cyan-100 dark:from-pink-950 dark:via-purple-950 dark:to-cyan-950 text-foreground px-4 py-3 sm:px-6",
                 large: "min-h-[80px] bg-black text-white px-4 py-4 sm:px-6",
             },
         },
@@ -33,8 +33,23 @@ export function GBanner({
     animationDirection = "rtl",
     onClose,
     showCloseButton = false,
+    autoClose,
     ...props
 }: GBannerProps) {
+    const [isVisible, setIsVisible] = React.useState(true)
+
+    React.useEffect(() => {
+        if (autoClose) {
+            const timer = setTimeout(() => {
+                setIsVisible(false)
+                onClose?.()
+            }, autoClose)
+            return () => clearTimeout(timer)
+        }
+    }, [autoClose, onClose])
+
+    if (!isVisible) return null
+
     // Small Variant
     if (variant === "small") {
         return (

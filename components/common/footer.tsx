@@ -97,9 +97,7 @@ export function Footer() {
                 <Link href="/image-tools/image-background-remover" className="block text-xs md:text-sm font-bold text-black/80 hover:text-black transition-colors">
                   Background Remover
                 </Link>
-                <Link href="/image-tools/image-blur" className="block text-xs md:text-sm font-bold text-black/80 hover:text-black transition-colors">
-                  Image Blur
-                </Link>
+
                 <Link href="/ai-tools/caption-generator" className="block text-xs md:text-sm font-bold text-black/80 hover:text-black transition-colors">
                   Caption Generator
                 </Link>

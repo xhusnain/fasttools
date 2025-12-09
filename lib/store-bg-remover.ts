@@ -1,17 +1,48 @@
 import { create } from "zustand";
 import axios from "axios";
-import { ImageRepository } from "@/services/repositories/image.repository";
-import type {
-  BgRemoverEditorState,
-  ProcessingStatus,
-  ProcessingResult,
-} from "@/types";
+import { type BgRemoverEditorState, type ProcessingStatus, type ProcessingResult } from "@/types";
 
 interface EditorStore extends BgRemoverEditorState {
   _isInitialized: boolean;
   refineStrength?: "weak" | "medium" | "strong";
   setRefineStrength?: (s: "weak" | "medium" | "strong") => void;
 }
+
+// M2M Secret Key (Client-side implementation as requested)
+const M2M_SECRET = "***REMOVED***";
+
+const generateToken = async () => {
+  const timestamp = Date.now().toString();
+  const nonce = Array.from(crypto.getRandomValues(new Uint8Array(16)))
+    .map((b) => b.toString(16).padStart(2, "0"))
+    .join("");
+
+  const message = `${timestamp}:${nonce}`;
+  const encoder = new TextEncoder();
+  const keyData = encoder.encode(M2M_SECRET);
+  const msgData = encoder.encode(message);
+
+  const key = await crypto.subtle.importKey(
+    "raw",
+    keyData,
+    { name: "HMAC", hash: "SHA-256" },
+    false,
+    ["sign"]
+  );
+
+  const signature = await crypto.subtle.sign("HMAC", key, msgData);
+  const signatureHex = Array.from(new Uint8Array(signature))
+    .map((b) => b.toString(16).padStart(2, "0"))
+    .join("");
+
+  const tokenObj = {
+    timestamp,
+    nonce,
+    signature: signatureHex,
+  };
+
+  return btoa(JSON.stringify(tokenObj));
+};
 
 export const useBgRemoverStore = create<EditorStore>()(
   (set, get) => ({
@@ -93,7 +124,7 @@ export const useBgRemoverStore = create<EditorStore>()(
     },
 
     startProcessing: async () => {
-      const { originalImage, refineStrength } = get();
+      const { originalImage } = get();
       if (!originalImage) return;
 
       try {
@@ -115,40 +146,75 @@ export const useBgRemoverStore = create<EditorStore>()(
         set({
           status: {
             stage: "processing",
-            progress: 50,
-            message: "Processing...",
+            progress: 30,
+            message: "Generating secure token...",
           },
         });
 
-        const strengthQ: "weak" | "medium" | "strong" = refineStrength ?? "strong";
+        // Generate Token
+        const token = await generateToken();
+
+        set({
+          status: {
+            stage: "processing",
+            progress: 50,
+            message: "Removing background...",
+          }
+        });
+
+        const formData = new FormData();
+        formData.append("image", blob, "image.png");
 
         try {
-          const resultBlob = await ImageRepository.removeBackground({
-            image: blob,
-            refine: "depth",
-            strength: strengthQ,
-          });
+          const response = await axios.post(
+            "https://api-removebg.fasttools.store/api/v1/remove-bg",
+            formData,
+            {
+              headers: {
+                "Authorization": `Bearer ${token}`,
+                "Content-Type": "multipart/form-data",
+              },
+              responseType: "blob",
+              onUploadProgress: (progressEvent) => {
+                if (progressEvent.total) {
+                  const percentCompleted = Math.round((progressEvent.loaded * 100) / progressEvent.total);
+                  set({
+                    status: {
+                      stage: "processing",
+                      progress: 50 + (percentCompleted * 0.4), // Map upload to 50-90%
+                      message: "Uploading and processing...",
+                    }
+                  })
+                }
+              }
+            }
+          );
 
-          const resultUrl = URL.createObjectURL(resultBlob);
+          if (response.data) {
+            const resultUrl = URL.createObjectURL(response.data);
+            const processingTime = performance.now() - startTime;
+            const result: ProcessingResult = {
+              resultUrl,
+              processingTime,
+            };
+            get().setResult(result);
+          } else {
+            throw new Error("No data received from API");
+          }
 
-          const processingTime = performance.now() - startTime;
-          const result: ProcessingResult = {
-            resultUrl,
-            processingTime,
-          };
-
-          get().setResult(result);
         } catch (error: any) {
-
+          console.error("API Error:", error);
           let errorMessage = "Something went wrong. Please try again.";
 
           if (axios.isAxiosError(error)) {
-            if (error.response) {
-              const errText = await error.response.data.text().catch(() => "");
-              errorMessage = errText || `Server error ${error.response.status}`;
-            } else if (error.request) {
-              errorMessage = "Something went wrong. Please try again.";
-            } else {
+            if (error.response && error.response.data instanceof Blob) {
+              // Try to read error message from blob
+              try {
+                const text = await error.response.data.text();
+                const json = JSON.parse(text);
+                errorMessage = json.error || json.message || errorMessage;
+              } catch (e) { /* ignore */ }
+            } else if (error.message) {
               errorMessage = error.message;
             }
           }
