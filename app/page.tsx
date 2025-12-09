@@ -2,7 +2,7 @@ import Link from "next/link"
 import dynamic from "next/dynamic"
 import { GButton } from "@/ui/gbutton"
 import { GToolCard } from "@/ui/gtool-card"
-import { GHeader } from "@/ui/gheader"
+
 
 import { PremiumHeroBackground } from "@/components/common/premium-hero-background"
 const HomeCategories = dynamic(() => import('@/components/common/home-categories').then(mod => ({ default: mod.HomeCategories })), {
@@ -926,7 +926,6 @@ export default function Home() {
         suppressHydrationWarning
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
-      <GHeader />
 
 
 
