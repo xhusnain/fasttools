@@ -2,143 +2,183 @@
 
 import Link from "next/link"
 import { useState } from "react"
-import { Menu, X, Search } from "lucide-react"
+import { Menu, X, Search, ChevronDown } from "lucide-react"
 import { SearchBar } from "@/components/common/search-bar"
 import { ThemeToggle } from "@/components/common/theme-toggle"
 import { usePathname } from "next/navigation"
+import { MegaMenu } from "@/components/common/mega-menu"
+import { navigationConfig } from "@/data/navigation"
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from "@/components/ui/accordion"
 
 export function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
   const [showSearch, setShowSearch] = useState(false)
   const pathname = usePathname()
 
-  const navLinks = [
-    { href: "/products", label: "Products" },
-    { href: "/downloaders", label: "Downloaders" },
-    { href: "/image-tools", label: "Image Tools" },
-    { href: "/api-docs", label: "API Docs" },
-  ]
-
   return (
     <>
-      {/* Gradient accent bar at the very top */}
-      <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-primary via-orange-400 to-primary/90" />
+      <header className="sticky top-0 z-50 w-full bg-background/95 backdrop-blur-md shadow-sm transition-all duration-300">
 
-      <header className="sticky top-0 z-50 w-full bg-background/95 backdrop-blur-md border-b border-border/10 transition-all duration-300">
-        <nav className="container mx-auto flex items-center justify-between h-16 sm:h-20 md:h-24 px-4 lg:px-8">
+        {/* TOP ROW: Logo, Search, Actions */}
+        <div className="border-b border-border/5">
+          <div className="container mx-auto flex items-center justify-center gap-4 h-16 px-4 lg:px-8">
 
-          {/* Left side - Logo */}
-          <div className="flex items-center">
-            <Link
-              href="/"
-              aria-label="FastTools home"
-              className="group transition-all duration-300"
-            >
-              <span className="text-lg sm:text-xl md:text-2xl font-bold text-foreground">FastTools</span>
-            </Link>
-          </div>
-
-          {/* Center - Navigation Links (Desktop) */}
-          <div className="hidden lg:flex items-center gap-2">
-            {navLinks.map((link) => (
+            {/* Left side - Logo */}
+            <div className="flex items-center shrink-0">
               <Link
-                key={link.href}
-                href={link.href}
-                className={`relative px-5 py-2.5 text-sm font-semibold rounded-xl transition-all duration-300 group ${pathname === link.href
-                  ? "bg-gradient-to-r from-primary to-primary/90 text-white shadow-lg shadow-orange-500/30"
-                  : "text-foreground/70 hover:text-foreground hover:bg-foreground/5"
-                  }`}
+                href="/"
+                aria-label="FastTools home"
+                className="group transition-all duration-300"
               >
-                {link.label}
-                {/* Active indicator dot */}
-                {pathname === link.href && (
-                  <span className="absolute -bottom-1 left-1/2 -translate-x-1/2 w-1 h-1 rounded-full bg-white animate-pulse" />
-                )}
+                <span className="text-xl md:text-2xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-primary to-primary/80">FastTools</span>
               </Link>
-            ))}
-          </div>
+            </div>
 
-          {/* Right side - Desktop Search */}
-          <div className="hidden lg:flex items-center gap-2">
-            <ThemeToggle />
-            {!showSearch ? (
+            {/* Middle - Search (Desktop) */}
+            <div className="hidden md:flex w-[500px] px-2">
+              <SearchBar
+                placeholder="Search 1000+ tools..."
+                variant="default"
+                className="w-full shadow-sm"
+              />
+            </div>
+
+            {/* Right side - Actions */}
+            <div className="flex items-center gap-2 shrink-0">
+              <nav className="hidden lg:flex items-center gap-3 mr-2 h-full">
+                <Link href="/products" className="text-sm font-medium text-muted-foreground hover:text-primary transition-colors flex items-center h-full">
+                  Products
+                </Link>
+                <Link href="/downloaders" className="text-sm font-medium text-muted-foreground hover:text-primary transition-colors flex items-center h-full">
+                  Downloaders
+                </Link>
+                <Link href="/api-docs" className="text-sm font-medium text-muted-foreground hover:text-primary transition-colors flex items-center h-full">
+                  API Docs
+                </Link>
+                <Link href="/about" className="text-sm font-medium text-muted-foreground hover:text-primary transition-colors flex items-center h-full">
+                  About
+                </Link>
+                <Link href="/contact" className="text-sm font-medium text-muted-foreground hover:text-primary transition-colors flex items-center h-full">
+                  Contact
+                </Link>
+              </nav>
+
+              <ThemeToggle />
+
+              {/* Mobile Search Toggle (since main search is hidden on mobile) */}
               <button
-                aria-label="Open search"
-                onClick={() => setShowSearch(true)}
-                className="p-3 rounded-xl text-foreground/70 hover:text-foreground hover:bg-foreground/5"
+                className="md:hidden p-2 rounded-xl text-foreground/70 hover:text-primary hover:bg-primary/10"
+                onClick={() => setShowSearch(!showSearch)}
+                aria-label="Toggle search"
               >
                 <Search className="h-5 w-5" />
               </button>
-            ) : (
-              <div className="w-96">
-                <SearchBar
-                  autoFocus
-                  placeholder="Search 1000+ tools..."
-                  variant="default"
-                  className="w-full"
-                  onBlur={() => setShowSearch(false)}
-                />
-              </div>
-            )}
+
+              {/* Mobile Menu Button */}
+              <button
+                className="lg:hidden p-2 rounded-xl text-foreground/70 hover:text-primary hover:bg-primary/10"
+                onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+                aria-label="Toggle menu"
+              >
+                {mobileMenuOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
+              </button>
+            </div>
           </div>
 
-          {/* Mobile Menu Button */}
-          <div className="flex items-center gap-2 lg:hidden">
-            <ThemeToggle />
-            {!showSearch ? (
-              <>
-                <button
-                  className="p-2 sm:p-3 rounded-xl text-foreground/70 hover:text-primary hover:bg-primary/10"
-                  onClick={() => setShowSearch(true)}
-                  aria-label="Open search"
-                >
-                  <Search className="h-5 w-5 sm:h-6 sm:w-6" />
-                </button>
-                <button
-                  className="p-2 sm:p-3 rounded-xl text-foreground/70 hover:text-primary hover:bg-primary/10"
-                  onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-                  aria-label="Toggle menu"
-                >
-                  {mobileMenuOpen ? <X className="h-5 w-5 sm:h-6 sm:w-6" /> : <Menu className="h-5 w-5 sm:h-6 sm:w-6" />}
-                </button>
-              </>
-            ) : (
-              <div className="w-32 sm:w-40">
-                <SearchBar
-                  autoFocus
-                  placeholder="Search..."
-                  variant="pill"
-                  className="w-full"
-                  onBlur={() => setShowSearch(false)}
-                />
-              </div>
-            )}
+          {/* Mobile Search Input (Visible only when toggled) */}
+          {showSearch && (
+            <div className="md:hidden px-4 pb-4 animate-fade-in-up">
+              <SearchBar
+                autoFocus
+                placeholder="Search tools..."
+                variant="pill"
+                className="w-full"
+                onBlur={() => { }}
+              />
+            </div>
+          )}
+        </div>
+
+        {/* BOTTOM ROW: Sub-Navbar (Desktop Only) */}
+        <div className="hidden md:block bg-background/50 border-b border-border/10 backdrop-blur-sm">
+          <div className="container mx-auto px-4 lg:px-8 h-11 flex items-center justify-center">
+            <MegaMenu />
           </div>
-        </nav>
+        </div>
+
       </header>
 
       {/* Mobile Menu Dropdown */}
       <div
-        className={`lg:hidden fixed inset-x-0 top-16 sm:top-20 md:top-24 z-40 bg-background/98 backdrop-blur-xl border-b border-border/10 transition-all duration-300 ease-out ${mobileMenuOpen
-          ? 'max-h-screen opacity-100 visible'
+        className={`md:hidden fixed inset-x-0 top-16 z-40 bg-background/98 backdrop-blur-xl border-b border-border/10 transition-all duration-300 ease-out overflow-y-auto ${mobileMenuOpen
+          ? 'max-h-[calc(100vh-4rem)] opacity-100 visible bottom-0'
           : 'max-h-0 opacity-0 invisible'
           }`}
       >
-        <div className="container mx-auto px-4 py-6 space-y-3">
-          {/* Mobile Navigation Links */}
-          {navLinks.map((link) => (
+        <div className="container mx-auto px-4 py-6 space-y-4">
+          <Accordion type="single" collapsible className="w-full">
+            {navigationConfig.map((section, index) => (
+              <AccordionItem key={index} value={`item-${index}`} className="border-b border-border/10">
+                <AccordionTrigger className="text-base font-semibold py-4 hover:no-underline hover:text-primary transition-colors">
+                  {section.title}
+                </AccordionTrigger>
+                <AccordionContent>
+                  <div className="pl-4 space-y-4 pt-2 pb-4">
+                    {section.categories.map((category, catIndex) => (
+                      <div key={catIndex} className="space-y-2">
+                        <h5 className="text-xs font-bold text-muted-foreground uppercase tracking-wider">
+                          {category.title}
+                        </h5>
+                        <div className="grid grid-cols-1 gap-2">
+                          {category.items.map((item, itemIndex) => (
+                            <Link
+                              key={itemIndex}
+                              href={item.href}
+                              onClick={() => setMobileMenuOpen(false)}
+                              className={`flex items-center gap-2 py-2 text-sm transition-colors ${pathname === item.href ? "text-primary font-medium" : "text-foreground/80 hover:text-primary"
+                                }`}
+                            >
+                              {item.icon && <item.icon className="h-4 w-4" />}
+                              {item.title}
+                            </Link>
+                          ))}
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+                </AccordionContent>
+              </AccordionItem>
+            ))}
+          </Accordion>
+
+          <div className="pt-2 border-t border-border/10 mt-2">
             <Link
-              key={link.href}
-              href={link.href}
+              href="/about"
               onClick={() => setMobileMenuOpen(false)}
-              className={`block px-4 sm:px-5 py-3 sm:py-4 text-sm sm:text-base font-semibold rounded-xl transition-all duration-300 ${pathname === link.href
-                ? "bg-gradient-to-r from-primary to-primary/90 text-white shadow-lg shadow-orange-500/30"
-                : "text-foreground/70 hover:text-foreground hover:bg-foreground/5"
-                }`}
+              className="block py-3 text-base font-semibold text-foreground/80 hover:text-primary transition-colors"
             >
-              {link.label}
+              About Us
             </Link>
-          ))}
+            <Link
+              href="/contact"
+              onClick={() => setMobileMenuOpen(false)}
+              className="block py-3 text-base font-semibold text-foreground/80 hover:text-primary transition-colors"
+            >
+              Contact
+            </Link>
+            <Link
+              href="/api-docs"
+              onClick={() => setMobileMenuOpen(false)}
+              className="block py-3 text-base font-semibold text-foreground/80 hover:text-primary transition-colors"
+            >
+              API Docs
+            </Link>
+          </div>
         </div>
       </div>
     </>

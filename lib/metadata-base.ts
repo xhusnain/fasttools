@@ -22,12 +22,12 @@ export const DEFAULT_IMAGES = {
     OG_IMAGE_ALT_TEXT: "FastTools - 1000+ Free Online Tools",
     LOGO_PNG: "https://www.fasttools.store/logo.png",
     LOGO_SVG: "https://www.fasttools.store/logo.svg",
-    LOGO3_PNG: "https://www.fasttools.store/logo3.png",
+    // Fallback for missing logo3.png to logo.png based on available files
+    LOGO3_PNG: "https://www.fasttools.store/logo.png",
     BANNER: "https://www.fasttools.store/banner.png",
     PLACEHOLDER: "https://www.fasttools.store/placeholder.jpg",
     PLACEHOLDER_SVG: "https://www.fasttools.store/placeholder.svg",
     PLACEHOLDER_USER: "https://www.fasttools.store/placeholder-user.jpg",
-
 } as const
 
 export const globalViewport: Viewport = {
@@ -80,9 +80,9 @@ export function createMetadata(options: MetadataOptions): Metadata & { softwareS
     const titleWithBranding = title === "FastTools" || title.startsWith("FastTools -") ? title : `${title} | FastTools`
     const fullTitle = addYearToTitle(titleWithBranding, cleanPath)
     const canonicalUrl = getCanonicalUrl(cleanPath)
-    const defaultOgImage = getDefaultOgImage("png")
-    const isCompany = isCompanyPage(cleanPath)
-    const isFaqPage = cleanPath === "/faq"
+
+    // Use DEFAULT_IMAGES for OG Image
+    const defaultOgImage = DEFAULT_IMAGES.OG_IMAGE_PNG
 
     const finalOgTitle = ogTitle || fullTitle
     const finalOgDescription = ogDescription || description
@@ -184,31 +184,8 @@ export function createMetadata(options: MetadataOptions): Metadata & { softwareS
                 follow: true,
             },
         verification: VERIFICATION,
-        icons: {
-            icon: [
-                { url: "/favicon.ico", sizes: "any" },
-                { url: "/favicon.svg", type: "image/svg+xml" },
-                { url: "/favicon-96x96.png", type: "image/png", sizes: "96x96" }
-            ],
-            shortcut: "/favicon.ico",
-            apple: [
-                { url: "/apple-touch-icon.png", sizes: "180x180", type: "image/png" }
-            ],
-            other: [
-                {
-                    rel: "icon",
-                    type: "image/png",
-                    sizes: "192x192",
-                    url: "/web-app-manifest-192x192.png",
-                },
-                {
-                    rel: "icon",
-                    type: "image/png",
-                    sizes: "512x512",
-                    url: "/web-app-manifest-512x512.png",
-                },
-            ],
-        },
+        // Manifest is handled by app/manifest.ts but we can link it here if needed, 
+        // though Next.js 13+ with manifest.ts handles the <link rel="manifest"> automatically.
         ...(schemas.length > 0 && {
             other: {
                 "application/ld+json": JSON.stringify(schemas.length === 1 ? schemas[0] : schemas)

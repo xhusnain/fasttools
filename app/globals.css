@@ -150,11 +150,11 @@
 }
 
 .dark {
-  --background: #000000;
+  --background: #010314;
   --foreground: #ffffff;
-  --card: #0A0A0A;
+  --card: #010314;
   --card-foreground: #ffffff;
-  --popover: #0A0A0A;
+  --popover: #010314;
   --popover-foreground: #ffffff;
   --primary: #FF7F00;
   --primary-foreground: #ffffff;
