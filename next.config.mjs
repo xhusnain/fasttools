@@ -46,58 +46,6 @@ const nextConfig = {
       bufferutil: 'commonjs bufferutil',
     })
 
-    if (!dev && !isServer) {
-      config.optimization.splitChunks = {
-        chunks: "all",
-        maxInitialRequests: 25,
-        minSize: 20000,
-        cacheGroups: {
-          framework: {
-            test: /[\\/]node_modules[\\/](react|react-dom|scheduler|next)[\\/]/,
-            name: "framework",
-            priority: 40,
-            enforce: true,
-          },
-
-          radix: {
-            test: /[\\/]node_modules[\\/]@radix-ui[\\/]/,
-            name: "radix",
-            priority: 30,
-            maxSize: 150000,
-          },
-
-          icons: {
-            test: /[\\/]node_modules[\\/](lucide-react|@iconify|react-icons)[\\/]/,
-            name: "icons",
-            priority: 25,
-            maxSize: 100000,
-          },
-
-          vendor: {
-            test: /[\\/]node_modules[\\/]/,
-            name: "vendor",
-            priority: 10,
-            maxSize: 200000,
-          },
-
-          common: {
-            minChunks: 2,
-            priority: 5,
-            reuseExistingChunk: true,
-            maxSize: 100000,
-          },
-
-          workers: {
-            test: /[\\/]workers[\\/]/,
-            name: "workers",
-            chunks: "all",
-            priority: 50,
-            enforce: true,
-          },
-        },
-      }
-    }
-
     return config
   },
 
