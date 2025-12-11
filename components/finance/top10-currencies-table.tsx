@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from "react"
 import { TrendingUp, TrendingDown, Minus, RefreshCw, DollarSign } from "lucide-react"
+import { CurrencyRepository } from "@/services/repositories/currency.repository"
 
 interface CurrencyData {
   currency: string
@@ -36,17 +37,39 @@ export function Top10CurrenciesTable() {
   const fetchData = async () => {
     setLoading(true)
     setError("")
-    
+
     try {
-      const response = await fetch('/api/currency_converter/top10?base=USD&days=10')
-      const result = await response.json()
-      
-      if (result.success) {
-        setData(result.data)
-        setLastRefresh(new Date().toLocaleString())
-      } else {
-        setError(result.message || 'Failed to fetch currency data')
-      }
+      const result = await CurrencyRepository.getTop10Currencies()
+
+      // Transform result to match Top10Data interface if needed, or update state type
+      // The updated repository returns most fields.
+      // We need to map 'currencies' to match CurrencyData interface exactly.
+
+      const mappedCurrencies: CurrencyData[] = result.currencies.map((c: any) => ({
+        currency: c.code,
+        currentRate: c.currentRate,
+        change: c.change,
+        changePercent: c.changePercent,
+        minRate: c.minRate,
+        maxRate: c.maxRate,
+        avgRate: c.avgRate,
+        trend: c.trend,
+        symbol: c.symbol,
+        name: c.name
+      }))
+
+      setData({
+        currencies: mappedCurrencies,
+        baseCurrency: result.base,
+        dateRange: {
+          start: new Date(Date.now() - 10 * 24 * 60 * 60 * 1000).toISOString().split('T')[0], // approx
+          end: result.date,
+          days: 10
+        },
+        lastUpdated: new Date().toLocaleString()
+      })
+      setLastRefresh(new Date().toLocaleString())
+
     } catch (err) {
       console.error('Error fetching top 10 currencies:', err)
       setError('Failed to fetch currency data. Please try again.')

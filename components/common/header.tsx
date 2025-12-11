@@ -6,7 +6,11 @@ import { Menu, X, Search, ChevronDown } from "lucide-react"
 import { SearchBar } from "@/components/common/search-bar"
 import { ThemeToggle } from "@/components/common/theme-toggle"
 import { usePathname } from "next/navigation"
-import { MegaMenu } from "@/components/common/mega-menu"
+import dynamic from "next/dynamic"
+
+const MegaMenu = dynamic(() => import("@/components/common/mega-menu").then(mod => mod.MegaMenu), {
+  ssr: false,
+})
 import { navigationConfig } from "@/data/navigation"
 import {
   Accordion,

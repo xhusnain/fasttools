@@ -83,7 +83,7 @@ export function ToolPageLayout({
                 <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
             )}
 
-            <div className="container mx-auto px-4 py-6 max-w-6xl">
+            <div className="container mx-auto px-4 py-6 max-w-7xl">
                 {breadcrumbs && breadcrumbs.length > 0 && (
                     <Breadcrumbs items={breadcrumbs} />
                 )}

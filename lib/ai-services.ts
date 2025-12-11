@@ -428,3 +428,71 @@ function extractHashtags(text: string): string[] {
     const matches = text.match(hashtagRegex) || []
     return [...new Set(matches)]
 }
+
+/**
+ * Service function for generating YouTube channel names
+ */
+export async function generateChannelNamesService(data: { name: string }) {
+    const { name } = data
+
+    if (!name || name.trim().length === 0) {
+        return {
+            success: false,
+            error: "Channel name is required",
+            statusCode: 400
+        }
+    }
+
+    const prompt = PROMPTS.channelNames(name)
+
+    const result = await aiTextGenerator.generateText({
+        prompt,
+        temperature: 0.9,
+        maxTokens: 4000,
+    })
+
+    if (!result.success || !result.text) {
+        return {
+            success: false,
+            error: result.error || "Failed to generate channel names. Please try again.",
+            statusCode: 500
+        }
+    }
+
+    try {
+        let jsonText = result.text.trim()
+
+        // Clean up markdown code blocks if present
+        if (jsonText.startsWith('```json')) {
+            jsonText = jsonText.replace(/^```json\s*/, '').replace(/\s*```$/, '')
+        } else if (jsonText.startsWith('```')) {
+            jsonText = jsonText.replace(/^```\s*/, '').replace(/\s*```$/, '')
+        }
+
+        const parsedNames = JSON.parse(jsonText)
+
+        // Validate structure (basic check)
+        if (typeof parsedNames !== 'object' || parsedNames === null) {
+            throw new Error("Invalid JSON structure")
+        }
+
+        return {
+            success: true,
+            data: {
+                suggestions: parsedNames,
+                originalName: name
+            },
+            statusCode: 200
+        }
+
+    } catch (parseError) {
+        console.error("Error parsing AI response:", parseError)
+        console.log("Raw response:", result.text)
+
+        return {
+            success: false,
+            error: "Failed to parse AI suggestions. Please try again.",
+            statusCode: 500
+        }
+    }
+}

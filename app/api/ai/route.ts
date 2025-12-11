@@ -5,6 +5,7 @@ import {
     generateLyricsService,
     generateMemeService,
     generatePetNamesService,
+    generateChannelNamesService,
 } from "@/lib/ai-services"
 
 export const runtime = "nodejs"
@@ -64,6 +65,10 @@ export async function POST(request: NextRequest) {
 
             case "generate-pet-names":
                 result = await generatePetNamesService(data)
+                break
+
+            case "generate-channel-names":
+                result = await generateChannelNamesService(data)
                 break
 
             default:

@@ -76,13 +76,13 @@ export default function CurrencyAPIDocsPage() {
                     <div className="flex items-center justify-between">
                       <span className="text-xs sm:text-sm font-medium text-muted-foreground">GET</span>
                       <CopyButton
-                        text="https://www.fasttools.store/api/currency_converter/latest?base=USD&api_key=YOUR_API_KEY"
+                        text="https://api.frankfurter.dev/v1/latest?base=USD"
                         id="quick-start"
                         className="text-xs sm:text-sm"
                       />
                     </div>
                     <code className="text-xs sm:text-sm text-foreground break-all block bg-background/50 p-2 rounded border">
-                      https://www.fasttools.store/api/currency_converter/latest?base=USD&api_key=YOUR_API_KEY
+                      https://api.frankfurter.dev/v1/latest?base=USD
                     </code>
                   </div>
                 </div>
@@ -91,18 +91,15 @@ export default function CurrencyAPIDocsPage() {
                   <h4 className="font-medium mb-2 sm:mb-3 text-foreground text-xs sm:text-sm">Response:</h4>
                   <pre className="text-xs sm:text-sm text-muted-foreground overflow-x-auto scrollbar-thin scrollbar-thumb-orange-500 scrollbar-track-transparent hover:scrollbar-thumb-orange-600 scrollbar-thin scrollbar-thumb-orange-500 scrollbar-track-transparent hover:scrollbar-thumb-orange-600">
                     {`{
-  "success": true,
-  "data": {
-    "base": "USD",
-    "date": "2024-01-15",
-    "rates": {
-      "EUR": 0.92,
-      "GBP": 0.79,
-      "JPY": 149.5,
-      "CAD": 1.36
-    }
-  },
-  "timestamp": "2024-01-15T10:30:00Z"
+  "amount": 1.0,
+  "base": "USD",
+  "date": "2024-01-15",
+  "rates": {
+    "EUR": 0.92,
+    "GBP": 0.79,
+    "JPY": 149.5,
+    "CAD": 1.36
+  }
 }`}
                   </pre>
                 </div>
@@ -110,9 +107,9 @@ export default function CurrencyAPIDocsPage() {
 
               {/* API Key Generation */}
               <div className="p-4 sm:p-6 md:p-8 rounded-lg bg-card border border-border shadow">
-                <h2 className="text-base sm:text-lg md:text-xl font-bold mb-3 sm:mb-4 text-foreground">Get Your Free API Key</h2>
+                <h2 className="text-base sm:text-lg md:text-xl font-bold mb-3 sm:mb-4 text-foreground">Open Source API</h2>
                 <p className="text-muted-foreground text-xs sm:text-sm mb-4 sm:mb-6">
-                  Get a free API key to enhance your FastTools Currency API experience. No registration required - just click the button below!
+                  This service is powered by the open-source Frankfurter API. For direct access and technical details, visit their official site.
                 </p>
                 <ApiKeyGenerator />
               </div>
@@ -170,7 +167,7 @@ export default function CurrencyAPIDocsPage() {
                       <p className="text-xs sm:text-sm text-muted-foreground mb-3">Try making a currency conversion with your new key:</p>
                       <div className="bg-muted rounded-lg p-2 sm:p-3">
                         <code className="text-xs sm:text-sm text-foreground break-all">
-                          GET https://www.fasttools.store/api/currency_converter/latest?api_key=K8mN2pQ7vR9sT4usdW6xY1zA3bC5dE8fG
+                          GET https://api.frankfurter.dev/v1/latest
                         </code>
                       </div>
                     </div>
@@ -204,13 +201,13 @@ export default function CurrencyAPIDocsPage() {
                       <div className="flex items-center justify-between">
                         <span className="text-xs sm:text-sm font-medium text-muted-foreground">GET</span>
                         <CopyButton
-                          text="GET https://www.fasttools.store/api/currency_converter/currencies?api_key=YOUR_API_KEY"
+                          text="GET https://api.frankfurter.dev/v1/currencies"
                           id="currencies-endpoint"
                           className="text-xs sm:text-sm"
                         />
                       </div>
                       <code className="text-xs sm:text-sm text-foreground break-all block bg-background/50 p-2 rounded border">
-                        https://www.fasttools.store/api/currency_converter/currencies?api_key=YOUR_API_KEY
+                        https://api.frankfurter.dev/v1/currencies
                       </code>
                     </div>
                   </div>
@@ -218,20 +215,37 @@ export default function CurrencyAPIDocsPage() {
                   <h4 className="font-medium mb-2 sm:mb-3 text-foreground text-xs sm:text-sm">Response:</h4>
                   <pre className="text-xs sm:text-sm text-muted-foreground overflow-x-auto scrollbar-thin scrollbar-thumb-orange-500 scrollbar-track-transparent hover:scrollbar-thumb-orange-600 bg-muted rounded-lg p-3 sm:p-4 scrollbar-thin scrollbar-thumb-orange-500 scrollbar-track-transparent hover:scrollbar-thumb-orange-600">
                     {`{
-  "success": true,
-  "data": [
-    {
-      "code": "USD",
-      "name": "US Dollar",
-      "symbol": "$"
-    },
-    {
-      "code": "EUR", 
-      "name": "Euro",
-      "symbol": "€"
-    }
-  ],
-  "count": 100
+  "AUD": "Australian Dollar",
+  "BGN": "Bulgarian Lev",
+  "BRL": "Brazilian Real",
+  "CAD": "Canadian Dollar",
+  "CHF": "Swiss Franc",
+  "CNY": "Chinese Yuan Renminbi",
+  "CZK": "Czech Koruna",
+  "DKK": "Danish Krone",
+  "EUR": "Euro",
+  "GBP": "British Pound",
+  "HKD": "Hong Kong Dollar",
+  "HUF": "Hungarian Forint",
+  "IDR": "Indonesian Rupiah",
+  "ILS": "Israeli Shekel",
+  "INR": "Indian Rupee",
+  "ISK": "Icelandic Krona",
+  "JPY": "Japanese Yen",
+  "KRW": "South Korean Won",
+  "MXN": "Mexican Peso",
+  "MYR": "Malaysian Ringgit",
+  "NOK": "Norwegian Krone",
+  "NZD": "New Zealand Dollar",
+  "PHP": "Philippine Peso",
+  "PLN": "Polish Zloty",
+  "RON": "Romanian Leu",
+  "SEK": "Swedish Krona",
+  "SGD": "Singapore Dollar",
+  "THB": "Thai Baht",
+  "TRY": "Turkish Lira",
+  "USD": "US Dollar",
+  "ZAR": "South African Rand"
 }`}
                   </pre>
                 </div>
@@ -251,13 +265,13 @@ export default function CurrencyAPIDocsPage() {
                       <div className="flex items-center justify-between">
                         <span className="text-xs sm:text-sm font-medium text-muted-foreground">GET</span>
                         <CopyButton
-                          text="GET https://www.fasttools.store/api/currency_converter/latest?base=USD&symbols=EUR,GBP,JPY&api_key=YOUR_API_KEY"
+                          text="GET https://api.frankfurter.dev/v1/latest?base=USD&symbols=EUR,GBP,JPY"
                           id="latest-endpoint"
                           className="text-xs sm:text-sm"
                         />
                       </div>
                       <code className="text-xs sm:text-sm text-foreground break-all block bg-background/50 p-2 rounded border">
-                        https://www.fasttools.store/api/currency_converter/latest?base=USD&symbols=EUR,GBP,JPY&api_key=YOUR_API_KEY
+                        https://api.frankfurter.dev/v1/latest?base=USD&symbols=EUR,GBP,JPY
                       </code>
                     </div>
                   </div>
@@ -277,17 +291,14 @@ export default function CurrencyAPIDocsPage() {
                   <h4 className="font-medium mb-3 text-foreground text-sm">Response:</h4>
                   <pre className="text-sm text-muted-foreground overflow-x-auto scrollbar-thin scrollbar-thumb-orange-500 scrollbar-track-transparent hover:scrollbar-thumb-orange-600 bg-muted rounded-lg p-4">
                     {`{
-  "success": true,
-  "data": {
-    "base": "USD",
-    "date": "2024-01-15",
-    "rates": {
-      "EUR": 0.92,
-      "GBP": 0.79,
-      "JPY": 149.5
-    }
-  },
-  "timestamp": "2024-01-15T10:30:00Z"
+  "amount": 1.0,
+  "base": "USD",
+  "date": "2024-01-15",
+  "rates": {
+    "EUR": 0.92,
+    "GBP": 0.79,
+    "JPY": 149.5
+  }
 }`}
                   </pre>
                 </div>
@@ -295,25 +306,25 @@ export default function CurrencyAPIDocsPage() {
                 {/* Currency Conversion */}
                 <div className="p-6 sm:p-8 rounded-lg bg-card border border-border shadow">
                   <div className="flex items-center gap-3 mb-4">
-                    <span className="px-3 py-1 bg-blue-100 dark:bg-blue-900/20 text-foreground rounded text-sm font-medium">POST</span>
+                    <span className="px-3 py-1 bg-heading-accent-border dark:bg-heading-accent-border/20 text-heading-accent dark:text-heading-accent rounded text-sm font-medium">GET</span>
                     <h3 className="text-base md:text-lg font-semibold text-foreground">Convert Currency</h3>
                   </div>
                   <p className="text-muted-foreground text-sm mb-4">
-                    Convert an amount from one currency to another using real-time exchange rates.
+                    Convert an amount from one currency to another using the latest exchange rates.
                   </p>
 
                   <div className="bg-muted rounded-lg p-3 sm:p-4 mb-3 sm:mb-4">
                     <div className="flex flex-col gap-2 mb-2 sm:mb-3">
                       <div className="flex items-center justify-between">
-                        <span className="text-xs sm:text-sm font-medium text-muted-foreground">POST</span>
+                        <span className="text-xs sm:text-sm font-medium text-muted-foreground">GET</span>
                         <CopyButton
-                          text="POST https://www.fasttools.store/api/currency_converter/convert?api_key=YOUR_API_KEY"
+                          text="GET https://api.frankfurter.dev/v1/latest?amount=10&from=USD&to=EUR"
                           id="convert-endpoint"
                           className="text-xs sm:text-sm"
                         />
                       </div>
                       <code className="text-xs sm:text-sm text-foreground break-all block bg-background/50 p-2 rounded border">
-                        https://www.fasttools.store/api/currency_converter/convert?api_key=YOUR_API_KEY
+                        https://api.frankfurter.dev/v1/latest?amount=10&from=USD&to=EUR
                       </code>
                     </div>
                   </div>
@@ -359,13 +370,13 @@ export default function CurrencyAPIDocsPage() {
                       <div className="flex items-center justify-between">
                         <span className="text-xs sm:text-sm font-medium text-muted-foreground">GET</span>
                         <CopyButton
-                          text="GET https://www.fasttools.store/api/currency_converter/historical?date=2024-01-15&base=USD&symbols=EUR,GBP&api_key=YOUR_API_KEY"
+                          text="GET https://api.frankfurter.dev/v1/2024-01-15?base=USD&symbols=EUR,GBP"
                           id="historical-endpoint"
                           className="text-xs sm:text-sm"
                         />
                       </div>
                       <code className="text-xs sm:text-sm text-foreground break-all block bg-background/50 p-2 rounded border">
-                        https://www.fasttools.store/api/currency_converter/historical?date=2024-01-15&base=USD&symbols=EUR,GBP&api_key=YOUR_API_KEY
+                        https://api.frankfurter.dev/v1/2024-01-15?base=USD&symbols=EUR,GBP
                       </code>
                     </div>
                   </div>
@@ -402,13 +413,13 @@ export default function CurrencyAPIDocsPage() {
                       <div className="flex items-center justify-between">
                         <span className="text-xs sm:text-sm font-medium text-muted-foreground">GET</span>
                         <CopyButton
-                          text="GET https://www.fasttools.store/api/currency_converter/timeseries?start_date=2024-01-01&end_date=2024-01-10&base=USD&symbols=EUR,GBP&api_key=YOUR_API_KEY"
+                          text="GET https://api.frankfurter.dev/v1/2024-01-01..2024-01-10?base=USD&symbols=EUR,GBP"
                           id="timeseries-endpoint"
                           className="text-xs sm:text-sm"
                         />
                       </div>
                       <code className="text-xs sm:text-sm text-foreground break-all block bg-background/50 p-2 rounded border">
-                        https://www.fasttools.store/api/currency_converter/timeseries?start_date=2024-01-01&end_date=2024-01-10&base=USD&symbols=EUR,GBP&api_key=YOUR_API_KEY
+                        https://api.frankfurter.dev/v1/2024-01-01..2024-01-10?base=USD&symbols=EUR,GBP
                       </code>
                     </div>
                   </div>
@@ -438,10 +449,10 @@ export default function CurrencyAPIDocsPage() {
                 <div className="p-6 sm:p-8 rounded-lg bg-card border border-border shadow">
                   <div className="flex items-center gap-3 mb-4">
                     <span className="px-3 py-1 bg-heading-accent-border dark:bg-heading-accent-border/20 text-heading-accent dark:text-heading-accent rounded text-sm font-medium">GET</span>
-                    <h3 className="text-base md:text-lg font-semibold text-foreground">Get Top 10 Currencies (last N days)</h3>
+                    <h3 className="text-base md:text-lg font-semibold text-foreground">Get Multiple Rates</h3>
                   </div>
                   <p className="text-muted-foreground text-sm mb-4">
-                    Return processed stats for the top 10 traded currencies over a recent period.
+                    Fetch rates for specific currencies by providing a comma-separated list of symbols.
                   </p>
 
                   <div className="bg-muted rounded-lg p-3 sm:p-4 mb-3 sm:mb-4">
@@ -449,13 +460,13 @@ export default function CurrencyAPIDocsPage() {
                       <div className="flex items-center justify-between">
                         <span className="text-xs sm:text-sm font-medium text-muted-foreground">GET</span>
                         <CopyButton
-                          text="GET https://www.fasttools.store/api/currency_converter/top10?base=USD&days=10&api_key=YOUR_API_KEY"
+                          text="GET https://api.frankfurter.dev/v1/latest?symbols=USD,GBP,JPY"
                           id="top10-endpoint"
                           className="text-xs sm:text-sm"
                         />
                       </div>
                       <code className="text-xs sm:text-sm text-foreground break-all block bg-background/50 p-2 rounded border">
-                        https://www.fasttools.store/api/currency_converter/top10?base=USD&days=10&api_key=YOUR_API_KEY
+                        https://api.frankfurter.dev/v1/latest?symbols=USD,GBP,JPY
                       </code>
                     </div>
                   </div>
@@ -515,26 +526,10 @@ console.log(convertData.data.convertedAmount);`}
                       <pre className="text-xs text-muted-foreground overflow-x-auto scrollbar-thin scrollbar-thumb-orange-500 scrollbar-track-transparent hover:scrollbar-thumb-orange-600">
                         {`// Get latest rates
 const response = await fetch(
-  'https://www.fasttools.store/api/currency_converter/latest?base=USD&api_key=YOUR_API_KEY'
+  'https://api.frankfurter.dev/v1/latest?base=USD'
 );
 const data = await response.json();
-console.log(data.data.rates);
-
-// Convert currency
-const convertResponse = await fetch(
-  'https://www.fasttools.store/api/currency_converter/convert?api_key=YOUR_API_KEY',
-  {
-    method: 'POST',
-    headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify({
-      from: 'USD',
-      to: 'EUR',
-      amount: 100
-    })
-  }
-);
-const convertData = await convertResponse.json();
-console.log(convertData.data.convertedAmount);`}
+console.log(data.rates);`}
                       </pre>
                     </div>
 
@@ -550,22 +545,10 @@ console.log(convertData.data.convertedAmount);`}
 
 # Get latest rates
 response = requests.get(
-    'https://www.fasttools.store/api/currency_converter/latest?base=USD&api_key=YOUR_API_KEY'
+    'https://api.frankfurter.dev/v1/latest?base=USD'
 )
 data = response.json()
-print(data['data']['rates'])
-
-# Convert currency
-convert_response = requests.post(
-    'https://www.fasttools.store/api/currency_converter/convert?api_key=YOUR_API_KEY',
-    json={
-        'from': 'USD',
-        'to': 'EUR',
-        'amount': 100
-    }
-)
-convert_data = convert_response.json()
-print(convert_data['data']['convertedAmount'])`}
+print(data['rates'])`}
                           id="python-example"
                         />
                       </div>
@@ -574,22 +557,10 @@ print(convert_data['data']['convertedAmount'])`}
 
 # Get latest rates
 response = requests.get(
-    'https://www.fasttools.store/api/currency_converter/latest?base=USD&api_key=YOUR_API_KEY'
+    'https://api.frankfurter.dev/v1/latest?base=USD'
 )
 data = response.json()
-print(data['data']['rates'])
-
-# Convert currency
-convert_response = requests.post(
-    'https://www.fasttools.store/api/currency_converter/convert?api_key=YOUR_API_KEY',
-    json={
-        'from': 'USD',
-        'to': 'EUR',
-        'amount': 100
-    }
-)
-convert_data = convert_response.json()
-print(convert_data['data']['convertedAmount'])`}
+print(data['rates'])`}
                       </pre>
                     </div>
 
@@ -602,31 +573,13 @@ print(convert_data['data']['convertedAmount'])`}
                         </div>
                         <CopyButton
                           text={`# Get latest rates
-curl "https://www.fasttools.store/api/currency_converter/latest?base=USD&api_key=YOUR_API_KEY"
-
-# Convert currency
-curl -X POST "https://www.fasttools.store/api/currency_converter/convert?api_key=YOUR_API_KEY" \\
-  -H "Content-Type: application/json" \\
-  -d '{
-    "from": "USD",
-    "to": "EUR", 
-    "amount": 100
-  }'`}
+curl "https://api.frankfurter.dev/v1/latest?base=USD"`}
                           id="curl-example"
                         />
                       </div>
                       <pre className="text-xs text-muted-foreground overflow-x-auto scrollbar-thin scrollbar-thumb-orange-500 scrollbar-track-transparent hover:scrollbar-thumb-orange-600">
                         {`# Get latest rates
-curl "https://www.fasttools.store/api/currency_converter/latest?base=USD&api_key=YOUR_API_KEY"
-
-# Convert currency
-curl -X POST "https://www.fasttools.store/api/currency_converter/convert?api_key=YOUR_API_KEY" \\
-  -H "Content-Type: application/json" \\
-  -d '{
-    "from": "USD",
-    "to": "EUR", 
-    "amount": 100
-  }'`}
+curl "https://api.frankfurter.dev/v1/latest?base=USD"`}
                       </pre>
                     </div>
 
@@ -702,7 +655,7 @@ curl -X POST "https://www.fasttools.store/api/currency_converter/convert?api_key
                       </ul>
                       <p className="mb-3">However, you can get a free API key for enhanced access:</p>
                       <ul className="list-disc pl-5 mb-3 space-y-1">
-                        <li><strong>Instant Generation:</strong> Click "Get My Key" button or call <code className="bg-muted px-1 rounded">/api/currency_converter/api-key</code></li>
+                        <li><strong>Instant Generation:</strong> Visit <code className="bg-muted px-1 rounded">frankfurter.dev</code> for more details</li>
                         <li><strong>Unique Keys:</strong> Each key is unique and secure</li>
                         <li><strong>No Registration:</strong> No signup or approval process required</li>
                         <li><strong>Persistent Keys:</strong> Keys never expire and work forever</li>
@@ -721,7 +674,7 @@ curl -X POST "https://www.fasttools.store/api/currency_converter/convert?api_key
                         <li><strong>European:</strong> SEK, NOK, DKK, PLN, CZK, HUF, RON</li>
                         <li><strong>Asian:</strong> THB, MYR, IDR, PHP, VND, TWD, HKD</li>
                       </ul>
-                      <p className="mb-3">You can get the complete list of supported currencies using our <code className="bg-muted px-1 rounded">/api/currency_converter/currencies</code> endpoint.</p>
+                      <p className="mb-3">You can get the complete list of supported currencies using the <code className="bg-muted px-1 rounded">/v1/currencies</code> endpoint.</p>
                       <p>If you need a currency that's not currently supported, please contact us and we'll consider adding it to our API.</p>
                     </div>
 
@@ -776,9 +729,9 @@ curl -X POST "https://www.fasttools.store/api/currency_converter/convert?api_key
                       </ul>
                       <p className="mb-3">Quick start steps:</p>
                       <ol className="list-decimal pl-5 mb-3 space-y-1">
-                        <li><strong>Choose your endpoint:</strong> Start with <code className="bg-muted px-1 rounded">/api/currency_converter/currencies</code> to see available currencies</li>
-                        <li><strong>Make your first call:</strong> Use <code className="bg-muted px-1 rounded">/api/currency_converter/latest</code> to get current rates</li>
-                        <li><strong>Test conversion:</strong> Try <code className="bg-muted px-1 rounded">/api/currency_converter/convert</code> for currency conversion</li>
+                        <li><strong>Choose your endpoint:</strong> Start with <code className="bg-muted px-1 rounded">/v1/currencies</code> to see available currencies</li>
+                        <li><strong>Make your first call:</strong> Use <code className="bg-muted px-1 rounded">/v1/latest</code> to get current rates</li>
+                        <li><strong>Test conversion:</strong> Try <code className="bg-muted px-1 rounded">/v1/latest?amount=10&from=USD&to=EUR</code> for currency conversion</li>
                         <li><strong>Integrate:</strong> Add the API calls to your application</li>
                       </ol>
                       <p>FastTools.store provides everything you need to integrate currency data into your application quickly and efficiently.</p>
