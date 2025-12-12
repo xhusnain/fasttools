@@ -112,15 +112,26 @@ export const navigationConfig: MegaMenuSection[] = [
                 ]
             },
             {
-                title: "Statistics",
+                title: "Math",
                 items: [
+                    { title: "Scientific Calc", href: "/calculator/scientific-calculator", icon: Calculator, description: "Advanced math" },
+                    { title: "Fraction Calc", href: "/calculator/fraction-calculator", icon: Activity, description: "Add/Sub fractions" },
+                    { title: "Triangle Calc", href: "/calculator/triangle-calculator", icon: Ruler, description: "Geometry helper" },
                     { title: "Standard Deviation", href: "/calculator/standard-deviation-calculator", icon: BarChart, description: "Statistics" },
+                ]
+            },
+            {
+                title: "Computer Science",
+                items: [
+                    { title: "IP Subnet Calc", href: "/calculator/ip-subnet-calculator", icon: HardDrive, description: "Network masks" },
                 ]
             },
             {
                 title: "Misc",
                 items: [
                     { title: "Concrete Calc", href: "/calculator/concrete-calculator", icon: Box, description: "Construction" },
+                    { title: "Date Difference", href: "/calculator/date-difference", icon: Calendar, description: "Days between dates" },
+                    { title: "Time Duration", href: "/calculator/time-duration", icon: Clock, description: "Hours & minutes" },
                 ]
             }
         ]
@@ -194,16 +205,31 @@ export const navigationConfig: MegaMenuSection[] = [
                     { title: "TikTok Downloader", href: "/social-media-tools/tiktok-downloader", icon: Video, description: "No watermark" },
                     { title: "Instagram Saver", href: "/social-media-tools/instagram-downloader", icon: Camera, description: "Save content" },
                     { title: "Insta DP Viewer", href: "/social-media-tools/instagram-dp", icon: Eye, description: "Full size profile" },
-                    { title: "YouTube Thumbs", href: "/social-media-tools/youtube-thumbnail", icon: Image, description: "HD images" },
                 ]
             },
             {
                 title: "Growth",
                 items: [
                     { title: "Hashtag Generator", href: "/social-media-tools/hashtag-counter", icon: Hash, description: "Trending tags" },
-                    { title: "YouTube Tags", href: "/social-media-tools/youtube-tags", icon: Search, description: "SEO keywords" },
-                    { title: "Channel Checker", href: "/social-media-tools/channel-checker", icon: Search, description: "Name availability" },
                     { title: "Link in Bio", href: "/social-media-tools/link-in-bio", icon: Globe, description: "Bio page" },
+                ]
+            }
+        ]
+    },
+    {
+        title: "YouTube",
+        categories: [
+            {
+                title: "Growth & SEO",
+                items: [
+                    { title: "Channel Checker", href: "/social-media-tools/channel-checker", icon: Search, description: "Name availability" },
+                    { title: "YouTube Tags", href: "/social-media-tools/youtube-tags", icon: Search, description: "SEO keywords" },
+                ]
+            },
+            {
+                title: "Content",
+                items: [
+                    { title: "YouTube Thumbs", href: "/social-media-tools/youtube-thumbnail", icon: Image, description: "HD images" },
                 ]
             }
         ]
