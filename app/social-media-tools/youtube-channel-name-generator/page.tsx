@@ -1,37 +1,33 @@
-import type { Metadata } from "next"
 import { YoutubeChannelNameGenerator } from "@/components/social-media/youtube-channel-name-generator"
 import { ToolPageLayout } from "@/components/common/tool-page-layout"
-import { createMetadata } from "@/lib/metadata-base"
+import { createToolConfig } from "@/lib/create-tool-config"
 
 // Auto-update year
 const currentYear = new Date().getFullYear()
 
-const baseMetadata = createMetadata({
-    title: `Free YouTube Name Generator ${currentYear} - AI Channel Names (No Login)`,
-    description:
-        `Generate unique YouTube channel names instantly with our free AI tool. No login required. Get creative, catchy names perfect for your niche in seconds!`,
+const toolConfig = createToolConfig({
+    toolName: "Free YouTube Channel Name Generator",
+    description: `Generate unique YouTube channel names instantly with our free AI tool. No login required. Get creative, catchy names perfect for your niche in seconds!`,
     path: "/social-media-tools/youtube-channel-name-generator",
-})
-
-export const metadata: Metadata = {
-    ...baseMetadata,
-    category: "Social Media Tools",
-    applicationName: "FastTools - YouTube Channel Name Generator",
+    metaTitle: `Free YouTube Name Generator ${currentYear} - AI Channel Names (No Login)`,
+    metaDescription: `Generate unique YouTube channel names instantly with our free AI tool. No login required. Get creative, catchy names perfect for your niche in seconds!`,
     keywords: ["youtube channel name generator", "youtube name ideas", "channel name creator", "free youtube names", "ai name generator"],
-    formatDetection: {
-        email: false,
-        address: false,
-        telephone: false,
-    },
-    other: {
-        "mobile-web-app-capable": "yes",
-        "apple-mobile-web-app-title": "Channel Name Gen",
-    },
-}
 
-export default function ChannelNameGeneratorPage() {
-    const toolContent = {
-        toolName: "Free YouTube Channel Name Generator",
+    header: {
+        title: "Free YouTube Channel Name Generator - AI Powered, No Login Required",
+        description: "Generate unique YouTube channel names instantly with our free AI tool. No login required. Get creative, catchy names perfect for your niche in seconds!",
+        titleSize: "medium",
+        descriptionSize: "small",
+        centered: true,
+        color: "red"
+    },
+
+    breadcrumbs: [
+        { label: "Social Media Tools", href: "/social-media-tools" },
+        { label: "YouTube Name Generator", href: "/social-media-tools/youtube-channel-name-generator" },
+    ],
+
+    content: {
         overview: `A YouTube channel name generator is an AI-powered tool that creates unique, memorable channel names based on your content niche, style, and target audience. Our free generator helps content creators find the perfect YouTube username without the hassle of brainstorming for hours or paying subscription fees.
 
 Unlike other tools that require registration or limit your searches, our YouTube name generator is completely free with unlimited uses and no login required. FastTools is designed to be the best free YouTube channel name generator tool for creators who need an easy-to-use solution for finding their digital identity.`,
@@ -55,6 +51,22 @@ Unlike other tools that require registration or limit your searches, our YouTube
 
         aboutTool: (
             <div className="space-y-12">
+                <section className="rounded-2xl overflow-hidden shadow-lg border border-border bg-card">
+                    <div className="aspect-video w-full">
+                        <iframe
+                            className="w-full h-full"
+                            src="https://www.youtube.com/embed/qNapObaVmPc"
+                            title="How to Choose the Perfect YouTube Channel Name"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                            allowFullScreen
+                        ></iframe>
+                    </div>
+                    <div className="p-6">
+                        <h3 className="text-xl font-bold mb-2">Watch Tutorial: How to Choose a YouTube Channel Name</h3>
+                        <p className="text-muted-foreground">Learn expert tips and strategies for picking a channel name that stands out and helps you grow.</p>
+                    </div>
+                </section>
+
                 <section className="bg-gradient-to-br from-primary/5 to-primary/10 rounded-2xl p-8 border border-primary/20">
                     <h3 className="text-2xl font-bold mb-6 text-primary">Why FastTools is the #1 YouTube Channel Name Generator</h3>
                     <div className="grid md:grid-cols-2 gap-8">
@@ -284,28 +296,18 @@ Unlike other tools that require registration or limit your searches, our YouTube
             "Brainstorming creative project names"
         ]
     }
+})
 
+export const metadata = toolConfig.metadata
+
+export default function ChannelNameGeneratorPage() {
     return (
         <ToolPageLayout
-            header={{
-                title: "Free YouTube Channel Name Generator - AI Powered, No Login Required",
-                description: "Generate unique YouTube channel names instantly with our free AI tool. No login required. Get creative, catchy names perfect for your niche in seconds!",
-                titleSize: "medium",
-                descriptionSize: "small",
-                centered: true,
-                color: "red"
-            }}
-            breadcrumbs={[
-                { label: "Social Media Tools", href: "/social-media-tools" },
-                { label: "YouTube Name Generator", href: "/social-media-tools/youtube-channel-name-generator" },
-            ]}
-            toolComponent={
+            {...toolConfig.getLayoutProps(
                 <div className="bg-card border border-border rounded-xl p-4 sm:p-6 shadow-sm">
                     <YoutubeChannelNameGenerator />
                 </div>
-            }
-            toolContent={toolContent}
-            expectedMetadata={baseMetadata}
+            )}
         />
     )
 }

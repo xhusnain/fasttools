@@ -4,10 +4,12 @@ import { useState } from "react"
 import { GButton } from "@/ui/gbutton"
 import { GLabel } from "@/ui/glabel"
 import { GInput } from "@/ui/ginput"
-import { GCard } from "@/ui/gcard"
+import { GCard, GCardContent, GCardHeader, GCardTitle } from "@/ui/gcard"
+import { GBadge } from "@/ui/gbadge"
+import { GLoader } from "@/ui/gloader"
+import { useToast } from "@/ui/gtoast"
 import { GSelect, GSelectContent, GSelectItem, GSelectTrigger, GSelectValue } from "@/ui/gselect"
 import { Copy, Sparkles, Download, Youtube } from "lucide-react"
-import { LoadingSpinner } from "@/components/common/loading-spinner"
 
 export function YoutubeChannelNameGenerator() {
     const [topic, setTopic] = useState("")
@@ -20,9 +22,11 @@ export function YoutubeChannelNameGenerator() {
     const [copiedName, setCopiedName] = useState("")
     const [loadingProgress, setLoadingProgress] = useState(0)
 
+    const { showToast, GToastContainer } = useToast()
+
     const generateNames = async () => {
         if (!topic.trim()) {
-            alert("Please enter a topic or niche")
+            showToast("warning", "Please enter a topic or niche")
             return
         }
 
@@ -60,14 +64,15 @@ export function YoutubeChannelNameGenerator() {
 
             if (response.ok && result.success) {
                 setCategorizedNames(result.suggestions)
+                showToast("success", "Channel names generated successfully!")
             } else {
                 console.error("Error:", result.error)
-                alert(result.error || "Failed to generate names. Please try again.")
+                showToast("error", result.error || "Failed to generate names. Please try again.")
             }
         } catch (error) {
             clearInterval(progressInterval)
             console.error("Error generating names:", error)
-            alert("An error occurred. Please try again.")
+            showToast("error", "An error occurred. Please try again.")
         } finally {
             setTimeout(() => {
                 setLoading(false)
@@ -79,6 +84,7 @@ export function YoutubeChannelNameGenerator() {
     const copyName = (name: string) => {
         void navigator.clipboard.writeText(name)
         setCopiedName(name)
+        showToast("success", "Name copied to clipboard!", 2000)
         setTimeout(() => setCopiedName(""), 2000)
     }
 
@@ -109,6 +115,7 @@ export function YoutubeChannelNameGenerator() {
         a.download = `youtube-names-${topic.replace(/\s+/g, "-").toLowerCase()}-${Date.now()}.txt`
         a.click()
         URL.revokeObjectURL(url)
+        showToast("success", "Channel names downloaded!")
     }
 
     const getTotalNamesCount = () => {
@@ -118,6 +125,7 @@ export function YoutubeChannelNameGenerator() {
 
     return (
         <div className="space-y-8">
+            <GToastContainer />
             <div className="grid gap-6 md:grid-cols-2">
                 {/* Topic/Niche */}
                 <div className="space-y-2">
@@ -197,27 +205,27 @@ export function YoutubeChannelNameGenerator() {
 
             {/* Loading Progress */}
             {loading && (
-                <div className="space-y-4 animate-fade-in bg-card/50 rounded-xl p-8 border border-primary/10">
-                    <div className="flex flex-col items-center justify-center gap-4">
-                        <LoadingSpinner className="h-8 w-8 text-[#FF0000]" />
+                <GCard className="space-y-4 animate-fade-in bg-card/50 border-primary/10">
+                    <GCardContent className="flex flex-col items-center justify-center gap-4 py-8">
+                        <GLoader size="lg" className="text-[#FF0000]" />
                         <p className="text-lg font-medium text-foreground/80">
                             Brainstorming catchy names for your channel...
                         </p>
-                    </div>
 
-                    <div className="max-w-md mx-auto space-y-2">
-                        <div className="flex justify-between text-sm text-muted-foreground">
-                            <span>Generating ideas...</span>
-                            <span>{Math.round(loadingProgress)}%</span>
+                        <div className="w-full max-w-md space-y-2 mt-4">
+                            <div className="flex justify-between text-sm text-muted-foreground">
+                                <span>Generating ideas...</span>
+                                <span>{Math.round(loadingProgress)}%</span>
+                            </div>
+                            <div className="w-full bg-secondary rounded-full h-2 overflow-hidden">
+                                <div
+                                    className="h-full bg-[#FF0000] transition-all duration-300 ease-out rounded-full"
+                                    style={{ width: `${loadingProgress}%` }}
+                                />
+                            </div>
                         </div>
-                        <div className="w-full bg-secondary rounded-full h-2 overflow-hidden">
-                            <div
-                                className="h-full bg-[#FF0000] transition-all duration-300 ease-out rounded-full"
-                                style={{ width: `${loadingProgress}%` }}
-                            />
-                        </div>
-                    </div>
-                </div>
+                    </GCardContent>
+                </GCard>
             )}
 
             {/* Results */}
@@ -247,30 +255,34 @@ export function YoutubeChannelNameGenerator() {
                         {Object.entries(categorizedNames).map(([category, names]) => {
                             if (names.length === 0) return null
                             return (
-                                <div key={category} className="bg-card rounded-xl border p-6 shadow-sm">
-                                    <h4 className="font-bold text-lg mb-4 text-[#FF0000] flex items-center gap-2">
-                                        {category}
-                                        <span className="text-xs font-normal text-muted-foreground bg-secondary px-2 py-1 rounded-full">
-                                            {names.length}
-                                        </span>
-                                    </h4>
-                                    <div className="grid gap-3 sm:grid-cols-2 Ig:grid-cols-3 xl:grid-cols-4">
-                                        {names.map((name, index) => (
-                                            <div
-                                                key={index}
-                                                className="group relative flex items-center justify-between p-3 bg-secondary/30 hover:bg-secondary rounded-lg border border-transparent hover:border-primary/20 transition-all cursor-pointer"
-                                                onClick={() => copyName(name)}
-                                            >
-                                                <span className="font-medium text-foreground/90">{name}</span>
-                                                {copiedName === name ? (
-                                                    <span className="text-green-500 text-xs font-bold px-2">Copied!</span>
-                                                ) : (
-                                                    <Copy className="h-4 w-4 text-muted-foreground opacity-0 group-hover:opacity-100 transition-opacity" />
-                                                )}
-                                            </div>
-                                        ))}
-                                    </div>
-                                </div>
+                                <GCard key={category}>
+                                    <GCardHeader>
+                                        <GCardTitle className=" text-[#FF0000] flex items-center gap-2">
+                                            {category}
+                                            <GBadge variant="secondary" className="rounded-full">
+                                                {names.length}
+                                            </GBadge>
+                                        </GCardTitle>
+                                    </GCardHeader>
+                                    <GCardContent>
+                                        <div className="grid gap-3 sm:grid-cols-2 Ig:grid-cols-3 xl:grid-cols-4">
+                                            {names.map((name, index) => (
+                                                <div
+                                                    key={index}
+                                                    className="group relative flex items-center justify-between p-3 bg-secondary/30 hover:bg-secondary rounded-lg border border-transparent hover:border-primary/20 transition-all cursor-pointer"
+                                                    onClick={() => copyName(name)}
+                                                >
+                                                    <span className="font-medium text-foreground/90">{name}</span>
+                                                    {copiedName === name ? (
+                                                        <span className="text-green-500 text-xs font-bold px-2">Copied!</span>
+                                                    ) : (
+                                                        <Copy className="h-4 w-4 text-muted-foreground opacity-0 group-hover:opacity-100 transition-opacity" />
+                                                    )}
+                                                </div>
+                                            ))}
+                                        </div>
+                                    </GCardContent>
+                                </GCard>
                             )
                         })}
                     </div>
