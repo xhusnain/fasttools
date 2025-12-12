@@ -62,7 +62,7 @@ export function YoutubeChannelChecker() {
         },
         body: JSON.stringify({
           action: 'generate-channel-names',
-          data: { name }
+          data: { topic: name }
         }),
       })
 
