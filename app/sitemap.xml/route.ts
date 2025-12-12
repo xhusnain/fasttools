@@ -439,6 +439,12 @@ export async function GET() {
             changeFrequency: "daily" as const,
             priority: 0.95,
         },
+        {
+            url: "https://www.fasttools.store/social-media-tools/youtube-channel-name-generator",
+            lastModified: getFreshnessDate(0),
+            changeFrequency: "daily" as const,
+            priority: 0.95,
+        },
         // API Documentation Pages
         {
             url: "https://www.fasttools.store/converters/currency-api",
@@ -964,6 +970,21 @@ export async function GET() {
                     url: "https://www.fasttools.store/youtube_gaming_branding_ideas_1764248964347.png",
                     title: "YouTube Gaming Branding Ideas",
                     caption: "Branding ideas for gaming channels"
+                }
+            ]
+        },
+        {
+            url: "https://www.fasttools.store/social-media-tools/youtube-channel-name-generator",
+            images: [
+                {
+                    url: "https://www.fasttools.store/images/youtube-naming-tips.png",
+                    title: "YouTube Channel Naming Tips",
+                    caption: "4 Tips for YouTube Channel Names: Short, Unique, Easy to Spell, Future Proof"
+                },
+                {
+                    url: "https://www.fasttools.store/images/youtube-name-brainstorming.png",
+                    title: "YouTube Name Brainstorming",
+                    caption: "Brainstorming YouTube Channel Name Ideas"
                 }
             ]
         }

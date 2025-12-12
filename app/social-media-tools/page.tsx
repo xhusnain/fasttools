@@ -5,7 +5,7 @@ import { GToolCard } from "@/ui/gtool-card"
 import {
   Youtube, Instagram, Music, Tag, LinkIcon, Search, Hash,
   Download, Facebook, MessageSquare, Target, Shield, Globe,
-  Lightbulb, CheckCircle, Code
+  Lightbulb, CheckCircle, Code, Type
 } from "lucide-react"
 import { getCurrentYear } from "@/lib/utils"
 
@@ -79,6 +79,13 @@ const socialTools = [
     icon: Hash,
     href: "/social-media-tools/hashtag-counter",
     color: "purple"
+  },
+  {
+    title: "YouTube Channel Name Generator",
+    description: "Generate creative, catchy, and professional YouTube channel names instantly with AI.",
+    icon: Type,
+    href: "/social-media-tools/youtube-channel-name-generator",
+    color: "red"
   },
 ]
 

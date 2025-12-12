@@ -104,27 +104,32 @@ QUALITY STANDARDS:
 
 Generate the 100 names now as a valid JSON object:`,
 
-  channelNames: (name: string) => `Act as a creative branding expert. Generate 100 unique and catchy YouTube channel name suggestions based on the input name: "${name}".
-The goal is to provide a diverse range of options suitable for different niches.
-
-Organize the suggestions into the following specific categories (at least 10-15 names per category):
-1. Tech & Gaming (Modern, edgy, futuristic)
-2. Lifestyle & Vlogs (Personal, friendly, inviting)
-3. Educational & How-To (Professional, knowledgeable, trustworthy)
-4. Entertainment & Comedy (Fun, catchy, memorable)
-5. Business & Professional (Serious, authoritative, sleek)
-6. Catchy & Short (Punchy, 1-2 words, easy to remember, good for branding)
-7. Unique & Abstract (Creative, metaphoric, distinct)
-8. Official & Brand (Variations with TV, Official, HQ, etc.)
-
-Return the result STRICTLY as a JSON object with this exact structure:
-{
-  "Tech & Gaming": ["Name1", "Name2", ...],
-  "Lifestyle & Vlogs": ["Name3", "Name4", ...],
-  ...
-}
-
-Do NOT include any markdown formatting (like \`\`\`json). Return ONLY the raw valid JSON string.`,
+  channelNames: (topic: string, keywords?: string, tone?: string, targetAudience?: string) => `Act as a creative branding expert. Generate 50 unique and catchy YouTube channel name suggestions based on the following details:
+  
+  Topic/Niche: "${topic}"
+  ${keywords ? `Keywords to Include: "${keywords}"` : ""}
+  ${tone ? `Desired Tone: "${tone}"` : ""}
+  ${targetAudience ? `Target Audience: "${targetAudience}"` : ""}
+  
+  The goal is to provide a diverse range of options suitable for this specific niche and audience.
+  
+  Organize the suggestions into the following specific categories (generate 5-8 names per category to reach ~50 total):
+  1. Catchy & Short (Punchy, 1-2 words, easy to remember, good for branding)
+  2. Niche-Specific (Descriptive, clear relevance to ${topic})
+  3. Unique & Abstract (Creative, metaphoric, distinct)
+  4. Professional & Authority (Trustworthy, expert vibe)
+  5. Fun & Playful (Engaging, energetic, maybe pun-based)
+  6. Modern & Trendy (Edgy, cool, futuristic)
+  7. Personal Brand (Using "With [Name]" style or similar if appropriate)
+  
+  Return the result STRICTLY as a JSON object with this exact structure:
+  {
+    "Catchy & Short": ["Name1", "Name2", ...],
+    "Niche-Specific": ["Name3", "Name4", ...],
+    ...
+  }
+  
+  Do NOT include any markdown formatting (like \`\`\`json). Return ONLY the raw valid JSON string.`,
 
   lyrics: (languageInstructions: string, selectedLanguage: string, theme: string, genre: string | undefined, mood: string | undefined, duration: number | undefined, structure: string) => `You are a professional songwriter and lyricist with expertise in multiple languages.Generate original, creative, and emotionally resonant song lyrics based on the following specifications:
 

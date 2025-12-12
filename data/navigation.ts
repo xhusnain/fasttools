@@ -222,6 +222,7 @@ export const navigationConfig: MegaMenuSection[] = [
             {
                 title: "Growth & SEO",
                 items: [
+                    { title: "Channel Name Gen", href: "/social-media-tools/youtube-channel-name-generator", icon: Type, description: "AI Brainstorming" },
                     { title: "Channel Checker", href: "/social-media-tools/channel-checker", icon: Search, description: "Name availability" },
                     { title: "YouTube Tags", href: "/social-media-tools/youtube-tags", icon: Search, description: "SEO keywords" },
                 ]

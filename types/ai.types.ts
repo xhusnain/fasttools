@@ -39,3 +39,10 @@ export interface CaptionsRequest {
     platform: string
 }
 
+export interface ChannelNameRequest {
+    topic: string
+    keywords?: string
+    tone?: string
+    targetAudience?: string
+}
+

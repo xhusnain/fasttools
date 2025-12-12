@@ -4,7 +4,8 @@ import {
     CaptionsRequest,
     HashtagsRequest,
     LyricsRequest,
-    PetNameRequest
+    PetNameRequest,
+    ChannelNameRequest
 } from "@/types/ai.types"
 
 /**
@@ -432,22 +433,22 @@ function extractHashtags(text: string): string[] {
 /**
  * Service function for generating YouTube channel names
  */
-export async function generateChannelNamesService(data: { name: string }) {
-    const { name } = data
+export async function generateChannelNamesService(data: ChannelNameRequest) {
+    const { topic, keywords, tone, targetAudience } = data
 
-    if (!name || name.trim().length === 0) {
+    if (!topic || topic.trim().length === 0) {
         return {
             success: false,
-            error: "Channel name is required",
+            error: "Topic/Niche is required",
             statusCode: 400
         }
     }
 
-    const prompt = PROMPTS.channelNames(name)
+    const prompt = PROMPTS.channelNames(topic, keywords, tone, targetAudience)
 
     const result = await aiTextGenerator.generateText({
         prompt,
-        temperature: 0.9,
+        temperature: 0.95, // Higher creativity
         maxTokens: 4000,
     })
 
@@ -480,7 +481,7 @@ export async function generateChannelNamesService(data: { name: string }) {
             success: true,
             data: {
                 suggestions: parsedNames,
-                originalName: name
+                originalTopic: topic
             },
             statusCode: 200
         }
