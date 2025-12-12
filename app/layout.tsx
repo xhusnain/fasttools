@@ -166,6 +166,8 @@ export default function RootLayout({
               crossOrigin="anonymous"
               strategy="lazyOnload"
             />
+            <Script src="https://elfsightcdn.com/platform.js" strategy="lazyOnload" />
+            <div className="elfsight-app-caa6c4b7-214b-4e89-900c-6bf7bcb32d22" data-elfsight-app-lazy></div>
           </>
         )}
 
