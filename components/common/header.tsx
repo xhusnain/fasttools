@@ -2,7 +2,7 @@
 
 import Link from "next/link"
 import { useState } from "react"
-import { Menu, X, Search, ChevronDown } from "lucide-react"
+import { Menu, X, Search, ChevronDown, ArrowUpRight } from "lucide-react"
 import { SearchBar } from "@/components/common/search-bar"
 import { ThemeToggle } from "@/components/common/theme-toggle"
 import { usePathname } from "next/navigation"
@@ -55,6 +55,15 @@ export function Header() {
             {/* Right side - Actions */}
             <div className="flex items-center gap-2 shrink-0">
               <nav className="hidden lg:flex items-center gap-3 mr-2 h-full">
+                <Link
+                  href="/blog"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-sm font-medium text-muted-foreground hover:text-primary transition-colors flex items-center gap-1 h-full"
+                >
+                  Blog
+                  <ArrowUpRight className="h-3 w-3" />
+                </Link>
                 <Link href="/products" className="text-sm font-medium text-muted-foreground hover:text-primary transition-colors flex items-center h-full">
                   Products
                 </Link>
@@ -161,6 +170,16 @@ export function Header() {
           </Accordion>
 
           <div className="pt-2 border-t border-border/10 mt-2">
+            <Link
+              href="/blog"
+              target="_blank"
+              rel="noopener noreferrer"
+              onClick={() => setMobileMenuOpen(false)}
+              className="flex items-center gap-2 py-3 text-base font-semibold text-foreground/80 hover:text-primary transition-colors"
+            >
+              Blog
+              <ArrowUpRight className="h-4 w-4" />
+            </Link>
             <Link
               href="/about"
               onClick={() => setMobileMenuOpen(false)}
