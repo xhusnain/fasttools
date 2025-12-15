@@ -18,6 +18,7 @@ export const searchItems: SearchItem[] = [
   { name: "Cookie Preferences", description: "Manage your cookie preferences", path: "/cookie-preferences", category: "Pages" },
 
   // Calculator Tools
+  { name: "ROAS Calculator", description: "Calculate Return on Ad Spend, ROI, and break-even points", path: "/ad-tools/roas-calculator", category: "Calculator" },
   { name: "BMI Calculator", description: "Calculate your Body Mass Index with detailed health insights", path: "/calculator/bmi-calculator", category: "Calculator" },
   { name: "Age Calculator", description: "Calculate exact age in years, months, weeks, days, hours, minutes, and seconds", path: "/calculator/age-calculator", category: "Calculator" },
   { name: "Percentage Calculator", description: "Calculate percentages, discounts, increases, decreases, and percentage differences", path: "/calculator/percentage-calculator", category: "Calculator" },

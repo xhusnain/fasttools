@@ -636,6 +636,14 @@ const categories = [
     glowColor: "hover:shadow-emerald-500/20",
     tools: [
       {
+        title: "ROAS Calculator",
+        description: "Calculate Return on Ad Spend, ROI, and break-even points for Google, Facebook, and TikTok ads instantly",
+        href: "/ad-tools/roas-calculator",
+        icon: TrendingUp,
+        badge: "New",
+        badgeColor: "bg-blue-600/90",
+      },
+      {
         title: "Invoice Generator",
         description: "Create professional invoices with automatic taxes, discounts, and PDF export in seconds",
         href: "/finance-tools/invoice-generator",
