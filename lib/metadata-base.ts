@@ -184,6 +184,15 @@ export function createMetadata(options: MetadataOptions): Metadata & { softwareS
                 follow: true,
             },
         verification: VERIFICATION,
+        icons: {
+            icon: [
+                { url: "/favicon.ico", sizes: "any" },
+                { url: "/icon.png", type: "image/png" },
+            ],
+            apple: [
+                { url: "/apple-icon.png" },
+            ],
+        },
         // Manifest is handled by app/manifest.ts but we can link it here if needed, 
         // though Next.js 13+ with manifest.ts handles the <link rel="manifest"> automatically.
         ...(schemas.length > 0 && {

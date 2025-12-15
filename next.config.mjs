@@ -51,22 +51,10 @@ const nextConfig = {
 
   async headers() {
     return [
-      {
-        source: "/_next/static/:path*",
-        headers: [
-          {
-            key: "Cache-Control",
-            value: "public, max-age=31536000, immutable",
-          },
-        ],
-      },
+
       {
         source: "/og-image.svg",
         headers: [
-          {
-            key: "X-Robots-Tag",
-            value: "noindex",
-          },
           {
             key: "Content-Type",
             value: "image/svg+xml",
@@ -76,10 +64,6 @@ const nextConfig = {
       {
         source: "/logo.svg",
         headers: [
-          {
-            key: "X-Robots-Tag",
-            value: "noindex",
-          },
           {
             key: "Content-Type",
             value: "image/svg+xml",

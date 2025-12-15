@@ -129,20 +129,7 @@ export default function RootLayout({
         {/* Favicon and Icons */}
 
 
-        {env.isProduction && (
-          <script
-            type="text/javascript"
-            dangerouslySetInnerHTML={{
-              __html: `
-                (function(c,l,a,r,i,t,y){
-                    c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
-                    t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
-                    y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
-                })(window, document, "clarity", "script", "tsq0aprw9d");
-            `,
-            }}
-          />
-        )}
+
       </head>
       <body className="bg-background font-sans text-foreground">
 
@@ -168,6 +155,19 @@ export default function RootLayout({
             />
             <Script src="https://elfsightcdn.com/platform.js" strategy="lazyOnload" />
             <div className="elfsight-app-caa6c4b7-214b-4e89-900c-6bf7bcb32d22" data-elfsight-app-lazy></div>
+            <Script
+              id="microsoft-clarity"
+              strategy="afterInteractive"
+              dangerouslySetInnerHTML={{
+                __html: `
+                (function(c,l,a,r,i,t,y){
+                    c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+                    t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+                    y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+                })(window, document, "clarity", "script", "tsq0aprw9d");
+              `,
+              }}
+            />
           </>
         )}
 
