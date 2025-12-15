@@ -19,6 +19,93 @@ export async function GET() {
             lastModified: new Date('2025-11-25'),
             changeFrequency: "weekly" as const,
             priority: 1,
+            images: [
+                {
+                    url: "https://www.fasttools.store/logo.png",
+                    title: "FastTools Professional Logo PNG - Free Online Tools Collection",
+                    caption: "FastTools professional logo with modern FT symbol and blue gradient design for comprehensive free online tools collection"
+                },
+                {
+                    url: "https://www.fasttools.store/logo.svg",
+                    title: "FastTools Professional Logo SVG - Vector Format",
+                    caption: "FastTools logo in scalable vector format for high-quality rendering at any size, perfect for professional use"
+                },
+                {
+                    url: "https://www.fasttools.store/logo.ico",
+                    title: "FastTools Logo ICO - Windows Favicon",
+                    caption: "FastTools logo in ICO format for Windows systems and legacy browser compatibility"
+                },
+                {
+                    url: "https://www.fasttools.store/banner.png",
+                    title: "FastTools Social Media Image - Complete Digital Toolkit",
+                    caption: "FastTools professional social media sharing image showcasing comprehensive free online tools collection for productivity and business"
+                },
+                {
+                    url: "https://www.fasttools.store/og-image.png",
+                    title: "FastTools Open Graph Image PNG",
+                    caption: "FastTools Open Graph image for social media sharing and SEO optimization in PNG format"
+                },
+                {
+                    url: "https://www.fasttools.store/og-image.svg",
+                    title: "FastTools Open Graph Image SVG",
+                    caption: "FastTools Open Graph vector image for social media sharing with excellent quality at any resolution"
+                },
+                {
+                    url: "https://www.fasttools.store/apple-touch-icon.png",
+                    title: "FastTools Apple Touch Icon",
+                    caption: "FastTools iOS app icon for home screen and mobile devices"
+                },
+                {
+                    url: "https://www.fasttools.store/icon-192.png",
+                    title: "FastTools PWA Icon 192x192",
+                    caption: "FastTools Progressive Web App icon for mobile and desktop installation"
+                },
+                {
+                    url: "https://www.fasttools.store/icon-512.png",
+                    title: "FastTools PWA Icon 512x512",
+                    caption: "FastTools Progressive Web App icon for high-resolution displays and app stores"
+                },
+                {
+                    url: "https://www.fasttools.store/web-app-manifest-192x192.png",
+                    title: "FastTools Maskable Icon 192x192 - PWA Manifest",
+                    caption: "FastTools maskable icon for PWA manifest, optimized for adaptive icons on Android and iOS"
+                },
+                {
+                    url: "https://www.fasttools.store/web-app-manifest-512x512.png",
+                    title: "FastTools Maskable Icon 512x512 - PWA Manifest",
+                    caption: "FastTools high-resolution maskable icon for PWA manifest and app stores"
+                },
+                {
+                    url: "https://www.fasttools.store/favicon-96x96.png",
+                    title: "FastTools Favicon 96x96",
+                    caption: "FastTools favicon in 96x96 pixel format for browser tabs and bookmarks"
+                },
+                {
+                    url: "https://www.fasttools.store/favicon.svg",
+                    title: "FastTools Favicon SVG - Scalable Vector",
+                    caption: "FastTools favicon in SVG format for modern browsers with crisp rendering at any resolution"
+                },
+                {
+                    url: "https://www.fasttools.store/favicon.ico",
+                    title: "FastTools Favicon ICO - Browser Icon",
+                    caption: "FastTools favicon in ICO format for maximum browser compatibility"
+                },
+                {
+                    url: "https://www.fasttools.store/placeholder.jpg",
+                    title: "FastTools Placeholder Image JPG",
+                    caption: "FastTools placeholder image for loading states and content previews"
+                },
+                {
+                    url: "https://www.fasttools.store/placeholder.svg",
+                    title: "FastTools Placeholder SVG",
+                    caption: "FastTools scalable placeholder image for dynamic content loading"
+                },
+                {
+                    url: "https://www.fasttools.store/placeholder-user.jpg",
+                    title: "FastTools User Avatar Placeholder",
+                    caption: "FastTools default user avatar placeholder for profile images and user accounts"
+                }
+            ]
         },
         {
             url: "https://www.fasttools.store/products",
@@ -88,12 +175,31 @@ export async function GET() {
             lastModified: new Date('2025-11-25'),
             changeFrequency: "weekly" as const,
             priority: 0.97,
+            images: [
+                {
+                    url: "https://www.fasttools.store/banner.png",
+                    title: "AI Tools - Artificial Intelligence Content Generation",
+                    caption: "FastTools AI Tools collection for automated content creation and artificial intelligence utilities"
+                },
+                {
+                    url: "https://www.fasttools.store/logo.png",
+                    title: "FastTools AI Tools Logo",
+                    caption: "FastTools professional logo for AI automation tools and content generation"
+                }
+            ]
         },
         {
             url: "https://www.fasttools.store/converters",
             lastModified: new Date('2025-11-25'),
             changeFrequency: "monthly" as const,
             priority: 0.9,
+            images: [
+                {
+                    url: "https://www.fasttools.store/banner.png",
+                    title: "Converter Tools - Unit and Format Converters",
+                    caption: "FastTools Converter collection for currency, length, temperature, and file format conversions"
+                }
+            ]
         },
         {
             url: "https://www.fasttools.store/finance-tools",
@@ -103,7 +209,7 @@ export async function GET() {
         },
         {
             url: "https://www.fasttools.store/social-media-tools",
-            lastModified: new Date('2025-12-14'), // Updated recently due to new tools
+            lastModified: new Date('2025-12-14'),
             changeFrequency: "daily" as const,
             priority: 0.9,
         },
@@ -112,18 +218,59 @@ export async function GET() {
             lastModified: new Date('2025-11-25'),
             changeFrequency: "monthly" as const,
             priority: 0.75,
+            images: [
+                {
+                    url: "https://www.fasttools.store/dev-image-2.jpg",
+                    title: "Free Developer Tools Online - Chrome DevTools, Safari, React Developer Tools",
+                    caption: "Professional developer tools collection featuring Chrome DevTools, Safari developer tools, React developer tools, JWT decoder, regex tester, and essential coding utilities for web development"
+                },
+                {
+                    url: "https://www.fasttools.store/banner.png",
+                    title: "Developer Tools - Programming and Web Development",
+                    caption: "FastTools Developer Tools collection for programmers and web developers"
+                }
+            ]
         },
         {
             url: "https://www.fasttools.store/calculator",
             lastModified: new Date('2025-11-25'),
             changeFrequency: "monthly" as const,
             priority: 0.9,
+            images: [
+                {
+                    url: "https://www.fasttools.store/banner.png",
+                    title: "Calculator Tools - Free Online Calculators",
+                    caption: "FastTools Calculator collection for financial, scientific, and utility calculations"
+                },
+                {
+                    url: "https://www.fasttools.store/images/calculator-hero.png",
+                    title: "Calculator Hero Image",
+                    caption: "Calculator tools hero image"
+                },
+                {
+                    url: "https://www.fasttools.store/images/calculation-accuracy.png",
+                    title: "Calculation Accuracy",
+                    caption: "Calculation accuracy illustration"
+                }
+            ]
         },
         {
             url: "https://www.fasttools.store/image-tools",
             lastModified: new Date('2025-11-25'),
             changeFrequency: "monthly" as const,
             priority: 0.7,
+            images: [
+                {
+                    url: "https://www.fasttools.store/banner.png",
+                    title: "Image Tools Collection - Professional Photo Editing and Processing",
+                    caption: "FastTools comprehensive image tools collection for background removal, photo editing, and image processing"
+                },
+                {
+                    url: "https://www.fasttools.store/logo.png",
+                    title: "FastTools Image Tools Logo",
+                    caption: "Professional logo for FastTools image editing and processing toolkit"
+                }
+            ]
         },
         {
             url: "https://www.fasttools.store/seo-tools",
@@ -223,6 +370,13 @@ export async function GET() {
             lastModified: new Date('2025-11-25'),
             changeFrequency: "monthly" as const,
             priority: 0.95,
+            images: [
+                {
+                    url: "https://www.fasttools.store/images/scientific-calculator-functions.png",
+                    title: "Scientific Calculator Functions",
+                    caption: "Scientific calculator functions overview"
+                }
+            ]
         },
         {
             url: "https://www.fasttools.store/calculator/triangle-calculator",
@@ -410,12 +564,46 @@ export async function GET() {
             lastModified: new Date('2025-12-14'),
             changeFrequency: "daily" as const,
             priority: 1.0,
+            images: [
+                {
+                    url: "https://www.fasttools.store/youtube_channel_checker_hero_1764246981481.png",
+                    title: "YouTube Channel Checker Hero",
+                    caption: "YouTube Channel Checker tool overview"
+                },
+                {
+                    url: "https://www.fasttools.store/youtube_branding_guide_1764247018385.png",
+                    title: "YouTube Branding Guide",
+                    caption: "Guide to YouTube branding"
+                },
+                {
+                    url: "https://www.fasttools.store/youtube_handles_vs_urls_infographic_1764248999897.png",
+                    title: "YouTube Handles vs URLs",
+                    caption: "Infographic comparing YouTube handles and URLs"
+                },
+                {
+                    url: "https://www.fasttools.store/youtube_gaming_branding_ideas_1764248964347.png",
+                    title: "YouTube Gaming Branding Ideas",
+                    caption: "Branding ideas for gaming channels"
+                }
+            ]
         },
         {
             url: "https://www.fasttools.store/social-media-tools/youtube-channel-name-generator",
             lastModified: new Date('2025-12-14'),
             changeFrequency: "daily" as const,
             priority: 1.0,
+            images: [
+                {
+                    url: "https://www.fasttools.store/images/youtube-naming-tips.png",
+                    title: "YouTube Channel Naming Tips",
+                    caption: "4 Tips for YouTube Channel Names: Short, Unique, Easy to Spell, Future Proof"
+                },
+                {
+                    url: "https://www.fasttools.store/images/youtube-name-brainstorming.png",
+                    title: "YouTube Name Brainstorming",
+                    caption: "Brainstorming YouTube Channel Name Ideas"
+                }
+            ]
         },
         // --- END NEW TOOLS ---
         {
@@ -621,222 +809,6 @@ export async function GET() {
             lastModified: new Date('2025-11-25'),
             changeFrequency: "monthly" as const,
             priority: 0.95,
-        },
-
-        {
-            url: "https://www.fasttools.store/image-tools/image-to-text",
-            lastModified: new Date('2025-11-25'),
-            changeFrequency: "monthly" as const,
-            priority: 0.9,
-        },
-        {
-            url: "https://www.fasttools.store/pdf-tools/pdf-sign",
-            lastModified: new Date('2025-11-25'),
-            changeFrequency: "monthly" as const,
-            priority: 0.98,
-        },
-        {
-            url: "https://www.fasttools.store/pdf-tools/pdf-word-converter",
-            lastModified: new Date('2025-11-25'),
-            changeFrequency: "monthly" as const,
-            priority: 0.97,
-        },
-        {
-            url: "https://www.fasttools.store/pdf-tools/pdf-splitter-merger",
-            lastModified: new Date('2025-11-25'),
-            changeFrequency: "monthly" as const,
-            priority: 0.97,
-        },
-        {
-            url: "https://www.fasttools.store/pdf-tools/pdf-unlocker",
-            lastModified: new Date('2025-11-25'),
-            changeFrequency: "monthly" as const,
-            priority: 0.96,
-        },
-        {
-            url: "https://www.fasttools.store/pdf-tools/pdf-compressor",
-            lastModified: new Date('2025-11-25'),
-            changeFrequency: "monthly" as const,
-            priority: 0.96,
-        },
-        {
-            url: "https://www.fasttools.store/pdf-tools/pdf-to-image",
-            lastModified: new Date('2025-11-25'),
-            changeFrequency: "monthly" as const,
-            priority: 0.95,
-        },
-    ]
-
-    // --- 2. Define Image Data ---
-
-    const richImages = [
-        {
-            url: "https://www.fasttools.store",
-            images: [
-                {
-                    url: "https://www.fasttools.store/logo.png",
-                    title: "FastTools Professional Logo PNG - Free Online Tools Collection",
-                    caption: "FastTools professional logo with modern FT symbol and blue gradient design for comprehensive free online tools collection"
-                },
-                {
-                    url: "https://www.fasttools.store/logo.svg",
-                    title: "FastTools Professional Logo SVG - Vector Format",
-                    caption: "FastTools logo in scalable vector format for high-quality rendering at any size, perfect for professional use"
-                },
-                {
-                    url: "https://www.fasttools.store/logo.ico",
-                    title: "FastTools Logo ICO - Windows Favicon",
-                    caption: "FastTools logo in ICO format for Windows systems and legacy browser compatibility"
-                },
-                {
-                    url: "https://www.fasttools.store/banner.png",
-                    title: "FastTools Social Media Image - Complete Digital Toolkit",
-                    caption: "FastTools professional social media sharing image showcasing comprehensive free online tools collection for productivity and business"
-                },
-                {
-                    url: "https://www.fasttools.store/og-image.png",
-                    title: "FastTools Open Graph Image PNG",
-                    caption: "FastTools Open Graph image for social media sharing and SEO optimization in PNG format"
-                },
-                {
-                    url: "https://www.fasttools.store/og-image.svg",
-                    title: "FastTools Open Graph Image SVG",
-                    caption: "FastTools Open Graph vector image for social media sharing with excellent quality at any resolution"
-                },
-                {
-                    url: "https://www.fasttools.store/apple-touch-icon.png",
-                    title: "FastTools Apple Touch Icon",
-                    caption: "FastTools iOS app icon for home screen and mobile devices"
-                },
-                {
-                    url: "https://www.fasttools.store/icon-192.png",
-                    title: "FastTools PWA Icon 192x192",
-                    caption: "FastTools Progressive Web App icon for mobile and desktop installation"
-                },
-                {
-                    url: "https://www.fasttools.store/icon-512.png",
-                    title: "FastTools PWA Icon 512x512",
-                    caption: "FastTools Progressive Web App icon for high-resolution displays and app stores"
-                },
-                {
-                    url: "https://www.fasttools.store/web-app-manifest-192x192.png",
-                    title: "FastTools Maskable Icon 192x192 - PWA Manifest",
-                    caption: "FastTools maskable icon for PWA manifest, optimized for adaptive icons on Android and iOS"
-                },
-                {
-                    url: "https://www.fasttools.store/web-app-manifest-512x512.png",
-                    title: "FastTools Maskable Icon 512x512 - PWA Manifest",
-                    caption: "FastTools high-resolution maskable icon for PWA manifest and app stores"
-                },
-                {
-                    url: "https://www.fasttools.store/favicon-96x96.png",
-                    title: "FastTools Favicon 96x96",
-                    caption: "FastTools favicon in 96x96 pixel format for browser tabs and bookmarks"
-                },
-                {
-                    url: "https://www.fasttools.store/favicon.svg",
-                    title: "FastTools Favicon SVG - Scalable Vector",
-                    caption: "FastTools favicon in SVG format for modern browsers with crisp rendering at any resolution"
-                },
-                {
-                    url: "https://www.fasttools.store/favicon.ico",
-                    title: "FastTools Favicon ICO - Browser Icon",
-                    caption: "FastTools favicon in ICO format for maximum browser compatibility"
-                },
-                {
-                    url: "https://www.fasttools.store/placeholder.jpg",
-                    title: "FastTools Placeholder Image JPG",
-                    caption: "FastTools placeholder image for loading states and content previews"
-                },
-                {
-                    url: "https://www.fasttools.store/placeholder.svg",
-                    title: "FastTools Placeholder SVG",
-                    caption: "FastTools scalable placeholder image for dynamic content loading"
-                },
-                {
-                    url: "https://www.fasttools.store/placeholder-user.jpg",
-                    title: "FastTools User Avatar Placeholder",
-                    caption: "FastTools default user avatar placeholder for profile images and user accounts"
-                }
-            ]
-        },
-        {
-            url: "https://www.fasttools.store/ai-tools",
-            images: [
-                {
-                    url: "https://www.fasttools.store/banner.png",
-                    title: "AI Tools - Artificial Intelligence Content Generation",
-                    caption: "FastTools AI Tools collection for automated content creation and artificial intelligence utilities"
-                },
-                {
-                    url: "https://www.fasttools.store/logo.png",
-                    title: "FastTools AI Tools Logo",
-                    caption: "FastTools professional logo for AI automation tools and content generation"
-                }
-            ]
-        },
-        {
-            url: "https://www.fasttools.store/calculator",
-            images: [
-                {
-                    url: "https://www.fasttools.store/banner.png",
-                    title: "Calculator Tools - Free Online Calculators",
-                    caption: "FastTools Calculator collection for financial, scientific, and utility calculations"
-                },
-                {
-                    url: "https://www.fasttools.store/images/calculator-hero.png",
-                    title: "Calculator Hero Image",
-                    caption: "Calculator tools hero image"
-                },
-                {
-                    url: "https://www.fasttools.store/images/calculation-accuracy.png",
-                    title: "Calculation Accuracy",
-                    caption: "Calculation accuracy illustration"
-                }
-            ]
-        },
-        {
-            url: "https://www.fasttools.store/converters",
-            images: [
-                {
-                    url: "https://www.fasttools.store/banner.png",
-                    title: "Converter Tools - Unit and Format Converters",
-                    caption: "FastTools Converter collection for currency, length, temperature, and file format conversions"
-                }
-            ]
-        },
-        {
-            url: "https://www.fasttools.store/dev-tools",
-            images: [
-                {
-                    url: "https://www.fasttools.store/dev-image-2.jpg",
-                    title: "Free Developer Tools Online - Chrome DevTools, Safari, React Developer Tools",
-                    caption: "Professional developer tools collection featuring Chrome DevTools, Safari developer tools, React developer tools, JWT decoder, regex tester, and essential coding utilities for web development"
-                },
-                {
-                    url: "https://www.fasttools.store/banner.png",
-                    title: "Developer Tools - Programming and Web Development",
-                    caption: "FastTools Developer Tools collection for programmers and web developers"
-                }
-            ]
-        },
-        {
-            url: "https://www.fasttools.store/image-tools",
-            images: [
-                {
-                    url: "https://www.fasttools.store/banner.png",
-                    title: "Image Tools Collection - Professional Photo Editing and Processing",
-                    caption: "FastTools comprehensive image tools collection for background removal, photo editing, and image processing"
-                },
-                {
-                    url: "https://www.fasttools.store/logo.png",
-                    title: "FastTools Image Tools Logo",
-                    caption: "Professional logo for FastTools image editing and processing toolkit"
-                }
-            ]
-        },
-        {
-            url: "https://www.fasttools.store/image-tools/image-background-remover",
             images: [
                 {
                     url: "https://www.fasttools.store/before_human.jpg",
@@ -873,6 +845,9 @@ export async function GET() {
 
         {
             url: "https://www.fasttools.store/image-tools/image-to-text",
+            lastModified: new Date('2025-11-25'),
+            changeFrequency: "monthly" as const,
+            priority: 0.9,
             images: [
                 {
                     url: "https://www.fasttools.store/banner.png",
@@ -887,7 +862,22 @@ export async function GET() {
             ]
         },
         {
+            url: "https://www.fasttools.store/pdf-tools/pdf-sign",
+            lastModified: new Date('2025-11-25'),
+            changeFrequency: "monthly" as const,
+            priority: 0.98,
+        },
+        {
+            url: "https://www.fasttools.store/pdf-tools/pdf-word-converter",
+            lastModified: new Date('2025-11-25'),
+            changeFrequency: "monthly" as const,
+            priority: 0.97,
+        },
+        {
             url: "https://www.fasttools.store/pdf-tools/pdf-splitter-merger",
+            lastModified: new Date('2025-11-25'),
+            changeFrequency: "monthly" as const,
+            priority: 0.97,
             images: [
                 {
                     url: "https://www.fasttools.store/banner.png",
@@ -903,6 +893,9 @@ export async function GET() {
         },
         {
             url: "https://www.fasttools.store/pdf-tools/pdf-unlocker",
+            lastModified: new Date('2025-11-25'),
+            changeFrequency: "monthly" as const,
+            priority: 0.96,
             images: [
                 {
                     url: "https://www.fasttools.store/banner.png",
@@ -917,71 +910,31 @@ export async function GET() {
             ]
         },
         {
-            url: "https://www.fasttools.store/calculator/scientific-calculator",
-            images: [
-                {
-                    url: "https://www.fasttools.store/images/scientific-calculator-functions.png",
-                    title: "Scientific Calculator Functions",
-                    caption: "Scientific calculator functions overview"
-                }
-            ]
+            url: "https://www.fasttools.store/pdf-tools/pdf-compressor",
+            lastModified: new Date('2025-11-25'),
+            changeFrequency: "monthly" as const,
+            priority: 0.96,
         },
         {
-            url: "https://www.fasttools.store/social-media-tools/channel-checker",
-            images: [
-                {
-                    url: "https://www.fasttools.store/youtube_channel_checker_hero_1764246981481.png",
-                    title: "YouTube Channel Checker Hero",
-                    caption: "YouTube Channel Checker tool overview"
-                },
-                {
-                    url: "https://www.fasttools.store/youtube_branding_guide_1764247018385.png",
-                    title: "YouTube Branding Guide",
-                    caption: "Guide to YouTube branding"
-                },
-                {
-                    url: "https://www.fasttools.store/youtube_handles_vs_urls_infographic_1764248999897.png",
-                    title: "YouTube Handles vs URLs",
-                    caption: "Infographic comparing YouTube handles and URLs"
-                },
-                {
-                    url: "https://www.fasttools.store/youtube_gaming_branding_ideas_1764248964347.png",
-                    title: "YouTube Gaming Branding Ideas",
-                    caption: "Branding ideas for gaming channels"
-                }
-            ]
+            url: "https://www.fasttools.store/pdf-tools/pdf-to-image",
+            lastModified: new Date('2025-11-25'),
+            changeFrequency: "monthly" as const,
+            priority: 0.95,
         },
-        {
-            url: "https://www.fasttools.store/social-media-tools/youtube-channel-name-generator",
-            images: [
-                {
-                    url: "https://www.fasttools.store/images/youtube-naming-tips.png",
-                    title: "YouTube Channel Naming Tips",
-                    caption: "4 Tips for YouTube Channel Names: Short, Unique, Easy to Spell, Future Proof"
-                },
-                {
-                    url: "https://www.fasttools.store/images/youtube-name-brainstorming.png",
-                    title: "YouTube Name Brainstorming",
-                    caption: "Brainstorming YouTube Channel Name Ideas"
-                }
-            ]
-        }
     ]
 
-    // --- 3. Merge and Generate XML ---
-
     const allPages = [...mainPages, ...categoryPages, ...toolPages]
-    const imageMap = new Map(richImages.map(item => [item.url, item.images]))
 
     const sitemap = `<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
 ${allPages.map(page => {
-        const images = imageMap.get(page.url)
+        // @ts-ignore - Check if images exists on the object
+        const images = page.images
         return `  <url>
     <loc>${escapeXml(page.url)}</loc>
     <lastmod>${page.lastModified.toISOString()}</lastmod>
     <changefreq>${page.changeFrequency}</changefreq>
-    <priority>${page.priority}</priority>${images ? images.map(image => `
+    <priority>${page.priority}</priority>${images ? images.map((image: any) => `
     <image:image>
       <image:loc>${escapeXml(image.url)}</image:loc>
       <image:title>${escapeXml(image.title)}</image:title>
