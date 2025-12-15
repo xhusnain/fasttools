@@ -681,7 +681,7 @@ const categories = [
       {
         title: "Salary Calculator",
         description: "Convert between hourly, daily, weekly, monthly, and annual salary with tax deductions and net pay calculations",
-        href: "/calculator/salary-calculator",
+        href: "/finance-tools/salary-calculator",
         icon: DollarSign,
         badge: "Career",
         badgeColor: "bg-emerald-500/90",
@@ -841,7 +841,7 @@ const categories = [
       {
         title: "Sales Tax Calculator",
         description: "Calculate sales tax and total cost for purchases across different states and regions",
-        href: "/calculator/sales-tax-calculator",
+        href: "/finance-tools/sales-tax-calculator",
         icon: DollarSign,
         badge: "Finance",
         badgeColor: "bg-emerald-500/90",
@@ -849,7 +849,7 @@ const categories = [
       {
         title: "Interest Rate Calculator",
         description: "Determine the real interest rate on loans or investments to make better financial decisions",
-        href: "/calculator/interest-rate-calculator",
+        href: "/finance-tools/interest-rate-calculator",
         icon: Percent,
         badge: "Finance",
         badgeColor: "bg-blue-500/90",
@@ -857,7 +857,7 @@ const categories = [
       {
         title: "Finance Calculator",
         description: "All-in-one financial calculator for time value of money, cash flows, and amortization",
-        href: "/calculator/finance-calculator",
+        href: "/finance-tools/finance-calculator",
         icon: DollarSign,
         badge: "Pro",
         badgeColor: "bg-slate-700/90",
@@ -865,7 +865,7 @@ const categories = [
       {
         title: "Inflation Calculator",
         description: "Calculate how inflation affects your purchasing power over time with historical data",
-        href: "/calculator/inflation-calculator",
+        href: "/finance-tools/inflation-calculator",
         icon: TrendingUp,
         badge: "Econ",
         badgeColor: "bg-red-500/90",
@@ -873,7 +873,7 @@ const categories = [
       {
         title: "Amortization Calculator",
         description: "Create detailed loan amortization schedules with principal and interest breakdowns",
-        href: "/calculator/amortization-calculator",
+        href: "/finance-tools/amortization-calculator",
         icon: DollarSign,
         badge: "Loan",
         badgeColor: "bg-blue-600/90",
@@ -881,7 +881,7 @@ const categories = [
       {
         title: "Payment Calculator",
         description: "Estimate monthly payments for loans, credit cards, or simplified mortgages",
-        href: "/calculator/payment-calculator",
+        href: "/finance-tools/payment-calculator",
         icon: DollarSign,
         badge: "Pay",
         badgeColor: "bg-green-600/90",
