@@ -1,6 +1,7 @@
 import { ToolPageLayout } from "@/components/common/tool-page-layout"
 import { ROASCalculator } from "@/components/calculators/roas-calculator"
 import { createMetadata } from "@/lib/metadata-base"
+import Image from "next/image"
 
 export const metadata = createMetadata({
     title: "Free ROAS Calculator | Calculate Ad Profit & ROI Instantly",
@@ -91,6 +92,15 @@ export default function ROASCalculatorPage() {
                 <p className="mb-4">
                     ROAS (Return on Ad Spend) is the metric that separates profitable campaigns from budget-draining ones. While clicks and impressions look impressive, they don't pay the bills. ROAS measures how much revenue was earned from advertising compared to the budget spent on it, giving you a clear picture of campaign performance.
                 </p>
+                <div className="my-8">
+                    <Image
+                        src="/images/tools/roas-dashboard.png"
+                        alt="FastTools ROAS Calculator Dashboard showing revenue trends and ROI metrics"
+                        width={800}
+                        height={450}
+                        className="rounded-lg shadow-lg border border-border"
+                    />
+                </div>
 
                 <h3 className="font-semibold text-lg mb-2 mt-6">What is a Good ROAS?</h3>
                 <p className="mb-3">
@@ -118,6 +128,16 @@ export default function ROASCalculatorPage() {
                             <span className="font-semibold">3:1 to 8:1</span>
                         </li>
                     </ul>
+                </div>
+
+                <div className="my-8 flex justify-center">
+                    <Image
+                        src="/images/tools/roas-growth.png"
+                        alt="FastTools illustration of business growth through optimized ROAS"
+                        width={600}
+                        height={400}
+                        className="rounded-lg"
+                    />
                 </div>
 
                 <h3 className="font-semibold text-lg mb-2 mt-6">ROAS vs ROMI vs ROI - Quick Comparison</h3>

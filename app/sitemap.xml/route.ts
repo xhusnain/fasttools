@@ -605,6 +605,24 @@ export async function GET() {
                 }
             ]
         },
+        {
+            url: "https://www.fasttools.store/ad-tools/roas-calculator",
+            lastModified: new Date('2025-12-15'),
+            changeFrequency: "daily" as const,
+            priority: 0.95,
+            images: [
+                {
+                    url: "https://www.fasttools.store/images/tools/roas-dashboard.png",
+                    title: "FastTools ROAS Calculator Dashboard",
+                    caption: "Dashboard showing ROAS metrics and revenue trend"
+                },
+                {
+                    url: "https://www.fasttools.store/images/tools/roas-growth.png",
+                    title: "FastTools Business Growth Illustration",
+                    caption: "Illustration of business growth through optimized ROAS"
+                }
+            ]
+        },
         // --- END NEW TOOLS ---
         {
             url: "https://www.fasttools.store/social-media-tools/hashtag-counter",
