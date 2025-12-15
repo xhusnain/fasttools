@@ -111,6 +111,7 @@ export const searchItems: SearchItem[] = [
 
   { name: "Link in Bio Generator", description: "Create beautiful link-in-bio pages", path: "/social-media-tools/link-in-bio", category: "Social Media" },
   { name: "YouTube Channel Checker", description: "Check if your desired channel name is available", path: "/social-media-tools/channel-checker", category: "Social Media" },
+  { name: "YouTube Channel Name Generator", description: "Generate catchy, unique names for your YouTube channel with AI", path: "/social-media-tools/youtube-channel-name-generator", category: "Social Media" },
   { name: "Hashtag Counter", description: "Count and extract hashtags from posts", path: "/social-media-tools/hashtag-counter", category: "Social Media" },
 
   // Finance Tools
