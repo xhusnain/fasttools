@@ -184,12 +184,29 @@ export default async function BlogPost({
         ],
     }
 
+    let faqSchema;
+    if (frontMatter.faq && frontMatter.faq.length > 0) {
+        faqSchema = {
+            '@context': 'https://schema.org',
+            '@type': 'FAQPage',
+            mainEntity: frontMatter.faq.map(item => ({
+                '@type': 'Question',
+                name: item.question,
+                acceptedAnswer: {
+                    '@type': 'Answer',
+                    text: item.answer,
+                },
+            })),
+        };
+    }
+
     const readingTime = Math.ceil(post.content.split(/\s+/).length / 200);
 
     return (
         <>
             <GJsonLd schema={articleSchema} />
             <GJsonLd schema={breadcrumbSchema} />
+            {faqSchema && <GJsonLd schema={faqSchema} />}
             <div className="min-h-screen font-sans selection:bg-foreground/20 selection:text-foreground bg-backgroundPrimary pt-40 pb-24">
 
                 <div className="max-w-7xl mx-auto border border-white/10 relative">
