@@ -1,5 +1,6 @@
 import { NextResponse } from 'next/server'
 import { mainPages, categoryPages, toolPages } from '@/lib/sitemap-config'
+import { getAllPosts } from '@/components/blog/blog'
 
 export async function GET() {
     // XML escape function
@@ -12,7 +13,20 @@ export async function GET() {
             .replace(/'/g, '&apos;')
     }
 
-    const allPages = [...mainPages, ...categoryPages, ...toolPages]
+    const blogPosts = getAllPosts()
+    const blogPages = blogPosts.map((post) => ({
+        url: `https://www.fasttools.store/blog/${post.slug}`,
+        lastModified: new Date(post.lastModified || post.date),
+        changeFrequency: 'monthly' as const,
+        priority: 0.7,
+        images: post.image ? [{
+            url: post.image.startsWith('http') ? post.image : `https://www.fasttools.store${post.image}`,
+            title: post.title,
+            caption: post.description
+        }] : []
+    }))
+
+    const allPages = [...mainPages, ...categoryPages, ...toolPages, ...blogPages]
 
     const sitemap = `<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
@@ -21,13 +35,13 @@ ${allPages.map(page => {
         const images = page.images
         return `  <url>
     <loc>${escapeXml(page.url)}</loc>
-    <lastmod>${page.lastModified.toISOString()}</lastmod>
+    <lastmod>${page.lastModified instanceof Date ? page.lastModified.toISOString() : new Date(page.lastModified).toISOString()}</lastmod>
     <changefreq>${page.changeFrequency}</changefreq>
     <priority>${page.priority}</priority>${images ? images.map((image: any) => `
     <image:image>
       <image:loc>${escapeXml(image.url)}</image:loc>
-      <image:title>${escapeXml(image.title)}</image:title>
-      <image:caption>${escapeXml(image.caption)}</image:caption>
+      <image:title>${escapeXml(image.title || '')}</image:title>
+      <image:caption>${escapeXml(image.caption || '')}</image:caption>
     </image:image>`).join('') : ''}
   </url>`
     }).join('\n')}

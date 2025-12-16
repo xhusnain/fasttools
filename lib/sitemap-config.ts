@@ -897,12 +897,12 @@ export const toolPages = [
         images: [
             {
                 url: "https://www.fasttools.store/banner.png",
-                title: "PDF Splitter & Merger - Free PDF Editing and Processing",
-                caption: "Comprehensive PDF splitter and merger tool for splitting large PDFs or merging multiple PDF documents"
+                title: "PDF Splitter and Merger - Free PDF Editing and Processing",
+                caption: "FastTools PDF Splitter and Merger collection for merging and splitting PDF files"
             },
             {
                 url: "https://www.fasttools.store/logo.png",
-                title: "FastTools PDF Splitter & Merger Logo",
+                title: "FastTools PDF Splitter and Merger Logo",
                 caption: "Professional logo for FastTools PDF splitting and merging toolkit"
             }
         ]
@@ -938,3 +938,20 @@ export const toolPages = [
         priority: 0.95,
     },
 ]
+
+import type { BlogPost } from "@/components/blog/blog"
+
+export const generateBlogSitemap = (posts: BlogPost[]) => {
+    return posts.map((post) => ({
+        url: `${baseUrl}/blog/${post.slug}`,
+        lastModified: new Date(post.lastModified || post.date),
+        changeFrequency: 'monthly' as const,
+        priority: 0.7,
+        images: post.image
+            ? [
+                (post.image.startsWith('http') ? post.image : `${baseUrl}${post.image}`)
+                    .replace(/&/g, '&amp;')
+            ]
+            : [],
+    }))
+}
