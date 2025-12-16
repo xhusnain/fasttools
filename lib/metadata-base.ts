@@ -57,10 +57,7 @@ export interface MetadataOptions {
     breadcrumbs?: BreadcrumbItem[]
 }
 
-export interface MetadataWithSchema {
-    metadata: Metadata
-    softwareSchema: ReturnType<typeof createSoftwareAppSchema>
-}
+
 
 
 function shouldIncludeSchema(path: string): boolean {
@@ -93,40 +90,22 @@ export function createMetadata(options: MetadataOptions): Metadata & { softwareS
     const fullTitle = addYearToTitle(titleWithBranding, cleanPath)
     const canonicalUrl = getCanonicalUrl(cleanPath)
 
-    // Use DEFAULT_IMAGES for OG Image
-    const defaultOgImage = DEFAULT_IMAGES.OG_IMAGE_PNG
+
 
     const finalOgTitle = ogTitle || fullTitle
     const finalOgDescription = ogDescription || description
-    const finalTwitterTitle = twitterTitle || fullTitle
-    const finalTwitterDescription = twitterDescription || description
-    const finalTwitterCreator = twitterCreator || "@ZamanIsmail7"
 
-    const openGraphConfig = {
+
+    const openGraphConfig: any = {
         title: finalOgTitle,
         description: finalOgDescription,
         url: canonicalUrl,
         siteName: SITE_NAME,
-        images: [
-            {
-                url: defaultOgImage,
-                width: 1200,
-                height: 630,
-                alt: ogImageAlt || DEFAULT_IMAGES.OG_IMAGE_ALT_TEXT,
-                type: "image/png",
-            },
-        ],
         type: "website" as const,
         locale: "en_US" as const,
     }
 
-    const twitterConfig = {
-        card: "summary_large_image" as const,
-        title: finalTwitterTitle,
-        description: finalTwitterDescription,
-        creator: finalTwitterCreator,
-        images: [defaultOgImage],
-    }
+
 
     let softwareSchema: ReturnType<typeof createSoftwareAppSchema> | undefined
 
@@ -184,7 +163,6 @@ export function createMetadata(options: MetadataOptions): Metadata & { softwareS
             canonical: canonicalUrl,
         },
         openGraph: openGraphConfig,
-        twitter: twitterConfig,
         ...(noIndex && {
             robots: {
                 index: false,
@@ -246,14 +224,7 @@ export function getCanonicalUrl(path: string): string {
     return `${BASE_URL}${safePath}`
 }
 
-export function getImageUrl(imagePath: string): string {
-    const cleanPath = imagePath.startsWith("/") ? imagePath.slice(1) : imagePath
-    return `${BASE_URL}/${cleanPath}`
-}
 
-export function getDefaultOgImage(format: "png" | "svg" = "png"): string {
-    return format === "svg" ? DEFAULT_IMAGES.OG_IMAGE_SVG : DEFAULT_IMAGES.OG_IMAGE_PNG
-}
 
 export function getWebsiteSchema(searchUrl?: string) {
     return {
