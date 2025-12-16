@@ -15,6 +15,40 @@ export const viewport = globalViewport
 
 export const metadata = {
   metadataBase: new URL("https://www.fasttools.store"),
+  title: {
+    default: "FastTools - 1000+ Free Online Tools",
+    template: "%s | FastTools",
+  },
+  description: "FastTools provides 1000+ free online tools and expert articles: PDF tools, AI generators, calculators, developer utilities, and a tech blog with in-depth tutorials. 100% free, secure local processing, and works on all devices.",
+  authors: [{ name: "FastTools Team", url: "https://www.fasttools.store" }],
+  icons: {
+    icon: [
+      { url: "/favicon.ico", sizes: "any" },
+      { url: "/icon.png", type: "image/png" },
+    ],
+    apple: [
+      { url: "/apple-icon.png" },
+    ],
+  },
+  robots: {
+    index: true,
+    follow: true,
+  },
+  verification: {
+    google: "l2XEjZ8SEN_FD96ft9mIUW8cPiLW4mDbX6wZabF-xv0",
+    yandex: "242a8cf232328714",
+    me: ["support@fasttools.store"],
+    other: {
+      "msvalidate.01": "DE0A07DC9E742C4C8E795D7C99EF238B",
+      "p:domain_verify": "603c992f6d70753cf89c1a0141990c73",
+      "facebook-domain-verification": "m4jw5d6c1jsteghq2xo00wflvif79x",
+      "google-adsense-account": "ca-pub-6296569221534302",
+    },
+  },
+  twitter: {
+    card: "summary_large_image",
+    creator: "@ZamanIsmail7",
+  },
   ...createMetadata({
     title: "FastTools",
     description: "FastTools provides 1000+ free online tools and expert articles: PDF tools, AI generators, calculators, developer utilities, and a tech blog with in-depth tutorials. 100% free, secure local processing, and works on all devices.",

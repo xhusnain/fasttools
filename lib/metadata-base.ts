@@ -2,19 +2,7 @@ import type { Metadata, Viewport } from "next"
 
 const BASE_URL = "https://www.fasttools.store"
 const SITE_NAME = "FastTools"
-const AUTHORS = [{ name: "FastTools Team", url: "https://www.fasttools.store" }]
 
-const VERIFICATION = {
-    google: "l2XEjZ8SEN_FD96ft9mIUW8cPiLW4mDbX6wZabF-xv0",
-    yandex: "242a8cf232328714",
-    me: ["support@fasttools.store"],
-    other: {
-        "msvalidate.01": "DE0A07DC9E742C4C8E795D7C99EF238B",
-        "p:domain_verify": "603c992f6d70753cf89c1a0141990c73",
-        "facebook-domain-verification": "m4jw5d6c1jsteghq2xo00wflvif79x",
-        "google-adsense-account": "ca-pub-6296569221534302",
-    },
-}
 
 export const DEFAULT_IMAGES = {
     OG_IMAGE_PNG: "https://www.fasttools.store/og-image.png",
@@ -74,8 +62,32 @@ export interface MetadataWithSchema {
     softwareSchema: ReturnType<typeof createSoftwareAppSchema>
 }
 
+
+function shouldIncludeSchema(path: string): boolean {
+    const toolKeywords = [
+        "tools",
+        "calculator",
+        "generator",
+        "converter",
+        "downloader",
+        "checker",
+        "counter",
+        "editor",
+        "maker",
+        "splitter",
+        "merger",
+        "compressor",
+    ]
+    const normalizedPath = path.toLowerCase()
+    return toolKeywords.some(keyword => normalizedPath.includes(keyword))
+}
+
 export function createMetadata(options: MetadataOptions): Metadata & { softwareSchema?: ReturnType<typeof createSoftwareAppSchema> } {
-    const { title, description, path, ogImageAlt, noIndex, ogTitle, ogDescription, twitterTitle, twitterDescription, twitterCreator, includeSchema = true, schemaOptions, faqs, howToSteps, toolName, breadcrumbs } = options
+    const { title, description, path, ogImageAlt, noIndex, ogTitle, ogDescription, twitterTitle, twitterDescription, twitterCreator, schemaOptions, faqs, howToSteps, toolName, breadcrumbs } = options
+
+    // Smart default: Only include schema if path looks like a tool, unless explicitly overridden
+    const includeSchema = options.includeSchema ?? shouldIncludeSchema(path)
+
     const cleanPath = path.startsWith("/") ? path : `/${path}`
     const titleWithBranding = title === "FastTools" || title.startsWith("FastTools -") ? title : `${title} | FastTools`
     const fullTitle = addYearToTitle(titleWithBranding, cleanPath)
@@ -171,28 +183,14 @@ export function createMetadata(options: MetadataOptions): Metadata & { softwareS
         alternates: {
             canonical: canonicalUrl,
         },
-        authors: AUTHORS,
         openGraph: openGraphConfig,
         twitter: twitterConfig,
-        robots: noIndex
-            ? {
+        ...(noIndex && {
+            robots: {
                 index: false,
                 follow: false,
             }
-            : {
-                index: true,
-                follow: true,
-            },
-        verification: VERIFICATION,
-        icons: {
-            icon: [
-                { url: "/favicon.ico", sizes: "any" },
-                { url: "/icon.png", type: "image/png" },
-            ],
-            apple: [
-                { url: "/apple-icon.png" },
-            ],
-        },
+        }),
         // Manifest is handled by app/manifest.ts but we can link it here if needed, 
         // though Next.js 13+ with manifest.ts handles the <link rel="manifest"> automatically.
         ...(schemas.length > 0 && {
