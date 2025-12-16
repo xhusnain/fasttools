@@ -275,7 +275,7 @@ export default function ROASCalculatorPage() {
                 descriptionSize: "small"
             }}
             breadcrumbs={[
-                { label: "Ad Tools", href: "/ad-tools" },
+
                 { label: "ROAS Calculator", href: "/ad-tools/roas-calculator" }
             ]}
             toolComponent={
