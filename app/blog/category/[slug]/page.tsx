@@ -1,4 +1,4 @@
-import { getAllPosts } from '@/lib/blog'
+import { getAllPosts } from '@/components/blog/blog'
 import Link from 'next/link'
 import { Metadata } from 'next'
 import { notFound } from 'next/navigation'

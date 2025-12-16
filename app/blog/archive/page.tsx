@@ -1,11 +1,12 @@
-import { getAllPosts } from '@/lib/blog'
+import { getAllPosts } from '@/components/blog/blog'
 import Link from 'next/link'
-import { Metadata } from 'next'
+import { createMetadata } from "@/lib/metadata-base"
 
-export const metadata: Metadata = {
-    title: 'Archive - Blog | FastTools',
+export const metadata = createMetadata({
+    title: 'Archive - Blog',
     description: 'Archive of all articles, guides, and updates.',
-}
+    path: '/blog/archive'
+})
 
 export default async function ArchivePage() {
     const posts = await getAllPosts()
