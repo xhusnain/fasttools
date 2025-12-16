@@ -38,42 +38,18 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
     const { slug } = await params;
     try {
         const { frontMatter } = await getPostBySlug(slug);
-
-        // Optimize description if too long
-        const optimizedDesc = frontMatter.description.length > 160
-            ? frontMatter.description.substring(0, 157) + '...'
-            : frontMatter.description;
-
         return {
             title: `${frontMatter.title} | FastTools`,
-            description: optimizedDesc,
+            description: frontMatter.description,
             keywords: frontMatter.keywords,
-
-            authors: [{
-                name: frontMatter.author || 'FastTools Team',
-                url: frontMatter.authorUrl || 'https://www.fasttools.store/about'
-            }],
-            creator: frontMatter.author || 'FastTools Team',
-            publisher: 'FastTools',
-            category: frontMatter.category,
-
             openGraph: {
                 title: frontMatter.title,
-                description: optimizedDesc,
+                description: frontMatter.description,
                 type: 'article',
                 publishedTime: frontMatter.date,
-                modifiedTime: frontMatter.lastModified || frontMatter.date,
                 authors: [frontMatter.author || 'FastTools Team'],
-                section: frontMatter.category,
-                tags: frontMatter.tags,
-                locale: 'en_US',
                 images: frontMatter.image
-                    ? [{
-                        url: `https://www.fasttools.store${frontMatter.image}`,
-                        width: frontMatter.imageWidth || 1200,
-                        height: frontMatter.imageHeight || 630,
-                        alt: frontMatter.title
-                    }]
+                    ? [`https://www.fasttools.store${frontMatter.image}`]
                     : [],
                 url: `https://www.fasttools.store/blog/${slug}`,
                 siteName: 'FastTools',
@@ -81,17 +57,15 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
             twitter: {
                 card: 'summary_large_image',
                 title: frontMatter.title,
-                description: optimizedDesc,
+                description: frontMatter.description,
                 images: frontMatter.image
                     ? [`https://www.fasttools.store${frontMatter.image}`]
                     : [],
                 creator: '@fasttools',
-                site: '@fasttools',
             },
             robots: {
                 index: true,
                 follow: true,
-                nocache: false,
                 googleBot: {
                     index: true,
                     follow: true,
@@ -103,9 +77,7 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
             alternates: {
                 canonical: `https://www.fasttools.store/blog/${slug}`,
             },
-            other: {
-                'article:modified_time': frontMatter.lastModified || frontMatter.date,
-            }
+            authors: [{ name: frontMatter.author || 'FastTools Team' }],
         };
     } catch (e) {
         return {
@@ -152,19 +124,15 @@ export default async function BlogPost({
 
     const articleSchema = {
         '@context': 'https://schema.org',
-        '@type': 'BlogPosting',
+        '@type': 'Article',
         headline: frontMatter.title,
         description: frontMatter.description,
-        image: {
-            '@type': 'ImageObject',
-            url: frontMatter.image ? `https://www.fasttools.store${frontMatter.image}` : undefined,
-            width: frontMatter.imageWidth || 1200,
-            height: frontMatter.imageHeight || 630
-        },
+        image: frontMatter.image
+            ? `https://www.fasttools.store${frontMatter.image}`
+            : undefined,
         author: {
             '@type': 'Person',
             name: frontMatter.author || 'FastTools Team',
-            url: frontMatter.authorUrl || 'https://www.fasttools.store/about',
         },
         publisher: {
             '@type': 'Organization',
@@ -172,8 +140,6 @@ export default async function BlogPost({
             logo: {
                 '@type': 'ImageObject',
                 url: 'https://www.fasttools.store/logo.png',
-                width: 500,
-                height: 500
             },
             sameAs: [
                 'https://www.facebook.com/profile.php?id=61575993339664',
@@ -183,17 +149,13 @@ export default async function BlogPost({
             ],
         },
         datePublished: frontMatter.date,
-        dateModified: frontMatter.lastModified || frontMatter.date,
+        dateModified: frontMatter.date,
         mainEntityOfPage: {
             '@type': 'WebPage',
             '@id': `https://www.fasttools.store/blog/${slug}`,
         },
         keywords: frontMatter.keywords,
         wordCount: post.content.split(/\s+/).length,
-        articleSection: frontMatter.category || 'Developer',
-        inLanguage: 'en-US',
-        timeRequired: frontMatter.readingTimeMinutes ? `PT${frontMatter.readingTimeMinutes}M` : undefined,
-        articleBody: post.content.substring(0, 200).replace(/[#*`]/g, '') + '...'
     }
 
     const breadcrumbSchema = {
@@ -248,8 +210,15 @@ export default async function BlogPost({
                         <div className="flex flex-wrap items-center justify-center gap-6 text-xs font-mono text-muted-foreground uppercase tracking-widest">
                             <span className="flex items-center gap-2">
                                 <span className="w-2 h-2 rounded-full bg-hotpink/50"></span>
-                                {frontMatter.date ? frontMatter.date.split('-').reverse().join('-') : ''}
+                                {frontMatter.lastModified || frontMatter.date
+                                    ? (frontMatter.lastModified || frontMatter.date).split('-').reverse().join('-')
+                                    : ''}
                             </span>
+                            {frontMatter.lastModified && frontMatter.lastModified !== frontMatter.date && (
+                                <span className="text-xs text-muted-foreground/60 ml-1">
+                                    (Updated)
+                                </span>
+                            )}
                             <span className="w-px h-3 bg-white/10" />
                             <span>{readingTime} min read</span>
                             <span className="w-px h-3 bg-white/10" />
