@@ -951,9 +951,10 @@ export const toolPages = [
     },
 ]
 
-import type { BlogPost } from "@/components/blog/blog"
+import { getAllPosts } from "@/components/blog/blog"
 
-export const generateBlogSitemap = (posts: BlogPost[]) => {
+export const generateBlogSitemap = () => {
+    const posts = getAllPosts()
     return posts.map((post) => ({
         url: `${baseUrl}/blog/${post.slug}`,
         lastModified: new Date(post.lastModified || post.date),
@@ -967,4 +968,51 @@ export const generateBlogSitemap = (posts: BlogPost[]) => {
             }]
             : [],
     }))
+}
+
+export const generateCategorySitemap = () => {
+    const posts = getAllPosts()
+    const categories = Array.from(new Set(posts.map(post => post.category).filter(Boolean)))
+
+    return categories.map(category => ({
+        url: `${baseUrl}/blog/category/${category!.toLowerCase().replace(/\s+/g, '-')}`,
+        lastModified: new Date(),
+        changeFrequency: 'weekly' as const,
+        priority: 0.8,
+        images: []
+    }))
+}
+
+export const getAllSitemapPages = () => {
+    // 1. Get all static pages from config
+    const staticPages = [...mainPages, ...categoryPages, ...toolPages]
+    const existingUrls = new Set(staticPages.map(p => p.url))
+
+    // 2. Archive Page
+    const archiveUrl = 'https://www.fasttools.store/blog/archive'
+    const dynamicPages: SitemapPage[] = []
+
+    if (!existingUrls.has(archiveUrl)) {
+        dynamicPages.push({
+            url: archiveUrl,
+            lastModified: new Date(),
+            changeFrequency: 'weekly' as const,
+            priority: 0.8,
+            images: []
+        })
+    }
+
+    // 3. Blog Posts
+    const blogPages = generateBlogSitemap()
+
+    // 4. Dynamic Categories
+    const dynamicCategoryPages = generateCategorySitemap()
+    dynamicCategoryPages.forEach(page => {
+        if (!existingUrls.has(page.url)) {
+            dynamicPages.push(page)
+        }
+    })
+
+    // Return flattened, de-duplicated list
+    return [...staticPages, ...blogPages, ...dynamicPages]
 }
