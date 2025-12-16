@@ -12,12 +12,13 @@ const MegaMenu = dynamic(() => import("@/components/common/mega-menu").then(mod 
   ssr: false,
 })
 import { navigationConfig } from "@/data/navigation"
+
 import {
-  Accordion,
-  AccordionContent,
-  AccordionItem,
-  AccordionTrigger,
-} from "@/components/ui/accordion"
+  GAccordion,
+  GAccordionContent,
+  GAccordionItem,
+  GAccordionTrigger,
+} from "@/ui/gaccordion"
 
 export function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
@@ -134,13 +135,13 @@ export function Header() {
           }`}
       >
         <div className="container mx-auto px-4 py-6 space-y-4">
-          <Accordion type="single" collapsible className="w-full">
+          <GAccordion type="single" collapsible className="w-full">
             {navigationConfig.map((section, index) => (
-              <AccordionItem key={index} value={`item-${index}`} className="border-b border-border/10">
-                <AccordionTrigger className="text-base font-semibold py-4 hover:no-underline hover:text-primary transition-colors">
+              <GAccordionItem key={index} value={`item-${index}`} className="border-b border-border/10">
+                <GAccordionTrigger className="text-base font-semibold py-4 hover:no-underline hover:text-primary transition-colors">
                   {section.title}
-                </AccordionTrigger>
-                <AccordionContent>
+                </GAccordionTrigger>
+                <GAccordionContent>
                   <div className="pl-4 space-y-4 pt-2 pb-4">
                     {section.categories.map((category, catIndex) => (
                       <div key={catIndex} className="space-y-2">
@@ -164,10 +165,10 @@ export function Header() {
                       </div>
                     ))}
                   </div>
-                </AccordionContent>
-              </AccordionItem>
+                </GAccordionContent>
+              </GAccordionItem>
             ))}
-          </Accordion>
+          </GAccordion>
 
           <div className="pt-2 border-t border-border/10 mt-2">
             <Link

@@ -1,9 +1,9 @@
 import { NextResponse } from 'next/server';
-import { mainPages, categoryPages, toolPages } from '@/lib/sitemap-config';
+import { getAllSitemapPages } from '@/lib/sitemap-config';
 
 export async function GET(request: Request) {
-    const allPages = [...mainPages, ...categoryPages, ...toolPages];
-    const urlList = allPages.map(page => page.url);
+    const allPages = getAllSitemapPages();
+    const urlList = allPages.map(p => p.url);
 
     const body = {
         host: "www.fasttools.store",

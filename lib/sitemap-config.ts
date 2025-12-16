@@ -145,6 +145,12 @@ export const mainPages = [
         priority: 0.95,
     },
     {
+        url: "https://www.fasttools.store/blog/archive",
+        lastModified: new Date(),
+        changeFrequency: "weekly" as const,
+        priority: 0.8,
+    },
+    {
         url: "https://www.fasttools.store/privacy-policy",
         lastModified: new Date('2025-11-25'),
         changeFrequency: "yearly" as const,
@@ -290,6 +296,12 @@ export const categoryPages = [
         lastModified: new Date('2025-11-25'),
         changeFrequency: "monthly" as const,
         priority: 0.98,
+    },
+    {
+        url: "https://www.fasttools.store/blog/category/developer",
+        lastModified: new Date(),
+        changeFrequency: "weekly" as const,
+        priority: 0.85,
     },
 ]
 
@@ -897,12 +909,12 @@ export const toolPages = [
         images: [
             {
                 url: "https://www.fasttools.store/banner.png",
-                title: "PDF Splitter & Merger - Free PDF Editing and Processing",
-                caption: "Comprehensive PDF splitter and merger tool for splitting large PDFs or merging multiple PDF documents"
+                title: "PDF Splitter and Merger - Free PDF Editing and Processing",
+                caption: "FastTools PDF Splitter and Merger collection for merging and splitting PDF files"
             },
             {
                 url: "https://www.fasttools.store/logo.png",
-                title: "FastTools PDF Splitter & Merger Logo",
+                title: "FastTools PDF Splitter and Merger Logo",
                 caption: "Professional logo for FastTools PDF splitting and merging toolkit"
             }
         ]
@@ -938,3 +950,69 @@ export const toolPages = [
         priority: 0.95,
     },
 ]
+
+import { getAllPosts } from "@/components/blog/blog"
+
+export const generateBlogSitemap = () => {
+    const posts = getAllPosts()
+    return posts.map((post) => ({
+        url: `${baseUrl}/blog/${post.slug}`,
+        lastModified: new Date(post.lastModified || post.date),
+        changeFrequency: 'monthly' as const,
+        priority: 0.7,
+        images: post.image
+            ? [{
+                url: post.image.startsWith('http') ? post.image : `${baseUrl}${post.image}`,
+                title: post.title,
+                caption: post.description || ''
+            }]
+            : [],
+    }))
+}
+
+export const generateCategorySitemap = () => {
+    const posts = getAllPosts()
+    const categories = Array.from(new Set(posts.map(post => post.category).filter(Boolean)))
+
+    return categories.map(category => ({
+        url: `${baseUrl}/blog/category/${category!.toLowerCase().replace(/\s+/g, '-')}`,
+        lastModified: new Date(),
+        changeFrequency: 'weekly' as const,
+        priority: 0.8,
+        images: []
+    }))
+}
+
+export const getAllSitemapPages = () => {
+    // 1. Get all static pages from config
+    const staticPages = [...mainPages, ...categoryPages, ...toolPages]
+    const existingUrls = new Set(staticPages.map(p => p.url))
+
+    // 2. Archive Page
+    const archiveUrl = 'https://www.fasttools.store/blog/archive'
+    const dynamicPages: SitemapPage[] = []
+
+    if (!existingUrls.has(archiveUrl)) {
+        dynamicPages.push({
+            url: archiveUrl,
+            lastModified: new Date(),
+            changeFrequency: 'weekly' as const,
+            priority: 0.8,
+            images: []
+        })
+    }
+
+    // 3. Blog Posts
+    const blogPages = generateBlogSitemap()
+
+    // 4. Dynamic Categories
+    const dynamicCategoryPages = generateCategorySitemap()
+    dynamicCategoryPages.forEach(page => {
+        if (!existingUrls.has(page.url)) {
+            dynamicPages.push(page)
+        }
+    })
+
+    // Return flattened, de-duplicated list
+    return [...staticPages, ...blogPages, ...dynamicPages]
+}

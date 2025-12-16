@@ -11,7 +11,7 @@ import {
     NavigationMenuList,
     NavigationMenuTrigger,
     navigationMenuTriggerStyle,
-} from "@/components/ui/navigation-menu"
+} from "@/components/utilities/navigation-menu"
 import { navigationConfig } from "@/data/navigation"
 import { usePathname } from "next/navigation"
 
