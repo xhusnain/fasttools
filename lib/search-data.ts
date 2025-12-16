@@ -46,12 +46,12 @@ export const searchItems: SearchItem[] = [
   { name: "Standard Deviation Calculator", description: "Calculate standard deviation, variance, and mean", path: "/calculator/standard-deviation-calculator", category: "Calculator" },
   { name: "Pregnancy Conception Calculator", description: "Calculate your conception date with personalized guidance", path: "/calculator/pregnancy-conception-calculator", category: "Calculator" },
   { name: "Pace Calculator", description: "Calculate running pace, training zones, and race predictions", path: "/calculator/pace-calculator", category: "Calculator" },
-  { name: "Sales Tax Calculator", description: "Calculate sales tax for all 50 US states", path: "/calculator/sales-tax-calculator", category: "Calculator" },
-  { name: "Interest Rate Calculator", description: "Calculate real interest rates on loans", path: "/calculator/interest-rate-calculator", category: "Calculator" },
-  { name: "Finance Calculator", description: "Professional finance calculator for time value of money", path: "/calculator/finance-calculator", category: "Calculator" },
-  { name: "Inflation Calculator", description: "Calculate purchasing power and inflation rates", path: "/calculator/inflation-calculator", category: "Calculator" },
-  { name: "Amortization Calculator", description: "Professional amortization calculator for loan payment analysis", path: "/calculator/amortization-calculator", category: "Calculator" },
-  { name: "Payment Calculator", description: "Professional payment calculator for loan analysis", path: "/calculator/payment-calculator", category: "Calculator" },
+  { name: "Sales Tax Calculator", description: "Calculate sales tax for all 50 US states", path: "/finance-tools/sales-tax-calculator", category: "Calculator" },
+  { name: "Interest Rate Calculator", description: "Calculate real interest rates on loans", path: "/finance-tools/interest-rate-calculator", category: "Calculator" },
+  { name: "Finance Calculator", description: "Professional finance calculator for time value of money", path: "/finance-tools/finance-calculator", category: "Calculator" },
+  { name: "Inflation Calculator", description: "Calculate purchasing power and inflation rates", path: "/finance-tools/inflation-calculator", category: "Calculator" },
+  { name: "Amortization Calculator", description: "Professional amortization calculator for loan payment analysis", path: "/finance-tools/amortization-calculator", category: "Calculator" },
+  { name: "Payment Calculator", description: "Professional payment calculator for loan analysis", path: "/finance-tools/payment-calculator", category: "Calculator" },
 
   // AI Tools
   { name: "AI QR Code Generator", description: "Create stunning, branded QR codes with AI-powered customization", path: "/ai-tools/qr-generator", category: "AI" },
