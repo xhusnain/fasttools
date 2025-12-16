@@ -1,5 +1,5 @@
 import React from 'react';
-import {GButton} from "@/ui";
+import { GButton } from "@/ui";
 
 export const GEnterpriseCTA = () => {
     return (
@@ -14,7 +14,7 @@ export const GEnterpriseCTA = () => {
                         </h2>
 
                         <p className="text-muted-foreground text-sm mb-8 leading-relaxed">
-                            ClickFortify provides enterprise organizations with the sophisticated, scalable click fraud protection they need to safeguard multi-million dollar advertising investments.
+                            FastTools provides enterprise organizations with sophisticated, scalable web tools they need to optimize their workflow and productivity.
                         </p>
 
                         <div className="space-y-3">
@@ -43,7 +43,7 @@ export const GEnterpriseCTA = () => {
 
                             <div className="flex flex-col gap-3">
                                 <GButton
-                                    href="https://meet.brevo.com/solution-walkthrough/borderless?l=clickfortify-demo"
+                                    href="https://fasttools.store/contact"
                                     variant="default"
                                     color="white"
                                     className="w-full justify-center"
@@ -51,7 +51,7 @@ export const GEnterpriseCTA = () => {
                                     Book a Demo
                                 </GButton>
                                 <GButton
-                                    href="https://app.clickfortify.com"
+                                    href="https://fasttools.store"
                                     variant="outline"
                                     color="white"
                                     className="w-full justify-center"

@@ -26,6 +26,16 @@ const nextConfig = {
   },
   images: {
     // unoptimized: true, // Removed for performance optimization
+    remotePatterns: [
+      {
+        protocol: 'https',
+        hostname: 'images.unsplash.com',
+      },
+      {
+        protocol: 'https',
+        hostname: 'plus.unsplash.com',
+      }
+    ],
   },
   transpilePackages: ['lucide-react'],
   webpack: (config, { isServer, dev }) => {

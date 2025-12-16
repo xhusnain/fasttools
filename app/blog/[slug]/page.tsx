@@ -4,12 +4,28 @@ import { MDXRemote } from 'next-mdx-remote/rsc';
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
 import { GBlogContentLayout } from '@/components/blog/GBlogContentLayout';
+import { GTableOfContents } from '@/components/blog/GTableOfContents';
 
 import { GSocialShare } from '@/components/blog/GSocialShare';
 import { GJsonLd } from '@/components/blog/GJsonLd';
 import { GAuthorBio } from '@/components/blog/GAuthorBio';
-import {GImage} from "@/ui/gimage";
-import {MDXComponents} from "@/components/blog/mdx-components";
+import { GImage } from "@/ui/gimage";
+import { MDXComponents } from "@/components/blog/mdx-components";
+
+// MDX Plugins
+import remarkGfm from 'remark-gfm';
+import rehypeSlug from 'rehype-slug';
+import rehypePrism from 'rehype-prism-plus';
+
+function slugify(text: string) {
+    return text
+        .toString()
+        .toLowerCase()
+        .trim()
+        .replace(/\s+/g, '-')
+        .replace(/[^\w-]/g, '')
+        .replace(/--+/g, '-')
+}
 
 export async function generateStaticParams() {
     const slugs = getPostSlugs();
@@ -23,7 +39,7 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
     try {
         const { frontMatter } = await getPostBySlug(slug);
         return {
-            title: `${frontMatter.title} | Click Fortify`,
+            title: `${frontMatter.title} | FastTools`,
             description: frontMatter.description,
             keywords: frontMatter.keywords,
             openGraph: {
@@ -31,21 +47,21 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
                 description: frontMatter.description,
                 type: 'article',
                 publishedTime: frontMatter.date,
-                authors: [frontMatter.author || 'Click Fortify Team'],
+                authors: [frontMatter.author || 'FastTools Team'],
                 images: frontMatter.image
-                    ? [`https://www.clickfortify.com${frontMatter.image}`]
+                    ? [`https://www.fasttools.store${frontMatter.image}`]
                     : [],
-                url: `https://www.clickfortify.com/blog/${slug}`,
-                siteName: 'Click Fortify',
+                url: `https://www.fasttools.store/blog/${slug}`,
+                siteName: 'FastTools',
             },
             twitter: {
                 card: 'summary_large_image',
                 title: frontMatter.title,
                 description: frontMatter.description,
                 images: frontMatter.image
-                    ? [`https://www.clickfortify.com${frontMatter.image}`]
+                    ? [`https://www.fasttools.store${frontMatter.image}`]
                     : [],
-                creator: '@clickfortify',
+                creator: '@fasttools',
             },
             robots: {
                 index: true,
@@ -59,9 +75,9 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
                 },
             },
             alternates: {
-                canonical: `https://www.clickfortify.com/blog/${slug}`,
+                canonical: `https://www.fasttools.store/blog/${slug}`,
             },
-            authors: [{ name: frontMatter.author || 'Click Fortify Team' }],
+            authors: [{ name: frontMatter.author || 'FastTools Team' }],
         };
     } catch (e) {
         return {
@@ -71,8 +87,8 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
 }
 
 export default async function BlogPost({
-                                           params,
-                                       }: {
+    params,
+}: {
     params: Promise<{ slug: string }>
 }) {
     const { slug } = await params
@@ -84,7 +100,27 @@ export default async function BlogPost({
         notFound()
     }
 
-    const { frontMatter, mdxSource } = post
+    const { frontMatter } = post
+
+    // Process content to remove Table of Contents header and extract headings
+    const contentWithoutToc = post.content.replace(/^## Table of Contents$/m, '')
+
+    // Extract headings for sidebar TOC
+    const headings = []
+    const headingRegex = /^(#{2,3})\s+(.+)$/gm
+    let match
+    while ((match = headingRegex.exec(contentWithoutToc)) !== null) {
+        const level = match[1].length
+        const text = match[2]
+        // Skip Table of Contents if matched (though replaced above, safer to double check)
+        if (text.toLowerCase() === 'table of contents') continue
+
+        headings.push({
+            id: slugify(text),
+            text,
+            level
+        })
+    }
 
     const articleSchema = {
         '@context': 'https://schema.org',
@@ -92,31 +128,31 @@ export default async function BlogPost({
         headline: frontMatter.title,
         description: frontMatter.description,
         image: frontMatter.image
-            ? `https://www.clickfortify.com${frontMatter.image}`
+            ? `https://www.fasttools.store${frontMatter.image}`
             : undefined,
         author: {
             '@type': 'Person',
-            name: frontMatter.author || 'Click Fortify Team',
+            name: frontMatter.author || 'FastTools Team',
         },
         publisher: {
             '@type': 'Organization',
-            name: 'Click Fortify',
+            name: 'FastTools',
             logo: {
                 '@type': 'ImageObject',
-                url: 'https://www.clickfortify.com/cf_white_logo_text.svg',
+                url: 'https://www.fasttools.store/logo.png',
             },
             sameAs: [
                 'https://www.facebook.com/profile.php?id=61575993339664',
-                'https://www.instagram.com/clickfortify/',
-                'https://www.linkedin.com/company/click-fortify-official',
-                'https://x.com/clickfortify',
+                'https://www.instagram.com/fasttools/',
+                'https://www.linkedin.com/company/fasttools-official',
+                'https://x.com/fasttools',
             ],
         },
         datePublished: frontMatter.date,
         dateModified: frontMatter.date,
         mainEntityOfPage: {
             '@type': 'WebPage',
-            '@id': `https://www.clickfortify.com/blog/${slug}`,
+            '@id': `https://www.fasttools.store/blog/${slug}`,
         },
         keywords: frontMatter.keywords,
         wordCount: post.content.split(/\s+/).length,
@@ -130,19 +166,19 @@ export default async function BlogPost({
                 '@type': 'ListItem',
                 position: 1,
                 name: 'Home',
-                item: 'https://www.clickfortify.com',
+                item: 'https://www.fasttools.store',
             },
             {
                 '@type': 'ListItem',
                 position: 2,
                 name: 'Blog',
-                item: 'https://www.clickfortify.com/blog',
+                item: 'https://www.fasttools.store/blog',
             },
             {
                 '@type': 'ListItem',
                 position: 3,
                 name: frontMatter.title,
-                item: `https://www.clickfortify.com/blog/${slug}`,
+                item: `https://www.fasttools.store/blog/${slug}`,
             },
         ],
     }
@@ -155,7 +191,7 @@ export default async function BlogPost({
             <GJsonLd schema={breadcrumbSchema} />
             <div className="min-h-screen font-sans selection:bg-foreground/20 selection:text-foreground bg-backgroundPrimary pt-40 pb-24">
 
-                <div className="max-w-6xl mx-auto border border-white/10 relative">
+                <div className="max-w-7xl mx-auto border border-white/10 relative">
                     <header className="border-b border-white/10 p-8 md:p-12 lg:p-20 text-center relative bg-white/[0.02]">
                         <Link
                             href="/blog"
@@ -179,7 +215,7 @@ export default async function BlogPost({
                             <span className="w-px h-3 bg-white/10" />
                             <span>{readingTime} min read</span>
                             <span className="w-px h-3 bg-white/10" />
-                            <span>{frontMatter.author || 'Click Fortify Team'}</span>
+                            <span>{frontMatter.author || 'FastTools Team'}</span>
                         </div>
                     </header>
 
@@ -198,40 +234,63 @@ export default async function BlogPost({
                         </div>
                     )}
 
-                    {/* Content */}
+                    {/* Content Section with Sidebar */}
                     <div className="bg-backgroundPrimary">
-                        <GBlogContentLayout
-                            footer={
-                                <>
-                                    <div className="mt-16 pt-8 border-t border-white/10">
-                                        <div className="flex items-center justify-between flex-wrap gap-4">
-                                            <div className="flex flex-col gap-3">
-                                                <span className="text-xs font-mono text-muted-foreground uppercase tracking-widest">
-                                                    Share this article
-                                                </span>
-                                                <div className="flex gap-4">
-                                                    <GSocialShare title={frontMatter.title} slug={slug} />
+                        <div className="flex flex-col lg:flex-row max-w-7xl mx-auto">
+
+                            {/* Sticky TOC Sidebar */}
+                            <aside className="hidden lg:block w-[280px] shrink-0 border-r border-white/10 p-8">
+                                <div className="sticky top-32">
+                                    <GTableOfContents headings={headings} />
+                                </div>
+                            </aside>
+
+                            {/* Main Article Content */}
+                            <div className="flex-1 min-w-0">
+                                <GBlogContentLayout
+                                    footer={
+                                        <>
+                                            <div className="mt-16 pt-8 border-t border-white/10">
+                                                <div className="flex items-center justify-between flex-wrap gap-4">
+                                                    <div className="flex flex-col gap-3">
+                                                        <span className="text-xs font-mono text-muted-foreground uppercase tracking-widest">
+                                                            Share this article
+                                                        </span>
+                                                        <div className="flex gap-4">
+                                                            <GSocialShare title={frontMatter.title} slug={slug} />
+                                                        </div>
+                                                    </div>
+                                                    <Link
+                                                        href="/blog"
+                                                        className="text-xs font-mono uppercase tracking-widest text-muted-foreground hover:text-foreground transition-colors border border-white/10 px-4 py-2 rounded-full hover:bg-white/5"
+                                                    >
+                                                        More Articles
+                                                    </Link>
                                                 </div>
                                             </div>
-                                            <Link
-                                                href="/blog"
-                                                className="text-xs font-mono uppercase tracking-widest text-muted-foreground hover:text-foreground transition-colors border border-white/10 px-4 py-2 rounded-full hover:bg-white/5"
-                                            >
-                                                More Articles
-                                            </Link>
-                                        </div>
-                                    </div>
-                                    <GAuthorBio />
-                                </>
-                            }
-                        >
-                            <MDXRemote
-                                source={post.content}
-                                components={MDXComponents}
-                                options={post.mdxSource}
-                            />
-
-                        </GBlogContentLayout>
+                                            <GAuthorBio />
+                                        </>
+                                    }
+                                >
+                                    <MDXRemote
+                                        source={contentWithoutToc}
+                                        components={MDXComponents}
+                                        options={{
+                                            mdxOptions: {
+                                                remarkPlugins: [
+                                                    // Removed remarkToc
+                                                    remarkGfm
+                                                ],
+                                                rehypePlugins: [
+                                                    rehypeSlug,
+                                                    [rehypePrism, { showLineNumbers: true }]
+                                                ]
+                                            }
+                                        }}
+                                    />
+                                </GBlogContentLayout>
+                            </div>
+                        </div>
                     </div>
 
                 </div>

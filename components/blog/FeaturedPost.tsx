@@ -1,6 +1,6 @@
 import Link from 'next/link';
-import {GImage} from "@/ui/gimage";
-import {BlogPost} from "@/components/blog/blog";
+import { GImage } from "@/ui/gimage";
+import { BlogPost } from "@/components/blog/blog";
 
 interface FeaturedPostProps {
     post: BlogPost;
@@ -46,7 +46,7 @@ export const FeaturedPost = ({ post }: FeaturedPostProps) => {
 
                     <div className="flex items-center gap-6 text-sm font-mono text-gray-400 uppercase tracking-widest">
                         <div className="flex items-center gap-2">
-                            <span className="text-white">By {post.author || 'Click Fortify'}</span>
+                            <span className="text-white">By {post.author || 'FastTools'}</span>
                         </div>
                         <div className="w-1.5 h-1.5 rounded-full bg-hotpink" />
                         <time dateTime={post.date}>{post.date}</time>

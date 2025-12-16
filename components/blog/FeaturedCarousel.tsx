@@ -2,8 +2,8 @@
 
 import { useState } from 'react';
 import Link from 'next/link';
-import {BlogPost} from "@/components/blog/blog";
-import {GImage} from "@/ui/gimage";
+import { BlogPost } from "@/components/blog/blog";
+import { GImage } from "@/ui/gimage";
 
 interface FeaturedCarouselProps {
     posts: BlogPost[];
@@ -62,7 +62,7 @@ export const FeaturedCarousel = ({ posts }: FeaturedCarouselProps) => {
 
                     <div className="flex items-center gap-6 text-sm text-gray-400 uppercase tracking-widest">
                         <div className="flex items-center gap-2">
-                            <span className="text-white">By {currentPost.author || 'Click Fortify'}</span>
+                            <span className="text-white">By {currentPost.author || 'FastTools'}</span>
                         </div>
                         <div className="w-1.5 h-1.5 rounded-full bg-hotpink" />
                         <time dateTime={currentPost.date}>{currentPost.date}</time>
@@ -104,7 +104,7 @@ export const FeaturedCarousel = ({ posts }: FeaturedCarouselProps) => {
                             className={`w-2.5 h-2.5 rounded-full transition-all ${index === currentIndex
                                 ? 'bg-hotpink w-8'
                                 : 'bg-white/40 hover:bg-white/60'
-                            }`}
+                                }`}
                             aria-label={`Go to slide ${index + 1}`}
                         />
                     ))}

@@ -1,3 +1,3 @@
 export const GlobalLinks = {
-    EXTERNAL_SITE: process.env.EXTERNAL_APP_URL || process.env.NEXT_PUBLIC_EXTERNAL_APP_URL || 'https://app.clickfortify.com/',
+    EXTERNAL_SITE: process.env.EXTERNAL_APP_URL || process.env.NEXT_PUBLIC_EXTERNAL_APP_URL || 'https://fasttools.store/',
 }

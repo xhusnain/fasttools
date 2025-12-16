@@ -4,10 +4,11 @@ import Link from 'next/link';
 import { useState, useMemo } from 'react';
 import Fuse from 'fuse.js';
 import { BlogSearch } from './BlogSearch';
-import { FeaturedCarousel } from './FeaturedCarousel';
+import { FeaturedHero } from './FeaturedHero';
+import { LatestPostsList } from './LatestPostsList';
 import { PostCard } from './PostCard';
 import { CategorySection } from './CategorySection';
-import {BlogPost} from "@/components/blog/blog";
+import { BlogPost } from "@/components/blog/blog";
 
 interface BlogClientPageProps {
     allPosts: BlogPost[];
@@ -38,48 +39,61 @@ export default function BlogClientPage({ allPosts }: BlogClientPageProps) {
 
     const isSearching = !!searchQuery;
 
-    const featuredPosts = allPosts.filter(p => p.featured).length > 0
-        ? allPosts.filter(p => p.featured).slice(0, 4)
-        : allPosts.slice(0, 4);
-    const featuredSlugs = new Set(featuredPosts.map(p => p.slug));
+    // Logic:
+    // 1. Featured Post: The very first post marked as featured, or just the first post.
+    // 2. Latest Posts: The next 3 posts (excluding the featured one).
+    // 3. Categories: Filtered by category (excluding featured/latest if desired, though often duplication is okay or handled by specific logic. Let's exclude to avoid repetition on the home screen if possible, but duplication in categories is standard).
 
-    const latestPosts = allPosts.filter(p => !featuredSlugs.has(p.slug)).slice(0, 4);
-    const latestSlugs = new Set(latestPosts.map(p => p.slug));
+    const featuredPost = allPosts.find(p => p.featured) || allPosts[0];
+    // Remaining posts for the "Latest" list (exclude the absolute featured one)
+    const otherPosts = allPosts.filter(p => p.slug !== featuredPost.slug);
+    const latestPosts = otherPosts.slice(0, 3); // 3 items for the side list
 
-    const excludedSlugs = new Set([...featuredSlugs, ...latestSlugs]);
+    // Dynamic Category Grouping
+    const categories = useMemo(() => {
+        const groups: Record<string, BlogPost[]> = {};
 
-    const getPostsByCategory = (categoryName: string) =>
-        allPosts.filter(p => p.category === categoryName && !excludedSlugs.has(p.slug));
+        // We want all posts to appear in their respective categories
+        // We can either exclude the featured post from here or include it.
+        // Usually, for a "Browse by Category" feel, it's good to include everything (even the featured one)
+        // or just the non-featured ones. Let's include everything to be safe, or just otherPosts.
+        // User requested "auto fetch new category".
 
-    const fraudPosts = getPostsByCategory('Click Fraud Protection');
-    const googleAdsPosts = getPostsByCategory('Google Ads');
-    const aiPosts = getPostsByCategory('AI');
-    const caseStudyPosts = getPostsByCategory('Case Studies');
+        const postsToGroup = allPosts; // Group everything
+
+        postsToGroup.forEach(post => {
+            const cat = post.category || 'Uncategorized';
+            if (!groups[cat]) {
+                groups[cat] = [];
+            }
+            groups[cat].push(post);
+        });
+
+        // If we want specific sort order for categories (e.g. "Developer" first), we can do it here.
+        // Otherwise, just alphabetical or insertion order.
+        return Object.entries(groups).sort((a, b) => a[0].localeCompare(b[0]));
+    }, [allPosts]);
 
     return (
-        <div className="min-h-screen bg-backgroundPrimary pt-40 pb-24">
-            <div className="max-w-6xl mx-auto border border-white/10 relative">
-                <div className="border-b border-white/10 p-8 md:p-12 relative overflow-hidden">
-                    <div className="flex flex-col md:flex-row justify-between items-end gap-8">
-                        <div>
-                            <span className="text-xs text-muted-foreground uppercase tracking-widest mb-4 block">
-                                The Journal
-                            </span>
-                            <h1 className="text-foreground tracking-tight">
-                                Insights <span className="font-serif italic text-muted-foreground">&</span> Updates
-                            </h1>
-                        </div>
-                        <div className="w-full md:w-auto">
-                            <BlogSearch onSearch={setSearchQuery} />
-                        </div>
+        <div className="min-h-screen bg-background pt-32 pb-24">
+            <div className="max-w-7xl mx-auto px-6 lg:px-8">
+                {/* Header Section */}
+                <div className="flex flex-col md:flex-row justify-between items-center gap-8 mb-20 border-b border-white/10 pb-10">
+                    <div>
+                        <h1 className="text-5xl md:text-6xl font-extrabold tracking-tighter text-white">
+                            Insights <span className="text-white/40 font-light italic">&</span> Updates
+                        </h1>
+                    </div>
+                    <div className="w-full md:w-auto min-w-[320px]">
+                        <BlogSearch onSearch={setSearchQuery} />
                     </div>
                 </div>
 
                 {/* Content */}
-                <div className="">
+                <div>
                     {isSearching ? (
-                        <div className="p-8">
-                            <h2 className="text-foreground mb-8">Search Results ({filteredPosts.length})</h2>
+                        <div className="animate-in fade-in duration-500">
+                            <h2 className="text-2xl font-bold mb-8 text-foreground">Search Results ({filteredPosts.length})</h2>
                             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                                 {filteredPosts.map(post => (
                                     <PostCard key={post.slug} post={post} />
@@ -90,42 +104,32 @@ export default function BlogClientPage({ allPosts }: BlogClientPageProps) {
                             )}
                         </div>
                     ) : (
-                        <div className="divide-y divide-white/10">
+                        <div className="space-y-20">
 
-                            {/* Featured Section Grid */}
-                            <div className="grid grid-cols-1 lg:grid-cols-3 divide-y lg:divide-y-0 lg:divide-x divide-white/10">
-                                {/* Carousel - Spans 2 cols */}
-                                <div className="col-span-1 lg:col-span-2 p-8">
-                                    <FeaturedCarousel posts={featuredPosts} />
+                            {/* Hero Section Grid */}
+                            <section className="grid grid-cols-1 lg:grid-cols-3 gap-6 lg:gap-8 min-h-[600px]">
+                                {/* Featured Hero - Spans 2 cols */}
+                                <div className="col-span-1 lg:col-span-2 min-h-[500px]">
+                                    <FeaturedHero post={featuredPost} />
                                 </div>
 
                                 {/* Latest List - Spans 1 col */}
-                                <div className="col-span-1 p-8 flex flex-col gap-6 bg-white/[0.02]">
-                                    <h3 className="text-foreground mb-2 font-bold">Latest Articles</h3>
-                                    <div className="flex flex-col gap-4 h-full">
-                                        {latestPosts.map(post => (
-                                            <Link key={post.slug} href={`/blog/${post.slug}`} className="group block bg-card/50 border border-white/10 rounded-xl p-5 hover:bg-white/5 transition-colors">
-                                                <div className="flex flex-col gap-2">
-                                                    <span className="text-[10px] text-hotpink uppercase tracking-wider">{post.tags?.[0]}</span>
-                                                    <h4 className="text-foreground font-medium group-hover:text-hotpink transition-colors line-clamp-2">
-                                                        {post.title}
-                                                    </h4>
-                                                    <span className="text-xs text-muted-foreground">{post.date}</span>
-                                                </div>
-                                            </Link>
-                                        ))}
-                                        <Link href="/blog/archive" className="mt-auto text-center py-4 text-sm text-muted-foreground hover:text-foreground transition-colors border border-white/10 rounded-xl hover:border-white/20 bg-white/[0.02]">
-                                            View Archive
-                                        </Link>
-                                    </div>
+                                <div className="col-span-1 h-full">
+                                    <LatestPostsList posts={latestPosts} />
                                 </div>
-                            </div>
+                            </section>
 
                             {/* Categories */}
-                            <CategorySection title="Click Fraud Protection" posts={fraudPosts} />
-                            <CategorySection title="Google Ads" posts={googleAdsPosts} />
-                            <CategorySection title={<>AI <span className="font-serif italic">&</span> Machine Learning</>} posts={aiPosts} />
-                            <CategorySection title={<>Case Studies <span className="font-serif italic">&</span> Reports</>} posts={caseStudyPosts} />
+                            {/* Categories */}
+                            <div className="space-y-20 py-12">
+                                {categories.map(([categoryName, posts]) => (
+                                    <CategorySection
+                                        key={categoryName}
+                                        title={categoryName}
+                                        posts={posts}
+                                    />
+                                ))}
+                            </div>
 
                         </div>
                     )}

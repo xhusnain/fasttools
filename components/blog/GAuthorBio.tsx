@@ -1,4 +1,4 @@
-import {GImage} from "@/ui/gimage";
+import { GImage } from "@/ui/gimage";
 
 export const GAuthorBio = () => {
     return (
@@ -7,35 +7,35 @@ export const GAuthorBio = () => {
                 <div className="flex-shrink-0">
                     <div className="w-20 h-20 rounded-xl bg-backgroundPrimary border border-white/10 flex items-center justify-center overflow-hidden">
                         <GImage
-                            src="/cf_logo.png"
-                            alt="ClickFortify Logo"
-                            width={50}
-                            height={50}
-                            fit="contain"
+                            src="/logo.png"
+                            alt="FastTools Logo"
+                            width={48}
+                            height={48}
+                            fill={false}
                             className="object-contain"
                         />
                     </div>
                 </div>
                 <div className="flex-1">
                     <div className="mb-4">
-                        <h3 className="text-lg font-bold text-foreground mb-1">Click Fortify Team</h3>
-                        <p className="text-xs text-hotpink font-mono uppercase tracking-widest">PPC Security & Ad Fraud Protection Experts</p>
+                        <h3 className="text-lg font-bold text-foreground mb-1">FastTools Team</h3>
+                        <p className="text-xs text-hotpink font-mono uppercase tracking-widest">Developer Tools & Resource Experts</p>
                     </div>
                     <p className="text-muted-foreground text-sm leading-relaxed mb-6 max-w-2xl">
-                        Click Fortify is powered by a team of top PPC experts and experienced developers with over 10 years in digital advertising security. Our specialists have protected millions in ad spend across Google Ads, Meta, and other major platforms, helping businesses eliminate click fraud and maximize their advertising ROI.
+                        FastTools is dedicated to curating high-quality content and resources that empower developers. With nearly 5 years of hands-on development experience, our team rigorously evaluates every tool and API we recommend, ensuring you get only the most reliable and effective solutions for your projects.
                     </p>
                     <div className="flex flex-wrap gap-6 text-[10px] font-mono text-muted-foreground uppercase tracking-widest">
                         <span className="flex items-center gap-2">
                             <span className="w-1 h-1 rounded-full bg-hotpink" />
-                            10+ Years Experience
+                            5 Years Experience
                         </span>
                         <span className="flex items-center gap-2">
                             <span className="w-1 h-1 rounded-full bg-hotpink" />
-                            Google Ads Certified
+                            Quality Focused
                         </span>
                         <span className="flex items-center gap-2">
                             <span className="w-1 h-1 rounded-full bg-hotpink" />
-                            Ad Fraud Specialists
+                            Developer First
                         </span>
                     </div>
                 </div>
