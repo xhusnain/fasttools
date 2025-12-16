@@ -11,6 +11,7 @@ import { GJsonLd } from '@/components/blog/GJsonLd';
 import { GAuthorBio } from '@/components/blog/GAuthorBio';
 import { GImage } from "@/ui/gimage";
 import { MDXComponents } from "@/components/blog/mdx-components";
+import { GTrendingTools } from "@/components/blog/GTrendingTools";
 
 // MDX Plugins
 import remarkGfm from 'remark-gfm';
@@ -243,17 +244,17 @@ export default async function BlogPost({
 
                     {/* Content Section with Sidebar */}
                     <div className="bg-backgroundPrimary">
-                        <div className="flex flex-col lg:flex-row max-w-7xl mx-auto">
+                        <div className="flex flex-col lg:flex-row max-w-[1400px] mx-auto gap-8 px-4 lg:px-8">
 
-                            {/* Sticky TOC Sidebar */}
-                            <aside className="hidden lg:block w-[280px] shrink-0 border-r border-white/10 p-8">
+                            {/* Sticky TOC Sidebar (Left) */}
+                            <aside className="hidden lg:block w-[220px] shrink-0 pt-8">
                                 <div className="sticky top-32">
                                     <GTableOfContents headings={headings} />
                                 </div>
                             </aside>
 
-                            {/* Main Article Content */}
-                            <div className="flex-1 min-w-0">
+                            {/* Main Article Content (Center) */}
+                            <div className="flex-1 min-w-0 w-full">
                                 <GBlogContentLayout
                                     footer={
                                         <>
@@ -297,6 +298,17 @@ export default async function BlogPost({
                                     />
                                 </GBlogContentLayout>
                             </div>
+
+                            {/* Sticky Trending Tools Sidebar (Right) */}
+                            <aside className="hidden xl:block w-[260px] shrink-0 pt-8">
+                                <div className="sticky top-32">
+                                    <GTrendingTools
+                                        seed={slug}
+                                        count={10}
+                                    />
+                                </div>
+                            </aside>
+
                         </div>
                     </div>
 
