@@ -21,6 +21,11 @@ export interface BlogPost {
     category?: BlogCategory;
     searchContent?: string;
     faq?: { question: string; answer: string }[];
+    lastModified?: string;
+    authorUrl?: string;
+    imageWidth?: number;
+    imageHeight?: number;
+    readingTimeMinutes?: number;
 }
 
 const postsDirectory = path.join(process.cwd(), 'content/blog');
@@ -56,11 +61,16 @@ export function getAllPosts(): BlogPost[] {
                 title: data.title ? data.title.replace('<DynamicYear />', (new Date().getFullYear() + 1).toString()) : '',
                 description: data.description || '',
                 date: data.date || '',
+                lastModified: data.lastModified || data.date || '',
                 author: data.author || 'FastTools Team',
+                authorUrl: data.authorUrl,
                 readingTime: readingTimeResult.text,
+                readingTimeMinutes: Math.ceil(readingTimeResult.minutes),
                 tags: data.tags || [],
                 excerpt: data.excerpt || content.slice(0, 160) + '...',
                 image: data.image,
+                imageWidth: data.imageWidth,
+                imageHeight: data.imageHeight,
                 keywords: data.keywords || [],
                 featured: data.featured || false,
                 category: data.category,
@@ -98,12 +108,17 @@ export function getPostBySlug(slug: string): BlogPost | null {
             title: data.title ? data.title.replace('<DynamicYear />', (new Date().getFullYear() + 1).toString()) : '',
             description: data.description || '',
             date: data.date || '',
+            lastModified: data.lastModified || data.date || '',
             author: data.author || 'FastTools Team',
+            authorUrl: data.authorUrl,
             readingTime: readingTimeResult.text,
+            readingTimeMinutes: Math.ceil(readingTimeResult.minutes),
             tags: data.tags || [],
             content,
             excerpt: data.excerpt || content.slice(0, 160) + '...',
             image: data.image,
+            imageWidth: data.imageWidth,
+            imageHeight: data.imageHeight,
             keywords: data.keywords || [],
             featured: data.featured || false,
             category: data.category,

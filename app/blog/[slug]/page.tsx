@@ -38,18 +38,42 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
     const { slug } = await params;
     try {
         const { frontMatter } = await getPostBySlug(slug);
+
+        // Optimize description if too long
+        const optimizedDesc = frontMatter.description.length > 160
+            ? frontMatter.description.substring(0, 157) + '...'
+            : frontMatter.description;
+
         return {
             title: `${frontMatter.title} | FastTools`,
-            description: frontMatter.description,
+            description: optimizedDesc,
             keywords: frontMatter.keywords,
+
+            authors: [{
+                name: frontMatter.author || 'FastTools Team',
+                url: frontMatter.authorUrl || 'https://www.fasttools.store/about'
+            }],
+            creator: frontMatter.author || 'FastTools Team',
+            publisher: 'FastTools',
+            category: frontMatter.category,
+
             openGraph: {
                 title: frontMatter.title,
-                description: frontMatter.description,
+                description: optimizedDesc,
                 type: 'article',
                 publishedTime: frontMatter.date,
+                modifiedTime: frontMatter.lastModified || frontMatter.date,
                 authors: [frontMatter.author || 'FastTools Team'],
+                section: frontMatter.category,
+                tags: frontMatter.tags,
+                locale: 'en_US',
                 images: frontMatter.image
-                    ? [`https://www.fasttools.store${frontMatter.image}`]
+                    ? [{
+                        url: `https://www.fasttools.store${frontMatter.image}`,
+                        width: frontMatter.imageWidth || 1200,
+                        height: frontMatter.imageHeight || 630,
+                        alt: frontMatter.title
+                    }]
                     : [],
                 url: `https://www.fasttools.store/blog/${slug}`,
                 siteName: 'FastTools',
@@ -57,15 +81,17 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
             twitter: {
                 card: 'summary_large_image',
                 title: frontMatter.title,
-                description: frontMatter.description,
+                description: optimizedDesc,
                 images: frontMatter.image
                     ? [`https://www.fasttools.store${frontMatter.image}`]
                     : [],
                 creator: '@fasttools',
+                site: '@fasttools',
             },
             robots: {
                 index: true,
                 follow: true,
+                nocache: false,
                 googleBot: {
                     index: true,
                     follow: true,
@@ -77,7 +103,9 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
             alternates: {
                 canonical: `https://www.fasttools.store/blog/${slug}`,
             },
-            authors: [{ name: frontMatter.author || 'FastTools Team' }],
+            other: {
+                'article:modified_time': frontMatter.lastModified || frontMatter.date,
+            }
         };
     } catch (e) {
         return {
@@ -124,15 +152,19 @@ export default async function BlogPost({
 
     const articleSchema = {
         '@context': 'https://schema.org',
-        '@type': 'Article',
+        '@type': 'BlogPosting',
         headline: frontMatter.title,
         description: frontMatter.description,
-        image: frontMatter.image
-            ? `https://www.fasttools.store${frontMatter.image}`
-            : undefined,
+        image: {
+            '@type': 'ImageObject',
+            url: frontMatter.image ? `https://www.fasttools.store${frontMatter.image}` : undefined,
+            width: frontMatter.imageWidth || 1200,
+            height: frontMatter.imageHeight || 630
+        },
         author: {
             '@type': 'Person',
             name: frontMatter.author || 'FastTools Team',
+            url: frontMatter.authorUrl || 'https://www.fasttools.store/about',
         },
         publisher: {
             '@type': 'Organization',
@@ -140,6 +172,8 @@ export default async function BlogPost({
             logo: {
                 '@type': 'ImageObject',
                 url: 'https://www.fasttools.store/logo.png',
+                width: 500,
+                height: 500
             },
             sameAs: [
                 'https://www.facebook.com/profile.php?id=61575993339664',
@@ -149,13 +183,17 @@ export default async function BlogPost({
             ],
         },
         datePublished: frontMatter.date,
-        dateModified: frontMatter.date,
+        dateModified: frontMatter.lastModified || frontMatter.date,
         mainEntityOfPage: {
             '@type': 'WebPage',
             '@id': `https://www.fasttools.store/blog/${slug}`,
         },
         keywords: frontMatter.keywords,
         wordCount: post.content.split(/\s+/).length,
+        articleSection: frontMatter.category || 'Developer',
+        inLanguage: 'en-US',
+        timeRequired: frontMatter.readingTimeMinutes ? `PT${frontMatter.readingTimeMinutes}M` : undefined,
+        articleBody: post.content.substring(0, 200).replace(/[#*`]/g, '') + '...'
     }
 
     const breadcrumbSchema = {
