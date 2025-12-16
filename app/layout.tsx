@@ -148,8 +148,6 @@ export default function RootLayout({
       <head>
         {/* Resource Hints for Performance */}
         <link rel="preconnect" href="https://www.googletagmanager.com" />
-        <link rel="preconnect" href="https://static.cloudflareinsights.com" />
-        <link rel="dns-prefetch" href="https://www.google-analytics.com" />
 
         {/* Favicon and Icons */}
 
@@ -160,39 +158,14 @@ export default function RootLayout({
 
         {env.isProduction && (
           <>
-            <Script
-              src="https://www.googletagmanager.com/gtag/js?id=G-4G804HZ22C"
-              strategy="lazyOnload"
-            />
-            <Script id="google-analytics" strategy="lazyOnload">
-              {`
-                window.dataLayer = window.dataLayer || [];
-                function gtag(){dataLayer.push(arguments);}
-                gtag('js', new Date());
-                gtag('config', 'G-4G804HZ22C');
-              `}
-            </Script>
+
             <Script
               async
               src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6296569221534302"
               crossOrigin="anonymous"
               strategy="lazyOnload"
             />
-            <Script src="https://elfsightcdn.com/platform.js" strategy="lazyOnload" />
-            <div className="elfsight-app-caa6c4b7-214b-4e89-900c-6bf7bcb32d22" data-elfsight-app-lazy></div>
-            <Script
-              id="microsoft-clarity"
-              strategy="lazyOnload"
-              dangerouslySetInnerHTML={{
-                __html: `
-                (function(c,l,a,r,i,t,y){
-                    c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
-                    t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
-                    y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
-                })(window, document, "clarity", "script", "tsq0aprw9d");
-              `,
-              }}
-            />
+
           </>
         )}
 
