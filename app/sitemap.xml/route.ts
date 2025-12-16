@@ -1,9 +1,8 @@
 import { NextResponse } from 'next/server'
-import { mainPages, categoryPages, toolPages } from '@/lib/sitemap-config'
+import { mainPages, categoryPages, toolPages, generateBlogSitemap } from '@/lib/sitemap-config'
 import { getAllPosts } from '@/components/blog/blog'
 
 export async function GET() {
-    // XML escape function
     const escapeXml = (str: string): string => {
         return str
             .replace(/&/g, '&amp;')
@@ -14,19 +13,43 @@ export async function GET() {
     }
 
     const blogPosts = getAllPosts()
-    const blogPages = blogPosts.map((post) => ({
-        url: `https://www.fasttools.store/blog/${post.slug}`,
-        lastModified: new Date(post.lastModified || post.date),
-        changeFrequency: 'monthly' as const,
-        priority: 0.7,
-        images: post.image ? [{
-            url: post.image.startsWith('http') ? post.image : `https://www.fasttools.store${post.image}`,
-            title: post.title,
-            caption: post.description
-        }] : []
-    }))
+    const blogPages = generateBlogSitemap(blogPosts)
 
-    const allPages = [...mainPages, ...categoryPages, ...toolPages, ...blogPages]
+
+    // Combine configured pages
+    const configuredPages = [...mainPages, ...categoryPages, ...toolPages]
+    const existingUrls = new Set(configuredPages.map(p => p.url))
+
+    // Add Archive Page if not not already in config
+    const archiveUrl = 'https://www.fasttools.store/blog/archive'
+    const dynamicPages = []
+
+    if (!existingUrls.has(archiveUrl)) {
+        dynamicPages.push({
+            url: archiveUrl,
+            lastModified: new Date(),
+            changeFrequency: 'weekly' as const,
+            priority: 0.8,
+            images: []
+        })
+    }
+
+    // Add Dynamic Category Pages (filtering duplicates)
+    const categories = Array.from(new Set(blogPosts.map(post => post.category).filter(Boolean)))
+    categories.forEach(category => {
+        const catUrl = `https://www.fasttools.store/blog/category/${category!.toLowerCase().replace(/\s+/g, '-')}`
+        if (!existingUrls.has(catUrl)) {
+            dynamicPages.push({
+                url: catUrl,
+                lastModified: new Date(),
+                changeFrequency: 'weekly' as const,
+                priority: 0.8,
+                images: []
+            })
+        }
+    })
+
+    const allPages = [...configuredPages, ...blogPages, ...dynamicPages]
 
     const sitemap = `<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">

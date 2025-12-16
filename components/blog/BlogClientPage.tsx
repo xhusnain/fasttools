@@ -39,27 +39,16 @@ export default function BlogClientPage({ allPosts }: BlogClientPageProps) {
 
     const isSearching = !!searchQuery;
 
-    // Logic:
-    // 1. Featured Post: The very first post marked as featured, or just the first post.
-    // 2. Latest Posts: The next 3 posts (excluding the featured one).
-    // 3. Categories: Filtered by category (excluding featured/latest if desired, though often duplication is okay or handled by specific logic. Let's exclude to avoid repetition on the home screen if possible, but duplication in categories is standard).
 
     const featuredPost = allPosts.find(p => p.featured) || allPosts[0];
-    // Remaining posts for the "Latest" list (exclude the absolute featured one)
-    const otherPosts = allPosts.filter(p => p.slug !== featuredPost.slug);
-    const latestPosts = otherPosts.slice(0, 3); // 3 items for the side list
+    const latestPosts = allPosts.length < 4
+        ? allPosts.slice(0, 3)
+        : allPosts.filter(p => p.slug !== featuredPost.slug).slice(0, 3);
 
-    // Dynamic Category Grouping
     const categories = useMemo(() => {
         const groups: Record<string, BlogPost[]> = {};
 
-        // We want all posts to appear in their respective categories
-        // We can either exclude the featured post from here or include it.
-        // Usually, for a "Browse by Category" feel, it's good to include everything (even the featured one)
-        // or just the non-featured ones. Let's include everything to be safe, or just otherPosts.
-        // User requested "auto fetch new category".
-
-        const postsToGroup = allPosts; // Group everything
+        const postsToGroup = allPosts;
 
         postsToGroup.forEach(post => {
             const cat = post.category || 'Uncategorized';
@@ -69,8 +58,6 @@ export default function BlogClientPage({ allPosts }: BlogClientPageProps) {
             groups[cat].push(post);
         });
 
-        // If we want specific sort order for categories (e.g. "Developer" first), we can do it here.
-        // Otherwise, just alphabetical or insertion order.
         return Object.entries(groups).sort((a, b) => a[0].localeCompare(b[0]));
     }, [allPosts]);
 

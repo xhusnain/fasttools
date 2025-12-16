@@ -145,6 +145,12 @@ export const mainPages = [
         priority: 0.95,
     },
     {
+        url: "https://www.fasttools.store/blog/archive",
+        lastModified: new Date(),
+        changeFrequency: "weekly" as const,
+        priority: 0.8,
+    },
+    {
         url: "https://www.fasttools.store/privacy-policy",
         lastModified: new Date('2025-11-25'),
         changeFrequency: "yearly" as const,
@@ -290,6 +296,12 @@ export const categoryPages = [
         lastModified: new Date('2025-11-25'),
         changeFrequency: "monthly" as const,
         priority: 0.98,
+    },
+    {
+        url: "https://www.fasttools.store/blog/category/developer",
+        lastModified: new Date(),
+        changeFrequency: "weekly" as const,
+        priority: 0.85,
     },
 ]
 
@@ -948,10 +960,11 @@ export const generateBlogSitemap = (posts: BlogPost[]) => {
         changeFrequency: 'monthly' as const,
         priority: 0.7,
         images: post.image
-            ? [
-                (post.image.startsWith('http') ? post.image : `${baseUrl}${post.image}`)
-                    .replace(/&/g, '&amp;')
-            ]
+            ? [{
+                url: post.image.startsWith('http') ? post.image : `${baseUrl}${post.image}`,
+                title: post.title,
+                caption: post.description || ''
+            }]
             : [],
     }))
 }
