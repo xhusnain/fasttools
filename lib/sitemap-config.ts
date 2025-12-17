@@ -949,6 +949,13 @@ export const toolPages = [
         changeFrequency: "monthly" as const,
         priority: 0.95,
     },
+    // Tutorial Pages (Video Watch Pages for Google Video Indexing)
+    {
+        url: "https://www.fasttools.store/tutorials/youtube-channel-name-guide",
+        lastModified: new Date('2025-12-17'),
+        changeFrequency: "monthly" as const,
+        priority: 0.85,
+    },
 ]
 
 import { getAllPosts } from "@/components/blog/blog"

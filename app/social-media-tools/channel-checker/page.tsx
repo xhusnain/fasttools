@@ -2,6 +2,7 @@ import { YoutubeChannelChecker } from "@/components/social-media/youtube-channel
 import { ToolPageLayout } from "@/components/common/tool-page-layout"
 import { createToolConfig } from "@/lib/create-tool-config"
 import { getCurrentYear } from "@/lib/utils"
+import { GImage } from "@/ui/gimage"
 import {
   Search, CheckCircle, AlertCircle, Globe, Youtube,
   Lightbulb, Target, Shield, Zap, Copy, Users, Brain, RefreshCw,
@@ -166,11 +167,13 @@ const toolConfig = createToolConfig({
             <Target className="h-6 w-6 text-primary" />
             Why Use a Checker & Generator Combo?
           </h2>
-          <div className="my-6">
-            <img
+          <div className="my-6 relative aspect-video">
+            <GImage
               src="/youtube_channel_checker_hero_1764246981481.png"
               alt="YouTube Channel Name Generator and Checker Tool Interface"
-              className="rounded-lg shadow-lg w-full h-auto object-cover"
+              className="rounded-lg shadow-lg"
+              preload
+              sizes="(max-width: 768px) 100vw, 800px"
             />
           </div>
           <p className="text-base text-muted-foreground leading-relaxed">
@@ -304,10 +307,13 @@ const toolConfig = createToolConfig({
             <Target className="h-6 w-6 text-primary" />
             5 Steps to the Perfect YouTube Name
           </h2>
-          <div className="my-6">
-            <div className="aspect-video bg-muted rounded-lg flex items-center justify-center border-2 border-dashed border-muted-foreground/25">
-              <p className="text-muted-foreground">Infographic: 5 Steps to the Perfect YouTube Name (Placeholder)</p>
-            </div>
+          <div className="my-6 relative" style={{ aspectRatio: '4/5' }}>
+            <GImage
+              src="/images/youtube-name-steps.png"
+              alt="5 Steps to the Perfect YouTube Name: 1. Brainstorm keywords, 2. Keep it short, 3. Make it unique, 4. Check availability, 5. Think long-term"
+              className="rounded-lg shadow-lg"
+              sizes="(max-width: 768px) 100vw, 800px"
+            />
           </div>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
             <div className="p-4 bg-green-500/10 border border-green-500/20 rounded-lg">
@@ -333,11 +339,12 @@ const toolConfig = createToolConfig({
             <Lightbulb className="h-6 w-6 text-primary" />
             Tips for Choosing a Great Channel Name
           </h2>
-          <div className="my-6">
-            <img
+          <div className="my-6 relative aspect-video">
+            <GImage
               src="/youtube_branding_guide_1764247018385.png"
               alt="Infographic: 3 Pillars of a Great YouTube Channel Name - Memorable, Unique, Relevant"
-              className="rounded-lg shadow-lg w-full h-auto object-cover"
+              className="rounded-lg shadow-lg"
+              sizes="(max-width: 768px) 100vw, 800px"
             />
           </div>
           <div className="p-4 rounded-lg bg-primary/5 border border-primary/20">
@@ -383,11 +390,12 @@ const toolConfig = createToolConfig({
             <Globe className="h-6 w-6 text-primary" />
             Handles, URLs, and Usernames: What You Need to Know
           </h2>
-          <div className="my-6">
-            <img
+          <div className="my-6 relative aspect-video">
+            <GImage
               src="/youtube_handles_vs_urls_infographic_1764248999897.png"
               alt="Infographic comparing YouTube Handles, Custom URLs, and Legacy Usernames"
-              className="rounded-lg shadow-lg w-full h-auto object-cover"
+              className="rounded-lg shadow-lg"
+              sizes="(max-width: 768px) 100vw, 800px"
             />
           </div>
           <p className="text-base text-muted-foreground leading-relaxed">
@@ -408,11 +416,12 @@ const toolConfig = createToolConfig({
             <Lightbulb className="h-6 w-6 text-primary" />
             Generating Unique Ideas for Gaming & Brands
           </h2>
-          <div className="my-6">
-            <img
+          <div className="my-6 relative aspect-video">
+            <GImage
               src="/youtube_gaming_branding_ideas_1764248964347.png"
               alt="Illustration of Gaming vs Professional Brand Channel Ideas"
-              className="rounded-lg shadow-lg w-full h-auto object-cover"
+              className="rounded-lg shadow-lg"
+              sizes="(max-width: 768px) 100vw, 800px"
             />
           </div>
           <p className="text-base text-muted-foreground leading-relaxed">
@@ -1087,9 +1096,9 @@ const toolConfig = createToolConfig({
     ],
 
     relatedTools: [
+      { name: "YouTube Name Generator", href: "/social-media-tools/youtube-channel-name-generator" },
       { name: "YouTube Thumbnail Downloader", href: "/social-media-tools/youtube-thumbnail" },
       { name: "YouTube Tag Extractor", href: "/social-media-tools/youtube-tags" },
-
       { name: "Link in Bio Generator", href: "/social-media-tools/link-in-bio" },
       { name: "Instagram Hashtag Counter", href: "/social-media-tools/hashtag-counter" }
     ]
