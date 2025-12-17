@@ -42,4 +42,6 @@ export * from "./converter-types/currency-converter.types";
 export * from "./converter-types/format-converter.types";
 
 export * from "./social-media-types/youtube-channel-checker.types";
+export * from "./social-media-types/youtube-handle-checker.types";
+export * from "./social-media-types/youtube-keyword-analysis.types";
 

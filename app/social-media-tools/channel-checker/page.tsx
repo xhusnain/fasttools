@@ -6,59 +6,64 @@ import { GImage } from "@/ui/gimage"
 import {
   Search, CheckCircle, AlertCircle, Globe, Youtube,
   Lightbulb, Target, Shield, Zap, Copy, Users, Brain, RefreshCw,
-  TrendingUp, Trophy, Scale, XCircle
+  TrendingUp, Trophy, Scale, XCircle, AtSign, BarChart3
 } from "lucide-react"
 
 const toolConfig = createToolConfig({
-  toolName: "YouTube Channel Name Checker & Generator",
-  description: "Check availability and generate unique YouTube channel names with our AI-powered tool. Instantly verify usernames and get creative ideas for your channel.",
-  metaTitle: "YouTube Channel Name Generator & Checker - Check Availability Instantly (2025) | FastTools",
-  metaDescription: "Free YouTube channel name generator and availability checker. Generate 100+ unique channel name ideas with AI, check availability instantly, and secure your perfect handle.",
+  toolName: "YouTube Channel Name Checker, Handle Finder & SEO Analyzer",
+  description: "Check YouTube channel name availability, verify @handle ownership, and analyze your name's SEO potential. The ultimate 3-in-1 tool for creators.",
+  metaTitle: "YouTube Channel Name Checker & Handle Availability Tool - SEO Analysis (2025) | FastTools",
+  metaDescription: "Free YouTube channel name checker, handle availability tool & SEO analyzer. Check @handle availability, analyze keyword potential, and generate 100+ AI-powered name ideas. Find your perfect YouTube identity!",
   path: "/social-media-tools/channel-checker",
 
   header: {
-    title: "YouTube Channel Name Generator & Checker (2025)",
-    description: "The ultimate all-in-one tool: Generate unique AI channel name ideas and instantly check their availability. Secure your perfect YouTube handle today.",
+    title: "YouTube Channel Name Checker, Handle Availability & SEO Analyzer (2025)",
+    description: "The ultimate 3-in-1 YouTube toolkit: Check channel name availability, verify @handle ownership, and analyze your name's SEO potential. Generate 100+ AI-powered suggestions and find your perfect YouTube identity.",
     titleSize: "medium",
     descriptionSize: "small",
   },
 
   breadcrumbs: [
     { label: "Social Media Tools", href: "/social-media-tools" },
-    { label: "Channel Name Tools", href: "/social-media-tools/channel-checker" },
+    { label: "Channel Name & Handle Tools", href: "/social-media-tools/channel-checker" },
   ],
 
   content: {
-    overview: "Finding the perfect YouTube channel name is a two-step process: brainstorming creative ideas and verifying their availability. Our tool combines both into a seamless experience. As a powerful **YouTube Channel Name Generator**, it uses advanced AI to create catchy, niche-specific suggestions based on your keywords. Simultaneously, as a **Channel Name Checker**, it instantly verifies if your desired names are available across YouTube's URL formats and handles (@username). Whether you need a spark of inspiration or are ready to claim your brand, FastTools has you covered.",
+    overview: "Welcome to the ultimate **3-in-1 YouTube toolkit** for creators! Our comprehensive platform combines three essential features: **Channel Name Checker** for bulk availability testing, **Handle & URL Checker** to verify @handle availability with smart variations, and **Keyword SEO Analysis** to score your name's search potential. Whether you're launching a new channel, rebranding, or optimizing for discoverability, this **YouTube handle checker** and **channel name SEO analyzer** gives you everything you need. Generate 100+ AI-powered name ideas, check if your @handle is taken, and get actionable SEO recommendations—all completely free with no registration required.",
 
     howToSteps: [
-      "Enter Keywords or Names: Type a seed keyword (e.g., 'Gaming', 'Tech') or your desired name.",
-      "Generate & Check: Click 'Check Availability'. The tool will check your input and simultaneously generate 100+ AI suggestions related to your niche.",
-      "Explore Categories: Browse through categorized suggestions like 'Modern', 'Funny', 'Professional', and more.",
-      "Verify Availability: Watch the status indicators to see which names are available in real-time.",
-      "Copy & Claim: Click any name to copy it and proceed to YouTube to secure your new handle."
+      "Choose Your Tab: Select 'Channel Checker' for bulk name testing, 'Handle Checker' for @handle verification, or 'SEO Analysis' for keyword scoring.",
+      "Channel Checker: Enter multiple channel names separated by commas. Click 'Check Availability' to test them all and receive 100+ AI-generated suggestions.",
+      "Handle Checker: Enter your desired @handle (without the @). The tool checks availability and suggests smart variations if taken (TheYourName, YourNameTV, etc.).",
+      "SEO Analysis: Enter a potential channel name to analyze its search popularity, competition level, relevancy, and memorability scores (0-100).",
+      "Review & Optimize: Use the SEO recommendations to improve your name's discoverability. Copy your chosen name and claim it on YouTube!",
+      "Secure Your Brand: After finding an available name, register the same handle on Instagram, TikTok, and Twitter for consistent branding."
     ],
 
     features: [
+      "YouTube Handle Checker: Instantly verify if your desired @handle is available on YouTube's new handle system.",
+      "Smart Handle Variations: When your preferred handle is taken, get intelligent alternatives like 'TheYourName', 'YourNameHQ', or 'YourNameOfficial'.",
+      "SEO Score Analysis: Analyze channel names with 0-100 scores for search popularity, competition, relevancy, and memorability.",
+      "Keyword Potential Scoring: Understand how well your name will perform in YouTube search with detailed metrics.",
+      "Actionable Recommendations: Get specific tips to improve your channel name's discoverability and SEO performance.",
       "AI Name Generator: Generate 100+ unique, creative channel names based on your keywords and niche.",
-      "Instant Availability Check: Real-time verification of channel name and handle availability.",
-      "Smart Categorization: Suggestions are organized into categories like 'Tech', 'Lifestyle', 'Catchy', and 'Business' for easy browsing.",
-      "Dual Functionality: Combines a name generator and availability checker in one robust tool.",
-      "Cross-Platform Ready: Designed to help you find names that work across YouTube, Instagram, and TikTok.",
-      "Trending Analysis: AI algorithms trained on 2025's most successful channel naming patterns.",
-      "One-Click Copy: Instantly copy your favorite generated names.",
-      "No Registration Required: Unlimited free generations and checks without signing up.",
-      "Batch Processing: Check and generate for multiple keywords at once.",
-      "Detailed Insights: View availability status alongside creative alternatives."
+      "Instant Availability Check: Real-time verification of channel name and handle availability across all YouTube URL formats.",
+      "Smart Categorization: Suggestions are organized into categories like 'Tech', 'Gaming', 'Professional', and 'Catchy' for easy browsing.",
+      "Batch Processing: Check multiple channel names simultaneously—no limit on checks.",
+      "Cross-Platform Ready: Find names that work across YouTube, Instagram, TikTok, and Twitter.",
+      "One-Click Copy: Instantly copy any generated or analyzed name to your clipboard.",
+      "No Registration Required: Unlimited free checks, analysis, and generations without signing up."
     ],
 
     useCases: [
-      "Starting a New Channel: Stuck on a name? Use the generator to brainstorm ideas and immediately check if they are free.",
-      "Rebranding: Find a fresh, modern name for your existing channel that aligns with current trends.",
-      "Brand Expansion: Generate consistent name variations for your secondary channels (e.g., 'Brand Gaming', 'Brand Vlogs').",
-      "Niche Research: Enter different keywords to see what kind of names exist in various niches.",
-      "Agency Brainstorming: Quickly generate lists of available names for client projects.",
-      "Handle Security: Ensure your generated name has an available @handle before you commit."
+      "New Channel Launch: Use all three tools—generate names, check availability, and analyze SEO potential before committing.",
+      "Handle Security: Verify your @handle is available before creating your channel. Get variations if it's taken.",
+      "SEO Optimization: Analyze your current or potential channel name's search performance and get improvement tips.",
+      "Rebranding: Find a fresh, SEO-optimized name with verified handle availability for a smooth transition.",
+      "Brand Expansion: Generate consistent name variations for secondary channels while checking handle availability for each.",
+      "Agency Brainstorming: Quickly generate, verify, and analyze names for client projects with comprehensive reporting.",
+      "Niche Research: Enter different keywords to see SEO scores and competition levels across various niches.",
+      "Handle Camping Prevention: Check if someone is impersonating your brand with similar handles."
     ],
 
     aboutTool: (
@@ -82,6 +87,95 @@ const toolConfig = createToolConfig({
               <strong>Pro Tip:</strong> Always <strong>check to see if a YouTube name is available</strong> across multiple platforms (Instagram, TikTok, Twitter) before committing. Consistent branding across social media significantly boosts discoverability and audience retention.
             </p>
           </div>
+        </article>
+
+        <article className="space-y-6">
+          <h2 className="text-2xl font-bold text-foreground flex items-center gap-2">
+            <AtSign className="h-6 w-6 text-primary" />
+            YouTube Handle Checker: Verify @Handle Availability Instantly
+          </h2>
+          <p className="text-base text-muted-foreground leading-relaxed">
+            YouTube's <strong>handle system (@username)</strong> is now the primary way creators identify themselves. Our <strong>YouTube handle checker</strong> instantly verifies if your desired @handle is available. Unlike channel names, handles must be globally unique—if someone has @TechReviews, no one else can claim it.
+          </p>
+          <p className="text-base text-muted-foreground leading-relaxed">
+            When you <strong>check YouTube handle availability</strong> with our tool, you also get <strong>smart handle variations</strong>. If your first choice is taken, we suggest alternatives like "TheYourName," "YourNameHQ," "YourNameOfficial," or "YourNameTV"—proven patterns used by successful creators.
+          </p>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div className="p-4 bg-card border border-border rounded-lg">
+              <h4 className="font-semibold mb-2 flex items-center gap-2">
+                <CheckCircle className="h-4 w-4 text-green-500" />
+                Instant Availability Check
+              </h4>
+              <p className="text-sm text-muted-foreground">
+                Enter any handle and see immediately if it's available. We check against YouTube's live database for accurate results.
+              </p>
+            </div>
+            <div className="p-4 bg-card border border-border rounded-lg">
+              <h4 className="font-semibold mb-2 flex items-center gap-2">
+                <Lightbulb className="h-4 w-4 text-yellow-500" />
+                Smart Variation Suggestions
+              </h4>
+              <p className="text-sm text-muted-foreground">
+                Handle taken? We automatically generate 8+ intelligent variations using proven naming patterns from successful YouTubers.
+              </p>
+            </div>
+          </div>
+          <div className="p-4 bg-primary/5 border border-primary/20 rounded-lg">
+            <p className="text-sm text-muted-foreground">
+              <strong>Pro Tip:</strong> Claim your @handle early! YouTube handles are first-come, first-served. Use our <strong>YouTube handle availability tool</strong> today to secure your brand before someone else does.
+            </p>
+          </div>
+        </article>
+
+        <article className="space-y-6">
+          <h2 className="text-2xl font-bold text-foreground flex items-center gap-2">
+            <BarChart3 className="h-6 w-6 text-primary" />
+            YouTube Channel Name SEO Analysis: Score Your Name's Potential
+          </h2>
+          <p className="text-base text-muted-foreground leading-relaxed">
+            Your channel name isn't just a label—it's an SEO asset. Our <strong>YouTube name SEO analyzer</strong> scores your potential channel name across four critical metrics to help you choose a name that performs well in search.
+          </p>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div className="p-4 bg-card border border-border rounded-lg">
+              <h4 className="font-semibold mb-2 flex items-center gap-2">
+                <TrendingUp className="h-4 w-4 text-blue-500" />
+                Search Popularity (0-100)
+              </h4>
+              <p className="text-sm text-muted-foreground">
+                Measures how often keywords in your name are searched on YouTube. Higher scores mean more potential organic traffic to your channel.
+              </p>
+            </div>
+            <div className="p-4 bg-card border border-border rounded-lg">
+              <h4 className="font-semibold mb-2 flex items-center gap-2">
+                <Target className="h-4 w-4 text-orange-500" />
+                Competition Level (0-100)
+              </h4>
+              <p className="text-sm text-muted-foreground">
+                Lower competition = easier to rank. We analyze how many channels use similar terms. A 70+ score means less competition.
+              </p>
+            </div>
+            <div className="p-4 bg-card border border-border rounded-lg">
+              <h4 className="font-semibold mb-2 flex items-center gap-2">
+                <Search className="h-4 w-4 text-green-500" />
+                Relevancy Score (0-100)
+              </h4>
+              <p className="text-sm text-muted-foreground">
+                How well your name describes your content type. Descriptive names help YouTube's algorithm categorize your videos correctly.
+              </p>
+            </div>
+            <div className="p-4 bg-card border border-border rounded-lg">
+              <h4 className="font-semibold mb-2 flex items-center gap-2">
+                <Brain className="h-4 w-4 text-purple-500" />
+                Memorability (0-100)
+              </h4>
+              <p className="text-sm text-muted-foreground">
+                Shorter, simpler names are easier to remember and search for. We score based on length, complexity, and cognitive fluency.
+              </p>
+            </div>
+          </div>
+          <p className="text-base text-muted-foreground leading-relaxed">
+            Use our <strong>channel name keyword analysis</strong> to compare multiple options and choose the one with the highest overall SEO score. Each analysis includes <strong>actionable recommendations</strong> to improve your name's discoverability.
+          </p>
         </article>
 
         <article className="space-y-6">
@@ -953,6 +1047,30 @@ const toolConfig = createToolConfig({
     `,
 
     faqs: [
+      {
+        question: "What is the YouTube Handle Checker and how does it work?",
+        answer: "Our YouTube Handle Checker verifies if your desired @handle is available on YouTube's handle system. Unlike channel names which can be duplicated, handles are globally unique. Simply enter your desired handle (without the @) and we'll instantly check if it's available. If it's taken, we suggest smart variations like 'TheYourName', 'YourNameHQ', or 'YourNameOfficial'."
+      },
+      {
+        question: "What is the difference between a YouTube channel name and a handle?",
+        answer: "A channel name is the display name shown on your channel page and can be duplicated across YouTube. A handle (@username) is your unique identifier—no two channels can have the same handle. Handles are used for @mentions, your channel URL (youtube.com/@handle), and cross-platform recognition. Our tool checks both!"
+      },
+      {
+        question: "How does the SEO Analysis scoring work?",
+        answer: "Our SEO analyzer scores your channel name across four metrics: Search Popularity (how often related terms are searched), Competition (how many channels use similar names), Relevancy (how well the name describes your content), and Memorability (how easy it is to remember). Each score is 0-100, and we provide an overall grade with specific recommendations to improve."
+      },
+      {
+        question: "Can I improve my channel name's SEO score?",
+        answer: "Yes! Our SEO Analysis provides actionable recommendations. Common ways to improve include: adding a popular niche keyword (Gaming, Tech), shortening your name for better memorability, choosing unique terms with less competition, and ensuring your name clearly describes your content type."
+      },
+      {
+        question: "What handle variations does the tool suggest when my preferred handle is taken?",
+        answer: "When your handle is taken, we suggest 8+ alternatives using proven patterns: prefixes (TheYourName, OfficialYourName), suffixes (YourNameTV, YourNameHQ), underscores (Your_Name), and abbreviations. Each variation is checked for availability so you can find an available option quickly."
+      },
+      {
+        question: "How can I change my YouTube handle after I've claimed it?",
+        answer: "YouTube allows you to change your handle twice per 14 days. Go to YouTube Studio > Customization > Basic Info > Edit your handle. Note: Changing your handle will update your channel URL and break old links. Use our SEO analyzer before changing to ensure your new handle has strong search potential."
+      },
       {
         question: "How do I check if a YouTube channel name is taken?",
         answer: "Simply enter your desired channel name in our free checker tool. It instantly searches YouTube's database and shows you if the name is available, along with similar existing channels."

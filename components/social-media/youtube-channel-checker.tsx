@@ -5,12 +5,17 @@ import { GButton } from "@/ui/gbutton"
 import { GTextarea } from "@/ui/gtextarea"
 import { GLabel } from "@/ui/glabel"
 import { GCard } from "@/ui/gcard"
+import { GTabs, GTabsList, GTabsTrigger, GTabsContent } from "@/ui/gtabs"
 
-import { Search, CheckCircle, XCircle, Lightbulb, Copy, ExternalLink, Users, Video, AlertCircle, Upload } from "lucide-react"
+import { Search, CheckCircle, XCircle, Lightbulb, Copy, ExternalLink, Users, Video, AlertCircle, Upload, AtSign, TrendingUp } from "lucide-react"
 import { LoadingSpinner } from "@/components/common/loading-spinner"
 import { ChannelCheckResult } from "@/types"
+import { YoutubeHandleChecker } from "./youtube-handle-checker"
+import { YoutubeKeywordAnalysis } from "./youtube-keyword-analysis"
+
 
 export function YoutubeChannelChecker() {
+  const [activeTab, setActiveTab] = useState("checker")
   const [channelNames, setChannelNames] = useState("")
   const [results, setResults] = useState<ChannelCheckResult[]>([])
   const [loading, setLoading] = useState(false)
@@ -219,183 +224,213 @@ export function YoutubeChannelChecker() {
 
   return (
     <div className="space-y-6">
-      <GCard className="p-6 bg-card border-border shadow-sm">
-        <div className="space-y-4">
-          <div>
-            <div className="flex items-center justify-between mb-2">
-              <GLabel htmlFor="channel-names" className="text-sm font-medium text-foreground">
-                Channel Names
-              </GLabel>
-              <div className="relative">
-                <input
-                  type="file"
-                  id="file-upload"
-                  className="hidden"
-                  accept=".txt,.csv"
-                  onChange={handleFileUpload}
-                />
-                <GLabel
-                  htmlFor="file-upload"
-                  className="flex items-center gap-1.5 text-xs text-primary hover:text-primary/80 cursor-pointer transition-colors"
-                >
-                  <Upload className="h-3.5 w-3.5" />
-                  Import from File
-                </GLabel>
-              </div>
-            </div>
-            <GTextarea
-              id="channel-names"
-              placeholder="Enter channel names separated by commas or new lines (e.g., MyChannel, TechReviews, GamingTV)"
-              value={channelNames}
-              onChange={(e) => setChannelNames(e.target.value)}
-              className="min-h-[150px] text-base resize-y"
-            />
-            <p className="text-xs text-muted-foreground mt-1">
-              Enter multiple channel names separated by commas or new lines. No limit on the number of checks.
-            </p>
-          </div>
+      <GTabs value={activeTab} onValueChange={setActiveTab}>
+        <GTabsList className="grid w-full grid-cols-3 mb-6">
+          <GTabsTrigger value="checker" className="flex items-center gap-2">
+            <Search className="h-4 w-4" />
+            <span className="hidden sm:inline">Channel Checker</span>
+            <span className="sm:hidden">Checker</span>
+          </GTabsTrigger>
+          <GTabsTrigger value="handle" className="flex items-center gap-2">
+            <AtSign className="h-4 w-4" />
+            <span className="hidden sm:inline">Handle Checker</span>
+            <span className="sm:hidden">Handle</span>
+          </GTabsTrigger>
+          <GTabsTrigger value="seo" className="flex items-center gap-2">
+            <TrendingUp className="h-4 w-4" />
+            <span className="hidden sm:inline">SEO Analysis</span>
+            <span className="sm:hidden">SEO</span>
+          </GTabsTrigger>
+        </GTabsList>
 
-          <GButton
-            onClick={handleCheck}
-            disabled={!channelNames.trim() || loading}
-            isLoading={loading}
-            className="w-full h-11 text-base font-medium shadow-sm hover:shadow-md transition-all"
-          >
-            {loading ? (
-              checkingProgress ? `Checking ${checkingProgress.current}/${checkingProgress.total}` : 'Checking Availability...'
-            ) : (
-              <>
-                <Search className="mr-2 h-5 w-5" />
-                Check Availability
-              </>
-            )}
-          </GButton>
-
-          {/* Progress and Timer Display */}
-          {checkingProgress && (
-            <GCard className="p-4 bg-card border-primary shadow-sm">
-              <div className="space-y-3">
-                <div className="flex items-center justify-between">
-                  <h4 className="text-sm font-semibold text-primary">
-                    Checking Channel {checkingProgress.current} of {checkingProgress.total}
-                  </h4>
-                  <span className="text-xs text-accent">
-                    {checkingProgress.currentName}
-                  </span>
+        <GTabsContent value="checker">
+          <GCard className="p-6 bg-card border-border shadow-sm">
+            <div className="space-y-4">
+              <div>
+                <div className="flex items-center justify-between mb-2">
+                  <GLabel htmlFor="channel-names" className="text-sm font-medium text-foreground">
+                    Channel Names
+                  </GLabel>
+                  <div className="relative">
+                    <input
+                      type="file"
+                      id="file-upload"
+                      className="hidden"
+                      accept=".txt,.csv"
+                      onChange={handleFileUpload}
+                    />
+                    <GLabel
+                      htmlFor="file-upload"
+                      className="flex items-center gap-1.5 text-xs text-primary hover:text-primary/80 cursor-pointer transition-colors"
+                    >
+                      <Upload className="h-3.5 w-3.5" />
+                      Import from File
+                    </GLabel>
+                  </div>
                 </div>
+                <GTextarea
+                  id="channel-names"
+                  placeholder="Enter channel names separated by commas or new lines (e.g., MyChannel, TechReviews, GamingTV)"
+                  value={channelNames}
+                  onChange={(e) => setChannelNames(e.target.value)}
+                  className="min-h-[150px] text-base resize-y"
+                />
+                <p className="text-xs text-muted-foreground mt-1">
+                  Enter multiple channel names separated by commas or new lines. No limit on the number of checks.
+                </p>
+              </div>
 
-                {timeRemaining > 0 && (
-                  <div className="space-y-2">
-                    <div className="flex items-center justify-between text-sm">
-                      <span className="text-muted-foreground">Next check in:</span>
-                      <span className="font-mono font-bold text-primary">
-                        {timeRemaining}s
+              <GButton
+                onClick={handleCheck}
+                disabled={!channelNames.trim() || loading}
+                isLoading={loading}
+                className="w-full h-11 text-base font-medium shadow-sm hover:shadow-md transition-all"
+              >
+                {loading ? (
+                  checkingProgress ? `Checking ${checkingProgress.current}/${checkingProgress.total}` : 'Checking Availability...'
+                ) : (
+                  <>
+                    <Search className="mr-2 h-5 w-5" />
+                    Check Availability
+                  </>
+                )}
+              </GButton>
+
+              {/* Progress and Timer Display */}
+              {checkingProgress && (
+                <GCard className="p-4 bg-card border-primary shadow-sm">
+                  <div className="space-y-3">
+                    <div className="flex items-center justify-between">
+                      <h4 className="text-sm font-semibold text-primary">
+                        Checking Channel {checkingProgress.current} of {checkingProgress.total}
+                      </h4>
+                      <span className="text-xs text-accent">
+                        {checkingProgress.currentName}
                       </span>
                     </div>
-                    <div className="w-full bg-muted rounded-full h-2">
-                      <div
-                        className="bg-primary h-2 rounded-full transition-all duration-1000"
-                        style={{ width: `${((5 - timeRemaining) / 5) * 100}%` }}
-                      />
-                    </div>
+
+                    {timeRemaining > 0 && (
+                      <div className="space-y-2">
+                        <div className="flex items-center justify-between text-sm">
+                          <span className="text-muted-foreground">Next check in:</span>
+                          <span className="font-mono font-bold text-primary">
+                            {timeRemaining}s
+                          </span>
+                        </div>
+                        <div className="w-full bg-muted rounded-full h-2">
+                          <div
+                            className="bg-primary h-2 rounded-full transition-all duration-1000"
+                            style={{ width: `${((5 - timeRemaining) / 5) * 100}%` }}
+                          />
+                        </div>
+                      </div>
+                    )}
                   </div>
-                )}
+                </GCard>
+              )}
+            </div>
+          </GCard>
+
+          {error && (
+            <GCard className="p-6 bg-card border-red-500 shadow-sm animate-fade-in">
+              <div className="flex items-center gap-3">
+                <AlertCircle className="h-6 w-6 text-foreground" />
+                <div>
+                  <h3 className="text-base font-semibold text-foreground">Error</h3>
+                  <p className="text-sm text-foreground">{error}</p>
+                </div>
               </div>
             </GCard>
           )}
-        </div>
-      </GCard>
 
-      {error && (
-        <GCard className="p-6 bg-card border-red-500 shadow-sm animate-fade-in">
-          <div className="flex items-center gap-3">
-            <AlertCircle className="h-6 w-6 text-foreground" />
-            <div>
-              <h3 className="text-base font-semibold text-foreground">Error</h3>
-              <p className="text-sm text-foreground">{error}</p>
-            </div>
-          </div>
-        </GCard>
-      )}
-
-      {results.length > 0 && (
-        <div className="space-y-4">
-          <h3 className="text-lg font-semibold text-foreground">Check Results</h3>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
-            {results.map((result, index) => (
-              <ChannelResultCard
-                key={index}
-                result={result}
-                isChecking={currentCheckingIndex === index}
-              />
-            ))}
-          </div>
-        </div>
-      )}
-
-      {/* AI Suggestions Section */}
-      {(aiLoading || aiSuggestions) && (
-        <GCard className="p-6 bg-card border-border shadow-sm animate-fade-in">
-          <div className="flex items-center gap-2 mb-4">
-            <Lightbulb className="h-5 w-5 text-heading-accent" />
-            <h3 className="text-lg font-semibold text-foreground">AI Channel Name Ideas</h3>
-            {aiLoading && <LoadingSpinner className="h-4 w-4 text-muted-foreground" />}
-          </div>
-
-          {aiLoading ? (
-            <div className="py-8 text-center space-y-3">
-              <LoadingSpinner className="h-8 w-8 text-primary mx-auto" />
-              <p className="text-sm text-muted-foreground">Generating 100+ creative channel names for you...</p>
-            </div>
-          ) : aiSuggestions ? (
+          {results.length > 0 && (
             <div className="space-y-4">
-              {/* Categories Tabs */}
-              <div className="flex flex-wrap gap-2 pb-2 border-b border-border overflow-x-auto scrollbar-thin">
-                {Object.keys(aiSuggestions).map((category) => (
-                  <button
-                    key={category}
-                    onClick={() => setActiveCategory(category)}
-                    className={`px-3 py-1.5 text-sm font-medium rounded-md whitespace-nowrap transition-colors ${activeCategory === category
-                      ? 'bg-primary text-primary-foreground'
-                      : 'bg-muted text-muted-foreground hover:bg-muted/80'
-                      }`}
-                  >
-                    {category}
-                  </button>
+              <h3 className="text-lg font-semibold text-foreground">Check Results</h3>
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+                {results.map((result, index) => (
+                  <ChannelResultCard
+                    key={index}
+                    result={result}
+                    isChecking={currentCheckingIndex === index}
+                  />
                 ))}
               </div>
-
-              {/* Suggestions Grid */}
-              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 max-h-[400px] overflow-y-auto pr-2 scrollbar-thin">
-                {aiSuggestions[activeCategory]?.map((suggestion, idx) => (
-                  <div
-                    key={idx}
-                    className="group flex items-center justify-between p-3 rounded-lg border border-border bg-card hover:border-primary/50 transition-all cursor-pointer"
-                    onClick={() => copyToClipboard(suggestion)}
-                  >
-                    <span className="text-sm font-medium text-foreground">{suggestion}</span>
-                    <Copy className="h-3.5 w-3.5 text-muted-foreground opacity-0 group-hover:opacity-100 transition-opacity" />
-                  </div>
-                ))}
-              </div>
-              <p className="text-xs text-muted-foreground text-center pt-2">
-                Click any name to copy it to clipboard
-              </p>
             </div>
-          ) : null}
-        </GCard>
-      )}
+          )}
 
-      <GCard className="p-6 bg-muted/30 border-border">
-        <h3 className="text-base font-semibold text-foreground mb-3">How to Use</h3>
-        <ul className="space-y-2 text-sm text-muted-foreground leading-relaxed">
-          <li>• Enter multiple channel names separated by commas</li>
-          <li>• Click "Check Availability" to start the checking process</li>
-          <li>• Get 100+ AI-powered channel name suggestions tailored to your niche</li>
-          <li>• Watch the countdown timer and progress indicator</li>
-          <li>• Copy suggested names with one click</li>
-        </ul>
-      </GCard>
+          {/* AI Suggestions Section */}
+          {(aiLoading || aiSuggestions) && (
+            <GCard className="p-6 bg-card border-border shadow-sm animate-fade-in">
+              <div className="flex items-center gap-2 mb-4">
+                <Lightbulb className="h-5 w-5 text-heading-accent" />
+                <h3 className="text-lg font-semibold text-foreground">AI Channel Name Ideas</h3>
+                {aiLoading && <LoadingSpinner className="h-4 w-4 text-muted-foreground" />}
+              </div>
+
+              {aiLoading ? (
+                <div className="py-8 text-center space-y-3">
+                  <LoadingSpinner className="h-8 w-8 text-primary mx-auto" />
+                  <p className="text-sm text-muted-foreground">Generating 100+ creative channel names for you...</p>
+                </div>
+              ) : aiSuggestions ? (
+                <div className="space-y-4">
+                  {/* Categories Tabs */}
+                  <div className="flex flex-wrap gap-2 pb-2 border-b border-border overflow-x-auto scrollbar-thin">
+                    {Object.keys(aiSuggestions).map((category) => (
+                      <button
+                        key={category}
+                        onClick={() => setActiveCategory(category)}
+                        className={`px-3 py-1.5 text-sm font-medium rounded-md whitespace-nowrap transition-colors ${activeCategory === category
+                          ? 'bg-primary text-primary-foreground'
+                          : 'bg-muted text-muted-foreground hover:bg-muted/80'
+                          }`}
+                      >
+                        {category}
+                      </button>
+                    ))}
+                  </div>
+
+                  {/* Suggestions Grid */}
+                  <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 max-h-[400px] overflow-y-auto pr-2 scrollbar-thin">
+                    {aiSuggestions[activeCategory]?.map((suggestion, idx) => (
+                      <div
+                        key={idx}
+                        className="group flex items-center justify-between p-3 rounded-lg border border-border bg-card hover:border-primary/50 transition-all cursor-pointer"
+                        onClick={() => copyToClipboard(suggestion)}
+                      >
+                        <span className="text-sm font-medium text-foreground">{suggestion}</span>
+                        <Copy className="h-3.5 w-3.5 text-muted-foreground opacity-0 group-hover:opacity-100 transition-opacity" />
+                      </div>
+                    ))}
+                  </div>
+                  <p className="text-xs text-muted-foreground text-center pt-2">
+                    Click any name to copy it to clipboard
+                  </p>
+                </div>
+              ) : null}
+            </GCard>
+          )}
+
+          <GCard className="p-6 bg-muted/30 border-border">
+            <h3 className="text-base font-semibold text-foreground mb-3">How to Use</h3>
+            <ul className="space-y-2 text-sm text-muted-foreground leading-relaxed">
+              <li>• Enter multiple channel names separated by commas</li>
+              <li>• Click "Check Availability" to start the checking process</li>
+              <li>• Get 100+ AI-powered channel name suggestions tailored to your niche</li>
+              <li>• Watch the countdown timer and progress indicator</li>
+              <li>• Copy suggested names with one click</li>
+            </ul>
+          </GCard>
+        </GTabsContent>
+
+        <GTabsContent value="handle">
+          <YoutubeHandleChecker />
+        </GTabsContent>
+
+        <GTabsContent value="seo">
+          <YoutubeKeywordAnalysis />
+        </GTabsContent>
+      </GTabs>
     </div>
   )
 }
