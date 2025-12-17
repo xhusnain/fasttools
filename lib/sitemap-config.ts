@@ -573,7 +573,7 @@ export const toolPages = [
     },
     {
         url: "https://www.fasttools.store/social-media-tools/channel-checker",
-        lastModified: new Date('2025-12-14'),
+        lastModified: new Date('2025-12-17'),
         changeFrequency: "daily" as const,
         priority: 1.0,
         images: [
