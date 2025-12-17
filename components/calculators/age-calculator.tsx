@@ -1,6 +1,6 @@
 "use client"
 
-import { useState } from "react"
+import { useState, useEffect } from "react"
 import { GCard, GCardContent, GCardDescription, GCardHeader, GCardTitle } from "@/ui/gcard"
 import { GButton } from "@/ui/gbutton"
 import { GLabel } from "@/ui/glabel"
@@ -16,6 +16,39 @@ export function AgeCalculator() {
   const [result, setResult] = useState<AgeResult | null>(null)
   const [copied, setCopied] = useState(false)
   const [isCalculating, setIsCalculating] = useState(false)
+  const [ticker, setTicker] = useState(0)
+
+  // Live ticker effect
+  useEffect(() => {
+    if (!result) return
+    const interval = setInterval(() => {
+      setTicker(prev => prev + 1)
+    }, 1000)
+    return () => clearInterval(interval)
+  }, [result])
+
+  const getWesternZodiac = (day: number, month: number) => {
+    // month is 0-11
+    if ((month === 0 && day <= 19) || (month === 11 && day >= 22)) return { sign: "Capricorn", icon: "♑" };
+    if ((month === 0 && day >= 20) || (month === 1 && day <= 18)) return { sign: "Aquarius", icon: "♒" };
+    if ((month === 1 && day >= 19) || (month === 2 && day <= 20)) return { sign: "Pisces", icon: "♓" };
+    if ((month === 2 && day >= 21) || (month === 3 && day <= 19)) return { sign: "Aries", icon: "♈" };
+    if ((month === 3 && day >= 20) || (month === 4 && day <= 20)) return { sign: "Taurus", icon: "♉" };
+    if ((month === 4 && day >= 21) || (month === 5 && day <= 20)) return { sign: "Gemini", icon: "♊" };
+    if ((month === 5 && day >= 21) || (month === 6 && day <= 22)) return { sign: "Cancer", icon: "♋" };
+    if ((month === 6 && day >= 23) || (month === 7 && day <= 22)) return { sign: "Leo", icon: "♌" };
+    if ((month === 7 && day >= 23) || (month === 8 && day <= 22)) return { sign: "Virgo", icon: "♍" };
+    if ((month === 8 && day >= 23) || (month === 9 && day <= 22)) return { sign: "Libra", icon: "♎" };
+    if ((month === 9 && day >= 23) || (month === 10 && day <= 21)) return { sign: "Scorpio", icon: "♏" };
+    if ((month === 10 && day >= 22) || (month === 11 && day <= 21)) return { sign: "Sagittarius", icon: "♐" };
+
+    return { sign: "Unknown", icon: "❓" }
+  }
+
+  const getChineseZodiac = (year: number) => {
+    const animals = ["Monkey", "Rooster", "Dog", "Pig", "Rat", "Ox", "Tiger", "Rabbit", "Dragon", "Snake", "Horse", "Sheep"]
+    return animals[year % 12]
+  }
 
   const calculateAge = () => {
     if (!birthDate) return
@@ -65,6 +98,20 @@ export function AgeCalculator() {
       // Shareable link
       const shareableLink = `https://www.fasttools.store/calculator/age-calculator?dob=${birthDate}${targetDate ? `&target=${targetDate}` : ''}`
 
+
+      // Fun Stats
+      const totalMinutesCalc = totalMinutes // Store for state
+      const totalBreaths = Math.floor(totalMinutes * 16) // Avg 16 breaths per min
+      const totalHeartbeats = Math.floor(totalMinutes * 80) // Avg 80 beats per min
+
+      // Zodiacs
+      const western = getWesternZodiac(birth.getDate(), birth.getMonth())
+      const chinese = getChineseZodiac(birth.getFullYear())
+
+      // Weekday
+      const weekdays = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"]
+      const birthWeekday = weekdays[birth.getDay()]
+
       setResult({
         years,
         months,
@@ -82,7 +129,13 @@ export function AgeCalculator() {
         ageNearestBirthday,
         ageOnToday,
         shareableLink,
+        westernZodiac: `${western.icon} ${western.sign}`,
+        chineseZodiac: chinese,
+        birthWeekday,
+        totalBreaths,
+        totalHeartbeats
       })
+      setTicker(0) // Reset ticker
       setIsCalculating(false)
     }, 600)
   }
@@ -245,6 +298,84 @@ Next Birthday: ${result.nextBirthday}`
               <div className="text-center p-4 sm:p-6 rounded-xl bg-card border-2 border-border hover:shadow-lg transition-all duration-300">
                 <div className="text-3xl sm:text-4xl font-bold text-heading-accent mb-1 sm:mb-2">{result.days}</div>
                 <div className="text-xs sm:text-sm font-semibold text-heading-accent">Days</div>
+              </div>
+            </div>
+
+            {/* Live Ticker & Progress Bar */}
+            <div className="space-y-6">
+              <div className="p-4 bg-primary/5 rounded-xl border border-primary/10">
+                <div className="flex justify-between items-center mb-2">
+                  <span className="text-sm font-medium text-muted-foreground">Next Birthday Countdown</span>
+                  <span className="text-sm font-bold text-primary">{result.daysUntilNextBirthday} Days Left</span>
+                </div>
+                <div className="w-full bg-secondary/30 rounded-full h-3 overflow-hidden">
+                  <div
+                    className="bg-gradient-to-r from-primary to-secondary h-full rounded-full transition-all duration-1000"
+                    style={{ width: `${((365 - result.daysUntilNextBirthday) / 365) * 100}%` }}
+                  />
+                </div>
+              </div>
+
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                <div className="p-4 bg-card border border-border rounded-xl flex items-center gap-3">
+                  <div className="p-2 rounded-full bg-orange-100 dark:bg-orange-900/30">
+                    <Sparkles className="h-5 w-5 text-orange-500" />
+                  </div>
+                  <div>
+                    <div className="text-xs text-muted-foreground font-medium">Alive for</div>
+                    <div className="text-lg font-bold tabular-nums">
+                      {(result.totalSeconds + ticker).toLocaleString()}
+                      <span className="text-xs font-normal text-muted-foreground ml-1">seconds</span>
+                    </div>
+                  </div>
+                </div>
+
+                <div className="p-4 bg-card border border-border rounded-xl flex items-center gap-3">
+                  <div className="p-2 rounded-full bg-blue-100 dark:bg-blue-900/30">
+                    <Calendar className="h-5 w-5 text-blue-500" />
+                  </div>
+                  <div>
+                    <div className="text-xs text-muted-foreground font-medium">Born on a</div>
+                    <div className="text-lg font-bold">{result.birthWeekday}</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* Fun Stats & Zodiac */}
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              <div className="space-y-4">
+                <h3 className="text-lg font-semibold flex items-center gap-2">
+                  <Sparkles className="h-5 w-5 text-yellow-500" />
+                  Fun Facts
+                </h3>
+                <div className="space-y-3">
+                  <div className="p-3 bg-card border border-border rounded-lg flex justify-between items-center">
+                    <span className="text-sm text-muted-foreground">Approx. Breaths</span>
+                    <span className="font-bold">{(result.totalBreaths + (ticker * 0.27)).toLocaleString(undefined, { maximumFractionDigits: 0 })}</span>
+                  </div>
+                  <div className="p-3 bg-card border border-border rounded-lg flex justify-between items-center">
+                    <span className="text-sm text-muted-foreground">Approx. Heartbeats</span>
+                    <span className="font-bold">{(result.totalHeartbeats + (ticker * 1.3)).toLocaleString(undefined, { maximumFractionDigits: 0 })}</span>
+                  </div>
+                </div>
+              </div>
+
+              <div className="space-y-4">
+                <h3 className="text-lg font-semibold flex items-center gap-2">
+                  <Settings className="h-5 w-5 text-purple-500" />
+                  Astrology
+                </h3>
+                <div className="grid grid-cols-2 gap-3">
+                  <div className="p-3 bg-card border border-border rounded-lg text-center">
+                    <div className="text-xs text-muted-foreground mb-1">Western Zodiac</div>
+                    <div className="font-bold text-lg">{result.westernZodiac}</div>
+                  </div>
+                  <div className="p-3 bg-card border border-border rounded-lg text-center">
+                    <div className="text-xs text-muted-foreground mb-1">Chinese Zodiac</div>
+                    <div className="font-bold text-lg">{result.chineseZodiac}</div>
+                  </div>
+                </div>
               </div>
             </div>
 

@@ -320,9 +320,31 @@ export const toolPages = [
     },
     {
         url: "https://www.fasttools.store/calculator/age-calculator",
-        lastModified: new Date('2025-11-25'),
-        changeFrequency: "monthly" as const,
-        priority: 0.8,
+        lastModified: new Date('2025-12-17'),
+        changeFrequency: "daily" as const,
+        priority: 0.9,
+        images: [
+            {
+                url: "https://www.fasttools.store/images/age_calculator_hero_1765980011245.png",
+                title: "FastTools Age Calculator - Accurate & Free",
+                caption: "Calculate your exact age in seconds with our precise and free online age calculator tool"
+            },
+            {
+                url: "https://www.fasttools.store/images/age_calculator_steps_1765976489023.png",
+                title: "How to Use Age Calculator",
+                caption: "Simple 3-step process to calculate your age: Enter birth date, choose target date, get instant results"
+            },
+            {
+                url: "https://www.fasttools.store/images/chronological_vs_biological_age_1765976611179.png",
+                title: "Chronological vs Biological Age Comparison",
+                caption: "Understanding the difference between chronological calendar age and biological health age"
+            },
+            {
+                url: "https://www.fasttools.store/images/calculation-accuracy.png",
+                title: "ISO 8601 Age Calculation Accuracy",
+                caption: "Visual breakdown of how ISO 8601 standards ensure precise age calculation across leap years and months"
+            }
+        ]
     },
     {
         url: "https://www.fasttools.store/calculator/bmi-calculator",

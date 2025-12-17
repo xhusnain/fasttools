@@ -16,4 +16,10 @@ export interface AgeResult {
     ageNearestBirthday: string
     ageOnToday: string
     shareableLink: string
+    // New Sticky Features
+    westernZodiac: string
+    chineseZodiac: string
+    birthWeekday: string
+    totalBreaths: number
+    totalHeartbeats: number
 }
