@@ -4,7 +4,7 @@ import Link from 'next/link';
 import { useState, useMemo } from 'react';
 import Fuse from 'fuse.js';
 import { BlogSearch } from './BlogSearch';
-import { FeaturedHero } from './FeaturedHero';
+import { FeaturedCarousel } from './FeaturedCarousel';
 import { LatestPostsList } from './LatestPostsList';
 import { PostCard } from './PostCard';
 import { CategorySection } from './CategorySection';
@@ -40,10 +40,23 @@ export default function BlogClientPage({ allPosts }: BlogClientPageProps) {
     const isSearching = !!searchQuery;
 
 
-    const featuredPost = allPosts.find(p => p.featured) || allPosts[0];
-    const latestPosts = allPosts.length < 4
-        ? allPosts.slice(0, 3)
-        : allPosts.filter(p => p.slug !== featuredPost.slug).slice(0, 3);
+    const featuredPosts = allPosts.filter(p => p.featured);
+    if (featuredPosts.length === 0 && allPosts.length > 0) {
+        featuredPosts.push(allPosts[0]);
+    }
+    // Limit to 5 slides max
+    const carouselPosts = featuredPosts.slice(0, 5);
+
+    // Latest posts: Try to get unique posts first
+    let latestPosts = allPosts
+        .filter(p => !carouselPosts.find(cp => cp.slug === p.slug))
+        .slice(0, 5);
+
+    // Fallback: If we have no unique posts (e.g. small blog where all are featured),
+    // just use the most recent posts to ensure the list isn't empty.
+    if (latestPosts.length === 0 && allPosts.length > 0) {
+        latestPosts = allPosts.slice(0, 5);
+    }
 
     const categories = useMemo(() => {
         const groups: Record<string, BlogPost[]> = {};
@@ -97,7 +110,7 @@ export default function BlogClientPage({ allPosts }: BlogClientPageProps) {
                             <section className="grid grid-cols-1 lg:grid-cols-3 gap-6 lg:gap-8 min-h-[600px]">
                                 {/* Featured Hero - Spans 2 cols */}
                                 <div className="col-span-1 lg:col-span-2 min-h-[500px]">
-                                    <FeaturedHero post={featuredPost} />
+                                    <FeaturedCarousel posts={carouselPosts} />
                                 </div>
 
                                 {/* Latest List - Spans 1 col */}
