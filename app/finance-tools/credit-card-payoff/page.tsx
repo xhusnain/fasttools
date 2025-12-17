@@ -4,7 +4,7 @@ import { createMetadata } from "@/lib/metadata-base"
 import { Calculator, Target, TrendingUp, BarChart3, CreditCard, Award, DollarSign, Percent, Zap, HelpCircle, ExternalLink, PiggyBank } from "lucide-react"
 import type { Metadata } from "next"
 
-const TOOL_TITLE = "Credit Card Payoff Calculator | Free Debt Payoff Tool"
+const TOOL_TITLE = "Credit Card Payoff - Plan Debt Freedom"
 const TOOL_NAME = "Credit Card Payoff Calculator"
 
 const baseMetadata = createMetadata({

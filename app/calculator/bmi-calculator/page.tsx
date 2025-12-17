@@ -226,7 +226,7 @@ export default function BMICalculatorPage() {
       }
       toolContent={toolContent}
       expectedMetadata={{
-        title: "BMI Calculator | Free Body Mass Index Calculator",
+        title: "BMI Calculator - Check Your BMI Score",
         description: "Calculate your BMI (Body Mass Index) instantly. Free BMI calculator with height and weight inputs. Get your BMI category and health recommendations based on WHO standards.",
         path: "/calculator/bmi-calculator"
       }}

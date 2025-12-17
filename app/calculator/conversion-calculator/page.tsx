@@ -5,7 +5,7 @@ import { createMetadata } from "@/lib/metadata-base"
 import { Calculator, Zap, Target, TrendingUp, BookOpen, Users, CheckCircle, Info, Home, DollarSign, FileText, Percent, Clock, Award, BarChart3, Building, PieChart } from "lucide-react"
 import Link from "next/link"
 
-const TOOL_TITLE = "Unit Converter | Free Conversion Calculator"
+const TOOL_TITLE = "Unit Converter - Convert Units Online"
 const TOOL_NAME = "Unit Converter"
 
 const baseMetadata = createMetadata({

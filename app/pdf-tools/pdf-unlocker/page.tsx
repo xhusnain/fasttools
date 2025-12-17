@@ -5,7 +5,7 @@ import { createToolConfig } from "@/lib/create-tool-config"
 const toolConfig = createToolConfig({
   toolName: "PDF Unlocker",
   description: "Remove password protection from PDFs instantly. Unlock encrypted files to enable editing, printing, and copying. 100% secure browser-based processing.",
-  metaTitle: "Free PDF Unlocker Online - Remove PDF Password Protection",
+  metaTitle: "PDF Unlocker - Remove Password Protection",
   metaDescription: "Remove password protection from PDFs instantly. Unlock encrypted files to enable editing, printing, and copying. Secure, browser-based, unlimited free usage.",
   path: "/pdf-tools/pdf-unlocker",
 

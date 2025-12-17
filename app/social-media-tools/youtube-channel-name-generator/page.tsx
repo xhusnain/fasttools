@@ -6,15 +6,15 @@ import { createToolConfig } from "@/lib/create-tool-config"
 const currentYear = new Date().getFullYear()
 
 const toolConfig = createToolConfig({
-    toolName: "Free YouTube Channel Name Generator",
+    toolName: "YouTube Name Generator - AI Channel Ideas",
     description: `Generate unique YouTube channel names instantly with our free AI tool. No login required. Get creative, catchy names perfect for your niche in seconds!`,
     path: "/social-media-tools/youtube-channel-name-generator",
-    metaTitle: `Free YouTube Name Generator ${currentYear} - AI Channel Names (No Login)`,
+    metaTitle: "YouTube Name Generator - AI Channel Ideas",
     metaDescription: `Generate unique YouTube channel names instantly with our free AI tool. No login required. Get creative, catchy names perfect for your niche in seconds!`,
     keywords: ["youtube channel name generator", "youtube name ideas", "channel name creator", "free youtube names", "ai name generator"],
 
     header: {
-        title: "Free YouTube Channel Name Generator - AI Powered, No Login Required",
+        title: "YouTube Name Generator - AI Channel Ideas",
         description: "Generate unique YouTube channel names instantly with our free AI tool. No login required. Get creative, catchy names perfect for your niche in seconds!",
         titleSize: "medium",
         descriptionSize: "small",

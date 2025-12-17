@@ -5,7 +5,7 @@ import { createMetadata } from "@/lib/metadata-base"
 import { Calculator, BarChart3, TrendingUp, BookOpen, Users, Clock, Target, AlertCircle, Home, DollarSign, FileText, Percent, Award, Globe, PieChart } from "lucide-react"
 
 const baseMetadata = createMetadata({
-  title: "FastTools - Standard Deviation Calculator | Free Statistics Tool",
+  title: "Standard Deviation Calculator - Statistics & Data",
   description:
     "FastTools Standard Deviation Calculator - Calculate standard deviation, variance, mean, and confidence intervals instantly. Advanced statistics calculator with population and sample modes for data analysis.",
   path: "/calculator/standard-deviation-calculator",

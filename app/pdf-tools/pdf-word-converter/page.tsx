@@ -5,7 +5,7 @@ import { createToolConfig } from "@/lib/create-tool-config"
 const toolConfig = createToolConfig({
   toolName: "PDF to Word & Word to PDF Converter",
   description: "Convert PDF to Word for editing or Word to PDF for sharing. Free bidirectional converter with format preservation. Browser-based, secure, unlimited.",
-  metaTitle: "Free PDF to Word & Word to PDF Converter Online",
+  metaTitle: "PDF to Word - Convert PDF to Docx Free",
   metaDescription: "Convert PDF to Word (DOCX) for editing or Word to PDF for sharing. Preserves formatting, fonts, images. Free, secure, browser-based conversion.",
   path: "/pdf-tools/pdf-word-converter",
 

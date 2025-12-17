@@ -5,7 +5,7 @@ import { createToolConfig } from "@/lib/create-tool-config"
 const toolConfig = createToolConfig({
   toolName: "PDF Compressor",
   description: "Reduce PDF file size by 50-90% while maintaining quality. Compress to 200KB, 500KB, or 1MB for easy email sharing. Free, unlimited, browser-based compression.",
-  metaTitle: "Free PDF Compressor Online - Compress PDF to 200KB, 500KB, 1MB",
+  metaTitle: "PDF Compressor - Reduce PDF Size Online",
   metaDescription: "Best free PDF compressor online. Compress PDF files by 50-90% to 200KB, 500KB, or 1MB. No upload, unlimited use, 100% secure. Works on Windows, Mac, iPhone. No size limit up to 2GB.",
   path: "/pdf-tools/pdf-compressor",
 

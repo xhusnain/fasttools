@@ -5,7 +5,7 @@ import { createMetadata } from "@/lib/metadata-base"
 import { Calculator, BarChart3, TrendingUp, BookOpen, Users, Clock, Target, AlertCircle, Home, DollarSign, FileText, Award, Globe, PieChart, Percent, CreditCard, Wallet, GraduationCap, Car, Trophy, Stethoscope } from "lucide-react"
 
 const baseMetadata = createMetadata({
-  title: "FastTools - Payment Calculator | Free Advanced Loan Payment Calculator",
+  title: "Payment Calculator - Calculate Loan Payments Free",
   description:
     "FastTools Payment Calculator - Calculate loan payments with advanced payment calculator. Get accurate monthly payments, loan terms, amortization schedules, and total interest calculations.",
   path: "/finance-tools/payment-calculator",

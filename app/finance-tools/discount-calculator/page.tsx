@@ -5,7 +5,7 @@ import { Calculator, Percent, DollarSign, ShoppingCart, Tag, TrendingDown, Targe
 import type { Metadata } from "next"
 import { getCurrentYear } from "@/lib/utils"
 
-const TOOL_TITLE = `Discount Calculator | Free Sale Price & Savings Calculator`
+const TOOL_TITLE = "Discount Calculator - Calculate Savings Free"
 const TOOL_NAME = "Discount Calculator"
 
 const baseMetadata = createMetadata({

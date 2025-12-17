@@ -5,7 +5,7 @@ import { Calculator, Users, Receipt, Globe } from "lucide-react"
 import type { Metadata } from "next"
 import { getCurrentYear } from "@/lib/utils"
 
-const TOOL_TITLE = `Tip Calculator | Free Calculate Tips & Split Bills (${getCurrentYear()})`
+const TOOL_TITLE = "Tip Calculator - Calculate Tips & Split Bills"
 const TOOL_NAME = "Tip Calculator"
 const TOOL_DESCRIPTION = "Free tip calculator to calculate tip amounts, split bills & find total payments. Choose tip percentage & number of people. Works worldwide."
 

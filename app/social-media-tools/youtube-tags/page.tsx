@@ -8,9 +8,9 @@ import {
 import { getCurrentYear } from "@/lib/utils"
 
 const toolConfig = createToolConfig({
-  toolName: "YouTube Tag Extractor",
+  toolName: "YouTube Tag Extractor - SEO & Keywords",
   description: "Extract YouTube video tags, hashtags, and keywords instantly. Free tool to find competitor tags, boost SEO, and improve video ranking.",
-  metaTitle: `YouTube Tag Extractor – Free Video SEO Tool | FastTools ${getCurrentYear()}`,
+  metaTitle: "YouTube Tag Extractor - SEO & Keywords",
   metaDescription: "Extract YouTube video tags, hashtags, and keywords instantly. Our free YouTube Tag Extractor helps you find competitor tags, boost SEO, and improve your video ranking on YouTube. Works on all devices.",
   path: "/social-media-tools/youtube-tags",
   keywords: [
@@ -29,7 +29,7 @@ const toolConfig = createToolConfig({
   ],
 
   header: {
-    title: "YouTube Tag Extractor – Extract Video Tags Instantly",
+    title: "YouTube Tag Extractor - SEO & Keywords",
     description: "Extract YouTube video tags, hashtags, and keywords instantly with our free tool. Find competitor tags, boost SEO, and improve your video ranking on YouTube. Simply paste any YouTube URL to generate tags and extract video metadata.",
     titleSize: "medium",
     descriptionSize: "small",

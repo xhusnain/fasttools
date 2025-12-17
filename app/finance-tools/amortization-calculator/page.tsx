@@ -160,7 +160,7 @@ export default function AmortizationCalculatorPage() {
       }
       toolContent={toolContent}
       expectedMetadata={{
-        title: "Amortization Calculator | Free Loan Payment Calculator",
+        title: "Amortization Calculator - Analyze Loan Payoff",
         description: "Professional amortization calculator for detailed loan payment analysis. Calculate monthly payments, interest costs, amortization schedules, and extra payment savings.",
         path: "/finance-tools/amortization-calculator"
       }}

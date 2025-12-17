@@ -288,7 +288,7 @@ export default function InterestRateCalculatorPage() {
       }
       toolContent={toolContent}
       expectedMetadata={{
-        title: "FastTools - Interest Rate Calculator | Free Advanced Loan Rate Calculator",
+        title: "Interest Rate Calculator - Find True Loan Cost",
         description: "FastTools Interest Rate Calculator - Calculate real interest rates on loans with fixed terms and monthly payments. Advanced Newton-Raphson method for precise rate calculation and loan optimization.",
         path: "/finance-tools/interest-rate-calculator"
       }}

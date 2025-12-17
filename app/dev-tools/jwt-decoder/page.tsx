@@ -5,7 +5,7 @@ import { createToolConfig } from "@/lib/create-tool-config"
 const toolConfig = createToolConfig({
   toolName: "JWT Decoder",
   description: "Decode and inspect JWT tokens instantly in your browser. View header, payload, and signature with our secure, client-side JWT decoder. Debug JSON Web Tokens for free.",
-  metaTitle: "JWT Decoder | Free JSON Web Token Decoder & Debugger Online",
+  metaTitle: "JWT Decoder - Decode & Debug Tokens Free",
   metaDescription: "Decode and inspect JWT tokens instantly in your browser. View header, payload, and signature with our secure, client-side JWT decoder. Debug JSON Web Tokens for free.",
   path: "/dev-tools/jwt-decoder",
 

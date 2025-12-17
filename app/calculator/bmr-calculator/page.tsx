@@ -168,7 +168,7 @@ export default function BMRCalculatorPage() {
       }
       toolContent={toolContent}
       expectedMetadata={{
-        title: "BMR Calculator | Free Basal Metabolic Rate Calculator",
+        title: "BMR Calculator - Calculate Metabolic Rate",
         description: "Calculate your Basal Metabolic Rate (BMR) with our advanced calculator. Get accurate calorie needs, TDEE, weight management goals & personalized nutrition recommendations.",
         path: "/calculator/bmr-calculator"
       }}

@@ -10,14 +10,14 @@ import {
 } from "lucide-react"
 
 const toolConfig = createToolConfig({
-  toolName: "YouTube Channel Name Checker, Handle Finder & SEO Analyzer",
+  toolName: "YouTube Channel Checker - Name & Handle Search",
   description: "Check YouTube channel name availability, verify @handle ownership, and analyze your name's SEO potential. The ultimate 3-in-1 tool for creators.",
-  metaTitle: "YouTube Channel Name Checker & Handle Availability Tool - SEO Analysis (2025) | FastTools",
+  metaTitle: "YouTube Channel Checker - Name & Handle Search",
   metaDescription: "Free YouTube channel name checker, handle availability tool & SEO analyzer. Check @handle availability, analyze keyword potential, and generate 100+ AI-powered name ideas. Find your perfect YouTube identity!",
   path: "/social-media-tools/channel-checker",
 
   header: {
-    title: "YouTube Channel Name Checker, Handle Availability & SEO Analyzer (2025)",
+    title: "YouTube Channel Checker - Name & Handle Search",
     description: "The ultimate 3-in-1 YouTube toolkit: Check channel name availability, verify @handle ownership, and analyze your name's SEO potential. Generate 100+ AI-powered suggestions and find your perfect YouTube identity.",
     titleSize: "medium",
     descriptionSize: "small",

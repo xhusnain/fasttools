@@ -442,7 +442,7 @@ export default function SalesTaxCalculatorPage() {
       }
       toolContent={toolContent}
       expectedMetadata={{
-        title: "FastTools - Sales Tax Calculator | Free Advanced State Tax Calculator",
+        title: "Sales Tax Calculator - Calculate Tax by State",
         description: "FastTools Sales Tax Calculator - Calculate sales tax for all 50 US states with our advanced calculator. Get accurate tax calculations, state comparisons & compliance guidance.",
         path: "/finance-tools/sales-tax-calculator"
       }}

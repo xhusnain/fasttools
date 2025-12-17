@@ -164,7 +164,7 @@ export default function RetirementCalculatorPage() {
       }
       toolContent={toolContent}
       expectedMetadata={{
-        title: "Retirement Calculator | Free Advanced Planning Calculator",
+        title: "Retirement Calculator - Plan Your Retirement Free",
         description: "Professional retirement planning tool. Calculate savings, withdrawal amounts & retirement income needs with inflation adjustments.",
         path: "/finance-tools/retirement-calculator"
       }}

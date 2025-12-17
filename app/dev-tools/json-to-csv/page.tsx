@@ -5,7 +5,7 @@ import { createToolConfig } from "@/lib/create-tool-config"
 const toolConfig = createToolConfig({
   toolName: "JSON to CSV Converter",
   description: "Convert JSON to CSV online free with instant download. Transform JSON data to Excel-ready CSV format. Supports nested JSON & arrays. Best for developers.",
-  metaTitle: "JSON to CSV Converter | Free Convert JSON to CSV Online",
+  metaTitle: "JSON to CSV - Convert JSON Files Instantly",
   metaDescription: "Convert JSON to CSV online free with instant download. Transform JSON data to Excel-ready CSV format. Supports nested JSON & arrays. Best for developers.",
   path: "/dev-tools/json-to-csv",
 

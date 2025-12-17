@@ -5,7 +5,7 @@ import { createToolConfig } from "@/lib/create-tool-config"
 const toolConfig = createToolConfig({
   toolName: "HTML to Markdown Converter",
   description: "Convert HTML to Markdown online free. Transform HTML code to clean Markdown format instantly. Best HTML to MD converter with support for tables, lists, and formatting.",
-  metaTitle: "HTML to Markdown Converter | Free Convert HTML to Markdown Online",
+  metaTitle: "HTML to Markdown - Convert HTML to MD Free",
   metaDescription: "Convert HTML to Markdown online free. Transform HTML code to clean Markdown format instantly. Best HTML to MD converter with support for tables, lists, and formatting.",
   path: "/dev-tools/html-to-markdown",
 

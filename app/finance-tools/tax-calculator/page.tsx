@@ -312,7 +312,7 @@ export default function TaxCalculatorPage() {
       }
       toolContent={toolContent}
       expectedMetadata={{
-        title: "FastTools - Tax Calculator | Free Income, GST, VAT & Sales Tax",
+        title: "Tax Calculator - Estimate Tax Liability",
         description: "FastTools Tax Calculator - Free online tax calculator for income tax, GST, VAT, and sales tax. Calculate tax on salary, capital gains, property, and more. Supports 9+ countries with accurate tax brackets.",
         path: "/finance-tools/tax-calculator"
       }}

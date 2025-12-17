@@ -197,7 +197,7 @@ export default function BodyFatCalculatorPage() {
       }
       toolContent={toolContent}
       expectedMetadata={{
-        title: "Body Fat Calculator | Free Body Fat Percentage Calculator",
+        title: "Body Fat Calculator - Estimate Body Fat %",
         description: "Calculate your body fat percentage with advanced calculator. Uses U.S. Navy method & BMI method for accurate results with health recommendations.",
         path: "/calculator/body-fat-calculator"
       }}

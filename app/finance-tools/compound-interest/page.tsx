@@ -4,7 +4,7 @@ import { CompoundInterestCalculator } from "@/components/finance/compound-intere
 import { createMetadata } from "@/lib/metadata-base"
 
 const baseMetadata = createMetadata({
-  title: "Free Compound Interest Calculator Online | Investment & SIP Calculator",
+  title: "Compound Interest - Calculate Investment Growth Free",
   description:
     "Best free compound interest calculator online for 2024. Calculate compound interest for SIP, fixed deposits, savings, retirement, loans. Supports India, UK, Canada, Australia with daily, monthly, quarterly, annual compounding.",
   path: "/finance-tools/compound-interest",

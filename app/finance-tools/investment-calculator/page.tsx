@@ -164,7 +164,7 @@ export default function InvestmentCalculatorPage() {
       }
       toolContent={toolContent}
       expectedMetadata={{
-        title: "Investment Calculator | Free Advanced Portfolio Calculator",
+        title: "Investment Calculator - Analyze Growth & Returns",
         description: "Professional investment calculator for portfolio analysis. Calculate end amount, return rate, starting amount & investment length.",
         path: "/finance-tools/investment-calculator"
       }}

@@ -5,7 +5,7 @@ import { Calculator, DollarSign, Target, TrendingUp, BarChart3, Copy, HelpCircle
 import type { Metadata } from "next"
 import { getCurrentYear } from "@/lib/utils"
 
-const TOOL_TITLE = `PayPal Fee Calculator (${getCurrentYear()})`
+const TOOL_TITLE = "PayPal Fee Calculator - Calculate Transaction Fees"
 const TOOL_NAME = "PayPal Fee Calculator"
 
 const baseMetadata = createMetadata({

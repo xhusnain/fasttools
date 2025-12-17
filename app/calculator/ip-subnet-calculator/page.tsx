@@ -5,7 +5,7 @@ import { createMetadata } from "@/lib/metadata-base"
 import { Network, Globe, Shield, Layers, Hash, Info, Calculator, Lightbulb, Server, Database, Zap, Target, CheckCircle, BarChart3, Users, Clock, ShieldCheck, FileText } from "lucide-react"
 import Image from "next/image"
 
-const TOOL_TITLE = "IP Subnet Calculator - Free CIDR, VLSM & Network Tool (2025)"
+const TOOL_TITLE = "IP Subnet Calculator - Calculate CIDR & VLSM"
 const TOOL_NAME = "IP Subnet Calculator"
 
 const baseMetadata = createMetadata({

@@ -5,7 +5,7 @@ import { createToolConfig } from "@/lib/create-tool-config"
 const toolConfig = createToolConfig({
   toolName: "Color Converter",
   description: "Free online color converter tool. Convert Hex to RGB, RGB to Hex, HSL, RGBA, HSLA instantly. Color picker, hex to decimal, alpha channel support. Best color code converter for web developers, designers. No signup required.",
-  metaTitle: "Color Converter | Free Hex to RGB, RGB to Hex, HSL Tool",
+  metaTitle: "Color Converter - Convert Hex, RGB, HSL Free",
   metaDescription: "Free online color converter tool. Convert Hex to RGB, RGB to Hex, HSL, RGBA, HSLA instantly. Color picker, hex to decimal, alpha channel support. Best color code converter for web developers, designers. No signup required.",
   path: "/dev-tools/hex-to-rgb",
 

@@ -5,7 +5,7 @@ import { createToolConfig } from "@/lib/create-tool-config"
 const toolConfig = createToolConfig({
   toolName: "PDF Sign",
   description: "Sign PDF documents online free. Add electronic signatures to PDFs for contracts, agreements, forms. Legally binding, browser-based, secure.",
-  metaTitle: "Sign PDF Online Free - Add Electronic Signature to PDF",
+  metaTitle: "Sign PDF - Add Electronic Signature Free",
   metaDescription: "Sign PDF documents online free. Add electronic signature to PDF contracts, agreements. Legally binding eSign. Browser-based, secure, unlimited usage.",
   path: "/pdf-tools/pdf-sign",
 

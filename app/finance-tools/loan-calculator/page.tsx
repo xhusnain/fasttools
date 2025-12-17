@@ -4,7 +4,7 @@ import { EMICalculator } from "@/components/finance/emi-calculator"
 import { createMetadata } from "@/lib/metadata-base"
 import { Calculator, Target, CheckCircle, Home, Car, CreditCard, GraduationCap, TrendingUp, BarChart3, Clock, Shield, Info } from "lucide-react"
 
-const TOOL_TITLE = "Loan EMI Calculator | Home, Car & Personal Loans"
+const TOOL_TITLE = "Loan EMI Calculator - Calculate Installments Free"
 const TOOL_NAME = "Loan EMI Calculator"
 
 const baseMetadata = createMetadata({

@@ -8,7 +8,7 @@ import {
 } from "lucide-react"
 
 const baseMetadata = createMetadata({
-  title: "Calculate Your Exact Age in Seconds - Free Age Calculator",
+  title: "Age Calculator - Calculate Exact Age Free",
   description:
     "Calculate your exact age in years, months, days, and seconds. Get Western & Chinese zodiac signs, birthday countdown, and fun biological stats. Free and instant.",
   path: "/calculator/age-calculator",

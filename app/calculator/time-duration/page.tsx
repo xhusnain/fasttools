@@ -5,7 +5,7 @@ import { createMetadata } from "@/lib/metadata-base"
 import { Clock, Calculator, Target, TrendingUp, Globe, Calendar, Plus, Minus, Zap, BarChart3, CheckCircle, BookOpen, Users, Award, Copy } from "lucide-react"
 
 const baseMetadata = createMetadata({
-  title: "Time Duration Calculator | Free Online Time Tool",
+  title: "Time Duration Calculator - Calculate Time Span",
   description:
     "Calculate exact time duration between two points in hours, minutes & seconds. Free online time duration calculator for work hours, study time, events, payroll, and project management. Accurate, fast, and easy to use.",
   path: "/calculator/time-duration",

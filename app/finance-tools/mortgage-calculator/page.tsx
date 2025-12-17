@@ -162,7 +162,7 @@ export default function MortgageCalculatorPage() {
       }
       toolContent={toolContent}
       expectedMetadata={{
-        title: "Mortgage Calculator | Free Advanced Home Loan Calculator",
+        title: "Mortgage Calculator - Estimate Monthly Payments",
         description: "Calculate mortgage payments with our advanced calculator. Get accurate monthly payments, amortization schedules & total interest costs.",
         path: "/finance-tools/mortgage-calculator"
       }}

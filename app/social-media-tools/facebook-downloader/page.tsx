@@ -9,9 +9,9 @@ import {
 import { getCurrentYear } from "@/lib/utils"
 
 const toolConfig = createToolConfig({
-  toolName: "Facebook Video Downloader",
+  toolName: "Facebook Downloader - Download Videos HD",
   description: "Download Facebook videos in HD quality (1080p) for free. Fast, secure, unlimited downloads. No registration required. Works on PC, Mac, iPhone, Android.",
-  metaTitle: "Facebook Video Downloader – Free HD Download Tool | FastTools",
+  metaTitle: "Facebook Downloader - Download Videos HD",
   metaDescription: "Download Facebook videos in HD quality (1080p) for free. Fast, secure, unlimited downloads. No registration required. Works on PC, Mac, iPhone, Android. Complete guide with legal considerations, troubleshooting, and tool comparisons.",
   path: "/social-media-tools/facebook-downloader",
   keywords: [
@@ -36,7 +36,7 @@ const toolConfig = createToolConfig({
   ],
 
   header: {
-    title: "Facebook Video Downloader – Free HD Download Tool",
+    title: "Facebook Downloader - Download Videos HD",
     description: "Download Facebook videos in HD quality (up to 1080p) for free. Fast, secure, unlimited downloads. No registration required. Works on PC, Mac, iPhone, Android, and all devices. Complete step-by-step guide included. Download Facebook videos anytime, anywhere.",
     titleSize: "medium",
     descriptionSize: "small",

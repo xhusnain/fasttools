@@ -5,7 +5,7 @@ import { createMetadata } from "@/lib/metadata-base"
 import { Calculator, Plus, Minus, X, Divide, Brain, Square } from "lucide-react"
 
 const baseMetadata = createMetadata({
-  title: "FastTools - Fraction Calculator | Free Add, Subtract, Multiply & Divide",
+  title: "Fraction Calculator - Solve Math Problems",
   description:
     "FastTools Fraction Calculator - Advanced calculator with addition, subtraction, multiplication, division, simplification, and conversion between fractions and decimals. Free online math tool.",
   path: "/calculator/fraction-calculator",

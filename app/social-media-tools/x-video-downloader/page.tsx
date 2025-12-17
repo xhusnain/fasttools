@@ -9,9 +9,9 @@ import {
 import { getCurrentYear } from "@/lib/utils"
 
 const toolConfig = createToolConfig({
-  toolName: "X Video Downloader",
+  toolName: "X Video Downloader - Save Twitter Videos",
   description: "Download X (Twitter) videos in HD quality without watermark. Free, fast, unlimited downloads. No registration required. Works on PC, Mac, iPhone, Android.",
-  metaTitle: `X Video Downloader – Free HD Tool | FastTools ${getCurrentYear()}`,
+  metaTitle: "X Video Downloader - Save Twitter Videos",
   metaDescription: "Download X (Twitter) videos in HD quality without watermark for free. Fast, secure, unlimited downloads. No registration required. Works on PC, Mac, iPhone, Android. Complete guide with legal considerations, troubleshooting, and tool comparisons.",
   path: "/social-media-tools/x-video-downloader",
   keywords: [
@@ -29,7 +29,7 @@ const toolConfig = createToolConfig({
   ],
 
   header: {
-    title: "X Video Downloader – HD Videos Without Watermark",
+    title: "X Video Downloader - Save Twitter Videos",
     description: "Download X (Twitter) videos in HD quality without watermark for free. Fast, secure, unlimited downloads. No registration required. Works on PC, Mac, iPhone, Android, and all devices. Complete step-by-step guide included.",
     titleSize: "medium",
     descriptionSize: "small",
