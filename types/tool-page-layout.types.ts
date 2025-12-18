@@ -24,12 +24,12 @@ export interface ToolHeaderConfig {
 export interface ToolContentData {
     toolName: string
     overview: string
-    howToSteps: string[]
-    features: string[]
-    aboutTool: string | React.ReactNode
+    howToSteps: (string | { title: string; description: string })[]
+    features: (string | { title: string; description: string; icon?: string })[]
+    aboutTool: string | React.ReactNode | { title: string; content: string }
     aboutToolText?: string
     proTip?: string
-    useCases?: string[]
+    useCases?: (string | { title: string; description: string })[]
     faqs: FAQItem[]
     relatedTools?: RelatedTool[]
 }

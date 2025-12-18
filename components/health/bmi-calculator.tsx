@@ -309,111 +309,113 @@ Risk Level: ${result.riskLevel}`
       </GCard>
 
       {result && !isCalculating && (
-        <GCard className="shadow-lg border-border animate-fade-in-up bg-card">
-          <GCardHeader className="pb-4">
+        <GCard className="shadow-lg border-border animate-fade-in-up bg-card overflow-hidden">
+          <GCardHeader className="pb-4 bg-muted/30 border-b border-border">
             <GCardTitle className="text-2xl flex items-center gap-3 text-foreground">
               <div className="p-2 bg-primary/10 rounded-lg">
                 <Activity className="h-6 w-6 text-foreground" />
               </div>
-              Your BMI Result
+              Your Results
             </GCardTitle>
-            <GCardDescription className="text-base text-muted-foreground">
-              Comprehensive Body Mass Index analysis with advanced metrics
+            <GCardDescription className="text-base text-muted-foreground mt-1">
+              Personalized Body Mass Index analysis
             </GCardDescription>
           </GCardHeader>
-          <GCardContent className="space-y-8">
-            {/* Main BMI Display */}
-            <div className="text-center p-6 sm:p-8 rounded-xl bg-card border-2 border-primary/20">
-              <div className="text-4xl sm:text-5xl font-bold text-foreground mb-2">{result.bmi}</div>
-              <div className={`text-lg sm:text-xl font-semibold ${result.color} mb-2`}>{result.category}</div>
-              <div className="text-sm text-muted-foreground">kg/m²</div>
-            </div>
+          <GCardContent className="space-y-6 pt-6">
+            {/* Main Result Hero */}
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+              <div className="md:col-span-2 flex flex-col items-center justify-center p-8 rounded-2xl bg-gradient-to-br from-card to-muted border-2 border-primary/20 shadow-inner">
+                <div className="text-6xl sm:text-7xl font-black text-foreground mb-2 tracking-tighter">{result.bmi}</div>
+                <div className={`text-xl sm:text-2xl font-bold ${result.color} mb-1 uppercase tracking-wider`}>{result.category}</div>
+                <div className="text-sm font-medium text-muted-foreground bg-background px-4 py-1 rounded-full border border-border">kg/m²</div>
+              </div>
 
-            {/* Advanced Metrics */}
-            <div className="space-y-4 p-4 sm:p-6 bg-card rounded-xl border-2 border-border">
-              <h3 className="text-base sm:text-lg font-semibold text-center mb-3 sm:mb-4 flex items-center justify-center gap-2 text-heading-accent">
-                <TrendingUp className="h-4 w-4 sm:h-5 sm:w-5 text-heading-accent" />
-                Advanced Metrics
-              </h3>
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-3 sm:gap-4">
-                <div className="flex justify-between items-center p-3 bg-card rounded-lg border border-primary/30">
-                  <span className="text-sm font-medium text-foreground">BMI Prime</span>
-                  <span className="font-bold text-sm text-foreground">{result.bmiPrime}</span>
+              <div className="space-y-4">
+                <div className="p-4 rounded-xl border border-border bg-card space-y-1">
+                  <div className="text-xs font-bold text-muted-foreground uppercase flex items-center gap-1">
+                    <Target className="h-3 w-3" /> Healthy Range
+                  </div>
+                  <div className="text-lg font-bold text-heading-accent">{result.healthyRange}</div>
                 </div>
-                <div className="flex justify-between items-center p-3 bg-card rounded-lg border border-primary">
-                  <span className="text-sm font-medium text-foreground">Ponderal Index</span>
-                  <span className="font-bold text-sm text-foreground">{result.ponderalIndex}</span>
+                <div className="p-4 rounded-xl border border-border bg-card space-y-1">
+                  <div className="text-xs font-bold text-muted-foreground uppercase flex items-center gap-1">
+                    <Scale className="h-3 w-3" /> Ideal Weight
+                  </div>
+                  <div className="text-lg font-bold text-foreground">{result.healthyWeightRange}</div>
                 </div>
-                <div className="flex justify-between items-center p-3 bg-card rounded-lg border border-secondary-accent/30">
-                  <span className="text-sm font-medium text-heading-accent">Healthy Range</span>
-                  <span className="font-bold text-sm text-heading-accent">{result.healthyRange}</span>
-                </div>
-                <div className="flex justify-between items-center p-3 bg-card rounded-lg border border-primary">
-                  <span className="text-sm font-medium text-foreground">Risk Level</span>
-                  <span className="font-bold text-sm text-foreground">{result.riskLevel}</span>
+                <div className="p-4 rounded-xl border border-border bg-card space-y-1">
+                  <div className="text-xs font-bold text-muted-foreground uppercase flex items-center gap-1">
+                    <Activity className="h-3 w-3" /> Risk Level
+                  </div>
+                  <div className="text-lg font-bold text-foreground">{result.riskLevel}</div>
                 </div>
               </div>
             </div>
 
-            {/* Healthy Weight Range */}
-            <div className="space-y-4 p-4 sm:p-6 bg-card rounded-xl border-2 border-border">
-              <h3 className="text-base sm:text-lg font-semibold text-heading-accent flex items-center gap-2">
-                <Target className="h-4 w-4 sm:h-5 sm:w-5 text-heading-accent" />
-                Healthy Weight Range
-              </h3>
-              <div className="text-center p-4 bg-card rounded-lg border border-secondary-accent/30">
-                <div className="text-lg sm:text-xl font-bold text-heading-accent">{result.healthyWeightRange}</div>
-                <div className="text-sm text-muted-foreground mt-1">Recommended weight for your height</div>
+            {/* Child/Teen Disclaimer - High Prominence */}
+            {result.age && result.age < 20 && (
+              <div className="p-4 bg-amber-500/10 border border-amber-500/50 rounded-xl flex items-start gap-3 text-amber-700 dark:text-amber-400">
+                <AlertTriangle className="h-5 w-5 mt-0.5 flex-shrink-0" />
+                <div className="text-sm">
+                  <strong className="block mb-1">Growth Warning for Ages 2-19:</strong>
+                  Standard adult BMI categories don't apply. Children's results are typically interpreted via age-and-sex-specific percentiles. Consult a pediatrician for a full assessment.
+                </div>
+              </div>
+            )}
+
+            {/* Advanced Metrics Carousel-style or Grid */}
+            <div className="grid grid-cols-2 gap-4">
+              <div className="p-4 rounded-xl border border-border bg-muted/20 flex flex-col items-center text-center">
+                <div className="text-[10px] font-bold text-muted-foreground uppercase mb-1">BMI Prime</div>
+                <div className="text-xl font-bold text-foreground">{result.bmiPrime}</div>
+              </div>
+              <div className="p-4 rounded-xl border border-border bg-muted/20 flex flex-col items-center text-center">
+                <div className="text-[10px] font-bold text-muted-foreground uppercase mb-1">Ponderal Index</div>
+                <div className="text-xl font-bold text-foreground">{result.ponderalIndex}</div>
               </div>
             </div>
 
-            {/* Recommendations */}
-            <div className="space-y-4 p-4 sm:p-6 bg-card rounded-xl border-2 border-border">
-              <h3 className="text-base sm:text-lg font-semibold text-heading-accent flex items-center gap-2">
-                <CheckCircle className="h-4 w-4 sm:h-5 sm:w-5 text-heading-accent" />
-                Health Recommendations
-              </h3>
-              <div className="space-y-2">
+            {/* Recommendations Section */}
+            <div className="space-y-3">
+              <h4 className="text-sm font-bold text-muted-foreground uppercase flex items-center gap-2 px-1">
+                <Sparkles className="h-4 w-4 text-primary" /> Key Recommendations
+              </h4>
+              <div className="grid gap-2">
                 {result.recommendations.map((recommendation, index) => (
-                  <div key={index} className="flex items-start gap-2 p-3 bg-card rounded-lg border border-border">
-                    <Sparkles className="h-4 w-4 text-heading-accent mt-0.5 flex-shrink-0" />
-                    <span className="text-sm text-foreground">{recommendation}</span>
+                  <div key={index} className="flex items-center gap-3 p-3 bg-card border border-border rounded-xl transition-colors hover:border-primary/50 group">
+                    <CheckCircle className="h-4 w-4 text-green-500 flex-shrink-0 group-hover:scale-110 transition-transform" />
+                    <span className="text-sm text-foreground font-medium">{recommendation}</span>
                   </div>
                 ))}
               </div>
             </div>
 
-            {/* Disclaimer */}
-            <div className="p-4 bg-card rounded-xl border-2 border-tertiary-accent/30">
-              <div className="flex items-start gap-2">
-                <Info className="h-4 w-4 text-tertiary-accent mt-0.5 flex-shrink-0" />
-                <div className="text-sm text-tertiary-accent">
-                  <strong>Disclaimer:</strong> BMI is a screening tool and should not be used as the sole indicator of health.
-                  Consult a healthcare provider for personalized health advice and comprehensive health assessment.
-                </div>
-              </div>
+            {/* Social Actions */}
+            <div className="flex flex-col sm:flex-row gap-3 pt-2">
+              <GButton
+                onClick={copyResult}
+                variant="outline"
+                className="flex-1 h-12 rounded-xl border-2 hover:bg-muted font-bold transition-all"
+              >
+                {copied ? (
+                  <><Check className="mr-2 h-5 w-5 text-green-500" /> Copied!</>
+                ) : (
+                  <><Copy className="mr-2 h-5 w-5" /> Share Results</>
+                )}
+              </GButton>
+              <GButton
+                variant="outline"
+                className="flex-1 h-12 rounded-xl border-2 hover:bg-muted font-bold flex items-center justify-center gap-2"
+                onClick={() => window.print()}
+              >
+                <Calculator className="h-5 w-5" /> Print PDF
+              </GButton>
             </div>
 
-            {/* Action GButton */}
-            <GButton
-              onClick={copyResult}
-              variant="outline"
-              className="w-full h-10 sm:h-12 text-sm sm:text-base font-semibold hover:bg-secondary transition-all duration-300 border-2 border-border text-foreground hover:text-white"
-            >
-              {copied ? (
-                <>
-                  <Check className="mr-2 sm:mr-3 h-4 w-4 sm:h-5 sm:w-5" />
-                  <span className="hidden sm:inline">Result Copied to Clipboard!</span>
-                  <span className="sm:hidden">Copied!</span>
-                </>
-              ) : (
-                <>
-                  <Copy className="mr-2 sm:mr-3 h-4 w-4 sm:h-5 sm:w-5" />
-                  <span className="hidden sm:inline">Copy Result to Clipboard</span>
-                  <span className="sm:hidden">Copy Result</span>
-                </>
-              )}
-            </GButton>
+            {/* Medical Disclaimer */}
+            <div className="p-3 bg-muted/50 rounded-lg text-[10px] leading-relaxed text-muted-foreground text-center italic border border-border mt-4">
+              BMI is a general screening tool, not a medical diagnosis. Variations in muscle mass, bone density, and overall body composition may affect accuracy. Always consult a healthcare professional.
+            </div>
           </GCardContent>
         </GCard>
       )}

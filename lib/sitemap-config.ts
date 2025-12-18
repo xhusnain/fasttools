@@ -348,7 +348,7 @@ export const toolPages = [
     },
     {
         url: "https://www.fasttools.store/calculator/bmi-calculator",
-        lastModified: new Date('2025-11-25'),
+        lastModified: new Date('2025-12-18'),
         changeFrequency: "monthly" as const,
         priority: 0.8,
     },

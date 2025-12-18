@@ -49,7 +49,7 @@ export function ToolPageLayout({
         step: (toolContent.howToSteps || []).map((step, index) => ({
             "@type": "HowToStep",
             position: index + 1,
-            text: step,
+            text: typeof step === 'string' ? step : `${step.title}: ${step.description}`,
         })),
     }
 
@@ -136,7 +136,14 @@ export function ToolPageLayout({
                                                 <span className="text-sm font-bold text-primary">{index + 1}</span>
                                             </div>
                                             <div className="flex-1 pt-1">
-                                                <p className="text-muted-foreground leading-relaxed">{step}</p>
+                                                {typeof step === 'string' ? (
+                                                    <p className="text-muted-foreground leading-relaxed">{step}</p>
+                                                ) : (
+                                                    <div className="space-y-1">
+                                                        <h4 className="font-bold text-foreground text-sm">{step.title}</h4>
+                                                        <p className="text-muted-foreground leading-relaxed text-sm">{step.description}</p>
+                                                    </div>
+                                                )}
                                             </div>
                                         </div>
                                     ))}
@@ -156,7 +163,14 @@ export function ToolPageLayout({
                                     {(toolContent.features || []).map((feature, index) => (
                                         <div key={index} className="flex items-start gap-2 p-3 rounded-lg bg-muted/50">
                                             <ChevronRight className="h-5 w-5 text-primary flex-shrink-0 mt-0.5" />
-                                            <span className="text-sm text-foreground">{feature}</span>
+                                            {typeof feature === 'string' ? (
+                                                <span className="text-sm text-foreground">{feature}</span>
+                                            ) : (
+                                                <div className="space-y-1">
+                                                    <span className="text-sm font-bold text-foreground block">{feature.title}</span>
+                                                    <span className="text-xs text-muted-foreground block">{feature.description}</span>
+                                                </div>
+                                            )}
                                         </div>
                                     ))}
                                 </div>
@@ -173,7 +187,14 @@ export function ToolPageLayout({
                                                 <div className="flex-shrink-0 w-6 h-6 rounded-full bg-primary/20 flex items-center justify-center mt-0.5">
                                                     <Star className="h-3 w-3 text-primary" />
                                                 </div>
-                                                <p className="text-sm text-muted-foreground leading-relaxed">{useCase}</p>
+                                                {typeof useCase === 'string' ? (
+                                                    <p className="text-sm text-muted-foreground leading-relaxed">{useCase}</p>
+                                                ) : (
+                                                    <div className="space-y-1">
+                                                        <h4 className="text-sm font-bold text-foreground">{useCase.title}</h4>
+                                                        <p className="text-xs text-muted-foreground leading-relaxed">{useCase.description}</p>
+                                                    </div>
+                                                )}
                                             </div>
                                         ))}
                                     </div>
@@ -189,9 +210,16 @@ export function ToolPageLayout({
                                         <p className="text-muted-foreground leading-relaxed whitespace-pre-line">
                                             {toolContent.aboutTool}
                                         </p>
+                                    ) : toolContent.aboutTool && typeof toolContent.aboutTool === 'object' && 'content' in toolContent.aboutTool ? (
+                                        <div className="space-y-3">
+                                            <h3 className="text-lg font-bold text-foreground">{(toolContent.aboutTool as any).title}</h3>
+                                            <div className="text-muted-foreground leading-relaxed">
+                                                {(toolContent.aboutTool as any).content}
+                                            </div>
+                                        </div>
                                     ) : (
                                         <div className="text-muted-foreground leading-relaxed">
-                                            {toolContent.aboutTool}
+                                            {toolContent.aboutTool as React.ReactNode}
                                         </div>
                                     )}
                                 </div>
