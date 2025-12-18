@@ -40,7 +40,7 @@ export function Header() {
                 aria-label="FastTools home"
                 className="group transition-all duration-300"
               >
-                <span className="text-xl md:text-2xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-primary to-primary/80">FastTools</span>
+                <span className="text-xl md:text-2xl font-bold text-foreground">FastTools</span>
               </Link>
             </div>
 

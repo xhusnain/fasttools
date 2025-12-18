@@ -45,38 +45,37 @@ export const FeaturedCarousel = ({ posts }: FeaturedCarouselProps) => {
     };
 
     return (
-        <div className="h-full group relative overflow-hidden rounded-3xl bg-black border border-white/10 shadow-2xl isolate">
+        <div className="h-full group relative overflow-hidden rounded-3xl bg-background border border-border shadow-2xl isolate">
             {/* Navigation Arrows */}
             {posts.length > 1 && (
                 <>
-                    <button 
+                    <button
                         onClick={(e) => { e.preventDefault(); handlePrev(); }}
-                        className="absolute left-4 top-1/2 -translate-y-1/2 z-30 p-3 rounded-full bg-black/40 border border-white/10 hover:bg-primary hover:border-primary text-white transition-all opacity-0 group-hover:opacity-100 backdrop-blur-md"
+                        className="absolute left-4 top-1/2 -translate-y-1/2 z-30 p-3 rounded-full bg-background/40 border border-border hover:bg-primary hover:border-primary text-foreground transition-all opacity-0 group-hover:opacity-100 backdrop-blur-md"
                         aria-label="Previous article"
                     >
                         <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
                         </svg>
                     </button>
-                    <button 
+                    <button
                         onClick={(e) => { e.preventDefault(); handleNext(); }}
-                        className="absolute right-4 top-1/2 -translate-y-1/2 z-30 p-3 rounded-full bg-black/40 border border-white/10 hover:bg-primary hover:border-primary text-white transition-all opacity-0 group-hover:opacity-100 backdrop-blur-md"
+                        className="absolute right-4 top-1/2 -translate-y-1/2 z-30 p-3 rounded-full bg-background/40 border border-border hover:bg-primary hover:border-primary text-foreground transition-all opacity-0 group-hover:opacity-100 backdrop-blur-md"
                         aria-label="Next article"
                     >
                         <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
                         </svg>
                     </button>
-                    
+
                     {/* Dots Indicator */}
                     <div className="absolute bottom-6 right-8 z-30 flex gap-2">
                         {posts.map((_, idx) => (
                             <button
                                 key={idx}
                                 onClick={(e) => { e.preventDefault(); setCurrentIndex(idx); }}
-                                className={`h-1.5 rounded-full transition-all duration-300 ${
-                                    idx === currentIndex ? 'w-8 bg-primary' : 'w-2 bg-white/30 hover:bg-white/60'
-                                }`}
+                                className={`h-1.5 rounded-full transition-all duration-300 ${idx === currentIndex ? 'w-8 bg-primary' : 'w-2 bg-white/30 hover:bg-white/60'
+                                    }`}
                                 aria-label={`Go to slide ${idx + 1}`}
                             />
                         ))}
@@ -103,9 +102,8 @@ export const FeaturedCarousel = ({ posts }: FeaturedCarouselProps) => {
                 </div>
 
                 {/* Content Overlay */}
-                <div className={`relative z-10 h-full flex flex-col justify-end p-8 md:p-12 transition-all duration-500 transform ${
-                    isTransitioning ? 'translate-y-4 opacity-0' : 'translate-y-0 opacity-100'
-                }`}>
+                <div className={`relative z-10 h-full flex flex-col justify-end p-8 md:p-12 transition-all duration-500 transform ${isTransitioning ? 'translate-y-4 opacity-0' : 'translate-y-0 opacity-100'
+                    }`}>
                     <div className="mb-6">
                         <span className="inline-block px-3 py-1 text-[10px] font-bold text-white uppercase tracking-wider bg-primary/80 backdrop-blur-md rounded-md border border-white/10 mb-4">
                             Featured Article

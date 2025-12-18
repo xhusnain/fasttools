@@ -2,10 +2,10 @@ import { GImage } from "@/ui/gimage";
 
 export const GAuthorBio = () => {
     return (
-        <div className="mt-16 border border-white/10 bg-white/[0.02] relative">
+        <div className="mt-16 border border-border bg-muted/30 relative">
             <div className="p-8 md:p-10 flex flex-col md:flex-row gap-8 items-start">
                 <div className="flex-shrink-0">
-                    <div className="w-20 h-20 rounded-xl bg-backgroundPrimary border border-white/10 flex items-center justify-center overflow-hidden">
+                    <div className="w-20 h-20 rounded-xl bg-background border border-border flex items-center justify-center overflow-hidden">
                         <GImage
                             src="/logo.png"
                             alt="FastTools Logo"

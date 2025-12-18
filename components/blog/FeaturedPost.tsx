@@ -8,7 +8,7 @@ interface FeaturedPostProps {
 
 export const FeaturedPost = ({ post }: FeaturedPostProps) => {
     return (
-        <div className="col-span-1 lg:col-span-2 relative group overflow-hidden rounded-3xl bg-white/5 border border-white/10">
+        <div className="col-span-1 lg:col-span-2 relative group overflow-hidden rounded-3xl bg-card border border-border">
             <Link href={`/blog/${post.slug}`} className="block h-full relative">
                 <div className="absolute inset-0 z-10 bg-gradient-to-t from-black/90 via-black/40 to-transparent" />
 

@@ -48,7 +48,7 @@ const CustomH1 = (props: any) => (
 );
 
 const CustomH2 = (props: any) => (
-    <h2 className="text-foreground leading-tight mb-6 mt-16 border-b border-white/10 pb-4" {...props} />
+    <h2 className="text-foreground leading-tight mb-6 mt-16 border-b border-border pb-4" {...props} />
 );
 
 const CustomH3 = (props: any) => (
@@ -68,18 +68,18 @@ const CustomOL = (props: any) => (
 );
 
 const CustomBlockquote = (props: any) => (
-    <blockquote className="border-l-4 border-blue-500/50 pl-8 py-4 my-12 bg-white/5 rounded-r-xl italic h4 text-muted-foreground leading-relaxed" {...props} />
+    <blockquote className="border-l-4 border-primary/50 pl-8 py-4 my-12 bg-muted/10 rounded-r-xl italic h4 text-muted-foreground leading-relaxed" {...props} />
 );
 
 // CustomTable replaced by GTable
 const CustomTable = GTable;
 
 const CustomTh = (props: any) => (
-    <th className="text-left p-4 text-foreground uppercase tracking-wider text-sm border-b border-white/10 bg-white/5" {...props} />
+    <th className="text-left p-4 text-foreground uppercase tracking-wider text-sm border-b border-border bg-muted/20" {...props} />
 );
 
 const CustomTd = (props: any) => (
-    <td className="p-4 border-b border-white/5 text-muted-foreground text-base" {...props} />
+    <td className="p-4 border-b border-border/50 text-muted-foreground text-base" {...props} />
 );
 
 export const MDXComponents = {

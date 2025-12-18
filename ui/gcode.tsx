@@ -26,9 +26,9 @@ export const GCode = ({ children, className, ...props }: React.HTMLAttributes<HT
     }
 
     return (
-        <div className="relative group my-8 rounded-xl overflow-hidden border border-white/10 bg-[#0A0A0A] shadow-2xl">
+        <div className="relative group my-8 rounded-xl overflow-hidden border border-border bg-card shadow-2xl">
             {/* Mac-style Window Header */}
-            <div className="flex items-center justify-between px-4 py-3 bg-white/[0.03] border-b border-white/5">
+            <div className="flex items-center justify-between px-4 py-3 bg-muted/50 border-b border-border">
                 <div className="flex items-center gap-2">
                     <div className="flex gap-1.5">
                         <div className="w-3 h-3 rounded-full bg-[#FF5F56]" /> {/* Red */}
@@ -50,7 +50,7 @@ export const GCode = ({ children, className, ...props }: React.HTMLAttributes<HT
                         "flex items-center gap-1.5 text-xs font-medium transition-all duration-200 px-2 py-1 rounded-md",
                         isCopied
                             ? "text-emerald-400 bg-emerald-400/10"
-                            : "text-muted-foreground hover:text-white hover:bg-white/10"
+                            : "text-muted-foreground hover:text-foreground hover:bg-muted"
                     )}
                     aria-label="Copy code"
                 >

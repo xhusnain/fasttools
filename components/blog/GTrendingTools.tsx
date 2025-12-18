@@ -56,7 +56,7 @@ export function GTrendingTools({
     if (!displayTools || displayTools.length === 0) return null;
 
     return (
-        <div className={`bg-white/[0.02] border border-white/10 rounded-lg p-4 ${className}`}>
+        <div className={`bg-muted/30 border border-border rounded-lg p-4 ${className}`}>
             <h3 className="text-xs font-mono uppercase tracking-widest text-muted-foreground mb-4 flex items-center gap-2">
                 <span className="w-1.5 h-1.5 rounded-full bg-hotpink animate-pulse" />
                 {title}
@@ -67,7 +67,7 @@ export function GTrendingTools({
                     <Link
                         key={tool.path}
                         href={tool.path}
-                        className="group flex flex-col gap-1 p-3 -mx-3 rounded-md hover:bg-white/5 transition-colors"
+                        className="group flex flex-col gap-1 p-3 -mx-3 rounded-md hover:bg-muted/50 transition-colors"
                     >
                         <span className="text-sm font-bold text-foreground group-hover:text-hotpink transition-colors">
                             {tool.name}

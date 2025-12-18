@@ -15,7 +15,7 @@ export const PostCard = ({ post, className = '', compact = false }: PostCardProp
             className={`group flex flex-col h-full overflow-hidden ${className} transition-all duration-300`}
         >
             {/* Image Container */}
-            <div className={`relative w-full ${compact ? 'aspect-[3/2]' : 'aspect-video'} overflow-hidden rounded-xl bg-card border border-white/5`}>
+            <div className={`relative w-full ${compact ? 'aspect-[3/2]' : 'aspect-video'} overflow-hidden rounded-xl bg-muted border border-border`}>
                 {post.image ? (
                     <GImage
                         src={post.image}
