@@ -223,20 +223,20 @@ export function YoutubeHandleChecker({ className }: YoutubeHandleCheckerProps) {
             )}
 
             {result && (
-                <GCard className={`p-6 bg-card border-border shadow-sm ${result.available ? 'border-green-500' : 'border-orange-500'}`}>
+                <GCard className={`p-6 bg-card border-border shadow-sm ${result.available ? 'border-green-500' : 'border-blue-500'}`}>
                     <div className="flex items-center gap-4">
                         {result.available ? (
                             <div className="h-12 w-12 rounded-full bg-green-500/10 flex items-center justify-center">
                                 <CheckCircle className="h-6 w-6 text-green-500" />
                             </div>
                         ) : (
-                            <div className="h-12 w-12 rounded-full bg-orange-500/10 flex items-center justify-center">
-                                <XCircle className="h-6 w-6 text-orange-500" />
+                            <div className="h-12 w-12 rounded-full bg-blue-500/10 flex items-center justify-center">
+                                <XCircle className="h-6 w-6 text-blue-500" />
                             </div>
                         )}
                         <div className="flex-1">
                             <h3 className="text-lg font-semibold text-foreground">@{result.handle}</h3>
-                            <p className={`text-sm ${result.available ? 'text-green-600' : 'text-orange-600'}`}>
+                            <p className={`text-sm ${result.available ? 'text-green-600' : 'text-blue-600'}`}>
                                 {result.available ? '✓ This handle appears to be available!' : '✗ This handle is already taken'}
                             </p>
                         </div>

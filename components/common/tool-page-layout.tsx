@@ -226,7 +226,7 @@ export function ToolPageLayout({
                             </section>
 
                             {toolContent.proTip && (
-                                <section className="bg-gradient-to-r from-amber-50 to-orange-50 dark:from-amber-950/30 dark:to-orange-950/30 border border-amber-200 dark:border-amber-800 rounded-lg p-6">
+                                <section className="bg-gradient-to-r from-amber-50 to-blue-50 dark:from-amber-950/30 dark:to-blue-950/30 border border-amber-200 dark:border-amber-800 rounded-lg p-6">
                                     <div className="flex items-start gap-4">
                                         <div className="flex-shrink-0">
                                             <div className="p-2 bg-amber-100 dark:bg-amber-900/50 rounded-lg">

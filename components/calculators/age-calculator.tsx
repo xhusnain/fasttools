@@ -318,8 +318,8 @@ Next Birthday: ${result.nextBirthday}`
 
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 <div className="p-4 bg-card border border-border rounded-xl flex items-center gap-3">
-                  <div className="p-2 rounded-full bg-orange-100 dark:bg-orange-900/30">
-                    <Sparkles className="h-5 w-5 text-orange-500" />
+                  <div className="p-2 rounded-full bg-blue-100 dark:bg-blue-900/30">
+                    <Sparkles className="h-5 w-5 text-blue-500" />
                   </div>
                   <div>
                     <div className="text-xs text-muted-foreground font-medium">Alive for</div>

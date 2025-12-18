@@ -43,7 +43,7 @@ export function BMICalculatorPageContent() {
 
         {/* Visual BMI Scale */}
         <div className="mb-8 bg-card border border-border rounded-lg p-6">
-          <div className="relative w-full h-12 bg-gradient-to-r from-blue-400 via-green-400 via-yellow-400 via-orange-400 to-red-500 rounded-lg overflow-hidden mb-6">
+          <div className="relative w-full h-12 bg-gradient-to-r from-blue-400 via-green-400 via-yellow-400 via-blue-400 to-red-500 rounded-lg overflow-hidden mb-6">
             <div className="absolute inset-0 flex items-center justify-between px-2 text-[10px] sm:text-xs font-bold text-white uppercase tracking-wider">
               <span className="bg-black/40 px-2 py-1 rounded z-10">Underweight</span>
               <span className="bg-black/40 px-2 py-1 rounded z-10">Normal</span>
@@ -161,7 +161,7 @@ export function BMICalculatorPageContent() {
                     <td className="p-3 text-right text-muted-foreground">Moderate</td>
                   </tr>
                   <tr>
-                    <td className="p-3 text-orange-600 font-medium">Obese Class I</td>
+                    <td className="p-3 text-blue-600 font-medium">Obese Class I</td>
                     <td className="p-3 text-muted-foreground">30 - 34.9</td>
                     <td className="p-3 text-right text-muted-foreground">High</td>
                   </tr>

@@ -413,7 +413,7 @@ export default function InflationCalculatorPage() {
         description: "Professional inflation calculator with historical CPI data from 1913-2025 for comprehensive economic analysis. Calculate purchasing power, inflation rates, and investment strategies with our advanced CPI calculator.",
         titleSize: "medium",
         descriptionSize: "small",
-        color: "orange"
+        color: "blue"
       }}
       breadcrumbs={[
         { label: "Finance Tools", href: "/finance-tools" },

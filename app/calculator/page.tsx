@@ -61,7 +61,7 @@ const tools = [
     description: "Calculate time differences in hours, minutes, and seconds. Perfect for tracking work hours, event durations, and time intervals.",
     icon: Clock,
     href: "/calculator/time-duration",
-    color: "orange"
+    color: "blue"
   },
   {
     title: "BMI Calculator",
@@ -110,7 +110,7 @@ const tools = [
     description: "Calculate exact age in years, months, and days. Also calculates days until next birthday.",
     icon: Cake,
     href: "/calculator/age-calculator",
-    color: "orange"
+    color: "blue"
   },
   {
     title: "Pregnancy Calculator",
@@ -554,7 +554,7 @@ const toolConfig = createToolConfig({
     description: "Access Online Calculators - Free Finance, Health & Math Tools for everyday use. Get instant, accurate results with no signup required. Updated for 2025.",
     titleSize: "medium",
     descriptionSize: "small",
-    color: "orange"
+    color: "blue"
   },
   content: {
     overview: "Online Calculators - Free Finance, Health & Math Tools are essential for precision and efficiency. Discover our comprehensive collection of free calculation tools in 2025. Our professional-grade calculators cover financial planning, health and fitness, mathematics, science, and everyday calculations. Whether you need a mortgage calculator, BMI calculator, scientific calculator, or currency converter, our tools provide instant, accurate results without registration.",

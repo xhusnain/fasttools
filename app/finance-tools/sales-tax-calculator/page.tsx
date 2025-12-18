@@ -429,7 +429,7 @@ export default function SalesTaxCalculatorPage() {
         description: "Calculate sales tax for all 50 US states with our advanced sales tax calculator. Get accurate tax calculations, state comparisons, business tips, and compliance guidance for optimal tax planning.",
         titleSize: "medium",
         descriptionSize: "small",
-        color: "orange"
+        color: "blue"
       }}
       breadcrumbs={[
         { label: "Finance Tools", href: "/finance-tools" },

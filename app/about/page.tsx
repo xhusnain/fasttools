@@ -116,7 +116,7 @@ export default function AboutPage() {
                 description="We're passionate about digital innovation. With years of experience in the industry, we've established ourselves as leaders in providing high-quality online productivity solutions."
                 titleSize="medium"
                 descriptionSize="small"
-                color="orange"
+                color="blue"
               />
             </div>
 

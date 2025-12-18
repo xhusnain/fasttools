@@ -147,7 +147,7 @@ const toolConfig = createToolConfig({
             </div>
             <div className="p-4 bg-card border border-border rounded-lg">
               <h4 className="font-semibold mb-2 flex items-center gap-2">
-                <Target className="h-4 w-4 text-orange-500" />
+                <Target className="h-4 w-4 text-blue-500" />
                 Competition Level (0-100)
               </h4>
               <p className="text-sm text-muted-foreground">

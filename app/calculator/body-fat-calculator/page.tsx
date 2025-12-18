@@ -184,7 +184,7 @@ export default function BodyFatCalculatorPage() {
         description: "Calculate your body fat percentage with our advanced body fat calculator. Get accurate body composition analysis, fat mass and lean mass, ideal body fat recommendations, and personalized health insights.",
         titleSize: "medium",
         descriptionSize: "small",
-        color: "orange"
+        color: "blue"
       }}
       breadcrumbs={[
         { label: "Calculator", href: "/calculator" },

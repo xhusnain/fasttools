@@ -286,7 +286,7 @@ export default function IPSubnetCalculatorPage() {
             </div>
             <div className="p-4 bg-muted rounded-lg border border-border">
               <h3 className="font-semibold text-foreground mb-2 flex items-center gap-2">
-                <span className="w-2 h-2 bg-orange-500 rounded-full"></span>
+                <span className="w-2 h-2 bg-blue-500 rounded-full"></span>
                 AWS VPC (Cloud)
               </h3>
               <div className="space-y-1 text-sm">

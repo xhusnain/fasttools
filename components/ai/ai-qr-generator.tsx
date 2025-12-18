@@ -959,14 +959,14 @@ END:VCARD`
                   )}
                 </GButton>
                 {bulkLoading && (
-                  <div className="mt-3 p-3 rounded-lg bg-orange-50 dark:bg-orange-950/30 border border-primary/30">
+                  <div className="mt-3 p-3 rounded-lg bg-blue-50 dark:bg-blue-950/30 border border-primary/30">
                     <div className="flex items-center gap-2 mb-2">
                       <LoadingSpinner className="h-4 w-4" />
                       <p className="text-xs font-semibold text-foreground">
                         Generating QR codes... Please wait
                       </p>
                     </div>
-                    <div className="w-full bg-orange-200 dark:bg-orange-900/30 rounded-full h-2">
+                    <div className="w-full bg-blue-200 dark:bg-blue-900/30 rounded-full h-2">
                       <div
                         className="bg-primary h-2 rounded-full transition-all duration-300"
                         style={{
@@ -1090,7 +1090,7 @@ END:VCARD`
           )}
 
           {/* Feature Highlights */}
-          <div className="mt-4 p-3 rounded-lg bg-orange-50 dark:bg-orange-950/30 border border-primary/30">
+          <div className="mt-4 p-3 rounded-lg bg-blue-50 dark:bg-blue-950/30 border border-primary/30">
             <p className="text-xs font-semibold text-center mb-2">
               🎉 All Premium Features FREE
             </p>

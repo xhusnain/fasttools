@@ -255,7 +255,7 @@ export default function FAQPage() {
                                 description="Find answers to common questions about FastTools - your comprehensive free online tools platform. Learn about our services, features, privacy, and more."
                                 titleSize="medium"
                                 descriptionSize="small"
-                                color="orange"
+                                color="blue"
                             />
                         </div>
 

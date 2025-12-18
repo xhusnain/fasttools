@@ -258,7 +258,7 @@ export default function DateDifferencePage() {
         description: "Calculate exact days, weeks, months & years between any two dates. Includes business days, leap years & multiple formats. Free, no signup required!",
         titleSize: "medium",
         descriptionSize: "small",
-        color: "orange"
+        color: "blue"
       }}
       breadcrumbs={[
         { label: "Calculator", href: "/calculator" },

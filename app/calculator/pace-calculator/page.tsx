@@ -192,7 +192,7 @@ export default function PaceCalculatorPage() {
         description: "Calculate running pace, training zones, heart rate zones, race predictions, and VO2 Max with our advanced pace calculator. Perfect for runners, coaches, and serious athletes.",
         titleSize: "medium",
         descriptionSize: "small",
-        color: "orange"
+        color: "blue"
       }}
       breadcrumbs={[
         { label: "Calculator", href: "/calculator" },

@@ -194,7 +194,7 @@ export default function ProductsPage() {
                 description="Welcome to our comprehensive suite of free online tools. We've organized our products into distinct categories to help you find the right tool for any task. Whether you're a developer, a student, a business professional, or just need to get something done, we have a solution for you."
                 titleSize="large"
                 descriptionSize="medium"
-                color="orange"
+                color="blue"
               />
             </div>
 

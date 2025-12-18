@@ -237,7 +237,7 @@ export default function SalaryCalculatorPage() {
         description: "Convert salary amounts across all pay frequencies with our advanced salary calculator. Get precise pay calculations, industry comparisons, negotiation support, and career advancement guidance for optimal financial planning.",
         titleSize: "medium",
         descriptionSize: "small",
-        color: "orange"
+        color: "blue"
       }}
       breadcrumbs={[
         { label: "Finance Tools", href: "/finance-tools" },

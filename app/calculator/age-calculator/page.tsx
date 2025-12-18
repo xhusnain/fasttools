@@ -340,7 +340,7 @@ export default function AgeCalculatorPage() {
         description: "Calculate your exact age, Western & Chinese Zodiac signs, and fun biological stats. Free, accurate, and instant.",
         titleSize: "medium",
         descriptionSize: "small",
-        color: "orange"
+        color: "blue"
       }}
       breadcrumbs={[
         { label: "Calculator", href: "/calculator" },

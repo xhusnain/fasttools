@@ -152,7 +152,7 @@ export default function CalorieCalculatorPage() {
         description: "Calculate your daily calorie needs with our advanced calculator. Get BMR, TDEE, weight management goals & personalized nutrition recommendations.",
         titleSize: "medium",
         descriptionSize: "small",
-        color: "orange"
+        color: "blue"
       }}
       breadcrumbs={[
         { label: "Calculator", href: "/calculator" },

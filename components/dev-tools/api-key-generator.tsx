@@ -6,13 +6,13 @@ import Link from "next/link"
 export function ApiKeyGenerator() {
   return (
     <div>
-      <div className="bg-gradient-to-r from-primary to-orange-600 rounded-lg p-4 sm:p-6 mb-4 sm:mb-6">
+      <div className="bg-gradient-to-r from-primary to-blue-600 rounded-lg p-4 sm:p-6 mb-4 sm:mb-6">
         <div className="text-center">
           <h3 className="text-white font-bold text-sm sm:text-base mb-2">Power Your Apps with Frankfurter</h3>
           <p className="text-white/90 text-xs sm:text-sm mb-4">Get documentation and access from the official provider</p>
           <Link href="https://frankfurter.dev/" target="_blank" rel="noopener noreferrer">
             <GButton
-              className="inline-flex items-center gap-2 bg-white text-foreground px-4 py-2 rounded-lg font-medium text-sm hover:bg-orange-50 transition-colors"
+              className="inline-flex items-center gap-2 bg-white text-foreground px-4 py-2 rounded-lg font-medium text-sm hover:bg-blue-50 transition-colors"
             >
               <span>Visit Frankfurter.dev</span>
               <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">

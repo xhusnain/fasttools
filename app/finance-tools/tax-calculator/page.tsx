@@ -299,7 +299,7 @@ export default function TaxCalculatorPage() {
         description: "Calculate income tax, estimate refunds, and determine salary deductions instantly. Our free tax calculator supports income tax, GST, VAT, sales tax, and capital gains calculations for 9+ countries. Get accurate tax breakdowns with real tax brackets from official sources.",
         titleSize: "medium",
         descriptionSize: "small",
-        color: "orange"
+        color: "blue"
       }}
       breadcrumbs={[
         { label: "Finance Tools", href: "/finance-tools" },

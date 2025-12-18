@@ -796,7 +796,7 @@ Total: ${getCurrencySymbol(currency)}${calculateTotal().toFixed(2)}
               <select
                 value={language}
                 onChange={(e) => setLanguage(e.target.value)}
-                className="border border-orange-300 bg-border text-white rounded-lg px-2 sm:px-3 py-1 sm:py-2 text-xs sm:text-sm focus:outline-none focus:ring-2 focus:ring-orange-500 w-full sm:w-auto min-w-0"
+                className="border border-blue-300 bg-border text-white rounded-lg px-2 sm:px-3 py-1 sm:py-2 text-xs sm:text-sm focus:outline-none focus:ring-2 focus:ring-blue-500 w-full sm:w-auto min-w-0"
               >
                 {languages.map((lang) => (
                   <option key={lang.code} value={lang.code} className="bg-border">
@@ -811,7 +811,7 @@ Total: ${getCurrencySymbol(currency)}${calculateTotal().toFixed(2)}
                 value={companyName}
                 onChange={(e) => setCompanyName(e.target.value)}
                 placeholder={t('invoice.companyName')}
-                className="border border-orange-300 p-2 sm:p-3 text-xl sm:text-2xl lg:text-3xl font-bold text-white bg-transparent text-center placeholder-slate-300 rounded-lg w-full"
+                className="border border-blue-300 p-2 sm:p-3 text-xl sm:text-2xl lg:text-3xl font-bold text-white bg-transparent text-center placeholder-slate-300 rounded-lg w-full"
               />
             </div>
           </div>
@@ -823,25 +823,25 @@ Total: ${getCurrencySymbol(currency)}${calculateTotal().toFixed(2)}
               <GInput
                 value={businessName}
                 onChange={(e) => setBusinessName(e.target.value)}
-                className="border border-orange-300 p-2 text-sm font-medium text-white bg-transparent mb-2 rounded-lg"
+                className="border border-blue-300 p-2 text-sm font-medium text-white bg-transparent mb-2 rounded-lg"
                 placeholder="Your Company"
               />
               <GInput
                 value={businessAddress}
                 onChange={(e) => setBusinessAddress(e.target.value)}
-                className="border border-orange-300 p-2 text-sm text-foreground bg-transparent mb-2 rounded-lg"
+                className="border border-blue-300 p-2 text-sm text-foreground bg-transparent mb-2 rounded-lg"
                 placeholder="Company's Address"
               />
               <GInput
                 value={businessCity}
                 onChange={(e) => setBusinessCity(e.target.value)}
-                className="border border-orange-300 p-2 text-sm text-foreground bg-transparent mb-2 rounded-lg"
+                className="border border-blue-300 p-2 text-sm text-foreground bg-transparent mb-2 rounded-lg"
                 placeholder="City, State Zip"
               />
               <GInput
                 value={businessCountry}
                 onChange={(e) => setBusinessCountry(e.target.value)}
-                className="border border-orange-300 p-2 text-sm text-foreground bg-transparent rounded-lg"
+                className="border border-blue-300 p-2 text-sm text-foreground bg-transparent rounded-lg"
                 placeholder="U.S.A."
               />
             </div>
@@ -850,25 +850,25 @@ Total: ${getCurrencySymbol(currency)}${calculateTotal().toFixed(2)}
               <GInput
                 value={clientName}
                 onChange={(e) => setClientName(e.target.value)}
-                className="border border-orange-300 p-2 text-sm font-medium text-white bg-transparent mb-2 rounded-lg"
+                className="border border-blue-300 p-2 text-sm font-medium text-white bg-transparent mb-2 rounded-lg"
                 placeholder="Your Client's Company"
               />
               <GInput
                 value={clientAddress}
                 onChange={(e) => setClientAddress(e.target.value)}
-                className="border border-orange-300 p-2 text-sm text-foreground bg-transparent mb-2 rounded-lg"
+                className="border border-blue-300 p-2 text-sm text-foreground bg-transparent mb-2 rounded-lg"
                 placeholder="Client's Address"
               />
               <GInput
                 value={clientCity}
                 onChange={(e) => setClientCity(e.target.value)}
-                className="border border-orange-300 p-2 text-sm text-foreground bg-transparent mb-2 rounded-lg"
+                className="border border-blue-300 p-2 text-sm text-foreground bg-transparent mb-2 rounded-lg"
                 placeholder="City, State Zip"
               />
               <GInput
                 value={clientCountry}
                 onChange={(e) => setClientCountry(e.target.value)}
-                className="border border-orange-300 p-2 text-sm text-foreground bg-transparent rounded-lg"
+                className="border border-blue-300 p-2 text-sm text-foreground bg-transparent rounded-lg"
                 placeholder="U.S.A."
               />
             </div>
@@ -882,7 +882,7 @@ Total: ${getCurrencySymbol(currency)}${calculateTotal().toFixed(2)}
                 <GInput
                   value={invoiceNumber}
                   onChange={(e) => setInvoiceNumber(e.target.value)}
-                  className="border border-orange-300 p-1 sm:p-2 text-xs sm:text-sm font-medium text-white bg-transparent rounded-lg w-full"
+                  className="border border-blue-300 p-1 sm:p-2 text-xs sm:text-sm font-medium text-white bg-transparent rounded-lg w-full"
                   placeholder="INV-12"
                 />
               </div>
@@ -893,7 +893,7 @@ Total: ${getCurrencySymbol(currency)}${calculateTotal().toFixed(2)}
                     type="date"
                     value={invoiceDate}
                     onChange={(e) => setInvoiceDate(e.target.value)}
-                    className="border border-orange-300 p-1 sm:p-2 text-xs sm:text-sm text-foreground bg-transparent rounded-lg w-full"
+                    className="border border-blue-300 p-1 sm:p-2 text-xs sm:text-sm text-foreground bg-transparent rounded-lg w-full"
                   />
                   <Calendar className="h-3 w-3 sm:h-4 sm:w-4 text-muted-foreground" />
                 </div>
@@ -905,7 +905,7 @@ Total: ${getCurrencySymbol(currency)}${calculateTotal().toFixed(2)}
                     type="date"
                     value={dueDate}
                     onChange={(e) => setDueDate(e.target.value)}
-                    className="border border-orange-300 p-1 sm:p-2 text-xs sm:text-sm text-foreground bg-transparent rounded-lg w-full"
+                    className="border border-blue-300 p-1 sm:p-2 text-xs sm:text-sm text-foreground bg-transparent rounded-lg w-full"
                   />
                   <Calendar className="h-3 w-3 sm:h-4 sm:w-4 text-muted-foreground" />
                 </div>
@@ -942,7 +942,7 @@ Total: ${getCurrencySymbol(currency)}${calculateTotal().toFixed(2)}
                       <GInput
                         value={item.description}
                         onChange={(e) => updateItem(item.id, "description", e.target.value)}
-                        className="border border-orange-300 p-1 text-xs sm:text-sm text-white bg-transparent w-full rounded-lg"
+                        className="border border-blue-300 p-1 text-xs sm:text-sm text-white bg-transparent w-full rounded-lg"
                         placeholder="Enter item name/description"
                       />
                     </td>
@@ -951,7 +951,7 @@ Total: ${getCurrencySymbol(currency)}${calculateTotal().toFixed(2)}
                         type="number"
                         value={item.quantity}
                         onChange={(e) => updateItem(item.id, "quantity", Number(e.target.value) || 1)}
-                        className="border border-orange-300 p-1 text-xs sm:text-sm text-white bg-transparent text-center w-16 sm:w-20 rounded-lg"
+                        className="border border-blue-300 p-1 text-xs sm:text-sm text-white bg-transparent text-center w-16 sm:w-20 rounded-lg"
                         min="1"
                       />
                     </td>
@@ -960,7 +960,7 @@ Total: ${getCurrencySymbol(currency)}${calculateTotal().toFixed(2)}
                         type="number"
                         value={item.rate}
                         onChange={(e) => updateItem(item.id, "rate", Number(e.target.value) || 0)}
-                        className="border border-orange-300 p-1 text-xs sm:text-sm text-white bg-transparent text-center w-20 sm:w-24 rounded-lg"
+                        className="border border-blue-300 p-1 text-xs sm:text-sm text-white bg-transparent text-center w-20 sm:w-24 rounded-lg"
                         step="0.01"
                       />
                     </td>
@@ -970,7 +970,7 @@ Total: ${getCurrencySymbol(currency)}${calculateTotal().toFixed(2)}
                           type="number"
                           value={item.taxRate}
                           onChange={(e) => updateItem(item.id, "taxRate", Number(e.target.value) || 0)}
-                          className="border border-orange-300 p-1 text-xs sm:text-sm text-white bg-transparent text-center w-12 sm:w-16 rounded-lg"
+                          className="border border-blue-300 p-1 text-xs sm:text-sm text-white bg-transparent text-center w-12 sm:w-16 rounded-lg"
                           min="0"
                           max="100"
                           step="0.01"
@@ -1023,7 +1023,7 @@ Total: ${getCurrencySymbol(currency)}${calculateTotal().toFixed(2)}
                   step="0.01"
                   value={discount}
                   onChange={(e) => setDiscount(parseFloat(e.target.value) || 0)}
-                  className="w-16 sm:w-20 h-6 sm:h-8 text-xs sm:text-sm text-center border border-orange-300 p-1 rounded-lg bg-secondary text-white"
+                  className="w-16 sm:w-20 h-6 sm:h-8 text-xs sm:text-sm text-center border border-blue-300 p-1 rounded-lg bg-secondary text-white"
                 />
               </div>
             </div>
@@ -1058,7 +1058,7 @@ Total: ${getCurrencySymbol(currency)}${calculateTotal().toFixed(2)}
               <textarea
                 value={notes}
                 onChange={(e) => setNotes(e.target.value)}
-                className="border border-orange-300 p-2 sm:p-3 text-xs sm:text-sm text-foreground bg-transparent rounded-lg w-full h-20 sm:h-24 resize-none"
+                className="border border-blue-300 p-2 sm:p-3 text-xs sm:text-sm text-foreground bg-transparent rounded-lg w-full h-20 sm:h-24 resize-none"
                 placeholder="Enter your notes here..."
               />
             </div>
@@ -1067,7 +1067,7 @@ Total: ${getCurrencySymbol(currency)}${calculateTotal().toFixed(2)}
               <textarea
                 value={terms}
                 onChange={(e) => setTerms(e.target.value)}
-                className="border border-orange-300 p-2 sm:p-3 text-xs sm:text-sm text-foreground bg-transparent rounded-lg w-full h-20 sm:h-24 resize-none"
+                className="border border-blue-300 p-2 sm:p-3 text-xs sm:text-sm text-foreground bg-transparent rounded-lg w-full h-20 sm:h-24 resize-none"
                 placeholder="Enter terms and conditions here..."
               />
             </div>
@@ -1107,7 +1107,7 @@ Total: ${getCurrencySymbol(currency)}${calculateTotal().toFixed(2)}
                   <select
                     value={currency}
                     onChange={(e) => setCurrency(e.target.value)}
-                    className="border border-orange-300 bg-border text-white rounded-lg px-2 sm:px-3 py-1 sm:py-2 text-xs sm:text-sm focus:outline-none focus:ring-2 focus:ring-orange-500 w-full sm:w-auto min-w-0"
+                    className="border border-blue-300 bg-border text-white rounded-lg px-2 sm:px-3 py-1 sm:py-2 text-xs sm:text-sm focus:outline-none focus:ring-2 focus:ring-blue-500 w-full sm:w-auto min-w-0"
                   >
                     {currencies.map((curr) => (
                       <option key={curr.code} value={curr.code} className="bg-border">

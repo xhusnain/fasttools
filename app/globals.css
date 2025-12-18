@@ -16,7 +16,7 @@
 }
 
 *:focus-visible {
-  outline: 2px solid #FF7F00;
+  outline: 2px solid #1E90FF;
   outline-offset: 2px;
 }
 
@@ -109,15 +109,15 @@
   --card-foreground: #1A1A1A;
   --popover: #FFFFFF;
   --popover-foreground: #1A1A1A;
-  --primary: #FF7F00;
+  --primary: #1E90FF;
   --primary-foreground: #FFFFFF;
-  --link: #FF7F00;
-  --link-hover: #E67300;
+  --link: #1E90FF;
+  --link-hover: #1873CC;
   --secondary: #F5F5F5;
   --secondary-foreground: #1A1A1A;
   --muted: #E0E0E0;
   --muted-foreground: #525252;
-  --accent: #FF7F00;
+  --accent: #1E90FF;
   --accent-foreground: #FFFFFF;
   --secondary-accent: #10B981;
   --secondary-accent-foreground: #FFFFFF;
@@ -129,26 +129,26 @@
   --heading-accent-foreground: #FFFFFF;
   --heading-accent-border: #E5E7EB;
   --heading-accent-border-hover: #D1D5DB;
-  --hero-title: #EA580C;
-  --hero-title-hover: #C2410C;
+  --hero-title: #1E90FF;
+  --hero-title-hover: #1873CC;
   --hero-description: #374151;
   --border: #E5E7EB;
   --input: #F9FAFB;
-  --ring: #FF7F00;
-  --chart-1: #FF7F00;
-  --chart-2: #FFA040;
-  --chart-3: #FFB866;
-  --chart-4: #FFCC99;
+  --ring: #1E90FF;
+  --chart-1: #1E90FF;
+  --chart-2: #4DA6FF;
+  --chart-3: #80BFFF;
+  --chart-4: #B3D9FF;
   --chart-5: #EF4444;
   --radius: 0.75rem;
   --sidebar: #FFFFFF;
   --sidebar-foreground: #1A1A1A;
-  --sidebar-primary: #FF7F00;
+  --sidebar-primary: #1E90FF;
   --sidebar-primary-foreground: #FFFFFF;
   --sidebar-accent: #F5F5F5;
   --sidebar-accent-foreground: #1A1A1A;
   --sidebar-border: #E5E7EB;
-  --sidebar-ring: #FF7F00;
+  --sidebar-ring: #1E90FF;
 }
 
 .dark {
@@ -158,15 +158,15 @@
   --card-foreground: #ffffff;
   --popover: #0A0A0A;
   --popover-foreground: #ffffff;
-  --primary: #FF7F00;
+  --primary: #1E90FF;
   --primary-foreground: #ffffff;
-  --link: #FF7F00;
-  --link-hover: #FFA040;
+  --link: #1E90FF;
+  --link-hover: #4DA6FF;
   --secondary: #1A1A1A;
   --secondary-foreground: #ffffff;
   --muted: #1A1A1A;
   --muted-foreground: #A3A3A3;
-  --accent: #FF7F00;
+  --accent: #1E90FF;
   --accent-foreground: #ffffff;
   --secondary-accent: #10B981;
   --secondary-accent-foreground: #ffffff;
@@ -178,25 +178,25 @@
   --heading-accent-foreground: #ffffff;
   --heading-accent-border: #10B98133;
   --heading-accent-border-hover: #10B98166;
-  --hero-title: #FB923C;
-  --hero-title-hover: #F97316;
+  --hero-title: #1E90FF;
+  --hero-title-hover: #4DA6FF;
   --hero-description: #D1D5DB;
   --border: #333333;
   --input: #1A1A1A;
-  --ring: #FF7F00;
-  --chart-1: #FF7F00;
-  --chart-2: #FFA040;
-  --chart-3: #FFB866;
-  --chart-4: #FFCC99;
+  --ring: #1E90FF;
+  --chart-1: #1E90FF;
+  --chart-2: #4DA6FF;
+  --chart-3: #80BFFF;
+  --chart-4: #B3D9FF;
   --chart-5: #EF4444;
   --sidebar: #0A0A0A;
   --sidebar-foreground: #ffffff;
-  --sidebar-primary: #FF7F00;
+  --sidebar-primary: #1E90FF;
   --sidebar-primary-foreground: #ffffff;
   --sidebar-accent: #1A1A1A;
   --sidebar-accent-foreground: #ffffff;
   --sidebar-border: #333333;
-  --sidebar-ring: #FF7F00;
+  --sidebar-ring: #1E90FF;
 }
 
 @theme inline {
@@ -448,7 +448,7 @@ html {
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #FF7F00;
+  background: #1E90FF;
 }
 
 .dark ::-webkit-scrollbar-thumb {
@@ -456,7 +456,7 @@ html {
 }
 
 .dark ::-webkit-scrollbar-thumb:hover {
-  background: #FF7F00;
+  background: #1E90FF;
 }
 
 .scrollbar-thin {
@@ -473,24 +473,24 @@ html {
 }
 
 .scrollbar-thin::-webkit-scrollbar-thumb {
-  background: #FF7F00;
+  background: #1E90FF;
   border-radius: 3px;
 }
 
 .scrollbar-thin::-webkit-scrollbar-thumb:hover {
-  background: #FFA040;
+  background: #4DA6FF;
 }
 
 .scrollbar-track-transparent::-webkit-scrollbar-track {
   background: transparent;
 }
 
-.scrollbar-thumb-orange-500::-webkit-scrollbar-thumb {
-  background: #FF7F00;
+.scrollbar-thumb-blue-500::-webkit-scrollbar-thumb {
+  background: #1E90FF;
 }
 
-.hover\:scrollbar-thumb-orange-600:hover::-webkit-scrollbar-thumb {
-  background: #FFA040;
+.hover\:scrollbar-thumb-blue-600:hover::-webkit-scrollbar-thumb {
+  background: #4DA6FF;
 }
 
 .glass-effect {

@@ -1,15 +1,15 @@
 import { Breadcrumbs } from "@/components/common/breadcrumbs"
 import { GHeader } from "@/ui/gheader"
 
-import { 
-  Shield, 
-  Lock, 
-  Eye, 
-  Users, 
-  Cookie, 
-  CheckCircle, 
-  Mail, 
-  Globe, 
+import {
+  Shield,
+  Lock,
+  Eye,
+  Users,
+  Cookie,
+  CheckCircle,
+  Mail,
+  Globe,
   FileText,
   Database,
   Clock,
@@ -58,7 +58,7 @@ export default function PrivacyPolicyPage() {
                 description="Transparent data protection practices for FastTools. Learn how we collect, use, and protect your information while using our free online tools."
                 titleSize="medium"
                 descriptionSize="small"
-                color="orange"
+                color="blue"
               />
               <div className="flex flex-wrap justify-center gap-3 mt-6">
                 <div className="flex items-center gap-2 px-4 py-2 bg-primary/10 border border-border/30 rounded-lg">
@@ -113,7 +113,7 @@ export default function PrivacyPolicyPage() {
                 <p className="text-muted-foreground mb-6 leading-relaxed">
                   We collect information about you in several ways when you use our Site:
                 </p>
-                
+
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
                   <div className="bg-card border border-border rounded-lg p-4">
                     <h3 className="text-lg font-semibold text-heading-accent mb-3 flex items-center gap-2">
@@ -186,7 +186,7 @@ export default function PrivacyPolicyPage() {
                 <p className="text-muted-foreground mb-6 leading-relaxed">
                   We use the information we collect for the following purposes:
                 </p>
-                
+
                 <div className="grid md:grid-cols-2 gap-6">
                   <div className="space-y-4">
                     <div className="flex items-start gap-3">
@@ -333,7 +333,7 @@ export default function PrivacyPolicyPage() {
                   <p className="text-muted-foreground leading-relaxed">
                     Depending on your location, you may have certain rights regarding your personal information:
                   </p>
-                  
+
                   <div className="grid md:grid-cols-2 gap-6">
                     <div className="bg-card border border-border rounded-lg p-4">
                       <h3 className="font-semibold text-heading-accent mb-2 flex items-center gap-2">
@@ -349,7 +349,7 @@ export default function PrivacyPolicyPage() {
                         <li>• Right to object to processing</li>
                       </ul>
                     </div>
-                    
+
                     <div className="bg-card border border-border rounded-lg p-4">
                       <h3 className="font-semibold text-heading-accent mb-2 flex items-center gap-2">
                         <CheckCircle className="h-4 w-4 text-heading-accent" />

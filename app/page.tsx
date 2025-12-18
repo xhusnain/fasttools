@@ -154,7 +154,7 @@ const categories = [
     hoverBorder: "hover:border-border/80",
     iconBg: "bg-primary/20",
     iconColor: "text-foreground",
-    glowColor: "hover:shadow-orange-500/20",
+    glowColor: "hover:shadow-blue-500/20",
     tools: [
       {
         title: "Color Palette Generator",
@@ -1110,7 +1110,7 @@ export default function Home() {
 
 
 
-      {/* Hero Section - Background with Orange Text */}
+      {/* Hero Section - Background with Blue Text */}
       <section className="relative min-h-screen flex items-center justify-center px-4 overflow-hidden bg-background">
         {/* Hero Background Image */}
         <PremiumHeroBackground />

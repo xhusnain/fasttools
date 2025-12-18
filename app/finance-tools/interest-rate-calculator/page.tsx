@@ -275,7 +275,7 @@ export default function InterestRateCalculatorPage() {
         description: "Calculate real interest rates on loans with our advanced interest rate calculator. Get precise rate calculations, amortization analysis, loan optimization, and professional recommendations for optimal financial planning.",
         titleSize: "medium",
         descriptionSize: "small",
-        color: "orange"
+        color: "blue"
       }}
       breadcrumbs={[
         { label: "Finance Tools", href: "/finance-tools" },

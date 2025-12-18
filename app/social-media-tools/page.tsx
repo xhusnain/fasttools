@@ -71,7 +71,7 @@ const socialTools = [
     description: "Check if your desired YouTube channel name is available across all platforms.",
     icon: Search,
     href: "/social-media-tools/channel-checker",
-    color: "orange"
+    color: "blue"
   },
   {
     title: "Instagram Hashtag Counter",

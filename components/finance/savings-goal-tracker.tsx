@@ -297,7 +297,7 @@ ${result.recommendations.map(rec => `• ${rec}`).join('\n')}`
                     placeholder="5000"
                     value={monthlyIncome}
                     onChange={(e) => setMonthlyIncome(e.target.value)}
-                    className="h-9 text-sm border-2 border-orange-300 focus:border-orange-400 focus:ring-2 focus:ring-orange-400/20 bg-background text-foreground placeholder:text-muted-foreground"
+                    className="h-9 text-sm border-2 border-blue-300 focus:border-blue-400 focus:ring-2 focus:ring-blue-400/20 bg-background text-foreground placeholder:text-muted-foreground"
                   />
                 </div>
                 <div className="space-y-2">
@@ -307,7 +307,7 @@ ${result.recommendations.map(rec => `• ${rec}`).join('\n')}`
                     placeholder="25"
                     value={taxRate}
                     onChange={(e) => setTaxRate(e.target.value)}
-                    className="h-9 text-sm border-2 border-orange-300 focus:border-orange-400 focus:ring-2 focus:ring-orange-400/20 bg-background text-foreground placeholder:text-muted-foreground"
+                    className="h-9 text-sm border-2 border-blue-300 focus:border-blue-400 focus:ring-2 focus:ring-blue-400/20 bg-background text-foreground placeholder:text-muted-foreground"
                   />
                 </div>
               </div>
@@ -320,7 +320,7 @@ ${result.recommendations.map(rec => `• ${rec}`).join('\n')}`
                     placeholder="2.5"
                     value={inflationRate}
                     onChange={(e) => setInflationRate(e.target.value)}
-                    className="h-9 text-sm border-2 border-orange-300 focus:border-orange-400 focus:ring-2 focus:ring-orange-400/20 bg-background text-foreground placeholder:text-muted-foreground"
+                    className="h-9 text-sm border-2 border-blue-300 focus:border-blue-400 focus:ring-2 focus:ring-blue-400/20 bg-background text-foreground placeholder:text-muted-foreground"
                   />
                 </div>
                 <div className="space-y-2">
@@ -330,7 +330,7 @@ ${result.recommendations.map(rec => `• ${rec}`).join('\n')}`
                     placeholder="4.0"
                     value={interestRate}
                     onChange={(e) => setInterestRate(e.target.value)}
-                    className="h-9 text-sm border-2 border-orange-300 focus:border-orange-400 focus:ring-2 focus:ring-orange-400/20 bg-background text-foreground placeholder:text-muted-foreground"
+                    className="h-9 text-sm border-2 border-blue-300 focus:border-blue-400 focus:ring-2 focus:ring-blue-400/20 bg-background text-foreground placeholder:text-muted-foreground"
                   />
                 </div>
               </div>
@@ -388,20 +388,20 @@ ${result.recommendations.map(rec => `• ${rec}`).join('\n')}`
                             placeholder="Expense name"
                             value={expense.name}
                             onChange={(e) => updateExpense(expense.id, 'name', e.target.value)}
-                            className="h-6 text-xs border-2 border-orange-300 focus:border-orange-400 focus:ring-2 focus:ring-orange-400/20 bg-background text-foreground placeholder:text-muted-foreground"
+                            className="h-6 text-xs border-2 border-blue-300 focus:border-blue-400 focus:ring-2 focus:ring-blue-400/20 bg-background text-foreground placeholder:text-muted-foreground"
                           />
                           <GInput
                             type="number"
                             placeholder="Amount"
                             value={expense.amount || ''}
                             onChange={(e) => updateExpense(expense.id, 'amount', Number.parseFloat(e.target.value) || 0)}
-                            className="h-6 text-xs border-2 border-orange-300 focus:border-orange-400 focus:ring-2 focus:ring-orange-400/20 bg-background text-foreground placeholder:text-muted-foreground"
+                            className="h-6 text-xs border-2 border-blue-300 focus:border-blue-400 focus:ring-2 focus:ring-blue-400/20 bg-background text-foreground placeholder:text-muted-foreground"
                           />
                         </div>
 
                         <div className="grid grid-cols-3 gap-1">
                           <GSelect value={expense.category} onValueChange={(value) => updateExpense(expense.id, 'category', value)}>
-                            <GSelectTrigger className="h-6 text-xs border-2 border-orange-300 focus:border-orange-400 focus:ring-2 focus:ring-orange-400/20 bg-background text-foreground">
+                            <GSelectTrigger className="h-6 text-xs border-2 border-blue-300 focus:border-blue-400 focus:ring-2 focus:ring-blue-400/20 bg-background text-foreground">
                               <GSelectValue />
                             </GSelectTrigger>
                             <GSelectContent>
@@ -418,7 +418,7 @@ ${result.recommendations.map(rec => `• ${rec}`).join('\n')}`
                           </GSelect>
 
                           <GSelect value={expense.frequency} onValueChange={(value) => updateExpense(expense.id, 'frequency', value)}>
-                            <GSelectTrigger className="h-6 text-xs border-2 border-orange-300 focus:border-orange-400 focus:ring-2 focus:ring-orange-400/20 bg-background text-foreground">
+                            <GSelectTrigger className="h-6 text-xs border-2 border-blue-300 focus:border-blue-400 focus:ring-2 focus:ring-blue-400/20 bg-background text-foreground">
                               <GSelectValue />
                             </GSelectTrigger>
                             <GSelectContent>
@@ -429,7 +429,7 @@ ${result.recommendations.map(rec => `• ${rec}`).join('\n')}`
                           </GSelect>
 
                           <GSelect value={expense.priority} onValueChange={(value) => updateExpense(expense.id, 'priority', value)}>
-                            <GSelectTrigger className="h-6 text-xs border-2 border-orange-300 focus:border-orange-400 focus:ring-2 focus:ring-orange-400/20 bg-background text-foreground">
+                            <GSelectTrigger className="h-6 text-xs border-2 border-blue-300 focus:border-blue-400 focus:ring-2 focus:ring-blue-400/20 bg-background text-foreground">
                               <GSelectValue />
                             </GSelectTrigger>
                             <GSelectContent>
@@ -445,7 +445,7 @@ ${result.recommendations.map(rec => `• ${rec}`).join('\n')}`
                             type="checkbox"
                             checked={expense.isTaxDeductible}
                             onChange={(e) => updateExpense(expense.id, 'isTaxDeductible', e.target.checked)}
-                            className="rounded border-2 border-orange-300"
+                            className="rounded border-2 border-blue-300"
                           />
                           <GLabel className="text-xs text-muted-foreground">Tax Deductible</GLabel>
                         </div>
@@ -521,13 +521,13 @@ ${result.recommendations.map(rec => `• ${rec}`).join('\n')}`
                             placeholder="Goal name"
                             value={goal.name}
                             onChange={(e) => updateGoal(goal.id, 'name', e.target.value)}
-                            className="h-6 text-xs border-2 border-orange-300 focus:border-orange-400 focus:ring-2 focus:ring-orange-400/20 bg-background text-foreground placeholder:text-muted-foreground"
+                            className="h-6 text-xs border-2 border-blue-300 focus:border-blue-400 focus:ring-2 focus:ring-blue-400/20 bg-background text-foreground placeholder:text-muted-foreground"
                           />
                           <GInput
                             type="date"
                             value={goal.targetDate}
                             onChange={(e) => updateGoal(goal.id, 'targetDate', e.target.value)}
-                            className="h-6 text-xs border-2 border-orange-300 focus:border-orange-400 focus:ring-2 focus:ring-orange-400/20 bg-background text-foreground"
+                            className="h-6 text-xs border-2 border-blue-300 focus:border-blue-400 focus:ring-2 focus:ring-blue-400/20 bg-background text-foreground"
                           />
                         </div>
 
@@ -537,17 +537,17 @@ ${result.recommendations.map(rec => `• ${rec}`).join('\n')}`
                             placeholder="Target Amount"
                             value={goal.targetAmount || ''}
                             onChange={(e) => updateGoal(goal.id, 'targetAmount', Number.parseFloat(e.target.value) || 0)}
-                            className="h-6 text-xs border-2 border-orange-300 focus:border-orange-400 focus:ring-2 focus:ring-orange-400/20 bg-background text-foreground placeholder:text-muted-foreground"
+                            className="h-6 text-xs border-2 border-blue-300 focus:border-blue-400 focus:ring-2 focus:ring-blue-400/20 bg-background text-foreground placeholder:text-muted-foreground"
                           />
                           <GInput
                             type="number"
                             placeholder="Current Amount"
                             value={goal.currentAmount || ''}
                             onChange={(e) => updateGoal(goal.id, 'currentAmount', Number.parseFloat(e.target.value) || 0)}
-                            className="h-6 text-xs border-2 border-orange-300 focus:border-orange-400 focus:ring-2 focus:ring-orange-400/20 bg-background text-foreground placeholder:text-muted-foreground"
+                            className="h-6 text-xs border-2 border-blue-300 focus:border-blue-400 focus:ring-2 focus:ring-blue-400/20 bg-background text-foreground placeholder:text-muted-foreground"
                           />
                           <GSelect value={goal.category} onValueChange={(value) => updateGoal(goal.id, 'category', value)}>
-                            <GSelectTrigger className="h-6 text-xs border-2 border-orange-300 focus:border-orange-400 focus:ring-2 focus:ring-orange-400/20 bg-background text-foreground">
+                            <GSelectTrigger className="h-6 text-xs border-2 border-blue-300 focus:border-blue-400 focus:ring-2 focus:ring-blue-400/20 bg-background text-foreground">
                               <GSelectValue />
                             </GSelectTrigger>
                             <GSelectContent>

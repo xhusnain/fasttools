@@ -13,7 +13,7 @@ const toolConfig = createToolConfig({
     description: "Professional-grade scientific calculator with 70+ mathematical functions. Advanced trigonometry, logarithms, statistics, and engineering calculations. Free online calculator for students, engineers, and scientists. Compatible with CASIO, TI, Sharp, and HP calculator functions.",
     titleSize: "medium",
     descriptionSize: "small",
-    color: "orange"
+    color: "blue"
   },
   content: {
     overview: "Scientific Calculator Online Free - 70+ Functions (2025) is an advanced mathematical tool designed for complex calculations beyond basic arithmetic. Unlike standard calculators, scientific calculators include specialized functions for trigonometry, logarithms, exponentials, statistics, and advanced mathematics. Our free online scientific calculator provides all the functionality of professional calculators like CASIO fx-991EX, TI-84 Plus, HP 35s, and Sharp EL-W516X. It's perfect for students, engineers, scientists, and anyone who needs to perform advanced mathematical calculations.",

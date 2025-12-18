@@ -41,7 +41,7 @@ export default function CurrencyAPIDocsPage() {
                   description="Free currency converter API with real-time exchange rates and conversion. Our free currency conversion API and currency api make it easy to integrate currency conversion into your applications with our comprehensive REST API."
                   titleSize="large"
                   descriptionSize="medium"
-                  color="orange"
+                  color="blue"
                 />
               </div>
 
@@ -89,7 +89,7 @@ export default function CurrencyAPIDocsPage() {
 
                 <div className="bg-muted rounded-lg p-3 sm:p-4 md:p-5">
                   <h4 className="font-medium mb-2 sm:mb-3 text-foreground text-xs sm:text-sm">Response:</h4>
-                  <pre className="text-xs sm:text-sm text-muted-foreground overflow-x-auto scrollbar-thin scrollbar-thumb-orange-500 scrollbar-track-transparent hover:scrollbar-thumb-orange-600 scrollbar-thin scrollbar-thumb-orange-500 scrollbar-track-transparent hover:scrollbar-thumb-orange-600">
+                  <pre className="text-xs sm:text-sm text-muted-foreground overflow-x-auto scrollbar-thin scrollbar-thumb-blue-500 scrollbar-track-transparent hover:scrollbar-thumb-blue-600 scrollbar-thin scrollbar-thumb-blue-500 scrollbar-track-transparent hover:scrollbar-thumb-blue-600">
                     {`{
   "amount": 1.0,
   "base": "USD",
@@ -213,7 +213,7 @@ export default function CurrencyAPIDocsPage() {
                   </div>
 
                   <h4 className="font-medium mb-2 sm:mb-3 text-foreground text-xs sm:text-sm">Response:</h4>
-                  <pre className="text-xs sm:text-sm text-muted-foreground overflow-x-auto scrollbar-thin scrollbar-thumb-orange-500 scrollbar-track-transparent hover:scrollbar-thumb-orange-600 bg-muted rounded-lg p-3 sm:p-4 scrollbar-thin scrollbar-thumb-orange-500 scrollbar-track-transparent hover:scrollbar-thumb-orange-600">
+                  <pre className="text-xs sm:text-sm text-muted-foreground overflow-x-auto scrollbar-thin scrollbar-thumb-blue-500 scrollbar-track-transparent hover:scrollbar-thumb-blue-600 bg-muted rounded-lg p-3 sm:p-4 scrollbar-thin scrollbar-thumb-blue-500 scrollbar-track-transparent hover:scrollbar-thumb-blue-600">
                     {`{
   "AUD": "Australian Dollar",
   "BGN": "Bulgarian Lev",
@@ -289,7 +289,7 @@ export default function CurrencyAPIDocsPage() {
                   </div>
 
                   <h4 className="font-medium mb-3 text-foreground text-sm">Response:</h4>
-                  <pre className="text-sm text-muted-foreground overflow-x-auto scrollbar-thin scrollbar-thumb-orange-500 scrollbar-track-transparent hover:scrollbar-thumb-orange-600 bg-muted rounded-lg p-4">
+                  <pre className="text-sm text-muted-foreground overflow-x-auto scrollbar-thin scrollbar-thumb-blue-500 scrollbar-track-transparent hover:scrollbar-thumb-blue-600 bg-muted rounded-lg p-4">
                     {`{
   "amount": 1.0,
   "base": "USD",
@@ -330,7 +330,7 @@ export default function CurrencyAPIDocsPage() {
                   </div>
 
                   <h4 className="font-medium mb-3 text-foreground text-sm">Request Body:</h4>
-                  <pre className="text-sm text-muted-foreground overflow-x-auto scrollbar-thin scrollbar-thumb-orange-500 scrollbar-track-transparent hover:scrollbar-thumb-orange-600 bg-muted rounded-lg p-4 mb-4">
+                  <pre className="text-sm text-muted-foreground overflow-x-auto scrollbar-thin scrollbar-thumb-blue-500 scrollbar-track-transparent hover:scrollbar-thumb-blue-600 bg-muted rounded-lg p-4 mb-4">
                     {`{
   "from": "USD",
   "to": "EUR", 
@@ -339,7 +339,7 @@ export default function CurrencyAPIDocsPage() {
                   </pre>
 
                   <h4 className="font-medium mb-3 text-foreground text-sm">Response:</h4>
-                  <pre className="text-sm text-muted-foreground overflow-x-auto scrollbar-thin scrollbar-thumb-orange-500 scrollbar-track-transparent hover:scrollbar-thumb-orange-600 bg-muted rounded-lg p-4">
+                  <pre className="text-sm text-muted-foreground overflow-x-auto scrollbar-thin scrollbar-thumb-blue-500 scrollbar-track-transparent hover:scrollbar-thumb-blue-600 bg-muted rounded-lg p-4">
                     {`{
   "success": true,
   "data": {
@@ -523,7 +523,7 @@ console.log(convertData.data.convertedAmount);`}
                           className="text-xs"
                         />
                       </div>
-                      <pre className="text-xs text-muted-foreground overflow-x-auto scrollbar-thin scrollbar-thumb-orange-500 scrollbar-track-transparent hover:scrollbar-thumb-orange-600">
+                      <pre className="text-xs text-muted-foreground overflow-x-auto scrollbar-thin scrollbar-thumb-blue-500 scrollbar-track-transparent hover:scrollbar-thumb-blue-600">
                         {`// Get latest rates
 const response = await fetch(
   'https://api.frankfurter.dev/v1/latest?base=USD'
@@ -552,7 +552,7 @@ print(data['rates'])`}
                           id="python-example"
                         />
                       </div>
-                      <pre className="text-xs text-muted-foreground overflow-x-auto scrollbar-thin scrollbar-thumb-orange-500 scrollbar-track-transparent hover:scrollbar-thumb-orange-600">
+                      <pre className="text-xs text-muted-foreground overflow-x-auto scrollbar-thin scrollbar-thumb-blue-500 scrollbar-track-transparent hover:scrollbar-thumb-blue-600">
                         {`import requests
 
 # Get latest rates
@@ -577,7 +577,7 @@ curl "https://api.frankfurter.dev/v1/latest?base=USD"`}
                           id="curl-example"
                         />
                       </div>
-                      <pre className="text-xs text-muted-foreground overflow-x-auto scrollbar-thin scrollbar-thumb-orange-500 scrollbar-track-transparent hover:scrollbar-thumb-orange-600">
+                      <pre className="text-xs text-muted-foreground overflow-x-auto scrollbar-thin scrollbar-thumb-blue-500 scrollbar-track-transparent hover:scrollbar-thumb-blue-600">
                         {`# Get latest rates
 curl "https://api.frankfurter.dev/v1/latest?base=USD"`}
                       </pre>

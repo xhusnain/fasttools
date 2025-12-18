@@ -170,7 +170,7 @@ export function YoutubeKeywordAnalysis({ className }: YoutubeKeywordAnalysisProp
         if (score >= 80) return { grade: 'A', color: 'text-green-500' }
         if (score >= 70) return { grade: 'B', color: 'text-green-600' }
         if (score >= 60) return { grade: 'C', color: 'text-yellow-500' }
-        if (score >= 50) return { grade: 'D', color: 'text-orange-500' }
+        if (score >= 50) return { grade: 'D', color: 'text-blue-500' }
         return { grade: 'F', color: 'text-red-500' }
     }
 

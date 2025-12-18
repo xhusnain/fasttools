@@ -55,7 +55,7 @@ export function TemperatureConverter() {
               placeholder="Enter temperature"
               value={celsius}
               onChange={(e) => handleCelsiusChange(e.target.value)}
-              className="w-full px-3 py-2 border-2 border-primary rounded-md bg-background text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-orange-500/20 focus:border-primary"
+              className="w-full px-3 py-2 border-2 border-primary rounded-md bg-background text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-blue-500/20 focus:border-primary"
             />
           </div>
 
@@ -79,7 +79,7 @@ export function TemperatureConverter() {
               placeholder="Enter temperature"
               value={fahrenheit}
               onChange={(e) => handleFahrenheitChange(e.target.value)}
-              className="w-full px-3 py-2 border-2 border-primary rounded-md bg-background text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-orange-500/20 focus:border-primary"
+              className="w-full px-3 py-2 border-2 border-primary rounded-md bg-background text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-blue-500/20 focus:border-primary"
             />
           </div>
         </div>

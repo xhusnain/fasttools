@@ -335,7 +335,7 @@ export function LinkInBioGenerator() {
                   placeholder="Your Name or Brand"
                   value={profileName}
                   onChange={(e) => setProfileName(e.target.value)}
-                  className="mt-2 h-11 text-base border-2 border-primary focus:border-orange-600 focus:ring-2 focus:ring-orange-200"
+                  className="mt-2 h-11 text-base border-2 border-primary focus:border-blue-600 focus:ring-2 focus:ring-blue-200"
                 />
               </div>
               <div>
@@ -348,7 +348,7 @@ export function LinkInBioGenerator() {
                   placeholder="A short description about you"
                   value={bio}
                   onChange={(e) => setBio(e.target.value)}
-                  className="mt-2 h-11 text-base border-2 border-primary focus:border-orange-600 focus:ring-2 focus:ring-orange-200"
+                  className="mt-2 h-11 text-base border-2 border-primary focus:border-blue-600 focus:ring-2 focus:ring-blue-200"
                 />
               </div>
               <div>
@@ -361,7 +361,7 @@ export function LinkInBioGenerator() {
                   placeholder="https://yourwebsite.com"
                   value={websiteUrl}
                   onChange={(e) => setWebsiteUrl(e.target.value)}
-                  className="mt-2 h-11 text-base border-2 border-primary focus:border-orange-600 focus:ring-2 focus:ring-orange-200"
+                  className="mt-2 h-11 text-base border-2 border-primary focus:border-blue-600 focus:ring-2 focus:ring-blue-200"
                 />
               </div>
               <div>
@@ -374,7 +374,7 @@ export function LinkInBioGenerator() {
                   placeholder="Footer text (e.g., © 2024 Your Name)"
                   value={footer}
                   onChange={(e) => setFooter(e.target.value)}
-                  className="mt-2 h-11 text-base border-2 border-primary focus:border-orange-600 focus:ring-2 focus:ring-orange-200"
+                  className="mt-2 h-11 text-base border-2 border-primary focus:border-blue-600 focus:ring-2 focus:ring-blue-200"
                 />
               </div>
             </div>
@@ -566,7 +566,7 @@ export function LinkInBioGenerator() {
                 <select
                   value={selectedPlatform}
                   onChange={(e) => setSelectedPlatform(e.target.value)}
-                  className="flex-1 h-11 px-3 rounded-lg border-2 border-primary focus:border-orange-600 focus:ring-2 focus:ring-orange-200 bg-background text-foreground"
+                  className="flex-1 h-11 px-3 rounded-lg border-2 border-primary focus:border-blue-600 focus:ring-2 focus:ring-blue-200 bg-background text-foreground"
                 >
                   <option value="social">Social Media</option>
                   <option value="email">Email</option>
@@ -575,7 +575,7 @@ export function LinkInBioGenerator() {
                 <GButton
                   variant="outline"
                   onClick={() => setShowAddDropdown(!showAddDropdown)}
-                  className="h-11 px-4 border-2 border-primary hover:border-orange-600"
+                  className="h-11 px-4 border-2 border-primary hover:border-blue-600"
                 >
                   <Plus className="h-4 w-4 mr-2" />
                   Add {selectedPlatform === "custom" ? "Link" : selectedPlatform === "social" ? "Social" : "Email"}
@@ -674,7 +674,7 @@ export function LinkInBioGenerator() {
                           value={link.title}
                           onChange={(e) => updateLink(link.id, "title", e.target.value)}
                           placeholder="Link title"
-                          className="mt-1 h-10 text-sm border-2 border-primary focus:border-orange-600 focus:ring-2 focus:ring-orange-200"
+                          className="mt-1 h-10 text-sm border-2 border-primary focus:border-blue-600 focus:ring-2 focus:ring-blue-200"
                         />
                       </div>
                       <div>
@@ -683,7 +683,7 @@ export function LinkInBioGenerator() {
                           value={link.url}
                           onChange={(e) => updateLink(link.id, "url", e.target.value)}
                           placeholder="https://example.com"
-                          className="mt-1 h-10 text-sm border-2 border-primary focus:border-orange-600 focus:ring-2 focus:ring-orange-200"
+                          className="mt-1 h-10 text-sm border-2 border-primary focus:border-blue-600 focus:ring-2 focus:ring-blue-200"
                         />
                       </div>
                     </div>
