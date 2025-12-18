@@ -5,7 +5,6 @@ import { GCode } from "@/ui/gcode";
 import { GTable } from "@/ui/gtable";
 import { GChecklist } from "@/ui/gchecklist";
 import { GDynamicYear } from "@/ui/g-dynamic-year";
-import { GEnterpriseCTA } from "@/ui/g-enterprise-cta";
 
 const CustomLink = (props: any) => {
     const href = props.href;
@@ -100,6 +99,5 @@ export const MDXComponents = {
     GCode,
     GTable,
     GChecklist,
-    GEnterpriseCTA,
     DynamicYear: GDynamicYear,
 };
