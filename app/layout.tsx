@@ -44,6 +44,14 @@ export const metadata = {
     title: "FastTools",
     description: "FastTools provides 1000+ free online tools and expert articles: PDF tools, AI generators, calculators, developer utilities, and a tech blog with in-depth tutorials. 100% free, secure local processing, and works on all devices.",
     path: "/",
+    icons: {
+      icon: [
+        { url: "/icon.png", type: "image/png" },
+      ],
+      apple: [
+        { url: "/apple-icon.png" },
+      ],
+    },
   }),
 }
 

@@ -55,6 +55,7 @@ export interface MetadataOptions {
     howToSteps?: string[]
     toolName?: string
     breadcrumbs?: BreadcrumbItem[]
+    icons?: Metadata['icons']
 }
 
 
@@ -184,6 +185,7 @@ export function createMetadata(options: MetadataOptions): Metadata & { softwareS
                 follow: false,
             }
         }),
+        ...(options.icons && { icons: options.icons }),
         // Manifest is handled by app/manifest.ts but we can link it here if needed, 
         // though Next.js 13+ with manifest.ts handles the <link rel="manifest"> automatically.
         ...(schemas.length > 0 && {
