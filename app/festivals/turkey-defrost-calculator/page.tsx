@@ -3,6 +3,7 @@ import { ToolPageLayout } from "@/components/common/tool-page-layout"
 import { createToolConfig } from "@/lib/create-tool-config"
 import { getCurrentYear } from "@/lib/utils"
 import { Calendar, ThermometerSnowflake, Clock } from "lucide-react"
+import { ChristmasTheme } from "@/components/festivals/christmas-theme"
 
 const toolConfig = createToolConfig({
     toolName: "Turkey Defrosting Deadline Calculator",
@@ -13,11 +14,11 @@ const toolConfig = createToolConfig({
     keywords: [
         "turkey defrost calculator", "how long to defrost turkey", "when to take turkey out of freezer",
         "turkey defrost time per lb", "emergency turkey defrost", "christmas turkey calculator",
-        "thanksgiving turkey defrost tool", "frozen turkey thaw time"
+        "thanksgiving turkey defrost tool", "frozen turkey thaw time", "turkey thawing time chart"
     ],
 
     header: {
-        title: "Turkey Defrosting Deadline Calculator",
+        title: "🦃 Turkey Defrosting Deadline Calculator",
         description: "The #1 holiday panic solver. Enter your turkey's weight and dinner time to find out exactly when to move it to the fridge.",
         titleSize: "medium",
         descriptionSize: "small",
@@ -42,7 +43,9 @@ const toolConfig = createToolConfig({
             "Precise Timing: Calculates thaw time based on weight exact to the hour.",
             "Smart Buffer: Automatically accounts for cooking and resting time (approx 5 hours).",
             "Calendar Integration: One-click export to Google/Apple Calendar so you get a notification.",
-            "Dual Methods: Supports both slow fridge thawing and rapid cold water thawing."
+            "Dual Methods: Supports both slow fridge thawing and rapid cold water thawing.",
+            "Urgency Indicators: See at a glance if you're running out of time.",
+            "Holiday Presets: Quick buttons for Thanksgiving, Christmas, and New Year's dinner."
         ],
 
         useCases: [
@@ -110,5 +113,9 @@ const toolConfig = createToolConfig({
 export const metadata = toolConfig.metadata
 
 export default function TurkeyDefrostPage() {
-    return <ToolPageLayout {...toolConfig.getLayoutProps(<TurkeyDefrostCalculator />)} />
+    return (
+        <ChristmasTheme>
+            <ToolPageLayout {...toolConfig.getLayoutProps(<TurkeyDefrostCalculator />)} />
+        </ChristmasTheme>
+    )
 }
