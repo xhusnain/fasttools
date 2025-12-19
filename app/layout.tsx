@@ -4,6 +4,7 @@ import { Header } from "@/components/common/header"
 import { Footer } from "@/components/common/footer"
 import { CookieConsent } from "@/components/common/cookie-consent"
 import { ThemeProvider } from "@/components/common/theme-provider"
+import { WinterSnowfall } from "@/components/common/winter-snowfall"
 import Script from "next/script"
 import { env } from "@/config/env"
 import { createMetadata, globalViewport, getWebsiteSchema } from "@/lib/metadata-base"
@@ -198,6 +199,7 @@ export default function RootLayout({
             Skip to main content
           </a>
           <Header />
+          <WinterSnowfall />
           <main id="main-content" role="main">
             {children}
           </main>

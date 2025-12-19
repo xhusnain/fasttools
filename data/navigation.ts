@@ -31,7 +31,8 @@ import {
     Calendar,
     Box,
     Crop,
-    Eye
+    Eye,
+    ThermometerSnowflake
 } from "lucide-react"
 
 export interface NavItem {
@@ -278,6 +279,18 @@ export const navigationConfig: MegaMenuSection[] = [
                     { title: "Keyword Density", href: "/seo-tools/keyword-density", icon: BarChart, description: "Checker" },
                     { title: "Lorem Ipsum", href: "/seo-tools/lorem-ipsum", icon: FileText, description: "Placeholder" },
                     { title: "Blog Titles", href: "/seo-tools/blog-titles", icon: Type, description: "Ideas" },
+                ]
+            }
+        ]
+    },
+    {
+        title: "Festivals",
+        categories: [
+            {
+                title: "Christmas",
+                items: [
+                    { title: "Christmas Fonts", href: "/festivals/christmas-font-converter", icon: Sparkles, description: "Festive text styles" },
+                    { title: "Turkey Defrost Calc", href: "/festivals/turkey-defrost-calculator", icon: ThermometerSnowflake, description: "Thaw deadline" },
                 ]
             }
         ]
