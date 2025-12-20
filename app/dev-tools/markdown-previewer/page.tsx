@@ -5,7 +5,7 @@ import { createToolConfig } from "@/lib/create-tool-config"
 const toolConfig = createToolConfig({
   toolName: "Markdown Previewer",
   description: "Free online Markdown previewer with live preview. Edit and preview Markdown in real-time with GitHub Flavored Markdown support. Best Markdown editor for README files and documentation.",
-  metaTitle: "Markdown Previewer | Free Online Markdown Editor with Live Preview",
+  metaTitle: "Markdown Editor - Edit & Preview Live",
   metaDescription: "Free online Markdown previewer with live preview. Edit and preview Markdown in real-time with GitHub Flavored Markdown support. Best Markdown editor for README files and documentation.",
   path: "/dev-tools/markdown-previewer",
 

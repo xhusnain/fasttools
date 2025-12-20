@@ -8,9 +8,9 @@ import {
 import { getCurrentYear } from "@/lib/utils"
 
 const toolConfig = createToolConfig({
-  toolName: "Instagram Hashtag Counter",
+  toolName: "Hashtag Counter - Instagram Hashtag Generator",
   description: "Free Instagram hashtag counter, generator & extractor tool. Count hashtags from posts, extract hashtags & generate AI-powered hashtags for better reach.",
-  metaTitle: `Instagram Hashtag Generator & Counter | Free Hashtag Tool ${getCurrentYear()}`,
+  metaTitle: "Hashtag Counter - Instagram Hashtag Generator",
   metaDescription: "Free Instagram hashtag counter, generator & extractor tool. Count hashtags from posts, extract hashtags & generate AI-powered hashtags for better reach.",
   path: "/social-media-tools/hashtag-counter",
   keywords: [
@@ -26,7 +26,7 @@ const toolConfig = createToolConfig({
   ],
 
   header: {
-    title: "Instagram AI Hashtag Generator & Counter",
+    title: "Hashtag Counter - Instagram Hashtag Generator",
     description: "Count hashtags from Instagram posts, extract hashtags from captions, and generate AI-powered hashtags for better reach and engagement on social media. Perfect hashtag counter tool for calculating conversions and optimizing social media performance.",
     titleSize: "medium",
     descriptionSize: "small",
@@ -180,7 +180,7 @@ const toolConfig = createToolConfig({
 
 export const metadata = {
   ...toolConfig.metadata,
-  title: "Instagram AI Hashtag Generator & Counter (2025)"
+  title: "Hashtag Counter - Instagram Hashtag Generator"
 }
 
 export default function HashtagCounterPage() {

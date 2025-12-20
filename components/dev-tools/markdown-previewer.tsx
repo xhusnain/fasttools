@@ -47,7 +47,7 @@ export function MarkdownPreviewer() {
           <GTextarea
             value={markdown}
             onChange={(e) => setMarkdown(e.target.value)}
-            className="min-h-96 font-mono text-sm border-2 border-orange-300 focus:border-primary"
+            className="min-h-96 font-mono text-sm border-2 border-blue-300 focus:border-primary"
             placeholder="Type your markdown here..."
           />
         </div>

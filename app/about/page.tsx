@@ -17,7 +17,6 @@ export const metadata = createMetadata({
   title: "About FastTools",
   description: "Discover FastTools, the comprehensive free online tools platform with 1000+ AI, converter, calculator, SEO and productivity utilities.",
   path: "/about",
-  includeSchema: false // We provide custom schema below
 })
 
 export default function AboutPage() {
@@ -117,7 +116,7 @@ export default function AboutPage() {
                 description="We're passionate about digital innovation. With years of experience in the industry, we've established ourselves as leaders in providing high-quality online productivity solutions."
                 titleSize="medium"
                 descriptionSize="small"
-                color="orange"
+                color="blue"
               />
             </div>
 

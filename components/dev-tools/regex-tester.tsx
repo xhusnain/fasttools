@@ -383,7 +383,7 @@ puts replaced`
               placeholder="e.g., \d{3}-\d{3}-\d{4}"
               value={pattern}
               onChange={(e) => handlePatternChange(e.target.value)}
-              className="font-mono pr-10 border-2 border-orange-300 focus:border-primary"
+              className="font-mono pr-10 border-2 border-blue-300 focus:border-primary"
             />
             <GButton
               size="sm"
@@ -403,7 +403,7 @@ puts replaced`
               placeholder="e.g., g, gi, gim"
               value={flags}
               onChange={(e) => handleFlagsChange(e.target.value)}
-              className="font-mono flex-1 border-2 border-orange-300 focus:border-primary"
+              className="font-mono flex-1 border-2 border-blue-300 focus:border-primary"
             />
             <GButton size="sm" onClick={openExplanation} className="flex-shrink-0 gap-1.5">
               <Lightbulb className="h-4 w-4" />
@@ -459,7 +459,7 @@ puts replaced`
               placeholder="Enter text to test against your regex..."
               value={testString}
               onChange={(e) => handleTestStringChange(e.target.value)}
-              className="min-h-32 font-mono text-sm border-2 border-orange-300 focus:border-primary"
+              className="min-h-32 font-mono text-sm border-2 border-blue-300 focus:border-primary"
               style={{ wordBreak: 'break-all', overflowWrap: 'anywhere', whiteSpace: 'normal' }}
             />
           </div>
@@ -566,7 +566,7 @@ puts replaced`
               placeholder="Enter text to test against your regex..."
               value={testString}
               onChange={(e) => handleTestStringChange(e.target.value)}
-              className="min-h-24 font-mono text-sm border-2 border-orange-300 focus:border-primary"
+              className="min-h-24 font-mono text-sm border-2 border-blue-300 focus:border-primary"
               style={{ wordBreak: 'break-all', overflowWrap: 'anywhere', whiteSpace: 'normal' }}
             />
           </div>
@@ -580,7 +580,7 @@ puts replaced`
               placeholder="Replacement string (use $1, $2 for groups)"
               value={replaceString}
               onChange={(e) => handleReplaceStringChange(e.target.value)}
-              className="font-mono border-2 border-orange-300 focus:border-primary"
+              className="font-mono border-2 border-blue-300 focus:border-primary"
             />
             <p className="text-xs text-muted-foreground">
               Use $1, $2, etc. for capture groups. Use $& for full match.

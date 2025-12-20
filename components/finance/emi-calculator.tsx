@@ -234,7 +234,7 @@ export function EMICalculator() {
                 value={loanAmount}
                 onChange={(e) => setLoanAmount(e.target.value)}
                 placeholder="Enter loan amount"
-                className="h-10 sm:h-12 text-sm sm:text-base bg-card border-border text-foreground focus:border-primary focus:ring-orange-500"
+                className="h-10 sm:h-12 text-sm sm:text-base bg-card border-border text-foreground focus:border-primary focus:ring-blue-500"
               />
               <div className="text-xs text-muted-foreground">
                 Range: ₹1L - ₹10Cr
@@ -253,7 +253,7 @@ export function EMICalculator() {
                 value={interestRate}
                 onChange={(e) => setInterestRate(e.target.value)}
                 placeholder="Enter interest rate"
-                className="h-10 sm:h-12 text-sm sm:text-base bg-card border-border text-foreground focus:border-primary focus:ring-orange-500"
+                className="h-10 sm:h-12 text-sm sm:text-base bg-card border-border text-foreground focus:border-primary focus:ring-blue-500"
               />
               <div className="text-xs text-muted-foreground">
                 Range: 3% - 25%
@@ -271,7 +271,7 @@ export function EMICalculator() {
                 value={loanTenure}
                 onChange={(e) => setLoanTenure(e.target.value)}
                 placeholder="Enter loan tenure"
-                className="h-10 sm:h-12 text-sm sm:text-base bg-card border-border text-foreground focus:border-primary focus:ring-orange-500"
+                className="h-10 sm:h-12 text-sm sm:text-base bg-card border-border text-foreground focus:border-primary focus:ring-blue-500"
               />
               <div className="text-xs text-muted-foreground">
                 Range: 1 - 30 years

@@ -4,7 +4,7 @@ import { createMetadata } from "@/lib/metadata-base"
 import { Code, Globe, Calculator, ArrowRight, FileText, DollarSign, Percent, Users } from "lucide-react"
 import type { Metadata } from "next"
 
-const TOOL_TITLE = "Invoice Generator | Free Create Global Invoices"
+const TOOL_TITLE = "Invoice Generator - Create Professional Invoices Free"
 const TOOL_NAME = "Invoice Generator"
 
 const baseMetadata = createMetadata({

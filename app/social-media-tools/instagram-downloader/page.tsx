@@ -1,15 +1,15 @@
 import { ToolPageLayout } from "@/components/common/tool-page-layout"
 import { createToolConfig } from "@/lib/create-tool-config"
 import {
- X, CheckCircle2
+  X, CheckCircle2
 } from "lucide-react"
 import { getCurrentYear } from "@/lib/utils"
-import {InstagramDownloader} from "@/components/social-media/instagram-downloader/instagram-downloader";
+import { InstagramDownloader } from "@/components/social-media/instagram-downloader/instagram-downloader";
 
 const toolConfig = createToolConfig({
-  toolName: "Instagram Downloader",
+  toolName: "Instagram Downloader - Save Videos & Reels",
   description: "Download Instagram posts, reels, and images in HD quality for free. Fast, secure, works on all devices. Perfect for creators and marketers.",
-  metaTitle: "FastTools - Instagram Downloader | Free HD Videos & Images",
+  metaTitle: "Instagram Downloader - Save Videos & Reels",
   metaDescription: "FastTools Instagram Downloader - Download Instagram posts, reels, and images in HD quality for free. Fast, secure, works on all devices. Perfect for creators and marketers.",
   path: "/social-media-tools/instagram-downloader",
   keywords: [
@@ -36,7 +36,7 @@ const toolConfig = createToolConfig({
   ],
 
   header: {
-    title: "Instagram Downloader – HD Videos & Images",
+    title: "Instagram Downloader - Save Videos & Reels",
     description: "Download Instagram posts, reels, and images in HD quality for free. Fast, secure, and easy-to-use online Instagram downloader for videos and images. Works on PC, Android, iPhone, and all devices. Perfect for creators, marketers, and social media enthusiasts.",
     titleSize: "medium",
     descriptionSize: "small",

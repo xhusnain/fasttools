@@ -161,7 +161,7 @@ export default function FinanceCalculatorPage() {
       }
       toolContent={toolContent}
       expectedMetadata={{
-        title: "Finance Calculator | Free Advanced TVM Calculator",
+        title: "Finance Calculator - TVM & Advanced Analysis Free",
         description: "Professional finance calculator for time value of money calculations. Calculate FV, PV, PMT, I/Y, and N with amortization schedules and investment analysis.",
         path: "/finance-tools/finance-calculator"
       }}

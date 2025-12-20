@@ -4,7 +4,7 @@ import PregnancyCalculator from "@/components/health/pregnancy-calculator"
 import { createMetadata } from "@/lib/metadata-base"
 
 const baseMetadata = createMetadata({
-  title: "Pregnancy Calculator | Free Online Tracking Tool",
+  title: "Pregnancy Calculator - Track Your Due Date",
   description:
     "Track your pregnancy with our comprehensive pregnancy calculator. Get due date estimates, gestational age, weight gain recommendations, and trimester guidance.",
   path: "/calculator/pregnancy-calculator",

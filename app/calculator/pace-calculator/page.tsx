@@ -4,7 +4,7 @@ import PaceCalculator from "@/components/calculators/pace-calculator"
 import { createMetadata } from "@/lib/metadata-base"
 
 const baseMetadata = createMetadata({
-  title: "Pace Calculator | Free Advanced Running Pace Calculator",
+  title: "Pace Calculator - Running Speed & Pace",
   description:
     "Calculate running pace, training zones, heart rate zones, race predictions & VO2 Max. Perfect for runners, coaches & athletes.",
   path: "/calculator/pace-calculator",
@@ -192,7 +192,7 @@ export default function PaceCalculatorPage() {
         description: "Calculate running pace, training zones, heart rate zones, race predictions, and VO2 Max with our advanced pace calculator. Perfect for runners, coaches, and serious athletes.",
         titleSize: "medium",
         descriptionSize: "small",
-        color: "orange"
+        color: "blue"
       }}
       breadcrumbs={[
         { label: "Calculator", href: "/calculator" },

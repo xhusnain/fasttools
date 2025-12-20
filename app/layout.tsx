@@ -4,6 +4,7 @@ import { Header } from "@/components/common/header"
 import { Footer } from "@/components/common/footer"
 import { CookieConsent } from "@/components/common/cookie-consent"
 import { ThemeProvider } from "@/components/common/theme-provider"
+import { WinterSnowfall } from "@/components/common/winter-snowfall"
 import Script from "next/script"
 import { env } from "@/config/env"
 import { createMetadata, globalViewport, getWebsiteSchema } from "@/lib/metadata-base"
@@ -15,22 +16,44 @@ export const viewport = globalViewport
 
 export const metadata = {
   metadataBase: new URL("https://www.fasttools.store"),
+  title: {
+    default: "FastTools - 1000+ Free Online Tools",
+    template: "%s | FastTools",
+  },
+  description: "FastTools provides 1000+ free online tools and expert articles: PDF tools, AI generators, calculators, developer utilities, and a tech blog with in-depth tutorials. 100% free, secure local processing, and works on all devices.",
+  authors: [{ name: "FastTools Team", url: "https://www.fasttools.store" }],
+  robots: {
+    index: true,
+    follow: true,
+  },
+  verification: {
+    google: "l2XEjZ8SEN_FD96ft9mIUW8cPiLW4mDbX6wZabF-xv0",
+    yandex: "242a8cf232328714",
+    me: ["support@fasttools.store"],
+    other: {
+      "msvalidate.01": "DE0A07DC9E742C4C8E795D7C99EF238B",
+      "p:domain_verify": "603c992f6d70753cf89c1a0141990c73",
+      "facebook-domain-verification": "m4jw5d6c1jsteghq2xo00wflvif79x",
+      "google-adsense-account": "ca-pub-6296569221534302",
+    },
+  },
+  twitter: {
+    card: "summary_large_image",
+    creator: "@ZamanIsmail7",
+  },
   ...createMetadata({
     title: "FastTools",
-    description: "FastTools provides 1000+ free online tools: PDF tools (compress, convert, sign, merge), image tools (background remover, blur, OCR), calculators (BMI, loan, tax), AI generators, social media tools, SEO tools, converters, and developer utilities. 100% free, no registration, works on all devices.",
+    description: "FastTools provides 1000+ free online tools and expert articles: PDF tools, AI generators, calculators, developer utilities, and a tech blog with in-depth tutorials. 100% free, secure local processing, and works on all devices.",
     path: "/",
+    icons: {
+      icon: [
+        { url: "/icon.png", type: "image/png" },
+      ],
+      apple: [
+        { url: "/apple-icon.png" },
+      ],
+    },
   }),
-  manifest: "/manifest.json",
-  icons: {
-    icon: [
-      { url: '/favicon.ico' },
-      { url: '/favicon.svg', type: 'image/svg+xml' },
-      { url: '/favicon-96x96.png', type: 'image/png', sizes: '96x96' }
-    ],
-    apple: [
-      { url: '/apple-touch-icon.png', sizes: '180x180', type: 'image/png' }
-    ]
-  }
 }
 
 export default function RootLayout({
@@ -52,7 +75,7 @@ export default function RootLayout({
       description: "FastTools professional logo with modern FT symbol and blue gradient",
     },
     image: "https://www.fasttools.store/banner.png",
-    description: "FastTools offers 1000+ free online tools including AI generators, converters, calculators, SEO tools, and productivity utilities. Fast, accurate, easy to use, no registration required.",
+    description: "FastTools offers 1000+ free online tools and a comprehensive tech blog featuring AI generators, converters, calculators, and expert development guides. Fast, accurate, secure, and always free.",
     foundingDate: "2024",
     sameAs: [
       "https://x.com/ZamanIsmail7",
@@ -134,31 +157,24 @@ export default function RootLayout({
       <head>
         {/* Resource Hints for Performance */}
         <link rel="preconnect" href="https://www.googletagmanager.com" />
-        <link rel="preconnect" href="https://static.cloudflareinsights.com" />
-        <link rel="dns-prefetch" href="https://www.google-analytics.com" />
+
+        {/* Favicon and Icons */}
+
+
+
       </head>
       <body className="bg-background font-sans text-foreground">
 
         {env.isProduction && (
           <>
-            <Script
-              src="https://www.googletagmanager.com/gtag/js?id=G-4G804HZ22C"
-              strategy="afterInteractive"
-            />
-            <Script id="google-analytics" strategy="afterInteractive">
-              {`
-                window.dataLayer = window.dataLayer || [];
-                function gtag(){dataLayer.push(arguments);}
-                gtag('js', new Date());
-                gtag('config', 'G-4G804HZ22C');
-              `}
-            </Script>
+
             <Script
               async
               src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6296569221534302"
               crossOrigin="anonymous"
-              strategy="afterInteractive"
+              strategy="lazyOnload"
             />
+
           </>
         )}
 
@@ -183,6 +199,7 @@ export default function RootLayout({
             Skip to main content
           </a>
           <Header />
+          <WinterSnowfall />
           <main id="main-content" role="main">
             {children}
           </main>

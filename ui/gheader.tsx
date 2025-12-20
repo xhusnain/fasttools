@@ -18,7 +18,7 @@ export function GHeader({
   titleSize = 'small',
   descriptionSize = 'small',
   centered = true,
-  color = 'orange',
+  color = 'blue',
   as: Component = 'h1',
   className
 }: GHeaderProps) {

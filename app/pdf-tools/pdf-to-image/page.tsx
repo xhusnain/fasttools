@@ -5,7 +5,7 @@ import { createToolConfig } from "@/lib/create-tool-config"
 const toolConfig = createToolConfig({
   toolName: "PDF to Image Converter",
   description: "Convert PDF pages to JPG, PNG, or WebP images. High-quality extraction with bulk download support for all pages. Free, unlimited, browser-based.",
-  metaTitle: "Free PDF to Image Converter - Convert PDF to JPG, PNG, WebP",
+  metaTitle: "PDF to Image - Convert PDF to JPG/PNG Free",
   metaDescription: "Convert PDF pages to JPG, PNG, or WebP images online free. High-quality extraction with bulk download support. Secure, browser-based processing.",
   path: "/pdf-tools/pdf-to-image",
 

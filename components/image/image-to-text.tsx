@@ -8,7 +8,7 @@ import { GCard } from "@/ui/gcard"
 
 import { Upload, Copy, Check, FileText, RotateCcw } from "lucide-react"
 import { LoadingSpinner } from "@/components/common/loading-spinner"
-import Tesseract from "tesseract.js"
+
 
 export function ImageToText() {
   const [image, setImage] = useState<string | null>(null)
@@ -30,6 +30,7 @@ export function ImageToText() {
       setProgress(0)
 
       try {
+        const Tesseract = (await import("tesseract.js")).default
         const result = await Tesseract.recognize(imageUrl, "eng", {
           logger: (m) => {
             if (m.status === "recognizing text") {

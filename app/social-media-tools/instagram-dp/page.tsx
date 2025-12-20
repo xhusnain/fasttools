@@ -3,9 +3,9 @@ import { ToolPageLayout } from "@/components/common/tool-page-layout"
 import { createToolConfig } from "@/lib/create-tool-config"
 
 const toolConfig = createToolConfig({
-  toolName: "Instagram DP Viewer",
+  toolName: "Instagram DP Viewer - View Profile Pictures",
   description: "View and download Instagram profile pictures in HD quality. Free Instagram DP viewer tool for public accounts. No login required!",
-  metaTitle: "Instagram DP Viewer | Free View & Download Profile Pictures",
+  metaTitle: "Instagram DP Viewer - View Profile Pictures",
   metaDescription: "FastTools Instagram DP Viewer - View and download Instagram profile pictures in HD quality. Free Instagram DP viewer tool for public accounts.",
   path: "/social-media-tools/instagram-dp",
   keywords: [
@@ -16,7 +16,7 @@ const toolConfig = createToolConfig({
   ],
 
   header: {
-    title: "Instagram DP Viewer",
+    title: "Instagram DP Viewer - View Profile Pictures",
     description: "View and download Instagram profile pictures in HD quality. Works with public Instagram accounts. No login required.",
     titleSize: "medium",
     descriptionSize: "small",

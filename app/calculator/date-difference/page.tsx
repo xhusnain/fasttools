@@ -4,7 +4,7 @@ import { DateDifferenceCalculator } from "@/components/calculators/date-differen
 import { createMetadata } from "@/lib/metadata-base"
 
 const baseMetadata = createMetadata({
-  title: "Calculate Days Between Dates - Free Date Difference Calculator",
+  title: "Date Difference - Calculate Days Between Dates",
   description:
     "Calculate exact days, weeks, months & years between any two dates. Includes business days, leap years & multiple formats. Free, no signup required! ✓",
   path: "/calculator/date-difference",
@@ -258,7 +258,7 @@ export default function DateDifferencePage() {
         description: "Calculate exact days, weeks, months & years between any two dates. Includes business days, leap years & multiple formats. Free, no signup required!",
         titleSize: "medium",
         descriptionSize: "small",
-        color: "orange"
+        color: "blue"
       }}
       breadcrumbs={[
         { label: "Calculator", href: "/calculator" },

@@ -20,6 +20,8 @@ Download and analyze content from Facebook, Instagram, TikTok, YouTube. Tools in
 - https://www.fasttools.store/social-media-tools/tiktok-downloader - Download TikTok videos without watermark.
 - https://www.fasttools.store/social-media-tools/youtube-thumbnail - Download YouTube video thumbnails in all quality sizes.
 - https://www.fasttools.store/social-media-tools/youtube-tags - Extract tags from YouTube videos for SEO research.
+- https://www.fasttools.store/social-media-tools/youtube-channel-name-generator - AI-powered YouTube Channel Name Generator. Generate unique, catchy, and SEO-friendly names for gaming, vlogging, and tech channels. Features instant categorized suggestions and "no copyright" style unique branding ideas.
+
 
 ### AI Tools
 https://www.fasttools.store/ai-tools

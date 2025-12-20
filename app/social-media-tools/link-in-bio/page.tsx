@@ -9,9 +9,9 @@ import {
 import { getCurrentYear } from "@/lib/utils"
 
 const toolConfig = createToolConfig({
-  toolName: "Link in Bio Generator",
+  toolName: "Link in Bio - Free Bio Page Generator",
   description: "Create a free, customizable link in bio page for Instagram, TikTok, and more. Add unlimited links, social profiles, and buttons. Fast, secure, mobile-friendly.",
-  metaTitle: `Link in Bio Generator – Free All-in-One Bio Page | FastTools ${getCurrentYear()}`,
+  metaTitle: "Link in Bio - Free Bio Page Generator",
   metaDescription: "Create a free, customizable link in bio page for Instagram, TikTok, and more. Add unlimited links, social profiles, and buttons. Fast, secure, and mobile-friendly.",
   path: "/social-media-tools/link-in-bio",
   keywords: [
@@ -27,7 +27,7 @@ const toolConfig = createToolConfig({
   ],
 
   header: {
-    title: "Free Link in Bio Generator – Create All-in-One Bio Page",
+    title: "Link in Bio - Free Bio Page Generator",
     description: "Create a free, customizable link in bio page for Instagram, TikTok, and more. Add unlimited links, social profiles, and buttons. Fast, secure, and mobile-friendly. Perfect for influencers, creators, and businesses.",
     titleSize: "medium",
     descriptionSize: "small",

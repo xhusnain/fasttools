@@ -5,7 +5,7 @@ import { createMetadata } from "@/lib/metadata-base"
 import { Calculator, Triangle, Brain, BookOpen, Square } from "lucide-react"
 
 const baseMetadata = createMetadata({
-    title: "FastTools - Triangle Calculator | Free Area, Perimeter & Angles Calculator",
+    title: "Triangle Calculator - Geometry & Angles",
     description:
         "FastTools Triangle Calculator - Advanced calculator with area, perimeter, angles, heights, medians, inradius, circumradius calculations. Supports SSS, SAS, ASA, AAS, SSA triangle solving methods.",
     path: "/calculator/triangle-calculator",

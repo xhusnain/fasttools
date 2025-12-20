@@ -4,7 +4,7 @@ import { EMICalculator } from "@/components/finance/emi-calculator"
 import { createMetadata } from "@/lib/metadata-base"
 import { Calculator, Target, CheckCircle, Home, Car, CreditCard, GraduationCap, TrendingUp, BarChart3, Clock, Shield, Info } from "lucide-react"
 
-const TOOL_TITLE = "Loan EMI Calculator | Home, Car & Personal Loans"
+const TOOL_TITLE = "Loan EMI Calculator - Calculate Installments Free"
 const TOOL_NAME = "Loan EMI Calculator"
 
 const baseMetadata = createMetadata({
@@ -294,7 +294,7 @@ export default function LoanCalculatorPage() {
         description: "Use our free online EMI calculator to calculate monthly installment amounts for home loans, car loans, personal loans, and education loans. Get accurate EMI calculations, detailed loan amortization schedules, yearly payment breakdowns, and visual charts for comprehensive loan analysis.",
         titleSize: "medium",
         descriptionSize: "small",
-        color: "orange"
+        color: "blue"
       }}
       breadcrumbs={[
         { label: "Finance Tools", href: "/finance-tools" },

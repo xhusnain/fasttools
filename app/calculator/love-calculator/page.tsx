@@ -5,7 +5,7 @@ import { createMetadata } from "@/lib/metadata-base"
 import { Heart, Users, Zap, Target, Sparkles, Star, Gift, Flower2, Calculator, TrendingUp, BookOpen, Smile, AlertCircle, Percent, Hash, Clock } from "lucide-react"
 
 const baseMetadata = createMetadata({
-  title: "FastTools - Love Calculator | Free Love Compatibility Test",
+  title: "Love Calculator - Test Your Compatibility",
   description:
     "FastTools Love Calculator - Free tool to test compatibility between two people. Calculate love percentage, relationship compatibility, and love meter. Share your love match results with friends!",
   path: "/calculator/love-calculator",

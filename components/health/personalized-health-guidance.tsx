@@ -86,7 +86,7 @@ export function PersonalizedHealthGuidance({ bmi, category, riskLevel, age, gend
     } else if (bmi >= 25 && bmi < 30) {
       return {
         title: "Healthy Weight Loss Plan",
-        color: "from-orange-50 to-red-50 dark:from-orange-950/30 dark:to-red-950/30",
+        color: "from-blue-50 to-red-50 dark:from-blue-950/30 dark:to-red-950/30",
         borderColor: "border-primary/20",
         textColor: "text-foreground",
         icon: <Target className="h-4 w-4 text-foreground" />,

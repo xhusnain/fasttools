@@ -61,10 +61,10 @@ export function GMessage({
             button: "bg-green-500 hover:bg-green-600 text-white shadow-green-500/20"
         },
         warning: {
-            container: "bg-orange-500/10 border-orange-500/20 text-orange-600 dark:text-orange-400",
-            icon: <AlertTriangle className="h-5 w-5 text-orange-500" />,
-            title: "text-orange-700 dark:text-orange-300",
-            button: "bg-orange-500 hover:bg-orange-600 text-white shadow-orange-500/20"
+            container: "bg-blue-500/10 border-blue-500/20 text-blue-600 dark:text-blue-400",
+            icon: <AlertTriangle className="h-5 w-5 text-blue-500" />,
+            title: "text-blue-700 dark:text-blue-300",
+            button: "bg-blue-500 hover:bg-blue-600 text-white shadow-blue-500/20"
         },
         error: {
             container: "bg-red-500/10 border-red-500/20 text-red-600 dark:text-red-400",

@@ -5,7 +5,7 @@ import { createMetadata } from "@/lib/metadata-base"
 import { Calculator, Award, TrendingUp, Info, Globe, Target, Users, BarChart3, Building, Clock, DollarSign, Home, FileText, Percent, BookOpen, Shield, Star } from "lucide-react"
 
 const baseMetadata = createMetadata({
-  title: "GPA Calculator - The Ultimate Tool for College, High School, and University",
+  title: "GPA Calculator - Calculate Your GPA",
   description:
     "Calculate your GPA in seconds! Free GPA calculator used by 1M+ students. Supports weighted/unweighted, all scales (4.0, 5.0), high school & college. Try now!",
   path: "/calculator/gpa-calculator",

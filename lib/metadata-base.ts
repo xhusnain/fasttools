@@ -2,32 +2,20 @@ import type { Metadata, Viewport } from "next"
 
 const BASE_URL = "https://www.fasttools.store"
 const SITE_NAME = "FastTools"
-const AUTHORS = [{ name: "FastTools Team", url: "https://www.fasttools.store" }]
 
-const VERIFICATION = {
-    google: "l2XEjZ8SEN_FD96ft9mIUW8cPiLW4mDbX6wZabF-xv0",
-    yandex: "242a8cf232328714",
-    me: ["support@fasttools.store"],
-    other: {
-        "msvalidate.01": "DE0A07DC9E742C4C8E795D7C99EF238B",
-        "p:domain_verify": "603c992f6d70753cf89c1a0141990c73",
-        "facebook-domain-verification": "m4jw5d6c1jsteghq2xo00wflvif79x",
-        "google-adsense-account": "ca-pub-6296569221534302",
-    },
-}
 
 export const DEFAULT_IMAGES = {
-    OG_IMAGE_PNG: "https://www.fasttools.store/og-image.png",
+    OG_IMAGE_PNG: "https://www.fasttools.store/opengraph-image.png",
     OG_IMAGE_SVG: "https://www.fasttools.store/og-image.svg",
     OG_IMAGE_ALT_TEXT: "FastTools - 1000+ Free Online Tools",
     LOGO_PNG: "https://www.fasttools.store/logo.png",
     LOGO_SVG: "https://www.fasttools.store/logo.svg",
-    LOGO3_PNG: "https://www.fasttools.store/logo3.png",
+    // Fallback for missing logo3.png to logo.png based on available files
+    LOGO3_PNG: "https://www.fasttools.store/logo.png",
     BANNER: "https://www.fasttools.store/banner.png",
     PLACEHOLDER: "https://www.fasttools.store/placeholder.jpg",
     PLACEHOLDER_SVG: "https://www.fasttools.store/placeholder.svg",
     PLACEHOLDER_USER: "https://www.fasttools.store/placeholder-user.jpg",
-
 } as const
 
 export const globalViewport: Viewport = {
@@ -67,6 +55,7 @@ export interface MetadataOptions {
     howToSteps?: string[]
     toolName?: string
     breadcrumbs?: BreadcrumbItem[]
+    icons?: Metadata['icons']
     video?: {
         id: string
         title?: string
@@ -74,52 +63,63 @@ export interface MetadataOptions {
     }
 }
 
-export interface MetadataWithSchema {
-    metadata: Metadata
-    softwareSchema: ReturnType<typeof createSoftwareAppSchema>
+
+
+
+function shouldIncludeSchema(path: string): boolean {
+    const toolKeywords = [
+        "tools",
+        "calculator",
+        "generator",
+        "converter",
+        "downloader",
+        "checker",
+        "counter",
+        "editor",
+        "maker",
+        "splitter",
+        "merger",
+        "compressor",
+    ]
+    const normalizedPath = path.toLowerCase()
+    return toolKeywords.some(keyword => normalizedPath.includes(keyword))
 }
 
 export function createMetadata(options: MetadataOptions): Metadata & { softwareSchema?: ReturnType<typeof createSoftwareAppSchema> } {
-    const { title, description, path, ogImageAlt, noIndex, ogTitle, ogDescription, twitterTitle, twitterDescription, twitterCreator, includeSchema = true, schemaOptions, faqs, howToSteps, toolName, breadcrumbs } = options
+    const { title, description, path, ogImageAlt, noIndex, ogTitle, ogDescription, twitterTitle, twitterDescription, twitterCreator, schemaOptions, faqs, howToSteps, toolName, breadcrumbs } = options
+
+    // Smart default: Only include schema if path looks like a tool, unless explicitly overridden
+    const includeSchema = options.includeSchema ?? shouldIncludeSchema(path)
+
     const cleanPath = path.startsWith("/") ? path : `/${path}`
     const titleWithBranding = title === "FastTools" || title.startsWith("FastTools -") ? title : `${title} | FastTools`
     const fullTitle = addYearToTitle(titleWithBranding, cleanPath)
     const canonicalUrl = getCanonicalUrl(cleanPath)
-    const defaultOgImage = getDefaultOgImage("png")
-    const isCompany = isCompanyPage(cleanPath)
-    const isFaqPage = cleanPath === "/faq"
+
+
 
     const finalOgTitle = ogTitle || fullTitle
     const finalOgDescription = ogDescription || description
-    const finalTwitterTitle = twitterTitle || fullTitle
-    const finalTwitterDescription = twitterDescription || description
-    const finalTwitterCreator = twitterCreator || "@ZamanIsmail7"
 
-    const openGraphConfig = {
+
+    const openGraphConfig: any = {
         title: finalOgTitle,
         description: finalOgDescription,
         url: canonicalUrl,
         siteName: SITE_NAME,
+        type: "website" as const,
+        locale: "en_US" as const,
         images: [
             {
-                url: defaultOgImage,
+                url: DEFAULT_IMAGES.OG_IMAGE_PNG,
                 width: 1200,
                 height: 630,
                 alt: ogImageAlt || DEFAULT_IMAGES.OG_IMAGE_ALT_TEXT,
-                type: "image/png",
             },
         ],
-        type: "website" as const,
-        locale: "en_US" as const,
     }
 
-    const twitterConfig = {
-        card: "summary_large_image" as const,
-        title: finalTwitterTitle,
-        description: finalTwitterDescription,
-        creator: finalTwitterCreator,
-        images: [defaultOgImage],
-    }
+
 
     let softwareSchema: ReturnType<typeof createSoftwareAppSchema> | undefined
 
@@ -180,44 +180,23 @@ export function createMetadata(options: MetadataOptions): Metadata & { softwareS
         alternates: {
             canonical: canonicalUrl,
         },
-        authors: AUTHORS,
         openGraph: openGraphConfig,
-        twitter: twitterConfig,
-        robots: noIndex
-            ? {
+        twitter: {
+            card: "summary_large_image",
+            title: twitterTitle || finalOgTitle,
+            description: twitterDescription || finalOgDescription,
+            creator: twitterCreator || "@ZamanIsmail7",
+            images: [DEFAULT_IMAGES.OG_IMAGE_PNG],
+        },
+        ...(noIndex && {
+            robots: {
                 index: false,
                 follow: false,
             }
-            : {
-                index: true,
-                follow: true,
-            },
-        verification: VERIFICATION,
-        icons: {
-            icon: [
-                { url: "/favicon.ico", sizes: "any" },
-                { url: "/favicon.svg", type: "image/svg+xml" },
-                { url: "/favicon-96x96.png", type: "image/png", sizes: "96x96" }
-            ],
-            shortcut: "/favicon.ico",
-            apple: [
-                { url: "/apple-touch-icon.png", sizes: "180x180", type: "image/png" }
-            ],
-            other: [
-                {
-                    rel: "icon",
-                    type: "image/png",
-                    sizes: "192x192",
-                    url: "/web-app-manifest-192x192.png",
-                },
-                {
-                    rel: "icon",
-                    type: "image/png",
-                    sizes: "512x512",
-                    url: "/web-app-manifest-512x512.png",
-                },
-            ],
-        },
+        }),
+        ...(options.icons && { icons: options.icons }),
+        // Manifest is handled by app/manifest.ts but we can link it here if needed,
+        // though Next.js 13+ with manifest.ts handles the <link rel="manifest"> automatically.
         ...(schemas.length > 0 && {
             other: {
                 "application/ld+json": JSON.stringify(schemas.length === 1 ? schemas[0] : schemas)
@@ -271,14 +250,7 @@ export function getCanonicalUrl(path: string): string {
     return `${BASE_URL}${safePath}`
 }
 
-export function getImageUrl(imagePath: string): string {
-    const cleanPath = imagePath.startsWith("/") ? imagePath.slice(1) : imagePath
-    return `${BASE_URL}/${cleanPath}`
-}
 
-export function getDefaultOgImage(format: "png" | "svg" = "png"): string {
-    return format === "svg" ? DEFAULT_IMAGES.OG_IMAGE_SVG : DEFAULT_IMAGES.OG_IMAGE_PNG
-}
 
 export function getWebsiteSchema(searchUrl?: string) {
     return {

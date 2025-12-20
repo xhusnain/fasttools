@@ -155,7 +155,7 @@ export default function BMRCalculatorPage() {
         description: "Calculate your BMR (Basal Metabolic Rate) with our advanced calculator. Get accurate calorie needs, TDEE analysis, weight management goals, and personalized nutrition recommendations.",
         titleSize: "medium",
         descriptionSize: "small",
-        color: "orange"
+        color: "blue"
       }}
       breadcrumbs={[
         { label: "Calculator", href: "/calculator" },
@@ -168,7 +168,7 @@ export default function BMRCalculatorPage() {
       }
       toolContent={toolContent}
       expectedMetadata={{
-        title: "BMR Calculator | Free Basal Metabolic Rate Calculator",
+        title: "BMR Calculator - Calculate Metabolic Rate",
         description: "Calculate your Basal Metabolic Rate (BMR) with our advanced calculator. Get accurate calorie needs, TDEE, weight management goals & personalized nutrition recommendations.",
         path: "/calculator/bmr-calculator"
       }}

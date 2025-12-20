@@ -5,7 +5,7 @@ import { createMetadata } from "@/lib/metadata-base"
 import { Calculator, Zap, Target, TrendingUp, BookOpen, Users, CheckCircle, Info, Home, DollarSign, FileText, Percent, Clock, Award, BarChart3, Building, PieChart } from "lucide-react"
 import Link from "next/link"
 
-const TOOL_TITLE = "Unit Converter | Free Conversion Calculator"
+const TOOL_TITLE = "Unit Converter - Convert Units Online"
 const TOOL_NAME = "Unit Converter"
 
 const baseMetadata = createMetadata({
@@ -300,7 +300,7 @@ export default function ConversionCalculatorPage() {
         description: "Convert between 1000+ units instantly. Length, weight, temperature, currency, time, area, volume, speed, power, energy, pressure conversions.",
         titleSize: "medium",
         descriptionSize: "small",
-        color: "orange"
+        color: "blue"
       }}
       breadcrumbs={[
         { label: "Calculator", href: "/calculator" },

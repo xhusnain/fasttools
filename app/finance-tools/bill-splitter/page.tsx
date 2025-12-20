@@ -4,7 +4,7 @@ import { createMetadata } from "@/lib/metadata-base"
 import { Calculator, Target, TrendingUp, BarChart3, Receipt, Award, Users, DollarSign, Percent, Zap, FileText, HelpCircle, ExternalLink, PiggyBank, CreditCard } from "lucide-react"
 import type { Metadata } from "next"
 
-const TOOL_TITLE = "Bill Splitter Calculator | Free Split Bills Tool"
+const TOOL_TITLE = "Bill Splitter - Split Expenses Easily"
 const TOOL_NAME = "Bill Splitter"
 
 const baseMetadata = createMetadata({

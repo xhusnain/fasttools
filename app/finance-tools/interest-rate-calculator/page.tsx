@@ -275,7 +275,7 @@ export default function InterestRateCalculatorPage() {
         description: "Calculate real interest rates on loans with our advanced interest rate calculator. Get precise rate calculations, amortization analysis, loan optimization, and professional recommendations for optimal financial planning.",
         titleSize: "medium",
         descriptionSize: "small",
-        color: "orange"
+        color: "blue"
       }}
       breadcrumbs={[
         { label: "Finance Tools", href: "/finance-tools" },
@@ -288,7 +288,7 @@ export default function InterestRateCalculatorPage() {
       }
       toolContent={toolContent}
       expectedMetadata={{
-        title: "FastTools - Interest Rate Calculator | Free Advanced Loan Rate Calculator",
+        title: "Interest Rate Calculator - Find True Loan Cost",
         description: "FastTools Interest Rate Calculator - Calculate real interest rates on loans with fixed terms and monthly payments. Advanced Newton-Raphson method for precise rate calculation and loan optimization.",
         path: "/finance-tools/interest-rate-calculator"
       }}

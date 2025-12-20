@@ -4,7 +4,8 @@ import {
     CaptionsRequest,
     HashtagsRequest,
     LyricsRequest,
-    PetNameRequest
+    PetNameRequest,
+    ChannelNameRequest
 } from "@/types/ai.types"
 
 /**
@@ -427,4 +428,72 @@ function extractHashtags(text: string): string[] {
     const hashtagRegex = /#[\w]+/g
     const matches = text.match(hashtagRegex) || []
     return [...new Set(matches)]
+}
+
+/**
+ * Service function for generating YouTube channel names
+ */
+export async function generateChannelNamesService(data: ChannelNameRequest) {
+    const { topic, keywords, tone, targetAudience } = data
+
+    if (!topic || topic.trim().length === 0) {
+        return {
+            success: false,
+            error: "Topic/Niche is required",
+            statusCode: 400
+        }
+    }
+
+    const prompt = PROMPTS.channelNames(topic, keywords, tone, targetAudience)
+
+    const result = await aiTextGenerator.generateText({
+        prompt,
+        temperature: 0.95, // Higher creativity
+        maxTokens: 4000,
+    })
+
+    if (!result.success || !result.text) {
+        return {
+            success: false,
+            error: result.error || "Failed to generate channel names. Please try again.",
+            statusCode: 500
+        }
+    }
+
+    try {
+        let jsonText = result.text.trim()
+
+        // Clean up markdown code blocks if present
+        if (jsonText.startsWith('```json')) {
+            jsonText = jsonText.replace(/^```json\s*/, '').replace(/\s*```$/, '')
+        } else if (jsonText.startsWith('```')) {
+            jsonText = jsonText.replace(/^```\s*/, '').replace(/\s*```$/, '')
+        }
+
+        const parsedNames = JSON.parse(jsonText)
+
+        // Validate structure (basic check)
+        if (typeof parsedNames !== 'object' || parsedNames === null) {
+            throw new Error("Invalid JSON structure")
+        }
+
+        return {
+            success: true,
+            data: {
+                suggestions: parsedNames,
+                originalTopic: topic
+            },
+            statusCode: 200
+        }
+
+    } catch (parseError) {
+        console.error("Error parsing AI response:", parseError)
+        console.log("Raw response:", result.text)
+
+        return {
+            success: false,
+            error: "Failed to parse AI suggestions. Please try again.",
+            statusCode: 500
+        }
+    }
 }

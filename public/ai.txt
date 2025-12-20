@@ -78,6 +78,11 @@ Description: Free BMI calculator online. Calculate Body Mass Index instantly wit
 URL: https://www.fasttools.store/calculator/ip-subnet-calculator
 Description: Professional-grade IP Subnet Calculator supporting IPv4, IPv6, CIDR, and VLSM. Includes visual diagrams, educational content on network design, and real-world subnetting scenarios. Features copy-to-clipboard functionality and shareable calculation links.
 
+## YouTube Channel Name Generator
+URL: https://www.fasttools.store/social-media-tools/youtube-channel-name-generator
+Description: Free AI-powered YouTube Channel Name Generator. Creates unique, creative, and SEO-friendly channel names based on niche, tone, and target audience. Features include instant categorized results (Gaming, Playful, Professional), availability checking guidance, and support for "Free Fire" and specialized gaming names. Completely free, no login required, unlimited generations. Includes comprehensive naming guides, branding tips, and SEO advice for new creators.
+
+
 # Updates
 This file is updated regularly. Check last modified date.
 Last updated: 2025-11-24

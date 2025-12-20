@@ -5,6 +5,7 @@ import {
     generateLyricsService,
     generateMemeService,
     generatePetNamesService,
+    generateChannelNamesService,
 } from "@/lib/ai-services"
 
 export const runtime = "nodejs"
@@ -66,6 +67,10 @@ export async function POST(request: NextRequest) {
                 result = await generatePetNamesService(data)
                 break
 
+            case "generate-channel-names":
+                result = await generateChannelNamesService(data)
+                break
+
             default:
                 return NextResponse.json(
                     { error: `Unknown action: ${action}` },
@@ -75,7 +80,7 @@ export async function POST(request: NextRequest) {
 
         // Return the result with appropriate status code
         if (result.success) {
-            return NextResponse.json(result.data, { status: result.statusCode })
+            return NextResponse.json({ success: true, ...result.data }, { status: result.statusCode })
         } else {
             return NextResponse.json(
                 { error: result.error },

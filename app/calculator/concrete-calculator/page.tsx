@@ -4,7 +4,7 @@ import { ConcreteCalculator } from "@/components/calculators/concrete-calculator
 import { createMetadata } from "@/lib/metadata-base"
 import { Calculator, Building, Ruler, Weight, Volume, Target, Info, Globe, CheckCircle, Hammer, Truck, Package, Zap, TrendingUp, DollarSign, Clock, Home, FileText, Percent, Users, Award, BarChart3 } from "lucide-react"
 
-const TOOL_TITLE = "Concrete Calculator | Free Cement, Slab, Footing & Bag Estimator"
+const TOOL_TITLE = "Concrete Calculator - Estimate Cement & Slabs"
 const TOOL_NAME = "Concrete Calculator"
 
 const baseMetadata = createMetadata({
@@ -388,7 +388,7 @@ export default function ConcreteCalculatorPage() {
         description: "Calculate concrete volume, bags, and cost for slabs, footings, columns, and stairs. Free online concrete estimator with waste factor and mix ratios. Accurate & easy to use.",
         titleSize: "medium",
         descriptionSize: "small",
-        color: "orange"
+        color: "blue"
       }}
       breadcrumbs={[
         { label: "Calculator", href: "/calculator" },

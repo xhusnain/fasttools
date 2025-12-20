@@ -1,14 +1,14 @@
 import { Breadcrumbs } from "@/components/common/breadcrumbs"
 import { GHeader } from "@/ui/gheader"
 
-import { 
-  Shield, 
-  FileText, 
-  Users, 
-  CheckCircle, 
-  Mail, 
-  Globe, 
-  Scale, 
+import {
+  Shield,
+  FileText,
+  Users,
+  CheckCircle,
+  Mail,
+  Globe,
+  Scale,
   BookOpen,
   RefreshCw
 } from "lucide-react"
@@ -55,7 +55,7 @@ export default function TermsPage() {
                 description="Legal terms and conditions for using FastTools. Learn about your rights, obligations, and our commitment to Google AdSense compliance."
                 titleSize="medium"
                 descriptionSize="small"
-                color="orange"
+                color="blue"
               />
               <div className="flex flex-wrap justify-center gap-3 mt-6">
                 <div className="flex items-center gap-2 px-4 py-2 bg-primary/10 border border-border/30 rounded-lg">
@@ -237,7 +237,7 @@ export default function TermsPage() {
                       <li>• Protection from unauthorized data collection</li>
                     </ul>
                   </div>
-                  
+
                   <div className="bg-card border border-border rounded-lg p-4">
                     <h3 className="text-lg font-semibold mb-3 text-heading-accent flex items-center gap-2">
                       <Shield className="h-4 w-4 text-heading-accent" />

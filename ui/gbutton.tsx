@@ -3,6 +3,7 @@ import { Slot } from "@radix-ui/react-slot"
 import { cva, type VariantProps } from "class-variance-authority"
 import { cn } from "@/lib/utils"
 import { Loader2 } from "lucide-react"
+import Link from "next/link"
 
 const buttonVariants = cva(
     "inline-flex items-center justify-center whitespace-nowrap rounded-md font-medium ring-offset-background transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50",
@@ -51,6 +52,7 @@ export interface GButtonProps
     leftIcon?: React.ReactNode
     rightIcon?: React.ReactNode
     customColor?: 'primary' | 'secondary' | 'accent' | 'destructive' | 'success'
+    href?: string
 }
 
 const GButton = React.forwardRef<HTMLButtonElement, GButtonProps>(
@@ -67,9 +69,10 @@ const GButton = React.forwardRef<HTMLButtonElement, GButtonProps>(
         customColor,
         children,
         disabled,
+        href,
         ...props
     }, ref) => {
-        const Comp = asChild ? Slot : "button"
+        const Comp = asChild ? Slot : (href ? Link : "button")
 
         const colorClasses = React.useMemo(() => {
             switch (customColor) {
@@ -101,6 +104,7 @@ const GButton = React.forwardRef<HTMLButtonElement, GButtonProps>(
                 )}
                 ref={ref}
                 disabled={disabled || isLoading}
+                {...(href ? { href } : {})}
                 {...props}
             >
                 {isLoading && <Loader2 className="mr-2 h-4 w-4 animate-spin" />}

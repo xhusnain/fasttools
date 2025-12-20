@@ -6,6 +6,15 @@ import { GButton } from "@/ui/gbutton"
 import { DollarSign, ArrowLeftRight, RefreshCw } from "lucide-react"
 
 import { Currency, CurrencyConversionResult } from "@/types/converter-types/currency-converter.types"
+import { CurrencyRepository } from "@/services/repositories/currency.repository"
+
+function getCurrencySymbol(code: string): string {
+  const symbols: Record<string, string> = {
+    'USD': '$', 'EUR': '€', 'JPY': '¥', 'GBP': '£', 'AUD': 'A$', 'CAD': 'C$', 'CHF': 'CHF', 'CNY': '¥',
+    'HKD': 'HK$', 'NZD': 'NZ$'
+  };
+  return symbols[code] || code;
+}
 
 export function CurrencyConverter() {
   const [amount, setAmount] = useState("")
@@ -21,26 +30,14 @@ export function CurrencyConverter() {
   useEffect(() => {
     const fetchCurrencies = async () => {
       try {
-        const response = await fetch('/api/currency_converter/currencies')
-        const data = await response.json()
-
-        if (data.success) {
-          setCurrencies(data.data)
-        } else {
-          console.error('Failed to fetch currencies:', data.message)
-          // Fallback to basic currencies if API fails
-          setCurrencies([
-            { code: "USD", name: "US Dollar", symbol: "$" },
-            { code: "EUR", name: "Euro", symbol: "€" },
-            { code: "GBP", name: "British Pound", symbol: "£" },
-            { code: "JPY", name: "Japanese Yen", symbol: "¥" },
-            { code: "INR", name: "Indian Rupee", symbol: "₹" },
-            { code: "AUD", name: "Australian Dollar", symbol: "A$" },
-            { code: "CAD", name: "Canadian Dollar", symbol: "C$" },
-            { code: "CHF", name: "Swiss Franc", symbol: "CHF" },
-            { code: "CNY", name: "Chinese Yuan", symbol: "¥" },
-          ])
-        }
+        const data = await CurrencyRepository.getCurrencies()
+        // Transform { USD: "US Dollar" } to [{ code: "USD", name: "US Dollar", symbol: "$" }]
+        const formattedCurrencies: Currency[] = Object.entries(data).map(([code, name]) => ({
+          code,
+          name,
+          symbol: getCurrencySymbol(code)
+        }))
+        setCurrencies(formattedCurrencies)
       } catch (error) {
         console.error('Error fetching currencies:', error)
         // Fallback to basic currencies
@@ -78,30 +75,12 @@ export function CurrencyConverter() {
     setError("")
 
     try {
-      const response = await fetch('/api/currency_converter/convert', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({
-          from: fromCurrency,
-          to: toCurrency,
-          amount: Number(amount)
-        })
-      })
-
-      const data = await response.json()
-
-      if (data.success) {
-        setResult(data.data.convertedAmount.toString())
-        setLastUpdated(new Date().toLocaleString())
-      } else {
-        setError(data.message || 'Conversion failed')
-        setResult("")
-      }
+      const data = await CurrencyRepository.convertCurrency(fromCurrency, toCurrency, Number(amount))
+      setResult(data.result.toFixed(2)) // result field contains the total converted amount
+      setLastUpdated(new Date().toLocaleString())
     } catch (error) {
       console.error('Error converting currency:', error)
-      setError('Failed to convert currency. Please try again.')
+      setError(error instanceof Error ? error.message : 'Failed to convert currency. Please try again.')
       setResult("")
     } finally {
       setLoading(false)

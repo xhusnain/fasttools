@@ -8,13 +8,7 @@ import { GProgress } from "@/ui/gprogress"
 import { useToast } from "@/ui/gtoast"
 
 import { Upload, X, Download, Image as ImageIcon, FileText, Loader2, FolderArchive } from "lucide-react"
-import * as pdfjsLib from "pdfjs-dist"
-import JSZip from "jszip"
 
-// Configure PDF.js worker
-if (typeof window !== "undefined") {
-  pdfjsLib.GlobalWorkerOptions.workerSrc = `https://cdnjs.cloudflare.com/ajax/libs/pdf.js/4.10.38/pdf.worker.min.mjs`
-}
 
 type ImageFormat = "png" | "jpeg" | "webp"
 type QualityLevel = "low" | "medium" | "high"
@@ -60,6 +54,12 @@ export function PDFToImage() {
 
     try {
       // Load PDF to get page count
+      // Dynamically import pdfjs-dist
+      const pdfjsLib = await import("pdfjs-dist")
+      if (typeof window !== "undefined") {
+        pdfjsLib.GlobalWorkerOptions.workerSrc = `https://cdnjs.cloudflare.com/ajax/libs/pdf.js/4.10.38/pdf.worker.min.mjs`
+      }
+
       const arrayBuffer = await selectedFile.arrayBuffer()
       const loadingTask = pdfjsLib.getDocument({ data: arrayBuffer })
       const pdfDoc = await loadingTask.promise
@@ -164,6 +164,10 @@ export function PDFToImage() {
 
     try {
       const arrayBuffer = await file.arrayBuffer()
+      const pdfjsLib = await import("pdfjs-dist")
+      if (typeof window !== "undefined") {
+        pdfjsLib.GlobalWorkerOptions.workerSrc = `https://cdnjs.cloudflare.com/ajax/libs/pdf.js/4.10.38/pdf.worker.min.mjs`
+      }
       const loadingTask = pdfjsLib.getDocument({ data: arrayBuffer })
       const pdfDoc = await loadingTask.promise
 
@@ -268,6 +272,7 @@ export function PDFToImage() {
     if (convertedImages.length === 0) return
 
     try {
+      const JSZip = (await import("jszip")).default
       const zip = new JSZip()
       const ext = getFileExtension(format)
       const baseName = file ? file.name.replace(".pdf", "") : "pdf"

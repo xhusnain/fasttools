@@ -2,9 +2,10 @@ export { InstagramDownloader } from "@/components/social-media/instagram-downloa
 export { TiktokDownloader } from "@/components/social-media/tiktok-downloader"
 export { FacebookDownloader } from "@/components/social-media/facebook-downloader"
 export { XDownloader } from "@/components/social-media/x-downloader"
+export { YoutubeHandleChecker } from "@/components/social-media/youtube-handle-checker"
+export { YoutubeKeywordAnalysis } from "@/components/social-media/youtube-keyword-analysis"
 
 export type { InstagramDownloaderProps } from "@/components/social-media/instagram-downloader"
 export type { TiktokDownloaderProps } from "@/components/social-media/tiktok-downloader"
 export type { FacebookDownloaderProps } from "@/components/social-media/facebook-downloader"
 export type { XDownloaderProps } from "@/components/social-media/x-downloader"
-

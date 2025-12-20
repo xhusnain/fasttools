@@ -4,7 +4,7 @@ import PregnancyConceptionCalculator from "@/components/health/pregnancy-concept
 import { createMetadata } from "@/lib/metadata-base"
 
 const baseMetadata = createMetadata({
-  title: "Pregnancy Conception Calculator | Free Online Tool",
+  title: "Conception Calculator - Find Conception Date",
   description:
     "Calculate your conception date with our advanced pregnancy conception calculator. Get personalized trimester guidance, nutrition tips, and week-by-week pregnancy insights.",
   path: "/calculator/pregnancy-conception-calculator",

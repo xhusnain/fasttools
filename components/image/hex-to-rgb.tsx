@@ -143,54 +143,93 @@ export function HexToRGB() {
     }
   }
 
-  // Update all formats when input changes
-  useEffect(() => {
-    try {
-      setError("")
+  // Update all states from a Hex input
+  const updateFromHex = (hexValue: string) => {
+    setHexInput(hexValue)
+    setError("")
 
-      if (inputMode === "hex") {
-        const rgbResult = hexToRgb(hexInput)
-        if (rgbResult) {
-          setRgb(rgbResult)
-          setHex(hexInput)
-          const hslResult = rgbToHsl(rgbResult.r, rgbResult.g, rgbResult.b)
-          setHsl(hslResult)
-        } else {
-          setError("Invalid hex color")
-        }
-      } else if (inputMode === "rgb") {
-        const r = parseInt(rgbR) || 0
-        const g = parseInt(rgbG) || 0
-        const b = parseInt(rgbB) || 0
+    const rgbResult = hexToRgb(hexValue)
+    if (rgbResult) {
+      setRgb(rgbResult)
+      setHex(hexValue)
 
-        if (r < 0 || r > 255 || g < 0 || g > 255 || b < 0 || b > 255) {
-          setError("RGB values must be between 0-255")
-          return
-        }
+      // Update RGB inputs
+      setRgbR(rgbResult.r.toString())
+      setRgbG(rgbResult.g.toString())
+      setRgbB(rgbResult.b.toString())
 
-        setRgb({ r, g, b })
-        setHex(rgbToHex(r, g, b))
-        const hslResult = rgbToHsl(r, g, b)
-        setHsl(hslResult)
-      } else if (inputMode === "hsl") {
-        const h = parseInt(hslH) || 0
-        const s = parseInt(hslS) || 0
-        const l = parseInt(hslL) || 0
-
-        if (h < 0 || h > 360 || s < 0 || s > 100 || l < 0 || l > 100) {
-          setError("HSL values out of range")
-          return
-        }
-
-        setHsl({ h, s, l })
-        const rgbResult = hslToRgb(h, s, l)
-        setRgb(rgbResult)
-        setHex(rgbToHex(rgbResult.r, rgbResult.g, rgbResult.b))
+      // Update HSL and HSL inputs
+      const hslResult = rgbToHsl(rgbResult.r, rgbResult.g, rgbResult.b)
+      setHsl(hslResult)
+      setHslH(hslResult.h.toString())
+      setHslS(hslResult.s.toString())
+      setHslL(hslResult.l.toString())
+    } else {
+      // Keep previous valid derived states? Or just show error?
+      // Standard behavior: show error, don't update derived if invalid
+      if (hexValue.length >= 7) { // Only show error if full length attempted
+        setError("Invalid hex color")
       }
-    } catch (err) {
-      setError("Invalid color input")
     }
-  }, [inputMode, hexInput, rgbR, rgbG, rgbB, hslH, hslS, hslL])
+  }
+
+  // Update all states from RGB inputs
+  const updateFromRgb = (rStr: string, gStr: string, bStr: string) => {
+    setRgbR(rStr)
+    setRgbG(gStr)
+    setRgbB(bStr)
+    setError("")
+
+    const r = parseInt(rStr) || 0
+    const g = parseInt(gStr) || 0
+    const b = parseInt(bStr) || 0
+
+    if (r < 0 || r > 255 || g < 0 || g > 255 || b < 0 || b > 255) {
+      setError("RGB values must be between 0-255")
+      return
+    }
+
+    setRgb({ r, g, b })
+
+    const hexResult = rgbToHex(r, g, b)
+    setHex(hexResult)
+    setHexInput(hexResult)
+
+    const hslResult = rgbToHsl(r, g, b)
+    setHsl(hslResult)
+    setHslH(hslResult.h.toString())
+    setHslS(hslResult.s.toString())
+    setHslL(hslResult.l.toString())
+  }
+
+  // Update all states from HSL inputs
+  const updateFromHsl = (hStr: string, sStr: string, lStr: string) => {
+    setHslH(hStr)
+    setHslS(sStr)
+    setHslL(lStr)
+    setError("")
+
+    const h = parseInt(hStr) || 0
+    const s = parseInt(sStr) || 0
+    const l = parseInt(lStr) || 0
+
+    if (h < 0 || h > 360 || s < 0 || s > 100 || l < 0 || l > 100) {
+      setError("HSL values out of range")
+      return
+    }
+
+    setHsl({ h, s, l })
+
+    const rgbResult = hslToRgb(h, s, l)
+    setRgb(rgbResult)
+    setRgbR(rgbResult.r.toString())
+    setRgbG(rgbResult.g.toString())
+    setRgbB(rgbResult.b.toString())
+
+    const hexResult = rgbToHex(rgbResult.r, rgbResult.g, rgbResult.b)
+    setHex(hexResult)
+    setHexInput(hexResult)
+  }
 
   const copyToClipboard = (text: string, key: string) => {
     navigator.clipboard.writeText(text)
@@ -202,7 +241,7 @@ export function HexToRGB() {
 
   const loadSampleColor = (sampleHex: string) => {
     setInputMode("hex")
-    setHexInput(sampleHex)
+    updateFromHex(sampleHex)
   }
 
   const alphaValue = parseFloat(alpha) || 1
@@ -251,7 +290,7 @@ export function HexToRGB() {
                   type="text"
                   placeholder="#2563eb"
                   value={hexInput}
-                  onChange={(e) => setHexInput(e.target.value)}
+                  onChange={(e) => updateFromHex(e.target.value)}
                   className="font-mono border-2 border-primary/30 focus:border-primary"
                 />
                 <input
@@ -259,7 +298,7 @@ export function HexToRGB() {
                   value={hex}
                   onChange={(e) => {
                     setInputMode("hex")
-                    setHexInput(e.target.value)
+                    updateFromHex(e.target.value)
                   }}
                   className="w-16 h-10 rounded border-2 border-border cursor-pointer"
                 />
@@ -276,7 +315,7 @@ export function HexToRGB() {
                   min="0"
                   max="255"
                   value={rgbR}
-                  onChange={(e) => setRgbR(e.target.value)}
+                  onChange={(e) => updateFromRgb(e.target.value, rgbG, rgbB)}
                   className="border-2 border-primary/30 focus:border-primary"
                 />
               </div>
@@ -287,7 +326,7 @@ export function HexToRGB() {
                   min="0"
                   max="255"
                   value={rgbG}
-                  onChange={(e) => setRgbG(e.target.value)}
+                  onChange={(e) => updateFromRgb(rgbR, e.target.value, rgbB)}
                   className="border-2 border-primary/30 focus:border-primary"
                 />
               </div>
@@ -298,7 +337,7 @@ export function HexToRGB() {
                   min="0"
                   max="255"
                   value={rgbB}
-                  onChange={(e) => setRgbB(e.target.value)}
+                  onChange={(e) => updateFromRgb(rgbR, rgbG, e.target.value)}
                   className="border-2 border-primary/30 focus:border-primary"
                 />
               </div>
@@ -314,7 +353,7 @@ export function HexToRGB() {
                   min="0"
                   max="360"
                   value={hslH}
-                  onChange={(e) => setHslH(e.target.value)}
+                  onChange={(e) => updateFromHsl(e.target.value, hslS, hslL)}
                   className="border-2 border-primary/30 focus:border-primary"
                 />
               </div>
@@ -325,7 +364,7 @@ export function HexToRGB() {
                   min="0"
                   max="100"
                   value={hslS}
-                  onChange={(e) => setHslS(e.target.value)}
+                  onChange={(e) => updateFromHsl(hslH, e.target.value, hslL)}
                   className="border-2 border-primary/30 focus:border-primary"
                 />
               </div>
@@ -336,7 +375,7 @@ export function HexToRGB() {
                   min="0"
                   max="100"
                   value={hslL}
-                  onChange={(e) => setHslL(e.target.value)}
+                  onChange={(e) => updateFromHsl(hslH, hslS, e.target.value)}
                   className="border-2 border-primary/30 focus:border-primary"
                 />
               </div>

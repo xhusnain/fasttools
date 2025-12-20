@@ -1,4 +1,4 @@
-import { ImageRepository } from "@/services";
+
 import { CurrencyRepository } from "@/services";
 import { YouTubeRepository } from "@/services";
 import { InstagramRepository } from "@/services";
@@ -6,24 +6,7 @@ import { AIRepository } from "@/services";
 import { DownloaderRepository } from "../repositories/downloader.repository";
 import type { SocialMediaPlatform } from "@/types";
 
-export const ImageService = {
-  removeBackground: async (options: {
-    image: Blob;
-    strength?: "strong" | "medium" | "weak";
-    refine?: "depth" | "edge" | "none";
-  }): Promise<Blob> => {
-    return ImageRepository.removeBackground(options);
-  },
 
-  blurBackground: async (options: {
-    image: Blob;
-    intensity: number;
-    strength?: "strong" | "medium" | "weak";
-    refine?: "depth" | "edge" | "none";
-  }): Promise<Blob> => {
-    return ImageRepository.blurBackground(options);
-  },
-};
 
 export const CurrencyService = {
   getCurrencies: async () => {
@@ -92,7 +75,7 @@ export const DownloaderService = {
 };
 
 export const API = {
-  Image: ImageService,
+
   Currency: CurrencyService,
   YouTube: YouTubeService,
   Instagram: InstagramService,

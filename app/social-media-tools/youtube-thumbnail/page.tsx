@@ -3,14 +3,14 @@ import { ToolPageLayout } from "@/components/common/tool-page-layout"
 import { createToolConfig } from "@/lib/create-tool-config"
 
 const toolConfig = createToolConfig({
-  toolName: "YouTube Thumbnail Downloader",
+  toolName: "Thumbnail Downloader - Save YouTube Images",
   description: "Download YouTube video thumbnails in all available quality sizes. Get maximum quality (1280x720), high quality, medium, and standard thumbnails instantly.",
-  metaTitle: "YouTube Thumbnail Downloader | Free Download HD Thumbnails",
+  metaTitle: "Thumbnail Downloader - Save YouTube Images",
   metaDescription: "FastTools YouTube Thumbnail Downloader - Download YouTube video thumbnails in all available quality sizes. Get maximum quality (1280x720), high quality, medium, and standard thumbnails instantly.",
   path: "/social-media-tools/youtube-thumbnail",
 
   header: {
-    title: "YouTube Thumbnail Downloader",
+    title: "Thumbnail Downloader - Save YouTube Images",
     description: "Download YouTube video thumbnails in all available quality sizes. Get HD thumbnails instantly for your content creation needs.",
     titleSize: "medium",
     descriptionSize: "small",

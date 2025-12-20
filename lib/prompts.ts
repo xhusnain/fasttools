@@ -104,43 +104,70 @@ QUALITY STANDARDS:
 
 Generate the 100 names now as a valid JSON object:`,
 
-  lyrics: (languageInstructions: string, selectedLanguage: string, theme: string, genre: string | undefined, mood: string | undefined, duration: number | undefined, structure: string) => `You are a professional songwriter and lyricist with expertise in multiple languages. Generate original, creative, and emotionally resonant song lyrics based on the following specifications:
+  channelNames: (topic: string, keywords?: string, tone?: string, targetAudience?: string) => `Act as a creative branding expert. Generate 50 unique and catchy YouTube channel name suggestions based on the following details:
+  
+  Topic/Niche: "${topic}"
+  ${keywords ? `Keywords to Include: "${keywords}"` : ""}
+  ${tone ? `Desired Tone: "${tone}"` : ""}
+  ${targetAudience ? `Target Audience: "${targetAudience}"` : ""}
+  
+  The goal is to provide a diverse range of options suitable for this specific niche and audience.
+  
+  Organize the suggestions into the following specific categories (generate 5-8 names per category to reach ~50 total):
+  1. Catchy & Short (Punchy, 1-2 words, easy to remember, good for branding)
+  2. Niche-Specific (Descriptive, clear relevance to ${topic})
+  3. Unique & Abstract (Creative, metaphoric, distinct)
+  4. Professional & Authority (Trustworthy, expert vibe)
+  5. Fun & Playful (Engaging, energetic, maybe pun-based)
+  6. Modern & Trendy (Edgy, cool, futuristic)
+  7. Personal Brand (Using "With [Name]" style or similar if appropriate)
+  
+  Return the result STRICTLY as a JSON object with this exact structure:
+  {
+    "Catchy & Short": ["Name1", "Name2", ...],
+    "Niche-Specific": ["Name3", "Name4", ...],
+    ...
+  }
+  
+  Do NOT include any markdown formatting (like \`\`\`json). Return ONLY the raw valid JSON string.`,
 
-**LANGUAGE REQUIREMENT (MOST IMPORTANT):**
-${languageInstructions}
-CRITICAL: The ENTIRE song lyrics MUST be written in ${selectedLanguage.toUpperCase()}. Do not mix languages. Every word, every line, every section must be in ${selectedLanguage}.
+  lyrics: (languageInstructions: string, selectedLanguage: string, theme: string, genre: string | undefined, mood: string | undefined, duration: number | undefined, structure: string) => `You are a professional songwriter and lyricist with expertise in multiple languages.Generate original, creative, and emotionally resonant song lyrics based on the following specifications:
 
-**SONG SPECIFICATIONS:**
-- Theme/Topic: "${theme}"
-- Genre: ${genre || "General/Mixed"}
-- Mood/Emotion: ${mood || "Balanced"}
+** LANGUAGE REQUIREMENT(MOST IMPORTANT):**
+  ${languageInstructions}
+CRITICAL: The ENTIRE song lyrics MUST be written in ${selectedLanguage.toUpperCase()}. Do not mix languages.Every word, every line, every section must be in ${selectedLanguage}.
+
+** SONG SPECIFICATIONS:**
+  - Theme / Topic: "${theme}"
+    - Genre: ${genre || "General/Mixed"}
+- Mood / Emotion: ${mood || "Balanced"}
 - Approximate Duration: ${duration ? `${duration} minutes` : "Standard song length (3-4 minutes)"}
 - Song Structure: ${structure}
 
-**WRITING GUIDELINES:**
-1. Create original, unique lyrics that tell a story or convey deep emotions
+** WRITING GUIDELINES:**
+  1. Create original, unique lyrics that tell a story or convey deep emotions
 2. Use vivid imagery, metaphors, and sensory details
 3. Maintain consistent rhyme scheme appropriate for the ${genre || "chosen"} genre
 4. Ensure lyrics flow naturally when sung
 5. Make the chorus catchy, memorable, and repetitive
 6. Build emotional progression throughout the song
-7. Use genre-appropriate language, vocabulary, and themes
+7. Use genre - appropriate language, vocabulary, and themes
 8. Include proper verse, chorus, and bridge labels
 9. Make each section distinct yet cohesive with the overall song
 
-**FORMAT REQUIREMENTS:**
-- Clearly label each section: [Verse 1], [Chorus], [Verse 2], [Bridge], etc.
+  ** FORMAT REQUIREMENTS:**
+    - Clearly label each section: [Verse 1], [Chorus], [Verse 2], [Bridge], etc.
 - Use proper line breaks and spacing for readability
-- Make the chorus stand out with memorable hooks
-- Ensure the bridge provides contrast and emotional depth
-- End with a strong outro or final chorus
+  - Make the chorus stand out with memorable hooks
+    - Ensure the bridge provides contrast and emotional depth
+      - End with a strong outro or final chorus
 
-**GENRE-SPECIFIC NOTES:**
-${genre === "hip-hop" || genre === "rap" ? "- Focus on rhythmic flow, internal rhymes, and wordplay\n- Use contemporary slang and cultural references\n- Create strong bars with clever punchlines" : ""}
+        ** GENRE - SPECIFIC NOTES:**
+          ${genre === "hip-hop" || genre === "rap" ? "- Focus on rhythmic flow, internal rhymes, and wordplay\n- Use contemporary slang and cultural references\n- Create strong bars with clever punchlines" : ""}
 ${genre === "country" ? "- Use storytelling elements and rural imagery\n- Include relatable, down-to-earth language\n- Focus on personal experiences and emotions" : ""}
 ${genre === "pop" ? "- Keep lyrics simple, catchy, and universally relatable\n- Focus on memorable hooks and repetition\n- Use modern, contemporary language" : ""}
 ${genre === "rock" ? "- Use powerful, emotive language\n- Include themes of rebellion, freedom, or intensity\n- Create strong, anthemic choruses" : ""}
 ${genre === "R&B" || genre === "soul" ? "- Focus on love, relationships, and emotions\n- Use smooth, flowing language\n- Include sensual and romantic imagery" : ""}
 
-Generate the complete song lyrics now. Make it professional, original, and ready to be set to music.`
+Generate the complete song lyrics now.Make it professional, original, and ready to be set to music.`
 }

@@ -421,7 +421,7 @@ export function PDFUnlocker() {
                       placeholder="Enter password"
                       value={password}
                       onChange={(e) => setPassword(e.target.value)}
-                      className="h-11 border-2 border-primary focus:border-orange-600 focus:ring-orange-500"
+                      className="h-11 border-2 border-primary focus:border-blue-600 focus:ring-blue-500"
                       disabled={loading}
                     />
                     <p className="text-xs text-muted-foreground">

@@ -129,7 +129,7 @@ export function JSONToCSV() {
           placeholder='[{"name": "John", "age": 30}, {"name": "Jane", "age": 25}]'
           value={json}
           onChange={(e) => setJson(e.target.value)}
-          className="min-h-48 font-mono text-sm border-2 border-orange-300 focus:border-primary"
+          className="min-h-48 font-mono text-sm border-2 border-blue-300 focus:border-primary"
         />
       </div>
 

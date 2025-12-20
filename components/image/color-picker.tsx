@@ -251,7 +251,7 @@ export function ColorPicker({ value, onChange, label, className = "", id }: Colo
       {/* Color Preview GButton */}
       <button
         onClick={handleTogglePicker}
-        className="flex items-center gap-2 w-full p-3 rounded-lg border-2 border-primary hover:border-orange-600 transition-colors"
+        className="flex items-center gap-2 w-full p-3 rounded-lg border-2 border-primary hover:border-blue-600 transition-colors"
       >
         <div
           className="w-8 h-8 rounded border border-border"

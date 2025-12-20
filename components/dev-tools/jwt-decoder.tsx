@@ -1146,8 +1146,8 @@ metadata:
           <tr>
             <td class="key">${key}</td>
             <td>${typeof value === 'number' && (key === 'exp' || key === 'iat' || key === 'nbf') ?
-                `${value} (${new Date(value * 1000).toLocaleString()})` :
-                JSON.stringify(value)}</td>
+                    `${value} (${new Date(value * 1000).toLocaleString()})` :
+                    JSON.stringify(value)}</td>
             <td>${description}</td>
           </tr>
         `}).join('')}
@@ -1461,7 +1461,7 @@ metadata:
                                     <select
                                         value={selectedAlgorithm}
                                         onChange={(e) => setSelectedAlgorithm(e.target.value)}
-                                        className="px-3 py-1.5 text-sm border-2 border-orange-300 rounded-md bg-background focus:border-primary focus:outline-none cursor-pointer w-24"
+                                        className="px-3 py-1.5 text-sm border-2 border-blue-300 rounded-md bg-background focus:border-primary focus:outline-none cursor-pointer w-24"
                                         style={{ wordBreak: 'normal' }}
                                     >
                                         <option value="HS256">HS256</option>
@@ -1509,7 +1509,7 @@ metadata:
                                             variant="outline"
                                             size="sm"
                                             onClick={analyzePerformance}
-                                            className="text-xs bg-gradient-to-r from-yellow-500 to-orange-500 text-white hover:from-yellow-600 hover:to-primary/90 border-0"
+                                            className="text-xs bg-gradient-to-r from-yellow-500 to-blue-500 text-white hover:from-yellow-600 hover:to-primary/90 border-0"
                                         >
                                             <Zap className="h-3 w-3 mr-1" />
                                             Performance
@@ -1545,7 +1545,7 @@ metadata:
                                             variant="outline"
                                             size="sm"
                                             onClick={analyzeSecurity}
-                                            className="text-xs bg-gradient-to-r from-red-500 to-orange-500 text-white hover:from-red-600 hover:to-primary/90 border-0"
+                                            className="text-xs bg-gradient-to-r from-red-500 to-blue-500 text-white hover:from-red-600 hover:to-primary/90 border-0"
                                         >
                                             <Shield className="h-3 w-3 mr-1" />
                                             Security
@@ -1587,7 +1587,7 @@ metadata:
                                 placeholder="Paste your JWT token here..."
                                 value={token}
                                 onChange={(e) => setToken(e.target.value)}
-                                className="!h-32 !max-h-32 !min-h-32 !w-full resize-none overflow-y-auto overflow-x-hidden font-mono text-base pr-20 border-2 border-orange-300 focus:border-primary"
+                                className="!h-32 !max-h-32 !min-h-32 !w-full resize-none overflow-y-auto overflow-x-hidden font-mono text-base pr-20 border-2 border-blue-300 focus:border-primary"
                                 style={{
                                     wordBreak: 'break-all',
                                     overflowWrap: 'break-word',
@@ -1638,8 +1638,8 @@ metadata:
                                             <div className="flex items-center gap-2 shrink-0">
                                                 <Clock className={`h-4 w-4 ${getExpirationColor(timeRemaining)}`} />
                                                 <span className={`text-sm font-semibold ${getExpirationColor(timeRemaining)} whitespace-nowrap`}>
-                          {formatTimeRemaining(timeRemaining)}
-                        </span>
+                                                    {formatTimeRemaining(timeRemaining)}
+                                                </span>
                                             </div>
                                         )}
                                     </div>
@@ -1667,33 +1667,33 @@ metadata:
                                         <GTabsTrigger value="table" className="text-sm font-medium">CLAIMS TABLE</GTabsTrigger>
                                     </GTabsList>
                                     <GTabsContent value="json" className="mt-3">
-                    <pre className="p-4 bg-muted rounded-md overflow-x-hidden text-sm font-mono break-all" style={{ wordBreak: 'break-all', overflowWrap: 'break-word', whiteSpace: 'pre-wrap' }}>
-                      {JSON.stringify(decoded.header, null, 2)}
-                    </pre>
+                                        <pre className="p-4 bg-muted rounded-md overflow-x-hidden text-sm font-mono break-all" style={{ wordBreak: 'break-all', overflowWrap: 'break-word', whiteSpace: 'pre-wrap' }}>
+                                            {JSON.stringify(decoded.header, null, 2)}
+                                        </pre>
                                     </GTabsContent>
                                     <GTabsContent value="table" className="mt-3">
                                         <div className="border rounded-md overflow-hidden w-full max-w-full overflow-x-auto">
                                             <table className="w-full text-sm">
                                                 <thead className="bg-muted">
-                                                <tr>
-                                                    <th className="text-left p-3 font-bold">Claim</th>
-                                                    <th className="text-left p-3 font-bold">Value</th>
-                                                    <th className="text-left p-3 font-bold">Description</th>
-                                                </tr>
+                                                    <tr>
+                                                        <th className="text-left p-3 font-bold">Claim</th>
+                                                        <th className="text-left p-3 font-bold">Value</th>
+                                                        <th className="text-left p-3 font-bold">Description</th>
+                                                    </tr>
                                                 </thead>
                                                 <tbody>
-                                                {Object.entries(decoded.header).map(([key, value]) => (
-                                                    <tr key={key} className="border-t">
-                                                        <td className="p-3 font-mono font-semibold break-words">{key}</td>
-                                                        <td className="p-3 font-mono break-words">{String(value)}</td>
-                                                        <td className="p-3 text-muted-foreground break-words">
-                                                            {key === 'alg' && 'The algorithm used to sign the JWT'}
-                                                            {key === 'typ' && 'The media type of this complete JWT'}
-                                                            {key === 'kid' && 'Key ID - identifies which key was used'}
-                                                            {!['alg', 'typ', 'kid'].includes(key) && 'Custom header claim'}
-                                                        </td>
-                                                    </tr>
-                                                ))}
+                                                    {Object.entries(decoded.header).map(([key, value]) => (
+                                                        <tr key={key} className="border-t">
+                                                            <td className="p-3 font-mono font-semibold break-words">{key}</td>
+                                                            <td className="p-3 font-mono break-words">{String(value)}</td>
+                                                            <td className="p-3 text-muted-foreground break-words">
+                                                                {key === 'alg' && 'The algorithm used to sign the JWT'}
+                                                                {key === 'typ' && 'The media type of this complete JWT'}
+                                                                {key === 'kid' && 'Key ID - identifies which key was used'}
+                                                                {!['alg', 'typ', 'kid'].includes(key) && 'Custom header claim'}
+                                                            </td>
+                                                        </tr>
+                                                    ))}
                                                 </tbody>
                                             </table>
                                         </div>
@@ -1722,65 +1722,65 @@ metadata:
                                         <GTabsTrigger value="table" className="text-sm font-medium">CLAIMS TABLE</GTabsTrigger>
                                     </GTabsList>
                                     <GTabsContent value="json" className="mt-3">
-                    <pre className="p-4 bg-muted rounded-md overflow-x-hidden text-sm font-mono break-all" style={{ wordBreak: 'break-all', overflowWrap: 'break-word', whiteSpace: 'pre-wrap' }}>
-                      {JSON.stringify(decoded.payload, null, 2)}
-                    </pre>
+                                        <pre className="p-4 bg-muted rounded-md overflow-x-hidden text-sm font-mono break-all" style={{ wordBreak: 'break-all', overflowWrap: 'break-word', whiteSpace: 'pre-wrap' }}>
+                                            {JSON.stringify(decoded.payload, null, 2)}
+                                        </pre>
                                     </GTabsContent>
                                     <GTabsContent value="table" className="mt-3">
                                         <div className="border rounded-md overflow-hidden w-full max-w-full overflow-x-auto">
                                             <table className="w-full text-sm">
                                                 <thead className="bg-muted">
-                                                <tr>
-                                                    <th className="text-left p-3 font-bold">Claim</th>
-                                                    <th className="text-left p-3 font-bold">Value</th>
-                                                    <th className="text-left p-3 font-bold">Description</th>
-                                                </tr>
+                                                    <tr>
+                                                        <th className="text-left p-3 font-bold">Claim</th>
+                                                        <th className="text-left p-3 font-bold">Value</th>
+                                                        <th className="text-left p-3 font-bold">Description</th>
+                                                    </tr>
                                                 </thead>
                                                 <tbody>
-                                                {Object.entries(decoded.payload).map(([key, value]) => {
-                                                    // Format value based on type
-                                                    let displayValue = String(value)
-                                                    let description = 'Custom claim'
+                                                    {Object.entries(decoded.payload).map(([key, value]) => {
+                                                        // Format value based on type
+                                                        let displayValue = String(value)
+                                                        let description = 'Custom claim'
 
-                                                    // Standard JWT claims descriptions
-                                                    if (key === 'sub') description = 'The subject of the JWT (the user)'
-                                                    else if (key === 'iss') description = 'Issuer - who created and signed this token'
-                                                    else if (key === 'aud') description = 'Audience - who this token is intended for'
-                                                    else if (key === 'exp') {
-                                                        description = 'Expiration time - when this token expires'
-                                                        try {
-                                                            const date = new Date(Number(value) * 1000)
-                                                            displayValue = `${value} (${date.toUTCString()})`
-                                                        } catch (e) { }
-                                                    }
-                                                    else if (key === 'nbf') {
-                                                        description = 'Not Before - token should not be accepted before this time'
-                                                        try {
-                                                            const date = new Date(Number(value) * 1000)
-                                                            displayValue = `${value} (${date.toUTCString()})`
-                                                        } catch (e) { }
-                                                    }
-                                                    else if (key === 'iat') {
-                                                        description = 'Issued At - when this token was created'
-                                                        try {
-                                                            const date = new Date(Number(value) * 1000)
-                                                            displayValue = `${value} (${date.toUTCString()})`
-                                                        } catch (e) { }
-                                                    }
-                                                    else if (key === 'jti') description = 'JWT ID - unique identifier for this token'
-                                                    else if (key === 'name') description = 'Name of the user'
-                                                    else if (key === 'email') description = 'Email address of the user'
-                                                    else if (key === 'admin') description = 'Admin status'
-                                                    else if (key === 'role' || key === 'roles') description = 'User role(s)'
+                                                        // Standard JWT claims descriptions
+                                                        if (key === 'sub') description = 'The subject of the JWT (the user)'
+                                                        else if (key === 'iss') description = 'Issuer - who created and signed this token'
+                                                        else if (key === 'aud') description = 'Audience - who this token is intended for'
+                                                        else if (key === 'exp') {
+                                                            description = 'Expiration time - when this token expires'
+                                                            try {
+                                                                const date = new Date(Number(value) * 1000)
+                                                                displayValue = `${value} (${date.toUTCString()})`
+                                                            } catch (e) { }
+                                                        }
+                                                        else if (key === 'nbf') {
+                                                            description = 'Not Before - token should not be accepted before this time'
+                                                            try {
+                                                                const date = new Date(Number(value) * 1000)
+                                                                displayValue = `${value} (${date.toUTCString()})`
+                                                            } catch (e) { }
+                                                        }
+                                                        else if (key === 'iat') {
+                                                            description = 'Issued At - when this token was created'
+                                                            try {
+                                                                const date = new Date(Number(value) * 1000)
+                                                                displayValue = `${value} (${date.toUTCString()})`
+                                                            } catch (e) { }
+                                                        }
+                                                        else if (key === 'jti') description = 'JWT ID - unique identifier for this token'
+                                                        else if (key === 'name') description = 'Name of the user'
+                                                        else if (key === 'email') description = 'Email address of the user'
+                                                        else if (key === 'admin') description = 'Admin status'
+                                                        else if (key === 'role' || key === 'roles') description = 'User role(s)'
 
-                                                    return (
-                                                        <tr key={key} className="border-t">
-                                                            <td className="p-3 font-mono font-semibold break-words">{key}</td>
-                                                            <td className="p-3 font-mono break-words">{displayValue}</td>
-                                                            <td className="p-3 text-muted-foreground break-words">{description}</td>
-                                                        </tr>
-                                                    )
-                                                })}
+                                                        return (
+                                                            <tr key={key} className="border-t">
+                                                                <td className="p-3 font-mono font-semibold break-words">{key}</td>
+                                                                <td className="p-3 font-mono break-words">{displayValue}</td>
+                                                                <td className="p-3 text-muted-foreground break-words">{description}</td>
+                                                            </tr>
+                                                        )
+                                                    })}
                                                 </tbody>
                                             </table>
                                         </div>
@@ -1797,8 +1797,8 @@ metadata:
                                     </GButton>
                                 </div>
                                 <pre className="p-4 bg-muted rounded-md overflow-x-hidden text-sm font-mono break-all" style={{ wordBreak: 'break-all', overflowWrap: 'break-word', whiteSpace: 'pre-wrap' }}>
-                  {decoded.signature}
-                </pre>
+                                    {decoded.signature}
+                                </pre>
                             </GCard>
 
                             {/* Signature Verification */}
@@ -1816,7 +1816,7 @@ metadata:
                                                 placeholder="Enter your secret key..."
                                                 value={secret}
                                                 onChange={(e) => setSecret(e.target.value)}
-                                                className="font-mono text-base border-2 border-orange-300 focus:border-primary"
+                                                className="font-mono text-base border-2 border-blue-300 focus:border-primary"
                                                 style={{ wordBreak: 'break-all', overflowWrap: 'anywhere' }}
                                             />
                                             <GButton
@@ -1833,7 +1833,7 @@ metadata:
                                         <div className={`p-4 rounded-lg flex items-center gap-3 ${isVerified
                                             ? "bg-card border border-border"
                                             : "bg-destructive/10 border border-destructive/20"
-                                        }`}>
+                                            }`}>
                                             {isVerified ? (
                                                 <>
                                                     <CheckCircle2 className="h-6 w-6 text-heading-accent" />
@@ -1867,7 +1867,7 @@ metadata:
                             <GTextarea
                                 value={headerInput}
                                 onChange={(e) => setHeaderInput(e.target.value)}
-                                className="!h-40 !max-h-40 !min-h-40 !w-full resize-none overflow-y-auto overflow-x-hidden font-mono text-base border-2 border-orange-300 focus:border-primary"
+                                className="!h-40 !max-h-40 !min-h-40 !w-full resize-none overflow-y-auto overflow-x-hidden font-mono text-base border-2 border-blue-300 focus:border-primary"
                                 style={{
                                     wordBreak: 'break-all',
                                     overflowWrap: 'break-word',
@@ -1888,7 +1888,7 @@ metadata:
                             <GTextarea
                                 value={payloadInput}
                                 onChange={(e) => setPayloadInput(e.target.value)}
-                                className="!h-40 !max-h-40 !min-h-40 !w-full resize-none overflow-y-auto overflow-x-hidden font-mono text-base border-2 border-orange-300 focus:border-primary"
+                                className="!h-40 !max-h-40 !min-h-40 !w-full resize-none overflow-y-auto overflow-x-hidden font-mono text-base border-2 border-blue-300 focus:border-primary"
                                 style={{
                                     wordBreak: 'break-all',
                                     overflowWrap: 'break-word',
@@ -1921,8 +1921,8 @@ metadata:
                                 </GButton>
                             </div>
                             <pre className="p-3 bg-muted rounded-md overflow-x-hidden text-xs font-mono break-all" style={{ wordBreak: 'break-all', overflowWrap: 'break-word', whiteSpace: 'pre-wrap' }}>
-                {encodedToken}
-              </pre>
+                                {encodedToken}
+                            </pre>
                         </GCard>
                     )}
                 </GTabsContent>
@@ -2149,9 +2149,9 @@ metadata:
                                 </GButton>
                             </div>
                             <div className="flex-1 overflow-auto border-2 border-green-300 dark:border-green-700 rounded-lg">
-                <pre className="p-4 bg-muted/50 text-xs font-mono h-full" style={{ whiteSpace: 'pre-wrap', wordBreak: 'break-word' }}>
-                  {generatedCode}
-                </pre>
+                                <pre className="p-4 bg-muted/50 text-xs font-mono h-full" style={{ whiteSpace: 'pre-wrap', wordBreak: 'break-word' }}>
+                                    {generatedCode}
+                                </pre>
                             </div>
                         </div>
 
@@ -2230,9 +2230,9 @@ metadata:
                         <div className="flex items-center justify-between">
                             <div className="flex items-center gap-3">
                                 <div className={`p-3 rounded-lg ${securityScore >= 80 ? 'bg-gradient-to-r from-green-500 to-emerald-500' :
-                                    securityScore >= 60 ? 'bg-gradient-to-r from-yellow-500 to-orange-500' :
+                                    securityScore >= 60 ? 'bg-gradient-to-r from-yellow-500 to-blue-500' :
                                         'bg-gradient-to-r from-red-500 to-rose-500'
-                                }`}>
+                                    }`}>
                                     {securityScore >= 80 ? <ShieldCheck className="h-6 w-6 text-white" /> :
                                         securityScore >= 60 ? <Shield className="h-6 w-6 text-white" /> :
                                             <ShieldAlert className="h-6 w-6 text-white" />}
@@ -2256,7 +2256,7 @@ metadata:
                         <div className={`p-4 rounded-lg border-2 ${securityScore >= 80 ? 'bg-card border-green-300 dark:border-green-700' :
                             securityScore >= 60 ? 'bg-card border-yellow-300 dark:border-yellow-700' :
                                 'bg-card border-red-300 dark:border-destructive'
-                        }`}>
+                            }`}>
                             <div className="flex items-center justify-between">
                                 <div>
                                     <p className="text-xs font-semibold text-muted-foreground mb-1">Security Score</p>
@@ -2264,7 +2264,7 @@ metadata:
                                         <p className={`text-4xl font-bold ${securityScore >= 80 ? 'text-heading-accent' :
                                             securityScore >= 60 ? 'text-foreground' :
                                                 'text-foreground'
-                                        }`}>
+                                            }`}>
                                             {securityScore}
                                         </p>
                                         <p className="text-xl text-muted-foreground">/100</p>
@@ -2272,7 +2272,7 @@ metadata:
                                     <p className={`text-xs font-medium mt-1 ${securityScore >= 80 ? 'text-heading-accent' :
                                         securityScore >= 60 ? 'text-foreground' :
                                             'text-foreground'
-                                    }`}>
+                                        }`}>
                                         {securityScore >= 80 ? '✅ Excellent - Token is secure' :
                                             securityScore >= 60 ? '⚠️ Good - Minor improvements needed' :
                                                 securityScore >= 40 ? '⚠️ Fair - Security issues detected' :
@@ -2323,7 +2323,7 @@ metadata:
                                                 issue.severity === 'medium' ? 'bg-card border-yellow-500' :
                                                     issue.severity === 'low' ? 'bg-card border-blue-500' :
                                                         'bg-card border-green-500'
-                                        }`}
+                                            }`}
                                     >
                                         <div className="flex items-start gap-2">
                                             {issue.severity === 'critical' ? <AlertTriangle className="h-4 w-4 text-foreground mt-0.5 shrink-0" /> :
@@ -2338,13 +2338,13 @@ metadata:
                                                 </p>
                                             </div>
                                             <span className={`px-2 py-1 text-xs font-semibold rounded shrink-0 ${issue.severity === 'critical' ? 'bg-red-100 dark:bg-red-900/50 text-foreground' :
-                                                issue.severity === 'high' ? 'bg-orange-100 dark:bg-orange-900/50 text-foreground' :
+                                                issue.severity === 'high' ? 'bg-blue-100 dark:bg-blue-900/50 text-foreground' :
                                                     issue.severity === 'medium' ? 'bg-yellow-100 dark:bg-yellow-900/50 text-foreground' :
                                                         issue.severity === 'low' ? 'bg-blue-100 dark:bg-blue-900/50 text-foreground' :
                                                             'bg-green-100 dark:bg-green-900/50 text-heading-accent'
-                                            }`}>
-                        {issue.severity.toUpperCase()}
-                      </span>
+                                                }`}>
+                                                {issue.severity.toUpperCase()}
+                                            </span>
                                         </div>
                                     </div>
                                 ))}
@@ -2390,7 +2390,7 @@ metadata:
                             </GButton>
                             <GButton
                                 onClick={analyzeSecurity}
-                                className="flex-1 bg-gradient-to-r from-red-500 to-orange-500 hover:from-red-600 hover:to-primary/90"
+                                className="flex-1 bg-gradient-to-r from-red-500 to-blue-500 hover:from-red-600 hover:to-primary/90"
                             >
                                 Re-scan Security
                             </GButton>
@@ -2499,35 +2499,35 @@ metadata:
                                     <div className="border border-gray-200 dark:border-gray-700 rounded-lg overflow-hidden">
                                         <table className="w-full text-xs">
                                             <thead className="bg-gray-100 dark:bg-muted">
-                                            <tr>
-                                                <th className="px-3 py-2 text-left font-semibold">Field</th>
-                                                <th className="px-3 py-2 text-left font-semibold">Token 1</th>
-                                                <th className="px-3 py-2 text-left font-semibold">Token 2</th>
-                                                <th className="px-3 py-2 text-center font-semibold">Status</th>
-                                            </tr>
+                                                <tr>
+                                                    <th className="px-3 py-2 text-left font-semibold">Field</th>
+                                                    <th className="px-3 py-2 text-left font-semibold">Token 1</th>
+                                                    <th className="px-3 py-2 text-left font-semibold">Token 2</th>
+                                                    <th className="px-3 py-2 text-center font-semibold">Status</th>
+                                                </tr>
                                             </thead>
                                             <tbody>
-                                            {compareObjects(decoded1.header, decoded2.header).map((diff, idx) => (
-                                                <tr key={idx} className={`
+                                                {compareObjects(decoded1.header, decoded2.header).map((diff, idx) => (
+                                                    <tr key={idx} className={`
                             ${diff.status === 'changed' ? 'bg-card' : ''}
                             ${diff.status === 'added' ? 'bg-card' : ''}
                             ${diff.status === 'removed' ? 'bg-card' : ''}
                           `}>
-                                                    <td className="px-3 py-2 font-mono font-semibold">{diff.key}</td>
-                                                    <td className="px-3 py-2 font-mono break-all">
-                                                        {diff.value1 !== undefined ? JSON.stringify(diff.value1) : '-'}
-                                                    </td>
-                                                    <td className="px-3 py-2 font-mono break-all">
-                                                        {diff.value2 !== undefined ? JSON.stringify(diff.value2) : '-'}
-                                                    </td>
-                                                    <td className="px-3 py-2 text-center">
-                                                        {diff.status === 'same' && <span className="text-gray-500">Same</span>}
-                                                        {diff.status === 'changed' && <span className="text-foreground font-semibold">Changed</span>}
-                                                        {diff.status === 'added' && <span className="text-heading-accent font-semibold">Added</span>}
-                                                        {diff.status === 'removed' && <span className="text-foreground font-semibold">Removed</span>}
-                                                    </td>
-                                                </tr>
-                                            ))}
+                                                        <td className="px-3 py-2 font-mono font-semibold">{diff.key}</td>
+                                                        <td className="px-3 py-2 font-mono break-all">
+                                                            {diff.value1 !== undefined ? JSON.stringify(diff.value1) : '-'}
+                                                        </td>
+                                                        <td className="px-3 py-2 font-mono break-all">
+                                                            {diff.value2 !== undefined ? JSON.stringify(diff.value2) : '-'}
+                                                        </td>
+                                                        <td className="px-3 py-2 text-center">
+                                                            {diff.status === 'same' && <span className="text-gray-500">Same</span>}
+                                                            {diff.status === 'changed' && <span className="text-foreground font-semibold">Changed</span>}
+                                                            {diff.status === 'added' && <span className="text-heading-accent font-semibold">Added</span>}
+                                                            {diff.status === 'removed' && <span className="text-foreground font-semibold">Removed</span>}
+                                                        </td>
+                                                    </tr>
+                                                ))}
                                             </tbody>
                                         </table>
                                     </div>
@@ -2539,51 +2539,51 @@ metadata:
                                     <div className="border border-gray-200 dark:border-gray-700 rounded-lg overflow-hidden">
                                         <table className="w-full text-xs">
                                             <thead className="bg-gray-100 dark:bg-muted">
-                                            <tr>
-                                                <th className="px-3 py-2 text-left font-semibold">Claim</th>
-                                                <th className="px-3 py-2 text-left font-semibold">Token 1</th>
-                                                <th className="px-3 py-2 text-left font-semibold">Token 2</th>
-                                                <th className="px-3 py-2 text-center font-semibold">Status</th>
-                                            </tr>
+                                                <tr>
+                                                    <th className="px-3 py-2 text-left font-semibold">Claim</th>
+                                                    <th className="px-3 py-2 text-left font-semibold">Token 1</th>
+                                                    <th className="px-3 py-2 text-left font-semibold">Token 2</th>
+                                                    <th className="px-3 py-2 text-center font-semibold">Status</th>
+                                                </tr>
                                             </thead>
                                             <tbody>
-                                            {compareObjects(decoded1.payload, decoded2.payload).map((diff, idx) => (
-                                                <tr key={idx} className={`
+                                                {compareObjects(decoded1.payload, decoded2.payload).map((diff, idx) => (
+                                                    <tr key={idx} className={`
                             ${diff.status === 'changed' ? 'bg-card' : ''}
                             ${diff.status === 'added' ? 'bg-card' : ''}
                             ${diff.status === 'removed' ? 'bg-card' : ''}
                           `}>
-                                                    <td className="px-3 py-2 font-mono font-semibold">{diff.key}</td>
-                                                    <td className="px-3 py-2 font-mono break-all">
-                                                        {diff.value1 !== undefined ? (
-                                                            typeof diff.value1 === 'number' && (diff.key === 'exp' || diff.key === 'iat' || diff.key === 'nbf') ? (
-                                                                <span>
-                                    {diff.value1} <span className="text-muted-foreground">({new Date(diff.value1 * 1000).toLocaleString()})</span>
-                                  </span>
-                                                            ) : (
-                                                                JSON.stringify(diff.value1)
-                                                            )
-                                                        ) : '-'}
-                                                    </td>
-                                                    <td className="px-3 py-2 font-mono break-all">
-                                                        {diff.value2 !== undefined ? (
-                                                            typeof diff.value2 === 'number' && (diff.key === 'exp' || diff.key === 'iat' || diff.key === 'nbf') ? (
-                                                                <span>
-                                    {diff.value2} <span className="text-muted-foreground">({new Date(diff.value2 * 1000).toLocaleString()})</span>
-                                  </span>
-                                                            ) : (
-                                                                JSON.stringify(diff.value2)
-                                                            )
-                                                        ) : '-'}
-                                                    </td>
-                                                    <td className="px-3 py-2 text-center">
-                                                        {diff.status === 'same' && <span className="text-gray-500">Same</span>}
-                                                        {diff.status === 'changed' && <span className="text-foreground font-semibold">Changed</span>}
-                                                        {diff.status === 'added' && <span className="text-heading-accent font-semibold">Added</span>}
-                                                        {diff.status === 'removed' && <span className="text-foreground font-semibold">Removed</span>}
-                                                    </td>
-                                                </tr>
-                                            ))}
+                                                        <td className="px-3 py-2 font-mono font-semibold">{diff.key}</td>
+                                                        <td className="px-3 py-2 font-mono break-all">
+                                                            {diff.value1 !== undefined ? (
+                                                                typeof diff.value1 === 'number' && (diff.key === 'exp' || diff.key === 'iat' || diff.key === 'nbf') ? (
+                                                                    <span>
+                                                                        {diff.value1} <span className="text-muted-foreground">({new Date(diff.value1 * 1000).toLocaleString()})</span>
+                                                                    </span>
+                                                                ) : (
+                                                                    JSON.stringify(diff.value1)
+                                                                )
+                                                            ) : '-'}
+                                                        </td>
+                                                        <td className="px-3 py-2 font-mono break-all">
+                                                            {diff.value2 !== undefined ? (
+                                                                typeof diff.value2 === 'number' && (diff.key === 'exp' || diff.key === 'iat' || diff.key === 'nbf') ? (
+                                                                    <span>
+                                                                        {diff.value2} <span className="text-muted-foreground">({new Date(diff.value2 * 1000).toLocaleString()})</span>
+                                                                    </span>
+                                                                ) : (
+                                                                    JSON.stringify(diff.value2)
+                                                                )
+                                                            ) : '-'}
+                                                        </td>
+                                                        <td className="px-3 py-2 text-center">
+                                                            {diff.status === 'same' && <span className="text-gray-500">Same</span>}
+                                                            {diff.status === 'changed' && <span className="text-foreground font-semibold">Changed</span>}
+                                                            {diff.status === 'added' && <span className="text-heading-accent font-semibold">Added</span>}
+                                                            {diff.status === 'removed' && <span className="text-foreground font-semibold">Removed</span>}
+                                                        </td>
+                                                    </tr>
+                                                ))}
                                             </tbody>
                                         </table>
                                     </div>
@@ -2729,7 +2729,7 @@ metadata:
                                             className={`p-3 border rounded-lg cursor-pointer transition-all ${appliedOptimizations.has(suggestion.type)
                                                 ? 'bg-card border-cyan-300 dark:border-cyan-700'
                                                 : 'bg-card border-gray-200 dark:border-gray-700 hover:border-cyan-300'
-                                            }`}
+                                                }`}
                                             onClick={() => toggleOptimization(suggestion.type)}
                                         >
                                             <div className="flex items-start justify-between gap-3">
@@ -2901,7 +2901,7 @@ metadata:
                         {/* Header */}
                         <div className="flex items-center justify-between border-b pb-3">
                             <div className="flex items-center gap-3">
-                                <div className="p-2 bg-gradient-to-r from-yellow-500 to-orange-500 rounded-lg">
+                                <div className="p-2 bg-gradient-to-r from-yellow-500 to-blue-500 rounded-lg">
                                     <Zap className="h-5 w-5 text-white" />
                                 </div>
                                 <div>
@@ -3006,20 +3006,20 @@ metadata:
                             <div className="border border-gray-200 dark:border-gray-700 rounded-lg overflow-hidden">
                                 <table className="w-full text-xs">
                                     <thead className="bg-gray-100 dark:bg-muted">
-                                    <tr>
-                                        <th className="px-3 py-2 text-left font-semibold">Requests/Day</th>
-                                        <th className="px-3 py-2 text-right font-semibold">Daily Transfer</th>
-                                        <th className="px-3 py-2 text-right font-semibold">Monthly Transfer</th>
-                                    </tr>
+                                        <tr>
+                                            <th className="px-3 py-2 text-left font-semibold">Requests/Day</th>
+                                            <th className="px-3 py-2 text-right font-semibold">Daily Transfer</th>
+                                            <th className="px-3 py-2 text-right font-semibold">Monthly Transfer</th>
+                                        </tr>
                                     </thead>
                                     <tbody>
-                                    {calculateNetworkImpact().map((item, idx) => (
-                                        <tr key={idx} className="border-t border-gray-200 dark:border-gray-700">
-                                            <td className="px-3 py-2 font-mono">{item.requests.toLocaleString()}</td>
-                                            <td className="px-3 py-2 text-right font-bold text-foreground">{item.daily} MB</td>
-                                            <td className="px-3 py-2 text-right font-bold text-heading-accent">{item.monthly} GB</td>
-                                        </tr>
-                                    ))}
+                                        {calculateNetworkImpact().map((item, idx) => (
+                                            <tr key={idx} className="border-t border-gray-200 dark:border-gray-700">
+                                                <td className="px-3 py-2 font-mono">{item.requests.toLocaleString()}</td>
+                                                <td className="px-3 py-2 text-right font-bold text-foreground">{item.daily} MB</td>
+                                                <td className="px-3 py-2 text-right font-bold text-heading-accent">{item.monthly} GB</td>
+                                            </tr>
+                                        ))}
                                     </tbody>
                                 </table>
                             </div>
@@ -3059,7 +3059,7 @@ metadata:
                         </div>
 
                         {/* Optimization Recommendations */}
-                        <div className="p-3 bg-gradient-to-r from-yellow-50 to-orange-50 dark:from-yellow-950/20 dark:to-orange-950/20 border border-yellow-200 dark:border-yellow-800 rounded-lg">
+                        <div className="p-3 bg-gradient-to-r from-yellow-50 to-blue-50 dark:from-yellow-950/20 dark:to-blue-950/20 border border-yellow-200 dark:border-yellow-800 rounded-lg">
                             <h4 className="text-sm font-bold text-foreground mb-2">💡 Performance Recommendations</h4>
                             <div className="space-y-2">
                                 {performanceMetrics.tokenSize < 200 ? (
@@ -3122,7 +3122,7 @@ metadata:
                                     setShowPerformance(false)
                                     openOptimizer()
                                 }}
-                                className="flex-1 bg-gradient-to-r from-yellow-500 to-orange-500 hover:from-yellow-600 hover:to-primary/90"
+                                className="flex-1 bg-gradient-to-r from-yellow-500 to-blue-500 hover:from-yellow-600 hover:to-primary/90"
                             >
                                 Optimize Token
                             </GButton>
@@ -3263,7 +3263,7 @@ metadata:
 
                             {/* Signature */}
                             <div className="p-3 bg-card border border-border rounded-lg">
-                                <h4 className="font-semibold text-white mb-2">Part 3: Signature (Orange)</h4>
+                                <h4 className="font-semibold text-white mb-2">Part 3: Signature (Blue)</h4>
                                 <p className="text-gray-400 mb-2">
                                     The signature is like a tamper-proof seal. It&apos;s created by combining the header, payload, and a secret key that only the server knows. If someone tries to change even one character in the header or payload, the signature won&apos;t match!
                                 </p>
@@ -3366,7 +3366,7 @@ metadata:
                                 </div>
                                 <p className="text-xs text-gray-400 mb-2">Install: <code className="bg-green-100 dark:bg-green-900 px-2 py-1 rounded">npm install jsonwebtoken</code></p>
                                 <pre className="bg-muted text-gray-100 p-3 rounded text-xs overflow-x-auto">
-                  {`const jwt = require('jsonwebtoken');
+                                    {`const jwt = require('jsonwebtoken');
 
 // Create a JWT
 const payload = {
@@ -3387,7 +3387,7 @@ try {
 } catch (error) {
   console.error('Invalid token:', error.message);
 }`}
-                </pre>
+                                </pre>
                             </div>
 
                             {/* Python Example */}
@@ -3398,7 +3398,7 @@ try {
                                 </div>
                                 <p className="text-xs text-foreground mb-2">Install: <code className="bg-blue-100 dark:bg-blue-900 px-2 py-1 rounded">pip install PyJWT</code></p>
                                 <pre className="bg-muted text-gray-100 p-3 rounded text-xs overflow-x-auto">
-                  {`import jwt
+                                    {`import jwt
 import datetime
 
 # Create a JWT
@@ -3422,7 +3422,7 @@ except jwt.ExpiredSignatureError:
     print('Token has expired')
 except jwt.InvalidTokenError:
     print('Invalid token')`}
-                </pre>
+                                </pre>
                             </div>
 
                             {/* Using Our JWT Decoder Tool */}
@@ -3694,7 +3694,7 @@ except jwt.InvalidTokenError:
                                     className={`p-3 border rounded-lg cursor-pointer transition-all ${selectedExportFormat === 'json'
                                         ? 'bg-indigo-50 dark:bg-indigo-950/20 border-indigo-300 dark:border-indigo-700'
                                         : 'bg-card border-gray-200 dark:border-gray-700 hover:border-indigo-300'
-                                    }`}
+                                        }`}
                                     onClick={() => setSelectedExportFormat('json')}
                                 >
                                     <div className="flex items-center justify-between">
@@ -3718,7 +3718,7 @@ except jwt.InvalidTokenError:
                                     className={`p-3 border rounded-lg cursor-pointer transition-all ${selectedExportFormat === 'csv'
                                         ? 'bg-card border-green-300 dark:border-green-700'
                                         : 'bg-card border-gray-200 dark:border-gray-700 hover:border-green-300'
-                                    }`}
+                                        }`}
                                     onClick={() => setSelectedExportFormat('csv')}
                                 >
                                     <div className="flex items-center justify-between">
@@ -3740,14 +3740,14 @@ except jwt.InvalidTokenError:
                                 {/* XML Format */}
                                 <div
                                     className={`p-3 border rounded-lg cursor-pointer transition-all ${selectedExportFormat === 'xml'
-                                        ? 'bg-card border-orange-300 dark:border-primary'
-                                        : 'bg-card border-gray-200 dark:border-gray-700 hover:border-orange-300'
-                                    }`}
+                                        ? 'bg-card border-blue-300 dark:border-primary'
+                                        : 'bg-card border-gray-200 dark:border-gray-700 hover:border-blue-300'
+                                        }`}
                                     onClick={() => setSelectedExportFormat('xml')}
                                 >
                                     <div className="flex items-center justify-between">
                                         <div className="flex items-center gap-3">
-                                            <div className={`p-2 rounded-lg ${selectedExportFormat === 'xml' ? 'bg-orange-100 dark:bg-orange-900' : 'bg-gray-100 dark:bg-muted'}`}>
+                                            <div className={`p-2 rounded-lg ${selectedExportFormat === 'xml' ? 'bg-blue-100 dark:bg-blue-900' : 'bg-gray-100 dark:bg-muted'}`}>
                                                 <FileCode className="h-5 w-5 text-foreground" />
                                             </div>
                                             <div>
@@ -3766,7 +3766,7 @@ except jwt.InvalidTokenError:
                                     className={`p-3 border rounded-lg cursor-pointer transition-all ${selectedExportFormat === 'yaml'
                                         ? 'bg-card border-blue-300 dark:border-blue-700'
                                         : 'bg-card border-gray-200 dark:border-gray-700 hover:border-blue-300'
-                                    }`}
+                                        }`}
                                     onClick={() => setSelectedExportFormat('yaml')}
                                 >
                                     <div className="flex items-center justify-between">
@@ -3790,7 +3790,7 @@ except jwt.InvalidTokenError:
                                     className={`p-3 border rounded-lg cursor-pointer transition-all ${selectedExportFormat === 'pdf'
                                         ? 'bg-card border-red-300 dark:border-destructive'
                                         : 'bg-card border-gray-200 dark:border-gray-700 hover:border-red-300'
-                                    }`}
+                                        }`}
                                     onClick={() => setSelectedExportFormat('pdf')}
                                 >
                                     <div className="flex items-center justify-between">

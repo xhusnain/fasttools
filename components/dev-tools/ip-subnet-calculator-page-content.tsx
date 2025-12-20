@@ -371,7 +371,7 @@ export function IPSubnetCalculatorPageContent() {
                     </div>
                   </div>
                   <div className="flex items-center gap-3">
-                    <div className="bg-orange-100 dark:bg-orange-900/30 text-foreground rounded-lg p-2">
+                    <div className="bg-blue-100 dark:bg-blue-900/30 text-foreground rounded-lg p-2">
                       <Shield className="h-4 w-4" />
                     </div>
                     <div>
@@ -514,7 +514,7 @@ export function IPSubnetCalculatorPageContent() {
                 {/* Key Features */}
                 <div className="bg-white dark:bg-secondary rounded-xl p-6 shadow-lg border border-slate-200 dark:border-border">
                   <h3 className="text-lg font-bold mb-4 flex items-center gap-2">
-                    <div className="p-1 bg-orange-100 dark:bg-orange-900/30 rounded">
+                    <div className="p-1 bg-blue-100 dark:bg-blue-900/30 rounded">
                       <Calculator className="h-4 w-4 text-foreground" />
                     </div>
                     Key Features

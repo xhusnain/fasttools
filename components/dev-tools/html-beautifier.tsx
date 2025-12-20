@@ -211,7 +211,7 @@ export function HTMLBeautifier() {
           placeholder="Paste your HTML here..."
           value={input}
           onChange={(e) => setInput(e.target.value)}
-          className="min-h-48 font-mono text-sm border-2 border-orange-300 focus:border-primary"
+          className="min-h-48 font-mono text-sm border-2 border-blue-300 focus:border-primary"
         />
         {inputStats && (
           <div className="flex gap-4 text-xs text-muted-foreground">

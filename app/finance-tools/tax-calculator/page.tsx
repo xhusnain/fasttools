@@ -299,7 +299,7 @@ export default function TaxCalculatorPage() {
         description: "Calculate income tax, estimate refunds, and determine salary deductions instantly. Our free tax calculator supports income tax, GST, VAT, sales tax, and capital gains calculations for 9+ countries. Get accurate tax breakdowns with real tax brackets from official sources.",
         titleSize: "medium",
         descriptionSize: "small",
-        color: "orange"
+        color: "blue"
       }}
       breadcrumbs={[
         { label: "Finance Tools", href: "/finance-tools" },
@@ -312,7 +312,7 @@ export default function TaxCalculatorPage() {
       }
       toolContent={toolContent}
       expectedMetadata={{
-        title: "FastTools - Tax Calculator | Free Income, GST, VAT & Sales Tax",
+        title: "Tax Calculator - Estimate Tax Liability",
         description: "FastTools Tax Calculator - Free online tax calculator for income tax, GST, VAT, and sales tax. Calculate tax on salary, capital gains, property, and more. Supports 9+ countries with accurate tax brackets.",
         path: "/finance-tools/tax-calculator"
       }}

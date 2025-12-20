@@ -2,7 +2,7 @@ import { ToolPageLayout } from "@/components/common/tool-page-layout"
 import { createToolConfig } from "@/lib/create-tool-config"
 import { GToolCard } from "@/ui/gtool-card"
 
-import { FileText, Crop, Focus } from "lucide-react"
+import { FileText, Crop } from "lucide-react"
 
 const imageTools = [
   {
@@ -19,13 +19,7 @@ const imageTools = [
     href: "/image-tools/image-background-remover",
     popular: true,
   },
-  {
-    title: "Image Background Blur",
-    description: "Blur image backgrounds with AI portrait mode. Create professional DSLR-style bokeh effects with adjustable blur intensity (5-50px) for stunning portraits and product photos.",
-    icon: Focus,
-    href: "/image-tools/image-blur",
-    popular: true,
-  },
+
 ]
 
 const toolConfig = createToolConfig({

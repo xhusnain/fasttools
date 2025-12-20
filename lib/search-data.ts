@@ -18,6 +18,7 @@ export const searchItems: SearchItem[] = [
   { name: "Cookie Preferences", description: "Manage your cookie preferences", path: "/cookie-preferences", category: "Pages" },
 
   // Calculator Tools
+  { name: "ROAS Calculator", description: "Calculate Return on Ad Spend, ROI, and break-even points", path: "/ad-tools/roas-calculator", category: "Calculator" },
   { name: "BMI Calculator", description: "Calculate your Body Mass Index with detailed health insights", path: "/calculator/bmi-calculator", category: "Calculator" },
   { name: "Age Calculator", description: "Calculate exact age in years, months, weeks, days, hours, minutes, and seconds", path: "/calculator/age-calculator", category: "Calculator" },
   { name: "Percentage Calculator", description: "Calculate percentages, discounts, increases, decreases, and percentage differences", path: "/calculator/percentage-calculator", category: "Calculator" },
@@ -45,12 +46,12 @@ export const searchItems: SearchItem[] = [
   { name: "Standard Deviation Calculator", description: "Calculate standard deviation, variance, and mean", path: "/calculator/standard-deviation-calculator", category: "Calculator" },
   { name: "Pregnancy Conception Calculator", description: "Calculate your conception date with personalized guidance", path: "/calculator/pregnancy-conception-calculator", category: "Calculator" },
   { name: "Pace Calculator", description: "Calculate running pace, training zones, and race predictions", path: "/calculator/pace-calculator", category: "Calculator" },
-  { name: "Sales Tax Calculator", description: "Calculate sales tax for all 50 US states", path: "/calculator/sales-tax-calculator", category: "Calculator" },
-  { name: "Interest Rate Calculator", description: "Calculate real interest rates on loans", path: "/calculator/interest-rate-calculator", category: "Calculator" },
-  { name: "Finance Calculator", description: "Professional finance calculator for time value of money", path: "/calculator/finance-calculator", category: "Calculator" },
-  { name: "Inflation Calculator", description: "Calculate purchasing power and inflation rates", path: "/calculator/inflation-calculator", category: "Calculator" },
-  { name: "Amortization Calculator", description: "Professional amortization calculator for loan payment analysis", path: "/calculator/amortization-calculator", category: "Calculator" },
-  { name: "Payment Calculator", description: "Professional payment calculator for loan analysis", path: "/calculator/payment-calculator", category: "Calculator" },
+  { name: "Sales Tax Calculator", description: "Calculate sales tax for all 50 US states", path: "/finance-tools/sales-tax-calculator", category: "Calculator" },
+  { name: "Interest Rate Calculator", description: "Calculate real interest rates on loans", path: "/finance-tools/interest-rate-calculator", category: "Calculator" },
+  { name: "Finance Calculator", description: "Professional finance calculator for time value of money", path: "/finance-tools/finance-calculator", category: "Calculator" },
+  { name: "Inflation Calculator", description: "Calculate purchasing power and inflation rates", path: "/finance-tools/inflation-calculator", category: "Calculator" },
+  { name: "Amortization Calculator", description: "Professional amortization calculator for loan payment analysis", path: "/finance-tools/amortization-calculator", category: "Calculator" },
+  { name: "Payment Calculator", description: "Professional payment calculator for loan analysis", path: "/finance-tools/payment-calculator", category: "Calculator" },
 
   // AI Tools
   { name: "AI QR Code Generator", description: "Create stunning, branded QR codes with AI-powered customization", path: "/ai-tools/qr-generator", category: "AI" },
@@ -79,7 +80,7 @@ export const searchItems: SearchItem[] = [
 
   // Image Tools
   { name: "Background Remover", description: "Remove backgrounds automatically with AI-powered precision", path: "/image-tools/image-background-remover", category: "Image" },
-  { name: "Image Blur Tool", description: "Blur sensitive areas for privacy protection", path: "/image-tools/image-blur", category: "Image" },
+
   { name: "Image to Text (OCR)", description: "Extract text from images with OCR technology", path: "/image-tools/image-to-text", category: "Image" },
 
   // PDF Tools
@@ -111,6 +112,7 @@ export const searchItems: SearchItem[] = [
 
   { name: "Link in Bio Generator", description: "Create beautiful link-in-bio pages", path: "/social-media-tools/link-in-bio", category: "Social Media" },
   { name: "YouTube Channel Checker", description: "Check if your desired channel name is available", path: "/social-media-tools/channel-checker", category: "Social Media" },
+  { name: "YouTube Channel Name Generator", description: "Generate catchy, unique names for your YouTube channel with AI", path: "/social-media-tools/youtube-channel-name-generator", category: "Social Media" },
   { name: "Hashtag Counter", description: "Count and extract hashtags from posts", path: "/social-media-tools/hashtag-counter", category: "Social Media" },
 
   // Finance Tools

@@ -127,7 +127,7 @@ export default function DownloadersPage() {
                 description="Easily download videos and media from popular social platforms like YouTube, TikTok, Instagram, Facebook, and X (Twitter). Our tools are fast, free, and designed for simplicity, allowing you to save your favorite content for offline access."
                 titleSize="large"
                 descriptionSize="medium"
-                color="orange"
+                color="blue"
               />
             </div>
 

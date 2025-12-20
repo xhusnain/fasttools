@@ -5,7 +5,7 @@ import { Calculator, PiggyBank, CreditCard, FileText } from "lucide-react"
 import type { Metadata } from "next"
 import { getCurrentYear } from "@/lib/utils"
 
-const TOOL_TITLE = `Savings Tracker | Free Financial Goal Planner (${getCurrentYear()})`
+const TOOL_TITLE = `Savings Tracker - Track Financial Goals Free`
 const TOOL_NAME = "Savings Tracker"
 const TOOL_DESCRIPTION = "Comprehensive financial planning tool with expense tracking, tax calculations, inflation adjustments, and multiple goal management. Perfect for budgeting and savings planning."
 

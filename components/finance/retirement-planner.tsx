@@ -275,7 +275,7 @@ ${result.recommendations.map(rec => `• ${rec}`).join('\n')}`
                 Employment Type
               </GLabel>
               <GSelect value={employmentType} onValueChange={(value: any) => setEmploymentType(value)}>
-                <GSelectTrigger className="h-9 text-sm border-2 border-orange-300 focus:border-orange-400 focus:ring-2 focus:ring-orange-400/20 bg-background text-foreground">
+                <GSelectTrigger className="h-9 text-sm border-2 border-blue-300 focus:border-blue-400 focus:ring-2 focus:ring-blue-400/20 bg-background text-foreground">
                   <GSelectValue />
                 </GSelectTrigger>
                 <GSelectContent>
@@ -300,7 +300,7 @@ ${result.recommendations.map(rec => `• ${rec}`).join('\n')}`
                   onChange={(e) => setCurrentAge(e.target.value)}
                   min="18"
                   max="100"
-                  className="h-9 text-sm border-2 border-orange-300 focus:border-orange-400 focus:ring-2 focus:ring-orange-400/20 bg-background text-foreground placeholder:text-muted-foreground"
+                  className="h-9 text-sm border-2 border-blue-300 focus:border-blue-400 focus:ring-2 focus:ring-blue-400/20 bg-background text-foreground placeholder:text-muted-foreground"
                 />
               </div>
               <div className="space-y-2">
@@ -315,7 +315,7 @@ ${result.recommendations.map(rec => `• ${rec}`).join('\n')}`
                   onChange={(e) => setRetirementAge(e.target.value)}
                   min="50"
                   max="100"
-                  className="h-9 text-sm border-2 border-orange-300 focus:border-orange-400 focus:ring-2 focus:ring-orange-400/20 bg-background text-foreground placeholder:text-muted-foreground"
+                  className="h-9 text-sm border-2 border-blue-300 focus:border-blue-400 focus:ring-2 focus:ring-blue-400/20 bg-background text-foreground placeholder:text-muted-foreground"
                 />
               </div>
             </div>
@@ -333,7 +333,7 @@ ${result.recommendations.map(rec => `• ${rec}`).join('\n')}`
                 onChange={(e) => setCurrentSalary(e.target.value)}
                 min="0"
                 step="1000"
-                className="h-9 text-sm border-2 border-orange-300 focus:border-orange-400 focus:ring-2 focus:ring-orange-400/20 bg-background text-foreground placeholder:text-muted-foreground"
+                className="h-9 text-sm border-2 border-blue-300 focus:border-blue-400 focus:ring-2 focus:ring-blue-400/20 bg-background text-foreground placeholder:text-muted-foreground"
               />
             </div>
 
@@ -357,7 +357,7 @@ ${result.recommendations.map(rec => `• ${rec}`).join('\n')}`
                         value={yearsOfService}
                         onChange={(e) => setYearsOfService(e.target.value)}
                         min="0"
-                        className="h-9 text-sm border-2 border-orange-300 focus:border-orange-400 focus:ring-2 focus:ring-orange-400/20 bg-background text-foreground placeholder:text-muted-foreground"
+                        className="h-9 text-sm border-2 border-blue-300 focus:border-blue-400 focus:ring-2 focus:ring-blue-400/20 bg-background text-foreground placeholder:text-muted-foreground"
                       />
                     </div>
                     <div className="space-y-2">
@@ -371,7 +371,7 @@ ${result.recommendations.map(rec => `• ${rec}`).join('\n')}`
                         value={pensionMultiplier}
                         onChange={(e) => setPensionMultiplier(e.target.value)}
                         step="0.1"
-                        className="h-9 text-sm border-2 border-orange-300 focus:border-orange-400 focus:ring-2 focus:ring-orange-400/20 bg-background text-foreground placeholder:text-muted-foreground"
+                        className="h-9 text-sm border-2 border-blue-300 focus:border-blue-400 focus:ring-2 focus:ring-blue-400/20 bg-background text-foreground placeholder:text-muted-foreground"
                       />
                     </div>
                   </div>
@@ -387,7 +387,7 @@ ${result.recommendations.map(rec => `• ${rec}`).join('\n')}`
                       onChange={(e) => setHighThreeSalary(e.target.value)}
                       min="0"
                       step="1000"
-                      className="h-9 text-sm border-2 border-orange-300 focus:border-orange-400 focus:ring-2 focus:ring-orange-400/20 bg-background text-foreground placeholder:text-muted-foreground"
+                      className="h-9 text-sm border-2 border-blue-300 focus:border-blue-400 focus:ring-2 focus:ring-blue-400/20 bg-background text-foreground placeholder:text-muted-foreground"
                     />
                   </div>
                 </div>
@@ -415,14 +415,14 @@ ${result.recommendations.map(rec => `• ${rec}`).join('\n')}`
                           placeholder="Fund Name"
                           value={fund.name}
                           onChange={(e) => updateDspFund(fund.id, 'name', e.target.value)}
-                          className="h-7 text-xs border-2 border-orange-300 focus:border-orange-400 focus:ring-2 focus:ring-orange-400/20 bg-background text-foreground placeholder:text-muted-foreground"
+                          className="h-7 text-xs border-2 border-blue-300 focus:border-blue-400 focus:ring-2 focus:ring-blue-400/20 bg-background text-foreground placeholder:text-muted-foreground"
                         />
                         <GInput
                           type="number"
                           placeholder="Contribution %"
                           value={fund.contributionRate}
                           onChange={(e) => updateDspFund(fund.id, 'contributionRate', Number(e.target.value))}
-                          className="h-7 text-xs border-2 border-orange-300 focus:border-orange-400 focus:ring-2 focus:ring-orange-400/20 bg-background text-foreground placeholder:text-muted-foreground"
+                          className="h-7 text-xs border-2 border-blue-300 focus:border-blue-400 focus:ring-2 focus:ring-blue-400/20 bg-background text-foreground placeholder:text-muted-foreground"
                         />
                       </div>
                       <div className="grid grid-cols-2 gap-2">
@@ -431,14 +431,14 @@ ${result.recommendations.map(rec => `• ${rec}`).join('\n')}`
                           placeholder="Start Year"
                           value={fund.startYear}
                           onChange={(e) => updateDspFund(fund.id, 'startYear', Number(e.target.value))}
-                          className="h-7 text-xs border-2 border-orange-300 focus:border-orange-400 focus:ring-2 focus:ring-orange-400/20 bg-background text-foreground placeholder:text-muted-foreground"
+                          className="h-7 text-xs border-2 border-blue-300 focus:border-blue-400 focus:ring-2 focus:ring-blue-400/20 bg-background text-foreground placeholder:text-muted-foreground"
                         />
                         <GInput
                           type="number"
                           placeholder="End Year"
                           value={fund.endYear}
                           onChange={(e) => updateDspFund(fund.id, 'endYear', Number(e.target.value))}
-                          className="h-7 text-xs border-2 border-orange-300 focus:border-orange-400 focus:ring-2 focus:ring-orange-400/20 bg-background text-foreground placeholder:text-muted-foreground"
+                          className="h-7 text-xs border-2 border-blue-300 focus:border-blue-400 focus:ring-2 focus:ring-blue-400/20 bg-background text-foreground placeholder:text-muted-foreground"
                         />
                       </div>
                       <div className="flex justify-end">
@@ -478,7 +478,7 @@ ${result.recommendations.map(rec => `• ${rec}`).join('\n')}`
                   <div key={account.id} className="p-3 bg-accent/5 border border-accent/20 rounded-lg space-y-2">
                     <div className="grid grid-cols-2 gap-2">
                       <GSelect value={account.type} onValueChange={(value: any) => updateRetirementAccount(account.id, 'type', value)}>
-                        <GSelectTrigger className="h-7 text-xs border-2 border-orange-300 focus:border-orange-400 focus:ring-2 focus:ring-orange-400/20 bg-background text-foreground">
+                        <GSelectTrigger className="h-7 text-xs border-2 border-blue-300 focus:border-blue-400 focus:ring-2 focus:ring-blue-400/20 bg-background text-foreground">
                           <GSelectValue />
                         </GSelectTrigger>
                         <GSelectContent>
@@ -494,7 +494,7 @@ ${result.recommendations.map(rec => `• ${rec}`).join('\n')}`
                         placeholder="Current Balance"
                         value={account.currentBalance}
                         onChange={(e) => updateRetirementAccount(account.id, 'currentBalance', Number(e.target.value))}
-                        className="h-7 text-xs border-2 border-orange-300 focus:border-orange-400 focus:ring-2 focus:ring-orange-400/20 bg-background text-foreground placeholder:text-muted-foreground"
+                        className="h-7 text-xs border-2 border-blue-300 focus:border-blue-400 focus:ring-2 focus:ring-blue-400/20 bg-background text-foreground placeholder:text-muted-foreground"
                       />
                     </div>
                     <div className="grid grid-cols-3 gap-2">
@@ -503,21 +503,21 @@ ${result.recommendations.map(rec => `• ${rec}`).join('\n')}`
                         placeholder="Monthly Contrib"
                         value={account.monthlyContribution}
                         onChange={(e) => updateRetirementAccount(account.id, 'monthlyContribution', Number(e.target.value))}
-                        className="h-7 text-xs border-2 border-orange-300 focus:border-orange-400 focus:ring-2 focus:ring-orange-400/20 bg-background text-foreground placeholder:text-muted-foreground"
+                        className="h-7 text-xs border-2 border-blue-300 focus:border-blue-400 focus:ring-2 focus:ring-blue-400/20 bg-background text-foreground placeholder:text-muted-foreground"
                       />
                       <GInput
                         type="number"
                         placeholder="Employer Match"
                         value={account.employerMatch}
                         onChange={(e) => updateRetirementAccount(account.id, 'employerMatch', Number(e.target.value))}
-                        className="h-7 text-xs border-2 border-orange-300 focus:border-orange-400 focus:ring-2 focus:ring-orange-400/20 bg-background text-foreground placeholder:text-muted-foreground"
+                        className="h-7 text-xs border-2 border-blue-300 focus:border-blue-400 focus:ring-2 focus:ring-blue-400/20 bg-background text-foreground placeholder:text-muted-foreground"
                       />
                       <GInput
                         type="number"
                         placeholder="Return %"
                         value={account.annualReturn}
                         onChange={(e) => updateRetirementAccount(account.id, 'annualReturn', Number(e.target.value))}
-                        className="h-7 text-xs border-2 border-orange-300 focus:border-orange-400 focus:ring-2 focus:ring-orange-400/20 bg-background text-foreground placeholder:text-muted-foreground"
+                        className="h-7 text-xs border-2 border-blue-300 focus:border-blue-400 focus:ring-2 focus:ring-blue-400/20 bg-background text-foreground placeholder:text-muted-foreground"
                       />
                     </div>
                     <div className="flex justify-end">
@@ -547,7 +547,7 @@ ${result.recommendations.map(rec => `• ${rec}`).join('\n')}`
                   placeholder="Estimated Monthly Benefit"
                   value={socialSecurity.estimatedMonthlyBenefit}
                   onChange={(e) => setSocialSecurity({ ...socialSecurity, estimatedMonthlyBenefit: Number(e.target.value) })}
-                  className="h-9 text-sm border-2 border-orange-300 focus:border-orange-400 focus:ring-2 focus:ring-orange-400/20 bg-background text-foreground placeholder:text-muted-foreground"
+                  className="h-9 text-sm border-2 border-blue-300 focus:border-blue-400 focus:ring-2 focus:ring-blue-400/20 bg-background text-foreground placeholder:text-muted-foreground"
                 />
                 <p className="text-xs text-muted-foreground">Check your Social Security statement for accurate estimates</p>
               </div>
@@ -567,7 +567,7 @@ ${result.recommendations.map(rec => `• ${rec}`).join('\n')}`
                   value={inflationRate}
                   onChange={(e) => setInflationRate(e.target.value)}
                   step="0.1"
-                  className="h-9 text-sm border-2 border-orange-300 focus:border-orange-400 focus:ring-2 focus:ring-orange-400/20 bg-background text-foreground placeholder:text-muted-foreground"
+                  className="h-9 text-sm border-2 border-blue-300 focus:border-blue-400 focus:ring-2 focus:ring-blue-400/20 bg-background text-foreground placeholder:text-muted-foreground"
                 />
               </div>
               <div className="space-y-2">
@@ -583,7 +583,7 @@ ${result.recommendations.map(rec => `• ${rec}`).join('\n')}`
                   onChange={(e) => setExpectedLifespan(e.target.value)}
                   min="65"
                   max="120"
-                  className="h-9 text-sm border-2 border-orange-300 focus:border-orange-400 focus:ring-2 focus:ring-orange-400/20 bg-background text-foreground placeholder:text-muted-foreground"
+                  className="h-9 text-sm border-2 border-blue-300 focus:border-blue-400 focus:ring-2 focus:ring-blue-400/20 bg-background text-foreground placeholder:text-muted-foreground"
                 />
               </div>
             </div>

@@ -5,7 +5,7 @@ import { createToolConfig } from "@/lib/create-tool-config"
 const toolConfig = createToolConfig({
   toolName: "PDF Splitter & Merger",
   description: "Split PDFs into separate pages or merge multiple PDFs into one document. Fast, secure, browser-based processing with page range control.",
-  metaTitle: "PDF Splitter & Merger Online - Split & Merge PDF Files",
+  metaTitle: "PDF Splitter & Merger - Split or Merge PDFs Free",
   metaDescription: "Free online PDF splitter and merger tool. Split PDF files into separate pages, extract page ranges, or merge multiple PDFs into one document. 100% secure, browser-based processing.",
   path: "/pdf-tools/pdf-splitter-merger",
 

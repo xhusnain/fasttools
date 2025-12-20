@@ -5,7 +5,7 @@ import { createToolConfig } from "@/lib/create-tool-config"
 const toolConfig = createToolConfig({
   toolName: "Regex Tester",
   description: "Test regex patterns online with instant visual matching, capture groups, and multi-language code generation. Debug and validate regular expressions for JavaScript, Python, Java, PHP, and more. Free regex testing tool with find & replace and live preview.",
-  metaTitle: "Regex Tester | Free Test Regular Expressions with Live Results",
+  metaTitle: "Regex Tester - Test Patterns & Debug Online",
   metaDescription: "Test regex patterns online with instant visual matching, capture groups, and multi-language code generation. Debug and validate regular expressions for JavaScript, Python, Java, PHP, and more. Free regex testing tool with find & replace and live preview.",
   path: "/dev-tools/regex-tester",
 

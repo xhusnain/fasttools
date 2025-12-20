@@ -5,7 +5,7 @@ import { createToolConfig } from "@/lib/create-tool-config"
 const toolConfig = createToolConfig({
   toolName: "HTML Beautifier & Minifier",
   description: "Free online HTML beautifier and minifier tool. Beautify HTML code with proper formatting or minify HTML to compress file size. Best HTML formatter online with instant results, download, and validation.",
-  metaTitle: "HTML Beautifier | Free Beautify & Minify HTML Code Online",
+  metaTitle: "HTML Beautifier - Format & Minify Code Free",
   metaDescription: "Free online HTML beautifier and minifier tool. Beautify HTML code with proper formatting or minify HTML to compress file size. Best HTML formatter online with instant results, download, and validation.",
   path: "/dev-tools/html-beautifier",
 

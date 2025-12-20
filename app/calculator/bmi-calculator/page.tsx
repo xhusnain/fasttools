@@ -4,9 +4,9 @@ import { BMICalculatorPageContent } from "@/components/health/bmi-calculator-pag
 import { createMetadata } from "@/lib/metadata-base"
 
 const baseMetadata = createMetadata({
-  title: "BMI Calculator | Free Body Mass Index Calculator",
+  title: "BMI Calculator - Free & Accurate Body Mass Index Calculator (2025)",
   description:
-    "Calculate your BMI (Body Mass Index) instantly. Free BMI calculator with height and weight inputs. Get your BMI category and health recommendations based on WHO standards.",
+    "Calculate your BMI instantly with our free calculator. Get accurate results, understand your BMI category, and receive personalized health recommendations. Based on WHO standards.",
   path: "/calculator/bmi-calculator",
   breadcrumbs: [
     { label: "Calculator", href: "/calculator" },
@@ -19,14 +19,14 @@ const baseMetadata = createMetadata({
     ratingValue: "4.9",
     ratingCount: "3420",
     featureList: [
-      "Instant BMI calculation from height and weight",
-      "BMI category classification (underweight, normal, overweight, obese)",
-      "Metric and Imperial units support",
-      "WHO standard BMI ranges",
-      "Health recommendations based on BMI",
-      "BMI interpretation for different populations",
-      "Free and privacy-friendly",
-      "Mobile-responsive design"
+      "Instant BMI calculation for adults and teenagers",
+      "Personalized health action plan based on results",
+      "Metric and Imperial units support (kg, cm, lbs, in)",
+      "WHO & CDC standard interpretations",
+      "Visual BMI gauge for instant understanding",
+      "Ethnic-specific guidelines (Asian BMI thresholds)",
+      "Completely free and privacy-focused",
+      "Mobile-optimized health assessment"
     ]
   }
 })
@@ -40,178 +40,125 @@ export const metadata: Metadata = {
 export default function BMICalculatorPage() {
   const toolContent = {
     toolName: "BMI Calculator",
-    overview: "Calculate your Body Mass Index (BMI) instantly with our free, accurate BMI calculator. Enter your height and weight in metric or imperial units to determine your BMI category and receive personalized health recommendations. Based on WHO (World Health Organization) standards for accurate health screening.",
-
+    overview:
+      "Our BMI Calculator provides a quick and accurate way to assess your body mass index. Designed for both adults and teenagers, this tool helps you understand your weight profile relative to your height, providing essential insights into your metabolic health and potential risks.",
     howToSteps: [
-      "Select your preferred units (metric or imperial)",
-      "Enter your weight (in kg or lbs)",
-      "Enter your height (in cm, meters, or feet/inches)",
-      "Click 'Calculate BMI' to get your result",
-      "Review your BMI category and health recommendations"
+      {
+        title: "Select Your Units",
+        description: "Choose between Metric (kg/cm) or Imperial (lbs/in) systems."
+      },
+      {
+        title: "Enter Height and Weight",
+        description: "Input your current measurements accurately for precise results."
+      },
+      {
+        title: "Add Demographics",
+        description: "Include age and gender for personalized health interpretations."
+      },
+      {
+        title: "Get Your Action Plan",
+        description: "Instantly see your BMI category and receive tailored advice."
+      }
     ],
-
     features: [
-      "Instant BMI Calculation: Real-time results as you input your measurements",
-      "Dual Unit Support: Calculate using metric (kg/cm) or imperial (lbs/ft) units",
-      "WHO Standard Categories: Underweight (<18.5), Normal (18.5-24.9), Overweight (25-29.9), Obese (≥30)",
-      "Health Recommendations: Personalized advice based on your BMI category",
-      "BMI Prime Calculation: Ratio of actual BMI to upper limit of normal BMI",
-      "Age and Gender Considerations: Guidance on how BMI interpretation varies",
-      "Privacy-Focused: All calculations happen locally in your browser",
-      "Mobile-Friendly: Optimized for smartphones and tablets"
+      {
+        title: "Dual Unit Support",
+        description: "Seamlessly switch between metric and imperial measurements.",
+        icon: "Scale"
+      },
+      {
+        title: "Dynamic Visuals",
+        description: "Interactive gauge shows exactly where you fall on the BMI spectrum.",
+        icon: "Activity"
+      },
+      {
+        title: "Ethnic Clarity",
+        description: "Supports specialized Asian BMI thresholds for accurate regional screening.",
+        icon: "Globe"
+      },
+      {
+        title: "Privacy First",
+        description: "Your data is processed locally and never stored on our servers.",
+        icon: "History"
+      }
     ],
-
     useCases: [
-      "Health Screening: Quick assessment of weight status and health risks",
-      "Fitness Goals: Track progress during weight loss or muscle gain programs",
-      "Medical Consultations: Prepare information for doctor visits",
-      "Athletic Training: Monitor body composition changes during training",
-      "Pregnancy Planning: Understand pre-pregnancy weight status",
-      "Insurance Applications: Provide BMI information for health insurance",
-      "Research Studies: Calculate BMI for health research participation"
+      {
+        title: "Weight Tracking",
+        description: "Monitor your progress during weight loss or fitness journeys."
+      },
+      {
+        title: "Health Screening",
+        description: "Identify potential risks for diabetes or cardiovascular issues early."
+      },
+      {
+        title: "Athletic Assessment",
+        description: "Use alongside body fat metrics for a complete performance profile."
+      }
     ],
-
-    aboutTool: (
-      <>
-        <h3 className="font-semibold text-lg mb-2 mt-6">What is BMI?</h3>
-        <p className="mb-4">
-          Body Mass Index (BMI) is a numerical value derived from your weight and height. It's a widely-used screening tool that helps identify potential weight-related health issues. Developed by Belgian mathematician Adolphe Quetelet in the 1830s, BMI provides a simple, quick assessment of body weight relative to height.
-        </p>
-
-        <h3 className="font-semibold text-lg mb-2 mt-6">BMI Formula</h3>
-        <div className="space-y-3 mb-6">
-          <div>
-            <h4 className="font-semibold mb-1">Metric Formula:</h4>
-            <p className="font-mono bg-muted p-3 rounded text-sm">BMI = weight (kg) / [height (m)]²</p>
-            <p className="text-sm text-muted-foreground mt-1">Example: 70 kg / (1.75 m)² = 22.86</p>
-          </div>
-          <div>
-            <h4 className="font-semibold mb-1">Imperial Formula:</h4>
-            <p className="font-mono bg-muted p-3 rounded text-sm">BMI = (weight (lbs) / [height (in)]²) × 703</p>
-            <p className="text-sm text-muted-foreground mt-1">Example: (154 lbs / (69 in)²) × 703 = 22.75</p>
-          </div>
-        </div>
-
-        <h3 className="font-semibold text-lg mb-2 mt-6">BMI Categories (WHO Standards)</h3>
-        <div className="space-y-2 mb-6">
-          <p><strong>Underweight:</strong> BMI less than 18.5 - May indicate malnutrition or other health issues</p>
-          <p><strong>Normal Weight:</strong> BMI 18.5-24.9 - Generally associated with lowest health risks</p>
-          <p><strong>Overweight:</strong> BMI 25-29.9 - Increased risk for health problems</p>
-          <p><strong>Obese Class I:</strong> BMI 30-34.9 - Moderate health risk</p>
-          <p><strong>Obese Class II:</strong> BMI 35-39.9 - High health risk</p>
-          <p><strong>Obese Class III:</strong> BMI 40+ - Very high health risk</p>
-        </div>
-
-        <h3 className="font-semibold text-lg mb-2 mt-6">Limitations of BMI</h3>
-        <p className="mb-3">
-          While BMI is a useful screening tool, it has important limitations:
-        </p>
-        <ul className="list-disc pl-6 mb-6 space-y-2">
-          <li><strong>Doesn't Measure Body Fat Directly:</strong> Athletes with high muscle mass may have high BMI despite low body fat</li>
-          <li><strong>Doesn't Account for Distribution:</strong> Doesn't distinguish visceral fat from subcutaneous fat</li>
-          <li><strong>Age Variations:</strong> Older adults naturally have more body fat; children require age-specific percentiles</li>
-          <li><strong>Ethnic Differences:</strong> Asian populations have higher health risks at lower BMIs; different thresholds may apply</li>
-          <li><strong>Pregnancy:</strong> Not applicable during pregnancy when weight naturally increases</li>
-          <li><strong>Frame Size:</strong> Doesn't consider bone structure or frame size differences</li>
-        </ul>
-
-        <h3 className="font-semibold text-lg mb-2 mt-6">Complementary Health Metrics</h3>
-        <p className="mb-6">
-          For a more complete health picture, consider these measurements alongside BMI: Waist circumference, Waist-to-hip ratio, Body fat percentage, Muscle mass percentage, Blood pressure, Blood glucose levels, Cholesterol levels, and overall fitness level. Consult healthcare professionals for comprehensive health assessments.
-        </p>
-      </>
-    ),
-
-    proTip: "BMI is a screening tool, not a diagnostic tool. If your BMI indicates a potential health concern, consult with a healthcare provider who can assess your overall health through additional measurements, blood tests, and personal health history. Two people with the same BMI may have very different health statuses.",
-
+    aboutTool: {
+      title: "The Most Comprehensive Free BMI Tool Online",
+      content: "Body Mass Index (BMI) is a global standard for assessing body composition. Our calculator is built on World Health Organization (WHO) and CDC guidelines to ensure medical-grade accuracy. It's not just a number—we provide a complete context of what that number means for your specific life stage and ethnicity."
+    },
+    proTip: "For the most accurate assessment, weigh yourself in the morning before breakfast and after using the bathroom. Consistency is key to tracking long-term trends.",
     faqs: [
       {
-        question: "What exactly is BMI and why do healthcare providers use it?",
-        answer: "BMI (Body Mass Index) is a calculation using your height and weight to assess body weight relative to height. Healthcare providers use it because it's quick, inexpensive, non-invasive, and correlates moderately with health risks like heart disease, diabetes, and high blood pressure. It's a screening tool to identify individuals who may need further health assessments."
+        question: "What is a healthy BMI range?",
+        answer: "A healthy BMI range is 18.5 to 24.9 for most adults, according to the WHO. This range is associated with the lowest risk of weight-related health problems."
       },
       {
-        question: "How do I calculate my BMI accurately at home?",
-        answer: "Measure your weight and height accurately. For metric: divide weight (kg) by height (m) squared. For imperial: divide weight (lbs) by height (in) squared, then multiply by 703. Our calculator does this automatically - just enter your measurements and select your units. Use a calibrated scale and measure height without shoes for accuracy."
+        question: "Can I have a normal BMI but still be unhealthy?",
+        answer: "Yes. 'Normal weight obesity' occurs when someone has a healthy BMI but high body fat percentage and low muscle mass. Other factors like waist circumference and metabolic health are also important."
       },
       {
-        question: "What do the different BMI categories mean for my health?",
-        answer: "Underweight (<18.5): Risk of malnutrition, weakened immune system. Normal (18.5-24.9): Generally optimal health range. Overweight (25-29.9): Increased risk for type 2 diabetes, heart disease. Obese (30+): High risk for serious health conditions including heart disease, stroke, diabetes, certain cancers. These are guidelines; individual health varies."
-      },
-      {
-        question: "Why might my BMI show I'm overweight when I'm actually very muscular?",
-        answer: "BMI doesn't distinguish between muscle and fat. Muscle is denser than fat, so bodybuilders and athletes with high muscle mass often have \"overweight\" or \"obese\" BMI despite low body fat. This is a known limitation. For muscular individuals, body fat percentage, waist circumference, and overall health markers are better indicators than BMI alone."
-      },
-      {
-        question: "Can I have a normal BMI but still be at risk for health problems?",
-        answer: "Yes. \"Normal weight obesity\" occurs when someone has normal BMI but high body fat percentage, often with low muscle mass. This can increase health risks despite normal BMI. Factors like waist circumference, diet quality, physical activity, genetics, and metabolic health all contribute to health risk beyond BMI."
-      },
-      {
-        question: "How does age affect BMI interpretation?",
-        answer: "Older adults (65+) naturally have more body fat and less muscle mass. Slightly higher BMI (25-27) may be protective for older adults. For children and teenagers, BMI percentiles for age and sex are used instead of adult categories. Adults aged 20-65 use standard categories, but individual health context matters at all ages."
-      },
-      {
-        question: "Are BMI standards the same for all ethnic groups?",
-        answer: "No. Asian populations have higher health risks at lower BMIs. WHO recommends BMI ≥23 as overweight and ≥27.5 as obese for Asians. Pacific Islanders may have higher BMI cutoff points. Black individuals tend to have more muscle mass. Ethnic-specific thresholds provide more accurate health risk assessment. Our calculator notes these variations."
-      },
-      {
-        question: "What should I do if my BMI indicates I'm underweight?",
-        answer: "Consult a healthcare provider to rule out underlying health conditions (thyroid issues, eating disorders, malabsorption). Focus on nutrient-dense foods, increase calorie intake gradually, strength training to build muscle mass. Avoid junk food - aim for healthy weight gain through balanced nutrition. Professional guidance ensures safe, sustainable weight gain."
-      },
-      {
-        question: "How does BMI relate to cardiovascular health?",
-        answer: "Higher BMI (especially ≥30) correlates with increased risk of high blood pressure, high cholesterol, coronary artery disease, heart attack, and stroke. Even 5-10% weight loss in overweight individuals can improve cardiovascular health markers. However, waist circumference and waist-to-hip ratio may be better predictors of heart disease than BMI alone."
-      },
-      {
-        question: "Can BMI be used during pregnancy?",
-        answer: "BMI calculated before pregnancy helps determine healthy weight gain during pregnancy. Pre-pregnancy BMI guides recommendations: underweight women should gain 28-40 lbs, normal weight 25-35 lbs, overweight 15-25 lbs, obese 11-20 lbs. Don't use BMI to assess weight status during pregnancy - weight gain is expected and healthy. Consult your obstetrician for personalized guidance."
-      },
-      {
-        question: "What are the limitations of BMI that I should know about?",
-        answer: "BMI doesn't measure body fat directly, fat distribution, muscle mass, bone density, or metabolic health. It may misclassify athletes, very muscular individuals, older adults, growing adolescents, and certain ethnic groups. It's a population-level screening tool, not an individual diagnostic. Use alongside other health measurements for comprehensive assessment."
+        question: "Why does my BMI say I'm overweight when I'm muscular?",
+        answer: "BMI doesn't distinguish between muscle and fat. Since muscle is denser than fat, athletes often have elevated BMI despite low body fat. For muscular individuals, body fat percentage is a better indicator."
       },
       {
         question: "How often should I check my BMI?",
-        answer: "Monthly or quarterly is sufficient for most people tracking weight changes. Weekly can be useful during active weight loss/gain programs. Daily isn't necessary as BMI changes slowly and weight fluctuates daily. For stable adults, annual checks during health screenings are adequate. Focus on trends over time rather than single measurements."
+        answer: "For most people, checking BMI monthly or quarterly is sufficient to monitor progress while ignoring daily water-weight fluctuations."
       },
       {
-        question: "What alternative measurements complement BMI?",
-        answer: "Waist circumference (central obesity indicator), waist-to-hip ratio (fat distribution), body fat percentage (direct fat measurement), skeletal muscle mass, visceral fat level, blood pressure, fasting glucose, lipid panel, and cardiovascular fitness tests. These provide a comprehensive health picture beyond weight-to-height ratio. Body composition analysis offers detailed insights."
+        question: "Is BMI accurate for older adults?",
+        answer: "interpretation changes with age. Research suggests a slightly higher BMI (25-27) may be protective and healthy for adults over 65."
       },
       {
-        question: "How can I improve my BMI if it's in an unhealthy range?",
-        answer: "Combine balanced nutrition with regular physical activity. For weight loss: create moderate calorie deficit (500-750 cal/day), eat whole foods, limit processed foods, stay hydrated, get adequate sleep (7-9 hours), manage stress. Include both cardio and strength training. Aim for 1-2 lbs loss per week for sustainable results. Professional guidance (dietitian, trainer) helps create personalized plans."
+        question: "What should I do if my BMI indicates obesity?",
+        answer: "Consult a healthcare provider for a personalized evaluation. Focus on sustainable lifestyle changes like balanced nutrition and regular activity."
       },
       {
-        question: "Is BMI reliable for children and teenagers?",
-        answer: "Children and teens use BMI-for-age percentiles, not adult categories, because body composition changes during growth. Percentiles compare child's BMI to others same age and sex: <5th percentile = underweight, 5th-85th = healthy weight, 85th-95th = overweight, ≥95th = obese. Pediatricians interpret these considering growth patterns, puberty, and overall health."
+        question: "Are BMI standards the same for all ethnic groups?",
+        answer: "No. Asian populations have higher health risks at lower BMI values (overweight at 23+, obese at 25+). The WHO recommends ethnic-specific thresholds for more accurate assessments."
       },
       {
-        question: "Is the BMI calculator free?",
-        answer: "Yes, our BMI calculator is completely free with no hidden fees, registration requirements, or limitations. Calculate your BMI unlimited times, for yourself or others. Use metric or imperial units, get instant results with health category classifications. Free, accurate, and privacy-friendly - all calculations happen in your browser with no data stored."
-      },
-      {
-        question: "What BMI calculator do doctors use?",
-        answer: "Doctors typically use the same formula (weight in kg / height in m²) whether calculated manually, with basic calculators, or through electronic health records. Some medical settings use specialized tools that include additional assessments like waist circumference or body composition analysis. Our calculator uses the standard WHO formula that medical professionals rely on."
-      },
-      {
-        question: "Does BMI calculator account for muscle?",
-        answer: "No, BMI doesn't distinguish muscle from fat - it only uses height and weight. This is a significant limitation. Bodybuilders, athletes, and very active individuals often have high BMI due to muscle mass despite low body fat. For these individuals, body fat percentage, body composition analysis, or other metrics provide more accurate health assessments than BMI alone."
+        question: "Can I use this BMI calculator during pregnancy?",
+        answer: "Do not use BMI to assess weight status during pregnancy. Pre-pregnancy BMI is used to determine healthy weight gain targets, but pregnancy weight gain is expected and healthy."
       }
     ],
-
     relatedTools: [
-      { name: "Body Fat Calculator", href: "/calculator/body-fat-calculator" },
-      { name: "BMR Calculator", href: "/calculator/bmr-calculator" },
-      { name: "Calorie Calculator", href: "/calculator/calorie-calculator" },
-      { name: "All Calculators", href: "/calculator" }
+      {
+        name: "Body Fat Calculator",
+        href: "/calculator/body-fat-calculator",
+        description: "Get more precise body composition data."
+      },
+      {
+        name: "Calorie Calculator",
+        href: "/calculator/calorie-calculator",
+        description: "Plan your meals for healthy weight management."
+      },
+      {
+        name: "BMR Calculator",
+        href: "/calculator/bmr-calculator",
+        description: "Find your baseline energy needs."
+      }
     ]
   }
 
   return (
     <ToolPageLayout
       header={{
-        title: "Free BMI Calculator - Body Mass Index Calculator",
-        description: "Calculate your BMI instantly with our free Body Mass Index calculator. Get accurate results, BMI categories, and personalized health recommendations based on WHO standards.",
+        title: "BMI Calculator - Free & Accurate Body Mass Index Calculator",
+        description: "Calculate your BMI (Body Mass Index) instantly for adults and teenagers. Get accurate results, visual categorization, and personalized health recommendations.",
         titleSize: "medium",
         descriptionSize: "small"
       }}
@@ -226,8 +173,8 @@ export default function BMICalculatorPage() {
       }
       toolContent={toolContent}
       expectedMetadata={{
-        title: "BMI Calculator | Free Body Mass Index Calculator",
-        description: "Calculate your BMI (Body Mass Index) instantly. Free BMI calculator with height and weight inputs. Get your BMI category and health recommendations based on WHO standards.",
+        title: "BMI Calculator - Free & Accurate Body Mass Index Calculator (2025)",
+        description: "Calculate your BMI instantly with our free calculator. Get accurate results, understand your BMI category, and receive personalized health recommendations. Based on WHO standards.",
         path: "/calculator/bmi-calculator"
       }}
     />

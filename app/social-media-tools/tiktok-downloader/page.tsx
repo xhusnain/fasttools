@@ -1,15 +1,15 @@
 import { ToolPageLayout } from "@/components/common/tool-page-layout"
 import { createToolConfig } from "@/lib/create-tool-config"
 import {
- AlertCircle
+  AlertCircle
 } from "lucide-react"
 import { getCurrentYear } from "@/lib/utils"
-import {TiktokDownloader} from "@/components/social-media/tiktok-downloader/tiktok-downloader";
+import { TiktokDownloader } from "@/components/social-media/tiktok-downloader/tiktok-downloader";
 
 const toolConfig = createToolConfig({
-  toolName: "TikTok Downloader",
+  toolName: "TikTok Downloader - No Watermark HD",
   description: "Download TikTok videos in HD without watermark. Free, fast, secure. Works on all devices. Perfect for creators and marketers.",
-  metaTitle: "TikTok Downloader | Free HD Videos Without Watermark",
+  metaTitle: "TikTok Downloader - No Watermark HD",
   metaDescription: "Download TikTok videos in HD without watermark. Free, fast, secure. Works on all devices. Perfect for creators and marketers.",
   path: "/social-media-tools/tiktok-downloader",
   keywords: [
@@ -41,7 +41,7 @@ const toolConfig = createToolConfig({
   ],
 
   header: {
-    title: "TikTok Downloader – HD Videos & Images Without Watermark",
+    title: "TikTok Downloader - No Watermark HD",
     description: "Download TikTok videos and wallpapers in HD without watermark for free. Fast, secure, and easy-to-use online TikTok downloader for videos and images. Works on PC, Android, iPhone, and all devices. Perfect for creators, marketers, and social media enthusiasts.",
     titleSize: "medium",
     descriptionSize: "small",
