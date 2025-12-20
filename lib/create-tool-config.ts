@@ -9,6 +9,11 @@ export interface UnifiedToolConfig {
     metaDescription?: string
     path: string
     keywords?: string[]
+    video?: {
+        id: string
+        title?: string
+        description?: string
+    }
     header: {
         title: string
         description: string
@@ -48,6 +53,7 @@ export function createToolConfig(config: UnifiedToolConfig) {
         toolName: config.toolName,
         faqs: config.content.faqs,
         howToSteps: config.content.howToSteps || [],
+        video: config.video,
     })
 
     const getLayoutProps = (toolComponent: React.ReactNode): ToolPageLayoutProps => ({
@@ -65,6 +71,7 @@ export function createToolConfig(config: UnifiedToolConfig) {
             useCases: config.content.useCases,
             faqs: config.content.faqs,
             relatedTools: config.content.relatedTools,
+            video: config.video,
         },
         expectedMetadata: {
             title: config.metaTitle || config.toolName,

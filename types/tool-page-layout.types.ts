@@ -32,6 +32,11 @@ export interface ToolContentData {
     useCases?: string[]
     faqs: FAQItem[]
     relatedTools?: RelatedTool[]
+    video?: {
+        id: string
+        title?: string
+        description?: string
+    }
 }
 
 

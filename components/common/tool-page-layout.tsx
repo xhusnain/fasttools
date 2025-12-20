@@ -162,6 +162,35 @@ export function ToolPageLayout({
                                 </div>
                             </section>
 
+                            {toolContent.video && (
+                                <section className="bg-card border border-border rounded-lg p-6">
+                                    <div className="flex items-center gap-3 mb-4">
+                                        <div className="p-2 bg-red-100 dark:bg-red-900/30 rounded-xl">
+                                            <Zap className="h-5 w-5 text-red-600 dark:text-red-400" />
+                                        </div>
+                                        <h2 className="text-2xl font-bold text-foreground">
+                                            Video Tutorial
+                                        </h2>
+                                    </div>
+                                    <div className="aspect-video rounded-lg overflow-hidden bg-muted">
+                                        <iframe
+                                            width="100%"
+                                            height="100%"
+                                            src={`https://www.youtube.com/embed/${toolContent.video.id}`}
+                                            title={toolContent.video.title || "Video Tutorial"}
+                                            frameBorder="0"
+                                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                                            allowFullScreen
+                                        />
+                                    </div>
+                                    {toolContent.video.description && (
+                                        <p className="mt-4 text-muted-foreground">
+                                            {toolContent.video.description}
+                                        </p>
+                                    )}
+                                </section>
+                            )}
+
                             {toolContent.useCases && toolContent.useCases.length > 0 && (
                                 <section className="bg-card border border-border rounded-lg p-6">
                                     <h2 className="text-2xl font-bold mb-4 text-foreground">

@@ -14,6 +14,11 @@ const toolConfig = createToolConfig({
   metaTitle: "YouTube Channel Name Checker - Check Username Availability Instantly (2025) | FastTools",
   metaDescription: "Free YouTube channel name checker. Instantly verify if your desired username is available. Get alternative suggestions, check across platforms, and secure your perfect YouTube handle in 2025.",
   path: "/social-media-tools/channel-checker",
+  video: {
+    id: "qNapObaVmPc",
+    title: "How to Check YouTube Channel Name Availability | FastTools Tutorial",
+    description: "Learn how to use our YouTube Channel Name Checker to find the perfect available channel name. Watch this quick tutorial to see how to check username availability, generate creative ideas, and secure your YouTube handle instantly."
+  },
 
   header: {
     title: "YouTube Channel Name Checker - Check Username Availability Instantly (2025)",

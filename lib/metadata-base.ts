@@ -67,6 +67,11 @@ export interface MetadataOptions {
     howToSteps?: string[]
     toolName?: string
     breadcrumbs?: BreadcrumbItem[]
+    video?: {
+        id: string
+        title?: string
+        description?: string
+    }
 }
 
 export interface MetadataWithSchema {
@@ -163,6 +168,10 @@ export function createMetadata(options: MetadataOptions): Metadata & { softwareS
 
     if (breadcrumbs && breadcrumbs.length > 0) {
         schemas.push(createBreadcrumbSchema(breadcrumbs, cleanPath))
+    }
+
+    if (options.video) {
+        schemas.push(createVideoObjectSchema(options.video, fullTitle, description))
     }
 
     const metadata: Metadata = {
@@ -424,4 +433,24 @@ export function createSoftwareAppSchema(options: SoftwareAppSchemaOptions) {
     }
 
     return schema
+}
+
+export function createVideoObjectSchema(video: { id: string, title?: string, description?: string }, toolTitle: string, toolDescription: string) {
+    const videoTitle = video.title || toolTitle
+    const videoDescription = video.description || toolDescription
+
+    return {
+        "@context": "https://schema.org",
+        "@type": "VideoObject",
+        "name": videoTitle,
+        "description": videoDescription,
+        "thumbnailUrl": [
+            `https://i.ytimg.com/vi/${video.id}/maxresdefault.jpg`,
+            `https://i.ytimg.com/vi/${video.id}/hqdefault.jpg`,
+            `https://i.ytimg.com/vi/${video.id}/default.jpg`
+        ],
+        "uploadDate": "2024-01-01T08:00:00+08:00", // Fallback date
+        "contentUrl": `https://www.youtube.com/watch?v=${video.id}`,
+        "embedUrl": `https://www.youtube.com/embed/${video.id}`
+    }
 }
