@@ -1,30 +1,20 @@
 # List of Calculators and Converters
 
 ## Calculators
-- BMI Calculator
-- BMR Calculator
-- Body Fat Calculator
-- Calorie Calculator
 - Concrete Calculator
 - Conversion Calculator
 - Date Difference
-- Fraction Calculator
-- GPA Calculator
+ - GPA Calculator
 - IP Subnet Calculator
 - Love Calculator
 - Pace Calculator
 - Percentage Calculator
-- Pregnancy Calculator
-- Pregnancy Conception Calculator
-- Scientific Calculator
 - Standard Deviation Calculator
 - Time Duration
 - Triangle Calculator
 
 ## Finance Tools
-- Amortization Calculator
 - Bill Splitter
-- Compound Interest Calculator
 - Credit Card Payoff Calculator
 - Discount Calculator
 - Finance Calculator
@@ -33,15 +23,10 @@
 - Investment Calculator
 - Invoice Generator
 - Loan Calculator
-- Mortgage Calculator
 - Payment Calculator
 - PayPal Fee Calculator
-- Retirement Calculator
-- Retirement Planner
 - Salary Calculator
 - Sales Tax Calculator
-- Savings Tracker
-- Tax Calculator
 - Tip Calculator
 - ROAS Calculator
 
