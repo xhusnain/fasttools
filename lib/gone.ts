@@ -32,7 +32,7 @@ export const goneUrls = new Set([
   '/guides/tip-calculator-guide',
   '/guides/json-to-csv-converter-guide',
   '/guides/regex-tester-guide',
-  '/guides/future-age-predictor-guide',
+
   '/guides/temperature-converter-guide',
   '/guides/lorem-ipsum-guide',
   '/guides/qr-code-generator-guide',
