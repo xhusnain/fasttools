@@ -309,6 +309,21 @@ export const categoryPages = [
         changeFrequency: "weekly" as const,
         priority: 0.9,
     },
+    {
+        url: "https://www.fasttools.store/guides",
+        lastModified: new Date('2025-12-22'),
+        changeFrequency: "weekly" as const,
+        priority: 0.95,
+    },
+]
+
+export const guidePages = [
+    {
+        url: "https://www.fasttools.store/guides/age-calculator-guide",
+        lastModified: new Date('2025-12-22'),
+        changeFrequency: "monthly" as const,
+        priority: 0.9,
+    },
 ]
 
 export const toolPages = [
@@ -1032,7 +1047,7 @@ export const generateCategorySitemap = () => {
 
 export const getAllSitemapPages = () => {
     // 1. Get all static pages from config
-    const staticPages = [...mainPages, ...categoryPages, ...toolPages]
+    const staticPages = [...mainPages, ...categoryPages, ...toolPages, ...guidePages]
     const existingUrls = new Set(staticPages.map(p => p.url))
 
     // 2. Archive Page

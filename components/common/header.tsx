@@ -2,7 +2,7 @@
 
 import Link from "next/link"
 import { useState } from "react"
-import { Menu, X, Search, ChevronDown, ArrowUpRight } from "lucide-react"
+import { Menu, X, Search, ChevronDown, ArrowUpRight, Sparkles } from "lucide-react"
 import { SearchBar } from "@/components/common/search-bar"
 import { ThemeToggle } from "@/components/common/theme-toggle"
 import { usePathname } from "next/navigation"
@@ -56,6 +56,13 @@ export function Header() {
             {/* Right side - Actions */}
             <div className="flex items-center gap-2 shrink-0">
               <nav className="hidden lg:flex items-center gap-3 mr-2 h-full">
+                <Link
+                  href="/guides"
+                  className="text-sm font-semibold bg-gradient-to-r from-primary to-purple-500 bg-clip-text text-transparent hover:opacity-80 transition-all flex items-center gap-1 h-full"
+                >
+                  <Sparkles className="h-3.5 w-3.5 text-primary" />
+                  Build & Earn
+                </Link>
                 <Link
                   href="/blog"
                   target="_blank"
@@ -171,6 +178,14 @@ export function Header() {
           </GAccordion>
 
           <div className="pt-2 border-t border-border/10 mt-2">
+            <Link
+              href="/guides"
+              onClick={() => setMobileMenuOpen(false)}
+              className="flex items-center gap-2 py-3 text-base font-semibold bg-gradient-to-r from-primary to-purple-500 bg-clip-text text-transparent"
+            >
+              <Sparkles className="h-4 w-4 text-primary" />
+              Build & Earn
+            </Link>
             <Link
               href="/blog"
               target="_blank"
