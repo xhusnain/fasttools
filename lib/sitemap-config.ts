@@ -429,9 +429,21 @@ export const toolPages = [
     },
     {
         url: "https://www.fasttools.store/calculator/concrete-calculator",
-        lastModified: new Date('2025-11-25'),
-        changeFrequency: "monthly" as const,
-        priority: 0.85,
+        lastModified: new Date('2025-12-23'),
+        changeFrequency: "weekly" as const,
+        priority: 0.95,
+        images: [
+            {
+                url: "https://www.fasttools.store/images/calculators/concrete-calculator-hero.png",
+                title: "Concrete Calculator Interface - Cubic Yards & Bags",
+                caption: "Professional concrete calculator interface for estimating cubic yards, bags, and costs"
+            },
+            {
+                url: "https://www.fasttools.store/images/calculators/concrete-pouring-guide.png",
+                title: "Concrete Pouring Guide - Layers & Process",
+                caption: "Visual guide showing the proper layers for a concrete slab pour including subbase, barrier, and rebar"
+            }
+        ]
     },
     {
         url: "https://www.fasttools.store/calculator/scientific-calculator",
