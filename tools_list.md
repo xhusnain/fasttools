@@ -1,7 +1,6 @@
 # List of Calculators and Converters
 
 ## Calculators
-- Concrete Calculator
 - Conversion Calculator
 - Date Difference
  - GPA Calculator
