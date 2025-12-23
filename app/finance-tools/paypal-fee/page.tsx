@@ -1,7 +1,8 @@
 import { PayPalFeeCalculator } from "@/components/finance/paypal-fee-calculator"
 import { ToolPageLayout } from "@/components/common/tool-page-layout"
 import { createMetadata } from "@/lib/metadata-base"
-import { Calculator, DollarSign, Target, TrendingUp, BarChart3, Copy, HelpCircle, Lightbulb, Star } from "lucide-react"
+import { Calculator, DollarSign, Target, TrendingUp, BarChart3, Copy, HelpCircle, Lightbulb, Star, Info } from "lucide-react"
+import { GImage } from "@/ui/gimage"
 import type { Metadata } from "next"
 import { getCurrentYear } from "@/lib/utils"
 
@@ -153,10 +154,52 @@ export default function PayPalFeeCalculatorPage() {
     aboutTool: (
       <div className="space-y-8">
         <article className="space-y-6">
+          <GImage
+            src="/images/finance/paypal-calculator-hero.png"
+            alt="FastTools PayPal Fee Calculator"
+            width={800}
+            height={450}
+            className="w-full h-auto rounded-lg shadow-md"
+          />
           <h2 className="text-2xl font-bold text-foreground">Understanding PayPal Currency Conversion Fees: How Much Will You Really Pay?</h2>
           <p className="text-base text-muted-foreground leading-relaxed">
             In today's global economy, using PayPal for international transactions has become second nature for many. However, one aspect often overlooked is PayPal's currency conversion fees, which can eat into your hard-earned money. Understanding these fees is crucial for anyone looking to transact across borders, whether you're a freelancer, small business owner, or simply someone sending money to friends or family. But how much will you really pay? In this article, we'll break down the intricacies of PayPal's currency conversion process, helping you decipher the charges that can significantly impact your bottom line. Get ready to uncover the hidden costs and equip yourself with the knowledge you need to make informed financial decisions when using PayPal!
           </p>
+        </article>
+
+        {/* Real-World Examples & Case Studies */}
+        <article className="space-y-6">
+          <h3 className="text-xl font-bold text-heading-accent flex items-center gap-2">
+            <DollarSign className="h-5 w-5 text-primary" />
+            Real-World Fee Scenarios
+          </h3>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <div className="p-4 rounded-lg bg-card border border-border shadow-sm">
+              <h4 className="font-semibold text-foreground mb-2">Freelancer Payment ($500)</h4>
+              <p className="text-sm text-muted-foreground mb-3">Receiving a $500 payment from a US client.</p>
+              <div className="space-y-1 text-sm">
+                <div className="flex justify-between"><span>Fee (2.9% + $0.49):</span> <span className="text-red-500">-$14.99</span></div>
+                <div className="flex justify-between font-bold border-t border-border pt-1"><span>You Keep:</span> <span className="text-green-600">$485.01</span></div>
+              </div>
+            </div>
+            <div className="p-4 rounded-lg bg-card border border-border shadow-sm">
+              <h4 className="font-semibold text-foreground mb-2">Small Business Sale ($50)</h4>
+              <p className="text-sm text-muted-foreground mb-3">Selling a $50 handmade item online.</p>
+              <div className="space-y-1 text-sm">
+                <div className="flex justify-between"><span>Fee (2.9% + $0.49):</span> <span className="text-red-500">-$1.94</span></div>
+                <div className="flex justify-between font-bold border-t border-border pt-1"><span>You Keep:</span> <span className="text-green-600">$48.06</span></div>
+              </div>
+            </div>
+            <div className="p-4 rounded-lg bg-card border border-border shadow-sm">
+              <h4 className="font-semibold text-foreground mb-2">International Transfer ($1,000)</h4>
+              <p className="text-sm text-muted-foreground mb-3">Sending $1,000 to family in Europe.</p>
+              <div className="space-y-1 text-sm">
+                <div className="flex justify-between"><span>Intl Fee (5%):</span> <span className="text-red-500">-$4.99 (Max)</span></div>
+                <div className="flex justify-between"><span>FX Markup (~4%):</span> <span className="text-red-500">~$40.00</span></div>
+                <div className="flex justify-between font-bold border-t border-border pt-1"><span>Total Cost:</span> <span className="text-red-600">~$44.99</span></div>
+              </div>
+            </div>
+          </div>
         </article>
 
         <article className="space-y-6">
@@ -169,11 +212,84 @@ export default function PayPalFeeCalculatorPage() {
           </p>
         </article>
 
+        {/* Comparison Tables */}
+        <article className="space-y-6">
+          <h3 className="text-xl font-bold text-heading-accent flex items-center gap-2">
+            <Target className="h-5 w-5 text-primary" />
+            PayPal Fees vs. Competitors (2025)
+          </h3>
+          <p className="text-base text-muted-foreground leading-relaxed">
+            See how PayPal stacks up against other popular payment platforms.
+          </p>
+          <div className="overflow-x-auto">
+            <table className="w-full text-sm border-collapse">
+              <thead>
+                <tr className="bg-muted/50 border-b border-border">
+                  <th className="text-left py-3 px-4 font-semibold text-heading-accent border-r border-border">Provider</th>
+                  <th className="text-left py-3 px-4 font-semibold text-muted-foreground border-r border-border">Standard Fee</th>
+                  <th className="text-left py-3 px-4 font-semibold text-muted-foreground">Instant Transfer</th>
+                </tr>
+              </thead>
+              <tbody className="text-muted-foreground">
+                <tr className="border-b border-border">
+                  <td className="py-3 px-4 border-r border-border font-medium text-heading-accent">PayPal</td>
+                  <td className="py-3 px-4 border-r border-border">2.9% + $0.49</td>
+                  <td className="py-3 px-4">1.75% (Max $25)</td>
+                </tr>
+                <tr className="border-b border-border">
+                  <td className="py-3 px-4 border-r border-border font-medium text-heading-accent">Venmo</td>
+                  <td className="py-3 px-4 border-r border-border">1.9% + $0.10</td>
+                  <td className="py-3 px-4">1.75% (Min $0.25, Max $25)</td>
+                </tr>
+                <tr className="border-b border-border">
+                  <td className="py-3 px-4 border-r border-border font-medium text-heading-accent">Stripe</td>
+                  <td className="py-3 px-4 border-r border-border">2.9% + $0.30</td>
+                  <td className="py-3 px-4">1% (Min $0.50)</td>
+                </tr>
+                <tr className="border-b border-border">
+                  <td className="py-3 px-4 border-r border-border font-medium text-heading-accent">Square</td>
+                  <td className="py-3 px-4 border-r border-border">2.6% + $0.10 (In-person)</td>
+                  <td className="py-3 px-4">1.5%</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </article>
+
+        {/* Regulatory & Problem Solving */}
+        <article className="space-y-6">
+          <h3 className="text-xl font-bold text-heading-accent flex items-center gap-2">
+            <Info className="h-5 w-5 text-primary" />
+            Important 2025 Regulatory Updates
+          </h3>
+          <div className="space-y-4">
+            <div className="p-4 bg-yellow-500/10 border border-yellow-500/30 rounded-lg">
+              <h4 className="font-bold text-yellow-600 dark:text-yellow-500 mb-2">IRS 1099-K Reporting Changes</h4>
+              <p className="text-sm text-foreground">
+                For the 2025 tax year, the IRS threshold for reporting goods and services transactions is significantly lower than in previous years. If you receive payments for goods or services over <strong>$600</strong> in a calendar year, PayPal is required to file Form 1099-K. This does <em>not</em> apply to personal Friends & Family payments.
+              </p>
+            </div>
+            <div className="space-y-2">
+              <h4 className="font-semibold text-foreground">Dispute & Chargeback Fees</h4>
+              <p className="text-sm text-muted-foreground">
+                Merchants should be aware that if a buyer files a dispute or chargeback, PayPal may charge a <strong>Dispute Fee</strong> ranging from $15 to $30 USD per instance, depending on your dispute rate tier. This fee is levied even if you win the dispute in some high-volume cases.
+              </p>
+            </div>
+          </div>
+        </article>
+
         <article className="space-y-6">
           <h3 className="text-xl font-bold text-heading-accent flex items-center gap-2">
             <BarChart3 className="h-5 w-5 text-primary" />
             Breakdown of PayPal Currency Conversion Fees
           </h3>
+          <GImage
+            src="/images/finance/paypal-fee-breakdown.png"
+            alt="PayPal Fee Breakdown Infographic"
+            width={800}
+            height={450}
+            className="w-full h-auto rounded-lg shadow-sm my-4"
+          />
           <p className="text-base text-muted-foreground leading-relaxed">
             PayPal's currency conversion fee is typically between <strong>3% and 4%</strong> above the base exchange rate. This fee is applied whenever a currency conversion is required to complete a transaction.
           </p>
@@ -184,63 +300,11 @@ export default function PayPalFeeCalculatorPage() {
           </ul>
         </article>
 
-        <article className="space-y-6">
-          <h3 className="text-xl font-bold text-heading-accent flex items-center gap-2">
-            <Target className="h-5 w-5 text-primary" />
-            Comparing PayPal's Fees to Other Payment Processors
-          </h3>
-          <p className="text-base text-muted-foreground leading-relaxed">
-            While PayPal is convenient, its fees are often higher than competitors. For example:
-          </p>
-          <div className="overflow-x-auto">
-            <table className="w-full text-sm border-collapse">
-              <thead>
-                <tr className="bg-muted/50 border-b border-border">
-                  <th className="text-left py-3 px-4 font-semibold text-heading-accent border-r border-border">Provider</th>
-                  <th className="text-center py-3 px-4 font-semibold text-muted-foreground">Currency Conversion Fee</th>
-                </tr>
-              </thead>
-              <tbody className="text-muted-foreground">
-                <tr className="border-b border-border">
-                  <td className="py-3 px-4 border-r border-border font-medium text-heading-accent">PayPal</td>
-                  <td className="text-center py-3 px-4">3.0% - 4.0% markup</td>
-                </tr>
-                <tr className="border-b border-border">
-                  <td className="py-3 px-4 border-r border-border font-medium text-heading-accent">Wise (formerly TransferWise)</td>
-                  <td className="text-center py-3 px-4">~0.5% - 1.0% (Mid-market rate)</td>
-                </tr>
-                <tr className="border-b border-border">
-                  <td className="py-3 px-4 border-r border-border font-medium text-heading-accent">Payoneer</td>
-                  <td className="text-center py-3 px-4">~2.0% markup</td>
-                </tr>
-                <tr className="border-b border-border">
-                  <td className="py-3 px-4 border-r border-border font-medium text-heading-accent">Stripe</td>
-                  <td className="text-center py-3 px-4">1.0% + FX rate margin</td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
-        </article>
-
-        <article className="space-y-6">
-          <h3 className="text-xl font-bold text-heading-accent flex items-center gap-2">
-            <TrendingUp className="h-5 w-5 text-primary" />
-            Factors Influencing Currency Conversion Rates
-          </h3>
-          <p className="text-base text-muted-foreground leading-relaxed">
-            Several factors determine the final rate you get:
-          </p>
-          <ul className="list-disc list-inside space-y-2 text-muted-foreground ml-4">
-            <li><strong>Market Volatility:</strong> Exchange rates fluctuate constantly based on global markets.</li>
-            <li><strong>Transaction Type:</strong> Rates may differ for personal transfers vs. business usage.</li>
-            <li><strong>Card Issuer Policies:</strong> If you use a credit card, your bank might charge its own foreign transaction fee on top of PayPal's.</li>
-          </ul>
-        </article>
-
+        {/* Strategies Section */}
         <article className="space-y-6">
           <h3 className="text-xl font-bold text-heading-accent flex items-center gap-2">
             <Lightbulb className="h-5 w-5 text-primary" />
-            Strategies to Minimize Currency Conversion Fees
+            Strategies to Minimize Curve Fees
           </h3>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
             <div className="p-4 rounded-lg bg-card border border-border">
@@ -265,14 +329,22 @@ export default function PayPalFeeCalculatorPage() {
         <article className="space-y-6">
           <h3 className="text-xl font-bold text-heading-accent flex items-center gap-2">
             <HelpCircle className="h-5 w-5 text-primary" />
-            Common Scenarios Where Fees Apply
+            Why Am I Being Charged More? (Troubleshooting)
           </h3>
-          <ul className="list-disc list-inside space-y-2 text-muted-foreground ml-4">
-            <li><strong>Buying from International Stores:</strong> Purchasing goods from a seller in another country.</li>
-            <li><strong>Sending Money Abroad:</strong> Transferring funds to friends or family overseas.</li>
-            <li><strong>Reverting Funds:</strong> If a refund is issued, the reversed exchange rate might differ, causing you to lose money.</li>
-            <li><strong>Receiving Foreign Payments:</strong> Freelancers getting paid in USD or EUR while their account is in GBP or AUD.</li>
-          </ul>
+          <div className="accordion-like space-y-4">
+            <div className="border-l-4 border-primary pl-4">
+              <h4 className="font-semibold text-foreground">Cross-Border Fees</h4>
+              <p className="text-sm text-muted-foreground">If the sender's account is in a different country, an extra <strong>1.50%</strong> fee usually applies, even if the currency is the same.</p>
+            </div>
+            <div className="border-l-4 border-primary pl-4">
+              <h4 className="font-semibold text-foreground">Payment Method Surcharge</h4>
+              <p className="text-sm text-muted-foreground">Sending money via a credit/debit card personally costs <strong>2.9% + $0.30</strong>, whereas bank transfers are often free.</p>
+            </div>
+            <div className="border-l-4 border-primary pl-4">
+              <h4 className="font-semibold text-foreground">Pending Holds</h4>
+              <p className="text-sm text-muted-foreground">If your funds are on hold, it doesn't increase fees, but it affects cash flow. This is common for new sellers or high-value items to prevent fraud.</p>
+            </div>
+          </div>
         </article>
 
         <article className="space-y-6">

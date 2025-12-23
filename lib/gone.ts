@@ -43,7 +43,6 @@ export const goneUrls = new Set([
   '/guides/image-to-text-ocr-guide',
   '/guides/developer-tools-guide',
   '/guides/bmr-calculator-guide',
-  '/guides/paypal-fee-calculator-guide',
   '/guides/inflation-calculator-guide',
   '/guides/meta-tags-guide',
   '/guides/investment-calculator-guide',

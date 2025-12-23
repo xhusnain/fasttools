@@ -836,9 +836,21 @@ export const toolPages = [
     },
     {
         url: "https://www.fasttools.store/finance-tools/paypal-fee",
-        lastModified: new Date('2025-11-25'),
+        lastModified: new Date('2025-12-23'),
         changeFrequency: "monthly" as const,
         priority: 0.95,
+        images: [
+            {
+                url: "https://www.fasttools.store/images/finance/paypal-calculator-hero.png",
+                title: "PayPal Fee Calculator - FastTools",
+                caption: "FastTools PayPal Fee Calculator hero image"
+            },
+            {
+                url: "https://www.fasttools.store/images/finance/paypal-fee-breakdown.png",
+                title: "PayPal Fee Breakdown Infographic",
+                caption: "Visual breakdown of PayPal fees and costs"
+            }
+        ]
     },
     {
         url: "https://www.fasttools.store/finance-tools/retirement-planner",

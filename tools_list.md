@@ -23,7 +23,6 @@
 - Invoice Generator
 - Loan Calculator
 - Payment Calculator
-- PayPal Fee Calculator
 - Salary Calculator
 - Sales Tax Calculator
 - Tip Calculator
