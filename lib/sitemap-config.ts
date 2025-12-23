@@ -324,6 +324,12 @@ export const guidePages = [
         changeFrequency: "monthly" as const,
         priority: 0.9,
     },
+    {
+        url: "https://www.fasttools.store/guides/concrete-calculator-guide",
+        lastModified: new Date('2025-12-23'),
+        changeFrequency: "monthly" as const,
+        priority: 0.9,
+    },
 ]
 
 export const toolPages = [

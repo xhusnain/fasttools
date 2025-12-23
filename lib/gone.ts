@@ -64,7 +64,6 @@ export const goneUrls = new Set([
   '/guides/body-fat-calculator-guide',
   '/guides/calorie-calculator-guide',
   '/guides/ai-caption-generator-guide',
-  '/guides/concrete-calculator-guide',
   '/guides/youtube-thumbnail-downloader-guide',
   '/guides/date-to-day-finder-guide',
   '/guides/conversion-calculator-guide',
