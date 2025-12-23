@@ -3,7 +3,7 @@ import path from 'path';
 import matter from 'gray-matter';
 import readingTime from 'reading-time';
 
-export type BlogCategory = 'Click Fraud Protection' | 'Google Ads' | 'AI' | 'Case Studies';
+export type BlogCategory = 'Developer' | 'Guides';
 
 export interface BlogPost {
     slug: string;
