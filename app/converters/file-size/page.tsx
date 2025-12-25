@@ -3,12 +3,12 @@ import { ToolPageLayout } from "@/components/common/tool-page-layout"
 import { createToolConfig } from "@/lib/create-tool-config"
 
 const currentYear = new Date().getFullYear()
-const pageTitle = `File Size Converter - Byte to TB Calculator ${currentYear}`
-const pageDescription = "Convert file sizes instantly (KB, MB, GB, TB). Free online calculator for cloud storage, backups, and AI datasets with decimal & binary units."
+const pageTitle = "File Size Converter & Calculator - Units, File Analysis & Speed"
+const pageDescription = "Professional-grade File Size Converter. Instantly analyze local files with drag-and-drop, calculate transfer times for high-speed networks, and estimate cloud storage costs for AWS/Google Drive. Supports Decimal (SI) and Binary (IEC) units."
 
 const toolConfig = createToolConfig({
   toolName: "File Size Converter",
-  description: "Convert file sizes instantly: KB to MB, GB to TB, PB to EB with decimal (SI) and binary (IEC) units. Free online data size calculator for cloud storage, AI datasets, backups, and hosting limits.",
+  description: "Beyond simple unit conversion: Analyze files locally, calculate download/upload times, and estimate global storage costs. The ultimate tool for storage planning and data unit management.",
   metaTitle: pageTitle,
   metaDescription: pageDescription,
   path: "/converters/file-size",
@@ -30,32 +30,31 @@ const toolConfig = createToolConfig({
     overview: "In the digital age, understanding file sizes is fundamental. Our File Size Converter is a professional-grade tool designed to bridge the gap between human-readable units and machine-level storage metrics. Whether you're a developer optimizing database schemas, a content creator managing 4K video assets, or an IT professional planning cloud infrastructure, this tool provides instant, accurate conversions between all standard digital storage units. It seamlessly handles both the Decimal (SI) system used by storage manufacturers and the Binary (IEC) system used by operating systems, ensuring you never miscalculate storage requirements again.",
 
     howToSteps: [
-      "Enter the value you want to convert in the input field.",
-      "Select the source unit (e.g., MB, GB, TiB) from the dropdown menu.",
-      "Choose your target unit to see the conversion instantly.",
-      "Toggle between 'Decimal' and 'Binary' modes to understand the difference between marketing labels (1 TB = 1000 GB) and actual OS space (1 TiB = 1024 GiB).",
-      "Copy the precise result to your clipboard for use in reports or configurations."
+      "Select 'Converter' to manually input values (e.g., 1024 MB to GB).",
+      "Use 'File Analyzer' to drag & drop any file and see its exact size properties instantly.",
+      "Switch to 'Transfer Time' to estimate how long it takes to download/upload your file on 4G, 5G, or Fiber.",
+      "Toggle between Decimal (1 TB = 1000 GB) and Binary (1 TiB = 1024 GiB) units to match your OS or Manufacturer specs.",
+      "Use the 'Storage Cost' estimator in the Analyzer tab to plan cloud budgets."
     ],
 
     features: [
-      "Dual System Support: Convert between Decimal (SI) and Binary (IEC) units with precision",
-      "Comprehensive Range: Support for Bytes, KB, MB, GB, TB, PB, EB, ZB, and YB",
-      "Real-Time Calculation: Instant results as you type without page reloads",
-      "100% Client-Side Privacy: No data is ever sent to our servers",
-      "Mobile-Optimized: Perfect for checking storage limits on the go",
-      "Upload Limit Checker: Verify if your files meet email or platform constraints",
-      "Storage Optimization: Identify actual space usage vs. marketing claims",
-      "Cloud Cost Planning: Estimate storage costs accurately by normalizing units"
+      "Three-in-One Tool: Unit Converter, File Analyzer, and Speed Calculator",
+      "Drag & Drop Analysis: Get instant metadata for local files without uploading (Privacy Focused)",
+      "Transfer Speed Estimator: Calculate download times for 4G, 5G, Fiber, and USB",
+      "Cloud Cost Calculator: Estimate storage costs for AWS S3 and Google Drive",
+      "Dual System Support: Full precision for Metric (SI) and Binary (IEC) units",
+      "Real-Time Conversion: Instant results as you type or drop files",
+      "Comprehensive Range: From Bits to Yottabytes",
+      "Mobile-Friendly: Check storage limits on any device"
     ],
 
     useCases: [
-      "Cloud Storage Planning: Convert between decimal GB (AWS/Google Cloud) and binary GiB to estimate costs accurately.",
-      "Backup Estimation: Calculate total backup sizes for disaster recovery planning.",
-      "Upload Limit Verification: Check if files fit within email (25MB) or social media limits.",
-      "Network Transfer Planning: Estimate transfer times by converting file sizes to bits.",
-      "DevOps & Infrastructure: Size database volumes and log partitions correctly.",
-      "Content Creation: Manage video and image library storage requirements.",
-      "Data Science: Estimate memory requirements for loading large AI datasets."
+      "Storage Planning: Compare 'Advertised' drive size (TB) vs 'Actual' Windows size (TiB).",
+      "Web Development: Check if asset files meet upload limits (e.g., 'Max 2 MB').",
+      "Cloud Budgeting: Estimate monthly costs for storing backups on S3 or Drive.",
+      "Network Testing: Predict how long a 50GB game or 4K movie will take to download.",
+      "Data Science: Calculate precise memory footprints for large datasets.",
+      "Forensics & IT: Verify file sizes down to the exact byte."
     ],
 
     aboutTool: (

@@ -23,7 +23,13 @@ import {
   Database,
   Code,
   Download,
-  Upload
+  Upload,
+  FileSearch,
+  Timer,
+  Wifi,
+  Cloud,
+  Laptop,
+  Smartphone
 } from "lucide-react"
 
 
@@ -112,6 +118,14 @@ export function FileSizeConverter() {
           <GTabsTrigger value="faq" className="flex items-center justify-center gap-2 text-xs sm:text-sm py-2">
             <Code className="h-4 w-4" />
             FAQ
+          </GTabsTrigger>
+          <GTabsTrigger value="analyzer" className="flex items-center justify-center gap-2 text-xs sm:text-sm py-2">
+            <FileSearch className="h-4 w-4" />
+            File Analyzer
+          </GTabsTrigger>
+          <GTabsTrigger value="transfer" className="flex items-center justify-center gap-2 text-xs sm:text-sm py-2">
+            <Timer className="h-4 w-4" />
+            Transfer Time
           </GTabsTrigger>
         </GTabsList>
 
@@ -639,6 +653,142 @@ export function FileSizeConverter() {
                     Games (GB), Operating System (GB). Add 20-30% buffer for future needs.
                     Use binary units (GiB, TiB) for accurate calculations as that's what your OS uses.
                   </p>
+                </div>
+              </div>
+            </GCardContent>
+          </GCard>
+        </GTabsContent>
+
+        <GTabsContent value="analyzer" className="space-y-6">
+          <GCard className="border border-border shadow-sm">
+            <GCardHeader>
+              <GCardTitle className="text-lg flex items-center gap-2">
+                <FileSearch className="h-5 w-5 text-primary" />
+                File Analyzer
+              </GCardTitle>
+              <GCardDescription>Analyze any file to see its exact size in all units</GCardDescription>
+            </GCardHeader>
+            <GCardContent className="space-y-6">
+              <div
+                className="border-2 border-dashed border-muted-foreground/25 rounded-lg p-12 text-center hover:bg-muted/50 transition-colors cursor-pointer"
+                onDragOver={(e) => {
+                  e.preventDefault()
+                  e.stopPropagation()
+                }}
+                onDrop={(e) => {
+                  e.preventDefault()
+                  e.stopPropagation()
+                  const file = e.dataTransfer.files?.[0]
+                  if (file) {
+                    setValue(file.size.toString())
+                    setFromUnit("Byte (B)")
+                    setActiveTab("converter")
+                  }
+                }}
+                onClick={() => {
+                  const input = document.createElement('input')
+                  input.type = 'file'
+                  input.onchange = (e) => {
+                    const file = (e.target as HTMLInputElement).files?.[0]
+                    if (file) {
+                      setValue(file.size.toString())
+                      setFromUnit("Byte (B)")
+                      setActiveTab("converter")
+                    }
+                  }
+                  input.click()
+                }}
+              >
+                <div className="flex flex-col items-center gap-4">
+                  <div className="p-4 bg-primary/10 rounded-full">
+                    <Upload className="h-8 w-8 text-primary" />
+                  </div>
+                  <div>
+                    <h3 className="font-semibold text-lg">Click to Upload or Drag & Drop</h3>
+                    <p className="text-sm text-muted-foreground mt-1">
+                      We'll analyze the file size instantly. No data is sent to server.
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <div className="p-4 bg-muted rounded-lg border border-border">
+                  <h4 className="font-semibold mb-2 flex items-center gap-2">
+                    <Laptop className="h-4 w-4" />
+                    Storage Cost Estimator
+                  </h4>
+                  <p className="text-xs text-muted-foreground mb-4">Estimated monthly cost to store this amount of data:</p>
+                  <div className="space-y-2 text-sm">
+                    <div className="flex justify-between">
+                      <span>AWS S3 Standard</span>
+                      <span className="font-mono">
+                        ${((Number(value) || 0) * (allUnits[fromUnit as keyof typeof allUnits] || 1) / 1000000000 * 0.023).toFixed(6)}
+                      </span>
+                    </div>
+                    <div className="flex justify-between">
+                      <span>Google Drive</span>
+                      <span className="font-mono">
+                        ${((Number(value) || 0) * (allUnits[fromUnit as keyof typeof allUnits] || 1) / 1000000000 * 0.020).toFixed(6)}
+                      </span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </GCardContent>
+          </GCard>
+        </GTabsContent>
+
+        <GTabsContent value="transfer" className="space-y-6">
+          <GCard className="border border-border shadow-sm">
+            <GCardHeader>
+              <GCardTitle className="text-lg flex items-center gap-2">
+                <Timer className="h-5 w-5 text-primary" />
+                Transfer Time Calculator
+              </GCardTitle>
+              <GCardDescription>Estimate how long it will take to transfer your file</GCardDescription>
+            </GCardHeader>
+            <GCardContent>
+              <div className="grid gap-6">
+                {/* Re-use the main value input indirectly or show a new one? Let's use the main state for consistency */}
+                <div className="p-4 bg-blue-50 dark:bg-blue-950/30 rounded-lg text-sm text-blue-800 dark:text-blue-200">
+                  Currently calculating transfer time for: <strong>{value} {fromUnit}</strong>
+                  <br />
+                  <span className="text-xs opacity-75">(Change the value in the Converter tab to update this)</span>
+                </div>
+
+                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+                  {[
+                    { name: "4G LTE", speed: 20, unit: "Mbps", icon: Smartphone },
+                    { name: "5G / Wi-Fi 5", speed: 100, unit: "Mbps", icon: Wifi },
+                    { name: "Gigabit Fiber", speed: 1000, unit: "Mbps", icon: Cloud },
+                    { name: "USB 2.0", speed: 480, unit: "Mbps", icon: HardDrive },
+                    { name: "USB 3.0", speed: 5000, unit: "Mbps", icon: HardDrive },
+                    { name: "SATA III SSD", speed: 6000, unit: "Mbps", icon: HardDrive },
+                  ].map((network) => {
+                    const valueInBits = (Number(value) || 0) * (allUnits[fromUnit as keyof typeof allUnits] || 1) * 8;
+                    const speedInBits = network.speed * 1000000;
+                    const seconds = valueInBits / speedInBits;
+
+                    let timeString = "";
+                    if (seconds < 1) timeString = "< 1 second";
+                    else if (seconds < 60) timeString = `${seconds.toFixed(1)} seconds`;
+                    else if (seconds < 3600) timeString = `${(seconds / 60).toFixed(1)} minutes`;
+                    else timeString = `${(seconds / 3600).toFixed(1)} hours`;
+
+                    return (
+                      <div key={network.name} className="p-4 border rounded-lg flex items-center gap-3">
+                        <div className="p-2 bg-muted rounded-full">
+                          <network.icon className="h-5 w-5" />
+                        </div>
+                        <div>
+                          <p className="font-semibold text-sm">{network.name}</p>
+                          <p className="text-xs text-muted-foreground">{network.speed} {network.unit}</p>
+                          <p className="font-bold text-primary mt-1">{timeString}</p>
+                        </div>
+                      </div>
+                    )
+                  })}
                 </div>
               </div>
             </GCardContent>
