@@ -91,6 +91,13 @@ export function LocationInfo() {
 
     return (
         <div className="w-full max-w-xl mx-auto animate-in fade-in slide-in-from-bottom-4 duration-700">
+            <div className="sr-only">
+                <h3>Location Summary</h3>
+                <p>User is located in {data.capital}, {data.name}.</p>
+                <p>IP Address: {data.ip}</p>
+                <p>Coordinates: {data.latitude}, {data.longitude}</p>
+                <p>Currency: {data.currency} ({data.country_code})</p>
+            </div>
             <div className="text-center lg:text-left mb-8">
                 <GBadge variant="outline" className="mb-4 bg-primary/5 text-primary border-primary/20">
                     <span className="flex items-center gap-2">
