@@ -61,28 +61,47 @@ const toolConfig = createToolConfig({
         <article className="space-y-6">
           <h2 className="text-2xl font-bold text-foreground flex items-center gap-2">
             <Heart className="h-6 w-6 text-primary" />
-            Why Use an Anniversary Calculator?
+            Celebrate Your Love: How to Use Our Relationship Anniversary Calculator
           </h2>
           <p className="text-base text-muted-foreground leading-relaxed">
-            Remembering exact dates and calculating relationship duration can be tricky, especially with leap years. Our <strong>free anniversary calculator app</strong> takes the guesswork out of tracking your time together, serving as a reliable couple calculator for all your important dates.
+            Every day spent with your partner is a milestone, but keeping track of the exact time can be a challenge. Whether you are nearing your first month or your 50th year, our relationship anniversary calculator is designed to help you celebrate every second of your journey together.
           </p>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+        </article>
+
+        <article className="space-y-6">
+          <h2 className="text-2xl font-bold text-foreground flex items-center gap-2">
+            <Star className="h-6 w-6 text-primary" />
+            Why Track Your Relationship Milestones?
+          </h2>
+          <p className="text-base text-muted-foreground leading-relaxed">
+            Knowing your "anniversary age" isn't just about marking a date on the calendar. It’s about reflecting on your growth as a couple. Our tool provides more than just a date; it breaks down your time together into:
+          </p>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             <div className="p-4 rounded-lg bg-card border border-border">
               <h4 className="font-semibold text-heading-accent mb-2 flex items-center gap-2">
                 <Calendar className="h-4 w-4 text-primary" />
-                Never Miss a Date
+                Total Days
               </h4>
               <p className="text-sm text-muted-foreground">
-                Know exactly when your next anniversary is so you can plan ahead. No more last-minute scrambling for gifts or reservations.
+                Perfect for celebrating specific number milestones like "1,000 days together."
               </p>
             </div>
             <div className="p-4 rounded-lg bg-card border border-border">
               <h4 className="font-semibold text-heading-accent mb-2 flex items-center gap-2">
                 <Clock className="h-4 w-4 text-primary" />
-                Precise Timing
+                Weeks & Months
               </h4>
               <p className="text-sm text-muted-foreground">
-                Get down-to-the-second accuracy on how long you've been together. Perfect for those "I've loved you for..." messages.
+                Great for "month-iversary" surprises and tracking shorter milestones.
+              </p>
+            </div>
+            <div className="p-4 rounded-lg bg-card border border-border">
+              <h4 className="font-semibold text-heading-accent mb-2 flex items-center gap-2">
+                <Gift className="h-4 w-4 text-primary" />
+                Upcoming Milestones
+              </h4>
+              <p className="text-sm text-muted-foreground">
+                Never miss a "silver" or "golden" anniversary again.
               </p>
             </div>
           </div>
@@ -90,62 +109,22 @@ const toolConfig = createToolConfig({
 
         <article className="space-y-6">
           <h2 className="text-2xl font-bold text-foreground flex items-center gap-2">
-            <Gift className="h-6 w-6 text-primary" />
-            Celebrating Milestones
-          </h2>
-          <div className="p-4 rounded-lg bg-primary/5 border border-primary/20">
-            <ul className="space-y-3 text-sm text-muted-foreground">
-              <li className="flex items-start gap-2">
-                <CheckCircle className="h-4 w-4 text-green-500 mt-0.5 flex-shrink-0" />
-                <span><strong>Paper Anniversary (1st):</strong> Traditionally celebrated with paper gifts like letters or books.</span>
-              </li>
-              <li className="flex items-start gap-2">
-                <CheckCircle className="h-4 w-4 text-green-500 mt-0.5 flex-shrink-0" />
-                <span><strong>Wood Anniversary (5th):</strong> Represents strong roots and durability.</span>
-              </li>
-              <li className="flex items-start gap-2">
-                <CheckCircle className="h-4 w-4 text-green-500 mt-0.5 flex-shrink-0" />
-                <span><strong>Tin/Aluminum Anniversary (10th):</strong> Symbolizes flexibility and durability.</span>
-              </li>
-              <li className="flex items-start gap-2">
-                <CheckCircle className="h-4 w-4 text-green-500 mt-0.5 flex-shrink-0" />
-                <span><strong>Silver Anniversary (25th):</strong> A major milestone celebrating a quarter-century of love.</span>
-              </li>
-              <li className="flex items-start gap-2">
-                <CheckCircle className="h-4 w-4 text-green-500 mt-0.5 flex-shrink-0" />
-                <span><strong>Gold Anniversary (50th):</strong> The golden standard of enduring partnership.</span>
-              </li>
-            </ul>
-          </div>
-        </article>
-        <article className="space-y-6">
-          <h2 className="text-2xl font-bold text-foreground flex items-center gap-2">
-            <Star className="h-6 w-6 text-primary" />
-            Celebrating Monthly Milestones
+            <CheckCircle className="h-6 w-6 text-primary" />
+            How the Calculator Works
           </h2>
           <p className="text-base text-muted-foreground leading-relaxed">
-            While yearly anniversaries are traditional, many couples love to celebrate "monthsaries", especially in the first year of dating. Our calculator shows you the <strong>Total Months</strong> count so you never miss a special monthly date.
+            Simply enter the date your relationship began (your "first date" or the day you "made it official"). Our algorithm instantly processes the calendar data—including leap years—to give you an 100% accurate count of your time spent as a couple.
           </p>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            <div className="p-4 rounded-lg bg-card border border-border">
-              <h4 className="font-semibold text-heading-accent mb-2 flex items-center gap-2">
-                <Heart className="h-4 w-4 text-primary" />
-                Dating Milestones
-              </h4>
-              <p className="text-sm text-muted-foreground">
-                Celebrate 1 month, 6 months, or 18 months together. These smaller milestones are perfect for romantic dates or small gifts.
-              </p>
-            </div>
-            <div className="p-4 rounded-lg bg-card border border-border">
-              <h4 className="font-semibold text-heading-accent mb-2 flex items-center gap-2">
-                <Gift className="h-4 w-4 text-primary" />
-                Baby Milestones
-              </h4>
-              <p className="text-sm text-muted-foreground">
-                You can also use this tool to track baby age in months! Perfect for those "9 months old" photos.
-              </p>
-            </div>
-          </div>
+        </article>
+
+        <article className="space-y-6">
+          <h2 className="text-2xl font-bold text-foreground flex items-center gap-2">
+            <Gift className="h-6 w-6 text-primary" />
+            Never Miss a Special Moment
+          </h2>
+          <p className="text-base text-muted-foreground leading-relaxed">
+            From the paper anniversary (1 year) to the diamond jubilee (60 years), using a relationship calculator helps you plan ahead. Use these insights to book dinner reservations, buy the perfect symbolic gift, or simply send a sweet "Happy 500 Days" text to brighten your partner's morning.
+          </p>
         </article>
       </div>
     ),

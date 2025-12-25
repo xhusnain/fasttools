@@ -54,7 +54,6 @@
 - Meta Tags Generator
 
 ## Fun Tools
-- Anniversary Calculator
 - Birthday Countdown
 - Future Age Calculator
 

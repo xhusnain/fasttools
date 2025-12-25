@@ -7,6 +7,7 @@ import { GLabel } from "@/ui/glabel"
 import { GCard, GCardContent, GCardDescription, GCardHeader, GCardTitle } from "@/ui/gcard"
 
 import { Heart, Copy, Check } from "lucide-react"
+import Image from "next/image"
 
 
 export interface AnniversaryResult {
@@ -203,6 +204,20 @@ export function AnniversaryCalculator() {
                 </>
               )}
             </GButton>
+
+
+          </div>
+
+          <div className="flex justify-center py-4">
+            <div className="relative w-48 h-48 sm:w-64 sm:h-64 opacity-90 hover:opacity-100 transition-opacity duration-500">
+              <Image
+                src="/images/tools/anniversary_love_theme.png"
+                alt="Love and Time"
+                fill
+                className="object-contain drop-shadow-2xl"
+                priority
+              />
+            </div>
           </div>
 
           {result && (
@@ -310,8 +325,23 @@ export function AnniversaryCalculator() {
               </div>
             </div>
           )}
+
+          {result && (
+            <div className="mt-8 p-6 rounded-xl bg-gradient-to-r from-pink-500/10 to-rose-500/10 border border-pink-200/20 backdrop-blur-sm animate-fade-in text-center">
+              <div className="flex justify-center mb-3">
+                <div className="p-2 rounded-full bg-pink-500/20">
+                  <Heart className="w-6 h-6 text-pink-500 fill-pink-500 animate-pulse" />
+                </div>
+              </div>
+              <h3 className="text-xl font-serif text-white mb-2">Love Message from FastTools</h3>
+              <p className="text-pink-100 font-light italic text-lg leading-relaxed">
+                "Calculate your love story today and see exactly how long you’ve been building your forever."
+              </p>
+            </div>
+          )}
+
         </GCardContent>
       </GCard>
-    </div>
+    </div >
   )
 }
