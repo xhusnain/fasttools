@@ -7,23 +7,14 @@ import { Heart, Calendar, Clock, Gift, ArrowRight, CheckCircle, HelpCircle, Star
 const toolConfig = createToolConfig({
   toolName: "Anniversary Calculator",
   description: "Calculate how long you've been together in years, months, and days. See next anniversary date and days remaining. Perfect for couples celebrating their love!",
-  metaTitle: `Anniversary Calculator | Relationship Duration Tool ${getCurrentYear()}`,
-  metaDescription: "FastTools Anniversary Calculator - Calculate how long you've been together in years, months, and days. See next anniversary date and days remaining.",
+  metaTitle: `Anniversary Calculator (Years & Months) | Relationship Duration Tool ${getCurrentYear()}`,
+  metaDescription: "FastTools Anniversary Calculator - Calculate how long you've been together in years, months, and days. See total months, next anniversary date, and days remaining.",
   path: "/fun-tools/anniversary",
-  keywords: [
-    "anniversary calculator", "relationship calculator", "how long together",
-    "anniversary date", "relationship duration", "couple calculator",
-    "days until anniversary", "next anniversary calculator", "milestone anniversaries",
-    "1 year anniversary", "wedding anniversary calculator", "dating anniversary calculator",
-    "relationship milestone calculator", "couple anniversary calculator",
-    "work anniversary calculator", "calculate anniversary years months days",
-    "anniversary counter", "free anniversary calculator", "anniversary calculator app",
-    "event anniversary calculator", "anniversary date difference calculator"
-  ],
+
 
   header: {
     title: `Anniversary Calculator – Calculate Relationship Duration (${getCurrentYear()})`,
-    description: "Calculate how long you've been together and discover when your next anniversary is. Perfect for couples celebrating their love! Simply enter your relationship start date to see years, months, days, and even seconds you've been together.",
+    description: "Calculate how long you've been together and discover when your next anniversary is. Perfect for couples celebrating their love! Simply enter your relationship start date to see years, total months, days, and even seconds you've been together.",
     titleSize: "medium",
     descriptionSize: "small",
   },
@@ -34,7 +25,7 @@ const toolConfig = createToolConfig({
   ],
 
   content: {
-    overview: "Our Anniversary Calculator is the perfect tool for couples to track their relationship milestones. Whether you want to know exactly how many days you've been together, find out when your next big anniversary is, or just celebrate your love, this tool provides accurate and detailed calculations. It handles leap years, different month lengths, and time zones automatically, ensuring you always have the correct duration. Share your special moments with friends and family using our easy sharing features.",
+    overview: "Our Anniversary Calculator is the ultimate relationship duration tool for couples. Accurately calculate exactly how long you've been together in years, months, days, and even seconds. Whether you need a wedding anniversary calculator, a dating anniversary tracker, or simply want to know 'how many months have we been together?', this free tool does it all. Track upcoming milestone anniversaries, find your next anniversary date, and celebrate every special moment with our precise anniversary counter.",
 
     howToSteps: [
       "Enter Start Date: Select the date your relationship started (dating, wedding, or any other milestone) using the date picker.",
@@ -46,6 +37,7 @@ const toolConfig = createToolConfig({
 
     features: [
       "Precise Duration Calculation: Calculate time together in years, months, days, hours, minutes, and seconds.",
+      "Total Months Display: See exactly how many total months you've been together for 'monthsary' celebrations.",
       "Next Anniversary Countdown: See exactly how many days are left until your next anniversary.",
       "Milestone Tracking: Automatically identifies major upcoming milestones like silver or golden anniversaries.",
       "Leap Year Support: Accurately handles leap years and varying month lengths for precise calculations.",
@@ -72,7 +64,7 @@ const toolConfig = createToolConfig({
             Why Use an Anniversary Calculator?
           </h2>
           <p className="text-base text-muted-foreground leading-relaxed">
-            Remembering exact dates and calculating durations can be tricky, especially with leap years and varying month lengths. An anniversary calculator takes the guesswork out of celebrating your love.
+            Remembering exact dates and calculating relationship duration can be tricky, especially with leap years. Our <strong>free anniversary calculator app</strong> takes the guesswork out of tracking your time together, serving as a reliable couple calculator for all your important dates.
           </p>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             <div className="p-4 rounded-lg bg-card border border-border">
@@ -126,13 +118,42 @@ const toolConfig = createToolConfig({
             </ul>
           </div>
         </article>
+        <article className="space-y-6">
+          <h2 className="text-2xl font-bold text-foreground flex items-center gap-2">
+            <Star className="h-6 w-6 text-primary" />
+            Celebrating Monthly Milestones
+          </h2>
+          <p className="text-base text-muted-foreground leading-relaxed">
+            While yearly anniversaries are traditional, many couples love to celebrate "monthsaries", especially in the first year of dating. Our calculator shows you the <strong>Total Months</strong> count so you never miss a special monthly date.
+          </p>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div className="p-4 rounded-lg bg-card border border-border">
+              <h4 className="font-semibold text-heading-accent mb-2 flex items-center gap-2">
+                <Heart className="h-4 w-4 text-primary" />
+                Dating Milestones
+              </h4>
+              <p className="text-sm text-muted-foreground">
+                Celebrate 1 month, 6 months, or 18 months together. These smaller milestones are perfect for romantic dates or small gifts.
+              </p>
+            </div>
+            <div className="p-4 rounded-lg bg-card border border-border">
+              <h4 className="font-semibold text-heading-accent mb-2 flex items-center gap-2">
+                <Gift className="h-4 w-4 text-primary" />
+                Baby Milestones
+              </h4>
+              <p className="text-sm text-muted-foreground">
+                You can also use this tool to track baby age in months! Perfect for those "9 months old" photos.
+              </p>
+            </div>
+          </div>
+        </article>
       </div>
     ),
 
     faqs: [
       {
         question: "How accurate is the anniversary calculator?",
-        answer: "Our anniversary calculator provides precise accuracy by calculating relationship duration in years, months, days, hours, minutes, and seconds. The calculation accounts for different month lengths, leap years, and handles edge cases like February 29th birthdays to ensure complete accuracy."
+        answer: "Our anniversary calculator provides precise accuracy by calculating relationship duration in years, months, days, hours, minutes, and seconds. It also provides a 'Total Months' count for monthly celebrations. The calculation accounts for different month lengths, leap years, and handles edge cases like February 29th birthdays to ensure complete accuracy."
       },
       {
         question: "Can I use this calculator for any type of relationship?",

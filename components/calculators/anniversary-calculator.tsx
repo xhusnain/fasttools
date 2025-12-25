@@ -9,7 +9,21 @@ import { GCard, GCardContent, GCardDescription, GCardHeader, GCardTitle } from "
 import { Heart, Copy, Check } from "lucide-react"
 
 
-import { AnniversaryResult } from "@/types/calculator-types/anniversary-calculator.types"
+export interface AnniversaryResult {
+  years: number
+  months: number
+  days: number
+  hours: number
+  minutes: number
+  seconds: number
+  totalDays: number
+  totalMonths: number
+  totalHours: number
+  totalMinutes: number
+  totalSeconds: number
+  nextAnniversary: string
+  daysUntilNext: number
+}
 
 export function AnniversaryCalculator() {
   const [startDate, setStartDate] = useState("")
@@ -45,6 +59,15 @@ export function AnniversaryCalculator() {
     const totalMinutes = Math.floor(totalSeconds / 60)
     const totalHours = Math.floor(totalMinutes / 60)
     const totalDays = Math.floor(totalHours / 24)
+
+    // Calculate total months (approximate) or precise based on years * 12 + months
+    // A more precise way for total months:
+    const yearDiff = today.getFullYear() - relationshipStartDate.getFullYear()
+    const monthDiff = today.getMonth() - relationshipStartDate.getMonth()
+    let totalMonths = yearDiff * 12 + monthDiff
+    if (today.getDate() < relationshipStartDate.getDate()) {
+      totalMonths--
+    }
 
     // Calculate years, months, days
     let years = today.getFullYear() - relationshipStartDate.getFullYear()
@@ -83,6 +106,7 @@ export function AnniversaryCalculator() {
       minutes,
       seconds,
       totalDays,
+      totalMonths,
       totalHours,
       totalMinutes,
       totalSeconds,
@@ -229,6 +253,10 @@ export function AnniversaryCalculator() {
                 <div className="flex justify-between text-sm sm:text-base">
                   <span className="text-white/70">Total Days:</span>
                   <span className="font-medium text-white">{result.totalDays.toLocaleString()} days</span>
+                </div>
+                <div className="flex justify-between text-sm sm:text-base">
+                  <span className="text-white/70">Total Months:</span>
+                  <span className="font-medium text-white">{result.totalMonths.toLocaleString()} months</span>
                 </div>
                 <div className="flex justify-between text-sm sm:text-base">
                   <span className="text-white/70">Total Hours:</span>
