@@ -1,35 +1,8 @@
 # List of Calculators and Converters
 
-## Calculators
-- Conversion Calculator
-- Date Difference
- - GPA Calculator
-- IP Subnet Calculator
-- Love Calculator
-- Pace Calculator
-- Percentage Calculator
-- Standard Deviation Calculator
-- Time Duration
-- Triangle Calculator
 
-## Finance Tools
-- Bill Splitter
-- Credit Card Payoff Calculator
-- Discount Calculator
-- Finance Calculator
-- Inflation Calculator
-- Interest Rate Calculator
-- Investment Calculator
-- Invoice Generator
-- Loan Calculator
-- Payment Calculator
-- Salary Calculator
-- Sales Tax Calculator
-- Tip Calculator
-- ROAS Calculator
 
 ## Converters
-- Currency Converter
 - File Size Converter
 - Length Converter
 - Temperature Converter
