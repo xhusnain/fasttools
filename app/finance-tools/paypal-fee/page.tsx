@@ -161,9 +161,38 @@ export default function PayPalFeeCalculatorPage() {
             height={450}
             className="w-full h-auto rounded-lg shadow-md"
           />
-          <h2 className="text-2xl font-bold text-foreground">Understanding PayPal Currency Conversion Fees: How Much Will You Really Pay?</h2>
+          <h2 className="text-2xl font-bold text-foreground">Maximize Your Profits with Our PayPal Rates Calculator</h2>
           <p className="text-base text-muted-foreground leading-relaxed">
-            In today's global economy, using PayPal for international transactions has become second nature for many. However, one aspect often overlooked is PayPal's currency conversion fees, which can eat into your hard-earned money. Understanding these fees is crucial for anyone looking to transact across borders, whether you're a freelancer, small business owner, or simply someone sending money to friends or family. But how much will you really pay? In this article, we'll break down the intricacies of PayPal's currency conversion process, helping you decipher the charges that can significantly impact your bottom line. Get ready to uncover the hidden costs and equip yourself with the knowledge you need to make informed financial decisions when using PayPal!
+            In the world of online business and freelancing, every cent counts. Understanding your transaction costs is essential for maintaining healthy profit margins. Our PayPal rates calculator is designed to demystify complex fee structures, giving you an instant, accurate breakdown of what you’ll pay and what you’ll keep.
+          </p>
+
+          <h3 className="text-xl font-bold text-foreground mt-6 mb-4">Why Use a PayPal Fee Calculator?</h3>
+          <p className="text-base text-muted-foreground mb-4">
+            PayPal’s fees change based on your location, the sender’s country, and the type of transaction. Calculating these manually is prone to error. Our tool helps you:
+          </p>
+          <ul className="list-none space-y-3">
+            <li className="flex items-start gap-2">
+              <Target className="h-5 w-5 text-primary mt-0.5" />
+              <span className="text-muted-foreground"><strong>Price Products Correctly:</strong> Know exactly how much to "ask for" so that you receive your full asking price after deductions.</span>
+            </li>
+            <li className="flex items-start gap-2">
+              <Target className="h-5 w-5 text-primary mt-0.5" />
+              <span className="text-muted-foreground"><strong>Calculate International Fees:</strong> Automatically factor in the additional percentage-based fees for cross-border payments.</span>
+            </li>
+            <li className="flex items-start gap-2">
+              <Target className="h-5 w-5 text-primary mt-0.5" />
+              <span className="text-muted-foreground"><strong>Optimize Invoicing:</strong> Ensure your clients cover the transaction costs by including the fee in your total invoice amount.</span>
+            </li>
+          </ul>
+
+          <h3 className="text-xl font-bold text-foreground mt-6 mb-4">How the Rates are Calculated</h3>
+          <p className="text-base text-muted-foreground leading-relaxed">
+            Most domestic commercial transactions follow a standard percentage + fixed fee model (e.g., 2.9% + $0.30 in the US). However, for international sales, QR code payments, or invoicing, these rates can jump significantly. Our PayPal rates tracker is updated with the latest 2025 fee data to ensure your math is always current.
+          </p>
+
+          <h3 className="text-xl font-bold text-foreground mt-6 mb-4">100% Accuracy for Freelancers and Merchants</h3>
+          <p className="text-base text-muted-foreground leading-relaxed">
+            Whether you are a global seller or sending a one-time personal payment, transparency is key. Simply enter your transaction amount and select your region. Our algorithm does the rest, showing you the Total Fee, the Net Amount you will receive, and the Gross Amount you should request.
           </p>
         </article>
 
