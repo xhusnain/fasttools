@@ -4,7 +4,7 @@ import { useEffect, useState } from "react"
 import { GCard, GCardContent } from "@/ui/gcard"
 import { GBadge } from "@/ui/gbadge"
 import { GLoader } from "@/ui/gloader"
-import { Globe, MapPin, DollarSign, Navigation, Wifi } from "lucide-react"
+import { Globe, MapPin, DollarSign, Navigation, Wifi, Copy, Check } from "lucide-react"
 
 interface GeolocationData {
     iso2: string
@@ -28,6 +28,19 @@ export function LocationInfo() {
     const [data, setData] = useState<GeolocationData | null>(null)
     const [loading, setLoading] = useState(true)
     const [error, setError] = useState<string | null>(null)
+    const [copied, setCopied] = useState(false)
+
+    const handleCopyIp = async () => {
+        if (data?.ip) {
+            try {
+                await navigator.clipboard.writeText(data.ip)
+                setCopied(true)
+                setTimeout(() => setCopied(false), 2000)
+            } catch (err) {
+                console.error("Failed to copy IP", err)
+            }
+        }
+    }
 
     useEffect(() => {
         const fetchData = async () => {
@@ -46,7 +59,13 @@ export function LocationInfo() {
             }
         }
 
-        fetchData()
+        // Performance optimization: Execute after page load
+        if (document.readyState === "complete") {
+            fetchData()
+        } else {
+            window.addEventListener("load", fetchData)
+            return () => window.removeEventListener("load", fetchData)
+        }
     }, [])
 
     if (loading) {
@@ -109,7 +128,20 @@ export function LocationInfo() {
                                 </div>
                                 <div>
                                     <p className="text-sm font-medium text-muted-foreground mb-1">Your IP Address</p>
-                                    <p className="text-2xl font-bold font-mono tracking-tight">{data.ip}</p>
+                                    <div className="flex items-center gap-3">
+                                        <p className="text-2xl font-bold font-mono tracking-tight">{data.ip}</p>
+                                        <button
+                                            onClick={handleCopyIp}
+                                            className="p-1.5 hover:bg-black/5 dark:hover:bg-white/10 rounded-md transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-primary/20"
+                                            title="Copy IP Address"
+                                        >
+                                            {copied ? (
+                                                <Check className="h-4 w-4 text-green-500 animate-in zoom-in spin-in-90 duration-300" />
+                                            ) : (
+                                                <Copy className="h-4 w-4 text-muted-foreground hover:text-foreground transition-colors" />
+                                            )}
+                                        </button>
+                                    </div>
                                 </div>
                             </div>
                             <div className="hidden sm:block">
