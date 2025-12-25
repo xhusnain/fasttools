@@ -728,7 +728,7 @@ export const toolPages = [
     },
     {
         url: "https://www.fasttools.store/converters/file-size",
-        lastModified: new Date('2025-11-25'),
+        lastModified: new Date('2025-12-25'),
         changeFrequency: "monthly" as const,
         priority: 0.9,
     },
