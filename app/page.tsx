@@ -12,6 +12,7 @@ const HomeCategories = dynamic(() => import('@/components/common/home-categories
 const HomeFAQSection = dynamic(() => import('@/components/common/home-faq-section').then(mod => ({ default: mod.HomeFAQSection })), {
   loading: () => <div className="py-20 text-center">Loading FAQ...</div>
 })
+import { DictionarySearch } from "@/components/dictionary/DictionarySearch"
 import {
   Calculator,
   Sparkles,
@@ -1097,23 +1098,17 @@ export default function Home() {
     }
   }
 
-
-
   return (
     <div className="bg-background">
       {/* JSON-LD Structured Data */}
-
       <script
         type="application/ld+json"
         suppressHydrationWarning
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
 
-
-
       {/* Hero Section - Background with Blue Text */}
       <section className="relative min-h-screen flex items-center justify-center px-4 overflow-hidden bg-background">
-        {/* Hero Background Image */}
         <PremiumHeroBackground />
 
         <div className="container mx-auto max-w-7xl relative z-10 py-8 sm:py-12 lg:py-16 grid lg:grid-cols-2 gap-8 lg:gap-12 items-center">
@@ -1155,10 +1150,53 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Categories Section - Lazy Loaded */}
-      <HomeCategories categories={categories} />
+      {/* Dictionary Search Section */}
+      <section className="relative z-10 -mt-20 pb-20">
+        <div className="container mx-auto max-w-7xl">
+          <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center">
 
-      {/* FAQ Section - Lazy Loaded */}
+            {/* Left Column - Dictionary Tool */}
+            <div className="w-full">
+              <DictionarySearch />
+            </div>
+
+            {/* Right Column - Text Content */}
+            <div className="text-center lg:text-left space-y-6 sm:space-y-8 order-first lg:order-last px-4 lg:px-0">
+              <div className="space-y-4 sm:space-y-6">
+                <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-500/10 border border-blue-500/20 text-blue-500 text-xs sm:text-sm font-medium mb-2 mx-auto lg:mx-0">
+                  <span className="relative flex h-2 w-2">
+                    <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-blue-500 opacity-75"></span>
+                    <span className="relative inline-flex rounded-full h-2 w-2 bg-blue-500"></span>
+                  </span>
+                  Instant Definition Lookup
+                </div>
+
+                <h2 className="text-3xl sm:text-4xl md:text-5xl font-black text-foreground leading-[1.1] tracking-tight">
+                  <span className="block">
+                    Explore words with
+                  </span>
+                  <span className="block bg-clip-text text-transparent bg-gradient-to-r from-blue-500 via-purple-500 to-blue-500 animate-gradient-x pb-2">
+                    smart dictionary.
+                  </span>
+                </h2>
+
+                <p className="text-base sm:text-lg text-muted-foreground font-medium max-w-2xl mx-auto lg:mx-0 leading-relaxed">
+                  Our advanced dictionary tool provides <strong className="text-foreground">instant definitions</strong>, phonetic guides, and audio pronunciations.
+                  Perfect for students, writers, and language learners who need accurate and fast results.
+                  Powered by the Free Dictionary API.
+                </p>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </section>
+
+      {/* Categories Section - Lazy Loaded */}
+      <div className="-mt-12 relative z-10">
+        <HomeCategories categories={categories} />
+      </div>
+
       <HomeFAQSection />
     </div>
   )
