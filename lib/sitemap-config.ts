@@ -319,6 +319,12 @@ export const categoryPages = [
 
 export const guidePages = [
     {
+        url: "https://www.fasttools.store/guides/file-size-converter-guide",
+        lastModified: new Date('2025-12-25'),
+        changeFrequency: "monthly" as const,
+        priority: 0.9,
+    },
+    {
         url: "https://www.fasttools.store/guides/future-age-predictor-guide",
         lastModified: new Date('2025-12-22'),
         changeFrequency: "monthly" as const,
