@@ -126,6 +126,79 @@ const toolConfig = createToolConfig({
             From the paper anniversary (1 year) to the diamond jubilee (60 years), using a relationship calculator helps you plan ahead. Use these insights to book dinner reservations, buy the perfect symbolic gift, or simply send a sweet "Happy 500 Days" text to brighten your partner's morning.
           </p>
         </article>
+
+        <article className="space-y-6">
+          <h2 className="text-2xl font-bold text-foreground flex items-center gap-2">
+            <Heart className="h-6 w-6 text-primary" />
+            When Was Your First Date? Use Our Dating Anniversary Calculator
+          </h2>
+          <p className="text-base text-muted-foreground leading-relaxed">
+            How long has it been since that magic first spark? Whether you’ve been official for three months or three years, our dating anniversary calculator helps you track the exact age of your love story. Instead of guessing the weeks, let our tool do the math so you can focus on the celebration.
+          </p>
+
+          <h3 className="text-xl font-bold text-foreground mt-6 mb-4">Track Every Romantic Milestone</h3>
+          <p className="text-base text-muted-foreground mb-4">
+            Dating is a journey of "firsts." Our calculator goes beyond just years. Enter your start date to see your progress in:
+          </p>
+          <ul className="list-none space-y-3">
+            <li className="flex items-start gap-2">
+              <CheckCircle className="h-5 w-5 text-primary mt-0.5" />
+              <span className="text-muted-foreground"><strong>The "Monthsary":</strong> Perfect for couples who love celebrating every month together.</span>
+            </li>
+            <li className="flex items-start gap-2">
+              <CheckCircle className="h-5 w-5 text-primary mt-0.5" />
+              <span className="text-muted-foreground"><strong>Total Day Count:</strong> Discover when you hit your 100th, 500th, or 1,000th day of dating.</span>
+            </li>
+            <li className="flex items-start gap-2">
+              <CheckCircle className="h-5 w-5 text-primary mt-0.5" />
+              <span className="text-muted-foreground"><strong>Days Until Next Anniversary:</strong> A real-time countdown to your big day.</span>
+            </li>
+          </ul>
+
+          <h3 className="text-xl font-bold text-foreground mt-6 mb-4">Why Use a Dating Calculator?</h3>
+          <p className="text-base text-muted-foreground">
+            In a new relationship, time flies. You might remember the month you met, but do you know the exact day you became "official"? Using a dating anniversary tracker ensures you never miss a chance to be romantic. It’s the ultimate tool for planning surprises, ordering personalized gifts, or simply reminiscing about your first kiss.
+          </p>
+        </article>
+
+        <article className="space-y-6">
+          <h2 className="text-2xl font-bold text-foreground flex items-center gap-2">
+            <Gift className="h-6 w-6 text-primary" />
+            Celebrate Your Forever: The Ultimate Marriage Anniversary Calculator
+          </h2>
+          <p className="text-base text-muted-foreground leading-relaxed">
+            Your wedding day was just the beginning. Whether you are approaching your first year of marriage or your fiftieth, our marriage anniversary calculator provides an instant, accurate breakdown of every moment you’ve spent as a married couple.
+          </p>
+
+          <h3 className="text-xl font-bold text-foreground mt-6 mb-4">Why Use a Marriage Anniversary Tracker?</h3>
+          <p className="text-base text-muted-foreground mb-4">
+            As years pass, it becomes harder to keep track of the exact time elapsed. Our tool does the heavy lifting, calculating your time together down to the very day. It is the perfect resource for:
+          </p>
+          <ul className="list-none space-y-3">
+            <li className="flex items-start gap-2">
+              <CheckCircle className="h-5 w-5 text-primary mt-0.5" />
+              <span className="text-muted-foreground"><strong>Traditional Gift Planning:</strong> Discover if your upcoming anniversary is the Paper, Wood, or Tin milestone.</span>
+            </li>
+            <li className="flex items-start gap-2">
+              <CheckCircle className="h-5 w-5 text-primary mt-0.5" />
+              <span className="text-muted-foreground"><strong>Counting Your Blessings:</strong> See your marriage duration in total years, months, weeks, and days.</span>
+            </li>
+            <li className="flex items-start gap-2">
+              <CheckCircle className="h-5 w-5 text-primary mt-0.5" />
+              <span className="text-muted-foreground"><strong>Anniversary Countdowns:</strong> Get an exact count of how many days remain until your next big celebration.</span>
+            </li>
+          </ul>
+
+          <h3 className="text-xl font-bold text-foreground mt-6 mb-4">How Our Calculator Works</h3>
+          <p className="text-base text-muted-foreground leading-relaxed">
+            To get your results, simply input the date of your wedding ceremony. Our marriage calculator accounts for leap years and different month lengths to ensure 100% accuracy. Within seconds, you’ll have a complete timeline of your marital journey.
+          </p>
+
+          <h3 className="text-xl font-bold text-foreground mt-6 mb-4">Honor Your Commitment</h3>
+          <p className="text-base text-muted-foreground leading-relaxed">
+            Every year of marriage is a testament to love and partnership. From the Silver Anniversary (25 years) to the Golden Anniversary (50 years), knowing your exact milestone helps you plan the perfect party, vow renewal, or sentimental gift.
+          </p>
+        </article>
       </div>
     ),
 
