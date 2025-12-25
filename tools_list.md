@@ -3,7 +3,6 @@
 
 
 ## Converters
-- File Size Converter
 - Length Converter
 - Temperature Converter
 - Text Case Converter

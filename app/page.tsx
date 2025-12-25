@@ -5,6 +5,7 @@ import { GToolCard } from "@/ui/gtool-card"
 
 
 import { PremiumHeroBackground } from "@/components/common/premium-hero-background"
+import { LocationInfo } from "@/components/location/LocationInfo"
 const HomeCategories = dynamic(() => import('@/components/common/home-categories').then(mod => ({ default: mod.HomeCategories })), {
   loading: () => <div className="py-24 text-center">Loading tools...</div>
 })
@@ -1116,8 +1117,10 @@ export default function Home() {
         <PremiumHeroBackground />
 
         <div className="container mx-auto max-w-7xl relative z-10 py-8 sm:py-12 lg:py-16 grid lg:grid-cols-2 gap-8 lg:gap-12 items-center">
-          {/* Left Column - Spacer for Hexagon */}
-          <div className="hidden lg:block" />
+          {/* Left Column - Location Info */}
+          <div className="hidden lg:block w-full">
+            <LocationInfo />
+          </div>
 
           <div className="text-center lg:text-left space-y-6 sm:space-y-8">
             {/* Main Heading - Professional & Trustworthy */}
@@ -1148,8 +1151,6 @@ export default function Home() {
                 Experience the power of a complete digital toolkit that processes data locally for maximum security and speed.
               </p>
             </div>
-
-
           </div>
         </div>
       </section>
