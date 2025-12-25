@@ -317,32 +317,8 @@ export const categoryPages = [
     },
 ]
 
-export const guidePages = [
-    {
-        url: "https://www.fasttools.store/guides/file-size-converter-guide",
-        lastModified: new Date('2025-12-25'),
-        changeFrequency: "monthly" as const,
-        priority: 0.9,
-    },
-    {
-        url: "https://www.fasttools.store/guides/future-age-predictor-guide",
-        lastModified: new Date('2025-12-22'),
-        changeFrequency: "monthly" as const,
-        priority: 0.9,
-    },
-    {
-        url: "https://www.fasttools.store/guides/concrete-calculator-guide",
-        lastModified: new Date('2025-12-23'),
-        changeFrequency: "monthly" as const,
-        priority: 0.9,
-    },
-    {
-        url: "https://www.fasttools.store/guides/paypal-fee-calculator-guide",
-        lastModified: new Date('2025-12-23'),
-        changeFrequency: "monthly" as const,
-        priority: 0.9,
-    },
-]
+// Guides are now generated dynamically
+export const guidePages: any[] = []
 
 export const toolPages = [
     {
@@ -1056,6 +1032,24 @@ export const toolPages = [
 ]
 
 import { getAllPosts } from "@/components/blog/blog"
+import { getAllGuides } from "@/components/guide/guide"
+
+export const generateGuideSitemap = () => {
+    const guides = getAllGuides()
+    return guides.map((guide) => ({
+        url: `${baseUrl}/guides/${guide.slug}`,
+        lastModified: new Date(guide.lastModified || guide.date),
+        changeFrequency: 'monthly' as const,
+        priority: 0.9,
+        images: guide.image
+            ? [{
+                url: guide.image.startsWith('http') ? guide.image : `${baseUrl}${guide.image}`,
+                title: guide.title,
+                caption: guide.description || ''
+            }]
+            : [],
+    }))
+}
 
 export const generateBlogSitemap = () => {
     const posts = getAllPosts()
@@ -1109,6 +1103,9 @@ export const getAllSitemapPages = () => {
     // 3. Blog Posts
     const blogPages = generateBlogSitemap()
 
+    // 4. Guides
+    const guidePagesGenerated = generateGuideSitemap()
+
     // 4. Dynamic Categories
     const dynamicCategoryPages = generateCategorySitemap()
     dynamicCategoryPages.forEach(page => {
@@ -1118,5 +1115,5 @@ export const getAllSitemapPages = () => {
     })
 
     // Return flattened, de-duplicated list
-    return [...staticPages, ...blogPages, ...dynamicPages]
+    return [...staticPages, ...blogPages, ...guidePagesGenerated, ...dynamicPages]
 }
