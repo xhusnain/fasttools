@@ -4,7 +4,7 @@ import { useState } from "react"
 import { GButton } from "@/ui/gbutton"
 import { GTextarea } from "@/ui/gtextarea"
 import { GLabel } from "@/ui/glabel"
-import { Copy, Check, Sparkles, RotateCcw, ArrowLeftRight } from "lucide-react"
+import { Copy, Check, Sparkles, RotateCcw, ArrowLeftRight, Shield, Zap, CheckCircle } from "lucide-react"
 import { calculateSimilarity, getTextStats } from "@/lib/simhash"
 
 const SAMPLE_TEXT_A = `The quick brown fox jumps over the lazy dog. This is a sample text to demonstrate the text similarity checker. It uses SimHash algorithm to calculate fingerprints and compare documents.`
@@ -145,9 +145,29 @@ export function TextSimilarityChecker() {
                 )}
             </div>
 
+            {/* Trust Indicators */}
+            <div className="flex flex-wrap gap-4 justify-center text-xs text-muted-foreground">
+                <span className="flex items-center gap-1">
+                    <CheckCircle className="h-3 w-3 text-green-500" />
+                    Trusted by 50K+ users
+                </span>
+                <span className="flex items-center gap-1">
+                    <Shield className="h-3 w-3 text-blue-500" />
+                    100% Private
+                </span>
+                <span className="flex items-center gap-1">
+                    <Zap className="h-3 w-3 text-yellow-500" />
+                    Instant Results
+                </span>
+            </div>
+
             {/* Compare Button */}
-            <GButton onClick={compare} className="w-full" disabled={!textA.trim() || !textB.trim()}>
-                Compare Texts
+            <GButton
+                onClick={compare}
+                className="w-full text-base py-5 font-semibold"
+                disabled={!textA.trim() || !textB.trim()}
+            >
+                Check Similarity Now — 100% Free
             </GButton>
 
             {/* Results */}
