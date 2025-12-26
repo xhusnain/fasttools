@@ -60,8 +60,8 @@ export default function YouTubeChannelNameGuidePage() {
             {
                 "@type": "ListItem",
                 "position": 2,
-                "name": "Tutorials",
-                "item": "https://www.fasttools.store/tutorials"
+                "name": "Social Media Tools",
+                "item": "https://www.fasttools.store/social-media-tools"
             },
             {
                 "@type": "ListItem",
@@ -105,7 +105,7 @@ export default function YouTubeChannelNameGuidePage() {
                             <ol className="flex items-center gap-2">
                                 <li><Link href="/" className="hover:text-primary transition-colors">Home</Link></li>
                                 <li>/</li>
-                                <li><Link href="/tutorials" className="hover:text-primary transition-colors">Tutorials</Link></li>
+                                <li><span className="text-foreground">Tutorials</span></li>
                                 <li>/</li>
                                 <li className="text-foreground font-medium">YouTube Channel Name Guide</li>
                             </ol>

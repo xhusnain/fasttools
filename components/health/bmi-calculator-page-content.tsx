@@ -484,9 +484,9 @@ export function BMICalculatorPageContent() {
               <h5 className="font-bold text-sm mb-1 group-hover:text-primary">Calorie Calculator</h5>
               <p className="text-xs text-muted-foreground">Determine precise daily needs for your goals.</p>
             </a>
-            <a href="/calculator/ideal-weight-calculator" className="block p-4 rounded-xl border border-border bg-card hover:border-primary transition-all group">
-              <h5 className="font-bold text-sm mb-1 group-hover:text-primary">Ideal Weight</h5>
-              <p className="text-xs text-muted-foreground">Find your targets based on multiple methods.</p>
+            <a href="/calculator/pregnancy-calculator" className="block p-4 rounded-xl border border-border bg-card hover:border-primary transition-all group">
+              <h5 className="font-bold text-sm mb-1 group-hover:text-primary">Pregnancy Calculator</h5>
+              <p className="text-xs text-muted-foreground">Track your pregnancy journey with due date estimates.</p>
             </a>
           </div>
 

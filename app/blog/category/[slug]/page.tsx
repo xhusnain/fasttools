@@ -21,6 +21,9 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
     return {
         title: `${categoryName} Articles - Blog | FastTools`,
         description: `Browse all articles in the ${categoryName} category.`,
+        alternates: {
+            canonical: `https://www.fasttools.store/blog/category/${slug}`,
+        },
     }
 }
 
