@@ -4,7 +4,7 @@ import { createMetadata } from "@/lib/metadata-base"
 
 export const metadata = createMetadata({
     title: 'Archive - Blog',
-    description: 'Archive of all articles, guides, and updates.',
+    description: 'Browse our complete archive of articles, tutorials, and guides organized by category. Find expert tips on calculators, AI tools, finance, and more.',
     path: '/blog/archive'
 })
 
