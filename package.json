@@ -67,6 +67,7 @@
     "next-mdx-remote": "^5.0.0",
     "next-themes": "latest",
     "ogl": "^1.0.11",
+    "openmeteo": "^1.2.3",
     "pdf-lib": "latest",
     "pdfjs-dist": "^4.10.38",
     "qrcode": "latest",

@@ -4,7 +4,8 @@ import { useEffect, useState } from "react"
 import { GCard, GCardContent } from "@/ui/gcard"
 import { GBadge } from "@/ui/gbadge"
 import { GLoader } from "@/ui/gloader"
-import { Globe, MapPin, DollarSign, Navigation, Wifi, Copy, Check } from "lucide-react"
+import { Globe, MapPin, DollarSign, Navigation, Wifi, Copy, Check, Cloud, Thermometer, Mountain, Clock } from "lucide-react"
+import { fetchWeatherApi } from "openmeteo"
 
 interface GeolocationData {
     iso2: string
@@ -24,8 +25,16 @@ interface GeolocationData {
     ip: string
 }
 
+interface WeatherData {
+    currentTemp: number
+    elevation: number
+    utcOffsetSeconds: number
+    hourly: { time: Date; temperature: number }[]
+}
+
 export function LocationInfo() {
     const [data, setData] = useState<GeolocationData | null>(null)
+    const [weather, setWeather] = useState<WeatherData | null>(null)
     const [loading, setLoading] = useState(true)
     const [error, setError] = useState<string | null>(null)
     const [copied, setCopied] = useState(false)
@@ -45,12 +54,52 @@ export function LocationInfo() {
     useEffect(() => {
         const fetchData = async () => {
             try {
-                const response = await fetch("https://api.vatcomply.com/geolocate")
-                if (!response.ok) {
+                // 1. Fetch Location
+                const locationResponse = await fetch("https://api.vatcomply.com/geolocate")
+                if (!locationResponse.ok) {
                     throw new Error("Failed to fetch location data")
                 }
-                const result = await response.json()
-                setData(result)
+                const locationResult = await locationResponse.json()
+                setData(locationResult)
+
+                // 2. Fetch Weather using location coordinates
+                if (locationResult.latitude && locationResult.longitude) {
+                    try {
+                        const params = {
+                            latitude: locationResult.latitude,
+                            longitude: locationResult.longitude,
+                            hourly: "temperature_2m",
+                        }
+                        const url = "https://api.open-meteo.com/v1/forecast"
+                        const responses = await fetchWeatherApi(url, params)
+                        const response = responses[0]
+
+                        const utcOffsetSeconds = response.utcOffsetSeconds()
+                        const hourly = response.hourly()!
+                        const hourlyTemps = hourly.variables(0)!.valuesArray()!
+
+                        // Find the index for the current time
+                        const now = Date.now() / 1000 // current time in seconds
+                        const startTime = Number(hourly.time())
+                        const interval = hourly.interval()
+                        const timeIndex = Math.round((now - startTime) / interval)
+
+                        // Ensure index is within bounds
+                        const safeIndex = Math.max(0, Math.min(timeIndex, hourlyTemps.length - 1))
+                        const currentTemp = hourlyTemps[safeIndex]
+
+                        setWeather({
+                            currentTemp,
+                            elevation: response.elevation(),
+                            utcOffsetSeconds,
+                            hourly: [] // Not displaying hourly graph
+                        })
+                    } catch (weatherErr) {
+                        console.error("Failed to fetch weather", weatherErr)
+                        // Don't fail the whole component if weather fails, just don't show it
+                    }
+                }
+
             } catch (err) {
                 setError("Unable to retrieve location information")
                 console.error(err)
@@ -214,6 +263,33 @@ export function LocationInfo() {
                             </div>
 
                         </div>
+
+                        {/* Weather Section (Merged) */}
+                        {weather && (
+                            <div className="grid grid-cols-2 sm:grid-cols-4 divide-x divide-border/50">
+                                <div className="p-4 flex flex-col items-center justify-center text-center hover:bg-muted/20 transition-colors">
+                                    <Cloud className="h-5 w-5 text-blue-500 mb-2" />
+                                    <p className="text-xs font-medium text-muted-foreground mb-1">Weather</p>
+                                    <p className="text-lg font-bold">{weather.currentTemp.toFixed(1)}°C</p>
+                                </div>
+                                <div className="p-4 flex flex-col items-center justify-center text-center hover:bg-muted/20 transition-colors">
+                                    <Mountain className="h-5 w-5 text-emerald-500 mb-2" />
+                                    <p className="text-xs font-medium text-muted-foreground mb-1">Elevation</p>
+                                    <p className="text-lg font-bold">{weather.elevation}m</p>
+                                </div>
+                                <div className="p-4 flex flex-col items-center justify-center text-center hover:bg-muted/20 transition-colors">
+                                    <Clock className="h-5 w-5 text-orange-500 mb-2" />
+                                    <p className="text-xs font-medium text-muted-foreground mb-1">Offset</p>
+                                    <p className="text-lg font-bold">{weather.utcOffsetSeconds / 3600}h</p>
+                                </div>
+                                <div className="p-4 flex flex-col items-center justify-center text-center hover:bg-muted/20 transition-colors">
+                                    <Thermometer className="h-5 w-5 text-red-500 mb-2" />
+                                    <p className="text-xs font-medium text-muted-foreground mb-1">Status</p>
+                                    <p className="text-sm font-semibold">Live</p>
+                                </div>
+                            </div>
+                        )}
+
                     </div>
                 </GCardContent>
             </GCard>

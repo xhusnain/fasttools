@@ -1113,7 +1113,7 @@ export default function Home() {
 
         <div className="container mx-auto max-w-7xl relative z-10 py-8 sm:py-12 lg:py-16 grid lg:grid-cols-2 gap-8 lg:gap-12 items-center">
           {/* Left Column - Location Info */}
-          <div className="hidden lg:block w-full">
+          <div className="w-full order-last lg:order-first">
             <LocationInfo />
           </div>
 
