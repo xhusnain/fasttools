@@ -781,6 +781,24 @@ export const toolPages = [
         priority: 0.9,
     },
     {
+        url: "https://www.fasttools.store/seo-tools/text-similarity-checker",
+        lastModified: new Date('2025-12-26'),
+        changeFrequency: "monthly" as const,
+        priority: 0.95,
+        images: [
+            {
+                url: "https://www.fasttools.store/images/simhash-process-diagram.png",
+                title: "SimHash Algorithm Process - 4-Step Diagram",
+                caption: "Visual diagram showing the SimHash algorithm process: text input, feature extraction, hash aggregation, and 64-bit fingerprint generation for text similarity detection"
+            },
+            {
+                url: "https://www.fasttools.store/images/text-similarity-comparison.png",
+                title: "Text Similarity Comparison Visual",
+                caption: "Split-screen comparison showing original and compared documents with 87% similarity score, Hamming distance metrics, and hexadecimal fingerprints"
+            }
+        ]
+    },
+    {
         url: "https://www.fasttools.store/fun-tools/anniversary",
         lastModified: new Date('2025-11-25'),
         changeFrequency: "monthly" as const,
