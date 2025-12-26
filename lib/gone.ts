@@ -12,7 +12,6 @@
  */
 
 export const goneUrls = new Set([
-  '/guides/gpa-calculator-guide',
   '/guides/jwt-decoder-guide',
   '/guides/pace-calculator-guide',
   '/guides/mortgage-calculator-guide',

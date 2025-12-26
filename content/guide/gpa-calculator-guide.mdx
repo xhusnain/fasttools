@@ -1,0 +1,410 @@
+---
+title: "Build Your Own GPA Calculator (10 Easy Steps)"
+date: "2025-12-26"
+lastModified: "2025-12-26"
+category: "Calculators"
+description: "Learn to build a dynamic GPA calculator in 10 detailed steps! We break down the math, the loops, and the logic so you can create the ultimate student tool."
+author: "FastTools Team"
+authorUrl: "https://www.fasttools.store/about"
+featured: true
+difficulty: "Intermediate"
+toolLink: "/calculator/gpa-calculator"
+tags: ["Coding for Students", "JavaScript", "HTML", "Education", "Calculators"]
+keywords: "gpa calculator code, how to calculate gpa javascript, college grade calculator code, student web projects"
+faq:
+  - question: "Is this for High School or College?"
+    answer: "It works for both! The standard 4.0 scale is used almost everywhere."
+  - question: "Can I add more rows?"
+    answer: "Yes! In Step 7, we write a special function that lets users add as many classes as they want."
+  - question: "How does the math work?"
+    answer: "GPA is a 'Weighted Average'. We explain exactly how to multiply points by credits in Step 8."
+---
+
+Hey there, future A+ Coder! 🎓
+
+Calculating your GPA (Grade Point Average) manually is a pain. You have to convert letters to numbers, multiply by credits, add it all up... yuck.
+
+Today, we’re going to build a tool that does it for us. And we're going to make it **dynamic**, meaning users can add as many classes as they want.
+
+Let's build the ultimate student sidekick!
+
+<LearningGoals goals={[
+    "Create dynamic HTML tables (add/remove rows)",
+    "Map Letter Grades to Numbers (A = 4.0)",
+    "Master 'For Loops' to calculate totals",
+    "Understand Weighted Average math",
+    "Style a clean, academic interface"
+]} />
+
+---
+
+## Step 1: The Classroom (The Container) 🏫
+
+We need a clean space for our calculator. We'll verify it doesn't look like a mess.
+
+```html
+<div id="gpa-card">
+  <h2>🎓 GPA Wizard</h2>
+  <div id="course-list">
+    <!-- Our class rows will go here -->
+  </div>
+</div>
+```
+
+## Step 2: The Course Row Template 📝
+
+A "Course" needs 3 things:
+1.  **Name** (e.g., "Math 101")
+2.  **Grade** (e.g., "A")
+3.  **Credits** (e.g., 3.0)
+
+We won't just write this once. We will create a template that we can copy-paste with JavaScript later.
+
+```html
+<!-- This is just an example of what ONE row looks like -->
+<div class="course-row">
+    <input type="text" placeholder="Class Name" class="c-name">
+    <select class="c-grade">
+        <option value="4.0">A</option>
+        <option value="3.7">A-</option>
+        <option value="3.3">B+</option>
+        <option value="3.0">B</option>
+        <!-- ... others ... -->
+    </select>
+    <input type="number" placeholder="Credits" class="c-credits">
+</div>
+```
+
+## Step 3: The "Add Class" Button ➕
+
+Users take different numbers of classes. We need a button to add more rows.
+
+```html
+<button onclick="addRow()">+ Add Another Class</button>
+<button onclick="calculateGPA()" id="calc-btn">Calculate GPA</button>
+```
+
+## Step 4: The Result Display 🏆
+
+Where do we show the final number?
+
+```html
+<div id="result-area">
+    <p>Your GPA is:</p>
+    <h1 id="gpa-score">0.00</h1>
+</div>
+```
+
+## Step 5: JavaScript - Adding Rows 🪄
+
+This is the cool part. We write a function that "injects" HTML into the page whenever the user clicks "Add Class".
+
+```javascript
+<script>
+function addRow() {
+    var div = document.createElement('div');
+    div.className = 'course-row';
+    
+    // We add the HTML for Inputs and Selects inside this new div
+    div.innerHTML = `
+        <input type="text" placeholder="Class" class="c-name">
+        <select class="c-grade">
+            <option value="4.0">A (4.0)</option>
+            <option value="3.7">A- (3.7)</option>
+            <option value="3.3">B+ (3.3)</option>
+            <option value="3.0">B (3.0)</option>
+            <option value="2.7">B- (2.7)</option>
+            <option value="2.3">C+ (2.3)</option>
+            <option value="2.0">C (2.0)</option>
+            <option value="1.7">C- (1.7)</option>
+            <option value="1.0">D (1.0)</option>
+            <option value="0.0">F (0.0)</option>
+        </select>
+        <input type="number" placeholder="Credits" class="c-credits">
+    `;
+    
+    document.getElementById('course-list').appendChild(div);
+}
+
+// Let's add 3 rows to start with!
+window.onload = function() { addRow(); addRow(); addRow(); };
+</script>
+```
+
+## Step 6: The Grade Logic (The Map) 🗺️
+
+Wait! `A` isn't a number. How can we multiply `A` * `3 credits`?
+We already handled this in our `<select>` options in Step 5!
+Look closely: `<option value="4.0">A</option>`.
+When JavaScript asks for the value, it gets `4.0`, not "A". Smart, right?
+
+## Step 7: The Calculation Loop 🔄
+
+This is the brain of the calculator. It needs to look at **every** row, one by one.
+
+```javascript
+function calculateGPA() {
+    var rows = document.getElementsByClassName('course-row');
+    var totalPoints = 0;
+    var totalCredits = 0;
+
+    // Loop through every row
+    for(var i = 0; i < rows.length; i++) {
+        var row = rows[i];
+        
+        // Find the inputs inside THIS specific row
+        var gradeVal = row.getElementsByClassName('c-grade')[0].value;
+        var creditsVal = row.getElementsByClassName('c-credits')[0].value;
+        
+        // ... math continues in next step ...
+    }
+}
+```
+
+## Step 8: The "Weighted Average" Math 🧮
+
+GPA isn't a normal average. A 4-credit class counts more than a 1-credit class.
+Formula: `(Grade * Credits) + (Grade * Credits) ... / Total Credits`
+
+```javascript
+        // ... inside the loop ...
+        
+        var g = parseFloat(gradeVal);
+        var c = parseFloat(creditsVal);
+        
+        // Only do math if user typed a number!
+        if(c > 0) {
+            totalPoints += (g * c);
+            totalCredits += c;
+        }
+    } // End of loop
+    
+    // Final Calculation
+    var finalGPA = 0;
+    if(totalCredits > 0) {
+        finalGPA = totalPoints / totalCredits;
+    }
+    
+    document.getElementById('gpa-score').innerText = finalGPA.toFixed(2);
+}
+```
+
+## Step 9: Ivy League Styling (CSS) 🏛️
+
+Let's make it look professional using a "University Blue" theme.
+
+```css
+<style>
+  #gpa-card {
+    background: white;
+    padding: 25px;
+    border-radius: 10px;
+    max-width: 500px;
+    margin: 30px auto;
+    font-family: 'Georgia', serif; /* Classic academic font */
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    border-top: 5px solid #1e3a8a; /* Dark Blue */
+  }
+  
+  .course-row {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 15px;
+  }
+  
+  .c-name { flex: 2; }    /* Takes up more space */
+  .c-grade { flex: 1; }   /* Smaller space */
+  .c-credits { flex: 1; } /* Smaller space */
+  
+  input, select {
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+  }
+  
+  button {
+    padding: 10px 20px;
+    cursor: pointer;
+    border: none;
+    border-radius: 5px;
+    font-weight: bold;
+    margin-right: 10px;
+  }
+  
+  #calc-btn { background: #1e3a8a; color: white; }
+  
+  #result-area {
+    text-align: center;
+    background: #eff6ff;
+    padding: 15px;
+    border-radius: 8px;
+    margin-top: 20px;
+  }
+</style>
+```
+
+## Step 10: The Master Code (Copy & Paste) 📜
+
+Here is the complete tool. Copy this into a file called `gpa.html` and you're good to go!
+
+```html
+<!DOCTYPE html>
+<html>
+<head>
+    <title>GPA Calculator</title>
+    <style>
+        body { background: #f3f4f6; font-family: 'Segoe UI', sans-serif; padding: 20px; }
+        
+        .gpa-card {
+            background: white;
+            max-width: 500px;
+            margin: 0 auto;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+        }
+        
+        .header { text-align: center; color: #1e40af; margin-bottom: 30px; }
+        
+        .row { display: flex; gap: 8px; margin-bottom: 10px; }
+        .row input, .row select { 
+            padding: 12px; 
+            border: 1px solid #e5e7eb; 
+            border-radius: 6px;
+            font-size: 14px;
+        }
+        
+        /* Flex Logic */
+        .name { flex: 3; }
+        .grade { flex: 2; }
+        .cred { flex: 1.5; }
+        
+        .btn-group { display: flex; gap: 10px; margin-top: 20px; }
+        
+        button {
+            flex: 1;
+            padding: 12px;
+            border: none;
+            border-radius: 8px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: 0.2s;
+        }
+        
+        .btn-add { background: #e0e7ff; color: #3730a3; }
+        .btn-add:hover { background: #c7d2fe; }
+        
+        .btn-calc { background: #4f46e5; color: white; }
+        .btn-calc:hover { background: #4338ca; }
+        
+        .score-box {
+            margin-top: 25px;
+            text-align: center;
+            background: #312e81;
+            color: white;
+            padding: 20px;
+            border-radius: 10px;
+            display: none; /* Hidden at first */
+        }
+        
+        .big-gpa { font-size: 3em; font-weight: 800; line-height: 1; display: block; }
+    </style>
+</head>
+<body>
+
+<div class="gpa-card">
+    <h2 class="header">🎓 GPA Calculator</h2>
+    
+    <div id="rows-container">
+        <!-- Rows appear here -->
+    </div>
+    
+    <div class="btn-group">
+        <button class="btn-add" onclick="addNewRow()">+ Add Course</button>
+        <button class="btn-calc" onclick="calculate()">Calculate GPA</button>
+    </div>
+    
+    <div id="result" class="score-box">
+        <span>Your GPA Breakdown</span>
+        <span id="final-gpa" class="big-gpa">0.00</span>
+        <span id="gpa-msg" style="font-size: 0.9em; opacity: 0.8"></span>
+    </div>
+</div>
+
+<script>
+    function addNewRow() {
+        // Simple string template for a row
+        const rowHTML = `
+            <input type="text" class="name" placeholder="Course Name">
+            <select class="grade">
+                <option value="" disabled selected>Grade</option>
+                <option value="4.0">A (4.0)</option>
+                <option value="3.7">A- (3.7)</option>
+                <option value="3.3">B+ (3.3)</option>
+                <option value="3.0">B (3.0)</option>
+                <option value="2.7">B- (2.7)</option>
+                <option value="2.3">C+ (2.3)</option>
+                <option value="2.0">C (2.0)</option>
+                <option value="1.7">C- (1.7)</option>
+                <option value="1.0">D (1.0)</option>
+                <option value="0.0">F (0.0)</option>
+            </select>
+            <input type="number" class="cred" placeholder="Cr">
+        `;
+        
+        let div = document.createElement('div');
+        div.className = 'row';
+        div.innerHTML = rowHTML;
+        document.getElementById('rows-container').appendChild(div);
+    }
+
+    function calculate() {
+        let rows = document.querySelectorAll('.row');
+        let totalPts = 0;
+        let totalCr = 0;
+        
+        rows.forEach(row => {
+            let g = row.querySelector('.grade').value;
+            let c = row.querySelector('.cred').value;
+            
+            // Only count if both fields are filled
+            if(g && c) {
+                totalPts += (parseFloat(g) * parseFloat(c));
+                totalCr += parseFloat(c);
+            }
+        });
+        
+        if(totalCr === 0) { 
+            alert("Please fill in Grades and Credits!"); 
+            return; 
+        }
+        
+        let gpa = totalPts / totalCr;
+        
+        // Show result
+        document.getElementById('final-gpa').innerText = gpa.toFixed(2);
+        
+        // Custom message
+        let msg = "";
+        if(gpa >= 3.5) msg = "Excellent work! Dean's List material! 🌟";
+        else if(gpa >= 3.0) msg = "Great job! Keep it up! 👍";
+        else if(gpa >= 2.0) msg = "Good solid effort. 📚";
+        else msg = "Keep studying! You can do it! 💪";
+        
+        document.getElementById('gpa-msg').innerText = msg;
+        document.getElementById('result').style.display = 'block';
+    }
+
+    // Initialize with 4 rows
+    addNewRow(); addNewRow(); addNewRow(); addNewRow();
+</script>
+
+</body>
+</html>
+```
+
+## Conclusion
+
+Calculating GPA is now a breeze! You've built a dynamic tool that uses loops, DOM manipulation, and math logic. That's real programming.
+
+<TryItButton href="/calculator/gpa-calculator" label="Try our Advanced GPA Planner »" />
