@@ -12,6 +12,12 @@ const tools = [
     href: "/seo-tools/meta-tags",
   },
   {
+    title: "Text Similarity Checker",
+    description: "Compare two texts using SimHash fingerprinting to detect near-duplicates and plagiarism. Perfect for duplicate content detection and SEO audits.",
+    icon: Hash,
+    href: "/seo-tools/text-similarity-checker",
+  },
+  {
     title: "Lorem Ipsum Generator",
     description: "Create placeholder text for design mockups, prototypes, and content templates. Ideal for designers and developers.",
     icon: FileText,
@@ -78,6 +84,8 @@ const toolConfig = createToolConfig({
       "E-commerce Optimization: Optimize product descriptions and meta tags for better store visibility",
       "Agency Reporting: Use reliable data to support SEO recommendations for clients"
     ],
+
+    aboutTool: "Our SEO tools are designed to help you optimize every aspect of your digital presence. From meta tag generation to keyword analysis, each tool follows industry best practices to improve your search engine rankings and social media engagement.",
 
     faqs: [
       {
