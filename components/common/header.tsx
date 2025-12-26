@@ -65,12 +65,9 @@ export function Header() {
                 </Link>
                 <Link
                   href="/blog"
-                  target="_blank"
-                  rel="noopener noreferrer"
                   className="text-sm font-medium text-muted-foreground hover:text-primary transition-colors flex items-center gap-1 h-full"
                 >
                   Blog
-                  <ArrowUpRight className="h-3 w-3" />
                 </Link>
                 <Link href="/products" className="text-sm font-medium text-muted-foreground hover:text-primary transition-colors flex items-center h-full">
                   Products
@@ -188,13 +185,10 @@ export function Header() {
             </Link>
             <Link
               href="/blog"
-              target="_blank"
-              rel="noopener noreferrer"
               onClick={() => setMobileMenuOpen(false)}
               className="flex items-center gap-2 py-3 text-base font-semibold text-foreground/80 hover:text-primary transition-colors"
             >
               Blog
-              <ArrowUpRight className="h-4 w-4" />
             </Link>
             <Link
               href="/about"
