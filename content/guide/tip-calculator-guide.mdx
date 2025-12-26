@@ -1,0 +1,158 @@
+---
+title: "Build a Tip Calculator (Mastering Percents & Splits)"
+description: "Learn to build a mistake-proof Tip Calculator in React. Master percentage math, split-the-bill logic, and how to handle floating-point currency errors."
+category: "Calculators"
+author: "FastTools Team"
+date: "2024-11-01"
+order: 12
+tags: ["React", "Math", "Finance", "Currency", "Input Handling"]
+---
+
+# Build a Tip Calculator: The "Fair Share" Algorithm 💸
+
+Tipping math is simple in theory, but tricky in code.
+`0.1 + 0.2` in JavaScript equals `0.30000000000000004`.
+If you print that on a receipt, your user will think your app is broken.
+
+In this guide, we will build a **Tip & Split Calculator** that handles the math correctly and prevents awkward dinner arguments.
+
+---
+
+### Step 1: The Core Math (Percents) 🧮
+A tip is just a fraction of the bill.
+`Tip = (Bill * Percent) / 100`
+
+```javascript
+const bill = 50.00;
+const percent = 20;
+
+const tipAmount = (bill * percent) / 100; // 10.00
+const total = bill + tipAmount;           // 60.00
+```
+
+### Step 2: The "Split" Logic (Division) ➗
+Splitting the bill is just `Total / People`.
+But what if the number of people is `0`? (Avoid `NaN` or `Infinity`).
+And what if the split results in `$10.333333`?
+
+**The Golden Rule of Currency:**
+Always round to 2 decimal places for display, but keep specific numbers for the backend if possible. In UI, `toFixed(2)` is your friend.
+
+### Step 3: Preventing "Negative" Bill 🛑
+Users can be chaotic. They might type `-50` dollars.
+We must sanitize inputs to ensure `Bill >= 0` and `People >= 1`.
+
+```javascript
+const handleBillChange = (val) => {
+    if (val < 0) return; // Block negative numbers
+    setBill(val);
+}
+```
+
+### Step 4: The React Component (`TipCalculator.jsx`) 💻
+Here is the robust implementation with real-time updates.
+
+```jsx
+'use client';
+import { useState, useMemo } from 'react';
+
+export default function TipCalculator() {
+  const [bill, setBill] = useState('');
+  const [tipPercent, setTipPercent] = useState(15);
+  const [people, setPeople] = useState(1);
+
+  // useMemo ensures we only recalculate when inputs change
+  const results = useMemo(() => {
+    const billNum = parseFloat(bill) || 0;
+    const peopleNum = parseInt(people) || 1;
+    
+    const tipAmount = (billNum * tipPercent) / 100;
+    const totalAmount = billNum + tipAmount;
+    const perPerson = totalAmount / peopleNum;
+
+    return {
+      tip: tipAmount.toFixed(2),
+      total: totalAmount.toFixed(2),
+      perPerson: perPerson.toFixed(2),
+    };
+  }, [bill, tipPercent, people]);
+
+  return (
+    <div className="max-w-md mx-auto p-6 bg-white border rounded-xl shadow-lg space-y-6">
+      <h2 className="text-2xl font-bold text-slate-800 text-center">Tip Calculator</h2>
+
+      {/* Bill Input */}
+      <div className="space-y-2">
+        <label className="text-sm font-semibold text-slate-600">Bill Amount ($)</label>
+        <input 
+          type="number" 
+          value={bill}
+          onChange={(e) => setBill(e.target.value)}
+          placeholder="0.00"
+          className="w-full p-3 text-lg border rounded-lg focus:ring-2 focus:ring-green-500 outline-none"
+        />
+      </div>
+
+      {/* Tip Selector */}
+      <div className="space-y-2">
+        <label className="text-sm font-semibold text-slate-600">Tip Percentage ({tipPercent}%)</label>
+        <div className="flex gap-2">
+            {[10, 15, 18, 20, 25].map(pct => (
+                <button 
+                  key={pct}
+                  onClick={() => setTipPercent(pct)}
+                  className={`flex-1 py-2 rounded-md font-medium transition ${
+                      tipPercent === pct 
+                      ? 'bg-green-600 text-white shadow-md' 
+                      : 'bg-slate-100 text-slate-600 hover:bg-slate-200'
+                  }`}
+                >
+                    {pct}%
+                </button>
+            ))}
+        </div>
+        <input 
+            type="range" 
+            min="0" max="100" 
+            value={tipPercent} 
+            onChange={(e) => setTipPercent(Number(e.target.value))}
+            className="w-full h-2 bg-slate-200 rounded-lg appearance-none cursor-pointer"
+        />
+      </div>
+
+      {/* People Selector */}
+      <div className="space-y-2">
+        <label className="text-sm font-semibold text-slate-600">Number of People</label>
+        <div className="flex items-center gap-4">
+            <button 
+                onClick={() => setPeople(Math.max(1, people - 1))}
+                className="w-10 h-10 bg-slate-100 rounded-full font-bold text-lg hover:bg-slate-200"
+            >-</button>
+            <span className="font-mono text-xl w-8 text-center">{people}</span>
+            <button 
+                onClick={() => setPeople(people + 1)}
+                className="w-10 h-10 bg-slate-100 rounded-full font-bold text-lg hover:bg-slate-200"
+            >+</button>
+        </div>
+      </div>
+
+      {/* Results Box */}
+      <div className="bg-slate-900 text-white p-6 rounded-xl space-y-4">
+        <div className="flex justify-between items-center">
+            <span className="text-slate-400">Tip Amount</span>
+            <span className="text-xl font-mono text-green-400">${results.tip}</span>
+        </div>
+        <div className="flex justify-between items-center">
+            <span className="text-slate-400">Total Bill</span>
+            <span className="text-xl font-mono">${results.total}</span>
+        </div>
+        <div className="h-px bg-slate-700 my-2"></div>
+        <div className="flex justify-between items-end">
+            <span className="text-slate-400">Per Person</span>
+            <span className="text-4xl font-bold text-green-400">${results.perPerson}</span>
+        </div>
+      </div>
+    </div>
+  );
+}
+```

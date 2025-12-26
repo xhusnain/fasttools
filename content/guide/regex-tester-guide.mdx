@@ -1,0 +1,182 @@
+---
+title: "Build a Regex Tester (Visual Highlighter)"
+description: "Learn how to build a powerful Regex Tester in React. Master the exec() loop for detailed matches, implement visual text highlighting, and handle invalid patterns safely."
+category: "Developer Tools"
+author: "FastTools Team"
+date: "2024-11-03"
+order: 14
+tags: ["Regex", "React", "Highlighter", "Text Processing", "Developer Tools"]
+---
+
+# Build a Regex Tester: The "Pattern Hunter" 🎯
+
+Regular Expressions are powerful but invisible.
+To build a tester, we must make the invisible visible.
+We need to highlight *exactly* what matched, including capture groups.
+
+Standard `string.match(/regex/g)` only gives us an array of strings. It loses the **Index** (position).
+To build a highlighter, we need the `exec()` loop.
+
+---
+
+### Step 1: The `exec()` Loop Strategy 🔄
+The `RegExp.exec()` method returns one match at a time, but *with details* (index, groups).
+We loop until it returns `null`.
+
+```javascript
+const regex = /\w+/g;
+const str = "Hello World";
+let match;
+
+while ((match = regex.exec(str)) !== null) {
+  console.log(`Found ${match[0]} at index ${match.index}`);
+  // Found Hello at index 0
+  // Found World at index 6
+}
+```
+
+### Step 2: The Highlighting Logic (Slicing) 🔪
+To highlight text, we cannot just use `dangerouslySetInnerHTML`. That's unsafe.
+Instead, we slice the string into chunks: `[Non-Match, MATCH, Non-Match]`.
+
+**Algorithm:**
+1.  Track `lastIndex` (end of previous match).
+2.  When a match is found:
+    *   Push text from `lastIndex` to `match.index` as **Normal**.
+    *   Push `match[0]` as **Highlighted**.
+    *   Update `lastIndex`.
+3.  After loop, push remaining text.
+
+### Step 3: Safety First (Invalid Regex) 🛡️
+If a user types `[a-z`, the app will crash with `SyntaxError`.
+Always wrap regex construction in a `try/catch` block.
+
+```javascript
+try {
+  const reg = new RegExp(pattern, flags);
+} catch (e) {
+  setError("Invalid Pattern: " + e.message);
+}
+```
+
+### Step 4: The React Component (`RegexTester.jsx`) 💻
+Here is the robust highlighter implementation.
+
+```jsx
+'use client';
+import { useState, useMemo } from 'react';
+
+export default function RegexTester() {
+  const [pattern, setPattern] = useState('\\d+');
+  const [flags, setFlags] = useState('g');
+  const [text, setText] = useState('Order 123 and Order 456');
+  const [error, setError] = useState(null);
+
+  // The Core Logic
+  const chunks = useMemo(() => {
+    setError(null);
+    if (!pattern || !text) return [{ text, isMatch: false }];
+
+    try {
+      const regex = new RegExp(pattern, flags);
+      const parts = [];
+      let lastIndex = 0;
+      let match;
+
+      // Reset lastIndex for global searches to ensure loop starts from 0
+      regex.lastIndex = 0;
+
+      // Note: non-global regexes might cause infinite loops if not handled carefully
+      // We force 'g' or manual break for safety in production apps
+      // For this demo, we assume 'g' is used or we use matchAll handling logic
+      
+      const matches = [...text.matchAll(regex)];
+      
+      matches.forEach(m => {
+        const start = m.index;
+        const end = start + m[0].length;
+
+        // 1. Text BEFORE match
+        if (start > lastIndex) {
+          parts.push({ text: text.slice(lastIndex, start), isMatch: false });
+        }
+
+        // 2. The MATCH itself
+        parts.push({ text: m[0], isMatch: true });
+
+        lastIndex = end;
+      });
+
+      // 3. Text AFTER last match
+      if (lastIndex < text.length) {
+        parts.push({ text: text.slice(lastIndex), isMatch: false });
+      }
+
+      return parts.length > 0 ? parts : [{ text, isMatch: false }];
+
+    } catch (e) {
+      setError(e.message);
+      return [{ text, isMatch: false }];
+    }
+  }, [pattern, flags, text]);
+
+  return (
+    <div className="max-w-3xl mx-auto p-6 bg-slate-50 rounded-xl space-y-6">
+      <h2 className="text-xl font-bold text-slate-800">Regex Highlighter</h2>
+
+      {/* Inputs */}
+      <div className="grid md:grid-cols-4 gap-4">
+        <div className="md:col-span-3 space-y-2">
+            <label className="text-sm font-semibold text-slate-600">Pattern</label>
+            <input 
+              className="w-full p-3 border rounded-lg font-mono text-sm border-purple-300 focus:border-purple-600 outline-none"
+              value={pattern}
+              onChange={e => setPattern(e.target.value)}
+            />
+        </div>
+        <div className="space-y-2">
+            <label className="text-sm font-semibold text-slate-600">Flags</label>
+            <input 
+              className="w-full p-3 border rounded-lg font-mono text-sm"
+              value={flags}
+              onChange={e => setFlags(e.target.value)}
+              placeholder="g, i, m..."
+            />
+        </div>
+      </div>
+
+      {error && (
+        <div className="p-3 bg-red-100 text-red-700 text-sm rounded-lg border border-red-200">
+            ⚠️ {error}
+        </div>
+      )}
+
+      {/* Editor Area */}
+      <div className="grid md:grid-cols-2 gap-4">
+        <div className="space-y-2">
+            <label className="text-sm font-semibold text-slate-600">Test String</label>
+            <textarea 
+                className="w-full h-48 p-4 border rounded-lg font-mono text-sm"
+                value={text}
+                onChange={e => setText(e.target.value)}
+            />
+        </div>
+
+        <div className="space-y-2">
+            <label className="text-sm font-semibold text-slate-600">Live Preview</label>
+            <div className="w-full h-48 p-4 bg-white border rounded-lg font-mono text-sm overflow-auto whitespace-pre-wrap">
+                {chunks.map((chunk, i) => (
+                    <span 
+                        key={i} 
+                        className={chunk.isMatch ? "bg-yellow-300 text-black font-bold rounded px-0.5" : "text-slate-600"}
+                    >
+                        {chunk.text}
+                    </span>
+                ))}
+            </div>
+        </div>
+      </div>
+    </div>
+  );
+}
+```

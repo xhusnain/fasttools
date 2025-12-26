@@ -12,11 +12,7 @@
  */
 
 export const goneUrls = new Set([
-  '/guides/tip-calculator-guide',
-  '/guides/json-to-csv-converter-guide',
-  '/guides/regex-tester-guide',
-
-  '/guides/temperature-converter-guide',
+    '/guides/temperature-converter-guide',
   '/guides/lorem-ipsum-guide',
   '/guides/qr-code-generator-guide',
   '/guides/date-difference-calculator-guide',
