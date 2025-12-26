@@ -1,0 +1,191 @@
+---
+title: "Build an AI Song Lyrics Generator (Gemini & Cloudflare)"
+description: "Learn how to build a lyrics generator using Next.js. Compare two powerful AI backends: Google Gemini vs. Cloudflare Workers AI."
+category: "AI Tools"
+author: "FastTools Team"
+date: "2024-10-29"
+order: 9
+tags: ["AI", "Gemini", "Cloudflare", "Next.js", "Prompt Engineering"]
+---
+
+# Build an AI Song Lyrics Generator: The "Ghostwriter" 👻
+
+Building a lyrics generator isn't about code—it's about **Prompt Engineering**.
+You need to tell the AI *who* to be. "Act as a Grammy-winning songwriter."
+You need to tell it *how* to write. "Use internal rhymes and metaphors."
+
+In this guide, we will build a modern Lyrics Generator using **Next.js** and two different AI backends: **Google Gemini** and **Cloudflare Workers AI**.
+
+---
+
+### Step 1: The Prompt Strategy (The "Ghostwriter" Persona) 🎭
+If you just ask "Write a song about love", you get bad poetry.
+To get hits, you need **Structure**:
+
+```javascript
+const systemPrompt = `
+You are a professional songwriter.
+- Structure: Verse-Chorus-Verse-Chorus-Bridge-Chorus.
+- Style: ${genre} (e.g., Pop, Rap, Country).
+- Mood: ${mood}.
+- Do NOT use cheesy rhymes (cat/hat).
+- Use metaphors relevant to the theme: "${theme}".
+`;
+```
+
+### Step 2: Choosing Your Backend Implementation 🛠️
+You have two great options for the AI brain.
+
+#### Option A: Google Gemini API (Easy & Powerful) 🔵
+Gemini is great for creative writing because of its large context window and creative nuance.
+
+**Install:**
+`npm install @google/generative-ai`
+
+**Code (`app/api/gemini-lyrics/route.ts`):**
+```typescript
+import { GoogleGenerativeAI } from "@google/generative-ai";
+
+const genAI = new GoogleGenerativeAI(process.env.GEMINI_API_KEY!);
+
+export async function POST(req: Request) {
+  const { theme, genre, mood } = await req.json();
+
+  const model = genAI.getGenerativeModel({ model: "gemini-pro" });
+  
+  const prompt = `Write a song about "${theme}". 
+                  Genre: ${genre}. Mood: ${mood}.
+                  Include [Verse], [Chorus], and [Bridge] labels.`;
+
+  const result = await model.generateContent(prompt);
+  const response = await result.response;
+  
+  return Response.json({ lyrics: response.text() });
+}
+```
+
+#### Option B: Cloudflare Workers AI (Fast & Cheap) 🟠
+Cloudflare Workers AI lets you run models like **Llama-3** directly on the edge. It's incredibly fast.
+
+**Install:**
+`npm install @cloudflare/ai`
+
+**Code (`app/api/cf-lyrics/route.ts`):**
+```typescript
+import { Ai } from '@cloudflare/ai';
+
+export async function POST(req: Request) {
+  const { theme, genre } = await req.json();
+  
+  // Initialize AI with Cloudflare binding
+  const ai = new Ai(process.env.AI);
+
+  const response = await ai.run('@cf/meta/llama-3-8b-instruct', {
+    messages: [
+      { role: 'system', content: 'You are a songwriter.' },
+      { role: 'user', content: `Write a ${genre} song about: ${theme}` }
+    ]
+  });
+
+  return Response.json({ lyrics: response.response });
+}
+```
+
+### Step 3: Temperature Control (Creativity Level) 🌡️
+AI models have a `temperature` setting (0.0 to 1.0).
+*   **0.0 (Cold)**: Logical, deterministic, boring. Good for math.
+*   **1.0 (Hot)**: Creative, random, wild. Good for art.
+
+For lyrics, you want high creativity.
+**Gemini Example:**
+```typescript
+const model = genAI.getGenerativeModel({ 
+    model: "gemini-pro",
+    generationConfig: {
+        temperature: 0.9, // High creativity
+        topK: 40,
+    }
+});
+```
+
+### Step 4: The Frontend (React UI) 🎨
+Here is a complete Next.js component that calls your API.
+
+```jsx
+'use client';
+import { useState } from 'react';
+import { Music, Copy } from 'lucide-react';
+
+export default function LyricsGenerator() {
+  const [theme, setTheme] = useState('');
+  const [lyrics, setLyrics] = useState('');
+  const [isLoading, setLoading] = useState(false);
+
+  const generate = async () => {
+    setLoading(true);
+    const res = await fetch('/api/gemini-lyrics', { // Switch URL for Cloudflare
+      method: 'POST',
+      body: JSON.stringify({ theme, genre: 'Pop', mood: 'Happy' })
+    });
+    const data = await res.json();
+    setLyrics(data.lyrics);
+    setLoading(false);
+  };
+
+  return (
+    <div className="max-w-2xl mx-auto p-4 space-y-6">
+      <div className="text-center space-y-2">
+        <h1 className="text-3xl font-bold flex justify-center items-center gap-2">
+          <Music className="text-purple-600" /> AI Songwriter
+        </h1>
+        <p className="text-gray-500">Create Billboard hits in seconds.</p>
+      </div>
+
+      {/* Input Section */}
+      <div className="flex gap-2">
+        <input 
+          value={theme}
+          onChange={(e) => setTheme(e.target.value)}
+          placeholder="What is your song about? (e.g. Summer Rain)"
+          className="flex-1 p-3 border rounded-lg shadow-sm focus:ring-2 focus:ring-purple-500 outline-none"
+        />
+        <button 
+          onClick={generate}
+          disabled={isLoading}
+          className="bg-purple-600 text-white px-6 rounded-lg font-bold hover:bg-purple-700 disabled:opacity-50"
+        >
+          {isLoading ? 'Writing...' : 'Generate'}
+        </button>
+      </div>
+
+      {/* Lyrics Output */}
+      {lyrics && (
+        <div className="relative bg-gray-50 p-6 rounded-xl border whitespace-pre-wrap font-mono text-sm leading-relaxed">
+          <button 
+            onClick={() => navigator.clipboard.writeText(lyrics)}
+            className="absolute top-4 right-4 text-gray-400 hover:text-gray-700"
+          >
+            <Copy size={16} />
+          </button>
+          {lyrics}
+        </div>
+      )}
+    </div>
+  );
+}
+```
+
+### Step 5: Streaming Responses (Advanced) 🌊
+Waiting 5 seconds for a full song is boring. The best UX is **Streaming**.
+This makes the lyrics appear word-by-word (typewriter effect), which is mesmerizing.
+
+**Gemini Streaming:**
+```typescript
+const result = await model.generateContentStream(prompt);
+for await (const chunk of result.stream) {
+    const chunkText = chunk.text();
+    // Send chunk to client
+}
+```
+
+*(Note: Streaming requires a slightly more complex `streams` implementation on the frontend, usually using `reacet-markdown` or a custom hook.)*
