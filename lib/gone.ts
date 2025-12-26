@@ -13,8 +13,6 @@
 
 export const goneUrls = new Set([
   // Guide pages that were removed
-  '/guides/instagram-dp-viewer-guide',
-  '/guides/ai-qr-art-generator-guide',
   '/guides/sales-tax-calculator-guide',
   '/guides/markdown-previewer-guide',
   '/guides/emi-calculator-guide',
