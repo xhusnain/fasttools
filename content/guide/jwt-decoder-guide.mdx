@@ -1,0 +1,287 @@
+---
+title: "Build Your Own JWT Decoder (10 Easy Steps)"
+date: "2025-12-26"
+lastModified: "2025-12-26"
+category: "Developer Tools"
+description: "Learn to build a secure, client-side JWT Decoder. We explain Base64 encoding, JSON parsing, and how to visualize token data in 10 simple steps."
+author: "FastTools Team"
+authorUrl: "https://www.fasttools.store/about"
+featured: true
+difficulty: "Intermediate"
+toolLink: "/dev-tools/jwt-decoder"
+tags: ["Coding for Developers", "JavaScript", "Security", "Web Tools", "JSON"]
+keywords: "jwt decoder code, build jwt viewer, javascript base64 decode, developer tool tutorial"
+faq:
+  - question: "Is this secure?"
+    answer: "Yes! Because we use client-side JavaScript, the token never leaves your browser. It's safer than using server-side tools."
+  - question: "Do I need a library?"
+    answer: "No. Modern browsers have a built-in function called `atob()` that decodes Base64 strings perfectly for this."
+  - question: "What is the third part of the token?"
+    answer: "That is the Signature. It ensures the token hasn't been tampered with. We can see it, but we can't verify it without the Secret Key."
+---
+
+Hello Developers! 👩‍💻👨‍💻
+
+Ever wonder what those long strings of random characters (`eyJhbG...`) actually mean? That is a **JSON Web Token (JWT)**.
+
+It looks like encrypted gibberish, but it's actually just a **Secret Message** written in a different alphabet called **Base64**. It's not encrypted; it's just encoded. Think of it like a transparent backpack—the lock (Signature) protects it, but anyone can look inside if they know how.
+
+Today, we will build a **Universal Translator** (Decoder) for these tokens.
+
+<LearningGoals goals={[
+    "Understand the 3 parts of a JWT",
+    "Master JavaScript string splitting",
+    "Use 'atob()' to decode Base64",
+    "Parse JSON strings into Objects",
+    "Handle errors gracefully (Invalid Tokens)"
+]} />
+
+---
+
+## Step 1: The Workbench (HTML Layout) 🛠️
+
+We need a screen split in two:
+*   **Left:** Input (Paste the token here).
+*   **Right:** Output (See the magic inside).
+
+```html
+<div class="jwt-container">
+  <div class="input-section">
+      <h3>Paste Token Here</h3>
+      <textarea id="jwt-input" placeholder="eyJ..."></textarea>
+  </div>
+  
+  <div class="output-section">
+      <h3>Decoded Data</h3>
+      <div id="results"></div>
+  </div>
+</div>
+```
+
+## Step 2: The "Decode" Button 🔓
+
+We need a trigger. When clicked, it runs our `decodeToken()` function.
+
+```html
+<button onclick="decodeToken()" class="decode-btn">🔓 Decode Token</button>
+```
+
+## Step 3: Understanding the Structure 🧱
+
+A JWT has 3 parts separated by dots (`.`):
+1.  **Header** (Red): "What am I?" (Algorithm & Type).
+2.  **Payload** (Purple): "The Data" (User ID, Name, Expiration).
+3.  **Signature** (Blue): "The Lock" (Cryptographic proof).
+
+We need to prepare our HTML to show these 3 parts in different colors.
+
+```html
+<!-- Inside the results div -->
+<div id="header-box" class="box red">Header will go here...</div>
+<div id="payload-box" class="box purple">Payload will go here...</div>
+<div id="signature-box" class="box blue">Signature will go here...</div>
+```
+
+## Step 4: The JavaScript Setup 🧠
+
+Let's grab the token from the text area.
+
+```javascript
+<script>
+function decodeToken() {
+    var token = document.getElementById('jwt-input').value;
+    
+    // Remove whitespace
+    token = token.trim();
+    
+    if(!token) { alert("Please paste a token!"); return; }
+}
+</script>
+```
+
+## Step 5: Split the String 🪓
+
+Since parts are separated by dots, we use `.split('.')`.
+
+```javascript
+    // ... inside function
+    var parts = token.split('.');
+    
+    if(parts.length !== 3) {
+        alert("Invalid Token! A JWT must have 3 parts.");
+        return;
+    }
+```
+
+## Step 6: The Translator (`atob`) 🗣️
+
+Browsers have a function called `atob()` (ASCII to Binary). It turns Base64 strings back into normal text.
+*Note: We only decode parts 0 (Header) and 1 (Payload). Part 2 (Signature) is binary data that looks messy if decoded.*
+
+```javascript
+    var headerRaw = atob(parts[0]);
+    var payloadRaw = atob(parts[1]);
+    var signature = parts[2];
+```
+
+## Step 7: Make it Pretty (JSON Parsing) 💅
+
+`atob` gives us a string like `{"id":1}`. To make it readable, we parse it into an Object, then turn it back into a string with indentation (pretty print).
+
+```javascript
+    // Parse JSON
+    var headerObj = JSON.parse(headerRaw);
+    var payloadObj = JSON.parse(payloadRaw);
+    
+    // Pretty Print (4 spaces indentation)
+    var headerPretty = JSON.stringify(headerObj, null, 4);
+    var payloadPretty = JSON.stringify(payloadObj, null, 4);
+```
+
+## Step 8: Update the UI 📺
+
+Now we put the pretty text into our colored boxes.
+
+```javascript
+    document.getElementById('header-box').innerText = headerPretty;
+    document.getElementById('payload-box').innerText = payloadPretty;
+    document.getElementById('signature-box').innerText = signature;
+```
+
+## Step 9: Developer Styles (CSS) 🎨
+
+Developers love dark mode and monospaced fonts. Let's give it that "Hacker Console" vibe.
+
+```css
+<style>
+  .jwt-container { display: flex; gap: 20px; font-family: 'Courier New', monospace; }
+  textarea { width: 100%; height: 150px; background: #222; color: #0f0; border: none; padding: 10px; }
+  
+  .box { 
+      white-space: pre; /* Keeps code indentation */
+      padding: 15px; 
+      margin-bottom: 10px; 
+      border-radius: 5px;
+      background: #eee;
+  }
+  
+  .red { border-left: 5px solid #e74c3c; color: #c0392b; }
+  .purple { border-left: 5px solid #9b59b6; color: #8e44ad; }
+  .blue { border-left: 5px solid #3498db; color: #2980b9; word-break: break-all; }
+</style>
+```
+
+## Step 10: The Full Source Code 💻
+
+Here is the complete tool. It handles the "URL Safe" Base64 format (replacing `-` with `+` and `_` with `/`) which standard `atob` sometimes struggles with.
+
+```html
+<!DOCTYPE html>
+<html>
+<head>
+    <title>JWT Decoder</title>
+    <style>
+        body { background: #1a1a1a; color: white; font-family: 'Segoe UI', sans-serif; padding: 20px; }
+        h2 { color: #f1c40f; text-align: center; }
+        
+        .grid { display: flex; gap: 20px; flex-wrap: wrap; }
+        .col { flex: 1; min-width: 300px; }
+        
+        textarea {
+            width: 100%; height: 200px;
+            background: #2d2d2d; color: #f1c40f;
+            border: 2px solid #444; border-radius: 8px;
+            padding: 15px; box-sizing: border-box;
+            font-family: monospace; font-size: 14px;
+        }
+        
+        button {
+            width: 100%; padding: 15px; margin: 10px 0;
+            background: #27ae60; color: white;
+            border: none; border-radius: 8px;
+            font-weight: bold; cursor: pointer; font-size: 16px;
+        }
+        button:hover { background: #2ecc71; }
+        
+        .code-block {
+            background: #2d2d2d;
+            padding: 15px; margin-bottom: 15px;
+            border-radius: 8px;
+            font-family: monospace;
+            white-space: pre-wrap;
+            position: relative;
+        }
+        
+        .label { font-size: 12px; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 5px; display: block; opacity: 0.7; }
+        
+        .h-head { border-left: 4px solid #e74c3c; color: #ff7675; }
+        .h-pay { border-left: 4px solid #a29bfe; color: #a29bfe; }
+        .h-sig { border-left: 4px solid #74b9ff; color: #74b9ff; }
+    </style>
+</head>
+<body>
+
+<div style="max-width: 900px; margin: 0 auto;">
+    <h2>🔐 JWT Detective</h2>
+    
+    <div class="grid">
+        <div class="col">
+            <span class="label">Paste Token (Encoded)</span>
+            <textarea id="input" placeholder="eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9..."></textarea>
+            <button onclick="decode()">Decode Token ⬇️</button>
+        </div>
+        
+        <div class="col">
+            <div id="output">
+                <span class="label">1. Header (Algorithm)</span>
+                <div class="code-block h-head" id="out-header">Waiting for token...</div>
+                
+                <span class="label">2. Payload (Data)</span>
+                <div class="code-block h-pay" id="out-payload">Waiting for token...</div>
+                
+                <span class="label">3. Signature (Proof)</span>
+                <div class="code-block h-sig" id="out-sig">Waiting for token...</div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    function decode() {
+        let token = document.getElementById('input').value.trim();
+        if(!token) return alert("Please paste a token!");
+        
+        let parts = token.split('.');
+        if(parts.length !== 3) return alert("Invalid JWT format (Must have 3 parts)");
+        
+        try {
+            // Helper to fix Base64 URL format
+            const clean = (str) => str.replace(/-/g, '+').replace(/_/g, '/');
+            
+            // Header
+            let header = JSON.parse(atob(clean(parts[0])));
+            document.getElementById('out-header').innerText = JSON.stringify(header, null, 4);
+            
+            // Payload
+            let payload = JSON.parse(atob(clean(parts[1])));
+            document.getElementById('out-payload').innerText = JSON.stringify(payload, null, 4);
+            
+            // Signature (Just showing raw string)
+            document.getElementById('out-sig').innerText = parts[2];
+            
+        } catch(e) {
+            alert("Error decoding! Is the token valid Base64?");
+            console.error(e);
+        }
+    }
+</script>
+
+</body>
+</html>
+```
+
+## Conclusion
+
+You've built a crucial security tool! Deconding JWTs is a daily task for backend developers. Now you know exactly how `atob()` works and how to safely inspect tokens without sending them to a server.
+
+<TryItButton href="/dev-tools/jwt-decoder" label="Open Pro JWT Decoder »" />

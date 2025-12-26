@@ -12,11 +12,6 @@
  */
 
 export const goneUrls = new Set([
-  '/guides/jwt-decoder-guide',
-  '/guides/pace-calculator-guide',
-  '/guides/mortgage-calculator-guide',
-  '/guides/ai-pet-name-generator-guide',
-  '/guides/background-blur-guide',
   '/guides/amortization-calculator-guide',
   '/guides/salary-calculator-guide',
   '/guides/ai-song-lyrics-generator-guide',
