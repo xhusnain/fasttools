@@ -100,4 +100,5 @@ export const MDXComponents = {
     GTable,
     GChecklist,
     DynamicYear: GDynamicYear,
+    Link,
 };

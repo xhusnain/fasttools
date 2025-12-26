@@ -204,13 +204,13 @@ export function ImageBackgroundRemover() {
                         PNG, JPG, JPEG, WebP (MAX. 10MB)
                       </p>
                       <div className="flex gap-2 flex-wrap justify-center">
-                        <span className="px-3 py-1 sm:px-4 sm:py-1.5 bg-secondary text-white rounded-full text-[11px] sm:text-xs font-medium shadow-sm">
+                        <span className="px-3 py-1 sm:px-4 sm:py-1.5 bg-secondary text-secondary-foreground rounded-full text-[11px] sm:text-xs font-medium shadow-sm">
                           Product Photos
                         </span>
-                        <span className="px-3 py-1 sm:px-4 sm:py-1.5 bg-secondary text-white rounded-full text-[11px] sm:text-xs font-medium shadow-sm">
+                        <span className="px-3 py-1 sm:px-4 sm:py-1.5 bg-secondary text-secondary-foreground rounded-full text-[11px] sm:text-xs font-medium shadow-sm">
                           Portraits
                         </span>
-                        <span className="px-3 py-1 sm:px-4 sm:py-1.5 bg-secondary text-white rounded-full text-[11px] sm:text-xs font-medium shadow-sm">
+                        <span className="px-3 py-1 sm:px-4 sm:py-1.5 bg-secondary text-secondary-foreground rounded-full text-[11px] sm:text-xs font-medium shadow-sm">
                           Logos
                         </span>
                       </div>
