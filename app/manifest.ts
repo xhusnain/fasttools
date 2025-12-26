@@ -21,13 +21,13 @@ export default function manifest(): MetadataRoute.Manifest {
         ],
         icons: [
             {
-                src: "/web-app-manifest-192x192.png",
+                src: "/icon-192.png",
                 sizes: "192x192",
                 type: "image/png",
                 purpose: "maskable"
             },
             {
-                src: "/web-app-manifest-512x512.png",
+                src: "/icon-512.png",
                 sizes: "512x512",
                 type: "image/png",
                 purpose: "maskable"
@@ -44,17 +44,10 @@ export default function manifest(): MetadataRoute.Manifest {
                 type: "image/png",
                 purpose: "any"
             },
-            // Added as per "all logo icons"
             {
                 src: "/logo.png",
-                sizes: "512x512",
+                sizes: "500x500",
                 type: "image/png",
-                purpose: "any"
-            },
-            {
-                src: "/favicon.svg",
-                sizes: "any",
-                type: "image/svg+xml",
                 purpose: "any"
             }
         ],
@@ -74,7 +67,7 @@ export default function manifest(): MetadataRoute.Manifest {
                 url: "/ai-tools",
                 icons: [
                     {
-                        src: "/web-app-manifest-192x192.png",
+                        src: "/icon-192.png",
                         sizes: "192x192"
                     }
                 ]

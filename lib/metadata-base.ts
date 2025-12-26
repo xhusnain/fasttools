@@ -5,7 +5,7 @@ const SITE_NAME = "FastTools"
 
 
 export const DEFAULT_IMAGES = {
-    OG_IMAGE_PNG: "https://www.fasttools.store/opengraph-image.png",
+    OG_IMAGE_PNG: "https://www.fasttools.store/og-image.png",
     OG_IMAGE_SVG: "https://www.fasttools.store/og-image.svg",
     OG_IMAGE_ALT_TEXT: "FastTools - 1000+ Free Online Tools",
     LOGO_PNG: "https://www.fasttools.store/logo.png",
