@@ -12,8 +12,6 @@
  */
 
 export const goneUrls = new Set([
-  '/guides/year-end-countdown-guide',
-  '/guides/html-beautifier-guide',
   '/guides/tip-calculator-guide',
   '/guides/json-to-csv-converter-guide',
   '/guides/regex-tester-guide',
