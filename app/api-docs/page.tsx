@@ -33,6 +33,15 @@ const apis = [
     version: "v1",
     status: "active",
   },
+  {
+    id: "image-bg-remover-api",
+    name: "Image Background Remover API",
+    description: "Remove image backgrounds instantly with high precision. Seamlessly integrate our powerful background removal technology into your apps.",
+    icon: Zap,
+    href: "/api-docs/image-background-remover-api",
+    version: "v1",
+    status: "active",
+  },
 ]
 
 const benefits = [
