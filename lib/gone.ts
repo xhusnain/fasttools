@@ -12,9 +12,6 @@
  */
 
 export const goneUrls = new Set([
-  // Guide pages that were removed
-  '/guides/sales-tax-calculator-guide',
-  '/guides/markdown-previewer-guide',
   '/guides/emi-calculator-guide',
   '/guides/gpa-calculator-guide',
   '/guides/jwt-decoder-guide',
