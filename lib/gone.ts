@@ -12,8 +12,6 @@
  */
 
 export const goneUrls = new Set([
-  '/guides/amortization-calculator-guide',
-  '/guides/salary-calculator-guide',
   '/guides/ai-song-lyrics-generator-guide',
   '/guides/year-end-countdown-guide',
   '/guides/html-beautifier-guide',
