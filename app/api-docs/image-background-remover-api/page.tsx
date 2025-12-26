@@ -4,6 +4,7 @@ import { ExternalLink, Code, Zap, Shield, Image as ImageIcon, Layers, Monitor, C
 import { CopyButton } from "@/components/common/copy-button"
 import { GHeader } from "@/ui/gheader"
 import { Breadcrumbs } from "@/components/common/breadcrumbs"
+import { ImageBackgroundRemover } from "@/components/image/image-background-remover"
 import { createMetadata } from "@/lib/metadata-base"
 
 const baseMetadata = createMetadata({
@@ -162,6 +163,21 @@ export default function ImageBgRemoverAPIDocsPage() {
                                     </div>
                                 </div>
                             </div>
+                            {/* Live Demo Section */}
+                            <div className="p-4 sm:p-6 md:p-8 rounded-lg bg-card border border-border shadow scroll-mt-20" id="live-demo">
+                                <div className="flex items-center gap-3 mb-6">
+                                    <div className="p-2 bg-heading-accent/10 rounded-lg">
+                                        <Zap className="h-6 w-6 text-heading-accent" />
+                                    </div>
+                                    <h2 className="text-xl md:text-2xl font-bold text-foreground">Live Demo</h2>
+                                </div>
+                                <p className="text-muted-foreground text-sm mb-6">
+                                    Experience the power of our background removal technology right here. Upload an image to see the results instantly.
+                                </p>
+                                <div className="bg-muted/30 rounded-xl p-2 sm:p-4 border border-border">
+                                    <ImageBackgroundRemover />
+                                </div>
+                            </div>
 
                             {/* FAQ Section */}
                             <div className="p-6 sm:p-8 rounded-lg bg-card border border-border shadow">
@@ -186,6 +202,6 @@ export default function ImageBgRemoverAPIDocsPage() {
                     </div>
                 </div>
             </div>
-        </div>
+        </div >
     )
 }
