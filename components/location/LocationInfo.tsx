@@ -6,6 +6,7 @@ import { GBadge } from "@/ui/gbadge"
 import { GLoader } from "@/ui/gloader"
 import { Globe, MapPin, DollarSign, Navigation, Wifi, Copy, Check, Cloud, Thermometer, Mountain, Clock } from "lucide-react"
 import { fetchWeatherApi } from "openmeteo"
+import axios from "axios"
 
 interface GeolocationData {
     iso2: string
@@ -58,11 +59,8 @@ export function LocationInfo() {
         const fetchData = async () => {
             try {
                 // 1. Fetch Location
-                const locationResponse = await fetch("https://api.vatcomply.com/geolocate")
-                if (!locationResponse.ok) {
-                    throw new Error("Failed to fetch location data")
-                }
-                const locationResult = await locationResponse.json()
+                const locationResponse = await axios.get<GeolocationData>("/api/location")
+                const locationResult = locationResponse.data
                 setData(locationResult)
 
                 // 2. Fetch Weather using location coordinates (non-blocking)

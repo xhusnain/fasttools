@@ -64,6 +64,12 @@ export function Header() {
                   Build & Earn
                 </Link>
                 <Link
+                  href="/my-info"
+                  className="text-sm font-semibold bg-gradient-to-r from-blue-500 to-cyan-500 bg-clip-text text-transparent hover:opacity-80 transition-all flex items-center gap-1 h-full"
+                >
+                  Get My Info
+                </Link>
+                <Link
                   href="/blog"
                   className="text-sm font-medium text-muted-foreground hover:text-primary transition-colors flex items-center gap-1 h-full"
                 >
@@ -75,12 +81,11 @@ export function Header() {
                 <Link href="/downloaders" className="text-sm font-medium text-muted-foreground hover:text-primary transition-colors flex items-center h-full">
                   Downloaders
                 </Link>
-                <Link href="/api-docs" className="text-sm font-medium text-muted-foreground hover:text-primary transition-colors flex items-center h-full">
-                  API Docs
-                </Link>
+
                 <Link href="/ad-tools/roas-calculator" className="text-sm font-medium text-muted-foreground hover:text-primary transition-colors flex items-center h-full">
                   ROAS Calculator
                 </Link>
+
                 <Link href="/contact" className="text-sm font-medium text-muted-foreground hover:text-primary transition-colors flex items-center h-full">
                   Contact
                 </Link>
@@ -207,12 +212,13 @@ export function Header() {
               Contact
             </Link>
             <Link
-              href="/api-docs"
+              href="/my-info"
               onClick={() => setMobileMenuOpen(false)}
               className="block py-3 text-base font-semibold text-foreground/80 hover:text-primary transition-colors"
             >
-              API Docs
+              Get My Info
             </Link>
+
           </div>
         </div>
       </div>

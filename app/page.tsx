@@ -5,14 +5,7 @@ import { GToolCard } from "@/ui/gtool-card"
 
 
 import { PremiumHeroBackground } from "@/components/common/premium-hero-background"
-// Lazy load LocationInfo to prevent blocking initial render and improve CLS
-const LocationInfo = dynamic(() => import("@/components/location/LocationInfo").then(mod => mod.LocationInfo), {
-  loading: () => (
-    <div className="min-h-[450px] flex items-center justify-center">
-      <div className="animate-pulse text-muted-foreground">Loading location...</div>
-    </div>
-  )
-})
+
 const HomeCategories = dynamic(() => import('@/components/common/home-categories').then(mod => ({ default: mod.HomeCategories })), {
   loading: () => <div className="py-24 text-center">Loading tools...</div>
 })
@@ -1105,41 +1098,34 @@ export default function Home() {
       <section className="relative min-h-screen flex items-center justify-center px-4 overflow-hidden bg-background">
         <PremiumHeroBackground />
 
-        <div className="container mx-auto max-w-7xl relative z-10 py-8 sm:py-12 lg:py-16 grid lg:grid-cols-2 gap-8 lg:gap-12 items-center">
-          {/* Left Column - Location Info */}
-          <div className="w-full order-last lg:order-first min-h-[450px]">
-            <LocationInfo />
-          </div>
-
-          <div className="text-center lg:text-left space-y-6 sm:space-y-8">
-            {/* Main Heading - Professional & Trustworthy */}
-            <div className="space-y-4 sm:space-y-6">
-              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/10 border border-primary/20 text-primary text-xs sm:text-sm font-medium mb-2 mx-auto lg:mx-0">
-                <span className="relative flex h-2 w-2">
-                  <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary opacity-75"></span>
-                  <span className="relative inline-flex rounded-full h-2 w-2 bg-primary"></span>
-                </span>
-                Professional Grade Tools
-              </div>
-
-              <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-black text-foreground leading-[1.1] tracking-tight px-2 lg:px-0">
-                <span className="block text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold text-foreground mb-2 tracking-normal">
-                  FastTools: 1000+ Free Online Tools
-                </span>
-                <span className="block">
-                  Build faster with
-                </span>
-                <span className="block bg-clip-text text-transparent bg-gradient-to-r from-primary via-purple-500 to-primary animate-gradient-x pb-2">
-                  premium tools.
-                </span>
-              </h1>
-
-              <p className="text-base sm:text-lg md:text-xl text-foreground font-medium max-w-3xl mx-auto lg:mx-0 leading-relaxed px-4 lg:px-0">
-                Welcome to <strong className="text-foreground">FastTools</strong>, the premier <strong className="text-foreground">online tools platform</strong> designed for efficiency.
-                Explore our massive collection of <strong className="text-foreground">web tools</strong> including <strong className="text-foreground">productivity tools</strong>, developer utilities, and AI generators.
-                Experience the power of a complete digital toolkit that processes data locally for maximum security and speed.
-              </p>
+        <div className="container mx-auto max-w-7xl relative z-10 py-12 lg:py-24 text-center">
+          {/* Main Heading - Professional & Trustworthy */}
+          <div className="space-y-6 sm:space-y-8 max-w-4xl mx-auto">
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/10 border border-primary/20 text-primary text-xs sm:text-sm font-medium mb-4">
+              <span className="relative flex h-2 w-2">
+                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary opacity-75"></span>
+                <span className="relative inline-flex rounded-full h-2 w-2 bg-primary"></span>
+              </span>
+              Professional Grade Tools
             </div>
+
+            <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-black text-foreground leading-[1.1] tracking-tight">
+              <span className="block text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold text-foreground mb-4 tracking-normal">
+                FastTools: 1000+ Free Online Tools
+              </span>
+              <span className="block">
+                Build faster with
+              </span>
+              <span className="block bg-clip-text text-transparent bg-gradient-to-r from-primary via-purple-500 to-primary animate-gradient-x pb-2">
+                premium tools.
+              </span>
+            </h1>
+
+            <p className="text-base sm:text-lg md:text-xl text-foreground font-medium max-w-3xl mx-auto leading-relaxed px-4">
+              Welcome to <strong className="text-foreground">FastTools</strong>, the premier <strong className="text-foreground">online tools platform</strong> designed for efficiency.
+              Explore our massive collection of <strong className="text-foreground">web tools</strong> including <strong className="text-foreground">productivity tools</strong>, developer utilities, and owner utilities.
+              Experience the power of a complete digital toolkit that processes data locally for maximum security and speed.
+            </p>
           </div>
         </div>
       </section>
