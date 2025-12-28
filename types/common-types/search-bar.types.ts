@@ -5,4 +5,5 @@ export interface SearchBarProps {
     placeholder?: string
     onBlur?: () => void
     variant?: "default" | "pill"
+    onSearchStateChange?: (isActive: boolean) => void
 }

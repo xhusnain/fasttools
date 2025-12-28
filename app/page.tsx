@@ -5,6 +5,8 @@ import { GToolCard } from "@/ui/gtool-card"
 
 
 import { PremiumHeroBackground } from "@/components/common/premium-hero-background"
+import { HeroBoxes } from "@/components/common/hero-boxes"
+import { HeroSearchSection } from "@/components/common/hero-search-section"
 
 const HomeCategories = dynamic(() => import('@/components/common/home-categories').then(mod => ({ default: mod.HomeCategories })), {
   loading: () => <div className="py-24 text-center">Loading tools...</div>
@@ -1094,39 +1096,42 @@ export default function Home() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
 
-      {/* Hero Section - Background with Blue Text */}
-      <section className="relative min-h-screen flex items-center justify-center px-4 overflow-hidden bg-background">
+
+
+      <section className="relative min-h-[90vh] flex items-center justify-center px-4 bg-background">
         <PremiumHeroBackground />
 
-        <div className="container mx-auto max-w-7xl relative z-10 py-12 lg:py-24 text-center">
-          {/* Main Heading - Professional & Trustworthy */}
-          <div className="space-y-6 sm:space-y-8 max-w-4xl mx-auto">
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/10 border border-primary/20 text-primary text-xs sm:text-sm font-medium mb-4">
-              <span className="relative flex h-2 w-2">
-                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary opacity-75"></span>
-                <span className="relative inline-flex rounded-full h-2 w-2 bg-primary"></span>
-              </span>
-              Professional Grade Tools
-            </div>
+        {/* Floating Tool Icons Background Effect */}
+        <HeroBoxes />
 
-            <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-black text-foreground leading-[1.1] tracking-tight">
-              <span className="block text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold text-foreground mb-4 tracking-normal">
-                FastTools: 1000+ Free Online Tools
-              </span>
-              <span className="block">
-                Build faster with
-              </span>
-              <span className="block bg-clip-text text-transparent bg-gradient-to-r from-primary via-purple-500 to-primary animate-gradient-x pb-2">
-                premium tools.
-              </span>
-            </h1>
+        <div className="container mx-auto max-w-5xl relative z-20 py-12 lg:py-24 flex flex-col items-center text-center">
 
-            <p className="text-base sm:text-lg md:text-xl text-foreground font-medium max-w-3xl mx-auto leading-relaxed px-4">
-              Welcome to <strong className="text-foreground">FastTools</strong>, the premier <strong className="text-foreground">online tools platform</strong> designed for efficiency.
-              Explore our massive collection of <strong className="text-foreground">web tools</strong> including <strong className="text-foreground">productivity tools</strong>, developer utilities, and owner utilities.
-              Experience the power of a complete digital toolkit that processes data locally for maximum security and speed.
-            </p>
+          {/* Top Badge */}
+          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-primary/10 border border-primary/20 text-primary text-sm font-medium mb-8 animate-fade-in-up">
+            <span className="relative flex h-2.5 w-2.5">
+              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary opacity-75"></span>
+              <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-primary"></span>
+            </span>
+            <span>Professional Grade Digital Toolkit</span>
           </div>
+
+          {/* Main Heading */}
+          <h1 className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-black text-foreground leading-[1.1] tracking-tight mb-8 animate-fade-in-up delay-100">
+            <span className="block mb-2">Build faster with</span>
+            <span className="bg-clip-text text-transparent bg-gradient-to-r from-primary via-purple-500 to-indigo-500 animate-gradient-x">
+              premium tools.
+            </span>
+          </h1>
+
+          {/* Subheading */}
+          <p className="text-lg sm:text-xl md:text-2xl text-muted-foreground font-medium max-w-3xl mx-auto leading-relaxed mb-12 animate-fade-in-up delay-200 px-4">
+            Access <strong className="text-foreground">1000+ free online tools</strong> for developers, designers, and creators.
+            Process data locally for maximum security and speed.
+          </p>
+
+          {/* Central Search Bar & Quick Access Tags */}
+          <HeroSearchSection />
+
         </div>
       </section>
 

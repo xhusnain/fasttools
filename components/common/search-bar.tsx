@@ -31,7 +31,8 @@ export function SearchBar({
   autoFocus = false,
   placeholder = "Search tools...",
   onBlur,
-  variant = "default"
+  variant = "default",
+  onSearchStateChange
 }: SearchBarProps) {
   const [query, setQuery] = useState("")
   const [filteredSuggestions, setFilteredSuggestions] = useState<SearchItem[]>([])
@@ -59,10 +60,12 @@ export function SearchBar({
       const results = fuse.search(searchQuery)
       setFilteredSuggestions(results.map(result => result.item).slice(0, 8)) // Show max 8 suggestions
       setShowSuggestions(true)
+      onSearchStateChange?.(true)
     } else {
       setShowSuggestions(false)
+      onSearchStateChange?.(false)
     }
-  }, [fuse])
+  }, [fuse, onSearchStateChange])
 
   useEffect(() => {
     // Clear existing timer
@@ -94,6 +97,9 @@ export function SearchBar({
 
       // Close suggestions if clicking outside
       setShowSuggestions(false)
+      if (searchRef.current && !searchRef.current.contains(target)) {
+        onSearchStateChange?.(false)
+      }
     }
 
     document.addEventListener("mousedown", handleClickOutside)

@@ -3,7 +3,6 @@
 import Link from "next/link"
 import { useState } from "react"
 import { Menu, X, Search, ChevronDown, ArrowUpRight, Sparkles } from "lucide-react"
-import { SearchBar } from "@/components/common/search-bar"
 import { ThemeToggle } from "@/components/common/theme-toggle"
 import { usePathname } from "next/navigation"
 import dynamic from "next/dynamic"
@@ -22,7 +21,6 @@ import {
 
 export function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
-  const [showSearch, setShowSearch] = useState(false)
   const pathname = usePathname()
 
   return (
@@ -44,14 +42,6 @@ export function Header() {
               </Link>
             </div>
 
-            {/* Middle - Search (Desktop) */}
-            <div className="hidden md:flex w-[500px] px-2">
-              <SearchBar
-                placeholder="Search 1000+ tools..."
-                variant="default"
-                className="w-full shadow-sm"
-              />
-            </div>
 
             {/* Right side - Actions */}
             <div className="flex items-center gap-2 shrink-0">
@@ -93,14 +83,6 @@ export function Header() {
 
               <ThemeToggle />
 
-              {/* Mobile Search Toggle (since main search is hidden on mobile) */}
-              <button
-                className="md:hidden p-2 rounded-xl text-foreground/70 hover:text-primary hover:bg-primary/10"
-                onClick={() => setShowSearch(!showSearch)}
-                aria-label="Toggle search"
-              >
-                <Search className="h-5 w-5" />
-              </button>
 
               {/* Mobile Menu Button */}
               <button
@@ -113,18 +95,6 @@ export function Header() {
             </div>
           </div>
 
-          {/* Mobile Search Input (Visible only when toggled) */}
-          {showSearch && (
-            <div className="md:hidden px-4 pb-4 animate-fade-in-up">
-              <SearchBar
-                autoFocus
-                placeholder="Search tools..."
-                variant="pill"
-                className="w-full"
-                onBlur={() => { }}
-              />
-            </div>
-          )}
         </div>
 
         {/* BOTTOM ROW: Sub-Navbar (Desktop Only) */}
