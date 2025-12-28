@@ -78,8 +78,8 @@ export function Header() {
                 <Link href="/api-docs" className="text-sm font-medium text-muted-foreground hover:text-primary transition-colors flex items-center h-full">
                   API Docs
                 </Link>
-                <Link href="/about" className="text-sm font-medium text-muted-foreground hover:text-primary transition-colors flex items-center h-full">
-                  About
+                <Link href="/ad-tools/roas-calculator" className="text-sm font-medium text-muted-foreground hover:text-primary transition-colors flex items-center h-full">
+                  ROAS Calculator
                 </Link>
                 <Link href="/contact" className="text-sm font-medium text-muted-foreground hover:text-primary transition-colors flex items-center h-full">
                   Contact
@@ -193,11 +193,11 @@ export function Header() {
               Blog
             </Link>
             <Link
-              href="/about"
+              href="/ad-tools/roas-calculator"
               onClick={() => setMobileMenuOpen(false)}
               className="block py-3 text-base font-semibold text-foreground/80 hover:text-primary transition-colors"
             >
-              About Us
+              ROAS Calculator
             </Link>
             <Link
               href="/contact"
