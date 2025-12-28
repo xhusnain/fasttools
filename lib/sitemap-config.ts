@@ -20,48 +20,6 @@ export const mainPages = [
         lastModified: new Date('2025-11-25'),
         changeFrequency: "weekly" as const,
         priority: 1,
-        images: [
-            {
-                url: "https://www.fasttools.store/logo.png",
-                title: "FastTools Professional Logo PNG - Free Online Tools Collection",
-                caption: "FastTools professional logo with modern FT symbol and blue gradient design for comprehensive free online tools collection"
-            },
-            {
-                url: "https://www.fasttools.store/logo.svg",
-                title: "FastTools Professional Logo SVG - Vector Format",
-                caption: "FastTools logo in scalable vector format for high-quality rendering at any size, perfect for professional use"
-            },
-            {
-                url: "https://www.fasttools.store/banner.png",
-                title: "FastTools Social Media Image - Complete Digital Toolkit",
-                caption: "FastTools professional social media sharing image showcasing comprehensive free online tools collection for productivity and business"
-            },
-            {
-                url: "https://www.fasttools.store/og-image.png",
-                title: "FastTools Open Graph Image PNG",
-                caption: "FastTools Open Graph image for social media sharing and SEO optimization in PNG format"
-            },
-            {
-                url: "https://www.fasttools.store/og-image.svg",
-                title: "FastTools Open Graph Image SVG",
-                caption: "FastTools Open Graph vector image for social media sharing with excellent quality at any resolution"
-            },
-            {
-                url: "https://www.fasttools.store/placeholder.jpg",
-                title: "FastTools Placeholder Image JPG",
-                caption: "FastTools placeholder image for loading states and content previews"
-            },
-            {
-                url: "https://www.fasttools.store/placeholder.svg",
-                title: "FastTools Placeholder SVG",
-                caption: "FastTools scalable placeholder image for dynamic content loading"
-            },
-            {
-                url: "https://www.fasttools.store/placeholder-user.jpg",
-                title: "FastTools User Avatar Placeholder",
-                caption: "FastTools default user avatar placeholder for profile images and user accounts"
-            }
-        ]
     },
     {
         url: "https://www.fasttools.store/products",
@@ -137,31 +95,12 @@ export const categoryPages = [
         lastModified: new Date('2025-11-25'),
         changeFrequency: "weekly" as const,
         priority: 0.97,
-        images: [
-            {
-                url: "https://www.fasttools.store/banner.png",
-                title: "AI Tools - Artificial Intelligence Content Generation",
-                caption: "FastTools AI Tools collection for automated content creation and artificial intelligence utilities"
-            },
-            {
-                url: "https://www.fasttools.store/logo.png",
-                title: "FastTools AI Tools Logo",
-                caption: "FastTools professional logo for AI automation tools and content generation"
-            }
-        ]
     },
     {
         url: "https://www.fasttools.store/converters",
         lastModified: new Date('2025-11-25'),
         changeFrequency: "monthly" as const,
         priority: 0.9,
-        images: [
-            {
-                url: "https://www.fasttools.store/banner.png",
-                title: "Converter Tools - Unit and Format Converters",
-                caption: "FastTools Converter collection for currency, length, temperature, and file format conversions"
-            }
-        ]
     },
     {
         url: "https://www.fasttools.store/finance-tools",
@@ -180,59 +119,18 @@ export const categoryPages = [
         lastModified: new Date('2025-11-25'),
         changeFrequency: "monthly" as const,
         priority: 0.75,
-        images: [
-            {
-                url: "https://www.fasttools.store/dev-image-2.jpg",
-                title: "Free Developer Tools Online - Chrome DevTools, Safari, React Developer Tools",
-                caption: "Professional developer tools collection featuring Chrome DevTools, Safari developer tools, React developer tools, JWT decoder, regex tester, and essential coding utilities for web development"
-            },
-            {
-                url: "https://www.fasttools.store/banner.png",
-                title: "Developer Tools - Programming and Web Development",
-                caption: "FastTools Developer Tools collection for programmers and web developers"
-            }
-        ]
     },
     {
         url: "https://www.fasttools.store/calculator",
         lastModified: new Date('2025-11-25'),
         changeFrequency: "monthly" as const,
         priority: 0.9,
-        images: [
-            {
-                url: "https://www.fasttools.store/banner.png",
-                title: "Calculator Tools - Free Online Calculators",
-                caption: "FastTools Calculator collection for financial, scientific, and utility calculations"
-            },
-            {
-                url: "https://www.fasttools.store/images/calculator-hero.png",
-                title: "Calculator Hero Image",
-                caption: "Calculator tools hero image"
-            },
-            {
-                url: "https://www.fasttools.store/images/calculation-accuracy.png",
-                title: "Calculation Accuracy",
-                caption: "Calculation accuracy illustration"
-            }
-        ]
     },
     {
         url: "https://www.fasttools.store/image-tools",
         lastModified: new Date('2025-11-25'),
         changeFrequency: "monthly" as const,
         priority: 0.7,
-        images: [
-            {
-                url: "https://www.fasttools.store/banner.png",
-                title: "Image Tools Collection - Professional Photo Editing and Processing",
-                caption: "FastTools comprehensive image tools collection for background removal, photo editing, and image processing"
-            },
-            {
-                url: "https://www.fasttools.store/logo.png",
-                title: "FastTools Image Tools Logo",
-                caption: "Professional logo for FastTools image editing and processing toolkit"
-            }
-        ]
     },
     {
         url: "https://www.fasttools.store/seo-tools",
@@ -922,18 +820,6 @@ export const toolPages = [
         lastModified: new Date('2025-11-25'),
         changeFrequency: "monthly" as const,
         priority: 0.9,
-        images: [
-            {
-                url: "https://www.fasttools.store/banner.png",
-                title: "Image to Text - OCR Text Extraction Tool",
-                caption: "AI-powered OCR tool to extract text from images, scanned documents, and photos instantly"
-            },
-            {
-                url: "https://www.fasttools.store/logo.png",
-                title: "FastTools Image to Text Converter Logo",
-                caption: "Professional logo for FastTools OCR and text extraction tool"
-            }
-        ]
     },
     {
         url: "https://www.fasttools.store/pdf-tools/pdf-sign",
@@ -952,36 +838,12 @@ export const toolPages = [
         lastModified: new Date('2025-11-25'),
         changeFrequency: "monthly" as const,
         priority: 0.97,
-        images: [
-            {
-                url: "https://www.fasttools.store/banner.png",
-                title: "PDF Splitter and Merger - Free PDF Editing and Processing",
-                caption: "FastTools PDF Splitter and Merger collection for merging and splitting PDF files"
-            },
-            {
-                url: "https://www.fasttools.store/logo.png",
-                title: "FastTools PDF Splitter and Merger Logo",
-                caption: "Professional logo for FastTools PDF splitting and merging toolkit"
-            }
-        ]
     },
     {
         url: "https://www.fasttools.store/pdf-tools/pdf-unlocker",
         lastModified: new Date('2025-11-25'),
         changeFrequency: "monthly" as const,
         priority: 0.96,
-        images: [
-            {
-                url: "https://www.fasttools.store/banner.png",
-                title: "PDF Unlocker - Remove PDF Password Protection",
-                caption: "Free online PDF unlocker to remove password protection and unlock secured PDF files instantly"
-            },
-            {
-                url: "https://www.fasttools.store/logo.png",
-                title: "FastTools PDF Unlocker Logo",
-                caption: "Professional logo for FastTools PDF password removal tool"
-            }
-        ]
     },
     {
         url: "https://www.fasttools.store/pdf-tools/pdf-compressor",

@@ -4,20 +4,6 @@ const BASE_URL = "https://www.fasttools.store"
 const SITE_NAME = "FastTools"
 
 
-export const DEFAULT_IMAGES = {
-    OG_IMAGE_PNG: "https://www.fasttools.store/og-image.png",
-    OG_IMAGE_SVG: "https://www.fasttools.store/og-image.svg",
-    OG_IMAGE_ALT_TEXT: "FastTools - 1000+ Free Online Tools",
-    LOGO_PNG: "https://www.fasttools.store/logo.png",
-    LOGO_SVG: "https://www.fasttools.store/logo.svg",
-    // Fallback for missing logo3.png to logo.png based on available files
-    LOGO3_PNG: "https://www.fasttools.store/logo.png",
-    BANNER: "https://www.fasttools.store/banner.png",
-    PLACEHOLDER: "https://www.fasttools.store/placeholder.jpg",
-    PLACEHOLDER_SVG: "https://www.fasttools.store/placeholder.svg",
-    PLACEHOLDER_USER: "https://www.fasttools.store/placeholder-user.jpg",
-} as const
-
 export const globalViewport: Viewport = {
     width: "device-width",
     initialScale: 1,
@@ -109,14 +95,6 @@ export function createMetadata(options: MetadataOptions): Metadata & { softwareS
         siteName: SITE_NAME,
         type: "website" as const,
         locale: "en_US" as const,
-        images: [
-            {
-                url: DEFAULT_IMAGES.OG_IMAGE_PNG,
-                width: 1200,
-                height: 630,
-                alt: ogImageAlt || DEFAULT_IMAGES.OG_IMAGE_ALT_TEXT,
-            },
-        ],
     }
 
 
@@ -186,7 +164,6 @@ export function createMetadata(options: MetadataOptions): Metadata & { softwareS
             title: twitterTitle || finalOgTitle,
             description: twitterDescription || finalOgDescription,
             creator: twitterCreator || "@ZamanIsmail7",
-            images: [DEFAULT_IMAGES.OG_IMAGE_PNG],
         },
         ...(noIndex && {
             robots: {
@@ -370,20 +347,13 @@ export function createSoftwareAppSchema(options: SoftwareAppSchemaOptions) {
         "publisher": {
             "@type": "Organization",
             "name": SITE_NAME,
-            "url": BASE_URL,
-            "logo": {
-                "@type": "ImageObject",
-                "url": DEFAULT_IMAGES.LOGO_SVG,
-                "width": 320,
-                "height": 80
-            }
+            "url": BASE_URL
         },
         "datePublished": "2024-01-01",
         "dateModified": currentDate,
         "version": version,
         "softwareVersion": version,
         "downloadUrl": appUrl,
-        "screenshot": DEFAULT_IMAGES.OG_IMAGE_SVG,
         "isPartOf": {
             "@type": "WebSite",
             "name": SITE_NAME,

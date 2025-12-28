@@ -20,14 +20,6 @@ export default function manifest(): MetadataRoute.Manifest {
             "education"
         ],
         icons: [],
-        screenshots: [
-            {
-                src: "/og-image.png",
-                sizes: "1200x630",
-                type: "image/png",
-                form_factor: "wide"
-            }
-        ],
         shortcuts: [
             {
                 name: "AI Tools",

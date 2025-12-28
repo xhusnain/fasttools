@@ -109,10 +109,6 @@ export default async function GuidePage({
         publisher: {
             '@type': 'Organization',
             name: 'FastTools',
-            logo: {
-                '@type': 'ImageObject',
-                url: 'https://www.fasttools.store/logo.png',
-            },
         },
         datePublished: frontMatter.date,
         dateModified: frontMatter.lastModified || frontMatter.date,

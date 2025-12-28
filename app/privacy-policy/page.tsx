@@ -34,8 +34,7 @@ export default function PrivacyPolicyPage() {
     publisher: {
       "@type": "Organization",
       name: "FastTools",
-      url: "https://www.fasttools.store",
-      logo: "https://www.fasttools.store/logo.svg"
+      url: "https://www.fasttools.store"
     },
     datePublished: "2025-11-01",
     dateModified: "2025-11-01",

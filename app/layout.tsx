@@ -59,14 +59,6 @@ export default function RootLayout({
     name: "FastTools",
     alternateName: ["fasttools", "fast tools", "fasttools.store"],
     url: "https://www.fasttools.store",
-    logo: {
-      "@type": "ImageObject",
-      url: "https://www.fasttools.store/logo.png",
-      width: 500,
-      height: 500,
-      description: "FastTools professional logo with modern FT symbol and blue gradient",
-    },
-    image: "https://www.fasttools.store/banner.png",
     description: "FastTools offers 1000+ free online tools and a comprehensive tech blog featuring AI generators, converters, calculators, and expert development guides. Fast, accurate, secure, and always free.",
     foundingDate: "2024",
     sameAs: [

@@ -1,4 +1,4 @@
-import { GImage } from "@/ui/gimage";
+import { Wrench } from "lucide-react";
 
 export const GAuthorBio = () => {
     return (
@@ -6,14 +6,7 @@ export const GAuthorBio = () => {
             <div className="p-8 md:p-10 flex flex-col md:flex-row gap-8 items-start">
                 <div className="flex-shrink-0">
                     <div className="w-20 h-20 rounded-xl bg-background border border-border flex items-center justify-center overflow-hidden">
-                        <GImage
-                            src="/logo.png"
-                            alt="FastTools Logo"
-                            width={48}
-                            height={48}
-                            fill={false}
-                            className="object-contain"
-                        />
+                        <Wrench className="w-10 h-10 text-primary" />
                     </div>
                 </div>
                 <div className="flex-1">

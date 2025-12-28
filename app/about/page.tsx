@@ -32,14 +32,6 @@ export default function AboutPage() {
       alternateName: "fasttools.store",
       description: "FastTools is the world's leading free online tools platform, offering 1000+ professional digital tools including AI generators, converters, calculators, SEO tools, and productivity utilities. Trusted by millions of users worldwide.",
       url: "https://www.fasttools.store",
-      logo: {
-        "@type": "ImageObject",
-        url: "https://www.fasttools.store/logo.svg",
-        width: 320,
-        height: 80,
-        description: "FastTools professional logo with modern FT symbol and blue gradient"
-      },
-      image: "https://www.fasttools.store/og-image.svg",
       foundingDate: "2024",
       contactPoint: {
         "@type": "ContactPoint",

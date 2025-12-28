@@ -184,7 +184,6 @@ export function IPSubnetCalculatorPageContent() {
             "No registration required",
             "Free to use"
           ],
-          screenshot: "https://www.fasttools.store/og-image.svg",
           softwareHelp: {
             "@type": "HowTo",
             name: "How to Use IP Subnet Calculator",

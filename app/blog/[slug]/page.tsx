@@ -138,10 +138,6 @@ export default async function BlogPost({
         publisher: {
             '@type': 'Organization',
             name: 'FastTools',
-            logo: {
-                '@type': 'ImageObject',
-                url: 'https://www.fasttools.store/logo.png',
-            },
             sameAs: [
                 'https://www.facebook.com/profile.php?id=61575993339664',
                 'https://www.instagram.com/fasttools/',

@@ -906,29 +906,16 @@ export default function Home() {
     name: "FastTools - Free Online Tools Store | Digital Tools, AI Generator, Calculator, Converter & SEO Tools",
     description: "FastTools is a free online tools store offering 1000+ digital tools including AI generators, calculators, converters, SEO tools, image tools, developer tools, and productivity utilities. Fast, accurate, easy to use digital tools with no registration required. Access tools store online for instant results.",
     url: "https://www.fasttools.store",
-    image: "https://www.fasttools.store/banner.png",
     author: {
       "@type": "Organization",
       name: "FastTools",
       url: "https://www.fasttools.store",
-      logo: {
-        "@type": "ImageObject",
-        url: "https://www.fasttools.store/logo.png",
-        width: 320,
-        height: 80
-      },
       description: "Leading provider of free online tools and utilities for productivity, conversion, and content creation"
     },
     publisher: {
       "@type": "Organization",
       name: "FastTools",
-      url: "https://www.fasttools.store",
-      logo: {
-        "@type": "ImageObject",
-        url: "https://www.fasttools.store/logo.png",
-        width: 320,
-        height: 80
-      }
+      url: "https://www.fasttools.store"
     },
     datePublished: "2024-01-01",
     dateModified: "2025-01-15",
