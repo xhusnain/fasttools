@@ -3,6 +3,7 @@ import "./globals.css"
 import { Header } from "@/components/common/header"
 import { Footer } from "@/components/common/footer"
 import { CookieConsent } from "@/components/common/cookie-consent"
+import { WelcomePopup } from "@/components/common/welcome-popup"
 import { ThemeProvider } from "@/components/common/theme-provider"
 import Script from "next/script"
 import { env } from "@/config/env"
@@ -223,6 +224,7 @@ export default function RootLayout({
           <CookieConsent />
           <Analytics />
           <SpeedInsights />
+          <WelcomePopup />
         </ThemeProvider>
       </body>
     </html>
