@@ -5,23 +5,38 @@ import Link from "next/link"
 export function Footer() {
   const currentYear = new Date().getFullYear()
 
+  // All tool categories matching mega menu
+  const toolCategories = [
+    { name: "Calculators", href: "/calculator" },
+    { name: "Finance", href: "/finance-tools" },
+    { name: "AI Tools", href: "/ai-tools" },
+    { name: "Converters", href: "/converters" },
+    { name: "Dev Tools", href: "/dev-tools" },
+    { name: "Image Tools", href: "/image-tools" },
+    { name: "PDF Tools", href: "/pdf-tools" },
+    { name: "SEO Tools", href: "/seo-tools" },
+    { name: "Social Media", href: "/social-media-tools" },
+    { name: "Fun Tools", href: "/fun-tools" },
+    { name: "Festivals", href: "/festivals" },
+  ]
+
   return (
     <footer className="relative bg-gradient-to-b from-background to-background/95 border-t border-border/50">
       {/* Main Footer Content */}
       <div className="container mx-auto max-w-7xl px-4 py-10 md:py-12">
-        <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-8 md:gap-6">
+        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-8 md:gap-6">
 
           {/* Brand Column */}
-          <div className="col-span-2 md:col-span-1 lg:col-span-1">
+          <div className="col-span-2 sm:col-span-3 md:col-span-4 lg:col-span-2">
             <Link href="/" className="inline-block mb-4">
               <span className="text-xl font-bold text-foreground">FastTools</span>
             </Link>
-            <p className="text-sm text-muted-foreground leading-relaxed max-w-xs">
+            <p className="text-sm text-muted-foreground leading-relaxed max-w-xs mb-5">
               The ultimate collection of free online tools for productivity, development, and creativity.
             </p>
 
-            {/* Social Links - Mobile friendly */}
-            <div className="flex items-center gap-3 mt-5">
+            {/* Social Links */}
+            <div className="flex items-center gap-3">
               <a
                 href="https://x.com/ZamanIsmail7"
                 target="_blank"
@@ -69,37 +84,43 @@ export function Footer() {
             </div>
           </div>
 
-          {/* Tools Column */}
+          {/* Tools Column 1 */}
           <div>
             <h4 className="text-sm font-semibold text-foreground mb-4">Tools</h4>
-            <ul className="space-y-2.5">
-              <li><Link href="/calculator" className="text-sm text-muted-foreground hover:text-primary transition-colors">Calculators</Link></li>
-              <li><Link href="/converters" className="text-sm text-muted-foreground hover:text-primary transition-colors">Converters</Link></li>
-              <li><Link href="/ai-tools" className="text-sm text-muted-foreground hover:text-primary transition-colors">AI Tools</Link></li>
-              <li><Link href="/pdf-tools" className="text-sm text-muted-foreground hover:text-primary transition-colors">PDF Tools</Link></li>
-              <li><Link href="/dev-tools" className="text-sm text-muted-foreground hover:text-primary transition-colors">Dev Tools</Link></li>
+            <ul className="space-y-2">
+              {toolCategories.slice(0, 6).map((cat) => (
+                <li key={cat.href}>
+                  <Link href={cat.href} className="text-sm text-muted-foreground hover:text-primary transition-colors">
+                    {cat.name}
+                  </Link>
+                </li>
+              ))}
             </ul>
           </div>
 
-          {/* Popular Column */}
+          {/* Tools Column 2 */}
           <div>
-            <h4 className="text-sm font-semibold text-foreground mb-4">Popular</h4>
-            <ul className="space-y-2.5">
-              <li><Link href="/converters/currency" className="text-sm text-muted-foreground hover:text-primary transition-colors">Currency Converter</Link></li>
-              <li><Link href="/calculator/age-calculator" className="text-sm text-muted-foreground hover:text-primary transition-colors">Age Calculator</Link></li>
-              <li><Link href="/image-tools/image-background-remover" className="text-sm text-muted-foreground hover:text-primary transition-colors">Background Remover</Link></li>
-              <li><Link href="/ad-tools/roas-calculator" className="text-sm text-muted-foreground hover:text-primary transition-colors">ROAS Calculator</Link></li>
-              <li><Link href="/social-media-tools/tiktok-downloader" className="text-sm text-muted-foreground hover:text-primary transition-colors">TikTok Downloader</Link></li>
+            <h4 className="text-sm font-semibold text-foreground mb-4 opacity-0">More</h4>
+            <ul className="space-y-2">
+              {toolCategories.slice(6).map((cat) => (
+                <li key={cat.href}>
+                  <Link href={cat.href} className="text-sm text-muted-foreground hover:text-primary transition-colors">
+                    {cat.name}
+                  </Link>
+                </li>
+              ))}
             </ul>
           </div>
 
           {/* Resources Column */}
           <div>
             <h4 className="text-sm font-semibold text-foreground mb-4">Resources</h4>
-            <ul className="space-y-2.5">
+            <ul className="space-y-2">
               <li><Link href="/blog" className="text-sm text-muted-foreground hover:text-primary transition-colors">Blog</Link></li>
               <li><Link href="/guides" className="text-sm text-muted-foreground hover:text-primary transition-colors">Guides</Link></li>
               <li><Link href="/api-docs" className="text-sm text-muted-foreground hover:text-primary transition-colors">API Docs</Link></li>
+              <li><Link href="/downloaders" className="text-sm text-muted-foreground hover:text-primary transition-colors">Downloaders</Link></li>
+              <li><Link href="/products" className="text-sm text-muted-foreground hover:text-primary transition-colors">Products</Link></li>
               <li><Link href="/faq" className="text-sm text-muted-foreground hover:text-primary transition-colors">FAQ</Link></li>
             </ul>
           </div>
@@ -107,11 +128,12 @@ export function Footer() {
           {/* Company Column */}
           <div>
             <h4 className="text-sm font-semibold text-foreground mb-4">Company</h4>
-            <ul className="space-y-2.5">
+            <ul className="space-y-2">
               <li><Link href="/about" className="text-sm text-muted-foreground hover:text-primary transition-colors">About</Link></li>
               <li><Link href="/contact" className="text-sm text-muted-foreground hover:text-primary transition-colors">Contact</Link></li>
               <li><Link href="/privacy-policy" className="text-sm text-muted-foreground hover:text-primary transition-colors">Privacy</Link></li>
               <li><Link href="/terms" className="text-sm text-muted-foreground hover:text-primary transition-colors">Terms</Link></li>
+              <li><Link href="/cookie-preferences" className="text-sm text-muted-foreground hover:text-primary transition-colors">Cookies</Link></li>
               <li><Link href="/dmca" className="text-sm text-muted-foreground hover:text-primary transition-colors">DMCA</Link></li>
             </ul>
           </div>
@@ -125,11 +147,9 @@ export function Footer() {
             <p className="text-xs text-muted-foreground">
               © {currentYear} FastTools. All rights reserved.
             </p>
-            <div className="flex items-center gap-4 text-xs text-muted-foreground">
-              <Link href="/cookie-preferences" className="hover:text-primary transition-colors">Cookie Preferences</Link>
-              <span className="hidden sm:inline">•</span>
-              <a href="mailto:support@fasttools.store" className="hover:text-primary transition-colors">support@fasttools.store</a>
-            </div>
+            <a href="mailto:support@fasttools.store" className="text-xs text-muted-foreground hover:text-primary transition-colors">
+              support@fasttools.store
+            </a>
           </div>
         </div>
       </div>
