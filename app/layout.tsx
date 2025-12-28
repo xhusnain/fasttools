@@ -45,17 +45,6 @@ export const metadata = {
     title: "FastTools",
     description: "FastTools provides 1000+ free online tools and expert articles: PDF tools, AI generators, calculators, developer utilities, and a tech blog with in-depth tutorials. 100% free, secure local processing, and works on all devices.",
     path: "/",
-    icons: {
-      icon: [
-        { url: "/logo.ico", sizes: "any" },
-        { url: "/favicon-96x96.png", sizes: "96x96", type: "image/png" },
-        { url: "/icon-192.png", sizes: "192x192", type: "image/png" },
-        { url: "/icon-512.png", sizes: "512x512", type: "image/png" },
-      ],
-      apple: [
-        { url: "/apple-icon.png", sizes: "180x180", type: "image/png" },
-      ],
-    },
   }),
 }
 
@@ -160,11 +149,6 @@ export default function RootLayout({
       <head>
         {/* Resource Hints for Performance */}
         <link rel="preconnect" href="https://www.googletagmanager.com" />
-
-        {/* Favicon and Icons */}
-
-
-
       </head>
       <body className="bg-background font-sans text-foreground">
 

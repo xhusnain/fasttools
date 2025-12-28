@@ -19,38 +19,7 @@ export default function manifest(): MetadataRoute.Manifest {
             "business",
             "education"
         ],
-        icons: [
-            {
-                src: "/icon-192.png",
-                sizes: "192x192",
-                type: "image/png",
-                purpose: "maskable"
-            },
-            {
-                src: "/icon-512.png",
-                sizes: "512x512",
-                type: "image/png",
-                purpose: "maskable"
-            },
-            {
-                src: "/icon-192.png",
-                sizes: "192x192",
-                type: "image/png",
-                purpose: "any"
-            },
-            {
-                src: "/icon-512.png",
-                sizes: "512x512",
-                type: "image/png",
-                purpose: "any"
-            },
-            {
-                src: "/logo.png",
-                sizes: "500x500",
-                type: "image/png",
-                purpose: "any"
-            }
-        ],
+        icons: [],
         screenshots: [
             {
                 src: "/og-image.png",
@@ -64,49 +33,25 @@ export default function manifest(): MetadataRoute.Manifest {
                 name: "AI Tools",
                 short_name: "AI",
                 description: "AI-powered content generation tools",
-                url: "/ai-tools",
-                icons: [
-                    {
-                        src: "/icon-192.png",
-                        sizes: "192x192"
-                    }
-                ]
+                url: "/ai-tools"
             },
             {
                 name: "Image Tools",
                 short_name: "Images",
                 description: "Image editing and processing tools",
-                url: "/image-tools",
-                icons: [
-                    {
-                        src: "/icon-192.png",
-                        sizes: "192x192"
-                    }
-                ]
+                url: "/image-tools"
             },
             {
                 name: "Social Media Tools",
                 short_name: "Social",
                 description: "Social media management and analysis tools",
-                url: "/social-media-tools",
-                icons: [
-                    {
-                        src: "/favicon-96x96.png",
-                        sizes: "96x96"
-                    }
-                ]
+                url: "/social-media-tools"
             },
             {
                 name: "Downloaders",
                 short_name: "Download",
                 description: "Video and content downloaders",
-                url: "/downloaders",
-                icons: [
-                    {
-                        src: "/apple-touch-icon.png",
-                        sizes: "180x180"
-                    }
-                ]
+                url: "/downloaders"
             }
         ],
         related_applications: [],
