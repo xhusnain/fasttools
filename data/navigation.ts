@@ -56,7 +56,10 @@ import {
     Link2,
     Languages,
     Text,
-    Regex
+    Regex,
+    Gift,
+    Drumstick,
+    PartyPopper
 } from "lucide-react"
 
 export interface NavItem {
@@ -326,6 +329,18 @@ export const navigationConfig: MegaMenuSection[] = [
                     { title: "Birthday Countdown", href: "/fun-tools/birthday-countdown", icon: Calendar, description: "Days remaining" },
                     { title: "Future Age", href: "/fun-tools/future-age", icon: Clock, description: "Predict age" },
                     { title: "Anniversary Calc", href: "/fun-tools/anniversary", icon: Heart, description: "Time together" },
+                ]
+            }
+        ]
+    },
+    {
+        title: "Festivals",
+        categories: [
+            {
+                title: "Holiday Tools",
+                items: [
+                    { title: "Christmas Font", href: "/festivals/christmas-font-converter", icon: Gift, description: "Festive text" },
+                    { title: "Turkey Defrost Calc", href: "/festivals/turkey-defrost-calculator", icon: Drumstick, description: "Thawing time" },
                 ]
             }
         ]
