@@ -493,6 +493,17 @@ html {
   background: #4DA6FF;
 }
 
+/* Hide scrollbar but keep scroll functionality */
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+
+
 .glass-effect {
   background: var(--card) !important;
   backdrop-filter: none !important;

@@ -124,10 +124,12 @@ export function Header() {
 
         {/* BOTTOM ROW: Sub-Navbar (Desktop Only) */}
         <div className="hidden md:block bg-background/50 border-b border-border/10 backdrop-blur-sm">
-          <div className="container mx-auto px-4 lg:px-8 h-11 flex items-center justify-center">
+          <div className="container mx-auto px-2 lg:px-4 h-9 flex items-center">
             <MegaMenu />
           </div>
         </div>
+
+
 
       </header>
 
