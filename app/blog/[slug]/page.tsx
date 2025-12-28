@@ -11,7 +11,6 @@ import { GJsonLd } from '@/components/blog/GJsonLd';
 import { GAuthorBio } from '@/components/blog/GAuthorBio';
 import { GImage } from "@/ui/gimage";
 import { MDXComponents } from "@/components/blog/mdx-components";
-import { GTrendingTools } from "@/components/blog/GTrendingTools";
 
 // MDX Plugins
 import remarkGfm from 'remark-gfm';
@@ -311,16 +310,6 @@ export default async function BlogPost({
                                     />
                                 </GBlogContentLayout>
                             </div>
-
-                            {/* Sticky Trending Tools Sidebar (Right) */}
-                            <aside className="hidden xl:block w-[260px] shrink-0 pt-8">
-                                <div className="sticky top-32">
-                                    <GTrendingTools
-                                        seed={slug}
-                                        count={10}
-                                    />
-                                </div>
-                            </aside>
 
                         </div>
                     </div>
