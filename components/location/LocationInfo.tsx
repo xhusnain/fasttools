@@ -32,6 +32,9 @@ interface WeatherData {
     hourly: { time: Date; temperature: number }[]
 }
 
+// Fixed height to prevent CLS
+const CONTAINER_MIN_HEIGHT = "min-h-[450px]"
+
 export function LocationInfo() {
     const [data, setData] = useState<GeolocationData | null>(null)
     const [weather, setWeather] = useState<WeatherData | null>(null)
@@ -62,41 +65,51 @@ export function LocationInfo() {
                 const locationResult = await locationResponse.json()
                 setData(locationResult)
 
-                // 2. Fetch Weather using location coordinates
+                // 2. Fetch Weather using location coordinates (non-blocking)
                 if (locationResult.latitude && locationResult.longitude) {
-                    try {
-                        const params = {
-                            latitude: locationResult.latitude,
-                            longitude: locationResult.longitude,
-                            hourly: "temperature_2m",
+                    // Use requestIdleCallback for weather to not block main thread
+                    const fetchWeather = async () => {
+                        try {
+                            const params = {
+                                latitude: locationResult.latitude,
+                                longitude: locationResult.longitude,
+                                hourly: "temperature_2m",
+                            }
+                            const url = "https://api.open-meteo.com/v1/forecast"
+                            const responses = await fetchWeatherApi(url, params)
+                            const response = responses[0]
+
+                            const utcOffsetSeconds = response.utcOffsetSeconds()
+                            const hourly = response.hourly()!
+                            const hourlyTemps = hourly.variables(0)!.valuesArray()!
+
+                            // Find the index for the current time
+                            const now = Date.now() / 1000 // current time in seconds
+                            const startTime = Number(hourly.time())
+                            const interval = hourly.interval()
+                            const timeIndex = Math.round((now - startTime) / interval)
+
+                            // Ensure index is within bounds
+                            const safeIndex = Math.max(0, Math.min(timeIndex, hourlyTemps.length - 1))
+                            const currentTemp = hourlyTemps[safeIndex]
+
+                            setWeather({
+                                currentTemp,
+                                elevation: response.elevation(),
+                                utcOffsetSeconds,
+                                hourly: [] // Not displaying hourly graph
+                            })
+                        } catch (weatherErr) {
+                            console.error("Failed to fetch weather", weatherErr)
+                            // Don't fail the whole component if weather fails
                         }
-                        const url = "https://api.open-meteo.com/v1/forecast"
-                        const responses = await fetchWeatherApi(url, params)
-                        const response = responses[0]
+                    }
 
-                        const utcOffsetSeconds = response.utcOffsetSeconds()
-                        const hourly = response.hourly()!
-                        const hourlyTemps = hourly.variables(0)!.valuesArray()!
-
-                        // Find the index for the current time
-                        const now = Date.now() / 1000 // current time in seconds
-                        const startTime = Number(hourly.time())
-                        const interval = hourly.interval()
-                        const timeIndex = Math.round((now - startTime) / interval)
-
-                        // Ensure index is within bounds
-                        const safeIndex = Math.max(0, Math.min(timeIndex, hourlyTemps.length - 1))
-                        const currentTemp = hourlyTemps[safeIndex]
-
-                        setWeather({
-                            currentTemp,
-                            elevation: response.elevation(),
-                            utcOffsetSeconds,
-                            hourly: [] // Not displaying hourly graph
-                        })
-                    } catch (weatherErr) {
-                        console.error("Failed to fetch weather", weatherErr)
-                        // Don't fail the whole component if weather fails, just don't show it
+                    // Defer weather fetch to idle time
+                    if ('requestIdleCallback' in window) {
+                        (window as any).requestIdleCallback(fetchWeather, { timeout: 3000 })
+                    } else {
+                        setTimeout(fetchWeather, 100)
                     }
                 }
 
@@ -108,18 +121,27 @@ export function LocationInfo() {
             }
         }
 
-        // Performance optimization: Execute after page load
+        // Performance optimization: Use requestIdleCallback to defer entirely
+        const startFetch = () => {
+            if ('requestIdleCallback' in window) {
+                (window as any).requestIdleCallback(fetchData, { timeout: 2000 })
+            } else {
+                setTimeout(fetchData, 100)
+            }
+        }
+
+        // Execute after page is interactive
         if (document.readyState === "complete") {
-            fetchData()
+            startFetch()
         } else {
-            window.addEventListener("load", fetchData)
-            return () => window.removeEventListener("load", fetchData)
+            window.addEventListener("load", startFetch)
+            return () => window.removeEventListener("load", startFetch)
         }
     }, [])
 
     if (loading) {
         return (
-            <div className="flex flex-col items-center justify-center p-12 min-h-[400px]">
+            <div className={`flex flex-col items-center justify-center p-12 ${CONTAINER_MIN_HEIGHT}`}>
                 <GLoader size="lg" />
                 <p className="text-muted-foreground animate-pulse mt-4">Locating...</p>
             </div>
@@ -128,8 +150,8 @@ export function LocationInfo() {
 
     if (error || !data) {
         return (
-            <GCard className="w-full max-w-md mx-auto border-destructive/50 bg-destructive/5">
-                <GCardContent className="flex flex-col items-center justify-center p-6 text-center">
+            <GCard className={`w-full max-w-md mx-auto border-destructive/50 bg-destructive/5 ${CONTAINER_MIN_HEIGHT}`}>
+                <GCardContent className="flex flex-col items-center justify-center p-6 text-center h-full">
                     <MapPin className="h-12 w-12 text-destructive mb-4" />
                     <h3 className="text-lg font-semibold text-destructive mb-2">Location Unavailable</h3>
                     <p className="text-muted-foreground">{error || "Could not detect location"}</p>
@@ -139,7 +161,7 @@ export function LocationInfo() {
     }
 
     return (
-        <div className="w-full max-w-xl mx-auto animate-in fade-in slide-in-from-bottom-4 duration-700">
+        <div className={`w-full max-w-xl mx-auto ${CONTAINER_MIN_HEIGHT}`}>
             <div className="sr-only">
                 <h3>Location Summary</h3>
                 <p>User is located in {data.capital}, {data.name}.</p>

@@ -5,7 +5,14 @@ import { GToolCard } from "@/ui/gtool-card"
 
 
 import { PremiumHeroBackground } from "@/components/common/premium-hero-background"
-import { LocationInfo } from "@/components/location/LocationInfo"
+// Lazy load LocationInfo to prevent blocking initial render and improve CLS
+const LocationInfo = dynamic(() => import("@/components/location/LocationInfo").then(mod => mod.LocationInfo), {
+  loading: () => (
+    <div className="min-h-[450px] flex items-center justify-center">
+      <div className="animate-pulse text-muted-foreground">Loading location...</div>
+    </div>
+  )
+})
 const HomeCategories = dynamic(() => import('@/components/common/home-categories').then(mod => ({ default: mod.HomeCategories })), {
   loading: () => <div className="py-24 text-center">Loading tools...</div>
 })
@@ -1113,7 +1120,7 @@ export default function Home() {
 
         <div className="container mx-auto max-w-7xl relative z-10 py-8 sm:py-12 lg:py-16 grid lg:grid-cols-2 gap-8 lg:gap-12 items-center">
           {/* Left Column - Location Info */}
-          <div className="w-full order-last lg:order-first">
+          <div className="w-full order-last lg:order-first min-h-[450px]">
             <LocationInfo />
           </div>
 
@@ -1151,8 +1158,8 @@ export default function Home() {
       </section>
 
       {/* Dictionary Search Section */}
-      <section className="relative z-10 -mt-20 pb-20">
-        <div className="container mx-auto max-w-7xl">
+      <section className="relative z-10 py-12 md:py-20 bg-background">
+        <div className="container mx-auto max-w-7xl px-4">
           <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center">
 
             {/* Left Column - Dictionary Tool */}
