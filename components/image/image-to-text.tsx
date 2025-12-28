@@ -80,7 +80,7 @@ export function ImageToText() {
                 className="flex flex-col items-center justify-center w-full h-64 border-2 border-dashed border-border rounded-lg cursor-pointer bg-muted/30 hover:bg-muted/50 transition-colors"
               >
                 {image ? (
-                  <img src={image || "/placeholder.svg"} alt="Uploaded" className="max-h-60 rounded-lg" />
+                  <img src={image} alt="Uploaded" className="max-h-60 rounded-lg" />
                 ) : (
                   <div className="flex flex-col items-center justify-center pt-5 pb-6">
                     <Upload className="w-10 h-10 mb-3 text-muted-foreground" />

@@ -184,7 +184,7 @@ export function ImageBackgroundRemover() {
                   {imageUrl ? (
                     <div className="w-full h-full flex items-center justify-center p-4 bg-white">
                       <img
-                        src={imageUrl || "/placeholder.svg"}
+                        src={imageUrl}
                         alt="Original"
                         className="max-w-full max-h-full object-contain"
                       />

@@ -229,7 +229,7 @@ export function YoutubeThumbnailDownloader() {
               <GCard key={index} className="p-3 sm:p-4 bg-card border border-border shadow-lg hover:shadow-xl transition-all duration-300">
                 <div className="space-y-3 sm:space-y-4">
                   <img
-                    src={thumbnail.url || "/placeholder.svg"}
+                    src={thumbnail.url}
                     alt={`${thumbnail.quality} thumbnail`}
                     className="w-full rounded-lg border border-border shadow-md"
                     loading="lazy"

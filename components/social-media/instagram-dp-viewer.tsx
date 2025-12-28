@@ -358,7 +358,7 @@ export function InstagramDpViewer() {
             <div className="flex flex-col items-center gap-4 sm:gap-6">
               <div className="relative">
                 <img
-                  src={profileData.profilePicUrl || "/placeholder.svg"}
+                  src={profileData.profilePicUrl}
                   alt={`${profileData.username} profile picture`}
                   className="w-32 h-32 sm:w-40 sm:h-40 rounded-full border-4 border-border shadow-lg object-cover cursor-pointer hover:scale-105 transition-transform duration-300"
                   onClick={async () => {
