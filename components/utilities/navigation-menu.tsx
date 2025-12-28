@@ -18,14 +18,15 @@ const NavigationMenu = React.forwardRef<
         {...props}
     >
         {children}
-        <NavigationMenuPrimitive.Viewport
-            className={cn(
-                "origin-top-center absolute top-full left-0 mt-1.5 h-[var(--radix-navigation-menu-viewport-height)] w-full overflow-hidden rounded-md border bg-popover text-popover-foreground shadow-lg data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:zoom-out-95 data-[state=open]:zoom-in-90 md:w-[var(--radix-navigation-menu-viewport-width)]"
-            )}
-        />
+        <div className="perspective-[2000px] absolute top-full left-0 flex w-full justify-center">
+            <NavigationMenuPrimitive.Viewport
+                className={cn(
+                    "relative mt-1.5 h-[var(--radix-navigation-menu-viewport-height)] w-full overflow-hidden rounded-md border bg-popover text-popover-foreground shadow-lg data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:zoom-out-95 data-[state=open]:zoom-in-90 md:w-[var(--radix-navigation-menu-viewport-width)]"
+                )}
+            />
+        </div>
     </NavigationMenuPrimitive.Root>
 ))
-
 NavigationMenu.displayName = NavigationMenuPrimitive.Root.displayName
 
 const NavigationMenuList = React.forwardRef<
