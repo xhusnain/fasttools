@@ -1,0 +1,143 @@
+---
+title: "Build a Color Palette Generator in React"
+description: "Don't just pick random colors. Learn to use HSL math to generate harmonious color schemes like Monochromatic and Complementary."
+category: "Developer Tools"
+author: "FastTools Team"
+date: "2024-12-29"
+order: 41
+tags: ["Design", "React", "Colors", "Algorithms"]
+---
+
+## Build a Color Palette Generator 🎨
+
+A random color generator is easy: `Math.random()`.
+But a **Harmonious** color generator requires **Color Theory**.
+To do this programmatically, we use the **HSL** color model (Hue, Saturation, Lightness).
+*   **Hue (0-360):** The color wheel position.
+*   **Saturation (0-100%):** Intensity.
+*   **Lightness (0-100%):** Brightness.
+
+By fixing Saturation/Lightness and only shifting Hue, we create perfect harmony.
+
+---
+
+### Step 1: The Math (Color Harmony) 🌈
+
+**1. Random Color:**
+`Hue = Random(0, 360)`
+
+**2. Complementary (Opposite):**
+`Color 1 = Hue`
+`Color 2 = Hue + 180`
+
+**3. Triadic (Triangle):**
+`Color 1 = Hue`
+`Color 2 = Hue + 120`
+`Color 3 = Hue + 240`
+
+**4. Monochromatic (Same Hue, Different Lightness):**
+`Color 1 = (H, S, 90%)`
+`Color 2 = (H, S, 50%)`
+`Color 3 = (H, S, 20%)`
+
+---
+
+### Step 2: HSL to Hex Conversion 🧮
+
+Browsers understand `hsl()`, but developers want HEX codes.
+You'll need a helper function.
+
+```javascript
+/* lib/color-utils.js */
+export function hslToHex(h, s, l) {
+  l /= 100;
+  const a = s * Math.min(l, 1 - l) / 100;
+  const f = n => {
+    const k = (n + h / 30) % 12;
+    const color = l - a * Math.max(Math.min(k - 3, 9 - k, 1), -1);
+    return Math.round(255 * color).toString(16).padStart(2, '0');
+  };
+  return `#${f(0)}${f(8)}${f(4)}`;
+}
+```
+
+---
+
+### Step 3: The React Component 🖌️
+
+Here is a generator that creates a **Monochromatic** palette (safest for UI design) by keeping the Hue constant and varying Lightness.
+
+```tsx
+"use client"
+
+import { useState } from "react"
+import { RefreshCw, Copy } from "lucide-react"
+
+// Simple HSL wrapper for display
+const hsl = (h: number, s: number, l: number) => `hsl(${h}, ${s}%, ${l}%)`
+
+export default function PaletteGen() {
+  const [hue, setHue] = useState(200)
+  const [palette, setPalette] = useState<string[]>([])
+
+  const generate = () => {
+     const newHue = Math.floor(Math.random() * 360)
+     setHue(newHue)
+     
+     // Generate 5 shades from Light to Dark
+     // Saturation fixed at 70% for vibrancy
+     const colors = [
+        hsl(newHue, 70, 95), // Background
+        hsl(newHue, 70, 85), // Surface
+        hsl(newHue, 70, 60), // Primary
+        hsl(newHue, 70, 40), // Hover
+        hsl(newHue, 70, 20), // Text
+     ]
+     setPalette(colors)
+  }
+
+  return (
+    <div className="max-w-xl mx-auto p-8">
+       <button 
+         onClick={generate}
+         className="w-full mb-8 py-4 bg-black text-white rounded-xl font-bold flex items-center justify-center gap-2 hover:scale-[1.02] transition"
+       >
+         <RefreshCw size={20} /> GENERATE PALETTE
+       </button>
+
+       {palette.length > 0 ? (
+         <div className="grid grid-cols-1 sm:grid-cols-5 h-64 rounded-2xl overflow-hidden shadow-2xl">
+            {palette.map((color, i) => (
+               <div 
+                 key={i} 
+                 className="h-full flex items-end justify-center pb-4 group cursor-pointer hover:flex-[1.5] transition-all duration-300"
+                 style={{ backgroundColor: color }}
+                 onClick={() => navigator.clipboard.writeText(color)}
+               >
+                  <div className="bg-white/90 px-2 py-1 rounded text-xs font-mono opacity-0 group-hover:opacity-100 transition-opacity flex items-center gap-1 shadow-sm">
+                     {color} <Copy size={10} />
+                  </div>
+               </div>
+            ))}
+         </div>
+       ) : (
+         <div className="text-center text-slate-400 py-12 border-2 border-dashed rounded-xl">
+            Click Generate to start
+         </div>
+       )}
+       
+       <div className="mt-8 text-center text-sm text-slate-500">
+          <strong>Algorithm:</strong> Monochromatic Harmony (Hue {hue}°)
+       </div>
+    </div>
+  )
+}
+```
+
+### Step 4: Pro Tip (Accessibility) 👁️
+
+Random colors can look bad or be unreadable.
+**Constraint-Based Generation** is key:
+*   Never let Lightness match Background Lightness (contrast issues).
+*   Avoid fully saturated colors (eye strain).
+*   Use established formulas (like Material Design's tonal steps) rather than pure random noise.

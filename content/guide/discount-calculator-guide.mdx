@@ -1,0 +1,144 @@
+---
+title: "Build a Discount & Tax Calculator in React"
+description: "Handle stacked discounts (e.g., 'Extra 20% off sale price') and tax inclusions with proper financial math."
+category: "Finance Tools"
+author: "FastTools Team"
+date: "2024-12-29"
+order: 54
+tags: ["Finance", "React", "Shopping", "Math"]
+---
+
+## Build a Discount Calculator 🏷️
+
+Calculating "25% off" is easy.
+But what about "Extra 10% off the sale price"?
+Does 25% + 10% equal 35% off? **No.**
+It equals **32.5% off**.
+This guide explains **Sequential Discounting** and **Reverse Tax** calculations.
+
+---
+
+### Step 1: Sequential Discounting 📉
+
+When stacking discounts, you apply the second discount to the *new* price, not the original.
+
+**Example: $100 Item**
+1.  **First Discount (25% off):**
+    *   $100 - $25 = **$75**
+2.  **Second Discount (10% off):**
+    *   10% of $75 is **$7.50** (Not $10)
+    *   $75 - $7.50 = **$67.50**
+3.  **Total Savings:**
+    *   $25 + $7.50 = **$32.50** (32.5%)
+
+**The Logic:**
+`Price = Price * (1 - Discount1) * (1 - Discount2)...`
+
+---
+
+### Step 2: Tax Inclusive vs. Exclusive 💸
+
+*   **Exclusive (Standard US):** `Price + (Price * TaxRate)`
+*   **Inclusive (VAT/GST):** `Price` already contains tax. To find the pre-tax price:
+    `PreTax = Price / (1 + TaxRate)`
+
+**Example (10% Tax, $110 Total):**
+*   Math: `110 / 1.10 = 100` (Pre-Tax Price)
+*   Tax: $10
+
+---
+
+### Step 3: The React Component 🛒
+
+A calculator that supports multiple stacked discounts and tax handling.
+
+```tsx
+"use client"
+
+import { useState } from "react"
+import { Tag, Plus, Trash2 } from "lucide-react"
+
+export default function DiscountCalc() {
+  const [price, setPrice] = useState("")
+  const [discounts, setDiscounts] = useState<number[]>([])
+
+  const addDiscount = () => setDiscounts([...discounts, 10]);
+  const removeDiscount = (idx: number) => setDiscounts(discounts.filter((_, i) => i !== idx));
+  const updateDiscount = (idx: number, val: number) => {
+     const newD = [...discounts];
+     newD[idx] = val;
+     setDiscounts(newD);
+  }
+
+  const calculate = () => {
+    let current = Number(price);
+    let totalSaved = 0;
+
+    discounts.forEach(d => {
+       const saved = current * (d / 100);
+       totalSaved += saved;
+       current -= saved;
+    });
+
+    return { final: current, saved: totalSaved };
+  }
+
+  const { final, saved } = calculate();
+
+  return (
+    <div className="max-w-md mx-auto p-6 bg-white rounded-xl shadow-lg border border-orange-100">
+       <div className="flex items-center gap-2 mb-6 text-orange-600 font-bold text-xl">
+          <Tag /> Smart Discounts
+       </div>
+
+       <div className="mb-6">
+          <label className="text-xs font-bold text-slate-400 uppercase">Original Price ($)</label>
+          <input 
+            type="number"
+            value={price}
+            onChange={e => setPrice(e.target.value)}
+            className="w-full text-3xl font-bold text-slate-800 outline-none border-b-2 border-slate-200 focus:border-orange-500 py-2"
+            placeholder="0.00"
+          />
+       </div>
+
+       <div className="space-y-3 mb-6">
+          {discounts.map((d, i) => (
+             <div key={i} className="flex gap-2 items-center animate-in slide-in-from-left-2">
+                <span className="text-sm font-bold text-slate-500">#{i+1}</span>
+                <div className="relative flex-1">
+                   <input 
+                     type="number" 
+                     value={d} 
+                     onChange={e => updateDiscount(i, Number(e.target.value))}
+                     className="w-full p-2 bg-slate-50 rounded-lg border border-slate-200 font-bold text-slate-700 pr-8"
+                   />
+                   <span className="absolute right-3 top-2.5 text-slate-400 font-bold">%</span>
+                </div>
+                <button onClick={() => removeDiscount(i)} className="text-red-400 hover:bg-red-50 p-2 rounded">
+                   <Trash2 size={18} />
+                </button>
+             </div>
+          ))}
+          <button 
+            onClick={addDiscount}
+            className="text-xs font-bold text-orange-600 flex items-center gap-1 hover:bg-orange-50 p-2 rounded"
+          >
+             <Plus size={14} /> ADD DISCOUNT
+          </button>
+       </div>
+
+       <div className="bg-orange-50 rounded-xl p-4 space-y-2">
+          <div className="flex justify-between text-sm">
+             <span className="text-orange-800">Total Savings</span>
+             <span className="font-bold text-orange-600">-${saved.toFixed(2)}</span>
+          </div>
+          <div className="flex justify-between text-xl font-black text-slate-800 pt-2 border-t border-orange-200">
+             <span>Final Price</span>
+             <span>${final.toFixed(2)}</span>
+          </div>
+       </div>
+    </div>
+  )
+}
+```

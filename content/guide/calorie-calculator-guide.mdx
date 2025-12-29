@@ -1,0 +1,192 @@
+---
+title: "Build a Calorie Calculator in React"
+description: "Understand the Mifflin-St Jeor equation. Learn how BMR and TDEE are calculated to help users track fitness goals."
+category: "Developer Tools"
+author: "FastTools Team"
+date: "2024-12-29"
+order: 44
+tags: ["Health", "React", "Math", "Fitness"]
+---
+
+## Build a Calorie Calculator (BMR & TDEE) ⚡
+
+To lose weight, you need a **Calorie Deficit**.
+To gain muscle, you need a **Calorie Surplus**.
+But where do you start?
+You calculate your **BMR** (Energy burned at rest) and multiply it by your **Activity Level**.
+
+---
+
+### Step 1: The Math (Mifflin-St Jeor) 📐
+
+There are many formulas (Harris-Benedict, Katch-McArdle).
+**Mifflin-St Jeor** is currently considered the most accurate for the general population.
+
+**1. Calculate BMR (Basal Metabolic Rate):**
+*   **Men:** `(10 × weight_kg) + (6.25 × height_cm) - (5 × age) + 5`
+*   **Women:** `(10 × weight_kg) + (6.25 × height_cm) - (5 × age) - 161`
+
+**2. Calculate TDEE (Total Daily Energy Expenditure):**
+`TDEE = BMR × Activity Multiplier`
+
+**Multipliers:**
+*   Sedentary: 1.2
+*   Light Active: 1.375
+*   Moderate Active: 1.55
+*   Very Active: 1.725
+*   Extra Active: 1.9
+
+---
+
+### Step 2: The React Logic 🧠
+
+We need standardizing inputs (kg/cm) and a simple lookup for multipliers.
+
+```typescript
+/* lib/calorie-calc.ts */
+export const calculateTDEE = (
+  gender: 'male' | 'female',
+  age: number,
+  weight: number, // kg
+  height: number, // cm
+  activity: number // 1.2 to 1.9
+) => {
+  let bmr;
+  
+  if (gender === 'male') {
+    bmr = (10 * weight) + (6.25 * height) - (5 * age) + 5;
+  } else {
+    bmr = (10 * weight) + (6.25 * height) - (5 * age) - 161;
+  }
+  
+  return Math.round(bmr * activity);
+}
+```
+
+---
+
+### Step 3: The React Component 🥗
+
+This component guides the user through the 3-step process.
+
+```tsx
+"use client"
+
+import { useState } from "react"
+import { Flame, Activity } from "lucide-react"
+
+export default function CalorieCalc() {
+  const [inputs, setInputs] = useState({
+     gender: 'male',
+     age: 25,
+     weight: 70,
+     height: 175,
+     activity: 1.55
+  })
+  
+  const [tdee, setTdee] = useState<number | null>(null)
+
+  const calculate = () => {
+     // Implementation of Step 1 Logic
+     // const bmr = ...
+     // setTdee(bmr * inputs.activity)
+  }
+
+  return (
+    <div className="max-w-lg mx-auto p-6 bg-white rounded-xl shadow-lg border border-orange-100">
+       <div className="flex items-center gap-2 mb-6 text-orange-600 font-bold text-xl">
+          <Flame /> Daily Calorie Target
+       </div>
+
+       <div className="grid grid-cols-2 gap-4 mb-4">
+          <label className="block p-4 border rounded-xl cursor-pointer hover:bg-orange-50 has-[:checked]:border-orange-500 has-[:checked]:bg-orange-50 transition">
+             <input 
+               type="radio" name="gender" 
+               checked={inputs.gender === 'male'}
+               onChange={() => setInputs({...inputs, gender: 'male'})}
+               className="hidden"
+             />
+             <span className="font-bold flex items-center justify-center">Male</span>
+          </label>
+          <label className="block p-4 border rounded-xl cursor-pointer hover:bg-orange-50 has-[:checked]:border-orange-500 has-[:checked]:bg-orange-50 transition">
+             <input 
+               type="radio" name="gender" 
+               checked={inputs.gender === 'female'}
+               onChange={() => setInputs({...inputs, gender: 'female'})}
+               className="hidden"
+             />
+             <span className="font-bold flex items-center justify-center">Female</span>
+          </label>
+       </div>
+
+       {/* Simple Inputs Reuse */}
+       <div className="space-y-4">
+          <div className="grid grid-cols-3 gap-2">
+             <Input label="Age" val={inputs.age} />
+             <Input label="Weight (kg)" val={inputs.weight} />
+             <Input label="Height (cm)" val={inputs.height} />
+          </div>
+
+          <div>
+             <label className="text-xs font-bold text-slate-500 uppercase">Activity Level</label>
+             <select 
+               className="w-full p-3 rounded-lg border bg-white"
+               value={inputs.activity}
+               onChange={e => setInputs({...inputs, activity: Number(e.target.value)})}
+             >
+                <option value={1.2}>Sedentary (Office Job)</option>
+                <option value={1.375}>Light Exercise (1-2 days)</option>
+                <option value={1.55}>Moderate (3-5 days)</option>
+                <option value={1.725}>Heavy (6-7 days)</option>
+                <option value={1.9}>Athlete (2x per day)</option>
+             </select>
+          </div>
+
+          <button onClick={calculate} className="w-full bg-orange-500 text-white font-bold py-4 rounded-xl hover:bg-orange-600 shadow-lg shadow-orange-200">
+             CALCULATE CALORIES
+          </button>
+       </div>
+
+       {tdee && (
+         <div className="mt-8 border-t pt-6">
+            <div className="flex justify-between items-center mb-2">
+               <span className="text-sm font-medium text-slate-500">Maintenance Calories</span>
+               <span className="text-2xl font-black text-slate-800">{tdee}</span>
+            </div>
+            
+            <div className="grid grid-cols-2 gap-4 mt-4">
+               <div className="p-4 bg-green-50 rounded-xl border border-green-100">
+                  <div className="text-xs text-green-600 font-bold uppercase">Weight Loss</div>
+                  <div className="text-xl font-bold text-green-800">{tdee - 500}</div>
+                  <div className="text-[10px] text-green-600">-1lb / week</div>
+               </div>
+               <div className="p-4 bg-blue-50 rounded-xl border border-blue-100">
+                  <div className="text-xs text-blue-600 font-bold uppercase">Weight Gain</div>
+                  <div className="text-xl font-bold text-blue-800">{tdee + 500}</div>
+                  <div className="text-[10px] text-blue-600">+1lb / week</div>
+               </div>
+            </div>
+         </div>
+       )}
+    </div>
+  )
+}
+
+function Input({ label, val }) {
+  return (
+    <div>
+       <label className="text-xs font-bold text-slate-500 uppercase">{label}</label>
+       <input type="number" defaultValue={val} className="w-full p-2 border rounded-lg" />
+    </div>
+  )
+}
+```
+
+### Step 4: Weight Management Targets 🎯
+
+Once you have TDEE (Maintenance), the math for goals is simple thermodynamics (roughly).
+*   **Lose 1lb/week:** TDEE - 500 calories
+*   **Lose 2lb/week:** TDEE - 1000 calories (Aggressive)
+*   **Gain 1lb/week:** TDEE + 500 calories
+
+**Note:** Always recommend staying above 1200 calories (women) or 1500 (men) unless supervised by a doctor.

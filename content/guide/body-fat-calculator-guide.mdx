@@ -1,0 +1,168 @@
+---
+title: "Build a Body Fat Calculator in React"
+description: "Calculate body composition using the U.S. Navy Method. Learn the math behind circumference-based body fat estimation."
+category: "Developer Tools"
+author: "FastTools Team"
+date: "2024-12-29"
+order: 43
+tags: ["Health", "React", "Math", "Navy Method"]
+---
+
+## Build a Body Fat Calculator ⚖️
+
+Measuring body fat accurately usually mandates a DEXA scan.
+However, the **U.S. Navy Method** provides a very close estimate using just a tape measure.
+It compares body circumferences (Waist, Neck, Hip) against Height.
+
+---
+
+### Step 1: The Math (U.S. Navy Method) 📐
+
+The formula relies on **logarithms** (`Math.log10`).
+It differs significantly for men and women because women store fat differently (hips/thighs).
+
+**Measurements (in cm):**
+*   `H` = Height
+*   `N` = Neck
+*   `W` = Waist
+*   `Hip` = Hip (Women only)
+
+**1. Men:**
+`495 / (1.0324 - 0.19077 * log10(W - N) + 0.15456 * log10(H)) - 450`
+
+**2. Women:**
+`495 / (1.29579 - 0.35004 * log10(W + Hip - N) + 0.22100 * log10(H)) - 450`
+
+---
+
+### Step 2: The React Logic 🧠
+
+We need a gender toggle because it completely changes the inputs (Men don't need Hip size) and the math.
+
+```typescript
+/* lib/body-fat.ts */
+export const calculateBF = (
+  gender: 'male' | 'female',
+  waist: number,
+  neck: number,
+  height: number,
+  hip: number = 0
+) => {
+  // Common error: Waist must be larger than Neck logic
+  // The formula implies (Waist - Neck) > 0
+  
+  if(gender === 'male') {
+    return 495 / (1.0324 - 0.19077 * Math.log10(waist - neck) + 0.15456 * Math.log10(height)) - 450;
+  } else {
+    // Women use Waist + Hip - Neck
+    return 495 / (1.29579 - 0.35004 * Math.log10(waist + hip - neck) + 0.22100 * Math.log10(height)) - 450;
+  }
+}
+```
+
+---
+
+### Step 3: The React Component 🏃
+
+Here is a clean implementation. Note the conditional rendering logic for the "Hip" input.
+
+```tsx
+"use client"
+
+import { useState } from "react"
+import { Activity, Ruler } from "lucide-react"
+
+export default function BodyFatCalc() {
+  const [gender, setGender] = useState<'male' | 'female'>('male')
+  const [Result, setResult] = useState<number | null>(null)
+  
+  // State for inputs (cm)
+  const [height, setHeight] = useState("")
+  const [neck, setNeck] = useState("")
+  const [waist, setWaist] = useState("")
+  const [hip, setHip] = useState("")
+
+  const calculate = () => {
+     // Parse inputs (omitted for brevity)
+     // Use Formula from Step 1
+     // setResult(percentage)
+  }
+
+  return (
+    <div className="max-w-md mx-auto p-6 bg-white rounded-xl shadow-lg border border-slate-100">
+       <div className="flex gap-4 mb-6">
+          <button 
+            onClick={() => setGender('male')}
+            className={`flex-1 py-3 rounded-lg font-bold transition ${gender === 'male' ? 'bg-blue-600 text-white' : 'bg-slate-100 text-slate-500'}`}
+          >
+             Male
+          </button>
+          <button 
+             onClick={() => setGender('female')}
+             className={`flex-1 py-3 rounded-lg font-bold transition ${gender === 'female' ? 'bg-pink-600 text-white' : 'bg-slate-100 text-slate-500'}`}
+          >
+             Female
+          </button>
+       </div>
+
+       <div className="space-y-4">
+          <Input label="Height (cm)" value={height} onChange={setHeight} icon={Ruler} />
+          <Input label="Neck (cm)" value={neck} onChange={setNeck} icon={Ruler} />
+          <Input label="Waist (cm)" value={waist} onChange={setWaist} icon={Ruler} />
+          
+          {gender === 'female' && (
+             <Input label="Hip (cm)" value={hip} onChange={setHip} icon={Ruler} />
+          )}
+
+          <button 
+            onClick={calculate} // Add actual calc function
+            className="w-full mt-4 bg-slate-900 text-white py-4 rounded-xl font-bold hover:bg-slate-800 transition"
+          >
+             CALCULATE BODY FAT %
+          </button>
+       </div>
+
+       {Result && (
+         <div className="mt-8 text-center p-6 bg-slate-50 rounded-xl">
+            <div className="text-xs text-slate-400 uppercase font-bold">Estimated Body Fat</div>
+            <div className="text-4xl font-black text-slate-800 my-2">{Result.toFixed(1)}%</div>
+            <div className="text-sm font-medium text-blue-600">
+               {Result < 14 ? 'Athlete' : Result < 24 ? 'Fitness' : 'Average'}
+            </div>
+         </div>
+       )}
+    </div>
+  )
+}
+
+// Simple internal Input component
+function Input({ label, value, onChange, icon: Icon }) {
+   return (
+     <div>
+        <label className="text-xs font-bold text-slate-500 uppercase mb-1 block">{label}</label>
+        <div className="relative">
+           <Icon className="absolute left-3 top-3 text-slate-400" size={16} />
+           <input 
+             type="number" 
+             value={value} 
+             onChange={e => onChange(e.target.value)}
+             className="w-full p-2 pl-9 rounded-lg border border-slate-200 focus:ring-2 focus:ring-blue-500 outline-none"
+           />
+        </div>
+     </div>
+   )
+}
+```
+
+### Step 4: Health Context 🏥
+
+A number alone is meaningless.
+You must provide context.
+**General Categories (Men):**
+*   **Essential:** 2-5%
+*   **Athletes:** 6-13%
+*   **Fitness:** 14-17%
+*   **Average:** 18-24%
+*   **Obese:** 25%+
+
+For women, add roughly **+8%** to each category (Essential starts at 10-13%).

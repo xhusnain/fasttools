@@ -1,0 +1,158 @@
+---
+title: "Build a Pregnancy Calculator in React"
+description: "Understand the math behind Due Dates (Naegele's Rule). Build a tool that tracks Trimesters and Gestational Age in weeks."
+category: "Developer Tools"
+author: "FastTools Team"
+date: "2024-12-29"
+order: 39
+tags: ["Health", "React", "Dates", "Calculator"]
+---
+
+## Build a Pregnancy Calculator 👶
+
+How do doctors calculate a "Due Date"?
+They use **Naegele's Rule**.
+Even though gestation is ~38 weeks from conception, it is hard to know the exact conception date.
+So, medical standard uses **40 weeks (280 days)** from the **First Day of Last Menstrual Period (LMP)**.
+
+---
+
+### Step 1: The Math (Dates) 📅
+
+**1. Calculate Due Date:**
+`Due Date = LMP Date + 280 Days`
+
+**2. Calculate "Current Week" (Gestational Age):**
+`Age (ms) = Today - LMP Date`
+`Weeks = Math.floor(Age / (1000 * 60 * 60 * 24 * 7))`
+
+**3. Determine Trimester:**
+*   **1st:** Weeks 0 - 13
+*   **2nd:** Weeks 14 - 27
+*   **3rd:** Weeks 28 - 40+
+
+---
+
+### Step 2: The React Logic 🧠
+
+We need to manipulate dates. JavaScript's native `Date` object is clunky.
+For a production app, use `date-fns`.
+For this educational guide, we will use native JS to show how the math works raw.
+
+```javascript
+/* lib/pregnancy-utils.js */
+const MS_PER_DAY = 24 * 60 * 60 * 1000;
+
+export const calculatePregnancy = (lmpString) => {
+  const lmp = new Date(lmpString);
+  const today = new Date();
+  
+  // Naegele's Rule: Add 280 days
+  const dueDate = new Date(lmp.getTime() + (280 * MS_PER_DAY));
+  
+  // Current Progress
+  const diffTime = Math.abs(today - lmp);
+  const totalDays = Math.ceil(diffTime / MS_PER_DAY);
+  const weeks = Math.floor(totalDays / 7);
+  const days = totalDays % 7;
+  
+  let trimester = "First";
+  if(weeks > 13) trimester = "Second";
+  if(weeks > 27) trimester = "Third";
+
+  return { dueDate, weeks, days, trimester };
+}
+```
+
+---
+
+### Step 3: The React Component 🤰
+
+Here is a soothing, user-friendly interface.
+
+```tsx
+"use client"
+
+import { useState } from "react"
+import { Calendar, Heart, Baby } from "lucide-react"
+
+export default function PregnancyCalc() {
+  const [lmp, setLmp] = useState("")
+  const [result, setResult] = useState<any>(null)
+
+  const calculate = () => {
+    if(!lmp) return;
+    const lmpDate = new Date(lmp)
+    const due = new Date(lmpDate.getTime() + (280 * 24 * 60 * 60 * 1000))
+    
+    // Calculate weeks gone
+    const now = new Date()
+    const diff = now.getTime() - lmpDate.getTime()
+    const weeks = Math.floor(diff / (1000 * 60 * 60 * 24 * 7))
+    
+    setResult({
+       date: due.toDateString(),
+       weeks: weeks,
+       timeLeft: 40 - weeks
+    })
+  }
+
+  return (
+    <div className="max-w-md mx-auto p-8 bg-pink-50 rounded-3xl shadow-xl border-4 border-white">
+       <div className="text-center mb-8">
+          <Heart className="mx-auto text-pink-400 mb-2 fill-current" size={40} />
+          <h2 className="text-2xl font-bold text-slate-700">Due Date Calculator</h2>
+          <p className="text-slate-400 text-sm">Based on Naegele's Rule</p>
+       </div>
+
+       <div className="space-y-4">
+          <div>
+             <label className="text-xs font-bold text-pink-400 uppercase ml-1">First Day of Last Period</label>
+             <input 
+               type="date"
+               value={lmp} onChange={e => setLmp(e.target.value)}
+               className="w-full p-4 rounded-xl border-2 border-pink-100 focus:border-pink-300 outline-none text-slate-700 font-medium"
+             />
+          </div>
+
+          <button 
+            onClick={calculate}
+            className="w-full bg-pink-400 hover:bg-pink-500 text-white font-bold py-4 rounded-xl shadow-lg shadow-pink-200 transition transform active:scale-95"
+          >
+            CALCULATE MY DATE
+          </button>
+       </div>
+
+       {result && (
+         <div className="mt-8 bg-white p-6 rounded-2xl shadow-sm border border-pink-100 animate-in slide-in-from-bottom-4">
+            <div className="text-center">
+               <div className="text-xs text-slate-400 uppercase font-bold mb-1">Estimated Due Date</div>
+               <div className="text-3xl font-black text-slate-700 mb-4">{result.date}</div>
+               
+               <div className="grid grid-cols-2 gap-4">
+                  <div className="p-3 bg-pink-50 rounded-xl">
+                     <Baby className="mx-auto text-pink-400 mb-1" />
+                     <div className="text-xl font-bold text-slate-700">{result.weeks}</div>
+                     <div className="text-[10px] text-slate-400 uppercase">Weeks Along</div>
+                  </div>
+                  <div className="p-3 bg-blue-50 rounded-xl">
+                     <Calendar className="mx-auto text-blue-400 mb-1" />
+                     <div className="text-xl font-bold text-slate-700">{result.timeLeft}</div>
+                     <div className="text-[10px] text-slate-400 uppercase">Weeks Left</div>
+                  </div>
+               </div>
+            </div>
+         </div>
+       )}
+    </div>
+  )
+}
+```
+
+### Step 4: Medical Disclaimer ⚠️
+
+If you are building health tools, you **MUST** include a disclaimer.
+Calculators are estimates. Actual due dates vary by +/- 2 weeks.
+
+**Add this to your UI:**
+> *"This tool provides an estimate only. Please consult your healthcare provider for accurate medical advice."*

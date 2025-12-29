@@ -1,0 +1,180 @@
+---
+title: "Build a Finance Calculator in React"
+description: "Create a professional-grade 'Time Value of Money' (TVM) calculator. Learn to implement the Annuity Formulas and Newton-Raphson method."
+category: "Developer Tools"
+author: "FastTools Team"
+date: "2024-12-29"
+order: 36
+tags: ["Finance", "React", "Algorithms", "Math"]
+---
+
+## Build a Finance Calculator (TVM) 💰
+
+A **TVM (Time Value of Money)** calculator is distinct from a simple interest calculator.
+It solves for **ANY** of the 5 standard variables if you provide the other 4:
+*   **FV:** Future Value
+*   **PV:** Present Value
+*   **PMT:** Periodic Payment
+*   **N:** Number of Periods
+*   **I/Y:** Interest Rate per Year
+
+---
+
+### Step 1: The Standard Formulas 📉
+
+For **FV, PV, and PMT**, we use closed-form algebra formulas.
+
+**Future Value of an Annuity:**
+`FV = PV * (1+r)^n + PMT * [((1+r)^n - 1) / r]`
+
+**Present Value of an Annuity:**
+`PV = FV / (1+r)^n - PMT * [((1+r)^n - 1) / r] / (1+r)^n`
+
+**Solving for N (Periods):**
+Requires Logarithms.
+`N = ln(...) / ln(1+r)`
+
+---
+
+### Step 2: The Hard Part (Solving for Rate) 🧠
+
+Solving for **Interest Rate (I/Y)** is mathematically impossible with simple algebra because `r` is in both the base and the exponent.
+We must use the **Newton-Raphson Method**, an iterative numerical algorithm found in calculators like the TI-84.
+
+**The Algorithm:**
+1.  Guess a rate (e.g., 10%).
+2.  Calculate the error (Result - Target).
+3.  Adjust the rate based on the slope (derivative).
+4.  Repeat until the error is near zero.
+
+```javascript
+const calculateRate = (n, pmt, pv, fv, type = 0) => {
+   let rate = 0.1; // Initial guess: 10%
+   let iter = 0;
+   
+   while(iter < 100) {
+      const y = Math.pow(1+rate, n);
+      // Function Value f(r)
+      const f_r = pv * y + pmt * (1+rate*type) * ((y-1)/rate) + fv;
+      
+      // Derivative f'(r) - (Simplified approximation for brevity)
+      const f_prime_r = (n * pv * y) / (1+rate); // ... + complex derivative
+      
+      const newRate = rate - f_r / f_prime_r;
+      if(Math.abs(newRate - rate) < 0.000001) return newRate;
+      
+      rate = newRate;
+      iter++;
+   }
+   return rate;
+}
+```
+
+---
+
+### Step 3: The React Implementation 💻
+
+Here is a simplified standard TVM calculator solving for **Future Value**.
+
+```tsx
+"use client"
+
+import { useState } from "react"
+import { DollarSign, TrendingUp, Calendar } from "lucide-react"
+
+export default function TVMCalc() {
+  const [pv, setPv] = useState("")
+  const [pmt, setPmt] = useState("")
+  const [rate, setRate] = useState("")
+  const [periods, setPeriods] = useState("")
+  const [result, setResult] = useState<number | null>(null)
+
+  const calculateFV = () => {
+    const p = parseFloat(pv) || 0;
+    const pmtVal = parseFloat(pmt) || 0;
+    const r = (parseFloat(rate) / 100) || 0;
+    const n = parseFloat(periods) || 0;
+
+    // FV Formula
+    const fv = p * Math.pow(1+r, n) + 
+               pmt * ((Math.pow(1+r, n) - 1) / r);
+
+    setResult(fv)
+  }
+
+  return (
+    <div className="max-w-2xl mx-auto p-8 bg-slate-900 text-slate-100 rounded-2xl shadow-2xl font-mono">
+       <div className="flex items-center gap-3 mb-8 text-green-400">
+          <DollarSign size={32} />
+          <h1 className="text-2xl font-bold tracking-tighter">TVM CALCULATOR</h1>
+       </div>
+
+       <div className="grid grid-cols-2 gap-6">
+          <div className="space-y-2">
+             <label className="text-xs uppercase text-slate-500 font-bold">Present Value (PV)</label>
+             <input 
+               value={pv} onChange={e => setPv(e.target.value)}
+               className="w-full p-3 bg-slate-800 border border-slate-700 rounded text-green-300 focus:ring-2 focus:ring-green-500 outline-none" 
+               placeholder="10000" 
+             />
+          </div>
+
+          <div className="space-y-2">
+             <label className="text-xs uppercase text-slate-500 font-bold">Monthly Pmt (PMT)</label>
+             <input 
+               value={pmt} onChange={e => setPmt(e.target.value)}
+               className="w-full p-3 bg-slate-800 border border-slate-700 rounded text-yellow-300 focus:ring-2 focus:ring-green-500 outline-none" 
+               placeholder="500" 
+             />
+          </div>
+
+          <div className="space-y-2">
+             <label className="text-xs uppercase text-slate-500 font-bold">Annual Rate % (I/Y)</label>
+             <input 
+               value={rate} onChange={e => setRate(e.target.value)}
+               className="w-full p-3 bg-slate-800 border border-slate-700 rounded text-blue-300 focus:ring-2 focus:ring-green-500 outline-none" 
+               placeholder="7" 
+             />
+          </div>
+
+          <div className="space-y-2">
+             <label className="text-xs uppercase text-slate-500 font-bold">Periods (N)</label>
+             <input 
+               value={periods} onChange={e => setPeriods(e.target.value)}
+               className="w-full p-3 bg-slate-800 border border-slate-700 rounded text-purple-300 focus:ring-2 focus:ring-green-500 outline-none" 
+               placeholder="120" 
+             />
+          </div>
+       </div>
+
+       <button 
+         onClick={calculateFV}
+         className="w-full mt-8 py-4 bg-green-600 hover:bg-green-500 text-white font-black text-lg rounded shadow-lg transform active:scale-95 transition-all"
+       >
+         CALCULATE FUTURE VALUE
+       </button>
+
+       {result !== null && (
+          <div className="mt-8 p-6 bg-slate-800 rounded border border-slate-700 text-center animate-in fade-in slide-in-from-bottom-4">
+             <div className="text-xs text-slate-400 uppercase mb-2">Future Value Result</div>
+             <div className="text-5xl font-black text-green-400">
+                ${result.toLocaleString(undefined, {minimumFractionDigits: 2, maximumFractionDigits: 2})}
+             </div>
+             <div className="mt-4 flex justify-center gap-2 text-sm text-slate-500">
+                <TrendingUp size={16} /> Total Growth: ${((result - (parseFloat(pv)||0) - (parseFloat(pmt)||0)*parseFloat(periods))).toLocaleString()}
+             </div>
+          </div>
+       )}
+    </div>
+  )
+}
+```
+
+### Step 4: Pro Tip (Payment Timing) ⏱️
+
+In professional finance, payments can happen at the **Beginning** (Annuity Due) or **End** (Ordinary Annuity) of a period.
+*   **End:** Mortgage payments, Loans.
+*   **Beginning:** Rent, Insurance.
+
+Multiply your PMT term by `(1 + r)` if payments are at the **Beginning**.
+This small detail is what separates a "Toy" calculator from a "Pro" tool.

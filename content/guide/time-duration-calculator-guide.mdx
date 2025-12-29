@@ -1,0 +1,142 @@
+---
+title: "Build a Time Duration Calculator in React"
+description: "Process hours and minutes like a pro. Learn how to calculate time differences and add durations using the 'Total Minutes' method."
+category: "Productivity Tools"
+author: "FastTools Team"
+date: "2024-12-29"
+order: 51
+tags: ["Time", "React", "Math", "Productivity"]
+---
+
+## Build a Time Duration Calculator ⏱️
+
+Calculating "How many hours between 9:30 AM and 6:15 PM?" is annoying to do in your head.
+It's also tricky in code because hours wrap around (base 60).
+The secret? **Convert everything to minutes.**
+
+---
+
+### Step 1: The Math (Minutes from Midnight) 🧮
+
+Don't try to subtract "9:30" from "18:15" directly.
+Convert both to **Total Minutes** from the start of the day.
+
+**Formula:** `TotalMinutes = (Hours × 60) + Minutes`
+
+**Example:**
+*   **Start (9:30):** `(9 * 60) + 30 = 570 minutes`
+*   **End (18:15):** `(18 * 60) + 15 = 1095 minutes`
+*   **Difference:** `1095 - 570 = 525 minutes`
+
+**Convert back to Hours & Minutes:**
+*   **Hours:** `Math.floor(525 / 60) = 8 hours`
+*   **Minutes:** `525 % 60 = 45 minutes`
+*   **Result:** 8 Hours 45 Minutes
+
+---
+
+### Step 2: Handling Overnight Shifts 🌙
+
+What if the user works from **10:00 PM (22:00)** to **6:00 AM (06:00)**?
+The end time (360 minutes) is *smaller* than the start time (1320 minutes).
+
+**Fix:** If the result is negative, add 24 hours (1440 minutes).
+`Diff = End - Start`
+`If (Diff < 0) Diff += 1440`
+
+---
+
+### Step 3: The React Component ⚛️
+
+A clean UI that inputs 24-hour time or AM/PM and outputs the duration.
+
+```tsx
+"use client"
+
+import { useState } from "react"
+import { Clock, ArrowRight } from "lucide-react"
+
+export default function TimeCalc() {
+  const [start, setStart] = useState("09:00")
+  const [end, setEnd] = useState("17:00")
+
+  const calculate = () => {
+    if (!start || !end) return "---";
+    
+    const [sh, sm] = start.split(':').map(Number);
+    const [eh, em] = end.split(':').map(Number);
+    
+    const startMins = sh * 60 + sm;
+    const endMins = eh * 60 + em;
+    
+    let diff = endMins - startMins;
+    if (diff < 0) diff += 1440; // Handle overnight
+
+    const h = Math.floor(diff / 60);
+    const m = diff % 60;
+    
+    return `${h} hrs ${m} mins`;
+  }
+
+  return (
+    <div className="max-w-md mx-auto p-6 bg-slate-900 rounded-2xl shadow-2xl border border-slate-800 text-slate-100">
+       <div className="flex items-center gap-3 mb-8">
+          <div className="p-3 bg-blue-600 rounded-xl shadow-lg shadow-blue-900/20">
+             <Clock className="text-white" size={24} />
+          </div>
+          <div>
+             <h2 className="text-xl font-bold">Time Calculator</h2>
+             <p className="text-xs text-slate-400">Calculate duration between times</p>
+          </div>
+       </div>
+
+       <div className="flex items-center gap-4 mb-8">
+          <div className="bg-slate-800 p-2 rounded-lg border border-slate-700 w-full">
+             <label className="text-[10px] font-bold text-slate-500 uppercase ml-1">From</label>
+             <input 
+               type="time" 
+               value={start}
+               onChange={e => setStart(e.target.value)}
+               className="w-full bg-transparent text-2xl font-mono font-bold outline-none text-center"
+             />
+          </div>
+
+          <ArrowRight className="text-slate-600" />
+
+          <div className="bg-slate-800 p-2 rounded-lg border border-slate-700 w-full">
+             <label className="text-[10px] font-bold text-slate-500 uppercase ml-1">To</label>
+             <input 
+               type="time" 
+               value={end}
+               onChange={e => setEnd(e.target.value)}
+               className="w-full bg-transparent text-2xl font-mono font-bold outline-none text-center"
+             />
+          </div>
+       </div>
+
+       <div className="bg-blue-600 rounded-xl p-6 text-center shadow-lg shadow-blue-900/40">
+          <div className="text-blue-200 text-xs uppercase font-bold tracking-widest mb-1">Total Duration</div>
+          <div className="text-4xl font-black text-white">
+             {calculate()}
+          </div>
+       </div>
+    </div>
+  )
+}
+```
+
+### Pro Tip: Business Hours Logic 👔
+
+To calculate **Business Hours** (e.g., only counting 9 AM - 5 PM), use the `Math.min` and `Math.max` intersection trick.
+
+```javascript
+/* Intersection Logic */
+const workStart = 9 * 60; // 540
+const workEnd = 17 * 60; // 1020
+
+// Clamp input times to work window
+const effectiveStart = Math.max(startMins, workStart);
+const effectiveEnd = Math.min(endMins, workEnd);
+
+const businessMinutes = Math.max(0, effectiveEnd - effectiveStart);
+```

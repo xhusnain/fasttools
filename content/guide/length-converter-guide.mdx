@@ -1,0 +1,131 @@
+---
+title: "Build a Length Unit Converter in React"
+description: "Convert kilometers, miles, feet, and meters with precision. Learn how to handle decimal rounding and base-unit normalization."
+category: "Developer Tools"
+author: "FastTools Team"
+date: "2024-12-29"
+order: 53
+tags: ["React", "Math", "Unit Conversion", "Utility"]
+---
+
+## Build a Length Converter 📏
+
+A dedicated length converter is cleaner than a generic "everything" calculator.
+It allows for specific features like **Precision Control** (decimal rounding), which is critical for engineering vs. casual use.
+
+---
+
+### Step 1: The Math (Base Unit: Meters) 🧱
+
+To avoid writing conversion logic for every pair (e.g., Miles to Feet, Miles to Km, Miles to Yards), we use a **Pivot Unit**.
+For length, the scientific standard is the **Meter (m)**.
+
+1.  **Input -> Base:** Convert input to Meters.
+2.  **Base -> Output:** Convert Meters to target unit.
+
+**Factors relative to 1 Meter:**
+*   **Millimeter:** 0.001
+*   **Centimeter:** 0.01
+*   **Kilometer:** 1000
+*   **Inch:** 0.0254
+*   **Foot:** 0.3048
+*   **Yard:** 0.9144
+*   **Mile:** 1609.34
+
+**Formula:**
+`Result = (Input × FromFactor) / ToFactor`
+
+---
+
+### Step 2: Precision Handling 🎯
+
+Floating point math in JavaScript is messy (`0.1 + 0.2 = 0.30000000000000004`).
+For length, users often want clean numbers.
+Use `.toFixed(n)` but strip trailing zeros.
+
+`result.toFixed(precision).replace(/\.?0+$/, "")`
+
+---
+
+### Step 3: The React Component 📐
+
+A simplified converter focused on length.
+
+```tsx
+"use client"
+
+import { useState } from "react"
+import { ArrowLeftRight, Ruler } from "lucide-react"
+
+const UNITS = {
+  m: { factor: 1, name: 'Meters' },
+  km: { factor: 1000, name: 'Kilometers' },
+  ft: { factor: 0.3048, name: 'Feet' },
+  mi: { factor: 1609.34, name: 'Miles' },
+  in: { factor: 0.0254, name: 'Inches' }
+}
+
+export default function LengthCalc() {
+  const [val, setVal] = useState("")
+  const [from, setFrom] = useState("m")
+  const [to, setTo] = useState("ft")
+
+  const result = val 
+     ? (Number(val) * UNITS[from].factor / UNITS[to].factor).toFixed(4).replace(/\.?0+$/, "")
+     : "---";
+
+  return (
+    <div className="max-w-md mx-auto p-6 bg-slate-50 rounded-xl border border-slate-200 shadow-sm">
+       <div className="flex items-center gap-2 mb-6 text-slate-700 font-bold text-lg">
+          <Ruler className="text-blue-500" /> Length Converter
+       </div>
+
+       <div className="space-y-4">
+          <div className="flex gap-2">
+             <input 
+               type="number" 
+               value={val}
+               onChange={e => setVal(e.target.value)}
+               placeholder="0"
+               className="flex-1 p-3 border border-slate-300 rounded-lg outline-none focus:border-blue-500 font-mono text-lg"
+             />
+             <select 
+               value={from} 
+               onChange={e => setFrom(e.target.value)}
+               className="w-24 p-2 bg-white border border-slate-300 rounded-lg"
+             >
+                {Object.keys(UNITS).map(u => <option key={u} value={u}>{u}</option>)}
+             </select>
+          </div>
+
+          <div className="flex justify-center text-slate-400">
+             <ArrowLeftRight size={20} />
+          </div>
+
+          <div className="flex gap-2">
+             <div className="flex-1 p-3 bg-slate-100 border border-slate-200 rounded-lg font-mono text-lg font-bold text-slate-800">
+                {result}
+             </div>
+             <select 
+               value={to} 
+               onChange={e => setTo(e.target.value)}
+               className="w-24 p-2 bg-white border border-slate-300 rounded-lg"
+             >
+                {Object.keys(UNITS).map(u => <option key={u} value={u}>{u}</option>)}
+             </select>
+          </div>
+       </div>
+
+       <div className="mt-6 p-4 bg-blue-50 text-blue-800 text-xs rounded-lg">
+          <span className="font-bold">Did you know?</span><br/>
+          1 Meter is defined as the distance light travels in a vacuum in 1/299,792,458 of a second.
+       </div>
+    </div>
+  )
+}
+```
+
+### Common Pitfalls 🚧
+
+1.  **Nautical Miles:** Do not confuse "Miles" (1609m) with "Nautical Miles" (1852m).
+2.  **Survey Feet:** In some high-precision US engineering, the "Survey Foot" differs slightly from the international foot. For general apps, standard 0.3048 is fine.

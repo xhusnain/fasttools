@@ -1,0 +1,129 @@
+---
+title: "Build a Pregnancy Conception Calculator in React"
+description: "Reverse-engineer pregnancy math. Calculate likely conception dates from Due Dates or LMP using standard medical formulas."
+category: "Health Tools"
+author: "FastTools Team"
+date: "2024-12-29"
+order: 50
+tags: ["Health", "React", "Date", "Medical"]
+---
+
+## Build a Pregnancy Conception Calculator 👶
+
+Most calculators tell you when the baby is due.
+This one works backwards: **"When did it happen?"**
+This allows parents to estimate the date of conception based on their due date or ultrasound results.
+
+---
+
+### Step 1: The Math (Reverse Engineering) 🧮
+
+Medical standard pregnancy is **280 days (40 weeks)** from the Last Menstrual Period (LMP).
+However, conception usually happens **~14 days** after the LMP (during ovulation).
+So, fetal development is actually **266 days (38 weeks)**.
+
+**Formulas:**
+1.  **From Due Date:** `Conception = Due Date - 266 Days`
+2.  **From LMP:** `Conception = LMP + 14 Days`
+3.  **From Ultrasound:** `Conception = Ultrasound Date - (Weeks Pregnant * 7 Days)`
+
+---
+
+### Step 2: Sperm Viability (The Window) ⏳
+
+Conception isn't just a single moment; it's a window.
+Sperm can live inside the body for up to 5 days.
+So, if the calculated conception date is **Day X**, intercourse likely occurred between **Day X-5** and **Day X**.
+
+---
+
+### Step 3: The React Component 📅
+
+We need a flexible input that handles different known dates.
+
+```tsx
+"use client"
+
+import { useState } from "react"
+import { Calendar, Baby } from "lucide-react"
+
+export default function ConceptionCalc() {
+  const [mode, setMode] = useState<'due' | 'lmp'>('due')
+  const [date, setDate] = useState("")
+  const [result, setResult] = useState<Date | null>(null)
+
+  const calculate = () => {
+    if (!date) return;
+    const inputDate = new Date(date + 'T12:00:00'); // Fix UTC shift
+    
+    if (mode === 'due') {
+       // Subtract 266 days
+       inputDate.setDate(inputDate.getDate() - 266);
+    } else {
+       // Add 14 days to LMP
+       inputDate.setDate(inputDate.getDate() + 14);
+    }
+    setResult(inputDate);
+  }
+
+  return (
+    <div className="max-w-md mx-auto p-6 bg-rose-50 rounded-xl border border-rose-100 shadow-sm">
+      <div className="flex justify-center gap-4 mb-6">
+         <button 
+           onClick={() => setMode('due')}
+           className={`px-4 py-2 rounded-full text-sm font-bold transition ${mode === 'due' ? 'bg-rose-500 text-white' : 'text-rose-400 hover:bg-rose-100'}`}
+         >
+           I know Due Date
+         </button>
+         <button 
+           onClick={() => setMode('lmp')}
+           className={`px-4 py-2 rounded-full text-sm font-bold transition ${mode === 'lmp' ? 'bg-rose-500 text-white' : 'text-rose-400 hover:bg-rose-100'}`}
+         >
+           I know LMP
+         </button>
+      </div>
+
+      <div className="mb-6">
+         <label className="block text-xs font-bold text-rose-400 uppercase mb-2">
+            {mode === 'due' ? 'Your Due Date' : 'First Day of Last Period'}
+         </label>
+         <input 
+           type="date"
+           value={date}
+           onChange={e => setDate(e.target.value)}
+           className="w-full p-3 border border-rose-200 rounded-lg focus:ring-2 focus:ring-rose-400 outline-none text-rose-900"
+         />
+      </div>
+
+      <button 
+        onClick={calculate}
+        disabled={!date}
+        className="w-full py-4 bg-rose-500 text-white font-bold rounded-lg hover:bg-rose-600 transition disabled:opacity-50"
+      >
+         CALCULATE CONCEPTION
+      </button>
+
+      {result && (
+        <div className="mt-8 text-center animate-in zoom-in duration-300">
+           <div className="w-16 h-16 bg-white rounded-full flex items-center justify-center mx-auto mb-4 shadow-sm text-rose-500">
+              <Baby size={32} />
+           </div>
+           <div className="text-sm font-medium text-rose-400 uppercase">Estimated Conception Date</div>
+           <div className="text-3xl font-black text-rose-600 my-2">
+              {result.toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' })}
+           </div>
+           <div className="p-4 mt-4 bg-white/50 rounded-lg text-xs text-rose-800">
+              <span className="font-bold">Note:</span> Intercourse likely happened 
+              within the <span className="underline decoration-dotted">5 days leading up to this date</span>.
+           </div>
+        </div>
+      )}
+    </div>
+  )
+}
+```
+
+### Step 4: Medical Disclaimer ⚕️
+
+Always include a disclaimer.
+> "This tool provides an estimate based on a standard 28-day cycle. Ovulation timing varies for every individual. Ultrasound dating remains the most accurate method."
