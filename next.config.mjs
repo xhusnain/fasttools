@@ -34,6 +34,10 @@ const nextConfig = {
       {
         protocol: 'https',
         hostname: 'plus.unsplash.com',
+      },
+      {
+        protocol: 'https',
+        hostname: '**', // Allow all HTTPS domains for IPTV channel logos
       }
     ],
   },

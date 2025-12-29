@@ -1,4 +1,5 @@
 
+
 import {
     Calculator,
     Camera,
@@ -60,8 +61,10 @@ import {
     Regex,
     Gift,
     Drumstick,
-    PartyPopper
+    PartyPopper,
+    Tv
 } from "lucide-react"
+
 
 export interface NavItem {
     title: string
@@ -343,6 +346,17 @@ export const navigationConfig: MegaMenuSection[] = [
                 items: [
                     { title: "Christmas Font", href: "/festivals/christmas-font-converter", icon: Gift, description: "Festive text" },
                     { title: "Turkey Defrost Calc", href: "/festivals/turkey-defrost-calculator", icon: Drumstick, description: "Thawing time" },
+                ]
+            }
+        ]
+    },
+    {
+        title: "Live TV",
+        categories: [
+            {
+                title: "Watch Live",
+                items: [
+                    { title: "Browse by Country", href: "/live-tv", icon: Tv, description: "Global TV channels" },
                 ]
             }
         ]

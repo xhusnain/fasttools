@@ -72,6 +72,10 @@ export function Header() {
                   Downloaders
                 </Link>
 
+                <Link href="/live-tv" className="text-sm font-medium text-muted-foreground hover:text-primary transition-colors flex items-center h-full">
+                  Live TV
+                </Link>
+
                 <Link href="/ad-tools/roas-calculator" className="text-sm font-medium text-muted-foreground hover:text-primary transition-colors flex items-center h-full">
                   ROAS Calculator
                 </Link>
@@ -166,6 +170,13 @@ export function Header() {
               className="flex items-center gap-2 py-3 text-base font-semibold text-foreground/80 hover:text-primary transition-colors"
             >
               Blog
+            </Link>
+            <Link
+              href="/live-tv"
+              onClick={() => setMobileMenuOpen(false)}
+              className="block py-3 text-base font-semibold text-foreground/80 hover:text-primary transition-colors"
+            >
+              Live TV
             </Link>
             <Link
               href="/ad-tools/roas-calculator"
