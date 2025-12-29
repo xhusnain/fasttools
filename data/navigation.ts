@@ -13,6 +13,7 @@ import {
     Type,
     Video,
     DollarSign,
+    Database,
     Smile,
     LucideIcon,
     BarChart,
@@ -216,6 +217,7 @@ export const navigationConfig: MegaMenuSection[] = [
                 items: [
                     { title: "HTML Beautifier", href: "/dev-tools/html-beautifier", icon: Code, description: "Format/Minify" },
                     { title: "JSON to CSV", href: "/dev-tools/json-to-csv", icon: FileText, description: "Data converter" },
+                    { title: "SQL to JSON", href: "/dev-tools/sql-to-json", icon: Database, description: "SQL converter" },
                     { title: "HTML to Markdown", href: "/dev-tools/html-to-markdown", icon: FileText, description: "Convert HTML" },
                     { title: "Markdown Previewer", href: "/dev-tools/markdown-previewer", icon: Eye, description: "Preview MD" },
                     { title: "Regex Tester", href: "/dev-tools/regex-tester", icon: Code, description: "Test patterns" },

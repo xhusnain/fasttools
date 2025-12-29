@@ -2,7 +2,7 @@ import { ToolPageLayout } from "@/components/common/tool-page-layout"
 import { createToolConfig } from "@/lib/create-tool-config"
 import { GToolCard } from "@/ui/gtool-card"
 
-import { Code2, FileJson, Palette, Hash, FileCode, Braces } from "lucide-react"
+import { Code2, FileJson, Palette, Hash, FileCode, Braces, Database } from "lucide-react"
 
 const devTools = [
   {
@@ -17,6 +17,13 @@ const devTools = [
     description: "Test and debug regular expressions with live matching. Essential for data validation and text processing.",
     href: "/dev-tools/regex-tester",
     icon: Hash,
+    popular: true,
+  },
+  {
+    title: "SQL to JSON Converter",
+    description: "Convert SQL INSERT statements to JSON format online free. Parse SQL data to JSON arrays instantly.",
+    href: "/dev-tools/sql-to-json",
+    icon: Database,
     popular: true,
   },
   {
