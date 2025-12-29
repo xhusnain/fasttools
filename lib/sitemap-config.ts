@@ -748,6 +748,24 @@ export const toolPages = [
         priority: 0.9,
     },
     {
+        url: "https://www.fasttools.store/dev-tools/sql-to-json",
+        lastModified: new Date('2024-12-29'),
+        changeFrequency: "monthly" as const,
+        priority: 0.95,
+        images: [
+            {
+                url: "https://www.fasttools.store/images/dev-tools/sql-to-json-hero.png",
+                title: "SQL to JSON Converter Hero - FastTools",
+                caption: "Illustration of SQL data transforming into JSON format"
+            },
+            {
+                url: "https://www.fasttools.store/images/dev-tools/sql-to-json-example.png",
+                title: "SQL to JSON Converter Example UI",
+                caption: "Example of SQL INSERT statements converted to JSON array"
+            }
+        ]
+    },
+    {
         url: "https://www.fasttools.store/dev-tools/html-beautifier",
         lastModified: new Date('2025-11-25'),
         changeFrequency: "monthly" as const,

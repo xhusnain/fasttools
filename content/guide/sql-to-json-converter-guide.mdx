@@ -1,0 +1,312 @@
+---
+title: "Build a SQL to JSON Converter (Client-Side Parser)"
+description: "A comprehensive guide to parsing SQL INSERT statements and converting them to JSON arrays using JavaScript. Learn to handle Regex patterns, type inference, and edge cases."
+category: "Developer Tools"
+author: "FastTools Team"
+date: "2024-12-29"
+order: 15
+tags: ["SQL", "JSON", "Regex", "Data Parsing", "React"]
+---
+
+## Build a SQL to JSON Converter: The "Data Liberator" 🔓
+
+Data often gets trapped in SQL dumps or query results. Frontend developers, API designers, and NoSQL users often need this data in JSON format. Manually converting it is tedious and error-prone.
+
+In this guide, we will build a robust **SQL INSERT to JSON Converter** that runs entirely in the browser. You will learn how to parse structured text, handle data types, and build a useful React tool.
+
+---
+
+### Step 1: Anatomy of an INSERT Statement 🔍
+
+Before writing code, we must understand the structure of the data we are parsing. We are targeting standard `INSERT INTO` statements, which follow a predictable pattern.
+
+**The Structure:**
+```sql
+INSERT INTO table_name (column1, column2) VALUES (value1, value2);
+```
+
+**Real World Example:**
+```sql
+INSERT INTO users (id, name, is_active) 
+VALUES 
+  (1, 'Alice Smith', true), 
+  (2, 'Bob O\'Connor', NULL);
+```
+
+**Our Goal:**
+We need to extract two specific pieces of information to build our JSON objects:
+1.  **Keys (Columns):** `['id', 'name', 'is_active']`
+2.  **Values (Rows):**
+    *   Row 1: `[1, 'Alice Smith', true]`
+    *   Row 2: `[2, 'Bob O\'Connor', null]`
+
+Once we have these, we can map them together: `Object[Key] = Value`.
+
+---
+
+### Step 2: The Regex Strategy 🧠
+
+Parsing text usually starts with Regular Expressions. We need a Regex that can "capture" the column list and the values list, ignoring the boilerplate SQL keywords.
+
+**The Regex Pattern:**
+```javascript
+/INSERT\s+INTO\s+\w+\s*\(([^)]+)\)\s*VALUES\s*([\s\S]+);/i
+```
+
+**Breakdown for Beginners:**
+*   `/ ... /i`: The `i` flag at the end makes it **case-insensitive** (so `INSERT`, `insert`, and `Insert` all match).
+*   `INSERT\s+INTO`: Matches the literal words "INSERT INTO". `\s+` means "one or more spaces" (handling tabs or multiple spaces).
+*   `\w+`: Matches the **table name** (alphanumeric word).
+*   `\s*\(([^)]+)\)`: This is the **Columns Capture Group**.
+    *   `\(` matches the opening parenthesis.
+    *   `([^)]+)` captures **everything that is NOT a closing parenthesis**. This grabs our column names like `id, name`.
+    *   `\)` matches the closing parenthesis.
+*   `\s*VALUES\s*`: Matches the literal word "VALUES" with flexible whitespace around it.
+*   `([\s\S]+);`: This is the **Values Capture Group**.
+    *   `[\s\S]` is a special trick to match **ANY character including newlines**. The dot `.` usually doesn't match newlines, so we use "whitespace or non-whitespace" to match everything.
+    *   `+` means "one or more characters".
+    *   `;` matches the semicolon at the very end.
+
+---
+
+### Step 3: Parsing the Values (The Hard Part) ⚡
+
+Regex is great for the overall structure, but parsing the actual list of values is tricky.
+
+**Why `split(',')` is not enough:**
+You might be tempted to just split the values string by commas.
+*   Input: `(1, 'Alice'), (2, 'Bob')` -> Easy!
+*   Input: `(1, 'Doe, John'), (2, 'Bob')` -> **Disaster!** 💥
+
+If we simple-split by comma, `'Doe, John'` gets split into two parts, creating extra "columns" that don't exist and corrupting your data.
+
+**The Solution: Row-by-Row Splitting**
+First, we separate the rows. Since rows are wrapped in parentheses `( ... ), ( ... )`, we can split by `), (`.
+
+```javascript
+// Remove the very first '(' and very last ');'
+const cleanedValues = rawValues.trim().replace(/^\(|\);$/g, '');
+
+// Split by the row separator
+const rows = cleanedValues.split(/\),\s*\(/);
+```
+
+This gives us an array of raw row strings:
+1.  `"1, 'Alice Smith', true"`
+2.  `"2, 'Bob O''Connor', NULL"`
+
+Now we can safely process each row individually.
+
+---
+
+### Step 4: Smart Type Inference 🤖
+
+SQL is strongly typed, but the text dump is just specific strings. We need to convert these text representations back into real JSON types.
+
+**The Logic Table:**
+
+| SQL Text | Detection Logic | Converted JSON Value |
+| :--- | :--- | :--- |
+| `'Hello World'` | If starts and ends with `'` | `"Hello World"` (String) |
+| `123.45` | If `!isNaN(Number(val))` | `123.45` (Number) |
+| `TRUE` | If `val.toUpperCase() === 'TRUE'` | `true` (Boolean) |
+| `FALSE` | If `val.toUpperCase() === 'FALSE'` | `false` (Boolean) |
+| `NULL` | If `val.toUpperCase() === 'NULL'` | `null` (Null) |
+
+**The Helper Function:**
+```javascript
+const parseValue = (val) => {
+  val = val.trim();
+  
+  // Handle SQL Strings (remove surrounding quotes)
+  if (val.startsWith("'") && val.endsWith("'")) {
+    return val.slice(1, -1).replace(/\\'/g, "'"); // Use .replace to handle escaped quotes inside
+  }
+  
+  // Handle Numbers
+  if (!isNaN(val)) return Number(val);
+  
+  // Handle Booleans and Null
+  const upper = val.toUpperCase();
+  if (upper === 'TRUE') return true;
+  if (upper === 'FALSE') return false;
+  if (upper === 'NULL') return null;
+  
+  // Fallback
+  return val;
+};
+```
+
+---
+
+### Step 5: The React Component (`SqlToJson.jsx`) 💻
+
+Now let's assemble the Regex, the list parsing, and the type inference into a usable React tool.
+
+```jsx
+'use client';
+import { useState } from 'react';
+import { Database, FileJson, ArrowRight, AlertCircle, Copy, Check } from 'lucide-react';
+
+export default function SqlToJson() {
+  const [sql, setSql] = useState('');
+  const [json, setJson] = useState('');
+  const [error, setError] = useState('');
+  const [copied, setCopied] = useState(false);
+
+  const convert = () => {
+    setError('');
+    try {
+      if (!sql.trim()) return;
+
+      // 1. REGEX EXTRACTION
+      // Check if it looks like an INSERT statement
+      const insertRegex = /INSERT\s+INTO\s+\w+\s*\(([^)]+)\)\s*VALUES\s*([\s\S]+);/i;
+      const matches = sql.match(insertRegex);
+
+      if (!matches) {
+        throw new Error("Invalid SQL format. Expected: INSERT INTO table (cols) VALUES (vals);");
+      }
+
+      // 2. COLUMN PARSING
+      // Clean up column names (remove whitespace and quotes)
+      const columns = matches[1].split(',').map(c => c.trim().replace(/[`"']/g, ''));
+      const valuesStr = matches[2];
+
+      // 3. ROW PARSING
+      // Clean outer parens and split by standard row separator
+      const cleanValues = valuesStr.trim().replace(/^\s*\(|\)\s*;?$/g, '');
+      const rows = cleanValues.split(/\),\s*\(/);
+
+      const result = rows.map(row => {
+        // Split values by comma. 
+        // NOTE: For brevity, this splits by comma. 
+        // For production, use a parser that respects quoted commas (see Step 6).
+        const values = row.split(',').map(v => {
+           const val = v.trim();
+           
+           // TYPE INFERENCE LOGIC
+           if (val.startsWith("'")) return val.slice(1, -1).replace(/\\'/g, "'");
+           if (val.toUpperCase() === 'NULL') return null;
+           if (val.toUpperCase() === 'TRUE') return true;
+           if (val.toUpperCase() === 'FALSE') return false;
+           return isNaN(Number(val)) ? val : Number(val);
+        });
+
+        // 4. MAPPING (ZIPPING)
+        // Combine Column Name + Value pair into object
+        const obj = {};
+        columns.forEach((col, i) => {
+          obj[col] = values[i];
+        });
+        return obj;
+      });
+
+      setJson(JSON.stringify(result, null, 2));
+    } catch (e) {
+      setError(e.message);
+    }
+  };
+
+  const copyToClipboard = () => {
+    navigator.clipboard.writeText(json);
+    setCopied(true);
+    setTimeout(() => setCopied(false), 2000);
+  };
+
+  return (
+    <div className="max-w-4xl mx-auto p-6 bg-white border rounded-xl shadow-sm">
+      <h2 className="text-2xl font-bold mb-6 flex items-center gap-2">
+        <Database className="text-blue-600"/> SQL to JSON Converter
+      </h2>
+
+      <div className="grid md:grid-cols-2 gap-4 h-[500px]">
+        {/* SQL INPUT SECTION */}
+        <div className="flex flex-col gap-2">
+          <label className="font-bold text-sm text-gray-700">SQL Input</label>
+          <textarea 
+            className="flex-1 p-4 border rounded-lg font-mono text-xs bg-slate-50 focus:ring-2 focus:ring-blue-500 outline-none resize-none"
+            value={sql}
+            onChange={e => setSql(e.target.value)}
+            placeholder={"INSERT INTO users (id, name, active)\nVALUES\n(1, 'Alice', true),\n(2, 'Bob', false);"}
+          />
+        </div>
+
+        {/* JSON OUTPUT SECTION */}
+        <div className="flex flex-col gap-2 relative">
+          <label className="font-bold text-sm text-gray-700">JSON Output</label>
+          <textarea 
+              className="flex-1 p-4 border rounded-lg font-mono text-xs bg-slate-900 text-green-400 resize-none"
+              readOnly
+              value={json}
+              placeholder="JSON result will appear here..."
+          />
+          {json && (
+            <button 
+              onClick={copyToClipboard}
+              className="absolute top-9 right-4 p-2 bg-slate-700 text-white rounded hover:bg-slate-600 transition"
+            >
+              {copied ? <Check size={14} /> : <Copy size={14} />}
+            </button>
+          )}
+        </div>
+      </div>
+      
+      {/* ACTION BAR */}
+      <div className="mt-4 flex flex-col items-center gap-3">
+        {error && (
+          <div className="flex items-center gap-2 text-red-600 bg-red-50 px-4 py-2 rounded text-sm w-full">
+            <AlertCircle size={16}/> {error}
+          </div>
+        )}
+        <button 
+          onClick={convert}
+          className="w-full py-3 bg-blue-600 text-white rounded-lg font-bold hover:bg-blue-700 transition shadow-lg hover:shadow-xl transform active:scale-95 flex justify-center items-center gap-2"
+        >
+          Convert SQL to JSON <ArrowRight size={18}/>
+        </button>
+      </div>
+    </div>
+  );
+}
+```
+
+---
+
+### Step 6: Level Up - Handling Complex Edge Cases �
+
+The simple example above uses `row.split(',')`. While this works for 90% of cases, it will fail if a text string contains a comma (e.g., `'New York, NY'`).
+
+**The Professional Approach: State Machine Parsing**
+To fix this, we cannot just split a string. We must iterate through it character by character, keeping track of "state".
+
+```javascript
+function sophisticatedSplit(rowString) {
+  const values = [];
+  let currentVal = '';
+  let inQuotes = false;
+  
+  for (let i = 0; i < rowString.length; i++) {
+    const char = rowString[i];
+    
+    if (char === "'") {
+      inQuotes = !inQuotes; // Toggle quote state
+      currentVal += char;
+    } else if (char === ',' && !inQuotes) {
+      // Found a real separator! Push value and reset.
+      values.push(currentVal.trim());
+      currentVal = '';
+    } else {
+      currentVal += char;
+    }
+  }
+  // Push the last value
+  values.push(currentVal.trim());
+  return values;
+}
+```
+
+**Why this works:**
+When the parser encounters a comma `,` inside a string like `'Doe, John'`, the `inQuotes` flag is `true`. So, it treats the comma as just another character in the name, rather than a separator. It only splits on commas when `inQuotes` is `false`.
+
+By implementing this logic, your tool becomes **production-grade** and can handle messy, real-world database dumps.
