@@ -82,7 +82,7 @@ import { Search, Sparkles, Moon } from "lucide-react"
 export default function ZodiacFinder() {
   const [day, setDay] = useState("")
   const [month, setMonth] = useState("1")
-  const [sign, setSign] = useState<any>(null)
+  const [sign, setSign] = useState(null)
 
   // The Data
   const zodiacData: Record<string, { icon: string, traits: string }> = {
