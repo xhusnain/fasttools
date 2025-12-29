@@ -1,0 +1,185 @@
+---
+title: "Build a Compound Interest Calculator in React"
+description: "Understand the power of compounding. Build a calculator that demonstrates how Compounding Frequency (Daily vs Yearly) affects returns."
+category: "Developer Tools"
+author: "FastTools Team"
+date: "2024-12-29"
+order: 29
+tags: ["Finance", "React", "Math", "Compound Interest", "APY"]
+---
+
+## Build a Compound Interest Calculator 🔄
+
+Albert Einstein reputedly called Compound Interest the "eighth wonder of the world".
+While similar to an Investment Calculator, a **Compound Interest Calculator** specifically focuses on one variable: **Frequency**.
+Does compounding *Daily* vs *Annually* make a big difference? This tool helps users maximize their returns by understanding the `n` variable.
+
+---
+
+### Step 1: The Standard Formula 🧮
+
+The classic formula for compound interest is:
+
+`A = P(1 + r/n)^(nt)`
+
+**Where:**
+*   `A`: The future value (Amount)
+*   `P`: Principal (Starting Balance)
+*   `r`: Annual Interest Rate (decimal)
+*   `n`: Number of times compounded per year (e.g., 12 for Monthly)
+*   `t`: Number of years
+
+**The Difference:**
+*   **Simple Interest:** $10,000 at 5% for 10 years = $15,000
+*   **Compounded Annually:** = $16,288
+*   **Compounded Daily:** = $16,486
+
+---
+
+### Step 2: Calculating "Effective Rate" (APY) 📈
+
+The "Nominal Rate" is what banks advertise (e.g., 5%).
+The "Effective Rate" (APY) is what you actually get after compounding.
+
+**Formula:**
+`APY = (1 + r/n)^n - 1`
+
+Displaying this value is a "Pro Feature" that adds credibility to your tool.
+
+```javascript
+const calculateEffectiveRate = (r, n) => {
+  return (Math.pow(1 + (r/n), n) - 1) * 100;
+}
+```
+
+---
+
+### Step 3: The Full React Component 💻
+
+Here is a calculator that allows users to toggle the **Frequency**, visualizing the impact of `n`.
+
+```tsx
+"use client"
+
+import { useState } from "react"
+import { TrendingUp, Clock, ArrowRight } from "lucide-react"
+
+export default function CompoundCalculator() {
+  const [principal, setPrincipal] = useState(10000)
+  const [rate, setRate] = useState(5)
+  const [years, setYears] = useState(10)
+  const [frequency, setFrequency] = useState(12) // 12 = Monthly
+
+  const calculate = () => {
+    const r = rate / 100
+    const n = frequency
+    const t = years
+    
+    const amount = principal * Math.pow(1 + (r/n), n*t)
+    const interest = amount - principal
+    const apy = (Math.pow(1 + (r/n), n) - 1) * 100
+
+    return { amount, interest, apy }
+  }
+
+  const { amount, interest, apy } = calculate()
+
+  return (
+    <div className="max-w-2xl mx-auto p-6 bg-white border rounded-xl shadow-sm">
+      <div className="flex items-center gap-3 mb-6 pb-6 border-b">
+         <div className="bg-indigo-100 p-2 rounded-lg text-indigo-700">
+           <TrendingUp size={24} />
+         </div>
+         <h2 className="text-xl font-bold text-slate-800">Compound Interest Analyzer</h2>
+      </div>
+
+      <div className="grid md:grid-cols-2 gap-8">
+        
+        {/* INPUTS */}
+        <div className="space-y-4">
+           <div>
+              <label className="text-xs font-bold uppercase text-slate-500">Principal ($)</label>
+              <input 
+                type="number" value={principal} onChange={e => setPrincipal(Number(e.target.value))}
+                className="w-full p-2 border rounded font-mono mt-1"
+              />
+           </div>
+
+           <div>
+              <label className="text-xs font-bold uppercase text-slate-500">Interest Rate (%)</label>
+              <input 
+                type="number" value={rate} onChange={e => setRate(Number(e.target.value))}
+                className="w-full p-2 border rounded font-mono mt-1"
+              />
+           </div>
+
+           <div>
+              <label className="text-xs font-bold uppercase text-slate-500">Time (Years)</label>
+              <input 
+                type="number" value={years} onChange={e => setYears(Number(e.target.value))}
+                className="w-full p-2 border rounded font-mono mt-1"
+              />
+           </div>
+
+           <div>
+              <label className="text-xs font-bold uppercase text-slate-500">Compounding Frequency</label>
+              <select 
+                value={frequency} onChange={e => setFrequency(Number(e.target.value))}
+                className="w-full p-2 border rounded bg-slate-50 mt-1"
+              >
+                 <option value={1}>Annually (1x/Year)</option>
+                 <option value={2}>Semi-Annually (2x/Year)</option>
+                 <option value={4}>Quarterly (4x/Year)</option>
+                 <option value={12}>Monthly (12x/Year)</option>
+                 <option value={365}>Daily (365x/Year)</option>
+              </select>
+           </div>
+        </div>
+
+        {/* RESULTS */}
+        <div className="space-y-6 bg-slate-50 p-6 rounded-xl border border-slate-100">
+           
+           <div>
+              <div className="text-sm text-slate-500 font-medium mb-1">Total Future Value</div>
+              <div className="text-3xl font-bold text-indigo-600">
+                 ${amount.toLocaleString(undefined, {maximumFractionDigits: 2})}
+              </div>
+           </div>
+
+           <div className="space-y-3 pt-4 border-t border-slate-200">
+              <div className="flex justify-between text-sm">
+                 <span className="text-slate-500">Total Interest Earned</span>
+                 <span className="font-bold text-green-600">
+                    +${interest.toLocaleString(undefined, {maximumFractionDigits: 2})}
+                 </span>
+              </div>
+              
+              <div className="flex justify-between text-sm">
+                 <span className="text-slate-500">Effective APY</span>
+                 <span className="font-bold text-slate-700">
+                    {apy.toFixed(3)}%
+                 </span>
+              </div>
+           </div>
+
+           <div className="text-xs text-slate-400 bg-white p-3 rounded border text-center">
+              <Clock className="inline w-3 h-3 mr-1" />
+              Compounded <strong>{frequency} times</strong> per year 
+              ({frequency * years} total periods)
+           </div>
+
+        </div>
+
+      </div>
+    </div>
+  )
+}
+```
+
+### Step 4: Pro Tip - Explain the "Why" 💡
+
+Use your guide to explain *why* frequency matters.
+Add a small "Comparison Box" to your tool:
+*   "If compounded Annually: $16,288"
+*   "Your Gain from Daily Compounding: **+$198**"
+This highlights the value of the tool immediately.

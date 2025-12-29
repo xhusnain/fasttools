@@ -1,0 +1,164 @@
+---
+title: "Build a BMI Calculator in React"
+description: "Learn how to build a Body Mass Index calculator that handles both Metric (kg/cm) and Imperial (lbs/in) systems with categorization logic."
+category: "Developer Tools"
+author: "FastTools Team"
+date: "2024-12-29"
+order: 35
+tags: ["Health", "React", "Unit Conversion", "Calculator"]
+---
+
+## Build a BMI Calculator 🏥
+
+The **Body Mass Index (BMI)** calculator is a perfect project for learning "Unit Conversion" logic.
+The challenge isn't just the formula; it's handling the User Experience (UX) of switching between **Metric** and **Imperial** systems without losing the user's data context.
+
+---
+
+### Step 1: The Dual Formulas 🧮
+
+There are two distinct formulas depending on the input units:
+
+**1. Metric (Standard):**
+`BMI = weight (kg) / [height (m)]^2`
+*   *Note: If input is in cm, divide by 100 first.*
+
+**2. Imperial (US):**
+`BMI = 703 × weight (lbs) / [height (in)]^2`
+*   *Note: The `703` is a conversion factor.*
+
+---
+
+### Step 2: The Logic (Categories) 📊
+
+Once you have the number (e.g., 22.5), you must map it to a category.
+This is a standard `if/else` chain.
+
+*   **< 18.5:** Underweight
+*   **18.5 - 24.9:** Normal Weight
+*   **25 - 29.9:** Overweight
+*   **30+:** Obese
+
+---
+
+### Step 3: The React Component 💻
+
+Here is a clean implementation with a **Unit Toggle**.
+
+```tsx
+"use client"
+
+import { useState } from "react"
+import { Scale, Ruler, Activity } from "lucide-react"
+
+export default function BmiCalc() {
+  const [unit, setUnit] = useState("metric") // metric | imperial
+  const [weight, setWeight] = useState("")
+  const [height, setHeight] = useState("")
+  const [bmi, setBmi] = useState<number | null>(null)
+
+  const calculate = () => {
+    const w = parseFloat(weight)
+    const h = parseFloat(height)
+    
+    if(!w || !h) return;
+
+    if (unit === "metric") {
+       // weight (kg) / height (m)^2
+       const heightM = h / 100
+       setBmi(w / (heightM * heightM))
+    } else {
+       // 703 * lbs / in^2
+       setBmi((703 * w) / (h * h))
+    }
+  }
+
+  const getCategory = (score: number) => {
+     if(score < 18.5) return { label: "Underweight", color: "text-blue-500" }
+     if(score < 25) return { label: "Normal Weight", color: "text-green-500" }
+     if(score < 30) return { label: "Overweight", color: "text-yellow-500" }
+     return { label: "Obese", color: "text-red-500" }
+  }
+
+  const category = bmi ? getCategory(bmi) : null
+
+  return (
+    <div className="max-w-md mx-auto p-6 bg-white border rounded-xl shadow-lg">
+      
+      {/* UNIT TOGGLE */}
+      <div className="flex bg-slate-100 p-1 rounded-lg mb-6">
+         {['metric', 'imperial'].map((u) => (
+            <button
+               key={u}
+               onClick={() => { setUnit(u); setBmi(null); setWeight(""); setHeight(""); }}
+               className={`flex-1 py-2 text-sm font-bold capitalize rounded-md transition ${unit === u ? 'bg-white shadow text-blue-600' : 'text-slate-500'}`}
+            >
+               {u}
+            </button>
+         ))}
+      </div>
+
+      <div className="space-y-4">
+         <div>
+            <label className="text-xs font-bold text-slate-500 uppercase flex items-center gap-1 mb-1">
+               <Scale size={14} /> Weight ({unit === 'metric' ? 'kg' : 'lbs'})
+            </label>
+            <input 
+              type="number" value={weight} onChange={e => setWeight(e.target.value)}
+              className="w-full p-3 border rounded-lg"
+              placeholder={unit === 'metric' ? "70" : "154"}
+            />
+         </div>
+
+         <div>
+            <label className="text-xs font-bold text-slate-500 uppercase flex items-center gap-1 mb-1">
+               <Ruler size={14} /> Height ({unit === 'metric' ? 'cm' : 'inches'})
+            </label>
+            <input 
+              type="number" value={height} onChange={e => setHeight(e.target.value)}
+              className="w-full p-3 border rounded-lg"
+              placeholder={unit === 'metric' ? "175" : "69"}
+            />
+         </div>
+         
+         <button 
+           onClick={calculate}
+           className="w-full bg-blue-600 text-white font-bold py-3 rounded-lg hover:bg-blue-700 transition"
+         >
+           Calculate BMI
+         </button>
+      </div>
+
+      {/* RESULTS DISPLAY */}
+      {bmi && category && (
+         <div className="mt-8 text-center animate-in zoom-in duration-300">
+            <div className="text-sm text-slate-400 uppercase mb-2"> Your BMI Score</div>
+            <div className="text-6xl font-black text-slate-800 tracking-tight">
+               {bmi.toFixed(1)}
+            </div>
+            
+            <div className={`text-xl font-bold mt-2 ${category.color} flex items-center justify-center gap-2`}>
+               <Activity size={20} />
+               {category.label}
+            </div>
+
+            <div className="mt-4 p-3 bg-slate-50 text-xs text-slate-500 rounded border">
+                Note: BMI is a screening tool, not a diagnosis of body fatness or health.
+            </div>
+         </div>
+      )}
+
+    </div>
+  )
+}
+```
+
+### Step 4: UX Best Practices 💡
+
+Notice in the code above:
+`onClick={() => { setUnit(u); setBmi(null); setWeight(""); setHeight(""); }}`
+
+When switching units, **reset the inputs**.
+Why? Because "70 kg" is a normal weight, but "70 lbs" is an underweight child.
+If you leave the number "70" in the box when switching units, the calculated BMI will jump wildly, confusing the user.
+**Always clear or convert values when changing units.**

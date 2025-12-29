@@ -1,0 +1,166 @@
+---
+title: "Build a Scalable Developer Tools Hub in Next.js"
+description: "Learn how to architect a scalable Developer Tools directory. Master shared layouts, centralized configuration, and SEO automation for a multi-tool platform."
+category: "Developer Tools"
+author: "FastTools Team"
+date: "2024-12-29"
+order: 24
+tags: ["Next.js", "Architecture", "SEO", "React Patterns"]
+---
+
+## Build a Scalable Developer Tools Hub 🧰
+
+Building a single tool is easy. Building a platform with 50+ tools is an architecture challenge.
+You cannot manually copy-paste the header, footer, and SEO tags 50 times.
+You need a system.
+
+In this guide, we will break down the exact architecture used in robust tool platforms (like the one you are using right now!).
+
+---
+
+### Step 1: The "Config-Driven" Approach 📋
+
+Do not hardcode tool links in your HTML.
+Create a central **Registry** (a config file) that acts as the "Source of Truth" for your application.
+This allows you to generate menus, search results, and sitemaps automatically.
+
+```typescript
+// data/tools-registry.ts
+import { Code2, Calculator, Hash } from "lucide-react";
+
+export const tools = [
+  {
+    id: "jwt-decoder",
+    title: "JWT Decoder",
+    description: "Decode and verify JSON Web Tokens.",
+    href: "/dev-tools/jwt-decoder",
+    icon: Code2,
+    category: "Security"
+  },
+  {
+    id: "regex-tester",
+    title: "Regex Tester",
+    description: "Test regular expressions in real-time.",
+    href: "/dev-tools/regex-tester",
+    icon: Hash,
+    category: "Parsing"
+  }
+];
+```
+
+---
+
+### Step 2: The Shared Layout Component 📐
+
+Every tool page needs a specific look: a title, a description, and a standard width.
+React Composition is perfect for this.
+
+```tsx
+// components/ToolLayout.tsx
+export function ToolLayout({ title, description, children }) {
+  return (
+    <div className="max-w-4xl mx-auto px-6 py-12">
+      <header className="mb-8 text-center">
+        <h1 className="text-3xl font-bold mb-2">{title}</h1>
+        <p className="text-slate-600 max-w-2xl mx-auto">{description}</p>
+      </header>
+      
+      <main className="bg-white rounded-xl shadow-lg border p-6">
+        {children}
+      </main>
+    </div>
+  )
+}
+```
+
+**Usage:**
+```tsx
+export default function JwtPage() {
+  return (
+    <ToolLayout title="JWT Decoder" description="...">
+      <JwtDecoderComponent />
+    </ToolLayout>
+  )
+}
+```
+
+---
+
+### Step 3: The Hub Page (Grid Layout) 🕸️
+
+Now, building the "All Tools" page is trivial. We just map over our config array.
+This page is essentially a gallery.
+
+```tsx
+import { tools } from "@/data/tools-registry"
+
+export default function HubPage() {
+  return (
+    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+      {tools.map((tool) => (
+        <a 
+          key={tool.id} 
+          href={tool.href}
+          className="p-6 bg-white rounded-xl border hover:shadow-md transition group"
+        >
+          <div className="flex items-center gap-3 mb-3">
+            <div className="p-2 bg-blue-50 rounded-lg text-blue-600 group-hover:bg-blue-600 group-hover:text-white transition">
+              <tool.icon size={24} />
+            </div>
+            <h3 className="font-bold">{tool.title}</h3>
+          </div>
+          <p className="text-sm text-slate-500">
+            {tool.description}
+          </p>
+        </a>
+      ))}
+    </div>
+  )
+}
+```
+
+---
+
+### Step 4: SEO Automation (JSON-LD) 🔍
+
+For search engines to understand your hub, you need `ItemList` Schema Markup.
+Since we have a `tools` array, we can auto-generate this!
+
+```tsx
+const generateSchema = () => {
+  return {
+    "@context": "https://schema.org",
+    "@type": "ItemList",
+    "itemListElement": tools.map((tool, index) => ({
+      "@type": "ListItem",
+      "position": index + 1,
+      "name": tool.title,
+      "url": `https://your-site.com${tool.href}`
+    }))
+  }
+}
+```
+
+Inject this into your page's `<head>` using a script tag.
+Google maps "List Items" to rich carousel snippets in search results, boosting your click-through rate.
+
+---
+
+### Step 5: Advanced Search Architecture 🚀
+
+When you have 50+ tools, a grid isn't enough. You need **Instant Search**.
+Because your tools are in a standard JSON array (`tools-registry.ts`), search is easy to implement.
+
+**The Filter Logic:**
+```typescript
+const searchTools = (query: string) => {
+  const lower = query.toLowerCase();
+  return tools.filter(t => 
+    t.title.toLowerCase().includes(lower) || 
+    t.description.toLowerCase().includes(lower)
+  );
+}
+```
+
+This "Config-First" architecture separates data from UI, making your platform infinitely scalable.
+Adding a new tool takes 30 seconds: Add the component, add the entry to the config. Done.

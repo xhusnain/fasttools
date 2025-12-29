@@ -1,0 +1,224 @@
+---
+title: "Build an Image-to-Text (OCR) Tool in React"
+description: "Build a client-side Optical Character Recognition (OCR) tool using Tesseract.js. Learn how to extract text from images directly in the browser without a backend."
+category: "Developer Tools"
+author: "FastTools Team"
+date: "2024-12-29"
+order: 23
+tags: ["React", "OCR", "Tesseract.js", "Images", "AI"]
+---
+
+## Build an OCR (Image to Text) Tool 👁️
+
+Optical Character Recognition (OCR) used to require heavy servers with Python or C++.
+Thanks to WebAssembly and **Tesseract.js**, we can now do accurate text extraction directly in the user's browser.
+No server costs. No privacy issues.
+
+In this guide, we will build a production-ready OCR tool that handles file uploads, shows a progress bar, and extracts text locally.
+
+---
+
+### Step 1: The Library (Tesseract.js) 📦
+
+Tesseract.js is a port of the famous HP/Google Tesseract engine.
+It downloads a "worker" (a small JS file) and a "language model" (a `.traineddata` file) on the fly.
+
+```bash
+npm install tesseract.js
+```
+
+**Key Concept:**
+The recognition process is **Heavy**. It blocks the main thread if you aren't careful.
+Tesseract.js handles this by running in a **Web Worker**, keeping your UI responsive.
+
+---
+
+### Step 2: Handling the Image Upload 📤
+
+Before processing, we need to read the user's file into a URL that the browser can display and Tesseract can read.
+We use the `FileReader` API.
+
+```javascript
+const handleUpload = (e) => {
+  const file = e.target.files[0];
+  const reader = new FileReader();
+  
+  reader.onload = (event) => {
+    // This URL can be set to an <img src> AND sent to Tesseract
+    const imageUrl = event.target.result;
+    processImage(imageUrl);
+  };
+  
+  reader.readAsDataURL(file);
+}
+```
+
+---
+
+### Step 3: The Recognition Logic (With Progress) ⏳
+
+Processing an image takes time (2-10 seconds depending on device speed).
+A "Loading..." spinner isn't enough. Users need to see progress.
+Tesseract provides a `logger` callback.
+
+```javascript
+import Tesseract from 'tesseract.js';
+
+const processImage = async (url) => {
+  const result = await Tesseract.recognize(
+    url,
+    'eng', // Language Code
+    {
+      logger: m => {
+        // m.status = "recognizing text"
+        // m.progress = 0 to 1 (e.g., 0.5 is 50%)
+        if (m.status === 'recognizing text') {
+           setProgress(m.progress * 100);
+        }
+      }
+    }
+  );
+  
+  setExtractedText(result.data.text);
+}
+```
+
+---
+
+### Step 4: The Full React Component 💻
+
+Here is a simplified version of the tool. It handles the distinct states: **Idle** (Waiting for upload), **Processing** (Progress bar), and **Done** (Result display).
+
+```tsx
+"use client"
+
+import { useState } from "react"
+import { Upload, FileText, Check, Loader2 } from "lucide-react"
+
+export default function OCRTool() {
+  const [image, setImage] = useState<string | null>(null)
+  const [text, setText] = useState("")
+  const [progress, setProgress] = useState(0)
+  const [isLoading, setIsLoading] = useState(false)
+
+  const handleUpload = async (e: any) => {
+    const file = e.target.files?.[0]
+    if (!file) return
+
+    // 1. Preview Image
+    const reader = new FileReader()
+    reader.onload = async (ev) => {
+      const url = ev.target?.result as string
+      setImage(url)
+      
+      // 2. Start OCR
+      setIsLoading(true)
+      setText("")
+      setProgress(0)
+
+      try {
+        // Dynamic import to keep bundle size small
+        const Tesseract = (await import("tesseract.js")).default
+        
+        const { data } = await Tesseract.recognize(url, "eng", {
+          logger: (m) => {
+            if (m.status === "recognizing text") {
+              setProgress(Math.round(m.progress * 100))
+            }
+          },
+        })
+        
+        setText(data.text)
+      } catch (err) {
+        setText("Error: Could not extract text.")
+      } finally {
+        setIsLoading(false)
+      }
+    }
+    reader.readAsDataURL(file)
+  }
+
+  return (
+    <div className="max-w-2xl mx-auto space-y-8 p-6">
+      
+      {/* UPLOAD AREA */}
+      <div className="border-2 border-dashed border-slate-300 rounded-xl p-8 text-center hover:bg-slate-50 transition relative">
+        {!image ? (
+            <div className="space-y-4">
+               <div className="mx-auto w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center text-blue-600">
+                 <Upload size={32} />
+               </div>
+               <div>
+                  <p className="font-bold text-slate-700">Click to Upload Image</p>
+                  <p className="text-sm text-slate-500">Supports JPG, PNG (Max 5MB)</p>
+               </div>
+            </div>
+        ) : (
+            <img src={image} className="max-h-64 mx-auto rounded shadow-sm" alt="Preview"/>
+        )}
+        <input 
+          type="file" 
+          accept="image/*"
+          onChange={handleUpload}
+          className="absolute inset-0 opacity-0 cursor-pointer" 
+        />
+      </div>
+
+      {/* PROGRESS BAR */}
+      {isLoading && (
+        <div className="space-y-2">
+           <div className="flex justify-between text-sm font-medium text-slate-600">
+              <span className="flex items-center gap-2"><Loader2 className="animate-spin h-4 w-4"/> Scanning...</span>
+              <span>{progress}%</span>
+           </div>
+           <div className="h-2 bg-slate-100 rounded-full overflow-hidden">
+              <div 
+                className="h-full bg-blue-600 transition-all duration-300"
+                style={{ width: `${progress}%` }} 
+              />
+           </div>
+        </div>
+      )}
+
+      {/* RESULT */}
+      {text && (
+        <div className="bg-white border rounded-xl shadow-sm overflow-hidden">
+           <div className="bg-slate-50 border-b p-3 flex justify-between items-center">
+              <h3 className="font-bold text-slate-700 flex items-center gap-2">
+                 <FileText size={18}/> Extracted Text
+              </h3>
+              <button 
+                onClick={() => navigator.clipboard.writeText(text)}
+                className="text-xs font-bold text-blue-600 hover:text-blue-700 uppercase"
+              >
+                Copy Text
+              </button>
+           </div>
+           <div className="p-4 bg-slate-50/50 max-h-96 overflow-y-auto">
+              <p className="whitespace-pre-wrap text-slate-800 leading-relaxed font-serif">
+                {text}
+              </p>
+           </div>
+        </div>
+      )}
+    </div>
+  )
+}
+```
+
+### Step 5: Optimization Tip (Dynamic Imports) ⚡
+
+Did you notice this line?
+`const Tesseract = (await import("tesseract.js")).default`
+
+Tesseract.js is huge. We don't want to load it when the user visits your homepage.
+We only load it **after** the user uploads a file.
+This technique is called **Lazy Loading** or Code Splitting, and Next.js handles it automatically when you use `await import()`.
+
+### Step 6: Privacy Advantage 🔒
+
+Why use this over an API?
+**Data Privacy.**
+In this solution, the image **never leaves the user's computer**.
+You are not sending their passport scan or bank document to a cloud server.
+You can advertise this tool as "100% Private & Secure", which is a massive trust signal for users.

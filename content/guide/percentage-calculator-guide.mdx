@@ -1,0 +1,149 @@
+---
+title: "Build a Percentage Calculator in React"
+description: "Master the 3 types of percentage calculations. Build a multi-mode calculator for Increases, Decreases, and Reverse calculations."
+category: "Developer Tools"
+author: "FastTools Team"
+date: "2024-12-29"
+order: 34
+tags: ["Math", "React", "State Management", "Formulas"]
+---
+
+## Build a Percentage Calculator 📐
+
+"Percentages" isn't just one formula. It's usually three different questions:
+1.  **"What is X% of Y?"** (Basic)
+2.  **"X is what % of Y?"** (Fraction)
+3.  **"What is the % increase from X to Y?"** (Change)
+
+In this guide, we will build a **Multi-Mode Calculator** that handles all these scenarios.
+
+---
+
+### Step 1: The Formulas 🧮
+
+We need a separate function for each "Mode".
+
+**1. Basic Percentage:**
+`Result = Value * (Percent / 100)`
+*   *Example: 20% of 50 is 10.*
+
+**2. Percentage Change (Increase/Decrease):**
+`Result = ((New - Old) / Old) * 100`
+*   *Example: 50 to 75 is a +50% increase.*
+
+**3. Reverse Percentage:**
+`Result = (Part / Total) * 100`
+*   *Example: 10 is 20% of 50.*
+
+---
+
+### Step 2: The React State Logic 🧠
+
+We use a `mode` state to switch the inputs and the formula.
+
+```tsx
+"use client"
+
+import { useState } from "react"
+import { Percent, ArrowRight } from "lucide-react"
+
+export default function PercentageCalc() {
+  const [mode, setMode] = useState("basic") // basic | change | reverse
+  const [val1, setVal1] = useState("")
+  const [val2, setVal2] = useState("")
+
+  const calculate = () => {
+    const v1 = parseFloat(val1)
+    const v2 = parseFloat(val2)
+    if(isNaN(v1) || isNaN(v2)) return "---"
+
+    switch(mode) {
+      case "basic": // What is X% of Y?
+        return (v2 * (v1 / 100)).toFixed(2)
+      
+      case "change": // % change from X to Y
+        const diff = v2 - v1
+        return ((diff / v1) * 100).toFixed(2) + "%"
+        
+      case "reverse": // X is what % of Y?
+        return ((v1 / v2) * 100).toFixed(2) + "%"
+    }
+  }
+
+  const result = calculate()
+
+  return (
+    <div className="max-w-xl mx-auto p-6 bg-white border rounded-xl shadow-sm">
+      
+      {/* MODE SELECTOR */}
+      <div className="flex gap-2 mb-6 p-1 bg-slate-100 rounded-lg">
+         {['basic', 'change', 'reverse'].map(m => (
+            <button
+               key={m}
+               onClick={() => setMode(m)}
+               className={`flex-1 py-2 text-sm font-bold capitalize rounded-md transition ${mode === m ? 'bg-white shadow text-blue-600' : 'text-slate-500'}`}
+            >
+               {m} Mode
+            </button>
+         ))}
+      </div>
+
+      {/* DYNAMIC INPUTS */}
+      <div className="space-y-4">
+         
+         <div className="flex items-center gap-4">
+            <div className="flex-1">
+               <label className="text-xs font-bold text-slate-400 uppercase mb-1 block">
+                  {mode === 'basic' ? 'Percentage (%)' : 
+                   mode === 'change' ? 'From Value' : 'Part'}
+               </label>
+               <input 
+                 value={val1} onChange={e => setVal1(e.target.value)}
+                 className="w-full p-3 border rounded-lg font-mono text-lg"
+                 placeholder="0"
+               />
+            </div>
+            
+            <div className="text-slate-300">
+               {mode === 'basic' ? 'OF' : mode === 'change' ? 'TO' : 'OF'}
+            </div>
+
+            <div className="flex-1">
+               <label className="text-xs font-bold text-slate-400 uppercase mb-1 block">
+                  {mode === 'basic' ? 'Total Value' : 
+                   mode === 'change' ? 'To Value' : 'Total'}
+               </label>
+               <input 
+                 value={val2} onChange={e => setVal2(e.target.value)}
+                 className="w-full p-3 border rounded-lg font-mono text-lg"
+                 placeholder="0"
+               />
+            </div>
+         </div>
+
+         {/* RESULT */}
+         <div className="bg-slate-900 text-white p-6 rounded-xl text-center mt-6">
+            <div className="text-slate-400 text-xs uppercase mb-2">Calculated Result</div>
+            <div className="text-4xl font-bold text-blue-400 font-mono">
+               {result}
+            </div>
+         </div>
+
+      </div>
+    </div>
+  )
+}
+```
+
+### Step 3: Handling Edge Cases (Pro Tip) ⚠️
+
+When building math tools, always handle **Division by Zero**.
+In "Percentage Change" or "Reverse Percentage", if the denominator is 0, the result is `Infinity`.
+React will render `Infinity`, which looks broken.
+
+**Fix:**
+```javascript
+if (v1 === 0) return "Error";
+```
+
+This small check prevents your UI from breaking and makes the tool feel professional.

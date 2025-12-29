@@ -1,0 +1,152 @@
+---
+title: "Build an HTML to Markdown Converter in React"
+description: "Create a lightweight converter without heavy libraries. Master the use of Regex Chains to parse HTML into Markdown."
+category: "Developer Tools"
+author: "FastTools Team"
+date: "2024-12-29"
+order: 31
+tags: ["Regex", "React", "Parsing", "String Manipulation"]
+---
+
+## Build an HTML to Markdown Converter 🔄
+
+You don't always need a heavy library like `turndown` or `remark`.
+For simple tasks, **Regex (Regular Expressions)** are faster, lighter, and give you complete control.
+In this guide, we will build a dependency-free converter using **Method Chaining**.
+
+---
+
+### Step 1: The Chaining Strategy ⛓️
+
+We will treat the HTML string as a pipeline.
+We chain `.replace()` calls to transform tags one by one.
+
+**The Order Matters:**
+1.  **Block Elements:** Convert `<h1>`, `<ul>`, `<p>` first to establish structure.
+2.  **Inline Elements:** Convert `<b>`, `<a>`, `<img>` next.
+3.  **Cleanup:** Remove any remaining tags and decode entities.
+
+---
+
+### Step 2: The Core Logic (Regex) 🧠
+
+```javascript
+/* lib/converter.js */
+export const convertToMarkdown = (html) => {
+  return html
+    // 1. Headers
+    .replace(/<h1[^>]*>(.*?)<\/h1>/gi, "# $1\n\n")
+    .replace(/<h2[^>]*>(.*?)<\/h2>/gi, "## $1\n\n")
+    
+    // 2. Bold & Italic
+    .replace(/<strong[^>]*>(.*?)<\/strong>/gi, "**$1**")
+    .replace(/<b[^>]*>(.*?)<\/b>/gi, "**$1**")
+    .replace(/<em[^>]*>(.*?)<\/em>/gi, "*$1*")
+
+    // 3. Links & Images
+    .replace(/<a[^>]*href="([^"]*)"[^>]*>(.*?)<\/a>/gi, "[$2]($1)")
+    .replace(/<img[^>]*src="([^"]*)"[^>]*alt="([^"]*)"[^>]*>/gi, "![$2]($1)")
+
+    // 4. Lists (Simple Support)
+    .replace(/<li[^>]*>(.*?)<\/li>/gi, "- $1\n")
+    .replace(/<\/?ul>/gi, "") // Remove ul tags
+    
+    // 5. Cleanup
+    .replace(/<br\s*\/?>/gi, "\n")
+    .replace(/<[^>]*>/g, "") // Strip remaining tags
+    .trim();
+}
+```
+
+---
+
+### Step 3: The React UI Component 💻
+
+Here is the full implementation. It's fast because it runs synchronously on the client.
+
+```tsx
+"use client"
+
+import { useState } from "react"
+import { Code, ArrowRight } from "lucide-react"
+
+export default function HtmlConverter() {
+  const [input, setInput] = useState("")
+  const [output, setOutput] = useState("")
+
+  const handleConvert = () => {
+    // Paste the regex logic from Step 2 here
+    let md = input
+      .replace(/<h1[^>]*>(.*?)<\/h1>/gi, "# $1\n\n")
+      .replace(/<strong[^>]*>(.*?)<\/strong>/gi, "**$1**")
+      .replace(/<p[^>]*>(.*?)<\/p>/gi, "$1\n\n")
+      .replace(/<br\s*\/?>/gi, "\n")
+      .replace(/<[^>]*>/g, "") // Catch-all cleanup
+      
+    setOutput(md.trim())
+  }
+
+  return (
+    <div className="max-w-4xl mx-auto p-6">
+       <div className="flex items-center gap-3 mb-6">
+          <div className="bg-orange-100 p-2 rounded-lg text-orange-600">
+             <Code size={24} />
+          </div>
+          <h2 className="text-xl font-bold text-slate-800">HTML to Markdown</h2>
+       </div>
+
+       <div className="grid md:grid-cols-2 gap-4 h-[500px]">
+          {/* HTML INPUT */}
+          <div className="flex flex-col">
+             <label className="text-xs font-bold text-slate-500 mb-2 uppercase">HTML Source</label>
+             <textarea 
+               value={input}
+               onChange={e => setInput(e.target.value)}
+               className="flex-1 p-4 border rounded-xl font-mono text-sm resize-none focus:ring-2 focus:ring-orange-500 outline-none"
+               placeholder="<h1>Hello World</h1><p>Paste HTML here...</p>"
+             />
+          </div>
+
+          {/* ACTION BUTTON (Mobile Only) */}
+          <div className="md:hidden">
+             <button onClick={handleConvert} className="w-full py-3 bg-orange-600 text-white font-bold rounded-lg">
+                Convert Down 👇
+             </button>
+          </div>
+
+          {/* MARKDOWN OUTPUT */}
+          <div className="flex flex-col relative">
+             <label className="text-xs font-bold text-slate-500 mb-2 uppercase">Markdown Result</label>
+             <textarea 
+               value={output}
+               readOnly
+               className="flex-1 p-4 bg-slate-50 border rounded-xl font-mono text-sm resize-none text-slate-700"
+               placeholder="# Hello World"
+             />
+             
+             {/* Desktop Convert Button */}
+             <div className="absolute top-1/2 -left-6 hidden md:block z-10">
+                <button 
+                  onClick={handleConvert}
+                  className="bg-orange-600 text-white p-3 rounded-full shadow-lg hover:scale-110 transition hover:rotate-180"
+                >
+                  <ArrowRight size={20} />
+                </button>
+             </div>
+          </div>
+       </div>
+    </div>
+  )
+}
+```
+
+### Step 4: Known Limitations (Pro Tip) ⚠️
+
+Regex parsing is fragile. It works great for **clean, simple HTML** (like blog content).
+It will fail on:
+*   Nested tables
+*   Complex nested lists
+*   Malformed HTML
+
+If you need to handle messy "wild" HTML, use a library like `turndown` or `rehype`.
+But for 90% of simple administrative tools, this Regex approach is **faster (0kb bundle size)** and simpler to maintain.

@@ -1,0 +1,206 @@
+---
+title: "Build a Custom Lorem Ipsum Generator in React"
+description: "Learn how to build a dynamic text generator using React. Master array manipulation, user input handling, and the Clipboard API for a better developer experience."
+category: "Developer Tools"
+author: "FastTools Team"
+date: "2024-12-29"
+order: 17
+tags: ["React", "Strings", "Arrays", "Clipboard API", "UI Design"]
+---
+
+## Build a Custom Lorem Ipsum Generator 📄
+
+Every developer needs placeholder text. "Lorem Ipsum" is the global standard.
+Sure, you can Google it and copy-paste it 50 times. But why not build a tool that generates exactly 3 paragraphs, 5 paragraphs, or 10 paragraphs instantly?
+
+In this guide, we will build a sleek **Lorem Ipsum Generator** that teaches you **Array Manipulation** and **Clipboard Interaction**.
+
+---
+
+### Step 1: The Core Logic (Arrays > Strings) 🧱
+
+How do we "generate" text? We don't need AI for this. We use a **Pre-defined Bank** of paragraphs.
+
+**The Strategy:**
+1.  Store 5-10 distinct Lorem Ipsum paragraphs in a constant Array.
+2.  If the user asks for 3 paragraphs, we take the first 3.
+3.  If the user asks for 15, we can loop through our 5 paragraphs three times.
+
+**The Data Structure:**
+```javascript
+const loremText = [
+  "Lorem ipsum dolor sit amet...",
+  "Duis aute irure dolor in...",
+  "Sed ut perspiciatis unde...",
+  // Add as many unique paragraphs as you want!
+];
+```
+
+---
+
+### Step 2: The Generation Function (Modulo Magic) 🎩
+
+What if I have 5 paragraphs but the user wants 100?
+We use the **Modulo Operator (%)** to loop our array infinitely.
+
+*   Index 0 -> Paragraph 0
+*   Index 4 -> Paragraph 4
+*   Index 5 -> Paragraph 0 (5 % 5 = 0)
+*   Index 6 -> Paragraph 1 (6 % 5 = 1)
+
+**The Code:**
+```javascript
+const generate = (count) => {
+  // Create an array of 'count' length
+  // Map each index to a paragraph from our source bank
+  return Array.from({ length: count }, (_, i) => {
+      // i % length ensures we loop back to start if we run out
+      return loremText[i % loremText.length];
+  }).join("\n\n"); // Join with double newline for distinct blocks
+};
+```
+
+---
+
+### Step 3: Copy to Clipboard (The "UX" Polish) ✨
+
+A generator is useless if you can't get the text out easily.
+Browsers give us the modern `navigator.clipboard` API. It's asynchronous!
+
+```javascript
+const copyToClipboard = async () => {
+  try {
+    await navigator.clipboard.writeText(result);
+    // Show a "Copied!" toast or change button text
+    setCopied(true);
+    // Hide "Copied!" after 2 seconds
+    setTimeout(() => setCopied(false), 2000);
+  } catch (err) {
+    console.error("Failed to copy!", err);
+  }
+};
+```
+
+---
+
+### Step 4: The Full React Component 💻
+
+Here is the robust, styled component used in FastTools. It features a generation delay simulation (for UX feel) and a clean card interface.
+
+```tsx
+"use client"
+
+import { useState } from "react"
+import { Copy, Check, FileText } from "lucide-react"
+
+// Our "Bank" of text
+const loremText = [
+  "Lorem ipsum dolor sit amet, consectetur adipiscing elit...",
+  "Duis aute irure dolor in reprehenderit in voluptate...",
+  "Sed ut perspiciatis unde omnis iste natus error...",
+  "Nemo enim ipsam voluptatem quia voluptas sit aspernatur...",
+  "At vero eos et accusamus et iusto odio dignissimos...",
+]
+
+export function LoremIpsumGenerator() {
+  // --- STATE ---
+  const [count, setCount] = useState("3")
+  const [result, setResult] = useState("")
+  const [copied, setCopied] = useState(false)
+  const [isGenerating, setIsGenerating] = useState(false)
+
+  // --- ACTIONS ---
+  const handleGenerate = () => {
+    setIsGenerating(true)
+    
+    // Simulate thinking time (optional, but feels nice)
+    setTimeout(() => {
+      const num = parseInt(count) || 1
+      
+      // The Modulo Logic from Step 2
+      const text = Array.from({ length: num }, (_, i) => 
+        loremText[i % loremText.length]
+      ).join("\n\n")
+      
+      setResult(text)
+      setIsGenerating(false)
+    }, 300)
+  }
+
+  const handleCopy = () => {
+    navigator.clipboard.writeText(result)
+    setCopied(true)
+    setTimeout(() => setCopied(false), 2000)
+  }
+
+  // --- UI RENDER ---
+  return (
+    <div className="max-w-2xl mx-auto space-y-6">
+      
+      {/* 1. Control Card */}
+      <div className="bg-white border rounded-lg p-6 shadow-sm">
+        <div className="flex items-center gap-2 mb-4 text-blue-600">
+          <FileText className="h-5 w-5" />
+          <h2 className="text-xl font-bold">Lorem Ipsum Generator</h2>
+        </div>
+        
+        <div className="space-y-4">
+          <div>
+            <label className="block text-sm font-medium text-gray-700 mb-1">
+              Paragraphs Needed
+            </label>
+            <input
+              type="number"
+              min="1"
+              max="50"
+              value={count}
+              onChange={(e) => setCount(e.target.value)}
+              className="w-full p-2 border rounded focus:ring-2 focus:ring-blue-500 outline-none"
+            />
+          </div>
+
+          <button
+            onClick={handleGenerate}
+            disabled={isGenerating || !count}
+            className="w-full py-2 bg-blue-600 text-white font-medium rounded hover:bg-blue-700 disabled:opacity-50 transition"
+          >
+            {isGenerating ? "Generating..." : "Generate Text"}
+          </button>
+        </div>
+      </div>
+
+      {/* 2. Result Card */}
+      {result && (
+        <div className="bg-white border rounded-lg p-6 shadow-sm animate-in fade-in slide-in-from-bottom-2">
+          <div className="flex justify-between items-center mb-4">
+            <h3 className="font-bold text-gray-800">Generated Text</h3>
+            
+            <button
+              onClick={handleCopy}
+              className="flex items-center gap-1 text-sm text-gray-600 hover:text-blue-600 transition"
+            >
+              {copied ? <Check size={16} /> : <Copy size={16} />}
+              {copied ? "Copied!" : "Copy Text"}
+            </button>
+          </div>
+          
+          <div className="p-4 bg-slate-50 rounded text-slate-700 leading-relaxed whitespace-pre-wrap font-serif text-sm">
+            {result}
+          </div>
+        </div>
+      )}
+    </div>
+  )
+}
+```
+
+### Step 5: Why Use `whitespace-pre-wrap`? 🎨
+
+Notice this specific tailored CSS class in the code?
+`<div className="... whitespace-pre-wrap">`
+
+By default, HTML collapses all newlines into a single space.
+*   **Without it:** All your paragraphs mash into one giant blob.
+*   **With `pre-wrap`:** It respects your `\n\n` newlines, creating nice visual spacing between paragraphs, while still wrapping long lines so they don't overflow the screen.
+
+It's a tiny CSS trick that makes text tools usable!
