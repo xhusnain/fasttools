@@ -16,7 +16,13 @@ export function LiveTVPlayer({ streamUrl, channelName }: LiveTVPlayerProps) {
     const { showToast, GToastContainer } = useToast();
 
     useEffect(() => {
-        const initializePlayer = () => {
+        // Ensure we don't initialize multiple times
+        if (playerRef.current) {
+            return;
+        }
+
+        // Small delay to ensure DOM is ready
+        const timer = setTimeout(() => {
             if (!videoRef.current) return;
 
             try {
@@ -45,14 +51,17 @@ export function LiveTVPlayer({ streamUrl, channelName }: LiveTVPlayerProps) {
                 console.error('Player initialization error:', err);
                 showToast('error', 'Channel is offline', 3000);
             }
-        };
-
-        initializePlayer();
+        }, 100);
 
         // Cleanup
         return () => {
+            clearTimeout(timer);
             if (playerRef.current) {
-                playerRef.current.dispose();
+                try {
+                    playerRef.current.dispose();
+                } catch (e) {
+                    console.error('Disposal error:', e);
+                }
                 playerRef.current = null;
             }
         };
