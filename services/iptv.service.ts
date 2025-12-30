@@ -1,3 +1,5 @@
+import fs from 'fs';
+import path from 'path';
 import { Channel, Country, CountryChannels, IPTVStats } from '@/types/iptv';
 import { parseM3U, extractCountryCode } from '@/lib/m3u-parser';
 
@@ -17,14 +19,21 @@ declare global {
  */
 async function fetchIPTVPlaylist(): Promise<Channel[]> {
     try {
-        // We use next: { revalidate } to cache the raw fetch response if possible
-        const response = await fetch(`${IPTV_ORG_BASE_URL}/index.m3u`, {
-            next: { revalidate: 3600 }
-        });
+        let content: string;
+        const localPath = path.join(process.cwd(), 'data/iptv.m3u');
 
-        if (!response.ok) throw new Error('Failed to fetch playlist');
+        if (fs.existsSync(localPath)) {
+            // Read from local file (pre-downloaded)
+            content = fs.readFileSync(localPath, 'utf-8');
+        } else {
+            // Fallback for dev environment or if pre-build didn't run
+            const response = await fetch(`${IPTV_ORG_BASE_URL}/index.m3u`, {
+                next: { revalidate: 3600 }
+            });
+            if (!response.ok) throw new Error('Failed to fetch playlist');
+            content = await response.text();
+        }
 
-        const content = await response.text();
         const playlist = parseM3U(content);
 
         const channels: Channel[] = playlist.entries.map((entry, index) => {

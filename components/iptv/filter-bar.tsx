@@ -114,9 +114,9 @@ export function FilterBar({
                 </div>
             </div>
 
-            {/* Scrollable Category Chips */}
-            <div className="w-full overflow-x-auto pb-2 scrollbar-hide">
-                <div className="flex gap-2 min-w-max">
+            {/* Wrapped Category Chips */}
+            <div className="w-full">
+                <div className="flex flex-wrap gap-2">
                     <button
                         onClick={() => handleCategoryChange("all")}
                         className={cn(
