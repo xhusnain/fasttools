@@ -4,34 +4,24 @@ import { getAllCountries, getIPTVStats, getAllLanguages, getAllCategories, getAl
 import { LiveTVDashboard } from '@/components/iptv/live-tv-dashboard';
 import { LegalDisclaimer } from '@/components/iptv/legal-disclaimer';
 import { LiveTVSEO } from '@/components/iptv/live-tv-seo';
-import { generateMainPageSEO } from '@/components/iptv/helpers/seo-generator';
+import { createMetadata } from '@/lib/metadata-base';
 import { Metadata } from 'next';
 import { Tv, Globe } from 'lucide-react';
 
 export async function generateMetadata(): Promise<Metadata> {
     const stats = await getIPTVStats();
-    const seo = generateMainPageSEO(stats.totalCountries, stats.totalChannels);
 
-    return {
-        title: seo.title,
-        description: seo.description,
-        keywords: seo.keywords,
-        openGraph: {
-            title: seo.title,
-            description: seo.description,
-            type: 'website',
-        },
-        twitter: {
-            card: 'summary_large_image',
-            title: seo.title,
-            description: seo.description,
-        },
-    };
+    return createMetadata({
+        title: `Watch Live TV from ${stats.totalCountries}+ Countries - Free IPTV Streaming`,
+        description: `Stream ${stats.totalChannels}+ live TV channels from ${stats.totalCountries}+ countries worldwide. Watch free IPTV including news, sports, entertainment, and more. No registration required.`,
+        path: '/live-tv',
+    });
 }
+
+import { Suspense } from 'react';
 
 export default async function LiveTVPage() {
     const countries = await getAllCountries();
-    const channels = await getAllChannels();
     const stats = await getIPTVStats();
     const languages = await getAllLanguages();
     const categories = await getAllCategories();
@@ -79,8 +69,14 @@ export default async function LiveTVPage() {
                 {/* Legal Disclaimer */}
                 <LegalDisclaimer />
 
-                {/* Dynamic SEO Content (Directory & Features) */}
-                <LiveTVSEO countries={countries} channels={channels} />
+                {/* Dynamic SEO Content (Directory & Features) - Streamed in later */}
+                <Suspense fallback={
+                    <div className="w-full h-96 bg-muted/20 animate-pulse rounded-xl flex items-center justify-center text-muted-foreground">
+                        Loading Channel Directory...
+                    </div>
+                }>
+                    <LiveTVSEO countries={countries} />
+                </Suspense>
             </div>
         </div>
     );

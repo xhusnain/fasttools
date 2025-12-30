@@ -7,12 +7,15 @@ import {
 } from "@/ui/gaccordion";
 import { Globe, Tv, Shield, Zap } from "lucide-react";
 
+import { getAllChannels } from "@/services/iptv.service";
+
 interface LiveTVSEOProps {
     countries: Country[];
-    channels: Channel[];
 }
 
-export function LiveTVSEO({ countries, channels }: LiveTVSEOProps) {
+export async function LiveTVSEO({ countries }: LiveTVSEOProps) {
+    const channels = await getAllChannels();
+
     // Group channels by country code for efficient rendering
     const channelsByCountry = channels.reduce((acc, channel) => {
         const code = channel.country.toLowerCase();
