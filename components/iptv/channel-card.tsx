@@ -7,31 +7,46 @@ import Link from 'next/link';
 import { Play, Tv } from 'lucide-react';
 import Image from 'next/image';
 
+import { useState } from 'react';
+
 interface ChannelCardProps {
     channel: Channel;
     countryCode: string;
 }
 
 export function ChannelCard({ channel, countryCode }: ChannelCardProps) {
+    const [isLoading, setIsLoading] = useState(true);
+    const [imageError, setImageError] = useState(false);
+    const imageSrc = imageError ? '/placeholder-channel.png' : (channel.logo || '/placeholder-channel.png');
+
     return (
         <div className="group relative overflow-hidden rounded-xl border border-border/50 bg-card/50 backdrop-blur-sm transition-all duration-300 hover:border-primary/50 hover:bg-card/80 hover:shadow-lg hover:shadow-primary/10">
             <div className="p-2.5 space-y-2">
                 {/* Channel Logo */}
                 <div className="relative aspect-video w-full overflow-hidden rounded-lg bg-muted/30 flex items-center justify-center">
                     {channel.logo ? (
-                        <Image
-                            src={channel.logo || '/placeholder-channel.png'}
-                            alt={channel.name}
-                            fill
-                            sizes="(max-width: 768px) 50vw, (max-width: 1200px) 25vw, 16vw"
-                            className="object-cover"
-                            onError={(e) => {
-                                const target = e.target as HTMLImageElement;
-                                target.src = '/placeholder-channel.png';
-                            }}
-                        />
+                        <>
+                            {isLoading && (
+                                <div className="absolute inset-0 bg-muted animate-pulse" />
+                            )}
+                            <Image
+                                src={imageSrc}
+                                alt={channel.name}
+                                fill
+                                unoptimized
+                                sizes="(max-width: 768px) 50vw, (max-width: 1200px) 25vw, 16vw"
+                                className={`object-cover transition-opacity duration-300 ${isLoading ? 'opacity-0' : 'opacity-100'}`}
+                                onError={() => setImageError(true)}
+                                onLoad={() => setIsLoading(false)}
+                            />
+                        </>
                     ) : (
                         <Tv className="h-8 w-8 text-muted-foreground/50" />
+                    )}
+                    {imageError && (
+                        <div className="absolute inset-0 flex items-center justify-center bg-muted/30">
+                            <Tv className="h-8 w-8 text-muted-foreground/50" />
+                        </div>
                     )}
                 </div>
 

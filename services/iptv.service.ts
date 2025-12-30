@@ -1,24 +1,29 @@
-// IPTV Service - Data fetching and management
-
 import { Channel, Country, CountryChannels, IPTVStats } from '@/types/iptv';
 import { parseM3U, extractCountryCode } from '@/lib/m3u-parser';
 
 const IPTV_ORG_BASE_URL = 'https://iptv-org.github.io/iptv';
 const CACHE_DURATION = 1000 * 60 * 60; // 1 hour
 
-// In-memory cache
-let cachedData: {
-    channels: Channel[];
-    countries: Country[];
-    timestamp: number;
-} | null = null;
+// Global cache interface to persist across hot reloads in dev
+declare global {
+    var iptvCache: {
+        data: Channel[];
+        timestamp: number;
+    } | undefined;
+}
 
 /**
  * Fetch and parse the main IPTV playlist
  */
 async function fetchIPTVPlaylist(): Promise<Channel[]> {
     try {
-        const response = await fetch(`${IPTV_ORG_BASE_URL}/index.m3u`);
+        // We use next: { revalidate } to cache the raw fetch response if possible
+        const response = await fetch(`${IPTV_ORG_BASE_URL}/index.m3u`, {
+            next: { revalidate: 3600 }
+        });
+
+        if (!response.ok) throw new Error('Failed to fetch playlist');
+
         const content = await response.text();
         const playlist = parseM3U(content);
 
@@ -43,7 +48,7 @@ async function fetchIPTVPlaylist(): Promise<Channel[]> {
             };
         });
 
-        return channels.filter(c => !c.isNsfw); // Filter out adult content
+        return channels.filter(c => !c.isNsfw);
     } catch (error) {
         console.error('Error fetching IPTV playlist:', error);
         return [];
@@ -51,31 +56,26 @@ async function fetchIPTVPlaylist(): Promise<Channel[]> {
 }
 
 /**
- * Get all channels with caching
+ * Get all channels with in-memory caching
  */
 export async function getAllChannels(): Promise<Channel[]> {
-    if (cachedData && Date.now() - cachedData.timestamp < CACHE_DURATION) {
-        return cachedData.channels;
+    // Check global cache first
+    if (global.iptvCache && Date.now() - global.iptvCache.timestamp < CACHE_DURATION) {
+        return global.iptvCache.data;
     }
 
     const channels = await fetchIPTVPlaylist();
-    cachedData = {
-        channels,
-        countries: extractCountries(channels),
+
+    // Set global cache
+    global.iptvCache = {
+        data: channels,
         timestamp: Date.now(),
     };
 
     return channels;
 }
 
-/**
- * Get all countries with channel counts
- */
 export async function getAllCountries(): Promise<Country[]> {
-    if (cachedData && Date.now() - cachedData.timestamp < CACHE_DURATION) {
-        return cachedData.countries;
-    }
-
     const channels = await getAllChannels();
     return extractCountries(channels);
 }

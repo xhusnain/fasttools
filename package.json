@@ -78,6 +78,7 @@
     "react-i18next": "^16.1.5",
     "react-icons": "^5.4.0",
     "react-resizable-panels": "^2.1.7",
+    "react-virtuoso": "^4.18.1",
     "reading-time": "^1.5.0",
     "recharts": "2.15.4",
     "rehype-prism-plus": "^2.0.1",
