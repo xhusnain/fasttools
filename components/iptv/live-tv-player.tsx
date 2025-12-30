@@ -1,9 +1,10 @@
 'use client';
 
-import { useEffect, useRef } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import videojs from 'video.js';
 import 'video.js/dist/video-js.css';
 import { useToast } from '@/ui/gtoast';
+import { AlertCircle } from 'lucide-react';
 
 interface LiveTVPlayerProps {
     streamUrl: string;
@@ -14,68 +15,92 @@ export function LiveTVPlayer({ streamUrl, channelName }: LiveTVPlayerProps) {
     const videoRef = useRef<HTMLVideoElement>(null);
     const playerRef = useRef<any>(null);
     const { showToast, GToastContainer } = useToast();
+    const [isError, setIsError] = useState(false);
 
+    // Initialize player
     useEffect(() => {
-        // Ensure we don't initialize multiple times
-        if (playerRef.current) {
-            return;
-        }
+        if (!playerRef.current) {
+            const videoElement = videoRef.current;
+            if (!videoElement) return;
 
-        // Small delay to ensure DOM is ready
-        const timer = setTimeout(() => {
-            if (!videoRef.current) return;
+            const player = videojs(videoElement, {
+                controls: true,
+                autoplay: true,
+                preload: 'auto',
+                fluid: true,
+                responsive: true,
+                liveui: true,
+                html5: {
+                    vhs: {
+                        overrideNative: !videojs.browser.IS_SAFARI,
+                    },
+                    nativeAudioTracks: false,
+                    nativeVideoTracks: false,
+                },
+            });
 
-            try {
-                // Initialize player with Video.js defaults
-                playerRef.current = videojs(videoRef.current, {
-                    controls: true,
-                    autoplay: true,
-                    preload: 'auto',
-                    fluid: true,
-                    responsive: true,
-                    liveui: true,
-                });
+            playerRef.current = player;
 
-                // Set source
-                playerRef.current.src({
-                    src: streamUrl,
-                    type: 'application/x-mpegURL',
-                });
+            player.on('error', () => {
+                console.error('VideoJS Error:', player.error());
+                setIsError(true);
+                showToast('error', 'Unable to play this channel. It might be offline.', 5000);
+            });
 
-                // Only handle errors - let Video.js handle everything else
-                playerRef.current.on('error', () => {
-                    showToast('error', 'Channel is offline', 3000);
-                });
-
-            } catch (err) {
-                console.error('Player initialization error:', err);
-                showToast('error', 'Channel is offline', 3000);
-            }
-        }, 100);
-
-        // Cleanup
-        return () => {
-            clearTimeout(timer);
-            if (playerRef.current) {
-                try {
-                    playerRef.current.dispose();
-                } catch (e) {
-                    console.error('Disposal error:', e);
+            player.on('stalled', () => {
+                console.warn('Playback stalled, attempting recovery...');
+                player.load();
+                const playPromise = player.play();
+                if (playPromise) {
+                    playPromise.catch(console.error);
                 }
+            });
+        }
+    }, [showToast]);
+
+    // Handle source updates
+    useEffect(() => {
+        const player = playerRef.current;
+        if (player && streamUrl) {
+            setIsError(false);
+            player.src({
+                src: streamUrl,
+                type: 'application/x-mpegURL',
+            });
+        }
+    }, [streamUrl]);
+
+    // Cleanup
+    useEffect(() => {
+        return () => {
+            const player = playerRef.current;
+            if (player && !player.isDisposed()) {
+                player.dispose();
                 playerRef.current = null;
             }
         };
-    }, [streamUrl, channelName, showToast]);
+    }, []);
 
     return (
-        <div className="w-full">
+        <div className="w-full relative group">
             <div data-vjs-player>
                 <video
                     ref={videoRef}
-                    className="video-js vjs-big-play-centered"
+                    className="video-js vjs-big-play-centered vjs-16-9"
                     playsInline
                 />
             </div>
+
+            {isError && (
+                <div className="absolute inset-0 z-10 flex flex-col items-center justify-center bg-black/90 text-white rounded-lg">
+                    <AlertCircle className="w-12 h-12 mb-4 text-red-500" />
+                    <h3 className="text-xl font-bold mb-2">Channel Unavailable</h3>
+                    <p className="text-gray-400 text-center max-w-md px-4">
+                        We're having trouble connecting to this stream. The channel might be temporarily offline or restricted in your region.
+                    </p>
+                </div>
+            )}
+
             <GToastContainer />
         </div>
     );

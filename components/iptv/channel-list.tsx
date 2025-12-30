@@ -37,8 +37,8 @@ export function ChannelList({ channels, countryCode }: ChannelListProps) {
                             key={category}
                             onClick={() => setSelectedCategory(category)}
                             className={`px-4 py-2 rounded-lg text-sm font-medium transition-all ${selectedCategory === category
-                                    ? 'bg-primary text-primary-foreground shadow-md shadow-primary/20'
-                                    : 'bg-card/50 text-foreground hover:bg-card/80 border border-border/50'
+                                ? 'bg-primary text-primary-foreground shadow-md shadow-primary/20'
+                                : 'bg-card/50 text-foreground hover:bg-card/80 border border-border/50'
                                 }`}
                         >
                             {category === 'all' ? 'All' : category}
@@ -54,7 +54,7 @@ export function ChannelList({ channels, countryCode }: ChannelListProps) {
 
             {/* Channel Grid */}
             {filteredChannels.length > 0 ? (
-                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
+                <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 gap-3">
                     {filteredChannels.map((channel) => (
                         <ChannelCard
                             key={channel.id}

@@ -6,6 +6,7 @@ export interface Country {
     flag: string; // Flag emoji or URL
     channelCount: number;
     languages?: string[];
+    categories?: string[];
 }
 
 export interface Channel {

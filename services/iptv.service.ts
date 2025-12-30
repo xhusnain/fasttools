@@ -94,11 +94,24 @@ function extractCountries(channels: Channel[]): Country[] {
                 name: getCountryName(code),
                 flag: getCountryFlag(code),
                 channelCount: 0,
+                languages: [],
             });
         }
 
         const country = countryMap.get(code)!;
         country.channelCount++;
+
+        if (channel.language && !country.languages?.includes(channel.language)) {
+            country.languages = [...(country.languages || []), channel.language];
+        }
+
+        if (channel.categories) {
+            channel.categories.forEach(cat => {
+                if (!country.categories?.includes(cat)) {
+                    country.categories = [...(country.categories || []), cat];
+                }
+            });
+        }
     });
 
     return Array.from(countryMap.values())
@@ -207,4 +220,20 @@ function getCountryFlag(code: string): string {
         .map(char => 127397 + char.charCodeAt(0));
 
     return String.fromCodePoint(...codePoints);
+}
+
+/**
+ * Get all available languages
+ */
+export async function getAllLanguages(): Promise<string[]> {
+    const stats = await getIPTVStats();
+    return Object.keys(stats.languageCounts).sort();
+}
+
+/**
+ * Get all available categories
+ */
+export async function getAllCategories(): Promise<string[]> {
+    const stats = await getIPTVStats();
+    return Object.keys(stats.categoryCounts).sort();
 }

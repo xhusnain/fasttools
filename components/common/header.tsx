@@ -47,15 +47,22 @@ export function Header() {
             <div className="flex items-center gap-2 shrink-0">
               <nav className="hidden lg:flex items-center gap-3 mr-2 h-full">
                 <Link
-                  href="/guides"
-                  className="text-sm font-semibold bg-gradient-to-r from-primary to-purple-500 bg-clip-text text-transparent hover:opacity-80 transition-all flex items-center gap-1 h-full"
+                  href="/live-tv"
+                  className="px-3 py-0.5 rounded-sm text-xs font-bold tracking-wider border border-red-600 bg-red-600 text-white hover:bg-red-700 transition-colors flex items-center h-fit my-auto"
                 >
-                  <Sparkles className="h-3.5 w-3.5 text-primary" />
+                  LIVE TV
+                </Link>
+
+                <Link
+                  href="/guides"
+                  className="text-sm font-medium text-muted-foreground hover:text-primary transition-colors flex items-center gap-1 h-full"
+                >
+                  <Sparkles className="h-3.5 w-3.5" />
                   Build & Earn
                 </Link>
                 <Link
                   href="/my-info"
-                  className="text-sm font-semibold bg-gradient-to-r from-blue-500 to-cyan-500 bg-clip-text text-transparent hover:opacity-80 transition-all flex items-center gap-1 h-full"
+                  className="text-sm font-medium text-muted-foreground hover:text-primary transition-colors flex items-center h-full"
                 >
                   Get My Info
                 </Link>
@@ -70,10 +77,6 @@ export function Header() {
                 </Link>
                 <Link href="/downloaders" className="text-sm font-medium text-muted-foreground hover:text-primary transition-colors flex items-center h-full">
                   Downloaders
-                </Link>
-
-                <Link href="/live-tv" className="text-sm font-medium text-muted-foreground hover:text-primary transition-colors flex items-center h-full">
-                  Live TV
                 </Link>
 
                 <Link href="/ad-tools/roas-calculator" className="text-sm font-medium text-muted-foreground hover:text-primary transition-colors flex items-center h-full">
@@ -157,11 +160,20 @@ export function Header() {
 
           <div className="pt-2 border-t border-border/10 mt-2">
             <Link
+              href="/live-tv"
+              onClick={() => setMobileMenuOpen(false)}
+              className="flex items-center gap-2 py-3"
+            >
+              <span className="px-3 py-1 rounded-sm text-xs font-bold tracking-wider border border-red-600 bg-red-600 text-white">
+                LIVE TV
+              </span>
+            </Link>
+            <Link
               href="/guides"
               onClick={() => setMobileMenuOpen(false)}
-              className="flex items-center gap-2 py-3 text-base font-semibold bg-gradient-to-r from-primary to-purple-500 bg-clip-text text-transparent"
+              className="flex items-center gap-2 py-3 text-base font-semibold text-foreground/80 hover:text-primary transition-colors"
             >
-              <Sparkles className="h-4 w-4 text-primary" />
+              <Sparkles className="h-4 w-4" />
               Build & Earn
             </Link>
             <Link
@@ -170,13 +182,6 @@ export function Header() {
               className="flex items-center gap-2 py-3 text-base font-semibold text-foreground/80 hover:text-primary transition-colors"
             >
               Blog
-            </Link>
-            <Link
-              href="/live-tv"
-              onClick={() => setMobileMenuOpen(false)}
-              className="block py-3 text-base font-semibold text-foreground/80 hover:text-primary transition-colors"
-            >
-              Live TV
             </Link>
             <Link
               href="/ad-tools/roas-calculator"

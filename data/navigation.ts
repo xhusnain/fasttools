@@ -350,15 +350,5 @@ export const navigationConfig: MegaMenuSection[] = [
             }
         ]
     },
-    {
-        title: "Live TV",
-        categories: [
-            {
-                title: "Watch Live",
-                items: [
-                    { title: "Browse by Country", href: "/live-tv", icon: Tv, description: "Global TV channels" },
-                ]
-            }
-        ]
-    }
+
 ]

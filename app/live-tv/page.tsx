@@ -1,7 +1,7 @@
 // Main IPTV Landing Page
 
-import { getAllCountries, getIPTVStats } from '@/services/iptv.service';
-import { CountryGrid } from '@/components/iptv/country-grid';
+import { getAllCountries, getIPTVStats, getAllLanguages, getAllCategories } from '@/services/iptv.service';
+import { LiveTVDashboard } from '@/components/iptv/live-tv-dashboard';
 import { LegalDisclaimer } from '@/components/iptv/legal-disclaimer';
 import { generateMainPageSEO } from '@/components/iptv/helpers/seo-generator';
 import { Metadata } from 'next';
@@ -31,6 +31,8 @@ export async function generateMetadata(): Promise<Metadata> {
 export default async function LiveTVPage() {
     const countries = await getAllCountries();
     const stats = await getIPTVStats();
+    const languages = await getAllLanguages();
+    const categories = await getAllCategories();
     const seo = generateMainPageSEO(stats.totalCountries, stats.totalChannels);
 
     return (
@@ -66,6 +68,13 @@ export default async function LiveTVPage() {
                     </div>
                 </div>
 
+                {/* Dashboard (Filters + Grid) */}
+                <LiveTVDashboard
+                    initialCountries={countries}
+                    languages={languages}
+                    categories={categories}
+                />
+
                 {/* Legal Disclaimer */}
                 <LegalDisclaimer />
 
@@ -75,12 +84,6 @@ export default async function LiveTVPage() {
                         className="text-muted-foreground space-y-4"
                         dangerouslySetInnerHTML={{ __html: seo.content.replace(/\n/g, '<br />') }}
                     />
-                </div>
-
-                {/* Country Grid */}
-                <div className="space-y-6">
-                    <h2 className="text-2xl font-bold text-foreground">Browse by Country</h2>
-                    <CountryGrid countries={countries} />
                 </div>
             </div>
         </div>
