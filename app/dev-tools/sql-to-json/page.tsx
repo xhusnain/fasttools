@@ -222,45 +222,9 @@ export default function SQLToJSONPage() {
         screenshot: "https://fasttools.store/images/dev-tools/sql-to-json-hero.png"
     }
 
-    const breadcrumbLd = {
-        "@context": "https://schema.org",
-        "@type": "BreadcrumbList",
-        itemListElement: [{
-            "@type": "ListItem",
-            position: 1,
-            name: "Home",
-            item: "https://fasttools.store"
-        }, {
-            "@type": "ListItem",
-            position: 2,
-            name: "Developer Tools",
-            item: "https://fasttools.store/dev-tools"
-        }, {
-            "@type": "ListItem",
-            position: 3,
-            name: "SQL to JSON Converter",
-            item: "https://fasttools.store/dev-tools/sql-to-json"
-        }]
-    }
-
-    const faqLd = {
-        "@context": "https://schema.org",
-        "@type": "FAQPage",
-        mainEntity: faqs.map(faq => ({
-            "@type": "Question",
-            name: faq.question,
-            acceptedAnswer: {
-                "@type": "Answer",
-                text: faq.answer
-            }
-        }))
-    }
-
     return (
         <>
             <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
-            <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbLd) }} />
-            <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqLd) }} />
             <ToolPageLayout
                 {...toolConfig.getLayoutProps(
                     <div className="p-3 sm:p-4 md:p-5 rounded-lg bg-card border border-border shadow">
