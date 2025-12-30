@@ -68,23 +68,21 @@ export function LiveTVPlayer({ streamUrl }: LiveTVPlayerProps) {
             }
         });
 
-        player.on('stalled', () => {
-            player.load();
-            const playPromise = player.play();
-            if (playPromise) {
-                playPromise.catch(() => { });
-            }
-        });
+
 
         const handleAutoplay = async () => {
             try {
                 await player.play();
             } catch (error) {
-                player.muted(true);
-                try {
-                    await player.play();
-                } catch (mutedError) {
-                    player.poster('');
+                if (!player.isDisposed()) {
+                    player.muted(true);
+                    try {
+                        await player.play();
+                    } catch (mutedError) {
+                        if (!player.isDisposed()) {
+                            player.poster('');
+                        }
+                    }
                 }
             }
         };
