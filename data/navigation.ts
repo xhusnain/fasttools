@@ -1,4 +1,5 @@
 
+
 import {
     Calculator,
     Camera,
@@ -60,8 +61,10 @@ import {
     Regex,
     Gift,
     Drumstick,
-    PartyPopper
+    PartyPopper,
+    Tv
 } from "lucide-react"
+
 
 export interface NavItem {
     title: string
@@ -346,5 +349,6 @@ export const navigationConfig: MegaMenuSection[] = [
                 ]
             }
         ]
-    }
+    },
+
 ]
