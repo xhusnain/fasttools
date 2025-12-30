@@ -1,8 +1,9 @@
 // Main IPTV Landing Page
 
-import { getAllCountries, getIPTVStats, getAllLanguages, getAllCategories } from '@/services/iptv.service';
+import { getAllCountries, getIPTVStats, getAllLanguages, getAllCategories, getAllChannels } from '@/services/iptv.service';
 import { LiveTVDashboard } from '@/components/iptv/live-tv-dashboard';
 import { LegalDisclaimer } from '@/components/iptv/legal-disclaimer';
+import { LiveTVSEO } from '@/components/iptv/live-tv-seo';
 import { generateMainPageSEO } from '@/components/iptv/helpers/seo-generator';
 import { Metadata } from 'next';
 import { Tv, Globe } from 'lucide-react';
@@ -30,10 +31,10 @@ export async function generateMetadata(): Promise<Metadata> {
 
 export default async function LiveTVPage() {
     const countries = await getAllCountries();
+    const channels = await getAllChannels();
     const stats = await getIPTVStats();
     const languages = await getAllLanguages();
     const categories = await getAllCategories();
-    const seo = generateMainPageSEO(stats.totalCountries, stats.totalChannels);
 
     return (
         <div className="min-h-screen bg-background">
@@ -78,13 +79,8 @@ export default async function LiveTVPage() {
                 {/* Legal Disclaimer */}
                 <LegalDisclaimer />
 
-                {/* SEO Content */}
-                <div className="prose prose-invert max-w-none">
-                    <div
-                        className="text-muted-foreground space-y-4"
-                        dangerouslySetInnerHTML={{ __html: seo.content.replace(/\n/g, '<br />') }}
-                    />
-                </div>
+                {/* Dynamic SEO Content (Directory & Features) */}
+                <LiveTVSEO countries={countries} channels={channels} />
             </div>
         </div>
     );

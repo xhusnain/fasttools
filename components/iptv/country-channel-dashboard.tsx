@@ -18,16 +18,28 @@ export function CountryChannelDashboard({ initialChannels, countryCode }: Countr
     // Extract available filters from channels dynamically
     const { availableLanguages, availableCategories } = useMemo(() => {
         const langs = new Set<string>()
-        const cats = new Set<string>()
+        const catCounts = new Map<string, number>()
 
         initialChannels.forEach(channel => {
             if (channel.language) langs.add(channel.language)
-            channel.categories.forEach(c => cats.add(c))
+            channel.categories.forEach(c => {
+                catCounts.set(c, (catCounts.get(c) || 0) + 1)
+            })
         })
+
+        // Sort categories by popularity (count) then alphabetically
+        const sortedCategories = Array.from(catCounts.entries())
+            .sort((a, b) => {
+                // Primary: Count descending
+                if (b[1] !== a[1]) return b[1] - a[1]
+                // Secondary: Name ascending
+                return a[0].localeCompare(b[0])
+            })
+            .map(entry => entry[0])
 
         return {
             availableLanguages: Array.from(langs).sort(),
-            availableCategories: Array.from(cats).sort()
+            availableCategories: sortedCategories
         }
     }, [initialChannels])
 

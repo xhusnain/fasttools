@@ -168,6 +168,12 @@ export const categoryPages = [
         changeFrequency: "weekly" as const,
         priority: 0.95,
     },
+    {
+        url: "https://www.fasttools.store/live-tv",
+        lastModified: new Date(),
+        changeFrequency: "daily" as const,
+        priority: 0.95,
+    },
 ]
 
 // Guides are now generated dynamically
