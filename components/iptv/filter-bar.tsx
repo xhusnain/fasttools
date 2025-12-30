@@ -70,7 +70,6 @@ export function FilterBar({
     return (
         <div className={cn("w-full space-y-3 md:space-y-4", className)}>
             <div className="flex flex-col md:flex-row gap-3 md:gap-4 items-center w-full">
-                {/* Search Input */}
                 <div className="relative w-full md:w-1/3">
                     <Search className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-muted-foreground" />
                     <GInput
@@ -89,7 +88,6 @@ export function FilterBar({
                     )}
                 </div>
 
-                {/* Filters */}
                 <div className="flex flex-1 gap-2 w-full md:w-auto overflow-x-auto pb-2 md:pb-0 scrollbar-hide">
                     <GSelect value={selectedLanguage} onValueChange={handleLanguageChange}>
                         <GSelectTrigger className="w-[140px] md:w-[160px] h-10 bg-background/60 backdrop-blur-sm border-2">
