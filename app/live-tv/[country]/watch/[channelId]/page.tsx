@@ -104,7 +104,11 @@ export default async function WatchPage({ params }: WatchPageProps) {
                         </div>
 
                         {/* Video Player */}
-                        <LiveTVPlayer streamUrl={channel.streamUrl} countryCode={country} />
+                        <LiveTVPlayer
+                            streamUrl={channel.streamUrl}
+                            channelName={channel.name}
+                            countryCode={country}
+                        />
                     </div>
 
                     {/* Sidebar (Related Channels) */}

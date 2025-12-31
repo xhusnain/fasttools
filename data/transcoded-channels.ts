@@ -1,10 +1,10 @@
 export const TRANSCODED_CHANNELS = [
     'pishow.tv',
-    'sony_sports',
-    'star_sports',
-    'ten_sports',
-    'willow_cricket',
-    'astro_cricket',
+    'sony_sports', 'sony sports',
+    'star_sports', 'star sports',
+    'ten_sports', 'ten sports',
+    'willow_cricket', 'willow cricket',
+    'astro_cricket', 'astro cricket',
 ];
 
 export function requiresTranscoding(url: string, channelName?: string): boolean {
