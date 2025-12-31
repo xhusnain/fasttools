@@ -30,6 +30,7 @@ export async function generateMetadata({ params }: WatchPageProps): Promise<Meta
     return {
         title: `Watch ${channel.name} Live - Free IPTV Streaming | FastTools`,
         description: `Stream ${channel.name} live for free. Watch ${channel.categories.join(', ')} content from ${channel.country.toUpperCase()} online.`,
+        referrer: 'no-referrer',
         openGraph: {
             title: `Watch ${channel.name} Live`,
             description: `Stream ${channel.name} live for free`,

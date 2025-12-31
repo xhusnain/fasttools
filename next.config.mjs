@@ -85,6 +85,15 @@ const nextConfig = {
         ],
       },
       {
+        source: "/live-tv/:path*",
+        headers: [
+          {
+            key: "Referrer-Policy",
+            value: "no-referrer",
+          },
+        ],
+      },
+      {
         source: "/:path*",
         headers: [
           {
