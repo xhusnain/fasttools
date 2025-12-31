@@ -1,13 +1,5 @@
-// List of channels or providers that require server-side transcoding
-// These typically have fast-expiring URLs or incompatible codecs
-// Format: Partial URL strings or channel names to match
-
 export const TRANSCODED_CHANNELS = [
-    // Providers / Servers
-    '66.102.120.18',      // Star Sports, Sony Sports server
-    'pishow.tv',          // Sometimes unstable, keep an eye on it
-
-    // Specific Channels (by ID or Name parts)
+    'pishow.tv',
     'sony_sports',
     'star_sports',
     'ten_sports',
