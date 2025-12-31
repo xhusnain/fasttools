@@ -9,14 +9,26 @@ interface LiveTVPlayerProps {
     countryCode?: string;
 }
 
+// Problematic servers that need transcoding
+const PROBLEMATIC_SERVERS = [
+    '66.102.120.18',
+];
+
+function needsTranscoding(url: string): boolean {
+    return PROBLEMATIC_SERVERS.some(server => url.includes(server));
+}
+
 export function LiveTVPlayer({ streamUrl }: LiveTVPlayerProps) {
     const videoRef = useRef<HTMLVideoElement>(null);
     const playerRef = useRef<any>(null);
+    const mpegtsPlayerRef = useRef<any>(null);
     const mountedRef = useRef(true);
     const [error, setError] = useState<string | null>(null);
+    const [isTranscoding, setIsTranscoding] = useState(false);
     const [key, setKey] = useState(0);
 
     const destroyPlayer = useCallback(() => {
+        // Destroy Video.js player
         if (playerRef.current) {
             try {
                 playerRef.current.dispose();
@@ -24,6 +36,18 @@ export function LiveTVPlayer({ streamUrl }: LiveTVPlayerProps) {
                 // ignore
             }
             playerRef.current = null;
+        }
+        // Destroy mpegts.js player
+        if (mpegtsPlayerRef.current) {
+            try {
+                mpegtsPlayerRef.current.pause();
+                mpegtsPlayerRef.current.unload();
+                mpegtsPlayerRef.current.detachMediaElement();
+                mpegtsPlayerRef.current.destroy();
+            } catch (e) {
+                // ignore
+            }
+            mpegtsPlayerRef.current = null;
         }
     }, []);
 
@@ -40,115 +64,151 @@ export function LiveTVPlayer({ streamUrl }: LiveTVPlayerProps) {
         setError(null);
         destroyPlayer();
 
-        const proxyUrl = `/api/proxy?url=${encodeURIComponent(streamUrl)}`;
+        const useTranscode = needsTranscoding(streamUrl);
+        setIsTranscoding(useTranscode);
 
         const initTimeout = setTimeout(async () => {
             if (!mountedRef.current) return;
 
             try {
-                const videojs = (await import('video.js')).default;
+                if (useTranscode) {
+                    // Use mpegts.js for transcoded MPEG-TS stream
+                    const transcodeUrl = `/api/transcode?url=${encodeURIComponent(streamUrl)}`;
+                    console.log('[Player] Using transcoding for:', streamUrl);
+                    console.log('[Player] Transcode URL:', transcodeUrl);
 
-                console.log('[Video.js] Creating player for:', streamUrl);
-                console.log('[Video.js] Proxy URL:', proxyUrl);
+                    const mpegts = await import('mpegts.js');
 
-                const player = videojs(video, {
-                    controls: true,
-                    autoplay: true,
-                    muted: true,
-                    preload: 'auto',
-                    fluid: true,
-                    responsive: true,
-                    liveui: true,
-                    liveTracker: {
-                        trackingThreshold: 0,
-                        liveTolerance: 5, // Lower tolerance - stay closer to live
-                    },
-                    html5: {
-                        vhs: {
-                            overrideNative: true,
-                            enableLowInitialPlaylist: true,
-                            smoothQualityChange: false, // Disable for faster switching
-                            allowSeeksWithinUnsafeLiveWindow: true,
-                            handlePartialData: true,
-                            // Aggressive live settings
-                            useBandwidthFromLocalStorage: false,
-                            limitRenditionByPlayerDimensions: false,
-                            useDevicePixelRatio: false,
-                            // Shorter timeouts for expired segments
-                            bandwidth: 10000000, // Assume high bandwidth
-                            // Experimental settings for problematic streams
-                            experimentalBufferBasedABR: false,
-                            experimentalLLHLS: false,
+                    if (!mpegts.default.isSupported()) {
+                        setError('Browser not supported for transcoded streams');
+                        return;
+                    }
+
+                    const player = mpegts.default.createPlayer({
+                        type: 'mpegts',
+                        isLive: true,
+                        url: transcodeUrl,
+                    }, {
+                        enableWorker: false,
+                        enableStashBuffer: true,
+                        stashInitialSize: 384 * 1024,
+                        autoCleanupSourceBuffer: true,
+                        autoCleanupMaxBackwardDuration: 30,
+                        autoCleanupMinBackwardDuration: 15,
+                        liveBufferLatencyChasing: true,
+                        liveBufferLatencyMaxLatency: 15.0,
+                        liveBufferLatencyMinRemain: 5.0,
+                        fixAudioTimestampGap: true,
+                    });
+
+                    mpegtsPlayerRef.current = player;
+                    player.attachMediaElement(video);
+                    player.load();
+
+                    player.on(mpegts.default.Events.MEDIA_INFO, (info: any) => {
+                        console.log('[mpegts] Media info:', info);
+                    });
+
+                    player.on(mpegts.default.Events.ERROR, (type: string, detail: string) => {
+                        console.error('[mpegts] Error:', type, detail);
+                    });
+
+                    video.addEventListener('canplay', () => {
+                        console.log('[Video] Can play');
+                        video.play().catch(e => console.log('[Video] Autoplay blocked:', e));
+                    });
+
+                    video.addEventListener('playing', () => {
+                        console.log('[Video] Playing!');
+                    });
+
+                } else {
+                    // Use Video.js for normal streams
+                    const proxyUrl = `/api/proxy?url=${encodeURIComponent(streamUrl)}`;
+                    console.log('[Video.js] Creating player for:', streamUrl);
+                    console.log('[Video.js] Proxy URL:', proxyUrl);
+
+                    const videojs = (await import('video.js')).default;
+
+                    const player = videojs(video, {
+                        controls: true,
+                        autoplay: true,
+                        muted: true,
+                        preload: 'auto',
+                        fluid: true,
+                        responsive: true,
+                        liveui: true,
+                        liveTracker: {
+                            trackingThreshold: 0,
+                            liveTolerance: 5,
                         },
-                        nativeVideoTracks: false,
-                        nativeAudioTracks: false,
-                        nativeTextTracks: false,
-                    },
-                    sources: [{
-                        src: proxyUrl,
-                        type: 'application/x-mpegURL',
-                    }],
-                });
+                        html5: {
+                            vhs: {
+                                overrideNative: true,
+                                enableLowInitialPlaylist: true,
+                                smoothQualityChange: false,
+                                allowSeeksWithinUnsafeLiveWindow: true,
+                                handlePartialData: true,
+                                bandwidth: 10000000,
+                            },
+                            nativeVideoTracks: false,
+                            nativeAudioTracks: false,
+                            nativeTextTracks: false,
+                        },
+                        sources: [{
+                            src: proxyUrl,
+                            type: 'application/x-mpegURL',
+                        }],
+                    });
 
-                playerRef.current = player;
+                    playerRef.current = player;
 
-                player.on('loadedmetadata', () => {
-                    console.log('[Video.js] Loaded metadata');
-                });
+                    player.on('loadedmetadata', () => {
+                        console.log('[Video.js] Loaded metadata');
+                    });
 
-                // Event handlers defined below with recovery logic
-
-                player.on('error', () => {
-                    const err = player.error();
-                    console.error('[Video.js] Error:', err?.code, err?.message);
-                    if (mountedRef.current && err) {
-                        // Don't show error for minor issues
-                        if (err.code === 4) { // MEDIA_ERR_SRC_NOT_SUPPORTED
+                    player.on('error', () => {
+                        const err = player.error();
+                        console.error('[Video.js] Error:', err?.code, err?.message);
+                        if (mountedRef.current && err && err.code === 4) {
                             setError('Stream format not supported');
                         }
-                    }
-                });
+                    });
 
-                player.on('stalled', () => {
-                    console.log('[Video.js] Stalled, attempting recovery...');
-                    // Try to recover by seeking to live edge
-                    setTimeout(() => {
-                        if (player && !player.isDisposed()) {
-                            try {
-                                // Cast to any to access liveTracker
-                                const liveTracker = (player as any).liveTracker;
-                                if (liveTracker && liveTracker.liveCurrentTime) {
-                                    console.log('[Video.js] Seeking to live edge...');
-                                    player.currentTime(liveTracker.liveCurrentTime());
-                                    player.play();
+                    player.on('stalled', () => {
+                        console.log('[Video.js] Stalled, attempting recovery...');
+                        setTimeout(() => {
+                            if (player && !player.isDisposed()) {
+                                try {
+                                    const liveTracker = (player as any).liveTracker;
+                                    if (liveTracker && liveTracker.liveCurrentTime) {
+                                        player.currentTime(liveTracker.liveCurrentTime());
+                                        player.play();
+                                    }
+                                } catch (e) {
+                                    // ignore
                                 }
-                            } catch (e) {
-                                console.log('[Video.js] Recovery failed:', e);
                             }
-                        }
-                    }, 3000);
-                });
+                        }, 3000);
+                    });
 
-                // Waiting/playing counters for recovery
-                let waitingCount = 0;
-                player.on('waiting', () => {
-                    waitingCount++;
-                    console.log('[Video.js] Waiting (count:', waitingCount + ')');
-                    if (waitingCount >= 5) {
-                        console.log('[Video.js] Too many waiting events, reloading...');
+                    let waitingCount = 0;
+                    player.on('waiting', () => {
+                        waitingCount++;
+                        console.log('[Video.js] Waiting (count:', waitingCount + ')');
+                        if (waitingCount >= 5) {
+                            waitingCount = 0;
+                            try { player.load(); } catch (e) { /* ignore */ }
+                        }
+                    });
+
+                    player.on('playing', () => {
+                        console.log('[Video.js] Playing');
                         waitingCount = 0;
-                        try {
-                            player.load();
-                        } catch (e) {
-                            console.log('[Video.js] Reload failed:', e);
-                        }
-                    }
-                });
+                    });
+                }
 
-                player.on('playing', () => {
-                    console.log('[Video.js] Playing');
-                    waitingCount = 0;
-                });
+                video.muted = true;
 
             } catch (err) {
                 console.error('[Player] Failed to initialize:', err);
@@ -167,12 +227,19 @@ export function LiveTVPlayer({ streamUrl }: LiveTVPlayerProps) {
 
     return (
         <div className="w-full relative group bg-black rounded-xl overflow-hidden shadow-2xl facet-filter-height">
+            {isTranscoding && (
+                <div className="absolute top-2 right-2 z-40 bg-yellow-500/80 text-black px-2 py-1 rounded text-xs font-medium">
+                    🔄 Live Transcoding
+                </div>
+            )}
+
             <div data-vjs-player>
                 <video
                     ref={videoRef}
                     key={key}
                     className="video-js vjs-big-play-centered vjs-theme-sea w-full h-full"
                     playsInline
+                    controls
                 />
             </div>
 
