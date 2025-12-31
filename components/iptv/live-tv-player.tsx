@@ -72,6 +72,9 @@ export function LiveTVPlayer({ streamUrl, channelName }: LiveTVPlayerProps) {
             try {
                 if (mode === 'transcode') {
                     // --- Transcode Mode (FFmpeg) ---
+                    // We use mpegts.js here because it can play the raw MPEG-TS stream directly from FFmpeg.
+                    // We cannot use hls.js here because hls.js requires a .m3u8 playlist file, which adds latency
+                    // and complexity (generating files on the server). mpegts.js gives us low-latency streaming.
                     const transcodeUrl = `${env.apiUrl}/transcode?url=${encodeURIComponent(streamUrl)}`;
 
                     const mpegts = await import('mpegts.js');
