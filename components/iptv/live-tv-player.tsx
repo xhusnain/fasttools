@@ -2,6 +2,7 @@
 
 import { useEffect, useRef, useState, useCallback } from 'react';
 import { AlertCircle, RefreshCw, Loader2 } from 'lucide-react';
+import { env } from '@/config/env';
 
 interface LiveTVPlayerProps {
     streamUrl: string;
@@ -49,9 +50,7 @@ export function LiveTVPlayer({ streamUrl }: LiveTVPlayerProps) {
             if (!mountedRef.current) return;
 
             try {
-                // All streams use FFmpeg transcoding for maximum compatibility
-                const transcodeUrl = `/api/transcode?url=${encodeURIComponent(streamUrl)}`;
-                console.log('[Player] Using FFmpeg transcoding for:', streamUrl);
+                const transcodeUrl = `${env.apiUrl}/transcode?url=${encodeURIComponent(streamUrl)}`;
 
                 const mpegts = await import('mpegts.js');
 
@@ -85,12 +84,10 @@ export function LiveTVPlayer({ streamUrl }: LiveTVPlayerProps) {
                 let hasStarted = false;
 
                 player.on(mpegts.default.Events.MEDIA_INFO, () => {
-                    console.log('[Player] Media info received');
                     setIsLoading(false);
                 });
 
-                player.on(mpegts.default.Events.ERROR, (type: string, detail: string) => {
-                    console.error('[Player] Error:', type, detail);
+                player.on(mpegts.default.Events.ERROR, () => {
                     if (!hasStarted) {
                         setError('Failed to load stream. Try refreshing.');
                         setIsLoading(false);
@@ -98,20 +95,14 @@ export function LiveTVPlayer({ streamUrl }: LiveTVPlayerProps) {
                 });
 
                 video.addEventListener('canplay', () => {
-                    console.log('[Player] Can play');
                     hasStarted = true;
                     setIsLoading(false);
-                    video.play().catch(e => console.log('[Player] Autoplay blocked:', e));
-                });
-
-                video.addEventListener('playing', () => {
-                    console.log('[Player] Playing');
+                    video.play().catch(() => { });
                 });
 
                 video.muted = true;
 
-            } catch (err) {
-                console.error('[Player] Failed to initialize:', err);
+            } catch {
                 if (mountedRef.current) {
                     setError('Failed to load player');
                     setIsLoading(false);
