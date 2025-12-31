@@ -64,6 +64,7 @@
     "jszip": "^3.10.1",
     "lucide-react": "^0.454.0",
     "marked": "latest",
+    "mpegts.js": "^1.8.0",
     "next": "^16.0.7",
     "next-mdx-remote": "^5.0.0",
     "next-themes": "latest",
@@ -93,7 +94,6 @@
     "tailwindcss-animate": "^1.0.7",
     "tesseract.js": "latest",
     "vaul": "^0.9.9",
-    "video.js": "^8.10.0",
     "zod": "^3.25.76",
     "zustand": "^5.0.8"
   },
@@ -103,7 +103,6 @@
     "@types/qrcode": "^1.5.6",
     "@types/react": "^19.2.7",
     "@types/react-dom": "^19.2.3",
-    "@types/video.js": "^7.3.58",
     "eslint": "^9.39.1",
     "eslint-config-next": "^16.0.7",
     "jsdom": "^27.2.0",
