@@ -19,24 +19,44 @@ export async function GET(request: NextRequest) {
     console.log(`[Stream ${processId}] Starting FFmpeg transcode for:`, url.substring(0, 80));
 
     try {
-        // Use FFmpeg to transcode and output as fragmented MP4
-        // This format is directly playable in modern browsers
+        // Use FFmpeg to transcode to browser-compatible H.264/AAC
+        // Optimized for LIVE streaming with fast startup
         const ffmpeg = spawn('ffmpeg', [
             '-hide_banner',
-            '-loglevel', 'error',
+            '-loglevel', 'warning',
+            // Input options for live IPTV streams
+            '-reconnect', '1',
+            '-reconnect_streamed', '1',
+            '-reconnect_delay_max', '5',
             '-user_agent', 'VLC/3.0.18 LibVLC/3.0.18',
-            '-fflags', '+genpts+discardcorrupt',  // Generate PTS and ignore corrupt frames
+            '-fflags', '+genpts+discardcorrupt+nobuffer',
+            '-flags', 'low_delay',
+            '-analyzeduration', '1000000',    // 1 second analysis (faster start)
+            '-probesize', '1000000',          // 1MB probe (faster start)
             '-i', url,
-            '-c:v', 'copy',               // Copy video (no re-encode)
-            '-c:a', 'aac',                // Transcode audio to AAC
-            '-b:a', '128k',               // Audio bitrate
-            '-ac', '2',                   // Stereo
-            '-ar', '44100',               // Sample rate
-            // Output as fragmented MP4 (works with MSE in browsers)
+            // Video: Fast H.264 encoding for real-time
+            '-c:v', 'libx264',
+            '-preset', 'ultrafast',
+            '-tune', 'zerolatency',
+            '-vf', 'scale=-2:480,yadif=0',    // Scale to 480p + simple de-interlace (much faster)
+            '-profile:v', 'baseline',          // Simplest profile for fastest encoding
+            '-level', '3.1',
+            '-pix_fmt', 'yuv420p',
+            '-b:v', '1000k',                   // Lower bitrate for faster encoding
+            '-maxrate', '1200k',
+            '-bufsize', '2000k',
+            '-g', '30',                        // Keyframe every 1 second at 30fps
+            '-keyint_min', '15',
+            // Audio: Quick AAC
+            '-c:a', 'aac',
+            '-b:a', '96k',                     // Lower audio bitrate
+            '-ac', '2',
+            '-ar', '44100',
+            // Output: Fragmented MP4 for streaming
             '-f', 'mp4',
-            '-movflags', 'frag_keyframe+empty_moov+default_base_moof+faststart',
-            '-frag_duration', '1000000',  // 1 second fragments
-            'pipe:1',                      // Output to stdout
+            '-movflags', 'frag_keyframe+empty_moov+default_base_moof',
+            '-frag_duration', '500000',        // 0.5 second fragments (faster start)
+            'pipe:1',
         ], {
             stdio: ['pipe', 'pipe', 'pipe'],
         });
