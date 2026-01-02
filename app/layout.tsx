@@ -137,7 +137,7 @@ export default function RootLayout({
   const websiteSchema = getWebsiteSchema()
 
   return (
-    <html lang="en" className={`antialiased ${roboto.variable} ${montserrat.variable}`} suppressHydrationWarning>
+    <html lang="en" className={`antialiased ${roboto.variable} ${montserrat.variable}`} suppressHydrationWarning data-scroll-behavior="smooth">
       <head>
         {/* Resource Hints for Performance */}
         <link rel="preconnect" href="https://www.googletagmanager.com" />
