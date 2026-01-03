@@ -1,3 +1,4 @@
+import React from "react"
 import { Breadcrumbs } from "@/components/common/breadcrumbs"
 import { GHeader } from "@/ui/gheader"
 import { GAccordion, GAccordionContent, GAccordionItem, GAccordionTrigger } from "@/ui/gaccordion"
@@ -8,6 +9,9 @@ import {
   Download,
   ArrowRight,
   Youtube,
+  Instagram,
+  Facebook,
+  Twitter,
   Copy,
   Search,
   CheckCircle,
@@ -28,31 +32,39 @@ export const metadata = createMetadata({
 const downloaders = [
   {
     id: "tiktok-downloader",
-    name: "TikTok Downloader",
-    description: "Download TikTok videos without watermarks in high definition. Save your favorite short videos effortlessly.",
+    name: "TikTok",
+    description: "Download TikTok videos without watermarks.",
     icon: Download,
     href: "/social-media-tools/tiktok-downloader",
+    color: "#00f2ea",
+    hoverColor: "#ff0050",
   },
   {
     id: "instagram-downloader",
-    name: "Instagram Downloader",
-    description: "Download Instagram posts, reels, stories, and images in HD quality. Preserve your favorite moments from Instagram.",
-    icon: Download,
+    name: "Instagram",
+    description: "Download Reels, Stories, and posts.",
+    icon: Instagram,
     href: "/social-media-tools/instagram-downloader",
+    color: "#E1306C",
+    hoverColor: "#F77737",
   },
   {
     id: "facebook-downloader",
-    name: "Facebook Downloader",
-    description: "Download public Facebook videos in HD quality directly to your device. Simple, fast, and reliable.",
-    icon: Download,
+    name: "Facebook",
+    description: "Save public Facebook videos in HD.",
+    icon: Facebook,
     href: "/social-media-tools/facebook-downloader",
+    color: "#1877F2",
+    hoverColor: "#0a52bd",
   },
   {
     id: "x-video-downloader",
-    name: "X Video Downloader",
-    description: "Download videos from X (formerly Twitter) in high definition without any watermarks. Save important clips and moments.",
-    icon: Download,
+    name: "X/Twitter",
+    description: "Download X videos without watermarks.",
+    icon: Twitter,
     href: "/social-media-tools/x-video-downloader",
+    color: "#1DA1F2",
+    hoverColor: "#0F85D9",
   },
 ]
 
@@ -131,59 +143,54 @@ export default function DownloadersPage() {
               />
             </div>
 
-            <div className="mb-16 bg-card border border-border/40 rounded-xl p-8 md:p-12">
-              <h2 className="text-2xl md:text-3xl font-bold text-primary mb-6 text-center">How to Use Our Downloaders</h2>
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
-                <div className="flex flex-col items-center">
-                  <div className="h-16 w-16 rounded-full bg-primary/10 flex items-center justify-center mb-4">
-                    <Copy className="h-8 w-8 text-primary" />
-                  </div>
-                  <h3 className="text-lg font-bold text-heading-accent mb-2">1. Copy the URL</h3>
-                  <p className="text-sm text-muted-foreground">Navigate to the video or media you want to download on its respective platform and copy its URL from the address bar or share menu.</p>
-                </div>
-                <div className="flex flex-col items-center">
-                  <div className="h-16 w-16 rounded-full bg-primary/10 flex items-center justify-center mb-4">
-                    <Search className="h-8 w-8 text-primary" />
-                  </div>
-                  <h3 className="text-lg font-bold text-heading-accent mb-2">2. Paste and Search</h3>
-                  <p className="text-sm text-muted-foreground">Go to the specific downloader tool on our site, paste the URL into the input field, and click the 'Download' button.</p>
-                </div>
-                <div className="flex flex-col items-center">
-                  <div className="h-16 w-16 rounded-full bg-primary/10 flex items-center justify-center mb-4">
-                    <CheckCircle className="h-8 w-8 text-primary" />
-                  </div>
-                  <h3 className="text-lg font-bold text-heading-accent mb-2">3. Choose & Save</h3>
-                  <p className="text-sm text-muted-foreground">Our tool will process the link and provide you with various download options. Choose your preferred format and quality, and save the file to your device.</p>
+            {/* Tools Section - Now at the top */}
+            <div className="mb-16">
+              <div className="flex flex-col md:flex-row md:items-end justify-between mb-8 gap-4">
+                <div className="max-w-2xl">
+                  <h2 className="text-3xl md:text-4xl font-bold text-primary mb-4 bg-clip-text text-transparent bg-gradient-to-r from-primary to-primary/60">
+                    Our Featured Downloaders
+                  </h2>
+                  <p className="text-muted-foreground text-lg">
+                    Select a platform below to start downloading your favorite media instantly.
+                  </p>
                 </div>
               </div>
-            </div>
-
-            <div className="mb-16">
-              <h2 className="text-2xl md:text-3xl font-bold text-primary mb-8 text-center">Our Suite of Downloaders</h2>
-              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
                 {downloaders.map((downloader) => {
                   const Icon = downloader.icon
                   return (
                     <Link
                       key={downloader.id}
                       href={downloader.href}
-                      className="bg-card border border-border/40 rounded-xl p-6 hover:border-border/70 transition-all duration-300 group relative h-full flex flex-col"
+                      className="group relative overflow-hidden rounded-xl border border-border/50 bg-card p-0.5 transition-all hover:shadow-xl"
+                      style={{ '--brand-color': downloader.color } as React.CSSProperties}
                     >
-                      <div className="absolute top-4 right-4">
-                        <div className="h-10 w-10 rounded-lg bg-primary/10 flex items-center justify-center">
-                          <Icon className="h-5 w-5 text-foreground" />
+                      <div className="absolute inset-0 bg-gradient-to-br from-[var(--brand-color)]/5 to-transparent opacity-0 transition-opacity group-hover:opacity-100" />
+
+                      <div className="relative flex flex-col h-full bg-card/80 backdrop-blur-sm rounded-[10px] p-5">
+                        <div className="mb-4 flex items-center justify-center">
+                          <div
+                            className="rounded-lg p-2.5 transition-all group-hover:scale-110"
+                            style={{ backgroundColor: `${downloader.color}15`, color: downloader.color }}
+                          >
+                            <Icon className="h-6 w-6" />
+                          </div>
                         </div>
-                      </div>
-                      <div className="pr-12 flex-1 flex flex-col">
-                        <h3 className="text-lg font-bold text-heading-accent mb-3 group-hover:text-heading-accent transition-colors">
-                          {downloader.name}
-                        </h3>
-                        <p className="text-sm text-muted-foreground leading-relaxed mb-4 flex-1">
-                          {downloader.description}
-                        </p>
-                        <div className="flex items-center gap-2 text-foreground group-hover:text-foreground transition-colors">
-                          <span className="text-sm font-bold">Try Now</span>
-                          <ArrowRight className="h-4 w-4 group-hover:translate-x-1 transition-transform" />
+
+                        <div className="flex-1 text-center">
+                          <h3 className="text-lg font-bold text-heading-accent mb-1 group-hover:text-[var(--brand-color)] transition-colors">
+                            {downloader.name}
+                          </h3>
+                          <p className="text-xs text-muted-foreground leading-snug mb-3">
+                            {downloader.description}
+                          </p>
+                        </div>
+
+                        <div className="mt-auto flex items-center justify-center">
+                          <div className="flex items-center gap-1 text-xs font-semibold" style={{ color: downloader.color }}>
+                            <span>Try Now</span>
+                            <ArrowRight className="h-3.5 w-3.5 transition-transform group-hover:translate-x-0.5" />
+                          </div>
                         </div>
                       </div>
                     </Link>
@@ -192,32 +199,108 @@ export default function DownloadersPage() {
               </div>
             </div>
 
-            <div className="space-y-16 mb-16">
-              <div className="prose prose-lg max-w-none">
-                <h2 className="text-2xl md:text-3xl font-bold text-primary mb-4">A Multi-Platform Solution for All Your Media Needs</h2>
-                <p>In today's digital world, content is spread across countless platforms. That's why we've designed our suite of downloaders to be a versatile, all-in-one solution. Whether you're looking to save an educational lecture from YouTube, a viral dance from TikTok without the watermark, or a cherished family video from Facebook, our tools have you covered. We understand that each platform has its unique content formats, from Instagram's Reels and Stories to the concise video clips on X (formerly Twitter). Our service is engineered to handle these different formats seamlessly, providing you with a consistent and reliable experience no matter where the content originates. This multi-platform capability saves you the hassle of searching for a different tool for each site, making FastTools your go-to destination for saving online media.</p>
-              </div>
+            {/* Instructions Section - Now below tools */}
+            <div className="mb-20 relative">
+              <div className="absolute inset-0 bg-gradient-to-b from-primary/5 to-transparent rounded-3xl -z-10" />
+              <div className="bg-card/40 backdrop-blur-md border border-border/40 rounded-3xl p-8 md:p-16">
+                <div className="text-center max-w-3xl mx-auto mb-12">
+                  <h2 className="text-3xl md:text-4xl font-bold text-primary mb-4">How It Works</h2>
+                  <p className="text-muted-foreground text-lg">
+                    Three simple steps to save any media from the web to your device.
+                  </p>
+                </div>
 
-              <div className="prose prose-lg max-w-none">
-                <h2 className="text-2xl md:text-3xl font-bold text-primary mb-4">Understanding Video and Audio Quality Options</h2>
-                <p>When you download a video, quality matters. Our tools are designed to give you control over the final output, ensuring the file meets your specific needs. For most videos, we offer a range of resolution options, including High Definition (HD) 1080p for crisp, clear playback on large screens, and Standard Definition (SD) 720p or 480p for smaller file sizes that are perfect for mobile viewing or quick sharing. This flexibility ensures you get the content you want in the format you need, optimized for your use case.</p>
-              </div>
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-12 relative">
+                  {/* Step 1 */}
+                  <div className="relative flex flex-col items-center text-center group">
+                    <div className="h-20 w-20 rounded-2xl bg-primary/10 flex items-center justify-center mb-6 ring-1 ring-primary/20 transition-all group-hover:bg-primary/20 group-hover:rotate-3">
+                      <Copy className="h-10 w-10 text-primary" />
+                    </div>
+                    <div className="absolute -top-4 -right-4 text-6xl font-black text-primary/5 pointer-events-none">01</div>
+                    <h3 className="text-xl font-bold text-heading-accent mb-3">Copy Video URL</h3>
+                    <p className="text-muted-foreground leading-relaxed">
+                      Find the video on its platform and copy the link from your browser's address bar.
+                    </p>
+                  </div>
 
-              <div className="prose prose-lg max-w-none">
-                <h2 className="text-2xl md:text-3xl font-bold text-primary mb-4">Safe, Secure, and Ethical Downloading</h2>
-                <p>Your online safety is our top priority. Many online downloader tools are cluttered with intrusive ads, pop-ups, and potentially malicious software. We've built our platform to be clean, secure, and respectful of your privacy. Our website is protected with SSL encryption, ensuring a secure connection between your browser and our servers. Furthermore, we do not require you to register an account or provide any personal information to use our tools. While our service is designed to be safe and easy to use, we also encourage ethical downloading practices. It's important to remember that most content on these platforms is protected by copyright. Our tools are intended for personal use, such as downloading your own content or saving publicly available media for offline viewing. We urge all users to respect the intellectual property rights of creators and to ensure they have the legal right to download and use any content.</p>
+                  {/* Step 2 */}
+                  <div className="relative flex flex-col items-center text-center group">
+                    <div className="h-20 w-20 rounded-2xl bg-primary/10 flex items-center justify-center mb-6 ring-1 ring-primary/20 transition-all group-hover:bg-primary/20 group-hover:rotate-3">
+                      <Search className="h-10 w-10 text-primary" />
+                    </div>
+                    <div className="absolute -top-4 -right-4 text-6xl font-black text-primary/5 pointer-events-none">02</div>
+                    <h3 className="text-xl font-bold text-heading-accent mb-3">Paste & Analyze</h3>
+                    <p className="text-muted-foreground leading-relaxed">
+                      Paste the link into our search bar. Our system will immediately process and fetch the video data.
+                    </p>
+                  </div>
+
+                  {/* Step 3 */}
+                  <div className="relative flex flex-col items-center text-center group">
+                    <div className="h-20 w-20 rounded-2xl bg-primary/10 flex items-center justify-center mb-6 ring-1 ring-primary/20 transition-all group-hover:bg-primary/20 group-hover:rotate-3">
+                      <CheckCircle className="h-10 w-10 text-primary" />
+                    </div>
+                    <div className="absolute -top-4 -right-4 text-6xl font-black text-primary/5 pointer-events-none">03</div>
+                    <h3 className="text-xl font-bold text-heading-accent mb-3">Download Media</h3>
+                    <p className="text-muted-foreground leading-relaxed">
+                      Choose your preferred quality and format, then click download to save the file.
+                    </p>
+                  </div>
+                </div>
               </div>
             </div>
 
-            <div className="mb-16">
-              <h2 className="text-2xl md:text-3xl font-bold text-primary mb-8 text-center">Frequently Asked Questions</h2>
-              <GAccordion type="single" collapsible className="w-full max-w-2xl mx-auto">
+            <div className="grid grid-cols-1 lg:grid-cols-3 gap-12 mb-20">
+              <div className="lg:col-span-2 space-y-12">
+                <article className="prose prose-invert prose-lg max-w-none">
+                  <h2 className="text-3xl font-bold text-primary mb-6">A Multi-Platform Solution for All Your Media Needs</h2>
+                  <p className="text-muted-foreground leading-extended">In today's digital world, content is spread across countless platforms. That's why we've designed our suite of downloaders to be a versatile, all-in-one solution. Whether you're looking to save an educational lecture from YouTube, a viral dance from TikTok without the watermark, or a cherished family video from Facebook, our tools have you covered.</p>
+                  <p className="text-muted-foreground leading-extended">We understand that each platform has its unique content formats, from Instagram's Reels and Stories to the concise video clips on X (formerly Twitter). Our service is engineered to handle these different formats seamlessly, providing you with a consistent and reliable experience no matter where the content originates.</p>
+                </article>
+
+                <article className="prose prose-invert prose-lg max-w-none">
+                  <h2 className="text-3xl font-bold text-primary mb-6">Understanding Video and Audio Quality Options</h2>
+                  <p className="text-muted-foreground leading-extended">When you download a video, quality matters. Our tools are designed to give you control over the final output, ensuring the file meets your specific needs. For most videos, we offer a range of resolution options, including High Definition (HD) 1080p for crisp, clear playback on large screens, and Standard Definition (SD) 720p or 480p.</p>
+                </article>
+              </div>
+
+              <div className="lg:col-span-1 space-y-8">
+                <div className="bg-card border border-border/40 rounded-2xl p-8 sticky top-24">
+                  <h3 className="text-xl font-bold text-primary mb-6 flex items-center gap-2">
+                    <Star className="h-5 w-5 text-yellow-500 fill-yellow-500" />
+                    Why Choose Us?
+                  </h3>
+                  <ul className="space-y-4">
+                    {[
+                      { icon: ShieldCheck, text: "100% Secure & Private" },
+                      { icon: Zap, text: "Ultra-Fast Processing" },
+                      { icon: Download, text: "No Software Required" },
+                      { icon: Star, text: "Always Free to Use" }
+                    ].map((item, i) => (
+                      <li key={i} className="flex items-center gap-3 text-muted-foreground">
+                        <div className="h-8 w-8 rounded-lg bg-primary/10 flex items-center justify-center shrink-0">
+                          <item.icon className="h-4 w-4 text-primary" />
+                        </div>
+                        <span className="text-sm font-medium">{item.text}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              </div>
+            </div>
+
+            <div className="mb-20">
+              <div className="text-center mb-12">
+                <h2 className="text-3xl md:text-4xl font-bold text-primary mb-4">Frequently Asked Questions</h2>
+                <p className="text-muted-foreground">Everything you need to know about our downloading tools.</p>
+              </div>
+              <GAccordion type="single" collapsible className="w-full max-w-3xl mx-auto space-y-4">
                 {faqItems.map((item, index) => (
-                  <GAccordionItem value={`item-${index}`} key={index}>
-                    <GAccordionTrigger className="text-left text-base font-semibold hover:no-underline">
+                  <GAccordionItem value={`item-${index}`} key={index} className="bg-card border border-border/40 rounded-xl px-2">
+                    <GAccordionTrigger className="text-left text-lg font-semibold hover:no-underline py-4">
                       {item.question}
                     </GAccordionTrigger>
-                    <GAccordionContent className="text-base text-muted-foreground leading-relaxed">
+                    <GAccordionContent className="text-base text-muted-foreground leading-relaxed pb-6">
                       {item.answer}
                     </GAccordionContent>
                   </GAccordionItem>
@@ -225,7 +308,7 @@ export default function DownloadersPage() {
               </GAccordion>
             </div>
 
-            <div className="text-center text-xs text-muted-foreground max-w-3xl mx-auto">
+            <div className="text-center text-sm text-muted-foreground max-w-4xl mx-auto p-8 rounded-2xl bg-primary/5 border border-primary/10">
               <p><strong>Disclaimer:</strong> Our tools are intended for personal use only. Please respect the intellectual property rights of content creators. It is your responsibility to ensure that you have the right to download and use any content accessed through our service. We do not host or store any copyrighted material on our servers.</p>
             </div>
           </div>
