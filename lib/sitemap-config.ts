@@ -468,6 +468,19 @@ export const toolPages = [
         priority: 0.95,
     },
     {
+        url: "https://www.fasttools.store/social-media-tools/youtube-downloader",
+        lastModified: new Date('2026-01-03'),
+        changeFrequency: "weekly" as const,
+        priority: 0.98,
+        images: [
+            {
+                url: "https://www.fasttools.store/images/youtube-downloader-hero.png",
+                title: "YouTube Video Downloader - Free HD MP4 & MP3 Download",
+                caption: "Download YouTube videos in HD, 4K, and 8K quality. Convert YouTube to MP4 or MP3 for free. Works on iPhone, Android, PC, and Mac."
+            }
+        ]
+    },
+    {
         url: "https://www.fasttools.store/social-media-tools/facebook-downloader",
         lastModified: new Date('2025-11-25'),
         changeFrequency: "monthly" as const,

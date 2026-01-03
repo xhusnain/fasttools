@@ -53,7 +53,7 @@ const toolConfig = createToolConfig({
                 {/* Hero Image */}
                 <div className="relative w-full aspect-video max-w-3xl mx-auto rounded-2xl overflow-hidden border border-border shadow-lg">
                     <img
-                        src="/youtube-downloader-hero.png"
+                        src="/images/youtube-downloader-hero.png"
                         alt="YouTube Video Downloader - Download HD videos and MP3 audio"
                         className="w-full h-full object-cover"
                     />
