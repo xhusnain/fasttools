@@ -494,6 +494,19 @@ export const toolPages = [
         ]
     },
     {
+        url: "https://www.fasttools.store/social-media-tools/pinterest-downloader",
+        lastModified: new Date('2026-01-03'),
+        changeFrequency: "weekly" as const,
+        priority: 0.95,
+        images: [
+            {
+                url: "https://www.fasttools.store/images/pinterest-downloader-hero.png",
+                title: "Pinterest Downloader - Save Images & Videos HD Free",
+                caption: "Download Pinterest images and videos in HD quality for free. Save pins without watermark. Works on iPhone, Android, PC, and Mac."
+            }
+        ]
+    },
+    {
         url: "https://www.fasttools.store/social-media-tools/facebook-downloader",
         lastModified: new Date('2025-11-25'),
         changeFrequency: "monthly" as const,

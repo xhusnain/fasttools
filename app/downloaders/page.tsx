@@ -84,6 +84,15 @@ const downloaders = [
     color: "#00CED1",
     hoverColor: "#00B4B8",
   },
+  {
+    id: "pinterest-downloader",
+    name: "Pinterest",
+    description: "Save Pinterest images and videos HD.",
+    icon: Download,
+    href: "/social-media-tools/pinterest-downloader",
+    color: "#E60023",
+    hoverColor: "#BD001A",
+  },
 ]
 
 const faqItems = [
