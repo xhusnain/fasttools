@@ -75,6 +75,15 @@ const downloaders = [
     color: "#1DA1F2",
     hoverColor: "#0F85D9",
   },
+  {
+    id: "capcut-downloader",
+    name: "CapCut",
+    description: "Download CapCut videos and templates.",
+    icon: Download,
+    href: "/social-media-tools/capcut-downloader",
+    color: "#00CED1",
+    hoverColor: "#00B4B8",
+  },
 ]
 
 const faqItems = [

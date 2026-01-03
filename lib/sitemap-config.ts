@@ -481,6 +481,19 @@ export const toolPages = [
         ]
     },
     {
+        url: "https://www.fasttools.store/social-media-tools/capcut-downloader",
+        lastModified: new Date('2026-01-03'),
+        changeFrequency: "weekly" as const,
+        priority: 0.95,
+        images: [
+            {
+                url: "https://www.fasttools.store/images/capcut-downloader-hero.png",
+                title: "CapCut Downloader - Download Videos & Templates Free",
+                caption: "Download CapCut videos and templates in HD quality for free. Save CapCut edits without watermark. Works on iPhone, Android, PC, and Mac."
+            }
+        ]
+    },
+    {
         url: "https://www.fasttools.store/social-media-tools/facebook-downloader",
         lastModified: new Date('2025-11-25'),
         changeFrequency: "monthly" as const,
