@@ -148,7 +148,11 @@ export function LiveTVPlayer({ streamUrl, channelName }: LiveTVPlayerProps) {
                             if (data.fatal) {
                                 switch (data.type) {
                                     case Hls.ErrorTypes.MEDIA_ERROR:
-                                        hls.recoverMediaError();
+                                        if (data.details === 'fragParsingError') {
+                                            switchToTranscode(); // Proxy returned junk (suppressed error)
+                                        } else {
+                                            hls.recoverMediaError();
+                                        }
                                         break;
                                     default:
                                         switchToTranscode();
