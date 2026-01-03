@@ -31,6 +31,15 @@ export const metadata = createMetadata({
 
 const downloaders = [
   {
+    id: "youtube-downloader",
+    name: "YouTube",
+    description: "Download YouTube videos in HD quality.",
+    icon: Youtube,
+    href: "/social-media-tools/youtube-downloader",
+    color: "#FF0000",
+    hoverColor: "#CC0000",
+  },
+  {
     id: "tiktok-downloader",
     name: "TikTok",
     description: "Download TikTok videos without watermarks.",

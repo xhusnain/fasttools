@@ -3,10 +3,8 @@ export const goneUrls = new Set([
   '/ai-tools/hashtag-suggester',
   '/resources',
   '/announcements',
-  '/youtube-downloader',
   '/image-tools/photo-editor',
   '/image-tools/pdf-tools',
-  '/social-media-tools/youtube-downloader',
   '/seo-tools/hashtags'
 ])
 
