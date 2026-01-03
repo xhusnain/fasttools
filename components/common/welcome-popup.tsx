@@ -1,7 +1,7 @@
 "use client"
 
 import { useState, useEffect } from "react"
-import { X, Sparkles, ArrowRight, Zap, TrendingUp, DollarSign } from "lucide-react"
+import { X, Sparkles, ArrowRight, Download, Youtube, Instagram, Video } from "lucide-react"
 
 const POPUP_STORAGE_KEY = "welcome_popup_dismissed_at"
 const POPUP_HIDE_DURATION_MS = 12 * 60 * 60 * 1000 // 12 hours in milliseconds
@@ -57,8 +57,8 @@ export function WelcomePopup() {
             >
                 <div className="relative overflow-hidden rounded-2xl bg-gradient-to-br from-card via-card to-card border border-border shadow-2xl">
                     {/* Decorative gradient background */}
-                    <div className="absolute -top-24 -right-24 h-48 w-48 rounded-full bg-gradient-to-br from-primary/30 to-secondary-accent/30 blur-3xl" />
-                    <div className="absolute -bottom-24 -left-24 h-48 w-48 rounded-full bg-gradient-to-tr from-primary/20 to-purple-500/20 blur-3xl" />
+                    <div className="absolute -top-24 -right-24 h-48 w-48 rounded-full bg-gradient-to-br from-cyan-500/30 to-pink-500/30 blur-3xl" />
+                    <div className="absolute -bottom-24 -left-24 h-48 w-48 rounded-full bg-gradient-to-tr from-red-500/20 to-purple-500/20 blur-3xl" />
 
                     {/* Close button */}
                     <button
@@ -72,12 +72,12 @@ export function WelcomePopup() {
                     {/* Content */}
                     <div className="relative z-[1] p-6 pt-8 text-center">
                         {/* Animated badge */}
-                        <div className="mb-4 inline-flex items-center gap-2 rounded-full bg-gradient-to-r from-emerald-500/20 to-blue-500/20 px-4 py-2 text-sm font-semibold">
-                            <TrendingUp className="h-4 w-4 text-emerald-500 animate-pulse" />
-                            <span className="bg-gradient-to-r from-emerald-500 to-blue-500 bg-clip-text text-transparent">
-                                New Tool Alert!
+                        <div className="mb-4 inline-flex items-center gap-2 rounded-full bg-gradient-to-r from-cyan-500/20 to-pink-500/20 px-4 py-2 text-sm font-semibold">
+                            <Download className="h-4 w-4 text-cyan-500 animate-pulse" />
+                            <span className="bg-gradient-to-r from-cyan-500 to-pink-500 bg-clip-text text-transparent">
+                                New Downloaders Added!
                             </span>
-                            <DollarSign className="h-4 w-4 text-blue-500 animate-pulse" />
+                            <Sparkles className="h-4 w-4 text-pink-500 animate-pulse" />
                         </div>
 
                         {/* Title */}
@@ -85,46 +85,46 @@ export function WelcomePopup() {
                             id="welcome-popup-title"
                             className="mb-3 text-2xl font-bold tracking-tight text-foreground sm:text-3xl"
                         >
-                            📊 ROAS Calculator is{" "}
-                            <span className="bg-gradient-to-r from-emerald-500 via-blue-500 to-emerald-500 bg-clip-text text-transparent">
-                                LIVE!
+                            🎬 Free Media{" "}
+                            <span className="bg-gradient-to-r from-red-500 via-pink-500 to-cyan-500 bg-clip-text text-transparent">
+                                Downloaders!
                             </span>
                         </h2>
 
                         {/* Description */}
                         <p className="mb-6 text-muted-foreground leading-relaxed">
-                            Calculate your <strong className="text-foreground">Return on Ad Spend</strong>, ROI, and break-even points instantly for Google, Facebook, and TikTok ads!
+                            Download videos from <strong className="text-foreground">YouTube, TikTok, Instagram, Facebook</strong> and more – completely free, no software needed!
                         </p>
 
                         {/* Features list */}
                         <div className="mb-6 flex flex-col gap-2 text-left">
                             <div className="flex items-center gap-3 rounded-lg bg-muted/50 px-4 py-2.5">
-                                <div className="flex h-8 w-8 items-center justify-center rounded-full bg-emerald-500/20">
-                                    <TrendingUp className="h-4 w-4 text-emerald-500" />
+                                <div className="flex h-8 w-8 items-center justify-center rounded-full bg-red-500/20">
+                                    <Youtube className="h-4 w-4 text-red-500" />
                                 </div>
-                                <span className="text-sm text-foreground">Instant ROAS & ROI calculation</span>
+                                <span className="text-sm text-foreground">YouTube videos in HD quality</span>
                             </div>
                             <div className="flex items-center gap-3 rounded-lg bg-muted/50 px-4 py-2.5">
-                                <div className="flex h-8 w-8 items-center justify-center rounded-full bg-blue-500/20">
-                                    <DollarSign className="h-4 w-4 text-blue-500" />
+                                <div className="flex h-8 w-8 items-center justify-center rounded-full bg-pink-500/20">
+                                    <Instagram className="h-4 w-4 text-pink-500" />
                                 </div>
-                                <span className="text-sm text-foreground">Break-even point analysis</span>
+                                <span className="text-sm text-foreground">Instagram Reels, Stories & posts</span>
                             </div>
                             <div className="flex items-center gap-3 rounded-lg bg-muted/50 px-4 py-2.5">
-                                <div className="flex h-8 w-8 items-center justify-center rounded-full bg-purple-500/20">
-                                    <Sparkles className="h-4 w-4 text-purple-500" />
+                                <div className="flex h-8 w-8 items-center justify-center rounded-full bg-cyan-500/20">
+                                    <Video className="h-4 w-4 text-cyan-500" />
                                 </div>
-                                <span className="text-sm text-foreground">100% free - no signup required</span>
+                                <span className="text-sm text-foreground">TikTok videos without watermark</span>
                             </div>
                         </div>
 
                         {/* CTA Button */}
                         <a
-                            href="/ad-tools/roas-calculator"
-                            className="group inline-flex w-full items-center justify-center gap-2 rounded-xl bg-gradient-to-r from-emerald-500 to-blue-500 px-6 py-3.5 text-base font-semibold text-white shadow-lg shadow-emerald-500/25 transition-all hover:shadow-xl hover:shadow-emerald-500/30 hover:scale-[1.02]"
+                            href="/downloaders"
+                            className="group inline-flex w-full items-center justify-center gap-2 rounded-xl bg-gradient-to-r from-cyan-500 to-pink-500 px-6 py-3.5 text-base font-semibold text-white shadow-lg shadow-cyan-500/25 transition-all hover:shadow-xl hover:shadow-cyan-500/30 hover:scale-[1.02]"
                             onClick={handleClose}
                         >
-                            Try ROAS Calculator Now
+                            Explore Downloaders
                             <ArrowRight className="h-5 w-5 transition-transform group-hover:translate-x-1" />
                         </a>
 
