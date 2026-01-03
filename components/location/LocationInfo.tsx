@@ -4,34 +4,10 @@ import { useEffect, useState } from "react"
 import { GCard, GCardContent } from "@/ui/gcard"
 import { GBadge } from "@/ui/gbadge"
 import { GLoader } from "@/ui/gloader"
-import { Globe, MapPin, DollarSign, Navigation, Wifi, Copy, Check, Cloud, Thermometer, Mountain, Clock } from "lucide-react"
+import { Globe, MapPin, DollarSign, Navigation, Wifi, Copy, Check, Cloud, Thermometer, Mountain, Clock, Laptop, Monitor, Cpu, Languages } from "lucide-react"
 import { fetchWeatherApi } from "openmeteo"
 import axios from "axios"
-
-interface GeolocationData {
-    iso2: string
-    iso3: string
-    country_code: string
-    name: string
-    numeric_code: number
-    phone_code: string
-    capital: string
-    currency: string
-    tld: string
-    region: string
-    subregion: string
-    latitude: number
-    longitude: number
-    emoji: string
-    ip: string
-}
-
-interface WeatherData {
-    currentTemp: number
-    elevation: number
-    utcOffsetSeconds: number
-    hourly: { time: Date; temperature: number }[]
-}
+import { BrowserData, GeolocationData, WeatherData } from "@/types/info-types"
 
 // Fixed height to prevent CLS
 const CONTAINER_MIN_HEIGHT = "min-h-[450px]"
@@ -39,6 +15,7 @@ const CONTAINER_MIN_HEIGHT = "min-h-[450px]"
 export function LocationInfo() {
     const [data, setData] = useState<GeolocationData | null>(null)
     const [weather, setWeather] = useState<WeatherData | null>(null)
+    const [browserData, setBrowserData] = useState<BrowserData | null>(null)
     const [loading, setLoading] = useState(true)
     const [error, setError] = useState<string | null>(null)
     const [copied, setCopied] = useState(false)
@@ -119,6 +96,83 @@ export function LocationInfo() {
             }
         }
 
+        // Gather Browser Data
+        const getBrowserData = async () => {
+            const ua = navigator.userAgent;
+            let browserName = "Unknown";
+            if (ua.indexOf("Firefox") > -1) browserName = "Mozilla Firefox";
+            else if (ua.indexOf("SamsungBrowser") > -1) browserName = "Samsung Internet";
+            else if (ua.indexOf("Opera") > -1 || ua.indexOf("OPR") > -1) browserName = "Opera";
+            else if (ua.indexOf("Trident") > -1) browserName = "Microsoft Internet Explorer";
+            else if (ua.indexOf("Edge") > -1) browserName = "Microsoft Edge";
+            else if (ua.indexOf("Chrome") > -1) browserName = "Google Chrome";
+            else if (ua.indexOf("Safari") > -1) browserName = "Apple Safari";
+
+            let osName = "Unknown OS";
+            if (ua.indexOf("Win") !== -1) osName = "Windows";
+            if (ua.indexOf("Mac") !== -1) osName = "MacOS";
+            if (ua.indexOf("X11") !== -1) osName = "UNIX";
+            if (ua.indexOf("Linux") !== -1) osName = "Linux";
+            if (ua.indexOf("Android") !== -1) osName = "Android";
+            if (ua.indexOf("like Mac") !== -1) osName = "iOS";
+
+            // GPU Info
+            let gpuRenderer = 'Unknown GPU';
+            try {
+                const canvas = document.createElement('canvas');
+                const gl = canvas.getContext('webgl') || canvas.getContext('experimental-webgl');
+                if (gl) {
+                    const debugInfo = (gl as any).getExtension('WEBGL_debug_renderer_info');
+                    if (debugInfo) {
+                        gpuRenderer = (gl as any).getParameter(debugInfo.UNMASKED_RENDERER_WEBGL);
+                    }
+                }
+            } catch (e) {
+                console.warn("GPU detect failed", e);
+            }
+
+            // Connection Type
+            let connectionType = 'Unknown';
+            if ((navigator as any).connection) {
+                connectionType = (navigator as any).connection.effectiveType || (navigator as any).connection.type;
+            }
+
+            // Battery
+            let batteryLevel: number | undefined = undefined;
+            let isCharging: boolean | undefined = undefined;
+            try {
+                if ((navigator as any).getBattery) {
+                    const battery = await (navigator as any).getBattery();
+                    batteryLevel = battery.level * 100;
+                    isCharging = battery.charging;
+                }
+            } catch (e) {
+                console.warn("Battery detect failed", e);
+            }
+
+            // Timezone
+            const timeZone = Intl.DateTimeFormat().resolvedOptions().timeZone;
+
+            setBrowserData({
+                browserName,
+                osName,
+                screenResolution: `${window.screen.width}x${window.screen.height} - ${window.screen.colorDepth}bit`,
+                language: navigator.language,
+                cookiesEnabled: navigator.cookieEnabled,
+                deviceMemory: (navigator as any).deviceMemory,
+                hardwareConcurrency: navigator.hardwareConcurrency,
+                userAgent: ua,
+                gpuRenderer,
+                connectionType,
+                batteryLevel,
+                isCharging,
+                timeZone
+            })
+        }
+
+        getBrowserData();
+
+
         // Performance optimization: Use requestIdleCallback to defer entirely
         const startFetch = () => {
             if ('requestIdleCallback' in window) {
@@ -159,15 +213,9 @@ export function LocationInfo() {
     }
 
     return (
-        <div className={`w-full max-w-xl mx-auto ${CONTAINER_MIN_HEIGHT}`}>
-            <div className="sr-only">
-                <h3>Location Summary</h3>
-                <p>User is located in {data.capital}, {data.name}.</p>
-                <p>IP Address: {data.ip}</p>
-                <p>Coordinates: {data.latitude}, {data.longitude}</p>
-                <p>Currency: {data.currency} ({data.country_code})</p>
-            </div>
-            <div className="text-center lg:text-left mb-8">
+        <div className={`w-full ${CONTAINER_MIN_HEIGHT}`}>
+            {/* Header Section */}
+            <div className="text-center mb-12">
                 <GBadge variant="outline" className="mb-4 bg-primary/5 text-primary border-primary/20">
                     <span className="flex items-center gap-2">
                         <span className="relative flex h-2 w-2">
@@ -190,129 +238,165 @@ export function LocationInfo() {
                 </p>
             </div>
 
-            <GCard className="bg-card/40 backdrop-blur-md border-primary/10 overflow-hidden relative group">
-                <div className="absolute inset-0 bg-gradient-to-br from-primary/5 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
 
-                <GCardContent className="p-0">
-                    <div className="grid divide-y divide-border/50">
-
-                        {/* IP Address Section (Prominent) */}
-                        <div className="p-6 sm:p-8 flex items-center justify-between hover:bg-muted/20 transition-colors">
-                            <div className="flex items-center gap-4">
-                                <div className="h-12 w-12 rounded-full bg-blue-500/10 flex items-center justify-center">
-                                    <Wifi className="h-6 w-6 text-blue-500" />
-                                </div>
-                                <div>
-                                    <p className="text-sm font-medium text-muted-foreground mb-1">Your IP Address</p>
-                                    <div className="flex items-center gap-3">
-                                        <p className="text-2xl font-bold font-mono tracking-tight">{data.ip}</p>
-                                        <button
-                                            onClick={handleCopyIp}
-                                            className="p-1.5 hover:bg-black/5 dark:hover:bg-white/10 rounded-md transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-primary/20"
-                                            title="Copy IP Address"
-                                        >
-                                            {copied ? (
-                                                <Check className="h-4 w-4 text-green-500 animate-in zoom-in spin-in-90 duration-300" />
-                                            ) : (
-                                                <Copy className="h-4 w-4 text-muted-foreground hover:text-foreground transition-colors" />
-                                            )}
-                                        </button>
-                                    </div>
-                                </div>
+                {/* Left Column: Location & Network */}
+                <div className="space-y-6">
+                    <GCard className="bg-card/40 backdrop-blur-md border-primary/10 overflow-hidden relative group h-full">
+                        <div className="absolute inset-0 bg-gradient-to-br from-blue-500/5 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                        <GCardContent className="p-0">
+                            <div className="p-6 border-b border-border/50">
+                                <h3 className="text-lg font-semibold flex items-center gap-2">
+                                    <Wifi className="h-5 w-5 text-blue-500" />
+                                    Network & Location
+                                </h3>
                             </div>
-                            <div className="hidden sm:block">
-                                <GBadge variant="secondary" className="bg-blue-500/10 text-blue-500 hover:bg-blue-500/20 border-0">
-                                    Active
-                                </GBadge>
-                            </div>
-                        </div>
 
-                        {/* Details Grid */}
-                        <div className="grid grid-cols-1 sm:grid-cols-2 divide-y sm:divide-y-0 sm:divide-x divide-border/50">
-
-                            <div className="p-6 hover:bg-muted/20 transition-colors space-y-4">
-                                <div className="flex items-start gap-4">
-                                    <div className="h-10 w-10 rounded-full bg-purple-500/10 flex items-center justify-center shrink-0">
-                                        <MapPin className="h-5 w-5 text-purple-500" />
-                                    </div>
+                            <div className="p-6 space-y-6">
+                                {/* IP Highlight */}
+                                <div className="flex items-center justify-between p-4 bg-muted/30 rounded-lg border border-border/50">
                                     <div>
-                                        <p className="text-sm font-medium text-muted-foreground mb-1">Capital City</p>
-                                        <p className="text-lg font-semibold">{data.capital}</p>
-                                        <p className="text-xs text-muted-foreground mt-1">Region: {data.subregion}</p>
-                                    </div>
-                                </div>
-
-                                <div className="flex items-start gap-4 pt-2">
-                                    <div className="h-10 w-10 rounded-full bg-emerald-500/10 flex items-center justify-center shrink-0">
-                                        <DollarSign className="h-5 w-5 text-emerald-500" />
-                                    </div>
-                                    <div>
-                                        <p className="text-sm font-medium text-muted-foreground mb-1">Currency</p>
+                                        <p className="text-sm text-muted-foreground mb-1">Your IP Address</p>
                                         <div className="flex items-center gap-2">
-                                            <p className="text-lg font-semibold">{data.currency}</p>
-                                            <GBadge variant="outline" className="text-[10px] h-5 px-1.5">{data.country_code}</GBadge>
+                                            <p className="text-2xl font-bold font-mono tracking-tight">{data.ip}</p>
+                                            <button onClick={handleCopyIp} className="p-1 hover:bg-muted rounded text-muted-foreground hover:text-foreground transition-colors">
+                                                {copied ? <Check className="h-4 w-4 text-green-500" /> : <Copy className="h-4 w-4" />}
+                                            </button>
+                                        </div>
+                                    </div>
+                                    <GBadge className="bg-blue-500/10 text-blue-500 border-0">
+                                        {browserData?.connectionType ? browserData.connectionType.toUpperCase() : 'Active'}
+                                    </GBadge>
+                                </div>
+
+                                <div className="grid grid-cols-2 gap-4">
+                                    <div className="space-y-1">
+                                        <p className="text-sm text-muted-foreground">City</p>
+                                        <p className="font-medium">{data.capital}</p>
+                                    </div>
+                                    <div className="space-y-1">
+                                        <p className="text-sm text-muted-foreground">Region</p>
+                                        <p className="font-medium">{data.subregion}</p>
+                                    </div>
+                                    <div className="space-y-1">
+                                        <p className="text-sm text-muted-foreground">Coordinates</p>
+                                        <p className="font-medium font-mono text-sm">{data.latitude.toFixed(4)}°, {data.longitude.toFixed(4)}°</p>
+                                    </div>
+                                    <div className="space-y-1">
+                                        <p className="text-sm text-muted-foreground">Currency</p>
+                                        <p className="font-medium">{data.currency} ({data.country_code})</p>
+                                    </div>
+                                    <div className="col-span-2 space-y-1 pt-2 border-t border-border/50">
+                                        <p className="text-sm text-muted-foreground">Internet Service Provider</p>
+                                        <p className="font-medium">{data.isp || data.org || "Unknown ISP"}</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </GCardContent>
+                    </GCard>
+                </div>
+
+                {/* Right Column: Device & System */}
+                <div className="space-y-6">
+                    {browserData && (
+                        <GCard className="bg-card/40 backdrop-blur-md border-primary/10 overflow-hidden relative group h-full">
+                            <div className="absolute inset-0 bg-gradient-to-br from-purple-500/5 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                            <GCardContent className="p-0">
+                                <div className="p-6 border-b border-border/50">
+                                    <h3 className="text-lg font-semibold flex items-center gap-2">
+                                        <Laptop className="h-5 w-5 text-purple-500" />
+                                        Device & System
+                                    </h3>
+                                </div>
+
+                                <div className="grid grid-cols-2 divide-x divide-border/50">
+                                    <div className="p-6 space-y-4">
+                                        <div className="space-y-1">
+                                            <div className="flex items-center gap-2 text-muted-foreground mb-1">
+                                                <Monitor className="h-4 w-4" />
+                                                <p className="text-sm">OS & Browser</p>
+                                            </div>
+                                            <p className="font-medium">{browserData.osName}</p>
+                                            <p className="text-sm text-muted-foreground">{browserData.browserName}</p>
+                                        </div>
+                                        <div className="space-y-1">
+                                            <div className="flex items-center gap-2 text-muted-foreground mb-1">
+                                                <Cpu className="h-4 w-4" />
+                                                <p className="text-sm">Hardware</p>
+                                            </div>
+                                            <p className="font-medium">{browserData.hardwareConcurrency || '?'} Cores</p>
+                                            <p className="text-sm text-muted-foreground">~{browserData.deviceMemory || '?'} GB RAM</p>
+                                        </div>
+                                        <div className="space-y-1 pt-2">
+                                            <div className="flex items-center gap-2 text-muted-foreground mb-1">
+                                                {/* Using Thermometer temporarily for Battery/Power if specific icon not avail or Laptop */}
+                                                <Laptop className="h-4 w-4" />
+                                                <p className="text-sm">Power</p>
+                                            </div>
+                                            <p className="font-medium">
+                                                {browserData.batteryLevel !== undefined ? `${Math.round(browserData.batteryLevel)}%` : 'Unknown'}
+                                            </p>
+                                            <p className="text-sm text-muted-foreground">
+                                                {browserData.isCharging ? 'Charging' : 'On Battery'}
+                                            </p>
+                                        </div>
+                                    </div>
+                                    <div className="p-6 space-y-4">
+                                        <div className="space-y-1">
+                                            <div className="flex items-center gap-2 text-muted-foreground mb-1">
+                                                <Laptop className="h-4 w-4" />
+                                                <p className="text-sm">Display</p>
+                                            </div>
+                                            <p className="font-medium">{browserData.screenResolution}</p>
+                                            <p className="text-xs text-muted-foreground truncate" title={browserData.gpuRenderer}>{browserData.gpuRenderer}</p>
+                                        </div>
+                                        <div className="space-y-1">
+                                            <div className="flex items-center gap-2 text-muted-foreground mb-1">
+                                                <Languages className="h-4 w-4" />
+                                                <p className="text-sm">Locale</p>
+                                            </div>
+                                            <p className="font-medium">{browserData.language}</p>
+                                            <p className="text-sm text-muted-foreground">{browserData.timeZone}</p>
                                         </div>
                                     </div>
                                 </div>
-                            </div>
+                            </GCardContent>
+                        </GCard>
+                    )}
+                </div>
+            </div>
 
-                            <div className="p-6 hover:bg-muted/20 transition-colors space-y-4">
-                                <div className="flex items-start gap-4">
-                                    <div className="h-10 w-10 rounded-full bg-pink-500/10 flex items-center justify-center shrink-0">
-                                        <Navigation className="h-5 w-5 text-pink-500" />
-                                    </div>
-                                    <div>
-                                        <p className="text-sm font-medium text-muted-foreground mb-1">Coordinates</p>
-                                        <p className="text-lg font-semibold font-mono text-sm">{data.latitude.toFixed(4)}°, {data.longitude.toFixed(4)}°</p>
-                                    </div>
+            {/* Bottom Section: Weather */}
+            {weather && (
+                <div className="mt-6">
+                    <GCard className="bg-card/40 backdrop-blur-md border-primary/10 overflow-hidden">
+                        <GCardContent className="p-0">
+                            <div className="grid grid-cols-2 md:grid-cols-4 divide-x divide-border/50">
+                                <div className="p-6 flex flex-col items-center justify-center text-center hover:bg-muted/20 transition-colors">
+                                    <Cloud className="h-6 w-6 text-blue-500 mb-2" />
+                                    <p className="text-sm font-medium text-muted-foreground mb-1">Weather</p>
+                                    <p className="text-2xl font-bold">{weather.currentTemp.toFixed(1)}°C</p>
                                 </div>
-
-                                <div className="flex items-start gap-4 pt-2">
-                                    <div className="h-10 w-10 rounded-full bg-orange-500/10 flex items-center justify-center shrink-0">
-                                        <Globe className="h-5 w-5 text-orange-500" />
-                                    </div>
-                                    <div>
-                                        <p className="text-sm font-medium text-muted-foreground mb-1">Country Details</p>
-                                        <div className="flex flex-wrap gap-2">
-                                            <span className="text-xs bg-muted px-2 py-1 rounded-md text-muted-foreground">ISO: {data.iso3}</span>
-                                            <span className="text-xs bg-muted px-2 py-1 rounded-md text-muted-foreground">+{data.phone_code}</span>
-                                            <span className="text-xs bg-muted px-2 py-1 rounded-md text-muted-foreground">{data.tld}</span>
-                                        </div>
-                                    </div>
+                                <div className="p-6 flex flex-col items-center justify-center text-center hover:bg-muted/20 transition-colors">
+                                    <Mountain className="h-6 w-6 text-emerald-500 mb-2" />
+                                    <p className="text-sm font-medium text-muted-foreground mb-1">Elevation</p>
+                                    <p className="text-2xl font-bold">{weather.elevation}m</p>
                                 </div>
-                            </div>
-
-                        </div>
-
-                        {/* Weather Section (Merged) */}
-                        {weather && (
-                            <div className="grid grid-cols-2 sm:grid-cols-4 divide-x divide-border/50">
-                                <div className="p-4 flex flex-col items-center justify-center text-center hover:bg-muted/20 transition-colors">
-                                    <Cloud className="h-5 w-5 text-blue-500 mb-2" />
-                                    <p className="text-xs font-medium text-muted-foreground mb-1">Weather</p>
-                                    <p className="text-lg font-bold">{weather.currentTemp.toFixed(1)}°C</p>
+                                <div className="p-6 flex flex-col items-center justify-center text-center hover:bg-muted/20 transition-colors">
+                                    <Clock className="h-6 w-6 text-orange-500 mb-2" />
+                                    <p className="text-sm font-medium text-muted-foreground mb-1">Time Offset</p>
+                                    <p className="text-2xl font-bold">{weather.utcOffsetSeconds / 3600}h</p>
                                 </div>
-                                <div className="p-4 flex flex-col items-center justify-center text-center hover:bg-muted/20 transition-colors">
-                                    <Mountain className="h-5 w-5 text-emerald-500 mb-2" />
-                                    <p className="text-xs font-medium text-muted-foreground mb-1">Elevation</p>
-                                    <p className="text-lg font-bold">{weather.elevation}m</p>
-                                </div>
-                                <div className="p-4 flex flex-col items-center justify-center text-center hover:bg-muted/20 transition-colors">
-                                    <Clock className="h-5 w-5 text-orange-500 mb-2" />
-                                    <p className="text-xs font-medium text-muted-foreground mb-1">Offset</p>
-                                    <p className="text-lg font-bold">{weather.utcOffsetSeconds / 3600}h</p>
-                                </div>
-                                <div className="p-4 flex flex-col items-center justify-center text-center hover:bg-muted/20 transition-colors">
-                                    <Thermometer className="h-5 w-5 text-red-500 mb-2" />
-                                    <p className="text-xs font-medium text-muted-foreground mb-1">Status</p>
-                                    <p className="text-sm font-semibold">Live</p>
+                                <div className="p-6 flex flex-col items-center justify-center text-center hover:bg-muted/20 transition-colors">
+                                    <Thermometer className="h-6 w-6 text-red-500 mb-2" />
+                                    <p className="text-sm font-medium text-muted-foreground mb-1">Status</p>
+                                    <GBadge variant="outline" className="border-green-500/50 text-green-500">Live Updates</GBadge>
                                 </div>
                             </div>
-                        )}
-
-                    </div>
-                </GCardContent>
-            </GCard>
+                        </GCardContent>
+                    </GCard>
+                </div>
+            )}
         </div>
     )
 }

@@ -6,7 +6,7 @@ export default function MyInfoPage() {
         <div className="relative min-h-screen bg-background pt-20 pb-12">
             <PremiumHeroBackground />
             <div className="container mx-auto px-4 relative z-10">
-                <div className="max-w-2xl mx-auto space-y-8">
+                <div className="max-w-6xl mx-auto space-y-8">
                     <div className="text-center space-y-4">
                         <h1 className="text-4xl font-bold tracking-tight lg:text-5xl">
                             Your Digital Footprint
