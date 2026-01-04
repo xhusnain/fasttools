@@ -507,6 +507,19 @@ export const toolPages = [
         ]
     },
     {
+        url: "https://www.fasttools.store/social-media-tools/soundcloud-downloader",
+        lastModified: new Date('2026-01-04'),
+        changeFrequency: "weekly" as const,
+        priority: 0.95,
+        images: [
+            {
+                url: "https://www.fasttools.store/images/soundcloud_downloader_hero.png",
+                title: "SoundCloud Downloader - Download SoundCloud to MP3 (320kbps)",
+                caption: "Download SoundCloud songs to MP3 in high quality (320kbps). The best online SoundCloud Downloader. Free, fast, and safe. Works on mobile & PC."
+            }
+        ]
+    },
+    {
         url: "https://www.fasttools.store/social-media-tools/facebook-downloader",
         lastModified: new Date('2025-11-25'),
         changeFrequency: "monthly" as const,

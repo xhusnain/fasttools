@@ -5,7 +5,7 @@ import { GToolCard } from "@/ui/gtool-card"
 import {
   Youtube, Instagram, Music, Tag, LinkIcon, Search, Hash,
   Download, Facebook, MessageSquare, Target, Shield, Globe,
-  Lightbulb, CheckCircle, Code, Type
+  Lightbulb, CheckCircle, Code, Type, Headphones
 } from "lucide-react"
 import { getCurrentYear } from "@/lib/utils"
 
@@ -37,6 +37,13 @@ const socialTools = [
     icon: Music,
     href: "/social-media-tools/tiktok-downloader",
     color: "purple"
+  },
+  {
+    title: "Soundcloud Downloader",
+    description: "Download Soundcloud tracks to MP3 in high quality for offline listening and content creation.",
+    icon: Headphones,
+    href: "/social-media-tools/soundcloud-downloader",
+    color: "orange"
   },
   {
     title: "Facebook Video Downloader",
@@ -226,7 +233,7 @@ const toolConfig = createToolConfig({
       },
       {
         question: "Is it legal to download videos and thumbnails?",
-        answer: "Downloading content for personal use, educational purposes, or analysis is generally acceptable. However, you should respect copyright laws and not re-upload content as your own without permission."
+        answer: "Downloading content for personal use, educational purposes, or analysis is generally acceptable. However, you should respect copyright laws and not re-upload content as your own without permission. Always check the terms of service of the specific platform."
       },
       {
         question: "Can I use these tools on my phone?",
@@ -246,7 +253,7 @@ const toolConfig = createToolConfig({
       },
       {
         question: "What platforms do you support?",
-        answer: "We currently support major platforms including YouTube, Instagram, TikTok, Facebook, and X (Twitter), with more being added regularly."
+        answer: "We currently support major platforms including YouTube, Instagram, TikTok, Soundcloud, Facebook, and X (Twitter), with more being added regularly."
       }
     ],
 

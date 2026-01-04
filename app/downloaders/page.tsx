@@ -17,7 +17,8 @@ import {
   CheckCircle,
   ShieldCheck,
   Zap,
-  Star
+  Star,
+  Music
 } from "lucide-react"
 export const metadata = createMetadata({
   title: "Free Video Downloader for YouTube, TikTok, & More",
@@ -92,6 +93,15 @@ const downloaders = [
     href: "/social-media-tools/pinterest-downloader",
     color: "#E60023",
     hoverColor: "#BD001A",
+  },
+  {
+    id: "soundcloud-downloader",
+    name: "SoundCloud",
+    description: "Download SoundCloud tracks to MP3.",
+    icon: Music,
+    href: "/social-media-tools/soundcloud-downloader",
+    color: "#ff5500",
+    hoverColor: "#ff3300",
   },
 ]
 
