@@ -507,6 +507,19 @@ export const toolPages = [
         ]
     },
     {
+        url: "https://www.fasttools.store/social-media-tools/douyin-downloader",
+        lastModified: new Date('2026-01-04'),
+        changeFrequency: "weekly" as const,
+        priority: 0.95,
+        images: [
+            {
+                url: "https://www.fasttools.store/images/tools/douyin-downloader.png",
+                title: "Douyin Downloader - No Watermark",
+                caption: "Download Douyin videos (Chinese TikTok) without watermark in HD. Free, fast, and secure Douyin video saver."
+            }
+        ]
+    },
+    {
         url: "https://www.fasttools.store/social-media-tools/soundcloud-downloader",
         lastModified: new Date('2026-01-04'),
         changeFrequency: "weekly" as const,

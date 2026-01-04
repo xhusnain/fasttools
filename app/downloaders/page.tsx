@@ -100,15 +100,23 @@ const downloaders = [
     description: "Download SoundCloud tracks to MP3.",
     icon: Music,
     href: "/social-media-tools/soundcloud-downloader",
-    color: "#ff5500",
     hoverColor: "#ff3300",
+  },
+  {
+    id: "douyin-downloader",
+    name: "Douyin",
+    description: "Download Douyin videos (No Watermark).",
+    icon: Download,
+    href: "/social-media-tools/douyin-downloader",
+    color: "#000000",
+    hoverColor: "#1a1a1a",
   },
 ]
 
 const faqItems = [
   {
     question: "Which platforms are supported?",
-    answer: "We currently support downloading from major platforms including YouTube, TikTok, Instagram, Facebook, and X (formerly Twitter). We are always working to add support for more sites."
+    answer: "We currently support downloading from major platforms including YouTube, TikTok, Douyin, Instagram, Facebook, and X (formerly Twitter). We are always working to add support for more sites."
   },
   {
     question: "Is it legal to download videos?",
@@ -118,7 +126,6 @@ const faqItems = [
     question: "What video quality can I download?",
     answer: "Our downloaders aim to provide the highest quality available from the source platform. This often includes options for Standard Definition (SD), High Definition (HD), and in some cases, 4K."
   },
-
 ]
 
 export default function DownloadersPage() {
