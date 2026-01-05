@@ -109,7 +109,7 @@ export function CookieConsent() {
   if (!showConsent) return null
 
   return (
-    <div className="fixed bottom-0 left-0 right-0 z-50 p-4 bg-background border-t shadow-lg">
+    <div className="fixed bottom-0 left-0 right-0 z-50 p-4 bg-background border-t shadow-lg" style={{ contain: 'layout' }}>
       <div className="container mx-auto max-w-4xl">
         {!showPreferences ? (
           <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-4">

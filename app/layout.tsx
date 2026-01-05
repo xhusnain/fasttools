@@ -141,6 +141,8 @@ export default function RootLayout({
       <head>
         {/* Resource Hints for Performance */}
         <link rel="preconnect" href="https://www.googletagmanager.com" />
+        <link rel="preconnect" href="https://embed.tawk.to" />
+        <link rel="preconnect" href="https://pagead2.googlesyndication.com" />
       </head>
       <body className="bg-background font-sans text-foreground">
 

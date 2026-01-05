@@ -1,6 +1,6 @@
 "use client"
 
-import { useState, useCallback, memo } from "react"
+import { useState, useCallback, useMemo, memo, lazy, Suspense } from "react"
 import { GButton } from "@/ui/gbutton"
 import { GTextarea } from "@/ui/gtextarea"
 import { GLabel } from "@/ui/glabel"
@@ -10,8 +10,10 @@ import { GTabs, GTabsList, GTabsTrigger, GTabsContent } from "@/ui/gtabs"
 import { Search, CheckCircle, XCircle, Lightbulb, Copy, ExternalLink, Users, Video, AlertCircle, Upload, AtSign, TrendingUp } from "lucide-react"
 import { LoadingSpinner } from "@/components/common/loading-spinner"
 import { ChannelCheckResult } from "@/types"
-import { YoutubeHandleChecker } from "./youtube-handle-checker"
-import { YoutubeKeywordAnalysis } from "./youtube-keyword-analysis"
+
+// Lazy load tab components to reduce initial bundle and improve INP
+const YoutubeHandleChecker = lazy(() => import("./youtube-handle-checker").then(m => ({ default: m.YoutubeHandleChecker })))
+const YoutubeKeywordAnalysis = lazy(() => import("./youtube-keyword-analysis").then(m => ({ default: m.YoutubeKeywordAnalysis })))
 
 
 export function YoutubeChannelChecker() {
@@ -31,7 +33,7 @@ export function YoutubeChannelChecker() {
     currentName: string
   } | null>(null)
 
-  const handleFileUpload = (event: React.ChangeEvent<HTMLInputElement>) => {
+  const handleFileUpload = useCallback((event: React.ChangeEvent<HTMLInputElement>) => {
     const file = event.target.files?.[0]
     if (!file) return
 
@@ -52,7 +54,12 @@ export function YoutubeChannelChecker() {
     reader.readAsText(file)
     // Reset input
     event.target.value = ''
-  }
+  }, [])
+
+  // Memoize categories from AI suggestions to avoid recalculating on every render
+  const suggestionCategories = useMemo(() => {
+    return aiSuggestions ? Object.keys(aiSuggestions) : []
+  }, [aiSuggestions])
 
   const fetchAiSuggestions = async (name: string) => {
     setAiLoading(true)
@@ -376,7 +383,7 @@ export function YoutubeChannelChecker() {
                 <div className="space-y-4">
                   {/* Categories Tabs */}
                   <div className="flex flex-wrap gap-2 pb-2 border-b border-border overflow-x-auto scrollbar-thin">
-                    {Object.keys(aiSuggestions).map((category) => (
+                    {suggestionCategories.map((category) => (
                       <button
                         key={category}
                         onClick={() => setActiveCategory(category)}
@@ -424,11 +431,15 @@ export function YoutubeChannelChecker() {
         </GTabsContent>
 
         <GTabsContent value="handle">
-          <YoutubeHandleChecker />
+          <Suspense fallback={<div className="flex justify-center py-8"><LoadingSpinner className="h-8 w-8" /></div>}>
+            <YoutubeHandleChecker />
+          </Suspense>
         </GTabsContent>
 
         <GTabsContent value="seo">
-          <YoutubeKeywordAnalysis />
+          <Suspense fallback={<div className="flex justify-center py-8"><LoadingSpinner className="h-8 w-8" /></div>}>
+            <YoutubeKeywordAnalysis />
+          </Suspense>
         </GTabsContent>
       </GTabs>
     </div>

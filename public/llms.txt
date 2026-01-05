@@ -21,6 +21,10 @@ Download and analyze content from Facebook, Instagram, TikTok, YouTube. Tools in
 - https://www.fasttools.store/social-media-tools/youtube-thumbnail - Download YouTube video thumbnails in all quality sizes.
 - https://www.fasttools.store/social-media-tools/youtube-tags - Extract tags from YouTube videos for SEO research.
 - https://www.fasttools.store/social-media-tools/youtube-channel-name-generator - AI-powered YouTube Channel Name Generator. Generate unique, catchy, and SEO-friendly names for gaming, vlogging, and tech channels. Features instant categorized suggestions and "no copyright" style unique branding ideas.
+- https://www.fasttools.store/social-media-tools/capcut-downloader - Download CapCut videos and templates without watermark.
+- https://www.fasttools.store/social-media-tools/douyin-downloader - Download Douyin videos (Chinese TikTok) without watermark.
+- https://www.fasttools.store/social-media-tools/pinterest-downloader - Download Pinterest videos and images in HD.
+- https://www.fasttools.store/social-media-tools/soundcloud-downloader - Download SoundCloud songs to MP3 in high quality (320kbps).
 
 
 ### AI Tools
@@ -32,6 +36,7 @@ AI-powered content generation tools including QR code generators, caption genera
 - https://www.fasttools.store/ai-tools/caption-generator - AI-powered social media caption generator.
 - https://www.fasttools.store/ai-tools/lyrics-generator - Generate song lyrics in 40+ languages.
 - https://www.fasttools.store/ai-tools/pet-names - Generate 100+ AI-powered pet names.
+- https://www.fasttools.store/festivals/christmas-font-converter - Convert text into aesthetic Christmas fonts with emojis.
 
 ### PDF Tools
 https://www.fasttools.store/pdf-tools
@@ -41,6 +46,9 @@ Comprehensive PDF manipulation suite including signing, conversion, splitting, m
 https://www.fasttools.store/seo-tools
 Tools for search engine optimization and content marketing including meta tag generators, hashtag generators, blog title generators, and keyword density checkers.
 
+**Featured Tools:**
+- https://www.fasttools.store/seo-tools/text-similarity-checker - Check text similarity and detect duplicate content using SimHash algorithm.
+
 ### Calculator Tools
 https://www.fasttools.store/calculator
 Extensive collection of financial, health, and scientific calculators including mortgage, loan, tax, BMI, BMR, calorie, and retirement calculators.
@@ -49,6 +57,7 @@ Extensive collection of financial, health, and scientific calculators including 
 - https://www.fasttools.store/calculator/bmi-calculator - Free BMI calculator online. Calculate Body Mass Index instantly with accurate results. Supports BMI calculator for women, men, and by age. Metric (kg/cm) and imperial units. Follows WHO and CDC standards. Features include BMI Prime calculation, Ponderal Index, healthy weight range, risk level assessment, and personalized health recommendations. Comprehensive 60-question FAQ section covering all aspects of BMI calculation, interpretation, and health implications. Includes topical authority content, entity SEO with WHO/CDC citations, E-E-A-T signals, and structured data (WebApplication, WebPage, FAQPage, Organization schemas). Optimized for semantic SEO, vector SEO, and AI search engines. Last updated dynamically with current year.
 - https://www.fasttools.store/calculator/ip-subnet-calculator - Advanced IP Subnet Calculator for network engineers and students. Supports IPv4, IPv6, CIDR notation, and VLSM calculations. Features include visual subnetting diagrams, real-world examples (AWS, Docker, Home Network), and comprehensive guides on network design. Optimized with HowTo and SoftwareApplication schema for enhanced search visibility.
 - https://www.fasttools.store/calculator/date-difference - Calculate days, months, and years between two dates with business day options, leap year handling, and multiple date formats. Comprehensive guide with troubleshooting tips and best practices.
+- https://www.fasttools.store/festivals/turkey-defrost-calculator - Calculate exactly when to start defrosting your turkey (Fridge vs Water).
 
 ### Converter Tools
 https://www.fasttools.store/converters
@@ -65,6 +74,14 @@ Financial planning and calculation tools including bill splitters, tip calculato
 ### Developer Tools
 https://www.fasttools.store/dev-tools
 Tools for developers and programmers including JWT decoders, regex testers, JSON/CSV converters, HTML beautifiers, markdown tools, and color palette generators.
+
+### Live TV & Utilities
+https://www.fasttools.store/live-tv
+Watch free live TV channels from around the world and check your digital footprint.
+
+**Featured Tools:**
+- https://www.fasttools.store/live-tv - Stream 200+ live TV channels from mostly all countries worldwide. No registration required.
+- https://www.fasttools.store/my-info - Instant analysis of your connection, location, and local environment.
 
 ## Usage Policy
 

@@ -26,6 +26,9 @@ Allow: /contact
 Allow: /privacy-policy
 Allow: /terms
 Allow: /cookie-preferences
+Allow: /live-tv
+Allow: /my-info
+Allow: /festivals/
 
 # Disallowed Paths
 Disallow: /api/
@@ -82,7 +85,37 @@ Description: Professional-grade IP Subnet Calculator supporting IPv4, IPv6, CIDR
 URL: https://www.fasttools.store/social-media-tools/youtube-channel-name-generator
 Description: Free AI-powered YouTube Channel Name Generator. Creates unique, creative, and SEO-friendly channel names based on niche, tone, and target audience. Features include instant categorized results (Gaming, Playful, Professional), availability checking guidance, and support for "Free Fire" and specialized gaming names. Completely free, no login required, unlimited generations. Includes comprehensive naming guides, branding tips, and SEO advice for new creators.
 
+## CapCut Video Downloader
+URL: https://www.fasttools.store/social-media-tools/capcut-downloader
+Description: Download CapCut videos and templates without watermark in HD quality. Free online CapCut downloader for iPhone, Android, PC. No login required. Remove watermark instantly.
 
+## Douyin Downloader
+URL: https://www.fasttools.store/social-media-tools/douyin-downloader
+Description: Download Douyin videos (Chinese TikTok) without watermark. 抖音视频下载无水印. Free, fast, and secure HD saver.
+
+## Pinterest Downloader
+URL: https://www.fasttools.store/social-media-tools/pinterest-downloader
+Description: Download Pinterest videos and images in HD quality for free. Save pins to your device without watermark. Works on iPhone, Android, PC.
+
+## SoundCloud Downloader
+URL: https://www.fasttools.store/social-media-tools/soundcloud-downloader
+Description: Download SoundCloud songs to MP3 in high quality (320kbps). The best online SoundCloud Downloader. Free, fast, and safe.
+
+## Live TV Streaming
+URL: https://www.fasttools.store/live-tv
+Description: Stream 200+ live TV channels from countries worldwide. Watch free IPTV including news, sports, entertainment, and more. No registration required.
+
+## Text Similarity Checker
+URL: https://www.fasttools.store/seo-tools/text-similarity-checker
+Description: Free online text similarity checker using SimHash algorithm. Compare two texts and get instant similarity percentage with fingerprint analysis. Best plagiarism detection.
+
+## Christmas Font Converter
+URL: https://www.fasttools.store/festivals/christmas-font-converter
+Description: Convert your text into aesthetic Christmas fonts with emojis. Copy and paste festive text styles for social media bios.
+
+## Turkey Defrost Calculator
+URL: https://www.fasttools.store/festivals/turkey-defrost-calculator
+Description: Calculate exactly when to start defrosting your turkey (Fridge vs Water). Get a calendar reminder.
 # Updates
 This file is updated regularly. Check last modified date.
-Last updated: 2025-11-24
+Last updated: 2026-01-05
