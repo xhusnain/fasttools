@@ -7,7 +7,7 @@ export type { ApiResponse, ApiError };
 const createHttpClient = (): AxiosInstance => {
   const instance = axios.create({
     baseURL: env.apiUrl || "/api",
-    timeout: 30000,
+    timeout: 60000,
     headers: {
       "Content-Type": "application/json",
     },
