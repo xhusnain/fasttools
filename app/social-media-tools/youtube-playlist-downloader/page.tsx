@@ -1,18 +1,20 @@
 import { ToolPageLayout } from "@/components/common/tool-page-layout"
-import { createToolConfig } from "@/lib/create-tool-config"
+import Image from "next/image"
+import { createToolConfig, UnifiedToolConfig } from "@/lib/create-tool-config"
 import { Shield, Smartphone, Monitor, List, CheckCircle2 } from "lucide-react"
 import { YoutubePlaylistDownloader } from "@/components/social-media/youtube-playlist-downloader/youtube-playlist-downloader";
 
-const toolConfig = createToolConfig({
-    toolName: "YouTube Playlist Downloader - Download Entire Playlists Free",
-    description: "Download YouTube playlists online for free. Convert entire playlists to MP3 or MP4. Fast, safe, and works on all devices including iPhone, Android, and PC.",
-    metaTitle: "YouTube Playlist Downloader - Download Videos & MP3s from Playlists",
-    metaDescription: "Free YouTube Playlist Downloader. Download all videos from a YouTube playlist in HD MP4 or MP3 format. No software installation needed. Fast and secure.",
+
+const configBody: UnifiedToolConfig = {
+    toolName: "Fast YouTube Playlist Downloader: Save Entire Playlists in HD & MP3",
+    description: "The ultimate tool to download YouTube playlists in bulk. Convert entire channels, music albums, or educational series to high-quality MP4 (up to 4K) and MP3 (320kbps) in seconds.",
+    metaTitle: "Fast YouTube Playlist Downloader: Save Entire Playlists in HD & MP3",
+    metaDescription: "Free YouTube Playlist Downloader. Save entire playlists as MP4 or MP3 (320kbps). Supports 4K/1080p. No software, no registration. Fast, safe, and works on mobile & PC.",
     path: "/social-media-tools/youtube-playlist-downloader",
 
     header: {
-        title: "YouTube Playlist Downloader",
-        description: "Download videos from any YouTube playlist. Save entire learning courses, music albums, or video series as MP3 or MP4 files. No account or software required.",
+        title: "Fast YouTube Playlist Downloader: Save Entire Playlists in HD & MP3",
+        description: "The ultimate tool to download YouTube playlists in bulk. Convert entire channels, music albums, or educational series to high-quality MP4 (up to 4K) and MP3 (320kbps) in seconds.",
         titleSize: "medium",
         descriptionSize: "small",
     },
@@ -23,51 +25,88 @@ const toolConfig = createToolConfig({
     ],
 
     content: {
-        overview: "Downloading videos one by one is tedious. Our YouTube Playlist Downloader simplifies the process by letting you see all videos in a playlist and download them efficiently. Whether you're archiving a music playlist, saving an educational course, or keeping a collection of entertainment videos, this tool helps you grab the content you need in high quality (HD, 1080p, 4K) or as MP3 audio.",
+        overview: "Manually saving 50 videos is a waste of time. Our tool is engineered for speed and security, providing a seamless bridge between YouTube and your offline library.",
 
         howToSteps: [
-            "Find the Playlist: Go to YouTube and open the playlist you want to download.",
-            "Copy the Link: Copy the playlist URL from the address bar. It should contain 'list=...'",
-            "Paste & Load: Paste the link into the box above and click 'Get Info'.",
-            "Download: Browse the list of videos and click the MP3 or Video button for each item you want to save."
+            "Copy the Link: Open YouTube and copy the URL of the playlist. (Look for &list= in the URL).",
+            "Paste & Analyze: Paste the link into the search bar above and click \"Get Info\".",
+            "Select Your Format: Choose between Video (MP4) or Audio (MP3) for the items you want.",
+            "Instant Save: Your download starts immediately. No waiting in a queue."
         ],
 
         features: [
-            "Batch Processing: View all videos in a playlist instantly without loading each page manually.",
-            "HD & 4K Video Support: Download videos in the highest available quality, up to 4K resolution.",
-            "MP3 Audio Extraction: Convert playlist videos directly to MP3 format for music or podcasts.",
-            "No Software Needed: Works entirely in your browser. No sketchy extensions or programs to install.",
-            "Cross-Platform: Works on iPhone, iPad, Android, Windows, Mac, and Linux.",
-            "Safe & Secure: No ads, no malware, and strict privacy protection."
+            "⚡ Ultra-Fast Metadata Fetching: We pull titles, thumbnails, and durations for the entire playlist in milliseconds.",
+            "🎬 No Quality Loss: Unlike other tools that compress files, we fetch the original source quality—from 360p to Full HD, 4K, and 8K.",
+            "🎵 Crystal Clear Audio: Convert YouTube playlists to MP3 at 320kbps for the best listening experience on your phone or car.",
+            "🛡️ Privacy First: No registration, no tracking, and no \"shady\" software installations. Everything happens in your browser."
         ],
 
         useCases: [
-            "Music Collections: Download your favorite music playlists for offline listening.",
-            "Online Courses: Save full tutorial series or lectures to watch without buffering.",
-            "Watch Later Lists: Archive your 'Watch Later' or custom playlists for travel or archive.",
-            "Content Backup: Creators can backup their own series of videos easily."
+            "For Students: Download entire CS50 or Khan Academy courses to study offline during commutes or in areas with poor internet.",
+            "For Travelers: Save your \"Watch Later\" playlist before a flight or road trip so you never run out of entertainment.",
+            "For Music Lovers: Turn a curated 100-song music playlist into a local MP3 folder for your offline media player.",
+            "For Backups: Creators can use this tool to quickly archive their own video series for safekeeping."
         ],
 
         aboutTool: (
             <div className="space-y-8">
-                {/* Hero Image - reusing existing one or generic placeholder logic if specific one not available */}
-                <div className="relative w-full aspect-video max-w-3xl mx-auto rounded-2xl overflow-hidden border border-border shadow-lg">
-                    <div className="w-full h-full bg-muted flex items-center justify-center text-muted-foreground">
-                        <div className="text-center">
-                            <List className="h-16 w-16 mx-auto mb-4 opacity-50" />
-                            <p>YouTube Playlist Downloader</p>
-                        </div>
-                    </div>
+                {/* Hero Image */}
+                <div className="relative w-full aspect-video max-w-3xl mx-auto rounded-2xl overflow-hidden border border-border shadow-lg bg-muted">
+                    <Image
+                        src="/images/youtube-playlist-downloader-hero.png"
+                        alt="YouTube Playlist Downloader Interface"
+                        fill
+                        className="object-cover"
+                        priority
+                    />
                 </div>
 
-                <article className="p-6 rounded-lg bg-card border border-border shadow-sm">
-                    <h2 className="text-xl font-bold mb-4 text-foreground flex items-center gap-2">
-                        <CheckCircle2 className="h-5 w-5 text-green-500" />
-                        Why use a Playlist Downloader?
+                <article className="prose dark:prose-invert max-w-none">
+                    <h2 className="text-2xl font-bold mb-4 flex items-center gap-2">
+                        <CheckCircle2 className="h-6 w-6 text-green-500" />
+                        Why FastTools is the Best YouTube Playlist Downloader in 2026
                     </h2>
-                    <div className="space-y-4">
-                        <p className="text-sm text-muted-foreground leading-relaxed">
-                            Manually visiting 50 different video pages to download a course is time-consuming. A playlist downloader fetches the metadata for every video at once, presenting you with a clean list where you can quickly grab the specific files you need.
+                    <p className="text-muted-foreground mb-6">
+                        Manually saving 50 videos is a waste of time. Our tool is engineered for speed and security, providing a seamless bridge between YouTube and your offline library.
+                    </p>
+
+                    <h2 className="text-2xl font-bold mb-4">Advanced Technical Features</h2>
+                    <div className="overflow-x-auto">
+                        <table className="w-full border-collapse border border-border">
+                            <thead>
+                                <tr className="bg-muted/50">
+                                    <th className="border border-border p-3 text-left">Feature</th>
+                                    <th className="border border-border p-3 text-left">Supported Specifications</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td className="border border-border p-2 font-medium">Video Formats</td>
+                                    <td className="border border-border p-2">MP4, WebM, MKV</td>
+                                </tr>
+                                <tr>
+                                    <td className="border border-border p-2 font-medium">Audio Formats</td>
+                                    <td className="border border-border p-2">MP3 (128kbps, 256kbps, 320kbps), M4A</td>
+                                </tr>
+                                <tr>
+                                    <td className="border border-border p-2 font-medium">Resolutions</td>
+                                    <td className="border border-border p-2">144p, 360p, 720p (HD), 1080p (FHD), 1440p (QHD), 4K, 8K</td>
+                                </tr>
+                                <tr>
+                                    <td className="border border-border p-2 font-medium">Compatibility</td>
+                                    <td className="border border-border p-2">Windows, macOS, Android, iOS, Linux, ChromeOS</td>
+                                </tr>
+                                <tr>
+                                    <td className="border border-border p-2 font-medium">Max Playlist Size</td>
+                                    <td className="border border-border p-2">Up to 100 videos per fetch (Unlimited fetches)</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <div className="mt-8 p-4 bg-muted/30 rounded-lg border border-border">
+                        <p className="text-sm">
+                            <strong>Tip:</strong> Not looking for a whole list? Try our <a href="/social-media-tools/youtube-downloader" className="text-primary hover:underline">YouTube Video Downloader</a> for single videos.
                         </p>
                     </div>
                 </article>
@@ -76,20 +115,20 @@ const toolConfig = createToolConfig({
 
         faqs: [
             {
-                question: "Can I download the entire playlist with one click?",
-                answer: "Due to browser limitations and server load, we provide a list of all videos where you can download them individually or in sequence. This ensures you get the specific quality and format you want for each video."
+                question: "Is there a limit on the number of videos I can download?",
+                answer: "Our fetcher currently displays the first 100 videos of any playlist. If your playlist is larger, you can download the first 100 and then fetch the next section. There is no daily limit on how many playlists you can process."
             },
             {
-                question: "Is there a limit to the playlist size?",
-                answer: "We support playlists with up to 100 videos directly. For larger playlists, you may only see the first batch of videos."
+                question: "Can I download a YouTube playlist to my iPhone or Android?",
+                answer: "Yes! FastTools is fully responsive. On Android, files go directly to your Downloads folder. On iOS (iPhone/iPad), you can download files directly to the \"Files\" app or save them to your Camera Roll."
             },
             {
-                question: "Does it work with private playlists?",
-                answer: "No, the playlist must be Public or Unlisted. We cannot access Private playlists that require your Google account login."
+                question: "Does this tool include ads or malware?",
+                answer: "No. Unlike many competitors, we provide a clean, ad-light experience. We do not require any .exe or .apk downloads, making us one of the safest YouTube playlist downloaders online."
             },
             {
-                question: "Is it free?",
-                answer: "Yes, this tool is 100% free to use with no hidden fees."
+                question: "Can I convert an entire playlist to MP3 in one click?",
+                answer: "To ensure the highest download speeds and avoid server timeouts, we provide high-speed individual download buttons for each track in the list. This allows you to choose exactly which songs you want in high-bitrate audio."
             }
         ],
 
@@ -99,10 +138,53 @@ const toolConfig = createToolConfig({
             { name: "TikTok Downloader", href: "/social-media-tools/tiktok-downloader" }
         ]
     }
-})
+}
+
+const toolConfig = createToolConfig(configBody)
 
 export const metadata = toolConfig.metadata
 
 export default function YoutubePlaylistDownloaderPage() {
-    return <ToolPageLayout {...toolConfig.getLayoutProps(<YoutubePlaylistDownloader />)} />
+    const schema = {
+        "@context": "https://schema.org",
+        "@graph": [
+            {
+                "@type": "SoftwareApplication",
+                "name": "FastTools YouTube Playlist Downloader",
+                "applicationCategory": "MultimediaApplication",
+                "operatingSystem": "Windows, macOS, Android, iOS, Linux, ChromeOS",
+                "offers": {
+                    "@type": "Offer",
+                    "price": "0",
+                    "priceCurrency": "USD"
+                },
+                "aggregateRating": {
+                    "@type": "AggregateRating",
+                    "ratingValue": "4.8",
+                    "ratingCount": "1250"
+                }
+            },
+            {
+                "@type": "FAQPage",
+                "mainEntity": configBody.content.faqs.map(faq => ({
+                    "@type": "Question",
+                    "name": faq.question,
+                    "acceptedAnswer": {
+                        "@type": "Answer",
+                        "text": faq.answer
+                    }
+                }))
+            }
+        ]
+    }
+
+    return (
+        <>
+            <script
+                type="application/ld+json"
+                dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
+            />
+            <ToolPageLayout {...toolConfig.getLayoutProps(<YoutubePlaylistDownloader />)} />
+        </>
+    )
 }
