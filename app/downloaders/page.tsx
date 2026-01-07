@@ -18,7 +18,8 @@ import {
   ShieldCheck,
   Zap,
   Star,
-  Music
+  Music,
+  List
 } from "lucide-react"
 export const metadata = createMetadata({
   title: "Free Video Downloader for YouTube, TikTok, & More",
@@ -37,6 +38,15 @@ const downloaders = [
     description: "Download YouTube videos in HD quality.",
     icon: Youtube,
     href: "/social-media-tools/youtube-downloader",
+    color: "#FF0000",
+    hoverColor: "#CC0000",
+  },
+  {
+    id: "youtube-playlist",
+    name: "YouTube Playlist",
+    description: "Download entire playlists to MP3/MP4.",
+    icon: List,
+    href: "/social-media-tools/youtube-playlist-downloader",
     color: "#FF0000",
     hoverColor: "#CC0000",
   },

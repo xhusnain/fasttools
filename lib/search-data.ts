@@ -113,6 +113,7 @@ export const searchItems: SearchItem[] = [
   { name: "X Video Downloader", description: "Download X (Twitter) videos in HD without watermark", path: "/social-media-tools/x-video-downloader", category: "Social Media" },
   { name: "YouTube Thumbnail Downloader", description: "Download YouTube thumbnails in HD", path: "/social-media-tools/youtube-thumbnail", category: "Social Media" },
   { name: "YouTube Video Downloader", description: "Download YouTube videos via browser in HD/4K/8K", path: "/social-media-tools/youtube-downloader", category: "Social Media" },
+  { name: "YouTube Playlist Downloader", description: "Download entire YouTube playlists to MP4 or MP3", path: "/social-media-tools/youtube-playlist-downloader", category: "Social Media" },
   { name: "CapCut Downloader", description: "Download CapCut videos without watermark", path: "/social-media-tools/capcut-downloader", category: "Social Media" },
   { name: "Douyin Downloader", description: "Download Douyin videos without watermark", path: "/social-media-tools/douyin-downloader", category: "Social Media" },
   { name: "Pinterest Downloader", description: "Download Pinterest videos and images in HD", path: "/social-media-tools/pinterest-downloader", category: "Social Media" },

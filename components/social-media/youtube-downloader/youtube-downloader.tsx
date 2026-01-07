@@ -50,6 +50,7 @@ export function YoutubeDownloader({ compact = false }: YoutubeDownloaderProps) {
     const [error, setError] = useState<string | null>(null)
     const [videoInfo, setVideoInfo] = useState<VideoInfo | null>(null)
     const [playlistInfo, setPlaylistInfo] = useState<PlaylistInfo | null>(null)
+    const [downloadingId, setDownloadingId] = useState<string | null>(null)
     const [downloadType, setDownloadType] = useState<'single' | 'playlist'>('single')
 
     const validateUrl = (inputUrl: string): boolean => {
@@ -108,24 +109,38 @@ export function YoutubeDownloader({ compact = false }: YoutubeDownloaderProps) {
         }
     }
 
-    const handleDownload = (formatId?: string, type: 'video' | 'audio' = 'video') => {
-        // Construct the download URL
-        // We use window.open or a hidden iframe/link to trigger the download from the backend stream
+    const handleDownload = async (formatId?: string, type: 'video' | 'audio' = 'video') => {
+        // Determine a unique ID for the loading state
+        // If formatId is present, use it. If no formatId but type is audio, use 'audio'.
+        // If no formatId and type is video, it's the 'best quality' auto option, use 'best'.
+        const activeId = formatId || (type === 'audio' ? 'audio' : 'best');
+
+        setDownloadingId(activeId)
         const baseUrl = env.apiUrl || "http://localhost:3001";
-        let downloadUrl = `${baseUrl}/youtube/download?url=${encodeURIComponent(url)}&type=${type}`;
+        const downloadToken = Date.now().toString();
+
+        // Direct stream download
+        const title = videoInfo?.title || playlistInfo?.title || 'download';
+        const safeTitle = title.replace(/[^a-z0-9]/gi, '_').toLowerCase();
+
+        let downloadUrl = `${baseUrl}/youtube/stream?url=${encodeURIComponent(url.trim())}&type=${type}&filename=${encodeURIComponent(safeTitle)}&downloadToken=${downloadToken}`;
 
         if (formatId) {
             downloadUrl += `&formatId=${formatId}`;
         }
 
-        // For audio, we force a specific filename if possible, but backend handles Content-Disposition
-        // Add a title query param if we want the backend to name it nicely (backend needs to support it, 
-        // currently backend uses default or provided filename param)
-        const title = videoInfo?.title || playlistInfo?.title || 'download';
-        const safeTitle = title.replace(/[^a-z0-9]/gi, '_').toLowerCase();
-        downloadUrl += `&filename=${safeTitle}`;
+        // Trigger browser download immediately
+        window.location.href = downloadUrl;
 
-        window.open(downloadUrl, '_blank');
+        // Poll for the cookie to know when to stop the loader
+        const checkCookie = setInterval(() => {
+            if (document.cookie.includes(`download_started=${downloadToken}`)) {
+                setDownloadingId(null);
+                clearInterval(checkCookie);
+                // Optional: Clear the cookie (not strictly necessary as it has Max-Age but good for hygiene)
+                document.cookie = `download_started=${downloadToken}; Path=/; Max-Age=0`;
+            }
+        }, 500); // Check every 500ms
     }
 
     // Filter formats to show unique resolutions and best audio
@@ -179,7 +194,7 @@ export function YoutubeDownloader({ compact = false }: YoutubeDownloaderProps) {
                             >
                                 {loading ? (
                                     <>
-                                        <Loader2 className="mr-2 h-4 w-4 animate-spin" />
+                                        <Loader2 className="mr-2 h-4 w-4 animate-spin text-blue-500" />
                                         Fetching...
                                     </>
                                 ) : (
@@ -219,8 +234,9 @@ export function YoutubeDownloader({ compact = false }: YoutubeDownloaderProps) {
                                             onClick={() => handleDownload(undefined, 'audio')}
                                             variant="secondary"
                                             className="w-full sm:w-auto"
+                                            disabled={!!downloadingId}
                                         >
-                                            <Music className="mr-2 h-4 w-4" />
+                                            {downloadingId === 'audio' ? <Loader2 className="mr-2 h-4 w-4 animate-spin text-blue-500" /> : <Music className="mr-2 h-4 w-4" />}
                                             Download MP3 (Audio)
                                         </GButton>
                                     </div>
@@ -236,9 +252,13 @@ export function YoutubeDownloader({ compact = false }: YoutubeDownloaderProps) {
                                                     variant="outline"
                                                     size="sm"
                                                     className="justify-between"
+                                                    disabled={!!downloadingId}
                                                     onClick={() => handleDownload(format.format_id, 'video')}
                                                 >
-                                                    <span>{format.height}p ({format.ext})</span>
+                                                    <span className="flex items-center">
+                                                        {format.height}p ({format.ext})
+                                                        {downloadingId === format.format_id && <Loader2 className="ml-2 h-3 w-3 animate-spin text-blue-500" />}
+                                                    </span>
                                                     {(format.filesize || format.filesize_approx) ? (
                                                         <span className="text-xs text-muted-foreground">
                                                             ~{((format.filesize || format.filesize_approx!) / 1024 / 1024).toFixed(1)} MB
@@ -251,10 +271,11 @@ export function YoutubeDownloader({ compact = false }: YoutubeDownloaderProps) {
                                                 variant="default"
                                                 size="sm"
                                                 className="justify-between"
+                                                disabled={!!downloadingId}
                                                 onClick={() => handleDownload(undefined, 'video')}
                                             >
                                                 <span>Best Quality</span>
-                                                <span className="text-xs opacity-70">Auto</span>
+                                                {downloadingId === 'best' ? <Loader2 className="h-4 w-4 animate-spin text-blue-500" /> : <span className="text-xs opacity-70">Auto</span>}
                                             </GButton>
                                         </div>
                                     </div>

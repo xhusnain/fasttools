@@ -5,7 +5,7 @@ import { GToolCard } from "@/ui/gtool-card"
 import {
   Youtube, Instagram, Music, Tag, LinkIcon, Search, Hash,
   Download, Facebook, MessageSquare, Target, Shield, Globe,
-  Lightbulb, CheckCircle, Code, Type, Headphones
+  Lightbulb, CheckCircle, Code, Type, Headphones, List
 } from "lucide-react"
 import { getCurrentYear } from "@/lib/utils"
 
@@ -15,6 +15,13 @@ const socialTools = [
     description: "Download YouTube video thumbnails in all available quality sizes for competitor analysis and inspiration.",
     icon: Youtube,
     href: "/social-media-tools/youtube-thumbnail",
+    color: "red"
+  },
+  {
+    title: "YouTube Playlist Downloader",
+    description: "Download entire YouTube playlists to MP4 or MP3 in one go.",
+    icon: List,
+    href: "/social-media-tools/youtube-playlist-downloader",
     color: "red"
   },
   {
