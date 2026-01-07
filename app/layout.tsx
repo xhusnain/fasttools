@@ -143,21 +143,17 @@ export default function RootLayout({
         <link rel="preconnect" href="https://www.googletagmanager.com" />
         <link rel="preconnect" href="https://embed.tawk.to" />
         <link rel="preconnect" href="https://pagead2.googlesyndication.com" />
+        {env.isProduction && (
+          <script
+            async
+            src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6296569221534302"
+            crossOrigin="anonymous"
+          ></script>
+        )}
       </head>
       <body className="bg-background font-sans text-foreground">
 
-        {env.isProduction && (
-          <>
 
-            <Script
-              async
-              src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6296569221534302"
-              crossOrigin="anonymous"
-              strategy="lazyOnload"
-            />
-
-          </>
-        )}
 
         {/* Tawk.to Script */}
         <Script id="tawk-to" strategy="lazyOnload">
