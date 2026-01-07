@@ -42,6 +42,10 @@ export const YouTubeService = {
   extractVideoTags: async (videoUrl: string) => {
     return YouTubeRepository.extractVideoTags(videoUrl);
   },
+
+  getInfo: async (url: string, type: 'single' | 'playlist' = 'single') => {
+    return YouTubeRepository.getInfo(url, type);
+  },
 };
 
 export const InstagramService = {

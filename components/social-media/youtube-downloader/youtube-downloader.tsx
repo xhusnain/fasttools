@@ -6,104 +6,163 @@ import { GInput } from "@/ui/ginput"
 import { GLabel } from "@/ui/glabel"
 import { GButton } from "@/ui/gbutton"
 import { GAlert, GAlertDescription } from "@/ui/galert"
-
-import { Download, Loader2, AlertCircle, Video, Music } from "lucide-react"
+import { Download, Loader2, AlertCircle, Video, Music, List, FileVideo } from "lucide-react"
 import { API } from "@/services/api/api.service"
+import { env } from "@/config/env"
 
 export interface YoutubeDownloaderProps {
     compact?: boolean
+}
+
+interface VideoFormat {
+    format_id: string
+    format_note?: string
+    ext: string
+    filesize?: number
+    filesize_approx?: number
+    width?: number
+    height?: number
+    vcodec?: string
+    acodec?: string
+    url: string
+}
+
+interface VideoInfo {
+    id: string
+    title: string
+    thumbnail: string
+    formats: VideoFormat[]
+    duration?: number
+    description?: string
+    view_count?: number
+    uploader?: string
+}
+
+interface PlaylistInfo {
+    id: string
+    title: string
+    entries: any[]
 }
 
 export function YoutubeDownloader({ compact = false }: YoutubeDownloaderProps) {
     const [url, setUrl] = useState("")
     const [loading, setLoading] = useState(false)
     const [error, setError] = useState<string | null>(null)
-    const [result, setResult] = useState<any>(null)
+    const [videoInfo, setVideoInfo] = useState<VideoInfo | null>(null)
+    const [playlistInfo, setPlaylistInfo] = useState<PlaylistInfo | null>(null)
+    const [downloadingId, setDownloadingId] = useState<string | null>(null)
+    const [downloadType, setDownloadType] = useState<'single' | 'playlist'>('single')
 
     const validateUrl = (inputUrl: string): boolean => {
-        if (!inputUrl.trim()) {
-            setError("Please enter a YouTube URL")
-            return false
-        }
-
-        const youtubePatterns = [
-            /^https?:\/\/(www\.)?youtube\.com\/watch\?v=[a-zA-Z0-9_-]+/i,
-            /^https?:\/\/(www\.)?youtube\.com\/shorts\/[a-zA-Z0-9_-]+/i,
-            /^https?:\/\/youtu\.be\/[a-zA-Z0-9_-]+/i,
-            /^https?:\/\/(www\.)?youtube\.com\/embed\/[a-zA-Z0-9_-]+/i,
-            /^https?:\/\/(www\.)?youtube\.com\/v\/[a-zA-Z0-9_-]+/i,
-        ]
-
-        if (!youtubePatterns.some(pattern => pattern.test(inputUrl.trim()))) {
-            setError("Please enter a valid YouTube video URL")
-            return false
-        }
-
-        return true
+        if (!inputUrl.trim()) return false
+        // Basic naive check, backend does the real lifting
+        return inputUrl.includes("youtube.com") || inputUrl.includes("youtu.be")
     }
 
-    const handleDownload = async () => {
+    const detectType = (inputUrl: string) => {
+        // Strict playlist detection: must explicitly be a playlist URL, 
+        // OR have list param but NOT be a watch URL (watch URLs with list param are usually just playing a video from a playlist)
+        const isWatchUrl = inputUrl.includes("watch?v=") || inputUrl.includes("youtu.be/");
+        const hasListParam = inputUrl.includes("list=");
+
+        if (hasListParam && !isWatchUrl) {
+            setDownloadType('playlist')
+            return 'playlist'
+        }
+
+        // If it's a playlist URL structure specifically
+        if (inputUrl.includes("/playlist?list=")) {
+            setDownloadType('playlist')
+            return 'playlist'
+        }
+
+        setDownloadType('single')
+        return 'single'
+    }
+
+    const handleFetchInfo = async () => {
         setError(null)
-        setResult(null)
+        setVideoInfo(null)
+        setPlaylistInfo(null)
 
-        if (!validateUrl(url)) return
+        if (!validateUrl(url)) {
+            setError("Please enter a valid YouTube URL")
+            return
+        }
 
+        const type = detectType(url)
         setLoading(true)
 
         try {
-            const response = await API.Downloader.download('youtube', url.trim()) as any
+            const data = await API.YouTube.getInfo(url.trim(), type as any)
 
-            if (response.status && (response.mp4 || response.mp3 || response.video || response.audio || response.result)) {
-                // Handle mp4/mp3 response format (YouTube specific)
-                if (response.mp4 || response.mp3) {
-                    setResult(response)
-                }
-                // Handle direct response format (video/audio arrays at root level)
-                else if (response.video || response.audio) {
-                    setResult(response)
-                } else if (response.result) {
-                    // Handle nested result format
-                    setResult(response.result)
-                }
+            if (type === 'playlist') {
+                setPlaylistInfo(data)
             } else {
-                setError("Failed to fetch download links. Please try again.")
+                setVideoInfo(data)
             }
         } catch (err: any) {
-            setError(err.message || "Failed to download. Please check the URL and try again.")
+            console.error(err)
+            setError(err.response?.data?.error || "Failed to fetch video information. Please check the URL.")
         } finally {
             setLoading(false)
         }
     }
 
-    const downloadFile = async (fileUrl: string, filename: string) => {
-        try {
-            // Fetch the file as a blob to handle cross-origin downloads
-            const response = await fetch(fileUrl)
-            const blob = await response.blob()
+    const handleDownload = async (formatId?: string, type: 'video' | 'audio' = 'video') => {
+        // Determine a unique ID for the loading state
+        // If formatId is present, use it. If no formatId but type is audio, use 'audio'.
+        // If no formatId and type is video, it's the 'best quality' auto option, use 'best'.
+        const activeId = formatId || (type === 'audio' ? 'audio' : 'best');
 
-            // Create a blob URL
-            const blobUrl = URL.createObjectURL(blob)
+        setDownloadingId(activeId)
+        const baseUrl = env.apiUrl || "http://localhost:3001";
+        const downloadToken = Date.now().toString();
 
-            // Create and trigger download
-            const link = document.createElement("a")
-            link.href = blobUrl
-            link.download = filename
-            document.body.appendChild(link)
-            link.click()
-            document.body.removeChild(link)
+        // Direct stream download
+        const title = videoInfo?.title || playlistInfo?.title || 'download';
+        const safeTitle = title.replace(/[^a-z0-9]/gi, '_').toLowerCase();
 
-            // Clean up the blob URL
-            setTimeout(() => URL.revokeObjectURL(blobUrl), 100)
-        } catch (error) {
-            // Fallback to direct link if fetch fails
-            const link = document.createElement("a")
-            link.href = fileUrl
-            link.download = filename
-            link.target = "_blank"
-            document.body.appendChild(link)
-            link.click()
-            document.body.removeChild(link)
+        let downloadUrl = `${baseUrl}/youtube/stream?url=${encodeURIComponent(url.trim())}&type=${type}&filename=${encodeURIComponent(safeTitle)}&downloadToken=${downloadToken}`;
+
+        if (formatId) {
+            downloadUrl += `&formatId=${formatId}`;
         }
+
+        // Trigger browser download immediately
+        window.location.href = downloadUrl;
+
+        // Poll for the cookie to know when to stop the loader
+        const checkCookie = setInterval(() => {
+            if (document.cookie.includes(`download_started=${downloadToken}`)) {
+                setDownloadingId(null);
+                clearInterval(checkCookie);
+                // Optional: Clear the cookie (not strictly necessary as it has Max-Age but good for hygiene)
+                document.cookie = `download_started=${downloadToken}; Path=/; Max-Age=0`;
+            }
+        }, 500); // Check every 500ms
+    }
+
+    // Filter formats to show unique resolutions and best audio
+    const getUniqueVideoFormats = (formats: VideoFormat[]) => {
+        if (!formats) return []
+
+        // Filter for mp4 videos with audio or video-only that we might want (ignoring for now to keep simple)
+        // Actually best to show "Best Video" and specific common resolutions
+        const seenResolutions = new Set();
+        const usefulFormats = formats
+            .filter(f => f.vcodec !== 'none' && f.height) // Must have video
+            .sort((a, b) => (b.height || 0) - (a.height || 0)); // Highest res first
+
+        const distinct = [];
+        for (const f of usefulFormats) {
+            const res = `${f.height}p`;
+            if (!seenResolutions.has(res) && f.ext === 'mp4') {
+                seenResolutions.add(res);
+                distinct.push(f);
+            }
+        }
+        return distinct;
     }
 
     return (
@@ -118,27 +177,30 @@ export function YoutubeDownloader({ compact = false }: YoutubeDownloaderProps) {
                             <GInput
                                 id="youtube-url"
                                 type="text"
-                                placeholder="https://www.youtube.com/watch?v=..."
+                                placeholder="Paste YouTube video or playlist URL..."
                                 value={url}
-                                onChange={(e) => setUrl(e.target.value)}
-                                onKeyDown={(e) => e.key === "Enter" && handleDownload()}
+                                onChange={(e) => {
+                                    setUrl(e.target.value)
+                                    detectType(e.target.value)
+                                }}
+                                onKeyDown={(e) => e.key === "Enter" && handleFetchInfo()}
                                 className="flex-1"
                                 disabled={loading}
                             />
                             <GButton
-                                onClick={handleDownload}
+                                onClick={handleFetchInfo}
                                 disabled={loading || !url.trim()}
                                 className="px-6"
                             >
                                 {loading ? (
                                     <>
-                                        <Loader2 className="mr-2 h-4 w-4 animate-spin" />
-                                        Loading...
+                                        <Loader2 className="mr-2 h-4 w-4 animate-spin text-blue-500" />
+                                        Fetching...
                                     </>
                                 ) : (
                                     <>
                                         <Download className="mr-2 h-4 w-4" />
-                                        Download
+                                        Get Info
                                     </>
                                 )}
                             </GButton>
@@ -152,103 +214,135 @@ export function YoutubeDownloader({ compact = false }: YoutubeDownloaderProps) {
                         </GAlert>
                     )}
 
-                    {result && (
-                        <div className="space-y-4">
-                            <div className="flex items-center gap-2 text-sm text-muted-foreground">
-                                <Video className="h-4 w-4" />
-                                <span>Download ready!</span>
-                            </div>
-
-                            {result.thumbnail && (
-                                <div className="relative w-full aspect-video max-w-2xl mx-auto rounded-lg overflow-hidden border">
-                                    <img src={result.thumbnail} alt="Preview" className="w-full h-full object-cover" />
+                    {/* Single Video Result */}
+                    {videoInfo && (
+                        <div className="space-y-6 animate-in fade-in slide-in-from-bottom-4">
+                            <div className="flex flex-col md:flex-row gap-6">
+                                <div className="w-full md:w-1/3">
+                                    <div className="relative aspect-video rounded-lg overflow-hidden border">
+                                        <img src={videoInfo.thumbnail} alt={videoInfo.title} className="w-full h-full object-cover" />
+                                    </div>
                                 </div>
-                            )}
+                                <div className="w-full md:w-2/3 space-y-4">
+                                    <div>
+                                        <h3 className="text-xl font-bold line-clamp-2 mb-2">{videoInfo.title}</h3>
+                                        <p className="text-sm text-muted-foreground">{videoInfo.uploader} • {/* Add duration logic if needed */}</p>
+                                    </div>
 
-                            <div className="space-y-2">
-                                {result.title && (
-                                    <p className="text-sm font-medium line-clamp-2">{result.title}</p>
-                                )}
-
-                                <div className="grid gap-2">
-                                    {/* Handle mp4 field (YouTube specific) */}
-                                    {result.mp4 && (
+                                    <div className="flex flex-wrap gap-2">
                                         <GButton
-                                            onClick={async () => await downloadFile(result.mp4, `youtube-video-${Date.now()}.mp4`)}
-                                            className="w-full"
-                                            size="lg"
+                                            onClick={() => handleDownload(undefined, 'audio')}
+                                            variant="secondary"
+                                            className="w-full sm:w-auto"
+                                            disabled={!!downloadingId}
                                         >
-                                            <Download className="mr-2 h-5 w-5" />
-                                            Download Video (MP4)
+                                            {downloadingId === 'audio' ? <Loader2 className="mr-2 h-4 w-4 animate-spin text-blue-500" /> : <Music className="mr-2 h-4 w-4" />}
+                                            Download MP3 (Audio)
                                         </GButton>
-                                    )}
+                                    </div>
 
-                                    {/* Handle mp3 field (YouTube specific) */}
-                                    {result.mp3 && (
-                                        <GButton
-                                            onClick={async () => await downloadFile(result.mp3, `youtube-audio-${Date.now()}.mp3`)}
-                                            variant="outline"
-                                            className="w-full"
-                                            size="lg"
-                                        >
-                                            <Music className="mr-2 h-5 w-5" />
-                                            Download Audio (MP3)
-                                        </GButton>
-                                    )}
-
-                                    {/* Handle video array */}
-                                    {result.video && Array.isArray(result.video) && result.video.length > 0 && (
-                                        <GButton
-                                            onClick={async () => await downloadFile(result.video[0], `youtube-video-${Date.now()}.mp4`)}
-                                            className="w-full"
-                                            size="lg"
-                                        >
-                                            <Download className="mr-2 h-5 w-5" />
-                                            Download Video
-                                        </GButton>
-                                    )}
-
-                                    {/* Handle legacy format with result.url */}
-                                    {result.url && !result.video && !result.mp4 && (
-                                        <GButton
-                                            onClick={async () => await downloadFile(result.url, `youtube-${Date.now()}.mp4`)}
-                                            className="w-full"
-                                            size="lg"
-                                        >
-                                            <Download className="mr-2 h-5 w-5" />
-                                            Download Video
-                                        </GButton>
-                                    )}
-
-                                    {/* Handle audio array */}
-                                    {result.audio && Array.isArray(result.audio) && result.audio.length > 0 && (
-                                        <GButton
-                                            onClick={async () => await downloadFile(result.audio[0], `youtube-audio-${Date.now()}.mp3`)}
-                                            variant="outline"
-                                            className="w-full"
-                                            size="lg"
-                                        >
-                                            <Music className="mr-2 h-5 w-5" />
-                                            Download Audio (MP3)
-                                        </GButton>
-                                    )}
-
-                                    {/* Handle legacy music field */}
-                                    {result.music && !result.audio && !result.mp3 && (
-                                        <GButton
-                                            onClick={async () => await downloadFile(result.music, `youtube-audio-${Date.now()}.mp3`)}
-                                            variant="outline"
-                                            className="w-full"
-                                            size="lg"
-                                        >
-                                            <Music className="mr-2 h-5 w-5" />
-                                            Download Audio (MP3)
-                                        </GButton>
-                                    )}
+                                    <div className="space-y-3">
+                                        <h4 className="text-sm font-semibold flex items-center gap-2">
+                                            <Video className="h-4 w-4" /> Video Quality Options
+                                        </h4>
+                                        <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
+                                            {getUniqueVideoFormats(videoInfo.formats).map((format) => (
+                                                <GButton
+                                                    key={format.format_id}
+                                                    variant="outline"
+                                                    size="sm"
+                                                    className="justify-between"
+                                                    disabled={!!downloadingId}
+                                                    onClick={() => handleDownload(format.format_id, 'video')}
+                                                >
+                                                    <span className="flex items-center">
+                                                        {format.height}p ({format.ext})
+                                                        {downloadingId === format.format_id && <Loader2 className="ml-2 h-3 w-3 animate-spin text-blue-500" />}
+                                                    </span>
+                                                    {(format.filesize || format.filesize_approx) ? (
+                                                        <span className="text-xs text-muted-foreground">
+                                                            ~{((format.filesize || format.filesize_approx!) / 1024 / 1024).toFixed(1)} MB
+                                                        </span>
+                                                    ) : null}
+                                                </GButton>
+                                            ))}
+                                            {/* Fallback Best Video */}
+                                            <GButton
+                                                variant="default"
+                                                size="sm"
+                                                className="justify-between"
+                                                disabled={!!downloadingId}
+                                                onClick={() => handleDownload(undefined, 'video')}
+                                            >
+                                                <span>Best Quality</span>
+                                                {downloadingId === 'best' ? <Loader2 className="h-4 w-4 animate-spin text-blue-500" /> : <span className="text-xs opacity-70">Auto</span>}
+                                            </GButton>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     )}
+
+                    {/* Playlist Result */}
+                    {playlistInfo && (
+                        <div className="space-y-6 animate-in fade-in slide-in-from-bottom-4">
+                            <div className="space-y-2">
+                                <h3 className="text-lg font-bold flex items-center gap-2">
+                                    <List className="h-5 w-5" /> Playlist: {playlistInfo.title}
+                                </h3>
+                                <p className="text-sm text-muted-foreground">Found {playlistInfo.entries?.length || 0} videos</p>
+                            </div>
+
+                            <div className="grid gap-2 max-h-[400px] overflow-y-auto pr-2 rounded-md border p-2">
+                                {playlistInfo.entries?.map((entry: any, i: number) => (
+                                    <div key={entry.id || i} className="flex flex-col sm:flex-row sm:items-center gap-3 p-3 hover:bg-muted/50 rounded-md transition-colors border-b last:border-0 border-border/50">
+                                        <div className="flex items-center gap-3 flex-1 min-w-0">
+                                            <div className="h-16 w-28 bg-muted rounded overflow-hidden flex-shrink-0">
+                                                {entry.thumbnails && entry.thumbnails[0] ? (
+                                                    <img src={entry.thumbnails[0].url} alt="" className="w-full h-full object-cover" />
+                                                ) : <div className="w-full h-full flex items-center justify-center"><FileVideo className="h-4 w-4" /></div>}
+                                            </div>
+                                            <div className="flex-1 min-w-0">
+                                                <p className="text-sm font-medium line-clamp-2">{entry.title}</p>
+                                                <p className="text-xs text-muted-foreground mt-1">{entry.uploader}</p>
+                                            </div>
+                                        </div>
+
+                                        <div className="flex gap-2 w-full sm:w-auto">
+                                            <GButton
+                                                size="sm"
+                                                variant="secondary"
+                                                className="flex-1 sm:flex-none"
+                                                onClick={() => {
+                                                    const baseUrl = env.apiUrl || "http://localhost:3001";
+                                                    const url = `${baseUrl}/youtube/download?url=${encodeURIComponent(entry.url || `https://www.youtube.com/watch?v=${entry.id}`)}&type=audio&filename=${encodeURIComponent(entry.title?.replace(/[^a-z0-9]/gi, '_') || 'audio')}`;
+                                                    window.open(url, '_blank');
+                                                }}
+                                            >
+                                                <Music className="h-3 w-3 mr-2" />
+                                                MP3
+                                            </GButton>
+                                            <GButton
+                                                size="sm"
+                                                variant="outline"
+                                                className="flex-1 sm:flex-none"
+                                                onClick={() => {
+                                                    const baseUrl = env.apiUrl || "http://localhost:3001";
+                                                    const url = `${baseUrl}/youtube/download?url=${encodeURIComponent(entry.url || `https://www.youtube.com/watch?v=${entry.id}`)}&type=video&filename=${encodeURIComponent(entry.title?.replace(/[^a-z0-9]/gi, '_') || 'video')}`;
+                                                    window.open(url, '_blank');
+                                                }}
+                                            >
+                                                <Video className="h-3 w-3 mr-2" />
+                                                Video
+                                            </GButton>
+                                        </div>
+                                    </div>
+                                ))}
+                            </div>
+                        </div>
+                    )}
+
                 </div>
             </GCard>
 
@@ -256,10 +350,10 @@ export function YoutubeDownloader({ compact = false }: YoutubeDownloaderProps) {
                 <GCard className="p-6 bg-card border border-border">
                     <h3 className="text-lg font-bold text-foreground mb-4">How to Use</h3>
                     <ol className="space-y-3 text-sm text-muted-foreground list-decimal list-inside">
-                        <li>Open YouTube and find the video you want to download</li>
-                        <li>Copy the video URL from your browser's address bar</li>
-                        <li>Paste it into the input field above</li>
-                        <li>Click Download to save the video or audio</li>
+                        <li>Open YouTube and find the video or playlist you want to download</li>
+                        <li>Copy the URL from your browser's address bar</li>
+                        <li>Paste it into the input field above and click "Get Info"</li>
+                        <li>Choose your preferred format (MP3 Audio or Video Quality) to start downloading</li>
                     </ol>
                 </GCard>
             )}
