@@ -12,8 +12,8 @@ import {
 const toolConfig = createToolConfig({
   toolName: "YouTube Channel Checker - Name & Handle Search",
   description: "Check YouTube channel name availability, verify @handle ownership, and analyze your name's SEO potential. The ultimate 3-in-1 tool for creators.",
-  metaTitle: "YouTube Channel Checker - Name & Handle Search",
-  metaDescription: "Free YouTube channel name checker, handle availability tool & SEO analyzer. Check @handle availability, analyze keyword potential, and generate 100+ AI-powered name ideas. Find your perfect YouTube identity!",
+  metaTitle: `YouTube Channel Name Availability Checker & Handle Search ${getCurrentYear()}`,
+  metaDescription: "Instant free YouTube channel name availability checker. Search handles, check if a name is taken, and find unique channel ideas with our AI tool.",
   path: "/social-media-tools/channel-checker",
   video: {
     id: "qNapObaVmPc",
@@ -22,8 +22,8 @@ const toolConfig = createToolConfig({
   },
 
   header: {
-    title: "YouTube Channel Checker - Name & Handle Search",
-    description: "The ultimate 3-in-1 YouTube toolkit: Check channel name availability, verify @handle ownership, and analyze your name's SEO potential. Generate 100+ AI-powered suggestions and find your perfect YouTube identity.",
+    title: "YouTube Channel Name Availability Checker",
+    description: "Check if your desired YouTube channel name is taken. Instantly search availability for handles, URLs, and channel names with our free tool.",
     titleSize: "medium",
     descriptionSize: "small",
   },

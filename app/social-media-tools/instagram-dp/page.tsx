@@ -1,12 +1,13 @@
 import { InstagramDpViewer } from "@/components/social-media/instagram-dp-viewer"
 import { ToolPageLayout } from "@/components/common/tool-page-layout"
 import { createToolConfig } from "@/lib/create-tool-config"
+import { getCurrentYear } from "@/lib/utils"
 
 const toolConfig = createToolConfig({
-  toolName: "Instagram DP Viewer - View Profile Pictures",
-  description: "View and download Instagram profile pictures in HD quality. Free Instagram DP viewer tool for public accounts. No login required!",
-  metaTitle: "Instagram DP Viewer - View Profile Pictures",
-  metaDescription: "FastTools Instagram DP Viewer - View and download Instagram profile pictures in HD quality. Free Instagram DP viewer tool for public accounts.",
+  toolName: "Instagram DP Viewer & Downloader (HD Quality)",
+  description: "View and download Instagram profile pictures in full HD size. Free Instagram DP viewer for public accounts. No login required.",
+  metaTitle: `Instagram DP Viewer & Downloader - View Full Size HD Profile Pics ${getCurrentYear()}`,
+  metaDescription: "Free Instagram DP viewer & downloader. View full size profile pictures in HD quality without login. Download Insta DPs instantly.",
   path: "/social-media-tools/instagram-dp",
   keywords: [
     "instagram dp viewer", "instagram profile picture viewer", "instagram dp downloader",
@@ -16,8 +17,8 @@ const toolConfig = createToolConfig({
   ],
 
   header: {
-    title: "Instagram DP Viewer - View Profile Pictures",
-    description: "View and download Instagram profile pictures in HD quality. Works with public Instagram accounts. No login required.",
+    title: "Instagram DP Viewer & Downloader (HD Quality)",
+    description: "Instantly view and download Instagram profile pictures in full HD resolution. Works for all public accounts. No login or account required.",
     titleSize: "medium",
     descriptionSize: "small",
   },
@@ -142,7 +143,7 @@ const toolConfig = createToolConfig({
 
 export const metadata = {
   ...toolConfig.metadata,
-  title: "Instagram DP Viewer | View & Download Profile Pictures"
+  title: `Instagram DP Viewer & Downloader - View Full Size HD Pics ${getCurrentYear()}`
 }
 
 export default function InstagramDpPage() {

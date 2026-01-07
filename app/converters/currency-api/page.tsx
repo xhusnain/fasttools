@@ -10,15 +10,15 @@ import { Breadcrumbs } from "@/components/common/breadcrumbs"
 import { createMetadata } from "@/lib/metadata-base"
 
 const baseMetadata = createMetadata({
-  title: "Currency API | Free Exchange Rate API Documentation",
-  description: "Free currency exchange API with real-time rates, historical data & currency conversion. Get started with FastTools Currency API in minutes.",
+  title: "Free Currency Exchange API (No Key Required) | FastTools",
+  description: "Free currency exchange API with real-time rates, historical data & currency conversion. No API key required. Get started with FastTools in seconds.",
   path: "/converters/currency-api",
   includeSchema: false
 })
 
 export const metadata = {
   ...baseMetadata,
-  title: "Currency API | Free Exchange Rate API Documentation"
+  title: "Free Currency Exchange API (No Key Required) | FastTools"
 }
 
 export default function CurrencyAPIDocsPage() {
@@ -37,8 +37,8 @@ export default function CurrencyAPIDocsPage() {
               {/* Hero */}
               <div className="mt-8 md:mt-12">
                 <GHeader
-                  title="Currency API Documentation"
-                  description="Free currency converter API with real-time exchange rates and conversion. Our free currency conversion API and currency api make it easy to integrate currency conversion into your applications with our comprehensive REST API."
+                  title="Free Currency Exchange API (No Key Required)"
+                  description="Free currency converter API with real-time exchange rates. No API key needed. Our open-source compatible API makes it easy to integrate currency conversion into your applications instantly."
                   titleSize="large"
                   descriptionSize="medium"
                   color="blue"

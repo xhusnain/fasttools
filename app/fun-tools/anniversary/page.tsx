@@ -5,16 +5,21 @@ import { getCurrentYear } from "@/lib/utils"
 import { Heart, Calendar, Clock, Gift, ArrowRight, CheckCircle, HelpCircle, Star } from "lucide-react"
 
 const toolConfig = createToolConfig({
-  toolName: "Anniversary Calculator",
-  description: "Calculate how long you've been together in years, months, and days. See next anniversary date and days remaining. Perfect for couples celebrating their love!",
-  metaTitle: `Anniversary Calculator (Years & Months) | Relationship Duration Tool ${getCurrentYear()}`,
-  metaDescription: "FastTools Anniversary Calculator - Calculate how long you've been together in years, months, and days. See total months, next anniversary date, and days remaining.",
+  toolName: "Relationship Anniversary Calculator",
+  description: "Calculate exactly how long you've been together in years, months, and days. The best love calculator for couples to track milestones and next anniversary.",
+  metaTitle: `Relationship Anniversary Calculator - Years, Months, Days ${getCurrentYear()}`,
+  metaDescription: "Free relationship anniversary calculator. track how long you've been together in years, months, days. Perfect for couples celebrating love milestones.",
   path: "/fun-tools/anniversary",
+  keywords: [
+    "relationship anniversary calculator", "love anniversary calculator", "how long have we been together calculator",
+    "dating anniversary calculator", "marriage anniversary calculator", "couple years tracker",
+    "years months days calculator", "love days counter"
+  ],
 
 
   header: {
-    title: `Anniversary Calculator – Calculate Relationship Duration (${getCurrentYear()})`,
-    description: "Calculate how long you've been together and discover when your next anniversary is. Perfect for couples celebrating their love! Simply enter your relationship start date to see years, total months, days, and even seconds you've been together.",
+    title: "Relationship Anniversary Calculator",
+    description: "Calculate exactly how long you've been together. See total years, months, and days since your special date. Perfect for tracking your love journey.",
     titleSize: "medium",
     descriptionSize: "small",
   },
@@ -258,7 +263,10 @@ const toolConfig = createToolConfig({
   }
 })
 
-export const metadata = toolConfig.metadata
+export const metadata = {
+  ...toolConfig.metadata,
+  title: `Relationship Anniversary Calculator - Years, Months, Days ${getCurrentYear()}`
+}
 
 export default function AnniversaryPage() {
   return <ToolPageLayout {...toolConfig.getLayoutProps(<AnniversaryCalculator />)} />
