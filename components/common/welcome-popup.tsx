@@ -1,9 +1,9 @@
 "use client"
 
 import { useState, useEffect } from "react"
-import { X, Sparkles, ArrowRight, Download, Youtube, Instagram, Video } from "lucide-react"
+import { X, Sparkles, ArrowRight, Download, Youtube, Instagram, Video, ListVideo } from "lucide-react"
 
-const POPUP_STORAGE_KEY = "welcome_popup_dismissed_at"
+const POPUP_STORAGE_KEY = "welcome_popup_dismissed_at_v2"
 const POPUP_HIDE_DURATION_MS = 12 * 60 * 60 * 1000 // 12 hours in milliseconds
 
 export function WelcomePopup() {
@@ -75,7 +75,7 @@ export function WelcomePopup() {
                         <div className="mb-4 inline-flex items-center gap-2 rounded-full bg-gradient-to-r from-cyan-500/20 to-pink-500/20 px-4 py-2 text-sm font-semibold">
                             <Download className="h-4 w-4 text-cyan-500 animate-pulse" />
                             <span className="bg-gradient-to-r from-cyan-500 to-pink-500 bg-clip-text text-transparent">
-                                New Downloaders Added!
+                                Update: YouTube Fixed!
                             </span>
                             <Sparkles className="h-4 w-4 text-pink-500 animate-pulse" />
                         </div>
@@ -93,16 +93,23 @@ export function WelcomePopup() {
 
                         {/* Description */}
                         <p className="mb-6 text-muted-foreground leading-relaxed">
-                            Download videos from <strong className="text-foreground">YouTube, TikTok, Instagram, Facebook</strong> and more – completely free, no software needed!
+                            <strong>YouTube Downloader Fixed!</strong> We've resolved the issues with downloading videos. Plus, try our new <strong>YouTube Playlist Downloader</strong> to save entire courses/series!
                         </p>
 
+                        {/* Features list */}
                         {/* Features list */}
                         <div className="mb-6 flex flex-col gap-2 text-left">
                             <div className="flex items-center gap-3 rounded-lg bg-muted/50 px-4 py-2.5">
                                 <div className="flex h-8 w-8 items-center justify-center rounded-full bg-red-500/20">
                                     <Youtube className="h-4 w-4 text-red-500" />
                                 </div>
-                                <span className="text-sm text-foreground">YouTube videos in HD quality</span>
+                                <span className="text-sm text-foreground">Fixed: YouTube HD Video Downloads</span>
+                            </div>
+                            <div className="flex items-center gap-3 rounded-lg bg-muted/50 px-4 py-2.5">
+                                <div className="flex h-8 w-8 items-center justify-center rounded-full bg-red-500/20">
+                                    <ListVideo className="h-4 w-4 text-red-500" />
+                                </div>
+                                <span className="text-sm text-foreground">New: YouTube Playlist Downloader</span>
                             </div>
                             <div className="flex items-center gap-3 rounded-lg bg-muted/50 px-4 py-2.5">
                                 <div className="flex h-8 w-8 items-center justify-center rounded-full bg-pink-500/20">
