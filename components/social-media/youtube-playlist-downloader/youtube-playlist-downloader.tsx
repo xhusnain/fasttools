@@ -59,8 +59,19 @@ export function YoutubePlaylistDownloader({ compact = false }: YoutubePlaylistDo
         setLoading(true)
 
         try {
-            // Force type to playlist
-            const data = await API.YouTube.getInfo(url.trim(), 'playlist')
+            // Use local API, force type to playlist
+            const res = await fetch('/api/youtube/info', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ url: url.trim(), type: 'playlist' })
+            })
+
+            if (!res.ok) {
+                const err = await res.json()
+                throw new Error(err.error || 'Failed to fetch playlist information')
+            }
+
+            const data = await res.json()
 
             // Filter out private/deleted videos
             if (data && data.entries) {
@@ -74,7 +85,7 @@ export function YoutubePlaylistDownloader({ compact = false }: YoutubePlaylistDo
             setPlaylistInfo(data)
         } catch (err: any) {
             console.error(err)
-            setError(err.response?.data?.error || "Failed to fetch playlist information. Please check the URL.")
+            setError(err.message || "Failed to fetch playlist information. Please check the URL.")
         } finally {
             setLoading(false)
         }
@@ -84,17 +95,14 @@ export function YoutubePlaylistDownloader({ compact = false }: YoutubePlaylistDo
         if (!playlistInfo || !playlistInfo.entries) return
 
         setDownloadingAllType(type)
-        const baseUrl = env.apiUrl || "http://localhost:3001"
+        // No baseUrl needed for local API
 
         // We process sequentially with a delay to be gentle on the browser and server
         // Using hidden iframes avoids popup blockers which block window.open in loops
         // and avoids window.location.href cancelling previous requests
-        // We process sequentially with a delay to be gentle on the browser and server
-        // Using hidden iframes avoids popup blockers which block window.open in loops
-        // and avoids window.location.href cancelling previous requests
         for (const entry of playlistInfo.entries) {
-            // Use Direct Stream URL
-            const dlUrl = `${baseUrl}/youtube/stream?url=${encodeURIComponent(`https://www.youtube.com/watch?v=${entry.id}`)}&type=${type}&filename=${encodeURIComponent(entry.title?.replace(/[^a-z0-9]/gi, '_') || type)}`;
+            // Use Local API Direct Stream URL
+            const dlUrl = `/api/youtube/download?url=${encodeURIComponent(`https://www.youtube.com/watch?v=${entry.id}`)}&type=${type}&filename=${encodeURIComponent(entry.title?.replace(/[^a-z0-9]/gi, '_') || type)}`;
 
             // Create hidden iframe to trigger download as stream
             const iframe = document.createElement('iframe');
@@ -117,12 +125,12 @@ export function YoutubePlaylistDownloader({ compact = false }: YoutubePlaylistDo
     }
 
     const handleSingleDownload = async (entry: any, type: 'video' | 'audio') => {
-        const baseUrl = env.apiUrl || "http://localhost:3001";
         const title = entry.title || 'download';
         const safeTitle = title.replace(/[^a-z0-9]/gi, '_').toLowerCase();
         const downloadToken = `pl_${entry.id}_${Date.now()}`;
 
-        const dlUrl = `${baseUrl}/youtube/stream?url=${encodeURIComponent(`https://www.youtube.com/watch?v=${entry.id}`)}&type=${type}&filename=${encodeURIComponent(safeTitle)}&downloadToken=${downloadToken}`;
+        // Local API URL
+        const dlUrl = `/api/youtube/download?url=${encodeURIComponent(`https://www.youtube.com/watch?v=${entry.id}`)}&type=${type}&filename=${encodeURIComponent(safeTitle)}&downloadToken=${downloadToken}`;
 
         setDownloadingItem({ id: entry.id, type });
         window.location.href = dlUrl; // Direct stream trigger
@@ -135,6 +143,12 @@ export function YoutubePlaylistDownloader({ compact = false }: YoutubePlaylistDo
                 document.cookie = `download_started=${downloadToken}; Path=/; Max-Age=0`;
             }
         }, 500);
+
+        // Fallback cleanup
+        setTimeout(() => {
+            clearInterval(checkCookie);
+            setDownloadingItem(prev => (prev?.id === entry.id && prev?.type === type) ? null : prev);
+        }, 30000);
     }
 
     return (

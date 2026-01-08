@@ -80,6 +80,7 @@ export function YoutubeDownloader({ compact = false }: YoutubeDownloaderProps) {
         return 'single'
     }
 
+
     const handleFetchInfo = async () => {
         setError(null)
         setVideoInfo(null)
@@ -94,7 +95,19 @@ export function YoutubeDownloader({ compact = false }: YoutubeDownloaderProps) {
         setLoading(true)
 
         try {
-            const data = await API.YouTube.getInfo(url.trim(), type as any)
+            // Use local API
+            const res = await fetch('/api/youtube/info', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ url: url.trim(), type: type })
+            })
+
+            if (!res.ok) {
+                const err = await res.json()
+                throw new Error(err.error || 'Failed to fetch video information')
+            }
+
+            const data = await res.json()
 
             if (type === 'playlist') {
                 setPlaylistInfo(data)
@@ -103,7 +116,7 @@ export function YoutubeDownloader({ compact = false }: YoutubeDownloaderProps) {
             }
         } catch (err: any) {
             console.error(err)
-            setError(err.response?.data?.error || "Failed to fetch video information. Please check the URL.")
+            setError(err.message || "Failed to fetch video information. Please check the URL.")
         } finally {
             setLoading(false)
         }
@@ -111,19 +124,16 @@ export function YoutubeDownloader({ compact = false }: YoutubeDownloaderProps) {
 
     const handleDownload = async (formatId?: string, type: 'video' | 'audio' = 'video') => {
         // Determine a unique ID for the loading state
-        // If formatId is present, use it. If no formatId but type is audio, use 'audio'.
-        // If no formatId and type is video, it's the 'best quality' auto option, use 'best'.
         const activeId = formatId || (type === 'audio' ? 'audio' : 'best');
 
         setDownloadingId(activeId)
-        const baseUrl = env.apiUrl || "http://localhost:3001";
         const downloadToken = Date.now().toString();
 
-        // Direct stream download
         const title = videoInfo?.title || playlistInfo?.title || 'download';
         const safeTitle = title.replace(/[^a-z0-9]/gi, '_').toLowerCase();
 
-        let downloadUrl = `${baseUrl}/youtube/stream?url=${encodeURIComponent(url.trim())}&type=${type}&filename=${encodeURIComponent(safeTitle)}&downloadToken=${downloadToken}`;
+        // Use local API for download
+        let downloadUrl = `/api/youtube/download?url=${encodeURIComponent(url.trim())}&type=${type}&filename=${encodeURIComponent(safeTitle)}&downloadToken=${downloadToken}`;
 
         if (formatId) {
             downloadUrl += `&formatId=${formatId}`;
@@ -137,10 +147,15 @@ export function YoutubeDownloader({ compact = false }: YoutubeDownloaderProps) {
             if (document.cookie.includes(`download_started=${downloadToken}`)) {
                 setDownloadingId(null);
                 clearInterval(checkCookie);
-                // Optional: Clear the cookie (not strictly necessary as it has Max-Age but good for hygiene)
                 document.cookie = `download_started=${downloadToken}; Path=/; Max-Age=0`;
             }
         }, 500); // Check every 500ms
+
+        // Fallback cleanup after 30 seconds if cookie not found (sometimes cookies are blocked)
+        setTimeout(() => {
+            clearInterval(checkCookie);
+            setDownloadingId(null);
+        }, 30000);
     }
 
     // Filter formats to show unique resolutions and best audio
