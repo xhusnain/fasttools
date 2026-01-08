@@ -1,10 +1,10 @@
 import { NextRequest, NextResponse } from 'next/server'
-import { exec } from 'child_process'
+import { execFile } from 'child_process'
 import path from 'path'
 import { promisify } from 'util'
-import {getAntiBotArgs} from "@/lib/youtube-helper";
+import { getAntiBotArgs } from "@/lib/youtube-helper";
 
-const execAsync = promisify(exec)
+const execFileAsync = promisify(execFile)
 
 export const dynamic = 'force-dynamic'
 
@@ -48,24 +48,23 @@ export async function POST(request: NextRequest) {
 
         const baseArgs = getAntiBotArgs();
 
+        // Construct args array (NOT joined string)
         let args = [
-            `"${ytDlpPath}"`,
             type === 'playlist' ? '--dump-single-json' : '--dump-json',
             ...baseArgs,
-            `"${url}"`
+            url
         ]
 
         if (type === 'playlist') {
             args.push('--flat-playlist')
         } else {
-            args.push('--no-playlist') // Optimization: Don't scan playlist for single video
+            args.push('--no-playlist')
         }
-
-        const command = args.join(' ')
 
         try {
             // Try yt-dlp local first (Method A)
-            const { stdout } = await execAsync(command, {
+            // execFile takes the command, then args array. No shell involved.
+            const { stdout } = await execFileAsync(ytDlpPath, args, {
                 maxBuffer: 10 * 1024 * 1024,
                 timeout: 30000
             })
