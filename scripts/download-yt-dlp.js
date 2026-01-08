@@ -65,6 +65,8 @@ const downloadFile = (url) => {
             response.pipe(file)
             file.on('finish', () => {
                 file.close()
+                console.log('Download finished. Setting permissions...')
+
                 // Make executable (Unix only)
                 if (platform !== 'win32') {
                     try {
@@ -73,16 +75,22 @@ const downloadFile = (url) => {
                         console.error('Failed to chmod binary:', e.message)
                     }
                 }
+
                 console.log('yt-dlp downloaded successfully!')
 
-                // Verify it works
-                try {
-                    const version = execSync(`"${ytDlpPath}" --version`, { encoding: 'utf-8' })
-                    console.log(`yt-dlp version: ${version.trim()}`)
-                } catch (error) {
-                    console.error('Error verifying yt-dlp:', error.message)
-                    console.log('It might require python3 installed on the system.')
-                }
+                // Verify it works with a small delay to prevent "Text file busy"
+                setTimeout(() => {
+                    try {
+                        console.log('Verifying binary...')
+                        const version = execSync(`"${ytDlpPath}" --version`, { encoding: 'utf-8' })
+                        console.log(`yt-dlp version: ${version.trim()}`)
+                    } catch (error) {
+                        console.error('Error verifying yt-dlp:', error.message)
+                        console.log('It might require python3 installed on the system.')
+                        // Do not fail the build if verification fails, as the binary might still work in runtime
+                        // or it might be a temporary environment issue.
+                    }
+                }, 1000)
             })
         }
     }).on('error', (err) => {
