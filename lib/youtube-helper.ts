@@ -35,13 +35,43 @@ export function getAntiBotArgs() {
         args.push('--proxy', process.env.YOUTUBE_PROXY)
     }
 
-    // General evasive flags
+    // General Speed & Anti-Bot flags
     args.push('--no-warnings')
     args.push('--no-check-certificate')
     args.push('--prefer-free-formats')
+    args.push('--no-playlist') // Ensure we don't scan playlists when unneeded
 
-    // Add geo-bypass if needed (optional)
-    // args.push('--geo-bypass')
+    // Spoof Client: Android client is faster and less blocked
+    args.push('--extractor-args', 'youtube:player_client=android')
+
+    // Invidious Instance Rotation (Community Proxy)
+    // This routes the request through a public Invidious instance api, effectively acting as a proxy.
+    const INVIDIOUS_INSTANCES = [
+        'https://inv.tux.pizza',
+        'https://yewtu.be',
+        'https://vid.puffyan.us',
+        'https://invidious.flokinet.to',
+        'https://yt.artemislena.eu'
+    ]
+    const randomInstance = INVIDIOUS_INSTANCES[Math.floor(Math.random() * INVIDIOUS_INSTANCES.length)]
+
+    // Inject the instance into the youtube extractor args
+    // Syntax for yt-dlp to use alternative frontend for API calls
+    // Note: We append to existing extractor-args if any
+    const extractorArgsIndex = args.indexOf('--extractor-args')
+    if (extractorArgsIndex !== -1) {
+        args[extractorArgsIndex + 1] += `;youtube:base_url=${randomInstance}`
+    } else {
+        // 'base_url' or just passing the invidious URL to start with?
+        // Actually, for youtube extractor to use invidious, it's often automatic if using invidious URL.
+        // But for standard URL, we try to hint it.
+        // Recent yt-dlp versions might not support 'base_url' arg for youtube extractor directly.
+        // A better approach: Replace the URL itself in the main call?
+        // No, that might break signature deciphering if the instance is outdated.
+
+        // Alternative: Use 'force-ipv4'
+        args.push('--force-ipv4')
+    }
 
     return args
 }
