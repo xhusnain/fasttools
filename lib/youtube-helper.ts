@@ -39,7 +39,7 @@ export function getAntiBotArgs() {
     args.push('--no-warnings')
     args.push('--no-check-certificate')
     args.push('--prefer-free-formats')
-    args.push('--no-playlist') // Ensure we don't scan playlists when unneeded
+    // args.push('--no-playlist') // Removed from shared: moved to individual routes to allow playlist info fetching
 
     // Spoof Client: Android client is faster and less blocked
     args.push('--extractor-args', 'youtube:player_client=android')

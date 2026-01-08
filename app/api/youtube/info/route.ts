@@ -2,6 +2,7 @@ import { NextRequest, NextResponse } from 'next/server'
 import { exec } from 'child_process'
 import path from 'path'
 import { promisify } from 'util'
+import {getAntiBotArgs} from "@/lib/youtube-helper";
 
 const execAsync = promisify(exec)
 
@@ -45,17 +46,19 @@ export async function POST(request: NextRequest) {
         const binDir = path.join(process.cwd(), 'bin')
         const ytDlpPath = path.join(binDir, process.platform === 'win32' ? 'yt-dlp.exe' : 'yt-dlp')
 
+        const baseArgs = getAntiBotArgs();
+
         let args = [
             `"${ytDlpPath}"`,
-            type === 'playlist' ? '--dump-single-json' : '--dump-json', // Use appropriate dump flag
-            '--no-warnings',
-            '--no-check-certificate',
-            '--prefer-free-formats',
+            type === 'playlist' ? '--dump-single-json' : '--dump-json',
+            ...baseArgs,
             `"${url}"`
         ]
 
         if (type === 'playlist') {
             args.push('--flat-playlist')
+        } else {
+            args.push('--no-playlist') // Optimization: Don't scan playlist for single video
         }
 
         const command = args.join(' ')
@@ -71,24 +74,56 @@ export async function POST(request: NextRequest) {
             return NextResponse.json(data)
 
         } catch (ytDlpError: any) {
-            console.warn('Local yt-dlp failed, trying fallback...', ytDlpError.message)
+            console.warn('Local yt-dlp failed, trying fallback (Method B - Invidious/External)...', ytDlpError.message)
 
-            // Fallback (Method B) - External APIs
-            // Only suitable for SINGLE VIDEO info, not playlists usually
+            // Fallback (Method B) - Invidious API (Community Proxy)
+            // Much better than OEmbed as it gives formats and full metadata
             if (type !== 'playlist') {
-                const fallbackData = await fetchExternalInfo(url)
-                if (fallbackData) {
-                    // Extract ID from URL for the frontend
-                    const videoIdMatch = url.match(/(?:youtube\.com\/watch\?v=|youtu\.be\/)([\w-]+)/);
-                    if (videoIdMatch) fallbackData.id = videoIdMatch[1];
+                const videoIdMatch = url.match(/(?:youtube\.com\/watch\?v=|youtu\.be\/)([\w-]+)/);
+                const videoId = videoIdMatch ? videoIdMatch[1] : null;
 
+                if (videoId) {
+                    try {
+                        // Try a specific stable instance
+                        const invidiousApiUrl = `https://inv.tux.pizza/api/v1/videos/${videoId}`;
+                        const res = await fetch(invidiousApiUrl);
+                        if (res.ok) {
+                            const invData = await res.json();
+                            // Map Invidious response to yt-dlp format (roughly)
+                            const mappedData = {
+                                id: invData.videoId,
+                                title: invData.title,
+                                thumbnail: invData.videoThumbnails?.[0]?.url || null,
+                                uploader: invData.author,
+                                duration: invData.lengthSeconds,
+                                formats: invData.formatStreams?.map((f: any) => ({
+                                    format_id: f.itag,
+                                    url: f.url,
+                                    ext: f.container,
+                                    height: f.resolution === '720p' ? 720 : (f.resolution === '1080p' ? 1080 : 360), // approximate
+                                    // Invidious URLs are proxy URLs, so they work!
+                                })) || []
+                            };
+                            return NextResponse.json(mappedData);
+                        }
+                    } catch (invErr) {
+                        console.error('Invidious fallback failed:', invErr);
+                    }
+                }
+
+                // Final Fallback: OEmbed (Basic info only)
+                const fallbackData: any = await fetchExternalInfo(url)
+                if (fallbackData) {
+                    if (videoId) fallbackData.id = videoId;
+                    if (!fallbackData.formats) {
+                        fallbackData.formats = [{ format_id: 'best', height: 720, ext: 'mp4' }];
+                    }
                     return NextResponse.json(fallbackData)
                 }
             }
 
-            // If we are here, both methods failed
             return NextResponse.json(
-                { success: false, error: 'Failed to fetch video information. Server may be blocked by YouTube.' },
+                { success: false, error: 'Failed to fetch video information. Server blocked by YouTube.' },
                 { status: 500 }
             )
         }

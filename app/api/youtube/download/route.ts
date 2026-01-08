@@ -1,6 +1,7 @@
 import { NextRequest, NextResponse } from 'next/server'
 import { spawn } from 'child_process'
 import path from 'path'
+import {getAntiBotArgs} from "@/lib/youtube-helper";
 
 export const dynamic = 'force-dynamic'
 export const maxDuration = 300 // 5 minutes max duration for serverless functions (if applicable)
@@ -34,15 +35,16 @@ export async function GET(request: NextRequest) {
         headers.set('Set-Cookie', `download_started=${downloadToken}; Path=/; Max-Age=300`)
     }
 
+    // Use Shared Anti-Bot Args (Cookies, Proxy, User-Agent)
+    const baseArgs = getAntiBotArgs()
+
     // Create stream manually to pipe child process stdout
     // Next.js App Router (node runtime) allows returning a stream
 
     const args = [
-        '--no-warnings',
-        '--no-check-certificate',
+        ...baseArgs,
+        '--no-playlist', // CRITICAL: Only download the specific video, even if URL has &list=
         '--output', '-', // Output to stdout
-        // Attempt to bypass some geo-blocks or bot detection
-        '--user-agent', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36'
     ]
 
     if (type === 'audio') {
