@@ -37,10 +37,17 @@ console.log('Downloading yt-dlp binary...')
 
 // Determine download URL based on platform
 let downloadUrl = 'https://github.com/yt-dlp/yt-dlp/releases/latest/download/yt-dlp'
+
 if (platform === 'win32') {
     downloadUrl = 'https://github.com/yt-dlp/yt-dlp/releases/latest/download/yt-dlp.exe'
 } else if (platform === 'darwin') {
-    downloadUrl = 'https://github.com/yt-dlp/yt-dlp/releases/latest/download/yt-dlp_macos' // Universal or x64
+    // Mac OS
+    downloadUrl = 'https://github.com/yt-dlp/yt-dlp/releases/latest/download/yt-dlp_macos'
+} else {
+    // Linux (e.g. Vercel)
+    // IMPORTANT: The standard 'yt-dlp' release is a Python zipapp. 
+    // To run without system Python, we need 'yt-dlp_linux' which is a standalone binary.
+    downloadUrl = 'https://github.com/yt-dlp/yt-dlp/releases/latest/download/yt-dlp_linux'
 }
 
 // For Mac (Darwin), check architecture? actually the standard 'yt-dlp' binary usually works or '_macos'
