@@ -6,7 +6,7 @@ import { GImage } from "@/ui/gimage"
 import {
   Search, CheckCircle, AlertCircle, Globe, Youtube,
   Lightbulb, Target, Shield, Zap, Copy, Users, Brain, RefreshCw,
-  TrendingUp, Trophy, Scale, XCircle, AtSign, BarChart3
+  TrendingUp, Trophy, Scale, XCircle, AtSign, BarChart3, LayoutGrid
 } from "lucide-react"
 
 const toolConfig = createToolConfig({
@@ -27,8 +27,8 @@ const toolConfig = createToolConfig({
   },
 
   header: {
-    title: "YouTube Name Checker & Channel Availability",
-    description: "Check if your desired YouTube channel name is taken. Instantly search availability for handles, URLs, and channel names with our free tool.",
+    title: "YouTube Channel Name Availability Check & Name Checker",
+    description: "Check if your YouTube channel name is available instantly. The best free tool for YouTube channel name availability check and handle search.",
     titleSize: "medium",
     descriptionSize: "small",
   },
@@ -42,12 +42,11 @@ const toolConfig = createToolConfig({
     overview: "Welcome to the ultimate **3-in-1 YouTube toolkit** for creators! Our comprehensive platform combines three essential features: **Channel Name Checker** for bulk availability testing, **Handle & URL Checker** to verify @handle availability with smart variations, and **Keyword SEO Analysis** to score your name's search potential. Whether you're launching a new channel, rebranding, or optimizing for discoverability, this **YouTube handle checker** and **channel name SEO analyzer** gives you everything you need. Generate 100+ AI-powered name ideas, check if your @handle is taken, and get actionable SEO recommendations—all completely free with no registration required.",
 
     howToSteps: [
-      "Choose Your Tool: Select 'Channel Checker' for bulk name testing, 'Handle Checker' for @handle verification, or 'SEO Analysis'.",
-      "YouTube Name Checker: Enter your desired channel names. We instantly check availability across all URL formats.",
-      "Handle Checker: Enter your desired @handle (without the @). The tool checks availability and suggests smart variations if taken (TheYourName, YourNameTV, etc.).",
-      "SEO Analysis: Enter a potential channel name to analyze its search popularity, competition level, relevancy, and memorability scores (0-100).",
-      "Review & Optimize: Use the SEO recommendations to improve your name's discoverability. Copy your chosen name and claim it on YouTube!",
-      "Secure Your Brand: After finding an available name, register the same handle on Instagram, TikTok, and Twitter for consistent branding."
+      "Enter Name: Type your desired channel name into the 'YouTube Channel Name Availability Check' box.",
+      "Check Availability: Click the search button to instantly check if the name is available.",
+      "Review Results: See real-time results for handle availability (@name) and standard URL formats.",
+      "Analyze Competitors: If taken, view existing channels to see who is using the name.",
+      "Secure It: If the availability check passes, register your new channel name immediately."
     ],
 
     features: [
@@ -905,36 +904,79 @@ const toolConfig = createToolConfig({
 
         <article className="space-y-6">
           <h2 className="text-2xl font-bold text-foreground flex items-center gap-2">
-            <XCircle className="h-6 w-6 text-primary" />
-            5 Common Naming Mistakes to Avoid
+            <Zap className="h-6 w-6 text-primary" />
+            5 Rules for a Viral YouTube Channel Name
           </h2>
           <p className="text-base text-muted-foreground leading-relaxed">
-            We see thousands of searches every day. Here are the most common pitfalls that stop channels from growing:
+            Your channel name is your brand's first impression. To stand out in 2026, follow these proven naming conventions used by top creators:
           </p>
-          <ul className="space-y-3 text-sm text-muted-foreground">
-            <li className="flex items-start gap-2">
-              <XCircle className="h-4 w-4 text-red-500 mt-0.5 flex-shrink-0" />
-              <span><strong>Using Numbers Excessively:</strong> "Gamer123456" looks spammy and is hard to remember.</span>
+          <ul className="list-none space-y-4">
+            <li className="flex items-start gap-3">
+              <span className="flex-shrink-0 w-6 h-6 rounded-full bg-primary/10 flex items-center justify-center text-xs font-bold text-primary mt-0.5">1</span>
+              <div>
+                <strong className="text-foreground block mb-1">Two Syllables Rule</strong>
+                <p className="text-sm text-muted-foreground">Short, punchy names are easier to remember. Think <em>MrBeast</em>, <em>PewDiePie</em>, or <em>MarkRober</em>. Aim for 2-3 syllables maximum.</p>
+              </div>
             </li>
-            <li className="flex items-start gap-2">
-              <XCircle className="h-4 w-4 text-red-500 mt-0.5 flex-shrink-0" />
-              <span><strong>Copying Big Creators:</strong> "PewDiePie2" will never build its own identity. Be original.</span>
+            <li className="flex items-start gap-3">
+              <span className="flex-shrink-0 w-6 h-6 rounded-full bg-primary/10 flex items-center justify-center text-xs font-bold text-primary mt-0.5">2</span>
+              <div>
+                <strong className="text-foreground block mb-1">Pass the "Radio Test"</strong>
+                <p className="text-sm text-muted-foreground">If you say your name on a podcast, can people spell it immediately? Avoid complex spellings like <em>KreativeKwisine</em>.</p>
+              </div>
             </li>
-            <li className="flex items-start gap-2">
-              <XCircle className="h-4 w-4 text-red-500 mt-0.5 flex-shrink-0" />
-              <span><strong>Hard to Spell Names:</strong> If people can't spell it, they can't search for it. Avoid creative misspellings like "KreativKooking".</span>
+            <li className="flex items-start gap-3">
+              <span className="flex-shrink-0 w-6 h-6 rounded-full bg-primary/10 flex items-center justify-center text-xs font-bold text-primary mt-0.5">3</span>
+              <div>
+                <strong className="text-foreground block mb-1">Avoid Numbers & Special Characters</strong>
+                <p className="text-sm text-muted-foreground"><em>GamerBoy2004</em> looks dated. <em>GamerBoy</em> or <em>TheGamer</em> is timeless. Numbers often signal "I was late to the party".</p>
+              </div>
             </li>
-            <li className="flex items-start gap-2">
-              <XCircle className="h-4 w-4 text-red-500 mt-0.5 flex-shrink-0" />
-              <span><strong>Limiting Your Scope:</strong> "iPhoneRepairGuy" limits you if you ever want to fix Samsungs or do general tech.</span>
+            <li className="flex items-start gap-3">
+              <span className="flex-shrink-0 w-6 h-6 rounded-full bg-primary/10 flex items-center justify-center text-xs font-bold text-primary mt-0.5">4</span>
+              <div>
+                <strong className="text-foreground block mb-1">Broad Enough to Pivot</strong>
+                <p className="text-sm text-muted-foreground">Don't box yourself in. <em>iPhoneReviews</em> limits you to Apple. <em>TechTalks</em> lets you cover anything. Plan for your future content.</p>
+              </div>
             </li>
-            <li className="flex items-start gap-2">
-              <XCircle className="h-4 w-4 text-red-500 mt-0.5 flex-shrink-0" />
-              <span><strong>Ignoring Social Handles:</strong> Getting the YouTube name but missing the Instagram/TikTok handle creates a disjointed brand.</span>
+            <li className="flex items-start gap-3">
+              <span className="flex-shrink-0 w-6 h-6 rounded-full bg-primary/10 flex items-center justify-center text-xs font-bold text-primary mt-0.5">5</span>
+              <div>
+                <strong className="text-foreground block mb-1">Availability Check is Crucial</strong>
+                <p className="text-sm text-muted-foreground">A great name is useless if the handle is taken. Use our tool to ensure you can get the matching @handle across all social platforms.</p>
+              </div>
             </li>
           </ul>
         </article>
-      </div >
+
+        <article className="space-y-6">
+          <h2 className="text-2xl font-bold text-foreground flex items-center gap-2">
+            <LayoutGrid className="h-6 w-6 text-primary" />
+            What to Do If Your Name Is Taken?
+          </h2>
+          <p className="text-base text-muted-foreground leading-relaxed">
+            It happens to the best of us: you find the perfect name, run a **YouTube channel name availability check**, and it's gone. Don't panic. Here are smart ways to modify it without losing the brand identity:
+          </p>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <div className="p-4 bg-muted/50 rounded-lg border border-border">
+              <h4 className="font-semibold text-foreground mb-2">Use Official Prefixes</h4>
+              <p className="text-sm text-muted-foreground">Add "The", "Real", or "Official" before your name. Example: <em>TheTechGuy</em>.</p>
+            </div>
+            <div className="p-4 bg-muted/50 rounded-lg border border-border">
+              <h4 className="font-semibold text-foreground mb-2">Add Your Niche</h4>
+              <p className="text-sm text-muted-foreground">Clarify what you do. <em>SarahYoga</em> or <em>MikeGaming</em> immediately sets expectations.</p>
+            </div>
+            <div className="p-4 bg-muted/50 rounded-lg border border-border">
+              <h4 className="font-semibold text-foreground mb-2">Use Action Verbs</h4>
+              <p className="text-sm text-muted-foreground"><em>WatchMojo</em>, <em>LearnWithCode</em>. Action words create energy.</p>
+            </div>
+            <div className="p-4 bg-muted/50 rounded-lg border border-border">
+              <h4 className="font-semibold text-foreground mb-2">Create a "Brand" Word</h4>
+              <p className="text-sm text-muted-foreground">Combine words (Portmanteau). <em>Instagram</em> (Instant + Telegram), <em>NetFlix</em> (Internet + Flicks).</p>
+            </div>
+          </div>
+        </article>
+      </div>
     ),
 
     aboutToolText: `
@@ -1094,7 +1136,7 @@ const toolConfig = createToolConfig({
       },
       {
         question: "How do I check if a YouTube channel name is taken?",
-        answer: "Simply enter your desired channel name in our free checker tool. It instantly searches YouTube's database and shows you if the name is available, along with similar existing channels."
+        answer: "Simply enter your desired channel name in our free checker tool. It instantly searches YouTube's database and shows you if the name is available, along with similar existing channels. Our tool is 100% free with unlimited checks. No registration or payment required."
       },
       {
         question: "Is the YouTube channel name checker free?",
@@ -1183,6 +1225,14 @@ const toolConfig = createToolConfig({
       {
         question: "What is the difference between a Channel Name and a Handle?",
         answer: "A Channel Name is the display name that appears on your channel page and videos (e.g., 'Tech Daily'). A Handle is your unique identifier starting with '@' (e.g., '@techdaily2025') used for mentions and your unique URL. Our tool checks both."
+      },
+      {
+        question: "Can I change my YouTube handle later?",
+        answer: "Yes, YouTube allows you to change your handle twice every 14 days. However, doing so will break your previous handle's link. We recommend using our **availability check** tool to find a long-term handle you love from the start to avoid confusing your subscribers."
+      },
+      {
+        question: "Does my channel name affect SEO?",
+        answer: "Absolutely. Including keywords in your channel name (like 'Tech', 'Gaming', 'Fitness') can help you rank in search results for those topics. Our tool provides an SEO Score to help you evaluate if your name is search-friendly."
       },
       {
         question: "Can I check availability for a gaming channel specifically?",

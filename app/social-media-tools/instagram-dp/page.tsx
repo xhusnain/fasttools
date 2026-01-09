@@ -2,16 +2,17 @@ import { InstagramDpViewer } from "@/components/social-media/instagram-dp-viewer
 import { ToolPageLayout } from "@/components/common/tool-page-layout"
 import { createToolConfig } from "@/lib/create-tool-config"
 import { getCurrentYear } from "@/lib/utils"
+import { Download, Eye, Image as ImageIcon, Search, CheckCircle, Shield, EyeOff, User, Lock } from "lucide-react"
 
 const toolConfig = createToolConfig({
   toolName: "Instagram DP Viewer & Downloader (HD Quality)",
   description: "View and download Instagram profile pictures in full HD size. Free Instagram DP viewer for public accounts. No login required.",
-  metaTitle: `Insta DP Viewer & Downloader - View Instagram Profile Picture (HD) ${getCurrentYear()}`,
-  metaDescription: "Free Instagram DP Viewer. View full-size profile pictures in HD without login. The #1 Insta DP Viewer & Downloader. Fast, Free, & Anonymous.",
+  metaTitle: `Insta DP Viewer (HD) - Zoom & Download Profile Picture ${getCurrentYear()}`,
+  metaDescription: "Free Insta DP Viewer to zoom and download Instagram profile pictures in full HD size. View private account DPs anonymously.",
   path: "/social-media-tools/instagram-dp",
   keywords: [
-    "instagram dp viewer", "insta dp", "ig dp", "instagram profile viewer", "insta dp viewer",
-    "download instagram dp", "instagram profile picture download hd", "instagram dp viewer online",
+    "insta dp viewer", "instagram dp viewer", "zoom instagram dp", "instagram profile picture viewer",
+    "download instagram dp", "insta dp download", "full size profile picture", "view insta dp", "ig dp",
     "instagram dp viewer hd", "full insta dp viewer", "instagram dp viewer no login", "instagram dp viewer free"
   ],
 
@@ -22,8 +23,8 @@ const toolConfig = createToolConfig({
   },
 
   header: {
-    title: "Insta DP Viewer & Downloader (HD Quality)",
-    description: "Instantly view and download Instagram profile pictures in full HD resolution. Works for all public accounts. No login or account required.",
+    title: "Insta DP Viewer (Zoom & Download)",
+    description: "View Instagram profile pictures in full HD size. Zoom in on any Insta DP and download it. Anonymous and free.",
     titleSize: "medium",
     descriptionSize: "small",
   },
@@ -64,6 +65,63 @@ const toolConfig = createToolConfig({
       <div className="space-y-6">
         <article>
           <h3 className="text-xl font-bold mb-4 text-foreground">View Insta DP: Complete Guide</h3>
+
+          <article className="space-y-6">
+            <h2 className="text-2xl font-bold text-foreground flex items-center gap-2">
+              <Download className="h-6 w-6 text-primary" />
+              How It Works: Technical HD Extraction
+            </h2>
+            <p className="text-base text-muted-foreground leading-relaxed">
+              You might wonder, "Why are Instagram profile pictures so small in the app?" The truth is, Instagram stores high-resolution versions of every profile photo on their servers (often up to 1080x1080 pixels) but only displays a compressed 150x150 thumbnail to save data.
+            </p>
+            <div className="bg-card border border-border rounded-lg p-6">
+              <h3 className="text-lg font-semibold text-foreground mb-4">Our "Full Size" Technology</h3>
+              <p className="text-sm text-muted-foreground mb-4">
+                Our **Insta DP Viewer** bypasses the app's display limitations. When you enter a username, our server queries the public Instagram API graph to locate the original, uncompressed source ID of the image.
+              </p>
+              <ul className="space-y-3">
+                <li className="flex items-center gap-2 text-sm text-muted-foreground">
+                  <CheckCircle className="h-4 w-4 text-green-500" />
+                  <span>Locates the <strong>1080p HD</strong> source file</span>
+                </li>
+                <li className="flex items-center gap-2 text-sm text-muted-foreground">
+                  <CheckCircle className="h-4 w-4 text-green-500" />
+                  <span>Removes the circular crop mask (Square format)</span>
+                </li>
+                <li className="flex items-center gap-2 text-sm text-muted-foreground">
+                  <CheckCircle className="h-4 w-4 text-green-500" />
+                  <span>Delivers the raw JPG file for download</span>
+                </li>
+              </ul>
+            </div>
+          </article>
+
+          <article className="space-y-6">
+            <h2 className="text-2xl font-bold text-foreground flex items-center gap-2">
+              <Shield className="h-6 w-6 text-primary" />
+              100% Anonymous & Private
+            </h2>
+            <p className="text-base text-muted-foreground leading-relaxed">
+              Privacy is our top priority. Unlike viewing stories or posts while logged in, using our **Insta DP Viewer** leaves absolutely no trace.
+            </p>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 text-center">
+              <div className="p-4 rounded-lg bg-muted/50 border border-border">
+                <EyeOff className="h-8 w-8 text-primary mx-auto mb-3" />
+                <h4 className="font-semibold text-foreground mb-1">No Login Needed</h4>
+                <p className="text-xs text-muted-foreground">We never ask for your Instagram password or account details.</p>
+              </div>
+              <div className="p-4 rounded-lg bg-muted/50 border border-border">
+                <User className="h-8 w-8 text-primary mx-auto mb-3" />
+                <h4 className="font-semibold text-foreground mb-1">No Trace Left</h4>
+                <p className="text-xs text-muted-foreground"> The profile owner will never know you viewed or downloaded their DP.</p>
+              </div>
+              <div className="p-4 rounded-lg bg-muted/50 border border-border">
+                <Lock className="h-8 w-8 text-primary mx-auto mb-3" />
+                <h4 className="font-semibold text-foreground mb-1">Encrypted</h4>
+                <p className="text-xs text-muted-foreground">Your search history is not stored on our servers.</p>
+              </div>
+            </div>
+          </article>
 
           <div className="space-y-6">
             <div className="p-4 rounded-lg bg-muted/50 border border-border">
