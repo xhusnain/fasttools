@@ -5,9 +5,9 @@ import { createMetadata } from "@/lib/metadata-base"
 import { Heart, Users, Zap, Target, Sparkles, Star, Gift, Flower2, Calculator, TrendingUp, BookOpen, Smile, AlertCircle, Percent, Hash, Clock } from "lucide-react"
 
 const baseMetadata = createMetadata({
-  title: "Love Calculator - Test Your Compatibility",
+  title: "Love Calculator - True Relationship Compatibility Test 2026",
   description:
-    "FastTools Love Calculator - Free tool to test compatibility between two people. Calculate love percentage, relationship compatibility, and love meter. Share your love match results with friends!",
+    "Free True Love Calculator 2026. Test real relationship compatibility & love percentage by name. Accurate, fun, and instant results with zodiac analysis.",
   path: "/calculator/love-calculator",
   breadcrumbs: [
     { label: "Calculator", href: "/calculator" },
@@ -579,8 +579,8 @@ export default function LoveCalculatorPage() {
   return (
     <ToolPageLayout
       header={{
-        title: "Love Calculator",
-        description: "Discover your love compatibility with our romantic love calculator. Enter two names and see your match percentage and relationship compatibility!",
+        title: "Love Calculator & Compatibility Test",
+        description: "Test your true love match instantly. Enter two names to calculate relationship compatibility, friendship strength, and zodiac harmony.",
         titleSize: "large",
         descriptionSize: "medium",
         color: "pink"

@@ -4,9 +4,9 @@ import { PercentageCalculator } from "@/components/calculators/percentage-calcul
 import { createMetadata } from "@/lib/metadata-base"
 
 const baseMetadata = createMetadata({
-  title: "Percentage Calculator - Calculate Percentages Free",
+  title: "Percentage Calculator - Calculate Percentage Online (Free) 2026",
   description:
-    "Calculate percentages instantly: increase, decrease, discounts, grades and more. Free, accurate percentage calculator with clear step-by-step formulas.",
+    "Free online Percentage Calculator. Calculate percentage increase/decrease instantly. Fast, accurate, and no signup required.",
   path: "/calculator/percentage-calculator",
   breadcrumbs: [
     { label: "Calculator", href: "/calculator" },

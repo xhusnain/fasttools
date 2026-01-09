@@ -22,13 +22,13 @@ import {
   List
 } from "lucide-react"
 export const metadata = createMetadata({
-  title: "Free Video Downloader for YouTube, TikTok, & More",
-  description: "Download videos from YouTube, TikTok, Instagram, Facebook, and X (Twitter) for free. Our online video downloader is fast, easy, and requires no software installation. Save your favorite content offline in HD.",
+  title: "Universal Video Downloader - Save from YouTube, TikTok, & Meta",
+  description: "The #1 Universal Video Downloader. Save videos from YouTube, TikTok (No Watermark), Instagram, Facebook, and X in HD/4K. Free, fast, & unblocked.",
   path: "/downloaders",
-  ogImageAlt: "A free and easy-to-use video downloader from FastTools.",
+  ogImageAlt: "Universal Video Downloader for all platforms",
   twitterCreator: "@FastTools",
-  twitterTitle: "Free Video Downloader for YouTube, TikTok, & More | FastTools",
-  twitterDescription: "Download videos from YouTube, TikTok, Instagram, Facebook, and X (Twitter) for free. Fast, easy, and no software required.",
+  twitterTitle: "Universal Video Downloader - Save from YouTube, TikTok, & Meta",
+  twitterDescription: "The #1 Universal Video Downloader. Save videos from YouTube, TikTok (No Watermark), Instagram, Facebook, and X in HD/4K.",
 });
 
 const downloaders = [
@@ -189,8 +189,8 @@ export default function DownloadersPage() {
           <div className="max-w-6xl mx-auto mt-8 md:mt-12">
             <div className="mb-12 md:mb-16">
               <GHeader
-                title="Free Media Downloaders"
-                description="Easily download videos and media from popular social platforms like YouTube, TikTok, Instagram, Facebook, and X (Twitter). Our tools are fast, free, and designed for simplicity, allowing you to save your favorite content for offline access."
+                title="Universal Media Downloader (All-in-One)"
+                description="One tool to rule them all. Download videos, reels, stories, and audio from YouTube, TikTok, Instagram, Facebook, and X (Twitter). Support for 4K, HD, and MP3 conversion. 100% Free & Unlimited."
                 titleSize="large"
                 descriptionSize="medium"
                 color="blue"

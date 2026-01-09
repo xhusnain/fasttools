@@ -6,8 +6,8 @@ import Link from "next/link"
 const toolConfig = createToolConfig({
   toolName: "Temperature Converter",
   description: "Convert temperatures instantly between Celsius & Fahrenheit. Ideal for weather, cooking, science projects & travel.",
-  metaTitle: "Temperature Converter | Free Celsius ⇄ Fahrenheit",
-  metaDescription: "Convert temperatures instantly between Celsius & Fahrenheit. Ideal for weather, cooking, science projects & travel.",
+  metaTitle: "Temperature Converter - Convert Temperature Online (Free) 2026",
+  metaDescription: "Free online Temperature Converter. Convert temperature scales instantly. Fast, accurate, and no signup required.",
   path: "/converters/temperature",
 
   header: {

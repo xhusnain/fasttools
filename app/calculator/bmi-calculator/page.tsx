@@ -4,9 +4,9 @@ import { BMICalculatorPageContent } from "@/components/health/bmi-calculator-pag
 import { createMetadata } from "@/lib/metadata-base"
 
 const baseMetadata = createMetadata({
-  title: "BMI Calculator - Free Body Mass Index Calculator | Check Your BMI",
+  title: "BMI Calculator - Calculate BMI Online (Free) 2026",
   description:
-    "Calculate your BMI (Body Mass Index) free with our accurate calculator. Get instant results, understand what your BMI means, see health risks by category, and get personalized recommendations. Based on WHO & CDC guidelines. Works for adults, teens, and includes Asian BMI thresholds.",
+    "Free online BMI Calculator. Calculate Body Mass Index instantly. Fast, accurate, and no signup required.",
   path: "/calculator/bmi-calculator",
   breadcrumbs: [
     { label: "Calculator", href: "/calculator" },

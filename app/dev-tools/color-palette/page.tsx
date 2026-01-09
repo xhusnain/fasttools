@@ -5,8 +5,8 @@ import { createToolConfig } from "@/lib/create-tool-config"
 const toolConfig = createToolConfig({
   toolName: "Color Palette Generator",
   description: "Generate beautiful color palettes instantly. Free random color palette generator for designers and developers. Create harmonious color schemes with hex codes. Best color palette tool online.",
-  metaTitle: "Color Palette - Generate Color Schemes Free",
-  metaDescription: "Generate beautiful color palettes instantly. Free random color palette generator for designers and developers. Create harmonious color schemes with hex codes. Best color palette tool online.",
+  metaTitle: "Color Palette Generator - Generate Color Palettes Online (Free) 2026",
+  metaDescription: "Free online Color Palette Generator. Generate color schemes instantly. Fast, accurate, and no signup required.",
   path: "/dev-tools/color-palette",
 
   header: {
