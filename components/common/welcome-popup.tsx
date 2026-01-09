@@ -73,11 +73,10 @@ export function WelcomePopup() {
                     <div className="relative z-[1] p-6 pt-8 text-center">
                         {/* Animated badge */}
                         <div className="mb-4 inline-flex items-center gap-2 rounded-full bg-gradient-to-r from-cyan-500/20 to-pink-500/20 px-4 py-2 text-sm font-semibold">
-                            <Download className="h-4 w-4 text-cyan-500 animate-pulse" />
-                            <span className="bg-gradient-to-r from-cyan-500 to-pink-500 bg-clip-text text-transparent">
-                                Update: YouTube Fixed!
-                            </span>
                             <Sparkles className="h-4 w-4 text-pink-500 animate-pulse" />
+                            <span className="bg-gradient-to-r from-cyan-500 to-pink-500 bg-clip-text text-transparent">
+                                New Tools Available!
+                            </span>
                         </div>
 
                         {/* Title */}
@@ -93,24 +92,11 @@ export function WelcomePopup() {
 
                         {/* Description */}
                         <p className="mb-6 text-muted-foreground leading-relaxed">
-                            <strong>YouTube Downloader Fixed!</strong> We've resolved the issues with downloading videos. Plus, try our new <strong>YouTube Playlist Downloader</strong> to save entire courses/series!
+                            <strong>New Tools Added!</strong> Check out our latest social media downloaders and tools.
                         </p>
 
                         {/* Features list */}
-                        {/* Features list */}
                         <div className="mb-6 flex flex-col gap-2 text-left">
-                            <div className="flex items-center gap-3 rounded-lg bg-muted/50 px-4 py-2.5">
-                                <div className="flex h-8 w-8 items-center justify-center rounded-full bg-red-500/20">
-                                    <Youtube className="h-4 w-4 text-red-500" />
-                                </div>
-                                <span className="text-sm text-foreground">Fixed: YouTube HD Video Downloads</span>
-                            </div>
-                            <div className="flex items-center gap-3 rounded-lg bg-muted/50 px-4 py-2.5">
-                                <div className="flex h-8 w-8 items-center justify-center rounded-full bg-red-500/20">
-                                    <ListVideo className="h-4 w-4 text-red-500" />
-                                </div>
-                                <span className="text-sm text-foreground">New: YouTube Playlist Downloader</span>
-                            </div>
                             <div className="flex items-center gap-3 rounded-lg bg-muted/50 px-4 py-2.5">
                                 <div className="flex h-8 w-8 items-center justify-center rounded-full bg-pink-500/20">
                                     <Instagram className="h-4 w-4 text-pink-500" />

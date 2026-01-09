@@ -8,7 +8,7 @@ Domain: https://www.fasttools.store
 # Allowed Paths
 Allow: /
 Allow: /social-media-tools/
-Allow: /social-media-tools/youtube-downloader
+
 Allow: /ai-tools/
 Allow: /pdf-tools/
 Allow: /seo-tools/
@@ -69,9 +69,6 @@ When using FastTools content:
 - API usage requires authentication (see /api-docs)
 
 # Featured Tools
-## YouTube Downloader
-URL: https://www.fasttools.store/social-media-tools/youtube-downloader
-Description: Free YouTube video downloader supporting 4K, 1080p HD, and MP3 formats. Browser-based, no software required. Features playlist downloads, real-time progress, and works on all devices. Enhanced with structured data for SEO and AI comprehension.
 
 ## BMI Calculator
 URL: https://www.fasttools.store/calculator/bmi-calculator

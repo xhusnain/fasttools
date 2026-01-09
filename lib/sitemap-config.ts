@@ -467,32 +467,8 @@ export const toolPages = [
         changeFrequency: "monthly" as const,
         priority: 0.95,
     },
-    {
-        url: "https://www.fasttools.store/social-media-tools/youtube-downloader",
-        lastModified: new Date('2026-01-03'),
-        changeFrequency: "weekly" as const,
-        priority: 0.98,
-        images: [
-            {
-                url: "https://www.fasttools.store/images/youtube-downloader-hero.png",
-                title: "YouTube Video Downloader - Free HD MP4 & MP3 Download",
-                caption: "Download YouTube videos in HD, 4K, and 8K quality. Convert YouTube to MP4 or MP3 for free. Works on iPhone, Android, PC, and Mac."
-            }
-        ]
-    },
-    {
-        url: "https://www.fasttools.store/social-media-tools/youtube-playlist-downloader",
-        lastModified: new Date('2026-01-07'),
-        changeFrequency: "weekly" as const,
-        priority: 0.98,
-        images: [
-            {
-                url: "https://www.fasttools.store/images/youtube-playlist-downloader-hero.png",
-                title: "Fast YouTube Playlist Downloader: Save Entire Playlists in HD & MP3",
-                caption: "The ultimate tool to download YouTube playlists in bulk. Convert entire channels, music albums, or educational series to high-quality MP4 (up to 4K) and MP3 (320kbps) in seconds."
-            }
-        ]
-    },
+
+
     {
         url: "https://www.fasttools.store/social-media-tools/capcut-downloader",
         lastModified: new Date('2026-01-03'),

@@ -3,7 +3,6 @@ export type SocialMediaPlatform =
   | 'tiktok'
   | 'facebook'
   | 'twitter'
-  | 'youtube'
   | 'capcut'
   | 'pinterest'
   | 'spotify'
