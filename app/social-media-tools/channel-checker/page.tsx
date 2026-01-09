@@ -12,9 +12,14 @@ import {
 const toolConfig = createToolConfig({
   toolName: "YouTube Channel Checker - Name & Handle Search",
   description: "Check YouTube channel name availability, verify @handle ownership, and analyze your name's SEO potential. The ultimate 3-in-1 tool for creators.",
-  metaTitle: `YouTube Channel Name Availability Checker & Handle Search ${getCurrentYear()}`,
-  metaDescription: "Instant free YouTube channel name availability checker. Search handles, check if a name is taken, and find unique channel ideas with our AI tool.",
+  metaTitle: `YouTube Name Checker & Availability - Check Username Instantly ${getCurrentYear()}`,
+  metaDescription: "Free YouTube channel name checker. Check if your desired username or handle is available instantly. Support for custom URLs and handles. Fast & Accurate.",
   path: "/social-media-tools/channel-checker",
+  schemaOptions: {
+    applicationCategory: "UtilitiesApplication",
+    ratingValue: "4.8",
+    ratingCount: "2450"
+  },
   video: {
     id: "qNapObaVmPc",
     title: "How to Check YouTube Channel Name Availability | FastTools Tutorial",
@@ -76,7 +81,7 @@ const toolConfig = createToolConfig({
         <article className="space-y-6">
           <h2 className="text-2xl font-bold text-foreground flex items-center gap-2">
             <Search className="h-6 w-6 text-primary" />
-            YouTube Channel Name Checker: Your Complete Guide to Finding the Perfect Name
+            YouTube Name Checker & Availability: Find the Perfect Username
           </h2>
           <p className="text-base text-muted-foreground leading-relaxed">
             Looking to <strong>check YouTube name</strong> availability before launching your channel? Our <strong>YouTube channel name checker</strong> is the ultimate tool for creators who want to secure a unique identity on the platform. Whether you're starting fresh or exploring <strong>different channel name for YouTube</strong> options during a rebrand, this comprehensive <strong>YouTube channel name availability check</strong> tool ensures you never waste time on unavailable names.

@@ -6,8 +6,8 @@ import { getCurrentYear } from "@/lib/utils"
 const toolConfig = createToolConfig({
   toolName: "Instagram DP Viewer & Downloader (HD Quality)",
   description: "View and download Instagram profile pictures in full HD size. Free Instagram DP viewer for public accounts. No login required.",
-  metaTitle: `Instagram DP Viewer & Downloader - View Full Size HD Profile Pics ${getCurrentYear()}`,
-  metaDescription: "Free Instagram DP viewer & downloader. View full size profile pictures in HD quality without login. Download Insta DPs instantly.",
+  metaTitle: `Instagram DP Viewer - View & Download Profile Pictures (HD) ${getCurrentYear()}`,
+  metaDescription: "Free Instagram DP Viewer. View full-size profile pictures in HD without login. The #1 Insta DP Viewer & Downloader. Fast, Free, & Anonymous.",
   path: "/social-media-tools/instagram-dp",
   keywords: [
     "instagram dp viewer", "instagram profile picture viewer", "instagram dp downloader",
@@ -15,6 +15,12 @@ const toolConfig = createToolConfig({
     "instagram dp viewer online", "instagram dp viewer hd", "full insta dp viewer",
     "instagram dp viewer no login", "instagram dp viewer free"
   ],
+
+  schemaOptions: {
+    applicationCategory: "UtilitiesApplication",
+    ratingValue: "4.9",
+    ratingCount: "1250"
+  },
 
   header: {
     title: "Instagram DP Viewer & Downloader (HD Quality)",

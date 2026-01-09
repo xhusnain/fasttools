@@ -1,4 +1,5 @@
 import type { Metadata } from "next"
+import { getCurrentYear } from "@/lib/utils"
 import { ToolPageLayout } from "@/components/common/tool-page-layout"
 import { IPSubnetCalculator } from "@/components/dev-tools/ip-subnet-calculator"
 import { createMetadata } from "@/lib/metadata-base"
@@ -9,12 +10,12 @@ const TOOL_TITLE = "IP Subnet Calculator - Calculate CIDR & VLSM"
 const TOOL_NAME = "IP Subnet Calculator"
 
 const baseMetadata = createMetadata({
-  title: TOOL_TITLE,
-  description: "Calculate IPv4/IPv6 subnets, CIDR notation, VLSM, and supernetting with our free IP Subnet Calculator. Perfect for network engineers to analyze network addresses, broadcast, and host ranges. Try now - no signup required!",
+  title: `IP Subnet Calculator - IPv4/IPv6 CIDR & Network Mask ${getCurrentYear()}`,
+  description: "Free IP Subnet Calculator. Calculate network masks, CIDR, and IP ranges instantly. The best IPv4 depot for network engineers. Supports VLSM & Supernetting.",
   path: "/calculator/ip-subnet-calculator",
   breadcrumbs: [
     { label: "Calculator", href: "/calculator" },
-    { label: TOOL_NAME, href: "/calculator/ip-subnet-calculator" }
+    { label: "IP Subnet Calculator", href: "/calculator/ip-subnet-calculator" }
   ],
   schemaOptions: {
     name: TOOL_NAME,
@@ -563,8 +564,8 @@ export default function IPSubnetCalculatorPage() {
   return (
     <ToolPageLayout
       header={{
-        title: TOOL_TITLE,
-        description: "Calculate IPv4/IPv6 subnets, CIDR notation, VLSM, and supernetting with our free IP Subnet Calculator. Perfect for network engineers to analyze network addresses, broadcast, and host ranges. Try now - no signup required!",
+        title: `IP Subnet Calculator (${getCurrentYear()})`,
+        description: "Calculate IPv4/IPv6 subnets, CIDR, and network masks instantly. The ultimate tool for network engineers to analyze address ranges and broadcast domains.",
         titleSize: "medium",
         descriptionSize: "small",
         color: "blue"

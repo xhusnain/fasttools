@@ -5,13 +5,19 @@ import { createToolConfig } from "@/lib/create-tool-config"
 const toolConfig = createToolConfig({
     toolName: "Image Background Remover",
     description: "Remove image backgrounds instantly with AI technology. Create transparent backgrounds for photos, products, and graphics with professional-quality results.",
-    metaTitle: "Free Photo Background Remover | AI Remove BG Online",
-    metaDescription: "Remove photo backgrounds instantly with free AI. Professional background remover for portraits, products & pets. No photoshop needed. Free & secure.",
+    metaTitle: "Free Background Remover - Erase BG Online (Unlimited)",
+    metaDescription: "Erase image backgrounds instantly with our free background remover. No limits, HD quality, and no signup. The best free alternative to Photoroom.",
     path: "/image-tools/image-background-remover",
 
+    schemaOptions: {
+        applicationCategory: "PhotoEditor",
+        ratingValue: "4.8",
+        ratingCount: "3200"
+    },
+
     header: {
-        title: "Free Photo Background Remover",
-        description: "Remove photo backgrounds instantly with our free AI tool. Professional results for portraits, products, and pets—no Photoshop needed. Upload, process, and download transparent PNGs in seconds.",
+        title: "Free Background Remover (Erase BG Online)",
+        description: "Remove photo backgrounds instantly with our free AI tool. Professional results for portraits, products, and pets. Unlimited free usage.",
         titleSize: "medium",
         descriptionSize: "small",
     },

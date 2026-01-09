@@ -14,6 +14,12 @@ export interface UnifiedToolConfig {
         title?: string
         description?: string
     }
+    schemaOptions?: {
+        applicationCategory?: string
+        price?: string
+        ratingValue?: string
+        ratingCount?: string
+    }
     header: {
         title: string
         description: string
@@ -54,6 +60,7 @@ export function createToolConfig(config: UnifiedToolConfig) {
         faqs: config.content.faqs,
         howToSteps: config.content.howToSteps || [],
         video: config.video,
+        schemaOptions: config.schemaOptions,
     })
 
     const getLayoutProps = (toolComponent: React.ReactNode): ToolPageLayoutProps => ({

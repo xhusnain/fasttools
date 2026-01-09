@@ -10,8 +10,8 @@ const TOOL_TITLE = "PayPal Fee Calculator - Calculate Transaction Fees"
 const TOOL_NAME = "PayPal Fee Calculator"
 
 const baseMetadata = createMetadata({
-  title: TOOL_TITLE,
-  description: "Calculate PayPal fees instantly for domestic or international payments. Know exactly how much you'll receive or need to send. Free & supports all currencies.",
+  title: `PayPal Fee Calculator - Service & Transaction Fees ${getCurrentYear()}`,
+  description: "Calculate PayPal transaction fees for business & personal payments. Understand international fees, Goods & Services vs Friends & Family charges.",
   path: "/finance-tools/paypal-fee",
   breadcrumbs: [
     { label: "Finance Tools", href: "/finance-tools" },
