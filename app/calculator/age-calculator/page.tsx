@@ -304,6 +304,10 @@ export default function AgeCalculatorPage() {
         answer: "Yes. The calculator provides the exact \"Years, Months, Days\" format required by passport agencies, visa applications, and university enrollment forms."
       },
       {
+        question: "How do I calculate my age on a specific future date?",
+        answer: "Simply change the 'Target Date' field in the calculator to your desired future date. This is perfect for determining exactly how old you will be for an upcoming wedding, graduation, or retirement eligibility."
+      },
+      {
         question: "What's the difference between chronological and biological age?",
         answer: "Chronological age is the exact time since birth (what this tool calculates). Biological age refers to your body's internal aging based on health markers like cell condition, fitness, and lifestyle factors."
       },

@@ -99,6 +99,16 @@ const toolConfig = createToolConfig({
         <p className="mb-4">
           <strong>Pastel Palettes:</strong> Soft, light colors with low saturation, perfect for calming, gentle designs. <strong>Vibrant Palettes:</strong> High saturation colors for energetic, bold statements. <strong>Earthy Palettes:</strong> Browns, greens, tans for natural, organic feels. <strong>Monochrome:</strong> Black, white, grays for minimalist, elegant designs. <strong>Neon:</strong> Ultra-bright fluorescent colors for modern, tech-forward aesthetics.
         </p>
+
+        <h3 className="font-semibold text-lg mb-2 mt-6">Accessibility Standards (WCAG)</h3>
+        <p className="mb-4">
+          Ensure your color palette is inclusive for all users. The Web Content Accessibility Guidelines (WCAG) recommend specific contrast ratios between text and background:
+        </p>
+        <ul className="list-disc pl-6 mb-6 space-y-2">
+          <li><strong>AA Standard (Normal Text):</strong> Requires a contrast ratio of at least 4.5:1.</li>
+          <li><strong>AA Standard (Large Text):</strong> Requires a contrast ratio of at least 3:1 (Large text is 18pt+ or 14pt+ bold).</li>
+          <li><strong>AAA Standard:</strong> Requires 7:1 for normal text and 4.5:1 for large text.</li>
+        </ul>
       </>
     ),
 

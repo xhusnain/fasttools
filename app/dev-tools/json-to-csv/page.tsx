@@ -127,6 +127,27 @@ const toolConfig = createToolConfig({
           <li><strong>Excel:</strong> Power Query, Data Import features</li>
           <li><strong>Online Tools:</strong> Our converter, ConvertCSV, JSON-CSV converters</li>
         </ul>
+        <h4 className="font-semibold mb-2">Quick Code Snippets</h4>
+        <div className="space-y-4">
+          <div className="bg-muted p-3 rounded-md overflow-x-auto">
+            <p className="text-xs font-semibold mb-1 text-primary">Python (pandas)</p>
+            <pre className="text-xs font-mono">
+              {`import pandas as pd
+df = pd.read_json('data.json')
+df.to_csv('output.csv', index=False)`}
+            </pre>
+          </div>
+          <div className="bg-muted p-3 rounded-md overflow-x-auto">
+            <p className="text-xs font-semibold mb-1 text-primary">JavaScript (Node.js)</p>
+            <pre className="text-xs font-mono">
+              {`const { Parser } = require('json2csv');
+const fs = require('fs');
+const json = require('./data.json');
+const csv = new Parser().parse(json);
+fs.writeFileSync('output.csv', csv);`}
+            </pre>
+          </div>
+        </div>
       </>
     ),
 

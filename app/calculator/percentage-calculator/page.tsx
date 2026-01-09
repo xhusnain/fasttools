@@ -118,6 +118,29 @@ export default function PercentageCalculatorPage() {
           <li><strong>Statistics:</strong> Express probabilities, proportions, and survey results</li>
         </ul>
 
+        <h3 className="font-semibold text-lg mb-2 mt-6">Mental Math Shortcuts</h3>
+        <p className="mb-4">
+          Master these quick tricks to calculate percentages without a calculator:
+        </p>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
+          <div className="bg-muted/50 p-4 rounded-lg">
+            <span className="font-bold block mb-1">To find 10%:</span>
+            <span className="text-sm">Move the decimal point one place to the left. (e.g., 10% of 250 = 25)</span>
+          </div>
+          <div className="bg-muted/50 p-4 rounded-lg">
+            <span className="font-bold block mb-1">To find 1%:</span>
+            <span className="text-sm">Move the decimal point two places to the left. (e.g., 1% of 250 = 2.5)</span>
+          </div>
+          <div className="bg-muted/50 p-4 rounded-lg">
+            <span className="font-bold block mb-1">To find 20%:</span>
+            <span className="text-sm">Find 10%, then double it. (e.g., 10% of 50 is 5, so 20% is 10)</span>
+          </div>
+          <div className="bg-muted/50 p-4 rounded-lg">
+            <span className="font-bold block mb-1">To find 5%:</span>
+            <span className="text-sm">Find 10%, then cut it in half. (e.g., 10% of 80 is 8, so 5% is 4)</span>
+          </div>
+        </div>
+
         <h3 className="font-semibold text-lg mb-2 mt-6">Tips for Accurate Calculations</h3>
         <ul className="list-disc pl-6 mb-6 space-y-1">
           <li>Always identify which value represents the "whole" (100%) and which is the "part"</li>
@@ -187,6 +210,10 @@ export default function PercentageCalculatorPage() {
       {
         question: "Why are percentages expressed out of 100?",
         answer: "Percent means 'per hundred,' reflecting the historical practice of dividing quantities into 100 equal parts for easier comparison. This standardization makes it simple to compare different ratios and proportions across various contexts, from test scores to financial data."
+      },
+      {
+        question: "How do I calculate a 20% tip?",
+        answer: "To calculate a 20% tip, move the decimal point of the bill amount one place to the left (to find 10%) and multiply by 2. For example, on a $50 bill: $5.0 is 10%, so $10.0 is 20%. Alternatively, multiply the bill amount by 0.20."
       },
       {
         question: "How do I calculate sales tax percentage?",

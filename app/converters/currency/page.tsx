@@ -70,6 +70,28 @@ const toolConfig = createToolConfig({
         </div>
 
         <div>
+          <h3 className="text-lg font-bold mb-3 text-heading-accent">Why Exchange Rates Fluctuate</h3>
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            <div className="p-3 bg-muted/40 rounded border border-border/50">
+              <h4 className="font-semibold text-sm mb-1">Interest Rates</h4>
+              <p className="text-xs text-muted-foreground">Higher interest rates offer lenders in an economy a higher return relative to other countries, attracting foreign capital and causing the exchange rate to rise.</p>
+            </div>
+            <div className="p-3 bg-muted/40 rounded border border-border/50">
+              <h4 className="font-semibold text-sm mb-1">Inflation</h4>
+              <p className="text-xs text-muted-foreground">Typically, a country with a consistently lower inflation rate exhibits a rising currency value, as its purchasing power increases relative to other currencies.</p>
+            </div>
+            <div className="p-3 bg-muted/40 rounded border border-border/50">
+              <h4 className="font-semibold text-sm mb-1">Economic Performance</h4>
+              <p className="text-xs text-muted-foreground">Strong economic performance attracts foreign investors, increasing demand for the country's currency and driving up the exchange rate.</p>
+            </div>
+            <div className="p-3 bg-muted/40 rounded border border-border/50">
+              <h4 className="font-semibold text-sm mb-1">Geopolitical Stability</h4>
+              <p className="text-xs text-muted-foreground">Political turmoil causes a loss of confidence in a currency and a movement of capital to the currencies of more stable countries.</p>
+            </div>
+          </div>
+        </div>
+
+        <div>
           <h3 className="text-lg font-bold mb-3 text-heading-accent">Currency Symbols and Codes</h3>
           <p className="text-muted-foreground text-sm mb-2">
             Understanding currency symbols and ISO codes helps you identify different currencies:

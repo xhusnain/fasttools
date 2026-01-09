@@ -65,6 +65,25 @@ const toolConfig = createToolConfig({
         </div>
 
         <div>
+          <h3 className="text-lg font-bold mb-3 text-heading-accent">Temperature Conversion Formulas</h3>
+          <p className="text-muted-foreground text-sm mb-4">
+            Use these formulas to manually convert between temperature scales:
+          </p>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <div className="bg-muted/50 p-4 rounded-lg">
+              <span className="font-bold block mb-2 text-primary">Celsius to Fahrenheit</span>
+              <code className="block bg-background p-2 rounded border border-border text-center mb-2">°F = (°C × 9/5) + 32</code>
+              <p className="text-xs text-muted-foreground">Multiply by 1.8, then add 32.</p>
+            </div>
+            <div className="bg-muted/50 p-4 rounded-lg">
+              <span className="font-bold block mb-2 text-primary">Fahrenheit to Celsius</span>
+              <code className="block bg-background p-2 rounded border border-border text-center mb-2">°C = (°F − 32) × 5/9</code>
+              <p className="text-xs text-muted-foreground">Subtract 32, then multiply by 0.5556.</p>
+            </div>
+          </div>
+        </div>
+
+        <div>
           <h3 className="text-lg font-bold mb-3 text-heading-accent">Common Temperature Reference Points</h3>
           <p className="text-muted-foreground text-sm mb-2">
             These reference points help you understand temperature relationships:

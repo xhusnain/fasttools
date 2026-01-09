@@ -143,7 +143,7 @@ export default function BMICalculatorPage() {
     ],
     aboutTool: {
       title: "The Most Comprehensive Free BMI Tool Online",
-      content: "Body Mass Index (BMI) is a global standard for assessing body composition. Our calculator is built on World Health Organization (WHO) and CDC guidelines to ensure medical-grade accuracy. It's not just a number—we provide a complete context of what that number means for your specific life stage and ethnicity."
+      content: "Body Mass Index (BMI) is a global standard for assessing body composition. Our calculator is built on World Health Organization (WHO) and CDC guidelines to ensure medical-grade accuracy. It includes specialized metrics like BMI Prime—which compares your BMI to the 'normal' upper limit of 25. A BMI Prime of less than 1.0 indicates a healthy weight, providing a simpler way to track your status."
     },
     proTip: "For the most accurate assessment, weigh yourself in the morning before breakfast and after using the bathroom. Consistency is key to tracking long-term trends.",
     faqs: [
@@ -165,7 +165,11 @@ export default function BMICalculatorPage() {
       },
       {
         question: "Is BMI accurate for older adults?",
-        answer: "interpretation changes with age. Research suggests a slightly higher BMI (25-27) may be protective and healthy for adults over 65."
+        answer: "Interpretation changes with age. Research suggests a slightly higher BMI (25-27) may be protective and healthy for adults over 65."
+      },
+      {
+        question: "Is BMI different for men and women?",
+        answer: "The standard BMI calculation formula is exactly the same for men and women. However, body composition differs—women typically have more essential body fat than men. While the numerical scale is identical, healthcare providers may interpret borderline results differently based on gender and individual muscle mass."
       },
       {
         question: "What should I do if my BMI indicates obesity?",

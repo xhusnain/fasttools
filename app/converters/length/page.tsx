@@ -52,7 +52,64 @@ const toolConfig = createToolConfig({
       "Scientific Research: Converting measurements in scientific papers, laboratory data, and research findings that may use different unit systems."
     ],
 
-    aboutTool: "Our comprehensive length converter and distance conversion calculator handles all major unit conversions you'll encounter in daily life and professional work. Whether you need to convert meters to feet for construction blueprints, convert centimeters to inches for international product specifications, or convert kilometers to miles for travel planning, this interactive length converter provides instant, accurate results. The tool seamlessly converts between metric and imperial systems—perfect for converting millimeters to inches in engineering drawings, converting yards to meters in sports fields, or converting nautical miles to kilometers for maritime navigation. For height measurements, our height converter easily converts cm to feet and inches, making it ideal for medical records, fitness tracking, or international ID requirements. Construction professionals rely on our engineering length converter and construction length converter to convert between survey units, handle decimal to fraction conversions for precise measurements, and convert scale lengths to real-world dimensions. Digital designers use our pixel conversion features to convert pixels to inches at specific DPI settings, convert px to cm for print layouts, or convert points and picas to inches for typography. This free length converter online serves as both a distance converter and a comprehensive length conversion calculator with formulas, supporting everything from converting miles to feet for road measurements to converting micrometers to meters for scientific research.",
+    aboutTool: (
+      <div className="space-y-6">
+        <p>
+          Our comprehensive length converter and distance conversion calculator handles all major unit conversions you'll encounter in daily life and professional work. Whether you need to convert meters to feet for construction blueprints, convert centimeters to inches for international product specifications, or convert kilometers to miles for travel planning, this interactive length converter provides instant, accurate results.
+        </p>
+
+        <div>
+          <h3 className="text-lg font-bold mb-3 text-heading-accent">Common Conversion Factors</h3>
+          <div className="overflow-x-auto">
+            <table className="w-full text-sm text-left border-collapse border border-border rounded-lg overflow-hidden">
+              <thead className="bg-muted">
+                <tr>
+                  <th className="p-3 border-b border-border font-medium">Unit</th>
+                  <th className="p-3 border-b border-border font-medium">Metric Equivalent</th>
+                  <th className="p-3 border-b border-border font-medium">Imperial Equivalent</th>
+                </tr>
+              </thead>
+              <tbody className="divide-y divide-border bg-card">
+                <tr>
+                  <td className="p-3 font-medium">1 Inch</td>
+                  <td className="p-3">2.54 cm</td>
+                  <td className="p-3">0.0833 feet</td>
+                </tr>
+                <tr>
+                  <td className="p-3 font-medium">1 Foot</td>
+                  <td className="p-3">30.48 cm</td>
+                  <td className="p-3">12 inches</td>
+                </tr>
+                <tr>
+                  <td className="p-3 font-medium">1 Yard</td>
+                  <td className="p-3">0.9144 meters</td>
+                  <td className="p-3">3 feet</td>
+                </tr>
+                <tr>
+                  <td className="p-3 font-medium">1 Mile</td>
+                  <td className="p-3">1.609 km</td>
+                  <td className="p-3">5,280 feet</td>
+                </tr>
+                <tr>
+                  <td className="p-3 font-medium">1 Meter</td>
+                  <td className="p-3">-</td>
+                  <td className="p-3">3.281 feet</td>
+                </tr>
+                <tr>
+                  <td className="p-3 font-medium">1 Kilometer</td>
+                  <td className="p-3">1,000 meters</td>
+                  <td className="p-3">0.621 miles</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <p>
+          The tool seamlessly converts between metric and imperial systems—perfect for converting millimeters to inches in engineering drawings, converting yards to meters in sports fields, or converting nautical miles to kilometers for maritime navigation. For height measurements, our height converter easily converts cm to feet and inches, making it ideal for medical records, fitness tracking, or international ID requirements.
+        </p>
+      </div>
+    ),
 
     faqs: [
       {
