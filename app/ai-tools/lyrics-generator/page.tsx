@@ -7,9 +7,9 @@ import { createMetadata } from "@/lib/metadata-base"
 const currentYear = new Date().getFullYear()
 
 const baseMetadata = createMetadata({
-  title: `Best Free AI Lyrics Generator ${currentYear} | 40+ Languages`,
+  title: `AI Song Writer & Lyrics Generator (Free) - Rap, Pop & Ghostwriter ${currentYear}`,
   description:
-    `Generate song lyrics with AI in ${currentYear}! Free multilingual lyrics generator supporting 40+ languages. All genres, moods & durations. No sign up.`,
+    `Free AI Song Writer and Lyrics Generator. Create Rap, Pop, and Rock songs instantly. Your personal AI Ghostwriter for original lyrics in 40+ languages.`,
   path: "/ai-tools/lyrics-generator",
 })
 
@@ -43,8 +43,8 @@ export const metadata: Metadata = {
 
 export default function LyricsGeneratorPage() {
   const toolContent = {
-    toolName: "AI Lyrics Generator",
-    overview: `Generate creative and original song lyrics with AI in ${currentYear}! Perfect for songwriters, musicians, and music creators. No sign up required. Unlimited generations. 100% free forever. Our advanced AI lyrics generator supports song creation in over 40 languages, making it the most comprehensive multilingual lyrics generator available online.`,
+    toolName: "AI Song Writer & Lyrics Generator",
+    overview: `Write a song in seconds with our **AI Song Writer**! Perfect for rappers, songwriters, and musicians. No sign up required. Unlimited generations. 100% free forever. Our advanced **AI Ghostwriter** supports song creation in over 40 languages, making it the best free tool to generate rap lyrics, pop songs, and more.`,
     howToSteps: [
       "Enter your song theme, topic, or creative inspiration into the input field.",
       "Select your preferred music genre (pop, rock, hip-hop, country, R&B, etc.) to match your style.",
@@ -129,8 +129,8 @@ export default function LyricsGeneratorPage() {
   return (
     <ToolPageLayout
       header={{
-        title: "Free AI Song Lyrics Generator - Create Original Lyrics for Any Genre",
-        description: "Generate creative and original song lyrics with AI in 2025! Perfect for songwriters, musicians, and music creators. No sign up required. Unlimited generations. 100% free forever.",
+        title: "Free AI Song Writer & Lyrics Generator",
+        description: "Your personal AI Ghostwriter. Create original Rap, Pop, and Rock lyrics in seconds. No sign up required. 100% free.",
         titleSize: "medium",
         descriptionSize: "small",
         centered: true,

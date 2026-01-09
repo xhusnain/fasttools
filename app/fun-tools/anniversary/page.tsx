@@ -5,21 +5,20 @@ import { getCurrentYear } from "@/lib/utils"
 import { Heart, Calendar, Clock, Gift, ArrowRight, CheckCircle, HelpCircle, Star } from "lucide-react"
 
 const toolConfig = createToolConfig({
-  toolName: "Relationship Anniversary Calculator",
-  description: "Calculate exactly how long you've been together in years, months, and days. The best love calculator for couples to track milestones and next anniversary.",
-  metaTitle: `Relationship Anniversary Calculator - Years, Months, Days ${getCurrentYear()}`,
-  metaDescription: "Free relationship anniversary calculator. track how long you've been together in years, months, days. Perfect for couples celebrating love milestones.",
+  toolName: "Love Days Counter & Anniversary Calculator",
+  description: "Calculate exactly how long you've been together in years, months, and days. The best dating calculator and love days counter for couples.",
+  metaTitle: `Love Days Counter & Anniversary Calculator - How Long Have We Been Together? ${getCurrentYear()}`,
+  metaDescription: "Free love days counter and dating calculator. Track exactly how long you've been together. Perfect for checking your relationship days count.",
   path: "/fun-tools/anniversary",
   keywords: [
-    "relationship anniversary calculator", "love anniversary calculator", "how long have we been together calculator",
-    "dating anniversary calculator", "marriage anniversary calculator", "couple years tracker",
-    "years months days calculator", "love days counter"
+    "love days counter", "dating calculator", "relationship days counter", "how long have we been together",
+    "love counter", "anniversary calculator", "couple tracker", "days since we met"
   ],
 
 
   header: {
-    title: "Relationship Anniversary Calculator",
-    description: "Calculate exactly how long you've been together. See total years, months, and days since your special date. Perfect for tracking your love journey.",
+    title: "Love Days Counter & Anniversary Calculator",
+    description: "Calculate exactly how long you've been together. See your love days count, total months, and years since your special date.",
     titleSize: "medium",
     descriptionSize: "small",
   },
@@ -30,7 +29,7 @@ const toolConfig = createToolConfig({
   ],
 
   content: {
-    overview: "Our Anniversary Calculator is the ultimate relationship duration tool for couples. Accurately calculate exactly how long you've been together in years, months, days, and even seconds. Whether you need a wedding anniversary calculator, a dating anniversary tracker, or simply want to know 'how many months have we been together?', this free tool does it all. Track upcoming milestone anniversaries, find your next anniversary date, and celebrate every special moment with our precise anniversary counter.",
+    overview: "Our **Love Days Counter** (also known as a **Dating Calculator**) is the ultimate relationship tracker. Accurately calculate exactly how long you've been together in years, months, and days. Whether you need a wedding anniversary calculator or simply want to check your **love days count**, this free tool does it all. Track upcoming 'monthsaries', find your next big milestone, and celebrate every moment with our precise **relationship counter**.",
 
     howToSteps: [
       "Enter Start Date: Select the date your relationship started (dating, wedding, or any other milestone) using the date picker.",

@@ -12,7 +12,7 @@ import {
 const toolConfig = createToolConfig({
   toolName: "YouTube Channel Checker - Name & Handle Search",
   description: "Check YouTube channel name availability, verify @handle ownership, and analyze your name's SEO potential. The ultimate 3-in-1 tool for creators.",
-  metaTitle: `YouTube Name Checker & Availability - Check Username Instantly ${getCurrentYear()}`,
+  metaTitle: `YouTube Name Checker: Check Channel Availability & Handle (Instant) ${getCurrentYear()}`,
   metaDescription: "Free YouTube channel name checker. Check if your desired username or handle is available instantly. Support for custom URLs and handles. Fast & Accurate.",
   path: "/social-media-tools/channel-checker",
   schemaOptions: {
@@ -27,7 +27,7 @@ const toolConfig = createToolConfig({
   },
 
   header: {
-    title: "YouTube Channel Name Availability Checker",
+    title: "YouTube Name Checker & Channel Availability",
     description: "Check if your desired YouTube channel name is taken. Instantly search availability for handles, URLs, and channel names with our free tool.",
     titleSize: "medium",
     descriptionSize: "small",
@@ -42,8 +42,8 @@ const toolConfig = createToolConfig({
     overview: "Welcome to the ultimate **3-in-1 YouTube toolkit** for creators! Our comprehensive platform combines three essential features: **Channel Name Checker** for bulk availability testing, **Handle & URL Checker** to verify @handle availability with smart variations, and **Keyword SEO Analysis** to score your name's search potential. Whether you're launching a new channel, rebranding, or optimizing for discoverability, this **YouTube handle checker** and **channel name SEO analyzer** gives you everything you need. Generate 100+ AI-powered name ideas, check if your @handle is taken, and get actionable SEO recommendations—all completely free with no registration required.",
 
     howToSteps: [
-      "Choose Your Tab: Select 'Channel Checker' for bulk name testing, 'Handle Checker' for @handle verification, or 'SEO Analysis' for keyword scoring.",
-      "Channel Checker: Enter multiple channel names separated by commas. Click 'Check Availability' to test them all and receive 100+ AI-generated suggestions.",
+      "Choose Your Tool: Select 'Channel Checker' for bulk name testing, 'Handle Checker' for @handle verification, or 'SEO Analysis'.",
+      "YouTube Name Checker: Enter your desired channel names. We instantly check availability across all URL formats.",
       "Handle Checker: Enter your desired @handle (without the @). The tool checks availability and suggests smart variations if taken (TheYourName, YourNameTV, etc.).",
       "SEO Analysis: Enter a potential channel name to analyze its search popularity, competition level, relevancy, and memorability scores (0-100).",
       "Review & Optimize: Use the SEO recommendations to improve your name's discoverability. Copy your chosen name and claim it on YouTube!",
@@ -51,7 +51,8 @@ const toolConfig = createToolConfig({
     ],
 
     features: [
-      "YouTube Handle Checker: Instantly verify if your desired @handle is available on YouTube's new handle system.",
+      "YouTube Name Checker: Instantly verify if your desired channel name is available.",
+      "YouTube Handle Checker: Verify if your unique @handle is available on YouTube's system.",
       "Smart Handle Variations: When your preferred handle is taken, get intelligent alternatives like 'TheYourName', 'YourNameHQ', or 'YourNameOfficial'.",
       "SEO Score Analysis: Analyze channel names with 0-100 scores for search popularity, competition, relevancy, and memorability.",
       "Keyword Potential Scoring: Understand how well your name will perform in YouTube search with detailed metrics.",
@@ -97,6 +98,16 @@ const toolConfig = createToolConfig({
               <strong>Pro Tip:</strong> Always <strong>check to see if a YouTube name is available</strong> across multiple platforms (Instagram, TikTok, Twitter) before committing. Consistent branding across social media significantly boosts discoverability and audience retention.
             </p>
           </div>
+        </article>
+
+        <article className="space-y-6">
+          <h2 className="text-2xl font-bold text-foreground flex items-center gap-2">
+            <CheckCircle className="h-6 w-6 text-primary" />
+            How to use the YouTube Name Checker?
+          </h2>
+          <p className="text-base text-muted-foreground leading-relaxed">
+            Using our <strong>YouTube Name Checker</strong> is simple. Just type your idea into the search box. We will instantly query YouTube's database to see if the <strong>Channel Name</strong>, <strong>@Handle</strong>, and <strong>Custom URL</strong> are free. If taken, our tool provides smart alternatives and variations to help you find a great name that is still available.
+          </p>
         </article>
 
         <article className="space-y-6">

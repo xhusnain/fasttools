@@ -6,14 +6,13 @@ import { getCurrentYear } from "@/lib/utils"
 const toolConfig = createToolConfig({
   toolName: "Instagram DP Viewer & Downloader (HD Quality)",
   description: "View and download Instagram profile pictures in full HD size. Free Instagram DP viewer for public accounts. No login required.",
-  metaTitle: `Instagram DP Viewer - View & Download Profile Pictures (HD) ${getCurrentYear()}`,
+  metaTitle: `Insta DP Viewer & Downloader - View Instagram Profile Picture (HD) ${getCurrentYear()}`,
   metaDescription: "Free Instagram DP Viewer. View full-size profile pictures in HD without login. The #1 Insta DP Viewer & Downloader. Fast, Free, & Anonymous.",
   path: "/social-media-tools/instagram-dp",
   keywords: [
-    "instagram dp viewer", "instagram profile picture viewer", "instagram dp downloader",
-    "insta dp viewer", "download instagram dp", "instagram profile picture download hd",
-    "instagram dp viewer online", "instagram dp viewer hd", "full insta dp viewer",
-    "instagram dp viewer no login", "instagram dp viewer free"
+    "instagram dp viewer", "insta dp", "ig dp", "instagram profile viewer", "insta dp viewer",
+    "download instagram dp", "instagram profile picture download hd", "instagram dp viewer online",
+    "instagram dp viewer hd", "full insta dp viewer", "instagram dp viewer no login", "instagram dp viewer free"
   ],
 
   schemaOptions: {
@@ -23,7 +22,7 @@ const toolConfig = createToolConfig({
   },
 
   header: {
-    title: "Instagram DP Viewer & Downloader (HD Quality)",
+    title: "Insta DP Viewer & Downloader (HD Quality)",
     description: "Instantly view and download Instagram profile pictures in full HD resolution. Works for all public accounts. No login or account required.",
     titleSize: "medium",
     descriptionSize: "small",
@@ -35,7 +34,7 @@ const toolConfig = createToolConfig({
   ],
 
   content: {
-    overview: "Our Instagram DP viewer (also known as insta dp viewer or ig dp viewer) allows you to view instagram dp and download profile pictures from public Instagram accounts. This free dp viewer tool respects user privacy and only works with publicly available profile pictures. Whether you search for 'instagram image viewer' or 'instagram profile dp viewer', our tool provides the best solution to view dp from any public Instagram account. We prioritize user privacy and only access profile pictures from public accounts. Private accounts and restricted content are not accessible through our dp viewer instagram tool. Our insta dp.view service is designed to be safe, secure, and compliant with Instagram's terms of service. Download profile pictures in their original high-definition quality using our instagram profile dp viewer. Perfect for content creators, designers, or anyone who needs high-quality profile images.",
+    overview: "Our **Insta DP Viewer** (also known as ig dp viewer) allows you to view instagram dp and download profile pictures from public Instagram accounts in full HD. This free **Insta DP** tool respects user privacy and only works with publicly available profile pictures. Whether you search for 'instagram image viewer', 'insta dp', or 'instagram profile dp viewer', our tool provides the best solution to view dp from any public Instagram account. We prioritize user privacy and only access profile pictures from public accounts. Private accounts and restricted content are not accessible through our dp viewer instagram tool. Our **Insta DP view** service is designed to be safe, secure, and compliant with Instagram's terms of service. Download profile pictures in their original high-definition quality using our instagram profile dp viewer. Perfect for content creators, designers, or anyone who needs high-quality profile images.",
 
     howToSteps: [
       "Enter the Instagram username (with or without @) into the input field.",
@@ -64,11 +63,11 @@ const toolConfig = createToolConfig({
     aboutTool: (
       <div className="space-y-6">
         <article>
-          <h3 className="text-xl font-bold mb-4 text-foreground">View Instagram DP: Complete Guide</h3>
+          <h3 className="text-xl font-bold mb-4 text-foreground">View Insta DP: Complete Guide</h3>
 
           <div className="space-y-6">
             <div className="p-4 rounded-lg bg-muted/50 border border-border">
-              <h4 className="font-semibold text-heading-accent mb-3">View Instagram DP: View and Download Profile Pictures</h4>
+              <h4 className="font-semibold text-heading-accent mb-3">View Insta DP: View and Download Profile Pictures</h4>
               <p className="text-sm text-muted-foreground leading-relaxed mb-3">
                 Our view Instagram DP tool helps you view Instagram profile pictures in high quality, allowing you to see and download profile photos from any public Instagram account. When you want to view Instagram DP, simply enter the Instagram username and our tool displays the profile picture in full resolution. The view Instagram DP feature works with any public Instagram account, showing profile pictures that are often displayed in small sizes on the platform. Use our view Instagram DP tool to see profile pictures clearly, download them if needed, or save them for reference. The view Instagram DP functionality is particularly useful for viewing profile pictures from accounts where the image appears small or you want to see details more clearly.
               </p>
