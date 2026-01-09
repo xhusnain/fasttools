@@ -44,38 +44,6 @@ const baseMetadata = createMetadata({
     { label: TOOL_NAME, href: "/calculator/concrete-calculator" }
   ],
   toolName: TOOL_NAME,
-  howToSteps: [
-    "Select your project type (Slab, Footing, Column, Stairs, etc.).",
-    "Enter dimensions (Length, Width, Height) in feet or meters.",
-    "Choose your concrete mix strength (Standard 3000 PSI or High Strength).",
-    "View the total Volume (Cubic Yards), Number of Bags needed, and Estimated Cost."
-  ],
-  faqs: [
-    {
-      question: "How do I calculate how much concrete I need?",
-      answer: "For a basic slab, use the formula: Length (ft) × Width (ft) × Thickness (in ÷ 12) = Cubic Feet. Divide by 27 to get Cubic Yards. For irregular shapes, break them into rectangles, calculate each, and add them together. Always add 10% for waste."
-    },
-    {
-      question: "How many 80lb bags of concrete do I need for 1 yard?",
-      answer: "You need 45 bags of 80lb concrete to make one cubic yard. If using 60lb bags, you need 60 bags. For 40lb bags, you need 90 bags."
-    },
-    {
-      question: "Should I buy bagged concrete or order a ready-mix truck?",
-      answer: "Use bagged concrete for projects under 1-2 cubic yards (about 45-90 bags). It's cheaper but labor-intensive. For projects over 2 yards, ordering a ready-mix truck saves time and ensures a consistent pour, although there may be a 'short load' fee for small orders."
-    },
-    {
-      question: "How do I calculate concrete for irregular shapes?",
-      answer: "Break the shape into simpler squares, rectangles, or triangles. Calculate the volume of each section separately and add them up. If the ground is uneven, measure thickness at multiple points and use the average depth."
-    },
-    {
-      question: "How thick should a concrete driveway be?",
-      answer: "For standard residential driveways, a minimum of 4 inches is required. For heavier vehicles (SUVs, trucks), 5 to 6 inches is recommended to prevent cracking. Always use a compacted 4-6 inch gravel base."
-    },
-    {
-      question: "How much does a cubic yard of concrete weigh?",
-      answer: "A cubic yard of solid concrete weighs approximately 4,050 lbs (roughly 150 lbs per cubic foot). This weight varies slightly based on the aggregate mix and water content."
-    }
-  ],
   schemaOptions: {
     name: "Concrete Estimator & Calculator",
     alternateName: "Cement Calculator, Concrete Slab Estimator, Cubic Yard Calculator",
