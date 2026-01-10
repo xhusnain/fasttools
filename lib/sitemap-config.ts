@@ -592,6 +592,32 @@ export const toolPages = [
         ]
     },
     {
+        url: "https://www.fasttools.store/social-media-tools/youtube-downloader",
+        lastModified: new Date('2026-01-10'),
+        changeFrequency: "weekly" as const,
+        priority: 1.0,
+        images: [
+            {
+                url: "https://www.fasttools.store/images/youtube-downloader-hero.png",
+                title: "YouTube Video Downloader - Download HD videos and MP3 audio",
+                caption: "Download YouTube videos online in HD, 4K, or 8K quality. Convert any YouTube video to MP4 for offline viewing or extract audio as MP3."
+            }
+        ]
+    },
+    {
+        url: "https://www.fasttools.store/social-media-tools/youtube-playlist-downloader",
+        lastModified: new Date('2026-01-10'),
+        changeFrequency: "weekly" as const,
+        priority: 1.0,
+        images: [
+            {
+                url: "https://www.fasttools.store/images/youtube-playlist-downloader-hero.png",
+                title: "YouTube Playlist Downloader Interface",
+                caption: "The ultimate tool to download YouTube playlists in bulk. Convert entire channels, music albums, or educational series to high-quality MP4 and MP3."
+            }
+        ]
+    },
+    {
         url: "https://www.fasttools.store/ad-tools/roas-calculator",
         lastModified: new Date('2025-12-15'),
         changeFrequency: "daily" as const,
