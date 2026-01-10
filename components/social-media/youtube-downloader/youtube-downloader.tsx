@@ -7,42 +7,16 @@ import { GLabel } from "@/ui/glabel"
 import { GButton } from "@/ui/gbutton"
 import { GAlert, GAlertDescription } from "@/ui/galert"
 import { Download, Loader2, AlertCircle, Video, Music, List, FileVideo } from "lucide-react"
-import { API } from "@/services/api/api.service"
+import { YouTubeService, VideoInfo, PlaylistInfo, VideoFormat } from "@/services/youtube.service"
 import { env } from "@/config/env"
 
 export interface YoutubeDownloaderProps {
     compact?: boolean
 }
 
-interface VideoFormat {
-    format_id: string
-    format_note?: string
-    ext: string
-    filesize?: number
-    filesize_approx?: number
-    width?: number
-    height?: number
-    vcodec?: string
-    acodec?: string
-    url: string
-}
 
-interface VideoInfo {
-    id: string
-    title: string
-    thumbnail: string
-    formats: VideoFormat[]
-    duration?: number
-    description?: string
-    view_count?: number
-    uploader?: string
-}
 
-interface PlaylistInfo {
-    id: string
-    title: string
-    entries: any[]
-}
+
 
 export function YoutubeDownloader({ compact = false }: YoutubeDownloaderProps) {
     const [url, setUrl] = useState("")
@@ -55,13 +29,10 @@ export function YoutubeDownloader({ compact = false }: YoutubeDownloaderProps) {
 
     const validateUrl = (inputUrl: string): boolean => {
         if (!inputUrl.trim()) return false
-        // Basic naive check, backend does the real lifting
         return inputUrl.includes("youtube.com") || inputUrl.includes("youtu.be")
     }
 
     const detectType = (inputUrl: string) => {
-        // Strict playlist detection: must explicitly be a playlist URL, 
-        // OR have list param but NOT be a watch URL (watch URLs with list param are usually just playing a video from a playlist)
         const isWatchUrl = inputUrl.includes("watch?v=") || inputUrl.includes("youtu.be/");
         const hasListParam = inputUrl.includes("list=");
 
@@ -70,7 +41,6 @@ export function YoutubeDownloader({ compact = false }: YoutubeDownloaderProps) {
             return 'playlist'
         }
 
-        // If it's a playlist URL structure specifically
         if (inputUrl.includes("/playlist?list=")) {
             setDownloadType('playlist')
             return 'playlist'
@@ -95,24 +65,20 @@ export function YoutubeDownloader({ compact = false }: YoutubeDownloaderProps) {
         setLoading(true)
 
         try {
-            // Use local API
-            const res = await fetch('/api/youtube/info', {
-                method: 'POST',
-                headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify({ url: url.trim(), type: type })
-            })
-
-            if (!res.ok) {
-                const err = await res.json()
-                throw new Error(err.error || 'Failed to fetch video information')
-            }
-
-            const data = await res.json()
+            const data = await YouTubeService.getInfo(url.trim(), 'video');
 
             if (type === 'playlist') {
-                setPlaylistInfo(data)
+                if ('entries' in data) {
+                    setPlaylistInfo(data as PlaylistInfo)
+                } else {
+                    setVideoInfo(data as VideoInfo)
+                }
             } else {
-                setVideoInfo(data)
+                if ('entries' in data) {
+                    setPlaylistInfo(data as PlaylistInfo)
+                } else {
+                    setVideoInfo(data as VideoInfo)
+                }
             }
         } catch (err: any) {
             console.error(err)
@@ -123,51 +89,45 @@ export function YoutubeDownloader({ compact = false }: YoutubeDownloaderProps) {
     }
 
     const handleDownload = async (formatId?: string, type: 'video' | 'audio' = 'video') => {
-        // Determine a unique ID for the loading state
         const activeId = formatId || (type === 'audio' ? 'audio' : 'best');
 
         setDownloadingId(activeId)
-        const downloadToken = Date.now().toString();
 
         const title = videoInfo?.title || playlistInfo?.title || 'download';
-        const safeTitle = title.replace(/[^a-z0-9]/gi, '_').toLowerCase();
 
-        // Use local API for download
-        let downloadUrl = `/api/youtube/download?url=${encodeURIComponent(url.trim())}&type=${type}&filename=${encodeURIComponent(safeTitle)}&downloadToken=${downloadToken}`;
+        try {
 
-        if (formatId) {
-            downloadUrl += `&formatId=${formatId}`;
-        }
+            // We pass the original YouTube URL and let the backend resolve best formats
+            const cleanTitle = title.replace(/[^a-z0-9]/gi, '_');
+            const isAudio = type === 'audio';
+            const extension = isAudio ? 'mp3' : 'mp4';
+            const filename = `${cleanTitle}.${extension}`;
 
-        // Trigger browser download immediately
-        window.location.href = downloadUrl;
+            const streamUrl = YouTubeService.getStreamUrl(url.trim(), filename, formatId, type);
 
-        // Poll for the cookie to know when to stop the loader
-        const checkCookie = setInterval(() => {
-            if (document.cookie.includes(`download_started=${downloadToken}`)) {
-                setDownloadingId(null);
-                clearInterval(checkCookie);
-                document.cookie = `download_started=${downloadToken}; Path=/; Max-Age=0`;
-            }
-        }, 500); // Check every 500ms
+            const link = document.createElement('a');
+            link.href = streamUrl;
+            link.target = '_blank'; // Optional, but good for UX
+            link.download = filename;
+            document.body.appendChild(link);
+            link.click();
+            document.body.removeChild(link);
 
-        // Fallback cleanup after 30 seconds if cookie not found (sometimes cookies are blocked)
-        setTimeout(() => {
-            clearInterval(checkCookie);
+        } catch (error: any) {
+            console.error(error);
+            setError("Download failed. Please try again.");
+        } finally {
             setDownloadingId(null);
-        }, 30000);
+        }
     }
 
-    // Filter formats to show unique resolutions and best audio
     const getUniqueVideoFormats = (formats: VideoFormat[]) => {
         if (!formats) return []
 
-        // Filter for mp4 videos with audio or video-only that we might want (ignoring for now to keep simple)
-        // Actually best to show "Best Video" and specific common resolutions
         const seenResolutions = new Set();
         const usefulFormats = formats
-            .filter(f => f.vcodec !== 'none' && f.height) // Must have video
-            .sort((a, b) => (b.height || 0) - (a.height || 0)); // Highest res first
+            .filter(f => f.vcodec !== 'none' && f.height)
+            .sort((a, b) => (b.height || 0) - (a.height || 0));
 
         const distinct = [];
         for (const f of usefulFormats) {
@@ -229,7 +189,8 @@ export function YoutubeDownloader({ compact = false }: YoutubeDownloaderProps) {
                         </GAlert>
                     )}
 
-                    {/* Single Video Result */}
+
+
                     {videoInfo && (
                         <div className="space-y-6 animate-in fade-in slide-in-from-bottom-4">
                             <div className="flex flex-col md:flex-row gap-6">
@@ -261,7 +222,7 @@ export function YoutubeDownloader({ compact = false }: YoutubeDownloaderProps) {
                                             <Video className="h-4 w-4" /> Video Quality Options
                                         </h4>
                                         <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
-                                            {getUniqueVideoFormats(videoInfo.formats).map((format) => (
+                                            {getUniqueVideoFormats(videoInfo.formats || []).map((format) => (
                                                 <GButton
                                                     key={format.format_id}
                                                     variant="outline"
@@ -281,7 +242,7 @@ export function YoutubeDownloader({ compact = false }: YoutubeDownloaderProps) {
                                                     ) : null}
                                                 </GButton>
                                             ))}
-                                            {/* Fallback Best Video */}
+
                                             <GButton
                                                 variant="default"
                                                 size="sm"
@@ -299,7 +260,8 @@ export function YoutubeDownloader({ compact = false }: YoutubeDownloaderProps) {
                         </div>
                     )}
 
-                    {/* Playlist Result */}
+
+
                     {playlistInfo && (
                         <div className="space-y-6 animate-in fade-in slide-in-from-bottom-4">
                             <div className="space-y-2">
@@ -359,7 +321,7 @@ export function YoutubeDownloader({ compact = false }: YoutubeDownloaderProps) {
                     )}
 
                 </div>
-            </GCard>
+            </GCard >
 
             {!compact && (
                 <GCard className="p-6 bg-card border border-border">

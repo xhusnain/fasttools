@@ -7,32 +7,14 @@ import { GLabel } from "@/ui/glabel"
 import { GButton } from "@/ui/gbutton"
 import { GAlert, GAlertDescription } from "@/ui/galert"
 import { Download, Loader2, AlertCircle, Video, Music, List, FileVideo } from "lucide-react"
-import { API } from "@/services/api/api.service"
+import { YouTubeService, PlaylistInfo, VideoInfo, PlaylistEntry } from "@/services/youtube.service"
 import { env } from "@/config/env"
 
 export interface YoutubePlaylistDownloaderProps {
     compact?: boolean
 }
 
-interface PlaylistEntry {
-    id: string
-    title: string
-    thumbnail: string
-    duration: number
-    uploader: string
-    thumbnails?: { url: string }[]
-    entries?: undefined // Playlist entries don't have nested entries usually in this context
-}
 
-interface PlaylistInfo {
-    id: string
-    title: string
-    thumbnail: string
-    view_count: number
-    uploader: string
-    description: string
-    entries: PlaylistEntry[]
-}
 
 export function YoutubePlaylistDownloader({ compact = false }: YoutubePlaylistDownloaderProps) {
     const [url, setUrl] = useState("")
@@ -41,6 +23,7 @@ export function YoutubePlaylistDownloader({ compact = false }: YoutubePlaylistDo
     const [downloadingItem, setDownloadingItem] = useState<{ id: string, type: 'video' | 'audio' } | null>(null)
     const [error, setError] = useState<string | null>(null)
     const [playlistInfo, setPlaylistInfo] = useState<PlaylistInfo | null>(null)
+    const [currentProgress, setCurrentProgress] = useState<string | null>(null)
 
     const validateUrl = (inputUrl: string): boolean => {
         if (!inputUrl.trim()) return false
@@ -59,30 +42,19 @@ export function YoutubePlaylistDownloader({ compact = false }: YoutubePlaylistDo
         setLoading(true)
 
         try {
-            // Use local API, force type to playlist
-            const res = await fetch('/api/youtube/info', {
-                method: 'POST',
-                headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify({ url: url.trim(), type: 'playlist' })
-            })
+            const data = await YouTubeService.getInfo(url.trim(), 'playlist');
 
-            if (!res.ok) {
-                const err = await res.json()
-                throw new Error(err.error || 'Failed to fetch playlist information')
-            }
-
-            const data = await res.json()
-
-            // Filter out private/deleted videos
-            if (data && data.entries) {
-                data.entries = data.entries.filter((e: any) =>
+            if ('entries' in data) {
+                const cleanEntries = data.entries.filter((e: any) =>
                     e.title !== '[Private video]' &&
                     e.title !== '[Deleted video]' &&
                     e.title !== '[Unavailable video]'
                 );
+                data.entries = cleanEntries;
+                setPlaylistInfo(data as PlaylistInfo)
+            } else {
+                setError("URL provided is not a playlist.");
             }
-
-            setPlaylistInfo(data)
         } catch (err: any) {
             console.error(err)
             setError(err.message || "Failed to fetch playlist information. Please check the URL.")
@@ -95,60 +67,72 @@ export function YoutubePlaylistDownloader({ compact = false }: YoutubePlaylistDo
         if (!playlistInfo || !playlistInfo.entries) return
 
         setDownloadingAllType(type)
-        // No baseUrl needed for local API
+        setCurrentProgress(`0/${playlistInfo.entries.length}`)
 
-        // We process sequentially with a delay to be gentle on the browser and server
-        // Using hidden iframes avoids popup blockers which block window.open in loops
-        // and avoids window.location.href cancelling previous requests
-        for (const entry of playlistInfo.entries) {
-            // Use Local API Direct Stream URL
-            const dlUrl = `/api/youtube/download?url=${encodeURIComponent(`https://www.youtube.com/watch?v=${entry.id}`)}&type=${type}&filename=${encodeURIComponent(entry.title?.replace(/[^a-z0-9]/gi, '_') || type)}`;
+        // Process videos one by one with delay
+        for (let i = 0; i < playlistInfo.entries.length; i++) {
+            setCurrentProgress(`${i + 1}/${playlistInfo.entries.length}`)
+            const entry = playlistInfo.entries[i];
+            try {
+                // Determine format
+                // For now we just use best available via direct url service
+                // Audio extraction would ideally need a separate backend flag, but direct URL returns video+audio usually
 
-            // Create hidden iframe to trigger download as stream
-            const iframe = document.createElement('iframe');
-            iframe.style.display = 'none';
-            iframe.src = dlUrl;
-            document.body.appendChild(iframe);
+                const directUrl = await YouTubeService.getDirectDownloadUrl(`https://www.youtube.com/watch?v=${entry.id}`);
 
-            // waiting 10 seconds before next download as requested
-            // also gives time for the download to initiate
-            await new Promise(resolve => setTimeout(resolve, 10000));
+                // Construct original URL from ID (most reliable)
+                const originalUrl = `https://www.youtube.com/watch?v=${entry.id}`;
+                const cleanTitle = entry.title.replace(/[^a-z0-9]/gi, '_');
+                const extension = type === 'audio' ? 'mp3' : 'mp4';
+                const filename = `${cleanTitle}.${extension}`;
+                const streamUrl = YouTubeService.getStreamUrl(originalUrl, filename, undefined, type);
 
-            // Clean up iframe after a while (optional but good practice)
-            setTimeout(() => {
-                document.body.removeChild(iframe);
-            }, 60000);
+                const link = document.createElement('a');
+                link.href = streamUrl;
+                link.target = '_blank';
+                link.download = filename;
+                document.body.appendChild(link);
+                link.click();
+                document.body.removeChild(link);
+
+                // Wait 1 second just to be safe between downloads
+                if (i < playlistInfo.entries.length - 1) {
+                    await new Promise(resolve => setTimeout(resolve, 1000));
+                }
+            } catch (e) {
+                console.error(`Failed to download ${entry.title}`, e);
+                // Continue to next video even if one fails
+            }
         }
 
         setDownloadingAllType(null)
-        setDownloadingItem(null)
+        setCurrentProgress(null)
     }
 
     const handleSingleDownload = async (entry: any, type: 'video' | 'audio') => {
-        const title = entry.title || 'download';
-        const safeTitle = title.replace(/[^a-z0-9]/gi, '_').toLowerCase();
-        const downloadToken = `pl_${entry.id}_${Date.now()}`;
-
-        // Local API URL
-        const dlUrl = `/api/youtube/download?url=${encodeURIComponent(`https://www.youtube.com/watch?v=${entry.id}`)}&type=${type}&filename=${encodeURIComponent(safeTitle)}&downloadToken=${downloadToken}`;
-
         setDownloadingItem({ id: entry.id, type });
-        window.location.href = dlUrl; // Direct stream trigger
+        try {
+            // Construct original URL from ID
+            const originalUrl = `https://www.youtube.com/watch?v=${entry.id}`;
+            const cleanTitle = entry.title.replace(/[^a-z0-9]/gi, '_');
+            const isAudio = type === 'audio'; // type arg from handleSingleDownload
+            const extension = isAudio ? 'mp3' : 'mp4';
+            const filename = `${cleanTitle}.${extension}`;
+            const streamUrl = YouTubeService.getStreamUrl(originalUrl, filename, undefined, type);
 
-        // Poll for completion
-        const checkCookie = setInterval(() => {
-            if (document.cookie.includes(`download_started=${downloadToken}`)) {
-                setDownloadingItem(prev => (prev?.id === entry.id && prev?.type === type) ? null : prev);
-                clearInterval(checkCookie);
-                document.cookie = `download_started=${downloadToken}; Path=/; Max-Age=0`;
-            }
-        }, 500);
-
-        // Fallback cleanup
-        setTimeout(() => {
-            clearInterval(checkCookie);
-            setDownloadingItem(prev => (prev?.id === entry.id && prev?.type === type) ? null : prev);
-        }, 30000);
+            const link = document.createElement('a');
+            link.href = streamUrl;
+            link.target = '_blank';
+            link.download = filename;
+            document.body.appendChild(link);
+            link.click();
+            document.body.removeChild(link);
+        } catch (e) {
+            console.error(e)
+            setError("Failed to download video")
+        } finally {
+            setDownloadingItem(null);
+        }
     }
 
     return (
@@ -197,7 +181,8 @@ export function YoutubePlaylistDownloader({ compact = false }: YoutubePlaylistDo
                         </GAlert>
                     )}
 
-                    {/* Playlist Result */}
+
+
                     {playlistInfo && (
                         <div className="space-y-6 animate-in fade-in slide-in-from-bottom-4">
                             <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
@@ -217,7 +202,7 @@ export function YoutubePlaylistDownloader({ compact = false }: YoutubePlaylistDo
                                         onClick={() => handleDownloadAll('audio')}
                                     >
                                         {downloadingAllType === 'audio' ? <Loader2 className="mr-2 h-4 w-4 animate-spin text-blue-500" /> : <Music className="mr-2 h-4 w-4" />}
-                                        Download All MP3
+                                        {downloadingAllType === 'audio' && currentProgress ? `Downloading ${currentProgress}` : 'Download All MP3'}
                                     </GButton>
                                     <GButton
                                         size="sm"
@@ -226,7 +211,7 @@ export function YoutubePlaylistDownloader({ compact = false }: YoutubePlaylistDo
                                         onClick={() => handleDownloadAll('video')}
                                     >
                                         {downloadingAllType === 'video' ? <Loader2 className="mr-2 h-4 w-4 animate-spin text-blue-500" /> : <Video className="mr-2 h-4 w-4" />}
-                                        Download All Video
+                                        {downloadingAllType === 'video' && currentProgress ? `Downloading ${currentProgress}` : 'Download All Video'}
                                     </GButton>
                                 </div>
                             </div>
