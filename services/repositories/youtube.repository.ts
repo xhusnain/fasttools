@@ -16,6 +16,12 @@ export const YouTubeRepository = {
     return response.data;
   },
 
-
+  getInfo: async (url: string, type: 'single' | 'playlist' = 'single'): Promise<any> => {
+    const response = await HttpClient.post<any>("/youtube/info", {
+      url,
+      type
+    });
+    return response.data;
+  },
 };
 
