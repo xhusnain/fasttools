@@ -35,6 +35,7 @@ export function Header() {
             <div className="flex items-center shrink-0">
               <Link
                 href="/"
+                title="FastTools - Free Online Tools Homepage"
                 aria-label="FastTools home"
                 className="group transition-all duration-300"
               >
@@ -48,6 +49,7 @@ export function Header() {
               <nav className="hidden lg:flex items-center gap-3 mr-2 h-full">
                 <Link
                   href="/live-tv"
+                  title="Watch Free Live TV Channels Worldwide"
                   className="px-3 py-0.5 rounded-sm text-xs font-bold tracking-wider border border-red-600 bg-red-600 text-white hover:bg-red-700 transition-colors flex items-center h-fit my-auto"
                 >
                   LIVE TV
@@ -55,6 +57,7 @@ export function Header() {
 
                 <Link
                   href="/guides"
+                  title="Learn How to Build Tools and Earn Online"
                   className="text-sm font-medium text-muted-foreground hover:text-primary transition-colors flex items-center gap-1 h-full"
                 >
                   <Sparkles className="h-3.5 w-3.5" />
@@ -62,28 +65,30 @@ export function Header() {
                 </Link>
                 <Link
                   href="/my-info"
+                  title="Check Your IP Address, Location and Device Info"
                   className="text-sm font-medium text-muted-foreground hover:text-primary transition-colors flex items-center h-full"
                 >
                   Get My Info
                 </Link>
                 <Link
                   href="/blog"
+                  title="FastTools Blog - Tips, Tutorials and Updates"
                   className="text-sm font-medium text-muted-foreground hover:text-primary transition-colors flex items-center gap-1 h-full"
                 >
                   Blog
                 </Link>
-                <Link href="/products" className="text-sm font-medium text-muted-foreground hover:text-primary transition-colors flex items-center h-full">
+                <Link href="/products" title="Browse All FastTools Products and Categories" className="text-sm font-medium text-muted-foreground hover:text-primary transition-colors flex items-center h-full">
                   Products
                 </Link>
-                <Link href="/downloaders" className="text-sm font-medium text-muted-foreground hover:text-primary transition-colors flex items-center h-full">
+                <Link href="/downloaders" title="Free Video Downloaders for YouTube, TikTok, Instagram" className="text-sm font-medium text-muted-foreground hover:text-primary transition-colors flex items-center h-full">
                   Downloaders
                 </Link>
 
-                <Link href="/ad-tools/roas-calculator" className="text-sm font-medium text-muted-foreground hover:text-primary transition-colors flex items-center h-full">
+                <Link href="/ad-tools/roas-calculator" title="Free ROAS Calculator for Advertising ROI" className="text-sm font-medium text-muted-foreground hover:text-primary transition-colors flex items-center h-full">
                   ROAS Calculator
                 </Link>
 
-                <Link href="/contact" className="text-sm font-medium text-muted-foreground hover:text-primary transition-colors flex items-center h-full">
+                <Link href="/contact" title="Contact FastTools Support Team" className="text-sm font-medium text-muted-foreground hover:text-primary transition-colors flex items-center h-full">
                   Contact
                 </Link>
               </nav>

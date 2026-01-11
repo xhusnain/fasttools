@@ -95,6 +95,14 @@ export function createMetadata(options: MetadataOptions): Metadata & { softwareS
         siteName: SITE_NAME,
         type: "website" as const,
         locale: "en_US" as const,
+        images: [
+            {
+                url: `${BASE_URL}/android-chrome-512x512.png`,
+                width: 512,
+                height: 512,
+                alt: ogImageAlt || "FastTools - Free Online Tools",
+            }
+        ],
     }
 
 

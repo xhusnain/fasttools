@@ -1,6 +1,7 @@
 import { getAllPosts } from '@/components/blog/blog'
 import Link from 'next/link'
 import { Metadata } from 'next'
+import { createMetadata } from '@/lib/metadata-base'
 import { notFound } from 'next/navigation'
 
 export async function generateStaticParams() {
@@ -18,13 +19,11 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
     const { slug } = await params
     const categoryName = slug.split('-').map(word => word.charAt(0).toUpperCase() + word.slice(1)).join(' ')
 
-    return {
-        title: `${categoryName} Articles - Blog | FastTools`,
+    return createMetadata({
+        title: `${categoryName} Articles - Blog`,
         description: `Browse all articles in the ${categoryName} category.`,
-        alternates: {
-            canonical: `https://www.fasttools.store/blog/category/${slug}`,
-        },
-    }
+        path: `/blog/category/${slug}`,
+    })
 }
 
 export default async function CategoryPage({ params }: { params: Promise<{ slug: string }> }) {

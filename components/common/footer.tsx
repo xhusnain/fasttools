@@ -28,7 +28,7 @@ export function Footer() {
 
           {/* Brand Column */}
           <div className="col-span-2 sm:col-span-3 md:col-span-4 lg:col-span-2">
-            <Link href="/" className="inline-block mb-4">
+            <Link href="/" title="FastTools Homepage" className="inline-block mb-4">
               <span className="text-xl font-bold text-foreground">FastTools</span>
             </Link>
             <p className="text-sm text-muted-foreground leading-relaxed max-w-xs mb-5">
@@ -90,7 +90,7 @@ export function Footer() {
             <ul className="space-y-2">
               {toolCategories.slice(0, 6).map((cat) => (
                 <li key={cat.href}>
-                  <Link href={cat.href} className="text-sm text-muted-foreground hover:text-primary transition-colors">
+                  <Link href={cat.href} title={`FastTools ${cat.name}`} className="text-sm text-muted-foreground hover:text-primary transition-colors">
                     {cat.name}
                   </Link>
                 </li>
@@ -104,7 +104,7 @@ export function Footer() {
             <ul className="space-y-2">
               {toolCategories.slice(6).map((cat) => (
                 <li key={cat.href}>
-                  <Link href={cat.href} className="text-sm text-muted-foreground hover:text-primary transition-colors">
+                  <Link href={cat.href} title={`FastTools ${cat.name}`} className="text-sm text-muted-foreground hover:text-primary transition-colors">
                     {cat.name}
                   </Link>
                 </li>
@@ -116,12 +116,12 @@ export function Footer() {
           <div>
             <h4 className="text-sm font-semibold text-foreground mb-4">Resources</h4>
             <ul className="space-y-2">
-              <li><Link href="/blog" className="text-sm text-muted-foreground hover:text-primary transition-colors">Blog</Link></li>
-              <li><Link href="/guides" className="text-sm text-muted-foreground hover:text-primary transition-colors">Guides</Link></li>
-              <li><Link href="/api-docs" className="text-sm text-muted-foreground hover:text-primary transition-colors">API Docs</Link></li>
-              <li><Link href="/downloaders" className="text-sm text-muted-foreground hover:text-primary transition-colors">Downloaders</Link></li>
-              <li><Link href="/products" className="text-sm text-muted-foreground hover:text-primary transition-colors">Products</Link></li>
-              <li><Link href="/faq" className="text-sm text-muted-foreground hover:text-primary transition-colors">FAQ</Link></li>
+              <li><Link href="/blog" title="Read our latest blog posts and tutorials" className="text-sm text-muted-foreground hover:text-primary transition-colors">Blog</Link></li>
+              <li><Link href="/guides" title="Guides on how to build and earn with online tools" className="text-sm text-muted-foreground hover:text-primary transition-colors">Guides</Link></li>
+              <li><Link href="/api-docs" title="FastTools API Documentation" className="text-sm text-muted-foreground hover:text-primary transition-colors">API Docs</Link></li>
+              <li><Link href="/downloaders" title="Free Video Downloaders" className="text-sm text-muted-foreground hover:text-primary transition-colors">Downloaders</Link></li>
+              <li><Link href="/products" title="Browse all FastTools products" className="text-sm text-muted-foreground hover:text-primary transition-colors">Products</Link></li>
+              <li><Link href="/faq" title="Frequently Asked Questions" className="text-sm text-muted-foreground hover:text-primary transition-colors">FAQ</Link></li>
             </ul>
           </div>
 
@@ -129,12 +129,12 @@ export function Footer() {
           <div>
             <h4 className="text-sm font-semibold text-foreground mb-4">Company</h4>
             <ul className="space-y-2">
-              <li><Link href="/about" className="text-sm text-muted-foreground hover:text-primary transition-colors">About</Link></li>
-              <li><Link href="/contact" className="text-sm text-muted-foreground hover:text-primary transition-colors">Contact</Link></li>
-              <li><Link href="/privacy-policy" className="text-sm text-muted-foreground hover:text-primary transition-colors">Privacy</Link></li>
-              <li><Link href="/terms" className="text-sm text-muted-foreground hover:text-primary transition-colors">Terms</Link></li>
-              <li><Link href="/cookie-preferences" className="text-sm text-muted-foreground hover:text-primary transition-colors">Cookies</Link></li>
-              <li><Link href="/dmca" className="text-sm text-muted-foreground hover:text-primary transition-colors">DMCA</Link></li>
+              <li><Link href="/about" title="About FastTools" className="text-sm text-muted-foreground hover:text-primary transition-colors">About</Link></li>
+              <li><Link href="/contact" title="Contact Us" className="text-sm text-muted-foreground hover:text-primary transition-colors">Contact</Link></li>
+              <li><Link href="/privacy-policy" title="Privacy Policy" className="text-sm text-muted-foreground hover:text-primary transition-colors">Privacy</Link></li>
+              <li><Link href="/terms" title="Terms of Service" className="text-sm text-muted-foreground hover:text-primary transition-colors">Terms</Link></li>
+              <li><Link href="/cookie-preferences" title="Cookie Preferences" className="text-sm text-muted-foreground hover:text-primary transition-colors">Cookies</Link></li>
+              <li><Link href="/dmca" title="DMCA Policy" className="text-sm text-muted-foreground hover:text-primary transition-colors">DMCA</Link></li>
             </ul>
           </div>
         </div>

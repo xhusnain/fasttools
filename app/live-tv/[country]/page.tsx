@@ -9,6 +9,7 @@ import { Metadata } from 'next';
 import { notFound } from 'next/navigation';
 import Link from 'next/link';
 import { ArrowLeft, Tv } from 'lucide-react';
+import { createMetadata } from '@/lib/metadata-base';
 
 interface CountryPageProps {
     params: {
@@ -37,20 +38,16 @@ export async function generateMetadata({ params }: CountryPageProps): Promise<Me
 
     const seo = generateCountrySEO(countryData.country);
 
-    return {
+    const metadata = createMetadata({
         title: seo.title,
         description: seo.description,
+        path: `/live-tv/${countryCode}`,
+        ogImageAlt: `${countryData.country.name} Live TV Channels`,
+    });
+
+    return {
+        ...metadata,
         keywords: seo.keywords,
-        openGraph: {
-            title: seo.title,
-            description: seo.description,
-            type: 'website',
-        },
-        twitter: {
-            card: 'summary_large_image',
-            title: seo.title,
-            description: seo.description,
-        },
     };
 }
 
