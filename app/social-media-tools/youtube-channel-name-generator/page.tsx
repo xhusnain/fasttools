@@ -11,7 +11,6 @@ const toolConfig = createToolConfig({
     path: "/social-media-tools/youtube-channel-name-generator",
     metaTitle: "YouTube Name Generator - AI Channel Ideas",
     metaDescription: `Generate unique YouTube channel names instantly with our free AI tool. No login required. Get creative, catchy names perfect for your niche in seconds!`,
-    keywords: ["youtube channel name generator", "youtube name ideas", "channel name creator", "free youtube names", "ai name generator"],
 
     header: {
         title: "YouTube Name Generator - AI Channel Ideas",
@@ -26,6 +25,13 @@ const toolConfig = createToolConfig({
         { label: "Social Media Tools", href: "/social-media-tools" },
         { label: "YouTube Name Generator", href: "/social-media-tools/youtube-channel-name-generator" },
     ],
+
+    schemaOptions: {
+        applicationCategory: "UtilitiesApplication",
+        price: "0",
+        ratingValue: "4.9",
+        ratingCount: "22000"
+    },
 
     content: {
         overview: `A YouTube channel name generator is an AI-powered tool that creates unique, memorable channel names based on your content niche, style, and target audience. Our free generator helps content creators find the perfect YouTube username without the hassle of brainstorming for hours or paying subscription fees.

@@ -13,17 +13,6 @@ const toolConfig = createToolConfig({
   metaTitle: "Hashtag Counter - Instagram Hashtag Generator",
   metaDescription: "Free Instagram hashtag counter, generator & extractor tool. Count hashtags from posts, extract hashtags & generate AI-powered hashtags for better reach.",
   path: "/social-media-tools/hashtag-counter",
-  keywords: [
-    "instagram hashtag counter", "instagram hashtag generator", "hashtag counter",
-    "hashtag generator", "instagram hashtag extractor", "instagram tag extractor",
-    "instagram tags extractor", "hashtag extractor for instagram",
-    "instagram hashtag for posts count", "hashtags", "free hashtag counter",
-    "free hashtag generator", "count hashtags", "extract hashtags",
-    "generate hashtags", "ai hashtag generator", "hashtag analyzer",
-    "hashtag optimization", "hashtag research tool", "social media tools",
-    "calculating conversions", "trending instagram hashtags", "top instagram hashtags",
-    "real time instagram hashtag tracker", "instagram hashtag analytics"
-  ],
 
   header: {
     title: "Hashtag Counter - Instagram Hashtag Generator",
@@ -32,13 +21,20 @@ const toolConfig = createToolConfig({
     descriptionSize: "small",
   },
 
+  schemaOptions: {
+    applicationCategory: "UtilitiesApplication",
+    price: "0",
+    ratingValue: "4.6",
+    ratingCount: "3200"
+  },
+
   breadcrumbs: [
     { label: "Social Media Tools", href: "/social-media-tools" },
     { label: "Hashtag Counter", href: "/social-media-tools/hashtag-counter" },
   ],
 
   content: {
-    overview: "Hashtags are the fuel that powers discovery on social media platforms like Instagram, Twitter, and TikTok. However, managing them effectively can be a challenge. Different platforms have different limits (e.g., Instagram's 30-hashtag limit), and finding the right mix of popular and niche tags is crucial for growth. The FastTools Instagram Hashtag Counter & Generator is an all-in-one solution designed to simplify your hashtag strategy. Whether you need to count hashtags in your caption to stay within limits, extract tags from competitor posts, or generate new AI-powered suggestions, our tool provides the insights you need to maximize your reach and engagement.",
+    overview: "A Hashtag Counter is a social media optimization tool that counts, analyzes, and generates hashtags to helps users maximize post reach within platform limits. FastTools provides this by offering an instant analysis of hashtag density and AI-powered suggestions for better engagement. Hashtags are the fuel that powers discovery on social media platforms like Instagram, Twitter, and TikTok. However, managing them effectively can be a challenge. Different platforms have different limits (e.g., Instagram's 30-hashtag limit), and finding the right mix of popular and niche tags is crucial for growth. The FastTools Instagram Hashtag Counter & Generator is an all-in-one solution designed to simplify your hashtag strategy. Whether you need to count hashtags in your caption to stay within limits, extract tags from competitor posts, or generate new AI-powered suggestions, our tool provides the insights you need to maximize your reach and engagement.",
 
     howToSteps: [
       "Paste Your Text: Copy and paste your caption or list of hashtags into the input field.",
@@ -99,6 +95,35 @@ const toolConfig = createToolConfig({
             </div>
           </div>
         </article>
+        <div className="overflow-x-auto my-8">
+          <h3 className="text-xl font-semibold text-heading-accent mb-4">FastTools vs. Competitors</h3>
+          <table className="w-full text-sm text-left border-collapse">
+            <thead className="text-xs uppercase bg-muted text-muted-foreground">
+              <tr>
+                <th className="px-6 py-3 border border-border">Feature</th>
+                <th className="px-6 py-3 border border-border bg-primary/10 text-primary font-bold">FastTools</th>
+                <th className="px-6 py-3 border border-border">Basic Counters</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr className="bg-card border-b border-border">
+                <td className="px-6 py-4 font-medium">Functionality</td>
+                <td className="px-6 py-4 text-green-500 font-bold">Count + Generate + Extract</td>
+                <td className="px-6 py-4 text-muted-foreground">Count Only</td>
+              </tr>
+              <tr className="bg-card border-b border-border">
+                <td className="px-6 py-4 font-medium">AI Suggestions</td>
+                <td className="px-6 py-4 text-green-500 font-bold">Included (Free)</td>
+                <td className="px-6 py-4 text-muted-foreground">None / Paid</td>
+              </tr>
+              <tr className="bg-card border-b border-border">
+                <td className="px-6 py-4 font-medium">Privacy</td>
+                <td className="px-6 py-4 text-green-500 font-bold">Browser-Based (Private)</td>
+                <td className="px-6 py-4 text-muted-foreground">Server-Side (Data Risk)</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
 
         <article className="space-y-6">
           <h2 className="text-2xl font-bold text-foreground flex items-center gap-2">

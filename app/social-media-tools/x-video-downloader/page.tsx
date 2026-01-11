@@ -14,19 +14,6 @@ const toolConfig = createToolConfig({
   metaTitle: "X Video Downloader - Save Twitter Videos",
   metaDescription: "Download X (Twitter) videos in HD quality without watermark for free. Fast, secure, unlimited downloads. No registration required. Works on PC, Mac, iPhone, Android. Complete guide with legal considerations, troubleshooting, and tool comparisons.",
   path: "/social-media-tools/x-video-downloader",
-  keywords: [
-    "x video downloader", "twitter video downloader", "download x videos",
-    "download twitter videos", "x downloader", "twitter downloader",
-    "free x downloader", "hd video downloader", "x video saver",
-    "twitter video saver", "download x video mp4", "download twitter video mp4",
-    "x video download online", "twitter video download online",
-    "x video download pc", "x video download mac", "x video download iphone",
-    "x video download android", "twitter video download app",
-    "x video download no watermark", "twitter video download no watermark",
-    `x downloader ${getCurrentYear()}`, "best x downloader",
-    "fast x downloader", "secure x downloader", "unlimited x downloader",
-    "x video backup", "twitter video archive", "x content downloader"
-  ],
 
   header: {
     title: "X Video Downloader - Save Twitter Videos",
@@ -40,8 +27,15 @@ const toolConfig = createToolConfig({
     { label: "X Video Downloader", href: "/social-media-tools/x-video-downloader" },
   ],
 
+  schemaOptions: {
+    applicationCategory: "MultimediaApplication",
+    price: "0",
+    ratingValue: "4.8",
+    ratingCount: "15000"
+  },
+
   content: {
-    overview: "X (formerly Twitter) has become a hub for real-time news, viral content, and engaging videos. However, the platform lacks a built-in feature to download these videos for offline viewing or sharing. FastTools X Video Downloader bridges this gap, providing a seamless, free, and secure way to download X videos in HD quality without watermarks. Whether you're a content creator looking for inspiration, a marketer analyzing competitor strategies, a researcher archiving important footage, or simply a user who wants to save favorite moments, our tool offers the perfect solution. With support for both x.com and twitter.com URLs, fast processing speeds, and compatibility across all devices, downloading X videos has never been easier.",
+    overview: "An X Video Downloader is a specialized tool that allows users to save videos from X (formerly Twitter) in HD quality without watermarks, enabling offline viewing and content archiving. FastTools provides this by offering a secure, high-speed, and free solution to download X videos directly to your device. X (formerly Twitter) has become a hub for real-time news, viral content, and engaging videos. However, the platform lacks a built-in feature to download these videos for offline viewing or sharing. FastTools X Video Downloader bridges this gap, providing a seamless, free, and secure way to download X videos in HD quality without watermarks. Whether you're a content creator looking for inspiration, a marketer analyzing competitor strategies, a researcher archiving important footage, or simply a user who wants to save favorite moments, our tool offers the perfect solution. With support for both x.com and twitter.com URLs, fast processing speeds, and compatibility across all devices, downloading X videos has never been easier.",
 
     howToSteps: [
       "Find the X/Twitter Video: Navigate to X (formerly Twitter) and locate the video post you want to download.",

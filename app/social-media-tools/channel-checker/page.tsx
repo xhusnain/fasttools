@@ -39,7 +39,7 @@ const toolConfig = createToolConfig({
   ],
 
   content: {
-    overview: "Welcome to the ultimate **3-in-1 YouTube toolkit** for creators! Our comprehensive platform combines three essential features: **Channel Name Checker** for bulk availability testing, **Handle & URL Checker** to verify @handle availability with smart variations, and **Keyword SEO Analysis** to score your name's search potential. Whether you're launching a new channel, rebranding, or optimizing for discoverability, this **YouTube handle checker** and **channel name SEO analyzer** gives you everything you need. Generate 100+ AI-powered name ideas, check if your @handle is taken, and get actionable SEO recommendations—all completely free with no registration required.",
+    overview: "A **YouTube Channel Checker** is a comprehensive utility designed to verify the availability of channel names and handles across the YouTube platform. This 3-in-1 toolkit combines bulk availability testing, smart handle verification (@handle), and competitive SEO analysis to help creators secure their unique digital identity. Whether launching a new brand or rebranding an existing channel, this tool ensures your desired name is free, SEO-friendly, and ready for registration without requiring any signup.",
 
     howToSteps: [
       "Enter Name: Type your desired channel name into the 'YouTube Channel Name Availability Check' box.",

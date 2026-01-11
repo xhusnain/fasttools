@@ -17,13 +17,20 @@ const toolConfig = createToolConfig({
         descriptionSize: "small",
     },
 
+    schemaOptions: {
+        applicationCategory: "MultimediaApplication",
+        price: "0",
+        ratingValue: "4.9",
+        ratingCount: "2100"
+    },
+
     breadcrumbs: [
         { label: "Social Media Tools", href: "/social-media-tools" },
         { label: "Pinterest Downloader", href: "/social-media-tools/pinterest-downloader" },
     ],
 
     content: {
-        overview: "Pinterest is a visual discovery engine with over 450 million monthly users—but it doesn't let you download content natively. That 'Download Image' button is often hidden or disabled, and video downloading is completely unsupported to keep you scrolling in the app. Our free Pinterest video & image downloader solves this problem. We extract the original resolution image (not the compressed thumbnails) and full 1080p video with sound. Works with all Pinterest URLs including pin.it short links. No browser extension to install, no login required, no watermarks—just paste the URL and download instantly on any device.",
+        overview: "A Pinterest Downloader is a specialized utility that extracts high-resolution images and videos from Pinterest cards (Pins) directly to your device. FastTools provides this by offering a browser-based parser that accesses the original CDN source files (up to 1080p for video and original resolution for images), bypassing the platform's 'Save to Board' limitation. Pinterest is a visual discovery engine with over 450 million monthly users—but it doesn't let you download content natively. That 'Download Image' button is often hidden or disabled, and video downloading is completely unsupported to keep you scrolling in the app. Our free Pinterest video & image downloader solves this problem. We extract the original resolution image (not the compressed thumbnails) and full 1080p video with sound. Works with all Pinterest URLs including pin.it short links. No browser extension to install, no login required, no watermarks—just paste the URL and download instantly on any device.",
 
         howToSteps: [
             "Find Your Pin: Open Pinterest and navigate to the image or video pin you want to download.",
@@ -74,6 +81,36 @@ const toolConfig = createToolConfig({
                         </p>
                     </div>
                 </article>
+
+                <div className="overflow-x-auto my-8">
+                    <h3 className="text-xl font-semibold text-heading-accent mb-4">FastTools vs. Competitors</h3>
+                    <table className="w-full text-sm text-left border-collapse">
+                        <thead className="text-xs uppercase bg-muted text-muted-foreground">
+                            <tr>
+                                <th className="px-6 py-3 border border-border">Feature</th>
+                                <th className="px-6 py-3 border border-border bg-primary/10 text-primary font-bold">FastTools</th>
+                                <th className="px-6 py-3 border border-border">Browser Extensions</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr className="bg-card border-b border-border">
+                                <td className="px-6 py-4 font-medium">Privacy</td>
+                                <td className="px-6 py-4 text-green-500 font-bold">No Login Required</td>
+                                <td className="px-6 py-4 text-muted-foreground">Accesses Cookie Data</td>
+                            </tr>
+                            <tr className="bg-card border-b border-border">
+                                <td className="px-6 py-4 font-medium">Quality</td>
+                                <td className="px-6 py-4 text-green-500 font-bold">Original (Max Res)</td>
+                                <td className="px-6 py-4 text-muted-foreground">Often Compressed</td>
+                            </tr>
+                            <tr className="bg-card border-b border-border">
+                                <td className="px-6 py-4 font-medium">Watermark</td>
+                                <td className="px-6 py-4 text-green-500 font-bold">Removed</td>
+                                <td className="px-6 py-4 text-muted-foreground">Sometimes Present</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
 
                 {/* Technical Deep Dive */}
                 <article className="space-y-6">

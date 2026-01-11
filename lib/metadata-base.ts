@@ -329,7 +329,7 @@ export function createSoftwareAppSchema(options: SoftwareAppSchemaOptions) {
 
     const schema: any = {
         "@context": "https://schema.org",
-        "@type": "SoftwareApplication",
+        "@type": "WebApplication",
         "name": appName,
         "applicationCategory": applicationCategory,
         "operatingSystem": operatingSystem,

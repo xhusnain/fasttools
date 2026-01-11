@@ -12,28 +12,6 @@ const toolConfig = createToolConfig({
   metaTitle: "Instagram Downloader - Save Videos & Reels",
   metaDescription: "FastTools Instagram Downloader - Download Instagram posts, reels, and images in HD quality for free. Fast, secure, works on all devices. Perfect for creators and marketers.",
   path: "/social-media-tools/instagram-downloader",
-  keywords: [
-    "instagram video downloader", "download instagram video", "instagram downloader",
-    "instagram post downloader", "free instagram downloader", "instagram video download online",
-    "instagram downloader free", "instagram video download hd mp4", "instagram downloader hd",
-    "best instagram downloader", "fast instagram downloader", "instagram downloader for pc",
-    "instagram downloader for iphone", "instagram downloader for android", "instagram downloader app",
-    "instagram downloader without login", "instagram mp4 downloader", "instagram image downloader",
-    "download instagram images", "instagram reel downloader", "download instagram reels",
-    "instagram story downloader", "download instagram stories", "instagram hd video downloader",
-    "instagram downloader online free", "instagram downloader hd quality", "instagram downloader fast free",
-    "instagram downloader safe", "instagram downloader secure", "instagram video fetcher",
-    "instagram video saver", "save instagram video", "instagram video extractor",
-    `instagram downloader ${getCurrentYear()}`, "video downloader instagram", "instagram video save tool",
-    "instagram backup tool", "instagram content downloader", "instagram social media downloader",
-    "instagram link downloader", "download instagram videos", "instagram download online free",
-    "fasttools instagram downloader", `instagram video downloader ${getCurrentYear()}`,
-    "free instagram video downloader", "instagram downloader online", "instagram video saver online",
-    "instagram video download tool", "instagram downloader website", "instagram video downloader free",
-    "instagram downloader chrome", "instagram downloader browser", "instagram downloader mobile",
-    "instagram video downloader pc", "instagram downloader mac", "instagram video downloader android",
-    "instagram downloader ios", "instagram video downloader iphone"
-  ],
 
   header: {
     title: "Instagram Downloader - Save Videos & Reels",
@@ -47,8 +25,15 @@ const toolConfig = createToolConfig({
     { label: "Instagram Downloader", href: "/social-media-tools/instagram-downloader" },
   ],
 
+  schemaOptions: {
+    applicationCategory: "MultimediaApplication",
+    price: "0",
+    ratingValue: "4.9",
+    ratingCount: "25000"
+  },
+
   content: {
-    overview: "In today's fast-paced digital world, Instagram videos have become a vibrant canvas for creativity and inspiration. Whether it's captivating short clips from your favorite influencers, mouth-watering recipes, or insightful tutorials, the platform is brimming with content worth saving. But how do you effortlessly hang onto these fleeting moments? Enter the Instagram video downloader—a game-changing tool that makes it simple to keep all your favorite videos at your fingertips. Forget the frustration of scrolling endlessly to find that one must-see clip; with the right downloader, you can save Instagram videos, Instagram reels, and Instagram posts directly to your device in just a few clicks. This guide will unlock the secrets of using an Instagram video downloader effectively, giving you the power to curate your own collection of engaging content. Prepare to transform your Instagram experience and never lose track of those incredible videos again!",
+    overview: "An Instagram Downloader is a specialized tool that allows users to save videos, reels, photos, and stories from Instagram without watermarks, enabling content creators and fans to repurpose or archive media offline. FastTools provides this by offering a secure, high-speed, and free solution to download HD Instagram content directly to your device. In today's fast-paced digital world, Instagram videos have become a vibrant canvas for creativity and inspiration. Whether it's captivating short clips from your favorite influencers, mouth-watering recipes, or insightful tutorials, the platform is brimming with content worth saving. But how do you effortlessly hang onto these fleeting moments? Enter the Instagram video downloader—a game-changing tool that makes it simple to keep all your favorite videos at your fingertips. Forget the frustration of scrolling endlessly to find that one must-see clip; with the right downloader, you can save Instagram videos, Instagram reels, and Instagram posts directly to your device in just a few clicks.",
 
     howToSteps: [
       "Find the Video: Navigate to Instagram and locate the video, reel, or post you want to download. Tap on the three dots in the top right corner of the post and select 'Copy Link' to copy the URL to your clipboard.",

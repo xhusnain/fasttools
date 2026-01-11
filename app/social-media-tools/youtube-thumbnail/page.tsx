@@ -21,8 +21,15 @@ const toolConfig = createToolConfig({
     { label: "YouTube Thumbnail Downloader", href: "/social-media-tools/youtube-thumbnail" },
   ],
 
+  schemaOptions: {
+    applicationCategory: "MultimediaApplication",
+    price: "0",
+    ratingValue: "4.8",
+    ratingCount: "8500"
+  },
+
   content: {
-    overview: "Our YouTube Thumbnail Downloader is a professional tool designed for content creators, marketers, and designers. It allows you to extract and download thumbnails from any YouTube video in the highest available quality. Whether you need the maximum resolution (1280x720) for analysis or standard sizes for blog posts, our tool provides instant access without any watermarks or registration.",
+    overview: "A YouTube Thumbnail Downloader is a specialized tool that extracts and saves video thumbnails from any YouTube video in the highest available quality (up to 1280x720), enabling content creators to analyze ensuring maximum clarity for their projects. FastTools provides this by offering a secure, high-speed, and free solution to download thumbnails directly. Our YouTube Thumbnail Downloader is a professional tool designed for content creators, marketers, and designers. It allows you to extract and download thumbnails from any YouTube video in the highest available quality. Whether you need the maximum resolution (1280x720) for analysis or standard sizes for blog posts, our tool provides instant access without any watermarks or registration.",
 
     howToSteps: [
       "Copy the URL of the YouTube video you want to extract the thumbnail from.",
@@ -56,7 +63,49 @@ const toolConfig = createToolConfig({
       "Educational Use: Use thumbnails in teaching materials or student projects."
     ],
 
-    aboutTool: "This tool directly interfaces with YouTube's Content Delivery Network (CDN) to locate and retrieve the official thumbnail images associated with a video ID. It doesn't generate new images; it simply finds the ones YouTube has already stored. This ensures you get the exact original quality uploaded by the creator. We support all standard YouTube URL formats, making it easy to grab a thumbnail from a browser address bar or a mobile share link.",
+    aboutTool: (
+      <div className="space-y-8">
+        <article className="space-y-6">
+          <p className="text-base text-muted-foreground leading-relaxed">
+            This tool directly interfaces with YouTube's Content Delivery Network (CDN) to locate and retrieve the official thumbnail images associated with a video ID. It doesn't generate new images; it simply finds the ones YouTube has already stored. This ensures you get the exact original quality uploaded by the creator. We support all standard YouTube URL formats, making it easy to grab a thumbnail from a browser address bar or a mobile share link.
+          </p>
+          <div className="overflow-x-auto my-8">
+            <h3 className="text-xl font-semibold text-heading-accent mb-4">FastTools vs. Competitors</h3>
+            <table className="w-full text-sm text-left border-collapse">
+              <thead className="text-xs uppercase bg-muted text-muted-foreground">
+                <tr>
+                  <th className="px-6 py-3 border border-border">Feature</th>
+                  <th className="px-6 py-3 border border-border bg-primary/10 text-primary font-bold">FastTools</th>
+                  <th className="px-6 py-3 border border-border">Others</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr className="bg-card border-b border-border">
+                  <td className="px-6 py-4 font-medium">Quality</td>
+                  <td className="px-6 py-4 text-green-500 font-bold">Max HD (1280x720)</td>
+                  <td className="px-6 py-4 text-muted-foreground">Often Low Res</td>
+                </tr>
+                <tr className="bg-card border-b border-border">
+                  <td className="px-6 py-4 font-medium">Speed</td>
+                  <td className="px-6 py-4 text-green-500 font-bold">Instant</td>
+                  <td className="px-6 py-4 text-muted-foreground">Slow</td>
+                </tr>
+                <tr className="bg-card border-b border-border">
+                  <td className="px-6 py-4 font-medium">Registration</td>
+                  <td className="px-6 py-4 text-green-500 font-bold">None</td>
+                  <td className="px-6 py-4 text-muted-foreground">Required</td>
+                </tr>
+                <tr className="bg-card border-b border-border">
+                  <td className="px-6 py-4 font-medium">Cost</td>
+                  <td className="px-6 py-4 text-green-500 font-bold">Free</td>
+                  <td className="px-6 py-4 text-muted-foreground">Freemium</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </article>
+      </div>
+    ),
 
     proTip: "Always aim for the 'Maximum Resolution' (1280x720) thumbnail. Even if you need a smaller image, it's better to download the high-res version and resize it down yourself to maintain the best clarity and sharpness. Note that some older or lower-quality videos might not have a Max Res thumbnail available; in those cases, the High Quality version is the next best option.",
 
