@@ -303,6 +303,7 @@ export interface SoftwareAppSchemaOptions {
     alternateName?: string
     featureList?: string[]
     version?: string
+    softwareRequirements?: string
 }
 
 export function createSoftwareAppSchema(options: SoftwareAppSchemaOptions) {
@@ -319,7 +320,8 @@ export function createSoftwareAppSchema(options: SoftwareAppSchemaOptions) {
         ratingCount = "50000",
         alternateName,
         featureList,
-        version = "2.0"
+        version = "2.0",
+        softwareRequirements
     } = options
 
     // Use provided name, or extract from title, or use empty string
@@ -380,6 +382,10 @@ export function createSoftwareAppSchema(options: SoftwareAppSchemaOptions) {
 
     if (featureList && featureList.length > 0) {
         schema.featureList = featureList
+    }
+
+    if (softwareRequirements) {
+        schema.softwareRequirements = softwareRequirements
     }
 
     return schema
