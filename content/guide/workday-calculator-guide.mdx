@@ -1,0 +1,1010 @@
+---
+title: "Build a Workday Calculator in React: Complete Developer Guide"
+description: "Master business day calculations and date arithmetic. Learn to build a workday calculator that handles weekends, holidays, and project deadline planning in React."
+category: "Developer Tools"
+author: "FastTools Team"
+date: "2025-01-11"
+order: 73
+tags: ["Date", "React", "Business", "Calendar", "TypeScript", "Project Management"]
+keywords: ["workday calculator", "business day calculator", "working days between dates", "exclude weekends", "holiday calculator", "project deadline calculator", "react date calculator"]
+---
+
+## Build a Professional Workday Calculator 📅
+
+Calculating business days is essential for project management, legal deadlines, payroll systems, and countless other applications. Unlike simple date arithmetic, workday calculations must account for weekends, holidays, and sometimes even company-specific non-working days.
+
+In this comprehensive guide, we'll build a robust workday calculator that handles all these complexities while remaining flexible enough for different business needs.
+
+---
+
+## Understanding Business Day Calculations 🧠
+
+Before writing code, let's understand what makes workday calculations challenging.
+
+### What Defines a "Workday"?
+
+A workday (or business day) typically excludes:
+- **Weekends**: Saturday and Sunday in most Western countries
+- **Public Holidays**: Country-specific days off
+- **Company Holidays**: Organization-specific closures
+- **Regional Variations**: Some countries use Friday-Saturday weekends
+
+### Common Use Cases
+
+| Application | Requirement |
+|-------------|-------------|
+| Project Management | "Delivery in 10 business days" |
+| Legal Deadlines | "Response due within 5 working days" |
+| Payroll | "Payment on the 15th or next business day" |
+| Shipping | "Estimated arrival: 3-5 business days" |
+| Banking | "Funds available in 2 business days" |
+| HR Systems | "Vacation accrual over working days" |
+
+### The Two Main Calculations
+
+1. **Add/Subtract Business Days**: Starting from a date, find a date N business days in the future or past
+2. **Count Business Days**: Calculate how many business days exist between two dates
+
+---
+
+## Step 1: Core Calculation Logic 🧮
+
+Let's build the fundamental functions for workday calculations:
+
+```typescript
+interface WorkdayOptions {
+  excludeWeekends?: boolean;
+  holidays?: Date[];
+  weekendDays?: number[]; // 0 = Sunday, 1 = Monday, ..., 6 = Saturday
+}
+
+const DEFAULT_OPTIONS: WorkdayOptions = {
+  excludeWeekends: true,
+  holidays: [],
+  weekendDays: [0, 6] // Sunday and Saturday
+};
+
+function isWeekend(date: Date, weekendDays: number[]): boolean {
+  return weekendDays.includes(date.getDay());
+}
+
+function isHoliday(date: Date, holidays: Date[]): boolean {
+  const dateString = date.toISOString().split('T')[0];
+  return holidays.some(
+    holiday => holiday.toISOString().split('T')[0] === dateString
+  );
+}
+
+function isWorkday(date: Date, options: WorkdayOptions = DEFAULT_OPTIONS): boolean {
+  const { excludeWeekends, holidays, weekendDays } = { ...DEFAULT_OPTIONS, ...options };
+  
+  // Check if it's a weekend
+  if (excludeWeekends && isWeekend(date, weekendDays!)) {
+    return false;
+  }
+  
+  // Check if it's a holiday
+  if (holidays && isHoliday(date, holidays)) {
+    return false;
+  }
+  
+  return true;
+}
+
+function addWorkdays(
+  startDate: Date,
+  days: number,
+  options: WorkdayOptions = DEFAULT_OPTIONS
+): Date {
+  const result = new Date(startDate);
+  const increment = days >= 0 ? 1 : -1;
+  let remaining = Math.abs(days);
+  
+  while (remaining > 0) {
+    result.setDate(result.getDate() + increment);
+    
+    if (isWorkday(result, options)) {
+      remaining--;
+    }
+  }
+  
+  return result;
+}
+
+function countWorkdays(
+  startDate: Date,
+  endDate: Date,
+  options: WorkdayOptions = DEFAULT_OPTIONS
+): number {
+  // Ensure start is before end
+  const [from, to] = startDate <= endDate 
+    ? [new Date(startDate), new Date(endDate)]
+    : [new Date(endDate), new Date(startDate)];
+  
+  let count = 0;
+  const current = new Date(from);
+  
+  // Don't count the start date, only dates in between and the end date
+  while (current < to) {
+    current.setDate(current.getDate() + 1);
+    
+    if (isWorkday(current, options)) {
+      count++;
+    }
+  }
+  
+  return startDate <= endDate ? count : -count;
+}
+```
+
+---
+
+## Step 2: Optimized Algorithm for Large Date Ranges ⚡
+
+The simple loop approach works for small ranges, but counting business days between dates years apart can be slow. Here's an optimized version:
+
+```typescript
+function countWorkdaysOptimized(
+  startDate: Date,
+  endDate: Date,
+  options: WorkdayOptions = DEFAULT_OPTIONS
+): number {
+  const start = new Date(startDate);
+  const end = new Date(endDate);
+  
+  // Normalize to midnight
+  start.setHours(0, 0, 0, 0);
+  end.setHours(0, 0, 0, 0);
+  
+  const totalDays = Math.floor(
+    (end.getTime() - start.getTime()) / (24 * 60 * 60 * 1000)
+  );
+  
+  if (totalDays <= 0) return 0;
+  
+  // Calculate complete weeks
+  const completeWeeks = Math.floor(totalDays / 7);
+  const remainingDays = totalDays % 7;
+  
+  // Each complete week has 5 workdays (assuming standard weekend)
+  const workdaysPerWeek = 7 - (options.weekendDays?.length || 2);
+  let workdays = completeWeeks * workdaysPerWeek;
+  
+  // Add remaining partial week
+  const tempDate = new Date(start);
+  tempDate.setDate(tempDate.getDate() + completeWeeks * 7);
+  
+  for (let i = 0; i < remainingDays; i++) {
+    tempDate.setDate(tempDate.getDate() + 1);
+    if (!isWeekend(tempDate, options.weekendDays || [0, 6])) {
+      workdays++;
+    }
+  }
+  
+  // Subtract holidays that fall on workdays
+  if (options.holidays) {
+    for (const holiday of options.holidays) {
+      if (holiday >= start && holiday <= end) {
+        if (!isWeekend(holiday, options.weekendDays || [0, 6])) {
+          workdays--;
+        }
+      }
+    }
+  }
+  
+  return workdays;
+}
+```
+
+### Performance Comparison
+
+| Date Range | Simple Loop | Optimized |
+|------------|-------------|-----------|
+| 1 week | ~7 iterations | ~2 calculations |
+| 1 month | ~30 iterations | ~6 calculations |
+| 1 year | ~365 iterations | ~53 calculations |
+| 10 years | ~3,650 iterations | ~522 calculations |
+
+---
+
+## Step 3: Holiday Data Management 📋
+
+Managing holiday data is crucial for accurate workday calculations.
+
+### Hardcoded Holiday Lists
+
+```typescript
+interface Holiday {
+  name: string;
+  date: Date;
+  type: "federal" | "state" | "company";
+}
+
+function getUSFederalHolidays(year: number): Holiday[] {
+  const holidays: Holiday[] = [
+    { name: "New Year's Day", date: new Date(year, 0, 1), type: "federal" },
+    { name: "Independence Day", date: new Date(year, 6, 4), type: "federal" },
+    { name: "Veterans Day", date: new Date(year, 10, 11), type: "federal" },
+    { name: "Christmas Day", date: new Date(year, 11, 25), type: "federal" }
+  ];
+  
+  // Add calculated holidays
+  holidays.push({
+    name: "Martin Luther King Jr. Day",
+    date: getNthWeekdayOfMonth(year, 0, 1, 3), // 3rd Monday of January
+    type: "federal"
+  });
+  
+  holidays.push({
+    name: "Presidents' Day",
+    date: getNthWeekdayOfMonth(year, 1, 1, 3), // 3rd Monday of February
+    type: "federal"
+  });
+  
+  holidays.push({
+    name: "Memorial Day",
+    date: getLastWeekdayOfMonth(year, 4, 1), // Last Monday of May
+    type: "federal"
+  });
+  
+  holidays.push({
+    name: "Labor Day",
+    date: getNthWeekdayOfMonth(year, 8, 1, 1), // 1st Monday of September
+    type: "federal"
+  });
+  
+  holidays.push({
+    name: "Thanksgiving",
+    date: getNthWeekdayOfMonth(year, 10, 4, 4), // 4th Thursday of November
+    type: "federal"
+  });
+  
+  return holidays;
+}
+
+function getNthWeekdayOfMonth(
+  year: number,
+  month: number,
+  weekday: number,
+  n: number
+): Date {
+  const firstDay = new Date(year, month, 1);
+  let dayOffset = weekday - firstDay.getDay();
+  if (dayOffset < 0) dayOffset += 7;
+  
+  const date = new Date(year, month, 1 + dayOffset + (n - 1) * 7);
+  return date;
+}
+
+function getLastWeekdayOfMonth(
+  year: number,
+  month: number,
+  weekday: number
+): Date {
+  // Start from the last day of the month
+  const lastDay = new Date(year, month + 1, 0);
+  let dayOffset = lastDay.getDay() - weekday;
+  if (dayOffset < 0) dayOffset += 7;
+  
+  return new Date(year, month + 1, -dayOffset);
+}
+```
+
+### Holiday Observed Rules
+
+When a holiday falls on a weekend, it's often observed on an adjacent weekday:
+
+```typescript
+function getObservedDate(holiday: Date): Date {
+  const day = holiday.getDay();
+  
+  if (day === 0) {
+    // Sunday → Observed Monday
+    const observed = new Date(holiday);
+    observed.setDate(observed.getDate() + 1);
+    return observed;
+  }
+  
+  if (day === 6) {
+    // Saturday → Observed Friday
+    const observed = new Date(holiday);
+    observed.setDate(observed.getDate() - 1);
+    return observed;
+  }
+  
+  return holiday;
+}
+
+function getHolidaysWithObserved(year: number): Date[] {
+  const holidays = getUSFederalHolidays(year);
+  const dates: Date[] = [];
+  
+  for (const holiday of holidays) {
+    dates.push(holiday.date);
+    
+    const observed = getObservedDate(holiday.date);
+    if (observed.getTime() !== holiday.date.getTime()) {
+      dates.push(observed);
+    }
+  }
+  
+  return dates;
+}
+```
+
+---
+
+## Step 4: Building the React Component 💻
+
+Now let's create a user-friendly workday calculator:
+
+```tsx
+"use client"
+
+import { useState, useMemo } from "react"
+import { Calendar, Calculator, Clock, ArrowRight, Plus, Minus } from "lucide-react"
+
+type CalculationType = "add" | "count"
+
+export default function WorkdayCalculator() {
+  const [calcType, setCalcType] = useState<CalculationType>("add")
+  const [startDate, setStartDate] = useState<string>("")
+  const [endDate, setEndDate] = useState<string>("")
+  const [daysToAdd, setDaysToAdd] = useState<string>("5")
+  const [excludeWeekends, setExcludeWeekends] = useState(true)
+  const [excludeHolidays, setExcludeHolidays] = useState(true)
+
+  const holidays = useMemo(() => {
+    const year = new Date().getFullYear();
+    return excludeHolidays 
+      ? [
+          ...getHolidaysWithObserved(year),
+          ...getHolidaysWithObserved(year + 1)
+        ]
+      : [];
+  }, [excludeHolidays]);
+
+  const options: WorkdayOptions = {
+    excludeWeekends,
+    holidays,
+    weekendDays: [0, 6]
+  };
+
+  const result = useMemo(() => {
+    if (calcType === "add") {
+      if (!startDate || !daysToAdd) return null;
+      
+      const start = new Date(startDate);
+      const days = parseInt(daysToAdd);
+      
+      if (isNaN(start.getTime()) || isNaN(days)) return null;
+      
+      const resultDate = addWorkdays(start, days, options);
+      const calendarDays = Math.abs(
+        Math.floor((resultDate.getTime() - start.getTime()) / (24 * 60 * 60 * 1000))
+      );
+      
+      return {
+        type: "add",
+        date: resultDate,
+        workdays: Math.abs(days),
+        calendarDays,
+        startDate: start
+      };
+    } else {
+      if (!startDate || !endDate) return null;
+      
+      const start = new Date(startDate);
+      const end = new Date(endDate);
+      
+      if (isNaN(start.getTime()) || isNaN(end.getTime())) return null;
+      
+      const workdays = countWorkdays(start, end, options);
+      const calendarDays = Math.floor(
+        (end.getTime() - start.getTime()) / (24 * 60 * 60 * 1000)
+      );
+      
+      return {
+        type: "count",
+        workdays,
+        calendarDays,
+        startDate: start,
+        endDate: end
+      };
+    }
+  }, [calcType, startDate, endDate, daysToAdd, options]);
+
+  const formatDate = (date: Date): string => {
+    return date.toLocaleDateString("en-US", {
+      weekday: "long",
+      year: "numeric",
+      month: "long",
+      day: "numeric"
+    });
+  };
+
+  return (
+    <div className="max-w-2xl mx-auto p-6 bg-white border rounded-xl shadow-lg">
+      {/* Header */}
+      <div className="flex items-center gap-3 mb-6 pb-4 border-b">
+        <div className="bg-emerald-100 p-2 rounded-lg text-emerald-700">
+          <Calendar size={24} />
+        </div>
+        <div>
+          <h2 className="text-xl font-bold text-slate-800">Workday Calculator</h2>
+          <p className="text-sm text-slate-500">Calculate business days</p>
+        </div>
+      </div>
+
+      {/* Calculation Type Toggle */}
+      <div className="flex gap-2 mb-6 p-1 bg-slate-100 rounded-lg">
+        <button
+          onClick={() => setCalcType("add")}
+          className={`flex-1 flex items-center justify-center gap-2 py-3 rounded-md transition ${
+            calcType === "add"
+              ? "bg-white shadow text-emerald-600"
+              : "text-slate-500 hover:text-slate-700"
+          }`}
+        >
+          <Plus size={18} />
+          <span className="font-medium">Add/Subtract Days</span>
+        </button>
+        <button
+          onClick={() => setCalcType("count")}
+          className={`flex-1 flex items-center justify-center gap-2 py-3 rounded-md transition ${
+            calcType === "count"
+              ? "bg-white shadow text-emerald-600"
+              : "text-slate-500 hover:text-slate-700"
+          }`}
+        >
+          <Calculator size={18} />
+          <span className="font-medium">Count Days</span>
+        </button>
+      </div>
+
+      {/* Options */}
+      <div className="flex gap-4 mb-6 p-4 bg-slate-50 rounded-lg">
+        <label className="flex items-center gap-2 cursor-pointer">
+          <input
+            type="checkbox"
+            checked={excludeWeekends}
+            onChange={(e) => setExcludeWeekends(e.target.checked)}
+            className="w-4 h-4 rounded border-slate-300 text-emerald-600 focus:ring-emerald-500"
+          />
+          <span className="text-sm text-slate-700">Exclude Weekends</span>
+        </label>
+        <label className="flex items-center gap-2 cursor-pointer">
+          <input
+            type="checkbox"
+            checked={excludeHolidays}
+            onChange={(e) => setExcludeHolidays(e.target.checked)}
+            className="w-4 h-4 rounded border-slate-300 text-emerald-600 focus:ring-emerald-500"
+          />
+          <span className="text-sm text-slate-700">Exclude US Holidays</span>
+        </label>
+      </div>
+
+      {/* Inputs */}
+      <div className="space-y-4 mb-6">
+        <div>
+          <label className="text-xs font-bold uppercase text-slate-500 mb-2 block">
+            Start Date
+          </label>
+          <input
+            type="date"
+            value={startDate}
+            onChange={(e) => setStartDate(e.target.value)}
+            className="w-full p-3 border-2 rounded-xl focus:border-emerald-500 focus:outline-none"
+          />
+        </div>
+
+        {calcType === "add" ? (
+          <div>
+            <label className="text-xs font-bold uppercase text-slate-500 mb-2 block">
+              Business Days to Add (negative to subtract)
+            </label>
+            <input
+              type="number"
+              value={daysToAdd}
+              onChange={(e) => setDaysToAdd(e.target.value)}
+              className="w-full p-3 border-2 rounded-xl font-mono focus:border-emerald-500 focus:outline-none"
+              placeholder="5"
+            />
+          </div>
+        ) : (
+          <div>
+            <label className="text-xs font-bold uppercase text-slate-500 mb-2 block">
+              End Date
+            </label>
+            <input
+              type="date"
+              value={endDate}
+              onChange={(e) => setEndDate(e.target.value)}
+              className="w-full p-3 border-2 rounded-xl focus:border-emerald-500 focus:outline-none"
+            />
+          </div>
+        )}
+      </div>
+
+      {/* Result */}
+      {result && (
+        <div className="space-y-4">
+          <div className="bg-gradient-to-r from-emerald-600 to-teal-600 text-white p-6 rounded-xl">
+            {result.type === "add" ? (
+              <div className="text-center">
+                <div className="text-emerald-200 text-sm uppercase mb-2">
+                  {parseInt(daysToAdd) >= 0 ? "Target Date" : "Past Date"}
+                </div>
+                <div className="text-2xl font-bold mb-2">
+                  {formatDate(result.date)}
+                </div>
+                <div className="text-emerald-200 text-sm">
+                  {result.workdays} business days = {result.calendarDays} calendar days
+                </div>
+              </div>
+            ) : (
+              <div className="text-center">
+                <div className="text-emerald-200 text-sm uppercase mb-2">
+                  Business Days Between
+                </div>
+                <div className="text-4xl font-bold mb-2">
+                  {result.workdays} workdays
+                </div>
+                <div className="text-emerald-200 text-sm">
+                  ({result.calendarDays} calendar days total)
+                </div>
+              </div>
+            )}
+          </div>
+
+          {/* Breakdown */}
+          <div className="grid grid-cols-2 gap-4">
+            <div className="p-4 bg-slate-50 rounded-xl text-center">
+              <div className="text-2xl font-bold text-slate-800">
+                {result.calendarDays}
+              </div>
+              <div className="text-xs text-slate-500 uppercase">Calendar Days</div>
+            </div>
+            <div className="p-4 bg-slate-50 rounded-xl text-center">
+              <div className="text-2xl font-bold text-emerald-600">
+                {result.type === "add" ? result.workdays : result.workdays}
+              </div>
+              <div className="text-xs text-slate-500 uppercase">Business Days</div>
+            </div>
+          </div>
+
+          {/* Holiday Info */}
+          {excludeHolidays && (
+            <div className="p-4 bg-amber-50 border border-amber-200 rounded-xl text-sm">
+              <div className="font-medium text-amber-800 mb-2">
+                Holidays Excluded (US Federal)
+              </div>
+              <div className="text-amber-700 text-xs">
+                New Year's, MLK Day, Presidents' Day, Memorial Day, Independence Day, 
+                Labor Day, Veterans Day, Thanksgiving, Christmas
+              </div>
+            </div>
+          )}
+        </div>
+      )}
+    </div>
+  )
+}
+```
+
+---
+
+## Step 5: Advanced Features 🚀
+
+### Multiple Country Support
+
+```typescript
+type Country = "US" | "UK" | "DE" | "FR" | "JP";
+
+interface CountryConfig {
+  weekendDays: number[];
+  getHolidays: (year: number) => Date[];
+  name: string;
+}
+
+const COUNTRY_CONFIGS: Record<Country, CountryConfig> = {
+  US: {
+    weekendDays: [0, 6],
+    getHolidays: getUSFederalHolidays,
+    name: "United States"
+  },
+  UK: {
+    weekendDays: [0, 6],
+    getHolidays: getUKBankHolidays,
+    name: "United Kingdom"
+  },
+  DE: {
+    weekendDays: [0, 6],
+    getHolidays: getGermanHolidays,
+    name: "Germany"
+  },
+  FR: {
+    weekendDays: [0, 6],
+    getHolidays: getFrenchHolidays,
+    name: "France"
+  },
+  JP: {
+    weekendDays: [0, 6],
+    getHolidays: getJapaneseHolidays,
+    name: "Japan"
+  }
+};
+
+// Middle East countries with Friday-Saturday weekend
+const MIDDLE_EAST_CONFIGS: Record<string, CountryConfig> = {
+  SA: {
+    weekendDays: [5, 6], // Friday and Saturday
+    getHolidays: getSaudiHolidays,
+    name: "Saudi Arabia"
+  }
+};
+```
+
+### Custom Holiday Lists
+
+```tsx
+function CustomHolidayManager({ onHolidaysChange }) {
+  const [customHolidays, setCustomHolidays] = useState<Date[]>([]);
+  const [newHoliday, setNewHoliday] = useState("");
+
+  const addHoliday = () => {
+    if (!newHoliday) return;
+    
+    const date = new Date(newHoliday);
+    if (!isNaN(date.getTime())) {
+      const updated = [...customHolidays, date];
+      setCustomHolidays(updated);
+      onHolidaysChange(updated);
+      setNewHoliday("");
+    }
+  };
+
+  return (
+    <div className="p-4 border rounded-lg">
+      <h4 className="font-medium mb-2">Custom Holidays</h4>
+      
+      <div className="flex gap-2 mb-4">
+        <input
+          type="date"
+          value={newHoliday}
+          onChange={(e) => setNewHoliday(e.target.value)}
+          className="flex-1 p-2 border rounded"
+        />
+        <button onClick={addHoliday} className="px-4 py-2 bg-blue-500 text-white rounded">
+          Add
+        </button>
+      </div>
+      
+      <div className="space-y-1">
+        {customHolidays.map((date, i) => (
+          <div key={i} className="flex justify-between items-center text-sm">
+            <span>{date.toLocaleDateString()}</span>
+            <button 
+              onClick={() => {
+                const updated = customHolidays.filter((_, idx) => idx !== i);
+                setCustomHolidays(updated);
+                onHolidaysChange(updated);
+              }}
+              className="text-red-500"
+            >
+              Remove
+            </button>
+          </div>
+        ))}
+      </div>
+    </div>
+  );
+}
+```
+
+### Recurring Events
+
+```typescript
+interface RecurringHoliday {
+  name: string;
+  month: number; // 0-11
+  day: number;
+  adjustForWeekend: boolean;
+}
+
+interface FloatingHoliday {
+  name: string;
+  month: number;
+  weekday: number; // 0 = Sunday, 1 = Monday, etc.
+  occurrence: number; // 1st, 2nd, 3rd, 4th, or -1 for last
+}
+
+function generateHolidaysForYears(
+  startYear: number,
+  endYear: number,
+  recurring: RecurringHoliday[],
+  floating: FloatingHoliday[]
+): Date[] {
+  const holidays: Date[] = [];
+  
+  for (let year = startYear; year <= endYear; year++) {
+    // Add recurring holidays
+    for (const holiday of recurring) {
+      let date = new Date(year, holiday.month, holiday.day);
+      
+      if (holiday.adjustForWeekend) {
+        date = getObservedDate(date);
+      }
+      
+      holidays.push(date);
+    }
+    
+    // Add floating holidays
+    for (const holiday of floating) {
+      const date = holiday.occurrence === -1
+        ? getLastWeekdayOfMonth(year, holiday.month, holiday.weekday)
+        : getNthWeekdayOfMonth(year, holiday.month, holiday.weekday, holiday.occurrence);
+      
+      holidays.push(date);
+    }
+  }
+  
+  return holidays;
+}
+```
+
+---
+
+## Real-World Applications 🌍
+
+### Project Deadline Calculator
+
+```typescript
+interface ProjectTask {
+  name: string;
+  durationDays: number;
+  dependencies: string[];
+}
+
+function calculateProjectTimeline(
+  tasks: ProjectTask[],
+  startDate: Date,
+  options: WorkdayOptions
+): Map<string, { start: Date; end: Date }> {
+  const schedule = new Map<string, { start: Date; end: Date }>();
+  const completed = new Set<string>();
+  
+  while (completed.size < tasks.length) {
+    for (const task of tasks) {
+      if (completed.has(task.name)) continue;
+      
+      // Check if dependencies are complete
+      const depsComplete = task.dependencies.every(dep => completed.has(dep));
+      if (!depsComplete) continue;
+      
+      // Calculate start date based on dependencies
+      let taskStart = new Date(startDate);
+      
+      for (const dep of task.dependencies) {
+        const depEnd = schedule.get(dep)!.end;
+        if (depEnd > taskStart) {
+          taskStart = addWorkdays(depEnd, 1, options);
+        }
+      }
+      
+      const taskEnd = addWorkdays(taskStart, task.durationDays - 1, options);
+      
+      schedule.set(task.name, { start: taskStart, end: taskEnd });
+      completed.add(task.name);
+    }
+  }
+  
+  return schedule;
+}
+
+// Example usage
+const projectTasks: ProjectTask[] = [
+  { name: "Design", durationDays: 5, dependencies: [] },
+  { name: "Development", durationDays: 10, dependencies: ["Design"] },
+  { name: "Testing", durationDays: 3, dependencies: ["Development"] },
+  { name: "Deployment", durationDays: 1, dependencies: ["Testing"] }
+];
+
+const timeline = calculateProjectTimeline(projectTasks, new Date(), options);
+```
+
+### SLA Compliance Checker
+
+```typescript
+interface Ticket {
+  id: string;
+  createdAt: Date;
+  resolvedAt: Date | null;
+  priority: "low" | "medium" | "high" | "critical";
+}
+
+const SLA_LIMITS: Record<string, number> = {
+  critical: 1,  // 1 business day
+  high: 2,      // 2 business days
+  medium: 5,    // 5 business days
+  low: 10       // 10 business days
+};
+
+function checkSLACompliance(
+  ticket: Ticket,
+  options: WorkdayOptions
+): { compliant: boolean; deadline: Date; daysRemaining: number } {
+  const limit = SLA_LIMITS[ticket.priority];
+  const deadline = addWorkdays(ticket.createdAt, limit, options);
+  
+  if (ticket.resolvedAt) {
+    const workdaysTaken = countWorkdays(ticket.createdAt, ticket.resolvedAt, options);
+    return {
+      compliant: workdaysTaken <= limit,
+      deadline,
+      daysRemaining: limit - workdaysTaken
+    };
+  }
+  
+  const workdaysElapsed = countWorkdays(ticket.createdAt, new Date(), options);
+  return {
+    compliant: workdaysElapsed <= limit,
+    deadline,
+    daysRemaining: limit - workdaysElapsed
+  };
+}
+```
+
+### Payroll Date Calculator
+
+```typescript
+function getPayDate(
+  year: number,
+  month: number,
+  dayOfMonth: number,
+  options: WorkdayOptions
+): Date {
+  let payDate = new Date(year, month, dayOfMonth);
+  
+  // If pay date falls on a non-workday, move to previous workday
+  while (!isWorkday(payDate, options)) {
+    payDate.setDate(payDate.getDate() - 1);
+  }
+  
+  return payDate;
+}
+
+function getPayrollSchedule(
+  year: number,
+  payDayOfMonth: number,
+  options: WorkdayOptions
+): Date[] {
+  const schedule: Date[] = [];
+  
+  for (let month = 0; month < 12; month++) {
+    schedule.push(getPayDate(year, month, payDayOfMonth, options));
+  }
+  
+  return schedule;
+}
+
+// Generate 2025 pay schedule for 15th of each month
+const payroll2025 = getPayrollSchedule(2025, 15, options);
+```
+
+---
+
+## Performance Considerations 📈
+
+### Caching Holiday Lists
+
+```typescript
+const holidayCache = new Map<number, Date[]>();
+
+function getHolidaysForYear(year: number): Date[] {
+  if (holidayCache.has(year)) {
+    return holidayCache.get(year)!;
+  }
+  
+  const holidays = getUSFederalHolidays(year).map(h => h.date);
+  holidayCache.set(year, holidays);
+  return holidays;
+}
+```
+
+### Web Worker for Heavy Calculations
+
+```typescript
+// workday-worker.ts
+self.onmessage = (e) => {
+  const { type, startDate, endDate, options } = e.data;
+  
+  if (type === "count") {
+    const result = countWorkdaysOptimized(
+      new Date(startDate),
+      new Date(endDate),
+      options
+    );
+    self.postMessage({ result });
+  }
+};
+
+// Main thread
+const worker = new Worker("workday-worker.ts");
+
+function countWorkdaysAsync(start: Date, end: Date): Promise<number> {
+  return new Promise((resolve) => {
+    worker.onmessage = (e) => resolve(e.data.result);
+    worker.postMessage({ type: "count", startDate: start, endDate: end });
+  });
+}
+```
+
+---
+
+## Accessibility and Internationalization ♿🌐
+
+### Screen Reader Support
+
+```tsx
+<div role="status" aria-live="polite" aria-atomic="true">
+  {result && (
+    <span className="sr-only">
+      {result.type === "add" 
+        ? `The target date is ${formatDate(result.date)}, which is ${result.workdays} business days from the start date.`
+        : `There are ${result.workdays} business days between the selected dates.`
+      }
+    </span>
+  )}
+</div>
+```
+
+### Date Format Localization
+
+```typescript
+function formatDateLocalized(date: Date, locale: string): string {
+  return new Intl.DateTimeFormat(locale, {
+    weekday: "long",
+    year: "numeric",
+    month: "long",
+    day: "numeric"
+  }).format(date);
+}
+
+// Usage
+formatDateLocalized(new Date(), "en-US"); // "Saturday, January 11, 2025"
+formatDateLocalized(new Date(), "de-DE"); // "Samstag, 11. Januar 2025"
+formatDateLocalized(new Date(), "ja-JP"); // "2025年1月11日土曜日"
+```
+
+---
+
+## Conclusion 🎉
+
+Building a workday calculator teaches you essential skills for business applications:
+
+- **Date Manipulation**: Advanced techniques beyond simple arithmetic
+- **Algorithm Optimization**: Making calculations efficient for large date ranges
+- **Data-Driven Design**: Managing holiday data across regions
+- **Real-World Complexity**: Handling edge cases like observed holidays
+
+Business day calculations appear in countless applications, from project management tools to financial systems. Understanding how to handle weekends, holidays, and regional variations gives you tools that directly apply to professional software development.
+
+---
+
+## Frequently Asked Questions
+
+**Q: How do I handle half-day holidays?**
+A: Half-days typically count as full workdays for deadline calculations. For precise tracking, you'd need to work with hours rather than days.
+
+**Q: What about time zones?**
+A: Always normalize dates to midnight in the relevant business timezone. Use libraries like date-fns-tz or Luxon for timezone handling.
+
+**Q: How accurate is the holiday data?**
+A: Holiday dates can change year-to-year (especially movable holidays). Consider using an API like Calendarific for production applications.
+
+**Q: Can I use this for shift-based work schedules?**
+A: This calculator assumes standard day-based work weeks. Shift work requires tracking specific hours and shift patterns.
+
+**Q: How do I handle different office locations?**
+A: Create separate holiday lists for each office location and allow users to select their applicable region.
