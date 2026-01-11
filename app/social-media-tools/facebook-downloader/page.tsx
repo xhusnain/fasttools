@@ -31,7 +31,16 @@ const toolConfig = createToolConfig({
     applicationCategory: "MultimediaApplication",
     price: "0",
     ratingValue: "4.8",
-    ratingCount: "12000"
+    ratingCount: "12000",
+    alternateName: "Facebook Video Saver, FB Downloader, Facebook Clip Saver",
+    featureList: [
+      "HD Download",
+      "1080p Support",
+      "Private Video Support",
+      "No Watermark",
+      "Unlimited Downloads"
+    ],
+    softwareRequirements: "Modern Web Browser (Chrome, Safari, Edge, Firefox)"
   },
 
   content: {
@@ -298,6 +307,16 @@ const toolConfig = createToolConfig({
                 <li><strong>Browser Issues:</strong> Clear cache or try different browser.</li>
               </ul>
             </div>
+          </div>
+
+          <div className="p-6 rounded-lg bg-primary/5 border border-primary/20 mt-6">
+            <h4 className="font-semibold text-primary mb-3 flex items-center gap-2">
+              <Target className="h-5 w-5" />
+              Maximize Your Social Strategy
+            </h4>
+            <p className="text-sm text-muted-foreground leading-relaxed">
+              Once you've downloaded your videos, use our <a href="/social-media-tools/hashtag-counter" className="text-primary hover:underline">Hashtag Counter</a> to find the best tags for reposting, or try our <a href="/social-media-tools/youtube-channel-name-generator" className="text-primary hover:underline">YouTube Channel Name Generator</a> if you're starting a new curation channel.
+            </p>
           </div>
         </article>
 

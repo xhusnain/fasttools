@@ -31,7 +31,16 @@ const toolConfig = createToolConfig({
     applicationCategory: "MultimediaApplication",
     price: "0",
     ratingValue: "4.8",
-    ratingCount: "15000"
+    ratingCount: "15000",
+    alternateName: "Twitter Video Downloader, X Saver, Tweet Video Saver",
+    featureList: [
+      "No Watermark",
+      "HD Quality",
+      "Gif Support",
+      "Tweet Media Saver",
+      "Anonymous"
+    ],
+    softwareRequirements: "Modern Web Browser (Chrome, Safari, Edge, Firefox)"
   },
 
   content: {
@@ -255,6 +264,13 @@ const toolConfig = createToolConfig({
                 <li>Clear browser cache and cookies</li>
               </ul>
             </div>
+          </div>
+
+          <div className="p-4 rounded-lg bg-muted/50 border border-border mt-6">
+            <h4 className="font-semibold text-heading-accent mb-2">Complete Your Social Toolkit</h4>
+            <p className="text-sm text-muted-foreground leading-relaxed">
+              Managing a multi-platform presence? Don't stop at Twitter. Use our <a href="/social-media-tools/facebook-downloader" className="text-primary hover:underline">Facebook Downloader</a> and <a href="/social-media-tools/instagram-downloader" className="text-primary hover:underline">Instagram Downloader</a> to curate content from all major networks.
+            </p>
           </div>
         </article>
 

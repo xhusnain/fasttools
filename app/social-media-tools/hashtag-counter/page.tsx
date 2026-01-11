@@ -25,7 +25,16 @@ const toolConfig = createToolConfig({
     applicationCategory: "UtilitiesApplication",
     price: "0",
     ratingValue: "4.6",
-    ratingCount: "3200"
+    ratingCount: "3200",
+    alternateName: "Instagram Tag Counter, Hashtag Generator, Social Media Tag Optimizer",
+    featureList: [
+      "Count Hashtags",
+      "Remove Duplicates",
+      "Generate Related Tags",
+      "Analyze Density",
+      "Platform Specific Limits"
+    ],
+    softwareRequirements: "Modern Web Browser"
   },
 
   breadcrumbs: [
@@ -139,6 +148,10 @@ const toolConfig = createToolConfig({
               <li className="flex items-start gap-2">
                 <CheckCircle className="h-4 w-4 text-green-500 mt-0.5 flex-shrink-0" />
                 <span><strong>Branded Hashtags:</strong> Create and use unique hashtags for your brand to build community and track user-generated content.</span>
+              </li>
+              <li className="flex items-start gap-2">
+                <CheckCircle className="h-4 w-4 text-green-500 mt-0.5 flex-shrink-0" />
+                <span><strong>Content Sourcing:</strong> Use our <a href="/social-media-tools/instagram-downloader" className="text-primary hover:underline">Instagram Downloader</a> or <a href="/social-media-tools/tiktok-downloader" className="text-primary hover:underline">TikTok Downloader</a> to save high-performing content for inspiration, then analyze their hashtags.</span>
               </li>
               <li className="flex items-start gap-2">
                 <CheckCircle className="h-4 w-4 text-green-500 mt-0.5 flex-shrink-0" />

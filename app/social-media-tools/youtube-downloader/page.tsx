@@ -26,7 +26,16 @@ const toolConfig = createToolConfig({
         applicationCategory: "MultimediaApplication",
         price: "0",
         ratingValue: "4.9",
-        ratingCount: "50000"
+        ratingCount: "50000",
+        alternateName: "YouTube Ripper, YT to MP4, YouTube Saver, YouTube Video Downloader",
+        featureList: [
+            "8K Video Support",
+            "MP3 Extraction",
+            "Shorts Downloader",
+            "No Software Required",
+            "Audio Muxing"
+        ],
+        softwareRequirements: "Modern Web Browser (Chrome, Safari, Edge, Firefox)"
     },
 
     content: {
@@ -148,6 +157,13 @@ const toolConfig = createToolConfig({
                         </p>
                         <p className="text-base text-muted-foreground leading-relaxed">
                             When a converter claims to give you "320kbps MP3," it's simply converting the lower-quality source into a larger file—this doesn't improve quality and can actually introduce audio artifacts. The smart approach is to download audio in its native format for the best quality-to-size ratio.
+                        </p>
+                    </div>
+
+                    <div className="space-y-4">
+                        <h3 className="text-xl font-semibold text-heading-accent">Complete Toolkit for Creators</h3>
+                        <p className="text-base text-muted-foreground leading-relaxed">
+                            Downloading videos is just one part of the creator journey. To truly optimize your channel, you need to analyze what works. Check out our <a href="/social-media-tools/youtube-tags" className="text-primary hover:underline">YouTube Tag Extractor</a> to spy on competitor keywords, or use the <a href="/social-media-tools/youtube-thumbnail" className="text-primary hover:underline">Thumbnail Downloader</a> to save high-res inspiration for your next video design.
                         </p>
                     </div>
                 </article>

@@ -29,7 +29,16 @@ const toolConfig = createToolConfig({
     applicationCategory: "MultimediaApplication",
     price: "0",
     ratingValue: "4.9",
-    ratingCount: "15000"
+    ratingCount: "15000",
+    alternateName: "TikTok Video Saver, TikTok Watermark Remover, TikTok to MP4",
+    featureList: [
+      "No Watermark",
+      "HD Download",
+      "MP3 Extraction",
+      "Unlimited Downloads",
+      "No Login Required"
+    ],
+    softwareRequirements: "Modern Web Browser (Chrome, Safari, Edge, Firefox)"
   },
 
   content: {
@@ -135,7 +144,7 @@ const toolConfig = createToolConfig({
           <div className="space-y-4">
             <h3 className="text-xl font-semibold text-heading-accent">How can I increase my TikTok followers and grow my audience?</h3>
             <p className="text-base text-muted-foreground leading-relaxed">
-              Growing your TikTok following requires a strategic approach focused on authentic engagement and consistent content creation. Start by identifying your niche and target audience, then create content that genuinely resonates with them. Post consistently at optimal times when your audience is most active, typically during evening hours and weekends. Use trending hashtags strategically, but avoid hashtag stuffing - focus on 3-5 relevant hashtags per post. Engage actively with your community by responding to comments, following back users who engage with your content, and participating in trending challenges. Collaborate with other creators in your niche through duets and stitches to expand your reach. Study your analytics to understand what content performs best and double down on successful formats. Remember that TikTok's algorithm favors content that keeps users on the platform longer, so create engaging videos that encourage viewers to watch until the end and interact with your content.
+              Growing your TikTok following requires a strategic approach focused on authentic engagement and consistent content creation. Start by identifying your niche and target audience, then create content that genuinely resonates with them. Post consistently at optimal times when your audience is most active, typically during evening hours and weekends. Use trending hashtags strategically—our <a href="/social-media-tools/hashtag-counter" className="text-primary hover:underline">Hashtag Counter</a> can help you find high-performing tags—but avoid hashtag stuffing. Focus on 3-5 relevant hashtags per post. Engage actively with your community by responding to comments, following back users who engage with your content, and participating in trending challenges. Collaborate with other creators in your niche through duets and stitches to expand your reach. If you're reposting content to other platforms, use our <a href="/social-media-tools/instagram-downloader" className="text-primary hover:underline">Instagram Downloader</a> to save reels for TikTok inspiration (and vice versa). Study your analytics to understand what content performs best and double down on successful formats. Remember that TikTok's algorithm favors content that keeps users on the platform longer, so create engaging videos that encourage viewers to watch until the end and interact with your content.
             </p>
           </div>
 

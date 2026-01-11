@@ -19,6 +19,9 @@ export interface UnifiedToolConfig {
         price?: string
         ratingValue?: string
         ratingCount?: string
+        alternateName?: string
+        featureList?: string[]
+        softwareRequirements?: string
     }
     header: {
         title: string

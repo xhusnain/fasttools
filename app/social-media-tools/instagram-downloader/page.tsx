@@ -29,7 +29,16 @@ const toolConfig = createToolConfig({
     applicationCategory: "MultimediaApplication",
     price: "0",
     ratingValue: "4.9",
-    ratingCount: "25000"
+    ratingCount: "25000",
+    alternateName: "Instagram Saver, Insta Downloader, IG Reel Downloader",
+    featureList: [
+      "Reels Download",
+      "Photo Download",
+      "Carousel Support",
+      "1080p Quality",
+      "Anonymous Downloading"
+    ],
+    softwareRequirements: "Modern Web Browser (Chrome, Safari, Edge, Firefox)"
   },
 
   content: {
@@ -70,7 +79,7 @@ const toolConfig = createToolConfig({
           <ul className="list-disc list-inside space-y-2 text-sm text-muted-foreground leading-relaxed mb-4 ml-4">
             <li><strong>Never Lose Valuable Content:</strong> Imagine stumbling upon a tutorial that perfectly explains a complex concept or a DIY project that you want to try out later. Without an Instagram video downloader, you might find yourself unable to locate the video when you need it most.</li>
             <li><strong>Bypass Algorithm Changes:</strong> Instagram's algorithm-driven feed means that content you love today could be buried under a mountain of new posts tomorrow. This makes it challenging to find specific videos again, especially if you didn't engage with them the first time around.</li>
-            <li><strong>Create Personal Archives:</strong> Whether you're a content creator, marketer, or simply someone who enjoys collecting interesting videos, having a repository of saved content can be incredibly useful. It allows you to draw inspiration from various sources, analyze trends, and even curate content for your own social media channels.</li>
+            <li><strong>Create Personal Archives:</strong> Whether you're a content creator, marketer, or simply someone who enjoys collecting interesting videos, having a repository of saved content can be incredibly useful. It allows you to draw inspiration from various sources, analyze trends, and even curate content for your own social media channels. (For cross-platform creators, our <a href="/social-media-tools/tiktok-downloader" className="text-primary hover:underline">TikTok Downloader</a> is the perfect companion tool).</li>
             <li><strong>Offline Access:</strong> Save Instagram videos for offline viewing, perfect for when you're traveling or have limited internet connectivity.</li>
             <li><strong>Content Organization:</strong> Organize your downloaded videos by category, making it easier to find specific content when you need it.</li>
           </ul>
