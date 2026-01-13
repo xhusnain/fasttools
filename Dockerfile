@@ -13,7 +13,7 @@ WORKDIR /app
 
 COPY package.json package-lock.json* ./
 # Use npm ci for faster, more reliable builds in CI/CD environments
-RUN npm ci
+RUN npm ci --include=optional
 
 # 2. Rebuild the source code only when needed
 FROM base AS builder
