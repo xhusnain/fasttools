@@ -9,8 +9,8 @@ import Script from "next/script"
 import { env } from "@/config/env"
 import { createMetadata, globalViewport, getWebsiteSchema } from "@/lib/metadata-base"
 import { roboto, montserrat } from "@/app/fonts"
-import { Analytics } from "@vercel/analytics/react"
-import { SpeedInsights } from "@vercel/speed-insights/next"
+
+
 
 export const viewport = globalViewport
 
@@ -141,7 +141,7 @@ export default function RootLayout({
       <head>
         {/* Resource Hints for Performance */}
         <link rel="preconnect" href="https://www.googletagmanager.com" />
-        <link rel="preconnect" href="https://embed.tawk.to" />
+
         <link rel="preconnect" href="https://pagead2.googlesyndication.com" />
         {env.isProduction && (
           <script
@@ -155,20 +155,7 @@ export default function RootLayout({
 
 
 
-        {/* Tawk.to Script */}
-        <Script id="tawk-to" strategy="lazyOnload">
-          {`
-            var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
-            (function(){
-            var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
-            s1.async=true;
-            s1.src='https://embed.tawk.to/694d311d715c0719826a40bc/1jdaofn46';
-            s1.charset='UTF-8';
-            s1.setAttribute('crossorigin','*');
-            s0.parentNode.insertBefore(s1,s0);
-            })();
-          `}
-        </Script>
+
 
         {/* JSON-LD Structured Data */}
         <script
@@ -196,8 +183,8 @@ export default function RootLayout({
           </main>
           <Footer />
           <CookieConsent />
-          <Analytics />
-          <SpeedInsights />
+
+
           <WelcomePopup />
         </ThemeProvider>
       </body>
