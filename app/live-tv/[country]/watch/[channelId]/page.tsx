@@ -8,6 +8,7 @@ import { notFound } from 'next/navigation';
 import Link from 'next/link';
 import { ArrowLeft, Tv } from 'lucide-react';
 import { ChannelCard } from '@/components/iptv/channel-card';
+import { SquareAd } from "@/components/ads/square-ad";
 
 interface WatchPageProps {
     params: {
@@ -109,6 +110,9 @@ export default async function WatchPage({ params }: WatchPageProps) {
                             channelName={channel.name}
                             countryCode={country}
                         />
+
+                        {/* Ad below player */}
+                        <SquareAd />
                     </div>
 
                     {/* Sidebar (Related Channels) */}
@@ -163,6 +167,9 @@ export default async function WatchPage({ params }: WatchPageProps) {
                                 <p className="text-sm text-muted-foreground">No other channels found.</p>
                             )}
                         </div>
+
+                        {/* Ad in sidebar */}
+                        <SquareAd />
                     </div>
                 </div>
 

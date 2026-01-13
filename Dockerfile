@@ -27,9 +27,6 @@ ENV NEXT_TELEMETRY_DISABLED 1
 RUN npm run build
 
 # 3. Production image
-FROM base AS runner
-WORKDIR /app
-
 ENV NODE_ENV production
 ENV NEXT_TELEMETRY_DISABLED 1
 ENV PORT 8080

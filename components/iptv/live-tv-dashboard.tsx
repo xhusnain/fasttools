@@ -4,6 +4,7 @@ import { useState, useMemo } from "react"
 import { Country } from "@/types/iptv"
 import { CountryGrid } from "./country-grid"
 import { FilterBar } from "./filter-bar"
+import { SquareAd } from "@/components/ads/square-ad"
 
 interface LiveTVDashboardProps {
     initialCountries: Country[]
@@ -61,6 +62,9 @@ export function LiveTVDashboard({ initialCountries, languages, categories }: Liv
                 onLanguageChange={setSelectedLanguage}
                 onCategoryChange={setSelectedCategory}
             />
+
+            <SquareAd />
+
 
             <div className="space-y-2">
                 <p className="text-sm text-muted-foreground">

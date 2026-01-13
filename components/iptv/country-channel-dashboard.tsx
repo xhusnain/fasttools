@@ -4,6 +4,7 @@ import { useState, useMemo } from "react"
 import { Channel } from "@/types/iptv"
 import { ChannelList } from "./channel-list"
 import { FilterBar } from "./filter-bar"
+import { SquareAd } from "@/components/ads/square-ad"
 
 interface CountryChannelDashboardProps {
     initialChannels: Channel[]
@@ -75,6 +76,9 @@ export function CountryChannelDashboard({ initialChannels, countryCode }: Countr
                 onCategoryChange={setSelectedCategory}
                 searchPlaceholder="Search channels..."
             />
+
+            <SquareAd />
+
 
             <div className="space-y-2">
                 <p className="text-sm text-muted-foreground">

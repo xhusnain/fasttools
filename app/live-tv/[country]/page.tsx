@@ -9,6 +9,7 @@ import { Metadata } from 'next';
 import { notFound } from 'next/navigation';
 import Link from 'next/link';
 import { ArrowLeft, Tv } from 'lucide-react';
+import { SquareAd } from "@/components/ads/square-ad";
 import { createMetadata } from '@/lib/metadata-base';
 
 interface CountryPageProps {
@@ -75,15 +76,22 @@ export default async function CountryPage({ params }: CountryPageProps) {
                 </Link>
 
                 {/* Header */}
-                <div className="space-y-4">
-                    <div className="flex flex-row items-center gap-3 md:gap-4 select-none">
-                        <span className="text-4xl md:text-6xl">{country.flag}</span>
-                        <div>
-                            <h1 className="text-2xl md:text-4xl font-bold text-foreground line-clamp-1">{country.name} Live TV</h1>
-                            <p className="text-sm md:text-lg text-muted-foreground mt-1 md:mt-2">
-                                {country.channelCount} {country.channelCount === 1 ? 'channel' : 'channels'} available
-                            </p>
+                <div className="grid lg:grid-cols-3 gap-8 items-start">
+                    <div className="lg:col-span-2 space-y-4">
+                        <div className="flex flex-row items-center gap-3 md:gap-4 select-none">
+                            <span className="text-4xl md:text-6xl">{country.flag}</span>
+                            <div>
+                                <h1 className="text-2xl md:text-4xl font-bold text-foreground line-clamp-1">{country.name} Live TV</h1>
+                                <p className="text-sm md:text-lg text-muted-foreground mt-1 md:mt-2">
+                                    {country.channelCount} {country.channelCount === 1 ? 'channel' : 'channels'} available
+                                </p>
+                            </div>
                         </div>
+                    </div>
+
+                    {/* Ad Space - Top Right */}
+                    <div className="flex justify-center lg:justify-end">
+                        <SquareAd />
                     </div>
                 </div>
 
