@@ -114,6 +114,7 @@
     "typescript": "^5.9.3"
   },
   "optionalDependencies": {
-    "@img/sharp-linux-musl": "^0.34.5"
+    "lightningcss-linux-x64-gnu": "^1.29.1",
+    "@next/swc-linux-x64-gnu": "16.0.7"
   }
 }
