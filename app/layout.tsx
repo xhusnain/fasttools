@@ -143,13 +143,7 @@ export default function RootLayout({
         <link rel="preconnect" href="https://www.googletagmanager.com" />
 
         <link rel="preconnect" href="https://pagead2.googlesyndication.com" />
-        {env.isProduction && (
-          <script
-            async
-            src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6296569221534302"
-            crossOrigin="anonymous"
-          ></script>
-        )}
+
       </head>
       <body className="bg-background font-sans text-foreground">
 
@@ -186,6 +180,15 @@ export default function RootLayout({
 
 
           <WelcomePopup />
+          {/* Google Adsense */}
+          {env.isProduction && (
+            <Script
+              id="google-adsense"
+              src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6296569221534302"
+              crossOrigin="anonymous"
+              strategy="afterInteractive"
+            />
+          )}
         </ThemeProvider>
       </body>
     </html>
