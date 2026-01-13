@@ -2,8 +2,6 @@
 
 import { useEffect, useRef, useState, useCallback } from 'react';
 import { AlertCircle, RefreshCw } from 'lucide-react';
-import { env } from '@/config/env';
-import { requiresTranscoding } from '@/data/transcoded-channels';
 
 interface LiveTVPlayerProps {
     streamUrl: string;
@@ -11,27 +9,18 @@ interface LiveTVPlayerProps {
     countryCode?: string;
 }
 
-export function LiveTVPlayer({ streamUrl, channelName }: LiveTVPlayerProps) {
+export function LiveTVPlayer({ streamUrl }: LiveTVPlayerProps) {
     const videoRef = useRef<HTMLVideoElement>(null);
     const playerRef = useRef<any>(null);
     const mountedRef = useRef(true);
     const [error, setError] = useState<string | null>(null);
     const [key, setKey] = useState(0);
 
-    // Determine initial mode based on known problematic channels list
-    const initialMode = requiresTranscoding(streamUrl, channelName) ? 'transcode' : 'direct';
-    const [mode, setMode] = useState<'direct' | 'transcode'>(initialMode);
-    const [hasFallenBack, setHasFallenBack] = useState(false);
-
     const destroyPlayer = useCallback(() => {
         if (playerRef.current) {
             try {
-                if (playerRef.current.destroy) {
-                    playerRef.current.destroy(); // mpegts
-                } else if (playerRef.current.destroy && typeof playerRef.current.destroy === 'function') {
+                if (playerRef.current.destroy && typeof playerRef.current.destroy === 'function') {
                     playerRef.current.destroy(); // hls.js
-                } else if (playerRef.current.dispose) {
-                    playerRef.current.dispose(); // video.js if used
                 }
             } catch (e) {
                 // ignore
@@ -42,21 +31,8 @@ export function LiveTVPlayer({ streamUrl, channelName }: LiveTVPlayerProps) {
 
     const handleRetry = useCallback(() => {
         setError(null);
-        // On retry, re-evaluate initial mode logic to see if we should try direct again
-        const retryMode = requiresTranscoding(streamUrl, channelName) ? 'transcode' : 'direct';
-        setMode(retryMode);
-        setHasFallenBack(false);
         setKey(k => k + 1);
-    }, [streamUrl, channelName]);
-
-    const switchToTranscode = useCallback(() => {
-        if (hasFallenBack) return;
-
-        setHasFallenBack(true);
-        setMode('transcode');
-        destroyPlayer();
-        setKey(k => k + 1);
-    }, [hasFallenBack, destroyPlayer]);
+    }, []);
 
     useEffect(() => {
         mountedRef.current = true;
@@ -70,120 +46,55 @@ export function LiveTVPlayer({ streamUrl, channelName }: LiveTVPlayerProps) {
             if (!mountedRef.current) return;
 
             try {
-                if (mode === 'transcode') {
-                    // --- Transcode Mode (FFmpeg) ---
-                    // We use mpegts.js here because it can play the raw MPEG-TS stream directly from FFmpeg.
-                    // We cannot use hls.js here because hls.js requires a .m3u8 playlist file, which adds latency
-                    // and complexity (generating files on the server). mpegts.js gives us low-latency streaming.
-                    const transcodeUrl = `${env.apiUrl}/transcode?url=${encodeURIComponent(streamUrl)}`;
+                const Hls = (await import('hls.js')).default;
 
-                    const mpegts = await import('mpegts.js');
-
-                    if (!mpegts.default.isSupported()) {
-                        setError('Browser not supported for transcoding');
-                        return;
-                    }
-
-                    const player = mpegts.default.createPlayer({
-                        type: 'mpegts',
-                        isLive: true,
-                        url: transcodeUrl,
-                    }, {
-                        enableWorker: false,
-                        enableStashBuffer: true,
-                        stashInitialSize: 512 * 1024,
-                        autoCleanupSourceBuffer: true,
-                        autoCleanupMaxBackwardDuration: 60,
-                        autoCleanupMinBackwardDuration: 30,
-                        liveBufferLatencyChasing: true,
-                        liveBufferLatencyMaxLatency: 30.0,
-                        liveBufferLatencyMinRemain: 10.0,
-                        fixAudioTimestampGap: true,
+                if (Hls.isSupported()) {
+                    const hls = new Hls({
+                        enableWorker: true,
+                        lowLatencyMode: true,
+                        backBufferLength: 90,
                     });
 
-                    playerRef.current = player;
-                    player.attachMediaElement(video);
-                    player.load();
+                    playerRef.current = hls;
+                    hls.loadSource(streamUrl);
+                    hls.attachMedia(video);
 
-                    let hasStarted = false;
-
-                    player.on(mpegts.default.Events.ERROR, (type: string) => {
-                        if (!hasStarted && type === 'MediaError') {
-                            setError('Stream failed even with transcoding.');
-                        }
-                    });
-
-                    video.addEventListener('canplay', () => {
-                        hasStarted = true;
+                    hls.on(Hls.Events.MANIFEST_PARSED, () => {
                         video.play().catch(() => { });
                     });
 
+                    hls.on(Hls.Events.ERROR, (_event, data) => {
+                        if (data.fatal) {
+                            switch (data.type) {
+                                case Hls.ErrorTypes.NETWORK_ERROR:
+                                    setError('Network error');
+                                    hls.startLoad();
+                                    break;
+                                case Hls.ErrorTypes.MEDIA_ERROR:
+                                    hls.recoverMediaError();
+                                    break;
+                                default:
+                                    destroyPlayer();
+                                    setError('Playback error');
+                                    break;
+                            }
+                        }
+                    });
+                } else if (video.canPlayType('application/vnd.apple.mpegurl')) {
+                    video.src = streamUrl;
+                    video.addEventListener('error', () => setError('Playback error'));
+                    video.addEventListener('canplay', () => {
+                        video.play().catch(() => { });
+                    });
                 } else {
-                    // --- Direct Mode (HLS) ---
-                    const proxyUrl = `/api/proxy?url=${encodeURIComponent(streamUrl)}`;
-                    const Hls = (await import('hls.js')).default;
-
-                    if (Hls.isSupported()) {
-                        const hls = new Hls({
-                            enableWorker: true,
-                            lowLatencyMode: true,
-                            backBufferLength: 90,
-                        });
-
-                        playerRef.current = hls;
-                        hls.loadSource(proxyUrl);
-                        hls.attachMedia(video);
-
-                        hls.on(Hls.Events.MANIFEST_PARSED, () => {
-                            video.play().catch(() => { });
-                        });
-
-                        hls.on(Hls.Events.ERROR, (event, data) => {
-                            // Network errors or fatal errors -> switch to transcode
-                            if (data.type === Hls.ErrorTypes.NETWORK_ERROR) {
-                                switchToTranscode();
-                                return;
-                            }
-
-                            if (data.fatal) {
-                                switch (data.type) {
-                                    case Hls.ErrorTypes.MEDIA_ERROR:
-                                        if (data.details === 'fragParsingError') {
-                                            switchToTranscode(); // Proxy returned junk (suppressed error)
-                                        } else {
-                                            hls.recoverMediaError();
-                                        }
-                                        break;
-                                    default:
-                                        switchToTranscode();
-                                        break;
-                                }
-                            }
-                        });
-                    } else if (video.canPlayType('application/vnd.apple.mpegurl')) {
-                        // Safari Native HLS
-                        video.src = proxyUrl;
-                        video.addEventListener('error', () => {
-                            switchToTranscode();
-                        });
-                        video.addEventListener('canplay', () => {
-                            video.play().catch(() => { });
-                        });
-                    } else {
-                        // No HLS support -> fallback to transcode
-                        switchToTranscode();
-                    }
+                    setError('Not supported');
                 }
 
                 video.muted = true;
 
             } catch (e) {
                 if (mountedRef.current) {
-                    if (mode === 'direct') {
-                        switchToTranscode();
-                    } else {
-                        setError('Failed to load player');
-                    }
+                    setError('Failed to initialize player.');
                 }
             }
         }, 100);
@@ -193,7 +104,7 @@ export function LiveTVPlayer({ streamUrl, channelName }: LiveTVPlayerProps) {
             clearTimeout(initTimeout);
             destroyPlayer();
         };
-    }, [streamUrl, key, mode, destroyPlayer, switchToTranscode]);
+    }, [streamUrl, key, destroyPlayer]);
 
     return (
         <div className="w-full relative group bg-black rounded-xl overflow-hidden shadow-2xl facet-filter-height">
@@ -201,11 +112,6 @@ export function LiveTVPlayer({ streamUrl, channelName }: LiveTVPlayerProps) {
                 <div className="bg-red-600/90 text-white px-2 py-1 rounded text-xs font-medium">
                     🔴 LIVE
                 </div>
-                {mode === 'transcode' && (
-                    <div className="bg-yellow-500/90 text-black px-2 py-1 rounded text-xs font-medium">
-                        ⚡ HD-T
-                    </div>
-                )}
             </div>
 
             <video
