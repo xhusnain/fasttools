@@ -105,7 +105,7 @@ export function FacebookDownloader({ compact = false }: FacebookDownloaderProps)
             <GLabel htmlFor="facebook-url" className="text-base font-semibold">
               Facebook URL
             </GLabel>
-            <div className="flex gap-2">
+            <div className="flex flex-col sm:flex-row gap-2">
               <GInput
                 id="facebook-url"
                 type="text"
@@ -119,7 +119,7 @@ export function FacebookDownloader({ compact = false }: FacebookDownloaderProps)
               <GButton
                 onClick={handleDownload}
                 disabled={loading || !url.trim()}
-                className="px-6"
+                className="px-6 w-full sm:w-auto"
               >
                 {loading ? (
                   <>

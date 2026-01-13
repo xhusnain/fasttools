@@ -148,7 +148,7 @@ export function YoutubeDownloader({ compact = false }: YoutubeDownloaderProps) {
                         <GLabel htmlFor="youtube-url" className="text-base font-semibold">
                             YouTube URL
                         </GLabel>
-                        <div className="flex gap-2">
+                        <div className="flex flex-col sm:flex-row gap-2">
                             <GInput
                                 id="youtube-url"
                                 type="text"
@@ -165,7 +165,7 @@ export function YoutubeDownloader({ compact = false }: YoutubeDownloaderProps) {
                             <GButton
                                 onClick={handleFetchInfo}
                                 disabled={loading || !url.trim()}
-                                className="px-6"
+                                className="px-6 w-full sm:w-auto"
                             >
                                 {loading ? (
                                     <>
