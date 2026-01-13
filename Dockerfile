@@ -12,8 +12,8 @@ RUN apt-get update && apt-get install -y \
 WORKDIR /app
 
 COPY package.json package-lock.json* ./
-# Use npm ci for faster, more reliable builds in CI/CD environments
-RUN npm ci --include=optional
+# Use npm install to handle loose lockfile matches across platforms
+RUN npm install
 
 # 2. Rebuild the source code only when needed
 FROM base AS builder
