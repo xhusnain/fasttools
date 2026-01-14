@@ -2,6 +2,8 @@ import type { Metadata } from "next"
 import { ToolPageLayout } from "@/components/common/tool-page-layout"
 import PregnancyConceptionCalculator from "@/components/health/pregnancy-conception-calculator"
 import { createMetadata } from "@/lib/metadata-base"
+import { GTable } from "@/ui/gtable"
+import { Brain } from "lucide-react"
 
 const baseMetadata = createMetadata({
   title: "Conception Calculator - Find Conception Date",
@@ -66,23 +68,74 @@ export default function PregnancyConceptionCalculatorPage() {
     ],
 
     aboutTool: (
-      <>
-        <h3 className="font-semibold text-lg mb-2 mt-6">Understanding Conception Dating</h3>
-        <p className="mb-4">
-          Conception typically occurs about 11-21 days after the first day of your last menstrual period. However, sperm can survive for up to 5 days, creating a "fertile window." Our calculator estimates the most likely conception date range based on your inputs.
-        </p>
+      <div className="space-y-8">
+        <section>
+          <h2 className="text-2xl font-bold mb-4">What is a Conception Calculator?</h2>
+          <p className="text-base text-muted-foreground leading-relaxed mb-6">
+            A <strong>Conception Calculator</strong> helps you estimate the date your baby was conceived based on your due date or last menstrual period. Understanding the conception date is useful for dating the pregnancy accurately, determining paternity, or simply knowing when your journey truly began.
+          </p>
 
-        <h3 className="font-semibold text-lg mb-2 mt-6">Gestational vs. Conception Age</h3>
-        <p className="mb-4">
-          <strong>Gestational Age:</strong> Measured from the first day of your last period. This is the standard used by doctors.<br />
-          <strong>Conception Age:</strong> Measured from the actual date of fertilization. This is usually about 2 weeks less than gestational age.
-        </p>
+          <h3 className="font-semibold text-xl mb-4 text-foreground">Pregnancy Milestone Timeline (Estimates)</h3>
+          <p className="mb-4 text-muted-foreground text-sm">
+            Based on your estimated conception date, here are some key milestones you can expect:
+          </p>
+          <GTable>
+            <thead className="bg-muted text-foreground font-semibold">
+              <tr>
+                <th className="p-3 text-left">Milestone</th>
+                <th className="p-3 text-left">Approx. Timing</th>
+                <th className="p-3 text-left">Key Event</th>
+              </tr>
+            </thead>
+            <tbody className="divide-y divide-border text-sm">
+              <tr>
+                <td className="p-3 font-semibold text-foreground">Implantation</td>
+                <td className="p-3">6-12 days after conception</td>
+                <td className="p-3 text-muted-foreground">Embryo attaches to uterus</td>
+              </tr>
+              <tr>
+                <td className="p-3 font-semibold text-foreground">Heartbeat Starts</td>
+                <td className="p-3">3-4 weeks after conception</td>
+                <td className="p-3 text-muted-foreground">Cardiac activity begins (Week 6 LMP)</td>
+              </tr>
+              <tr>
+                <td className="p-3 font-semibold text-foreground">First Movement</td>
+                <td className="p-3">14-23 weeks after conception</td>
+                <td className="p-3 text-muted-foreground">"Quickening" (Week 16-25 LMP)</td>
+              </tr>
+              <tr>
+                <td className="p-3 font-semibold text-foreground">Viability</td>
+                <td className="p-3">22 weeks after conception</td>
+                <td className="p-3 text-muted-foreground">Survival possible with medical care</td>
+              </tr>
+              <tr>
+                <td className="p-3 font-semibold text-foreground">Full Term</td>
+                <td className="p-3">35 weeks after conception</td>
+                <td className="p-3 text-muted-foreground">Lungs and brain fully developed</td>
+              </tr>
+            </tbody>
+          </GTable>
+        </section>
 
-        <h3 className="font-semibold text-lg mb-2 mt-6">Why Use Multiple Methods?</h3>
-        <p className="mb-4">
-          Different women have different cycle lengths and information available. By offering calculations based on Due Date, LMP, and Ultrasound, we ensure you can use the most accurate data you have to get the best estimate.
-        </p>
-      </>
+        <div className="p-6 bg-gradient-to-r from-teal-50 to-emerald-50 dark:from-teal-950/30 dark:to-emerald-950/30 border-l-4 border-teal-500 rounded-lg my-8">
+          <h4 className="flex items-center gap-2 font-bold text-teal-800 dark:text-teal-200 mb-2">
+            <Brain className="h-5 w-5" />
+            Expert Insight: The Sperm Life Span Factor
+          </h4>
+          <p className="italic text-teal-700 dark:text-teal-300">
+            "It's important to differentiate between 'intercourse date' and 'conception date.' Sperm can survive inside the female reproductive tract for up to <strong>5 days</strong>. Conception (fertilization) only occurs when an egg is released during ovulation. This means you could have conceived up to 5 days after intercourse. Our calculator accounts for this window to give you the most accurate range possible."
+          </p>
+          <p className="text-sm font-semibold text-teal-600 dark:text-teal-400 mt-2">— FastTools Biology & Research Team</p>
+        </div>
+
+        <section>
+          <h2 className="text-2xl font-bold mb-4">Gestational vs. Conception Age</h2>
+          <p className="mb-4 text-sm text-muted-foreground">
+            <strong>Gestational Age:</strong> Measured from the first day of your last period. This is the standard used by doctors.<br />
+            <strong>Conception Age:</strong> Measured from the actual date of fertilization. This is usually about 2 weeks less than gestational age.
+          </p>
+        </section>
+      </div>
     ),
 
     proTip: "If you have an ultrasound date, use that! Early ultrasounds are generally the most accurate way to date a pregnancy, especially if you have irregular periods.",

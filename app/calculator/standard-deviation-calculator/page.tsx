@@ -2,7 +2,8 @@ import type { Metadata } from "next"
 import { ToolPageLayout } from "@/components/common/tool-page-layout"
 import { StandardDeviationCalculator } from "@/components/calculators/standard-deviation-calculator"
 import { createMetadata } from "@/lib/metadata-base"
-import { Calculator, BarChart3, TrendingUp, BookOpen, Users, Clock, Target, AlertCircle, Home, DollarSign, FileText, Percent, Award, Globe, PieChart } from "lucide-react"
+import { Calculator, BarChart3, TrendingUp, BookOpen, Users, Clock, Target, AlertCircle, Home, DollarSign, FileText, Percent, Award, Globe, PieChart, Brain } from "lucide-react"
+import { GTable } from "@/ui/gtable"
 
 const baseMetadata = createMetadata({
   title: "Standard Deviation Calculator - Statistics & Data",
@@ -183,6 +184,55 @@ export default function StandardDeviationCalculatorPage() {
 
     aboutTool: (
       <div className="space-y-8">
+        <section>
+          <h2 className="text-2xl font-bold mb-4">What is Standard Deviation?</h2>
+          <p className="text-base text-muted-foreground leading-relaxed mb-6">
+            Standard deviation is a statistic that measures the <strong>dispersion of a dataset relative to its mean</strong>. In simple terms, it tells you how much the numbers spread out from the average. A low standard deviation means most numbers are close to the average, while a high standard deviation indicates the numbers are spread over a wider range.
+          </p>
+
+          <h2 className="text-2xl font-bold mb-4">The Empirical Rule (68-95-99.7)</h2>
+          <p className="text-sm text-muted-foreground mb-4">
+            In a normal distribution, the Empirical Rule describes the percentage of data that falls within specific standard deviations from the mean:
+          </p>
+          <GTable>
+            <thead className="bg-muted text-foreground font-semibold">
+              <tr>
+                <th className="p-3">Distance from Mean</th>
+                <th className="p-3">Population Covered</th>
+                <th className="p-3">Statistical Significance</th>
+              </tr>
+            </thead>
+            <tbody className="divide-y divide-border text-sm">
+              <tr>
+                <td className="p-3 font-semibold">±1 Standard Deviation (σ)</td>
+                <td className="p-3">~68.27%</td>
+                <td className="p-3">The "Typical" range for most values</td>
+              </tr>
+              <tr>
+                <td className="p-3 font-semibold">±2 Standard Deviations (2σ)</td>
+                <td className="p-3">~95.45%</td>
+                <td className="p-3">Commonly used for 95% confidence intervals</td>
+              </tr>
+              <tr>
+                <td className="p-3 font-semibold">±3 Standard Deviations (3σ)</td>
+                <td className="p-3">~99.73%</td>
+                <td className="p-3">Values outside this are typically "Outliers"</td>
+              </tr>
+            </tbody>
+          </GTable>
+        </section>
+
+        <div className="p-6 bg-gradient-to-r from-blue-50 to-indigo-50 dark:from-blue-950/30 dark:to-indigo-950/30 border-l-4 border-blue-500 rounded-lg my-8">
+          <h4 className="flex items-center gap-2 font-bold text-blue-800 dark:text-blue-200 mb-2">
+            <Brain className="h-5 w-5" />
+            Expert Insight: Standard Deviation vs. Standard Error
+          </h4>
+          <p className="italic text-blue-700 dark:text-blue-300">
+            "One of the most common mistakes in data analysis is confusing Standard Deviation (SD) with Standard Error (SE). SD measures the <strong>variability within your sample</strong> (how spread out your data is). SE measures how far your <strong>sample mean</strong> is likely to be from the true population mean. As you increase your sample size, SE gets smaller, but SD usually stays the same."
+          </p>
+          <p className="text-sm font-semibold text-blue-600 dark:text-blue-400 mt-2">— FastTools Statistics Team</p>
+        </div>
+
         <section>
           <h2 className="text-2xl font-bold mb-4">Advanced Statistical Features</h2>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">

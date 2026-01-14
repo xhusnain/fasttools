@@ -2,7 +2,8 @@ import type { Metadata } from "next"
 import { ToolPageLayout } from "@/components/common/tool-page-layout"
 import { GPACalculator } from "@/components/calculators/gpa-calculator"
 import { createMetadata } from "@/lib/metadata-base"
-import { Calculator, Award, TrendingUp, Info, Globe, Target, Users, BarChart3, Building, Clock, DollarSign, Home, FileText, Percent, BookOpen, Shield, Star } from "lucide-react"
+import { Calculator, Award, TrendingUp, Info, Globe, Target, Users, BarChart3, Building, Clock, DollarSign, Home, FileText, Percent, BookOpen, Shield, Star, Brain } from "lucide-react"
+import { GTable } from "@/ui/gtable"
 
 const baseMetadata = createMetadata({
   title: "GPA Calculator - Calculate Your GPA",
@@ -80,13 +81,43 @@ export default function GPACalculatorPage() {
           <p className="text-muted-foreground mb-4">
             While our online GPA calculator is the easiest way to find your GPA, understanding how to calculate it manually can give you a deeper insight into your academic standing. Here's a step-by-step guide:
           </p>
-          <ol className="list-decimal list-inside space-y-2 text-muted-foreground">
-            <li><strong>Convert your grades to points:</strong> Assign a point value to the grade for each course (e.g., A=4.0, B=3.0, C=2.0, D=1.0, F=0.0).</li>
-            <li><strong>Multiply by credit hours:</strong> Multiply the point value of each grade by the number of credit hours for that course. This gives you the quality points for each course.</li>
-            <li><strong>Sum your quality points and credits:</strong> Add up the quality points for all courses and the total number of credit hours.</li>
-            <li><strong>Divide:</strong> Divide the total quality points by the total credit hours to get your GPA.</li>
-          </ol>
+          <div className="grid md:grid-cols-2 gap-8 mb-6">
+            <ol className="list-decimal list-inside space-y-2 text-muted-foreground">
+              <li><strong>Convert grades to points:</strong> Assign a point value (A=4, B=3, etc.).</li>
+              <li><strong>Multiply by credits:</strong> Find the quality points for each course.</li>
+              <li><strong>Sum points and credits:</strong> Total your quality points and credit hours.</li>
+              <li><strong>Divide:</strong> Quality Points ÷ Total Credits = Your GPA.</li>
+            </ol>
+            <GTable>
+              <thead className="bg-muted text-foreground font-semibold">
+                <tr>
+                  <th className="p-3 text-left">Letter Grade</th>
+                  <th className="p-3 text-left">Percentage</th>
+                  <th className="p-3 text-left">4.0 Scale</th>
+                </tr>
+              </thead>
+              <tbody className="divide-y divide-border text-sm">
+                <tr><td className="p-3 font-semibold">A / A+</td><td className="p-3">93-100%</td><td className="p-3">4.0</td></tr>
+                <tr><td className="p-3 font-semibold">A-</td><td className="p-3">90-92%</td><td className="p-3">3.7</td></tr>
+                <tr><td className="p-3 font-semibold">B+</td><td className="p-3">87-89%</td><td className="p-3">3.3</td></tr>
+                <tr><td className="p-3 font-semibold">B</td><td className="p-3">83-86%</td><td className="p-3">3.0</td></tr>
+              </tbody>
+            </GTable>
+          </div>
         </section>
+
+        <div className="p-6 bg-gradient-to-br from-purple-500/10 via-transparent to-pink-500/10 rounded-2xl border border-purple-500/20 shadow-sm relative overflow-hidden">
+          <div className="absolute top-0 right-0 p-4 opacity-10">
+            <Brain className="h-24 w-24 text-purple-500" />
+          </div>
+          <h4 className="flex items-center gap-2 font-bold text-purple-700 dark:text-purple-400 mb-3 relative z-10">
+            <Brain className="h-5 w-5" />
+            Expert Insight: The Weighted GPA Advantage
+          </h4>
+          <p className="text-sm leading-relaxed text-slate-600 dark:text-slate-300 relative z-10 italic">
+            "For students targeting ivy-league or competitive tier-1 schools, a Weighted GPA often matters more than an Unweighted one. Higher weights for AP and IB courses (up to 5.0) reflect the rigor of your curriculum. However, be aware that many admissions offices 're-calculate' your GPA based on their own internal standards, often removing elective weights to focus strictly on core academic strength. Always use our 'Weighted' mode to see how your course selection impacts your standing."
+          </p>
+        </div>
 
         <section>
           <h2 className="text-2xl font-bold mb-4">Weighted vs. Unweighted GPA: What's the Difference?</h2>
@@ -104,20 +135,37 @@ export default function GPACalculatorPage() {
 
         <section>
           <h2 className="text-2xl font-bold mb-4">What Is a Good GPA? A Guide to Benchmarks</h2>
-          <ul className="space-y-4">
-            <li className="p-4 bg-card rounded-lg border border-border">
-              <strong className="block text-foreground mb-1">3.5 - 4.0 (A to A- average)</strong>
-              <span className="text-sm text-muted-foreground">Excellent. This range is typically required for admission to top-tier universities and for competitive scholarships.</span>
-            </li>
-            <li className="p-4 bg-card rounded-lg border border-border">
-              <strong className="block text-foreground mb-1">3.0 - 3.4 (B to B+ average)</strong>
-              <span className="text-sm text-muted-foreground">Good. This is a solid GPA that will meet the requirements for most universities and scholarship opportunities.</span>
-            </li>
-            <li className="p-4 bg-card rounded-lg border border-border">
-              <strong className="block text-foreground mb-1">2.5 - 2.9 (C+ to B- average)</strong>
-              <span className="text-sm text-muted-foreground">Average. While this GPA may not qualify you for the most competitive programs, it's still a respectable range for many institutions.</span>
-            </li>
-          </ul>
+          <GTable>
+            <thead className="bg-muted text-foreground font-semibold">
+              <tr>
+                <th className="p-3 text-left">GPA Range</th>
+                <th className="p-3 text-left">Academic Standing</th>
+                <th className="p-3 text-left">Typical Outcome</th>
+              </tr>
+            </thead>
+            <tbody className="divide-y divide-border text-sm">
+              <tr>
+                <td className="p-3 font-semibold text-foreground">3.5 - 4.0</td>
+                <td className="p-3">Excellent (High Honors)</td>
+                <td className="p-3 text-muted-foreground">Ivy League admits, competitive scholarships.</td>
+              </tr>
+              <tr>
+                <td className="p-3 font-semibold text-foreground">3.0 - 3.4</td>
+                <td className="p-3">Good (Honors)</td>
+                <td className="p-3 text-muted-foreground">Standard university admissions, general merit aid.</td>
+              </tr>
+              <tr>
+                <td className="p-3 font-semibold text-foreground">2.5 - 2.9</td>
+                <td className="p-3">Average</td>
+                <td className="p-3 text-muted-foreground">Solid for many public institutions and state colleges.</td>
+              </tr>
+              <tr>
+                <td className="p-3 font-semibold text-foreground">Below 2.0</td>
+                <td className="p-3">Academic Probation</td>
+                <td className="p-3 text-muted-foreground">Requires immediate academic intervention or retakes.</td>
+              </tr>
+            </tbody>
+          </GTable>
         </section>
 
         <section>

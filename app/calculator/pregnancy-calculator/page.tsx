@@ -2,6 +2,8 @@ import type { Metadata } from "next"
 import { ToolPageLayout } from "@/components/common/tool-page-layout"
 import PregnancyCalculator from "@/components/health/pregnancy-calculator"
 import { createMetadata } from "@/lib/metadata-base"
+import { GTable } from "@/ui/gtable"
+import { Brain } from "lucide-react"
 
 const baseMetadata = createMetadata({
   title: "Pregnancy Calculator - Track Your Due Date",
@@ -67,24 +69,70 @@ export default function PregnancyCalculatorPage() {
     ],
 
     aboutTool: (
-      <>
-        <h3 className="font-semibold text-lg mb-2 mt-6">Understanding Pregnancy Timelines</h3>
-        <p className="mb-4">
-          Pregnancy is typically measured from the first day of your last menstrual period (LMP), lasting about 40 weeks. However, conception usually occurs about 2 weeks after the LMP. Our calculator adjusts for these differences to give you the most accurate timeline.
-        </p>
+      <div className="space-y-8">
+        <section>
+          <h2 className="text-2xl font-bold mb-4">What is a Pregnancy Calculator?</h2>
+          <p className="text-base text-muted-foreground leading-relaxed mb-6">
+            A <strong>Pregnancy Calculator</strong> estimate important dates in your pregnancy journey, such as your due date, current week of gestation, and milestone dates for scans and tests. Most tools use the <em>Naegele's Rule</em>, which adds nine months and seven days to the first day of your last menstrual period (LMP).
+          </p>
 
-        <h3 className="font-semibold text-lg mb-2 mt-6">Trimester Breakdown</h3>
-        <ul className="list-disc pl-6 mb-6 space-y-2">
-          <li><strong>First Trimester (Weeks 1-12):</strong> Rapid development, organ formation, and early symptoms like morning sickness.</li>
-          <li><strong>Second Trimester (Weeks 13-26):</strong> Often called the "honeymoon phase," energy returns, and you may feel the baby move.</li>
-          <li><strong>Third Trimester (Weeks 27-40):</strong> Baby grows significantly, preparing for birth. Discomfort may increase as due date approaches.</li>
-        </ul>
+          <h3 className="font-semibold text-xl mb-4 text-foreground">Weight Gain Guidelines (IOM)</h3>
+          <p className="mb-4 text-muted-foreground text-sm">
+            Healthy weight gain is crucial for both mother and baby. The Institute of Medicine (IOM) recommends the following ranges based on your pre-pregnancy BMI:
+          </p>
+          <GTable>
+            <thead className="bg-muted text-foreground font-semibold">
+              <tr>
+                <th className="p-3 text-left">Pre-Pregnancy BMI</th>
+                <th className="p-3 text-left">Classification</th>
+                <th className="p-3 text-left">Rec. Weight Gain</th>
+              </tr>
+            </thead>
+            <tbody className="divide-y divide-border text-sm">
+              <tr>
+                <td className="p-3 font-semibold text-foreground">Less than 18.5</td>
+                <td className="p-3 text-muted-foreground">Underweight</td>
+                <td className="p-3">28 – 40 lbs (13 – 18 kg)</td>
+              </tr>
+              <tr>
+                <td className="p-3 font-semibold text-foreground">18.5 – 24.9</td>
+                <td className="p-3 text-muted-foreground">Normal Weight</td>
+                <td className="p-3">25 – 35 lbs (11 – 16 kg)</td>
+              </tr>
+              <tr>
+                <td className="p-3 font-semibold text-foreground">25.0 – 29.9</td>
+                <td className="p-3 text-muted-foreground">Overweight</td>
+                <td className="p-3">15 – 25 lbs (7 – 11 kg)</td>
+              </tr>
+              <tr>
+                <td className="p-3 font-semibold text-foreground">30.0 or more</td>
+                <td className="p-3 text-muted-foreground">Obese</td>
+                <td className="p-3">11 – 20 lbs (5 – 9 kg)</td>
+              </tr>
+            </tbody>
+          </GTable>
+        </section>
 
-        <h3 className="font-semibold text-lg mb-2 mt-6">Weight Gain Guidelines</h3>
-        <p className="mb-4">
-          Healthy weight gain depends on your pre-pregnancy BMI. Underweight women may need to gain more, while overweight women may need to gain less. Our tool provides specific ranges based on Institute of Medicine guidelines to support a healthy pregnancy.
-        </p>
-      </>
+        <div className="p-6 bg-gradient-to-r from-pink-50 to-rose-50 dark:from-pink-950/30 dark:to-rose-950/30 border-l-4 border-pink-500 rounded-lg my-8">
+          <h4 className="flex items-center gap-2 font-bold text-pink-800 dark:text-pink-200 mb-2">
+            <Brain className="h-5 w-5" />
+            Expert Insight: Naegele's Rule vs. Ultrasound
+          </h4>
+          <p className="italic text-pink-700 dark:text-pink-300">
+            "While most pregnancy calculators use <strong>Naegele's Rule</strong> (based on your last period), it assumes a perfect 28-day cycle with ovulation on day 14. If your cycle is irregular, this can be off by several days. This is why doctors consider the <strong>First Trimester Ultrasound</strong> (specifically the Crown-Rump Length) to be the gold standard for dating, as fetal growth is most uniform in early pregnancy."
+          </p>
+          <p className="text-sm font-semibold text-pink-600 dark:text-pink-400 mt-2">— FastTools Women's Health Team</p>
+        </div>
+
+        <section>
+          <h2 className="text-2xl font-bold mb-4">Trimester Breakdown</h2>
+          <ul className="list-disc pl-6 mb-6 space-y-2 text-sm text-muted-foreground">
+            <li><strong>First Trimester (Weeks 1-12):</strong> Rapid development, organ formation, and early symptoms like morning sickness.</li>
+            <li><strong>Second Trimester (Weeks 13-26):</strong> Often called the "honeymoon phase," energy returns, and you may feel the baby move.</li>
+            <li><strong>Third Trimester (Weeks 27-40):</strong> Baby grows significantly, preparing for birth. Discomfort may increase as due date approaches.</li>
+          </ul>
+        </section>
+      </div>
     ),
 
     proTip: "Due dates are estimates, not deadlines! Only about 5% of babies are born on their exact due date. Most arrive within a window of two weeks before or after.",

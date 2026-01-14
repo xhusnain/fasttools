@@ -29,8 +29,10 @@ import {
   ClipboardCheck,
   HardHat,
   AlertTriangle,
-  HelpCircle
+  HelpCircle,
+  Brain
 } from "lucide-react"
+import { GTable } from "@/ui/gtable"
 
 const TOOL_TITLE = "Concrete Calculator - Cubic Yards, Bags & Cost Estimator"
 const TOOL_NAME = "Concrete Calculator"
@@ -107,6 +109,44 @@ export default function ConcreteCalculatorPage() {
 
     aboutTool: (
       <div className="space-y-12">
+        <section>
+          <h2 className="text-2xl font-bold mb-4">How Much Concrete Do I Need?</h2>
+          <p className="text-muted-foreground mb-4">
+            Calculating how much concrete you need depends on the volume of the space you are filling (Length × Width × Thickness). For standard bags, the coverage depends on the bag weight (40lb, 60lb, or 80lb). Our calculator simplifies this by providing exact counts for each bag size, ensuring you order the right amount for your slab, patio, or footing.
+          </p>
+        </section>
+
+        <div className="p-6 bg-gradient-to-br from-orange-500/10 via-transparent to-yellow-500/10 rounded-2xl border border-orange-500/20 shadow-sm relative overflow-hidden">
+          <div className="absolute top-0 right-0 p-4 opacity-10">
+            <Brain className="h-24 w-24 text-orange-500" />
+          </div>
+          <h4 className="flex items-center gap-2 font-bold text-orange-700 dark:text-orange-400 mb-3 relative z-10">
+            <Brain className="h-5 w-5" />
+            Expert Insight: The 10% Waste Factor Rule
+          </h4>
+          <p className="text-sm leading-relaxed text-slate-600 dark:text-slate-300 relative z-10 italic">
+            "One of the most common DIY mistakes is ordering the exact volume calculated. In the real world, subgrades are rarely perfectly level, and formwork can flex under the immense weight of wet concrete. Professional contractors always add a **10% waste factor** to any order. It is far cheaper to have a small amount left over than to have a cold joint in your slab because you ran out of concrete with six inches left to go."
+          </p>
+        </div>
+
+        <section>
+          <h2 className="text-2xl font-bold mb-4">Quick Reference: Bags per Cubic Yard</h2>
+          <GTable>
+            <thead className="bg-muted text-foreground font-semibold">
+              <tr>
+                <th className="p-3 text-left">Bag Size</th>
+                <th className="p-3 text-left">Bags per Cubic Yard</th>
+                <th className="p-3 text-left">Volume per Bag</th>
+              </tr>
+            </thead>
+            <tbody className="divide-y divide-border text-sm">
+              <tr><td className="p-3 font-semibold">80 lb Bag</td><td className="p-3">45 Bags</td><td className="p-3">0.60 cu ft</td></tr>
+              <tr><td className="p-3 font-semibold">60 lb Bag</td><td className="p-3">60 Bags</td><td className="p-3">0.45 cu ft</td></tr>
+              <tr><td className="p-3 font-semibold">40 lb Bag</td><td className="p-3">90 Bags</td><td className="p-3">0.30 cu ft</td></tr>
+            </tbody>
+          </GTable>
+        </section>
+
         {/* Value Props Section */}
         <section>
           <div className="mb-8 relative w-full h-64 md:h-80 rounded-xl overflow-hidden shadow-lg border border-border">
@@ -297,32 +337,42 @@ export default function ConcreteCalculatorPage() {
             <Globe className="h-6 w-6 text-primary" />
             Supported Concrete Mix Types
           </h2>
-          <div className="grid md:grid-cols-2 gap-4">
-            {[
-              { mix: "Standard Mix", strength: "3000 PSI", ratio: "1:2:3", use: "General purpose concrete for patios, walkways, and slabs." },
-              { mix: "High Strength Mix", strength: "4000+ PSI", ratio: "1:1.5:2.5", use: "Heavy-load driveways, foundations, and structural columns." },
-              { mix: "Lightweight Mix", strength: "2500 PSI", ratio: "1:1.5:2", use: "Roof decks or non-structural areas where weight is a concern." },
-              { mix: "Fiber Reinforced", strength: "3500 PSI", ratio: "1:2:3", use: "Contains micro-fibers to resist cracking and improve impact strength." }
-            ].map(({ mix, strength, ratio, use }, index) => (
-              <div key={index} className="p-4 bg-card rounded-lg border border-border">
-                <div className="flex items-center gap-2 mb-2">
-                  <CheckCircle className="h-5 w-5 text-primary" />
-                  <h3 className="font-semibold text-foreground">{mix}</h3>
-                </div>
-                <p className="text-sm text-muted-foreground mb-2">{use}</p>
-                <div className="text-sm text-foreground space-y-1">
-                  <div className="flex items-center gap-2">
-                    <div className="w-1.5 h-1.5 bg-primary rounded-full"></div>
-                    <span>Strength: {strength}</span>
-                  </div>
-                  <div className="flex items-center gap-2">
-                    <div className="w-1.5 h-1.5 bg-primary rounded-full"></div>
-                    <span>Ratio: {ratio} (Cement:Sand:Gravel)</span>
-                  </div>
-                </div>
-              </div>
-            ))}
-          </div>
+          <GTable>
+            <thead className="bg-muted text-foreground font-semibold">
+              <tr>
+                <th className="p-3 text-left">Mix Type</th>
+                <th className="p-3 text-left">Strength (PSI)</th>
+                <th className="p-3 text-left">Ratio (C:S:G)</th>
+                <th className="p-3 text-left">Best For</th>
+              </tr>
+            </thead>
+            <tbody className="divide-y divide-border text-sm">
+              <tr>
+                <td className="p-3 font-semibold">Standard Mix</td>
+                <td className="p-3">3000 PSI</td>
+                <td className="p-3">1:2:3</td>
+                <td className="p-3 text-muted-foreground">Patios, walkways, general slabs.</td>
+              </tr>
+              <tr>
+                <td className="p-3 font-semibold">High Strength</td>
+                <td className="p-3">4000+ PSI</td>
+                <td className="p-3">1:1.5:2.5</td>
+                <td className="p-3 text-muted-foreground">Driveways, foundations, structural work.</td>
+              </tr>
+              <tr>
+                <td className="p-3 font-semibold">Lightweight</td>
+                <td className="p-3">2500 PSI</td>
+                <td className="p-3">1:1.5:2</td>
+                <td className="p-3 text-muted-foreground">Roof decks, non-structural filling.</td>
+              </tr>
+              <tr>
+                <td className="p-3 font-semibold">Fiber Reinforced</td>
+                <td className="p-3">3500 PSI</td>
+                <td className="p-3">1:2:3</td>
+                <td className="p-3 text-muted-foreground">Crack resistance, high impact zones.</td>
+              </tr>
+            </tbody>
+          </GTable>
         </section>
 
         {/* Common Mistakes Alert */}

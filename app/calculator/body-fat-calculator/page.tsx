@@ -2,6 +2,8 @@ import type { Metadata } from "next"
 import { ToolPageLayout } from "@/components/common/tool-page-layout"
 import BodyFatCalculator from "@/components/health/body-fat-calculator"
 import { createMetadata } from "@/lib/metadata-base"
+import { GTable } from "@/ui/gtable"
+import { Brain } from "lucide-react"
 
 const baseMetadata = createMetadata({
   title: "Body Fat Calculator | Free Body Fat Percentage Calculator",
@@ -68,61 +70,78 @@ export default function BodyFatCalculatorPage() {
     ],
 
     aboutTool: (
-      <>
-        <h3 className="font-semibold text-lg mb-2 mt-6">Body Fat Categories (ACE Standards)</h3>
-        <div className="overflow-x-auto">
-          <table className="w-full text-sm text-left border-collapse mb-6">
-            <thead>
-              <tr className="border-b">
-                <th className="py-2">Description</th>
-                <th className="py-2">Women</th>
-                <th className="py-2">Men</th>
+      <div className="space-y-8">
+        <section>
+          <h2 className="text-2xl font-bold mb-4">What is Body Fat Percentage?</h2>
+          <p className="text-base text-muted-foreground leading-relaxed mb-6">
+            Your <strong>Body Fat Percentage</strong> is the total mass of fat divided by your total body mass, multiplied by 100. Body fat includes <em>essential body fat</em> and <em>storage body fat</em>. Unlike weight or BMI, body fat percentage is a better indicator of health and athletic performance because it distinguishes between lean muscle mass and fat mass.
+          </p>
+
+          <h3 className="font-semibold text-xl mb-4 text-foreground">Body Fat Categories (ACE Standards)</h3>
+          <p className="mb-4 text-muted-foreground text-sm">
+            The American Council on Exercise (ACE) provides these standard ranges for body composition classification:
+          </p>
+          <GTable>
+            <thead className="bg-muted text-foreground font-semibold">
+              <tr>
+                <th className="p-3 text-left">Description</th>
+                <th className="p-3 text-left">Women</th>
+                <th className="p-3 text-left">Men</th>
               </tr>
             </thead>
-            <tbody>
-              <tr className="border-b">
-                <td className="py-2">Essential Fat</td>
-                <td className="py-2">10-13%</td>
-                <td className="py-2">2-5%</td>
+            <tbody className="divide-y divide-border text-sm">
+              <tr>
+                <td className="p-3 font-semibold text-foreground">Essential Fat</td>
+                <td className="p-3">10-13%</td>
+                <td className="p-3">2-5%</td>
               </tr>
-              <tr className="border-b">
-                <td className="py-2">Athletes</td>
-                <td className="py-2">14-20%</td>
-                <td className="py-2">6-13%</td>
+              <tr>
+                <td className="p-3 font-semibold text-foreground">Athletes</td>
+                <td className="p-3">14-20%</td>
+                <td className="p-3">6-13%</td>
               </tr>
-              <tr className="border-b">
-                <td className="py-2">Fitness</td>
-                <td className="py-2">21-24%</td>
-                <td className="py-2">14-17%</td>
+              <tr>
+                <td className="p-3 font-semibold text-foreground">Fitness</td>
+                <td className="p-3">21-24%</td>
+                <td className="p-3">14-17%</td>
               </tr>
-              <tr className="border-b">
-                <td className="py-2">Average</td>
-                <td className="py-2">25-31%</td>
-                <td className="py-2">18-24%</td>
+              <tr>
+                <td className="p-3 font-semibold text-foreground">Average</td>
+                <td className="p-3">25-31%</td>
+                <td className="p-3">18-24%</td>
               </tr>
-              <tr className="border-b">
-                <td className="py-2">Obese</td>
-                <td className="py-2">32%+</td>
-                <td className="py-2">25%+</td>
+              <tr>
+                <td className="p-3 font-semibold text-foreground">Obese</td>
+                <td className="p-3 text-red-500">32%+</td>
+                <td className="p-3 text-red-500">25%+</td>
               </tr>
             </tbody>
-          </table>
+          </GTable>
+        </section>
+
+        <div className="p-6 bg-gradient-to-r from-red-50 to-orange-50 dark:from-red-950/30 dark:to-orange-950/30 border-l-4 border-red-500 rounded-lg my-8">
+          <h4 className="flex items-center gap-2 font-bold text-red-800 dark:text-red-200 mb-2">
+            <Brain className="h-5 w-5" />
+            Expert Insight: Essential Fat vs. Storage Fat
+          </h4>
+          <p className="italic text-red-700 dark:text-red-300">
+            "It's a myth that 'zero' body fat is the goal. <strong>Essential fat</strong> is required for life and reproductive functions. It protects internal organs and stores vitamins. Women have higher essential fat requirements (10-13%) than men (2-5%) primarily due to hormonal and reproductive needs. <strong>Storage fat</strong> is the accumulation of adipose tissue that serves as energy reserve."
+          </p>
+          <p className="text-sm font-semibold text-red-600 dark:text-red-400 mt-2">— FastTools Sports Science Team</p>
         </div>
 
-        <h3 className="font-semibold text-lg mb-2 mt-6">Measurement Tips</h3>
-        <ul className="list-disc pl-6 mb-6 space-y-2">
-          <li><strong>Neck:</strong> Measure below the larynx (Adam's apple). Keep the tape flat.</li>
-          <li><strong>Waist (Men):</strong> Measure at the navel level.</li>
-          <li><strong>Waist (Women):</strong> Measure at the narrowest point above the navel.</li>
-          <li><strong>Hips (Women):</strong> Measure at the widest part of the buttocks.</li>
-          <li><strong>Consistency:</strong> Measure at the same time of day, preferably morning before eating.</li>
-        </ul>
+        <section>
+          <h2 className="text-2xl font-bold mb-4">Measurement Tips</h2>
+          <ul className="list-disc pl-6 mb-6 space-y-2">
+            <li><strong>Neck:</strong> Measure below the larynx (Adam's apple). Keep the tape flat.</li>
+            <li><strong>Waist (Men):</strong> Measure at the navel level.</li>
+            <li><strong>Waist (Women):</strong> Measure at the narrowest point above the navel.</li>
+            <li><strong>Hips (Women):</strong> Measure at the widest part of the buttocks.</li>
+            <li><strong>Consistency:</strong> Measure at the same time of day, preferably morning before eating.</li>
+          </ul>
 
-        <h3 className="font-semibold text-lg mb-2 mt-6">Why Body Fat Percentage Matters</h3>
-        <p className="mb-4">
-          Body weight alone doesn't tell the whole story. Two people can weigh the same but have vastly different body compositions. A lower body fat percentage generally indicates better metabolic health, while excess body fat (especially visceral fat) is linked to higher risks of heart disease and diabetes.
-        </p>
-      </>
+        </section>
+      </div>
     ),
 
     proTip: "Hydration levels can affect measurements. For the most consistent results, measure yourself first thing in the morning after using the restroom but before eating or drinking.",

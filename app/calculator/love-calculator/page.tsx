@@ -2,7 +2,8 @@ import type { Metadata } from "next"
 import { ToolPageLayout } from "@/components/common/tool-page-layout"
 import { LoveCalculator } from "@/components/calculators/love-calculator"
 import { createMetadata } from "@/lib/metadata-base"
-import { Heart, Users, Zap, Target, Sparkles, Star, Gift, Flower2, Calculator, TrendingUp, BookOpen, Smile, AlertCircle, Percent, Hash, Clock } from "lucide-react"
+import { Heart, Users, Zap, Target, Sparkles, Star, Gift, Flower2, Calculator, TrendingUp, BookOpen, Smile, AlertCircle, Percent, Hash, Clock, Brain } from "lucide-react"
+import { GTable } from "@/ui/gtable"
 
 const baseMetadata = createMetadata({
   title: "Love Calculator - True Relationship Compatibility Test 2026",
@@ -149,6 +150,26 @@ export default function LoveCalculatorPage() {
 
     aboutTool: (
       <div className="space-y-8">
+        <section>
+          <h2 className="text-2xl font-bold mb-4">What is a Love Calculator?</h2>
+          <p className="text-muted-foreground mb-4">
+            A love calculator is an entertainment tool that uses fun algorithms to predict the relationship compatibility between two people based on their names. While it shouldn't replace real emotional connection, it serves as a playful way to spark conversations, share a laugh with a crush, or test your favorite celebrity pairings.
+          </p>
+        </section>
+
+        <div className="p-6 bg-gradient-to-br from-pink-500/10 via-transparent to-red-500/10 rounded-2xl border border-pink-500/20 shadow-sm relative overflow-hidden">
+          <div className="absolute top-0 right-0 p-4 opacity-10">
+            <Brain className="h-24 w-24 text-pink-500" />
+          </div>
+          <h4 className="flex items-center gap-2 font-bold text-pink-700 dark:text-pink-400 mb-3 relative z-10">
+            <Brain className="h-5 w-5" />
+            Expert Insight: Digital Fun vs. Real Chemistry
+          </h4>
+          <p className="text-sm leading-relaxed text-slate-600 dark:text-slate-300 relative z-10 italic">
+            "While name-based algorithms (derived from ancient systems like Gematria or Numerology) are exciting for entertainment, remember that real relationship success is built on 5 core pillars: Communication, Trust, Shared Values, Respect, and Time. Use our Love Calculator as a 'ice-breaker' or 'date-night' activity, but trust your heart over any percentage when it comes to long-term commitment."
+          </p>
+        </div>
+
         <section>
           <h2 className="text-2xl font-bold mb-4 flex items-center gap-2">
             <Target className="h-6 w-6 text-primary" />
@@ -318,24 +339,21 @@ export default function LoveCalculatorPage() {
             <Percent className="h-6 w-6 text-primary" />
             Love Match Percentage Ranges
           </h2>
-          <div className="space-y-3">
-            <div className="flex justify-between items-center p-3 bg-muted rounded-lg border border-border">
-              <span className="font-medium text-foreground">0-30%</span>
-              <span className="text-foreground font-bold">Challenging Match</span>
-            </div>
-            <div className="flex justify-between items-center p-3 bg-muted rounded-lg border border-border">
-              <span className="font-medium text-foreground">31-60%</span>
-              <span className="text-foreground font-bold">Moderate Compatibility</span>
-            </div>
-            <div className="flex justify-between items-center p-3 bg-muted rounded-lg border border-border">
-              <span className="font-medium text-foreground">61-90%</span>
-              <span className="text-foreground font-bold">Good Match</span>
-            </div>
-            <div className="flex justify-between items-center p-3 bg-muted rounded-lg border border-border">
-              <span className="font-medium text-foreground">91-100%</span>
-              <span className="text-foreground font-bold">Perfect Match</span>
-            </div>
-          </div>
+          <GTable>
+            <thead className="bg-muted text-foreground font-semibold">
+              <tr>
+                <th className="p-3 text-left">Percentage</th>
+                <th className="p-3 text-left">Compatibility Level</th>
+                <th className="p-3 text-left">Relationship Vibe</th>
+              </tr>
+            </thead>
+            <tbody className="divide-y divide-border text-sm">
+              <tr><td className="p-3 font-semibold">91% - 100%</td><td className="p-3">Perfect Match</td><td className="p-3 text-muted-foreground">Soulmate potential, high-level harmony.</td></tr>
+              <tr><td className="p-3 font-semibold">61% - 90%</td><td className="p-3">Great Match</td><td className="p-3 text-muted-foreground">Strong connection, great communication.</td></tr>
+              <tr><td className="p-3 font-semibold">31% - 60%</td><td className="p-3">Moderate Match</td><td className="p-3 text-muted-foreground">Growing potential, needs shared efforts.</td></tr>
+              <tr><td className="p-3 font-semibold">0% - 30%</td><td className="p-3">Challenging Match</td><td className="p-3 text-muted-foreground">Opposition creates friction or growth.</td></tr>
+            </tbody>
+          </GTable>
         </section>
 
         <section>

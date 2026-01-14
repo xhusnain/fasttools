@@ -2,7 +2,8 @@ import type { Metadata } from "next"
 import { ToolPageLayout } from "@/components/common/tool-page-layout"
 import { ConversionCalculator } from "@/components/converters/conversion-calculator"
 import { createMetadata } from "@/lib/metadata-base"
-import { Calculator, Zap, Target, TrendingUp, BookOpen, Users, CheckCircle, Info, Home, DollarSign, FileText, Percent, Clock, Award, BarChart3, Building, PieChart } from "lucide-react"
+import { Calculator, Zap, Target, TrendingUp, BookOpen, Users, CheckCircle, Info, Home, DollarSign, FileText, Percent, Clock, Award, BarChart3, Building, PieChart, Brain } from "lucide-react"
+import { GTable } from "@/ui/gtable"
 import Link from "next/link"
 
 const TOOL_TITLE = "Unit Converter - Convert Units Online"
@@ -100,6 +101,45 @@ export default function ConversionCalculatorPage() {
 
     aboutTool: (
       <div className="space-y-8">
+        <section>
+          <h2 className="text-2xl font-bold mb-4">What is a Unit Conversion Calculator?</h2>
+          <p className="text-muted-foreground mb-4">
+            A unit conversion calculator is a digital tool designed to transform a value expressed in one unit of measurement into its equivalent value in another unit. Whether you are translating Metric measurements to Imperial or converting real-time currency, these calculators ensure mathematical precision by using fixed conversion constants and live market data.
+          </p>
+        </section>
+
+        <div className="p-6 bg-gradient-to-br from-blue-500/10 via-transparent to-cyan-500/10 rounded-2xl border border-blue-500/20 shadow-sm relative overflow-hidden">
+          <div className="absolute top-0 right-0 p-4 opacity-10">
+            <Brain className="h-24 w-24 text-blue-500" />
+          </div>
+          <h4 className="flex items-center gap-2 font-bold text-blue-700 dark:text-blue-400 mb-3 relative z-10">
+            <Brain className="h-5 w-5" />
+            Expert Insight: Precision & Floating Point Math
+          </h4>
+          <p className="text-sm leading-relaxed text-slate-600 dark:text-slate-300 relative z-10 italic">
+            "When performing complex conversions, especially in scientific or financial contexts, the biggest challenge is **floating-point precision**. Our calculator uses high-precision math libraries to avoid rounding errors common in standard JavaScript calculations. If you're converting between units like Micrometers to Miles, even a tiny error at the 10th decimal place can lead to significant real-world discrepancies. Always ensure your tools are using the 64-bit IEEE 754 standard for the most reliable results."
+          </p>
+        </div>
+
+        <section>
+          <h2 className="text-2xl font-bold mb-4">Common Conversion Multipliers</h2>
+          <GTable>
+            <thead className="bg-muted text-foreground font-semibold">
+              <tr>
+                <th className="p-3 text-left">From Unit</th>
+                <th className="p-3 text-left">To Unit</th>
+                <th className="p-3 text-left">Multiply By</th>
+              </tr>
+            </thead>
+            <tbody className="divide-y divide-border text-sm">
+              <tr><td className="p-3 font-semibold">Inches</td><td className="p-3">Centimeters</td><td className="p-3">2.54</td></tr>
+              <tr><td className="p-3 font-semibold">Miles</td><td className="p-3">Kilometers</td><td className="p-3">1.60934</td></tr>
+              <tr><td className="p-3 font-semibold">Pounds (lb)</td><td className="p-3">Kilograms (kg)</td><td className="p-3">0.453592</td></tr>
+              <tr><td className="p-3 font-semibold">Gallons (US)</td><td className="p-3">Liters</td><td className="p-3">3.78541</td></tr>
+            </tbody>
+          </GTable>
+        </section>
+
         <section className="bg-card border border-border rounded-lg p-6">
           <h2 className="text-2xl font-bold mb-6 flex items-center gap-2 text-foreground">
             <TrendingUp className="h-6 w-6 text-primary" />

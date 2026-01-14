@@ -2,6 +2,8 @@ import type { Metadata } from "next"
 import { ToolPageLayout } from "@/components/common/tool-page-layout"
 import BMRCalculator from "@/components/health/bmr-calculator"
 import { createMetadata } from "@/lib/metadata-base"
+import { GTable } from "@/ui/gtable"
+import { Brain } from "lucide-react"
 
 const baseMetadata = createMetadata({
   title: "BMR Calculator | Free Basal Metabolic Rate Calculator",
@@ -69,31 +71,85 @@ export default function BMRCalculatorPage() {
     ],
 
     aboutTool: (
-      <>
-        <h3 className="font-semibold text-lg mb-2 mt-6">Understanding BMR vs. TDEE</h3>
-        <p className="mb-4">
-          <strong>BMR (Basal Metabolic Rate)</strong> is the number of calories your body burns while at complete rest to perform basic life-sustaining functions like breathing and circulation. It accounts for about 60-75% of your total calorie burn.
-        </p>
-        <p className="mb-4">
-          <strong>TDEE (Total Daily Energy Expenditure)</strong> is your BMR plus the calories you burn through physical activity and the digestion of food. This is the number you should use to plan your daily calorie intake.
-        </p>
+      <div className="space-y-8">
+        <section>
+          <h2 className="text-2xl font-bold mb-4">What is BMR?</h2>
+          <p className="text-base text-muted-foreground leading-relaxed mb-6">
+            <strong>BMR (Basal Metabolic Rate)</strong> is the minimum number of calories your body requires to function at rest. This includes vital processes such as breathing, blood circulation, cell production, and nutrient processing. Even if you spent the entire day in bed, your body would still burn these calories simply to stay alive.
+          </p>
 
-        <h3 className="font-semibold text-lg mb-2 mt-6">Factors Affecting BMR</h3>
-        <ul className="list-disc pl-6 mb-6 space-y-2">
-          <li><strong>Muscle Mass:</strong> Muscle burns more calories than fat, even at rest.</li>
-          <li><strong>Age:</strong> Metabolism naturally slows down as you age.</li>
-          <li><strong>Gender:</strong> Men typically have higher BMRs due to more muscle mass.</li>
-          <li><strong>Genetics:</strong> Some people naturally have faster or slower metabolisms.</li>
-          <li><strong>Hormones:</strong> Thyroid issues and other hormonal imbalances can affect BMR.</li>
-        </ul>
+          <h3 className="font-semibold text-xl mb-4 text-foreground">Understanding BMR vs. TDEE</h3>
+          <p className="mb-4 text-muted-foreground">
+            While BMR reflects your resting energy needs, <strong>TDEE (Total Daily Energy Expenditure)</strong> accounts for your total daily burn, including exercise and daily movement. To find your TDEE, we multiply your BMR by an activity factor:
+          </p>
 
-        <h3 className="font-semibold text-lg mb-2 mt-6">BMR Equations Explained</h3>
-        <ul className="list-disc pl-6 mb-6 space-y-2">
-          <li><strong>Mifflin-St Jeor:</strong> The most accurate for the general population.</li>
-          <li><strong>Harris-Benedict:</strong> A classic formula, good but can overestimate for some.</li>
-          <li><strong>Katch-McArdle:</strong> Best for athletes and lean individuals (requires body fat %).</li>
-        </ul>
-      </>
+          <GTable>
+            <thead className="bg-muted text-foreground font-semibold">
+              <tr>
+                <th className="p-3 text-left">Activity Level</th>
+                <th className="p-3 text-left">Multiplier</th>
+                <th className="p-3 text-left">Description</th>
+              </tr>
+            </thead>
+            <tbody className="divide-y divide-border text-sm">
+              <tr>
+                <td className="p-3 font-semibold text-foreground">Sedentary</td>
+                <td className="p-3">1.2</td>
+                <td className="p-3 text-muted-foreground">Minimal exercise or desk job</td>
+              </tr>
+              <tr>
+                <td className="p-3 font-semibold text-foreground">Lightly Active</td>
+                <td className="p-3">1.375</td>
+                <td className="p-3 text-muted-foreground">Light exercise 1-3 days/week</td>
+              </tr>
+              <tr>
+                <td className="p-3 font-semibold text-foreground">Moderately Active</td>
+                <td className="p-3">1.55</td>
+                <td className="p-3 text-muted-foreground">Moderate exercise 3-5 days/week</td>
+              </tr>
+              <tr>
+                <td className="p-3 font-semibold text-foreground">Very Active</td>
+                <td className="p-3">1.725</td>
+                <td className="p-3 text-muted-foreground">Hard exercise 6-7 days/week</td>
+              </tr>
+              <tr>
+                <td className="p-3 font-semibold text-foreground">Extra Active</td>
+                <td className="p-3">1.9</td>
+                <td className="p-3 text-muted-foreground">Physical job or 2x training/day</td>
+              </tr>
+            </tbody>
+          </GTable>
+        </section>
+
+        <div className="p-6 bg-gradient-to-r from-emerald-50 to-teal-50 dark:from-emerald-950/30 dark:to-teal-950/30 border-l-4 border-emerald-500 rounded-lg my-8">
+          <h4 className="flex items-center gap-2 font-bold text-emerald-800 dark:text-emerald-200 mb-2">
+            <Brain className="h-5 w-5" />
+            Expert Insight: Metabolic Adaptation (Starvation Mode)
+          </h4>
+          <p className="italic text-emerald-700 dark:text-emerald-300">
+            "When you consistently eat below your BMR, your body begins 'metabolic adaptation.' To preserve energy, it downregulates non-essential functions, making you feel cold, lethargic, and reducing your resting burn. This is why aggressive calorie cutting often leads to weight loss plateaus. The secret to sustainable fat loss is eating slightly below TDEE, but usually above or at your BMR."
+          </p>
+          <p className="text-sm font-semibold text-emerald-600 dark:text-emerald-400 mt-2">— FastTools Nutrition Team</p>
+        </div>
+
+        <section>
+          <h3 className="font-semibold text-lg mb-2 mt-6 text-foreground">BMR Equations Explained</h3>
+          <ul className="list-disc pl-6 mb-6 space-y-2 text-sm text-muted-foreground">
+            <li><strong>Mifflin-St Jeor:</strong> The most accurate for the general population.</li>
+            <li><strong>Harris-Benedict:</strong> A classic formula, good but can overestimate for some.</li>
+            <li><strong>Katch-McArdle:</strong> Best for athletes and lean individuals (requires body fat %).</li>
+          </ul>
+
+          <h2 className="text-2xl font-bold mb-4">Factors Affecting BMR</h2>
+          <ul className="list-disc pl-6 mb-6 space-y-2">
+            <li><strong>Muscle Mass:</strong> Muscle burns more calories than fat, even at rest.</li>
+            <li><strong>Age:</strong> Metabolism naturally slows down as you age.</li>
+            <li><strong>Gender:</strong> Men typically have higher BMRs due to more muscle mass.</li>
+            <li><strong>Genetics:</strong> Some people naturally have faster or slower metabolisms.</li>
+            <li><strong>Hormones:</strong> Thyroid issues and other hormonal imbalances can affect BMR.</li>
+          </ul>
+        </section>
+      </div>
     ),
 
     proTip: "To increase your BMR, focus on strength training. Building muscle is the most effective way to permanently boost your resting metabolic rate, allowing you to eat more calories while maintaining your weight.",

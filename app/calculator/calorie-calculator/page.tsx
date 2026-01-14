@@ -2,6 +2,8 @@ import type { Metadata } from "next"
 import { ToolPageLayout } from "@/components/common/tool-page-layout"
 import CalorieCalculator from "@/components/health/calorie-calculator"
 import { createMetadata } from "@/lib/metadata-base"
+import { GTable } from "@/ui/gtable"
+import { Brain } from "lucide-react"
 
 const baseMetadata = createMetadata({
   title: "Calorie Calculator | Free Daily Calorie Needs Calculator",
@@ -68,29 +70,92 @@ export default function CalorieCalculatorPage() {
     ],
 
     aboutTool: (
-      <>
-        <h3 className="font-semibold text-lg mb-2 mt-6">Calorie Calculation Methods</h3>
-        <ul className="list-disc pl-6 mb-6 space-y-2">
-          <li><strong>Mifflin-St Jeor Equation:</strong> Developed in 1990, considered the most accurate for the general population.</li>
-          <li><strong>Revised Harris-Benedict Equation:</strong> A classic formula, revised in 1984. Good alternative but slightly less accurate.</li>
-          <li><strong>Katch-McArdle Formula:</strong> Best for lean individuals with known body fat percentage as it accounts for lean body mass.</li>
-        </ul>
+      <div className="space-y-8">
+        <section>
+          <h2 className="text-2xl font-bold mb-4">What are Calories?</h2>
+          <p className="text-base text-muted-foreground leading-relaxed mb-6">
+            Calories are a measure of <strong>energy</strong>. In nutrition, they refer to the energy people get from the food and drink they consume, and the energy they use in physical activity. Understanding your daily calorie expenditure is the cornerstone of managing weight and optimizing physical performance.
+          </p>
 
-        <h3 className="font-semibold text-lg mb-2 mt-6">Zigzag Calorie Cycling</h3>
-        <p className="mb-4">
-          Zigzag calorie cycling involves rotating between higher and lower calorie days. This technique helps prevent metabolic adaptation (plateaus) and provides psychological flexibility.
-        </p>
-        <ul className="list-disc pl-6 mb-6 space-y-2">
-          <li><strong>High Days:</strong> +200-300 calories to boost metabolism and fuel workouts.</li>
-          <li><strong>Low Days:</strong> -200-300 calories to create a larger deficit for fat loss.</li>
-          <li><strong>Benefits:</strong> Maintains weight loss momentum and reduces diet fatigue.</li>
-        </ul>
+          <h3 className="font-semibold text-xl mb-4 text-foreground">Activity Burn Reference (Est. per 30 mins)</h3>
+          <p className="mb-4 text-muted-foreground text-sm">
+            Energy expenditure varies significantly based on body weight and intensity. Here is an estimate of calories burned during common activities for different weights:
+          </p>
+          <GTable>
+            <thead className="bg-muted text-foreground font-semibold">
+              <tr>
+                <th className="p-3 text-left">Activity</th>
+                <th className="p-3 text-left">125 lbs (57 kg)</th>
+                <th className="p-3 text-left">155 lbs (70 kg)</th>
+                <th className="p-3 text-left">185 lbs (84 kg)</th>
+              </tr>
+            </thead>
+            <tbody className="divide-y divide-border text-sm">
+              <tr>
+                <td className="p-3 font-semibold text-foreground">Walking (3.5 mph)</td>
+                <td className="p-3">120 cal</td>
+                <td className="p-3">149 cal</td>
+                <td className="p-3">178 cal</td>
+              </tr>
+              <tr>
+                <td className="p-3 font-semibold text-foreground">Running (5 mph)</td>
+                <td className="p-3">240 cal</td>
+                <td className="p-3">298 cal</td>
+                <td className="p-3">355 cal</td>
+              </tr>
+              <tr>
+                <td className="p-3 font-semibold text-foreground">Bicycling (12-14 mph)</td>
+                <td className="p-3">240 cal</td>
+                <td className="p-3">298 cal</td>
+                <td className="p-3">355 cal</td>
+              </tr>
+              <tr>
+                <td className="p-3 font-semibold text-foreground">Weight Training</td>
+                <td className="p-3">90 cal</td>
+                <td className="p-3">112 cal</td>
+                <td className="p-3">133 cal</td>
+              </tr>
+              <tr>
+                <td className="p-3 font-semibold text-foreground">Swimming (General)</td>
+                <td className="p-3">180 cal</td>
+                <td className="p-3">223 cal</td>
+                <td className="p-3">266 cal</td>
+              </tr>
+            </tbody>
+          </GTable>
+        </section>
 
-        <h3 className="font-semibold text-lg mb-2 mt-6">Understanding BMR vs. TDEE</h3>
-        <p className="mb-4">
-          <strong>BMR (Basal Metabolic Rate)</strong> is the calories you burn at complete rest (coma state). <strong>TDEE (Total Daily Energy Expenditure)</strong> is BMR plus calories burned from activity and digestion. TDEE is the number you should base your diet on.
-        </p>
-      </>
+        <div className="p-6 bg-gradient-to-r from-orange-50 to-amber-50 dark:from-orange-950/30 dark:to-amber-950/30 border-l-4 border-orange-500 rounded-lg my-8">
+          <h4 className="flex items-center gap-2 font-bold text-orange-800 dark:text-orange-200 mb-2">
+            <Brain className="h-5 w-5" />
+            Expert Insight: The Thermic Effect of Food (TEF)
+          </h4>
+          <p className="italic text-orange-700 dark:text-orange-300">
+            "Your Total Daily Energy Expenditure (TDEE) isn't just exercise and breathing. About 10% of your daily burn comes from the energy required to digest, absorb, and process nutrients. Protein has the highest thermic effect, requiring up to 20-30% of its own energy to be processed, compared to just 5-15% for carbs and 0-3% for fats. This is why high-protein diets are often more effective for fat loss."
+          </p>
+          <p className="text-sm font-semibold text-orange-600 dark:text-orange-400 mt-2">— FastTools Metabolic Research Team</p>
+        </div>
+
+        <section>
+          <h2 className="text-2xl font-bold mb-4">Calorie Calculation Methods</h2>
+          <ul className="list-disc pl-6 mb-6 space-y-2">
+            <li><strong>Mifflin-St Jeor Equation:</strong> Developed in 1990, considered the most accurate for the general population.</li>
+            <li><strong>Revised Harris-Benedict Equation:</strong> A classic formula, revised in 1984. Good alternative but slightly less accurate.</li>
+            <li><strong>Katch-McArdle Formula:</strong> Best for lean individuals with known body fat percentage as it accounts for lean body mass.</li>
+          </ul>
+
+          <h3 className="font-semibold text-lg mb-2 mt-6">Zigzag Calorie Cycling</h3>
+          <p className="mb-4">
+            Zigzag calorie cycling involves rotating between higher and lower calorie days. This technique helps prevent metabolic adaptation (plateaus) and provides psychological flexibility.
+          </p>
+          <ul className="list-disc pl-6 mb-6 space-y-2">
+            <li><strong>High Days:</strong> +200-300 calories to boost metabolism and fuel workouts.</li>
+            <li><strong>Low Days:</strong> -200-300 calories to create a larger deficit for fat loss.</li>
+            <li><strong>Benefits:</strong> Maintains weight loss momentum and reduces diet fatigue.</li>
+          </ul>
+
+        </section>
+      </div>
     ),
 
     proTip: "Don't eat back all your exercise calories. Fitness trackers often overestimate burns. A safe bet is to eat back only 50% of tracked exercise calories if you are trying to lose weight.",

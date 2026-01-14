@@ -3,7 +3,8 @@ import { getCurrentYear } from "@/lib/utils"
 import { ToolPageLayout } from "@/components/common/tool-page-layout"
 import { IPSubnetCalculator } from "@/components/dev-tools/ip-subnet-calculator"
 import { createMetadata } from "@/lib/metadata-base"
-import { Network, Globe, Shield, Layers, Hash, Info, Calculator, Lightbulb, Server, Database, Zap, Target, CheckCircle, BarChart3, Users, Clock, ShieldCheck, FileText } from "lucide-react"
+import { Network, Globe, Shield, Layers, Hash, Info, Calculator, Lightbulb, Server, Database, Zap, Target, CheckCircle, BarChart3, Users, Clock, ShieldCheck, FileText, Brain } from "lucide-react"
+import { GTable } from "@/ui/gtable"
 import Image from "next/image"
 
 const TOOL_TITLE = "IP Subnet Calculator - Calculate CIDR & VLSM"
@@ -121,6 +122,26 @@ export default function IPSubnetCalculatorPage() {
     aboutTool: (
       <div className="space-y-8">
         <section>
+          <h2 className="text-2xl font-bold mb-4">What is an IP Subnet?</h2>
+          <p className="text-muted-foreground mb-4">
+            An IP subnet is a logical subdivision of an IP network. The practice of dividing a network into two or more networks is called subnetting. This process increases network efficiency, enhances security, and simplifies management by breaking down large networks into smaller, more manageable segments.
+          </p>
+        </section>
+
+        <div className="p-6 bg-gradient-to-br from-indigo-500/10 via-transparent to-blue-500/10 rounded-2xl border border-indigo-500/20 shadow-sm relative overflow-hidden">
+          <div className="absolute top-0 right-0 p-4 opacity-10">
+            <Brain className="h-24 w-24 text-indigo-500" />
+          </div>
+          <h4 className="flex items-center gap-2 font-bold text-indigo-700 dark:text-indigo-400 mb-3 relative z-10">
+            <Brain className="h-5 w-5" />
+            Expert Insight: CIDR vs. VLSM
+          </h4>
+          <p className="text-sm leading-relaxed text-slate-600 dark:text-slate-300 relative z-10 italic">
+            "While often used interchangeably, CIDR and VLSM serve different purposes. CIDR (Classless Inter-Domain Routing) is primarily used for **route aggregation** on the public internet to keep backbone routing tables small. VLSM (Variable Length Subnet Masking), on the other hand, is used **internally** within an organization to allocate IP space efficiently by creating subnets of different sizes. Mastering both is essential for modern cloud architecture, where IP exhaustion is a constant risk even in private VPCs."
+          </p>
+        </div>
+
+        <section>
           <h2 className="text-2xl font-bold mb-4 flex items-center gap-2">
             <Globe className="h-6 w-6 text-primary" />
             IPv4 Network Classes & Private Ranges
@@ -197,63 +218,39 @@ export default function IPSubnetCalculatorPage() {
             <FileText className="h-6 w-6 text-primary" />
             Complete Subnet Mask Cheat Sheet (CIDR /1 to /32)
           </h2>
-          <div className="overflow-x-auto max-h-[500px] overflow-y-auto scrollbar-thin scrollbar-thumb-border rounded-lg border border-border">
-            <table className="w-full text-sm text-left">
-              <thead className="bg-muted text-foreground sticky top-0 z-10">
-                <tr>
-                  <th className="p-3">CIDR</th>
-                  <th className="p-3">Subnet Mask</th>
-                  <th className="p-3">Addresses</th>
-                  <th className="p-3">Hosts</th>
-                  <th className="p-3">Class</th>
+          <GTable>
+            <thead className="bg-muted text-foreground font-semibold sticky top-0 z-10">
+              <tr>
+                <th className="p-3 text-left">CIDR</th>
+                <th className="p-3 text-left">Subnet Mask</th>
+                <th className="p-3 text-left">Addresses</th>
+                <th className="p-3 text-left">Hosts</th>
+                <th className="p-3 text-left">Class Equivalent</th>
+              </tr>
+            </thead>
+            <tbody className="divide-y divide-border bg-card">
+              {[
+                { cidr: "/32", mask: "255.255.255.255", addresses: "1", hosts: "1", class: "Host" },
+                { cidr: "/31", mask: "255.255.255.254", addresses: "2", hosts: "2 (P2P)", class: "N/A" },
+                { cidr: "/30", mask: "255.255.255.252", addresses: "4", hosts: "2", class: "A, B, C" },
+                { cidr: "/29", mask: "255.255.255.248", addresses: "8", hosts: "6", class: "A, B, C" },
+                { cidr: "/28", mask: "255.255.255.240", addresses: "16", hosts: "14", class: "A, B, C" },
+                { cidr: "/27", mask: "255.255.255.224", addresses: "32", hosts: "30", class: "A, B, C" },
+                { cidr: "/24", mask: "255.255.255.0", addresses: "256", hosts: "254", class: "Class C" },
+                { cidr: "/20", mask: "255.255.240.0", addresses: "4,096", hosts: "4,094", class: "Class B" },
+                { cidr: "/16", mask: "255.255.0.0", addresses: "65,536", hosts: "65,534", class: "Class B" },
+                { cidr: "/8", mask: "255.0.0.0", addresses: "16,777,216", hosts: "16,777,214", class: "Class A" }
+              ].map((row) => (
+                <tr key={row.cidr} className="hover:bg-muted/50 transition-colors">
+                  <td className="p-3 font-mono text-primary font-bold">{row.cidr}</td>
+                  <td className="p-3 font-mono">{row.mask}</td>
+                  <td className="p-3 text-muted-foreground">{row.addresses}</td>
+                  <td className="p-3 text-muted-foreground">{row.hosts}</td>
+                  <td className="p-3 text-sm italic">{row.class}</td>
                 </tr>
-              </thead>
-              <tbody className="divide-y divide-border bg-card">
-                {[
-                  { cidr: "/32", mask: "255.255.255.255", addresses: "1", hosts: "1", class: "Host" },
-                  { cidr: "/31", mask: "255.255.255.254", addresses: "2", hosts: "2 (P2P)", class: "N/A" },
-                  { cidr: "/30", mask: "255.255.255.252", addresses: "4", hosts: "2", class: "A, B, C" },
-                  { cidr: "/29", mask: "255.255.255.248", addresses: "8", hosts: "6", class: "A, B, C" },
-                  { cidr: "/28", mask: "255.255.255.240", addresses: "16", hosts: "14", class: "A, B, C" },
-                  { cidr: "/27", mask: "255.255.255.224", addresses: "32", hosts: "30", class: "A, B, C" },
-                  { cidr: "/26", mask: "255.255.255.192", addresses: "64", hosts: "62", class: "C" },
-                  { cidr: "/25", mask: "255.255.255.128", addresses: "128", hosts: "126", class: "C" },
-                  { cidr: "/24", mask: "255.255.255.0", addresses: "256", hosts: "254", class: "C" },
-                  { cidr: "/23", mask: "255.255.254.0", addresses: "512", hosts: "510", class: "C (Supernet)" },
-                  { cidr: "/22", mask: "255.255.252.0", addresses: "1,024", hosts: "1,022", class: "C (Supernet)" },
-                  { cidr: "/21", mask: "255.255.248.0", addresses: "2,048", hosts: "2,046", class: "C (Supernet)" },
-                  { cidr: "/20", mask: "255.255.240.0", addresses: "4,096", hosts: "4,094", class: "B" },
-                  { cidr: "/19", mask: "255.255.224.0", addresses: "8,192", hosts: "8,190", class: "B" },
-                  { cidr: "/18", mask: "255.255.192.0", addresses: "16,384", hosts: "16,382", class: "B" },
-                  { cidr: "/17", mask: "255.255.128.0", addresses: "32,768", hosts: "32,766", class: "B" },
-                  { cidr: "/16", mask: "255.255.0.0", addresses: "65,536", hosts: "65,534", class: "B" },
-                  { cidr: "/15", mask: "255.254.0.0", addresses: "131,072", hosts: "131,070", class: "A" },
-                  { cidr: "/14", mask: "255.252.0.0", addresses: "262,144", hosts: "262,142", class: "A" },
-                  { cidr: "/13", mask: "255.248.0.0", addresses: "524,288", hosts: "524,286", class: "A" },
-                  { cidr: "/12", mask: "255.240.0.0", addresses: "1,048,576", hosts: "1,048,574", class: "A" },
-                  { cidr: "/11", mask: "255.224.0.0", addresses: "2,097,152", hosts: "2,097,150", class: "A" },
-                  { cidr: "/10", mask: "255.192.0.0", addresses: "4,194,304", hosts: "4,194,302", class: "A" },
-                  { cidr: "/9", mask: "255.128.0.0", addresses: "8,388,608", hosts: "8,388,606", class: "A" },
-                  { cidr: "/8", mask: "255.0.0.0", addresses: "16,777,216", hosts: "16,777,214", class: "A" },
-                  { cidr: "/7", mask: "254.0.0.0", addresses: "33,554,432", hosts: "33,554,430", class: "A (Supernet)" },
-                  { cidr: "/6", mask: "252.0.0.0", addresses: "67,108,864", hosts: "67,108,862", class: "A (Supernet)" },
-                  { cidr: "/5", mask: "248.0.0.0", addresses: "134,217,728", hosts: "134,217,726", class: "A (Supernet)" },
-                  { cidr: "/4", mask: "240.0.0.0", addresses: "268,435,456", hosts: "268,435,454", class: "A (Supernet)" },
-                  { cidr: "/3", mask: "224.0.0.0", addresses: "536,870,912", hosts: "536,870,910", class: "Reserved" },
-                  { cidr: "/2", mask: "192.0.0.0", addresses: "1,073,741,824", hosts: "1,073,741,822", class: "Reserved" },
-                  { cidr: "/1", mask: "128.0.0.0", addresses: "2,147,483,648", hosts: "2,147,483,646", class: "Reserved" },
-                ].map((row) => (
-                  <tr key={row.cidr} className="hover:bg-muted/50">
-                    <td className="p-3 font-mono text-primary">{row.cidr}</td>
-                    <td className="p-3 font-mono">{row.mask}</td>
-                    <td className="p-3">{row.addresses}</td>
-                    <td className="p-3">{row.hosts}</td>
-                    <td className="p-3 text-muted-foreground">{row.class}</td>
-                  </tr>
-                ))}
-              </tbody>
-            </table>
-          </div>
+              ))}
+            </tbody>
+          </GTable>
         </section>
 
         <section>

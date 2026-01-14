@@ -2,7 +2,8 @@ import type { Metadata } from "next"
 import { ToolPageLayout } from "@/components/common/tool-page-layout"
 import { TimeDurationCalculator } from "@/components/calculators/time-duration-calculator"
 import { createMetadata } from "@/lib/metadata-base"
-import { Clock, Calculator, Target, TrendingUp, Globe, Calendar, Plus, Minus, Zap, BarChart3, CheckCircle, BookOpen, Users, Award, Copy } from "lucide-react"
+import { Clock, Calculator, Target, TrendingUp, Globe, Calendar, Plus, Minus, Zap, BarChart3, CheckCircle, BookOpen, Users, Award, Copy, Brain } from "lucide-react"
+import { GTable } from "@/ui/gtable"
 
 const baseMetadata = createMetadata({
   title: "Time Duration Calculator - Calculate Time Span",
@@ -70,6 +71,71 @@ export default function TimeDurationPage() {
 
     aboutTool: (
       <div className="space-y-8">
+        <section>
+          <h2 className="text-2xl font-bold mb-4">What is Time Duration?</h2>
+          <p className="text-muted-foreground mb-4">
+            Time duration is the amount of time that passes between two specific points or events. It is a fundamental measurement used in everything from payroll (calculating hours worked) to scientific research (measuring reaction times) and travel (calculating flight durations).
+          </p>
+        </section>
+
+        <div className="p-6 bg-gradient-to-br from-blue-500/10 via-transparent to-purple-500/10 rounded-2xl border border-blue-500/20 shadow-sm relative overflow-hidden">
+          <div className="absolute top-0 right-0 p-4 opacity-10">
+            <Brain className="h-24 w-24 text-blue-500" />
+          </div>
+          <h4 className="flex items-center gap-2 font-bold text-blue-700 dark:text-blue-400 mb-3 relative z-10">
+            <Brain className="h-5 w-5" />
+            Expert Insight: Elapsed Time vs. Clock Time
+          </h4>
+          <p className="text-sm leading-relaxed text-slate-600 dark:text-slate-300 relative z-10 italic">
+            "In professional scheduling, it's crucial to distinguish between 'Elapsed Time' (the total real-world time passed) and 'Billable Time' or 'Business Hours'. When calculating duration for payroll, always ensure you're accounting for cross-midnight shifts correctly, as most basic calculators fail to handle the 24-hour rollover without manual adjustment. Our tool automates this transition seamlessly."
+          </p>
+        </div>
+
+        <section>
+          <h2 className="text-2xl font-bold mb-4">Common Time Duration Conversions</h2>
+          <GTable>
+            <thead className="bg-muted text-foreground font-semibold">
+              <tr>
+                <th className="p-3 text-left">Unit of Time</th>
+                <th className="p-3 text-left">Equivalent Value</th>
+                <th className="p-3 text-left">Scientific Notation</th>
+              </tr>
+            </thead>
+            <tbody className="divide-y divide-border text-sm">
+              <tr>
+                <td className="p-3 font-semibold text-foreground">1 Minute</td>
+                <td className="p-3">60 Seconds</td>
+                <td className="p-3">6.0 x 10¹ s</td>
+              </tr>
+              <tr>
+                <td className="p-3 font-semibold text-foreground">1 Hour</td>
+                <td className="p-3">60 Minutes / 3,600 Seconds</td>
+                <td className="p-3">3.6 x 10³ s</td>
+              </tr>
+              <tr>
+                <td className="p-3 font-semibold text-foreground">1 Day</td>
+                <td className="p-3">24 Hours / 1,440 Minutes</td>
+                <td className="p-3">8.64 x 10⁴ s</td>
+              </tr>
+              <tr>
+                <td className="p-3 font-semibold text-foreground">1 Week</td>
+                <td className="p-3">168 Hours / 10,080 Minutes</td>
+                <td className="p-3">6.048 x 10⁵ s</td>
+              </tr>
+              <tr>
+                <td className="p-3 font-semibold text-foreground">1 Month (Avg)</td>
+                <td className="p-3">730.48 Hours</td>
+                <td className="p-3">2.629 x 10⁶ s</td>
+              </tr>
+              <tr>
+                <td className="p-3 font-semibold text-foreground">1 Year</td>
+                <td className="p-3">8,765.8 Hours</td>
+                <td className="p-3">3.155 x 10⁷ s</td>
+              </tr>
+            </tbody>
+          </GTable>
+        </section>
+
         <section>
           <h2 className="text-2xl font-bold mb-4">Complete Guide to Time Duration Calculation</h2>
           <p className="text-muted-foreground mb-4">

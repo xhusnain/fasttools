@@ -2,6 +2,8 @@ import type { Metadata } from "next"
 import { ToolPageLayout } from "@/components/common/tool-page-layout"
 import { DateDifferenceCalculator } from "@/components/calculators/date-difference-calculator"
 import { createMetadata } from "@/lib/metadata-base"
+import { GTable } from "@/ui/gtable"
+import { Brain } from "lucide-react"
 
 const baseMetadata = createMetadata({
   title: "Date Difference - Calculate Days Between Dates",
@@ -66,6 +68,65 @@ export default function DateDifferencePage() {
 
     aboutTool: (
       <div className="space-y-8">
+        <section>
+          <h2 className="text-2xl font-bold mb-4">What is Date Difference?</h2>
+          <p className="text-base text-muted-foreground leading-relaxed mb-6">
+            <strong>Date Difference</strong> is the exact measurement of time between two specific calendar dates. Depending on your needs, this can be expressed in total <em>days</em>, or broken down into <em>years, months, and days</em>. This calculation is essential for project planning, calculating age, determining contract lengths, and tracking significant life milestones.
+          </p>
+
+          <h3 className="font-semibold text-xl mb-4 text-foreground">Common Date Range Reference</h3>
+          <p className="mb-4 text-muted-foreground text-sm">
+            Quick reference for common durations used in business and planning:
+          </p>
+          <GTable>
+            <thead className="bg-muted text-foreground font-semibold">
+              <tr>
+                <th className="p-3 text-left">Duration Name</th>
+                <th className="p-3 text-left">Approx. Length</th>
+                <th className="p-3 text-left">Common Use Case</th>
+              </tr>
+            </thead>
+            <tbody className="divide-y divide-border text-sm">
+              <tr>
+                <td className="p-3 font-semibold text-foreground">Fortnight</td>
+                <td className="p-3">14 Days</td>
+                <td className="p-3 text-muted-foreground">Payroll, bi-weekly meetings</td>
+              </tr>
+              <tr>
+                <td className="p-3 font-semibold text-foreground">Standard Month</td>
+                <td className="p-3">30.4 Days (avg)</td>
+                <td className="p-3 text-muted-foreground">Subscription billing, rent</td>
+              </tr>
+              <tr>
+                <td className="p-3 font-semibold text-foreground">Quarter (Q)</td>
+                <td className="p-3">91.25 Days (avg)</td>
+                <td className="p-3 text-muted-foreground">Financial reports, tax cycles</td>
+              </tr>
+              <tr>
+                <td className="p-3 font-semibold text-foreground">Year</td>
+                <td className="p-3">365 / 366 Days</td>
+                <td className="p-3 text-muted-foreground">Annual reviews, interest rates</td>
+              </tr>
+              <tr>
+                <td className="p-3 font-semibold text-foreground">Work Year</td>
+                <td className="p-3">~260 Business Days</td>
+                <td className="p-3 text-muted-foreground">Full-time employment capacity</td>
+              </tr>
+            </tbody>
+          </GTable>
+        </section>
+
+        <div className="p-6 bg-gradient-to-r from-blue-50 to-cyan-50 dark:from-blue-950/30 dark:to-cyan-950/30 border-l-4 border-blue-500 rounded-lg my-8">
+          <h4 className="flex items-center gap-2 font-bold text-blue-800 dark:text-blue-200 mb-2">
+            <Brain className="h-5 w-5" />
+            Expert Insight: Total Days vs. YMD Breakdown
+          </h4>
+          <p className="italic text-blue-700 dark:text-blue-300">
+            "When calculating date differences, the 'Years-Months-Days' breakdown can sometimes be counter-intuitive due to the varying number of days in a month. For instance, the duration between Jan 30 and Feb 28 is 29 days, but it's exactly 1 month in a non-leap year. For legal or financial contracts, it is often safer to define periods in <strong>total days</strong> to avoid ambiguity caused by calendar variations."
+          </p>
+          <p className="text-sm font-semibold text-blue-600 dark:text-blue-400 mt-2">— FastTools Product Engineering Team</p>
+        </div>
+
         <section>
           <h2 className="text-2xl font-bold mb-4">Why Calculate Days Between Dates?</h2>
           <p className="text-muted-foreground mb-4">
