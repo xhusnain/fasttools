@@ -16,6 +16,7 @@ import type { ToolPageLayoutProps } from "@/types/tool-page-layout.types"
 export function ToolPageLayout({
     header,
     breadcrumbs,
+    heroImage,
     toolComponent,
     toolContent,
     expectedMetadata,
@@ -98,11 +99,11 @@ export function ToolPageLayout({
                             centered={header.centered}
                             color={header.color}
                         />
-
-
                     </div>
 
                     <div className="grid lg:grid-cols-[1fr_350px] gap-4 lg:gap-8">
+
+
                         <div className="space-y-4 lg:space-y-6">
                             {toolComponent}
 
@@ -119,6 +120,17 @@ export function ToolPageLayout({
                                     {toolContent.overview}
                                 </div>
                             </section>
+
+                            {heroImage && (
+                                <div className="relative w-full h-[300px] sm:h-[400px] rounded-xl overflow-hidden shadow-lg border border-border/50 my-6">
+                                    <img
+                                        src={heroImage}
+                                        alt={`${toolContent.toolName} Hero`}
+                                        className="w-full h-full object-cover"
+                                    />
+                                    <div className="absolute inset-0 bg-gradient-to-t from-background/10 to-transparent pointer-events-none" />
+                                </div>
+                            )}
 
                             <section className="bg-card border border-border rounded-lg p-6">
                                 <div className="flex items-center gap-3 mb-4">

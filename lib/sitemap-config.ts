@@ -139,6 +139,19 @@ export const categoryPages = [
         priority: 0.95,
     },
     {
+        url: "https://www.fasttools.store/image-tools/image-compressor",
+        lastModified: new Date('2026-01-14'),
+        changeFrequency: "weekly" as const,
+        priority: 0.95,
+        images: [
+            {
+                url: "https://www.fasttools.store/image-compressor-hero.png",
+                title: "Free Image Compressor - 50KB/1MB Compression",
+                caption: "Batch compress JPG, PNG, and WebP images online without losing quality. Support 50KB, 100KB, 1MB targets."
+            }
+        ]
+    },
+    {
         url: "https://www.fasttools.store/fun-tools",
         lastModified: new Date('2025-11-25'),
         changeFrequency: "monthly" as const,

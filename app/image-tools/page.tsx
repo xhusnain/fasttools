@@ -2,7 +2,7 @@ import { ToolPageLayout } from "@/components/common/tool-page-layout"
 import { createToolConfig } from "@/lib/create-tool-config"
 import { GToolCard } from "@/ui/gtool-card"
 
-import { FileText, Crop } from "lucide-react"
+import { FileText, Crop, Minimize2 } from "lucide-react"
 
 const imageTools = [
   {
@@ -19,7 +19,13 @@ const imageTools = [
     href: "/image-tools/image-background-remover",
     popular: true,
   },
-
+  {
+    title: "Image Compressor",
+    description: "Compress images online (JPG, PNG, WebP) up to 90% without losing quality. Specialized smart lossy compression. 100% free and private.",
+    icon: Minimize2,
+    href: "/image-tools/image-compressor",
+    popular: true,
+  },
 ]
 
 const toolConfig = createToolConfig({
