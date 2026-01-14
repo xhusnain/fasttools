@@ -410,3 +410,56 @@ export function createVideoObjectSchema(video: { id: string, title?: string, des
         "embedUrl": `https://www.youtube.com/embed/${video.id}`
     }
 }
+
+export interface ArticleSchemaOptions {
+    title: string
+    description: string
+    image?: string
+    authorName?: string
+    datePublished?: string
+    dateModified?: string
+    slug: string
+    wordCount?: number
+}
+
+export function createArticleSchema(options: ArticleSchemaOptions) {
+    const {
+        title,
+        description,
+        image,
+        authorName = "FastTools Team",
+        datePublished,
+        dateModified,
+        slug,
+        wordCount
+    } = options
+
+    return {
+        '@context': 'https://schema.org',
+        '@type': 'Article',
+        headline: title,
+        description: description,
+        image: image ? `${BASE_URL}${image.startsWith('/') ? image : `/${image}`}` : undefined,
+        author: {
+            '@type': 'Person',
+            name: authorName,
+        },
+        publisher: {
+            '@type': 'Organization',
+            name: SITE_NAME,
+            sameAs: [
+                'https://www.facebook.com/profile.php?id=61575993339664',
+                'https://www.instagram.com/fasttools/',
+                'https://www.linkedin.com/company/fasttools-official',
+                'https://x.com/fasttools',
+            ],
+        },
+        datePublished: datePublished,
+        dateModified: dateModified || datePublished,
+        mainEntityOfPage: {
+            '@type': 'WebPage',
+            '@id': `${BASE_URL}/blog/${slug}`,
+        },
+        wordCount: wordCount,
+    }
+}

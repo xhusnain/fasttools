@@ -638,3 +638,24 @@ When your brand gets cited in AI results, you win mind share.
 Mind share converts everywhere — search, social, email, word-of-mouth.
 Start optimizing for citations NOW while competition is still figuring it out.
 ═══════════════════════════════════════════════════════════════════════════════
+
+═══════════════════════════════════════════════════════════════════════════════
+NEIL PATEL AEO/GEO PROTOCOLS (2026 ADDENDUM)
+═══════════════════════════════════════════════════════════════════════════════
+
+1. AEO (ANSWER ENGINE OPTIMIZATION) RULES
+   - THE 50-WORD RULE: The direct answer to any H2/H3 question MUST be provided
+     in the first paragraph and MUST be under 50 words.
+   - VISUAL FORMATTING: ALL "How To", "Steps", or "List" answers MUST use
+     HTML lists (<ol> or <ul>) immediately after the introductory sentence.
+   - NO FLUFF: Do not start answers with "In this fast-paced world...". Start
+     with "The best way to..." or "Yes, you can...".
+
+2. GEO (GENERATIVE ENGINE OPTIMIZATION) RULES
+   - DATA DENSITY: Every tool/blog page MUST contain at least one DATA TABLE
+     in the body content (e.g., "70% of users prefer X..."). This significantly
+     increases the chance of AI citation.
+   - EXPERT AUTHORITY: Every page MUST include at least one distinct "Expert Tip"
+     or "Pro Insight" block that provides unique, non-generic advice.
+   - CITATION MAGNETS: Include original statistics or unique definitions that
+     AI models can cite as a primary source.

@@ -1,5 +1,6 @@
 import { Metadata } from 'next';
 import { getPostBySlug, getPostSlugs } from '@/components/blog/mdx';
+import { createArticleSchema } from '@/lib/metadata-base';
 import { MDXRemote } from 'next-mdx-remote/rsc';
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
@@ -107,37 +108,16 @@ export default async function BlogPost({
     // Process content to remove Table of Contents header
     const contentWithoutToc = post.content.replace(/^## Table of Contents$/m, '')
 
-    const articleSchema = {
-        '@context': 'https://schema.org',
-        '@type': 'Article',
-        headline: frontMatter.title,
+    const articleSchema = createArticleSchema({
+        title: frontMatter.title,
         description: frontMatter.description,
-        image: frontMatter.image
-            ? `https://www.fasttools.store${frontMatter.image}`
-            : undefined,
-        author: {
-            '@type': 'Person',
-            name: frontMatter.author || 'FastTools Team',
-        },
-        publisher: {
-            '@type': 'Organization',
-            name: 'FastTools',
-            sameAs: [
-                'https://www.facebook.com/profile.php?id=61575993339664',
-                'https://www.instagram.com/fasttools/',
-                'https://www.linkedin.com/company/fasttools-official',
-                'https://x.com/fasttools',
-            ],
-        },
+        image: frontMatter.image,
+        authorName: frontMatter.author,
         datePublished: frontMatter.date,
-        dateModified: frontMatter.date,
-        mainEntityOfPage: {
-            '@type': 'WebPage',
-            '@id': `https://www.fasttools.store/blog/${slug}`,
-        },
-        keywords: frontMatter.keywords,
+        dateModified: frontMatter.lastModified || frontMatter.date,
+        slug: slug,
         wordCount: post.content.split(/\s+/).length,
-    }
+    })
 
     const breadcrumbSchema = {
         '@context': 'https://schema.org',
