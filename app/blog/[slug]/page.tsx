@@ -11,6 +11,7 @@ import { GJsonLd } from '@/components/blog/GJsonLd';
 import { GAuthorBio } from '@/components/blog/GAuthorBio';
 import { GImage } from "@/ui/gimage";
 import { MDXComponents } from "@/components/blog/mdx-components";
+import { SquareAd } from '@/components/ads/square-ad';
 
 // MDX Plugins
 import remarkGfm from 'remark-gfm';
@@ -202,9 +203,20 @@ export default async function BlogPost({
             <GJsonLd schema={articleSchema} />
             <GJsonLd schema={breadcrumbSchema} />
             {faqSchema && <GJsonLd schema={faqSchema} />}
-            <div className="min-h-screen font-sans selection:bg-foreground/20 selection:text-foreground bg-backgroundPrimary pt-40 pb-24">
 
-                <div className="max-w-7xl mx-auto border border-white/10 relative">
+            <div className="hidden 2xl:flex fixed left-4 top-1/3 -translate-y-1/2 z-10 flex-col gap-4">
+                <SquareAd />
+                <SquareAd />
+            </div>
+
+            <div className="hidden 2xl:flex fixed right-4 top-1/3 -translate-y-1/2 z-10 flex-col gap-4">
+                <SquareAd />
+                <SquareAd />
+            </div>
+
+            <div className="min-h-screen font-sans selection:bg-foreground/20 selection:text-foreground bg-backgroundPrimary pt-40 pb-24 relative overflow-x-hidden">
+
+                <div className="max-w-7xl mx-auto border border-white/10 relative bg-backgroundPrimary">
                     <header className="border-b border-white/10 p-8 md:p-12 lg:p-20 text-center relative bg-white/[0.02]">
                         <Link
                             href="/blog"
