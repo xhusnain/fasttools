@@ -31,20 +31,18 @@ export function SquareAd() {
     if (process.env.NODE_ENV !== "production") return null
 
     return (
-        // Use a min-height/width container to ensure AdSense has space to render
-        <div className="flex justify-center my-6 overflow-hidden min-w-[300px] min-h-[250px]">
+        // Use a fixed 300x250 container (Medium Rectangle - Google Recommended) ensures Mobile CLS stability
+        <div className="flex justify-center my-6 overflow-hidden w-[300px] h-[250px] mx-auto">
             {/* Fallback/Dev Placeholder */}
-            <div className={`bg-muted text-muted-foreground text-xs p-2 text-center w-full max-w-[336px] min-h-[280px] flex items-center justify-center ${process.env.NODE_ENV === 'production' ? 'hidden' : 'flex'}`}>
-                Advertisement
+            <div className={`bg-muted text-muted-foreground text-xs p-2 text-center w-full h-full flex items-center justify-center ${process.env.NODE_ENV === 'production' ? 'hidden' : 'flex'}`}>
+                Advertisement (300x250)
             </div>
 
             <ins
                 className="adsbygoogle"
-                style={{ display: "block", minWidth: "300px", minHeight: "250px" }}
+                style={{ display: "inline-block", width: "300px", height: "250px" }}
                 data-ad-client="ca-pub-6296569221534302"
                 data-ad-slot="4114475250"
-                data-ad-format="auto"
-                data-full-width-responsive="true"
             ></ins>
             <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6296569221534302"
                 crossOrigin="anonymous"></script>
