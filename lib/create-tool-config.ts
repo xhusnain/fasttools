@@ -14,6 +14,7 @@ export interface UnifiedToolConfig {
         title?: string
         description?: string
     }
+    heroImage?: string
     schemaOptions?: {
         applicationCategory?: string
         price?: string
@@ -22,6 +23,12 @@ export interface UnifiedToolConfig {
         alternateName?: string
         featureList?: string[]
         softwareRequirements?: string
+        operatingSystem?: string
+        offers?: {
+            "@type": string
+            price: string
+            priceCurrency: string
+        }
     }
     header: {
         title: string
@@ -69,6 +76,7 @@ export function createToolConfig(config: UnifiedToolConfig) {
     const getLayoutProps = (toolComponent: React.ReactNode): ToolPageLayoutProps => ({
         header: config.header,
         breadcrumbs: config.breadcrumbs,
+        heroImage: config.heroImage,
         toolComponent,
         toolContent: {
             toolName: config.toolName,

@@ -49,6 +49,7 @@ export interface ExpectedMetadata {
 export interface ToolPageLayoutProps {
     header: ToolHeaderConfig
     breadcrumbs?: BreadcrumbItem[]
+    heroImage?: string
     toolComponent: React.ReactNode
     toolContent: ToolContentData
     expectedMetadata?: ExpectedMetadata

@@ -86,38 +86,38 @@ export function WelcomePopup() {
                         >
                             🎬 Free Media{" "}
                             <span className="bg-gradient-to-r from-red-500 via-pink-500 to-cyan-500 bg-clip-text text-transparent">
-                                Downloaders!
+                                Image Compressor!
                             </span>
                         </h2>
 
                         {/* Description */}
                         <p className="mb-6 text-muted-foreground leading-relaxed">
-                            <strong>New Tools Added!</strong> Check out our latest social media downloaders and tools.
+                            <strong>New Feature Update!</strong> Compress unlimited images at once without losing quality.
                         </p>
 
                         {/* Features list */}
                         <div className="mb-6 flex flex-col gap-2 text-left">
                             <div className="flex items-center gap-3 rounded-lg bg-muted/50 px-4 py-2.5">
                                 <div className="flex h-8 w-8 items-center justify-center rounded-full bg-pink-500/20">
-                                    <Instagram className="h-4 w-4 text-pink-500" />
+                                    <Sparkles className="h-4 w-4 text-pink-500" />
                                 </div>
-                                <span className="text-sm text-foreground">Instagram Reels, Stories & posts</span>
+                                <span className="text-sm text-foreground">Batch compress 100+ images</span>
                             </div>
                             <div className="flex items-center gap-3 rounded-lg bg-muted/50 px-4 py-2.5">
                                 <div className="flex h-8 w-8 items-center justify-center rounded-full bg-cyan-500/20">
-                                    <Video className="h-4 w-4 text-cyan-500" />
+                                    <Download className="h-4 w-4 text-cyan-500" />
                                 </div>
-                                <span className="text-sm text-foreground">TikTok videos without watermark</span>
+                                <span className="text-sm text-foreground">Target specific sizes (50KB, 1MB)</span>
                             </div>
                         </div>
 
                         {/* CTA Button */}
                         <a
-                            href="/downloaders"
+                            href="/image-tools/image-compressor"
                             className="group inline-flex w-full items-center justify-center gap-2 rounded-xl bg-gradient-to-r from-cyan-500 to-pink-500 px-6 py-3.5 text-base font-semibold text-white shadow-lg shadow-cyan-500/25 transition-all hover:shadow-xl hover:shadow-cyan-500/30 hover:scale-[1.02]"
                             onClick={handleClose}
                         >
-                            Explore Downloaders
+                            Try Image Compressor
                             <ArrowRight className="h-5 w-5 transition-transform group-hover:translate-x-1" />
                         </a>
 

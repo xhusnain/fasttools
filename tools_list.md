@@ -57,4 +57,6 @@
 - Future Age Calculator
 
 ## Image Tools
+- Image Compressor
 - Image Background Remover
+

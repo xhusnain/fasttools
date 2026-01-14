@@ -4,13 +4,14 @@ import { MDXRemote } from 'next-mdx-remote/rsc';
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
 import { GBlogContentLayout } from '@/components/blog/GBlogContentLayout';
-import { GTableOfContents } from '@/components/blog/GTableOfContents';
+
 
 import { GSocialShare } from '@/components/blog/GSocialShare';
 import { GJsonLd } from '@/components/blog/GJsonLd';
 import { GAuthorBio } from '@/components/blog/GAuthorBio';
 import { GImage } from "@/ui/gimage";
 import { MDXComponents } from "@/components/blog/mdx-components";
+import { SquareAd } from '@/components/ads/square-ad';
 
 // MDX Plugins
 import remarkGfm from 'remark-gfm';
@@ -102,25 +103,9 @@ export default async function BlogPost({
 
     const { frontMatter } = post
 
-    // Process content to remove Table of Contents header and extract headings
+
+    // Process content to remove Table of Contents header
     const contentWithoutToc = post.content.replace(/^## Table of Contents$/m, '')
-
-    // Extract headings for sidebar TOC
-    const headings = []
-    const headingRegex = /^(#{2,3})\s+(.+)$/gm
-    let match
-    while ((match = headingRegex.exec(contentWithoutToc)) !== null) {
-        const level = match[1].length
-        const text = match[2]
-        // Skip Table of Contents if matched (though replaced above, safer to double check)
-        if (text.toLowerCase() === 'table of contents') continue
-
-        headings.push({
-            id: slugify(text),
-            text,
-            level
-        })
-    }
 
     const articleSchema = {
         '@context': 'https://schema.org',
@@ -202,9 +187,20 @@ export default async function BlogPost({
             <GJsonLd schema={articleSchema} />
             <GJsonLd schema={breadcrumbSchema} />
             {faqSchema && <GJsonLd schema={faqSchema} />}
-            <div className="min-h-screen font-sans selection:bg-foreground/20 selection:text-foreground bg-backgroundPrimary pt-40 pb-24">
 
-                <div className="max-w-7xl mx-auto border border-white/10 relative">
+            <div className="hidden 2xl:flex fixed left-4 top-1/3 -translate-y-1/2 z-10 flex-col gap-4">
+                <SquareAd />
+                <SquareAd />
+            </div>
+
+            <div className="hidden 2xl:flex fixed right-4 top-1/3 -translate-y-1/2 z-10 flex-col gap-4">
+                <SquareAd />
+                <SquareAd />
+            </div>
+
+            <div className="min-h-screen font-sans selection:bg-foreground/20 selection:text-foreground bg-backgroundPrimary pt-40 pb-24 relative overflow-x-hidden">
+
+                <div className="max-w-7xl mx-auto border border-white/10 relative bg-backgroundPrimary">
                     <header className="border-b border-white/10 p-8 md:p-12 lg:p-20 text-center relative bg-white/[0.02]">
                         <Link
                             href="/blog"
@@ -216,7 +212,7 @@ export default async function BlogPost({
                             Back to Journal
                         </Link>
 
-                        <h1 className="text-3xl md:text-5xl lg:text-6xl text-foreground mb-12 leading-tight max-w-4xl mx-auto font-bold tracking-tight">
+                        <h1 className="font-heading text-3xl md:text-5xl lg:text-6xl text-foreground mb-12 leading-tight max-w-4xl mx-auto font-bold tracking-tight">
                             {frontMatter.title}
                         </h1>
 
@@ -254,63 +250,51 @@ export default async function BlogPost({
                         </div>
                     )}
 
-                    {/* Content Section with Sidebar */}
+                    {/* Content Section */}
                     <div className="bg-backgroundPrimary">
-                        <div className="flex flex-col lg:flex-row max-w-[1400px] mx-auto gap-8 px-4 lg:px-8">
-
-                            {/* Sticky TOC Sidebar (Left) */}
-                            <aside className="hidden lg:block w-[220px] shrink-0 pt-8">
-                                <div className="sticky top-32">
-                                    <GTableOfContents headings={headings} />
-                                </div>
-                            </aside>
-
-                            {/* Main Article Content (Center) */}
-                            <div className="flex-1 min-w-0 w-full">
-                                <GBlogContentLayout
-                                    footer={
-                                        <>
-                                            <div className="mt-16 pt-8 border-t border-white/10">
-                                                <div className="flex items-center justify-between flex-wrap gap-4">
-                                                    <div className="flex flex-col gap-3">
-                                                        <span className="text-xs font-mono text-muted-foreground uppercase tracking-widest">
-                                                            Share this article
-                                                        </span>
-                                                        <div className="flex gap-4">
-                                                            <GSocialShare title={frontMatter.title} slug={slug} />
-                                                        </div>
+                        <div className="max-w-4xl mx-auto px-4 lg:px-8">
+                            <GBlogContentLayout
+                                footer={
+                                    <>
+                                        <div className="mt-16 pt-8 border-t border-white/10">
+                                            <div className="flex items-center justify-between flex-wrap gap-4">
+                                                <div className="flex flex-col gap-3">
+                                                    <span className="text-xs font-mono text-muted-foreground uppercase tracking-widest">
+                                                        Share this article
+                                                    </span>
+                                                    <div className="flex gap-4">
+                                                        <GSocialShare title={frontMatter.title} slug={slug} />
                                                     </div>
-                                                    <Link
-                                                        href="/blog"
-                                                        className="text-xs font-mono uppercase tracking-widest text-muted-foreground hover:text-foreground transition-colors border border-white/10 px-4 py-2 rounded-full hover:bg-white/5"
-                                                    >
-                                                        More Articles
-                                                    </Link>
                                                 </div>
+                                                <Link
+                                                    href="/blog"
+                                                    className="text-xs font-mono uppercase tracking-widest text-muted-foreground hover:text-foreground transition-colors border border-white/10 px-4 py-2 rounded-full hover:bg-white/5"
+                                                >
+                                                    More Articles
+                                                </Link>
                                             </div>
-                                            <GAuthorBio />
-                                        </>
-                                    }
-                                >
-                                    <MDXRemote
-                                        source={contentWithoutToc}
-                                        components={MDXComponents}
-                                        options={{
-                                            mdxOptions: {
-                                                remarkPlugins: [
-                                                    // Removed remarkToc
-                                                    remarkGfm
-                                                ],
-                                                rehypePlugins: [
-                                                    rehypeSlug,
-                                                    [rehypePrism, { showLineNumbers: true }]
-                                                ]
-                                            }
-                                        }}
-                                    />
-                                </GBlogContentLayout>
-                            </div>
-
+                                        </div>
+                                        <GAuthorBio />
+                                    </>
+                                }
+                            >
+                                <MDXRemote
+                                    source={contentWithoutToc}
+                                    components={MDXComponents}
+                                    options={{
+                                        mdxOptions: {
+                                            remarkPlugins: [
+                                                // Removed remarkToc
+                                                remarkGfm
+                                            ],
+                                            rehypePlugins: [
+                                                rehypeSlug,
+                                                [rehypePrism, { showLineNumbers: true }]
+                                            ]
+                                        }
+                                    }}
+                                />
+                            </GBlogContentLayout>
                         </div>
                     </div>
 
