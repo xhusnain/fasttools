@@ -65,9 +65,7 @@ export default function proxy(request: NextRequest) {
 
     // Domain redirect: non-www to www
     if (env.isProduction && host === 'fasttools.store') {
-        const url = new URL(request.url)
-        url.hostname = 'www.fasttools.store'
-        return NextResponse.redirect(url.toString(), 301)
+        return NextResponse.redirect(`https://www.fasttools.store${pathname}`, 301)
     }
 
 

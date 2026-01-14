@@ -38,4 +38,5 @@ export const redirects = new Map([
     ['/tools/sales-tax-calculator', '/finance-tools/sales-tax-calculator'],
     ['/tools/finance-calculator', '/finance-tools/finance-calculator'],
     ['/tools/mortgage-calculator', '/finance-tools/mortgage-calculator'],
+    ['/guides/age-calculator-guide', '/guides/age-in-hours-calculator-guide'],
 ])

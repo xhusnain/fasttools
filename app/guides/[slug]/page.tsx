@@ -64,14 +64,12 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
                 },
             },
             alternates: {
-                canonical: `https://www.fasttools.store/guides/${slug}`,
+                canonical: `/guides/${slug}`,
             },
             authors: [{ name: frontMatter.author || 'FastTools Team' }],
         };
     } catch (e) {
-        return {
-            title: 'Guide Not Found',
-        };
+        notFound();
     }
 }
 
@@ -246,7 +244,7 @@ export default async function GuidePage({
                                                             Share this guide
                                                         </span>
                                                         <div className="flex gap-4">
-                                                            <GSocialShare title={frontMatter.title} slug={`guides/${slug}`} />
+                                                            <GSocialShare title={frontMatter.title} slug={slug} basePath="/guides/" />
                                                         </div>
                                                     </div>
                                                     <Link

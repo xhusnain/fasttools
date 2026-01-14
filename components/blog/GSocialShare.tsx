@@ -6,17 +6,20 @@ import { FiLink, FiCheck } from 'react-icons/fi';
 interface SocialShareProps {
     title: string;
     slug: string;
+    basePath?: string;
 }
 
-export const GSocialShare = ({ title, slug }: SocialShareProps) => {
+export const GSocialShare = ({ title, slug, basePath = '/blog/' }: SocialShareProps) => {
     const [shareUrl, setShareUrl] = useState('');
     const [isCopied, setIsCopied] = useState(false);
 
     useEffect(() => {
         if (typeof window !== 'undefined') {
-            setShareUrl(`${window.location.origin}/blog/${slug}`);
+            const cleanSlug = slug.replace(/^\/+/, '');
+            const cleanBasePath = basePath.endsWith('/') ? basePath : `${basePath}/`;
+            setShareUrl(`${window.location.origin}${cleanBasePath}${cleanSlug}`);
         }
-    }, [slug]);
+    }, [slug, basePath]);
 
     const handleCopy = async () => {
         if (!shareUrl) return;
