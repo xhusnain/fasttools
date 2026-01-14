@@ -23,6 +23,7 @@ COPY . .
 
 ENV NEXT_TELEMETRY_DISABLED 1
 ENV NEXT_PUBLIC_SITE_URL "https://www.fasttools.store"
+ENV NEXT_PUBLIC_API_URL "https://api.fasttools.store"
 ENV NEXT_PUBLIC_PYTHON_API_URL "https://api-removebg.fasttools.store"
 ENV NEXT_PUBLIC_SITE_NAME "fasttools"
 ENV NEXT_PUBLIC_GA_ID "G-4G804HZ22C"
