@@ -3,6 +3,7 @@ import { ToolPageLayout } from "@/components/common/tool-page-layout"
 import FractionCalculator from "@/components/calculators/fraction-calculator"
 import { createMetadata } from "@/lib/metadata-base"
 import { Calculator, Plus, Minus, X, Divide, Brain, Square } from "lucide-react"
+import { GTable } from "@/ui/gtable"
 
 const baseMetadata = createMetadata({
   title: "Fraction Calculator - Solve Math Problems",
@@ -129,6 +130,63 @@ export default function FractionCalculatorPage() {
             </div>
           </div>
         </section>
+
+        <section>
+          <h2 className="text-2xl font-bold mb-4">Common Fraction Conversions</h2>
+          <GTable>
+            <thead className="bg-muted text-foreground font-semibold">
+              <tr>
+                <th className="p-3">Fraction</th>
+                <th className="p-3">Decimal</th>
+                <th className="p-3">Percentage</th>
+                <th className="p-3">Common Use</th>
+              </tr>
+            </thead>
+            <tbody className="divide-y divide-border text-sm">
+              <tr>
+                <td className="p-3 font-bold">1/2</td>
+                <td className="p-3">0.5</td>
+                <td className="p-3">50%</td>
+                <td className="p-3">"Half" - 50 cents</td>
+              </tr>
+              <tr>
+                <td className="p-3 font-bold">1/3</td>
+                <td className="p-3">0.333...</td>
+                <td className="p-3">33.33%</td>
+                <td className="p-3">Divisible by 3</td>
+              </tr>
+              <tr>
+                <td className="p-3 font-bold">1/4</td>
+                <td className="p-3">0.25</td>
+                <td className="p-3">25%</td>
+                <td className="p-3">"Quarter" - 25 cents</td>
+              </tr>
+              <tr>
+                <td className="p-3 font-bold">3/4</td>
+                <td className="p-3">0.75</td>
+                <td className="p-3">75%</td>
+                <td className="p-3">Majority</td>
+              </tr>
+              <tr>
+                <td className="p-3 font-bold">1/8</td>
+                <td className="p-3">0.125</td>
+                <td className="p-3">12.5%</td>
+                <td className="p-3">Measurements (inches)</td>
+              </tr>
+            </tbody>
+          </GTable>
+        </section>
+
+        <div className="p-6 bg-gradient-to-r from-blue-50 to-indigo-50 dark:from-blue-950/30 dark:to-indigo-950/30 border-l-4 border-blue-500 rounded-lg my-8">
+          <h4 className="flex items-center gap-2 font-bold text-blue-800 dark:text-blue-200 mb-2">
+            <Brain className="h-5 w-5" />
+            Expert Insight: The Power of Exact Arithmetic
+          </h4>
+          <p className="italic text-blue-700 dark:text-blue-300">
+            "While decimals like 0.33 are approximations, the fraction 1/3 is an exact value. In engineering and rigorous math, keeping values in fraction form prevents 'drift' where small rounding errors accumulate into significant mistakes over many calculation steps."
+          </p>
+          <p className="text-sm font-semibold text-blue-600 dark:text-blue-400 mt-2">— FastTools Math Team</p>
+        </div>
 
         <section>
           <h2 className="text-2xl font-bold mb-4">Why use a Fraction Calculator?</h2>

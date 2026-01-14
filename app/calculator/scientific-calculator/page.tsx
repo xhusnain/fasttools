@@ -3,6 +3,7 @@ import { ToolPageLayout } from "@/components/common/tool-page-layout"
 import { createToolConfig } from "@/lib/create-tool-config"
 import { Calculator, Brain, Pi } from "lucide-react"
 import Image from "next/image"
+import { GTable } from "@/ui/gtable"
 
 const toolConfig = createToolConfig({
   toolName: "Scientific Calculator - Advanced Math Online",
@@ -126,23 +127,47 @@ const toolConfig = createToolConfig({
               </div>
               Mathematical Constants
             </h2>
-            <div className="grid md:grid-cols-3 gap-6">
-              <div className="text-center p-4 bg-muted rounded-lg border border-border">
-                <div className="text-2xl font-bold text-heading-accent">π</div>
-                <div className="text-sm text-muted-foreground">Pi</div>
-                <div className="text-xs text-muted-foreground">3.14159265359</div>
-              </div>
-              <div className="text-center p-4 bg-muted rounded-lg border border-border">
-                <div className="text-2xl font-bold text-heading-accent">e</div>
-                <div className="text-sm text-muted-foreground">Euler's Number</div>
-                <div className="text-xs text-muted-foreground">2.71828182846</div>
-              </div>
-              <div className="text-center p-4 bg-muted rounded-lg border border-border">
-                <div className="text-2xl font-bold text-heading-accent">φ</div>
-                <div className="text-sm text-muted-foreground">Golden Ratio</div>
-                <div className="text-xs text-muted-foreground">1.61803398875</div>
-              </div>
-            </div>
+            <GTable>
+              <thead className="bg-muted text-foreground font-semibold">
+                <tr>
+                  <th className="p-3">Symbol</th>
+                  <th className="p-3">Name</th>
+                  <th className="p-3">Value (approx)</th>
+                  <th className="p-3">Significance</th>
+                </tr>
+              </thead>
+              <tbody className="divide-y divide-border text-sm">
+                <tr>
+                  <td className="p-3 font-bold text-lg">π</td>
+                  <td className="p-3 font-semibold">Pi</td>
+                  <td className="p-3">3.14159265359</td>
+                  <td className="p-3">Ratio of circle's circumference to diameter</td>
+                </tr>
+                <tr>
+                  <td className="p-3 font-bold text-lg">e</td>
+                  <td className="p-3 font-semibold">Euler's Number</td>
+                  <td className="p-3">2.71828182846</td>
+                  <td className="p-3">Base of natural logarithms</td>
+                </tr>
+                <tr>
+                  <td className="p-3 font-bold text-lg">φ</td>
+                  <td className="p-3 font-semibold">Golden Ratio</td>
+                  <td className="p-3">1.61803398875</td>
+                  <td className="p-3">Geometric proportion in nature/art</td>
+                </tr>
+              </tbody>
+            </GTable>
+          </div>
+
+          <div className="p-6 bg-gradient-to-r from-blue-50 to-indigo-50 dark:from-blue-950/30 dark:to-indigo-950/30 border-l-4 border-blue-500 rounded-r-lg my-8">
+            <h4 className="flex items-center gap-2 font-bold text-blue-800 dark:text-blue-200 mb-2">
+              <Brain className="h-5 w-5" />
+              Expert Insight: Floating Point Precision
+            </h4>
+            <p className="italic text-blue-700 dark:text-blue-300">
+              "Computers store numbers in binary formats (IEEE 754), which can lead to tiny rounding errors. For example, 0.1 + 0.2 often equals 0.30000000000000004 rather than exactly 0.3. Scientific calculators use algorithms to correct these visible artifacts, but rigorous engineering work requires awareness of these limits."
+            </p>
+            <p className="text-sm font-semibold text-blue-600 dark:text-blue-400 mt-2">— FastTools Engineering Team</p>
           </div>
 
           <div className="p-6 rounded-lg bg-card border border-border shadow-lg">

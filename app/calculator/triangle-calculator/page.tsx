@@ -3,6 +3,7 @@ import { ToolPageLayout } from "@/components/common/tool-page-layout"
 import TriangleCalculator from "@/components/calculators/triangle-calculator"
 import { createMetadata } from "@/lib/metadata-base"
 import { Calculator, Triangle, Brain, BookOpen, Square } from "lucide-react"
+import { GTable } from "@/ui/gtable"
 
 const baseMetadata = createMetadata({
     title: "Triangle Calculator - Geometry & Angles",
@@ -126,27 +127,56 @@ export default function TriangleCalculatorPage() {
                 <section>
                     <h2 className="text-2xl font-bold mb-4 flex items-center gap-2">
                         <Triangle className="h-6 w-6" />
-                        Triangle Types & Properties
+                        Triangle Classifications Reference
                     </h2>
-                    <div className="grid md:grid-cols-2 gap-6">
-                        <div className="p-4 bg-card rounded-lg border border-border">
-                            <h3 className="text-lg font-semibold mb-3 text-foreground">By Sides:</h3>
-                            <ul className="space-y-2 text-sm text-muted-foreground">
-                                <li><strong>Equilateral:</strong> All three sides equal</li>
-                                <li><strong>Isosceles:</strong> Two sides equal</li>
-                                <li><strong>Scalene:</strong> All sides different lengths</li>
-                            </ul>
-                        </div>
-                        <div className="p-4 bg-card rounded-lg border border-border">
-                            <h3 className="text-lg font-semibold mb-3 text-foreground">By Angles:</h3>
-                            <ul className="space-y-2 text-sm text-muted-foreground">
-                                <li><strong>Acute:</strong> All angles less than 90°</li>
-                                <li><strong>Right:</strong> One angle exactly 90°</li>
-                                <li><strong>Obtuse:</strong> One angle greater than 90°</li>
-                            </ul>
-                        </div>
-                    </div>
+                    <GTable>
+                        <thead className="bg-muted text-foreground font-semibold">
+                            <tr>
+                                <th className="p-3">Type</th>
+                                <th className="p-3">Definition</th>
+                                <th className="p-3">Key Properties</th>
+                            </tr>
+                        </thead>
+                        <tbody className="divide-y divide-border text-sm">
+                            <tr>
+                                <td className="p-3 font-bold">Equilateral</td>
+                                <td className="p-3">All 3 sides are equal</td>
+                                <td className="p-3">All angles are 60°</td>
+                            </tr>
+                            <tr>
+                                <td className="p-3 font-bold">Isosceles</td>
+                                <td className="p-3">2 sides are equal</td>
+                                <td className="p-3">Base angles are equal</td>
+                            </tr>
+                            <tr>
+                                <td className="p-3 font-bold">Scalene</td>
+                                <td className="p-3">No equal sides</td>
+                                <td className="p-3">No equal angles</td>
+                            </tr>
+                            <tr>
+                                <td className="p-3 font-bold">Right</td>
+                                <td className="p-3">Has one 90° angle</td>
+                                <td className="p-3">Follows Pythagoras (a² + b² = c²)</td>
+                            </tr>
+                            <tr>
+                                <td className="p-3 font-bold">Obtuse</td>
+                                <td className="p-3">One angle &gt; 90°</td>
+                                <td className="p-3">Sum of other two angles &lt; 90°</td>
+                            </tr>
+                        </tbody>
+                    </GTable>
                 </section>
+
+                <div className="p-6 bg-gradient-to-r from-blue-50 to-indigo-50 dark:from-blue-950/30 dark:to-indigo-950/30 border-l-4 border-blue-500 rounded-lg my-8">
+                    <h4 className="flex items-center gap-2 font-bold text-blue-800 dark:text-blue-200 mb-2">
+                        <Brain className="h-5 w-5" />
+                        Expert Insight: The Triangle Inequality Theorem
+                    </h4>
+                    <p className="italic text-blue-700 dark:text-blue-300">
+                        "Not every set of three lines can form a triangle. The Triangle Inequality Theorem states that the sum of the lengths of any two sides must be greater than the length of the third side. If Side A = 5 and Side B = 3, Side C cannot be 9, because 5 + 3 is not greater than 9. This is a fundamental check in all geometry engines."
+                    </p>
+                    <p className="text-sm font-semibold text-blue-600 dark:text-blue-400 mt-2">— FastTools Geometry Team</p>
+                </div>
 
                 <section>
                     <h2 className="text-2xl font-bold mb-4 flex items-center gap-2">
