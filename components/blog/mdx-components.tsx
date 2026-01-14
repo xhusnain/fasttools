@@ -44,27 +44,27 @@ const CustomImage = (props: any) => {
 const CustomPre = GCode;
 
 const CustomH1 = (props: any) => (
-    <h1 className="text-foreground leading-tight mb-8 mt-16 first:mt-0" {...props} />
+    <h1 className="font-heading text-4xl md:text-5xl font-bold text-foreground leading-tight mb-8 mt-16 first:mt-0 tracking-tight" {...props} />
 );
 
 const CustomH2 = (props: any) => (
-    <h2 className="text-foreground leading-tight mb-6 mt-16 border-b border-border pb-4" {...props} />
+    <h2 className="font-heading text-3xl md:text-4xl font-semibold text-foreground leading-tight mb-6 mt-16 border-b border-border pb-4 tracking-tight" {...props} />
 );
 
 const CustomH3 = (props: any) => (
-    <h3 className="text-foreground leading-tight mb-4 mt-12" {...props} />
+    <h3 className="font-heading text-2xl md:text-3xl font-semibold text-foreground leading-tight mb-4 mt-12 tracking-tight" {...props} />
 );
 
 const CustomP = (props: any) => (
-    <div className="font-sans text-muted-foreground leading-relaxed mb-8" {...props} />
+    <div className="font-sans text-lg text-muted-foreground leading-relaxed mb-8" {...props} />
 );
 
 const CustomUL = (props: any) => (
-    <ul className="list-disc list-outside ml-6 mb-8 text-muted-foreground space-y-3 marker:text-blue-500" {...props} />
+    <ul className="font-sans text-lg list-disc list-outside ml-6 mb-8 text-muted-foreground space-y-3 marker:text-blue-500" {...props} />
 );
 
 const CustomOL = (props: any) => (
-    <ol className="list-decimal list-outside ml-6 mb-8 text-muted-foreground space-y-3 marker:text-blue-500" {...props} />
+    <ol className="font-sans text-lg list-decimal list-outside ml-6 mb-8 text-muted-foreground space-y-3 marker:text-blue-500" {...props} />
 );
 
 const CustomBlockquote = (props: any) => (

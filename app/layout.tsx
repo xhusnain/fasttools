@@ -8,7 +8,7 @@ import { ThemeProvider } from "@/components/common/theme-provider"
 import Script from "next/script"
 import { env } from "@/config/env"
 import { createMetadata, globalViewport, getWebsiteSchema } from "@/lib/metadata-base"
-import { roboto, montserrat } from "@/app/fonts"
+import { roboto, montserrat, openSans } from "@/app/fonts"
 
 
 
@@ -137,7 +137,7 @@ export default function RootLayout({
   const websiteSchema = getWebsiteSchema()
 
   return (
-    <html lang="en" className={`antialiased ${roboto.variable} ${montserrat.variable}`} suppressHydrationWarning>
+    <html lang="en" className={`antialiased ${roboto.variable} ${montserrat.variable} ${openSans.variable}`} suppressHydrationWarning>
       <head>
         {/* Resource Hints for Performance */}
         <link rel="preconnect" href="https://www.googletagmanager.com" />
