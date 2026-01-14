@@ -12,6 +12,7 @@ import {
     ChevronRight
 } from "lucide-react"
 import type { ToolPageLayoutProps } from "@/types/tool-page-layout.types"
+import { SquareAd } from "@/components/ads/square-ad"
 
 export function ToolPageLayout({
     header,
@@ -343,6 +344,11 @@ export function ToolPageLayout({
                                     </section>
                                 </div>
                             )}
+
+                            {/* sticky ad */}
+                            <div className="sticky top-96">
+                                <SquareAd />
+                            </div>
                         </div>
                     </div>
                 </div>
