@@ -2,6 +2,8 @@ import type { Metadata } from "next"
 import { ToolPageLayout } from "@/components/common/tool-page-layout"
 import { PercentageCalculator } from "@/components/calculators/percentage-calculator"
 import { createMetadata } from "@/lib/metadata-base"
+import { GTable } from "@/ui/gtable"
+import { Brain } from "lucide-react"
 
 const baseMetadata = createMetadata({
   title: "Percentage Calculator - Calculate Percentage Online (Free) 2026",
@@ -73,9 +75,9 @@ export default function PercentageCalculatorPage() {
 
     aboutTool: (
       <>
-        <h3 className="font-semibold text-lg mb-2 mt-6">Understanding Percentages</h3>
+        <h3 className="font-semibold text-lg mb-2 mt-6">What is a Percentage?</h3>
         <p className="mb-4">
-          A percentage is a way of expressing a number as a fraction of 100. The word "percent" literally means "per hundred." Percentages are used everywhere in daily life - from calculating discounts while shopping to understanding exam scores, tracking business growth, and measuring statistical data.
+          A percentage is a dimensionless number representing a fraction of 100. It is calculated by dividing the part by the whole and multiplying by 100. Percentages allow for standardized comparison between quantities of different sizes.
         </p>
 
         <h3 className="font-semibold text-lg mb-2 mt-6">Basic Percentage Formula</h3>
@@ -149,6 +151,63 @@ export default function PercentageCalculatorPage() {
           <li>When averaging percentages, consider the weighted average if bases differ</li>
           <li>Round percentage results appropriately for your context (usually 2 decimal places)</li>
         </ul>
+
+        <h3 className="font-semibold text-lg mb-2 mt-6">Quick Conversion Reference</h3>
+        <div className="my-6">
+          <GTable>
+            <thead className="bg-muted text-foreground font-semibold">
+              <tr>
+                <th className="p-3">Fraction</th>
+                <th className="p-3">Decimal</th>
+                <th className="p-3">Percentage</th>
+                <th className="p-3">Common Use</th>
+              </tr>
+            </thead>
+            <tbody className="divide-y divide-border text-sm">
+              <tr>
+                <td className="p-3">1/2</td>
+                <td className="p-3">0.5</td>
+                <td className="p-3 font-bold text-green-600">50%</td>
+                <td className="p-3">"Half off"</td>
+              </tr>
+              <tr>
+                <td className="p-3">1/3</td>
+                <td className="p-3">0.333...</td>
+                <td className="p-3 font-bold text-green-600">33.33%</td>
+                <td className="p-3">"One third"</td>
+              </tr>
+              <tr>
+                <td className="p-3">1/4</td>
+                <td className="p-3">0.25</td>
+                <td className="p-3 font-bold text-green-600">25%</td>
+                <td className="p-3">"Quarter"</td>
+              </tr>
+              <tr>
+                <td className="p-3">1/5</td>
+                <td className="p-3">0.2</td>
+                <td className="p-3 font-bold text-green-600">20%</td>
+                <td className="p-3">"One fifth"</td>
+              </tr>
+              <tr>
+                <td className="p-3">1/10</td>
+                <td className="p-3">0.1</td>
+                <td className="p-3 font-bold text-green-600">10%</td>
+                <td className="p-3">Decile / Tithe</td>
+              </tr>
+            </tbody>
+          </GTable>
+        </div>
+
+        <div className="p-6 bg-gradient-to-r from-blue-50 to-indigo-50 dark:from-blue-950/30 dark:to-indigo-950/30 border-l-4 border-blue-500 rounded-r-lg my-8">
+          <h4 className="flex items-center gap-2 font-bold text-blue-800 dark:text-blue-200 mb-2">
+            <Brain className="h-5 w-5" />
+            Expert Insight: Percentage vs. Percentage Points
+          </h4>
+          <p className="italic text-blue-700 dark:text-blue-300">
+            "Don't confuse 'percent' with 'percentage points'. If a rate rises from 10% to 15%, that is a 5 percentage point increase, but a 50% relative increase. In finance and statistics, this distinction is critical for accurate reporting."
+          </p>
+          <p className="text-sm font-semibold text-blue-600 dark:text-blue-400 mt-2">— FastTools Math Team</p>
+        </div>
       </>
     ),
 

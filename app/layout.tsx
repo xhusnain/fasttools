@@ -5,7 +5,7 @@ import { Footer } from "@/components/common/footer"
 import { CookieConsent } from "@/components/common/cookie-consent"
 import { WelcomePopup } from "@/components/common/welcome-popup"
 import { ThemeProvider } from "@/components/common/theme-provider"
-import Script from "next/script"
+
 import { env } from "@/config/env"
 import { createMetadata, globalViewport, getWebsiteSchema } from "@/lib/metadata-base"
 import { roboto, montserrat, openSans } from "@/app/fonts"
@@ -182,11 +182,10 @@ export default function RootLayout({
           <WelcomePopup />
           {/* Google Adsense */}
           {env.isProduction && (
-            <Script
-              id="google-adsense"
+            <script
+              async
               src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6296569221534302"
               crossOrigin="anonymous"
-              strategy="afterInteractive"
             />
           )}
         </ThemeProvider>

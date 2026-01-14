@@ -1,6 +1,8 @@
 import { LengthConverter } from "@/components/converters/length-converter"
 import { ToolPageLayout } from "@/components/common/tool-page-layout"
 import { createToolConfig } from "@/lib/create-tool-config"
+import { GTable } from "@/ui/gtable"
+import { Brain } from "lucide-react"
 
 const toolConfig = createToolConfig({
   toolName: "Length Converter",
@@ -54,60 +56,68 @@ const toolConfig = createToolConfig({
 
     aboutTool: (
       <div className="space-y-6">
-        <p>
-          Our comprehensive length converter and distance conversion calculator handles all major unit conversions you'll encounter in daily life and professional work. Whether you need to convert meters to feet for construction blueprints, convert centimeters to inches for international product specifications, or convert kilometers to miles for travel planning, this interactive length converter provides instant, accurate results.
-        </p>
+        <div>
+          <h3 className="text-lg font-bold mb-3 text-heading-accent">What is Length?</h3>
+          <p className="text-muted-foreground text-sm mb-4">
+            Length is a measure of distance. In the International System of Units, the meter is the base unit of length. It is defined by the distance light travels in a vacuum in 1/299,792,458 of a second.
+          </p>
+        </div>
 
         <div>
           <h3 className="text-lg font-bold mb-3 text-heading-accent">Common Conversion Factors</h3>
-          <div className="overflow-x-auto">
-            <table className="w-full text-sm text-left border-collapse border border-border rounded-lg overflow-hidden">
-              <thead className="bg-muted">
-                <tr>
-                  <th className="p-3 border-b border-border font-medium">Unit</th>
-                  <th className="p-3 border-b border-border font-medium">Metric Equivalent</th>
-                  <th className="p-3 border-b border-border font-medium">Imperial Equivalent</th>
-                </tr>
-              </thead>
-              <tbody className="divide-y divide-border bg-card">
-                <tr>
-                  <td className="p-3 font-medium">1 Inch</td>
-                  <td className="p-3">2.54 cm</td>
-                  <td className="p-3">0.0833 feet</td>
-                </tr>
-                <tr>
-                  <td className="p-3 font-medium">1 Foot</td>
-                  <td className="p-3">30.48 cm</td>
-                  <td className="p-3">12 inches</td>
-                </tr>
-                <tr>
-                  <td className="p-3 font-medium">1 Yard</td>
-                  <td className="p-3">0.9144 meters</td>
-                  <td className="p-3">3 feet</td>
-                </tr>
-                <tr>
-                  <td className="p-3 font-medium">1 Mile</td>
-                  <td className="p-3">1.609 km</td>
-                  <td className="p-3">5,280 feet</td>
-                </tr>
-                <tr>
-                  <td className="p-3 font-medium">1 Meter</td>
-                  <td className="p-3">-</td>
-                  <td className="p-3">3.281 feet</td>
-                </tr>
-                <tr>
-                  <td className="p-3 font-medium">1 Kilometer</td>
-                  <td className="p-3">1,000 meters</td>
-                  <td className="p-3">0.621 miles</td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
+          <GTable>
+            <thead className="bg-muted text-foreground font-semibold">
+              <tr>
+                <th className="p-3">Unit</th>
+                <th className="p-3">Metric Equivalent</th>
+                <th className="p-3">Imperial Equivalent</th>
+              </tr>
+            </thead>
+            <tbody className="divide-y divide-border text-sm">
+              <tr>
+                <td className="p-3 font-semibold">1 Inch</td>
+                <td className="p-3">2.54 cm</td>
+                <td className="p-3">0.0833 feet</td>
+              </tr>
+              <tr>
+                <td className="p-3 font-semibold">1 Foot</td>
+                <td className="p-3">30.48 cm</td>
+                <td className="p-3">12 inches</td>
+              </tr>
+              <tr>
+                <td className="p-3 font-semibold">1 Yard</td>
+                <td className="p-3">0.9144 meters</td>
+                <td className="p-3">3 feet</td>
+              </tr>
+              <tr>
+                <td className="p-3 font-semibold">1 Mile</td>
+                <td className="p-3">1.609 km</td>
+                <td className="p-3">5,280 feet</td>
+              </tr>
+              <tr>
+                <td className="p-3 font-semibold">1 Meter</td>
+                <td className="p-3">-</td>
+                <td className="p-3">3.281 feet</td>
+              </tr>
+              <tr>
+                <td className="p-3 font-semibold">1 Kilometer</td>
+                <td className="p-3">1,000 meters</td>
+                <td className="p-3">0.621 miles</td>
+              </tr>
+            </tbody>
+          </GTable>
         </div>
 
-        <p>
-          The tool seamlessly converts between metric and imperial systems—perfect for converting millimeters to inches in engineering drawings, converting yards to meters in sports fields, or converting nautical miles to kilometers for maritime navigation. For height measurements, our height converter easily converts cm to feet and inches, making it ideal for medical records, fitness tracking, or international ID requirements.
-        </p>
+        <div className="p-6 bg-gradient-to-r from-blue-50 to-indigo-50 dark:from-blue-950/30 dark:to-indigo-950/30 border-l-4 border-blue-500 rounded-r-lg my-8">
+          <h4 className="flex items-center gap-2 font-bold text-blue-800 dark:text-blue-200 mb-2">
+            <Brain className="h-5 w-5" />
+            Expert Insight: The Cost of Conversion Errors
+          </h4>
+          <p className="italic text-blue-700 dark:text-blue-300">
+            "Never mix units without explicit conversion. The $327 million Mars Climate Orbiter was lost in 1999 because one engineering team used metric units (Newtons) while another used Imperial (pound-force). Always declare your units clearly in specifications."
+          </p>
+          <p className="text-sm font-semibold text-blue-600 dark:text-blue-400 mt-2">— FastTools Engineering</p>
+        </div>
       </div>
     ),
 

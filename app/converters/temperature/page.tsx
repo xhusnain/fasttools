@@ -2,6 +2,8 @@ import { TemperatureConverter } from "@/components/converters/temperature-conver
 import { ToolPageLayout } from "@/components/common/tool-page-layout"
 import { createToolConfig } from "@/lib/create-tool-config"
 import Link from "next/link"
+import { GTable } from "@/ui/gtable"
+import { Brain } from "lucide-react"
 
 const toolConfig = createToolConfig({
   toolName: "Temperature Converter",
@@ -52,6 +54,59 @@ const toolConfig = createToolConfig({
     aboutTool: (
       <div className="space-y-6">
         <div>
+          <h3 className="text-lg font-bold mb-3 text-heading-accent">What is Temperature?</h3>
+          <p className="text-muted-foreground text-sm mb-4">
+            Temperature is a physical quantity that expresses hot and cold. It is the manifestation of thermal energy, present in all matter, which is the source of the occurrence of heat, a flow of energy, when a body is in contact with another that is colder or hotter.
+          </p>
+        </div>
+
+        <div>
+          <h3 className="text-lg font-bold mb-3 text-heading-accent">Common Temperature Reference Points</h3>
+          <GTable>
+            <thead className="bg-muted text-foreground font-semibold">
+              <tr>
+                <th className="p-3">Reference Point</th>
+                <th className="p-3">Celsius (°C)</th>
+                <th className="p-3">Fahrenheit (°F)</th>
+                <th className="p-3">Kelvin (K)</th>
+              </tr>
+            </thead>
+            <tbody className="divide-y divide-border text-sm">
+              <tr>
+                <td className="p-3 font-semibold">Absolute Zero</td>
+                <td className="p-3">-273.15°C</td>
+                <td className="p-3">-459.67°F</td>
+                <td className="p-3">0 K</td>
+              </tr>
+              <tr>
+                <td className="p-3 font-semibold">Water Freezing</td>
+                <td className="p-3 text-blue-500 font-bold">0°C</td>
+                <td className="p-3 text-blue-500 font-bold">32°F</td>
+                <td className="p-3">273.15 K</td>
+              </tr>
+              <tr>
+                <td className="p-3 font-semibold">Room Temp</td>
+                <td className="p-3">20°C</td>
+                <td className="p-3">68°F</td>
+                <td className="p-3">293.15 K</td>
+              </tr>
+              <tr>
+                <td className="p-3 font-semibold">Human Body</td>
+                <td className="p-3">37°C</td>
+                <td className="p-3">98.6°F</td>
+                <td className="p-3">310.15 K</td>
+              </tr>
+              <tr>
+                <td className="p-3 font-semibold">Water Boiling</td>
+                <td className="p-3 text-red-500 font-bold">100°C</td>
+                <td className="p-3 text-red-500 font-bold">212°F</td>
+                <td className="p-3">373.15 K</td>
+              </tr>
+            </tbody>
+          </GTable>
+        </div>
+
+        <div>
           <h3 className="text-lg font-bold mb-3 text-heading-accent">Temperature Scale Comparison</h3>
           <p className="text-muted-foreground text-sm mb-2">
             Understanding different temperature scales helps you work with international recipes, weather reports, and scientific data:
@@ -61,41 +116,6 @@ const toolConfig = createToolConfig({
             <li><strong>Fahrenheit (°F):</strong> Water freezes at 32°F, boils at 212°F</li>
             <li><strong>Kelvin (K):</strong> Absolute zero at 0K, same degree size as Celsius</li>
             <li><strong>Rankine (°R):</strong> Absolute zero at 0°R, same degree size as Fahrenheit</li>
-          </ul>
-        </div>
-
-        <div>
-          <h3 className="text-lg font-bold mb-3 text-heading-accent">Temperature Conversion Formulas</h3>
-          <p className="text-muted-foreground text-sm mb-4">
-            Use these formulas to manually convert between temperature scales:
-          </p>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-            <div className="bg-muted/50 p-4 rounded-lg">
-              <span className="font-bold block mb-2 text-primary">Celsius to Fahrenheit</span>
-              <code className="block bg-background p-2 rounded border border-border text-center mb-2">°F = (°C × 9/5) + 32</code>
-              <p className="text-xs text-muted-foreground">Multiply by 1.8, then add 32.</p>
-            </div>
-            <div className="bg-muted/50 p-4 rounded-lg">
-              <span className="font-bold block mb-2 text-primary">Fahrenheit to Celsius</span>
-              <code className="block bg-background p-2 rounded border border-border text-center mb-2">°C = (°F − 32) × 5/9</code>
-              <p className="text-xs text-muted-foreground">Subtract 32, then multiply by 0.5556.</p>
-            </div>
-          </div>
-        </div>
-
-        <div>
-          <h3 className="text-lg font-bold mb-3 text-heading-accent">Common Temperature Reference Points</h3>
-          <p className="text-muted-foreground text-sm mb-2">
-            These reference points help you understand temperature relationships:
-          </p>
-          <ul className="list-disc pl-4 text-muted-foreground text-sm space-y-1">
-            <li><strong>Absolute Zero:</strong> -273.15°C / -459.67°F (0K / 0°R)</li>
-            <li><strong>Dry Ice:</strong> -78.5°C / -109.3°F</li>
-            <li><strong>Water Freezing:</strong> 0°C / 32°F</li>
-            <li><strong>Room Temperature:</strong> 20°C / 68°F</li>
-            <li><strong>Body Temperature:</strong> 37°C / 98.6°F</li>
-            <li><strong>Water Boiling:</strong> 100°C / 212°F</li>
-            <li><strong>Oven Baking:</strong> 180°C / 356°F</li>
           </ul>
         </div>
 
@@ -142,6 +162,16 @@ const toolConfig = createToolConfig({
             <li><strong>Hot:</strong> 29°C to 38°C / 85°F to 100°F</li>
             <li><strong>Extreme Heat:</strong> Above 38°C / 100°F</li>
           </ul>
+        </div>
+        <div className="p-6 bg-gradient-to-r from-blue-50 to-indigo-50 dark:from-blue-950/30 dark:to-indigo-950/30 border-l-4 border-blue-500 rounded-r-lg my-8">
+          <h4 className="flex items-center gap-2 font-bold text-blue-800 dark:text-blue-200 mb-2">
+            <Brain className="h-5 w-5" />
+            Expert Insight: Absolute Zero
+          </h4>
+          <p className="italic text-blue-700 dark:text-blue-300">
+            "In classical thermodynamics, Absolute Zero (0 Kelvin) is the theoretical limit where all molecular motion ceases. It is equivalent to -273.15°C. At this temperature, a system possesses the minimum possible amount of energy."
+          </p>
+          <p className="text-sm font-semibold text-blue-600 dark:text-blue-400 mt-2">— FastTools Science Team</p>
         </div>
       </div>
     ),

@@ -2,6 +2,8 @@ import type { Metadata } from "next"
 import { ToolPageLayout } from "@/components/common/tool-page-layout"
 import { BMICalculatorPageContent } from "@/components/health/bmi-calculator-page-content"
 import { createMetadata } from "@/lib/metadata-base"
+import { GTable } from "@/ui/gtable"
+import { Brain } from "lucide-react"
 
 const baseMetadata = createMetadata({
   title: "BMI Calculator - Calculate BMI Online (Free) 2026",
@@ -141,10 +143,60 @@ export default function BMICalculatorPage() {
         description: "Use alongside body fat metrics for a complete performance profile."
       }
     ],
-    aboutTool: {
-      title: "The Most Comprehensive Free BMI Tool Online",
-      content: "Body Mass Index (BMI) is a global standard for assessing body composition. Our calculator is built on World Health Organization (WHO) and CDC guidelines to ensure medical-grade accuracy. It includes specialized metrics like BMI Prime—which compares your BMI to the 'normal' upper limit of 25. A BMI Prime of less than 1.0 indicates a healthy weight, providing a simpler way to track your status."
-    },
+    aboutTool: (
+      <div className="space-y-6">
+        <h3 className="text-xl font-bold text-foreground">What is Body Mass Index (BMI)?</h3>
+        <p className="mb-4 text-muted-foreground">
+          Body Mass Index (BMI) is a simple medical screening tool used to estimate total body fat. It is calculated by dividing a person's weight in kilograms by the square of their height in meters (kg/m²). While not a diagnostic measure, high BMI correlates with increased risk for chronic diseases.
+        </p>
+
+        <div className="my-8">
+          <h4 className="font-semibold text-lg mb-4 text-foreground">BMI Classification Reference (WHO Standard)</h4>
+          <GTable>
+            <thead className="bg-muted text-foreground font-semibold">
+              <tr>
+                <th className="p-3">BMI Range (kg/m²)</th>
+                <th className="p-3">Weight Status</th>
+                <th className="p-3">Health Risk Level</th>
+              </tr>
+            </thead>
+            <tbody className="divide-y divide-border text-sm">
+              <tr>
+                <td className="p-3 text-blue-500 font-medium">Below 18.5</td>
+                <td className="p-3">Underweight</td>
+                <td className="p-3">Moderate (Nutritional deficiency)</td>
+              </tr>
+              <tr>
+                <td className="p-3 text-green-600 font-bold">18.5 – 24.9</td>
+                <td className="p-3 font-bold text-green-600">Normal Weight</td>
+                <td className="p-3">Lowest Risk</td>
+              </tr>
+              <tr>
+                <td className="p-3 text-yellow-600 font-medium">25.0 – 29.9</td>
+                <td className="p-3">Overweight</td>
+                <td className="p-3">Increased Risk</td>
+              </tr>
+              <tr>
+                <td className="p-3 text-red-600 font-bold">30.0 and Above</td>
+                <td className="p-3 font-bold text-red-600">Obese</td>
+                <td className="p-3">High / Very High Risk</td>
+              </tr>
+            </tbody>
+          </GTable>
+        </div>
+
+        <div className="p-6 bg-gradient-to-r from-blue-50 to-indigo-50 dark:from-blue-950/30 dark:to-indigo-950/30 border-l-4 border-blue-500 rounded-r-lg my-8">
+          <h4 className="flex items-center gap-2 font-bold text-blue-800 dark:text-blue-200 mb-2">
+            <Brain className="h-5 w-5" />
+            Expert Insight: The Muscle Mass Exception
+          </h4>
+          <p className="italic text-blue-700 dark:text-blue-300">
+            "BMI is a volume metric, not a composition metric. It cannot distinguish between 200lbs of muscle and 200lbs of fat. Athletes and bodybuilders often rank as 'Overweight' despite excellent metabolic health. If you are muscular, use Body Fat Percentage alongside BMI for a true health picture."
+          </p>
+          <p className="text-sm font-semibold text-blue-600 dark:text-blue-400 mt-2">— FastTools Health Team</p>
+        </div>
+      </div>
+    ),
     proTip: "For the most accurate assessment, weigh yourself in the morning before breakfast and after using the bathroom. Consistency is key to tracking long-term trends.",
     faqs: [
       {

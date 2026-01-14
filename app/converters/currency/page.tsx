@@ -3,6 +3,8 @@ import { Top10CurrenciesTable } from "@/components/finance/top10-currencies-tabl
 import { ToolPageLayout } from "@/components/common/tool-page-layout"
 import { createToolConfig } from "@/lib/create-tool-config"
 import Link from "next/link"
+import { GTable } from "@/ui/gtable"
+import { Brain } from "lucide-react"
 
 const toolConfig = createToolConfig({
   toolName: "Currency Converter",
@@ -54,58 +56,94 @@ const toolConfig = createToolConfig({
     aboutTool: (
       <div className="space-y-6">
         <div>
-          <h3 className="text-lg font-bold mb-3 text-heading-accent">Popular Currency Pairs</h3>
-          <div className="grid grid-cols-2 md:grid-cols-3 gap-2 text-sm text-muted-foreground">
-            <div>USD ⇄ EUR</div>
-            <div>USD ⇄ GBP</div>
-            <div>USD ⇄ CAD</div>
-            <div>USD ⇄ AUD</div>
-            <div>USD ⇄ JPY</div>
-            <div>EUR ⇄ GBP</div>
-            <div>EUR ⇄ CHF</div>
-            <div>USD ⇄ INR</div>
-            <div>USD ⇄ CNY</div>
-            <div>USD ⇄ AED/SAR/PKR</div>
-          </div>
+          <h3 className="text-lg font-bold mb-3 text-heading-accent">Global Currency Reference</h3>
+          <GTable>
+            <thead className="bg-muted text-foreground font-semibold">
+              <tr>
+                <th className="p-3">Code</th>
+                <th className="p-3">Symbol</th>
+                <th className="p-3">Currency Name</th>
+                <th className="p-3">Trader Nickname</th>
+              </tr>
+            </thead>
+            <tbody className="divide-y divide-border text-sm">
+              <tr>
+                <td className="p-3 font-semibold">USD</td>
+                <td className="p-3">$</td>
+                <td className="p-3">United States Dollar</td>
+                <td className="p-3">"Greenback"</td>
+              </tr>
+              <tr>
+                <td className="p-3 font-semibold">EUR</td>
+                <td className="p-3">€</td>
+                <td className="p-3">Euro</td>
+                <td className="p-3">"Fiber"</td>
+              </tr>
+              <tr>
+                <td className="p-3 font-semibold">GBP</td>
+                <td className="p-3">£</td>
+                <td className="p-3">British Pound Sterling</td>
+                <td className="p-3">"Cable"</td>
+              </tr>
+              <tr>
+                <td className="p-3 font-semibold">JPY</td>
+                <td className="p-3">¥</td>
+                <td className="p-3">Japanese Yen</td>
+                <td className="p-3">"Yen"</td>
+              </tr>
+              <tr>
+                <td className="p-3 font-semibold">CAD</td>
+                <td className="p-3">C$</td>
+                <td className="p-3">Canadian Dollar</td>
+                <td className="p-3">"Loonie"</td>
+              </tr>
+              <tr>
+                <td className="p-3 font-semibold">AUD</td>
+                <td className="p-3">A$</td>
+                <td className="p-3">Australian Dollar</td>
+                <td className="p-3">"Aussie"</td>
+              </tr>
+              <tr>
+                <td className="p-3 font-semibold">CHF</td>
+                <td className="p-3">Fr.</td>
+                <td className="p-3">Swiss Franc</td>
+                <td className="p-3">"Swissy"</td>
+              </tr>
+            </tbody>
+          </GTable>
         </div>
 
         <div>
           <h3 className="text-lg font-bold mb-3 text-heading-accent">Why Exchange Rates Fluctuate</h3>
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-            <div className="p-3 bg-muted/40 rounded border border-border/50">
+          <ul className="grid grid-cols-1 sm:grid-cols-2 gap-4 list-none pl-0">
+            <li className="p-3 bg-muted/40 rounded border border-border/50">
               <h4 className="font-semibold text-sm mb-1">Interest Rates</h4>
               <p className="text-xs text-muted-foreground">Higher interest rates offer lenders in an economy a higher return relative to other countries, attracting foreign capital and causing the exchange rate to rise.</p>
-            </div>
-            <div className="p-3 bg-muted/40 rounded border border-border/50">
+            </li>
+            <li className="p-3 bg-muted/40 rounded border border-border/50">
               <h4 className="font-semibold text-sm mb-1">Inflation</h4>
               <p className="text-xs text-muted-foreground">Typically, a country with a consistently lower inflation rate exhibits a rising currency value, as its purchasing power increases relative to other currencies.</p>
-            </div>
-            <div className="p-3 bg-muted/40 rounded border border-border/50">
+            </li>
+            <li className="p-3 bg-muted/40 rounded border border-border/50">
               <h4 className="font-semibold text-sm mb-1">Economic Performance</h4>
               <p className="text-xs text-muted-foreground">Strong economic performance attracts foreign investors, increasing demand for the country's currency and driving up the exchange rate.</p>
-            </div>
-            <div className="p-3 bg-muted/40 rounded border border-border/50">
+            </li>
+            <li className="p-3 bg-muted/40 rounded border border-border/50">
               <h4 className="font-semibold text-sm mb-1">Geopolitical Stability</h4>
               <p className="text-xs text-muted-foreground">Political turmoil causes a loss of confidence in a currency and a movement of capital to the currencies of more stable countries.</p>
-            </div>
-          </div>
+            </li>
+          </ul>
         </div>
 
-        <div>
-          <h3 className="text-lg font-bold mb-3 text-heading-accent">Currency Symbols and Codes</h3>
-          <p className="text-muted-foreground text-sm mb-2">
-            Understanding currency symbols and ISO codes helps you identify different currencies:
+        <div className="p-6 bg-gradient-to-r from-blue-50 to-indigo-50 dark:from-blue-950/30 dark:to-indigo-950/30 border-l-4 border-blue-500 rounded-r-lg my-8">
+          <h4 className="flex items-center gap-2 font-bold text-blue-800 dark:text-blue-200 mb-2">
+            <Brain className="h-5 w-5" />
+            Expert Insight: The "Real" Exchange Rate
+          </h4>
+          <p className="italic text-blue-700 dark:text-blue-300">
+            "Be wary of '0% Commission' claims. Banks and kiosks often markup the exchange rate by 2-5% over the 'Mid-Market Rate' (the rate you see on Google or Reuters). This markup is a hidden fee. Consistently comparing the offered rate to the real-time mid-market rate can save you significant amounts on transfers."
           </p>
-          <ul className="list-disc pl-4 text-muted-foreground text-sm space-y-1">
-            <li><strong>USD ($):</strong> US Dollar - Most traded currency globally</li>
-            <li><strong>EUR (€):</strong> Euro - European Union currency</li>
-            <li><strong>GBP (£):</strong> British Pound Sterling - UK currency</li>
-            <li><strong>JPY (¥):</strong> Japanese Yen - Major Asian currency</li>
-            <li><strong>CAD (C$):</strong> Canadian Dollar - North American currency</li>
-            <li><strong>AUD (A$):</strong> Australian Dollar - Pacific currency</li>
-            <li><strong>CHF (CHF):</strong> Swiss Franc - Safe haven currency</li>
-            <li><strong>CNY (¥):</strong> Chinese Yuan - Emerging market currency</li>
-          </ul>
+          <p className="text-sm font-semibold text-blue-600 dark:text-blue-400 mt-2">— FastTools Finance Team</p>
         </div>
       </div>
     ),
