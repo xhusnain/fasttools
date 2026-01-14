@@ -60,7 +60,16 @@ function handleCORS(request: NextRequest): NextResponse | null {
 
 
 export default function proxy(request: NextRequest) {
+    const host = request.headers.get('host')
     const pathname = request.nextUrl.pathname
+
+    // Domain redirect: non-www to www
+    if (env.isProduction && host === 'fasttools.store') {
+        const url = new URL(request.url)
+        url.hostname = 'www.fasttools.store'
+        return NextResponse.redirect(url.toString(), 301)
+    }
+
 
     if (isGoneUrl(pathname)) {
         const url = request.nextUrl.clone()

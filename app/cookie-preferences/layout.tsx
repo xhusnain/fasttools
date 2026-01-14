@@ -1,10 +1,10 @@
 import { createMetadata } from "@/lib/metadata-base"
 
 export const metadata = createMetadata({
-    title: "Cookie Preferences | Manage Your Privacy Settings",
-    description: "Manage your cookie preferences on FastTools. Control analytics, advertising, and essential cookies. Customize privacy settings for our free online tools.",
+    title: "Cookie Preferences | Manage Privacy Settings",
+    description: "Manage your cookie preferences and privacy settings on FastTools. Control how we use cookies for analytics and advertising to ensure your privacy.",
     path: "/cookie-preferences",
-    includeSchema: false // We have custom WebPage schema in page.tsx
+    includeSchema: false
 })
 
 export default function CookiePreferencesLayout({

@@ -232,7 +232,7 @@ function addYearToTitle(title: string, path: string): string {
 
 export function getCanonicalUrl(path: string): string {
     const safePath = path.startsWith("/") ? path : `/${path}`
-    return `${BASE_URL}${safePath}`
+    return safePath
 }
 
 

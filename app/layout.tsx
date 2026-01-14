@@ -41,11 +41,6 @@ export const metadata = {
     card: "summary_large_image",
     creator: "@ZamanIsmail7",
   },
-  ...createMetadata({
-    title: "FastTools",
-    description: "FastTools provides 1000+ free online tools and expert articles: PDF tools, AI generators, calculators, developer utilities, and a tech blog with in-depth tutorials. 100% free, secure local processing, and works on all devices.",
-    path: "/",
-  }),
 }
 
 export default function RootLayout({
