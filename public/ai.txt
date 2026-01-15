@@ -113,6 +113,10 @@ Description: Convert your text into aesthetic Christmas fonts with emojis. Copy 
 ## Turkey Defrost Calculator
 URL: https://www.fasttools.store/festivals/turkey-defrost-calculator
 Description: Calculate exactly when to start defrosting your turkey (Fridge vs Water). Get a calendar reminder.
+
+## Antigravity Agent Skill Builder
+URL: https://www.fasttools.store/dev-tools/antigravity-skill-builder
+Description: Free AI tool to generate `SKILL.md` files for Google Antigravity agents. Converts natural language descriptions into valid YAML/Markdown protocols for the IDE. Features simplified creation flow, expert mode for "Chain of Thought" prompting, and a library of 30+ pre-built skills for React, Node.js, and Python.
 # Updates
 This file is updated regularly. Check last modified date.
 Last updated: 2026-01-05

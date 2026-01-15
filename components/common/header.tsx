@@ -64,6 +64,14 @@ export function Header() {
                   Build & Earn
                 </Link>
                 <Link
+                  href="/dev-tools/antigravity-skill-builder"
+                  title="Create Custom AI Agent Skills"
+                  className="text-sm font-medium text-muted-foreground hover:text-primary transition-colors flex items-center gap-1 h-full"
+                >
+                  <Sparkles className="h-3.5 w-3.5 text-blue-500" />
+                  Agent Skills
+                </Link>
+                <Link
                   href="/my-info"
                   title="Check Your IP Address, Location and Device Info"
                   className="text-sm font-medium text-muted-foreground hover:text-primary transition-colors flex items-center h-full"

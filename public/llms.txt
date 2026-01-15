@@ -75,6 +75,9 @@ Financial planning and calculation tools including bill splitters, tip calculato
 https://www.fasttools.store/dev-tools
 Tools for developers and programmers including JWT decoders, regex testers, JSON/CSV converters, HTML beautifiers, markdown tools, and color palette generators.
 
+**Featured Tools:**
+- https://www.fasttools.store/dev-tools/antigravity-skill-builder - Free Antigravity Agent Skill Builder. Generate standard `SKILL.md` files for Google's Antigravity IDE. Create, validate, and download custom AI agent skills for coding, testing, and DevOps. Features include AI-powered generation, pre-defined skill library, and instant syntax validation. 100% free developer utility.
+
 ### Live TV & Utilities
 https://www.fasttools.store/live-tv
 Watch free live TV channels from around the world and check your digital footprint.

@@ -169,5 +169,38 @@ ${genre === "pop" ? "- Keep lyrics simple, catchy, and universally relatable\n- 
 ${genre === "rock" ? "- Use powerful, emotive language\n- Include themes of rebellion, freedom, or intensity\n- Create strong, anthemic choruses" : ""}
 ${genre === "R&B" || genre === "soul" ? "- Focus on love, relationships, and emotions\n- Use smooth, flowing language\n- Include sensual and romantic imagery" : ""}
 
-Generate the complete song lyrics now.Make it professional, original, and ready to be set to music.`
+Generate the complete song lyrics now.Make it professional, original, and ready to be set to music.`,
+
+  agentSkill: (skillName: string, description: string) => `You are an expert Google Antigravity Agent Skill developer. Your task is to generate a valid SKILL.md file content based on the user's requirement.
+
+User Description: "${description}"
+${skillName ? `Skill Name: "${skillName}"` : ""}
+
+A valid Antigravity SKILL.md file MUST follow this format:
+1.  **YAML Frontmatter**:
+    -   \`name\`: A kebab-case name for the skill (e.g., \`react-component-generator\`). If not provided, derive it from the description.
+    -   \`description\`: A concise summary of what the skill does and when the agent should use it.
+2.  **Markdown Content**:
+    -   Clear, step-by-step instructions for the agent.
+    -   Use natural language or pseudo-code logic.
+    -   Include examples or templates if necessary.
+
+EXAMPLE OUTPUT:
+---
+name: feature-scaffold
+description: Generates a boilerplate structure for a new feature component.
+---
+# Feature Scaffold Skill
+
+When the user asks to "scaffold a new feature":
+1. Ask for the feature name.
+2. Create a directory with that name.
+3. specific files: index.ts, style.css, and component.tsx.
+...
+
+CRITICAL INSTRUCTIONS:
+- Return ONLY the content of the SKILL.md file.
+- Do NOT include markdown code block fences (like \`\`\`markdown). Just the raw content starting with \`---\`.
+- Ensure the YAML frontmatter is valid.
+- Make the instructions detailed and agent-friendly.`
 }

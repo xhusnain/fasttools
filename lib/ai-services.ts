@@ -497,3 +497,55 @@ export async function generateChannelNamesService(data: ChannelNameRequest) {
         }
     }
 }
+
+/**
+ * Service function for generating Antigravity Agent Skills
+ */
+export async function generateAgentSkillService(data: import("@/types/ai.types").AgentSkillRequest) {
+    const { skillName, description } = data
+
+    if (!description || description.trim().length === 0) {
+        return {
+            success: false,
+            error: "Skill description is required",
+            statusCode: 400
+        }
+    }
+
+    const prompt = PROMPTS.agentSkill(skillName || "", description)
+
+    const result = await aiTextGenerator.generateText({
+        prompt,
+        temperature: 0.7, // Balanced for technical accuracy and creativity
+        maxTokens: 3000,
+    })
+
+    if (!result.success || !result.text) {
+        return {
+            success: false,
+            error: result.error || "Failed to generate agent skill. Please try again.",
+            statusCode: 500
+        }
+    }
+
+    let skillContent = result.text.trim()
+
+    // Clean up markdown code blocks if present (the prompt asks not to, but AI often disobeys)
+    if (skillContent.startsWith('```markdown')) {
+        skillContent = skillContent.replace(/^```markdown\s*/, '').replace(/\s*```$/, '')
+    } else if (skillContent.startsWith('```')) {
+        skillContent = skillContent.replace(/^```\s*/, '').replace(/\s*```$/, '')
+    }
+
+    return {
+        success: true,
+        data: {
+            skillContent,
+            metadata: {
+                skillName: skillName || "custom-skill",
+                generatedAt: new Date().toISOString()
+            }
+        },
+        statusCode: 200
+    }
+}

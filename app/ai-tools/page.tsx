@@ -2,7 +2,7 @@ import { createMetadata } from "@/lib/metadata-base"
 import { GToolCard } from "@/ui/gtool-card"
 
 import { ToolPageLayout } from "@/components/common/tool-page-layout"
-import { QrCode, Music, ImageIcon, Heart } from "lucide-react"
+import { QrCode, Music, ImageIcon, Heart, Sparkles } from "lucide-react"
 
 // Auto-update year
 const currentYear = new Date().getFullYear()

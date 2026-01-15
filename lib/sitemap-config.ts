@@ -981,6 +981,19 @@ export const toolPages = [
         changeFrequency: "monthly" as const,
         priority: 0.85,
     },
+    {
+        url: "https://www.fasttools.store/dev-tools/antigravity-skill-builder",
+        lastModified: new Date(),
+        changeFrequency: "weekly" as const,
+        priority: 0.95,
+        images: [
+            {
+                url: "https://www.fasttools.store/images/antigravity-skill-builder-hero.png",
+                title: "Antigravity Agent Skill Builder - Create Custom AI Skills",
+                caption: "Generate custom SKILL.md files for Google Antigravity agents. Build, download, and share agent skills for coding, testing, and more."
+            }
+        ]
+    },
 ]
 
 import { getAllPosts } from "@/components/blog/blog"

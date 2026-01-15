@@ -46,3 +46,8 @@ export interface ChannelNameRequest {
     targetAudience?: string
 }
 
+export interface AgentSkillRequest {
+    skillName?: string
+    description: string
+}
+

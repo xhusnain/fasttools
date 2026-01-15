@@ -219,6 +219,7 @@ export const navigationConfig: MegaMenuSection[] = [
                 title: "Code Tools",
                 items: [
                     { title: "HTML Beautifier", href: "/dev-tools/html-beautifier", icon: Code, description: "Format/Minify" },
+                    { title: "Agent Skill Builder", href: "/dev-tools/antigravity-skill-builder", icon: Sparkles, description: "Generate Agent Skills" },
                     { title: "JSON to CSV", href: "/dev-tools/json-to-csv", icon: FileText, description: "Data converter" },
                     { title: "SQL to JSON", href: "/dev-tools/sql-to-json", icon: Database, description: "SQL converter" },
                     { title: "HTML to Markdown", href: "/dev-tools/html-to-markdown", icon: FileText, description: "Convert HTML" },

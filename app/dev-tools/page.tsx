@@ -2,7 +2,7 @@ import { ToolPageLayout } from "@/components/common/tool-page-layout"
 import { createToolConfig } from "@/lib/create-tool-config"
 import { GToolCard } from "@/ui/gtool-card"
 
-import { Code2, FileJson, Palette, Hash, FileCode, Braces, Database } from "lucide-react"
+import { Code2, FileJson, Palette, Hash, FileCode, Braces, Database, Sparkles } from "lucide-react"
 
 const devTools = [
   {
@@ -10,6 +10,13 @@ const devTools = [
     description: "Decode and inspect JWT tokens safely in your browser. Perfect for API development and authentication debugging.",
     href: "/dev-tools/jwt-decoder",
     icon: Code2,
+    popular: true,
+  },
+  {
+    title: "Agent Skill Builder",
+    description: "Generate custom SKILL.md files for Google Antigravity agents. Build, download, and share agent skills.",
+    href: "/dev-tools/antigravity-skill-builder",
+    icon: Sparkles,
     popular: true,
   },
   {
