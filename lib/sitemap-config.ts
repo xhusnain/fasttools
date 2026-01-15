@@ -994,6 +994,19 @@ export const toolPages = [
             }
         ]
     },
+    {
+        url: "https://www.fasttools.store/dev-tools/uuid-generator",
+        lastModified: new Date('2026-01-15'),
+        changeFrequency: "weekly" as const,
+        priority: 0.95,
+        images: [
+            {
+                url: "https://www.fasttools.store/images/tools/uuid-generator.png",
+                title: "UUID Generator Concept - Unique Identifier Generation Process",
+                caption: "A high-quality, modern, isometric 3D illustration representing a UUID Concept. Data flow, digital unique keys, hex strings 128-bit."
+            }
+        ]
+    },
 ]
 
 import { getAllPosts } from "@/components/blog/blog"

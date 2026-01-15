@@ -94,6 +94,7 @@
     "tailwind-merge": "^2.5.5",
     "tailwindcss-animate": "^1.0.7",
     "tesseract.js": "latest",
+    "uuid": "^13.0.0",
     "vaul": "^1.1.2",
     "zod": "^3.25.76",
     "zustand": "^5.0.8"
@@ -104,6 +105,7 @@
     "@types/qrcode": "^1.5.6",
     "@types/react": "^19.2.7",
     "@types/react-dom": "^19.2.3",
+    "@types/uuid": "^10.0.0",
     "eslint": "^9.39.1",
     "eslint-config-next": "^16.0.7",
     "jsdom": "^27.2.0",
