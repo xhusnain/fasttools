@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import { BlogPost } from "@/components/blog/blog";
+import { slugifyCategory } from "@/lib/utils";
 import { GImage } from "@/ui/gimage";
 
 interface PostCardProps {
@@ -29,10 +30,12 @@ export const PostCard = ({ post, className = '', compact = false }: PostCardProp
                 )}
 
                 {/* Category Pill - Overlay on Image */}
-                <div className="absolute top-4 left-4 z-10">
-                    <span className="px-3 py-1 text-[10px] font-bold text-white uppercase tracking-wider bg-black/60 backdrop-blur-md rounded-md border border-white/10">
-                        {post.category || 'Article'}
-                    </span>
+                <div className="absolute top-4 left-4 z-10" onClick={(e) => e.stopPropagation()}>
+                    <Link href={`/blog/category/${slugifyCategory(post.category || 'Uncategorized')}`}>
+                        <span className="px-3 py-1 text-[10px] font-bold text-white uppercase tracking-wider bg-black/60 backdrop-blur-md rounded-md border border-white/10 hover:bg-black/80 transition-colors">
+                            {post.category || 'Article'}
+                        </span>
+                    </Link>
                 </div>
             </div>
 

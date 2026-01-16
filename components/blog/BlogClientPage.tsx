@@ -9,6 +9,7 @@ import { LatestPostsList } from './LatestPostsList';
 import { PostCard } from './PostCard';
 import { CategorySection } from './CategorySection';
 import { BlogPost } from "@/components/blog/blog";
+import { slugifyCategory } from "@/lib/utils";
 
 interface BlogClientPageProps {
     allPosts: BlogPost[];
@@ -127,6 +128,7 @@ export default function BlogClientPage({ allPosts }: BlogClientPageProps) {
                                         key={categoryName}
                                         title={categoryName}
                                         posts={posts}
+                                        linkRef={`/blog/category/${slugifyCategory(categoryName)}`}
                                     />
                                 ))}
                             </div>
