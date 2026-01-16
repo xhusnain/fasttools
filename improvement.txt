@@ -1,5 +1,4 @@
 /ai-tools/page.tsx
-/calculator/gpa-calculator/page.tsx
 /calculator/ip-subnet-calculator/page.tsx
 /calculator/love-calculator/page.tsx
 /calculator/pace-calculator/page.tsx

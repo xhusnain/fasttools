@@ -30,7 +30,6 @@ export * from "./calculator-types/love-calculator.types";
 export * from "./common-types/breadcrumbs.types";
 export * from "./common-types/cookie-consent.types";
 export * from "./common-types/copy-button.types";
-export * from "./common-types/g-banner.types";
 export * from "./common-types/home-categories.types";
 export * from "./common-types/home-faq-section.types";
 export * from "./common-types/loading-spinner.types";

@@ -30,7 +30,6 @@ const toolConfig = createToolConfig({
         description: "Celebrate in style! A collection of tools to make your holidays, festivals, and special events even more memorable.",
         titleSize: "large",
         descriptionSize: "medium",
-        badge: "Holiday Specials",
     },
 
     breadcrumbs: [
