@@ -3,6 +3,7 @@ import Link from 'next/link'
 import { Metadata } from 'next'
 import { createMetadata } from '@/lib/metadata-base'
 import { notFound } from 'next/navigation'
+import { slugifyCategory } from '@/lib/utils'
 
 export async function generateStaticParams() {
     const posts = await getAllPosts()
@@ -11,7 +12,7 @@ export async function generateStaticParams() {
     )))
 
     return categories.map((slug) => ({
-        slug: slug.replace(/\s+/g, '-'),
+        slug: slugifyCategory(slug),
     }))
 }
 
@@ -30,11 +31,17 @@ export default async function CategoryPage({ params }: { params: Promise<{ slug:
     const { slug } = await params
     const posts = await getAllPosts()
 
-    // Normalize slug to match category format loosely
-    const categoryName = slug.replace(/-/g, ' ').toLowerCase()
+    // Find the original category name by matching the slug
+    // This allows us to handle "SEO & Marketing" -> "seo-and-marketing" correctly
+    const originalCategory = Array.from(new Set(posts.map(p => p.category)))
+        .find(cat => cat && slugifyCategory(cat) === slug)
+
+    if (!originalCategory) {
+        notFound()
+    }
 
     const categoryPosts = posts.filter(post =>
-        (post.category?.toLowerCase() || 'uncategorized') === categoryName
+        post.category === originalCategory
     )
 
     if (categoryPosts.length === 0) {

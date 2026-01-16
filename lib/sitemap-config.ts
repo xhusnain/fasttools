@@ -163,12 +163,7 @@ export const categoryPages = [
         changeFrequency: "monthly" as const,
         priority: 0.98,
     },
-    {
-        url: "https://www.fasttools.store/blog/category/developer",
-        lastModified: new Date(),
-        changeFrequency: "weekly" as const,
-        priority: 0.85,
-    },
+
     {
         url: "https://www.fasttools.store/festivals",
         lastModified: new Date('2025-12-19'),
@@ -1011,6 +1006,7 @@ export const toolPages = [
 
 import { getAllPosts } from "@/components/blog/blog"
 import { getAllGuides } from "@/components/guide/guide"
+import { slugifyCategory } from "@/lib/utils"
 
 export const generateGuideSitemap = () => {
     const guides = getAllGuides()
@@ -1051,7 +1047,7 @@ export const generateCategorySitemap = () => {
     const categories = Array.from(new Set(posts.map(post => post.category).filter(Boolean)))
 
     return categories.map(category => ({
-        url: `${baseUrl}/blog/category/${category!.toLowerCase().replace(/\s+/g, '-')}`,
+        url: `${baseUrl}/blog/category/${slugifyCategory(category!)}`,
         lastModified: new Date(),
         changeFrequency: 'weekly' as const,
         priority: 0.8,
