@@ -18,6 +18,7 @@ import {
   TrendingDown,
   Info,
   AlertCircle,
+  Check,
   CheckCircle,
   Copy,
   Download,
@@ -114,6 +115,7 @@ export default function InvestmentCalculator() {
   const [contributionTiming, setContributionTiming] = useState("end")
   const [result, setResult] = useState<InvestmentResult | null>(null)
   const [history, setHistory] = useState<InvestmentResult[]>([])
+  const [copied, setCopied] = useState(false)
 
   const formatNumber = (num: number): number => {
     // Round to 2 decimal places and avoid scientific notation
@@ -500,7 +502,10 @@ Additional Contribution: $${result.additionalContribution.toFixed(2)}
 Return Rate: ${result.returnRate.toFixed(2)}%
 Investment Length: ${result.investmentLength.toFixed(1)} years
 Total Interest: $${result.calculations.totalInterest.toFixed(2)}`
-      navigator.clipboard.writeText(text)
+      navigator.clipboard.writeText(text).then(() => {
+        setCopied(true)
+        setTimeout(() => setCopied(false), 2000)
+      })
     }
   }
 

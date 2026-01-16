@@ -40,7 +40,9 @@ const useGlobalOpenPicker = () => {
   useEffect(() => {
     const listener = (id: string | null) => setOpenPickerId(id)
     listeners.add(listener)
-    return () => listeners.delete(listener)
+    return () => {
+      listeners.delete(listener)
+    }
   }, [])
 
   return openPickerId

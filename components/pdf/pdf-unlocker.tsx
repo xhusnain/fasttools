@@ -306,7 +306,7 @@ export function PDFUnlocker() {
   const downloadUnlockedPDF = () => {
     if (!unlockedPdfBytes || !file) return
 
-    const blob = new Blob([unlockedPdfBytes], { type: "application/pdf" })
+    const blob = new Blob([unlockedPdfBytes as BlobPart], { type: "application/pdf" })
     const url = URL.createObjectURL(blob)
     const link = document.createElement("a")
     link.href = url

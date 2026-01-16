@@ -16,6 +16,7 @@ interface Link {
   type: "custom" | "social" | "email"
   platform?: string
   logo?: string
+  customLogo?: string
   displayMode?: "both" | "icon" | "text"
 }
 
@@ -157,7 +158,12 @@ export function LinkInBioGenerator() {
     setShowAddDropdown(false)
   }
 
-  const addEmailLink = (provider: any, email: string) => {
+  const addEmailLink = (provider?: any, email?: string) => {
+    if (!provider || !email) {
+      // If called without arguments, just close dropdown (email links should be added via prompt)
+      setShowAddDropdown(false)
+      return
+    }
     const newLink: Link = {
       id: Date.now().toString(),
       title: `${provider.name} - ${email}`,
@@ -176,7 +182,7 @@ export function LinkInBioGenerator() {
     setLinks(links.filter((link) => link.id !== id))
   }
 
-  const updateLink = (id: string, field: "title" | "url", value: string) => {
+  const updateLink = (id: string, field: "title" | "url" | "displayMode", value: string) => {
     setLinks(links.map((link) => (link.id === id ? { ...link, [field]: value } : link)))
   }
 
