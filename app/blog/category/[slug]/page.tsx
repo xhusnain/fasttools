@@ -18,7 +18,13 @@ export async function generateStaticParams() {
 
 export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata> {
     const { slug } = await params
-    const categoryName = slug.split('-').map(word => word.charAt(0).toUpperCase() + word.slice(1)).join(' ')
+    const posts = await getAllPosts()
+
+    // Find the original category name to use proper casing (e.g. "SEO & Marketing" instead of "Seo And Marketing")
+    const originalCategory = Array.from(new Set(posts.map(p => p.category)))
+        .find(cat => cat && slugifyCategory(cat) === slug)
+
+    const categoryName = originalCategory || slug.split('-').map(word => word.charAt(0).toUpperCase() + word.slice(1)).join(' ')
 
     return createMetadata({
         title: `${categoryName} Articles - Blog`,

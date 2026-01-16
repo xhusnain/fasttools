@@ -1,4 +1,5 @@
 import { getAllPosts } from '@/components/blog/blog'
+import { slugifyCategory } from '@/lib/utils'
 import Link from 'next/link'
 import { createMetadata } from "@/lib/metadata-base"
 
@@ -52,7 +53,7 @@ export default async function ArchivePage() {
 
                 <div className="space-y-32">
                     {categories.map((category) => {
-                        const categorySlug = category.replace(/\s+/g, '-').toLowerCase();
+                        const categorySlug = slugifyCategory(category);
                         const topPosts = postsByCategory[category].slice(0, 8); // Limit to top 8
 
                         return (
