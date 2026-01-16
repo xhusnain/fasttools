@@ -1,9 +1,8 @@
 import type { Metadata } from "next"
-import { getCurrentYear } from "@/lib/utils"
 import { ToolPageLayout } from "@/components/common/tool-page-layout"
 import { IPSubnetCalculator } from "@/components/dev-tools/ip-subnet-calculator"
 import { createMetadata } from "@/lib/metadata-base"
-import { Network, Globe, Shield, Layers, Hash, Info, Calculator, Lightbulb, Server, Database, Zap, Target, CheckCircle, BarChart3, Users, Clock, ShieldCheck, FileText, Brain } from "lucide-react"
+import { Network, Globe, Shield, Info, Database, Zap, Target, CheckCircle, Users, Clock, ShieldCheck, FileText, Brain, BookOpen } from "lucide-react"
 import { GTable } from "@/ui/gtable"
 import Image from "next/image"
 
@@ -11,7 +10,7 @@ const TOOL_TITLE = "IP Subnet Calculator - Calculate CIDR & VLSM"
 const TOOL_NAME = "IP Subnet Calculator"
 
 const baseMetadata = createMetadata({
-  title: `IP Subnet Calculator - IPv4/IPv6 CIDR & Network Mask ${getCurrentYear()}`,
+  title: "IP Subnet Calculator - IPv4/IPv6 CIDR & Network Mask",
   description: "Free IP Subnet Calculator. Calculate network masks, CIDR, and IP ranges instantly. The best IPv4 depot for network engineers. Supports VLSM & Supernetting.",
   path: "/calculator/ip-subnet-calculator",
   breadcrumbs: [
@@ -121,31 +120,40 @@ export default function IPSubnetCalculatorPage() {
 
     aboutTool: (
       <div className="space-y-8">
-        <section>
-          <h2 className="text-2xl font-bold mb-4">What is an IP Subnet?</h2>
-          <p className="text-muted-foreground mb-4">
-            An IP subnet is a logical subdivision of an IP network. The practice of dividing a network into two or more networks is called subnetting. This process increases network efficiency, enhances security, and simplifies management by breaking down large networks into smaller, more manageable segments.
-          </p>
-        </section>
-
-        <div className="p-6 bg-gradient-to-br from-indigo-500/10 via-transparent to-blue-500/10 rounded-2xl border border-indigo-500/20 shadow-sm relative overflow-hidden">
-          <div className="absolute top-0 right-0 p-4 opacity-10">
-            <Brain className="h-24 w-24 text-indigo-500" />
-          </div>
-          <h4 className="flex items-center gap-2 font-bold text-indigo-700 dark:text-indigo-400 mb-3 relative z-10">
-            <Brain className="h-5 w-5" />
-            Expert Insight: CIDR vs. VLSM
-          </h4>
-          <p className="text-sm leading-relaxed text-slate-600 dark:text-slate-300 relative z-10 italic">
-            "While often used interchangeably, CIDR and VLSM serve different purposes. CIDR (Classless Inter-Domain Routing) is primarily used for **route aggregation** on the public internet to keep backbone routing tables small. VLSM (Variable Length Subnet Masking), on the other hand, is used **internally** within an organization to allocate IP space efficiently by creating subnets of different sizes. Mastering both is essential for modern cloud architecture, where IP exhaustion is a constant risk even in private VPCs."
-          </p>
-        </div>
-
-        <section>
-          <h2 className="text-2xl font-bold mb-4 flex items-center gap-2">
-            <Globe className="h-6 w-6 text-primary" />
-            IPv4 Network Classes & Private Ranges
+        <article className="space-y-6">
+          <h2 className="text-2xl font-bold text-foreground flex items-center gap-2">
+            <Network className="h-6 w-6 text-primary" />
+            What is an IP Subnet? Understanding Network Subnetting
           </h2>
+          <p className="text-base text-muted-foreground leading-relaxed">
+            An IP subnet is a logical subdivision of an IP network. The practice of dividing a network into two or more networks is called subnetting. This process increases network efficiency, enhances security, and simplifies management by breaking down large networks into smaller, more manageable segments. Subnetting is essential for modern network design, allowing network engineers to optimize IP address allocation, reduce broadcast traffic, and implement security boundaries between different network segments.
+          </p>
+          <p className="text-base text-muted-foreground leading-relaxed">
+            Our IP Subnet Calculator automates the complex binary mathematics required for subnetting, helping network engineers, IT professionals, and students quickly plan and verify network configurations. Whether you're designing a home network, configuring enterprise infrastructure, setting up cloud VPCs, or preparing for network certifications, our calculator provides instant, accurate subnet calculations with support for both IPv4 and IPv6 addresses, CIDR notation, and VLSM (Variable Length Subnet Masking).
+          </p>
+        </article>
+
+        <article className="space-y-6">
+          <h2 className="text-2xl font-bold text-foreground flex items-center gap-2">
+            <Brain className="h-6 w-6 text-primary" />
+            Expert Insight: CIDR vs. VLSM in Modern Networking
+          </h2>
+          <div className="p-6 bg-gradient-to-br from-indigo-500/10 via-transparent to-blue-500/10 rounded-2xl border border-indigo-500/20 shadow-sm">
+            <p className="text-sm leading-relaxed text-slate-600 dark:text-slate-300 italic">
+              "While often used interchangeably, CIDR and VLSM serve different purposes. CIDR (Classless Inter-Domain Routing) is primarily used for **route aggregation** on the public internet to keep backbone routing tables small. VLSM (Variable Length Subnet Masking), on the other hand, is used **internally** within an organization to allocate IP space efficiently by creating subnets of different sizes. Mastering both is essential for modern cloud architecture, where IP exhaustion is a constant risk even in private VPCs."
+            </p>
+            <p className="text-sm font-semibold text-indigo-600 dark:text-indigo-400 mt-2">— FastTools Network Engineering Team</p>
+          </div>
+        </article>
+
+        <article className="space-y-6">
+          <h2 className="text-2xl font-bold text-foreground flex items-center gap-2">
+            <Globe className="h-6 w-6 text-primary" />
+            IPv4 Network Classes & Private IP Ranges: Complete Reference
+          </h2>
+          <p className="text-base text-muted-foreground leading-relaxed">
+            Understanding IPv4 network classes and private IP ranges is fundamental for network design and security:
+          </p>
           <div className="grid md:grid-cols-2 gap-4">
             {[
               { class: "Class A Networks", range: "1.0.0.0 - 126.255.255.255", private: "10.0.0.0/8", hosts: "16,777,214", mask: "255.0.0.0" },
@@ -181,11 +189,11 @@ export default function IPSubnetCalculatorPage() {
               </div>
             ))}
           </div>
-        </section>
+        </article>
 
-        <section>
-          <h2 className="text-2xl font-bold mb-4 flex items-center gap-2">
-            <Lightbulb className="h-6 w-6 text-primary" />
+        <article className="space-y-6">
+          <h2 className="text-2xl font-bold text-foreground flex items-center gap-2">
+            <BookOpen className="h-6 w-6 text-primary" />
             How to Calculate Subnets: A Step-by-Step Guide
           </h2>
           <div className="space-y-4 text-muted-foreground">
@@ -211,14 +219,18 @@ export default function IPSubnetCalculatorPage() {
               </div>
             </div>
           </div>
-        </section>
+        </article>
 
-        <section>
-          <h2 className="text-2xl font-bold mb-4 flex items-center gap-2">
+        <article className="space-y-6">
+          <h2 className="text-2xl font-bold text-foreground flex items-center gap-2">
             <FileText className="h-6 w-6 text-primary" />
-            Complete Subnet Mask Cheat Sheet (CIDR /1 to /32)
+            Complete Subnet Mask Cheat Sheet: CIDR Reference Guide
           </h2>
-          <GTable>
+          <p className="text-base text-muted-foreground leading-relaxed">
+            Quick reference for common CIDR notation and subnet masks:
+          </p>
+          <div className="overflow-x-auto">
+            <GTable>
             <thead className="bg-muted text-foreground font-semibold sticky top-0 z-10">
               <tr>
                 <th className="p-3 text-left">CIDR</th>
@@ -250,14 +262,18 @@ export default function IPSubnetCalculatorPage() {
                 </tr>
               ))}
             </tbody>
-          </GTable>
-        </section>
+            </GTable>
+          </div>
+        </article>
 
-        <section>
-          <h2 className="text-2xl font-bold mb-4 flex items-center gap-2">
-            <Globe className="h-6 w-6 text-primary" />
-            Real-World Subnetting Examples
+        <article className="space-y-6">
+          <h2 className="text-2xl font-bold text-foreground flex items-center gap-2">
+            <Target className="h-6 w-6 text-primary" />
+            Real-World Subnetting Examples: Practical Applications
           </h2>
+          <p className="text-base text-muted-foreground leading-relaxed">
+            Understanding real-world subnetting examples helps you apply subnetting principles in practice:
+          </p>
           <div className="grid md:grid-cols-2 gap-4">
             <div className="p-4 bg-muted rounded-lg border border-border">
               <h3 className="font-semibold text-foreground mb-2 flex items-center gap-2">
@@ -306,10 +322,50 @@ export default function IPSubnetCalculatorPage() {
               </div>
             </div>
           </div>
-        </section>
+        </article>
 
-        <section>
-          <h2 className="text-2xl font-bold mb-4 flex items-center gap-2">
+        <article className="space-y-6">
+          <h2 className="text-2xl font-bold text-foreground flex items-center gap-2">
+            <Zap className="h-6 w-6 text-primary" />
+            How to Use the IP Subnet Calculator: Step-by-Step Guide
+          </h2>
+          <p className="text-base text-muted-foreground leading-relaxed">
+            Follow these simple steps to calculate IP subnets accurately:
+          </p>
+          <div className="space-y-4">
+            <div className="flex gap-4">
+              <div className="flex-none flex items-center justify-center w-8 h-8 rounded-full bg-primary/10 text-primary font-bold">1</div>
+              <div>
+                <h4 className="font-semibold text-foreground">Enter IP Address</h4>
+                <p className="text-sm text-muted-foreground">Input your IPv4 or IPv6 address in the calculator. The calculator accepts standard IP address formats (e.g., 192.168.1.1 for IPv4).</p>
+              </div>
+            </div>
+            <div className="flex gap-4">
+              <div className="flex-none flex items-center justify-center w-8 h-8 rounded-full bg-primary/10 text-primary font-bold">2</div>
+              <div>
+                <h4 className="font-semibold text-foreground">Set Subnet Mask or CIDR</h4>
+                <p className="text-sm text-muted-foreground">Enter subnet mask (e.g., 255.255.255.0) or CIDR prefix length (e.g., /24). CIDR notation is more common in modern networking.</p>
+              </div>
+            </div>
+            <div className="flex gap-4">
+              <div className="flex-none flex items-center justify-center w-8 h-8 rounded-full bg-primary/10 text-primary font-bold">3</div>
+              <div>
+                <h4 className="font-semibold text-foreground">Calculate Results</h4>
+                <p className="text-sm text-muted-foreground">Click calculate to get comprehensive network analysis including network address, broadcast address, usable host range, and total hosts.</p>
+              </div>
+            </div>
+            <div className="flex gap-4">
+              <div className="flex-none flex items-center justify-center w-8 h-8 rounded-full bg-primary/10 text-primary font-bold">4</div>
+              <div>
+                <h4 className="font-semibold text-foreground">Analyze Network</h4>
+                <p className="text-sm text-muted-foreground">Review network address, broadcast address, host range, and binary/hexadecimal representations for complete network understanding.</p>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <article className="space-y-6">
+          <h2 className="text-2xl font-bold text-foreground flex items-center gap-2">
             <Target className="h-6 w-6 text-primary" />
             Advanced Network Calculation Features
           </h2>
@@ -355,9 +411,9 @@ export default function IPSubnetCalculatorPage() {
               </div>
             </div>
           </div>
-        </section>
+        </article>
 
-        <section className="space-y-6">
+        <article className="space-y-6">
           <div className="bg-card border border-border rounded-xl p-6 shadow-sm">
             <h2 className="text-xl font-bold mb-4 text-foreground">
               The Strategic Importance of Subnetting in Modern Networking
@@ -438,9 +494,42 @@ export default function IPSubnetCalculatorPage() {
               </div>
             </div>
           </div>
-        </section>
+        </article>
 
-        <section>
+        <article className="space-y-6">
+          <h2 className="text-2xl font-bold text-foreground flex items-center gap-2">
+            <Shield className="h-6 w-6 text-primary" />
+            Privacy & Security: Your Network Data Stays Private
+          </h2>
+          <p className="text-base text-muted-foreground leading-relaxed">
+            Your privacy and data security are our top priorities. Our IP subnet calculator processes all information locally in your browser:
+          </p>
+          <div className="space-y-3">
+            <div className="flex gap-3">
+              <div className="flex-none w-2 h-2 rounded-full bg-blue-500 mt-2"></div>
+              <div>
+                <h4 className="font-semibold text-foreground">Client-Side Processing</h4>
+                <p className="text-sm text-muted-foreground">All subnet calculations happen directly in your browser using JavaScript. Your IP addresses, subnet masks, and calculation results never leave your device or get transmitted to our servers. No data is sent over the internet during calculations.</p>
+              </div>
+            </div>
+            <div className="flex gap-3">
+              <div className="flex-none w-2 h-2 rounded-full bg-blue-500 mt-2"></div>
+              <div>
+                <h4 className="font-semibold text-foreground">No Data Storage or Tracking</h4>
+                <p className="text-sm text-muted-foreground">We don't store, log, or track any of your network data. There's no database of your IP calculations, no analytics on your usage, and no way for us to access your IP addresses or subnet information. Your privacy is completely protected while using our tool.</p>
+              </div>
+            </div>
+            <div className="flex gap-3">
+              <div className="flex-none w-2 h-2 rounded-full bg-blue-500 mt-2"></div>
+              <div>
+                <h4 className="font-semibold text-foreground">Safe for Enterprise Use</h4>
+                <p className="text-sm text-muted-foreground">You can use the calculator with confidence for enterprise network planning, cloud VPC design, and security analysis. All calculations happen locally, ensuring your network topology and IP addressing schemes remain private and secure.</p>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <article className="space-y-6">
           <div className="flex flex-wrap items-center justify-center gap-6 py-6 border-y border-border mb-8">
             <div className="flex items-center gap-2 text-muted-foreground">
               <ShieldCheck className="h-5 w-5 text-green-500" />
@@ -476,10 +565,10 @@ export default function IPSubnetCalculatorPage() {
               </div>
             </div>
           </div>
-        </section>
+        </article>
 
-        <section>
-          <h2 className="text-2xl font-bold mb-4 flex items-center gap-2">
+        <article className="space-y-6">
+          <h2 className="text-2xl font-bold text-foreground flex items-center gap-2">
             <Info className="h-6 w-6 text-primary" />
             People Also Ask About Subnet Calculators
           </h2>
@@ -508,7 +597,7 @@ export default function IPSubnetCalculatorPage() {
               </div>
             ))}
           </div>
-        </section>
+        </article>
       </div>
     ),
 
@@ -552,6 +641,106 @@ export default function IPSubnetCalculatorPage() {
       {
         question: "What is an IP Subnet Calculator?",
         answer: "An IP Subnet Calculator is a tool that automates the complex binary math required for subnetting. It helps network engineers quickly plan and verify network configurations."
+      },
+      {
+        question: "How do I calculate subnet mask from IP address?",
+        answer: "The subnet mask depends on your network configuration, not just the IP address. For Class A networks, default mask is 255.0.0.0 (/8). Class B uses 255.255.0.0 (/16). Class C uses 255.255.255.0 (/24). With CIDR, you can use any prefix length. Use our calculator to determine the appropriate subnet mask based on your network requirements and number of needed hosts."
+      },
+      {
+        question: "What is my subnet mask? How to find it?",
+        answer: "To find your subnet mask, on Windows open Command Prompt and type 'ipconfig'. On Mac/Linux, open Terminal and type 'ifconfig' or 'ip addr'. The subnet mask appears next to your IP address. Alternatively, use our subnet calculator by entering your IP address—it will show common subnet masks used with that IP range."
+      },
+      {
+        question: "How to calculate network address from IP and subnet mask?",
+        answer: "To calculate network address, perform a bitwise AND operation between the IP address and subnet mask in binary form. Convert both to binary, perform AND operation (1 AND 1 = 1, all else = 0), then convert back to decimal. This gives you the network address. Our calculator performs this automatically—just enter your IP and subnet mask to get instant results."
+      },
+      {
+        question: "How to calculate broadcast address?",
+        answer: "The broadcast address is the last address in a subnet, where all host bits are set to 1. To calculate it manually, take the network address, set all host bits to 1, and convert to decimal. For example, in 192.168.1.0/24, the broadcast is 192.168.1.255. Our calculator automatically calculates broadcast addresses for any subnet."
+      },
+      {
+        question: "How many hosts can a /24 subnet have?",
+        answer: "A /24 subnet (255.255.255.0) has 256 total IP addresses, with 254 usable hosts. The formula is 2^8 - 2 = 254, where 8 is the number of host bits (32 - 24 = 8). The -2 accounts for the network address (first IP) and broadcast address (last IP). This is the most common subnet size for small networks."
+      },
+      {
+        question: "What is a /28 subnet? How many hosts?",
+        answer: "A /28 subnet has a subnet mask of 255.255.255.240. It provides 16 total IP addresses (2^4), with 14 usable hosts (16 - 2). This subnet size is perfect for small departments, point-to-point links, or VLANs that need just a few IP addresses. Common in VLSM designs where different subnets need different sizes."
+      },
+      {
+        question: "How to calculate CIDR notation?",
+        answer: "CIDR notation is written as IP address followed by a forward slash and number (e.g., 192.168.1.0/24). The number after the slash represents the number of network bits. To calculate CIDR from subnet mask, count the consecutive 1s in the binary subnet mask. For example, 255.255.255.0 has 24 network bits, so it's /24. Our calculator converts between subnet masks and CIDR notation automatically."
+      },
+      {
+        question: "What is the difference between subnet mask and CIDR?",
+        answer: "Subnet mask (e.g., 255.255.255.0) and CIDR (e.g., /24) represent the same information in different formats. Subnet mask uses dotted decimal notation, while CIDR uses prefix length notation. CIDR is more concise and commonly used in modern networking, routing protocols, and cloud configurations. Both indicate how many bits are used for the network portion of an IP address."
+      },
+      {
+        question: "How to subnet a network? Step by step guide.",
+        answer: "To subnet a network: 1) Determine number of subnets needed, 2) Calculate subnet bits using 2^n formula, 3) Calculate host bits remaining (32 - network bits - subnet bits), 4) Calculate usable hosts per subnet (2^host_bits - 2), 5) Calculate subnet mask, 6) Calculate network addresses for each subnet. Our calculator automates this entire process—enter your requirements and get instant subnetting results."
+      },
+      {
+        question: "What is VLSM and how does it work?",
+        answer: "VLSM (Variable Length Subnet Masking) allows different subnets within the same network to have different subnet masks, enabling efficient IP address allocation. Unlike fixed-length subnetting, VLSM lets you create subnets of various sizes based on actual needs. For example, a point-to-point link uses /30 (2 hosts), while a LAN uses /24 (254 hosts). This maximizes IP space utilization and is essential for modern network design."
+      },
+      {
+        question: "How to calculate supernet or route aggregation?",
+        answer: "Supernetting combines multiple contiguous subnets into a single larger network. To calculate supernet, find the common network bits in all subnets, then create a CIDR block that encompasses them all. For example, 192.168.1.0/24 and 192.168.2.0/24 can be aggregated as 192.168.0.0/16. This reduces routing table size and improves network efficiency. Our calculator supports supernetting calculations."
+      },
+      {
+        question: "What are private IP addresses? Which ranges?",
+        answer: "Private IP addresses are non-routable on the public internet, used for internal networks. RFC 1918 defines three ranges: 10.0.0.0/8 (10.0.0.0 to 10.255.255.255), 172.16.0.0/12 (172.16.0.0 to 172.31.255.255), and 192.168.0.0/16 (192.168.0.0 to 192.168.255.255). These addresses are reused across different private networks and are not globally unique. Our calculator automatically identifies private IP addresses."
+      },
+      {
+        question: "How to convert binary IP address to decimal?",
+        answer: "To convert binary IP to decimal, split the 32-bit binary into four 8-bit octets. Convert each octet from binary to decimal. For example, 11000000.10101000.00000001.00000001 = 192.168.1.1. Each binary position represents a power of 2 (rightmost is 2^0, leftmost is 2^7). Sum the positions with 1s. Our calculator shows IP addresses in binary, decimal, and hexadecimal formats for comprehensive understanding."
+      },
+      {
+        question: "What is wildcard mask? How to calculate it?",
+        answer: "A wildcard mask is the inverse of a subnet mask, used in ACLs (Access Control Lists) and routing protocols like OSPF. To calculate wildcard mask, subtract each octet of the subnet mask from 255. For example, subnet mask 255.255.255.0 has wildcard mask 0.0.0.255. In binary, wildcard mask uses 0s where bits must match and 1s where bits can vary. Our calculator provides wildcard masks for any subnet."
+      },
+      {
+        question: "How many subnets can I create from a /24 network?",
+        answer: "The number of subnets depends on how many bits you borrow from the host portion. For a /24 network (8 host bits), if you borrow 2 bits for subnetting, you get 2^2 = 4 subnets, each with 2^6 - 2 = 62 hosts. Borrowing 3 bits gives 2^3 = 8 subnets with 30 hosts each. Our calculator helps you determine optimal subnetting based on your requirements."
+      },
+      {
+        question: "What is the default gateway and how to calculate it?",
+        answer: "The default gateway is typically the first usable IP address in a subnet (network address + 1). For example, in subnet 192.168.1.0/24, the default gateway is usually 192.168.1.1. However, it can be any usable IP in the subnet, though the first or last usable IP is most common. Our calculator shows the usable IP range, and the first IP is commonly used as the gateway."
+      },
+      {
+        question: "How to use subnet calculator for AWS VPC?",
+        answer: "For AWS VPC, use CIDR notation (e.g., 172.31.0.0/16). Our calculator helps you plan VPC CIDR blocks and subnet allocation. AWS supports /16 to /28 CIDR blocks for VPCs. Use VLSM to create subnets of different sizes (e.g., /20 for public subnets, /20 for private subnets within a /16 VPC). Our calculator shows host ranges, which helps plan subnet CIDRs for your VPC architecture."
+      },
+      {
+        question: "How to check if two IPs are in the same subnet?",
+        answer: "To check if two IPs are in the same subnet, calculate the network address for both IPs using the same subnet mask. If both IPs produce the same network address, they're in the same subnet. Our calculator makes this easy—enter both IPs with the same subnet mask, and if they show the same network address, they're on the same subnet."
+      },
+      {
+        question: "What is the maximum number of hosts in a subnet?",
+        answer: "The maximum number of usable hosts depends on the subnet mask. With a /8 subnet (Class A), you can have 16,777,214 usable hosts (2^24 - 2). However, in practice, subnets are much smaller for manageability. A /24 subnet has 254 usable hosts, which is common for most networks. Our calculator shows the maximum hosts for any subnet size."
+      },
+      {
+        question: "How to calculate first and last usable IP address?",
+        answer: "The first usable IP is the network address + 1, and the last usable IP is the broadcast address - 1. For example, in 192.168.1.0/24, network is 192.168.1.0, first usable is 192.168.1.1, last usable is 192.168.1.254, and broadcast is 192.168.1.255. Our calculator automatically shows the first and last usable IP addresses for any subnet."
+      },
+      {
+        question: "What is point-to-point subnet? Best CIDR for P2P links?",
+        answer: "Point-to-point (P2P) links connect exactly two devices (e.g., routers). The best CIDR for P2P links is /30 (255.255.255.252), which provides 4 IPs: network address, broadcast address, and 2 usable IPs (one for each end). Some networks use /31 (255.255.255.254) which provides 2 IPs total, but this is less common. Our calculator helps you plan P2P subnets efficiently."
+      },
+      {
+        question: "How to calculate subnet for class A, B, C networks?",
+        answer: "Class A uses /8 (255.0.0.0), Class B uses /16 (255.255.0.0), and Class C uses /24 (255.255.255.0) as default masks. However, with CIDR, you can subnet these classes into smaller networks. For example, a Class A network can be subnetted into multiple /24 subnets. Our calculator supports all network classes and shows how CIDR notation works with each class."
+      },
+      {
+        question: "Is subnet calculator free to use?",
+        answer: "Yes, our subnet calculator is completely free with no charges, subscriptions, or registration required. You can perform unlimited subnet calculations, access all features (IPv4/IPv6, CIDR, VLSM, binary/hex conversion), and use the tool for personal, educational, commercial, or professional purposes without any cost. All features are available without limitations."
+      },
+      {
+        question: "Can I use subnet calculator on mobile devices?",
+        answer: "Yes! Our subnet calculator is fully responsive and works perfectly on mobile devices, tablets, and desktop computers. The calculator is optimized for touch screens, making it easy to enter IP addresses and subnet masks on the go. You can use it for network planning, troubleshooting, or certification exam preparation, wherever you are."
+      },
+      {
+        question: "How accurate is the subnet calculator?",
+        answer: "Our subnet calculator is highly accurate, using precise binary arithmetic and standard networking formulas. The calculations match industry-standard methods used by network equipment and protocols. Results are suitable for production network planning, cloud VPC design, and professional use. The calculator follows RFC standards for IP addressing and subnetting."
       }
     ],
 
@@ -561,7 +750,7 @@ export default function IPSubnetCalculatorPage() {
   return (
     <ToolPageLayout
       header={{
-        title: `IP Subnet Calculator (${getCurrentYear()})`,
+        title: "IP Subnet Calculator",
         description: "Calculate IPv4/IPv6 subnets, CIDR, and network masks instantly. The ultimate tool for network engineers to analyze address ranges and broadcast domains.",
         titleSize: "medium",
         descriptionSize: "small",
