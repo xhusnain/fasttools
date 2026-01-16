@@ -39,7 +39,7 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
                 authors: [frontMatter.author || 'FastTools Team'],
                 images: frontMatter.image
                     ? [`https://www.fasttools.store${frontMatter.image}`]
-                    : [],
+                    : [`https://www.fasttools.store/android-chrome-512x512.png`],
                 url: `https://www.fasttools.store/guides/${slug}`,
                 siteName: 'FastTools',
             },
@@ -49,7 +49,7 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
                 description: frontMatter.description,
                 images: frontMatter.image
                     ? [`https://www.fasttools.store${frontMatter.image}`]
-                    : [],
+                    : [`https://www.fasttools.store/android-chrome-512x512.png`],
                 creator: '@fasttools',
             },
             robots: {
@@ -99,7 +99,7 @@ export default async function GuidePage({
         description: frontMatter.description,
         image: frontMatter.image
             ? `https://www.fasttools.store${frontMatter.image}`
-            : undefined,
+            : `https://www.fasttools.store/android-chrome-512x512.png`,
         author: {
             '@type': 'Person',
             name: frontMatter.author || 'FastTools Team',
