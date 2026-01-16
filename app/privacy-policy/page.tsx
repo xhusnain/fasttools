@@ -18,7 +18,7 @@ import {
 import { createMetadata } from "@/lib/metadata-base"
 
 export const metadata = createMetadata({
-  title: "Privacy Policy | GDPR & CCPA Compliant | FastTools",
+  title: "Privacy Policy | GDPR & CCPA Compliant",
   description: "Comprehensive privacy policy for FastTools covering GDPR, CCPA compliance, Google AdSense policies, data collection, and user rights for free online tools.",
   path: "/privacy-policy",
   includeSchema: false

@@ -14,7 +14,7 @@ import Link from "next/link"
 import { createMetadata } from "@/lib/metadata-base"
 
 export const metadata = createMetadata({
-  title: "About FastTools",
+  title: "About Us",
   description: "Discover FastTools, the comprehensive free online tools platform with 1000+ AI, converter, calculator, SEO and productivity utilities.",
   path: "/about",
 })

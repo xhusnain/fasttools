@@ -78,7 +78,7 @@ export function createMetadata(options: MetadataOptions): Metadata & { softwareS
     const includeSchema = options.includeSchema ?? shouldIncludeSchema(path)
 
     const cleanPath = path.startsWith("/") ? path : `/${path}`
-    const titleWithBranding = title === "FastTools" || title.startsWith("FastTools -") ? title : `${title} | FastTools`
+    const titleWithBranding = title
     const fullTitle = addYearToTitle(titleWithBranding, cleanPath)
     const canonicalUrl = getCanonicalUrl(cleanPath)
 

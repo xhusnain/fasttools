@@ -15,7 +15,7 @@ import {
 import { createMetadata } from "@/lib/metadata-base"
 
 export const metadata = createMetadata({
-  title: "Terms of Service | Google AdSense Compliant | FastTools",
+  title: "Terms of Service | Google AdSense Compliant",
   description: "Comprehensive terms of service for FastTools covering Google AdSense compliance, user agreements, and legal obligations for free online tools.",
   path: "/terms",
   includeSchema: false

@@ -1,10 +1,10 @@
 import { createMetadata } from "@/lib/metadata-base"
 
 export const metadata = createMetadata({
-    title: "Contact Us | Get Help & Support",
-    description: "Contact FastTools for support, feedback, or questions about our free online tools. Get help with calculators, converters, and AI tools. We typically respond within 24-48 hours.",
+    title: "Contact Us",
+    description: "Get in touch with fasttools.store support team for feedback, tool requests, or assistance.",
     path: "/contact",
-    includeSchema: false // We have custom ContactPage schema in page.tsx
+    includeSchema: false
 })
 
 export default function ContactLayout({
