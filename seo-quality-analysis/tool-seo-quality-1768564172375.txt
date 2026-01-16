@@ -1,0 +1,340 @@
+
+╔══════════════════════════════════════════════════════════════╗
+║         TOOL PAGE SEO QUALITY ANALYSIS REPORT                ║
+║     (Compared to YouTube Channel Checker - First Page Rank)   ║
+╚══════════════════════════════════════════════════════════════╝
+
+Generated: 1/16/2026, 4:49:32 PM
+
+📊 SUMMARY
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+Total Tool Pages Analyzed: 111
+Average SEO Quality Score: 55/100
+
+Score Distribution:
+  🟢 Excellent (80-100): 2 pages
+  🟡 Good (60-79): 25 pages
+  🔴 Needs Work (0-59): 84 pages
+
+BENCHMARK STANDARDS (from YouTube Channel Checker):
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+✓ Content Length: 10,000+ characters
+✓ FAQs: 25+ questions
+✓ Sections: 10+ H2 sections
+✓ Video Schema: Yes
+✓ Images: Yes
+✓ Tables: Yes
+✓ Examples: Yes
+✓ Step-by-Step: Yes
+✓ Use Cases: Yes
+✓ Related Tools: Yes
+✓ Breadcrumbs: Yes
+✓ Rich AboutTool: Yes (React component)
+
+🏆 TOP PERFORMING PAGES (Score 80+)
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+1. /social-media-tools/channel-checker/page.tsx - Score: 100/100
+   Content: 90,104 chars | FAQs: 43 | Sections: 25
+
+2. /seo-tools/text-similarity-checker/page.tsx - Score: 83/100
+   Content: 49,189 chars | FAQs: 15 | Sections: 11
+
+
+🔴 PAGES NEEDING MOST IMPROVEMENT (Score < 60)
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+1. /social-media-tools/facebook-downloader/page.tsx - Score: 58/100
+   Content: 27,689 chars | FAQs: 11 | Sections: 6
+   Issues:
+     - Too few FAQs: 11 (need 25+)
+     - Too few sections: 6 (need 10+)
+     - Missing video schema
+     - Missing images
+     - Missing examples
+
+2. /social-media-tools/hashtag-counter/page.tsx - Score: 58/100
+   Content: 14,065 chars | FAQs: 8 | Sections: 2
+   Issues:
+     - Too few FAQs: 8 (need 25+)
+     - Too few sections: 2 (need 10+)
+     - Missing video schema
+     - Missing images
+     - Missing examples
+
+3. /social-media-tools/instagram-dp/page.tsx - Score: 58/100
+   Content: 19,194 chars | FAQs: 11 | Sections: 3
+   Issues:
+     - Too few FAQs: 11 (need 25+)
+     - Too few sections: 3 (need 10+)
+     - Missing video schema
+     - Missing images
+     - Missing examples
+
+4. /social-media-tools/link-in-bio/page.tsx - Score: 58/100
+   Content: 13,216 chars | FAQs: 8 | Sections: 2
+   Issues:
+     - Too few FAQs: 8 (need 25+)
+     - Too few sections: 2 (need 10+)
+     - Missing video schema
+     - Missing images
+     - Missing examples
+
+5. /social-media-tools/tiktok-downloader/page.tsx - Score: 58/100
+   Content: 33,023 chars | FAQs: 18 | Sections: 3
+   Issues:
+     - Too few FAQs: 18 (need 25+)
+     - Too few sections: 3 (need 10+)
+     - Missing video schema
+     - Missing images
+     - Missing examples
+
+6. /social-media-tools/x-video-downloader/page.tsx - Score: 58/100
+   Content: 25,548 chars | FAQs: 11 | Sections: 9
+   Issues:
+     - Too few FAQs: 11 (need 25+)
+     - Too few sections: 9 (need 10+)
+     - Missing video schema
+     - Missing images
+     - Missing examples
+
+7. /social-media-tools/youtube-channel-name-generator/page.tsx - Score: 58/100
+   Content: 23,338 chars | FAQs: 6 | Sections: 0
+   Issues:
+     - Too few FAQs: 6 (need 25+)
+     - Too few sections: 0 (need 10+)
+     - Missing video schema
+     - Missing tables
+     - Missing examples
+
+8. /social-media-tools/youtube-tags/page.tsx - Score: 58/100
+   Content: 17,075 chars | FAQs: 8 | Sections: 5
+   Issues:
+     - Too few FAQs: 8 (need 25+)
+     - Too few sections: 5 (need 10+)
+     - Missing video schema
+     - Missing images
+     - Missing examples
+
+9. /social-media-tools/youtube-thumbnail/page.tsx - Score: 58/100
+   Content: 13,714 chars | FAQs: 11 | Sections: 0
+   Issues:
+     - Too few FAQs: 11 (need 25+)
+     - Too few sections: 0 (need 10+)
+     - Missing video schema
+     - Missing images
+     - Missing examples
+
+10. /calculator/bmr-calculator/page.tsx - Score: 58/100
+   Content: 12,356 chars | FAQs: 10 | Sections: 2
+   Issues:
+     - Too few FAQs: 10 (need 25+)
+     - Too few sections: 2 (need 10+)
+     - Missing video schema
+     - Missing images
+     - Missing examples
+
+11. /calculator/body-fat-calculator/page.tsx - Score: 58/100
+   Content: 11,309 chars | FAQs: 10 | Sections: 2
+   Issues:
+     - Too few FAQs: 10 (need 25+)
+     - Too few sections: 2 (need 10+)
+     - Missing video schema
+     - Missing images
+     - Missing examples
+
+12. /calculator/calorie-calculator/page.tsx - Score: 58/100
+   Content: 12,681 chars | FAQs: 10 | Sections: 2
+   Issues:
+     - Too few FAQs: 10 (need 25+)
+     - Too few sections: 2 (need 10+)
+     - Missing video schema
+     - Missing images
+     - Missing examples
+
+13. /calculator/conversion-calculator/page.tsx - Score: 58/100
+   Content: 19,217 chars | FAQs: 5 | Sections: 5
+   Issues:
+     - Too few FAQs: 5 (need 25+)
+     - Too few sections: 5 (need 10+)
+     - Missing video schema
+     - Missing images
+     - Missing examples
+
+14. /calculator/date-difference/page.tsx - Score: 58/100
+   Content: 26,963 chars | FAQs: 20 | Sections: 6
+   Issues:
+     - Too few FAQs: 20 (need 25+)
+     - Too few sections: 6 (need 10+)
+     - Missing video schema
+     - Missing images
+     - Missing examples
+
+15. /calculator/pregnancy-calculator/page.tsx - Score: 58/100
+   Content: 11,357 chars | FAQs: 10 | Sections: 2
+   Issues:
+     - Too few FAQs: 10 (need 25+)
+     - Too few sections: 2 (need 10+)
+     - Missing video schema
+     - Missing images
+     - Missing examples
+
+16. /calculator/pregnancy-conception-calculator/page.tsx - Score: 58/100
+   Content: 11,421 chars | FAQs: 10 | Sections: 2
+   Issues:
+     - Too few FAQs: 10 (need 25+)
+     - Too few sections: 2 (need 10+)
+     - Missing video schema
+     - Missing images
+     - Missing examples
+
+17. /calculator/scientific-calculator/page.tsx - Score: 58/100
+   Content: 32,917 chars | FAQs: 13 | Sections: 7
+   Issues:
+     - Too few FAQs: 13 (need 25+)
+     - Too few sections: 7 (need 10+)
+     - Missing video schema
+     - Missing use cases
+     - Missing breadcrumbs
+
+18. /calculator/triangle-calculator/page.tsx - Score: 58/100
+   Content: 19,096 chars | FAQs: 16 | Sections: 2
+   Issues:
+     - Too few FAQs: 16 (need 25+)
+     - Too few sections: 2 (need 10+)
+     - Missing video schema
+     - Missing images
+     - Missing examples
+
+19. /finance-tools/compound-interest/page.tsx - Score: 58/100
+   Content: 12,714 chars | FAQs: 15 | Sections: 0
+   Issues:
+     - Too few FAQs: 15 (need 25+)
+     - Too few sections: 0 (need 10+)
+     - Missing video schema
+     - Missing images
+     - Missing tables
+
+20. /finance-tools/inflation-calculator/page.tsx - Score: 58/100
+   Content: 28,806 chars | FAQs: 13 | Sections: 5
+   Issues:
+     - Too few FAQs: 13 (need 25+)
+     - Too few sections: 5 (need 10+)
+     - Missing video schema
+     - Missing images
+     - Missing tables
+
+
+📋 ALL PAGES (Sorted by Score)
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+🟢   1. /social-media-tools/channel-checker/page.tsx       Score: 100/100
+🟢   2. /seo-tools/text-similarity-checker/page.tsx        Score:  83/100
+🟡   3. /social-media-tools/instagram-downloader/page.tsx  Score:  75/100
+🟡   4. /calculator/age-calculator/page.tsx                Score:  75/100
+🟡   5. /calculator/gpa-calculator/page.tsx                Score:  75/100
+🟡   6. /calculator/ip-subnet-calculator/page.tsx          Score:  75/100
+🟡   7. /finance-tools/paypal-fee/page.tsx                 Score:  75/100
+🟡   8. /social-media-tools/capcut-downloader/page.tsx     Score:  67/100
+🟡   9. /social-media-tools/douyin-downloader/page.tsx     Score:  67/100
+🟡  10. /social-media-tools/pinterest-downloader/page.tsx  Score:  67/100
+🟡  11. /social-media-tools/soundcloud-downloader/page.tsx Score:  67/100
+🟡  12. /social-media-tools/youtube-downloader/page.tsx    Score:  67/100
+🟡  13. /social-media-tools/youtube-playlist-downloader/page.tsx Score:  67/100
+🟡  14. /calculator/bmi-calculator/page.tsx                Score:  67/100
+🟡  15. /calculator/concrete-calculator/page.tsx           Score:  67/100
+🟡  16. /calculator/fraction-calculator/page.tsx           Score:  67/100
+🟡  17. /calculator/love-calculator/page.tsx               Score:  67/100
+🟡  18. /calculator/pace-calculator/page.tsx               Score:  67/100
+🟡  19. /calculator/percentage-calculator/page.tsx         Score:  67/100
+🟡  20. /calculator/standard-deviation-calculator/page.tsx Score:  67/100
+🟡  21. /calculator/time-duration/page.tsx                 Score:  67/100
+🟡  22. /finance-tools/savings-tracker/page.tsx            Score:  67/100
+🟡  23. /dev-tools/sql-to-json/page.tsx                    Score:  67/100
+🟡  24. /dev-tools/uuid-generator/page.tsx                 Score:  67/100
+🟡  25. /converters/file-size/page.tsx                     Score:  67/100
+🟡  26. /converters/length/page.tsx                        Score:  67/100
+🟡  27. /converters/timezone/page.tsx                      Score:  67/100
+🔴  28. /social-media-tools/facebook-downloader/page.tsx   Score:  58/100
+🔴  29. /social-media-tools/hashtag-counter/page.tsx       Score:  58/100
+🔴  30. /social-media-tools/instagram-dp/page.tsx          Score:  58/100
+🔴  31. /social-media-tools/link-in-bio/page.tsx           Score:  58/100
+🔴  32. /social-media-tools/tiktok-downloader/page.tsx     Score:  58/100
+🔴  33. /social-media-tools/x-video-downloader/page.tsx    Score:  58/100
+🔴  34. /social-media-tools/youtube-channel-name-generator/page.tsx Score:  58/100
+🔴  35. /social-media-tools/youtube-tags/page.tsx          Score:  58/100
+🔴  36. /social-media-tools/youtube-thumbnail/page.tsx     Score:  58/100
+🔴  37. /calculator/bmr-calculator/page.tsx                Score:  58/100
+🔴  38. /calculator/body-fat-calculator/page.tsx           Score:  58/100
+🔴  39. /calculator/calorie-calculator/page.tsx            Score:  58/100
+🔴  40. /calculator/conversion-calculator/page.tsx         Score:  58/100
+🔴  41. /calculator/date-difference/page.tsx               Score:  58/100
+🔴  42. /calculator/pregnancy-calculator/page.tsx          Score:  58/100
+🔴  43. /calculator/pregnancy-conception-calculator/page.tsx Score:  58/100
+🔴  44. /calculator/scientific-calculator/page.tsx         Score:  58/100
+🔴  45. /calculator/triangle-calculator/page.tsx           Score:  58/100
+🔴  46. /finance-tools/compound-interest/page.tsx          Score:  58/100
+🔴  47. /finance-tools/inflation-calculator/page.tsx       Score:  58/100
+🔴  48. /finance-tools/interest-rate-calculator/page.tsx   Score:  58/100
+🔴  49. /finance-tools/loan-calculator/page.tsx            Score:  58/100
+🔴  50. /finance-tools/payment-calculator/page.tsx         Score:  58/100
+🔴  51. /finance-tools/retirement-planner/page.tsx         Score:  58/100
+🔴  52. /finance-tools/sales-tax-calculator/page.tsx       Score:  58/100
+🔴  53. /finance-tools/tax-calculator/page.tsx             Score:  58/100
+🔴  54. /finance-tools/tip-calculator/page.tsx             Score:  58/100
+🔴  55. /pdf-tools/pdf-compressor/page.tsx                 Score:  58/100
+🔴  56. /dev-tools/antigravity-skill-builder/page.tsx      Score:  58/100
+🔴  57. /dev-tools/color-palette/page.tsx                  Score:  58/100
+🔴  58. /dev-tools/hex-to-rgb/page.tsx                     Score:  58/100
+🔴  59. /dev-tools/json-to-csv/page.tsx                    Score:  58/100
+🔴  60. /dev-tools/regex-tester/page.tsx                   Score:  58/100
+🔴  61. /converters/currency/page.tsx                      Score:  58/100
+🔴  62. /converters/temperature/page.tsx                   Score:  58/100
+🔴  63. /ad-tools/roas-calculator/page.tsx                 Score:  58/100
+🔴  64. /social-media-tools/page.tsx                       Score:  50/100
+🔴  65. /calculator/page.tsx                               Score:  50/100
+🔴  66. /finance-tools/bill-splitter/page.tsx              Score:  50/100
+🔴  67. /finance-tools/credit-card-payoff/page.tsx         Score:  50/100
+🔴  68. /finance-tools/discount-calculator/page.tsx        Score:  50/100
+🔴  69. /finance-tools/investment-calculator/page.tsx      Score:  50/100
+🔴  70. /finance-tools/page.tsx                            Score:  50/100
+🔴  71. /finance-tools/salary-calculator/page.tsx          Score:  50/100
+🔴  72. /image-tools/image-background-remover/page.tsx     Score:  50/100
+🔴  73. /image-tools/image-to-text/page.tsx                Score:  50/100
+🔴  74. /image-tools/page.tsx                              Score:  50/100
+🔴  75. /pdf-tools/page.tsx                                Score:  50/100
+🔴  76. /pdf-tools/pdf-sign/page.tsx                       Score:  50/100
+🔴  77. /pdf-tools/pdf-splitter-merger/page.tsx            Score:  50/100
+🔴  78. /pdf-tools/pdf-to-image/page.tsx                   Score:  50/100
+🔴  79. /pdf-tools/pdf-unlocker/page.tsx                   Score:  50/100
+🔴  80. /pdf-tools/pdf-word-converter/page.tsx             Score:  50/100
+🔴  81. /seo-tools/blog-titles/page.tsx                    Score:  50/100
+🔴  82. /seo-tools/meta-tags/page.tsx                      Score:  50/100
+🔴  83. /dev-tools/html-beautifier/page.tsx                Score:  50/100
+🔴  84. /dev-tools/jwt-decoder/page.tsx                    Score:  50/100
+🔴  85. /dev-tools/markdown-previewer/page.tsx             Score:  50/100
+🔴  86. /dev-tools/page.tsx                                Score:  50/100
+🔴  87. /ai-tools/lyrics-generator/page.tsx                Score:  50/100
+🔴  88. /ai-tools/qr-generator/page.tsx                    Score:  50/100
+🔴  89. /fun-tools/anniversary/page.tsx                    Score:  50/100
+🔴  90. /fun-tools/birthday-countdown/page.tsx             Score:  50/100
+🔴  91. /fun-tools/future-age/page.tsx                     Score:  50/100
+🔴  92. /finance-tools/amortization-calculator/page.tsx    Score:  42/100
+🔴  93. /finance-tools/finance-calculator/page.tsx         Score:  42/100
+🔴  94. /finance-tools/mortgage-calculator/page.tsx        Score:  42/100
+🔴  95. /finance-tools/retirement-calculator/page.tsx      Score:  42/100
+🔴  96. /dev-tools/html-to-markdown/page.tsx               Score:  42/100
+🔴  97. /ai-tools/caption-generator/page.tsx               Score:  42/100
+🔴  98. /ai-tools/page.tsx                                 Score:  42/100
+🔴  99. /fun-tools/page.tsx                                Score:  42/100
+🔴 100. /festivals/christmas-font-converter/page.tsx       Score:  42/100
+🔴 101. /festivals/turkey-defrost-calculator/page.tsx      Score:  42/100
+🔴 102. /finance-tools/invoice-generator/page.tsx          Score:  33/100
+🔴 103. /image-tools/image-compressor/page.tsx             Score:  33/100
+🔴 104. /seo-tools/keyword-density/page.tsx                Score:  33/100
+🔴 105. /seo-tools/lorem-ipsum/page.tsx                    Score:  33/100
+🔴 106. /converters/currency-api/page.tsx                  Score:  33/100
+🔴 107. /converters/page.tsx                               Score:  33/100
+🔴 108. /converters/text-case/page.tsx                     Score:  33/100
+🔴 109. /ai-tools/pet-names/page.tsx                       Score:  33/100
+🔴 110. /festivals/page.tsx                                Score:  33/100
+🔴 111. /seo-tools/page.tsx                                Score:  25/100
+
+📄 Full JSON report: /Users/husnainbabar/WebstormProjects/fasttools-client/seo-quality-analysis/tool-seo-quality-1768564172375.json

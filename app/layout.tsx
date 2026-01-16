@@ -9,6 +9,7 @@ import { ThemeProvider } from "@/components/common/theme-provider"
 import { env } from "@/config/env"
 import { createMetadata, globalViewport, getWebsiteSchema } from "@/lib/metadata-base"
 import { roboto, montserrat, openSans } from "@/app/fonts"
+import { DeferredScript } from "@/components/common/deferred-script"
 
 
 
@@ -134,11 +135,26 @@ export default function RootLayout({
   return (
     <html lang="en" className={`antialiased ${roboto.variable} ${montserrat.variable} ${openSans.variable}`} suppressHydrationWarning>
       <head>
-        {/* Resource Hints for Performance */}
-        <link rel="preconnect" href="https://www.googletagmanager.com" />
-
-        <link rel="preconnect" href="https://pagead2.googlesyndication.com" />
-
+        {/* Critical Resource Hints - Optimized for Performance */}
+        {/* Preconnect to external domains with high priority */}
+        <link rel="preconnect" href="https://www.googletagmanager.com" crossOrigin="anonymous" />
+        <link rel="dns-prefetch" href="https://www.googletagmanager.com" />
+        
+        {/* Ad networks - lower priority, defer */}
+        <link rel="dns-prefetch" href="https://pagead2.googlesyndication.com" />
+        <link rel="dns-prefetch" href="https://www.google-analytics.com" />
+        
+        {/* Preload critical fonts */}
+        <link
+          rel="preload"
+          href="/fonts/roboto-latin-400-normal.woff2"
+          as="font"
+          type="font/woff2"
+          crossOrigin="anonymous"
+        />
+        
+        {/* Preload critical resources */}
+        <link rel="preload" as="image" href="/android-chrome-512x512.png" />
       </head>
       <body className="bg-background font-sans text-foreground">
 
@@ -175,11 +191,11 @@ export default function RootLayout({
 
 
           <WelcomePopup />
-          {/* Google Adsense */}
+          {/* Google Adsense - Deferred for better performance */}
           {env.isProduction && (
-            <script
-              async
+            <DeferredScript
               src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6296569221534302"
+              id="adsbygoogle-script"
               crossOrigin="anonymous"
             />
           )}

@@ -6,7 +6,11 @@ import { createMetadata } from "@/lib/metadata-base"
 export const metadata = createMetadata({
     title: 'Archive - Blog',
     description: 'Browse our complete archive of articles, tutorials, and guides organized by category. Find expert tips on calculators, AI tools, finance, and more.',
-    path: '/blog/archive'
+    path: '/blog/archive',
+    breadcrumbs: [
+        { label: 'Blog', href: '/blog' },
+        { label: 'Archive', href: '/blog/archive' }
+    ]
 })
 
 export default async function ArchivePage() {

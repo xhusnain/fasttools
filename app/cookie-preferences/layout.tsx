@@ -1,16 +1,19 @@
 import { createMetadata } from "@/lib/metadata-base"
+import type { Metadata } from "next"
 
-export const metadata = createMetadata({
-    title: "Cookie Preferences | Manage Privacy Settings",
-    description: "Manage your cookie preferences and privacy settings on FastTools. Control how we use cookies for analytics and advertising to ensure your privacy.",
-    path: "/cookie-preferences",
-    includeSchema: false
+export const metadata: Metadata = createMetadata({
+  title: "Cookie Preferences - Manage Your Cookie Settings",
+  description: "Manage your cookie preferences for FastTools. Control Google AdSense, Google Analytics, and other cookies. GDPR and CCPA compliant cookie management.",
+  path: "/cookie-preferences",
+  breadcrumbs: [
+    { label: "Cookie Preferences", href: "/cookie-preferences" }
+  ]
 })
 
 export default function CookiePreferencesLayout({
-    children,
+  children,
 }: {
-    children: React.ReactNode
+  children: React.ReactNode
 }) {
-    return children
+  return children
 }

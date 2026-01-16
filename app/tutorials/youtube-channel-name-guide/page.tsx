@@ -14,6 +14,15 @@ export const metadata: Metadata = createMetadata({
     title: "How to Choose the Perfect YouTube Channel Name - Video Tutorial",
     description: VIDEO_DESCRIPTION,
     path: "/tutorials/youtube-channel-name-guide",
+    breadcrumbs: [
+        { label: "Tutorials", href: "/tutorials" },
+        { label: "YouTube Channel Name Guide", href: "/tutorials/youtube-channel-name-guide" }
+    ],
+    video: {
+        id: VIDEO_ID,
+        title: VIDEO_TITLE,
+        description: VIDEO_DESCRIPTION
+    }
 })
 
 export default function YouTubeChannelNameGuidePage() {

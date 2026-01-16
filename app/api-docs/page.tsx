@@ -21,6 +21,12 @@ export const metadata = createMetadata({
   twitterCreator: "@FastTools",
   twitterTitle: "Free RESTful API for Developers | FastTools",
   twitterDescription: "Access free, reliable, and easy-to-use RESTful APIs. Get started in minutes with our developer-friendly documentation.",
+  breadcrumbs: [
+      {
+        "label": "API Docs",
+        "href": "/api-docs"
+      }
+    ]
 });
 
 const apis = [

@@ -17,7 +17,20 @@ const nextConfig = {
       '@iconify/react',
       'react-icons',
     ],
+    // Enable compression
+    gzipSize: true,
+    // Optimize server components
+    serverComponentsExternalPackages: ['sharp', 'onnxruntime-node'],
   },
+  
+  // Compression
+  compress: true,
+  
+  // Power optimizations
+  poweredByHeader: false,
+  
+  // React strict mode for better performance
+  reactStrictMode: true,
 
   turbopack: {},
 
@@ -80,13 +93,16 @@ const nextConfig = {
 
   async headers() {
     return [
-
       {
         source: "/og-image.svg",
         headers: [
           {
             key: "Content-Type",
             value: "image/svg+xml",
+          },
+          {
+            key: "Cache-Control",
+            value: "public, max-age=31536000, immutable",
           },
         ],
       },
@@ -97,6 +113,62 @@ const nextConfig = {
             key: "Content-Type",
             value: "image/svg+xml",
           },
+          {
+            key: "Cache-Control",
+            value: "public, max-age=31536000, immutable",
+          },
+        ],
+      },
+      // Static assets - aggressive caching
+      {
+        source: "/images/:path*",
+        headers: [
+          {
+            key: "Cache-Control",
+            value: "public, max-age=31536000, immutable",
+          },
+        ],
+      },
+      {
+        source: "/android-chrome-:size*.png",
+        headers: [
+          {
+            key: "Cache-Control",
+            value: "public, max-age=31536000, immutable",
+          },
+        ],
+      },
+      {
+        source: "/favicon.ico",
+        headers: [
+          {
+            key: "Cache-Control",
+            value: "public, max-age=31536000, immutable",
+          },
+        ],
+      },
+      // Fonts - long cache
+      {
+        source: "/fonts/:path*",
+        headers: [
+          {
+            key: "Cache-Control",
+            value: "public, max-age=31536000, immutable",
+          },
+          {
+            key: "Access-Control-Allow-Origin",
+            value: "*",
+          },
+        ],
+      },
+      // _next static files
+      {
+        source: "/_next/static/:path*",
+        headers: [
+          {
+            key: "Cache-Control",
+            value: "public, max-age=31536000, immutable",
+          },
         ],
       },
       {
@@ -105,6 +177,10 @@ const nextConfig = {
           {
             key: "Referrer-Policy",
             value: "no-referrer",
+          },
+          {
+            key: "Cache-Control",
+            value: "public, max-age=3600",
           },
         ],
       },
@@ -135,9 +211,10 @@ const nextConfig = {
             key: "Permissions-Policy",
             value: "camera=(), microphone=(), geolocation=()",
           },
+          // Cache HTML pages for short time
           {
-            key: "Last-Modified",
-            value: new Date().toUTCString(),
+            key: "Cache-Control",
+            value: "public, s-maxage=60, stale-while-revalidate=300",
           },
         ],
       },

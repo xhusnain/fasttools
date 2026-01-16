@@ -6,6 +6,9 @@ export const metadata = createMetadata({
     title: "My Info - Your Digital Footprint Analysis",
     description: "Instantly analyze your digital footprint. Check IP, location, browser, device details & security. Free online privacy tool.",
     path: "/my-info",
+    breadcrumbs: [
+        { label: "My Info", href: "/my-info" }
+    ]
 })
 
 export default function MyInfoPage() {

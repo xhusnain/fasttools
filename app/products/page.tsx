@@ -27,6 +27,12 @@ export const metadata = createMetadata({
   twitterCreator: "@FastTools",
   twitterTitle: "100+ Free Online Tools for Every Need | FastTools",
   twitterDescription: "Discover our full suite of 100+ free online tools. From calculators and converters to AI-powered utilities and developer tools, FastTools has a solution for every task.",
+  breadcrumbs: [
+      {
+        "label": "Products",
+        "href": "/products"
+      }
+    ]
 });
 
 const categories = [

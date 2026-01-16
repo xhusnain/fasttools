@@ -16,6 +16,9 @@ export async function generateMetadata(): Promise<Metadata> {
         title: `Watch Live TV from ${stats.totalCountries}+ Countries - Free IPTV Streaming`,
         description: `Stream ${stats.totalChannels}+ live TV channels from ${stats.totalCountries}+ countries worldwide. Watch free IPTV including news, sports, entertainment, and more. No registration required.`,
         path: '/live-tv',
+        breadcrumbs: [
+            { label: 'Live TV', href: '/live-tv' }
+        ]
     });
 }
 

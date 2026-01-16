@@ -17,6 +17,9 @@ export const metadata = createMetadata({
   title: "About Us",
   description: "Discover FastTools, the comprehensive free online tools platform with 1000+ AI, converter, calculator, SEO and productivity utilities.",
   path: "/about",
+  breadcrumbs: [
+    { label: "About", href: "/about" }
+  ]
 })
 
 export default function AboutPage() {

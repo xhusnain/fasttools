@@ -1,0 +1,180 @@
+
+╔══════════════════════════════════════════════════════════════╗
+║              SEO CODE ANALYSIS REPORT                        ║
+╚══════════════════════════════════════════════════════════════╝
+
+Generated: 1/16/2026, 4:39:13 PM
+
+📊 SUMMARY
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+Total Pages Analyzed: 134
+Pages With Issues: 132
+Pages Without Issues: 2
+
+Total Issues Found: 238
+  🔴 Critical: 4
+  🟠 High Priority: 102
+  🟡 Medium Priority: 132
+
+🔴 CRITICAL ISSUES (4)
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+1. Unknown
+   Issue: Missing metadata export
+   Fix: Add export const metadata or generateMetadata function
+
+2. Unknown
+   Issue: Missing title in metadata
+   Fix: Add title to metadata
+
+3. Unknown
+   Issue: Missing metadata export
+   Fix: Add export const metadata or generateMetadata function
+
+4. Unknown
+   Issue: Missing title in metadata
+   Fix: Add title to metadata
+
+
+🟠 HIGH PRIORITY ISSUES (102)
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+1. Unknown
+   Issue: Missing custom OG image
+   Fix: Add ogImage property to createMetadata for better social sharing
+
+2. Unknown
+   Issue: Missing custom OG image
+   Fix: Add ogImage property to createMetadata for better social sharing
+
+3. Unknown
+   Issue: Missing custom OG image
+   Fix: Add ogImage property to createMetadata for better social sharing
+
+4. Unknown
+   Issue: Missing custom OG image
+   Fix: Add ogImage property to createMetadata for better social sharing
+
+5. Unknown
+   Issue: Missing custom OG image
+   Fix: Add ogImage property to createMetadata for better social sharing
+
+6. Unknown
+   Issue: Missing custom OG image
+   Fix: Add ogImage property to createMetadata for better social sharing
+
+7. Unknown
+   Issue: Missing custom OG image
+   Fix: Add ogImage property to createMetadata for better social sharing
+
+8. Unknown
+   Issue: Missing custom OG image
+   Fix: Add ogImage property to createMetadata for better social sharing
+
+9. Unknown
+   Issue: Missing custom OG image
+   Fix: Add ogImage property to createMetadata for better social sharing
+
+10. Unknown
+   Issue: Missing custom OG image
+   Fix: Add ogImage property to createMetadata for better social sharing
+
+11. Unknown
+   Issue: Missing custom OG image
+   Fix: Add ogImage property to createMetadata for better social sharing
+
+12. Unknown
+   Issue: Missing custom OG image
+   Fix: Add ogImage property to createMetadata for better social sharing
+
+13. Unknown
+   Issue: Missing custom OG image
+   Fix: Add ogImage property to createMetadata for better social sharing
+
+14. Unknown
+   Issue: Missing custom OG image
+   Fix: Add ogImage property to createMetadata for better social sharing
+
+15. Unknown
+   Issue: Missing custom OG image
+   Fix: Add ogImage property to createMetadata for better social sharing
+
+16. Unknown
+   Issue: Missing custom OG image
+   Fix: Add ogImage property to createMetadata for better social sharing
+
+17. Unknown
+   Issue: Missing custom OG image
+   Fix: Add ogImage property to createMetadata for better social sharing
+
+18. Unknown
+   Issue: Missing custom OG image
+   Fix: Add ogImage property to createMetadata for better social sharing
+
+19. Unknown
+   Issue: Missing custom OG image
+   Fix: Add ogImage property to createMetadata for better social sharing
+
+20. Unknown
+   Issue: Missing custom OG image
+   Fix: Add ogImage property to createMetadata for better social sharing
+
+... and 82 more high priority issues
+
+
+📋 PAGES WITH MOST ISSUES (Top 10)
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+1. /blog/category/[slug]
+   Issues: 3
+   - [HIGH] Missing custom OG image
+   - [MEDIUM] Missing breadcrumbs
+   - [MEDIUM] Missing FAQs schema
+
+2. /blog
+   Issues: 3
+   - [HIGH] Missing custom OG image
+   - [MEDIUM] Missing FAQs schema
+   - [MEDIUM] Missing H1 heading
+
+3. /guides
+   Issues: 3
+   - [HIGH] Missing custom OG image
+   - [MEDIUM] Missing FAQs schema
+   - [MEDIUM] Missing H1 heading
+
+4. /page.tsx
+   Issues: 3
+   - [HIGH] Missing custom OG image
+   - [MEDIUM] Missing breadcrumbs
+   - [MEDIUM] Missing FAQs schema
+
+5. /about
+   Issues: 2
+   - [HIGH] Missing custom OG image
+   - [MEDIUM] Missing FAQs schema
+
+6. /ad-tools/roas-calculator
+   Issues: 2
+   - [HIGH] Missing custom OG image
+   - [MEDIUM] Missing H1 heading
+
+7. /ai-tools/caption-generator
+   Issues: 2
+   - [HIGH] Missing custom OG image
+   - [MEDIUM] Missing H1 heading
+
+8. /ai-tools/lyrics-generator
+   Issues: 2
+   - [HIGH] Missing custom OG image
+   - [MEDIUM] Missing H1 heading
+
+9. /ai-tools
+   Issues: 2
+   - [HIGH] Missing custom OG image
+   - [MEDIUM] Missing H1 heading
+
+10. /ai-tools/pet-names
+   Issues: 2
+   - [HIGH] Missing custom OG image
+   - [MEDIUM] Missing H1 heading
+
+
+📄 Full JSON report: /Users/husnainbabar/WebstormProjects/fasttools-client/seo-analysis/seo-analysis-1768563553370.json

@@ -12,7 +12,13 @@ export const metadata = createMetadata({
   title: "Free Online Finance Tools – Budget, Investment & Expense Calculators",
   description: "Free finance tools: budget calculators, savings trackers, loan calculators, investment planners. Perfect for financial planning.",
   path: "/finance-tools",
-  includeSchema: false
+  includeSchema: false,
+  breadcrumbs: [
+      {
+        "label": "Finance Tools",
+        "href": "/finance-tools"
+      }
+    ]
 })
 
 export default function FinanceToolsPage() {

@@ -26,6 +26,12 @@ export interface MetadataOptions {
     description: string
     path: string
     ogImageAlt?: string
+    ogImage?: string | {
+        url: string
+        width?: number
+        height?: number
+        alt?: string
+    }
     noIndex?: boolean
     ogTitle?: string
     ogDescription?: string
@@ -72,7 +78,7 @@ function shouldIncludeSchema(path: string): boolean {
 }
 
 export function createMetadata(options: MetadataOptions): Metadata & { softwareSchema?: ReturnType<typeof createSoftwareAppSchema> } {
-    const { title, description, path, ogImageAlt, noIndex, ogTitle, ogDescription, twitterTitle, twitterDescription, twitterCreator, schemaOptions, faqs, howToSteps, toolName, breadcrumbs } = options
+    const { title, description, path, ogImageAlt, ogImage, noIndex, ogTitle, ogDescription, twitterTitle, twitterDescription, twitterCreator, schemaOptions, faqs, howToSteps, toolName, breadcrumbs } = options
 
     // Smart default: Only include schema if path looks like a tool, unless explicitly overridden
     const includeSchema = options.includeSchema ?? shouldIncludeSchema(path)
@@ -87,6 +93,37 @@ export function createMetadata(options: MetadataOptions): Metadata & { softwareS
     const finalOgTitle = ogTitle || fullTitle
     const finalOgDescription = ogDescription || description
 
+    // Handle OG image - support both string URL and object format
+    let ogImageConfig: any
+    if (ogImage) {
+        if (typeof ogImage === 'string') {
+            // Simple string URL - construct full URL if relative
+            const imageUrl = ogImage.startsWith('http') ? ogImage : `${BASE_URL}${ogImage.startsWith('/') ? ogImage : `/${ogImage}`}`
+            ogImageConfig = {
+                url: imageUrl,
+                width: 1200,
+                height: 630,
+                alt: ogImageAlt || title,
+            }
+        } else {
+            // Object format with full control
+            const imageUrl = ogImage.url.startsWith('http') ? ogImage.url : `${BASE_URL}${ogImage.url.startsWith('/') ? ogImage.url : `/${ogImage.url}`}`
+            ogImageConfig = {
+                url: imageUrl,
+                width: ogImage.width || 1200,
+                height: ogImage.height || 630,
+                alt: ogImage.alt || ogImageAlt || title,
+            }
+        }
+    } else {
+        // Default OG image
+        ogImageConfig = {
+            url: `${BASE_URL}/android-chrome-512x512.png`,
+            width: 512,
+            height: 512,
+            alt: ogImageAlt || "FastTools - Free Online Tools",
+        }
+    }
 
     const openGraphConfig: any = {
         title: finalOgTitle,
@@ -95,14 +132,7 @@ export function createMetadata(options: MetadataOptions): Metadata & { softwareS
         siteName: SITE_NAME,
         type: "website" as const,
         locale: "en_US" as const,
-        images: [
-            {
-                url: `${BASE_URL}/android-chrome-512x512.png`,
-                width: 512,
-                height: 512,
-                alt: ogImageAlt || "FastTools - Free Online Tools",
-            }
-        ],
+        images: [ogImageConfig],
     }
 
 
@@ -232,7 +262,7 @@ function addYearToTitle(title: string, path: string): string {
 
 export function getCanonicalUrl(path: string): string {
     const safePath = path.startsWith("/") ? path : `/${path}`
-    return safePath
+    return `${BASE_URL}${safePath}`
 }
 
 
