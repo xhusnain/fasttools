@@ -7,7 +7,7 @@ const toolConfig = createToolConfig({
     toolName: "CapCut Video Downloader Without Watermark - Free HD",
     description: "Download CapCut videos and templates without watermark in HD quality. Free online CapCut downloader for iPhone, Android, PC. No login required. Remove watermark instantly.",
     metaTitle: "CapCut Video Downloader Without Watermark - Free HD Online 2026",
-    metaDescription: "Download CapCut videos without watermark free. Save templates in HD/4K quality. Works on iPhone, Android, PC, Mac. No watermark, no login. Instant download.",
+    metaDescription: "Download CapCut videos without watermark free. Save templates in HD/4K. Works on mobile & PC. Instant download.",
     path: "/social-media-tools/capcut-downloader",
 
     header: {

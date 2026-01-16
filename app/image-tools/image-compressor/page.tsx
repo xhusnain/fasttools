@@ -6,7 +6,7 @@ const toolConfig = createToolConfig({
     toolName: "Image Compressor",
     description: "Best free image compressor to reduce image size without losing quality. Compress images to 50KB, 100KB, 200KB, or 1MB. Batch compress JPG, PNG, and WebP online.",
     metaTitle: "Free Image Compressor - Compress to 50KB, 100KB, 1MB (No Quality Loss)",
-    metaDescription: "Reduce image file size instantly with our free online image compressor. Batch compress JPG, PNG, WebP to 20kb, 50kb, 100kb, or 1mb without losing quality. Unlimited free usage.",
+    metaDescription: "Reduce image size instantly with our free compressor. Batch compress JPG, PNG & WebP without quality loss. Unlimited free usage.",
     path: "/image-tools/image-compressor",
 
     schemaOptions: {

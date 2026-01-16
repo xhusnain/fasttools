@@ -12,7 +12,7 @@ const toolConfig = createToolConfig({
   toolName: "X Video Downloader - Save Twitter Videos",
   description: "Download X (Twitter) videos in HD quality without watermark. Free, fast, unlimited downloads. No registration required. Works on PC, Mac, iPhone, Android.",
   metaTitle: "X Video Downloader - Save Twitter Videos",
-  metaDescription: "Download X (Twitter) videos in HD quality without watermark for free. Fast, secure, unlimited downloads. No registration required. Works on PC, Mac, iPhone, Android. Complete guide with legal considerations, troubleshooting, and tool comparisons.",
+  metaDescription: "Download X (Twitter) videos in HD/4K free. Fast, secure & unlimited downloads on all devices. No login needed.",
   path: "/social-media-tools/x-video-downloader",
 
   header: {

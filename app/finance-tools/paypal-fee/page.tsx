@@ -400,7 +400,7 @@ export default function PayPalFeeCalculatorPage() {
     <ToolPageLayout
       header={{
         title: `PayPal Fee Calculator (${getCurrentYear()})`,
-        description: "Calculate PayPal transaction fees, net amounts, and required charges instantly. Perfect for sellers, freelancers, and businesses to understand payment processing costs.",
+        description: "Calculate PayPal fees, net amounts & charges. Perfect for sellers & freelancers. Understand domestic & international costs instantly.",
         titleSize: "medium",
         descriptionSize: "small",
         color: "blue"

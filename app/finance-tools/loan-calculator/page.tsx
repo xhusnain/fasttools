@@ -291,7 +291,7 @@ export default function LoanCalculatorPage() {
     <ToolPageLayout
       header={{
         title: "Free Loan EMI Calculator - Calculate Monthly Installments",
-        description: "Use our free online EMI calculator to calculate monthly installment amounts for home loans, car loans, personal loans, and education loans. Get accurate EMI calculations, detailed loan amortization schedules, yearly payment breakdowns, and visual charts for comprehensive loan analysis.",
+        description: "Free EMI calculator for home, car, personal & education loans. Calculate monthly EMI, interest & amortization schedule instantly.",
         titleSize: "medium",
         descriptionSize: "small",
         color: "blue"

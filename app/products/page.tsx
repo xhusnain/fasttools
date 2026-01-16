@@ -21,7 +21,7 @@ import {
 } from "lucide-react"
 export const metadata = createMetadata({
   title: "100+ Free Online Tools for Every Need | FastTools",
-  description: "Discover our full suite of 100+ free online tools. From calculators and converters to AI-powered utilities and developer tools, FastTools has a solution for every task. All tools are free, secure, and easy to use.",
+  description: "Explore 100+ free online tools for every need. Calculators, AI utilities, converters & developer tools. Secure, fast & free.",
   path: "/products",
   ogImageAlt: "A showcase of the wide variety of free online tools offered by FastTools.",
   twitterCreator: "@FastTools",

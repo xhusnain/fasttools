@@ -6,7 +6,7 @@ const toolConfig = createToolConfig({
   toolName: "Thumbnail Downloader - Save YouTube Images",
   description: "Download YouTube video thumbnails in all available quality sizes. Get maximum quality (1280x720), high quality, medium, and standard thumbnails instantly.",
   metaTitle: "Thumbnail Downloader - Save YouTube Images",
-  metaDescription: "FastTools YouTube Thumbnail Downloader - Download YouTube video thumbnails in all available quality sizes. Get maximum quality (1280x720), high quality, medium, and standard thumbnails instantly.",
+  metaDescription: "Download YouTube thumbnails in HD (1280x720) instantly. Get Maxres, High Quality & Standard thumbnails for free.",
   path: "/social-media-tools/youtube-thumbnail",
 
   header: {

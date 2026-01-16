@@ -6,7 +6,7 @@ const toolConfig = createToolConfig({
   toolName: "Image to Text (OCR)",
   description: "Extract text from images using advanced OCR technology. Convert photos, screenshots, and scanned documents to editable text instantly with our free AI-powered OCR tool.",
   metaTitle: "Free Image to Text Converter (OCR) | Extract Text from Images Online",
-  metaDescription: "Convert images to editable text in seconds with our free AI-powered OCR tool. Extract text from photos, screenshots, JPG, PNG, or PDF — fast, accurate, and secure on any device.",
+  metaDescription: "Convert images to editable text instantly with our free AI OCR tool. Extract text from photos, JPG, PNG & PDF securely.",
   path: "/image-tools/image-to-text",
 
   header: {

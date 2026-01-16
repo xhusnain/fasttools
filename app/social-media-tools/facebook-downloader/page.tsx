@@ -12,7 +12,7 @@ const toolConfig = createToolConfig({
   toolName: "Facebook Downloader - Download Videos HD",
   description: "Download Facebook videos in HD quality (1080p) for free. Fast, secure, unlimited downloads. No registration required. Works on PC, Mac, iPhone, Android.",
   metaTitle: "Facebook Downloader - Download Videos HD",
-  metaDescription: "Download Facebook videos in HD quality (1080p) for free. Fast, secure, unlimited downloads. No registration required. Works on PC, Mac, iPhone, Android. Complete guide with legal considerations, troubleshooting, and tool comparisons.",
+  metaDescription: "Download Facebook videos in HD (1080p) free. Fast, secure, unlimited downloads on PC, Mac, iPhone & Android.",
   path: "/social-media-tools/facebook-downloader",
 
   header: {

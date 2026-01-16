@@ -146,7 +146,7 @@ export default function FinanceCalculatorPage() {
     <ToolPageLayout
       header={{
         title: "Finance Calculator - Advanced TVM Analysis",
-        description: "Professional finance calculator for time value of money calculations. Calculate FV, PV, PMT, I/Y, and N with amortization schedules and investment analysis.",
+        description: "Professional TVM finance calculator. Calculate FV, PV, PMT, I/Y & N. Includes amortization schedules & investment analysis.",
         titleSize: "medium",
         descriptionSize: "small"
       }}
@@ -162,7 +162,7 @@ export default function FinanceCalculatorPage() {
       toolContent={toolContent}
       expectedMetadata={{
         title: "Finance Calculator - TVM & Advanced Analysis Free",
-        description: "Professional finance calculator for time value of money calculations. Calculate FV, PV, PMT, I/Y, and N with amortization schedules and investment analysis.",
+        description: "Professional TVM finance calculator. Calculate FV, PV, PMT, I/Y & N. Includes amortization schedules & investment analysis.",
         path: "/finance-tools/finance-calculator"
       }}
     />

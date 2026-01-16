@@ -11,7 +11,7 @@ const toolConfig = createToolConfig({
   toolName: "YouTube Tag Extractor - SEO & Keywords",
   description: "Extract YouTube video tags, hashtags, and keywords instantly. Free tool to find competitor tags, boost SEO, and improve video ranking.",
   metaTitle: "YouTube Tag Extractor - SEO & Keywords",
-  metaDescription: "Extract YouTube video tags, hashtags, and keywords instantly. Our free YouTube Tag Extractor helps you find competitor tags, boost SEO, and improve your video ranking on YouTube. Works on all devices.",
+  metaDescription: "Extract YouTube tags & keywords instantly. Find competitor tags, boost SEO & improve rankings. Free tool for all devices.",
   path: "/social-media-tools/youtube-tags",
 
   header: {

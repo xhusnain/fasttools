@@ -371,7 +371,7 @@ export default function PaymentCalculatorPage() {
     <ToolPageLayout
       header={{
         title: "Payment Calculator",
-        description: "Calculate loan payments with our advanced payment calculator. Get accurate monthly payments, loan terms, amortization schedules, and total interest calculations for mortgages, auto loans, and personal loans.",
+        description: "Calculate loan payments with our advanced payment calculator. Get accurate monthly payments, amortization schedules & interest calculations.",
         titleSize: "medium",
         descriptionSize: "small",
         color: "blue"
@@ -388,7 +388,7 @@ export default function PaymentCalculatorPage() {
       toolContent={toolContent}
       expectedMetadata={{
         title: "FastTools - Payment Calculator | Free Advanced Loan Payment Calculator",
-        description: "FastTools Payment Calculator - Calculate loan payments with advanced payment calculator. Get accurate monthly payments, loan terms, amortization schedules, and total interest calculations.",
+        description: "FastTools Payment Calculator - Calculate loan payments, amortization schedules & total interest accurately.",
         path: "/finance-tools/payment-calculator"
       }}
     />

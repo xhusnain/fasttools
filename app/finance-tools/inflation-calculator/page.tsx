@@ -410,7 +410,7 @@ export default function InflationCalculatorPage() {
     <ToolPageLayout
       header={{
         title: "Inflation Calculator",
-        description: "Professional inflation calculator with historical CPI data from 1913-2025 for comprehensive economic analysis. Calculate purchasing power, inflation rates, and investment strategies with our advanced CPI calculator.",
+        description: "Professional inflation calculator with historical CPI data (1913-2025). Calculate purchasing power and inflation rates instantly.",
         titleSize: "medium",
         descriptionSize: "small",
         color: "blue"

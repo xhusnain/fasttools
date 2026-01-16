@@ -234,7 +234,7 @@ export default function SalaryCalculatorPage() {
     <ToolPageLayout
       header={{
         title: "Salary Calculator",
-        description: "Convert salary amounts across all pay frequencies with our advanced salary calculator. Get precise pay calculations, industry comparisons, negotiation support, and career advancement guidance for optimal financial planning.",
+        description: "Convert salary across pay frequencies with our advanced calculator. Get precise pay calculations, tax estimates & comparisons.",
         titleSize: "medium",
         descriptionSize: "small",
         color: "blue"
@@ -251,7 +251,7 @@ export default function SalaryCalculatorPage() {
       toolContent={toolContent}
       expectedMetadata={{
         title: "FastTools - Salary Calculator | Free Advanced Pay Frequency Calculator",
-        description: "FastTools Salary Calculator - Convert salary amounts across all pay frequencies with holiday adjustments. Professional salary analysis, industry comparisons, and negotiation support.",
+        description: "FastTools Salary Calculator - Convert salary amounts across all pay frequencies. Professional analysis & tax estimates.",
         path: "/finance-tools/salary-calculator"
       }}
     />

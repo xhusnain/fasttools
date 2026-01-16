@@ -49,8 +49,7 @@ import { createMetadata } from "@/lib/metadata-base"
 
 export const metadata = createMetadata({
   title: "FastTools - Free Online Tools & Productivity Platform",
-  description:
-    "FastTools is your ultimate productivity platform offering 1000+ free online tools. Access AI generators, calculators, converters, and SEO tools instantly. No registration required.",
+  description: "FastTools offers 1000+ free online tools: AI generators, calculators, converters & SEO utilities. Instant access, no registration required.",
   path: "/",
   includeSchema: false,
 })

@@ -149,7 +149,7 @@ export default function RetirementCalculatorPage() {
     <ToolPageLayout
       header={{
         title: "Retirement Calculator - Advanced Retirement Planning",
-        description: "Professional retirement calculator for comprehensive retirement planning. Calculate how much to save, withdrawal amounts, and retirement income needs with inflation adjustments.",
+        description: "Calculate retirement savings, withdrawals & income needs with our professional calculator. Includes inflation adjustments.",
         titleSize: "medium",
         descriptionSize: "small"
       }}

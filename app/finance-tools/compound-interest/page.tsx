@@ -191,7 +191,7 @@ export default function CompoundInterestPage() {
     <ToolPageLayout
       header={{
         title: "Free Online Compound Interest Calculator",
-        description: "Calculate compound interest for SIP, fixed deposits, savings, retirement. Supports 9+ countries with daily, monthly, quarterly, annual compounding.",
+        description: "Calculate compound interest for SIP, FD, savings & retirement. Supports 9+ countries with daily, monthly & annual compounding.",
         titleSize: "medium",
         descriptionSize: "small"
       }}
@@ -207,7 +207,7 @@ export default function CompoundInterestPage() {
       toolContent={toolContent}
       expectedMetadata={{
         title: "Free Compound Interest Calculator Online | Investment & SIP Calculator",
-        description: "Best free compound interest calculator online for 2024. Calculate compound interest for SIP, fixed deposits, savings, retirement, loans. Supports India, UK, Canada, Australia with daily, monthly, quarterly, annual compounding.",
+        description: "Best free compound interest calculator. Calculate SIP, FD, savings & retirement returns. Supports India, UK, USA & more.",
         path: "/finance-tools/compound-interest"
       }}
     />

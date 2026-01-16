@@ -84,7 +84,7 @@ const toolConfig = createToolConfig({
   toolName: "Free Developer Tools",
   description: "Free online developer tools: JWT decoder, regex tester, JSON to CSV converter, HTML beautifier & more. Essential coding utilities. No signup required.",
   metaTitle: "Free Developer Tools Online | JWT Decoder, Regex Tester & More",
-  metaDescription: "Free online developer tools for Chrome, Safari, Firefox & Edge. Browser DevTools, React developer tools, JWT decoder, regex tester, JSON to CSV. No signup - essential coding utilities for modern web development.",
+  metaDescription: "Free online developer tools: JWT decoder, regex tester, JSON to CSV & more. Essential coding utilities for modern web development. No signup.",
   path: "/dev-tools",
 
   header: {

@@ -9,7 +9,7 @@ const configBody: UnifiedToolConfig = {
     toolName: "Fast YouTube Playlist Downloader: Save Entire Playlists in HD & MP3",
     description: "The ultimate tool to download YouTube playlists in bulk. Convert entire channels, music albums, or educational series to high-quality MP4 (up to 4K) and MP3 (320kbps) in seconds.",
     metaTitle: "Fast YouTube Playlist Downloader: Save Entire Playlists in HD & MP3",
-    metaDescription: "Free YouTube Playlist Downloader. Save entire playlists as MP4 or MP3 (320kbps). Supports 4K/1080p. No software, no registration. Fast, safe, and works on mobile & PC.",
+    metaDescription: "Free YouTube Playlist Downloader. Save playlists as MP4/MP3. Supports 4K/1080p. Fast, safe & works on mobile/PC.",
     path: "/social-media-tools/youtube-playlist-downloader",
 
     header: {

@@ -7,7 +7,7 @@ const toolConfig = createToolConfig({
     toolName: "YouTube Video Downloader - Free HD MP4 & MP3 Download Online",
     description: "Download YouTube videos in HD, 4K, and 8K quality. Convert YouTube to MP4 or MP3 for free. Works on iPhone, Android, PC, and Mac. No software installation required. Safe, fast, and 100% free.",
     metaTitle: "YouTube Video Downloader - Free HD MP4 & MP3 Download Online",
-    metaDescription: "Download YouTube videos in HD, 4K, and 8K quality. Convert YouTube to MP4 or MP3 for free. Works on iPhone, Android, PC, and Mac. No software installation required.",
+    metaDescription: "Download YouTube videos in HD, 4K & 8K. Convert to MP4 or MP3 free. Works on all devices. No software needed.",
     path: "/social-media-tools/youtube-downloader",
 
     header: {

@@ -5,7 +5,7 @@ import Image from "next/image"
 
 export const metadata = createMetadata({
     title: "Free ROAS Calculator | Calculate Ad Profit & ROI Instantly",
-    description: "Calculate ROAS, ROI, and ad profitability in seconds. Simple & Advanced modes for Google Ads, Facebook Ads, TikTok. Free tool with instant CPA & profit margin analysis.",
+    description: "Calculate ROAS, ROI & ad profitability instantly. Simple & Advanced modes for Google, Facebook & TikTok ads. Free CPA & profit analysis.",
     path: "/ad-tools/roas-calculator",
 })
 
@@ -286,7 +286,7 @@ export default function ROASCalculatorPage() {
             toolContent={toolContent}
             expectedMetadata={{
                 title: "Free ROAS Calculator | Calculate Ad Profit & ROI Instantly",
-                description: "Calculate ROAS, ROI, and ad profitability in seconds. Simple & Advanced modes for Google Ads, Facebook Ads, TikTok. Free tool with instant CPA & profit margin analysis.",
+                description: "Calculate ROAS, ROI & ad profitability instantly. Simple & Advanced modes for Google, Facebook & TikTok ads. Free CPA & profit analysis.",
                 path: "/ad-tools/roas-calculator"
             }}
         />

@@ -33,7 +33,7 @@ const toolConfig = createToolConfig({
   toolName: "Fun Tools & Social Helpers",
   description: "Discover fun and entertaining online tools including Love Calculator, Future Age Predictor, Birthday Countdown, Anniversary Calculator, and Instagram Hashtag Counter. Free and easy to use!",
   metaTitle: `Free Fun Tools | Love Calculator, Birthday Countdown & More | FastTools`,
-  metaDescription: "Discover fun and entertaining online tools including Love Calculator, Future Age Predictor, Birthday Countdown, Anniversary Calculator, and Instagram Hashtag Counter. Free and easy to use!",
+  metaDescription: "Discover fun online tools: Love Calculator, Future Age Predictor, Birthday Countdown & more. Free, privacy-friendly & easy to use.",
   path: "/fun-tools",
   keywords: [
     "fun tools", "free online tools", "love calculator", "future age predictor",
