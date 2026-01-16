@@ -55,7 +55,7 @@ const toolConfig = createToolConfig({
       "Form Filling: Unlock PDFs to enable form filling in restricted documents",
       "Workflow Automation: Remove password requirements from PDFs for automated processing pipelines",
       "Document Migration: Unlock protected PDFs before migrating to new document management systems",
-      "Compliance Updates: Remove outdated protection to update documents for regulatory compliance", ,
+      "Compliance Updates: Remove outdated protection to update documents for regulatory compliance",
       "Personal Documents: Unlock your own protected financial records, tax documents, or legal files for easier access"
     ],
 

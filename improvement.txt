@@ -1,7 +1,4 @@
 /ai-tools/page.tsx
-/calculator/concrete-calculator/page.tsx
-/calculator/conversion-calculator/page.tsx
-/calculator/date-difference/page.tsx
 /calculator/fraction-calculator/page.tsx
 /calculator/gpa-calculator/page.tsx
 /calculator/ip-subnet-calculator/page.tsx

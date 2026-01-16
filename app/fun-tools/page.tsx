@@ -53,7 +53,7 @@ const toolConfig = createToolConfig({
     description: "Enjoy playful, privacy-friendly tools for celebrations, relationships, and social content. All free, fast, and easy to use.",
     titleSize: "large",
     descriptionSize: "medium",
-    badge: "Fun & Entertainment Tools",
+
   },
 
   breadcrumbs: [
