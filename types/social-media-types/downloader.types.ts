@@ -6,7 +6,7 @@ export type SocialMediaPlatform =
   | 'youtube'
   | 'capcut'
   | 'pinterest'
-  | 'spotify'
+
   | 'soundcloud'
   | 'threads'
   | 'douyin'

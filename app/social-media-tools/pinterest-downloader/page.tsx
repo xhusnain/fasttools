@@ -428,7 +428,7 @@ const toolConfig = createToolConfig({
             { name: "TikTok Downloader", href: "/social-media-tools/tiktok-downloader" },
             { name: "YouTube Downloader", href: "/social-media-tools/youtube-downloader" },
             { name: "Facebook Downloader", href: "/social-media-tools/facebook-downloader" },
-            { name: "Image Background Remover", href: "/image-tools/background-remover" }
+            { name: "Image Background Remover", href: "/image-tools/image-background-remover" }
         ]
     }
 })

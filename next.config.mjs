@@ -63,6 +63,21 @@ const nextConfig = {
     return config
   },
 
+  async redirects() {
+    return [
+      {
+        source: '/calculator/compound-interest-calculator',
+        destination: '/finance-tools/compound-interest',
+        permanent: true,
+      },
+      {
+        source: '/image-tools/background-remover',
+        destination: '/image-tools/image-background-remover',
+        permanent: true,
+      },
+    ]
+  },
+
   async headers() {
     return [
 

@@ -207,7 +207,7 @@ const toolConfig = createToolConfig({
         ],
 
         relatedTools: [
-            { name: "Spotify Downloader", href: "/social-media-tools/spotify-downloader" },
+
             { name: "YouTube Downloader", href: "/social-media-tools/youtube-downloader" },
             { name: "TikTok Downloader", href: "/social-media-tools/tiktok-downloader" }
         ]
