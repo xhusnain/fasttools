@@ -1,5 +1,4 @@
 /ai-tools/page.tsx
-/calculator/calorie-calculator/page.tsx
 /calculator/concrete-calculator/page.tsx
 /calculator/conversion-calculator/page.tsx
 /calculator/date-difference/page.tsx
