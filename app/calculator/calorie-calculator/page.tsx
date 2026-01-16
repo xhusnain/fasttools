@@ -3,7 +3,7 @@ import { ToolPageLayout } from "@/components/common/tool-page-layout"
 import CalorieCalculator from "@/components/health/calorie-calculator"
 import { createMetadata } from "@/lib/metadata-base"
 import { GTable } from "@/ui/gtable"
-import { Brain } from "lucide-react"
+import { Brain, Activity, Target, BookOpen, Shield, Users, TrendingUp, Calculator, Heart, AlertTriangle, Info, Zap, Flame } from "lucide-react"
 
 const baseMetadata = createMetadata({
   title: "Calorie Calculator | Free Daily Calorie Needs Calculator",
@@ -71,17 +71,29 @@ export default function CalorieCalculatorPage() {
 
     aboutTool: (
       <div className="space-y-8">
-        <section>
-          <h2 className="text-2xl font-bold mb-4">What are Calories?</h2>
-          <p className="text-base text-muted-foreground leading-relaxed mb-6">
-            Calories are a measure of <strong>energy</strong>. In nutrition, they refer to the energy people get from the food and drink they consume, and the energy they use in physical activity. Understanding your daily calorie expenditure is the cornerstone of managing weight and optimizing physical performance.
+        <article className="space-y-6">
+          <h2 className="text-2xl font-bold text-foreground flex items-center gap-2">
+            <Flame className="h-6 w-6 text-primary" />
+            Understanding Calories: The Foundation of Weight Management and Nutrition
+          </h2>
+          <p className="text-base text-muted-foreground leading-relaxed">
+            Calories are a measure of <strong>energy</strong>. In nutrition, they refer to the energy people get from the food and drink they consume, and the energy they use in physical activity. One calorie (kilocalorie) is the amount of energy needed to raise the temperature of one kilogram of water by one degree Celsius. Understanding your daily calorie expenditure is the cornerstone of managing weight, optimizing physical performance, and achieving your health and fitness goals.
           </p>
+          <p className="text-base text-muted-foreground leading-relaxed">
+            Whether your goal is weight loss, muscle gain, or maintaining your current weight, knowing your daily calorie needs is essential. Your Total Daily Energy Expenditure (TDEE) represents the total number of calories you burn each day through metabolism, physical activity, and the thermic effect of food. By understanding and managing this energy balance, you can make informed decisions about your nutrition and create sustainable habits that support your long-term health and fitness objectives.
+          </p>
+        </article>
 
-          <h3 className="font-semibold text-xl mb-4 text-foreground">Activity Burn Reference (Est. per 30 mins)</h3>
-          <p className="mb-4 text-muted-foreground text-sm">
-            Energy expenditure varies significantly based on body weight and intensity. Here is an estimate of calories burned during common activities for different weights:
+        <article className="space-y-6">
+          <h2 className="text-2xl font-bold text-foreground flex items-center gap-2">
+            <Activity className="h-6 w-6 text-primary" />
+            Activity Calorie Burn Reference: Understanding Exercise Energy Expenditure
+          </h2>
+          <p className="text-base text-muted-foreground leading-relaxed">
+            Energy expenditure varies significantly based on body weight, intensity, fitness level, and individual metabolism. Here is an estimate of calories burned during common activities for different body weights (per 30 minutes of activity):
           </p>
-          <GTable>
+          <div className="overflow-x-auto">
+            <GTable>
             <thead className="bg-muted text-foreground font-semibold">
               <tr>
                 <th className="p-3 text-left">Activity</th>

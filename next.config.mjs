@@ -19,23 +19,23 @@ const nextConfig = {
     ],
     // Enable compression
     gzipSize: true,
-    // Optimize server components
-    serverComponentsExternalPackages: ['sharp', 'onnxruntime-node'],
   },
-  
+  // Optimize server components
+  serverExternalPackages: ['sharp'],
+
   // Compression
   compress: true,
-  
+
   // Power optimizations
   poweredByHeader: false,
-  
+
   // React strict mode for better performance
   reactStrictMode: true,
 
   turbopack: {},
 
   typescript: {
-    ignoreBuildErrors: true,
+    ignoreBuildErrors: false,
   },
   images: {
     // unoptimized: true, // Removed for performance optimization
@@ -48,10 +48,6 @@ const nextConfig = {
         protocol: 'https',
         hostname: 'plus.unsplash.com',
       },
-      {
-        protocol: 'https',
-        hostname: '**', // Allow all HTTPS domains for IPTV channel logos
-      }
     ],
   },
   transpilePackages: ['lucide-react'],
@@ -130,7 +126,7 @@ const nextConfig = {
         ],
       },
       {
-        source: "/android-chrome-:size*.png",
+        source: "/android-chrome-:size.png",
         headers: [
           {
             key: "Cache-Control",
@@ -176,11 +172,20 @@ const nextConfig = {
         headers: [
           {
             key: "Referrer-Policy",
-            value: "no-referrer",
+            value: "strict-origin-when-cross-origin",
           },
           {
             key: "Cache-Control",
             value: "public, max-age=3600",
+          },
+        ],
+      },
+      {
+        source: "/(sitemap.xml|robots.txt)",
+        headers: [
+          {
+            key: "Cache-Control",
+            value: "public, max-age=0, must-revalidate",
           },
         ],
       },
