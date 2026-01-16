@@ -1,9 +1,5 @@
 /ai-tools/page.tsx
-/calculator/love-calculator/page.tsx
-/calculator/pace-calculator/page.tsx
 /calculator/page.tsx
-/calculator/percentage-calculator/page.tsx
-/calculator/pregnancy-calculator/page.tsx
 /calculator/pregnancy-conception-calculator/page.tsx
 /calculator/scientific-calculator/page.tsx
 /calculator/standard-deviation-calculator/page.tsx
