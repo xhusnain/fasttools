@@ -7,7 +7,7 @@ import { Brain } from "lucide-react"
 const toolConfig = createToolConfig({
   toolName: "Length Converter",
   description: "Convert length units instantly: meters, feet, inches, centimeters, millimeters, kilometers, yards, miles. Accurate metric and imperial conversion tool for construction, travel, and education.",
-  metaTitle: "Length Converter - Convert Length Online (Free) 2026",
+  metaTitle: "Length Converter - Convert Length Online (Free)",
   metaDescription: "Free online Length Converter. Convert length units instantly. Fast, accurate, and no signup required.",
   path: "/converters/length",
 

@@ -8,7 +8,7 @@ import { Brain } from "lucide-react"
 const toolConfig = createToolConfig({
   toolName: "Temperature Converter",
   description: "Convert temperatures instantly between Celsius & Fahrenheit. Ideal for weather, cooking, science projects & travel.",
-  metaTitle: "Temperature Converter - Convert Temperature Online (Free) 2026",
+  metaTitle: "Temperature Converter - Convert Temperature Online (Free)",
   metaDescription: "Free online Temperature Converter. Convert temperature scales instantly. Fast, accurate, and no signup required.",
   path: "/converters/temperature",
 

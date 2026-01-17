@@ -297,7 +297,7 @@ export default function AgeCalculatorPage() {
             <tbody className="divide-y divide-border text-sm">
               <tr>
                 <td className="p-3 font-bold text-blue-600">Gen Alpha</td>
-                <td className="p-3">2013 – 2025</td>
+                <td className="p-3">2013 –</td>
                 <td className="p-3">Digital Natives</td>
               </tr>
               <tr>

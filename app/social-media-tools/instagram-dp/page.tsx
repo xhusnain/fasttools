@@ -7,7 +7,7 @@ import { Download, Eye, Image as ImageIcon, Search, CheckCircle, Shield, EyeOff,
 const toolConfig = createToolConfig({
   toolName: "Instagram DP Viewer & Downloader (HD Quality)",
   description: "View and download Instagram profile pictures in full HD size. Free Instagram DP viewer for public accounts. No login required.",
-  metaTitle: `Insta DP Viewer (HD) - Zoom & Download Profile Picture ${getCurrentYear()}`,
+  metaTitle: `Insta DP Viewer (HD) - Zoom & Download Profile Picture`,
   metaDescription: "Free Insta DP Viewer to zoom and download Instagram profile pictures in full HD size. View private account DPs anonymously.",
   path: "/social-media-tools/instagram-dp",
 
@@ -250,7 +250,7 @@ const toolConfig = createToolConfig({
 
 export const metadata = {
   ...toolConfig.metadata,
-  title: `Instagram DP Viewer & Downloader - View Full Size HD Pics ${getCurrentYear()}`
+  title: `Instagram DP Viewer & Downloader - View Full Size HD Pics`
 }
 
 export default function InstagramDpPage() {

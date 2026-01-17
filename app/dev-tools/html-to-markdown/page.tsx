@@ -104,8 +104,8 @@ const toolConfig = createToolConfig({
         answer: "HTML is used everywhere on the web: websites you visit, online shopping, social media, email newsletters, documentation, blogs, forms you fill out, and web applications. Every webpage you see in your browser is built with HTML as the foundation."
       },
       {
-        question: "Is HTML still relevant in 2025?",
-        answer: "Absolutely! HTML remains the core technology of the web in 2025. While frameworks and tools have evolved, they all generate HTML at their core. Modern HTML5 continues to be updated with new features, and understanding HTML is essential for web development."
+        question: "Is HTML still relevant in?",
+        answer: "Absolutely! HTML remains the core technology of the web in. While frameworks and tools have evolved, they all generate HTML at their core. Modern HTML5 continues to be updated with new features, and understanding HTML is essential for web development."
       },
       {
         question: "Should I still learn HTML and CSS?",

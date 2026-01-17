@@ -658,7 +658,7 @@ export default function CaptionGeneratorPage() {
     <ToolPageLayout
       header={{
         title: "Free AI Caption Generator - Create Viral Social Media Captions Instantly",
-        description: "Generate viral social media captions with AI in 2025! Create engaging captions for Instagram, TikTok, Facebook, LinkedIn, Twitter/X, YouTube & Pinterest. Boost engagement with our free AI-powered caption generator. No sign up required.",
+        description: "Generate viral social media captions with AI in! Create engaging captions for Instagram, TikTok, Facebook, LinkedIn, Twitter/X, YouTube & Pinterest. Boost engagement with our free AI-powered caption generator. No sign up required.",
         titleSize: "medium",
         descriptionSize: "small",
         centered: true,

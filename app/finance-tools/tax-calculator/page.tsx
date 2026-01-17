@@ -121,7 +121,7 @@ export default function TaxCalculatorPage() {
                     <strong>Expertise:</strong> 15+ years combined experience in tax preparation, accounting, and financial planning
                   </p>
                   <p className="text-sm text-muted-foreground">
-                    <strong>Last Updated:</strong> January 2025 | Tax rates and brackets verified against official 2024-2025 tax year regulations.
+                    <strong>Last Updated:</strong> January | Tax rates and brackets verified against official-2025 tax year regulations.
                   </p>
                 </div>
               </div>
@@ -256,7 +256,7 @@ export default function TaxCalculatorPage() {
       },
       {
         question: "What is the standard deduction for the current tax year?",
-        answer: "For 2024, the standard deduction is $14,600 for single filers, $29,200 for married filing jointly, $21,900 for head of household, and $14,600 for married filing separately. These amounts are adjusted annually for inflation. The standard deduction reduces your taxable income without needing to itemize deductions."
+        answer: "For, the standard deduction is $14,600 for single filers, $29,200 for married filing jointly, $21,900 for head of household, and $14,600 for married filing separately. These amounts are adjusted annually for inflation. The standard deduction reduces your taxable income without needing to itemize deductions."
       },
       {
         question: "How do tax credits differ from tax deductions?",
@@ -268,7 +268,7 @@ export default function TaxCalculatorPage() {
       },
       {
         question: "How do I calculate tax in the UK?",
-        answer: "UK tax calculation involves several components: income tax (applied to income above the personal allowance of £12,570 for 2024-25), National Insurance contributions, and potentially student loan repayments. Income tax uses progressive bands: 20% basic rate, 40% higher rate, and 45% additional rate. National Insurance is calculated separately on earnings above the primary threshold. Our UK tax calculator accounts for all these factors, including the personal allowance, tax bands, and National Insurance rates, providing an accurate estimate of your total UK tax liability and take-home pay."
+        answer: "UK tax calculation involves several components: income tax (applied to income above the personal allowance of £12,570 for-25), National Insurance contributions, and potentially student loan repayments. Income tax uses progressive bands: 20% basic rate, 40% higher rate, and 45% additional rate. National Insurance is calculated separately on earnings above the primary threshold. Our UK tax calculator accounts for all these factors, including the personal allowance, tax bands, and National Insurance rates, providing an accurate estimate of your total UK tax liability and take-home pay."
       },
       {
         question: "How do I calculate tax in Canada?",

@@ -76,7 +76,7 @@ export default function TermsPage() {
                   <span className="text-sm font-medium text-foreground">User Protection</span>
                 </div>
               </div>
-              <p className="text-sm text-muted-foreground text-center mt-4">Last updated: November 1, 2025</p>
+              <p className="text-sm text-muted-foreground text-center mt-4">Last updated: November 1,</p>
             </div>
 
             {/* Main Content */}

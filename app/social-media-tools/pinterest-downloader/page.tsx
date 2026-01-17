@@ -6,7 +6,7 @@ import { PinterestDownloader } from "@/components/social-media/pinterest-downloa
 const toolConfig = createToolConfig({
     toolName: "Pinterest Video & Image Downloader - Save HD Pins Free",
     description: "Download Pinterest videos and images in HD quality for free. Save pins to your device without watermark. Works on iPhone, Android, PC. No login required.",
-    metaTitle: "Pinterest Video & Image Downloader - HD Free Online 2026",
+    metaTitle: "Pinterest Video & Image Downloader - HD Free Online",
     metaDescription: "Download Pinterest videos & images in HD 1080p free. Save pins without watermark on iPhone, Android, PC & Mac.",
     path: "/social-media-tools/pinterest-downloader",
 

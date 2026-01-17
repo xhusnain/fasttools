@@ -71,7 +71,7 @@ const configBody: UnifiedToolConfig = {
                 <article className="prose dark:prose-invert max-w-none">
                     <h2 className="text-2xl font-bold mb-4 flex items-center gap-2">
                         <CheckCircle2 className="h-6 w-6 text-green-500" />
-                        Why FastTools is the Best YouTube Playlist Downloader in 2026
+                        Why FastTools is the Best YouTube Playlist Downloader in
                     </h2>
                     <p className="text-muted-foreground mb-6">
                         Manually saving 50 videos is a waste of time. Our tool is engineered for speed and security, providing a seamless bridge between YouTube and your offline library.

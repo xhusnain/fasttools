@@ -208,12 +208,12 @@ export default function InflationCalculatorPage() {
             <div className="p-4 bg-card border border-border rounded-lg">
               <h3 className="text-lg font-semibold text-foreground mb-3">Historical CPI Data</h3>
               <p className="text-muted-foreground mb-3 leading-relaxed">
-                Our calculator uses comprehensive CPI data from 1913 to 2025, providing accurate inflation calculations for any time period. This data is sourced from the Bureau of Labor Statistics and updated regularly.
+                Our calculator uses comprehensive CPI data from 1913 to, providing accurate inflation calculations for any time period. This data is sourced from the Bureau of Labor Statistics and updated regularly.
               </p>
               <div className="grid sm:grid-cols-2 gap-4">
                 <div className="bg-muted p-4 rounded-lg border border-border">
                   <div className="text-sm font-medium text-foreground">Data Range</div>
-                  <div className="text-base font-bold text-primary">1913 - 2025</div>
+                  <div className="text-base font-bold text-primary">1913 -</div>
                 </div>
                 <div className="bg-muted p-4 rounded-lg border border-border">
                   <div className="text-sm font-medium text-foreground">Update Frequency</div>
@@ -338,7 +338,7 @@ export default function InflationCalculatorPage() {
     faqs: [
       {
         question: "How accurate is the historical CPI data?",
-        answer: "Our calculator uses official CPI data from the Bureau of Labor Statistics, which is the most authoritative source for inflation data in the United States. The data is updated monthly and provides highly accurate calculations for any time period from 1913 to 2025."
+        answer: "Our calculator uses official CPI data from the Bureau of Labor Statistics, which is the most authoritative source for inflation data in the United States. The data is updated monthly and provides highly accurate calculations for any time period from 1913 to."
       },
       {
         question: "What's the difference between CPI and inflation rate?",

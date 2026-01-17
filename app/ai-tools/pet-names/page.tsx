@@ -610,7 +610,7 @@ export default function PetNamesPage() {
     <ToolPageLayout
       header={{
         title: "Free AI Pet Name Generator - Get 100 Free Names Instantly",
-        description: "Generate 100 unique pet names with AI in 2025! Perfect for dogs, cats, puppies, kittens & all animals. Get popular, unique, cute & cool names based on personality, breed, color & characteristics. Free with meanings & origins. No sign up required!",
+        description: "Generate 100 unique pet names with AI in! Perfect for dogs, cats, puppies, kittens & all animals. Get popular, unique, cute & cool names based on personality, breed, color & characteristics. Free with meanings & origins. No sign up required!",
         titleSize: "medium",
         descriptionSize: "small",
         centered: true,

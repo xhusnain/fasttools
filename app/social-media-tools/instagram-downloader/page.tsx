@@ -245,7 +245,7 @@ const toolConfig = createToolConfig({
           <h3 className="text-xl font-bold mb-4 text-foreground">Tips for Organizing and Managing Downloaded Instagram Content</h3>
           <ul className="list-disc list-inside space-y-2 text-sm text-muted-foreground leading-relaxed mb-4 ml-4">
             <li><strong>Create Dedicated Folders:</strong> Set up a dedicated folder on your device for downloaded videos. Within this folder, create subfolders based on categories such as tutorials, recipes, inspiration, DIY projects, or workout routines.</li>
-            <li><strong>Use Descriptive Names:</strong> Rename your downloaded videos with descriptive names that indicate their content. For example, "Chocolate Cake Recipe - @username" or "DIY Home Decor Tutorial - 2024" instead of leaving them with default names.</li>
+            <li><strong>Use Descriptive Names:</strong> Rename your downloaded videos with descriptive names that indicate their content. For example, "Chocolate Cake Recipe - @username" or "DIY Home Decor Tutorial -" instead of leaving them with default names.</li>
             <li><strong>Tag and Categorize:</strong> Consider using a media management tool to help organize and manage your downloaded videos. These tools can help you categorize, tag, and search your video library efficiently.</li>
             <li><strong>Regular Cleanup:</strong> Periodically review your downloaded content and remove videos you no longer need. This keeps your collection organized and saves storage space.</li>
             <li><strong>Backup Important Content:</strong> For videos you consider particularly valuable, consider backing them up to cloud storage or an external drive to prevent loss.</li>

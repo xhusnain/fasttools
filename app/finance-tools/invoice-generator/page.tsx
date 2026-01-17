@@ -88,7 +88,7 @@ export default function InvoiceGeneratorPage() {
       },
       {
         question: "What are the best practices for invoice numbering and payment terms?",
-        answer: "Effective invoice numbering uses consistent formats like INV-2024-001 or 2024001 for easy tracking. Payment terms should be clear and specific: 'Net 30', 'Due on receipt', or '2/10 Net 30'. Include late payment policies and accepted payment methods. Our generator includes templates for common payment terms."
+        answer: "Effective invoice numbering uses consistent formats like INV-2024-001 or001 for easy tracking. Payment terms should be clear and specific: 'Net 30', 'Due on receipt', or '2/10 Net 30'. Include late payment policies and accepted payment methods. Our generator includes templates for common payment terms."
       },
       {
         question: "How can I customize invoices for different clients and business types?",

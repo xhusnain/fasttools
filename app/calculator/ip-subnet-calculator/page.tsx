@@ -561,7 +561,7 @@ export default function IPSubnetCalculatorPage() {
                   <Clock className="h-3 w-3" />
                   <span>Last Updated: <time dateTime={new Date().toISOString().split('T')[0]}>{new Date().toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' })}</time></span>
                 </div>
-                <p className="text-[10px] text-muted-foreground">Version 2025.1.0 • IPv6 Ready</p>
+                <p className="text-[10px] text-muted-foreground">Version.1.0 • IPv6 Ready</p>
               </div>
             </div>
           </div>

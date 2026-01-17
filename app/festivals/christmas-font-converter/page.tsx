@@ -8,7 +8,7 @@ import { Trees, Sparkles, Snowflake } from "lucide-react"
 const toolConfig = createToolConfig({
     toolName: "Christmas Font & Emoji Converter",
     description: "Convert your text into aesthetic Christmas fonts with emojis. Copy and paste festive text styles for Instagram, TikTok, and social media bios.",
-    metaTitle: `Christmas Font Generator & Emoji Text | Copy & Paste Festive Styles ${getCurrentYear()}`,
+    metaTitle: `Christmas Font Generator & Emoji Text | Copy & Paste Festive Styles`,
     metaDescription: "Free Christmas font generator! Create aesthetic holiday text with emojis (🎄 𝓜𝓮𝓻𝓻𝔂 𝓒𝓱𝓻𝓲𝓼𝓽𝓶𝓪𝓼 🎅). Perfect for Instagram bios, comments, and captions.",
     path: "/festivals/christmas-font-converter",
     keywords: [

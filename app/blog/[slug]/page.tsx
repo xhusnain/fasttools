@@ -41,7 +41,7 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
     try {
         const { frontMatter } = await getPostBySlug(slug);
         return {
-            title: `${frontMatter.title} | FastTools`,
+            title: `${frontMatter.title}`,
             description: frontMatter.description,
             keywords: frontMatter.keywords,
             openGraph: {

@@ -7,7 +7,7 @@ import { Cake, Clock, Calendar, Gift, ArrowRight, CheckCircle, HelpCircle, Star 
 const toolConfig = createToolConfig({
   toolName: "Birthday Countdown",
   description: "Live birthday countdown showing days, hours, minutes, and seconds until your next birthday. Share the timer with friends.",
-  metaTitle: `Birthday Countdown | Free Real-Time Timer ${getCurrentYear()}`,
+  metaTitle: `Birthday Countdown | Free Real-Time Timer`,
   metaDescription: "Live birthday countdown showing days, hours, minutes, and seconds until your next birthday. Share the timer with friends.",
   path: "/fun-tools/birthday-countdown",
   keywords: [
@@ -27,7 +27,7 @@ const toolConfig = createToolConfig({
   ],
 
   header: {
-    title: `Birthday Countdown Timer – Real-Time Birthday Tracker (${getCurrentYear()})`,
+    title: `Birthday Countdown Timer – Real-Time Birthday Tracker ()`,
     description: "Real-time countdown to your next birthday showing days, hours, minutes, and seconds. Share the excitement with friends and family! Simply enter your birth date and watch the seconds tick away until your special day.",
     titleSize: "medium",
     descriptionSize: "small",

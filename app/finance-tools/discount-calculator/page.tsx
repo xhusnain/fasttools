@@ -51,7 +51,7 @@ export const metadata: Metadata = {
   category: "Finance Tools",
   keywords: [
     "discount calculator",
-    `discount calculator ${getCurrentYear()}`,
+    `discount calculator`,
     "free discount calculator",
     "sale price calculator",
     "percentage discount calculator",
@@ -225,7 +225,7 @@ export default function DiscountCalculatorPage() {
   return (
     <ToolPageLayout
       header={{
-        title: `Free Discount Calculator – Calculate Sale Price & Savings (${getCurrentYear()})`,
+        title: `Free Discount Calculator – Calculate Sale Price & Savings ()`,
         description: "Calculate percentage discounts, fixed amounts, and final sale prices instantly. Our free discount calculator supports multiple discounts, tax calculations, and works with any currency. Perfect for shopping, business pricing, and financial planning.",
         titleSize: "medium",
         descriptionSize: "small",

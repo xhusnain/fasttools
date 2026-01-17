@@ -83,7 +83,7 @@ const toolConfig = createToolConfig({
         answer: "Yes, simply enter the URL and our tool will fetch the visible text content to analyze. This is perfect for analyzing competitors or auditing your own published pages without copy-pasting."
       },
       {
-        question: "Does keyword density still matter in 2025?",
+        question: "Does keyword density still matter in?",
         answer: "Yes, but differently than before. It's no longer about hitting a magic number to rank. It's about 'Topic Modeling'—ensuring your content covers a topic comprehensively. Density analysis helps ensure you haven't drifted off-topic or become repetitive."
       },
       {

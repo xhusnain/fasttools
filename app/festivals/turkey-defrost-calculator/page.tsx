@@ -8,7 +8,7 @@ import { ChristmasTheme } from "@/components/festivals/christmas-theme"
 const toolConfig = createToolConfig({
     toolName: "Turkey Defrosting Deadline Calculator",
     description: "Calculate exactly when to start defrosting your turkey (Fridge vs Water). Get a calendar reminder so you don't panic on Christmas Eve.",
-    metaTitle: `Turkey Defrost Time Calculator ${getCurrentYear()} | Late Turkey Rescue Tool`,
+    metaTitle: `Turkey Defrost Time Calculator | Late Turkey Rescue Tool`,
     metaDescription: "Forgot to defrost the turkey? Use our calculator to find the exact defrost time for Fridge or Cold Water methods. Add a reminder to your calendar calculation instantly.",
     path: "/festivals/turkey-defrost-calculator",
     keywords: [

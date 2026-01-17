@@ -7,7 +7,7 @@ import { GTable } from "@/ui/gtable"
 
 const toolConfig = createToolConfig({
   toolName: "Scientific Calculator - Advanced Math Online",
-  description: "Scientific Calculator Online Free - 70+ Functions (2025). Trigonometry, logarithms, statistics. Better than CASIO fx-991EX. No download.",
+  description: "Scientific Calculator Online Free - 70+ Functions. Trigonometry, logarithms, statistics. Better than CASIO fx-991EX. No download.",
   path: "/calculator/scientific-calculator",
   header: {
     title: "Scientific Calculator - Advanced Math Online",
@@ -17,7 +17,7 @@ const toolConfig = createToolConfig({
     color: "blue"
   },
   content: {
-    overview: "Scientific Calculator Online Free - 70+ Functions (2025) is an advanced mathematical tool designed for complex calculations beyond basic arithmetic. Unlike standard calculators, scientific calculators include specialized functions for trigonometry, logarithms, exponentials, statistics, and advanced mathematics. Our free online scientific calculator provides all the functionality of professional calculators like CASIO fx-991EX, TI-84 Plus, HP 35s, and Sharp EL-W516X. It's perfect for students, engineers, scientists, and anyone who needs to perform advanced mathematical calculations.",
+    overview: "Scientific Calculator Online Free - 70+ Functions is an advanced mathematical tool designed for complex calculations beyond basic arithmetic. Unlike standard calculators, scientific calculators include specialized functions for trigonometry, logarithms, exponentials, statistics, and advanced mathematics. Our free online scientific calculator provides all the functionality of professional calculators like CASIO fx-991EX, TI-84 Plus, HP 35s, and Sharp EL-W516X. It's perfect for students, engineers, scientists, and anyone who needs to perform advanced mathematical calculations.",
     howToSteps: [
       "Select Your Function: Choose from 70+ mathematical functions including trigonometry (sin, cos, tan), logarithms (ln, log), exponentials (e^x), powers, roots, and statistical operations.",
       "Set Angle Mode: Toggle between Degrees (DEG) and Radians (RAD) mode using the mode button, depending on your calculation requirements.",

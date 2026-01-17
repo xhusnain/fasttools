@@ -6,7 +6,7 @@ import { CapcutDownloader } from "@/components/social-media/capcut-downloader/ca
 const toolConfig = createToolConfig({
     toolName: "CapCut Video Downloader Without Watermark - Free HD",
     description: "Download CapCut videos and templates without watermark in HD quality. Free online CapCut downloader for iPhone, Android, PC. No login required. Remove watermark instantly.",
-    metaTitle: "CapCut Video Downloader Without Watermark - Free HD Online 2026",
+    metaTitle: "CapCut Video Downloader Without Watermark - Free HD Online",
     metaDescription: "Download CapCut videos without watermark free. Save templates in HD/4K. Works on mobile & PC. Instant download.",
     path: "/social-media-tools/capcut-downloader",
 
@@ -320,7 +320,7 @@ const toolConfig = createToolConfig({
                     </h2>
                     <div className="space-y-4">
                         <p className="text-sm text-muted-foreground leading-relaxed">
-                            Following 2025 legislation, CapCut split into separate US and Global versions with different server infrastructure. This means:
+                            Following legislation, CapCut split into separate US and Global versions with different server infrastructure. This means:
                         </p>
                         <ul className="list-disc list-inside space-y-1 text-sm text-muted-foreground ml-4">
                             <li>Projects on Global cloud may not sync to the US app and vice versa</li>

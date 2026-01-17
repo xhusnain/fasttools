@@ -9,7 +9,7 @@ import { Brain } from "lucide-react"
 const toolConfig = createToolConfig({
   toolName: "Currency Converter",
   description: "Convert currencies instantly with live exchange rates. Free currency converter with multiple currencies. Fast, accurate, mobile-friendly.",
-  metaTitle: "Currency Converter - Convert Currency Online (Free) 2026",
+  metaTitle: "Currency Converter - Convert Currency Online (Free)",
   metaDescription: "Free online Currency Converter. Convert currency rates instantly. Fast, accurate, and no signup required.",
   path: "/converters/currency",
 

@@ -66,27 +66,27 @@ export default function ROASCalculatorPage() {
                         <Zap className="h-6 w-6 text-primary" />
                         Two Powerful Modes for Every Advertiser
                     </h2>
-                <div className="grid sm:grid-cols-2 gap-4 mb-6">
-                    <div className="bg-muted/50 p-4 rounded-lg">
-                        <h4 className="font-semibold mb-2">Simple Mode - Quick Profitability Check</h4>
-                        <p className="text-sm mb-2">Perfect when you know your total numbers and want instant results. Just enter your ad spend and revenue to see:</p>
-                        <ul className="list-disc pl-4 text-sm space-y-1">
-                            <li><strong>ROAS Ratio:</strong> (e.g., 4.5x means $4.50 earned per $1 spent)</li>
-                            <li><strong>ROI Percentage:</strong> Your actual return on investment</li>
-                            <li><strong>Net Profit:</strong> Real money made after ad costs</li>
-                            <li><strong>Profit Margin:</strong> Percentage of revenue that's pure profit</li>
-                        </ul>
+                    <div className="grid sm:grid-cols-2 gap-4 mb-6">
+                        <div className="bg-muted/50 p-4 rounded-lg">
+                            <h4 className="font-semibold mb-2">Simple Mode - Quick Profitability Check</h4>
+                            <p className="text-sm mb-2">Perfect when you know your total numbers and want instant results. Just enter your ad spend and revenue to see:</p>
+                            <ul className="list-disc pl-4 text-sm space-y-1">
+                                <li><strong>ROAS Ratio:</strong> (e.g., 4.5x means $4.50 earned per $1 spent)</li>
+                                <li><strong>ROI Percentage:</strong> Your actual return on investment</li>
+                                <li><strong>Net Profit:</strong> Real money made after ad costs</li>
+                                <li><strong>Profit Margin:</strong> Percentage of revenue that's pure profit</li>
+                            </ul>
+                        </div>
+                        <div className="bg-muted/50 p-4 rounded-lg">
+                            <h4 className="font-semibold mb-2">Advanced Mode - Campaign Planning</h4>
+                            <p className="text-sm mb-2">Ideal for planning new campaigns or when you need to calculate ROAS from granular metrics. Input:</p>
+                            <ul className="list-disc pl-4 text-sm space-y-1">
+                                <li>Ad Spend Budget & Cost Per Click (CPC)</li>
+                                <li>Conversion Rate (%) & Average Order Value (AOV)</li>
+                            </ul>
+                            <p className="text-sm mt-2 font-medium">Automatically determines Traffic, Conversions, and Revenue.</p>
+                        </div>
                     </div>
-                    <div className="bg-muted/50 p-4 rounded-lg">
-                        <h4 className="font-semibold mb-2">Advanced Mode - Campaign Planning</h4>
-                        <p className="text-sm mb-2">Ideal for planning new campaigns or when you need to calculate ROAS from granular metrics. Input:</p>
-                        <ul className="list-disc pl-4 text-sm space-y-1">
-                            <li>Ad Spend Budget & Cost Per Click (CPC)</li>
-                            <li>Conversion Rate (%) & Average Order Value (AOV)</li>
-                        </ul>
-                        <p className="text-sm mt-2 font-medium">Automatically determines Traffic, Conversions, and Revenue.</p>
-                    </div>
-                </div>
 
                 </article>
 
@@ -95,20 +95,20 @@ export default function ROASCalculatorPage() {
                         <Target className="h-6 w-6 text-primary" />
                         Real-World Examples and Use Cases
                     </h2>
-                <div className="space-y-4 mb-6">
-                    <div className="border-l-4 border-blue-500 pl-4 py-1">
-                        <h4 className="font-semibold text-sm">Scenario 1: Facebook Ads Profit Check</h4>
-                        <p className="text-sm text-muted-foreground">You spent $500 on Facebook ads and generated $2,000 in sales. Quick calculation: <strong>ROAS = 4x</strong>, <strong>ROI = 300%</strong>. Your campaign is profitable.</p>
+                    <div className="space-y-4 mb-6">
+                        <div className="border-l-4 border-blue-500 pl-4 py-1">
+                            <h4 className="font-semibold text-sm">Scenario 1: Facebook Ads Profit Check</h4>
+                            <p className="text-sm text-muted-foreground">You spent $500 on Facebook ads and generated $2,000 in sales. Quick calculation: <strong>ROAS = 4x</strong>, <strong>ROI = 300%</strong>. Your campaign is profitable.</p>
+                        </div>
+                        <div className="border-l-4 border-green-500 pl-4 py-1">
+                            <h4 className="font-semibold text-sm">Scenario 2: Google Ads Campaign Planning</h4>
+                            <p className="text-sm text-muted-foreground">Planning a campaign with $1,000 budget, $2 CPC, 3% conversion rate, and $80 AOV? The calculator shows: 500 clicks, 15 sales, $1,200 revenue, <strong>1.2x ROAS</strong>. You'll need to improve conversion rate or AOV to profit.</p>
+                        </div>
+                        <div className="border-l-4 border-purple-500 pl-4 py-1">
+                            <h4 className="font-semibold text-sm">Scenario 3: Multi-Platform Comparison</h4>
+                            <p className="text-sm text-muted-foreground">Running TikTok and Google Ads simultaneously? Calculate each platform's ROAS separately to identify your most profitable channel and reallocate budget accordingly.</p>
+                        </div>
                     </div>
-                    <div className="border-l-4 border-green-500 pl-4 py-1">
-                        <h4 className="font-semibold text-sm">Scenario 2: Google Ads Campaign Planning</h4>
-                        <p className="text-sm text-muted-foreground">Planning a campaign with $1,000 budget, $2 CPC, 3% conversion rate, and $80 AOV? The calculator shows: 500 clicks, 15 sales, $1,200 revenue, <strong>1.2x ROAS</strong>. You'll need to improve conversion rate or AOV to profit.</p>
-                    </div>
-                    <div className="border-l-4 border-purple-500 pl-4 py-1">
-                        <h4 className="font-semibold text-sm">Scenario 3: Multi-Platform Comparison</h4>
-                        <p className="text-sm text-muted-foreground">Running TikTok and Google Ads simultaneously? Calculate each platform's ROAS separately to identify your most profitable channel and reallocate budget accordingly.</p>
-                    </div>
-                </div>
 
                 </article>
 
@@ -117,9 +117,9 @@ export default function ROASCalculatorPage() {
                         <BarChart3 className="h-6 w-6 text-primary" />
                         What is a Good ROAS? Industry Benchmarks Explained
                     </h2>
-                <p className="mb-3">
-                    A common benchmark is 4:1 ROAS, where every $1 returns $4, but this varies by industry and profit margins. "Is my ROAS good" is a common question, and the answer depends on your industry benchmarks:
-                </p>
+                    <p className="mb-3">
+                        A common benchmark is 4:1 ROAS, where every $1 returns $4, but this varies by industry and profit margins. "Is my ROAS good" is a common question, and the answer depends on your industry benchmarks:
+                    </p>
 
                     <p className="text-base text-muted-foreground leading-relaxed mb-4">
                         A common benchmark is 4:1 ROAS, where every $1 returns $4, but this varies by industry and profit margins. "Is my ROAS good" is a common question, and the answer depends on your industry benchmarks:
@@ -580,7 +580,7 @@ export default function ROASCalculatorPage() {
                 descriptionSize: "small"
             }}
             breadcrumbs={[
-                { label: "Ad Tools", href: "/ad-tools" },
+                { label: "Calculators", href: "/calculator" },
                 { label: "ROAS Calculator", href: "/ad-tools/roas-calculator" }
             ]}
             toolComponent={

@@ -85,7 +85,7 @@ export function createMetadata(options: MetadataOptions): Metadata & { softwareS
 
     const cleanPath = path.startsWith("/") ? path : `/${path}`
     const titleWithBranding = title
-    const fullTitle = addYearToTitle(titleWithBranding, cleanPath)
+    const fullTitle = titleWithBranding
     const canonicalUrl = getCanonicalUrl(cleanPath)
 
 
@@ -249,16 +249,7 @@ function isCompanyPage(path: string): boolean {
     return companyPages.includes(normalizedPath) || normalizedPath === "/"
 }
 
-function addYearToTitle(title: string, path: string): string {
-    if (isCompanyPage(path)) {
-        return title
-    }
-    const year = getCurrentYear()
-    if (title.includes(`(${year})`) || title.includes(`- ${year}`) || title.includes(` ${year}`)) {
-        return title
-    }
-    return `${title} (${year})`
-}
+
 
 export function getCanonicalUrl(path: string): string {
     const safePath = path.startsWith("/") ? path : `/${path}`

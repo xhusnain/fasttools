@@ -7,7 +7,7 @@ import { Calendar, Globe, Calculator, ArrowRight, CheckCircle, HelpCircle, Star,
 const toolConfig = createToolConfig({
   toolName: "Future Age Calculator",
   description: "See how old you'll be in any future year. Fun age prediction with milestones, planning ideas, and shareable results.",
-  metaTitle: `Future Age Predictor | Free How Old Will I Be Calculator ${getCurrentYear()}`,
+  metaTitle: `Future Age Predictor | Free How Old Will I Be Calculator`,
   metaDescription: "FastTools Future Age Predictor - See how old you'll be in any future year. Fun age prediction with milestones, planning ideas, and shareable results.",
   path: "/fun-tools/future-age",
   keywords: [
@@ -24,7 +24,7 @@ const toolConfig = createToolConfig({
   ],
 
   header: {
-    title: `Future Age Predictor – How Old Will I Be? (${getCurrentYear()})`,
+    title: `Future Age Predictor – How Old Will I Be? ()`,
     description: "Discover your age future and calculate how old you'll be in any future year. Perfect for planning milestones, visualizing your future age, and sharing fun age predictions with friends and family. Our future age predictor helps you plan for retirement, education, or any age-related milestone.",
     titleSize: "medium",
     descriptionSize: "small",
