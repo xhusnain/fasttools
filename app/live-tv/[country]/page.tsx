@@ -1,7 +1,6 @@
 // Country Detail Page - Dynamic Route
 
 import { getCountryChannels, getAllCountries } from '@/services/iptv.service';
-import { ChannelList } from '@/components/iptv/channel-list';
 import { CountryChannelDashboard } from '@/components/iptv/country-channel-dashboard';
 import { LegalDisclaimer } from '@/components/iptv/legal-disclaimer';
 import { generateCountrySEO } from '@/components/iptv/helpers/seo-generator';
@@ -20,8 +19,6 @@ interface CountryPageProps {
 
 export async function generateStaticParams() {
     const countries = await getAllCountries();
-
-    // Generate static pages for top 50 countries
     return countries.slice(0, 50).map((country) => ({
         country: country.code,
     }));
@@ -33,7 +30,7 @@ export async function generateMetadata({ params }: CountryPageProps): Promise<Me
 
     if (!countryData) {
         return {
-            title: 'Country Not Found | FastTools',
+            title: 'Country Not Found',
         };
     }
 
@@ -66,7 +63,6 @@ export default async function CountryPage({ params }: CountryPageProps) {
     return (
         <div className="min-h-screen bg-background">
             <div className="container mx-auto px-4 py-12 space-y-8">
-                {/* Back Button */}
                 <Link
                     href="/live-tv"
                     className="inline-flex items-center gap-2 text-sm text-muted-foreground hover:text-primary transition-colors"
@@ -74,8 +70,6 @@ export default async function CountryPage({ params }: CountryPageProps) {
                     <ArrowLeft className="h-4 w-4" />
                     Back to all countries
                 </Link>
-
-                {/* Header */}
                 <div className="grid lg:grid-cols-3 gap-8 items-start">
                     <div className="lg:col-span-2 space-y-4">
                         <div className="flex flex-row items-center gap-3 md:gap-4 select-none">
@@ -88,14 +82,10 @@ export default async function CountryPage({ params }: CountryPageProps) {
                             </div>
                         </div>
                     </div>
-
-                    {/* Ad Space - Top Right */}
                     <div className="flex justify-center lg:justify-end">
                         <SquareAd />
                     </div>
                 </div>
-
-                {/* Filterable Channel List */}
                 <div className="space-y-6">
                     <div className="flex items-center gap-3">
                         <Tv className="h-6 w-6 text-primary" />
@@ -103,11 +93,7 @@ export default async function CountryPage({ params }: CountryPageProps) {
                     </div>
                     <CountryChannelDashboard initialChannels={channels} countryCode={country.code} />
                 </div>
-
-                {/* Legal Disclaimer */}
                 <LegalDisclaimer />
-
-                {/* SEO Content */}
                 <div className="prose prose-invert max-w-none">
                     <div
                         className="text-muted-foreground space-y-4"
