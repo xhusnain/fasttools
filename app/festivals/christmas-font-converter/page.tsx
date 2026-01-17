@@ -1,4 +1,9 @@
-import { ChristmasFontConverter } from "@/components/festivals/christmas-font-converter"
+import dynamic from "next/dynamic"
+import { ToolLoader } from "@/components/common/tool-loader"
+
+const ChristmasFontConverter = dynamic(() => import("@/components/festivals/christmas-font-converter").then(mod => mod.ChristmasFontConverter), {
+    loading: () => <ToolLoader />
+})
 import { ChristmasTheme } from "@/components/festivals/christmas-theme"
 import { ToolPageLayout } from "@/components/common/tool-page-layout"
 import { createToolConfig } from "@/lib/create-tool-config"

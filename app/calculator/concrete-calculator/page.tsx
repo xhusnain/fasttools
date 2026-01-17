@@ -1,7 +1,12 @@
 import type { Metadata } from "next"
 import Image from "next/image"
 import { ToolPageLayout } from "@/components/common/tool-page-layout"
-import { ConcreteCalculator } from "@/components/calculators/concrete-calculator"
+import dynamic from "next/dynamic"
+import { ToolLoader } from "@/components/common/tool-loader"
+
+const ConcreteCalculator = dynamic(() => import("@/components/calculators/concrete-calculator").then(mod => mod.ConcreteCalculator), {
+  loading: () => <ToolLoader />
+})
 import { createMetadata } from "@/lib/metadata-base"
 import {
   Calculator,
@@ -144,20 +149,20 @@ export default function ConcreteCalculatorPage() {
             Understanding how many bags you need per cubic yard helps you estimate material requirements and costs. A single cubic yard of concrete weighs approximately 3,600-4,000 pounds depending on the mix:
           </p>
           <div className="overflow-x-auto">
-          <GTable>
-            <thead className="bg-muted text-foreground font-semibold">
-              <tr>
-                <th className="p-3 text-left">Bag Size</th>
-                <th className="p-3 text-left">Bags per Cubic Yard</th>
-                <th className="p-3 text-left">Volume per Bag</th>
-              </tr>
-            </thead>
-            <tbody className="divide-y divide-border text-sm">
-              <tr><td className="p-3 font-semibold">80 lb Bag</td><td className="p-3">45 Bags</td><td className="p-3">0.60 cu ft</td></tr>
-              <tr><td className="p-3 font-semibold">60 lb Bag</td><td className="p-3">60 Bags</td><td className="p-3">0.45 cu ft</td></tr>
-              <tr><td className="p-3 font-semibold">40 lb Bag</td><td className="p-3">90 Bags</td><td className="p-3">0.30 cu ft</td></tr>
-            </tbody>
-          </GTable>
+            <GTable>
+              <thead className="bg-muted text-foreground font-semibold">
+                <tr>
+                  <th className="p-3 text-left">Bag Size</th>
+                  <th className="p-3 text-left">Bags per Cubic Yard</th>
+                  <th className="p-3 text-left">Volume per Bag</th>
+                </tr>
+              </thead>
+              <tbody className="divide-y divide-border text-sm">
+                <tr><td className="p-3 font-semibold">80 lb Bag</td><td className="p-3">45 Bags</td><td className="p-3">0.60 cu ft</td></tr>
+                <tr><td className="p-3 font-semibold">60 lb Bag</td><td className="p-3">60 Bags</td><td className="p-3">0.45 cu ft</td></tr>
+                <tr><td className="p-3 font-semibold">40 lb Bag</td><td className="p-3">90 Bags</td><td className="p-3">0.30 cu ft</td></tr>
+              </tbody>
+            </GTable>
           </div>
         </article>
 
@@ -351,42 +356,42 @@ export default function ConcreteCalculatorPage() {
             Different concrete projects require different mix strengths and ratios. Understanding these options helps you choose the right mix for your specific project:
           </p>
           <div className="overflow-x-auto">
-          <GTable>
-            <thead className="bg-muted text-foreground font-semibold">
-              <tr>
-                <th className="p-3 text-left">Mix Type</th>
-                <th className="p-3 text-left">Strength (PSI)</th>
-                <th className="p-3 text-left">Ratio (C:S:G)</th>
-                <th className="p-3 text-left">Best For</th>
-              </tr>
-            </thead>
-            <tbody className="divide-y divide-border text-sm">
-              <tr>
-                <td className="p-3 font-semibold">Standard Mix</td>
-                <td className="p-3">3000 PSI</td>
-                <td className="p-3">1:2:3</td>
-                <td className="p-3 text-muted-foreground">Patios, walkways, general slabs.</td>
-              </tr>
-              <tr>
-                <td className="p-3 font-semibold">High Strength</td>
-                <td className="p-3">4000+ PSI</td>
-                <td className="p-3">1:1.5:2.5</td>
-                <td className="p-3 text-muted-foreground">Driveways, foundations, structural work.</td>
-              </tr>
-              <tr>
-                <td className="p-3 font-semibold">Lightweight</td>
-                <td className="p-3">2500 PSI</td>
-                <td className="p-3">1:1.5:2</td>
-                <td className="p-3 text-muted-foreground">Roof decks, non-structural filling.</td>
-              </tr>
-              <tr>
-                <td className="p-3 font-semibold">Fiber Reinforced</td>
-                <td className="p-3">3500 PSI</td>
-                <td className="p-3">1:2:3</td>
-                <td className="p-3 text-muted-foreground">Crack resistance, high impact zones.</td>
-              </tr>
-            </tbody>
-          </GTable>
+            <GTable>
+              <thead className="bg-muted text-foreground font-semibold">
+                <tr>
+                  <th className="p-3 text-left">Mix Type</th>
+                  <th className="p-3 text-left">Strength (PSI)</th>
+                  <th className="p-3 text-left">Ratio (C:S:G)</th>
+                  <th className="p-3 text-left">Best For</th>
+                </tr>
+              </thead>
+              <tbody className="divide-y divide-border text-sm">
+                <tr>
+                  <td className="p-3 font-semibold">Standard Mix</td>
+                  <td className="p-3">3000 PSI</td>
+                  <td className="p-3">1:2:3</td>
+                  <td className="p-3 text-muted-foreground">Patios, walkways, general slabs.</td>
+                </tr>
+                <tr>
+                  <td className="p-3 font-semibold">High Strength</td>
+                  <td className="p-3">4000+ PSI</td>
+                  <td className="p-3">1:1.5:2.5</td>
+                  <td className="p-3 text-muted-foreground">Driveways, foundations, structural work.</td>
+                </tr>
+                <tr>
+                  <td className="p-3 font-semibold">Lightweight</td>
+                  <td className="p-3">2500 PSI</td>
+                  <td className="p-3">1:1.5:2</td>
+                  <td className="p-3 text-muted-foreground">Roof decks, non-structural filling.</td>
+                </tr>
+                <tr>
+                  <td className="p-3 font-semibold">Fiber Reinforced</td>
+                  <td className="p-3">3500 PSI</td>
+                  <td className="p-3">1:2:3</td>
+                  <td className="p-3 text-muted-foreground">Crack resistance, high impact zones.</td>
+                </tr>
+              </tbody>
+            </GTable>
           </div>
         </article>
 
@@ -396,22 +401,22 @@ export default function ConcreteCalculatorPage() {
             Common Concrete Calculation Mistakes to Avoid
           </h2>
           <div className="bg-destructive/5 border border-destructive/20 rounded-xl p-6">
-          <ul className="space-y-4 text-sm text-muted-foreground">
-            <li className="flex gap-3">
-              <div className="min-w-6 h-6 rounded-full bg-destructive/10 flex items-center justify-center text-destructive font-bold text-xs">!</div>
-              <div>
-                <strong className="text-foreground block mb-1">Forgetting the Waste Factor</strong>
-                Projects rarely go perfectly. Spillage, uneven ground, and formwork deflection can eat up your concrete. We recommend adding <strong>5-10% extra</strong> to your order to avoid running short mid-pour.
-              </div>
-            </li>
-            <li className="flex gap-3">
-              <div className="min-w-6 h-6 rounded-full bg-destructive/10 flex items-center justify-center text-destructive font-bold text-xs">!</div>
-              <div>
-                <strong className="text-foreground block mb-1">Ignoring Ground Slope</strong>
-                If your ground isn't perfectly level, your slab thickness will vary. Measure the depth at multiple points and use the average, or better yet, grade the soil properly before pouring.
-              </div>
-            </li>
-          </ul>
+            <ul className="space-y-4 text-sm text-muted-foreground">
+              <li className="flex gap-3">
+                <div className="min-w-6 h-6 rounded-full bg-destructive/10 flex items-center justify-center text-destructive font-bold text-xs">!</div>
+                <div>
+                  <strong className="text-foreground block mb-1">Forgetting the Waste Factor</strong>
+                  Projects rarely go perfectly. Spillage, uneven ground, and formwork deflection can eat up your concrete. We recommend adding <strong>5-10% extra</strong> to your order to avoid running short mid-pour.
+                </div>
+              </li>
+              <li className="flex gap-3">
+                <div className="min-w-6 h-6 rounded-full bg-destructive/10 flex items-center justify-center text-destructive font-bold text-xs">!</div>
+                <div>
+                  <strong className="text-foreground block mb-1">Ignoring Ground Slope</strong>
+                  If your ground isn't perfectly level, your slab thickness will vary. Measure the depth at multiple points and use the average, or better yet, grade the soil properly before pouring.
+                </div>
+              </li>
+            </ul>
           </div>
         </article>
       </div>

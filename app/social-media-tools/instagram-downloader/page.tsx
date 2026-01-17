@@ -4,7 +4,13 @@ import {
   X, CheckCircle2
 } from "lucide-react"
 import { getCurrentYear } from "@/lib/utils"
-import { InstagramDownloader } from "@/components/social-media/instagram-downloader/instagram-downloader";
+import dynamic from "next/dynamic"
+
+const InstagramDownloader = dynamic(() => import("@/components/social-media/instagram-downloader/instagram-downloader").then(mod => mod.InstagramDownloader), {
+  loading: () => <div className="min-h-[600px] flex items-center justify-center">
+    <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-primary"></div>
+  </div>
+})
 
 const toolConfig = createToolConfig({
   toolName: "Instagram Downloader - Save Videos & Reels",

@@ -1,4 +1,9 @@
-import { CreditCardPayoff } from "@/components/finance/credit-card-payoff"
+import dynamic from "next/dynamic"
+import { ToolLoader } from "@/components/common/tool-loader"
+
+const CreditCardPayoff = dynamic(() => import("@/components/finance/credit-card-payoff").then(mod => mod.CreditCardPayoff), {
+  loading: () => <ToolLoader />
+})
 import { ToolPageLayout } from "@/components/common/tool-page-layout"
 import { createMetadata } from "@/lib/metadata-base"
 import { Calculator, Target, TrendingUp, BarChart3, CreditCard, Award, DollarSign, Percent, Zap, HelpCircle, ExternalLink, PiggyBank } from "lucide-react"

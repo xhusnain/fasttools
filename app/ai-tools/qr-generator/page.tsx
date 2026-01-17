@@ -1,8 +1,14 @@
 import type { Metadata } from "next"
-import { AiQrGenerator } from "@/components/ai/ai-qr-generator"
+import dynamic from "next/dynamic"
 import { ToolPageLayout } from "@/components/common/tool-page-layout"
+import { ToolLoader } from "@/components/common/tool-loader"
 import { createMetadata } from "@/lib/metadata-base"
 import { GTable } from "@/ui/gtable"
+
+const AiQrGenerator = dynamic(
+  () => import("@/components/ai/ai-qr-generator").then(mod => mod.AiQrGenerator),
+  { loading: () => <ToolLoader /> }
+)
 import { QrCode, Sparkles, Target, BookOpen, Shield, Download, Zap, Globe, Smartphone } from "lucide-react"
 
 // Auto-update year

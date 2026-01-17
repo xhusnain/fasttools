@@ -1,6 +1,12 @@
-import { PDFToImage } from "@/components/pdf/pdf-to-image"
+import dynamic from "next/dynamic"
 import { ToolPageLayout } from "@/components/common/tool-page-layout"
+import { ToolLoader } from "@/components/common/tool-loader"
 import { createToolConfig } from "@/lib/create-tool-config"
+
+const PDFToImage = dynamic(
+  () => import("@/components/pdf/pdf-to-image").then(mod => mod.PDFToImage),
+  { loading: () => <ToolLoader /> }
+)
 
 const toolConfig = createToolConfig({
   toolName: "PDF to Image Converter",

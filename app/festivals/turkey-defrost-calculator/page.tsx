@@ -1,4 +1,9 @@
-import { TurkeyDefrostCalculator } from "@/components/festivals/turkey-defrost-calculator"
+import dynamic from "next/dynamic"
+import { ToolLoader } from "@/components/common/tool-loader"
+
+const TurkeyDefrostCalculator = dynamic(() => import("@/components/festivals/turkey-defrost-calculator").then(mod => mod.TurkeyDefrostCalculator), {
+    loading: () => <ToolLoader />
+})
 import { ToolPageLayout } from "@/components/common/tool-page-layout"
 import { createToolConfig } from "@/lib/create-tool-config"
 import { getCurrentYear } from "@/lib/utils"

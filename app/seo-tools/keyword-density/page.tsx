@@ -1,6 +1,12 @@
-import { KeywordDensityChecker } from "@/components/dev-tools/keyword-density-checker"
+import dynamic from "next/dynamic"
 import { ToolPageLayout } from "@/components/common/tool-page-layout"
+import { ToolLoader } from "@/components/common/tool-loader"
 import { createToolConfig } from "@/lib/create-tool-config"
+
+const KeywordDensityChecker = dynamic(
+  () => import("@/components/dev-tools/keyword-density-checker").then(mod => mod.KeywordDensityChecker),
+  { loading: () => <ToolLoader /> }
+)
 
 const toolConfig = createToolConfig({
   toolName: "Keyword Density Checker",

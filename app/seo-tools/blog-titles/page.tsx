@@ -1,6 +1,12 @@
-import { BlogTitleGenerator } from "@/components/ai/blog-title-generator"
+import dynamic from "next/dynamic"
 import { ToolPageLayout } from "@/components/common/tool-page-layout"
+import { ToolLoader } from "@/components/common/tool-loader"
 import { createToolConfig } from "@/lib/create-tool-config"
+
+const BlogTitleGenerator = dynamic(
+  () => import("@/components/ai/blog-title-generator").then(mod => mod.BlogTitleGenerator),
+  { loading: () => <ToolLoader /> }
+)
 
 const toolConfig = createToolConfig({
   toolName: "Blog Title Generator",

@@ -1,8 +1,14 @@
 import type { Metadata } from "next"
+import dynamic from "next/dynamic"
 import { ToolPageLayout } from "@/components/common/tool-page-layout"
-import { BMICalculatorPageContent } from "@/components/health/bmi-calculator-page-content"
+import { ToolLoader } from "@/components/common/tool-loader"
 import { createMetadata } from "@/lib/metadata-base"
 import { GTable } from "@/ui/gtable"
+
+const BMICalculatorPageContent = dynamic(
+  () => import("@/components/health/bmi-calculator-page-content").then((mod) => mod.BMICalculatorPageContent),
+  { loading: () => <ToolLoader /> }
+)
 import { Brain, Activity, Target, BookOpen, AlertTriangle, Users, TrendingUp, Shield, Calculator, Heart, Info, Scale } from "lucide-react"
 
 const baseMetadata = createMetadata({

@@ -1,6 +1,12 @@
-import { ImageBackgroundRemover } from "@/components/image/image-background-remover"
+import dynamic from "next/dynamic"
 import { ToolPageLayout } from "@/components/common/tool-page-layout"
+import { ToolLoader } from "@/components/common/tool-loader"
 import { createToolConfig } from "@/lib/create-tool-config"
+
+const ImageBackgroundRemover = dynamic(
+    () => import("@/components/image/image-background-remover").then(mod => mod.ImageBackgroundRemover),
+    { loading: () => <ToolLoader /> }
+)
 
 const toolConfig = createToolConfig({
     toolName: "Image Background Remover",

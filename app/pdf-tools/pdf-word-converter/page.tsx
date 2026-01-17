@@ -1,6 +1,12 @@
-import { PDFWordConverter } from "@/components/pdf/pdf-word-converter"
+import dynamic from "next/dynamic"
 import { ToolPageLayout } from "@/components/common/tool-page-layout"
+import { ToolLoader } from "@/components/common/tool-loader"
 import { createToolConfig } from "@/lib/create-tool-config"
+
+const PDFWordConverter = dynamic(
+  () => import("@/components/pdf/pdf-word-converter").then(mod => mod.PDFWordConverter),
+  { loading: () => <ToolLoader /> }
+)
 
 const toolConfig = createToolConfig({
   toolName: "PDF to Word & Word to PDF Converter",

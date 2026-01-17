@@ -1,4 +1,10 @@
-import { YoutubeTagExtractor } from "@/components/social-media/youtube-tag-extractor"
+import dynamic from "next/dynamic"
+
+const YoutubeTagExtractor = dynamic(() => import("@/components/social-media/youtube-tag-extractor").then(mod => mod.YoutubeTagExtractor), {
+  loading: () => <div className="min-h-[600px] flex items-center justify-center">
+    <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-primary"></div>
+  </div>
+})
 import { ToolPageLayout } from "@/components/common/tool-page-layout"
 import { createToolConfig } from "@/lib/create-tool-config"
 import {

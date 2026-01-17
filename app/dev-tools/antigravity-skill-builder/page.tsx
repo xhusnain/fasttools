@@ -1,7 +1,12 @@
 import type { Metadata } from "next"
 import { ToolPageLayout } from "@/components/common/tool-page-layout"
 import { createMetadata } from "@/lib/metadata-base"
-import { AgentSkillBuilder } from "@/components/ai-tools/agent-skill-builder"
+import dynamic from "next/dynamic"
+import { ToolLoader } from "@/components/common/tool-loader"
+
+const AgentSkillBuilder = dynamic(() => import("@/components/ai-tools/agent-skill-builder").then(mod => mod.AgentSkillBuilder), {
+    loading: () => <ToolLoader />
+})
 
 const currentYear = new Date().getFullYear()
 

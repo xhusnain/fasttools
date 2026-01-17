@@ -1,6 +1,12 @@
-import { PDFUnlocker } from "@/components/pdf/pdf-unlocker"
+import dynamic from "next/dynamic"
 import { ToolPageLayout } from "@/components/common/tool-page-layout"
+import { ToolLoader } from "@/components/common/tool-loader"
 import { createToolConfig } from "@/lib/create-tool-config"
+
+const PDFUnlocker = dynamic(
+  () => import("@/components/pdf/pdf-unlocker").then(mod => mod.PDFUnlocker),
+  { loading: () => <ToolLoader /> }
+)
 
 const toolConfig = createToolConfig({
   toolName: "PDF Unlocker",

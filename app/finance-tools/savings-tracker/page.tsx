@@ -1,4 +1,9 @@
-import { SavingsGoalTracker } from "@/components/finance/savings-goal-tracker"
+import dynamic from "next/dynamic"
+import { ToolLoader } from "@/components/common/tool-loader"
+
+const SavingsGoalTracker = dynamic(() => import("@/components/finance/savings-goal-tracker").then(mod => mod.SavingsGoalTracker), {
+  loading: () => <ToolLoader />
+})
 import { ToolPageLayout } from "@/components/common/tool-page-layout"
 import { createMetadata } from "@/lib/metadata-base"
 import { Calculator, PiggyBank, CreditCard, FileText } from "lucide-react"

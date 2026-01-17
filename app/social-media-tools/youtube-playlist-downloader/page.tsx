@@ -2,7 +2,13 @@ import { ToolPageLayout } from "@/components/common/tool-page-layout"
 import Image from "next/image"
 import { createToolConfig, UnifiedToolConfig } from "@/lib/create-tool-config"
 import { Shield, Smartphone, Monitor, List, CheckCircle2 } from "lucide-react"
-import { YoutubePlaylistDownloader } from "@/components/social-media/youtube-playlist-downloader/youtube-playlist-downloader";
+import dynamic from "next/dynamic"
+
+const YoutubePlaylistDownloader = dynamic(() => import("@/components/social-media/youtube-playlist-downloader/youtube-playlist-downloader").then(mod => mod.YoutubePlaylistDownloader), {
+    loading: () => <div className="min-h-[600px] flex items-center justify-center">
+        <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-primary"></div>
+    </div>
+})
 
 
 const configBody: UnifiedToolConfig = {

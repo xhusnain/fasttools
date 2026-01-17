@@ -1,7 +1,13 @@
-import { BirthdayCountdown } from "@/components/calculators/birthday-countdown"
+import dynamic from "next/dynamic"
 import { ToolPageLayout } from "@/components/common/tool-page-layout"
+import { ToolLoader } from "@/components/common/tool-loader"
 import { createToolConfig } from "@/lib/create-tool-config"
 import { getCurrentYear } from "@/lib/utils"
+
+const BirthdayCountdown = dynamic(
+  () => import("@/components/calculators/birthday-countdown").then(mod => mod.BirthdayCountdown),
+  { loading: () => <ToolLoader /> }
+)
 import { Cake, Clock, Calendar, Gift, ArrowRight, CheckCircle, HelpCircle, Star } from "lucide-react"
 
 const toolConfig = createToolConfig({

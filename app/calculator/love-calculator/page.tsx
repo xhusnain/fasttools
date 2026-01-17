@@ -1,6 +1,11 @@
 import type { Metadata } from "next"
 import { ToolPageLayout } from "@/components/common/tool-page-layout"
-import { LoveCalculator } from "@/components/calculators/love-calculator"
+import dynamic from "next/dynamic"
+import { ToolLoader } from "@/components/common/tool-loader"
+
+const LoveCalculator = dynamic(() => import("@/components/calculators/love-calculator").then(mod => mod.LoveCalculator), {
+  loading: () => <ToolLoader />
+})
 import { createMetadata } from "@/lib/metadata-base"
 import { Heart, Users, Zap, Target, Sparkles, Star, Gift, Flower2, Calculator, TrendingUp, BookOpen, Smile, AlertCircle, Percent, Hash, Clock, Brain, Shield, AlertTriangle, CheckCircle } from "lucide-react"
 import { GTable } from "@/ui/gtable"
@@ -293,19 +298,19 @@ export default function LoveCalculatorPage() {
           </p>
           <div className="overflow-x-auto">
             <GTable>
-            <thead className="bg-muted text-foreground font-semibold">
-              <tr>
-                <th className="p-3 text-left">Percentage</th>
-                <th className="p-3 text-left">Compatibility Level</th>
-                <th className="p-3 text-left">Relationship Vibe</th>
-              </tr>
-            </thead>
-            <tbody className="divide-y divide-border text-sm">
-              <tr><td className="p-3 font-semibold">91% - 100%</td><td className="p-3">Perfect Match</td><td className="p-3 text-muted-foreground">Soulmate potential, high-level harmony.</td></tr>
-              <tr><td className="p-3 font-semibold">61% - 90%</td><td className="p-3">Great Match</td><td className="p-3 text-muted-foreground">Strong connection, great communication.</td></tr>
-              <tr><td className="p-3 font-semibold">31% - 60%</td><td className="p-3">Moderate Match</td><td className="p-3 text-muted-foreground">Growing potential, needs shared efforts.</td></tr>
-              <tr><td className="p-3 font-semibold">0% - 30%</td><td className="p-3">Challenging Match</td><td className="p-3 text-muted-foreground">Opposition creates friction or growth.</td></tr>
-            </tbody>
+              <thead className="bg-muted text-foreground font-semibold">
+                <tr>
+                  <th className="p-3 text-left">Percentage</th>
+                  <th className="p-3 text-left">Compatibility Level</th>
+                  <th className="p-3 text-left">Relationship Vibe</th>
+                </tr>
+              </thead>
+              <tbody className="divide-y divide-border text-sm">
+                <tr><td className="p-3 font-semibold">91% - 100%</td><td className="p-3">Perfect Match</td><td className="p-3 text-muted-foreground">Soulmate potential, high-level harmony.</td></tr>
+                <tr><td className="p-3 font-semibold">61% - 90%</td><td className="p-3">Great Match</td><td className="p-3 text-muted-foreground">Strong connection, great communication.</td></tr>
+                <tr><td className="p-3 font-semibold">31% - 60%</td><td className="p-3">Moderate Match</td><td className="p-3 text-muted-foreground">Growing potential, needs shared efforts.</td></tr>
+                <tr><td className="p-3 font-semibold">0% - 30%</td><td className="p-3">Challenging Match</td><td className="p-3 text-muted-foreground">Opposition creates friction or growth.</td></tr>
+              </tbody>
             </GTable>
           </div>
         </article>

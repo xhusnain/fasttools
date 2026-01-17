@@ -1,6 +1,12 @@
+import dynamic from "next/dynamic"
 import { ToolPageLayout } from "@/components/common/tool-page-layout"
-import { UuidGenerator } from "@/components/dev-tools/uuid-generator"
+import { ToolLoader } from "@/components/common/tool-loader"
 import { createToolConfig } from "@/lib/create-tool-config"
+
+const UuidGenerator = dynamic(
+    () => import("@/components/dev-tools/uuid-generator").then(mod => mod.UuidGenerator),
+    { loading: () => <ToolLoader /> }
+)
 
 const toolConfig = createToolConfig({
     toolName: "UUID Generator",

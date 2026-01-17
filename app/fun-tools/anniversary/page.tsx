@@ -1,7 +1,13 @@
-import { AnniversaryCalculator } from "@/components/calculators/anniversary-calculator"
+import dynamic from "next/dynamic"
 import { ToolPageLayout } from "@/components/common/tool-page-layout"
+import { ToolLoader } from "@/components/common/tool-loader"
 import { createToolConfig } from "@/lib/create-tool-config"
 import { getCurrentYear } from "@/lib/utils"
+
+const AnniversaryCalculator = dynamic(
+  () => import("@/components/calculators/anniversary-calculator").then(mod => mod.AnniversaryCalculator),
+  { loading: () => <ToolLoader /> }
+)
 import { Heart, Calendar, Clock, Gift, ArrowRight, CheckCircle, HelpCircle, Star } from "lucide-react"
 
 const toolConfig = createToolConfig({

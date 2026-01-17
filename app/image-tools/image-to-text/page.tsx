@@ -1,6 +1,12 @@
-import { ImageToText } from "@/components/image/image-to-text"
+import dynamic from "next/dynamic"
 import { ToolPageLayout } from "@/components/common/tool-page-layout"
+import { ToolLoader } from "@/components/common/tool-loader"
 import { createToolConfig } from "@/lib/create-tool-config"
+
+const ImageToText = dynamic(
+  () => import("@/components/image/image-to-text").then(mod => mod.ImageToText),
+  { loading: () => <ToolLoader /> }
+)
 
 const toolConfig = createToolConfig({
   toolName: "Image to Text (OCR)",

@@ -1,7 +1,13 @@
-import { FutureAgePredictor } from "@/components/calculators/future-age-predictor"
+import dynamic from "next/dynamic"
 import { ToolPageLayout } from "@/components/common/tool-page-layout"
+import { ToolLoader } from "@/components/common/tool-loader"
 import { createToolConfig } from "@/lib/create-tool-config"
 import { getCurrentYear } from "@/lib/utils"
+
+const FutureAgePredictor = dynamic(
+  () => import("@/components/calculators/future-age-predictor").then(mod => mod.FutureAgePredictor),
+  { loading: () => <ToolLoader /> }
+)
 import { Calendar, Globe, Calculator, ArrowRight, CheckCircle, HelpCircle, Star, Clock } from "lucide-react"
 
 const toolConfig = createToolConfig({

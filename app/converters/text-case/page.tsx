@@ -1,4 +1,9 @@
-import { TextCaseConverter } from "@/components/converters/text-case-converter"
+import dynamic from "next/dynamic"
+import { ToolLoader } from "@/components/common/tool-loader"
+
+const TextCaseConverter = dynamic(() => import("@/components/converters/text-case-converter").then(mod => mod.TextCaseConverter), {
+  loading: () => <ToolLoader />
+})
 import { ToolPageLayout } from "@/components/common/tool-page-layout"
 import { createToolConfig } from "@/lib/create-tool-config"
 import { GTable } from "@/ui/gtable"

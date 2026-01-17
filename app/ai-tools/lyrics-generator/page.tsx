@@ -1,5 +1,10 @@
 import type { Metadata } from "next"
-import { AiLyricsGenerator } from "@/components/social-media/ai-lyrics-generator"
+import dynamic from "next/dynamic"
+import { ToolLoader } from "@/components/common/tool-loader"
+
+const AiLyricsGenerator = dynamic(() => import("@/components/social-media/ai-lyrics-generator").then(mod => mod.AiLyricsGenerator), {
+  loading: () => <ToolLoader />
+})
 import { ToolPageLayout } from "@/components/common/tool-page-layout"
 import { createMetadata } from "@/lib/metadata-base"
 import { GTable } from "@/ui/gtable"
@@ -308,25 +313,25 @@ export default function LyricsGeneratorPage() {
                   <td className="p-3 font-medium">AABB</td>
                   <td className="p-3 font-mono">Line 1 & 2 rhyme, Line 3 & 4 rhyme</td>
                   <td className="p-3">Simple, catchy, easy to remember</td>
-                  <td className="p-3">"I'm walking down the street (A)<br/>Feeling incomplete (A)<br/>The sun is shining bright (B)<br/>Everything feels right (B)"</td>
+                  <td className="p-3">"I'm walking down the street (A)<br />Feeling incomplete (A)<br />The sun is shining bright (B)<br />Everything feels right (B)"</td>
                 </tr>
                 <tr>
                   <td className="p-3 font-medium">ABAB</td>
                   <td className="p-3 font-mono">Line 1 & 3 rhyme, Line 2 & 4 rhyme</td>
                   <td className="p-3">Flowing, musical, professional</td>
-                  <td className="p-3">"In the morning light (A)<br/>I see your face (B)<br/>Everything feels right (A)<br/>In this special place (B)"</td>
+                  <td className="p-3">"In the morning light (A)<br />I see your face (B)<br />Everything feels right (A)<br />In this special place (B)"</td>
                 </tr>
                 <tr>
                   <td className="p-3 font-medium">ABCB</td>
                   <td className="p-3 font-mono">Line 2 & 4 rhyme, 1 & 3 don't</td>
                   <td className="p-3">Flexible, narrative, storytelling</td>
-                  <td className="p-3">"Walking through the city (A)<br/>Feeling so alone (B)<br/>Thinking about you (C)<br/>Wishing you were home (B)"</td>
+                  <td className="p-3">"Walking through the city (A)<br />Feeling so alone (B)<br />Thinking about you (C)<br />Wishing you were home (B)"</td>
                 </tr>
                 <tr>
                   <td className="p-3 font-medium">AABA</td>
                   <td className="p-3 font-mono">First 3 lines rhyme, 4th different</td>
                   <td className="p-3">Jazz, sophisticated, variation</td>
-                  <td className="p-3">"In the quiet night (A)<br/>Under starry light (A)<br/>Everything feels right (A)<br/>But something's not the same (B)"</td>
+                  <td className="p-3">"In the quiet night (A)<br />Under starry light (A)<br />Everything feels right (A)<br />But something's not the same (B)"</td>
                 </tr>
               </tbody>
             </GTable>
@@ -342,9 +347,9 @@ export default function LyricsGeneratorPage() {
             <div className="p-4 bg-muted/30 rounded-lg">
               <h4 className="font-semibold mb-2">Example 1: Pop Love Song (AABB Scheme)</h4>
               <p className="text-sm text-muted-foreground mb-2 font-mono bg-card p-3 rounded">
-                "When I see your smile, it lights up my world (A)<br/>
-                Your love is like a precious pearl (A)<br/>
-                Every moment spent with you (B)<br/>
+                "When I see your smile, it lights up my world (A)<br />
+                Your love is like a precious pearl (A)<br />
+                Every moment spent with you (B)<br />
                 Makes all my dreams come true (B)"
               </p>
               <p className="text-xs text-muted-foreground">Why it works: Simple rhyme, universal theme, emotional connection, memorable hook</p>
@@ -352,9 +357,9 @@ export default function LyricsGeneratorPage() {
             <div className="p-4 bg-muted/30 rounded-lg">
               <h4 className="font-semibold mb-2">Example 2: Rap Verse (Complex Internal Rhymes)</h4>
               <p className="text-sm text-muted-foreground mb-2 font-mono bg-card p-3 rounded">
-                "Started from the bottom, now I'm at the top (A)<br/>
-                Never gonna stop, never gonna drop (A)<br/>
-                Hustle every day, grinding non-stop (A)<br/>
+                "Started from the bottom, now I'm at the top (A)<br />
+                Never gonna stop, never gonna drop (A)<br />
+                Hustle every day, grinding non-stop (A)<br />
                 Success is mine, I'm taking my shot (A)"
               </p>
               <p className="text-xs text-muted-foreground">Why it works: Strong rhythm, motivational theme, consistent rhyme pattern, powerful imagery</p>
@@ -362,9 +367,9 @@ export default function LyricsGeneratorPage() {
             <div className="p-4 bg-muted/30 rounded-lg">
               <h4 className="font-semibold mb-2">Example 3: Country Story Song (ABAB Scheme)</h4>
               <p className="text-sm text-muted-foreground mb-2 font-mono bg-card p-3 rounded">
-                "Down a dusty road I walked alone (A)<br/>
-                Thinking about the life I've known (B)<br/>
-                Memories of home still in my mind (A)<br/>
+                "Down a dusty road I walked alone (A)<br />
+                Thinking about the life I've known (B)<br />
+                Memories of home still in my mind (A)<br />
                 Leaving all that love behind (B)"
               </p>
               <p className="text-xs text-muted-foreground">Why it works: Narrative storytelling, emotional depth, relatable theme, flowing rhyme</p>

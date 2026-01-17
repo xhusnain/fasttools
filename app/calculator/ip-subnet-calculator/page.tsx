@@ -1,6 +1,11 @@
 import type { Metadata } from "next"
 import { ToolPageLayout } from "@/components/common/tool-page-layout"
-import { IPSubnetCalculator } from "@/components/dev-tools/ip-subnet-calculator"
+import dynamic from "next/dynamic"
+import { ToolLoader } from "@/components/common/tool-loader"
+
+const IPSubnetCalculator = dynamic(() => import("@/components/dev-tools/ip-subnet-calculator").then(mod => mod.IPSubnetCalculator), {
+  loading: () => <ToolLoader />
+})
 import { createMetadata } from "@/lib/metadata-base"
 import { Network, Globe, Shield, Info, Database, Zap, Target, CheckCircle, Users, Clock, ShieldCheck, FileText, Brain, BookOpen } from "lucide-react"
 import { GTable } from "@/ui/gtable"
@@ -231,37 +236,37 @@ export default function IPSubnetCalculatorPage() {
           </p>
           <div className="overflow-x-auto">
             <GTable>
-            <thead className="bg-muted text-foreground font-semibold sticky top-0 z-10">
-              <tr>
-                <th className="p-3 text-left">CIDR</th>
-                <th className="p-3 text-left">Subnet Mask</th>
-                <th className="p-3 text-left">Addresses</th>
-                <th className="p-3 text-left">Hosts</th>
-                <th className="p-3 text-left">Class Equivalent</th>
-              </tr>
-            </thead>
-            <tbody className="divide-y divide-border bg-card">
-              {[
-                { cidr: "/32", mask: "255.255.255.255", addresses: "1", hosts: "1", class: "Host" },
-                { cidr: "/31", mask: "255.255.255.254", addresses: "2", hosts: "2 (P2P)", class: "N/A" },
-                { cidr: "/30", mask: "255.255.255.252", addresses: "4", hosts: "2", class: "A, B, C" },
-                { cidr: "/29", mask: "255.255.255.248", addresses: "8", hosts: "6", class: "A, B, C" },
-                { cidr: "/28", mask: "255.255.255.240", addresses: "16", hosts: "14", class: "A, B, C" },
-                { cidr: "/27", mask: "255.255.255.224", addresses: "32", hosts: "30", class: "A, B, C" },
-                { cidr: "/24", mask: "255.255.255.0", addresses: "256", hosts: "254", class: "Class C" },
-                { cidr: "/20", mask: "255.255.240.0", addresses: "4,096", hosts: "4,094", class: "Class B" },
-                { cidr: "/16", mask: "255.255.0.0", addresses: "65,536", hosts: "65,534", class: "Class B" },
-                { cidr: "/8", mask: "255.0.0.0", addresses: "16,777,216", hosts: "16,777,214", class: "Class A" }
-              ].map((row) => (
-                <tr key={row.cidr} className="hover:bg-muted/50 transition-colors">
-                  <td className="p-3 font-mono text-primary font-bold">{row.cidr}</td>
-                  <td className="p-3 font-mono">{row.mask}</td>
-                  <td className="p-3 text-muted-foreground">{row.addresses}</td>
-                  <td className="p-3 text-muted-foreground">{row.hosts}</td>
-                  <td className="p-3 text-sm italic">{row.class}</td>
+              <thead className="bg-muted text-foreground font-semibold sticky top-0 z-10">
+                <tr>
+                  <th className="p-3 text-left">CIDR</th>
+                  <th className="p-3 text-left">Subnet Mask</th>
+                  <th className="p-3 text-left">Addresses</th>
+                  <th className="p-3 text-left">Hosts</th>
+                  <th className="p-3 text-left">Class Equivalent</th>
                 </tr>
-              ))}
-            </tbody>
+              </thead>
+              <tbody className="divide-y divide-border bg-card">
+                {[
+                  { cidr: "/32", mask: "255.255.255.255", addresses: "1", hosts: "1", class: "Host" },
+                  { cidr: "/31", mask: "255.255.255.254", addresses: "2", hosts: "2 (P2P)", class: "N/A" },
+                  { cidr: "/30", mask: "255.255.255.252", addresses: "4", hosts: "2", class: "A, B, C" },
+                  { cidr: "/29", mask: "255.255.255.248", addresses: "8", hosts: "6", class: "A, B, C" },
+                  { cidr: "/28", mask: "255.255.255.240", addresses: "16", hosts: "14", class: "A, B, C" },
+                  { cidr: "/27", mask: "255.255.255.224", addresses: "32", hosts: "30", class: "A, B, C" },
+                  { cidr: "/24", mask: "255.255.255.0", addresses: "256", hosts: "254", class: "Class C" },
+                  { cidr: "/20", mask: "255.255.240.0", addresses: "4,096", hosts: "4,094", class: "Class B" },
+                  { cidr: "/16", mask: "255.255.0.0", addresses: "65,536", hosts: "65,534", class: "Class B" },
+                  { cidr: "/8", mask: "255.0.0.0", addresses: "16,777,216", hosts: "16,777,214", class: "Class A" }
+                ].map((row) => (
+                  <tr key={row.cidr} className="hover:bg-muted/50 transition-colors">
+                    <td className="p-3 font-mono text-primary font-bold">{row.cidr}</td>
+                    <td className="p-3 font-mono">{row.mask}</td>
+                    <td className="p-3 text-muted-foreground">{row.addresses}</td>
+                    <td className="p-3 text-muted-foreground">{row.hosts}</td>
+                    <td className="p-3 text-sm italic">{row.class}</td>
+                  </tr>
+                ))}
+              </tbody>
             </GTable>
           </div>
         </article>

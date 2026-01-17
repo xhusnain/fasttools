@@ -3,7 +3,12 @@ import Link from "next/link"
 import { ExternalLink, Code, Zap, Shield, Clock } from "lucide-react"
 import { CopyButton } from "@/components/common/copy-button"
 
-import { ApiKeyGenerator } from "@/components/dev-tools/api-key-generator"
+import dynamic from "next/dynamic"
+import { ToolLoader } from "@/components/common/tool-loader"
+
+const ApiKeyGenerator = dynamic(() => import("@/components/dev-tools/api-key-generator").then(mod => mod.ApiKeyGenerator), {
+  loading: () => <ToolLoader />
+})
 import { GHeader } from "@/ui/gheader"
 
 import { Breadcrumbs } from "@/components/common/breadcrumbs"

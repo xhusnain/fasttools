@@ -1,4 +1,9 @@
-import { TemperatureConverter } from "@/components/converters/temperature-converter"
+import dynamic from "next/dynamic"
+import { ToolLoader } from "@/components/common/tool-loader"
+
+const TemperatureConverter = dynamic(() => import("@/components/converters/temperature-converter").then(mod => mod.TemperatureConverter), {
+  loading: () => <ToolLoader />
+})
 import { ToolPageLayout } from "@/components/common/tool-page-layout"
 import { createToolConfig } from "@/lib/create-tool-config"
 import Link from "next/link"

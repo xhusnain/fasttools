@@ -1,7 +1,13 @@
 import { ToolPageLayout } from "@/components/common/tool-page-layout"
 import { createToolConfig } from "@/lib/create-tool-config"
 import { Shield, Smartphone, Monitor, Image, Video, Zap, Scale, Heart, Search, AlertTriangle, Wifi, FolderDown, Lock, Music } from "lucide-react"
-import { PinterestDownloader } from "@/components/social-media/pinterest-downloader/pinterest-downloader";
+import dynamic from "next/dynamic"
+
+const PinterestDownloader = dynamic(() => import("@/components/social-media/pinterest-downloader/pinterest-downloader").then(mod => mod.PinterestDownloader), {
+    loading: () => <div className="min-h-[600px] flex items-center justify-center">
+        <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-primary"></div>
+    </div>
+})
 
 const toolConfig = createToolConfig({
     toolName: "Pinterest Video & Image Downloader - Save HD Pins Free",

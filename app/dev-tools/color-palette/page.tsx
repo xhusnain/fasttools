@@ -1,6 +1,12 @@
+import dynamic from "next/dynamic"
 import { ToolPageLayout } from "@/components/common/tool-page-layout"
-import { ColorPaletteGenerator } from "@/components/image/color-palette-generator"
+import { ToolLoader } from "@/components/common/tool-loader"
 import { createToolConfig } from "@/lib/create-tool-config"
+
+const ColorPaletteGenerator = dynamic(
+  () => import("@/components/image/color-palette-generator").then(mod => mod.ColorPaletteGenerator),
+  { loading: () => <ToolLoader /> }
+)
 
 const toolConfig = createToolConfig({
   toolName: "Color Palette Generator",

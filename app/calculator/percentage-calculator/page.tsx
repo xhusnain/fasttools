@@ -1,6 +1,11 @@
 import type { Metadata } from "next"
 import { ToolPageLayout } from "@/components/common/tool-page-layout"
-import { PercentageCalculator } from "@/components/calculators/percentage-calculator"
+import dynamic from "next/dynamic"
+import { ToolLoader } from "@/components/common/tool-loader"
+
+const PercentageCalculator = dynamic(() => import("@/components/calculators/percentage-calculator").then(mod => mod.PercentageCalculator), {
+  loading: () => <ToolLoader />
+})
 import { createMetadata } from "@/lib/metadata-base"
 import { GTable } from "@/ui/gtable"
 import { Brain, Calculator, Target, BookOpen, Shield, Users, TrendingUp, Info, AlertTriangle, CheckCircle, Zap, Percent, DollarSign } from "lucide-react"
@@ -112,23 +117,23 @@ export default function PercentageCalculatorPage() {
           <p className="text-base text-muted-foreground leading-relaxed">
             Understanding common percentage calculations helps you use percentages effectively:
           </p>
-        <div className="space-y-3 mb-6">
-          <div>
-            <h4 className="font-semibold mb-1">Percentage Increase:</h4>
-            <p className="mb-1">Formula: ((New Value - Original Value) / Original Value) × 100</p>
-            <p className="text-sm text-muted-foreground">Example: Price increases from $100 to $125 = 25% increase</p>
+          <div className="space-y-3 mb-6">
+            <div>
+              <h4 className="font-semibold mb-1">Percentage Increase:</h4>
+              <p className="mb-1">Formula: ((New Value - Original Value) / Original Value) × 100</p>
+              <p className="text-sm text-muted-foreground">Example: Price increases from $100 to $125 = 25% increase</p>
+            </div>
+            <div>
+              <h4 className="font-semibold mb-1">Percentage Decrease:</h4>
+              <p className="mb-1">Formula: ((Original Value - New Value) / Original Value) × 100</p>
+              <p className="text-sm text-muted-foreground">Example: Price drops from $100 to $75 = 25% decrease</p>
+            </div>
+            <div>
+              <h4 className="font-semibold mb-1">Percentage Difference:</h4>
+              <p className="mb-1">Formula: (|Value1 - Value2| / ((Value1 + Value2) / 2)) × 100</p>
+              <p className="text-sm text-muted-foreground">Example: Difference between 80 and 100 = 22.22%</p>
+            </div>
           </div>
-          <div>
-            <h4 className="font-semibold mb-1">Percentage Decrease:</h4>
-            <p className="mb-1">Formula: ((Original Value - New Value) / Original Value) × 100</p>
-            <p className="text-sm text-muted-foreground">Example: Price drops from $100 to $75 = 25% decrease</p>
-          </div>
-          <div>
-            <h4 className="font-semibold mb-1">Percentage Difference:</h4>
-            <p className="mb-1">Formula: (|Value1 - Value2| / ((Value1 + Value2) / 2)) × 100</p>
-            <p className="text-sm text-muted-foreground">Example: Difference between 80 and 100 = 22.22%</p>
-          </div>
-        </div>
         </article>
 
         <article className="space-y-6">
@@ -139,14 +144,14 @@ export default function PercentageCalculatorPage() {
           <p className="text-base text-muted-foreground leading-relaxed">
             Percentages have countless practical applications in everyday life and professional contexts:
           </p>
-        <ul className="list-disc pl-6 mb-6 space-y-2">
-          <li><strong>Retail & Sales:</strong> Calculate discounts, markups, profit margins, and sales tax</li>
-          <li><strong>Education:</strong> Convert test scores, calculate GPAs, and track academic progress</li>
-          <li><strong>Finance:</strong> Compute interest rates, investment returns, and loan percentages</li>
-          <li><strong>Health:</strong> Track weight changes, body fat percentages, and fitness goals</li>
-          <li><strong>Business:</strong> Analyze growth rates, market share, and performance metrics</li>
-          <li><strong>Statistics:</strong> Express probabilities, proportions, and survey results</li>
-        </ul>
+          <ul className="list-disc pl-6 mb-6 space-y-2">
+            <li><strong>Retail & Sales:</strong> Calculate discounts, markups, profit margins, and sales tax</li>
+            <li><strong>Education:</strong> Convert test scores, calculate GPAs, and track academic progress</li>
+            <li><strong>Finance:</strong> Compute interest rates, investment returns, and loan percentages</li>
+            <li><strong>Health:</strong> Track weight changes, body fat percentages, and fitness goals</li>
+            <li><strong>Business:</strong> Analyze growth rates, market share, and performance metrics</li>
+            <li><strong>Statistics:</strong> Express probabilities, proportions, and survey results</li>
+          </ul>
         </article>
 
         <article className="space-y-6">
@@ -157,24 +162,24 @@ export default function PercentageCalculatorPage() {
           <p className="text-base text-muted-foreground leading-relaxed">
             Master these quick tricks to calculate percentages without a calculator:
           </p>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
-          <div className="bg-muted/50 p-4 rounded-lg">
-            <span className="font-bold block mb-1">To find 10%:</span>
-            <span className="text-sm">Move the decimal point one place to the left. (e.g., 10% of 250 = 25)</span>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
+            <div className="bg-muted/50 p-4 rounded-lg">
+              <span className="font-bold block mb-1">To find 10%:</span>
+              <span className="text-sm">Move the decimal point one place to the left. (e.g., 10% of 250 = 25)</span>
+            </div>
+            <div className="bg-muted/50 p-4 rounded-lg">
+              <span className="font-bold block mb-1">To find 1%:</span>
+              <span className="text-sm">Move the decimal point two places to the left. (e.g., 1% of 250 = 2.5)</span>
+            </div>
+            <div className="bg-muted/50 p-4 rounded-lg">
+              <span className="font-bold block mb-1">To find 20%:</span>
+              <span className="text-sm">Find 10%, then double it. (e.g., 10% of 50 is 5, so 20% is 10)</span>
+            </div>
+            <div className="bg-muted/50 p-4 rounded-lg">
+              <span className="font-bold block mb-1">To find 5%:</span>
+              <span className="text-sm">Find 10%, then cut it in half. (e.g., 10% of 80 is 8, so 5% is 4)</span>
+            </div>
           </div>
-          <div className="bg-muted/50 p-4 rounded-lg">
-            <span className="font-bold block mb-1">To find 1%:</span>
-            <span className="text-sm">Move the decimal point two places to the left. (e.g., 1% of 250 = 2.5)</span>
-          </div>
-          <div className="bg-muted/50 p-4 rounded-lg">
-            <span className="font-bold block mb-1">To find 20%:</span>
-            <span className="text-sm">Find 10%, then double it. (e.g., 10% of 50 is 5, so 20% is 10)</span>
-          </div>
-          <div className="bg-muted/50 p-4 rounded-lg">
-            <span className="font-bold block mb-1">To find 5%:</span>
-            <span className="text-sm">Find 10%, then cut it in half. (e.g., 10% of 80 is 8, so 5% is 4)</span>
-          </div>
-        </div>
         </article>
 
         <article className="space-y-6">
@@ -185,13 +190,13 @@ export default function PercentageCalculatorPage() {
           <p className="text-base text-muted-foreground leading-relaxed">
             Understanding common mistakes helps you calculate percentages accurately:
           </p>
-        <ul className="list-disc pl-6 mb-6 space-y-1">
-          <li>Always identify which value represents the "whole" (100%) and which is the "part"</li>
-          <li>For increase/decrease, the original value is always the reference point</li>
-          <li>Percentages can exceed 100% when the part is larger than the whole</li>
-          <li>When averaging percentages, consider the weighted average if bases differ</li>
-          <li>Round percentage results appropriately for your context (usually 2 decimal places)</li>
-        </ul>
+          <ul className="list-disc pl-6 mb-6 space-y-1">
+            <li>Always identify which value represents the "whole" (100%) and which is the "part"</li>
+            <li>For increase/decrease, the original value is always the reference point</li>
+            <li>Percentages can exceed 100% when the part is larger than the whole</li>
+            <li>When averaging percentages, consider the weighted average if bases differ</li>
+            <li>Round percentage results appropriately for your context (usually 2 decimal places)</li>
+          </ul>
         </article>
 
         <article className="space-y-6">
@@ -204,46 +209,46 @@ export default function PercentageCalculatorPage() {
           </p>
           <div className="overflow-x-auto">
             <GTable>
-            <thead className="bg-muted text-foreground font-semibold">
-              <tr>
-                <th className="p-3">Fraction</th>
-                <th className="p-3">Decimal</th>
-                <th className="p-3">Percentage</th>
-                <th className="p-3">Common Use</th>
-              </tr>
-            </thead>
-            <tbody className="divide-y divide-border text-sm">
-              <tr>
-                <td className="p-3">1/2</td>
-                <td className="p-3">0.5</td>
-                <td className="p-3 font-bold text-green-600">50%</td>
-                <td className="p-3">"Half off"</td>
-              </tr>
-              <tr>
-                <td className="p-3">1/3</td>
-                <td className="p-3">0.333...</td>
-                <td className="p-3 font-bold text-green-600">33.33%</td>
-                <td className="p-3">"One third"</td>
-              </tr>
-              <tr>
-                <td className="p-3">1/4</td>
-                <td className="p-3">0.25</td>
-                <td className="p-3 font-bold text-green-600">25%</td>
-                <td className="p-3">"Quarter"</td>
-              </tr>
-              <tr>
-                <td className="p-3">1/5</td>
-                <td className="p-3">0.2</td>
-                <td className="p-3 font-bold text-green-600">20%</td>
-                <td className="p-3">"One fifth"</td>
-              </tr>
-              <tr>
-                <td className="p-3">1/10</td>
-                <td className="p-3">0.1</td>
-                <td className="p-3 font-bold text-green-600">10%</td>
-                <td className="p-3">Decile / Tithe</td>
-              </tr>
-            </tbody>
+              <thead className="bg-muted text-foreground font-semibold">
+                <tr>
+                  <th className="p-3">Fraction</th>
+                  <th className="p-3">Decimal</th>
+                  <th className="p-3">Percentage</th>
+                  <th className="p-3">Common Use</th>
+                </tr>
+              </thead>
+              <tbody className="divide-y divide-border text-sm">
+                <tr>
+                  <td className="p-3">1/2</td>
+                  <td className="p-3">0.5</td>
+                  <td className="p-3 font-bold text-green-600">50%</td>
+                  <td className="p-3">"Half off"</td>
+                </tr>
+                <tr>
+                  <td className="p-3">1/3</td>
+                  <td className="p-3">0.333...</td>
+                  <td className="p-3 font-bold text-green-600">33.33%</td>
+                  <td className="p-3">"One third"</td>
+                </tr>
+                <tr>
+                  <td className="p-3">1/4</td>
+                  <td className="p-3">0.25</td>
+                  <td className="p-3 font-bold text-green-600">25%</td>
+                  <td className="p-3">"Quarter"</td>
+                </tr>
+                <tr>
+                  <td className="p-3">1/5</td>
+                  <td className="p-3">0.2</td>
+                  <td className="p-3 font-bold text-green-600">20%</td>
+                  <td className="p-3">"One fifth"</td>
+                </tr>
+                <tr>
+                  <td className="p-3">1/10</td>
+                  <td className="p-3">0.1</td>
+                  <td className="p-3 font-bold text-green-600">10%</td>
+                  <td className="p-3">Decile / Tithe</td>
+                </tr>
+              </tbody>
             </GTable>
           </div>
         </article>

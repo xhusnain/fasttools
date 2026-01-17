@@ -1,7 +1,13 @@
 import { ToolPageLayout } from "@/components/common/tool-page-layout"
 import { createToolConfig } from "@/lib/create-tool-config"
 import { AlertCircle, Shield, Smartphone, Monitor, Sparkles, Palette, Zap, Scale, Music, Eye, AlertTriangle, Globe } from "lucide-react"
-import { CapcutDownloader } from "@/components/social-media/capcut-downloader/capcut-downloader";
+import dynamic from "next/dynamic"
+
+const CapcutDownloader = dynamic(() => import("@/components/social-media/capcut-downloader/capcut-downloader").then(mod => mod.CapcutDownloader), {
+    loading: () => <div className="min-h-[600px] flex items-center justify-center">
+        <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-primary"></div>
+    </div>
+})
 
 const toolConfig = createToolConfig({
     toolName: "CapCut Video Downloader Without Watermark - Free HD",

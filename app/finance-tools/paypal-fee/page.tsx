@@ -1,10 +1,14 @@
-import { PayPalFeeCalculator } from "@/components/finance/paypal-fee-calculator"
+import dynamic from "next/dynamic"
+import { ToolLoader } from "@/components/common/tool-loader"
+
+const PayPalFeeCalculator = dynamic(() => import("@/components/finance/paypal-fee-calculator").then(mod => mod.PayPalFeeCalculator), {
+  loading: () => <ToolLoader />
+})
 import { ToolPageLayout } from "@/components/common/tool-page-layout"
 import { createMetadata } from "@/lib/metadata-base"
 import { Calculator, DollarSign, Target, TrendingUp, BarChart3, Copy, HelpCircle, Lightbulb, Star, Info } from "lucide-react"
 import { GImage } from "@/ui/gimage"
 import type { Metadata } from "next"
-import { getCurrentYear } from "@/lib/utils"
 
 const TOOL_TITLE = "PayPal Fee Calculator - Calculate Transaction Fees"
 const TOOL_NAME = "PayPal Fee Calculator"
@@ -399,7 +403,7 @@ export default function PayPalFeeCalculatorPage() {
   return (
     <ToolPageLayout
       header={{
-        title: `PayPal Fee Calculator ()`,
+        title: `Free PayPal Fee Calculator`,
         description: "Calculate PayPal fees, net amounts & charges. Perfect for sellers & freelancers. Understand domestic & international costs instantly.",
         titleSize: "medium",
         descriptionSize: "small",

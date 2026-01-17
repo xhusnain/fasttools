@@ -1,4 +1,9 @@
-import { InvoiceGenerator } from "@/components/finance/invoice-generator"
+import dynamic from "next/dynamic"
+import { ToolLoader } from "@/components/common/tool-loader"
+
+const InvoiceGenerator = dynamic(() => import("@/components/finance/invoice-generator").then(mod => mod.InvoiceGenerator), {
+  loading: () => <ToolLoader />
+})
 import { ToolPageLayout } from "@/components/common/tool-page-layout"
 import { createMetadata } from "@/lib/metadata-base"
 import { Code, Globe, Calculator, ArrowRight, FileText, DollarSign, Percent, Users } from "lucide-react"

@@ -1,5 +1,10 @@
 import { ToolPageLayout } from "@/components/common/tool-page-layout"
-import { ROASCalculator } from "@/components/calculators/roas-calculator"
+import dynamic from "next/dynamic"
+import { ToolLoader } from "@/components/common/tool-loader"
+
+const ROASCalculator = dynamic(() => import("@/components/calculators/roas-calculator").then(mod => mod.ROASCalculator), {
+    loading: () => <ToolLoader />
+})
 import { createMetadata } from "@/lib/metadata-base"
 import Image from "next/image"
 import { GTable } from "@/ui/gtable"

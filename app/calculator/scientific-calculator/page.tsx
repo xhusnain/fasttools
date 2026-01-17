@@ -1,4 +1,9 @@
-import { ScientificCalculatorWrapper } from "@/components/calculators/scientific-calculator-wrapper"
+import dynamic from "next/dynamic"
+import { ToolLoader } from "@/components/common/tool-loader"
+
+const ScientificCalculatorWrapper = dynamic(() => import("@/components/calculators/scientific-calculator-wrapper").then(mod => mod.ScientificCalculatorWrapper), {
+  loading: () => <ToolLoader />
+})
 import { ToolPageLayout } from "@/components/common/tool-page-layout"
 import { createToolConfig } from "@/lib/create-tool-config"
 import { Calculator, Brain, Pi } from "lucide-react"

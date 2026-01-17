@@ -1,6 +1,11 @@
 import type { Metadata } from "next"
 import { ToolPageLayout } from "@/components/common/tool-page-layout"
-import { DateDifferenceCalculator } from "@/components/calculators/date-difference-calculator"
+import dynamic from "next/dynamic"
+import { ToolLoader } from "@/components/common/tool-loader"
+
+const DateDifferenceCalculator = dynamic(() => import("@/components/calculators/date-difference-calculator").then(mod => mod.DateDifferenceCalculator), {
+  loading: () => <ToolLoader />
+})
 import { createMetadata } from "@/lib/metadata-base"
 import { GTable } from "@/ui/gtable"
 import { Brain, Calendar, Target, BookOpen, Shield, Users, TrendingUp, Calculator, Clock, AlertTriangle, Info, Zap, CheckCircle } from "lucide-react"

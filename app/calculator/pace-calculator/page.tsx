@@ -1,6 +1,11 @@
 import type { Metadata } from "next"
 import { ToolPageLayout } from "@/components/common/tool-page-layout"
-import PaceCalculator from "@/components/calculators/pace-calculator"
+import dynamic from "next/dynamic"
+import { ToolLoader } from "@/components/common/tool-loader"
+
+const PaceCalculator = dynamic(() => import("@/components/calculators/pace-calculator"), {
+  loading: () => <ToolLoader />
+})
 import { createMetadata } from "@/lib/metadata-base"
 import { GTable } from "@/ui/gtable"
 import { Brain, Calculator, Target, BookOpen, Shield, Users, TrendingUp, Info, AlertTriangle, CheckCircle, Zap, Clock, Heart } from "lucide-react"
@@ -125,52 +130,52 @@ export default function PaceCalculatorPage() {
           </p>
           <div className="overflow-x-auto">
             <GTable>
-            <thead className="bg-muted text-foreground font-semibold">
-              <tr>
-                <th className="p-3 text-left">Pace / Mile</th>
-                <th className="p-3 text-left">Pace / Km</th>
-                <th className="p-3 text-left">5K Time</th>
-                <th className="p-3 text-left">Half Marathon</th>
-                <th className="p-3 text-left">Full Marathon</th>
-              </tr>
-            </thead>
-            <tbody className="divide-y divide-border text-sm">
-              <tr>
-                <td className="p-3 font-semibold text-foreground">6:00 min</td>
-                <td className="p-3">3:44 min</td>
-                <td className="p-3">18:38</td>
-                <td className="p-3">1:18:36</td>
-                <td className="p-3">2:37:19</td>
-              </tr>
-              <tr>
-                <td className="p-3 font-semibold text-foreground">7:00 min</td>
-                <td className="p-3">4:21 min</td>
-                <td className="p-3">21:45</td>
-                <td className="p-3">1:31:42</td>
-                <td className="p-3">3:03:32</td>
-              </tr>
-              <tr>
-                <td className="p-3 font-semibold text-foreground">8:00 min</td>
-                <td className="p-3">4:58 min</td>
-                <td className="p-3">24:51</td>
-                <td className="p-3">1:44:48</td>
-                <td className="p-3">3:29:45</td>
-              </tr>
-              <tr>
-                <td className="p-3 font-semibold text-foreground">9:00 min</td>
-                <td className="p-3">5:36 min</td>
-                <td className="p-3">27:58</td>
-                <td className="p-3">1:57:54</td>
-                <td className="p-3">3:55:58</td>
-              </tr>
-              <tr>
-                <td className="p-3 font-semibold text-foreground">10:00 min</td>
-                <td className="p-3">6:13 min</td>
-                <td className="p-3">31:04</td>
-                <td className="p-3">2:11:00</td>
-                <td className="p-3">4:22:11</td>
-              </tr>
-            </tbody>
+              <thead className="bg-muted text-foreground font-semibold">
+                <tr>
+                  <th className="p-3 text-left">Pace / Mile</th>
+                  <th className="p-3 text-left">Pace / Km</th>
+                  <th className="p-3 text-left">5K Time</th>
+                  <th className="p-3 text-left">Half Marathon</th>
+                  <th className="p-3 text-left">Full Marathon</th>
+                </tr>
+              </thead>
+              <tbody className="divide-y divide-border text-sm">
+                <tr>
+                  <td className="p-3 font-semibold text-foreground">6:00 min</td>
+                  <td className="p-3">3:44 min</td>
+                  <td className="p-3">18:38</td>
+                  <td className="p-3">1:18:36</td>
+                  <td className="p-3">2:37:19</td>
+                </tr>
+                <tr>
+                  <td className="p-3 font-semibold text-foreground">7:00 min</td>
+                  <td className="p-3">4:21 min</td>
+                  <td className="p-3">21:45</td>
+                  <td className="p-3">1:31:42</td>
+                  <td className="p-3">3:03:32</td>
+                </tr>
+                <tr>
+                  <td className="p-3 font-semibold text-foreground">8:00 min</td>
+                  <td className="p-3">4:58 min</td>
+                  <td className="p-3">24:51</td>
+                  <td className="p-3">1:44:48</td>
+                  <td className="p-3">3:29:45</td>
+                </tr>
+                <tr>
+                  <td className="p-3 font-semibold text-foreground">9:00 min</td>
+                  <td className="p-3">5:36 min</td>
+                  <td className="p-3">27:58</td>
+                  <td className="p-3">1:57:54</td>
+                  <td className="p-3">3:55:58</td>
+                </tr>
+                <tr>
+                  <td className="p-3 font-semibold text-foreground">10:00 min</td>
+                  <td className="p-3">6:13 min</td>
+                  <td className="p-3">31:04</td>
+                  <td className="p-3">2:11:00</td>
+                  <td className="p-3">4:22:11</td>
+                </tr>
+              </tbody>
             </GTable>
           </div>
         </article>

@@ -1,4 +1,10 @@
-import { InstagramDpViewer } from "@/components/social-media/instagram-dp-viewer"
+import dynamic from "next/dynamic"
+
+const InstagramDpViewer = dynamic(() => import("@/components/social-media/instagram-dp-viewer").then(mod => mod.InstagramDpViewer), {
+  loading: () => <div className="min-h-[600px] flex items-center justify-center">
+    <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-primary"></div>
+  </div>
+})
 import { ToolPageLayout } from "@/components/common/tool-page-layout"
 import { createToolConfig } from "@/lib/create-tool-config"
 import { getCurrentYear } from "@/lib/utils"

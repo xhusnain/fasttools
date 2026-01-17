@@ -1,5 +1,10 @@
 import type { Metadata } from "next"
-import { AiPetNameGenerator } from "@/components/ai/ai-pet-name-generator"
+import dynamic from "next/dynamic"
+import { ToolLoader } from "@/components/common/tool-loader"
+
+const AiPetNameGenerator = dynamic(() => import("@/components/ai/ai-pet-name-generator").then(mod => mod.AiPetNameGenerator), {
+  loading: () => <ToolLoader />
+})
 import { ToolPageLayout } from "@/components/common/tool-page-layout"
 import { createMetadata } from "@/lib/metadata-base"
 import { GTable } from "@/ui/gtable"

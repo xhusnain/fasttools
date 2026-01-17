@@ -1,6 +1,12 @@
+import dynamic from "next/dynamic"
 import { ToolPageLayout } from "@/components/common/tool-page-layout"
-import { MarkdownPreviewer } from "@/components/dev-tools/markdown-previewer"
+import { ToolLoader } from "@/components/common/tool-loader"
 import { createToolConfig } from "@/lib/create-tool-config"
+
+const MarkdownPreviewer = dynamic(
+  () => import("@/components/dev-tools/markdown-previewer").then(mod => mod.MarkdownPreviewer),
+  { loading: () => <ToolLoader /> }
+)
 
 const toolConfig = createToolConfig({
   toolName: "Markdown Previewer",

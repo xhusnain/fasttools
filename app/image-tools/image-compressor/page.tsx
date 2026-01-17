@@ -1,6 +1,12 @@
-import { ImageCompressor } from "@/components/image/image-compressor"
+import dynamic from "next/dynamic"
 import { ToolPageLayout } from "@/components/common/tool-page-layout"
+import { ToolLoader } from "@/components/common/tool-loader"
 import { createToolConfig } from "@/lib/create-tool-config"
+
+const ImageCompressor = dynamic(
+    () => import("@/components/image/image-compressor").then(mod => mod.ImageCompressor),
+    { loading: () => <ToolLoader /> }
+)
 
 const toolConfig = createToolConfig({
     toolName: "Image Compressor",

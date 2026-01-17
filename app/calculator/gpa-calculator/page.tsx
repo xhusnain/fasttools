@@ -1,6 +1,11 @@
 import type { Metadata } from "next"
 import { ToolPageLayout } from "@/components/common/tool-page-layout"
-import { GPACalculator } from "@/components/calculators/gpa-calculator"
+import dynamic from "next/dynamic"
+import { ToolLoader } from "@/components/common/tool-loader"
+
+const GPACalculator = dynamic(() => import("@/components/calculators/gpa-calculator").then(mod => mod.GPACalculator), {
+  loading: () => <ToolLoader />
+})
 import { createMetadata } from "@/lib/metadata-base"
 import { Calculator, Award, TrendingUp, Info, Globe, Target, Users, BarChart3, Building, Clock, DollarSign, Home, FileText, Percent, BookOpen, Shield, Star, Brain, Zap, AlertTriangle, CheckCircle } from "lucide-react"
 import { GTable } from "@/ui/gtable"
@@ -96,19 +101,19 @@ export default function GPACalculatorPage() {
             </ol>
             <div className="overflow-x-auto">
               <GTable>
-              <thead className="bg-muted text-foreground font-semibold">
-                <tr>
-                  <th className="p-3 text-left">Letter Grade</th>
-                  <th className="p-3 text-left">Percentage</th>
-                  <th className="p-3 text-left">4.0 Scale</th>
-                </tr>
-              </thead>
-              <tbody className="divide-y divide-border text-sm">
-                <tr><td className="p-3 font-semibold">A / A+</td><td className="p-3">93-100%</td><td className="p-3">4.0</td></tr>
-                <tr><td className="p-3 font-semibold">A-</td><td className="p-3">90-92%</td><td className="p-3">3.7</td></tr>
-                <tr><td className="p-3 font-semibold">B+</td><td className="p-3">87-89%</td><td className="p-3">3.3</td></tr>
-                <tr><td className="p-3 font-semibold">B</td><td className="p-3">83-86%</td><td className="p-3">3.0</td></tr>
-              </tbody>
+                <thead className="bg-muted text-foreground font-semibold">
+                  <tr>
+                    <th className="p-3 text-left">Letter Grade</th>
+                    <th className="p-3 text-left">Percentage</th>
+                    <th className="p-3 text-left">4.0 Scale</th>
+                  </tr>
+                </thead>
+                <tbody className="divide-y divide-border text-sm">
+                  <tr><td className="p-3 font-semibold">A / A+</td><td className="p-3">93-100%</td><td className="p-3">4.0</td></tr>
+                  <tr><td className="p-3 font-semibold">A-</td><td className="p-3">90-92%</td><td className="p-3">3.7</td></tr>
+                  <tr><td className="p-3 font-semibold">B+</td><td className="p-3">87-89%</td><td className="p-3">3.3</td></tr>
+                  <tr><td className="p-3 font-semibold">B</td><td className="p-3">83-86%</td><td className="p-3">3.0</td></tr>
+                </tbody>
               </GTable>
             </div>
           </div>
@@ -157,35 +162,35 @@ export default function GPACalculatorPage() {
           </p>
           <div className="overflow-x-auto">
             <GTable>
-            <thead className="bg-muted text-foreground font-semibold">
-              <tr>
-                <th className="p-3 text-left">GPA Range</th>
-                <th className="p-3 text-left">Academic Standing</th>
-                <th className="p-3 text-left">Typical Outcome</th>
-              </tr>
-            </thead>
-            <tbody className="divide-y divide-border text-sm">
-              <tr>
-                <td className="p-3 font-semibold text-foreground">3.5 - 4.0</td>
-                <td className="p-3">Excellent (High Honors)</td>
-                <td className="p-3 text-muted-foreground">Ivy League admits, competitive scholarships.</td>
-              </tr>
-              <tr>
-                <td className="p-3 font-semibold text-foreground">3.0 - 3.4</td>
-                <td className="p-3">Good (Honors)</td>
-                <td className="p-3 text-muted-foreground">Standard university admissions, general merit aid.</td>
-              </tr>
-              <tr>
-                <td className="p-3 font-semibold text-foreground">2.5 - 2.9</td>
-                <td className="p-3">Average</td>
-                <td className="p-3 text-muted-foreground">Solid for many public institutions and state colleges.</td>
-              </tr>
-              <tr>
-                <td className="p-3 font-semibold text-foreground">Below 2.0</td>
-                <td className="p-3">Academic Probation</td>
-                <td className="p-3 text-muted-foreground">Requires immediate academic intervention or retakes.</td>
-              </tr>
-            </tbody>
+              <thead className="bg-muted text-foreground font-semibold">
+                <tr>
+                  <th className="p-3 text-left">GPA Range</th>
+                  <th className="p-3 text-left">Academic Standing</th>
+                  <th className="p-3 text-left">Typical Outcome</th>
+                </tr>
+              </thead>
+              <tbody className="divide-y divide-border text-sm">
+                <tr>
+                  <td className="p-3 font-semibold text-foreground">3.5 - 4.0</td>
+                  <td className="p-3">Excellent (High Honors)</td>
+                  <td className="p-3 text-muted-foreground">Ivy League admits, competitive scholarships.</td>
+                </tr>
+                <tr>
+                  <td className="p-3 font-semibold text-foreground">3.0 - 3.4</td>
+                  <td className="p-3">Good (Honors)</td>
+                  <td className="p-3 text-muted-foreground">Standard university admissions, general merit aid.</td>
+                </tr>
+                <tr>
+                  <td className="p-3 font-semibold text-foreground">2.5 - 2.9</td>
+                  <td className="p-3">Average</td>
+                  <td className="p-3 text-muted-foreground">Solid for many public institutions and state colleges.</td>
+                </tr>
+                <tr>
+                  <td className="p-3 font-semibold text-foreground">Below 2.0</td>
+                  <td className="p-3">Academic Probation</td>
+                  <td className="p-3 text-muted-foreground">Requires immediate academic intervention or retakes.</td>
+                </tr>
+              </tbody>
             </GTable>
           </div>
         </article>

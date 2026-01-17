@@ -1,6 +1,11 @@
 import type { Metadata } from "next"
 import { ToolPageLayout } from "@/components/common/tool-page-layout"
-import FractionCalculator from "@/components/calculators/fraction-calculator"
+import dynamic from "next/dynamic"
+import { ToolLoader } from "@/components/common/tool-loader"
+
+const FractionCalculator = dynamic(() => import("@/components/calculators/fraction-calculator"), {
+  loading: () => <ToolLoader />
+})
 import { createMetadata } from "@/lib/metadata-base"
 import { Calculator, Plus, Minus, X, Divide, Brain, Square, BookOpen, Target, Shield, Users, TrendingUp, Info, AlertTriangle, CheckCircle, Zap } from "lucide-react"
 import { GTable } from "@/ui/gtable"
@@ -159,48 +164,48 @@ export default function FractionCalculatorPage() {
             Understanding common fraction conversions helps you work quickly with fractions in everyday situations:
           </p>
           <div className="overflow-x-auto">
-          <GTable>
-            <thead className="bg-muted text-foreground font-semibold">
-              <tr>
-                <th className="p-3">Fraction</th>
-                <th className="p-3">Decimal</th>
-                <th className="p-3">Percentage</th>
-                <th className="p-3">Common Use</th>
-              </tr>
-            </thead>
-            <tbody className="divide-y divide-border text-sm">
-              <tr>
-                <td className="p-3 font-bold">1/2</td>
-                <td className="p-3">0.5</td>
-                <td className="p-3">50%</td>
-                <td className="p-3">"Half" - 50 cents</td>
-              </tr>
-              <tr>
-                <td className="p-3 font-bold">1/3</td>
-                <td className="p-3">0.333...</td>
-                <td className="p-3">33.33%</td>
-                <td className="p-3">Divisible by 3</td>
-              </tr>
-              <tr>
-                <td className="p-3 font-bold">1/4</td>
-                <td className="p-3">0.25</td>
-                <td className="p-3">25%</td>
-                <td className="p-3">"Quarter" - 25 cents</td>
-              </tr>
-              <tr>
-                <td className="p-3 font-bold">3/4</td>
-                <td className="p-3">0.75</td>
-                <td className="p-3">75%</td>
-                <td className="p-3">Majority</td>
-              </tr>
-              <tr>
-                <td className="p-3 font-bold">1/8</td>
-                <td className="p-3">0.125</td>
-                <td className="p-3">12.5%</td>
-                <td className="p-3">Measurements (inches)</td>
-              </tr>
-            </tbody>
-          </GTable>
+            <GTable>
+              <thead className="bg-muted text-foreground font-semibold">
+                <tr>
+                  <th className="p-3">Fraction</th>
+                  <th className="p-3">Decimal</th>
+                  <th className="p-3">Percentage</th>
+                  <th className="p-3">Common Use</th>
+                </tr>
+              </thead>
+              <tbody className="divide-y divide-border text-sm">
+                <tr>
+                  <td className="p-3 font-bold">1/2</td>
+                  <td className="p-3">0.5</td>
+                  <td className="p-3">50%</td>
+                  <td className="p-3">"Half" - 50 cents</td>
+                </tr>
+                <tr>
+                  <td className="p-3 font-bold">1/3</td>
+                  <td className="p-3">0.333...</td>
+                  <td className="p-3">33.33%</td>
+                  <td className="p-3">Divisible by 3</td>
+                </tr>
+                <tr>
+                  <td className="p-3 font-bold">1/4</td>
+                  <td className="p-3">0.25</td>
+                  <td className="p-3">25%</td>
+                  <td className="p-3">"Quarter" - 25 cents</td>
+                </tr>
+                <tr>
+                  <td className="p-3 font-bold">3/4</td>
+                  <td className="p-3">0.75</td>
+                  <td className="p-3">75%</td>
+                  <td className="p-3">Majority</td>
+                </tr>
+                <tr>
+                  <td className="p-3 font-bold">1/8</td>
+                  <td className="p-3">0.125</td>
+                  <td className="p-3">12.5%</td>
+                  <td className="p-3">Measurements (inches)</td>
+                </tr>
+              </tbody>
+            </GTable>
           </div>
         </article>
 

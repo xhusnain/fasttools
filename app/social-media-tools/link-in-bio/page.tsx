@@ -1,4 +1,10 @@
-import { LinkInBioGenerator } from "@/components/social-media/link-in-bio-generator"
+import dynamic from "next/dynamic"
+
+const LinkInBioGenerator = dynamic(() => import("@/components/social-media/link-in-bio-generator").then(mod => mod.LinkInBioGenerator), {
+  loading: () => <div className="min-h-[600px] flex items-center justify-center">
+    <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-primary"></div>
+  </div>
+})
 import { ToolPageLayout } from "@/components/common/tool-page-layout"
 import { createToolConfig } from "@/lib/create-tool-config"
 import {

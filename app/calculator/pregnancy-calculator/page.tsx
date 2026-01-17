@@ -1,6 +1,11 @@
 import type { Metadata } from "next"
 import { ToolPageLayout } from "@/components/common/tool-page-layout"
-import PregnancyCalculator from "@/components/health/pregnancy-calculator"
+import dynamic from "next/dynamic"
+import { ToolLoader } from "@/components/common/tool-loader"
+
+const PregnancyCalculator = dynamic(() => import("@/components/health/pregnancy-calculator"), {
+  loading: () => <ToolLoader />
+})
 import { createMetadata } from "@/lib/metadata-base"
 import { GTable } from "@/ui/gtable"
 import { Brain, Calculator, Target, BookOpen, Shield, Users, TrendingUp, Info, AlertTriangle, CheckCircle, Zap, Heart, Calendar, Baby } from "lucide-react"
@@ -93,35 +98,35 @@ export default function PregnancyCalculatorPage() {
           </p>
           <div className="overflow-x-auto">
             <GTable>
-            <thead className="bg-muted text-foreground font-semibold">
-              <tr>
-                <th className="p-3 text-left">Pre-Pregnancy BMI</th>
-                <th className="p-3 text-left">Classification</th>
-                <th className="p-3 text-left">Rec. Weight Gain</th>
-              </tr>
-            </thead>
-            <tbody className="divide-y divide-border text-sm">
-              <tr>
-                <td className="p-3 font-semibold text-foreground">Less than 18.5</td>
-                <td className="p-3 text-muted-foreground">Underweight</td>
-                <td className="p-3">28 – 40 lbs (13 – 18 kg)</td>
-              </tr>
-              <tr>
-                <td className="p-3 font-semibold text-foreground">18.5 – 24.9</td>
-                <td className="p-3 text-muted-foreground">Normal Weight</td>
-                <td className="p-3">25 – 35 lbs (11 – 16 kg)</td>
-              </tr>
-              <tr>
-                <td className="p-3 font-semibold text-foreground">25.0 – 29.9</td>
-                <td className="p-3 text-muted-foreground">Overweight</td>
-                <td className="p-3">15 – 25 lbs (7 – 11 kg)</td>
-              </tr>
-              <tr>
-                <td className="p-3 font-semibold text-foreground">30.0 or more</td>
-                <td className="p-3 text-muted-foreground">Obese</td>
-                <td className="p-3">11 – 20 lbs (5 – 9 kg)</td>
-              </tr>
-            </tbody>
+              <thead className="bg-muted text-foreground font-semibold">
+                <tr>
+                  <th className="p-3 text-left">Pre-Pregnancy BMI</th>
+                  <th className="p-3 text-left">Classification</th>
+                  <th className="p-3 text-left">Rec. Weight Gain</th>
+                </tr>
+              </thead>
+              <tbody className="divide-y divide-border text-sm">
+                <tr>
+                  <td className="p-3 font-semibold text-foreground">Less than 18.5</td>
+                  <td className="p-3 text-muted-foreground">Underweight</td>
+                  <td className="p-3">28 – 40 lbs (13 – 18 kg)</td>
+                </tr>
+                <tr>
+                  <td className="p-3 font-semibold text-foreground">18.5 – 24.9</td>
+                  <td className="p-3 text-muted-foreground">Normal Weight</td>
+                  <td className="p-3">25 – 35 lbs (11 – 16 kg)</td>
+                </tr>
+                <tr>
+                  <td className="p-3 font-semibold text-foreground">25.0 – 29.9</td>
+                  <td className="p-3 text-muted-foreground">Overweight</td>
+                  <td className="p-3">15 – 25 lbs (7 – 11 kg)</td>
+                </tr>
+                <tr>
+                  <td className="p-3 font-semibold text-foreground">30.0 or more</td>
+                  <td className="p-3 text-muted-foreground">Obese</td>
+                  <td className="p-3">11 – 20 lbs (5 – 9 kg)</td>
+                </tr>
+              </tbody>
             </GTable>
           </div>
         </article>

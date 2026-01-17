@@ -1,8 +1,14 @@
 import type { Metadata } from "next"
+import dynamic from "next/dynamic"
 import { ToolPageLayout } from "@/components/common/tool-page-layout"
-import CalorieCalculator from "@/components/health/calorie-calculator"
+import { ToolLoader } from "@/components/common/tool-loader"
 import { createMetadata } from "@/lib/metadata-base"
 import { GTable } from "@/ui/gtable"
+
+const CalorieCalculator = dynamic(
+  () => import("@/components/health/calorie-calculator"),
+  { loading: () => <ToolLoader /> }
+)
 import { Brain, Activity, Target, BookOpen, Shield, Users, TrendingUp, Calculator, Heart, AlertTriangle, Info, Zap, Flame } from "lucide-react"
 
 const baseMetadata = createMetadata({
@@ -94,47 +100,47 @@ export default function CalorieCalculatorPage() {
           </p>
           <div className="overflow-x-auto">
             <GTable>
-            <thead className="bg-muted text-foreground font-semibold">
-              <tr>
-                <th className="p-3 text-left">Activity</th>
-                <th className="p-3 text-left">125 lbs (57 kg)</th>
-                <th className="p-3 text-left">155 lbs (70 kg)</th>
-                <th className="p-3 text-left">185 lbs (84 kg)</th>
-              </tr>
-            </thead>
-            <tbody className="divide-y divide-border text-sm">
-              <tr>
-                <td className="p-3 font-semibold text-foreground">Walking (3.5 mph)</td>
-                <td className="p-3">120 cal</td>
-                <td className="p-3">149 cal</td>
-                <td className="p-3">178 cal</td>
-              </tr>
-              <tr>
-                <td className="p-3 font-semibold text-foreground">Running (5 mph)</td>
-                <td className="p-3">240 cal</td>
-                <td className="p-3">298 cal</td>
-                <td className="p-3">355 cal</td>
-              </tr>
-              <tr>
-                <td className="p-3 font-semibold text-foreground">Bicycling (12-14 mph)</td>
-                <td className="p-3">240 cal</td>
-                <td className="p-3">298 cal</td>
-                <td className="p-3">355 cal</td>
-              </tr>
-              <tr>
-                <td className="p-3 font-semibold text-foreground">Weight Training</td>
-                <td className="p-3">90 cal</td>
-                <td className="p-3">112 cal</td>
-                <td className="p-3">133 cal</td>
-              </tr>
-              <tr>
-                <td className="p-3 font-semibold text-foreground">Swimming (General)</td>
-                <td className="p-3">180 cal</td>
-                <td className="p-3">223 cal</td>
-                <td className="p-3">266 cal</td>
-              </tr>
-            </tbody>
-          </GTable>
+              <thead className="bg-muted text-foreground font-semibold">
+                <tr>
+                  <th className="p-3 text-left">Activity</th>
+                  <th className="p-3 text-left">125 lbs (57 kg)</th>
+                  <th className="p-3 text-left">155 lbs (70 kg)</th>
+                  <th className="p-3 text-left">185 lbs (84 kg)</th>
+                </tr>
+              </thead>
+              <tbody className="divide-y divide-border text-sm">
+                <tr>
+                  <td className="p-3 font-semibold text-foreground">Walking (3.5 mph)</td>
+                  <td className="p-3">120 cal</td>
+                  <td className="p-3">149 cal</td>
+                  <td className="p-3">178 cal</td>
+                </tr>
+                <tr>
+                  <td className="p-3 font-semibold text-foreground">Running (5 mph)</td>
+                  <td className="p-3">240 cal</td>
+                  <td className="p-3">298 cal</td>
+                  <td className="p-3">355 cal</td>
+                </tr>
+                <tr>
+                  <td className="p-3 font-semibold text-foreground">Bicycling (12-14 mph)</td>
+                  <td className="p-3">240 cal</td>
+                  <td className="p-3">298 cal</td>
+                  <td className="p-3">355 cal</td>
+                </tr>
+                <tr>
+                  <td className="p-3 font-semibold text-foreground">Weight Training</td>
+                  <td className="p-3">90 cal</td>
+                  <td className="p-3">112 cal</td>
+                  <td className="p-3">133 cal</td>
+                </tr>
+                <tr>
+                  <td className="p-3 font-semibold text-foreground">Swimming (General)</td>
+                  <td className="p-3">180 cal</td>
+                  <td className="p-3">223 cal</td>
+                  <td className="p-3">266 cal</td>
+                </tr>
+              </tbody>
+            </GTable>
           </div>
         </article>
 

@@ -1,6 +1,12 @@
+import dynamic from "next/dynamic"
 import { ToolPageLayout } from "@/components/common/tool-page-layout"
-import { JWTDecoder } from "@/components/dev-tools/jwt-decoder"
+import { ToolLoader } from "@/components/common/tool-loader"
 import { createToolConfig } from "@/lib/create-tool-config"
+
+const JWTDecoder = dynamic(
+  () => import("@/components/dev-tools/jwt-decoder").then(mod => mod.JWTDecoder),
+  { loading: () => <ToolLoader /> }
+)
 
 const toolConfig = createToolConfig({
   toolName: "JWT Decoder",

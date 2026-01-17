@@ -1,4 +1,9 @@
-import { BillSplitter } from "@/components/finance/bill-splitter"
+import dynamic from "next/dynamic"
+import { ToolLoader } from "@/components/common/tool-loader"
+
+const BillSplitter = dynamic(() => import("@/components/finance/bill-splitter").then(mod => mod.BillSplitter), {
+  loading: () => <ToolLoader />
+})
 import { ToolPageLayout } from "@/components/common/tool-page-layout"
 import { createMetadata } from "@/lib/metadata-base"
 import { Calculator, Target, TrendingUp, BarChart3, Receipt, Award, Users, DollarSign, Percent, Zap, FileText, HelpCircle, ExternalLink, PiggyBank, CreditCard } from "lucide-react"

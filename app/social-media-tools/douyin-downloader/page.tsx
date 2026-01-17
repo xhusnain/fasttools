@@ -1,6 +1,12 @@
 import { ToolPageLayout } from "@/components/common/tool-page-layout"
 import { createToolConfig } from "@/lib/create-tool-config"
-import { DouyinDownloader } from "@/components/social-media/douyin-downloader/douyin-downloader"
+import dynamic from "next/dynamic"
+
+const DouyinDownloader = dynamic(() => import("@/components/social-media/douyin-downloader/douyin-downloader").then(mod => mod.DouyinDownloader), {
+    loading: () => <div className="min-h-[600px] flex items-center justify-center">
+        <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-primary"></div>
+    </div>
+})
 import { Smartphone, Download, Zap, Film } from "lucide-react"
 import Image from "next/image"
 

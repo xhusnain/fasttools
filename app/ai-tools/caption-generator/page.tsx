@@ -1,5 +1,10 @@
 import type { Metadata } from "next"
-import { AiCaptionGenerator } from "@/components/social-media/ai-caption-generator"
+import dynamic from "next/dynamic"
+import { ToolLoader } from "@/components/common/tool-loader"
+
+const AiCaptionGenerator = dynamic(() => import("@/components/social-media/ai-caption-generator").then(mod => mod.AiCaptionGenerator), {
+  loading: () => <ToolLoader />
+})
 import { ToolPageLayout } from "@/components/common/tool-page-layout"
 import { createMetadata } from "@/lib/metadata-base"
 import { GTable } from "@/ui/gtable"
@@ -350,9 +355,9 @@ export default function CaptionGeneratorPage() {
             <div className="p-4 bg-muted/30 rounded-lg">
               <h4 className="font-semibold mb-2">Example 1: Question Hook (Instagram)</h4>
               <p className="text-sm text-muted-foreground mb-2 font-mono bg-card p-2 rounded">
-                "Ever wonder why some posts get thousands of likes while others barely get noticed? 👀<br/><br/>
-                The secret isn't just the photo—it's the caption. A great caption tells a story, asks a question, and invites engagement.<br/><br/>
-                What's your favorite type of caption? Drop it below! 👇<br/><br/>
+                "Ever wonder why some posts get thousands of likes while others barely get noticed? 👀<br /><br />
+                The secret isn't just the photo—it's the caption. A great caption tells a story, asks a question, and invites engagement.<br /><br />
+                What's your favorite type of caption? Drop it below! 👇<br /><br />
                 #SocialMediaTips #ContentCreator #InstagramGrowth"
               </p>
               <p className="text-xs text-muted-foreground">Why it works: Question hook, storytelling, clear CTA, relevant hashtags</p>
@@ -360,9 +365,9 @@ export default function CaptionGeneratorPage() {
             <div className="p-4 bg-muted/30 rounded-lg">
               <h4 className="font-semibold mb-2">Example 2: Behind-the-Scenes (LinkedIn)</h4>
               <p className="text-sm text-muted-foreground mb-2 font-mono bg-card p-2 rounded">
-                "Three months ago, we launched with zero customers. Today, we're celebrating 1,000 active users.<br/><br/>
-                The journey wasn't easy—countless late nights, rejected pitches, and moments of doubt. But here's what I learned: persistence beats perfection every time.<br/><br/>
-                What's your biggest business milestone this year?<br/><br/>
+                "Three months ago, we launched with zero customers. Today, we're celebrating 1,000 active users.<br /><br />
+                The journey wasn't easy—countless late nights, rejected pitches, and moments of doubt. But here's what I learned: persistence beats perfection every time.<br /><br />
+                What's your biggest business milestone this year?<br /><br />
                 #Entrepreneurship #StartupLife #BusinessGrowth"
               </p>
               <p className="text-xs text-muted-foreground">Why it works: Personal story, vulnerability, professional tone, industry hashtags</p>
@@ -370,8 +375,8 @@ export default function CaptionGeneratorPage() {
             <div className="p-4 bg-muted/30 rounded-lg">
               <h4 className="font-semibold mb-2">Example 3: Trendy & Fun (TikTok)</h4>
               <p className="text-sm text-muted-foreground mb-2 font-mono bg-card p-2 rounded">
-                "POV: You finally found the perfect caption after 30 minutes of staring at a blank screen 😅<br/><br/>
-                Save this for later! 📌<br/><br/>
+                "POV: You finally found the perfect caption after 30 minutes of staring at a blank screen 😅<br /><br />
+                Save this for later! 📌<br /><br />
                 #CaptionIdeas #ContentCreator #TikTokTips #FYP"
               </p>
               <p className="text-xs text-muted-foreground">Why it works: Relatable, short, includes trending hashtags, clear CTA</p>

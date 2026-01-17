@@ -1,6 +1,12 @@
+import dynamic from "next/dynamic"
 import { ToolPageLayout } from "@/components/common/tool-page-layout"
-import { HTMLBeautifier } from "@/components/dev-tools/html-beautifier"
+import { ToolLoader } from "@/components/common/tool-loader"
 import { createToolConfig } from "@/lib/create-tool-config"
+
+const HTMLBeautifier = dynamic(
+  () => import("@/components/dev-tools/html-beautifier").then(mod => mod.HTMLBeautifier),
+  { loading: () => <ToolLoader /> }
+)
 
 const toolConfig = createToolConfig({
   toolName: "HTML Beautifier & Minifier",

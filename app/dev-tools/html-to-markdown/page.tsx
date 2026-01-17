@@ -1,6 +1,12 @@
+import dynamic from "next/dynamic"
 import { ToolPageLayout } from "@/components/common/tool-page-layout"
-import { HTMLToMarkdown } from "@/components/dev-tools/html-to-markdown"
+import { ToolLoader } from "@/components/common/tool-loader"
 import { createToolConfig } from "@/lib/create-tool-config"
+
+const HTMLToMarkdown = dynamic(
+  () => import("@/components/dev-tools/html-to-markdown").then(mod => mod.HTMLToMarkdown),
+  { loading: () => <ToolLoader /> }
+)
 
 const toolConfig = createToolConfig({
   toolName: "HTML to Markdown Converter",

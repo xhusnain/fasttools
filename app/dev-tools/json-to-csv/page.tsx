@@ -1,6 +1,12 @@
+import dynamic from "next/dynamic"
 import { ToolPageLayout } from "@/components/common/tool-page-layout"
-import { JSONToCSV } from "@/components/dev-tools/json-to-csv"
+import { ToolLoader } from "@/components/common/tool-loader"
 import { createToolConfig } from "@/lib/create-tool-config"
+
+const JSONToCSV = dynamic(
+  () => import("@/components/dev-tools/json-to-csv").then(mod => mod.JSONToCSV),
+  { loading: () => <ToolLoader /> }
+)
 
 const toolConfig = createToolConfig({
   toolName: "JSON to CSV Converter",

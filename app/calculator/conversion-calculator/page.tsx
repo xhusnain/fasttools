@@ -1,6 +1,11 @@
 import type { Metadata } from "next"
 import { ToolPageLayout } from "@/components/common/tool-page-layout"
-import { ConversionCalculator } from "@/components/converters/conversion-calculator"
+import dynamic from "next/dynamic"
+import { ToolLoader } from "@/components/common/tool-loader"
+
+const ConversionCalculator = dynamic(() => import("@/components/converters/conversion-calculator").then(mod => mod.ConversionCalculator), {
+  loading: () => <ToolLoader />
+})
 import { createMetadata } from "@/lib/metadata-base"
 import { Calculator, Zap, Target, TrendingUp, BookOpen, Users, CheckCircle, Info, Home, DollarSign, FileText, Percent, Clock, Award, BarChart3, Building, PieChart, Brain, Shield, Activity, Globe, AlertTriangle } from "lucide-react"
 import { GTable } from "@/ui/gtable"

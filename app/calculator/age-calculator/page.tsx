@@ -1,9 +1,15 @@
 import type { Metadata } from "next"
+import dynamic from "next/dynamic"
 import { ToolPageLayout } from "@/components/common/tool-page-layout"
-import { AgeCalculator } from "@/components/calculators/age-calculator"
+import { ToolLoader } from "@/components/common/tool-loader"
 import { createMetadata } from "@/lib/metadata-base"
 import { GImage } from "@/ui/gimage"
 import { GTable } from "@/ui/gtable"
+
+const AgeCalculator = dynamic(
+  () => import("@/components/calculators/age-calculator").then((mod) => mod.AgeCalculator),
+  { loading: () => <ToolLoader /> }
+)
 import {
   Clock, Activity, Lightbulb, Zap, Hourglass, HelpCircle, Calendar, Baby, Brain, Target, BookOpen, Shield, Globe, Users, TrendingUp, Star
 } from "lucide-react"
@@ -286,42 +292,42 @@ export default function AgeCalculatorPage() {
             Your birth year defines your generation, which shapes your cultural context, technical adaptability, worldview, and shared experiences. Understanding your generational cohort helps you connect with historical events, technological changes, and social movements that occurred during your formative years.
           </p>
           <div className="overflow-x-auto">
-          <GTable>
-            <thead className="bg-muted text-foreground font-semibold">
-              <tr>
-                <th className="p-3">Generation Name</th>
-                <th className="p-3">Birth Years</th>
-                <th className="p-3">Core Defining Trait</th>
-              </tr>
-            </thead>
-            <tbody className="divide-y divide-border text-sm">
-              <tr>
-                <td className="p-3 font-bold text-blue-600">Gen Alpha</td>
-                <td className="p-3">2013 –</td>
-                <td className="p-3">Digital Natives</td>
-              </tr>
-              <tr>
-                <td className="p-3 font-bold text-purple-600">Gen Z (Zoomers)</td>
-                <td className="p-3">1997 – 2012</td>
-                <td className="p-3">Internet & Mobile First</td>
-              </tr>
-              <tr>
-                <td className="p-3 font-bold text-green-600">Millennials</td>
-                <td className="p-3">1981 – 1996</td>
-                <td className="p-3">Tech & Info Adapters</td>
-              </tr>
-              <tr>
-                <td className="p-3 font-bold text-orange-600">Gen X</td>
-                <td className="p-3">1965 – 1980</td>
-                <td className="p-3">Independent & Skeptical</td>
-              </tr>
-              <tr>
-                <td className="p-3 font-bold text-slate-600">Baby Boomers</td>
-                <td className="p-3">1946 – 1964</td>
-                <td className="p-3">Focused & Competitive</td>
-              </tr>
-            </tbody>
-          </GTable>
+            <GTable>
+              <thead className="bg-muted text-foreground font-semibold">
+                <tr>
+                  <th className="p-3">Generation Name</th>
+                  <th className="p-3">Birth Years</th>
+                  <th className="p-3">Core Defining Trait</th>
+                </tr>
+              </thead>
+              <tbody className="divide-y divide-border text-sm">
+                <tr>
+                  <td className="p-3 font-bold text-blue-600">Gen Alpha</td>
+                  <td className="p-3">2013 –</td>
+                  <td className="p-3">Digital Natives</td>
+                </tr>
+                <tr>
+                  <td className="p-3 font-bold text-purple-600">Gen Z (Zoomers)</td>
+                  <td className="p-3">1997 – 2012</td>
+                  <td className="p-3">Internet & Mobile First</td>
+                </tr>
+                <tr>
+                  <td className="p-3 font-bold text-green-600">Millennials</td>
+                  <td className="p-3">1981 – 1996</td>
+                  <td className="p-3">Tech & Info Adapters</td>
+                </tr>
+                <tr>
+                  <td className="p-3 font-bold text-orange-600">Gen X</td>
+                  <td className="p-3">1965 – 1980</td>
+                  <td className="p-3">Independent & Skeptical</td>
+                </tr>
+                <tr>
+                  <td className="p-3 font-bold text-slate-600">Baby Boomers</td>
+                  <td className="p-3">1946 – 1964</td>
+                  <td className="p-3">Focused & Competitive</td>
+                </tr>
+              </tbody>
+            </GTable>
           </div>
         </article>
 
