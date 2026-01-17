@@ -16,6 +16,8 @@ const nextConfig = {
       '@radix-ui/react-icons',
       '@iconify/react',
       'react-icons',
+      'recharts',
+      'date-fns',
     ],
     // Enable compression
     gzipSize: true,

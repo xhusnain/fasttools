@@ -1,15 +1,21 @@
 import type React from "react"
 import "./globals.css"
+import dynamic from "next/dynamic"
 import { Header } from "@/components/common/header"
 import { Footer } from "@/components/common/footer"
-import { CookieConsent } from "@/components/common/cookie-consent"
-import { WelcomePopup } from "@/components/common/welcome-popup"
 import { ThemeProvider } from "@/components/common/theme-provider"
 
 import { env } from "@/config/env"
 import { createMetadata, globalViewport, getWebsiteSchema } from "@/lib/metadata-base"
 import { roboto, montserrat, openSans } from "@/app/fonts"
 import { DeferredScript } from "@/components/common/deferred-script"
+
+const CookieConsent = dynamic(
+  () => import("@/components/common/cookie-consent").then(mod => mod.CookieConsent)
+)
+const WelcomePopup = dynamic(
+  () => import("@/components/common/welcome-popup").then(mod => mod.WelcomePopup)
+)
 
 
 
@@ -139,11 +145,11 @@ export default function RootLayout({
         {/* Preconnect to external domains with high priority */}
         <link rel="preconnect" href="https://www.googletagmanager.com" crossOrigin="anonymous" />
         <link rel="dns-prefetch" href="https://www.googletagmanager.com" />
-        
+
         {/* Ad networks - lower priority, defer */}
         <link rel="dns-prefetch" href="https://pagead2.googlesyndication.com" />
         <link rel="dns-prefetch" href="https://www.google-analytics.com" />
-        
+
         {/* Preload critical fonts */}
         <link
           rel="preload"
@@ -152,9 +158,7 @@ export default function RootLayout({
           type="font/woff2"
           crossOrigin="anonymous"
         />
-        
-        {/* Preload critical resources */}
-        <link rel="preload" as="image" href="/android-chrome-512x512.png" />
+
       </head>
       <body className="bg-background font-sans text-foreground">
 
