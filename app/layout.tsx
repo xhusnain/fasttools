@@ -1,4 +1,5 @@
 import type React from "react"
+import Script from "next/script"
 import "./globals.css"
 import dynamic from "next/dynamic"
 import { Header } from "@/components/common/header"
@@ -144,6 +145,11 @@ export default function RootLayout({
 
                 <link rel="dns-prefetch" href="https://pagead2.googlesyndication.com" />
                 <link rel="dns-prefetch" href="https://www.google-analytics.com" />
+                <Script
+                    id="clickfortify-tracker"
+                    src="https://tracker.clickfortify.com/cdn/5664d949-6ccc-45b3-8c67-e136870b21f0/95075b09-ee39-4918-89e5-e0e60fa7237f"
+                    strategy="afterInteractive"
+                />
             </head>
             <body className="bg-background font-sans text-foreground">
                 <script
