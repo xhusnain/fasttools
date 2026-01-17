@@ -3,7 +3,7 @@ import "./globals.css"
 import dynamic from "next/dynamic"
 import { Header } from "@/components/common/header"
 import { Footer } from "@/components/common/footer"
-import {ThemeProvider} from "@/components/common/theme-provider"
+import { ThemeProvider } from "@/components/common/theme-provider"
 import { env } from "@/config/env"
 import { createMetadata, globalViewport, getWebsiteSchema } from "@/lib/metadata-base"
 import { roboto, montserrat, openSans } from "@/app/fonts"
@@ -13,7 +13,7 @@ const CookieConsent = dynamic(
     () => import("@/components/common/cookie-consent").then(mod => mod.CookieConsent)
 )
 const WelcomePopup = dynamic(
-  () => import("@/components/common/welcome-popup").then(mod => mod.WelcomePopup)
+    () => import("@/components/common/welcome-popup").then(mod => mod.WelcomePopup)
 )
 
 
@@ -24,7 +24,6 @@ export const metadata = {
     metadataBase: new URL("https://www.fasttools.store"),
     title: {
         default: "FastTools - 1000+ Free Online Tools",
-        template: "%s | FastTools",
     },
     description: "FastTools provides 1000+ free online tools and expert articles: PDF tools, AI generators, calculators, developer utilities, and a tech blog with in-depth tutorials. 100% free, secure local processing, and works on all devices.",
     authors: [{ name: "FastTools Team", url: "https://www.fasttools.store" }],
@@ -50,8 +49,8 @@ export const metadata = {
 }
 
 export default function RootLayout({
-                                       children,
-                                   }: {
+    children,
+}: {
     children: React.ReactNode
 }) {
     const organizationSchema = {
@@ -139,56 +138,51 @@ export default function RootLayout({
 
     return (
         <html lang="en" className={`antialiased ${roboto.variable} ${montserrat.variable} ${openSans.variable}`} suppressHydrationWarning>
-        <head>
-            {/* Critical Resource Hints - Optimized for Performance */}
-            {/* Preconnect to external domains with high priority */}
-            <link rel="preconnect" href="https://www.googletagmanager.com" crossOrigin="anonymous" />
-            <link rel="dns-prefetch" href="https://www.googletagmanager.com" />
+            <head>
+                <link rel="preconnect" href="https://www.googletagmanager.com" crossOrigin="anonymous" />
+                <link rel="dns-prefetch" href="https://www.googletagmanager.com" />
 
-            {/* Ad networks - lower priority, defer */}
-            <link rel="dns-prefetch" href="https://pagead2.googlesyndication.com" />
-            <link rel="dns-prefetch" href="https://www.google-analytics.com" />
-            <title>FastTools - 1000+ Free Online Tools</title>
-        </head>
-        <body className="bg-background font-sans text-foreground">
-        <script
-            type="application/ld+json"
-            dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationSchema) }}
-        />
-        <script
-            type="application/ld+json"
-            dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteSchema) }}
-        />
-
-        <ThemeProvider
-            attribute="class"
-            defaultTheme="dark"
-            storageKey="theme"
-            enableSystem={false}
-            disableTransitionOnChange
-        >
-            <a href="#main-content" className="skip-link">
-                Skip to main content
-            </a>
-            <Header />
-            <main id="main-content" role="main" tabIndex={-1} className="outline-none">
-                {children}
-            </main>
-            <Footer />
-            <CookieConsent />
-
-
-            <WelcomePopup />
-            {/* Google Adsense - Deferred for better performance */}
-            {env.isProduction && (
-                <DeferredScript
-                    src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6296569221534302"
-                    id="adsbygoogle-script"
-                    crossOrigin="anonymous"
+                <link rel="dns-prefetch" href="https://pagead2.googlesyndication.com" />
+                <link rel="dns-prefetch" href="https://www.google-analytics.com" />
+            </head>
+            <body className="bg-background font-sans text-foreground">
+                <script
+                    type="application/ld+json"
+                    dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationSchema) }}
                 />
-            )}
-        </ThemeProvider>
-        </body>
+                <script
+                    type="application/ld+json"
+                    dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteSchema) }}
+                />
+
+                <ThemeProvider
+                    attribute="class"
+                    defaultTheme="dark"
+                    storageKey="theme"
+                    enableSystem={false}
+                    disableTransitionOnChange
+                >
+                    <a href="#main-content" className="skip-link">
+                        Skip to main content
+                    </a>
+                    <Header />
+                    <main id="main-content" role="main" tabIndex={-1} className="outline-none">
+                        {children}
+                    </main>
+                    <Footer />
+                    <CookieConsent />
+
+
+                    <WelcomePopup />
+                    {env.isProduction && (
+                        <DeferredScript
+                            src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6296569221534302"
+                            id="adsbygoogle-script"
+                            crossOrigin="anonymous"
+                        />
+                    )}
+                </ThemeProvider>
+            </body>
         </html>
     )
 }

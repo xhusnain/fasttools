@@ -1,4 +1,4 @@
-import type { Metadata, Viewport } from "next"
+import type {Metadata, Viewport} from "next"
 
 const BASE_URL = "https://www.fasttools.store"
 const SITE_NAME = "FastTools"
@@ -79,25 +79,27 @@ function shouldIncludeSchema(path: string): boolean {
 
 export function createMetadata(options: MetadataOptions): Metadata {
     const { title, description, path, ogImageAlt, ogImage, noIndex, ogTitle, ogDescription, twitterTitle, twitterDescription, twitterCreator, schemaOptions, faqs, howToSteps, toolName, breadcrumbs } = options
-
-    // Smart default: Only include schema if path looks like a tool, unless explicitly overridden
     const includeSchema = options.includeSchema ?? shouldIncludeSchema(path)
 
     const cleanPath = path.startsWith("/") ? path : `/${path}`
-    const titleWithBranding = title
-    const fullTitle = titleWithBranding
+    let processedTitle = title
+        .replace(/\|\s*FastTools/gi, "")
+        .replace(/FastTools\s*[-–—|]?\s*/gi, "")
+        .trim()
+    if (shouldIncludeSchema(path) && !processedTitle.toLowerCase().startsWith("free")) {
+        processedTitle = `Free ${processedTitle}`
+    }
+
+    const fullTitle = processedTitle
     const canonicalUrl = getCanonicalUrl(cleanPath)
 
 
 
     const finalOgTitle = ogTitle || fullTitle
     const finalOgDescription = ogDescription || description
-
-    // Handle OG image - support both string URL and object format
     let ogImageConfig: any
     if (ogImage) {
         if (typeof ogImage === 'string') {
-            // Simple string URL - construct full URL if relative
             const imageUrl = ogImage.startsWith('http') ? ogImage : `${BASE_URL}${ogImage.startsWith('/') ? ogImage : `/${ogImage}`}`
             ogImageConfig = {
                 url: imageUrl,
@@ -106,7 +108,6 @@ export function createMetadata(options: MetadataOptions): Metadata {
                 alt: ogImageAlt || title,
             }
         } else {
-            // Object format with full control
             const imageUrl = ogImage.url.startsWith('http') ? ogImage.url : `${BASE_URL}${ogImage.url.startsWith('/') ? ogImage.url : `/${ogImage.url}`}`
             ogImageConfig = {
                 url: imageUrl,
@@ -116,7 +117,6 @@ export function createMetadata(options: MetadataOptions): Metadata {
             }
         }
     } else {
-        // Default OG image
         ogImageConfig = {
             url: `${BASE_URL}/android-chrome-512x512.png`,
             width: 512,
@@ -190,7 +190,7 @@ export function createMetadata(options: MetadataOptions): Metadata {
         schemas.push(createVideoObjectSchema(options.video, fullTitle, description))
     }
 
-    const metadata: Metadata = {
+    return {
         title: fullTitle,
         description,
         alternates: {
@@ -209,37 +209,13 @@ export function createMetadata(options: MetadataOptions): Metadata {
                 follow: false,
             }
         }),
-        ...(options.icons && { icons: options.icons }),
-        // Manifest is handled by app/manifest.ts but we can link it here if needed,
-        // though Next.js 13+ with manifest.ts handles the <link rel="manifest"> automatically.
+        ...(options.icons && {icons: options.icons}),
         ...(schemas.length > 0 && {
             other: {
                 "application/ld+json": JSON.stringify(schemas.length === 1 ? schemas[0] : schemas)
             }
         }),
     }
-
-    return metadata
-}
-
-export function getCurrentYear(): number {
-    return new Date().getFullYear()
-}
-
-function isCompanyPage(path: string): boolean {
-    const companyPages = [
-        "/about",
-        "/contact",
-        "/privacy-policy",
-        "/terms",
-        "/faq",
-        "/products",
-        "/cookie-preferences",
-        "/api-docs",
-        "/",
-    ]
-    const normalizedPath = path.startsWith("/") ? path : `/${path}`
-    return companyPages.includes(normalizedPath) || normalizedPath === "/"
 }
 
 
@@ -294,7 +270,6 @@ export function createBreadcrumbSchema(breadcrumbs: BreadcrumbItem[], currentPat
 }
 
 export function extractToolName(title: string): string {
-    // Remove common suffixes like "- Free ...", "| FastTools", year patterns, etc.
     return title
         .replace(/\s*-\s*Free.*$/i, '')
         .replace(/\s*\|\s*FastTools.*$/i, '')
@@ -338,7 +313,6 @@ export function createSoftwareAppSchema(options: SoftwareAppSchemaOptions) {
         softwareRequirements
     } = options
 
-    // Use provided name, or extract from title, or use empty string
     const appName = name || (title ? extractToolName(title) : "")
     const appUrl = path ? getCanonicalUrl(path) : BASE_URL
     const currentDate = new Date().toISOString().split('T')[0]
