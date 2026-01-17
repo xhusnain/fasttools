@@ -84,7 +84,7 @@ Instead, we will use a famous library called **Marked.js**. It's like hiring a p
 
 We want a "Split Screen" look, where the editor is on the left and the preview is on the right. We use CSS "Flexbox" to put them side-by-side.
 
-```css
+```html
 <style>
   body { font-family: sans-serif; background: #f3f4f6; padding: 20px; }
   
@@ -147,7 +147,7 @@ Now for the logic. We need a function that:
 2.  **Sends** it to the `marked()` library.
 3.  **Pastes** the result into the preview box.
 
-```javascript
+```html
 <script>
 function updatePreview() {
     // 1. Get the text

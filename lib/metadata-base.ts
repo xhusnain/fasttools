@@ -77,7 +77,7 @@ function shouldIncludeSchema(path: string): boolean {
     return toolKeywords.some(keyword => normalizedPath.includes(keyword))
 }
 
-export function createMetadata(options: MetadataOptions): Metadata & { softwareSchema?: ReturnType<typeof createSoftwareAppSchema> } {
+export function createMetadata(options: MetadataOptions): Metadata {
     const { title, description, path, ogImageAlt, ogImage, noIndex, ogTitle, ogDescription, twitterTitle, twitterDescription, twitterCreator, schemaOptions, faqs, howToSteps, toolName, breadcrumbs } = options
 
     // Smart default: Only include schema if path looks like a tool, unless explicitly overridden
@@ -217,13 +217,6 @@ export function createMetadata(options: MetadataOptions): Metadata & { softwareS
                 "application/ld+json": JSON.stringify(schemas.length === 1 ? schemas[0] : schemas)
             }
         }),
-    }
-
-    if (includeSchema && softwareSchema) {
-        return {
-            ...metadata,
-            softwareSchema
-        }
     }
 
     return metadata
