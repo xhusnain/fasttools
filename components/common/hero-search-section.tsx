@@ -11,7 +11,7 @@ export function HeroSearchSection() {
     return (
         <>
             {/* Central Search Bar */}
-            <div className={`w-full max-w-2xl mx-auto mb-10 animate-fade-in-up delay-300 px-2 sm:px-0 relative ${isSearchActive ? 'z-50' : 'z-20'}`}>
+            <div className={`w-full max-w-2xl mx-auto mb-10 px-2 sm:px-0 relative ${isSearchActive ? 'z-50' : 'z-20'}`}>
                 <SearchBar
                     className="w-full shadow-2xl shadow-primary/10"
                     inputClassName="h-14 sm:h-16 pl-14 text-lg bg-background/80 backdrop-blur-xl border-primary/20 focus:border-primary/50 transition-all rounded-2xl"
@@ -24,7 +24,7 @@ export function HeroSearchSection() {
             {/* Quick Access Tags - Hidden when searching */}
             <div
                 className={cn(
-                    "flex flex-wrap justify-center gap-2 sm:gap-3 animate-fade-in-up delay-400 transition-all duration-300",
+                    "flex flex-wrap justify-center gap-2 sm:gap-3 transition-all duration-300",
                     isSearchActive ? "opacity-0 invisible h-0 overflow-hidden" : "opacity-100 visible"
                 )}
             >

@@ -17,7 +17,7 @@ export const montserrat = Montserrat({
     subsets: ['latin'],
     variable: '--font-montserrat',
     display: 'swap',
-    preload: false, // Not critical, don't preload
+    preload: true, // Critical for H1 headings (LCP)
     fallback: ['system-ui', 'arial'],
     adjustFontFallback: true,
 })

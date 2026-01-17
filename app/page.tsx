@@ -73,7 +73,7 @@ const categories = [
         href: "/ai-tools/qr-generator",
         icon: QrCode,
         badge: "Popular",
-        badgeColor: "bg-blue-500/90",
+        badgeColor: "bg-blue-600",
       },
       {
         title: "AI Lyrics Generator",
@@ -81,7 +81,7 @@ const categories = [
         href: "/ai-tools/lyrics-generator",
         icon: Music,
         badge: "New",
-        badgeColor: "bg-heading-accent/90",
+        badgeColor: "bg-pink-600",
       },
       {
         title: "AI Caption Generator",
@@ -89,7 +89,7 @@ const categories = [
         href: "/ai-tools/caption-generator",
         icon: Hash,
         badge: "Trending",
-        badgeColor: "bg-primary/90",
+        badgeColor: "bg-primary",
       },
       {
         title: "AI Pet Name Generator",
@@ -97,7 +97,7 @@ const categories = [
         href: "/ai-tools/pet-names",
         icon: Heart,
         badge: "Fun",
-        badgeColor: "bg-pink-500/90",
+        badgeColor: "bg-pink-600",
       },
     ],
   },
@@ -127,7 +127,7 @@ const categories = [
         href: "/seo-tools/keyword-density",
         icon: Search,
         badge: "Analytics",
-        badgeColor: "bg-purple-500/90",
+        badgeColor: "bg-purple-600",
       },
       {
         title: "Lorem Ipsum Generator",
@@ -165,7 +165,7 @@ const categories = [
         href: "/dev-tools/color-palette",
         icon: Palette,
         badge: "Design",
-        badgeColor: "bg-pink-500/90",
+        badgeColor: "bg-pink-600",
       },
       {
         title: "Hex to RGB Converter",
@@ -189,7 +189,7 @@ const categories = [
         href: "/dev-tools/jwt-decoder",
         icon: Code,
         badge: "Security",
-        badgeColor: "bg-red-500/90",
+        badgeColor: "bg-red-600",
       },
       {
         title: "Regex Tester",
@@ -259,7 +259,7 @@ const categories = [
         href: "/social-media-tools/tiktok-downloader",
         icon: Download,
         badge: "Trending",
-        badgeColor: "bg-red-500/90",
+        badgeColor: "bg-red-600",
       },
       {
         title: "Facebook Video Downloader",
@@ -267,7 +267,7 @@ const categories = [
         href: "/social-media-tools/facebook-downloader",
         icon: Download,
         badge: "Social",
-        badgeColor: "bg-blue-600/90",
+        badgeColor: "bg-blue-700",
       },
       {
         title: "X Video Downloader",
@@ -307,7 +307,7 @@ const categories = [
         href: "/social-media-tools/channel-checker",
         icon: Search,
         badge: "New",
-        badgeColor: "bg-green-500/90",
+        badgeColor: "bg-green-600",
       },
       {
         title: "YouTube Channel Name Generator",
@@ -415,7 +415,7 @@ const categories = [
         href: "/pdf-tools/pdf-unlocker",
         icon: FileText, // Using FileText as generic, could be LockOpen if available
         badge: "Unlock",
-        badgeColor: "bg-green-500/90",
+        badgeColor: "bg-green-600",
       },
     ],
   },
@@ -427,8 +427,8 @@ const categories = [
     href: "/converters",
     borderColor: "border-border",
     hoverBorder: "hover:border-border",
-    iconBg: "bg-emerald-500/20",
-    iconColor: "text-emerald-600",
+    iconBg: "bg-emerald-500/10",
+    iconColor: "text-emerald-700",
     glowColor: "hover:shadow-emerald-500/20",
     tools: [
       {
@@ -461,7 +461,7 @@ const categories = [
         href: "/converters/temperature",
         icon: Thermometer,
         badge: "Fast",
-        badgeColor: "bg-primary/90",
+        badgeColor: "bg-primary",
       },
       {
         title: "File Size Converter",
@@ -497,7 +497,7 @@ const categories = [
     href: "/finance-tools",
     borderColor: "border-border",
     hoverBorder: "hover:border-border",
-    iconBg: "bg-emerald-500/20",
+    iconBg: "bg-emerald-500/10",
     iconColor: "text-foreground",
     glowColor: "hover:shadow-emerald-500/20",
     tools: [
@@ -523,7 +523,7 @@ const categories = [
         href: "/finance-tools/paypal-fee",
         icon: DollarSign,
         badge: "Payments",
-        badgeColor: "bg-emerald-500/90",
+        badgeColor: "bg-emerald-600",
       },
       {
         title: "Discount Calculator",
@@ -539,7 +539,7 @@ const categories = [
         href: "/finance-tools/tip-calculator",
         icon: DollarSign,
         badge: "Daily",
-        badgeColor: "bg-green-500/90",
+        badgeColor: "bg-green-600",
       },
       {
         title: "Savings Goal Tracker",
@@ -555,7 +555,7 @@ const categories = [
         href: "/finance-tools/retirement-planner",
         icon: DollarSign,
         badge: "Planning",
-        badgeColor: "bg-blue-500/90",
+        badgeColor: "bg-blue-600",
       },
       {
         title: "Bill Splitter",
@@ -601,7 +601,7 @@ const categories = [
         href: "/fun-tools/birthday-countdown",
         icon: Heart,
         badge: "Popular",
-        badgeColor: "bg-red-500/90",
+        badgeColor: "bg-red-600",
       },
       {
         title: "Anniversary Calculator",
@@ -655,7 +655,7 @@ const categories = [
         href: "/finance-tools/loan-calculator",
         icon: DollarSign,
         badge: "Finance",
-        badgeColor: "bg-emerald-500/90",
+        badgeColor: "bg-emerald-600",
       },
       {
         title: "Mortgage Calculator",
@@ -687,7 +687,7 @@ const categories = [
         href: "/finance-tools/salary-calculator",
         icon: DollarSign,
         badge: "Career",
-        badgeColor: "bg-emerald-500/90",
+        badgeColor: "bg-emerald-600",
       },
       {
         title: "Tax Calculator",
@@ -727,7 +727,7 @@ const categories = [
         href: "/calculator/bmr-calculator",
         icon: Activity,
         badge: "Health",
-        badgeColor: "bg-pink-500/90",
+        badgeColor: "bg-pink-600",
       },
       {
         title: "Body Fat Calculator",
@@ -759,7 +759,7 @@ const categories = [
         href: "/calculator/ip-subnet-calculator",
         icon: Activity,
         badge: "IT",
-        badgeColor: "bg-slate-500/90",
+        badgeColor: "bg-slate-600",
       },
       {
         title: "Standard Deviation Calculator",
@@ -767,7 +767,7 @@ const categories = [
         href: "/calculator/standard-deviation-calculator",
         icon: Activity,
         badge: "Math",
-        badgeColor: "bg-violet-500/90",
+        badgeColor: "bg-violet-600",
       },
       {
         title: "Concrete Calculator",
@@ -775,7 +775,7 @@ const categories = [
         href: "/calculator/concrete-calculator",
         icon: Activity,
         badge: "Construction",
-        badgeColor: "bg-stone-500/90",
+        badgeColor: "bg-stone-600",
       },
       {
         title: "Unit Converter",
@@ -783,7 +783,7 @@ const categories = [
         href: "/calculator/conversion-calculator",
         icon: Activity,
         badge: "Utility",
-        badgeColor: "bg-teal-500/90",
+        badgeColor: "bg-teal-600",
       },
       {
         title: "Date Difference",
@@ -1106,7 +1106,7 @@ export default function Home() {
         <div className="container mx-auto max-w-5xl relative z-20 py-12 lg:py-24 flex flex-col items-center text-center">
 
           {/* Top Badge */}
-          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-red-600/10 border border-red-600/20 text-red-600 text-sm font-bold mb-8 animate-fade-in-up">
+          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-red-600/10 border border-red-600/20 text-red-600 text-sm font-bold mb-8">
             <span className="relative flex h-2.5 w-2.5">
               <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-red-600 opacity-75"></span>
               <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-red-600"></span>
@@ -1123,7 +1123,7 @@ export default function Home() {
           </h1>
 
           {/* Subheading */}
-          <p className="text-lg sm:text-xl md:text-2xl text-muted-foreground font-medium max-w-3xl mx-auto leading-relaxed mb-12 animate-fade-in-up delay-200 px-4">
+          <p className="text-lg sm:text-xl md:text-2xl text-muted-foreground font-medium max-w-3xl mx-auto leading-relaxed mb-12 px-4">
             Access <strong className="text-foreground">1000+ free online tools</strong> for developers, designers, and creators.
             Process data locally for maximum security and speed.
           </p>

@@ -84,6 +84,37 @@ export function getAllPosts(): BlogPost[] {
     });
 }
 
+export function getAllPostsMeta(): BlogPost[] {
+    if (!fs.existsSync(postsDirectory)) {
+        return [];
+    }
+
+    const fileNames = fs.readdirSync(postsDirectory);
+    const allPostsData = fileNames
+        .filter((name) => name.endsWith('.md') || name.endsWith('.mdx'))
+        .map((fileName) => {
+            const slug = fileName.replace(/\.(md|mdx)$/, '');
+            const fullPath = path.join(postsDirectory, fileName);
+            const fileContents = fs.readFileSync(fullPath, 'utf8');
+            // Use gray-matter to parse only frontmatter
+            const { data } = matter(fileContents);
+
+            return {
+                slug,
+                title: data.title ? data.title.replace('<DynamicYear />', (new Date().getFullYear() + 1).toString()) : '',
+                date: data.date || '',
+                lastModified: data.lastModified || data.date || '',
+                image: data.image,
+                category: data.category,
+                // Minimal fields needed for sitemap
+            } as BlogPost;
+        });
+
+    return allPostsData.sort((a, b) => {
+        return new Date(b.date).getTime() - new Date(a.date).getTime();
+    });
+}
+
 export function getPostBySlug(slug: string): BlogPost | null {
     try {
         let fullPath = path.join(postsDirectory, `${slug}.md`);

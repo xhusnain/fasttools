@@ -71,7 +71,7 @@ export function HomeCategories({ categories }: HomeCategoriesProps) {
                                 })}
                             </div>
                             <div className="flex justify-center mt-6 sm:mt-8">
-                                <Link href={category.href}>
+                                <Link href={category.href} aria-label={`View all ${category.name} tools`}>
                                     <GButton size="lg" className="bg-primary hover:bg-primary/90 text-primary-foreground font-semibold shadow-lg gap-2 px-6 sm:px-8">
                                         View All
                                         <ArrowRight className="h-4 w-4 sm:h-5 sm:w-5" />

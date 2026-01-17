@@ -1004,12 +1004,12 @@ export const toolPages = [
     },
 ]
 
-import { getAllPosts } from "@/components/blog/blog"
-import { getAllGuides } from "@/components/guide/guide"
+import { getAllPostsMeta } from "@/components/blog/blog"
+import { getAllGuidesMeta } from "@/components/guide/guide"
 import { slugifyCategory } from "@/lib/utils"
 
 export const generateGuideSitemap = () => {
-    const guides = getAllGuides()
+    const guides = getAllGuidesMeta()
     return guides.map((guide) => ({
         url: `${baseUrl}/guides/${guide.slug}`,
         lastModified: new Date(guide.lastModified || guide.date),
@@ -1026,7 +1026,7 @@ export const generateGuideSitemap = () => {
 }
 
 export const generateBlogSitemap = () => {
-    const posts = getAllPosts()
+    const posts = getAllPostsMeta()
     return posts.map((post) => ({
         url: `${baseUrl}/blog/${post.slug}`,
         lastModified: new Date(post.lastModified || post.date),
@@ -1043,7 +1043,7 @@ export const generateBlogSitemap = () => {
 }
 
 export const generateCategorySitemap = () => {
-    const posts = getAllPosts()
+    const posts = getAllPostsMeta()
     const categories = Array.from(new Set(posts.map(post => post.category).filter(Boolean)))
 
     return categories.map(category => ({

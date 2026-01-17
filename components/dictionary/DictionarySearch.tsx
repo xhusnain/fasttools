@@ -138,9 +138,9 @@ export function DictionarySearch() {
 
                     {!result && !loading && !error && (
                         <div className="text-center py-12">
-                            <h3 className="text-2xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-purple-400 mb-2">
+                            <h2 className="text-2xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-purple-400 mb-2">
                                 Dictionary
-                            </h3>
+                            </h2>
                             <p className="text-muted-foreground text-sm">
                                 Enter a word to explore its meaning
                             </p>

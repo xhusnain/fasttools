@@ -88,6 +88,38 @@ export function getAllGuides(): Guide[] {
     });
 }
 
+export function getAllGuidesMeta(): Guide[] {
+    if (!fs.existsSync(guidesDirectory)) {
+        return [];
+    }
+
+    const fileNames = fs.readdirSync(guidesDirectory);
+    const allGuidesData = fileNames
+        .filter((name) => name.endsWith('.md') || name.endsWith('.mdx'))
+        .map((fileName) => {
+            const slug = fileName.replace(/\.(md|mdx)$/, '');
+            const fullPath = path.join(guidesDirectory, fileName);
+            const fileContents = fs.readFileSync(fullPath, 'utf8');
+            // Use gray-matter to parse only frontmatter, ignoring content
+            const { data } = matter(fileContents);
+
+            return {
+                slug,
+                title: data.title || '',
+                description: data.description || '',
+                date: data.date || '',
+                lastModified: data.lastModified || data.date || '',
+                image: data.image,
+                category: data.category,
+                // Minimal fields needed for sitemap
+            } as Guide;
+        });
+
+    return allGuidesData.sort((a, b) => {
+        return new Date(b.date).getTime() - new Date(a.date).getTime();
+    });
+}
+
 export function getGuideBySlug(slug: string): Guide | null {
     try {
         let fullPath = path.join(guidesDirectory, `${slug}.md`);
