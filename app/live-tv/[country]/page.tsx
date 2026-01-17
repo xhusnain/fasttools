@@ -29,9 +29,7 @@ export async function generateMetadata({ params }: CountryPageProps): Promise<Me
     const countryData = await getCountryChannels(countryCode);
 
     if (!countryData) {
-        return {
-            title: 'Country Not Found',
-        };
+        notFound();
     }
 
     const seo = generateCountrySEO(countryData.country);
