@@ -138,7 +138,7 @@ export default function ProductionBeautifier() {
   // --- CORE LOGIC END ---
 
   // UI Helpers
-  const copy = () => navigator.clipboard.writeText(output);
+  const copy = () => void navigator.clipboard.writeText(output);
   const clear = () => { setInput(''); setOutput(''); };
 
   return (

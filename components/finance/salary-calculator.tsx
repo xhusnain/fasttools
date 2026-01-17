@@ -282,7 +282,7 @@ Base Salary: $${result.salaryAmount.toFixed(2)} ${result.payFrequency}
 Annual Salary: $${result.calculations.annual.adjusted.toFixed(2)}
 Hourly Rate: $${result.calculations.hourly.adjusted.toFixed(2)}
 Working Days: ${result.adjustedWorkingDays} days/year`
-      navigator.clipboard.writeText(text)
+      void navigator.clipboard.writeText(text)
     }
   }
 

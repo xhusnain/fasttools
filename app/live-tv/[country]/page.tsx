@@ -28,7 +28,7 @@ export async function generateStaticParams() {
 }
 
 export async function generateMetadata({ params }: CountryPageProps): Promise<Metadata> {
-    const { country: countryCode } = await params;
+    const { country: countryCode } = params;
     const countryData = await getCountryChannels(countryCode);
 
     if (!countryData) {
@@ -53,7 +53,7 @@ export async function generateMetadata({ params }: CountryPageProps): Promise<Me
 }
 
 export default async function CountryPage({ params }: CountryPageProps) {
-    const { country: countryCode } = await params;
+    const { country: countryCode } = params;
     const countryData = await getCountryChannels(countryCode);
 
     if (!countryData) {

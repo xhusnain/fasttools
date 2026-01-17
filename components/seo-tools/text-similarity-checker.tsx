@@ -50,7 +50,7 @@ export function TextSimilarityChecker() {
     const copyFingerprint = (which: "a" | "b") => {
         if (!result) return
         const fp = which === "a" ? result.fingerprint1 : result.fingerprint2
-        navigator.clipboard.writeText(fp)
+        void navigator.clipboard.writeText(fp)
         setCopied(which)
         setTimeout(() => setCopied(null), 2000)
     }

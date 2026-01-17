@@ -123,7 +123,7 @@ export function DateDifferenceCalculator() {
   const copyResult = () => {
     if (!result) return
     const text = `Date difference: ${result.years} years, ${result.months} months, ${result.days} days (${result.totalDays} total days)`
-    navigator.clipboard.writeText(text)
+    void navigator.clipboard.writeText(text)
     setCopied(true)
     setTimeout(() => setCopied(false), 2000)
   }

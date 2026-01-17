@@ -162,7 +162,7 @@ export default function LyricsGenerator() {
       {lyrics && (
         <div className="relative bg-gray-50 p-6 rounded-xl border whitespace-pre-wrap font-mono text-sm leading-relaxed">
           <button 
-            onClick={() => navigator.clipboard.writeText(lyrics)}
+            onClick={() => void navigator.clipboard.writeText(lyrics)}
             className="absolute top-4 right-4 text-gray-400 hover:text-gray-700"
           >
             <Copy size={16} />

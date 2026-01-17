@@ -9,6 +9,7 @@ import { GAlert, GAlertDescription } from "@/ui/galert"
 
 import { Download, Loader2, AlertCircle, Video, Music } from "lucide-react"
 import { API } from "@/services/api/api.service"
+import { downloadBlob } from "@/lib/download-utils"
 
 export interface CapcutDownloaderProps {
     compact?: boolean
@@ -83,36 +84,7 @@ export function CapcutDownloader({ compact = false }: CapcutDownloaderProps) {
         }
     }
 
-    const downloadFile = async (fileUrl: string, filename: string) => {
-        try {
-            // Fetch the file as a blob to handle cross-origin downloads
-            const response = await fetch(fileUrl)
-            const blob = await response.blob()
 
-            // Create a blob URL
-            const blobUrl = URL.createObjectURL(blob)
-
-            // Create and trigger download
-            const link = document.createElement("a")
-            link.href = blobUrl
-            link.download = filename
-            document.body.appendChild(link)
-            link.click()
-            document.body.removeChild(link)
-
-            // Clean up the blob URL
-            setTimeout(() => URL.revokeObjectURL(blobUrl), 100)
-        } catch (error) {
-            // Fallback to direct link if fetch fails
-            const link = document.createElement("a")
-            link.href = fileUrl
-            link.download = filename
-            link.target = "_blank"
-            document.body.appendChild(link)
-            link.click()
-            document.body.removeChild(link)
-        }
-    }
 
     return (
         <div className="w-full max-w-4xl mx-auto space-y-4 sm:space-y-6">
@@ -185,7 +157,7 @@ export function CapcutDownloader({ compact = false }: CapcutDownloaderProps) {
                                     {/* Handle originalVideoUrl/videoUrl field (CapCut specific) */}
                                     {(result.videoUrl || result.originalVideoUrl) && (
                                         <GButton
-                                            onClick={async () => await downloadFile(result.videoUrl || result.originalVideoUrl, `capcut-video-${Date.now()}.mp4`)}
+                                            onClick={async () => await downloadBlob(result.videoUrl || result.originalVideoUrl, `capcut-video-${Date.now()}.mp4`)}
                                             className="w-full"
                                             size="lg"
                                         >
@@ -196,7 +168,7 @@ export function CapcutDownloader({ compact = false }: CapcutDownloaderProps) {
                                     {/* Handle mp4 field */}
                                     {result.mp4 && (
                                         <GButton
-                                            onClick={async () => await downloadFile(result.mp4, `capcut-video-${Date.now()}.mp4`)}
+                                            onClick={async () => await downloadBlob(result.mp4, `capcut-video-${Date.now()}.mp4`)}
                                             className="w-full"
                                             size="lg"
                                         >
@@ -208,7 +180,7 @@ export function CapcutDownloader({ compact = false }: CapcutDownloaderProps) {
                                     {/* Handle mp3 field */}
                                     {result.mp3 && (
                                         <GButton
-                                            onClick={async () => await downloadFile(result.mp3, `capcut-audio-${Date.now()}.mp3`)}
+                                            onClick={async () => await downloadBlob(result.mp3, `capcut-audio-${Date.now()}.mp3`)}
                                             variant="outline"
                                             className="w-full"
                                             size="lg"
@@ -221,7 +193,7 @@ export function CapcutDownloader({ compact = false }: CapcutDownloaderProps) {
                                     {/* Handle video array */}
                                     {result.video && Array.isArray(result.video) && result.video.length > 0 && (
                                         <GButton
-                                            onClick={async () => await downloadFile(result.video[0], `capcut-video-${Date.now()}.mp4`)}
+                                            onClick={async () => await downloadBlob(result.video[0], `capcut-video-${Date.now()}.mp4`)}
                                             className="w-full"
                                             size="lg"
                                         >
@@ -233,7 +205,7 @@ export function CapcutDownloader({ compact = false }: CapcutDownloaderProps) {
                                     {/* Handle legacy format with result.url */}
                                     {result.url && !result.video && !result.mp4 && (
                                         <GButton
-                                            onClick={async () => await downloadFile(result.url, `capcut-${Date.now()}.mp4`)}
+                                            onClick={async () => await downloadBlob(result.url, `capcut-${Date.now()}.mp4`)}
                                             className="w-full"
                                             size="lg"
                                         >
@@ -245,7 +217,7 @@ export function CapcutDownloader({ compact = false }: CapcutDownloaderProps) {
                                     {/* Handle audio array */}
                                     {result.audio && Array.isArray(result.audio) && result.audio.length > 0 && (
                                         <GButton
-                                            onClick={async () => await downloadFile(result.audio[0], `capcut-audio-${Date.now()}.mp3`)}
+                                            onClick={async () => await downloadBlob(result.audio[0], `capcut-audio-${Date.now()}.mp3`)}
                                             variant="outline"
                                             className="w-full"
                                             size="lg"
@@ -258,7 +230,7 @@ export function CapcutDownloader({ compact = false }: CapcutDownloaderProps) {
                                     {/* Handle legacy music field */}
                                     {result.music && !result.audio && !result.mp3 && (
                                         <GButton
-                                            onClick={async () => await downloadFile(result.music, `capcut-audio-${Date.now()}.mp3`)}
+                                            onClick={async () => await downloadBlob(result.music, `capcut-audio-${Date.now()}.mp3`)}
                                             variant="outline"
                                             className="w-full"
                                             size="lg"

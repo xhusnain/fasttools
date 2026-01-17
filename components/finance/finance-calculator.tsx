@@ -348,7 +348,7 @@ PMT: $${result.pmt.toFixed(2)}
 I/Y: ${result.iy.toFixed(2)}%
 N: ${result.n.toFixed(0)} periods
 Total Interest: $${result.summary.totalInterest.toFixed(2)}`
-      navigator.clipboard.writeText(text)
+      void navigator.clipboard.writeText(text)
     }
   }
 

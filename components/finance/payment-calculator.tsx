@@ -93,6 +93,14 @@ import {
   Trophy as TrophyIcon
 } from "lucide-react"
 
+import {
+  calculateMonthlyPayment,
+  generateAmortizationSchedule,
+  generateMonthlySchedule,
+  generateLoanRecommendations,
+  generateLoanScenarios,
+} from "@/lib/finance-utils"
+
 interface PaymentResult {
   calculationType: string
   loanAmount: number
@@ -169,8 +177,7 @@ export default function PaymentCalculator() {
         return
       }
 
-      const monthlyPaymentAmount = amount * (monthlyRate * Math.pow(1 + monthlyRate, totalMonths)) /
-        (Math.pow(1 + monthlyRate, totalMonths) - 1)
+      const monthlyPaymentAmount = calculateMonthlyPayment(amount, monthlyRate, totalMonths)
 
       const totalPayments = monthlyPaymentAmount * totalMonths
       const totalInterest = totalPayments - amount
@@ -180,6 +187,9 @@ export default function PaymentCalculator() {
       // Generate amortization schedule
       const amortizationSchedule = generateAmortizationSchedule(amount, monthlyRate, totalMonths, monthlyPaymentAmount)
       const monthlySchedule = generateMonthlySchedule(amount, monthlyRate, totalMonths, monthlyPaymentAmount)
+
+      const recs = generateLoanRecommendations(rate, amount, term, monthlyPaymentAmount)
+      const scenarios = generateLoanScenarios(amount, rate, term, monthlyPaymentAmount)
 
       calculatedResult = {
         calculationType: "fixedTerm",
@@ -193,8 +203,17 @@ export default function PaymentCalculator() {
         interestPercentage: interestPercentage,
         amortizationSchedule: amortizationSchedule,
         monthlySchedule: monthlySchedule,
-        recommendations: generateRecommendations(rate, amount, term, monthlyPaymentAmount),
-        scenarios: generateScenarios(amount, rate, term)
+        recommendations: {
+          loanOptimization: recs.optimization,
+          paymentStrategies: recs.strategies,
+          financialTips: recs.tips
+        },
+        scenarios: scenarios.map(s => ({
+          scenario: s.title,
+          monthlyPayment: s.payment,
+          totalInterest: s.totalInterest,
+          savings: s.savings
+        }))
       }
     } else {
       // Calculate loan term for fixed payment
@@ -208,6 +227,9 @@ export default function PaymentCalculator() {
         const months = Math.ceil(amount / payment)
         const years = months / 12
 
+        const recs = generateLoanRecommendations(rate, amount, years, payment)
+        const scenarios = generateLoanScenarios(amount, rate, years, payment)
+
         calculatedResult = {
           calculationType: "fixedPayment",
           loanAmount: amount,
@@ -220,8 +242,17 @@ export default function PaymentCalculator() {
           interestPercentage: 0,
           amortizationSchedule: [],
           monthlySchedule: [],
-          recommendations: generateRecommendations(rate, amount, years, payment),
-          scenarios: generateScenarios(amount, rate, years)
+          recommendations: {
+            loanOptimization: recs.optimization,
+            paymentStrategies: recs.strategies,
+            financialTips: recs.tips
+          },
+          scenarios: scenarios.map(s => ({
+            scenario: s.title,
+            monthlyPayment: s.payment,
+            totalInterest: s.totalInterest,
+            savings: s.savings
+          }))
         }
       } else {
         // Calculate months needed to pay off loan
@@ -242,6 +273,9 @@ export default function PaymentCalculator() {
         const amortizationSchedule = generateAmortizationSchedule(amount, monthlyRate, months, payment)
         const monthlySchedule = generateMonthlySchedule(amount, monthlyRate, months, payment)
 
+        const recs = generateLoanRecommendations(rate, amount, years, payment)
+        const scenarios = generateLoanScenarios(amount, rate, years, payment)
+
         calculatedResult = {
           calculationType: "fixedPayment",
           loanAmount: amount,
@@ -254,8 +288,17 @@ export default function PaymentCalculator() {
           interestPercentage: interestPercentage,
           amortizationSchedule: amortizationSchedule,
           monthlySchedule: monthlySchedule,
-          recommendations: generateRecommendations(rate, amount, years, payment),
-          scenarios: generateScenarios(amount, rate, years)
+          recommendations: {
+            loanOptimization: recs.optimization,
+            paymentStrategies: recs.strategies,
+            financialTips: recs.tips
+          },
+          scenarios: scenarios.map(s => ({
+            scenario: s.title,
+            monthlyPayment: s.payment,
+            totalInterest: s.totalInterest,
+            savings: s.savings
+          }))
         }
       }
     }
@@ -264,137 +307,7 @@ export default function PaymentCalculator() {
     setHistory(prev => [calculatedResult, ...prev.slice(0, 4)])
   }
 
-  const generateAmortizationSchedule = (principal: number, monthlyRate: number, totalMonths: number, monthlyPayment: number) => {
-    const schedule = []
-    let balance = principal
 
-    for (let year = 1; year <= Math.ceil(totalMonths / 12); year++) {
-      let yearInterest = 0
-      let yearPrincipal = 0
-      const monthsInYear = Math.min(12, totalMonths - (year - 1) * 12)
-
-      for (let month = 1; month <= monthsInYear; month++) {
-        const interestPayment = balance * monthlyRate
-        const principalPayment = monthlyPayment - interestPayment
-        balance -= principalPayment
-        yearInterest += interestPayment
-        yearPrincipal += principalPayment
-      }
-
-      schedule.push({
-        year: year,
-        interest: yearInterest,
-        principal: yearPrincipal,
-        endingBalance: Math.max(0, balance)
-      })
-
-      if (balance <= 0) break
-    }
-
-    return schedule
-  }
-
-  const generateMonthlySchedule = (principal: number, monthlyRate: number, totalMonths: number, monthlyPayment: number) => {
-    const schedule = []
-    let balance = principal
-
-    for (let month = 1; month <= Math.ceil(totalMonths); month++) {
-      const interestPayment = balance * monthlyRate
-      const principalPayment = Math.min(monthlyPayment - interestPayment, balance)
-      balance -= principalPayment
-
-      schedule.push({
-        month: month,
-        interest: interestPayment,
-        principal: principalPayment,
-        endingBalance: Math.max(0, balance)
-      })
-
-      if (balance <= 0) break
-    }
-
-    return schedule
-  }
-
-  const generateRecommendations = (rate: number, amount: number, term: number, payment: number) => {
-    const paymentStrategies: string[] = []
-    const loanOptimization: string[] = []
-    const financialTips: string[] = []
-
-    // Payment strategies based on interest rate
-    if (rate < 3) {
-      paymentStrategies.push("Consider making extra payments to reduce total interest")
-      paymentStrategies.push("Your low interest rate makes this a good debt to keep")
-      paymentStrategies.push("Focus on higher-interest debts first")
-    } else if (rate < 6) {
-      paymentStrategies.push("Consider refinancing if rates drop significantly")
-      paymentStrategies.push("Make extra payments when possible to reduce total cost")
-      paymentStrategies.push("Balance between paying off debt and investing")
-    } else {
-      paymentStrategies.push("Prioritize paying off this high-interest debt")
-      paymentStrategies.push("Consider debt consolidation if rates are lower elsewhere")
-      paymentStrategies.push("Make extra payments a priority")
-    }
-
-    // Loan optimization
-    if (term > 20) {
-      loanOptimization.push("Consider shorter loan terms to reduce total interest")
-      loanOptimization.push("Make bi-weekly payments to pay off loan faster")
-      loanOptimization.push("Refinance to a shorter term if rates are favorable")
-    } else if (term < 5) {
-      loanOptimization.push("Your short term minimizes interest costs")
-      loanOptimization.push("Consider if the high payment fits your budget")
-      loanOptimization.push("Ensure you have emergency savings with high payments")
-    } else {
-      loanOptimization.push("Your loan term appears balanced")
-      loanOptimization.push("Consider making one extra payment per year")
-      loanOptimization.push("Monitor for refinancing opportunities")
-    }
-
-    // Financial tips
-    financialTips.push("Build an emergency fund before making extra payments")
-    financialTips.push("Consider the opportunity cost of extra payments vs. investing")
-    financialTips.push("Review your loan terms annually for better rates")
-    financialTips.push("Consider bi-weekly payments to reduce interest")
-    financialTips.push("Track your loan progress to stay motivated")
-
-    return { paymentStrategies, loanOptimization, financialTips }
-  }
-
-  const generateScenarios = (amount: number, rate: number, term: number) => {
-    const monthlyRate = rate / 100 / 12
-    const totalMonths = term * 12
-
-    const basePayment = amount * (monthlyRate * Math.pow(1 + monthlyRate, totalMonths)) /
-      (Math.pow(1 + monthlyRate, totalMonths) - 1)
-
-    return [
-      {
-        scenario: "Current Payment",
-        monthlyPayment: basePayment,
-        totalInterest: (basePayment * totalMonths) - amount,
-        savings: 0
-      },
-      {
-        scenario: "+$100 Extra",
-        monthlyPayment: basePayment + 100,
-        totalInterest: ((basePayment + 100) * totalMonths) - amount,
-        savings: 0
-      },
-      {
-        scenario: "+$200 Extra",
-        monthlyPayment: basePayment + 200,
-        totalInterest: ((basePayment + 200) * totalMonths) - amount,
-        savings: 0
-      },
-      {
-        scenario: "Bi-weekly",
-        monthlyPayment: basePayment * 1.083,
-        totalInterest: ((basePayment * 1.083) * totalMonths) - amount,
-        savings: 0
-      }
-    ]
-  }
 
   const copyResult = () => {
     if (result) {
@@ -403,7 +316,7 @@ Loan Amount: $${result.loanAmount.toFixed(2)}
 Monthly Payment: $${result.monthlyPayment.toFixed(2)}
 Total Interest: $${result.totalInterest.toFixed(2)}
 Loan Term: ${result.loanTerm.toFixed(1)} years`
-      navigator.clipboard.writeText(text)
+      void navigator.clipboard.writeText(text)
     }
   }
 

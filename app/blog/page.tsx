@@ -13,7 +13,7 @@ export const metadata = createMetadata({
 })
 
 export default async function BlogIndex() {
-    const posts = await getAllPosts()
+    const posts = getAllPosts()
 
     return <BlogClientPage allPosts={posts} />
 }

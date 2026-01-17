@@ -101,7 +101,7 @@ export function HashtagCounter() {
 
   const copyHashtags = (hashtags: string[]) => {
     const text = hashtags.join(" ")
-    navigator.clipboard.writeText(text)
+    void navigator.clipboard.writeText(text)
     setCopied(true)
     setTimeout(() => setCopied(false), 2000)
   }

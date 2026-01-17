@@ -31,6 +31,7 @@ import {
   Ruler,
   Calendar
 } from "lucide-react"
+import { calculateBMR, activityLevels } from "@/lib/calculators"
 
 interface BMRResult {
   bmr: number
@@ -56,11 +57,7 @@ interface BMRResult {
   }
 }
 
-interface ActivityLevel {
-  name: string
-  multiplier: number
-  description: string
-}
+
 
 export default function BMRCalculator() {
   const [age, setAge] = useState("")
@@ -73,35 +70,9 @@ export default function BMRCalculator() {
   const [result, setResult] = useState<BMRResult | null>(null)
   const [history, setHistory] = useState<BMRResult[]>([])
 
-  const activityLevels: ActivityLevel[] = [
-    {
-      name: "Sedentary",
-      multiplier: 1.2,
-      description: "Little or no exercise"
-    },
-    {
-      name: "Light Activity",
-      multiplier: 1.375,
-      description: "Exercise 1-3 times/week"
-    },
-    {
-      name: "Moderate Activity",
-      multiplier: 1.55,
-      description: "Exercise 4-5 times/week"
-    },
-    {
-      name: "Very Active",
-      multiplier: 1.725,
-      description: "Daily exercise or intense exercise 3-4 times/week"
-    },
-    {
-      name: "Extremely Active",
-      multiplier: 1.9,
-      description: "Intense exercise 6-7 times/week or physical job"
-    }
-  ]
 
-  const calculateBMR = () => {
+
+  const handleCalculateBMR = () => {
     if (!age || !height || !weight) return
 
     try {
@@ -110,55 +81,34 @@ export default function BMRCalculator() {
       const weightNum = parseFloat(weight)
       const bodyFatNum = bodyFat ? parseFloat(bodyFat) : null
 
-      let bmr = 0
-      let equationName = ""
-      let accuracy = ""
+      const weightKg = unitSystem === "metric" ? weightNum : weightNum * 0.453592
+      const heightCm = unitSystem === "metric" ? heightNum : heightNum * 2.54
 
-      // Convert units if needed
-      const heightCm = unitSystem === "imperial" ? heightNum * 2.54 : heightNum
-      const weightKg = unitSystem === "imperial" ? weightNum * 0.453592 : weightNum
+      const { bmr, equationName, accuracy } = calculateBMR({
+        weight: weightKg,
+        height: heightCm,
+        age: ageNum,
+        gender,
+        equation,
+        bodyFat: bodyFatNum || undefined
+      })
 
-      if (equation === "mifflin") {
-        if (gender === "male") {
-          bmr = 10 * weightKg + 6.25 * heightCm - 5 * ageNum + 5
-        } else {
-          bmr = 10 * weightKg + 6.25 * heightCm - 5 * ageNum - 161
-        }
-        equationName = "Mifflin-St Jeor Equation"
-        accuracy = "Most accurate for general population"
-      } else if (equation === "harris") {
-        if (gender === "male") {
-          bmr = 13.397 * weightKg + 4.799 * heightCm - 5.677 * ageNum + 88.362
-        } else {
-          bmr = 9.247 * weightKg + 3.098 * heightCm - 4.330 * ageNum + 447.593
-        }
-        equationName = "Revised Harris-Benedict Equation"
-        accuracy = "Good for general population"
-      } else if (equation === "katch" && bodyFatNum !== null) {
-        bmr = 370 + 21.6 * (1 - bodyFatNum / 100) * weightKg
-        equationName = "Katch-McArdle Formula"
-        accuracy = "Most accurate for lean individuals with known body fat %"
-      } else {
-        return
-      }
+      if (bmr === 0) return
 
-      // Calculate TDEE for different activity levels
-      const tdee = bmr * 1.55 // Moderate activity as default
+      const tdee = bmr * 1.55
 
-      // Weight management calculations
       const weightLoss = {
-        mild: Math.round(bmr * 1.2 - 250), // 0.5 lb/week
-        moderate: Math.round(bmr * 1.2 - 500), // 1 lb/week
-        aggressive: Math.round(bmr * 1.2 - 750) // 1.5 lb/week
+        mild: Math.round(tdee - 250),
+        moderate: Math.round(tdee - 500),
+        aggressive: Math.round(tdee - 750)
       }
 
       const weightGain = {
-        mild: Math.round(bmr * 1.2 + 250), // 0.5 lb/week
-        moderate: Math.round(bmr * 1.2 + 500), // 1 lb/week
-        aggressive: Math.round(bmr * 1.2 + 750) // 1.5 lb/week
+        mild: Math.round(tdee + 250),
+        moderate: Math.round(tdee + 500),
+        aggressive: Math.round(tdee + 750)
       }
 
-      // Generate recommendations
       const recommendations = generateRecommendations(bmr, ageNum, gender)
 
       const newResult: BMRResult = {
@@ -226,7 +176,7 @@ Weight Gain Goals:
 Mild (0.5 lb/week): ${result.weightGain.mild} calories/day
 Moderate (1 lb/week): ${result.weightGain.moderate} calories/day
 Aggressive (1.5 lb/week): ${result.weightGain.aggressive} calories/day`
-      navigator.clipboard.writeText(text)
+      void navigator.clipboard.writeText(text)
     }
   }
 
@@ -357,7 +307,7 @@ Aggressive (1.5 lb/week): ${result.weightGain.aggressive} calories/day`
           )}
 
           <div className="flex flex-col sm:flex-row gap-2 w-full">
-            <GButton onClick={calculateBMR} className="flex-1 w-full sm:w-auto text-sm sm:text-base">
+            <GButton onClick={handleCalculateBMR} className="flex-1 w-full sm:w-auto text-sm sm:text-base">
               <Calculator className="mr-2 h-4 w-4" />
               Calculate BMR
             </GButton>

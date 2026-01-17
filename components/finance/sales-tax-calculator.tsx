@@ -305,7 +305,7 @@ Tax Amount: $${result.taxAmount.toFixed(2)}
 After Tax Price: $${result.afterTaxPrice.toFixed(2)}
 State: ${result.state}
 Total Tax Rate: ${result.totalTaxRate.toFixed(2)}%`
-      navigator.clipboard.writeText(text)
+      void navigator.clipboard.writeText(text)
     }
   }
 

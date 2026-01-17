@@ -100,7 +100,7 @@ export function UuidGenerator() {
 
     const handleCopy = () => {
         if (!generatedUuids) return
-        navigator.clipboard.writeText(generatedUuids)
+        void navigator.clipboard.writeText(generatedUuids)
         toast.success("Copied to clipboard")
     }
 

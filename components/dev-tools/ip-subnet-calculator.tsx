@@ -427,13 +427,13 @@ export function IPSubnetCalculator({
   const shareResult = () => {
     updateUrlParams()
     const url = window.location.href
-    navigator.clipboard.writeText(url)
+    void navigator.clipboard.writeText(url)
     setCopied(true)
     setTimeout(() => setCopied(false), 2000)
   }
 
   const copyField = (text: string) => {
-    navigator.clipboard.writeText(text)
+    void navigator.clipboard.writeText(text)
   }
 
   const copyResult = () => {
@@ -453,7 +453,7 @@ export function IPSubnetCalculator({
     text += `Wildcard Mask: ${result.wildcardMask}\n`
     text += `Reverse DNS: ${result.reverseDNS}\n`
 
-    navigator.clipboard.writeText(text)
+    void navigator.clipboard.writeText(text)
     setCopied(true)
     setTimeout(() => setCopied(false), 2000)
   }

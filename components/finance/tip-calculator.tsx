@@ -50,7 +50,7 @@ Bill Amount: $${billAmount}
 Tip (${tipPercent}%): $${result.tipAmount}
 Total Amount: $${result.totalAmount}
 Split ${numPeople} ways: $${result.perPerson} per person`
-      navigator.clipboard.writeText(text)
+      void navigator.clipboard.writeText(text)
     }
   }
 

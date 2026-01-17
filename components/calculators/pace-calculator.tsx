@@ -288,7 +288,7 @@ Heart Rate Zone: ${result.heartRateZone}
 Training Zone: ${result.trainingZone}
 Calories Burned: ${result.caloriesBurned}
 VO2 Max: ${result.vo2Max}`
-      navigator.clipboard.writeText(text)
+      void navigator.clipboard.writeText(text)
     }
   }
 

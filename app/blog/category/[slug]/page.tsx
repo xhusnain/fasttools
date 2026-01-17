@@ -6,7 +6,7 @@ import { notFound } from 'next/navigation'
 import { slugifyCategory } from '@/lib/utils'
 
 export async function generateStaticParams() {
-    const posts = await getAllPosts()
+    const posts = getAllPosts()
     const categories = Array.from(new Set(posts.map(post =>
         post.category?.toLowerCase() || 'uncategorized'
     )))
@@ -18,7 +18,7 @@ export async function generateStaticParams() {
 
 export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata> {
     const { slug } = await params
-    const posts = await getAllPosts()
+    const posts = getAllPosts()
 
     // Find the original category name to use proper casing (e.g. "SEO & Marketing" instead of "Seo And Marketing")
     const originalCategory = Array.from(new Set(posts.map(p => p.category)))
@@ -35,7 +35,7 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
 
 export default async function CategoryPage({ params }: { params: Promise<{ slug: string }> }) {
     const { slug } = await params
-    const posts = await getAllPosts()
+    const posts = getAllPosts()
 
     // Find the original category name by matching the slug
     // This allows us to handle "SEO & Marketing" -> "seo-and-marketing" correctly

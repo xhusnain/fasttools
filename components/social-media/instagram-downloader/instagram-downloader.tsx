@@ -9,6 +9,7 @@ import { GAlert, GAlertDescription } from "@/ui/galert"
 
 import { Download, Loader2, AlertCircle, Video } from "lucide-react"
 import { API } from "@/services/api/api.service"
+import { downloadBlob } from "@/lib/download-utils";
 
 export interface InstagramDownloaderProps {
   compact?: boolean
@@ -61,16 +62,6 @@ export function InstagramDownloader({ compact = false }: InstagramDownloaderProp
     } finally {
       setLoading(false)
     }
-  }
-
-  const downloadFile = (fileUrl: string, filename: string) => {
-    const link = document.createElement("a")
-    link.href = fileUrl
-    link.download = filename
-    link.target = "_blank"
-    document.body.appendChild(link)
-    link.click()
-    document.body.removeChild(link)
   }
 
   return (
@@ -146,7 +137,7 @@ export function InstagramDownloader({ compact = false }: InstagramDownloaderProp
                         </div>
                       )}
                       <GButton
-                        onClick={() => downloadFile(result[0].url, `instagram-${Date.now()}.mp4`)}
+                        onClick={() => downloadBlob(result[0].url, `instagram-${Date.now()}.mp4`)}
                         className="w-full"
                         size="lg"
                       >
@@ -175,7 +166,7 @@ export function InstagramDownloader({ compact = false }: InstagramDownloaderProp
                               </div>
                             )}
                             <GButton
-                              onClick={() => downloadFile(item.url, `instagram-${index + 1}-${Date.now()}.mp4`)}
+                              onClick={() => downloadBlob(item.url, `instagram-${index + 1}-${Date.now()}.mp4`)}
                               className="w-full"
                               size="sm"
                             >
@@ -188,7 +179,7 @@ export function InstagramDownloader({ compact = false }: InstagramDownloaderProp
                       <GButton
                         onClick={() => {
                           result.forEach((item: any, index: number) => {
-                            setTimeout(() => downloadFile(item.url, `instagram-${index + 1}-${Date.now()}.mp4`), index * 500)
+                            setTimeout(() => downloadBlob(item.url, `instagram-${index + 1}-${Date.now()}.mp4`), index * 500)
                           })
                         }}
                         className="w-full"
@@ -228,7 +219,7 @@ export function InstagramDownloader({ compact = false }: InstagramDownloaderProp
 
                     {result.url && (
                       <GButton
-                        onClick={() => downloadFile(result.url, `instagram-${Date.now()}.mp4`)}
+                        onClick={() => downloadBlob(result.url, `instagram-${Date.now()}.mp4`)}
                         className="w-full"
                         size="lg"
                       >

@@ -9,6 +9,7 @@ import { GAlert, GAlertDescription } from "@/ui/galert"
 
 import { Download, Loader2, AlertCircle, Video, Music } from "lucide-react"
 import { API } from "@/services/api/api.service"
+import { downloadBlob } from "@/lib/download-utils"
 
 export interface TiktokDownloaderProps {
   compact?: boolean
@@ -69,36 +70,7 @@ export function TiktokDownloader({ compact = false }: TiktokDownloaderProps) {
     }
   }
 
-  const downloadFile = async (fileUrl: string, filename: string) => {
-    try {
-      // Fetch the file as a blob to handle cross-origin downloads
-      const response = await fetch(fileUrl)
-      const blob = await response.blob()
 
-      // Create a blob URL
-      const blobUrl = URL.createObjectURL(blob)
-
-      // Create and trigger download
-      const link = document.createElement("a")
-      link.href = blobUrl
-      link.download = filename
-      document.body.appendChild(link)
-      link.click()
-      document.body.removeChild(link)
-
-      // Clean up the blob URL
-      setTimeout(() => URL.revokeObjectURL(blobUrl), 100)
-    } catch (error) {
-      // Fallback to direct link if fetch fails
-      const link = document.createElement("a")
-      link.href = fileUrl
-      link.download = filename
-      link.target = "_blank"
-      document.body.appendChild(link)
-      link.click()
-      document.body.removeChild(link)
-    }
-  }
 
   return (
     <div className="w-full max-w-4xl mx-auto space-y-4 sm:space-y-6">
@@ -171,7 +143,7 @@ export function TiktokDownloader({ compact = false }: TiktokDownloaderProps) {
                       {result.video.length === 1 ? (
                         // Single video
                         <GButton
-                          onClick={async () => await downloadFile(result.video[0], `tiktok-video-${Date.now()}.mp4`)}
+                          onClick={async () => await downloadBlob(result.video[0], `tiktok-video-${Date.now()}.mp4`)}
                           className="w-full"
                           size="lg"
                         >
@@ -191,7 +163,7 @@ export function TiktokDownloader({ compact = false }: TiktokDownloaderProps) {
                                   className="w-full aspect-square object-cover rounded border"
                                 />
                                 <GButton
-                                  onClick={async () => await downloadFile(imageUrl, `tiktok-image-${index + 1}-${Date.now()}.jpg`)}
+                                  onClick={async () => await downloadBlob(imageUrl, `tiktok-image-${index + 1}-${Date.now()}.jpg`)}
                                   size="sm"
                                   className="absolute bottom-2 right-2 opacity-0 group-hover:opacity-100 transition-opacity"
                                 >
@@ -203,7 +175,7 @@ export function TiktokDownloader({ compact = false }: TiktokDownloaderProps) {
                           <GButton
                             onClick={async () => {
                               for (let index = 0; index < result.video.length; index++) {
-                                await downloadFile(result.video[index], `tiktok-image-${index + 1}-${Date.now()}.jpg`)
+                                await downloadBlob(result.video[index], `tiktok-image-${index + 1}-${Date.now()}.jpg`)
                                 if (index < result.video.length - 1) {
                                   await new Promise(resolve => setTimeout(resolve, 500))
                                 }
@@ -223,7 +195,7 @@ export function TiktokDownloader({ compact = false }: TiktokDownloaderProps) {
                   {/* Handle legacy format with result.url */}
                   {result.url && !result.video && (
                     <GButton
-                      onClick={async () => await downloadFile(result.url, `tiktok-${Date.now()}.mp4`)}
+                      onClick={async () => await downloadBlob(result.url, `tiktok-${Date.now()}.mp4`)}
                       className="w-full"
                       size="lg"
                     >
@@ -237,7 +209,7 @@ export function TiktokDownloader({ compact = false }: TiktokDownloaderProps) {
                     <GButton
                       onClick={async () => {
                         const audioUrl = result.audio && result.audio.length > 0 ? result.audio[0] : result.music
-                        await downloadFile(audioUrl, `tiktok-audio-${Date.now()}.mp3`)
+                        await downloadBlob(audioUrl, `tiktok-audio-${Date.now()}.mp3`)
                       }}
                       variant="outline"
                       className="w-full"

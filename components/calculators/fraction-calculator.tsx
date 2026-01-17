@@ -191,7 +191,7 @@ Decimal: ${result.decimal}
 Percentage: ${result.percentage}%
 Mixed Number: ${result.mixedNumber}`
 
-      navigator.clipboard.writeText(resultText)
+      void navigator.clipboard.writeText(resultText)
     }
   }
 
@@ -459,7 +459,7 @@ Mixed Number: ${result.mixedNumber}`
                     size="sm"
                     onClick={() => {
                       const resultText = `Fraction: ${calc.fraction1.numerator}/${calc.fraction1.denominator} ${getOperationSymbol(calc.operation)} ${calc.fraction2.numerator}/${calc.fraction2.denominator} = ${calc.result.numerator}/${calc.result.denominator}`
-                      navigator.clipboard.writeText(resultText)
+                      void navigator.clipboard.writeText(resultText)
                     }}
                     className="h-7 w-7 p-0 text-muted-foreground hover:text-heading-accent hover:bg-secondary"
                   >

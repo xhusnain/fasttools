@@ -137,38 +137,40 @@ interface RetirementResult {
 
 export default function RetirementCalculator() {
   const [calculationType, setCalculationType] = useState("howMuchToSave")
-  const [currentAge, setCurrentAge] = useState("")
-  const [retirementAge, setRetirementAge] = useState("")
-  const [lifeExpectancy, setLifeExpectancy] = useState("")
-  const [currentIncome, setCurrentIncome] = useState("")
-  const [incomeIncrease, setIncomeIncrease] = useState("")
-  const [retirementIncomeNeeded, setRetirementIncomeNeeded] = useState("")
-  const [investmentReturn, setInvestmentReturn] = useState("")
-  const [inflationRate, setInflationRate] = useState("")
-  const [otherIncome, setOtherIncome] = useState("")
-  const [currentSavings, setCurrentSavings] = useState("")
-  const [futureSavings, setFutureSavings] = useState("")
-  const [targetAmount, setTargetAmount] = useState("")
-  const [monthlyContribution, setMonthlyContribution] = useState("")
-  const [monthlyWithdrawal, setMonthlyWithdrawal] = useState("")
+  const [formData, setFormData] = useState({
+    currentAge: "",
+    retirementAge: "",
+    lifeExpectancy: "",
+    currentIncome: "",
+    incomeIncrease: "",
+    retirementIncomeNeeded: "",
+    investmentReturn: "",
+    inflationRate: "",
+    otherIncome: "",
+    currentSavings: "",
+    futureSavings: "",
+    targetAmount: "",
+    monthlyContribution: "",
+    monthlyWithdrawal: ""
+  })
   const [result, setResult] = useState<RetirementResult | null>(null)
   const [history, setHistory] = useState<RetirementResult[]>([])
 
   const calculateRetirement = () => {
-    const age = parseFloat(currentAge) || 0
-    const retireAge = parseFloat(retirementAge) || 0
-    const lifeExp = parseFloat(lifeExpectancy) || 0
-    const income = parseFloat(currentIncome) || 0
-    const incomeInc = parseFloat(incomeIncrease) || 0
-    const retirementIncome = parseFloat(retirementIncomeNeeded) || 0
-    const invReturn = parseFloat(investmentReturn) || 0
-    const inflation = parseFloat(inflationRate) || 0
-    const otherInc = parseFloat(otherIncome) || 0
-    const savings = parseFloat(currentSavings) || 0
-    const futureSav = parseFloat(futureSavings) || 0
-    const target = parseFloat(targetAmount) || 0
-    const monthlyContrib = parseFloat(monthlyContribution) || 0
-    const monthlyWithdraw = parseFloat(monthlyWithdrawal) || 0
+    const age = parseFloat(formData.currentAge) || 0
+    const retireAge = parseFloat(formData.retirementAge) || 0
+    const lifeExp = parseFloat(formData.lifeExpectancy) || 0
+    const income = parseFloat(formData.currentIncome) || 0
+    const incomeInc = parseFloat(formData.incomeIncrease) || 0
+    const retirementIncome = parseFloat(formData.retirementIncomeNeeded) || 0
+    const invReturn = parseFloat(formData.investmentReturn) || 0
+    const inflation = parseFloat(formData.inflationRate) || 0
+    const otherInc = parseFloat(formData.otherIncome) || 0
+    const savings = parseFloat(formData.currentSavings) || 0
+    const futureSav = parseFloat(formData.futureSavings) || 0
+    const target = parseFloat(formData.targetAmount) || 0
+    const monthlyContrib = parseFloat(formData.monthlyContribution) || 0
+    const monthlyWithdraw = parseFloat(formData.monthlyWithdrawal) || 0
 
     // GInput validation
     if (age <= 0) {
@@ -401,25 +403,27 @@ Target Amount: $${result.targetAmount.toFixed(2)}
 Monthly Contribution: $${result.monthlyContribution.toFixed(2)}
 Monthly Withdrawal: $${result.monthlyWithdrawal.toFixed(2)}
 Investment Return: ${result.investmentReturn.toFixed(2)}%`
-      navigator.clipboard.writeText(text)
+      void navigator.clipboard.writeText(text)
     }
   }
 
   const clearAll = () => {
-    setCurrentAge("")
-    setRetirementAge("")
-    setLifeExpectancy("")
-    setCurrentIncome("")
-    setIncomeIncrease("")
-    setRetirementIncomeNeeded("")
-    setInvestmentReturn("")
-    setInflationRate("")
-    setOtherIncome("")
-    setCurrentSavings("")
-    setFutureSavings("")
-    setTargetAmount("")
-    setMonthlyContribution("")
-    setMonthlyWithdrawal("")
+    setFormData({
+      currentAge: "",
+      retirementAge: "",
+      lifeExpectancy: "",
+      currentIncome: "",
+      incomeIncrease: "",
+      retirementIncomeNeeded: "",
+      investmentReturn: "",
+      inflationRate: "",
+      otherIncome: "",
+      currentSavings: "",
+      futureSavings: "",
+      targetAmount: "",
+      monthlyContribution: "",
+      monthlyWithdrawal: ""
+    })
     setResult(null)
   }
 
@@ -454,8 +458,8 @@ Investment Return: ${result.investmentReturn.toFixed(2)}%`
                 id="currentAge"
                 type="number"
                 placeholder="35"
-                value={currentAge}
-                onChange={(e) => setCurrentAge(e.target.value)}
+                value={formData.currentAge}
+                onChange={(e) => setFormData(prev => ({ ...prev, currentAge: e.target.value }))}
               />
             </div>
             <div className="space-y-2">
@@ -464,8 +468,8 @@ Investment Return: ${result.investmentReturn.toFixed(2)}%`
                 id="retirementAge"
                 type="number"
                 placeholder="67"
-                value={retirementAge}
-                onChange={(e) => setRetirementAge(e.target.value)}
+                value={formData.retirementAge}
+                onChange={(e) => setFormData(prev => ({ ...prev, retirementAge: e.target.value }))}
               />
             </div>
           </div>
@@ -477,8 +481,8 @@ Investment Return: ${result.investmentReturn.toFixed(2)}%`
                 id="lifeExpectancy"
                 type="number"
                 placeholder="85"
-                value={lifeExpectancy}
-                onChange={(e) => setLifeExpectancy(e.target.value)}
+                value={formData.lifeExpectancy}
+                onChange={(e) => setFormData(prev => ({ ...prev, lifeExpectancy: e.target.value }))}
               />
             </div>
             <div className="space-y-2">
@@ -487,8 +491,8 @@ Investment Return: ${result.investmentReturn.toFixed(2)}%`
                 id="currentIncome"
                 type="number"
                 placeholder="70000"
-                value={currentIncome}
-                onChange={(e) => setCurrentIncome(e.target.value)}
+                value={formData.currentIncome}
+                onChange={(e) => setFormData(prev => ({ ...prev, currentIncome: e.target.value }))}
               />
             </div>
           </div>
@@ -500,8 +504,8 @@ Investment Return: ${result.investmentReturn.toFixed(2)}%`
                 id="incomeIncrease"
                 type="number"
                 placeholder="3"
-                value={incomeIncrease}
-                onChange={(e) => setIncomeIncrease(e.target.value)}
+                value={formData.incomeIncrease}
+                onChange={(e) => setFormData(prev => ({ ...prev, incomeIncrease: e.target.value }))}
               />
             </div>
             <div className="space-y-2">
@@ -510,8 +514,8 @@ Investment Return: ${result.investmentReturn.toFixed(2)}%`
                 id="retirementIncomeNeeded"
                 type="number"
                 placeholder="75"
-                value={retirementIncomeNeeded}
-                onChange={(e) => setRetirementIncomeNeeded(e.target.value)}
+                value={formData.retirementIncomeNeeded}
+                onChange={(e) => setFormData(prev => ({ ...prev, retirementIncomeNeeded: e.target.value }))}
               />
             </div>
           </div>
@@ -523,8 +527,8 @@ Investment Return: ${result.investmentReturn.toFixed(2)}%`
                 id="investmentReturn"
                 type="number"
                 placeholder="6"
-                value={investmentReturn}
-                onChange={(e) => setInvestmentReturn(e.target.value)}
+                value={formData.investmentReturn}
+                onChange={(e) => setFormData(prev => ({ ...prev, investmentReturn: e.target.value }))}
               />
             </div>
             <div className="space-y-2">
@@ -533,8 +537,8 @@ Investment Return: ${result.investmentReturn.toFixed(2)}%`
                 id="inflationRate"
                 type="number"
                 placeholder="3"
-                value={inflationRate}
-                onChange={(e) => setInflationRate(e.target.value)}
+                value={formData.inflationRate}
+                onChange={(e) => setFormData(prev => ({ ...prev, inflationRate: e.target.value }))}
               />
             </div>
           </div>
@@ -546,8 +550,8 @@ Investment Return: ${result.investmentReturn.toFixed(2)}%`
                 id="otherIncome"
                 type="number"
                 placeholder="0"
-                value={otherIncome}
-                onChange={(e) => setOtherIncome(e.target.value)}
+                value={formData.otherIncome}
+                onChange={(e) => setFormData(prev => ({ ...prev, otherIncome: e.target.value }))}
               />
             </div>
             <div className="space-y-2">
@@ -556,8 +560,8 @@ Investment Return: ${result.investmentReturn.toFixed(2)}%`
                 id="currentSavings"
                 type="number"
                 placeholder="30000"
-                value={currentSavings}
-                onChange={(e) => setCurrentSavings(e.target.value)}
+                value={formData.currentSavings}
+                onChange={(e) => setFormData(prev => ({ ...prev, currentSavings: e.target.value }))}
               />
             </div>
           </div>
@@ -570,8 +574,8 @@ Investment Return: ${result.investmentReturn.toFixed(2)}%`
                   id="futureSavings"
                   type="number"
                   placeholder="10"
-                  value={futureSavings}
-                  onChange={(e) => setFutureSavings(e.target.value)}
+                  value={formData.futureSavings}
+                  onChange={(e) => setFormData(prev => ({ ...prev, futureSavings: e.target.value }))}
                 />
               </div>
             </div>
@@ -585,8 +589,8 @@ Investment Return: ${result.investmentReturn.toFixed(2)}%`
                   id="monthlyContribution"
                   type="number"
                   placeholder="500"
-                  value={monthlyContribution}
-                  onChange={(e) => setMonthlyContribution(e.target.value)}
+                  value={formData.monthlyContribution}
+                  onChange={(e) => setFormData(prev => ({ ...prev, monthlyContribution: e.target.value }))}
                 />
               </div>
             </div>
@@ -600,8 +604,8 @@ Investment Return: ${result.investmentReturn.toFixed(2)}%`
                   id="monthlyWithdrawal"
                   type="number"
                   placeholder="5000"
-                  value={monthlyWithdrawal}
-                  onChange={(e) => setMonthlyWithdrawal(e.target.value)}
+                  value={formData.monthlyWithdrawal}
+                  onChange={(e) => setFormData(prev => ({ ...prev, monthlyWithdrawal: e.target.value }))}
                 />
               </div>
             </div>

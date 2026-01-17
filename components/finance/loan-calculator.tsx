@@ -51,7 +51,7 @@ export function LoanCalculator() {
   const copyResult = () => {
     if (!result) return
     const text = `Monthly EMI: $${result.monthlyPayment.toLocaleString()}\nTotal Payment: $${result.totalPayment.toLocaleString()}\nTotal Interest: $${result.totalInterest.toLocaleString()}`
-    navigator.clipboard.writeText(text)
+    void navigator.clipboard.writeText(text)
     setCopied(true)
     setTimeout(() => setCopied(false), 2000)
   }

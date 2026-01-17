@@ -95,7 +95,7 @@ export function FutureAgePredictor() {
   const copyResult = () => {
     if (!result) return
     const text = `In ${result.year}, I will be ${result.age} years old! ${result.message}`
-    navigator.clipboard.writeText(text)
+    void navigator.clipboard.writeText(text)
     setCopied(true)
     setTimeout(() => setCopied(false), 2000)
   }

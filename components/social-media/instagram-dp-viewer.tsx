@@ -30,6 +30,7 @@ import { GCard } from "@/ui/gcard"
 
 import { Download, AlertCircle, User, Eye, Shield, Clock, CheckCircle } from "lucide-react"
 import { LoadingSpinner } from "@/components/common/loading-spinner"
+import { downloadBlob } from "@/lib/download-utils";
 
 export function InstagramDpViewer() {
   const [username, setUsername] = useState("")
@@ -184,54 +185,8 @@ export function InstagramDpViewer() {
     setDownloading(true)
 
     try {
-      // Method 1: Try to fetch and create blob URL for direct download
-      try {
-        const response = await fetch(profileData.profilePicUrl, {
-          mode: 'cors',
-          credentials: 'omit',
-          headers: {
-            'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36'
-          }
-        })
-
-        if (response.ok) {
-          const blob = await response.blob()
-          const url = window.URL.createObjectURL(blob)
-
-          const link = document.createElement('a')
-          link.href = url
-          link.download = `${profileData.username}-profile-picture.jpg`
-          link.style.display = 'none'
-
-          document.body.appendChild(link)
-          link.click()
-          document.body.removeChild(link)
-
-          // Clean up the blob URL
-          setTimeout(() => {
-            window.URL.revokeObjectURL(url)
-          }, 1000)
-
-          setDownloading(false)
-          return
-        }
-      } catch (fetchError) {
-        console.log('Direct fetch failed, trying alternative method')
-      }
-
-      // Method 2: Use window.open with download attribute
-      const link = document.createElement('a')
-      link.href = profileData.profilePicUrl
-      link.download = `${profileData.username}-profile-picture.jpg`
-      link.target = '_blank'
-      link.style.display = 'none'
-
-      document.body.appendChild(link)
-      link.click()
-      document.body.removeChild(link)
-
+      await downloadBlob(profileData.profilePicUrl, `${profileData.username}-profile-picture.jpg`)
       setDownloading(false)
-
     } catch (error) {
       console.error('Download error:', error)
       setError('Failed to download image. Please try right-clicking on the image and selecting "Save image as".')
@@ -361,51 +316,7 @@ export function InstagramDpViewer() {
                   src={profileData.profilePicUrl}
                   alt={`${profileData.username} profile picture`}
                   className="w-32 h-32 sm:w-40 sm:h-40 rounded-full border-4 border-border shadow-lg object-cover cursor-pointer hover:scale-105 transition-transform duration-300"
-                  onClick={async () => {
-                    try {
-                      // Try to fetch and create blob URL for direct download
-                      const response = await fetch(profileData.profilePicUrl, {
-                        mode: 'cors',
-                        credentials: 'omit',
-                        headers: {
-                          'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36'
-                        }
-                      })
-
-                      if (response.ok) {
-                        const blob = await response.blob()
-                        const url = window.URL.createObjectURL(blob)
-
-                        const link = document.createElement('a')
-                        link.href = url
-                        link.download = `${profileData.username}-profile-picture.jpg`
-                        link.style.display = 'none'
-
-                        document.body.appendChild(link)
-                        link.click()
-                        document.body.removeChild(link)
-
-                        setTimeout(() => {
-                          window.URL.revokeObjectURL(url)
-                        }, 1000)
-
-                        return
-                      }
-                    } catch (fetchError) {
-                      console.log('Direct fetch failed, trying alternative method')
-                    }
-
-                    // Fallback: Use direct link
-                    const link = document.createElement('a')
-                    link.href = profileData.profilePicUrl
-                    link.download = `${profileData.username}-profile-picture.jpg`
-                    link.target = '_blank'
-                    link.style.display = 'none'
-
-                    document.body.appendChild(link)
-                    link.click()
-                    document.body.removeChild(link)
-                  }}
+                  onClick={downloadImage}
                   title="Click to download or right-click to save"
                 />
                 {profileData.isVerified && (

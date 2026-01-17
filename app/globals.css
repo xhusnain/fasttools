@@ -493,25 +493,6 @@ html {
   background: #4DA6FF;
 }
 
-/* Hide scrollbar but keep scroll functionality */
-.scrollbar-hide {
-  -ms-overflow-style: none;
-  scrollbar-width: none;
-}
-
-.scrollbar-hide::-webkit-scrollbar {
-  display: none;
-}
-
-
-.glass-effect {
-  background: var(--card) !important;
-  backdrop-filter: none !important;
-  -webkit-backdrop-filter: none !important;
-  border: 1px solid var(--border) !important;
-  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06) !important;
-}
-
 .solid-card {
   background: var(--card);
   border: 1px solid var(--border);
@@ -532,11 +513,6 @@ html {
   opacity: 0.9;
   transform: translateY(-1px);
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
-}
-
-.glass-effect {
-  backdrop-filter: none !important;
-  -webkit-backdrop-filter: none !important;
 }
 
 @keyframes fadeIn {

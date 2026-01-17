@@ -263,7 +263,7 @@ Monthly Payment: $${result.monthlyPayment.toFixed(2)}
 Total Interest: $${result.totalInterest.toFixed(2)}
 Loan Term: ${result.loanTerm} years
 Interest Rate: ${result.interestRate.toFixed(2)}%`
-      navigator.clipboard.writeText(text)
+      void navigator.clipboard.writeText(text)
     }
   }
 

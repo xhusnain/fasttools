@@ -12,7 +12,7 @@ export const metadata = createMetadata({
 })
 
 export default async function GuidesIndex() {
-    const guides = await getAllGuides()
+    const guides = getAllGuides()
 
     return <GuidesClientPage allGuides={guides} />
 }

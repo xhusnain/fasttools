@@ -51,7 +51,7 @@ export function ImageToText() {
   }
 
   const copyToClipboard = () => {
-    navigator.clipboard.writeText(extractedText)
+    void navigator.clipboard.writeText(extractedText)
     setCopied(true)
     setTimeout(() => setCopied(false), 2000)
   }

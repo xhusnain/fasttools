@@ -9,6 +9,7 @@ import { GAlert, GAlertDescription } from "@/ui/galert"
 
 import { Download, Loader2, AlertCircle, Music, Image as ImageIcon } from "lucide-react"
 import { API } from "@/services/api/api.service"
+import { downloadBlob } from "@/lib/download-utils";
 
 export interface SoundcloudDownloaderProps {
   compact?: boolean
@@ -59,37 +60,6 @@ export function SoundcloudDownloader({ compact = false }: SoundcloudDownloaderPr
       setError(err.message || "Failed to download. Please check the URL and try again.")
     } finally {
       setLoading(false)
-    }
-  }
-
-  const downloadFile = async (fileUrl: string, filename: string) => {
-    try {
-      // Fetch the file as a blob to handle cross-origin downloads
-      const response = await fetch(fileUrl)
-      const blob = await response.blob()
-
-      // Create a blob URL
-      const blobUrl = URL.createObjectURL(blob)
-
-      // Create and trigger download
-      const link = document.createElement("a")
-      link.href = blobUrl
-      link.download = filename
-      document.body.appendChild(link)
-      link.click()
-      document.body.removeChild(link)
-
-      // Clean up the blob URL
-      setTimeout(() => URL.revokeObjectURL(blobUrl), 100)
-    } catch (error) {
-      // Fallback to direct link if fetch fails
-      const link = document.createElement("a")
-      link.href = fileUrl
-      link.download = filename
-      link.target = "_blank"
-      document.body.appendChild(link)
-      link.click()
-      document.body.removeChild(link)
     }
   }
 
@@ -183,7 +153,7 @@ export function SoundcloudDownloader({ compact = false }: SoundcloudDownloaderPr
                     {/* Handle 'downloadMp3' or 'audio' string format */}
                     {(result.downloadMp3 || result.audio) && (
                       <GButton
-                        onClick={() => downloadFile(result.downloadMp3 || result.audio, `${result.title || 'soundcloud-track'}.mp3`)}
+                        onClick={() => downloadBlob(result.downloadMp3 || result.audio, `${result.title || 'soundcloud-track'}.mp3`)}
                         className="w-full sm:w-auto"
                       >
                         <Download className="mr-2 h-4 w-4" />
@@ -194,7 +164,7 @@ export function SoundcloudDownloader({ compact = false }: SoundcloudDownloaderPr
                     {/* Handle 'downloadArtwork' */}
                     {result.downloadArtwork && (
                       <GButton
-                        onClick={() => downloadFile(result.downloadArtwork, `${result.title || 'soundcloud-art'}.jpg`)}
+                        onClick={() => downloadBlob(result.downloadArtwork, `${result.title || 'soundcloud-art'}.jpg`)}
                         className="w-full sm:w-auto"
                         variant="outline"
                       >

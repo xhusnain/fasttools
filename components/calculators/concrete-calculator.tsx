@@ -242,7 +242,7 @@ ${result.recommendations.map(r => `• ${r}`).join('\n')}
 
 Calculated with FastTools Concrete Calculator`
 
-    navigator.clipboard.writeText(text)
+    void navigator.clipboard.writeText(text)
     setCopied(true)
     setTimeout(() => setCopied(false), 2000)
   }

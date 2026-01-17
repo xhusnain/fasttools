@@ -292,7 +292,7 @@ You Receive: ${result.currency} ${result.netAmount}
 To receive ${result.currency} ${result.amount}, charge: ${result.currency} ${result.grossAmount}
 Country: ${result.country}
 International: ${result.isInternational ? 'Yes' : 'No'}`
-      navigator.clipboard.writeText(text)
+      void navigator.clipboard.writeText(text)
     }
   }
 
@@ -684,7 +684,7 @@ International: ${result.isInternational ? 'Yes' : 'No'}`
                       <GButton
                         onClick={() => {
                           const text = `Bulk Calculation Result:\nTotal Amount: $${bulkResult.totalAmount}\nTotal Fees: -$${bulkResult.totalFees}\nTotal Net: $${bulkResult.totalNet}\nCount: ${bulkResult.count}`
-                          navigator.clipboard.writeText(text)
+                          void navigator.clipboard.writeText(text)
                         }}
                         variant="outline"
                         className="w-full mt-4"

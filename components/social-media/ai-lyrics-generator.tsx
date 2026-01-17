@@ -72,7 +72,7 @@ export function AiLyricsGenerator() {
   }
 
   const copyLyrics = () => {
-    navigator.clipboard.writeText(lyrics)
+    void navigator.clipboard.writeText(lyrics)
     setCopied(true)
     setTimeout(() => setCopied(false), 2000)
   }

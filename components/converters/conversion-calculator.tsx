@@ -316,7 +316,7 @@ export function ConversionCalculator() {
   // Copy result to clipboard
   const copyResult = () => {
     if (result !== null) {
-      navigator.clipboard.writeText(result.toString())
+      void navigator.clipboard.writeText(result.toString())
       toast.success("Result copied to clipboard!")
     }
   }

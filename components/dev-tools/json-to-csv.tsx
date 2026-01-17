@@ -105,7 +105,7 @@ export function JSONToCSV() {
   }
 
   const copyToClipboard = () => {
-    navigator.clipboard.writeText(csv)
+    void navigator.clipboard.writeText(csv)
     setCopied(true)
     setTimeout(() => setCopied(false), 2000)
   }

@@ -169,7 +169,7 @@ Interest Earned: ${result.currency} ${result.totalInterest.toLocaleString()}
 Effective Rate: ${result.effectiveRate}%
 Monthly Equivalent: ${result.currency} ${result.monthlyAmount.toLocaleString()}
 Time Period: ${result.years} years`
-    navigator.clipboard.writeText(text)
+    void navigator.clipboard.writeText(text)
     setCopied(true)
     setTimeout(() => setCopied(false), 2000)
   }

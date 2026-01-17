@@ -128,7 +128,7 @@ export function SQLToJSON() {
     }
 
     const copyToClipboard = () => {
-        navigator.clipboard.writeText(json)
+        void navigator.clipboard.writeText(json)
         setCopied(true)
         setTimeout(() => setCopied(false), 2000)
     }

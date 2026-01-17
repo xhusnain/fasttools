@@ -314,7 +314,7 @@ export function LinkInBioGenerator() {
   }
 
   const copyHtml = () => {
-    navigator.clipboard.writeText(generateHtml())
+    void navigator.clipboard.writeText(generateHtml())
     setCopied(true)
     setTimeout(() => setCopied(false), 2000)
   }
@@ -398,8 +398,8 @@ export function LinkInBioGenerator() {
                   key={theme.id}
                   onClick={() => setSelectedTheme(theme.id)}
                   className={`p-3 rounded-lg border-2 transition-all ${selectedTheme === theme.id
-                      ? "border-primary bg-primary/10"
-                      : "border-border hover:border-primary/50"
+                    ? "border-primary bg-primary/10"
+                    : "border-border hover:border-primary/50"
                     }`}
                 >
                   <div className="space-y-2">
@@ -427,8 +427,8 @@ export function LinkInBioGenerator() {
               <button
                 onClick={() => setSelectedTheme("custom")}
                 className={`p-3 rounded-lg border-2 transition-all ${selectedTheme === "custom"
-                    ? "border-primary bg-primary/10"
-                    : "border-border hover:border-primary/50"
+                  ? "border-primary bg-primary/10"
+                  : "border-border hover:border-primary/50"
                   }`}
               >
                 <div className="space-y-2">
@@ -655,8 +655,8 @@ export function LinkInBioGenerator() {
                       {/* Link Type Badge */}
                       <div className="flex gap-2">
                         <span className={`px-2 py-1 rounded text-xs font-medium ${link.type === "social" ? "bg-blue-100 text-foreground" :
-                            link.type === "email" ? "bg-green-100 text-heading-accent" :
-                              "bg-gray-100 text-gray-800"
+                          link.type === "email" ? "bg-green-100 text-heading-accent" :
+                            "bg-gray-100 text-gray-800"
                           }`}>
                           {link.type === "social" ? "Social" : link.type === "email" ? "Email" : "Custom"}
                         </span>
@@ -701,8 +701,8 @@ export function LinkInBioGenerator() {
                         <button
                           onClick={() => updateLink(link.id, "displayMode", "both")}
                           className={`px-3 py-2 rounded-md text-sm font-medium transition-colors ${(link.displayMode || "both") === "both"
-                              ? "bg-primary text-primary-foreground"
-                              : "bg-muted text-muted-foreground hover:bg-muted/80"
+                            ? "bg-primary text-primary-foreground"
+                            : "bg-muted text-muted-foreground hover:bg-muted/80"
                             }`}
                         >
                           Both
@@ -710,8 +710,8 @@ export function LinkInBioGenerator() {
                         <button
                           onClick={() => updateLink(link.id, "displayMode", "icon")}
                           className={`px-3 py-2 rounded-md text-sm font-medium transition-colors ${link.displayMode === "icon"
-                              ? "bg-primary text-primary-foreground"
-                              : "bg-muted text-muted-foreground hover:bg-muted/80"
+                            ? "bg-primary text-primary-foreground"
+                            : "bg-muted text-muted-foreground hover:bg-muted/80"
                             }`}
                         >
                           Icon Only
@@ -719,8 +719,8 @@ export function LinkInBioGenerator() {
                         <button
                           onClick={() => updateLink(link.id, "displayMode", "text")}
                           className={`px-3 py-2 rounded-md text-sm font-medium transition-colors ${link.displayMode === "text"
-                              ? "bg-primary text-primary-foreground"
-                              : "bg-muted text-muted-foreground hover:bg-muted/80"
+                            ? "bg-primary text-primary-foreground"
+                            : "bg-muted text-muted-foreground hover:bg-muted/80"
                             }`}
                         >
                           Text Only

@@ -7,9 +7,7 @@
     "build": "next build",
     "dev": "next dev",
     "lint": "next lint",
-    "start": "next start",
-    "seo:analyze": "node scripts/seo-analyzer.js",
-    "seo:quality": "node scripts/analyze-tool-seo-quality.js"
+    "start": "next start"
   },
   "dependencies": {
     "@hookform/resolvers": "^3.10.0",

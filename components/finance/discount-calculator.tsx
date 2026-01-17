@@ -122,7 +122,7 @@ Tax Amount: $${result.taxAmount.toFixed(2)}
 Final Price: $${result.finalPrice.toFixed(2)}
 Total Savings: $${result.totalSavings.toFixed(2)}
 Effective Discount Rate: ${result.effectiveDiscountRate.toFixed(2)}%`
-      navigator.clipboard.writeText(text)
+      void navigator.clipboard.writeText(text)
     }
   }
 

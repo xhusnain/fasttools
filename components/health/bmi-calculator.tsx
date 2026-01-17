@@ -159,7 +159,7 @@ BMI Prime: ${result.bmiPrime}
 Ponderal Index: ${result.ponderalIndex}
 Healthy Weight Range: ${result.healthyWeightRange}
 Risk Level: ${result.riskLevel}`
-    navigator.clipboard.writeText(text)
+    void navigator.clipboard.writeText(text)
     setCopied(true)
     setTimeout(() => setCopied(false), 2000)
   }

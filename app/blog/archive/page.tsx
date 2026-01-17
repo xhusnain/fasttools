@@ -14,7 +14,7 @@ export const metadata = createMetadata({
 })
 
 export default async function ArchivePage() {
-    const posts = await getAllPosts()
+    const posts = getAllPosts()
 
     // Group posts by Category
     const postsByCategory = posts.reduce((acc, post) => {

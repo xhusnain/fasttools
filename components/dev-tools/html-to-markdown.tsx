@@ -5,6 +5,7 @@ import { GButton } from "@/ui/gbutton"
 import { GTextarea } from "@/ui/gtextarea"
 
 import { Copy, Check } from "lucide-react"
+import { convertHtmlToMarkdown } from "@/lib/markdown-utils"
 
 export function HTMLToMarkdown() {
   const [html, setHtml] = useState("")
@@ -12,50 +13,12 @@ export function HTMLToMarkdown() {
   const [copied, setCopied] = useState(false)
 
   const convertToMarkdown = () => {
-    const md = html
-      // Headers
-      .replace(/<h1[^>]*>(.*?)<\/h1>/gi, "# $1\n\n")
-      .replace(/<h2[^>]*>(.*?)<\/h2>/gi, "## $1\n\n")
-      .replace(/<h3[^>]*>(.*?)<\/h3>/gi, "### $1\n\n")
-      .replace(/<h4[^>]*>(.*?)<\/h4>/gi, "#### $1\n\n")
-      .replace(/<h5[^>]*>(.*?)<\/h5>/gi, "##### $1\n\n")
-      .replace(/<h6[^>]*>(.*?)<\/h6>/gi, "###### $1\n\n")
-      // Bold and Italic
-      .replace(/<strong[^>]*>(.*?)<\/strong>/gi, "**$1**")
-      .replace(/<b[^>]*>(.*?)<\/b>/gi, "**$1**")
-      .replace(/<em[^>]*>(.*?)<\/em>/gi, "*$1*")
-      .replace(/<i[^>]*>(.*?)<\/i>/gi, "*$1*")
-      // Links
-      .replace(/<a[^>]*href="([^"]*)"[^>]*>(.*?)<\/a>/gi, "[$2]($1)")
-      // Images
-      .replace(/<img[^>]*src="([^"]*)"[^>]*alt="([^"]*)"[^>]*>/gi, "![$2]($1)")
-      // Lists
-      .replace(/<ul[^>]*>/gi, "")
-      .replace(/<\/ul>/gi, "\n")
-      .replace(/<ol[^>]*>/gi, "")
-      .replace(/<\/ol>/gi, "\n")
-      .replace(/<li[^>]*>(.*?)<\/li>/gi, "- $1\n")
-      // Paragraphs
-      .replace(/<p[^>]*>(.*?)<\/p>/gi, "$1\n\n")
-      // Line breaks
-      .replace(/<br\s*\/?>/gi, "\n")
-      // Code
-      .replace(/<code[^>]*>(.*?)<\/code>/gi, "`$1`")
-      .replace(/<pre[^>]*>(.*?)<\/pre>/gi, "```\n$1\n```\n")
-      // Remove remaining HTML tags
-      .replace(/<[^>]*>/g, "")
-      // Decode HTML entities
-      .replace(/&nbsp;/g, " ")
-      .replace(/&amp;/g, "&")
-      .replace(/&lt;/g, "<")
-      .replace(/&gt;/g, ">")
-      .replace(/&quot;/g, '"')
-
-    setMarkdown(md.trim())
+    const md = convertHtmlToMarkdown(html)
+    setMarkdown(md)
   }
 
   const copyToClipboard = () => {
-    navigator.clipboard.writeText(markdown)
+    void navigator.clipboard.writeText(markdown)
     setCopied(true)
     setTimeout(() => setCopied(false), 2000)
   }

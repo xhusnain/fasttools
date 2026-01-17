@@ -9,6 +9,7 @@ import { GAlert, GAlertDescription } from "@/ui/galert"
 import { Download, Loader2, AlertCircle, Video, Music, List, FileVideo } from "lucide-react"
 import { YouTubeService, PlaylistInfo, VideoInfo, PlaylistEntry } from "@/services/youtube.service"
 import { env } from "@/config/env"
+import { downloadBlob } from "@/lib/download-utils";
 
 export interface YoutubePlaylistDownloaderProps {
     compact?: boolean
@@ -63,6 +64,15 @@ export function YoutubePlaylistDownloader({ compact = false }: YoutubePlaylistDo
         }
     }
 
+    const getDownloadParams = (entry: any, type: 'video' | 'audio') => {
+        const originalUrl = `https://www.youtube.com/watch?v=${entry.id}`;
+        const cleanTitle = entry.title.replace(/[^a-z0-9]/gi, '_');
+        const extension = type === 'audio' ? 'mp3' : 'mp4';
+        const filename = `${cleanTitle}.${extension}`;
+        const streamUrl = YouTubeService.getStreamUrl(originalUrl, filename, undefined, type);
+        return { filename, streamUrl };
+    }
+
     const handleDownloadAll = async (type: 'video' | 'audio') => {
         if (!playlistInfo || !playlistInfo.entries) return
 
@@ -74,26 +84,8 @@ export function YoutubePlaylistDownloader({ compact = false }: YoutubePlaylistDo
             setCurrentProgress(`${i + 1}/${playlistInfo.entries.length}`)
             const entry = playlistInfo.entries[i];
             try {
-                // Determine format
-                // For now we just use best available via direct url service
-                // Audio extraction would ideally need a separate backend flag, but direct URL returns video+audio usually
-
-                const directUrl = await YouTubeService.getDirectDownloadUrl(`https://www.youtube.com/watch?v=${entry.id}`);
-
-                // Construct original URL from ID (most reliable)
-                const originalUrl = `https://www.youtube.com/watch?v=${entry.id}`;
-                const cleanTitle = entry.title.replace(/[^a-z0-9]/gi, '_');
-                const extension = type === 'audio' ? 'mp3' : 'mp4';
-                const filename = `${cleanTitle}.${extension}`;
-                const streamUrl = YouTubeService.getStreamUrl(originalUrl, filename, undefined, type);
-
-                const link = document.createElement('a');
-                link.href = streamUrl;
-                link.target = '_blank';
-                link.download = filename;
-                document.body.appendChild(link);
-                link.click();
-                document.body.removeChild(link);
+                const { filename, streamUrl } = getDownloadParams(entry, type);
+                await downloadBlob(streamUrl, filename);
 
                 // Wait 1 second just to be safe between downloads
                 if (i < playlistInfo.entries.length - 1) {
@@ -112,21 +104,8 @@ export function YoutubePlaylistDownloader({ compact = false }: YoutubePlaylistDo
     const handleSingleDownload = async (entry: any, type: 'video' | 'audio') => {
         setDownloadingItem({ id: entry.id, type });
         try {
-            // Construct original URL from ID
-            const originalUrl = `https://www.youtube.com/watch?v=${entry.id}`;
-            const cleanTitle = entry.title.replace(/[^a-z0-9]/gi, '_');
-            const isAudio = type === 'audio'; // type arg from handleSingleDownload
-            const extension = isAudio ? 'mp3' : 'mp4';
-            const filename = `${cleanTitle}.${extension}`;
-            const streamUrl = YouTubeService.getStreamUrl(originalUrl, filename, undefined, type);
-
-            const link = document.createElement('a');
-            link.href = streamUrl;
-            link.target = '_blank';
-            link.download = filename;
-            document.body.appendChild(link);
-            link.click();
-            document.body.removeChild(link);
+            const { filename, streamUrl } = getDownloadParams(entry, type);
+            await downloadBlob(streamUrl, filename);
         } catch (e) {
             console.error(e)
             setError("Failed to download video")

@@ -13,6 +13,7 @@ import { Upload, Download, Minimize2, CheckCircle2, FileText, X, Info } from "lu
 import { LoadingSpinner } from "@/components/common/loading-spinner"
 import { PDFDocument } from "pdf-lib"
 import * as pdfjsLib from "pdfjs-dist"
+import { renderPageToJpeg } from "@/lib/pdf-utils"
 
 // Configure PDF.js worker
 if (typeof window !== "undefined") {
@@ -133,40 +134,12 @@ export function PDFCompressor() {
       // Render each page to canvas and compress
       for (let pageNum = 1; pageNum <= numPages; pageNum++) {
         const page = await pdfDoc.getPage(pageNum)
-        const viewport = page.getViewport({ scale: settings.scale })
-
-        // Create canvas
-        const canvas = document.createElement('canvas')
-        canvas.width = viewport.width
-        canvas.height = viewport.height
-        const context = canvas.getContext('2d', { alpha: false })
-
-        if (!context) throw new Error("Failed to get canvas context")
-
-        // White background
-        context.fillStyle = 'white'
-        context.fillRect(0, 0, canvas.width, canvas.height)
-
-        // Render PDF page to canvas
-        await page.render({
-          canvasContext: context,
-          viewport: viewport,
-          intent: 'print'
-        }).promise
-
-        // Convert canvas to JPEG with compression
-        const blob = await new Promise<Blob>((resolve, reject) => {
-          canvas.toBlob(
-            (b) => b ? resolve(b) : reject(new Error("Failed to convert canvas")),
-            'image/jpeg',
-            settings.quality
-          )
-        })
-
-        const imageBytes = new Uint8Array(await blob.arrayBuffer())
+        const imageBytes = await renderPageToJpeg(page, settings)
 
         // Embed in new PDF
         const jpegImage = await newPdf.embedJpg(imageBytes)
+        // Re-get viewport to ensure correct dimensions for adding page
+        const viewport = page.getViewport({ scale: settings.scale })
         const pdfPage = newPdf.addPage([viewport.width, viewport.height])
         pdfPage.drawImage(jpegImage, {
           x: 0,
