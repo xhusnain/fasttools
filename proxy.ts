@@ -62,13 +62,13 @@ function handleCORS(request: NextRequest): NextResponse | null {
 export default function proxy(request: NextRequest) {
     const host = request.headers.get('host')
     const pathname = request.nextUrl.pathname
-
-    // Domain redirect: non-www to www
+    const corsResponse = handleCORS(request)
+    if (request.method === 'OPTIONS' && corsResponse) {
+        return corsResponse
+    }
     if (env.isProduction && host === 'fasttools.store') {
         return NextResponse.redirect(`https://www.fasttools.store${pathname}`, 301)
     }
-
-
     if (isGoneUrl(pathname)) {
         const url = request.nextUrl.clone()
         url.pathname = '/404'
@@ -76,21 +76,12 @@ export default function proxy(request: NextRequest) {
         response.headers.set('x-gone', 'true')
         return response
     }
-
     if (redirects.has(pathname)) {
         const targetUrl = redirects.get(pathname)!
         const url = new URL(targetUrl, request.url)
         return NextResponse.redirect(url, 301)
     }
-
-
-
-    if (pathname.startsWith('/api/')) {
-        const corsResponse = handleCORS(request)
-        if (corsResponse) return corsResponse
-    }
-
-    return NextResponse.next()
+    return corsResponse || NextResponse.next()
 }
 
 export const config = {
