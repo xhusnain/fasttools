@@ -128,7 +128,7 @@ export function LoremIpsumGenerator() {
   }
 
   const handleCopy = () => {
-    navigator.clipboard.writeText(result)
+    void navigator.clipboard.writeText(result)
     setCopied(true)
     setTimeout(() => setCopied(false), 2000)
   }

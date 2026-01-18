@@ -2,14 +2,20 @@ import { ToolPageLayout } from "@/components/common/tool-page-layout"
 import Image from "next/image"
 import { createToolConfig, UnifiedToolConfig } from "@/lib/create-tool-config"
 import { Shield, Smartphone, Monitor, List, CheckCircle2 } from "lucide-react"
-import { YoutubePlaylistDownloader } from "@/components/social-media/youtube-playlist-downloader/youtube-playlist-downloader";
+import dynamic from "next/dynamic"
+
+const YoutubePlaylistDownloader = dynamic(() => import("@/components/social-media/youtube-playlist-downloader/youtube-playlist-downloader").then(mod => mod.YoutubePlaylistDownloader), {
+    loading: () => <div className="min-h-[600px] flex items-center justify-center">
+        <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-primary"></div>
+    </div>
+})
 
 
 const configBody: UnifiedToolConfig = {
     toolName: "Fast YouTube Playlist Downloader: Save Entire Playlists in HD & MP3",
     description: "The ultimate tool to download YouTube playlists in bulk. Convert entire channels, music albums, or educational series to high-quality MP4 (up to 4K) and MP3 (320kbps) in seconds.",
     metaTitle: "Fast YouTube Playlist Downloader: Save Entire Playlists in HD & MP3",
-    metaDescription: "Free YouTube Playlist Downloader. Save entire playlists as MP4 or MP3 (320kbps). Supports 4K/1080p. No software, no registration. Fast, safe, and works on mobile & PC.",
+    metaDescription: "Free YouTube Playlist Downloader. Save playlists as MP4/MP3. Supports 4K/1080p. Fast, safe & works on mobile/PC.",
     path: "/social-media-tools/youtube-playlist-downloader",
 
     header: {
@@ -71,7 +77,7 @@ const configBody: UnifiedToolConfig = {
                 <article className="prose dark:prose-invert max-w-none">
                     <h2 className="text-2xl font-bold mb-4 flex items-center gap-2">
                         <CheckCircle2 className="h-6 w-6 text-green-500" />
-                        Why FastTools is the Best YouTube Playlist Downloader in 2026
+                        Why FastTools is the Best YouTube Playlist Downloader in
                     </h2>
                     <p className="text-muted-foreground mb-6">
                         Manually saving 50 videos is a waste of time. Our tool is engineered for speed and security, providing a seamless bridge between YouTube and your offline library.

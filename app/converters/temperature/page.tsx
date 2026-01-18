@@ -1,4 +1,9 @@
-import { TemperatureConverter } from "@/components/converters/temperature-converter"
+import dynamic from "next/dynamic"
+import { ToolLoader } from "@/components/common/tool-loader"
+
+const TemperatureConverter = dynamic(() => import("@/components/converters/temperature-converter").then(mod => mod.TemperatureConverter), {
+  loading: () => <ToolLoader />
+})
 import { ToolPageLayout } from "@/components/common/tool-page-layout"
 import { createToolConfig } from "@/lib/create-tool-config"
 import Link from "next/link"
@@ -8,7 +13,7 @@ import { Brain } from "lucide-react"
 const toolConfig = createToolConfig({
   toolName: "Temperature Converter",
   description: "Convert temperatures instantly between Celsius & Fahrenheit. Ideal for weather, cooking, science projects & travel.",
-  metaTitle: "Temperature Converter - Convert Temperature Online (Free) 2026",
+  metaTitle: "Temperature Converter - Convert Temperature Online (Free)",
   metaDescription: "Free online Temperature Converter. Convert temperature scales instantly. Fast, accurate, and no signup required.",
   path: "/converters/temperature",
 

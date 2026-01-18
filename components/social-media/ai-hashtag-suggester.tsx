@@ -39,7 +39,7 @@ export function AiHashtagSuggester() {
   }
 
   const copyHashtags = () => {
-    navigator.clipboard.writeText(hashtags.join(" "))
+    void navigator.clipboard.writeText(hashtags.join(" "))
   }
 
   return (
@@ -101,7 +101,7 @@ export function AiHashtagSuggester() {
               <span
                 key={index}
                 className="px-3 py-1.5 bg-primary/10 text-primary rounded-full text-sm font-medium hover:bg-primary/20 transition-colors cursor-pointer"
-                onClick={() => navigator.clipboard.writeText(tag)}
+                onClick={() => void navigator.clipboard.writeText(tag)}
               >
                 {tag}
               </span>

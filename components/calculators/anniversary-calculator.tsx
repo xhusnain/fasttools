@@ -137,7 +137,7 @@ export function AnniversaryCalculator() {
   const copyResult = () => {
     if (!result) return
     const text = `We've been together for ${result.years} years, ${result.months} months, ${result.days} days, ${result.hours} hours, ${result.minutes} minutes, and ${result.seconds} seconds! ❤️`
-    navigator.clipboard.writeText(text)
+    void navigator.clipboard.writeText(text)
     setCopied(true)
     setTimeout(() => setCopied(false), 2000)
   }

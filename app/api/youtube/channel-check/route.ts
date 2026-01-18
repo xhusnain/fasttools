@@ -46,7 +46,7 @@ function getRandomUserAgent(): string {
 
 async function checkChannelAvailability(channelName: string): Promise<ChannelCheckResult> {
   const trimmedName = channelName.trim()
-  
+
   if (!trimmedName) {
     return {
       channelName: trimmedName,
@@ -100,10 +100,10 @@ async function checkChannelAvailability(channelName: string): Promise<ChannelChe
                 'Cache-Control': 'max-age=0'
               }
             })
-            
+
             if (pageResponse.ok) {
               const html = await pageResponse.text()
-              
+
               // Extract subscriber count using multiple regex patterns
               const subscriberPatterns = [
                 /(\d+(?:\.\d+)?[KMB]?)\s*subscribers?/i,
@@ -112,7 +112,7 @@ async function checkChannelAvailability(channelName: string): Promise<ChannelChe
                 /"subscriberCountText":\s*"([^"]+)"/i,
                 /"subscriberCount":\s*"([^"]+)"/i
               ]
-              
+
               const videoPatterns = [
                 /(\d+(?:\.\d+)?[KMB]?)\s*videos?/i,
                 /(\d+(?:\.\d+)?[KMB]?)\s*video/i,
@@ -120,10 +120,10 @@ async function checkChannelAvailability(channelName: string): Promise<ChannelChe
                 /"videoCountText":\s*"([^"]+)"/i,
                 /"videoCount":\s*"([^"]+)"/i
               ]
-              
+
               let subscriberCount = 0
               let videoCount = 0
-              
+
               // Try multiple patterns for subscriber count
               for (const pattern of subscriberPatterns) {
                 const match = html.match(pattern)
@@ -132,7 +132,7 @@ async function checkChannelAvailability(channelName: string): Promise<ChannelChe
                   break
                 }
               }
-              
+
               // Try multiple patterns for video count
               for (const pattern of videoPatterns) {
                 const match = html.match(pattern)
@@ -161,7 +161,6 @@ async function checkChannelAvailability(channelName: string): Promise<ChannelChe
         }
       } catch (urlError) {
         // Continue to next URL format
-        continue
       }
     }
 
@@ -183,7 +182,7 @@ async function checkChannelAvailability(channelName: string): Promise<ChannelChe
 function parseCount(countStr: string): number {
   const num = parseFloat(countStr)
   const suffix = countStr.slice(-1).toUpperCase()
-  
+
   switch (suffix) {
     case 'K':
       return Math.floor(num * 1000)
@@ -199,7 +198,7 @@ function parseCount(countStr: string): number {
 export async function POST(request: NextRequest) {
   try {
     const { channelNames } = await request.json()
-    
+
     if (!channelNames || !Array.isArray(channelNames) || channelNames.length === 0) {
       return NextResponse.json(
         { error: 'Channel names array is required' },
@@ -220,7 +219,7 @@ export async function POST(request: NextRequest) {
     for (const channelName of channelNames) {
       const result = await checkChannelAvailability(channelName)
       results.push(result)
-      
+
       // Add small delay to respect rate limits
       await new Promise(resolve => setTimeout(resolve, 200))
     }

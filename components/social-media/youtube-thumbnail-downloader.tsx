@@ -131,7 +131,7 @@ export function YoutubeThumbnailDownloader() {
   }
 
   const copyToClipboard = (url: string) => {
-    navigator.clipboard.writeText(url)
+    void navigator.clipboard.writeText(url)
     setCopied(url)
     setTimeout(() => setCopied(null), 2000)
   }

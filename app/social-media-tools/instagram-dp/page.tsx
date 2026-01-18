@@ -1,4 +1,10 @@
-import { InstagramDpViewer } from "@/components/social-media/instagram-dp-viewer"
+import dynamic from "next/dynamic"
+
+const InstagramDpViewer = dynamic(() => import("@/components/social-media/instagram-dp-viewer").then(mod => mod.InstagramDpViewer), {
+  loading: () => <div className="min-h-[600px] flex items-center justify-center">
+    <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-primary"></div>
+  </div>
+})
 import { ToolPageLayout } from "@/components/common/tool-page-layout"
 import { createToolConfig } from "@/lib/create-tool-config"
 import { getCurrentYear } from "@/lib/utils"
@@ -7,7 +13,7 @@ import { Download, Eye, Image as ImageIcon, Search, CheckCircle, Shield, EyeOff,
 const toolConfig = createToolConfig({
   toolName: "Instagram DP Viewer & Downloader (HD Quality)",
   description: "View and download Instagram profile pictures in full HD size. Free Instagram DP viewer for public accounts. No login required.",
-  metaTitle: `Insta DP Viewer (HD) - Zoom & Download Profile Picture ${getCurrentYear()}`,
+  metaTitle: `Insta DP Viewer (HD) - Zoom & Download Profile Picture`,
   metaDescription: "Free Insta DP Viewer to zoom and download Instagram profile pictures in full HD size. View private account DPs anonymously.",
   path: "/social-media-tools/instagram-dp",
 
@@ -250,7 +256,7 @@ const toolConfig = createToolConfig({
 
 export const metadata = {
   ...toolConfig.metadata,
-  title: `Instagram DP Viewer & Downloader - View Full Size HD Pics ${getCurrentYear()}`
+  title: `Instagram DP Viewer & Downloader - View Full Size HD Pics`
 }
 
 export default function InstagramDpPage() {

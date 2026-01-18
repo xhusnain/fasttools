@@ -249,7 +249,7 @@ Shortfall: $${result.shortfall.toLocaleString()}
 
 Recommendations:
 ${result.recommendations.map(rec => `• ${rec}`).join('\n')}`
-      navigator.clipboard.writeText(text)
+      void navigator.clipboard.writeText(text)
     }
   }
 

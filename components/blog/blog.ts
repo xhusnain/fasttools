@@ -1,7 +1,7 @@
 import fs from 'fs';
 import path from 'path';
 import matter from 'gray-matter';
-import readingTime from 'reading-time';
+import { processContentFile } from "@/lib/content-processing";
 
 export type BlogCategory = 'Developer' | 'Guides';
 
@@ -39,22 +39,7 @@ export function getAllPosts(): BlogPost[] {
     const allPostsData = fileNames
         .filter((name) => name.endsWith('.md') || name.endsWith('.mdx'))
         .map((fileName) => {
-            const slug = fileName.replace(/\.(md|mdx)$/, '');
-            const fullPath = path.join(postsDirectory, fileName);
-            const fileContents = fs.readFileSync(fullPath, 'utf8');
-            const { data, content } = matter(fileContents);
-            const readingTimeResult = readingTime(content);
-
-            const searchContent = content
-                .replace(/```[\s\S]*?```/g, '')
-                .replace(/!\[.*?\]\(.*?\)/g, '')
-                .replace(/\[([^\]]+)\]\([^)]+\)/g, '$1')
-                .replace(/<[^>]+>/g, '')
-                .replace(/#{1,6}\s/g, '')
-                .replace(/[*_~`]/g, '')
-                .replace(/\n+/g, ' ')
-                .trim()
-                .slice(0, 2000);
+            const { slug, frontmatter: data, content, readingTime: readingTimeResult, searchContent } = processContentFile(postsDirectory, fileName);
 
             return {
                 slug,
@@ -84,24 +69,48 @@ export function getAllPosts(): BlogPost[] {
     });
 }
 
+export function getAllPostsMeta(): BlogPost[] {
+    if (!fs.existsSync(postsDirectory)) {
+        return [];
+    }
+
+    const fileNames = fs.readdirSync(postsDirectory);
+    const allPostsData = fileNames
+        .filter((name) => name.endsWith('.md') || name.endsWith('.mdx'))
+        .map((fileName) => {
+            const slug = fileName.replace(/\.(md|mdx)$/, '');
+            const fullPath = path.join(postsDirectory, fileName);
+            const fileContents = fs.readFileSync(fullPath, 'utf8');
+            // Use gray-matter to parse only frontmatter
+            const { data } = matter(fileContents);
+
+            return {
+                slug,
+                title: data.title ? data.title.replace('<DynamicYear />', (new Date().getFullYear() + 1).toString()) : '',
+                date: data.date || '',
+                lastModified: data.lastModified || data.date || '',
+                image: data.image,
+                category: data.category,
+                // Minimal fields needed for sitemap
+            } as BlogPost;
+        });
+
+    return allPostsData.sort((a, b) => {
+        return new Date(b.date).getTime() - new Date(a.date).getTime();
+    });
+}
+
 export function getPostBySlug(slug: string): BlogPost | null {
     try {
-        let fullPath = path.join(postsDirectory, `${slug}.md`);
-
-        let fileContents: string;
-        if (fs.existsSync(fullPath)) {
-            fileContents = fs.readFileSync(fullPath, 'utf8');
-        } else {
-            const mdxPath = path.join(postsDirectory, `${slug}.mdx`);
-            if (fs.existsSync(mdxPath)) {
-                fileContents = fs.readFileSync(mdxPath, 'utf8');
-            } else {
+        let fileName = `${slug}.md`;
+        if (!fs.existsSync(path.join(postsDirectory, fileName))) {
+            fileName = `${slug}.mdx`;
+            if (!fs.existsSync(path.join(postsDirectory, fileName))) {
                 return null;
             }
         }
 
-        const { data, content } = matter(fileContents);
-        const readingTimeResult = readingTime(content);
+        const { frontmatter: data, content, readingTime: readingTimeResult } = processContentFile(postsDirectory, fileName);
 
         return {
             slug,

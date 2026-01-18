@@ -57,14 +57,14 @@ export function YoutubeTagExtractor() {
 
   const copyAllTags = () => {
     if (extractedData?.tags) {
-      navigator.clipboard.writeText(extractedData.tags.join(", "))
+      void navigator.clipboard.writeText(extractedData.tags.join(", "))
       setCopied(true)
       setTimeout(() => setCopied(false), 2000)
     }
   }
 
   const copyTag = (tag: string) => {
-    navigator.clipboard.writeText(tag)
+    void navigator.clipboard.writeText(tag)
     setCopied(true)
     setTimeout(() => setCopied(false), 2000)
   }

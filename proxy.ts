@@ -68,6 +68,14 @@ export default function proxy(request: NextRequest) {
     }
     if (env.isProduction && host === 'fasttools.store') {
         return NextResponse.redirect(`https://www.fasttools.store${pathname}`, 301)
+    if (env.isProduction) {
+        const proto = request.headers.get('x-forwarded-proto')
+        const isHttp = proto === 'http'
+        const isNonWww = host === 'fasttools.store'
+
+        if (isHttp || isNonWww) {
+            return NextResponse.redirect(`https://www.fasttools.store${pathname}`, 301)
+        }
     }
     if (isGoneUrl(pathname)) {
         const url = request.nextUrl.clone()

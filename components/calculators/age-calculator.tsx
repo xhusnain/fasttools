@@ -148,7 +148,7 @@ Hours: ${result.totalHours.toLocaleString()}
 Minutes: ${result.totalMinutes.toLocaleString()}
 Seconds: ${result.totalSeconds.toLocaleString()}
 Next Birthday: ${result.nextBirthday}`
-    navigator.clipboard.writeText(text)
+    void navigator.clipboard.writeText(text)
     setCopied(true)
     setTimeout(() => setCopied(false), 2000)
   }
@@ -170,7 +170,7 @@ Next Birthday: ${result.nextBirthday}`
 
   const copyLink = () => {
     if (!result) return
-    navigator.clipboard.writeText(result.shareableLink)
+    void navigator.clipboard.writeText(result.shareableLink)
     setCopied(true)
     setTimeout(() => setCopied(false), 2000)
   }

@@ -40,7 +40,7 @@ export function AiMemeGenerator() {
 
   const copyText = () => {
     if (memeText) {
-      navigator.clipboard.writeText(`Top: ${memeText.top}\nBottom: ${memeText.bottom}`)
+      void navigator.clipboard.writeText(`Top: ${memeText.top}\nBottom: ${memeText.bottom}`)
     }
   }
 

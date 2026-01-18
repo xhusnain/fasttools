@@ -34,3 +34,14 @@ export async function runCloudflareAI(input: any) {
   const result = await response.json()
   return result
 }
+
+export function slugifyCategory(category: string): string {
+  return category
+    .toLowerCase()
+    .replace(/&/g, "and")
+    .replace(/\s+/g, "-")
+    .replace(/[^\w\-]+/g, "")
+    .replace(/\-\-+/g, "-")
+    .replace(/^-+/, "")
+    .replace(/-+$/, "")
+}

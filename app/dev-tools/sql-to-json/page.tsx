@@ -1,6 +1,12 @@
+import dynamic from "next/dynamic"
 import { ToolPageLayout } from "@/components/common/tool-page-layout"
-import { SQLToJSON } from "@/components/dev-tools/sql-to-json"
+import { ToolLoader } from "@/components/common/tool-loader"
 import { createToolConfig } from "@/lib/create-tool-config"
+
+const SQLToJSON = dynamic(
+    () => import("@/components/dev-tools/sql-to-json").then(mod => mod.SQLToJSON),
+    { loading: () => <ToolLoader /> }
+)
 
 const faqs = [
     {

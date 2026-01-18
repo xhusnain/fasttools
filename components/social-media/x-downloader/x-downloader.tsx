@@ -9,6 +9,7 @@ import { GAlert, GAlertDescription } from "@/ui/galert"
 
 import { Download, Loader2, AlertCircle, Video } from "lucide-react"
 import { API } from "@/services/api/api.service"
+import { downloadBlob } from "@/lib/download-utils";
 
 export interface XDownloaderProps {
   compact?: boolean
@@ -63,32 +64,6 @@ export function XDownloader({ compact = false }: XDownloaderProps) {
       setError(err.message || "Failed to download. Please check the URL and try again.")
     } finally {
       setLoading(false)
-    }
-  }
-
-  const downloadFile = async (fileUrl: string, filename: string) => {
-    try {
-      const response = await fetch(fileUrl)
-      const blob = await response.blob()
-
-      const blobUrl = URL.createObjectURL(blob)
-
-      const link = document.createElement("a")
-      link.href = blobUrl
-      link.download = filename
-      document.body.appendChild(link)
-      link.click()
-      document.body.removeChild(link)
-
-      setTimeout(() => URL.revokeObjectURL(blobUrl), 100)
-    } catch (error) {
-      const link = document.createElement("a")
-      link.href = fileUrl
-      link.download = filename
-      link.target = "_blank"
-      document.body.appendChild(link)
-      link.click()
-      document.body.removeChild(link)
     }
   }
 
@@ -166,7 +141,7 @@ export function XDownloader({ compact = false }: XDownloaderProps) {
                       return (
                         <GButton
                           key={index}
-                          onClick={async () => await downloadFile(videoUrl, `x-${qualityLabel.toLowerCase()}-${Date.now()}.mp4`)}
+                          onClick={async () => await downloadBlob(videoUrl, `x-${qualityLabel.toLowerCase()}-${Date.now()}.mp4`)}
                           className="w-full"
                           size="lg"
                           variant={isHD ? "default" : "outline"}
@@ -180,7 +155,7 @@ export function XDownloader({ compact = false }: XDownloaderProps) {
                 ) : (
                   result.url && typeof result.url === 'string' && (
                     <GButton
-                      onClick={async () => await downloadFile(result.url, `x-${Date.now()}.mp4`)}
+                      onClick={async () => await downloadBlob(result.url, `x-${Date.now()}.mp4`)}
                       className="w-full"
                       size="lg"
                     >

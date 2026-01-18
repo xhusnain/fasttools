@@ -1,6 +1,11 @@
 import type { Metadata } from "next"
 import { ToolPageLayout } from "@/components/common/tool-page-layout"
-import { StandardDeviationCalculator } from "@/components/calculators/standard-deviation-calculator"
+import dynamic from "next/dynamic"
+import { ToolLoader } from "@/components/common/tool-loader"
+
+const StandardDeviationCalculator = dynamic(() => import("@/components/calculators/standard-deviation-calculator").then(mod => mod.StandardDeviationCalculator), {
+  loading: () => <ToolLoader />
+})
 import { createMetadata } from "@/lib/metadata-base"
 import { Calculator, BarChart3, TrendingUp, BookOpen, Users, Clock, Target, AlertCircle, Home, DollarSign, FileText, Percent, Award, Globe, PieChart, Brain } from "lucide-react"
 import { GTable } from "@/ui/gtable"

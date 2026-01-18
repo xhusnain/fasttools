@@ -1,6 +1,12 @@
-import { LoremIpsumGenerator } from "@/components/dev-tools/lorem-ipsum-generator"
+import dynamic from "next/dynamic"
 import { ToolPageLayout } from "@/components/common/tool-page-layout"
+import { ToolLoader } from "@/components/common/tool-loader"
 import { createToolConfig } from "@/lib/create-tool-config"
+
+const LoremIpsumGenerator = dynamic(
+  () => import("@/components/dev-tools/lorem-ipsum-generator").then(mod => mod.LoremIpsumGenerator),
+  { loading: () => <ToolLoader /> }
+)
 
 const toolConfig = createToolConfig({
   toolName: "Lorem Ipsum Generator",

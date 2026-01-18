@@ -1,6 +1,12 @@
+import dynamic from "next/dynamic"
 import { ToolPageLayout } from "@/components/common/tool-page-layout"
-import { RegexTester } from "@/components/dev-tools/regex-tester"
+import { ToolLoader } from "@/components/common/tool-loader"
 import { createToolConfig } from "@/lib/create-tool-config"
+
+const RegexTester = dynamic(
+  () => import("@/components/dev-tools/regex-tester").then(mod => mod.RegexTester),
+  { loading: () => <ToolLoader /> }
+)
 
 const toolConfig = createToolConfig({
   toolName: "Regex Tester",

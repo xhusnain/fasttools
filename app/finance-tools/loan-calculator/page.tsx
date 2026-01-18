@@ -1,6 +1,11 @@
 import type { Metadata } from "next"
 import { ToolPageLayout } from "@/components/common/tool-page-layout"
-import { EMICalculator } from "@/components/finance/emi-calculator"
+import dynamic from "next/dynamic"
+import { ToolLoader } from "@/components/common/tool-loader"
+
+const EMICalculator = dynamic(() => import("@/components/finance/emi-calculator").then(mod => mod.EMICalculator), {
+  loading: () => <ToolLoader />
+})
 import { createMetadata } from "@/lib/metadata-base"
 import { Calculator, Target, CheckCircle, Home, Car, CreditCard, GraduationCap, TrendingUp, BarChart3, Clock, Shield, Info } from "lucide-react"
 
@@ -291,7 +296,7 @@ export default function LoanCalculatorPage() {
     <ToolPageLayout
       header={{
         title: "Free Loan EMI Calculator - Calculate Monthly Installments",
-        description: "Use our free online EMI calculator to calculate monthly installment amounts for home loans, car loans, personal loans, and education loans. Get accurate EMI calculations, detailed loan amortization schedules, yearly payment breakdowns, and visual charts for comprehensive loan analysis.",
+        description: "Free EMI calculator for home, car, personal & education loans. Calculate monthly EMI, interest & amortization schedule instantly.",
         titleSize: "medium",
         descriptionSize: "small",
         color: "blue"

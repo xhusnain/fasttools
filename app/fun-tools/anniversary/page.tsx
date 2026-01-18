@@ -1,13 +1,19 @@
-import { AnniversaryCalculator } from "@/components/calculators/anniversary-calculator"
+import dynamic from "next/dynamic"
 import { ToolPageLayout } from "@/components/common/tool-page-layout"
+import { ToolLoader } from "@/components/common/tool-loader"
 import { createToolConfig } from "@/lib/create-tool-config"
 import { getCurrentYear } from "@/lib/utils"
+
+const AnniversaryCalculator = dynamic(
+  () => import("@/components/calculators/anniversary-calculator").then(mod => mod.AnniversaryCalculator),
+  { loading: () => <ToolLoader /> }
+)
 import { Heart, Calendar, Clock, Gift, ArrowRight, CheckCircle, HelpCircle, Star } from "lucide-react"
 
 const toolConfig = createToolConfig({
   toolName: "Love Days Counter & Anniversary Calculator",
   description: "Calculate exactly how long you've been together in years, months, and days. The best dating calculator and love days counter for couples.",
-  metaTitle: `Love Days Counter & Anniversary Calculator - How Long Have We Been Together? ${getCurrentYear()}`,
+  metaTitle: `Love Days Counter & Anniversary Calculator - How Long Have We Been Together?`,
   metaDescription: "Free love days counter and dating calculator. Track exactly how long you've been together. Perfect for checking your relationship days count.",
   path: "/fun-tools/anniversary",
   keywords: [
@@ -264,7 +270,7 @@ const toolConfig = createToolConfig({
 
 export const metadata = {
   ...toolConfig.metadata,
-  title: `Relationship Anniversary Calculator - Years, Months, Days ${getCurrentYear()}`
+  title: `Relationship Anniversary Calculator - Years, Months, Days`
 }
 
 export default function AnniversaryPage() {

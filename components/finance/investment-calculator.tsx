@@ -18,6 +18,7 @@ import {
   TrendingDown,
   Info,
   AlertCircle,
+  Check,
   CheckCircle,
   Copy,
   Download,
@@ -103,31 +104,78 @@ interface InvestmentResult {
   }
 }
 
+const formatNumber = (num: number): number => {
+  // Round to 2 decimal places and avoid scientific notation
+  return Math.round(num * 100) / 100
+}
+
+const calculateFutureValueWithContributions = (
+  starting: number,
+  effectiveRate: number,
+  periods: number,
+  additional: number,
+  contributionTiming: string
+) => {
+  let futureValue = starting * Math.pow(1 + effectiveRate, periods)
+
+  if (additional > 0) {
+    const contributionFactor = contributionTiming === "beginning" ? (1 + effectiveRate) : 1
+    if (effectiveRate === 0) {
+      // If no interest, just add contributions
+      futureValue += additional * periods
+    } else {
+      const annuityFactor = ((Math.pow(1 + effectiveRate, periods) - 1) / effectiveRate) * contributionFactor
+      futureValue += additional * annuityFactor
+    }
+  }
+  return futureValue
+}
+
+const generateCalculationMetrics = (
+  starting: number,
+  additional: number,
+  length: number,
+  endAmount: number
+) => {
+  const totalContributions = starting + (additional * length)
+  const totalInterest = endAmount - totalContributions
+
+  return {
+    totalContributions: formatNumber(totalContributions),
+    totalInterest: formatNumber(totalInterest),
+    interestPercentage: formatNumber((totalInterest / endAmount) * 100),
+    contributionPercentage: formatNumber((totalContributions / endAmount) * 100),
+    startingPercentage: formatNumber((starting / endAmount) * 100)
+  }
+}
+
 export default function InvestmentCalculator() {
+  const [formData, setFormData] = useState({
+    endAmount: "",
+    startingAmount: "",
+    additionalContribution: "",
+    returnRate: "",
+    investmentLength: ""
+  })
   const [calculationType, setCalculationType] = useState("endAmount")
-  const [endAmount, setEndAmount] = useState("")
-  const [startingAmount, setStartingAmount] = useState("")
-  const [additionalContribution, setAdditionalContribution] = useState("")
-  const [returnRate, setReturnRate] = useState("")
-  const [investmentLength, setInvestmentLength] = useState("")
   const [compoundFrequency, setCompoundFrequency] = useState("annually")
   const [contributionTiming, setContributionTiming] = useState("end")
   const [result, setResult] = useState<InvestmentResult | null>(null)
   const [history, setHistory] = useState<InvestmentResult[]>([])
+  const [copied, setCopied] = useState(false)
 
-  const formatNumber = (num: number): number => {
-    // Round to 2 decimal places and avoid scientific notation
-    return Math.round(num * 100) / 100
+  const handleInputChange = (key: keyof typeof formData, value: string) => {
+    setFormData(prev => ({ ...prev, [key]: value }))
   }
 
   const calculateInvestment = () => {
-    const end = parseFloat(endAmount) || 0
-    const starting = parseFloat(startingAmount) || 0
-    const additional = parseFloat(additionalContribution) || 0
-    const rate = parseFloat(returnRate) || 0
-    const length = parseFloat(investmentLength) || 0
+    const end = parseFloat(formData.endAmount) || 0
+    const starting = parseFloat(formData.startingAmount) || 0
+    const additional = parseFloat(formData.additionalContribution) || 0
+    const rate = parseFloat(formData.returnRate) || 0
+    const length = parseFloat(formData.investmentLength) || 0
 
-    // GInput validation
+    // Validation
     if (rate < 0) {
       alert("Return rate cannot be negative")
       return
@@ -158,18 +206,7 @@ export default function InvestmentCalculator() {
       const compoundPeriods = getCompoundPeriods(compoundFrequency)
       const effectiveRate = Math.pow(1 + annualRate / compoundPeriods, compoundPeriods) - 1
 
-      let futureValue = starting * Math.pow(1 + effectiveRate, periods)
-
-      if (additional > 0) {
-        const contributionFactor = contributionTiming === "beginning" ? (1 + effectiveRate) : 1
-        if (effectiveRate === 0) {
-          // If no interest, just add contributions
-          futureValue += additional * periods
-        } else {
-          const annuityFactor = ((Math.pow(1 + effectiveRate, periods) - 1) / effectiveRate) * contributionFactor
-          futureValue += additional * annuityFactor
-        }
-      }
+      const futureValue = calculateFutureValueWithContributions(starting, effectiveRate, periods, additional, contributionTiming)
 
       calculatedResult = {
         endAmount: formatNumber(futureValue),
@@ -179,13 +216,7 @@ export default function InvestmentCalculator() {
         investmentLength: formatNumber(length),
         compoundFrequency,
         contributionTiming,
-        calculations: {
-          totalContributions: formatNumber(starting + (additional * length)),
-          totalInterest: formatNumber(futureValue - starting - (additional * length)),
-          interestPercentage: formatNumber(((futureValue - starting - (additional * length)) / futureValue) * 100),
-          contributionPercentage: formatNumber(((starting + (additional * length)) / futureValue) * 100),
-          startingPercentage: formatNumber((starting / futureValue) * 100)
-        },
+        calculations: generateCalculationMetrics(starting, additional, length, futureValue),
         accumulationSchedule: generateAccumulationSchedule(starting, additional, rate, length, compoundFrequency, contributionTiming),
         recommendations: generateRecommendations(rate, futureValue, length),
         comparison: generateComparison(futureValue, rate)
@@ -204,14 +235,7 @@ export default function InvestmentCalculator() {
       while (iteration < maxIterations) {
         const f = (r: number) => {
           const effectiveRate = Math.pow(1 + r / compoundPeriods, compoundPeriods) - 1
-          let futureValue = starting * Math.pow(1 + effectiveRate, periods)
-
-          if (additional > 0) {
-            const contributionFactor = contributionTiming === "beginning" ? (1 + effectiveRate) : 1
-            const annuityFactor = ((Math.pow(1 + effectiveRate, periods) - 1) / effectiveRate) * contributionFactor
-            futureValue += additional * annuityFactor
-          }
-
+          const futureValue = calculateFutureValueWithContributions(starting, effectiveRate, periods, additional, contributionTiming)
           return futureValue - targetAmount
         }
 
@@ -224,44 +248,23 @@ export default function InvestmentCalculator() {
             const annuityDerivative = ((periods * Math.pow(1 + effectiveRate, periods - 1) * (1 / compoundPeriods) * Math.pow(1 + r / compoundPeriods, compoundPeriods - 1) * periods - (Math.pow(1 + effectiveRate, periods) - 1) * (1 / compoundPeriods) * Math.pow(1 + r / compoundPeriods, compoundPeriods - 1)) / (effectiveRate * effectiveRate)) * contributionFactor
             derivative += additional * annuityDerivative
           }
-
           return derivative
         }
 
         const fValue = f(rateGuess)
         const fPrimeValue = fPrime(rateGuess)
-
         if (Math.abs(fValue) < tolerance) break
-
         if (fPrimeValue === 0) break
-
         const newRateGuess = rateGuess - fValue / fPrimeValue
-
-        // Bounds checking to prevent extreme values
-        if (newRateGuess < 0 || newRateGuess > 2) {
-          break
-        }
-
+        if (newRateGuess < 0 || newRateGuess > 2) break
         rateGuess = newRateGuess
         iteration++
       }
 
-      const finalRate = Math.min(Math.max(rateGuess * 100, 0), 200) // Cap between 0% and 200%
+      const finalRate = Math.min(Math.max(rateGuess * 100, 0), 200)
       const annualRate = finalRate / 100
       const effectiveRate = Math.pow(1 + annualRate / compoundPeriods, compoundPeriods) - 1
-
-      let futureValue = starting * Math.pow(1 + effectiveRate, periods)
-
-      if (additional > 0) {
-        const contributionFactor = contributionTiming === "beginning" ? (1 + effectiveRate) : 1
-        if (effectiveRate === 0) {
-          // If no interest, just add contributions
-          futureValue += additional * periods
-        } else {
-          const annuityFactor = ((Math.pow(1 + effectiveRate, periods) - 1) / effectiveRate) * contributionFactor
-          futureValue += additional * annuityFactor
-        }
-      }
+      const futureValue = calculateFutureValueWithContributions(starting, effectiveRate, periods, additional, contributionTiming)
 
       calculatedResult = {
         endAmount: formatNumber(futureValue),
@@ -271,13 +274,7 @@ export default function InvestmentCalculator() {
         investmentLength: formatNumber(length),
         compoundFrequency,
         contributionTiming,
-        calculations: {
-          totalContributions: formatNumber(starting + (additional * length)),
-          totalInterest: formatNumber(futureValue - starting - (additional * length)),
-          interestPercentage: formatNumber(((futureValue - starting - (additional * length)) / futureValue) * 100),
-          contributionPercentage: formatNumber(((starting + (additional * length)) / futureValue) * 100),
-          startingPercentage: formatNumber((starting / futureValue) * 100)
-        },
+        calculations: generateCalculationMetrics(starting, additional, length, futureValue),
         accumulationSchedule: generateAccumulationSchedule(starting, additional, finalRate, length, compoundFrequency, contributionTiming),
         recommendations: generateRecommendations(finalRate, futureValue, length),
         comparison: generateComparison(futureValue, finalRate)
@@ -310,13 +307,7 @@ export default function InvestmentCalculator() {
         investmentLength: formatNumber(length),
         compoundFrequency,
         contributionTiming,
-        calculations: {
-          totalContributions: formatNumber(requiredStarting + (additional * length)),
-          totalInterest: formatNumber(end - requiredStarting - (additional * length)),
-          interestPercentage: formatNumber(((end - requiredStarting - (additional * length)) / end) * 100),
-          contributionPercentage: formatNumber(((requiredStarting + (additional * length)) / end) * 100),
-          startingPercentage: formatNumber((requiredStarting / end) * 100)
-        },
+        calculations: generateCalculationMetrics(requiredStarting, additional, length, end),
         accumulationSchedule: generateAccumulationSchedule(requiredStarting, additional, rate, length, compoundFrequency, contributionTiming),
         recommendations: generateRecommendations(rate, end, length),
         comparison: generateComparison(end, rate)
@@ -350,13 +341,7 @@ export default function InvestmentCalculator() {
         investmentLength: formatNumber(length),
         compoundFrequency,
         contributionTiming,
-        calculations: {
-          totalContributions: formatNumber(starting + (requiredContribution * length)),
-          totalInterest: formatNumber(end - starting - (requiredContribution * length)),
-          interestPercentage: formatNumber(((end - starting - (requiredContribution * length)) / end) * 100),
-          contributionPercentage: formatNumber(((starting + (requiredContribution * length)) / end) * 100),
-          startingPercentage: formatNumber((starting / end) * 100)
-        },
+        calculations: generateCalculationMetrics(starting, requiredContribution, length, end),
         accumulationSchedule: generateAccumulationSchedule(starting, requiredContribution, rate, length, compoundFrequency, contributionTiming),
         recommendations: generateRecommendations(rate, end, length),
         comparison: generateComparison(end, rate)
@@ -369,7 +354,6 @@ export default function InvestmentCalculator() {
 
       let periods = 0
       if (effectiveRate === 0) {
-        // If no interest, just divide by contributions
         periods = (end - starting) / additional
       } else if (additional > 0) {
         const contributionFactor = contributionTiming === "beginning" ? (1 + effectiveRate) : 1
@@ -380,7 +364,6 @@ export default function InvestmentCalculator() {
         periods = Math.log(end / starting) / Math.log(1 + effectiveRate)
       }
 
-      // Cap periods to reasonable range
       periods = Math.min(Math.max(periods, 0), 100)
 
       calculatedResult = {
@@ -391,13 +374,7 @@ export default function InvestmentCalculator() {
         investmentLength: formatNumber(periods),
         compoundFrequency,
         contributionTiming,
-        calculations: {
-          totalContributions: formatNumber(starting + (additional * periods)),
-          totalInterest: formatNumber(end - starting - (additional * periods)),
-          interestPercentage: formatNumber(((end - starting - (additional * periods)) / end) * 100),
-          contributionPercentage: formatNumber(((starting + (additional * periods)) / end) * 100),
-          startingPercentage: formatNumber((starting / end) * 100)
-        },
+        calculations: generateCalculationMetrics(starting, additional, periods, end),
         accumulationSchedule: generateAccumulationSchedule(starting, additional, rate, periods, compoundFrequency, contributionTiming),
         recommendations: generateRecommendations(rate, end, periods),
         comparison: generateComparison(end, rate)
@@ -427,7 +404,7 @@ export default function InvestmentCalculator() {
 
     let balance = starting
 
-    for (let year = 1; year <= Math.min(length, 50); year++) { // Cap at 50 years
+    for (let year = 1; year <= Math.min(length, 50); year++) {
       const deposit = additional
       const interest = balance * effectiveRate
       balance = balance + deposit + interest
@@ -448,7 +425,6 @@ export default function InvestmentCalculator() {
     const riskManagement: string[] = []
     const portfolioStrategies: string[] = []
 
-    // Investment recommendations based on return rate
     if (rate > 10) {
       investmentTips.push("Consider high-growth investments like growth stocks")
       investmentTips.push("Evaluate risk tolerance for higher returns")
@@ -463,19 +439,8 @@ export default function InvestmentCalculator() {
       investmentTips.push("Consider inflation-protected securities")
     }
 
-    // Risk management recommendations
-    riskManagement.push("Diversify your investment portfolio")
-    riskManagement.push("Regularly rebalance your portfolio")
-    riskManagement.push("Consider dollar-cost averaging")
-    riskManagement.push("Review and adjust risk tolerance over time")
-    riskManagement.push("Maintain an emergency fund")
-
-    // Portfolio strategies
-    portfolioStrategies.push("Age-appropriate asset allocation")
-    portfolioStrategies.push("Consider target-date funds")
-    portfolioStrategies.push("Regular portfolio rebalancing")
-    portfolioStrategies.push("Tax-efficient investing strategies")
-    portfolioStrategies.push("Long-term investment horizon")
+    riskManagement.push("Diversify your investment portfolio", "Regularly rebalance your portfolio", "Consider dollar-cost averaging", "Review and adjust risk tolerance", "Maintain an emergency fund")
+    portfolioStrategies.push("Age-appropriate asset allocation", "Consider target-date funds", "Regular portfolio rebalancing", "Tax-efficient investing", "Long-term investment horizon")
 
     return { investmentTips, riskManagement, portfolioStrategies }
   }
@@ -487,7 +452,6 @@ export default function InvestmentCalculator() {
       { scenario: "Aggressive (8%)", endAmount: formatNumber(endAmount * 1.3), difference: formatNumber(endAmount * 0.3) },
       { scenario: "High Growth (10%)", endAmount: formatNumber(endAmount * 1.6), difference: formatNumber(endAmount * 0.6) }
     ]
-
     return { scenarios }
   }
 
@@ -500,22 +464,26 @@ Additional Contribution: $${result.additionalContribution.toFixed(2)}
 Return Rate: ${result.returnRate.toFixed(2)}%
 Investment Length: ${result.investmentLength.toFixed(1)} years
 Total Interest: $${result.calculations.totalInterest.toFixed(2)}`
-      navigator.clipboard.writeText(text)
+      void navigator.clipboard.writeText(text).then(() => {
+        setCopied(true)
+        setTimeout(() => setCopied(false), 2000)
+      })
     }
   }
 
   const clearAll = () => {
-    setEndAmount("")
-    setStartingAmount("")
-    setAdditionalContribution("")
-    setReturnRate("")
-    setInvestmentLength("")
+    setFormData({
+      endAmount: "",
+      startingAmount: "",
+      additionalContribution: "",
+      returnRate: "",
+      investmentLength: ""
+    })
     setResult(null)
   }
 
   return (
     <div className="space-y-4 sm:space-y-6 md:space-y-8 bg-card rounded-xl p-2 sm:p-3 md:p-4 w-full overflow-hidden">
-      {/* Main Calculator */}
       <GCard className="bg-card border-border w-full overflow-hidden">
         <GCardHeader>
           <GCardTitle className="flex items-center gap-2 text-foreground text-base sm:text-lg md:text-xl break-words">
@@ -524,11 +492,9 @@ Total Interest: $${result.calculations.totalInterest.toFixed(2)}`
           </GCardTitle>
         </GCardHeader>
         <GCardContent className="space-y-4 sm:space-y-6">
-          {/* Calculation Type Selection */}
           <div>
             <GLabel className="text-heading-accent text-xs sm:text-sm mb-2 block break-words">Calculate</GLabel>
 
-            {/* Mobile Dropdown */}
             <div className="block md:hidden mb-4">
               <GSelect value={calculationType} onValueChange={setCalculationType}>
                 <GSelectTrigger className="border-border bg-card text-foreground w-full text-xs sm:text-sm h-9">
@@ -544,7 +510,6 @@ Total Interest: $${result.calculations.totalInterest.toFixed(2)}`
               </GSelect>
             </div>
 
-            {/* Desktop GTabs */}
             <GTabs value={calculationType} onValueChange={setCalculationType} className="w-full hidden md:block">
               <GTabsList className="grid w-full grid-cols-5 bg-card border border-border">
                 <GTabsTrigger value="endAmount" className="text-xs sm:text-sm">End Amount</GTabsTrigger>
@@ -555,250 +520,70 @@ Total Interest: $${result.calculations.totalInterest.toFixed(2)}`
               </GTabsList>
             </GTabs>
 
-            {/* Mobile/Desktop GInput Fields */}
-            <div className="space-y-3 sm:space-y-4 mt-3 sm:mt-4">
-              {calculationType === "endAmount" && (
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4">
-                  <div className="space-y-1.5 w-full min-w-0">
-                    <GLabel htmlFor="startingAmount" className="text-heading-accent text-xs sm:text-sm">Starting Amount</GLabel>
-                    <GInput
-                      id="startingAmount"
-                      type="number"
-                      placeholder="20000"
-                      value={startingAmount}
-                      onChange={(e) => setStartingAmount(e.target.value)}
-                      className="border-border !bg-card text-foreground focus-visible:ring-primary focus:border-primary w-full text-sm h-9"
-                    />
-                  </div>
-                  <div className="space-y-1.5 w-full min-w-0">
-                    <GLabel htmlFor="returnRate" className="text-heading-accent text-xs sm:text-sm">Return Rate (%)</GLabel>
-                    <GInput
-                      id="returnRate"
-                      type="number"
-                      placeholder="6"
-                      value={returnRate}
-                      onChange={(e) => setReturnRate(e.target.value)}
-                      className="border-border !bg-card text-foreground focus-visible:ring-primary focus:border-primary w-full text-sm h-9"
-                    />
-                  </div>
-                  <div className="space-y-1.5 w-full min-w-0">
-                    <GLabel htmlFor="investmentLength" className="text-heading-accent text-xs sm:text-sm">Investment Length (years)</GLabel>
-                    <GInput
-                      id="investmentLength"
-                      type="number"
-                      placeholder="10"
-                      value={investmentLength}
-                      onChange={(e) => setInvestmentLength(e.target.value)}
-                      className="border-border !bg-card text-foreground focus-visible:ring-primary focus:border-primary w-full text-sm h-9"
-                    />
-                  </div>
-                  <div className="space-y-1.5 w-full min-w-0">
-                    <GLabel htmlFor="additionalContribution" className="text-heading-accent text-xs sm:text-sm">Additional Contribution</GLabel>
-                    <GInput
-                      id="additionalContribution"
-                      type="number"
-                      placeholder="1000"
-                      value={additionalContribution}
-                      onChange={(e) => setAdditionalContribution(e.target.value)}
-                      className="border-border !bg-card text-foreground focus-visible:ring-primary focus:border-primary w-full text-sm h-9"
-                    />
-                  </div>
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4 mt-3 sm:mt-4">
+              {calculationType !== "endAmount" && (
+                <div className="space-y-1.5 w-full min-w-0">
+                  <GLabel htmlFor="endAmount" className="text-heading-accent text-xs sm:text-sm">End Amount</GLabel>
+                  <GInput
+                    id="endAmount"
+                    type="number"
+                    placeholder="100000"
+                    value={formData.endAmount}
+                    onChange={(e) => handleInputChange("endAmount", e.target.value)}
+                    className="border-border !bg-card text-foreground focus-visible:ring-primary focus:border-primary w-full text-sm h-9"
+                  />
                 </div>
               )}
-
-              {calculationType === "returnRate" && (
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4">
-                  <div className="space-y-1.5 w-full min-w-0">
-                    <GLabel htmlFor="endAmount" className="text-heading-accent text-xs sm:text-sm">End Amount</GLabel>
-                    <GInput
-                      id="endAmount"
-                      type="number"
-                      placeholder="100000"
-                      value={endAmount}
-                      onChange={(e) => setEndAmount(e.target.value)}
-                      className="border-border !bg-card text-foreground focus-visible:ring-primary focus:border-primary w-full text-sm h-9"
-                    />
-                  </div>
-                  <div className="space-y-1.5 w-full min-w-0">
-                    <GLabel htmlFor="startingAmount" className="text-heading-accent text-xs sm:text-sm">Starting Amount</GLabel>
-                    <GInput
-                      id="startingAmount"
-                      type="number"
-                      placeholder="20000"
-                      value={startingAmount}
-                      onChange={(e) => setStartingAmount(e.target.value)}
-                      className="border-border !bg-card text-foreground focus-visible:ring-primary focus:border-primary w-full text-sm h-9"
-                    />
-                  </div>
-                  <div className="space-y-1.5 w-full min-w-0">
-                    <GLabel htmlFor="investmentLength" className="text-heading-accent text-xs sm:text-sm">Investment Length (years)</GLabel>
-                    <GInput
-                      id="investmentLength"
-                      type="number"
-                      placeholder="10"
-                      value={investmentLength}
-                      onChange={(e) => setInvestmentLength(e.target.value)}
-                      className="border-border !bg-card text-foreground focus-visible:ring-primary focus:border-primary w-full text-sm h-9"
-                    />
-                  </div>
-                  <div className="space-y-1.5 w-full min-w-0">
-                    <GLabel htmlFor="additionalContribution" className="text-heading-accent text-xs sm:text-sm">Additional Contribution</GLabel>
-                    <GInput
-                      id="additionalContribution"
-                      type="number"
-                      placeholder="1000"
-                      value={additionalContribution}
-                      onChange={(e) => setAdditionalContribution(e.target.value)}
-                      className="border-border !bg-card text-foreground focus-visible:ring-primary focus:border-primary w-full text-sm h-9"
-                    />
-                  </div>
+              {calculationType !== "startingAmount" && (
+                <div className="space-y-1.5 w-full min-w-0">
+                  <GLabel htmlFor="startingAmount" className="text-heading-accent text-xs sm:text-sm">Starting Amount</GLabel>
+                  <GInput
+                    id="startingAmount"
+                    type="number"
+                    placeholder="20000"
+                    value={formData.startingAmount}
+                    onChange={(e) => handleInputChange("startingAmount", e.target.value)}
+                    className="border-border !bg-card text-foreground focus-visible:ring-primary focus:border-primary w-full text-sm h-9"
+                  />
                 </div>
               )}
-
-              {calculationType === "startingAmount" && (
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4">
-                  <div className="space-y-1.5 w-full min-w-0">
-                    <GLabel htmlFor="endAmount" className="text-heading-accent text-xs sm:text-sm">End Amount</GLabel>
-                    <GInput
-                      id="endAmount"
-                      type="number"
-                      placeholder="100000"
-                      value={endAmount}
-                      onChange={(e) => setEndAmount(e.target.value)}
-                      className="border-border !bg-card text-foreground focus-visible:ring-primary focus:border-primary w-full text-sm h-9"
-                    />
-                  </div>
-                  <div className="space-y-1.5 w-full min-w-0">
-                    <GLabel htmlFor="returnRate" className="text-heading-accent text-xs sm:text-sm">Return Rate (%)</GLabel>
-                    <GInput
-                      id="returnRate"
-                      type="number"
-                      placeholder="6"
-                      value={returnRate}
-                      onChange={(e) => setReturnRate(e.target.value)}
-                      className="border-border !bg-card text-foreground focus-visible:ring-primary focus:border-primary w-full text-sm h-9"
-                    />
-                  </div>
-                  <div className="space-y-1.5 w-full min-w-0">
-                    <GLabel htmlFor="investmentLength" className="text-heading-accent text-xs sm:text-sm">Investment Length (years)</GLabel>
-                    <GInput
-                      id="investmentLength"
-                      type="number"
-                      placeholder="10"
-                      value={investmentLength}
-                      onChange={(e) => setInvestmentLength(e.target.value)}
-                      className="border-border !bg-card text-foreground focus-visible:ring-primary focus:border-primary w-full text-sm h-9"
-                    />
-                  </div>
-                  <div className="space-y-1.5 w-full min-w-0">
-                    <GLabel htmlFor="additionalContribution" className="text-heading-accent text-xs sm:text-sm">Additional Contribution</GLabel>
-                    <GInput
-                      id="additionalContribution"
-                      type="number"
-                      placeholder="1000"
-                      value={additionalContribution}
-                      onChange={(e) => setAdditionalContribution(e.target.value)}
-                      className="border-border !bg-card text-foreground focus-visible:ring-primary focus:border-primary w-full text-sm h-9"
-                    />
-                  </div>
+              {calculationType !== "returnRate" && (
+                <div className="space-y-1.5 w-full min-w-0">
+                  <GLabel htmlFor="returnRate" className="text-heading-accent text-xs sm:text-sm">Return Rate (%)</GLabel>
+                  <GInput
+                    id="returnRate"
+                    type="number"
+                    placeholder="6"
+                    value={formData.returnRate}
+                    onChange={(e) => handleInputChange("returnRate", e.target.value)}
+                    className="border-border !bg-card text-foreground focus-visible:ring-primary focus:border-primary w-full text-sm h-9"
+                  />
                 </div>
               )}
-
-              {calculationType === "additionalContribution" && (
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4">
-                  <div className="space-y-1.5 w-full min-w-0">
-                    <GLabel htmlFor="endAmount" className="text-heading-accent text-xs sm:text-sm">End Amount</GLabel>
-                    <GInput
-                      id="endAmount"
-                      type="number"
-                      placeholder="100000"
-                      value={endAmount}
-                      onChange={(e) => setEndAmount(e.target.value)}
-                      className="border-border !bg-card text-foreground focus-visible:ring-primary focus:border-primary w-full text-sm h-9"
-                    />
-                  </div>
-                  <div className="space-y-1.5 w-full min-w-0">
-                    <GLabel htmlFor="startingAmount" className="text-heading-accent text-xs sm:text-sm">Starting Amount</GLabel>
-                    <GInput
-                      id="startingAmount"
-                      type="number"
-                      placeholder="20000"
-                      value={startingAmount}
-                      onChange={(e) => setStartingAmount(e.target.value)}
-                      className="border-border !bg-card text-foreground focus-visible:ring-primary focus:border-primary w-full text-sm h-9"
-                    />
-                  </div>
-                  <div className="space-y-1.5 w-full min-w-0">
-                    <GLabel htmlFor="returnRate" className="text-heading-accent text-xs sm:text-sm">Return Rate (%)</GLabel>
-                    <GInput
-                      id="returnRate"
-                      type="number"
-                      placeholder="6"
-                      value={returnRate}
-                      onChange={(e) => setReturnRate(e.target.value)}
-                      className="border-border !bg-card text-foreground focus-visible:ring-primary focus:border-primary w-full text-sm h-9"
-                    />
-                  </div>
-                  <div className="space-y-1.5 w-full min-w-0">
-                    <GLabel htmlFor="investmentLength" className="text-heading-accent text-xs sm:text-sm">Investment Length (years)</GLabel>
-                    <GInput
-                      id="investmentLength"
-                      type="number"
-                      placeholder="10"
-                      value={investmentLength}
-                      onChange={(e) => setInvestmentLength(e.target.value)}
-                      className="border-border !bg-card text-foreground focus-visible:ring-primary focus:border-primary w-full text-sm h-9"
-                    />
-                  </div>
+              {calculationType !== "investmentLength" && (
+                <div className="space-y-1.5 w-full min-w-0">
+                  <GLabel htmlFor="investmentLength" className="text-heading-accent text-xs sm:text-sm">Investment Length (years)</GLabel>
+                  <GInput
+                    id="investmentLength"
+                    type="number"
+                    placeholder="10"
+                    value={formData.investmentLength}
+                    onChange={(e) => handleInputChange("investmentLength", e.target.value)}
+                    className="border-border !bg-card text-foreground focus-visible:ring-primary focus:border-primary w-full text-sm h-9"
+                  />
                 </div>
               )}
-
-              {calculationType === "investmentLength" && (
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4">
-                  <div className="space-y-1.5 w-full min-w-0">
-                    <GLabel htmlFor="endAmount" className="text-heading-accent text-xs sm:text-sm">End Amount</GLabel>
-                    <GInput
-                      id="endAmount"
-                      type="number"
-                      placeholder="100000"
-                      value={endAmount}
-                      onChange={(e) => setEndAmount(e.target.value)}
-                      className="border-border !bg-card text-foreground focus-visible:ring-primary focus:border-primary w-full text-sm h-9"
-                    />
-                  </div>
-                  <div className="space-y-1.5 w-full min-w-0">
-                    <GLabel htmlFor="startingAmount" className="text-heading-accent text-xs sm:text-sm">Starting Amount</GLabel>
-                    <GInput
-                      id="startingAmount"
-                      type="number"
-                      placeholder="20000"
-                      value={startingAmount}
-                      onChange={(e) => setStartingAmount(e.target.value)}
-                      className="border-border !bg-card text-foreground focus-visible:ring-primary focus:border-primary w-full text-sm h-9"
-                    />
-                  </div>
-                  <div className="space-y-1.5 w-full min-w-0">
-                    <GLabel htmlFor="returnRate" className="text-heading-accent text-xs sm:text-sm">Return Rate (%)</GLabel>
-                    <GInput
-                      id="returnRate"
-                      type="number"
-                      placeholder="6"
-                      value={returnRate}
-                      onChange={(e) => setReturnRate(e.target.value)}
-                      className="border-border !bg-card text-foreground focus-visible:ring-primary focus:border-primary w-full text-sm h-9"
-                    />
-                  </div>
-                  <div className="space-y-1.5 w-full min-w-0">
-                    <GLabel htmlFor="additionalContribution" className="text-heading-accent text-xs sm:text-sm">Additional Contribution</GLabel>
-                    <GInput
-                      id="additionalContribution"
-                      type="number"
-                      placeholder="1000"
-                      value={additionalContribution}
-                      onChange={(e) => setAdditionalContribution(e.target.value)}
-                      className="border-border !bg-card text-foreground focus-visible:ring-primary focus:border-primary w-full text-sm h-9"
-                    />
-                  </div>
+              {calculationType !== "additionalContribution" && (
+                <div className="space-y-1.5 w-full min-w-0">
+                  <GLabel htmlFor="additionalContribution" className="text-heading-accent text-xs sm:text-sm">Additional Contribution</GLabel>
+                  <GInput
+                    id="additionalContribution"
+                    type="number"
+                    placeholder="1000"
+                    value={formData.additionalContribution}
+                    onChange={(e) => handleInputChange("additionalContribution", e.target.value)}
+                    className="border-border !bg-card text-foreground focus-visible:ring-primary focus:border-primary w-full text-sm h-9"
+                  />
                 </div>
               )}
             </div>

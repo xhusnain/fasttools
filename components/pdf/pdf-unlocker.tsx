@@ -14,6 +14,7 @@ import { Upload, Download, Unlock, CheckCircle2, AlertCircle, FileText, X, Shiel
 
 import { PDFDocument } from "pdf-lib"
 import * as pdfjsLib from "pdfjs-dist"
+import { renderPageToJpeg } from "@/lib/pdf-utils"
 
 // Configure PDF.js worker
 if (typeof window !== "undefined") {
@@ -180,40 +181,12 @@ export function PDFUnlocker() {
     // Render each page to image
     for (let pageNum = 1; pageNum <= numPages; pageNum++) {
       const page = await pdfDoc.getPage(pageNum)
-      const viewport = page.getViewport({ scale: 2.0 })
-
-      // Create canvas
-      const canvas = document.createElement('canvas')
-      canvas.width = viewport.width
-      canvas.height = viewport.height
-      const context = canvas.getContext('2d', { alpha: false })
-
-      if (!context) throw new Error("Failed to get canvas context")
-
-      // White background
-      context.fillStyle = 'white'
-      context.fillRect(0, 0, canvas.width, canvas.height)
-
-      // Render PDF page to canvas
-      await page.render({
-        canvasContext: context,
-        viewport: viewport,
-        intent: 'print'
-      }).promise
-
-      // Convert canvas to JPEG
-      const blob = await new Promise<Blob>((resolve, reject) => {
-        canvas.toBlob(
-          (b) => b ? resolve(b) : reject(new Error("Failed to convert canvas")),
-          'image/jpeg',
-          0.95
-        )
-      })
-
-      const imageBytes = new Uint8Array(await blob.arrayBuffer())
+      const imageBytes = await renderPageToJpeg(page, { scale: 2.0, quality: 0.95 })
 
       // Embed in new PDF
       const jpegImage = await newPdf.embedJpg(imageBytes)
+      // Re-get viewport to ensure correct dimensions for adding page
+      const viewport = page.getViewport({ scale: 2.0 })
       const pdfPage = newPdf.addPage([viewport.width, viewport.height])
       pdfPage.drawImage(jpegImage, {
         x: 0,
@@ -306,7 +279,7 @@ export function PDFUnlocker() {
   const downloadUnlockedPDF = () => {
     if (!unlockedPdfBytes || !file) return
 
-    const blob = new Blob([unlockedPdfBytes], { type: "application/pdf" })
+    const blob = new Blob([unlockedPdfBytes as BlobPart], { type: "application/pdf" })
     const url = URL.createObjectURL(blob)
     const link = document.createElement("a")
     link.href = url

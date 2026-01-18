@@ -41,7 +41,7 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
     try {
         const { frontMatter } = await getPostBySlug(slug);
         return {
-            title: `${frontMatter.title} | FastTools`,
+            title: `${frontMatter.title}`,
             description: frontMatter.description,
             keywords: frontMatter.keywords,
             openGraph: {
@@ -52,7 +52,7 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
                 authors: [frontMatter.author || 'FastTools Team'],
                 images: frontMatter.image
                     ? [`https://www.fasttools.store${frontMatter.image}`]
-                    : [],
+                    : [`https://www.fasttools.store/android-chrome-512x512.png`],
                 url: `https://www.fasttools.store/blog/${slug}`,
                 siteName: 'FastTools',
             },
@@ -62,7 +62,7 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
                 description: frontMatter.description,
                 images: frontMatter.image
                     ? [`https://www.fasttools.store${frontMatter.image}`]
-                    : [],
+                    : [`https://www.fasttools.store/android-chrome-512x512.png`],
                 creator: '@fasttools',
             },
             robots: {
@@ -111,7 +111,7 @@ export default async function BlogPost({
     const articleSchema = createArticleSchema({
         title: frontMatter.title,
         description: frontMatter.description,
-        image: frontMatter.image,
+        image: frontMatter.image || '/android-chrome-512x512.png',
         authorName: frontMatter.author,
         datePublished: frontMatter.date,
         dateModified: frontMatter.lastModified || frontMatter.date,

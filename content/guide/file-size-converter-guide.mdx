@@ -85,7 +85,7 @@ Now it is time to give our tool a brain. We are entering the world of JavaScript
     
     We do this by getting the user's number (`fs-input`) and multiplying it by the dropdown value (`fs-unit`) we set up in Step 2. Remember how we set the "MB" value to 1,048,576? This means if a user types "2" and selects "MB", our code executes `2 * 1,048,576` to get the total bytes. Once we have this total "Byte" count, we can easily convert it *back* to any other unit (KB, GB) just by dividing. This "Normalize first, Divide later" strategy works for almost any unit converter!
 
-```javascript
+```html
 <script>
 function convertSize() {
     // 1. Get user values

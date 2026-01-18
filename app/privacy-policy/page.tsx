@@ -18,10 +18,16 @@ import {
 import { createMetadata } from "@/lib/metadata-base"
 
 export const metadata = createMetadata({
-  title: "Privacy Policy | GDPR & CCPA Compliant | FastTools",
+  title: "Privacy Policy | GDPR & CCPA Compliant",
   description: "Comprehensive privacy policy for FastTools covering GDPR, CCPA compliance, Google AdSense policies, data collection, and user rights for free online tools.",
   path: "/privacy-policy",
-  includeSchema: false
+  includeSchema: false,
+  breadcrumbs: [
+      {
+        "label": "Privacy Policy",
+        "href": "/privacy-policy"
+      }
+    ]
 })
 
 export default function PrivacyPolicyPage() {
@@ -73,7 +79,7 @@ export default function PrivacyPolicyPage() {
                   <span className="text-sm font-medium text-foreground">Google AdSense Policy</span>
                 </div>
               </div>
-              <p className="text-sm text-muted-foreground text-center mt-4">Last updated: November 1, 2025</p>
+              <p className="text-sm text-muted-foreground text-center mt-4">Last updated: November 1,</p>
             </div>
 
             {/* Main Content */}

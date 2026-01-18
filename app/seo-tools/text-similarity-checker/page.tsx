@@ -1,6 +1,12 @@
+import dynamic from "next/dynamic"
 import { ToolPageLayout } from "@/components/common/tool-page-layout"
-import { TextSimilarityChecker } from "@/components/seo-tools/text-similarity-checker"
+import { ToolLoader } from "@/components/common/tool-loader"
 import { createToolConfig } from "@/lib/create-tool-config"
+
+const TextSimilarityChecker = dynamic(
+    () => import("@/components/seo-tools/text-similarity-checker").then(mod => mod.TextSimilarityChecker),
+    { loading: () => <ToolLoader /> }
+)
 import { GImage } from "@/ui/gimage"
 import {
     Hash, CheckCircle, Shield, Zap, Brain, Target, TrendingUp, Search, Copy, Lightbulb, Terminal, Users, Clock, Lock

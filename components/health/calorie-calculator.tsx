@@ -8,6 +8,7 @@ import { GLabel } from "@/ui/glabel"
 import { GSelect, GSelectContent, GSelectItem, GSelectTrigger, GSelectValue } from "@/ui/gselect"
 import { GBadge } from "@/ui/gbadge"
 import { GTabs, GTabsContent, GTabsList, GTabsTrigger } from "@/ui/gtabs"
+import { calculateBMR, activityLevels } from "@/lib/calculators"
 
 import {
   Calculator,
@@ -85,11 +86,8 @@ interface CalorieResult {
   }
 }
 
-interface ActivityLevel {
-  name: string
-  multiplier: number
-  description: string
-}
+
+
 
 interface FoodItem {
   name: string
@@ -111,33 +109,7 @@ export default function CalorieCalculator() {
   const [history, setHistory] = useState<CalorieResult[]>([])
   const [foodConverter, setFoodConverter] = useState({ calories: "", kj: "" })
 
-  const activityLevels: ActivityLevel[] = [
-    {
-      name: "Sedentary",
-      multiplier: 1.2,
-      description: "Little or no exercise"
-    },
-    {
-      name: "Light Activity",
-      multiplier: 1.375,
-      description: "Exercise 1-3 times/week"
-    },
-    {
-      name: "Moderate Activity",
-      multiplier: 1.55,
-      description: "Exercise 4-5 times/week"
-    },
-    {
-      name: "Very Active",
-      multiplier: 1.725,
-      description: "Daily exercise or intense exercise 3-4 times/week"
-    },
-    {
-      name: "Extremely Active",
-      multiplier: 1.9,
-      description: "Intense exercise 6-7 times/week or physical job"
-    }
-  ]
+
 
   const commonFoods: FoodItem[] = [
     { name: "Apple", calories: 59, serving: "1 (4 oz.)", category: "Fruit" },
@@ -165,33 +137,16 @@ export default function CalorieCalculator() {
       const heightCm = unitSystem === "imperial" ? heightNum * 2.54 : heightNum
       const weightKg = unitSystem === "imperial" ? weightNum * 0.453592 : weightNum
 
-      let bmr = 0
-      let equationName = ""
-      let accuracy = ""
+      const { bmr, equationName, accuracy } = calculateBMR({
+        weight: weightKg,
+        height: heightCm,
+        age: ageNum,
+        gender,
+        equation,
+        bodyFat: bodyFatNum || undefined
+      })
 
-      if (equation === "mifflin") {
-        if (gender === "male") {
-          bmr = 10 * weightKg + 6.25 * heightCm - 5 * ageNum + 5
-        } else {
-          bmr = 10 * weightKg + 6.25 * heightCm - 5 * ageNum - 161
-        }
-        equationName = "Mifflin-St Jeor Equation"
-        accuracy = "Most accurate for general population"
-      } else if (equation === "harris") {
-        if (gender === "male") {
-          bmr = 13.397 * weightKg + 4.799 * heightCm - 5.677 * ageNum + 88.362
-        } else {
-          bmr = 9.247 * weightKg + 3.098 * heightCm - 4.330 * ageNum + 447.593
-        }
-        equationName = "Revised Harris-Benedict Equation"
-        accuracy = "Good for general population"
-      } else if (equation === "katch" && bodyFatNum !== null) {
-        bmr = 370 + 21.6 * (1 - bodyFatNum / 100) * weightKg
-        equationName = "Katch-McArdle Formula"
-        accuracy = "Most accurate for lean individuals with known body fat %"
-      } else {
-        return
-      }
+      if (bmr === 0) return
 
       // Get activity multiplier
       const activity = activityLevels.find(a => a.name.toLowerCase().includes(activityLevel.toLowerCase()))
@@ -343,7 +298,7 @@ Weight Gain Goals:
 Mild (0.5 lb/week): ${result.weightGain.mild} calories/day
 Moderate (1 lb/week): ${result.weightGain.moderate} calories/day
 Aggressive (1.5 lb/week): ${result.weightGain.aggressive} calories/day`
-      navigator.clipboard.writeText(text)
+      void navigator.clipboard.writeText(text)
     }
   }
 

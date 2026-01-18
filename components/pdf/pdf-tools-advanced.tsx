@@ -22,8 +22,10 @@ import {
   FileStack,
   ArrowUpDown
 } from "lucide-react"
+
 import { LoadingSpinner } from "@/components/common/loading-spinner"
 import { PDFDocument } from "pdf-lib"
+import { downloadPdf } from "@/lib/pdf-utils"
 
 interface FileWithId {
   id: string
@@ -80,10 +82,8 @@ export function PDFToolsAdvanced() {
     }
   }
 
-  // Handle file upload
-  const handleFileUpload = async (e: React.ChangeEvent<HTMLInputElement>) => {
-    const uploadedFiles = Array.from(e.target.files || [])
-
+  // Shared file processing logic
+  const processUploadedFiles = async (uploadedFiles: File[]) => {
     if (mode === "split" && uploadedFiles.length > 1) {
       showToast("warning", "Only one PDF for splitting")
       return
@@ -137,6 +137,12 @@ export function PDFToolsAdvanced() {
     }
   }
 
+  // Handle file upload
+  const handleFileUpload = async (e: React.ChangeEvent<HTMLInputElement>) => {
+    const uploadedFiles = Array.from(e.target.files || [])
+    await processUploadedFiles(uploadedFiles)
+  }
+
   // Handle drag and drop
   const handleDragOver = (e: React.DragEvent) => {
     e.preventDefault()
@@ -156,51 +162,7 @@ export function PDFToolsAdvanced() {
       return
     }
 
-    if (mode === "split" && droppedFiles.length > 1) {
-      showToast("warning", "Only one PDF for splitting")
-      return
-    }
-
-    setLoading(true)
-    setProgress(0)
-
-    const validFiles: FileWithId[] = []
-
-    for (let i = 0; i < droppedFiles.length; i++) {
-      const file = droppedFiles[i]
-      setProgress(((i + 1) / droppedFiles.length) * 50)
-
-      const isValid = await validatePDFFile(file)
-      if (isValid) {
-        const pageCount = await getPageCount(file)
-        validFiles.push({
-          id: `${Date.now()}-${i}`,
-          file,
-          pageCount
-        })
-      }
-    }
-
-    // For merge mode, APPEND to existing files. For split mode, replace
-    if (mode === "merge") {
-      setFiles(prevFiles => [...prevFiles, ...validFiles])
-    } else {
-      setFiles(validFiles.slice(0, 1))
-    }
-
-    setProgress(0)
-    setLoading(false)
-
-    if (validFiles.length > 0) {
-      const totalFiles = mode === "merge" ? files.length + validFiles.length : validFiles.length
-      showToast("success", mode === "merge"
-        ? `${validFiles.length} PDF added (${totalFiles} total)`
-        : `PDF loaded (${validFiles[0].pageCount} pages)`)
-
-      if (mode === "split" && validFiles[0].pageCount) {
-        setPageRange({ start: 1, end: validFiles[0].pageCount })
-      }
-    }
+    await processUploadedFiles(droppedFiles)
   }
 
   // Remove file
@@ -229,6 +191,27 @@ export function PDFToolsAdvanced() {
     setDraggedIndex(null)
   }
 
+  // Helper to load PDF
+  const loadPDF = async (file: File) => {
+    const arrayBuffer = await file.arrayBuffer()
+    return await PDFDocument.load(arrayBuffer)
+  }
+
+  // Helper for page extraction
+  const performPageExtraction = async (pdf: PDFDocument, pageIndices: number[], filename: string, successMessage: string) => {
+    const newPdf = await PDFDocument.create()
+    setProgress(50)
+    const copiedPages = await newPdf.copyPages(pdf, pageIndices)
+    copiedPages.forEach((page) => newPdf.addPage(page))
+
+    setProgress(90)
+    const pdfBytes = await newPdf.save()
+    downloadPdf(pdfBytes, filename)
+
+    setProgress(100)
+    showToast("success", successMessage)
+  }
+
   // Merge PDFs
   const mergePDFs = async () => {
     if (files.length < 2) {
@@ -246,28 +229,18 @@ export function PDFToolsAdvanced() {
         const file = files[i].file
         setProgress(((i + 1) / files.length) * 90)
 
-        const arrayBuffer = await file.arrayBuffer()
-        const pdf = await PDFDocument.load(arrayBuffer)
+        const pdf = await loadPDF(file)
         const copiedPages = await mergedPdf.copyPages(pdf, pdf.getPageIndices())
         copiedPages.forEach((page) => mergedPdf.addPage(page))
       }
 
       setProgress(95)
       const mergedPdfBytes = await mergedPdf.save()
-      const blob = new Blob([new Uint8Array(mergedPdfBytes)], { type: "application/pdf" })
-      const url = URL.createObjectURL(blob)
+      downloadPdf(mergedPdfBytes, `merged-${Date.now()}.pdf`)
 
-      const link = document.createElement("a")
-      link.href = url
-      link.download = `merged-${Date.now()}.pdf`
-      link.click()
-
-      URL.revokeObjectURL(url)
       setProgress(100)
-
       showToast("success", `Merged ${files.length} PDFs successfully!`)
 
-      // Reset after successful merge
       setTimeout(() => {
         setFiles([])
         setProgress(0)
@@ -283,29 +256,16 @@ export function PDFToolsAdvanced() {
   // Split PDF - All pages
   const splitPDFAll = async () => {
     const fileWithId = files[0]
-    const arrayBuffer = await fileWithId.file.arrayBuffer()
-    const pdf = await PDFDocument.load(arrayBuffer)
+    const pdf = await loadPDF(fileWithId.file)
     const pageCount = pdf.getPageCount()
 
     for (let i = 0; i < pageCount; i++) {
       setProgress(((i + 1) / pageCount) * 90)
-
       const newPdf = await PDFDocument.create()
       const [copiedPage] = await newPdf.copyPages(pdf, [i])
       newPdf.addPage(copiedPage)
-
       const pdfBytes = await newPdf.save()
-      const blob = new Blob([new Uint8Array(pdfBytes)], { type: "application/pdf" })
-      const url = URL.createObjectURL(blob)
-
-      const link = document.createElement("a")
-      link.href = url
-      link.download = `page-${i + 1}-of-${pageCount}.pdf`
-      link.click()
-
-      URL.revokeObjectURL(url)
-
-      // Small delay to prevent browser blocking downloads
+      downloadPdf(pdfBytes, `page-${i + 1}-of-${pageCount}.pdf`)
       await new Promise(resolve => setTimeout(resolve, 100))
     }
 
@@ -323,30 +283,9 @@ export function PDFToolsAdvanced() {
       return
     }
 
-    const arrayBuffer = await fileWithId.file.arrayBuffer()
-    const pdf = await PDFDocument.load(arrayBuffer)
-
-    const newPdf = await PDFDocument.create()
+    const pdf = await loadPDF(fileWithId.file)
     const pageIndices = Array.from({ length: end - start + 1 }, (_, i) => start - 1 + i)
-
-    setProgress(50)
-    const copiedPages = await newPdf.copyPages(pdf, pageIndices)
-    copiedPages.forEach((page) => newPdf.addPage(page))
-
-    setProgress(90)
-    const pdfBytes = await newPdf.save()
-    const blob = new Blob([new Uint8Array(pdfBytes)], { type: "application/pdf" })
-    const url = URL.createObjectURL(blob)
-
-    const link = document.createElement("a")
-    link.href = url
-    link.download = `pages-${start}-to-${end}.pdf`
-    link.click()
-
-    URL.revokeObjectURL(url)
-    setProgress(100)
-
-    showToast("success", `Extracted pages ${start}-${end}!`)
+    await performPageExtraction(pdf, pageIndices, `pages-${start}-to-${end}.pdf`, `Extracted pages ${start}-${end}!`)
   }
 
   // Split PDF - Extract specific pages
@@ -364,30 +303,9 @@ export function PDFToolsAdvanced() {
       return
     }
 
-    const arrayBuffer = await fileWithId.file.arrayBuffer()
-    const pdf = await PDFDocument.load(arrayBuffer)
-
-    const newPdf = await PDFDocument.create()
+    const pdf = await loadPDF(fileWithId.file)
     const pageIndices = pageNumbers.map(p => p - 1)
-
-    setProgress(50)
-    const copiedPages = await newPdf.copyPages(pdf, pageIndices)
-    copiedPages.forEach((page) => newPdf.addPage(page))
-
-    setProgress(90)
-    const pdfBytes = await newPdf.save()
-    const blob = new Blob([new Uint8Array(pdfBytes)], { type: "application/pdf" })
-    const url = URL.createObjectURL(blob)
-
-    const link = document.createElement("a")
-    link.href = url
-    link.download = `extracted-pages.pdf`
-    link.click()
-
-    URL.revokeObjectURL(url)
-    setProgress(100)
-
-    showToast("success", `Extracted ${pageNumbers.length} pages!`)
+    await performPageExtraction(pdf, pageIndices, `extracted-pages.pdf`, `Extracted ${pageNumbers.length} pages!`)
   }
 
   // Split PDF handler

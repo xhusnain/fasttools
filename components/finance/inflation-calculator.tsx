@@ -318,7 +318,7 @@ Inflation Rate: ${result.inflationRate.toFixed(2)}%
 Years: ${result.yearsDifference}
 Total Inflation: $${result.totalInflation.toFixed(2)}
 Purchasing Power: ${result.purchasingPower.toFixed(1)}%`
-      navigator.clipboard.writeText(text)
+      void navigator.clipboard.writeText(text)
     }
   }
 

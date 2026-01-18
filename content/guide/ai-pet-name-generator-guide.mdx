@@ -38,7 +38,7 @@ You can't just say "give names." You have to say:
 
 We build this "prompt" dynamically:
 ```javascript
-const prompt = \`Generate 5 names for a \${gender} \${petType} that is \${personality}.\`;
+const prompt = `Generate 5 names for a ${gender} ${petType} that is ${personality}.`;
 ```
 
 ### Step 3: The Request (Calling the API)
@@ -75,7 +75,7 @@ Since our data is organized by *category* (Traditional, Unique, etc.), we can lo
 Users love to copy-paste.
 We add a small button next to each name. When clicked, it copies the text to their clipboard.
 ```javascript
-navigator.clipboard.writeText(name);
+void navigator.clipboard.writeText(name);
 ```
 
 ### Step 8: Error Handling (When the Brain Freezes)
@@ -285,17 +285,17 @@ This version uses a "Mock AI" so you can test it immediately without an API key!
                 const card = document.createElement('div');
                 card.className = 'category-card';
                 
-                let html = \`<div class="category-title">\${category} Names</div>\`;
+                let html = `<div class="category-title">${category} Names</div>`;
                 
                 names.forEach(n => {
-                    html += \`
+                    html += `
                         <div class="name-item">
                             <div>
-                                <div class="name-text">\${n.name}</div>
-                                <div class="name-meta">\${n.meaning}</div>
+                                <div class="name-text">${n.name}</div>
+                                <div class="name-meta">${n.meaning}</div>
                             </div>
                         </div>
-                    \`;
+                    `;
                 });
                 
                 card.innerHTML = html;

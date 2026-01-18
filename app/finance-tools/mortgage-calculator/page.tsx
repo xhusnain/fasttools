@@ -1,7 +1,13 @@
 import type { Metadata } from "next"
+import dynamic from "next/dynamic"
 import { ToolPageLayout } from "@/components/common/tool-page-layout"
-import MortgageCalculator from "@/components/finance/mortgage-calculator"
+import { ToolLoader } from "@/components/common/tool-loader"
 import { createMetadata } from "@/lib/metadata-base"
+
+const MortgageCalculator = dynamic(
+  () => import("@/components/finance/mortgage-calculator"),
+  { loading: () => <ToolLoader /> }
+)
 
 const baseMetadata = createMetadata({
   title: "Mortgage Calculator | Free Advanced Home Loan Calculator",

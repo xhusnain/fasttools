@@ -118,6 +118,10 @@ Description: Calculate exactly when to start defrosting your turkey (Fridge vs W
 URL: https://www.fasttools.store/dev-tools/antigravity-skill-builder
 Description: Free AI tool to generate `SKILL.md` files for Google Antigravity agents. Converts natural language descriptions into valid YAML/Markdown protocols for the IDE. Features simplified creation flow, expert mode for "Chain of Thought" prompting, and a library of 30+ pre-built skills for React, Node.js, and Python.
 
+## UUID Generator
+URL: https://www.fasttools.store/dev-tools/uuid-generator
+Description: Professional UUID Generator supporting all standard versions (v1, v3, v4, v5, v6, v7). Specialized for developers with features like bulk generation, uppercase/lowercase toggle, and specific version algorithms (Random, Time-based, Namespace). Includes "Pro Tip" guides on using v7 for database primary keys to improve indexing performance. Secure client-side generation.
+
 # Complete Index
 
 ## Tools

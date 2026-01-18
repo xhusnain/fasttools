@@ -166,7 +166,7 @@ export function StandardDeviationCalculator({ onResultChange }: StandardDeviatio
   }
 
   const handleCopyResult = (value: number, label: string) => {
-    navigator.clipboard.writeText(value.toString())
+    void navigator.clipboard.writeText(value.toString())
     // You can add toast notification here if needed
   }
 
@@ -615,7 +615,7 @@ export function StandardDeviationCalculator({ onResultChange }: StandardDeviatio
                   <Download className="h-4 w-4 mr-2" />
                   Export Results
                 </GButton>
-                <GButton onClick={() => navigator.clipboard.writeText(JSON.stringify(result, null, 2))} variant="outline">
+                <GButton onClick={() => void navigator.clipboard.writeText(JSON.stringify(result, null, 2))} variant="outline">
                   <FileText className="h-4 w-4 mr-2" />
                   Copy JSON
                 </GButton>

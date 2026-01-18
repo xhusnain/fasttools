@@ -1,6 +1,12 @@
+import dynamic from "next/dynamic"
 import { ToolPageLayout } from "@/components/common/tool-page-layout"
-import { MarkdownPreviewer } from "@/components/dev-tools/markdown-previewer"
+import { ToolLoader } from "@/components/common/tool-loader"
 import { createToolConfig } from "@/lib/create-tool-config"
+
+const MarkdownPreviewer = dynamic(
+  () => import("@/components/dev-tools/markdown-previewer").then(mod => mod.MarkdownPreviewer),
+  { loading: () => <ToolLoader /> }
+)
 
 const toolConfig = createToolConfig({
   toolName: "Markdown Previewer",
@@ -149,7 +155,7 @@ const toolConfig = createToolConfig({
       },
       {
         question: "Is Markdown still relevant?",
-        answer: "Absolutely! Markdown remains highly relevant in 2025 and beyond. It's the standard for GitHub documentation, widely used in technical writing, blogging platforms, note-taking apps (Obsidian, Notion), static site generators, and developer documentation. Its simplicity ensures longevity in the tech ecosystem."
+        answer: "Absolutely! Markdown remains highly relevant in and beyond. It's the standard for GitHub documentation, widely used in technical writing, blogging platforms, note-taking apps (Obsidian, Notion), static site generators, and developer documentation. Its simplicity ensures longevity in the tech ecosystem."
       },
       {
         question: "How to enable live preview?",

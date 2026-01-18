@@ -1,4 +1,10 @@
-import { FacebookDownloader } from "@/components/social-media/facebook-downloader/facebook-downloader"
+import dynamic from "next/dynamic"
+
+const FacebookDownloader = dynamic(() => import("@/components/social-media/facebook-downloader/facebook-downloader").then(mod => mod.FacebookDownloader), {
+  loading: () => <div className="min-h-[600px] flex items-center justify-center">
+    <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-primary"></div>
+  </div>
+})
 import { ToolPageLayout } from "@/components/common/tool-page-layout"
 import { createToolConfig } from "@/lib/create-tool-config"
 import {
@@ -12,7 +18,7 @@ const toolConfig = createToolConfig({
   toolName: "Facebook Downloader - Download Videos HD",
   description: "Download Facebook videos in HD quality (1080p) for free. Fast, secure, unlimited downloads. No registration required. Works on PC, Mac, iPhone, Android.",
   metaTitle: "Facebook Downloader - Download Videos HD",
-  metaDescription: "Download Facebook videos in HD quality (1080p) for free. Fast, secure, unlimited downloads. No registration required. Works on PC, Mac, iPhone, Android. Complete guide with legal considerations, troubleshooting, and tool comparisons.",
+  metaDescription: "Download Facebook videos in HD (1080p) free. Fast, secure, unlimited downloads on PC, Mac, iPhone & Android.",
   path: "/social-media-tools/facebook-downloader",
 
   header: {

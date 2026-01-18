@@ -91,6 +91,14 @@ import {
   Trophy as TrophyIcon
 } from "lucide-react"
 
+import {
+  calculateMonthlyPayment,
+  generateAmortizationSchedule,
+  generateMonthlySchedule,
+  generateLoanRecommendations,
+  generateLoanScenarios,
+} from "@/lib/finance-utils"
+
 interface MortgageResult {
   homePrice: number
   downPayment: number
@@ -187,8 +195,8 @@ export default function MortgageCalculator() {
     const totalMonths = term * 12
 
     // Calculate monthly mortgage payment
-    const monthlyPayment = loanAmount * (monthlyRate * Math.pow(1 + monthlyRate, totalMonths)) /
-      (Math.pow(1 + monthlyRate, totalMonths) - 1)
+    // Calculate monthly mortgage payment
+    const monthlyPayment = calculateMonthlyPayment(loanAmount, monthlyRate, totalMonths)
 
     const totalPayments = monthlyPayment * totalMonths
     const totalInterest = totalPayments - loanAmount
@@ -215,7 +223,10 @@ export default function MortgageCalculator() {
     const amortizationSchedule = generateAmortizationSchedule(loanAmount, monthlyRate, totalMonths, monthlyPayment, startDate)
     const monthlySchedule = generateMonthlySchedule(loanAmount, monthlyRate, totalMonths, monthlyPayment)
 
-    const calculatedResult: MortgageResult = {
+    const recs = generateLoanRecommendations(rate, loanAmount, term, monthlyPayment, down < 20)
+    const scenarios = generateLoanScenarios(loanAmount, rate, term, monthlyPayment)
+
+    const result: MortgageResult = {
       homePrice: price,
       downPayment: downPaymentAmount,
       loanAmount: loanAmount,
@@ -238,145 +249,24 @@ export default function MortgageCalculator() {
       otherCostsPercentage: otherCostsPercentage,
       amortizationSchedule: amortizationSchedule,
       monthlySchedule: monthlySchedule,
-      recommendations: generateRecommendations(rate, loanAmount, term, monthlyPayment, down),
-      scenarios: generateScenarios(loanAmount, rate, term, monthlyPayment)
-    }
-
-    setResult(calculatedResult)
-    setHistory(prev => [calculatedResult, ...prev.slice(0, 4)])
-  }
-
-  const generateAmortizationSchedule = (principal: number, monthlyRate: number, totalMonths: number, monthlyPayment: number, startDate: string) => {
-    const schedule = []
-    let balance = principal
-    const start = new Date(startDate || new Date())
-
-    for (let year = 1; year <= Math.ceil(totalMonths / 12); year++) {
-      let yearInterest = 0
-      let yearPrincipal = 0
-      const monthsInYear = Math.min(12, totalMonths - (year - 1) * 12)
-
-      for (let month = 1; month <= monthsInYear; month++) {
-        const interestPayment = balance * monthlyRate
-        const principalPayment = monthlyPayment - interestPayment
-        balance -= principalPayment
-        yearInterest += interestPayment
-        yearPrincipal += principalPayment
-      }
-
-      const yearStart = new Date(start)
-      yearStart.setFullYear(yearStart.getFullYear() + year - 1)
-      const yearEnd = new Date(yearStart)
-      yearEnd.setFullYear(yearEnd.getFullYear() + 1)
-
-      schedule.push({
-        year: year,
-        date: `${yearStart.toLocaleDateString('en-US', { month: 'short' })} ${yearStart.getFullYear()}-${yearEnd.toLocaleDateString('en-US', { month: 'short' })} ${yearEnd.getFullYear()}`,
-        interest: yearInterest,
-        principal: yearPrincipal,
-        endingBalance: Math.max(0, balance)
-      })
-
-      if (balance <= 0) break
-    }
-
-    return schedule
-  }
-
-  const generateMonthlySchedule = (principal: number, monthlyRate: number, totalMonths: number, monthlyPayment: number) => {
-    const schedule = []
-    let balance = principal
-
-    for (let month = 1; month <= Math.ceil(totalMonths); month++) {
-      const interestPayment = balance * monthlyRate
-      const principalPayment = Math.min(monthlyPayment - interestPayment, balance)
-      balance -= principalPayment
-
-      schedule.push({
-        month: month,
-        interest: interestPayment,
-        principal: principalPayment,
-        balance: Math.max(0, balance)
-      })
-
-      if (balance <= 0) break
-    }
-
-    return schedule
-  }
-
-  const generateRecommendations = (rate: number, amount: number, term: number, payment: number, downPayment: number) => {
-    const mortgageOptimization: string[] = []
-    const paymentStrategies: string[] = []
-    const financialTips: string[] = []
-
-    // Mortgage optimization based on interest rate
-    if (rate < 4) {
-      mortgageOptimization.push("Consider making extra payments to reduce total interest")
-      mortgageOptimization.push("Your low interest rate makes this a good mortgage to keep")
-      mortgageOptimization.push("Focus on higher-interest debts first")
-    } else if (rate < 6) {
-      mortgageOptimization.push("Consider refinancing if rates drop significantly")
-      mortgageOptimization.push("Make extra payments when possible to reduce total cost")
-      mortgageOptimization.push("Balance between paying off mortgage and investing")
-    } else {
-      mortgageOptimization.push("Prioritize paying off this high-interest mortgage")
-      mortgageOptimization.push("Consider refinancing to a lower rate if available")
-      mortgageOptimization.push("Make extra payments a priority")
-    }
-
-    // Payment strategies
-    paymentStrategies.push("Make one extra payment per year to save interest")
-    paymentStrategies.push("Round up to the nearest $100 for easy budgeting")
-    paymentStrategies.push("Apply windfalls to principal when possible")
-    paymentStrategies.push("Consider bi-weekly payment schedule")
-
-    // Financial tips
-    financialTips.push("Build an emergency fund before making extra payments")
-    financialTips.push("Consider the opportunity cost of extra payments vs. investing")
-    financialTips.push("Review your mortgage terms annually for better rates")
-    financialTips.push("Track your mortgage progress to stay motivated")
-
-    // Down payment specific advice
-    if (downPayment < 20) {
-      financialTips.push("Consider paying PMI until you reach 20% equity")
-      financialTips.push("Make extra payments to eliminate PMI faster")
-    }
-
-    return { mortgageOptimization, paymentStrategies, financialTips }
-  }
-
-  const generateScenarios = (amount: number, rate: number, term: number, payment: number) => {
-    const monthlyRate = rate / 100 / 12
-    const totalMonths = term * 12
-
-    return [
-      {
-        scenario: "Current Payment",
-        monthlyPayment: payment,
-        totalInterest: (payment * totalMonths) - amount,
-        savings: 0
+      recommendations: {
+        mortgageOptimization: recs.optimization,
+        paymentStrategies: recs.strategies,
+        financialTips: recs.tips
       },
-      {
-        scenario: "+$100 Extra",
-        monthlyPayment: payment + 100,
-        totalInterest: ((payment + 100) * totalMonths) - amount,
-        savings: 0
-      },
-      {
-        scenario: "+$200 Extra",
-        monthlyPayment: payment + 200,
-        totalInterest: ((payment + 200) * totalMonths) - amount,
-        savings: 0
-      },
-      {
-        scenario: "Bi-weekly",
-        monthlyPayment: payment * 1.083,
-        totalInterest: ((payment * 1.083) * totalMonths) - amount,
-        savings: 0
-      }
-    ]
+      scenarios: scenarios.map(s => ({
+        scenario: s.title,
+        monthlyPayment: s.payment,
+        totalInterest: s.totalInterest,
+        savings: s.savings
+      }))
+    }
+
+    setResult(result)
+    setHistory(prev => [result, ...prev.slice(0, 4)])
   }
+
+
 
   const copyResult = () => {
     if (result) {
@@ -385,7 +275,7 @@ Home Price: $${result.homePrice.toFixed(2)}
 Monthly Payment: $${result.monthlyPayment.toFixed(2)}
 Total Interest: $${result.totalInterest.toFixed(2)}
 Loan Term: ${result.loanTerm.toFixed(1)} years`
-      navigator.clipboard.writeText(text)
+      void navigator.clipboard.writeText(text)
     }
   }
 

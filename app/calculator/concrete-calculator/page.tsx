@@ -1,7 +1,12 @@
 import type { Metadata } from "next"
 import Image from "next/image"
 import { ToolPageLayout } from "@/components/common/tool-page-layout"
-import { ConcreteCalculator } from "@/components/calculators/concrete-calculator"
+import dynamic from "next/dynamic"
+import { ToolLoader } from "@/components/common/tool-loader"
+
+const ConcreteCalculator = dynamic(() => import("@/components/calculators/concrete-calculator").then(mod => mod.ConcreteCalculator), {
+  loading: () => <ToolLoader />
+})
 import { createMetadata } from "@/lib/metadata-base"
 import {
   Calculator,
@@ -108,47 +113,60 @@ export default function ConcreteCalculatorPage() {
     ],
 
     aboutTool: (
-      <div className="space-y-12">
-        <section>
-          <h2 className="text-2xl font-bold mb-4">How Much Concrete Do I Need?</h2>
-          <p className="text-muted-foreground mb-4">
-            Calculating how much concrete you need depends on the volume of the space you are filling (Length × Width × Thickness). For standard bags, the coverage depends on the bag weight (40lb, 60lb, or 80lb). Our calculator simplifies this by providing exact counts for each bag size, ensuring you order the right amount for your slab, patio, or footing.
+      <div className="space-y-8">
+        <article className="space-y-6">
+          <h2 className="text-2xl font-bold text-foreground flex items-center gap-2">
+            <Calculator className="h-6 w-6 text-primary" />
+            How Much Concrete Do I Need? Complete Volume Calculation Guide
+          </h2>
+          <p className="text-base text-muted-foreground leading-relaxed">
+            Calculating how much concrete you need depends on the volume of the space you are filling (Length × Width × Thickness). For standard bags, the coverage depends on the bag weight (40lb, 60lb, or 80lb). Our calculator simplifies this by providing exact counts for each bag size, ensuring you order the right amount for your slab, patio, footing, driveway, or any concrete project.
           </p>
-        </section>
+          <p className="text-base text-muted-foreground leading-relaxed">
+            Whether you're a DIY homeowner tackling a small patio project or a professional contractor estimating a large commercial slab, accurate concrete calculation is essential for project success. Ordering too little concrete creates costly delays and cold joints (weak spots where concrete sets before new concrete is added). Ordering too much concrete wastes money and creates disposal challenges. Our advanced calculator accounts for various project types, waste factors, bag sizes, and cost considerations to help you make informed decisions.
+          </p>
+        </article>
 
-        <div className="p-6 bg-gradient-to-br from-orange-500/10 via-transparent to-yellow-500/10 rounded-2xl border border-orange-500/20 shadow-sm relative overflow-hidden">
-          <div className="absolute top-0 right-0 p-4 opacity-10">
-            <Brain className="h-24 w-24 text-orange-500" />
-          </div>
-          <h4 className="flex items-center gap-2 font-bold text-orange-700 dark:text-orange-400 mb-3 relative z-10">
-            <Brain className="h-5 w-5" />
+        <article className="space-y-6">
+          <h2 className="text-2xl font-bold text-foreground flex items-center gap-2">
+            <Brain className="h-6 w-6 text-primary" />
             Expert Insight: The 10% Waste Factor Rule
-          </h4>
-          <p className="text-sm leading-relaxed text-slate-600 dark:text-slate-300 relative z-10 italic">
-            "One of the most common DIY mistakes is ordering the exact volume calculated. In the real world, subgrades are rarely perfectly level, and formwork can flex under the immense weight of wet concrete. Professional contractors always add a **10% waste factor** to any order. It is far cheaper to have a small amount left over than to have a cold joint in your slab because you ran out of concrete with six inches left to go."
+          </h2>
+          <div className="p-6 bg-gradient-to-br from-orange-500/10 via-transparent to-yellow-500/10 rounded-2xl border border-orange-500/20 shadow-sm relative overflow-hidden">
+            <p className="text-sm leading-relaxed text-slate-600 dark:text-slate-300 italic">
+              "One of the most common DIY mistakes is ordering the exact volume calculated. In the real world, subgrades are rarely perfectly level, and formwork can flex under the immense weight of wet concrete. Professional contractors always add a <strong>10% waste factor</strong> to any order. It is far cheaper to have a small amount left over than to have a cold joint in your slab because you ran out of concrete with six inches left to go."
+            </p>
+            <p className="text-sm font-semibold text-orange-600 dark:text-orange-400 mt-2">— FastTools Construction Expert</p>
+          </div>
+        </article>
+
+        <article className="space-y-6">
+          <h2 className="text-2xl font-bold text-foreground flex items-center gap-2">
+            <Package className="h-6 w-6 text-primary" />
+            Quick Reference: Concrete Bags per Cubic Yard
+          </h2>
+          <p className="text-base text-muted-foreground leading-relaxed">
+            Understanding how many bags you need per cubic yard helps you estimate material requirements and costs. A single cubic yard of concrete weighs approximately 3,600-4,000 pounds depending on the mix:
           </p>
-        </div>
+          <div className="overflow-x-auto">
+            <GTable>
+              <thead className="bg-muted text-foreground font-semibold">
+                <tr>
+                  <th className="p-3 text-left">Bag Size</th>
+                  <th className="p-3 text-left">Bags per Cubic Yard</th>
+                  <th className="p-3 text-left">Volume per Bag</th>
+                </tr>
+              </thead>
+              <tbody className="divide-y divide-border text-sm">
+                <tr><td className="p-3 font-semibold">80 lb Bag</td><td className="p-3">45 Bags</td><td className="p-3">0.60 cu ft</td></tr>
+                <tr><td className="p-3 font-semibold">60 lb Bag</td><td className="p-3">60 Bags</td><td className="p-3">0.45 cu ft</td></tr>
+                <tr><td className="p-3 font-semibold">40 lb Bag</td><td className="p-3">90 Bags</td><td className="p-3">0.30 cu ft</td></tr>
+              </tbody>
+            </GTable>
+          </div>
+        </article>
 
-        <section>
-          <h2 className="text-2xl font-bold mb-4">Quick Reference: Bags per Cubic Yard</h2>
-          <GTable>
-            <thead className="bg-muted text-foreground font-semibold">
-              <tr>
-                <th className="p-3 text-left">Bag Size</th>
-                <th className="p-3 text-left">Bags per Cubic Yard</th>
-                <th className="p-3 text-left">Volume per Bag</th>
-              </tr>
-            </thead>
-            <tbody className="divide-y divide-border text-sm">
-              <tr><td className="p-3 font-semibold">80 lb Bag</td><td className="p-3">45 Bags</td><td className="p-3">0.60 cu ft</td></tr>
-              <tr><td className="p-3 font-semibold">60 lb Bag</td><td className="p-3">60 Bags</td><td className="p-3">0.45 cu ft</td></tr>
-              <tr><td className="p-3 font-semibold">40 lb Bag</td><td className="p-3">90 Bags</td><td className="p-3">0.30 cu ft</td></tr>
-            </tbody>
-          </GTable>
-        </section>
-
-        {/* Value Props Section */}
-        <section>
+        <article className="space-y-6">
           <div className="mb-8 relative w-full h-64 md:h-80 rounded-xl overflow-hidden shadow-lg border border-border">
             <Image
               src="/images/calculators/concrete-calculator-hero.png"
@@ -208,13 +226,12 @@ export default function ConcreteCalculatorPage() {
               </p>
             </div>
           </div>
-        </section>
+        </article>
 
-        {/* Comprehensive Guide Section */}
-        <section className="bg-card border border-border rounded-xl p-8 shadow-sm">
-          <h2 className="text-2xl font-bold mb-6 flex items-center gap-2 text-foreground">
+        <article className="space-y-6 bg-card border border-border rounded-xl p-8 shadow-sm">
+          <h2 className="text-2xl font-bold text-foreground flex items-center gap-2">
             <HardHat className="h-6 w-6 text-primary" />
-            Comprehensive Guide: How to Calculate Concrete Correctly
+            Comprehensive Guide: How to Calculate Concrete for Different Project Types
           </h2>
 
           <div className="space-y-8">
@@ -277,13 +294,12 @@ export default function ConcreteCalculatorPage() {
               </div>
             </div>
           </div>
-        </section>
+        </article>
 
-        {/* Pre-Pour Checklist */}
-        <section className="bg-gradient-to-br from-card to-secondary/5 rounded-xl p-8 border border-border">
-          <h2 className="text-2xl font-bold mb-6 flex items-center gap-2">
+        <article className="space-y-6 bg-gradient-to-br from-card to-secondary/5 rounded-xl p-8 border border-border">
+          <h2 className="text-2xl font-bold text-foreground flex items-center gap-2">
             <ClipboardCheck className="h-6 w-6 text-primary" />
-            Essential Pre-Pour Checklist
+            Essential Pre-Pour Checklist: Before You Pour Concrete
           </h2>
           <div className="grid md:grid-cols-2 gap-x-8 gap-y-4">
             <div className="flex gap-3">
@@ -329,110 +345,227 @@ export default function ConcreteCalculatorPage() {
               </div>
             </div>
           </div>
-        </section>
+        </article>
 
-        {/* Existing Mix Types Section - Preserved */}
-        <section>
-          <h2 className="text-2xl font-bold mb-4 flex items-center gap-2">
+        <article className="space-y-6">
+          <h2 className="text-2xl font-bold text-foreground flex items-center gap-2">
             <Globe className="h-6 w-6 text-primary" />
-            Supported Concrete Mix Types
+            Supported Concrete Mix Types: Choosing the Right Strength
           </h2>
-          <GTable>
-            <thead className="bg-muted text-foreground font-semibold">
-              <tr>
-                <th className="p-3 text-left">Mix Type</th>
-                <th className="p-3 text-left">Strength (PSI)</th>
-                <th className="p-3 text-left">Ratio (C:S:G)</th>
-                <th className="p-3 text-left">Best For</th>
-              </tr>
-            </thead>
-            <tbody className="divide-y divide-border text-sm">
-              <tr>
-                <td className="p-3 font-semibold">Standard Mix</td>
-                <td className="p-3">3000 PSI</td>
-                <td className="p-3">1:2:3</td>
-                <td className="p-3 text-muted-foreground">Patios, walkways, general slabs.</td>
-              </tr>
-              <tr>
-                <td className="p-3 font-semibold">High Strength</td>
-                <td className="p-3">4000+ PSI</td>
-                <td className="p-3">1:1.5:2.5</td>
-                <td className="p-3 text-muted-foreground">Driveways, foundations, structural work.</td>
-              </tr>
-              <tr>
-                <td className="p-3 font-semibold">Lightweight</td>
-                <td className="p-3">2500 PSI</td>
-                <td className="p-3">1:1.5:2</td>
-                <td className="p-3 text-muted-foreground">Roof decks, non-structural filling.</td>
-              </tr>
-              <tr>
-                <td className="p-3 font-semibold">Fiber Reinforced</td>
-                <td className="p-3">3500 PSI</td>
-                <td className="p-3">1:2:3</td>
-                <td className="p-3 text-muted-foreground">Crack resistance, high impact zones.</td>
-              </tr>
-            </tbody>
-          </GTable>
-        </section>
+          <p className="text-base text-muted-foreground leading-relaxed">
+            Different concrete projects require different mix strengths and ratios. Understanding these options helps you choose the right mix for your specific project:
+          </p>
+          <div className="overflow-x-auto">
+            <GTable>
+              <thead className="bg-muted text-foreground font-semibold">
+                <tr>
+                  <th className="p-3 text-left">Mix Type</th>
+                  <th className="p-3 text-left">Strength (PSI)</th>
+                  <th className="p-3 text-left">Ratio (C:S:G)</th>
+                  <th className="p-3 text-left">Best For</th>
+                </tr>
+              </thead>
+              <tbody className="divide-y divide-border text-sm">
+                <tr>
+                  <td className="p-3 font-semibold">Standard Mix</td>
+                  <td className="p-3">3000 PSI</td>
+                  <td className="p-3">1:2:3</td>
+                  <td className="p-3 text-muted-foreground">Patios, walkways, general slabs.</td>
+                </tr>
+                <tr>
+                  <td className="p-3 font-semibold">High Strength</td>
+                  <td className="p-3">4000+ PSI</td>
+                  <td className="p-3">1:1.5:2.5</td>
+                  <td className="p-3 text-muted-foreground">Driveways, foundations, structural work.</td>
+                </tr>
+                <tr>
+                  <td className="p-3 font-semibold">Lightweight</td>
+                  <td className="p-3">2500 PSI</td>
+                  <td className="p-3">1:1.5:2</td>
+                  <td className="p-3 text-muted-foreground">Roof decks, non-structural filling.</td>
+                </tr>
+                <tr>
+                  <td className="p-3 font-semibold">Fiber Reinforced</td>
+                  <td className="p-3">3500 PSI</td>
+                  <td className="p-3">1:2:3</td>
+                  <td className="p-3 text-muted-foreground">Crack resistance, high impact zones.</td>
+                </tr>
+              </tbody>
+            </GTable>
+          </div>
+        </article>
 
-        {/* Common Mistakes Alert */}
-        <div className="bg-destructive/5 border border-destructive/20 rounded-xl p-6">
-          <h2 className="text-xl font-bold mb-4 flex items-center gap-2 text-destructive">
-            <AlertTriangle className="h-5 w-5" />
-            Avoid These Costly Mistakes
+        <article className="space-y-6">
+          <h2 className="text-2xl font-bold text-foreground flex items-center gap-2">
+            <AlertTriangle className="h-6 w-6 text-primary" />
+            Common Concrete Calculation Mistakes to Avoid
           </h2>
-          <ul className="space-y-4 text-sm text-muted-foreground">
-            <li className="flex gap-3">
-              <div className="min-w-6 h-6 rounded-full bg-destructive/10 flex items-center justify-center text-destructive font-bold text-xs">!</div>
-              <div>
-                <strong className="text-foreground block mb-1">Forgetting the Waste Factor</strong>
-                Projects rarely go perfectly. Spillage, uneven ground, and formwork deflection can eat up your concrete. We recommend adding <strong>5-10% extra</strong> to your order to avoid running short mid-pour.
-              </div>
-            </li>
-            <li className="flex gap-3">
-              <div className="min-w-6 h-6 rounded-full bg-destructive/10 flex items-center justify-center text-destructive font-bold text-xs">!</div>
-              <div>
-                <strong className="text-foreground block mb-1">Ignoring Ground Slope</strong>
-                If your ground isn't perfectly level, your slab thickness will vary. Measure the depth at multiple points and use the average, or better yet, grade the soil properly before pouring.
-              </div>
-            </li>
-          </ul>
-        </div>
+          <div className="bg-destructive/5 border border-destructive/20 rounded-xl p-6">
+            <ul className="space-y-4 text-sm text-muted-foreground">
+              <li className="flex gap-3">
+                <div className="min-w-6 h-6 rounded-full bg-destructive/10 flex items-center justify-center text-destructive font-bold text-xs">!</div>
+                <div>
+                  <strong className="text-foreground block mb-1">Forgetting the Waste Factor</strong>
+                  Projects rarely go perfectly. Spillage, uneven ground, and formwork deflection can eat up your concrete. We recommend adding <strong>5-10% extra</strong> to your order to avoid running short mid-pour.
+                </div>
+              </li>
+              <li className="flex gap-3">
+                <div className="min-w-6 h-6 rounded-full bg-destructive/10 flex items-center justify-center text-destructive font-bold text-xs">!</div>
+                <div>
+                  <strong className="text-foreground block mb-1">Ignoring Ground Slope</strong>
+                  If your ground isn't perfectly level, your slab thickness will vary. Measure the depth at multiple points and use the average, or better yet, grade the soil properly before pouring.
+                </div>
+              </li>
+            </ul>
+          </div>
+        </article>
       </div>
     ),
 
     faqs: [
       {
         question: "How do I calculate how much concrete I need?",
-        answer: "To calculate concrete volume, measure the Length, Width, and Thickness of your area in feet. Multiply them to get cubic feet, then divide by 27 to get Cubic Yards. Always add 5-10% for waste or uneven ground."
+        answer: "To calculate concrete volume, measure the Length, Width, and Thickness of your area in feet. Multiply them to get cubic feet (L × W × H), then divide by 27 to get Cubic Yards. For circular columns, use π × Radius² × Height. Always add 5-10% for waste or uneven ground, as professional contractors do. This waste factor accounts for spillage, formwork deflection, and subgrade variations."
       },
       {
         question: "How many 80lb bags of concrete do I need for 1 cubic yard?",
-        answer: "A single cubic yard of concrete weighs about 3,600 lbs. You will need roughly 45 bags of 80lb concrete, 60 bags of 60lb concrete, or 90 bags of 40lb concrete to make one cubic yard."
+        answer: "A single cubic yard of concrete weighs about 3,600-4,000 pounds depending on the mix. You will need approximately 45 bags of 80lb concrete (each bag covers 0.60 cubic feet), 60 bags of 60lb concrete (each covers 0.45 cubic feet), or 90 bags of 40lb concrete (each covers 0.30 cubic feet) to make one cubic yard. Always order extra to account for waste and spillage."
       },
       {
         question: "How thick should a concrete driveway be?",
-        answer: "For standard cars, a 4-inch slab is sufficient. However, for heavier trucks or SUVs, a 5 to 6-inch thickness is highly recommended to prevent cracking over time. A 4-inch gravel subbase is also crucial."
+        answer: "For standard cars and light vehicles, a 4-inch slab is sufficient. However, for heavier trucks, SUVs, or frequent heavy vehicle traffic, a 5 to 6-inch thickness is highly recommended to prevent cracking and damage over time. A 4-6 inch compacted gravel subbase is also crucial for proper drainage and load distribution. Thicker slabs (6+ inches) are required for commercial or industrial driveways."
       },
       {
         question: "Is it cheaper to mix your own concrete or buy it delivered?",
-        answer: "For small projects (under 1-2 cubic yards), bagged concrete is usually cheaper and more convenient. For larger projects (over 2-3 yards), ordering a ready-mix truck is often more cost-effective and saves immense physical labor."
+        answer: "For small projects (under 1-2 cubic yards), bagged concrete is usually cheaper and more convenient for DIY homeowners. Bagged concrete costs more per cubic yard but avoids delivery fees and minimum orders. For larger projects (over 2-3 cubic yards), ordering a ready-mix truck is often more cost-effective (lower cost per yard) and saves immense physical labor. Ready-mix also ensures consistent quality and proper mix ratios."
       },
       {
         question: "How long until I can walk or drive on new concrete?",
-        answer: "You can typically walk on new concrete after 24-48 hours. However, you should wait at least 7 days before driving a vehicle on it, and 28 days for it to reach full curing strength."
+        answer: "You can typically walk on new concrete after 24-48 hours, though be gentle. However, you should wait at least 7 days before driving a vehicle on it, and 28 days for it to reach full curing strength (complete hydration). Concrete reaches approximately 70% of its strength after 7 days and 100% after 28 days. For heavy vehicles or machinery, wait the full 28 days. Proper curing (keeping concrete moist) is essential for strength development."
       },
       {
         question: "What is the 3-2-1 rule for mixing concrete?",
-        answer: "The classic DIY concrete mix ratio is 3 parts gravel (aggregate), 2 parts sand, and 1 part cement. This general-purpose mix yields a strength of around 3000-3500 PSI, suitable for most home projects."
+        answer: "The classic DIY concrete mix ratio is 3 parts gravel (coarse aggregate), 2 parts sand (fine aggregate), and 1 part cement by volume. This general-purpose mix (1:2:3) yields a strength of around 3000-3500 PSI, suitable for most home projects like patios, walkways, and footings. Water should be added until the mix reaches the consistency of thick oatmeal—about 0.5-0.6 gallons per bag of cement."
       },
       {
         question: "How do I calculate concrete for steps?",
-        answer: "Calculate each step as a distinct rectangular block (Width × Depth × Height). Then sum the volumes. For solid concrete stairs, also calculate the slanted fill underneath if calculating from the ground up."
+        answer: "Calculate each step (tread and riser) as a distinct rectangular block (Width × Depth × Height). Sum the volumes of all steps. For solid concrete stairs, also calculate the slanted fill underneath if calculating from the ground up (triangular or trapezoidal volume). For precast steps, calculate the volume of each step individually. Add 10% waste factor for steps due to complexity and potential formwork waste."
       },
       {
         question: "What happens if it rains after pouring concrete?",
-        answer: "A light drizzle is manageable, but heavy rain can wash away the cement paste from the surface, weakening it and causing dusting. If heavy rain is forecast, cover the fresh pour with plastic sheeting."
+        answer: "A light drizzle is manageable and can actually help with curing, but heavy rain (more than a gentle sprinkle) can wash away the cement paste from the surface, weakening the concrete and causing dusting (surface deterioration). If heavy rain is forecast within 6-24 hours of pouring, cover the fresh concrete with plastic sheeting or tarps secured around the edges. Avoid direct contact between plastic and concrete surface."
+      },
+      {
+        question: "What is a cubic yard of concrete?",
+        answer: "A cubic yard is a volume measurement equal to 27 cubic feet (3 feet × 3 feet × 3 feet). One cubic yard of concrete covers approximately 81 square feet at 4 inches thick, or 108 square feet at 3 inches thick. It weighs approximately 3,600-4,000 pounds depending on the mix. Cubic yards are the standard unit for ordering ready-mix concrete trucks and calculating large project volumes."
+      },
+      {
+        question: "How do I calculate concrete for a circular column?",
+        answer: "Use the cylinder volume formula: π × Radius² × Height. Remember that radius is half the diameter (a 12-inch diameter tube has a 6-inch radius). Measure the diameter and height in the same units (feet or inches), then convert to cubic feet and divide by 27 for cubic yards. For bell footings (flared at the bottom), calculate the bell section separately and add to the column volume."
+      },
+      {
+        question: "What is the waste factor for concrete?",
+        answer: "The waste factor accounts for spillage, formwork deflection, uneven subgrades, and measurement errors. Professional contractors typically add 5-10% waste factor to any concrete order. For simple rectangular slabs, 5% is usually sufficient. For irregular shapes, slopes, or complex forms, use 10% or even 15% to avoid running short mid-pour. It's cheaper to have a small amount leftover than to run out and create a cold joint."
+      },
+      {
+        question: "How much does concrete cost per cubic yard?",
+        answer: "Concrete costs vary by location, strength (PSI), and delivery factors. On average, ready-mix concrete costs $100-$150 per cubic yard for standard 3000 PSI mix, $120-$180 for 4000 PSI, and $130-$200 for 5000 PSI. Bagged concrete costs more per cubic yard ($150-$250) but avoids delivery fees. Additional costs include delivery fees ($50-$150), pumping fees ($300-$800 for large projects), and labor. Always get local quotes for accurate pricing."
+      },
+      {
+        question: "What is the difference between cement and concrete?",
+        answer: "Cement is a powder binding agent (usually Portland cement) that, when mixed with water, hardens through hydration. Concrete is the final product made by mixing cement with aggregates (sand and gravel) and water. Cement is one ingredient in concrete—typically 10-15% by volume. The rest is aggregates (60-75% gravel, 15-20% sand) and water (10-15%). You cannot use cement alone for structural applications."
+      },
+      {
+        question: "How do I calculate concrete for a footing?",
+        answer: "Calculate footing volume using Length × Width × Depth. For continuous footings (foundation walls), measure the total length of the footing, width, and depth. For individual column footings, calculate each one separately (typically square or rectangular). Ensure footings extend below the frost line (typically 30-48 inches deep depending on location). Add 5-10% waste factor. Rebar volume doesn't significantly affect concrete calculation but should be included in project planning."
+      },
+      {
+        question: "What PSI strength do I need for my project?",
+        answer: "PSI (pounds per square inch) indicates concrete strength. Standard projects use 3000 PSI (patios, walkways, general slabs). Driveways and foundations require 4000 PSI for durability. Structural work and heavy loads need 4000-5000 PSI. Lightweight concrete (2000-2500 PSI) is used for non-structural fill. Choose strength based on load requirements, soil conditions, and local building codes. Higher PSI costs more but lasts longer under stress."
+      },
+      {
+        question: "Can I pour concrete in cold weather?",
+        answer: "Yes, but it requires special precautions. Concrete should not freeze during the first 24-48 hours of curing. In temperatures below 40°F, use heated water, insulated blankets, or curing compounds. Avoid pouring when temperatures are below 25°F without professional equipment. Cold weather slows hydration and strength development. Best practice: pour concrete when temperatures are 50-70°F for optimal curing. Winter pouring may require concrete additives or heated forms."
+      },
+      {
+        question: "How do I calculate concrete for a slab on grade?",
+        answer: "A slab on grade is a concrete slab poured directly on the ground. Calculate volume using Length × Width × Thickness (in feet), then divide by 27 for cubic yards. Standard thickness is 4 inches for patios/walkways, 5-6 inches for driveways, and 6+ inches for garage floors. Include subbase preparation (4-6 inches of compacted gravel) in excavation calculations but not in concrete volume. Add 5-10% waste factor."
+      },
+      {
+        question: "What is the minimum thickness for concrete?",
+        answer: "The minimum thickness depends on the application: patios and walkways (3-4 inches), driveways (4-6 inches), garage floors (4-6 inches), footings (8-12 inches minimum width), and structural slabs (varies by span and load). Thinner slabs (under 3 inches) are prone to cracking and not recommended for structural use. Local building codes often specify minimum thicknesses—check with your local building department for requirements."
+      },
+      {
+        question: "How do I calculate concrete for a retaining wall?",
+        answer: "Calculate retaining wall concrete by measuring the length, height, and width (thickness) of the wall. Most retaining walls are 6-12 inches thick depending on height and soil pressure. Multiply Length × Height × Thickness for volume. Add concrete for footings (typically 8-12 inches deep and wider than the wall). For stepped walls, calculate each section separately. Add 10% waste factor for walls due to formwork complexity."
+      },
+      {
+        question: "What is a cold joint in concrete?",
+        answer: "A cold joint is a weak point where fresh concrete is poured against concrete that has already started to set (typically after 30-60 minutes). Cold joints create potential failure points and should be avoided whenever possible. If you must stop pouring, roughen the surface of the set concrete, clean it thoroughly, and apply a bonding agent before continuing. Better practice: order slightly more concrete than needed and pour continuously to avoid cold joints."
+      },
+      {
+        question: "How do I calculate concrete for a curb and gutter?",
+        answer: "Curb and gutter calculations require measuring the linear feet of curb/gutter and the cross-sectional area. Typical curb/gutter is 18-24 inches wide at the base, 6 inches tall, with varying shapes. Calculate the cross-sectional area (square feet) and multiply by linear feet to get cubic feet, then divide by 27 for cubic yards. For complex shapes, break into geometric sections (rectangles, triangles). Add 10% waste factor for curb work due to formwork complexity."
+      },
+      {
+        question: "What is the concrete curing process?",
+        answer: "Curing is the process of maintaining adequate moisture and temperature for concrete to gain strength through hydration (cement reacting with water). Proper curing requires keeping concrete moist for at least 7 days (ideally 14-28 days) and preventing freezing or rapid drying. Methods include covering with plastic, applying curing compounds, wet burlap, or sprinkling. Improper curing reduces strength by 30-50% and causes cracking. Concrete reaches full strength after 28 days."
+      },
+      {
+        question: "How do I calculate concrete for a sidewalk?",
+        answer: "Calculate sidewalk concrete by measuring Length × Width × Thickness. Standard sidewalks are 4 inches thick and 36-48 inches wide. Multiply dimensions in feet to get cubic feet, divide by 27 for cubic yards. For curved sidewalks, measure along the centerline and use average width. Include control joints (saw cuts) in planning but not in volume calculation. Add 5% waste factor. One cubic yard covers approximately 81 square feet at 4 inches thick."
+      },
+      {
+        question: "What is fiber-reinforced concrete?",
+        answer: "Fiber-reinforced concrete contains small fibers (steel, plastic, or glass) mixed into the concrete to improve crack resistance, impact resistance, and durability. Fibers help control shrinkage cracks and increase toughness. It's ideal for driveways, patios, and areas with heavy traffic. Fiber concrete costs slightly more (10-15% premium) but reduces long-term maintenance. Standard mix is 1:2:3 with fibers added at the plant or job site."
+      },
+      {
+        question: "How do I convert cubic feet to cubic yards?",
+        answer: "To convert cubic feet to cubic yards, divide the cubic feet by 27 (since there are 27 cubic feet in one cubic yard: 3 feet × 3 feet × 3 feet = 27 cubic feet). For example, 81 cubic feet ÷ 27 = 3 cubic yards. This conversion is essential when ordering ready-mix concrete, as trucks deliver in cubic yards. Our calculator automatically handles this conversion for you."
+      },
+      {
+        question: "What is a ready-mix concrete truck?",
+        answer: "A ready-mix truck is a specialized vehicle that mixes and delivers concrete to construction sites. Trucks typically hold 8-12 cubic yards of concrete, though smaller trucks (3-5 yards) are available for residential projects. Concrete is mixed during transport or on-site to prevent premature setting. Trucks require access roads, clearance, and level ground for delivery. Minimum orders are typically 1-3 cubic yards, and delivery fees apply."
+      },
+      {
+        question: "How do I calculate concrete for a foundation?",
+        answer: "Foundation concrete calculation depends on foundation type: continuous footings (Length × Width × Depth along perimeter), slab foundations (Length × Width × Thickness), or pier/column foundations (each pier calculated separately). Include footing width (typically 12-24 inches) and depth (below frost line, 30-48 inches). Calculate wall thickness (typically 8-12 inches) if applicable. Add 5-10% waste factor. Foundations require 4000 PSI concrete minimum."
+      },
+      {
+        question: "What is lightweight concrete?",
+        answer: "Lightweight concrete uses lighter aggregates (expanded clay, shale, or perlite) instead of gravel, reducing weight by 25-35% while maintaining reasonable strength (2000-3500 PSI). It's used for roof decks, non-structural fill, and applications where weight reduction is important. Lightweight concrete costs more per cubic yard but reduces structural load requirements. It's not recommended for structural foundations or heavy load applications."
+      },
+      {
+        question: "How do I calculate concrete for a patio?",
+        answer: "Calculate patio concrete using Length × Width × Thickness (standard 4 inches = 0.33 feet). Multiply dimensions in feet to get cubic feet, divide by 27 for cubic yards. For irregular shapes, break into rectangles and add volumes. Include any borders or edges in calculations. Add 5-10% waste factor. One cubic yard covers 81 square feet at 4 inches thick. Don't forget subbase preparation (4-6 inches gravel) for proper drainage."
+      },
+      {
+        question: "What is concrete slump?",
+        answer: "Slump is a measure of concrete workability (consistency) measured using a slump cone test. It indicates how easily concrete flows and can be placed. Slump ranges from 1-7 inches: low slump (1-3 inches) for structural work, medium slump (4-5 inches) for most applications, high slump (6-7 inches) for flowing concrete. Proper slump ensures good placement without segregation. Too high slump can weaken concrete; too low makes placement difficult."
+      },
+      {
+        question: "How do I calculate concrete for fence posts?",
+        answer: "Calculate concrete for fence posts by measuring the hole diameter and depth for each post. Use cylinder volume: π × Radius² × Depth. Typical post holes are 6-12 inches in diameter and 24-36 inches deep (below frost line). Multiply single post volume by number of posts. Most posts use 1-2 bags (40-80 lb) of concrete each, depending on post size and soil conditions. Add 10% waste factor for multiple posts."
+      },
+      {
+        question: "What is the 3-4-5 rule for concrete forms?",
+        answer: "The 3-4-5 rule is a method to ensure forms are square (90-degree angles). Measure 3 feet along one side, 4 feet along the adjacent side, and the diagonal should measure exactly 5 feet. If it doesn't, adjust the forms until it does. This principle works with any multiple (6-8-10, 9-12-15, etc.). Square forms ensure proper concrete placement and prevent structural issues. Always check for square before pouring."
+      },
+      {
+        question: "How do I calculate concrete for a garage floor?",
+        answer: "Calculate garage floor concrete using Length × Width × Thickness. Standard garage floors are 4-6 inches thick. Multiply dimensions in feet, divide by 27 for cubic yards. Include any thickened edge beams or footings separately. Add 5-10% waste factor. One cubic yard covers 54-81 square feet depending on thickness. Garage floors require 4000 PSI concrete minimum and proper subbase (4-6 inches compacted gravel) for durability."
+      },
+      {
+        question: "Is our concrete calculator free to use?",
+        answer: "Yes, our concrete calculator is completely free with no charges, subscriptions, or registration required. You can calculate concrete volumes, bag counts, and costs unlimited times, access all features (cubic yards, bags, cost estimation), and use the tool for personal, commercial, or professional purposes without any cost."
+      },
+      {
+        question: "Is my concrete calculation data stored or tracked?",
+        answer: "No, all concrete calculations happen directly in your browser. We never store, track, or transmit your dimensions, measurements, or calculation results. Your privacy is completely protected. The calculator works entirely client-side, meaning your project data never leaves your device."
+      },
+      {
+        question: "What makes our concrete calculator different from others?",
+        answer: "Our calculator provides comprehensive results including exact cubic yards, precise bag counts (40lb, 60lb, 80lb), cost estimation (bagged vs ready-mix), material breakdown (cement, sand, gravel ratios), waste factor adjustments, and supports multiple project types (slabs, columns, stairs, footings). It's completely free with no limitations, completely private (client-side only), and works on all devices (mobile, tablet, desktop)."
       }
     ],
 

@@ -61,7 +61,7 @@ export function BirthdayCountdown() {
   const copyResult = () => {
     if (!result) return
     const text = `Only ${result.days} days until my birthday on ${result.nextBirthday}! 🎂`
-    navigator.clipboard.writeText(text)
+    void navigator.clipboard.writeText(text)
     setCopied(true)
     setTimeout(() => setCopied(false), 2000)
   }

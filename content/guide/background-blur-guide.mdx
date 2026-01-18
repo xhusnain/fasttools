@@ -140,7 +140,7 @@ export default function BackgroundBlurTool() {
 
       // --- Step A: Draw the Blurred Background ---
       ctx.save();
-      ctx.filter = \`blur(\${blurAmount}px)\`;
+      ctx.filter = `blur(${blurAmount}px)`;
       ctx.drawImage(img, 0, 0);
       ctx.restore();
 

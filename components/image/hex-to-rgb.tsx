@@ -232,7 +232,7 @@ export function HexToRGB() {
   }
 
   const copyToClipboard = (text: string, key: string) => {
-    navigator.clipboard.writeText(text)
+    void navigator.clipboard.writeText(text)
     setCopied({ ...copied, [key]: true })
     setTimeout(() => {
       setCopied({ ...copied, [key]: false })

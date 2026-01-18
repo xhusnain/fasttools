@@ -1,4 +1,10 @@
-import { XDownloader } from "@/components/social-media/x-downloader/x-downloader"
+import dynamic from "next/dynamic"
+
+const XDownloader = dynamic(() => import("@/components/social-media/x-downloader/x-downloader").then(mod => mod.XDownloader), {
+  loading: () => <div className="min-h-[600px] flex items-center justify-center">
+    <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-primary"></div>
+  </div>
+})
 import { ToolPageLayout } from "@/components/common/tool-page-layout"
 import { createToolConfig } from "@/lib/create-tool-config"
 import {
@@ -12,7 +18,7 @@ const toolConfig = createToolConfig({
   toolName: "X Video Downloader - Save Twitter Videos",
   description: "Download X (Twitter) videos in HD quality without watermark. Free, fast, unlimited downloads. No registration required. Works on PC, Mac, iPhone, Android.",
   metaTitle: "X Video Downloader - Save Twitter Videos",
-  metaDescription: "Download X (Twitter) videos in HD quality without watermark for free. Fast, secure, unlimited downloads. No registration required. Works on PC, Mac, iPhone, Android. Complete guide with legal considerations, troubleshooting, and tool comparisons.",
+  metaDescription: "Download X (Twitter) videos in HD/4K free. Fast, secure & unlimited downloads on all devices. No login needed.",
   path: "/social-media-tools/x-video-downloader",
 
   header: {
@@ -197,7 +203,7 @@ const toolConfig = createToolConfig({
             Why Choose FastTools X Video Downloader?
           </h2>
           <p className="text-base text-muted-foreground leading-relaxed">
-            When comparing X video downloaders, FastTools stands out as the best free X video downloader in 2025. Here's how we compare to other X downloader tools:
+            When comparing X video downloaders, FastTools stands out as the best free X video downloader in. Here's how we compare to other X downloader tools:
           </p>
           <div className="overflow-x-auto">
             <table className="w-full text-sm border-collapse">
@@ -311,7 +317,7 @@ const toolConfig = createToolConfig({
         <article className="space-y-6">
           <h2 className="text-2xl font-bold text-foreground flex items-center gap-2">
             <Target className="h-6 w-6 text-primary" />
-            X Video Downloader Statistics & Trends (2025)
+            X Video Downloader Statistics & Trends
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
             <div className="p-4 rounded-lg bg-primary/5 border border-primary/20">
@@ -357,8 +363,8 @@ const toolConfig = createToolConfig({
         answer: "Yes, for personal use, educational purposes, or your own content. Always respect copyright laws and only download content you have rights to use. Our tool is designed for legitimate use cases."
       },
       {
-        question: "What is the best X video downloader in 2025?",
-        answer: "FastTools X Video Downloader is among the best free downloaders in 2025, offering unlimited downloads, HD quality, fast processing under 2 seconds, no registration required, and works on all devices including PC, Mac, iPhone, and Android."
+        question: "What is the best X video downloader in?",
+        answer: "FastTools X Video Downloader is among the best free downloaders in, offering unlimited downloads, HD quality, fast processing under 2 seconds, no registration required, and works on all devices including PC, Mac, iPhone, and Android."
       },
       {
         question: "Does the X downloader work on iPhone?",

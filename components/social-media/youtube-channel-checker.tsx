@@ -136,7 +136,7 @@ export function YoutubeChannelChecker() {
         // Find the first valid name to generate suggestions for
         const primaryName = namesArray[0]
         // Run in background, don't await
-        fetchAiSuggestions(primaryName)
+        void fetchAiSuggestions(primaryName)
       }
 
       // Check each channel name with 5-second delay

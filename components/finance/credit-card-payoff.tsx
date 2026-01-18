@@ -86,7 +86,7 @@ Months to Payoff: ${result.monthsToPayoff}
 Total Interest: $${result.totalInterest}
 Total Amount Paid: $${result.totalPaid}
 Payoff Date: ${result.payoffDate}`
-      navigator.clipboard.writeText(text)
+      void navigator.clipboard.writeText(text)
     }
   }
 

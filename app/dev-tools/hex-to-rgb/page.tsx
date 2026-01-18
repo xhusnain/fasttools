@@ -1,6 +1,12 @@
+import dynamic from "next/dynamic"
 import { ToolPageLayout } from "@/components/common/tool-page-layout"
-import { HexToRGB } from "@/components/image/hex-to-rgb"
+import { ToolLoader } from "@/components/common/tool-loader"
 import { createToolConfig } from "@/lib/create-tool-config"
+
+const HexToRGB = dynamic(
+  () => import("@/components/image/hex-to-rgb").then(mod => mod.HexToRGB),
+  { loading: () => <ToolLoader /> }
+)
 
 const toolConfig = createToolConfig({
   toolName: "Color Converter",

@@ -68,7 +68,7 @@ export function ColorPaletteGenerator() {
   }, [selectedCategory, searchQuery])
 
   const copyToClipboard = (color: string, paletteIndex: number, colorIndex: number) => {
-    navigator.clipboard.writeText(color)
+    void navigator.clipboard.writeText(color)
     setCopiedColor({ paletteIndex, colorIndex })
     setTimeout(() => setCopiedColor(null), 2000)
   }

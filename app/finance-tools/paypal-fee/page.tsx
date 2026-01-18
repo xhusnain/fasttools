@@ -1,16 +1,20 @@
-import { PayPalFeeCalculator } from "@/components/finance/paypal-fee-calculator"
+import dynamic from "next/dynamic"
+import { ToolLoader } from "@/components/common/tool-loader"
+
+const PayPalFeeCalculator = dynamic(() => import("@/components/finance/paypal-fee-calculator").then(mod => mod.PayPalFeeCalculator), {
+  loading: () => <ToolLoader />
+})
 import { ToolPageLayout } from "@/components/common/tool-page-layout"
 import { createMetadata } from "@/lib/metadata-base"
 import { Calculator, DollarSign, Target, TrendingUp, BarChart3, Copy, HelpCircle, Lightbulb, Star, Info } from "lucide-react"
 import { GImage } from "@/ui/gimage"
 import type { Metadata } from "next"
-import { getCurrentYear } from "@/lib/utils"
 
 const TOOL_TITLE = "PayPal Fee Calculator - Calculate Transaction Fees"
 const TOOL_NAME = "PayPal Fee Calculator"
 
 const baseMetadata = createMetadata({
-  title: `PayPal Fee Calculator - Service & Transaction Fees ${getCurrentYear()}`,
+  title: `PayPal Fee Calculator - Service & Transaction Fees`,
   description: "Calculate PayPal transaction fees for business & personal payments. Understand international fees, Goods & Services vs Friends & Family charges.",
   path: "/finance-tools/paypal-fee",
   breadcrumbs: [
@@ -42,7 +46,7 @@ export const metadata: Metadata = {
   category: "Finance Tools",
   keywords: [
     "paypal fee calculator",
-    `paypal fees ${getCurrentYear()}`,
+    `paypal fees`,
     "calculate paypal fee",
     "paypal fee calculator online",
     "free paypal fee calculator",
@@ -100,7 +104,7 @@ export default function PayPalFeeCalculatorPage() {
       "PayPal Fee Merchant & Business Accounts: Advanced features and fee structures for high-volume merchants.",
       "PayPal vs Xoom Fee Comparison: Compare international transfer costs between PayPal and Xoom.",
       "PayPal Fee India & International Rates: Specific fee structures for India, Australia, UK, Germany, and other regions.",
-      "PayPal Fee Structure 2025: Updated rates for 2025 including percentage and fixed fee components.",
+      "PayPal Fee Structure: Updated rates for including percentage and fixed fee components.",
       "PayPal Fee Withdraw & Transfer: Calculate costs for instant transfers (1.75%) vs standard bank transfers (Free).",
       "PayPal Fee Calculator by Country: Country-specific calculations for US, Canada, Japan, Hong Kong, Korea, New Zealand, etc.",
       "PayPal Fee Currency Conversions: Calculate fees for USD to EUR, USD to GBP, and other currency pairs.",
@@ -187,7 +191,7 @@ export default function PayPalFeeCalculatorPage() {
 
           <h3 className="text-xl font-bold text-foreground mt-6 mb-4">How the Rates are Calculated</h3>
           <p className="text-base text-muted-foreground leading-relaxed">
-            Most domestic commercial transactions follow a standard percentage + fixed fee model (e.g., 2.9% + $0.30 in the US). However, for international sales, QR code payments, or invoicing, these rates can jump significantly. Our PayPal rates tracker is updated with the latest 2025 fee data to ensure your math is always current.
+            Most domestic commercial transactions follow a standard percentage + fixed fee model (e.g., 2.9% + $0.30 in the US). However, for international sales, QR code payments, or invoicing, these rates can jump significantly. Our PayPal rates tracker is updated with the latest fee data to ensure your math is always current.
           </p>
 
           <h3 className="text-xl font-bold text-foreground mt-6 mb-4">100% Accuracy for Freelancers and Merchants</h3>
@@ -245,7 +249,7 @@ export default function PayPalFeeCalculatorPage() {
         <article className="space-y-6">
           <h3 className="text-xl font-bold text-heading-accent flex items-center gap-2">
             <Target className="h-5 w-5 text-primary" />
-            PayPal Fees vs. Competitors (2025)
+            PayPal Fees vs. Competitors
           </h3>
           <p className="text-base text-muted-foreground leading-relaxed">
             See how PayPal stacks up against other popular payment platforms.
@@ -289,13 +293,13 @@ export default function PayPalFeeCalculatorPage() {
         <article className="space-y-6">
           <h3 className="text-xl font-bold text-heading-accent flex items-center gap-2">
             <Info className="h-5 w-5 text-primary" />
-            Important 2025 Regulatory Updates
+            Important Regulatory Updates
           </h3>
           <div className="space-y-4">
             <div className="p-4 bg-yellow-500/10 border border-yellow-500/30 rounded-lg">
               <h4 className="font-bold text-yellow-600 dark:text-yellow-500 mb-2">IRS 1099-K Reporting Changes</h4>
               <p className="text-sm text-foreground">
-                For the 2025 tax year, the IRS threshold for reporting goods and services transactions is significantly lower than in previous years. If you receive payments for goods or services over <strong>$600</strong> in a calendar year, PayPal is required to file Form 1099-K. This does <em>not</em> apply to personal Friends & Family payments.
+                For the tax year, the IRS threshold for reporting goods and services transactions is significantly lower than in previous years. If you receive payments for goods or services over <strong>$600</strong> in a calendar year, PayPal is required to file Form 1099-K. This does <em>not</em> apply to personal Friends & Family payments.
               </p>
             </div>
             <div className="space-y-2">
@@ -399,8 +403,8 @@ export default function PayPalFeeCalculatorPage() {
   return (
     <ToolPageLayout
       header={{
-        title: `PayPal Fee Calculator (${getCurrentYear()})`,
-        description: "Calculate PayPal transaction fees, net amounts, and required charges instantly. Perfect for sellers, freelancers, and businesses to understand payment processing costs.",
+        title: `Free PayPal Fee Calculator`,
+        description: "Calculate PayPal fees, net amounts & charges. Perfect for sellers & freelancers. Understand domestic & international costs instantly.",
         titleSize: "medium",
         descriptionSize: "small",
         color: "blue"

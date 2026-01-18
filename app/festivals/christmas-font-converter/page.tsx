@@ -1,4 +1,9 @@
-import { ChristmasFontConverter } from "@/components/festivals/christmas-font-converter"
+import dynamic from "next/dynamic"
+import { ToolLoader } from "@/components/common/tool-loader"
+
+const ChristmasFontConverter = dynamic(() => import("@/components/festivals/christmas-font-converter").then(mod => mod.ChristmasFontConverter), {
+    loading: () => <ToolLoader />
+})
 import { ChristmasTheme } from "@/components/festivals/christmas-theme"
 import { ToolPageLayout } from "@/components/common/tool-page-layout"
 import { createToolConfig } from "@/lib/create-tool-config"
@@ -8,7 +13,7 @@ import { Trees, Sparkles, Snowflake } from "lucide-react"
 const toolConfig = createToolConfig({
     toolName: "Christmas Font & Emoji Converter",
     description: "Convert your text into aesthetic Christmas fonts with emojis. Copy and paste festive text styles for Instagram, TikTok, and social media bios.",
-    metaTitle: `Christmas Font Generator & Emoji Text | Copy & Paste Festive Styles ${getCurrentYear()}`,
+    metaTitle: `Christmas Font Generator & Emoji Text | Copy & Paste Festive Styles`,
     metaDescription: "Free Christmas font generator! Create aesthetic holiday text with emojis (🎄 𝓜𝓮𝓻𝓻𝔂 𝓒𝓱𝓻𝓲𝓼𝓽𝓶𝓪𝓼 🎅). Perfect for Instagram bios, comments, and captions.",
     path: "/festivals/christmas-font-converter",
     keywords: [

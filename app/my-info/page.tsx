@@ -4,8 +4,11 @@ import { createMetadata } from "@/lib/metadata-base"
 
 export const metadata = createMetadata({
     title: "My Info - Your Digital Footprint Analysis",
-    description: "Instantly analyze your digital footprint. Check your IP address, location, browser info, device details, and connection security. Free online privacy and location tool.",
+    description: "Instantly analyze your digital footprint. Check IP, location, browser, device details & security. Free online privacy tool.",
     path: "/my-info",
+    breadcrumbs: [
+        { label: "My Info", href: "/my-info" }
+    ]
 })
 
 export default function MyInfoPage() {

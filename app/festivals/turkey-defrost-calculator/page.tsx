@@ -1,4 +1,9 @@
-import { TurkeyDefrostCalculator } from "@/components/festivals/turkey-defrost-calculator"
+import dynamic from "next/dynamic"
+import { ToolLoader } from "@/components/common/tool-loader"
+
+const TurkeyDefrostCalculator = dynamic(() => import("@/components/festivals/turkey-defrost-calculator").then(mod => mod.TurkeyDefrostCalculator), {
+    loading: () => <ToolLoader />
+})
 import { ToolPageLayout } from "@/components/common/tool-page-layout"
 import { createToolConfig } from "@/lib/create-tool-config"
 import { getCurrentYear } from "@/lib/utils"
@@ -8,7 +13,7 @@ import { ChristmasTheme } from "@/components/festivals/christmas-theme"
 const toolConfig = createToolConfig({
     toolName: "Turkey Defrosting Deadline Calculator",
     description: "Calculate exactly when to start defrosting your turkey (Fridge vs Water). Get a calendar reminder so you don't panic on Christmas Eve.",
-    metaTitle: `Turkey Defrost Time Calculator ${getCurrentYear()} | Late Turkey Rescue Tool`,
+    metaTitle: `Turkey Defrost Time Calculator | Late Turkey Rescue Tool`,
     metaDescription: "Forgot to defrost the turkey? Use our calculator to find the exact defrost time for Fridge or Cold Water methods. Add a reminder to your calendar calculation instantly.",
     path: "/festivals/turkey-defrost-calculator",
     keywords: [

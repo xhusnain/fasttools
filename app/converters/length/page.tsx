@@ -1,4 +1,9 @@
-import { LengthConverter } from "@/components/converters/length-converter"
+import dynamic from "next/dynamic"
+import { ToolLoader } from "@/components/common/tool-loader"
+
+const LengthConverter = dynamic(() => import("@/components/converters/length-converter").then(mod => mod.LengthConverter), {
+  loading: () => <ToolLoader />
+})
 import { ToolPageLayout } from "@/components/common/tool-page-layout"
 import { createToolConfig } from "@/lib/create-tool-config"
 import { GTable } from "@/ui/gtable"
@@ -7,7 +12,7 @@ import { Brain } from "lucide-react"
 const toolConfig = createToolConfig({
   toolName: "Length Converter",
   description: "Convert length units instantly: meters, feet, inches, centimeters, millimeters, kilometers, yards, miles. Accurate metric and imperial conversion tool for construction, travel, and education.",
-  metaTitle: "Length Converter - Convert Length Online (Free) 2026",
+  metaTitle: "Length Converter - Convert Length Online (Free)",
   metaDescription: "Free online Length Converter. Convert length units instantly. Fast, accurate, and no signup required.",
   path: "/converters/length",
 

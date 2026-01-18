@@ -1,13 +1,19 @@
 import { ToolPageLayout } from "@/components/common/tool-page-layout"
 import { createToolConfig } from "@/lib/create-tool-config"
 import { AlertCircle, Shield, Zap, Smartphone, Monitor, Music, Video } from "lucide-react"
-import { YoutubeDownloader } from "@/components/social-media/youtube-downloader/youtube-downloader";
+import dynamic from "next/dynamic"
+
+const YoutubeDownloader = dynamic(() => import("@/components/social-media/youtube-downloader/youtube-downloader").then(mod => mod.YoutubeDownloader), {
+    loading: () => <div className="min-h-[600px] flex items-center justify-center">
+        <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-primary"></div>
+    </div>
+})
 
 const toolConfig = createToolConfig({
     toolName: "YouTube Video Downloader - Free HD MP4 & MP3 Download Online",
     description: "Download YouTube videos in HD, 4K, and 8K quality. Convert YouTube to MP4 or MP3 for free. Works on iPhone, Android, PC, and Mac. No software installation required. Safe, fast, and 100% free.",
     metaTitle: "YouTube Video Downloader - Free HD MP4 & MP3 Download Online",
-    metaDescription: "Download YouTube videos in HD, 4K, and 8K quality. Convert YouTube to MP4 or MP3 for free. Works on iPhone, Android, PC, and Mac. No software installation required.",
+    metaDescription: "Download YouTube videos in HD, 4K & 8K. Convert to MP4 or MP3 free. Works on all devices. No software needed.",
     path: "/social-media-tools/youtube-downloader",
 
     header: {

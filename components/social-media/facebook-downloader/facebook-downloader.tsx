@@ -9,6 +9,7 @@ import { GAlert, GAlertDescription } from "@/ui/galert"
 
 import { Download, Loader2, AlertCircle, Video } from "lucide-react"
 import { API } from "@/services/api/api.service"
+import { downloadBlob } from "@/lib/download-utils"
 
 export interface FacebookDownloaderProps {
   compact?: boolean
@@ -66,36 +67,7 @@ export function FacebookDownloader({ compact = false }: FacebookDownloaderProps)
     }
   }
 
-  const downloadFile = async (fileUrl: string, filename: string) => {
-    try {
-      // Fetch the file as a blob to handle cross-origin downloads
-      const response = await fetch(fileUrl)
-      const blob = await response.blob()
 
-      // Create a blob URL
-      const blobUrl = URL.createObjectURL(blob)
-
-      // Create and trigger download
-      const link = document.createElement("a")
-      link.href = blobUrl
-      link.download = filename
-      document.body.appendChild(link)
-      link.click()
-      document.body.removeChild(link)
-
-      // Clean up the blob URL
-      setTimeout(() => URL.revokeObjectURL(blobUrl), 100)
-    } catch (error) {
-      // Fallback to direct link if fetch fails
-      const link = document.createElement("a")
-      link.href = fileUrl
-      link.download = filename
-      link.target = "_blank"
-      document.body.appendChild(link)
-      link.click()
-      document.body.removeChild(link)
-    }
-  }
 
   return (
     <div className="w-full max-w-4xl mx-auto space-y-4 sm:space-y-6">
@@ -166,7 +138,7 @@ export function FacebookDownloader({ compact = false }: FacebookDownloaderProps)
                   <div className="grid gap-2">
                     {result.HD && (
                       <GButton
-                        onClick={async () => await downloadFile(result.HD, `facebook-hd-${Date.now()}.mp4`)}
+                        onClick={async () => await downloadBlob(result.HD, `facebook-hd-${Date.now()}.mp4`)}
                         className="w-full"
                         size="lg"
                       >
@@ -176,7 +148,7 @@ export function FacebookDownloader({ compact = false }: FacebookDownloaderProps)
                     )}
                     {result.Normal_video && (
                       <GButton
-                        onClick={async () => await downloadFile(result.Normal_video, `facebook-sd-${Date.now()}.mp4`)}
+                        onClick={async () => await downloadBlob(result.Normal_video, `facebook-sd-${Date.now()}.mp4`)}
                         variant="outline"
                         className="w-full"
                         size="lg"
@@ -190,7 +162,7 @@ export function FacebookDownloader({ compact = false }: FacebookDownloaderProps)
                   /* Handle legacy format with result.url */
                   result.url && (
                     <GButton
-                      onClick={async () => await downloadFile(result.url, `facebook-${Date.now()}.mp4`)}
+                      onClick={async () => await downloadBlob(result.url, `facebook-${Date.now()}.mp4`)}
                       className="w-full"
                       size="lg"
                     >

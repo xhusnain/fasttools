@@ -376,7 +376,7 @@ Body Fat Mass: ${result.navyMethod.fatMass} kg
 Lean Body Mass: ${result.navyMethod.leanMass} kg
 Ideal Body Fat: ${result.idealBodyFat.percentage}%
 Fat to Lose: ${result.idealBodyFat.fatToLose} kg`
-      navigator.clipboard.writeText(text)
+      void navigator.clipboard.writeText(text)
     }
   }
 

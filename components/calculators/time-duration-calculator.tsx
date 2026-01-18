@@ -269,7 +269,7 @@ export function TimeDurationCalculator() {
   const copyResult = () => {
     if (!result) return
     const text = `${result.explanation}`
-    navigator.clipboard.writeText(text)
+    void navigator.clipboard.writeText(text)
     setCopied(true)
     setTimeout(() => setCopied(false), 2000)
   }

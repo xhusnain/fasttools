@@ -91,8 +91,9 @@ const GButton = React.forwardRef<HTMLButtonElement, GButtonProps>(
             }
         }, [customColor])
 
+        const Component = Comp as any
         return (
-            <Comp
+            <Component
                 className={cn(
                     buttonVariants({ variant: customColor ? "default" : variant, size, className }),
                     "relative overflow-hidden transition-all duration-300",
@@ -102,7 +103,7 @@ const GButton = React.forwardRef<HTMLButtonElement, GButtonProps>(
                     variant === "default" && !customColor && "bg-gradient-to-r from-primary to-primary/90 hover:from-primary/90 hover:to-primary",
                     colorClasses
                 )}
-                ref={ref}
+                ref={ref as any}
                 disabled={disabled || isLoading}
                 {...(href ? { href } : {})}
                 {...props}
@@ -111,7 +112,7 @@ const GButton = React.forwardRef<HTMLButtonElement, GButtonProps>(
                 {!isLoading && leftIcon && <span className="mr-2">{leftIcon}</span>}
                 {children}
                 {!isLoading && rightIcon && <span className="ml-2">{rightIcon}</span>}
-            </Comp>
+            </Component>
         )
     }
 )

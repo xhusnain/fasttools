@@ -1,5 +1,5 @@
 import { NextRequest, NextResponse } from 'next/server'
-import { 
+import {
   getRandomUserAgent,
   getCachedData,
   setCachedData
@@ -12,10 +12,31 @@ const validateUsername = (username: string): boolean => {
   return usernameRegex.test(username) && username.length >= 1 && username.length <= 30
 }
 
+const extractProfileData = (user: any, cleanUsername: string) => {
+  let profilePicUrl = user.profile_pic_url_hd || user.profile_pic_url || user.profile_pic_url_large || `https://via.placeholder.com/400x400/6366f1/ffffff?text=${cleanUsername.charAt(0).toUpperCase()}`
+
+  // Decode HTML entities in the URL
+  if (profilePicUrl && profilePicUrl.includes('&amp;')) {
+    profilePicUrl = profilePicUrl.replace(/&amp;/g, '&')
+  }
+
+  return {
+    username: user.username || cleanUsername,
+    fullName: user.full_name || user.fullName || '',
+    biography: user.biography || user.bio || '',
+    followers: user.edge_followed_by?.count || user.followers_count || 0,
+    following: user.edge_follow?.count || user.following_count || 0,
+    posts: user.edge_owner_to_timeline_media?.count || user.media_count || 0,
+    isVerified: user.is_verified || false,
+    profilePicUrl: profilePicUrl,
+    isPrivate: user.is_private || false,
+  }
+}
+
 // Fetch Instagram profile data with multiple fallback methods
 const fetchInstagramProfile = async (username: string) => {
   const cleanUsername = username.replace('@', '').trim().toLowerCase()
-  
+
   if (!validateUsername(cleanUsername)) {
     throw new Error('Invalid username format')
   }
@@ -38,7 +59,7 @@ const fetchInstagramProfile = async (username: string) => {
   for (const url of endpoints) {
     try {
       console.log(`Trying endpoint: ${url}`)
-      
+
       const response = await fetch(url, {
         method: 'GET',
         headers: {
@@ -66,7 +87,7 @@ const fetchInstagramProfile = async (username: string) => {
         if (response.status === 404) {
           throw new Error('User not found or account is private')
         }
-        continue // Try next endpoint
+        continue
       }
 
       const contentType = response.headers.get('content-type')
@@ -84,7 +105,7 @@ const fetchInstagramProfile = async (username: string) => {
       // Extract profile information
       const user = data?.graphql?.user || data?.user || data
       if (!user) {
-        continue // Try next endpoint
+        continue
       }
 
       // Check if account is private
@@ -92,44 +113,22 @@ const fetchInstagramProfile = async (username: string) => {
         throw new Error('Account is private')
       }
 
-      // Extract profile picture URLs
-      let profilePicUrl = user.profile_pic_url_hd || user.profile_pic_url || user.profile_pic_url_large
-      if (!profilePicUrl) {
-        continue // Try next endpoint
-      }
+      const profileData = extractProfileData(user, cleanUsername)
 
-      // Decode HTML entities in the URL
-      if (profilePicUrl && profilePicUrl.includes('&amp;')) {
-        profilePicUrl = profilePicUrl.replace(/&amp;/g, '&')
-      }
-
-
-      const profileData = {
-        username: user.username || cleanUsername,
-        fullName: user.full_name || user.fullName || '',
-        biography: user.biography || user.bio || '',
-        followers: user.edge_followed_by?.count || user.followers_count || 0,
-        following: user.edge_follow?.count || user.following_count || 0,
-        posts: user.edge_owner_to_timeline_media?.count || user.media_count || 0,
-        isVerified: user.is_verified || false,
-        profilePicUrl: profilePicUrl,
-        isPrivate: user.is_private || false,
-      }
-      
       // Cache the result for 5 minutes
       setCachedData(cacheKey, profileData, 300000)
-      
+
       return profileData
 
     } catch (error) {
       console.error(`Error with endpoint ${url}:`, error)
-      continue // Try next endpoint
+      // Error occurred, try next endpoint
     }
   }
 
   // If all endpoints fail, try to extract data from Instagram's public page
   console.log('All endpoints failed, trying HTML parsing method')
-  
+
   try {
     // Try different user agents and approaches
     const userAgents = [
@@ -142,7 +141,7 @@ const fetchInstagramProfile = async (username: string) => {
     for (const userAgent of userAgents) {
       try {
         console.log(`Trying with user agent: ${userAgent.substring(0, 50)}...`)
-        
+
         const htmlResponse = await fetch(`https://www.instagram.com/${cleanUsername}/`, {
           method: 'GET',
           headers: {
@@ -166,7 +165,7 @@ const fetchInstagramProfile = async (username: string) => {
         if (htmlResponse.ok) {
           const html = await htmlResponse.text()
           console.log(`HTML response received (${html.length} chars), parsing...`)
-          
+
           // Look for the actual profile data in various script tags
           const scriptMatches = html.match(/<script[^>]*>window\._sharedData\s*=\s*({.+?});<\/script>/g)
           if (scriptMatches) {
@@ -176,7 +175,7 @@ const fetchInstagramProfile = async (username: string) => {
                 if (jsonMatch) {
                   const jsonData = JSON.parse(jsonMatch[1])
                   const user = jsonData?.entry_data?.ProfilePage?.[0]?.graphql?.user
-                  
+
                   if (user && user.username === cleanUsername) {
                     console.log('Found user data in _sharedData:', {
                       username: user.username,
@@ -184,25 +183,8 @@ const fetchInstagramProfile = async (username: string) => {
                       followers: user.edge_followed_by?.count,
                       posts: user.edge_owner_to_timeline_media?.count
                     })
-                    
-                    let profilePicUrl = user.profile_pic_url_hd || user.profile_pic_url || `https://via.placeholder.com/400x400/6366f1/ffffff?text=${cleanUsername.charAt(0).toUpperCase()}`
-                    
-                    // Decode HTML entities in the URL
-                    if (profilePicUrl && profilePicUrl.includes('&amp;')) {
-                      profilePicUrl = profilePicUrl.replace(/&amp;/g, '&')
-                    }
-                    
-                    return {
-                      username: user.username || cleanUsername,
-                      fullName: user.full_name || '',
-                      biography: user.biography || '',
-                      followers: user.edge_followed_by?.count || 0,
-                      following: user.edge_follow?.count || 0,
-                      posts: user.edge_owner_to_timeline_media?.count || 0,
-                      isVerified: user.is_verified || false,
-                      profilePicUrl: profilePicUrl,
-                      isPrivate: user.is_private || false,
-                    }
+
+                    return extractProfileData(user, cleanUsername)
                   }
                 }
               } catch (e) {
@@ -210,7 +192,7 @@ const fetchInstagramProfile = async (username: string) => {
               }
             }
           }
-          
+
           // Try alternative script tag patterns
           const additionalDataMatches = html.match(/<script[^>]*>window\.__additionalDataLoaded[^<]*<\/script>/g)
           if (additionalDataMatches) {
@@ -220,28 +202,11 @@ const fetchInstagramProfile = async (username: string) => {
                 if (jsonMatch) {
                   const jsonData = JSON.parse(jsonMatch[1])
                   const user = jsonData?.graphql?.user
-                  
+
                   if (user && user.username === cleanUsername) {
                     console.log('Found user data in __additionalDataLoaded')
-                    
-                    let profilePicUrl = user.profile_pic_url_hd || user.profile_pic_url || `https://via.placeholder.com/400x400/6366f1/ffffff?text=${cleanUsername.charAt(0).toUpperCase()}`
-                    
-                    // Decode HTML entities in the URL
-                    if (profilePicUrl && profilePicUrl.includes('&amp;')) {
-                      profilePicUrl = profilePicUrl.replace(/&amp;/g, '&')
-                    }
-                    
-                    return {
-                      username: user.username || cleanUsername,
-                      fullName: user.full_name || '',
-                      biography: user.biography || '',
-                      followers: user.edge_followed_by?.count || 0,
-                      following: user.edge_follow?.count || 0,
-                      posts: user.edge_owner_to_timeline_media?.count || 0,
-                      isVerified: user.is_verified || false,
-                      profilePicUrl: profilePicUrl,
-                      isPrivate: user.is_private || false,
-                    }
+
+                    return extractProfileData(user, cleanUsername)
                   }
                 }
               } catch (e) {
@@ -249,17 +214,17 @@ const fetchInstagramProfile = async (username: string) => {
               }
             }
           }
-          
+
           // Extract profile picture from meta tags as fallback
           const metaMatch = html.match(/<meta property="og:image" content="([^"]+)"/)
           let profilePicUrl = metaMatch ? metaMatch[1] : `https://via.placeholder.com/400x400/6366f1/ffffff?text=${cleanUsername.charAt(0).toUpperCase()}`
-          
+
           // Decode HTML entities in the URL
           if (profilePicUrl && profilePicUrl.includes('&amp;')) {
             profilePicUrl = profilePicUrl.replace(/&amp;/g, '&')
             console.log('Decoded profile picture URL:', profilePicUrl.substring(0, 100) + '...')
           }
-          
+
           // Try to extract more data from the HTML using regex patterns
           const titleMatch = html.match(/<title>([^<]+)</)
           let fullName = cleanUsername.charAt(0).toUpperCase() + cleanUsername.slice(1)
@@ -270,7 +235,7 @@ const fetchInstagramProfile = async (username: string) => {
               fullName = nameMatch[1].trim()
             }
           }
-          
+
           // Look for follower count in the HTML using various patterns
           const followersPatterns = [
             /"edge_followed_by":\{"count":(\d+)\}/,
@@ -278,7 +243,7 @@ const fetchInstagramProfile = async (username: string) => {
             /"followers":\s*(\d+)/,
             /(\d+)\s*followers/i
           ]
-          
+
           let followers = 0
           for (const pattern of followersPatterns) {
             const match = html.match(pattern)
@@ -287,14 +252,14 @@ const fetchInstagramProfile = async (username: string) => {
               break
             }
           }
-          
+
           const followingPatterns = [
             /"edge_follow":\{"count":(\d+)\}/,
             /"following_count":(\d+)/,
             /"following":\s*(\d+)/,
             /(\d+)\s*following/i
           ]
-          
+
           let following = 0
           for (const pattern of followingPatterns) {
             const match = html.match(pattern)
@@ -303,14 +268,14 @@ const fetchInstagramProfile = async (username: string) => {
               break
             }
           }
-          
+
           const postsPatterns = [
             /"edge_owner_to_timeline_media":\{"count":(\d+)\}/,
             /"media_count":(\d+)/,
             /"posts":\s*(\d+)/,
             /(\d+)\s*posts/i
           ]
-          
+
           let posts = 0
           for (const pattern of postsPatterns) {
             const match = html.match(pattern)
@@ -319,18 +284,18 @@ const fetchInstagramProfile = async (username: string) => {
               break
             }
           }
-          
+
           // Look for verification status
           const verifiedMatch = html.match(/"is_verified":true/)
           const isVerified = !!verifiedMatch
-          
+
           // Look for biography
           const bioPatterns = [
             /"biography":"([^"]+)"/,
             /"bio":"([^"]+)"/,
             /<meta name="description" content="([^"]+)"/,
           ]
-          
+
           let biography = 'Profile data extracted from Instagram page'
           for (const pattern of bioPatterns) {
             const match = html.match(pattern)
@@ -339,7 +304,7 @@ const fetchInstagramProfile = async (username: string) => {
               break
             }
           }
-          
+
           console.log('Successfully extracted data from HTML:', {
             username: cleanUsername,
             fullName,
@@ -350,7 +315,7 @@ const fetchInstagramProfile = async (username: string) => {
             biography: biography.substring(0, 100) + (biography.length > 100 ? '...' : ''),
             profilePicUrl: profilePicUrl.includes('placeholder') ? 'placeholder' : 'real'
           })
-          
+
           const profileData = {
             username: cleanUsername,
             fullName: fullName,
@@ -362,25 +327,24 @@ const fetchInstagramProfile = async (username: string) => {
             profilePicUrl: profilePicUrl,
             isPrivate: false,
           }
-          
+
           // Cache the result for 5 minutes
           setCachedData(cacheKey, profileData, 300000)
-          
+
           return profileData
         }
       } catch (error) {
         console.log(`Error with user agent ${userAgent.substring(0, 30)}:`, error)
-        continue
       }
     }
   } catch (error) {
     console.error('HTML parsing method failed:', error)
   }
-  
+
   // Final fallback - use a placeholder with the username initial
   console.log('All methods failed, using final fallback')
   const profilePicUrl = `https://via.placeholder.com/400x400/6366f1/ffffff?text=${cleanUsername.charAt(0).toUpperCase()}`
-  
+
   return {
     username: cleanUsername,
     fullName: cleanUsername.charAt(0).toUpperCase() + cleanUsername.slice(1),
@@ -447,18 +411,18 @@ export async function GET(request: NextRequest) {
 
   } catch (error) {
     console.error('Instagram API Error:', error)
-    
+
     // Return appropriate error response
     if (error instanceof Error) {
       console.log('Error message:', error.message)
-      
+
       if (error.message.includes('not found') || error.message.includes('private')) {
         return NextResponse.json(
           { error: error.message },
           { status: 404 }
         )
       }
-      
+
 
       if (error.message.includes('Invalid username')) {
         return NextResponse.json(

@@ -9,6 +9,7 @@ import { GAlert, GAlertDescription } from "@/ui/galert"
 import { Download, Loader2, AlertCircle, Video, Music, List, FileVideo } from "lucide-react"
 import { YouTubeService, VideoInfo, PlaylistInfo, VideoFormat } from "@/services/youtube.service"
 import { env } from "@/config/env"
+import { downloadBlob } from "@/lib/download-utils";
 
 export interface YoutubeDownloaderProps {
     compact?: boolean
@@ -105,13 +106,7 @@ export function YoutubeDownloader({ compact = false }: YoutubeDownloaderProps) {
 
             const streamUrl = YouTubeService.getStreamUrl(url.trim(), filename, formatId, type);
 
-            const link = document.createElement('a');
-            link.href = streamUrl;
-            link.target = '_blank'; // Optional, but good for UX
-            link.download = filename;
-            document.body.appendChild(link);
-            link.click();
-            document.body.removeChild(link);
+            await downloadBlob(streamUrl, filename);
 
         } catch (error: any) {
             console.error(error);

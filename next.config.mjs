@@ -16,13 +16,28 @@ const nextConfig = {
       '@radix-ui/react-icons',
       '@iconify/react',
       'react-icons',
+      'recharts',
+      'date-fns',
     ],
+    // Enable compression
+    gzipSize: true,
   },
+  // Optimize server components
+  serverExternalPackages: ['sharp'],
+
+  // Compression
+  compress: true,
+
+  // Power optimizations
+  poweredByHeader: false,
+
+  // React strict mode for better performance
+  reactStrictMode: true,
 
   turbopack: {},
 
   typescript: {
-    ignoreBuildErrors: true,
+    ignoreBuildErrors: false,
   },
   images: {
     // unoptimized: true, // Removed for performance optimization
@@ -35,10 +50,6 @@ const nextConfig = {
         protocol: 'https',
         hostname: 'plus.unsplash.com',
       },
-      {
-        protocol: 'https',
-        hostname: '**', // Allow all HTTPS domains for IPTV channel logos
-      }
     ],
   },
   transpilePackages: ['lucide-react'],
@@ -63,15 +74,33 @@ const nextConfig = {
     return config
   },
 
+  async redirects() {
+    return [
+      {
+        source: '/calculator/compound-interest-calculator',
+        destination: '/finance-tools/compound-interest',
+        permanent: true,
+      },
+      {
+        source: '/image-tools/background-remover',
+        destination: '/image-tools/image-background-remover',
+        permanent: true,
+      },
+    ]
+  },
+
   async headers() {
     return [
-
       {
         source: "/og-image.svg",
         headers: [
           {
             key: "Content-Type",
             value: "image/svg+xml",
+          },
+          {
+            key: "Cache-Control",
+            value: "public, max-age=31536000, immutable",
           },
         ],
       },
@@ -82,6 +111,71 @@ const nextConfig = {
             key: "Content-Type",
             value: "image/svg+xml",
           },
+          {
+            key: "Cache-Control",
+            value: "public, max-age=31536000, immutable",
+          },
+        ],
+      },
+      // Static assets - aggressive caching
+      {
+        source: "/images/:path*",
+        headers: [
+          {
+            key: "Cache-Control",
+            value: "public, max-age=31536000, immutable",
+          },
+        ],
+      },
+      {
+        source: "/android-chrome-:size.png",
+        headers: [
+          {
+            key: "Cache-Control",
+            value: "public, max-age=31536000, immutable",
+          },
+        ],
+      },
+      {
+        source: "/favicon.ico",
+        headers: [
+          {
+            key: "Cache-Control",
+            value: "public, max-age=31536000, immutable",
+          },
+        ],
+      },
+      // Fonts - long cache
+      {
+        source: "/fonts/:path*",
+        headers: [
+          {
+            key: "Cache-Control",
+            value: "public, max-age=31536000, immutable",
+          },
+          {
+            key: "Access-Control-Allow-Origin",
+            value: "*",
+          },
+        ],
+      },
+      // _next static files
+      {
+        source: "/_next/static/:path*",
+        headers: [
+          {
+            key: "Cache-Control",
+            value: "public, max-age=31536000, immutable",
+          },
+        ],
+      },
+      {
+        source: "/_next/static/chunks/:path*",
+        headers: [
+          {
+            key: "Cache-Control",
+            value: "public, max-age=31536000, immutable",
+          },
         ],
       },
       {
@@ -89,7 +183,20 @@ const nextConfig = {
         headers: [
           {
             key: "Referrer-Policy",
-            value: "no-referrer",
+            value: "strict-origin-when-cross-origin",
+          },
+          {
+            key: "Cache-Control",
+            value: "public, max-age=3600",
+          },
+        ],
+      },
+      {
+        source: "/(sitemap.xml|robots.txt)",
+        headers: [
+          {
+            key: "Cache-Control",
+            value: "public, max-age=0, must-revalidate",
           },
         ],
       },
@@ -120,9 +227,10 @@ const nextConfig = {
             key: "Permissions-Policy",
             value: "camera=(), microphone=(), geolocation=()",
           },
+          // Cache HTML pages for short time
           {
-            key: "Last-Modified",
-            value: new Date().toUTCString(),
+            key: "Cache-Control",
+            value: "public, s-maxage=60, stale-while-revalidate=300",
           },
         ],
       },

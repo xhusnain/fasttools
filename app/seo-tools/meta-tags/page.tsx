@@ -1,6 +1,12 @@
-import { MetaTagGenerator } from "@/components/dev-tools/meta-tag-generator"
+import dynamic from "next/dynamic"
 import { ToolPageLayout } from "@/components/common/tool-page-layout"
+import { ToolLoader } from "@/components/common/tool-loader"
 import { createToolConfig } from "@/lib/create-tool-config"
+
+const MetaTagGenerator = dynamic(
+  () => import("@/components/dev-tools/meta-tag-generator").then(mod => mod.MetaTagGenerator),
+  { loading: () => <ToolLoader /> }
+)
 
 const toolConfig = createToolConfig({
   toolName: "Meta Tag Generator",

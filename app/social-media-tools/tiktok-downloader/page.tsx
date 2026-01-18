@@ -4,7 +4,13 @@ import {
   AlertCircle, Zap
 } from "lucide-react"
 import { getCurrentYear } from "@/lib/utils"
-import { TiktokDownloader } from "@/components/social-media/tiktok-downloader/tiktok-downloader";
+import dynamic from "next/dynamic"
+
+const TiktokDownloader = dynamic(() => import("@/components/social-media/tiktok-downloader/tiktok-downloader").then(mod => mod.TiktokDownloader), {
+  loading: () => <div className="min-h-[600px] flex items-center justify-center">
+    <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-primary"></div>
+  </div>
+})
 
 const toolConfig = createToolConfig({
   toolName: "TikTok Downloader - No Watermark HD",

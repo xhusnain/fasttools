@@ -1,15 +1,20 @@
 import { getAllPosts } from '@/components/blog/blog'
+import { slugifyCategory } from '@/lib/utils'
 import Link from 'next/link'
 import { createMetadata } from "@/lib/metadata-base"
 
 export const metadata = createMetadata({
     title: 'Archive - Blog',
     description: 'Browse our complete archive of articles, tutorials, and guides organized by category. Find expert tips on calculators, AI tools, finance, and more.',
-    path: '/blog/archive'
+    path: '/blog/archive',
+    breadcrumbs: [
+        { label: 'Blog', href: '/blog' },
+        { label: 'Archive', href: '/blog/archive' }
+    ]
 })
 
 export default async function ArchivePage() {
-    const posts = await getAllPosts()
+    const posts = getAllPosts()
 
     // Group posts by Category
     const postsByCategory = posts.reduce((acc, post) => {
@@ -52,7 +57,7 @@ export default async function ArchivePage() {
 
                 <div className="space-y-32">
                     {categories.map((category) => {
-                        const categorySlug = category.replace(/\s+/g, '-').toLowerCase();
+                        const categorySlug = slugifyCategory(category);
                         const topPosts = postsByCategory[category].slice(0, 8); // Limit to top 8
 
                         return (

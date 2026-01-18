@@ -16,7 +16,7 @@ export function generateCountrySEO(country: Country): CountrySEO {
     const channelText = country.channelCount === 1 ? 'channel' : 'channels';
 
     return {
-        title: `Watch ${country.name} Live TV - ${country.channelCount} Free ${country.flag} Channels | FastTools`,
+        title: `Watch ${country.name} Live TV - ${country.channelCount} Free ${country.flag} Channels`,
         description: `Stream ${country.channelCount} live TV ${channelText} from ${country.name} ${country.flag} for free. Watch news, sports, entertainment, and more from ${country.name} broadcasters online.`,
         content: generateCountryContent(country),
         keywords: [
@@ -105,7 +105,7 @@ Browse our selection of ${c.name} channels below and click to start watching ins
  */
 export function generateMainPageSEO(totalCountries: number, totalChannels: number): CountrySEO {
     return {
-        title: `Watch Live TV from ${totalCountries}+ Countries - Free IPTV Streaming | FastTools`,
+        title: `Watch Live TV from ${totalCountries}+ Countries - Free IPTV Streaming`,
         description: `Stream ${totalChannels}+ live TV channels from ${totalCountries}+ countries worldwide. Watch free IPTV including news, sports, entertainment, and more. No registration required.`,
         content: `
 ## Watch Live TV from Around the World

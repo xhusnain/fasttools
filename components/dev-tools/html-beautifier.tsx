@@ -81,11 +81,7 @@ export function HTMLBeautifier() {
       const hasDoctype = html.toLowerCase().includes('<!doctype')
       const hasBasicStructure = html.includes('<html') || html.includes('<div') || html.includes('<span')
 
-      if (!hasBasicStructure) {
-        return false
-      }
-
-      return true
+      return hasBasicStructure
     } catch (error) {
       return false
     }
@@ -133,7 +129,7 @@ export function HTMLBeautifier() {
   }
 
   const copyToClipboard = () => {
-    navigator.clipboard.writeText(output)
+    void navigator.clipboard.writeText(output)
     setCopied(true)
     setTimeout(() => setCopied(false), 2000)
   }
@@ -230,8 +226,8 @@ export function HTMLBeautifier() {
       {/* Validation Status */}
       {isValid !== null && (
         <div className={`flex items-center gap-2 p-3 rounded-lg border ${isValid
-            ? "bg-muted border-green-200 dark:border-green-900"
-            : "bg-yellow-50 dark:bg-yellow-950/20 border-yellow-200 dark:border-yellow-900"
+          ? "bg-muted border-green-200 dark:border-green-900"
+          : "bg-yellow-50 dark:bg-yellow-950/20 border-yellow-200 dark:border-yellow-900"
           }`}>
           {isValid ? (
             <>

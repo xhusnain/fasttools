@@ -16,7 +16,7 @@ export function ScientificCalculatorWrapper({ children }: ScientificCalculatorWr
     }
 
     const copyResult = () => {
-        navigator.clipboard.writeText(currentDisplay)
+        void navigator.clipboard.writeText(currentDisplay)
     }
 
     return (

@@ -163,12 +163,7 @@ export const categoryPages = [
         changeFrequency: "monthly" as const,
         priority: 0.98,
     },
-    {
-        url: "https://www.fasttools.store/blog/category/developer",
-        lastModified: new Date(),
-        changeFrequency: "weekly" as const,
-        priority: 0.85,
-    },
+
     {
         url: "https://www.fasttools.store/festivals",
         lastModified: new Date('2025-12-19'),
@@ -994,13 +989,27 @@ export const toolPages = [
             }
         ]
     },
+    {
+        url: "https://www.fasttools.store/dev-tools/uuid-generator",
+        lastModified: new Date('2026-01-15'),
+        changeFrequency: "weekly" as const,
+        priority: 0.95,
+        images: [
+            {
+                url: "https://www.fasttools.store/images/tools/uuid-generator.png",
+                title: "UUID Generator Concept - Unique Identifier Generation Process",
+                caption: "A high-quality, modern, isometric 3D illustration representing a UUID Concept. Data flow, digital unique keys, hex strings 128-bit."
+            }
+        ]
+    },
 ]
 
-import { getAllPosts } from "@/components/blog/blog"
-import { getAllGuides } from "@/components/guide/guide"
+import { getAllPostsMeta } from "@/components/blog/blog"
+import { getAllGuidesMeta } from "@/components/guide/guide"
+import { slugifyCategory } from "@/lib/utils"
 
 export const generateGuideSitemap = () => {
-    const guides = getAllGuides()
+    const guides = getAllGuidesMeta()
     return guides.map((guide) => ({
         url: `${baseUrl}/guides/${guide.slug}`,
         lastModified: new Date(guide.lastModified || guide.date),
@@ -1017,7 +1026,7 @@ export const generateGuideSitemap = () => {
 }
 
 export const generateBlogSitemap = () => {
-    const posts = getAllPosts()
+    const posts = getAllPostsMeta()
     return posts.map((post) => ({
         url: `${baseUrl}/blog/${post.slug}`,
         lastModified: new Date(post.lastModified || post.date),
@@ -1034,11 +1043,11 @@ export const generateBlogSitemap = () => {
 }
 
 export const generateCategorySitemap = () => {
-    const posts = getAllPosts()
+    const posts = getAllPostsMeta()
     const categories = Array.from(new Set(posts.map(post => post.category).filter(Boolean)))
 
     return categories.map(category => ({
-        url: `${baseUrl}/blog/category/${category!.toLowerCase().replace(/\s+/g, '-')}`,
+        url: `${baseUrl}/blog/category/${slugifyCategory(category!)}`,
         lastModified: new Date(),
         changeFrequency: 'weekly' as const,
         priority: 0.8,

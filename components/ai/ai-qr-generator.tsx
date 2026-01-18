@@ -25,235 +25,211 @@ export function AiQrGenerator() {
   const fileInputRef = useRef<HTMLInputElement>(null)
   const csvInputRef = useRef<HTMLInputElement>(null)
 
-  // Bulk generation states
   const [bulkText, setBulkText] = useState("")
   const [bulkQRCodes, setBulkQRCodes] = useState<Array<{ text: string, image: string }>>([])
   const [bulkLoading, setBulkLoading] = useState(false)
 
-  // Basic inputs
-  const [url, setUrl] = useState("")
-  const [text, setText] = useState("")
+  const [formData, setFormData] = useState({
+    url: "",
+    text: "",
+    wifiSSID: "",
+    wifiPassword: "",
+    wifiEncryption: "WPA" as "WPA" | "WEP" | "nopass",
+    wifiHidden: false,
+    vcardName: "",
+    vcardPhone: "",
+    vcardEmail: "",
+    vcardCompany: "",
+    emailTo: "",
+    emailSubject: "",
+    emailBody: "",
+    smsPhone: "",
+    smsMessage: "",
+    phoneNumber: "",
+    locationLat: "",
+    locationLng: "",
+    foregroundColor: "#000000",
+    backgroundColor: "#ffffff",
+    transparentBg: false,
+    size: [400],
+    margin: [2],
+    errorCorrection: "M" as ErrorCorrectionLevel,
+    logoSize: [20],
+    downloadFormat: "png" as DownloadFormat,
+    logoImage: null as string | null
+  })
 
-  // WiFi QR
-  const [wifiSSID, setWifiSSID] = useState("")
-  const [wifiPassword, setWifiPassword] = useState("")
-  const [wifiEncryption, setWifiEncryption] = useState<"WPA" | "WEP" | "nopass">("WPA")
-  const [wifiHidden, setWifiHidden] = useState(false)
+  const handleInputChange = (key: keyof typeof formData, value: any) => {
+    setFormData(prev => ({ ...prev, [key]: value }))
+  }
 
-  // vCard QR (simplified for compact view)
-  const [vcardName, setVcardName] = useState("")
-  const [vcardPhone, setVcardPhone] = useState("")
-  const [vcardEmail, setVcardEmail] = useState("")
-  const [vcardCompany, setVcardCompany] = useState("")
-
-  // Email QR
-  const [emailTo, setEmailTo] = useState("")
-  const [emailSubject, setEmailSubject] = useState("")
-  const [emailBody, setEmailBody] = useState("")
-
-  // SMS/WhatsApp QR
-  const [smsPhone, setSmsPhone] = useState("")
-  const [smsMessage, setSmsMessage] = useState("")
-
-  // Phone QR
-  const [phoneNumber, setPhoneNumber] = useState("")
-
-  // Location QR
-  const [locationLat, setLocationLat] = useState("")
-  const [locationLng, setLocationLng] = useState("")
-
-  // Styling options (simplified)
-  const [foregroundColor, setForegroundColor] = useState("#000000")
-  const [backgroundColor, setBackgroundColor] = useState("#ffffff")
-  const [transparentBg, setTransparentBg] = useState(false)
-  const [size, setSize] = useState<number[]>([400])
-  const [margin, setMargin] = useState<number[]>([2])
-  const [errorCorrection, setErrorCorrection] = useState<ErrorCorrectionLevel>("M")
-
-  // Logo/Image
-  const [logoImage, setLogoImage] = useState<string | null>(null)
-  const [logoSize, setLogoSize] = useState<number[]>([20])
-
-  // Download format
-  const [downloadFormat, setDownloadFormat] = useState<DownloadFormat>("png")
-
-  // Validate hex color format
   const isValidHexColor = (hexColor: string): boolean => {
     return /^#([0-9A-F]{3}){1,2}$/i.test(hexColor)
   }
 
-  const handleColorChange = (value: string, setter: (val: string) => void) => {
+  const handleColorChange = (value: string, key: 'foregroundColor' | 'backgroundColor') => {
     if (value === "" || isValidHexColor(value) || value.startsWith("#")) {
-      setter(value)
+      handleInputChange(key, value)
     }
   }
 
-  // Generate QR content based on type
   const generateQRContent = (): string => {
     switch (qrType) {
       case "url":
-        return url.trim()
+        return formData.url.trim()
 
       case "text":
-        return text.trim()
+        return formData.text.trim()
 
       case "wifi":
-        const hidden = wifiHidden ? "H:true;" : ""
-        return `WIFI:T:${wifiEncryption};S:${wifiSSID};P:${wifiPassword};${hidden};`
+        const hidden = formData.wifiHidden ? "H:true;" : ""
+        return `WIFI:T:${formData.wifiEncryption};S:${formData.wifiSSID};P:${formData.wifiPassword};${hidden};`
 
       case "vcard":
         return `BEGIN:VCARD
 VERSION:3.0
-FN:${vcardName}
-TEL:${vcardPhone}
-EMAIL:${vcardEmail}
-ORG:${vcardCompany}
+FN:${formData.vcardName}
+TEL:${formData.vcardPhone}
+EMAIL:${formData.vcardEmail}
+ORG:${formData.vcardCompany}
 END:VCARD`
 
       case "email":
-        return `mailto:${emailTo}?subject=${encodeURIComponent(emailSubject)}&body=${encodeURIComponent(emailBody)}`
+        return `mailto:${formData.emailTo}?subject=${encodeURIComponent(formData.emailSubject)}&body=${encodeURIComponent(formData.emailBody)}`
 
       case "sms":
-        return `sms:${smsPhone}?body=${encodeURIComponent(smsMessage)}`
+        return `sms:${formData.smsPhone}?body=${encodeURIComponent(formData.smsMessage)}`
 
       case "whatsapp":
-        return `https://wa.me/${smsPhone.replace(/[^0-9]/g, "")}?text=${encodeURIComponent(smsMessage)}`
+        return `https://wa.me/${formData.smsPhone.replace(/[^0-9]/g, "")}?text=${encodeURIComponent(formData.smsMessage)}`
 
       case "phone":
-        return `tel:${phoneNumber}`
+        return `tel:${formData.phoneNumber}`
 
       case "location":
-        return `geo:${locationLat},${locationLng}`
+        return `geo:${formData.locationLat},${formData.locationLng}`
 
       default:
         return ""
     }
   }
 
-  // Generate QR code
-  const generateQR = async () => {
+  const generateQR = () => {
     const content = generateQRContent()
     if (!content) return
 
-    const validFgColor = isValidHexColor(foregroundColor) ? foregroundColor : "#000000"
-    const validBgColor = transparentBg ? "#ffffff00" : (isValidHexColor(backgroundColor) ? backgroundColor : "#ffffff")
+    const validFgColor = isValidHexColor(formData.foregroundColor) ? formData.foregroundColor : "#000000"
+    const validBgColor = formData.transparentBg ? "#ffffff00" : (isValidHexColor(formData.backgroundColor) ? formData.backgroundColor : "#ffffff")
 
     setLoading(true)
-    try {
-      const options: QROptions = {
-        width: size[0],
-        margin: margin[0],
-        errorCorrectionLevel: errorCorrection,
-        color: {
-          dark: validFgColor,
-          light: validBgColor,
-        },
-      }
 
-      let qrDataUrl = await QRCode.toDataURL(content, options as any) as unknown as string
-
-      // Apply logo if uploaded
-      if (logoImage) {
-        qrDataUrl = await applyLogoToQR(qrDataUrl)
-      }
-
-      setQrImage(qrDataUrl)
-    } catch (error) {
-      console.error("Error generating QR code:", error)
-      alert("Error generating QR code. Please check your inputs.")
-    } finally {
-      setLoading(false)
+    const options: QROptions = {
+      width: formData.size[0],
+      margin: formData.margin[0],
+      errorCorrectionLevel: formData.errorCorrection,
+      color: {
+        dark: validFgColor,
+        light: validBgColor,
+      },
     }
+
+    QRCode.toDataURL(content, options as any, (err, url) => {
+      if (err) {
+        console.error("Error generating QR code:", err)
+        setLoading(false)
+        return
+      }
+
+      if (formData.logoImage && url) {
+        applyLogoToQR(url, (finalUrl) => {
+          setQrImage(finalUrl)
+          setLoading(false)
+        })
+      } else {
+        setQrImage(url)
+        setLoading(false)
+      }
+    })
   }
 
-  // Auto-generate on input change
   useEffect(() => {
     const content = generateQRContent()
     if (content) {
       const timer = setTimeout(() => {
         generateQR()
-      }, 500) // Debounce
+      }, 500)
       return () => clearTimeout(timer)
     }
-  }, [url, text, wifiSSID, wifiPassword, vcardName, vcardPhone, vcardEmail, emailTo, smsPhone, phoneNumber, locationLat, locationLng, foregroundColor, backgroundColor, size, margin, errorCorrection, logoImage, logoSize])
+  }, [formData])
 
-  // Apply logo to QR code
-  const applyLogoToQR = async (qrDataUrl: string): Promise<string> => {
-    if (!logoImage) return qrDataUrl
+  const applyLogoToQR = (qrDataUrl: string, callback: (url: string) => void) => {
+    if (!formData.logoImage) {
+      callback(qrDataUrl)
+      return
+    }
 
-    return new Promise((resolve) => {
-      const canvas = document.createElement("canvas")
-      const ctx = canvas.getContext("2d")
-      if (!ctx) {
-        console.error("No canvas context")
-        return resolve(qrDataUrl)
-      }
+    const canvas = document.createElement("canvas")
+    const ctx = canvas.getContext("2d")
+    if (!ctx) {
+      console.error("No canvas context")
+      callback(qrDataUrl)
+      return
+    }
 
-      const qrImg = new Image()
+    const qrImg = new Image()
 
-      qrImg.onload = () => {
+    qrImg.onload = () => {
+      canvas.width = qrImg.width
+      canvas.height = qrImg.height
+
+      ctx.drawImage(qrImg, 0, 0)
+
+      const logoImg = new Image()
+
+      logoImg.onload = () => {
+        const logoSizePercent = formData.logoSize[0] / 100
+        const logoWidth = canvas.width * logoSizePercent
+        const logoHeight = canvas.height * logoSizePercent
+        const x = (canvas.width - logoWidth) / 2
+        const y = (canvas.height - logoHeight) / 2
+
+        const padding = 10
+        ctx.fillStyle = "#FFFFFF"
+        ctx.fillRect(x - padding, y - padding, logoWidth + (padding * 2), logoHeight + (padding * 2))
+
+        ctx.drawImage(logoImg, x, y, logoWidth, logoHeight)
+
         try {
-          canvas.width = qrImg.width
-          canvas.height = qrImg.height
-
-          // Draw QR code first
-          ctx.drawImage(qrImg, 0, 0)
-
-          const logoImg = new Image()
-
-          logoImg.onload = () => {
-            try {
-              const logoSizePercent = logoSize[0] / 100
-              const logoWidth = canvas.width * logoSizePercent
-              const logoHeight = canvas.height * logoSizePercent
-              const x = (canvas.width - logoWidth) / 2
-              const y = (canvas.height - logoHeight) / 2
-
-              // Draw white background for logo (better visibility)
-              const padding = 10
-              ctx.fillStyle = "#FFFFFF"
-              ctx.fillRect(x - padding, y - padding, logoWidth + (padding * 2), logoHeight + (padding * 2))
-
-              // Draw logo
-              ctx.drawImage(logoImg, x, y, logoWidth, logoHeight)
-
-              const result = canvas.toDataURL("image/png", 1.0)
-              resolve(result)
-            } catch (error) {
-              console.error("Error drawing logo:", error)
-              resolve(qrDataUrl)
-            }
-          }
-
-          logoImg.onerror = (e) => {
-            console.error("Failed to load logo image:", e)
-            resolve(canvas.toDataURL("image/png", 1.0))
-          }
-
-          logoImg.src = logoImage
-        } catch (error) {
-          console.error("Error in QR image load:", error)
-          resolve(qrDataUrl)
+          const result = canvas.toDataURL("image/png", 1.0)
+          callback(result)
+        } catch (e) {
+          console.error("Error creating data URL", e)
+          callback(qrDataUrl)
         }
       }
 
-      qrImg.onerror = (e) => {
-        console.error("Failed to load QR image:", e)
-        resolve(qrDataUrl)
+      logoImg.onerror = (e) => {
+        console.error("Failed to load logo image:", e)
+        callback(canvas.toDataURL("image/png", 1.0))
       }
 
-      qrImg.src = qrDataUrl
-    })
+      logoImg.src = formData.logoImage as string
+    }
+
+    qrImg.onerror = (e) => {
+      console.error("Failed to load QR image:", e)
+      callback(qrDataUrl)
+    }
+
+    qrImg.src = qrDataUrl
   }
 
-  // Handle logo upload
   const handleLogoUpload = (e: React.ChangeEvent<HTMLInputElement>) => {
     const file = e.target.files?.[0]
     if (file) {
       const reader = new FileReader()
       reader.onload = (event) => {
-        setLogoImage(event.target?.result as string)
-        // Trigger QR regeneration after logo loads
+        handleInputChange("logoImage", event.target?.result as string)
         setTimeout(() => {
           if (generateQRContent()) {
             generateQR()
@@ -264,14 +240,12 @@ END:VCARD`
     }
   }
 
-  // Handle CSV upload
   const handleCSVUpload = (e: React.ChangeEvent<HTMLInputElement>) => {
     const file = e.target.files?.[0]
     if (file) {
       const reader = new FileReader()
       reader.onload = (event) => {
         const text = event.target?.result as string
-        // Parse CSV - assuming first column contains the data
         const lines = text.split('\n').map(line => {
           const firstColumn = line.split(',')[0].trim()
           return firstColumn
@@ -283,51 +257,63 @@ END:VCARD`
     }
   }
 
-  // Generate bulk QR codes
-  const generateBulkQR = async () => {
+  const generateBulkQR = () => {
     const items = bulkText.split('\n').filter(line => line.trim())
     if (items.length === 0) return
 
     setBulkLoading(true)
     setBulkQRCodes([])
 
-    try {
-      const qrCodes: Array<{ text: string, image: string }> = []
+    const qrCodes: Array<{ text: string, image: string }> = []
+    let currentIndex = 0
 
-      for (let i = 0; i < items.length; i++) {
-        const item = items[i]
-        const options: QROptions = {
-          width: size[0],
-          margin: margin[0],
-          errorCorrectionLevel: errorCorrection,
-          color: {
-            dark: isValidHexColor(foregroundColor) ? foregroundColor : "#000000",
-            light: transparentBg ? "#ffffff00" : (isValidHexColor(backgroundColor) ? backgroundColor : "#ffffff"),
-          },
-        }
-
-        let qrDataUrl = await QRCode.toDataURL(item.trim(), options as any) as unknown as string
-
-        // Apply logo if uploaded
-        if (logoImage) {
-          qrDataUrl = await applyLogoToQR(qrDataUrl)
-        }
-
-        const newQR = { text: item.trim(), image: qrDataUrl }
-        qrCodes.push(newQR)
-
-        // Update state progressively to show progress
-        setBulkQRCodes([...qrCodes])
+    const processNext = () => {
+      if (currentIndex >= items.length) {
+        setBulkLoading(false)
+        return
       }
-    } catch (error) {
-      console.error("Error generating bulk QR codes:", error)
-      alert("Error generating QR codes. Please check your inputs.")
-    } finally {
-      setBulkLoading(false)
+
+      const item = items[currentIndex]
+      const options: QROptions = {
+        width: formData.size[0],
+        margin: formData.margin[0],
+        errorCorrectionLevel: formData.errorCorrection,
+        color: {
+          dark: isValidHexColor(formData.foregroundColor) ? formData.foregroundColor : "#000000",
+          light: formData.transparentBg ? "#ffffff00" : (isValidHexColor(formData.backgroundColor) ? formData.backgroundColor : "#ffffff"),
+        },
+      }
+
+      QRCode.toDataURL(item.trim(), options as any, (err, url) => {
+        if (err) {
+          console.error("Error generating bulk QR:", err)
+          currentIndex++
+          processNext()
+          return
+        }
+
+        const finishItem = (finalUrl: string) => {
+          qrCodes.push({ text: item.trim(), image: finalUrl })
+          setBulkLoading(true)
+          setBulkQRCodes([...qrCodes])
+          currentIndex++
+          setTimeout(processNext, 0)
+        }
+
+        if (formData.logoImage && url) {
+          applyLogoToQR(url, finishItem)
+        } else if (url) {
+          finishItem(url)
+        } else {
+          currentIndex++
+          processNext()
+        }
+      })
     }
+
+    processNext()
   }
 
-  // Download all bulk QR codes as ZIP
   const downloadBulkQR = async () => {
     if (bulkQRCodes.length === 0) return
 
@@ -335,22 +321,18 @@ END:VCARD`
       const zip = new JSZip()
       const folder = zip.folder("qr-codes")
 
-      // Add each QR code to the ZIP
       for (let i = 0; i < bulkQRCodes.length; i++) {
         const qr = bulkQRCodes[i]
-        // Convert data URL to blob
         const base64Data = qr.image.split(',')[1]
         folder?.file(`qr-code-${i + 1}.png`, base64Data, { base64: true })
       }
 
-      // Generate ZIP file
       const content = await zip.generateAsync({
         type: "blob",
         compression: "DEFLATE",
         compressionOptions: { level: 6 }
       })
 
-      // Download ZIP file
       const link = document.createElement('a')
       link.href = URL.createObjectURL(content)
       link.download = `qr-codes-${new Date().getTime()}.zip`
@@ -362,7 +344,6 @@ END:VCARD`
     }
   }
 
-  // Download individual QR code from bulk
   const downloadIndividualQR = (image: string, index: number) => {
     const link = document.createElement('a')
     link.download = `qr-code-${index + 1}.png`
@@ -370,44 +351,47 @@ END:VCARD`
     link.click()
   }
 
-  // Download QR code
   const downloadQR = async () => {
     if (!qrImage) return
 
-    if (downloadFormat === "svg") {
+    if (formData.downloadFormat === "svg") {
       await downloadAsSVG()
     } else {
       const link = document.createElement("a")
-      link.download = `qr-code.${downloadFormat}`
+      link.download = `qr-code.${formData.downloadFormat}`
       link.href = qrImage
       link.click()
     }
   }
 
-  // Download as SVG
   const downloadAsSVG = async () => {
     const content = generateQRContent()
     if (!content) return
 
     try {
-      const svgString = await QRCode.toString(content, {
+      QRCode.toString(content, {
         type: "svg",
-        width: size[0],
-        margin: margin[0],
-        errorCorrectionLevel: errorCorrection,
+        width: formData.size[0],
+        margin: formData.margin[0],
+        errorCorrectionLevel: formData.errorCorrection,
         color: {
-          dark: foregroundColor,
-          light: backgroundColor,
+          dark: formData.foregroundColor,
+          light: formData.backgroundColor,
         },
+      }, (err, svgString) => {
+        if (err) {
+          console.error(err)
+          return
+        }
+        const blob = new Blob([svgString], { type: "image/svg+xml" })
+        const url = URL.createObjectURL(blob)
+        const link = document.createElement("a")
+        link.download = "qr-code.svg"
+        link.href = url
+        link.click()
+        URL.revokeObjectURL(url)
       })
 
-      const blob = new Blob([svgString], { type: "image/svg+xml" })
-      const url = URL.createObjectURL(blob)
-      const link = document.createElement("a")
-      link.download = "qr-code.svg"
-      link.href = url
-      link.click()
-      URL.revokeObjectURL(url)
     } catch (error) {
       console.error("Error generating SVG:", error)
     }
@@ -418,9 +402,7 @@ END:VCARD`
 
   return (
     <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
-      {/* LEFT COLUMN - INPUTS */}
       <div className="space-y-4">
-        {/* QR Type Selector */}
         <GCard className="p-4 border-2 border-primary/20">
           <h3 className="font-semibold text-sm mb-3 flex items-center gap-2 text-primary">
             <Sparkles className="h-4 w-4" />
@@ -470,39 +452,36 @@ END:VCARD`
               </GTabsTrigger>
             </GTabsList>
 
-            {/* URL GInput */}
             <GTabsContent value="url" className="space-y-2 mt-3">
               <GLabel htmlFor="url" className={labelClass}>Website URL</GLabel>
               <GInput
                 id="url"
                 placeholder="https://example.com"
-                value={url}
-                onChange={(e) => setUrl(e.target.value)}
+                value={formData.url}
+                onChange={(e) => handleInputChange("url", e.target.value)}
                 className={inputClass}
               />
             </GTabsContent>
 
-            {/* Text GInput */}
             <GTabsContent value="text" className="space-y-2 mt-3">
               <GLabel htmlFor="text" className={labelClass}>Plain Text</GLabel>
               <GTextarea
                 id="text"
                 placeholder="Enter any text..."
-                value={text}
-                onChange={(e) => setText(e.target.value)}
+                value={formData.text}
+                onChange={(e) => handleInputChange("text", e.target.value)}
                 className="min-h-[60px] border-2 border-primary/50 focus:border-primary text-sm"
               />
             </GTabsContent>
 
-            {/* WiFi QR */}
             <GTabsContent value="wifi" className="space-y-2 mt-3">
               <div className="space-y-2">
                 <GLabel htmlFor="wifi-ssid" className={labelClass}>Network Name (SSID) *</GLabel>
                 <GInput
                   id="wifi-ssid"
                   placeholder="My WiFi"
-                  value={wifiSSID}
-                  onChange={(e) => setWifiSSID(e.target.value)}
+                  value={formData.wifiSSID}
+                  onChange={(e) => handleInputChange("wifiSSID", e.target.value)}
                   className={inputClass}
                 />
               </div>
@@ -512,15 +491,15 @@ END:VCARD`
                   id="wifi-password"
                   type="password"
                   placeholder="Password"
-                  value={wifiPassword}
-                  onChange={(e) => setWifiPassword(e.target.value)}
+                  value={formData.wifiPassword}
+                  onChange={(e) => handleInputChange("wifiPassword", e.target.value)}
                   className={inputClass}
                 />
               </div>
               <div className="grid grid-cols-2 gap-2">
                 <div className="space-y-2">
                   <GLabel htmlFor="wifi-encryption" className={labelClass}>Encryption</GLabel>
-                  <GSelect value={wifiEncryption} onValueChange={(v) => setWifiEncryption(v as "WPA" | "WEP" | "nopass")}>
+                  <GSelect value={formData.wifiEncryption} onValueChange={(v) => handleInputChange("wifiEncryption", v)}>
                     <GSelectTrigger className="h-9 border-2 border-primary/50">
                       <GSelectValue />
                     </GSelectTrigger>
@@ -534,8 +513,8 @@ END:VCARD`
                 <div className="flex items-center gap-2 p-2 rounded-lg bg-background border border-primary/30 mt-6">
                   <GSwitch
                     id="wifi-hidden"
-                    checked={wifiHidden}
-                    onCheckedChange={setWifiHidden}
+                    checked={formData.wifiHidden}
+                    onCheckedChange={(v) => handleInputChange("wifiHidden", v)}
                     className="data-[state=checked]:bg-primary"
                   />
                   <GLabel htmlFor="wifi-hidden" className="text-sm cursor-pointer font-medium">Hidden Network</GLabel>
@@ -543,15 +522,14 @@ END:VCARD`
               </div>
             </GTabsContent>
 
-            {/* vCard QR */}
             <GTabsContent value="vcard" className="space-y-2 mt-3">
               <div className="space-y-2">
                 <GLabel htmlFor="vcard-name" className={labelClass}>Full Name *</GLabel>
                 <GInput
                   id="vcard-name"
                   placeholder="John Doe"
-                  value={vcardName}
-                  onChange={(e) => setVcardName(e.target.value)}
+                  value={formData.vcardName}
+                  onChange={(e) => handleInputChange("vcardName", e.target.value)}
                   className={inputClass}
                 />
               </div>
@@ -561,8 +539,8 @@ END:VCARD`
                   <GInput
                     id="vcard-phone"
                     placeholder="+1234567890"
-                    value={vcardPhone}
-                    onChange={(e) => setVcardPhone(e.target.value)}
+                    value={formData.vcardPhone}
+                    onChange={(e) => handleInputChange("vcardPhone", e.target.value)}
                     className={inputClass}
                   />
                 </div>
@@ -572,8 +550,8 @@ END:VCARD`
                     id="vcard-email"
                     type="email"
                     placeholder="email@example.com"
-                    value={vcardEmail}
-                    onChange={(e) => setVcardEmail(e.target.value)}
+                    value={formData.vcardEmail}
+                    onChange={(e) => handleInputChange("vcardEmail", e.target.value)}
                     className={inputClass}
                   />
                 </div>
@@ -583,14 +561,13 @@ END:VCARD`
                 <GInput
                   id="vcard-company"
                   placeholder="Company Name"
-                  value={vcardCompany}
-                  onChange={(e) => setVcardCompany(e.target.value)}
+                  value={formData.vcardCompany}
+                  onChange={(e) => handleInputChange("vcardCompany", e.target.value)}
                   className={inputClass}
                 />
               </div>
             </GTabsContent>
 
-            {/* Email QR */}
             <GTabsContent value="email" className="space-y-2 mt-3">
               <div className="space-y-2">
                 <GLabel htmlFor="email-to" className={labelClass}>Email Address *</GLabel>
@@ -598,8 +575,8 @@ END:VCARD`
                   id="email-to"
                   type="email"
                   placeholder="recipient@example.com"
-                  value={emailTo}
-                  onChange={(e) => setEmailTo(e.target.value)}
+                  value={formData.emailTo}
+                  onChange={(e) => handleInputChange("emailTo", e.target.value)}
                   className={inputClass}
                 />
               </div>
@@ -608,8 +585,8 @@ END:VCARD`
                 <GInput
                   id="email-subject"
                   placeholder="Email subject"
-                  value={emailSubject}
-                  onChange={(e) => setEmailSubject(e.target.value)}
+                  value={formData.emailSubject}
+                  onChange={(e) => handleInputChange("emailSubject", e.target.value)}
                   className={inputClass}
                 />
               </div>
@@ -618,22 +595,21 @@ END:VCARD`
                 <GTextarea
                   id="email-body"
                   placeholder="Message..."
-                  value={emailBody}
-                  onChange={(e) => setEmailBody(e.target.value)}
+                  value={formData.emailBody}
+                  onChange={(e) => handleInputChange("emailBody", e.target.value)}
                   className="min-h-[60px] border-2 border-primary/50 focus:border-primary text-sm"
                 />
               </div>
             </GTabsContent>
 
-            {/* SMS QR */}
             <GTabsContent value="sms" className="space-y-2 mt-3">
               <div className="space-y-2">
                 <GLabel htmlFor="sms-phone" className={labelClass}>Phone Number *</GLabel>
                 <GInput
                   id="sms-phone"
                   placeholder="+1234567890"
-                  value={smsPhone}
-                  onChange={(e) => setSmsPhone(e.target.value)}
+                  value={formData.smsPhone}
+                  onChange={(e) => handleInputChange("smsPhone", e.target.value)}
                   className={inputClass}
                 />
               </div>
@@ -642,22 +618,21 @@ END:VCARD`
                 <GTextarea
                   id="sms-message"
                   placeholder="SMS message..."
-                  value={smsMessage}
-                  onChange={(e) => setSmsMessage(e.target.value)}
+                  value={formData.smsMessage}
+                  onChange={(e) => handleInputChange("smsMessage", e.target.value)}
                   className="min-h-[60px] border-2 border-primary/50 focus:border-primary text-sm"
                 />
               </div>
             </GTabsContent>
 
-            {/* WhatsApp QR */}
             <GTabsContent value="whatsapp" className="space-y-2 mt-3">
               <div className="space-y-2">
                 <GLabel htmlFor="whatsapp-phone" className={labelClass}>Phone Number *</GLabel>
                 <GInput
                   id="whatsapp-phone"
                   placeholder="+1234567890"
-                  value={smsPhone}
-                  onChange={(e) => setSmsPhone(e.target.value)}
+                  value={formData.smsPhone}
+                  onChange={(e) => handleInputChange("smsPhone", e.target.value)}
                   className={inputClass}
                 />
               </div>
@@ -666,26 +641,24 @@ END:VCARD`
                 <GTextarea
                   id="whatsapp-message"
                   placeholder="Hello! I'd like to..."
-                  value={smsMessage}
-                  onChange={(e) => setSmsMessage(e.target.value)}
+                  value={formData.smsMessage}
+                  onChange={(e) => handleInputChange("smsMessage", e.target.value)}
                   className="min-h-[60px] border-2 border-primary/50 focus:border-primary text-sm"
                 />
               </div>
             </GTabsContent>
 
-            {/* Phone QR */}
             <GTabsContent value="phone" className="space-y-2 mt-3">
               <GLabel htmlFor="phone-number" className={labelClass}>Phone Number *</GLabel>
               <GInput
                 id="phone-number"
                 placeholder="+1234567890"
-                value={phoneNumber}
-                onChange={(e) => setPhoneNumber(e.target.value)}
+                value={formData.phoneNumber}
+                onChange={(e) => handleInputChange("phoneNumber", e.target.value)}
                 className={inputClass}
               />
             </GTabsContent>
 
-            {/* Location QR */}
             <GTabsContent value="location" className="space-y-2 mt-3">
               <div className="grid grid-cols-2 gap-2">
                 <div className="space-y-2">
@@ -693,8 +666,8 @@ END:VCARD`
                   <GInput
                     id="location-lat"
                     placeholder="40.7128"
-                    value={locationLat}
-                    onChange={(e) => setLocationLat(e.target.value)}
+                    value={formData.locationLat}
+                    onChange={(e) => handleInputChange("locationLat", e.target.value)}
                     className={inputClass}
                   />
                 </div>
@@ -703,21 +676,20 @@ END:VCARD`
                   <GInput
                     id="location-lng"
                     placeholder="-74.0060"
-                    value={locationLng}
-                    onChange={(e) => setLocationLng(e.target.value)}
+                    value={formData.locationLng}
+                    onChange={(e) => handleInputChange("locationLng", e.target.value)}
                     className={inputClass}
                   />
                 </div>
               </div>
             </GTabsContent>
 
-            {/* Bulk QR Generation */}
             <GTabsContent value="bulk" className="space-y-3 mt-3">
               <div className="p-3 rounded-lg bg-primary/10 border border-primary/30">
                 <p className="text-xs font-semibold text-foreground">
                   🚀 Generate hundreds of QR codes at once! Enter URLs/text (one per line) or upload CSV.
                 </p>
-                {logoImage && (
+                {formData.logoImage && (
                   <p className="text-xs text-foreground mt-2 flex items-center gap-1">
                     <ImageIcon className="h-3 w-3" />
                     Logo will be added to all QR codes
@@ -767,7 +739,6 @@ END:VCARD`
           </GTabs>
         </GCard>
 
-        {/* Customization Options */}
         <GCard className="p-4 border-2 border-primary/20">
           <h3 className="font-semibold text-sm mb-3 flex items-center gap-2 text-primary">
             <Zap className="h-4 w-4" />
@@ -775,20 +746,24 @@ END:VCARD`
           </h3>
 
           <div className="space-y-3">
-            {/* Colors */}
-            <div className="grid grid-cols-2 gap-3">
+            {formData.logoImage && (
+              <p className="text-xs text-foreground mb-2 flex items-center gap-1">
+                <ImageIcon className="h-3 w-3" />
+                Logo will be added to all QR codes
+              </p>
+            )}    <div className="grid grid-cols-2 gap-3">
               <div className="space-y-2">
                 <GLabel className={labelClass}>Foreground</GLabel>
                 <div className="flex gap-2">
                   <GInput
                     type="color"
-                    value={isValidHexColor(foregroundColor) ? foregroundColor : "#000000"}
-                    onChange={(e) => setForegroundColor(e.target.value)}
+                    value={isValidHexColor(formData.foregroundColor) ? formData.foregroundColor : "#000000"}
+                    onChange={(e) => handleInputChange("foregroundColor", e.target.value)}
                     className="h-9 w-12 p-1 border-2 border-primary/50"
                   />
                   <GInput
-                    value={foregroundColor}
-                    onChange={(e) => handleColorChange(e.target.value, setForegroundColor)}
+                    value={formData.foregroundColor}
+                    onChange={(e) => handleColorChange(e.target.value, "foregroundColor")}
                     className="h-9 flex-1 border-2 border-primary/50 text-xs"
                     placeholder="#000000"
                     maxLength={7}
@@ -801,18 +776,18 @@ END:VCARD`
                 <div className="flex gap-2">
                   <GInput
                     type="color"
-                    value={isValidHexColor(backgroundColor) ? backgroundColor : "#ffffff"}
-                    onChange={(e) => setBackgroundColor(e.target.value)}
+                    value={isValidHexColor(formData.backgroundColor) ? formData.backgroundColor : "#ffffff"}
+                    onChange={(e) => handleInputChange("backgroundColor", e.target.value)}
                     className="h-9 w-12 p-1 border-2 border-primary/50"
-                    disabled={transparentBg}
+                    disabled={formData.transparentBg}
                   />
                   <GInput
-                    value={backgroundColor}
-                    onChange={(e) => handleColorChange(e.target.value, setBackgroundColor)}
+                    value={formData.backgroundColor}
+                    onChange={(e) => handleColorChange(e.target.value, "backgroundColor")}
                     className="h-9 flex-1 border-2 border-primary/50 text-xs"
                     placeholder="#ffffff"
                     maxLength={7}
-                    disabled={transparentBg}
+                    disabled={formData.transparentBg}
                   />
                 </div>
               </div>
@@ -821,60 +796,73 @@ END:VCARD`
             <div className="flex items-center gap-3 p-2 rounded-lg bg-background border border-primary/30">
               <GSwitch
                 id="transparent-bg"
-                checked={transparentBg}
-                onCheckedChange={setTransparentBg}
+                checked={formData.transparentBg}
+                onCheckedChange={(v) => handleInputChange("transparentBg", v)}
                 className="data-[state=checked]:bg-primary"
               />
               <GLabel htmlFor="transparent-bg" className="text-sm cursor-pointer font-medium">Transparent Background</GLabel>
             </div>
 
-            {/* Size & Margin */}
             <div className="space-y-2 p-3 rounded-lg bg-background border border-primary/20">
-              <GLabel className="text-sm font-medium">Size: {size[0]}px</GLabel>
+              <GLabel className={labelClass}>Size ({formData.size[0]}px)</GLabel>
               <GSlider
-                min={200}
-                max={800}
+                min={100}
+                max={1000}
                 step={50}
-                value={size}
-                onValueChange={setSize}
-                className="py-3 [&_[role=slider]]:bg-primary [&_[role=slider]]:border-primary"
+                value={formData.size}
+                onValueChange={(v) => handleInputChange("size", v)}
+                className="py-4"
               />
             </div>
 
             <div className="space-y-2 p-3 rounded-lg bg-background border border-primary/20">
-              <GLabel className="text-sm font-medium">Margin: {margin[0]}</GLabel>
+              <GLabel className={labelClass}>Margin ({formData.margin[0]})</GLabel>
               <GSlider
                 min={0}
-                max={6}
+                max={10}
                 step={1}
-                value={margin}
-                onValueChange={setMargin}
-                className="py-3 [&_[role=slider]]:bg-primary [&_[role=slider]]:border-primary"
+                value={formData.margin}
+                onValueChange={(v) => handleInputChange("margin", v)}
+                className="py-4"
               />
             </div>
 
-            {/* Error Correction */}
-            <div className="space-y-2">
-              <GLabel className={labelClass}>Error Correction</GLabel>
-              <GSelect value={errorCorrection} onValueChange={(v) => setErrorCorrection(v as ErrorCorrectionLevel)}>
-                <GSelectTrigger className="h-9 border-2 border-primary/50">
-                  <GSelectValue />
-                </GSelectTrigger>
-                <GSelectContent>
-                  <GSelectItem value="L">Low (7%)</GSelectItem>
-                  <GSelectItem value="M">Medium (15%) {!logoImage && "✓"}</GSelectItem>
-                  <GSelectItem value="Q">Quartile (25%) {logoImage && "✓ Best for logos"}</GSelectItem>
-                  <GSelectItem value="H">High (30%)</GSelectItem>
-                </GSelectContent>
-              </GSelect>
-              {logoImage && errorCorrection === "L" && (
-                <p className="text-xs text-foreground">
-                  ⚠️ Use Q or H error correction for better logo visibility
-                </p>
-              )}
+            <div className="grid grid-cols-2 gap-3">
+              <div className="space-y-2">
+                <GLabel className={labelClass}>Error Correction</GLabel>
+                <GSelect value={formData.errorCorrection} onValueChange={(v) => handleInputChange("errorCorrection", v as ErrorCorrectionLevel)}>
+                  <GSelectTrigger className="h-9 border-2 border-primary/50">
+                    <GSelectValue />
+                  </GSelectTrigger>
+                  <GSelectContent>
+                    <GSelectItem value="L">Low (7%)</GSelectItem>
+                    <GSelectItem value="M">Medium (15%) {!formData.logoImage && "✓"}</GSelectItem>
+                    <GSelectItem value="Q">Quartile (25%) {formData.logoImage && "✓ Best for logos"}</GSelectItem>
+                    <GSelectItem value="H">High (30%)</GSelectItem>
+                  </GSelectContent>
+                </GSelect>
+                {formData.logoImage && formData.errorCorrection === "L" && (
+                  <p className="text-xs text-foreground">
+                    ⚠️ Use Q or H error correction for better logo visibility
+                  </p>
+                )}
+              </div>
+
+              <div className="space-y-2">
+                <GLabel className={labelClass}>Download Format</GLabel>
+                <GSelect value={formData.downloadFormat} onValueChange={(v) => handleInputChange("downloadFormat", v as DownloadFormat)}>
+                  <GSelectTrigger className="h-9 border-2 border-primary/50">
+                    <GSelectValue />
+                  </GSelectTrigger>
+                  <GSelectContent>
+                    <GSelectItem value="png">PNG (Recommended)</GSelectItem>
+                    <GSelectItem value="svg">SVG (Premium - FREE!)</GSelectItem>
+                    <GSelectItem value="jpg">JPG</GSelectItem>
+                  </GSelectContent>
+                </GSelect>
+              </div>
             </div>
 
-            {/* Logo Upload */}
             <div className="space-y-2">
               <GLabel className={labelClass}>
                 <ImageIcon className="h-3 w-3 inline mr-1" />
@@ -887,15 +875,15 @@ END:VCARD`
                 className="h-9 border-2 border-primary/50 text-xs file:mr-2 file:text-xs"
                 ref={fileInputRef}
               />
-              {logoImage && (
+              {formData.logoImage && (
                 <div className="space-y-2 p-3 rounded-lg bg-background border border-primary/20 mt-2">
                   <div className="flex items-center justify-between">
-                    <GLabel className="text-sm font-medium">Logo Size: {logoSize[0]}%</GLabel>
+                    <GLabel className="text-sm font-medium">Logo Size: {formData.logoSize[0]}%</GLabel>
                     <GButton
                       variant="ghost"
                       size="sm"
                       onClick={() => {
-                        setLogoImage(null)
+                        handleInputChange("logoImage", null)
                         if (fileInputRef.current) {
                           fileInputRef.current.value = ''
                         }
@@ -909,12 +897,12 @@ END:VCARD`
                     min={10}
                     max={35}
                     step={1}
-                    value={logoSize}
-                    onValueChange={setLogoSize}
+                    value={formData.logoSize}
+                    onValueChange={(v) => handleInputChange("logoSize", v)}
                     className="py-3 [&_[role=slider]]:bg-primary [&_[role=slider]]:border-primary"
                   />
                   <div className="mt-2 p-2 bg-muted rounded flex justify-center">
-                    <img src={logoImage} alt="Logo preview" className="max-w-[60px] max-h-[60px] object-contain" />
+                    <img src={formData.logoImage} alt="Logo preview" className="max-w-[60px] max-h-[60px] object-contain" />
                   </div>
                   <p className="text-xs text-muted-foreground text-center">
                     ✓ Logo will appear in center of QR code
@@ -923,22 +911,8 @@ END:VCARD`
               )}
             </div>
 
-            {/* Download Format */}
-            <div className="space-y-2">
-              <GLabel className={labelClass}>Download Format</GLabel>
-              <GSelect value={downloadFormat} onValueChange={(v) => setDownloadFormat(v as DownloadFormat)}>
-                <GSelectTrigger className="h-9 border-2 border-primary/50">
-                  <GSelectValue />
-                </GSelectTrigger>
-                <GSelectContent>
-                  <GSelectItem value="png">PNG (Recommended)</GSelectItem>
-                  <GSelectItem value="svg">SVG (Premium - FREE!)</GSelectItem>
-                  <GSelectItem value="jpg">JPG</GSelectItem>
-                </GSelectContent>
-              </GSelect>
-            </div>
 
-            {/* Bulk Generation GButton */}
+
             {qrType === "bulk" && (
               <div className="pt-3 border-t border-border">
                 <GButton
@@ -985,7 +959,6 @@ END:VCARD`
         </GCard>
       </div>
 
-      {/* RIGHT COLUMN - QR OUTPUT */}
       <div className="space-y-4">
         <GCard className="p-6 border-2 border-primary/20 sticky top-4 max-h-[calc(100vh-100px)] overflow-y-auto">
           <div className="flex items-center justify-between mb-4">
@@ -1007,10 +980,9 @@ END:VCARD`
             )}
           </div>
 
-          {/* Bulk QR Codes Display */}
           {qrType === "bulk" ? (
             <div className="space-y-3">
-              {bulkLoading ? (
+              {bulkLoading && bulkQRCodes.length === 0 ? (
                 <div className="flex flex-col items-center justify-center bg-muted p-8 rounded-lg min-h-[400px]">
                   <LoadingSpinner className="h-8 w-8 mb-3" />
                   <p className="text-sm text-muted-foreground">Generating QR codes...</p>
@@ -1049,7 +1021,7 @@ END:VCARD`
                     </GButton>
                     <div className="p-3 rounded-lg bg-green-50 dark:bg-green-950/30 border border-green-500/30">
                       <p className="text-xs font-medium text-center text-heading-accent">
-                        ✨ {bulkQRCodes.length} QR codes generated {logoImage && "• Logo included"} • No Watermark • 100% Free
+                        ✨ {bulkQRCodes.length} QR codes generated {formData.logoImage && "• Logo included"} • No Watermark • 100% Free
                       </p>
                     </div>
                   </div>
@@ -1063,7 +1035,6 @@ END:VCARD`
               )}
             </div>
           ) : (
-            /* Single QR Code Display */
             <>
               <div className="flex justify-center items-center bg-muted p-8 rounded-lg min-h-[400px]">
                 {loading ? (
@@ -1089,7 +1060,6 @@ END:VCARD`
             </>
           )}
 
-          {/* Feature Highlights */}
           <div className="mt-4 p-3 rounded-lg bg-blue-50 dark:bg-blue-950/30 border border-primary/30">
             <p className="text-xs font-semibold text-center mb-2">
               🎉 All Premium Features FREE

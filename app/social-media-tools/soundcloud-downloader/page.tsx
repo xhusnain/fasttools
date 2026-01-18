@@ -12,7 +12,13 @@ import {
     AlertTriangle
 } from "lucide-react"
 import { getCurrentYear } from "@/lib/utils"
-import { SoundcloudDownloader } from "@/components/social-media/soundcloud-downloader/soundcloud-downloader"
+import dynamic from "next/dynamic"
+
+const SoundcloudDownloader = dynamic(() => import("@/components/social-media/soundcloud-downloader/soundcloud-downloader").then(mod => mod.SoundcloudDownloader), {
+    loading: () => <div className="min-h-[600px] flex items-center justify-center">
+        <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-primary"></div>
+    </div>
+})
 
 const toolConfig = createToolConfig({
     toolName: "SoundCloud Downloader - Download SoundCloud to MP3 (320kbps)",
@@ -207,7 +213,7 @@ const toolConfig = createToolConfig({
         ],
 
         relatedTools: [
-            { name: "Spotify Downloader", href: "/social-media-tools/spotify-downloader" },
+
             { name: "YouTube Downloader", href: "/social-media-tools/youtube-downloader" },
             { name: "TikTok Downloader", href: "/social-media-tools/tiktok-downloader" }
         ]

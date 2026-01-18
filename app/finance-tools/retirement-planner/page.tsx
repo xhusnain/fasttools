@@ -1,4 +1,9 @@
-import { RetirementPlanner } from "@/components/finance/retirement-planner"
+import dynamic from "next/dynamic"
+import { ToolLoader } from "@/components/common/tool-loader"
+
+const RetirementPlanner = dynamic(() => import("@/components/finance/retirement-planner").then(mod => mod.RetirementPlanner), {
+  loading: () => <ToolLoader />
+})
 import { ToolPageLayout } from "@/components/common/tool-page-layout"
 import { createMetadata } from "@/lib/metadata-base"
 import { Calculator, PiggyBank, Receipt, CreditCard } from "lucide-react"

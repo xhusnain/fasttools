@@ -1,5 +1,12 @@
-import { CurrencyConverter } from "@/components/converters/currency-converter"
-import { Top10CurrenciesTable } from "@/components/finance/top10-currencies-table"
+import dynamic from "next/dynamic"
+import { ToolLoader } from "@/components/common/tool-loader"
+
+const CurrencyConverter = dynamic(() => import("@/components/converters/currency-converter").then(mod => mod.CurrencyConverter), {
+  loading: () => <ToolLoader />
+})
+const Top10CurrenciesTable = dynamic(() => import("@/components/finance/top10-currencies-table").then(mod => mod.Top10CurrenciesTable), {
+  loading: () => <ToolLoader />
+})
 import { ToolPageLayout } from "@/components/common/tool-page-layout"
 import { createToolConfig } from "@/lib/create-tool-config"
 import Link from "next/link"
@@ -9,7 +16,7 @@ import { Brain } from "lucide-react"
 const toolConfig = createToolConfig({
   toolName: "Currency Converter",
   description: "Convert currencies instantly with live exchange rates. Free currency converter with multiple currencies. Fast, accurate, mobile-friendly.",
-  metaTitle: "Currency Converter - Convert Currency Online (Free) 2026",
+  metaTitle: "Currency Converter - Convert Currency Online (Free)",
   metaDescription: "Free online Currency Converter. Convert currency rates instantly. Fast, accurate, and no signup required.",
   path: "/converters/currency",
 

@@ -116,7 +116,7 @@ export default function HexConverter() {
              <div className="font-mono text-lg font-medium text-slate-700">{rgb}</div>
           </div>
           <button 
-             onClick={() => navigator.clipboard.writeText(rgb)}
+             onClick={() => void navigator.clipboard.writeText(rgb)}
              className="p-2 hover:bg-slate-200 rounded transition"
              aria-label="Copy RGB"
           >

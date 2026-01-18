@@ -1,4 +1,9 @@
-import { DiscountCalculator } from "@/components/finance/discount-calculator"
+import dynamic from "next/dynamic"
+import { ToolLoader } from "@/components/common/tool-loader"
+
+const DiscountCalculator = dynamic(() => import("@/components/finance/discount-calculator").then(mod => mod.DiscountCalculator), {
+  loading: () => <ToolLoader />
+})
 import { ToolPageLayout } from "@/components/common/tool-page-layout"
 import { createMetadata } from "@/lib/metadata-base"
 import { Calculator, Percent, DollarSign, ShoppingCart, Tag, TrendingDown, Target, Zap, Shield, Globe, Clock, FileText, Palette, BarChart3, Smartphone, Settings, Eye, Code, Copy, ExternalLink, Users, Lightbulb, Search, CheckCircle, XCircle, Video, AlertCircle, Hash, ArrowRight, CreditCard, Banknote, Coins, TrendingUp, Receipt, Wallet, PiggyBank, ArrowUp, ArrowDown, Minus, Plus, Equal, HashIcon, HelpCircle, BookOpen, Star, Heart, Gift, PieChart, Award } from "lucide-react"
@@ -51,7 +56,7 @@ export const metadata: Metadata = {
   category: "Finance Tools",
   keywords: [
     "discount calculator",
-    `discount calculator ${getCurrentYear()}`,
+    `discount calculator`,
     "free discount calculator",
     "sale price calculator",
     "percentage discount calculator",
@@ -225,7 +230,7 @@ export default function DiscountCalculatorPage() {
   return (
     <ToolPageLayout
       header={{
-        title: `Free Discount Calculator – Calculate Sale Price & Savings (${getCurrentYear()})`,
+        title: `Free Discount Calculator – Calculate Sale Price & Savings ()`,
         description: "Calculate percentage discounts, fixed amounts, and final sale prices instantly. Our free discount calculator supports multiple discounts, tax calculations, and works with any currency. Perfect for shopping, business pricing, and financial planning.",
         titleSize: "medium",
         descriptionSize: "small",

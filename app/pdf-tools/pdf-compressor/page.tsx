@@ -1,6 +1,12 @@
-import { PDFCompressor } from "@/components/pdf/pdf-compressor"
+import dynamic from "next/dynamic"
 import { ToolPageLayout } from "@/components/common/tool-page-layout"
+import { ToolLoader } from "@/components/common/tool-loader"
 import { createToolConfig } from "@/lib/create-tool-config"
+
+const PDFCompressor = dynamic(
+  () => import("@/components/pdf/pdf-compressor").then(mod => mod.PDFCompressor),
+  { loading: () => <ToolLoader /> }
+)
 
 const toolConfig = createToolConfig({
   toolName: "PDF Compressor",

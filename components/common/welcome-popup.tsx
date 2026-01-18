@@ -84,40 +84,40 @@ export function WelcomePopup() {
                             id="welcome-popup-title"
                             className="mb-3 text-2xl font-bold tracking-tight text-foreground sm:text-3xl"
                         >
-                            🚀 New: Antigravity{" "}
-                            <span className="bg-gradient-to-r from-red-500 via-pink-500 to-cyan-500 bg-clip-text text-transparent">
-                                Agent Skills!
+                            🚀 New: UUID{" "}
+                            <span className="bg-gradient-to-r from-cyan-500 via-blue-500 to-indigo-500 bg-clip-text text-transparent">
+                                Generator Tool!
                             </span>
                         </h2>
 
                         {/* Description */}
                         <p className="mb-6 text-muted-foreground leading-relaxed">
-                            <strong>Latest Update!</strong> Generate custom <code>SKILL.md</code> files instantly for your Google Antigravity IDE agents.
+                            <strong>Global Launch!</strong> Generate secure v1, v4, and modern v7 UUIDs instantly. Essential for all developers.
                         </p>
 
                         {/* Features list */}
                         <div className="mb-6 flex flex-col gap-2 text-left">
                             <div className="flex items-center gap-3 rounded-lg bg-muted/50 px-4 py-2.5">
-                                <div className="flex h-8 w-8 items-center justify-center rounded-full bg-pink-500/20">
-                                    <Sparkles className="h-4 w-4 text-pink-500" />
+                                <div className="flex h-8 w-8 items-center justify-center rounded-full bg-cyan-500/20">
+                                    <Sparkles className="h-4 w-4 text-cyan-500" />
                                 </div>
-                                <span className="text-sm text-foreground">AI-Powered Skill Generation</span>
+                                <span className="text-sm text-foreground">Support for v1, v4, v6 & v7</span>
                             </div>
                             <div className="flex items-center gap-3 rounded-lg bg-muted/50 px-4 py-2.5">
-                                <div className="flex h-8 w-8 items-center justify-center rounded-full bg-cyan-500/20">
-                                    <Download className="h-4 w-4 text-cyan-500" />
+                                <div className="flex h-8 w-8 items-center justify-center rounded-full bg-blue-500/20">
+                                    <Download className="h-4 w-4 text-blue-500" />
                                 </div>
-                                <span className="text-sm text-foreground">Download standard SKILL.md files</span>
+                                <span className="text-sm text-foreground">Bulk Generate up to 50 IDs</span>
                             </div>
                         </div>
 
                         {/* CTA Button */}
                         <a
-                            href="/dev-tools/antigravity-skill-builder"
-                            className="group inline-flex w-full items-center justify-center gap-2 rounded-xl bg-gradient-to-r from-cyan-500 to-pink-500 px-6 py-3.5 text-base font-semibold text-white shadow-lg shadow-cyan-500/25 transition-all hover:shadow-xl hover:shadow-cyan-500/30 hover:scale-[1.02]"
+                            href="/dev-tools/uuid-generator"
+                            className="group inline-flex w-full items-center justify-center gap-2 rounded-xl bg-gradient-to-r from-cyan-500 to-blue-500 px-6 py-3.5 text-base font-semibold text-white shadow-lg shadow-cyan-500/25 transition-all hover:shadow-xl hover:shadow-cyan-500/30 hover:scale-[1.02]"
                             onClick={handleClose}
                         >
-                            Build Agent Skills
+                            Generate UUIDs
                             <ArrowRight className="h-5 w-5 transition-transform group-hover:translate-x-1" />
                         </a>
 

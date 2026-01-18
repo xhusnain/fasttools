@@ -106,7 +106,7 @@ const socialTools = [
 const toolConfig = createToolConfig({
   toolName: "Social Media Tools",
   description: "Free creator tools: YouTube thumbnail downloader, Instagram DP viewer, TikTok saver, YouTube tags, and link‑in‑bio.",
-  metaTitle: `Social Media Tools: YouTube, Instagram, TikTok | FastTools ${getCurrentYear()}`,
+  metaTitle: `Social Media Tools: YouTube, Instagram, TikTok | FastTools`,
   metaDescription: "Free creator tools: YouTube thumbnail downloader, Instagram DP viewer, TikTok saver, YouTube tags, and link‑in‑bio.",
   path: "/social-media-tools",
   keywords: [
@@ -128,7 +128,7 @@ const toolConfig = createToolConfig({
   ],
 
   header: {
-    title: `Social Media Tools & Content Helpers (${getCurrentYear()})`,
+    title: `Social Media Tools & Content Helpers ()`,
     description: "Advanced social media utilities crafted for modern content creators. Our collection includes intelligent thumbnail downloaders, profile analyzers, and hashtag generators that help elevate your social presence and drive meaningful engagement.",
     titleSize: "medium",
     descriptionSize: "small",

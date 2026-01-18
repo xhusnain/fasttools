@@ -112,7 +112,7 @@ export default function PaletteGen() {
                  key={i} 
                  className="h-full flex items-end justify-center pb-4 group cursor-pointer hover:flex-[1.5] transition-all duration-300"
                  style={{ backgroundColor: color }}
-                 onClick={() => navigator.clipboard.writeText(color)}
+                 onClick={() => void navigator.clipboard.writeText(color)}
                >
                   <div className="bg-white/90 px-2 py-1 rounded text-xs font-mono opacity-0 group-hover:opacity-100 transition-opacity flex items-center gap-1 shadow-sm">
                      {color} <Copy size={10} />

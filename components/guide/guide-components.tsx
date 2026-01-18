@@ -34,7 +34,7 @@ export function CodeExample({ title = "Example", code, language = "jsx", tryLink
     const [copied, setCopied] = React.useState(false);
 
     const copyCode = () => {
-        navigator.clipboard.writeText(code);
+        void navigator.clipboard.writeText(code);
         setCopied(true);
         setTimeout(() => setCopied(false), 2000);
     };
@@ -221,15 +221,15 @@ export function ChapterLink({ number, title, href, isActive, isCompleted }: Chap
         <Link
             href={href}
             className={`flex items-center gap-3 px-3 py-2 rounded-lg text-sm transition-colors ${isActive
-                    ? 'bg-primary text-primary-foreground font-medium'
-                    : 'text-muted-foreground hover:bg-muted hover:text-foreground'
+                ? 'bg-primary text-primary-foreground font-medium'
+                : 'text-muted-foreground hover:bg-muted hover:text-foreground'
                 }`}
         >
             <span className={`w-6 h-6 rounded-full flex items-center justify-center text-xs font-bold ${isCompleted
-                    ? 'bg-green-500 text-white'
-                    : isActive
-                        ? 'bg-primary-foreground text-primary'
-                        : 'bg-muted text-muted-foreground'
+                ? 'bg-green-500 text-white'
+                : isActive
+                    ? 'bg-primary-foreground text-primary'
+                    : 'bg-muted text-muted-foreground'
                 }`}>
                 {isCompleted ? '✓' : number}
             </span>

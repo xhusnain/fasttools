@@ -188,7 +188,7 @@ export default function OCRTool() {
                  <FileText size={18}/> Extracted Text
               </h3>
               <button 
-                onClick={() => navigator.clipboard.writeText(text)}
+                onClick={() => void navigator.clipboard.writeText(text)}
                 className="text-xs font-bold text-blue-600 hover:text-blue-700 uppercase"
               >
                 Copy Text

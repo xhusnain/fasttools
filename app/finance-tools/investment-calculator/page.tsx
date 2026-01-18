@@ -1,6 +1,11 @@
 import type { Metadata } from "next"
 import { ToolPageLayout } from "@/components/common/tool-page-layout"
-import InvestmentCalculator from "@/components/finance/investment-calculator"
+import dynamic from "next/dynamic"
+import { ToolLoader } from "@/components/common/tool-loader"
+
+const InvestmentCalculator = dynamic(() => import("@/components/finance/investment-calculator"), {
+  loading: () => <ToolLoader />
+})
 import { createMetadata } from "@/lib/metadata-base"
 
 const baseMetadata = createMetadata({

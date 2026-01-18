@@ -1,6 +1,11 @@
 import type { Metadata } from "next"
 import { ToolPageLayout } from "@/components/common/tool-page-layout"
-import { TimeDurationCalculator } from "@/components/calculators/time-duration-calculator"
+import dynamic from "next/dynamic"
+import { ToolLoader } from "@/components/common/tool-loader"
+
+const TimeDurationCalculator = dynamic(() => import("@/components/calculators/time-duration-calculator").then(mod => mod.TimeDurationCalculator), {
+  loading: () => <ToolLoader />
+})
 import { createMetadata } from "@/lib/metadata-base"
 import { Clock, Calculator, Target, TrendingUp, Globe, Calendar, Plus, Minus, Zap, BarChart3, CheckCircle, BookOpen, Users, Award, Copy, Brain } from "lucide-react"
 import { GTable } from "@/ui/gtable"

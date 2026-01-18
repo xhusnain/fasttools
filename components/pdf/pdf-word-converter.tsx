@@ -243,7 +243,7 @@ export function PDFWordConverter() {
   const downloadConvertedFile = () => {
     if (!convertedFileBytes || !convertedFileName) return
 
-    const blob = new Blob([convertedFileBytes], {
+    const blob = new Blob([convertedFileBytes as BlobPart], {
       type: mode === "pdf-to-word"
         ? "application/vnd.openxmlformats-officedocument.wordprocessingml.document"
         : "application/pdf"

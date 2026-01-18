@@ -3,21 +3,28 @@ import Link from 'next/link'
 import { Metadata } from 'next'
 import { createMetadata } from '@/lib/metadata-base'
 import { notFound } from 'next/navigation'
+import { slugifyCategory } from '@/lib/utils'
 
 export async function generateStaticParams() {
-    const posts = await getAllPosts()
+    const posts = getAllPosts()
     const categories = Array.from(new Set(posts.map(post =>
         post.category?.toLowerCase() || 'uncategorized'
     )))
 
     return categories.map((slug) => ({
-        slug: slug.replace(/\s+/g, '-'),
+        slug: slugifyCategory(slug),
     }))
 }
 
 export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata> {
     const { slug } = await params
-    const categoryName = slug.split('-').map(word => word.charAt(0).toUpperCase() + word.slice(1)).join(' ')
+    const posts = getAllPosts()
+
+    // Find the original category name to use proper casing (e.g. "SEO & Marketing" instead of "Seo And Marketing")
+    const originalCategory = Array.from(new Set(posts.map(p => p.category)))
+        .find(cat => cat && slugifyCategory(cat) === slug)
+
+    const categoryName = originalCategory || slug.split('-').map(word => word.charAt(0).toUpperCase() + word.slice(1)).join(' ')
 
     return createMetadata({
         title: `${categoryName} Articles - Blog`,
@@ -28,13 +35,19 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
 
 export default async function CategoryPage({ params }: { params: Promise<{ slug: string }> }) {
     const { slug } = await params
-    const posts = await getAllPosts()
+    const posts = getAllPosts()
 
-    // Normalize slug to match category format loosely
-    const categoryName = slug.replace(/-/g, ' ').toLowerCase()
+    // Find the original category name by matching the slug
+    // This allows us to handle "SEO & Marketing" -> "seo-and-marketing" correctly
+    const originalCategory = Array.from(new Set(posts.map(p => p.category)))
+        .find(cat => cat && slugifyCategory(cat) === slug)
+
+    if (!originalCategory) {
+        notFound()
+    }
 
     const categoryPosts = posts.filter(post =>
-        (post.category?.toLowerCase() || 'uncategorized') === categoryName
+        post.category === originalCategory
     )
 
     if (categoryPosts.length === 0) {

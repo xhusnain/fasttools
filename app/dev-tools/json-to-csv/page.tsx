@@ -1,11 +1,17 @@
+import dynamic from "next/dynamic"
 import { ToolPageLayout } from "@/components/common/tool-page-layout"
-import { JSONToCSV } from "@/components/dev-tools/json-to-csv"
+import { ToolLoader } from "@/components/common/tool-loader"
 import { createToolConfig } from "@/lib/create-tool-config"
+
+const JSONToCSV = dynamic(
+  () => import("@/components/dev-tools/json-to-csv").then(mod => mod.JSONToCSV),
+  { loading: () => <ToolLoader /> }
+)
 
 const toolConfig = createToolConfig({
   toolName: "JSON to CSV Converter",
   description: "Convert JSON to CSV online free with instant download. Transform JSON data to Excel-ready CSV format. Supports nested JSON & arrays. Best for developers.",
-  metaTitle: "JSON to CSV Converter - Convert JSON to CSV Online (Free) 2026",
+  metaTitle: "JSON to CSV Converter - Convert JSON to CSV Online (Free)",
   metaDescription: "Free online JSON to CSV Converter. Convert JSON files instantly. Fast, accurate, and no signup required.",
   path: "/dev-tools/json-to-csv",
 

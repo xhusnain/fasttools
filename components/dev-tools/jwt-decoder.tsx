@@ -281,7 +281,7 @@ export function JWTDecoder() {
     }
 
     const copyToClipboard = (text: string, id: string) => {
-        navigator.clipboard.writeText(text)
+        void navigator.clipboard.writeText(text)
         setCopied(id)
         setTimeout(() => setCopied(null), 2000)
     }
@@ -348,7 +348,7 @@ export function JWTDecoder() {
 
     // Copy share link
     const copyShareLink = () => {
-        navigator.clipboard.writeText(shareLink)
+        void navigator.clipboard.writeText(shareLink)
         setShareLinkCopied(true)
         setTimeout(() => setShareLinkCopied(false), 2000)
     }
@@ -632,7 +632,7 @@ class Program
 
     // Copy generated code
     const copyGeneratedCode = () => {
-        navigator.clipboard.writeText(generatedCode)
+        void navigator.clipboard.writeText(generatedCode)
         setCodeCopied(true)
         setTimeout(() => setCodeCopied(false), 2000)
     }
@@ -2823,7 +2823,7 @@ metadata:
                                     <GButton
                                         size="sm"
                                         onClick={() => {
-                                            navigator.clipboard.writeText(optimizedToken)
+                                            void navigator.clipboard.writeText(optimizedToken)
                                         }}
                                         className="bg-gradient-to-r from-cyan-500 to-blue-500 hover:from-cyan-600 hover:to-blue-600"
                                     >

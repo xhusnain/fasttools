@@ -15,12 +15,14 @@ export function MarkdownPreviewer() {
     setMarkdown("")
   }
 
-  const renderMarkdown = (md: string) => {
+  const renderMarkdown = (md: string): string => {
     try {
-      return marked(md, {
-        breaks: true,
-        gfm: true,
-      })
+      // Use marked.parse() for synchronous parsing (v4+) or fallback to marked() with type assertion
+      if ('parse' in marked && typeof (marked as any).parse === 'function') {
+        return (marked as any).parse(md, { breaks: true, gfm: true }) as string
+      }
+      // Fallback for older versions or when parse() is not available
+      return marked(md, { breaks: true, gfm: true }) as string
     } catch (error) {
       console.error("Markdown parsing error:", error)
       return "<p>Error parsing markdown</p>"

@@ -1,4 +1,9 @@
-import { TipCalculator } from "@/components/finance/tip-calculator"
+import dynamic from "next/dynamic"
+import { ToolLoader } from "@/components/common/tool-loader"
+
+const TipCalculator = dynamic(() => import("@/components/finance/tip-calculator").then(mod => mod.TipCalculator), {
+  loading: () => <ToolLoader />
+})
 import { ToolPageLayout } from "@/components/common/tool-page-layout"
 import { createMetadata } from "@/lib/metadata-base"
 import { Calculator, Users, Receipt, Globe } from "lucide-react"

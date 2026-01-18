@@ -7,6 +7,9 @@ export const metadata = createMetadata({
     title: "DMCA Copyright Policy",
     description: "FastTools respects the intellectual property rights of others. Learn about our DMCA policy and how to report copyright infringement.",
     path: "/dmca",
+    breadcrumbs: [
+        { label: "DMCA", href: "/dmca" }
+    ]
 })
 
 export default function DmcaPage() {

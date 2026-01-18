@@ -1,6 +1,12 @@
-import { KeywordDensityChecker } from "@/components/dev-tools/keyword-density-checker"
+import dynamic from "next/dynamic"
 import { ToolPageLayout } from "@/components/common/tool-page-layout"
+import { ToolLoader } from "@/components/common/tool-loader"
 import { createToolConfig } from "@/lib/create-tool-config"
+
+const KeywordDensityChecker = dynamic(
+  () => import("@/components/dev-tools/keyword-density-checker").then(mod => mod.KeywordDensityChecker),
+  { loading: () => <ToolLoader /> }
+)
 
 const toolConfig = createToolConfig({
   toolName: "Keyword Density Checker",
@@ -83,7 +89,7 @@ const toolConfig = createToolConfig({
         answer: "Yes, simply enter the URL and our tool will fetch the visible text content to analyze. This is perfect for analyzing competitors or auditing your own published pages without copy-pasting."
       },
       {
-        question: "Does keyword density still matter in 2025?",
+        question: "Does keyword density still matter in?",
         answer: "Yes, but differently than before. It's no longer about hitting a magic number to rank. It's about 'Topic Modeling'—ensuring your content covers a topic comprehensively. Density analysis helps ensure you haven't drifted off-topic or become repetitive."
       },
       {

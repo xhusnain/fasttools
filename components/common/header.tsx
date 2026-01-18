@@ -103,7 +103,7 @@ export function Header() {
 
               <Link
                 href="/live-tv"
-                className="lg:hidden flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-red-600/10 text-red-600 hover:bg-red-600/20 transition-colors mr-1"
+                className="lg:hidden flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-red-100 dark:bg-red-900/30 text-red-700 dark:text-red-400 hover:bg-red-200 dark:hover:bg-red-900/50 transition-colors mr-1"
                 aria-label="Watch Live TV"
               >
                 <div className="relative flex h-2 w-2">

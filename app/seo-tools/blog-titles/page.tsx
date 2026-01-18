@@ -1,12 +1,18 @@
-import { BlogTitleGenerator } from "@/components/ai/blog-title-generator"
+import dynamic from "next/dynamic"
 import { ToolPageLayout } from "@/components/common/tool-page-layout"
+import { ToolLoader } from "@/components/common/tool-loader"
 import { createToolConfig } from "@/lib/create-tool-config"
+
+const BlogTitleGenerator = dynamic(
+  () => import("@/components/ai/blog-title-generator").then(mod => mod.BlogTitleGenerator),
+  { loading: () => <ToolLoader /> }
+)
 
 const toolConfig = createToolConfig({
   toolName: "Blog Title Generator",
   description: "Generate catchy, SEO-friendly blog titles and headlines with AI. Boost click-through rates and search rankings instantly.",
   metaTitle: "AI Blog Title Generator | Free SEO Headlines Generator",
-  metaDescription: "Professional AI-powered blog title generator for content marketing. Create SEO-friendly headlines, catchy blog titles, and engaging article titles that boost click-through rates.",
+  metaDescription: "Generate catchy, SEO-friendly blog titles & headlines with AI. Boost CTR and rankings with professional article title ideas.",
   path: "/seo-tools/blog-titles",
 
   header: {

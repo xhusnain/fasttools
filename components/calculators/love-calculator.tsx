@@ -131,7 +131,7 @@ export function LoveCalculator() {
   const copyResult = () => {
     if (!result) return
     const text = `${name1} + ${name2} = ${result.percentage}% Love Match! ${result.emoji}`
-    navigator.clipboard.writeText(text)
+    void navigator.clipboard.writeText(text)
     setCopied(true)
     setTimeout(() => setCopied(false), 2000)
   }
@@ -163,7 +163,7 @@ export function LoveCalculator() {
       })
     } else {
       // Fallback: copy to clipboard
-      navigator.clipboard.writeText(text)
+      void navigator.clipboard.writeText(text)
       setCopied(true)
       setTimeout(() => setCopied(false), 3000)
     }

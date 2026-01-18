@@ -37,15 +37,17 @@ interface PregnancyResult {
 
 export default function PregnancyCalculator() {
   const [calculationMethod, setCalculationMethod] = useState<"dueDate" | "lmp" | "ultrasound" | "conception" | "ivf">("dueDate")
-  const [dueDate, setDueDate] = useState("")
-  const [lmpDate, setLmpDate] = useState("")
-  const [ultrasoundDate, setUltrasoundDate] = useState("")
-  const [gestationalAge, setGestationalAge] = useState("")
-  const [conceptionDate, setConceptionDate] = useState("")
-  const [ivfDate, setIvfDate] = useState("")
-  const [currentWeight, setCurrentWeight] = useState("")
-  const [prePregnancyWeight, setPrePregnancyWeight] = useState("")
-  const [height, setHeight] = useState("")
+  const [formData, setFormData] = useState({
+    dueDate: "",
+    lmpDate: "",
+    ultrasoundDate: "",
+    gestationalAge: "",
+    conceptionDate: "",
+    ivfDate: "",
+    currentWeight: "",
+    prePregnancyWeight: "",
+    height: ""
+  })
   const [result, setResult] = useState<PregnancyResult | null>(null)
   const [history, setHistory] = useState<PregnancyResult[]>([])
 
@@ -55,32 +57,32 @@ export default function PregnancyCalculator() {
     let gestationalAgeWeeks: number
 
     console.log("Calculating pregnancy with method:", calculationMethod)
-    console.log("Due date:", dueDate)
-    console.log("Pre-pregnancy weight:", prePregnancyWeight)
-    console.log("Height:", height)
+    console.log("Due date:", formData.dueDate)
+    console.log("Pre-pregnancy weight:", formData.prePregnancyWeight)
+    console.log("Height:", formData.height)
 
     try {
-      if (calculationMethod === "dueDate" && dueDate) {
-        calculatedDueDate = new Date(dueDate)
+      if (calculationMethod === "dueDate" && formData.dueDate) {
+        calculatedDueDate = new Date(formData.dueDate)
         calculatedConceptionDate = new Date(calculatedDueDate.getTime() - (266 * 24 * 60 * 60 * 1000))
         gestationalAgeWeeks = Math.floor((new Date().getTime() - calculatedConceptionDate.getTime()) / (7 * 24 * 60 * 60 * 1000))
-      } else if (calculationMethod === "lmp" && lmpDate) {
-        const lmp = new Date(lmpDate)
+      } else if (calculationMethod === "lmp" && formData.lmpDate) {
+        const lmp = new Date(formData.lmpDate)
         calculatedConceptionDate = new Date(lmp.getTime() + (14 * 24 * 60 * 60 * 1000))
         calculatedDueDate = new Date(lmp.getTime() + (280 * 24 * 60 * 60 * 1000))
         gestationalAgeWeeks = Math.floor((new Date().getTime() - lmp.getTime()) / (7 * 24 * 60 * 60 * 1000))
-      } else if (calculationMethod === "ultrasound" && ultrasoundDate && gestationalAge) {
-        const ultrasound = new Date(ultrasoundDate)
-        const ageWeeks = parseInt(gestationalAge)
+      } else if (calculationMethod === "ultrasound" && formData.ultrasoundDate && formData.gestationalAge) {
+        const ultrasound = new Date(formData.ultrasoundDate)
+        const ageWeeks = parseInt(formData.gestationalAge)
         calculatedConceptionDate = new Date(ultrasound.getTime() - (ageWeeks * 7 * 24 * 60 * 60 * 1000))
         calculatedDueDate = new Date(calculatedConceptionDate.getTime() + (266 * 24 * 60 * 60 * 1000))
         gestationalAgeWeeks = ageWeeks + Math.floor((new Date().getTime() - ultrasound.getTime()) / (7 * 24 * 60 * 60 * 1000))
-      } else if (calculationMethod === "conception" && conceptionDate) {
-        calculatedConceptionDate = new Date(conceptionDate)
+      } else if (calculationMethod === "conception" && formData.conceptionDate) {
+        calculatedConceptionDate = new Date(formData.conceptionDate)
         calculatedDueDate = new Date(calculatedConceptionDate.getTime() + (266 * 24 * 60 * 60 * 1000))
         gestationalAgeWeeks = Math.floor((new Date().getTime() - calculatedConceptionDate.getTime()) / (7 * 24 * 60 * 60 * 1000))
-      } else if (calculationMethod === "ivf" && ivfDate) {
-        const ivf = new Date(ivfDate)
+      } else if (calculationMethod === "ivf" && formData.ivfDate) {
+        const ivf = new Date(formData.ivfDate)
         calculatedConceptionDate = ivf
         calculatedDueDate = new Date(ivf.getTime() + (266 * 24 * 60 * 60 * 1000))
         gestationalAgeWeeks = Math.floor((new Date().getTime() - ivf.getTime()) / (7 * 24 * 60 * 60 * 1000))
@@ -263,8 +265,8 @@ export default function PregnancyCalculator() {
       }
 
       // Calculate weight gain recommendation
-      const preWeight = parseFloat(prePregnancyWeight)
-      const heightInMeters = parseFloat(height) / 100
+      const preWeight = parseFloat(formData.prePregnancyWeight)
+      const heightInMeters = parseFloat(formData.height) / 100
       const bmi = preWeight / (heightInMeters * heightInMeters)
 
       let weightGainRecommendation = { min: 0, max: 0, category: "" }
@@ -303,15 +305,17 @@ export default function PregnancyCalculator() {
   }
 
   const clearAll = () => {
-    setDueDate("")
-    setLmpDate("")
-    setUltrasoundDate("")
-    setGestationalAge("")
-    setConceptionDate("")
-    setIvfDate("")
-    setCurrentWeight("")
-    setPrePregnancyWeight("")
-    setHeight("")
+    setFormData({
+      dueDate: "",
+      lmpDate: "",
+      ultrasoundDate: "",
+      gestationalAge: "",
+      conceptionDate: "",
+      ivfDate: "",
+      currentWeight: "",
+      prePregnancyWeight: "",
+      height: ""
+    })
     setResult(null)
   }
 
@@ -324,7 +328,7 @@ Current Gestational Age: ${result.weeksPregnant} weeks, ${result.daysPregnant} d
 Trimester: ${result.trimester}
 Pregnancy Progress: ${result.pregnancyProgress.toFixed(1)}%
 Next Milestone: ${result.nextMilestone}`
-      navigator.clipboard.writeText(text)
+      void navigator.clipboard.writeText(text)
     }
   }
 
@@ -370,8 +374,8 @@ Next Milestone: ${result.nextMilestone}`
                 <GInput
                   id="dueDate"
                   type="date"
-                  value={dueDate}
-                  onChange={(e) => setDueDate(e.target.value)}
+                  value={formData.dueDate}
+                  onChange={(e) => setFormData(prev => ({ ...prev, dueDate: e.target.value }))}
                   className="h-7 text-xs border-border bg-card text-foreground focus-visible:ring-primary focus:border-primary"
                 />
               </div>
@@ -383,8 +387,8 @@ Next Milestone: ${result.nextMilestone}`
                 <GInput
                   id="lmpDate"
                   type="date"
-                  value={lmpDate}
-                  onChange={(e) => setLmpDate(e.target.value)}
+                  value={formData.lmpDate}
+                  onChange={(e) => setFormData(prev => ({ ...prev, lmpDate: e.target.value }))}
                   className="h-7 text-xs border-border bg-card text-foreground focus-visible:ring-primary focus:border-primary"
                 />
               </div>
@@ -397,8 +401,8 @@ Next Milestone: ${result.nextMilestone}`
                   <GInput
                     id="ultrasoundDate"
                     type="date"
-                    value={ultrasoundDate}
-                    onChange={(e) => setUltrasoundDate(e.target.value)}
+                    value={formData.ultrasoundDate}
+                    onChange={(e) => setFormData(prev => ({ ...prev, ultrasoundDate: e.target.value }))}
                     className="h-7 text-xs border-border bg-card text-foreground focus-visible:ring-primary focus:border-primary"
                   />
                 </div>
@@ -408,8 +412,8 @@ Next Milestone: ${result.nextMilestone}`
                     id="gestationalAge"
                     type="number"
                     placeholder="e.g., 12"
-                    value={gestationalAge}
-                    onChange={(e) => setGestationalAge(e.target.value)}
+                    value={formData.gestationalAge}
+                    onChange={(e) => setFormData(prev => ({ ...prev, gestationalAge: e.target.value }))}
                     className="h-7 text-xs border-border bg-card text-foreground focus-visible:ring-primary focus:border-primary"
                   />
                 </div>
@@ -422,8 +426,8 @@ Next Milestone: ${result.nextMilestone}`
                 <GInput
                   id="conceptionDate"
                   type="date"
-                  value={conceptionDate}
-                  onChange={(e) => setConceptionDate(e.target.value)}
+                  value={formData.conceptionDate}
+                  onChange={(e) => setFormData(prev => ({ ...prev, conceptionDate: e.target.value }))}
                   className="h-7 text-xs border-border bg-card text-foreground focus-visible:ring-primary focus:border-primary"
                 />
               </div>
@@ -435,8 +439,8 @@ Next Milestone: ${result.nextMilestone}`
                 <GInput
                   id="ivfDate"
                   type="date"
-                  value={ivfDate}
-                  onChange={(e) => setIvfDate(e.target.value)}
+                  value={formData.ivfDate}
+                  onChange={(e) => setFormData(prev => ({ ...prev, ivfDate: e.target.value }))}
                   className="h-7 text-xs border-border bg-card text-foreground focus-visible:ring-primary focus:border-primary"
                 />
               </div>
@@ -450,8 +454,8 @@ Next Milestone: ${result.nextMilestone}`
                   id="prePregnancyWeight"
                   type="number"
                   placeholder="e.g., 65"
-                  value={prePregnancyWeight}
-                  onChange={(e) => setPrePregnancyWeight(e.target.value)}
+                  value={formData.prePregnancyWeight}
+                  onChange={(e) => setFormData(prev => ({ ...prev, prePregnancyWeight: e.target.value }))}
                   className="h-7 text-xs border-border bg-card text-foreground focus-visible:ring-primary focus:border-primary"
                 />
               </div>
@@ -461,8 +465,8 @@ Next Milestone: ${result.nextMilestone}`
                   id="currentWeight"
                   type="number"
                   placeholder="e.g., 68"
-                  value={currentWeight}
-                  onChange={(e) => setCurrentWeight(e.target.value)}
+                  value={formData.currentWeight}
+                  onChange={(e) => setFormData(prev => ({ ...prev, currentWeight: e.target.value }))}
                   className="h-7 text-xs border-border bg-card text-foreground focus-visible:ring-primary focus:border-primary"
                 />
               </div>
@@ -472,8 +476,8 @@ Next Milestone: ${result.nextMilestone}`
                   id="height"
                   type="number"
                   placeholder="e.g., 165"
-                  value={height}
-                  onChange={(e) => setHeight(e.target.value)}
+                  value={formData.height}
+                  onChange={(e) => setFormData(prev => ({ ...prev, height: e.target.value }))}
                   className="h-7 text-xs border-border bg-card text-foreground focus-visible:ring-primary focus:border-primary"
                 />
               </div>
@@ -562,7 +566,7 @@ Next Milestone: ${result.nextMilestone}`
           </GCard>
 
           {/* Weight Gain Recommendation */}
-          {prePregnancyWeight && height && (
+          {formData.prePregnancyWeight && formData.height && (
             <GCard>
               <GCardHeader>
                 <GCardTitle className="flex items-center gap-2">

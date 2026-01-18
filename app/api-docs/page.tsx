@@ -15,12 +15,18 @@ import {
 } from "lucide-react"
 export const metadata = createMetadata({
   title: "Free RESTful API for Developers | FastTools",
-  description: "Access free, reliable, and easy-to-use RESTful APIs for your applications. Get started with our developer-friendly API documentation, including a free currency conversion API. No API key required to start.",
+  description: "Free, reliable RESTful APIs for developers. Access currency conversion, image tools & more. No API key required to start building.",
   path: "/api-docs",
   ogImageAlt: "Developer documentation for free RESTful APIs from FastTools.",
   twitterCreator: "@FastTools",
   twitterTitle: "Free RESTful API for Developers | FastTools",
   twitterDescription: "Access free, reliable, and easy-to-use RESTful APIs. Get started in minutes with our developer-friendly documentation.",
+  breadcrumbs: [
+      {
+        "label": "API Docs",
+        "href": "/api-docs"
+      }
+    ]
 });
 
 const apis = [

@@ -547,17 +547,17 @@ const colorMap = {
 
 const toolConfig = createToolConfig({
   toolName: "Online Calculators - Free Finance, Health & Math Tools",
-  description: "Access Online Calculators - Free Finance, Health & Math Tools for everyday use. Get instant, accurate results with no signup required. Updated for 2025.",
+  description: "Access Online Calculators - Free Finance, Health & Math Tools for everyday use. Get instant, accurate results with no signup required. Updated for.",
   path: "/calculator",
   header: {
     title: "Online Calculators - Free Finance, Health & Math Tools",
-    description: "Access Online Calculators - Free Finance, Health & Math Tools for everyday use. Get instant, accurate results with no signup required. Updated for 2025.",
+    description: "Access Online Calculators - Free Finance, Health & Math Tools for everyday use. Get instant, accurate results with no signup required. Updated for.",
     titleSize: "medium",
     descriptionSize: "small",
     color: "blue"
   },
   content: {
-    overview: "Online Calculators - Free Finance, Health & Math Tools are essential for precision and efficiency. Discover our comprehensive collection of free calculation tools in 2025. Our professional-grade calculators cover financial planning, health and fitness, mathematics, science, and everyday calculations. Whether you need a mortgage calculator, BMI calculator, scientific calculator, or currency converter, our tools provide instant, accurate results without registration.",
+    overview: "Online Calculators - Free Finance, Health & Math Tools are essential for precision and efficiency. Discover our comprehensive collection of free calculation tools in. Our professional-grade calculators cover financial planning, health and fitness, mathematics, science, and everyday calculations. Whether you need a mortgage calculator, BMI calculator, scientific calculator, or currency converter, our tools provide instant, accurate results without registration.",
     howToSteps: [
       "Select Your Tool: Browse our categorized collection or use the search bar to find the specific calculator for your needs.",
       "Input Your Data: Enter the required values into the clear, labeled fields. Most tools support various unit types for flexibility.",

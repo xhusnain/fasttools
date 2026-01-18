@@ -1,6 +1,12 @@
-import { PDFUnlocker } from "@/components/pdf/pdf-unlocker"
+import dynamic from "next/dynamic"
 import { ToolPageLayout } from "@/components/common/tool-page-layout"
+import { ToolLoader } from "@/components/common/tool-loader"
 import { createToolConfig } from "@/lib/create-tool-config"
+
+const PDFUnlocker = dynamic(
+  () => import("@/components/pdf/pdf-unlocker").then(mod => mod.PDFUnlocker),
+  { loading: () => <ToolLoader /> }
+)
 
 const toolConfig = createToolConfig({
   toolName: "PDF Unlocker",
@@ -55,7 +61,7 @@ const toolConfig = createToolConfig({
       "Form Filling: Unlock PDFs to enable form filling in restricted documents",
       "Workflow Automation: Remove password requirements from PDFs for automated processing pipelines",
       "Document Migration: Unlock protected PDFs before migrating to new document management systems",
-      "Compliance Updates: Remove outdated protection to update documents for regulatory compliance", ,
+      "Compliance Updates: Remove outdated protection to update documents for regulatory compliance",
       "Personal Documents: Unlock your own protected financial records, tax documents, or legal files for easier access"
     ],
 

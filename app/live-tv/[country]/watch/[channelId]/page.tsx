@@ -18,7 +18,7 @@ interface WatchPageProps {
 }
 
 export async function generateMetadata({ params }: WatchPageProps): Promise<Metadata> {
-    const { channelId } = await params;
+    const { channelId } = params;
     const channels = await getAllChannels();
     const channel = channels.find(c => c.id === channelId);
 
@@ -44,7 +44,7 @@ export async function generateMetadata({ params }: WatchPageProps): Promise<Meta
 }
 
 export default async function WatchPage({ params }: WatchPageProps) {
-    const { country, channelId } = await params;
+    const { country, channelId } = params;
     const channels = await getAllChannels();
     const channel = channels.find(c => c.id === channelId);
 

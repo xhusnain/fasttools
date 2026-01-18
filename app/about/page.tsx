@@ -14,9 +14,12 @@ import Link from "next/link"
 import { createMetadata } from "@/lib/metadata-base"
 
 export const metadata = createMetadata({
-  title: "About FastTools",
+  title: "About Us",
   description: "Discover FastTools, the comprehensive free online tools platform with 1000+ AI, converter, calculator, SEO and productivity utilities.",
   path: "/about",
+  breadcrumbs: [
+    { label: "About", href: "/about" }
+  ]
 })
 
 export default function AboutPage() {
@@ -168,7 +171,7 @@ export default function AboutPage() {
 
               <div className="space-y-6 text-foreground text-base md:text-lg leading-relaxed">
                 <p>
-                  FastTools was born in 2024 from a simple but powerful observation: finding reliable, genuinely free online tools shouldn't be this hard. We noticed that millions of people worldwide struggle daily with broken links, fake free tools that require credit cards, outdated software, and cluttered interfaces filled with advertisements. Something had to change.
+                  FastTools was born in from a simple but powerful observation: finding reliable, genuinely free online tools shouldn't be this hard. We noticed that millions of people worldwide struggle daily with broken links, fake free tools that require credit cards, outdated software, and cluttered interfaces filled with advertisements. Something had to change.
                 </p>
 
                 <p>
@@ -208,7 +211,7 @@ export default function AboutPage() {
                 <h3 className="text-xl md:text-2xl font-bold text-heading-accent mt-8 mb-4">How FastTools Serves Millions Across 190+ Countries</h3>
 
                 <p>
-                  From its founding in 2024, FastTools has grown rapidly to serve millions of users across 190+ countries. This global reach reflects universal need for reliable, accessible productivity tools. A student in India calculating GPA needs the same accurate formula as a university applicant in the United States. A freelancer in Brazil converting currency needs the same real-time exchange rates as an international trader in Singapore. FastTools delivers this consistency.
+                  From its founding in, FastTools has grown rapidly to serve millions of users across 190+ countries. This global reach reflects universal need for reliable, accessible productivity tools. A student in India calculating GPA needs the same accurate formula as a university applicant in the United States. A freelancer in Brazil converting currency needs the same real-time exchange rates as an international trader in Singapore. FastTools delivers this consistency.
                 </p>
 
                 <p>

@@ -106,7 +106,7 @@ export default function MetaGenerator() {
   `.trim()
 
   const handleCopy = () => {
-    navigator.clipboard.writeText(code)
+    void navigator.clipboard.writeText(code)
     setCopied(true)
     setTimeout(() => setCopied(false), 2000)
   }

@@ -29,6 +29,12 @@ export const metadata = createMetadata({
   twitterCreator: "@FastTools",
   twitterTitle: "Universal Video Downloader - Save from YouTube, TikTok, & Meta",
   twitterDescription: "The #1 Universal Video Downloader. Save videos from YouTube, TikTok (No Watermark), Instagram, Facebook, and X in HD/4K.",
+  breadcrumbs: [
+      {
+        "label": "Downloaders",
+        "href": "/downloaders"
+      }
+    ]
 });
 
 const downloaders = [

@@ -236,7 +236,7 @@ Conception Range: ${result.conceptionRange.start.toLocaleDateString()} - ${resul
 Current Gestational Age: ${result.weeksPregnant} weeks, ${result.daysPregnant} days
 Trimester: ${result.trimester}
 Next Milestone: ${result.nextMilestone}`
-      navigator.clipboard.writeText(text)
+      void navigator.clipboard.writeText(text)
     }
   }
 

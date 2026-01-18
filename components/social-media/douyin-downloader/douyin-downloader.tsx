@@ -9,6 +9,7 @@ import { GAlert, GAlertDescription } from "@/ui/galert"
 
 import { Download, Loader2, AlertCircle, Video, Music } from "lucide-react"
 import { API } from "@/services/api/api.service"
+import { downloadBlob } from "@/lib/download-utils"
 
 export interface DouyinDownloaderProps {
     compact?: boolean
@@ -116,36 +117,7 @@ export function DouyinDownloader({ compact = false }: DouyinDownloaderProps) {
         }
     }
 
-    const downloadFile = async (fileUrl: string, filename: string) => {
-        try {
-            // Fetch the file as a blob to handle cross-origin downloads
-            const response = await fetch(fileUrl)
-            const blob = await response.blob()
 
-            // Create a blob URL
-            const blobUrl = URL.createObjectURL(blob)
-
-            // Create and trigger download
-            const link = document.createElement("a")
-            link.href = blobUrl
-            link.download = filename
-            document.body.appendChild(link)
-            link.click()
-            document.body.removeChild(link)
-
-            // Clean up the blob URL
-            setTimeout(() => URL.revokeObjectURL(blobUrl), 100)
-        } catch (error) {
-            // Fallback to direct link if fetch fails
-            const link = document.createElement("a")
-            link.href = fileUrl
-            link.download = filename
-            link.target = "_blank"
-            document.body.appendChild(link)
-            link.click()
-            document.body.removeChild(link)
-        }
-    }
 
     return (
         <div className="w-full max-w-4xl mx-auto space-y-4 sm:space-y-6">
@@ -241,7 +213,7 @@ export function DouyinDownloader({ compact = false }: DouyinDownloaderProps) {
                                                         {result.video.map((video: any, index: number) => (
                                                             <GButton
                                                                 key={index}
-                                                                onClick={async () => await downloadFile(video.url, `douyin-video-${index + 1}-${Date.now()}.mp4`)}
+                                                                onClick={async () => await downloadBlob(video.url, `douyin-video-${index + 1}-${Date.now()}.mp4`)}
                                                                 className="w-full h-12 text-base justify-between"
                                                                 size="lg"
                                                                 variant={index === 0 ? "default" : "secondary"}
@@ -257,7 +229,7 @@ export function DouyinDownloader({ compact = false }: DouyinDownloaderProps) {
                                                 ) : result.video.length === 1 ? (
                                                     // Single video (legacy string format)
                                                     <GButton
-                                                        onClick={async () => await downloadFile(result.video[0], `douyin-video-${Date.now()}.mp4`)}
+                                                        onClick={async () => await downloadBlob(result.video[0], `douyin-video-${Date.now()}.mp4`)}
                                                         className="w-full h-12"
                                                         size="lg"
                                                     >
@@ -286,7 +258,7 @@ export function DouyinDownloader({ compact = false }: DouyinDownloaderProps) {
                                                         <GButton
                                                             onClick={async () => {
                                                                 for (let index = 0; index < result.video.length; index++) {
-                                                                    await downloadFile(result.video[index], `douyin-image-${index + 1}-${Date.now()}.jpg`)
+                                                                    await downloadBlob(result.video[index], `douyin-image-${index + 1}-${Date.now()}.jpg`)
                                                                     if (index < result.video.length - 1) {
                                                                         await new Promise(resolve => setTimeout(resolve, 500))
                                                                     }
@@ -305,7 +277,7 @@ export function DouyinDownloader({ compact = false }: DouyinDownloaderProps) {
                                         {/* Handle legacy format with result.url */}
                                         {result.url && !result.video && (
                                             <GButton
-                                                onClick={async () => await downloadFile(result.url, `douyin-${Date.now()}.mp4`)}
+                                                onClick={async () => await downloadBlob(result.url, `douyin-${Date.now()}.mp4`)}
                                                 className="w-full h-12"
                                                 size="lg"
                                             >
@@ -319,7 +291,7 @@ export function DouyinDownloader({ compact = false }: DouyinDownloaderProps) {
                                             <GButton
                                                 onClick={async () => {
                                                     const audioUrl = result.audio && result.audio.length > 0 ? result.audio[0] : result.music
-                                                    await downloadFile(audioUrl, `douyin-audio-${Date.now()}.mp3`)
+                                                    await downloadBlob(audioUrl, `douyin-audio-${Date.now()}.mp3`)
                                                 }}
                                                 variant="outline"
                                                 className="w-full h-12"

@@ -15,10 +15,16 @@ import {
 import { createMetadata } from "@/lib/metadata-base"
 
 export const metadata = createMetadata({
-  title: "Terms of Service | Google AdSense Compliant | FastTools",
+  title: "Terms of Service | Google AdSense Compliant",
   description: "Comprehensive terms of service for FastTools covering Google AdSense compliance, user agreements, and legal obligations for free online tools.",
   path: "/terms",
-  includeSchema: false
+  includeSchema: false,
+  breadcrumbs: [
+      {
+        "label": "Terms",
+        "href": "/terms"
+      }
+    ]
 })
 
 export default function TermsPage() {
@@ -70,7 +76,7 @@ export default function TermsPage() {
                   <span className="text-sm font-medium text-foreground">User Protection</span>
                 </div>
               </div>
-              <p className="text-sm text-muted-foreground text-center mt-4">Last updated: November 1, 2025</p>
+              <p className="text-sm text-muted-foreground text-center mt-4">Last updated: November 1,</p>
             </div>
 
             {/* Main Content */}

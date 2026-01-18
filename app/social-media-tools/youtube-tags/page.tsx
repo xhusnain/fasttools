@@ -1,4 +1,10 @@
-import { YoutubeTagExtractor } from "@/components/social-media/youtube-tag-extractor"
+import dynamic from "next/dynamic"
+
+const YoutubeTagExtractor = dynamic(() => import("@/components/social-media/youtube-tag-extractor").then(mod => mod.YoutubeTagExtractor), {
+  loading: () => <div className="min-h-[600px] flex items-center justify-center">
+    <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-primary"></div>
+  </div>
+})
 import { ToolPageLayout } from "@/components/common/tool-page-layout"
 import { createToolConfig } from "@/lib/create-tool-config"
 import {
@@ -11,7 +17,7 @@ const toolConfig = createToolConfig({
   toolName: "YouTube Tag Extractor - SEO & Keywords",
   description: "Extract YouTube video tags, hashtags, and keywords instantly. Free tool to find competitor tags, boost SEO, and improve video ranking.",
   metaTitle: "YouTube Tag Extractor - SEO & Keywords",
-  metaDescription: "Extract YouTube video tags, hashtags, and keywords instantly. Our free YouTube Tag Extractor helps you find competitor tags, boost SEO, and improve your video ranking on YouTube. Works on all devices.",
+  metaDescription: "Extract YouTube tags & keywords instantly. Find competitor tags, boost SEO & improve rankings. Free tool for all devices.",
   path: "/social-media-tools/youtube-tags",
 
   header: {

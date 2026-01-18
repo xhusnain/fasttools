@@ -58,7 +58,7 @@ export function AgentSkillBuilder() {
     }
 
     const handleCopy = (text: string) => {
-        navigator.clipboard.writeText(text)
+        void navigator.clipboard.writeText(text)
         // Could add toast notification here
     }
 

@@ -1,13 +1,19 @@
 import { ToolPageLayout } from "@/components/common/tool-page-layout"
 import { createToolConfig } from "@/lib/create-tool-config"
 import { Shield, Smartphone, Monitor, Image, Video, Zap, Scale, Heart, Search, AlertTriangle, Wifi, FolderDown, Lock, Music } from "lucide-react"
-import { PinterestDownloader } from "@/components/social-media/pinterest-downloader/pinterest-downloader";
+import dynamic from "next/dynamic"
+
+const PinterestDownloader = dynamic(() => import("@/components/social-media/pinterest-downloader/pinterest-downloader").then(mod => mod.PinterestDownloader), {
+    loading: () => <div className="min-h-[600px] flex items-center justify-center">
+        <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-primary"></div>
+    </div>
+})
 
 const toolConfig = createToolConfig({
     toolName: "Pinterest Video & Image Downloader - Save HD Pins Free",
     description: "Download Pinterest videos and images in HD quality for free. Save pins to your device without watermark. Works on iPhone, Android, PC. No login required.",
-    metaTitle: "Pinterest Video & Image Downloader - HD Free Online 2026",
-    metaDescription: "Download Pinterest videos and images in HD 1080p quality for free. Save pins without watermark. Works on iPhone, Android, PC, Mac. No extension required. Instant download.",
+    metaTitle: "Pinterest Video & Image Downloader - HD Free Online",
+    metaDescription: "Download Pinterest videos & images in HD 1080p free. Save pins without watermark on iPhone, Android, PC & Mac.",
     path: "/social-media-tools/pinterest-downloader",
 
     header: {
@@ -428,7 +434,7 @@ const toolConfig = createToolConfig({
             { name: "TikTok Downloader", href: "/social-media-tools/tiktok-downloader" },
             { name: "YouTube Downloader", href: "/social-media-tools/youtube-downloader" },
             { name: "Facebook Downloader", href: "/social-media-tools/facebook-downloader" },
-            { name: "Image Background Remover", href: "/image-tools/background-remover" }
+            { name: "Image Background Remover", href: "/image-tools/image-background-remover" }
         ]
     }
 })

@@ -19,6 +19,7 @@ import jsPDF from "jspdf"
 import html2canvas from "html2canvas"
 
 import { Format, FormatOption } from "@/types/converter-types/format-converter.types"
+import { convertHtmlToMarkdown } from "@/lib/markdown-utils"
 
 const formats: FormatOption[] = [
   { value: "html", label: "HTML", description: "HyperText Markup Language", fileExtension: "html" },
@@ -170,8 +171,7 @@ email = "jane@example.com"`,
           return true
         case "yaml":
           // Basic YAML validation
-          if (!data.trim()) return false
-          return true
+          return !!data.trim()
         case "xml":
           const parser = new DOMParser()
           const doc = parser.parseFromString(data, "text/xml")
@@ -187,53 +187,7 @@ email = "jane@example.com"`,
   }
 
   // Conversion functions
-  const htmlToMarkdown = (html: string): string => {
-    return html
-      // Headers
-      .replace(/<h1[^>]*>(.*?)<\/h1>/gi, "# $1\n\n")
-      .replace(/<h2[^>]*>(.*?)<\/h2>/gi, "## $1\n\n")
-      .replace(/<h3[^>]*>(.*?)<\/h3>/gi, "### $1\n\n")
-      .replace(/<h4[^>]*>(.*?)<\/h4>/gi, "#### $1\n\n")
-      .replace(/<h5[^>]*>(.*?)<\/h5>/gi, "##### $1\n\n")
-      .replace(/<h6[^>]*>(.*?)<\/h6>/gi, "###### $1\n\n")
-      // Bold and Italic
-      .replace(/<strong[^>]*>(.*?)<\/strong>/gi, "**$1**")
-      .replace(/<b[^>]*>(.*?)<\/b>/gi, "**$1**")
-      .replace(/<em[^>]*>(.*?)<\/em>/gi, "*$1*")
-      .replace(/<i[^>]*>(.*?)<\/i>/gi, "*$1*")
-      // Links
-      .replace(/<a[^>]*href="([^"]*)"[^>]*>(.*?)<\/a>/gi, "[$2]($1)")
-      // Images
-      .replace(/<img[^>]*src="([^"]*)"[^>]*alt="([^"]*)"[^>]*>/gi, "![$2]($1)")
-      // Lists
-      .replace(/<ul[^>]*>/gi, "")
-      .replace(/<\/ul>/gi, "\n")
-      .replace(/<ol[^>]*>/gi, "")
-      .replace(/<\/ol>/gi, "\n")
-      .replace(/<li[^>]*>(.*?)<\/li>/gi, "- $1\n")
-      // Blockquote
-      .replace(/<blockquote[^>]*>(.*?)<\/blockquote>/gi, "> $1\n\n")
-      // Code
-      .replace(/<code[^>]*>(.*?)<\/code>/gi, "`$1`")
-      .replace(/<pre[^>]*><code[^>]*>(.*?)<\/code><\/pre>/gi, "```\n$1\n```\n")
-      .replace(/<pre[^>]*>(.*?)<\/pre>/gi, "```\n$1\n```\n")
-      // Paragraphs
-      .replace(/<p[^>]*>(.*?)<\/p>/gi, "$1\n\n")
-      // Line breaks
-      .replace(/<br\s*\/?>/gi, "\n")
-      // Horizontal rule
-      .replace(/<hr\s*\/?>/gi, "\n---\n\n")
-      // Remove remaining HTML tags
-      .replace(/<[^>]*>/g, "")
-      // Decode HTML entities
-      .replace(/&nbsp;/g, " ")
-      .replace(/&amp;/g, "&")
-      .replace(/&lt;/g, "<")
-      .replace(/&gt;/g, ">")
-      .replace(/&quot;/g, '"')
-      .replace(/&#39;/g, "'")
-      .trim()
-  }
+
 
   const markdownToHtml = (md: string): string => {
     return md
@@ -604,6 +558,23 @@ email = "jane@example.com"`,
     return value
   }
 
+  const convertTextToTarget = (text: string, format: Format): string => {
+    switch (format) {
+      case "json":
+        return JSON.stringify({ content: text }, null, 2)
+      case "yaml":
+        return `content: "${text}"`
+      case "xml":
+        return `<?xml version="1.0"?>\n<content>${text}</content>`
+      case "csv":
+        return `content\n"${text}"`
+      case "toml":
+        return `content = "${text}"`
+      default:
+        return text
+    }
+  }
+
   // PDF conversion function using iframe for complete isolation
   const convertToPdf = async (content: string, sourceFormat: Format): Promise<Blob> => {
     // Convert content to HTML first if needed
@@ -611,12 +582,6 @@ email = "jane@example.com"`,
 
     if (sourceFormat === "markdown") {
       htmlContent = markdownToHtml(content)
-    } else if (sourceFormat === "json") {
-      htmlContent = `<pre style="font-family: monospace; background: #f5f5f5; padding: 15px; border-radius: 5px; overflow-wrap: break-word; white-space: pre-wrap;">${content}</pre>`
-    } else if (sourceFormat === "yaml") {
-      htmlContent = `<pre style="font-family: monospace; background: #f5f5f5; padding: 15px; border-radius: 5px; overflow-wrap: break-word; white-space: pre-wrap;">${content}</pre>`
-    } else if (sourceFormat === "xml") {
-      htmlContent = `<pre style="font-family: monospace; background: #f5f5f5; padding: 15px; border-radius: 5px; overflow-wrap: break-word; white-space: pre-wrap;">${content}</pre>`
     } else if (sourceFormat === "csv") {
       const lines = content.split("\n").filter(line => line.trim())
       if (lines.length > 0) {
@@ -627,7 +592,7 @@ email = "jane@example.com"`,
           <tbody>${rows.map((row, idx) => `<tr style="background: ${idx % 2 === 0 ? '#f9f9f9' : 'white'};">${row.split(",").map(cell => `<td style="border: 1px solid #ddd; padding: 10px;">${cell.trim()}</td>`).join("")}</tr>`).join("")}</tbody>
         </table>`
       }
-    } else if (sourceFormat === "toml") {
+    } else if (["json", "yaml", "xml", "toml"].includes(sourceFormat)) {
       htmlContent = `<pre style="font-family: monospace; background: #f5f5f5; padding: 15px; border-radius: 5px; overflow-wrap: break-word; white-space: pre-wrap;">${content}</pre>`
     }
 
@@ -808,24 +773,13 @@ email = "jane@example.com"`,
       // From HTML
       else if (sourceFormat === "html") {
         if (targetFormat === "markdown") {
-          result = htmlToMarkdown(input)
+          result = convertHtmlToMarkdown(input)
         } else {
           // HTML -> JSON (extract text content)
           const parser = new DOMParser()
           const doc = parser.parseFromString(input, "text/html")
           const text = doc.body.textContent || ""
-
-          if (targetFormat === "json") {
-            result = JSON.stringify({ content: text }, null, 2)
-          } else if (targetFormat === "yaml") {
-            result = `content: "${text}"`
-          } else if (targetFormat === "xml") {
-            result = `<?xml version="1.0"?>\n<content>${text}</content>`
-          } else if (targetFormat === "csv") {
-            result = `content\n"${text}"`
-          } else if (targetFormat === "toml") {
-            result = `content = "${text}"`
-          }
+          result = convertTextToTarget(text, targetFormat)
         }
       }
       // From Markdown
@@ -838,18 +792,7 @@ email = "jane@example.com"`,
           const parser = new DOMParser()
           const doc = parser.parseFromString(html, "text/html")
           const text = doc.body.textContent || ""
-
-          if (targetFormat === "json") {
-            result = JSON.stringify({ content: text }, null, 2)
-          } else if (targetFormat === "yaml") {
-            result = `content: "${text}"`
-          } else if (targetFormat === "xml") {
-            result = `<?xml version="1.0"?>\n<content>${text}</content>`
-          } else if (targetFormat === "csv") {
-            result = `content\n"${text}"`
-          } else if (targetFormat === "toml") {
-            result = `content = "${text}"`
-          }
+          result = convertTextToTarget(text, targetFormat)
         }
       }
       // From JSON
@@ -908,7 +851,7 @@ email = "jane@example.com"`,
   }
 
   const copyToClipboard = () => {
-    navigator.clipboard.writeText(output)
+    void navigator.clipboard.writeText(output)
     setCopied(true)
     setTimeout(() => setCopied(false), 2000)
   }

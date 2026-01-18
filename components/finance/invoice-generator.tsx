@@ -597,7 +597,7 @@ Tax (Items): ${getCurrencySymbol(currency)}${calculateTotalItemTax().toFixed(2)}
 Total: ${getCurrencySymbol(currency)}${calculateTotal().toFixed(2)}
     `.trim()
 
-    navigator.clipboard.writeText(invoiceText)
+    void navigator.clipboard.writeText(invoiceText)
   }
 
   const downloadPDF = () => {

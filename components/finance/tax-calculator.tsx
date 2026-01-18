@@ -301,7 +301,7 @@ ${result.socialSecurity ? `Social Security: ${result.currency} ${result.socialSe
 ${result.additionalTaxes ? result.additionalTaxes.map(t => `${t.name}: ${result.currency} ${t.amount.toLocaleString()}`).join('\n') : ''}
 Net Salary: ${result.currency} ${result.netSalary.toLocaleString()}
 Effective Tax Rate: ${result.effectiveTaxRate}%`
-    navigator.clipboard.writeText(text)
+    void navigator.clipboard.writeText(text)
     setCopied(true)
     setTimeout(() => setCopied(false), 2000)
   }

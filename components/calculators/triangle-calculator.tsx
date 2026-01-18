@@ -330,7 +330,7 @@ Area: ${result.area}
 Perimeter: ${result.perimeter}
 Type: ${result.triangleType}`
 
-    navigator.clipboard.writeText(resultText)
+    void navigator.clipboard.writeText(resultText)
   }
 
   const clearHistory = () => {
@@ -735,7 +735,7 @@ Type: ${result.triangleType}`
                     size="sm"
                     onClick={() => {
                       const resultText = `Triangle: a=${calc.sides.a}, b=${calc.sides.b}, c=${calc.sides.c}, Area=${calc.area}`
-                      navigator.clipboard.writeText(resultText)
+                      void navigator.clipboard.writeText(resultText)
                     }}
                     className="h-7 w-7 p-0 text-muted-foreground hover:text-heading-accent hover:bg-secondary"
                   >

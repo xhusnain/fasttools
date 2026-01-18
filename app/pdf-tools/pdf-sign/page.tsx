@@ -1,6 +1,12 @@
-import { PDFSign } from "@/components/pdf/pdf-sign"
+import dynamic from "next/dynamic"
 import { ToolPageLayout } from "@/components/common/tool-page-layout"
+import { ToolLoader } from "@/components/common/tool-loader"
 import { createToolConfig } from "@/lib/create-tool-config"
+
+const PDFSign = dynamic(
+  () => import("@/components/pdf/pdf-sign").then(mod => mod.PDFSign),
+  { loading: () => <ToolLoader /> }
+)
 
 const toolConfig = createToolConfig({
   toolName: "PDF Sign",

@@ -156,7 +156,7 @@ export function EMICalculator() {
   const copyResult = () => {
     if (!result) return
     const text = `EMI: ₹${result.emi.toLocaleString()}\nTotal Payment: ₹${result.totalPayment.toLocaleString()}\nTotal Interest: ₹${result.totalInterest.toLocaleString()}`
-    navigator.clipboard.writeText(text)
+    void navigator.clipboard.writeText(text)
     setCopied(true)
     setTimeout(() => setCopied(false), 2000)
   }
@@ -209,8 +209,8 @@ export function EMICalculator() {
                     key={type.id}
                     onClick={() => setLoanType(type.id as any)}
                     className={`p-3 rounded-lg border-2 transition-all duration-300 ${loanType === type.id
-                        ? 'border-primary bg-primary/10 text-foreground'
-                        : 'border-border hover:border-primary/50 bg-card text-muted-foreground'
+                      ? 'border-primary bg-primary/10 text-foreground'
+                      : 'border-border hover:border-primary/50 bg-card text-muted-foreground'
                       }`}
                   >
                     <Icon className={`h-5 w-5 mx-auto mb-2 ${type.color}`} />
@@ -290,8 +290,8 @@ export function EMICalculator() {
                 <button
                   onClick={() => setEmiInAdvance(false)}
                   className={`px-4 py-2 rounded-lg border-2 transition-all ${!emiInAdvance
-                      ? 'border-primary bg-primary/10 text-foreground'
-                      : 'border-border bg-card text-muted-foreground'
+                    ? 'border-primary bg-primary/10 text-foreground'
+                    : 'border-border bg-card text-muted-foreground'
                     }`}
                 >
                   EMI in Arrears
@@ -299,8 +299,8 @@ export function EMICalculator() {
                 <button
                   onClick={() => setEmiInAdvance(true)}
                   className={`px-4 py-2 rounded-lg border-2 transition-all ${emiInAdvance
-                      ? 'border-primary bg-primary/10 text-foreground'
-                      : 'border-border bg-card text-muted-foreground'
+                    ? 'border-primary bg-primary/10 text-foreground'
+                    : 'border-border bg-card text-muted-foreground'
                     }`}
                 >
                   EMI in Advance

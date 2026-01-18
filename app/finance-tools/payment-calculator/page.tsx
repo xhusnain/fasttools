@@ -1,6 +1,11 @@
 import type { Metadata } from "next"
 import { ToolPageLayout } from "@/components/common/tool-page-layout"
-import PaymentCalculator from "@/components/finance/payment-calculator"
+import dynamic from "next/dynamic"
+import { ToolLoader } from "@/components/common/tool-loader"
+
+const PaymentCalculator = dynamic(() => import("@/components/finance/payment-calculator"), {
+  loading: () => <ToolLoader />
+})
 import { createMetadata } from "@/lib/metadata-base"
 import { Calculator, BarChart3, TrendingUp, BookOpen, Users, Clock, Target, AlertCircle, Home, DollarSign, FileText, Award, Globe, PieChart, Percent, CreditCard, Wallet, GraduationCap, Car, Trophy, Stethoscope } from "lucide-react"
 
@@ -46,50 +51,6 @@ export const metadata: Metadata = {
   ...baseMetadata,
   applicationName: "FastTools",
   category: "Finance Tools",
-  keywords: [
-    "fasttools",
-    "fast tools",
-    "payment calculator",
-    "loan payment calculator",
-    "emi calculator",
-    "monthly payment calculator",
-    "loan calculator",
-    "mortgage calculator",
-    "auto loan calculator",
-    "personal loan calculator",
-    "car loan calculator",
-    "home loan calculator",
-    "student loan calculator",
-    "business loan calculator",
-    "debt consolidation calculator",
-    "refinance calculator",
-    "loan comparison calculator",
-    "amortization calculator",
-    "interest calculator",
-    "principal calculator",
-    "loan term calculator",
-    "payment frequency calculator",
-    "bi-weekly payment calculator",
-    "extra payment calculator",
-    "loan payoff calculator",
-    "debt payoff calculator",
-    "loan analysis calculator",
-    "payment analysis calculator",
-    "financial calculator",
-    "loan planning calculator",
-    "payment strategy calculator",
-    "loan optimization calculator",
-    "loan projection calculator",
-    "payment forecasting calculator",
-    "loan management calculator",
-    "payment tracking calculator",
-    "loan monitoring calculator",
-    "accurate payment calculator",
-    "professional loan calculator",
-    "advanced payment calculator",
-    "online loan calculator",
-    "free payment calculator"
-  ]
 }
 
 export default function PaymentCalculatorPage() {
@@ -371,7 +332,7 @@ export default function PaymentCalculatorPage() {
     <ToolPageLayout
       header={{
         title: "Payment Calculator",
-        description: "Calculate loan payments with our advanced payment calculator. Get accurate monthly payments, loan terms, amortization schedules, and total interest calculations for mortgages, auto loans, and personal loans.",
+        description: "Calculate loan payments with our advanced payment calculator. Get accurate monthly payments, amortization schedules & interest calculations.",
         titleSize: "medium",
         descriptionSize: "small",
         color: "blue"
@@ -388,7 +349,7 @@ export default function PaymentCalculatorPage() {
       toolContent={toolContent}
       expectedMetadata={{
         title: "FastTools - Payment Calculator | Free Advanced Loan Payment Calculator",
-        description: "FastTools Payment Calculator - Calculate loan payments with advanced payment calculator. Get accurate monthly payments, loan terms, amortization schedules, and total interest calculations.",
+        description: "FastTools Payment Calculator - Calculate loan payments, amortization schedules & total interest accurately.",
         path: "/finance-tools/payment-calculator"
       }}
     />

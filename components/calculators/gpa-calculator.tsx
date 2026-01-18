@@ -222,7 +222,7 @@ ${result.honorsEligibility ? 'Honors Eligible: Yes' : ''}
 
 Course Breakdown:
 ${result.courses.map(course => `${course.name}: ${course.grade} (${course.credits} credits)`).join('\n')}`
-    navigator.clipboard.writeText(text)
+    void navigator.clipboard.writeText(text)
     setCopied(true)
     setTimeout(() => setCopied(false), 2000)
   }

@@ -164,7 +164,7 @@ export function PercentageCalculator() {
   const copyResult = () => {
     if (result === null) return
     const text = `${result.type}: ${result.explanation}`
-    navigator.clipboard.writeText(text)
+    void navigator.clipboard.writeText(text)
     setCopied(true)
     setTimeout(() => setCopied(false), 2000)
   }

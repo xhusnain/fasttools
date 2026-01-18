@@ -9,6 +9,7 @@ import { GAlert, GAlertDescription } from "@/ui/galert"
 
 import { Download, Loader2, AlertCircle, Video, Image as ImageIcon } from "lucide-react"
 import { API } from "@/services/api/api.service"
+import { downloadBlob } from "@/lib/download-utils"
 
 export interface PinterestDownloaderProps {
     compact?: boolean
@@ -146,30 +147,7 @@ export function PinterestDownloader({ compact = false }: PinterestDownloaderProp
         }
     }
 
-    const downloadFile = async (fileUrl: string, filename: string) => {
-        try {
-            const response = await fetch(fileUrl)
-            const blob = await response.blob()
-            const blobUrl = URL.createObjectURL(blob)
 
-            const link = document.createElement("a")
-            link.href = blobUrl
-            link.download = filename
-            document.body.appendChild(link)
-            link.click()
-            document.body.removeChild(link)
-
-            setTimeout(() => URL.revokeObjectURL(blobUrl), 100)
-        } catch (error) {
-            const link = document.createElement("a")
-            link.href = fileUrl
-            link.download = filename
-            link.target = "_blank"
-            document.body.appendChild(link)
-            link.click()
-            document.body.removeChild(link)
-        }
-    }
 
     return (
         <div className="w-full max-w-4xl mx-auto space-y-4 sm:space-y-6">
@@ -280,7 +258,7 @@ export function PinterestDownloader({ compact = false }: PinterestDownloaderProp
                                 <div className="grid gap-2">
                                     {result.type === 'video' && result.videoUrl && (
                                         <GButton
-                                            onClick={async () => await downloadFile(result.videoUrl, `pinterest-video-${Date.now()}.mp4`)}
+                                            onClick={async () => await downloadBlob(result.videoUrl, `pinterest-video-${Date.now()}.mp4`)}
                                             className="w-full"
                                             size="lg"
                                         >
@@ -291,7 +269,7 @@ export function PinterestDownloader({ compact = false }: PinterestDownloaderProp
 
                                     {result.type === 'image' && result.imageUrl && (
                                         <GButton
-                                            onClick={async () => await downloadFile(result.imageUrl, `pinterest-image-${Date.now()}.jpg`)}
+                                            onClick={async () => await downloadBlob(result.imageUrl, `pinterest-image-${Date.now()}.jpg`)}
                                             className="w-full"
                                             size="lg"
                                         >

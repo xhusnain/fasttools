@@ -1,6 +1,12 @@
-import { PDFToolsAdvanced } from "@/components/pdf/pdf-tools-advanced"
+import dynamic from "next/dynamic"
 import { ToolPageLayout } from "@/components/common/tool-page-layout"
+import { ToolLoader } from "@/components/common/tool-loader"
 import { createToolConfig } from "@/lib/create-tool-config"
+
+const PDFToolsAdvanced = dynamic(
+  () => import("@/components/pdf/pdf-tools-advanced").then(mod => mod.PDFToolsAdvanced),
+  { loading: () => <ToolLoader /> }
+)
 
 const toolConfig = createToolConfig({
   toolName: "PDF Splitter & Merger",

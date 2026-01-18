@@ -1,4 +1,9 @@
-import { TimezoneConverter } from "@/components/converters/timezone-converter"
+import dynamic from "next/dynamic"
+import { ToolLoader } from "@/components/common/tool-loader"
+
+const TimezoneConverter = dynamic(() => import("@/components/converters/timezone-converter").then(mod => mod.TimezoneConverter), {
+  loading: () => <ToolLoader />
+})
 import { ToolPageLayout } from "@/components/common/tool-page-layout"
 import { createToolConfig } from "@/lib/create-tool-config"
 

@@ -17,10 +17,16 @@ import {
 } from "lucide-react"
 
 export const metadata = createMetadata({
-    title: "FAQ",
+  title: "FAQ",
     description: "Get answers to frequently asked questions about FastTools — learn about our tools, privacy, features, and more.",
     path: "/faq",
-    includeSchema: false
+    includeSchema: false,
+  breadcrumbs: [
+      {
+        "label": "FAQ",
+        "href": "/faq"
+      }
+    ]
 })
 
 

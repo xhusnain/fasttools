@@ -288,7 +288,7 @@ Heart Rate Zone: ${result.heartRateZone}
 Training Zone: ${result.trainingZone}
 Calories Burned: ${result.caloriesBurned}
 VO2 Max: ${result.vo2Max}`
-      navigator.clipboard.writeText(text)
+      void navigator.clipboard.writeText(text)
     }
   }
 
@@ -316,7 +316,7 @@ VO2 Max: ${result.vo2Max}`
           </GCardTitle>
         </GCardHeader>
         <GCardContent className="px-3 sm:px-4 md:px-6 space-y-4 sm:space-y-6">
-          <GTabs value={calculationMode} onValueChange={(value: "basic" | "multipoint" | "converter" | "finish") => setCalculationMode(value)}>
+          <GTabs value={calculationMode} onValueChange={(value) => setCalculationMode(value as "basic" | "multipoint" | "converter" | "finish")}>
             <GTabsList className="grid w-full grid-cols-2 sm:grid-cols-4 bg-card border border-border">
               <GTabsTrigger value="basic" className="text-xs sm:text-sm">Basic Pace</GTabsTrigger>
               <GTabsTrigger value="multipoint" className="text-xs sm:text-sm">Multipoint</GTabsTrigger>
