@@ -66,8 +66,6 @@ export default function proxy(request: NextRequest) {
     if (request.method === 'OPTIONS' && corsResponse) {
         return corsResponse
     }
-    if (env.isProduction && host === 'fasttools.store') {
-        return NextResponse.redirect(`https://www.fasttools.store${pathname}`, 301)
     if (env.isProduction) {
         const proto = request.headers.get('x-forwarded-proto')
         const isHttp = proto === 'http'
