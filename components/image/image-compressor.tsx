@@ -1,15 +1,14 @@
 "use client"
 
-import { useState, useCallback, useEffect } from "react"
-import { useDropzone } from "react-dropzone"
-import { GButton } from "@/ui/gbutton"
-import { GCard, GCardContent } from "@/ui/gcard"
-import { GSlider } from "@/ui/gslider"
-import { GLabel } from "@/ui/glabel"
-import { Download, Upload, RefreshCw, AlertCircle, Trash2, Archive } from "lucide-react"
+import {useCallback, useEffect, useState} from "react"
+import {useDropzone} from "react-dropzone"
+import {GButton} from "@/ui/gbutton"
+import {GCard} from "@/ui/gcard"
+import {GSlider} from "@/ui/gslider"
+import {GLabel} from "@/ui/glabel"
+import {Archive, Download, RefreshCw, Trash2, Upload} from "lucide-react"
 import imageCompression from "browser-image-compression"
-import { toast } from "sonner"
-import { cn } from "@/lib/utils"
+import {cn} from "@/lib/utils"
 // @ts-ignore
 import JSZip from "jszip"
 
@@ -63,7 +62,7 @@ export function ImageCompressor() {
 
                 // Update options only on first upload to set a reasonable baseline
                 // We use setTimeout to avoid setOptions conflicting during render cycle if necessary, but standard sync is fine here
-                // However, we can't easily update options AND return state in one go without causing issues if we depend on 'options' in handleCompression immediately 
+                // However, we can't easily update options AND return state in one go without causing issues if we depend on 'options' in handleCompression immediately
                 // So we will trigger compression in a useEffect or immediately with calculated options
             }
 
@@ -113,9 +112,9 @@ export function ImageCompressor() {
         for (const fileItem of filesToCompress) {
             try {
                 // Apply smart logic per file if needed, but here we use global slider options
-                // If user wants smart logic per file, they'd leave sliders alone. 
-                // But generally batch tools impose global settings. 
-                // We do implement a "cap" logic: ensure maxSize is at least respectful of file size if the global setting is ridiculous? 
+                // If user wants smart logic per file, they'd leave sliders alone.
+                // But generally batch tools impose global settings.
+                // We do implement a "cap" logic: ensure maxSize is at least respectful of file size if the global setting is ridiculous?
                 // No, respect user slider.
 
                 // Exception: If the global slider hasn't been touched (Still defaults), maybe apply per-file logic?
@@ -164,8 +163,7 @@ export function ImageCompressor() {
     const removeFile = (id: string, e: React.MouseEvent) => {
         e.stopPropagation()
         setFiles(prev => {
-            const newFiles = prev.filter(f => f.id !== id)
-            return newFiles
+            return prev.filter(f => f.id !== id)
         })
     }
 

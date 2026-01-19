@@ -1,15 +1,47 @@
 "use client"
 
-import { useState, useEffect } from "react"
-import { GButton } from "@/ui/gbutton"
-import { GTextarea } from "@/ui/gtextarea"
-import { GCard } from "@/ui/gcard"
-import { GInput } from "@/ui/ginput"
-import { GTabs, GTabsContent, GTabsList, GTabsTrigger } from "@/ui/gtabs"
-import { GLabel } from "@/ui/glabel"
-import { GSwitch } from "@/ui/gswitch"
+import {useEffect, useState} from "react"
+import {GButton} from "@/ui/gbutton"
+import {GTextarea} from "@/ui/gtextarea"
+import {GCard} from "@/ui/gcard"
+import {GInput} from "@/ui/ginput"
+import {GTabs, GTabsContent, GTabsList, GTabsTrigger} from "@/ui/gtabs"
+import {GLabel} from "@/ui/glabel"
+import {GSwitch} from "@/ui/gswitch"
 
-import { Copy, Check, X, AlertCircle, CheckCircle2, Sparkles, Share2, Link2, Code2, ChevronDown, Shield, ShieldAlert, ShieldCheck, AlertTriangle, Info, Clock, GitCompare, Minimize2, TrendingDown, Download, FileJson, FileText, FileCode, Zap, Activity, BarChart3, Timer, BookOpen, GraduationCap, Lightbulb, ChevronRight } from "lucide-react"
+import {
+    Activity,
+    AlertCircle,
+    AlertTriangle,
+    BarChart3,
+    BookOpen,
+    Check,
+    CheckCircle2,
+    ChevronRight,
+    Clock,
+    Code2,
+    Copy,
+    Download,
+    FileCode,
+    FileJson,
+    FileText,
+    GitCompare,
+    GraduationCap,
+    Info,
+    Lightbulb,
+    Link2,
+    Minimize2,
+    Share2,
+    Shield,
+    ShieldAlert,
+    ShieldCheck,
+    Sparkles,
+    Timer,
+    TrendingDown,
+    X,
+    Zap
+} from "lucide-react"
+
 export function JWTDecoder() {
     const [mode, setMode] = useState<"decode" | "encode">("decode")
     const [token, setToken] = useState("")
@@ -1261,13 +1293,11 @@ metadata:
         const totalPerRequest = httpHeaderOverhead + authHeaderKey + tokenSize
 
         const requestsPerDay = [100, 1000, 10000, 100000, 1000000]
-        const dataTransfer = requestsPerDay.map(requests => ({
+        return requestsPerDay.map(requests => ({
             requests,
             daily: (totalPerRequest * requests / 1024 / 1024).toFixed(2), // MB
             monthly: (totalPerRequest * requests * 30 / 1024 / 1024 / 1024).toFixed(2) // GB
         }))
-
-        return dataTransfer
     }
 
     // Security Analyzer

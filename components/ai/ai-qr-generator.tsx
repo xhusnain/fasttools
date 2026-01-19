@@ -1,22 +1,43 @@
 "use client"
 
-import { useState, useRef, useEffect } from "react"
-import { GButton } from "@/ui/gbutton"
-import { GLabel } from "@/ui/glabel"
-import { GInput } from "@/ui/ginput"
-import { GCard } from "@/ui/gcard"
-import { GTabs, GTabsContent, GTabsList, GTabsTrigger } from "@/ui/gtabs"
-import { GSelect, GSelectContent, GSelectItem, GSelectTrigger, GSelectValue } from "@/ui/gselect"
-import { GSlider } from "@/ui/gslider"
-import { GSwitch } from "@/ui/gswitch"
-import { GTextarea } from "@/ui/gtextarea"
+import {useEffect, useRef, useState} from "react"
+import {GButton} from "@/ui/gbutton"
+import {GLabel} from "@/ui/glabel"
+import {GInput} from "@/ui/ginput"
+import {GCard} from "@/ui/gcard"
+import {GTabs, GTabsContent, GTabsList, GTabsTrigger} from "@/ui/gtabs"
+import {GSelect, GSelectContent, GSelectItem, GSelectTrigger, GSelectValue} from "@/ui/gselect"
+import {GSlider} from "@/ui/gslider"
+import {GSwitch} from "@/ui/gswitch"
+import {GTextarea} from "@/ui/gtextarea"
 
-import { Download, QrCode, Image as ImageIcon, Sparkles, Wifi, Mail, Phone, MessageSquare, User, MapPin, FileText, Zap, Globe, ListOrdered, Archive } from "lucide-react"
-import { LoadingSpinner } from "@/components/common/loading-spinner"
+import {
+  Archive,
+  Download,
+  FileText,
+  Globe,
+  Image as ImageIcon,
+  ListOrdered,
+  Mail,
+  MapPin,
+  MessageSquare,
+  Phone,
+  QrCode,
+  Sparkles,
+  User,
+  Wifi,
+  Zap
+} from "lucide-react"
+import {LoadingSpinner} from "@/components/common/loading-spinner"
 import QRCode from "qrcode"
 import JSZip from "jszip"
 
-import type { QRType, ErrorCorrectionLevel, DownloadFormat, QROptions } from "@/types/image-tool-types/ai-qr-generator.types"
+import type {
+  DownloadFormat,
+  ErrorCorrectionLevel,
+  QROptions,
+  QRType
+} from "@/types/image-tool-types/ai-qr-generator.types"
 
 export function AiQrGenerator() {
   const [qrType, setQrType] = useState<QRType>("url")
@@ -247,8 +268,7 @@ END:VCARD`
       reader.onload = (event) => {
         const text = event.target?.result as string
         const lines = text.split('\n').map(line => {
-          const firstColumn = line.split(',')[0].trim()
-          return firstColumn
+          return line.split(',')[0].trim()
         }).filter(line => line)
 
         setBulkText(lines.join('\n'))

@@ -16,9 +16,7 @@ const HASH_BITS = 64
  */
 function fnv1aHash(str: string): bigint {
     const FNV_PRIME = BigInt("0x100000001b3")
-    const FNV_OFFSET = BigInt("0xcbf29ce484222325")
-
-    let hash = FNV_OFFSET
+    let hash = BigInt("0xcbf29ce484222325")
 
     for (let i = 0; i < str.length; i++) {
         hash ^= BigInt(str.charCodeAt(i))

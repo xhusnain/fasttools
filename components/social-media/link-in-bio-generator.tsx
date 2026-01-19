@@ -1,13 +1,27 @@
 "use client"
 
-import React, { useState } from "react"
-import { GButton } from "@/ui/gbutton"
-import { GInput } from "@/ui/ginput"
-import { GLabel } from "@/ui/glabel"
-import { GCard } from "@/ui/gcard"
+import React, {useState} from "react"
+import {GButton} from "@/ui/gbutton"
+import {GInput} from "@/ui/ginput"
+import {GLabel} from "@/ui/glabel"
+import {GCard} from "@/ui/gcard"
 
-import { Plus, Trash2, Eye, Copy, Check, Code, Palette, Download, Settings, Monitor, Smartphone, Tablet, ExternalLink } from "lucide-react"
-import { ColorPicker } from "@/components/image/color-picker"
+import {
+  Check,
+  Code,
+  Copy,
+  Download,
+  ExternalLink,
+  Eye,
+  Monitor,
+  Palette,
+  Plus,
+  Settings,
+  Smartphone,
+  Tablet,
+  Trash2
+} from "lucide-react"
+import {ColorPicker} from "@/components/image/color-picker"
 
 interface Link {
   id: string
@@ -203,7 +217,7 @@ export function LinkInBioGenerator() {
 
   const generateHtml = () => {
     const theme = getCurrentTheme()
-    const html = `<!DOCTYPE html>
+    return `<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
@@ -279,8 +293,8 @@ export function LinkInBioGenerator() {
     ${links.filter(link => link.type === "social" && link.logo && (link.displayMode === "icon" || link.displayMode === "both" || !link.displayMode)).length > 0 ? `
     <div class="social-icons" style="display: flex; flex-wrap: wrap; justify-content: center; gap: 12px; margin-bottom: 20px;">
     ${links
-          .filter(link => link.type === "social" && link.logo && (link.displayMode === "icon" || link.displayMode === "both" || !link.displayMode))
-          .map(link => `
+        .filter(link => link.type === "social" && link.logo && (link.displayMode === "icon" || link.displayMode === "both" || !link.displayMode))
+        .map(link => `
         <div class="social-icon" style="width: 40px; height: 40px; border-radius: 50%; background: white; box-shadow: 0 2px 8px rgba(0,0,0,0.1); display: flex; align-items: center; justify-content: center; cursor: pointer; transition: transform 0.2s;" title="${link.title}">
           <img src="${link.logo}" alt="${link.title}" style="width: 24px; height: 24px; object-fit: contain;" />
         </div>
@@ -295,8 +309,8 @@ export function LinkInBioGenerator() {
 
           if (link.displayMode === "both" || link.displayMode === "text" || !link.displayMode) {
             logoHtml = link.logo
-              ? `<img src="${link.logo}" alt="Platform logo" style="width: 20px; height: 20px; object-fit: contain; margin-right: 8px; vertical-align: middle;" />`
-              : `<span style="font-size: 16px; margin-right: 8px; vertical-align: middle;">🔗</span>`
+                ? `<img src="${link.logo}" alt="Platform logo" style="width: 20px; height: 20px; object-fit: contain; margin-right: 8px; vertical-align: middle;" />`
+                : `<span style="font-size: 16px; margin-right: 8px; vertical-align: middle;">🔗</span>`
           }
 
           return `<a href="${link.url}" class="link" target="_blank" style="display: flex; align-items: center;">${logoHtml}${textHtml}</a>`
@@ -310,7 +324,6 @@ export function LinkInBioGenerator() {
   </div>
 </body>
 </html>`
-    return html
   }
 
   const copyHtml = () => {

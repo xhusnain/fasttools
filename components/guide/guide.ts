@@ -1,7 +1,7 @@
 import fs from 'fs';
 import path from 'path';
 import matter from 'gray-matter';
-import { processContentFile } from "@/lib/content-processing";
+import {processContentFile} from "@/lib/content-processing";
 
 export type GuideCategory = 'Calculators' | 'Converters' | 'AI Tools' | 'Image Tools' | 'SEO Tools' | 'Social Media Tools' | 'Developer Tools' | 'Finance Tools' | 'Health Tools' | 'Text Tools';
 
@@ -161,12 +161,10 @@ export function getFeaturedGuides(): Guide[] {
 export function getRelatedGuides(currentSlug: string, category?: string, limit = 3): Guide[] {
     const allGuides = getAllGuides();
 
-    const relatedGuides = allGuides
+    return allGuides
         .filter(guide => guide.slug !== currentSlug)
         .filter(guide => category ? guide.category === category : true)
         .slice(0, limit);
-
-    return relatedGuides;
 }
 
 export function getAllGuideCategories(): string[] {

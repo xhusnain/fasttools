@@ -12,7 +12,7 @@ import { GJsonLd } from '@/components/blog/GJsonLd';
 import { GAuthorBio } from '@/components/blog/GAuthorBio';
 import { GImage } from "@/ui/gimage";
 import { MDXComponents } from "@/components/blog/mdx-components";
-import { ArticleAd } from '@/components/ads/article-ad';
+import { injectArticleAds } from '@/lib/ad-utils';
 
 // MDX Plugins
 import remarkGfm from 'remark-gfm';
@@ -105,22 +105,7 @@ export default async function BlogPost({
     const { frontMatter } = post
 
 
-    // Process content to remove Table of Contents header
-    let contentWithoutToc = post.content.replace(/^## Table of Contents$/m, '')
-
-    // Inject Article Ads
-    const paragraphs = contentWithoutToc.split('\n\n');
-    if (paragraphs.length > 6) {
-        // Insert after 3rd paragraph
-        paragraphs.splice(3, 0, '<ArticleAd />');
-        // Insert before last 2 paragraphs
-        paragraphs.splice(paragraphs.length - 2, 0, '<ArticleAd />');
-        contentWithoutToc = paragraphs.join('\n\n');
-    } else if (paragraphs.length > 3) {
-        // Just one ad if content is short
-        paragraphs.splice(Math.floor(paragraphs.length / 2), 0, '<ArticleAd />');
-        contentWithoutToc = paragraphs.join('\n\n');
-    }
+    const contentWithAds = injectArticleAds(post.content);
 
     const articleSchema = createArticleSchema({
         title: frontMatter.title,
@@ -264,7 +249,7 @@ export default async function BlogPost({
                                 }
                             >
                                 <MDXRemote
-                                    source={contentWithoutToc}
+                                    source={contentWithAds}
                                     components={MDXComponents}
                                     options={{
                                         mdxOptions: {

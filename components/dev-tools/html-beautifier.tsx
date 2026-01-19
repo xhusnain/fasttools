@@ -1,11 +1,11 @@
 "use client"
 
-import { useState } from "react"
-import { GButton } from "@/ui/gbutton"
-import { GTextarea } from "@/ui/gtextarea"
-import { GLabel } from "@/ui/glabel"
+import {useState} from "react"
+import {GButton} from "@/ui/gbutton"
+import {GTextarea} from "@/ui/gtextarea"
+import {GLabel} from "@/ui/glabel"
 
-import { Copy, Check, Download, Sparkles, AlertCircle, CheckCircle2 } from "lucide-react"
+import {AlertCircle, Check, CheckCircle2, Copy, Download, Sparkles} from "lucide-react"
 
 const SAMPLE_HTML = `<!DOCTYPE html>
 <html lang="en">
@@ -79,9 +79,7 @@ export function HTMLBeautifier() {
 
       // Check if opening and closing tags roughly match (excluding self-closing)
       const hasDoctype = html.toLowerCase().includes('<!doctype')
-      const hasBasicStructure = html.includes('<html') || html.includes('<div') || html.includes('<span')
-
-      return hasBasicStructure
+      return html.includes('<html') || html.includes('<div') || html.includes('<span')
     } catch (error) {
       return false
     }

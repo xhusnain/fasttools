@@ -1,15 +1,14 @@
 "use client"
 
-import { useState } from "react"
-import { GCard } from "@/ui/gcard"
-import { GInput } from "@/ui/ginput"
-import { GLabel } from "@/ui/glabel"
-import { GButton } from "@/ui/gbutton"
-import { GAlert, GAlertDescription } from "@/ui/galert"
-import { Download, Loader2, AlertCircle, Video, Music, List, FileVideo } from "lucide-react"
-import { YouTubeService, PlaylistInfo, VideoInfo, PlaylistEntry } from "@/services/youtube.service"
-import { env } from "@/config/env"
-import { downloadBlob } from "@/lib/download-utils";
+import {useState} from "react"
+import {GCard} from "@/ui/gcard"
+import {GInput} from "@/ui/ginput"
+import {GLabel} from "@/ui/glabel"
+import {GButton} from "@/ui/gbutton"
+import {GAlert, GAlertDescription} from "@/ui/galert"
+import {AlertCircle, Download, FileVideo, List, Loader2, Music, Video} from "lucide-react"
+import {PlaylistEntry, PlaylistInfo, YouTubeService} from "@/services/youtube.service"
+import {downloadBlob} from "@/lib/download-utils";
 
 export interface YoutubePlaylistDownloaderProps {
     compact?: boolean
@@ -46,12 +45,11 @@ export function YoutubePlaylistDownloader({ compact = false }: YoutubePlaylistDo
             const data = await YouTubeService.getInfo(url.trim(), 'playlist');
 
             if ('entries' in data) {
-                const cleanEntries = data.entries.filter((e: any) =>
+                data.entries = data.entries.filter((e: any) =>
                     e.title !== '[Private video]' &&
                     e.title !== '[Deleted video]' &&
                     e.title !== '[Unavailable video]'
                 );
-                data.entries = cleanEntries;
                 setPlaylistInfo(data as PlaylistInfo)
             } else {
                 setError("URL provided is not a playlist.");
@@ -195,11 +193,11 @@ export function YoutubePlaylistDownloader({ compact = false }: YoutubePlaylistDo
                                 </div>
                             </div>
 
-                            <div className="grid gap-2 max-h-[600px] overflow-y-auto pr-2 rounded-md border p-2">
+                            <div className="grid gap-2 max-h-150 overflow-y-auto pr-2 rounded-md border p-2">
                                 {playlistInfo.entries?.map((entry: PlaylistEntry, i: number) => (
                                     <div key={entry.id || i} className="flex flex-col sm:flex-row sm:items-center gap-3 p-3 hover:bg-muted/50 rounded-md transition-colors border-b last:border-0 border-border/50">
                                         <div className="flex items-center gap-3 flex-1 min-w-0">
-                                            <div className="h-16 w-28 bg-muted rounded overflow-hidden flex-shrink-0 relative group">
+                                            <div className="h-16 w-28 bg-muted rounded overflow-hidden shrink-0 relative group">
                                                 {entry.thumbnail || (entry.thumbnails && entry.thumbnails.length > 0) ? (
                                                     <img
                                                         src={entry.thumbnail || entry.thumbnails?.[entry.thumbnails.length - 1]?.url}

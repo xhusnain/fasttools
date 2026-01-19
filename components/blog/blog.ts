@@ -1,7 +1,7 @@
 import fs from 'fs';
 import path from 'path';
 import matter from 'gray-matter';
-import { processContentFile } from "@/lib/content-processing";
+import {processContentFile} from "@/lib/content-processing";
 
 export type BlogCategory = 'Developer' | 'Guides';
 
@@ -156,7 +156,7 @@ export function getFeaturedPosts(): BlogPost[] {
 export function getRelatedPosts(currentSlug: string, tags: string[], limit = 3): BlogPost[] {
     const allPosts = getAllPosts();
 
-    const relatedPosts = allPosts
+    return allPosts
         .filter(post => post.slug !== currentSlug)
         .filter(post =>
             post.tags?.some(tag =>
@@ -166,8 +166,6 @@ export function getRelatedPosts(currentSlug: string, tags: string[], limit = 3):
             )
         )
         .slice(0, limit);
-
-    return relatedPosts;
 }
 
 export function getAllTags(): string[] {

@@ -1,5 +1,5 @@
-import { type ClassValue, clsx } from "clsx"
-import { twMerge } from "tailwind-merge"
+import {type ClassValue, clsx} from "clsx"
+import {twMerge} from "tailwind-merge"
 
 export function cn(...inputs: ClassValue[]) {
   return twMerge(clsx(inputs))
@@ -31,8 +31,7 @@ export async function runCloudflareAI(input: any) {
       body: JSON.stringify(input),
     }
   )
-  const result = await response.json()
-  return result
+    return await response.json()
 }
 
 export function slugifyCategory(category: string): string {

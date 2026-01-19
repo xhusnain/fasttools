@@ -1,9 +1,5 @@
-import { NextRequest, NextResponse } from 'next/server'
-import {
-  getRandomUserAgent,
-  getCachedData,
-  setCachedData
-} from '@/lib/instagram-security'
+import {NextRequest, NextResponse} from 'next/server'
+import {getCachedData, getRandomUserAgent, setCachedData} from '@/lib/instagram-security'
 
 // Validate username
 const validateUsername = (username: string): boolean => {
@@ -364,15 +360,13 @@ const parseHtmlResponse = (html: string, username: string) => {
     // Look for JSON data in script tags
     const scriptMatch = html.match(/window\._sharedData\s*=\s*({.+?});/)
     if (scriptMatch) {
-      const data = JSON.parse(scriptMatch[1])
-      return data
+      return JSON.parse(scriptMatch[1])
     }
 
     // Look for additional data patterns
     const additionalDataMatch = html.match(/window\.__additionalDataLoaded\('\/',\s*({.+?})\)/)
     if (additionalDataMatch) {
-      const data = JSON.parse(additionalDataMatch[1])
-      return data
+      return JSON.parse(additionalDataMatch[1])
     }
 
     return null

@@ -155,8 +155,7 @@ export default function AmortizationCalculator() {
     for (let month = 1; month <= totalMonths; month++) {
       const interestPayment = balance * monthlyRate
       const principalPayment = monthlyPayment - interestPayment
-      const extraPrincipal = extra
-      const totalPrincipalPayment = principalPayment + extraPrincipal
+      const totalPrincipalPayment = principalPayment + extra
 
       balance = Math.max(0, balance - totalPrincipalPayment)
       totalInterestPaid += interestPayment

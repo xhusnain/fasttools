@@ -1,15 +1,14 @@
 'use client';
 
-import Link from 'next/link';
-import { useState, useMemo } from 'react';
+import {useMemo, useState} from 'react';
 import Fuse from 'fuse.js';
-import { BlogSearch } from './BlogSearch';
-import { FeaturedCarousel } from './FeaturedCarousel';
-import { LatestPostsList } from './LatestPostsList';
-import { PostCard } from './PostCard';
-import { CategorySection } from './CategorySection';
-import { BlogPost } from "@/components/blog/blog";
-import { slugifyCategory } from "@/lib/utils";
+import {BlogSearch} from './BlogSearch';
+import {FeaturedCarousel} from './FeaturedCarousel';
+import {LatestPostsList} from './LatestPostsList';
+import {PostCard} from './PostCard';
+import {CategorySection} from './CategorySection';
+import {BlogPost} from "@/components/blog/blog";
+import {slugifyCategory} from "@/lib/utils";
 
 interface BlogClientPageProps {
     allPosts: BlogPost[];
@@ -62,9 +61,7 @@ export default function BlogClientPage({ allPosts }: BlogClientPageProps) {
     const categories = useMemo(() => {
         const groups: Record<string, BlogPost[]> = {};
 
-        const postsToGroup = allPosts;
-
-        postsToGroup.forEach(post => {
+        allPosts.forEach(post => {
             const cat = post.category || 'Uncategorized';
             if (!groups[cat]) {
                 groups[cat] = [];

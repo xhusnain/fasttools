@@ -10,7 +10,7 @@ import { GAuthorBio } from '@/components/blog/GAuthorBio';
 import { GuideMDXComponents } from "@/components/guide/guide-mdx-components";
 import { GButton } from "@/ui/gbutton";
 import { ArrowRight, Wrench } from "lucide-react";
-import { ArticleAd } from '@/components/ads/article-ad';
+import { injectArticleAds } from '@/lib/ad-utils';
 
 // MDX Plugins
 import remarkGfm from 'remark-gfm';
@@ -90,22 +90,7 @@ export default async function GuidePage({
 
     const { frontMatter } = guide
 
-    // Process content to remove Table of Contents header
-    let contentWithoutToc = guide.content.replace(/^## Table of Contents$/m, '')
-
-    // Inject Article Ads
-    const paragraphs = contentWithoutToc.split('\n\n');
-    if (paragraphs.length > 6) {
-        // Insert after 3rd paragraph
-        paragraphs.splice(3, 0, '<ArticleAd />');
-        // Insert before last 2 paragraphs
-        paragraphs.splice(paragraphs.length - 2, 0, '<ArticleAd />');
-        contentWithoutToc = paragraphs.join('\n\n');
-    } else if (paragraphs.length > 3) {
-        // Just one ad if content is short
-        paragraphs.splice(Math.floor(paragraphs.length / 2), 0, '<ArticleAd />');
-        contentWithoutToc = paragraphs.join('\n\n');
-    }
+    const contentWithAds = injectArticleAds(guide.content);
 
     const articleSchema = {
         '@context': 'https://schema.org',
@@ -275,7 +260,7 @@ export default async function GuidePage({
                                     }
                                 >
                                     <MDXRemote
-                                        source={contentWithoutToc}
+                                        source={contentWithAds}
                                         components={GuideMDXComponents}
                                         options={{
                                             mdxOptions: {
