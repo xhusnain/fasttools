@@ -1,9 +1,10 @@
+import type { Metadata } from "next"
 import { GHeader } from "@/ui/gheader"
 
 import { createMetadata } from "@/lib/metadata-base"
 import { Mail, FileText, AlertTriangle } from "lucide-react"
 
-export const metadata = createMetadata({
+export const metadata: Metadata = createMetadata({
     title: "DMCA Copyright Policy",
     description: "FastTools respects the intellectual property rights of others. Learn about our DMCA policy and how to report copyright infringement.",
     path: "/dmca",

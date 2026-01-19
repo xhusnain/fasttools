@@ -1,3 +1,4 @@
+import { Metadata } from 'next';
 import { ToolPageLayout } from "@/components/common/tool-page-layout"
 import { createToolConfig } from "@/lib/create-tool-config"
 import { GToolCard } from "@/ui/gtool-card"
@@ -145,7 +146,7 @@ const toolConfig = createToolConfig({
   }
 })
 
-export const metadata = toolConfig.metadata
+export const metadata: Metadata = toolConfig.metadata
 
 export default function ImageToolsPage() {
   return (

@@ -14,7 +14,7 @@ const baseMetadata = createMetadata({
     includeSchema: false
 })
 
-export const metadata = {
+export const metadata: Metadata = {
     ...baseMetadata,
     title: "Image Background Remover API | Free & Easy Integration"
 }

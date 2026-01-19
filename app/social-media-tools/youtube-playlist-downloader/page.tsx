@@ -1,3 +1,4 @@
+import { Metadata } from 'next';
 import { ToolPageLayout } from "@/components/common/tool-page-layout"
 import Image from "next/image"
 import { createToolConfig, UnifiedToolConfig } from "@/lib/create-tool-config"
@@ -185,7 +186,7 @@ const configBody: UnifiedToolConfig = {
 
 const toolConfig = createToolConfig(configBody)
 
-export const metadata = toolConfig.metadata
+export const metadata: Metadata = toolConfig.metadata
 
 export default function YoutubePlaylistDownloaderPage() {
     return (

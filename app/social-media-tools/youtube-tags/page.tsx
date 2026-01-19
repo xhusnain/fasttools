@@ -1,3 +1,4 @@
+import { Metadata } from 'next';
 import dynamic from "next/dynamic"
 
 const YoutubeTagExtractor = dynamic(() => import("@/components/social-media/youtube-tag-extractor").then(mod => mod.YoutubeTagExtractor), {
@@ -272,7 +273,7 @@ const toolConfig = createToolConfig({
 
 })
 
-export const metadata = toolConfig.metadata
+export const metadata: Metadata = toolConfig.metadata
 
 export default function YoutubeTagsPage() {
   return <ToolPageLayout {...toolConfig.getLayoutProps(<YoutubeTagExtractor />)} />

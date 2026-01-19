@@ -1,9 +1,10 @@
 import { getAllPosts } from '@/components/blog/blog'
 import { slugifyCategory } from '@/lib/utils'
 import Link from 'next/link'
+import { Metadata } from 'next';
 import { createMetadata } from "@/lib/metadata-base"
 
-export const metadata = createMetadata({
+export const metadata: Metadata = createMetadata({
     title: 'Archive - Blog',
     description: 'Browse our complete archive of articles, tutorials, and guides organized by category. Find expert tips on calculators, AI tools, finance, and more.',
     path: '/blog/archive',

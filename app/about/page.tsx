@@ -11,9 +11,10 @@ import {
   ArrowRight
 } from "lucide-react"
 import Link from "next/link"
+import { Metadata } from 'next';
 import { createMetadata } from "@/lib/metadata-base"
 
-export const metadata = createMetadata({
+export const metadata: Metadata = createMetadata({
   title: "About Us",
   description: "Discover FastTools, the comprehensive free online tools platform with 1000+ AI, converter, calculator, SEO and productivity utilities.",
   path: "/about",

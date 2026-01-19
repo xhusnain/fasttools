@@ -21,7 +21,7 @@ const baseMetadata = createMetadata({
   includeSchema: false
 })
 
-export const metadata = {
+export const metadata: Metadata = {
   ...baseMetadata,
   title: "Free Currency Exchange API (No Key Required) | FastTools"
 }

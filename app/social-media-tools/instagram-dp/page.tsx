@@ -1,3 +1,4 @@
+import { Metadata } from 'next';
 import dynamic from "next/dynamic"
 
 const InstagramDpViewer = dynamic(() => import("@/components/social-media/instagram-dp-viewer").then(mod => mod.InstagramDpViewer), {
@@ -254,7 +255,7 @@ const toolConfig = createToolConfig({
   }
 })
 
-export const metadata = {
+export const metadata: Metadata = {
   ...toolConfig.metadata,
   title: `Instagram DP Viewer & Downloader - View Full Size HD Pics`
 }

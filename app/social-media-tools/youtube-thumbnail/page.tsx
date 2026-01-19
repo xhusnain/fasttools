@@ -1,3 +1,4 @@
+import type { Metadata } from "next"
 import dynamic from "next/dynamic"
 
 const YoutubeThumbnailDownloader = dynamic(() => import("@/components/social-media/youtube-thumbnail-downloader").then(mod => mod.YoutubeThumbnailDownloader), {
@@ -170,7 +171,7 @@ const toolConfig = createToolConfig({
   }
 })
 
-export const metadata = toolConfig.metadata
+export const metadata: Metadata = toolConfig.metadata
 
 export default function YoutubeThumbnailPage() {
   return <ToolPageLayout {...toolConfig.getLayoutProps(<YoutubeThumbnailDownloader />)} />

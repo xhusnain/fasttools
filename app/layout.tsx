@@ -1,3 +1,4 @@
+import type { Metadata } from "next"
 import type React from "react"
 import Script from "next/script"
 import "./globals.css"
@@ -21,10 +22,11 @@ const WelcomePopup = dynamic(
 
 export const viewport = globalViewport
 
-export const metadata = {
+export const metadata: Metadata = {
     metadataBase: new URL("https://www.fasttools.store"),
     title: {
         default: "FastTools - 1000+ Free Online Tools",
+        template: "%s | FastTools",
     },
     description: "FastTools provides 1000+ free online tools and expert articles: PDF tools, AI generators, calculators, developer utilities, and a tech blog with in-depth tutorials. 100% free, secure local processing, and works on all devices.",
     authors: [{ name: "FastTools Team", url: "https://www.fasttools.store" }],

@@ -1,3 +1,4 @@
+import { Metadata } from 'next';
 import { ToolPageLayout } from "@/components/common/tool-page-layout"
 import { createToolConfig } from "@/lib/create-tool-config"
 import { AlertCircle, Shield, Smartphone, Monitor, Sparkles, Palette, Zap, Scale, Music, Eye, AlertTriangle, Globe } from "lucide-react"
@@ -402,7 +403,7 @@ const toolConfig = createToolConfig({
     }
 })
 
-export const metadata = toolConfig.metadata
+export const metadata: Metadata = toolConfig.metadata
 
 export default function CapcutDownloaderPage() {
     return <ToolPageLayout {...toolConfig.getLayoutProps(<CapcutDownloader />)} />

@@ -1,3 +1,4 @@
+import type { Metadata } from "next"
 import dynamic from "next/dynamic"
 
 const LinkInBioGenerator = dynamic(() => import("@/components/social-media/link-in-bio-generator").then(mod => mod.LinkInBioGenerator), {
@@ -211,7 +212,7 @@ const toolConfig = createToolConfig({
   }
 })
 
-export const metadata = toolConfig.metadata
+export const metadata: Metadata = toolConfig.metadata
 
 export default function LinkInBioPage() {
   return <ToolPageLayout {...toolConfig.getLayoutProps(<LinkInBioGenerator />)} />

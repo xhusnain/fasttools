@@ -1,3 +1,4 @@
+import { Metadata } from 'next';
 import React from 'react'
 import Image from "next/image"
 import { GToolCard } from "@/ui/gtool-card"
@@ -933,7 +934,7 @@ All calculator tools undergo rigorous testing with multiple validation methods. 
     })
   }
 })
-export const metadata = toolConfig.metadata
+export const metadata: Metadata = toolConfig.metadata
 
 export default function ToolsPage() {
   return <ToolPageLayout {...toolConfig.getLayoutProps(<CalculatorGrid />)} />

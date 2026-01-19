@@ -1,3 +1,4 @@
+import { Metadata } from 'next';
 import dynamic from "next/dynamic"
 import { ToolPageLayout } from "@/components/common/tool-page-layout"
 import { ToolLoader } from "@/components/common/tool-loader"
@@ -268,7 +269,7 @@ const toolConfig = createToolConfig({
   }
 })
 
-export const metadata = {
+export const metadata: Metadata = {
   ...toolConfig.metadata,
   title: `Relationship Anniversary Calculator - Years, Months, Days`
 }

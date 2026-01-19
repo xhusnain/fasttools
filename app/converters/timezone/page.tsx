@@ -1,3 +1,4 @@
+import { Metadata } from 'next';
 import dynamic from "next/dynamic"
 import { ToolLoader } from "@/components/common/tool-loader"
 
@@ -340,7 +341,7 @@ Located roughly at 180° longitude, the International Date Line marks the change
   }
 })
 
-export const metadata = toolConfig.metadata
+export const metadata: Metadata = toolConfig.metadata
 
 export default function TimezoneConverterPage() {
   return <ToolPageLayout {...toolConfig.getLayoutProps(<TimezoneConverter />)} />

@@ -1,3 +1,4 @@
+import type { Metadata } from "next"
 import dynamic from "next/dynamic"
 
 const YoutubeChannelNameGenerator = dynamic(() => import("@/components/social-media/youtube-channel-name-generator").then(mod => mod.YoutubeChannelNameGenerator), {
@@ -310,7 +311,7 @@ Unlike other tools that require registration or limit your searches, our YouTube
     }
 })
 
-export const metadata = toolConfig.metadata
+export const metadata: Metadata = toolConfig.metadata
 
 export default function ChannelNameGeneratorPage() {
     return (

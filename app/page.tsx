@@ -1,3 +1,4 @@
+import type { Metadata } from "next"
 import Link from "next/link"
 import dynamic from "next/dynamic"
 import { GButton } from "@/ui/gbutton"
@@ -51,7 +52,7 @@ import { ClickFortifyAd } from "@/components/custom-ads/cf-ads/ClickFortifyAd"
 
 import { createMetadata } from "@/lib/metadata-base"
 
-export const metadata = createMetadata({
+export const metadata: Metadata = createMetadata({
   title: "FastTools - Free Online Tools & Productivity Platform",
   description: "FastTools offers 1000+ free online tools: AI generators, calculators, converters & SEO utilities. Instant access, no registration required.",
   path: "/",

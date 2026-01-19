@@ -15,19 +15,20 @@ import {
   Clock,
   RefreshCw
 } from "lucide-react"
+import { Metadata } from 'next';
 import { createMetadata } from "@/lib/metadata-base"
 
-export const metadata = createMetadata({
+export const metadata: Metadata = createMetadata({
   title: "Privacy Policy | GDPR & CCPA Compliant",
   description: "Comprehensive privacy policy for FastTools covering GDPR, CCPA compliance, Google AdSense policies, data collection, and user rights for free online tools.",
   path: "/privacy-policy",
   includeSchema: false,
   breadcrumbs: [
-      {
-        "label": "Privacy Policy",
-        "href": "/privacy-policy"
-      }
-    ]
+    {
+      "label": "Privacy Policy",
+      "href": "/privacy-policy"
+    }
+  ]
 })
 
 export default function PrivacyPolicyPage() {

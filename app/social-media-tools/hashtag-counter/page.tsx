@@ -1,3 +1,4 @@
+import type { Metadata } from "next"
 import dynamic from "next/dynamic"
 
 const HashtagCounter = dynamic(() => import("@/components/social-media/hashtag-counter").then(mod => mod.HashtagCounter), {
@@ -222,7 +223,7 @@ const toolConfig = createToolConfig({
   }
 })
 
-export const metadata = {
+export const metadata: Metadata = {
   ...toolConfig.metadata,
   title: "Hashtag Counter - Instagram Hashtag Generator"
 }

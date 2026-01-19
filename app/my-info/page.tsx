@@ -1,8 +1,9 @@
 import { LocationInfo } from "@/components/location/LocationInfo"
 import { PremiumHeroBackground } from "@/components/common/premium-hero-background"
+import { Metadata } from 'next';
 import { createMetadata } from "@/lib/metadata-base"
 
-export const metadata = createMetadata({
+export const metadata: Metadata = createMetadata({
     title: "My Info - Your Digital Footprint Analysis",
     description: "Instantly analyze your digital footprint. Check IP, location, browser, device details & security. Free online privacy tool.",
     path: "/my-info",

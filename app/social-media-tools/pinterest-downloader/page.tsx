@@ -1,3 +1,4 @@
+import type { Metadata } from "next"
 import { ToolPageLayout } from "@/components/common/tool-page-layout"
 import { createToolConfig } from "@/lib/create-tool-config"
 import { Shield, Smartphone, Monitor, Image, Video, Zap, Scale, Heart, Search, AlertTriangle, Wifi, FolderDown, Lock, Music } from "lucide-react"
@@ -439,7 +440,7 @@ const toolConfig = createToolConfig({
     }
 })
 
-export const metadata = toolConfig.metadata
+export const metadata: Metadata = toolConfig.metadata
 
 export default function PinterestDownloaderPage() {
     return <ToolPageLayout {...toolConfig.getLayoutProps(<PinterestDownloader />)} />

@@ -6,19 +6,20 @@ import {
   ScrollText, Landmark, TrendingDown, Banknote
 } from "lucide-react"
 import { ToolPageLayout } from "@/components/common/tool-page-layout"
+import { Metadata } from 'next';
 import { createMetadata } from "@/lib/metadata-base"
 
-export const metadata = createMetadata({
+export const metadata: Metadata = createMetadata({
   title: "Free Online Finance Tools – Budget, Investment & Expense Calculators",
   description: "Free finance tools: budget calculators, savings trackers, loan calculators, investment planners. Perfect for financial planning.",
   path: "/finance-tools",
   includeSchema: false,
   breadcrumbs: [
-      {
-        "label": "Finance Tools",
-        "href": "/finance-tools"
-      }
-    ]
+    {
+      "label": "Finance Tools",
+      "href": "/finance-tools"
+    }
+  ]
 })
 
 export default function FinanceToolsPage() {

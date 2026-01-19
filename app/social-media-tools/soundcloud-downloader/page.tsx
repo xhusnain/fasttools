@@ -1,3 +1,4 @@
+import type { Metadata } from "next"
 import { ToolPageLayout } from "@/components/common/tool-page-layout"
 import { createToolConfig } from "@/lib/create-tool-config"
 import {
@@ -220,7 +221,7 @@ const toolConfig = createToolConfig({
     }
 })
 
-export const metadata = {
+export const metadata: Metadata = {
     ...toolConfig.metadata,
     openGraph: {
         ...toolConfig.metadata.openGraph,

@@ -1,3 +1,4 @@
+import { Metadata } from 'next';
 import dynamic from "next/dynamic"
 
 const FacebookDownloader = dynamic(() => import("@/components/social-media/facebook-downloader/facebook-downloader").then(mod => mod.FacebookDownloader), {
@@ -399,7 +400,7 @@ const toolConfig = createToolConfig({
   }
 })
 
-export const metadata = toolConfig.metadata
+export const metadata: Metadata = toolConfig.metadata
 
 export default function FacebookDownloaderPage() {
   return <ToolPageLayout {...toolConfig.getLayoutProps(<FacebookDownloader />)} />

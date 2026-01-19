@@ -1,3 +1,4 @@
+import { Metadata } from 'next';
 import dynamic from "next/dynamic"
 
 const YoutubeChannelChecker = dynamic(() => import("@/components/social-media/youtube-channel-checker").then(mod => mod.YoutubeChannelChecker), {
@@ -1317,7 +1318,7 @@ const toolConfig = createToolConfig({
   }
 })
 
-export const metadata = toolConfig.metadata
+export const metadata: Metadata = toolConfig.metadata
 
 export default function ChannelCheckerPage() {
   return <ToolPageLayout {...toolConfig.getLayoutProps(<YoutubeChannelChecker />)} />

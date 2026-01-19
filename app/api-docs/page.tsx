@@ -1,3 +1,4 @@
+import type { Metadata } from "next"
 import { Breadcrumbs } from "@/components/common/breadcrumbs"
 import { GHeader } from "@/ui/gheader"
 import { GAccordion, GAccordionContent, GAccordionItem, GAccordionTrigger } from "@/ui/gaccordion"
@@ -13,7 +14,7 @@ import {
   ShieldCheck,
   Star
 } from "lucide-react"
-export const metadata = createMetadata({
+export const metadata: Metadata = createMetadata({
   title: "Free RESTful API for Developers | FastTools",
   description: "Free, reliable RESTful APIs for developers. Access currency conversion, image tools & more. No API key required to start building.",
   path: "/api-docs",
@@ -22,11 +23,11 @@ export const metadata = createMetadata({
   twitterTitle: "Free RESTful API for Developers | FastTools",
   twitterDescription: "Access free, reliable, and easy-to-use RESTful APIs. Get started in minutes with our developer-friendly documentation.",
   breadcrumbs: [
-      {
-        "label": "API Docs",
-        "href": "/api-docs"
-      }
-    ]
+    {
+      "label": "API Docs",
+      "href": "/api-docs"
+    }
+  ]
 });
 
 const apis = [

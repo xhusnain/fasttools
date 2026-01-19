@@ -5,12 +5,13 @@ import { ToolLoader } from "@/components/common/tool-loader"
 const ROASCalculator = dynamic(() => import("@/components/calculators/roas-calculator").then(mod => mod.ROASCalculator), {
     loading: () => <ToolLoader />
 })
+import { Metadata } from 'next';
 import { createMetadata } from "@/lib/metadata-base"
 import Image from "next/image"
 import { GTable } from "@/ui/gtable"
 import { Calculator, TrendingUp, Target, DollarSign, BarChart3, CheckCircle, AlertTriangle, Lightbulb, Zap, Globe, Brain, Shield } from "lucide-react"
 
-export const metadata = createMetadata({
+export const metadata: Metadata = createMetadata({
     title: "Free ROAS Calculator | Calculate Ad Profit & ROI Instantly",
     description: "Calculate ROAS, ROI & ad profitability instantly. Simple & Advanced modes for Google, Facebook & TikTok ads. Free CPA & profit analysis.",
     path: "/ad-tools/roas-calculator",

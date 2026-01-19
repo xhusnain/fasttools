@@ -1,6 +1,7 @@
+import { Metadata } from 'next';
 import { createMetadata } from "@/lib/metadata-base"
 
-export const metadata = createMetadata({
+export const metadata: Metadata = createMetadata({
     title: "Scientific Calculator | Advanced Math Calculator",
     description: "Free online scientific calculator with 70+ mathematical functions. Advanced trigonometry, logarithms, statistics, and engineering calculations. Professional-grade calculator for students, engineers, and scientists.",
     path: "/calculator/scientific-calculator",

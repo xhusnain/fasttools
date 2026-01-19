@@ -1,3 +1,4 @@
+import { Metadata } from 'next';
 import { createMetadata } from "@/lib/metadata-base"
 import type { FAQItem } from "@/types"
 import { Breadcrumbs } from "@/components/common/breadcrumbs"
@@ -16,16 +17,16 @@ import {
     Star
 } from "lucide-react"
 
-export const metadata = createMetadata({
-  title: "FAQ",
+export const metadata: Metadata = createMetadata({
+    title: "FAQ",
     description: "Get answers to frequently asked questions about FastTools — learn about our tools, privacy, features, and more.",
     path: "/faq",
     includeSchema: false,
-  breadcrumbs: [
-      {
-        "label": "FAQ",
-        "href": "/faq"
-      }
+    breadcrumbs: [
+        {
+            "label": "FAQ",
+            "href": "/faq"
+        }
     ]
 })
 

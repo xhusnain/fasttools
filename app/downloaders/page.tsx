@@ -4,6 +4,7 @@ import { GHeader } from "@/ui/gheader"
 import { GAccordion, GAccordionContent, GAccordionItem, GAccordionTrigger } from "@/ui/gaccordion"
 
 import Link from "next/link"
+import { Metadata } from 'next';
 import { createMetadata } from "@/lib/metadata-base"
 import {
   Download,
@@ -21,7 +22,7 @@ import {
   Music,
   List
 } from "lucide-react"
-export const metadata = createMetadata({
+export const metadata: Metadata = createMetadata({
   title: "Universal Video Downloader - Save from YouTube, TikTok, & Meta",
   description: "The #1 Universal Video Downloader. Save videos from YouTube, TikTok (No Watermark), Instagram, Facebook, and X in HD/4K. Free, fast, & unblocked.",
   path: "/downloaders",
@@ -30,11 +31,11 @@ export const metadata = createMetadata({
   twitterTitle: "Universal Video Downloader - Save from YouTube, TikTok, & Meta",
   twitterDescription: "The #1 Universal Video Downloader. Save videos from YouTube, TikTok (No Watermark), Instagram, Facebook, and X in HD/4K.",
   breadcrumbs: [
-      {
-        "label": "Downloaders",
-        "href": "/downloaders"
-      }
-    ]
+    {
+      "label": "Downloaders",
+      "href": "/downloaders"
+    }
+  ]
 });
 
 const downloaders = [

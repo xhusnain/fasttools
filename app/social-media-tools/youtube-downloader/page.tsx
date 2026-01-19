@@ -1,3 +1,4 @@
+import type { Metadata } from "next"
 import { ToolPageLayout } from "@/components/common/tool-page-layout"
 import { createToolConfig } from "@/lib/create-tool-config"
 import { AlertCircle, Shield, Zap, Smartphone, Monitor, Music, Video } from "lucide-react"
@@ -302,7 +303,7 @@ const toolConfig = createToolConfig({
     }
 })
 
-export const metadata = toolConfig.metadata
+export const metadata: Metadata = toolConfig.metadata
 
 export default function YoutubeDownloaderPage() {
     return <ToolPageLayout {...toolConfig.getLayoutProps(<YoutubeDownloader />)} />

@@ -4,6 +4,7 @@ import { GToolCard } from "@/ui/gtool-card"
 import { GAccordion, GAccordionContent, GAccordionItem, GAccordionTrigger } from "@/ui/gaccordion"
 
 import Link from "next/link"
+import { Metadata } from 'next';
 import { createMetadata } from "@/lib/metadata-base"
 import {
   Calculator,
@@ -21,7 +22,7 @@ import {
   Calendar,
   Lock as LockIcon
 } from "lucide-react"
-export const metadata = createMetadata({
+export const metadata: Metadata = createMetadata({
   title: "100+ Free Online Tools for Every Need | FastTools",
   description: "Explore 100+ free online tools for every need. Calculators, AI utilities, converters & developer tools. Secure, fast & free.",
   path: "/products",

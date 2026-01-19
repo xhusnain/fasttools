@@ -1,3 +1,4 @@
+import type { Metadata } from "next"
 import dynamic from "next/dynamic"
 import { ToolPageLayout } from "@/components/common/tool-page-layout"
 import { ToolLoader } from "@/components/common/tool-loader"
@@ -217,7 +218,7 @@ const toolConfig = createToolConfig({
   }
 })
 
-export const metadata = toolConfig.metadata
+export const metadata: Metadata = toolConfig.metadata
 
 export default function JWTDecoderPage() {
   return (

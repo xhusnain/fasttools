@@ -12,19 +12,20 @@ import {
   BookOpen,
   RefreshCw
 } from "lucide-react"
+import { Metadata } from 'next';
 import { createMetadata } from "@/lib/metadata-base"
 
-export const metadata = createMetadata({
+export const metadata: Metadata = createMetadata({
   title: "Terms of Service | Google AdSense Compliant",
   description: "Comprehensive terms of service for FastTools covering Google AdSense compliance, user agreements, and legal obligations for free online tools.",
   path: "/terms",
   includeSchema: false,
   breadcrumbs: [
-      {
-        "label": "Terms",
-        "href": "/terms"
-      }
-    ]
+    {
+      "label": "Terms",
+      "href": "/terms"
+    }
+  ]
 })
 
 export default function TermsPage() {

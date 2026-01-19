@@ -1,3 +1,4 @@
+import type { Metadata } from "next"
 import dynamic from "next/dynamic"
 
 const XDownloader = dynamic(() => import("@/components/social-media/x-downloader/x-downloader").then(mod => mod.XDownloader), {
@@ -402,7 +403,7 @@ const toolConfig = createToolConfig({
   }
 })
 
-export const metadata = toolConfig.metadata
+export const metadata: Metadata = toolConfig.metadata
 
 export default function XVideoDownloaderPage() {
   return <ToolPageLayout {...toolConfig.getLayoutProps(<XDownloader />)} />
