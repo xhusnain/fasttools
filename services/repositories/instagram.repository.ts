@@ -3,7 +3,7 @@
  * Handles all Instagram-related API calls
  */
 
-import { HttpClient } from "../api/http-client";
+import { HttpClient } from "@/services";
 import type { InstagramProfileResponse } from "@/types/api.types";
 
 export const InstagramRepository = {

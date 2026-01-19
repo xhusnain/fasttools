@@ -1,4 +1,4 @@
-import { HttpClient } from "../api/http-client";
+import { HttpClient } from "@/services";
 import type { SocialMediaPlatform, DownloadRequest, DownloadResponse } from "@/types";
 
 export const DownloaderRepository = {

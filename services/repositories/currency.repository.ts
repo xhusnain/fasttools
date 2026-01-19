@@ -1,4 +1,3 @@
-import { HttpClient } from "../api/http-client";
 import type {
   CurrencyList,
   ExchangeRates,
