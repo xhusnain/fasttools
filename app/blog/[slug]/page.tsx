@@ -13,6 +13,7 @@ import { GAuthorBio } from '@/components/blog/GAuthorBio';
 import { GImage } from "@/ui/gimage";
 import { MDXComponents } from "@/components/blog/mdx-components";
 import { SquareAd } from '@/components/ads/square-ad';
+import { ArticleAd } from '@/components/ads/article-ad';
 
 // MDX Plugins
 import remarkGfm from 'remark-gfm';
@@ -106,7 +107,21 @@ export default async function BlogPost({
 
 
     // Process content to remove Table of Contents header
-    const contentWithoutToc = post.content.replace(/^## Table of Contents$/m, '')
+    let contentWithoutToc = post.content.replace(/^## Table of Contents$/m, '')
+
+    // Inject Article Ads
+    const paragraphs = contentWithoutToc.split('\n\n');
+    if (paragraphs.length > 6) {
+        // Insert after 3rd paragraph
+        paragraphs.splice(3, 0, '<ArticleAd />');
+        // Insert before last 2 paragraphs
+        paragraphs.splice(paragraphs.length - 2, 0, '<ArticleAd />');
+        contentWithoutToc = paragraphs.join('\n\n');
+    } else if (paragraphs.length > 3) {
+        // Just one ad if content is short
+        paragraphs.splice(Math.floor(paragraphs.length / 2), 0, '<ArticleAd />');
+        contentWithoutToc = paragraphs.join('\n\n');
+    }
 
     const articleSchema = createArticleSchema({
         title: frontMatter.title,

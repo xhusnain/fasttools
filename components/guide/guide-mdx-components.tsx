@@ -5,6 +5,7 @@ import { GCode } from "@/ui/gcode";
 import { GTable } from "@/ui/gtable";
 import { GChecklist } from "@/ui/gchecklist";
 import { GDynamicYear } from "@/ui/g-dynamic-year";
+import { ArticleAd } from '../ads/article-ad';
 import {
     TryItButton,
     CodeExample,
@@ -146,4 +147,5 @@ export const GuideMDXComponents = {
     LearningGoals,
     ProgressTracker,
     ChapterLink,
+    ArticleAd,
 };
