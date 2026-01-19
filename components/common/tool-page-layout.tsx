@@ -13,6 +13,7 @@ import {
 } from "lucide-react"
 import type { ToolPageLayoutProps } from "@/types/tool-page-layout.types"
 import { SquareAd } from "@/components/ads/square-ad"
+import { ClickFortifyAd } from "@/components/custom-ads/cf-ads/ClickFortifyAd"
 
 export function ToolPageLayout({
     header,
@@ -323,8 +324,8 @@ export function ToolPageLayout({
                         </div>
 
                         <div className="space-y-6">
-                            {toolContent.relatedTools && toolContent.relatedTools.length > 0 && (
-                                <div className="sticky top-32 space-y-6 hidden lg:block">
+                            <div className="sticky top-32 space-y-6 hidden lg:block">
+                                {toolContent.relatedTools && toolContent.relatedTools.length > 0 && (
                                     <section className="bg-card border border-border rounded-lg p-6 shadow-sm">
                                         <h2 className="text-lg font-bold mb-4 text-foreground">
                                             Related Tools
@@ -342,12 +343,13 @@ export function ToolPageLayout({
                                             ))}
                                         </div>
                                     </section>
-                                </div>
-                            )}
+                                )}
 
-                            {/* sticky ad */}
-                            <div className="sticky top-96">
-                                <SquareAd />
+                                {/* ads */}
+                                <div className="space-y-6">
+                                    <ClickFortifyAd className="w-full !h-auto aspect-square" />
+                                    <SquareAd />
+                                </div>
                             </div>
                         </div>
                     </div>

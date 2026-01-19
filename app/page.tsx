@@ -47,6 +47,8 @@ import {
   Lock,
 } from "lucide-react"
 
+import { ClickFortifyAd } from "@/components/custom-ads/cf-ads/ClickFortifyAd"
+
 import { createMetadata } from "@/lib/metadata-base"
 
 export const metadata = createMetadata({
@@ -1138,13 +1140,25 @@ export default function Home() {
             <span>New: Watch 11,000+ Live TV Channels Free</span>
           </div>
 
-          {/* Main Heading */}
-          <h1 className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-black text-foreground leading-[1.1] tracking-tight mb-8">
-            <span className="block mb-2">Build faster with</span>
-            <span className="bg-clip-text text-transparent bg-gradient-to-r from-primary via-purple-500 to-indigo-500 animate-gradient-x">
-              premium tools.
-            </span>
-          </h1>
+          <div className="relative">
+            {/* Main Heading */}
+            <h1 className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-black text-foreground leading-[1.1] tracking-tight mb-8">
+              <span className="block mb-2">Build faster with</span>
+              <span className="bg-clip-text text-transparent bg-gradient-to-r from-primary via-purple-500 to-indigo-500 animate-gradient-x">
+                premium tools.
+              </span>
+            </h1>
+
+            {/* Left Ad - Desktop Only */}
+            <div className="hidden 2xl:block absolute -left-80 top-0 shrink-0">
+              <ClickFortifyAd className="shadow-primary/10" />
+            </div>
+
+            {/* Right Ad - Desktop Only */}
+            <div className="hidden 2xl:block absolute -right-80 top-0 shrink-0">
+              <ClickFortifyAd className="shadow-primary/10" />
+            </div>
+          </div>
 
           {/* Subheading */}
           <p className="text-lg sm:text-xl md:text-2xl text-muted-foreground font-medium max-w-3xl mx-auto leading-relaxed mb-12 px-4">
