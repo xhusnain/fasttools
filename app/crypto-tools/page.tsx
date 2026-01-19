@@ -46,45 +46,18 @@ const toolConfig = createToolConfig({
         overview: "Discover our comprehensive collection of crypto tools designed for developers, security professionals, and blockchain enthusiasts. All tools are free, run locally in your browser, and prioritize your privacy with client-side processing.",
 
         howToSteps: [
-            {
-                title: "Select a Tool",
-                description: "Choose the specific crypto tool you need from our collection, such as the Token Generator or Password Creator."
-            },
-            {
-                title: "Configure Settings",
-                description: "Adjust the settings to match your requirements, such as token length, included characters (A-Z, 0-9, symbols), or specific formats."
-            },
-            {
-                title: "Generate Instantly",
-                description: "Click the generate button. Our tools use your browser's built-in Web Crypto API to create cryptographically secure results instantly."
-            },
-            {
-                title: "Copy & Use",
-                description: "Copy your secure key, token, or password. Since everything runs client-side, your data remains private and never leaves your device."
-            }
+            "Select a Tool: Choose the specific crypto tool you need from our collection, such as the Token Generator or Hash Text Generator.",
+            "Configure Settings: Adjust the settings to match your requirements, such as token length, included characters (A-Z, 0-9, symbols), or specific formats.",
+            "Generate Instantly: Click the generate button. Our tools use your browser's built-in Web Crypto API to create cryptographically secure results instantly.",
+            "Copy & Use: Copy your secure key, token, or password. Since everything runs client-side, your data remains private and never leaves your device."
         ],
 
         features: [
-            {
-                title: "100% Client-Side",
-                description: "All cryptographic operations execute directly in your browser. No data is ever sent to our servers."
-            },
-            {
-                title: "CSPRNG Security",
-                description: "Uses the Cryptographically Secure Pseudo-Random Number Generator standard for production-grade security."
-            },
-            {
-                title: "Zero Data Storage",
-                description: "We don't store, track, or log any of your generated keys. Once you close the tab, it's gone."
-            },
-            {
-                title: "Customizable Output",
-                description: "Flexible controls for length, character sets, and formatting to meet specific API or security requirements."
-            },
-            {
-                title: "Instant & Free",
-                description: "Professional-grade security tools available instantly without registration or paywalls."
-            }
+            "100% Client-Side: All cryptographic operations execute directly in your browser. No data is ever sent to our servers.",
+            "CSPRNG Security: Uses the Cryptographically Secure Pseudo-Random Number Generator standard for production-grade security.",
+            "Zero Data Storage: We don't store, track, or log any of your generated keys. Once you close the tab, it's gone.",
+            "Customizable Output: Flexible controls for length, character sets, and formatting to meet specific API or security requirements.",
+            "Instant & Free: Professional-grade security tools available instantly without registration or paywalls."
         ],
 
         aboutTool: (
