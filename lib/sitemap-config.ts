@@ -121,6 +121,12 @@ export const categoryPages = [
         priority: 0.75,
     },
     {
+        url: "https://www.fasttools.store/crypto-tools",
+        lastModified: new Date(),
+        changeFrequency: "weekly" as const,
+        priority: 0.95,
+    },
+    {
         url: "https://www.fasttools.store/calculator",
         lastModified: new Date('2025-11-25'),
         changeFrequency: "monthly" as const,
@@ -999,6 +1005,32 @@ export const toolPages = [
                 url: "https://www.fasttools.store/images/tools/uuid-generator.png",
                 title: "UUID Generator Concept - Unique Identifier Generation Process",
                 caption: "A high-quality, modern, isometric 3D illustration representing a UUID Concept. Data flow, digital unique keys, hex strings 128-bit."
+            }
+        ]
+    },
+    {
+        url: "https://www.fasttools.store/crypto-tools/token-generator",
+        lastModified: new Date(),
+        changeFrequency: "weekly" as const,
+        priority: 0.95,
+        images: [
+            {
+                url: "https://www.fasttools.store/images/token-generator-hero.png",
+                title: "Secure Token Generator - API Keys & Secrets",
+                caption: "Generate secure random tokens, API keys, and passwords instantly. Customizable length and character sets."
+            }
+        ]
+    },
+    {
+        url: "https://www.fasttools.store/crypto-tools/hash-text",
+        lastModified: new Date(),
+        changeFrequency: "weekly" as const,
+        priority: 0.95,
+        images: [
+            {
+                url: "https://www.fasttools.store/images/hash-text-hero.png",
+                title: "Hash Text Generator - MD5, SHA-256, SHA-512",
+                caption: "Generate cryptographic hashes instantly. Support for MD5, SHA-1, SHA-2, SHA-3, and RIPEMD160. Secure client-side processing."
             }
         ]
     },

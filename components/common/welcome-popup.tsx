@@ -3,7 +3,7 @@
 import { useState, useEffect } from "react"
 import { X, Sparkles, ArrowRight, Download, Youtube, Instagram, Video, ListVideo } from "lucide-react"
 
-const POPUP_STORAGE_KEY = "welcome_popup_dismissed_at_v2"
+const POPUP_STORAGE_KEY = "welcome_popup_dismissed_at_v3"
 const POPUP_HIDE_DURATION_MS = 12 * 60 * 60 * 1000 // 12 hours in milliseconds
 
 export function WelcomePopup() {
@@ -84,15 +84,15 @@ export function WelcomePopup() {
                             id="welcome-popup-title"
                             className="mb-3 text-2xl font-bold tracking-tight text-foreground sm:text-3xl"
                         >
-                            🚀 New: UUID{" "}
+                            🚀 New: Crypto{" "}
                             <span className="bg-gradient-to-r from-cyan-500 via-blue-500 to-indigo-500 bg-clip-text text-transparent">
-                                Generator Tool!
+                                Tools Category!
                             </span>
                         </h2>
 
                         {/* Description */}
                         <p className="mb-6 text-muted-foreground leading-relaxed">
-                            <strong>Global Launch!</strong> Generate secure v1, v4, and modern v7 UUIDs instantly. Essential for all developers.
+                            <strong>Secure & Private!</strong> New collection of cryptographic tools including Hash Text, Token Generator, and more.
                         </p>
 
                         {/* Features list */}
@@ -101,23 +101,23 @@ export function WelcomePopup() {
                                 <div className="flex h-8 w-8 items-center justify-center rounded-full bg-cyan-500/20">
                                     <Sparkles className="h-4 w-4 text-cyan-500" />
                                 </div>
-                                <span className="text-sm text-foreground">Support for v1, v4, v6 & v7</span>
+                                <span className="text-sm text-foreground">Hash Text (MD5, SHA-256)</span>
                             </div>
                             <div className="flex items-center gap-3 rounded-lg bg-muted/50 px-4 py-2.5">
                                 <div className="flex h-8 w-8 items-center justify-center rounded-full bg-blue-500/20">
                                     <Download className="h-4 w-4 text-blue-500" />
                                 </div>
-                                <span className="text-sm text-foreground">Bulk Generate up to 50 IDs</span>
+                                <span className="text-sm text-foreground">Secure Token Generator</span>
                             </div>
                         </div>
 
                         {/* CTA Button */}
                         <a
-                            href="/dev-tools/uuid-generator"
+                            href="/crypto-tools"
                             className="group inline-flex w-full items-center justify-center gap-2 rounded-xl bg-gradient-to-r from-cyan-500 to-blue-500 px-6 py-3.5 text-base font-semibold text-white shadow-lg shadow-cyan-500/25 transition-all hover:shadow-xl hover:shadow-cyan-500/30 hover:scale-[1.02]"
                             onClick={handleClose}
                         >
-                            Generate UUIDs
+                            Explore Crypto Tools
                             <ArrowRight className="h-5 w-5 transition-transform group-hover:translate-x-1" />
                         </a>
 

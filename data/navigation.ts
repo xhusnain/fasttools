@@ -62,7 +62,8 @@ import {
     Gift,
     Drumstick,
     PartyPopper,
-    Tv
+    Tv,
+    Key
 } from "lucide-react"
 
 
@@ -226,6 +227,13 @@ export const navigationConfig: MegaMenuSection[] = [
                     { title: "Markdown Previewer", href: "/dev-tools/markdown-previewer", icon: Eye, description: "Preview MD" },
                     { title: "Regex Tester", href: "/dev-tools/regex-tester", icon: Code, description: "Test patterns" },
                     { title: "JWT Decoder", href: "/dev-tools/jwt-decoder", icon: Lock, description: "Token debug" },
+                ]
+            },
+            {
+                title: "Crypto Tools",
+                items: [
+                    { title: "Token Generator", href: "/crypto-tools/token-generator", icon: Key, description: "Generate keys" },
+                    { title: "Hash Text", href: "/crypto-tools/hash-text", icon: Hash, description: "MD5, SHA1, SHA256" },
                 ]
             },
             {

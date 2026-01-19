@@ -43,6 +43,8 @@ import {
   TrendingUp,
   Award,
   ArrowRight,
+  Key,
+  Lock,
 } from "lucide-react"
 
 import { createMetadata } from "@/lib/metadata-base"
@@ -144,6 +146,28 @@ const categories = [
         icon: Sparkles,
         badge: "Creative",
         badgeColor: "bg-pink-500/90",
+      },
+    ],
+  },
+  {
+    id: "crypto-tools",
+    name: "Crypto & Security Tools",
+    description: "Secure cryptographic tools for keys, tokens & passwords",
+    icon: Lock,
+    href: "/crypto-tools",
+    borderColor: "border-border",
+    hoverBorder: "hover:border-border",
+    iconBg: "bg-green-500/20",
+    iconColor: "text-green-500",
+    glowColor: "hover:shadow-green-500/20",
+    tools: [
+      {
+        title: "Token Generator",
+        description: "Generate secure random tokens, API keys, and passwords instantly with custom length and charset settings",
+        href: "/crypto-tools/token-generator",
+        icon: Key,
+        badge: "Secure",
+        badgeColor: "bg-green-600",
       },
     ],
   },

@@ -72,6 +72,11 @@ export const searchItems: SearchItem[] = [
   { name: "Timezone Converter", description: "Convert time between different time zones worldwide", path: "/converters/timezone", category: "Converter" },
   { name: "Currency API", description: "Free currency exchange API with real-time rates", path: "/converters/currency-api", category: "Converter" },
 
+  // Crypto Tools
+  { name: "Crypto Tools", description: "Secure and free online crypto tools", path: "/crypto-tools", category: "Pages" },
+  { name: "Token Generator", description: "Generate secure random tokens, API keys, and passwords", path: "/crypto-tools/token-generator", category: "Crypto" },
+  { name: "Hash Text Generator", description: "Generate secure cryptographic hashes (MD5, SHA1, SHA256) for any text", path: "/crypto-tools/hash-text", category: "Crypto" },
+
   // Developer Tools
   { name: "Color Palette Generator", description: "Generate beautiful, harmonious color schemes", path: "/dev-tools/color-palette", category: "Developer" },
   { name: "Hex to RGB Converter", description: "Convert between HEX, RGB, HSL, and other color formats", path: "/dev-tools/hex-to-rgb", category: "Developer" },

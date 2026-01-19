@@ -17,6 +17,7 @@ Allow: /converters/
 Allow: /image-tools/
 Allow: /finance-tools/
 Allow: /dev-tools/
+Allow: /crypto-tools/
 Allow: /fun-tools/
 Allow: /products
 Allow: /api-docs
@@ -122,6 +123,12 @@ Description: Free AI tool to generate `SKILL.md` files for Google Antigravity ag
 URL: https://www.fasttools.store/dev-tools/uuid-generator
 Description: Professional UUID Generator supporting all standard versions (v1, v3, v4, v5, v6, v7). Specialized for developers with features like bulk generation, uppercase/lowercase toggle, and specific version algorithms (Random, Time-based, Namespace). Includes "Pro Tip" guides on using v7 for database primary keys to improve indexing performance. Secure client-side generation.
 
+## Token Generator
+URL: https://www.fasttools.store/crypto-tools/token-generator
+Description: Free Online Token Generator. Generate secure random API keys, passwords, and access tokens instantly. Customizable length, characters, and formats. Uses CSPRNG for cryptographic security. No data storage.
+
+
+
 # Complete Index
 
 ## Tools
@@ -160,6 +167,9 @@ Description: Professional UUID Generator supporting all standard versions (v1, v
 - https://www.fasttools.store/converters/temperature
 - https://www.fasttools.store/converters/text-case
 - https://www.fasttools.store/converters/timezone
+- https://www.fasttools.store/crypto-tools
+- https://www.fasttools.store/crypto-tools/hash-text
+- https://www.fasttools.store/crypto-tools/token-generator
 - https://www.fasttools.store/dev-tools
 - https://www.fasttools.store/dev-tools/antigravity-skill-builder
 - https://www.fasttools.store/dev-tools/color-palette

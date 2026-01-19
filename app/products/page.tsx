@@ -17,7 +17,9 @@ import {
   DollarSign,
   User,
   Briefcase,
-  GraduationCap
+  GraduationCap,
+  Calendar,
+  Lock as LockIcon
 } from "lucide-react"
 export const metadata = createMetadata({
   title: "100+ Free Online Tools for Every Need | FastTools",
@@ -28,11 +30,11 @@ export const metadata = createMetadata({
   twitterTitle: "100+ Free Online Tools for Every Need | FastTools",
   twitterDescription: "Discover our full suite of 100+ free online tools. From calculators and converters to AI-powered utilities and developer tools, FastTools has a solution for every task.",
   breadcrumbs: [
-      {
-        "label": "Products",
-        "href": "/products"
-      }
-    ]
+    {
+      "label": "Products",
+      "href": "/products"
+    }
+  ]
 });
 
 const categories = [
@@ -63,6 +65,13 @@ const categories = [
     description: "Seamlessly convert between a vast range of units, including currency, measurements, data sizes, and file formats.",
     icon: Wrench,
     href: "/converters",
+  },
+  {
+    id: "crypto-tools",
+    name: "Crypto & Security Tools",
+    description: "Generate secure tokens, keys, and manage cryptographic functions securely in your browser.",
+    icon: LockIcon,
+    href: "/crypto-tools",
   },
   {
     id: "dev-tools",
