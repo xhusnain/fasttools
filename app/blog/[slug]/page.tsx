@@ -12,7 +12,6 @@ import { GJsonLd } from '@/components/blog/GJsonLd';
 import { GAuthorBio } from '@/components/blog/GAuthorBio';
 import { GImage } from "@/ui/gimage";
 import { MDXComponents } from "@/components/blog/mdx-components";
-import { SquareAd } from '@/components/ads/square-ad';
 import { ArticleAd } from '@/components/ads/article-ad';
 
 // MDX Plugins
@@ -183,15 +182,6 @@ export default async function BlogPost({
             <GJsonLd schema={breadcrumbSchema} />
             {faqSchema && <GJsonLd schema={faqSchema} />}
 
-            <div className="hidden 2xl:flex fixed left-4 top-1/3 -translate-y-1/2 z-10 flex-col gap-4">
-                <SquareAd />
-                <SquareAd />
-            </div>
-
-            <div className="hidden 2xl:flex fixed right-4 top-1/3 -translate-y-1/2 z-10 flex-col gap-4">
-                <SquareAd />
-                <SquareAd />
-            </div>
 
             <div className="min-h-screen font-sans selection:bg-foreground/20 selection:text-foreground bg-backgroundPrimary pt-40 pb-24 relative overflow-x-hidden">
 
