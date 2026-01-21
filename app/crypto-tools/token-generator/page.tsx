@@ -1,7 +1,7 @@
 import { Metadata } from 'next';
 import { ToolPageLayout } from "@/components/common/tool-page-layout"
 import { createToolConfig } from "@/lib/create-tool-config"
-import { TokenGenerator } from "@/components/dev-tools/token-generator"
+import { TokenGenerator } from "@/components/crypto-tools/token-generator"
 import { Shield, Lock, Key, Settings, CheckCircle, Lightbulb, Fingerprint, Terminal } from "lucide-react"
 import Link from "next/link"
 import Image from "next/image"

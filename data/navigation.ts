@@ -64,7 +64,9 @@ import {
     PartyPopper,
     Tv,
     Key,
-    Shield
+    Shield,
+    Fingerprint,
+    RefreshCw
 } from "lucide-react"
 
 
@@ -234,8 +236,10 @@ export const navigationConfig: MegaMenuSection[] = [
                 title: "Crypto Tools",
                 items: [
                     { title: "Bcrypt Generator", href: "/crypto-tools/bcrypt", icon: Shield, description: "Secure hashing" },
+                    { title: "UUID Generator", href: "/crypto-tools/uuid-generator", icon: Fingerprint, description: "Bulk generate UUIDs (v4, v7)" },
+                    { title: "ULID Generator", href: "/crypto-tools/ulid-generator", icon: Hash, description: "Sortable unique identifiers" },
                     { title: "Token Generator", href: "/crypto-tools/token-generator", icon: Key, description: "Generate keys" },
-                    { title: "Hash Text", href: "/crypto-tools/hash-text", icon: Hash, description: "MD5, SHA1, SHA256" },
+                    { title: "Hash Text", href: "/crypto-tools/hash-text", icon: RefreshCw, description: "MD5, SHA1, SHA256" },
                 ]
             },
             {

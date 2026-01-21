@@ -98,6 +98,7 @@
     "tailwind-merge": "^2.5.5",
     "tailwindcss-animate": "^1.0.7",
     "tesseract.js": "latest",
+    "ulid": "^3.0.2",
     "uuid": "^13.0.0",
     "vaul": "^1.1.2",
     "zod": "^3.25.76",

@@ -5,7 +5,7 @@ import { ToolLoader } from "@/components/common/tool-loader"
 import { createToolConfig } from "@/lib/create-tool-config"
 
 const UuidGenerator = dynamic(
-    () => import("@/components/dev-tools/uuid-generator").then(mod => mod.UuidGenerator),
+    () => import("@/components/crypto-tools/uuid-generator").then(mod => mod.UuidGenerator),
     { loading: () => <ToolLoader /> }
 )
 
@@ -14,7 +14,7 @@ const toolConfig = createToolConfig({
     description: "Free online UUID generator and GUID tool. Create random UUIDs (v4), time-based v1/v7, and namespace UUIDs. Includes code examples for Python, Java, JavaScript. No signup.",
     metaTitle: "UUID Generator - Free Online Tool (v1, v4, v7) - FastTools",
     metaDescription: "Free online UUID generator and GUID tool. Create random UUIDs (v4), time-based v1/v7, and namespace UUIDs. Includes code examples for Python, Java, JavaScript. No signup.",
-    path: "/dev-tools/uuid-generator",
+    path: "/crypto-tools/uuid-generator",
     schemaOptions: {
         applicationCategory: "DeveloperApplication",
         operatingSystem: "Any",
@@ -33,8 +33,8 @@ const toolConfig = createToolConfig({
     },
 
     breadcrumbs: [
-        { label: "Developer Tools", href: "/dev-tools" },
-        { label: "UUID Generator", href: "/dev-tools/uuid-generator" },
+        { label: "Crypto Tools", href: "/crypto-tools" },
+        { label: "UUID Generator", href: "/crypto-tools/uuid-generator" },
     ],
 
     content: {
@@ -197,9 +197,9 @@ const toolConfig = createToolConfig({
         ),
 
         relatedTools: [
-            { name: "JWT Decoder", href: "/dev-tools/jwt-decoder" },
-            { name: "JSON to CSV", href: "/dev-tools/json-to-csv" },
-            { name: "Regex Tester", href: "/dev-tools/regex-tester" }
+            { name: "ULID Generator", href: "/crypto-tools/ulid-generator" },
+            { name: "Token Generator", href: "/crypto-tools/token-generator" },
+            { name: "Bcrypt Generator", href: "/crypto-tools/bcrypt" }
         ]
     }
 })

@@ -996,7 +996,7 @@ export const toolPages = [
         ]
     },
     {
-        url: "https://www.fasttools.store/dev-tools/uuid-generator",
+        url: "https://www.fasttools.store/crypto-tools/uuid-generator",
         lastModified: new Date('2026-01-15'),
         changeFrequency: "weekly" as const,
         priority: 0.95,
@@ -1007,6 +1007,12 @@ export const toolPages = [
                 caption: "A high-quality, modern, isometric 3D illustration representing a UUID Concept. Data flow, digital unique keys, hex strings 128-bit."
             }
         ]
+    },
+    {
+        url: "https://www.fasttools.store/crypto-tools/ulid-generator",
+        lastModified: new Date('2026-01-20'),
+        changeFrequency: "weekly" as const,
+        priority: 0.98,
     },
     {
         url: "https://www.fasttools.store/crypto-tools/bcrypt",

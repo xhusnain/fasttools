@@ -3,16 +3,9 @@ import { ToolPageLayout } from "@/components/common/tool-page-layout"
 import { createToolConfig } from "@/lib/create-tool-config"
 import { GToolCard } from "@/ui/gtool-card"
 
-import { Code2, FileJson, Palette, Hash, FileCode, Braces, Database, Sparkles, Fingerprint } from "lucide-react"
+import { Code2, FileJson, Palette, Hash, FileCode, Braces, Database, Sparkles } from "lucide-react"
 
 const devTools = [
-  {
-    title: "UUID Generator",
-    description: "Generate random (v4), time-based (v1, v6, v7) and namespace UUIDs instantly. Bulk generate and custom format unique identifiers.",
-    href: "/dev-tools/uuid-generator",
-    icon: Fingerprint,
-    popular: true,
-  },
   {
     title: "JWT Decoder",
     description: "Decode and inspect JWT tokens safely in your browser. Perfect for API development and authentication debugging.",
@@ -298,7 +291,7 @@ export default function DevToolsPage() {
       "@type": "ItemList",
       name: "Developer Tools Collection - Chrome, Safari, React DevTools",
       description: "Free online developer tools for Chrome, Safari, Firefox, and Edge browsers. Includes React developer tools, JWT decoder, regex tester, JSON to CSV converter, HTML beautifier, and essential coding utilities.",
-      numberOfItems: 8,
+      numberOfItems: 7,
       itemListElement: [
         { "@type": "ListItem", position: 1, name: "JWT Decoder", description: "Decode and inspect JWT tokens safely in your browser", url: "https://www.fasttools.store/dev-tools/jwt-decoder" },
         { "@type": "ListItem", position: 2, name: "Regex Tester", description: "Test and debug regular expressions with live matching", url: "https://www.fasttools.store/dev-tools/regex-tester" },
@@ -306,9 +299,7 @@ export default function DevToolsPage() {
         { "@type": "ListItem", position: 4, name: "HTML Beautifier", description: "Format and beautify HTML code for better readability", url: "https://www.fasttools.store/dev-tools/html-beautifier" },
         { "@type": "ListItem", position: 5, name: "1000+ Free Color Palettes", description: "Explore 1000+ free color palettes with HEX codes for websites, branding & UI/UX design. 43 categories including aesthetic, pastel, vintage & modern themes", url: "https://www.fasttools.store/dev-tools/color-palette" },
         { "@type": "ListItem", position: 6, name: "Hex to RGB Converter", description: "Convert hex colors to RGB values instantly", url: "https://www.fasttools.store/dev-tools/hex-to-rgb" },
-        { "@type": "ListItem", position: 7, name: "Markdown Previewer", description: "Live preview your Markdown content", url: "https://www.fasttools.store/dev-tools/markdown-previewer" },
-        { "@type": "ListItem", position: 8, name: "HTML to Markdown", description: "Convert HTML to Markdown format", url: "https://www.fasttools.store/dev-tools/html-to-markdown" },
-        { "@type": "ListItem", position: 9, name: "UUID Generator", description: "Generate random and time-based UUIDs instantly", url: "https://www.fasttools.store/dev-tools/uuid-generator" }
+        { "@type": "ListItem", position: 7, name: "Markdown Previewer", description: "Live preview your Markdown content", url: "https://www.fasttools.store/dev-tools/markdown-previewer" }
       ]
     },
     breadcrumb: {

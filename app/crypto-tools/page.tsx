@@ -5,9 +5,23 @@ import { GToolCard } from "@/ui/gtool-card"
 import Link from "next/link"
 import Image from "next/image"
 
-import { Key, Lock, Shield, FileKey, Fingerprint, RefreshCw } from "lucide-react"
+import { Key, Lock, Shield, FileKey, Fingerprint, RefreshCw, Hash } from "lucide-react"
 
 const cryptoTools = [
+    {
+        title: "UUID Generator",
+        description: "Generate random (v4), time-based (v1, v6, v7) and namespace UUIDs instantly. Bulk generate and custom format unique identifiers.",
+        href: "/crypto-tools/uuid-generator",
+        icon: Fingerprint,
+        popular: true,
+    },
+    {
+        title: "ULID Generator",
+        description: "Universally Unique Lexicographical Sortable Identifiers. 128-bit compatible with UUID, sortable, and URL-friendly.",
+        href: "/crypto-tools/ulid-generator",
+        icon: Hash,
+        popular: true,
+    },
     {
         title: "Token Generator",
         description: "Generate secure random tokens, API keys, and passwords. Customizable settings for length and character sets.",
@@ -319,10 +333,13 @@ export default function CryptoToolsPage() {
             "@type": "ItemList",
             name: "Crypto Tools Collection",
             description: "Collection of free online cryptography and security tools including Token Generator.",
-            numberOfItems: 1,
+            numberOfItems: 5,
             itemListElement: [
                 { "@type": "ListItem", position: 1, name: "Bcrypt Generator", description: "Generate and verify secure Bcrypt hashes", url: "https://www.fasttools.store/crypto-tools/bcrypt" },
                 { "@type": "ListItem", position: 2, name: "Token Generator", description: "Generate secure random tokens, API keys, and passwords", url: "https://www.fasttools.store/crypto-tools/token-generator" },
+                { "@type": "ListItem", position: 3, name: "Hash Text", description: "Generate secure cryptographic hashes", url: "https://www.fasttools.store/crypto-tools/hash-text" },
+                { "@type": "ListItem", position: 4, name: "UUID Generator", description: "Generate random and time-based UUIDs instantly", url: "https://www.fasttools.store/crypto-tools/uuid-generator" },
+                { "@type": "ListItem", position: 5, name: "ULID Generator", description: "Universally Unique Lexicographical Sortable Identifiers", url: "https://www.fasttools.store/crypto-tools/ulid-generator" },
             ]
         },
         breadcrumb: {

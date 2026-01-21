@@ -77,6 +77,8 @@ export const searchItems: SearchItem[] = [
   { name: "Bcrypt Generator", description: "Generate and verify secure Blowfish-based Bcrypt hashes with adjustable cost factors", path: "/crypto-tools/bcrypt", category: "Crypto" },
   { name: "Token Generator", description: "Generate secure random tokens, API keys, and passwords", path: "/crypto-tools/token-generator", category: "Crypto" },
   { name: "Hash Text Generator", description: "Generate secure cryptographic hashes (MD5, SHA1, SHA256) for any text", path: "/crypto-tools/hash-text", category: "Crypto" },
+  { name: "UUID Generator", description: "Bulk generate secure random and time-based UUIDs (v4, v7)", path: "/crypto-tools/uuid-generator", category: "Crypto" },
+  { name: "ULID Generator", description: "Generate Universally Unique Lexicographical Sortable Identifiers", path: "/crypto-tools/ulid-generator", category: "Crypto" },
 
   // Developer Tools
   { name: "Color Palette Generator", description: "Generate beautiful, harmonious color schemes", path: "/dev-tools/color-palette", category: "Developer" },
