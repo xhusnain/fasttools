@@ -106,6 +106,7 @@ export const searchItems: SearchItem[] = [
   { name: "PDF Compressor", description: "Reduce PDF file size efficiently", path: "/pdf-tools/pdf-compressor", category: "PDF" },
   { name: "PDF to Image", description: "Convert PDF pages to JPG and PNG images", path: "/pdf-tools/pdf-to-image", category: "PDF" },
   { name: "Sign PDF", description: "Add secure digital signatures to PDFs", path: "/pdf-tools/pdf-sign", category: "PDF" },
+  { name: "PDF Signature Checker", description: "Verify PDF digital signatures, integrity, and signer identity.", path: "/pdf-tools/pdf-signature-checker", category: "PDF" },
   { name: "Merge PDF", description: "Combine multiple PDF files into one document", path: "/pdf-tools/pdf-splitter-merger", category: "PDF" },
   { name: "Split PDF", description: "Split PDF into separate files by page ranges", path: "/pdf-tools/pdf-splitter-merger", category: "PDF" },
   { name: "PDF Unlocker", description: "Remove password protection from PDF files", path: "/pdf-tools/pdf-unlocker", category: "PDF" },

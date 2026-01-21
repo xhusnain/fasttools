@@ -1005,6 +1005,19 @@ export const toolPages = [
         changeFrequency: "monthly" as const,
         priority: 0.95,
     },
+    {
+        url: "https://www.fasttools.store/pdf-tools/pdf-signature-checker",
+        lastModified: new Date(),
+        changeFrequency: "weekly" as const,
+        priority: 0.98,
+        images: [
+            {
+                url: "https://www.fasttools.store/images/pdf_signature_check_hero.png",
+                title: "PDF Signature Checker - Verify Digital Signatures",
+                caption: "Online tool to verify PDF digital signatures, integrity, and signer identity. Client-side secure verification."
+            }
+        ]
+    },
     // Tutorial Pages (Video Watch Pages for Google Video Indexing)
     {
         url: "https://www.fasttools.store/tutorials/youtube-channel-name-guide",

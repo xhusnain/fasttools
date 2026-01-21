@@ -300,6 +300,7 @@ export const navigationConfig: MegaMenuSection[] = [
                     { title: "Compress PDF", href: "/pdf-tools/pdf-compressor", icon: FileText, description: "Shrink file" },
                     { title: "Split & Merge PDF", href: "/pdf-tools/pdf-splitter-merger", icon: Merge, description: "Organize PDFs" },
                     { title: "Sign PDF", href: "/pdf-tools/pdf-sign", icon: PenTool, description: "Digital signatures" },
+                    { title: "Check Signature", href: "/pdf-tools/pdf-signature-checker", icon: Shield, description: "Verify signatures" },
                     { title: "Unlock PDF", href: "/pdf-tools/pdf-unlocker", icon: FileKey, description: "Remove password" },
                 ]
             }

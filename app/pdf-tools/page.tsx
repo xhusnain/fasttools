@@ -3,7 +3,7 @@ import { ToolPageLayout } from "@/components/common/tool-page-layout"
 import { createToolConfig } from "@/lib/create-tool-config"
 import { GToolCard } from "@/ui/gtool-card"
 
-import { FileSignature, RefreshCw, FileStack, Unlock, Minimize2, Image } from "lucide-react"
+import { FileSignature, RefreshCw, FileStack, Unlock, Minimize2, Image, Shield } from "lucide-react"
 
 const pdfTools = [
   {
@@ -11,6 +11,13 @@ const pdfTools = [
     description: "Sign PDF documents online free. Add electronic signature to PDF, eSign contracts & agreements. Popular for HR, freelancers & legal documents.",
     icon: FileSignature,
     href: "/pdf-tools/pdf-sign",
+    popular: true,
+  },
+  {
+    title: "PDF Signature Checker",
+    description: "Verify PDF digital signatures, integrity, and signer identity. Client-side secure verification.",
+    icon: Shield,
+    href: "/pdf-tools/pdf-signature-checker",
     popular: true,
   },
   {
