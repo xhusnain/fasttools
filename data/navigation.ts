@@ -248,6 +248,12 @@ export const navigationConfig: MegaMenuSection[] = [
                         icon: Key,
                         description: "Generate secure mnemonic phrases."
                     },
+                    {
+                        title: "HMAC Generator",
+                        href: "/crypto-tools/hmac-generator",
+                        icon: Shield,
+                        description: "Compute Hash-based MACs (SHA256, MD5)."
+                    },
                     { title: "UUID Generator", href: "/crypto-tools/uuid-generator", icon: Fingerprint, description: "Bulk generate UUIDs (v4, v7)" },
                     { title: "ULID Generator", href: "/crypto-tools/ulid-generator", icon: Hash, description: "Sortable unique identifiers" },
                     { title: "Token Generator", href: "/crypto-tools/token-generator", icon: Key, description: "Generate keys" },

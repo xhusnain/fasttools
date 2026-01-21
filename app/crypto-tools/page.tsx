@@ -56,6 +56,12 @@ const cryptoTools = [
         icon: Key,
         href: "/crypto-tools/bip39-generator"
     },
+    {
+        title: "HMAC Generator",
+        description: "Compute secure Keyed-Hash Message Authentication Codes.",
+        icon: Shield,
+        href: "/crypto-tools/hmac-generator"
+    },
 ]
 
 const toolConfig = createToolConfig({
