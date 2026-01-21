@@ -17,21 +17,29 @@ import {
 } from "lucide-react"
 import { Metadata } from 'next';
 import { createMetadata } from "@/lib/metadata-base"
+import { getTranslations } from 'next-intl/server';
 
-export const metadata: Metadata = createMetadata({
-  title: "Privacy Policy | GDPR & CCPA Compliant",
-  description: "Comprehensive privacy policy for FastTools covering GDPR, CCPA compliance, Google AdSense policies, data collection, and user rights for free online tools.",
-  path: "/privacy-policy",
-  includeSchema: false,
-  breadcrumbs: [
-    {
-      "label": "Privacy Policy",
-      "href": "/privacy-policy"
-    }
-  ]
-})
+export async function generateMetadata(): Promise<Metadata> {
+  const t = await getTranslations('privacy');
+  const tCommon = await getTranslations('common');
+  
+  return createMetadata({
+    title: t('title'),
+    description: t('description'),
+    path: "/privacy-policy",
+    includeSchema: false,
+    breadcrumbs: [
+      {
+        "label": t('pageTitle'),
+        "href": "/privacy-policy"
+      }
+    ]
+  });
+}
 
-export default function PrivacyPolicyPage() {
+export default async function PrivacyPolicyPage() {
+  const t = await getTranslations('privacy');
+  const tCommon = await getTranslations('common');
   const jsonLd = {
     "@context": "https://schema.org",
     "@type": "WebPage",
@@ -54,14 +62,14 @@ export default function PrivacyPolicyPage() {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
       <div className="min-h-screen bg-background">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-12 md:py-16">
-          <Breadcrumbs items={[{ label: "Privacy Policy", href: "/privacy-policy" }]} />
+          <Breadcrumbs items={[{ label: t('pageTitle'), href: "/privacy-policy" }]} />
 
           <div className="max-w-5xl mx-auto mt-8 md:mt-12">
             {/* Title Section */}
             <div className="mb-12 md:mb-16">
               <GHeader
-                title="Privacy Policy"
-                description="Transparent data protection practices for FastTools. Learn how we collect, use, and protect your information while using our free online tools."
+                title={t('pageTitle')}
+                description={t('pageDescription')}
                 titleSize="medium"
                 descriptionSize="small"
                 color="blue"
@@ -69,18 +77,18 @@ export default function PrivacyPolicyPage() {
               <div className="flex flex-wrap justify-center gap-3 mt-6">
                 <div className="flex items-center gap-2 px-4 py-2 bg-primary/10 border border-border/30 rounded-lg">
                   <CheckCircle className="h-4 w-4 text-heading-accent" />
-                  <span className="text-sm font-medium text-foreground">GDPR Compliant</span>
+                  <span className="text-sm font-medium text-foreground">{t('gdprCompliant')}</span>
                 </div>
                 <div className="flex items-center gap-2 px-4 py-2 bg-primary/10 border border-border/30 rounded-lg">
                   <CheckCircle className="h-4 w-4 text-heading-accent" />
-                  <span className="text-sm font-medium text-foreground">CCPA Compliant</span>
+                  <span className="text-sm font-medium text-foreground">{t('ccpaCompliant')}</span>
                 </div>
                 <div className="flex items-center gap-2 px-4 py-2 bg-primary/10 border border-border/30 rounded-lg">
                   <CheckCircle className="h-4 w-4 text-heading-accent" />
-                  <span className="text-sm font-medium text-foreground">Google AdSense Policy</span>
+                  <span className="text-sm font-medium text-foreground">{t('adsensePolicy')}</span>
                 </div>
               </div>
-              <p className="text-sm text-muted-foreground text-center mt-4">Last updated: November 1,</p>
+              <p className="text-sm text-muted-foreground text-center mt-4">{t('lastUpdated')}</p>
             </div>
 
             {/* Main Content */}
@@ -91,19 +99,13 @@ export default function PrivacyPolicyPage() {
                   <div className="h-10 w-10 md:h-12 md:w-12 rounded-lg bg-primary/10 border border-border/30 flex items-center justify-center flex-shrink-0">
                     <FileText className="h-5 w-5 md:h-6 md:w-6 text-foreground" />
                   </div>
-                  <h2 className="text-2xl md:text-3xl font-bold text-foreground">Introduction</h2>
+                  <h2 className="text-2xl md:text-3xl font-bold text-foreground">{t('introduction')}</h2>
                 </div>
                 <div className="space-y-4 text-muted-foreground leading-relaxed">
-                  <p>
-                    At FastTools ("we," "our," or "us"), we are committed to protecting your privacy and ensuring the security of your personal information. This Privacy Policy explains how we collect, use, disclose, and safeguard your information when you visit our website fasttools.store (the "Site") and use our free online tools and services.
-                  </p>
-                  <p>
-                    By using our Site, you consent to the data practices described in this Privacy Policy. If you do not agree with the terms of this Privacy Policy, please do not use our Site.
-                  </p>
+                  <p>{t('introP1')}</p>
+                  <p>{t('introP2')}</p>
                   <div className="bg-primary/10 border border-border/30 rounded-lg p-4 mt-4">
-                    <p className="text-sm">
-                      This policy complies with GDPR, CCPA, and Google AdSense requirements. We prioritize transparency and user control over personal data.
-                    </p>
+                    <p className="text-sm">{t('introNote')}</p>
                   </div>
                 </div>
               </div>
@@ -114,50 +116,50 @@ export default function PrivacyPolicyPage() {
                   <div className="h-10 w-10 md:h-12 md:w-12 rounded-lg bg-primary/10 border border-border/30 flex items-center justify-center flex-shrink-0">
                     <Eye className="h-5 w-5 md:h-6 md:w-6 text-foreground" />
                   </div>
-                  <h2 className="text-2xl md:text-3xl font-bold text-foreground">Information We Collect</h2>
+                  <h2 className="text-2xl md:text-3xl font-bold text-foreground">{t('infoWeCollect')}</h2>
                 </div>
                 <p className="text-muted-foreground mb-6 leading-relaxed">
-                  We collect information about you in several ways when you use our Site:
+                  {t('infoWeCollectDesc')}
                 </p>
 
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
                   <div className="bg-card border border-border rounded-lg p-4">
                     <h3 className="text-lg font-semibold text-heading-accent mb-3 flex items-center gap-2">
                       <Users className="h-5 w-5 text-foreground" />
-                      Personal Information
+                      {t('personalInfo')}
                     </h3>
                     <ul className="space-y-2 text-sm text-muted-foreground">
-                      <li>• Contact information (email address) when you contact us</li>
-                      <li>• Information you voluntarily provide when using our tools</li>
-                      <li>• Communications with us, including support requests</li>
+                      <li>• {t('personalInfo1')}</li>
+                      <li>• {t('personalInfo2')}</li>
+                      <li>• {t('personalInfo3')}</li>
                     </ul>
                   </div>
 
                   <div className="bg-card border border-border rounded-lg p-4">
                     <h3 className="text-lg font-semibold text-heading-accent mb-3 flex items-center gap-2">
                       <Globe className="h-5 w-5 text-foreground" />
-                      Automatic Collection
+                      {t('automaticCollection')}
                     </h3>
                     <ul className="space-y-2 text-sm text-muted-foreground">
-                      <li>• IP address and location data</li>
-                      <li>• Browser type and version</li>
-                      <li>• Device information (type, operating system)</li>
-                      <li>• Pages visited and time spent on our Site</li>
-                      <li>• Referring website information</li>
-                      <li>• Search terms used to find our Site</li>
+                      <li>• {t('auto1')}</li>
+                      <li>• {t('auto2')}</li>
+                      <li>• {t('auto3')}</li>
+                      <li>• {t('auto4')}</li>
+                      <li>• {t('auto5')}</li>
+                      <li>• {t('auto6')}</li>
                     </ul>
                   </div>
 
                   <div className="bg-card border border-border rounded-lg p-4">
                     <h3 className="text-lg font-semibold text-heading-accent mb-3 flex items-center gap-2">
                       <Cookie className="h-5 w-5 text-foreground" />
-                      Cookies & Tracking
+                      {t('cookiesTracking')}
                     </h3>
                     <ul className="space-y-2 text-sm text-muted-foreground">
-                      <li>• Essential cookies for website functionality</li>
-                      <li>• Analytics cookies to understand user behavior</li>
-                      <li>• Advertising cookies for personalized ads (with your consent)</li>
-                      <li>• Local storage for user preferences</li>
+                      <li>• {t('cookies1')}</li>
+                      <li>• {t('cookies2')}</li>
+                      <li>• {t('cookies3')}</li>
+                      <li>• {t('cookies4')}</li>
                     </ul>
                   </div>
                 </div>
@@ -169,15 +171,11 @@ export default function PrivacyPolicyPage() {
                   <div className="h-10 w-10 md:h-12 md:w-12 rounded-lg bg-primary/10 border border-border/30 flex items-center justify-center flex-shrink-0">
                     <Database className="h-5 w-5 md:h-6 md:w-6 text-foreground" />
                   </div>
-                  <h2 className="text-2xl md:text-3xl font-bold text-foreground">Tool Data</h2>
+                  <h2 className="text-2xl md:text-3xl font-bold text-foreground">{t('toolData')}</h2>
                 </div>
                 <div className="space-y-4 text-muted-foreground leading-relaxed">
-                  <p>
-                    When you use our online tools (e.g., calculator, converter, or SEO analyzer), the data you enter is processed only in your browser or temporarily on our servers to generate results.
-                  </p>
-                  <p>
-                    We do not store or share this input data. This reassures users that their input (like numbers, text, or images) isn't saved or sold. Your tool usage data remains completely private and anonymous.
-                  </p>
+                  <p>{t('toolDataP1')}</p>
+                  <p>{t('toolDataP2')}</p>
                 </div>
               </div>
 
@@ -187,10 +185,10 @@ export default function PrivacyPolicyPage() {
                   <div className="h-10 w-10 md:h-12 md:w-12 rounded-lg bg-primary/10 border border-border/30 flex items-center justify-center flex-shrink-0">
                     <Lock className="h-5 w-5 md:h-6 md:w-6 text-foreground" />
                   </div>
-                  <h2 className="text-2xl md:text-3xl font-bold text-foreground">How We Use Your Information</h2>
+                  <h2 className="text-2xl md:text-3xl font-bold text-foreground">{t('howWeUse')}</h2>
                 </div>
                 <p className="text-muted-foreground mb-6 leading-relaxed">
-                  We use the information we collect for the following purposes:
+                  {t('howWeUseDesc')}
                 </p>
 
                 <div className="grid md:grid-cols-2 gap-6">
@@ -198,29 +196,29 @@ export default function PrivacyPolicyPage() {
                     <div className="flex items-start gap-3">
                       <div className="h-2 w-2 rounded-full bg-heading-accent-border mt-2"></div>
                       <div>
-                        <strong className="text-foreground">Service Provision:</strong>
-                        <span className="text-muted-foreground"> To provide, maintain, and improve our free online tools</span>
+                        <strong className="text-foreground">{t('serviceProvision')}</strong>
+                        <span className="text-muted-foreground"> {t('serviceProvisionDesc')}</span>
                       </div>
                     </div>
                     <div className="flex items-start gap-3">
                       <div className="h-2 w-2 rounded-full bg-heading-accent-border mt-2"></div>
                       <div>
-                        <strong className="text-foreground">Website Functionality:</strong>
-                        <span className="text-muted-foreground"> To ensure our Site works properly and efficiently</span>
+                        <strong className="text-foreground">{t('websiteFunctionality')}</strong>
+                        <span className="text-muted-foreground"> {t('websiteFunctionalityDesc')}</span>
                       </div>
                     </div>
                     <div className="flex items-start gap-3">
                       <div className="h-2 w-2 rounded-full bg-heading-accent-border mt-2"></div>
                       <div>
-                        <strong className="text-foreground">Analytics:</strong>
-                        <span className="text-muted-foreground"> To understand how users interact with our tools and improve user experience</span>
+                        <strong className="text-foreground">{t('analytics')}</strong>
+                        <span className="text-muted-foreground"> {t('analyticsDesc')}</span>
                       </div>
                     </div>
                     <div className="flex items-start gap-3">
                       <div className="h-2 w-2 rounded-full bg-heading-accent-border mt-2"></div>
                       <div>
-                        <strong className="text-foreground">Advertising:</strong>
-                        <span className="text-muted-foreground"> To display relevant advertisements through Google AdSense (with your consent)</span>
+                        <strong className="text-foreground">{t('advertising')}</strong>
+                        <span className="text-muted-foreground"> {t('advertisingDesc')}</span>
                       </div>
                     </div>
                   </div>
@@ -228,22 +226,22 @@ export default function PrivacyPolicyPage() {
                     <div className="flex items-start gap-3">
                       <div className="h-2 w-2 rounded-full bg-heading-accent-border mt-2"></div>
                       <div>
-                        <strong className="text-foreground">Communication:</strong>
-                        <span className="text-muted-foreground"> To respond to your inquiries and provide customer support</span>
+                        <strong className="text-foreground">{t('communication')}</strong>
+                        <span className="text-muted-foreground"> {t('communicationDesc')}</span>
                       </div>
                     </div>
                     <div className="flex items-start gap-3">
                       <div className="h-2 w-2 rounded-full bg-heading-accent-border mt-2"></div>
                       <div>
-                        <strong className="text-foreground">Legal Compliance:</strong>
-                        <span className="text-muted-foreground"> To comply with applicable laws and regulations</span>
+                        <strong className="text-foreground">{t('legalCompliance')}</strong>
+                        <span className="text-muted-foreground"> {t('legalComplianceDesc')}</span>
                       </div>
                     </div>
                     <div className="flex items-start gap-3">
                       <div className="h-2 w-2 rounded-full bg-heading-accent-border mt-2"></div>
                       <div>
-                        <strong className="text-foreground">Security:</strong>
-                        <span className="text-muted-foreground"> To protect against fraud, abuse, and security threats</span>
+                        <strong className="text-foreground">{t('security')}</strong>
+                        <span className="text-muted-foreground"> {t('securityDesc')}</span>
                       </div>
                     </div>
                   </div>
@@ -256,40 +254,40 @@ export default function PrivacyPolicyPage() {
                   <div className="h-10 w-10 md:h-12 md:w-12 rounded-lg bg-primary/10 border border-border/30 flex items-center justify-center flex-shrink-0">
                     <Shield className="h-5 w-5 md:h-6 md:w-6 text-foreground" />
                   </div>
-                  <h2 className="text-2xl md:text-3xl font-bold text-foreground">Google AdSense & Third-Party Services</h2>
+                  <h2 className="text-2xl md:text-3xl font-bold text-foreground">{t('adsenseTitle')}</h2>
                 </div>
                 <div className="space-y-6">
                   <div className="bg-primary/10 border border-border/30 rounded-lg p-6">
                     <h3 className="text-xl font-semibold mb-4 text-heading-accent flex items-center gap-2">
                       <CheckCircle className="h-5 w-5 text-heading-accent" />
-                      Google AdSense Compliance
+                      {t('adsenseCompliance')}
                     </h3>
                     <p className="text-muted-foreground leading-relaxed mb-4">
-                      We use Google AdSense to display advertisements on our website. Google may use cookies to serve ads based on your prior visits to our website or other websites. Google's use of advertising cookies enables it and its partners to serve ads to you based on your visit to our site and/or other sites on the Internet.
+                      {t('adsenseP1')}
                     </p>
                     <div className="grid md:grid-cols-2 gap-6">
                       <div>
-                        <h4 className="font-semibold text-foreground mb-2">AdSense Policies We Follow:</h4>
+                        <h4 className="font-semibold text-foreground mb-2">{t('adsensePolicies')}</h4>
                         <ul className="space-y-1 text-sm text-muted-foreground">
-                          <li>• Proper ad placement that doesn't interfere with content</li>
-                          <li>• High-quality, original content standards</li>
-                          <li>• Clear navigation and user experience</li>
-                          <li>• No prohibited traffic sources</li>
-                          <li>• No invalid click encouragement</li>
-                          <li>• No malware or deceptive practices</li>
+                          <li>• {t('adsensePolicy1')}</li>
+                          <li>• {t('adsensePolicy2')}</li>
+                          <li>• {t('adsensePolicy3')}</li>
+                          <li>• {t('adsensePolicy4')}</li>
+                          <li>• {t('adsensePolicy5')}</li>
+                          <li>• {t('adsensePolicy6')}</li>
                         </ul>
                       </div>
                       <div>
-                        <h4 className="font-semibold text-foreground mb-2">Your Ad Preferences:</h4>
+                        <h4 className="font-semibold text-foreground mb-2">{t('adPreferences')}</h4>
                         <p className="text-sm text-muted-foreground mb-3">
-                          You can control personalized advertising by visiting:
+                          {t('adPreferencesDesc')}
                         </p>
                         <div className="space-y-2">
                           <a href="https://www.google.com/settings/ads" className="flex items-center gap-2 text-foreground hover:text-foreground hover:underline font-medium text-sm" target="_blank" rel="noopener noreferrer">
-                            Google Ad Settings
+                            {t('googleAdSettings')}
                           </a>
                           <a href="https://www.aboutads.info/choices/" className="flex items-center gap-2 text-foreground hover:text-foreground hover:underline font-medium text-sm" target="_blank" rel="noopener noreferrer">
-                            Digital Advertising Alliance
+                            {t('digitalAdvertisingAlliance')}
                           </a>
                         </div>
                       </div>
@@ -297,12 +295,12 @@ export default function PrivacyPolicyPage() {
                   </div>
                   <div className="grid md:grid-cols-2 gap-6">
                     <div className="bg-card border border-border rounded-lg p-4">
-                      <h3 className="text-lg font-semibold mb-3 text-heading-accent">Google Analytics</h3>
+                      <h3 className="text-lg font-semibold mb-3 text-heading-accent">{t('googleAnalytics')}</h3>
                       <p className="text-sm text-muted-foreground mb-3">
-                        We use Google Analytics to analyze how users interact with our website. This service may collect information about your device, browsing behavior, and demographics.
+                        {t('googleAnalyticsDesc')}
                       </p>
                       <a href="https://tools.google.com/dlpage/gaoptout" className="flex items-center gap-2 text-foreground hover:text-foreground hover:underline font-medium text-sm">
-                        Opt out of Google Analytics
+                        {t('optOutAnalytics')}
                       </a>
                     </div>
                   </div>
@@ -315,15 +313,11 @@ export default function PrivacyPolicyPage() {
                   <div className="h-10 w-10 md:h-12 md:w-12 rounded-lg bg-primary/10 border border-border/30 flex items-center justify-center flex-shrink-0">
                     <Shield className="h-5 w-5 md:h-6 md:w-6 text-foreground" />
                   </div>
-                  <h2 className="text-2xl md:text-3xl font-bold text-foreground">Children's Privacy</h2>
+                  <h2 className="text-2xl md:text-3xl font-bold text-foreground">{t('childrenPrivacy')}</h2>
                 </div>
                 <div className="space-y-4 text-muted-foreground leading-relaxed">
-                  <p>
-                    Our website and tools are not directed to children under 13 years of age. We do not knowingly collect personal information from children. If we become aware that a child has provided us with personal information, we will delete it immediately.
-                  </p>
-                  <p>
-                    If you are a parent or guardian and believe that your child has provided us with personal information, please contact us immediately at support@fasttools.store so we can take appropriate action.
-                  </p>
+                  <p>{t('childrenP1')}</p>
+                  <p>{t('childrenP2')}</p>
                 </div>
               </div>
 
@@ -333,40 +327,40 @@ export default function PrivacyPolicyPage() {
                   <div className="h-10 w-10 md:h-12 md:w-12 rounded-lg bg-primary/10 border border-border/30 flex items-center justify-center flex-shrink-0">
                     <Users className="h-5 w-5 md:h-6 md:w-6 text-foreground" />
                   </div>
-                  <h2 className="text-2xl md:text-3xl font-bold text-foreground">Your Privacy Rights</h2>
+                  <h2 className="text-2xl md:text-3xl font-bold text-foreground">{t('privacyRights')}</h2>
                 </div>
                 <div className="space-y-6">
                   <p className="text-muted-foreground leading-relaxed">
-                    Depending on your location, you may have certain rights regarding your personal information:
+                    {t('privacyRightsDesc')}
                   </p>
 
                   <div className="grid md:grid-cols-2 gap-6">
                     <div className="bg-card border border-border rounded-lg p-4">
                       <h3 className="font-semibold text-heading-accent mb-2 flex items-center gap-2">
                         <CheckCircle className="h-4 w-4 text-heading-accent" />
-                        GDPR Rights (EU Users)
+                        {t('gdprRights')}
                       </h3>
                       <ul className="space-y-1 text-sm text-muted-foreground">
-                        <li>• Right to access your personal data</li>
-                        <li>• Right to rectification of inaccurate data</li>
-                        <li>• Right to erasure ("right to be forgotten")</li>
-                        <li>• Right to data portability</li>
-                        <li>• Right to restrict processing</li>
-                        <li>• Right to object to processing</li>
+                        <li>• {t('gdprRight1')}</li>
+                        <li>• {t('gdprRight2')}</li>
+                        <li>• {t('gdprRight3')}</li>
+                        <li>• {t('gdprRight4')}</li>
+                        <li>• {t('gdprRight5')}</li>
+                        <li>• {t('gdprRight6')}</li>
                       </ul>
                     </div>
 
                     <div className="bg-card border border-border rounded-lg p-4">
                       <h3 className="font-semibold text-heading-accent mb-2 flex items-center gap-2">
                         <CheckCircle className="h-4 w-4 text-heading-accent" />
-                        CCPA Rights (California Users)
+                        {t('ccpaRights')}
                       </h3>
                       <ul className="space-y-1 text-sm text-muted-foreground">
-                        <li>• Right to know what personal information is collected</li>
-                        <li>• Right to know whether personal information is sold</li>
-                        <li>• Right to say no to the sale of personal information</li>
-                        <li>• Right to access personal information</li>
-                        <li>• Right to equal service and price</li>
+                        <li>• {t('ccpaRight1')}</li>
+                        <li>• {t('ccpaRight2')}</li>
+                        <li>• {t('ccpaRight3')}</li>
+                        <li>• {t('ccpaRight4')}</li>
+                        <li>• {t('ccpaRight5')}</li>
                       </ul>
                     </div>
                   </div>
@@ -374,16 +368,16 @@ export default function PrivacyPolicyPage() {
                   <div className="bg-primary/10 border border-border/30 rounded-lg p-4">
                     <h4 className="font-semibold text-foreground mb-2 flex items-center gap-2">
                       <Mail className="h-4 w-4 text-foreground" />
-                      Exercise Your Rights
+                      {t('exerciseRights')}
                     </h4>
                     <p className="text-sm text-muted-foreground mb-3">
-                      To exercise these rights, please contact us at:
+                      {t('exerciseRightsDesc')}
                     </p>
                     <a href="mailto:support@fasttools.store" className="text-foreground hover:text-foreground hover:underline font-medium">
                       support@fasttools.store
                     </a>
                     <p className="text-xs text-muted-foreground mt-2">
-                      We will respond to your request within 30 days.
+                      {t('exerciseRightsResponse')}
                     </p>
                   </div>
                 </div>
@@ -395,18 +389,12 @@ export default function PrivacyPolicyPage() {
                   <div className="h-10 w-10 md:h-12 md:w-12 rounded-lg bg-primary/10 border border-border/30 flex items-center justify-center flex-shrink-0">
                     <RefreshCw className="h-5 w-5 md:h-6 md:w-6 text-foreground" />
                   </div>
-                  <h2 className="text-2xl md:text-3xl font-bold text-foreground">Policy Updates</h2>
+                  <h2 className="text-2xl md:text-3xl font-bold text-foreground">{t('policyUpdates')}</h2>
                 </div>
                 <div className="space-y-4 text-muted-foreground leading-relaxed">
-                  <p>
-                    We may update this Privacy Policy from time to time to reflect changes in our practices or for other operational, legal, or regulatory reasons.
-                  </p>
-                  <p>
-                    The updated version will be indicated by a revised "Last updated" date at the top. We encourage you to review this Privacy Policy periodically to stay informed about how we protect your information.
-                  </p>
-                  <p>
-                    Your continued use of our Site after any changes to this Privacy Policy constitutes your acceptance of the new terms.
-                  </p>
+                  <p>{t('updatesP1')}</p>
+                  <p>{t('updatesP2')}</p>
+                  <p>{t('updatesP3')}</p>
                 </div>
               </div>
 
@@ -416,23 +404,23 @@ export default function PrivacyPolicyPage() {
                   <div className="h-10 w-10 md:h-12 md:w-12 rounded-lg bg-primary/10 border border-border/30 flex items-center justify-center flex-shrink-0">
                     <Mail className="h-5 w-5 md:h-6 md:w-6 text-foreground" />
                   </div>
-                  <h2 className="text-2xl md:text-3xl font-bold text-foreground">Contact Us</h2>
+                  <h2 className="text-2xl md:text-3xl font-bold text-foreground">{t('contactUs')}</h2>
                 </div>
                 <div className="space-y-4">
                   <p className="text-muted-foreground leading-relaxed">
-                    If you have any questions about this Privacy Policy or our data practices, please contact us:
+                    {t('contactDesc')}
                   </p>
                   <div className="bg-card border border-border rounded-lg p-6">
                     <div className="grid md:grid-cols-2 gap-6">
                       <div>
-                        <h4 className="font-semibold text-foreground mb-2">Privacy Inquiries</h4>
+                        <h4 className="font-semibold text-foreground mb-2">{t('privacyInquiries')}</h4>
                         <a href="mailto:support@fasttools.store" className="flex items-center gap-2 text-foreground hover:text-foreground hover:underline font-medium">
                           <Mail className="h-4 w-4" />
                           support@fasttools.store
                         </a>
                       </div>
                       <div>
-                        <h4 className="font-semibold text-foreground mb-2">Website</h4>
+                        <h4 className="font-semibold text-foreground mb-2">{t('website')}</h4>
                         <a href="https://www.fasttools.store" className="flex items-center gap-2 text-foreground hover:text-foreground hover:underline font-medium">
                           <Globe className="h-4 w-4" />
                           https://www.fasttools.store
