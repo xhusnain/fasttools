@@ -262,59 +262,22 @@ async function translateFile(lang) {
   }
 }
 
-async function scanFiles() {
-  const appDir = path.join(rootDir, 'app');
-  const componentsDir = path.join(rootDir, 'components');
-
-  console.log('📁 Scanning project files for translatable content...');
-
-  const filesToCheck = [];
-  
-  function walkDir(dir, baseDir = '') {
-    if (!fs.existsSync(dir)) return;
-    
-    const entries = fs.readdirSync(dir, { withFileTypes: true });
-    for (const entry of entries) {
-      const fullPath = path.join(dir, entry.name);
-      const relativePath = path.join(baseDir, entry.name);
-      
-      if (entry.isDirectory() && !entry.name.startsWith('.') && entry.name !== 'node_modules') {
-        walkDir(fullPath, relativePath);
-      } else if (entry.isFile() && (entry.name.endsWith('.tsx') || entry.name.endsWith('.ts'))) {
-        filesToCheck.push(fullPath);
-      }
-    }
-  }
-
-  walkDir(appDir, 'app');
-  walkDir(componentsDir, 'components');
-
-  console.log(`Found ${filesToCheck.length} files to check`);
-  return filesToCheck;
-}
 
 async function main() {
   console.log('🚀 Starting translation process...');
   console.log(`📊 Cloudflare Workers AI Limits Monitor Active`);
   console.log(`   Model: ${MODEL}`);
-  console.log(`   Languages: ${TARGET_LANGUAGES.join(', ')}\n`);
+  console.log(`   Languages: ${TARGET_LANGUAGES.join(', ')}`);
+  console.log(`   Only translating: messages/${SOURCE_LANGUAGE}.json → messages/*.json\n`);
 
   ensureDir(MESSAGES_DIR);
 
   const sourcePath = path.join(MESSAGES_DIR, `${SOURCE_LANGUAGE}.json`);
   if (!fs.existsSync(sourcePath)) {
-    console.log(`Creating initial ${SOURCE_LANGUAGE}.json file...`);
-    fs.writeFileSync(sourcePath, JSON.stringify({
-      common: {
-        welcome: "Welcome",
-        home: "Home",
-        about: "About",
-        contact: "Contact"
-      }
-    }, null, 2));
+    console.error(`❌ Source file not found: ${sourcePath}`);
+    console.error(`   Please create messages/${SOURCE_LANGUAGE}.json first.`);
+    process.exit(1);
   }
-
-  await scanFiles();
 
   try {
     for (const lang of TARGET_LANGUAGES) {
@@ -328,6 +291,8 @@ async function main() {
     if (!rateLimitHit) {
       console.log('\n✅ Translation process completed!');
       console.log(`📊 Total API requests: ${totalRequests}`);
+      console.log(`\n💡 Note: This script only translates messages/*.json files.`);
+      console.log(`   Pages and components need manual translation updates.`);
     } else {
       console.log('\n⚠️  Translation process stopped due to rate limits/quota.');
       console.log(`📊 Total API requests made: ${totalRequests}`);

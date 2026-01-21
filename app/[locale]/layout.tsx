@@ -7,11 +7,10 @@ import { Header } from "@/components/common/header"
 import { Footer } from "@/components/common/footer"
 import { ThemeProvider } from "@/components/common/theme-provider"
 import { env } from "@/config/env"
-import { createMetadata, globalViewport, getWebsiteSchema } from "@/lib/metadata-base"
-import { roboto, montserrat, openSans } from "@/app/fonts"
+import { globalViewport, getWebsiteSchema } from "@/lib/metadata-base"
 import { DeferredScript } from "@/components/common/deferred-script"
 import { NextIntlClientProvider } from 'next-intl';
-import { getMessages } from 'next-intl/server';
+import { getMessages, setRequestLocale, getTranslations } from 'next-intl/server';
 import { notFound } from 'next/navigation';
 import { routing } from '@/i18n/routing';
 
@@ -28,26 +27,27 @@ export function generateStaticParams() {
     return routing.locales.map((locale) => ({ locale }));
 }
 
+const localeMap: Record<string, string> = {
+    'en': 'en-US',
+    'es': 'es-ES',
+    'de': 'de-DE',
+    'pt-BR': 'pt-BR',
+    'ar': 'ar-SA',
+    'zh-CN': 'zh-CN'
+};
+
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
     const { locale } = await params;
     const baseUrl = env.siteUrl;
-    
-    const localeMap: Record<string, string> = {
-        'en': 'en-US',
-        'es': 'es-ES',
-        'de': 'de-DE',
-        'pt-BR': 'pt-BR',
-        'ar': 'ar-SA',
-        'zh-CN': 'zh-CN'
-    };
+    const t = await getTranslations('seo');
 
-    const defaultMetadata = {
+    return {
         metadataBase: new URL(baseUrl),
         title: {
-            default: "FastTools - 1000+ Free Online Tools",
+            default: t('title'),
             template: "%s | FastTools",
         },
-        description: "FastTools provides 1000+ free online tools and expert articles: PDF tools, AI generators, calculators, developer utilities, and a tech blog with in-depth tutorials. 100% free, secure local processing, and works on all devices.",
+        description: t('description'),
         authors: [{ name: "FastTools Team", url: baseUrl }],
         robots: {
             index: true,
@@ -70,13 +70,13 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
         },
         alternates: {
             languages: {
-                'en': baseUrl, // English has no prefix with 'as-needed'
+                'en': baseUrl,
                 'es': `${baseUrl}/es`,
                 'de': `${baseUrl}/de`,
                 'pt-BR': `${baseUrl}/pt-BR`,
                 'ar': `${baseUrl}/ar`,
                 'zh-CN': `${baseUrl}/zh-CN`,
-                'x-default': baseUrl, // English (default locale)
+                'x-default': baseUrl,
             },
         },
         openGraph: {
@@ -84,8 +84,6 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
             alternateLocale: routing.locales.filter(l => l !== locale).map(l => localeMap[l] || l),
         },
     };
-
-    return defaultMetadata;
 }
 
 export default async function LocaleLayout({
@@ -101,10 +99,12 @@ export default async function LocaleLayout({
         notFound();
     }
 
+    setRequestLocale(locale);
+
     const messages = await getMessages();
     const websiteSchema = {
         ...getWebsiteSchema(),
-        inLanguage: locale === 'en' ? 'en-US' : locale === 'es' ? 'es-ES' : locale === 'de' ? 'de-DE' : locale === 'pt-BR' ? 'pt-BR' : locale === 'ar' ? 'ar-SA' : 'zh-CN'
+        inLanguage: localeMap[locale] || 'en-US'
     };
 
     return (
@@ -118,7 +118,7 @@ export default async function LocaleLayout({
                 type="application/ld+json"
                 dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteSchema) }}
             />
-            <NextIntlClientProvider messages={messages}>
+            <NextIntlClientProvider messages={messages} locale={locale}>
             <ThemeProvider
                 attribute="class"
                 defaultTheme="dark"

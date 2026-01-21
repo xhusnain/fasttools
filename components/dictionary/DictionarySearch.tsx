@@ -4,6 +4,7 @@ import { useState, useRef } from "react"
 import { Search, Loader2, Play, Pause } from "lucide-react"
 import { GCard, GCardContent } from "@/ui/gcard"
 import { GButton } from "@/ui/gbutton"
+import { useTranslations } from 'next-intl'
 
 interface Phonetic {
     text?: string
@@ -40,6 +41,7 @@ export function DictionarySearch() {
     const [error, setError] = useState<string | null>(null)
     const [isPlaying, setIsPlaying] = useState(false)
     const audioRef = useRef<HTMLAudioElement | null>(null)
+    const t = useTranslations('dictionary')
 
     const searchDictionary = async (e?: React.FormEvent) => {
         if (e) e.preventDefault()
@@ -54,19 +56,19 @@ export function DictionarySearch() {
 
             if (!response.ok) {
                 if (response.status === 404) {
-                    throw new Error("Word not found")
+                    throw new Error(t('wordNotFound'))
                 }
-                throw new Error("Failed to search")
+                throw new Error(t('failedToSearch'))
             }
 
             const data = await response.json()
             if (Array.isArray(data) && data.length > 0) {
                 setResult(data[0])
             } else {
-                setError("No definition found")
+                setError(t('noDefinitionFound'))
             }
         } catch (err) {
-            setError(err instanceof Error ? err.message : "Error occurred")
+            setError(err instanceof Error ? err.message : t('errorOccurred'))
         } finally {
             setLoading(false)
         }
@@ -113,7 +115,7 @@ export function DictionarySearch() {
                                 type="text"
                                 value={query}
                                 onChange={(e) => setQuery(e.target.value)}
-                                placeholder="Search any word..."
+                                placeholder={t('searchPlaceholder')}
                                 className="w-full h-12 pl-12 pr-28 bg-white/5 border border-white/10 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-500/50 focus:border-transparent transition-all text-foreground placeholder:text-muted-foreground/50"
                             />
                             <div className="absolute right-1">
@@ -123,7 +125,7 @@ export function DictionarySearch() {
                                     size="sm"
                                     className="h-10 px-4 bg-blue-600 hover:bg-blue-500 text-white border-0 rounded-lg font-medium transition-all"
                                 >
-                                    {loading ? <Loader2 className="w-4 h-4 animate-spin" /> : "Search"}
+                                    {loading ? <Loader2 className="w-4 h-4 animate-spin" /> : t('searchButton')}
                                 </GButton>
                             </div>
                         </div>
@@ -139,10 +141,10 @@ export function DictionarySearch() {
                     {!result && !loading && !error && (
                         <div className="text-center py-12">
                             <h2 className="text-2xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-purple-400 mb-2">
-                                Dictionary
+                                {t('title')}
                             </h2>
                             <p className="text-muted-foreground text-sm">
-                                Enter a word to explore its meaning
+                                {t('enterWord')}
                             </p>
                         </div>
                     )}
@@ -164,7 +166,7 @@ export function DictionarySearch() {
                                     <button
                                         onClick={() => playAudio(getAudioUrl(result.phonetics)!)}
                                         className="relative group w-14 h-14 rounded-full bg-blue-500/10 hover:bg-blue-500/20 flex items-center justify-center transition-all duration-300 hover:scale-105 active:scale-95"
-                                        aria-label="Play pronunciation"
+                                        aria-label={t('playPronunciation')}
                                     >
                                         <div className={`absolute inset-0 rounded-full border border-blue-500/30 group-hover:border-blue-500/50 transition-colors ${isPlaying ? 'animate-ping opacity-20' : ''}`} />
                                         {isPlaying ? (
@@ -207,7 +209,7 @@ export function DictionarySearch() {
 
                                         {meaning.synonyms.length > 0 && (
                                             <div className="mt-4 flex flex-wrap gap-2 items-center">
-                                                <span className="text-xs text-muted-foreground uppercase tracking-wider font-semibold mr-1">Synonyms:</span>
+                                                <span className="text-xs text-muted-foreground uppercase tracking-wider font-semibold mr-1">{t('synonyms')}</span>
                                                 {meaning.synonyms.slice(0, 4).map(syn => (
                                                     <button
                                                         key={syn}

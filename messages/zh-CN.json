@@ -14,15 +14,622 @@
     "roasCalculator": "罗斯计算器",
     "theme": "主题",
     "language": "语言",
-    "selectLanguage": "选择语言"
+    "selectLanguage": "选择语言",
+    "search": "搜索",
+    "whatToolLookingFor": "今天你在寻找什么工具?",
+    "popularTools": "流行的工具",
+    "allTools": "所有工具",
+    "tools": "工具",
+    "loading": "装载工具...",
+    "loadingFaq": "加载FAQ...",
+    "tryNow": "试试现在",
+    "viewAll": "查看全部",
+    "popular": "流行的:",
+    "apiDocs": "火药文件"
   },
   "navigation": {
-    "tools": "工具",
     "categories": "类别",
+    "calculators": "计算机",
+    "finance": "金融",
+    "aiTools": "什么工具",
+    "converters": "转换者",
+    "devTools": "Dev 工具",
+    "imageTools": "图像工具",
+    "pdfTools": "PDF 工具",
+    "seoTools": "SEO 工具",
+    "socialMedia": "社交媒体",
+    "funTools": "乐趣工具",
+    "festivals": "节日",
+    "apiDocs": "火药文件",
+    "tools": "工具",
     "allTools": "所有工具"
+  },
+  "hero": {
+    "title": "以更快的速度建立",
+    "premiumTools": "优惠工具。",
+    "subtitle": "获取1000多种免费的在线工具,用于开发人员、设计师和创作者,以便在本地处理数据,以获得最大安全性和速度。",
+    "newBadge": "新:免费观看 11,000+ 直播电视频道"
+  },
+  "dictionary": {
+    "badge": "即时定义搜索",
+    "title1": "探索与单词",
+    "title2": "智能字典",
+    "description": "我们的先进的字典工具提供即时定义,语音指南和音频发音,适合学生,作家和语言学习者,他们需要准确和快速的结果。",
+    "instant": "瞬间",
+    "searchPlaceholder": "搜索任何单词...",
+    "searchButton": "搜索",
+    "title": "字典",
+    "enterWord": "输入一个词来探索其含义",
+    "synonyms": "同义词:",
+    "wordNotFound": "字未找到",
+    "failedToSearch": "未能搜索",
+    "noDefinitionFound": "未找到定义",
+    "errorOccurred": "错误发生",
+    "playPronunciation": "演奏发音"
+  },
+  "categories": {
+    "badge": "完整工具目录",
+    "title": "我们提供的每一个工具",
+    "description": "发现专业化的工具,旨在超载您的生产力和创造力",
+    "aiTools": {
+      "name": "免费AI工具和内容生成器",
+      "description": "通过人工智能驱动的智能工具"
+    },
+    "seoTools": {
+      "name": "免费SEO分析和优化工具",
+      "description": "为搜索引擎优化内容"
+    },
+    "cryptoTools": {
+      "name": "加密和安全工具",
+      "description": "安全的密码工具,密钥,代币和密码"
+    },
+    "devTools": {
+      "name": "网站开发者工具和实用工具",
+      "description": "专业工具为开发人员和设计师"
+    },
+    "socialMedia": {
+      "name": "社交媒体下载器和工具",
+      "description": "强大的社交媒体管理工具"
+    },
+    "imageTools": {
+      "name": "免费图像编辑和OCR工具",
+      "description": "由AI驱动的专业图像编辑"
+    },
+    "pdfTools": {
+      "name": "在线 PDF 转换器和编辑器",
+      "description": "完整的 PDF 管理解决方案"
+    },
+    "converters": {
+      "name": "网上单位和货币转换器",
+      "description": "在单位,格式和货币之间即时转换"
+    },
+    "financeTools": {
+      "name": "商业与金融计算机",
+      "description": "商业准备的支付,储蓄和规划计算器"
+    },
+    "funTools": {
+      "name": "乐趣与娱乐计算机",
+      "description": "庆祝活动和社交内容的娱乐工具"
+    },
+    "calculators": {
+      "name": "免费在线计算器和金融工具",
+      "description": "精确的财务,健康等计算器"
+    }
+  },
+  "faq": {
+    "title": "FAQ 的",
+    "description": "快速解答有关 FastTools 的常见问题,立即了解功能、定价、安全以及如何充分利用 1000 多种免费在线工具。",
+    "items": {
+      "10": {
+        "question": "这些工具在移动设备和平板电脑上工作吗?",
+        "answer": "是的,我们的所有工具都针对移动设备进行了优化,在智能手机、平板电脑和桌面计算机上工作完美。我们的响应式设计确保了所有设备的最佳性能,通过触摸友好的界面,快速加载时间和许多工具的离线功能。"
+      },
+      "01": {
+        "question": "哪些AI工具可用于免费内容生成?",
+        "answer": "我们的免费AI工具包括社交媒体帖子的AI标题生成器、病毒内容的AI麦米生成器、AI标签建议器以便更好地接触、AI歌词生成器用于创意写作以及AI宠物名字生成器用于命名宠物。"
+      },
+      "02": {
+        "question": "您的转换器中的货币汇率是多么准确?",
+        "answer": "我们的货币转换器提供从可靠的财务数据源每分钟更新的实时汇率,我们支持超过 160 种货币,包括 USD, EUR, GBP, JPY 等。"
+      },
+      "03": {
+        "question": "哪些金融计算器可以帮助贷款和投资规划?",
+        "answer": "我们提供全面的财务计算器,包括贷款计算器用于抵押计划,EMI计算器用于每月支付,投资计算器用于回报分析,退休计算器用于长期规划,储蓄增长的复合利息计算器,以及税收计算器用于所得税估计。"
+      },
+      "04": {
+        "question": "SEO工具如何提高网站的搜索引擎排名?",
+        "answer": "我们的SEO工具有助于优化您的网站,使用代码标签生成器以获得更好的搜索片段,关键字密度检查器以优化内容,标签生成器以达到社交媒体,以及博客标题生成器以获得值得点击的标题。"
+      },
+      "05": {
+        "question": "哪些图像处理工具可以免费使用?",
+        "answer": "我们的图像工具包括图像剪辑器来调整和剪辑照片,图像转换器来转换格式,图像到文本的OCR从图像中提取文本,背景模糊来编辑照片,QR代码生成器来创建QR代码。"
+      },
+      "06": {
+        "question": "哪些开发工具可以帮助编码和Web开发?",
+        "answer": "我们的开发工具包括用于代码格式化的HTML美化器,用于数据验证的JSON格式化器,用于模式匹配的regex测试器,用于代码分析的JWT解码器,用于数据编码的base64编码器/解码器,以及1000多种免费的HEX代码设计色彩板,这些工具有助于开发人员编写更好的代码,更有效地调试并简化他们的开发工作流程。"
+      },
+      "07": {
+        "question": "使用这些在线工具时,我的数据是否安全?",
+        "answer": "是的,您的数据是完全安全的. 我们的所有工具在您的浏览器中本地处理数据,而不向我们的服务器上传文件。 我们使用隐私优先的架构,如文件,图像和个人数据等敏感信息永远不会离开您的设备。"
+      },
+      "08": {
+        "question": "FastTools上可用的工具类别有哪些?",
+        "answer": "我们提供10多个类别,包括内容生成 AI 工具,财务规划计算器,数据转换转换器,网站优化 SEO 工具,照片编辑图像工具,编码开发人员工具,商业计算财务工具,营销社交媒体工具和娱乐工具。"
+      },
+      "09": {
+        "question": "企业可以将这些工具用于专业目的吗?",
+        "answer": "绝对! 我们的工具是专为专业使用而设计的,具有业务级准确性和可靠性. 许多企业使用我们的金融计算器用于贷款分析,国际贸易货币转换器,数字营销的SEO工具,内容创建的AI工具和Web开发的开发工具。"
+      }
+    }
+  },
+  "footer": {
+    "description": "免费在线工具的最终集合,用于生产力,发展和创造力。",
+    "tools": "工具",
+    "company": "公司",
+    "resources": "资源",
+    "legal": "法律",
+    "copyright": "版权 所有权利保留。",
+    "privacyPolicy": "隐私政策",
+    "termsOfService": "服务条款",
+    "cookiePreferences": "Cookie 偏好",
+    "about": "关于",
+    "contact": "联系",
+    "privacy": "隐私",
+    "terms": "术语",
+    "cookies": "饼干",
+    "dmca": "DMCA的",
+    "faq": "FAQ 的",
+    "guides": "指南"
   },
   "seo": {
     "title": "FastTools - 免费的在线工具和生产力平台",
     "description": "FastTools提供1000多种免费的在线工具:AI生成器,计算器,转换器和SEO工具。"
+  },
+  "badges": {
+    "popular": "流行的",
+    "new": "新",
+    "trending": "趋势",
+    "fun": "乐趣",
+    "seo": "SEO",
+    "analytics": "分析",
+    "content": "内容",
+    "creative": "创意",
+    "secure": "安全",
+    "security": "安全",
+    "advanced": "先进",
+    "design": "设计",
+    "colors": "色彩",
+    "format": "格式",
+    "convert": "转换",
+    "preview": "预览",
+    "social": "社会",
+    "youtube": "YouTube 的",
+    "viral": "病毒",
+    "ai": "谁",
+    "creator": "创造者",
+    "ocr": "奥克尔",
+    "optimize": "优化",
+    "pro": "Pro 的",
+    "unlock": "解锁",
+    "live": "生活",
+    "quick": "快速",
+    "fast": "快速",
+    "digital": "数字化",
+    "time": "时间",
+    "api": "火焰",
+    "business": "生意",
+    "payments": "付款",
+    "sale": "沙",
+    "daily": "日常",
+    "savings": "节约",
+    "planning": "计划",
+    "groups": "团体",
+    "debt": "债务",
+    "love": "爱情",
+    "essential": "基本",
+    "finance": "金融",
+    "investment": "投资",
+    "students": "学生",
+    "health": "健康",
+    "fitness": "健身",
+    "it": "它",
+    "math": "数学",
+    "construction": "建设",
+    "utility": "用途",
+    "date": "日期",
+    "geometry": "地理",
+    "sport": "体育",
+    "econ": "ECON",
+    "loan": "贷款",
+    "pay": "付出",
+    "career": "职业",
+    "wealth": "财富"
+  },
+  "tools": {
+    "aiTools": {
+      "qrGenerator": {
+        "title": "QR代码生成器",
+        "description": "使用人工智能驱动的定制和艺术风格创建令人惊叹的、品牌化的QR代码,非常适合营销活动、名片和促销材料,具有自定义颜色、徽标和设计,可完美扫描"
+      },
+      "lyricsGenerator": {
+        "title": "歌词发电机",
+        "description": "立即生成任何流派的创意、原创歌曲文本,适合作曲家、音乐家和内容创作者,具有适当的韵律模式、节奏模式和所有音乐风格的主题一致性"
+      },
+      "captionGenerator": {
+        "title": "AI Caption 发电机",
+        "description": "使用人工智能自动创建吸引人的社交媒体帖子标题,使用Instagram,Facebook,Twitter和LinkedIn的标签和情感符号生成多个标题选项,以提高所有平台的参与度"
+      },
+      "petNames": {
+        "title": "AI Pet 名称发电机",
+        "description": "使用高级人工智能为宠物发现独特的创意名称,根据物种,品种,个性和外观获得个性化建议,提供可爱、有趣、优雅或文化启发的选项"
+      }
+    },
+    "seoTools": {
+      "metaTags": {
+        "title": "Meta Tag 生成器",
+        "description": "生成SEO优化的元标签,以改善搜索排名和点击率,具有完美的标题标签和描述"
+      },
+      "keywordDensity": {
+        "title": "关键字密度检查器",
+        "description": "分析内容中的关键字密度以优化搜索引擎,并确保正确的关键字分布而无需过度优化"
+      },
+      "loremIpsum": {
+        "title": "Lorem Ipsum 发电机",
+        "description": "生成不同长度的设计模板和网站布局的位置标签文本,以可视化具有现实内容的设计"
+      },
+      "blogTitles": {
+        "title": "博客标题生成器",
+        "description": "创建吸引人的,SEO友好的标题,以提高吸引力和流量,为搜索引擎优化,值得点击的标题"
+      }
+    },
+    "cryptoTools": {
+      "tokenGenerator": {
+        "title": "代码发电机",
+        "description": "立即生成安全的随机代币、API密钥和密码,使用自定义长度和图表设置"
+      }
+    },
+    "devTools": {
+      "colorPalette": {
+        "title": "彩色发电机",
+        "description": "立即生成美丽、和谐的色彩方案,使用互补的、模拟的和三色颜色组合用于Web设计"
+      },
+      "hexToRgb": {
+        "title": "Hex 到 RGB 转换",
+        "description": "在 HEX、RGB、HSL 和其他颜色格式之间即时转换,以实时预览 Web 开发和设计"
+      },
+      "jsonToCsv": {
+        "title": "JSON 到 CSV 转换器",
+        "description": "快速准确地将 JSON 数据转换为 CSV 格式,用于数据分析、Excel 导入和电子表格处理"
+      },
+      "jwtDecoder": {
+        "title": "JWT 解码器",
+        "description": "在您的浏览器中安全地解码和检查 JSON Web Tokens,而不向外部服务器发送数据以保护隐私"
+      },
+      "regexTester": {
+        "title": "雷克斯测试",
+        "description": "使用实时结果和即时模式匹配测试定期表达式来调试regex模式和验证"
+      },
+      "htmlBeautifier": {
+        "title": "HTML 美人",
+        "description": "格式化和美化HTML代码以适当的入口和结构,以获得更好的可读性和代码质量"
+      },
+      "htmlToMarkdown": {
+        "title": "HTML 到 Markdown",
+        "description": "立即将 HTML 内容转换为 Markdown 格式,用于文档、 README 文件和内容管理系统"
+      },
+      "markdownPreviewer": {
+        "title": "Markdown 预览器",
+        "description": "实时预览 Markdown 内容,提供实时渲染和语法突出的文档和写作"
+      }
+    },
+    "socialMedia": {
+      "instagramDp": {
+        "title": "Instagram DP 观看器",
+        "description": "查看和下载全分辨率高清质量的Instagram个人资料图片,无需登录或注册任何公共个人资料"
+      },
+      "instagramDownloader": {
+        "title": "Instagram 下载",
+        "description": "下载高清质量的Instagram帖子,轮子和图像,用于离线观看,创建内容和跨平台共享"
+      },
+      "tiktokDownloader": {
+        "title": "TikTok 视频下载",
+        "description": "免费下载TikTok视频以高清质量进行下载,用于离线观看、创建内容和跨平台共享"
+      },
+      "facebookDownloader": {
+        "title": "Facebook视频下载器",
+        "description": "快速轻松地下载高清质量的Facebook视频以便离线观看和共享"
+      },
+      "xDownloader": {
+        "title": "X 视频下载器",
+        "description": "从X(以前是Twitter)下载高清视频,无需水印"
+      },
+      "youtubeThumbnail": {
+        "title": "YouTube 微影下载器",
+        "description": "下载高清和所有可用的尺寸的YouTube小图像,用于分析,灵感和内容创建工作流程"
+      },
+      "hashtagGenerator": {
+        "title": "标签生成器",
+        "description": "为帖子生成趋势标签,最大限度地实现Instagram、Twitter、TikTok和其他平台的接触和参与"
+      },
+      "youtubeTags": {
+        "title": "YouTube 标签 提取器",
+        "description": "从任何YouTube视频中提取标签,了解SEO策略并优化自己的内容,以便更好地发现"
+      },
+      "channelChecker": {
+        "title": "YouTube频道检查器",
+        "description": "通过实时可用性检查创建帐户之前,检查您想要的YouTube频道名称是否可用"
+      },
+      "channelNameGenerator": {
+        "title": "YouTube频道名称生成器",
+        "description": "使用AI为您的YouTube旅程生成吸引人、独特且可用的频道名称"
+      },
+      "linkInBio": {
+        "title": "链接到 Bio Tool",
+        "description": "创建可自定义主题和分析跟踪的Instagram和TikTok的美丽单页链接生物网站"
+      }
+    },
+    "imageTools": {
+      "backgroundRemover": {
+        "title": "背景移除",
+        "description": "使用人工智能驱动的精度自动删除背景,以获得产品照片、个人资料和营销材料的专业结果"
+      },
+      "imageToText": {
+        "title": "图像到文本(OCR)",
+        "description": "使用高精度 OCR 技术从图像中提取文本,将扫描的文档、屏幕截图和照片转换为可编辑的文本"
+      }
+    },
+    "pdfTools": {
+      "pdfToWord": {
+        "title": "PDF 到 Word 转换器",
+        "description": "将 PDF 转换为可编辑的 Word 文档,而无需丢失格式、字体、图像和表格来编辑合同和报告"
+      },
+      "pdfCompressor": {
+        "title": "PDF 压缩机",
+        "description": "有效地减少 PDF 文件大小高达 90% 同时保持电子邮件附件的质量和更快的上传,而无需质量损失"
+      },
+      "pdfToImage": {
+        "title": "PDF 图像",
+        "description": "将 PDF 页面转换为高质量的 JPG、PNG 图像,以便共享特定页面、创建小图像或轻松提取视觉"
+      },
+      "signPdf": {
+        "title": "签名 PDF",
+        "description": "直接在浏览器中将安全的数字签名添加到PDF中,以便在不打印的情况下以电子方式签订合同和文件"
+      },
+      "mergeSplitPdf": {
+        "title": "合并和分割 PDF",
+        "description": "将多个 PDF 合并或将其分成单独的文件,通过拖放界面来轻松组织文档"
+      },
+      "pdfUnlocker": {
+        "title": "PDF 解锁器",
+        "description": "从 PDF 文件中删除密码保护和限制,以安全地查看、复制或打印"
+      }
+    },
+    "converters": {
+      "currency": {
+        "title": "货币转换器",
+        "description": "实时汇率转换 150 多种世界货币,每分钟更新实时汇率以获得准确的国际交易"
+      },
+      "textCase": {
+        "title": "文本案例转换器",
+        "description": "在 uppercase, lowercase, title case, sentence case, camelCase, snake_case 和 kebab-case 格式之间即时转换文本"
+      },
+      "length": {
+        "title": "长度转换器",
+        "description": "将所有主要长度单位(包括米、英寸、英里、英里、英里和厘米)以精确度进行转换"
+      },
+      "temperature": {
+        "title": "温度转换器",
+        "description": "在 Celsius、Fahrenheit、Kelvin 和 Rankine 温度尺度之间进行转换,可为任何值提供即时准确的结果"
+      },
+      "fileSize": {
+        "title": "文件大小转换器",
+        "description": "转换字节、KB、MB、GB、TB和其他数字存储单元以准确计算文件大小"
+      },
+      "timezone": {
+        "title": "时区转换器",
+        "description": "通过日光节省时间支持和基于城市的时区选择,在世界各地转换不同时区之间的时间"
+      },
+      "currencyApi": {
+        "title": "火花货币",
+        "description": "免费的货币交换API与实时利率,为开发人员和企业集成货币数据"
+      }
+    },
+    "financeTools": {
+      "roasCalculator": {
+        "title": "罗斯计算器",
+        "description": "立即计算 Google、Facebook 和 TikTok 广告的广告支出、回报和突破点回报"
+      },
+      "invoiceGenerator": {
+        "title": "发电机发电机",
+        "description": "在几秒钟内创建自动税收、折扣和PDF出口的专业发票"
+      },
+      "paypalFee": {
+        "title": "PayPal 收费计算器",
+        "description": "计算国内和国际支付的PayPal费用之后的净支付和所需费用"
+      },
+      "discountCalculator": {
+        "title": "折扣计算器",
+        "description": "计算折扣后最终价格,储存的金额和智能购物和销售的原始价格"
+      },
+      "tipCalculator": {
+        "title": "类型计算器",
+        "description": "快速分割账单并计算餐厅,出租车和服务的提示,使用自定义百分比选项"
+      },
+      "savingsTracker": {
+        "title": "节约目标追踪器",
+        "description": "计划和跟踪节约里程碑,预测假期,紧急资金或大型购买"
+      },
+      "retirementPlanner": {
+        "title": "退休计划员",
+        "description": "全面规划您的黄金岁月,包括利益和贡献预测"
+      },
+      "billSplitter": {
+        "title": "比尔·斯普利特",
+        "description": "通过提示支持和可自定义贡献来公平地在朋友或团队之间分享支出"
+      },
+      "creditCardPayoff": {
+        "title": "信用卡支付",
+        "description": "计算它需要多长时间来偿还信用卡债务和你会支付多少利息"
+      }
+    },
+    "funTools": {
+      "futureAge": {
+        "title": "未来时代预测",
+        "description": "查看您在任何未来的日期将有多少岁,使用生日,里程碑和特殊事件的精确计算"
+      },
+      "birthdayCountdown": {
+        "title": "生日倒数",
+        "description": "用实时更新和庆祝计划,以几天,小时,分钟和秒钟计数到下一个生日"
+      },
+      "anniversary": {
+        "title": "生日计算机",
+        "description": "计算你在一起多久,你的下一个周年纪念日是什么时候,详细的关系里程碑"
+      }
+    },
+    "calculators": {
+      "bmi": {
+        "title": "BMI计算器",
+        "description": "根据世卫组织和CDC标准计算您的体重指数,并提供详细的健康见解和个性化建议"
+      },
+      "age": {
+        "title": "年龄计算器",
+        "description": "用年份,月,周,天,小时,分钟和秒计算准确的年龄,准确地计算任何日期"
+      },
+      "percentage": {
+        "title": "百分比计算器",
+        "description": "使用多种计算模式计算百分比、折扣、增加、减少和百分比差异"
+      },
+      "loan": {
+        "title": "贷款计算器",
+        "description": "计算贷款支付,总利息,折扣时间表,并轻松比较不同的贷款选项"
+      },
+      "mortgage": {
+        "title": "抵押贷款计算器",
+        "description": "计算每月抵押贷款支付,包括主权,利息,税收,保险和HOA费用为房屋买家"
+      },
+      "compoundInterest": {
+        "title": "合成利率计算器",
+        "description": "以复合利息计算投资增长,包括定期贡献和不同的复合频率"
+      },
+      "retirement": {
+        "title": "养老金计算器",
+        "description": "通过计算所需的储蓄,退休收入和退休策略来自信地规划您的退休"
+      },
+      "salary": {
+        "title": "工资计算器",
+        "description": "每小时,每日,每周,每月和年度工资之间的转换,税收扣除和净工资计算"
+      },
+      "tax": {
+        "title": "税收计算器",
+        "description": "计算联邦和州所得税,估计税收退款,并优化您的年度税收策略"
+      },
+      "investment": {
+        "title": "投资计算器",
+        "description": "计算投资回报,比较选项,并计划详细的预测和分析的投资策略"
+      },
+      "gpa": {
+        "title": "GPA 计算器",
+        "description": "计算学期GPA,累积GPA和重量级GPA,支持不同的评级尺度和系统"
+      },
+      "calorie": {
+        "title": "卡路里计算器",
+        "description": "根据年龄,性别,活动水平和健身目标计算每日卡路里需求"
+      },
+      "bmr": {
+        "title": "BMR计算器",
+        "description": "计算你的基本代谢率,了解每天的卡路里燃烧休息时使用多个经过验证的公式"
+      },
+      "bodyFat": {
+        "title": "身体脂肪计算器",
+        "description": "使用多种方法估计身体脂肪百分比,包括测量和视觉估计图"
+      },
+      "pregnancy": {
+        "title": "怀孕计算机",
+        "description": "计算到期日期,怀孕时间线和胎儿发育里程碑基于最后一个月经期"
+      },
+      "love": {
+        "title": "爱情计算机",
+        "description": "计算基于名称的爱情兼容率百分比,以获得有趣的娱乐和关系见解"
+      },
+      "ipSubnet": {
+        "title": "IP子网计算器",
+        "description": "计算子网口罩、网络地址和主机范围 对于网络工程师和IT专业人员来说是必不可少的工具。"
+      },
+      "standardDeviation": {
+        "title": "标准偏差计算器",
+        "description": "计算平均值、偏差和标准偏差,对统计分析和数据科学至关重要。"
+      },
+      "concrete": {
+        "title": "具体计算器",
+        "description": "估计板块,脚印和列的混凝土体积. 对于建筑和 DIY 项目至关重要。"
+      },
+      "unitConverter": {
+        "title": "单位转换器",
+        "description": "通用单元转换器为长度,重量,温度,等等. 快速转换为日常需求。"
+      },
+      "dateDifference": {
+        "title": "日期差异",
+        "description": "计算两个日期之间的确切差异,以日期、周、月和年计划"
+      },
+      "timeDuration": {
+        "title": "时间长度",
+        "description": "计算两次之间确切的持续时间,用于跟踪工作时间或事件"
+      },
+      "scientific": {
+        "title": "科学计算机",
+        "description": "先进的科学计算器,包括三角形、逻辑和指数函数"
+      },
+      "triangle": {
+        "title": "三角形计算器",
+        "description": "用可视化计算任何三角形的区域、周围、角度和侧面"
+      },
+      "fraction": {
+        "title": "部分计算器",
+        "description": "轻松添加、扣除、倍增和分割分数,以逐步获得结果"
+      },
+      "pregnancyConception": {
+        "title": "怀孕的概念",
+        "description": "根据出生日期或超声波数据估计您的怀孕日期使用生育窗口"
+      },
+      "pace": {
+        "title": "和平计算器",
+        "description": "计算马拉松和赛车的跑步速度,速度和完成时间"
+      },
+      "salesTax": {
+        "title": "销售税计算器",
+        "description": "计算不同州和地区的销售税和购买总成本"
+      },
+      "interestRate": {
+        "title": "利率计算器",
+        "description": "确定贷款或投资的实际利率,以做出更好的财务决策"
+      },
+      "finance": {
+        "title": "财务计算器",
+        "description": "一台全方位的财务计算器,用于计时货币价值、现金流和折扣"
+      },
+      "inflation": {
+        "title": "通货膨胀计算器",
+        "description": "用历史数据计算通货膨胀如何影响您的购买力"
+      },
+      "amortization": {
+        "title": "积分计算器",
+        "description": "创建详细的贷款折扣时间表,主要和利息折扣"
+      },
+      "payment": {
+        "title": "支付计算器",
+        "description": "估计每月贷款,信用卡或简化抵押贷款的付款"
+      }
+    }
+  },
+  "header": {
+    "liveTv": "直播电视",
+    "buildAndEarn": "创建 & 赚取",
+    "agentSkills": "特工技能",
+    "getMyInfo": "获取我的信息",
+    "blog": "博客",
+    "products": "产品",
+    "downloaders": "下载者",
+    "roasCalculator": "罗斯计算器",
+    "contact": "联系"
   }
 }

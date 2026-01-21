@@ -15,6 +15,35 @@
   }
 }
 
+/* Prevent content size shifts on language change */
+[dir="rtl"],
+[dir="ltr"] {
+  font-feature-settings: normal;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Ensure consistent sizing for translated content */
+h1, h2, h3, h4, h5, h6 {
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+}
+
+p, span, div {
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+}
+
+/* Fix RTL layout issues */
+[dir="rtl"] {
+  direction: rtl;
+}
+
+[dir="ltr"] {
+  direction: ltr;
+}
+
 *:focus-visible {
   outline: 2px solid #1E90FF;
   outline-offset: 2px;

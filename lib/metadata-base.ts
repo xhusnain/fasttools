@@ -1,7 +1,17 @@
 import type {Metadata, Viewport} from "next"
+import { routing } from '@/i18n/routing'
 
 const BASE_URL = "https://www.fasttools.store"
 const SITE_NAME = "FastTools"
+
+const localeMap: Record<string, string> = {
+    'en': 'en-US',
+    'es': 'es-ES',
+    'de': 'de-DE',
+    'pt-BR': 'pt-BR',
+    'ar': 'ar-SA',
+    'zh-CN': 'zh-CN'
+};
 
 
 export const globalViewport: Viewport = {
@@ -25,6 +35,7 @@ export interface MetadataOptions {
     title: string
     description: string
     path: string
+    locale?: string
     ogImageAlt?: string
     ogImage?: string | {
         url: string
@@ -78,10 +89,14 @@ function shouldIncludeSchema(path: string): boolean {
 }
 
 export function createMetadata(options: MetadataOptions): Metadata {
-    const { title, description, path, ogImageAlt, ogImage, noIndex, ogTitle, ogDescription, twitterTitle, twitterDescription, twitterCreator, schemaOptions, faqs, howToSteps, toolName, breadcrumbs } = options
+    const { title, description, path, locale, ogImageAlt, ogImage, noIndex, ogTitle, ogDescription, twitterTitle, twitterDescription, twitterCreator, schemaOptions, faqs, howToSteps, toolName, breadcrumbs } = options
     const includeSchema = options.includeSchema ?? shouldIncludeSchema(path)
 
     const cleanPath = path.startsWith("/") ? path : `/${path}`
+    
+    const detectedLocale = locale || detectLocaleFromPath(cleanPath)
+    const cleanPathWithoutLocale = removeLocaleFromPath(cleanPath)
+    
     let processedTitle = title
         .replace(/\|\s*FastTools/gi, "")
         .replace(/FastTools\s*[-–—|]?\s*/gi, "")
@@ -91,7 +106,8 @@ export function createMetadata(options: MetadataOptions): Metadata {
     }
 
     const fullTitle = processedTitle
-    const canonicalUrl = getCanonicalUrl(cleanPath)
+    const canonicalUrl = getCanonicalUrl(cleanPathWithoutLocale, detectedLocale)
+    const hreflangAlternates = generateHreflangAlternates(cleanPathWithoutLocale, detectedLocale)
 
 
 
@@ -125,13 +141,15 @@ export function createMetadata(options: MetadataOptions): Metadata {
         }
     }
 
+    const ogLocale = detectedLocale ? localeMap[detectedLocale]?.replace('-', '_') || 'en_US' : 'en_US'
+    
     const openGraphConfig: any = {
         title: finalOgTitle,
         description: finalOgDescription,
         url: canonicalUrl,
         siteName: SITE_NAME,
         type: "website" as const,
-        locale: "en_US" as const,
+        locale: ogLocale as any,
         images: [ogImageConfig],
     }
 
@@ -195,6 +213,7 @@ export function createMetadata(options: MetadataOptions): Metadata {
         description,
         alternates: {
             canonical: canonicalUrl,
+            languages: hreflangAlternates,
         },
         openGraph: openGraphConfig,
         twitter: {
@@ -220,9 +239,42 @@ export function createMetadata(options: MetadataOptions): Metadata {
 
 
 
-export function getCanonicalUrl(path: string): string {
+function detectLocaleFromPath(path: string): string | undefined {
+    const localePattern = new RegExp(`^/(${routing.locales.join('|')})(/|$)`)
+    const match = path.match(localePattern)
+    return match ? match[1] : undefined
+}
+
+function removeLocaleFromPath(path: string): string {
+    const localePattern = new RegExp(`^/(${routing.locales.join('|')})(/|$)`)
+    const cleaned = path.replace(localePattern, '/')
+    return cleaned || '/'
+}
+
+function generateHreflangAlternates(path: string, currentLocale?: string): Record<string, string> {
+    const alternates: Record<string, string> = {}
+    
+    routing.locales.forEach(locale => {
+        const localePath = locale === routing.defaultLocale 
+            ? path === '/' ? '' : path
+            : path === '/' ? `/${locale}` : `/${locale}${path}`
+        alternates[locale] = `${BASE_URL}${localePath}`
+    })
+    
+    alternates['x-default'] = `${BASE_URL}${path === '/' ? '' : path}`
+    
+    return alternates
+}
+
+export function getCanonicalUrl(path: string, locale?: string): string {
     const safePath = path.startsWith("/") ? path : `/${path}`
-    return `${BASE_URL}${safePath}`
+    
+    if (!locale || locale === routing.defaultLocale) {
+        return `${BASE_URL}${safePath}`
+    }
+    
+    const localePath = safePath === '/' ? `/${locale}` : `/${locale}${safePath}`
+    return `${BASE_URL}${localePath}`
 }
 
 

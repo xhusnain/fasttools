@@ -1,23 +1,27 @@
 "use client"
 
 import Link from "next/link"
+import { useTranslations } from 'next-intl';
 
 export function Footer() {
   const currentYear = new Date().getFullYear()
+  const t = useTranslations('footer');
+  const tNav = useTranslations('navigation');
+  const tCommon = useTranslations('common');
 
   // All tool categories matching mega menu
   const toolCategories = [
-    { name: "Calculators", href: "/calculator" },
-    { name: "Finance", href: "/finance-tools" },
-    { name: "AI Tools", href: "/ai-tools" },
-    { name: "Converters", href: "/converters" },
-    { name: "Dev Tools", href: "/dev-tools" },
-    { name: "Image Tools", href: "/image-tools" },
-    { name: "PDF Tools", href: "/pdf-tools" },
-    { name: "SEO Tools", href: "/seo-tools" },
-    { name: "Social Media", href: "/social-media-tools" },
-    { name: "Fun Tools", href: "/fun-tools" },
-    { name: "Festivals", href: "/festivals" },
+              { name: tNav('calculators'), href: "/calculator" },
+    { name: tNav('finance'), href: "/finance-tools" },
+    { name: tNav('aiTools'), href: "/ai-tools" },
+    { name: tNav('converters'), href: "/converters" },
+    { name: tNav('devTools'), href: "/dev-tools" },
+    { name: tNav('imageTools'), href: "/image-tools" },
+    { name: tNav('pdfTools'), href: "/pdf-tools" },
+    { name: tNav('seoTools'), href: "/seo-tools" },
+    { name: tNav('socialMedia'), href: "/social-media-tools" },
+    { name: tNav('funTools'), href: "/fun-tools" },
+    { name: tNav('festivals'), href: "/festivals" },
   ]
 
   return (
@@ -32,7 +36,7 @@ export function Footer() {
               <span className="text-xl font-bold text-foreground">FastTools</span>
             </Link>
             <p className="text-sm text-muted-foreground leading-relaxed max-w-xs mb-5">
-              The ultimate collection of free online tools for productivity, development, and creativity.
+              {t('description')}
             </p>
 
             {/* Social Links */}
@@ -86,7 +90,7 @@ export function Footer() {
 
           {/* Tools Column 1 */}
           <div>
-            <h4 className="text-sm font-semibold text-foreground mb-4">Tools</h4>
+            <h4 className="text-sm font-semibold text-foreground mb-4">{t('tools')}</h4>
             <ul className="space-y-2">
               {toolCategories.slice(0, 6).map((cat) => (
                 <li key={cat.href}>
@@ -114,27 +118,27 @@ export function Footer() {
 
           {/* Resources Column */}
           <div>
-            <h4 className="text-sm font-semibold text-foreground mb-4">Resources</h4>
+            <h4 className="text-sm font-semibold text-foreground mb-4">{t('resources')}</h4>
             <ul className="space-y-2">
-              <li><Link href="/blog" title="Read our latest blog posts and tutorials" className="text-sm text-muted-foreground hover:text-primary transition-colors">Blog</Link></li>
-              <li><Link href="/guides" title="Guides on how to build and earn with online tools" className="text-sm text-muted-foreground hover:text-primary transition-colors">Guides</Link></li>
-              <li><Link href="/api-docs" title="FastTools API Documentation" className="text-sm text-muted-foreground hover:text-primary transition-colors">API Docs</Link></li>
-              <li><Link href="/downloaders" title="Free Video Downloaders" className="text-sm text-muted-foreground hover:text-primary transition-colors">Downloaders</Link></li>
-              <li><Link href="/products" title="Browse all FastTools products" className="text-sm text-muted-foreground hover:text-primary transition-colors">Products</Link></li>
-              <li><Link href="/faq" title="Frequently Asked Questions" className="text-sm text-muted-foreground hover:text-primary transition-colors">FAQ</Link></li>
+              <li><Link href="/blog" title="Read our latest blog posts and tutorials" className="text-sm text-muted-foreground hover:text-primary transition-colors">{tCommon('blog')}</Link></li>
+              <li><Link href="/guides" title="Guides on how to build and earn with online tools" className="text-sm text-muted-foreground hover:text-primary transition-colors">{t('guides')}</Link></li>
+              <li><Link href="/api-docs" title="FastTools API Documentation" className="text-sm text-muted-foreground hover:text-primary transition-colors">{tNav('apiDocs')}</Link></li>
+              <li><Link href="/downloaders" title="Free Video Downloaders" className="text-sm text-muted-foreground hover:text-primary transition-colors">{tCommon('downloaders')}</Link></li>
+              <li><Link href="/products" title="Browse all FastTools products" className="text-sm text-muted-foreground hover:text-primary transition-colors">{tCommon('products')}</Link></li>
+              <li><Link href="/faq" title="Frequently Asked Questions" className="text-sm text-muted-foreground hover:text-primary transition-colors">{t('faq')}</Link></li>
             </ul>
           </div>
 
           {/* Company Column */}
           <div>
-            <h4 className="text-sm font-semibold text-foreground mb-4">Company</h4>
+            <h4 className="text-sm font-semibold text-foreground mb-4">{t('company')}</h4>
             <ul className="space-y-2">
-              <li><Link href="/about" title="About FastTools" className="text-sm text-muted-foreground hover:text-primary transition-colors">About</Link></li>
-              <li><Link href="/contact" title="Contact Us" className="text-sm text-muted-foreground hover:text-primary transition-colors">Contact</Link></li>
-              <li><Link href="/privacy-policy" title="Privacy Policy" className="text-sm text-muted-foreground hover:text-primary transition-colors">Privacy</Link></li>
-              <li><Link href="/terms" title="Terms of Service" className="text-sm text-muted-foreground hover:text-primary transition-colors">Terms</Link></li>
-              <li><Link href="/cookie-preferences" title="Cookie Preferences" className="text-sm text-muted-foreground hover:text-primary transition-colors">Cookies</Link></li>
-              <li><Link href="/dmca" title="DMCA Policy" className="text-sm text-muted-foreground hover:text-primary transition-colors">DMCA</Link></li>
+              <li><Link href="/about" title="About FastTools" className="text-sm text-muted-foreground hover:text-primary transition-colors">{t('about')}</Link></li>
+              <li><Link href="/contact" title="Contact Us" className="text-sm text-muted-foreground hover:text-primary transition-colors">{t('contact')}</Link></li>
+              <li><Link href="/privacy-policy" title="Privacy Policy" className="text-sm text-muted-foreground hover:text-primary transition-colors">{t('privacy')}</Link></li>
+              <li><Link href="/terms" title="Terms of Service" className="text-sm text-muted-foreground hover:text-primary transition-colors">{t('terms')}</Link></li>
+              <li><Link href="/cookie-preferences" title="Cookie Preferences" className="text-sm text-muted-foreground hover:text-primary transition-colors">{t('cookies')}</Link></li>
+              <li><Link href="/dmca" title="DMCA Policy" className="text-sm text-muted-foreground hover:text-primary transition-colors">{t('dmca')}</Link></li>
             </ul>
           </div>
         </div>
@@ -145,7 +149,7 @@ export function Footer() {
         <div className="container mx-auto max-w-7xl px-4 py-5">
           <div className="flex flex-col sm:flex-row items-center justify-between gap-4">
             <p className="text-xs text-muted-foreground">
-              © {currentYear} FastTools. All rights reserved.
+              {t('copyright', { year: currentYear })}
             </p>
             <a href="mailto:support@fasttools.store" className="text-xs text-muted-foreground hover:text-primary transition-colors">
               support@fasttools.store

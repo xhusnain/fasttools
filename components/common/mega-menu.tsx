@@ -14,9 +14,12 @@ import {
 } from "@/components/utilities/navigation-menu"
 import { navigationConfig } from "@/data/navigation"
 import { usePathname } from "next/navigation"
+import { useTranslations } from 'next-intl'
 
 export function MegaMenu() {
     const pathname = usePathname()
+    const tCommon = useTranslations('common')
+    const tNav = useTranslations('navigation')
 
     return (
         <NavigationMenu className="max-w-none w-full">
@@ -79,7 +82,7 @@ export function MegaMenu() {
                 <NavigationMenuItem>
                     <NavigationMenuLink asChild>
                         <Link href="/api-docs" className={cn(navigationMenuTriggerStyle(), "bg-transparent text-foreground/70 hover:text-foreground hover:bg-white/5 text-xs h-8 px-2")}>
-                            API Docs
+                            {tCommon('apiDocs')}
                         </Link>
                     </NavigationMenuLink>
                 </NavigationMenuItem>

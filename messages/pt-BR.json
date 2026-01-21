@@ -14,15 +14,622 @@
     "roasCalculator": "Calculadora ROAS",
     "theme": "Temática",
     "language": "Língua",
-    "selectLanguage": "Linguagem selecionada"
+    "selectLanguage": "Linguagem selecionada",
+    "search": "Pesquisa",
+    "whatToolLookingFor": "Qual ferramenta você está procurando hoje?",
+    "popularTools": "Ferramentas populares",
+    "allTools": "Todas as ferramentas",
+    "tools": "Ferramentas",
+    "loading": "Carregamento de ferramentas...",
+    "loadingFaq": "Carregar FAQ...",
+    "tryNow": "Tente agora",
+    "viewAll": "Veja tudo",
+    "popular": "Popularidade :",
+    "apiDocs": "Fogo Docs"
   },
   "navigation": {
-    "tools": "Ferramentas",
     "categories": "Categorias",
+    "calculators": "Calculadores",
+    "finance": "Finanças",
+    "aiTools": "As ferramentas",
+    "converters": "Conversão",
+    "devTools": "Dev Ferramentas",
+    "imageTools": "Ferramentas de Imagem",
+    "pdfTools": "PDF Ferramentas",
+    "seoTools": "Ferramentas SEO",
+    "socialMedia": "Mídia Social",
+    "funTools": "Ferramentas divertidas",
+    "festivals": "Festivales",
+    "apiDocs": "Fogo Docs",
+    "tools": "Ferramentas",
     "allTools": "Todas as ferramentas"
+  },
+  "hero": {
+    "title": "Construa mais rápido com",
+    "premiumTools": "Ferramentas de prémios.",
+    "subtitle": "Acesso a mais de 1000 ferramentas online gratuitas para desenvolvedores, designers e criadores. Processar dados localmente para segurança e velocidade máximas.",
+    "newBadge": "Novo: assista 11.000+ canais de TV ao vivo gratuitamente"
+  },
+  "dictionary": {
+    "badge": "Definição Instant Lookup",
+    "title1": "Explore palavras com",
+    "title2": "O dicionário inteligente.",
+    "description": "Nossa avançada ferramenta de dicionário fornece definições instantâneas, guias fonéticos e pronúncias de áudio. Perfeito para estudantes, escritores e aprendizes de idiomas que precisam de resultados precisos e rápidos.",
+    "instant": "instantâneo",
+    "searchPlaceholder": "Procure por qualquer palavra...",
+    "searchButton": "Pesquisa",
+    "title": "Dicionário",
+    "enterWord": "Digite uma palavra para explorar seu significado",
+    "synonyms": "Os sinônimos:",
+    "wordNotFound": "Palavra não encontrada",
+    "failedToSearch": "Fracassou a busca",
+    "noDefinitionFound": "Nenhuma definição encontrada",
+    "errorOccurred": "Erro ocorreu",
+    "playPronunciation": "Jogue a pronúncia"
+  },
+  "categories": {
+    "badge": "Diretório completo de ferramentas",
+    "title": "Todas as ferramentas que oferecemos",
+    "description": "Descubra ferramentas de nível profissional projetadas para sobrecarregar sua produtividade e criatividade",
+    "aiTools": {
+      "name": "Ferramentas e geradores de conteúdo gratuitos",
+      "description": "Ferramentas inteligentes alimentadas por inteligência artificial"
+    },
+    "seoTools": {
+      "name": "Ferramentas gratuitas de análise e otimização de SEO",
+      "description": "Otimização de conteúdo para motores de busca"
+    },
+    "cryptoTools": {
+      "name": "Crypto & Ferramentas de Segurança",
+      "description": "Ferramentas criptográficas seguras para chaves, tokens e senhas"
+    },
+    "devTools": {
+      "name": "Web Developer Tools & Utilidades",
+      "description": "Ferramentas profissionais para desenvolvedores e designers"
+    },
+    "socialMedia": {
+      "name": "Downloaders e ferramentas de mídia social",
+      "description": "Ferramentas poderosas de gerenciamento de mídia social"
+    },
+    "imageTools": {
+      "name": "Ferramentas gratuitas de edição de imagens e OCR",
+      "description": "Edição de imagem profissional alimentada por AI"
+    },
+    "pdfTools": {
+      "name": "Conversores e editores de PDF online",
+      "description": "Solução de gerenciamento de PDF"
+    },
+    "converters": {
+      "name": "Conversores de unidade e moeda online",
+      "description": "Converter entre unidades, formatos e moedas instantaneamente"
+    },
+    "financeTools": {
+      "name": "Calculadores de Negócios e Finanças",
+      "description": "Calculadoras prontas para negócios para pagamentos, poupanças e planejamento"
+    },
+    "funTools": {
+      "name": "Fun & Entertainment Calculadores",
+      "description": "Ferramentas de entretenimento para celebrações e conteúdo social"
+    },
+    "calculators": {
+      "name": "Cálculos online gratuitos e ferramentas financeiras",
+      "description": "Calculadoras precisas para finanças, saúde e muito mais"
+    }
+  },
+  "faq": {
+    "title": "FAQs",
+    "description": "Encontre respostas rápidas para perguntas comuns sobre o FastTools. Obtenha clareza instantânea sobre recursos, preços, segurança e como aproveitar ao máximo nossas 1000+ ferramentas online gratuitas.",
+    "items": {
+      "10": {
+        "question": "Essas ferramentas funcionam em dispositivos móveis e tablets?",
+        "answer": "Sim, todas as nossas ferramentas são otimizadas para dispositivos móveis e funcionam perfeitamente em smartphones, tablets e computadores desktop. Nosso design responsivo garante um desempenho ideal em todos os dispositivos com interfaces amigáveis ao toque, tempos de carregamento rápidos e funcionalidade offline para muitas ferramentas."
+      },
+      "01": {
+        "question": "Quais ferramentas estão disponíveis para a geração de conteúdo gratuito?",
+        "answer": "Nossas ferramentas gratuitas de IA incluem gerador de letras de AI para postagens de mídia social, gerador de meme de IA para conteúdo viral, sugestor de hashtag de IA para melhor alcance, gerador de letras de música de IA para escrita criativa e gerador de nomes de animais de estimação de IA para nomeação de animais de estimação."
+      },
+      "02": {
+        "question": "Quão precisas são as taxas de câmbio em seu conversor?",
+        "answer": "Nosso conversor de moeda fornece taxas de câmbio em tempo real atualizadas a cada minuto a partir de fontes de dados financeiros confiáveis.Nós suportamos mais de 160 moedas, incluindo USD, EUR, GBP, JPY e mais.As taxas são precisas para fins de viagem, negócios e investimento, com dados históricos e análise de tendências disponíveis para tomada de decisão informada."
+      },
+      "03": {
+        "question": "Que cálculos financeiros podem ajudar com o empréstimo e o planejamento de investimentos?",
+        "answer": "Oferecemos calculadoras financeiras abrangentes, incluindo calculadora de empréstimo para planejamento hipotecário, calculadora EMI para pagamentos mensais, calculadora de investimento para análise de retornos, calculadora de aposentadoria para planejamento a longo prazo, calculadora de juros compostos para crescimento de poupanças e calculadora de impostos para estimativa de imposto de renda."
+      },
+      "04": {
+        "question": "Como as ferramentas de SEO podem melhorar o ranking dos motores de busca do meu site?",
+        "answer": "Nossas ferramentas de SEO ajudam a otimizar seu site com gerador de meta tags para melhores snippets de pesquisa, checker de densidade de palavras-chave para otimização de conteúdo, gerador de hashtag para alcance de mídia social e gerador de títulos de blog para cabeçalhos dignos de cliques."
+      },
+      "05": {
+        "question": "Quais ferramentas de processamento de imagens estão disponíveis gratuitamente?",
+        "answer": "Nossas ferramentas de imagem incluem cortador de imagem para redimensionamento e corte de fotos, conversor de imagem para conversão de formato, OCR de imagem para texto para extrair texto de imagens, blur de fundo para edição de fotos e gerador de código QR para criar códigos QR."
+      },
+      "06": {
+        "question": "Quais ferramentas de desenvolvimento podem ajudar com codificação e desenvolvimento web?",
+        "answer": "Nossas ferramentas de desenvolvedores incluem beautifier HTML para formatação de código, formatação JSON para validação de dados, testador regex para correspondência de padrões, decodificador JWT para análise de token, codificador/decodificador base64 para codificação de dados e 1000+ paletas de cores gratuitas com códigos HEX para design."
+      },
+      "07": {
+        "question": "Os meus dados estão seguros ao usar essas ferramentas online?",
+        "answer": "Sim, seus dados são completamente seguros.Todas as nossas ferramentas processam dados localmente no seu navegador sem carregar arquivos para os nossos servidores.Usamos uma arquitetura de privacidade em primeiro lugar, onde informações sensíveis como documentos, imagens e dados pessoais nunca saem do seu dispositivo.Nenhum registro necessário, nenhuma coleta de dados e nenhum rastreamento - apenas funcionalidade de ferramenta pura e segura."
+      },
+      "08": {
+        "question": "Quais categorias de ferramentas estão disponíveis no FastTools?",
+        "answer": "Oferecemos 10+ categorias, incluindo Ferramentas de IA para geração de conteúdo, Calculadores para planejamento financeiro, Conversores para transformação de dados, Ferramentas de SEO para otimização de sites, Ferramentas de imagem para edição de fotos, Ferramentas de desenvolvedores para codificação, Ferramentas de finanças para cálculos de negócios, Ferramentas de mídia social para marketing e Ferramentas de diversão para entretenimento."
+      },
+      "09": {
+        "question": "As empresas podem usar essas ferramentas para fins profissionais?",
+        "answer": "Definitivamente! Nossas ferramentas são projetadas para uso profissional com precisão e confiabilidade de classe empresarial. Muitas empresas usam nossas calculadoras financeiras para análise de empréstimo, conversor de moeda para comércio internacional, ferramentas de SEO para marketing digital, ferramentas de IA para criação de conteúdo e ferramentas de desenvolvedores para desenvolvimento web."
+      }
+    }
+  },
+  "footer": {
+    "description": "A coleção final de ferramentas online gratuitas para produtividade, desenvolvimento e criatividade.",
+    "tools": "Ferramentas",
+    "company": "Companhia",
+    "resources": "Recursos",
+    "legal": "Jurídico",
+    "copyright": "Direitos autorais. todos os direitos reservados.",
+    "privacyPolicy": "Política de Privacidade",
+    "termsOfService": "Termos de Serviço",
+    "cookiePreferences": "Cookies Preferências",
+    "about": "Sobre",
+    "contact": "Contato",
+    "privacy": "Privacidade",
+    "terms": "Termos",
+    "cookies": "Cookies",
+    "dmca": "DMCA",
+    "faq": "FAQs",
+    "guides": "Guia"
   },
   "seo": {
     "title": "FastTools - Ferramentas Online Grátis e Plataforma de Produtividade",
     "description": "FastTools oferece 1000+ ferramentas online gratuitas: geradores de IA, calculadoras, conversores e utilitários de SEO. Acesso instantâneo, sem registro necessário."
+  },
+  "badges": {
+    "popular": "Popularidade",
+    "new": "novo",
+    "trending": "Tendência",
+    "fun": "Diversão",
+    "seo": "SEO",
+    "analytics": "Análise",
+    "content": "Conteúdo",
+    "creative": "Criatividade",
+    "secure": "Seguro",
+    "security": "Segurança",
+    "advanced": "Avançado",
+    "design": "desenho",
+    "colors": "cores",
+    "format": "Formatação",
+    "convert": "Conversão",
+    "preview": "Previsão",
+    "social": "social",
+    "youtube": "O YouTube",
+    "viral": "Viralidade",
+    "ai": "O que",
+    "creator": "Criador",
+    "ocr": "OCR",
+    "optimize": "Otimização",
+    "pro": "Pro",
+    "unlock": "Desbloqueio",
+    "live": "Vivo",
+    "quick": "rápido",
+    "fast": "Rápido",
+    "digital": "Digitalidade",
+    "time": "Tempo",
+    "api": "Fogo",
+    "business": "Negócios",
+    "payments": "Pagamentos",
+    "sale": "Salão",
+    "daily": "Diário",
+    "savings": "poupança",
+    "planning": "Planejamento",
+    "groups": "Grupos",
+    "debt": "Dívida",
+    "love": "amor",
+    "essential": "essencial",
+    "finance": "Finanças",
+    "investment": "Investimento",
+    "students": "Alunos",
+    "health": "Saúde",
+    "fitness": "Fitness",
+    "it": "É",
+    "math": "Matemática",
+    "construction": "CONSTRUÇÃO",
+    "utility": "Utilidade",
+    "date": "Datas",
+    "geometry": "Geometria",
+    "sport": "Esporte",
+    "econ": "Econ",
+    "loan": "empréstimo",
+    "pay": "Pagar",
+    "career": "Carreira",
+    "wealth": "Riqueza"
+  },
+  "tools": {
+    "aiTools": {
+      "qrGenerator": {
+        "title": "Gerador de Código QR",
+        "description": "Crie códigos QR impressionantes e de marca com personalização e estilo artístico impulsionados por IA. Perfeito para campanhas de marketing, cartões de visita e materiais promocionais com cores, logotipos e designs personalizados que permanecem perfeitamente digitalizáveis"
+      },
+      "lyricsGenerator": {
+        "title": "Gerador de letras",
+        "description": "Gerar letras criativas e originais de canções para qualquer gênero instantaneamente. Perfeito para compositores, músicos e criadores de conteúdo com esquemas de rima adequados, padrões de ritmo e consistência temática em todos os estilos de música"
+      },
+      "captionGenerator": {
+        "title": "Gerador de Capção",
+        "description": "Gerar múltiplas opções de subtítulos com hashtags e emojis para Instagram, Facebook, Twitter e LinkedIn para aumentar o engajamento em todas as plataformas"
+      },
+      "petNames": {
+        "title": "5 - Gerador de nomes",
+        "description": "Descubra nomes únicos e criativos para seus animais de estimação usando AI avançada. Obtenha sugestões personalizadas com base em espécie, raça, personalidade e aparência com opções bonitas, engraçadas, elegantes ou culturalmente inspiradas"
+      }
+    },
+    "seoTools": {
+      "metaTags": {
+        "title": "Meta Tag Gerador",
+        "description": "Gerar meta tags otimizados para SEO para melhorar os rankings de pesquisa e as taxas de cliques com tags e descrições de título perfeitos"
+      },
+      "keywordDensity": {
+        "title": "Palavra-chave Densidade Checker",
+        "description": "Analisar a densidade de palavras-chave no conteúdo para otimizar para os motores de busca e garantir a distribuição adequada de palavras-chave sem otimização excessiva"
+      },
+      "loremIpsum": {
+        "title": "Gerador Lorem Ipsum",
+        "description": "Gerar texto para mockups de design e layouts de sites em diferentes comprimentos para visualizar projetos com conteúdo realista"
+      },
+      "blogTitles": {
+        "title": "Blog Título Gerador",
+        "description": "Crie títulos atraentes e SEO-friendly que aumentem o engajamento e o tráfego com cabeçalhos dignos de cliques otimizados para motores de busca"
+      }
+    },
+    "cryptoTools": {
+      "tokenGenerator": {
+        "title": "Gerador de token",
+        "description": "Gerar tokens aleatórios seguros, chaves de API e senhas instantaneamente com configurações de comprimento e charset personalizadas"
+      }
+    },
+    "devTools": {
+      "colorPalette": {
+        "title": "Gerador de paleta de cores",
+        "description": "Gerar belos esquemas de cores harmoniosos instantaneamente com combinações de cores complementares, analógicas e triádicas para web design"
+      },
+      "hexToRgb": {
+        "title": "Conversão Hex para RGB",
+        "description": "Converta entre HEX, RGB, HSL e outros formatos de cores instantaneamente com pré-visualização ao vivo para desenvolvimento e design web"
+      },
+      "jsonToCsv": {
+        "title": "Conversão de JSON para CSV",
+        "description": "Converta dados JSON para o formato CSV de forma rápida e precisa para análise de dados, importação do Excel e processamento de planilhas"
+      },
+      "jwtDecoder": {
+        "title": "Decodificação JWT",
+        "description": "Decode e inspecte JSON Web Tokens com segurança em seu navegador sem enviar dados para servidores externos para privacidade"
+      },
+      "regexTester": {
+        "title": "Teste de Regex",
+        "description": "Teste expressões regulares com resultados ao vivo e correspondência de padrões instantâneos para depuração de padrões de regex e validação"
+      },
+      "htmlBeautifier": {
+        "title": "HTML em Beleza",
+        "description": "Formatar e embelezar o código HTML com a indentação e estrutura apropriadas para melhor legibilidade e qualidade do código"
+      },
+      "htmlToMarkdown": {
+        "title": "HTML para Markdown",
+        "description": "Converta conteúdo HTML para o formato Markdown instantaneamente para documentação, arquivos README e sistemas de gerenciamento de conteúdo"
+      },
+      "markdownPreviewer": {
+        "title": "Predefinição de Markdown",
+        "description": "Preview Markdown conteúdo em tempo real com renderização ao vivo e sintaxe de destaque para documentação e escrita"
+      }
+    },
+    "socialMedia": {
+      "instagramDp": {
+        "title": "Conheça o Instagram DP Viewer",
+        "description": "Ver e baixar fotos de perfil do Instagram em qualidade HD de alta resolução sem login ou registro necessário para qualquer perfil público"
+      },
+      "instagramDownloader": {
+        "title": "Download do Instagram",
+        "description": "Baixar postagens, rolos e imagens do Instagram em qualidade HD para visualização offline, criação de conteúdo e compartilhamento entre plataformas"
+      },
+      "tiktokDownloader": {
+        "title": "Download do Vídeo",
+        "description": "Baixar vídeos do TikTok sem marca d'água em qualidade HD para visualização offline, criação de conteúdo e compartilhamento entre plataformas"
+      },
+      "facebookDownloader": {
+        "title": "Download de Vídeo do Facebook",
+        "description": "Baixar vídeos do Facebook em qualidade HD de forma rápida e fácil para visualização e compartilhamento offline"
+      },
+      "xDownloader": {
+        "title": "Download de Vídeo X",
+        "description": "Baixar vídeos de X (anteriormente Twitter) em alta definição sem marcas d'água"
+      },
+      "youtubeThumbnail": {
+        "title": "Vídeo do YouTube Downloader",
+        "description": "Baixe miniaturas do YouTube em HD e todos os tamanhos disponíveis para análise, inspiração e fluxo de trabalho de criação de conteúdo"
+      },
+      "hashtagGenerator": {
+        "title": "Gerador de hashtag",
+        "description": "Gerar hashtags de tendência para posts para maximizar o alcance e o engajamento em Instagram, Twitter, TikTok e outras plataformas"
+      },
+      "youtubeTags": {
+        "title": "YouTube Tags Extractor",
+        "description": "Extraia tags de qualquer vídeo do YouTube para entender a estratégia de SEO e otimize seu próprio conteúdo para uma melhor descoberta"
+      },
+      "channelChecker": {
+        "title": "Verificação do canal do YouTube",
+        "description": "Verifique se o nome do seu canal do YouTube desejado está disponível antes de criar sua conta com verificação de disponibilidade em tempo real"
+      },
+      "channelNameGenerator": {
+        "title": "YouTube Channel Nome Gerador",
+        "description": "Gerar nomes de canais atraentes, únicos e disponíveis para sua jornada no YouTube usando AI"
+      },
+      "linkInBio": {
+        "title": "Link em Bio Tool",
+        "description": "Crie belos sites de link-in-bio de página única para o Instagram e o TikTok com temas personalizáveis e rastreamento de análises"
+      }
+    },
+    "imageTools": {
+      "backgroundRemover": {
+        "title": "Remoção de fundo",
+        "description": "Remova fundos automaticamente com precisão alimentada por IA para fotos de produtos, imagens de perfil e materiais de marketing com resultados profissionais"
+      },
+      "imageToText": {
+        "title": "Imagem a Texto (OCR)",
+        "description": "Extraia texto de imagens com tecnologia OCR de alta precisão para converter documentos digitalizados, capturas de tela e fotos em texto editável"
+      }
+    },
+    "pdfTools": {
+      "pdfToWord": {
+        "title": "Conversão de PDF para Word",
+        "description": "Converta PDF para documentos editáveis do Word sem perder formatação, fontes, imagens e tabelas para editar contratos e relatórios"
+      },
+      "pdfCompressor": {
+        "title": "Compressor PDF",
+        "description": "Reduza o tamanho do arquivo PDF até 90% de forma eficiente, mantendo a qualidade para anexos de e-mail e carregamentos mais rápidos sem perda de qualidade"
+      },
+      "pdfToImage": {
+        "title": "PDF para Imagem",
+        "description": "Converta páginas PDF para JPG de alta qualidade, imagens PNG para compartilhar páginas específicas, criar miniaturas ou extrair visuais facilmente"
+      },
+      "signPdf": {
+        "title": "Assinatura PDF",
+        "description": "Adicione assinaturas digitais seguras aos PDFs diretamente no navegador para contratos e documentos eletronicamente sem impressão"
+      },
+      "mergeSplitPdf": {
+        "title": "Mergulhe e divida PDF",
+        "description": "Combine vários PDFs ou divida-os em arquivos separados por faixas de página com interface de arrastar e soltar para organização fácil de documentos"
+      },
+      "pdfUnlocker": {
+        "title": "PDF Desbloqueio",
+        "description": "Remova a proteção por senha e as restrições dos arquivos PDF para visualizar, copiar ou imprimir com segurança"
+      }
+    },
+    "converters": {
+      "currency": {
+        "title": "Conversão de moeda",
+        "description": "Conversão de moeda em tempo real para mais de 150 moedas mundiais com taxas de câmbio ao vivo atualizadas a cada minuto para transações internacionais precisas"
+      },
+      "textCase": {
+        "title": "Conversão de Texto Case",
+        "description": "Transforme texto entre formatos uppercase, lowercase, title case, sentence case, camelCase, snake_case e kebab-case instantaneamente"
+      },
+      "length": {
+        "title": "Conversão de comprimento",
+        "description": "Converta entre todas as principais unidades de comprimento, incluindo metros, pés, polegadas, quilômetros, milhas, metros e centímetros com precisão"
+      },
+      "temperature": {
+        "title": "Conversor de temperatura",
+        "description": "Converta entre as escalas de temperatura Celsius, Fahrenheit, Kelvin e Rankine com resultados instantâneos e precisos para qualquer valor"
+      },
+      "fileSize": {
+        "title": "Conversão de tamanho de arquivo",
+        "description": "Converter entre bytes, KB, MB, GB, TB e outras unidades de armazenamento digital com cálculos precisos para tamanhos de arquivos"
+      },
+      "timezone": {
+        "title": "Conversão Timezone",
+        "description": "Converta o tempo entre diferentes fusos horários em todo o mundo com suporte ao tempo de poupança de luz solar e seleção de fusos horários baseada em cidade"
+      },
+      "currencyApi": {
+        "title": "moeda de fogo",
+        "description": "API de troca de moeda gratuita com taxas em tempo real para desenvolvedores e empresas para integrar dados de moeda"
+      }
+    },
+    "financeTools": {
+      "roasCalculator": {
+        "title": "Calculadora ROAS",
+        "description": "Calcule o Retorno sobre o gasto de anúncios, o ROI e os pontos de equilíbrio para anúncios do Google, do Facebook e do TikTok instantaneamente"
+      },
+      "invoiceGenerator": {
+        "title": "Gerador de faturação",
+        "description": "Crie faturas profissionais com impostos automáticos, descontos e exportação de PDF em segundos"
+      },
+      "paypalFee": {
+        "title": "Calculadora Paypal",
+        "description": "Calcule pagamentos líquidos e taxas necessárias após as taxas do PayPal para pagamentos domésticos e internacionais"
+      },
+      "discountCalculator": {
+        "title": "Calculadora de Desconto",
+        "description": "Calcule o preço final após o desconto, o valor salvo e o preço original para compras e vendas inteligentes"
+      },
+      "tipCalculator": {
+        "title": "Tipo Calculador",
+        "description": "Divida rapidamente as contas e calcule dicas para restaurantes, táxis e serviços com opções de percentagem personalizadas"
+      },
+      "savingsTracker": {
+        "title": "Objetivo de poupança Tracker",
+        "description": "Planeje e acompanhe as etapas de poupança com projeções para férias, fundos de emergência ou grandes compras"
+      },
+      "retirementPlanner": {
+        "title": "Planejador de aposentadoria",
+        "description": "Planejamento abrangente para seus anos de ouro com projeções de interesse e contribuição"
+      },
+      "billSplitter": {
+        "title": "Divulgação Bill",
+        "description": "Divida as despesas equitativamente entre amigos ou equipes com suporte de dicas e contribuições personalizáveis"
+      },
+      "creditCardPayoff": {
+        "title": "Cartão de Crédito Payoff",
+        "description": "Calcule quanto tempo levará para pagar a dívida do cartão de crédito e quanto juros você pagará"
+      }
+    },
+    "funTools": {
+      "futureAge": {
+        "title": "Previsão da Idade Futura",
+        "description": "Veja quantos anos você terá em qualquer data futura com cálculos precisos para aniversários, marcos e eventos especiais"
+      },
+      "birthdayCountdown": {
+        "title": "Aniversário Countdown",
+        "description": "Conte para o seu próximo aniversário em dias, horas, minutos e segundos com atualizações em tempo real e planejamento de celebrações"
+      },
+      "anniversary": {
+        "title": "Calculadora Aniversário",
+        "description": "Calcule quanto tempo você esteve juntos e quando seu próximo aniversário é com detalhes de relacionamento"
+      }
+    },
+    "calculators": {
+      "bmi": {
+        "title": "Calculadora de BMI",
+        "description": "Calcule seu Índice de Massa Corporal com informações detalhadas sobre saúde e recomendações personalizadas com base nas normas da OMS e do CDC"
+      },
+      "age": {
+        "title": "Calculadora Idade",
+        "description": "Calcule a idade exata em anos, meses, semanas, dias, horas, minutos e segundos com precisão para qualquer data"
+      },
+      "percentage": {
+        "title": "Cálculo de porcentagem",
+        "description": "Calcule percentagens, descontos, aumentos, diminuições e diferenças percentuais com múltiplos modos de cálculo"
+      },
+      "loan": {
+        "title": "Cálculo de empréstimo",
+        "description": "Calcule pagamentos de empréstimo, juros totais, horários de amortização e compare diferentes opções de empréstimo facilmente"
+      },
+      "mortgage": {
+        "title": "Cálculo hipotecário",
+        "description": "Calcule pagamentos mensais de hipoteca, incluindo principal, juros, impostos, seguros e taxas HOA para compradores de casa"
+      },
+      "compoundInterest": {
+        "title": "Calculadora de juros compostos",
+        "description": "Calcule o crescimento do investimento com juros compostos, incluindo contribuições regulares e diferentes frequências de composição"
+      },
+      "retirement": {
+        "title": "Calculadora de aposentadoria",
+        "description": "Planeje sua aposentadoria com confiança, calculando as poupanças necessárias, a renda da aposentadoria e as estratégias de aposentadoria"
+      },
+      "salary": {
+        "title": "Calculadora Salário",
+        "description": "Converter entre salário horário, diário, semanal, mensal e anual com deduções fiscais e cálculos de salário líquido"
+      },
+      "tax": {
+        "title": "Calculadora de impostos",
+        "description": "Calcule os impostos de renda federais e estaduais, estimar os reembolsos de impostos e otimizar sua estratégia fiscal para o ano"
+      },
+      "investment": {
+        "title": "Calculadora de investimentos",
+        "description": "Calcular retornos de investimento, comparar opções e planejar estratégia de investimento com projeções e análises detalhadas"
+      },
+      "gpa": {
+        "title": "Cálculo do GPA",
+        "description": "Calcule GPA semestre, GPA cumulativo e GPA ponderado com suporte para diferentes escalas e sistemas de classificação"
+      },
+      "calorie": {
+        "title": "Calculadora de Calorias",
+        "description": "Calcule as necessidades diárias de calorias com base na idade, gênero, nível de atividade e metas de aptidão com desintegrações macro"
+      },
+      "bmr": {
+        "title": "Calculadora BMR",
+        "description": "Calcule sua taxa metabólica basal para entender a queima diária de calorias em repouso usando várias fórmulas comprovadas"
+      },
+      "bodyFat": {
+        "title": "Calculadora de gordura corporal",
+        "description": "Estimar a porcentagem de gordura corporal usando vários métodos, incluindo medições e gráficos de estimativa visual"
+      },
+      "pregnancy": {
+        "title": "Calculadora de gravidez",
+        "description": "Calcule a data de vencimento, cronograma de gravidez e marcos de desenvolvimento fetal com base no último período menstrual"
+      },
+      "love": {
+        "title": "Calculadora de amor",
+        "description": "Calcule a porcentagem de compatibilidade do amor com base em nomes para entretenimento divertido e insights de relacionamento"
+      },
+      "ipSubnet": {
+        "title": "Cálculo IP Subnet",
+        "description": "Calcule máscaras de sub-rede, endereços de rede e faixas de host. Ferramenta essencial para engenheiros de rede e profissionais de TI."
+      },
+      "standardDeviation": {
+        "title": "Calculadora de desvio padrão",
+        "description": "Calcule a média, a variância e o desvio padrão, essenciais para análise estatística e ciência de dados."
+      },
+      "concrete": {
+        "title": "Calculadora concreta",
+        "description": "Estimar o volume de concreto para placas, rodapés e colunas. essencial para projetos de construção e DIY."
+      },
+      "unitConverter": {
+        "title": "Unidade de conversão",
+        "description": "Conversor de unidade universal para comprimento, peso, temperatura e muito mais. Conversões rápidas para necessidades diárias."
+      },
+      "dateDifference": {
+        "title": "Data Diferença",
+        "description": "Calcule a diferença exata entre duas datas em dias, semanas, meses e anos para planejar"
+      },
+      "timeDuration": {
+        "title": "Duração do tempo",
+        "description": "Calcule a duração exata entre duas vezes, útil para rastrear horas de trabalho ou eventos"
+      },
+      "scientific": {
+        "title": "Cálculo Científico",
+        "description": "Calculadora científica avançada, incluindo funções trigonométricas, logarítmicas e exponenciais"
+      },
+      "triangle": {
+        "title": "Calculadora de Triângulo",
+        "description": "Calcule área, perímetro, ângulos e lados de qualquer triângulo com visualização"
+      },
+      "fraction": {
+        "title": "Calculadora de frações",
+        "description": "Adicionar, subtrair, multiplicar e dividir frações facilmente com resultados passo a passo"
+      },
+      "pregnancyConception": {
+        "title": "Gravidez Concepção",
+        "description": "Estimar sua data de concepção com base na data de vencimento ou dados de ultra-som com janelas de fertilidade"
+      },
+      "pace": {
+        "title": "Calculadora de paz",
+        "description": "Calcule o ritmo de corrida, a velocidade e os tempos de término para maratonas e corridas"
+      },
+      "salesTax": {
+        "title": "Calculadora de Imposto de Vendas",
+        "description": "Calcule o imposto de vendas e o custo total de compras em diferentes estados e regiões"
+      },
+      "interestRate": {
+        "title": "Cálculo da taxa de juros",
+        "description": "Determinar a taxa de juros real sobre empréstimos ou investimentos para tomar melhores decisões financeiras"
+      },
+      "finance": {
+        "title": "Calculadora de Finanças",
+        "description": "Calculadora financeira tudo-em-um para valor de tempo do dinheiro, fluxos de caixa e amortização"
+      },
+      "inflation": {
+        "title": "Calculadora de inflação",
+        "description": "Calcule como a inflação afeta seu poder de compra ao longo do tempo com dados históricos"
+      },
+      "amortization": {
+        "title": "Calculadora de amortização",
+        "description": "Crie horários detalhados de amortização de empréstimos com dividendos principais e juros"
+      },
+      "payment": {
+        "title": "Calculadora de Pagamentos",
+        "description": "Estimar pagamentos mensais para empréstimos, cartões de crédito ou hipotecas simplificadas"
+      }
+    }
+  },
+  "header": {
+    "liveTv": "TV ao vivo",
+    "buildAndEarn": "Construa e ganhe",
+    "agentSkills": "Habilidades do Agente",
+    "getMyInfo": "Obtenha as minhas informações",
+    "blog": "Blog do",
+    "products": "Produtos",
+    "downloaders": "Downloaders",
+    "roasCalculator": "Calculadora ROAS",
+    "contact": "Contato"
   }
 }

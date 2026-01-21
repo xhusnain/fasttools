@@ -14,15 +14,622 @@
     "roasCalculator": "ROAS Berechner",
     "theme": "Thema",
     "language": "Sprache",
-    "selectLanguage": "Sprache auswählen"
+    "selectLanguage": "Sprache auswählen",
+    "search": "Suche nach",
+    "whatToolLookingFor": "Welches Tool suchen Sie heute?",
+    "popularTools": "Beliebte Tools",
+    "allTools": "Alle Werkzeuge",
+    "tools": "Werkzeuge",
+    "loading": "Ladewerkzeuge ...",
+    "loadingFaq": "Laden Sie FAQ...",
+    "tryNow": "Versuchen Sie jetzt",
+    "viewAll": "Sehen Sie alle",
+    "popular": "Die beliebtesten:",
+    "apiDocs": "Feuer Dokumente"
   },
   "navigation": {
-    "tools": "Werkzeuge",
     "categories": "Kategorien",
+    "calculators": "Berechner",
+    "finance": "Finanzen",
+    "aiTools": "Die Werkzeuge",
+    "converters": "Konverter",
+    "devTools": "Dev Werkzeuge",
+    "imageTools": "Bildwerkzeuge",
+    "pdfTools": "PDF Werkzeuge",
+    "seoTools": "SEO Werkzeuge",
+    "socialMedia": "Soziale Medien",
+    "funTools": "Spaß Werkzeuge",
+    "festivals": "Festivals",
+    "apiDocs": "Feuer Dokumente",
+    "tools": "Werkzeuge",
     "allTools": "Alle Werkzeuge"
+  },
+  "hero": {
+    "title": "Bauen Sie schneller mit",
+    "premiumTools": "Die Premium-Tools",
+    "subtitle": "Zugriff auf 1000+ kostenlose Online-Tools für Entwickler, Designer und Schöpfer. Verarbeiten Sie Daten lokal für maximale Sicherheit und Geschwindigkeit.",
+    "newBadge": "Neues: 11.000+ Live-TV-Kanäle kostenlos ansehen"
+  },
+  "dictionary": {
+    "badge": "Instant Definition Suche",
+    "title1": "Entdecken Sie Wörter mit",
+    "title2": "Ein kluger Wörterbuch.",
+    "description": "Unser fortschrittliches Wörterbuch-Tool bietet {instant} Definitionen, fonetische Leitfäden und Audioaussprachen. Perfekt für Studenten, Schriftsteller und Sprachenlernende, die genaue und schnelle Ergebnisse benötigen.",
+    "instant": "Augenblicklich",
+    "searchPlaceholder": "Suche nach einem Wort...",
+    "searchButton": "Suche nach",
+    "title": "Wörterbuch",
+    "enterWord": "Geben Sie ein Wort ein, um seine Bedeutung zu erforschen",
+    "synonyms": "Die Synonyme:",
+    "wordNotFound": "Wort nicht gefunden",
+    "failedToSearch": "Nicht gesucht",
+    "noDefinitionFound": "Keine Definition gefunden",
+    "errorOccurred": "Fehler aufgetreten",
+    "playPronunciation": "Spiele Aussprache"
+  },
+  "categories": {
+    "badge": "Vollständige Tools Directory",
+    "title": "Jedes Werkzeug, das wir anbieten",
+    "description": "Entdecken Sie professionelle Tools, die Ihre Produktivität und Kreativität überlasten",
+    "aiTools": {
+      "name": "Kostenlose AI Tools & Content Generators",
+      "description": "Intelligente Tools, die von künstlicher Intelligenz angetrieben werden"
+    },
+    "seoTools": {
+      "name": "Kostenlose SEO Analyse & Optimierungs-Tools",
+      "description": "Optimierung von Inhalten für Suchmaschinen"
+    },
+    "cryptoTools": {
+      "name": "Krypto & Sicherheitswerkzeuge",
+      "description": "Sichere kryptografische Tools für Schlüssel, Token und Passwörter"
+    },
+    "devTools": {
+      "name": "Web-Entwickler Tools & Utilities",
+      "description": "Professionelle Tools für Entwickler und Designer"
+    },
+    "socialMedia": {
+      "name": "Social Media Downloaders und Tools",
+      "description": "Leistungsstarke Social Media Management Tools"
+    },
+    "imageTools": {
+      "name": "Kostenlose Bildbearbeitung & OCR-Tools",
+      "description": "Professionelle Bildbearbeitung mit Hilfe von AI"
+    },
+    "pdfTools": {
+      "name": "Online PDF Converter und Editor",
+      "description": "Komplette PDF-Management-Lösung"
+    },
+    "converters": {
+      "name": "Online-Einheit & Währungsumrechner",
+      "description": "Konvertieren zwischen Einheiten, Formaten und Währungen sofort"
+    },
+    "financeTools": {
+      "name": "Business & Finance Kalkulatoren",
+      "description": "Business-ready-Rechner für Zahlungen, Einsparungen und Planung"
+    },
+    "funTools": {
+      "name": "Fun & Entertainment Rechner",
+      "description": "Unterhaltungswerkzeuge für Feiern und soziale Inhalte"
+    },
+    "calculators": {
+      "name": "Kostenlose Online-Rechner & Finanz-Tools",
+      "description": "Genaue Kalkulatoren für Finanzen, Gesundheit und mehr"
+    }
+  },
+  "faq": {
+    "title": "FAQ",
+    "description": "Finden Sie schnelle Antworten auf häufige Fragen zu FastTools. Holen Sie sich sofortige Klarheit über Funktionen, Preise, Sicherheit und wie Sie unsere 1000+ kostenlosen Online-Tools optimal nutzen können.",
+    "items": {
+      "10": {
+        "question": "Funktionieren diese Tools auf mobilen Geräten und Tablets?",
+        "answer": "Ja, alle unsere Tools sind für mobile Geräte optimiert und funktionieren perfekt auf Smartphones, Tablets und Desktops. Unser responsives Design gewährleistet optimale Leistung auf allen Geräten mit berührungsfreundlichen Schnittstellen, schnellen Ladezeiten und Offline-Funktionalität für viele Tools."
+      },
+      "01": {
+        "question": "Welche KI-Tools sind für die kostenlose Content-Generation verfügbar?",
+        "answer": "Unsere kostenlosen KI-Tools umfassen einen AI-Titelgenerator für Social-Media-Posts, einen AI-Meme-Generator für virale Inhalte, einen AI-Hashtag-Sugger für eine bessere Reichweite, einen AI-Songtext-Generator für kreatives Schreiben und einen AI-Titel-Namen-Generator für die Benennung von Haustieren."
+      },
+      "02": {
+        "question": "Wie genau sind die Wechselkurse in Ihrem Converter?",
+        "answer": "Unser Währungsumrechner bietet Echtzeit-Wechselkurse, die jede Minute von zuverlässigen Finanzdatenquellen aktualisiert werden.Wir unterstützen über 160 Währungen, darunter USD, EUR, GBP, JPY und mehr.Die Preise sind für Reisen, Geschäfte und Investitionen genau, mit historischen Daten und Trendanalysen zur Verfügung, um fundierte Entscheidungen zu treffen."
+      },
+      "03": {
+        "question": "Welche Finanzkalkulatoren können bei der Kredit- und Investitionsplanung helfen?",
+        "answer": "Wir bieten umfassende Finanzkalkulatoren, darunter Kreditkalkulator für Hypothekenplanung, EMI-Kalkulator für monatliche Zahlungen, Investitionskalkulator für Renditenanalyse, Rentenkalkulator für Langzeitplanung, Zusammengesetzter Zinskalkulator für Sparwachstum und Steuerkalkulator für Einkommenssteuer Schätzung."
+      },
+      "04": {
+        "question": "Wie können SEO-Tools die Suchmaschinen-Ranking meiner Website verbessern?",
+        "answer": "Unsere SEO-Tools helfen bei der Optimierung Ihrer Website mit Meta-Tag-Generator für bessere Suchabschnitte, Keyword-Dichte-Checker für Inhaltsoptimierung, Hashtag-Generator für Social-Media-Erreichbarkeit und Blog-Titel-Generator für klickwürdige Überschriften."
+      },
+      "05": {
+        "question": "Welche Bildverarbeitungstools sind kostenlos verfügbar?",
+        "answer": "Unsere Bild-Tools umfassen Bild-Cropper für das Umschneiden und Zerkleinern von Fotos, Bild-Konverter für die Formatkonvertierung, Bild-zu-Text-OCR für das Extrahieren von Text aus Bildern, Hintergrundverschmutzung für das Bearbeiten von Fotos und QR-Code-Generator für die Erstellung von QR-Codes."
+      },
+      "06": {
+        "question": "Welche Entwickler-Tools können bei der Codierung und Webentwicklung helfen?",
+        "answer": "Unsere Entwickler-Tools umfassen HTML beautifier für Code-Formatierung, JSON-Formater für Datenvalidierung, Regex-Tester für Muster-Matching, JWT-Decoder für Token-Analyse, base64-Encoder/Decoder für Daten-Codierung und 1000+ kostenlose Farbpaletten mit HEX-Codes für Design."
+      },
+      "07": {
+        "question": "Sind meine Daten bei der Verwendung dieser Online-Tools sicher?",
+        "answer": "Ja, Ihre Daten sind vollkommen sicher.Alle unsere Tools verarbeiten Daten lokal in Ihrem Browser, ohne Dateien auf unsere Server hochzuladen.Wir verwenden eine Privacy-First-Architektur, bei der sensible Informationen wie Dokumente, Bilder und persönliche Daten Ihr Gerät nie verlassen.Keine Registrierung erforderlich, keine Datenerfassung und keine Tracking-Funktionalität - nur reine, sichere Tools."
+      },
+      "08": {
+        "question": "Welche Kategorien von Tools sind bei FastTools verfügbar?",
+        "answer": "Wir bieten 10+ Kategorien an, darunter KI-Tools für die Content-Generation, Kalkulatoren für die Finanzplanung, Konverter für die Datentransformation, SEO-Tools für die Website-Optimierung, Image-Tools für die Fotobearbeitung, Entwickler-Tools für die Codierung, Finanz-Tools für Business-Berechnungen, Social Media-Tools für Marketing und Fun-Tools für Unterhaltung."
+      },
+      "09": {
+        "question": "Können Unternehmen diese Werkzeuge für professionelle Zwecke nutzen?",
+        "answer": "Absolut! Unsere Tools sind für den professionellen Gebrauch mit Business-Grade-Genauigkeit und Zuverlässigkeit konzipiert. Viele Unternehmen verwenden unsere Finanzrechner für Kreditanalyse, Währungsumrechner für den internationalen Handel, SEO-Tools für das digitale Marketing, KI-Tools für die Erstellung von Inhalten und Entwickler-Tools für die Webentwicklung."
+      }
+    }
+  },
+  "footer": {
+    "description": "Die ultimative Sammlung von kostenlosen Online-Tools für Produktivität, Entwicklung und Kreativität.",
+    "tools": "Werkzeuge",
+    "company": "Gesellschaft",
+    "resources": "Ressourcen",
+    "legal": "rechtlich",
+    "copyright": "Copyright {year} FastTools. Alle Rechte vorbehalten.",
+    "privacyPolicy": "Datenschutzpolitik",
+    "termsOfService": "Bedingungen des Dienstes",
+    "cookiePreferences": "Cookies Präferenzen",
+    "about": "über",
+    "contact": "Kontakt",
+    "privacy": "Privatsphäre",
+    "terms": "Begriffe",
+    "cookies": "Cookies",
+    "dmca": "DMCA",
+    "faq": "FAQ",
+    "guides": "Leitfaden"
   },
   "seo": {
     "title": "FastTools - Kostenlose Online-Tools & Produktivitätsplattform",
     "description": "FastTools bietet 1000+ kostenlose Online-Tools: KI-Generatoren, Kalkulatoren, Converter & SEO-Tools. Sofortiger Zugriff, keine Registrierung erforderlich."
+  },
+  "badges": {
+    "popular": "populär",
+    "new": "Neue",
+    "trending": "Trends",
+    "fun": "Spaß haben",
+    "seo": "SEO",
+    "analytics": "analytisch",
+    "content": "Inhalt",
+    "creative": "Kreativität",
+    "secure": "sichern",
+    "security": "Sicherheit",
+    "advanced": "fortgeschritten",
+    "design": "Das Design",
+    "colors": "Farben",
+    "format": "Das Format",
+    "convert": "Konvertieren",
+    "preview": "Vorschau",
+    "social": "Soziale",
+    "youtube": "auf YouTube",
+    "viral": "Viral",
+    "ai": "die",
+    "creator": "Schöpfer",
+    "ocr": "OCR",
+    "optimize": "Optimieren",
+    "pro": "für",
+    "unlock": "- Unlock",
+    "live": "lebt",
+    "quick": "Schnell",
+    "fast": "schnell",
+    "digital": "Digitale",
+    "time": "Zeit",
+    "api": "Feuer",
+    "business": "Geschäfte",
+    "payments": "Zahlungen",
+    "sale": "Salz",
+    "daily": "täglich",
+    "savings": "Sparen",
+    "planning": "Planung",
+    "groups": "Gruppen",
+    "debt": "Schulden",
+    "love": "Liebe",
+    "essential": "wesentlich",
+    "finance": "Finanzen",
+    "investment": "Investitionen",
+    "students": "Studenten",
+    "health": "Gesundheit",
+    "fitness": "Fitness ist",
+    "it": "Das ist",
+    "math": "Math",
+    "construction": "Konstruktion",
+    "utility": "Nützlichkeit",
+    "date": "Datum",
+    "geometry": "Geometrie",
+    "sport": "Sport ist",
+    "econ": "Econ",
+    "loan": "Darlehen",
+    "pay": "bezahlen",
+    "career": "Karriere",
+    "wealth": "Reichtum"
+  },
+  "tools": {
+    "aiTools": {
+      "qrGenerator": {
+        "title": "Der QR Code Generator",
+        "description": "Erstellen Sie atemberaubende, markierte QR-Codes mit KI-basierter Anpassung und künstlerischem Styling. Perfekt für Marketingkampagnen, Visitenkarten und Werbematerialien mit maßgeschneiderten Farben, Logos und Designs, die perfekt gescannt bleiben"
+      },
+      "lyricsGenerator": {
+        "title": "Der Lyrics Generator",
+        "description": "Erzeugen Sie kreative, originelle Songtexte für jedes Genre sofort. Perfekt für Songwriter, Musiker und Content-Ersteller mit richtigen Rhyme-Schemata, Rhythmusmusmustern und thematischer Konsistenz in allen Musikstilen"
+      },
+      "captionGenerator": {
+        "title": "Der Caption Generator",
+        "description": "Erstellen Sie mit KI automatisch ansprechende Untertitel für Social-Media-Posts. Generieren Sie mehrere Untertiteloptionen mit Hashtags und Emojis für Instagram, Facebook, Twitter und LinkedIn, um das Engagement auf allen Plattformen zu steigern"
+      },
+      "petNames": {
+        "title": "AI Pet Name Generator",
+        "description": "Entdecken Sie einzigartige, kreative Namen für Ihre Haustiere mit fortschrittlicher KI. Erhalten Sie personalisierte Vorschläge basierend auf Art, Rasse, Persönlichkeit und Aussehen mit süßen, lustigen, eleganten oder kulturell inspirierten Optionen"
+      }
+    },
+    "seoTools": {
+      "metaTags": {
+        "title": "Der Meta Tag Generator",
+        "description": "Generieren von SEO-optimierten Meta-Tags zur Verbesserung der Such-Rankings und der Klickrate mit perfekten Titel-Tags und Beschreibungen"
+      },
+      "keywordDensity": {
+        "title": "Schlüsselwort Density Checker",
+        "description": "Analysieren Sie die Keyword-Dichte in Inhalten, um sie für Suchmaschinen zu optimieren und sicherzustellen, dass sie ohne Überoptimierung ordnungsgemäß verteilt werden"
+      },
+      "loremIpsum": {
+        "title": "Der Lorem Ipsum Generator",
+        "description": "Erzeugen Sie Platzhaltertext für Design-Mockups und Website-Layouts in verschiedenen Längen, um Designs mit realistischem Inhalt zu visualisieren"
+      },
+      "blogTitles": {
+        "title": "Blog Titel Generator",
+        "description": "Erstellen Sie ansprechende, SEO-freundliche Titel, die Engagement und Traffic mit klickwürdigen Überschriften steigern, die für Suchmaschinen optimiert sind"
+      }
+    },
+    "cryptoTools": {
+      "tokenGenerator": {
+        "title": "Token Generator",
+        "description": "Generieren Sie sichere zufällige Token, API-Schlüssel und Passwörter sofort mit benutzerdefinierten Länge- und Charset-Einstellungen"
+      }
+    },
+    "devTools": {
+      "colorPalette": {
+        "title": "Farbpalette Generator",
+        "description": "Erzeugen Sie schöne, harmonische Farbschemata sofort mit komplementären, analogen und triadischen Farbkombinationen für das Webdesign"
+      },
+      "hexToRgb": {
+        "title": "Hex zu RGB Converter",
+        "description": "Konvertieren zwischen HEX, RGB, HSL und anderen Farbformaten sofort mit Live-View für Webentwicklung und Design"
+      },
+      "jsonToCsv": {
+        "title": "JSON zu CSV Converter",
+        "description": "Konvertieren Sie JSON-Daten schnell und präzise in das CSV-Format für Datenanalyse, Excel-Import und Tabellenbearbeitung"
+      },
+      "jwtDecoder": {
+        "title": "Der JWT Decoder",
+        "description": "Decodieren und überprüfen Sie JSON Web Tokens sicher in Ihrem Browser, ohne Daten an externe Server zu senden, um die Privatsphäre zu gewährleisten"
+      },
+      "regexTester": {
+        "title": "Regex Tester",
+        "description": "Testen Sie regelmäßige Ausdrücke mit Live-Ergebnissen und Instant-Muster-Matching für das Debuggen von Regex-Muster und Validierung"
+      },
+      "htmlBeautifier": {
+        "title": "HTML Schönheit",
+        "description": "Formatieren und verzaubern Sie HTML-Code mit der richtigen Indentation und Struktur für eine bessere Lesbarkeit und Codequalität"
+      },
+      "htmlToMarkdown": {
+        "title": "HTML zum Markdown",
+        "description": "Konvertieren Sie HTML-Inhalte sofort in Markdown-Format für Dokumentation, README-Dateien und Content-Management-Systeme"
+      },
+      "markdownPreviewer": {
+        "title": "Markdown Vorschau",
+        "description": "Markdown-Inhalte in Echtzeit mit Live-Rendering und Syntax-Hervorhebung für Dokumentation und Schreiben vorsehen"
+      }
+    },
+    "socialMedia": {
+      "instagramDp": {
+        "title": "Der Instagram DP Viewer",
+        "description": "Anzeigen und Herunterladen von Instagram-Profilbildern in voller Auflösung HD-Qualität ohne Anmeldung oder Registrierung für jedes öffentliche Profil erforderlich"
+      },
+      "instagramDownloader": {
+        "title": "Instagram Downloader anzeigen",
+        "description": "Laden Sie Instagram-Beiträge, Rollen und Bilder in HD-Qualität herunter, um offline zu betrachten, Inhalte zu erstellen und über Plattformen hinweg zu teilen"
+      },
+      "tiktokDownloader": {
+        "title": "TikTok Video Downloader herunterladen",
+        "description": "Laden Sie TikTok-Videos ohne Wasserzeichen in HD-Qualität herunter, um offline zu sehen, Inhalte zu erstellen und über Plattformen hinweg zu teilen"
+      },
+      "facebookDownloader": {
+        "title": "Video Downloader von Facebook",
+        "description": "Laden Sie Facebook-Videos in HD-Qualität schnell und einfach herunter, um offline zu sehen und zu teilen"
+      },
+      "xDownloader": {
+        "title": "X Video Downloader",
+        "description": "Videos von X (früher Twitter) in High Definition ohne Wasserzeichen herunterladen"
+      },
+      "youtubeThumbnail": {
+        "title": "YouTube Thumbnail Downloader herunterladen",
+        "description": "Laden Sie YouTube-Thumbnails in HD und allen verfügbaren Größen für Analyse, Inspiration und Content Creation Workflow herunter"
+      },
+      "hashtagGenerator": {
+        "title": "Der Hashtag Generator",
+        "description": "Generieren Sie trendige Hashtags für Beiträge, um Reichweite und Engagement auf Instagram, Twitter, TikTok und anderen Plattformen zu maximieren"
+      },
+      "youtubeTags": {
+        "title": "YouTube Tags Extraktor",
+        "description": "Extrahieren Sie Tags aus jedem YouTube-Video, um die SEO-Strategie zu verstehen und Ihre eigenen Inhalte für eine bessere Entdeckbarkeit zu optimieren"
+      },
+      "channelChecker": {
+        "title": "YouTube Kanal Checker",
+        "description": "Überprüfen Sie, ob der gewünschte YouTube-Kanalname verfügbar ist, bevor Sie Ihr Konto mit Echtzeitverfügbarkeitsprüfung erstellen."
+      },
+      "channelNameGenerator": {
+        "title": "YouTube Kanal Name Generator",
+        "description": "Generieren Sie aufregende, einzigartige und verfügbare Kanalnamen für Ihre YouTube-Reise mithilfe von AI"
+      },
+      "linkInBio": {
+        "title": "Link zum Bio Tool",
+        "description": "Erstellen Sie schöne Single-Page-Link-in-bio-Sites für Instagram und TikTok mit anpassbaren Themen und Analytics-Tracking"
+      }
+    },
+    "imageTools": {
+      "backgroundRemover": {
+        "title": "Hintergrund entfernen",
+        "description": "Automatische Entfernung von Hintergründen mit KI-fähiger Präzision für Produktfotos, Profilfotos und Marketingmaterialien mit professionellen Ergebnissen"
+      },
+      "imageToText": {
+        "title": "Bild zu Text (OCR)",
+        "description": "Text aus Bildern mit hochpräziser OCR-Technologie extrahieren, um gescannte Dokumente, Screenshots und Fotos in bearbeitbaren Text umzuwandeln"
+      }
+    },
+    "pdfTools": {
+      "pdfToWord": {
+        "title": "PDF zu Word Converter",
+        "description": "Konvertieren Sie PDF in bearbeitbare Word-Dokumente, ohne Formatierung, Schriftarten, Bilder und Tabellen für die Bearbeitung von Verträgen und Berichten zu verlieren"
+      },
+      "pdfCompressor": {
+        "title": "PDF Kompressor",
+        "description": "Reduzieren Sie die PDF-Dateigröße effizient um bis zu 90% und erhalten Sie gleichzeitig Qualität für E-Mail-Anhänge und schnellere Uploads ohne Qualitätsverlust"
+      },
+      "pdfToImage": {
+        "title": "PDF zum Bild",
+        "description": "Konvertieren Sie PDF-Seiten in hochwertige JPG, PNG-Bilder zum Teilen bestimmter Seiten, zum Erstellen von Miniaturen oder zur einfachen Visualisierung"
+      },
+      "signPdf": {
+        "title": "Unterschrift PDF",
+        "description": "Hinzufügen sicherer digitaler Signaturen zu PDFs direkt im Browser für Verträge und Dokumente elektronisch ohne Drucken"
+      },
+      "mergeSplitPdf": {
+        "title": "Merge & Split im PDF",
+        "description": "Kombinieren Sie mehrere PDFs oder teilen Sie sie in separate Dateien nach Seitenbereichen mit Drag-and-Drop-Schnittstelle für eine einfache Dokumentorganisation"
+      },
+      "pdfUnlocker": {
+        "title": "PDF Unlocker abrufen",
+        "description": "Entfernen Sie Passwortschutz und Einschränkungen aus PDF-Dateien, um sie sicher anzuzeigen, zu kopieren oder auszudrucken"
+      }
+    },
+    "converters": {
+      "currency": {
+        "title": "Währungsumrechner",
+        "description": "Echtzeit-Währungsumrechnung für über 150 Weltwährungen mit Live-Wechselkursen, die jede Minute für genaue internationale Transaktionen aktualisiert werden"
+      },
+      "textCase": {
+        "title": "Text Case Converter",
+        "description": "Konvertieren Sie Text zwischen Uppercase, Lowercase, Title Case, Satz Case, CamelCase, Snake_case und kebab-case-Formaten sofort"
+      },
+      "length": {
+        "title": "Länge Converter",
+        "description": "Konvertieren zwischen allen großen Längeneinheiten einschließlich Meter, Fuß, Zoll, Kilometer, Meilen, Yards und Zentimeter mit Präzision"
+      },
+      "temperature": {
+        "title": "Temperatur Umrechner",
+        "description": "Konvertieren zwischen Celsius, Fahrenheit, Kelvin und Rankine Temperaturskalen mit sofortigen, genauen Ergebnissen für jeden Wert"
+      },
+      "fileSize": {
+        "title": "Dateigröße Converter",
+        "description": "Konvertieren zwischen Bytes, KB, MB, GB, TB und anderen digitalen Speichergeräten mit präzisen Berechnungen für Dateigrößen"
+      },
+      "timezone": {
+        "title": "Timezone Konverter",
+        "description": "Zeitkonvertieren zwischen verschiedenen Zeitzonen weltweit mit Tageslicht-Sparzeit-Unterstützung und städtischer Zeitzonenwahl"
+      },
+      "currencyApi": {
+        "title": "Währung Feuer",
+        "description": "Kostenlose Exchange-API mit Echtzeit-Raten für Entwickler und Unternehmen zur Integration von Währungsdaten"
+      }
+    },
+    "financeTools": {
+      "roasCalculator": {
+        "title": "ROAS Berechner",
+        "description": "Berechnen Sie die Return on Ad Spend, ROI und Break-even-Punkte für Google, Facebook und TikTok-Anzeigen sofort"
+      },
+      "invoiceGenerator": {
+        "title": "Rechnung Generator",
+        "description": "Erstellen Sie professionelle Rechnungen mit automatischen Steuern, Rabatten und PDF-Exporten in Sekunden"
+      },
+      "paypalFee": {
+        "title": "Paypal Gebührenrechner",
+        "description": "Berechnen Sie Netto-Zahlungen und erforderliche Gebühren nach PayPal-Gebühren für nationale und internationale Zahlungen"
+      },
+      "discountCalculator": {
+        "title": "Rabatte Kalkulator",
+        "description": "Berechnen Sie den endgültigen Preis nach Rabatt, gespartem Betrag und Originalpreis für Smart Shopping und Vertrieb"
+      },
+      "tipCalculator": {
+        "title": "Typ Kalkulator",
+        "description": "Teilen Sie Rechnungen schnell auf und berechnen Sie Tipps für Restaurants, Taxis und Dienstleistungen mit maßgeschneiderten Prozentsatzoptionen"
+      },
+      "savingsTracker": {
+        "title": "Sparziel Tracker",
+        "description": "Planen und verfolgen Sie Einsparungsmeilensteine mit Prognosen für Urlaub, Notfallfonds oder große Einkäufe"
+      },
+      "retirementPlanner": {
+        "title": "Rentenplaner",
+        "description": "Umfassende Planung für Ihre goldenen Jahre mit komplexen Interessen- und Beitragsprognosen"
+      },
+      "billSplitter": {
+        "title": "von Bill Splitter",
+        "description": "Teilen Sie die Ausgaben fair unter Freunden oder Teams mit Tippsupport und anpassbaren Beiträgen auf"
+      },
+      "creditCardPayoff": {
+        "title": "Kreditkarte Auszahlung",
+        "description": "Berechnen Sie, wie lange es dauern wird, um Kreditkartenschulden zu bezahlen und wie viel Zinsen Sie zahlen werden"
+      }
+    },
+    "funTools": {
+      "futureAge": {
+        "title": "Zukünftige Altersvorhersage",
+        "description": "Sehen Sie, wie alt Sie auf einem zukünftigen Datum sein werden, mit genauen Berechnungen für Geburtstage, Meilensteine und besondere Ereignisse"
+      },
+      "birthdayCountdown": {
+        "title": "Geburtstag Countdown",
+        "description": "Zählen Sie bis zu Ihrem nächsten Geburtstag in Tagen, Stunden, Minuten und Sekunden mit Echtzeit-Updates und Feierplanung"
+      },
+      "anniversary": {
+        "title": "Geburtstagsrechner",
+        "description": "Berechnen Sie, wie lange Sie zusammen sind und wann Ihr nächster Jahrestag mit detaillierten Beziehung Meilensteine ist"
+      }
+    },
+    "calculators": {
+      "bmi": {
+        "title": "BMI Berechner",
+        "description": "Berechnen Sie Ihren Body Mass Index mit detaillierten Gesundheitsinformationen und personalisierten Empfehlungen auf der Grundlage von WHO- und CDC-Standards"
+      },
+      "age": {
+        "title": "Altersrechner",
+        "description": "Berechnen Sie das genaue Alter in Jahren, Monaten, Wochen, Tagen, Stunden, Minuten und Sekunden mit Genauigkeit für jedes Datum"
+      },
+      "percentage": {
+        "title": "Prozentsatzrechner",
+        "description": "Prozentsätze, Rabatte, Erhöhungen, Abnahmen und Prozentsatzunterschiede mit mehreren Berechnungsmodi berechnen"
+      },
+      "loan": {
+        "title": "Darlehensrechner",
+        "description": "Berechnen Sie Darlehenszahlungen, Gesamtzinsen, Abschreibungspläne und vergleichen Sie verschiedene Darlehensoptionen leicht"
+      },
+      "mortgage": {
+        "title": "Hypothekenrechner",
+        "description": "Berechnen Sie monatliche Hypothekenzahlungen einschließlich Kapital, Zinsen, Steuern, Versicherungen und HOA-Gebühren für Hauskäufer"
+      },
+      "compoundInterest": {
+        "title": "Compound Interest Kalkulator",
+        "description": "Berechnen Sie das Investitionswachstum mit kombiniertem Zinssatz einschließlich regelmäßiger Beiträge und unterschiedlicher Compounding-Frequenzen"
+      },
+      "retirement": {
+        "title": "Rentenrechner",
+        "description": "Planen Sie Ihren Ruhestand mit Vertrauen, indem Sie die erforderlichen Ersparnisse, das Ruhestandseinkommen und die Auszahlungsstrategien berechnen"
+      },
+      "salary": {
+        "title": "Gehaltsrechner",
+        "description": "Umrechnen zwischen stündlichem, täglichem, wöchentlichem, monatlichem und jährlichem Gehalt mit Steuerabzügen und Nettolohnberechnungen"
+      },
+      "tax": {
+        "title": "Steuerrechner",
+        "description": "Berechnen Sie föderale und staatliche Einkommenssteuern, schätzen Sie die Steuerrückerstattungen und optimieren Sie Ihre Steuerstrategie für das Jahr"
+      },
+      "investment": {
+        "title": "Investitionsrechner",
+        "description": "Berechnen Sie die Investitionsrendite, vergleichen Sie Optionen und planen Sie eine Investitionsstrategie mit detaillierten Prognosen und Analysen"
+      },
+      "gpa": {
+        "title": "GPA Berechner",
+        "description": "Berechnen Sie den Semester-GPA, den kumulativen GPA und den gewichteten GPA mit Unterstützung für verschiedene Bewertungsskalierungen und Systeme"
+      },
+      "calorie": {
+        "title": "Kalorienrechner",
+        "description": "Berechnen Sie den täglichen Kalorienbedarf basierend auf Alter, Geschlecht, Aktivitätsniveau und Fitnesszielen mit Makroabbau"
+      },
+      "bmr": {
+        "title": "BMR Berechner",
+        "description": "Berechnen Sie Ihre basale Stoffwechselrate, um die tägliche Kalorienverbrennung in Ruhe mit mehreren bewährten Formeln zu verstehen"
+      },
+      "bodyFat": {
+        "title": "Körperfettrechner",
+        "description": "Schätzung des Körperfettanteils mithilfe mehrerer Methoden, einschließlich Messungen und visueller Schätzdiagramme"
+      },
+      "pregnancy": {
+        "title": "Schwangerschaftsrechner",
+        "description": "Berechnen Sie das Fälligkeitsdatum, die Schwangerschaftszeitlinie und die Meilensteine der fetalen Entwicklung basierend auf der letzten Menstruation"
+      },
+      "love": {
+        "title": "Liebesrechner",
+        "description": "Berechnen Sie den Prozentsatz der Liebekompatibilität basierend auf Namen für Spaß und Beziehungseinblicke"
+      },
+      "ipSubnet": {
+        "title": "IP Subnetzrechner",
+        "description": "Berechnen Sie Subnetzmasken, Netzwerkadressen und Hostbereiche.Ein wesentliches Tool für Netzwerkingenieure und IT-Profis."
+      },
+      "standardDeviation": {
+        "title": "Standard Abweichungsrechner",
+        "description": "Berechnen Sie Durchschnitt, Varianz und Standardabweichung.Essentiell für statistische Analyse und Datenwissenschaft."
+      },
+      "concrete": {
+        "title": "Konkrete Berechner",
+        "description": "Schätzen Sie das Betonvolumen für Platten, Füße und Spalten. Wesentlich für Bau- und DIY-Projekte."
+      },
+      "unitConverter": {
+        "title": "Einheit Converter",
+        "description": "Universeller Einheitskonverter für Länge, Gewicht, Temperatur und mehr. Schnelle Konvertierungen für alltägliche Bedürfnisse."
+      },
+      "dateDifference": {
+        "title": "Datum Unterschied",
+        "description": "Berechnen Sie den genauen Unterschied zwischen zwei Termine in Tagen, Wochen, Monaten und Jahren für die Planung"
+      },
+      "timeDuration": {
+        "title": "Dauer der Zeit",
+        "description": "Berechnen Sie die genaue Dauer zwischen zwei Zeiten, nützlich für die Verfolgung von Arbeitszeiten oder Ereignissen"
+      },
+      "scientific": {
+        "title": "Wissenschaftlicher Rechner",
+        "description": "Fortgeschrittene wissenschaftliche Kalkulator einschließlich trigonometrische, logarithmische und exponentielle Funktionen"
+      },
+      "triangle": {
+        "title": "Dreiecksrechner",
+        "description": "Berechnen Sie den Bereich, den Umfang, die Winkel und die Seiten eines beliebigen Dreiecks mit Visualisierung"
+      },
+      "fraction": {
+        "title": "Fraktionsrechner",
+        "description": "Fraktionen leicht hinzufügen, abziehen, multiplizieren und teilen mit Schritt für Schritt Ergebnissen"
+      },
+      "pregnancyConception": {
+        "title": "Schwangerschaft Konzeption",
+        "description": "Schätzen Sie Ihr Empfängnisdatum basierend auf Ablaufdatum oder Ultraschalldaten mit Fruchtbarkeitsfenstern"
+      },
+      "pace": {
+        "title": "Friedensrechner",
+        "description": "Berechnen Sie Laufgeschwindigkeit, Geschwindigkeit und Endzeiten für Marathons und Rennen"
+      },
+      "salesTax": {
+        "title": "Verkaufssteuerrechner",
+        "description": "Berechnen Sie Umsatzsteuer und Gesamtkosten für Einkäufe in verschiedenen Staaten und Regionen"
+      },
+      "interestRate": {
+        "title": "Zinssatzrechner",
+        "description": "Bestimmen Sie den tatsächlichen Zinssatz für Darlehen oder Investitionen, um bessere finanzielle Entscheidungen zu treffen"
+      },
+      "finance": {
+        "title": "Finanzrechner",
+        "description": "All-in-one Finanzrechner für Zeitwert von Geld, Cash Flows und Abschreibung"
+      },
+      "inflation": {
+        "title": "Inflationsrechner",
+        "description": "Berechnen Sie, wie die Inflation Ihre Kaufkraft im Laufe der Zeit mit historischen Daten beeinflusst"
+      },
+      "amortization": {
+        "title": "Amortisierungsrechner",
+        "description": "Erstellen Sie detaillierte Abschreibungspläne für Darlehen mit Kapital- und Zinsbruch"
+      },
+      "payment": {
+        "title": "Zahlungsrechner",
+        "description": "Schätzung der monatlichen Zahlungen für Darlehen, Kreditkarten oder vereinfachte Hypotheken"
+      }
+    }
+  },
+  "header": {
+    "liveTv": "Live Fernsehen",
+    "buildAndEarn": "Build und Earn",
+    "agentSkills": "Agent Fähigkeiten",
+    "getMyInfo": "Holen Sie sich meine Info",
+    "blog": "Der Blog",
+    "products": "Produkte",
+    "downloaders": "Downloader",
+    "roasCalculator": "ROAS Berechner",
+    "contact": "Kontakt"
   }
 }

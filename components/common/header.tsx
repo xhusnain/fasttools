@@ -6,6 +6,7 @@ import { ThemeToggle } from "@/components/common/theme-toggle"
 import { LanguageSwitcher } from "@/components/common/language-switcher"
 import { Link, usePathname } from "@/i18n/routing"
 import dynamic from "next/dynamic"
+import { useTranslations } from 'next-intl'
 
 const MegaMenu = dynamic(() => import("@/components/common/mega-menu").then(mod => mod.MegaMenu), {
   ssr: false,
@@ -22,6 +23,8 @@ import {
 export function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
   const pathname = usePathname()
+  const t = useTranslations('header')
+  const tCommon = useTranslations('common')
 
   return (
     <>
@@ -52,7 +55,7 @@ export function Header() {
                   title="Watch Free Live TV Channels Worldwide"
                   className="px-3 py-0.5 rounded-sm text-xs font-bold tracking-wider border border-red-600 bg-red-600 text-white hover:bg-red-700 transition-colors flex items-center h-fit my-auto"
                 >
-                  LIVE TV
+                  {t('liveTv')}
                 </Link>
 
                 <Link
@@ -61,7 +64,7 @@ export function Header() {
                   className="text-sm font-medium text-muted-foreground hover:text-primary transition-colors flex items-center gap-1 h-full"
                 >
                   <Sparkles className="h-3.5 w-3.5" />
-                  Build & Earn
+                  {t('buildAndEarn')}
                 </Link>
                 <Link
                   href="/dev-tools/antigravity-skill-builder"
@@ -69,35 +72,35 @@ export function Header() {
                   className="text-sm font-medium text-muted-foreground hover:text-primary transition-colors flex items-center gap-1 h-full"
                 >
                   <Sparkles className="h-3.5 w-3.5 text-blue-500" />
-                  Agent Skills
+                  {t('agentSkills')}
                 </Link>
                 <Link
                   href="/my-info"
                   title="Check Your IP Address, Location and Device Info"
                   className="text-sm font-medium text-muted-foreground hover:text-primary transition-colors flex items-center h-full"
                 >
-                  Get My Info
+                  {t('getMyInfo')}
                 </Link>
                 <Link
                   href="/blog"
                   title="FastTools Blog - Tips, Tutorials and Updates"
                   className="text-sm font-medium text-muted-foreground hover:text-primary transition-colors flex items-center gap-1 h-full"
                 >
-                  Blog
+                  {t('blog')}
                 </Link>
                 <Link href="/products" title="Browse All FastTools Products and Categories" className="text-sm font-medium text-muted-foreground hover:text-primary transition-colors flex items-center h-full">
-                  Products
+                  {t('products')}
                 </Link>
                 <Link href="/downloaders" title="Free Video Downloaders for YouTube, TikTok, Instagram" className="text-sm font-medium text-muted-foreground hover:text-primary transition-colors flex items-center h-full">
-                  Downloaders
+                  {t('downloaders')}
                 </Link>
 
                 <Link href="/ad-tools/roas-calculator" title="Free ROAS Calculator for Advertising ROI" className="text-sm font-medium text-muted-foreground hover:text-primary transition-colors flex items-center h-full">
-                  ROAS Calculator
+                  {t('roasCalculator')}
                 </Link>
 
                 <Link href="/contact" title="Contact FastTools Support Team" className="text-sm font-medium text-muted-foreground hover:text-primary transition-colors flex items-center h-full">
-                  Contact
+                  {t('contact')}
                 </Link>
               </nav>
 
@@ -110,7 +113,7 @@ export function Header() {
                   <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-red-400 opacity-75"></span>
                   <span className="relative inline-flex rounded-full h-2 w-2 bg-red-500"></span>
                 </div>
-                <span className="text-xs font-bold">LIVE TV</span>
+                <span className="text-xs font-bold">{t('liveTv')}</span>
               </Link>
 
               <LanguageSwitcher />
@@ -191,7 +194,7 @@ export function Header() {
               className="flex items-center gap-2 py-3"
             >
               <span className="px-3 py-1 rounded-sm text-xs font-bold tracking-wider border border-red-600 bg-red-600 text-white">
-                LIVE TV
+                {t('liveTv')}
               </span>
             </Link>
             <Link
@@ -200,35 +203,35 @@ export function Header() {
               className="flex items-center gap-2 py-3 text-base font-semibold text-foreground/80 hover:text-primary transition-colors"
             >
               <Sparkles className="h-4 w-4" />
-              Build & Earn
+              {t('buildAndEarn')}
             </Link>
             <Link
               href="/blog"
               onClick={() => setMobileMenuOpen(false)}
               className="flex items-center gap-2 py-3 text-base font-semibold text-foreground/80 hover:text-primary transition-colors"
             >
-              Blog
+              {t('blog')}
             </Link>
             <Link
               href="/ad-tools/roas-calculator"
               onClick={() => setMobileMenuOpen(false)}
               className="block py-3 text-base font-semibold text-foreground/80 hover:text-primary transition-colors"
             >
-              ROAS Calculator
+              {t('roasCalculator')}
             </Link>
             <Link
               href="/contact"
               onClick={() => setMobileMenuOpen(false)}
               className="block py-3 text-base font-semibold text-foreground/80 hover:text-primary transition-colors"
             >
-              Contact
+              {t('contact')}
             </Link>
             <Link
               href="/my-info"
               onClick={() => setMobileMenuOpen(false)}
               className="block py-3 text-base font-semibold text-foreground/80 hover:text-primary transition-colors"
             >
-              Get My Info
+              {t('getMyInfo')}
             </Link>
 
           </div>

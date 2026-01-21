@@ -4,9 +4,11 @@ import { useState } from "react"
 import Link from "next/link"
 import { SearchBar } from "@/components/common/search-bar"
 import { cn } from "@/lib/utils"
+import { useTranslations } from 'next-intl'
 
 export function HeroSearchSection() {
     const [isSearchActive, setIsSearchActive] = useState(false)
+    const t = useTranslations('common')
 
     return (
         <>
@@ -15,7 +17,7 @@ export function HeroSearchSection() {
                 <SearchBar
                     className="w-full shadow-2xl shadow-primary/10"
                     inputClassName="h-14 sm:h-16 pl-14 text-lg bg-background/80 backdrop-blur-xl border-primary/20 focus:border-primary/50 transition-all rounded-2xl"
-                    placeholder="What tool are you looking for today?"
+                    placeholder={t('whatToolLookingFor')}
                     autoFocus={false}
                     onSearchStateChange={setIsSearchActive}
                 />
@@ -28,7 +30,7 @@ export function HeroSearchSection() {
                     isSearchActive ? "opacity-0 invisible h-0 overflow-hidden" : "opacity-100 visible"
                 )}
             >
-                <span className="text-sm font-medium text-muted-foreground mr-2 py-1.5">Popular:</span>
+                <span className="text-sm font-medium text-muted-foreground mr-2 py-1.5">{t('popular')}</span>
                 {[
                     { name: 'ROAS Calculator', path: '/ad-tools/roas-calculator' },
                     { name: 'Image Background Remover', path: '/image-tools/image-background-remover' },

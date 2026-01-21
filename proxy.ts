@@ -72,6 +72,15 @@ export default function proxy(request: NextRequest) {
         return corsResponse
     }
     
+    const intlResponse = intlMiddleware(request)
+    if (intlResponse) {
+        if (corsResponse) {
+            intlResponse.headers.set('Access-Control-Allow-Origin', corsResponse.headers.get('Access-Control-Allow-Origin') || '')
+            intlResponse.headers.set('Access-Control-Allow-Credentials', corsResponse.headers.get('Access-Control-Allow-Credentials') || '')
+        }
+        return intlResponse
+    }
+    
     if (env.isProduction) {
         const proto = request.headers.get('x-forwarded-proto')
         const isHttp = proto === 'http'
@@ -94,15 +103,6 @@ export default function proxy(request: NextRequest) {
         const targetUrl = redirects.get(pathname)!
         const url = new URL(targetUrl, request.url)
         return NextResponse.redirect(url, 301)
-    }
-    
-    const intlResponse = intlMiddleware(request)
-    if (intlResponse) {
-        if (corsResponse) {
-            intlResponse.headers.set('Access-Control-Allow-Origin', corsResponse.headers.get('Access-Control-Allow-Origin') || '')
-            intlResponse.headers.set('Access-Control-Allow-Credentials', corsResponse.headers.get('Access-Control-Allow-Credentials') || '')
-        }
-        return intlResponse
     }
     
     return corsResponse || NextResponse.next()
