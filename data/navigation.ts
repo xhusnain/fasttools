@@ -258,6 +258,7 @@ export const navigationConfig: MegaMenuSection[] = [
                     { title: "ULID Generator", href: "/crypto-tools/ulid-generator", icon: Hash, description: "Sortable unique identifiers" },
                     { title: "Token Generator", href: "/crypto-tools/token-generator", icon: Key, description: "Generate keys" },
                     { title: "Hash Text", href: "/crypto-tools/hash-text", icon: RefreshCw, description: "MD5, SHA1, SHA256" },
+                    { title: "RSA Key Generator", href: "/crypto-tools/rsa-generator", icon: Lock, description: "Generate RSA Key Pairs" },
                 ]
             },
             {

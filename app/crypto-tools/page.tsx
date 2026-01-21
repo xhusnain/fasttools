@@ -62,6 +62,12 @@ const cryptoTools = [
         icon: Shield,
         href: "/crypto-tools/hmac-generator"
     },
+    {
+        title: "RSA Key Pair Generator",
+        description: "Generate 2048/4096-bit RSA private and public keys.",
+        icon: Lock,
+        href: "/crypto-tools/rsa-generator"
+    },
 ]
 
 const toolConfig = createToolConfig({
@@ -360,6 +366,7 @@ export default function CryptoToolsPage() {
                 { "@type": "ListItem", position: 4, name: "Text Encrypt/Decrypt", description: "Securely encrypt and decrypt text", url: "https://www.fasttools.store/crypto-tools/encrypt-decrypt" },
                 { "@type": "ListItem", position: 5, name: "UUID Generator", description: "Generate random and time-based UUIDs instantly", url: "https://www.fasttools.store/crypto-tools/uuid-generator" },
                 { "@type": "ListItem", position: 6, name: "ULID Generator", description: "Universally Unique Lexicographical Sortable Identifiers", url: "https://www.fasttools.store/crypto-tools/ulid-generator" },
+                { "@type": "ListItem", position: 7, name: "RSA Key Generator", description: "Generate RSA Key Pairs", url: "https://www.fasttools.store/crypto-tools/rsa-generator" },
             ]
         },
         breadcrumb: {
