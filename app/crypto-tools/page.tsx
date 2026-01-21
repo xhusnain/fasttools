@@ -16,6 +16,13 @@ const cryptoTools = [
         popular: true,
     },
     {
+        title: "Bcrypt Generator",
+        description: "Generate and verify secure Blowfish-based Bcrypt hashes with adjustable cost factors and strength detection.",
+        href: "/crypto-tools/bcrypt",
+        icon: Shield,
+        popular: true,
+    },
+    {
         title: "Hash Text",
         description: "Generate secure cryptographic hashes (MD5, SHA1, SHA256, SHA512) for any text string instantly.",
         href: "/crypto-tools/hash-text",
@@ -26,9 +33,9 @@ const cryptoTools = [
 
 const toolConfig = createToolConfig({
     toolName: "Free Crypto & Security Tools",
-    description: "Secure and free online crypto tools: Token Generator, Password Generator, and more. Essential security utilities. No signup required.",
+    description: "Secure and free online crypto tools: Bcrypt Generator, Token Generator, and more. Essential security utilities.",
     metaTitle: "Crypto Tools - Professional Security & Cryptography Utilities",
-    metaDescription: "Free online crypto tools for developers & security professionals. Generate secure tokens, keys, & passwords. Client-side, privacy-first & secure.",
+    metaDescription: "Free online crypto tools for developers & security professionals. Bcrypt, Token Generator, Hash Text. Client-side, privacy-first & secure.",
     path: "/crypto-tools",
 
     header: {
@@ -47,10 +54,10 @@ const toolConfig = createToolConfig({
         overview: "Discover our comprehensive collection of crypto tools designed for developers, security professionals, and blockchain enthusiasts. All tools are free, run locally in your browser, and prioritize your privacy with client-side processing.",
 
         howToSteps: [
-            "Select a Tool: Choose the specific crypto tool you need from our collection, such as the Token Generator or Hash Text Generator.",
-            "Configure Settings: Adjust the settings to match your requirements, such as token length, included characters (A-Z, 0-9, symbols), or specific formats.",
-            "Generate Instantly: Click the generate button. Our tools use your browser's built-in Web Crypto API to create cryptographically secure results instantly.",
-            "Copy & Use: Copy your secure key, token, or password. Since everything runs client-side, your data remains private and never leaves your device."
+            "Select a Tool: Choose the specific crypto tool you need from our collection, such as the Bcrypt Generator or Token Generator.",
+            "Configure Settings: Adjust the settings to match your requirements, such as salt rounds for Bcrypt or token length for the Generator.",
+            "Generate Instantly: Click the generate button. Our tools use your browser's built-in Web Crypto API or verified libraries to create cryptographically secure results instantly.",
+            "Copy & Use: Copy your secure output. Since everything runs client-side, your data remains private and never leaves your device."
         ],
 
         features: [
@@ -314,7 +321,8 @@ export default function CryptoToolsPage() {
             description: "Collection of free online cryptography and security tools including Token Generator.",
             numberOfItems: 1,
             itemListElement: [
-                { "@type": "ListItem", position: 1, name: "Token Generator", description: "Generate secure random tokens, API keys, and passwords", url: "https://www.fasttools.store/crypto-tools/token-generator" },
+                { "@type": "ListItem", position: 1, name: "Bcrypt Generator", description: "Generate and verify secure Bcrypt hashes", url: "https://www.fasttools.store/crypto-tools/bcrypt" },
+                { "@type": "ListItem", position: 2, name: "Token Generator", description: "Generate secure random tokens, API keys, and passwords", url: "https://www.fasttools.store/crypto-tools/token-generator" },
             ]
         },
         breadcrumb: {

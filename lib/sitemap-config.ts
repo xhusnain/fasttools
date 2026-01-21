@@ -1009,6 +1009,19 @@ export const toolPages = [
         ]
     },
     {
+        url: "https://www.fasttools.store/crypto-tools/bcrypt",
+        lastModified: new Date(),
+        changeFrequency: "weekly" as const,
+        priority: 0.95,
+        images: [
+            {
+                url: "https://www.fasttools.store/images/bcrypt-hero.png",
+                title: "Bcrypt Hash Generator & Verifier - Secure Password Hashing",
+                caption: "Generate and verify industry-standard Bcrypt hashes. Adaptive work factors and real-time verification."
+            }
+        ]
+    },
+    {
         url: "https://www.fasttools.store/crypto-tools/token-generator",
         lastModified: new Date(),
         changeFrequency: "weekly" as const,

@@ -63,7 +63,8 @@ import {
     Drumstick,
     PartyPopper,
     Tv,
-    Key
+    Key,
+    Shield
 } from "lucide-react"
 
 
@@ -232,6 +233,7 @@ export const navigationConfig: MegaMenuSection[] = [
             {
                 title: "Crypto Tools",
                 items: [
+                    { title: "Bcrypt Generator", href: "/crypto-tools/bcrypt", icon: Shield, description: "Secure hashing" },
                     { title: "Token Generator", href: "/crypto-tools/token-generator", icon: Key, description: "Generate keys" },
                     { title: "Hash Text", href: "/crypto-tools/hash-text", icon: Hash, description: "MD5, SHA1, SHA256" },
                 ]
