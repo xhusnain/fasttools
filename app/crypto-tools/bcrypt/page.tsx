@@ -11,11 +11,6 @@ const toolConfig = createToolConfig({
     metaTitle: "Bcrypt Generator & Verifier | Secure Password Hashing Tool",
     metaDescription: "Free online Bcrypt hash generator and verifier. Adjust salt rounds/cost factor, detect hash strength, and verify matches instantly. Secure client-side processing.",
     path: "/crypto-tools/bcrypt",
-    keywords: [
-        "bcrypt generator", "bcrypt hash", "bcrypt verifier", "password hashing",
-        "online bcrypt tool", "bcrypt vs md5", "bcrypt cost factor", "secure password storage",
-        "salt rounds", "cryptographic hashing", "check bcrypt hash online"
-    ],
 
     header: {
         title: "Bcrypt Hash Generator & Verifier",

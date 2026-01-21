@@ -10,15 +10,6 @@ const toolConfig = createToolConfig({
     metaTitle: "BIP39 Generator - Secure Mnemonic Code & Seed Phrase Tool",
     metaDescription: "Generate secure BIP39 mnemonic phrases and seed codes online. Convert entropy to mnemonic and verify recovery phrases. 100% client-side security.",
     path: "/crypto-tools/bip39-generator",
-    keywords: [
-        "BIP39 generator",
-        "mnemonic code converter",
-        "seed phrase generator",
-        "crypto seed generator",
-        "online bip39 tool",
-        "entropy to mnemonic",
-        "bitcoin seed phrase"
-    ],
     heroImage: "/images/bip39-generator-hero.png",
 
     header: {

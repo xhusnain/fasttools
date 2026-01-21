@@ -10,16 +10,6 @@ const toolConfig = createToolConfig({
     metaTitle: "HMAC Generator Online - SHA256, SHA512 & MD5 | Free Tool",
     metaDescription: "Calculate secure HMAC (Hash-based Message Authentication Code) online using your secret key. Supports SHA-256, SHA-512, MD5. 100% Client-side privacy.",
     path: "/crypto-tools/hmac-generator",
-    keywords: [
-        "HMAC generator",
-        "HMAC calculator",
-        "SHA256 HMAC online",
-        "message authentication code",
-        "sha512 hmac",
-        "md5 hmac",
-        "api signature generator",
-        "jwt signature tool"
-    ],
     heroImage: "/images/hmac-generator-hero.png",
 
     header: {
@@ -66,37 +56,150 @@ const toolConfig = createToolConfig({
                 </div>
 
                 <section>
-                    <h2 className="text-3xl font-bold mb-6">Understanding HMAC</h2>
+                    <h2 className="text-3xl font-bold mb-6">How HMAC Works</h2>
                     <p className="text-muted-foreground leading-relaxed text-lg mb-6">
-                        **HMAC (Hash-based Message Authentication Code)** is a specific type of MAC involving a cryptographic hash function and a secret cryptographic key. It may be used to verify both the **data integrity** and the **authentication** of a message.
+                        HMAC (Hash-based Message Authentication Code) is defined in **RFC 2104**. It's more than just `hash(key + message)`, which is vulnerable to "length extension attacks". Instead, HMAC uses a nested hashing structure:
                     </p>
-                    <p className="text-muted-foreground leading-relaxed text-lg mb-8">
-                        Any iterative cryptographic hash function, such as SHA-256 or MD5, may be used in the calculation of an HMAC; the resulting MAC algorithm is termed HMAC-MD5 or HMAC-SHA256 accordingly. The cryptographic strength of the HMAC depends upon the cryptographic strength of the underlying hash function, the size of its hash output, and the size and quality of the key.
-                    </p>
+                    <div className="bg-muted/30 p-6 rounded-lg font-mono text-sm overflow-x-auto mb-8 border border-border/50">
+                        HMAC(K, m) = H( (K' ⊕ opad) || H( (K' ⊕ ipad) || m ) )
+                    </div>
+                    <ul className="list-disc leading-relaxed pl-5 space-y-2 text-muted-foreground mb-8">
+                        <li><strong>H</strong>: The cryptographic hash function (e.g., SHA-256).</li>
+                        <li><strong>K'</strong>: The secret key K, padded to the block size of the hash function.</li>
+                        <li><strong>m</strong>: The message to be authenticated.</li>
+                        <li><strong>opad</strong>: Outer padding (0x5c repeating).</li>
+                        <li><strong>ipad</strong>: Inner padding (0x36 repeating).</li>
+                        <li><strong>⊕</strong>: Bitwise XOR operation.</li>
+                        <li><strong>||</strong>: Concatenation.</li>
+                    </ul>
 
-                    <div className="bg-card p-6 rounded-xl border border-border/50 shadow-sm mb-8">
-                        <h3 className="text-xl font-semibold mb-3 text-primary">Common Use Cases</h3>
-                        <ul className="list-disc leading-relaxed pl-5 space-y-2 text-muted-foreground">
-                            <li>**API Authentication**: Verify that requests to your server are actually from valid clients.</li>
-                            <li>**Webhooks**: Validate that a webhook notification (e.g., from Stripe or GitHub) is legitimate.</li>
-                            <li>**Cookies**: Sign cookies to prevent tampering by the client.</li>
-                        </ul>
+                    <h2 className="text-3xl font-bold mb-6">HMAC vs. Hash vs. Digital Signature</h2>
+                    <div className="overflow-x-auto mb-10">
+                        <table className="w-full text-left border-collapse">
+                            <thead>
+                                <tr className="border-b border-border">
+                                    <th className="py-4 px-2 font-semibold">Feature</th>
+                                    <th className="py-4 px-2 font-semibold text-muted-foreground">Simple Hash (SHA-256)</th>
+                                    <th className="py-4 px-2 font-semibold text-primary">HMAC</th>
+                                    <th className="py-4 px-2 font-semibold text-muted-foreground">Digital Signature (RSA)</th>
+                                </tr>
+                            </thead>
+                            <tbody className="text-sm">
+                                <tr className="border-b border-border/50">
+                                    <td className="py-4 px-2 font-medium">Data Integrity</td>
+                                    <td className="py-4 px-2 text-green-500">Yes</td>
+                                    <td className="py-4 px-2 text-green-500">Yes</td>
+                                    <td className="py-4 px-2 text-green-500">Yes</td>
+                                </tr>
+                                <tr className="border-b border-border/50">
+                                    <td className="py-4 px-2 font-medium">Authentication</td>
+                                    <td className="py-4 px-2 text-red-500">No (Anyone can hash)</td>
+                                    <td className="py-4 px-2 text-green-500">Yes (Shared Secret)</td>
+                                    <td className="py-4 px-2 text-green-500">Yes (Private Key)</td>
+                                </tr>
+                                <tr className="border-b border-border/50">
+                                    <td className="py-4 px-2 font-medium">Key Type</td>
+                                    <td className="py-4 px-2 text-muted-foreground">None</td>
+                                    <td className="py-4 px-2 text-primary font-semibold">Symmetric (Shared)</td>
+                                    <td className="py-4 px-2 text-muted-foreground">Asymmetric (Public/Private)</td>
+                                </tr>
+                                <tr className="border-b border-border/50">
+                                    <td className="py-4 px-2 font-medium">Performance</td>
+                                    <td className="py-4 px-2 text-green-500">Very Fast</td>
+                                    <td className="py-4 px-2 text-green-500">Fast</td>
+                                    <td className="py-4 px-2 text-yellow-500">Slow</td>
+                                </tr>
+                            </tbody>
+                        </table>
                     </div>
 
-                    <h2 className="text-3xl font-bold mb-6">Encoding: Hex vs Base64</h2>
-                    <p className="text-muted-foreground leading-relaxed text-lg mb-6">
-                        HMAC outputs binary data. To make it readable or safe for URLs, it must be encoded.
-                    </p>
+                    <h2 className="text-3xl font-bold mb-6">Code Examples</h2>
+                    <p className="text-muted-foreground mb-6">How to generate a SHA-256 HMAC in popular programming languages:</p>
+
+                    <div className="space-y-6">
+                        {/* Node.js */}
+                        <div className="rounded-lg border border-border/50 overflow-hidden">
+                            <div className="bg-muted px-4 py-2 border-b border-border/50 text-xs font-semibold uppercase tracking-wider">Node.js</div>
+                            <pre className="bg-card p-4 overflow-x-auto text-sm">
+                                {`const crypto = require('crypto');
+
+const secret = 'my-secret-key';
+const message = 'Hello World';
+
+const hmac = crypto.createHmac('sha256', secret)
+                   .update(message)
+                   .digest('hex');
+
+console.log(hmac);`}
+                            </pre>
+                        </div>
+
+                        {/* Python */}
+                        <div className="rounded-lg border border-border/50 overflow-hidden">
+                            <div className="bg-muted px-4 py-2 border-b border-border/50 text-xs font-semibold uppercase tracking-wider">Python</div>
+                            <pre className="bg-card p-4 overflow-x-auto text-sm">
+                                {`import hmac
+import hashlib
+
+secret = b'my-secret-key'
+message = b'Hello World'
+
+hash = hmac.new(secret, message, hashlib.sha256).hexdigest()
+print(hash)`}
+                            </pre>
+                        </div>
+
+                        {/* Java */}
+                        <div className="rounded-lg border border-border/50 overflow-hidden">
+                            <div className="bg-muted px-4 py-2 border-b border-border/50 text-xs font-semibold uppercase tracking-wider">Java</div>
+                            <pre className="bg-card p-4 overflow-x-auto text-sm">
+                                {`import javax.crypto.Mac;
+import javax.crypto.spec.SecretKeySpec;
+
+String secret = "my-secret-key";
+String message = "Hello World";
+
+Mac sha256_HMAC = Mac.getInstance("HmacSHA256");
+SecretKeySpec secret_key = new SecretKeySpec(secret.getBytes(), "HmacSHA256");
+sha256_HMAC.init(secret_key);
+
+byte[] hash = sha256_HMAC.doFinal(message.getBytes());`}
+                            </pre>
+                        </div>
+
+                        {/* PHP */}
+                        <div className="rounded-lg border border-border/50 overflow-hidden">
+                            <div className="bg-muted px-4 py-2 border-b border-border/50 text-xs font-semibold uppercase tracking-wider">PHP</div>
+                            <pre className="bg-card p-4 overflow-x-auto text-sm">
+                                {`$secret = 'my-secret-key';
+$message = 'Hello World';
+
+$hash = hash_hmac('sha256', $message, $secret);
+echo $hash;`}
+                            </pre>
+                        </div>
+                    </div>
+
+                    <h2 className="text-3xl font-bold mt-12 mb-6">Security Best Practices</h2>
                     <ul className="grid gap-4 md:grid-cols-2">
-                        <li className="bg-muted/30 p-4 rounded-lg">
-                            <strong className="text-foreground block mb-1">Hexadecimal</strong>
-                            <span className="text-sm text-muted-foreground">The standard representation. A string of 0-9 and a-f. Easy to read and debug.</span>
+                        <li className="bg-muted/30 p-4 rounded-lg border border-transparent hover:border-primary/20 transition-colors">
+                            <strong className="text-foreground block mb-2 text-lg">Use Strong Keys</strong>
+                            <span className="text-sm text-muted-foreground">Your secret key should be random and at least as long as the hash output length (e.g., 32 bytes for SHA-256).</span>
                         </li>
-                        <li className="bg-muted/30 p-4 rounded-lg">
-                            <strong className="text-foreground block mb-1">Base64</strong>
-                            <span className="text-sm text-muted-foreground">More compact. Often used in HTTP headers (like JWTs) or URL parameters.</span>
+                        <li className="bg-muted/30 p-4 rounded-lg border border-transparent hover:border-primary/20 transition-colors">
+                            <strong className="text-foreground block mb-2 text-lg">Constant-Time Comparison</strong>
+                            <span className="text-sm text-muted-foreground">When verifying HMACs on your server, always use constant-time comparison (like `crypto.timingSafeEqual`) to prevent timing attacks.</span>
+                        </li>
+                        <li className="bg-muted/30 p-4 rounded-lg border border-transparent hover:border-primary/20 transition-colors">
+                            <strong className="text-foreground block mb-2 text-lg">Rotate Keys</strong>
+                            <span className="text-sm text-muted-foreground">Change your secret keys periodically. Support multiple keys (current and previous) to allow smooth rotation without downtime.</span>
+                        </li>
+                        <li className="bg-muted/30 p-4 rounded-lg border border-transparent hover:border-primary/20 transition-colors">
+                            <strong className="text-foreground block mb-2 text-lg">Canonicalization</strong>
+                            <span className="text-sm text-muted-foreground">Ensure the message is formatted consistently (e.g., sorting JSON keys) before hashing, or the signatures won't match.</span>
                         </li>
                     </ul>
+
                 </section>
             </div>
         ),
@@ -117,6 +220,10 @@ const toolConfig = createToolConfig({
             {
                 question: "Why do I get a different result than other tools?",
                 answer: "Check your encoding (Hex vs Base64) and ensure you aren't adding extra spaces or newlines to your input message or key. Even a single invisible character changes the output completely."
+            },
+            {
+                question: "Is HMAC quantum secure?",
+                answer: "Generally, yes. HMAC constructions based on secure hash functions like SHA-256 are considered resistant to quantum computer attacks, unlike public-key signatures like RSA or ECDSA."
             }
         ]
     }

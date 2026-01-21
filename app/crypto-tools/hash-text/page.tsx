@@ -11,12 +11,6 @@ const toolConfig = createToolConfig({
     metaTitle: "Free Hash Text Generator - MD5, SHA256, SHA512, SHA3 Calculator",
     metaDescription: "Generate secure cryptographic hashes (MD5, SHA1, SHA256, SHA512) for any text string instantly. 100% client-side security, no data storage. Perfect for verifying integrity.",
     path: "/crypto-tools/hash-text",
-    keywords: [
-        "hash text generator", "hash generator", "text to hash", "online hash calculator",
-        "MD5 generator", "SHA256 generator", "SHA512 calculator", "cryptographic hash tool",
-        "free hash text generator online", "hash generator from text", "text to hash converter",
-        "multiple hash algorithm generator"
-    ],
 
     header: {
         title: "Free Hash Text Generator - Create MD5, SHA256, SHA512 Hashes Online",

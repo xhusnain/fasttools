@@ -10,7 +10,6 @@ const toolConfig = createToolConfig({
     metaTitle: "Text Encrypt/Decrypt - Online AES, DES, Rabbit & RC4 Encryption Tool",
     metaDescription: "Best free online text encryption and decryption tool. Secure your messages with AES, TripleDES, Rabbit, and RC4 algorithms. Runs entirely in your browser for maximum privacy.",
     path: "/crypto-tools/encrypt-decrypt",
-    keywords: ["online text encryption", "encrypt text online", "decrypt text online", "aes encryption online", "client-side encryption", "secure text", "rc4 online", "tripledes online"],
     heroImage: "/images/text-encryption-hero.png",
 
 

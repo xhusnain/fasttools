@@ -15,7 +15,6 @@ const toolConfig = createToolConfig({
     description: "Free online ULID generator. Create Universally Unique Lexicographical Sortable Identifiers. 128-bit compatible with UUID, sortable, and URL-friendly. Perfect for database primary keys and distributed systems.",
     metaTitle: "ULID Generator - Sortable Unique Identifiers (UUID v7 Alternative) - FastTools",
     metaDescription: "Generate random ULIDs online. Lexicographically sortable 128-bit IDs with millisecond precision. Outperforms UUID v4 for database primary keys & indexing. No signup required.",
-    keywords: ["ULID generator", "UUID v7 alternative", "sortable unique identifier", "ULID vs UUID", "database primary key performance", "Crockford Base32"],
     path: "/crypto-tools/ulid-generator",
     schemaOptions: {
         applicationCategory: "DeveloperApplication",

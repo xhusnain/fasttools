@@ -12,7 +12,6 @@ const toolConfig = createToolConfig({
     metaTitle: "Free Token Generator - API Key, Password & PIN Generator",
     metaDescription: "Generate secure random tokens, API keys, passwords, and serial numbers instantly. Free, client-side, and cryptographically secure (CSPRNG).",
     path: "/crypto-tools/token-generator",
-    keywords: ["token generator", "api key generator", "password generator", "random token", "secure token", "access token", "jwt secret", "hex key generator"],
 
     header: {
         title: "Token Generator",
