@@ -50,6 +50,12 @@ const cryptoTools = [
         icon: Lock,
         popular: true,
     },
+    {
+        title: "BIP39 Generator",
+        description: "Generate secure BIP39 mnemonic phrases and seed codes.",
+        icon: Key,
+        href: "/crypto-tools/bip39-generator"
+    },
 ]
 
 const toolConfig = createToolConfig({
