@@ -5,11 +5,16 @@ import * as GProgressPrimitive from '@radix-ui/react-progress'
 
 import { cn } from '@/lib/utils'
 
+type GProgressProps = React.ComponentProps<typeof GProgressPrimitive.Root> & {
+  indicatorClassName?: string
+}
+
 function GProgress({
   className,
   value,
+  indicatorClassName,
   ...props
-}: React.ComponentProps<typeof GProgressPrimitive.Root>) {
+}: GProgressProps) {
   return (
     <GProgressPrimitive.Root
       data-slot="progress"
@@ -21,7 +26,7 @@ function GProgress({
     >
       <GProgressPrimitive.Indicator
         data-slot="progress-indicator"
-        className="bg-primary h-full w-full flex-1 transition-all"
+        className={cn("bg-primary h-full w-full flex-1 transition-all", indicatorClassName)}
         style={{ transform: `translateX(-${100 - (value || 0)}%)` }}
       />
     </GProgressPrimitive.Root>

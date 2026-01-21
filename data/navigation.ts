@@ -259,6 +259,7 @@ export const navigationConfig: MegaMenuSection[] = [
                     { title: "Token Generator", href: "/crypto-tools/token-generator", icon: Key, description: "Generate keys" },
                     { title: "Hash Text", href: "/crypto-tools/hash-text", icon: RefreshCw, description: "MD5, SHA1, SHA256" },
                     { title: "RSA Key Generator", href: "/crypto-tools/rsa-generator", icon: Lock, description: "Generate RSA Key Pairs" },
+                    { title: "Password Analyzer", href: "/crypto-tools/password-strength-analyzer", icon: Shield, description: "Check strength & entropy" },
                 ]
             },
             {

@@ -68,6 +68,12 @@ const cryptoTools = [
         icon: Lock,
         href: "/crypto-tools/rsa-generator"
     },
+    {
+        title: "Password Analyzer",
+        description: "Test password strength, entropy, and crack time.",
+        icon: Shield,
+        href: "/crypto-tools/password-strength-analyzer"
+    },
 ]
 
 const toolConfig = createToolConfig({
@@ -367,6 +373,7 @@ export default function CryptoToolsPage() {
                 { "@type": "ListItem", position: 5, name: "UUID Generator", description: "Generate random and time-based UUIDs instantly", url: "https://www.fasttools.store/crypto-tools/uuid-generator" },
                 { "@type": "ListItem", position: 6, name: "ULID Generator", description: "Universally Unique Lexicographical Sortable Identifiers", url: "https://www.fasttools.store/crypto-tools/ulid-generator" },
                 { "@type": "ListItem", position: 7, name: "RSA Key Generator", description: "Generate RSA Key Pairs", url: "https://www.fasttools.store/crypto-tools/rsa-generator" },
+                { "@type": "ListItem", position: 8, name: "Password Analyzer", description: "Password Strength Checker", url: "https://www.fasttools.store/crypto-tools/password-strength-analyzer" },
             ]
         },
         breadcrumb: {

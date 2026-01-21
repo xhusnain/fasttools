@@ -151,6 +151,12 @@ export const categoryPages = [
         priority: 0.95,
     },
     {
+        url: "https://www.fasttools.store/crypto-tools/password-strength-analyzer",
+        lastModified: new Date(),
+        changeFrequency: "monthly" as const,
+        priority: 0.95,
+    },
+    {
         url: "https://www.fasttools.store/calculator",
         lastModified: new Date('2025-11-25'),
         changeFrequency: "monthly" as const,
