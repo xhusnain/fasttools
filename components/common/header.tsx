@@ -1,10 +1,10 @@
 "use client"
 
-import Link from "next/link"
 import { useState } from "react"
 import { Menu, X, Search, ChevronDown, ArrowUpRight, Sparkles } from "lucide-react"
 import { ThemeToggle } from "@/components/common/theme-toggle"
-import { usePathname } from "next/navigation"
+import { LanguageSwitcher } from "@/components/common/language-switcher"
+import { Link, usePathname } from "@/i18n/routing"
 import dynamic from "next/dynamic"
 
 const MegaMenu = dynamic(() => import("@/components/common/mega-menu").then(mod => mod.MegaMenu), {
@@ -113,6 +113,7 @@ export function Header() {
                 <span className="text-xs font-bold">LIVE TV</span>
               </Link>
 
+              <LanguageSwitcher />
               <ThemeToggle />
 
 

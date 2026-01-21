@@ -1,5 +1,6 @@
 import {type ClassValue, clsx} from "clsx"
 import {twMerge} from "tailwind-merge"
+import { env } from "@/config/env"
 
 export function cn(...inputs: ClassValue[]) {
   return twMerge(clsx(inputs))
@@ -23,10 +24,13 @@ export function getCurrentYearString(): string {
 
 export async function runCloudflareAI(input: any) {
   const model = "@cf/meta/llama-3.1-8b-instruct-fast"
+  const accountId = env.cloudflareAccountId || "c64b9be052fb497f7b1a3121316d4d9f"
+  const apiToken = env.cloudflareApiToken || "***REMOVED***"
+  
   const response = await fetch(
-    `https://api.cloudflare.com/client/v4/accounts/c64b9be052fb497f7b1a3121316d4d9f/ai/run/${model}`,
+    `https://api.cloudflare.com/client/v4/accounts/${accountId}/ai/run/${model}`,
     {
-      headers: { Authorization: "Bearer ***REMOVED***" },
+      headers: { Authorization: `Bearer ${apiToken}` },
       method: "POST",
       body: JSON.stringify(input),
     }

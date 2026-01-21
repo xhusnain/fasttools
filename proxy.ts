@@ -3,6 +3,10 @@ import type { NextRequest } from 'next/server'
 import { redirects } from './lib/redirects'
 import { env } from '@/config'
 import { isGoneUrl } from './lib/gone'
+import createIntlMiddleware from 'next-intl/middleware'
+import { routing } from './i18n/routing'
+
+const intlMiddleware = createIntlMiddleware(routing)
 
 function isAllowedOrigin(origin: string | null): boolean {
     if (!origin) return false
@@ -63,9 +67,11 @@ export default function proxy(request: NextRequest) {
     const host = request.headers.get('host')
     const pathname = request.nextUrl.pathname
     const corsResponse = handleCORS(request)
+    
     if (request.method === 'OPTIONS' && corsResponse) {
         return corsResponse
     }
+    
     if (env.isProduction) {
         const proto = request.headers.get('x-forwarded-proto')
         const isHttp = proto === 'http'
@@ -75,6 +81,7 @@ export default function proxy(request: NextRequest) {
             return NextResponse.redirect(`https://www.fasttools.store${pathname}`, 301)
         }
     }
+    
     if (isGoneUrl(pathname)) {
         const url = request.nextUrl.clone()
         url.pathname = '/404'
@@ -82,16 +89,29 @@ export default function proxy(request: NextRequest) {
         response.headers.set('x-gone', 'true')
         return response
     }
+    
     if (redirects.has(pathname)) {
         const targetUrl = redirects.get(pathname)!
         const url = new URL(targetUrl, request.url)
         return NextResponse.redirect(url, 301)
     }
+    
+    const intlResponse = intlMiddleware(request)
+    if (intlResponse) {
+        if (corsResponse) {
+            intlResponse.headers.set('Access-Control-Allow-Origin', corsResponse.headers.get('Access-Control-Allow-Origin') || '')
+            intlResponse.headers.set('Access-Control-Allow-Credentials', corsResponse.headers.get('Access-Control-Allow-Credentials') || '')
+        }
+        return intlResponse
+    }
+    
     return corsResponse || NextResponse.next()
 }
 
 export const config = {
     matcher: [
-        '/((?!_next/static|_next/image|favicon.ico|.*\\.(?:svg|png|jpg|jpeg|gif|webp)$).*)',
+        '/((?!api|_next|_vercel|.*\\..*).*)',
+        '/',
+        '/(de|es|en|pt-BR|ar|zh-CN)/:path*'
     ],
 }

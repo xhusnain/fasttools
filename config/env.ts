@@ -27,4 +27,8 @@ export const env = {
   // Environment
   isDevelopment: process.env.NODE_ENV === "development",
   isProduction: process.env.NODE_ENV === "production",
+
+  // Cloudflare Workers AI
+  cloudflareAccountId: process.env.CLOUDFLARE_ACCOUNT_ID || "c64b9be052fb497f7b1a3121316d4d9f",
+  cloudflareApiToken: process.env.CLOUDFLARE_API_TOKEN || "***REMOVED***",
 } as const

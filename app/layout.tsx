@@ -2,38 +2,13 @@ import type { Metadata } from "next"
 import type React from "react"
 import Script from "next/script"
 import "./globals.css"
-import dynamic from "next/dynamic"
-import { Header } from "@/components/common/header"
-import { Footer } from "@/components/common/footer"
-import { ThemeProvider } from "@/components/common/theme-provider"
-import { env } from "@/config/env"
-import { createMetadata, globalViewport, getWebsiteSchema } from "@/lib/metadata-base"
 import { roboto, montserrat, openSans } from "@/app/fonts"
-import { DeferredScript } from "@/components/common/deferred-script"
-
-const CookieConsent = dynamic(
-    () => import("@/components/common/cookie-consent").then(mod => mod.CookieConsent)
-)
-const WelcomePopup = dynamic(
-    () => import("@/components/common/welcome-popup").then(mod => mod.WelcomePopup)
-)
-
-
+import { globalViewport } from "@/lib/metadata-base"
 
 export const viewport = globalViewport
 
 export const metadata: Metadata = {
     metadataBase: new URL("https://www.fasttools.store"),
-    title: {
-        default: "FastTools - 1000+ Free Online Tools",
-        template: "%s | FastTools",
-    },
-    description: "FastTools provides 1000+ free online tools and expert articles: PDF tools, AI generators, calculators, developer utilities, and a tech blog with in-depth tutorials. 100% free, secure local processing, and works on all devices.",
-    authors: [{ name: "FastTools Team", url: "https://www.fasttools.store" }],
-    robots: {
-        index: true,
-        follow: true,
-    },
     verification: {
         google: "l2XEjZ8SEN_FD96ft9mIUW8cPiLW4mDbX6wZabF-xv0",
         yandex: "242a8cf232328714",
@@ -44,10 +19,6 @@ export const metadata: Metadata = {
             "facebook-domain-verification": "m4jw5d6c1jsteghq2xo00wflvif79x",
             "google-adsense-account": "ca-pub-6296569221534302",
         },
-    },
-    twitter: {
-        card: "summary_large_image",
-        creator: "@ZamanIsmail7",
     },
 }
 
@@ -80,71 +51,13 @@ export default function RootLayout({
             "@type": "PostalAddress",
             addressCountry: "US",
         },
-        knowsAbout: [
-            "Online Tools",
-            "AI Content Generation",
-            "Web Development Tools",
-            "Digital Conversion Tools",
-            "Business Productivity Tools",
-            "SEO Optimization",
-            "Image Processing",
-            "Financial Calculators",
-            "Social Media Tools",
-            "Developer Utilities",
-            "Free Web Tools",
-            "Digital Productivity",
-            "Online Calculators",
-            "Web Utilities",
-            "Browser Tools",
-            "Instant Tools",
-            "Cloud Tools",
-            "Digital Solutions",
-            "Online Services",
-            "Web Services",
-            "Digital Platform",
-            "Online Platform",
-            "Web Platform",
-            "Digital Toolkit",
-            "Professional Tools",
-            "Business Tools",
-            "Marketing Tools",
-            "Content Creation Tools",
-            "Workflow Tools",
-            "Automation Tools",
-            "Digital Resources",
-            "Online Resources",
-            "Web Resources",
-            "Digital Assets",
-            "Online Assets",
-            "Web Assets",
-        ],
-        makesOffer: {
-            "@type": "Offer",
-            itemOffered: {
-                "@type": "Service",
-                name: "Free Online Tools",
-                description: "Comprehensive collection of free online tools and utilities",
-            },
-            price: "0",
-            priceCurrency: "USD",
-        },
-        aggregateRating: {
-            "@type": "AggregateRating",
-            ratingValue: "4.8",
-            ratingCount: "1250",
-            bestRating: "5",
-            worstRating: "1",
-        },
     }
 
-    const websiteSchema = getWebsiteSchema()
-
     return (
-        <html lang="en" className={`antialiased ${roboto.variable} ${montserrat.variable} ${openSans.variable}`} suppressHydrationWarning>
+        <html className={`antialiased ${roboto.variable} ${montserrat.variable} ${openSans.variable}`} suppressHydrationWarning>
             <head>
                 <link rel="preconnect" href="https://www.googletagmanager.com" crossOrigin="anonymous" />
                 <link rel="dns-prefetch" href="https://www.googletagmanager.com" />
-
                 <link rel="dns-prefetch" href="https://pagead2.googlesyndication.com" />
                 <link rel="dns-prefetch" href="https://www.google-analytics.com" />
                 <Script id="google-tag-manager" strategy="beforeInteractive">
@@ -168,38 +81,7 @@ export default function RootLayout({
                     type="application/ld+json"
                     dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationSchema) }}
                 />
-                <script
-                    type="application/ld+json"
-                    dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteSchema) }}
-                />
-
-                <ThemeProvider
-                    attribute="class"
-                    defaultTheme="dark"
-                    storageKey="theme"
-                    enableSystem={false}
-                    disableTransitionOnChange
-                >
-                    <a href="#main-content" className="skip-link">
-                        Skip to main content
-                    </a>
-                    <Header />
-                    <main id="main-content" role="main" tabIndex={-1} className="outline-none">
-                        {children}
-                    </main>
-                    <Footer />
-                    <CookieConsent />
-
-
-                    <WelcomePopup />
-                    {env.isProduction && (
-                        <DeferredScript
-                            src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6296569221534302"
-                            id="adsbygoogle-script"
-                            crossOrigin="anonymous"
-                        />
-                    )}
-                </ThemeProvider>
+                {children}
             </body>
         </html>
     )

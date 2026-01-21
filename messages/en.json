@@ -1,0 +1,28 @@
+{
+  "common": {
+    "welcome": "Welcome",
+    "home": "Home",
+    "about": "About",
+    "contact": "Contact",
+    "blog": "Blog",
+    "products": "Products",
+    "getMyInfo": "Get My Info",
+    "buildAndEarn": "Build & Earn",
+    "agentSkills": "Agent Skills",
+    "liveTv": "LIVE TV",
+    "downloaders": "Downloaders",
+    "roasCalculator": "ROAS Calculator",
+    "theme": "Theme",
+    "language": "Language",
+    "selectLanguage": "Select Language"
+  },
+  "navigation": {
+    "tools": "Tools",
+    "categories": "Categories",
+    "allTools": "All Tools"
+  },
+  "seo": {
+    "title": "FastTools - Free Online Tools & Productivity Platform",
+    "description": "FastTools offers 1000+ free online tools: AI generators, calculators, converters & SEO utilities. Instant access, no registration required."
+  }
+}
