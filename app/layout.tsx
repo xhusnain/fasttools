@@ -54,7 +54,7 @@ export default function RootLayout({
     }
 
     return (
-        <html className={`antialiased ${roboto.variable} ${montserrat.variable} ${openSans.variable}`} suppressHydrationWarning>
+        <html lang="en" className={`antialiased ${roboto.variable} ${montserrat.variable} ${openSans.variable}`} suppressHydrationWarning>
             <head>
                 <link rel="preconnect" href="https://www.googletagmanager.com" crossOrigin="anonymous" />
                 <link rel="dns-prefetch" href="https://www.googletagmanager.com" />

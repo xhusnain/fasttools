@@ -1,1 +1,28 @@
-{}
+{
+  "common": {
+    "welcome": "Willkommen",
+    "home": "Zuhause",
+    "about": "über",
+    "contact": "Kontakt",
+    "blog": "Der Blog",
+    "products": "Produkte",
+    "getMyInfo": "Holen Sie sich meine Info",
+    "buildAndEarn": "Build und Earn",
+    "agentSkills": "Agent Fähigkeiten",
+    "liveTv": "Live Fernsehen",
+    "downloaders": "Downloader",
+    "roasCalculator": "ROAS Berechner",
+    "theme": "Thema",
+    "language": "Sprache",
+    "selectLanguage": "Sprache auswählen"
+  },
+  "navigation": {
+    "tools": "Werkzeuge",
+    "categories": "Kategorien",
+    "allTools": "Alle Werkzeuge"
+  },
+  "seo": {
+    "title": "FastTools - Kostenlose Online-Tools & Produktivitätsplattform",
+    "description": "FastTools bietet 1000+ kostenlose Online-Tools: KI-Generatoren, Kalkulatoren, Converter & SEO-Tools. Sofortiger Zugriff, keine Registrierung erforderlich."
+  }
+}

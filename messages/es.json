@@ -1,1 +1,49 @@
-{}
+{
+  "common": {
+    "welcome": "Bienvenido",
+    "home": "Home →",
+    "about": "Sobre",
+    "contact": "Contacto",
+    "blog": "El blog",
+    "products": "productos",
+    "getMyInfo": "Obtenga mi información",
+    "buildAndEarn": "Construir y ganar",
+    "agentSkills": "Habilidades de agentes",
+    "liveTv": "Televisión en vivo",
+    "downloaders": "Descargar",
+    "roasCalculator": "Calculador de ruedas",
+    "theme": "El tema",
+    "language": "lenguaje",
+    "selectLanguage": "Idioma seleccionado",
+    "search": "búsqueda",
+    "whatToolLookingFor": "¿Qué herramientas buscas hoy en día?",
+    "popularTools": "Herramientas populares",
+    "allTools": "Todas las herramientas"
+  },
+  "navigation": {
+    "tools": "herramientas",
+    "categories": "Categorías",
+    "calculators": "Calculadores",
+    "finance": "Financiación",
+    "aiTools": "Las herramientas",
+    "converters": "Conversiones",
+    "devTools": "Dev herramientas",
+    "imageTools": "Herramientas de imagen",
+    "pdfTools": "Herramientas PDF",
+    "seoTools": "herramientas SEO",
+    "socialMedia": "Medios Sociales",
+    "funTools": "Herramientas divertidas",
+    "festivals": "festivales",
+    "apiDocs": "Fuego Docs",
+    "allTools": "Todas las herramientas"
+  },
+  "hero": {
+    "title": "Construir más rápido con",
+    "premiumTools": "herramientas de préstamo.",
+    "subtitle": "Acceso a más de 1000 herramientas en línea gratuitas para desarrolladores, diseñadores y creadores. Procesar datos localmente para la máxima seguridad y velocidad."
+  },
+  "seo": {
+    "title": "FastTools - herramientas online gratuitas y plataforma de productividad",
+    "description": "FastTools ofrece 1000+ herramientas online gratuitas: generadores de IA, calculadoras, convertidores y utilidades de SEO. Acceso instantáneo, sin necesidad de registro."
+  }
+}

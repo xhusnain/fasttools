@@ -32,6 +32,15 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
     const { locale } = await params;
     const baseUrl = env.siteUrl;
     
+    const localeMap: Record<string, string> = {
+        'en': 'en-US',
+        'es': 'es-ES',
+        'de': 'de-DE',
+        'pt-BR': 'pt-BR',
+        'ar': 'ar-SA',
+        'zh-CN': 'zh-CN'
+    };
+
     const defaultMetadata = {
         metadataBase: new URL(baseUrl),
         title: {
@@ -60,16 +69,19 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
             creator: "@ZamanIsmail7",
         },
         alternates: {
-            canonical: `${baseUrl}/${locale}`,
             languages: {
-                'en': `${baseUrl}/en`,
+                'en': baseUrl, // English has no prefix with 'as-needed'
                 'es': `${baseUrl}/es`,
                 'de': `${baseUrl}/de`,
                 'pt-BR': `${baseUrl}/pt-BR`,
                 'ar': `${baseUrl}/ar`,
                 'zh-CN': `${baseUrl}/zh-CN`,
-                'x-default': `${baseUrl}/en`,
+                'x-default': baseUrl, // English (default locale)
             },
+        },
+        openGraph: {
+            locale: localeMap[locale] || 'en-US',
+            alternateLocale: routing.locales.filter(l => l !== locale).map(l => localeMap[l] || l),
         },
     };
 
@@ -90,13 +102,16 @@ export default async function LocaleLayout({
     }
 
     const messages = await getMessages();
-    const websiteSchema = getWebsiteSchema();
+    const websiteSchema = {
+        ...getWebsiteSchema(),
+        inLanguage: locale === 'en' ? 'en-US' : locale === 'es' ? 'es-ES' : locale === 'de' ? 'de-DE' : locale === 'pt-BR' ? 'pt-BR' : locale === 'ar' ? 'ar-SA' : 'zh-CN'
+    };
 
     return (
         <>
             <script
                 dangerouslySetInnerHTML={{
-                    __html: `document.documentElement.lang = '${locale}'; document.documentElement.dir = '${locale === 'ar' ? 'rtl' : 'ltr'}';`
+                    __html: `document.documentElement.setAttribute('lang', '${locale}'); document.documentElement.setAttribute('dir', '${locale === 'ar' ? 'rtl' : 'ltr'}');`
                 }}
             />
             <script

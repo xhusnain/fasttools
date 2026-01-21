@@ -1,1 +1,28 @@
-{}
+{
+  "common": {
+    "welcome": "欢迎",
+    "home": "家乡",
+    "about": "关于",
+    "contact": "联系",
+    "blog": "博客",
+    "products": "产品",
+    "getMyInfo": "获取我的信息",
+    "buildAndEarn": "创建 & 赚取",
+    "agentSkills": "特工技能",
+    "liveTv": "直播电视",
+    "downloaders": "下载者",
+    "roasCalculator": "罗斯计算器",
+    "theme": "主题",
+    "language": "语言",
+    "selectLanguage": "选择语言"
+  },
+  "navigation": {
+    "tools": "工具",
+    "categories": "类别",
+    "allTools": "所有工具"
+  },
+  "seo": {
+    "title": "FastTools - 免费的在线工具和生产力平台",
+    "description": "FastTools提供1000多种免费的在线工具:AI生成器,计算器,转换器和SEO工具。"
+  }
+}

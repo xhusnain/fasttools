@@ -14,12 +14,32 @@
     "roasCalculator": "ROAS Calculator",
     "theme": "Theme",
     "language": "Language",
-    "selectLanguage": "Select Language"
+    "selectLanguage": "Select Language",
+    "search": "Search",
+    "whatToolLookingFor": "What tool are you looking for today?",
+    "popularTools": "Popular Tools",
+    "allTools": "All Tools"
   },
   "navigation": {
     "tools": "Tools",
     "categories": "Categories",
-    "allTools": "All Tools"
+    "calculators": "Calculators",
+    "finance": "Finance",
+    "aiTools": "AI Tools",
+    "converters": "Converters",
+    "devTools": "Dev Tools",
+    "imageTools": "Image Tools",
+    "pdfTools": "PDF Tools",
+    "seoTools": "SEO Tools",
+    "socialMedia": "Social Media",
+    "funTools": "Fun Tools",
+    "festivals": "Festivals",
+    "apiDocs": "API Docs"
+  },
+  "hero": {
+    "title": "Build faster with",
+    "premiumTools": "premium tools.",
+    "subtitle": "Access 1000+ free online tools for developers, designers, and creators. Process data locally for maximum security and speed."
   },
   "seo": {
     "title": "FastTools - Free Online Tools & Productivity Platform",

@@ -1,1 +1,28 @@
-{}
+{
+  "common": {
+    "welcome": "مرحبا",
+    "home": "Home",
+    "about": "حول",
+    "contact": "الاتصال",
+    "blog": "المدونة",
+    "products": "المنتجات",
+    "getMyInfo": "احصل على معلومات",
+    "buildAndEarn": "Build & Earn",
+    "agentSkills": "مهارات الوكالة",
+    "liveTv": "التلفزيون الحي",
+    "downloaders": "Downloaders",
+    "roasCalculator": "تقويم ROAS",
+    "theme": "موضوع",
+    "language": "اللغة",
+    "selectLanguage": "اختيار لغة"
+  },
+  "navigation": {
+    "tools": "الأدوات",
+    "categories": "الفئة",
+    "allTools": "جميع الأدوات"
+  },
+  "seo": {
+    "title": "FastTools - منصة أدوات وإمكانيات الإنترنت المجانية",
+    "description": "FastTools يقدم 1000+ أدوات عبر الإنترنت مجانية: إنتاج الذكاء الاصطناعي، الحسابات، التحويلات والخدمات SEO."
+  }
+}

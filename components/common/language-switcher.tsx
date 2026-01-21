@@ -3,9 +3,8 @@
 import { useLocale } from 'next-intl';
 import { useRouter, usePathname } from '@/i18n/routing';
 import { Globe, ChevronDown } from 'lucide-react';
-import { useState } from 'react';
+import { useState, useTransition } from 'react';
 import * as DropdownMenuPrimitive from '@radix-ui/react-dropdown-menu';
-import { GButton } from '@/ui/gbutton';
 import { cn } from '@/lib/utils';
 
 const languages = [
@@ -22,12 +21,47 @@ export function LanguageSwitcher() {
   const router = useRouter();
   const pathname = usePathname();
   const [open, setOpen] = useState(false);
+  const [isPending, startTransition] = useTransition();
 
   const currentLanguage = languages.find(lang => lang.code === locale) || languages[0];
 
   const handleLanguageChange = (newLocale: string) => {
-    router.replace(pathname, { locale: newLocale });
-    setOpen(false);
+    if (newLocale === locale) {
+      setOpen(false);
+      return;
+    }
+    
+    // Get current pathname from window (includes full path)
+    const currentPath = typeof window !== 'undefined' ? window.location.pathname : pathname || '/';
+    
+    // Extract path without locale prefix (pathname from next-intl already does this, but window.location.pathname includes it)
+    let pathWithoutLocale = pathname || '/';
+    if (typeof window !== 'undefined') {
+      // Remove locale prefix from window pathname if present
+      const localeMatch = currentPath.match(/^\/(es|de|pt-BR|ar|zh-CN)(\/.*)?$/);
+      if (localeMatch) {
+        pathWithoutLocale = localeMatch[2] || '/';
+      } else {
+        pathWithoutLocale = currentPath;
+      }
+    }
+    
+    // For 'as-needed', English has no prefix, others have prefix
+    let newPath: string;
+    if (newLocale === 'en') {
+      // English: no prefix
+      newPath = pathWithoutLocale || '/';
+    } else {
+      // Other languages: add locale prefix
+      newPath = `/${newLocale}${pathWithoutLocale === '/' ? '' : pathWithoutLocale}`;
+    }
+    
+    // Preserve search params if any
+    const search = typeof window !== 'undefined' ? window.location.search : '';
+    const hash = typeof window !== 'undefined' ? window.location.hash : '';
+    
+    // Use full page navigation to ensure language change takes effect
+    window.location.href = `${newPath}${search}${hash}`;
   };
 
   return (

@@ -1,1 +1,28 @@
-{}
+{
+  "common": {
+    "welcome": "Bem-vindo",
+    "home": "Home →",
+    "about": "Sobre",
+    "contact": "Contato",
+    "blog": "Blog do",
+    "products": "Produtos",
+    "getMyInfo": "Obtenha as minhas informações",
+    "buildAndEarn": "Construa e ganhe",
+    "agentSkills": "Habilidades do Agente",
+    "liveTv": "TV ao vivo",
+    "downloaders": "Downloaders",
+    "roasCalculator": "Calculadora ROAS",
+    "theme": "Temática",
+    "language": "Língua",
+    "selectLanguage": "Linguagem selecionada"
+  },
+  "navigation": {
+    "tools": "Ferramentas",
+    "categories": "Categorias",
+    "allTools": "Todas as ferramentas"
+  },
+  "seo": {
+    "title": "FastTools - Ferramentas Online Grátis e Plataforma de Produtividade",
+    "description": "FastTools oferece 1000+ ferramentas online gratuitas: geradores de IA, calculadoras, conversores e utilitários de SEO. Acesso instantâneo, sem registro necessário."
+  }
+}
