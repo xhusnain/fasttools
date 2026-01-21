@@ -236,6 +236,7 @@ export const navigationConfig: MegaMenuSection[] = [
                 title: "Crypto Tools",
                 items: [
                     { title: "Bcrypt Generator", href: "/crypto-tools/bcrypt", icon: Shield, description: "Secure hashing" },
+                    { title: "Text Encrypt/Decrypt", href: "/crypto-tools/encrypt-decrypt", icon: Lock, description: "AES, DES, Rabbit, RC4" },
                     { title: "UUID Generator", href: "/crypto-tools/uuid-generator", icon: Fingerprint, description: "Bulk generate UUIDs (v4, v7)" },
                     { title: "ULID Generator", href: "/crypto-tools/ulid-generator", icon: Hash, description: "Sortable unique identifiers" },
                     { title: "Token Generator", href: "/crypto-tools/token-generator", icon: Key, description: "Generate keys" },

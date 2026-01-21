@@ -43,6 +43,13 @@ const cryptoTools = [
         icon: RefreshCw,
         popular: true,
     },
+    {
+        title: "Text Encrypt/Decrypt",
+        description: "Securely encrypt and decrypt text using AES, TripleDES, Rabbit, and RC4 algorithms.",
+        href: "/crypto-tools/encrypt-decrypt",
+        icon: Lock,
+        popular: true,
+    },
 ]
 
 const toolConfig = createToolConfig({
@@ -338,8 +345,9 @@ export default function CryptoToolsPage() {
                 { "@type": "ListItem", position: 1, name: "Bcrypt Generator", description: "Generate and verify secure Bcrypt hashes", url: "https://www.fasttools.store/crypto-tools/bcrypt" },
                 { "@type": "ListItem", position: 2, name: "Token Generator", description: "Generate secure random tokens, API keys, and passwords", url: "https://www.fasttools.store/crypto-tools/token-generator" },
                 { "@type": "ListItem", position: 3, name: "Hash Text", description: "Generate secure cryptographic hashes", url: "https://www.fasttools.store/crypto-tools/hash-text" },
-                { "@type": "ListItem", position: 4, name: "UUID Generator", description: "Generate random and time-based UUIDs instantly", url: "https://www.fasttools.store/crypto-tools/uuid-generator" },
-                { "@type": "ListItem", position: 5, name: "ULID Generator", description: "Universally Unique Lexicographical Sortable Identifiers", url: "https://www.fasttools.store/crypto-tools/ulid-generator" },
+                { "@type": "ListItem", position: 4, name: "Text Encrypt/Decrypt", description: "Securely encrypt and decrypt text", url: "https://www.fasttools.store/crypto-tools/encrypt-decrypt" },
+                { "@type": "ListItem", position: 5, name: "UUID Generator", description: "Generate random and time-based UUIDs instantly", url: "https://www.fasttools.store/crypto-tools/uuid-generator" },
+                { "@type": "ListItem", position: 6, name: "ULID Generator", description: "Universally Unique Lexicographical Sortable Identifiers", url: "https://www.fasttools.store/crypto-tools/ulid-generator" },
             ]
         },
         breadcrumb: {

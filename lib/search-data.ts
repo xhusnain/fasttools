@@ -75,6 +75,7 @@ export const searchItems: SearchItem[] = [
   // Crypto Tools
   { name: "Crypto Tools", description: "Secure and free online crypto tools", path: "/crypto-tools", category: "Pages" },
   { name: "Bcrypt Generator", description: "Generate and verify secure Blowfish-based Bcrypt hashes with adjustable cost factors", path: "/crypto-tools/bcrypt", category: "Crypto" },
+  { name: "Text Encrypt/Decrypt", description: "Securely encrypt and decrypt text using AES, TripleDES, Rabbit, and RC4 algorithms", path: "/crypto-tools/encrypt-decrypt", category: "Crypto" },
   { name: "Token Generator", description: "Generate secure random tokens, API keys, and passwords", path: "/crypto-tools/token-generator", category: "Crypto" },
   { name: "Hash Text Generator", description: "Generate secure cryptographic hashes (MD5, SHA1, SHA256) for any text", path: "/crypto-tools/hash-text", category: "Crypto" },
   { name: "UUID Generator", description: "Bulk generate secure random and time-based UUIDs (v4, v7)", path: "/crypto-tools/uuid-generator", category: "Crypto" },
