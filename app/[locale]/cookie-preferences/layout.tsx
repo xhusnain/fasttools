@@ -1,14 +1,21 @@
 import { createMetadata } from "@/lib/metadata-base"
 import type { Metadata } from "next"
+import { getTranslations } from 'next-intl/server';
 
-export const metadata: Metadata = createMetadata({
-  title: "Cookie Preferences - Manage Your Cookie Settings",
-  description: "Manage your cookie preferences for FastTools. Control Google AdSense, Google Analytics, and other cookies. GDPR and CCPA compliant cookie management.",
-  path: "/cookie-preferences",
-  breadcrumbs: [
-    { label: "Cookie Preferences", href: "/cookie-preferences" }
-  ]
-})
+export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
+  const { locale } = await params;
+  const t = await getTranslations({ locale, namespace: 'cookies' });
+
+  return createMetadata({
+    title: t('title'),
+    description: t('description'),
+    path: "/cookie-preferences",
+    breadcrumbs: [
+      { label: t('pageTitle'), href: "/cookie-preferences" }
+    ],
+    locale
+  });
+}
 
 export default function CookiePreferencesLayout({
   children,

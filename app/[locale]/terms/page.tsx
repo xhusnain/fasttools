@@ -1,40 +1,48 @@
 import { Breadcrumbs } from "@/components/common/breadcrumbs"
 import { GHeader } from "@/ui/gheader"
+import { getTranslations } from 'next-intl/server';
+import { Metadata } from 'next';
+import { createMetadata } from "@/lib/metadata-base"
 
 import {
   Shield,
   FileText,
   Users,
   CheckCircle,
-  Mail,
-  Globe,
-  Scale,
   BookOpen,
   RefreshCw
 } from "lucide-react"
-import { Metadata } from 'next';
-import { createMetadata } from "@/lib/metadata-base"
 
-export const metadata: Metadata = createMetadata({
-  title: "Terms of Service | Google AdSense Compliant",
-  description: "Comprehensive terms of service for FastTools covering Google AdSense compliance, user agreements, and legal obligations for free online tools.",
-  path: "/terms",
-  includeSchema: false,
-  breadcrumbs: [
-    {
-      "label": "Terms",
-      "href": "/terms"
-    }
-  ]
-})
+export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
+  const { locale } = await params;
+  const t = await getTranslations({ locale, namespace: 'terms' });
+  const tCommon = await getTranslations({ locale, namespace: 'common' });
 
-export default function TermsPage() {
+  return createMetadata({
+    title: t('title'),
+    description: t('description'),
+    path: "/terms",
+    includeSchema: false,
+    breadcrumbs: [
+      {
+        "label": t('pageTitle'),
+        "href": "/terms"
+      }
+    ],
+    locale
+  });
+}
+
+export default async function TermsPage({ params }: { params: Promise<{ locale: string }> }) {
+  const { locale } = await params;
+  const t = await getTranslations('terms');
+  
   const jsonLd = {
     "@context": "https://schema.org",
     "@type": "WebPage",
-    name: "Terms of Service - FastTools",
-    description: "Comprehensive terms of service covering Google AdSense compliance, user agreements, and legal obligations for free online tools.",
-    url: "https://www.fasttools.store/terms",
+    name: t('pageTitle'),
+    description: t('description'),
+    url: `https://www.fasttools.store/${locale === 'en' ? '' : locale + '/'}terms`,
     publisher: {
       "@type": "Organization",
       name: "FastTools",
@@ -42,7 +50,7 @@ export default function TermsPage() {
     },
     datePublished: "2025-11-01",
     dateModified: "2025-11-01",
-    inLanguage: "en-US",
+    inLanguage: locale === 'en' ? 'en-US' : locale,
     isAccessibleForFree: true,
   }
 
@@ -51,14 +59,14 @@ export default function TermsPage() {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
       <div className="min-h-screen bg-background">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-12 md:py-16">
-          <Breadcrumbs items={[{ label: "Terms of Service", href: "/terms" }]} />
+          <Breadcrumbs items={[{ label: t('pageTitle'), href: "/terms" }]} />
 
           <div className="max-w-5xl mx-auto mt-8 md:mt-12">
             {/* Title Section */}
             <div className="mb-12 md:mb-16">
               <GHeader
-                title="Terms of Service"
-                description="Legal terms and conditions for using FastTools. Learn about your rights, obligations, and our commitment to Google AdSense compliance."
+                title={t('pageTitle')}
+                description={t('pageDescription')}
                 titleSize="medium"
                 descriptionSize="small"
                 color="blue"
@@ -66,18 +74,18 @@ export default function TermsPage() {
               <div className="flex flex-wrap justify-center gap-3 mt-6">
                 <div className="flex items-center gap-2 px-4 py-2 bg-primary/10 border border-border/30 rounded-lg">
                   <CheckCircle className="h-4 w-4 text-heading-accent" />
-                  <span className="text-sm font-medium text-foreground">Google AdSense Compliant</span>
+                  <span className="text-sm font-medium text-foreground">{t('googleAdSenseCompliant')}</span>
                 </div>
                 <div className="flex items-center gap-2 px-4 py-2 bg-primary/10 border border-border/30 rounded-lg">
                   <CheckCircle className="h-4 w-4 text-heading-accent" />
-                  <span className="text-sm font-medium text-foreground">Legal Compliance</span>
+                  <span className="text-sm font-medium text-foreground">{t('legalCompliance')}</span>
                 </div>
                 <div className="flex items-center gap-2 px-4 py-2 bg-primary/10 border border-border/30 rounded-lg">
                   <CheckCircle className="h-4 w-4 text-heading-accent" />
-                  <span className="text-sm font-medium text-foreground">User Protection</span>
+                  <span className="text-sm font-medium text-foreground">{t('userProtection')}</span>
                 </div>
               </div>
-              <p className="text-sm text-muted-foreground text-center mt-4">Last updated: November 1,</p>
+              <p className="text-sm text-muted-foreground text-center mt-4">{t('lastUpdated')}</p>
             </div>
 
             {/* Main Content */}
@@ -88,18 +96,18 @@ export default function TermsPage() {
                   <div className="h-10 w-10 md:h-12 md:w-12 rounded-lg bg-primary/10 border border-border/30 flex items-center justify-center flex-shrink-0">
                     <FileText className="h-5 w-5 md:h-6 md:w-6 text-foreground" />
                   </div>
-                  <h2 className="text-2xl md:text-3xl font-bold text-foreground">Agreement to Terms</h2>
+                  <h2 className="text-2xl md:text-3xl font-bold text-foreground">{t('agreementToTerms')}</h2>
                 </div>
                 <div className="space-y-4 text-muted-foreground leading-relaxed">
                   <p>
-                    These Terms of Service ("Terms") govern your use of FastTools ("we," "our," or "us") website located at fasttools.store (the "Site") and our free online tools and services (collectively, the "Services"). By accessing or using our Services, you agree to be bound by these Terms.
+                    {t('agreementP1')}
                   </p>
                   <p>
-                    If you do not agree to these Terms, please do not use our Services. We reserve the right to modify these Terms at any time, and your continued use of our Services after such modifications constitutes acceptance of the updated Terms.
+                    {t('agreementP2')}
                   </p>
                   <div className="bg-primary/10 border border-border/30 rounded-lg p-4 mt-4">
                     <p className="text-sm">
-                      These terms comply with Google AdSense policies, Google Search Console requirements, and applicable laws. By using our services, you agree to comply with all Google policies and guidelines.
+                      {t('agreementNote')}
                     </p>
                   </div>
                 </div>
@@ -111,51 +119,51 @@ export default function TermsPage() {
                   <div className="h-10 w-10 md:h-12 md:w-12 rounded-lg bg-primary/10 border border-border/30 flex items-center justify-center flex-shrink-0">
                     <BookOpen className="h-5 w-5 md:h-6 md:w-6 text-foreground" />
                   </div>
-                  <h2 className="text-2xl md:text-3xl font-bold text-foreground">Description of Services</h2>
+                  <h2 className="text-2xl md:text-3xl font-bold text-foreground">{t('descriptionOfServices')}</h2>
                 </div>
                 <p className="text-muted-foreground mb-6 leading-relaxed">
-                  FastTools provides free online tools and utilities including but not limited to:
+                  {t('servicesIntro')}
                 </p>
                 <div className="grid md:grid-cols-2 gap-4 mb-4">
                   <div className="space-y-3">
                     <div className="flex items-center gap-3">
                       <div className="h-2 w-2 rounded-full bg-heading-accent-border"></div>
-                      <span className="text-muted-foreground">Calculators and financial tools</span>
+                      <span className="text-muted-foreground">{t('serviceCalculators')}</span>
                     </div>
                     <div className="flex items-center gap-3">
                       <div className="h-2 w-2 rounded-full bg-heading-accent-border"></div>
-                      <span className="text-muted-foreground">Currency and unit converters</span>
+                      <span className="text-muted-foreground">{t('serviceConverters')}</span>
                     </div>
                     <div className="flex items-center gap-3">
                       <div className="h-2 w-2 rounded-full bg-heading-accent-border"></div>
-                      <span className="text-muted-foreground">AI-powered content generators</span>
+                      <span className="text-muted-foreground">{t('serviceAI')}</span>
                     </div>
                     <div className="flex items-center gap-3">
                       <div className="h-2 w-2 rounded-full bg-heading-accent-border"></div>
-                      <span className="text-muted-foreground">SEO and marketing tools</span>
+                      <span className="text-muted-foreground">{t('serviceSEO')}</span>
                     </div>
                   </div>
                   <div className="space-y-3">
                     <div className="flex items-center gap-3">
                       <div className="h-2 w-2 rounded-full bg-heading-accent-border"></div>
-                      <span className="text-muted-foreground">PDF utilities</span>
+                      <span className="text-muted-foreground">{t('servicePDF')}</span>
                     </div>
                     <div className="flex items-center gap-3">
                       <div className="h-2 w-2 rounded-full bg-heading-accent-border"></div>
-                      <span className="text-muted-foreground">Image processing tools</span>
+                      <span className="text-muted-foreground">{t('serviceImage')}</span>
                     </div>
                     <div className="flex items-center gap-3">
                       <div className="h-2 w-2 rounded-full bg-heading-accent-border"></div>
-                      <span className="text-muted-foreground">Social media utilities</span>
+                      <span className="text-muted-foreground">{t('serviceSocial')}</span>
                     </div>
                     <div className="flex items-center gap-3">
                       <div className="h-2 w-2 rounded-full bg-heading-accent-border"></div>
-                      <span className="text-muted-foreground">Developer tools</span>
+                      <span className="text-muted-foreground">{t('serviceDev')}</span>
                     </div>
                   </div>
                 </div>
                 <p className="text-muted-foreground leading-relaxed">
-                  All tools are provided free of charge for personal and commercial use, subject to the restrictions outlined in these Terms.
+                  {t('servicesNote')}
                 </p>
               </div>
 
@@ -165,36 +173,36 @@ export default function TermsPage() {
                   <div className="h-10 w-10 md:h-12 md:w-12 rounded-lg bg-primary/10 border border-border/30 flex items-center justify-center flex-shrink-0">
                     <Shield className="h-5 w-5 md:h-6 md:w-6 text-foreground" />
                   </div>
-                  <h2 className="text-2xl md:text-3xl font-bold text-foreground">Google AdSense & Advertising Compliance</h2>
+                  <h2 className="text-2xl md:text-3xl font-bold text-foreground">{t('googleAdSense')}</h2>
                 </div>
                 <div className="space-y-6">
                   <div className="bg-primary/10 border border-border/30 rounded-lg p-6">
                     <h3 className="text-xl font-semibold mb-4 text-heading-accent flex items-center gap-2">
                       <CheckCircle className="h-5 w-5 text-heading-accent" />
-                      Google AdSense Policy Compliance
+                      {t('adsensePolicyTitle')}
                     </h3>
                     <p className="text-muted-foreground leading-relaxed mb-4">
-                      Our Services display advertisements from third parties, including Google AdSense. These advertisements are provided by third parties and are not under our control. We are not responsible for the content, accuracy, or availability of third-party advertisements.
+                      {t('adsensePolicyDesc')}
                     </p>
                     <div className="grid md:grid-cols-2 gap-6">
                       <div>
-                        <h4 className="font-semibold text-foreground mb-2">User Obligations:</h4>
+                        <h4 className="font-semibold text-foreground mb-2">{t('userObligations')}</h4>
                         <ul className="space-y-1 text-sm text-muted-foreground">
-                          <li>• Do not click on ads for any reason other than genuine interest</li>
-                          <li>• Do not encourage others to click on ads</li>
-                          <li>• Do not use automated systems to generate ad clicks</li>
-                          <li>• Do not manipulate ad placement or behavior</li>
-                          <li>• Do not interfere with ad functionality</li>
+                          <li>• {t('obligation1')}</li>
+                          <li>• {t('obligation2')}</li>
+                          <li>• {t('obligation3')}</li>
+                          <li>• {t('obligation4')}</li>
+                          <li>• {t('obligation5')}</li>
                         </ul>
                       </div>
                       <div>
-                        <h4 className="font-semibold text-foreground mb-2">Our Compliance:</h4>
+                        <h4 className="font-semibold text-foreground mb-2">{t('ourCompliance')}</h4>
                         <ul className="space-y-1 text-sm text-muted-foreground">
-                          <li>• Proper ad placement that doesn't interfere with content</li>
-                          <li>• High-quality, original content standards</li>
-                          <li>• Clear navigation and user experience</li>
-                          <li>• No prohibited traffic sources</li>
-                          <li>• No invalid click encouragement</li>
+                          <li>• {t('compliance1')}</li>
+                          <li>• {t('compliance2')}</li>
+                          <li>• {t('compliance3')}</li>
+                          <li>• {t('compliance4')}</li>
+                          <li>• {t('compliance5')}</li>
                         </ul>
                       </div>
                     </div>
@@ -202,19 +210,19 @@ export default function TermsPage() {
 
                   <div className="grid md:grid-cols-2 gap-6">
                     <div className="bg-card border border-border rounded-lg p-4">
-                      <h3 className="text-lg font-semibold mb-3 text-heading-accent">Advertising Terms</h3>
+                      <h3 className="text-lg font-semibold mb-3 text-heading-accent">{t('advertisingTerms')}</h3>
                       <p className="text-sm text-muted-foreground mb-3">
-                        By using our Services, you acknowledge that advertisements may be displayed, third-party advertisers may use cookies and tracking technologies, and we may receive compensation from advertisers.
+                        {t('advertisingTermsDesc')}
                       </p>
                       <p className="text-sm text-muted-foreground">
-                        You can opt out of personalized advertising through your browser settings or by visiting Google's Ad Settings.
+                        {t('advertisingOptOut')}
                       </p>
                     </div>
 
                     <div className="bg-card border border-border rounded-lg p-4">
-                      <h3 className="text-lg font-semibold mb-3 text-heading-accent">Google Search Console</h3>
+                      <h3 className="text-lg font-semibold mb-3 text-heading-accent">{t('googleSearchConsole')}</h3>
                       <p className="text-sm text-muted-foreground">
-                        We comply with Google Search Console requirements including proper sitemap submission, robots.txt configuration, and technical SEO standards to ensure optimal search engine visibility and compliance.
+                        {t('searchConsoleDesc')}
                       </p>
                     </div>
                   </div>
@@ -227,34 +235,34 @@ export default function TermsPage() {
                   <div className="h-10 w-10 md:h-12 md:w-12 rounded-lg bg-primary/10 border border-border/30 flex items-center justify-center flex-shrink-0">
                     <Users className="h-5 w-5 md:h-6 md:w-6 text-foreground" />
                   </div>
-                  <h2 className="text-2xl md:text-3xl font-bold text-foreground">User Rights & Legal Protections</h2>
+                  <h2 className="text-2xl md:text-3xl font-bold text-foreground">{t('userRights')}</h2>
                 </div>
                 <div className="grid md:grid-cols-2 gap-6">
                   <div className="bg-card border border-border rounded-lg p-4">
                     <h3 className="text-lg font-semibold mb-3 text-heading-accent flex items-center gap-2">
                       <CheckCircle className="h-4 w-4 text-heading-accent" />
-                      Your Rights
+                      {t('yourRights')}
                     </h3>
                     <ul className="space-y-1 text-sm text-muted-foreground">
-                      <li>• Access to free tools and services</li>
-                      <li>• Privacy protection as outlined in our Privacy Policy</li>
-                      <li>• Data portability and deletion rights</li>
-                      <li>• Fair and transparent service provision</li>
-                      <li>• Protection from unauthorized data collection</li>
+                      <li>• {t('right1')}</li>
+                      <li>• {t('right2')}</li>
+                      <li>• {t('right3')}</li>
+                      <li>• {t('right4')}</li>
+                      <li>• {t('right5')}</li>
                     </ul>
                   </div>
 
                   <div className="bg-card border border-border rounded-lg p-4">
                     <h3 className="text-lg font-semibold mb-3 text-heading-accent flex items-center gap-2">
                       <Shield className="h-4 w-4 text-heading-accent" />
-                      Our Obligations
+                      {t('ourObligations')}
                     </h3>
                     <ul className="space-y-1 text-sm text-muted-foreground">
-                      <li>• Provide reliable and secure services</li>
-                      <li>• Protect user data and privacy</li>
-                      <li>• Comply with Google AdSense policies</li>
-                      <li>• Maintain service availability and performance</li>
-                      <li>• Transparent data practices</li>
+                      <li>• {t('ourObligation1')}</li>
+                      <li>• {t('ourObligation2')}</li>
+                      <li>• {t('ourObligation3')}</li>
+                      <li>• {t('ourObligation4')}</li>
+                      <li>• {t('ourObligation5')}</li>
                     </ul>
                   </div>
                 </div>
@@ -266,17 +274,17 @@ export default function TermsPage() {
                   <div className="h-10 w-10 md:h-12 md:w-12 rounded-lg bg-primary/10 border border-border/30 flex items-center justify-center flex-shrink-0">
                     <RefreshCw className="h-5 w-5 md:h-6 md:w-6 text-foreground" />
                   </div>
-                  <h2 className="text-2xl md:text-3xl font-bold text-foreground">Terms Updates</h2>
+                  <h2 className="text-2xl md:text-3xl font-bold text-foreground">{t('termsUpdates')}</h2>
                 </div>
                 <div className="space-y-4 text-muted-foreground leading-relaxed">
                   <p>
-                    We may update these Terms of Service from time to time to reflect changes in our practices or for other operational, legal, or regulatory reasons.
+                    {t('updatesP1')}
                   </p>
                   <p>
-                    The updated version will be indicated by a revised "Last updated" date at the top. We encourage you to review these Terms periodically to stay informed about your rights and obligations.
+                    {t('updatesP2')}
                   </p>
                   <p>
-                    Your continued use of our Site after any changes to these Terms constitutes your acceptance of the new terms.
+                    {t('updatesP3')}
                   </p>
                 </div>
               </div>

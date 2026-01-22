@@ -4,12 +4,16 @@ import { useState, useEffect } from "react"
 import type { CookiePreferences } from "@/types"
 import { Breadcrumbs } from "@/components/common/breadcrumbs"
 import { GButton } from "@/ui/gbutton"
+import { useTranslations, useLocale } from 'next-intl'
+import Link from "next/link"
 
 import { Shield, Cookie, Eye, Settings, CheckCircle, AlertTriangle, ExternalLink, Lock, BarChart, Target } from "lucide-react"
-import Link from "next/link"
 
 
 export default function CookiePreferencesPage() {
+  const t = useTranslations('cookies')
+  const tCommon = useTranslations('common')
+  const locale = useLocale()
   const [preferences, setPreferences] = useState<CookiePreferences>({
     essential: true,
     analytics: false,
@@ -29,9 +33,9 @@ export default function CookiePreferencesPage() {
   const jsonLd = {
     "@context": "https://schema.org",
     "@type": "WebPage",
-    name: "Cookie Policy - FastTools",
-    description: "Comprehensive cookie policy covering Google AdSense cookies, Google Analytics, user consent management, and GDPR/CCPA compliance.",
-    url: "https://www.fasttools.store/cookie-preferences",
+    name: t('pageTitle'),
+    description: t('description'),
+    url: `https://www.fasttools.store/${locale === 'en' ? '' : locale + '/'}cookie-preferences`,
     publisher: {
       "@type": "Organization",
       name: "FastTools",
@@ -39,12 +43,12 @@ export default function CookiePreferencesPage() {
     },
     datePublished: "2025-11-01",
     dateModified: "2025-11-01",
-    inLanguage: "en-US",
+    inLanguage: locale === 'en' ? 'en-US' : locale,
     isAccessibleForFree: true,
     about: {
       "@type": "Thing",
-      name: "Cookie Policy",
-      description: "Cookie management and consent policies for FastTools online tools and services"
+      name: t('pageTitle'),
+      description: t('description')
     }
   }
 
@@ -119,31 +123,31 @@ export default function CookiePreferencesPage() {
       <div className="min-h-screen bg-background">
         <div className="container mx-auto px-4 sm:px-6 py-12 sm:py-16 md:py-20">
           <Breadcrumbs items={[
-            { label: "Cookie Preferences", href: "/cookie-preferences" }
+            { label: t('pageTitle'), href: "/cookie-preferences" }
           ]} />
 
           <div className="max-w-5xl mx-auto">
             {/* Hero Section */}
             <div className="text-center mb-12">
-              <h1 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-4 text-foreground">Cookie Policy</h1>
+              <h1 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-4 text-foreground">{t('pageTitle')}</h1>
               <p className="text-base sm:text-lg text-muted-foreground mb-6 max-w-3xl mx-auto">
-                Manage your cookie preferences and learn about how we use cookies in compliance with Google AdSense, Google Analytics, and privacy regulations.
+                {t('pageDescription')}
               </p>
               <div className="flex flex-wrap justify-center gap-3 mb-4">
                 <div className="flex items-center gap-2 px-4 py-2 bg-primary/10 border border-border rounded-lg">
                   <CheckCircle className="h-4 w-4 text-heading-accent" />
-                  <span className="text-sm font-medium text-foreground">GDPR Compliant</span>
+                  <span className="text-sm font-medium text-foreground">{t('gdprCompliant')}</span>
                 </div>
                 <div className="flex items-center gap-2 px-4 py-2 bg-primary/10 border border-border rounded-lg">
                   <CheckCircle className="h-4 w-4 text-heading-accent" />
-                  <span className="text-sm font-medium text-foreground">CCPA Compliant</span>
+                  <span className="text-sm font-medium text-foreground">{t('ccpaCompliant')}</span>
                 </div>
                 <div className="flex items-center gap-2 px-4 py-2 bg-primary/10 border border-border rounded-lg">
                   <CheckCircle className="h-4 w-4 text-heading-accent" />
-                  <span className="text-sm font-medium text-foreground">Google AdSense Compliant</span>
+                  <span className="text-sm font-medium text-foreground">{t('googleAdSenseCompliant')}</span>
                 </div>
               </div>
-              <p className="text-sm text-muted-foreground">Last updated: November 1,</p>
+              <p className="text-sm text-muted-foreground">{t('lastUpdated')}</p>
             </div>
 
             {/* Main Content */}
@@ -153,25 +157,25 @@ export default function CookiePreferencesPage() {
                   <div className="h-10 w-10 rounded-lg bg-primary/10 border border-border flex items-center justify-center">
                     <Eye className="h-5 w-5 text-foreground" />
                   </div>
-                  <h2 className="text-2xl font-bold text-foreground">What Are Cookies?</h2>
+                  <h2 className="text-2xl font-bold text-foreground">{t('whatAreCookies')}</h2>
                 </div>
                 <div className="space-y-4 text-muted-foreground leading-relaxed">
                   <p>
-                    Cookies are small text files that are stored on your device when you visit our website. They help us provide you with a better experience by remembering your preferences and understanding how you use our site.
+                    {t('cookiesP1')}
                   </p>
                   <p>
-                    You can learn more about our use of cookies in our{" "}
+                    {t('cookiesP2')}{" "}
                     <Link href="/privacy-policy" className="text-foreground hover:text-foreground hover:underline font-medium">
-                      Privacy Policy
+                      {t('privacyPolicy')}
                     </Link>.
                   </p>
                   <div className="bg-primary/10 border border-border rounded-lg p-4">
                     <div className="flex items-start gap-3">
                       <AlertTriangle className="h-5 w-5 text-foreground mt-0.5 flex-shrink-0" />
                       <div>
-                        <h4 className="font-semibold text-foreground mb-2">Important Notice</h4>
+                        <h4 className="font-semibold text-foreground mb-2">{t('importantNotice')}</h4>
                         <p className="text-sm text-muted-foreground">
-                          Our cookie usage complies with Google AdSense policies, Google Analytics requirements, GDPR, and CCPA regulations. You have full control over your cookie preferences.
+                          {t('importantNoticeDesc')}
                         </p>
                       </div>
                     </div>
@@ -185,7 +189,7 @@ export default function CookiePreferencesPage() {
                   <div className="h-10 w-10 rounded-lg bg-primary/10 border border-border flex items-center justify-center">
                     <Cookie className="h-5 w-5 text-foreground" />
                   </div>
-                  <h2 className="text-2xl font-bold text-foreground">Cookie Categories</h2>
+                  <h2 className="text-2xl font-bold text-foreground">{t('cookieCategories')}</h2>
                 </div>
                 <div className="space-y-6">
                   <div className="grid md:grid-cols-2 gap-6">
@@ -193,7 +197,7 @@ export default function CookiePreferencesPage() {
                       <div className="flex items-center justify-between mb-3">
                         <h3 className="text-lg font-semibold text-heading-accent flex items-center gap-2">
                           <Lock className="h-4 w-4 text-foreground" />
-                          Essential Cookies
+                          {t('essentialCookies')}
                         </h3>
                         <div className="flex items-center">
                           <input
@@ -202,11 +206,11 @@ export default function CookiePreferencesPage() {
                             disabled
                             className="w-4 h-4"
                           />
-                          <span className="ml-2 text-sm text-muted-foreground">Always Active</span>
+                          <span className="ml-2 text-sm text-muted-foreground">{t('alwaysActive')}</span>
                         </div>
                       </div>
                       <p className="text-muted-foreground text-sm">
-                        These cookies are necessary for the website to function properly. They enable basic functions like page navigation, access to secure areas, and remembering your cookie preferences. These cookies cannot be disabled.
+                        {t('essentialCookiesDesc')}
                       </p>
                     </div>
 
@@ -214,7 +218,7 @@ export default function CookiePreferencesPage() {
                       <div className="flex items-center justify-between mb-3">
                         <h3 className="text-lg font-semibold text-heading-accent flex items-center gap-2">
                           <BarChart className="h-4 w-4 text-foreground" />
-                          Analytics Cookies
+                          {t('analyticsCookies')}
                         </h3>
                         <div className="flex items-center">
                           <input
@@ -226,7 +230,7 @@ export default function CookiePreferencesPage() {
                         </div>
                       </div>
                       <p className="text-muted-foreground text-sm">
-                        These cookies help us understand how visitors interact with our website by collecting and reporting information anonymously. We use Google Analytics to analyze website usage and improve our services.
+                        {t('analyticsCookiesDesc')}
                       </p>
                     </div>
                   </div>
@@ -236,7 +240,7 @@ export default function CookiePreferencesPage() {
                       <div className="flex items-center justify-between mb-3">
                         <h3 className="text-lg font-semibold text-heading-accent flex items-center gap-2">
                           <Target className="h-4 w-4 text-foreground" />
-                          Advertising Cookies
+                          {t('advertisingCookies')}
                         </h3>
                         <div className="flex items-center">
                           <input
@@ -248,7 +252,7 @@ export default function CookiePreferencesPage() {
                         </div>
                       </div>
                       <p className="text-muted-foreground text-sm">
-                        These cookies are used to display relevant advertisements to you. They may be set by us or by third-party providers like Google AdSense. These cookies help us fund our free services.
+                        {t('advertisingCookiesDesc')}
                       </p>
                     </div>
 
@@ -256,7 +260,7 @@ export default function CookiePreferencesPage() {
                       <div className="flex items-center justify-between mb-3">
                         <h3 className="text-lg font-semibold text-heading-accent flex items-center gap-2">
                           <Settings className="h-4 w-4 text-foreground" />
-                          Functional Cookies
+                          {t('functionalCookies')}
                         </h3>
                         <div className="flex items-center">
                           <input
@@ -268,7 +272,7 @@ export default function CookiePreferencesPage() {
                         </div>
                       </div>
                       <p className="text-muted-foreground text-sm">
-                        These cookies enable enhanced functionality and personalization, such as remembering your preferences and settings for a better user experience.
+                        {t('functionalCookiesDesc')}
                       </p>
                     </div>
                   </div>
@@ -281,34 +285,34 @@ export default function CookiePreferencesPage() {
                   <div className="h-10 w-10 rounded-lg bg-primary/10 border border-border flex items-center justify-center">
                     <Shield className="h-5 w-5 text-foreground" />
                   </div>
-                  <h2 className="text-2xl font-bold text-foreground">Google AdSense & Analytics Compliance</h2>
+                  <h2 className="text-2xl font-bold text-foreground">{t('googleAdSenseCompliance')}</h2>
                 </div>
                 <div className="space-y-6">
                   <div className="bg-primary/10 border border-border rounded-lg p-6">
                     <h3 className="text-xl font-semibold mb-4 text-heading-accent flex items-center gap-2">
                       <CheckCircle className="h-5 w-5 text-heading-accent" />
-                      Google AdSense Cookie Compliance
+                      {t('adsenseCookieCompliance')}
                     </h3>
                     <p className="text-muted-foreground leading-relaxed mb-4">
-                      We use Google AdSense to display advertisements on our website. Google may use cookies to serve ads based on your prior visits to our website or other websites. Our implementation complies with Google AdSense policies and requirements.
+                      {t('adsenseComplianceDesc')}
                     </p>
                     <div className="grid md:grid-cols-2 gap-4">
                       <div>
-                        <h4 className="font-semibold text-foreground mb-2">Google AdSense Cookies:</h4>
+                        <h4 className="font-semibold text-foreground mb-2">{t('adsenseCookies')}</h4>
                         <ul className="space-y-1 text-sm text-muted-foreground">
-                          <li>• __gads - Google AdSense advertising cookie</li>
-                          <li>• __gpi - Google AdSense interest-based advertising</li>
-                          <li>• __gcl_au - Google AdSense conversion tracking</li>
-                          <li>• __gcl_aw - Google AdWords conversion tracking</li>
+                          <li>• {t('adsenseCookie1')}</li>
+                          <li>• {t('adsenseCookie2')}</li>
+                          <li>• {t('adsenseCookie3')}</li>
+                          <li>• {t('adsenseCookie4')}</li>
                         </ul>
                       </div>
                       <div>
-                        <h4 className="font-semibold text-foreground mb-2">Google Analytics Cookies:</h4>
+                        <h4 className="font-semibold text-foreground mb-2">{t('analyticsCookiesTitle')}</h4>
                         <ul className="space-y-1 text-sm text-muted-foreground">
-                          <li>• _ga - Google Analytics identification</li>
-                          <li>• _ga_[ID] - Google Analytics session data</li>
-                          <li>• _gid - Google Analytics user identification</li>
-                          <li>• _gat - Google Analytics throttling</li>
+                          <li>• {t('analyticsCookie1')}</li>
+                          <li>• {t('analyticsCookie2')}</li>
+                          <li>• {t('analyticsCookie3')}</li>
+                          <li>• {t('analyticsCookie4')}</li>
                         </ul>
                       </div>
                     </div>
@@ -316,22 +320,22 @@ export default function CookiePreferencesPage() {
 
                   <div className="grid md:grid-cols-2 gap-6">
                     <div className="bg-card border border-border rounded-lg p-4">
-                      <h3 className="text-lg font-semibold mb-3 text-heading-accent">Cookie Consent Management</h3>
+                      <h3 className="text-lg font-semibold mb-3 text-heading-accent">{t('consentManagement')}</h3>
                       <p className="text-sm text-muted-foreground mb-3">
-                        We implement proper cookie consent management in compliance with GDPR and CCPA requirements. You can control your cookie preferences at any time.
+                        {t('consentManagementDesc')}
                       </p>
                       <p className="text-sm text-muted-foreground">
-                        Your consent is required for non-essential cookies, and you can withdraw consent at any time.
+                        {t('consentWithdraw')}
                       </p>
                     </div>
 
                     <div className="bg-card border border-border rounded-lg p-4">
-                      <h3 className="text-lg font-semibold mb-3 text-heading-accent">Third-Party Cookie Controls</h3>
+                      <h3 className="text-lg font-semibold mb-3 text-heading-accent">{t('thirdPartyControls')}</h3>
                       <p className="text-sm text-muted-foreground mb-3">
-                        You can manage third-party cookies through your browser settings or by visiting the opt-out pages provided by Google and other advertising networks.
+                        {t('thirdPartyControlsDesc')}
                       </p>
                       <p className="text-sm text-muted-foreground">
-                        We respect your privacy choices and implement appropriate technical measures to honor your preferences.
+                        {t('thirdPartyPrivacy')}
                       </p>
                     </div>
                   </div>
@@ -344,43 +348,43 @@ export default function CookiePreferencesPage() {
                   <div className="h-10 w-10 rounded-lg bg-primary/10 border border-border flex items-center justify-center">
                     <ExternalLink className="h-5 w-5 text-foreground" />
                   </div>
-                  <h2 className="text-2xl font-bold text-foreground">Third-Party Cookie Management</h2>
+                  <h2 className="text-2xl font-bold text-foreground">{t('thirdPartyManagement')}</h2>
                 </div>
                 <div className="space-y-4">
                   <p className="text-muted-foreground leading-relaxed">
-                    Some cookies on our site are set by third-party services. You can manage these cookies through your browser settings or by visiting the following links:
+                    {t('thirdPartyManagementDesc')}
                   </p>
                   <div className="grid md:grid-cols-3 gap-4">
                     <div className="bg-card border border-border rounded-lg p-4">
-                      <h3 className="text-lg font-semibold mb-3 text-heading-accent">Google Ad Settings</h3>
+                      <h3 className="text-lg font-semibold mb-3 text-heading-accent">{t('googleAdSettings')}</h3>
                       <p className="text-sm text-muted-foreground mb-3">
-                        Manage Google advertising cookies and personalized ads
+                        {t('googleAdSettingsDesc')}
                       </p>
                       <a href="https://www.google.com/settings/ads" className="flex items-center gap-2 text-foreground hover:text-foreground hover:underline font-medium text-sm" target="_blank" rel="noopener noreferrer">
                         <ExternalLink className="h-4 w-4" />
-                        Visit Google Ad Settings
+                        {t('visitGoogleAdSettings')}
                       </a>
                     </div>
 
                     <div className="bg-card border border-border rounded-lg p-4">
-                      <h3 className="text-lg font-semibold mb-3 text-heading-accent">Google Analytics Opt-out</h3>
+                      <h3 className="text-lg font-semibold mb-3 text-heading-accent">{t('googleAnalyticsOptOut')}</h3>
                       <p className="text-sm text-muted-foreground mb-3">
-                        Opt out of Google Analytics tracking
+                        {t('googleAnalyticsOptOutDesc')}
                       </p>
                       <a href="https://tools.google.com/dlpage/gaoptout" className="flex items-center gap-2 text-foreground hover:text-foreground hover:underline font-medium text-sm" target="_blank" rel="noopener noreferrer">
                         <ExternalLink className="h-4 w-4" />
-                        Opt out of Analytics
+                        {t('optOutAnalytics')}
                       </a>
                     </div>
 
                     <div className="bg-card border border-border rounded-lg p-4">
-                      <h3 className="text-lg font-semibold mb-3 text-heading-accent">Digital Advertising Alliance</h3>
+                      <h3 className="text-lg font-semibold mb-3 text-heading-accent">{t('digitalAdvertisingAlliance')}</h3>
                       <p className="text-sm text-muted-foreground mb-3">
-                        Manage advertising preferences across networks
+                        {t('daaDesc')}
                       </p>
                       <a href="https://www.aboutads.info/choices/" className="flex items-center gap-2 text-foreground hover:text-foreground hover:underline font-medium text-sm" target="_blank" rel="noopener noreferrer">
                         <ExternalLink className="h-4 w-4" />
-                        Visit DAA Opt-out
+                        {t('visitDAAOptOut')}
                       </a>
                     </div>
                   </div>
@@ -393,25 +397,25 @@ export default function CookiePreferencesPage() {
                   <div className="h-10 w-10 rounded-lg bg-primary/10 border border-border flex items-center justify-center">
                     <Settings className="h-5 w-5 text-foreground" />
                   </div>
-                  <h2 className="text-2xl font-bold text-foreground">Manage Your Cookie Preferences</h2>
+                  <h2 className="text-2xl font-bold text-foreground">{t('managePreferences')}</h2>
                 </div>
                 <div className="space-y-6">
                   <div className="flex flex-col sm:flex-row gap-3 sm:gap-4">
                     <GButton onClick={acceptAll} className="flex-1 h-10 sm:h-12 text-sm sm:text-base">
-                      Accept All Cookies
+                      {t('acceptAllCookies')}
                     </GButton>
                     <GButton variant="outline" onClick={rejectAll} className="flex-1 h-10 sm:h-12 text-sm sm:text-base">
-                      Reject All Non-Essential
+                      {t('rejectAllNonEssential')}
                     </GButton>
                     <GButton onClick={savePreferences} className="w-full sm:w-auto">
-                      Save Preferences
+                      {t('savePreferences')}
                     </GButton>
                   </div>
 
                   {saved && (
                     <div className="mt-4 p-4 bg-heading-accent-border/10 border border-heading-accent-border/30 text-heading-accent rounded-lg flex items-center gap-2">
                       <CheckCircle className="h-5 w-5" />
-                      Your cookie preferences have been saved!
+                      {t('preferencesSaved')}
                     </div>
                   )}
                 </div>
