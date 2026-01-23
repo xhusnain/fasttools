@@ -4,6 +4,7 @@ import { ToolPageLayout } from "@/components/common/tool-page-layout"
 import { ToolLoader } from "@/components/common/tool-loader"
 import { createMetadata } from "@/lib/metadata-base"
 import { GTable } from "@/ui/gtable"
+import { getTranslations } from 'next-intl/server';
 
 const CalorieCalculator = dynamic(
   () => import("@/components/health/calorie-calculator"),
@@ -11,68 +12,70 @@ const CalorieCalculator = dynamic(
 )
 import { Brain, Activity, Target, BookOpen, Shield, Users, TrendingUp, Calculator, Heart, AlertTriangle, Info, Zap, Flame } from "lucide-react"
 
-const baseMetadata = createMetadata({
-  title: "Calorie Calculator | Free Daily Calorie Needs Calculator",
-  description:
-    "Calculate your daily calorie needs with our advanced calculator. Get BMR, TDEE, weight management goals & personalized nutrition recommendations.",
-  path: "/calculator/calorie-calculator",
-  breadcrumbs: [
-    { label: "Calculator", href: "/calculator" },
-    { label: "Calorie Calculator", href: "/calculator/calorie-calculator" }
-  ],
-  schemaOptions: {
-    name: "Calorie Calculator | Advanced Daily Calorie Needs Calculator",
-    alternateName: "Professional Calorie Analysis Tool",
-    applicationCategory: "HealthApplication",
-    featureList: [
-      "BMR Calculation with Multiple Equations",
-      "TDEE Analysis for Different Activity Levels",
-      "Weight Management Calorie Targets",
-      "Zigzag Calorie Cycling Plans",
-      "Food Energy Converter",
-      "Personalized Nutrition Recommendations",
-      "Meal Planning Guidance"
-    ]
-  }
-})
+export async function generateMetadata({ params }: { params: { locale: string } }): Promise<Metadata> {
+  const t = await getTranslations({ locale: params.locale, namespace: 'calorieCalculator' });
+  const tNavigation = await getTranslations({ locale: params.locale, namespace: 'navigation' });
 
-export const metadata: Metadata = {
-  ...baseMetadata,
-  applicationName: "FastTools",
-  category: "Health & Fitness",
+  return createMetadata({
+    title: t('title'),
+    description: t('description'),
+    path: "/calculator/calorie-calculator",
+    breadcrumbs: [
+      { label: tNavigation('calculators'), href: "/calculator" },
+      { label: t('breadcrumbCalorie'), href: "/calculator/calorie-calculator" }
+    ],
+    schemaOptions: {
+      name: t('toolName'),
+      alternateName: t('toolName'),
+      applicationCategory: "HealthApplication",
+      featureList: [
+        t('feature1'),
+        t('feature2'),
+        t('feature3'),
+        t('feature4'),
+        t('feature5'),
+        t('feature6'),
+        t('feature7'),
+        t('feature8')
+      ]
+    },
+    locale: params.locale
+  })
 }
 
-export default function CalorieCalculatorPage() {
+export default async function CalorieCalculatorPage({ params }: { params: { locale: string } }) {
+  const t = await getTranslations('calorieCalculator');
+  const tNavigation = await getTranslations('navigation');
   const toolContent = {
-    toolName: "Calorie Calculator",
-    overview: "Calculate your daily calorie needs with our advanced calorie calculator. Get BMR and TDEE analysis, weight management goals, zigzag calorie cycling, and personalized nutrition recommendations for optimal health and fitness.",
+    toolName: t('toolName'),
+    overview: t('overview'),
 
     howToSteps: [
-      "Enter your information: Age, gender, height, weight, and unit system.",
-      "Select calculation method: Mifflin-St Jeor (recommended), Harris-Benedict, or Katch-McArdle.",
-      "Choose activity level: From sedentary to extremely active to determine TDEE.",
-      "Get comprehensive results: View BMR, TDEE, and calorie targets for weight loss or gain.",
-      "Plan your nutrition: Use the insights to structure your meal plan and macros."
+      t('step1'),
+      t('step2'),
+      t('step3'),
+      t('step4'),
+      t('step5')
     ],
 
     features: [
-      "Multiple Methods: Choose from Mifflin-St Jeor, Harris-Benedict, and Katch-McArdle equations.",
-      "BMR & TDEE Analysis: Understand your baseline and total energy expenditure.",
-      "Weight Goals: Specific calorie targets for maintenance, weight loss, and weight gain.",
-      "Zigzag Cycling: Advanced plans to prevent metabolic adaptation.",
-      "Activity Assessment: Accurate multipliers for different lifestyle levels.",
-      "Personalized Tips: Nutrition guidance based on your specific goals.",
-      "Macro Breakdown: Understand the balance of protein, carbs, and fats.",
-      "Mobile Friendly: Track your needs on the go."
+      t('feature1'),
+      t('feature2'),
+      t('feature3'),
+      t('feature4'),
+      t('feature5'),
+      t('feature6'),
+      t('feature7'),
+      t('feature8')
     ],
 
     useCases: [
-      "Weight Loss: Determine the calorie deficit needed to lose weight safely.",
-      "Muscle Gain: Calculate the surplus required for hypertrophy.",
-      "Maintenance: Find the exact calories to stay at your current weight.",
-      "Athletic Performance: Optimize fueling for training and competition.",
-      "Meal Planning: Structure daily intake around your energy needs.",
-      "Metabolic Health: Understand your body's energy requirements."
+      t('useCase1'),
+      t('useCase2'),
+      t('useCase3'),
+      t('useCase4'),
+      t('useCase5'),
+      t('useCase6')
     ],
 
     aboutTool: (
@@ -80,61 +83,61 @@ export default function CalorieCalculatorPage() {
         <article className="space-y-6">
           <h2 className="text-2xl font-bold text-foreground flex items-center gap-2">
             <Flame className="h-6 w-6 text-primary" />
-            Understanding Calories: The Foundation of Weight Management and Nutrition
+            {t('whatIsTitle')}
           </h2>
           <p className="text-base text-muted-foreground leading-relaxed">
-            Calories are a measure of <strong>energy</strong>. In nutrition, they refer to the energy people get from the food and drink they consume, and the energy they use in physical activity. One calorie (kilocalorie) is the amount of energy needed to raise the temperature of one kilogram of water by one degree Celsius. Understanding your daily calorie expenditure is the cornerstone of managing weight, optimizing physical performance, and achieving your health and fitness goals.
+            {t('whatIsP1')}
           </p>
           <p className="text-base text-muted-foreground leading-relaxed">
-            Whether your goal is weight loss, muscle gain, or maintaining your current weight, knowing your daily calorie needs is essential. Your Total Daily Energy Expenditure (TDEE) represents the total number of calories you burn each day through metabolism, physical activity, and the thermic effect of food. By understanding and managing this energy balance, you can make informed decisions about your nutrition and create sustainable habits that support your long-term health and fitness objectives.
+            {t('whatIsP2')}
           </p>
         </article>
 
         <article className="space-y-6">
           <h2 className="text-2xl font-bold text-foreground flex items-center gap-2">
             <Activity className="h-6 w-6 text-primary" />
-            Activity Calorie Burn Reference: Understanding Exercise Energy Expenditure
+            {t('activityBurnTitle')}
           </h2>
           <p className="text-base text-muted-foreground leading-relaxed">
-            Energy expenditure varies significantly based on body weight, intensity, fitness level, and individual metabolism. Here is an estimate of calories burned during common activities for different body weights (per 30 minutes of activity):
+            {t('activityBurnP1')}
           </p>
           <div className="overflow-x-auto">
             <GTable>
               <thead className="bg-muted text-foreground font-semibold">
                 <tr>
-                  <th className="p-3 text-left">Activity</th>
-                  <th className="p-3 text-left">125 lbs (57 kg)</th>
-                  <th className="p-3 text-left">155 lbs (70 kg)</th>
-                  <th className="p-3 text-left">185 lbs (84 kg)</th>
+                  <th className="p-3 text-left">{t('tableActivity')}</th>
+                  <th className="p-3 text-left">{t('table125lbs')}</th>
+                  <th className="p-3 text-left">{t('table155lbs')}</th>
+                  <th className="p-3 text-left">{t('table185lbs')}</th>
                 </tr>
               </thead>
               <tbody className="divide-y divide-border text-sm">
                 <tr>
-                  <td className="p-3 font-semibold text-foreground">Walking (3.5 mph)</td>
+                  <td className="p-3 font-semibold text-foreground">{t('activityWalking')}</td>
                   <td className="p-3">120 cal</td>
                   <td className="p-3">149 cal</td>
                   <td className="p-3">178 cal</td>
                 </tr>
                 <tr>
-                  <td className="p-3 font-semibold text-foreground">Running (5 mph)</td>
+                  <td className="p-3 font-semibold text-foreground">{t('activityRunning')}</td>
                   <td className="p-3">240 cal</td>
                   <td className="p-3">298 cal</td>
                   <td className="p-3">355 cal</td>
                 </tr>
                 <tr>
-                  <td className="p-3 font-semibold text-foreground">Bicycling (12-14 mph)</td>
+                  <td className="p-3 font-semibold text-foreground">{t('activityBicycling')}</td>
                   <td className="p-3">240 cal</td>
                   <td className="p-3">298 cal</td>
                   <td className="p-3">355 cal</td>
                 </tr>
                 <tr>
-                  <td className="p-3 font-semibold text-foreground">Weight Training</td>
+                  <td className="p-3 font-semibold text-foreground">{t('activityWeightTraining')}</td>
                   <td className="p-3">90 cal</td>
                   <td className="p-3">112 cal</td>
                   <td className="p-3">133 cal</td>
                 </tr>
                 <tr>
-                  <td className="p-3 font-semibold text-foreground">Swimming (General)</td>
+                  <td className="p-3 font-semibold text-foreground">{t('activitySwimming')}</td>
                   <td className="p-3">180 cal</td>
                   <td className="p-3">223 cal</td>
                   <td className="p-3">266 cal</td>
@@ -147,90 +150,90 @@ export default function CalorieCalculatorPage() {
         <article className="space-y-6">
           <h2 className="text-2xl font-bold text-foreground flex items-center gap-2">
             <Brain className="h-6 w-6 text-primary" />
-            Expert Insight: The Thermic Effect of Food (TEF) and Total Daily Energy Expenditure
+            {t('expertTitle')}
           </h2>
           <div className="p-6 bg-gradient-to-r from-orange-50 to-amber-50 dark:from-orange-950/30 dark:to-amber-950/30 border-l-4 border-orange-500 rounded-lg">
             <p className="italic text-orange-700 dark:text-orange-300 leading-relaxed">
-              "Your Total Daily Energy Expenditure (TDEE) isn't just exercise and breathing. About 10% of your daily burn comes from the energy required to digest, absorb, and process nutrients. This is called the Thermic Effect of Food (TEF). Protein has the highest thermic effect, requiring up to 20-30% of its own energy to be processed, compared to just 5-15% for carbs and 0-3% for fats. This means if you eat 100 calories of protein, your body uses 20-30 calories just to process it, leaving 70-80 calories for your body. This is why high-protein diets are often more effective for fat loss—they burn more calories during digestion and increase satiety."
+              "{t('expertText')}"
             </p>
-            <p className="text-sm font-semibold text-orange-600 dark:text-orange-400 mt-2">— FastTools Metabolic Research Team</p>
+            <p className="text-sm font-semibold text-orange-600 dark:text-orange-400 mt-2">{t('expertAuthor')}</p>
           </div>
         </article>
 
         <article className="space-y-6">
           <h2 className="text-2xl font-bold text-foreground flex items-center gap-2">
             <Calculator className="h-6 w-6 text-primary" />
-            Calorie Calculation Methods: Understanding BMR Equations
+            {t('calculationMethodsTitle')}
           </h2>
           <p className="text-base text-muted-foreground leading-relaxed">
-            Our calculator offers multiple methods for calculating Basal Metabolic Rate (BMR), the number of calories your body burns at rest. Understanding these methods helps you choose the most accurate option for your situation:
+            {t('calculationMethodsP1')}
           </p>
           <div className="overflow-x-auto">
             <GTable>
               <thead className="bg-muted text-foreground font-semibold">
                 <tr>
-                  <th className="p-3 text-left">Method</th>
-                  <th className="p-3 text-left">Best For</th>
-                  <th className="p-3 text-left">Accuracy</th>
-                  <th className="p-3 text-left">Required Data</th>
+                  <th className="p-3 text-left">{t('tableMethod')}</th>
+                  <th className="p-3 text-left">{t('tableBestFor')}</th>
+                  <th className="p-3 text-left">{t('tableAccuracy')}</th>
+                  <th className="p-3 text-left">{t('tableRequiredData')}</th>
                 </tr>
               </thead>
               <tbody className="divide-y divide-border text-sm">
                 <tr>
-                  <td className="p-3 font-medium">Mifflin-St Jeor</td>
-                  <td className="p-3">General population (most accurate)</td>
-                  <td className="p-3">±10-15%</td>
-                  <td className="p-3">Age, gender, height, weight</td>
+                  <td className="p-3 font-medium">{t('methodMifflin')}</td>
+                  <td className="p-3">{t('methodMifflinBest')}</td>
+                  <td className="p-3">{t('methodMifflinAccuracy')}</td>
+                  <td className="p-3">{t('methodMifflinData')}</td>
                 </tr>
                 <tr>
-                  <td className="p-3 font-medium">Harris-Benedict (Revised)</td>
-                  <td className="p-3">Classic alternative</td>
-                  <td className="p-3">±12-17%</td>
-                  <td className="p-3">Age, gender, height, weight</td>
+                  <td className="p-3 font-medium">{t('methodHarris')}</td>
+                  <td className="p-3">{t('methodHarrisBest')}</td>
+                  <td className="p-3">{t('methodHarrisAccuracy')}</td>
+                  <td className="p-3">{t('methodHarrisData')}</td>
                 </tr>
                 <tr>
-                  <td className="p-3 font-medium">Katch-McArdle</td>
-                  <td className="p-3">Lean individuals with known body fat %</td>
-                  <td className="p-3">±8-12% (when accurate)</td>
-                  <td className="p-3">Weight, body fat percentage</td>
+                  <td className="p-3 font-medium">{t('methodKatch')}</td>
+                  <td className="p-3">{t('methodKatchBest')}</td>
+                  <td className="p-3">{t('methodKatchAccuracy')}</td>
+                  <td className="p-3">{t('methodKatchData')}</td>
                 </tr>
               </tbody>
             </GTable>
           </div>
           <p className="text-base text-muted-foreground leading-relaxed">
-            The <strong>Mifflin-St Jeor Equation</strong>, developed in 1990, is considered the most accurate for the general population. It's based on modern data and accounts for age, gender, height, and weight more accurately than older equations. The <strong>Revised Harris-Benedict Equation</strong>, revised in 1984, is a classic alternative that works well but is slightly less accurate. The <strong>Katch-McArdle Formula</strong> is best for lean individuals with known body fat percentage, as it accounts for lean body mass rather than total body weight, providing more accurate results for muscular individuals.
+            {t('calculationMethodsP2')}
           </p>
         </article>
 
         <article className="space-y-6">
           <h2 className="text-2xl font-bold text-foreground flex items-center gap-2">
             <Zap className="h-6 w-6 text-primary" />
-            Zigzag Calorie Cycling: Advanced Weight Management Strategy
+            {t('zigzagTitle')}
           </h2>
           <p className="text-base text-muted-foreground leading-relaxed">
-            Zigzag calorie cycling involves rotating between higher and lower calorie days throughout the week. This advanced technique helps prevent metabolic adaptation (plateaus), provides psychological flexibility, and can be more sustainable than maintaining a constant calorie deficit or surplus:
+            {t('zigzagP1')}
           </p>
           <div className="space-y-4">
             <div className="p-4 bg-card border border-border rounded-lg">
               <h4 className="font-semibold mb-2 flex items-center gap-2">
                 <TrendingUp className="h-4 w-4 text-green-500" />
-                High Calorie Days
+                {t('zigzagHighTitle')}
               </h4>
-              <p className="text-sm text-muted-foreground">+200-300 calories above your average TDEE to boost metabolism, fuel intense workouts, and prevent metabolic slowdown. These days help maintain leptin levels (hunger hormone) and provide psychological relief from restriction, making long-term diet adherence easier.</p>
+              <p className="text-sm text-muted-foreground">{t('zigzagHighText')}</p>
             </div>
             <div className="p-4 bg-card border border-border rounded-lg">
               <h4 className="font-semibold mb-2 flex items-center gap-2">
                 <Activity className="h-4 w-4 text-blue-500" />
-                Low Calorie Days
+                {t('zigzagLowTitle')}
               </h4>
-              <p className="text-sm text-muted-foreground">-200-300 calories below your average TDEE to create a larger deficit for fat loss on rest days or lighter training days. This approach allows for calorie banking—creating a larger weekly deficit without extreme daily restriction, making fat loss more sustainable.</p>
+              <p className="text-sm text-muted-foreground">{t('zigzagLowText')}</p>
             </div>
             <div className="p-4 bg-card border border-border rounded-lg">
               <h4 className="font-semibold mb-2 flex items-center gap-2">
                 <Heart className="h-4 w-4 text-purple-500" />
-                Benefits of Zigzag Cycling
+                {t('zigzagBenefitsTitle')}
               </h4>
-              <p className="text-sm text-muted-foreground">Prevents metabolic adaptation (plateaus), maintains weight loss momentum, reduces diet fatigue, provides psychological flexibility, allows for social eating on high days, and can be more sustainable than constant restriction. This approach works well for weight loss, maintenance, and even muscle gain phases.</p>
+              <p className="text-sm text-muted-foreground">{t('zigzagBenefitsText')}</p>
             </div>
           </div>
         </article>
@@ -238,38 +241,38 @@ export default function CalorieCalculatorPage() {
         <article className="space-y-6">
           <h2 className="text-2xl font-bold text-foreground flex items-center gap-2">
             <Target className="h-6 w-6 text-primary" />
-            How to Calculate Your Daily Calorie Needs: Step-by-Step Guide
+            {t('howToCalculateTitle')}
           </h2>
           <p className="text-base text-muted-foreground leading-relaxed">
-            Follow these steps to accurately calculate your daily calorie needs using our advanced calculator:
+            {t('howToCalculateP1')}
           </p>
           <div className="space-y-4">
             <div className="flex gap-4">
               <div className="flex-none flex items-center justify-center w-8 h-8 rounded-full bg-primary/10 text-primary font-bold">1</div>
               <div>
-                <h4 className="font-semibold text-foreground">Enter Your Basic Information</h4>
-                <p className="text-sm text-muted-foreground">Input your age, gender, height, and weight. Use accurate measurements for best results. Weigh yourself in the morning after using the bathroom but before eating for consistent measurements. Use centimeters or inches depending on your preferred unit system.</p>
+                <h4 className="font-semibold text-foreground">{t('howToStep1Title')}</h4>
+                <p className="text-sm text-muted-foreground">{t('howToStep1Text')}</p>
               </div>
             </div>
             <div className="flex gap-4">
               <div className="flex-none flex items-center justify-center w-8 h-8 rounded-full bg-primary/10 text-primary font-bold">2</div>
               <div>
-                <h4 className="font-semibold text-foreground">Select Calculation Method</h4>
-                <p className="text-sm text-muted-foreground">Choose Mifflin-St Jeor (recommended for most people), Harris-Benedict (classic alternative), or Katch-McArdle (best if you're lean and know your body fat percentage). For most users, Mifflin-St Jeor provides the most accurate results based on modern research.</p>
+                <h4 className="font-semibold text-foreground">{t('howToStep2Title')}</h4>
+                <p className="text-sm text-muted-foreground">{t('howToStep2Text')}</p>
               </div>
             </div>
             <div className="flex gap-4">
               <div className="flex-none flex items-center justify-center w-8 h-8 rounded-full bg-primary/10 text-primary font-bold">3</div>
               <div>
-                <h4 className="font-semibold text-foreground">Choose Your Activity Level</h4>
-                <p className="text-sm text-muted-foreground">Select from sedentary (little/no exercise), lightly active (light exercise 1-3 days/week), moderately active (moderate exercise 3-5 days/week), very active (hard exercise 6-7 days/week), or extremely active (physical job + hard exercise). Be honest—overestimating activity leads to overeating and weight gain.</p>
+                <h4 className="font-semibold text-foreground">{t('howToStep3Title')}</h4>
+                <p className="text-sm text-muted-foreground">{t('howToStep3Text')}</p>
               </div>
             </div>
             <div className="flex gap-4">
               <div className="flex-none flex items-center justify-center w-8 h-8 rounded-full bg-primary/10 text-primary font-bold">4</div>
               <div>
-                <h4 className="font-semibold text-foreground">Review Your Results</h4>
-                <p className="text-sm text-muted-foreground">View your BMR (Basal Metabolic Rate—calories burned at rest), TDEE (Total Daily Energy Expenditure—total calories burned per day), and calorie targets for weight maintenance, weight loss (deficit), or weight gain (surplus). Use these numbers as a starting point and adjust based on your actual weight change over 2-3 weeks.</p>
+                <h4 className="font-semibold text-foreground">{t('howToStep4Title')}</h4>
+                <p className="text-sm text-muted-foreground">{t('howToStep4Text')}</p>
               </div>
             </div>
           </div>
@@ -278,31 +281,31 @@ export default function CalorieCalculatorPage() {
         <article className="space-y-6">
           <h2 className="text-2xl font-bold text-foreground flex items-center gap-2">
             <Shield className="h-6 w-6 text-primary" />
-            Privacy & Security: Your Health Data Stays Private
+            {t('privacyTitle')}
           </h2>
           <p className="text-base text-muted-foreground leading-relaxed">
-            Your privacy and data security are our top priorities. Our calorie calculator processes all information locally in your browser:
+            {t('privacyP1')}
           </p>
           <div className="space-y-3">
             <div className="flex gap-3">
               <div className="flex-none w-2 h-2 rounded-full bg-blue-500 mt-2"></div>
               <div>
-                <h4 className="font-semibold text-foreground">Client-Side Processing</h4>
-                <p className="text-sm text-muted-foreground">All calorie calculations happen directly in your browser. Your weight, height, age, and calorie results never leave your device or get transmitted to our servers. No data is sent over the internet during calculation.</p>
+                <h4 className="font-semibold text-foreground">{t('privacy1Title')}</h4>
+                <p className="text-sm text-muted-foreground">{t('privacy1Text')}</p>
               </div>
             </div>
             <div className="flex gap-3">
               <div className="flex-none w-2 h-2 rounded-full bg-blue-500 mt-2"></div>
               <div>
-                <h4 className="font-semibold text-foreground">No Data Storage</h4>
-                <p className="text-sm text-muted-foreground">We don't store, log, or track any of your health information. There's no database of your calorie calculations, no analytics on your usage, and no way for us to access your measurements or results.</p>
+                <h4 className="font-semibold text-foreground">{t('privacy2Title')}</h4>
+                <p className="text-sm text-muted-foreground">{t('privacy2Text')}</p>
               </div>
             </div>
             <div className="flex gap-3">
               <div className="flex-none w-2 h-2 rounded-full bg-blue-500 mt-2"></div>
               <div>
-                <h4 className="font-semibold text-foreground">No Tracking or Cookies</h4>
-                <p className="text-sm text-muted-foreground">We don't use cookies, tracking pixels, or analytics to monitor your usage of the calorie calculator. Your browsing and health information remain completely private while using our tool.</p>
+                <h4 className="font-semibold text-foreground">{t('privacy3Title')}</h4>
+                <p className="text-sm text-muted-foreground">{t('privacy3Text')}</p>
               </div>
             </div>
           </div>
@@ -310,158 +313,62 @@ export default function CalorieCalculatorPage() {
       </div>
     ),
 
-    proTip: "Don't eat back all your exercise calories. Fitness trackers often overestimate burns. A safe bet is to eat back only 50% of tracked exercise calories if you are trying to lose weight.",
+    proTip: t('proTip'),
 
     faqs: [
-      {
-        question: "Which equation should I use?",
-        answer: "For most people, the Mifflin-St Jeor equation is the most accurate for estimating Basal Metabolic Rate (BMR). It's based on modern research and provides estimates within ±10-15% for the general population. If you are very lean and know your body fat percentage, the Katch-McArdle formula is superior as it accounts for lean body mass, providing more accurate results for muscular individuals."
-      },
-      {
-        question: "How accurate are these numbers?",
-        answer: "Calorie estimates are based on population averages and may vary by 10-15% for individuals due to genetics, metabolism, hormonal factors, and lifestyle. Use these numbers as a starting point and adjust based on your actual weight change over 2-3 weeks. If you're losing weight faster or slower than expected, adjust your calorie intake by 100-200 calories accordingly."
-      },
-      {
-        question: "What is a safe calorie deficit?",
-        answer: "A deficit of 500 calories per day typically results in 1 lb of weight loss per week (3500 calories = 1 lb of fat). For sustainable fat loss, aim for a 20-25% calorie deficit (400-600 calories below TDEE for most people). Avoid deficits larger than 1000 calories per day or eating below your BMR without medical supervision, as this can lead to muscle loss, metabolic slowdown, and nutritional deficiencies."
-      },
-      {
-        question: "Should I count macros?",
-        answer: "While calories determine weight change (eat fewer calories than you burn to lose weight), macros (protein, fats, carbs) determine body composition and how you feel. Prioritizing protein (0.8-1g per pound of body weight) is recommended for satiety, muscle retention during fat loss, and the thermic effect of food. Balanced macros support optimal energy, hormone production, and overall health."
-      },
-      {
-        question: "What if I stop losing weight?",
-        answer: "This is a weight loss plateau, which may be due to metabolic adaptation (body adapting to lower calories), water retention (especially if you're a woman or increased exercise), muscle gain (if you're strength training), or tracking errors. Try a diet break (eating at maintenance calories for a week), zigzag calorie cycling, or reassess your calorie intake and activity levels."
-      },
-      {
-        question: "Does muscle burn more calories than fat?",
-        answer: "Yes, muscle tissue is more metabolically active than fat tissue. Each pound of muscle burns approximately 6-7 calories per day at rest, while each pound of fat burns about 2 calories per day. Building muscle increases your Basal Metabolic Rate (BMR), allowing you to eat more calories while maintaining weight and making long-term weight management easier."
-      },
-      {
-        question: "How do I calculate calories in homemade food?",
-        answer: "Weigh raw ingredients using a food scale (most accurate), use a food database app or nutrition label to find calorie values, sum the calories of all ingredients, and divide by the number of servings to get calories per serving. Weighing ingredients is more accurate than using volume measurements (cups, tablespoons) for calorie tracking."
-      },
-      {
-        question: "What is 'Starvation Mode'?",
-        answer: "'Starvation mode' or metabolic adaptation is a real physiological response where the body slows down energy expenditure in response to severe calorie restriction. However, it's often exaggerated—moderate calorie deficits (20-25% below TDEE) don't cause severe metabolic slowdown. Extreme deficits, very low body fat, or prolonged restriction can cause significant metabolic adaptation requiring medical intervention."
-      },
-      {
-        question: "Can I spot reduce fat?",
-        answer: "No, you cannot target fat loss in specific areas (like belly fat or thigh fat) by diet or exercise alone. Fat loss occurs systematically across the entire body based on genetics, hormones, and other factors. Focus on overall body fat reduction through a caloric deficit, and your problem areas will eventually reduce as well. Spot training (targeted exercises) builds muscle but doesn't preferentially burn fat in that area."
-      },
-      {
-        question: "How often should I recalculate my calories?",
-        answer: "Recalculate your calorie needs every 10-15 lbs of weight change, as your smaller body will require fewer calories to maintain weight. As you lose weight, your BMR and TDEE decrease, so you'll need to adjust your calorie intake to continue losing weight or maintain your new weight. Regular recalculations ensure your calorie targets remain accurate for your current body size."
-      },
-      {
-        question: "What is BMR vs TDEE?",
-        answer: "BMR (Basal Metabolic Rate) is the number of calories your body burns at rest to maintain basic physiological functions (breathing, circulation, cell production). TDEE (Total Daily Energy Expenditure) is your total daily calorie burn including BMR, physical activity, thermic effect of food (10%), and non-exercise activity thermogenesis (NEAT). TDEE = BMR × Activity Multiplier, representing your actual daily calorie needs."
-      },
-      {
-        question: "What is the thermic effect of food (TEF)?",
-        answer: "The thermic effect of food (TEF) is the energy required to digest, absorb, and process nutrients, accounting for about 10% of your TDEE. Protein has the highest TEF (20-30% of its own energy), followed by carbs (5-15%), and fats (0-3%). This means high-protein diets burn more calories during digestion, contributing to fat loss and increased satiety."
-      },
-      {
-        question: "How many calories should I eat to gain muscle?",
-        answer: "To gain muscle (bulking), eat a moderate calorie surplus of 250-500 calories above your TDEE. This provides energy for muscle growth without excessive fat gain. Combined with progressive resistance training (3-4 times per week) and adequate protein (0.8-1g per pound of body weight), this surplus supports muscle hypertrophy while minimizing fat accumulation."
-      },
-      {
-        question: "Should I eat back exercise calories?",
-        answer: "It depends on your goal. For weight loss, don't eat back all your exercise calories—fitness trackers often overestimate burns. Eat back 50-75% of tracked exercise calories if you're very active or feel fatigued. For weight maintenance or muscle gain, eating back exercise calories helps maintain energy levels and supports recovery. Monitor your weight and adjust based on results."
-      },
-      {
-        question: "What is zigzag calorie cycling?",
-        answer: "Zigzag calorie cycling involves rotating between higher and lower calorie days throughout the week. High days (+200-300 calories) boost metabolism and fuel workouts, while low days (-200-300 calories) create a larger weekly deficit. This prevents metabolic adaptation, provides psychological flexibility, and can be more sustainable than constant restriction. It's effective for weight loss and maintenance."
-      },
-      {
-        question: "How do I know if I'm eating the right amount of calories?",
-        answer: "Track your weight over 2-3 weeks while maintaining consistent calorie intake. If you're losing weight (0.5-1 lb per week for fat loss goal), you're in a calorie deficit. If you're gaining weight (0.5-1 lb per week for muscle gain goal), you're in a calorie surplus. If weight is stable, you're at maintenance. Adjust calories by 100-200 based on results."
-      },
-      {
-        question: "Can I lose weight without counting calories?",
-        answer: "Yes, but calorie awareness helps ensure accuracy. You can lose weight through portion control, eating protein and vegetables first, reducing processed foods, staying active, and eating mindfully. However, counting calories provides precision and faster results. Many people find success with a combination: counting calories initially to understand portions, then transitioning to mindful eating."
-      },
-      {
-        question: "What happens if I eat below my BMR?",
-        answer: "Eating below your BMR (Basal Metabolic Rate) is not recommended without medical supervision. While you may lose weight faster initially, it can lead to muscle loss, metabolic slowdown, nutrient deficiencies, fatigue, hormonal imbalances, and reduced immune function. Aim for a calorie intake at or slightly above BMR with a moderate deficit (20-25% below TDEE) for sustainable fat loss."
-      },
-      {
-        question: "How do activity levels affect calorie needs?",
-        answer: "Activity levels significantly affect calorie needs through activity multipliers: Sedentary (BMR × 1.2), Lightly Active (BMR × 1.375), Moderately Active (BMR × 1.55), Very Active (BMR × 1.725), Extremely Active (BMR × 1.9). More active individuals burn more calories, requiring higher calorie intake for maintenance and allowing for more calories while still creating a deficit for weight loss."
-      },
-      {
-        question: "What is a diet break?",
-        answer: "A diet break is a period (typically 1-2 weeks) of eating at maintenance calories during a weight loss phase. It helps prevent metabolic adaptation, restores leptin levels (hunger hormone), provides psychological relief from restriction, and can help break through plateaus. After a diet break, return to your calorie deficit with renewed motivation and improved metabolism."
-      },
-      {
-        question: "How accurate are fitness trackers for calorie burn?",
-        answer: "Fitness trackers vary in accuracy, often overestimating calorie burn by 10-40%. Heart rate-based estimates are more accurate than step-based estimates. For weight loss, it's safer to eat back only 50-75% of tracked exercise calories to account for overestimation. Use fitness trackers as a general guide for activity trends rather than exact calorie burns."
-      },
-      {
-        question: "What is NEAT (Non-Exercise Activity Thermogenesis)?",
-        answer: "NEAT (Non-Exercise Activity Thermogenesis) is the energy burned through daily activities outside of formal exercise: walking, fidgeting, standing, housework, gardening, etc. NEAT can vary by 200-900 calories per day between individuals and can significantly impact weight management. Increasing NEAT (more walking, standing, daily movement) is an effective way to increase calorie burn without formal exercise."
-      },
-      {
-        question: "Can my metabolism slow down?",
-        answer: "Yes, metabolic adaptation (metabolism slowing down) can occur in response to prolonged calorie restriction, weight loss (smaller bodies burn fewer calories), decreased muscle mass, hormonal changes, or age-related factors. Prevent metabolic slowdown by maintaining muscle mass through resistance training, avoiding extreme deficits, including diet breaks, and gradually increasing calories as you approach your goal weight."
-      },
-      {
-        question: "How do I maintain weight after losing it?",
-        answer: "After weight loss, your new maintenance calories will be lower than before (smaller body burns fewer calories). Gradually increase calories from deficit to maintenance over 2-4 weeks (reverse dieting), continue resistance training to maintain muscle mass, prioritize protein and whole foods, monitor weight and adjust calories if needed, and be patient as your body adjusts to the new weight."
-      },
-      {
-        question: "What is reverse dieting?",
-        answer: "Reverse dieting is gradually increasing calorie intake after a dieting phase to help restore metabolism, improve hormonal function, and find your new maintenance calories. Increase calories by 50-100 per week over several weeks until you reach maintenance. This prevents rapid weight regain and helps your body adjust to higher calorie intake while maintaining your new weight."
-      },
-      {
-        question: "How do I calculate calories for weight gain?",
-        answer: "Calculate your TDEE (Total Daily Energy Expenditure) using the calculator, then add a moderate surplus of 250-500 calories per day. For muscle gain, combine this surplus with progressive resistance training (3-4 times per week), adequate protein (0.8-1g per pound), and proper recovery. Monitor weight gain (aim for 0.5-1 lb per week) and adjust calories if gaining too fast (mostly fat) or too slow (not enough energy for muscle growth)."
-      },
-      {
-        question: "What is the difference between calories and kilocalories?",
-        answer: "In nutrition, 'calorie' and 'kilocalorie' are used interchangeably—both refer to the same unit of energy (1000 calories = 1 kilocalorie). When you see 'calories' on food labels or nutrition information, it actually means kilocalories. One calorie (kilocalorie) is the energy needed to raise the temperature of one kilogram of water by one degree Celsius."
-      },
-      {
-        question: "How do hormones affect calorie needs?",
-        answer: "Hormones significantly affect metabolism and calorie needs. Thyroid hormones regulate metabolic rate, insulin affects energy storage, cortisol (stress hormone) can increase or decrease metabolism, sex hormones (testosterone, estrogen) influence muscle mass and fat storage, and leptin/ghrelin control hunger. Hormonal imbalances can affect calorie needs, making it important to address underlying health issues alongside calorie management."
-      },
-      {
-        question: "Can age affect my calorie needs?",
-        answer: "Yes, calorie needs decrease with age due to decreased muscle mass (sarcopenia), lower metabolic rate, reduced physical activity, hormonal changes, and changes in body composition. As you age, resistance training becomes increasingly important to maintain muscle mass and metabolic rate. Recalculate your calorie needs periodically, especially as you enter different life stages (30s, 40s, 50s, etc.)."
-      },
-      {
-        question: "Is our calorie calculator free to use?",
-        answer: "Yes, our calorie calculator is completely free with no charges, subscriptions, or registration required. You can calculate your calorie needs unlimited times, access all features (BMR, TDEE, weight management goals), and use the tool for personal, educational, or professional purposes without any cost."
-      },
-      {
-        question: "Is my calorie data stored or tracked?",
-        answer: "No, all calorie calculations happen directly in your browser. We never store, track, or transmit your weight, height, age, or calorie results. Your privacy is completely protected. The calculator works entirely client-side, meaning your health data never leaves your device."
-      },
-      {
-        question: "What makes our calorie calculator different from others?",
-        answer: "Our calculator provides comprehensive results including BMR (using multiple equations), TDEE (with accurate activity multipliers), calorie targets for weight loss/gain/maintenance, zigzag calorie cycling plans, and detailed explanations. It's completely free with no limitations, completely private (client-side only), supports multiple calculation methods, and works on all devices (mobile, tablet, desktop)."
-      }
+      { question: t('faq1Q'), answer: t('faq1A') },
+      { question: t('faq2Q'), answer: t('faq2A') },
+      { question: t('faq3Q'), answer: t('faq3A') },
+      { question: t('faq4Q'), answer: t('faq4A') },
+      { question: t('faq5Q'), answer: t('faq5A') },
+      { question: t('faq6Q'), answer: t('faq6A') },
+      { question: t('faq7Q'), answer: t('faq7A') },
+      { question: t('faq8Q'), answer: t('faq8A') },
+      { question: t('faq9Q'), answer: t('faq9A') },
+      { question: t('faq10Q'), answer: t('faq10A') },
+      { question: t('faq11Q'), answer: t('faq11A') },
+      { question: t('faq12Q'), answer: t('faq12A') },
+      { question: t('faq13Q'), answer: t('faq13A') },
+      { question: t('faq14Q'), answer: t('faq14A') },
+      { question: t('faq15Q'), answer: t('faq15A') },
+      { question: t('faq16Q'), answer: t('faq16A') },
+      { question: t('faq17Q'), answer: t('faq17A') },
+      { question: t('faq18Q'), answer: t('faq18A') },
+      { question: t('faq19Q'), answer: t('faq19A') },
+      { question: t('faq20Q'), answer: t('faq20A') },
+      { question: t('faq21Q'), answer: t('faq21A') },
+      { question: t('faq22Q'), answer: t('faq22A') },
+      { question: t('faq23Q'), answer: t('faq23A') },
+      { question: t('faq24Q'), answer: t('faq24A') },
+      { question: t('faq25Q'), answer: t('faq25A') },
+      { question: t('faq26Q'), answer: t('faq26A') },
+      { question: t('faq27Q'), answer: t('faq27A') },
+      { question: t('faq28Q'), answer: t('faq28A') },
+      { question: t('faq29Q'), answer: t('faq29A') },
+      { question: t('faq30Q'), answer: t('faq30A') },
+      { question: t('faq31Q'), answer: t('faq31A') },
+      { question: t('faq32Q'), answer: t('faq32A') }
     ],
 
     relatedTools: [
-      { name: "BMI Calculator", href: "/calculator/bmi-calculator" },
-      { name: "BMR Calculator", href: "/calculator/bmr-calculator" },
-      { name: "Body Fat Calculator", href: "/calculator/body-fat-calculator" }
+      { name: t('relatedTool1'), href: "/calculator/bmi-calculator" },
+      { name: t('relatedTool2'), href: "/calculator/bmr-calculator" },
+      { name: t('relatedTool3'), href: "/calculator/body-fat-calculator" }
     ]
   }
 
   return (
     <ToolPageLayout
       header={{
-        title: "Calorie Calculator - Advanced Daily Calorie Needs",
-        description: "Calculate your daily calorie needs with our advanced calculator. Get BMR, TDEE, weight management goals & personalized nutrition recommendations.",
+        title: t('headerTitle'),
+        description: t('headerDescription'),
         titleSize: "medium",
         descriptionSize: "small",
         color: "blue"
       }}
       breadcrumbs={[
-        { label: "Calculator", href: "/calculator" },
-        { label: "Calorie Calculator", href: "/calculator/calorie-calculator" }
+        { label: tNavigation('calculators'), href: "/calculator" },
+        { label: t('breadcrumbCalorie'), href: "/calculator/calorie-calculator" }
       ]}
       toolComponent={
         <div className="p-3 sm:p-4 md:p-5 rounded-lg bg-card border border-border shadow">
@@ -470,8 +377,8 @@ export default function CalorieCalculatorPage() {
       }
       toolContent={toolContent}
       expectedMetadata={{
-        title: "Calorie Calculator - Daily Calorie Needs",
-        description: "Calculate your daily calorie needs with our advanced calculator. Get BMR, TDEE, weight management goals & personalized nutrition recommendations.",
+        title: t('title'),
+        description: t('description'),
         path: "/calculator/calorie-calculator"
       }}
     />

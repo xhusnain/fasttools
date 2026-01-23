@@ -1,6 +1,7 @@
 "use client"
 
 import { useState, useEffect } from "react"
+import { useTranslations } from 'next-intl'
 import { GButton } from "@/ui/gbutton"
 import { GCard, GCardContent, GCardHeader, GCardTitle } from "@/ui/gcard"
 import { GInput } from "@/ui/ginput"
@@ -97,6 +98,7 @@ interface FoodItem {
 }
 
 export default function CalorieCalculator() {
+  const t = useTranslations('calorieCalculator')
   const [age, setAge] = useState("")
   const [gender, setGender] = useState<"male" | "female">("male")
   const [height, setHeight] = useState("")
@@ -112,16 +114,16 @@ export default function CalorieCalculator() {
 
 
   const commonFoods: FoodItem[] = [
-    { name: "Apple", calories: 59, serving: "1 (4 oz.)", category: "Fruit" },
-    { name: "Banana", calories: 151, serving: "1 (6 oz.)", category: "Fruit" },
-    { name: "Orange", calories: 53, serving: "1 (4 oz.)", category: "Fruit" },
-    { name: "Broccoli", calories: 45, serving: "1 cup", category: "Vegetable" },
-    { name: "Carrots", calories: 50, serving: "1 cup", category: "Vegetable" },
-    { name: "Chicken Breast", calories: 136, serving: "2 oz.", category: "Protein" },
-    { name: "Egg", calories: 78, serving: "1 large", category: "Protein" },
-    { name: "Rice", calories: 206, serving: "1 cup cooked", category: "Grain" },
-    { name: "Bread", calories: 75, serving: "1 slice", category: "Grain" },
-    { name: "Milk", calories: 102, serving: "1 cup", category: "Dairy" }
+    { name: t('componentFoodApple'), calories: 59, serving: t('componentFoodServing1'), category: t('componentFoodCategoryFruit') },
+    { name: t('componentFoodBanana'), calories: 151, serving: t('componentFoodServing2'), category: t('componentFoodCategoryFruit') },
+    { name: t('componentFoodOrange'), calories: 53, serving: t('componentFoodServing1'), category: t('componentFoodCategoryFruit') },
+    { name: t('componentFoodBroccoli'), calories: 45, serving: t('componentFoodServing3'), category: t('componentFoodCategoryVegetable') },
+    { name: t('componentFoodCarrots'), calories: 50, serving: t('componentFoodServing3'), category: t('componentFoodCategoryVegetable') },
+    { name: t('componentFoodChicken'), calories: 136, serving: t('componentFoodServing4'), category: t('componentFoodCategoryProtein') },
+    { name: t('componentFoodEgg'), calories: 78, serving: t('componentFoodServing5'), category: t('componentFoodCategoryProtein') },
+    { name: t('componentFoodRice'), calories: 206, serving: t('componentFoodServing6'), category: t('componentFoodCategoryGrain') },
+    { name: t('componentFoodBread'), calories: 75, serving: t('componentFoodServing7'), category: t('componentFoodCategoryGrain') },
+    { name: t('componentFoodMilk'), calories: 102, serving: t('componentFoodServing3'), category: t('componentFoodCategoryDairy') }
   ]
 
   const calculateCalories = () => {
@@ -171,13 +173,13 @@ export default function CalorieCalculator() {
         high: Math.round(tdee + 200),
         low: Math.round(tdee - 200),
         schedule: [
-          "Monday: High Calorie Day",
-          "Tuesday: Low Calorie Day",
-          "Wednesday: High Calorie Day",
-          "Thursday: Low Calorie Day",
-          "Friday: Low Calorie Day",
-          "Saturday: Low Calorie Day",
-          "Sunday: Low Calorie Day"
+          t('componentZigzagMonday'),
+          t('componentZigzagTuesday'),
+          t('componentZigzagWednesday'),
+          t('componentZigzagThursday'),
+          t('componentZigzagFriday'),
+          t('componentZigzagSaturday'),
+          t('componentZigzagSunday')
         ]
       }
 
@@ -185,10 +187,20 @@ export default function CalorieCalculator() {
       const recommendations = generateRecommendations(bmr, tdee, ageNum, gender)
       const mealPlans = generateMealPlans(tdee)
 
+      // Translate activity level name
+      const activityNameMap: Record<string, string> = {
+        'Sedentary': t('componentActivitySedentary'),
+        'Light Activity': t('componentActivityLight'),
+        'Moderate Activity': t('componentActivityModerate'),
+        'Very Active': t('componentActivityVery'),
+        'Extremely Active': t('componentActivityExtra')
+      }
+      const translatedActivityLevel = activity ? (activityNameMap[activity.name] || activity.name) : t('componentActivityModerate')
+
       const newResult: CalorieResult = {
         bmr: Math.round(bmr),
         tdee: Math.round(tdee),
-        activityLevel: activity?.name || "Moderate Activity",
+        activityLevel: translatedActivityLevel,
         weightLoss,
         weightGain,
         equation: equationName,
@@ -211,59 +223,59 @@ export default function CalorieCalculator() {
     const lifestyle: string[] = []
 
     // Nutrition recommendations
-    nutrition.push("Eat 5-6 small meals throughout the day to maintain metabolism")
-    nutrition.push("Include lean proteins (chicken, fish, beans) in every meal")
-    nutrition.push("Consume complex carbohydrates (oats, quinoa, sweet potatoes)")
-    nutrition.push("Stay hydrated with 8-10 glasses of water daily")
-    nutrition.push("Include healthy fats (avocado, nuts, olive oil)")
-    nutrition.push("Focus on whole, unprocessed foods for better satiety")
+    nutrition.push(t('componentRecNutrition1'))
+    nutrition.push(t('componentRecNutrition2'))
+    nutrition.push(t('componentRecNutrition3'))
+    nutrition.push(t('componentRecNutrition4'))
+    nutrition.push(t('componentRecNutrition5'))
+    nutrition.push(t('componentRecNutrition6'))
 
     // Exercise recommendations
-    exercise.push("Combine cardio and strength training for optimal results")
-    exercise.push("Aim for 150 minutes of moderate cardio per week")
-    exercise.push("Include 2-3 strength training sessions weekly")
-    exercise.push("Add high-intensity interval training (HIIT) 1-2 times/week")
-    exercise.push("Incorporate daily movement and walking")
-    exercise.push("Track your workouts to monitor calorie burn")
+    exercise.push(t('componentRecExercise1'))
+    exercise.push(t('componentRecExercise2'))
+    exercise.push(t('componentRecExercise3'))
+    exercise.push(t('componentRecExercise4'))
+    exercise.push(t('componentRecExercise5'))
+    exercise.push(t('componentRecExercise6'))
 
     // Lifestyle recommendations
-    lifestyle.push("Get 7-9 hours of quality sleep nightly")
-    lifestyle.push("Manage stress through meditation or yoga")
-    lifestyle.push("Avoid prolonged sitting - take breaks every hour")
-    lifestyle.push("Consider meal prep for consistent nutrition")
-    lifestyle.push("Track your progress with a food and exercise journal")
-    lifestyle.push("Plan your meals and snacks in advance")
+    lifestyle.push(t('componentRecLifestyle1'))
+    lifestyle.push(t('componentRecLifestyle2'))
+    lifestyle.push(t('componentRecLifestyle3'))
+    lifestyle.push(t('componentRecLifestyle4'))
+    lifestyle.push(t('componentRecLifestyle5'))
+    lifestyle.push(t('componentRecLifestyle6'))
 
     return { nutrition, exercise, lifestyle }
   }
 
   const generateMealPlans = (tdee: number) => {
     const breakfast = [
-      "Oatmeal with berries and nuts",
-      "Greek yogurt with granola",
-      "Whole grain toast with avocado",
-      "Smoothie with protein powder"
+      t('componentMeal1'),
+      t('componentMeal2'),
+      t('componentMeal3'),
+      t('componentMeal4')
     ]
 
     const lunch = [
-      "Grilled chicken salad",
-      "Quinoa bowl with vegetables",
-      "Turkey and vegetable wrap",
-      "Lentil soup with whole grain bread"
+      t('componentMeal5'),
+      t('componentMeal6'),
+      t('componentMeal7'),
+      t('componentMeal8')
     ]
 
     const dinner = [
-      "Baked salmon with sweet potato",
-      "Stir-fried vegetables with tofu",
-      "Grilled chicken with brown rice",
-      "Vegetable curry with quinoa"
+      t('componentMeal9'),
+      t('componentMeal10'),
+      t('componentMeal11'),
+      t('componentMeal12')
     ]
 
     const snacks = [
-      "Apple with almond butter",
-      "Greek yogurt with berries",
-      "Mixed nuts and dried fruit",
-      "Vegetable sticks with hummus"
+      t('componentMeal13'),
+      t('componentMeal14'),
+      t('componentMeal15'),
+      t('componentMeal16')
     ]
 
     return { breakfast, lunch, dinner, snacks }
@@ -283,21 +295,21 @@ export default function CalorieCalculator() {
 
   const copyResult = () => {
     if (result) {
-      const text = `Calorie Calculator Results:
-BMR: ${result.bmr} calories/day
-TDEE: ${result.tdee} calories/day
-Activity Level: ${result.activityLevel}
-Equation: ${result.equation}
+      const text = `${t('componentCopyTextBMR')}
+${t('componentCopyTextBMRValue')} ${result.bmr} ${t('componentCaloriesPerDay')}
+${t('componentCopyTextTDEEValue')} ${result.tdee} ${t('componentCaloriesPerDay')}
+${t('componentCopyTextActivityLevel')} ${result.activityLevel}
+${t('componentCopyTextEquation')} ${result.equation}
 
-Weight Loss Goals:
-Mild (0.5 lb/week): ${result.weightLoss.mild} calories/day
-Moderate (1 lb/week): ${result.weightLoss.moderate} calories/day
-Aggressive (1.5 lb/week): ${result.weightLoss.aggressive} calories/day
+${t('componentCopyTextWeightLoss')}
+${t('componentCopyTextMild')} ${result.weightLoss.mild} ${t('componentCaloriesPerDay')}
+${t('componentCopyTextModerate')} ${result.weightLoss.moderate} ${t('componentCaloriesPerDay')}
+${t('componentCopyTextAggressive')} ${result.weightLoss.aggressive} ${t('componentCaloriesPerDay')}
 
-Weight Gain Goals:
-Mild (0.5 lb/week): ${result.weightGain.mild} calories/day
-Moderate (1 lb/week): ${result.weightGain.moderate} calories/day
-Aggressive (1.5 lb/week): ${result.weightGain.aggressive} calories/day`
+${t('componentCopyTextWeightGain')}
+${t('componentCopyTextMild')} ${result.weightGain.mild} ${t('componentCaloriesPerDay')}
+${t('componentCopyTextModerate')} ${result.weightGain.moderate} ${t('componentCaloriesPerDay')}
+${t('componentCopyTextAggressive')} ${result.weightGain.aggressive} ${t('componentCaloriesPerDay')}`
       void navigator.clipboard.writeText(text)
     }
   }
@@ -317,34 +329,34 @@ Aggressive (1.5 lb/week): ${result.weightGain.aggressive} calories/day`
         <GCardHeader className="px-2 sm:px-3 md:px-4 pb-2">
           <GCardTitle className="flex items-center gap-1.5 sm:gap-2 text-foreground text-sm sm:text-base md:text-lg break-words">
             <Calculator className="h-3.5 w-3.5 sm:h-4 sm:w-4 md:h-5 md:w-5 text-foreground flex-shrink-0" />
-            <span className="break-words">Advanced Calorie Calculator</span>
+            <span className="break-words">{t('componentTitle')}</span>
           </GCardTitle>
         </GCardHeader>
         <GCardContent className="space-y-3 sm:space-y-4 px-2 sm:px-3 md:px-4">
           {/* Unit System Selection */}
           <div className="flex flex-col sm:flex-row gap-2 sm:gap-3 w-full overflow-hidden">
             <div className="flex-1 space-y-1.5 min-w-0 w-full sm:w-auto">
-              <GLabel className="text-heading-accent text-xs">Unit System</GLabel>
+              <GLabel className="text-heading-accent text-xs">{t('componentUnitSystem')}</GLabel>
               <GSelect value={unitSystem} onValueChange={(value: "metric" | "imperial") => setUnitSystem(value)}>
                 <GSelectTrigger className="border-border bg-card text-foreground w-full text-xs sm:text-sm h-9">
                   <GSelectValue />
                 </GSelectTrigger>
                 <GSelectContent>
-                  <GSelectItem value="metric">Metric (kg, cm)</GSelectItem>
-                  <GSelectItem value="imperial">Imperial (lbs, ft/in)</GSelectItem>
+                  <GSelectItem value="metric">{t('componentMetric')}</GSelectItem>
+                  <GSelectItem value="imperial">{t('componentImperial')}</GSelectItem>
                 </GSelectContent>
               </GSelect>
             </div>
             <div className="flex-1 space-y-1.5 min-w-0 w-full sm:w-auto">
-              <GLabel className="text-heading-accent text-xs">Calculation Method</GLabel>
+              <GLabel className="text-heading-accent text-xs">{t('componentCalculationMethod')}</GLabel>
               <GSelect value={equation} onValueChange={(value: "mifflin" | "harris" | "katch") => setEquation(value)}>
                 <GSelectTrigger className="border-border bg-card text-foreground w-full text-xs sm:text-sm h-9">
                   <GSelectValue />
                 </GSelectTrigger>
                 <GSelectContent>
-                  <GSelectItem value="mifflin">Mifflin-St Jeor (Most Accurate)</GSelectItem>
-                  <GSelectItem value="harris">Harris-Benedict (Classic)</GSelectItem>
-                  <GSelectItem value="katch">Katch-McArdle (Requires Body Fat %)</GSelectItem>
+                  <GSelectItem value="mifflin">{t('componentMifflin')}</GSelectItem>
+                  <GSelectItem value="harris">{t('componentHarris')}</GSelectItem>
+                  <GSelectItem value="katch">{t('componentKatch')}</GSelectItem>
                 </GSelectContent>
               </GSelect>
             </div>
@@ -353,7 +365,7 @@ Aggressive (1.5 lb/week): ${result.weightGain.aggressive} calories/day`
           {/* GInput Fields */}
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 sm:gap-3 w-full">
             <div className="space-y-1.5 w-full min-w-0">
-              <GLabel htmlFor="age" className="text-heading-accent text-xs">Age</GLabel>
+              <GLabel htmlFor="age" className="text-heading-accent text-xs">{t('componentAge')}</GLabel>
               <GInput
                 id="age"
                 type="number"
@@ -364,17 +376,17 @@ Aggressive (1.5 lb/week): ${result.weightGain.aggressive} calories/day`
                 max="80"
                 className="border-border bg-card text-foreground focus-visible:ring-primary focus:border-primary w-full text-xs sm:text-sm h-9"
               />
-              <p className="text-xs text-muted-foreground mt-0.5">ages 15 - 80</p>
+              <p className="text-xs text-muted-foreground mt-0.5">{t('componentAgeRange')}</p>
             </div>
             <div className="space-y-1.5 w-full min-w-0">
-              <GLabel className="text-heading-accent text-xs">Gender</GLabel>
+              <GLabel className="text-heading-accent text-xs">{t('componentGender')}</GLabel>
               <GSelect value={gender} onValueChange={(value: "male" | "female") => setGender(value)}>
                 <GSelectTrigger className="border-border bg-card text-foreground w-full text-xs sm:text-sm h-9">
                   <GSelectValue />
                 </GSelectTrigger>
                 <GSelectContent>
-                  <GSelectItem value="male">Male</GSelectItem>
-                  <GSelectItem value="female">Female</GSelectItem>
+                  <GSelectItem value="male">{t('componentMale')}</GSelectItem>
+                  <GSelectItem value="female">{t('componentFemale')}</GSelectItem>
                 </GSelectContent>
               </GSelect>
             </div>
@@ -382,7 +394,7 @@ Aggressive (1.5 lb/week): ${result.weightGain.aggressive} calories/day`
 
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 sm:gap-3 w-full">
             <div className="space-y-1.5 w-full min-w-0">
-              <GLabel htmlFor="height" className="text-heading-accent text-xs">Height</GLabel>
+              <GLabel htmlFor="height" className="text-heading-accent text-xs">{t('componentHeight')}</GLabel>
               <GInput
                 id="height"
                 type="number"
@@ -392,11 +404,11 @@ Aggressive (1.5 lb/week): ${result.weightGain.aggressive} calories/day`
                 className="border-border bg-card text-foreground focus-visible:ring-primary focus:border-primary w-full text-xs sm:text-sm h-9"
               />
               <p className="text-xs text-muted-foreground mt-0.5 break-words">
-                {unitSystem === "metric" ? "cm" : "ft (e.g., 5.9 for 5'9\")"}
+                {unitSystem === "metric" ? t('componentHeightMetric') : t('componentHeightImperial')}
               </p>
             </div>
             <div className="space-y-1.5 w-full min-w-0">
-              <GLabel htmlFor="weight" className="text-heading-accent text-xs">Weight</GLabel>
+              <GLabel htmlFor="weight" className="text-heading-accent text-xs">{t('componentWeight')}</GLabel>
               <GInput
                 id="weight"
                 type="number"
@@ -406,14 +418,14 @@ Aggressive (1.5 lb/week): ${result.weightGain.aggressive} calories/day`
                 className="border-border bg-card text-foreground focus-visible:ring-primary focus:border-primary w-full text-xs sm:text-sm h-9"
               />
               <p className="text-xs text-muted-foreground mt-0.5">
-                {unitSystem === "metric" ? "kg" : "lbs"}
+                {unitSystem === "metric" ? t('componentWeightMetric') : t('componentWeightImperial')}
               </p>
             </div>
           </div>
 
           {equation === "katch" && (
             <div className="space-y-1.5 w-full min-w-0">
-              <GLabel htmlFor="bodyFat" className="text-heading-accent text-xs">Body Fat Percentage</GLabel>
+              <GLabel htmlFor="bodyFat" className="text-heading-accent text-xs">{t('componentBodyFat')}</GLabel>
               <GInput
                 id="bodyFat"
                 type="number"
@@ -424,22 +436,40 @@ Aggressive (1.5 lb/week): ${result.weightGain.aggressive} calories/day`
                 max="50"
                 className="border-border bg-card text-foreground focus-visible:ring-primary focus:border-primary w-full text-xs sm:text-sm h-9"
               />
-              <p className="text-xs text-muted-foreground mt-0.5">Required for Katch-McArdle formula</p>
+              <p className="text-xs text-muted-foreground mt-0.5">{t('componentBodyFatRequired')}</p>
             </div>
           )}
 
           <div className="space-y-1.5 w-full min-w-0">
-            <GLabel className="text-heading-accent text-xs">Activity Level</GLabel>
+            <GLabel className="text-heading-accent text-xs">{t('componentActivityLevel')}</GLabel>
             <GSelect value={activityLevel} onValueChange={setActivityLevel}>
               <GSelectTrigger className="border-border bg-card text-foreground w-full text-xs sm:text-sm h-9">
                 <GSelectValue />
               </GSelectTrigger>
               <GSelectContent>
-                {activityLevels.map((level) => (
-                  <GSelectItem key={level.name} value={level.name.toLowerCase()}>
-                    {level.name}: {level.description}
-                  </GSelectItem>
-                ))}
+                {activityLevels.map((level) => {
+                  const activityNameMap: Record<string, string> = {
+                    'Sedentary': t('componentActivitySedentary'),
+                    'Light Activity': t('componentActivityLight'),
+                    'Moderate Activity': t('componentActivityModerate'),
+                    'Very Active': t('componentActivityVery'),
+                    'Extremely Active': t('componentActivityExtra')
+                  }
+                  const activityDescMap: Record<string, string> = {
+                    'Sedentary': t('componentActivitySedentaryDesc'),
+                    'Light Activity': t('componentActivityLightDesc'),
+                    'Moderate Activity': t('componentActivityModerateDesc'),
+                    'Very Active': t('componentActivityVeryDesc'),
+                    'Extremely Active': t('componentActivityExtraDesc')
+                  }
+                  const translatedName = activityNameMap[level.name] || level.name
+                  const translatedDesc = activityDescMap[level.name] || level.description
+                  return (
+                    <GSelectItem key={level.name} value={level.name.toLowerCase()}>
+                      {translatedName}: {translatedDesc}
+                    </GSelectItem>
+                  )
+                })}
               </GSelectContent>
             </GSelect>
           </div>
@@ -447,10 +477,10 @@ Aggressive (1.5 lb/week): ${result.weightGain.aggressive} calories/day`
           <div className="flex flex-col sm:flex-row gap-2 w-full pt-1">
             <GButton onClick={calculateCalories} className="flex-1 w-full sm:w-auto text-xs sm:text-sm h-9">
               <Calculator className="mr-1.5 h-3.5 w-3.5 sm:h-4 sm:w-4" />
-              Calculate Calories
+              {t('componentCalculate')}
             </GButton>
             <GButton variant="outline" onClick={clearAll} className="w-full sm:w-auto text-xs sm:text-sm h-9">
-              Clear All
+              {t('componentClear')}
             </GButton>
           </div>
         </GCardContent>
@@ -461,13 +491,13 @@ Aggressive (1.5 lb/week): ${result.weightGain.aggressive} calories/day`
         <GCardHeader className="px-2 sm:px-3 md:px-4 pb-2">
           <GCardTitle className="flex items-center gap-1.5 sm:gap-2 text-foreground text-sm sm:text-base md:text-lg break-words">
             <ForkKnife className="h-3.5 w-3.5 sm:h-4 sm:w-4 md:h-5 md:w-5 text-foreground flex-shrink-0" />
-            <span className="break-words">Food Energy Converter</span>
+            <span className="break-words">{t('componentFoodConverterTitle')}</span>
           </GCardTitle>
         </GCardHeader>
         <GCardContent className="space-y-3 px-2 sm:px-3 md:px-4">
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 sm:gap-3">
             <div className="space-y-1.5 w-full min-w-0">
-              <GLabel htmlFor="calories" className="text-heading-accent text-xs">Calories (kcal)</GLabel>
+              <GLabel htmlFor="calories" className="text-heading-accent text-xs">{t('componentCalories')}</GLabel>
               <GInput
                 id="calories"
                 type="number"
@@ -478,7 +508,7 @@ Aggressive (1.5 lb/week): ${result.weightGain.aggressive} calories/day`
               />
             </div>
             <div className="space-y-1.5 w-full min-w-0">
-              <GLabel htmlFor="kj" className="text-heading-accent text-xs">Kilojoules (kJ)</GLabel>
+              <GLabel htmlFor="kj" className="text-heading-accent text-xs">{t('componentKilojoules')}</GLabel>
               <GInput
                 id="kj"
                 type="number"
@@ -491,10 +521,10 @@ Aggressive (1.5 lb/week): ${result.weightGain.aggressive} calories/day`
           </div>
           <GButton onClick={convertCalories} className="w-full text-xs sm:text-sm h-9">
             <Calculator className="mr-1.5 h-3.5 w-3.5 sm:h-4 sm:w-4" />
-            Convert Energy Units
+            {t('componentConvert')}
           </GButton>
           <div className="text-xs sm:text-sm text-foreground text-center">
-            1 Calorie = 4.1868 Kilojoules
+            {t('componentConversionRate')}
           </div>
         </GCardContent>
       </GCard>
@@ -507,38 +537,38 @@ Aggressive (1.5 lb/week): ${result.weightGain.aggressive} calories/day`
             <GCardHeader className="px-2 sm:px-3 md:px-4 pb-2">
               <GCardTitle className="flex items-center gap-1.5 sm:gap-2 text-foreground text-sm sm:text-base md:text-lg">
                 <Flame className="h-3.5 w-3.5 sm:h-4 sm:w-4 md:h-5 md:w-5 text-foreground" />
-                Calorie Analysis Results
+                {t('componentResultsTitle')}
               </GCardTitle>
             </GCardHeader>
             <GCardContent className="space-y-3 px-2 sm:px-3 md:px-4">
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4">
                 <div className="space-y-1.5">
-                  <GLabel className="text-xs sm:text-sm font-medium text-foreground">Basal Metabolic Rate (BMR)</GLabel>
+                  <GLabel className="text-xs sm:text-sm font-medium text-foreground">{t('componentBMR')}</GLabel>
                   <div className="text-xl sm:text-2xl md:text-3xl font-bold text-foreground">
-                    {result.bmr.toLocaleString()} calories/day
+                    {result.bmr.toLocaleString()} {t('componentCaloriesPerDay')}
                   </div>
-                  <p className="text-xs sm:text-sm text-muted-foreground">Energy needed at rest</p>
+                  <p className="text-xs sm:text-sm text-muted-foreground">{t('componentBMRDesc')}</p>
                 </div>
                 <div className="space-y-1.5">
-                  <GLabel className="text-xs sm:text-sm font-medium text-foreground">Total Daily Energy Expenditure (TDEE)</GLabel>
+                  <GLabel className="text-xs sm:text-sm font-medium text-foreground">{t('componentTDEE')}</GLabel>
                   <div className="text-xl sm:text-2xl md:text-3xl font-bold text-foreground">
-                    {result.tdee.toLocaleString()} calories/day
+                    {result.tdee.toLocaleString()} {t('componentCaloriesPerDay')}
                   </div>
-                  <p className="text-xs sm:text-sm text-muted-foreground">With {result.activityLevel}</p>
+                  <p className="text-xs sm:text-sm text-muted-foreground">{t('componentTDEEDesc', { activityLevel: result.activityLevel })}</p>
                 </div>
               </div>
 
               <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 sm:gap-4 pt-3 border-t border-border">
                 <div className="text-center">
-                  <div className="text-xs sm:text-sm text-muted-foreground">Equation Used</div>
+                  <div className="text-xs sm:text-sm text-muted-foreground">{t('componentEquationUsed')}</div>
                   <div className="text-sm sm:text-base md:text-lg font-semibold text-heading-accent">{result.equation}</div>
                 </div>
                 <div className="text-center">
-                  <div className="text-xs sm:text-sm text-muted-foreground">Accuracy</div>
+                  <div className="text-xs sm:text-sm text-muted-foreground">{t('componentAccuracy')}</div>
                   <div className="text-sm sm:text-base md:text-lg font-semibold text-foreground">{result.accuracy}</div>
                 </div>
                 <div className="text-center">
-                  <div className="text-xs sm:text-sm text-muted-foreground">Activity Level</div>
+                  <div className="text-xs sm:text-sm text-muted-foreground">{t('componentActivityLevel')}</div>
                   <div className="text-sm sm:text-base md:text-lg font-semibold text-primary">{result.activityLevel}</div>
                 </div>
               </div>
@@ -546,7 +576,7 @@ Aggressive (1.5 lb/week): ${result.weightGain.aggressive} calories/day`
               <div className="flex gap-2 pt-2">
                 <GButton onClick={copyResult} variant="outline" size="sm" className="text-xs sm:text-sm h-8">
                   <Copy className="mr-1.5 h-3.5 w-3.5 sm:h-4 sm:w-4" />
-                  Copy Results
+                  {t('componentCopyResults')}
                 </GButton>
               </div>
             </GCardContent>
@@ -558,30 +588,30 @@ Aggressive (1.5 lb/week): ${result.weightGain.aggressive} calories/day`
               <GCardHeader className="px-2 sm:px-3 md:px-4 pb-2">
                 <GCardTitle className="flex items-center gap-1.5 sm:gap-2 text-foreground text-sm sm:text-base">
                   <TrendingUp className="h-3.5 w-3.5 sm:h-4 sm:w-4 md:h-5 md:w-5 text-foreground" />
-                  Weight Loss Goals
+                  {t('componentWeightLossTitle')}
                 </GCardTitle>
               </GCardHeader>
               <GCardContent className="space-y-2 px-2 sm:px-3 md:px-4">
                 <div className="flex justify-between items-center p-2 sm:p-2.5 bg-card border border-destructive/30 rounded-lg">
                   <div>
-                    <span className="font-medium text-foreground text-xs sm:text-sm">Mild Deficit</span>
+                    <span className="font-medium text-foreground text-xs sm:text-sm">{t('componentMildDeficit')}</span>
                     <p className="text-xs text-foreground">0.5 lb/week</p>
                   </div>
-                  <GBadge variant="destructive" className="bg-destructive/20 text-foreground text-xs">{result.weightLoss.mild.toLocaleString()} cal/day</GBadge>
+                  <GBadge variant="destructive" className="bg-destructive/20 text-foreground text-xs">{result.weightLoss.mild.toLocaleString()} {t('componentCalPerDay')}</GBadge>
                 </div>
                 <div className="flex justify-between items-center p-2 sm:p-2.5 bg-card border border-destructive/30 rounded-lg">
                   <div>
-                    <span className="font-medium text-foreground text-xs sm:text-sm">Moderate Deficit</span>
+                    <span className="font-medium text-foreground text-xs sm:text-sm">{t('componentModerateDeficit')}</span>
                     <p className="text-xs text-foreground">1 lb/week</p>
                   </div>
-                  <GBadge variant="destructive" className="bg-destructive/20 text-foreground text-xs">{result.weightLoss.moderate.toLocaleString()} cal/day</GBadge>
+                  <GBadge variant="destructive" className="bg-destructive/20 text-foreground text-xs">{result.weightLoss.moderate.toLocaleString()} {t('componentCalPerDay')}</GBadge>
                 </div>
                 <div className="flex justify-between items-center p-2 sm:p-2.5 bg-card border border-destructive/30 rounded-lg">
                   <div>
-                    <span className="font-medium text-foreground text-xs sm:text-sm">Aggressive Deficit</span>
+                    <span className="font-medium text-foreground text-xs sm:text-sm">{t('componentAggressiveDeficit')}</span>
                     <p className="text-xs text-foreground">1.5 lb/week</p>
                   </div>
-                  <GBadge variant="destructive" className="bg-destructive/20 text-foreground text-xs">{result.weightLoss.aggressive.toLocaleString()} cal/day</GBadge>
+                  <GBadge variant="destructive" className="bg-destructive/20 text-foreground text-xs">{result.weightLoss.aggressive.toLocaleString()} {t('componentCalPerDay')}</GBadge>
                 </div>
               </GCardContent>
             </GCard>
@@ -590,30 +620,30 @@ Aggressive (1.5 lb/week): ${result.weightGain.aggressive} calories/day`
               <GCardHeader className="px-2 sm:px-3 md:px-4 pb-2">
                 <GCardTitle className="flex items-center gap-1.5 sm:gap-2 text-foreground text-sm sm:text-base">
                   <Target className="h-3.5 w-3.5 sm:h-4 sm:w-4 md:h-5 md:w-5 text-foreground" />
-                  Weight Gain Goals
+                  {t('componentWeightGainTitle')}
                 </GCardTitle>
               </GCardHeader>
               <GCardContent className="space-y-2 px-2 sm:px-3 md:px-4">
                 <div className="flex justify-between items-center p-2 sm:p-2.5 bg-card border border-secondary-accent/30 rounded-lg">
                   <div>
-                    <span className="font-medium text-heading-accent text-xs sm:text-sm">Mild Surplus</span>
+                    <span className="font-medium text-heading-accent text-xs sm:text-sm">{t('componentMildSurplus')}</span>
                     <p className="text-xs text-foreground">0.5 lb/week</p>
                   </div>
-                  <GBadge variant="default" className="bg-secondary-accent/20 text-heading-accent text-xs">{result.weightGain.mild.toLocaleString()} cal/day</GBadge>
+                  <GBadge variant="default" className="bg-secondary-accent/20 text-heading-accent text-xs">{result.weightGain.mild.toLocaleString()} {t('componentCalPerDay')}</GBadge>
                 </div>
                 <div className="flex justify-between items-center p-2 sm:p-2.5 bg-card border border-secondary-accent/30 rounded-lg">
                   <div>
-                    <span className="font-medium text-heading-accent text-xs sm:text-sm">Moderate Surplus</span>
+                    <span className="font-medium text-heading-accent text-xs sm:text-sm">{t('componentModerateSurplus')}</span>
                     <p className="text-xs text-foreground">1 lb/week</p>
                   </div>
-                  <GBadge variant="default" className="bg-secondary-accent/20 text-heading-accent text-xs">{result.weightGain.moderate.toLocaleString()} cal/day</GBadge>
+                  <GBadge variant="default" className="bg-secondary-accent/20 text-heading-accent text-xs">{result.weightGain.moderate.toLocaleString()} {t('componentCalPerDay')}</GBadge>
                 </div>
                 <div className="flex justify-between items-center p-2 sm:p-2.5 bg-card border border-secondary-accent/30 rounded-lg">
                   <div>
-                    <span className="font-medium text-heading-accent text-xs sm:text-sm">Aggressive Surplus</span>
+                    <span className="font-medium text-heading-accent text-xs sm:text-sm">{t('componentAggressiveSurplus')}</span>
                     <p className="text-xs text-foreground">1.5 lb/week</p>
                   </div>
-                  <GBadge variant="default" className="bg-secondary-accent/20 text-heading-accent text-xs">{result.weightGain.aggressive.toLocaleString()} cal/day</GBadge>
+                  <GBadge variant="default" className="bg-secondary-accent/20 text-heading-accent text-xs">{result.weightGain.aggressive.toLocaleString()} {t('componentCalPerDay')}</GBadge>
                 </div>
               </GCardContent>
             </GCard>
@@ -624,24 +654,24 @@ Aggressive (1.5 lb/week): ${result.weightGain.aggressive} calories/day`
             <GCardHeader className="px-2 sm:px-3 md:px-4 pb-2">
               <GCardTitle className="flex items-center gap-1.5 sm:gap-2 text-foreground text-sm sm:text-base">
                 <BarChart3 className="h-3.5 w-3.5 sm:h-4 sm:w-4 md:h-5 md:w-5 text-foreground" />
-                Zigzag Calorie Cycling Plan
+                {t('componentZigzagTitle')}
               </GCardTitle>
             </GCardHeader>
             <GCardContent className="space-y-3 px-2 sm:px-3 md:px-4">
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 sm:gap-3">
                 <div className="p-2 sm:p-2.5 bg-card border border-accent/30 rounded-lg">
-                  <h3 className="font-semibold text-heading-accent mb-1 text-xs sm:text-sm">High Calorie Days</h3>
+                  <h3 className="font-semibold text-heading-accent mb-1 text-xs sm:text-sm">{t('componentZigzagHigh')}</h3>
                   <div className="text-lg sm:text-xl md:text-2xl font-bold text-foreground">{result.zigzagPlan.high.toLocaleString()} cal</div>
-                  <p className="text-xs text-foreground">2 days per week</p>
+                  <p className="text-xs text-foreground">{t('componentZigzagHighDesc')}</p>
                 </div>
                 <div className="p-2 sm:p-2.5 bg-card border border-primary/30 rounded-lg">
-                  <h3 className="font-semibold text-heading-accent mb-1 text-xs sm:text-sm">Low Calorie Days</h3>
+                  <h3 className="font-semibold text-heading-accent mb-1 text-xs sm:text-sm">{t('componentZigzagLow')}</h3>
                   <div className="text-lg sm:text-xl md:text-2xl font-bold text-foreground">{result.zigzagPlan.low.toLocaleString()} cal</div>
-                  <p className="text-xs text-foreground">5 days per week</p>
+                  <p className="text-xs text-foreground">{t('componentZigzagLowDesc')}</p>
                 </div>
               </div>
               <div>
-                <h3 className="font-semibold mb-1.5 text-heading-accent text-xs sm:text-sm">Weekly Schedule</h3>
+                <h3 className="font-semibold mb-1.5 text-heading-accent text-xs sm:text-sm">{t('componentZigzagSchedule')}</h3>
                 <div className="space-y-0.5">
                   {result.zigzagPlan.schedule.map((day, index) => (
                     <div key={index} className="text-xs sm:text-sm text-foreground">{day}</div>
@@ -656,13 +686,13 @@ Aggressive (1.5 lb/week): ${result.weightGain.aggressive} calories/day`
             <GCardHeader className="px-2 sm:px-3 md:px-4 pb-2">
               <GCardTitle className="flex items-center gap-1.5 sm:gap-2 text-foreground text-sm sm:text-base">
                 <ChefHat className="h-3.5 w-3.5 sm:h-4 sm:w-4 md:h-5 md:w-5 text-foreground" />
-                Sample Meal Plans
+                {t('componentMealPlansTitle')}
               </GCardTitle>
             </GCardHeader>
             <GCardContent className="px-2 sm:px-3 md:px-4">
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4">
                 <div>
-                  <h4 className="font-semibold mb-2 text-heading-accent text-xs sm:text-sm">Breakfast Options</h4>
+                  <h4 className="font-semibold mb-2 text-heading-accent text-xs sm:text-sm">{t('componentBreakfast')}</h4>
                   <ul className="space-y-1 text-xs">
                     {result.mealPlans.breakfast.map((meal, index) => (
                       <li key={index} className="flex items-start gap-1.5">
@@ -673,7 +703,7 @@ Aggressive (1.5 lb/week): ${result.weightGain.aggressive} calories/day`
                   </ul>
                 </div>
                 <div>
-                  <h4 className="font-semibold mb-2 text-heading-accent text-xs sm:text-sm">Lunch Options</h4>
+                  <h4 className="font-semibold mb-2 text-heading-accent text-xs sm:text-sm">{t('componentLunch')}</h4>
                   <ul className="space-y-1 text-xs">
                     {result.mealPlans.lunch.map((meal, index) => (
                       <li key={index} className="flex items-start gap-1.5">
@@ -684,7 +714,7 @@ Aggressive (1.5 lb/week): ${result.weightGain.aggressive} calories/day`
                   </ul>
                 </div>
                 <div>
-                  <h4 className="font-semibold mb-2 text-heading-accent text-xs sm:text-sm">Dinner Options</h4>
+                  <h4 className="font-semibold mb-2 text-heading-accent text-xs sm:text-sm">{t('componentDinner')}</h4>
                   <ul className="space-y-1 text-xs">
                     {result.mealPlans.dinner.map((meal, index) => (
                       <li key={index} className="flex items-start gap-1.5">
@@ -695,7 +725,7 @@ Aggressive (1.5 lb/week): ${result.weightGain.aggressive} calories/day`
                   </ul>
                 </div>
                 <div>
-                  <h4 className="font-semibold mb-2 text-heading-accent text-xs sm:text-sm">Snack Options</h4>
+                  <h4 className="font-semibold mb-2 text-heading-accent text-xs sm:text-sm">{t('componentSnacks')}</h4>
                   <ul className="space-y-1 text-xs">
                     {result.mealPlans.snacks.map((snack, index) => (
                       <li key={index} className="flex items-start gap-1.5">
@@ -714,13 +744,13 @@ Aggressive (1.5 lb/week): ${result.weightGain.aggressive} calories/day`
             <GCardHeader className="px-2 sm:px-3 md:px-4 pb-2">
               <GCardTitle className="flex items-center gap-1.5 sm:gap-2 text-foreground text-sm sm:text-base">
                 <Heart className="h-3.5 w-3.5 sm:h-4 sm:w-4 md:h-5 md:w-5 text-foreground" />
-                Personalized Recommendations
+                {t('componentRecommendationsTitle')}
               </GCardTitle>
             </GCardHeader>
             <GCardContent className="px-2 sm:px-3 md:px-4">
               <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-4">
                 <div>
-                  <h4 className="font-semibold mb-2 text-heading-accent text-xs sm:text-sm">Nutrition</h4>
+                  <h4 className="font-semibold mb-2 text-heading-accent text-xs sm:text-sm">{t('componentNutrition')}</h4>
                   <ul className="space-y-1 text-xs">
                     {result.recommendations.nutrition.map((rec, index) => (
                       <li key={index} className="flex items-start gap-1.5">
@@ -731,7 +761,7 @@ Aggressive (1.5 lb/week): ${result.weightGain.aggressive} calories/day`
                   </ul>
                 </div>
                 <div>
-                  <h4 className="font-semibold mb-2 text-heading-accent text-xs sm:text-sm">Exercise</h4>
+                  <h4 className="font-semibold mb-2 text-heading-accent text-xs sm:text-sm">{t('componentExercise')}</h4>
                   <ul className="space-y-1 text-xs">
                     {result.recommendations.exercise.map((rec, index) => (
                       <li key={index} className="flex items-start gap-1.5">
@@ -742,7 +772,7 @@ Aggressive (1.5 lb/week): ${result.weightGain.aggressive} calories/day`
                   </ul>
                 </div>
                 <div>
-                  <h4 className="font-semibold mb-2 text-heading-accent text-xs sm:text-sm">Lifestyle</h4>
+                  <h4 className="font-semibold mb-2 text-heading-accent text-xs sm:text-sm">{t('componentLifestyle')}</h4>
                   <ul className="space-y-1 text-xs">
                     {result.recommendations.lifestyle.map((rec, index) => (
                       <li key={index} className="flex items-start gap-1.5">
@@ -763,7 +793,7 @@ Aggressive (1.5 lb/week): ${result.weightGain.aggressive} calories/day`
         <GCardHeader className="px-2 sm:px-3 md:px-4 pb-2">
           <GCardTitle className="flex items-center gap-1.5 sm:gap-2 text-foreground text-sm sm:text-base">
             <Apple className="h-3.5 w-3.5 sm:h-4 sm:w-4 md:h-5 md:w-5 text-foreground" />
-            Common Foods & Calories
+            {t('componentCommonFoodsTitle')}
           </GCardTitle>
         </GCardHeader>
         <GCardContent className="px-2 sm:px-3 md:px-4">
@@ -787,7 +817,7 @@ Aggressive (1.5 lb/week): ${result.weightGain.aggressive} calories/day`
           <GCardHeader>
             <GCardTitle className="flex items-center gap-2 text-foreground">
               <Clock className="h-5 w-5 text-foreground" />
-              Recent Calculations
+              {t('componentHistoryTitle')}
             </GCardTitle>
           </GCardHeader>
           <GCardContent>
@@ -796,7 +826,7 @@ Aggressive (1.5 lb/week): ${result.weightGain.aggressive} calories/day`
                 <div key={index} className="flex items-center justify-between p-3 bg-card border border-border rounded-lg">
                   <div className="space-y-1">
                     <div className="font-medium text-foreground">
-                      BMR: {item.bmr.toLocaleString()} cal/day | TDEE: {item.tdee.toLocaleString()} cal/day
+                      {t('componentBMR')}: {item.bmr.toLocaleString()} {t('componentCalPerDay')} | {t('componentTDEE')}: {item.tdee.toLocaleString()} {t('componentCalPerDay')}
                     </div>
                     <div className="text-sm text-muted-foreground">
                       {item.equation} - {item.activityLevel}
@@ -808,7 +838,7 @@ Aggressive (1.5 lb/week): ${result.weightGain.aggressive} calories/day`
                     onClick={() => setResult(item)}
                     className="text-sm"
                   >
-                    View Details
+                    {t('componentViewDetails')}
                   </GButton>
                 </div>
               ))}
@@ -822,7 +852,7 @@ Aggressive (1.5 lb/week): ${result.weightGain.aggressive} calories/day`
         <GCardHeader className="px-2 sm:px-3 md:px-4 pb-2">
           <GCardTitle className="flex items-center gap-1.5 sm:gap-2 text-foreground text-sm sm:text-base">
             <Info className="h-3.5 w-3.5 sm:h-4 sm:w-4 md:h-5 md:w-5 text-foreground" />
-            Calorie Calculator Features
+            {t('componentFeaturesTitle')}
           </GCardTitle>
         </GCardHeader>
         <GCardContent className="space-y-2 px-2 sm:px-3 md:px-4">
@@ -831,10 +861,10 @@ Aggressive (1.5 lb/week): ${result.weightGain.aggressive} calories/day`
               <Info className="h-3 w-3 sm:h-3.5 sm:w-3.5 text-foreground mt-0.5 flex-shrink-0" />
               <div className="text-xs sm:text-sm">
                 <p className="font-medium text-foreground mb-1">
-                  Professional Calorie Analysis
+                  {t('componentFeaturesTitle')}
                 </p>
                 <p className="text-foreground">
-                  This calculator provides accurate calorie calculations using three different equations: Mifflin-St Jeor (most accurate), Harris-Benedict (classic), and Katch-McArdle (for lean individuals with known body fat percentage).
+                  {t('componentFeaturesDesc')}
                 </p>
               </div>
             </div>
@@ -842,16 +872,16 @@ Aggressive (1.5 lb/week): ${result.weightGain.aggressive} calories/day`
 
           <div className="text-xs sm:text-sm text-foreground space-y-1.5">
             <p>
-              <strong className="text-foreground">BMR:</strong> Basal Metabolic Rate - calories burned at rest for basic body functions.
+              <strong className="text-foreground">{t('componentBMR')}:</strong> {t('componentBMRDesc')}
             </p>
             <p>
-              <strong className="text-foreground">TDEE:</strong> Total Daily Energy Expenditure - total calories needed including activity.
+              <strong className="text-foreground">{t('componentTDEE')}:</strong> {t('componentTDEEDesc')}
             </p>
             <p>
-              <strong className="text-foreground">Weight Management:</strong> Calorie targets for safe weight loss or gain goals.
+              <strong className="text-foreground">{t('componentWeightLossTitle')}/{t('componentWeightGainTitle')}:</strong> {t('componentWeightManagementDesc')}
             </p>
             <p>
-              <strong className="text-foreground">Zigzag Cycling:</strong> Alternating high and low calorie days to prevent metabolic adaptation.
+              <strong className="text-foreground">{t('componentZigzagTitle')}:</strong> {t('componentZigzagDesc')}
             </p>
           </div>
         </GCardContent>
