@@ -1,6 +1,7 @@
 "use client"
 
 import { useState } from "react"
+import { useTranslations } from 'next-intl'
 import { GCard, GCardContent, GCardDescription, GCardHeader, GCardTitle } from "@/ui/gcard"
 import { GButton } from "@/ui/gbutton"
 import { GLabel } from "@/ui/glabel"
@@ -38,6 +39,7 @@ interface GPAPlanningResult {
 }
 
 export function GPACalculator() {
+  const t = useTranslations('gpaCalculator')
   const [courses, setCourses] = useState<Course[]>([
     { id: "1", name: "Math", credits: 3, grade: "A", points: 4.0 },
     { id: "2", name: "English", credits: 3, grade: "B+", points: 3.3 },
@@ -126,35 +128,35 @@ export function GPACalculator() {
       let academicStanding = ""
       let honorsEligibility = false
       if (gpa >= 3.7) {
-        academicStanding = "Dean's List / Magna Cum Laude"
+        academicStanding = t('componentAcademicStandingDeansList')
         honorsEligibility = true
       } else if (gpa >= 3.5) {
-        academicStanding = "Honors / Cum Laude"
+        academicStanding = t('componentAcademicStandingHonors')
         honorsEligibility = true
       } else if (gpa >= 3.0) {
-        academicStanding = "Good Standing"
+        academicStanding = t('componentAcademicStandingGood')
       } else if (gpa >= 2.0) {
-        academicStanding = "Academic Probation"
+        academicStanding = t('componentAcademicStandingProbation')
       } else {
-        academicStanding = "Academic Warning"
+        academicStanding = t('componentAcademicStandingWarning')
       }
 
       const improvementSuggestions: string[] = []
       if (gpa < 3.0) {
-        improvementSuggestions.push("Focus on improving study habits and time management")
-        improvementSuggestions.push("Consider tutoring or study groups for challenging subjects")
-        improvementSuggestions.push("Meet with academic advisors to discuss course selection")
+        improvementSuggestions.push(t('componentSuggestion1'))
+        improvementSuggestions.push(t('componentSuggestion2'))
+        improvementSuggestions.push(t('componentSuggestion3'))
       }
       if (gradeDistribution.some(g => g.grade === "F" || g.grade === "D")) {
-        improvementSuggestions.push("Retake courses with failing or low grades if possible")
+        improvementSuggestions.push(t('componentSuggestion4'))
       }
       if (gpa >= 3.5) {
-        improvementSuggestions.push("Consider taking honors or advanced courses")
-        improvementSuggestions.push("Explore research opportunities or internships")
+        improvementSuggestions.push(t('componentSuggestion5'))
+        improvementSuggestions.push(t('componentSuggestion6'))
       }
 
       const semesterBreakdown = [
-        { semester: "Current", gpa: gpa, credits: totalCredits }
+        { semester: t('componentSemesterCurrent'), gpa: gpa, credits: totalCredits }
       ]
 
       setResult({
@@ -189,15 +191,15 @@ export function GPACalculator() {
     const recommendations: string[] = []
 
     if (requiredGPA > 4.0) {
-      recommendations.push("Target GPA is not achievable with current constraints")
-      recommendations.push("Consider taking more additional credits to lower the required GPA")
+      recommendations.push(t('componentPlanningSuggestion1'))
+      recommendations.push(t('componentPlanningSuggestion2'))
     } else if (requiredGPA > 3.5) {
-      recommendations.push("High performance required - focus on study strategies")
-      recommendations.push("Consider taking easier courses to balance workload")
+      recommendations.push(t('componentPlanningSuggestion3'))
+      recommendations.push(t('componentPlanningSuggestion4'))
     } else if (requiredGPA > 3.0) {
-      recommendations.push("Moderate effort required - maintain consistent study habits")
+      recommendations.push(t('componentPlanningSuggestion5'))
     } else {
-      recommendations.push("Target is easily achievable with current performance level")
+      recommendations.push(t('componentPlanningSuggestion6'))
     }
 
     setPlanningResult({
@@ -213,15 +215,15 @@ export function GPACalculator() {
 
   const copyResult = () => {
     if (!result) return
-    const text = `GPA Calculator Results
-Current GPA: ${result.gpa}
-Total Credits: ${result.totalCredits}
-Total Points: ${result.totalPoints}
-Academic Standing: ${result.academicStanding}
-${result.honorsEligibility ? 'Honors Eligible: Yes' : ''}
+    const text = `${t('componentCopyTextResults')}
+${t('componentCopyTextCurrentGPA')} ${result.gpa}
+${t('componentCopyTextTotalCredits')} ${result.totalCredits}
+${t('componentCopyTextTotalPoints')} ${result.totalPoints}
+${t('componentCopyTextAcademicStanding')} ${result.academicStanding}
+${result.honorsEligibility ? `${t('componentCopyTextHonorsEligible')} ${t('componentYes')}` : ''}
 
-Course Breakdown:
-${result.courses.map(course => `${course.name}: ${course.grade} (${course.credits} credits)`).join('\n')}`
+${t('componentCopyTextCourseBreakdown')}
+${result.courses.map(course => `${course.name}: ${course.grade} (${course.credits} ${t('componentCopyTextCredits')})`).join('\n')}`
     void navigator.clipboard.writeText(text)
     setCopied(true)
     setTimeout(() => setCopied(false), 2000)
@@ -236,10 +238,10 @@ ${result.courses.map(course => `${course.name}: ${course.grade} (${course.credit
             <div className="p-1 bg-primary/10 rounded">
               <GraduationCap className="h-3.5 w-3.5 text-foreground" />
             </div>
-            GPA Calculator
+            {t('componentTitle')}
           </GCardTitle>
           <GCardDescription className="text-xs text-muted-foreground">
-            Calculate your Grade Point Average with comprehensive analysis
+            {t('componentDescription')}
           </GCardDescription>
         </GCardHeader>
         <GCardContent className="space-y-4 px-3 sm:px-6">
@@ -247,17 +249,17 @@ ${result.courses.map(course => `${course.name}: ${course.grade} (${course.credit
           <div className="space-y-1">
             <GLabel htmlFor="grading-system" className="text-[11px] font-medium flex items-center gap-1 text-heading-accent">
               <Settings className="h-2.5 w-2.5 text-heading-accent" />
-              Grading System
+              {t('componentGradingSystem')}
             </GLabel>
             <GSelect value={gradingSystem} onValueChange={setGradingSystem}>
               <GSelectTrigger className="h-8 text-xs border-border bg-background text-foreground">
-                <GSelectValue placeholder="GSelect grading system" />
+                <GSelectValue placeholder={t('componentGradingSystemPlaceholder')} />
               </GSelectTrigger>
               <GSelectContent>
-                <GSelectItem value="4.0">4.0 Scale (US Standard)</GSelectItem>
-                <GSelectItem value="4.3">4.3 Scale (A+ = 4.3)</GSelectItem>
-                <GSelectItem value="5.0">5.0 Scale (Weighted)</GSelectItem>
-                <GSelectItem value="100">Percentage Scale</GSelectItem>
+                <GSelectItem value="4.0">{t('componentScale40')}</GSelectItem>
+                <GSelectItem value="4.3">{t('componentScale43')}</GSelectItem>
+                <GSelectItem value="5.0">{t('componentScale50')}</GSelectItem>
+                <GSelectItem value="100">{t('componentScale100')}</GSelectItem>
               </GSelectContent>
             </GSelect>
           </div>
@@ -267,11 +269,11 @@ ${result.courses.map(course => `${course.name}: ${course.grade} (${course.credit
             <div className="flex items-center justify-between">
               <GLabel className="text-[11px] font-medium flex items-center gap-1 text-heading-accent">
                 <BookOpen className="h-2.5 w-2.5 text-heading-accent" />
-                Courses
+                {t('componentCourses')}
               </GLabel>
               <GButton onClick={addCourse} size="sm" className="h-7 text-xs px-2 bg-primary hover:bg-primary/90 text-primary-foreground">
                 <Plus className="h-3 w-3 mr-1" />
-                Add
+                {t('componentAdd')}
               </GButton>
             </div>
 
@@ -279,16 +281,16 @@ ${result.courses.map(course => `${course.name}: ${course.grade} (${course.credit
               {courses.map((course, index) => (
                 <div key={course.id} className="grid grid-cols-1 sm:grid-cols-4 gap-2 p-2 bg-card rounded-lg border border-border">
                   <div className="space-y-1">
-                    <GLabel className="text-[10px] text-muted-foreground">Course Name</GLabel>
+                    <GLabel className="text-[10px] text-muted-foreground">{t('componentCourseName')}</GLabel>
                     <GInput
                       value={course.name}
                       onChange={(e) => updateCourse(course.id, 'name', e.target.value)}
-                      placeholder="Mathematics"
+                      placeholder={t('componentCourseNamePlaceholder')}
                       className="h-7 text-xs border-border bg-background text-foreground focus-visible:ring-primary focus:border-primary"
                     />
                   </div>
                   <div className="space-y-1">
-                    <GLabel className="text-[10px] text-muted-foreground">Credits</GLabel>
+                    <GLabel className="text-[10px] text-muted-foreground">{t('componentCredits')}</GLabel>
                     <GInput
                       type="number"
                       value={course.credits}
@@ -299,7 +301,7 @@ ${result.courses.map(course => `${course.name}: ${course.grade} (${course.credit
                     />
                   </div>
                   <div className="space-y-1">
-                    <GLabel className="text-[10px] text-muted-foreground">Grade</GLabel>
+                    <GLabel className="text-[10px] text-muted-foreground">{t('componentGrade')}</GLabel>
                     <GSelect value={course.grade} onValueChange={(value) => updateCourse(course.id, 'grade', value)}>
                       <GSelectTrigger className="h-7 text-xs border-border bg-background text-foreground">
                         <GSelectValue />
@@ -348,11 +350,11 @@ ${result.courses.map(course => `${course.name}: ${course.grade} (${course.credit
             isLoading={isCalculating}
           >
             {isCalculating ? (
-              <span>Calculating...</span>
+              <span>{t('componentCalculating')}</span>
             ) : (
               <>
                 <Calculator className="mr-1 h-3 w-3" />
-                <span>Calculate GPA</span>
+                <span>{t('componentCalculateGPA')}</span>
               </>
             )}
           </GButton>
@@ -364,7 +366,7 @@ ${result.courses.map(course => `${course.name}: ${course.grade} (${course.credit
             className="w-full h-9 text-xs font-medium border-border hover:bg-secondary text-heading-accent bg-card transition-all duration-300"
           >
             <Target className="mr-1 h-3 w-3" />
-            <span>{showGPAPlanner ? "Hide GPA Planner" : "Plan Your GPA"}</span>
+            <span>{showGPAPlanner ? t('componentHideGPAPlanner') : t('componentPlanYourGPA')}</span>
           </GButton>
         </GCardContent>
       </GCard>
@@ -377,16 +379,16 @@ ${result.courses.map(course => `${course.name}: ${course.grade} (${course.credit
               <div className="p-1 bg-primary/10 rounded">
                 <Target className="h-3.5 w-3.5 text-foreground" />
               </div>
-              GPA Planning Calculator
+              {t('componentGPAPlanningTitle')}
             </GCardTitle>
             <GCardDescription className="text-xs text-muted-foreground">
-              Determine minimum GPA required to reach your target
+              {t('componentGPAPlanningDesc')}
             </GCardDescription>
           </GCardHeader>
           <GCardContent className="space-y-4 px-3 sm:px-6">
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
               <div className="space-y-1">
-                <GLabel htmlFor="current-gpa" className="text-[11px] font-medium text-heading-accent">Current GPA</GLabel>
+                <GLabel htmlFor="current-gpa" className="text-[11px] font-medium text-heading-accent">{t('componentCurrentGPA')}</GLabel>
                 <GInput
                   id="current-gpa"
                   type="number"
@@ -398,7 +400,7 @@ ${result.courses.map(course => `${course.name}: ${course.grade} (${course.credit
                 />
               </div>
               <div className="space-y-1">
-                <GLabel htmlFor="target-gpa" className="text-[11px] font-medium text-heading-accent">Target GPA</GLabel>
+                <GLabel htmlFor="target-gpa" className="text-[11px] font-medium text-heading-accent">{t('componentTargetGPA')}</GLabel>
                 <GInput
                   id="target-gpa"
                   type="number"
@@ -410,7 +412,7 @@ ${result.courses.map(course => `${course.name}: ${course.grade} (${course.credit
                 />
               </div>
               <div className="space-y-1">
-                <GLabel htmlFor="current-credits" className="text-[11px] font-medium text-heading-accent">Current Credits</GLabel>
+                <GLabel htmlFor="current-credits" className="text-[11px] font-medium text-heading-accent">{t('componentCurrentCredits')}</GLabel>
                 <GInput
                   id="current-credits"
                   type="number"
@@ -421,7 +423,7 @@ ${result.courses.map(course => `${course.name}: ${course.grade} (${course.credit
                 />
               </div>
               <div className="space-y-1">
-                <GLabel htmlFor="additional-credits" className="text-[11px] font-medium text-heading-accent">Additional Credits</GLabel>
+                <GLabel htmlFor="additional-credits" className="text-[11px] font-medium text-heading-accent">{t('componentAdditionalCredits')}</GLabel>
                 <GInput
                   id="additional-credits"
                   type="number"
@@ -439,27 +441,27 @@ ${result.courses.map(course => `${course.name}: ${course.grade} (${course.credit
               disabled={!currentGPA || !targetGPA || !currentCredits || !additionalCredits}
             >
               <Target className="mr-1 h-3 w-3" />
-              Calculate Required GPA
+              {t('componentCalculateRequiredGPA')}
             </GButton>
 
             {planningResult && (
               <div className="p-3 bg-card rounded-lg border border-border">
-                <h3 className="font-semibold text-heading-accent mb-2 text-sm">Planning Results</h3>
+                <h3 className="font-semibold text-heading-accent mb-2 text-sm">{t('componentPlanningResults')}</h3>
                 <div className="space-y-1.5 text-xs">
                   <div className="flex justify-between">
-                    <span className="text-muted-foreground">Required GPA:</span>
+                    <span className="text-muted-foreground">{t('componentRequiredGPA')}</span>
                     <span className="font-semibold text-foreground">{planningResult.requiredGPA}</span>
                   </div>
                   <div className="flex justify-between">
-                    <span className="text-muted-foreground">Achievable:</span>
+                    <span className="text-muted-foreground">{t('componentAchievable')}</span>
                     <span className={`font-semibold ${planningResult.achievable ? 'text-heading-accent' : 'text-foreground'}`}>
-                      {planningResult.achievable ? 'Yes' : 'No'}
+                      {planningResult.achievable ? t('componentYes') : t('componentNo')}
                     </span>
                   </div>
                 </div>
                 {planningResult.recommendations.length > 0 && (
                   <div className="mt-2">
-                    <h4 className="font-medium text-heading-accent mb-1 text-xs">Recommendations:</h4>
+                    <h4 className="font-medium text-heading-accent mb-1 text-xs">{t('componentRecommendations')}</h4>
                     <ul className="text-[10px] text-muted-foreground space-y-0.5">
                       {planningResult.recommendations.map((rec, index) => (
                         <li key={index}>• {rec}</li>
@@ -481,10 +483,10 @@ ${result.courses.map(course => `${course.name}: ${course.grade} (${course.credit
               <div className="p-1 sm:p-1.5 bg-primary/10 rounded-lg">
                 <Award className="h-3.5 sm:h-4 w-3.5 sm:w-4 text-foreground" />
               </div>
-              GPA Results & Analysis
+              {t('componentResultsTitle')}
             </GCardTitle>
             <GCardDescription className="text-xs sm:text-sm text-muted-foreground">
-              Comprehensive GPA analysis with academic standing and improvement suggestions
+              {t('componentResultsDesc')}
             </GCardDescription>
           </GCardHeader>
           <GCardContent className="space-y-4 px-3 sm:px-6">
@@ -494,7 +496,7 @@ ${result.courses.map(course => `${course.name}: ${course.grade} (${course.credit
                 {result.gpa}
               </div>
               <div className="text-xs sm:text-sm text-muted-foreground">
-                Grade Point Average
+                {t('componentGradePointAverage')}
               </div>
               <div className="text-sm font-semibold text-heading-accent mt-1">
                 {result.academicStanding}
@@ -505,20 +507,20 @@ ${result.courses.map(course => `${course.name}: ${course.grade} (${course.credit
             <div className="space-y-2 p-3 bg-card rounded-lg border border-border">
               <div className="text-sm font-semibold mb-2 text-heading-accent flex items-center gap-2">
                 <BarChart3 className="h-3.5 w-3.5" />
-                Academic Breakdown
+                {t('componentAcademicBreakdown')}
               </div>
               <div className="grid grid-cols-1 sm:grid-cols-3 gap-2">
                 <div className="flex flex-col sm:flex-row sm:justify-between sm:items-center p-2 bg-card rounded-lg border border-border gap-1">
-                  <span className="text-xs text-foreground">Total Credits</span>
+                  <span className="text-xs text-foreground">{t('componentTotalCredits')}</span>
                   <span className="font-semibold text-xs text-foreground">{result.totalCredits}</span>
                 </div>
                 <div className="flex flex-col sm:flex-row sm:justify-between sm:items-center p-2 bg-card rounded-lg border border-border gap-1">
-                  <span className="text-xs text-heading-accent">Total Points</span>
+                  <span className="text-xs text-heading-accent">{t('componentTotalPoints')}</span>
                   <span className="font-semibold text-xs text-heading-accent">{result.totalPoints}</span>
                 </div>
                 <div className="flex flex-col sm:flex-row sm:justify-between sm:items-center p-2 bg-card rounded-lg border border-border gap-1">
-                  <span className="text-xs text-foreground">Honors Eligible</span>
-                  <span className="font-semibold text-xs text-foreground">{result.honorsEligibility ? 'Yes' : 'No'}</span>
+                  <span className="text-xs text-foreground">{t('componentHonorsEligible')}</span>
+                  <span className="font-semibold text-xs text-foreground">{result.honorsEligibility ? t('componentYes') : t('componentNo')}</span>
                 </div>
               </div>
             </div>
@@ -528,7 +530,7 @@ ${result.courses.map(course => `${course.name}: ${course.grade} (${course.credit
               <div className="p-3 bg-card rounded-xl border border-border">
                 <div className="text-xs font-semibold text-heading-accent mb-2 flex items-center gap-1.5">
                   <PieChart className="h-3.5 w-3.5" />
-                  Grade Distribution
+                  {t('componentGradeDistribution')}
                 </div>
                 <div className="space-y-1.5">
                   {result.gradeDistribution.map((grade, index) => (
@@ -548,7 +550,7 @@ ${result.courses.map(course => `${course.name}: ${course.grade} (${course.credit
               <div className="p-3 bg-card rounded-xl border border-border">
                 <div className="text-xs font-semibold text-heading-accent mb-2 flex items-center gap-1.5">
                   <Lightbulb className="h-3.5 w-3.5" />
-                  Improvement Suggestions
+                  {t('componentImprovementSuggestions')}
                 </div>
                 <ul className="space-y-1.5 text-xs text-muted-foreground">
                   {result.improvementSuggestions.map((suggestion, index) => (
@@ -571,12 +573,12 @@ ${result.courses.map(course => `${course.name}: ${course.grade} (${course.credit
                 {copied ? (
                   <>
                     <Check className="mr-1.5 h-3.5 w-3.5" />
-                    <span>Copied!</span>
+                    <span>{t('componentCopied')}</span>
                   </>
                 ) : (
                   <>
                     <Copy className="mr-1.5 h-3.5 w-3.5" />
-                    <span>Copy Results</span>
+                    <span>{t('componentCopyResults')}</span>
                   </>
                 )}
               </GButton>
