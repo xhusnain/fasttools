@@ -1154,11 +1154,7 @@ export default function Home() {
             <div className="hidden 2xl:block absolute -left-80 top-0 shrink-0">
               <ClickFortifyAd className="shadow-primary/10" />
             </div>
-
-            {/* Right Ad - Desktop Only */}
-            <div className="hidden 2xl:block absolute -right-80 top-0 shrink-0">
-              <ClickFortifyAd className="shadow-primary/10" />
-            </div>
+            {/* Right Ad Removed */}
           </div>
 
           {/* Subheading */}

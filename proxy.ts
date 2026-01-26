@@ -67,17 +67,16 @@ export default function proxy(request: NextRequest) {
         return corsResponse
     }
 
-    if (env.isProduction) {
-        const proto = request.headers.get('x-forwarded-proto')
-        const isHttp = proto === 'http'
-        const isNonWww = hostname === 'fasttools.store'
+    const proto = request.headers.get('x-forwarded-proto')
+    const isHttp = proto === 'http'
+    const isNonWww = hostname === 'fasttools.store'
 
-        if (isHttp || isNonWww) {
-            const redirectUrl = request.nextUrl.clone()
-            redirectUrl.protocol = 'https:'
-            redirectUrl.hostname = 'www.fasttools.store'
-            return NextResponse.redirect(redirectUrl, 301)
-        }
+    // Redirect if we are on the non-www production domain OR if it's HTTP in production
+    if (isNonWww || (env.isProduction && isHttp)) {
+        const redirectUrl = request.nextUrl.clone()
+        redirectUrl.protocol = 'https:'
+        redirectUrl.hostname = 'www.fasttools.store'
+        return NextResponse.redirect(redirectUrl, 301)
     }
 
     if (isGoneUrl(pathname)) {
