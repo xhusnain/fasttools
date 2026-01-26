@@ -11,6 +11,16 @@ const toolConfig = createToolConfig({
     metaDescription: "Generate secure BIP39 mnemonic phrases and seed codes online. Convert entropy to mnemonic and verify recovery phrases. 100% client-side security.",
     path: "/crypto-tools/bip39-generator",
     heroImage: "/images/bip39-generator-hero.png",
+    schemaOptions: {
+        applicationCategory: "FinanceApplication",
+        operatingSystem: "Any",
+        featureList: [
+            "Mnemonic Generation",
+            "Entropy Visualization",
+            "Multi-language Support",
+            "Checksum Validation"
+        ]
+    },
 
     header: {
         title: "BIP39 Passphrase Generator - Ultimate Seed Tool",
@@ -125,29 +135,11 @@ export const metadata: Metadata = {
 }
 
 export default function Bip39GeneratorPage() {
-    const jsonLd = {
-        "@context": "https://schema.org",
-        "@type": "SoftwareApplication",
-        name: "BIP39 Passphrase Generator",
-        applicationCategory: "FinanceApplication",
-        operatingSystem: "Any",
-        offers: {
-            "@type": "Offer",
-            price: "0",
-            priceCurrency: "USD",
-        },
-        description: "Secure tool to generate and verify BIP39 mnemonic phrases for cryptocurrency wallets.",
-        featureList: "Mnemonic Generation, Entropy Visualization, Multi-language Support, Checksum Validation",
-    }
-
     return (
-        <>
-            <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
-            <ToolPageLayout
-                {...toolConfig.getLayoutProps(
-                    <Bip39GeneratorTool />
-                )}
-            />
-        </>
+        <ToolPageLayout
+            {...toolConfig.getLayoutProps(
+                <Bip39GeneratorTool />
+            )}
+        />
     )
 }

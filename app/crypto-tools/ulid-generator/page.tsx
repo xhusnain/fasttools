@@ -302,29 +302,13 @@ const toolConfig = createToolConfig({
 export const metadata: Metadata = toolConfig.metadata
 
 export default function ULIDGeneratorPage() {
-    const jsonLd = {
-        "@context": "https://schema.org",
-        "@type": "WebApplication",
-        "name": "ULID Generator - Sortable Unique Identifiers",
-        "applicationCategory": "DeveloperApplication",
-        "description": "Premium online tool to generate Universally Unique Lexicographically Sortable Identifiers (ULID) with bulk generation and JSON support.",
-        "operatingSystem": "Any"
-    }
-
     return (
         <ToolPageLayout
             {...toolConfig.getLayoutProps(
-                <>
-                    <script
-                        type="application/ld+json"
-                        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
-                    />
-                    <div className="p-3 sm:p-4 md:p-5 rounded-xl bg-card border border-border shadow-2xl relative overflow-hidden group">
-                        {/* Interactive glow effect */}
-                        <div className="absolute top-0 right-0 w-64 h-64 bg-primary/5 rounded-full blur-3xl -mr-32 -mt-32 transition-opacity group-hover:opacity-100 opacity-50" />
-                        <ULIDGenerator />
-                    </div>
-                </>
+                <div className="p-3 sm:p-4 md:p-5 rounded-xl bg-card border border-border shadow-2xl relative overflow-hidden group">
+                    <div className="absolute top-0 right-0 w-64 h-64 bg-primary/5 rounded-full blur-3xl -mr-32 -mt-32 transition-opacity group-hover:opacity-100 opacity-50" />
+                    <ULIDGenerator />
+                </div>
             )}
         />
     )

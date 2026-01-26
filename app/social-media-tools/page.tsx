@@ -110,6 +110,18 @@ const toolConfig = createToolConfig({
   metaTitle: `Social Media Tools: YouTube, Instagram, TikTok | FastTools`,
   metaDescription: "Free creator tools: YouTube thumbnail downloader, Instagram DP viewer, TikTok saver, YouTube tags, and link‑in‑bio.",
   path: "/social-media-tools",
+
+  schemaOptions: {
+    itemList: {
+      name: "Social Media Tools Collection",
+      description: "Collection of free online social media tools including YouTube, Instagram and TikTok utilities.",
+      items: socialTools.map(tool => ({
+        name: tool.title,
+        description: tool.description,
+        url: tool.href
+      }))
+    }
+  },
   keywords: [
     "social media tools", "social media toolkit", "content creator tools", "youtube tools",
     "instagram tools", "tiktok tools", "tiktok downloader", "download tiktok without watermark",

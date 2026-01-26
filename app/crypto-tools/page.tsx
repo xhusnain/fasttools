@@ -83,6 +83,18 @@ const toolConfig = createToolConfig({
     metaDescription: "Free online crypto tools for developers & security professionals. Bcrypt, Token Generator, Hash Text. Client-side, privacy-first & secure.",
     path: "/crypto-tools",
 
+    schemaOptions: {
+        itemList: {
+            name: "Crypto Tools Collection",
+            description: "Collection of free online cryptography and security tools including Token Generator.",
+            items: cryptoTools.map(tool => ({
+                name: tool.title,
+                description: tool.description,
+                url: tool.href
+            }))
+        }
+    },
+
     header: {
         title: "Crypto Tools - Professional Security & Cryptography Utilities",
         description: "Free Online Crypto Tools for Developers & Security Professionals. Discover our comprehensive collection running locally in your browser.",
@@ -354,60 +366,21 @@ const toolConfig = createToolConfig({
 export const metadata: Metadata = toolConfig.metadata
 
 export default function CryptoToolsPage() {
-    const jsonLd = {
-        "@context": "https://schema.org",
-        "@type": "WebPage",
-        name: "Free Crypto & Security Tools - Token Generator",
-        description: "Free online crypto and security tools. Generate secure tokens, keys, and passwords instantly. Privacy-focused and 100% client-side.",
-        url: "https://www.fasttools.store/crypto-tools",
-        mainEntity: {
-            "@type": "ItemList",
-            name: "Crypto Tools Collection",
-            description: "Collection of free online cryptography and security tools including Token Generator.",
-            numberOfItems: 5,
-            itemListElement: [
-                { "@type": "ListItem", position: 1, name: "Bcrypt Generator", description: "Generate and verify secure Bcrypt hashes", url: "https://www.fasttools.store/crypto-tools/bcrypt" },
-                { "@type": "ListItem", position: 2, name: "Token Generator", description: "Generate secure random tokens, API keys, and passwords", url: "https://www.fasttools.store/crypto-tools/token-generator" },
-                { "@type": "ListItem", position: 3, name: "Hash Text", description: "Generate secure cryptographic hashes", url: "https://www.fasttools.store/crypto-tools/hash-text" },
-                { "@type": "ListItem", position: 4, name: "Text Encrypt/Decrypt", description: "Securely encrypt and decrypt text", url: "https://www.fasttools.store/crypto-tools/encrypt-decrypt" },
-                { "@type": "ListItem", position: 5, name: "UUID Generator", description: "Generate random and time-based UUIDs instantly", url: "https://www.fasttools.store/crypto-tools/uuid-generator" },
-                { "@type": "ListItem", position: 6, name: "ULID Generator", description: "Universally Unique Lexicographical Sortable Identifiers", url: "https://www.fasttools.store/crypto-tools/ulid-generator" },
-                { "@type": "ListItem", position: 7, name: "RSA Key Generator", description: "Generate RSA Key Pairs", url: "https://www.fasttools.store/crypto-tools/rsa-generator" },
-                { "@type": "ListItem", position: 8, name: "Password Analyzer", description: "Password Strength Checker", url: "https://www.fasttools.store/crypto-tools/password-strength-analyzer" },
-            ]
-        },
-        breadcrumb: {
-            "@type": "BreadcrumbList",
-            itemListElement: [
-                { "@type": "ListItem", position: 1, name: "Home", item: "https://www.fasttools.store" },
-                { "@type": "ListItem", position: 2, name: "Crypto Tools", item: "https://www.fasttools.store/crypto-tools" }
-            ]
-        },
-        isPartOf: {
-            "@type": "WebSite",
-            name: "FastTools",
-            url: "https://www.fasttools.store"
-        }
-    }
-
     return (
-        <>
-            <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
-            <ToolPageLayout
-                {...toolConfig.getLayoutProps(
-                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
-                        {cryptoTools.map((tool) => (
-                            <GToolCard
-                                key={`crypto-tools-${tool.href}`}
-                                title={tool.title}
-                                description={tool.description}
-                                href={tool.href}
-                                icon={tool.icon}
-                            />
-                        ))}
-                    </div>
-                )}
-            />
-        </>
+        <ToolPageLayout
+            {...toolConfig.getLayoutProps(
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
+                    {cryptoTools.map((tool) => (
+                        <GToolCard
+                            key={`crypto-tools-${tool.href}`}
+                            title={tool.title}
+                            description={tool.description}
+                            href={tool.href}
+                            icon={tool.icon}
+                        />
+                    ))}
+                </div>
+            )}
+        />
     )
 }

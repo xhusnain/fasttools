@@ -1,11 +1,6 @@
 import fs from 'fs';
 import path from 'path';
 import matter from 'gray-matter';
-import { serialize } from 'next-mdx-remote/serialize';
-import remarkToc from 'remark-toc';
-import remarkGfm from 'remark-gfm';
-import rehypeSlug from 'rehype-slug';
-import rehypePrism from 'rehype-prism-plus';
 
 export interface TocItem {
     level: number;
@@ -38,13 +33,6 @@ export const getMdxContent = async (slug: string, contentPath: string): Promise<
     const fileContents = fs.readFileSync(fullPath, 'utf8');
     const { data, content } = matter(fileContents);
 
-    const mdxSource = await serialize(content, {
-        mdxOptions: {
-            remarkPlugins: [[remarkToc, { heading: 'Table of Contents', tight: true }], remarkGfm],
-            rehypePlugins: [rehypeSlug, [rehypePrism, { showLineNumbers: true }]],
-        },
-    });
-
     const toc = content
         .split('\n')
         .filter((line) => line.match(/^#{2,3}\s/))
@@ -61,7 +49,7 @@ export const getMdxContent = async (slug: string, contentPath: string): Promise<
     return {
         data,
         content,
-        mdxSource,
+        mdxSource: null,
         toc,
         realSlug,
     };

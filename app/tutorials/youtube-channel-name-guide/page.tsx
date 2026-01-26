@@ -21,62 +21,13 @@ export const metadata: Metadata = createMetadata({
     video: {
         id: VIDEO_ID,
         title: VIDEO_TITLE,
-        description: VIDEO_DESCRIPTION
+        description: VIDEO_DESCRIPTION,
+        uploadDate: UPLOAD_DATE,
+        duration: VIDEO_DURATION
     }
 })
 
 export default function YouTubeChannelNameGuidePage() {
-    // VideoObject JSON-LD schema for Google video indexing
-    const videoSchema = {
-        "@context": "https://schema.org",
-        "@type": "VideoObject",
-        "name": VIDEO_TITLE,
-        "description": VIDEO_DESCRIPTION,
-        "thumbnailUrl": [
-            VIDEO_THUMBNAIL,
-            `https://img.youtube.com/vi/${VIDEO_ID}/hqdefault.jpg`,
-            `https://img.youtube.com/vi/${VIDEO_ID}/mqdefault.jpg`
-        ],
-        "uploadDate": UPLOAD_DATE,
-        "duration": VIDEO_DURATION,
-        "contentUrl": `https://www.youtube.com/watch?v=${VIDEO_ID}`,
-        "embedUrl": `https://www.youtube.com/embed/${VIDEO_ID}`,
-        "interactionStatistic": {
-            "@type": "InteractionCounter",
-            "interactionType": { "@type": "WatchAction" },
-            "userInteractionCount": 5000
-        },
-        "publisher": {
-            "@type": "Organization",
-            "name": "FastTools"
-        }
-    }
-
-    const breadcrumbSchema = {
-        "@context": "https://schema.org",
-        "@type": "BreadcrumbList",
-        "itemListElement": [
-            {
-                "@type": "ListItem",
-                "position": 1,
-                "name": "Home",
-                "item": "https://www.fasttools.store"
-            },
-            {
-                "@type": "ListItem",
-                "position": 2,
-                "name": "Social Media Tools",
-                "item": "https://www.fasttools.store/social-media-tools"
-            },
-            {
-                "@type": "ListItem",
-                "position": 3,
-                "name": "YouTube Channel Name Guide",
-                "item": "https://www.fasttools.store/tutorials/youtube-channel-name-guide"
-            }
-        ]
-    }
-
     const timestamps = [
         { time: "0:00", label: "Introduction" },
         { time: "0:45", label: "Why Your Channel Name Matters" },
@@ -90,16 +41,6 @@ export default function YouTubeChannelNameGuidePage() {
 
     return (
         <>
-            {/* VideoObject Schema */}
-            <script
-                type="application/ld+json"
-                dangerouslySetInnerHTML={{ __html: JSON.stringify(videoSchema) }}
-            />
-            {/* Breadcrumb Schema */}
-            <script
-                type="application/ld+json"
-                dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
-            />
 
             <div className="min-h-screen bg-background">
                 {/* Hero Video Section - Primary Content */}

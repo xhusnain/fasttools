@@ -11,6 +11,10 @@ const toolConfig = createToolConfig({
     metaTitle: "Free Hash Text Generator - MD5, SHA256, SHA512, SHA3 Calculator",
     metaDescription: "Generate secure cryptographic hashes (MD5, SHA1, SHA256, SHA512) for any text string instantly. 100% client-side security, no data storage. Perfect for verifying integrity.",
     path: "/crypto-tools/hash-text",
+    schemaOptions: {
+        applicationCategory: "Utility",
+        operatingSystem: "Any",
+    },
 
     header: {
         title: "Free Hash Text Generator - Create MD5, SHA256, SHA512 Hashes Online",
@@ -265,25 +269,10 @@ const toolConfig = createToolConfig({
 export const metadata: Metadata = toolConfig.metadata
 
 export default function HashTextPage() {
-    const jsonLd = {
-        "@context": "https://schema.org",
-        "@type": "WebApplication",
-        "name": "Hash Text Generator",
-        "applicationCategory": "Utility",
-        "description": "Generate MD5, SHA1, SHA256, SHA512, SHA3 hashes online. Free and secure client-side tool.",
-        "operatingSystem": "Any"
-    }
-
     return (
         <ToolPageLayout
             {...toolConfig.getLayoutProps(
-                <>
-                    <script
-                        type="application/ld+json"
-                        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
-                    />
-                    <HashText />
-                </>
+                <HashText />
             )}
         />
     )

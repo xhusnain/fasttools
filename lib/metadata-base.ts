@@ -1,4 +1,4 @@
-import type {Metadata, Viewport} from "next"
+import type { Metadata, Viewport } from "next"
 
 const BASE_URL = "https://www.fasttools.store"
 const SITE_NAME = "FastTools"
@@ -52,6 +52,18 @@ export interface MetadataOptions {
         id: string
         title?: string
         description?: string
+        uploadDate?: string
+        duration?: string
+    }
+    itemList?: {
+        name: string
+        description: string
+        items: Array<{
+            name: string
+            description?: string
+            url: string
+            image?: string
+        }>
     }
 }
 
@@ -190,6 +202,10 @@ export function createMetadata(options: MetadataOptions): Metadata {
         schemas.push(createVideoObjectSchema(options.video, fullTitle, description))
     }
 
+    if (options.itemList) {
+        schemas.push(createItemListSchema(options.itemList))
+    }
+
     return {
         title: fullTitle,
         description,
@@ -209,7 +225,7 @@ export function createMetadata(options: MetadataOptions): Metadata {
                 follow: false,
             }
         }),
-        ...(options.icons && {icons: options.icons}),
+        ...(options.icons && { icons: options.icons }),
         ...(schemas.length > 0 && {
             other: {
                 "application/ld+json": JSON.stringify(schemas.length === 1 ? schemas[0] : schemas)
@@ -293,6 +309,11 @@ export interface SoftwareAppSchemaOptions {
     featureList?: string[]
     version?: string
     softwareRequirements?: string
+    screenshot?: string
+    aggregateRating?: {
+        ratingValue: string
+        ratingCount: string
+    }
 }
 
 export function createSoftwareAppSchema(options: SoftwareAppSchemaOptions) {
@@ -310,7 +331,9 @@ export function createSoftwareAppSchema(options: SoftwareAppSchemaOptions) {
         alternateName,
         featureList,
         version = "2.0",
-        softwareRequirements
+        softwareRequirements,
+        screenshot,
+        aggregateRating
     } = options
 
     const appName = name || (title ? extractToolName(title) : "")
@@ -334,8 +357,8 @@ export function createSoftwareAppSchema(options: SoftwareAppSchemaOptions) {
         },
         "aggregateRating": {
             "@type": "AggregateRating",
-            "ratingValue": ratingValue,
-            "ratingCount": ratingCount
+            "ratingValue": aggregateRating?.ratingValue || ratingValue,
+            "ratingCount": aggregateRating?.ratingCount || ratingCount
         },
         "author": {
             "@type": "Organization",
@@ -376,10 +399,14 @@ export function createSoftwareAppSchema(options: SoftwareAppSchemaOptions) {
         schema.softwareRequirements = softwareRequirements
     }
 
+    if (screenshot) {
+        schema.screenshot = screenshot
+    }
+
     return schema
 }
 
-export function createVideoObjectSchema(video: { id: string, title?: string, description?: string }, toolTitle: string, toolDescription: string) {
+export function createVideoObjectSchema(video: { id: string, title?: string, description?: string, uploadDate?: string, duration?: string }, toolTitle: string, toolDescription: string) {
     const videoTitle = video.title || toolTitle
     const videoDescription = video.description || toolDescription
 
@@ -393,9 +420,45 @@ export function createVideoObjectSchema(video: { id: string, title?: string, des
             `https://i.ytimg.com/vi/${video.id}/hqdefault.jpg`,
             `https://i.ytimg.com/vi/${video.id}/default.jpg`
         ],
-        "uploadDate": "2024-01-01T08:00:00+08:00", // Fallback date
+        "uploadDate": video.uploadDate || "2024-01-01T08:00:00+08:00",
+        "duration": video.duration,
         "contentUrl": `https://www.youtube.com/watch?v=${video.id}`,
-        "embedUrl": `https://www.youtube.com/embed/${video.id}`
+        "embedUrl": `https://www.youtube.com/embed/${video.id}`,
+        "interactionStatistic": {
+            "@type": "InteractionCounter",
+            "interactionType": { "@type": "WatchAction" },
+            "userInteractionCount": 5000
+        },
+        "publisher": {
+            "@type": "Organization",
+            "name": SITE_NAME,
+            "logo": {
+                "@type": "ImageObject",
+                "url": `${BASE_URL}/logo.png`,
+                "width": 60,
+                "height": 60
+            }
+        }
+    }
+}
+
+export function createItemListSchema(options: { name: string, description: string, items: Array<{ name: string, description?: string, url: string, image?: string }> }) {
+    const { name, description, items } = options
+
+    return {
+        "@context": "https://schema.org",
+        "@type": "ItemList",
+        "name": name,
+        "description": description,
+        "numberOfItems": items.length,
+        "itemListElement": items.map((item, index) => ({
+            "@type": "ListItem",
+            "position": index + 1,
+            "name": item.name,
+            "description": item.description,
+            "url": item.url.startsWith('http') ? item.url : `${BASE_URL}${item.url.startsWith('/') ? item.url : `/${item.url}`}`,
+            "image": item.image ? (item.image.startsWith('http') ? item.image : `${BASE_URL}${item.image.startsWith('/') ? item.image : `/${item.image}`}`) : undefined
+        }))
     }
 }
 

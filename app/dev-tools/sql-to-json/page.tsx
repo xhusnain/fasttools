@@ -50,6 +50,22 @@ const toolConfig = createToolConfig({
     metaTitle: "SQL to JSON Converter - Free Online Tool | FastTools",
     metaDescription: "Convert SQL INSERT statements to JSON format instantly. Free online SQL to JSON converter with smart type detection. No installation, works in browser. Try now!",
     path: "/dev-tools/sql-to-json",
+    schemaOptions: {
+        applicationCategory: "DeveloperApplication",
+        operatingSystem: "Any (Web-based)",
+        aggregateRating: {
+            ratingValue: "4.8",
+            ratingCount: "1247"
+        },
+        featureList: [
+            "SQL INSERT statement parsing",
+            "Automatic type detection",
+            "Batch conversion support",
+            "JSON download",
+            "Privacy-focused processing"
+        ],
+        screenshot: "https://fasttools.store/images/dev-tools/sql-to-json-hero.png"
+    },
 
     header: {
         title: "SQL to JSON Converter - Convert Database Data to JSON Online",
@@ -202,43 +218,13 @@ const toolConfig = createToolConfig({
 export const metadata: Metadata = toolConfig.metadata
 
 export default function SQLToJSONPage() {
-    const jsonLd = {
-        "@context": "https://schema.org",
-        "@type": "SoftwareApplication",
-        name: "SQL to JSON Converter",
-        applicationCategory: "DeveloperApplication",
-        operatingSystem: "Any (Web-based)",
-        offers: {
-            "@type": "Offer",
-            price: "0",
-            priceCurrency: "USD"
-        },
-        aggregateRating: {
-            "@type": "AggregateRating",
-            ratingValue: "4.8",
-            ratingCount: "1247"
-        },
-        description: "Free online tool to convert SQL INSERT statements to JSON format. Supports MySQL, PostgreSQL, SQL Server with instant client-side conversion.",
-        featureList: [
-            "SQL INSERT statement parsing",
-            "Automatic type detection",
-            "Batch conversion support",
-            "JSON download",
-            "Privacy-focused processing"
-        ],
-        screenshot: "https://fasttools.store/images/dev-tools/sql-to-json-hero.png"
-    }
-
     return (
-        <>
-            <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
-            <ToolPageLayout
-                {...toolConfig.getLayoutProps(
-                    <div className="p-3 sm:p-4 md:p-5 rounded-lg bg-card border border-border shadow">
-                        <SQLToJSON />
-                    </div>
-                )}
-            />
-        </>
+        <ToolPageLayout
+            {...toolConfig.getLayoutProps(
+                <div className="p-3 sm:p-4 md:p-5 rounded-lg bg-card border border-border shadow">
+                    <SQLToJSON />
+                </div>
+            )}
+        />
     )
 }

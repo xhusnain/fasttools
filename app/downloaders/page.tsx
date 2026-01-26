@@ -22,22 +22,6 @@ import {
   Music,
   List
 } from "lucide-react"
-export const metadata: Metadata = createMetadata({
-  title: "Universal Video Downloader - Save from YouTube, TikTok, & Meta",
-  description: "The #1 Universal Video Downloader. Save videos from YouTube, TikTok (No Watermark), Instagram, Facebook, and X in HD/4K. Free, fast, & unblocked.",
-  path: "/downloaders",
-  ogImageAlt: "Universal Video Downloader for all platforms",
-  twitterCreator: "@FastTools",
-  twitterTitle: "Universal Video Downloader - Save from YouTube, TikTok, & Meta",
-  twitterDescription: "The #1 Universal Video Downloader. Save videos from YouTube, TikTok (No Watermark), Instagram, Facebook, and X in HD/4K.",
-  breadcrumbs: [
-    {
-      "label": "Downloaders",
-      "href": "/downloaders"
-    }
-  ]
-});
-
 const downloaders = [
   {
     id: "youtube-downloader",
@@ -145,46 +129,36 @@ const faqItems = [
   },
 ]
 
-export default function DownloadersPage() {
-  const jsonLd = {
-    "@context": "https://schema.org",
-    "@type": "ItemList",
+export const metadata: Metadata = createMetadata({
+  title: "Universal Video Downloader - Save from YouTube, TikTok, & Meta",
+  description: "The #1 Universal Video Downloader. Save videos from YouTube, TikTok (No Watermark), Instagram, Facebook, and X in HD/4K. Free, fast, & unblocked.",
+  path: "/downloaders",
+  ogImageAlt: "Universal Video Downloader for all platforms",
+  twitterCreator: "@FastTools",
+  twitterTitle: "Universal Video Downloader - Save from YouTube, TikTok, & Meta",
+  twitterDescription: "The #1 Universal Video Downloader. Save videos from YouTube, TikTok (No Watermark), Instagram, Facebook, and X in HD/4K.",
+  breadcrumbs: [
+    {
+      "label": "Downloaders",
+      "href": "/downloaders"
+    }
+  ],
+  faqs: faqItems,
+  itemList: {
     name: "FastTools Downloaders",
     description: "A collection of free video and media download tools for various social media platforms.",
-    url: "https://www.fasttools.store/downloaders",
-    numberOfItems: downloaders.length,
-    itemListElement: downloaders.map((downloader, index) => ({
-      "@type": "ListItem",
-      position: index + 1,
-      name: downloader.name,
-      description: downloader.description,
-      url: `https://www.fasttools.store${downloader.href}`
+    items: downloaders.map(d => ({
+      name: d.name,
+      description: d.description,
+      url: d.href
     }))
   }
+});
 
-  const breadcrumbLd = {
-    "@context": "https://schema.org",
-    "@type": "BreadcrumbList",
-    itemListElement: [
-      {
-        "@type": "ListItem",
-        position: 1,
-        name: "Home",
-        item: "https://www.fasttools.store/"
-      },
-      {
-        "@type": "ListItem",
-        position: 2,
-        name: "Downloaders",
-        item: "https://www.fasttools.store/downloaders"
-      }
-    ]
-  }
 
+export default function DownloadersPage() {
   return (
     <>
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbLd) }} />
       <div className="min-h-screen bg-background">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-12 md:py-16">
           <Breadcrumbs

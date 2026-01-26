@@ -11,6 +11,16 @@ const toolConfig = createToolConfig({
     metaDescription: "Best free online text encryption and decryption tool. Secure your messages with AES, TripleDES, Rabbit, and RC4 algorithms. Runs entirely in your browser for maximum privacy.",
     path: "/crypto-tools/encrypt-decrypt",
     heroImage: "/images/text-encryption-hero.png",
+    schemaOptions: {
+        applicationCategory: "SecurityApplication",
+        operatingSystem: "Any",
+        featureList: [
+            "AES Encryption",
+            "TripleDES Encryption",
+            "Client-side privacy",
+            "Instant decryption"
+        ]
+    },
 
 
     header: {
@@ -109,29 +119,11 @@ export const metadata: Metadata = {
 }
 
 export default function EncryptDecryptPage() {
-    const jsonLd = {
-        "@context": "https://schema.org",
-        "@type": "SoftwareApplication",
-        name: "Text Encrypt/Decrypt Tool",
-        applicationCategory: "SecurityApplication",
-        operatingSystem: "Any",
-        offers: {
-            "@type": "Offer",
-            price: "0",
-            priceCurrency: "USD",
-        },
-        description: "Free online tool to securely encrypt and decrypt text using AES, TripleDES, Rabbit, and RC4 algorithms.",
-        featureList: "AES Encryption, TripleDES Encryption, Client-side privacy, Instant decryption",
-    }
-
     return (
-        <>
-            <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
-            <ToolPageLayout
-                {...toolConfig.getLayoutProps(
-                    <EncryptDecryptTool />
-                )}
-            />
-        </>
+        <ToolPageLayout
+            {...toolConfig.getLayoutProps(
+                <EncryptDecryptTool />
+            )}
+        />
     )
 }

@@ -1,6 +1,6 @@
 import type { Metadata } from "next"
 import { ToolPageLayout } from "@/components/common/tool-page-layout"
-import { createMetadata } from "@/lib/metadata-base"
+import { createToolConfig } from "@/lib/create-tool-config"
 import dynamic from "next/dynamic"
 import { ToolLoader } from "@/components/common/tool-loader"
 
@@ -8,38 +8,39 @@ const AgentSkillBuilder = dynamic(() => import("@/components/ai-tools/agent-skil
     loading: () => <ToolLoader />
 })
 
-const currentYear = new Date().getFullYear()
-
-const baseMetadata = createMetadata({
-    title: `Antigravity Agent Skill Builder | Create Custom AI Agent Skills`,
-    description: `Generate custom SKILL.md files for Google Antigravity agents. Build, download, and share agent skills for coding, testing, and more. Free tool.`,
+const toolConfig = createToolConfig({
+    toolName: "Antigravity Agent Skill Builder",
+    description: "Generate custom SKILL.md files for Google Antigravity agents. Build, download, and share agent skills for coding, testing, and more. Free tool.",
+    metaTitle: "Antigravity Agent Skill Builder | Create Custom AI Agent Skills",
     path: "/dev-tools/antigravity-skill-builder",
-})
-
-export const metadata: Metadata = {
-    ...baseMetadata,
-    category: "Developer Tools",
-}
-
-export default function AgentSkillBuilderPage() {
-    const jsonLd = {
-        "@context": "https://schema.org",
-        "@type": "WebApplication",
-        "name": "Antigravity Agent Skill Builder",
-        "applicationCategory": "DeveloperApplication",
-        "operatingSystem": "Any",
-        "description": "Generate custom SKILL.md files for Google Antigravity agents. Build, download, and share agent skills for coding, testing, and more.",
-        "offers": {
+    schemaOptions: {
+        applicationCategory: "DeveloperApplication",
+        operatingSystem: "Any",
+        featureList: [
+            "AI Skill Generation",
+            "Markdown Formatting",
+            "Pre-defined Library",
+            "Instant Download"
+        ],
+        softwareRequirements: "Modern Web Browser",
+        offers: {
             "@type": "Offer",
-            "price": "0",
-            "priceCurrency": "USD"
-        },
-        "featureList": "AI Skill Generation, Markdown Formatting, Pre-defined Library, Instant Download",
-        "softwareRequirements": "Modern Web Browser"
-    }
-
-    const toolContent = {
-        toolName: "Antigravity Agent Skill Builder",
+            price: "0",
+            priceCurrency: "USD"
+        }
+    },
+    header: {
+        title: "Antigravity Agent Skill Builder",
+        description: "Create, customize, and download AI agent skills for Google Antigravity.",
+        titleSize: "medium",
+        color: "blue",
+        centered: true
+    },
+    breadcrumbs: [
+        { label: "Developer Tools", href: "/dev-tools" },
+        { label: "Agent Skill Builder", href: "/dev-tools/antigravity-skill-builder" },
+    ],
+    content: {
         // AEO Rule: Direct answer in first 50 words
         overview: "The Antigravity Agent Skill Builder is a free developer tool that generates standardized `SKILL.md` files for Google's Antigravity IDE. It converts natural language descriptions into valid agent instructions, allowing developers to extend their AI assistant's capabilities for coding, testing, and DevOps workflows without manual formatting.",
         howToSteps: [
@@ -161,34 +162,18 @@ export default function AgentSkillBuilderPage() {
             { name: "Regex Tester", href: "/dev-tools/regex-tester" }
         ]
     }
+})
 
+export const metadata: Metadata = toolConfig.metadata
+
+export default function AgentSkillBuilderPage() {
     return (
-        <>
-            <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
-            <ToolPageLayout
-                header={{
-                    title: "Antigravity Agent Skill Builder",
-                    description: "Create, customize, and download AI agent skills for Google Antigravity.",
-                    titleSize: "medium",
-                    color: "blue",
-                    centered: true
-                }}
-                breadcrumbs={[
-                    { label: "Developer Tools", href: "/dev-tools" },
-                    { label: "Agent Skill Builder", href: "/dev-tools/antigravity-skill-builder" },
-                ]}
-                toolComponent={
-                    <div className="bg-card border border-border rounded-xl p-4 md:p-6 shadow-sm">
-                        <AgentSkillBuilder />
-                    </div>
-                }
-                toolContent={toolContent}
-                expectedMetadata={{
-                    title: `Antigravity Agent Skill Builder | Create Custom AI Agent Skills`,
-                    description: `Generate custom SKILL.md files for Google Antigravity agents. Build, download, and share agent skills for coding, testing, and more. Free tool.`,
-                    path: "/dev-tools/antigravity-skill-builder",
-                }}
-            />
-        </>
+        <ToolPageLayout
+            {...toolConfig.getLayoutProps(
+                <div className="bg-card border border-border rounded-xl p-4 md:p-6 shadow-sm">
+                    <AgentSkillBuilder />
+                </div>
+            )}
+        />
     )
 }

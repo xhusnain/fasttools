@@ -12,6 +12,16 @@ const toolConfig = createToolConfig({
     metaDescription: "Free online RSA key pair generator. Create secure 2048-bit and 4096-bit RSA keys in PEM format. 100% Client-side OpenSSL compatible generation.",
     path: "/crypto-tools/rsa-generator",
     heroImage: "/images/rsa_key_generator_hero.png",
+    schemaOptions: {
+        applicationCategory: "DeveloperTool",
+        operatingSystem: "Any",
+        featureList: [
+            "2048-bit RSA",
+            "4096-bit RSA",
+            "PEM Export",
+            "Client-side Generation"
+        ]
+    },
 
     header: {
         title: "RSA Key Pair Generator",
@@ -175,29 +185,11 @@ export const metadata: Metadata = {
 }
 
 export default function RsaGeneratorPage() {
-    const jsonLd = {
-        "@context": "https://schema.org",
-        "@type": "SoftwareApplication",
-        name: "RSA Key Pair Generator",
-        applicationCategory: "DeveloperTool",
-        operatingSystem: "Any",
-        offers: {
-            "@type": "Offer",
-            price: "0",
-            priceCurrency: "USD",
-        },
-        description: "Generate secure RSA public and private keys (PEM format) online.",
-        featureList: "2048-bit RSA, 4096-bit RSA, PEM Export, Client-side Generation",
-    }
-
     return (
-        <>
-            <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
-            <ToolPageLayout
-                {...toolConfig.getLayoutProps(
-                    <RsaGeneratorTool />
-                )}
-            />
-        </>
+        <ToolPageLayout
+            {...toolConfig.getLayoutProps(
+                <RsaGeneratorTool />
+            )}
+        />
     )
 }

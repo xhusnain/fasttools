@@ -24,7 +24,7 @@
 /dev-tools/page.tsx
 /dev-tools/regex-tester/page.tsx
 /dev-tools/sql-to-json/page.tsx
-/dev-tools/uuid-generator/page.tsx
+/crypto-tools/uuid-generator/page.tsx
 /festivals/christmas-font-converter/page.tsx
 /festivals/page.tsx
 /festivals/turkey-defrost-calculator/page.tsx

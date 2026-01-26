@@ -12,6 +12,17 @@ const rawToolConfig = {
     metaDescription: "Test password strength instantly. Analyze entropy (bits), crack time, and NIST compliance. Free online tool detecting brute-force & rainbow table vulnerabilities. 100% Client-Side.",
     path: "/crypto-tools/password-strength-analyzer",
     heroImage: "/images/password_strength_hero.png",
+    schemaOptions: {
+        applicationCategory: "SecurityApplication",
+        operatingSystem: "Any",
+        featureList: [
+            "zxcvbn analysis",
+            "crack time estimation",
+            "entropy calculation",
+            "offline usage",
+            "NIST audit"
+        ]
+    },
 
     header: {
         title: "Password Strength Analyzer",
@@ -214,37 +225,11 @@ export const metadata: Metadata = {
 }
 
 export default function PasswordAnalyzerPage() {
-    const jsonLd = {
-        "@context": "https://schema.org",
-        "@type": ["SoftwareApplication", "FAQPage"],
-        name: "Password Strength Analyzer",
-        applicationCategory: "SecurityApplication",
-        operatingSystem: "Any",
-        offers: {
-            "@type": "Offer",
-            price: "0",
-            priceCurrency: "USD",
-        },
-        description: "Analyze password strength, entropy and crack time online with NIST 2025 compliance.",
-        featureList: "zxcvbn analysis, crack time estimation, entropy calculation, offline usage, NIST audit",
-        mainEntity: rawToolConfig.content.faqs ? rawToolConfig.content.faqs.map(faq => ({
-            "@type": "Question",
-            name: faq.question,
-            acceptedAnswer: {
-                "@type": "Answer",
-                text: faq.answer
-            }
-        })) : []
-    }
-
     return (
-        <>
-            <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
-            <ToolPageLayout
-                {...toolConfig.getLayoutProps(
-                    <PasswordAnalyzerTool />
-                )}
-            />
-        </>
+        <ToolPageLayout
+            {...toolConfig.getLayoutProps(
+                <PasswordAnalyzerTool />
+            )}
+        />
     )
 }

@@ -11,6 +11,10 @@ const toolConfig = createToolConfig({
     metaTitle: "Bcrypt Generator & Verifier | Secure Password Hashing Tool",
     metaDescription: "Free online Bcrypt hash generator and verifier. Adjust salt rounds/cost factor, detect hash strength, and verify matches instantly. Secure client-side processing.",
     path: "/crypto-tools/bcrypt",
+    schemaOptions: {
+        applicationCategory: "SecurityTool",
+        operatingSystem: "Any",
+    },
 
     header: {
         title: "Bcrypt Hash Generator & Verifier",
@@ -285,25 +289,10 @@ const toolConfig = createToolConfig({
 export const metadata: Metadata = toolConfig.metadata
 
 export default function BcryptPage() {
-    const jsonLd = {
-        "@context": "https://schema.org",
-        "@type": "WebApplication",
-        "name": "Bcrypt Hash Generator & Verifier",
-        "applicationCategory": "SecurityTool",
-        "description": "Premium online tool to generate and verify secure Bcrypt hashes with adjustable cost factors.",
-        "operatingSystem": "Any"
-    }
-
     return (
         <ToolPageLayout
             {...toolConfig.getLayoutProps(
-                <>
-                    <script
-                        type="application/ld+json"
-                        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
-                    />
-                    <BcryptGenerator />
-                </>
+                <BcryptGenerator />
             )}
         />
     )

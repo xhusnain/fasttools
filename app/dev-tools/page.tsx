@@ -80,6 +80,17 @@ const toolConfig = createToolConfig({
   metaTitle: "Free Developer Tools Online | JWT Decoder, Regex Tester & More",
   metaDescription: "Free online developer tools: JWT decoder, regex tester, JSON to CSV & more. Essential coding utilities for modern web development. No signup.",
   path: "/dev-tools",
+  schemaOptions: {
+    itemList: {
+      name: "Developer Tools Collection - Chrome, Safari, React DevTools",
+      description: "Free online developer tools for Chrome, Safari, Firefox, and Edge browsers. Includes React developer tools, JWT decoder, regex tester, JSON to CSV converter, HTML beautifier, and essential coding utilities.",
+      items: devTools.map(tool => ({
+        name: tool.title,
+        description: tool.description,
+        url: tool.href
+      }))
+    }
+  },
 
   header: {
     title: "Free Developer Tools - JWT, Regex, JSON to CSV & More",
@@ -281,64 +292,21 @@ const toolConfig = createToolConfig({
 export const metadata: Metadata = toolConfig.metadata
 
 export default function DevToolsPage() {
-  const jsonLd = {
-    "@context": "https://schema.org",
-    "@type": "WebPage",
-    name: "Free Developer Tools Online - Chrome, Safari, React DevTools | JWT Decoder, Regex Tester",
-    description: "Free online developer tools for Chrome, Safari, Firefox & Edge. Access browser DevTools, React developer tools, JWT decoder, regex tester, JSON to CSV converter, HTML beautifier. No signup required - essential coding utilities for web development.",
-    url: "https://www.fasttools.store/dev-tools",
-    mainEntity: {
-      "@type": "ItemList",
-      name: "Developer Tools Collection - Chrome, Safari, React DevTools",
-      description: "Free online developer tools for Chrome, Safari, Firefox, and Edge browsers. Includes React developer tools, JWT decoder, regex tester, JSON to CSV converter, HTML beautifier, and essential coding utilities.",
-      numberOfItems: 7,
-      itemListElement: [
-        { "@type": "ListItem", position: 1, name: "JWT Decoder", description: "Decode and inspect JWT tokens safely in your browser", url: "https://www.fasttools.store/dev-tools/jwt-decoder" },
-        { "@type": "ListItem", position: 2, name: "Regex Tester", description: "Test and debug regular expressions with live matching", url: "https://www.fasttools.store/dev-tools/regex-tester" },
-        { "@type": "ListItem", position: 3, name: "JSON to CSV Converter", description: "Convert JSON data to CSV format quickly and easily", url: "https://www.fasttools.store/dev-tools/json-to-csv" },
-        { "@type": "ListItem", position: 4, name: "HTML Beautifier", description: "Format and beautify HTML code for better readability", url: "https://www.fasttools.store/dev-tools/html-beautifier" },
-        { "@type": "ListItem", position: 5, name: "1000+ Free Color Palettes", description: "Explore 1000+ free color palettes with HEX codes for websites, branding & UI/UX design. 43 categories including aesthetic, pastel, vintage & modern themes", url: "https://www.fasttools.store/dev-tools/color-palette" },
-        { "@type": "ListItem", position: 6, name: "Hex to RGB Converter", description: "Convert hex colors to RGB values instantly", url: "https://www.fasttools.store/dev-tools/hex-to-rgb" },
-        { "@type": "ListItem", position: 7, name: "Markdown Previewer", description: "Live preview your Markdown content", url: "https://www.fasttools.store/dev-tools/markdown-previewer" }
-      ]
-    },
-    breadcrumb: {
-      "@type": "BreadcrumbList",
-      itemListElement: [
-        { "@type": "ListItem", position: 1, name: "Home", item: "https://www.fasttools.store" },
-        { "@type": "ListItem", position: 2, name: "Developer Tools", item: "https://www.fasttools.store/dev-tools" }
-      ]
-    },
-    about: {
-      "@type": "Thing",
-      name: "Developer Tools and Utilities - Chrome, Safari, React DevTools",
-      description: "Free online developer tools for Chrome, Safari, Firefox & Edge browsers. Includes React developer tools, JWT decoder, regex tester, JSON to CSV converter, HTML beautifier, and essential coding utilities for web development."
-    },
-    isPartOf: {
-      "@type": "WebSite",
-      name: "FastTools",
-      url: "https://www.fasttools.store"
-    }
-  }
-
   return (
-    <>
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
-      <ToolPageLayout
-        {...toolConfig.getLayoutProps(
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
-            {devTools.map((tool) => (
-              <GToolCard
-                key={`dev-tools-${tool.href}`}
-                title={tool.title}
-                description={tool.description}
-                href={tool.href}
-                icon={tool.icon}
-              />
-            ))}
-          </div>
-        )}
-      />
-    </>
+    <ToolPageLayout
+      {...toolConfig.getLayoutProps(
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
+          {devTools.map((tool) => (
+            <GToolCard
+              key={`dev-tools-${tool.href}`}
+              title={tool.title}
+              description={tool.description}
+              href={tool.href}
+              icon={tool.icon}
+            />
+          ))}
+        </div>
+      )}
+    />
   )
 }

@@ -2,8 +2,7 @@ import { Metadata } from 'next';
 import { ToolPageLayout } from "@/components/common/tool-page-layout"
 import { createToolConfig } from "@/lib/create-tool-config"
 import { PdfSignatureCheckerTool } from "@/components/pdf-tools/pdf-signature-checker"
-import Image from "next/image"
-import { Shield, FileCheck, Lock, Fingerprint, Search, Award } from "lucide-react"
+import { Shield,Lock, Fingerprint, Search, Award } from "lucide-react"
 
 const rawToolConfig = {
     toolName: "PDF Signature Checker",
@@ -11,8 +10,16 @@ const rawToolConfig = {
     metaTitle: "PDF Signature Checker - Verify Digital Signatures Online (Free)",
     metaDescription: "Verify PDF digital signatures online. Check document integrity, validate signer identity, and detect tampering. Free, secure, client-side tool.",
     path: "/pdf-tools/pdf-signature-checker",
-    // Using the newly generated image path - this will need to be the actual public path
     heroImage: "/images/pdf_signature_check_hero.png",
+    schemaOptions: {
+        applicationCategory: "BusinessApplication",
+        operatingSystem: "Any",
+        featureList: [
+            "Digital Signature Verification",
+            "PDF Integrity Check",
+            "Tamper Detection"
+        ]
+    },
 
     header: {
         title: "PDF Signature Checker",
@@ -121,37 +128,11 @@ export const metadata: Metadata = {
 import { User } from 'lucide-react';
 
 export default function PdfSignatureCheckerPage() {
-    const jsonLd = {
-        "@context": "https://schema.org",
-        "@type": ["SoftwareApplication", "FAQPage"],
-        name: "PDF Signature Checker",
-        applicationCategory: "BusinessApplication",
-        operatingSystem: "Any",
-        offers: {
-            "@type": "Offer",
-            price: "0",
-            priceCurrency: "USD",
-        },
-        description: "Verify PDF digital signatures online. Check document integrity and signer identity.",
-        featureList: "Digital Signature Verification, PDF Integrity Check, Tamper Detection",
-        mainEntity: rawToolConfig.content.faqs ? rawToolConfig.content.faqs.map(faq => ({
-            "@type": "Question",
-            name: faq.question,
-            acceptedAnswer: {
-                "@type": "Answer",
-                text: faq.answer
-            }
-        })) : []
-    }
-
     return (
-        <>
-            <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
-            <ToolPageLayout
-                {...toolConfig.getLayoutProps(
-                    <PdfSignatureCheckerTool />
-                )}
-            />
-        </>
+        <ToolPageLayout
+            {...toolConfig.getLayoutProps(
+                <PdfSignatureCheckerTool />
+            )}
+        />
     )
 }

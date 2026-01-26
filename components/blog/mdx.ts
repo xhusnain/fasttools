@@ -1,4 +1,5 @@
 import path from 'path';
+import { cache } from 'react';
 import { BlogPost } from "@/components/blog/blog";
 import { getFiles, getMdxContent } from "@/lib/mdx-utils";
 
@@ -16,7 +17,7 @@ export const getPostSlugs = () => {
     return getFiles(contentPath);
 };
 
-export const getPostBySlug = async (slug: string): Promise<Post> => {
+export const getPostBySlug = cache(async (slug: string): Promise<Post> => {
     const { data, content, mdxSource, toc, realSlug } = await getMdxContent(slug, contentPath);
 
     return {
@@ -29,4 +30,4 @@ export const getPostBySlug = async (slug: string): Promise<Post> => {
         mdxSource,
         toc,
     };
-};
+});

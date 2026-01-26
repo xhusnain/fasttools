@@ -12,6 +12,10 @@ const toolConfig = createToolConfig({
     metaTitle: "Free Token Generator - API Key, Password & PIN Generator",
     metaDescription: "Generate secure random tokens, API keys, passwords, and serial numbers instantly. Free, client-side, and cryptographically secure (CSPRNG).",
     path: "/crypto-tools/token-generator",
+    schemaOptions: {
+        applicationCategory: "SecurityApplication",
+        operatingSystem: "Any (Web-based)",
+    },
 
     header: {
         title: "Token Generator",
@@ -441,30 +445,10 @@ const toolConfig = createToolConfig({
 export const metadata: Metadata = toolConfig.metadata
 
 export default function TokenGeneratorPage() {
-    const jsonLd = {
-        "@context": "https://schema.org",
-        "@type": "SoftwareApplication",
-        "name": "Token Generator",
-        "applicationCategory": "SecurityApplication",
-        "offers": {
-            "@type": "Offer",
-            "price": "0",
-            "priceCurrency": "USD"
-        },
-        "operatingSystem": "Any (Web-based)",
-        "description": "Free cryptographically secure token generator for API keys, passwords, PINs, and encryption keys"
-    }
-
     return (
         <ToolPageLayout
             {...toolConfig.getLayoutProps(
-                <>
-                    <script
-                        type="application/ld+json"
-                        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
-                    />
-                    <TokenGenerator />
-                </>
+                <TokenGenerator />
             )}
         />
     )

@@ -11,6 +11,16 @@ const toolConfig = createToolConfig({
     metaDescription: "Calculate secure HMAC (Hash-based Message Authentication Code) online using your secret key. Supports SHA-256, SHA-512, MD5. 100% Client-side privacy.",
     path: "/crypto-tools/hmac-generator",
     heroImage: "/images/hmac-generator-hero.png",
+    schemaOptions: {
+        applicationCategory: "DeveloperTool",
+        operatingSystem: "Any",
+        featureList: [
+            "HMAC-SHA256",
+            "HMAC-MD5",
+            "Secret Key Signing",
+            "Hex/Base64 Output"
+        ]
+    },
 
     header: {
         title: "HMAC Generator & Calculator",
@@ -238,29 +248,11 @@ export const metadata: Metadata = {
 }
 
 export default function HmacGeneratorPage() {
-    const jsonLd = {
-        "@context": "https://schema.org",
-        "@type": "SoftwareApplication",
-        name: "HMAC Generator",
-        applicationCategory: "DeveloperTool",
-        operatingSystem: "Any",
-        offers: {
-            "@type": "Offer",
-            price: "0",
-            priceCurrency: "USD",
-        },
-        description: "Secure, free online HMAC generator supporting SHA-256, MD5, SHA-512.",
-        featureList: "HMAC-SHA256, HMAC-MD5, Secret Key Signing, Hex/Base64 Output",
-    }
-
     return (
-        <>
-            <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
-            <ToolPageLayout
-                {...toolConfig.getLayoutProps(
-                    <HmacGeneratorTool />
-                )}
-            />
-        </>
+        <ToolPageLayout
+            {...toolConfig.getLayoutProps(
+                <HmacGeneratorTool />
+            )}
+        />
     )
 }

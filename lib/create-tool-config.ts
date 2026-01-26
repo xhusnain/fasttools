@@ -13,6 +13,8 @@ export interface UnifiedToolConfig {
         id: string
         title?: string
         description?: string
+        uploadDate?: string
+        duration?: string
     }
     heroImage?: string
     schemaOptions?: {
@@ -23,11 +25,28 @@ export interface UnifiedToolConfig {
         alternateName?: string
         featureList?: string[]
         softwareRequirements?: string
+        name?: string
+        version?: string
         operatingSystem?: string
+        screenshot?: string
         offers?: {
             "@type": string
             price: string
             priceCurrency: string
+        }
+        aggregateRating?: {
+            ratingValue: string
+            ratingCount: string
+        }
+        itemList?: {
+            name: string
+            description: string
+            items: Array<{
+                name: string
+                description?: string
+                url: string
+                image?: string
+            }>
         }
     }
     header: {

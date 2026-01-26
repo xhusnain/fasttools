@@ -77,7 +77,7 @@ Tools for developers and programmers including JWT decoders, regex testers, JSON
 
 **Featured Tools:**
 - https://www.fasttools.store/dev-tools/antigravity-skill-builder - Free Antigravity Agent Skill Builder. Generate standard `SKILL.md` files for Google's Antigravity IDE. Create, validate, and download custom AI agent skills for coding, testing, and DevOps. Features include AI-powered generation, pre-defined skill library, and instant syntax validation. 100% free developer utility.
-- https://www.fasttools.store/dev-tools/uuid-generator - Free Online UUID Generator (v1, v4, v6, v7). Generate standardized Universally Unique Identifiers instantly. Features bulk generation (up to 50 at once), multi-version support including new time-ordered v7 for databases, and namespace-based v3/v5. Secure, client-side only generation.
+- https://www.fasttools.store/crypto-tools/uuid-generator - Free Online UUID Generator (v1, v4, v6, v7). Generate standardized Universally Unique Identifiers instantly. Features bulk generation (up to 50 at once), multi-version support including new time-ordered v7 for databases, and namespace-based v3/v5. Secure, client-side only generation.
 
 ### Crypto Tools
 https://www.fasttools.store/crypto-tools
