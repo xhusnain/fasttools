@@ -1,427 +1,495 @@
 import {NextRequest, NextResponse} from 'next/server'
-import {getCachedData, getRandomUserAgent, setCachedData} from '@/lib/instagram-security'
+import {getCachedData, setCachedData, getRandomUserAgent} from '@/lib/instagram-security'
 
-// Validate username
 const validateUsername = (username: string): boolean => {
-  // Instagram username validation
   const usernameRegex = /^[a-zA-Z0-9._]{1,30}$/
   return usernameRegex.test(username) && username.length >= 1 && username.length <= 30
 }
 
-const extractProfileData = (user: any, cleanUsername: string) => {
-  let profilePicUrl = user.profile_pic_url_hd || user.profile_pic_url || user.profile_pic_url_large || `https://via.placeholder.com/400x400/6366f1/ffffff?text=${cleanUsername.charAt(0).toUpperCase()}`
-
-  // Decode HTML entities in the URL
-  if (profilePicUrl && profilePicUrl.includes('&amp;')) {
-    profilePicUrl = profilePicUrl.replace(/&amp;/g, '&')
-  }
-
-  return {
-    username: user.username || cleanUsername,
-    fullName: user.full_name || user.fullName || '',
-    biography: user.biography || user.bio || '',
-    followers: user.edge_followed_by?.count || user.followers_count || 0,
-    following: user.edge_follow?.count || user.following_count || 0,
-    posts: user.edge_owner_to_timeline_media?.count || user.media_count || 0,
-    isVerified: user.is_verified || false,
-    profilePicUrl: profilePicUrl,
-    isPrivate: user.is_private || false,
-  }
+const getUserAgent = (): string => {
+  const userAgents = [
+    'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36',
+    'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36',
+    'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/119.0.0.0 Safari/537.36',
+    'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/17.1 Safari/605.1.15',
+    'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36',
+  ]
+  return userAgents[Math.floor(Math.random() * userAgents.length)]
 }
 
-// Fetch Instagram profile data with multiple fallback methods
+const parseInstagramHTML = (html: string, username: string) => {
+  const result: any = {
+    username: username,
+    fullName: '',
+    biography: '',
+    followers: 0,
+    following: 0,
+    posts: 0,
+    isVerified: false,
+    profilePicUrl: null,
+    isPrivate: false,
+    userId: null,
+  }
+
+  const ogImageMatch = html.match(/<meta\s+property=["']og:image["']\s+content=["']([^"']+)["']/i)
+  if (ogImageMatch) {
+    result.profilePicUrl = ogImageMatch[1]
+      .replace(/&amp;/g, '&')
+      .replace(/\\u0026/g, '&')
+      .replace(/\\\//g, '/')
+  }
+
+  const ogTitleMatch = html.match(/<meta\s+property=["']og:title["']\s+content=["']([^"']+)["']/i)
+  if (ogTitleMatch) {
+    const title = ogTitleMatch[1]
+    result.fullName = title
+      .replace(/&#064;/g, '@')
+      .replace(/&amp;/g, '&')
+      .split('(')[0]
+      .split('•')[0]
+      .split('|')[0]
+      .trim()
+    
+    if (result.fullName.toLowerCase() === 'instagram' || result.fullName.toLowerCase() === username.toLowerCase()) {
+      result.fullName = username.charAt(0).toUpperCase() + username.slice(1)
+    }
+  }
+
+  const ogDescMatch = html.match(/<meta\s+property=["']og:description["']\s+content=["']([^"']+)["']/i)
+  if (ogDescMatch) {
+    result.biography = ogDescMatch[1]
+      .replace(/&amp;/g, '&')
+      .replace(/&quot;/g, '"')
+      .replace(/&#39;/g, "'")
+      .trim()
+  }
+
+  const jsonLdMatch = html.match(/<script\s+type=["']application\/ld\+json["']\s*>([\s\S]*?)<\/script>/i)
+  if (jsonLdMatch) {
+    try {
+      const jsonLd = JSON.parse(jsonLdMatch[1])
+      if (jsonLd['@type'] === 'Person' || jsonLd['@type'] === 'ProfilePage') {
+        if (jsonLd.name && !result.fullName) {
+          result.fullName = jsonLd.name
+        }
+        if (jsonLd.image && !result.profilePicUrl) {
+          result.profilePicUrl = jsonLd.image
+        }
+        if (jsonLd.description && !result.biography) {
+          result.biography = jsonLd.description
+        }
+      }
+    } catch (e) {
+    }
+  }
+
+  const sharedDataPatterns = [
+    /window\._sharedData\s*=\s*({.+?});/s,
+    /window\.__additionalDataLoaded\('[^']+',\s*({.+?})\)/s,
+    /<script[^>]*>window\._sharedData\s*=\s*({.+?});<\/script>/s,
+  ]
+
+  for (const pattern of sharedDataPatterns) {
+    const match = html.match(pattern)
+    if (match) {
+      try {
+        const jsonData = JSON.parse(match[1])
+        
+        const userPaths = [
+          jsonData?.entry_data?.ProfilePage?.[0]?.graphql?.user,
+          jsonData?.graphql?.user,
+          jsonData?.user,
+          jsonData?.data?.user,
+          jsonData?.ProfilePage?.[0]?.graphql?.user,
+          jsonData?.require?.[0]?.[3]?.[1]?.graphql?.user,
+        ]
+
+        for (const user of userPaths) {
+          if (user && (user.username === username || user.username)) {
+            if (!result.profilePicUrl) {
+              result.profilePicUrl = user.profile_pic_url_hd || 
+                                    user.profile_pic_url || 
+                                    user.profile_pic_url_large ||
+                                    null
+            }
+
+            if (!result.fullName) {
+              result.fullName = user.full_name || user.fullName || ''
+            }
+
+            if (!result.biography) {
+              result.biography = user.biography || user.bio || ''
+            }
+
+            result.followers = user.edge_followed_by?.count || 
+                              user.follower_count || 
+                              user.followers || 
+                              0
+            result.following = user.edge_follow?.count || 
+                             user.following_count || 
+                             user.following || 
+                             0
+            result.posts = user.edge_owner_to_timeline_media?.count || 
+                          user.media_count || 
+                          user.posts || 
+                          0
+
+            result.isVerified = user.is_verified || user.isVerified || false
+            result.isPrivate = user.is_private || user.isPrivate || false
+            result.userId = user.id || user.pk || user.userId || null
+
+            break
+          }
+        }
+      } catch (e) {
+      }
+    }
+  }
+
+  const scriptJsonMatches = html.matchAll(/<script[^>]*type=["']application\/json["'][^>]*>([\s\S]*?)<\/script>/gi)
+  for (const match of scriptJsonMatches) {
+    try {
+      const jsonData = JSON.parse(match[1])
+      
+      const findUserInObject = (obj: any): any => {
+        if (!obj || typeof obj !== 'object') return null
+        
+        if (obj.username === username || (obj.username && obj.profile_pic_url)) {
+          return obj
+        }
+        
+        for (const key in obj) {
+          if (key === 'user' && obj[key]?.username) {
+            return obj[key]
+          }
+          const found = findUserInObject(obj[key])
+          if (found) return found
+        }
+        
+        return null
+      }
+      
+      const user = findUserInObject(jsonData)
+      if (user) {
+        if (!result.profilePicUrl) {
+          result.profilePicUrl = user.profile_pic_url_hd || user.profile_pic_url || null
+        }
+        if (!result.fullName) {
+          result.fullName = user.full_name || ''
+        }
+        if (!result.biography) {
+          result.biography = user.biography || ''
+        }
+        result.followers = user.edge_followed_by?.count || user.follower_count || result.followers
+        result.following = user.edge_follow?.count || user.following_count || result.following
+        result.posts = user.edge_owner_to_timeline_media?.count || user.media_count || result.posts
+        result.isVerified = user.is_verified || result.isVerified
+        result.isPrivate = user.is_private || result.isPrivate
+        result.userId = user.id || user.pk || result.userId
+      }
+    } catch (e) {
+    }
+  }
+
+  if (result.followers === 0) {
+    const followerPatterns = [
+      /"edge_followed_by":\{"count":(\d+)\}/,
+      /"follower_count":(\d+)/,
+      /"followers":\s*(\d+)/,
+      /(\d+)\s*followers/i,
+    ]
+    for (const pattern of followerPatterns) {
+      const match = html.match(pattern)
+      if (match) {
+        result.followers = parseInt(match[1])
+        break
+      }
+    }
+  }
+
+  if (result.following === 0) {
+    const followingPatterns = [
+      /"edge_follow":\{"count":(\d+)\}/,
+      /"following_count":(\d+)/,
+      /"following":\s*(\d+)/,
+    ]
+    for (const pattern of followingPatterns) {
+      const match = html.match(pattern)
+      if (match) {
+        result.following = parseInt(match[1])
+        break
+      }
+    }
+  }
+
+  if (result.posts === 0) {
+    const postsPatterns = [
+      /"edge_owner_to_timeline_media":\{"count":(\d+)\}/,
+      /"media_count":(\d+)/,
+      /"posts":\s*(\d+)/,
+    ]
+    for (const pattern of postsPatterns) {
+      const match = html.match(pattern)
+      if (match) {
+        result.posts = parseInt(match[1])
+        break
+      }
+    }
+  }
+
+  if (result.profilePicUrl) {
+    result.profilePicUrl = result.profilePicUrl
+      .replace(/\\u0026/g, '&')
+      .replace(/\\\//g, '/')
+      .replace(/&amp;/g, '&')
+    
+    const isDefaultPic = result.profilePicUrl.includes('YW5vbnltb3VzX3Byb2ZpbGVfcGlj') || 
+                         result.profilePicUrl.includes('anonymous_profile_pic') ||
+                         result.profilePicUrl.includes('anonymous')
+    
+    if (isDefaultPic) {
+      result.isDefaultProfilePic = true
+    }
+  }
+
+  if (!result.fullName) {
+    result.fullName = username.charAt(0).toUpperCase() + username.slice(1)
+  }
+
+  return result
+}
+
+const extractUsernameFromInput = (input: string): string => {
+  if (!input) return ''
+  
+  const trimmed = input.trim()
+  
+  const urlPatterns = [
+    /instagram\.com\/([a-zA-Z0-9._]+)/,
+    /instagram\.com\/p\/([a-zA-Z0-9._]+)/,
+    /^https?:\/\/(www\.)?instagram\.com\/([a-zA-Z0-9._]+)/,
+  ]
+  
+  for (const pattern of urlPatterns) {
+    const match = trimmed.match(pattern)
+    if (match) {
+      const extracted = (match[1] || match[2] || match[0]).split('?')[0].split('/').pop()
+      if (extracted) {
+        return extracted.toLowerCase()
+      }
+    }
+  }
+  
+  return trimmed.replace('@', '').trim().toLowerCase()
+}
+
 const fetchInstagramProfile = async (username: string) => {
-  const cleanUsername = username.replace('@', '').trim().toLowerCase()
+  const cleanUsername = extractUsernameFromInput(username)
 
   if (!validateUsername(cleanUsername)) {
     throw new Error('Invalid username format')
   }
 
-  // Check cache first
   const cacheKey = `instagram_profile_${cleanUsername}`
   const cachedData = getCachedData(cacheKey)
   if (cachedData) {
-    console.log('Returning cached data for:', cleanUsername)
     return cachedData
   }
 
-  // Try multiple endpoints and methods
-  const endpoints = [
-    `https://www.instagram.com/${cleanUsername}/?__a=1&__d=dis`,
-    `https://www.instagram.com/${cleanUsername}/`,
-    `https://www.instagram.com/api/v1/users/web_profile_info/?username=${cleanUsername}`
-  ]
+  const instagramUrl = `https://www.instagram.com/${cleanUsername}/`
+  
+  const headers = {
+    'User-Agent': getUserAgent(),
+    'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7',
+    'Accept-Language': 'en-US,en;q=0.9',
+    'Accept-Encoding': 'gzip, deflate, br',
+    'DNT': '1',
+    'Connection': 'keep-alive',
+    'Upgrade-Insecure-Requests': '1',
+    'Sec-Fetch-Dest': 'document',
+    'Sec-Fetch-Mode': 'navigate',
+    'Sec-Fetch-Site': 'none',
+    'Sec-Fetch-User': '?1',
+    'Cache-Control': 'max-age=0',
+    'Referer': 'https://www.google.com/',
+    'Origin': 'https://www.instagram.com',
+  }
 
-  for (const url of endpoints) {
+  try {
+    const response = await fetch(instagramUrl, {
+      method: 'GET',
+      headers: headers,
+      signal: AbortSignal.timeout(20000),
+      redirect: 'follow',
+    })
+
+    if (!response.ok) {
+      if (response.status === 404) {
+        throw new Error('User not found')
+      }
+      if (response.status === 403) {
+        throw new Error('Access forbidden - Instagram may be blocking requests')
+      }
+      throw new Error(`HTTP error! status: ${response.status}`)
+    }
+
+    const html = await response.text()
+    
+    if (!html || html.length < 1000) {
+      throw new Error('Invalid response from Instagram')
+    }
+
+    if (html.includes('Log in to Instagram') || html.includes('login') && html.includes('password')) {
+      throw new Error('Instagram requires login - cannot access profile')
+    }
+
+    const profileData = parseInstagramHTML(html, cleanUsername)
+
     try {
-      console.log(`Trying endpoint: ${url}`)
-
-      const response = await fetch(url, {
+      const graphqlUrl = `https://www.instagram.com/api/v1/users/web_profile_info/?username=${cleanUsername}`
+      const graphqlResponse = await fetch(graphqlUrl, {
         method: 'GET',
         headers: {
-          'User-Agent': getRandomUserAgent(),
-          'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
-          'Accept-Language': 'en-US,en;q=0.9',
-          'Accept-Encoding': 'gzip, deflate, br',
-          'DNT': '1',
-          'Connection': 'keep-alive',
-          'Upgrade-Insecure-Requests': '1',
-          'Sec-Fetch-Dest': 'document',
-          'Sec-Fetch-Mode': 'navigate',
-          'Sec-Fetch-Site': 'none',
-          'Cache-Control': 'no-cache',
-          'Pragma': 'no-cache',
-          'Referer': 'https://www.instagram.com/',
+          'User-Agent': getUserAgent(),
+          'Accept': 'application/json',
+          'X-Requested-With': 'XMLHttpRequest',
+          'X-IG-App-ID': '936619743392459',
+          'X-Instagram-AJAX': '1',
+          'Referer': `https://www.instagram.com/${cleanUsername}/`,
         },
-        redirect: 'follow',
-        signal: AbortSignal.timeout(15000), // 15 second timeout
+        signal: AbortSignal.timeout(10000),
       })
 
-      console.log(`Response status: ${response.status}`)
-
-      if (!response.ok) {
-        if (response.status === 404) {
-          throw new Error('User not found or account is private')
+      if (graphqlResponse.ok) {
+        const graphqlData = await graphqlResponse.json()
+        const user = graphqlData?.data?.user
+        if (user) {
+          const newProfilePicUrl = user.profile_pic_url_hd || user.profile_pic_url || profileData.profilePicUrl
+          profileData.profilePicUrl = newProfilePicUrl
+          
+          if (newProfilePicUrl) {
+            const isDefaultPic = newProfilePicUrl.includes('YW5vbnltb3VzX3Byb2ZpbGVfcGlj') || 
+                                 newProfilePicUrl.includes('anonymous_profile_pic') ||
+                                 newProfilePicUrl.includes('anonymous')
+            profileData.isDefaultProfilePic = isDefaultPic
+          }
+          
+          profileData.fullName = user.full_name || profileData.fullName
+          profileData.biography = user.biography || profileData.biography
+          
+          profileData.followers = user.edge_followed_by?.count || user.follower_count || profileData.followers || 0
+          profileData.following = user.edge_follow?.count || user.following_count || profileData.following || 0
+          profileData.posts = user.edge_owner_to_timeline_media?.count || user.media_count || profileData.posts || 0
+          
+          profileData.isVerified = user.is_verified !== undefined ? user.is_verified : profileData.isVerified
+          profileData.isPrivate = user.is_private !== undefined ? user.is_private : profileData.isPrivate
+          profileData.userId = user.id || user.pk || profileData.userId
         }
-        continue
       }
-
-      const contentType = response.headers.get('content-type')
-      console.log(`Content type: ${contentType}`)
-
-      let data
-      if (contentType?.includes('application/json')) {
-        data = await response.json()
-      } else {
-        // Parse HTML response for profile data
-        const html = await response.text()
-        data = parseHtmlResponse(html, cleanUsername)
+    } catch (graphqlError) {
+      if (profileData.biography && (profileData.followers === 0 || profileData.following === 0 || profileData.posts === 0)) {
+        const bio = profileData.biography
+        
+        const followersMatch = bio.match(/([\d.]+)\s*([KM])?\s*Followers/i)
+        if (followersMatch && profileData.followers === 0) {
+          let followers = parseFloat(followersMatch[1])
+          if (followersMatch[2] === 'K') followers *= 1000
+          if (followersMatch[2] === 'M') followers *= 1000000
+          profileData.followers = Math.floor(followers)
+        }
+        
+        const followingMatch = bio.match(/([\d,]+)\s*Following/i)
+        if (followingMatch && profileData.following === 0) {
+          profileData.following = parseInt(followingMatch[1].replace(/,/g, '')) || 0
+        }
+        
+        const postsMatch = bio.match(/([\d,]+)\s*Posts/i)
+        if (postsMatch && profileData.posts === 0) {
+          profileData.posts = parseInt(postsMatch[1].replace(/,/g, '')) || 0
+        }
       }
+    }
 
-      // Extract profile information
-      const user = data?.graphql?.user || data?.user || data
-      if (!user) {
-        continue
+    if (!profileData.profilePicUrl || profileData.profilePicUrl.includes('placeholder') || profileData.profilePicUrl.includes('__a=1')) {
+      const imageUrlMatches = html.match(/https?:\/\/[^"'\s]+scontent[^"'\s]+\.(jpg|jpeg|png|webp)/gi)
+      if (imageUrlMatches && imageUrlMatches.length > 0) {
+        const profilePicCandidate = imageUrlMatches.find(url => 
+          url.includes('profile') || 
+          url.match(/s\d+x\d+/)
+        )
+        if (profilePicCandidate) {
+          profileData.profilePicUrl = profilePicCandidate
+        }
       }
+    }
 
-      // Check if account is private
-      if (user.is_private) {
-        throw new Error('Account is private')
-      }
-
-      const profileData = extractProfileData(user, cleanUsername)
-
-      // Cache the result for 5 minutes
+    if (profileData.profilePicUrl && !profileData.profilePicUrl.includes('placeholder')) {
       setCachedData(cacheKey, profileData, 300000)
-
       return profileData
-
-    } catch (error) {
-      console.error(`Error with endpoint ${url}:`, error)
-      // Error occurred, try next endpoint
-    }
-  }
-
-  // If all endpoints fail, try to extract data from Instagram's public page
-  console.log('All endpoints failed, trying HTML parsing method')
-
-  try {
-    // Try different user agents and approaches
-    const userAgents = [
-      'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36',
-      'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36',
-      'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36',
-      'Instagram 85.0.0.21.100 Android (24/7.0; 640dpi; 1440x2560; samsung; SM-G930F; herolte; samsungexynos8890; en_US; 138226743)',
-    ]
-
-    for (const userAgent of userAgents) {
-      try {
-        console.log(`Trying with user agent: ${userAgent.substring(0, 50)}...`)
-
-        const htmlResponse = await fetch(`https://www.instagram.com/${cleanUsername}/`, {
-          method: 'GET',
-          headers: {
-            'User-Agent': userAgent,
-            'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
-            'Accept-Language': 'en-US,en;q=0.9',
-            'Accept-Encoding': 'gzip, deflate, br',
-            'DNT': '1',
-            'Connection': 'keep-alive',
-            'Upgrade-Insecure-Requests': '1',
-            'Sec-Fetch-Dest': 'document',
-            'Sec-Fetch-Mode': 'navigate',
-            'Sec-Fetch-Site': 'none',
-            'Cache-Control': 'no-cache',
-            'Pragma': 'no-cache',
-            'Referer': 'https://www.instagram.com/',
-          },
-          signal: AbortSignal.timeout(15000),
-        })
-
-        if (htmlResponse.ok) {
-          const html = await htmlResponse.text()
-          console.log(`HTML response received (${html.length} chars), parsing...`)
-
-          // Look for the actual profile data in various script tags
-          const scriptMatches = html.match(/<script[^>]*>window\._sharedData\s*=\s*({.+?});<\/script>/g)
-          if (scriptMatches) {
-            for (const match of scriptMatches) {
-              try {
-                const jsonMatch = match.match(/window\._sharedData\s*=\s*({.+?});/)
-                if (jsonMatch) {
-                  const jsonData = JSON.parse(jsonMatch[1])
-                  const user = jsonData?.entry_data?.ProfilePage?.[0]?.graphql?.user
-
-                  if (user && user.username === cleanUsername) {
-                    console.log('Found user data in _sharedData:', {
-                      username: user.username,
-                      fullName: user.full_name,
-                      followers: user.edge_followed_by?.count,
-                      posts: user.edge_owner_to_timeline_media?.count
-                    })
-
-                    return extractProfileData(user, cleanUsername)
-                  }
-                }
-              } catch (e) {
-                console.log('Error parsing _sharedData:', e)
-              }
-            }
-          }
-
-          // Try alternative script tag patterns
-          const additionalDataMatches = html.match(/<script[^>]*>window\.__additionalDataLoaded[^<]*<\/script>/g)
-          if (additionalDataMatches) {
-            for (const match of additionalDataMatches) {
-              try {
-                const jsonMatch = match.match(/window\.__additionalDataLoaded\('\/[^']+',\s*({.+?})\)/)
-                if (jsonMatch) {
-                  const jsonData = JSON.parse(jsonMatch[1])
-                  const user = jsonData?.graphql?.user
-
-                  if (user && user.username === cleanUsername) {
-                    console.log('Found user data in __additionalDataLoaded')
-
-                    return extractProfileData(user, cleanUsername)
-                  }
-                }
-              } catch (e) {
-                console.log('Error parsing __additionalDataLoaded:', e)
-              }
-            }
-          }
-
-          // Extract profile picture from meta tags as fallback
-          const metaMatch = html.match(/<meta property="og:image" content="([^"]+)"/)
-          let profilePicUrl = metaMatch ? metaMatch[1] : `https://via.placeholder.com/400x400/6366f1/ffffff?text=${cleanUsername.charAt(0).toUpperCase()}`
-
-          // Decode HTML entities in the URL
-          if (profilePicUrl && profilePicUrl.includes('&amp;')) {
-            profilePicUrl = profilePicUrl.replace(/&amp;/g, '&')
-            console.log('Decoded profile picture URL:', profilePicUrl.substring(0, 100) + '...')
-          }
-
-          // Try to extract more data from the HTML using regex patterns
-          const titleMatch = html.match(/<title>([^<]+)</)
-          let fullName = cleanUsername.charAt(0).toUpperCase() + cleanUsername.slice(1)
-          if (titleMatch) {
-            const title = titleMatch[1]
-            const nameMatch = title.match(/^([^(]+)/)
-            if (nameMatch) {
-              fullName = nameMatch[1].trim()
-            }
-          }
-
-          // Look for follower count in the HTML using various patterns
-          const followersPatterns = [
-            /"edge_followed_by":\{"count":(\d+)\}/,
-            /"follower_count":(\d+)/,
-            /"followers":\s*(\d+)/,
-            /(\d+)\s*followers/i
-          ]
-
-          let followers = 0
-          for (const pattern of followersPatterns) {
-            const match = html.match(pattern)
-            if (match) {
-              followers = parseInt(match[1])
-              break
-            }
-          }
-
-          const followingPatterns = [
-            /"edge_follow":\{"count":(\d+)\}/,
-            /"following_count":(\d+)/,
-            /"following":\s*(\d+)/,
-            /(\d+)\s*following/i
-          ]
-
-          let following = 0
-          for (const pattern of followingPatterns) {
-            const match = html.match(pattern)
-            if (match) {
-              following = parseInt(match[1])
-              break
-            }
-          }
-
-          const postsPatterns = [
-            /"edge_owner_to_timeline_media":\{"count":(\d+)\}/,
-            /"media_count":(\d+)/,
-            /"posts":\s*(\d+)/,
-            /(\d+)\s*posts/i
-          ]
-
-          let posts = 0
-          for (const pattern of postsPatterns) {
-            const match = html.match(pattern)
-            if (match) {
-              posts = parseInt(match[1])
-              break
-            }
-          }
-
-          // Look for verification status
-          const verifiedMatch = html.match(/"is_verified":true/)
-          const isVerified = !!verifiedMatch
-
-          // Look for biography
-          const bioPatterns = [
-            /"biography":"([^"]+)"/,
-            /"bio":"([^"]+)"/,
-            /<meta name="description" content="([^"]+)"/,
-          ]
-
-          let biography = 'Profile data extracted from Instagram page'
-          for (const pattern of bioPatterns) {
-            const match = html.match(pattern)
-            if (match && match[1] && match[1].length > 0) {
-              biography = match[1]
-              break
-            }
-          }
-
-          console.log('Successfully extracted data from HTML:', {
-            username: cleanUsername,
-            fullName,
-            followers,
-            following,
-            posts,
-            isVerified,
-            biography: biography.substring(0, 100) + (biography.length > 100 ? '...' : ''),
-            profilePicUrl: profilePicUrl.includes('placeholder') ? 'placeholder' : 'real'
-          })
-
-          const profileData = {
-            username: cleanUsername,
-            fullName: fullName,
-            biography: biography,
-            followers: followers,
-            following: following,
-            posts: posts,
-            isVerified: isVerified,
-            profilePicUrl: profilePicUrl,
-            isPrivate: false,
-          }
-
-          // Cache the result for 5 minutes
-          setCachedData(cacheKey, profileData, 300000)
-
-          return profileData
-        }
-      } catch (error) {
-        console.log(`Error with user agent ${userAgent.substring(0, 30)}:`, error)
-      }
-    }
-  } catch (error) {
-    console.error('HTML parsing method failed:', error)
-  }
-
-  // Final fallback - use a placeholder with the username initial
-  console.log('All methods failed, using final fallback')
-  const profilePicUrl = `https://via.placeholder.com/400x400/6366f1/ffffff?text=${cleanUsername.charAt(0).toUpperCase()}`
-
-  return {
-    username: cleanUsername,
-    fullName: cleanUsername.charAt(0).toUpperCase() + cleanUsername.slice(1),
-    biography: 'Profile data unavailable - Instagram API restricted',
-    followers: 0,
-    following: 0,
-    posts: 0,
-    isVerified: false,
-    profilePicUrl: profilePicUrl,
-    isPrivate: false,
-  }
-}
-
-// Parse HTML response to extract profile data
-const parseHtmlResponse = (html: string, username: string) => {
-  try {
-    // Look for JSON data in script tags
-    const scriptMatch = html.match(/window\._sharedData\s*=\s*({.+?});/)
-    if (scriptMatch) {
-      return JSON.parse(scriptMatch[1])
+    } else {
+      profileData.profilePicUrl = `https://via.placeholder.com/400x400/6366f1/ffffff?text=${cleanUsername.charAt(0).toUpperCase()}`
+      setCachedData(cacheKey, profileData, 60000)
+      return profileData
     }
 
-    // Look for additional data patterns
-    const additionalDataMatch = html.match(/window\.__additionalDataLoaded\('\/',\s*({.+?})\)/)
-    if (additionalDataMatch) {
-      return JSON.parse(additionalDataMatch[1])
+  } catch (error: any) {
+    const fallbackData = {
+      username: cleanUsername,
+      fullName: cleanUsername.charAt(0).toUpperCase() + cleanUsername.slice(1),
+      biography: '',
+      followers: 0,
+      following: 0,
+      posts: 0,
+      isVerified: false,
+      profilePicUrl: `https://via.placeholder.com/400x400/6366f1/ffffff?text=${cleanUsername.charAt(0).toUpperCase()}`,
+      isPrivate: false,
+      userId: null,
     }
 
-    return null
-  } catch (error) {
-    console.error('Error parsing HTML response:', error)
-    return null
+    setCachedData(cacheKey, fallbackData, 60000)
+    return fallbackData
   }
 }
 
 export async function GET(request: NextRequest) {
   try {
-    // Get username from query parameters
     const { searchParams } = new URL(request.url)
     const username = searchParams.get('username')
 
-    console.log(`Instagram API request for username: ${username}`)
-
     if (!username) {
-      console.log('No username provided')
       return NextResponse.json(
         { error: 'Username parameter is required' },
         { status: 400 }
       )
     }
 
-    // Fetch Instagram profile
-    console.log('Starting Instagram profile fetch...')
     const profileData = await fetchInstagramProfile(username)
-    console.log('Profile fetch successful:', profileData.username)
 
-    // Return profile data
     return NextResponse.json({
       success: true,
       data: profileData
     })
 
   } catch (error) {
-    console.error('Instagram API Error:', error)
-
-    // Return appropriate error response
     if (error instanceof Error) {
-      console.log('Error message:', error.message)
-
-      if (error.message.includes('not found') || error.message.includes('private')) {
+      if (error.message.includes('not found') || error.message.includes('User not found')) {
         return NextResponse.json(
-          { error: error.message },
+          { error: 'User not found. Please check the username and try again.' },
           { status: 404 }
         )
       }
-
 
       if (error.message.includes('Invalid username')) {
         return NextResponse.json(
           { error: 'Invalid username format. Please check and try again.' },
           { status: 400 }
+        )
+      }
+
+      if (error.message.includes('login') || error.message.includes('forbidden')) {
+        return NextResponse.json(
+          { error: 'Instagram is blocking access. Please try again later.' },
+          { status: 403 }
         )
       }
     }
@@ -433,7 +501,6 @@ export async function GET(request: NextRequest) {
   }
 }
 
-// Handle OPTIONS request for CORS
 export async function OPTIONS() {
   return new NextResponse(null, {
     status: 200,
