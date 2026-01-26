@@ -255,23 +255,6 @@ const nextConfig = {
             key: "Cross-Origin-Opener-Policy",
             value: "same-origin-allow-popups",
           },
-          {
-            key: "Content-Security-Policy",
-            value: [
-              "default-src 'self'",
-              "script-src 'self' 'unsafe-inline' 'unsafe-eval' https://www.googletagmanager.com https://www.google-analytics.com https://pagead2.googlesyndication.com https://www.gstatic.com https://fundingchoicesmessages.google.com https://tracker.clickfortify.com https://tpc.googlesyndication.com https://googleads.g.doubleclick.net https://cm.g.doubleclick.net https://ep1.adtrafficquality.google https://ep2.adtrafficquality.google https://gtrace.mediago.io https://gtracenep.admaster.cc",
-              "style-src 'self' 'unsafe-inline' https://fonts.googleapis.com",
-              "font-src 'self' https://fonts.gstatic.com data:",
-              "img-src 'self' data: https: blob:",
-              "connect-src 'self' http://localhost:8000 http://127.0.0.1:8000 https://www.google-analytics.com https://www.googletagmanager.com https://pagead2.googlesyndication.com https://googleads.g.doubleclick.net https://www.gstatic.com https://fundingchoicesmessages.google.com https://tracker.clickfortify.com https://cm.g.doubleclick.net https://ep1.adtrafficquality.google https://ep2.adtrafficquality.google https://gtrace.mediago.io https://gtracenep.admaster.cc https://lh3.googleusercontent.com https://www.google.com https://api-removebg.fasttools.store",
-              "frame-src 'self' https://www.googletagmanager.com https://pagead2.googlesyndication.com https://googleads.g.doubleclick.net https://fundingchoicesmessages.google.com https://tpc.googlesyndication.com https://ep2.adtrafficquality.google https://www.google.com",
-              "object-src 'none'",
-              "base-uri 'self'",
-              "form-action 'self'",
-              "frame-ancestors 'self'",
-              "upgrade-insecure-requests",
-            ].join("; "),
-          },
           // Cache HTML pages with ISR support
           {
             key: "Cache-Control",
