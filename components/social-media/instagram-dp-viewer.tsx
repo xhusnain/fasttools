@@ -22,7 +22,7 @@
  * - Add comprehensive error handling and logging
  */
 
-import { useState, useEffect } from "react"
+import { useState, useEffect, useRef } from "react"
 import { GButton } from "@/ui/gbutton"
 import { GInput } from "@/ui/ginput"
 import { GLabel } from "@/ui/glabel"
@@ -43,6 +43,14 @@ export function InstagramDpViewer() {
   const [requestId, setRequestId] = useState<string | null>(null)
   const [timerInterval, setTimerInterval] = useState<NodeJS.Timeout | null>(null)
   const [downloading, setDownloading] = useState(false)
+  const resultRef = useRef<HTMLDivElement>(null)
+
+  // Auto-scroll to results
+  useEffect(() => {
+    if (profileData && resultRef.current) {
+      resultRef.current.scrollIntoView({ behavior: "smooth", block: "center" })
+    }
+  }, [profileData])
 
   // Cleanup timer on component unmount
   useEffect(() => {
@@ -305,7 +313,7 @@ export function InstagramDpViewer() {
       </GCard>
 
       {profileData && (
-        <GCard className="p-4 sm:p-6 bg-card border border-border shadow-lg hover:shadow-xl transition-all duration-300 animate-fade-in">
+        <GCard ref={resultRef} className="p-4 sm:p-6 bg-card border border-border shadow-lg hover:shadow-xl transition-all duration-300 animate-fade-in">
           <div className="space-y-4 sm:space-y-6">
             <h3 className="text-lg sm:text-xl font-semibold text-foreground text-center">Profile Information</h3>
 

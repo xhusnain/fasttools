@@ -27,7 +27,7 @@ const socialTools = [
   },
   {
     title: "Instagram DP Viewer",
-    description: "View and download Instagram profile pictures in HD quality for brand research and analysis.",
+    description: "Fastest way to view and download Instagram profile pictures completely anonymously in HD (1080p).",
     icon: Instagram,
     href: "/social-media-tools/instagram-dp",
     color: "pink"
