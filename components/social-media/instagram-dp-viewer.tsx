@@ -115,10 +115,30 @@ export function InstagramDpViewer() {
     setDownloading(true)
 
     try {
-      await downloadBlob(imageUrl, `${profileData.username}-profile-picture-${quality}.jpg`)
+      const needsProxy = imageUrl.includes('cdninstagram.com') || imageUrl.includes('fbcdn.net')
+      const downloadUrl = needsProxy 
+        ? `/api/instagram/image-proxy?url=${encodeURIComponent(imageUrl)}`
+        : imageUrl
+
+      const response = await fetch(downloadUrl)
+      if (!response.ok) throw new Error('Failed to fetch image')
+
+      const blob = await response.blob()
+      const blobUrl = URL.createObjectURL(blob)
+
+      const link = document.createElement('a')
+      link.href = blobUrl
+      link.download = `${profileData.username}-profile-picture-${quality}.jpg`
+      link.style.display = 'none'
+      document.body.appendChild(link)
+      link.click()
+      document.body.removeChild(link)
+
+      setTimeout(() => URL.revokeObjectURL(blobUrl), 100)
       setDownloading(false)
     } catch (error) {
-      setError('Failed to download image. Please try right-clicking on the image and selecting "Save image as".')
+      console.error('Download error:', error)
+      setError('Failed to download image. Please try again.')
       setDownloading(false)
     }
   }
@@ -281,7 +301,7 @@ export function InstagramDpViewer() {
                 )}
                 {profileData.external_url && (
                   <a
-                    href={profileData.external_url}
+                    href={profileData.external_url.startsWith('http') ? profileData.external_url : `https://${profileData.external_url}`}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="inline-flex items-center gap-1 text-xs sm:text-sm text-primary hover:underline mt-1"
@@ -328,15 +348,16 @@ export function InstagramDpViewer() {
                     </span>
                   </div>
                   {profileData.external_url && (
-                    <div className="flex items-center justify-between">
+                    <div className="flex items-center justify-between gap-2">
                       <span className="text-muted-foreground">External URL:</span>
                       <a
-                        href={profileData.external_url}
+                        href={profileData.external_url.startsWith('http') ? profileData.external_url : `https://${profileData.external_url}`}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="text-primary hover:underline text-xs max-w-[200px] truncate"
+                        className="text-primary hover:underline text-xs max-w-[200px] truncate flex items-center gap-1"
                       >
-                        {profileData.external_url.replace(/^https?:\/\//, '').replace(/\/$/, '')}
+                        <Globe className="h-3 w-3 flex-shrink-0" />
+                        <span className="truncate">{profileData.external_url.replace(/^https?:\/\//, '').replace(/\/$/, '')}</span>
                       </a>
                     </div>
                   )}
