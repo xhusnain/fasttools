@@ -185,13 +185,13 @@ export function YoutubeKeywordAnalysis({ className }: YoutubeKeywordAnalysisProp
 
     return (
         <div className={`space-y-6 ${className || ''}`}>
-            <GCard className="p-6 bg-card border-border shadow-sm">
+            <GCard className="p-4 sm:p-6 bg-card border-border shadow-sm">
                 <div className="space-y-4">
                     <div>
                         <GLabel htmlFor="keyword-input" className="text-sm font-medium text-foreground mb-2 block">
                             Channel Name to Analyze
                         </GLabel>
-                        <div className="flex gap-2">
+                        <div className="flex flex-col sm:flex-row gap-2">
                             <GInput
                                 id="keyword-input"
                                 placeholder="Enter a channel name (e.g., TechReviews, GamingWorld)"
@@ -204,6 +204,7 @@ export function YoutubeKeywordAnalysis({ className }: YoutubeKeywordAnalysisProp
                                 onClick={handleAnalyze}
                                 disabled={!input.trim() || isAnalyzing}
                                 isLoading={isAnalyzing}
+                                className="w-full sm:w-auto"
                             >
                                 {isAnalyzing ? 'Analyzing...' : (
                                     <>
@@ -241,17 +242,17 @@ export function YoutubeKeywordAnalysis({ className }: YoutubeKeywordAnalysisProp
             {result && !isAnalyzing && (
                 <>
                     {/* Overall Score Card */}
-                    <GCard className="p-6 bg-gradient-to-br from-primary/5 to-primary/10 border-primary/20 shadow-sm">
-                        <div className="flex items-center gap-6">
-                            <div className="text-center">
+                    <GCard className="p-4 sm:p-6 bg-gradient-to-br from-primary/5 to-primary/10 border-primary/20 shadow-sm">
+                        <div className="flex flex-col sm:flex-row items-center gap-4 sm:gap-6 text-center sm:text-left">
+                            <div className="flex-shrink-0">
                                 <div className={`text-5xl font-bold ${getOverallGrade(result.overallScore).color}`}>
                                     {getOverallGrade(result.overallScore).grade}
                                 </div>
                                 <div className="text-sm text-muted-foreground mt-1">Grade</div>
                             </div>
-                            <div className="flex-1">
+                            <div className="flex-1 w-full">
                                 <h3 className="text-lg font-semibold text-foreground mb-1">"{result.name}"</h3>
-                                <div className="flex items-center gap-2 mb-2">
+                                <div className="flex items-center justify-center sm:justify-start gap-2 mb-2">
                                     <span className="text-2xl font-bold text-primary">{result.overallScore}</span>
                                     <span className="text-sm text-muted-foreground">/ 100 SEO Score</span>
                                 </div>
@@ -280,8 +281,8 @@ export function YoutubeKeywordAnalysis({ className }: YoutubeKeywordAnalysisProp
                                             <span className="text-xs text-muted-foreground">({score.value}/100)</span>
                                         </div>
                                         <div className={`text-xs px-2 py-0.5 rounded-full ${score.color === 'green' ? 'bg-green-500/10 text-green-600' :
-                                                score.color === 'yellow' ? 'bg-yellow-500/10 text-yellow-600' :
-                                                    'bg-red-500/10 text-red-600'
+                                            score.color === 'yellow' ? 'bg-yellow-500/10 text-yellow-600' :
+                                                'bg-red-500/10 text-red-600'
                                             }`}>
                                             {score.color === 'green' ? 'Good' : score.color === 'yellow' ? 'Average' : 'Needs Work'}
                                         </div>

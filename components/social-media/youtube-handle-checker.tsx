@@ -175,13 +175,13 @@ export function YoutubeHandleChecker({ className }: YoutubeHandleCheckerProps) {
 
     return (
         <div className={`space-y-6 ${className || ''}`}>
-            <GCard className="p-6 bg-card border-border shadow-sm">
+            <GCard className="p-4 sm:p-6 bg-card border-border shadow-sm">
                 <div className="space-y-4">
                     <div>
                         <GLabel htmlFor="handle-input" className="text-sm font-medium text-foreground mb-2 block">
                             YouTube Handle or URL
                         </GLabel>
-                        <div className="flex gap-2">
+                        <div className="flex flex-col sm:flex-row gap-2">
                             <div className="relative flex-1">
                                 <span className="absolute left-3 top-1/2 -translate-y-1/2 text-muted-foreground">@</span>
                                 <GInput
@@ -197,6 +197,7 @@ export function YoutubeHandleChecker({ className }: YoutubeHandleCheckerProps) {
                                 onClick={handleCheck}
                                 disabled={!input.trim() || isChecking}
                                 isLoading={isChecking}
+                                className="w-full sm:w-auto"
                             >
                                 {isChecking ? 'Checking...' : (
                                     <>
@@ -266,10 +267,10 @@ export function YoutubeHandleChecker({ className }: YoutubeHandleCheckerProps) {
                             <div
                                 key={index}
                                 className={`flex items-center justify-between p-3 rounded-lg border transition-all ${variation.available === true
-                                        ? 'border-green-500 bg-green-500/5'
-                                        : variation.available === false
-                                            ? 'border-red-500/30 bg-red-500/5'
-                                            : 'border-border hover:border-primary/50'
+                                    ? 'border-green-500 bg-green-500/5'
+                                    : variation.available === false
+                                        ? 'border-red-500/30 bg-red-500/5'
+                                        : 'border-border hover:border-primary/50'
                                     }`}
                             >
                                 <div className="flex items-center gap-2">

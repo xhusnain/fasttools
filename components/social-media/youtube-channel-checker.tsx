@@ -251,7 +251,7 @@ export function YoutubeChannelChecker() {
         </GTabsList>
 
         <GTabsContent value="checker">
-          <GCard className="p-6 bg-card border-border shadow-sm">
+          <GCard className="p-4 sm:p-6 bg-card border-border shadow-sm">
             <div className="space-y-4">
               <div>
                 <div className="flex items-center justify-between mb-2">

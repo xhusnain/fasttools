@@ -221,42 +221,44 @@ const toolConfig = createToolConfig({
             <TrendingUp className="h-6 w-6 text-primary" />
             YouTube Naming Trends in 2025
           </h2>
-          <GTable>
-            <thead className="bg-muted text-foreground font-semibold">
-              <tr>
-                <th className="p-3">Naming Style</th>
-                <th className="p-3">Trend</th>
-                <th className="p-3">Examples</th>
-                <th className="p-3">Why It Works</th>
-              </tr>
-            </thead>
-            <tbody className="divide-y divide-border text-sm">
-              <tr>
-                <td className="p-3">Abstract Brands</td>
-                <td className="p-3 text-green-500 font-bold">Rising 📈</td>
-                <td className="p-3">Veritasium, MKBHD</td>
-                <td className="p-3">Memorable, scalable</td>
-              </tr>
-              <tr>
-                <td className="p-3">Real Names</td>
-                <td className="p-3 font-medium">Stable ➖</td>
-                <td className="p-3">Marques Brownlee</td>
-                <td className="p-3">Trust, authority</td>
-              </tr>
-              <tr>
-                <td className="p-3">Portmanteau</td>
-                <td className="p-3 text-green-500 font-bold">Rising 📈</td>
-                <td className="p-3">Netflix, Instagram</td>
-                <td className="p-3">Unique, brandable</td>
-              </tr>
-              <tr>
-                <td className="p-3">SEO/Descriptive</td>
-                <td className="p-3 text-red-500 font-medium">Declining 📉</td>
-                <td className="p-3">TechReviews2024</td>
-                <td className="p-3">Generic, dated</td>
-              </tr>
-            </tbody>
-          </GTable>
+          <div className="overflow-x-auto">
+            <GTable>
+              <thead className="bg-muted text-foreground font-semibold">
+                <tr>
+                  <th className="p-3 whitespace-nowrap">Naming Style</th>
+                  <th className="p-3 whitespace-nowrap">Trend</th>
+                  <th className="p-3 whitespace-nowrap">Examples</th>
+                  <th className="p-3 whitespace-nowrap">Why It Works</th>
+                </tr>
+              </thead>
+              <tbody className="divide-y divide-border text-sm">
+                <tr>
+                  <td className="p-3 whitespace-nowrap">Abstract Brands</td>
+                  <td className="p-3 text-green-500 font-bold whitespace-nowrap">Rising 📈</td>
+                  <td className="p-3 whitespace-nowrap">Veritasium, MKBHD</td>
+                  <td className="p-3 whitespace-nowrap">Memorable, scalable</td>
+                </tr>
+                <tr>
+                  <td className="p-3 whitespace-nowrap">Real Names</td>
+                  <td className="p-3 font-medium whitespace-nowrap">Stable ➖</td>
+                  <td className="p-3 whitespace-nowrap">Marques Brownlee</td>
+                  <td className="p-3 whitespace-nowrap">Trust, authority</td>
+                </tr>
+                <tr>
+                  <td className="p-3 whitespace-nowrap">Portmanteau</td>
+                  <td className="p-3 text-green-500 font-bold whitespace-nowrap">Rising 📈</td>
+                  <td className="p-3 whitespace-nowrap">Netflix, Instagram</td>
+                  <td className="p-3 whitespace-nowrap">Unique, brandable</td>
+                </tr>
+                <tr>
+                  <td className="p-3 whitespace-nowrap">SEO/Descriptive</td>
+                  <td className="p-3 text-red-500 font-medium whitespace-nowrap">Declining 📉</td>
+                  <td className="p-3 whitespace-nowrap">TechReviews2024</td>
+                  <td className="p-3 whitespace-nowrap">Generic, dated</td>
+                </tr>
+              </tbody>
+            </GTable>
+          </div>
           <p className="text-sm text-muted-foreground italic">
             <strong>Expert Insight:</strong> Unique brand names now outperform generic SEO names. YouTube's algorithm favors engagement and brand loyalty over keyword matching.
           </p>
