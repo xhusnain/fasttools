@@ -17,6 +17,9 @@ interface CountryPageProps {
     };
 }
 
+// Enable ISR - regenerate every hour
+export const revalidate = 3600;
+
 export async function generateStaticParams() {
     const countries = await getAllCountries();
     return countries.slice(0, 50).map((country) => ({

@@ -21,6 +21,8 @@ const nextConfig = {
     ],
     // Enable compression
     gzipSize: true,
+    // Optimize for modern browsers
+    esmExternals: true,
   },
   // Optimize server components
   serverExternalPackages: ['sharp'],
@@ -70,6 +72,14 @@ const nextConfig = {
       'utf-8-validate': 'commonjs utf-8-validate',
       bufferutil: 'commonjs bufferutil',
     })
+
+    // Remove legacy JavaScript polyfills for modern browsers
+    if (!dev && !isServer) {
+      // Optimize for modern browsers - remove unnecessary polyfills
+      config.resolve.alias = {
+        ...config.resolve.alias,
+      }
+    }
 
     return config
   },
@@ -159,7 +169,7 @@ const nextConfig = {
           },
         ],
       },
-      // _next static files
+      // _next static files - aggressive caching
       {
         source: "/_next/static/:path*",
         headers: [
@@ -171,6 +181,15 @@ const nextConfig = {
       },
       {
         source: "/_next/static/chunks/:path*",
+        headers: [
+          {
+            key: "Cache-Control",
+            value: "public, max-age=31536000, immutable",
+          },
+        ],
+      },
+      {
+        source: "/_next/static/media/:path*",
         headers: [
           {
             key: "Cache-Control",
@@ -227,10 +246,36 @@ const nextConfig = {
             key: "Permissions-Policy",
             value: "camera=(), microphone=(), geolocation=()",
           },
-          // Cache HTML pages for short time
+          // Security headers
+          {
+            key: "Strict-Transport-Security",
+            value: "max-age=31536000; includeSubDomains; preload",
+          },
+          {
+            key: "Cross-Origin-Opener-Policy",
+            value: "same-origin-allow-popups",
+          },
+          {
+            key: "Content-Security-Policy",
+            value: [
+              "default-src 'self'",
+              "script-src 'self' 'unsafe-inline' 'unsafe-eval' https://www.googletagmanager.com https://www.google-analytics.com https://pagead2.googlesyndication.com https://www.gstatic.com https://fundingchoicesmessages.google.com https://tracker.clickfortify.com https://tpc.googlesyndication.com https://googleads.g.doubleclick.net https://cm.g.doubleclick.net https://ep1.adtrafficquality.google https://ep2.adtrafficquality.google https://gtrace.mediago.io https://gtracenep.admaster.cc",
+              "style-src 'self' 'unsafe-inline' https://fonts.googleapis.com",
+              "font-src 'self' https://fonts.gstatic.com data:",
+              "img-src 'self' data: https: blob:",
+              "connect-src 'self' https://www.google-analytics.com https://www.googletagmanager.com https://pagead2.googlesyndication.com https://googleads.g.doubleclick.net https://www.gstatic.com https://fundingchoicesmessages.google.com https://tracker.clickfortify.com https://cm.g.doubleclick.net https://ep1.adtrafficquality.google https://ep2.adtrafficquality.google https://gtrace.mediago.io https://gtracenep.admaster.cc https://lh3.googleusercontent.com https://www.google.com",
+              "frame-src 'self' https://www.googletagmanager.com https://pagead2.googlesyndication.com https://googleads.g.doubleclick.net https://fundingchoicesmessages.google.com https://tpc.googlesyndication.com",
+              "object-src 'none'",
+              "base-uri 'self'",
+              "form-action 'self'",
+              "frame-ancestors 'self'",
+              "upgrade-insecure-requests",
+            ].join("; "),
+          },
+          // Cache HTML pages with ISR support
           {
             key: "Cache-Control",
-            value: "public, s-maxage=60, stale-while-revalidate=300",
+            value: "public, s-maxage=3600, stale-while-revalidate=86400",
           },
         ],
       },

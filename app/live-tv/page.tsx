@@ -24,11 +24,17 @@ export async function generateMetadata(): Promise<Metadata> {
 
 import { Suspense } from 'react';
 
+// Enable ISR - regenerate every hour
+export const revalidate = 3600;
+
 export default async function LiveTVPage() {
-    const countries = await getAllCountries();
-    const stats = await getIPTVStats();
-    const languages = await getAllLanguages();
-    const categories = await getAllCategories();
+    // Precompute all data in parallel for better performance
+    const [countries, stats, languages, categories] = await Promise.all([
+        getAllCountries(),
+        getIPTVStats(),
+        getAllLanguages(),
+        getAllCategories(),
+    ]);
 
     return (
         <div className="min-h-screen bg-background">

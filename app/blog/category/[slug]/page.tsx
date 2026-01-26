@@ -5,6 +5,9 @@ import { createMetadata } from '@/lib/metadata-base'
 import { notFound } from 'next/navigation'
 import { slugifyCategory } from '@/lib/utils'
 
+// Enable ISR - regenerate weekly
+export const revalidate = 604800;
+
 export async function generateStaticParams() {
     const posts = getAllPosts()
     const categories = Array.from(new Set(posts.map(post =>

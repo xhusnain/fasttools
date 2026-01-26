@@ -142,12 +142,14 @@ export default function RootLayout({
     return (
         <html lang="en" className={`antialiased ${roboto.variable} ${montserrat.variable} ${openSans.variable}`} suppressHydrationWarning>
             <head>
+                {/* Preconnect to critical third-party origins */}
+                <link rel="preconnect" href="https://fonts.googleapis.com" crossOrigin="anonymous" />
+                <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
                 <link rel="preconnect" href="https://www.googletagmanager.com" crossOrigin="anonymous" />
                 <link rel="dns-prefetch" href="https://www.googletagmanager.com" />
-
                 <link rel="dns-prefetch" href="https://pagead2.googlesyndication.com" />
                 <link rel="dns-prefetch" href="https://www.google-analytics.com" />
-                <Script id="google-tag-manager" strategy="beforeInteractive">
+                <Script id="google-tag-manager" strategy="afterInteractive">
                     {`(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
                     new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
                     j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=

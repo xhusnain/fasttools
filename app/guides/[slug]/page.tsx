@@ -17,6 +17,9 @@ import remarkGfm from 'remark-gfm';
 import rehypeSlug from 'rehype-slug';
 import rehypePrism from 'rehype-prism-plus';
 
+// Enable ISR - regenerate weekly
+export const revalidate = 604800;
+
 export async function generateStaticParams() {
     const slugs = getGuideSlugs();
     return slugs.map((slug) => ({

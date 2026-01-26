@@ -6,6 +6,17 @@ import { parseM3U, extractCountryCode } from '@/lib/m3u-parser';
 const IPTV_ORG_BASE_URL = 'https://iptv-org.github.io/iptv';
 const CACHE_DURATION = 1000 * 60 * 60; // 1 hour
 
+// Pre-computed data cache
+declare global {
+    var iptvPrecomputedCache: {
+        countries: Country[];
+        stats: IPTVStats;
+        languages: string[];
+        categories: string[];
+        timestamp: number;
+    } | undefined;
+}
+
 // Global cache interface to persist across hot reloads in dev
 declare global {
     var iptvCache: {
@@ -85,6 +96,11 @@ export async function getAllChannels(): Promise<Channel[]> {
 }
 
 export async function getAllCountries(): Promise<Country[]> {
+    // Check precomputed cache first
+    if (global.iptvPrecomputedCache && Date.now() - global.iptvPrecomputedCache.timestamp < CACHE_DURATION) {
+        return global.iptvPrecomputedCache.countries;
+    }
+    
     const channels = await getAllChannels();
     return extractCountries(channels);
 }
@@ -159,28 +175,14 @@ export async function getCountryChannels(countryCode: string): Promise<CountryCh
  * Get IPTV statistics
  */
 export async function getIPTVStats(): Promise<IPTVStats> {
-    const channels = await getAllChannels();
-    const countries = await getAllCountries();
-
-    const categoryCounts: Record<string, number> = {};
-    const languageCounts: Record<string, number> = {};
-
-    channels.forEach(channel => {
-        channel.categories.forEach(cat => {
-            categoryCounts[cat] = (categoryCounts[cat] || 0) + 1;
-        });
-
-        if (channel.language) {
-            languageCounts[channel.language] = (languageCounts[channel.language] || 0) + 1;
-        }
-    });
-
-    return {
-        totalCountries: countries.length,
-        totalChannels: channels.length,
-        categoryCounts,
-        languageCounts,
-    };
+    // Check precomputed cache first
+    if (global.iptvPrecomputedCache && Date.now() - global.iptvPrecomputedCache.timestamp < CACHE_DURATION) {
+        return global.iptvPrecomputedCache.stats;
+    }
+    
+    // Precompute all data if cache is stale
+    const precomputed = await precomputeIPTVData();
+    return precomputed.stats;
 }
 
 /**
@@ -235,6 +237,11 @@ function getCountryFlag(code: string): string {
  * Get all available languages
  */
 export async function getAllLanguages(): Promise<string[]> {
+    // Check precomputed cache first
+    if (global.iptvPrecomputedCache && Date.now() - global.iptvPrecomputedCache.timestamp < CACHE_DURATION) {
+        return global.iptvPrecomputedCache.languages;
+    }
+    
     const stats = await getIPTVStats();
     return Object.keys(stats.languageCounts).sort();
 }
@@ -243,6 +250,56 @@ export async function getAllLanguages(): Promise<string[]> {
  * Get all available categories
  */
 export async function getAllCategories(): Promise<string[]> {
+    // Check precomputed cache first
+    if (global.iptvPrecomputedCache && Date.now() - global.iptvPrecomputedCache.timestamp < CACHE_DURATION) {
+        return global.iptvPrecomputedCache.categories;
+    }
+    
     const stats = await getIPTVStats();
     return Object.keys(stats.categoryCounts).sort();
+}
+
+/**
+ * Pre-compute and cache all IPTV data for faster access
+ */
+export async function precomputeIPTVData() {
+    if (global.iptvPrecomputedCache && Date.now() - global.iptvPrecomputedCache.timestamp < CACHE_DURATION) {
+        return global.iptvPrecomputedCache;
+    }
+
+    const channels = await getAllChannels();
+    const countries = extractCountries(channels);
+    
+    const categoryCounts: Record<string, number> = {};
+    const languageCounts: Record<string, number> = {};
+
+    channels.forEach(channel => {
+        channel.categories.forEach(cat => {
+            categoryCounts[cat] = (categoryCounts[cat] || 0) + 1;
+        });
+
+        if (channel.language) {
+            languageCounts[channel.language] = (languageCounts[channel.language] || 0) + 1;
+        }
+    });
+
+    const stats: IPTVStats = {
+        totalCountries: countries.length,
+        totalChannels: channels.length,
+        categoryCounts,
+        languageCounts,
+    };
+
+    const languages = Object.keys(languageCounts).sort();
+    const categories = Object.keys(categoryCounts).sort();
+
+    global.iptvPrecomputedCache = {
+        countries,
+        stats,
+        languages,
+        categories,
+        timestamp: Date.now(),
+    };
+
+    return global.iptvPrecomputedCache;
 }

@@ -29,6 +29,9 @@ function slugify(text: string) {
         .replace(/--+/g, '-')
 }
 
+// Enable ISR - regenerate weekly
+export const revalidate = 604800;
+
 export async function generateStaticParams() {
     const slugs = getPostSlugs();
     return slugs.map((slug) => ({
