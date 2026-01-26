@@ -60,21 +60,26 @@ function handleCORS(request: NextRequest): NextResponse | null {
 
 
 export default function proxy(request: NextRequest) {
-    const host = request.headers.get('host')
-    const pathname = request.nextUrl.pathname
+    const { pathname, search, hostname } = request.nextUrl
     const corsResponse = handleCORS(request)
+
     if (request.method === 'OPTIONS' && corsResponse) {
         return corsResponse
     }
+
     if (env.isProduction) {
         const proto = request.headers.get('x-forwarded-proto')
         const isHttp = proto === 'http'
-        const isNonWww = host === 'fasttools.store'
+        const isNonWww = hostname === 'fasttools.store'
 
         if (isHttp || isNonWww) {
-            return NextResponse.redirect(`https://www.fasttools.store${pathname}`, 301)
+            const redirectUrl = request.nextUrl.clone()
+            redirectUrl.protocol = 'https:'
+            redirectUrl.hostname = 'www.fasttools.store'
+            return NextResponse.redirect(redirectUrl, 301)
         }
     }
+
     if (isGoneUrl(pathname)) {
         const url = request.nextUrl.clone()
         url.pathname = '/404'
@@ -82,11 +87,15 @@ export default function proxy(request: NextRequest) {
         response.headers.set('x-gone', 'true')
         return response
     }
+
     if (redirects.has(pathname)) {
-        const targetUrl = redirects.get(pathname)!
-        const url = new URL(targetUrl, request.url)
-        return NextResponse.redirect(url, 301)
+        const targetPath = redirects.get(pathname)!
+        const redirectUrl = request.nextUrl.clone()
+        redirectUrl.pathname = targetPath
+        // nextUrl.clone() preserves search params, which is what we want
+        return NextResponse.redirect(redirectUrl, 301)
     }
+
     return corsResponse || NextResponse.next()
 }
 
