@@ -1,7 +1,6 @@
 
 import { CurrencyRepository } from "@/services";
 import { YouTubeRepository } from "@/services";
-import { InstagramRepository } from "@/services";
 import { AIRepository } from "@/services";
 import { DownloaderRepository } from "../repositories/downloader.repository";
 import type { SocialMediaPlatform } from "@/types";
@@ -48,12 +47,6 @@ export const YouTubeService = {
   },
 };
 
-export const InstagramService = {
-  getProfile: async (username: string) => {
-    return InstagramRepository.getProfile(username);
-  },
-};
-
 export const AIService = {
   generateContent: async (prompt: string, options?: {
     model?: string;
@@ -79,10 +72,8 @@ export const DownloaderService = {
 };
 
 export const API = {
-
   Currency: CurrencyService,
   YouTube: YouTubeService,
-  Instagram: InstagramService,
   AI: AIService,
   Downloader: DownloaderService,
 };

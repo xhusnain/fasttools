@@ -1,13 +1,16 @@
 "use client"
 
 import { useState, useEffect, useRef } from "react"
+import axios from "axios"
 import { GButton } from "@/ui/gbutton"
 import { GInput } from "@/ui/ginput"
 import { GLabel } from "@/ui/glabel"
 import { GCard } from "@/ui/gcard"
-import { Download, AlertCircle, User, Eye, Shield } from "lucide-react"
+import { Download, AlertCircle, User, Eye, Lock, Globe, CheckCircle2 } from "lucide-react"
 import { LoadingSpinner } from "@/components/common/loading-spinner"
 import { downloadBlob } from "@/lib/download-utils"
+import { generateToken } from "@/lib/api-auth"
+import { env } from "@/config/env"
 
 export function InstagramDpViewer() {
   const [username, setUsername] = useState("")
@@ -25,29 +28,29 @@ export function InstagramDpViewer() {
 
   const extractUsername = (input: string): string | null => {
     if (!input) return null
-    
+
     const trimmed = input.trim()
-    
+
     const urlPatterns = [
       /instagram\.com\/([a-zA-Z0-9._]+)/,
       /instagram\.com\/p\/([a-zA-Z0-9._]+)/,
       /^https?:\/\/(www\.)?instagram\.com\/([a-zA-Z0-9._]+)/,
     ]
-    
+
     for (const pattern of urlPatterns) {
       const match = trimmed.match(pattern)
       if (match) {
         return (match[1] || match[2] || match[0]).split('?')[0].split('/').pop()?.toLowerCase() || null
       }
     }
-    
+
     return trimmed.replace("@", "").toLowerCase()
   }
 
   const fetchProfileData = async () => {
     try {
       const extractedUsername = extractUsername(username)
-      
+
       if (!extractedUsername) {
         setError("Please enter a valid username or Instagram profile link")
         return
@@ -57,29 +60,41 @@ export function InstagramDpViewer() {
       setError(null)
       setProfileData(null)
 
-      const response = await fetch(`/api/instagram/profile?username=${encodeURIComponent(extractedUsername)}`, {
-        method: 'GET',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        signal: AbortSignal.timeout(20000),
-      })
+      const token = await generateToken()
 
-      if (!response.ok) {
-        const errorData = await response.json()
-        throw new Error(errorData.error || `Failed to fetch profile: ${response.status}`)
-      }
+      const response = await axios.get(
+        `${env.pythonApiUrl}/api/v1/instagram/user?username=${encodeURIComponent(extractedUsername)}`,
+        {
+          headers: {
+            "Authorization": `Bearer ${token}`,
+            "Content-Type": "application/json",
+          },
+          timeout: 20000,
+        }
+      )
 
-      const data = await response.json()
-
-      if (data.success && data.data) {
-        setProfileData(data.data)
+      if (response.data) {
+        const backendData = response.data.data || response.data
+        setProfileData(backendData)
         setError(null)
       } else {
-        throw new Error(data.error || 'Invalid response from server')
+        throw new Error('Invalid response from server')
       }
     } catch (error: any) {
-      setError(error.message || 'Failed to fetch profile. Please try again.')
+      console.error("API Error:", error)
+      let errorMessage = "Failed to fetch profile. Please try again."
+
+      if (axios.isAxiosError(error)) {
+        if (error.response?.data?.error || error.response?.data?.message) {
+          errorMessage = error.response.data.error || error.response.data.message
+        } else if (error.message) {
+          errorMessage = error.message
+        }
+      } else if (error instanceof Error) {
+        errorMessage = error.message
+      }
+
+      setError(errorMessage)
       setProfileData(null)
     } finally {
       setLoading(false)
@@ -90,13 +105,17 @@ export function InstagramDpViewer() {
     await fetchProfileData()
   }
 
-  const downloadImage = async () => {
-    if (!profileData?.profilePicUrl) return
+  const downloadImage = async (quality: 'sd' | 'hd' = 'hd') => {
+    const imageUrl = quality === 'hd' 
+      ? (profileData?.profile_pic_url_hd || profileData?.profile_pic_url)
+      : profileData?.profile_pic_url
+
+    if (!imageUrl) return
 
     setDownloading(true)
 
     try {
-      await downloadBlob(profileData.profilePicUrl, `${profileData.username}-profile-picture.jpg`)
+      await downloadBlob(imageUrl, `${profileData.username}-profile-picture-${quality}.jpg`)
       setDownloading(false)
     } catch (error) {
       setError('Failed to download image. Please try right-clicking on the image and selecting "Save image as".')
@@ -197,59 +216,86 @@ export function InstagramDpViewer() {
               <div className="relative">
                 <img
                   src={
-                    profileData.profilePicUrl && 
-                    (profileData.profilePicUrl.includes('cdninstagram.com') || 
-                     profileData.profilePicUrl.includes('fbcdn.net') ||
-                     profileData.isDefaultProfilePic ||
-                     profileData.profilePicUrl.includes('anonymous') || 
-                     profileData.profilePicUrl.includes('YW5vbnltb3VzX3Byb2ZpbGVfcGlj') ||
-                     profileData.profilePicUrl.includes('anonymous_profile_pic'))
-                      ? `/api/instagram/image-proxy?url=${encodeURIComponent(profileData.profilePicUrl)}`
-                      : profileData.profilePicUrl
+                    (profileData.profile_pic_url_hd || profileData.profile_pic_url) &&
+                    ((profileData.profile_pic_url_hd || profileData.profile_pic_url).includes('cdninstagram.com') ||
+                     (profileData.profile_pic_url_hd || profileData.profile_pic_url).includes('fbcdn.net') ||
+                     (profileData.profile_pic_url_hd || profileData.profile_pic_url).includes('anonymous') ||
+                     (profileData.profile_pic_url_hd || profileData.profile_pic_url).includes('YW5vbnltb3VzX3Byb2ZpbGVfcGlj') ||
+                     (profileData.profile_pic_url_hd || profileData.profile_pic_url).includes('anonymous_profile_pic'))
+                      ? `/api/instagram/image-proxy?url=${encodeURIComponent(profileData.profile_pic_url_hd || profileData.profile_pic_url)}`
+                      : (profileData.profile_pic_url_hd || profileData.profile_pic_url)
                   }
                   alt={`${profileData.username} profile picture`}
-                  className="w-32 h-32 sm:w-40 sm:h-40 rounded-full border-4 border-border shadow-lg object-cover cursor-pointer hover:scale-105 transition-transform duration-300"
-                  onClick={downloadImage}
-                  title="Click to download or right-click to save"
+                  className="w-32 h-32 sm:w-40 sm:h-40 rounded-full border-4 border-border shadow-lg object-cover"
+                  title={`${profileData.username} profile picture`}
                   referrerPolicy="no-referrer"
                   loading="lazy"
                   onError={(e) => {
                     const currentSrc = e.currentTarget.src
                     const target = e.currentTarget
-                    
+
                     if (currentSrc.includes('/api/instagram/image-proxy')) {
                       target.src = `https://via.placeholder.com/400x400/6366f1/ffffff?text=${profileData.username.charAt(0).toUpperCase()}`
-                    } else if (profileData.profilePicUrl && !profileData.profilePicUrl.includes('placeholder')) {
-                      target.src = `/api/instagram/image-proxy?url=${encodeURIComponent(profileData.profilePicUrl)}`
+                    } else if ((profileData.profile_pic_url_hd || profileData.profile_pic_url) && !(profileData.profile_pic_url_hd || profileData.profile_pic_url).includes('placeholder')) {
+                      target.src = `/api/instagram/image-proxy?url=${encodeURIComponent(profileData.profile_pic_url_hd || profileData.profile_pic_url)}`
                     } else {
                       target.src = `https://via.placeholder.com/400x400/6366f1/ffffff?text=${profileData.username.charAt(0).toUpperCase()}`
                     }
                   }}
                 />
-                {profileData.isVerified && (
-                  <div className="absolute -bottom-2 -right-2 w-8 h-8 bg-primary rounded-full flex items-center justify-center">
-                    <Shield className="h-4 w-4 text-primary-foreground" />
+                {profileData.is_verified && (
+                  <div className="absolute -bottom-2 -right-2 w-8 h-8 bg-primary rounded-full flex items-center justify-center border-2 border-background shadow-lg">
+                    <CheckCircle2 className="h-4 w-4 text-primary-foreground" />
+                  </div>
+                )}
+                {profileData.is_private && !profileData.is_verified && (
+                  <div className="absolute -bottom-2 -right-2 w-8 h-8 bg-muted rounded-full flex items-center justify-center border-2 border-background shadow-lg">
+                    <Lock className="h-4 w-4 text-muted-foreground" />
                   </div>
                 )}
               </div>
 
-              <p className="text-xs text-muted-foreground text-center">
-                💡 Click the image above or use the download button below<br />
-                <span className="text-foreground">⚠️ May open in new tab due to browser security</span>
-              </p>
-
               <div className="text-center space-y-2">
-                <h4 className="text-lg sm:text-xl font-bold text-foreground">{profileData.fullName || profileData.username}</h4>
+                <div className="flex items-center justify-center gap-2 flex-wrap">
+                  <h4 className="text-lg sm:text-xl font-bold text-foreground">
+                    {profileData.full_name || profileData.username}
+                  </h4>
+                  {profileData.is_verified && (
+                    <div className="flex items-center gap-1 px-2 py-1 rounded-full bg-primary/20 border border-primary/30">
+                      <CheckCircle2 className="h-4 w-4 text-primary" />
+                      <span className="text-xs font-medium text-primary">Verified</span>
+                    </div>
+                  )}
+                  {profileData.is_private && (
+                    <div className="flex items-center gap-1 px-2 py-1 rounded-full bg-muted border border-border">
+                      <Lock className="h-4 w-4 text-muted-foreground" />
+                      <span className="text-xs font-medium text-muted-foreground">Private</span>
+                    </div>
+                  )}
+                </div>
                 <p className="text-sm sm:text-base text-muted-foreground">@{profileData.username}</p>
                 {profileData.biography && (
-                  <p className="text-xs sm:text-sm text-muted-foreground max-w-sm">{profileData.biography}</p>
+                  <p className="text-xs sm:text-sm text-muted-foreground max-w-sm mx-auto px-4">
+                    {profileData.biography}
+                  </p>
+                )}
+                {profileData.external_url && (
+                  <a
+                    href={profileData.external_url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-1 text-xs sm:text-sm text-primary hover:underline mt-1"
+                  >
+                    <Globe className="h-3 w-3" />
+                    {profileData.external_url.replace(/^https?:\/\//, '').replace(/\/$/, '')}
+                  </a>
                 )}
               </div>
 
               <div className="grid grid-cols-3 gap-4 text-center">
                 <div className="bg-muted rounded-lg p-3">
                   <p className="text-lg sm:text-xl font-bold text-foreground">
-                    {(profileData.posts || 0).toLocaleString()}
+                    {(profileData.posts_count || 0).toLocaleString()}
                   </p>
                   <p className="text-xs sm:text-sm text-muted-foreground">Posts</p>
                 </div>
@@ -261,31 +307,83 @@ export function InstagramDpViewer() {
                 </div>
                 <div className="bg-muted rounded-lg p-3">
                   <p className="text-lg sm:text-xl font-bold text-foreground">
-                    {(profileData.following || 0).toLocaleString()}
+                    {(profileData.followees || 0).toLocaleString()}
                   </p>
                   <p className="text-xs sm:text-sm text-muted-foreground">Following</p>
                 </div>
               </div>
 
-              <GButton
-                onClick={downloadImage}
-                disabled={downloading}
-                className="w-full max-w-sm sm:max-w-md h-10 sm:h-11 text-sm font-medium bg-gradient-to-r from-primary to-primary/90 hover:from-primary/90 hover:to-primary text-primary-foreground shadow-lg hover:shadow-xl transition-all duration-300"
-              >
-                {downloading ? (
-                  <>
-                    <LoadingSpinner className="mr-2 h-4 w-4" />
-                    <span className="hidden sm:inline">Downloading...</span>
-                    <span className="sm:hidden">Downloading...</span>
-                  </>
-                ) : (
-                  <>
-                    <Download className="mr-2 h-4 w-4" />
-                    <span className="hidden sm:inline">Download Profile Picture</span>
-                    <span className="sm:hidden">Download</span>
-                  </>
-                )}
-              </GButton>
+              <div className="w-full max-w-sm sm:max-w-md space-y-3">
+                <div className="bg-muted/50 rounded-lg p-4 space-y-2 text-sm">
+                  <div className="flex items-center justify-between">
+                    <span className="text-muted-foreground">Private Account:</span>
+                    <span className={`font-medium ${profileData.is_private ? 'text-destructive' : 'text-green-500'}`}>
+                      {profileData.is_private ? 'True' : 'False'}
+                    </span>
+                  </div>
+                  <div className="flex items-center justify-between">
+                    <span className="text-muted-foreground">Verified Profile:</span>
+                    <span className={`font-medium ${profileData.is_verified ? 'text-primary' : 'text-muted-foreground'}`}>
+                      {profileData.is_verified ? 'True' : 'False'}
+                    </span>
+                  </div>
+                  {profileData.external_url && (
+                    <div className="flex items-center justify-between">
+                      <span className="text-muted-foreground">External URL:</span>
+                      <a
+                        href={profileData.external_url}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="text-primary hover:underline text-xs max-w-[200px] truncate"
+                      >
+                        {profileData.external_url.replace(/^https?:\/\//, '').replace(/\/$/, '')}
+                      </a>
+                    </div>
+                  )}
+                </div>
+
+                <div className="grid grid-cols-2 gap-3">
+                  {profileData.profile_pic_url && (
+                    <GButton
+                      onClick={() => downloadImage('sd')}
+                      disabled={downloading}
+                      variant="outline"
+                      className="w-full h-10 sm:h-11 text-sm font-medium"
+                    >
+                      {downloading ? (
+                        <>
+                          <LoadingSpinner className="mr-2 h-4 w-4" />
+                          <span>Downloading...</span>
+                        </>
+                      ) : (
+                        <>
+                          <Download className="mr-2 h-4 w-4" />
+                          <span>Download SD</span>
+                        </>
+                      )}
+                    </GButton>
+                  )}
+                  {(profileData.profile_pic_url_hd || profileData.profile_pic_url) && (
+                    <GButton
+                      onClick={() => downloadImage('hd')}
+                      disabled={downloading}
+                      className="w-full h-10 sm:h-11 text-sm font-medium bg-gradient-to-r from-primary to-primary/90 hover:from-primary/90 hover:to-primary text-primary-foreground shadow-lg hover:shadow-xl transition-all duration-300"
+                    >
+                      {downloading ? (
+                        <>
+                          <LoadingSpinner className="mr-2 h-4 w-4" />
+                          <span>Downloading...</span>
+                        </>
+                      ) : (
+                        <>
+                          <Download className="mr-2 h-4 w-4" />
+                          <span>Download HD</span>
+                        </>
+                      )}
+                    </GButton>
+                  )}
+                </div>
+              </div>
             </div>
           </div>
         </GCard>
