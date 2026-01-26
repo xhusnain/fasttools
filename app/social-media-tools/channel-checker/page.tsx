@@ -18,8 +18,8 @@ import { GTable } from "@/ui/gtable"
 const toolConfig = createToolConfig({
   toolName: "YouTube Channel Name Checker",
   description: "Check if your YouTube channel name and handle are available in seconds. Get AI suggestions if taken.",
-  metaTitle: "YouTube Channel Name Checker - Free Availability Tool",
-  metaDescription: "Check if your YouTube channel name is available instantly. Verify handles (@username), get AI suggestions, and secure your brand. 100% free tool.",
+  metaTitle: "YouTube Channel Name Checker - Check Availability & Existing Channels (Free)",
+  metaDescription: "Instantly check if a YouTube channel name or @handle already exists. Verify availability, find similar channels, and claim your name before someone else does — free & real-time.",
   path: "/social-media-tools/channel-checker",
   schemaOptions: {
     applicationCategory: "WebApplication", // Updated from UtilitiesApplication
@@ -38,8 +38,8 @@ const toolConfig = createToolConfig({
   },
 
   header: {
-    title: "YouTube Channel Name Checker - Free Availability Tool",
-    description: "Instantly check if your desired YouTube channel name and handle (@username) are free to claim. Get smart AI suggestions if taken.",
+    title: "YouTube Channel Name Checker - Check Availability & Existing Channels",
+    description: "Instantly check if a YouTube channel name already exists or is available to claim. Verify display names, @handles, and similar channel names in real time — 100% free.",
     titleSize: "medium",
     descriptionSize: "small",
   },
@@ -50,7 +50,7 @@ const toolConfig = createToolConfig({
   ],
 
   content: {
-    overview: "Finding a unique YouTube channel name is the first step to building your digital legacy. Our free YouTube Channel Name Checker helps you verify availability across all formats—including the critical @handle system—in real-time. Whether you're starting a gaming channel, a tech vlog, or a personal brand, we ensure your identity is unique, SEO-friendly, and future-proof.",
+    overview: "Instantly check if a YouTube channel name already exists or is available to claim. Verify display names, @handles, custom URLs, and find similar YouTube channels in real time — 100% free, no signup required.",
 
     howToSteps: [
       "Type your channel name idea (e.g., 'TechDaily') in the search box above.",
@@ -76,6 +76,18 @@ const toolConfig = createToolConfig({
 
     aboutTool: (
       <div className="space-y-12">
+
+
+        {/* Check Similar Channels Section */}
+        <article className="space-y-6">
+          <h2 className="text-2xl font-bold text-foreground flex items-center gap-2">
+            <Search className="h-6 w-6 text-primary" />
+            Check Similar YouTube Channels Before Choosing a Name
+          </h2>
+          <p className="text-base text-muted-foreground leading-relaxed">
+            Many creators accidentally choose names that are too similar to existing channels. This can confuse viewers, hurt brand recognition, and cause trademark issues. Our <strong>YouTube Channel Name Checker</strong> automatically identifies existing and similar channel names, helping you choose a name that is truly unique.
+          </p>
+        </article>
 
         {/* Can Two YouTubers Have the Same Name Section */}
         <article className="space-y-6">
@@ -150,26 +162,28 @@ const toolConfig = createToolConfig({
           </h2>
 
           <div className="space-y-6">
-            <div className="p-4 border rounded-lg">
-              <h3 className="font-semibold mb-2">How do I check my YouTube channel name?</h3>
-              <p className="text-sm text-muted-foreground mb-2"><strong>If you already have a channel:</strong> Go to YouTube, click your profile picture, and select "Your Channel". Your name is at the top.</p>
-              <p className="text-sm text-muted-foreground"><strong>If you're starting a new channel:</strong> Use our tool above to verify your desired name is available before creating your channel.</p>
+            <div className="p-4 border rounded-lg bg-primary/5 border-primary/20">
+              <h3 className="font-semibold mb-2 flex items-center gap-2">
+                <Zap className="h-4 w-4 text-primary" />
+                How to check if a YouTube channel name already exists?
+              </h3>
+              <p className="text-sm text-muted-foreground">
+                Enter your desired channel name into our <strong>YouTube Channel Name Checker</strong>. The tool scans YouTube’s database to determine whether the channel name, @handle, or similar names already exist, helping you avoid duplication or brand conflicts.
+              </p>
             </div>
 
             <div className="p-4 border rounded-lg">
-              <h3 className="font-semibold mb-2">What if my desired name is taken?</h3>
-              <p className="text-sm text-muted-foreground mb-3">Don't worry! Our tool provides intelligent alternatives:</p>
-              <ul className="list-disc pl-5 text-sm text-muted-foreground space-y-1">
-                <li>Add "The" prefix → TheYourName</li>
-                <li>Add "Official" → YourNameOfficial</li>
-                <li>Add niche suffix → YourNameGaming, YourNameTV</li>
-                <li>Use underscores → Your_Name</li>
-              </ul>
+              <h3 className="font-semibold mb-2">How do I know if a YouTube channel name is taken?</h3>
+              <p className="text-sm text-muted-foreground">
+                Use the tool above. If the exact name is taken, you will see it listed. We also check for the <strong>@handle</strong> (username) which must be unique.
+              </p>
             </div>
 
             <div className="p-4 border rounded-lg">
-              <h3 className="font-semibold mb-2">Can I change my YouTube name later?</h3>
-              <p className="text-sm text-muted-foreground">Yes, but with limits. Display names can be changed anytime. Handles can be changed twice every 14 days. <strong>Warning:</strong> Frequent name changes confuse subscribers and hurt your brand.</p>
+              <h3 className="font-semibold mb-2">Can I use a channel name that already exists?</h3>
+              <p className="text-sm text-muted-foreground">
+                Technically, yes for the <strong>display name</strong> (multiple channels can be named "Gaming TV"). However, your <strong>@handle</strong> must be unique. We recommend choosing a unique name to avoid confusing your audience.
+              </p>
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
@@ -353,56 +367,32 @@ const toolConfig = createToolConfig({
 
     faqs: [
       {
-        question: "Is this tool completely free?",
-        answer: "Yes, forever. No hidden fees, limits, or login requirements. Check unlimited names for free."
+        question: "How to check if a YouTube channel name already exists?",
+        answer: "Enter your desired channel name into a YouTube Channel Name Checker. The tool scans YouTube’s database to determine whether the channel name, @handle, or similar names already exist, helping you avoid duplication or brand conflicts."
       },
       {
-        question: "How accurate are the results?",
-        answer: "We query YouTube's public data in real-time for maximum accuracy. However, we always recommend verifying directly on YouTube immediately before creating your channel, as names can be claimed within seconds."
+        question: "Is this YouTube channel name availability checker free?",
+        answer: "Yes. You can check unlimited YouTube channel names and usernames completely free."
       },
       {
-        question: "Does this work for YouTube Shorts?",
-        answer: "Yes. Shorts use the same channel system, so your channel name and handle apply to all your content."
+        question: "Can two YouTubers have the same channel name?",
+        answer: "Yes, display names can be duplicated. However, @handles and custom URLs must be unique."
       },
       {
-        question: "Can I check multiple names at once?",
-        answer: "Absolutely. Enter names separated by commas or new lines to batch check several options simultaneously in our tool."
+        question: "What if my YouTube channel name is already taken?",
+        answer: "If your name is taken, the tool suggests alternative names by adding prefixes, suffixes, or small variations while keeping your brand identity intact."
       },
       {
-        question: "What's the difference between checking a name and verifying a channel?",
-        answer: "\"Checking a name\" means verifying it's available to claim. \"Verifying a channel\" means getting the official checkmark badge, which typically requires 100,000+ subscribers."
+        question: "Does this tool check the new YouTube handle system?",
+        answer: "Yes. We specifically verify @handle availability, which is now YouTube’s primary identity system."
       },
       {
-        question: "Do you store my search history?",
-        answer: "No. We respect your privacy and don't log or store any searches. Your brand ideas stay private."
+        question: "Can I check multiple YouTube channel names at once?",
+        answer: "Absolutely. Enter multiple names separated by commas or new lines to batch check availability."
       },
       {
-        question: "Why is my name available here but taken when I try to register?",
-        answer: "Two possible reasons: (1) Someone claimed it between your check and signup - always act fast! (2) There's a slight spelling difference you didn't notice. Double-check carefully."
-      },
-      {
-        question: "Can I use this for business channels?",
-        answer: "Yes. Whether personal, business, or brand channels - our tool works for all YouTube channel types."
-      },
-      {
-        question: "How to check if a YouTube channel name is taken?",
-        answer: "Enter your desired name in our tool above and click 'Check Availability.' We'll instantly verify if the name, @handle, and custom URL are available across YouTube's entire database."
-      },
-      {
-        question: "Can two YouTubers have the same name?",
-        answer: "Display names can be duplicated, but handles (@username) and custom URLs must be unique. Our tool checks all three to ensure you understand your complete availability."
-      },
-      {
-        question: "What if my desired name is taken?",
-        answer: "Our AI suggests intelligent alternatives based on your original idea. Try adding prefixes ('The', 'Official'), suffixes ('TV', 'HQ'), or slightly modifying the name while maintaining your brand identity."
-      },
-      {
-        question: "Does this check the new YouTube Handle system?",
-        answer: "Absolutely. We specifically check @handles, which are now the primary way users identify channels. This is crucial because even if a display name exists, the @handle might still be available."
-      },
-      {
-        question: "What makes a good YouTube channel name?",
-        answer: "A good name is short (2-3 words), memorable, easy to spell and pronounce, unique but searchable, and available as a @handle across other platforms like Instagram and TikTok."
+        question: "How do I know if a YouTube channel name is taken?",
+        answer: "Our tool checks the global YouTube database. If the exact name exists, or if the specific @handle is registered, we'll mark it as taken and show you the existing channel."
       }
     ],
 
