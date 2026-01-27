@@ -227,6 +227,7 @@ export function InstagramDpViewer() {
         </div>
       </GCard>
 
+
       {profileData && (
         <GCard ref={resultRef} className="p-4 sm:p-6 bg-card border border-border shadow-lg hover:shadow-xl transition-all duration-300 animate-fade-in">
           <div className="space-y-4 sm:space-y-6">
@@ -312,57 +313,37 @@ export function InstagramDpViewer() {
                 )}
               </div>
 
-              <div className="grid grid-cols-3 gap-4 text-center">
-                <div className="bg-muted rounded-lg p-3">
-                  <p className="text-lg sm:text-xl font-bold text-foreground">
-                    {(profileData.posts_count || 0).toLocaleString()}
-                  </p>
-                  <p className="text-xs sm:text-sm text-muted-foreground">Posts</p>
-                </div>
-                <div className="bg-muted rounded-lg p-3">
-                  <p className="text-lg sm:text-xl font-bold text-foreground">
-                    {(profileData.followers || 0).toLocaleString()}
-                  </p>
-                  <p className="text-xs sm:text-sm text-muted-foreground">Followers</p>
-                </div>
-                <div className="bg-muted rounded-lg p-3">
-                  <p className="text-lg sm:text-xl font-bold text-foreground">
-                    {(profileData.followees || 0).toLocaleString()}
-                  </p>
-                  <p className="text-xs sm:text-sm text-muted-foreground">Following</p>
-                </div>
+              {/* Data Table for GEO Rules (Data Density) */}
+              <div className="w-full overflow-x-auto rounded-lg border border-border">
+                 <table className="w-full text-sm text-left">
+                     <thead className="bg-muted/50 text-muted-foreground">
+                         <tr>
+                             <th className="px-4 py-2 font-medium">Metric</th>
+                             <th className="px-4 py-2 font-medium">Value</th>
+                         </tr>
+                     </thead>
+                     <tbody className="divide-y divide-border">
+                         <tr className="bg-background">
+                             <td className="px-4 py-2 text-muted-foreground">Posts</td>
+                             <td className="px-4 py-2 font-bold text-foreground">{(profileData.posts_count || 0).toLocaleString()}</td>
+                         </tr>
+                         <tr className="bg-background">
+                             <td className="px-4 py-2 text-muted-foreground">Followers</td>
+                             <td className="px-4 py-2 font-bold text-foreground">{(profileData.followers || 0).toLocaleString()}</td>
+                         </tr>
+                         <tr className="bg-background">
+                             <td className="px-4 py-2 text-muted-foreground">Following</td>
+                             <td className="px-4 py-2 font-bold text-foreground">{(profileData.followees || 0).toLocaleString()}</td>
+                         </tr>
+                         <tr className="bg-background">
+                             <td className="px-4 py-2 text-muted-foreground">Account Type</td>
+                             <td className="px-4 py-2 font-bold text-foreground">{profileData.is_private ? 'Private 🔒' : 'Public 🌍'}</td>
+                         </tr>
+                     </tbody>
+                 </table>
               </div>
 
               <div className="w-full max-w-sm sm:max-w-md space-y-3">
-                <div className="bg-muted/50 rounded-lg p-4 space-y-2 text-sm">
-                  <div className="flex items-center justify-between">
-                    <span className="text-muted-foreground">Private Account:</span>
-                    <span className={`font-medium ${profileData.is_private ? 'text-destructive' : 'text-green-500'}`}>
-                      {profileData.is_private ? 'True' : 'False'}
-                    </span>
-                  </div>
-                  <div className="flex items-center justify-between">
-                    <span className="text-muted-foreground">Verified Profile:</span>
-                    <span className={`font-medium ${profileData.is_verified ? 'text-primary' : 'text-muted-foreground'}`}>
-                      {profileData.is_verified ? 'True' : 'False'}
-                    </span>
-                  </div>
-                  {profileData.external_url && (
-                    <div className="flex items-center justify-between gap-2">
-                      <span className="text-muted-foreground">External URL:</span>
-                      <a
-                        href={profileData.external_url.startsWith('http') ? profileData.external_url : `https://${profileData.external_url}`}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="text-primary hover:underline text-xs max-w-[200px] truncate flex items-center gap-1"
-                      >
-                        <Globe className="h-3 w-3 flex-shrink-0" />
-                        <span className="truncate">{profileData.external_url.replace(/^https?:\/\//, '').replace(/\/$/, '')}</span>
-                      </a>
-                    </div>
-                  )}
-                </div>
-
                 <div className="grid grid-cols-2 gap-3">
                   {profileData.profile_pic_url && (
                     <GButton

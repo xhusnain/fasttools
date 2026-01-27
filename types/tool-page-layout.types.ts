@@ -23,7 +23,7 @@ export interface ToolHeaderConfig {
 
 export interface ToolContentData {
     toolName: string
-    overview: string
+    overview: string | React.ReactNode
     howToSteps: (string | { title: string; description: string })[]
     features: (string | { title: string; description: string; icon?: string })[]
     aboutTool: string | React.ReactNode | { title: string; content: string }

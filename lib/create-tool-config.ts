@@ -62,7 +62,7 @@ export interface UnifiedToolConfig {
         href: string
     }>
     content: {
-        overview: string
+        overview: string | React.ReactNode
         howToSteps?: string[]
         features?: string[]
         aboutTool: string | React.ReactNode

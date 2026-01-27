@@ -34,8 +34,14 @@ const toolConfig = createToolConfig({
 
   schemaOptions: {
     applicationCategory: "UtilitiesApplication",
+    operatingSystem: "Android, iOS, Windows, macOS",
     ratingValue: "4.9",
     ratingCount: "1250",
+    offers: {
+      "@type": "Offer",
+      price: "0",
+      priceCurrency: "USD",
+    },
   },
 
   header: {
@@ -52,8 +58,52 @@ const toolConfig = createToolConfig({
   ],
 
   content: {
-    overview:
-        "Use our **Insta DP Viewer** to instantly view and download Instagram profile pictures in full HD (1080p). Unlike the Instagram app which shows small, compressed thumbnails, our tool fetches the publicly available profile picture from Instagram’s CDN. Detailed view, zoom support, and instant download—all 100% anonymous and free.",
+    overview: (
+        <div className="space-y-6">
+            <p className="text-lg text-muted-foreground leading-relaxed">
+                An <strong>Insta DP Viewer</strong> is a specialized online utility that allows users to view and download Instagram profile pictures (DPs) in their original full HD resolution (1080p). Unlike the standard Instagram app, which restricts profile pictures to small, non-zoomable circles, FastTools extracts the source image directly from Instagram's CDN, enabling anonymous viewing without notifying the account owner.
+            </p>
+            
+            <div className="my-8 overflow-x-auto rounded-lg border border-border">
+                <table className="w-full text-sm text-left">
+                    <thead className="text-xs uppercase bg-muted/50 text-muted-foreground">
+                        <tr>
+                            <th className="px-6 py-3">Feature</th>
+                            <th className="px-6 py-3 text-primary font-bold">FastTools</th>
+                            <th className="px-6 py-3">Standard Viewers</th>
+                            <th className="px-6 py-3">Instagram App</th>
+                        </tr>
+                    </thead>
+                    <tbody className="divide-y divide-border">
+                        <tr className="bg-background">
+                            <td className="px-6 py-4 font-medium">Resolution</td>
+                            <td className="px-6 py-4 text-green-500 font-bold">Full HD (1080p)</td>
+                            <td className="px-6 py-4">Often Compressed</td>
+                            <td className="px-6 py-4 text-red-500">Thumbnail (150px)</td>
+                        </tr>
+                        <tr className="bg-background">
+                            <td className="px-6 py-4 font-medium">Anonymity</td>
+                            <td className="px-6 py-4 text-green-500 font-bold">100% Private</td>
+                            <td className="px-6 py-4">Varies</td>
+                            <td className="px-6 py-4">Not Anonymous</td>
+                        </tr>
+                        <tr className="bg-background">
+                            <td className="px-6 py-4 font-medium">Login Required</td>
+                            <td className="px-6 py-4 text-green-500 font-bold">No</td>
+                            <td className="px-6 py-4">Sometimes</td>
+                            <td className="px-6 py-4 text-red-500">Yes</td>
+                        </tr>
+                        <tr className="bg-background">
+                            <td className="px-6 py-4 font-medium">Speed</td>
+                            <td className="px-6 py-4 text-green-500 font-bold">&lt; 2 Seconds</td>
+                            <td className="px-6 py-4">5+ Seconds</td>
+                            <td className="px-6 py-4">Instant</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    ),
 
     howToSteps: [
       "Enter the Instagram username (with or without @) into the input field.",
@@ -142,11 +192,14 @@ const toolConfig = createToolConfig({
               Can You View Private Instagram DP?
             </h2>
             <div className="bg-muted/50 border-l-4 border-primary p-4 rounded-r-lg">
+              <h4 className="text-base text-foreground font-bold mb-2 flex items-center">
+                  <span className="mr-2">💡</span> Pro Tip: Private Account Limitations
+              </h4>
               <p className="text-base text-foreground font-medium">
-                No. You cannot view private profile pictures.
+                Yes, you can view the profile picture of a private account.
               </p>
               <p className="text-sm text-muted-foreground mt-2">
-                We strictly adhere to privacy standards. Our tool only works on public accounts. Attempting to access private data violates terms of service and user trust. If an account is private, you must follow them on Instagram to see their content.
+                  While Instagram restricts access to posts and stories for private accounts, the <strong>Profile Picture (DP) is always public data</strong>. Our tool leverages this public API endpoint to fetch the high-resolution version of the avatar. However, we cannot access private posts or stories—we strictly adhere to privacy standards and API terms.
               </p>
             </div>
           </article>
@@ -177,7 +230,13 @@ const toolConfig = createToolConfig({
     ],
 
     relatedTools: [
-      { name: "Instagram Downloader", href: "/social-media-tools/instagram-downloader" },
+      { name: "Instagram Reels Downloader", href: "/social-media-tools/instagram-downloader/reels-downloader" },
+      { name: "Instagram Video Downloader", href: "/social-media-tools/instagram-downloader/video-downloader" },
+      { name: "Instagram Photo Downloader", href: "/social-media-tools/instagram-downloader/photo-downloader" },
+      { name: "Audio/MP3 Downloader", href: "/social-media-tools/instagram-downloader/audio-downloader" },
+      { name: "Story Saver", href: "/social-media-tools/instagram-downloader/story-saver" },
+      { name: "Carousel Downloader", href: "/social-media-tools/instagram-downloader/carousel-downloader" },
+      { name: "Instagram DP Viewer", href: "/social-media-tools/instagram-dp" },
       { name: "TikTok Downloader", href: "/social-media-tools/tiktok-downloader" },
     ],
   },

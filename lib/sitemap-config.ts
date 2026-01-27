@@ -223,7 +223,27 @@ export const categoryPages = [
 // Guides are now generated dynamically
 export const guidePages: any[] = []
 
+
+import { downloaderVariants } from "@/app/social-media-tools/instagram-downloader/downloader-variants"
+import { dpVariants } from "@/app/social-media-tools/instagram-dp/dp-variants"
+
+const instagramDpPages = Object.values(dpVariants).map((variant) => ({
+    url: `https://www.fasttools.store/social-media-tools/instagram-dp/${variant.slug}`,
+    lastModified: new Date(),
+    changeFrequency: "weekly" as const,
+    priority: 0.95,
+}))
+
+const instagramDownloaderPages = Object.values(downloaderVariants).map((variant) => ({
+    url: `https://www.fasttools.store/social-media-tools/instagram-downloader/${variant.slug}`,
+    lastModified: new Date(),
+    changeFrequency: "daily" as const,
+    priority: 0.98,
+}))
+
 export const toolPages = [
+    ...instagramDpPages,
+    ...instagramDownloaderPages,
     {
         url: "https://www.fasttools.store/festivals/christmas-font-converter",
         lastModified: new Date('2025-12-19'),
