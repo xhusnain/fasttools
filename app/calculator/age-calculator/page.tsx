@@ -15,16 +15,16 @@ import {
 } from "lucide-react"
 
 const baseMetadata = createMetadata({
-  title: "Age Calculator - Calculate Exact Age Online (Free)",
+  title: "Exact Age Calculator - Calculate Your Age in Seconds, Minutes & Days",
   description:
-    "Free online Age Calculator. Calculate exact age instantly. Fast, accurate, and no signup required.",
+    "How old are you exactly? Calculate your age in years, months, weeks, days, and even seconds. Find out when your next half-birthday is! 100% Free & Private.",
   path: "/calculator/age-calculator",
   breadcrumbs: [
     { label: "Calculator", href: "/calculator" },
     { label: "Age Calculator", href: "/calculator/age-calculator" }
   ],
   schemaOptions: {
-    name: "Calculate Your Exact Age in Seconds - Free Age Calculator",
+    name: "Exact Age Calculator - Seconds, Minutes & Days",
     alternateName: "Precise Age Calculator",
     applicationCategory: "UtilityApplication",
     featureList: [
@@ -41,6 +41,8 @@ const baseMetadata = createMetadata({
 
 export const metadata: Metadata = {
   ...baseMetadata,
+  title: "Exact Age Calculator - Calculate Your Age in Seconds, Minutes & Days",
+  description: "How old are you exactly? Calculate your age in years, months, weeks, days, and even seconds. Find out when your next half-birthday is!",
   applicationName: "FastTools",
   category: "Date & Time",
 }
@@ -517,7 +519,7 @@ export default function AgeCalculatorPage() {
   return (
     <ToolPageLayout
       header={{
-        title: "Age Calculator",
+        title: "Exact Age Calculator",
         description: "Calculate your exact age, Western & Chinese Zodiac signs, and fun biological stats. Free, accurate, and instant.",
         titleSize: "medium",
         descriptionSize: "small",
@@ -534,8 +536,8 @@ export default function AgeCalculatorPage() {
       }
       toolContent={toolContent}
       expectedMetadata={{
-        title: "Age Calculator - Exact Age, Zodiac Signs & Fun Stats",
-        description: "Calculate your exact age, Western & Chinese Zodiac signs, and fun biological stats (heartbeats, breaths). Features a live age ticker and birthday countdown.",
+        title: "Exact Age Calculator - Calculate Your Age in Seconds, Minutes & Days",
+        description: "How old are you exactly? Calculate your age in years, months, weeks, days, and even seconds. Find out when your next half-birthday is!",
         path: "/calculator/age-calculator"
       }}
     />

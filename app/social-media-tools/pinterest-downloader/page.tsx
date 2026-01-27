@@ -11,15 +11,15 @@ const PinterestDownloader = dynamic(() => import("@/components/social-media/pint
 })
 
 const toolConfig = createToolConfig({
-    toolName: "Pinterest Downloader - Download Pinterest Videos & Images Free",
-    description: "Free Pinterest downloader to download Pinterest videos, download Pinterest images, and save Pinterest pins. Download Pinterest videos free, download Pinterest images free, download Pinterest videos on iPhone, download Pinterest images on iPhone, download Pinterest videos on Android, download Pinterest images on Android, download Pinterest videos on PC, download Pinterest images on PC. Works on all devices, no login required, unlimited free downloads.",
-    metaTitle: "Pinterest Downloader - Download Pinterest Videos & Images Free",
-    metaDescription: "Free Pinterest downloader to download Pinterest videos, download Pinterest images, and save Pinterest pins. Download Pinterest videos free, download Pinterest images free, download Pinterest videos on iPhone, download Pinterest images on iPhone, download Pinterest videos on Android, download Pinterest images on Android, download Pinterest videos on PC, download Pinterest images on PC. Works on all devices, no login required, unlimited free downloads.",
+    toolName: "Pinterest Downloader - Save Images, GIFs & Videos (HD)",
+    description: "Download high-quality Pinterest images, GIFs, and videos online. Save Pins to your gallery in one click. 100% Free & Fast. No login required.",
+    metaTitle: "Pinterest Downloader - Save Videos, Reels & Images 4K",
+    metaDescription: "Download Pinterest videos, Reels, and Images in 4K & HD. Save GIFs and Story pins to your phone or PC. Free, fast, and no watermark.",
     path: "/social-media-tools/pinterest-downloader",
 
     header: {
-        title: "Pinterest Downloader - Download Pinterest Videos & Images Free",
-        description: "Free Pinterest downloader to download Pinterest videos, download Pinterest images, and save Pinterest pins. Download Pinterest videos free, download Pinterest images free, download Pinterest videos on iPhone, download Pinterest images on iPhone, download Pinterest videos on Android, download Pinterest images on Android, download Pinterest videos on PC, download Pinterest images on PC. Works on all devices, no login required, unlimited free downloads.",
+        title: "Pinterest Downloader - Save Videos, Reels & Images 4K",
+        description: "The all-in-one Pinterest saver. Download Videos, Reels, Stories, Images, and GIFs in original high quality. Works on iPhone, Android & PC.",
         titleSize: "medium",
         descriptionSize: "small",
     },
@@ -37,7 +37,37 @@ const toolConfig = createToolConfig({
     ],
 
     content: {
-        overview: "Pinterest Downloader is a free online tool that lets you download Pinterest videos, download Pinterest images, and save Pinterest pins. Because Pinterest doesn't provide native download features for videos and images (the 'Download Image' button is often hidden or disabled, and video downloading is completely unsupported), users search for 'download Pinterest videos', 'download Pinterest images', 'Pinterest downloader', 'download Pinterest videos free', 'download Pinterest images free', 'download Pinterest videos on iPhone', 'download Pinterest images on iPhone', 'download Pinterest videos on Android', 'download Pinterest images on Android', 'download Pinterest videos on PC', and 'download Pinterest images on PC' to save content for offline viewing, mood boards, design inspiration, and personal archiving. FastTools Pinterest Downloader enables you to download Pinterest videos (up to 1080p HD quality, MP4 format, H.264 codec, HLS streaming protocol support, automatic audio/video merging), download Pinterest images (original resolution, not compressed thumbnails, JPG/PNG format, up to 2000px+ width depending on upload), and save Pinterest pins (both pinterest.com/pin/ and pin.it/ short links supported) in less than 3 seconds processing time. The Pinterest downloader works without login (no Pinterest account required, no registration needed), provides unlimited free downloads (no daily limits, no monthly restrictions), works on all devices (iPhone, Android, PC, Mac), and processes downloads directly in your browser without software installation. Whether you want to download Pinterest videos, download Pinterest images, save Pinterest pins, download Pinterest videos free, download Pinterest images free, download Pinterest videos on iPhone, download Pinterest images on iPhone, download Pinterest videos on Android, download Pinterest images on Android, download Pinterest videos on PC, or download Pinterest images on PC, FastTools Pinterest Downloader provides the fastest and most reliable solution for downloading Pinterest content free.",
+        overview: (
+            <div className="space-y-6">
+                <p className="text-lg text-muted-foreground leading-relaxed">
+                    <strong>Pinterest Downloader</strong> is your all-in-one tool to save any content from Pinterest. Whether you need a video tutorial, a high-res image for a mood board, or a funny animated GIF, we extract the original file directly from Pinterest's servers. No compression, no watermarks, just the raw high-quality file.
+                </p>
+                
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-4 my-8">
+                    <a href="/social-media-tools/pinterest-downloader/video" className="p-4 rounded-lg border border-border bg-card hover:border-primary/50 transition-all group">
+                        <div className="flex items-center gap-2 mb-2">
+                            <Video className="h-5 w-5 text-primary" />
+                            <h3 className="font-bold text-foreground group-hover:text-primary">Pinterest Video Saver</h3>
+                        </div>
+                        <p className="text-xs text-muted-foreground">Download videos & Reels in 1080p/4K MP4.</p>
+                    </a>
+                    <a href="/social-media-tools/pinterest-downloader/image" className="p-4 rounded-lg border border-border bg-card hover:border-primary/50 transition-all group">
+                        <div className="flex items-center gap-2 mb-2">
+                            <Image className="h-5 w-5 text-primary" />
+                            <h3 className="font-bold text-foreground group-hover:text-primary">Image Downloader</h3>
+                        </div>
+                        <p className="text-xs text-muted-foreground">Save original high-res photos (JPG/PNG).</p>
+                    </a>
+                    <a href="/social-media-tools/pinterest-downloader/gif" className="p-4 rounded-lg border border-border bg-card hover:border-primary/50 transition-all group">
+                        <div className="flex items-center gap-2 mb-2">
+                            <Zap className="h-5 w-5 text-primary" />
+                            <h3 className="font-bold text-foreground group-hover:text-primary">GIF Downloader</h3>
+                        </div>
+                        <p className="text-xs text-muted-foreground">Save animated pins as real .GIF files.</p>
+                    </a>
+                </div>
+            </div>
+        ),
 
         howToSteps: [
             "Find the Pinterest pin: Open Pinterest app or website and navigate to the image or video pin you want to download. Ensure the pin is public or you have permission to access it. Tap or click on the pin to open it in full view.",

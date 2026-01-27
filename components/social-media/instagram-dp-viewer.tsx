@@ -385,6 +385,33 @@ export function InstagramDpViewer() {
                     </GButton>
                   )}
                 </div>
+
+                {/* Cross-Sell Honey Pot */}
+                <div className="mt-4 p-4 rounded-lg bg-green-50 dark:bg-green-900/10 border border-green-200 dark:border-green-800 animate-fade-in">
+                  <div className="flex items-center gap-2 mb-2">
+                    <span className="text-xl">🔥</span>
+                    <h4 className="font-bold text-green-700 dark:text-green-300 text-sm">Trending Tools</h4>
+                  </div>
+                  <p className="text-xs text-green-600 dark:text-green-400 mb-3">
+                    Found the profile? Now download their content!
+                  </p>
+                  <div className="grid grid-cols-1 gap-2">
+                    <a 
+                      href="/social-media-tools/tiktok-downloader" 
+                      className="flex items-center justify-between p-2 rounded bg-white dark:bg-card border border-green-100 dark:border-green-800 hover:shadow-sm transition-shadow group"
+                    >
+                      <span className="text-xs font-medium text-foreground group-hover:text-primary transition-colors">🎵 TikTok Downloader (No Watermark)</span>
+                      <span className="text-xs text-muted-foreground">→</span>
+                    </a>
+                    <a 
+                      href="/social-media-tools/pinterest-downloader" 
+                      className="flex items-center justify-between p-2 rounded bg-white dark:bg-card border border-green-100 dark:border-green-800 hover:shadow-sm transition-shadow group"
+                    >
+                      <span className="text-xs font-medium text-foreground group-hover:text-primary transition-colors">📌 Pinterest Image & Video Saver</span>
+                      <span className="text-xs text-muted-foreground">→</span>
+                    </a>
+                  </div>
+                </div>
               </div>
             </div>
           </div>

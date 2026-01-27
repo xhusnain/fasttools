@@ -139,8 +139,32 @@ const toolConfig = createToolConfig({
               Insta DP Viewer HD – Full Size Profile Picture
             </h2>
             <p className="text-base text-muted-foreground leading-relaxed">
-              When you view a profile on the Instagram app, you are seeing a compressed version of the image, usually resized to 150x150 pixels. This saves data but reduces quality. Our **Insta DP Viewer HD** tool bypasses this limitation by fetching the publicly available profile picture from Instagram’s CDN in its original resolution. This means you can see every detail clearly, without the blurriness of the app's thumbnail.
+              When you view a profile on the Instagram app, you are seeing a compressed version of the image, usually resized to 150x150 pixels. This saves data but reduces quality. Our **Insta DP Viewer HD 4K** tool bypasses this limitation by fetching the publicly available profile picture from Instagram’s CDN in its original resolution (often 1080p). This means you can see every detail clearly, without the blurriness of the app's thumbnail. Simply paste the **Instagram profile picture viewer URL** or username to get started.
             </p>
+          </article>
+
+          {/* H2: Insta DP Inspiration: For Boys & Girls */}
+          <article className="space-y-4">
+            <h2 className="text-2xl font-bold text-foreground">
+              Trending: Insta DP for Boys & Girls
+            </h2>
+            <p className="text-base text-muted-foreground leading-relaxed">
+              Looking for inspiration? Many users use our tool to save high-quality profile pictures for their own ideas.
+            </p>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+              <div className="p-4 rounded-lg bg-card border border-border">
+                <h4 className="font-bold text-foreground mb-2">Insta DP for Girls</h4>
+                <p className="text-sm text-muted-foreground">
+                  Aesthetic, cute, and stylish profile pictures are trending. Use our **Insta DP download HD** feature to save full-resolution inspiration from your favorite creators or aesthetic accounts.
+                </p>
+              </div>
+              <div className="p-4 rounded-lg bg-card border border-border">
+                <h4 className="font-bold text-foreground mb-2">Insta DP for Boys</h4>
+                <p className="text-sm text-muted-foreground">
+                  Cool, moody, or anime-style PFPs are in demand. Our **Instagram profile picture download 1080p** tool lets you grab these high-quality images to use as your own avatar on Discord, Gaming profiles, or social media.
+                </p>
+              </div>
+            </div>
           </article>
 
           {/* H2: How to Use Insta DP Viewer */}

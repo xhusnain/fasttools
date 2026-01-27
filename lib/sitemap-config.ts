@@ -226,6 +226,8 @@ export const guidePages: any[] = []
 
 import { downloaderVariants } from "@/app/social-media-tools/instagram-downloader/downloader-variants"
 import { dpVariants } from "@/app/social-media-tools/instagram-dp/dp-variants"
+import { tiktokVariants } from "@/app/social-media-tools/tiktok-downloader/tiktok-variants"
+import { pinterestVariants } from "@/app/social-media-tools/pinterest-downloader/pinterest-variants"
 
 const instagramDpPages = Object.values(dpVariants).map((variant) => ({
     url: `https://www.fasttools.store/social-media-tools/instagram-dp/${variant.slug}`,
@@ -241,9 +243,25 @@ const instagramDownloaderPages = Object.values(downloaderVariants).map((variant)
     priority: 0.98,
 }))
 
+const tiktokDownloaderPages = Object.values(tiktokVariants).map((variant) => ({
+    url: `https://www.fasttools.store/social-media-tools/tiktok-downloader/${variant.slug}`,
+    lastModified: new Date(),
+    changeFrequency: "daily" as const,
+    priority: 0.98,
+}))
+
+const pinterestDownloaderPages = Object.values(pinterestVariants).map((variant) => ({
+    url: `https://www.fasttools.store/social-media-tools/pinterest-downloader/${variant.slug}`,
+    lastModified: new Date(),
+    changeFrequency: "daily" as const,
+    priority: 0.98,
+}))
+
 export const toolPages = [
     ...instagramDpPages,
     ...instagramDownloaderPages,
+    ...tiktokDownloaderPages,
+    ...pinterestDownloaderPages,
     {
         url: "https://www.fasttools.store/festivals/christmas-font-converter",
         lastModified: new Date('2025-12-19'),

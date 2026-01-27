@@ -14,15 +14,15 @@ const TiktokDownloader = dynamic(() => import("@/components/social-media/tiktok-
 })
 
 const toolConfig = createToolConfig({
-  toolName: "TikTok Downloader - Download TikTok Videos Without Watermark Free | HD",
-  description: "Free TikTok downloader to download TikTok videos without watermark in HD quality. Download TikTok videos, download TikTok MP3 audio, download TikTok wallpapers. Works on iPhone, Android, PC. No login required, unlimited free downloads.",
-  metaTitle: "TikTok Downloader - Download TikTok Videos Without Watermark Free | HD",
-  metaDescription: "Free TikTok downloader to download TikTok videos without watermark in HD. Download TikTok videos, download TikTok MP3, download TikTok wallpapers. Works on iPhone, Android, PC. No login, unlimited free downloads.",
+  toolName: "TikTok Downloader No Watermark (HD 1080p) - Save Video & Sound",
+  description: "Download TikTok videos without watermark in HD 1080p. Save TikTok MP3 sound instantly. Free, unlimited, and works on iPhone/Android/PC. No login required.",
+  metaTitle: "TikTok Downloader No Watermark - Download Video & MP3 Audio HD",
+  metaDescription: "Download TikTok videos without watermark in HD 4K. Save TikTok MP3 audio sound. Free, unlimited, and works on iPhone/Android/PC. No login required.",
   path: "/social-media-tools/tiktok-downloader",
 
   header: {
-    title: "TikTok Downloader - Download TikTok Videos Without Watermark Free",
-    description: "Free TikTok downloader to download TikTok videos without watermark in HD quality. Download TikTok videos, download TikTok MP3 audio, download TikTok wallpapers. Works on iPhone, Android, PC. No login required, unlimited free downloads.",
+    title: "TikTok Downloader No Watermark (HD) - Save Video & MP3",
+    description: "Download TikTok videos without watermark in HD quality. Save TikTok MP3 audio, download TikTok Stories. Works on iPhone, Android, PC. No login required, unlimited free downloads.",
     titleSize: "medium",
     descriptionSize: "small",
   },
@@ -49,7 +49,37 @@ const toolConfig = createToolConfig({
   },
 
   content: {
-    overview: "TikTok Downloader is a free online tool that lets you download TikTok videos without watermark, download TikTok MP3 audio, and download TikTok wallpapers in HD quality. Because TikTok doesn't provide native download features for videos, users search for 'download TikTok videos', 'download TikTok videos without watermark', 'TikTok downloader', 'how to download TikTok videos', and 'TikTok MP3 downloader' to save content for offline viewing, content repurposing, and personal archiving. FastTools TikTok Downloader enables you to download TikTok videos (up to 1080p HD quality, MP4 format, no watermark), download TikTok MP3 audio (extract audio from videos, high quality, AAC codec), and download TikTok wallpapers (high-resolution images, JPEG format) in less than 2 seconds processing time. The TikTok downloader works without login (no TikTok account required, no registration needed), provides unlimited free downloads (no daily limits, no monthly restrictions), works on all devices (iPhone, Android, PC, Mac), and processes downloads directly in your browser without software installation. Whether you want to download TikTok videos, download TikTok MP3, download TikTok wallpapers, or download TikTok videos without watermark, FastTools TikTok Downloader provides the fastest and most reliable solution for downloading TikTok content free.",
+    overview: (
+        <div className="space-y-6">
+            <p className="text-lg text-muted-foreground leading-relaxed">
+                <strong>TikTok Downloader</strong> is your ultimate tool to save TikTok content without limits. We bypass the watermark and give you the raw, high-quality file. Need just the audio? We extract that too. Want to save a slideshow? We grab all the photos.
+            </p>
+            
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-4 my-8">
+                <a href="/social-media-tools/tiktok-downloader/no-watermark" className="p-4 rounded-lg border border-border bg-card hover:border-primary/50 transition-all group">
+                    <div className="flex items-center gap-2 mb-2">
+                        <Video className="h-5 w-5 text-primary" />
+                        <h3 className="font-bold text-foreground group-hover:text-primary">No Watermark Saver</h3>
+                    </div>
+                    <p className="text-xs text-muted-foreground">Download clean 1080p videos without the bouncing logo.</p>
+                </a>
+                <a href="/social-media-tools/tiktok-downloader/mp3" className="p-4 rounded-lg border border-border bg-card hover:border-primary/50 transition-all group">
+                    <div className="flex items-center gap-2 mb-2">
+                        <Music className="h-5 w-5 text-primary" />
+                        <h3 className="font-bold text-foreground group-hover:text-primary">TikTok to MP3</h3>
+                    </div>
+                    <p className="text-xs text-muted-foreground">Extract high-quality audio & music from any video.</p>
+                </a>
+                <a href="/social-media-tools/tiktok-downloader/story" className="p-4 rounded-lg border border-border bg-card hover:border-primary/50 transition-all group">
+                    <div className="flex items-center gap-2 mb-2">
+                        <Image className="h-5 w-5 text-primary" />
+                        <h3 className="font-bold text-foreground group-hover:text-primary">Story & Slideshows</h3>
+                    </div>
+                    <p className="text-xs text-muted-foreground">Save temporary Stories and Photo Mode carousels.</p>
+                </a>
+            </div>
+        </div>
+    ),
 
     howToSteps: [
       "Copy TikTok video URL: Open TikTok app or website and find the video you want to download. Tap or click the 'Share' button on the video, then select 'Copy Link' to copy the TikTok URL to your clipboard. The URL format is typically tiktok.com/@username/video/VIDEO_ID or vm.tiktok.com/SHORT_CODE.",
