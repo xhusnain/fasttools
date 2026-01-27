@@ -2,7 +2,7 @@ import { Metadata } from 'next';
 import { ToolPageLayout } from "@/components/common/tool-page-layout"
 import { createToolConfig } from "@/lib/create-tool-config"
 import {
-  AlertCircle, Zap
+  AlertCircle, Zap, Video, Music, Image
 } from "lucide-react"
 import { getCurrentYear } from "@/lib/utils"
 import dynamic from "next/dynamic"
@@ -50,35 +50,35 @@ const toolConfig = createToolConfig({
 
   content: {
     overview: (
-        <div className="space-y-6">
-            <p className="text-lg text-muted-foreground leading-relaxed">
-                <strong>TikTok Downloader</strong> is your ultimate tool to save TikTok content without limits. We bypass the watermark and give you the raw, high-quality file. Need just the audio? We extract that too. Want to save a slideshow? We grab all the photos.
-            </p>
-            
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-4 my-8">
-                <a href="/social-media-tools/tiktok-downloader/no-watermark" className="p-4 rounded-lg border border-border bg-card hover:border-primary/50 transition-all group">
-                    <div className="flex items-center gap-2 mb-2">
-                        <Video className="h-5 w-5 text-primary" />
-                        <h3 className="font-bold text-foreground group-hover:text-primary">No Watermark Saver</h3>
-                    </div>
-                    <p className="text-xs text-muted-foreground">Download clean 1080p videos without the bouncing logo.</p>
-                </a>
-                <a href="/social-media-tools/tiktok-downloader/mp3" className="p-4 rounded-lg border border-border bg-card hover:border-primary/50 transition-all group">
-                    <div className="flex items-center gap-2 mb-2">
-                        <Music className="h-5 w-5 text-primary" />
-                        <h3 className="font-bold text-foreground group-hover:text-primary">TikTok to MP3</h3>
-                    </div>
-                    <p className="text-xs text-muted-foreground">Extract high-quality audio & music from any video.</p>
-                </a>
-                <a href="/social-media-tools/tiktok-downloader/story" className="p-4 rounded-lg border border-border bg-card hover:border-primary/50 transition-all group">
-                    <div className="flex items-center gap-2 mb-2">
-                        <Image className="h-5 w-5 text-primary" />
-                        <h3 className="font-bold text-foreground group-hover:text-primary">Story & Slideshows</h3>
-                    </div>
-                    <p className="text-xs text-muted-foreground">Save temporary Stories and Photo Mode carousels.</p>
-                </a>
+      <div className="space-y-6">
+        <p className="text-lg text-muted-foreground leading-relaxed">
+          <strong>TikTok Downloader</strong> is your ultimate tool to save TikTok content without limits. We bypass the watermark and give you the raw, high-quality file. Need just the audio? We extract that too. Want to save a slideshow? We grab all the photos.
+        </p>
+
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-4 my-8">
+          <a href="/social-media-tools/tiktok-downloader/no-watermark" className="p-4 rounded-lg border border-border bg-card hover:border-primary/50 transition-all group">
+            <div className="flex items-center gap-2 mb-2">
+              <Video className="h-5 w-5 text-primary" />
+              <h3 className="font-bold text-foreground group-hover:text-primary">No Watermark Saver</h3>
             </div>
+            <p className="text-xs text-muted-foreground">Download clean 1080p videos without the bouncing logo.</p>
+          </a>
+          <a href="/social-media-tools/tiktok-downloader/mp3" className="p-4 rounded-lg border border-border bg-card hover:border-primary/50 transition-all group">
+            <div className="flex items-center gap-2 mb-2">
+              <Music className="h-5 w-5 text-primary" />
+              <h3 className="font-bold text-foreground group-hover:text-primary">TikTok to MP3</h3>
+            </div>
+            <p className="text-xs text-muted-foreground">Extract high-quality audio & music from any video.</p>
+          </a>
+          <a href="/social-media-tools/tiktok-downloader/story" className="p-4 rounded-lg border border-border bg-card hover:border-primary/50 transition-all group">
+            <div className="flex items-center gap-2 mb-2">
+              <Image className="h-5 w-5 text-primary" />
+              <h3 className="font-bold text-foreground group-hover:text-primary">Story & Slideshows</h3>
+            </div>
+            <p className="text-xs text-muted-foreground">Save temporary Stories and Photo Mode carousels.</p>
+          </a>
         </div>
+      </div>
     ),
 
     howToSteps: [
