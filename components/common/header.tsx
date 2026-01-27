@@ -96,6 +96,13 @@ export function Header() {
                   ROAS Calculator
                 </Link>
 
+                <Link
+                  href="/all-tools"
+                  title="View All Tools Directory"
+                  className="text-sm font-medium text-muted-foreground hover:text-primary transition-colors flex items-center h-full"
+                >
+                  All Tools
+                </Link>
                 <Link href="/contact" title="Contact FastTools Support Team" className="text-sm font-medium text-muted-foreground hover:text-primary transition-colors flex items-center h-full">
                   Contact
                 </Link>
@@ -214,6 +221,13 @@ export function Header() {
               className="block py-3 text-base font-semibold text-foreground/80 hover:text-primary transition-colors"
             >
               ROAS Calculator
+            </Link>
+            <Link
+              href="/all-tools"
+              onClick={() => setMobileMenuOpen(false)}
+              className="block py-3 text-base font-semibold text-foreground/80 hover:text-primary transition-colors"
+            >
+              All Tools
             </Link>
             <Link
               href="/contact"

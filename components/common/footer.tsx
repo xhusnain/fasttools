@@ -98,17 +98,16 @@ export function Footer() {
             </ul>
           </div>
 
-          {/* Tools Column 2 */}
+          {/* Popular Tools Column (Replacing generic listing) */}
           <div>
-            <h4 className="text-sm font-semibold text-foreground mb-4 opacity-0">More</h4>
+            <h4 className="text-sm font-semibold text-foreground mb-4">Trending</h4>
             <ul className="space-y-2">
-              {toolCategories.slice(6).map((cat) => (
-                <li key={cat.href}>
-                  <Link href={cat.href} title={`FastTools ${cat.name}`} className="text-sm text-muted-foreground hover:text-primary transition-colors">
-                    {cat.name}
-                  </Link>
-                </li>
-              ))}
+              <li><Link href="/social-media-tools/instagram-downloader" className="text-sm text-muted-foreground hover:text-primary transition-colors">Instagram Downloader</Link></li>
+              <li><Link href="/social-media-tools/instagram-dp" className="text-sm text-muted-foreground hover:text-primary transition-colors">DP Viewer</Link></li>
+              <li><Link href="/social-media-tools/instagram-dp/private-downloader" className="text-sm text-muted-foreground hover:text-primary transition-colors">Private DP Viewer</Link></li>
+              <li><Link href="/social-media-tools/instagram-downloader/reels-downloader" className="text-sm text-muted-foreground hover:text-primary transition-colors">Reels Saver</Link></li>
+              <li><Link href="/social-media-tools/tiktok-downloader" className="text-sm text-muted-foreground hover:text-primary transition-colors">TikTok Downloader</Link></li>
+              <li><Link href="/social-media-tools/youtube-downloader" className="text-sm text-muted-foreground hover:text-primary transition-colors">YouTube Downloader</Link></li>
             </ul>
           </div>
 
@@ -131,6 +130,7 @@ export function Footer() {
             <ul className="space-y-2">
               <li><Link href="/about" title="About FastTools" className="text-sm text-muted-foreground hover:text-primary transition-colors">About</Link></li>
               <li><Link href="/contact" title="Contact Us" className="text-sm text-muted-foreground hover:text-primary transition-colors">Contact</Link></li>
+              <li><Link href="/all-tools" title="Explore All Tools" className="text-sm font-medium text-primary hover:text-primary/80 transition-colors">All Tools</Link></li>
               <li><Link href="/privacy-policy" title="Privacy Policy" className="text-sm text-muted-foreground hover:text-primary transition-colors">Privacy</Link></li>
               <li><Link href="/terms" title="Terms of Service" className="text-sm text-muted-foreground hover:text-primary transition-colors">Terms</Link></li>
               <li><Link href="/cookie-preferences" title="Cookie Preferences" className="text-sm text-muted-foreground hover:text-primary transition-colors">Cookies</Link></li>
