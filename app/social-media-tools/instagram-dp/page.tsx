@@ -24,12 +24,12 @@ import {
 } from "lucide-react";
 
 const toolConfig = createToolConfig({
-  toolName: "Insta DP Viewer - Instagram Profile Picture Download 1080p & HD",
+  toolName: "Insta DP Viewer (Full Size 1080p) - View Private Profile Pictures",
   description:
-      "Use the fastest Insta DP Viewer to view and download Instagram profile pictures in full HD (1080p). Works for public accounts only. No login required.",
-  metaTitle: "Insta DP Viewer – Instagram Profile Picture Download 1080p & HD",
+      "Use the fastest Insta DP Viewer to view and download Instagram profile pictures in full HD (1080p). Works for public & private accounts (DP only). No login.",
+  metaTitle: "Insta DP Viewer (Full Size 1080p) - View Private Profile Pictures",
   metaDescription:
-      "Use the fastest Insta DP Viewer to view and download Instagram profile pictures in full HD (1080p). Works for public accounts only. No login required.",
+      "View Instagram profile pictures in full size (1080p). See private account DPs anonymously. Download HD profile photos instantly without login.",
   path: "/social-media-tools/instagram-dp",
 
   schemaOptions: {
@@ -45,9 +45,9 @@ const toolConfig = createToolConfig({
   },
 
   header: {
-    title: "Insta DP Viewer – View & Download Instagram Profile Picture in HD",
+    title: "Insta DP Viewer - View Full Size Profile Pictures (1080p)",
     description:
-        "The fastest way to view and download Instagram profile pictures in full HD (1080p). 100% anonymous, no login required.",
+        "The fastest way to view and download Instagram profile pictures in full HD. 100% anonymous, works on private accounts.",
     titleSize: "medium",
     descriptionSize: "small",
   },

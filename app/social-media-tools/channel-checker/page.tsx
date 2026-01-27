@@ -16,9 +16,9 @@ import {
 import { GTable } from "@/ui/gtable"
 
 const toolConfig = createToolConfig({
-  toolName: "YouTube Channel Name Checker",
+  toolName: `YouTube Name Checker & Generator (Instant Availability Search ${new Date().getFullYear()})`,
   description: "Check if your YouTube channel name and handle are available in seconds. Get AI suggestions if taken.",
-  metaTitle: "YouTube Channel Name Checker - Check Availability & Existing Channels (Free)",
+  metaTitle: `YouTube Name Checker & Generator (Instant Availability Search ${new Date().getFullYear()})`,
   metaDescription: "Instantly check if a YouTube channel name or @handle already exists. Verify availability, find similar channels, and claim your name before someone else does — free & real-time.",
   path: "/social-media-tools/channel-checker",
   schemaOptions: {
@@ -38,7 +38,7 @@ const toolConfig = createToolConfig({
   },
 
   header: {
-    title: "YouTube Channel Name Checker - Check Availability & Existing Channels",
+    title: "YouTube Name Checker & Generator (Instant Search)",
     description: "Instantly check if a YouTube channel name already exists or is available to claim. Verify display names, @handles, and similar channel names in real time — 100% free.",
     titleSize: "medium",
     descriptionSize: "small",
@@ -50,18 +50,18 @@ const toolConfig = createToolConfig({
   ],
 
   content: {
-    overview: "Instantly check if a YouTube channel name already exists or is available to claim. Verify display names, @handles, custom URLs, and find similar YouTube channels in real time — 100% free, no signup required.",
+    overview: "Use the best **YouTube Channel Name Availability Check** tool to secure your brand. Verify if your channel name, @handle, and custom URL are available instantly. Our real-time **YouTube Name Checker** scans the global database to find existing channels and generates creative alternatives if your idea is taken.",
 
     howToSteps: [
-      "Type your channel name idea (e.g., 'TechDaily') in the search box above.",
-      "Click 'Check Availability' to search YouTube's database instantly.",
-      "Review the results for Name, Handle (@), and URL status, and claim your name if available."
+      "Type your channel name idea (e.g., 'TechDaily') into the **YouTube Name Checker** input.",
+      "Click 'Check Availability' to run a live search across YouTube's database.",
+      "Review the **Channel Name Availability** results for Display Name, Handle (@), and URL."
     ],
 
     features: [
+      "Instant Availability Check: Perform a complete **YouTube channel name availability check** in milliseconds.",
       "Handle Verification: Check the critical @username system that ensures your uniqueness.",
-      "Real-Time Results: Instant database queries for up-to-the-second accuracy.",
-      "Smart AI Suggestions: Get intelligent alternatives if your name is taken.",
+      "Smart AI Generator: Get intelligent alternatives if your **YouTube name** is taken.",
       "SEO Analysis: Score your name's searchability (0-100) to maximize growth.",
       "Batch Checking: Test multiple names at once (comma-separated).",
       "100% Free: Unlimited checks, no login required."
@@ -359,7 +359,7 @@ const toolConfig = createToolConfig({
               <span>Used by top creators</span>
             </li>
           </ul>
-          <p className="text-xs text-center text-muted-foreground mt-4">Last updated: January 2026</p>
+          <p className="text-xs text-center text-muted-foreground mt-4">Last updated: {new Date().toLocaleDateString('en-US', { month: 'long', year: 'numeric' })}</p>
         </div>
 
       </div>
