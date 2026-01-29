@@ -1,11 +1,4 @@
 import { Metadata } from 'next';
-import dynamic from "next/dynamic"
-
-const YoutubeChannelChecker = dynamic(() => import("@/components/social-media/youtube-channel-checker").then(mod => mod.YoutubeChannelChecker), {
-  loading: () => <div className="min-h-[600px] flex items-center justify-center">
-    <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-primary"></div>
-  </div>
-})
 import { ToolPageLayout } from "@/components/common/tool-page-layout"
 import { createToolConfig } from "@/lib/create-tool-config"
 import { GImage } from "@/ui/gimage"
@@ -14,17 +7,24 @@ import {
   Lightbulb, Trophy, Scale, LayoutGrid, AtSign, BarChart3, TrendingUp, Users, Brain, RefreshCw, AlertCircle, XCircle
 } from "lucide-react"
 import { GTable } from "@/ui/gtable"
+import dynamic from "next/dynamic"
+
+const YoutubeChannelChecker = dynamic(() => import("@/components/social-media/youtube-channel-checker").then(mod => mod.YoutubeChannelChecker), {
+  loading: () => <div className="min-h-[600px] flex items-center justify-center">
+    <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-primary"></div>
+  </div>
+})
 
 const toolConfig = createToolConfig({
-  toolName: `YouTube Name Checker & Generator (Instant Availability Search ${new Date().getFullYear()})`,
-  description: "Check if your YouTube channel name and handle are available in seconds. Get AI suggestions if taken.",
-  metaTitle: `YouTube Channel Name Availability Checker & Generator (${new Date().getFullYear()})`,
-  metaDescription: "Check YouTube channel name availability instantly. Search names, @handles, and URLs. Free availability checker with AI name generator suggestions.",
+  toolName: `YouTube Handle Checker & Name Availability (Instant ${new Date().getFullYear()})`,
+  description: "Check YouTube handle (@username) and channel name availability instantly. The most accurate YouTube Name Checker for 2026. Free & No Login.",
+  metaTitle: `YouTube Handle Checker & Channel Name Availability (${new Date().getFullYear()})`,
+  metaDescription: "Check if a YouTube handle (@username) or channel name is available. Instant YouTube Name Checker. Verify URL availability and get AI name ideas.",
   path: "/social-media-tools/channel-checker",
   schemaOptions: {
-    applicationCategory: "WebApplication", // Updated from UtilitiesApplication
+    applicationCategory: "WebApplication",
     ratingValue: "4.8",
-    ratingCount: "1250", // Updated based on request
+    ratingCount: "1340",
     offers: {
       "@type": "Offer",
       price: "0",
@@ -38,8 +38,8 @@ const toolConfig = createToolConfig({
   },
 
   header: {
-    title: "YouTube Name Checker & Generator (Instant Search)",
-    description: "Instantly check if a YouTube channel name already exists or is available to claim. Verify display names, @handles, and similar channel names in real time — 100% free.",
+    title: "YouTube Handle & Name Checker (Instant Availability)",
+    description: "Check if your dream YouTube Handle (@username) and Channel Name are available. The most accurate real-time checker for 2026.",
     titleSize: "medium",
     descriptionSize: "small",
   },
@@ -50,18 +50,28 @@ const toolConfig = createToolConfig({
   ],
 
   content: {
-    overview: "Use the best **YouTube Channel Name Availability Check** tool to secure your brand. Verify if your channel name, @handle, and custom URL are available instantly. Our real-time **YouTube Name Checker** scans the global database to find existing channels and generates creative alternatives if your idea is taken.",
+    overview: (
+      <div className="space-y-6">
+        <p className="text-lg text-muted-foreground leading-relaxed">
+          Use the most accurate **YouTube Channel Name Availability Checker** to secure your brand identity. Since YouTube introduced unique Handles (e.g., @user), checking just the "Display Name" is no longer enough.
+        </p>
+        <p className="text-muted-foreground leading-relaxed">
+          Our tool performs a deep scan to verify **YouTube Handle Availability** (`@yourname`), **Channel URL** (`youtube.com/@yourname`), and standard **Channel Name** simultaneously. Don't start a channel only to find out the username is taken!
+        </p>
+      </div>
+    ),
 
     howToSteps: [
-      "Type your channel name idea (e.g., 'TechDaily') into the **YouTube Name Checker** input.",
-      "Click 'Check Availability' to run a live search across YouTube's database.",
-      "Review the **Channel Name Availability** results for Display Name, Handle (@), and URL."
+      "Type your desired name or handle (e.g., 'TechDaily') into the input field.",
+      "Click 'Check Availability' to run a live scan against YouTube's API.",
+      "Review the results: Green checkmarks mean the Handle and URL are free to claim.",
+      "If taken, use our AI suggestions to find a similar available name."
     ],
 
     features: [
-      "Instant Availability Check: Perform a complete **YouTube channel name availability check** in milliseconds.",
-      "Handle Verification: Check the critical @username system that ensures your uniqueness.",
-      "Smart AI Generator: Get intelligent alternatives if your **YouTube name** is taken.",
+      "Handle (@) Verification: The only tool that prioritizes the new YouTube Handle system.",
+      "Instant Availability Check: Perform a complete **youtube channel name availability check** in milliseconds.",
+      "Smart AI Generator: Get intelligent alternatives if your **youtube name** is taken.",
       "SEO Analysis: Score your name's searchability (0-100) to maximize growth.",
       "Batch Checking: Test multiple names at once (comma-separated).",
       "100% Free: Unlimited checks, no login required."
@@ -82,10 +92,10 @@ const toolConfig = createToolConfig({
         <article className="space-y-6">
           <h2 className="text-2xl font-bold text-foreground flex items-center gap-2">
             <Search className="h-6 w-6 text-primary" />
-            Check Similar YouTube Channels Before Choosing a Name
+            Check YouTube Handle Availability (Crucial Step)
           </h2>
           <p className="text-base text-muted-foreground leading-relaxed">
-            Many creators accidentally choose names that are too similar to existing channels. This can confuse viewers, hurt brand recognition, and cause trademark issues. Our <strong>YouTube Channel Name Checker</strong> automatically identifies existing and similar channel names, helping you choose a name that is truly unique.
+            Many new creators make the mistake of only checking the "Display Name". YouTube now uses **Handles** (starting with @) as the primary unique identifier. Even if no one has the channel name "Cool Gamer", the handle `@CoolGamer` might be taken by a user without a channel. Our **YouTube Handle Checker** verifies this specific database to ensure you can get the matching URL.
           </p>
         </article>
 
@@ -233,7 +243,7 @@ const toolConfig = createToolConfig({
         <article className="space-y-6">
           <h2 className="text-2xl font-bold text-foreground flex items-center gap-2">
             <TrendingUp className="h-6 w-6 text-primary" />
-            YouTube Naming Trends in 2025
+            YouTube Naming Trends in {new Date().getFullYear()}
           </h2>
           <div className="overflow-x-auto">
             <GTable>
@@ -267,7 +277,7 @@ const toolConfig = createToolConfig({
                 <tr>
                   <td className="p-3 whitespace-nowrap">SEO/Descriptive</td>
                   <td className="p-3 text-red-500 font-medium whitespace-nowrap">Declining 📉</td>
-                  <td className="p-3 whitespace-nowrap">TechReviews2024</td>
+                  <td className="p-3 whitespace-nowrap">TechReviews{new Date().getFullYear()}</td>
                   <td className="p-3 whitespace-nowrap">Generic, dated</td>
                 </tr>
               </tbody>

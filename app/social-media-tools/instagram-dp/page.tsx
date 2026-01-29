@@ -21,15 +21,18 @@ import {
   EyeOff,
   User,
   Lock,
+  Download,
+  Zap,
+  ShieldCheck
 } from "lucide-react";
 
 const toolConfig = createToolConfig({
   toolName: "Insta DP Viewer (Full Size 1080p) - View Private Profile Pictures",
   description:
     "Use the fastest Insta DP Viewer to view and download Instagram profile pictures in full HD (1080p). Works for public & private accounts (DP only). No login.",
-  metaTitle: "Instagram DP Viewer & Downloader: Full HD, 1080p, Private & Anonymous",
+  metaTitle: "Instagram DP Viewer (Download Insta DP) - Full HD 1080p & Private",
   metaDescription:
-    "View and download Instagram profile pictures in 1080p HD. 100% Anonymous & Private. No Login required. Works on private accounts to see full size DP.",
+    "Best free Insta DP Viewer & Downloader. View and download Instagram profile pictures in full HD (1080p). Works on private accounts, 100% anonymous, no login.",
   path: "/social-media-tools/instagram-dp",
 
   schemaOptions: {
@@ -62,6 +65,9 @@ const toolConfig = createToolConfig({
       <div className="space-y-6">
         <p className="text-lg text-muted-foreground leading-relaxed">
           An <strong>Insta DP Viewer</strong> is a specialized online utility that allows users to view and download Instagram profile pictures (DPs) in their original full HD resolution (1080p). Unlike the standard Instagram app, which restricts profile pictures to small, non-zoomable circles, FastTools extracts the source image directly from Instagram's CDN, enabling anonymous viewing without notifying the account owner.
+        </p>
+        <p className="text-muted-foreground leading-relaxed">
+           Whether you are looking for an <strong>IG DP Viewer</strong> to see a friend's profile picture clearly or an <strong>Insta DP Download</strong> tool to save high-quality avatars, our tool handles it all instantly. We support both public and <strong>private account profile picture viewing</strong>.
         </p>
 
         <div className="my-8 overflow-x-auto rounded-lg border border-border">
@@ -226,6 +232,31 @@ const toolConfig = createToolConfig({
               While Instagram restricts access to posts and stories for private accounts, the <strong>Profile Picture (DP) is always public data</strong>. Our tool leverages this public API endpoint to fetch the high-resolution version of the avatar. However, we cannot access private posts or stories—we strictly adhere to privacy standards and API terms.
             </p>
           </div>
+        </article>
+
+        {/* H2: Comparison Section */}
+        <article className="space-y-6 mt-8">
+            <h2 className="text-2xl font-bold text-foreground">Why FastTools is the Best Insta DP Download Tool</h2>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div className="flex gap-4 p-4 border rounded-lg hover:bg-muted/20 transition-colors">
+                    <div className="h-10 w-10 rounded-full bg-primary/10 flex items-center justify-center shrink-0">
+                        <Download className="h-5 w-5 text-primary" />
+                    </div>
+                    <div>
+                        <h4 className="font-semibold mb-1">Insta DP Download HD</h4>
+                        <p className="text-sm text-muted-foreground">One-click download for 1080p quality. No grainy screenshots.</p>
+                    </div>
+                </div>
+                <div className="flex gap-4 p-4 border rounded-lg hover:bg-muted/20 transition-colors">
+                    <div className="h-10 w-10 rounded-full bg-primary/10 flex items-center justify-center shrink-0">
+                        <ShieldCheck className="h-5 w-5 text-primary" />
+                    </div>
+                    <div>
+                        <h4 className="font-semibold mb-1">Safe & Anonymous</h4>
+                        <p className="text-sm text-muted-foreground">We don't log your searches. View any profile picture with complete privacy.</p>
+                    </div>
+                </div>
+            </div>
         </article>
       </div>
     ),
