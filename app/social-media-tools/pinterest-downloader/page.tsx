@@ -11,7 +11,7 @@ const PinterestDownloader = dynamic(() => import("@/components/social-media/pint
 })
 
 const toolConfig = createToolConfig({
-    toolName: "Pinterest Downloader - Save Images, GIFs & Videos (HD)",
+    toolName: "Pinterest Downloader - Save Videos, GIFs & Images (HD/4K)",
     description: "Download high-quality Pinterest images, GIFs, and videos online. Save Pins to your gallery in one click. 100% Free & Fast. No login required.",
     metaTitle: "Pinterest Downloader - Save Videos, Reels & Images 4K",
     metaDescription: "Download Pinterest videos, Reels, and Images in 4K & HD. Save GIFs and Story pins to your phone or PC. Free, fast, and no watermark.",
@@ -44,21 +44,21 @@ const toolConfig = createToolConfig({
                 </p>
                 
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-4 my-8">
-                    <a href="/social-media-tools/pinterest-downloader/video" className="p-4 rounded-lg border border-border bg-card hover:border-primary/50 transition-all group">
+                    <a href="/social-media-tools/pinterest-downloader" className="p-4 rounded-lg border border-border bg-card hover:border-primary/50 transition-all group">
                         <div className="flex items-center gap-2 mb-2">
                             <Video className="h-5 w-5 text-primary" />
                             <h3 className="font-bold text-foreground group-hover:text-primary">Pinterest Video Saver</h3>
                         </div>
                         <p className="text-xs text-muted-foreground">Download videos & Reels in 1080p/4K MP4.</p>
                     </a>
-                    <a href="/social-media-tools/pinterest-downloader/image" className="p-4 rounded-lg border border-border bg-card hover:border-primary/50 transition-all group">
+                    <a href="/social-media-tools/pinterest-downloader" className="p-4 rounded-lg border border-border bg-card hover:border-primary/50 transition-all group">
                         <div className="flex items-center gap-2 mb-2">
                             <Image className="h-5 w-5 text-primary" />
                             <h3 className="font-bold text-foreground group-hover:text-primary">Image Downloader</h3>
                         </div>
                         <p className="text-xs text-muted-foreground">Save original high-res photos (JPG/PNG).</p>
                     </a>
-                    <a href="/social-media-tools/pinterest-downloader/gif" className="p-4 rounded-lg border border-border bg-card hover:border-primary/50 transition-all group">
+                    <a href="/social-media-tools/pinterest-downloader" className="p-4 rounded-lg border border-border bg-card hover:border-primary/50 transition-all group">
                         <div className="flex items-center gap-2 mb-2">
                             <Zap className="h-5 w-5 text-primary" />
                             <h3 className="font-bold text-foreground group-hover:text-primary">GIF Downloader</h3>

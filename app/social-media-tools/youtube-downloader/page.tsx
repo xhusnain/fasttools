@@ -1,7 +1,7 @@
 import type { Metadata } from "next"
 import { ToolPageLayout } from "@/components/common/tool-page-layout"
 import { createToolConfig } from "@/lib/create-tool-config"
-import { AlertCircle, Shield, Zap, Smartphone, Monitor, Music, Video } from "lucide-react"
+import { AlertCircle, Shield, Zap, Smartphone, Monitor, Music, Video, Star, CheckCircle } from "lucide-react"
 import dynamic from "next/dynamic"
 
 const YoutubeDownloader = dynamic(() => import("@/components/social-media/youtube-downloader/youtube-downloader").then(mod => mod.YoutubeDownloader), {
@@ -11,15 +11,15 @@ const YoutubeDownloader = dynamic(() => import("@/components/social-media/youtub
 })
 
 const toolConfig = createToolConfig({
-    toolName: "YouTube Downloader - Download YouTube Videos Free | YouTube to MP4, MP3",
-    description: "Fast & Free YouTube Downloader. Download videos in 8K/4K/HD, convert to MP3/MP4, and save Shorts. No software required, works on iPhone, Android, & PC.",
-    metaTitle: "YouTube Downloader - Download YouTube Videos Free | YouTube to MP4, MP3",
-    metaDescription: "Fast & Free YouTube Downloader. Download videos in 8K/4K/HD, convert to MP3/MP4, and save Shorts. No software required, works on iPhone, Android, & PC.",
+    toolName: "YouTube Video Downloader (4K & 1080p) - YouTube to MP3/MP4",
+    description: "Best YouTube Downloader to save videos in 4K, 1080p, and 8K. Convert YouTube to MP3 audio instantly. Free, unlimited, and works on iPhone/Android/PC. No software required.",
+    metaTitle: "YouTube Downloader (4K/1080p) - Convert YouTube to MP3 & MP4",
+    metaDescription: "Download YouTube videos in 4K, 1080p, and 8K. Convert YouTube to MP3 instantly. Free YouTube Downloader for iPhone, Android, and PC. No limits.",
     path: "/social-media-tools/youtube-downloader",
 
     header: {
-        title: "YouTube Downloader - Download YouTube Videos Free | YouTube to MP4, MP3",
-        description: "Fast & Free YouTube Downloader. Download videos in 8K/4K/HD, convert to MP3/MP4, and save Shorts. No software required, works on iPhone, Android, & PC. Simply paste the URL and download instantly.",
+        title: "YouTube Video Downloader (4K & 1080p) - Save MP3/MP4",
+        description: "The fastest way to download YouTube videos in 4K, 1080p, and 8K. Convert to MP3 audio instantly. Works on iPhone, Android, and PC. No software needed.",
         titleSize: "medium",
         descriptionSize: "small",
     },
@@ -34,11 +34,11 @@ const toolConfig = createToolConfig({
         price: "0",
         ratingValue: "4.9",
         ratingCount: "50000",
-        alternateName: "YouTube Ripper, YT to MP4, YouTube Saver, YouTube Video Downloader",
+        alternateName: "YouTube Ripper, YT to MP4, YouTube Saver, YouTube Video Downloader, YouTube to MP3",
         featureList: [
-            "8K Video Support",
-            "MP3 Extraction (320kbps support)",
-            "Shorts Downloader",
+            "8K & 4K Video Support",
+            "YouTube to MP3 Converter",
+            "YouTube Shorts Downloader",
             "No Software Required",
             "Audio Muxing (No Silent Videos)",
             "Unlimited Free Downloads",
@@ -48,44 +48,43 @@ const toolConfig = createToolConfig({
     },
 
     content: {
-        overview: "YouTube Downloader is a premium, free online tool designed for speed and quality. While YouTube doesn't offer a native way to save content, our downloader bridges that gap, allowing you to download YouTube videos, convert YouTube to MP4, and extract audio as MP3 files instantly. We support resolutions up to 8K HDR and ensure every download is a complete file with both video and audio—solving the common 'silent video' issue found in other tools. Whether you're archiving content, saving tutorials for offline study, or keeping your favorite music videos, FastTools provides a secure, ad-light, and unlimited experience. No registration is needed; just paste your link and get your file in seconds. Works flawlessly on iPhone, Android, Mac, and Windows.",
+        overview: (
+            <div className="space-y-6">
+                <p className="text-lg text-muted-foreground leading-relaxed">
+                    <strong>FastTools YouTube Downloader</strong> is the ultimate solution to save content from YouTube. Whether you need to download a <strong>4K educational video</strong>, save a <strong>music video as MP3</strong>, or keep a <strong>YouTube Short</strong> for offline viewing, our tool delivers the highest quality files instantly.
+                </p>
+                <p className="text-muted-foreground leading-relaxed">
+                    Unlike other downloaders that limit quality to 720p or provide videos without sound, we use advanced technology to merge video and audio streams, giving you perfect <strong>1080p, 4K, and 8K files</strong>. We also offer a dedicated <strong>YouTube to MP3</strong> converter for high-fidelity audio extraction.
+                </p>
+            </div>
+        ),
 
         howToSteps: [
-            "Find the video: Open YouTube and navigate to the video or Short you want to download. Ensure the content is publicly available.",
-            "Copy the URL: Tap 'Share' and select 'Copy Link', or copy the address directly from your browser bar (supports youtube.com and youtu.be links).",
-            "Open FastTools: Go to our YouTube Downloader page in any browser (Chrome, Safari, etc.) on your phone or PC.",
-            "Paste & Process: Paste the link into the input box. Our tool instantly fetches the highest quality video and audio streams available from YouTube's CDNs.",
-            "Download: Select 'MP4' for video (up to 8K) or 'MP3' for audio. Click the download button, and the file will save directly to your device's Photos app or Downloads folder."
+            "Copy the YouTube URL: Open the YouTube app or website. Find the video or Short you want to download. Tap 'Share' and select 'Copy Link'.",
+            "Paste into FastTools: Go to our YouTube Downloader and paste the link into the input box.",
+            "Choose Format: Select 'Video' for MP4 (up to 8K) or 'Audio' for MP3.",
+            "Download: Click the 'Download' button. The file will save directly to your device's storage."
         ],
 
         features: [
-            "Download in Max Quality (Up to 8K): Don't settle for blurry videos. We fetch the highest resolution available—from standard HD (720p) and Full HD (1080p) up to crystal-clear 4K and 8K HDR (VP9/AV1 codecs).",
-            "Complete Files with Audio: Many downloaders return silent files for 1080p+ videos due to YouTube's streaming tech. We automatically 'mux' (merge) video and audio tracks, ensuring you get a perfect, playable file every time.",
-            "YouTube to MP3 Converter: Need just the sound? Extract high-fidelity audio from any video. We convert to universally compatible MP3 format (AAC/Opus source) without unnecessary re-encoding that degrades quality.",
-            "100% Free & Unlimited: No hidden fees, no daily limits, and no 'premium' speed caps. Download as many videos as you want, completely free.",
-            "iPhone & Android Ready: Optimized for mobile. On iPhone (iOS 14+), save directly to the Files or Photos app. On Android, files go straight to your Downloads folder for easy access.",
-            "Safe & Secure: No shady software installers or browser extensions required. Everything happens in your browser, keeping your device safe from malware found in desktop downloader apps.",
-            "Instant Processing: Our real-time engine resolves download links in under 3 seconds, eliminating long queue times."
+            "4K & 8K Downloader: Save videos in their original crystal-clear resolution (2160p, 4320p).",
+            "YouTube to MP3: Convert any video into a high-quality audio file (320kbps supported).",
+            "Shorts Downloader: Full support for downloading vertical YouTube Shorts videos.",
+            "No Silent Videos: We automatically merge video and audio tracks for 1080p+ downloads.",
+            "Unlimited Downloads: No daily limits, no speed throttling, and 100% free.",
+            "Mobile Optimized: Works perfectly on iPhone (Safari) and Android (Chrome) without apps.",
+            "Secure & Private: Browser-based processing means no malware risks from installing software."
         ],
 
         useCases: [
-            "Offline Travel Entertainment: Download movies and vlogs for flights or road trips where internet is spotty.",
-            "Students & Researchers: Archive educational tutorials, lectures, and documentaries for distraction-free offline study.",
-            "Content Creators: Download your own uploaded videos to create high-quality backups or repurpose content for other platforms.",
-            "Music Collections: Build a personal library of live performances, covers, and podcasts."
+            "Travel: Watch movies and vlogs offline during flights or road trips.",
+            "Education: Archive tutorials and lectures for distraction-free study.",
+            "Content Creation: Download your own videos for backup or repurposing.",
+            "Music: Build an offline playlist of your favorite tracks and podcasts."
         ],
 
         aboutTool: (
             <div className="space-y-8">
-                {/* Hero Image */}
-                <div className="relative w-full aspect-video max-w-3xl mx-auto rounded-2xl overflow-hidden border border-border shadow-lg">
-                    <img
-                        src="/images/youtube-downloader-hero.png"
-                        alt="YouTube Video Downloader - Download HD videos and MP3 audio"
-                        className="w-full h-full object-cover"
-                    />
-                </div>
-
                 {/* Safety Section */}
                 <article className="p-6 rounded-lg bg-card border border-border shadow-sm">
                     <h2 className="text-xl font-bold mb-4 text-foreground flex items-center gap-2">
@@ -94,7 +93,13 @@ const toolConfig = createToolConfig({
                     </h2>
                     <div className="space-y-4">
                         <p className="text-sm text-muted-foreground leading-relaxed">
-                            <strong>Yes, purely browser-based.</strong> We've stripped away the risks associated with traditional downloaders. No .exe files, no extensions, and no intrusive notification requests. Your download is processed securely over HTTPS, and we do not store your user data or download history.
+                            <strong>Yes, absolutely.</strong> We operate entirely in your browser. This means:
+                            <ul className="list-disc list-inside mt-2 ml-2">
+                                <li>No dangerous software (.exe) to install.</li>
+                                <li>No browser extensions that track your history.</li>
+                                <li>No account registration or personal data required.</li>
+                            </ul>
+                            Your connection is secured with SSL encryption, ensuring a safe and private experience.
                         </p>
                     </div>
                 </article>
@@ -102,7 +107,7 @@ const toolConfig = createToolConfig({
                 {/* Technical Comparison */}
                 <article className="space-y-6">
                     <div className="overflow-x-auto my-8">
-                        <h3 className="text-xl font-semibold text-heading-accent mb-4">Why Choose FastTools?</h3>
+                        <h3 className="text-xl font-semibold text-heading-accent mb-4">FastTools vs Generic Downloaders</h3>
                         <table className="w-full text-sm text-left border-collapse">
                             <thead className="text-xs uppercase bg-muted text-muted-foreground">
                                 <tr>
@@ -113,36 +118,38 @@ const toolConfig = createToolConfig({
                             </thead>
                             <tbody>
                                 <tr className="bg-card border-b border-border">
-                                    <td className="px-6 py-4 font-medium">Video Quality</td>
-                                    <td className="px-6 py-4 text-green-500 font-bold">Up to 8K HDR (Original Quality)</td>
+                                    <td className="px-6 py-4 font-medium">Max Resolution</td>
+                                    <td className="px-6 py-4 text-green-500 font-bold">8K / 4K (Original)</td>
                                     <td className="px-6 py-4 text-muted-foreground">Often capped at 720p</td>
                                 </tr>
                                 <tr className="bg-card border-b border-border">
-                                    <td className="px-6 py-4 font-medium">Audio Support</td>
-                                    <td className="px-6 py-4 text-green-500 font-bold">Auto-Merge (Video + Sound)</td>
-                                    <td className="px-6 py-4 text-muted-foreground">Silent 1080p downloads</td>
+                                    <td className="px-6 py-4 font-medium">Audio in HD</td>
+                                    <td className="px-6 py-4 text-green-500 font-bold">Included (Auto-Merge)</td>
+                                    <td className="px-6 py-4 text-muted-foreground">Silent (Video Only)</td>
                                 </tr>
                                 <tr className="bg-card border-b border-border">
                                     <td className="px-6 py-4 font-medium">Shorts Support</td>
                                     <td className="px-6 py-4 text-green-500 font-bold">Full Support</td>
-                                    <td className="px-6 py-4 text-muted-foreground">Hit or Miss</td>
+                                    <td className="px-6 py-4 text-muted-foreground">Often Fails</td>
                                 </tr>
                             </tbody>
                         </table>
                     </div>
-
-                    <h2 className="text-2xl font-bold text-foreground">Frequently Asked Questions</h2>
-                    <div className="space-y-4">
-                        <h3 className="text-xl font-semibold text-heading-accent">Why no sound on some downloads?</h3>
-                        <p className="text-base text-muted-foreground leading-relaxed">
-                            YouTube splits high-quality video (1080p+) and audio into separate streams to save bandwidth (DASH technology). Basic downloaders only grab the video stream. FastTools is advanced—we download both and stitch them together on the fly, so you get a perfect file.
-                        </p>
-                    </div>
                 </article >
+
+                <article className="space-y-6">
+                     <h2 className="text-2xl font-bold text-foreground flex items-center gap-2">
+                        <Music className="h-6 w-6 text-primary" />
+                        YouTube to MP3 Converter (High Quality)
+                    </h2>
+                    <p className="text-base text-muted-foreground leading-relaxed">
+                        Looking for just the audio? Our tool doubles as a powerful <strong>YouTube to MP3 converter</strong>. We extract the audio track directly from the source video without re-encoding, ensuring you get the highest possible fidelity (often 128kbps, 192kbps, or 320kbps depending on the original upload).
+                    </p>
+                </article>
 
                 {/* Device Guides */}
                 < article className="space-y-6" >
-                    <h2 className="text-2xl font-bold text-foreground">How to Download on Any Device</h2>
+                    <h2 className="text-2xl font-bold text-foreground">How to Download on Mobile</h2>
                     <div className="grid gap-6 md:grid-cols-2">
                         <div className="p-5 rounded-lg bg-card border border-border">
                             <h3 className="text-lg font-semibold text-heading-accent mb-3 flex items-center gap-2">
@@ -150,7 +157,7 @@ const toolConfig = createToolConfig({
                                 iPhone & iPad (iOS)
                             </h3>
                             <p className="text-sm text-muted-foreground leading-relaxed">
-                                Use Safari. Paste the link, click download, and when the prompt appears, tap "Download". The file moves to your <strong>Files app</strong> (or iCloud Drive). From there, you can "Save Video" to your Photos tint.
+                                Use <strong>Safari</strong>. Paste the link and tap download. The file goes to the 'Downloads' manager (top right 'Aa' icon). Open the file, tap 'Share', then 'Save Video' to move it to your Photos app.
                             </p>
                         </div>
 
@@ -160,7 +167,7 @@ const toolConfig = createToolConfig({
                                 Android
                             </h3>
                             <p className="text-sm text-muted-foreground leading-relaxed">
-                                Use Chrome (or any browser). Downloads are straightforward—files save instantly to your "Downloads" folder and appear in your Gallery/Photos app.
+                                Use <strong>Chrome</strong>. Downloads are simple: once you click download, the file saves instantly to your 'Downloads' folder and will show up in your Gallery app.
                             </p>
                         </div>
                     </div>
@@ -168,28 +175,28 @@ const toolConfig = createToolConfig({
             </div >
         ),
 
-        proTip: "Tip: For the absolute best quality, choose the highest resolution listed (even if file size is larger). You can always compress it later, but you can't add quality back to a blurry video. For audio, standard MP3 is universally compatible, but M4A often provides slightly better quality at the same file size.",
+        proTip: "For the absolute best video quality, choose the highest resolution listed (even if file size is larger). You can always compress it later, but you can't add quality back to a blurry video. For audio, standard MP3 is universally compatible and great for music.",
 
         faqs: [
             {
                 question: "Is this YouTube Downloader free?",
-                answer: "Yes, 100% free. There are no limits on the number of videos or the duration of content you can download."
+                answer: "Yes, 100% free. There are no limits on the number of videos you can download."
             },
             {
                 question: "How do I download YouTube videos on iPhone?",
-                answer: "Open Safari, visit fasttools.store/youtube-downloader, paste your link, and hit download. The video saves to the 'Downloads' manager in Safari. Tap the magnifying glass icon to find the file in your Files app, then tap 'Share' > 'Save Video' to move it to your Photos."
+                answer: "Open Safari, visit our site, paste your link, and hit download. The video saves to the Safari Downloads manager. From there, you can save it to your Photos app."
             },
             {
                 question: "Why do you support up to 8K?",
-                answer: "We believe in future-proofing. Even if you don't have an 8K screen yet, downloading the highest quality 'master' file ensures your archive looks great on any screen for years to come."
+                answer: "We fetch the 'master' quality file. Even if you don't have an 8K screen, downloading the best quality ensures your video looks amazing on any device."
             },
             {
-                question: "Can I download audio only?",
-                answer: "Absolutely. Choose the 'MP3' option after pasting your link. We extract the audio track directly from the video source for the clearest sound."
+                question: "Can I convert YouTube to MP3?",
+                answer: "Yes! Select the 'Audio' or 'MP3' option after pasting your link. We extract the high-quality audio track for you."
             },
             {
-                question: "Is it safe to use?",
-                answer: "Yes. We don't ask for personal info, we don't install anything on your device, and we use secure connections. It's just a simple tool to help you save content you love."
+                question: "Why is there no sound on 1080p videos on other sites?",
+                answer: "YouTube separates audio and video for high resolutions to save data. Most sites only grab the video. We automatically merge them back together so you get a perfect file."
             }
         ],
 
