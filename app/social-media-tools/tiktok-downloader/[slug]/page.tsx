@@ -20,7 +20,7 @@ interface PageProps {
 
 export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
   const variant = tiktokVariants[params.slug];
-  
+
   if (!variant) {
     return {};
   }
@@ -81,11 +81,12 @@ export default function TiktokVariantPage({ params }: PageProps) {
       features: [
         "Free & Unlimited",
         "High Quality Output",
-        "No Login Required", 
+        "No Login Required",
         "Fast Processing"
       ],
       // If the variant has specific FAQ overrides, we could merge them here
-      faqs: variant.faqOverrides ? variant.faqOverrides : []
+      faqs: variant.faqOverrides ? variant.faqOverrides : [],
+      aboutTool: variant.overviewText,
     }
   });
 

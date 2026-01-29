@@ -80,7 +80,8 @@ export default function PinterestVariantPage({ params }: PageProps) {
         "No Login Needed",
         "Secure & Private"
       ],
-      faqs: variant.faqOverrides ? variant.faqOverrides : []
+      faqs: variant.faqOverrides ? variant.faqOverrides : [],
+      aboutTool: variant.overviewText,
     }
   });
 
