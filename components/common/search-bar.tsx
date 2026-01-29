@@ -170,7 +170,7 @@ export function SearchBar({
           onChange={(e) => setQuery(e.target.value)}
           placeholder={placeholder}
           autoFocus={autoFocus}
-          className={`${variant === "pill" ? "w-full h-9 pl-9 pr-3 text-sm rounded-full bg-transparent text-foreground placeholder:text-muted-foreground focus:outline-none" : "w-full h-12 pl-12 pr-4 text-base rounded-lg border-2 border-border bg-background text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary focus:border-primary transition-all shadow-sm"}${inputClassName ? ` ${inputClassName}` : ""}`}
+          className={`${variant === "pill" ? "w-full h-9 pl-9 pr-3 text-sm rounded-full bg-transparent text-foreground placeholder:text-muted-foreground focus:outline-none" : "w-full h-12 pl-12 pr-4 text-base rounded-lg border-2 border-border bg-background text-foreground placeholder:text-muted-foreground focus:outline-none focus:border-primary focus:shadow-input-focus transition-all shadow-sm"}${inputClassName ? ` ${inputClassName}` : ""}`}
           onBlur={handleInputBlur}
         />
       </form>

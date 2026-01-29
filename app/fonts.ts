@@ -1,4 +1,4 @@
-import { Roboto, Montserrat, Open_Sans } from 'next/font/google'
+import { Roboto, Montserrat, Open_Sans, Plus_Jakarta_Sans } from 'next/font/google'
 
 // Optimized font loading - reduced weights for better performance
 // Only load essential weights to reduce font file size
@@ -28,6 +28,16 @@ export const openSans = Open_Sans({
     variable: '--font-open-sans',
     display: 'swap',
     preload: false, // Not critical, don't preload
+    fallback: ['system-ui', 'arial'],
+    adjustFontFallback: true,
+})
+
+export const plusJakartaSans = Plus_Jakarta_Sans({
+    weight: ['300', '400', '500', '600', '700'],
+    subsets: ['latin'],
+    variable: '--font-plus-jakarta',
+    display: 'swap',
+    preload: true,
     fallback: ['system-ui', 'arial'],
     adjustFontFallback: true,
 })

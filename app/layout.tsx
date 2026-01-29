@@ -8,7 +8,7 @@ import { Footer } from "@/components/common/footer"
 import { ThemeProvider } from "@/components/common/theme-provider"
 import { env } from "@/config/env"
 import { createMetadata, globalViewport, getWebsiteSchema } from "@/lib/metadata-base"
-import { roboto, montserrat, openSans } from "@/app/fonts"
+import { roboto, montserrat, openSans, plusJakartaSans } from "@/app/fonts"
 import { DeferredScript } from "@/components/common/deferred-script"
 
 const CookieConsent = dynamic(
@@ -140,7 +140,7 @@ export default function RootLayout({
     const websiteSchema = getWebsiteSchema()
 
     return (
-        <html lang="en" className={`antialiased ${roboto.variable} ${montserrat.variable} ${openSans.variable}`} suppressHydrationWarning>
+        <html lang="en" className={`antialiased ${roboto.variable} ${montserrat.variable} ${openSans.variable} ${plusJakartaSans.variable}`} suppressHydrationWarning>
             <head>
                 {/* Preconnect to critical third-party origins */}
                 <link rel="preconnect" href="https://fonts.googleapis.com" crossOrigin="anonymous" />

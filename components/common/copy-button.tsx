@@ -24,7 +24,7 @@ export function CopyButton({ text, id, className = "" }: CopyButtonProps) {
       onClick={copyToClipboard}
       onMouseEnter={() => setHovered(true)}
       onMouseLeave={() => setHovered(false)}
-      className={`flex items-center gap-1 text-xs text-muted-foreground hover:text-foreground transition-colors cursor-pointer ${className}`}
+      className={`flex items-center gap-1 text-xs text-muted-foreground hover:text-primary transition-colors cursor-pointer ${className}`}
     >
       {copied ? <Check className="h-3 w-3 text-heading-accent" /> : <Copy className="h-3 w-3" />}
       {copied ? 'Copied!' : (hovered ? 'Get' : 'Copy')}

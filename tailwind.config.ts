@@ -81,9 +81,16 @@ const config: Config = {
         sm: 'calc(var(--radius) - 4px)',
       },
       fontFamily: {
-        sans: ['var(--font-open-sans)', 'Open Sans', 'system-ui', 'sans-serif'],
-        heading: ['var(--font-montserrat)', 'Montserrat', 'sans-serif'],
+        sans: ['var(--font-plus-jakarta)', 'var(--font-open-sans)', 'system-ui', 'sans-serif'],
+        heading: ['var(--font-plus-jakarta)', 'var(--font-montserrat)', 'sans-serif'],
         mono: ['monospace'],
+      },
+      boxShadow: {
+        sm: 'var(--shadow-sm)',
+        md: 'var(--shadow-md)',
+        lg: 'var(--shadow-lg)',
+        xl: 'var(--shadow-xl)',
+        'input-focus': '0 0 0 3px rgba(124, 58, 237, 0.1)',
       },
       animation: {
         'pulse-slow': 'pulse 8s cubic-bezier(0.4, 0, 0.6, 1) infinite',

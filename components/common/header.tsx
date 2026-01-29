@@ -50,7 +50,7 @@ export function Header() {
                 <Link
                   href="/live-tv"
                   title="Watch Free Live TV Channels Worldwide"
-                  className="px-3 py-0.5 rounded-sm text-xs font-bold tracking-wider border border-red-600 bg-red-600 text-white hover:bg-red-700 transition-colors flex items-center h-fit my-auto"
+                  className="px-3 py-0.5 rounded-sm text-xs font-bold tracking-wider border border-primary bg-primary text-primary-foreground hover:bg-primary/90 transition-colors flex items-center h-fit my-auto shadow-sm hover:shadow-md"
                 >
                   LIVE TV
                 </Link>
@@ -110,12 +110,12 @@ export function Header() {
 
               <Link
                 href="/live-tv"
-                className="lg:hidden flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-red-100 dark:bg-red-900/30 text-red-700 dark:text-red-400 hover:bg-red-200 dark:hover:bg-red-900/50 transition-colors mr-1"
+                className="lg:hidden flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-primary/10 text-primary hover:bg-primary/20 transition-colors mr-1"
                 aria-label="Watch Live TV"
               >
                 <div className="relative flex h-2 w-2">
-                  <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-red-400 opacity-75"></span>
-                  <span className="relative inline-flex rounded-full h-2 w-2 bg-red-500"></span>
+                  <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary opacity-75"></span>
+                  <span className="relative inline-flex rounded-full h-2 w-2 bg-primary"></span>
                 </div>
                 <span className="text-xs font-bold">LIVE TV</span>
               </Link>

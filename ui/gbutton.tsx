@@ -11,20 +11,20 @@ const buttonVariants = cva(
         variants: {
             variant: {
                 default:
-                    "bg-primary text-primary-foreground hover:bg-primary/90 focus-visible:ring-primary shadow-sm hover:shadow-md",
+                    "btn-primary",
                 destructive:
-                    "bg-destructive text-destructive-foreground hover:bg-destructive/90 focus-visible:ring-destructive shadow-sm hover:shadow-md",
+                    "bg-destructive text-destructive-foreground hover:bg-destructive/90 shadow-sm hover:shadow-md transition-all duration-200",
                 outline:
-                    "border border-border bg-background hover:bg-accent hover:text-accent-foreground focus-visible:ring-primary shadow-sm hover:shadow-md",
+                    "btn-outline",
                 secondary:
-                    "bg-secondary text-secondary-foreground hover:bg-secondary/80 focus-visible:ring-secondary shadow-sm hover:shadow-md",
-                ghost: "hover:bg-accent hover:text-accent-foreground focus-visible:ring-primary",
-                link: "text-link underline-offset-4 hover:underline hover:text-link-hover focus-visible:ring-link",
+                    "btn-secondary",
+                ghost: "hover:bg-accent hover:text-accent-foreground",
+                link: "text-primary underline-offset-4 hover:underline",
                 success:
-                    "bg-accent text-accent-foreground hover:bg-accent/90 focus-visible:ring-accent shadow-sm hover:shadow-md",
+                    "bg-emerald-500 text-white hover:bg-emerald-600 shadow-sm hover:shadow-md transition-all duration-200",
                 warning:
-                    "bg-[var(--tertiary-accent)] text-[var(--tertiary-accent-foreground)] hover:opacity-90 focus-visible:ring-[var(--tertiary-accent)] shadow-sm hover:shadow-md",
-                info: "bg-primary text-primary-foreground hover:bg-primary/90 focus-visible:ring-primary shadow-sm hover:shadow-md"
+                    "bg-amber-500 text-white hover:bg-amber-600 shadow-sm hover:shadow-md transition-all duration-200",
+                info: "bg-blue-500 text-white hover:bg-blue-600 shadow-sm hover:shadow-md transition-all duration-200"
             },
             size: {
                 xs: "h-7 px-2.5 text-xs rounded-sm",
@@ -98,9 +98,7 @@ const GButton = React.forwardRef<HTMLButtonElement, GButtonProps>(
                     buttonVariants({ variant: customColor ? "default" : variant, size, className }),
                     "relative overflow-hidden transition-all duration-300",
                     enableHoverEffect && !isLoading && !disabled && "hover:-translate-y-0.5 active:translate-y-0",
-                    enableGlow && variant === "default" && !customColor && "shadow-lg hover:shadow-primary/25",
-                    // Add a subtle gradient overlay for default variant if no custom color
-                    variant === "default" && !customColor && "bg-gradient-to-r from-primary to-primary/90 hover:from-primary/90 hover:to-primary",
+                    enableHoverEffect && !isLoading && !disabled && "hover:-translate-y-0.5 active:translate-y-0",
                     colorClasses
                 )}
                 ref={ref as any}
