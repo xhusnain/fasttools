@@ -5,13 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="18ec5e72-a13f-411d-aa2d-6f11d3337c12" name="Changes" comment="added seo skills yt downloader and yt playlist downloader seo optimization">
-      <change beforePath="$PROJECT_DIR$/app/fonts.ts" beforeDir="false" afterPath="$PROJECT_DIR$/app/fonts.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/globals.css" beforeDir="false" afterPath="$PROJECT_DIR$/app/globals.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/layout.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/layout.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/page.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/iptv.m3u" beforeDir="false" afterPath="$PROJECT_DIR$/data/iptv.m3u" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/metadata-base.ts" beforeDir="false" afterPath="$PROJECT_DIR$/lib/metadata-base.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/next.config.mjs" beforeDir="false" afterPath="$PROJECT_DIR$/next.config.mjs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/social-media-tools/tiktok-downloader/[slug]/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/social-media-tools/tiktok-downloader/[slug]/page.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -243,15 +237,7 @@
       <workItem from="1769673514189" duration="3695000" />
       <workItem from="1769677391475" duration="534000" />
       <workItem from="1769678435922" duration="53000" />
-      <workItem from="1769678893677" duration="742000" />
-    </task>
-    <task id="LOCAL-00236" summary="optimize perplexity">
-      <option name="closed" value="true" />
-      <created>1768831830374</created>
-      <option name="number" value="00236" />
-      <option name="presentableId" value="LOCAL-00236" />
-      <option name="project" value="LOCAL" />
-      <updated>1768831830374</updated>
+      <workItem from="1769678893677" duration="1267000" />
     </task>
     <task id="LOCAL-00237" summary="optimize perplexity">
       <option name="closed" value="true" />
@@ -637,7 +623,15 @@
       <option name="project" value="LOCAL" />
       <updated>1769677880728</updated>
     </task>
-    <option name="localTasksCounter" value="285" />
+    <task id="LOCAL-00285" summary="added seo skills yt downloader and yt playlist downloader seo optimization">
+      <option name="closed" value="true" />
+      <created>1769679829244</created>
+      <option name="number" value="00285" />
+      <option name="presentableId" value="LOCAL-00285" />
+      <option name="project" value="LOCAL" />
+      <updated>1769679829244</updated>
+    </task>
+    <option name="localTasksCounter" value="286" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

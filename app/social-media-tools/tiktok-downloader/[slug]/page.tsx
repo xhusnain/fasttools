@@ -13,13 +13,14 @@ const TiktokDownloader = dynamic(() => import("@/components/social-media/tiktok-
 })
 
 interface PageProps {
-  params: {
+  params: Promise<{
     slug: string;
-  };
+  }>;
 }
 
 export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
-  const variant = tiktokVariants[params.slug];
+  const { slug } = await params;
+  const variant = tiktokVariants[slug];
 
   if (!variant) {
     return {};
@@ -29,7 +30,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
     title: variant.metaTitle,
     description: variant.metaDescription,
     alternates: {
-      canonical: `/social-media-tools/tiktok-downloader/${params.slug}`
+      canonical: `/social-media-tools/tiktok-downloader/${slug}`
     }
   };
 }
@@ -40,8 +41,9 @@ export async function generateStaticParams() {
   }));
 }
 
-export default function TiktokVariantPage({ params }: PageProps) {
-  const variant = tiktokVariants[params.slug];
+export default async function TiktokVariantPage({ params }: PageProps) {
+  const { slug } = await params;
+  const variant = tiktokVariants[slug];
 
   if (!variant) {
     notFound();
