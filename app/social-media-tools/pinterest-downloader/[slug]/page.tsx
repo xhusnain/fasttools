@@ -7,20 +7,21 @@ import dynamic from "next/dynamic";
 import { createToolConfig } from "@/lib/create-tool-config";
 
 const PinterestDownloader = dynamic(() => import("@/components/social-media/pinterest-downloader/pinterest-downloader").then(mod => mod.PinterestDownloader), {
-    loading: () => <div className="min-h-[600px] flex items-center justify-center">
-        <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-primary"></div>
-    </div>
+  loading: () => <div className="min-h-[600px] flex items-center justify-center">
+    <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-primary"></div>
+  </div>
 })
 
 interface PageProps {
-  params: {
+  params: Promise<{
     slug: string;
-  };
+  }>;
 }
 
 export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
-  const variant = pinterestVariants[params.slug];
-  
+  const { slug } = await params;
+  const variant = pinterestVariants[slug];
+
   if (!variant) {
     return {};
   }
@@ -29,7 +30,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
     title: variant.metaTitle,
     description: variant.metaDescription,
     alternates: {
-      canonical: `/social-media-tools/pinterest-downloader/${params.slug}`
+      canonical: `/social-media-tools/pinterest-downloader/${slug}`
     }
   };
 }
@@ -40,8 +41,9 @@ export async function generateStaticParams() {
   }));
 }
 
-export default function PinterestVariantPage({ params }: PageProps) {
-  const variant = pinterestVariants[params.slug];
+export default async function PinterestVariantPage({ params }: PageProps) {
+  const { slug } = await params;
+  const variant = pinterestVariants[slug];
 
   if (!variant) {
     notFound();

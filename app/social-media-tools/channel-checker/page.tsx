@@ -18,8 +18,8 @@ import { GTable } from "@/ui/gtable"
 const toolConfig = createToolConfig({
   toolName: `YouTube Name Checker & Generator (Instant Availability Search ${new Date().getFullYear()})`,
   description: "Check if your YouTube channel name and handle are available in seconds. Get AI suggestions if taken.",
-  metaTitle: `YouTube Name Checker & Generator (Instant Availability Search ${new Date().getFullYear()})`,
-  metaDescription: "Instantly check if a YouTube channel name or @handle already exists. Verify availability, find similar channels, and claim your name before someone else does — free & real-time.",
+  metaTitle: `YouTube Channel Name Availability Checker & Generator (${new Date().getFullYear()})`,
+  metaDescription: "Check YouTube channel name availability instantly. Search names, @handles, and URLs. Free availability checker with AI name generator suggestions.",
   path: "/social-media-tools/channel-checker",
   schemaOptions: {
     applicationCategory: "WebApplication", // Updated from UtilitiesApplication
@@ -165,10 +165,10 @@ const toolConfig = createToolConfig({
             <div className="p-4 border rounded-lg bg-primary/5 border-primary/20">
               <h3 className="font-semibold mb-2 flex items-center gap-2">
                 <Zap className="h-4 w-4 text-primary" />
-                How to check if a YouTube channel name already exists?
+                How to check if a YouTube channel name or handle is available?
               </h3>
               <p className="text-sm text-muted-foreground">
-                Enter your desired channel name into our <strong>YouTube Channel Name Checker</strong>. The tool scans YouTube’s database to determine whether the channel name, @handle, or similar names already exist, helping you avoid duplication or brand conflicts.
+                Enter your desired name into our **YouTube Name Availability Checker**. The tool scans YouTube’s database to verify if the **Display Name**, **@Handle**, or Custom URL is available to claim.
               </p>
             </div>
 
@@ -310,7 +310,7 @@ const toolConfig = createToolConfig({
             <div className="flex gap-2">
               <CheckCircle className="h-5 w-5 text-green-500 shrink-0" />
               <div>
-                <h4 className="font-semibold text-sm">Handle-Specific Checking ⭐</h4>
+                <h4 className="font-semibold text-sm">Handle (@username) Check ⭐</h4>
                 <p className="text-xs text-muted-foreground">Most tools check old URLs. We verify the new @handle system YouTube prioritizes.</p>
               </div>
             </div>

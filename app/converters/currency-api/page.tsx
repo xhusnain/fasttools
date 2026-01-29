@@ -15,8 +15,8 @@ import { Breadcrumbs } from "@/components/common/breadcrumbs"
 import { createMetadata } from "@/lib/metadata-base"
 
 const baseMetadata = createMetadata({
-  title: "Free Currency Exchange API (No Key Required) | FastTools",
-  description: "Free currency exchange API with real-time rates, historical data & currency conversion. No API key required. Get started with FastTools in seconds.",
+  title: "Free Currency Exchange API (Frankfurter) - No Key Required",
+  description: "Free currency exchange API powered by Frankfurter. Real-time rates, historical data & conversion. No API key required. Unlimited & Open Source compatible.",
   path: "/converters/currency-api",
   includeSchema: false
 })
@@ -42,7 +42,7 @@ export default function CurrencyAPIDocsPage() {
               {/* Hero */}
               <div className="mt-8 md:mt-12">
                 <GHeader
-                  title="Free Currency Exchange API (No Key Required)"
+                  title="Free Currency Exchange API (Frankfurter) - No Key Required"
                   description="Free currency converter API with real-time exchange rates. No API key needed. Our open-source compatible API makes it easy to integrate currency conversion into your applications instantly."
                   titleSize="large"
                   descriptionSize="medium"
@@ -112,7 +112,7 @@ export default function CurrencyAPIDocsPage() {
 
               {/* API Key Generation */}
               <div className="p-4 sm:p-6 md:p-8 rounded-lg bg-card border border-border shadow">
-                <h2 className="text-base sm:text-lg md:text-xl font-bold mb-3 sm:mb-4 text-foreground">Open Source API</h2>
+                <h2 className="text-base sm:text-lg md:text-xl font-bold mb-3 sm:mb-4 text-foreground">Open Source API (Powered by Frankfurter)</h2>
                 <p className="text-muted-foreground text-xs sm:text-sm mb-4 sm:mb-6">
                   This service is powered by the open-source Frankfurter API. For direct access and technical details, visit their official site.
                 </p>
@@ -621,7 +621,7 @@ curl "https://api.frankfurter.dev/v1/latest?base=USD"`}
 
                 {/* FAQ Section */}
                 <div className="p-6 sm:p-8 rounded-lg bg-card border border-border shadow">
-                  <h2 className="text-2xl font-bold mb-6 text-foreground">Currency API FAQ - Everything You Need to Know</h2>
+                  <h2 className="text-2xl font-bold mb-6 text-foreground">FastTools (Frankfurter) API FAQ</h2>
                   <div className="space-y-6 text-sm text-muted-foreground">
 
                     <div>
