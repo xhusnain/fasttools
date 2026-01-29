@@ -1,0 +1,693 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="18ec5e72-a13f-411d-aa2d-6f11d3337c12" name="Changes" comment="added seo skills yt downloader and yt playlist downloader seo optimization">
+      <change beforePath="$PROJECT_DIR$/app/fonts.ts" beforeDir="false" afterPath="$PROJECT_DIR$/app/fonts.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/globals.css" beforeDir="false" afterPath="$PROJECT_DIR$/app/globals.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/layout.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/layout.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/page.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/iptv.m3u" beforeDir="false" afterPath="$PROJECT_DIR$/data/iptv.m3u" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/metadata-base.ts" beforeDir="false" afterPath="$PROJECT_DIR$/lib/metadata-base.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/next.config.mjs" beforeDir="false" afterPath="$PROJECT_DIR$/next.config.mjs" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="TypeScript File" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="localization" />
+      </map>
+    </option>
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="KubernetesApiPersistence">{}</component>
+  <component name="KubernetesApiProvider">{
+  &quot;isMigrated&quot;: true
+}</component>
+  <component name="PackageJsonUpdateNotifier">
+    <dismissed value="$PROJECT_DIR$/package.json" />
+  </component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="ProjectErrors" />
+    <option name="showPreview" value="true" />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 0
+}</component>
+  <component name="ProjectId" id="36HRGkIGkT874awKHNqNA7sy1OJ" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.typescript.service.memoryLimit.init&quot;: &quot;true&quot;,
+    &quot;com.intellij.ml.llm.matterhorn.ej.ui.settings.DefaultAutoModeForALLUsers.v1&quot;: &quot;true&quot;,
+    &quot;com.intellij.ml.llm.matterhorn.ej.ui.settings.DefaultModelSelectionForGA.v1&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;javascript.preferred.runtime.type.id&quot;: &quot;node&quot;,
+    &quot;js.debugger.nextJs.config.created.client&quot;: &quot;true&quot;,
+    &quot;js.debugger.nextJs.config.created.server&quot;: &quot;true&quot;,
+    &quot;junie.onboarding.icon.badge.shown&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;pnpm&quot;,
+    &quot;npm.Next.js: server-side.executor&quot;: &quot;Run&quot;,
+    &quot;npm.audit:all.executor&quot;: &quot;Run&quot;,
+    &quot;npm.build.executor&quot;: &quot;Run&quot;,
+    &quot;npm.build:audit.executor&quot;: &quot;Run&quot;,
+    &quot;npm.translate.executor&quot;: &quot;Run&quot;,
+    &quot;run.code.analysis.last.selected.profile&quot;: &quot;pProject Default&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
+    &quot;to.speed.mode.migration.done&quot;: &quot;true&quot;,
+    &quot;ts.external.directory.path&quot;: &quot;/Users/husnainbabar/WebstormProjects/fasttools-client/node_modules/typescript/lib&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  }
+}</component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/components/blog" />
+      <recent name="$PROJECT_DIR$/ui" />
+    </key>
+  </component>
+  <component name="RunManager" selected="npm.Next.js: server-side">
+    <configuration name="Next.js: debug client-side" type="JavascriptDebugType" uri="http://localhost:3000/">
+      <method v="2" />
+    </configuration>
+    <configuration name="Next.js: server-side" type="js.build_tools.npm">
+      <package-json value="$PROJECT_DIR$/package.json" />
+      <command value="run" />
+      <scripts>
+        <script value="dev" />
+      </scripts>
+      <node-interpreter value="project" />
+      <envs />
+      <method v="2" />
+    </configuration>
+    <configuration name="audit:all" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
+      <package-json value="$PROJECT_DIR$/package.json" />
+      <command value="run" />
+      <scripts>
+        <script value="audit:all" />
+      </scripts>
+      <node-interpreter value="project" />
+      <envs />
+      <method v="2" />
+    </configuration>
+    <configuration name="build" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
+      <package-json value="$PROJECT_DIR$/package.json" />
+      <command value="run" />
+      <scripts>
+        <script value="build" />
+      </scripts>
+      <node-interpreter value="project" />
+      <envs />
+      <method v="2" />
+    </configuration>
+    <configuration name="build:audit" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
+      <package-json value="$PROJECT_DIR$/package.json" />
+      <command value="run" />
+      <scripts>
+        <script value="build:audit" />
+      </scripts>
+      <node-interpreter value="project" />
+      <envs />
+      <method v="2" />
+    </configuration>
+    <configuration name="translate" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
+      <package-json value="$PROJECT_DIR$/package.json" />
+      <command value="run" />
+      <scripts>
+        <script value="translate" />
+      </scripts>
+      <node-interpreter value="project" />
+      <envs />
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="npm.build:audit" />
+        <item itemvalue="npm.build" />
+        <item itemvalue="npm.audit:all" />
+        <item itemvalue="npm.translate" />
+        <item itemvalue="npm.build" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-js-predefined-d6986cc7102b-9b0f141eb926-JavaScript-WS-253.29346.242" />
+      </set>
+    </attachedChunks>
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="18ec5e72-a13f-411d-aa2d-6f11d3337c12" name="Changes" comment="" />
+      <created>1764661416253</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1764661416253</updated>
+      <workItem from="1764661417349" duration="15428000" />
+      <workItem from="1764747239742" duration="17823000" />
+      <workItem from="1764833826081" duration="6601000" />
+      <workItem from="1765202632157" duration="556000" />
+      <workItem from="1765287601470" duration="4323000" />
+      <workItem from="1765364005309" duration="8943000" />
+      <workItem from="1765435290120" duration="7934000" />
+      <workItem from="1765457233533" duration="2206000" />
+      <workItem from="1765461167398" duration="41000" />
+      <workItem from="1765525254372" duration="11624000" />
+      <workItem from="1765794847821" duration="14921000" />
+      <workItem from="1765866641246" duration="19000000" />
+      <workItem from="1765887934043" duration="550000" />
+      <workItem from="1765891149866" duration="37000" />
+      <workItem from="1765891229798" duration="104000" />
+      <workItem from="1765893099110" duration="331000" />
+      <workItem from="1765895346201" duration="164000" />
+      <workItem from="1765952639617" duration="4384000" />
+      <workItem from="1765958857806" duration="5000" />
+      <workItem from="1765965045390" duration="2018000" />
+      <workItem from="1765973984155" duration="4313000" />
+      <workItem from="1765982820702" duration="1168000" />
+      <workItem from="1766041012669" duration="30000" />
+      <workItem from="1766046429533" duration="1214000" />
+      <workItem from="1766054083989" duration="3587000" />
+      <workItem from="1766146963428" duration="46000" />
+      <workItem from="1766147013150" duration="15000" />
+      <workItem from="1766158364676" duration="2640000" />
+      <workItem from="1766385999513" duration="29000" />
+      <workItem from="1766388091322" duration="1018000" />
+      <workItem from="1766389381366" duration="1252000" />
+      <workItem from="1766402558122" duration="3814000" />
+      <workItem from="1766488433107" duration="9270000" />
+      <workItem from="1766647563372" duration="7294000" />
+      <workItem from="1766662939295" duration="4595000" />
+      <workItem from="1767002532612" duration="7676000" />
+      <workItem from="1767081205238" duration="14000" />
+      <workItem from="1767083987777" duration="9393000" />
+      <workItem from="1767165517204" duration="5699000" />
+      <workItem from="1767360613787" duration="3181000" />
+      <workItem from="1767602129613" duration="2542000" />
+      <workItem from="1767621987393" duration="9000" />
+      <workItem from="1767683390813" duration="3331000" />
+      <workItem from="1767691176736" duration="704000" />
+      <workItem from="1767694001566" duration="1582000" />
+      <workItem from="1767709227946" duration="1580000" />
+      <workItem from="1767765986782" duration="7256000" />
+      <workItem from="1767790647649" duration="3490000" />
+      <workItem from="1767856175652" duration="5491000" />
+      <workItem from="1767954527033" duration="3450000" />
+      <workItem from="1768298457765" duration="5755000" />
+      <workItem from="1768305534978" duration="869000" />
+      <workItem from="1768311974107" duration="5532000" />
+      <workItem from="1768376409088" duration="6824000" />
+      <workItem from="1768383245150" duration="5531000" />
+      <workItem from="1768393028864" duration="2006000" />
+      <workItem from="1768473464624" duration="3394000" />
+      <workItem from="1768545724248" duration="23275000" />
+      <workItem from="1768805612789" duration="7042000" />
+      <workItem from="1768813433880" duration="3104000" />
+      <workItem from="1768822440161" duration="5657000" />
+      <workItem from="1768828577856" duration="5567000" />
+      <workItem from="1768979228259" duration="9538000" />
+      <workItem from="1768994138340" duration="6819000" />
+      <workItem from="1769002459654" duration="4557000" />
+      <workItem from="1769063287201" duration="11989000" />
+      <workItem from="1769150908781" duration="9287000" />
+      <workItem from="1769408242491" duration="14034000" />
+      <workItem from="1769424495993" duration="6338000" />
+      <workItem from="1769432283569" duration="2072000" />
+      <workItem from="1769498166384" duration="12427000" />
+      <workItem from="1769584173042" duration="16000" />
+      <workItem from="1769672403304" duration="573000" />
+      <workItem from="1769673514189" duration="3695000" />
+      <workItem from="1769677391475" duration="534000" />
+      <workItem from="1769678435922" duration="53000" />
+      <workItem from="1769678893677" duration="742000" />
+    </task>
+    <task id="LOCAL-00236" summary="optimize perplexity">
+      <option name="closed" value="true" />
+      <created>1768831830374</created>
+      <option name="number" value="00236" />
+      <option name="presentableId" value="LOCAL-00236" />
+      <option name="project" value="LOCAL" />
+      <updated>1768831830374</updated>
+    </task>
+    <task id="LOCAL-00237" summary="optimize perplexity">
+      <option name="closed" value="true" />
+      <created>1768833488926</created>
+      <option name="number" value="00237" />
+      <option name="presentableId" value="LOCAL-00237" />
+      <option name="project" value="LOCAL" />
+      <updated>1768833488926</updated>
+    </task>
+    <task id="LOCAL-00238" summary="optimize perplexity">
+      <option name="closed" value="true" />
+      <created>1768834156754</created>
+      <option name="number" value="00238" />
+      <option name="presentableId" value="LOCAL-00238" />
+      <option name="project" value="LOCAL" />
+      <updated>1768834156754</updated>
+    </task>
+    <task id="LOCAL-00239" summary="add new tool byte hash">
+      <option name="closed" value="true" />
+      <created>1768980642879</created>
+      <option name="number" value="00239" />
+      <option name="presentableId" value="LOCAL-00239" />
+      <option name="project" value="LOCAL" />
+      <updated>1768980642880</updated>
+    </task>
+    <task id="LOCAL-00240" summary="add new tool byte hash">
+      <option name="closed" value="true" />
+      <created>1768982486241</created>
+      <option name="number" value="00240" />
+      <option name="presentableId" value="LOCAL-00240" />
+      <option name="project" value="LOCAL" />
+      <updated>1768982486241</updated>
+    </task>
+    <task id="LOCAL-00241" summary="encrypt decrypt">
+      <option name="closed" value="true" />
+      <created>1768984148920</created>
+      <option name="number" value="00241" />
+      <option name="presentableId" value="LOCAL-00241" />
+      <option name="project" value="LOCAL" />
+      <updated>1768984148920</updated>
+    </task>
+    <task id="LOCAL-00242" summary="bip39">
+      <option name="closed" value="true" />
+      <created>1768985089205</created>
+      <option name="number" value="00242" />
+      <option name="presentableId" value="LOCAL-00242" />
+      <option name="project" value="LOCAL" />
+      <updated>1768985089205</updated>
+    </task>
+    <task id="LOCAL-00243" summary="hmac">
+      <option name="closed" value="true" />
+      <created>1768985508105</created>
+      <option name="number" value="00243" />
+      <option name="presentableId" value="LOCAL-00243" />
+      <option name="project" value="LOCAL" />
+      <updated>1768985508105</updated>
+    </task>
+    <task id="LOCAL-00244" summary="hmac">
+      <option name="closed" value="true" />
+      <created>1768986042761</created>
+      <option name="number" value="00244" />
+      <option name="presentableId" value="LOCAL-00244" />
+      <option name="project" value="LOCAL" />
+      <updated>1768986042761</updated>
+    </task>
+    <task id="LOCAL-00245" summary="rsa">
+      <option name="closed" value="true" />
+      <created>1768986730893</created>
+      <option name="number" value="00245" />
+      <option name="presentableId" value="LOCAL-00245" />
+      <option name="project" value="LOCAL" />
+      <updated>1768986730893</updated>
+    </task>
+    <task id="LOCAL-00246" summary="rsa">
+      <option name="closed" value="true" />
+      <created>1768987701969</created>
+      <option name="number" value="00246" />
+      <option name="presentableId" value="LOCAL-00246" />
+      <option name="project" value="LOCAL" />
+      <updated>1768987701969</updated>
+    </task>
+    <task id="LOCAL-00247" summary="pdf sig">
+      <option name="closed" value="true" />
+      <created>1768988555424</created>
+      <option name="number" value="00247" />
+      <option name="presentableId" value="LOCAL-00247" />
+      <option name="project" value="LOCAL" />
+      <updated>1768988555424</updated>
+    </task>
+    <task id="LOCAL-00248" summary="pdf sig">
+      <option name="closed" value="true" />
+      <created>1768995186141</created>
+      <option name="number" value="00248" />
+      <option name="presentableId" value="LOCAL-00248" />
+      <option name="project" value="LOCAL" />
+      <updated>1768995186141</updated>
+    </task>
+    <task id="LOCAL-00249" summary="pdf sig">
+      <option name="closed" value="true" />
+      <created>1768996359187</created>
+      <option name="number" value="00249" />
+      <option name="presentableId" value="LOCAL-00249" />
+      <option name="project" value="LOCAL" />
+      <updated>1768996359187</updated>
+    </task>
+    <task id="LOCAL-00250" summary="localization">
+      <option name="closed" value="true" />
+      <created>1769005126966</created>
+      <option name="number" value="00250" />
+      <option name="presentableId" value="LOCAL-00250" />
+      <option name="project" value="LOCAL" />
+      <updated>1769005126966</updated>
+    </task>
+    <task id="LOCAL-00251" summary="company page till pricey page">
+      <option name="closed" value="true" />
+      <created>1769007210902</created>
+      <option name="number" value="00251" />
+      <option name="presentableId" value="LOCAL-00251" />
+      <option name="project" value="LOCAL" />
+      <updated>1769007210902</updated>
+    </task>
+    <task id="LOCAL-00252" summary="company page till pricey page">
+      <option name="closed" value="true" />
+      <created>1769065779588</created>
+      <option name="number" value="00252" />
+      <option name="presentableId" value="LOCAL-00252" />
+      <option name="project" value="LOCAL" />
+      <updated>1769065779588</updated>
+    </task>
+    <task id="LOCAL-00253" summary="company page till pricey page">
+      <option name="closed" value="true" />
+      <created>1769067419194</created>
+      <option name="number" value="00253" />
+      <option name="presentableId" value="LOCAL-00253" />
+      <option name="project" value="LOCAL" />
+      <updated>1769067419194</updated>
+    </task>
+    <task id="LOCAL-00254" summary="company page till pricey page">
+      <option name="closed" value="true" />
+      <created>1769070630298</created>
+      <option name="number" value="00254" />
+      <option name="presentableId" value="LOCAL-00254" />
+      <option name="project" value="LOCAL" />
+      <updated>1769070630298</updated>
+    </task>
+    <task id="LOCAL-00255" summary="company page till pricey page">
+      <option name="closed" value="true" />
+      <created>1769073500849</created>
+      <option name="number" value="00255" />
+      <option name="presentableId" value="LOCAL-00255" />
+      <option name="project" value="LOCAL" />
+      <updated>1769073500849</updated>
+    </task>
+    <task id="LOCAL-00256" summary="company page till pricey page">
+      <option name="closed" value="true" />
+      <created>1769075342313</created>
+      <option name="number" value="00256" />
+      <option name="presentableId" value="LOCAL-00256" />
+      <option name="project" value="LOCAL" />
+      <updated>1769075342313</updated>
+    </task>
+    <task id="LOCAL-00257" summary="Free Online Percentage Calculator">
+      <option name="closed" value="true" />
+      <created>1769078009113</created>
+      <option name="number" value="00257" />
+      <option name="presentableId" value="LOCAL-00257" />
+      <option name="project" value="LOCAL" />
+      <updated>1769078009113</updated>
+    </task>
+    <task id="LOCAL-00258" summary="Date Difference Calculator">
+      <option name="closed" value="true" />
+      <created>1769081104978</created>
+      <option name="number" value="00258" />
+      <option name="presentableId" value="LOCAL-00258" />
+      <option name="project" value="LOCAL" />
+      <updated>1769081104978</updated>
+    </task>
+    <task id="LOCAL-00259" summary="Date Difference Calculator">
+      <option name="closed" value="true" />
+      <created>1769152489098</created>
+      <option name="number" value="00259" />
+      <option name="presentableId" value="LOCAL-00259" />
+      <option name="project" value="LOCAL" />
+      <updated>1769152489098</updated>
+    </task>
+    <task id="LOCAL-00260" summary="Date Difference Calculator">
+      <option name="closed" value="true" />
+      <created>1769155314214</created>
+      <option name="number" value="00260" />
+      <option name="presentableId" value="LOCAL-00260" />
+      <option name="project" value="LOCAL" />
+      <updated>1769155314215</updated>
+    </task>
+    <task id="LOCAL-00261" summary="Date Difference Calculator">
+      <option name="closed" value="true" />
+      <created>1769158348340</created>
+      <option name="number" value="00261" />
+      <option name="presentableId" value="LOCAL-00261" />
+      <option name="project" value="LOCAL" />
+      <updated>1769158348340</updated>
+    </task>
+    <task id="LOCAL-00262" summary="Date Difference Calculator">
+      <option name="closed" value="true" />
+      <created>1769166724596</created>
+      <option name="number" value="00262" />
+      <option name="presentableId" value="LOCAL-00262" />
+      <option name="project" value="LOCAL" />
+      <updated>1769166724596</updated>
+    </task>
+    <task id="LOCAL-00263" summary="GPA CALCULATOR">
+      <option name="closed" value="true" />
+      <created>1769172517855</created>
+      <option name="number" value="00263" />
+      <option name="presentableId" value="LOCAL-00263" />
+      <option name="project" value="LOCAL" />
+      <updated>1769172517855</updated>
+    </task>
+    <task id="LOCAL-00264" summary="fix redirect">
+      <option name="closed" value="true" />
+      <created>1769410208872</created>
+      <option name="number" value="00264" />
+      <option name="presentableId" value="LOCAL-00264" />
+      <option name="project" value="LOCAL" />
+      <updated>1769410208872</updated>
+    </task>
+    <task id="LOCAL-00265" summary="fix ahref and gcp issues">
+      <option name="closed" value="true" />
+      <created>1769413522945</created>
+      <option name="number" value="00265" />
+      <option name="presentableId" value="LOCAL-00265" />
+      <option name="project" value="LOCAL" />
+      <updated>1769413522945</updated>
+    </task>
+    <task id="LOCAL-00266" summary="fix ahref and gcp issues">
+      <option name="closed" value="true" />
+      <created>1769415227331</created>
+      <option name="number" value="00266" />
+      <option name="presentableId" value="LOCAL-00266" />
+      <option name="project" value="LOCAL" />
+      <updated>1769415227331</updated>
+    </task>
+    <task id="LOCAL-00267" summary="youtube channel name checker">
+      <option name="closed" value="true" />
+      <created>1769415786678</created>
+      <option name="number" value="00267" />
+      <option name="presentableId" value="LOCAL-00267" />
+      <option name="project" value="LOCAL" />
+      <updated>1769415786678</updated>
+    </task>
+    <task id="LOCAL-00268" summary="youtube channel name checker blogs added">
+      <option name="closed" value="true" />
+      <created>1769418788191</created>
+      <option name="number" value="00268" />
+      <option name="presentableId" value="LOCAL-00268" />
+      <option name="project" value="LOCAL" />
+      <updated>1769418788191</updated>
+    </task>
+    <task id="LOCAL-00269" summary="youtube channel name checker blogs added">
+      <option name="closed" value="true" />
+      <created>1769420798821</created>
+      <option name="number" value="00269" />
+      <option name="presentableId" value="LOCAL-00269" />
+      <option name="project" value="LOCAL" />
+      <updated>1769420798821</updated>
+    </task>
+    <task id="LOCAL-00270" summary="enhance instagram-dp-viewer.tsx">
+      <option name="closed" value="true" />
+      <created>1769422477124</created>
+      <option name="number" value="00270" />
+      <option name="presentableId" value="LOCAL-00270" />
+      <option name="project" value="LOCAL" />
+      <updated>1769422477125</updated>
+    </task>
+    <task id="LOCAL-00271" summary="optimze performence">
+      <option name="closed" value="true" />
+      <created>1769424406776</created>
+      <option name="number" value="00271" />
+      <option name="presentableId" value="LOCAL-00271" />
+      <option name="project" value="LOCAL" />
+      <updated>1769424406776</updated>
+    </task>
+    <task id="LOCAL-00272" summary="optimze performence">
+      <option name="closed" value="true" />
+      <created>1769430547174</created>
+      <option name="number" value="00272" />
+      <option name="presentableId" value="LOCAL-00272" />
+      <option name="project" value="LOCAL" />
+      <updated>1769430547175</updated>
+    </task>
+    <task id="LOCAL-00273" summary="optimze performence">
+      <option name="closed" value="true" />
+      <created>1769434455546</created>
+      <option name="number" value="00273" />
+      <option name="presentableId" value="LOCAL-00273" />
+      <option name="project" value="LOCAL" />
+      <updated>1769434455546</updated>
+    </task>
+    <task id="LOCAL-00274" summary="optimze performence">
+      <option name="closed" value="true" />
+      <created>1769434652145</created>
+      <option name="number" value="00274" />
+      <option name="presentableId" value="LOCAL-00274" />
+      <option name="project" value="LOCAL" />
+      <updated>1769434652146</updated>
+    </task>
+    <task id="LOCAL-00275" summary="instagram-dp-viewer.tsx and Instagram video downloader tol seo optimizations">
+      <option name="closed" value="true" />
+      <created>1769502437015</created>
+      <option name="number" value="00275" />
+      <option name="presentableId" value="LOCAL-00275" />
+      <option name="project" value="LOCAL" />
+      <updated>1769502437015</updated>
+    </task>
+    <task id="LOCAL-00276" summary="create all tool page">
+      <option name="closed" value="true" />
+      <created>1769503968206</created>
+      <option name="number" value="00276" />
+      <option name="presentableId" value="LOCAL-00276" />
+      <option name="project" value="LOCAL" />
+      <updated>1769503968206</updated>
+    </task>
+    <task id="LOCAL-00277" summary="tiktok and pintrest downldoer tool seo optimizatin">
+      <option name="closed" value="true" />
+      <created>1769512314204</created>
+      <option name="number" value="00277" />
+      <option name="presentableId" value="LOCAL-00277" />
+      <option name="project" value="LOCAL" />
+      <updated>1769512314204</updated>
+    </task>
+    <task id="LOCAL-00278" summary="tiktok and pintrest downldoer tool seo optimizatin">
+      <option name="closed" value="true" />
+      <created>1769513106585</created>
+      <option name="number" value="00278" />
+      <option name="presentableId" value="LOCAL-00278" />
+      <option name="project" value="LOCAL" />
+      <updated>1769513106585</updated>
+    </task>
+    <task id="LOCAL-00279" summary="tiktok and pintrest downldoer tool seo optimizatin">
+      <option name="closed" value="true" />
+      <created>1769513988884</created>
+      <option name="number" value="00279" />
+      <option name="presentableId" value="LOCAL-00279" />
+      <option name="project" value="LOCAL" />
+      <updated>1769513988884</updated>
+    </task>
+    <task id="LOCAL-00280" summary="tiktok and pintrest downldoer tool seo optimizatin">
+      <option name="closed" value="true" />
+      <created>1769672933026</created>
+      <option name="number" value="00280" />
+      <option name="presentableId" value="LOCAL-00280" />
+      <option name="project" value="LOCAL" />
+      <updated>1769672933026</updated>
+    </task>
+    <task id="LOCAL-00281" summary="update the design">
+      <option name="closed" value="true" />
+      <created>1769675691126</created>
+      <option name="number" value="00281" />
+      <option name="presentableId" value="LOCAL-00281" />
+      <option name="project" value="LOCAL" />
+      <updated>1769675691126</updated>
+    </task>
+    <task id="LOCAL-00282" summary="added seo skills yt downloader and yt playlist downloader seo optimization">
+      <option name="closed" value="true" />
+      <created>1769676864637</created>
+      <option name="number" value="00282" />
+      <option name="presentableId" value="LOCAL-00282" />
+      <option name="project" value="LOCAL" />
+      <updated>1769676864637</updated>
+    </task>
+    <task id="LOCAL-00283" summary="added seo skills yt downloader and yt playlist downloader seo optimization">
+      <option name="closed" value="true" />
+      <created>1769677417379</created>
+      <option name="number" value="00283" />
+      <option name="presentableId" value="LOCAL-00283" />
+      <option name="project" value="LOCAL" />
+      <updated>1769677417379</updated>
+    </task>
+    <task id="LOCAL-00284" summary="added seo skills yt downloader and yt playlist downloader seo optimization">
+      <option name="closed" value="true" />
+      <created>1769677880728</created>
+      <option name="number" value="00284" />
+      <option name="presentableId" value="LOCAL-00284" />
+      <option name="project" value="LOCAL" />
+      <updated>1769677880728</updated>
+    </task>
+    <option name="localTasksCounter" value="285" />
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="add cf blog and ad" />
+    <MESSAGE value="add an article ad in blogs and guides" />
+    <MESSAGE value="optimize perplexity" />
+    <MESSAGE value="add new tool byte hash" />
+    <MESSAGE value="encrypt decrypt" />
+    <MESSAGE value="bip39" />
+    <MESSAGE value="hmac" />
+    <MESSAGE value="rsa" />
+    <MESSAGE value="pdf sig" />
+    <MESSAGE value="localization" />
+    <MESSAGE value="company page till pricey page" />
+    <MESSAGE value="Free Online Percentage Calculator" />
+    <MESSAGE value="Date Difference Calculator" />
+    <MESSAGE value="GPA CALCULATOR" />
+    <MESSAGE value="fix redirect" />
+    <MESSAGE value="fix ahref and gcp issues" />
+    <MESSAGE value="youtube channel name checker" />
+    <MESSAGE value="youtube channel name checker blogs added" />
+    <MESSAGE value="enhance instagram-dp-viewer.tsx" />
+    <MESSAGE value="optimze performence" />
+    <MESSAGE value="instagram-dp-viewer.tsx and Instagram video downloader tol seo optimizations" />
+    <MESSAGE value="create all tool page" />
+    <MESSAGE value="tiktok and pintrest downldoer tool seo optimizatin" />
+    <MESSAGE value="update the design" />
+    <MESSAGE value="added seo skills yt downloader and yt playlist downloader seo optimization" />
+    <option name="LAST_COMMIT_MESSAGE" value="added seo skills yt downloader and yt playlist downloader seo optimization" />
+  </component>
+  <component name="github-copilot-workspace">
+    <instructionFileLocations>
+      <option value=".github/instructions" />
+    </instructionFileLocations>
+    <promptFileLocations>
+      <option value=".github/prompts" />
+    </promptFileLocations>
+  </component>
+</project>

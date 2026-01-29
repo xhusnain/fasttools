@@ -108,7 +108,7 @@ export function createMetadata(options: MetadataOptions): Metadata {
 
 
     const finalOgTitle = ogTitle || fullTitle
-    const finalOgDescription = ogDescription || description
+    const finalOgDescription = ogDescription || description || "Every tool you need, completely free. No signup required."
     let ogImageConfig: any
     if (ogImage) {
         if (typeof ogImage === 'string') {

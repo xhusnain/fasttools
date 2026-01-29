@@ -9,8 +9,11 @@ import { PremiumHeroBackground } from "@/components/common/premium-hero-backgrou
 import { HeroBoxes } from "@/components/common/hero-boxes"
 import { HeroSearchSection } from "@/components/common/hero-search-section"
 
+import { CategoriesSkeleton } from "@/components/skeletons/categories-skeleton"
+import { HomeRichContent } from "@/components/common/home-rich-content"
+
 const HomeCategories = dynamic(() => import('@/components/common/home-categories').then(mod => ({ default: mod.HomeCategories })), {
-  loading: () => <div className="py-24 text-center">Loading tools...</div>
+  loading: () => <CategoriesSkeleton />
 })
 const HomeFAQSection = dynamic(() => import('@/components/common/home-faq-section').then(mod => ({ default: mod.HomeFAQSection })), {
   loading: () => <div className="py-20 text-center">Loading FAQ...</div>
@@ -53,8 +56,8 @@ import { ClickFortifyAd } from "@/components/custom-ads/cf-ads/ClickFortifyAd"
 import { createMetadata } from "@/lib/metadata-base"
 
 export const metadata: Metadata = createMetadata({
-  title: "FastTools - Free Online Tools & Productivity Platform",
-  description: "FastTools offers 1000+ free online tools: AI generators, calculators, converters & SEO utilities. Instant access, no registration required.",
+  title: "FastTools - The #1 Free Online Tools Platform (No Signup)",
+  description: "Build faster with 1000+ premium free tools. AI generators, PDF editors, and SEO analyzers. Private, secure, and instant access. Try it now.",
   path: "/",
   includeSchema: false,
 })
@@ -161,7 +164,7 @@ const categories = [
     borderColor: "border-border",
     hoverBorder: "hover:border-border",
     iconBg: "bg-green-500/20",
-    iconColor: "text-green-500",
+    iconColor: "text-green-700",
     glowColor: "hover:shadow-green-500/20",
     tools: [
       {
@@ -393,7 +396,7 @@ const categories = [
     borderColor: "border-border",
     hoverBorder: "hover:border-border",
     iconBg: "bg-indigo-500/20",
-    iconColor: "text-indigo-600",
+    iconColor: "text-indigo-700",
     glowColor: "hover:shadow-indigo-500/20",
     tools: [
       {
@@ -1147,6 +1150,7 @@ export default function Home() {
         <HomeCategories categories={categories} />
       </div>
 
+      <HomeRichContent />
       <HomeFAQSection />
     </div>
   )
