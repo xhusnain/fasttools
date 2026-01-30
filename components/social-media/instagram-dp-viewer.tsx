@@ -114,10 +114,9 @@ export function InstagramDpViewer() {
         ? `/api/instagram/image-proxy?url=${encodeURIComponent(imageUrl)}`
         : imageUrl
 
-      const response = await fetch(downloadUrl)
-      if (!response.ok) throw new Error('Failed to fetch image')
+      const response = await HttpClient.download(downloadUrl, { baseURL: '' })
 
-      const blob = await response.blob()
+      const blob = response.data
       const blobUrl = URL.createObjectURL(blob)
 
       const link = document.createElement('a')
