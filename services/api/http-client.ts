@@ -21,8 +21,13 @@ const createHttpClient = (): AxiosInstance => {
         (config.headers as any).Authorization = `Bearer ${token}`;
       }
 
+      // Let browser set Content-Type for FormData with boundary
+      if (config.data instanceof FormData && config.headers) {
+        delete (config.headers as any)['Content-Type'];
+      }
+
       if (process.env.NODE_ENV === "development") {
-        console.log(`[HTTP] ${config.method?.toUpperCase()} ${config.url}`, config.data);
+        console.log(`[HTTP] ${config.method?.toUpperCase()} ${config.url}`);
       }
 
       return config;
@@ -40,29 +45,32 @@ const createHttpClient = (): AxiosInstance => {
       return response;
     },
     (error: AxiosError) => {
-      const apiError: ApiError = {
-        message: error.message || "An unexpected error occurred",
-        status: error.response?.status,
-        code: error.code,
-        details: error.response?.data,
-      };
+      let message = error.message || "An unexpected error occurred";
+      const status = error.response?.status;
 
-      if (error.response?.status === 401) {
-        apiError.message = "Unauthorized. Please login again.";
+      if (status === 401) {
+        message = "Unauthorized";
         if (typeof window !== "undefined") {
           localStorage.removeItem("authToken");
         }
-      } else if (error.response?.status === 403) {
-        apiError.message = "Forbidden. You don't have permission.";
-      } else if (error.response?.status === 404) {
-        apiError.message = "Resource not found.";
-      } else if (error.response?.status === 500) {
-        apiError.message = "Internal server error. Please try again later.";
+      } else if (status === 403) {
+        message = "Forbidden";
+      } else if (status === 404) {
+        message = "Not found";
+      } else if (status === 500) {
+        message = "Server error";
       } else if (error.code === "ECONNABORTED") {
-        apiError.message = "Request timeout. Please try again.";
+        message = "Request timeout";
       } else if (error.code === "ERR_NETWORK") {
-        apiError.message = "Network error. Please check your connection.";
+        message = "Network error";
       }
+
+      const apiError: ApiError = {
+        message,
+        status,
+        code: error.code,
+        details: error.response?.data,
+      };
 
       if (process.env.NODE_ENV === "development") {
         console.error("[HTTP] Error:", apiError);
@@ -99,12 +107,14 @@ export const HttpClient = {
   },
 
   upload: <T = any>(url: string, formData: FormData, config?: AxiosRequestConfig): Promise<AxiosResponse<T>> => {
+    // Don't set Content-Type for FormData - browser will set it with boundary
+    const headers = { ...config?.headers };
+    // Remove Content-Type if it exists - let browser set it automatically
+    delete (headers as any)['Content-Type'];
+    
     return httpClient.post<T>(url, formData, {
       ...config,
-      headers: {
-        "Content-Type": "multipart/form-data",
-        ...config?.headers,
-      },
+      headers,
     });
   },
 

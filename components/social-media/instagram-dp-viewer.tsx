@@ -112,12 +112,7 @@ export function InstagramDpViewer() {
     setDownloading(true)
 
     try {
-      const needsProxy = imageUrl.includes('cdninstagram.com') || imageUrl.includes('fbcdn.net')
-      const downloadUrl = needsProxy
-        ? `/api/instagram/image-proxy?url=${encodeURIComponent(imageUrl)}`
-        : imageUrl
-
-      const response = await HttpClient.download(downloadUrl, { baseURL: '' })
+      const response = await HttpClient.download(imageUrl, { baseURL: '' })
 
       const blob = response.data
       const blobUrl = URL.createObjectURL(blob)
@@ -232,32 +227,15 @@ export function InstagramDpViewer() {
             <div className="flex flex-col items-center gap-4 sm:gap-6">
               <div className="relative">
                 <img
-                  src={
-                    (profileData.profile_pic_url_hd || profileData.profile_pic_url) &&
-                      ((profileData.profile_pic_url_hd || profileData.profile_pic_url).includes('cdninstagram.com') ||
-                        (profileData.profile_pic_url_hd || profileData.profile_pic_url).includes('fbcdn.net') ||
-                        (profileData.profile_pic_url_hd || profileData.profile_pic_url).includes('anonymous') ||
-                        (profileData.profile_pic_url_hd || profileData.profile_pic_url).includes('YW5vbnltb3VzX3Byb2ZpbGVfcGlj') ||
-                        (profileData.profile_pic_url_hd || profileData.profile_pic_url).includes('anonymous_profile_pic'))
-                      ? `/api/instagram/image-proxy?url=${encodeURIComponent(profileData.profile_pic_url_hd || profileData.profile_pic_url)}`
-                      : (profileData.profile_pic_url_hd || profileData.profile_pic_url)
-                  }
+                  src={profileData.profile_pic_url_hd || profileData.profile_pic_url}
                   alt={`${profileData.username} profile picture`}
                   className="w-32 h-32 sm:w-40 sm:h-40 rounded-full border-4 border-border shadow-lg object-cover"
                   title={`${profileData.username} profile picture`}
                   referrerPolicy="no-referrer"
                   loading="lazy"
                   onError={(e) => {
-                    const currentSrc = e.currentTarget.src
                     const target = e.currentTarget
-
-                    if (currentSrc.includes('/api/instagram/image-proxy')) {
-                      target.src = `https://via.placeholder.com/400x400/6366f1/ffffff?text=${profileData.username.charAt(0).toUpperCase()}`
-                    } else if ((profileData.profile_pic_url_hd || profileData.profile_pic_url) && !(profileData.profile_pic_url_hd || profileData.profile_pic_url).includes('placeholder')) {
-                      target.src = `/api/instagram/image-proxy?url=${encodeURIComponent(profileData.profile_pic_url_hd || profileData.profile_pic_url)}`
-                    } else {
-                      target.src = `https://via.placeholder.com/400x400/6366f1/ffffff?text=${profileData.username.charAt(0).toUpperCase()}`
-                    }
+                    target.src = `https://via.placeholder.com/400x400/6366f1/ffffff?text=${profileData.username.charAt(0).toUpperCase()}`
                   }}
                 />
                 {profileData.is_verified && (
