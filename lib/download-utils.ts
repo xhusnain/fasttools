@@ -1,3 +1,5 @@
+import { getAuthHeaders } from "@/lib/m2m-auth";
+
 /**
  * Downloads a file from a URL by first fetching it as a blob to handle cross-origin issues,
  * then creating a temporary object URL to trigger the download.
@@ -5,16 +7,40 @@
  *
  * @param fileUrl The URL of the file to download
  * @param filename The name to save the file as
+ * @param requireAuth Whether to include authentication headers (default: true for API endpoints)
  */
-export async function downloadBlob(fileUrl: string, filename: string): Promise<void> {
+export async function downloadBlob(fileUrl: string, filename: string, requireAuth: boolean = true): Promise<void> {
     try {
+        // Check if this is an API endpoint that requires authentication
+        const isApiEndpoint = fileUrl.includes('api-removebg.fasttools.store') || 
+                             fileUrl.includes('api.fasttools')
+        // Prepare headers
+        const headers: Record<string, string> = {};
+        
+        // Add authentication if needed
+        if (requireAuth && isApiEndpoint) {
+            try {
+                const authHeaders = await getAuthHeaders();
+                headers['Authorization'] = authHeaders['Authorization'];
+            } catch (error) {
+                console.warn("Failed to generate auth token, proceeding without auth:", error);
+            }
+        }
+
         // Fetch the file as a blob to handle cross-origin downloads
-        const response = await fetch(fileUrl)
-        if (!response.ok) throw new Error("Network response was not ok")
-        const blob = await response.blob()
+        const response = await fetch(fileUrl, {
+            headers,
+        });
+        
+        if (!response.ok) {
+            const errorText = await response.text().catch(() => '');
+            throw new Error(`Network response was not ok: ${response.status} ${response.statusText}${errorText ? ` - ${errorText}` : ''}`);
+        }
+        
+        const blob = await response.blob();
 
         // Create a blob URL
-        const blobUrl = URL.createObjectURL(blob)
+        const blobUrl = URL.createObjectURL(blob);
 
         // Create and trigger download
         const link = document.createElement("a")
