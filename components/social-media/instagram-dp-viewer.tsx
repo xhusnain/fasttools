@@ -102,6 +102,12 @@ export function InstagramDpViewer() {
     await fetchProfileData()
   }
 
+  const getProxyImageUrl = (imageUrl: string): string => {
+    if (!imageUrl) return ''
+    // Use proxy route to avoid CORS issues
+    return `/api/instagram/image-proxy?url=${encodeURIComponent(imageUrl)}`
+  }
+
   const downloadImage = async (quality: 'sd' | 'hd' = 'hd') => {
     const imageUrl = quality === 'hd'
       ? (profileData?.profile_pic_url_hd || profileData?.profile_pic_url)
@@ -112,7 +118,9 @@ export function InstagramDpViewer() {
     setDownloading(true)
 
     try {
-      const response = await HttpClient.download(imageUrl, { baseURL: '' })
+      // Use proxy route to avoid CORS issues
+      const proxyUrl = `/api/instagram/image-proxy?url=${encodeURIComponent(imageUrl)}`
+      const response = await HttpClient.download(proxyUrl, { baseURL: '' })
 
       const blob = response.data
       const blobUrl = URL.createObjectURL(blob)
@@ -227,7 +235,7 @@ export function InstagramDpViewer() {
             <div className="flex flex-col items-center gap-4 sm:gap-6">
               <div className="relative">
                 <img
-                  src={profileData.profile_pic_url_hd || profileData.profile_pic_url}
+                  src={getProxyImageUrl(profileData.profile_pic_url_hd || profileData.profile_pic_url)}
                   alt={`${profileData.username} profile picture`}
                   className="w-32 h-32 sm:w-40 sm:h-40 rounded-full border-4 border-border shadow-lg object-cover"
                   title={`${profileData.username} profile picture`}
