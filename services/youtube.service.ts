@@ -49,16 +49,15 @@ export interface PlaylistInfo {
 }
 
 export class YouTubeService {
-    static getProxyUrl(endpoint: string): string {
+    static getApiUrl(endpoint: string): string {
         const pythonApiUrl = env.pythonApiUrl || "http://localhost:8000";
-        const targetUrl = `${pythonApiUrl}/api/youtube${endpoint}`;
-        return `/api/proxy?url=${encodeURIComponent(targetUrl)}`;
+        return `${pythonApiUrl}/api/youtube${endpoint}`;
     }
 
     static async getInfo(url: string, type: 'video' | 'playlist' = 'video'): Promise<VideoInfo | PlaylistInfo> {
         try {
-            const proxyUrl = this.getProxyUrl('/info');
-            const response = await HttpClient.post<VideoInfo | PlaylistInfo>(proxyUrl, { url, type }, { baseURL: '' });
+            const apiUrl = this.getApiUrl('/info');
+            const response = await HttpClient.post<VideoInfo | PlaylistInfo>(apiUrl, { url, type }, { baseURL: '' });
             return response.data;
         } catch (error: any) {
             throw new Error(error.message || "Failed to fetch information");
@@ -71,13 +70,13 @@ export class YouTubeService {
         if (formatId) {
             targetUrl += `&format_id=${encodeURIComponent(formatId)}`;
         }
-        return `/api/proxy?url=${encodeURIComponent(targetUrl)}`;
+        return targetUrl;
     }
 
     static async getDirectDownloadUrl(url: string, formatId?: string): Promise<string> {
         try {
-            const proxyUrl = this.getProxyUrl('/video');
-            const response = await HttpClient.post<{ url: string }>(proxyUrl, { url, format_id: formatId }, { baseURL: '' });
+            const apiUrl = this.getApiUrl('/video');
+            const response = await HttpClient.post<{ url: string }>(apiUrl, { url, format_id: formatId }, { baseURL: '' });
             return response.data.url;
         } catch (error) {
             throw new Error('Failed to get download URL');

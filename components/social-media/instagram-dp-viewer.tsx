@@ -60,11 +60,10 @@ export function InstagramDpViewer() {
       setProfileData(null)
 
       const pythonApiUrl = env.pythonApiUrl || "http://localhost:8000";
-      const targetUrl = `${pythonApiUrl}/api/instagram/user?username=${encodeURIComponent(extractedUsername)}`;
-      const proxyUrl = `/api/proxy?url=${encodeURIComponent(targetUrl)}`;
+      const apiUrl = `${pythonApiUrl}/api/instagram/user?username=${encodeURIComponent(extractedUsername)}`;
 
       const response = await HttpClient.get(
-        proxyUrl,
+        apiUrl,
         {
           baseURL: '',
           timeout: 20000,

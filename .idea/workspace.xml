@@ -6,16 +6,7 @@
   <component name="ChangeListManager">
     <list default="true" id="18ec5e72-a13f-411d-aa2d-6f11d3337c12" name="Changes" comment="added seo skills yt downloader and yt playlist downloader seo optimization">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/dev-tools/regex-tester/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/dev-tools/regex-tester/page.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/social-media-tools/instagram-downloader/downloader-variants.ts" beforeDir="false" afterPath="$PROJECT_DIR$/app/social-media-tools/instagram-downloader/downloader-variants.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/social-media-tools/instagram-dp/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/social-media-tools/instagram-dp/page.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/social-media/instagram-dp-viewer.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/social-media/instagram-dp-viewer.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/api-auth.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/create-tool-config.ts" beforeDir="false" afterPath="$PROJECT_DIR$/lib/create-tool-config.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/store-bg-remover.ts" beforeDir="false" afterPath="$PROJECT_DIR$/lib/store-bg-remover.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/next.config.mjs" beforeDir="false" afterPath="$PROJECT_DIR$/next.config.mjs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/proxy.ts" beforeDir="false" afterPath="$PROJECT_DIR$/proxy.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/services/api/http-client.ts" beforeDir="false" afterPath="$PROJECT_DIR$/services/api/http-client.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/services/youtube.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/services/youtube.service.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -84,7 +75,7 @@
     &quot;run.code.analysis.last.selected.profile&quot;: &quot;pProject Default&quot;,
     &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
     &quot;to.speed.mode.migration.done&quot;: &quot;true&quot;,
-    &quot;ts.external.directory.path&quot;: &quot;/Users/husnainbabar/WebstormProjects/fasttools-client/node_modules/typescript/lib&quot;,
+    &quot;ts.external.directory.path&quot;: &quot;/home/southville/.local/share/JetBrains/Toolbox/apps/webstorm/plugins/javascript-plugin/jsLanguageServicesImpl/external&quot;,
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
 }</component>
@@ -161,7 +152,7 @@
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
-        <option value="bundled-js-predefined-d6986cc7102b-9b0f141eb926-JavaScript-WS-253.29346.242" />
+        <option value="bundled-js-predefined-d6986cc7102b-c7e53b3be11b-JavaScript-WS-253.28294.332" />
       </set>
     </attachedChunks>
   </component>
@@ -254,6 +245,7 @@
       <workItem from="1769693306220" duration="23000" />
       <workItem from="1769757270619" duration="669000" />
       <workItem from="1769759451482" duration="4386000" />
+      <workItem from="1769795937867" duration="694000" />
     </task>
     <task id="LOCAL-00243" summary="hmac">
       <option name="closed" value="true" />
