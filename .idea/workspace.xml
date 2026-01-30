@@ -253,23 +253,7 @@
       <workItem from="1769687457731" duration="16000" />
       <workItem from="1769693306220" duration="23000" />
       <workItem from="1769757270619" duration="669000" />
-      <workItem from="1769759451482" duration="2443000" />
-    </task>
-    <task id="LOCAL-00241" summary="encrypt decrypt">
-      <option name="closed" value="true" />
-      <created>1768984148920</created>
-      <option name="number" value="00241" />
-      <option name="presentableId" value="LOCAL-00241" />
-      <option name="project" value="LOCAL" />
-      <updated>1768984148920</updated>
-    </task>
-    <task id="LOCAL-00242" summary="bip39">
-      <option name="closed" value="true" />
-      <created>1768985089205</created>
-      <option name="number" value="00242" />
-      <option name="presentableId" value="LOCAL-00242" />
-      <option name="project" value="LOCAL" />
-      <updated>1768985089205</updated>
+      <workItem from="1769759451482" duration="4386000" />
     </task>
     <task id="LOCAL-00243" summary="hmac">
       <option name="closed" value="true" />
@@ -647,7 +631,23 @@
       <option name="project" value="LOCAL" />
       <updated>1769684917028</updated>
     </task>
-    <option name="localTasksCounter" value="290" />
+    <task id="LOCAL-00290" summary="authorization optimization">
+      <option name="closed" value="true" />
+      <created>1769764317794</created>
+      <option name="number" value="00290" />
+      <option name="presentableId" value="LOCAL-00290" />
+      <option name="project" value="LOCAL" />
+      <updated>1769764317794</updated>
+    </task>
+    <task id="LOCAL-00291" summary="authorization optimization">
+      <option name="closed" value="true" />
+      <created>1769765165256</created>
+      <option name="number" value="00291" />
+      <option name="presentableId" value="LOCAL-00291" />
+      <option name="project" value="LOCAL" />
+      <updated>1769765165256</updated>
+    </task>
+    <option name="localTasksCounter" value="292" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -665,7 +665,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="add cf blog and ad" />
     <MESSAGE value="add an article ad in blogs and guides" />
     <MESSAGE value="optimize perplexity" />
     <MESSAGE value="add new tool byte hash" />
@@ -690,7 +689,8 @@
     <MESSAGE value="tiktok and pintrest downldoer tool seo optimizatin" />
     <MESSAGE value="update the design" />
     <MESSAGE value="added seo skills yt downloader and yt playlist downloader seo optimization" />
-    <option name="LAST_COMMIT_MESSAGE" value="added seo skills yt downloader and yt playlist downloader seo optimization" />
+    <MESSAGE value="authorization optimization" />
+    <option name="LAST_COMMIT_MESSAGE" value="authorization optimization" />
   </component>
   <component name="github-copilot-workspace">
     <instructionFileLocations>

@@ -49,9 +49,16 @@ export interface PlaylistInfo {
 }
 
 export class YouTubeService {
+    static getProxyUrl(endpoint: string): string {
+        const pythonApiUrl = env.pythonApiUrl || "http://localhost:8000";
+        const targetUrl = `${pythonApiUrl}/api/youtube${endpoint}`;
+        return `/api/proxy?url=${encodeURIComponent(targetUrl)}`;
+    }
+
     static async getInfo(url: string, type: 'video' | 'playlist' = 'video'): Promise<VideoInfo | PlaylistInfo> {
         try {
-            const response = await HttpClient.post<VideoInfo | PlaylistInfo>(`${BASE_URL}/info`, { url, type }, { baseURL: '' });
+            const proxyUrl = this.getProxyUrl('/info');
+            const response = await HttpClient.post<VideoInfo | PlaylistInfo>(proxyUrl, { url, type }, { baseURL: '' });
             return response.data;
         } catch (error: any) {
             throw new Error(error.message || "Failed to fetch information");
@@ -59,16 +66,18 @@ export class YouTubeService {
     }
 
     static getStreamUrl(originalUrl: string, filename: string, formatId?: string, type: 'video' | 'audio' = 'video'): string {
-        let url = `${BASE_URL}/stream?url=${encodeURIComponent(originalUrl)}&filename=${encodeURIComponent(filename)}&type=${type}`;
+        const pythonApiUrl = env.pythonApiUrl || "http://localhost:8000";
+        let targetUrl = `${pythonApiUrl}/api/youtube/stream?url=${encodeURIComponent(originalUrl)}&filename=${encodeURIComponent(filename)}&type=${type}`;
         if (formatId) {
-            url += `&format_id=${encodeURIComponent(formatId)}`;
+            targetUrl += `&format_id=${encodeURIComponent(formatId)}`;
         }
-        return url;
+        return `/api/proxy?url=${encodeURIComponent(targetUrl)}`;
     }
 
     static async getDirectDownloadUrl(url: string, formatId?: string): Promise<string> {
         try {
-            const response = await HttpClient.post<{ url: string }>(`${BASE_URL}/video`, { url, format_id: formatId }, { baseURL: '' });
+            const proxyUrl = this.getProxyUrl('/video');
+            const response = await HttpClient.post<{ url: string }>(proxyUrl, { url, format_id: formatId }, { baseURL: '' });
             return response.data.url;
         } catch (error) {
             throw new Error('Failed to get download URL');
