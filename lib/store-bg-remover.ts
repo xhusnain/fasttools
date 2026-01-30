@@ -129,7 +129,7 @@ export const useBgRemoverStore = create<EditorStore>()(
         formData.append("image", blob, "image.png");
 
         const pythonApiUrl = env.pythonApiUrl || "http://localhost:8000";
-        const apiUrl = `${pythonApiUrl}/api/remove-bg`;
+        const apiUrl = `${pythonApiUrl}/api/v1/remove-bg`;
 
         try {
           const response = await HttpClient.upload(

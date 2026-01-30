@@ -51,7 +51,7 @@ export interface PlaylistInfo {
 export class YouTubeService {
     static getApiUrl(endpoint: string): string {
         const pythonApiUrl = env.pythonApiUrl || "http://localhost:8000";
-        return `${pythonApiUrl}/api/youtube${endpoint}`;
+        return `${pythonApiUrl}/api/v1/youtube${endpoint}`;
     }
 
     static async getInfo(url: string, type: 'video' | 'playlist' = 'video'): Promise<VideoInfo | PlaylistInfo> {
@@ -66,7 +66,7 @@ export class YouTubeService {
 
     static getStreamUrl(originalUrl: string, filename: string, formatId?: string, type: 'video' | 'audio' = 'video'): string {
         const pythonApiUrl = env.pythonApiUrl || "http://localhost:8000";
-        let targetUrl = `${pythonApiUrl}/api/youtube/stream?url=${encodeURIComponent(originalUrl)}&filename=${encodeURIComponent(filename)}&type=${type}`;
+        let targetUrl = `${pythonApiUrl}/api/v1/youtube/stream?url=${encodeURIComponent(originalUrl)}&filename=${encodeURIComponent(filename)}&type=${type}`;
         if (formatId) {
             targetUrl += `&format_id=${encodeURIComponent(formatId)}`;
         }

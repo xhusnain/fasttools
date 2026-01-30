@@ -27,7 +27,17 @@ const createHttpClient = (): AxiosInstance => {
       }
 
       if (process.env.NODE_ENV === "development") {
-        console.log(`[HTTP] ${config.method?.toUpperCase()} ${config.url}`);
+        const finalUrl = config.url?.startsWith('http') 
+          ? config.url 
+          : `${config.baseURL || env.apiUrl || ''}${config.url || ''}`;
+        const isPythonApi = finalUrl.includes(env.pythonApiUrl) || finalUrl.includes('api-removebg') || finalUrl.includes('localhost:8000');
+        const isMainApi = finalUrl.includes(env.apiUrl) || finalUrl.includes('api.fasttools') || finalUrl.includes('localhost:3001');
+        console.log(`[HTTP] ${config.method?.toUpperCase()} ${finalUrl}`, {
+          hasToken: !!token,
+          tokenLength: token?.length || 0,
+          backend: isPythonApi ? 'Python API (api-removebg)' : isMainApi ? 'Main API (api.fasttools)' : 'Other',
+          authHeader: config.headers?.Authorization ? 'Present' : 'Missing',
+        });
       }
 
       return config;
