@@ -64,11 +64,11 @@ export interface UnifiedToolConfig {
     content: {
         overview: string | React.ReactNode
         howToSteps?: string[]
-        features?: string[]
+        features?: string[] | Array<{ title: string; description: string }>
         aboutTool: string | React.ReactNode
         aboutToolText?: string
         proTip?: string
-        useCases?: string[]
+        useCases?: string[] | Array<{ title: string; description: string }>
         faqs: Array<{
             question: string
             answer: string

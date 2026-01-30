@@ -10,22 +10,22 @@ const RegexTester = dynamic(
 )
 
 const toolConfig = createToolConfig({
-  toolName: "Regex Tester",
-  description: "Test regex patterns online with instant visual matching, capture groups, and multi-language code generation. Debug and validate regular expressions for JavaScript, Python, Java, PHP, and more. Free regex testing tool with find & replace and live preview.",
-  metaTitle: "Regex Tester - Test Patterns & Debug Online",
-  metaDescription: "Test regex patterns online with instant visual matching, capture groups, and multi-language code generation. Debug and validate regular expressions for JavaScript, Python, Java, PHP, and more. Free regex testing tool with find & replace and live preview.",
+  toolName: "Free Regex Check Online - Test Regular Expressions Instantly",
+  description: "Test your Regular Expressions in Real-Time. Welcome to the fastest regex check online tool. Debug your patterns, test strings, and validate your regex syntax instantly.",
+  metaTitle: "Free Regex Check Online - Test Regular Expressions Instantly",
+  metaDescription: "Test your Regular Expressions in Real-Time. Welcome to the fastest regex check online tool. Debug your patterns, test strings, and validate your regex syntax instantly.",
   path: "/dev-tools/regex-tester",
 
   header: {
-    title: "Regex Tester - Test Regular Expressions Online Free",
-    description: "Test regex patterns online with instant visual matching, capture groups, and multi-language code generation. Debug and validate regular expressions for JavaScript, Python, Java, PHP, and more. Free regex testing tool with find & replace, pattern explanations, and live preview.",
+    title: "Free Regex Check Online (Regex Tester)",
+    description: "Debug and validate regular expressions for JavaScript, Python, Java, PHP, and more. Free regex testing tool with find & replace, pattern explanations, and live preview.",
     titleSize: "medium",
     descriptionSize: "small",
   },
 
   breadcrumbs: [
     { label: "Developer Tools", href: "/dev-tools" },
-    { label: "Regex Tester", href: "/dev-tools/regex-tester" },
+    { label: "Regex Check Online", href: "/dev-tools/regex-tester" },
   ],
 
   content: {
@@ -161,7 +161,7 @@ const toolConfig = createToolConfig({
       },
       {
         question: "How test regex patterns effectively?",
-        answer: "Test regex effectively by: 1) Start with simple patterns and add complexity, 2) Test multiple examples including edge cases, 3) Use anchors (^ $) for precise matching, 4) Verify capture groups extract correct data, 5) Test with real-world data, 6) Check performance with large text, 7) Use visual testers to see matches."
+        answer: "Test regex effectively by: 1) Start with simple patterns and add complexity, 2) Test multiple examples including edge cases, 3) Use anchors (^ $) for precise matching, 4) Verify capture groups extract correctly, 5) Test with real-world data, 6) Check performance with large text, 7) Use visual testers to see matches."
       },
       {
         question: "Test regex on string - how does it work?",
@@ -218,6 +218,7 @@ const toolConfig = createToolConfig({
     ],
 
     relatedTools: [
+      { name: "Ruby Regex Test", href: "/dev-tools/ruby-regex-test" },
       { name: "JWT Decoder", href: "/dev-tools/jwt-decoder" },
       { name: "JSON to CSV", href: "/dev-tools/json-to-csv" },
       { name: "Markdown Previewer", href: "/dev-tools/markdown-previewer" },

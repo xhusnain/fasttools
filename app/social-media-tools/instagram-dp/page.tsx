@@ -67,7 +67,7 @@ const toolConfig = createToolConfig({
           An <strong>Insta DP Viewer</strong> is a specialized online utility that allows users to view and download Instagram profile pictures (DPs) in their original full HD resolution (1080p). Unlike the standard Instagram app, which restricts profile pictures to small, non-zoomable circles, FastTools extracts the source image directly from Instagram's CDN, enabling anonymous viewing without notifying the account owner.
         </p>
         <p className="text-muted-foreground leading-relaxed">
-           Whether you are looking for an <strong>IG DP Viewer</strong> to see a friend's profile picture clearly or an <strong>Insta DP Download</strong> tool to save high-quality avatars, our tool handles it all instantly. We support both public and <strong>private account profile picture viewing</strong>.
+           Whether you call it an **IG DP viewer**, an **Instagram profile picture downloader**, or simply a **DP viewer for Instagram**, our tool helps you see the details clearly. We support both public and <strong>private account profile picture viewing</strong>.
         </p>
 
         <div className="my-8 overflow-x-auto rounded-lg border border-border">

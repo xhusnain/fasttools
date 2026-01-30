@@ -1,7 +1,7 @@
 "use client"
 
 import { useState, useEffect, useRef } from "react"
-import axios from "axios"
+import { HttpClient } from "@/services/api/http-client"
 import { GButton } from "@/ui/gbutton"
 import { GInput } from "@/ui/ginput"
 import { GLabel } from "@/ui/glabel"
@@ -9,7 +9,6 @@ import { GCard } from "@/ui/gcard"
 import { Download, AlertCircle, User, Eye, Lock, Globe, CheckCircle2 } from "lucide-react"
 import { LoadingSpinner } from "@/components/common/loading-spinner"
 import { downloadBlob } from "@/lib/download-utils"
-import { generateToken } from "@/lib/api-auth"
 import { env } from "@/config/env"
 
 export function InstagramDpViewer() {
@@ -60,15 +59,10 @@ export function InstagramDpViewer() {
       setError(null)
       setProfileData(null)
 
-      const token = await generateToken()
-
-      const response = await axios.get(
-        `${env.pythonApiUrl}/api/v1/instagram/user?username=${encodeURIComponent(extractedUsername)}`,
+      const response = await HttpClient.get(
+        `/api/backend/instagram/user?username=${encodeURIComponent(extractedUsername)}`,
         {
-          headers: {
-            "Authorization": `Bearer ${token}`,
-            "Content-Type": "application/json",
-          },
+          baseURL: '',
           timeout: 20000,
         }
       )
@@ -84,9 +78,9 @@ export function InstagramDpViewer() {
       console.error("API Error:", error)
       let errorMessage = "Failed to fetch profile. Please try again."
 
-      if (axios.isAxiosError(error)) {
-        if (error.response?.data?.error || error.response?.data?.message) {
-          errorMessage = error.response.data.error || error.response.data.message
+      if (error && (error.message || error.details)) {
+        if (error.details && (error.details.error || error.details.message)) {
+          errorMessage = error.details.error || error.details.message
         } else if (error.message) {
           errorMessage = error.message
         }
@@ -106,7 +100,7 @@ export function InstagramDpViewer() {
   }
 
   const downloadImage = async (quality: 'sd' | 'hd' = 'hd') => {
-    const imageUrl = quality === 'hd' 
+    const imageUrl = quality === 'hd'
       ? (profileData?.profile_pic_url_hd || profileData?.profile_pic_url)
       : profileData?.profile_pic_url
 
@@ -116,7 +110,7 @@ export function InstagramDpViewer() {
 
     try {
       const needsProxy = imageUrl.includes('cdninstagram.com') || imageUrl.includes('fbcdn.net')
-      const downloadUrl = needsProxy 
+      const downloadUrl = needsProxy
         ? `/api/instagram/image-proxy?url=${encodeURIComponent(imageUrl)}`
         : imageUrl
 
@@ -238,11 +232,11 @@ export function InstagramDpViewer() {
                 <img
                   src={
                     (profileData.profile_pic_url_hd || profileData.profile_pic_url) &&
-                    ((profileData.profile_pic_url_hd || profileData.profile_pic_url).includes('cdninstagram.com') ||
-                     (profileData.profile_pic_url_hd || profileData.profile_pic_url).includes('fbcdn.net') ||
-                     (profileData.profile_pic_url_hd || profileData.profile_pic_url).includes('anonymous') ||
-                     (profileData.profile_pic_url_hd || profileData.profile_pic_url).includes('YW5vbnltb3VzX3Byb2ZpbGVfcGlj') ||
-                     (profileData.profile_pic_url_hd || profileData.profile_pic_url).includes('anonymous_profile_pic'))
+                      ((profileData.profile_pic_url_hd || profileData.profile_pic_url).includes('cdninstagram.com') ||
+                        (profileData.profile_pic_url_hd || profileData.profile_pic_url).includes('fbcdn.net') ||
+                        (profileData.profile_pic_url_hd || profileData.profile_pic_url).includes('anonymous') ||
+                        (profileData.profile_pic_url_hd || profileData.profile_pic_url).includes('YW5vbnltb3VzX3Byb2ZpbGVfcGlj') ||
+                        (profileData.profile_pic_url_hd || profileData.profile_pic_url).includes('anonymous_profile_pic'))
                       ? `/api/instagram/image-proxy?url=${encodeURIComponent(profileData.profile_pic_url_hd || profileData.profile_pic_url)}`
                       : (profileData.profile_pic_url_hd || profileData.profile_pic_url)
                   }
@@ -315,32 +309,32 @@ export function InstagramDpViewer() {
 
               {/* Data Table for GEO Rules (Data Density) */}
               <div className="w-full overflow-x-auto rounded-lg border border-border">
-                 <table className="w-full text-sm text-left">
-                     <thead className="bg-muted/50 text-muted-foreground">
-                         <tr>
-                             <th className="px-4 py-2 font-medium">Metric</th>
-                             <th className="px-4 py-2 font-medium">Value</th>
-                         </tr>
-                     </thead>
-                     <tbody className="divide-y divide-border">
-                         <tr className="bg-background">
-                             <td className="px-4 py-2 text-muted-foreground">Posts</td>
-                             <td className="px-4 py-2 font-bold text-foreground">{(profileData.posts_count || 0).toLocaleString()}</td>
-                         </tr>
-                         <tr className="bg-background">
-                             <td className="px-4 py-2 text-muted-foreground">Followers</td>
-                             <td className="px-4 py-2 font-bold text-foreground">{(profileData.followers || 0).toLocaleString()}</td>
-                         </tr>
-                         <tr className="bg-background">
-                             <td className="px-4 py-2 text-muted-foreground">Following</td>
-                             <td className="px-4 py-2 font-bold text-foreground">{(profileData.followees || 0).toLocaleString()}</td>
-                         </tr>
-                         <tr className="bg-background">
-                             <td className="px-4 py-2 text-muted-foreground">Account Type</td>
-                             <td className="px-4 py-2 font-bold text-foreground">{profileData.is_private ? 'Private 🔒' : 'Public 🌍'}</td>
-                         </tr>
-                     </tbody>
-                 </table>
+                <table className="w-full text-sm text-left">
+                  <thead className="bg-muted/50 text-muted-foreground">
+                    <tr>
+                      <th className="px-4 py-2 font-medium">Metric</th>
+                      <th className="px-4 py-2 font-medium">Value</th>
+                    </tr>
+                  </thead>
+                  <tbody className="divide-y divide-border">
+                    <tr className="bg-background">
+                      <td className="px-4 py-2 text-muted-foreground">Posts</td>
+                      <td className="px-4 py-2 font-bold text-foreground">{(profileData.posts_count || 0).toLocaleString()}</td>
+                    </tr>
+                    <tr className="bg-background">
+                      <td className="px-4 py-2 text-muted-foreground">Followers</td>
+                      <td className="px-4 py-2 font-bold text-foreground">{(profileData.followers || 0).toLocaleString()}</td>
+                    </tr>
+                    <tr className="bg-background">
+                      <td className="px-4 py-2 text-muted-foreground">Following</td>
+                      <td className="px-4 py-2 font-bold text-foreground">{(profileData.followees || 0).toLocaleString()}</td>
+                    </tr>
+                    <tr className="bg-background">
+                      <td className="px-4 py-2 text-muted-foreground">Account Type</td>
+                      <td className="px-4 py-2 font-bold text-foreground">{profileData.is_private ? 'Private 🔒' : 'Public 🌍'}</td>
+                    </tr>
+                  </tbody>
+                </table>
               </div>
 
               <div className="w-full max-w-sm sm:max-w-md space-y-3">
@@ -396,15 +390,15 @@ export function InstagramDpViewer() {
                     Found the profile? Now download their content!
                   </p>
                   <div className="grid grid-cols-1 gap-2">
-                    <a 
-                      href="/social-media-tools/tiktok-downloader" 
+                    <a
+                      href="/social-media-tools/tiktok-downloader"
                       className="flex items-center justify-between p-2 rounded bg-white dark:bg-card border border-green-100 dark:border-green-800 hover:shadow-sm transition-shadow group"
                     >
                       <span className="text-xs font-medium text-foreground group-hover:text-primary transition-colors">🎵 TikTok Downloader (No Watermark)</span>
                       <span className="text-xs text-muted-foreground">→</span>
                     </a>
-                    <a 
-                      href="/social-media-tools/pinterest-downloader" 
+                    <a
+                      href="/social-media-tools/pinterest-downloader"
                       className="flex items-center justify-between p-2 rounded bg-white dark:bg-card border border-green-100 dark:border-green-800 hover:shadow-sm transition-shadow group"
                     >
                       <span className="text-xs font-medium text-foreground group-hover:text-primary transition-colors">📌 Pinterest Image & Video Saver</span>

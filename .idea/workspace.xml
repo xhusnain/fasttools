@@ -6,10 +6,17 @@
   <component name="ChangeListManager">
     <list default="true" id="18ec5e72-a13f-411d-aa2d-6f11d3337c12" name="Changes" comment="added seo skills yt downloader and yt playlist downloader seo optimization">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/social-media-tools/facebook-downloader/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/social-media-tools/facebook-downloader/page.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/social-media-tools/pinterest-downloader/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/social-media-tools/pinterest-downloader/page.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/social-media-tools/x-video-downloader/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/social-media-tools/x-video-downloader/page.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/social-media-tools/youtube-downloader/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/social-media-tools/youtube-downloader/page.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/dev-tools/regex-tester/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/dev-tools/regex-tester/page.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/social-media-tools/instagram-downloader/downloader-variants.ts" beforeDir="false" afterPath="$PROJECT_DIR$/app/social-media-tools/instagram-downloader/downloader-variants.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/social-media-tools/instagram-dp/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/social-media-tools/instagram-dp/page.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/social-media/instagram-dp-viewer.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/social-media/instagram-dp-viewer.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/api-auth.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/create-tool-config.ts" beforeDir="false" afterPath="$PROJECT_DIR$/lib/create-tool-config.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/store-bg-remover.ts" beforeDir="false" afterPath="$PROJECT_DIR$/lib/store-bg-remover.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/next.config.mjs" beforeDir="false" afterPath="$PROJECT_DIR$/next.config.mjs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/proxy.ts" beforeDir="false" afterPath="$PROJECT_DIR$/proxy.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/api/http-client.ts" beforeDir="false" afterPath="$PROJECT_DIR$/services/api/http-client.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/youtube.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/services/youtube.service.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -242,14 +249,11 @@
       <workItem from="1769677391475" duration="534000" />
       <workItem from="1769678435922" duration="53000" />
       <workItem from="1769678893677" duration="3842000" />
-    </task>
-    <task id="LOCAL-00240" summary="add new tool byte hash">
-      <option name="closed" value="true" />
-      <created>1768982486241</created>
-      <option name="number" value="00240" />
-      <option name="presentableId" value="LOCAL-00240" />
-      <option name="project" value="LOCAL" />
-      <updated>1768982486241</updated>
+      <workItem from="1769684847073" duration="75000" />
+      <workItem from="1769687457731" duration="16000" />
+      <workItem from="1769693306220" duration="23000" />
+      <workItem from="1769757270619" duration="669000" />
+      <workItem from="1769759451482" duration="2443000" />
     </task>
     <task id="LOCAL-00241" summary="encrypt decrypt">
       <option name="closed" value="true" />
@@ -635,7 +639,15 @@
       <option name="project" value="LOCAL" />
       <updated>1769683926389</updated>
     </task>
-    <option name="localTasksCounter" value="289" />
+    <task id="LOCAL-00289" summary="added seo skills yt downloader and yt playlist downloader seo optimization">
+      <option name="closed" value="true" />
+      <created>1769684917028</created>
+      <option name="number" value="00289" />
+      <option name="presentableId" value="LOCAL-00289" />
+      <option name="project" value="LOCAL" />
+      <updated>1769684917028</updated>
+    </task>
+    <option name="localTasksCounter" value="290" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

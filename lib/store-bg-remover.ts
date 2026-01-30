@@ -1,5 +1,5 @@
 import { create } from "zustand";
-import axios from "axios";
+import { HttpClient } from "@/services/api/http-client";
 import { type BgRemoverEditorState, type ProcessingStatus, type ProcessingResult } from "@/types";
 
 interface EditorStore extends BgRemoverEditorState {
@@ -8,7 +8,6 @@ interface EditorStore extends BgRemoverEditorState {
   setRefineStrength?: (s: "weak" | "medium" | "strong") => void;
 }
 
-import { generateToken } from "./api-auth";
 import { env } from "@/config/env";
 
 export const useBgRemoverStore = create<EditorStore>()(
@@ -114,12 +113,9 @@ export const useBgRemoverStore = create<EditorStore>()(
           status: {
             stage: "processing",
             progress: 30,
-            message: "Generating secure token...",
+            message: "Uploading image...",
           },
         });
-
-        // Generate Token
-        const token = await generateToken();
 
         set({
           status: {
@@ -133,14 +129,11 @@ export const useBgRemoverStore = create<EditorStore>()(
         formData.append("image", blob, "image.png");
 
         try {
-          const response = await axios.post(
-            `${env.pythonApiUrl}/api/v1/remove-bg`,
+          const response = await HttpClient.upload(
+            `/api/backend/remove-bg`,
             formData,
             {
-              headers: {
-                "Authorization": `Bearer ${token}`,
-                "Content-Type": "multipart/form-data",
-              },
+              baseURL: '',
               responseType: "blob",
               onUploadProgress: (progressEvent) => {
                 if (progressEvent.total) {
@@ -173,15 +166,11 @@ export const useBgRemoverStore = create<EditorStore>()(
           console.error("API Error:", error);
           let errorMessage = "Something went wrong. Please try again.";
 
-          if (axios.isAxiosError(error)) {
-            if (error.response && error.response.data instanceof Blob) {
-              // Try to read error message from blob
-              try {
-                const text = await error.response.data.text();
-                const json = JSON.parse(text);
-                errorMessage = json.error || json.message || errorMessage;
-              } catch (e) { /* ignore */ }
-            } else if (error.message) {
+          // HttpClient returns ApiError
+          if (error && error.message) {
+            if (error.details && error.details.error) {
+              errorMessage = error.details.error;
+            } else {
               errorMessage = error.message;
             }
           }

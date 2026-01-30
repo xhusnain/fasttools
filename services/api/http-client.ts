@@ -1,4 +1,5 @@
 import axios, { AxiosInstance, AxiosRequestConfig, AxiosResponse, AxiosError } from "axios";
+import { generateToken } from "@/lib/m2m-auth";
 import { env } from "@/config/env";
 import type { ApiResponse, ApiError } from "@/types/http-client.types";
 
@@ -14,10 +15,10 @@ const createHttpClient = (): AxiosInstance => {
   });
 
   instance.interceptors.request.use(
-    (config) => {
-      const token = typeof window !== "undefined" ? localStorage.getItem("authToken") : null;
-      if (token) {
-        config.headers.Authorization = `Bearer ${token}`;
+    async (config) => {
+      const token = await generateToken();
+      if (config.headers) {
+        (config.headers as any).Authorization = `Bearer ${token}`;
       }
 
       if (process.env.NODE_ENV === "development") {

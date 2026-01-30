@@ -1,8 +1,7 @@
-
-import { getAuthHeaders } from "@/lib/api-auth";
+import { HttpClient } from "@/services/api/http-client";
 import { env } from "@/config/env";
 
-const BASE_URL = `${env.pythonApiUrl}/api/v1/youtube`;
+const BASE_URL = `/api/backend/youtube`;
 
 export interface VideoFormat {
     format_id: string;
@@ -51,22 +50,12 @@ export interface PlaylistInfo {
 
 export class YouTubeService {
     static async getInfo(url: string, type: 'video' | 'playlist' = 'video'): Promise<VideoInfo | PlaylistInfo> {
-        const headers = await getAuthHeaders();
-        const response = await fetch(`${BASE_URL}/info`, {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json',
-                ...headers
-            },
-            body: JSON.stringify({ url, type })
-        });
-
-        if (!response.ok) {
-            const error = await response.json();
-            throw new Error(error.error || "Failed to fetch information");
+        try {
+            const response = await HttpClient.post<VideoInfo | PlaylistInfo>(`${BASE_URL}/info`, { url, type }, { baseURL: '' });
+            return response.data;
+        } catch (error: any) {
+            throw new Error(error.message || "Failed to fetch information");
         }
-
-        return await response.json();
     }
 
     static getStreamUrl(originalUrl: string, filename: string, formatId?: string, type: 'video' | 'audio' = 'video'): string {
@@ -78,21 +67,11 @@ export class YouTubeService {
     }
 
     static async getDirectDownloadUrl(url: string, formatId?: string): Promise<string> {
-        const headers = await getAuthHeaders();
-        const response = await fetch(`${BASE_URL}/video`, {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json',
-                ...headers
-            },
-            body: JSON.stringify({ url, format_id: formatId })
-        });
-
-        if (!response.ok) {
+        try {
+            const response = await HttpClient.post<{ url: string }>(`${BASE_URL}/video`, { url, format_id: formatId }, { baseURL: '' });
+            return response.data.url;
+        } catch (error) {
             throw new Error('Failed to get download URL');
         }
-
-        const data = await response.json();
-        return data.url;
     }
 }
