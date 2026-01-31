@@ -32,6 +32,10 @@ export const generateToken = async () => {
         signature: signatureHex,
     };
 
+    // Use Buffer in Node.js, btoa in browser
+    if (typeof Buffer !== 'undefined') {
+        return Buffer.from(JSON.stringify(tokenObj)).toString('base64');
+    }
     return btoa(JSON.stringify(tokenObj));
 };
 
@@ -49,7 +53,10 @@ export const verifyToken = async (token: string): Promise<boolean> => {
         // Remove Bearer prefix if present
         const cleanToken = token.startsWith('Bearer ') ? token.slice(7) : token;
 
-        const jsonStr = atob(cleanToken);
+        // Use Buffer in Node.js, atob in browser
+        const jsonStr = typeof Buffer !== 'undefined'
+            ? Buffer.from(cleanToken, 'base64').toString('utf-8')
+            : atob(cleanToken);
         const { timestamp, nonce, signature } = JSON.parse(jsonStr);
 
         // Check timestamp (allow 5 minutes drift)

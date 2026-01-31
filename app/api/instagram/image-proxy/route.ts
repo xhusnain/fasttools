@@ -1,29 +1,28 @@
 import { NextRequest, NextResponse } from 'next/server'
 
+const INSTAGRAM_CDN_DOMAINS = ['cdninstagram.com', 'instagram.com', 'fbcdn.net', 'fbcdn']
+const USER_AGENT = 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36'
+
+function isValidInstagramUrl(url: string): boolean {
+  return INSTAGRAM_CDN_DOMAINS.some(domain => url.includes(domain)) ||
+    (url.includes('instagram') && (url.includes('fna') || url.includes('fna.fbcdn')))
+}
+
 export async function GET(request: NextRequest) {
-  const searchParams = request.nextUrl.searchParams
-  const url = searchParams.get('url')
+  const url = request.nextUrl.searchParams.get('url')
 
   if (!url) {
-    return NextResponse.json(
-      { error: 'Missing URL parameter' },
-      { status: 400 }
-    )
+    return NextResponse.json({ error: 'Missing URL parameter' }, { status: 400 })
   }
 
-  // Validate that the URL is from Instagram CDN for security
-  if (!url.includes('cdninstagram.com') && !url.includes('instagram.com')) {
-    return NextResponse.json(
-      { error: 'Invalid URL. Only Instagram CDN URLs are allowed.' },
-      { status: 400 }
-    )
+  if (!isValidInstagramUrl(url)) {
+    return NextResponse.json({ error: 'Invalid URL. Only Instagram CDN URLs are allowed.' }, { status: 400 })
   }
 
   try {
-    // Fetch the image from Instagram CDN
     const response = await fetch(url, {
       headers: {
-        'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36',
+        'User-Agent': USER_AGENT,
         'Referer': 'https://www.instagram.com/',
         'Accept': 'image/webp,image/apng,image/*,*/*;q=0.8',
       },
@@ -36,13 +35,9 @@ export async function GET(request: NextRequest) {
       )
     }
 
-    // Get the image as a buffer
     const imageBuffer = await response.arrayBuffer()
-    
-    // Get content type from response or default to image/jpeg
     const contentType = response.headers.get('content-type') || 'image/jpeg'
 
-    // Return the image with proper headers
     return new NextResponse(imageBuffer, {
       status: 200,
       headers: {
@@ -55,10 +50,7 @@ export async function GET(request: NextRequest) {
     })
   } catch (error) {
     console.error('Image proxy error:', error)
-    return NextResponse.json(
-      { error: 'Failed to proxy image' },
-      { status: 500 }
-    )
+    return NextResponse.json({ error: 'Failed to proxy image' }, { status: 500 })
   }
 }
 

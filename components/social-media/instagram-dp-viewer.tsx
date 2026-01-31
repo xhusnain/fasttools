@@ -8,12 +8,24 @@ import { GLabel } from "@/ui/glabel"
 import { GCard } from "@/ui/gcard"
 import { Download, AlertCircle, User, Eye, Lock, Globe, CheckCircle2 } from "lucide-react"
 import { LoadingSpinner } from "@/components/common/loading-spinner"
-import { downloadBlob } from "@/lib/download-utils"
-import { env } from "@/config/env"
+
+interface InstagramProfileData {
+  username: string;
+  full_name: string;
+  biography: string;
+  followers: number;
+  followees: number;
+  posts_count: number;
+  profile_pic_url: string;
+  profile_pic_url_hd: string;
+  is_verified: boolean;
+  is_private: boolean;
+  external_url: string | null;
+}
 
 export function InstagramDpViewer() {
   const [username, setUsername] = useState("")
-  const [profileData, setProfileData] = useState<any>(null)
+  const [profileData, setProfileData] = useState<InstagramProfileData | null>(null)
   const [loading, setLoading] = useState(false)
   const [error, setError] = useState<string | null>(null)
   const [downloading, setDownloading] = useState(false)
@@ -25,32 +37,10 @@ export function InstagramDpViewer() {
     }
   }, [profileData])
 
-  const extractUsername = (input: string): string | null => {
-    if (!input) return null
-
-    const trimmed = input.trim()
-
-    const urlPatterns = [
-      /instagram\.com\/([a-zA-Z0-9._]+)/,
-      /instagram\.com\/p\/([a-zA-Z0-9._]+)/,
-      /^https?:\/\/(www\.)?instagram\.com\/([a-zA-Z0-9._]+)/,
-    ]
-
-    for (const pattern of urlPatterns) {
-      const match = trimmed.match(pattern)
-      if (match) {
-        return (match[1] || match[2] || match[0]).split('?')[0].split('/').pop()?.toLowerCase() || null
-      }
-    }
-
-    return trimmed.replace("@", "").toLowerCase()
-  }
 
   const fetchProfileData = async () => {
     try {
-      const extractedUsername = extractUsername(username)
-
-      if (!extractedUsername) {
+      if (!username?.trim()) {
         setError("Please enter a valid username or Instagram profile link")
         return
       }
@@ -59,37 +49,24 @@ export function InstagramDpViewer() {
       setError(null)
       setProfileData(null)
 
-      const apiUrl = `${env.apiUrl}/api/v1/instagram/user?username=${encodeURIComponent(extractedUsername)}`;
-
-      const response = await HttpClient.get(
-        apiUrl,
-        {
-          baseURL: '',
-          timeout: 20000,
-        }
-      )
+      const apiUrl = `/api/v1/instagram/user?url=${encodeURIComponent(username.trim())}`
+      const response = await HttpClient.get(apiUrl, { baseURL: '', timeout: 20000 })
 
       if (response.data) {
-        const backendData = response.data.data || response.data
-        setProfileData(backendData)
+        if (response.data.platform === 'Instagram' && response.data.data) {
+          setProfileData(response.data.data)
+        } else if (response.data.username) {
+          setProfileData(response.data)
+        } else {
+          throw new Error('Invalid response from server')
+        }
         setError(null)
       } else {
         throw new Error('Invalid response from server')
       }
     } catch (error: any) {
       console.error("API Error:", error)
-      let errorMessage = "Failed to fetch profile. Please try again."
-
-      if (error && (error.message || error.details)) {
-        if (error.details && (error.details.error || error.details.message)) {
-          errorMessage = error.details.error || error.details.message
-        } else if (error.message) {
-          errorMessage = error.message
-        }
-      } else if (error instanceof Error) {
-        errorMessage = error.message
-      }
-
+      const errorMessage = error?.details?.error || error?.details?.message || error?.message || "Failed to fetch profile. Please try again."
       setError(errorMessage)
       setProfileData(null)
     } finally {
@@ -102,29 +79,38 @@ export function InstagramDpViewer() {
   }
 
   const getProxyImageUrl = (imageUrl: string): string => {
-    if (!imageUrl) return ''
-    // Use proxy route to avoid CORS issues
-    return `/api/instagram/image-proxy?url=${encodeURIComponent(imageUrl)}`
+    return imageUrl ? `/api/instagram/image-proxy?url=${encodeURIComponent(imageUrl)}` : ''
+  }
+
+  const getProfilePictureUrl = (): string => {
+    if (!profileData) return ''
+    const imageUrl = profileData.profile_pic_url_hd || profileData.profile_pic_url
+    return getProxyImageUrl(imageUrl)
   }
 
   const downloadImage = async (quality: 'sd' | 'hd' = 'hd') => {
+    if (!profileData) return
+
     const imageUrl = quality === 'hd'
-      ? (profileData?.profile_pic_url_hd || profileData?.profile_pic_url)
-      : profileData?.profile_pic_url
+      ? (profileData.profile_pic_url_hd || profileData.profile_pic_url)
+      : profileData.profile_pic_url
 
     if (!imageUrl) return
 
     setDownloading(true)
 
     try {
-      // Use proxy route to avoid CORS issues
       const proxyUrl = `/api/instagram/image-proxy?url=${encodeURIComponent(imageUrl)}`
-      const response = await HttpClient.download(proxyUrl, { baseURL: '' })
+      const response = await fetch(proxyUrl)
 
-      const blob = response.data
+      if (!response.ok) {
+        throw new Error(`Failed to fetch image: ${response.statusText}`)
+      }
+
+      const blob = await response.blob()
       const blobUrl = URL.createObjectURL(blob)
-
       const link = document.createElement('a')
+      
       link.href = blobUrl
       link.download = `${profileData.username}-profile-picture-${quality}.jpg`
       link.style.display = 'none'
@@ -133,10 +119,10 @@ export function InstagramDpViewer() {
       document.body.removeChild(link)
 
       setTimeout(() => URL.revokeObjectURL(blobUrl), 100)
-      setDownloading(false)
     } catch (error) {
       console.error('Download error:', error)
       setError('Failed to download image. Please try again.')
+    } finally {
       setDownloading(false)
     }
   }
@@ -234,7 +220,7 @@ export function InstagramDpViewer() {
             <div className="flex flex-col items-center gap-4 sm:gap-6">
               <div className="relative">
                 <img
-                  src={getProxyImageUrl(profileData.profile_pic_url_hd || profileData.profile_pic_url)}
+                  src={getProfilePictureUrl()}
                   alt={`${profileData.username} profile picture`}
                   className="w-32 h-32 sm:w-40 sm:h-40 rounded-full border-4 border-border shadow-lg object-cover"
                   title={`${profileData.username} profile picture`}
@@ -242,7 +228,11 @@ export function InstagramDpViewer() {
                   loading="lazy"
                   onError={(e) => {
                     const target = e.currentTarget
-                    target.src = `https://via.placeholder.com/400x400/6366f1/ffffff?text=${profileData.username.charAt(0).toUpperCase()}`
+                    if (profileData.profile_pic_url_hd && target.src.includes(encodeURIComponent(profileData.profile_pic_url_hd))) {
+                      target.src = getProxyImageUrl(profileData.profile_pic_url)
+                    } else {
+                      target.src = `https://via.placeholder.com/400x400/6366f1/ffffff?text=${profileData.username.charAt(0).toUpperCase()}`
+                    }
                   }}
                 />
                 {profileData.is_verified && (

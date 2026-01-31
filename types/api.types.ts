@@ -93,30 +93,27 @@ export interface YouTubeVideoInfo {
   publishedAt: string;
 }
 
-export interface InstagramProfileResponse {
-  success: boolean;
+export interface InstagramProfileData {
   username: string;
-  fullName?: string;
-  biography?: string;
-  profilePicUrl?: string;
-  profilePicUrlHd?: string;
-  isVerified?: boolean;
-  isPrivate?: boolean;
-  followerCount?: number;
-  followingCount?: number;
-  postCount?: number;
-  error?: string;
+  full_name: string;
+  biography: string;
+  followers: number;
+  followees: number;
+  posts_count: number;
+  profile_pic_url: string;
+  profile_pic_url_hd: string;
+  is_verified: boolean;
+  is_private: boolean;
+  external_url: string | null;
 }
 
-export interface InstagramMediaItem {
-  id: string;
-  type: "image" | "video" | "carousel";
-  url: string;
-  thumbnail?: string;
-  caption?: string;
-  timestamp: string;
-  likeCount?: number;
-  commentCount?: number;
+export interface InstagramProfileResponse {
+  platform: "Instagram";
+  data: InstagramProfileData;
+}
+
+export interface InstagramProfileErrorResponse {
+  error: string;
 }
 
 export interface AIGenerateRequest {
