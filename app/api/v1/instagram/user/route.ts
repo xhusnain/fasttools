@@ -1,5 +1,6 @@
 import { NextRequest, NextResponse } from 'next/server'
 import { generateToken } from '@/lib/m2m-auth'
+import {env} from "@/config";
 
 export const runtime = 'nodejs'
 export const maxDuration = 30
@@ -41,8 +42,8 @@ export async function GET(request: NextRequest) {
     }
 
     const token = await generateToken()
-    const backendUrl = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:3001'
-    const apiUrl = `${backendUrl}/api/v1/instagram/user?url=${encodeURIComponent(username)}`
+    const backendUrl = env.apiUrl || 'http://localhost:3456'
+    const apiUrl = `${backendUrl}/instagram/user?url=${encodeURIComponent(username)}`
 
     const response = await fetch(apiUrl, {
       method: 'GET',
