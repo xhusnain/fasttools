@@ -244,15 +244,7 @@
       <workItem from="1769757270619" duration="669000" />
       <workItem from="1769759451482" duration="4386000" />
       <workItem from="1769795937867" duration="7340000" />
-      <workItem from="1769840132489" duration="9315000" />
-    </task>
-    <task id="LOCAL-00249" summary="pdf sig">
-      <option name="closed" value="true" />
-      <created>1768996359187</created>
-      <option name="number" value="00249" />
-      <option name="presentableId" value="LOCAL-00249" />
-      <option name="project" value="LOCAL" />
-      <updated>1768996359187</updated>
+      <workItem from="1769840132489" duration="10768000" />
     </task>
     <task id="LOCAL-00250" summary="localization">
       <option name="closed" value="true" />
@@ -638,7 +630,15 @@
       <option name="project" value="LOCAL" />
       <updated>1769857141894</updated>
     </task>
-    <option name="localTasksCounter" value="298" />
+    <task id="LOCAL-00298" summary="remvoe bg remvover and update the downloadr">
+      <option name="closed" value="true" />
+      <created>1769859071317</created>
+      <option name="number" value="00298" />
+      <option name="presentableId" value="LOCAL-00298" />
+      <option name="project" value="LOCAL" />
+      <updated>1769859071317</updated>
+    </task>
+    <option name="localTasksCounter" value="299" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

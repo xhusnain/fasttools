@@ -87,10 +87,13 @@ const createHttpClient = (): AxiosInstance => {
       if (error.response?.data) {
         if (typeof error.response.data === 'string') {
           detailedMessage = error.response.data;
-        } else if (error.response.data.error || error.response.data.message) {
-          detailedMessage = error.response.data.error || error.response.data.message || message;
-        } else if (error.response.data.detail) {
-          detailedMessage = error.response.data.detail;
+        } else if (typeof error.response.data === 'object' && error.response.data !== null) {
+          const data = error.response.data as Record<string, any>;
+          if (data.error || data.message) {
+            detailedMessage = data.error || data.message || message;
+          } else if (data.detail) {
+            detailedMessage = data.detail;
+          }
         }
       }
 
