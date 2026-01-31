@@ -1,11 +1,5 @@
 import type { Metadata } from "next"
-import dynamic from "next/dynamic"
-
-const XDownloader = dynamic(() => import("@/components/social-media/x-downloader/x-downloader").then(mod => mod.XDownloader), {
-  loading: () => <div className="min-h-150 flex items-center justify-center">
-    <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-primary"></div>
-  </div>
-})
+import { UnifiedDownloader } from "@/components/social-media/unified-downloader"
 import { ToolPageLayout } from "@/components/common/tool-page-layout"
 import { createToolConfig } from "@/lib/create-tool-config"
 import {
@@ -229,5 +223,5 @@ const toolConfig = createToolConfig({
 export const metadata: Metadata = toolConfig.metadata
 
 export default function XVideoDownloaderPage() {
-  return <ToolPageLayout {...toolConfig.getLayoutProps(<XDownloader />)} />
+  return <ToolPageLayout {...toolConfig.getLayoutProps(<UnifiedDownloader defaultPlatform="twitter" placeholder="https://twitter.com/username/status/..." />)} />
 }

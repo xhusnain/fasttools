@@ -166,7 +166,6 @@ const toolConfig = createToolConfig({
 
     relatedTools: [
       { name: "Image to Text (OCR)", href: "/image-tools/image-to-text" },
-      { name: "Image Background Remover", href: "/image-tools/image-background-remover" },
       { name: "Invoice Generator", href: "/finance-tools/invoice-generator" },
       { name: "Text Case Converter", href: "/converters/text-case" }
     ],

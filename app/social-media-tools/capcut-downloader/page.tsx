@@ -2,13 +2,7 @@ import { Metadata } from 'next';
 import { ToolPageLayout } from "@/components/common/tool-page-layout"
 import { createToolConfig } from "@/lib/create-tool-config"
 import { AlertCircle, Shield, Smartphone, Monitor, Sparkles, Palette, Zap, Scale, Music, Eye, AlertTriangle, Globe } from "lucide-react"
-import dynamic from "next/dynamic"
-
-const CapcutDownloader = dynamic(() => import("@/components/social-media/capcut-downloader/capcut-downloader").then(mod => mod.CapcutDownloader), {
-    loading: () => <div className="min-h-[600px] flex items-center justify-center">
-        <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-primary"></div>
-    </div>
-})
+import { UnifiedDownloader } from "@/components/social-media/unified-downloader"
 
 const toolConfig = createToolConfig({
     toolName: "CapCut Downloader - Download CapCut Videos Without Watermark Free",
@@ -422,5 +416,5 @@ const toolConfig = createToolConfig({
 export const metadata: Metadata = toolConfig.metadata
 
 export default function CapcutDownloaderPage() {
-    return <ToolPageLayout {...toolConfig.getLayoutProps(<CapcutDownloader />)} />
+    return <ToolPageLayout {...toolConfig.getLayoutProps(<UnifiedDownloader defaultPlatform="capcut" placeholder="https://www.capcut.com/..." />)} />
 }

@@ -27,7 +27,7 @@ const faqs: FAQ[] = [
     {
         number: "05",
         question: "What image processing tools are available for free?",
-        answer: "Our image tools include image cropper for resizing and cropping photos, image converter for format conversion, image to text OCR for extracting text from images, background blur for photo editing, and QR code generator for creating QR codes. All tools work in your browser without uploading files, ensuring complete privacy and security."
+        answer: "Our image tools include image cropper for resizing and cropping photos, image converter for format conversion, image to text OCR for extracting text from images, and QR code generator for creating QR codes. All tools work in your browser without uploading files, ensuring complete privacy and security."
     },
     {
         number: "06",

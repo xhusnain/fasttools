@@ -1047,44 +1047,6 @@ export const toolPages = [
         priority: 0.9,
     },
     {
-        url: "https://www.fasttools.store/image-tools/image-background-remover",
-        lastModified: new Date('2025-11-25'),
-        changeFrequency: "monthly" as const,
-        priority: 0.95,
-        images: [
-            {
-                url: "https://www.fasttools.store/before_human.jpg",
-                title: "Human Photo Before Background Removal - Professional Portrait Photography",
-                caption: "Professional portrait photo before AI-powered background removal showing original image with background"
-            },
-            {
-                url: "https://www.fasttools.store/after_Human.png",
-                title: "Human Photo After Background Removal - Transparent PNG Portrait",
-                caption: "Professional portrait with perfectly removed background showcasing AI precision and transparent PNG output"
-            },
-            {
-                url: "https://www.fasttools.store/before_dog.jpg",
-                title: "Pet Dog Photo Before Background Removal - Animal Photography",
-                caption: "Pet dog photo before background removal showing original image with natural background for pet photography"
-            },
-            {
-                url: "https://www.fasttools.store/after_dog.png",
-                title: "Pet Dog Photo After Background Removal - Transparent Pet Image",
-                caption: "Pet dog photo with perfectly removed background showcasing advanced edge detection for fur and complex details"
-            },
-            {
-                url: "https://www.fasttools.store/object_before.jpg",
-                title: "Product Object Photo Before Background Removal - E-commerce Photography",
-                caption: "Product object photo before background removal showing original image for e-commerce and commercial photography"
-            },
-            {
-                url: "https://www.fasttools.store/object_after.png",
-                title: "Product Object Photo After Background Removal - Clean Product Image",
-                caption: "Product object with clean removed background perfect for e-commerce listings and marketing materials"
-            }
-        ]
-    },
-    {
         url: "https://www.fasttools.store/image-tools/image-to-text",
         lastModified: new Date('2025-11-25'),
         changeFrequency: "monthly" as const,

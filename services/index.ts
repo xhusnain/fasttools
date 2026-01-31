@@ -1,6 +1,5 @@
 export { API } from "./api/api.service";
 export { CurrencyService } from "./api/api.service";
-export { YouTubeService } from "./api/api.service";
 export { AIService } from "./api/api.service";
 export { HttpClient, default as httpClient } from "./api/http-client";
 

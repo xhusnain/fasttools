@@ -5,13 +5,7 @@ import {
   AlertCircle, Zap, Video, Music, Image
 } from "lucide-react"
 import { getCurrentYear } from "@/lib/utils"
-import dynamic from "next/dynamic"
-
-const TiktokDownloader = dynamic(() => import("@/components/social-media/tiktok-downloader/tiktok-downloader").then(mod => mod.TiktokDownloader), {
-  loading: () => <div className="min-h-[600px] flex items-center justify-center">
-    <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-primary"></div>
-  </div>
-})
+import { UnifiedDownloader } from "@/components/social-media/unified-downloader"
 
 const toolConfig = createToolConfig({
   toolName: "TikTok Downloader No Watermark (HD 1080p) - Save Video & Sound",
@@ -348,5 +342,5 @@ const toolConfig = createToolConfig({
 export const metadata: Metadata = toolConfig.metadata
 
 export default function TiktokDownloaderPage() {
-  return <ToolPageLayout {...toolConfig.getLayoutProps(<TiktokDownloader />)} />
+  return <ToolPageLayout {...toolConfig.getLayoutProps(<UnifiedDownloader defaultPlatform="tiktok" placeholder="https://www.tiktok.com/@username/video/..." />)} />
 }

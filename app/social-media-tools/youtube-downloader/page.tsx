@@ -2,13 +2,7 @@ import type { Metadata } from "next"
 import { ToolPageLayout } from "@/components/common/tool-page-layout"
 import { createToolConfig } from "@/lib/create-tool-config"
 import { AlertCircle, Shield, Zap, Smartphone, Monitor, Music, Video, Star, CheckCircle } from "lucide-react"
-import dynamic from "next/dynamic"
-
-const YoutubeDownloader = dynamic(() => import("@/components/social-media/youtube-downloader/youtube-downloader").then(mod => mod.YoutubeDownloader), {
-    loading: () => <div className="min-h-[600px] flex items-center justify-center">
-        <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-primary"></div>
-    </div>
-})
+import { UnifiedDownloader } from "@/components/social-media/unified-downloader"
 
 const toolConfig = createToolConfig({
     toolName: "YouTube Video Downloader (4K & 1080p) - YouTube to MP3/MP4",
@@ -92,15 +86,19 @@ const toolConfig = createToolConfig({
                         Is This YouTube Downloader Safe?
                     </h2>
                     <div className="space-y-4">
-                        <p className="text-sm text-muted-foreground leading-relaxed">
-                            <strong>Yes, absolutely.</strong> We operate entirely in your browser. This means:
+                        <div className="text-sm text-muted-foreground leading-relaxed">
+                            <p>
+                                <strong>Yes, absolutely.</strong> We operate entirely in your browser. This means:
+                            </p>
                             <ul className="list-disc list-inside mt-2 ml-2">
                                 <li>No dangerous software (.exe) to install.</li>
                                 <li>No browser extensions that track your history.</li>
                                 <li>No account registration or personal data required.</li>
                             </ul>
-                            Your connection is secured with SSL encryption, ensuring a safe and private experience.
-                        </p>
+                            <p>
+                                Your connection is secured with SSL encryption, ensuring a safe and private experience.
+                            </p>
+                        </div>
                     </div>
                 </article>
 
@@ -135,7 +133,7 @@ const toolConfig = createToolConfig({
                             </tbody>
                         </table>
                     </div>
-                </article >
+                </article>
 
                 <article className="space-y-6">
                      <h2 className="text-2xl font-bold text-foreground flex items-center gap-2">
@@ -148,7 +146,7 @@ const toolConfig = createToolConfig({
                 </article>
 
                 {/* Device Guides */}
-                < article className="space-y-6" >
+                <article className="space-y-6">
                     <h2 className="text-2xl font-bold text-foreground">How to Download on Mobile</h2>
                     <div className="grid gap-6 md:grid-cols-2">
                         <div className="p-5 rounded-lg bg-card border border-border">
@@ -171,8 +169,8 @@ const toolConfig = createToolConfig({
                             </p>
                         </div>
                     </div>
-                </article >
-            </div >
+                </article>
+            </div>
         ),
 
         proTip: "For the absolute best video quality, choose the highest resolution listed (even if file size is larger). You can always compress it later, but you can't add quality back to a blurry video. For audio, standard MP3 is universally compatible and great for music.",
@@ -212,5 +210,5 @@ const toolConfig = createToolConfig({
 export const metadata: Metadata = toolConfig.metadata
 
 export default function YoutubeDownloaderPage() {
-    return <ToolPageLayout {...toolConfig.getLayoutProps(<YoutubeDownloader />)} />
+    return <ToolPageLayout {...toolConfig.getLayoutProps(<UnifiedDownloader defaultPlatform="youtube" placeholder="Paste YouTube video URL..." mode="single" />)} />
 }

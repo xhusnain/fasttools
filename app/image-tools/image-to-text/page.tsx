@@ -146,7 +146,6 @@ const toolConfig = createToolConfig({
     ],
 
     relatedTools: [
-      { name: "Image Background Remover", href: "/image-tools/image-background-remover" },
       { name: "Image Compressor", href: "/image-tools/image-compressor" },
       { name: "PDF to Image Converter", href: "/pdf-tools/pdf-to-image" },
       { name: "Text Case Converter", href: "/converters/text-case" }

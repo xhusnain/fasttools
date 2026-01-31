@@ -1,12 +1,11 @@
 export type SocialMediaPlatform =
-  | 'instagram'
+  | 'youtube'
   | 'tiktok'
+  | 'instagram'
   | 'facebook'
   | 'twitter'
-  | 'youtube'
   | 'capcut'
   | 'pinterest'
-
   | 'soundcloud'
   | 'threads'
   | 'douyin'
@@ -14,32 +13,66 @@ export type SocialMediaPlatform =
   | 'snackvideo'
   | 'cocofun'
   | 'gdrive';
+
 export interface DownloadRequest {
   platform: SocialMediaPlatform;
   url: string;
+  offset?: number;
+  limit?: number;
+  nextPageToken?: string;
 }
-export interface MediaItem {
+
+export interface VideoItem {
   url: string;
+  quality: string;
+  extension: string;
+  size?: number;
+  formattedSize?: string;
+  hasAudio?: boolean;
   thumbnail?: string;
-  type?: 'video' | 'image';
+  httpHeaders?: Record<string, string>;
 }
+
+export interface AudioItem {
+  url: string;
+  quality: string;
+  extension: string;
+  size?: number;
+  formattedSize?: string;
+  thumbnail?: string;
+  httpHeaders?: Record<string, string>;
+}
+
+export interface PlaylistEntry {
+  id: string;
+  title: string;
+  videos?: VideoItem[];
+  audios?: AudioItem[];
+  thumbnail?: string;
+  duration?: number | null;
+  uploader?: string;
+}
+
 export interface DownloadResult {
-  url?: string;
-  title?: string;
-  thumbnail?: string;
-  video?: string[];
-  audio?: string[];
-  music?: string;
-  [key: string]: any;
+  platform: string;
+  id: string;
+  title: string;
+  description?: string;
+  thumbnail: string;
+  duration?: number | null;
+  uploadDate?: string;
+  viewCount?: number | null;
+  uploader?: string;
+  uploaderUrl?: string;
+  videos: VideoItem[];
+  audios: AudioItem[];
+  isPlaylist?: boolean;
+  playlistEntryCount?: number;
+  entries?: DownloadResult[];
+  hasMore?: boolean;
+  nextPageToken?: string;
+  limit?: number;
+  offset?: number;
 }
-export interface DownloadResponse {
-  status: boolean;
-  result?: DownloadResult | MediaItem[];
-  // Support direct response format (for TikTok)
-  title?: string;
-  title_audio?: string;
-  thumbnail?: string;
-  video?: string[];
-  audio?: string[];
-  developer?: string;
-}
+
+export interface DownloadResponse extends DownloadResult {}

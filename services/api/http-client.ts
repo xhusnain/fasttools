@@ -30,12 +30,11 @@ const createHttpClient = (): AxiosInstance => {
         const finalUrl = config.url?.startsWith('http') 
           ? config.url 
           : `${config.baseURL || env.apiUrl || ''}${config.url || ''}`;
-        const isPythonApi = finalUrl.includes(env.pythonApiUrl) || finalUrl.includes('api-removebg') || finalUrl.includes('localhost:8000');
-        const isMainApi = finalUrl.includes(env.apiUrl) || finalUrl.includes('api.fasttools') || finalUrl.includes('localhost:3001');
+        const isMainApi = finalUrl.includes(env.apiUrl) || finalUrl.includes('api.fasttools');
         console.log(`[HTTP] ${config.method?.toUpperCase()} ${finalUrl}`, {
           hasToken: !!token,
           tokenLength: token?.length || 0,
-          backend: isPythonApi ? 'Python API (api-removebg)' : isMainApi ? 'Main API (api.fasttools)' : 'Other',
+          backend: isMainApi ? 'Main API (api.fasttools)' : 'Other',
           authHeader: config.headers?.Authorization ? 'Present' : 'Missing',
         });
       }
@@ -72,19 +71,45 @@ const createHttpClient = (): AxiosInstance => {
       } else if (error.code === "ECONNABORTED") {
         message = "Request timeout";
       } else if (error.code === "ERR_NETWORK") {
-        message = "Network error";
+        message = "Network error - Unable to connect to the server. Please check your connection.";
+        // Try to get more details from the error
+        if (error.message) {
+          message += ` (${error.message})`;
+        }
+      } else if (error.code === "ERR_CERT_AUTHORITY_INVALID" || error.code === "ERR_SSL_PROTOCOL_ERROR") {
+        message = "SSL certificate error - Please check the server configuration";
+      } else if (error.code === "ECONNREFUSED") {
+        message = "Connection refused - The server may be down or unreachable";
+      }
+
+      // Extract more detailed error message from response if available
+      let detailedMessage = message;
+      if (error.response?.data) {
+        if (typeof error.response.data === 'string') {
+          detailedMessage = error.response.data;
+        } else if (error.response.data.error || error.response.data.message) {
+          detailedMessage = error.response.data.error || error.response.data.message || message;
+        } else if (error.response.data.detail) {
+          detailedMessage = error.response.data.detail;
+        }
       }
 
       const apiError: ApiError = {
-        message,
+        message: detailedMessage,
         status,
         code: error.code,
         details: error.response?.data,
       };
 
-      if (process.env.NODE_ENV === "development") {
-        console.error("[HTTP] Error:", apiError);
-      }
+      // Always log errors in production for debugging
+      console.error("[HTTP] Error:", {
+        message: detailedMessage,
+        status,
+        code: error.code,
+        url: error.config?.url,
+        method: error.config?.method,
+        details: error.response?.data,
+      });
 
       return Promise.reject(apiError);
     }

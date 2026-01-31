@@ -6,11 +6,7 @@ import { pinterestVariants } from "../pinterest-variants";
 import dynamic from "next/dynamic";
 import { createToolConfig } from "@/lib/create-tool-config";
 
-const PinterestDownloader = dynamic(() => import("@/components/social-media/pinterest-downloader/pinterest-downloader").then(mod => mod.PinterestDownloader), {
-  loading: () => <div className="min-h-[600px] flex items-center justify-center">
-    <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-primary"></div>
-  </div>
-})
+import { UnifiedDownloader } from "@/components/social-media/unified-downloader"
 
 interface PageProps {
   params: Promise<{
@@ -87,5 +83,5 @@ export default async function PinterestVariantPage({ params }: PageProps) {
     }
   });
 
-  return <ToolPageLayout {...toolConfig.getLayoutProps(<PinterestDownloader />)} />;
+  return <ToolPageLayout {...toolConfig.getLayoutProps(<UnifiedDownloader defaultPlatform="pinterest" placeholder="https://www.pinterest.com/pin/..." />)} />;
 }

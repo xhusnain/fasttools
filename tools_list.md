@@ -58,5 +58,4 @@
 
 ## Image Tools
 - Image Compressor
-- Image Background Remover
 

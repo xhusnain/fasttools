@@ -120,7 +120,6 @@ const toolConfig = createToolConfig({
         ],
 
         relatedTools: [
-            { name: "Image Background Remover", href: "/image-tools/image-background-remover" },
             { name: "Image to Text (OCR)", href: "/image-tools/image-to-text" },
             { name: "PDF Compressor", href: "/pdf-tools/pdf-compressor" }
         ],

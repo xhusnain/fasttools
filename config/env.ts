@@ -16,9 +16,8 @@ export const env = {
   youtubeApiKey: process.env.YOUTUBE_API_KEY,
   instagramApiKey: process.env.INSTAGRAM_API_KEY,
 
-  // API Configuration
   apiUrl: process.env.NEXT_PUBLIC_API_URL || "http://localhost:3001",
-  pythonApiUrl: process.env.NEXT_PUBLIC_PYTHON_API_URL || "http://localhost:8000",
+  // apiUrl: process.env.NEXT_PUBLIC_API_URL || "https://api.fasttools.store",
 
   // Analytics
   gaId: process.env.NEXT_PUBLIC_GA_ID || "G-4G804HZ22C",

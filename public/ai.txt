@@ -213,7 +213,6 @@ Description: Free Online Token Generator. Generate secure random API keys, passw
 - https://www.fasttools.store/fun-tools/birthday-countdown
 - https://www.fasttools.store/fun-tools/future-age
 - https://www.fasttools.store/image-tools
-- https://www.fasttools.store/image-tools/image-background-remover
 - https://www.fasttools.store/image-tools/image-compressor
 - https://www.fasttools.store/image-tools/image-to-text
 - https://www.fasttools.store/pdf-tools
@@ -261,7 +260,6 @@ Description: Free Online Token Generator. Generate secure random API keys, passw
 - https://www.fasttools.store/blog/how-to-check-youtube-channel-name-availability-2025
 - https://www.fasttools.store/blog/how-to-compress-images-for-web-seo
 - https://www.fasttools.store/blog/how-to-reduce-file-size-without-losing-quality
-- https://www.fasttools.store/blog/image-background-remover-api
 - https://www.fasttools.store/blog/love-anniversary-calculator-guide
 - https://www.fasttools.store/blog/master-your-milestones-anniversary-calculator-guide
 - https://www.fasttools.store/blog/paypal-business-review-pros-cons-fees-2025-guide
@@ -280,7 +278,6 @@ Description: Free Online Token Generator. Generate secure random API keys, passw
 - https://www.fasttools.store/guides/ai-song-lyrics-generator-guide
 - https://www.fasttools.store/guides/amortization-calculator-guide
 - https://www.fasttools.store/guides/anniversary-calculator-guide
-- https://www.fasttools.store/guides/background-blur-guide
 - https://www.fasttools.store/guides/bmi-calculator-guide
 - https://www.fasttools.store/guides/bmr-calculator-guide
 - https://www.fasttools.store/guides/body-fat-calculator-guide

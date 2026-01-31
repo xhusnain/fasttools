@@ -370,14 +370,6 @@ const categories = [
     glowColor: "hover:shadow-pink-500/20",
     tools: [
       {
-        title: "Background Remover",
-        description: "Remove backgrounds automatically with AI-powered precision for product photos, profile pictures, and marketing materials with professional results",
-        href: "/image-tools/image-background-remover",
-        icon: Image,
-        badge: "AI",
-        badgeColor: "bg-purple-500/90",
-      },
-      {
         title: "Image to Text (OCR)",
         description: "Extract text from images with high-accuracy OCR technology to convert scanned documents, screenshots, and photos into editable text",
         href: "/image-tools/image-to-text",

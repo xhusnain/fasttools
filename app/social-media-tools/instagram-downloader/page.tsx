@@ -5,13 +5,7 @@ import {
   X, CheckCircle2
 } from "lucide-react"
 import { getCurrentYear } from "@/lib/utils"
-import dynamic from "next/dynamic"
-
-const InstagramDownloader = dynamic(() => import("@/components/social-media/instagram-downloader/instagram-downloader").then(mod => mod.InstagramDownloader), {
-  loading: () => <div className="min-h-[600px] flex items-center justify-center">
-    <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-primary"></div>
-  </div>
-})
+import { UnifiedDownloader } from "@/components/social-media/unified-downloader"
 
 const toolConfig = createToolConfig({
   toolName: "Instagram Downloader - Download Instagram Videos, Reels, Photos Free | No Login",
@@ -396,5 +390,5 @@ export const metadata: Metadata = {
 };
 
 export default function InstagramDownloaderPage() {
-  return <ToolPageLayout {...toolConfig.getLayoutProps(<InstagramDownloader />)} />
+  return <ToolPageLayout {...toolConfig.getLayoutProps(<UnifiedDownloader defaultPlatform="instagram" placeholder="https://www.instagram.com/p/..." />)} />
 }

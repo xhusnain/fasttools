@@ -3,13 +3,7 @@ import { ToolPageLayout } from "@/components/common/tool-page-layout"
 import Image from "next/image"
 import { createToolConfig, UnifiedToolConfig } from "@/lib/create-tool-config"
 import { Shield, Smartphone, Monitor, List, CheckCircle2 } from "lucide-react"
-import dynamic from "next/dynamic"
-
-const YoutubePlaylistDownloader = dynamic(() => import("@/components/social-media/youtube-playlist-downloader/youtube-playlist-downloader").then(mod => mod.YoutubePlaylistDownloader), {
-    loading: () => <div className="min-h-[600px] flex items-center justify-center">
-        <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-primary"></div>
-    </div>
-})
+import { UnifiedDownloader } from "@/components/social-media/unified-downloader"
 
 
 const configBody: UnifiedToolConfig = {
@@ -161,6 +155,6 @@ export const metadata: Metadata = toolConfig.metadata
 
 export default function YoutubePlaylistDownloaderPage() {
     return (
-        <ToolPageLayout {...toolConfig.getLayoutProps(<YoutubePlaylistDownloader />)} />
+        <ToolPageLayout {...toolConfig.getLayoutProps(<UnifiedDownloader defaultPlatform="youtube" placeholder="Paste YouTube playlist URL (e.g., https://www.youtube.com/playlist?list=...)" mode="playlist" />)} />
     )
 }

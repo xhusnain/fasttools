@@ -6,11 +6,7 @@ import { tiktokVariants } from "../tiktok-variants";
 import dynamic from "next/dynamic";
 import { createToolConfig } from "@/lib/create-tool-config";
 
-const TiktokDownloader = dynamic(() => import("@/components/social-media/tiktok-downloader/tiktok-downloader").then(mod => mod.TiktokDownloader), {
-  loading: () => <div className="min-h-[600px] flex items-center justify-center">
-    <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-primary"></div>
-  </div>
-})
+import { UnifiedDownloader } from "@/components/social-media/unified-downloader"
 
 interface PageProps {
   params: Promise<{
@@ -92,5 +88,5 @@ export default async function TiktokVariantPage({ params }: PageProps) {
     }
   });
 
-  return <ToolPageLayout {...toolConfig.getLayoutProps(<TiktokDownloader />)} />;
+  return <ToolPageLayout {...toolConfig.getLayoutProps(<UnifiedDownloader defaultPlatform="tiktok" placeholder="https://www.tiktok.com/@username/video/..." />)} />;
 }

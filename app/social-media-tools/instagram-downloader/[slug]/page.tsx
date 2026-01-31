@@ -7,15 +7,7 @@ import { createToolConfig } from "@/lib/create-tool-config";
 import { downloaderVariants } from "../downloader-variants";
 import { CheckCircle2, X } from "lucide-react";
 
-// Dynamic Import
-const InstagramDownloader = dynamic(
-    () => import("@/components/social-media/instagram-downloader/instagram-downloader").then(mod => mod.InstagramDownloader),
-    {
-        loading: () => <div className="min-h-[600px] flex items-center justify-center">
-            <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-primary"></div>
-        </div>
-    }
-);
+import { UnifiedDownloader } from "@/components/social-media/unified-downloader"
 
 // SSG Params
 export async function generateStaticParams() {
@@ -191,5 +183,5 @@ export default async function InstagramDownloaderVariantPage(props: Props) {
         },
     });
 
-    return <ToolPageLayout {...toolConfig.getLayoutProps(<InstagramDownloader />)} />;
+    return <ToolPageLayout {...toolConfig.getLayoutProps(<UnifiedDownloader defaultPlatform="instagram" placeholder="https://www.instagram.com/p/..." />)} />;
 }

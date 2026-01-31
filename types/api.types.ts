@@ -12,19 +12,6 @@ export interface PaginatedResponse<T> {
   hasMore: boolean;
 }
 
-export interface BgRemoverOptions {
-  image: Blob;
-  refine?: "depth" | "edge" | "none";
-  strength?: "strong" | "medium" | "weak";
-}
-
-export interface BgBlurOptions {
-  image: Blob;
-  intensity: number;
-  refine?: "depth" | "edge" | "none";
-  strength?: "strong" | "medium" | "weak";
-}
-
 export interface CurrencyList {
   [currencyCode: string]: string;
 }

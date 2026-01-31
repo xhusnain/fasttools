@@ -2,13 +2,7 @@ import type { Metadata } from "next"
 import { ToolPageLayout } from "@/components/common/tool-page-layout"
 import { createToolConfig } from "@/lib/create-tool-config"
 import { Shield, Smartphone, Monitor, Image, Video, Zap, Scale, Heart, Search, AlertTriangle, Wifi, FolderDown, Lock, Music } from "lucide-react"
-import dynamic from "next/dynamic"
-
-const PinterestDownloader = dynamic(() => import("@/components/social-media/pinterest-downloader/pinterest-downloader").then(mod => mod.PinterestDownloader), {
-    loading: () => <div className="min-h-[600px] flex items-center justify-center">
-        <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-primary"></div>
-    </div>
-})
+import { UnifiedDownloader } from "@/components/social-media/unified-downloader"
 
 const toolConfig = createToolConfig({
     toolName: "Pinterest Downloader - Save Videos, GIFs & Images (HD/4K)",
@@ -489,8 +483,7 @@ const toolConfig = createToolConfig({
             { name: "Instagram Downloader", href: "/social-media-tools/instagram-downloader" },
             { name: "TikTok Downloader", href: "/social-media-tools/tiktok-downloader" },
             { name: "YouTube Downloader", href: "/social-media-tools/youtube-downloader" },
-            { name: "Facebook Downloader", href: "/social-media-tools/facebook-downloader" },
-            { name: "Image Background Remover", href: "/image-tools/image-background-remover" }
+            { name: "Facebook Downloader", href: "/social-media-tools/facebook-downloader" }
         ]
     }
 })
@@ -498,5 +491,5 @@ const toolConfig = createToolConfig({
 export const metadata: Metadata = toolConfig.metadata
 
 export default function PinterestDownloaderPage() {
-    return <ToolPageLayout {...toolConfig.getLayoutProps(<PinterestDownloader />)} />
+    return <ToolPageLayout {...toolConfig.getLayoutProps(<UnifiedDownloader defaultPlatform="pinterest" placeholder="https://www.pinterest.com/pin/..." />)} />
 }

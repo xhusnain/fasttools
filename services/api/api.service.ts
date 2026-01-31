@@ -1,11 +1,9 @@
-
 import { CurrencyRepository } from "@/services";
 import { YouTubeRepository } from "@/services";
 import { AIRepository } from "@/services";
-import { DownloaderRepository } from "../repositories/downloader.repository";
-import type { SocialMediaPlatform } from "@/types";
-
-
+import { HttpClient } from "@/services/api/http-client";
+import { env } from "@/config/env";
+import type { SocialMediaPlatform, DownloadRequest, DownloadResponse } from "@/types";
 
 export const CurrencyService = {
   getCurrencies: async () => {
@@ -41,10 +39,6 @@ export const YouTubeService = {
   extractVideoTags: async (videoUrl: string) => {
     return YouTubeRepository.extractVideoTags(videoUrl);
   },
-
-  getInfo: async (url: string, type: 'single' | 'playlist' = 'single') => {
-    return YouTubeRepository.getInfo(url, type);
-  },
 };
 
 export const AIService = {
@@ -66,8 +60,25 @@ export const AIService = {
 };
 
 export const DownloaderService = {
-  download: async (platform: SocialMediaPlatform, url: string) => {
-    return DownloaderRepository.download(platform, url);
+  download: async (
+    platform: SocialMediaPlatform, 
+    url: string, 
+    options?: { offset?: number; limit?: number; nextPageToken?: string }
+  ): Promise<DownloadResponse> => {
+    const requestBody: DownloadRequest = { 
+      platform, 
+      url,
+      ...(options && {
+        offset: options.offset,
+        limit: options.limit,
+        nextPageToken: options.nextPageToken
+      })
+    };
+    
+    const apiUrl = `${env.apiUrl}/download`;
+    const response = await HttpClient.post<DownloadResponse>(apiUrl, requestBody, { baseURL: '' });
+
+    return response.data;
   },
 };
 
