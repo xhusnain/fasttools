@@ -299,7 +299,8 @@ const toolConfig = createToolConfig({
 
 export const metadata: Metadata = {
   ...toolConfig.metadata,
-  title: `Insta DP Viewer - Instagram Profile Picture Download 1080p & HD`,
+  title: `Insta DP Viewer & Downloader (Zoom Profile Picture) - 1080p & Private`,
+  description: `Best Insta DP Viewer to zoom and download Instagram profile pictures in full HD (1080p). Works for private accounts, 100% anonymous & free.`,
 };
 
 export default function InstagramDpPage() {
