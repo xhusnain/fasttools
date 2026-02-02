@@ -6,7 +6,7 @@ import { BreadcrumbItem, BreadcrumbsProps } from "@/types/common-types/breadcrum
 export function Breadcrumbs({ items = [] }: BreadcrumbsProps) {
   return (
     <nav aria-label="Breadcrumb" className="mb-6">
-      <ol className="flex items-center gap-2 text-sm text-muted-foreground">
+      <ol className="flex items-center flex-wrap gap-2 text-sm text-muted-foreground">
         <li>
           <Link href="/" className="hover:text-foreground transition-colors">
             Home

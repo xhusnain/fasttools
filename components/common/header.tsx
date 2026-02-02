@@ -29,7 +29,7 @@ export function Header() {
 
         {/* TOP ROW: Logo, Search, Actions */}
         <div className="border-b border-border/5">
-          <div className="container mx-auto flex items-center justify-center gap-4 h-16 px-4 lg:px-8">
+          <div className="container mx-auto flex items-center justify-between gap-4 h-16 px-4 lg:px-8">
 
             {/* Left side - Logo */}
             <div className="flex items-center shrink-0">

@@ -110,7 +110,7 @@ export function InstagramDpViewer() {
       const blob = await response.blob()
       const blobUrl = URL.createObjectURL(blob)
       const link = document.createElement('a')
-      
+
       link.href = blobUrl
       link.download = `${profileData.username}-profile-picture-${quality}.jpg`
       link.style.display = 'none'
@@ -128,13 +128,13 @@ export function InstagramDpViewer() {
   }
 
   return (
-    <div className="w-full max-w-4xl mx-auto space-y-4 sm:space-y-6">
-      <GCard className="p-4 sm:p-6 bg-gradient-to-br from-primary/20 to-primary/10 border border-primary/30 shadow-lg">
+    <div className="w-full max-w-full overflow-hidden mx-auto space-y-4 sm:space-y-6">
+      <GCard className="p-4 sm:p-6 bg-gradient-to-br from-primary/20 to-primary/10 border border-primary/30 shadow-lg max-w-full overflow-hidden">
         <div className="flex gap-3 sm:gap-4">
           <AlertCircle className="h-5 w-5 sm:h-6 sm:w-6 text-primary flex-shrink-0 mt-0.5" />
-          <div className="space-y-2">
-            <p className="text-sm sm:text-base font-medium text-foreground">Important Notice</p>
-            <p className="text-xs sm:text-sm text-muted-foreground leading-relaxed">
+          <div className="space-y-2 min-w-0 overflow-hidden">
+            <p className="text-sm sm:text-base font-medium text-foreground truncate">Important Notice</p>
+            <p className="text-xs sm:text-sm text-muted-foreground leading-relaxed break-words">
               This tool is for educational purposes only. Please respect user privacy and Instagram's terms of service.
               Only view profile pictures of public accounts.
             </p>
@@ -142,18 +142,18 @@ export function InstagramDpViewer() {
         </div>
       </GCard>
 
-      <GCard className="border-2 border-border bg-card shadow-2xl">
+      <GCard className="border-2 border-border bg-card shadow-2xl max-w-full overflow-hidden">
         <div className="p-4 sm:p-6 space-y-4 sm:space-y-6">
           <div className="text-center space-y-3 sm:space-y-4">
             <div className="flex flex-col sm:flex-row items-center justify-center gap-3 mb-4">
               <div className="h-10 w-10 sm:h-12 sm:w-12 rounded-xl bg-gradient-to-br from-primary to-primary/90 flex items-center justify-center shadow-lg">
                 <User className="h-5 w-5 sm:h-6 sm:w-6 text-primary-foreground" />
               </div>
-              <div className="text-center sm:text-left">
-                <h2 className="text-xl sm:text-2xl font-bold text-foreground">
+              <div className="text-center sm:text-left min-w-0 overflow-hidden">
+                <h2 className="text-xl sm:text-2xl font-bold text-foreground break-words">
                   Instagram DP Viewer
                 </h2>
-                <p className="text-muted-foreground text-sm sm:text-base">
+                <p className="text-muted-foreground text-sm sm:text-base break-words">
                   View and download Instagram profile pictures in HD quality
                 </p>
               </div>
@@ -168,7 +168,7 @@ export function InstagramDpViewer() {
               <GInput
                 id="username"
                 type="text"
-                placeholder="@username, username, or Instagram profile link"
+                placeholder="@username or profile link"
                 value={username}
                 onChange={(e) => setUsername(e.target.value)}
                 onKeyPress={(e) => e.key === 'Enter' && handleView()}
@@ -213,7 +213,7 @@ export function InstagramDpViewer() {
 
 
       {profileData && (
-        <GCard ref={resultRef} className="p-4 sm:p-6 bg-card border border-border shadow-lg hover:shadow-xl transition-all duration-300 animate-fade-in">
+        <GCard ref={resultRef} className="p-4 sm:p-6 bg-card border border-border shadow-lg hover:shadow-xl transition-all duration-300 animate-fade-in max-w-full overflow-hidden">
           <div className="space-y-4 sm:space-y-6">
             <h3 className="text-lg sm:text-xl font-semibold text-foreground text-center">Profile Information</h3>
 

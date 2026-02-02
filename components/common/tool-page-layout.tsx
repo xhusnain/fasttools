@@ -79,7 +79,7 @@ export function ToolPageLayout({
     } : null
 
     return (
-        <div className={`min-h-screen bg-background ${className}`}>
+        <div className={`min-h-screen bg-background overflow-x-hidden ${className}`}>
             <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
             <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(howToSchema) }} />
             {breadcrumbSchema && (
@@ -106,7 +106,7 @@ export function ToolPageLayout({
                     <div className="grid lg:grid-cols-[1fr_350px] gap-4 lg:gap-8">
 
 
-                        <div className="space-y-4 lg:space-y-6">
+                        <div className="space-y-4 lg:space-y-6 min-w-0 max-w-full overflow-hidden">
                             {toolComponent}
 
                             <section className="bg-card border border-border rounded-lg p-6">
