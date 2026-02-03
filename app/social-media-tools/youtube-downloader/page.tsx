@@ -6,34 +6,6 @@ import { UnifiedDownloader } from "@/components/social-media/unified-downloader"
 import { YouTubeToolStructuredData } from "@/components/seo/youtube-tool-structured-data"
 
 // Enhanced SEO metadata based on Google Search Console analysis
-export const metadata: Metadata = {
-  title: "FastTools YouTube Downloader - Free YouTube to MP3/MP4 Converter 2026",
-  description: "FastTools YouTube Downloader: Download YouTube videos in 4K, 1080p, 8K & convert to MP3. #1 rated YouTube downloader. Safe, fast, unlimited downloads. No software needed.",
-  keywords: ["youtube downloader", "youtube to mp3", "youtube video downloader", "free youtube downloader", "youtube converter", "youtube download", "youtube mp3 converter", "youtube 4k downloader", "youtube playlist downloader", "youtube downloader free", "youtube video download", "youtube audio converter"],
-  openGraph: {
-    title: "FastTools YouTube Downloader - #1 YouTube to MP3 Converter 2026",
-    description: "Download YouTube videos in 4K, 1080p, 8K & convert to MP3. Safe, fast, unlimited downloads. No software needed.",
-    type: "website",
-    url: "https://www.fasttools.store/social-media-tools/youtube-downloader",
-    images: [
-      {
-        url: "/images/youtube-downloader-hero.png",
-        width: 1200,
-        height: 630,
-        alt: "FastTools YouTube Downloader - Download YouTube videos in 4K, 1080p, 8K & convert to MP3",
-      },
-    ],
-  },
-  twitter: {
-    card: "summary_large_image",
-    title: "FastTools YouTube Downloader - #1 YouTube to MP3 Converter",
-    description: "Download YouTube videos in 4K, 1080p, 8K & convert to MP3. Safe, fast, unlimited downloads.",
-  },
-  alternates: {
-    canonical: "https://www.fasttools.store/social-media-tools/youtube-downloader",
-  },
-};
-
 const toolConfig = createToolConfig({
     toolName: "FastTools YouTube Downloader - Free YouTube to MP3/MP4 Converter 2026",
     description: "FastTools YouTube Downloader: Download YouTube videos in 4K, 1080p, 8K & convert to MP3. #1 rated YouTube downloader. Safe, fast, unlimited downloads. No software needed.",
@@ -263,17 +235,6 @@ const toolConfig = createToolConfig({
             { name: "YouTube Thumbnail Downloader - Free YouTube Thumbnail Extractor", href: "/social-media-tools/youtube-thumbnail" },
             { name: "TikTok Downloader - Free TikTok Video Downloader 2026", href: "/social-media-tools/tiktok-downloader" },
             { name: "Instagram Downloader - Free Instagram Video Downloader", href: "/social-media-tools/instagram-downloader" }
-        ],
-
-        additionalContent: [
-            {
-                heading: "Why Choose FastTools as Your YouTube Downloader?",
-                content: "FastTools stands out as the premier YouTube downloader in 2026. Our commitment to quality, safety, and user experience makes us the top choice for millions of users worldwide. Unlike other YouTube downloaders that compromise on quality or safety, we maintain the highest standards in both areas. As the best YouTube downloader, we continuously innovate to stay ahead of the competition. For bulk downloads, also check out our <a href='/social-media-tools/youtube-playlist-downloader' class='text-primary hover:underline'>YouTube Playlist Downloader</a>."
-            },
-            {
-                heading: "Comparing YouTube Downloaders: What Sets FastTools Apart",
-                content: "When evaluating different YouTube downloaders, several factors determine the best choice. Speed, quality, safety, and ease of use are critical. FastTools excels in all these areas, making it the best YouTube downloader for diverse needs. Our YouTube to MP3 converter functionality adds additional value, offering versatility that other YouTube downloaders lack. Learn more about <a href='/guides/best-youtube-downloaders-comparison-guide' class='text-primary hover:underline'>choosing between single video and playlist downloaders</a> in our comprehensive guide."
-            }
         ]
     }
 })
