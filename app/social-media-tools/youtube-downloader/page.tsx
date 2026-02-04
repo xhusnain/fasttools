@@ -278,7 +278,7 @@ const toolConfig = createToolConfig({
     }
 })
 
-export const metadata: Metadata = toolConfig.metadata
+
 
 export default function YoutubeDownloaderPage() {
     return (

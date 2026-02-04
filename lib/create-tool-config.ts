@@ -22,11 +22,17 @@ export interface UnifiedToolConfig {
         price?: string
         ratingValue?: string
         ratingCount?: string
-        alternateName?: string
+        reviewCount?: string
+        bestRating?: string
+        worstRating?: string
+        alternateName?: string | string[]
         featureList?: string[]
         softwareRequirements?: string
         name?: string
         version?: string
+        softwareVersion?: string
+        dateModified?: string
+        datePublished?: string
         operatingSystem?: string
         screenshot?: string
         offers?: {
@@ -36,7 +42,11 @@ export interface UnifiedToolConfig {
         }
         aggregateRating?: {
             ratingValue: string
-            ratingCount: string
+            ratingCount?: string
+            bestRating?: string
+            worstRating?: string
+            reviewCount?: string
+            "@type"?: string
         }
         itemList?: {
             name: string
@@ -77,6 +87,10 @@ export interface UnifiedToolConfig {
             name: string
             href: string
         }>
+        additionalContent?: Array<{
+            heading: string
+            content: string
+        }>
     }
 }
 
@@ -109,6 +123,7 @@ export function createToolConfig(config: UnifiedToolConfig) {
             faqs: config.content.faqs,
             relatedTools: config.content.relatedTools,
             video: config.video,
+            additionalContent: config.content.additionalContent,
         },
         expectedMetadata: {
             title: config.metaTitle || config.toolName,

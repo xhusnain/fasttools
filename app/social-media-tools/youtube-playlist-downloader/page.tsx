@@ -8,31 +8,31 @@ import { YouTubeToolStructuredData } from "@/components/seo/youtube-tool-structu
 
 // Enhanced SEO metadata based on Google Search Console analysis
 export const metadata: Metadata = {
-  title: "FastTools YouTube Playlist Downloader - #1 Free Playlist Bulk Downloader 2026",
-  description: "FastTools YouTube Playlist Downloader: Download entire YouTube playlists in bulk. Save 100+ videos to MP4 (4K/8K) or MP3. Free online batch downloader. No software required.",
-  keywords: ["youtube playlist downloader", "youtube playlist download", "download youtube playlist", "youtube bulk downloader", "youtube playlist to mp3", "free youtube playlist downloader", "youtube playlist converter", "bulk youtube downloader", "youtube playlist saver", "youtube playlist ripper"],
-  openGraph: {
     title: "FastTools YouTube Playlist Downloader - #1 Free Playlist Bulk Downloader 2026",
-    description: "Download entire YouTube playlists in bulk. Save 100+ videos to MP4 (4K/8K) or MP3. Free online batch downloader. No software required.",
-    type: "website",
-    url: "https://www.fasttools.store/social-media-tools/youtube-playlist-downloader",
-    images: [
-      {
-        url: "/images/youtube-playlist-downloader-hero.png",
-        width: 1200,
-        height: 630,
-        alt: "FastTools YouTube Playlist Downloader - Download entire YouTube playlists in bulk",
-      },
-    ],
-  },
-  twitter: {
-    card: "summary_large_image",
-    title: "FastTools YouTube Playlist Downloader - #1 Free Playlist Bulk Downloader",
-    description: "Download entire YouTube playlists in bulk. Save 100+ videos to MP4 (4K/8K) or MP3. Free online batch downloader.",
-  },
-  alternates: {
-    canonical: "https://www.fasttools.store/social-media-tools/youtube-playlist-downloader",
-  },
+    description: "FastTools YouTube Playlist Downloader: Download entire YouTube playlists in bulk. Save 100+ videos to MP4 (4K/8K) or MP3. Free online batch downloader. No software required.",
+    keywords: ["youtube playlist downloader", "youtube playlist download", "download youtube playlist", "youtube bulk downloader", "youtube playlist to mp3", "free youtube playlist downloader", "youtube playlist converter", "bulk youtube downloader", "youtube playlist saver", "youtube playlist ripper"],
+    openGraph: {
+        title: "FastTools YouTube Playlist Downloader - #1 Free Playlist Bulk Downloader 2026",
+        description: "Download entire YouTube playlists in bulk. Save 100+ videos to MP4 (4K/8K) or MP3. Free online batch downloader. No software required.",
+        type: "website",
+        url: "https://www.fasttools.store/social-media-tools/youtube-playlist-downloader",
+        images: [
+            {
+                url: "/images/youtube-playlist-downloader-hero.png",
+                width: 1200,
+                height: 630,
+                alt: "FastTools YouTube Playlist Downloader - Download entire YouTube playlists in bulk",
+            },
+        ],
+    },
+    twitter: {
+        card: "summary_large_image",
+        title: "FastTools YouTube Playlist Downloader - #1 Free Playlist Bulk Downloader",
+        description: "Download entire YouTube playlists in bulk. Save 100+ videos to MP4 (4K/8K) or MP3. Free online batch downloader.",
+    },
+    alternates: {
+        canonical: "https://www.fasttools.store/social-media-tools/youtube-playlist-downloader",
+    },
 };
 
 
@@ -227,12 +227,12 @@ const configBody: UnifiedToolConfig = {
 
 const toolConfig = createToolConfig(configBody)
 
-export const metadata: Metadata = toolConfig.metadata
+
 
 export default function YoutubePlaylistDownloaderPage() {
     return (
         <>
-            <YouTubeToolStructuredData 
+            <YouTubeToolStructuredData
                 toolType="playlist"
                 name="FastTools YouTube Playlist Downloader - #1 Free Playlist Bulk Downloader 2026"
                 description="Download entire YouTube playlists in bulk. Save 100+ videos to MP4 (4K/8K) or MP3. Free online batch downloader. No software required."

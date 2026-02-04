@@ -305,14 +305,19 @@ export interface SoftwareAppSchemaOptions {
     currency?: string
     ratingValue?: string
     ratingCount?: string
-    alternateName?: string
+    alternateName?: string | string[]
     featureList?: string[]
     version?: string
+    softwareVersion?: string
     softwareRequirements?: string
     screenshot?: string
     aggregateRating?: {
         ratingValue: string
-        ratingCount: string
+        ratingCount?: string
+        bestRating?: string
+        worstRating?: string
+        reviewCount?: string
+        "@type"?: string
     }
 }
 

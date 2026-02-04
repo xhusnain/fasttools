@@ -37,6 +37,10 @@ export interface ToolContentData {
         title?: string
         description?: string
     }
+    additionalContent?: Array<{
+        heading: string
+        content: string
+    }>
 }
 
 
