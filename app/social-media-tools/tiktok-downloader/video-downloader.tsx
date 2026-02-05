@@ -8,9 +8,9 @@ import { getCurrentYear } from "@/lib/utils"
 import { UnifiedDownloader } from "@/components/social-media/unified-downloader"
 
 const toolConfig = createToolConfig({
-  toolName: "FastTools TikTok Video Downloader - Download HD Videos Without Watermark",
+  toolName: "TikTok Video Downloader - Download HD Videos Without Watermark",
   description: "Download TikTok videos without watermark in HD quality. Fast, free, and works on all devices. No login required for TikTok video downloads.",
-  metaTitle: "TikTok Video Downloader - Download HD Videos Without Watermark | FastTools",
+  metaTitle: "TikTok Video Downloader - Download HD Videos Without Watermark",
   metaDescription: "Fastest TikTok video downloader. Download HD TikTok videos without watermark in MP4 format. Free, no login, works on iPhone, Android & PC.",
   path: "/social-media-tools/tiktok-downloader/video-downloader",
 

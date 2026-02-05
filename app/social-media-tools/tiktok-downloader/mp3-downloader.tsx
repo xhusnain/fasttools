@@ -8,9 +8,9 @@ import { getCurrentYear } from "@/lib/utils"
 import { UnifiedDownloader } from "@/components/social-media/unified-downloader"
 
 const toolConfig = createToolConfig({
-  toolName: "FastTools TikTok MP3 Downloader - Extract Audio from TikTok Videos",
+  toolName: "TikTok MP3 Downloader - Extract Audio from TikTok Videos",
   description: "Extract high-quality MP3 audio from TikTok videos instantly. Convert TikTok videos to MP3 with one click. Free, fast, and works on all devices.",
-  metaTitle: "TikTok MP3 Downloader - Convert TikTok Videos to MP3 Audio | FastTools",
+  metaTitle: "TikTok MP3 Downloader - Convert TikTok Videos to MP3 Audio",
   metaDescription: "Best TikTok MP3 downloader. Convert TikTok videos to high-quality MP3 audio instantly. Free, no login, works on iPhone, Android & PC.",
   path: "/social-media-tools/tiktok-downloader/mp3-downloader",
 

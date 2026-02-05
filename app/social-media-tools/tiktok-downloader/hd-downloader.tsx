@@ -8,9 +8,9 @@ import { getCurrentYear } from "@/lib/utils"
 import { UnifiedDownloader } from "@/components/social-media/unified-downloader"
 
 const toolConfig = createToolConfig({
-  toolName: "FastTools TikTok HD Downloader - Ultra High Definition Videos",
+  toolName: "TikTok HD Downloader - Ultra High Definition Videos",
   description: "Download TikTok videos in HD quality up to 1080p. Ultra high definition TikTok downloads. Free, fast, and works on all devices.",
-  metaTitle: "TikTok HD Downloader - Download Ultra HD 1080p Videos | FastTools",
+  metaTitle: "TikTok HD Downloader - Download Ultra HD 1080p Videos",
   metaDescription: "Best TikTok HD downloader. Download TikTok videos in ultra high definition 1080p quality instantly. Free, no login, works on iPhone, Android & PC.",
   path: "/social-media-tools/tiktok-downloader/hd-downloader",
 

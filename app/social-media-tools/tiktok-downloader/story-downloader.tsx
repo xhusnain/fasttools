@@ -8,9 +8,9 @@ import { getCurrentYear } from "@/lib/utils"
 import { UnifiedDownloader } from "@/components/social-media/unified-downloader"
 
 const toolConfig = createToolConfig({
-  toolName: "FastTools TikTok Story Downloader - Save Temporary Content Forever",
+  toolName: "TikTok Story Downloader - Save Temporary Content Forever",
   description: "Download TikTok stories and temporary content before they disappear. Save TikTok stories permanently. Free, fast, and works on all devices.",
-  metaTitle: "TikTok Story Downloader - Download Temporary Stories Forever | FastTools",
+  metaTitle: "TikTok Story Downloader - Download Temporary Stories Forever",
   metaDescription: "Best TikTok story downloader. Download TikTok stories before they disappear. Save temporary content permanently. Free, no login, works on iPhone, Android & PC.",
   path: "/social-media-tools/tiktok-downloader/story-downloader",
 
