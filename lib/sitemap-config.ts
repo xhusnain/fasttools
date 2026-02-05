@@ -317,6 +317,30 @@ const tiktokDownloaderPages = [
         changeFrequency: "daily" as const,
         priority: 0.98,
     },
+    {
+        url: "https://www.fasttools.store/social-media-tools/tiktok-downloader/video-downloader",
+        lastModified: new Date(),
+        changeFrequency: "daily" as const,
+        priority: 0.98,
+    },
+    {
+        url: "https://www.fasttools.store/social-media-tools/tiktok-downloader/no-watermark-downloader",
+        lastModified: new Date(),
+        changeFrequency: "daily" as const,
+        priority: 0.98,
+    },
+    {
+        url: "https://www.fasttools.store/social-media-tools/tiktok-downloader/story-downloader",
+        lastModified: new Date(),
+        changeFrequency: "daily" as const,
+        priority: 0.98,
+    },
+    {
+        url: "https://www.fasttools.store/social-media-tools/tiktok-downloader/hd-downloader",
+        lastModified: new Date(),
+        changeFrequency: "daily" as const,
+        priority: 0.98,
+    },
 ]
 
 const pinterestDownloaderPages = [
