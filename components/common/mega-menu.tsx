@@ -19,43 +19,28 @@ export function MegaMenu() {
     const pathname = usePathname()
 
     return (
-        <NavigationMenu className="max-w-none w-full">
-            <NavigationMenuList className="flex-nowrap gap-0 space-x-0">
+        <NavigationMenu className="max-w-none justify-start">
+            <NavigationMenuList>
                 {navigationConfig.map((section) => {
-                    // Calculate total items and determine layout
-                    const totalItems = section.categories.reduce((acc, cat) => acc + cat.items.length, 0)
-                    const isLarge = totalItems > 8
                     const numCategories = section.categories.length
-
-                    // Determine grid columns based on number of categories (responsive)
-                    const gridCols = numCategories <= 2 ? 'grid-cols-1 sm:grid-cols-2' :
-                        numCategories <= 3 ? 'grid-cols-2 lg:grid-cols-3' :
-                            'grid-cols-2 lg:grid-cols-4'
 
                     return (
                         <NavigationMenuItem key={section.title}>
-                            <NavigationMenuTrigger className="bg-transparent text-foreground/70 hover:text-foreground hover:bg-white/5 data-[state=open]:bg-white/5 data-[state=open]:text-foreground font-medium text-xs h-8 px-2">
+                            <NavigationMenuTrigger className="h-9 px-3 text-sm font-medium text-foreground/80 hover:text-foreground hover:bg-white/5 data-[state=open]:bg-white/10 data-[state=open]:text-foreground rounded-md transition-colors bg-transparent">
                                 {section.title}
                             </NavigationMenuTrigger>
                             <NavigationMenuContent>
-                                <div
-                                    className={cn(
-                                        "p-3 bg-background/95 backdrop-blur-xl border border-white/10 rounded-xl shadow-2xl",
-                                        isLarge
-                                            ? "w-[320px] sm:w-[450px] md:w-[600px] lg:w-[700px] max-h-[350px] overflow-y-auto"
-                                            : "w-[280px] sm:w-[350px] md:w-[450px]"
-                                    )}
-                                >
+                                <div className="p-5 bg-popover border border-border/50 rounded-xl shadow-2xl">
                                     <div className={cn(
-                                        "grid gap-3",
-                                        gridCols
+                                        "flex gap-8",
+                                        numCategories >= 4 && "flex-wrap max-w-[700px]"
                                     )}>
                                         {section.categories.map((category) => (
-                                            <div key={category.title} className="space-y-1.5">
-                                                <h4 className="font-semibold text-[10px] text-primary/80 tracking-wider uppercase px-1.5">
+                                            <div key={category.title} className="flex-shrink-0">
+                                                <h4 className="text-[11px] font-semibold text-primary uppercase tracking-wider mb-3 whitespace-nowrap">
                                                     {category.title}
                                                 </h4>
-                                                <ul className="space-y-0">
+                                                <ul className="space-y-1">
                                                     {category.items.map((item) => (
                                                         <ListItem
                                                             key={item.href}
@@ -75,10 +60,12 @@ export function MegaMenu() {
                     )
                 })}
 
-                {/* API Docs Link - Standalone */}
                 <NavigationMenuItem>
                     <NavigationMenuLink asChild>
-                        <Link href="/api-docs" className={cn(navigationMenuTriggerStyle(), "bg-transparent text-foreground/70 hover:text-foreground hover:bg-white/5 text-xs h-8 px-2")}>
+                        <Link
+                            href="/api-docs"
+                            className="h-9 px-3 text-sm font-medium text-foreground/80 hover:text-foreground hover:bg-white/5 rounded-md transition-colors inline-flex items-center"
+                        >
                             API Docs
                         </Link>
                     </NavigationMenuLink>
@@ -98,18 +85,20 @@ const ListItem = React.forwardRef<
                 <a
                     ref={ref}
                     className={cn(
-                        "group flex items-center gap-1.5 select-none rounded px-1.5 py-1 leading-none no-underline outline-none transition-colors hover:bg-white/5",
-                        active && "bg-white/5 text-primary",
+                        "group flex items-center gap-2 rounded-md px-2 py-1.5 text-sm leading-none no-underline outline-none transition-all whitespace-nowrap",
+                        "text-foreground/70 hover:text-foreground hover:bg-white/5",
+                        active && "bg-primary/10 text-primary font-medium",
                         className
                     )}
                     {...props}
                 >
                     {Icon && (
-                        <Icon className="h-3 w-3 text-muted-foreground group-hover:text-primary transition-colors shrink-0" />
+                        <Icon className={cn(
+                            "h-4 w-4 shrink-0",
+                            active ? "text-primary" : "text-muted-foreground group-hover:text-foreground"
+                        )} />
                     )}
-                    <span className="text-xs text-foreground/80 group-hover:text-foreground transition-colors truncate">
-                        {title}
-                    </span>
+                    <span>{title}</span>
                 </a>
             </NavigationMenuLink>
         </li>
