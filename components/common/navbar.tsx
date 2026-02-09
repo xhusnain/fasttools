@@ -99,7 +99,7 @@ export function Navbar() {
                 <NavigationMenuItem>
                     <NavigationMenuTrigger>Media</NavigationMenuTrigger>
                     <NavigationMenuContent>
-                        <ul className="grid w-[300px] gap-3 p-4">
+                        <ul className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2 lg:w-[600px]">
                             {mediaTools.map((item) => (
                                 <ListItem key={item.title} title={item.title} href={item.href}>
                                     {item.description}
@@ -112,7 +112,7 @@ export function Navbar() {
                 <NavigationMenuItem>
                     <NavigationMenuTrigger>Social</NavigationMenuTrigger>
                     <NavigationMenuContent>
-                        <ul className="grid w-[300px] gap-3 p-4">
+                        <ul className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2 lg:w-[600px]">
                             {socialTools.map((item) => (
                                 <ListItem key={item.title} title={item.title} href={item.href}>
                                     {item.description}
