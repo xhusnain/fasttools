@@ -57,6 +57,15 @@ const socialTools = [
     { title: "Hashtag Generator", href: "/social-media-tools/hashtag-counter", description: "Generate trending hashtags" },
 ]
 
+const moreTools = [
+    { title: "Converter Tools", href: "/converters", description: "Currency, Length, Timezone & more" },
+    { title: "PDF Tools", href: "/pdf-tools", description: "Merge, Split, Compress & Edit PDF" },
+    { title: "Image Tools", href: "/image-tools", description: "Compress, Resize & Convert images" },
+    { title: "ROAS Calculator", href: "/finance-tools/roas-calculator", description: "Calculate Return on Ad Spend" },
+    { title: "Christmas Font", href: "/festivals/christmas-font-converter", description: "Festive text styler" },
+    { title: "Turkey Defrost", href: "/festivals/turkey-defrost-calculator", description: "Holiday cooking helper" },
+]
+
 export function Navbar() {
     return (
         <NavigationMenu>
@@ -105,6 +114,19 @@ export function Navbar() {
                     <NavigationMenuContent>
                         <ul className="grid w-[300px] gap-3 p-4">
                             {socialTools.map((item) => (
+                                <ListItem key={item.title} title={item.title} href={item.href}>
+                                    {item.description}
+                                </ListItem>
+                            ))}
+                        </ul>
+                    </NavigationMenuContent>
+                </NavigationMenuItem>
+
+                <NavigationMenuItem>
+                    <NavigationMenuTrigger>More</NavigationMenuTrigger>
+                    <NavigationMenuContent>
+                        <ul className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2 lg:w-[600px]">
+                            {moreTools.map((item) => (
                                 <ListItem key={item.title} title={item.title} href={item.href}>
                                     {item.description}
                                 </ListItem>
