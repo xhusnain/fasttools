@@ -11,14 +11,14 @@ import { ChannelCard } from '@/components/iptv/channel-card';
 import { SquareAd } from "@/components/ads/square-ad";
 
 interface WatchPageProps {
-    params: {
+    params: Promise<{
         country: string;
         channelId: string;
-    };
+    }>;
 }
 
 export async function generateMetadata({ params }: WatchPageProps): Promise<Metadata> {
-    const { channelId } = params;
+    const { channelId, country } = await params;
     const channels = await getAllChannels();
     const channel = channels.find(c => c.id === channelId);
 
@@ -33,7 +33,7 @@ export async function generateMetadata({ params }: WatchPageProps): Promise<Meta
         description: `Stream ${channel.name} live for free. Watch ${channel.categories.join(', ')} content from ${channel.country.toUpperCase()} online.`,
         referrer: 'no-referrer',
         alternates: {
-            canonical: `/live-tv/${params.country}/watch/${channel.id}`,
+            canonical: `/live-tv/${country}/watch/${channel.id}`,
         },
         openGraph: {
             title: `Watch ${channel.name} Live`,
@@ -44,7 +44,7 @@ export async function generateMetadata({ params }: WatchPageProps): Promise<Meta
 }
 
 export default async function WatchPage({ params }: WatchPageProps) {
-    const { country, channelId } = params;
+    const { country, channelId } = await params;
     const channels = await getAllChannels();
     const channel = channels.find(c => c.id === channelId);
 

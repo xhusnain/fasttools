@@ -12,9 +12,9 @@ import { SquareAd } from "@/components/ads/square-ad";
 import { createMetadata } from '@/lib/metadata-base';
 
 interface CountryPageProps {
-    params: {
+    params: Promise<{
         country: string;
-    };
+    }>;
 }
 
 // Enable ISR - regenerate every hour
@@ -28,7 +28,7 @@ export async function generateStaticParams() {
 }
 
 export async function generateMetadata({ params }: CountryPageProps): Promise<Metadata> {
-    const { country: countryCode } = params;
+    const { country: countryCode } = await params;
     const countryData = await getCountryChannels(countryCode);
 
     if (!countryData) {
@@ -51,7 +51,7 @@ export async function generateMetadata({ params }: CountryPageProps): Promise<Me
 }
 
 export default async function CountryPage({ params }: CountryPageProps) {
-    const { country: countryCode } = params;
+    const { country: countryCode } = await params;
     const countryData = await getCountryChannels(countryCode);
 
     if (!countryData) {
