@@ -80,14 +80,6 @@ const nextConfig = {
       bufferutil: 'commonjs bufferutil',
     })
 
-    // Remove legacy JavaScript polyfills for modern browsers
-    if (!dev && !isServer) {
-      // Optimize for modern browsers - remove unnecessary polyfills
-      config.resolve.alias = {
-        ...config.resolve.alias,
-      }
-    }
-
     return config
   },
 

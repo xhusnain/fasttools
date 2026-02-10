@@ -1,11 +1,10 @@
 "use client"
 
 import type React from "react"
-import { useState, useEffect, useRef, useMemo, useCallback } from "react"
+import { useState, useEffect, useRef, useCallback } from "react"
 import { Search } from "lucide-react"
 import { useRouter } from "next/navigation"
 import Link from "next/link"
-import Fuse from "fuse.js"
 import { searchItems, type SearchItem } from "@/lib/search-data"
 
 import { SearchBarProps } from "@/types/common-types/search-bar.types"
@@ -43,11 +42,16 @@ export function SearchBar({
   const suggestionsRef = useRef<HTMLDivElement>(null)
   const debounceTimer = useRef<NodeJS.Timeout | null>(null)
   const isClickingSuggestion = useRef(false)
+  const fuseRef = useRef<any>(null)
 
-  // Create Fuse instance with pre-computed index for performance
-  const fuse = useMemo(() => {
-    const index = Fuse.createIndex(['name', 'description', 'category'], searchItems)
-    return new Fuse(searchItems, fuseOptions, index)
+  // Lazy-load Fuse.js and create index only when user first searches
+  const ensureFuse = useCallback(async () => {
+    if (!fuseRef.current) {
+      const Fuse = (await import("fuse.js")).default
+      const index = Fuse.createIndex(['name', 'description', 'category'], searchItems)
+      fuseRef.current = new Fuse(searchItems, fuseOptions, index)
+    }
+    return fuseRef.current
   }, [])
 
   useEffect(() => {
@@ -55,17 +59,18 @@ export function SearchBar({
   }, [])
 
   // Debounced search function
-  const performSearch = useCallback((searchQuery: string) => {
+  const performSearch = useCallback(async (searchQuery: string) => {
     if (searchQuery.trim().length > 0) {
+      const fuse = await ensureFuse()
       const results = fuse.search(searchQuery)
-      setFilteredSuggestions(results.map(result => result.item).slice(0, 8)) // Show max 8 suggestions
+      setFilteredSuggestions(results.map((result: any) => result.item).slice(0, 8)) // Show max 8 suggestions
       setShowSuggestions(true)
       onSearchStateChange?.(true)
     } else {
       setShowSuggestions(false)
       onSearchStateChange?.(false)
     }
-  }, [fuse, onSearchStateChange])
+  }, [ensureFuse, onSearchStateChange])
 
   useEffect(() => {
     // Clear existing timer

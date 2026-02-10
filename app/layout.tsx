@@ -9,6 +9,7 @@ import { ThemeProvider } from "@/components/common/theme-provider"
 import { env } from "@/config/env"
 import { createMetadata, globalViewport, getWebsiteSchema } from "@/lib/metadata-base"
 import { DeferredScript } from "@/components/common/deferred-script"
+import { roboto, montserrat } from "@/lib/fonts"
 
 const CookieConsent = dynamic(
     () => import("@/components/common/cookie-consent").then(mod => mod.CookieConsent)
@@ -139,11 +140,9 @@ export default function RootLayout({
     const websiteSchema = getWebsiteSchema()
 
     return (
-        <html lang="en" className="antialiased" suppressHydrationWarning>
+        <html lang="en" className={`antialiased ${roboto.variable} ${montserrat.variable}`} suppressHydrationWarning>
             <head>
                 {/* Preconnect to critical third-party origins */}
-                <link rel="preconnect" href="https://fonts.googleapis.com" crossOrigin="anonymous" />
-                <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
                 <link rel="preconnect" href="https://www.googletagmanager.com" crossOrigin="anonymous" />
                 <link rel="dns-prefetch" href="https://www.googletagmanager.com" />
                 <link rel="dns-prefetch" href="https://pagead2.googlesyndication.com" />

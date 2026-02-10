@@ -23,9 +23,10 @@ export function Header() {
 
   useEffect(() => {
     const handleScroll = () => {
-      setScrolled(window.scrollY > 20)
+      const isScrolled = window.scrollY > 20
+      setScrolled(prev => prev !== isScrolled ? isScrolled : prev)
     }
-    window.addEventListener("scroll", handleScroll)
+    window.addEventListener("scroll", handleScroll, { passive: true })
     return () => window.removeEventListener("scroll", handleScroll)
   }, [])
 
@@ -49,8 +50,10 @@ export function Header() {
               <Image
                 src="/android-chrome-192x192.png"
                 alt="FastTools Logo"
-                fill
+                width={32}
+                height={32}
                 className="object-cover"
+                priority
               />
             </div>
           </Link>
@@ -120,7 +123,8 @@ export function Header() {
                 <Image
                   src="/android-chrome-192x192.png"
                   alt="FastTools Logo"
-                  fill
+                  width={32}
+                  height={32}
                   className="object-cover"
                 />
               </div>
