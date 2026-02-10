@@ -318,7 +318,7 @@ const tiktokDownloaderPages = [
         priority: 0.98,
     },
     {
-        url: "https://www.fasttools.store/social-media-tools/tiktok-downloader/video-downloader",
+        url: "https://www.fasttools.store/social-media-tools/tiktok-downloader/story-downloader",
         lastModified: new Date(),
         changeFrequency: "daily" as const,
         priority: 0.98,
@@ -330,13 +330,19 @@ const tiktokDownloaderPages = [
         priority: 0.98,
     },
     {
-        url: "https://www.fasttools.store/social-media-tools/tiktok-downloader/story-downloader",
+        url: "https://www.fasttools.store/social-media-tools/tiktok-downloader/hd-downloader",
         lastModified: new Date(),
         changeFrequency: "daily" as const,
         priority: 0.98,
     },
     {
-        url: "https://www.fasttools.store/social-media-tools/tiktok-downloader/hd-downloader",
+        url: "https://www.fasttools.store/social-media-tools/tiktok-downloader/video-downloader",
+        lastModified: new Date(),
+        changeFrequency: "daily" as const,
+        priority: 0.98,
+    },
+    {
+        url: "https://www.fasttools.store/social-media-tools/tiktok-downloader/mp3-downloader",
         lastModified: new Date(),
         changeFrequency: "daily" as const,
         priority: 0.98,
