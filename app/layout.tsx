@@ -14,9 +14,7 @@ import { roboto, montserrat } from "@/lib/fonts"
 const CookieConsent = dynamic(
     () => import("@/components/common/cookie-consent").then(mod => mod.CookieConsent)
 )
-const WelcomePopup = dynamic(
-    () => import("@/components/common/welcome-popup").then(mod => mod.WelcomePopup)
-)
+
 
 
 
@@ -172,7 +170,7 @@ export default function RootLayout({
                     <CookieConsent />
 
 
-                    <WelcomePopup />
+
                     {env.isProduction && (
                         <DeferredScript
                             src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6296569221534302"
