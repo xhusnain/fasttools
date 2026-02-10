@@ -164,6 +164,11 @@ export function ToolPageLayout({
                                 </div>
                             </section>
 
+                            {/* In-content ad - visible on all screen sizes */}
+                            <div className="flex justify-center">
+                                <SquareAd />
+                            </div>
+
                             <section className="bg-card border border-border rounded-lg p-6">
                                 <div className="flex items-center gap-3 mb-4">
                                     <div className="p-2 bg-green-100 dark:bg-green-900/30 rounded-xl">

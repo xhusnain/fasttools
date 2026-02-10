@@ -8,6 +8,7 @@ import { CategoriesSkeleton } from "@/components/skeletons/categories-skeleton"
 import { categories } from "@/app/data/categories-data"
 
 import { createMetadata } from "@/lib/metadata-base"
+import { SquareAd } from "@/components/ads/square-ad"
 
 const HomeCategories = dynamic(() => import('@/components/common/home-categories').then(mod => ({ default: mod.HomeCategories })), {
   loading: () => <CategoriesSkeleton />
@@ -20,6 +21,7 @@ export const metadata: Metadata = createMetadata({
   path: "/",
   includeSchema: false,
 })
+
 
 
 export default function Home() {
@@ -185,7 +187,13 @@ export default function Home() {
         <HomeCategories categories={categories} />
       </div>
 
+      {/* Ad between categories and content */}
+      <div className="container mx-auto max-w-4xl px-4 py-8">
+        <SquareAd />
+      </div>
+
       <HomeRichContent />
+
     </div>
   )
 }
