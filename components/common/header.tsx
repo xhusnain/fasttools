@@ -66,29 +66,6 @@ export function Header() {
           {/* Actions */}
           <div className="flex items-center gap-3 shrink-0">
             {/* Desktop TV Link */}
-            <div className="hidden lg:block">
-              <Link
-                href="/live-tv"
-                title="Watch Free Live TV Channels"
-                className="px-4 py-2 rounded-full text-xs font-bold tracking-wide bg-gradient-to-r from-violet-600 to-indigo-600 text-white shadow-lg shadow-violet-500/25 hover:shadow-violet-500/40 hover:scale-105 transition-all duration-300 flex items-center gap-2"
-              >
-                <div className="relative flex h-2 w-2">
-                  <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-white opacity-75"></span>
-                  <span className="relative inline-flex rounded-full h-2 w-2 bg-white"></span>
-                </div>
-                LIVE TV
-              </Link>
-            </div>
-
-            {/* Mobile TV Link */}
-            <Link
-              href="/live-tv"
-              className="flex lg:hidden items-center gap-1.5 px-3 py-1.5 rounded-full bg-violet-500/10 text-violet-500 hover:bg-violet-500/20 transition-colors"
-              aria-label="Watch Live TV"
-            >
-              <span className="text-xs font-bold">TV</span>
-            </Link>
-
             <ThemeToggle />
 
             {/* Mobile Menu Toggle */}
@@ -104,7 +81,7 @@ export function Header() {
       </header>
 
       {/* Mobile Menu Overlay */}
-      < div
+      <div
         className={`lg:hidden fixed inset-0 z-40 bg-background/80 backdrop-blur-sm transition-opacity duration-300 ${mobileMenuOpen ? "opacity-100" : "opacity-0 pointer-events-none"
           }`
         }
@@ -140,17 +117,7 @@ export function Header() {
 
           <div className="flex-1 overflow-y-auto py-4 px-2">
             <div className="space-y-1 mb-6">
-              <Link
-                href="/live-tv"
-                onClick={() => setMobileMenuOpen(false)}
-                className="flex items-center gap-3 px-4 py-3 rounded-lg bg-gradient-to-r from-violet-600/10 to-indigo-600/10 text-violet-500 font-bold hover:from-violet-600/20 hover:to-indigo-600/20 transition-all border border-violet-500/20"
-              >
-                <div className="relative flex h-2 w-2">
-                  <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-violet-500 opacity-75"></span>
-                  <span className="relative inline-flex rounded-full h-2 w-2 bg-violet-500"></span>
-                </div>
-                Watch Live TV
-              </Link>
+
 
               <Link
                 href="/guides"

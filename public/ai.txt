@@ -27,7 +27,7 @@ Allow: /contact
 Allow: /privacy-policy
 Allow: /terms
 Allow: /cookie-preferences
-Allow: /live-tv
+
 Allow: /my-info
 Allow: /festivals/
 
@@ -99,9 +99,7 @@ Description: Download Pinterest videos and images in HD quality for free. Save p
 URL: https://www.fasttools.store/social-media-tools/soundcloud-downloader
 Description: Download SoundCloud songs to MP3 in high quality (320kbps). The best online SoundCloud Downloader. Free, fast, and safe.
 
-## Live TV Streaming
-URL: https://www.fasttools.store/live-tv
-Description: Stream 200+ live TV channels from countries worldwide. Watch free IPTV including news, sports, entertainment, and more. No registration required.
+
 
 ## Text Similarity Checker
 URL: https://www.fasttools.store/seo-tools/text-similarity-checker

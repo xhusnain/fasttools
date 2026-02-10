@@ -87,12 +87,12 @@ Secure cryptographic tools for keys, tokens & passwords. All tools run 100% clie
 - https://www.fasttools.store/crypto-tools/token-generator - Free Online Token Generator. Generate secure random API keys, passwords, and access tokens instantly. Customizable length, characters, and formats. Uses CSPRNG for cryptographic security. No data storage.
 - https://www.fasttools.store/crypto-tools/hash-text - Free Online Hash Text Generator. Generate secure MD5, SHA1, SHA256, SHA512 hashes instantly. Client-side processing for maximum privacy. Support for Hex and Base64 output formats.
 
-### Live TV & Utilities
-https://www.fasttools.store/live-tv
-Watch free live TV channels from around the world and check your digital footprint.
+### Utilities
+
+Check your digital footprint.
 
 **Featured Tools:**
-- https://www.fasttools.store/live-tv - Stream 200+ live TV channels from mostly all countries worldwide. No registration required.
+
 - https://www.fasttools.store/my-info - Instant analysis of your connection, location, and local environment.
 
 ## Usage Policy

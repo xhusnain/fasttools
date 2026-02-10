@@ -13,7 +13,7 @@ export const searchItems: SearchItem[] = [
   { name: "API Docs", description: "Comprehensive API documentation for developers", path: "/api-docs", category: "Pages" },
   { name: "About Us", description: "Learn about FastTools and our mission", path: "/about", category: "Pages" },
   { name: "My Info", description: "View your digital footprint, IP address, and location information", path: "/my-info", category: "Pages" },
-  { name: "Live TV", description: "Watch free live TV channels from around the world", path: "/live-tv", category: "Pages" },
+
   { name: "FAQ", description: "Frequently asked questions about FastTools", path: "/faq", category: "Pages" },
   { name: "Privacy Policy", description: "Read our privacy policy and data handling practices", path: "/privacy-policy", category: "Pages" },
   { name: "Terms of Service", description: "Terms and conditions for using FastTools", path: "/terms", category: "Pages" },
