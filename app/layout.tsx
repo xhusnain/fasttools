@@ -142,28 +142,9 @@ export default function RootLayout({
     return (
         <html lang="en" className={`antialiased ${roboto.variable} ${montserrat.variable}`} suppressHydrationWarning>
             <head>
-                {/* Preconnect to critical third-party origins */}
-                <link rel="preconnect" href="https://www.googletagmanager.com" crossOrigin="anonymous" />
-                <link rel="dns-prefetch" href="https://www.googletagmanager.com" />
                 <link rel="dns-prefetch" href="https://pagead2.googlesyndication.com" />
-                <link rel="dns-prefetch" href="https://www.google-analytics.com" />
-                <Script id="google-tag-manager" strategy="afterInteractive">
-                    {`(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-                    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-                    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-                    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-                    })(window,document,'script','dataLayer','GTM-P75QGKJ9');`}
-                </Script>
             </head>
             <body className="bg-background font-sans text-foreground">
-                <noscript>
-                    <iframe
-                        src="https://www.googletagmanager.com/ns.html?id=GTM-P75QGKJ9"
-                        height="0"
-                        width="0"
-                        style={{ display: "none", visibility: "hidden" }}
-                    />
-                </noscript>
                 <script
                     type="application/ld+json"
                     dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationSchema) }}
