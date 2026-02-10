@@ -208,6 +208,13 @@ export function Header() {
                 Blog
               </Link>
               <Link
+                href="/products"
+                onClick={() => setMobileMenuOpen(false)}
+                className="block px-4 py-2.5 rounded-lg hover:bg-primary/5 text-sm font-medium text-foreground/80 hover:text-primary transition-colors"
+              >
+                All Categories
+              </Link>
+              <Link
                 href="/contact"
                 onClick={() => setMobileMenuOpen(false)}
                 className="block px-4 py-2.5 rounded-lg hover:bg-primary/5 text-sm font-medium text-foreground/80 hover:text-primary transition-colors"

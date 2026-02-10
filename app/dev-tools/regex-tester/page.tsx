@@ -218,7 +218,6 @@ const toolConfig = createToolConfig({
     ],
 
     relatedTools: [
-      { name: "Ruby Regex Test", href: "/dev-tools/ruby-regex-test" },
       { name: "JWT Decoder", href: "/dev-tools/jwt-decoder" },
       { name: "JSON to CSV", href: "/dev-tools/json-to-csv" },
       { name: "Markdown Previewer", href: "/dev-tools/markdown-previewer" },

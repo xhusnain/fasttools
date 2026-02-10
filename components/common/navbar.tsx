@@ -12,127 +12,61 @@ import {
     NavigationMenuTrigger,
     navigationMenuTriggerStyle,
 } from "@/components/utilities/navigation-menu"
-import {
-    Calculator,
-    DollarSign,
-    Sparkles,
-    Image,
-    BarChart,
-    Video,
-    Gift,
-    Code,
-    FileText,
-    BookOpen,
-} from "lucide-react"
-
-const calculators = [
-    { title: "BMI Calculator", href: "/calculator/bmi-calculator", description: "Calculate your Body Mass Index" },
-    { title: "Age Calculator", href: "/calculator/age-calculator", description: "Find exact age between two dates" },
-    { title: "Percentage Calculator", href: "/calculator/percentage-calculator", description: "Easy percentage calculations" },
-    { title: "Scientific Calculator", href: "/calculator/scientific-calculator", description: "Advanced math operations" },
-    { title: "GPA Calculator", href: "/calculator/gpa-calculator", description: "Calculate your grade point average" },
-    { title: "Love Calculator", href: "/calculator/love-calculator", description: "Fun love compatibility test" },
-]
-
-const financeTools = [
-    { title: "Loan Calculator", href: "/finance-tools/loan-calculator", description: "Calculate loan payments" },
-    { title: "Mortgage Calculator", href: "/finance-tools/mortgage-calculator", description: "Plan your mortgage" },
-    { title: "Investment Calculator", href: "/finance-tools/investment-calculator", description: "Track investments" },
-    { title: "Compound Interest", href: "/finance-tools/compound-interest", description: "Calculate compound interest" },
-    { title: "Tip Calculator", href: "/finance-tools/tip-calculator", description: "Split bills easily" },
-    { title: "ROAS Calculator", href: "/finance-tools/roas-calculator", description: "Return on ad spend" },
-]
-
-const mediaTools = [
-    { title: "Image Compressor", href: "/image-tools/image-compressor", description: "Compress images online" },
-    { title: "PDF to Word", href: "/pdf-tools/pdf-word-converter", description: "Convert PDF to Word" },
-    { title: "Image to Text", href: "/image-tools/image-to-text", description: "Extract text from images" },
-    { title: "PDF Compressor", href: "/pdf-tools/pdf-compressor", description: "Reduce PDF file size" },
-]
-
-const socialTools = [
-    { title: "TikTok Downloader", href: "/social-media-tools/tiktok-downloader", description: "Download TikTok videos" },
-    { title: "Instagram Downloader", href: "/social-media-tools/instagram-downloader", description: "Save Instagram content" },
-    { title: "YouTube Tags", href: "/social-media-tools/youtube-tags", description: "Extract YouTube tags" },
-    { title: "Hashtag Generator", href: "/social-media-tools/hashtag-counter", description: "Generate trending hashtags" },
-]
-
-const moreTools = [
-    { title: "Converter Tools", href: "/converters", description: "Currency, Length, Timezone & more" },
-    { title: "PDF Tools", href: "/pdf-tools", description: "Merge, Split, Compress & Edit PDF" },
-    { title: "Image Tools", href: "/image-tools", description: "Compress, Resize & Convert images" },
-    { title: "ROAS Calculator", href: "/finance-tools/roas-calculator", description: "Calculate Return on Ad Spend" },
-    { title: "Christmas Font", href: "/festivals/christmas-font-converter", description: "Festive text styler" },
-    { title: "Turkey Defrost", href: "/festivals/turkey-defrost-calculator", description: "Holiday cooking helper" },
-]
+import { navigationConfig } from "@/data/navigation"
+import { LucideIcon } from "lucide-react"
 
 export function Navbar() {
     return (
         <NavigationMenu>
             <NavigationMenuList>
-                <NavigationMenuItem>
-                    <NavigationMenuTrigger>Tools</NavigationMenuTrigger>
-                    <NavigationMenuContent>
-                        <ul className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2 lg:w-[600px]">
-                            {calculators.map((item) => (
-                                <ListItem key={item.title} title={item.title} href={item.href}>
-                                    {item.description}
-                                </ListItem>
-                            ))}
-                        </ul>
-                    </NavigationMenuContent>
-                </NavigationMenuItem>
-
-                <NavigationMenuItem>
-                    <NavigationMenuTrigger>Finance</NavigationMenuTrigger>
-                    <NavigationMenuContent>
-                        <ul className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2 lg:w-[600px]">
-                            {financeTools.map((item) => (
-                                <ListItem key={item.title} title={item.title} href={item.href}>
-                                    {item.description}
-                                </ListItem>
-                            ))}
-                        </ul>
-                    </NavigationMenuContent>
-                </NavigationMenuItem>
-
-                <NavigationMenuItem>
-                    <NavigationMenuTrigger>Media</NavigationMenuTrigger>
-                    <NavigationMenuContent>
-                        <ul className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2 lg:w-[600px]">
-                            {mediaTools.map((item) => (
-                                <ListItem key={item.title} title={item.title} href={item.href}>
-                                    {item.description}
-                                </ListItem>
-                            ))}
-                        </ul>
-                    </NavigationMenuContent>
-                </NavigationMenuItem>
-
-                <NavigationMenuItem>
-                    <NavigationMenuTrigger>Social</NavigationMenuTrigger>
-                    <NavigationMenuContent>
-                        <ul className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2 lg:w-[600px]">
-                            {socialTools.map((item) => (
-                                <ListItem key={item.title} title={item.title} href={item.href}>
-                                    {item.description}
-                                </ListItem>
-                            ))}
-                        </ul>
-                    </NavigationMenuContent>
-                </NavigationMenuItem>
+                {navigationConfig.slice(0, 5).map((section) => (
+                    <NavigationMenuItem key={section.title}>
+                        <NavigationMenuTrigger>{section.title}</NavigationMenuTrigger>
+                        <NavigationMenuContent>
+                            <ul className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2 lg:w-[600px] max-h-[80vh] overflow-y-auto">
+                                {section.categories.flatMap((category) =>
+                                    category.items.map((item) => (
+                                        <ListItem
+                                            key={item.href}
+                                            title={item.title}
+                                            href={item.href}
+                                            icon={item.icon}
+                                        >
+                                            {item.description}
+                                        </ListItem>
+                                    ))
+                                )}
+                            </ul>
+                        </NavigationMenuContent>
+                    </NavigationMenuItem>
+                ))}
 
                 <NavigationMenuItem>
                     <NavigationMenuTrigger>More</NavigationMenuTrigger>
                     <NavigationMenuContent>
                         <ul className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2 lg:w-[600px]">
-                            {moreTools.map((item) => (
-                                <ListItem key={item.title} title={item.title} href={item.href}>
-                                    {item.description}
-                                </ListItem>
-                            ))}
+                            {navigationConfig.find(s => s.title === "More")?.categories.flatMap((category) =>
+                                category.items.map((item) => (
+                                    <ListItem
+                                        key={item.href}
+                                        title={item.title}
+                                        href={item.href}
+                                        icon={item.icon}
+                                    >
+                                        {item.description}
+                                    </ListItem>
+                                ))
+                            )}
                         </ul>
                     </NavigationMenuContent>
+                </NavigationMenuItem>
+
+                <NavigationMenuItem>
+                    <NavigationMenuLink asChild>
+                        <Link href="/products" className={navigationMenuTriggerStyle()}>
+                            All Categories
+                        </Link>
+                    </NavigationMenuLink>
                 </NavigationMenuItem>
 
                 <NavigationMenuItem>
@@ -157,8 +91,8 @@ export function Navbar() {
 
 const ListItem = React.forwardRef<
     React.ElementRef<"a">,
-    React.ComponentPropsWithoutRef<"a"> & { title: string; href: string }
->(({ className, title, children, href, ...props }, ref) => {
+    React.ComponentPropsWithoutRef<"a"> & { title: string; href: string; icon?: LucideIcon }
+>(({ className, title, children, href, icon: Icon, ...props }, ref) => {
     return (
         <li>
             <NavigationMenuLink asChild>
@@ -171,10 +105,15 @@ const ListItem = React.forwardRef<
                     )}
                     {...props}
                 >
-                    <div className="text-sm font-medium leading-none">{title}</div>
-                    <p className="line-clamp-2 text-sm leading-snug text-muted-foreground">
-                        {children}
-                    </p>
+                    <div className="flex items-center gap-2">
+                        {Icon && <Icon className="h-4 w-4 opacity-70" />}
+                        <div className="text-sm font-medium leading-none">{title}</div>
+                    </div>
+                    {children && (
+                        <p className="line-clamp-2 text-sm leading-snug text-muted-foreground mt-1">
+                            {children}
+                        </p>
+                    )}
                 </Link>
             </NavigationMenuLink>
         </li>
