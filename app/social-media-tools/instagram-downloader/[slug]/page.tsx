@@ -4,7 +4,7 @@ import dynamic from "next/dynamic";
 import { notFound } from "next/navigation";
 import { ToolPageLayout } from "@/components/common/tool-page-layout";
 import { createToolConfig } from "@/lib/create-tool-config";
-import { downloaderVariants } from "../downloader-variants";
+import { downloaderVariants } from "../instagram-variants";
 import { CheckCircle2, X } from "lucide-react";
 
 import { UnifiedDownloader } from "@/components/social-media/unified-downloader"
@@ -85,38 +85,38 @@ export default async function InstagramDownloaderVariantPage(props: Props) {
                     <div className="my-8 overflow-x-auto rounded-lg border border-border">
                         <table className="w-full text-sm text-left border-collapse">
                             <thead className="text-xs uppercase bg-muted/50 text-muted-foreground">
-                            <tr>
-                                <th className="px-6 py-3 border-b border-border">Feature</th>
-                                <th className="px-6 py-3 border-b border-border text-primary font-bold">FastTools</th>
-                                <th className="px-6 py-3 border-b border-border">SaveFrom</th>
-                                <th className="px-6 py-3 border-b border-border">SnapInsta</th>
-                            </tr>
+                                <tr>
+                                    <th className="px-6 py-3 border-b border-border">Feature</th>
+                                    <th className="px-6 py-3 border-b border-border text-primary font-bold">FastTools</th>
+                                    <th className="px-6 py-3 border-b border-border">SaveFrom</th>
+                                    <th className="px-6 py-3 border-b border-border">SnapInsta</th>
+                                </tr>
                             </thead>
                             <tbody className="divide-y divide-border">
-                            <tr className="bg-background">
-                                <td className="px-6 py-4 font-medium border-r border-border">Speed</td>
-                                <td className="px-6 py-4 text-green-500 font-bold border-r border-border">&lt; 2s (Direct CDN)</td>
-                                <td className="px-6 py-4 border-r border-border">3-5s</td>
-                                <td className="px-6 py-4">3-5s</td>
-                            </tr>
-                            <tr className="bg-background">
-                                <td className="px-6 py-4 font-medium border-r border-border">Quality</td>
-                                <td className="px-6 py-4 text-green-500 font-bold border-r border-border">Original 1080p</td>
-                                <td className="px-6 py-4 border-r border-border">Compressed</td>
-                                <td className="px-6 py-4">Original</td>
-                            </tr>
-                            <tr className="bg-background">
-                                <td className="px-6 py-4 font-medium border-r border-border">Ads</td>
-                                <td className="px-6 py-4 text-green-500 font-bold border-r border-border">Zero Popups</td>
-                                <td className="px-6 py-4 text-red-500 border-r border-border">High</td>
-                                <td className="px-6 py-4 text-red-500">High</td>
-                            </tr>
-                            <tr className="bg-background">
-                                <td className="px-6 py-4 font-medium border-r border-border">Audio</td>
-                                <td className="px-6 py-4 text-green-500 font-bold border-r border-border">Preserved</td>
-                                <td className="px-6 py-4 border-r border-border">Sometimes Muted</td>
-                                <td className="px-6 py-4">Preserved</td>
-                            </tr>
+                                <tr className="bg-background">
+                                    <td className="px-6 py-4 font-medium border-r border-border">Speed</td>
+                                    <td className="px-6 py-4 text-green-500 font-bold border-r border-border">&lt; 2s (Direct CDN)</td>
+                                    <td className="px-6 py-4 border-r border-border">3-5s</td>
+                                    <td className="px-6 py-4">3-5s</td>
+                                </tr>
+                                <tr className="bg-background">
+                                    <td className="px-6 py-4 font-medium border-r border-border">Quality</td>
+                                    <td className="px-6 py-4 text-green-500 font-bold border-r border-border">Original 1080p</td>
+                                    <td className="px-6 py-4 border-r border-border">Compressed</td>
+                                    <td className="px-6 py-4">Original</td>
+                                </tr>
+                                <tr className="bg-background">
+                                    <td className="px-6 py-4 font-medium border-r border-border">Ads</td>
+                                    <td className="px-6 py-4 text-green-500 font-bold border-r border-border">Zero Popups</td>
+                                    <td className="px-6 py-4 text-red-500 border-r border-border">High</td>
+                                    <td className="px-6 py-4 text-red-500">High</td>
+                                </tr>
+                                <tr className="bg-background">
+                                    <td className="px-6 py-4 font-medium border-r border-border">Audio</td>
+                                    <td className="px-6 py-4 text-green-500 font-bold border-r border-border">Preserved</td>
+                                    <td className="px-6 py-4 border-r border-border">Sometimes Muted</td>
+                                    <td className="px-6 py-4">Preserved</td>
+                                </tr>
                             </tbody>
                         </table>
                     </div>

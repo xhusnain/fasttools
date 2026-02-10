@@ -296,6 +296,24 @@ const instagramDownloaderPages = [
         changeFrequency: "daily" as const,
         priority: 0.98,
     },
+    {
+        url: "https://www.fasttools.store/social-media-tools/instagram-downloader/app",
+        lastModified: new Date(),
+        changeFrequency: "daily" as const,
+        priority: 0.98,
+    },
+    {
+        url: "https://www.fasttools.store/social-media-tools/instagram-downloader/save",
+        lastModified: new Date(),
+        changeFrequency: "daily" as const,
+        priority: 0.98,
+    },
+    {
+        url: "https://www.fasttools.store/social-media-tools/instagram-downloader/4k",
+        lastModified: new Date(),
+        changeFrequency: "daily" as const,
+        priority: 0.98,
+    },
 ]
 
 const tiktokDownloaderPages = [
@@ -343,6 +361,30 @@ const tiktokDownloaderPages = [
     },
     {
         url: "https://www.fasttools.store/social-media-tools/tiktok-downloader/mp3-downloader",
+        lastModified: new Date(),
+        changeFrequency: "daily" as const,
+        priority: 0.98,
+    },
+    {
+        url: "https://www.fasttools.store/social-media-tools/tiktok-downloader/app",
+        lastModified: new Date(),
+        changeFrequency: "daily" as const,
+        priority: 0.98,
+    },
+    {
+        url: "https://www.fasttools.store/social-media-tools/tiktok-downloader/remove-watermark",
+        lastModified: new Date(),
+        changeFrequency: "daily" as const,
+        priority: 0.98,
+    },
+    {
+        url: "https://www.fasttools.store/social-media-tools/tiktok-downloader/save",
+        lastModified: new Date(),
+        changeFrequency: "daily" as const,
+        priority: 0.98,
+    },
+    {
+        url: "https://www.fasttools.store/social-media-tools/tiktok-downloader/1080p",
         lastModified: new Date(),
         changeFrequency: "daily" as const,
         priority: 0.98,

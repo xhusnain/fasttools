@@ -8,10 +8,10 @@ import { getCurrentYear } from "@/lib/utils"
 import { UnifiedDownloader } from "@/components/social-media/unified-downloader"
 
 const toolConfig = createToolConfig({
-  toolName: "Instagram Downloader - Download Instagram Videos, Reels, Photos Free | No Login",
-  description: "Free Instagram downloader to download Instagram videos, reels, photos, and posts in HD quality. Download Instagram videos without watermark, download Instagram reels with audio, download Instagram photos in high quality. Works on iPhone, Android, PC. No login required, unlimited downloads.",
-  metaTitle: "Instagram Downloader - Download Instagram Videos, Reels, Photos Free | No Login",
-  metaDescription: "Free Instagram downloader to download Instagram videos, reels, photos, and posts in HD. Download Instagram videos without watermark, download Instagram reels, download Instagram photos. Works on iPhone, Android, PC. No login, unlimited free downloads.",
+  toolName: "Instagram Video Downloader - Download Video, Reels, Story & Photo",
+  description: "The best Instagram video downloader to save videos, Reels, stories, and photos. Download from Instagram anonymously in MP4/HD quality. Free, fast, and works on iPhone/Android.",
+  metaTitle: "Instagram Video Downloader - Download Instagram Video, Reels, Story & Photo",
+  metaDescription: "Download Instagram videos, Reels, Stories, and Photos in 1080p HD. Save from Instagram anonymously without login. The best free Instagram downloader for iPhone, Android, and PC.",
   path: "/social-media-tools/instagram-downloader",
 
   header: {
@@ -28,66 +28,68 @@ const toolConfig = createToolConfig({
 
   schemaOptions: {
     applicationCategory: "MultimediaApplication",
+    operatingSystem: "Android, iOS, Windows, macOS, Linux",
     price: "0",
     ratingValue: "4.9",
-    ratingCount: "25000",
-    alternateName: "Instagram Saver, Insta Downloader, IG Reel Downloader",
+    ratingCount: "50000",
+    alternateName: ["Insta Saver", "IG Downloader", "Instagram Reel Downloader", "Instagram Story Saver", "SaveInsta", "Igram"],
     featureList: [
-      "Reels Download",
-      "Photo Download",
-      "Carousel Support",
-      "1080p Quality",
-      "Anonymous Downloading"
+      "Reels Download with Audio",
+      "HD Video (1080p) Support",
+      "Story Saver (Anonymous)",
+      "Carousel/Album Download",
+      "Photo Downloader (Original Quality)",
+      "No Watermark"
     ],
     softwareRequirements: "Modern Web Browser (Chrome, Safari, Edge, Firefox)"
   },
 
-    content: {
+  content: {
     overview: (
-        <div className="space-y-6">
-            <p className="text-lg text-muted-foreground leading-relaxed">
-                An <strong>Instagram Downloader</strong> is a specialized online utility that allows users to save Videos, Reels, Photos, and Carousels from Instagram directly to their device. While Instagram does not provide a native "Download" button to keep users on the app, FastTools bridges this gap by extracting the high-quality media file directly from Instagram's CDN servers. This allows you to save content for offline viewing, repurposing, or archiving without watermarks or quality loss.
-            </p>
+      <div className="space-y-6">
+        <p className="text-lg text-muted-foreground leading-relaxed">
+          The **Instagram Video Downloader** by FastTools is a versatile online utility trusted by millions for saving content from Instagram. Whether you want to download a funny **Reel**, an inspiring **Video**, a friend's **Story**, or a high-quality **Photo**, our tool processes it all in seconds. Unlike other downloaders that require account logins or intrusive software installations, FastTools works directly in your browser. It connects to Instagram's CDN to provide **Original Quality (1080p/4K)** downloads without watermarks. Perfect for creators, social media managers, and anyone who wants to keep their favorite moments offline.
+        </p>
 
-            <div className="my-8 overflow-x-auto rounded-lg border border-border">
-                <table className="w-full text-sm text-left border-collapse">
-                    <thead className="text-xs uppercase bg-muted/50 text-muted-foreground">
-                    <tr>
-                        <th className="px-6 py-3 border-b border-border">Feature</th>
-                        <th className="px-6 py-3 border-b border-border text-primary font-bold">FastTools</th>
-                        <th className="px-6 py-3 border-b border-border">SaveFrom</th>
-                        <th className="px-6 py-3 border-b border-border">SnapInsta</th>
-                    </tr>
-                    </thead>
-                    <tbody className="divide-y divide-border">
-                    <tr className="bg-background">
-                        <td className="px-6 py-4 font-medium border-r border-border">Speed</td>
-                        <td className="px-6 py-4 text-green-500 font-bold border-r border-border">&lt; 2s (Direct CDN)</td>
-                        <td className="px-6 py-4 border-r border-border">3-5s</td>
-                        <td className="px-6 py-4">3-5s</td>
-                    </tr>
-                    <tr className="bg-background">
-                        <td className="px-6 py-4 font-medium border-r border-border">Quality</td>
-                        <td className="px-6 py-4 text-green-500 font-bold border-r border-border">Original 1080p</td>
-                        <td className="px-6 py-4 border-r border-border">Compressed</td>
-                        <td className="px-6 py-4">Original</td>
-                    </tr>
-                    <tr className="bg-background">
-                        <td className="px-6 py-4 font-medium border-r border-border">Ads</td>
-                        <td className="px-6 py-4 text-green-500 font-bold border-r border-border">Zero Popups</td>
-                        <td className="px-6 py-4 text-red-500 border-r border-border">High</td>
-                        <td className="px-6 py-4 text-red-500">High</td>
-                    </tr>
-                    <tr className="bg-background">
-                        <td className="px-6 py-4 font-medium border-r border-border">Audio</td>
-                        <td className="px-6 py-4 text-green-500 font-bold border-r border-border">Preserved</td>
-                        <td className="px-6 py-4 border-r border-border">Sometimes Muted</td>
-                        <td className="px-6 py-4">Preserved</td>
-                    </tr>
-                    </tbody>
-                </table>
-            </div>
+        <div className="my-8 overflow-x-auto rounded-lg border border-border">
+          <table className="w-full text-sm text-left border-collapse">
+            <thead className="text-xs uppercase bg-muted/50 text-muted-foreground">
+              <tr>
+                <th className="px-6 py-3 border-b border-border">Feature</th>
+                <th className="px-6 py-3 border-b border-border text-primary font-bold">FastTools</th>
+                <th className="px-6 py-3 border-b border-border">SaveFrom</th>
+                <th className="px-6 py-3 border-b border-border">SnapInsta</th>
+              </tr>
+            </thead>
+            <tbody className="divide-y divide-border">
+              <tr className="bg-background">
+                <td className="px-6 py-4 font-medium border-r border-border">Speed</td>
+                <td className="px-6 py-4 text-green-500 font-bold border-r border-border">&lt; 2s (Direct CDN)</td>
+                <td className="px-6 py-4 border-r border-border">3-5s</td>
+                <td className="px-6 py-4">3-5s</td>
+              </tr>
+              <tr className="bg-background">
+                <td className="px-6 py-4 font-medium border-r border-border">Quality</td>
+                <td className="px-6 py-4 text-green-500 font-bold border-r border-border">Original 1080p</td>
+                <td className="px-6 py-4 border-r border-border">Compressed</td>
+                <td className="px-6 py-4">Original</td>
+              </tr>
+              <tr className="bg-background">
+                <td className="px-6 py-4 font-medium border-r border-border">Ads</td>
+                <td className="px-6 py-4 text-green-500 font-bold border-r border-border">Zero Popups</td>
+                <td className="px-6 py-4 text-red-500 border-r border-border">High</td>
+                <td className="px-6 py-4 text-red-500">High</td>
+              </tr>
+              <tr className="bg-background">
+                <td className="px-6 py-4 font-medium border-r border-border">Audio</td>
+                <td className="px-6 py-4 text-green-500 font-bold border-r border-border">Preserved</td>
+                <td className="px-6 py-4 border-r border-border">Sometimes Muted</td>
+                <td className="px-6 py-4">Preserved</td>
+              </tr>
+            </tbody>
+          </table>
         </div>
+      </div>
     ),
 
     howToSteps: [
@@ -117,6 +119,9 @@ const toolConfig = createToolConfig({
       { name: "Audio/MP3 Downloader", href: "/social-media-tools/instagram-downloader/audio-downloader" },
       { name: "Story Saver", href: "/social-media-tools/instagram-downloader/story-saver" },
       { name: "Carousel Downloader", href: "/social-media-tools/instagram-downloader/carousel-downloader" },
+      { name: "Download App", href: "/social-media-tools/instagram-downloader/app" },
+      { name: "Save From Instagram", href: "/social-media-tools/instagram-downloader/save" },
+      { name: "4K Downloader", href: "/social-media-tools/instagram-downloader/4k" },
       { name: "Instagram DP Viewer", href: "/social-media-tools/instagram-dp" },
       { name: "TikTok Downloader", href: "/social-media-tools/tiktok-downloader" },
     ],
