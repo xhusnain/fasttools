@@ -3,9 +3,16 @@ import { ToolPageLayout } from "@/components/common/tool-page-layout"
 import { createToolConfig } from "@/lib/create-tool-config"
 import { GToolCard } from "@/ui/gtool-card"
 
-import { Type, Ruler, HardDrive, DollarSign, Globe, Thermometer } from "lucide-react"
+import { Type, Ruler, HardDrive, DollarSign, Globe, Thermometer, Binary } from "lucide-react"
 
 const converters = [
+  {
+    title: "Integer Base Converter",
+    description: "Convert numbers between binary, octal, decimal, hexadecimal, and bases 2–64.",
+    icon: Binary,
+    href: "/converters/integer-base",
+    color: "violet"
+  },
   {
     title: "Text Case Converter",
     description: "Convert text between uppercase, lowercase, title case, sentence case, camelCase, and snake_case.",

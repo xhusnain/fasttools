@@ -19,6 +19,7 @@ export interface UnifiedToolConfig {
     heroImage?: string
     schemaOptions?: {
         applicationCategory?: string
+        description?: string
         price?: string
         ratingValue?: string
         ratingCount?: string

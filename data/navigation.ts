@@ -1,4 +1,5 @@
 import {
+    Binary,
     Calculator,
     Camera,
     Code,
@@ -109,6 +110,7 @@ export const navigationConfig: MegaMenuSection[] = [
             {
                 title: "Converters",
                 items: [
+                    { title: "Integer Base Converter", href: "/converters/integer-base", icon: Binary },
                     { title: "Currency Converter", href: "/converters/currency", icon: DollarSign },
                     { title: "Length Converter", href: "/converters/length", icon: Ruler },
                     { title: "Temperature", href: "/converters/temperature", icon: Thermometer },

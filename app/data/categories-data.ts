@@ -1,4 +1,5 @@
 import {
+    Binary,
     Calculator,
     Sparkles,
     Palette,
@@ -419,6 +420,14 @@ export const categories = [
         iconColor: "text-emerald-700",
         glowColor: "hover:shadow-emerald-500/20",
         tools: [
+            {
+                title: "Integer Base Converter",
+                description: "Convert numbers between binary, octal, decimal, hex, and bases 2–64",
+                href: "/converters/integer-base",
+                icon: Binary,
+                badge: "Dev",
+                badgeColor: "bg-purple-500/90",
+            },
             {
                 title: "Currency Converter",
                 description: "Real-time currency conversion for 150+ currencies with live rates",

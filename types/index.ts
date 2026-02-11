@@ -39,6 +39,7 @@ export * from "./common-types/search-bar.types";
 export * from "./converter-types/conversion-calculator.types";
 export * from "./converter-types/currency-converter.types";
 export * from "./converter-types/format-converter.types";
+export * from "./converter-types/integer-base-converter.types";
 
 export * from "./social-media-types/youtube-channel-checker.types";
 export * from "./social-media-types/youtube-handle-checker.types";

@@ -65,6 +65,7 @@ export const searchItems: SearchItem[] = [
 
   // Converter Tools
   { name: "Currency Converter", description: "Real-time currency conversion for 150+ world currencies", path: "/converters/currency", category: "Converter" },
+  { name: "Integer Base Converter", description: "Convert numbers between binary, octal, decimal, hex, and bases 2–64", path: "/converters/integer-base", category: "Converter" },
   { name: "Text Case Converter", description: "Transform text between uppercase, lowercase, title case, camelCase", path: "/converters/text-case", category: "Converter" },
   { name: "Length Converter", description: "Convert between all major length units", path: "/converters/length", category: "Converter" },
   { name: "Temperature Converter", description: "Convert between Celsius, Fahrenheit, Kelvin, and Rankine", path: "/converters/temperature", category: "Converter" },
