@@ -192,6 +192,7 @@ Context: FastTools provides free, fast, and accurate online tools that work on a
 - https://www.fasttools.store/dev-tools/html-to-markdown
 - https://www.fasttools.store/dev-tools/json-to-csv
 - https://www.fasttools.store/dev-tools/jwt-decoder
+- https://www.fasttools.store/dev-tools/base64-encoder - Free Base64 encode decode online. String to Base64, Base64 to image, Base64 to PDF. Decode to file, decode to hex.
 - https://www.fasttools.store/dev-tools/markdown-previewer
 - https://www.fasttools.store/dev-tools/regex-tester
 - https://www.fasttools.store/dev-tools/sql-to-json

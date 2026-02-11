@@ -189,6 +189,14 @@ export const categories = [
                 badgeColor: "bg-red-600",
             },
             {
+                title: "Base64 Encoder Decoder",
+                description: "Encode and decode strings to Base64. URL-safe mode and file support",
+                href: "/dev-tools/base64-encoder",
+                icon: Binary,
+                badge: "Encoding",
+                badgeColor: "bg-green-600",
+            },
+            {
                 title: "Regex Tester",
                 description: "Test regular expressions with live results and instant pattern matching",
                 href: "/dev-tools/regex-tester",

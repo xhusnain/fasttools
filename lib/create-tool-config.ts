@@ -105,6 +105,7 @@ export function createToolConfig(config: UnifiedToolConfig) {
         howToSteps: config.content.howToSteps || [],
         video: config.video,
         schemaOptions: config.schemaOptions,
+        ...(config.keywords && { keywords: config.keywords }),
     })
 
     const getLayoutProps = (toolComponent: React.ReactNode): ToolPageLayoutProps => ({

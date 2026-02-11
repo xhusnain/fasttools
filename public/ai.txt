@@ -176,6 +176,7 @@ Description: Free Online Token Generator. Generate secure random API keys, passw
 - https://www.fasttools.store/dev-tools/html-to-markdown
 - https://www.fasttools.store/dev-tools/json-to-csv
 - https://www.fasttools.store/dev-tools/jwt-decoder
+- https://www.fasttools.store/dev-tools/base64-encoder
 - https://www.fasttools.store/dev-tools/markdown-previewer
 - https://www.fasttools.store/dev-tools/regex-tester
 - https://www.fasttools.store/dev-tools/sql-to-json

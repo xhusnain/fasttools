@@ -93,6 +93,7 @@ export const searchItems: SearchItem[] = [
   { name: "JSON to CSV Converter", description: "Convert JSON data to CSV format", path: "/dev-tools/json-to-csv", category: "Developer" },
   { name: "SQL to JSON Converter", description: "Convert SQL INSERT statements to JSON format", path: "/dev-tools/sql-to-json", category: "Developer" },
   { name: "JWT Decoder", description: "Decode and inspect JSON Web Tokens securely", path: "/dev-tools/jwt-decoder", category: "Developer" },
+  { name: "Base64 Encoder Decoder", description: "Encode and decode strings to Base64. URL-safe mode and file support", path: "/dev-tools/base64-encoder", category: "Developer" },
   { name: "Regex Tester", description: "Test regular expressions with live results", path: "/dev-tools/regex-tester", category: "Developer" },
   { name: "HTML Beautifier", description: "Format and beautify HTML code", path: "/dev-tools/html-beautifier", category: "Developer" },
   { name: "HTML to Markdown", description: "Convert HTML content to Markdown format", path: "/dev-tools/html-to-markdown", category: "Developer" },

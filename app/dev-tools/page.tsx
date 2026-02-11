@@ -3,7 +3,7 @@ import { ToolPageLayout } from "@/components/common/tool-page-layout"
 import { createToolConfig } from "@/lib/create-tool-config"
 import { GToolCard } from "@/ui/gtool-card"
 
-import { Code2, FileJson, Palette, Hash, FileCode, Braces, Database, Sparkles } from "lucide-react"
+import { Code2, FileJson, Palette, Hash, FileCode, Braces, Database, Sparkles, Binary } from "lucide-react"
 
 const devTools = [
   {
@@ -11,6 +11,13 @@ const devTools = [
     description: "Decode and inspect JWT tokens safely in your browser. Perfect for API development and authentication debugging.",
     href: "/dev-tools/jwt-decoder",
     icon: Code2,
+    popular: true,
+  },
+  {
+    title: "Base64 Encoder Decoder",
+    description: "Encode and decode strings to Base64. URL-safe mode, file support. Perfect for data URIs and JWT debugging.",
+    href: "/dev-tools/base64-encoder",
+    icon: Binary,
     popular: true,
   },
   {

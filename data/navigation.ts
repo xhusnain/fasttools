@@ -125,6 +125,7 @@ export const navigationConfig: MegaMenuSection[] = [
                     { title: "JSON to CSV", href: "/dev-tools/json-to-csv", icon: FileText },
                     { title: "Regex Tester", href: "/dev-tools/regex-tester", icon: Code },
                     { title: "JWT Decoder", href: "/dev-tools/jwt-decoder", icon: Lock },
+                    { title: "Base64 Encoder", href: "/dev-tools/base64-encoder", icon: Binary },
                     { title: "Color Palette", href: "/dev-tools/color-palette", icon: Palette },
                     { title: "Markdown Preview", href: "/dev-tools/markdown-previewer", icon: Eye },
                     { title: "HTML Beautifier", href: "/dev-tools/html-beautifier", icon: Code },
