@@ -1,5 +1,6 @@
 import {
     Binary,
+    BookOpen,
     Calculator,
     Camera,
     Code,
@@ -66,7 +67,6 @@ import {
     Shield,
     Fingerprint,
     RefreshCw,
-    BookOpen,
     Mail,
     Users,
     Home,
@@ -111,6 +111,7 @@ export const navigationConfig: MegaMenuSection[] = [
                 title: "Converters",
                 items: [
                     { title: "Integer Base Converter", href: "/converters/integer-base", icon: Binary },
+                    { title: "Roman Numeral Converter", href: "/converters/roman-numeral", icon: BookOpen },
                     { title: "Currency Converter", href: "/converters/currency", icon: DollarSign },
                     { title: "Length Converter", href: "/converters/length", icon: Ruler },
                     { title: "Temperature", href: "/converters/temperature", icon: Thermometer },

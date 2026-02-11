@@ -3,9 +3,16 @@ import { ToolPageLayout } from "@/components/common/tool-page-layout"
 import { createToolConfig } from "@/lib/create-tool-config"
 import { GToolCard } from "@/ui/gtool-card"
 
-import { Type, Ruler, HardDrive, DollarSign, Globe, Thermometer, Binary } from "lucide-react"
+import { Type, Ruler, HardDrive, DollarSign, Globe, Thermometer, Binary, BookOpen } from "lucide-react"
 
 const converters = [
+  {
+    title: "Roman Numeral Converter",
+    description: "Convert numbers to Roman numerals and back. Supports 1–3,999,999 with vinculum.",
+    icon: BookOpen,
+    href: "/converters/roman-numeral",
+    color: "amber"
+  },
   {
     title: "Integer Base Converter",
     description: "Convert numbers between binary, octal, decimal, hexadecimal, and bases 2–64.",

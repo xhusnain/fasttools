@@ -928,6 +928,12 @@ export const toolPages = [
         priority: 0.9,
     },
     {
+        url: "https://www.fasttools.store/converters/roman-numeral",
+        lastModified: new Date(),
+        changeFrequency: "monthly" as const,
+        priority: 0.9,
+    },
+    {
         url: "https://www.fasttools.store/converters/timezone",
         lastModified: new Date('2025-11-25'),
         changeFrequency: "monthly" as const,
