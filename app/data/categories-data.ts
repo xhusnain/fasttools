@@ -433,7 +433,7 @@ export const categories = [
         tools: [
             {
                 title: "YAML to JSON Converter",
-                description: "Convert YAML to JSON and JSON to YAML. Online live converter. Free.",
+                description: "YAML to JSON converter free. Swagger, OpenAPI YAML to JSON. Convert for Postman. Free.",
                 href: "/converters/yaml-json",
                 icon: FileCode,
                 badge: "Dev",

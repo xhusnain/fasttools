@@ -68,7 +68,7 @@ Convert between different formats and units including currency, length, temperat
 - https://www.fasttools.store/converters/nato-phonetic - Text to NATO alphabet converter online. NATO alphabet decoder, NATO translator to English. Military alphabet translator. NATO alphabet numbers. Free.
 - https://www.fasttools.store/converters/ascii-binary - Text to ASCII binary converter online. Binary to text. ASCII to binary table, text to binary table. Binary alphabet. Free.
 - https://www.fasttools.store/converters/unicode - Convert text to Unicode and Unicode to text. Parse text to Unicode code points and decode. Free.
-- https://www.fasttools.store/converters/yaml-json - YAML to JSON converter. Convert YAML to JSON and JSON to YAML. Online live converter. Free.
+- https://www.fasttools.store/converters/yaml-json - YAML to JSON converter free. Swagger YAML to JSON, OpenAPI YAML to JSON. Convert for Postman. YAML to JSON schema. Free.
 
 ### Image Tools
 https://www.fasttools.store/image-tools
@@ -192,7 +192,7 @@ Context: FastTools provides free, fast, and accurate online tools that work on a
 - https://www.fasttools.store/converters/nato-phonetic - Text to NATO alphabet converter online. NATO alphabet decoder, NATO translator to English. Military alphabet translator. Free.
 - https://www.fasttools.store/converters/ascii-binary - Text to ASCII binary converter online. Binary to text. ASCII to binary table. Free.
 - https://www.fasttools.store/converters/unicode - Text to Unicode and Unicode to text converter. Free.
-- https://www.fasttools.store/converters/yaml-json - YAML to JSON converter. Free.
+- https://www.fasttools.store/converters/yaml-json - YAML to JSON converter free. Swagger, OpenAPI YAML to JSON. Convert for Postman. Free.
 - https://www.fasttools.store/crypto-tools
 - https://www.fasttools.store/crypto-tools/hash-text
 - https://www.fasttools.store/crypto-tools/token-generator

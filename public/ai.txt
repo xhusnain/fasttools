@@ -143,7 +143,7 @@ Description: Free text to Unicode converter. Convert text to Unicode code points
 
 ## YAML to JSON Converter
 URL: https://www.fasttools.store/converters/yaml-json
-Description: Free YAML to JSON converter. Simply convert YAML to JSON with this online live converter. JSON to YAML supported. No signup.
+Description: Free YAML to JSON converter. Swagger YAML to JSON, OpenAPI YAML to JSON. Convert YAML to JSON for Postman, Notepad++. YAML to JSON schema. JSON formatter. No signup.
 
 
 # Complete Index
