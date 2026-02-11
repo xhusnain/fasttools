@@ -14,6 +14,13 @@ const converters = [
     color: "green"
   },
   {
+    title: "JSON to YAML Converter",
+    description: "Convert JSON to YAML and YAML to JSON. Swagger, OpenAPI. For Python, VSCode. Free.",
+    icon: FileCode,
+    href: "/converters/json-yaml",
+    color: "blue"
+  },
+  {
     title: "YAML to JSON Converter",
     description: "Convert YAML to JSON and JSON to YAML. Online live converter. Free.",
     icon: FileCode,

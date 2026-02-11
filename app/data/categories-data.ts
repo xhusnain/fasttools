@@ -440,6 +440,14 @@ export const categories = [
                 badgeColor: "bg-purple-500/90",
             },
             {
+                title: "JSON to YAML Converter",
+                description: "Convert JSON to YAML and YAML to JSON. Swagger, OpenAPI. For Python, VSCode. Free.",
+                href: "/converters/json-yaml",
+                icon: FileCode,
+                badge: "Dev",
+                badgeColor: "bg-purple-500/90",
+            },
+            {
                 title: "YAML to JSON Converter",
                 description: "YAML to JSON converter free. Swagger, OpenAPI YAML to JSON. Convert for Postman. Free.",
                 href: "/converters/yaml-json",

@@ -145,6 +145,10 @@ Description: Free text to Unicode converter. Convert text to Unicode code points
 URL: https://www.fasttools.store/converters/yaml-toml
 Description: Free YAML to TOML converter online. Ansible convert YAML to TOML. TOML formatter, format TOML online. YAML vs TOML example. No signup.
 
+## JSON to YAML Converter
+URL: https://www.fasttools.store/converters/json-yaml
+Description: Free JSON to YAML converter online. Swagger, OpenAPI JSON to YAML. For Python, VSCode, CLI. JSON to YAML schema. No signup.
+
 ## YAML to JSON Converter
 URL: https://www.fasttools.store/converters/yaml-json
 Description: Free YAML to JSON converter. Swagger YAML to JSON, OpenAPI YAML to JSON. Convert YAML to JSON for Postman, Notepad++. YAML to JSON schema. JSON formatter. No signup.
@@ -193,6 +197,7 @@ Description: Free YAML to JSON converter. Swagger YAML to JSON, OpenAPI YAML to 
 - https://www.fasttools.store/converters/ascii-binary
 - https://www.fasttools.store/converters/unicode
 - https://www.fasttools.store/converters/yaml-json
+- https://www.fasttools.store/converters/json-yaml
 - https://www.fasttools.store/converters/yaml-toml
 - https://www.fasttools.store/crypto-tools
 - https://www.fasttools.store/crypto-tools/hash-text

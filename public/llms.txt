@@ -69,6 +69,7 @@ Convert between different formats and units including currency, length, temperat
 - https://www.fasttools.store/converters/ascii-binary - Text to ASCII binary converter online. Binary to text. ASCII to binary table, text to binary table. Binary alphabet. Free.
 - https://www.fasttools.store/converters/unicode - Convert text to Unicode and Unicode to text. Parse text to Unicode code points and decode. Free.
 - https://www.fasttools.store/converters/yaml-json - YAML to JSON converter free. Swagger YAML to JSON, OpenAPI YAML to JSON. Convert for Postman. YAML to JSON schema. Free.
+- https://www.fasttools.store/converters/json-yaml - JSON to YAML converter online. Swagger, OpenAPI JSON to YAML. For Python, VSCode, CLI. JSON to YAML schema. Free.
 - https://www.fasttools.store/converters/yaml-toml - YAML to TOML online. Ansible convert YAML to TOML. TOML formatter, format TOML online. Free.
 
 ### Image Tools
@@ -194,6 +195,7 @@ Context: FastTools provides free, fast, and accurate online tools that work on a
 - https://www.fasttools.store/converters/ascii-binary - Text to ASCII binary converter online. Binary to text. ASCII to binary table. Free.
 - https://www.fasttools.store/converters/unicode - Text to Unicode and Unicode to text converter. Free.
 - https://www.fasttools.store/converters/yaml-json - YAML to JSON converter free. Swagger, OpenAPI YAML to JSON. Convert for Postman. Free.
+- https://www.fasttools.store/converters/json-yaml - JSON to YAML converter online. Swagger, OpenAPI. For Python, VSCode. Free.
 - https://www.fasttools.store/converters/yaml-toml - YAML to TOML online. Ansible convert YAML to TOML. TOML formatter. Free.
 - https://www.fasttools.store/crypto-tools
 - https://www.fasttools.store/crypto-tools/hash-text
