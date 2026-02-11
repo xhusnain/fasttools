@@ -14,6 +14,13 @@ const converters = [
     color: "blue"
   },
   {
+    title: "TOML to YAML Converter",
+    description: "Convert TOML to YAML and YAML to TOML. Hugo, Alacritty. Free.",
+    icon: FileCode,
+    href: "/converters/toml-yaml",
+    color: "green"
+  },
+  {
     title: "TOML to JSON Converter",
     description: "Convert TOML to JSON and JSON to TOML. toml2json CLI alternative. Python, npm. Free.",
     icon: FileCode,
