@@ -161,6 +161,10 @@ Description: Free TOML to YAML converter online. Hugo, Alacritty. YAML vs TOML. 
 URL: https://www.fasttools.store/converters/xml-json
 Description: Free XML to JSON converter online. xml to json python, npm, nodejs, java. XML to JSON viewer. JSON to XML. No signup.
 
+## JSON to XML Converter
+URL: https://www.fasttools.store/converters/json-xml
+Description: Free JSON to XML converter online. json to xml formatter, python, java, npm, c#. XML to JSON. No signup.
+
 ## YAML to TOML
 URL: https://www.fasttools.store/converters/yaml-toml
 Description: Free YAML to TOML converter online. Ansible convert YAML to TOML. TOML formatter, format TOML online. YAML vs TOML example. No signup.
@@ -223,6 +227,7 @@ Description: Free YAML to JSON converter. Swagger YAML to JSON, OpenAPI YAML to 
 - https://www.fasttools.store/converters/toml-json
 - https://www.fasttools.store/converters/toml-yaml
 - https://www.fasttools.store/converters/xml-json
+- https://www.fasttools.store/converters/json-xml
 - https://www.fasttools.store/converters/yaml-toml
 - https://www.fasttools.store/crypto-tools
 - https://www.fasttools.store/crypto-tools/hash-text

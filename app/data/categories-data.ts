@@ -440,6 +440,14 @@ export const categories = [
                 badgeColor: "bg-blue-500/90",
             },
             {
+                title: "JSON to XML Converter",
+                description: "JSON to XML converter online. Formatter, Python, Java, npm. Free.",
+                href: "/converters/json-xml",
+                icon: FileCode,
+                badge: "Dev",
+                badgeColor: "bg-purple-500/90",
+            },
+            {
                 title: "XML to JSON Converter",
                 description: "XML to JSON converter online. Python, npm, Node.js. Free.",
                 href: "/converters/xml-json",

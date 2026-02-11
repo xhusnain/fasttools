@@ -68,6 +68,7 @@ export const searchItems: SearchItem[] = [
   { name: "Integer Base Converter", description: "Convert numbers between binary, octal, decimal, hex, and bases 2–64", path: "/converters/integer-base", category: "Converter" },
   { name: "Roman Numeral Converter", description: "Convert numbers to Roman numerals and back, 1–3,999,999", path: "/converters/roman-numeral", category: "Converter" },
   { name: "Base64 File Converter", description: "Free base64 file converter online. Base64 to PDF, image, excel, xml, docx, zip. File to base64 with preview.", path: "/converters/base64-file", category: "Converter" },
+  { name: "JSON to XML Converter", description: "JSON to XML converter online. Formatter, Python, Java, npm. XML to JSON. Free.", path: "/converters/json-xml", category: "Converter" },
   { name: "XML to JSON Converter", description: "XML to JSON converter online. Python, npm, Node.js. JSON to XML. Free.", path: "/converters/xml-json", category: "Converter" },
   { name: "TOML to YAML Converter", description: "TOML to YAML converter online. Hugo, Alacritty. YAML vs TOML. Free.", path: "/converters/toml-yaml", category: "Converter" },
   { name: "TOML to JSON Converter", description: "TOML to JSON converter online. toml2json CLI alternative. Python, npm. Free.", path: "/converters/toml-json", category: "Converter" },
