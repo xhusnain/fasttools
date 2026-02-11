@@ -74,6 +74,7 @@ Convert between different formats and units including currency, length, temperat
 - https://www.fasttools.store/converters/list-converter - List converter online. Text to list, comma separated list. Convert column to comma, list to columns. Free.
 - https://www.fasttools.store/converters/toml-json - TOML to JSON converter online. toml2json CLI alternative. Python, npm. Free.
 - https://www.fasttools.store/converters/toml-yaml - TOML to YAML converter online. Hugo, Alacritty. YAML vs TOML. Free.
+- https://www.fasttools.store/converters/xml-json - XML to JSON converter online. Python, npm, Node.js. JSON to XML. Free.
 
 ### Image Tools
 https://www.fasttools.store/image-tools
@@ -204,6 +205,7 @@ Context: FastTools provides free, fast, and accurate online tools that work on a
 - https://www.fasttools.store/converters/list-converter - List converter online. Text to list, comma separated list. Convert column to comma, list to columns. Free.
 - https://www.fasttools.store/converters/toml-json - TOML to JSON converter online. toml2json CLI alternative. Python, npm. Free.
 - https://www.fasttools.store/converters/toml-yaml - TOML to YAML converter online. Hugo, Alacritty. YAML vs TOML. Free.
+- https://www.fasttools.store/converters/xml-json - XML to JSON converter online. Python, npm, Node.js. JSON to XML. Free.
 - https://www.fasttools.store/crypto-tools
 - https://www.fasttools.store/crypto-tools/hash-text
 - https://www.fasttools.store/crypto-tools/token-generator

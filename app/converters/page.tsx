@@ -14,6 +14,13 @@ const converters = [
     color: "blue"
   },
   {
+    title: "XML to JSON Converter",
+    description: "Convert XML to JSON and JSON to XML. Python, npm, Node.js. Free.",
+    icon: FileCode,
+    href: "/converters/xml-json",
+    color: "blue"
+  },
+  {
     title: "TOML to YAML Converter",
     description: "Convert TOML to YAML and YAML to TOML. Hugo, Alacritty. Free.",
     icon: FileCode,

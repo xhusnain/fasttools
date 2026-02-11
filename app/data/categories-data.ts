@@ -440,6 +440,14 @@ export const categories = [
                 badgeColor: "bg-blue-500/90",
             },
             {
+                title: "XML to JSON Converter",
+                description: "XML to JSON converter online. Python, npm, Node.js. Free.",
+                href: "/converters/xml-json",
+                icon: FileCode,
+                badge: "Dev",
+                badgeColor: "bg-purple-500/90",
+            },
+            {
                 title: "TOML to YAML Converter",
                 description: "TOML to YAML converter online. Hugo, Alacritty. Free.",
                 href: "/converters/toml-yaml",
