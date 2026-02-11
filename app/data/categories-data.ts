@@ -432,6 +432,14 @@ export const categories = [
         glowColor: "hover:shadow-emerald-500/20",
         tools: [
             {
+                title: "List Converter",
+                description: "Text to list, comma separated list. Convert column to comma, list to columns. Free.",
+                href: "/converters/list-converter",
+                icon: Type,
+                badge: "Text",
+                badgeColor: "bg-blue-500/90",
+            },
+            {
                 title: "JSON to TOML Converter",
                 description: "JSON to TOML converter online. json2toml npm alternative. Python, CLI. Free.",
                 href: "/converters/json-toml",

@@ -982,6 +982,12 @@ export const toolPages = [
         priority: 0.9,
     },
     {
+        url: "https://www.fasttools.store/converters/list-converter",
+        lastModified: new Date(),
+        changeFrequency: "monthly" as const,
+        priority: 0.9,
+    },
+    {
         url: "https://www.fasttools.store/converters/yaml-toml",
         lastModified: new Date(),
         changeFrequency: "monthly" as const,

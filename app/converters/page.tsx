@@ -7,6 +7,13 @@ import { Type, Ruler, HardDrive, DollarSign, Globe, Thermometer, Binary, BookOpe
 
 const converters = [
   {
+    title: "List Converter",
+    description: "Text to list, comma separated list. Convert column to comma, list to columns. Sort, trim, dedupe. Free.",
+    icon: Type,
+    href: "/converters/list-converter",
+    color: "blue"
+  },
+  {
     title: "JSON to TOML Converter",
     description: "Convert JSON to TOML and TOML to JSON. json2toml npm alternative. Python, CLI. Free.",
     icon: FileCode,
