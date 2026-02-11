@@ -14,6 +14,13 @@ const converters = [
     color: "blue"
   },
   {
+    title: "TOML to JSON Converter",
+    description: "Convert TOML to JSON and JSON to TOML. toml2json CLI alternative. Python, npm. Free.",
+    icon: FileCode,
+    href: "/converters/toml-json",
+    color: "violet"
+  },
+  {
     title: "JSON to TOML Converter",
     description: "Convert JSON to TOML and TOML to JSON. json2toml npm alternative. Python, CLI. Free.",
     icon: FileCode,

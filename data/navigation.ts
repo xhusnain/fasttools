@@ -113,6 +113,7 @@ export const navigationConfig: MegaMenuSection[] = [
                 title: "Converters",
                 items: [
                     { title: "List Converter", href: "/converters/list-converter", icon: Type },
+                    { title: "TOML to JSON Converter", href: "/converters/toml-json", icon: FileCode },
                     { title: "JSON to TOML Converter", href: "/converters/json-toml", icon: FileCode },
                     { title: "YAML to TOML", href: "/converters/yaml-toml", icon: FileCode },
                     { title: "JSON to YAML Converter", href: "/converters/json-yaml", icon: FileCode },

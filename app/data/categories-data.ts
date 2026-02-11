@@ -440,6 +440,14 @@ export const categories = [
                 badgeColor: "bg-blue-500/90",
             },
             {
+                title: "TOML to JSON Converter",
+                description: "TOML to JSON converter online. toml2json CLI alternative. Python, npm. Free.",
+                href: "/converters/toml-json",
+                icon: FileCode,
+                badge: "Dev",
+                badgeColor: "bg-purple-500/90",
+            },
+            {
                 title: "JSON to TOML Converter",
                 description: "JSON to TOML converter online. json2toml npm alternative. Python, CLI. Free.",
                 href: "/converters/json-toml",

@@ -149,6 +149,10 @@ Description: Free JSON to TOML converter online. json2toml npm alternative. Pyth
 URL: https://www.fasttools.store/converters/list-converter
 Description: Free list converter online. Text to list converter, comma separated list converter. Convert comma separated list to column in Excel, list to columns. Array to list. No signup.
 
+## TOML to JSON Converter
+URL: https://www.fasttools.store/converters/toml-json
+Description: Free TOML to JSON converter online. toml2json CLI alternative. Python, npm. JSON to TOML. pyproject.toml, Cargo.toml. No signup.
+
 ## YAML to TOML
 URL: https://www.fasttools.store/converters/yaml-toml
 Description: Free YAML to TOML converter online. Ansible convert YAML to TOML. TOML formatter, format TOML online. YAML vs TOML example. No signup.
@@ -208,6 +212,7 @@ Description: Free YAML to JSON converter. Swagger YAML to JSON, OpenAPI YAML to 
 - https://www.fasttools.store/converters/json-yaml
 - https://www.fasttools.store/converters/json-toml
 - https://www.fasttools.store/converters/list-converter
+- https://www.fasttools.store/converters/toml-json
 - https://www.fasttools.store/converters/yaml-toml
 - https://www.fasttools.store/crypto-tools
 - https://www.fasttools.store/crypto-tools/hash-text
