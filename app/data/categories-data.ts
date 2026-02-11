@@ -431,6 +431,14 @@ export const categories = [
         glowColor: "hover:shadow-emerald-500/20",
         tools: [
             {
+                title: "Text to ASCII Binary",
+                description: "Text to ASCII binary converter online. Binary to text. ASCII to binary table, binary alphabet. Free.",
+                href: "/converters/ascii-binary",
+                icon: Binary,
+                badge: "Dev",
+                badgeColor: "bg-purple-500/90",
+            },
+            {
                 title: "Text to NATO Alphabet",
                 description: "Text to NATO alphabet converter online. NATO decoder, military alphabet translator. Free.",
                 href: "/converters/nato-phonetic",

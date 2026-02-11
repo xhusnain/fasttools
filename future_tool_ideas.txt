@@ -18,7 +18,7 @@
 
 ### Developer
 - Cloudflare Workers Cost Calculator: Specific to developers using edge computing.
-- AI Token to Word Converter: Great for developers/writers using LLMs.
+- [DONE] AI Token to Word Converter: Great for developers/writers using LLMs.
 - LLM Training Cost Estimator: For startups estimating GPU hours.
 
 ### Health & Biohacking

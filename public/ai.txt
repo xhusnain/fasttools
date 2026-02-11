@@ -133,6 +133,10 @@ Description: Free base64 file converter online. Base64 to PDF, base64 to image, 
 URL: https://www.fasttools.store/converters/nato-phonetic
 Description: Free text to NATO alphabet converter online. NATO alphabet decoder, NATO translator to English. Military alphabet translator. Text to NATO generator. NATO alphabet numbers A-Z. Converts text to Alpha Bravo Charlie and decodes NATO back to text. No signup.
 
+## Text to ASCII Binary
+URL: https://www.fasttools.store/converters/ascii-binary
+Description: Free text to ASCII binary converter online. Binary to text. ASCII to binary table, text to binary table. Binary alphabet. Binary to ASCII 128. Converts text to 8-bit binary and decodes binary to text. No signup.
+
 
 # Complete Index
 
@@ -174,6 +178,7 @@ Description: Free text to NATO alphabet converter online. NATO alphabet decoder,
 - https://www.fasttools.store/converters/timezone
 - https://www.fasttools.store/converters/base64-file
 - https://www.fasttools.store/converters/nato-phonetic
+- https://www.fasttools.store/converters/ascii-binary
 - https://www.fasttools.store/crypto-tools
 - https://www.fasttools.store/crypto-tools/hash-text
 - https://www.fasttools.store/crypto-tools/token-generator

@@ -7,6 +7,13 @@ import { Type, Ruler, HardDrive, DollarSign, Globe, Thermometer, Binary, BookOpe
 
 const converters = [
   {
+    title: "Text to ASCII Binary",
+    description: "Convert text to ASCII binary and binary to text. Encode text to binary, decode binary to text. Free.",
+    icon: Binary,
+    href: "/converters/ascii-binary",
+    color: "violet"
+  },
+  {
     title: "Text to NATO Alphabet",
     description: "Convert text to NATO phonetic alphabet (Alpha Bravo Charlie). NATO to text reverse. Free converter.",
     icon: Radio,

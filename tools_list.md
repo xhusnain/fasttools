@@ -35,6 +35,7 @@
 - Link in Bio Generator
 
 ## AI Tools
+- AI Token to Word Converter
 - Caption Generator
 - Lyrics Generator
 - QR Code Generator

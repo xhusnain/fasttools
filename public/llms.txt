@@ -66,6 +66,7 @@ Convert between different formats and units including currency, length, temperat
 **Featured Tools:**
 - https://www.fasttools.store/converters/base64-file - Free base64 file converter online. Base64 to PDF, base64 to image, base64 encode & decode. File to base64 online with preview. Base64 to excel, xml, docx, zip. Download decoded files. No signup.
 - https://www.fasttools.store/converters/nato-phonetic - Text to NATO alphabet converter online. NATO alphabet decoder, NATO translator to English. Military alphabet translator. NATO alphabet numbers. Free.
+- https://www.fasttools.store/converters/ascii-binary - Text to ASCII binary converter online. Binary to text. ASCII to binary table, text to binary table. Binary alphabet. Free.
 
 ### Image Tools
 https://www.fasttools.store/image-tools
@@ -187,6 +188,7 @@ Context: FastTools provides free, fast, and accurate online tools that work on a
 - https://www.fasttools.store/converters/timezone
 - https://www.fasttools.store/converters/base64-file - Free base64 file converter online. Base64 to PDF, image, excel, xml, docx, zip. File to base64 online.
 - https://www.fasttools.store/converters/nato-phonetic - Text to NATO alphabet converter online. NATO alphabet decoder, NATO translator to English. Military alphabet translator. Free.
+- https://www.fasttools.store/converters/ascii-binary - Text to ASCII binary converter online. Binary to text. ASCII to binary table. Free.
 - https://www.fasttools.store/crypto-tools
 - https://www.fasttools.store/crypto-tools/hash-text
 - https://www.fasttools.store/crypto-tools/token-generator

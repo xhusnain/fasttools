@@ -688,6 +688,12 @@ export const toolPages = [
         priority: 0.94,
     },
     {
+        url: "https://www.fasttools.store/ai-tools/token-to-word-converter",
+        lastModified: new Date(),
+        changeFrequency: "weekly" as const,
+        priority: 0.95,
+    },
+    {
         url: "https://www.fasttools.store/social-media-tools/tiktok-downloader",
         lastModified: new Date('2025-11-25'),
         changeFrequency: "monthly" as const,
@@ -941,6 +947,12 @@ export const toolPages = [
     },
     {
         url: "https://www.fasttools.store/converters/nato-phonetic",
+        lastModified: new Date(),
+        changeFrequency: "monthly" as const,
+        priority: 0.9,
+    },
+    {
+        url: "https://www.fasttools.store/converters/ascii-binary",
         lastModified: new Date(),
         changeFrequency: "monthly" as const,
         priority: 0.9,

@@ -1,11 +1,11 @@
 "use client"
 
 import { useState } from "react"
-import { Button } from "@/components/ui/button"
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
-import { Input } from "@/components/ui/input"
-import { Label } from "@/components/ui/label"
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
+import { GButton } from "@/ui/gbutton"
+import { GCard, GCardContent, GCardDescription, GCardHeader, GCardTitle } from "@/ui/gcard"
+import { GInput } from "@/ui/ginput"
+import { GLabel } from "@/ui/glabel"
+import { GTabs, GTabsContent, GTabsList, GTabsTrigger } from "@/ui/gtabs"
 import { Copy, RefreshCw } from "lucide-react"
 import { toast } from "sonner"
 
@@ -52,25 +52,30 @@ export default function TokenConverter() {
         </p>
       </div>
 
-      <Card className="border-2 shadow-lg">
-        <CardHeader>
-          <Tabs defaultValue="tokens-to-words" onValueChange={(v) => {
+      <GCard className="border-2 shadow-lg">
+        <GCardHeader>
+          <GTabs value={mode} onValueChange={(v) => {
             setMode(v as any)
             handleReset()
           }} className="w-full">
-            <TabsList className="grid w-full grid-cols-2">
-              <TabsTrigger value="tokens-to-words">Tokens → Words</TabsTrigger>
-              <TabsTrigger value="words-to-tokens">Words → Tokens</TabsTrigger>
-            </TabsList>
-          </Tabs>
-        </CardHeader>
-        <CardContent className="space-y-6 pt-6">
+            <GTabsList className="grid w-full grid-cols-2">
+              <GTabsTrigger value="tokens-to-words">Tokens → Words</GTabsTrigger>
+              <GTabsTrigger value="words-to-tokens">Words → Tokens</GTabsTrigger>
+            </GTabsList>
+            
+            {/* We need to render the content outside the list but inside the tabs provider, 
+                however GTabs structure puts content as a sibling. 
+                In this UI, the inputs depend on the mode state, so we can just use conditional rendering 
+                or keeping it simple with state. */}
+          </GTabs>
+        </GCardHeader>
+        <GCardContent className="space-y-6 pt-6">
           <div className="grid gap-6 md:grid-cols-2 items-end">
             <div className="space-y-2">
-              <Label htmlFor="input-val" className="text-lg">
+              <GLabel htmlFor="input-val" className="text-lg">
                 {mode === "tokens-to-words" ? "Tokens (Input)" : "Words (Input)"}
-              </Label>
-              <Input
+              </GLabel>
+              <GInput
                 id="input-val"
                 placeholder={mode === "tokens-to-words" ? "e.g. 1000" : "e.g. 750"}
                 value={mode === "tokens-to-words" ? tokens : words}
@@ -85,30 +90,30 @@ export default function TokenConverter() {
             </div>
             
             <div className="space-y-2">
-              <Label className="text-lg">
+              <GLabel className="text-lg">
                 {mode === "tokens-to-words" ? "Est. Words" : "Est. Tokens"}
-              </Label>
+              </GLabel>
               <div className="flex h-12 w-full items-center justify-between rounded-md border border-input bg-muted/50 px-3 py-2 text-xl ring-offset-background">
                 <span className="font-mono font-bold">
                   {mode === "tokens-to-words" ? (words || "0") : (tokens || "0")}
                 </span>
-                <Button variant="ghost" size="icon" onClick={() => handleCopy(mode === "tokens-to-words" ? words : tokens)}>
+                <GButton variant="ghost" size="icon" onClick={() => handleCopy(mode === "tokens-to-words" ? words : tokens)}>
                   <Copy className="h-4 w-4" />
-                </Button>
+                </GButton>
               </div>
             </div>
           </div>
 
           <div className="flex gap-4">
-            <Button onClick={handleConvert} className="flex-1 h-12 text-lg" size="lg">
+            <GButton onClick={handleConvert} className="flex-1 h-12 text-lg" size="lg">
               Convert
-            </Button>
-            <Button onClick={handleReset} variant="outline" size="icon" className="h-12 w-12">
+            </GButton>
+            <GButton onClick={handleReset} variant="outline" size="icon" className="h-12 w-12">
               <RefreshCw className="h-5 w-5" />
-            </Button>
+            </GButton>
           </div>
-        </CardContent>
-      </Card>
+        </GCardContent>
+      </GCard>
 
       <section className="mt-16 prose dark:prose-invert max-w-none">
         <h2>How AI Tokens Work</h2>

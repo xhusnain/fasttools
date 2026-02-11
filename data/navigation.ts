@@ -111,6 +111,7 @@ export const navigationConfig: MegaMenuSection[] = [
             {
                 title: "Converters",
                 items: [
+                    { title: "Text to ASCII Binary", href: "/converters/ascii-binary", icon: Binary },
                     { title: "Text to NATO Alphabet", href: "/converters/nato-phonetic", icon: Radio },
                     { title: "Base64 File Converter", href: "/converters/base64-file", icon: FileImage },
                     { title: "Integer Base Converter", href: "/converters/integer-base", icon: Binary },
