@@ -137,6 +137,14 @@ Description: Free text to NATO alphabet converter online. NATO alphabet decoder,
 URL: https://www.fasttools.store/converters/ascii-binary
 Description: Free text to ASCII binary converter online. Binary to text. ASCII to binary table, text to binary table. Binary alphabet. Binary to ASCII 128. Converts text to 8-bit binary and decodes binary to text. No signup.
 
+## Text to Unicode
+URL: https://www.fasttools.store/converters/unicode
+Description: Free text to Unicode converter. Convert text to Unicode code points and Unicode to text. Parse and convert text to unicode and vice-versa. No signup.
+
+## YAML to JSON Converter
+URL: https://www.fasttools.store/converters/yaml-json
+Description: Free YAML to JSON converter. Simply convert YAML to JSON with this online live converter. JSON to YAML supported. No signup.
+
 
 # Complete Index
 
@@ -179,6 +187,8 @@ Description: Free text to ASCII binary converter online. Binary to text. ASCII t
 - https://www.fasttools.store/converters/base64-file
 - https://www.fasttools.store/converters/nato-phonetic
 - https://www.fasttools.store/converters/ascii-binary
+- https://www.fasttools.store/converters/unicode
+- https://www.fasttools.store/converters/yaml-json
 - https://www.fasttools.store/crypto-tools
 - https://www.fasttools.store/crypto-tools/hash-text
 - https://www.fasttools.store/crypto-tools/token-generator

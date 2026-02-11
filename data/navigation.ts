@@ -1,4 +1,5 @@
 import {
+    FileCode,
     Radio,
     Binary,
     BookOpen,
@@ -111,6 +112,8 @@ export const navigationConfig: MegaMenuSection[] = [
             {
                 title: "Converters",
                 items: [
+                    { title: "YAML to JSON Converter", href: "/converters/yaml-json", icon: FileCode },
+                    { title: "Text to Unicode", href: "/converters/unicode", icon: Type },
                     { title: "Text to ASCII Binary", href: "/converters/ascii-binary", icon: Binary },
                     { title: "Text to NATO Alphabet", href: "/converters/nato-phonetic", icon: Radio },
                     { title: "Base64 File Converter", href: "/converters/base64-file", icon: FileImage },

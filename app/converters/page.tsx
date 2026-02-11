@@ -3,9 +3,23 @@ import { ToolPageLayout } from "@/components/common/tool-page-layout"
 import { createToolConfig } from "@/lib/create-tool-config"
 import { GToolCard } from "@/ui/gtool-card"
 
-import { Type, Ruler, HardDrive, DollarSign, Globe, Thermometer, Binary, BookOpen, FileImage, Radio } from "lucide-react"
+import { Type, Ruler, HardDrive, DollarSign, Globe, Thermometer, Binary, BookOpen, FileImage, Radio, FileCode } from "lucide-react"
 
 const converters = [
+  {
+    title: "YAML to JSON Converter",
+    description: "Convert YAML to JSON and JSON to YAML. Online live converter. Free.",
+    icon: FileCode,
+    href: "/converters/yaml-json",
+    color: "green"
+  },
+  {
+    title: "Text to Unicode",
+    description: "Convert text to Unicode and Unicode to text. Parse text to Unicode code points and decode. Free.",
+    icon: Type,
+    href: "/converters/unicode",
+    color: "blue"
+  },
   {
     title: "Text to ASCII Binary",
     description: "Convert text to ASCII binary and binary to text. Encode text to binary, decode binary to text. Free.",

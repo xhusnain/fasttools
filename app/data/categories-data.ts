@@ -1,4 +1,5 @@
 import {
+    FileCode,
     Radio,
     Binary,
     Calculator,
@@ -430,6 +431,22 @@ export const categories = [
         iconColor: "text-emerald-700",
         glowColor: "hover:shadow-emerald-500/20",
         tools: [
+            {
+                title: "YAML to JSON Converter",
+                description: "Convert YAML to JSON and JSON to YAML. Online live converter. Free.",
+                href: "/converters/yaml-json",
+                icon: FileCode,
+                badge: "Dev",
+                badgeColor: "bg-purple-500/90",
+            },
+            {
+                title: "Text to Unicode",
+                description: "Convert text to Unicode and Unicode to text. Parse text to Unicode code points and decode. Free.",
+                href: "/converters/unicode",
+                icon: Type,
+                badge: "Text",
+                badgeColor: "bg-blue-500/90",
+            },
             {
                 title: "Text to ASCII Binary",
                 description: "Text to ASCII binary converter online. Binary to text. ASCII to binary table, binary alphabet. Free.",
