@@ -293,6 +293,19 @@ export function ToolPageLayout({
                                 </section>
                             )}
 
+                            {toolContent.additionalContent && toolContent.additionalContent.length > 0 && (
+                                <section className="bg-card border border-border rounded-lg p-6">
+                                    <div className="space-y-6">
+                                        {toolContent.additionalContent.map((item, index) => (
+                                            <div key={index}>
+                                                <h3 className="text-lg font-bold text-foreground mb-2">{item.heading}</h3>
+                                                <p className="text-muted-foreground leading-relaxed">{item.content}</p>
+                                            </div>
+                                        ))}
+                                    </div>
+                                </section>
+                            )}
+
                             <section className="bg-card border border-border rounded-lg p-6">
                                 <h2 className="text-2xl font-bold mb-6 text-foreground">
                                     Frequently Asked Questions

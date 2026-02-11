@@ -934,6 +934,12 @@ export const toolPages = [
         priority: 0.9,
     },
     {
+        url: "https://www.fasttools.store/converters/base64-file",
+        lastModified: new Date(),
+        changeFrequency: "monthly" as const,
+        priority: 0.9,
+    },
+    {
         url: "https://www.fasttools.store/converters/timezone",
         lastModified: new Date('2025-11-25'),
         changeFrequency: "monthly" as const,

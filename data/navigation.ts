@@ -110,6 +110,7 @@ export const navigationConfig: MegaMenuSection[] = [
             {
                 title: "Converters",
                 items: [
+                    { title: "Base64 File Converter", href: "/converters/base64-file", icon: FileImage },
                     { title: "Integer Base Converter", href: "/converters/integer-base", icon: Binary },
                     { title: "Roman Numeral Converter", href: "/converters/roman-numeral", icon: BookOpen },
                     { title: "Currency Converter", href: "/converters/currency", icon: DollarSign },

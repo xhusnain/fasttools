@@ -3,9 +3,16 @@ import { ToolPageLayout } from "@/components/common/tool-page-layout"
 import { createToolConfig } from "@/lib/create-tool-config"
 import { GToolCard } from "@/ui/gtool-card"
 
-import { Type, Ruler, HardDrive, DollarSign, Globe, Thermometer, Binary, BookOpen } from "lucide-react"
+import { Type, Ruler, HardDrive, DollarSign, Globe, Thermometer, Binary, BookOpen, FileImage } from "lucide-react"
 
 const converters = [
+  {
+    title: "Base64 File Converter",
+    description: "Convert files and images to Base64 and Base64 back to files. Preview images, download decoded files.",
+    icon: FileImage,
+    href: "/converters/base64-file",
+    color: "blue"
+  },
   {
     title: "Roman Numeral Converter",
     description: "Convert numbers to Roman numerals and back. Supports 1–3,999,999 with vinculum.",

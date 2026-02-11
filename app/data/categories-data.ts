@@ -4,6 +4,7 @@ import {
     Sparkles,
     Palette,
     Code,
+    FileImage,
     FileText,
     Search,
     DollarSign,
@@ -428,6 +429,14 @@ export const categories = [
         iconColor: "text-emerald-700",
         glowColor: "hover:shadow-emerald-500/20",
         tools: [
+            {
+                title: "Base64 File Converter",
+                description: "Free base64 file converter online. Base64 to PDF, image, excel, xml, docx, zip. File to base64 with preview.",
+                href: "/converters/base64-file",
+                icon: FileImage,
+                badge: "File",
+                badgeColor: "bg-blue-500/90",
+            },
             {
                 title: "Integer Base Converter",
                 description: "Convert numbers between binary, octal, decimal, hex, and bases 2–64",

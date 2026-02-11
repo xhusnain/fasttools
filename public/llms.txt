@@ -63,6 +63,9 @@ Extensive collection of financial, health, and scientific calculators including 
 https://www.fasttools.store/converters
 Convert between different formats and units including currency, length, temperature, file size, text case, and timezone converters.
 
+**Featured Tools:**
+- https://www.fasttools.store/converters/base64-file - Free base64 file converter online. Base64 to PDF, base64 to image, base64 encode & decode. File to base64 online with preview. Base64 to excel, xml, docx, zip. Download decoded files. No signup.
+
 ### Image Tools
 https://www.fasttools.store/image-tools
 Image editing, manipulation, and optimization tools including photo editing and OCR text extraction.
@@ -181,6 +184,7 @@ Context: FastTools provides free, fast, and accurate online tools that work on a
 - https://www.fasttools.store/converters/temperature
 - https://www.fasttools.store/converters/text-case
 - https://www.fasttools.store/converters/timezone
+- https://www.fasttools.store/converters/base64-file - Free base64 file converter online. Base64 to PDF, image, excel, xml, docx, zip. File to base64 online.
 - https://www.fasttools.store/crypto-tools
 - https://www.fasttools.store/crypto-tools/hash-text
 - https://www.fasttools.store/crypto-tools/token-generator
