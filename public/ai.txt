@@ -141,6 +141,10 @@ Description: Free text to ASCII binary converter online. Binary to text. ASCII t
 URL: https://www.fasttools.store/converters/unicode
 Description: Free text to Unicode converter. Convert text to Unicode code points and Unicode to text. Parse and convert text to unicode and vice-versa. No signup.
 
+## JSON to TOML Converter
+URL: https://www.fasttools.store/converters/json-toml
+Description: Free JSON to TOML converter online. json2toml npm alternative. Python, CLI. TOML to JSON, TOML converter. Streamlit secrets, pyproject.toml, Cargo.toml. No signup.
+
 ## YAML to TOML
 URL: https://www.fasttools.store/converters/yaml-toml
 Description: Free YAML to TOML converter online. Ansible convert YAML to TOML. TOML formatter, format TOML online. YAML vs TOML example. No signup.
@@ -198,6 +202,7 @@ Description: Free YAML to JSON converter. Swagger YAML to JSON, OpenAPI YAML to 
 - https://www.fasttools.store/converters/unicode
 - https://www.fasttools.store/converters/yaml-json
 - https://www.fasttools.store/converters/json-yaml
+- https://www.fasttools.store/converters/json-toml
 - https://www.fasttools.store/converters/yaml-toml
 - https://www.fasttools.store/crypto-tools
 - https://www.fasttools.store/crypto-tools/hash-text

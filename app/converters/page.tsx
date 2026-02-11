@@ -7,6 +7,13 @@ import { Type, Ruler, HardDrive, DollarSign, Globe, Thermometer, Binary, BookOpe
 
 const converters = [
   {
+    title: "JSON to TOML Converter",
+    description: "Convert JSON to TOML and TOML to JSON. json2toml npm alternative. Python, CLI. Free.",
+    icon: FileCode,
+    href: "/converters/json-toml",
+    color: "violet"
+  },
+  {
     title: "YAML to TOML",
     description: "Convert YAML to TOML and TOML to YAML. Parse and convert YAML to TOML. Free.",
     icon: FileCode,
