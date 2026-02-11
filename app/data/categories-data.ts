@@ -432,6 +432,14 @@ export const categories = [
         glowColor: "hover:shadow-emerald-500/20",
         tools: [
             {
+                title: "YAML to TOML",
+                description: "YAML to TOML online. Ansible convert YAML to TOML. TOML formatter. Free.",
+                href: "/converters/yaml-toml",
+                icon: FileCode,
+                badge: "Dev",
+                badgeColor: "bg-purple-500/90",
+            },
+            {
                 title: "YAML to JSON Converter",
                 description: "YAML to JSON converter free. Swagger, OpenAPI YAML to JSON. Convert for Postman. Free.",
                 href: "/converters/yaml-json",
