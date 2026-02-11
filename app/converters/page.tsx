@@ -3,9 +3,16 @@ import { ToolPageLayout } from "@/components/common/tool-page-layout"
 import { createToolConfig } from "@/lib/create-tool-config"
 import { GToolCard } from "@/ui/gtool-card"
 
-import { Type, Ruler, HardDrive, DollarSign, Globe, Thermometer, Binary, BookOpen, FileImage } from "lucide-react"
+import { Type, Ruler, HardDrive, DollarSign, Globe, Thermometer, Binary, BookOpen, FileImage, Radio } from "lucide-react"
 
 const converters = [
+  {
+    title: "Text to NATO Alphabet",
+    description: "Convert text to NATO phonetic alphabet (Alpha Bravo Charlie). NATO to text reverse. Free converter.",
+    icon: Radio,
+    href: "/converters/nato-phonetic",
+    color: "blue"
+  },
   {
     title: "Base64 File Converter",
     description: "Convert files and images to Base64 and Base64 back to files. Preview images, download decoded files.",

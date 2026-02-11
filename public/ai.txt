@@ -129,6 +129,10 @@ Description: Free Online Token Generator. Generate secure random API keys, passw
 URL: https://www.fasttools.store/converters/base64-file
 Description: Free base64 file converter online. Base64 to PDF, base64 to image, base64 encode & decode. File to base64 online with drag and drop. Base64 to excel, xml, docx, zip. Live image preview and download decoded files. No signup. Supports PDF, images, Excel, XML, Word, ZIP.
 
+## Text to NATO Alphabet
+URL: https://www.fasttools.store/converters/nato-phonetic
+Description: Free text to NATO alphabet converter online. NATO alphabet decoder, NATO translator to English. Military alphabet translator. Text to NATO generator. NATO alphabet numbers A-Z. Converts text to Alpha Bravo Charlie and decodes NATO back to text. No signup.
+
 
 # Complete Index
 
@@ -169,6 +173,7 @@ Description: Free base64 file converter online. Base64 to PDF, base64 to image, 
 - https://www.fasttools.store/converters/text-case
 - https://www.fasttools.store/converters/timezone
 - https://www.fasttools.store/converters/base64-file
+- https://www.fasttools.store/converters/nato-phonetic
 - https://www.fasttools.store/crypto-tools
 - https://www.fasttools.store/crypto-tools/hash-text
 - https://www.fasttools.store/crypto-tools/token-generator

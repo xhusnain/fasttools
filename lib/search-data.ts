@@ -68,6 +68,7 @@ export const searchItems: SearchItem[] = [
   { name: "Integer Base Converter", description: "Convert numbers between binary, octal, decimal, hex, and bases 2–64", path: "/converters/integer-base", category: "Converter" },
   { name: "Roman Numeral Converter", description: "Convert numbers to Roman numerals and back, 1–3,999,999", path: "/converters/roman-numeral", category: "Converter" },
   { name: "Base64 File Converter", description: "Free base64 file converter online. Base64 to PDF, image, excel, xml, docx, zip. File to base64 with preview.", path: "/converters/base64-file", category: "Converter" },
+  { name: "Text to NATO Alphabet", description: "Text to NATO alphabet converter online. NATO alphabet decoder, NATO translator to English. Military alphabet translator. Free.", path: "/converters/nato-phonetic", category: "Converter" },
   { name: "Text Case Converter", description: "Transform text between uppercase, lowercase, title case, camelCase", path: "/converters/text-case", category: "Converter" },
   { name: "Length Converter", description: "Convert between all major length units", path: "/converters/length", category: "Converter" },
   { name: "Temperature Converter", description: "Convert between Celsius, Fahrenheit, Kelvin, and Rankine", path: "/converters/temperature", category: "Converter" },

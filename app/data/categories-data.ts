@@ -1,4 +1,5 @@
 import {
+    Radio,
     Binary,
     Calculator,
     Sparkles,
@@ -429,6 +430,14 @@ export const categories = [
         iconColor: "text-emerald-700",
         glowColor: "hover:shadow-emerald-500/20",
         tools: [
+            {
+                title: "Text to NATO Alphabet",
+                description: "Text to NATO alphabet converter online. NATO decoder, military alphabet translator. Free.",
+                href: "/converters/nato-phonetic",
+                icon: Radio,
+                badge: "Text",
+                badgeColor: "bg-blue-500/90",
+            },
             {
                 title: "Base64 File Converter",
                 description: "Free base64 file converter online. Base64 to PDF, image, excel, xml, docx, zip. File to base64 with preview.",
