@@ -47,6 +47,7 @@ https://www.fasttools.store/seo-tools
 Tools for search engine optimization and content marketing including meta tag generators, hashtag generators, blog title generators, and keyword density checkers.
 
 **Featured Tools:**
+- https://www.fasttools.store/seo-tools/meta-tags - Open Graph meta generator online. open graph tag generator. open graph meta tags, open graph image size 1200x630. og meta checker. Free.
 - https://www.fasttools.store/seo-tools/text-similarity-checker - Check text similarity and detect duplicate content using SimHash algorithm.
 
 ### Calculator Tools

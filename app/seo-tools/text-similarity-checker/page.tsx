@@ -625,7 +625,7 @@ function hammingDistance(fp1, fp2) {
 
         relatedTools: [
             { name: "Keyword Density Checker", href: "/seo-tools/keyword-density" },
-            { name: "Meta Tag Generator", href: "/seo-tools/meta-tags" },
+            { name: "Open Graph Meta Generator", href: "/seo-tools/meta-tags" },
             { name: "Blog Title Generator", href: "/seo-tools/blog-titles" },
             { name: "All SEO Tools", href: "/seo-tools" }
         ]

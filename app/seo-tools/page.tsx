@@ -7,8 +7,8 @@ import { Code, FileText, Hash, Lightbulb, Search } from "lucide-react"
 
 const tools = [
   {
-    title: "Meta Tag Generator",
-    description: "Create comprehensive meta tags with title, description, Open Graph, and Twitter card elements for enhanced search visibility.",
+    title: "Open Graph Meta Generator",
+    description: "open graph meta generator online. open graph tag generator. open graph meta tags, image size. Free.",
     icon: Code,
     href: "/seo-tools/meta-tags",
   },

@@ -243,7 +243,7 @@ export const navigationConfig: MegaMenuSection[] = [
                 title: "SEO Tools",
                 items: [
                     { title: "Keyword Density", href: "/seo-tools/keyword-density", icon: BarChart },
-                    { title: "Meta Tags", href: "/seo-tools/meta-tags", icon: Code },
+                    { title: "Open Graph Meta Generator", href: "/seo-tools/meta-tags", icon: Code },
                     { title: "Lorem Ipsum", href: "/seo-tools/lorem-ipsum", icon: FileText },
                     { title: "Blog Titles", href: "/seo-tools/blog-titles", icon: Type },
                 ]

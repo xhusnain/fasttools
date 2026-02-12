@@ -102,6 +102,10 @@ Description: Download SoundCloud songs to MP3 in high quality (320kbps). The bes
 
 
 
+## Open Graph Meta Generator
+URL: https://www.fasttools.store/seo-tools/meta-tags
+Description: Free open graph meta generator online. open graph tag generator for og:title, og:image, og:url. open graph meta tags. open graph image size 1200x630. og meta checker. facebook open graph debugger links. No signup.
+
 ## Text Similarity Checker
 URL: https://www.fasttools.store/seo-tools/text-similarity-checker
 Description: Free online text similarity checker using SimHash algorithm. Compare two texts and get instant similarity percentage with fingerprint analysis. Best plagiarism detection.

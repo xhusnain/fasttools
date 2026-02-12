@@ -93,8 +93,8 @@ export const categories = [
         glowColor: "hover:shadow-yellow-500/20",
         tools: [
             {
-                title: "Meta Tag Generator",
-                description: "Generate SEO-optimized meta tags to improve search rankings and CTR",
+                title: "Open Graph Meta Generator",
+                description: "open graph meta generator online. open graph tag generator. open graph meta tags, image size. Free.",
                 href: "/seo-tools/meta-tags",
                 icon: Code,
                 badge: "SEO",

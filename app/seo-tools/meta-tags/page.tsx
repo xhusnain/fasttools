@@ -10,26 +10,34 @@ const MetaTagGenerator = dynamic(
 )
 
 const toolConfig = createToolConfig({
-  toolName: "Meta Tag Generator",
-  description: "Generate SEO-friendly meta tags for your website. Create title, description, keywords, and social media tags (Open Graph, Twitter Cards) instantly.",
-  metaTitle: "Meta Tag Generator - 73% Higher CTR, 8+ Tag Types, Instant Generation | Free SEO Tool",
-  metaDescription: "Generate SEO meta tags instantly. Title (60 chars), Description (155-160 chars), Open Graph, Twitter Cards. 73% of sites with proper tags see 15-20% higher CTR. Free alternative to Yoast and All in One SEO—unlimited generation, no signup.",
+  toolName: "Open Graph Meta Generator",
+  description: "Free open graph meta generator online. open graph tag generator. open graph meta tags, open graph image size 1200x630. og meta checker. No signup.",
+  metaTitle: "Open Graph Meta Generator Online - Free OG Tag Generator, Image Size",
+  metaDescription: "Free open graph meta generator online. open graph tag generator for og:title, og:image, og:url. open graph meta tags. open graph image size 1200×630. og meta checker links. No signup.",
   path: "/seo-tools/meta-tags",
 
   header: {
-    title: "Meta Tag Generator - 73% Higher CTR, 8+ Tag Types, Instant Generation",
-    description: "Generate SEO meta tags instantly with 73% higher CTR potential. Title (60 chars), Description (155-160 chars), Open Graph, Twitter Cards for 8+ platforms. 15-20% CTR improvement with proper tags. Free forever, no signup.",
+    title: "Open Graph Meta Generator",
+    description: "Generate open graph meta tags, Twitter Cards, and SEO tags. open graph tag generator following Open Graph protocol. open graph image size recommendations.",
     titleSize: "large",
     descriptionSize: "small",
   },
 
   breadcrumbs: [
     { label: "SEO Tools", href: "/seo-tools" },
-    { label: "Meta Tag Generator", href: "/seo-tools/meta-tags" },
+    { label: "Open Graph Meta Generator", href: "/seo-tools/meta-tags" },
   ],
 
+  schemaOptions: {
+    applicationCategory: "DeveloperApplication",
+    description: "Free open graph meta generator online. open graph tag generator. open graph meta tags, open graph image size.",
+    alternateName: ["Open Graph Tag Generator", "OG Meta Generator", "Open Graph Meta Generator Online"],
+    featureList: ["open graph tag generator", "open graph image size 1200x630", "og meta checker", "facebook open graph debugger"],
+    offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },
+  },
+
   content: {
-    overview: "Meta Tag Generator creates SEO-optimized HTML meta tags instantly in <1 second with 8+ tag types (Title, Description, Open Graph, Twitter Cards, Robots, Viewport, Author, Copyright). Because 73% of websites with properly formatted meta tags see 15-20% higher click-through rates (CTR) in search results, and manual coding takes 5-10 minutes per page versus our instant browser-based generation. The tool generates tags following Google Search Central guidelines (title: 60 characters optimal, description: 155-160 characters), Open Graph protocol (Facebook, LinkedIn), and Twitter Card specifications (summary_large_image format). Supports 8+ tag types: Title tag (60 chars, 50-60 optimal), Meta description (155-160 chars), Open Graph tags (og:title, og:description, og:image, og:url), Twitter Cards (twitter:card, twitter:title, twitter:description), Robots meta tag (index/noindex, follow/nofollow), Viewport tag (mobile responsiveness), Author and Copyright metadata. All processing occurs locally in your browser—your website information never leaves your device. Perfect for new website launches (base metadata for all pages), blog optimization (unique social cards per article), SEO audits (fix missing tags), and social media marketing (control link appearance). No watermarks, unlimited free usage, and no account registration required.",
+    overview: "Free open graph meta generator online. This open graph tag generator creates open graph meta tags following the Open Graph protocol (ogp.me). Generate og:title, og:description, og:image, og:url, og:site_name, og:locale, plus og:image:width, og:image:height, og:image:alt. open graph image size: 1200×630px recommended for Facebook/LinkedIn, 1200×675 for Twitter. Use as og meta checker prep—then validate with facebook open graph debugger or OpenGraph.xyz. open graph meta generator free, no signup.",
 
     howToSteps: [
       "Enter website details: Title (50-60 characters optimal, 60 max for Google display), Description (155-160 characters for full display), Keywords (optional, Google doesn't use since 2009). Processing: <1 second with real-time character counters.",
@@ -40,7 +48,10 @@ const toolConfig = createToolConfig({
     ],
 
     features: [
-      "8+ Tag Types Generation: Creates SEO tags (Title, Description, Keywords), Open Graph tags (og:title, og:description, og:image, og:url), Twitter Cards (twitter:card, twitter:title, twitter:description), Robots meta, Viewport, Author, and Copyright tags simultaneously in <1 second.",
+      "open graph tag generator: og:title, og:description, og:image, og:url, og:site_name, og:locale",
+      "open graph image size: 1200×630 (1.91:1) recommended, og:image:width, og:image:height, og:image:alt",
+      "Twitter Cards: summary_large_image, twitter:title, twitter:description, twitter:image",
+      "og meta checker links: Facebook Open Graph debugger, Twitter Card Validator, LinkedIn Post Inspector",
       "Live Preview: See exactly how your link will appear on Google search results (title: 60 chars display, description: 155-160 chars), Facebook/LinkedIn (Open Graph preview), and Twitter/X (Twitter Card preview). Real-time updates as you type.",
       "Character Counters: Real-time validation with optimal length indicators. Title: 50-60 characters optimal (60 max), Description: 155-160 characters optimal (Google truncates at 160). Color-coded warnings (green=optimal, yellow=acceptable, red=too long/short).",
       "Robots Meta Control: Easily configure index/noindex (show/hide from search) and follow/nofollow (follow/don't follow links) directives. Options: index, follow (default), noindex, nofollow, noindex/nofollow combinations for private pages or thank-you pages.",
@@ -116,7 +127,15 @@ const toolConfig = createToolConfig({
       },
       {
         question: "What is Open Graph protocol?",
-        answer: "Open Graph (OG) is a protocol created by Facebook that allows web pages to become rich objects in social graphs. OG tags (og:title, og:description, og:image, og:url) control how your content appears when shared on Facebook, LinkedIn, and other platforms. Image requirements: 1200×630px (1.91:1 aspect ratio) for optimal display. Without Open Graph tags, social networks pick random images or text, making shared links look unprofessional. Our tool generates all required OG tags automatically with proper formatting and validation."
+        answer: "The Open Graph protocol (ogp.me) is a standard created by Facebook for rich social sharing. open graph meta tags (og:title, og:description, og:image, og:url) control how your content appears when shared. Use this open graph meta generator online to create them. open graph image size: 1200×630px (1.91:1) recommended. Test with facebook open graph debugger or og meta checker tools."
+      },
+      {
+        question: "What is the open graph image size?",
+        answer: "open graph image size: 1200×630px (1.91:1) is recommended for Facebook and LinkedIn. Twitter: 1200×675px. Minimum 200×200px, max 8MB. This open graph meta generator includes og:image:width and og:image:height. open graph image generator tools often use 1200×630."
+      },
+      {
+        question: "Is there an open graph meta generator free online?",
+        answer: "Yes. This open graph meta generator online is 100% free. open graph meta generator free—no signup, no limits. Generate open graph meta tags, open graph tag generator output, og:image with correct open graph image size. Use as open graph meta generator github alternative."
       },
       {
         question: "What are Twitter Cards?",
@@ -124,10 +143,20 @@ const toolConfig = createToolConfig({
       }
     ],
 
+    additionalContent: [
+      {
+        heading: "Open Graph Meta Generator Online — Free OG Tag Generator",
+        content: "This open graph meta generator online creates open graph meta tags per the Open Graph protocol. open graph tag generator for og:title, og:description, og:image, og:url, og:site_name, og:locale. open graph image size 1200×630. open graph meta generator free. Use facebook open graph debugger or og meta checker to validate. No open graph meta generator github needed—runs in browser.",
+      },
+      {
+        heading: "Open Graph Image Size & og:image Guidelines",
+        content: "open graph image size: 1200×630px (1.91:1) for Facebook, LinkedIn. Twitter: 1200×675px. Min 200×200, max 8MB. Use absolute URLs. This open graph meta generator outputs og:image, og:image:width, og:image:height, og:image:alt. open graph image generator recommendations from ogp.me.",
+      },
+    ],
+
     relatedTools: [
       { name: "Keyword Density Checker", href: "/seo-tools/keyword-density" },
       { name: "Blog Title Generator", href: "/seo-tools/blog-titles" },
-
       { name: "Lorem Ipsum Generator", href: "/seo-tools/lorem-ipsum" }
     ]
   }

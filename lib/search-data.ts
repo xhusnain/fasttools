@@ -131,7 +131,7 @@ export const searchItems: SearchItem[] = [
   { name: "PDF Unlocker", description: "Remove password protection from PDF files", path: "/pdf-tools/pdf-unlocker", category: "PDF" },
 
   // SEO Tools
-  { name: "Meta Tag Generator", description: "Generate SEO-optimized meta tags", path: "/seo-tools/meta-tags", category: "SEO" },
+  { name: "Open Graph Meta Generator", description: "open graph meta generator online. open graph tag generator. open graph meta tags, image size. Free.", path: "/seo-tools/meta-tags", category: "SEO" },
   { name: "Keyword Density Checker", description: "Analyze keyword density in content", path: "/seo-tools/keyword-density", category: "SEO" },
   { name: "Lorem Ipsum Generator", description: "Generate placeholder text for design mockups", path: "/seo-tools/lorem-ipsum", category: "SEO" },
   { name: "Blog Title Generator", description: "Create catchy, SEO-friendly titles", path: "/seo-tools/blog-titles", category: "SEO" },
