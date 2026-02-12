@@ -104,6 +104,7 @@ Tools for developers and programmers including JWT decoders, regex testers, JSON
 **Featured Tools:**
 - https://www.fasttools.store/dev-tools/antigravity-skill-builder - Free Antigravity Agent Skill Builder. Generate standard `SKILL.md` files for Google's Antigravity IDE. Create, validate, and download custom AI agent skills for coding, testing, and DevOps. Features include AI-powered generation, pre-defined skill library, and instant syntax validation. 100% free developer utility.
 - https://www.fasttools.store/dev-tools/mime-types - MIME types list. Convert MIME types to file extensions and vice-versa. mime types pdf, mime types for images, mime types excel. json mime type. mime-types npm alternative. Complete IANA-backed database. Free.
+- https://www.fasttools.store/dev-tools/keycode-info - Keycode info. Find javascript keycode, code, location and modifiers of any key. keycode list, keyboard key codes, event keycode. keycode online, keycode tester. Free.
 - https://www.fasttools.store/crypto-tools/uuid-generator - Free Online UUID Generator (v1, v4, v6, v7). Generate standardized Universally Unique Identifiers instantly. Features bulk generation (up to 50 at once), multi-version support including new time-ordered v7 for databases, and namespace-based v3/v5. Secure, client-side only generation.
 
 ### Crypto Tools
@@ -242,6 +243,7 @@ Context: FastTools provides free, fast, and accurate online tools that work on a
 - https://www.fasttools.store/dev-tools/jwt-decoder
 - https://www.fasttools.store/dev-tools/base64-encoder - Free Base64 encode decode online. String to Base64, Base64 to image, Base64 to PDF. Decode to file, decode to hex.
 - https://www.fasttools.store/dev-tools/mime-types - MIME types list. Convert MIME types to file extensions. mime types pdf, images, excel. mime-types npm alternative.
+- https://www.fasttools.store/dev-tools/keycode-info - Keycode info. Find javascript keycode, code, location and modifiers. keycode list, keyboard key codes.
 - https://www.fasttools.store/dev-tools/markdown-previewer
 - https://www.fasttools.store/dev-tools/regex-tester
 - https://www.fasttools.store/dev-tools/sql-to-json

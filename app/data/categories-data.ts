@@ -271,6 +271,14 @@ export const categories = [
                 badgeColor: "bg-blue-500/90",
             },
             {
+                title: "Keycode Info",
+                description: "Find javascript keycode, code, location and modifiers. keycode list, keyboard key codes, event keycode. keycode tester.",
+                href: "/dev-tools/keycode-info",
+                icon: Code,
+                badge: "Dev",
+                badgeColor: "bg-blue-500/90",
+            },
+            {
                 title: "Regex Tester",
                 description: "Test regular expressions with live results and instant pattern matching",
                 href: "/dev-tools/regex-tester",

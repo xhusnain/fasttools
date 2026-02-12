@@ -28,6 +28,13 @@ const devTools = [
     popular: true,
   },
   {
+    title: "Keycode Info",
+    description: "Find javascript keycode, code, location and modifiers of any key. keycode list, keyboard key codes, event keycode. keycode tester.",
+    href: "/dev-tools/keycode-info",
+    icon: Code2,
+    popular: true,
+  },
+  {
     title: "Agent Skill Builder",
     description: "Generate custom SKILL.md files for Google Antigravity agents. Build, download, and share agent skills.",
     href: "/dev-tools/antigravity-skill-builder",
