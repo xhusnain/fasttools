@@ -112,6 +112,7 @@ Secure cryptographic tools for keys, tokens & passwords. All tools run 100% clie
 **Featured Tools:**
 - https://www.fasttools.store/crypto-tools/token-generator - Free Online Token Generator. Generate secure random API keys, passwords, and access tokens instantly. Customizable length, characters, and formats. Uses CSPRNG for cryptographic security. No data storage.
 - https://www.fasttools.store/crypto-tools/hash-text - Free Online Hash Text Generator. Generate secure MD5, SHA1, SHA256, SHA512 hashes instantly. Client-side processing for maximum privacy. Support for Hex and Base64 output formats.
+- https://www.fasttools.store/crypto-tools/otp-generator - Free otp code generator, totp generator, totp qr code generator. Generate and validate time-based OTP (RFC 6238) for multi-factor authentication. Scan QR with Google Authenticator. verification code generator for gmail 2FA. No signup.
 
 ### Utilities
 
@@ -228,6 +229,7 @@ Context: FastTools provides free, fast, and accurate online tools that work on a
 - https://www.fasttools.store/web-tools/auth-generator - basic auth generator online. basic auth generator decode. Bearer, API Key. Free.
 - https://www.fasttools.store/crypto-tools
 - https://www.fasttools.store/crypto-tools/hash-text
+- https://www.fasttools.store/crypto-tools/otp-generator
 - https://www.fasttools.store/crypto-tools/token-generator
 - https://www.fasttools.store/dev-tools
 - https://www.fasttools.store/dev-tools/antigravity-skill-builder

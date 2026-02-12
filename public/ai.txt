@@ -130,6 +130,10 @@ Description: Professional UUID Generator supporting all standard versions (v1, v
 URL: https://www.fasttools.store/crypto-tools/token-generator
 Description: Free Online Token Generator. Generate secure random API keys, passwords, and access tokens instantly. Customizable length, characters, and formats. Uses CSPRNG for cryptographic security. No data storage.
 
+## OTP Code Generator
+URL: https://www.fasttools.store/crypto-tools/otp-generator
+Description: Free otp code generator, totp generator, totp qr code generator. Generate and validate time-based OTP (RFC 6238) for 2FA. totp qr code generator for Google Authenticator. verification code generator for gmail. 100% client-side, no signup.
+
 ## Base64 File Converter
 URL: https://www.fasttools.store/converters/base64-file
 Description: Free base64 file converter online. Base64 to PDF, base64 to image, base64 encode & decode. File to base64 online with drag and drop. Base64 to excel, xml, docx, zip. Live image preview and download decoded files. No signup. Supports PDF, images, Excel, XML, Word, ZIP.

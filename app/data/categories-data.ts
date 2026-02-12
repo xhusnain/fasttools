@@ -146,6 +146,14 @@ export const categories = [
                 badge: "Secure",
                 badgeColor: "bg-green-600",
             },
+            {
+                title: "OTP Code Generator",
+                description: "Free totp generator, totp qr code generator. Time-based OTP for 2FA, Google Authenticator.",
+                href: "/crypto-tools/otp-generator",
+                icon: Key,
+                badge: "2FA",
+                badgeColor: "bg-green-600",
+            },
         ],
     },
     {

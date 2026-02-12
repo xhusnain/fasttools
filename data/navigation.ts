@@ -164,6 +164,7 @@ export const navigationConfig: MegaMenuSection[] = [
                     { title: "Bcrypt Generator", href: "/crypto-tools/bcrypt", icon: Shield },
                     { title: "Password Analyzer", href: "/crypto-tools/password-strength-analyzer", icon: Shield },
                     { title: "Token Generator", href: "/crypto-tools/token-generator", icon: Key },
+                    { title: "OTP Code Generator", href: "/crypto-tools/otp-generator", icon: Shield },
                 ]
             }
         ]

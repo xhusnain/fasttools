@@ -1384,6 +1384,12 @@ export const toolPages = [
             }
         ]
     },
+    {
+        url: "https://www.fasttools.store/crypto-tools/otp-generator",
+        lastModified: new Date(),
+        changeFrequency: "monthly" as const,
+        priority: 0.95,
+    },
 ]
 
 import { getAllPostsMeta } from "@/components/blog/blog"

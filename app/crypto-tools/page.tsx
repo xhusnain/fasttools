@@ -30,6 +30,13 @@ const cryptoTools = [
         popular: true,
     },
     {
+        title: "OTP Code Generator",
+        description: "Generate and validate time-based OTP (TOTP) for multi-factor authentication. totp qr code generator, free otp code generator.",
+        href: "/crypto-tools/otp-generator",
+        icon: Shield,
+        popular: true,
+    },
+    {
         title: "Bcrypt Generator",
         description: "Generate and verify secure Blowfish-based Bcrypt hashes with adjustable cost factors and strength detection.",
         href: "/crypto-tools/bcrypt",
