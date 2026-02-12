@@ -92,6 +92,7 @@ Free online web tools for URL encoding, decoding, and web development. URL encod
 **Featured Tools:**
 - https://www.fasttools.store/web-tools/url-encoder - Encode decode URL-formatted strings. URL encode, decode online. Percent-encoded. Free.
 - https://www.fasttools.store/web-tools/html-escape - Escape HTML entities online. html escape online. Unescape. XSS prevention. Free.
+- https://www.fasttools.store/web-tools/url-parser - url parser online. Parse URL into components. url query string parser with decode. Free.
 
 ### Developer Tools
 https://www.fasttools.store/dev-tools
@@ -219,6 +220,7 @@ Context: FastTools provides free, fast, and accurate online tools that work on a
 - https://www.fasttools.store/web-tools - Free web tools. URL encode decode. Percent-encoded.
 - https://www.fasttools.store/web-tools/url-encoder - Encode decode URL-formatted strings. URL encode, decode online. Free.
 - https://www.fasttools.store/web-tools/html-escape - Escape HTML entities online. html escape online. Unescape. Free.
+- https://www.fasttools.store/web-tools/url-parser - url parser online. url query string parser. url parser decode. Free.
 - https://www.fasttools.store/crypto-tools
 - https://www.fasttools.store/crypto-tools/hash-text
 - https://www.fasttools.store/crypto-tools/token-generator

@@ -69,6 +69,7 @@ export const searchItems: SearchItem[] = [
   { name: "Roman Numeral Converter", description: "Convert numbers to Roman numerals and back, 1–3,999,999", path: "/converters/roman-numeral", category: "Converter" },
   { name: "Base64 File Converter", description: "Free base64 file converter online. Base64 to PDF, image, excel, xml, docx, zip. File to base64 with preview.", path: "/converters/base64-file", category: "Converter" },
   { name: "Escape HTML Entities", description: "HTML escape online. Escape html entities list. html escape js, php, python. Unescape. Free.", path: "/web-tools/html-escape", category: "Web" },
+  { name: "URL Parser", description: "url parser online. url parser js, python, java. url query string parser. url parser decode. Free.", path: "/web-tools/url-parser", category: "Web" },
   { name: "URL Encoder Decoder", description: "Encode decode URL-formatted strings. URL encode, decode online. Percent-encoded. Free.", path: "/web-tools/url-encoder", category: "Web" },
   { name: "JSON to XML Converter", description: "JSON to XML converter online. Formatter, Python, Java, npm. XML to JSON. Free.", path: "/converters/json-xml", category: "Converter" },
   { name: "XML to JSON Converter", description: "XML to JSON converter online. Python, npm, Node.js. JSON to XML. Free.", path: "/converters/xml-json", category: "Converter" },

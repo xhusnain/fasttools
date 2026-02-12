@@ -176,6 +176,14 @@ export const categories = [
                 badge: "Web",
                 badgeColor: "bg-blue-500/90",
             },
+            {
+                title: "URL Parser",
+                description: "url parser online. Parse URL into components. url query string parser. Free.",
+                href: "/web-tools/url-parser",
+                icon: Link2,
+                badge: "Web",
+                badgeColor: "bg-blue-500/90",
+            },
         ],
     },
     {

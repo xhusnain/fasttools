@@ -139,6 +139,12 @@ export const categoryPages = [
         priority: 0.9,
     },
     {
+        url: "https://www.fasttools.store/web-tools/url-parser",
+        lastModified: new Date(),
+        changeFrequency: "monthly" as const,
+        priority: 0.9,
+    },
+    {
         url: "https://www.fasttools.store/crypto-tools",
         lastModified: new Date(),
         changeFrequency: "weekly" as const,

@@ -174,6 +174,10 @@ Description: Free URL encode decode online. Encode decode url formatted strings.
 URL: https://www.fasttools.store/web-tools/html-escape
 Description: Free HTML escape online. Escape html entities list. html escape js, php, python. Unescape html entities. XSS prevention. No signup.
 
+## URL Parser
+URL: https://www.fasttools.store/web-tools/url-parser
+Description: Free url parser online. url parser js, url parser python, url parser java. url query string parser with decode. No signup.
+
 ## YAML to TOML
 URL: https://www.fasttools.store/converters/yaml-toml
 Description: Free YAML to TOML converter online. Ansible convert YAML to TOML. TOML formatter, format TOML online. YAML vs TOML example. No signup.
@@ -240,6 +244,7 @@ Description: Free YAML to JSON converter. Swagger YAML to JSON, OpenAPI YAML to 
 - https://www.fasttools.store/web-tools
 - https://www.fasttools.store/web-tools/url-encoder
 - https://www.fasttools.store/web-tools/html-escape
+- https://www.fasttools.store/web-tools/url-parser
 - https://www.fasttools.store/converters/yaml-toml
 - https://www.fasttools.store/crypto-tools
 - https://www.fasttools.store/crypto-tools/hash-text
