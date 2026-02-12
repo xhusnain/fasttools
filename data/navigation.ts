@@ -141,6 +141,7 @@ export const navigationConfig: MegaMenuSection[] = [
                     { title: "Escape HTML Entities", href: "/web-tools/html-escape", icon: Link2 },
                     { title: "URL Parser", href: "/web-tools/url-parser", icon: Link2 },
                     { title: "Device Information", href: "/web-tools/device-info", icon: Link2 },
+                    { title: "Auth Generator", href: "/web-tools/auth-generator", icon: Link2 },
                 ]
             },
             {

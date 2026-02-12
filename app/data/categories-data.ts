@@ -192,6 +192,14 @@ export const categories = [
                 badge: "Web",
                 badgeColor: "bg-blue-500/90",
             },
+            {
+                title: "Auth Header Generator",
+                description: "basic auth generator online. Basic Auth encode/decode, Bearer, API Key. Free.",
+                href: "/web-tools/auth-generator",
+                icon: Link2,
+                badge: "Web",
+                badgeColor: "bg-blue-500/90",
+            },
         ],
     },
     {

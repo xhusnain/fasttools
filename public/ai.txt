@@ -182,6 +182,10 @@ Description: Free url parser online. url parser js, url parser python, url parse
 URL: https://www.fasttools.store/web-tools/device-info
 Description: Free my device information online. device information pc, android, samsung. Screen size, user agent, pixel ratio. No signup.
 
+## Auth Generator
+URL: https://www.fasttools.store/web-tools/auth-generator
+Description: Free auth generator. basic auth generator online with decode. Bearer token, API Key. convert basic auth to username:password. No signup.
+
 ## YAML to TOML
 URL: https://www.fasttools.store/converters/yaml-toml
 Description: Free YAML to TOML converter online. Ansible convert YAML to TOML. TOML formatter, format TOML online. YAML vs TOML example. No signup.
@@ -250,6 +254,7 @@ Description: Free YAML to JSON converter. Swagger YAML to JSON, OpenAPI YAML to 
 - https://www.fasttools.store/web-tools/html-escape
 - https://www.fasttools.store/web-tools/url-parser
 - https://www.fasttools.store/web-tools/device-info
+- https://www.fasttools.store/web-tools/auth-generator
 - https://www.fasttools.store/converters/yaml-toml
 - https://www.fasttools.store/crypto-tools
 - https://www.fasttools.store/crypto-tools/hash-text
