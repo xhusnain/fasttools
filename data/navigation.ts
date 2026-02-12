@@ -135,6 +135,13 @@ export const navigationConfig: MegaMenuSection[] = [
                 ]
             },
             {
+                title: "Web",
+                items: [
+                    { title: "URL Encoder Decoder", href: "/web-tools/url-encoder", icon: Link2 },
+                    { title: "Escape HTML Entities", href: "/web-tools/html-escape", icon: Link2 },
+                ]
+            },
+            {
                 title: "Developer",
                 items: [
                     { title: "JSON to CSV", href: "/dev-tools/json-to-csv", icon: FileText },

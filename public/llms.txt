@@ -85,6 +85,14 @@ Image editing, manipulation, and optimization tools including photo editing and 
 https://www.fasttools.store/finance-tools
 Financial planning and calculation tools including bill splitters, tip calculators, discount calculators, PayPal fee calculators, invoice generators, and retirement planners.
 
+### Web Tools
+https://www.fasttools.store/web-tools
+Free online web tools for URL encoding, decoding, and web development. URL encode decode, percent-encoded strings.
+
+**Featured Tools:**
+- https://www.fasttools.store/web-tools/url-encoder - Encode decode URL-formatted strings. URL encode, decode online. Percent-encoded. Free.
+- https://www.fasttools.store/web-tools/html-escape - Escape HTML entities online. html escape online. Unescape. XSS prevention. Free.
+
 ### Developer Tools
 https://www.fasttools.store/dev-tools
 Tools for developers and programmers including JWT decoders, regex testers, JSON/CSV converters, HTML beautifiers, markdown tools, and color palette generators.
@@ -208,6 +216,9 @@ Context: FastTools provides free, fast, and accurate online tools that work on a
 - https://www.fasttools.store/converters/toml-yaml - TOML to YAML converter online. Hugo, Alacritty. YAML vs TOML. Free.
 - https://www.fasttools.store/converters/xml-json - XML to JSON converter online. Python, npm, Node.js. JSON to XML. Free.
 - https://www.fasttools.store/converters/json-xml - JSON to XML converter online. Formatter, Python, Java, npm. Free.
+- https://www.fasttools.store/web-tools - Free web tools. URL encode decode. Percent-encoded.
+- https://www.fasttools.store/web-tools/url-encoder - Encode decode URL-formatted strings. URL encode, decode online. Free.
+- https://www.fasttools.store/web-tools/html-escape - Escape HTML entities online. html escape online. Unescape. Free.
 - https://www.fasttools.store/crypto-tools
 - https://www.fasttools.store/crypto-tools/hash-text
 - https://www.fasttools.store/crypto-tools/token-generator

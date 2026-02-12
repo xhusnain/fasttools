@@ -18,6 +18,7 @@ Allow: /image-tools/
 Allow: /finance-tools/
 Allow: /dev-tools/
 Allow: /crypto-tools/
+Allow: /web-tools/
 Allow: /fun-tools/
 Allow: /products
 Allow: /api-docs
@@ -165,6 +166,14 @@ Description: Free XML to JSON converter online. xml to json python, npm, nodejs,
 URL: https://www.fasttools.store/converters/json-xml
 Description: Free JSON to XML converter online. json to xml formatter, python, java, npm, c#. XML to JSON. No signup.
 
+## Encode/Decode URL-Formatted Strings
+URL: https://www.fasttools.store/web-tools/url-encoder
+Description: Free URL encode decode online. Encode decode url formatted strings. Percent-encoded. For JavaScript, Java, C#. No signup.
+
+## Escape HTML Entities
+URL: https://www.fasttools.store/web-tools/html-escape
+Description: Free HTML escape online. Escape html entities list. html escape js, php, python. Unescape html entities. XSS prevention. No signup.
+
 ## YAML to TOML
 URL: https://www.fasttools.store/converters/yaml-toml
 Description: Free YAML to TOML converter online. Ansible convert YAML to TOML. TOML formatter, format TOML online. YAML vs TOML example. No signup.
@@ -228,6 +237,9 @@ Description: Free YAML to JSON converter. Swagger YAML to JSON, OpenAPI YAML to 
 - https://www.fasttools.store/converters/toml-yaml
 - https://www.fasttools.store/converters/xml-json
 - https://www.fasttools.store/converters/json-xml
+- https://www.fasttools.store/web-tools
+- https://www.fasttools.store/web-tools/url-encoder
+- https://www.fasttools.store/web-tools/html-escape
 - https://www.fasttools.store/converters/yaml-toml
 - https://www.fasttools.store/crypto-tools
 - https://www.fasttools.store/crypto-tools/hash-text

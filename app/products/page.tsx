@@ -82,6 +82,13 @@ const categories = [
     href: "/dev-tools",
   },
   {
+    id: "web-tools",
+    name: "Web Tools",
+    description: "Free online web tools for URL encoding, decoding, and web development. URL encode decode, percent-encoded strings.",
+    icon: Globe,
+    href: "/web-tools",
+  },
+  {
     id: "image-tools",
     name: "Image Tools",
     description: "Transform your images with our powerful editing suite. Resize, compress, convert, and apply AI-powered effects with ease.",
