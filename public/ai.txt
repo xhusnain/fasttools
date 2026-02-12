@@ -134,6 +134,10 @@ Description: Free Online Token Generator. Generate secure random API keys, passw
 URL: https://www.fasttools.store/crypto-tools/otp-generator
 Description: Free otp code generator, totp generator, totp qr code generator. Generate and validate time-based OTP (RFC 6238) for 2FA. totp qr code generator for Google Authenticator. verification code generator for gmail. 100% client-side, no signup.
 
+## MIME Types
+URL: https://www.fasttools.store/dev-tools/mime-types
+Description: MIME types list. Convert MIME types to file extensions and vice-versa. mime types pdf, mime types for images, mime types excel. json mime type. mime-types npm alternative. mime types nginx, mime types javascript, mime types react reference. Complete IANA-backed database. Free.
+
 ## Base64 File Converter
 URL: https://www.fasttools.store/converters/base64-file
 Description: Free base64 file converter online. Base64 to PDF, base64 to image, base64 encode & decode. File to base64 online with drag and drop. Base64 to excel, xml, docx, zip. Live image preview and download decoded files. No signup. Supports PDF, images, Excel, XML, Word, ZIP.

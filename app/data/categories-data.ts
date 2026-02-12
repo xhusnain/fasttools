@@ -263,6 +263,14 @@ export const categories = [
                 badgeColor: "bg-green-600",
             },
             {
+                title: "MIME Types",
+                description: "MIME types list. Convert MIME types to file extensions. mime types pdf, images, excel. mime-types npm alternative.",
+                href: "/dev-tools/mime-types",
+                icon: FileCode,
+                badge: "Reference",
+                badgeColor: "bg-blue-500/90",
+            },
+            {
                 title: "Regex Tester",
                 description: "Test regular expressions with live results and instant pattern matching",
                 href: "/dev-tools/regex-tester",

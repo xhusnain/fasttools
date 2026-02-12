@@ -21,6 +21,13 @@ const devTools = [
     popular: true,
   },
   {
+    title: "MIME Types",
+    description: "MIME types list. Convert MIME types to file extensions and vice-versa. mime types pdf, images, excel. mime-types npm alternative.",
+    href: "/dev-tools/mime-types",
+    icon: FileCode,
+    popular: true,
+  },
+  {
     title: "Agent Skill Builder",
     description: "Generate custom SKILL.md files for Google Antigravity agents. Build, download, and share agent skills.",
     href: "/dev-tools/antigravity-skill-builder",
