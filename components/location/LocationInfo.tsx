@@ -8,6 +8,7 @@ import { Globe, MapPin, DollarSign, Navigation, Wifi, Copy, Check, Cloud, Thermo
 import { fetchWeatherApi } from "openmeteo"
 import axios from "axios"
 import { BrowserData, GeolocationData, WeatherData } from "@/types/info-types"
+import { getDeviceInfo, deviceInfoToBrowserData } from "@/lib/device-info"
 
 // Fixed height to prevent CLS
 const CONTAINER_MIN_HEIGHT = "min-h-[450px]"
@@ -96,81 +97,12 @@ export function LocationInfo() {
             }
         }
 
-        // Gather Browser Data
-        const getBrowserData = async () => {
-            const ua = navigator.userAgent;
-            let browserName = "Unknown";
-            if (ua.indexOf("Firefox") > -1) browserName = "Mozilla Firefox";
-            else if (ua.indexOf("SamsungBrowser") > -1) browserName = "Samsung Internet";
-            else if (ua.indexOf("Opera") > -1 || ua.indexOf("OPR") > -1) browserName = "Opera";
-            else if (ua.indexOf("Trident") > -1) browserName = "Microsoft Internet Explorer";
-            else if (ua.indexOf("Edge") > -1) browserName = "Microsoft Edge";
-            else if (ua.indexOf("Chrome") > -1) browserName = "Google Chrome";
-            else if (ua.indexOf("Safari") > -1) browserName = "Apple Safari";
-
-            let osName = "Unknown OS";
-            if (ua.indexOf("Win") !== -1) osName = "Windows";
-            if (ua.indexOf("Mac") !== -1) osName = "MacOS";
-            if (ua.indexOf("X11") !== -1) osName = "UNIX";
-            if (ua.indexOf("Linux") !== -1) osName = "Linux";
-            if (ua.indexOf("Android") !== -1) osName = "Android";
-            if (ua.indexOf("like Mac") !== -1) osName = "iOS";
-
-            // GPU Info
-            let gpuRenderer = 'Unknown GPU';
-            try {
-                const canvas = document.createElement('canvas');
-                const gl = canvas.getContext('webgl') || canvas.getContext('experimental-webgl');
-                if (gl) {
-                    const debugInfo = (gl as any).getExtension('WEBGL_debug_renderer_info');
-                    if (debugInfo) {
-                        gpuRenderer = (gl as any).getParameter(debugInfo.UNMASKED_RENDERER_WEBGL);
-                    }
-                }
-            } catch (e) {
-                console.warn("GPU detect failed", e);
-            }
-
-            // Connection Type
-            let connectionType = 'Unknown';
-            if ((navigator as any).connection) {
-                connectionType = (navigator as any).connection.effectiveType || (navigator as any).connection.type;
-            }
-
-            // Battery
-            let batteryLevel: number | undefined = undefined;
-            let isCharging: boolean | undefined = undefined;
-            try {
-                if ((navigator as any).getBattery) {
-                    const battery = await (navigator as any).getBattery();
-                    batteryLevel = battery.level * 100;
-                    isCharging = battery.charging;
-                }
-            } catch (e) {
-                console.warn("Battery detect failed", e);
-            }
-
-            // Timezone
-            const timeZone = Intl.DateTimeFormat().resolvedOptions().timeZone;
-
-            setBrowserData({
-                browserName,
-                osName,
-                screenResolution: `${window.screen.width}x${window.screen.height} - ${window.screen.colorDepth}bit`,
-                language: navigator.language,
-                cookiesEnabled: navigator.cookieEnabled,
-                deviceMemory: (navigator as any).deviceMemory,
-                hardwareConcurrency: navigator.hardwareConcurrency,
-                userAgent: ua,
-                gpuRenderer,
-                connectionType,
-                batteryLevel,
-                isCharging,
-                timeZone
-            })
-        }
-
-        getBrowserData();
+        // Gather Browser/Device Data (shared with Device Information tool)
+        getDeviceInfo().then((deviceInfo) => {
+            setBrowserData(deviceInfoToBrowserData(deviceInfo))
+        }).catch(() => {
+            setBrowserData(null)
+        });
 
 
         // Performance optimization: Use requestIdleCallback to defer entirely

@@ -184,6 +184,14 @@ export const categories = [
                 badge: "Web",
                 badgeColor: "bg-blue-500/90",
             },
+            {
+                title: "Device Information",
+                description: "my device information online. Screen size, user agent. device information pc, android. Free.",
+                href: "/web-tools/device-info",
+                icon: Link2,
+                badge: "Web",
+                badgeColor: "bg-blue-500/90",
+            },
         ],
     },
     {
