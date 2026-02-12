@@ -36,12 +36,12 @@ function uint8ArrayToHex(arr: Uint8Array): string {
 async function hmacSha1(key: Uint8Array, message: Uint8Array): Promise<ArrayBuffer> {
   const cryptoKey = await crypto.subtle.importKey(
     "raw",
-    key,
+    key.buffer as ArrayBuffer,
     { name: "HMAC", hash: "SHA-1" },
     false,
     ["sign"]
   )
-  return crypto.subtle.sign("HMAC", cryptoKey, message)
+  return crypto.subtle.sign("HMAC", cryptoKey, message.buffer as ArrayBuffer)
 }
 
 function dynamicTruncate(hash: ArrayBuffer, digits: number): string {
