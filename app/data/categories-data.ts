@@ -208,6 +208,14 @@ export const categories = [
                 badge: "Web",
                 badgeColor: "bg-blue-500/90",
             },
+            {
+                title: "Outlook Safelink Decoder",
+                description: "Decode Outlook SafeLink links to original URL. safelinks decoder o365, safe link decoder. Free.",
+                href: "/web-tools/outlook-safelink-decoder",
+                icon: Link2,
+                badge: "New",
+                badgeColor: "bg-blue-500/90",
+            },
         ],
     },
     {

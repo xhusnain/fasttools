@@ -46,6 +46,14 @@ const webTools = [
     icon: Link2,
     popular: true,
   },
+  {
+    title: "Outlook Safelink Decoder",
+    description:
+      "Decode Outlook SafeLink links to original URL. safelinks decoder o365, safe link decoder. Free.",
+    href: "/web-tools/outlook-safelink-decoder",
+    icon: Link2,
+    popular: true,
+  },
 ]
 
 const toolConfig = createToolConfig({

@@ -72,6 +72,7 @@ export const searchItems: SearchItem[] = [
   { name: "URL Parser", description: "url parser online. url parser js, python, java. url query string parser. url parser decode. Free.", path: "/web-tools/url-parser", category: "Web" },
   { name: "Device Information", description: "my device information online. device information pc, android, samsung. Screen size, user agent. Free.", path: "/web-tools/device-info", category: "Web" },
   { name: "Auth Generator", description: "basic auth generator online. basic auth generator decode. Bearer, API Key. convert basic auth to username:password. Free.", path: "/web-tools/auth-generator", category: "Web" },
+  { name: "Outlook Safelink Decoder", description: "Decode Outlook SafeLink links to original URL. safelinks decoder o365, safe link decoder. Free.", path: "/web-tools/outlook-safelink-decoder", category: "Web" },
   { name: "URL Encoder Decoder", description: "Encode decode URL-formatted strings. URL encode, decode online. Percent-encoded. Free.", path: "/web-tools/url-encoder", category: "Web" },
   { name: "JSON to XML Converter", description: "JSON to XML converter online. Formatter, Python, Java, npm. XML to JSON. Free.", path: "/converters/json-xml", category: "Converter" },
   { name: "XML to JSON Converter", description: "XML to JSON converter online. Python, npm, Node.js. JSON to XML. Free.", path: "/converters/xml-json", category: "Converter" },
