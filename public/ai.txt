@@ -154,6 +154,10 @@ Description: HTML WYSIWYG editor online. Free html wysiwyg editor. Online html e
 URL: https://www.fasttools.store/dev-tools/user-agent-parser
 Description: Free user-agent parser online. Parse any user agent string to detect Browser, Engine, OS, CPU, Device type/model. ua-parser-js alternative. user agent parser python, java, typescript, npm, example. 100% client-side, no signup.
 
+## HTTP Status Codes
+URL: https://www.fasttools.store/dev-tools/http-status-codes
+Description: Complete HTTP status codes list and table. http status codes 200, 201, 400, 404, 500 with examples. http stands for Hypertext Transfer Protocol. http methods GET POST PUT DELETE. http-status-codes npm, node http status codes. SMTP, FTP codes. Free.
+
 ## Base64 File Converter
 URL: https://www.fasttools.store/converters/base64-file
 Description: Free base64 file converter online. Base64 to PDF, base64 to image, base64 encode & decode. File to base64 online with drag and drop. Base64 to excel, xml, docx, zip. Live image preview and download decoded files. No signup. Supports PDF, images, Excel, XML, Word, ZIP.
@@ -295,6 +299,7 @@ Description: Free YAML to JSON converter. Swagger YAML to JSON, OpenAPI YAML to 
 - https://www.fasttools.store/dev-tools/html-to-markdown
 - https://www.fasttools.store/dev-tools/html-wysiwyg-editor
 - https://www.fasttools.store/dev-tools/user-agent-parser
+- https://www.fasttools.store/dev-tools/http-status-codes
 - https://www.fasttools.store/dev-tools/json-to-csv
 - https://www.fasttools.store/dev-tools/jwt-decoder
 - https://www.fasttools.store/dev-tools/base64-encoder

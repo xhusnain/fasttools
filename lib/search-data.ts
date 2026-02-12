@@ -118,6 +118,7 @@ export const searchItems: SearchItem[] = [
   { name: "Slugify String", description: "Slugify string online. Make a string url, filename and id safe. slugify string url. slugify - npm alternative.", path: "/dev-tools/slugify-string", category: "Developer" },
   { name: "HTML WYSIWYG Editor", description: "Free html wysiwyg editor online. Online html editor with live HTML source. Rich text editor.", path: "/dev-tools/html-wysiwyg-editor", category: "Developer" },
   { name: "User-Agent Parser", description: "User agent parser online. Parse UA string to detect Browser, Engine, OS, CPU, Device. ua-parser-js alternative. Free.", path: "/dev-tools/user-agent-parser", category: "Developer" },
+  { name: "HTTP Status Codes", description: "HTTP status codes list. http status codes 200, 404, 500 with examples. http status codes table. http methods. Free.", path: "/dev-tools/http-status-codes", category: "Developer" },
   { name: "Regex Tester", description: "Test regular expressions with live results", path: "/dev-tools/regex-tester", category: "Developer" },
   { name: "HTML Beautifier", description: "Format and beautify HTML code", path: "/dev-tools/html-beautifier", category: "Developer" },
   { name: "HTML to Markdown", description: "Convert HTML content to Markdown format", path: "/dev-tools/html-to-markdown", category: "Developer" },

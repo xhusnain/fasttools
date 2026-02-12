@@ -303,6 +303,14 @@ export const categories = [
                 badgeColor: "bg-blue-500/90",
             },
             {
+                title: "HTTP Status Codes",
+                description: "HTTP status codes list. http status codes 200, 404, 500 with examples. http status codes table. http methods. Free.",
+                href: "/dev-tools/http-status-codes",
+                icon: Code,
+                badge: "API",
+                badgeColor: "bg-blue-500/90",
+            },
+            {
                 title: "Regex Tester",
                 description: "Test regular expressions with live results and instant pattern matching",
                 href: "/dev-tools/regex-tester",

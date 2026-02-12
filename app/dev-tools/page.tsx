@@ -3,7 +3,7 @@ import { ToolPageLayout } from "@/components/common/tool-page-layout"
 import { createToolConfig } from "@/lib/create-tool-config"
 import { GToolCard } from "@/ui/gtool-card"
 
-import { Code2, FileJson, Palette, Hash, FileCode, Braces, Database, Sparkles, Binary, Monitor } from "lucide-react"
+import { Code2, FileJson, Palette, Hash, FileCode, Braces, Database, Sparkles, Binary, Monitor, Globe } from "lucide-react"
 
 const devTools = [
   {
@@ -53,6 +53,13 @@ const devTools = [
     description: "Parse user agent string. Detect Browser, Engine, OS, CPU, Device. user agent parser online. ua-parser-js alternative. Free.",
     href: "/dev-tools/user-agent-parser",
     icon: Monitor,
+    popular: true,
+  },
+  {
+    title: "HTTP Status Codes",
+    description: "Complete HTTP status codes list. http status codes 200, 404, 500 with examples. http status codes table. http methods. Free.",
+    href: "/dev-tools/http-status-codes",
+    icon: Globe,
     popular: true,
   },
   {
