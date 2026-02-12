@@ -3,7 +3,7 @@ import { ToolPageLayout } from "@/components/common/tool-page-layout"
 import { createToolConfig } from "@/lib/create-tool-config"
 import { GToolCard } from "@/ui/gtool-card"
 
-import { Code2, FileJson, Palette, Hash, FileCode, Braces, Database, Sparkles, Binary } from "lucide-react"
+import { Code2, FileJson, Palette, Hash, FileCode, Braces, Database, Sparkles, Binary, Monitor } from "lucide-react"
 
 const devTools = [
   {
@@ -46,6 +46,13 @@ const devTools = [
     description: "Free html wysiwyg editor online. Online html editor with live HTML source. Rich text editor.",
     href: "/dev-tools/html-wysiwyg-editor",
     icon: Braces,
+    popular: true,
+  },
+  {
+    title: "User-Agent Parser",
+    description: "Parse user agent string. Detect Browser, Engine, OS, CPU, Device. user agent parser online. ua-parser-js alternative. Free.",
+    href: "/dev-tools/user-agent-parser",
+    icon: Monitor,
     popular: true,
   },
   {

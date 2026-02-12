@@ -295,6 +295,14 @@ export const categories = [
                 badgeColor: "bg-blue-500/90",
             },
             {
+                title: "User-Agent Parser",
+                description: "User agent parser online. Parse UA string to detect Browser, Engine, OS, CPU, Device. ua-parser-js alternative. Free.",
+                href: "/dev-tools/user-agent-parser",
+                icon: Code,
+                badge: "Web",
+                badgeColor: "bg-blue-500/90",
+            },
+            {
                 title: "Regex Tester",
                 description: "Test regular expressions with live results and instant pattern matching",
                 href: "/dev-tools/regex-tester",

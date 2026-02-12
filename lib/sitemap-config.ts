@@ -1252,6 +1252,12 @@ export const toolPages = [
         priority: 0.95,
     },
     {
+        url: "https://www.fasttools.store/dev-tools/user-agent-parser",
+        lastModified: new Date(),
+        changeFrequency: "monthly" as const,
+        priority: 0.95,
+    },
+    {
         url: "https://www.fasttools.store/dev-tools/color-palette",
         lastModified: new Date('2025-11-25'),
         changeFrequency: "monthly" as const,
