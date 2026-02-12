@@ -147,6 +147,7 @@ export const navigationConfig: MegaMenuSection[] = [
             {
                 title: "Developer",
                 items: [
+                    { title: "JSON Diff", href: "/dev-tools/json-diff", icon: FileCode },
                     { title: "JSON to CSV", href: "/dev-tools/json-to-csv", icon: FileText },
                     { title: "Regex Tester", href: "/dev-tools/regex-tester", icon: Code },
                     { title: "JWT Decoder", href: "/dev-tools/jwt-decoder", icon: Lock },

@@ -84,6 +84,13 @@ const devTools = [
     popular: true,
   },
   {
+    title: "JSON Diff",
+    description: "Compare two JSON objects and find differences. json diff online. json diff javascript, python, npm. Free.",
+    href: "/dev-tools/json-diff",
+    icon: FileJson,
+    popular: true,
+  },
+  {
     title: "JSON to CSV Converter",
     description: "Convert JSON data to CSV format quickly and easily. Great for data analysis and API integration.",
     href: "/dev-tools/json-to-csv",

@@ -239,6 +239,14 @@ export const categories = [
                 badgeColor: "bg-purple-500/90",
             },
             {
+                title: "JSON Diff",
+                description: "Compare two JSON objects and find differences. json diff online. json diff javascript, python, npm. Free.",
+                href: "/dev-tools/json-diff",
+                icon: FileCode,
+                badge: "New",
+                badgeColor: "bg-blue-500/90",
+            },
+            {
                 title: "JSON to CSV Converter",
                 description: "Convert JSON data to CSV format quickly for data analysis and Excel",
                 href: "/dev-tools/json-to-csv",

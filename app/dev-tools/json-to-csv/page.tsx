@@ -264,6 +264,7 @@ fs.writeFileSync('output.csv', csv);`}
     ],
 
     relatedTools: [
+      { name: "JSON Diff", href: "/dev-tools/json-diff" },
       { name: "HTML Beautifier", href: "/dev-tools/html-beautifier" },
       { name: "Regex Tester", href: "/dev-tools/regex-tester" },
       { name: "JWT Decoder", href: "/dev-tools/jwt-decoder" },
