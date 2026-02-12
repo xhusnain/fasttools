@@ -106,6 +106,7 @@ Tools for developers and programmers including JWT decoders, regex testers, JSON
 - https://www.fasttools.store/dev-tools/mime-types - MIME types list. Convert MIME types to file extensions and vice-versa. mime types pdf, mime types for images, mime types excel. json mime type. mime-types npm alternative. Complete IANA-backed database. Free.
 - https://www.fasttools.store/dev-tools/keycode-info - Keycode info. Find javascript keycode, code, location and modifiers of any key. keycode list, keyboard key codes, event keycode. keycode online, keycode tester. Free.
 - https://www.fasttools.store/dev-tools/slugify-string - Slugify string online. Make a string url, filename and id safe. slugify string url. slugify - npm alternative. slugify typescript, slugify python. Free.
+- https://www.fasttools.store/dev-tools/html-wysiwyg-editor - HTML WYSIWYG editor online. Free html wysiwyg editor. Online html editor with live HTML source. Rich text editor. Free.
 - https://www.fasttools.store/crypto-tools/uuid-generator - Free Online UUID Generator (v1, v4, v6, v7). Generate standardized Universally Unique Identifiers instantly. Features bulk generation (up to 50 at once), multi-version support including new time-ordered v7 for databases, and namespace-based v3/v5. Secure, client-side only generation.
 
 ### Crypto Tools
@@ -246,6 +247,7 @@ Context: FastTools provides free, fast, and accurate online tools that work on a
 - https://www.fasttools.store/dev-tools/mime-types - MIME types list. Convert MIME types to file extensions. mime types pdf, images, excel. mime-types npm alternative.
 - https://www.fasttools.store/dev-tools/keycode-info - Keycode info. Find javascript keycode, code, location and modifiers. keycode list, keyboard key codes.
 - https://www.fasttools.store/dev-tools/slugify-string - Slugify string online. Make a string url, filename and id safe.
+- https://www.fasttools.store/dev-tools/html-wysiwyg-editor - HTML WYSIWYG editor online. Free html wysiwyg editor.
 - https://www.fasttools.store/dev-tools/markdown-previewer
 - https://www.fasttools.store/dev-tools/regex-tester
 - https://www.fasttools.store/dev-tools/sql-to-json

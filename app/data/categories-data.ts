@@ -287,6 +287,14 @@ export const categories = [
                 badgeColor: "bg-blue-500/90",
             },
             {
+                title: "HTML WYSIWYG Editor",
+                description: "Free html wysiwyg editor online. Online html editor with live HTML source. Rich text editor.",
+                href: "/dev-tools/html-wysiwyg-editor",
+                icon: Code,
+                badge: "Editor",
+                badgeColor: "bg-blue-500/90",
+            },
+            {
                 title: "Regex Tester",
                 description: "Test regular expressions with live results and instant pattern matching",
                 href: "/dev-tools/regex-tester",

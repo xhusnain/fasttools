@@ -42,6 +42,13 @@ const devTools = [
     popular: true,
   },
   {
+    title: "HTML WYSIWYG Editor",
+    description: "Free html wysiwyg editor online. Online html editor with live HTML source. Rich text editor.",
+    href: "/dev-tools/html-wysiwyg-editor",
+    icon: Braces,
+    popular: true,
+  },
+  {
     title: "Agent Skill Builder",
     description: "Generate custom SKILL.md files for Google Antigravity agents. Build, download, and share agent skills.",
     href: "/dev-tools/antigravity-skill-builder",

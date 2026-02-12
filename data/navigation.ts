@@ -154,6 +154,7 @@ export const navigationConfig: MegaMenuSection[] = [
                     { title: "MIME Types", href: "/dev-tools/mime-types", icon: FileCode },
                     { title: "Keycode Info", href: "/dev-tools/keycode-info", icon: Code },
                     { title: "Slugify String", href: "/dev-tools/slugify-string", icon: FileCode },
+                    { title: "HTML WYSIWYG Editor", href: "/dev-tools/html-wysiwyg-editor", icon: Code },
                     { title: "Color Palette", href: "/dev-tools/color-palette", icon: Palette },
                     { title: "Markdown Preview", href: "/dev-tools/markdown-previewer", icon: Eye },
                     { title: "HTML Beautifier", href: "/dev-tools/html-beautifier", icon: Code },

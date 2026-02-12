@@ -116,6 +116,7 @@ export const searchItems: SearchItem[] = [
   { name: "MIME Types", description: "MIME types list. Convert MIME types to file extensions. mime types pdf, images, excel. mime-types npm alternative.", path: "/dev-tools/mime-types", category: "Developer" },
   { name: "Keycode Info", description: "Find javascript keycode, code, location and modifiers. keycode list, keyboard key codes, event keycode. keycode tester.", path: "/dev-tools/keycode-info", category: "Developer" },
   { name: "Slugify String", description: "Slugify string online. Make a string url, filename and id safe. slugify string url. slugify - npm alternative.", path: "/dev-tools/slugify-string", category: "Developer" },
+  { name: "HTML WYSIWYG Editor", description: "Free html wysiwyg editor online. Online html editor with live HTML source. Rich text editor.", path: "/dev-tools/html-wysiwyg-editor", category: "Developer" },
   { name: "Regex Tester", description: "Test regular expressions with live results", path: "/dev-tools/regex-tester", category: "Developer" },
   { name: "HTML Beautifier", description: "Format and beautify HTML code", path: "/dev-tools/html-beautifier", category: "Developer" },
   { name: "HTML to Markdown", description: "Convert HTML content to Markdown format", path: "/dev-tools/html-to-markdown", category: "Developer" },
