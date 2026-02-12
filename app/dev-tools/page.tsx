@@ -35,6 +35,13 @@ const devTools = [
     popular: true,
   },
   {
+    title: "Slugify String",
+    description: "Slugify string online. Make a string url, filename and id safe. slugify string url. slugify - npm alternative.",
+    href: "/dev-tools/slugify-string",
+    icon: FileCode,
+    popular: true,
+  },
+  {
     title: "Agent Skill Builder",
     description: "Generate custom SKILL.md files for Google Antigravity agents. Build, download, and share agent skills.",
     href: "/dev-tools/antigravity-skill-builder",

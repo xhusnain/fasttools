@@ -142,6 +142,10 @@ Description: MIME types list. Convert MIME types to file extensions and vice-ver
 URL: https://www.fasttools.store/dev-tools/keycode-info
 Description: Keycode info. Find javascript keycode, code, location and modifiers of any pressed key. keycode list, keyboard key codes, event keycode. keycode online, keycode tester. keycode info html, javascript keycode list. Free.
 
+## Slugify String
+URL: https://www.fasttools.store/dev-tools/slugify-string
+Description: Slugify string online. Make a string url, filename and id safe. slugify string url. slugify - npm, slugify typescript, slugify python alternative. slugify string php. Free.
+
 ## Base64 File Converter
 URL: https://www.fasttools.store/converters/base64-file
 Description: Free base64 file converter online. Base64 to PDF, base64 to image, base64 encode & decode. File to base64 online with drag and drop. Base64 to excel, xml, docx, zip. Live image preview and download decoded files. No signup. Supports PDF, images, Excel, XML, Word, ZIP.

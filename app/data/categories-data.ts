@@ -279,6 +279,14 @@ export const categories = [
                 badgeColor: "bg-blue-500/90",
             },
             {
+                title: "Slugify String",
+                description: "Slugify string online. Make a string url, filename and id safe. slugify string url. slugify - npm alternative.",
+                href: "/dev-tools/slugify-string",
+                icon: FileCode,
+                badge: "URL",
+                badgeColor: "bg-blue-500/90",
+            },
+            {
                 title: "Regex Tester",
                 description: "Test regular expressions with live results and instant pattern matching",
                 href: "/dev-tools/regex-tester",
