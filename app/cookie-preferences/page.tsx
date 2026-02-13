@@ -3,6 +3,7 @@
 import { useState, useEffect } from "react"
 import type { CookiePreferences } from "@/types"
 import { Breadcrumbs } from "@/components/common/breadcrumbs"
+import { BreadcrumbJsonLd } from "@/components/seo/breadcrumb-jsonld"
 import { GButton } from "@/ui/gbutton"
 
 import { Shield, Cookie, Eye, Settings, CheckCircle, AlertTriangle, ExternalLink, Lock, BarChart, Target } from "lucide-react"
@@ -115,6 +116,7 @@ export default function CookiePreferencesPage() {
 
   return (
     <>
+      <BreadcrumbJsonLd items={[{ label: "Cookie Preferences", href: "/cookie-preferences" }]} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
       <div className="min-h-screen bg-background">
         <div className="container mx-auto px-4 sm:px-6 py-12 sm:py-16 md:py-20">

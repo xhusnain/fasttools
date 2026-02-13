@@ -87,7 +87,7 @@ export const MDXComponents = {
     a: CustomLink,
     img: CustomImage,
     pre: CustomPre,
-    h1: CustomH1,
+    h1: CustomH2,
     h2: CustomH2,
     h3: CustomH3,
     p: CustomP,

@@ -84,7 +84,7 @@ export function Footer() {
 
           {/* Tools Column 1 */}
           <div>
-            <h4 className="text-sm font-semibold text-foreground mb-4">Tools</h4>
+            <div className="text-sm font-semibold text-foreground mb-4">Tools</div>
             <ul className="space-y-2">
               {toolCategories.slice(0, 6).map((cat) => (
                 <li key={cat.href}>
@@ -98,7 +98,7 @@ export function Footer() {
 
           {/* Popular Tools Column (Replacing generic listing) */}
           <div>
-            <h4 className="text-sm font-semibold text-foreground mb-4">Trending</h4>
+            <div className="text-sm font-semibold text-foreground mb-4">Trending</div>
             <ul className="space-y-2">
               <li><Link href="/social-media-tools/instagram-downloader" className="text-sm text-muted-foreground hover:text-primary transition-colors">Instagram Downloader</Link></li>
               <li><Link href="/social-media-tools/instagram-dp" className="text-sm text-muted-foreground hover:text-primary transition-colors">DP Viewer</Link></li>
@@ -111,7 +111,7 @@ export function Footer() {
 
           {/* Resources Column */}
           <div>
-            <h4 className="text-sm font-semibold text-foreground mb-4">Resources</h4>
+            <div className="text-sm font-semibold text-foreground mb-4">Resources</div>
             <ul className="space-y-2">
               <li><Link href="/blog" title="Read our latest blog posts and tutorials" className="text-sm text-muted-foreground hover:text-primary transition-colors">Blog</Link></li>
               <li><Link href="/guides" title="Guides on how to build and earn with online tools" className="text-sm text-muted-foreground hover:text-primary transition-colors">Guides</Link></li>
@@ -124,7 +124,7 @@ export function Footer() {
 
           {/* Company Column */}
           <div>
-            <h4 className="text-sm font-semibold text-foreground mb-4">Company</h4>
+            <div className="text-sm font-semibold text-foreground mb-4">Company</div>
             <ul className="space-y-2">
               <li><Link href="/about" title="About FastTools" className="text-sm text-muted-foreground hover:text-primary transition-colors">About</Link></li>
               <li><Link href="/contact" title="Contact Us" className="text-sm text-muted-foreground hover:text-primary transition-colors">Contact</Link></li>

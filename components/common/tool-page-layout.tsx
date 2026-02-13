@@ -154,7 +154,7 @@ export function ToolPageLayout({
                                                     <p className="text-muted-foreground leading-relaxed">{step}</p>
                                                 ) : (
                                                     <div className="space-y-1">
-                                                        <h4 className="font-bold text-foreground text-sm">{step.title}</h4>
+                                                        <h3 className="font-bold text-foreground text-sm">{step.title}</h3>
                                                         <p className="text-muted-foreground leading-relaxed text-sm">{step.description}</p>
                                                     </div>
                                                 )}
@@ -239,7 +239,7 @@ export function ToolPageLayout({
                                                     <p className="text-sm text-muted-foreground leading-relaxed">{useCase}</p>
                                                 ) : (
                                                     <div className="space-y-1">
-                                                        <h4 className="text-sm font-bold text-foreground">{useCase.title}</h4>
+                                                        <h3 className="text-sm font-bold text-foreground">{useCase.title}</h3>
                                                         <p className="text-xs text-muted-foreground leading-relaxed">{useCase.description}</p>
                                                     </div>
                                                 )}

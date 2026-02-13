@@ -120,7 +120,7 @@ export const GuideMDXComponents = {
     img: CustomImage,
     pre: CustomPre,
     code: CustomCode,
-    h1: CustomH1,
+    h1: CustomH2,
     h2: CustomH2,
     h3: CustomH3,
     p: CustomP,

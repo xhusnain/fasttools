@@ -2,6 +2,7 @@ import type { Metadata } from "next"
 import { getAllGuides } from '@/components/guide/guide'
 import GuidesClientPage from '@/components/guide/GuidesClientPage'
 import { createMetadata } from "@/lib/metadata-base"
+import { BreadcrumbJsonLd } from "@/components/seo/breadcrumb-jsonld"
 
 export const metadata: Metadata = createMetadata({
     title: 'Learn How to Build Tools & Earn Online | FastTools Guides',
@@ -15,5 +16,10 @@ export const metadata: Metadata = createMetadata({
 export default async function GuidesIndex() {
     const guides = getAllGuides()
 
-    return <GuidesClientPage allGuides={guides} />
+    return (
+        <>
+            <BreadcrumbJsonLd items={[{ label: "Guides", href: "/guides" }]} />
+            <GuidesClientPage allGuides={guides} />
+        </>
+    )
 }
