@@ -59,8 +59,34 @@ export default async function CategoryPage({ params }: { params: Promise<{ slug:
 
     const displayCategoryName = slug.split('-').map(word => word.charAt(0).toUpperCase() + word.slice(1)).join(' ')
 
+    const breadcrumbSchema = {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        itemListElement: [
+            {
+                "@type": "ListItem",
+                position: 1,
+                name: "Home",
+                item: "https://www.fasttools.store"
+            },
+            {
+                "@type": "ListItem",
+                position: 2,
+                name: "Blog",
+                item: "https://www.fasttools.store/blog/archive"
+            },
+            {
+                "@type": "ListItem",
+                position: 3,
+                name: displayCategoryName,
+                item: `https://www.fasttools.store/blog/category/${slug}`
+            }
+        ]
+    }
+
     return (
         <div className="min-h-screen bg-background font-sans text-foreground selection:bg-primary/20 selection:text-primary">
+            <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
             {/* Ambient Background Glow */}
             <div className="fixed inset-0 overflow-hidden pointer-events-none">
                 <div className="absolute top-[-10%] right-[-5%] w-[500px] h-[500px] bg-primary/5 rounded-full blur-[120px]" />
@@ -104,9 +130,9 @@ export default async function CategoryPage({ params }: { params: Promise<{ slug:
                                     </time>
                                 </div>
 
-                                <h3 className="text-2xl font-bold mb-2 group-hover:text-primary transition-colors duration-300 leading-tight">
+                                <h2 className="text-2xl font-bold mb-2 group-hover:text-primary transition-colors duration-300 leading-tight">
                                     {post.title}
-                                </h3>
+                                </h2>
                                 {post.description && (
                                     <p className="text-muted-foreground text-sm leading-relaxed line-clamp-3 group-hover:text-foreground/80 transition-colors">
                                         {post.description}

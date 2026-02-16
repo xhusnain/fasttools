@@ -2,6 +2,7 @@ import { Metadata } from 'next';
 import { createMetadata } from "@/lib/metadata-base"
 import type { FAQItem } from "@/types"
 import { Breadcrumbs } from "@/components/common/breadcrumbs"
+import { BreadcrumbJsonLd } from "@/components/seo/breadcrumb-jsonld"
 import { GHeader } from "@/ui/gheader"
 
 import {
@@ -213,102 +214,105 @@ export const metadata: Metadata = createMetadata({
 
 export default function FAQPage() {
     return (
-        <div className="min-h-screen bg-background">
-            <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-12 md:py-16">
-                <Breadcrumbs
-                    items={[
-                        { label: "FAQ", href: "/faq" },
-                    ]}
-                />
+        <>
+            <BreadcrumbJsonLd items={[{ label: "FAQ", href: "/faq" }]} />
+            <div className="min-h-screen bg-background">
+                <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-12 md:py-16">
+                    <Breadcrumbs
+                        items={[
+                            { label: "FAQ", href: "/faq" },
+                        ]}
+                    />
 
-                <div className="max-w-5xl mx-auto mt-8 md:mt-12">
-                    {/* Title Section */}
-                    <div className="mb-12 md:mb-16">
-                        <GHeader
-                            title="Frequently Asked Questions"
-                            description="Find answers to common questions about FastTools - your comprehensive free online tools platform. Learn about our services, features, privacy, and more."
-                            titleSize="medium"
-                            descriptionSize="small"
-                            color="blue"
-                        />
-                    </div>
-
-                    {/* FAQ Sections */}
-                    <div className="space-y-8 mb-12">
-                        {/* General Questions */}
-                        <div className="bg-card border border-border/30 rounded-xl p-6 md:p-8">
-                            <div className="flex items-center gap-3 mb-6">
-                                <div className="h-10 w-10 md:h-12 md:w-12 rounded-lg bg-primary/10 border border-border/30 flex items-center justify-center flex-shrink-0">
-                                    <Star className="h-5 w-5 md:h-6 md:w-6 text-foreground" />
-                                </div>
-                                <h2 className="text-2xl md:text-3xl font-bold text-foreground">General Questions</h2>
-                            </div>
-                            <div className="space-y-6">
-                                {faqs.slice(0, 6).map((faq, index) => (
-                                    <div key={index} className="border-l-4 border-heading-accent-border pl-6 py-2">
-                                        <h3 className="text-lg md:text-xl font-bold text-heading-accent mb-3">{faq.question}</h3>
-                                        <p className="text-sm md:text-base text-muted-foreground leading-relaxed" dangerouslySetInnerHTML={{ __html: faq.answer }} />
-                                    </div>
-                                ))}
-                            </div>
+                    <div className="max-w-5xl mx-auto mt-8 md:mt-12">
+                        {/* Title Section */}
+                        <div className="mb-12 md:mb-16">
+                            <GHeader
+                                title="Frequently Asked Questions"
+                                description="Find answers to common questions about FastTools - your comprehensive free online tools platform. Learn about our services, features, privacy, and more."
+                                titleSize="medium"
+                                descriptionSize="small"
+                                color="blue"
+                            />
                         </div>
 
-                        {/* Tools & Features Questions */}
-                        <div className="bg-card border border-border/30 rounded-xl p-6 md:p-8">
-                            <div className="flex items-center gap-3 mb-6">
-                                <div className="h-10 w-10 md:h-12 md:w-12 rounded-lg bg-primary/10 border border-border/30 flex items-center justify-center flex-shrink-0">
-                                    <Users className="h-5 w-5 md:h-6 md:w-6 text-foreground" />
-                                </div>
-                                <h2 className="text-2xl md:text-3xl font-bold text-foreground">Tools & Features</h2>
-                            </div>
-                            <div className="space-y-6">
-                                {faqs.slice(6, 14).map((faq, index) => (
-                                    <div key={index + 6} className="border-l-4 border-heading-accent-border pl-6 py-2">
-                                        <h3 className="text-lg md:text-xl font-bold text-heading-accent mb-3">{faq.question}</h3>
-                                        <p className="text-sm md:text-base text-muted-foreground leading-relaxed" dangerouslySetInnerHTML={{ __html: faq.answer }} />
+                        {/* FAQ Sections */}
+                        <div className="space-y-8 mb-12">
+                            {/* General Questions */}
+                            <div className="bg-card border border-border/30 rounded-xl p-6 md:p-8">
+                                <div className="flex items-center gap-3 mb-6">
+                                    <div className="h-10 w-10 md:h-12 md:w-12 rounded-lg bg-primary/10 border border-border/30 flex items-center justify-center flex-shrink-0">
+                                        <Star className="h-5 w-5 md:h-6 md:w-6 text-foreground" />
                                     </div>
-                                ))}
+                                    <h2 className="text-2xl md:text-3xl font-bold text-foreground">General Questions</h2>
+                                </div>
+                                <div className="space-y-6">
+                                    {faqs.slice(0, 6).map((faq, index) => (
+                                        <div key={index} className="border-l-4 border-heading-accent-border pl-6 py-2">
+                                            <h3 className="text-lg md:text-xl font-bold text-heading-accent mb-3">{faq.question}</h3>
+                                            <p className="text-sm md:text-base text-muted-foreground leading-relaxed" dangerouslySetInnerHTML={{ __html: faq.answer }} />
+                                        </div>
+                                    ))}
+                                </div>
                             </div>
-                        </div>
 
-                        {/* Privacy & Security Questions */}
-                        <div className="bg-card border border-border/30 rounded-xl p-6 md:p-8">
-                            <div className="flex items-center gap-3 mb-6">
-                                <div className="h-10 w-10 md:h-12 md:w-12 rounded-lg bg-primary/10 border border-border/30 flex items-center justify-center flex-shrink-0">
-                                    <Shield className="h-5 w-5 md:h-6 md:w-6 text-foreground" />
-                                </div>
-                                <h2 className="text-2xl md:text-3xl font-bold text-foreground">Privacy & Security</h2>
-                            </div>
-                            <div className="space-y-6">
-                                {faqs.slice(14, 18).map((faq, index) => (
-                                    <div key={index + 14} className="border-l-4 border-heading-accent-border pl-6 py-2">
-                                        <h3 className="text-lg md:text-xl font-bold text-heading-accent mb-3">{faq.question}</h3>
-                                        <p className="text-sm md:text-base text-muted-foreground leading-relaxed" dangerouslySetInnerHTML={{ __html: faq.answer }} />
+                            {/* Tools & Features Questions */}
+                            <div className="bg-card border border-border/30 rounded-xl p-6 md:p-8">
+                                <div className="flex items-center gap-3 mb-6">
+                                    <div className="h-10 w-10 md:h-12 md:w-12 rounded-lg bg-primary/10 border border-border/30 flex items-center justify-center flex-shrink-0">
+                                        <Users className="h-5 w-5 md:h-6 md:w-6 text-foreground" />
                                     </div>
-                                ))}
+                                    <h2 className="text-2xl md:text-3xl font-bold text-foreground">Tools & Features</h2>
+                                </div>
+                                <div className="space-y-6">
+                                    {faqs.slice(6, 14).map((faq, index) => (
+                                        <div key={index + 6} className="border-l-4 border-heading-accent-border pl-6 py-2">
+                                            <h3 className="text-lg md:text-xl font-bold text-heading-accent mb-3">{faq.question}</h3>
+                                            <p className="text-sm md:text-base text-muted-foreground leading-relaxed" dangerouslySetInnerHTML={{ __html: faq.answer }} />
+                                        </div>
+                                    ))}
+                                </div>
                             </div>
-                        </div>
 
-                        {/* Usage & Support Questions */}
-                        <div className="bg-card border border-border/30 rounded-xl p-6 md:p-8">
-                            <div className="flex items-center gap-3 mb-6">
-                                <div className="h-10 w-10 md:h-12 md:w-12 rounded-lg bg-primary/10 border border-border/30 flex items-center justify-center flex-shrink-0">
-                                    <Award className="h-5 w-5 md:h-6 md:w-6 text-foreground" />
-                                </div>
-                                <h2 className="text-2xl md:text-3xl font-bold text-foreground">Usage & Support</h2>
-                            </div>
-                            <div className="space-y-6">
-                                {faqs.slice(18).map((faq, index) => (
-                                    <div key={index + 18} className="border-l-4 border-heading-accent-border pl-6 py-2">
-                                        <h3 className="text-lg md:text-xl font-bold text-heading-accent mb-3">{faq.question}</h3>
-                                        <p className="text-sm md:text-base text-muted-foreground leading-relaxed" dangerouslySetInnerHTML={{ __html: faq.answer }} />
+                            {/* Privacy & Security Questions */}
+                            <div className="bg-card border border-border/30 rounded-xl p-6 md:p-8">
+                                <div className="flex items-center gap-3 mb-6">
+                                    <div className="h-10 w-10 md:h-12 md:w-12 rounded-lg bg-primary/10 border border-border/30 flex items-center justify-center flex-shrink-0">
+                                        <Shield className="h-5 w-5 md:h-6 md:w-6 text-foreground" />
                                     </div>
-                                ))}
+                                    <h2 className="text-2xl md:text-3xl font-bold text-foreground">Privacy & Security</h2>
+                                </div>
+                                <div className="space-y-6">
+                                    {faqs.slice(14, 18).map((faq, index) => (
+                                        <div key={index + 14} className="border-l-4 border-heading-accent-border pl-6 py-2">
+                                            <h3 className="text-lg md:text-xl font-bold text-heading-accent mb-3">{faq.question}</h3>
+                                            <p className="text-sm md:text-base text-muted-foreground leading-relaxed" dangerouslySetInnerHTML={{ __html: faq.answer }} />
+                                        </div>
+                                    ))}
+                                </div>
+                            </div>
+
+                            {/* Usage & Support Questions */}
+                            <div className="bg-card border border-border/30 rounded-xl p-6 md:p-8">
+                                <div className="flex items-center gap-3 mb-6">
+                                    <div className="h-10 w-10 md:h-12 md:w-12 rounded-lg bg-primary/10 border border-border/30 flex items-center justify-center flex-shrink-0">
+                                        <Award className="h-5 w-5 md:h-6 md:w-6 text-foreground" />
+                                    </div>
+                                    <h2 className="text-2xl md:text-3xl font-bold text-foreground">Usage & Support</h2>
+                                </div>
+                                <div className="space-y-6">
+                                    {faqs.slice(18).map((faq, index) => (
+                                        <div key={index + 18} className="border-l-4 border-heading-accent-border pl-6 py-2">
+                                            <h3 className="text-lg md:text-xl font-bold text-heading-accent mb-3">{faq.question}</h3>
+                                            <p className="text-sm md:text-base text-muted-foreground leading-relaxed" dangerouslySetInnerHTML={{ __html: faq.answer }} />
+                                        </div>
+                                    ))}
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
+        </>
     )
 }

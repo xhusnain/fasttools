@@ -143,9 +143,9 @@ export function Header() {
                     <div className="pl-2 space-y-4 pt-2 pb-4">
                       {section.categories.map((category, catIndex) => (
                         <div key={catIndex} className="space-y-1">
-                          <h5 className="text-[10px] font-bold text-muted-foreground/70 uppercase tracking-wider pl-2 mb-1">
+                          <div className="text-[10px] font-bold text-muted-foreground/70 uppercase tracking-wider pl-2 mb-1">
                             {category.title}
-                          </h5>
+                          </div>
                           <div className="grid grid-cols-1 gap-0.5">
                             {category.items.map((item, itemIndex) => (
                               <Link

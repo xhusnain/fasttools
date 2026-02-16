@@ -1,5 +1,6 @@
 import React from "react"
 import { Breadcrumbs } from "@/components/common/breadcrumbs"
+import { BreadcrumbJsonLd } from "@/components/seo/breadcrumb-jsonld"
 import { GHeader } from "@/ui/gheader"
 import { GAccordion, GAccordionContent, GAccordionItem, GAccordionTrigger } from "@/ui/gaccordion"
 
@@ -159,6 +160,7 @@ export const metadata: Metadata = createMetadata({
 export default function DownloadersPage() {
   return (
     <>
+      <BreadcrumbJsonLd items={[{ label: "Downloaders", href: "/downloaders" }]} />
       <div className="min-h-screen bg-background">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-12 md:py-16">
           <Breadcrumbs

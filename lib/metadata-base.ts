@@ -91,7 +91,8 @@ function shouldIncludeSchema(path: string): boolean {
 }
 
 export function createMetadata(options: MetadataOptions): Metadata {
-    const { title, description, path, ogImageAlt, ogImage, noIndex, ogTitle, ogDescription, twitterTitle, twitterDescription, twitterCreator, schemaOptions, faqs, howToSteps, toolName, breadcrumbs } = options
+    const { title, description: rawDescription, path, ogImageAlt, ogImage, noIndex, ogTitle, ogDescription, twitterTitle, twitterDescription, twitterCreator, schemaOptions, faqs, howToSteps, toolName, breadcrumbs } = options
+    const description = rawDescription ? (rawDescription.length > 160 ? rawDescription.slice(0, 157) + "..." : rawDescription) : rawDescription
     const includeSchema = options.includeSchema ?? shouldIncludeSchema(path)
 
     const cleanPath = path.startsWith("/") ? path : `/${path}`
