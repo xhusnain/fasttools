@@ -541,7 +541,7 @@ export const categories = [
         tools: [
             {
                 title: "PDF to Word Converter",
-                description: "Convert PDF to editable Word documents without losing formatting",
+                description: "Convert PDF text to editable DOCX and export Word content to PDF",
                 href: "/pdf-tools/pdf-word-converter",
                 icon: FileText,
                 badge: "Popular",
@@ -565,11 +565,19 @@ export const categories = [
             },
             {
                 title: "Sign PDF",
-                description: "Add secure digital signatures to PDFs directly in browser",
+                description: "Add drawn, typed, or uploaded signatures to PDF pages",
                 href: "/pdf-tools/pdf-sign",
                 icon: FileText,
                 badge: "Secure",
                 badgeColor: "bg-red-500/90",
+            },
+            {
+                title: "PDF Signature Checker",
+                description: "Inspect signature status and integrity indicators for signed PDFs",
+                href: "/pdf-tools/pdf-signature-checker",
+                icon: Shield,
+                badge: "Verify",
+                badgeColor: "bg-emerald-600",
             },
             {
                 title: "Merge & Split PDF",
@@ -591,8 +599,8 @@ export const categories = [
     },
     {
         id: "converters",
-        name: "Online Unit & Currency Converters",
-        description: "Convert between units, formats, and currencies instantly",
+        name: "Online Converters & Format Tools",
+        description: "Convert units, currencies, text, and data formats in one place",
         icon: Wrench,
         href: "/converters",
         borderColor: "border-border",
@@ -603,7 +611,7 @@ export const categories = [
         tools: [
             {
                 title: "List Converter",
-                description: "Text to list, comma separated list. Convert column to comma, list to columns. Free.",
+                description: "Convert between comma-separated, line-separated, and cleaned lists",
                 href: "/converters/list-converter",
                 icon: Type,
                 badge: "Text",
@@ -611,7 +619,7 @@ export const categories = [
             },
             {
                 title: "JSON to XML Converter",
-                description: "JSON to XML converter online. Formatter, Python, Java, npm. Free.",
+                description: "Convert JSON payloads to XML and back for integration workflows",
                 href: "/converters/json-xml",
                 icon: FileCode,
                 badge: "Dev",
@@ -619,7 +627,7 @@ export const categories = [
             },
             {
                 title: "XML to JSON Converter",
-                description: "XML to JSON converter online. Python, npm, Node.js. Free.",
+                description: "Convert XML documents to JSON and reverse when needed",
                 href: "/converters/xml-json",
                 icon: FileCode,
                 badge: "Dev",
@@ -627,7 +635,7 @@ export const categories = [
             },
             {
                 title: "TOML to YAML Converter",
-                description: "TOML to YAML converter online. Hugo, Alacritty. Free.",
+                description: "Convert TOML config files to YAML with reverse support",
                 href: "/converters/toml-yaml",
                 icon: FileCode,
                 badge: "Dev",
@@ -635,7 +643,7 @@ export const categories = [
             },
             {
                 title: "TOML to JSON Converter",
-                description: "TOML to JSON converter online. toml2json CLI alternative. Python, npm. Free.",
+                description: "Parse TOML into JSON output for tooling and config workflows",
                 href: "/converters/toml-json",
                 icon: FileCode,
                 badge: "Dev",
@@ -643,7 +651,7 @@ export const categories = [
             },
             {
                 title: "JSON to TOML Converter",
-                description: "JSON to TOML converter online. json2toml npm alternative. Python, CLI. Free.",
+                description: "Convert JSON objects to TOML for project configuration files",
                 href: "/converters/json-toml",
                 icon: FileCode,
                 badge: "Dev",
@@ -651,7 +659,7 @@ export const categories = [
             },
             {
                 title: "YAML to TOML",
-                description: "YAML to TOML online. Ansible convert YAML to TOML. TOML formatter. Free.",
+                description: "Convert YAML to TOML and TOML to YAML for config management",
                 href: "/converters/yaml-toml",
                 icon: FileCode,
                 badge: "Dev",
@@ -659,7 +667,7 @@ export const categories = [
             },
             {
                 title: "JSON to YAML Converter",
-                description: "Convert JSON to YAML and YAML to JSON. Swagger, OpenAPI. For Python, VSCode. Free.",
+                description: "Convert JSON to YAML with reverse YAML to JSON support",
                 href: "/converters/json-yaml",
                 icon: FileCode,
                 badge: "Dev",
@@ -667,7 +675,7 @@ export const categories = [
             },
             {
                 title: "YAML to JSON Converter",
-                description: "YAML to JSON converter free. Swagger, OpenAPI YAML to JSON. Convert for Postman. Free.",
+                description: "Convert YAML documents to JSON for API and automation workflows",
                 href: "/converters/yaml-json",
                 icon: FileCode,
                 badge: "Dev",
@@ -675,7 +683,7 @@ export const categories = [
             },
             {
                 title: "Text to Unicode",
-                description: "Convert text to Unicode and Unicode to text. Parse text to Unicode code points and decode. Free.",
+                description: "Encode text to Unicode code points and decode back to text",
                 href: "/converters/unicode",
                 icon: Type,
                 badge: "Text",
@@ -683,7 +691,7 @@ export const categories = [
             },
             {
                 title: "Text to ASCII Binary",
-                description: "Text to ASCII binary converter online. Binary to text. ASCII to binary table, binary alphabet. Free.",
+                description: "Convert plain text to binary and decode binary values to text",
                 href: "/converters/ascii-binary",
                 icon: Binary,
                 badge: "Dev",
@@ -691,7 +699,7 @@ export const categories = [
             },
             {
                 title: "Text to NATO Alphabet",
-                description: "Text to NATO alphabet converter online. NATO decoder, military alphabet translator. Free.",
+                description: "Convert text into NATO phonetic alphabet words and decode",
                 href: "/converters/nato-phonetic",
                 icon: Radio,
                 badge: "Text",
@@ -699,7 +707,7 @@ export const categories = [
             },
             {
                 title: "Base64 File Converter",
-                description: "Free base64 file converter online. Base64 to PDF, image, excel, xml, docx, zip. File to base64 with preview.",
+                description: "Encode files to Base64 and decode Base64 back to downloadable files",
                 href: "/converters/base64-file",
                 icon: FileImage,
                 badge: "File",
@@ -739,7 +747,7 @@ export const categories = [
             },
             {
                 title: "Temperature Converter",
-                description: "Convert between Celsius, Fahrenheit, Kelvin, and Rankine",
+                description: "Convert temperatures between Celsius and Fahrenheit instantly",
                 href: "/converters/temperature",
                 icon: Thermometer,
                 badge: "Fast",

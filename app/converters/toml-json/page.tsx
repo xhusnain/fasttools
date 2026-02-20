@@ -15,29 +15,24 @@ const TomlJsonConverter = dynamic(
 const toolConfig = createToolConfig({
   toolName: "TOML to JSON Converter",
   description:
-    "Free TOML to JSON converter online. toml2json CLI alternative. For Python, npm. JSON to TOML. pyproject.toml, Cargo.toml. No signup.",
-  metaTitle: "TOML to JSON Converter Online - Free, Python, npm, CLI",
+    "Convert TOML to JSON and JSON to TOML for config workflows like pyproject.toml and Cargo.toml.",
+  metaTitle: "TOML to JSON Converter (with JSON to TOML)",
   metaDescription:
-    "Free TOML to JSON converter online. toml2json CLI alternative. TOML to JSON for Python, npm. JSON to TOML. pyproject.toml, Cargo.toml. No signup.",
+    "Free TOML to JSON converter with reverse JSON to TOML support. Useful for pyproject.toml, Cargo.toml, and config tooling.",
   path: "/converters/toml-json",
   keywords: [
-    "toml to json converter online",
-    "toml to json online",
-    "toml to json",
-    "toml to json cli",
-    "toml to json python",
-    "toml to json npm",
-    "toml to json github",
-    "toml to yaml",
-    "yaml to json",
-    "python toml",
-    "toml",
-    "json to toml",
+    "toml to json converter",
+    "json to toml converter",
+    "pyproject toml converter",
+    "cargo toml converter",
+    "config format converter",
+    "toml parser",
   ],
 
   header: {
-    title: "TOML to JSON converter",
-    description: "Parse and convert TOML to JSON.",
+    title: "TOML to JSON Converter",
+    description:
+      "Convert TOML and JSON formats for development, automation, and configuration management.",
     titleSize: "medium",
     descriptionSize: "small",
   },
@@ -50,21 +45,14 @@ const toolConfig = createToolConfig({
   schemaOptions: {
     applicationCategory: "UtilitiesApplication",
     description:
-      "Free TOML to JSON converter online. toml2json CLI alternative. For Python, npm. JSON to TOML. pyproject.toml, Cargo.toml.",
-    alternateName: [
-      "TOML to JSON Converter Online",
-      "TOML to JSON Converter",
-      "TOML to JSON",
-      "toml2json",
-      "JSON to TOML Converter",
-    ],
+      "Two-way converter for TOML and JSON configuration data.",
+    alternateName: ["TOML JSON Converter", "JSON TOML Converter"],
     featureList: [
-      "TOML to JSON converter online",
-      "JSON to TOML converter",
-      "toml2json CLI alternative",
-      "For Python, npm, pyproject.toml, Cargo.toml",
-      "Live conversion as you type",
-      "100% client-side, no signup",
+      "TOML to JSON conversion",
+      "JSON to TOML conversion",
+      "Config-focused conversion",
+      "Live output",
+      "No signup",
     ],
     offers: {
       "@type": "Offer",
@@ -75,98 +63,71 @@ const toolConfig = createToolConfig({
 
   content: {
     overview:
-      "Free TOML to JSON converter online. Convert TOML to JSON for Python (pyproject.toml), Rust (Cargo.toml). toml2json CLI alternative. JSON to TOML supported. Paste TOML or JSON for instant conversion. No signup required.",
+      "Use this converter to transform TOML config files into JSON and back. It is useful for projects that mix tooling ecosystems and file format requirements.",
 
     howToSteps: [
-      "TOML to JSON: Paste your TOML in the Your TOML panel. The JSON output appears instantly.",
-      "JSON to TOML: Paste your JSON in the Your JSON panel. The TOML output appears instantly.",
-      "Copy JSON or TOML to clipboard with one click.",
+      "Paste TOML content to generate JSON output.",
+      "Paste JSON content to generate TOML output.",
+      "Copy and use the result in your project config files.",
     ],
 
     features: [
-      "TOML to JSON: Convert TOML configs to JSON format",
-      "JSON to TOML: Convert JSON to TOML format",
-      "Live conversion: Results update as you type",
-      "Copy to clipboard with one click",
-      "100% client-side, no data sent to servers",
+      "Two-way TOML and JSON conversion",
+      "Formatted output for readability",
+      "Live conversion updates",
+      "Browser-based processing",
+      "One-click copy actions",
     ],
 
     useCases: [
-      "pyproject.toml: Convert TOML to JSON for Python tooling.",
-      "Cargo.toml: Convert Rust config to JSON for processing.",
-      "Golang: Convert TOML to JSON without CLI tools.",
+      "Working with pyproject.toml and Cargo.toml",
+      "Converting config files for internal tools",
+      "Preparing structured data for scripts",
+      "Debugging configuration format issues",
     ],
 
     aboutTool: (
       <div className="space-y-6 text-muted-foreground">
         <p>
-          TOML (Tom&apos;s Obvious, Minimal Language) and JSON are both data
-          formats. TOML is used for config files like pyproject.toml and
-          Cargo.toml; JSON is used in APIs and web apps. This converter
-          transforms between them instantly. Use as a toml2json CLI alternative
-          or for Python toml parsing.
+          TOML is popular for developer configuration, while JSON is common in
+          APIs and scripting. This converter helps teams move settings and data
+          between both formats without manual rewrite.
         </p>
       </div>
     ),
 
     proTip:
-      "TOML uses [section] tables and key = value pairs. JSON uses braces and brackets. This tool parses TOML and outputs valid, formatted JSON.",
+      "After conversion, run your project's config validation to confirm key names and types still match expectations.",
 
     faqs: [
       {
-        question: "Is JSON valid in TOML?",
+        question: "Can I convert pyproject.toml to JSON?",
         answer:
-          "No. TOML and JSON are different formats. TOML uses [tables] and key = value; JSON uses {} and []. This free TOML to JSON converter online transforms TOML into valid JSON. Paste TOML in the Your TOML panel and get JSON output instantly.",
+          "Yes. Paste TOML content and copy the generated JSON output.",
       },
       {
-        question: "How to parse a TOML file?",
+        question: "Does this tool convert JSON to TOML too?",
+        answer: "Yes. Two-way conversion is included in the same interface.",
+      },
+      {
+        question: "Can I use it for Cargo.toml files?",
         answer:
-          "Paste your TOML content in the Your TOML panel. This TOML to JSON converter parses TOML and outputs JSON. For Python: use the toml library. For npm: use @iarna/toml. This tool works as a toml2json online converter—no install needed.",
+          "Yes. It can convert Cargo.toml content to JSON and back for analysis or migration workflows.",
       },
       {
-        question: "How to convert TOML to JSON in Python?",
-        answer:
-          "Use this free TOML to JSON converter online—paste TOML and get JSON. For Python code: use the toml library (json.dumps(toml.loads(toml_str))). This tool replaces the need for toml to json python scripts.",
+        question: "Is it browser-based?",
+        answer: "Yes. Conversion runs in-browser.",
       },
       {
-        question: "Is there a toml2json npm alternative?",
-        answer:
-          "Yes. This TOML to JSON converter online works as a toml2json npm alternative—no install needed. Paste TOML and get JSON instantly. For Node.js: use @iarna/toml (TOML.parse) then JSON.stringify.",
-      },
-      {
-        question: "What opens TOML files?",
-        answer:
-          "TOML files are text files. Open with any text editor. To convert TOML to JSON, paste the content into this free TOML to JSON converter online. Supports pyproject.toml, Cargo.toml, and any TOML config.",
-      },
-      {
-        question: "Is this TOML to JSON converter free?",
-        answer:
-          "Yes. This TOML to JSON converter is 100% free. Conversion runs in your browser—no data is sent to servers. No signup required. Use for Python, npm, CLI workflows, pyproject.toml, or Cargo.toml.",
-      },
-    ],
-
-    additionalContent: [
-      {
-        heading: "TOML to JSON CLI Alternative",
-        content:
-          "Use this free TOML to JSON converter online as a toml2json CLI alternative. Paste TOML and get JSON instantly—no installation. For CLI: use toml2json (Rust), or Python toml + json modules. This tool handles quick conversions in the browser.",
-      },
-      {
-        heading: "TOML to JSON for Python (pyproject.toml)",
-        content:
-          "Convert pyproject.toml or any Python toml config to JSON. Paste TOML in the Your TOML panel—the TOML to JSON python workflow is covered. Use for tooling, config processing, or migrating from TOML to JSON.",
-      },
-      {
-        heading: "TOML to YAML and YAML to JSON",
-        content:
-          "For TOML to YAML, use our YAML to TOML converter in reverse—paste TOML and get YAML. For YAML to JSON, use our YAML to JSON converter. This tool focuses on TOML to JSON and JSON to TOML. All free and client-side.",
+        question: "Is this converter free?",
+        answer: "Yes. It is free and requires no signup.",
       },
     ],
 
     relatedTools: [
       { name: "JSON to TOML Converter", href: "/converters/json-toml" },
-      { name: "YAML to TOML", href: "/converters/yaml-toml" },
-      { name: "YAML to JSON Converter", href: "/converters/yaml-json" },
+      { name: "TOML to YAML Converter", href: "/converters/toml-yaml" },
+      { name: "YAML to TOML Converter", href: "/converters/yaml-toml" },
       { name: "All Converters", href: "/converters" },
     ],
   },
@@ -178,7 +139,7 @@ export default function TomlJsonConverterPage() {
   return (
     <ToolPageLayout
       {...toolConfig.getLayoutProps(
-        <div className="p-3 sm:p-4 md:p-5 rounded-lg bg-card border border-border shadow">
+        <div className="rounded-lg border border-border bg-card p-3 shadow sm:p-4 md:p-5">
           <TomlJsonConverter />
         </div>
       )}

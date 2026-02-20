@@ -15,25 +15,24 @@ const TomlYamlConverter = dynamic(
 const toolConfig = createToolConfig({
   toolName: "TOML to YAML Converter",
   description:
-    "Free TOML to YAML converter online. Convert TOML to YAML for Hugo, Alacritty, pyproject.toml, Cargo.toml. YAML vs TOML. YAML to JSON. No signup.",
-  metaTitle: "TOML to YAML Converter Online - Free, Hugo, Alacritty, Config",
+    "Convert TOML to YAML and YAML to TOML for configuration files and infrastructure workflows.",
+  metaTitle: "TOML to YAML Converter (with YAML to TOML)",
   metaDescription:
-    "Free TOML to YAML converter online. Convert TOML to YAML for Hugo, Alacritty, pyproject.toml, Cargo.toml. YAML vs TOML. No signup.",
+    "Free TOML to YAML converter with reverse YAML to TOML support. Useful for config migration, devops workflows, and project setup.",
   path: "/converters/toml-yaml",
   keywords: [
-    "toml to yaml online",
-    "toml to yaml converter online",
-    "toml to yaml",
-    "toml to yaml github",
-    "alacritty yaml to toml",
-    "json to toml",
-    "yaml to json",
-    "yaml vs toml",
+    "toml to yaml converter",
+    "yaml to toml converter",
+    "config format converter",
+    "hugo config converter",
+    "alacritty config converter",
+    "toml yaml tool",
   ],
 
   header: {
-    title: "TOML to YAML converter",
-    description: "Parse and convert TOML to YAML.",
+    title: "TOML to YAML Converter",
+    description:
+      "Convert configuration content between TOML and YAML in both directions.",
     titleSize: "medium",
     descriptionSize: "small",
   },
@@ -46,20 +45,14 @@ const toolConfig = createToolConfig({
   schemaOptions: {
     applicationCategory: "UtilitiesApplication",
     description:
-      "Free TOML to YAML converter online. Convert TOML to YAML for Hugo, Alacritty, pyproject.toml, Cargo.toml. YAML vs TOML.",
-    alternateName: [
-      "TOML to YAML Converter Online",
-      "TOML to YAML Converter",
-      "TOML to YAML",
-      "YAML to TOML Converter",
-    ],
+      "Two-way converter for TOML and YAML configuration files.",
+    alternateName: ["TOML YAML Converter", "YAML TOML Converter"],
     featureList: [
-      "TOML to YAML converter online",
-      "YAML to TOML converter",
-      "Hugo, Alacritty config conversion",
-      "pyproject.toml, Cargo.toml support",
-      "Live conversion as you type",
-      "100% client-side, no signup",
+      "TOML to YAML conversion",
+      "YAML to TOML conversion",
+      "Config-focused output",
+      "Live conversion",
+      "No signup",
     ],
     offers: {
       "@type": "Offer",
@@ -70,96 +63,69 @@ const toolConfig = createToolConfig({
 
   content: {
     overview:
-      "Free TOML to YAML converter online. Convert TOML to YAML for Hugo config, Alacritty, Python (pyproject.toml), Rust (Cargo.toml). YAML vs TOML comparison. Paste TOML or YAML for instant conversion. No signup required.",
+      "This converter helps teams move config data between TOML and YAML formats. It is practical for project setup, infrastructure files, and environment-specific tooling.",
 
     howToSteps: [
-      "TOML to YAML: Paste your TOML in the Your TOML panel. The YAML output appears instantly.",
-      "YAML to TOML: Paste your YAML in the Your YAML panel. The TOML output appears instantly.",
-      "Copy YAML or TOML to clipboard with one click.",
+      "Paste TOML content to generate YAML.",
+      "Paste YAML content to generate TOML.",
+      "Copy the result and apply it to your target config file.",
     ],
 
     features: [
-      "TOML to YAML: Convert TOML configs to YAML format",
-      "YAML to TOML: Convert YAML to TOML format",
-      "Live conversion: Results update as you type",
-      "Copy to clipboard with one click",
-      "100% client-side, no data sent to servers",
+      "Two-way TOML and YAML conversion",
+      "Formatted config output",
+      "Live conversion while editing",
+      "Browser-based processing",
+      "One-click copy support",
     ],
 
     useCases: [
-      "Hugo: Convert config.toml or front matter to YAML.",
-      "Alacritty: Convert alacritty.toml to alacritty.yml.",
-      "pyproject.toml / Cargo.toml: Switch between TOML and YAML formats.",
+      "Migrating service configuration formats",
+      "Converting project setup files",
+      "Testing config compatibility",
+      "Standardizing config across teams",
     ],
 
     aboutTool: (
       <div className="space-y-6 text-muted-foreground">
         <p>
-          TOML and YAML are human-readable config formats. TOML is used by
-          Python (pyproject.toml), Rust (Cargo.toml), and Hugo; YAML is used by
-          Alacritty, Kubernetes, and Ansible. This converter transforms between
-          them instantly. YAML vs TOML: TOML is minimal and explicit; YAML is
-          flexible and indentation-based.
+          TOML and YAML are both common in configuration workflows, but tools
+          often require one specific format. This converter helps you switch
+          between them safely and quickly.
         </p>
       </div>
     ),
 
     proTip:
-      "For Hugo: use convert toYAML for front matter. For Alacritty: paste alacritty.toml and get alacritty.yml. Both directions supported.",
+      "After conversion, run your target application's config linter to verify expected structure and value types.",
 
     faqs: [
       {
-        question: "Is TOML the same as YAML?",
+        question: "Can I convert TOML configs to YAML?",
         answer:
-          "No. TOML and YAML are different formats. TOML uses [tables] and key = value; YAML uses indentation and colons. This free TOML to YAML converter online transforms between them. Paste TOML in the Your TOML panel to get YAML, or paste YAML to get TOML.",
+          "Yes. Paste TOML input and copy the generated YAML output.",
       },
       {
-        question: "How to parse a TOML file?",
+        question: "Does the same tool convert YAML back to TOML?",
+        answer: "Yes. It supports both directions.",
+      },
+      {
+        question: "Is this useful for devops configuration work?",
         answer:
-          "Paste your TOML content in the Your TOML panel. This TOML to YAML converter parses TOML and outputs YAML. For Python: use the toml library. For npm: use @iarna/toml. This tool works as an online converter—no install needed.",
+          "Yes. It helps with format migration and compatibility checks across tooling.",
       },
       {
-        question: "Can I convert JSON to YAML?",
-        answer:
-          "Yes. Use our YAML to JSON converter for JSON to YAML. This tool focuses on TOML to YAML and YAML to TOML. For config format conversions, we have JSON to TOML, TOML to JSON, and YAML to JSON tools.",
+        question: "Is conversion done server-side?",
+        answer: "No. Conversion is performed in the browser.",
       },
       {
-        question: "Is JSON valid in TOML?",
-        answer:
-          "No. TOML and JSON are different formats. Use our TOML to JSON converter for that direction. This tool converts TOML to YAML and YAML to TOML—ideal for Hugo, Alacritty, and config migrations.",
-      },
-      {
-        question: "How to convert Alacritty TOML to YAML?",
-        answer:
-          "Paste your alacritty.toml content in the Your TOML panel. The YAML output appears instantly. Copy and save as alacritty.yml. This free TOML to YAML converter online handles Alacritty config conversion.",
-      },
-      {
-        question: "Is this TOML to YAML converter free?",
-        answer:
-          "Yes. This TOML to YAML converter is 100% free. Conversion runs in your browser—no data is sent to servers. No signup required. Use for Hugo, Alacritty, pyproject.toml, Cargo.toml, or any TOML/YAML conversion.",
-      },
-    ],
-
-    additionalContent: [
-      {
-        heading: "TOML to YAML for Hugo",
-        content:
-          "Convert Hugo config.toml or front matter to YAML. Paste TOML in the Your TOML panel—the YAML output appears instantly. Hugo supports convert toYAML for front matter; this tool helps with config and bulk conversion. Free and client-side.",
-      },
-      {
-        heading: "Alacritty YAML to TOML",
-        content:
-          "For Alacritty yaml to toml (converting alacritty.yml to alacritty.toml), paste YAML in the Your YAML panel. For TOML to YAML (alacritty.toml to alacritty.yml), paste TOML in the left panel. This free TOML to YAML converter online supports both directions.",
-      },
-      {
-        heading: "YAML vs TOML",
-        content:
-          "YAML vs TOML: YAML uses indentation and colons; TOML uses [section] tables and key = value. TOML is used by Python (pyproject.toml), Rust (Cargo.toml), Hugo. YAML is used by Alacritty, Kubernetes, Ansible. This converter helps you switch between formats.",
+        question: "Is this converter free?",
+        answer: "Yes. It is free and requires no signup.",
       },
     ],
 
     relatedTools: [
-      { name: "YAML to TOML", href: "/converters/yaml-toml" },
+      { name: "YAML to TOML Converter", href: "/converters/yaml-toml" },
       { name: "TOML to JSON Converter", href: "/converters/toml-json" },
       { name: "JSON to TOML Converter", href: "/converters/json-toml" },
       { name: "All Converters", href: "/converters" },
@@ -173,7 +139,7 @@ export default function TomlYamlConverterPage() {
   return (
     <ToolPageLayout
       {...toolConfig.getLayoutProps(
-        <div className="p-3 sm:p-4 md:p-5 rounded-lg bg-card border border-border shadow">
+        <div className="rounded-lg border border-border bg-card p-3 shadow sm:p-4 md:p-5">
           <TomlYamlConverter />
         </div>
       )}

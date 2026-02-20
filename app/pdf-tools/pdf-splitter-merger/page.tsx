@@ -5,125 +5,160 @@ import { ToolLoader } from "@/components/common/tool-loader"
 import { createToolConfig } from "@/lib/create-tool-config"
 
 const PDFToolsAdvanced = dynamic(
-  () => import("@/components/pdf/pdf-tools-advanced").then(mod => mod.PDFToolsAdvanced),
+  () => import("@/components/pdf/pdf-tools-advanced").then((mod) => mod.PDFToolsAdvanced),
   { loading: () => <ToolLoader /> }
 )
 
 const toolConfig = createToolConfig({
   toolName: "PDF Splitter & Merger",
-  description: "Split PDFs into separate pages or merge multiple PDFs into one document. Fast, secure, browser-based processing with page range control.",
-  metaTitle: "PDF Splitter & Merger - Split or Merge PDFs Free",
-  metaDescription: "Free online PDF splitter and merger tool. Split PDF files into separate pages, extract page ranges, or merge multiple PDFs into one document. 100% secure, browser-based processing.",
+  description:
+    "Split PDF pages or merge multiple PDFs in custom order with a browser-based workflow.",
+  metaTitle: "PDF Splitter and Merger Online - Split or Merge PDF Files",
+  metaDescription:
+    "Split PDF pages by all pages, range, or selected pages. Merge multiple PDFs in your preferred order and download the result.",
   path: "/pdf-tools/pdf-splitter-merger",
+  keywords: [
+    "split pdf",
+    "merge pdf",
+    "pdf splitter",
+    "pdf merger",
+    "extract pdf pages",
+    "combine pdf files",
+  ],
+
+  schemaOptions: {
+    applicationCategory: "BusinessApplication",
+    description:
+      "Online PDF split and merge tool with range extraction and reorderable merge list.",
+    featureList: [
+      "Split all pages",
+      "Split by range",
+      "Extract selected pages",
+      "Merge multiple PDFs",
+      "Reorder files before merge",
+    ],
+    softwareRequirements: "Modern web browser",
+  },
 
   header: {
-    title: "PDF Splitter & Merger - Split & Merge PDF Files Online",
-    description: "Split large PDFs into separate pages, extract specific page ranges, or merge multiple PDFs into one document. All processing happens locally in your browser for maximum privacy and security.",
+    title: "PDF Splitter & Merger",
+    description:
+      "Extract pages from a PDF or combine multiple PDFs into one file using a simple browser workflow.",
     titleSize: "medium",
     descriptionSize: "small",
   },
 
   breadcrumbs: [
     { label: "PDF Tools", href: "/pdf-tools" },
-    { label: "PDF Splitter & Merger", href: "/ pdf-tools/pdf-splitter-merger" },
+    { label: "PDF Splitter & Merger", href: "/pdf-tools/pdf-splitter-merger" },
   ],
 
   content: {
-    overview: "Our advanced PDF splitter and merger provides complete control over your PDF documents. Split large PDFs by extracting specific pages, page ranges, or dividing into equal parts. Merge unlimited PDFs into one comprehensive document while preserving formatting, bookmarks, and document structure. Both operations happen locally in your browser—your files never leave your device, ensuring complete privacy for sensitive documents. Perfect for organizing document collections, creating custom packages, extracting chapters from ebooks, combining invoices, or managing any PDF workflow that requires document manipulation.",
+    overview:
+      "PDF Splitter & Merger supports two core operations: split one PDF into selected outputs, and merge multiple PDFs into one combined file. In split mode, you can export all pages, a range, or specific pages. In merge mode, you can reorder files before final output.",
 
     howToSteps: [
-      "Upload your PDF(s) by clicking the upload area or dragging and dropping (supports multiple files for merging).",
-      "For splitting: Select pages to extract (specific pages, page ranges, or split mode). For merging: Arrange PDFs in desired order.",
-      "The tool processes your PDFs locally in your browser, maintaining document quality and structure.",
-      "Download your split pages or merged document instantly—all processing happens on your device for complete privacy."
+      "Choose mode: Merge PDFs or Split PDF.",
+      "Upload PDF files for the selected mode.",
+      "For split: choose all pages, range, or extract list. For merge: reorder files.",
+      "Run processing and download the result.",
     ],
 
     features: [
-      "Flexible Splitting: Extract specific pages, define page ranges, split into equal parts, or extract odd/even pages",
-      "Unlimited Merging: Combine unlimited PDFs into one file without file count restrictions",
-      "Page Range Control: Precisely define which pages to extract (e.g., pages 1-10, 20-30, 45)",
-      "Format Preservation: Maintains original quality, fonts, images, and document structure",
-      "Bookmarks Retained: Preserves PDF bookmarks and table of contents when merging",
-      "Complete Privacy: All processing in browser—files never uploaded to servers",
-      "Large File Support: Handle PDFs up to 2GB without file size restrictions",
-      "Batch Operations: Split multiple PDFs or merge many documents efficiently",
-      "Unlimited Free Usage: No daily limits, no watermarks, no account required",
-      "Fast Processing: Instant results powered by WebAssembly technology",
-      "Cross-Platform: Works on Windows, Mac, Linux, iPhone, Android—any device with a browser",
-      "No Installation: Browser-based tool works immediately without downloads",
-      "Drag and Drop: Intuitive interface for arranging pages and documents",
-      "Preview Mode: See page thumbnails before processing",
-      "Custom Organization: Reorder pages and documents before splitting or merging",
-      "Offline Capability: Core functions work without internet once loaded"
+      "Split modes: all pages, range, extract list",
+      "Merge multiple files into one PDF",
+      "Drag-and-drop file order for merge",
+      "Page count awareness for split inputs",
+      "No account required",
+      "Browser-based processing",
+      "Desktop and mobile support",
     ],
 
     useCases: [
-      "Document Organization: Split large reports into chapters or merge related documents into comprehensive packages for distribution",
-      "Contract Management: Extract signature pages, split multi-party agreements, or merge contract addendums with original documents",
-      "Academic Materials: Split textbooks into individual chapters for students or merge lecture notes into semester compilations",
-      "Invoice Processing: Combine monthly invoices into quarterly packages or extract specific invoices from collections",
-      "Ebook Management: Split ebooks by chapters for easier reading or merge book series into single files",
-      "Legal Document Preparation: Organize case files by extracting relevant pages or combining exhibits with pleadings",
-      "Business Presentations: Extract key slides from large presentations or merge multiple departmental reports into exec summaries",
-      "Real Estate Documentation: Combine property documents, split inspection reports, or organize closing packages",
-      "Medical Records: Split patient records by visit or merge medical history documents for comprehensive files",
-      "Archive Management: Organize scanned documents by splitting bulk scans or merging related historical files"
+      "Extract only required pages from long documents",
+      "Create document bundles by merging related PDFs",
+      "Prepare page-specific packets for teams",
+      "Break large PDFs into smaller operational files",
+      "Assemble final reports from multiple source PDFs",
     ],
 
-    aboutTool: "Our PDF splitter and merger uses advanced PDF manipulation algorithms built on PDF.js and WebAssembly for native-speed performance entirely in your browser. The splitter intelligently extracts pages while preserving internal PDF structure including fonts, images, vector graphics, and embedded resources. Page extraction maintains original quality without recompression or quality loss. The merger combines PDFs using stream concatenation, preserving all document properties, bookmarks, annotations, form fields, and metadata from source files. It handles complex PDF structures including encrypted PDFs (after unlocking), forms with JavaScript, and documents with embedded files. All processing happens client-side using your device's processing power, ensuring complete privacy and eliminating server upload delays common with cloud-based tools.",
+    aboutTool: (
+      <div className="space-y-6 text-muted-foreground">
+        <div>
+          <h3 className="text-lg font-semibold text-foreground mb-2">Split Workflows</h3>
+          <p>
+            Use split mode when a single source document contains only a subset you need. Range and extract-list options are useful for
+            controlled page delivery.
+          </p>
+        </div>
 
-    proTip: "For best results: When splitting, use page ranges instead of individual page selections to speed up processing (e.g., '1-50' instead of '1,2,3...'). When merging, arrange PDFs in final order before processing to avoid re-merging. To split a PDF into equal parts, divide total pages by desired sections. For large PDFs (500+ pages), split into smaller sections first for easier management. Always keep original files before processing in case you need different page arrangements.",
+        <div>
+          <h3 className="text-lg font-semibold text-foreground mb-2">Merge Workflows</h3>
+          <p>
+            Use merge mode to build final packets from multiple PDFs. Reordering before processing keeps output structure predictable.
+          </p>
+        </div>
+
+        <div>
+          <h3 className="text-lg font-semibold text-foreground mb-2">Capability Alignment</h3>
+          <p>
+            This page is tuned to actual in-product controls: page extraction and merge ordering, without claiming unavailable advanced
+            features.
+          </p>
+        </div>
+      </div>
+    ),
+
+    proTip:
+      "For large jobs, split first into required sections, then merge only the sections needed for final delivery.",
 
     faqs: [
       {
-        question: "How do I split a PDF into individual pages?",
-        answer: "Use our PDF splitter in 'Split all pages' mode to extract every page as a separate PDF file. Upload your PDF, select the split mode, and click process. Each page becomes an individual PDF that you can download separately or as a ZIP archive. Perfect for distributing single-page documents, creating individual invoices from batches, or extracting specific pages for editing. The tool preserves original quality and formatting for each extracted page."
+        question: "How do I split a PDF into separate pages?",
+        answer:
+          "Switch to split mode and choose All Pages. The tool will export each page as its own PDF file.",
       },
       {
-        question: "Can I extract specific page ranges from a PDF?",
-        answer: "Yes, our splitter offers precise page range control. Enter page numbers like '1-10' to extract pages 1 through 10, '5,10,15' for specific pages, or combinations like '1-5,10,20-25' for complex extractions. Perfect for extracting chapters from ebooks, specific sections from reports, or signature pages from contracts. The tool validates page numbers and shows preview thumbnails to ensure you're extracting the correct pages."
+        question: "Can I extract a page range like 5-12?",
+        answer:
+          "Yes. In split mode choose Range and set start and end pages.",
       },
       {
-        question: "How many PDFs can I merge into one file?",
-        answer: "There's no limit to the number of PDFs you can merge. Our merger handles unlimited files, though practical browser memory limitations apply (typically 50-100 documents comfortably). For very large merging operations (100+ files), consider merging in batches then combining the results. The merger preserves all document properties including bookmarks, annotations, and metadata from each source PDF. Perfect for combining invoices, creating document packages, or organizing comprehensive reports."
+        question: "Can I extract specific pages like 1,3,8?",
+        answer:
+          "Yes. Use Extract Pages mode and enter a comma-separated list.",
       },
       {
-        question: "Will merging PDFs preserve bookmarks and table of contents?",
-        answer: "Yes, our merger intelligently preserves bookmarks, table of contents, and document structure from all source PDFs. Bookmarks are maintained with correct page references in the merged document. If multiple PDFs have bookmarks, they're combined into a single bookmark tree organized by source document order. Annotations, form fields, hyperlinks, and other interactive elements are also preserved, ensuring the merged PDF maintains full functionality from all source documents."
+        question: "How do I merge PDFs in a custom order?",
+        answer:
+          "Switch to merge mode, upload files, then drag to reorder before generating the merged output.",
       },
       {
-        question: "Is splitting and merging PDFs secure?",
-        answer: "Completely secure. All splitting and merging happens locally in your browser using WebAssembly—your files never leave your device, never uploaded to servers, and never stored anywhere. This client-side processing ensures complete privacy for confidential business documents, legal contracts, financial records, medical files, and personal information. No data transmission, no server access, no privacy concerns. Safe for processing sensitive documents requiring GDPR, HIPAA, or other privacy compliance."
+        question: "Is this free?",
+        answer: "Yes, it is available as a free browser-based utility.",
       },
       {
-        question: "Can I rearrange pages when merging PDFs?",
-        answer: "Yes, our merger lets you arrange PDFs in any order before merging. Simply drag and drop documents in the file list to reorder them. You can also remove unwanted PDFs before merging. The final merged document will reflect your chosen arrangement. This feature is essential for creating properly organized document packages, chronological file compilations, or any scenario where document order matters. Preview thumbnails help you confirm the correct arrangement before processing."
+        question: "Do I need software installation?",
+        answer: "No. You can run split and merge workflows directly in your browser.",
       },
       {
-        question: "What's the difference between extracting pages and splitting a PDF?",
-        answer: "Extracting pages creates individual PDF files for specific pages you select (e.g., pages 5, 10, 15 become three separate PDFs). Splitting divides a PDF into sections automatically (e.g., every 10 pages, odd/even pages, or all pages individually). Extraction gives precise control for specific pages; splitting is faster for systematic divisions. Both preserve original quality and formatting. Choose extraction for selective pages, splitting for systematic organization."
+        question: "Does it work on mobile browsers?",
+        answer: "Yes. It supports modern mobile and desktop browsers.",
       },
       {
-        question: "Can I split password-protected PDFs?",
-        answer: "No, encrypted or password-protected PDFs must be unlocked before splitting. Use our PDF Unlocker tool first to remove password protection, then split the unlocked PDF. This security measure ensures only authorized users can manipulate protected documents. If you have the correct password, unlock the PDF, split it as needed, then optionally re-encrypt sections using PDF editing software if security is required for specific pages."
+        question: "Can I split and merge password-protected PDFs?",
+        answer:
+          "Use PDF Unlocker first if the file is protected, then run split or merge operations.",
       },
-      {
-        question: "Will splitting or merging reduce PDF quality?",
-        answer: "No, both operations preserve original quality. Splitting extracts pages as-is without recompression, maintaining identical quality to the source PDF. Merging combines PDFs using stream concatenation, preserving all content, fonts, images, and resources at original quality. No re-encoding or quality loss occurs during either operation. Text remains sharp, images stay at original resolution, and vector graphics maintain perfect quality. The resulting PDFs are suitable for professional use, printing, and official documents."
-      },
-      {
-        question: "How do I create a PDF by merging different file types (Word, images, etc.)?",
-        answer: "Our merger only combines PDF files. To merge different file types, first convert them to PDF using our other tools: use Word to PDF converter for documents, Image to PDF converter for photos, or similar converters for other formats. Once everything is in PDF format, merge them using our PDF Merger. This two-step process ensures compatibility and preserves formatting across all document types. Perfect for creating comprehensive packages from mixed source materials."
-      }
     ],
 
     relatedTools: [
       { name: "PDF Compressor", href: "/pdf-tools/pdf-compressor" },
       { name: "PDF Unlocker", href: "/pdf-tools/pdf-unlocker" },
       { name: "PDF to Image", href: "/pdf-tools/pdf-to-image" },
-      { name: "PDF Sign", href: "/pdf-tools/pdf-sign" }
+      { name: "All PDF Tools", href: "/pdf-tools" },
     ],
-  }
+  },
 })
 
 export const metadata: Metadata = toolConfig.metadata

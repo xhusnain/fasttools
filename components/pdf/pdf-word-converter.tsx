@@ -8,14 +8,91 @@ import { GCard } from "@/ui/gcard"
 import { Upload, X, Download, FileText, Loader2, RefreshCw } from "lucide-react"
 import * as pdfjsLib from "pdfjs-dist"
 import { Document, Packer, Paragraph, TextRun, HeadingLevel } from "docx"
-import { PDFDocument, rgb } from "pdf-lib"
+import { PDFDocument, StandardFonts, rgb } from "pdf-lib"
 
-// Configure PDF.js worker
 if (typeof window !== "undefined") {
   pdfjsLib.GlobalWorkerOptions.workerSrc = `https://cdnjs.cloudflare.com/ajax/libs/pdf.js/4.10.38/pdf.worker.min.mjs`
 }
 
 type ConversionMode = "pdf-to-word" | "word-to-pdf"
+
+function getFileExtension(fileName: string): string {
+  const lower = fileName.toLowerCase()
+  if (lower.endsWith(".docx")) return ".docx"
+  if (lower.endsWith(".doc")) return ".doc"
+  if (lower.endsWith(".pdf")) return ".pdf"
+  return ""
+}
+
+function isValidUploadForMode(file: File, mode: ConversionMode): boolean {
+  const ext = getFileExtension(file.name)
+
+  if (mode === "pdf-to-word") {
+    return file.type === "application/pdf" || ext === ".pdf"
+  }
+
+  return file.type === "application/vnd.openxmlformats-officedocument.wordprocessingml.document" ||
+    file.type === "application/msword" ||
+    ext === ".docx" ||
+    ext === ".doc"
+}
+
+function wrapTextByWidth(text: string, maxWidth: number, font: any, fontSize: number): string[] {
+  const words = text.split(/\s+/).filter(Boolean)
+  if (words.length === 0) return [""]
+
+  const lines: string[] = []
+  let currentLine = ""
+
+  for (const word of words) {
+    const candidate = currentLine ? `${currentLine} ${word}` : word
+    const width = font.widthOfTextAtSize(candidate, fontSize)
+
+    if (width <= maxWidth) {
+      currentLine = candidate
+      continue
+    }
+
+    if (currentLine) lines.push(currentLine)
+    currentLine = word
+  }
+
+  if (currentLine) lines.push(currentLine)
+  return lines
+}
+
+async function extractDocxParagraphs(arrayBuffer: ArrayBuffer): Promise<string[]> {
+  const JSZip = (await import("jszip")).default
+  const zip = await JSZip.loadAsync(arrayBuffer)
+  const documentXml = zip.file("word/document.xml")
+
+  if (!documentXml) {
+    throw new Error("Invalid DOCX file structure")
+  }
+
+  const xml = await documentXml.async("string")
+  const parser = new DOMParser()
+  const xmlDoc = parser.parseFromString(xml, "application/xml")
+  const parseError = xmlDoc.getElementsByTagName("parsererror")
+
+  if (parseError.length > 0) {
+    throw new Error("Failed to parse DOCX content")
+  }
+
+  const paragraphs = Array.from(xmlDoc.getElementsByTagName("w:p"))
+  const output: string[] = []
+
+  for (const paragraph of paragraphs) {
+    const textNodes = Array.from(paragraph.getElementsByTagName("w:t"))
+    const text = textNodes.map((node) => node.textContent || "").join("").trim()
+
+    if (text) {
+      output.push(text)
+    }
+  }
+
+  return output
+}
 
 export function PDFWordConverter() {
   const [mode, setMode] = useState<ConversionMode>("pdf-to-word")
@@ -28,17 +105,11 @@ export function PDFWordConverter() {
   const { showToast, ToastContainer } = useToast()
 
   const acceptedFileTypes = mode === "pdf-to-word" ? ".pdf" : ".doc,.docx"
-  const acceptedMimeTypes = mode === "pdf-to-word"
-    ? ["application/pdf"]
-    : ["application/msword", "application/vnd.openxmlformats-officedocument.wordprocessingml.document"]
 
   const handleFileUpload = (selectedFile: File | null) => {
     if (!selectedFile) return
 
-    // Validate file type
-    const isValidType = acceptedMimeTypes.some(type => selectedFile.type === type)
-
-    if (!isValidType) {
+    if (!isValidUploadForMode(selectedFile, mode)) {
       const expectedType = mode === "pdf-to-word" ? "PDF" : "Word"
       showToast("error", `❌ Please select a valid ${expectedType} file`)
       return
@@ -66,14 +137,13 @@ export function PDFWordConverter() {
   }
 
   const switchMode = () => {
-    setMode(prev => prev === "pdf-to-word" ? "word-to-pdf" : "pdf-to-word")
+    setMode((prev) => (prev === "pdf-to-word" ? "word-to-pdf" : "pdf-to-word"))
     setFile(null)
     setConverted(false)
     setConvertedFileBytes(null)
     setProgress(0)
   }
 
-  // PDF to Word Conversion
   const convertPDFToWord = async (pdfFile: File) => {
     const arrayBuffer = await pdfFile.arrayBuffer()
 
@@ -82,9 +152,8 @@ export function PDFWordConverter() {
     const numPages = pdfDoc.numPages
 
     const paragraphs: Paragraph[] = []
+    const fileName = pdfFile.name.replace(".pdf", "")
 
-    // Add title
-    const fileName = pdfFile.name.replace('.pdf', '')
     paragraphs.push(
       new Paragraph({
         text: fileName,
@@ -92,14 +161,12 @@ export function PDFWordConverter() {
       })
     )
 
-    // Extract text from each page
     for (let pageNum = 1; pageNum <= numPages; pageNum++) {
       setProgress(Math.round((pageNum / numPages) * 50))
 
       const page = await pdfDoc.getPage(pageNum)
       const textContent = await page.getTextContent()
 
-      // Add page heading
       paragraphs.push(
         new Paragraph({
           text: `Page ${pageNum}`,
@@ -108,7 +175,6 @@ export function PDFWordConverter() {
         })
       )
 
-      // Group text items into paragraphs
       const textItems = textContent.items.filter((item: any) => item.str?.trim())
 
       if (textItems.length === 0) {
@@ -121,10 +187,8 @@ export function PDFWordConverter() {
       for (let i = 0; i < textItems.length; i++) {
         const item: any = textItems[i]
         const text = item.str
-
         currentParagraph += text
 
-        // Check if this is end of paragraph
         const nextItem: any = textItems[i + 1]
         if (!nextItem || Math.abs(nextItem.transform[5] - item.transform[5]) > 5) {
           if (currentParagraph.trim()) {
@@ -146,7 +210,6 @@ export function PDFWordConverter() {
       }
     }
 
-    // Create Word document
     setProgress(75)
     const doc = new Document({
       sections: [
@@ -157,54 +220,89 @@ export function PDFWordConverter() {
       ],
     })
 
-    // Generate blob
     setProgress(90)
     const blob = await Packer.toBlob(doc)
     const bytes = new Uint8Array(await blob.arrayBuffer())
 
     return {
       bytes,
-      fileName: pdfFile.name.replace('.pdf', '.docx')
+      fileName: pdfFile.name.replace(".pdf", ".docx"),
     }
   }
 
-  // Word to PDF Conversion
   const convertWordToPDF = async (wordFile: File) => {
+    const fileExt = getFileExtension(wordFile.name)
+
+    if (fileExt === ".doc") {
+      throw new Error("Legacy .doc files are not supported in browser mode. Please use .docx")
+    }
+
+    if (fileExt !== ".docx") {
+      throw new Error("Please upload a .docx file for Word to PDF conversion")
+    }
+
     const arrayBuffer = await wordFile.arrayBuffer()
+    setProgress(20)
 
-    setProgress(25)
+    const paragraphs = await extractDocxParagraphs(arrayBuffer)
+    setProgress(45)
 
-    // Create a new PDF document
     const pdfDoc = await PDFDocument.create()
+    const font = await pdfDoc.embedFont(StandardFonts.Helvetica)
 
-    // Add a page with basic text
-    const page = pdfDoc.addPage([612, 792]) // Letter size
-    const { height } = page.getSize()
+    const pageWidth = 612
+    const pageHeight = 792
+    const margin = 50
+    const fontSize = 12
+    const lineHeight = 17
+    const maxWidth = pageWidth - margin * 2
 
-    setProgress(50)
+    let page = pdfDoc.addPage([pageWidth, pageHeight])
+    let cursorY = pageHeight - margin
 
-    // Add file info as placeholder
-    const fileName = wordFile.name.replace(/\.(doc|docx)$/, '')
-    const text = `Converted from: ${fileName}\n\nNote: Full Word document structure conversion is limited in browser.\nFor best results, use desktop software like Microsoft Word or LibreOffice.`
-
-    page.drawText(text, {
-      x: 50,
-      y: height - 100,
-      size: 12,
+    const docTitle = wordFile.name.replace(/\.docx$/i, "")
+    page.drawText(`Converted from: ${docTitle}`, {
+      x: margin,
+      y: cursorY,
+      size: 13,
+      font,
       color: rgb(0, 0, 0),
-      maxWidth: 512,
     })
+    cursorY -= lineHeight * 2
 
-    setProgress(75)
+    const textParagraphs = paragraphs.length > 0
+      ? paragraphs
+      : ["No readable text blocks were extracted from this DOCX file."]
 
-    // Save PDF
+    for (const paragraph of textParagraphs) {
+      const wrappedLines = wrapTextByWidth(paragraph, maxWidth, font, fontSize)
+
+      for (const line of wrappedLines) {
+        if (cursorY <= margin) {
+          page = pdfDoc.addPage([pageWidth, pageHeight])
+          cursorY = pageHeight - margin
+        }
+
+        page.drawText(line, {
+          x: margin,
+          y: cursorY,
+          size: fontSize,
+          font,
+          color: rgb(0, 0, 0),
+        })
+        cursorY -= lineHeight
+      }
+
+      cursorY -= 8
+    }
+
+    setProgress(80)
     const pdfBytes = await pdfDoc.save()
-
-    setProgress(90)
+    setProgress(92)
 
     return {
       bytes: pdfBytes,
-      fileName: wordFile.name.replace(/\.(doc|docx)$/, '.pdf')
+      fileName: wordFile.name.replace(/\.docx$/i, ".pdf"),
     }
   }
 
@@ -231,7 +329,6 @@ export function PDFWordConverter() {
       setConvertedFileBytes(result.bytes)
       setConvertedFileName(result.fileName)
       setConverted(true)
-
     } catch (error: any) {
       showToast("error", `❌ Conversion failed: ${error?.message || "Unknown error"}`)
       setProgress(0)
@@ -246,7 +343,7 @@ export function PDFWordConverter() {
     const blob = new Blob([convertedFileBytes as BlobPart], {
       type: mode === "pdf-to-word"
         ? "application/vnd.openxmlformats-officedocument.wordprocessingml.document"
-        : "application/pdf"
+        : "application/pdf",
     })
 
     const url = URL.createObjectURL(blob)
@@ -263,7 +360,6 @@ export function PDFWordConverter() {
     <>
       <ToastContainer />
       <div className="space-y-6">
-        {/* Mode Switcher */}
         <div className="flex items-center justify-center gap-4">
           <GButton
             variant={mode === "pdf-to-word" ? "default" : "outline"}
@@ -296,7 +392,6 @@ export function PDFWordConverter() {
           </GButton>
         </div>
 
-        {/* Upload Area */}
         <div className="p-6 rounded-lg bg-card border-2 border-dashed border-border hover:border-primary/50 transition-colors shadow-lg">
           {!file ? (
             <div
@@ -313,7 +408,7 @@ export function PDFWordConverter() {
                 Click to browse or drag and drop your {mode === "pdf-to-word" ? "PDF" : "Word"} file here
               </p>
               <p className="text-xs text-muted-foreground">
-                Supported formats: {mode === "pdf-to-word" ? "PDF" : "DOC, DOCX"}
+                Supported formats: {mode === "pdf-to-word" ? "PDF" : "DOCX (DOC limited)"}
               </p>
               <input
                 id="file-upload"
@@ -346,7 +441,6 @@ export function PDFWordConverter() {
                 </GButton>
               </div>
 
-              {/* Convert GButton */}
               {!converted && (
                 <GButton
                   onClick={handleConvert}
@@ -367,7 +461,6 @@ export function PDFWordConverter() {
                 </GButton>
               )}
 
-              {/* Progress Bar */}
               {loading && progress > 0 && (
                 <div className="space-y-2">
                   <div className="flex items-center justify-between text-sm">
@@ -383,7 +476,6 @@ export function PDFWordConverter() {
                 </div>
               )}
 
-              {/* Download GButton */}
               {converted && convertedFileBytes && (
                 <GButton
                   onClick={downloadConvertedFile}
@@ -397,7 +489,6 @@ export function PDFWordConverter() {
           )}
         </div>
 
-        {/* Info GCard */}
         <GCard className="p-4 bg-muted border-border">
           <div className="flex items-start gap-3">
             <div className="flex-shrink-0 w-5 h-5 rounded-full bg-primary flex items-center justify-center mt-0.5">
@@ -409,24 +500,23 @@ export function PDFWordConverter() {
               </h4>
               <p className="text-sm text-foreground leading-relaxed">
                 {mode === "pdf-to-word"
-                  ? "Extracts text from your PDF and creates an editable Word document (DOCX). Text content is preserved with page markers. Perfect for editing PDF text or extracting content."
-                  : "Creates a PDF from your Word file. Note: Full document structure conversion (images, formatting) is limited in browser. For complete conversion, use desktop software like Microsoft Word."
+                  ? "Extracts text from your PDF and creates an editable DOCX with page markers. Best for text-oriented editing workflows."
+                  : "Converts DOCX text content into readable PDF output in browser. Complex layout, images, and advanced formatting may need manual review."
                 }
               </p>
             </div>
           </div>
         </GCard>
 
-        {/* Features List */}
         <div className="grid md:grid-cols-2 gap-4">
           <div className="flex items-start gap-3 p-4 rounded-lg bg-card border border-border">
             <div className="flex-shrink-0 w-8 h-8 rounded-full bg-primary/10 flex items-center justify-center">
               <FileText className="h-4 w-4 text-primary" />
             </div>
             <div>
-              <h4 className="font-semibold text-card-foreground text-sm mb-1">Format Preservation</h4>
+              <h4 className="font-semibold text-card-foreground text-sm mb-1">Text-Focused Workflow</h4>
               <p className="text-xs text-muted-foreground leading-relaxed">
-                Maintains original formatting, fonts, and layout during conversion
+                Optimized for fast conversion where text is the primary requirement.
               </p>
             </div>
           </div>
@@ -437,7 +527,7 @@ export function PDFWordConverter() {
             <div>
               <h4 className="font-semibold text-card-foreground text-sm mb-1">Bidirectional</h4>
               <p className="text-xs text-muted-foreground leading-relaxed">
-                Convert PDF to Word or Word to PDF with one click
+                Convert PDF text to DOCX or DOCX text to PDF from one interface.
               </p>
             </div>
           </div>
@@ -448,7 +538,7 @@ export function PDFWordConverter() {
             <div>
               <h4 className="font-semibold text-card-foreground text-sm mb-1">Free & Unlimited</h4>
               <p className="text-xs text-muted-foreground leading-relaxed">
-                No signup required, unlimited conversions, completely free
+                No signup required and no enforced conversion quota.
               </p>
             </div>
           </div>
@@ -457,9 +547,9 @@ export function PDFWordConverter() {
               <span className="text-primary font-bold text-xs">🔒</span>
             </div>
             <div>
-              <h4 className="font-semibold text-card-foreground text-sm mb-1">100% Secure</h4>
+              <h4 className="font-semibold text-card-foreground text-sm mb-1">Browser Based</h4>
               <p className="text-xs text-muted-foreground leading-relaxed">
-                Your files never leave your device, complete privacy guaranteed
+                Conversion is handled through the web interface without extra desktop setup.
               </p>
             </div>
           </div>
@@ -468,4 +558,3 @@ export function PDFWordConverter() {
     </>
   )
 }
-

@@ -1,220 +1,288 @@
-import { Metadata } from 'next';
+import type { Metadata } from "next"
+import { GToolCard } from "@/ui/gtool-card"
 import { ToolPageLayout } from "@/components/common/tool-page-layout"
 import { createToolConfig } from "@/lib/create-tool-config"
-import { GToolCard } from "@/ui/gtool-card"
-
-import { Type, Ruler, HardDrive, DollarSign, Globe, Thermometer, Binary, BookOpen, FileImage, Radio, FileCode } from "lucide-react"
+import {
+  Binary,
+  BookOpen,
+  DollarSign,
+  FileCode,
+  FileImage,
+  FileText,
+  Globe,
+  HardDrive,
+  Radio,
+  Ruler,
+  Thermometer,
+  Type,
+} from "lucide-react"
 
 const converters = [
   {
     title: "List Converter",
-    description: "Text to list, comma separated list. Convert column to comma, list to columns. Sort, trim, dedupe. Free.",
+    description:
+      "Convert between comma-separated, line-separated, and cleaned list formats.",
     icon: Type,
     href: "/converters/list-converter",
-    color: "blue"
   },
   {
     title: "JSON to XML Converter",
-    description: "Convert JSON to XML and XML to JSON. Formatter, Python, Java, npm. Free.",
+    description:
+      "Convert structured JSON data to XML and switch back when needed.",
     icon: FileCode,
     href: "/converters/json-xml",
-    color: "blue"
   },
   {
     title: "XML to JSON Converter",
-    description: "Convert XML to JSON and JSON to XML. Python, npm, Node.js. Free.",
+    description:
+      "Transform XML payloads to JSON for API and app workflows.",
     icon: FileCode,
     href: "/converters/xml-json",
-    color: "blue"
   },
   {
     title: "TOML to YAML Converter",
-    description: "Convert TOML to YAML and YAML to TOML. Hugo, Alacritty. Free.",
+    description:
+      "Convert TOML config files to YAML and back in one workspace.",
     icon: FileCode,
     href: "/converters/toml-yaml",
-    color: "green"
   },
   {
     title: "TOML to JSON Converter",
-    description: "Convert TOML to JSON and JSON to TOML. toml2json CLI alternative. Python, npm. Free.",
+    description:
+      "Parse TOML config into formatted JSON output instantly.",
     icon: FileCode,
     href: "/converters/toml-json",
-    color: "violet"
   },
   {
     title: "JSON to TOML Converter",
-    description: "Convert JSON to TOML and TOML to JSON. json2toml npm alternative. Python, CLI. Free.",
+    description:
+      "Convert JSON objects to TOML for config and tooling use cases.",
     icon: FileCode,
     href: "/converters/json-toml",
-    color: "violet"
   },
   {
     title: "YAML to TOML",
-    description: "Convert YAML to TOML and TOML to YAML. Parse and convert YAML to TOML. Free.",
+    description:
+      "Convert YAML configuration into TOML with clean key formatting.",
     icon: FileCode,
     href: "/converters/yaml-toml",
-    color: "green"
   },
   {
     title: "JSON to YAML Converter",
-    description: "Convert JSON to YAML and YAML to JSON. Swagger, OpenAPI. For Python, VSCode. Free.",
+    description:
+      "Convert JSON to readable YAML for config and documentation workflows.",
     icon: FileCode,
     href: "/converters/json-yaml",
-    color: "blue"
   },
   {
     title: "YAML to JSON Converter",
-    description: "Convert YAML to JSON and JSON to YAML. Online live converter. Free.",
+    description:
+      "Convert YAML documents to JSON for APIs and automation pipelines.",
     icon: FileCode,
     href: "/converters/yaml-json",
-    color: "green"
   },
   {
     title: "Text to Unicode",
-    description: "Convert text to Unicode and Unicode to text. Parse text to Unicode code points and decode. Free.",
+    description:
+      "Encode text into Unicode code points and decode back to plain text.",
     icon: Type,
     href: "/converters/unicode",
-    color: "blue"
   },
   {
     title: "Text to ASCII Binary",
-    description: "Convert text to ASCII binary and binary to text. Encode text to binary, decode binary to text. Free.",
+    description:
+      "Encode text as binary and decode binary values into readable text.",
     icon: Binary,
     href: "/converters/ascii-binary",
-    color: "violet"
   },
   {
     title: "Text to NATO Alphabet",
-    description: "Convert text to NATO phonetic alphabet (Alpha Bravo Charlie). NATO to text reverse. Free converter.",
+    description:
+      "Convert text to NATO phonetic words and decode in reverse.",
     icon: Radio,
     href: "/converters/nato-phonetic",
-    color: "blue"
   },
   {
     title: "Base64 File Converter",
-    description: "Convert files and images to Base64 and Base64 back to files. Preview images, download decoded files.",
+    description:
+      "Encode files to Base64 and decode Base64 back to downloadable files.",
     icon: FileImage,
     href: "/converters/base64-file",
-    color: "blue"
   },
   {
     title: "Roman Numeral Converter",
-    description: "Convert numbers to Roman numerals and back. Supports 1–3,999,999 with vinculum.",
+    description:
+      "Convert numbers to Roman numerals and Roman numerals back to numbers.",
     icon: BookOpen,
     href: "/converters/roman-numeral",
-    color: "amber"
   },
   {
     title: "Integer Base Converter",
-    description: "Convert numbers between binary, octal, decimal, hexadecimal, and bases 2–64.",
+    description:
+      "Convert numbers across binary, decimal, hex, and custom bases.",
     icon: Binary,
     href: "/converters/integer-base",
-    color: "violet"
-  },
-  {
-    title: "Text Case Converter",
-    description: "Convert text between uppercase, lowercase, title case, sentence case, camelCase, and snake_case.",
-    icon: Type,
-    href: "/converters/text-case",
-    color: "blue"
-  },
-  {
-    title: "Length Converter",
-    description: "Convert between meters, feet, inches, centimeters, kilometers, miles, and more length units.",
-    icon: Ruler,
-    href: "/converters/length",
-    color: "green"
-  },
-  {
-    title: "File Size Converter",
-    description: "Convert between bytes, KB, MB, GB, and TB. Perfect for understanding file and storage sizes.",
-    icon: HardDrive,
-    href: "/converters/file-size",
-    color: "purple"
   },
   {
     title: "Currency Converter",
-    description: "Convert between major world currencies including USD, EUR, GBP, JPY, INR, and more.",
+    description:
+      "Convert between global currencies with live exchange rate data.",
     icon: DollarSign,
     href: "/converters/currency",
-    color: "yellow"
   },
   {
-    title: "Time Zone Converter",
-    description: "Convert time between different time zones worldwide. Perfect for scheduling international meetings.",
-    icon: Globe,
-    href: "/converters/timezone",
-    color: "cyan"
+    title: "Text Case Converter",
+    description:
+      "Convert text between uppercase, title case, camelCase, and more.",
+    icon: Type,
+    href: "/converters/text-case",
+  },
+  {
+    title: "Length Converter",
+    description:
+      "Convert length units including meters, feet, inches, and miles.",
+    icon: Ruler,
+    href: "/converters/length",
   },
   {
     title: "Temperature Converter",
-    description: "Convert between Celsius and Fahrenheit temperature scales quickly and accurately.",
+    description:
+      "Convert temperatures between Celsius and Fahrenheit instantly.",
     icon: Thermometer,
     href: "/converters/temperature",
-    color: "red"
+  },
+  {
+    title: "File Size Converter",
+    description:
+      "Convert bytes, KB, MB, GB, and TB for storage and transfer planning.",
+    icon: HardDrive,
+    href: "/converters/file-size",
+  },
+  {
+    title: "Time Zone Converter",
+    description:
+      "Convert times across cities and zones with DST-aware handling.",
+    icon: Globe,
+    href: "/converters/timezone",
+  },
+  {
+    title: "Currency API",
+    description:
+      "Access free currency-rate endpoints for development and integrations.",
+    icon: FileText,
+    href: "/converters/currency-api",
   },
 ]
 
 const toolConfig = createToolConfig({
   toolName: "Online Converters",
-  description: "Free converters for text case, length, file size, currency, time zones, temperature. Fast, accurate, real-time data.",
-  metaTitle: "Online Converters | Text, Length, Currency & Temperature",
-  metaDescription: "Free converters for text case, length, file size, currency, time zones, temperature. Fast, accurate, real-time data.",
+  description:
+    "Free online converters for currency, units, text formatting, number bases, and developer data formats.",
+  metaTitle: "Online Converters: Currency, Units, Text, and Data Formats",
+  metaDescription:
+    "Use free online converters for currency, file size, temperature, text case, JSON/XML/YAML/TOML, and more.",
   path: "/converters",
+  keywords: [
+    "online converters",
+    "currency converter",
+    "unit converter",
+    "file size converter",
+    "text case converter",
+    "json xml converter",
+    "yaml json converter",
+  ],
+
   header: {
-    title: "All Conversion Tools",
-    description: "Discover our comprehensive collection of free online conversion tools designed for professionals, students, and everyday users. All tools are 100% free, highly accurate, and optimized for both desktop and mobile use.",
+    title: "Online Converters",
+    description:
+      "One place for fast, accurate converters across units, currencies, text, and structured data formats.",
     titleSize: "medium",
     descriptionSize: "small",
   },
-  breadcrumbs: [
-    { label: "Converters", href: "/converters" },
-  ],
+
+  breadcrumbs: [{ label: "Converters", href: "/converters" }],
+
   content: {
-    overview: "Each tool pairs clear UX with verified math. We pre-validate inputs, normalize units, and apply domain‑specific formulas so the output is predictable and repeatable. Wherever live data is needed (for example, currency rates), we reconcile values to consistent time windows to avoid jumpy results.",
+    overview:
+      "This category includes practical converter tools for everyday work. Use it to convert measurements, currencies, text formats, and data formats without switching between multiple websites.",
+
     howToSteps: [
-      "Select the specific converter tool you need from the grid below (e.g., Currency, Length, Text Case).",
-      "Enter your input values into the designated fields.",
-      "View the accurate conversion results instantly or copy them to your clipboard."
+      "Choose the converter that matches your task.",
+      "Enter or paste your source value or document.",
+      "Review the converted result and copy or download it.",
+      "Open related converters when you need additional format changes.",
     ],
-    aboutTool: "Our suite of online converters is designed to be your one-stop solution for all digital transformation needs. From developers needing text case formatting to travelers checking exchange rates, we provide professional-grade tools that are free, fast, and privacy-focused. We continuously update our exchange rates and validate our conversion formulas to ensure you get the most accurate results possible.",
+
     features: [
-      "Fresh Data, Clean Pipelines: Exchange rates are refreshed frequently and cached to keep pages fast.",
-      "Built for Accuracy: Calculations use deterministic formulas, sensible rounding, and unit‑aware precision.",
-      "Standardized Definitions: Measurement conversions rely on standardized SI and widely accepted imperial definitions.",
-      "Time Zone Aware: Time tools account for daylight saving and regional offsets by design.",
-      "Privacy Focused: Text utilities preserve whitespace and casing rules precisely."
+      "Currency, time zone, and unit conversion tools",
+      "Structured data converters (JSON, XML, YAML, TOML)",
+      "Text, encoding, and number-base conversion utilities",
+      "Browser-based processing for instant results",
+      "Mobile-friendly UI across converter pages",
+      "No signup required",
     ],
+
     useCases: [
-      "Professional Workflow: Use text case tools to standardize titles and identifiers.",
-      "Global Operations: Convert prices with transparent rates, then confirm call schedules in the target time zone.",
-      "Study and Everyday Tasks: Students can cross‑check homework results and lab values quickly.",
-      "Documentation: Rely on unit conversions to keep metrics consistent from draft to delivery.",
-      "Content Creation: Keep copy consistent across platforms with reliable case and formatting tools."
+      "Preparing API payloads and configuration files",
+      "Checking travel budgets and currency equivalents",
+      "Converting measurement values for work or study",
+      "Standardizing text for content and development workflows",
+      "Validating data during debugging and QA",
     ],
+
+    aboutTool: (
+      <div className="space-y-6">
+        <div>
+          <h2 className="text-xl font-bold mb-4 text-foreground">
+            Why Use Converter Workflows
+          </h2>
+          <p className="text-sm text-muted-foreground leading-relaxed mb-4">
+            Conversion work often happens in batches. You may convert JSON to
+            YAML, then YAML to TOML, or convert units while preparing pricing,
+            documentation, and calculations.
+          </p>
+          <p className="text-sm text-muted-foreground leading-relaxed">
+            Keeping these tools in one category reduces friction and helps teams
+            move from raw input to production-ready output faster.
+          </p>
+        </div>
+      </div>
+    ),
+
     faqs: [
       {
-        question: "What is a universal converter online and when should I use it?",
-        answer: "A universal converter online is a single place to run common online conversion tasks—unit converter, currency converter, file size converter, and more. Use it when you need quick answers without switching tools; it routes your input to the right calculator automatically."
+        question: "Which converter should I start with for config files?",
+        answer:
+          "Start with the source format you already have, such as JSON, YAML, XML, or TOML, then use the matching two-way converter.",
       },
       {
-        question: "How accurate is your currency converter?",
-        answer: "Rates are refreshed frequently and normalized to a recent market snapshot. We show clean values for clarity; behind the scenes we compute at higher precision so totals remain consistent even when you recalc minutes later."
+        question: "Do converter tools support both directions?",
+        answer:
+          "Most data-format tools in this category support two-way conversion so you can switch formats without opening another page.",
       },
       {
-        question: "Temperature scale converter: °C, °F, and K explained",
-        answer: "Our temperature scale converter uses exact formulas: °F = °C × 9/5 + 32 and K = °C + 273.15. Choose Celsius for science and daily weather, Fahrenheit for US contexts, and Kelvin for absolute temperature in scientific work."
+        question: "Are these converters free to use?",
+        answer:
+          "Yes. The converter tools in this category are free and available without account creation.",
       },
       {
-        question: "Time zone converter: does it handle DST and future dates?",
-        answer: "Yes. The time zone converter applies authoritative zone data, so historical and future daylight‑saving rules are accounted for. Planning a meeting months ahead will still map to the correct local time."
+        question: "Can I use these tools on mobile devices?",
+        answer:
+          "Yes. All converter pages are designed to work on mobile and desktop screens.",
       },
       {
-        question: "File size converter: MB vs MiB—what should I pick?",
-        answer: "Use MB (decimal, 1 MB = 1,000,000 bytes) for storage vendor specs and marketing. Use MiB (binary, 1 MiB = 1,048,576 bytes) for developer tooling and operating systems. Our file size converter supports both and labels them clearly."
-      }
-    ]
-  }
+        question: "What is the main advantage of this converter category?",
+        answer:
+          "It combines utility, developer, and format-conversion workflows in one place, so you can complete multi-step transformations faster.",
+      },
+    ],
+
+    relatedTools: [
+      { name: "Developer Tools", href: "/dev-tools" },
+      { name: "Finance Tools", href: "/finance-tools" },
+      { name: "Web Tools", href: "/web-tools" },
+    ],
+  },
 })
 
 export const metadata: Metadata = toolConfig.metadata
@@ -223,7 +291,7 @@ export default function ConvertersPage() {
   return (
     <ToolPageLayout
       {...toolConfig.getLayoutProps(
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
+        <div className="grid grid-cols-1 gap-5 md:grid-cols-2 lg:grid-cols-3">
           {converters.map((converter) => (
             <GToolCard
               key={`converters-${converter.href}`}
@@ -239,4 +307,3 @@ export default function ConvertersPage() {
     />
   )
 }
-
