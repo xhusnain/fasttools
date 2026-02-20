@@ -13,51 +13,46 @@ const UnicodeConverter = dynamic(
 )
 
 const toolConfig = createToolConfig({
-  toolName: "Text to Unicode",
+  toolName: "Unicode Converter",
   description:
-    "Convert text to Unicode and Unicode to text. Parse text to Unicode code points (U+0048) and decode Unicode back to text. Free text to Unicode converter. No signup.",
-  metaTitle: "Text to Unicode - Unicode to Text Converter Online Free",
+    "Convert text to Unicode code points and decode Unicode sequences back to readable text.",
+  metaTitle: "Unicode Converter (Text to Unicode and Unicode to Text)",
   metaDescription:
-    "Free text to Unicode converter. Convert text to Unicode code points and Unicode to text. Parse and convert text to unicode and vice-versa. No signup.",
+    "Free Unicode converter for text-to-code-point and Unicode-to-text decoding. Supports common Unicode input formats.",
   path: "/converters/unicode",
   keywords: [
+    "unicode converter",
     "text to unicode",
     "unicode to text",
-    "text to unicode converter",
-    "convert text to unicode",
-    "convert unicode to text",
-    "unicode converter",
-    "text to unicode online",
+    "unicode code point converter",
+    "uplus converter",
+    "escape sequence decoder",
   ],
 
   header: {
-    title: "Text to Unicode",
+    title: "Unicode Converter",
     description:
-      "Parse and convert text to unicode and vice-versa.",
+      "Convert plain text to Unicode code points and decode Unicode data back into text.",
     titleSize: "medium",
     descriptionSize: "small",
   },
 
   breadcrumbs: [
     { label: "Converters", href: "/converters" },
-    { label: "Text to Unicode", href: "/converters/unicode" },
+    { label: "Unicode Converter", href: "/converters/unicode" },
   ],
 
   schemaOptions: {
     applicationCategory: "UtilitiesApplication",
     description:
-      "Convert text to Unicode and Unicode to text. Parse text to Unicode code points and decode Unicode back to text. Free converter.",
-    alternateName: [
-      "Text to Unicode Converter",
-      "Unicode to Text Converter",
-      "Unicode Converter",
-    ],
+      "Two-way Unicode converter for code-point encoding and decoding.",
+    alternateName: ["Text to Unicode Converter", "Unicode to Text Converter"],
     featureList: [
-      "Text to Unicode encoding",
+      "Text to Unicode conversion",
       "Unicode to text decoding",
-      "Copy unicode to clipboard",
-      "Copy text to clipboard",
-      "100% client-side, no signup",
+      "Multiple Unicode input formats",
+      "Copy-ready output",
+      "No signup",
     ],
     offers: {
       "@type": "Offer",
@@ -68,61 +63,72 @@ const toolConfig = createToolConfig({
 
   content: {
     overview:
-      "Convert text to Unicode and Unicode back to text. Type or paste text to get Unicode code points (e.g. Hello → U+0048 U+0065 U+006C U+006C U+006F). Paste Unicode (U+XXXX, \\uXXXX, &#72;) to decode to text. Free online text to Unicode converter. No signup required.",
+      "Use this tool to convert text into Unicode code points and decode Unicode notation back into readable text. It is useful for debugging string encoding, developer workflows, and multilingual text handling.",
 
     howToSteps: [
-      "Text to Unicode: Enter your text. The Unicode code points (U+XXXX) appear instantly.",
-      "Unicode to Text: Enter Unicode (U+0048 U+0065, or 72 101). The decoded text appears below.",
-      "Click Copy unicode to clipboard or Copy text to clipboard to copy results.",
+      "Enter plain text to generate Unicode code points.",
+      "Paste Unicode values in the decode panel.",
+      "Review decoded output instantly.",
+      "Copy converted results for use in code or docs.",
     ],
 
     features: [
-      "Text to Unicode: Convert any text to U+ code points",
-      "Unicode to text: Decode U+XXXX, \\uXXXX, &#DDD; to text",
-      "Copy unicode to clipboard with one click",
-      "Copy text to clipboard with one click",
-      "100% client-side, no data sent to servers",
+      "Text-to-Unicode conversion",
+      "Unicode-to-text decoding",
+      "Common notation support (U+, escape sequences, entities)",
+      "One-click copy actions",
+      "Browser-based conversion",
     ],
 
     useCases: [
-      "Encoding: Convert text to Unicode for programming or data.",
-      "Decoding: Convert Unicode code points (e.g. from APIs) back to readable text.",
-      "Education: Understand Unicode and character encoding.",
+      "Debugging encoded strings",
+      "Preparing escape sequences for development",
+      "Analyzing multilingual character sets",
+      "Validating Unicode payload snippets",
     ],
 
     aboutTool: (
       <div className="space-y-6 text-muted-foreground">
         <p>
-          Unicode assigns a unique code point to every character across languages and symbols. This tool converts text to Unicode (U+XXXX format) and decodes Unicode back to text. Supports U+0048, \\u0048, &#72;, and decimal codes.
+          Unicode defines a universal code point for characters across writing
+          systems and symbols. This converter helps bridge human-readable text
+          and machine-readable Unicode notation.
         </p>
       </div>
     ),
 
     proTip:
-      "Unicode accepts U+0048, \\u0048, &#72; (decimal), &#x48; (hex), or space-separated decimal codes like 72 101 108.",
+      "When decoding mixed input, keep separators clear so each code point is parsed correctly.",
 
     faqs: [
       {
-        question: "How to convert text to Unicode?",
+        question: "Can I convert text into Unicode code points?",
         answer:
-          "Enter your text in the Text to Unicode section. The tool outputs U+ code points for each character (e.g. Hello → U+0048 U+0065 U+006C U+006C U+006F). Copy the result.",
+          "Yes. Enter text and the tool outputs Unicode code point notation.",
       },
       {
-        question: "How to convert Unicode to text?",
-        answer:
-          "Paste Unicode in the Unicode to Text section. Supported formats: U+0048, \\u0048, &#72;, &#x48;, or space-separated decimals (72 101 108). The decoded text appears below.",
+        question: "Can I decode Unicode back to plain text?",
+        answer: "Yes. Paste Unicode input and the decoder returns readable text.",
       },
       {
-        question: "What is Unicode?",
+        question: "What Unicode formats are accepted?",
         answer:
-          "Unicode is a character encoding standard that assigns a unique code point to every character across languages and symbols. For example, 'H' is U+0048, 'e' is U+0065.",
+          "The tool supports common Unicode formats, including code-point and escape-style input.",
+      },
+      {
+        question: "Is conversion done locally?",
+        answer: "Yes. Processing happens in your browser.",
+      },
+      {
+        question: "Is this tool free?",
+        answer: "Yes. It is free and requires no signup.",
       },
     ],
 
     relatedTools: [
-      { name: "Text to ASCII Binary", href: "/converters/ascii-binary" },
-      { name: "Integer Base Converter", href: "/converters/integer-base" },
-      { name: "Base64 Encoder Decoder", href: "/dev-tools/base64-encoder" },
+      { name: "ASCII Binary Converter", href: "/converters/ascii-binary" },
+      { name: "Base64 File Converter", href: "/converters/base64-file" },
+      { name: "Text Case Converter", href: "/converters/text-case" },
       { name: "All Converters", href: "/converters" },
     ],
   },
@@ -134,7 +140,7 @@ export default function UnicodeConverterPage() {
   return (
     <ToolPageLayout
       {...toolConfig.getLayoutProps(
-        <div className="p-3 sm:p-4 md:p-5 rounded-lg bg-card border border-border shadow">
+        <div className="rounded-lg border border-border bg-card p-3 shadow sm:p-4 md:p-5">
           <UnicodeConverter />
         </div>
       )}
