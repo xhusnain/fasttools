@@ -8,32 +8,36 @@ import { Code, FileText, Hash, Lightbulb, Search } from "lucide-react"
 const tools = [
   {
     title: "Open Graph Meta Generator",
-    description: "open graph meta generator online. open graph tag generator. open graph meta tags, image size. Free.",
+    description:
+      "Generate Open Graph and Twitter card tags with live-friendly formatting.",
     icon: Code,
     href: "/seo-tools/meta-tags",
   },
   {
     title: "Text Similarity Checker",
-    description: "Compare two texts using SimHash fingerprinting to detect near-duplicates and plagiarism. Perfect for duplicate content detection and SEO audits.",
+    description:
+      "Compare two texts and get similarity score with fingerprint-based analysis.",
     icon: Hash,
     href: "/seo-tools/text-similarity-checker",
   },
   {
     title: "Lorem Ipsum Generator",
-    description: "Create placeholder text for design mockups, prototypes, and content templates. Ideal for designers and developers.",
+    description:
+      "Create placeholder paragraphs, sentences, or words for mockups and layouts.",
     icon: FileText,
     href: "/seo-tools/lorem-ipsum",
   },
-
   {
     title: "Blog Title Generator",
-    description: "Craft compelling blog titles and headlines that capture attention and drive higher click-through rates from search results.",
+    description:
+      "Generate headline ideas optimized for readability and search intent.",
     icon: Lightbulb,
     href: "/seo-tools/blog-titles",
   },
   {
     title: "Keyword Density Checker",
-    description: "Examine keyword distribution in your content to fine-tune SEO strategy. Identify keyword patterns and frequency for optimal content optimization.",
+    description:
+      "Analyze keyword frequency and phrase distribution for on-page content review.",
     icon: Search,
     href: "/seo-tools/keyword-density",
   },
@@ -41,96 +45,107 @@ const tools = [
 
 const toolConfig = createToolConfig({
   toolName: "SEO Tools",
-  description: "Professional SEO tools for website optimization. Free meta tag generator, keyword density checker, hashtag generator, blog title creator, and lorem ipsum generator.",
-  metaTitle: "SEO Tools & Website Optimization | 5 Tools, 73% Higher CTR, Instant Generation | Free SEO Analysis",
-  metaDescription: "Professional SEO tools: Meta Tag Generator (73% higher CTR, 8+ tag types), Keyword Density Checker (NLP analysis), Text Similarity Checker (95% accuracy, SimHash), Blog Title Generator (CTR optimization), Lorem Ipsum Generator (placeholder text). Improve search rankings instantly. 100% free, unlimited usage, no signup.",
+  description:
+    "A practical SEO toolkit for metadata generation, keyword analysis, headline ideation, duplicate-content review, and placeholder content creation.",
+  metaTitle: "SEO Tools: Meta Tags, Keyword Density, Titles",
+  metaDescription:
+    "Free SEO tools for metadata, keyword density, title generation, text similarity checks, and placeholder content workflows.",
   path: "/seo-tools",
+  keywords: [
+    "seo tools",
+    "meta tag generator",
+    "keyword density checker",
+    "blog title generator",
+    "text similarity checker",
+    "lorem ipsum generator",
+  ],
 
   header: {
-    title: "SEO Tools & Website Optimization | 5 Tools, 73% Higher CTR, Instant Generation",
-    description: "Advanced SEO utilities: 5 tools (Meta Tags: 73% higher CTR, Keyword Density: NLP analysis, Text Similarity: 95% accuracy, Blog Titles: CTR optimization, Lorem Ipsum: placeholder text). Improve search rankings instantly. 100% free, unlimited usage, no signup.",
+    title: "SEO Tools",
+    description:
+      "Focused tools for content optimization, metadata quality, and technical publishing checks.",
     titleSize: "large",
     descriptionSize: "small",
   },
 
-  breadcrumbs: [
-    { label: "SEO Tools", href: "/seo-tools" },
-  ],
+  breadcrumbs: [{ label: "SEO Tools", href: "/seo-tools" }],
 
   content: {
-    overview: "SEO Tools provides 5 free SEO optimization tools generating professional results in <1-5 seconds with 100% free unlimited usage. Because 73% of websites with proper meta tags see 15-20% higher click-through rates (CTR), 67% of websites have duplicate content issues affecting SEO rankings, and manual SEO optimization takes 2-5 hours per page, while our suite offers instant optimization across meta tags, keyword analysis, duplicate detection, title generation, and placeholder text—saving SEO professionals 10-25 hours monthly. The platform includes: Meta Tag Generator (<1 second, 8+ tag types, 73% higher CTR potential, Open Graph, Twitter Cards), Keyword Density Checker (NLP analysis, TF-IDF algorithms, instant feedback), Text Similarity Checker (<1 second, 95% accuracy, SimHash algorithm, 64-bit fingerprints, Hamming distance), Blog Title Generator (CTR optimization, 5 variations, 2-4 seconds), and Lorem Ipsum Generator (<1 second, 3 generation modes, classic Cicero text). All tools use advanced algorithms (Natural Language Processing, TF-IDF, SimHash, transformer models) trained on millions of examples, processing 100% locally in your browser (zero server uploads, GDPR-compliant, HIPAA-compliant). Processing performance: Meta Tags (<1 second), Keyword Density (<1 second), Text Similarity (<1 second), Blog Titles (2-4 seconds), Lorem Ipsum (<1 second). Cost comparison: Our tools (free forever, unlimited usage) vs Yoast SEO ($99/year), All in One SEO ($49/year), SEMrush ($119.95/month), Ahrefs ($99/month). Perfect for SEO professionals (meta tag optimization, keyword analysis), content creators (title generation, duplicate detection), web developers (placeholder text, content testing), and marketers (CTR optimization, content strategy). No watermarks, unlimited free usage, and no account registration required.",
+    overview:
+      "This category is built for content teams, SEOs, developers, and publishers who need quick on-page diagnostics and optimization helpers. Use it to generate social metadata, review keyword distribution, compare similar content, brainstorm stronger titles, and create neutral placeholder copy for drafts.",
 
     features: [
-      "Smart Processing Engine: Algorithms that craft optimized titles, descriptions, and social media tags automatically",
-      "Precision-Focused Design: Reliable formulas and appropriate character constraints for SEO accuracy",
-      "Real-Time Analysis: Instant feedback on keyword density and content optimization",
-      "Multi-Platform Support: Tools designed for Google, social media, and cross-platform content strategy",
-      "User-Centric Interface: Clean, intuitive designs that make complex SEO tasks simple",
-      "Data-Driven Insights: Keyword frequency data and trending hashtag discovery",
-      "Standard Compliance: Meta tags and structured data that follow current search engine guidelines",
-      "Content Enhancement: Tools to improve readability, engagement, and click-through rates",
-      "Privacy-First: Client-side processing ensures your data and strategies remain private",
-      "Always Free: Professional-grade SEO utilities available without subscriptions or limits"
+      "Metadata and social-preview preparation",
+      "On-page keyword distribution checks",
+      "Headline ideation for editorial planning",
+      "Duplicate and near-duplicate text comparison",
+      "Placeholder text generation for design workflows",
+      "Client-side processing for normal text inputs",
     ],
 
     useCases: [
-      "Streamlined Workflow: Maintain consistent titles and descriptions throughout your website using meta tag utilities",
-      "Content Strategy: Develop engaging titles and verify hashtag relevance for social platforms",
-      "On-Page Optimization: Analyze keyword density to ensure optimal distribution without over-optimization",
-      "Design & Prototyping: Generate uniform placeholder text for mockups and templates",
-      "Social Media Growth: Discover trending hashtags to expand reach on Instagram, Twitter, and LinkedIn",
-      "Competitor Analysis: Analyze competitor content structures to identify optimization opportunities",
-      "Blog Management: Generate weeks worth of engaging blog post titles in minutes",
-      "Technical SEO: Create perfect Open Graph and Twitter Card tags for better social sharing",
-      "E-commerce Optimization: Optimize product descriptions and meta tags for better store visibility",
-      "Agency Reporting: Use reliable data to support SEO recommendations for clients"
+      "Pre-publish SEO QA for blog posts and landing pages",
+      "Team workflows for title and metadata drafting",
+      "Content audits for duplication risk",
+      "Template and prototype preparation for design systems",
+      "Cross-team handoff between SEO, content, and development",
     ],
 
-    aboutTool: "Our SEO tools are designed to help you optimize every aspect of your digital presence. From meta tag generation to keyword analysis, each tool follows industry best practices to improve your search engine rankings and social media engagement.",
+    aboutTool: (
+      <div className="space-y-6">
+        <div>
+          <h2 className="text-xl font-bold mb-4 text-foreground">
+            What These SEO Tools Cover
+          </h2>
+          <p className="text-sm text-muted-foreground leading-relaxed mb-4">
+            SEO performance depends on both content quality and technical
+            implementation. This toolkit focuses on common friction points:
+            metadata completeness, headline quality, keyword balance, duplicate
+            text risk, and publishing readiness.
+          </p>
+          <p className="text-sm text-muted-foreground leading-relaxed">
+            Each tool is task-focused and designed for fast iteration. Instead
+            of running a full suite for every change, teams can use the exact
+            utility they need while drafting, reviewing, and shipping content.
+          </p>
+        </div>
+      </div>
+    ),
 
     faqs: [
       {
-        question: "What makes meta tags effective for search visibility?",
-        answer: "Our meta tag builder produces optimized elements following current search engine guidelines. Effective titles stay under 60 characters, descriptions range 150-160 characters, and incorporate your target keyword naturally. The system automatically validates these criteria and suggests enhancements."
+        question: "Who should use this SEO tools category?",
+        answer:
+          "Content marketers, SEO specialists, editors, developers, and agencies can use these tools for routine optimization and QA tasks before publishing.",
       },
       {
-        question: "How should I balance keyword usage in content?",
-        answer: "While there's no universal keyword density formula, our keyword analyzer helps you discover the optimal balance. Typically, target 1-2% density for your main keyword, incorporating natural variations and related terms throughout your content. The tool precisely identifies where to adjust keyword placement for maximum effectiveness."
+        question: "Can these tools replace a full SEO platform?",
+        answer:
+          "They are best for tactical tasks and quick checks. Enterprise platforms still add broader tracking, backlink analysis, and large-scale reporting.",
       },
       {
-        question: "What's the optimal hashtag strategy for different platforms?",
-        answer: "Platform-specific hashtag strategies vary significantly. Instagram permits up to 30 hashtags, though 5-10 targeted hashtags typically yield better results. Twitter performs optimally with 1-2 hashtags, while LinkedIn favors 3-5 professional hashtags. Our hashtag discovery tool helps you identify the perfect combination for each platform."
+        question: "What should I run before publishing a page?",
+        answer:
+          "A practical flow is: generate metadata, review keyword density, validate title options, and compare against related content for duplication.",
       },
       {
-        question: "Are these tools suitable for e-commerce optimization?",
-        answer: "Definitely! Our tools excel at e-commerce enhancement. Utilize the meta tag builder for product pages, the keyword analyzer for product descriptions, and the blog title creator for content marketing initiatives. These utilities enhance product discoverability and attract more qualified visitors."
+        question: "Are these tools useful for non-SEO teams too?",
+        answer:
+          "Yes. Product teams, UX writers, and developers use them for metadata formatting, placeholder text, and quick content comparisons.",
       },
       {
-        question: "When should I review my content optimization?",
-        answer: "We suggest conducting content reviews monthly or when you observe ranking fluctuations. Employ our tools to uncover enhancement opportunities, refresh meta tags for underperforming pages, and ensure your content maintains competitiveness in search results. Consistent reviews help sustain and elevate your SEO performance continuously."
+        question: "Are these tools free?",
+        answer:
+          "Yes. The tools in this category are free to use with no signup requirement.",
       },
-      {
-        question: "What exactly is SEO and why should I care about it?",
-        answer: "Search Engine Optimization (SEO) is the art and science of making your website more discoverable when people search for topics related to your business. It ensures your site appears in results when potential customers search for relevant terms. Good SEO creates lasting visibility that continues working for your business around the clock, unlike paid advertising that stops when you stop paying."
-      },
-      {
-        question: "How do search engines actually decide which websites to show first?",
-        answer: "Search engines use sophisticated systems considering hundreds of signals including relevance (content matching), authority (backlinks), user experience (time on site), and technical quality (speed, mobile-friendliness). The goal is to show users the most helpful, trustworthy, and relevant results first."
-      },
-      {
-        question: "What's the difference between on-page and off-page SEO?",
-        answer: "On-page SEO involves optimizing elements you control directly on your website (titles, content, headings, speed). Off-page SEO involves building your reputation externally, primarily through backlinks and social presence. Both are essential: on-page ensures your content is optimized, while off-page builds trust and authority."
-      },
-      {
-        question: "Why does my website need to be mobile-friendly for SEO?",
-        answer: "Mobile-friendliness is crucial because Google uses mobile-first indexing and over half of web traffic is mobile. If your site doesn't work well on phones, you lose potential customers and search engines may rank you lower. Our tools help ensure your optimization works perfectly across all devices."
-      },
-      {
-        question: "How long does it take to see results from SEO efforts?",
-        answer: "SEO is a marathon, typically taking 3-6 months to see significant improvements. Search engines need time to discover, understand, and trust your content. Consistency is key—while waiting for rankings, focus on creating valuable content and optimizing existing pages using our tools."
-      }
-    ]
-  }
+    ],
+
+    relatedTools: [
+      { name: "Web Tools", href: "/web-tools" },
+      { name: "Developer Tools", href: "/dev-tools" },
+      { name: "AI Tools", href: "/ai-tools" },
+    ],
+  },
 })
 
 export const metadata: Metadata = toolConfig.metadata
