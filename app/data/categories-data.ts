@@ -397,7 +397,7 @@ export const categories = [
     {
         id: "social-media",
         name: "Social Media Downloaders & Tools",
-        description: "Powerful social media management tools",
+        description: "Creator-focused tools for social publishing, optimization, and media workflows.",
         icon: Globe,
         href: "/social-media-tools",
         borderColor: "border-border",
@@ -408,7 +408,7 @@ export const categories = [
         tools: [
             {
                 title: "Instagram DP Viewer",
-                description: "View and download Instagram profile pictures in full resolution HD",
+                description: "Lookup and view Instagram profile pictures for reference workflows.",
                 href: "/social-media-tools/instagram-dp",
                 icon: Download,
                 badge: "Popular",
@@ -416,15 +416,15 @@ export const categories = [
             },
             {
                 title: "Instagram Downloader",
-                description: "Download Instagram posts, reels, and images in HD quality",
+                description: "Process Instagram links and retrieve available media output.",
                 href: "/social-media-tools/instagram-downloader",
                 icon: Download,
                 badge: "New",
                 badgeColor: "bg-pink-500/90",
             },
             {
-                title: "TikTok Video Downloader",
-                description: "Download TikTok videos without watermark in HD quality",
+                title: "TikTok Downloader",
+                description: "Process TikTok links and download available video output.",
                 href: "/social-media-tools/tiktok-downloader",
                 icon: Download,
                 badge: "Trending",
@@ -432,7 +432,7 @@ export const categories = [
             },
             {
                 title: "Facebook Video Downloader",
-                description: "Download Facebook videos in HD quality quickly and easily",
+                description: "Process Facebook video links and download available output.",
                 href: "/social-media-tools/facebook-downloader",
                 icon: Download,
                 badge: "Social",
@@ -440,7 +440,7 @@ export const categories = [
             },
             {
                 title: "X Video Downloader",
-                description: "Download videos from X (formerly Twitter) in high definition",
+                description: "Process X status links and download available video media.",
                 href: "/social-media-tools/x-video-downloader",
                 icon: Download,
                 badge: "Social",
@@ -448,15 +448,15 @@ export const categories = [
             },
             {
                 title: "YouTube Thumbnail Downloader",
-                description: "Download YouTube thumbnails in HD and all available sizes",
+                description: "Extract thumbnail images from YouTube video links.",
                 href: "/social-media-tools/youtube-thumbnail",
                 icon: Download,
                 badge: "YouTube",
                 badgeColor: "bg-primary/90",
             },
             {
-                title: "Hashtag Generator",
-                description: "Generate trending hashtags to maximize reach and engagement",
+                title: "Hashtag Counter",
+                description: "Count and extract hashtags for social caption optimization.",
                 href: "/social-media-tools/hashtag-counter",
                 icon: Hash,
                 badge: "Viral",
@@ -464,7 +464,7 @@ export const categories = [
             },
             {
                 title: "YouTube Tags Extractor",
-                description: "Extract tags from any YouTube video to understand SEO strategy",
+                description: "Extract YouTube tag data from video URLs for research workflows.",
                 href: "/social-media-tools/youtube-tags",
                 icon: Hash,
                 badge: "SEO",
@@ -472,7 +472,7 @@ export const categories = [
             },
             {
                 title: "YouTube Channel Checker",
-                description: "Check if your desired YouTube channel name is available",
+                description: "Check YouTube handle and channel-name availability.",
                 href: "/social-media-tools/channel-checker",
                 icon: Search,
                 badge: "New",
@@ -480,15 +480,15 @@ export const categories = [
             },
             {
                 title: "YouTube Channel Name Generator",
-                description: "Generate catchy, unique channel names for YouTube using AI",
+                description: "Generate YouTube channel naming ideas by niche and style.",
                 href: "/social-media-tools/youtube-channel-name-generator",
                 icon: Sparkles,
                 badge: "AI",
                 badgeColor: "bg-red-500/90",
             },
             {
-                title: "Link in Bio Tool",
-                description: "Create beautiful single-page link-in-bio sites for social media",
+                title: "Link in Bio Generator",
+                description: "Build a multi-link social bio page for campaign routing.",
                 href: "/social-media-tools/link-in-bio",
                 icon: Globe,
                 badge: "Creator",

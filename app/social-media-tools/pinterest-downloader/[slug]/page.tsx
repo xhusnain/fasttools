@@ -1,56 +1,58 @@
-
-import { Metadata } from "next";
-import { notFound } from "next/navigation";
-import { ToolPageLayout } from "@/components/common/tool-page-layout";
-import { pinterestVariants } from "../pinterest-variants";
-import dynamic from "next/dynamic";
-import { createToolConfig } from "@/lib/create-tool-config";
-
+import type { Metadata } from "next"
+import { notFound } from "next/navigation"
+import { ToolPageLayout } from "@/components/common/tool-page-layout"
+import { createToolConfig } from "@/lib/create-tool-config"
+import { pinterestVariants } from "../pinterest-variants"
 import { UnifiedDownloader } from "@/components/social-media/unified-downloader"
 
-interface PageProps {
-  params: Promise<{
-    slug: string;
-  }>;
-}
-
-export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
-  const { slug } = await params;
-  const variant = pinterestVariants[slug];
-
-  if (!variant) {
-    return {};
-  }
-
-  return {
-    title: variant.metaTitle,
-    description: variant.metaDescription,
-    alternates: {
-      canonical: `/social-media-tools/pinterest-downloader/${slug}`
-    }
-  };
+type Props = {
+  params: Promise<{ slug: string }>
 }
 
 export async function generateStaticParams() {
-  return Object.keys(pinterestVariants).map((slug) => ({
-    slug,
-  }));
+  return Object.keys(pinterestVariants).map((slug) => ({ slug }))
 }
 
-export default async function PinterestVariantPage({ params }: PageProps) {
-  const { slug } = await params;
-  const variant = pinterestVariants[slug];
+export async function generateMetadata(props: Props): Promise<Metadata> {
+  const { slug } = await props.params
+  const variant = pinterestVariants[slug]
+  if (!variant) return {}
+
+  return {
+    title: `${variant.headerTitle} | Pinterest Downloader`,
+    description: `${variant.headerDescription} Focused Pinterest workflow page.`,
+    alternates: {
+      canonical: `/social-media-tools/pinterest-downloader/${slug}`,
+    },
+  }
+}
+
+export default async function PinterestVariantPage(props: Props) {
+  const { slug } = await props.params
+  const variant = pinterestVariants[slug]
 
   if (!variant) {
-    notFound();
+    notFound()
   }
 
   const toolConfig = createToolConfig({
-    toolName: variant.toolName,
-    description: variant.metaDescription,
-    metaTitle: variant.metaTitle,
-    metaDescription: variant.metaDescription,
+    toolName: variant.headerTitle,
+    description: `${variant.headerDescription} Built for focused Pinterest media workflows.`,
+    metaTitle: `${variant.headerTitle} | Pinterest Downloader`,
+    metaDescription: `${variant.headerDescription} Process pin links in-browser.`,
     path: `/social-media-tools/pinterest-downloader/${variant.slug}`,
+
+    schemaOptions: {
+      applicationCategory: "MultimediaApplication",
+      description: "Pinterest media variant downloader page for focused use cases.",
+      featureList: [
+        "Variant-specific Pinterest workflow",
+        "Pin URL processing",
+        "Browser-based utility",
+        "No-install flow",
+      ],
+      offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },
+    },
 
     header: {
       title: variant.headerTitle,
@@ -66,22 +68,76 @@ export default async function PinterestVariantPage({ params }: PageProps) {
     ],
 
     content: {
-      overview: variant.overviewText,
-      howToSteps: [
-        "Find the Pin you want to save.",
-        "Copy the link (pinterest.com/pin/...)",
-        "Paste it above and hit Download."
-      ],
-      features: [
-        "Original Quality Extraction",
-        "Video & Image Support",
-        "No Login Needed",
-        "Secure & Private"
-      ],
-      faqs: variant.faqOverrides ? variant.faqOverrides : [],
-      aboutTool: variant.overviewText,
-    }
-  });
+      overview:
+        `This variant page targets ${variant.headerTitle.toLowerCase()} workflows. Paste a Pinterest link, process available output, and continue your content operations with a focused route.`,
 
-  return <ToolPageLayout {...toolConfig.getLayoutProps(<UnifiedDownloader defaultPlatform="pinterest" placeholder="https://www.pinterest.com/pin/..." />)} />;
+      howToSteps: [
+        "Copy the relevant Pinterest pin link.",
+        "Paste it into the input field.",
+        "Run processing and inspect output.",
+        "Download the file you need.",
+      ],
+
+      features: [
+        `Focused ${variant.headerTitle.toLowerCase()} workflow`,
+        "Pin URL processing",
+        "Fast browser execution",
+        "Cross-device support",
+        "No software install",
+      ],
+
+      useCases: [
+        "Design and moodboard workflows",
+        "Content research tasks",
+        "Campaign asset reference",
+        "Creative operations support",
+      ],
+
+      aboutTool:
+        "Variant routes help target narrower user intents while preserving consistent downloader behavior and internal linking.",
+
+      proTip:
+        "Use full pin URLs for more reliable processing and output detection.",
+
+      faqs: [
+        {
+          question: "Why are there variant Pinterest pages?",
+          answer:
+            "They map to specific media use cases while using the same underlying processing workflow.",
+        },
+        {
+          question: "Can this be used on mobile browsers?",
+          answer: "Yes. It supports modern mobile and desktop browsers.",
+        },
+        {
+          question: "Do I need signup?",
+          answer: "No. Signup is not required for basic usage.",
+        },
+        {
+          question: "Are all links supported?",
+          answer:
+            "Processing depends on source visibility and link validity.",
+        },
+        {
+          question: "Is this free?",
+          answer: "Yes. It is available as a free utility.",
+        },
+      ],
+
+      relatedTools: [
+        { name: "Pinterest Downloader", href: "/social-media-tools/pinterest-downloader" },
+        { name: "Instagram Downloader", href: "/social-media-tools/instagram-downloader" },
+        { name: "YouTube Thumbnail Downloader", href: "/social-media-tools/youtube-thumbnail" },
+        { name: "All Social Media Tools", href: "/social-media-tools" },
+      ],
+    },
+  })
+
+  return (
+    <ToolPageLayout
+      {...toolConfig.getLayoutProps(
+        <UnifiedDownloader defaultPlatform="pinterest" placeholder="https://www.pinterest.com/pin/..." />
+      )}
+    />
+  )
 }

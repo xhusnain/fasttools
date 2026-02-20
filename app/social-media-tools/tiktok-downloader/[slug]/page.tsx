@@ -1,57 +1,58 @@
-
-import { Metadata } from "next";
-import { notFound } from "next/navigation";
-import { ToolPageLayout } from "@/components/common/tool-page-layout";
-import { tiktokVariants } from "../tiktok-variants";
-import dynamic from "next/dynamic";
-import { createToolConfig } from "@/lib/create-tool-config";
-
+import type { Metadata } from "next"
+import { notFound } from "next/navigation"
+import { ToolPageLayout } from "@/components/common/tool-page-layout"
+import { createToolConfig } from "@/lib/create-tool-config"
+import { tiktokVariants } from "../tiktok-variants"
 import { UnifiedDownloader } from "@/components/social-media/unified-downloader"
 
-interface PageProps {
-  params: Promise<{
-    slug: string;
-  }>;
-}
-
-export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
-  const { slug } = await params;
-  const variant = tiktokVariants[slug];
-
-  if (!variant) {
-    return {};
-  }
-
-  return {
-    title: variant.metaTitle,
-    description: variant.metaDescription,
-    alternates: {
-      canonical: `/social-media-tools/tiktok-downloader/${slug}`
-    }
-  };
+type Props = {
+  params: Promise<{ slug: string }>
 }
 
 export async function generateStaticParams() {
-  return Object.keys(tiktokVariants).map((slug) => ({
-    slug,
-  }));
+  return Object.keys(tiktokVariants).map((slug) => ({ slug }))
 }
 
-export default async function TiktokVariantPage({ params }: PageProps) {
-  const { slug } = await params;
-  const variant = tiktokVariants[slug];
+export async function generateMetadata(props: Props): Promise<Metadata> {
+  const { slug } = await props.params
+  const variant = tiktokVariants[slug]
+  if (!variant) return {}
+
+  return {
+    title: `${variant.headerTitle} | TikTok Downloader`,
+    description: `${variant.headerDescription} Focused TikTok workflow page.`,
+    alternates: {
+      canonical: `/social-media-tools/tiktok-downloader/${slug}`,
+    },
+  }
+}
+
+export default async function TiktokVariantPage(props: Props) {
+  const { slug } = await props.params
+  const variant = tiktokVariants[slug]
 
   if (!variant) {
-    notFound();
+    notFound()
   }
 
-  // Create a base config and override with variant data
   const toolConfig = createToolConfig({
-    toolName: variant.toolName,
-    description: variant.metaDescription,
-    metaTitle: variant.metaTitle,
-    metaDescription: variant.metaDescription,
+    toolName: variant.headerTitle,
+    description: `${variant.headerDescription} Built for focused TikTok media tasks.`,
+    metaTitle: `${variant.headerTitle} | TikTok Downloader`,
+    metaDescription: `${variant.headerDescription} Process links quickly in-browser.`,
     path: `/social-media-tools/tiktok-downloader/${variant.slug}`,
+
+    schemaOptions: {
+      applicationCategory: "MultimediaApplication",
+      description: "TikTok variant downloader page for focused media workflows.",
+      featureList: [
+        "Variant-specific TikTok workflow",
+        "URL processing",
+        "Browser-based utility",
+        "No-install flow",
+      ],
+      offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },
+    },
 
     header: {
       title: variant.headerTitle,
@@ -67,26 +68,76 @@ export default async function TiktokVariantPage({ params }: PageProps) {
     ],
 
     content: {
-      // We pass the variant overview text as custom content
-      overview: variant.overviewText,
-      // We can inherit or override other sections. 
-      // For now, let's keep the core functionality components but update text.
-      howToSteps: [
-        "Copy the TikTok link you want to process.",
-        "Paste it into the input box above.",
-        "Click Download and choose your format."
-      ],
-      features: [
-        "Free & Unlimited",
-        "High Quality Output",
-        "No Login Required",
-        "Fast Processing"
-      ],
-      // If the variant has specific FAQ overrides, we could merge them here
-      faqs: variant.faqOverrides ? variant.faqOverrides : [],
-      aboutTool: variant.overviewText,
-    }
-  });
+      overview:
+        `This variant page supports ${variant.headerTitle.toLowerCase()} workflows. Paste a TikTok link, process available output, and continue your creator workflow with minimal friction.`,
 
-  return <ToolPageLayout {...toolConfig.getLayoutProps(<UnifiedDownloader defaultPlatform="tiktok" placeholder="https://www.tiktok.com/@username/video/..." />)} />;
+      howToSteps: [
+        "Copy the relevant TikTok URL.",
+        "Paste it into the input field.",
+        "Run processing and review output.",
+        "Download the available file.",
+      ],
+
+      features: [
+        `Focused ${variant.headerTitle.toLowerCase()} workflow`,
+        "Quick URL processing",
+        "Cross-device browser support",
+        "No software install",
+        "Simple copy/paste flow",
+      ],
+
+      useCases: [
+        "Variant-specific creator tasks",
+        "Social content operations",
+        "Reference and research workflows",
+        "Campaign execution support",
+      ],
+
+      aboutTool:
+        "Variant routes map to narrower intent clusters while preserving consistent downloader behavior and internal linking.",
+
+      proTip:
+        "Use direct post URLs instead of shortened redirects when possible.",
+
+      faqs: [
+        {
+          question: "Why does this variant page exist?",
+          answer:
+            "It targets specific TikTok use cases while using the same core downloader engine.",
+        },
+        {
+          question: "Can I use this on mobile browsers?",
+          answer: "Yes. Mobile and desktop browsers are supported.",
+        },
+        {
+          question: "Do I need signup?",
+          answer: "No. Signup is not required for tool usage.",
+        },
+        {
+          question: "Are all links supported?",
+          answer:
+            "Processing depends on link validity and source accessibility.",
+        },
+        {
+          question: "Is this free?",
+          answer: "Yes. It is available as a free utility.",
+        },
+      ],
+
+      relatedTools: [
+        { name: "TikTok Downloader", href: "/social-media-tools/tiktok-downloader" },
+        { name: "CapCut Downloader", href: "/social-media-tools/capcut-downloader" },
+        { name: "Douyin Downloader", href: "/social-media-tools/douyin-downloader" },
+        { name: "All Social Media Tools", href: "/social-media-tools" },
+      ],
+    },
+  })
+
+  return (
+    <ToolPageLayout
+      {...toolConfig.getLayoutProps(
+        <UnifiedDownloader defaultPlatform="tiktok" placeholder="https://www.tiktok.com/@username/video/..." />
+      )}
+    />
+  )
 }
