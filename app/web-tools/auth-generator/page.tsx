@@ -13,41 +13,45 @@ const AuthGeneratorTool = dynamic(
 const toolConfig = createToolConfig({
   toolName: "Auth Header Generator",
   description:
-    "Free auth generator. basic auth generator online, decode. Bearer, API Key. basic auth header example. convert basic auth to username:password. No signup.",
-  metaTitle: "Auth Generator Online - Basic Auth, Bearer, API Key | Free",
+    "Generate HTTP Basic, Bearer, and API key headers for API testing and integration workflows.",
+  metaTitle: "Auth Header Generator (Basic, Bearer, API Key)",
   metaDescription:
-    "Free auth generator. basic auth generator online with decode. Bearer token, API Key headers. basic auth header example. convert basic auth to username:password. No signup.",
+    "Create and decode Basic Auth headers, build Bearer headers, and generate API key headers instantly for Postman, curl, and app testing.",
   path: "/web-tools/auth-generator",
+  keywords: [
+    "auth header generator",
+    "basic auth generator",
+    "basic auth decode",
+    "bearer token header",
+    "api key header",
+    "authorization header",
+  ],
 
   header: {
-    title: "Auth header generator",
+    title: "Auth Header Generator",
     description:
-      "Generate HTTP Basic Auth, Bearer, and API Key headers. basic auth generator online with decode.",
+      "Build Authorization headers for Basic, Bearer, and API key authentication.",
     titleSize: "medium",
     descriptionSize: "small",
   },
 
   breadcrumbs: [
     { label: "Web Tools", href: "/web-tools" },
-    { label: "Auth Generator", href: "/web-tools/auth-generator" },
+    { label: "Auth Header Generator", href: "/web-tools/auth-generator" },
   ],
 
   schemaOptions: {
-    applicationCategory: "UtilitiesApplication",
+    applicationCategory: "DeveloperApplication",
     description:
-      "Free auth generator. basic auth generator online, decode. Bearer, API Key. basic auth header example.",
-    alternateName: [
-      "Basic Auth Generator",
-      "Auth Generator Online",
-      "Basic Auth Generator Online",
-    ],
+      "Generate and decode HTTP authorization headers in-browser.",
+    alternateName: ["Basic Auth Generator", "Authorization Header Builder"],
     featureList: [
-      "Basic Auth encode & decode",
-      "Bearer token header",
-      "API Key header",
-      "basic auth generator online",
-      "convert basic auth to username:password",
-      "100% client-side, no signup",
+      "Basic Auth encode",
+      "Basic Auth decode",
+      "Bearer header generation",
+      "API key header templates",
+      "Copy-ready output",
+      "Client-side processing",
     ],
     offers: {
       "@type": "Offer",
@@ -58,99 +62,92 @@ const toolConfig = createToolConfig({
 
   content: {
     overview:
-      "Free auth generator. basic auth generator online with decode. Generate Basic Auth, Bearer token, and API Key headers. basic auth header example. basic auth token generation. convert basic auth to username:password. basic auth online decode. basic auth generator command line alternative. Free auth generator, no signup.",
+      "This tool helps you generate and validate HTTP auth headers without using command-line utilities. It supports Basic Auth encode/decode, Bearer token header formatting, and configurable API key headers for common API clients.",
 
     howToSteps: [
-      "Basic Auth Encode: Enter username and password. Get Authorization: Basic &lt;base64&gt; header.",
-      "Basic Auth Decode: Paste header or base64. convert basic auth to username:password.",
-      "Bearer: Paste token. Get Authorization: Bearer header.",
-      "API Key: Enter key and header name. Get X-API-Key or custom header.",
+      "Use the Basic Auth Encode tab to create an Authorization header from username and password.",
+      "Use Basic Auth Decode to recover credentials from a Basic header for debugging.",
+      "Use Bearer and API Key tabs to generate ready-to-copy headers for testing tools.",
     ],
 
     features: [
-      "basic auth generator: Encode username:password to Basic header",
-      "basic auth generator decode: Decode header to username:password",
-      "basic auth header example output for all types",
-      "Bearer token and basic auth token headers",
-      "API Key header (X-API-Key or custom)",
-      "basic auth generator command line alternative",
-      "100% client-side, no data sent",
+      "Basic Auth header generation",
+      "Base64 decode for existing Basic headers",
+      "Bearer token header formatting",
+      "Custom API key header names",
+      "Copy-ready output for Postman/curl/HTTP clients",
     ],
 
     useCases: [
-      "basic auth generator online: Generate Basic Auth header without curl or base64 command.",
-      "basic auth online decode: Decode Authorization: Basic xxx to credentials.",
-      "convert basic auth to username:password: Paste header, get decoded values.",
-      "basic auth generator command line: Same result as echo -n user:pass | base64.",
+      "Preparing headers for API testing and QA",
+      "Debugging authentication failures from encoded credentials",
+      "Creating consistent auth templates for team documentation",
+      "Quickly switching between Basic, Bearer, and API key auth models",
     ],
 
     aboutTool: (
       <div className="space-y-6 text-muted-foreground">
         <p>
-          This free auth generator creates HTTP authorization headers. basic
-          auth generator online: encode username and password to Authorization:
-          Basic &lt;base64&gt;. basic auth generator decode: paste header or base64
-          to convert basic auth to username:password. Also generates Bearer
-          token and API Key headers. Use instead of basic auth generator command
-          line (curl, echo | base64). basic auth header example output for
-          Postman, REST clients, API testing. Free auth generator, 100%
-          client-side.
+          Authorization headers are required by most API gateways and backend
+          services. This tool reduces manual formatting errors by generating the
+          exact header string for each authentication type.
+        </p>
+        <p>
+          For Basic Auth, credentials are base64-encoded and should always be
+          sent over HTTPS. For Bearer and API keys, keep secrets scoped and
+          rotated according to your security policy.
         </p>
       </div>
     ),
 
     proTip:
-      "basic auth generator command line equivalent: echo -n 'user:pass' | base64. This tool does the same plus decode, Bearer, and API Key—no terminal needed.",
+      "Treat generated credentials as sensitive data. Use test keys whenever possible and avoid sharing production tokens in screenshots.",
 
     faqs: [
       {
-        question: "What is HTTP AUTH?",
+        question: "What is a Basic Auth header?",
         answer:
-          "HTTP AUTH refers to authentication methods for HTTP requests. Basic Auth sends username:password as Base64 in the Authorization header. Bearer sends a token. API Key sends a key in a custom header. This free auth generator supports all three.",
+          "It is an HTTP `Authorization` header in the format `Basic <base64(username:password)>` used by many APIs and legacy integrations.",
       },
       {
-        question: "How do I use basic auth generator online?",
+        question: "Can this tool decode Basic Auth headers?",
         answer:
-          "Enter username and password in the Basic Auth (Encode) tab. The Authorization: Basic header appears. Copy it for API calls. For basic auth online decode, paste a header or base64 in the Decode tab to convert basic auth to username:password.",
+          "Yes. Paste a Basic header or raw base64 string in the decode tab to recover username and password for debugging.",
       },
       {
-        question: "What is basic auth header example?",
+        question: "How do Bearer headers work?",
         answer:
-          "basic auth header example: Authorization: Basic dXNlcm5hbWU6cGFzc3dvcmQ= (base64 of username:password). This auth generator creates that format. Use for Postman, curl, fetch, axios.",
+          "Bearer headers use the format `Authorization: Bearer <token>` and are common in OAuth and JWT-based flows.",
       },
       {
-        question: "Is there a basic auth generator decode?",
+        question: "What header name should I use for API keys?",
         answer:
-          "Yes. Use the Basic Auth (Decode) tab. Paste Authorization: Basic xxx or raw base64. Get username and password. convert basic auth to username:password instantly.",
+          "Common names include `X-API-Key` and `Authorization`, but always follow the API provider's documentation.",
       },
       {
-        question: "Is this a free auth generator?",
+        question: "Is this auth generator free?",
         answer:
-          "Yes. This free auth generator handles Basic Auth encode/decode, Bearer token, and API Key. basic auth generator online, no signup. 100% client-side.",
+          "Yes. It is free and runs in your browser for normal usage.",
       },
     ],
 
     additionalContent: [
       {
-        heading: "Basic Auth Generator — Encode & Decode",
+        heading: "Command-Line Equivalent",
         content:
-          "basic auth generator online: encode username and password to Authorization: Basic header. basic auth generator decode: paste header or base64 to convert basic auth to username:password. basic auth header example for API testing. basic auth online decode without command line. Free auth generator.",
+          "For Basic Auth, a common CLI approach is `echo -n 'user:pass' | base64`. This tool produces the same output with a visual workflow and built-in decode support.",
       },
       {
-        heading: "Basic Auth Generator Command Line Alternative",
+        heading: "Common Debugging Issue",
         content:
-          "basic auth generator command line: echo -n 'user:pass' | base64 produces the same Base64 as Basic Auth. This tool does that plus formats the full header and decodes. Use for basic auth token generation without terminal.",
-      },
-      {
-        heading: "All Auth Types — Basic, Bearer, API Key",
-        content:
-          "This auth generator supports Basic Auth (encode/decode), Bearer token (Authorization: Bearer), and API Key (X-API-Key or custom). basic auth generator online, basic auth online decode, Bearer for OAuth/JWT, API Key for REST APIs. Free auth generator.",
+          "If auth fails, check for extra spaces, missing prefixes (`Basic` or `Bearer`), incorrect header names, and token expiration before retrying requests.",
       },
     ],
 
     relatedTools: [
       { name: "JWT Decoder", href: "/dev-tools/jwt-decoder" },
       { name: "Base64 Encoder", href: "/dev-tools/base64-encoder" },
+      { name: "Token Generator", href: "/crypto-tools/token-generator" },
       { name: "All Web Tools", href: "/web-tools" },
     ],
   },

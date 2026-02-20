@@ -84,7 +84,7 @@ export function DeviceInfo() {
 
   if (loading || !info) {
     return (
-      <div className="flex flex-col items-center justify-center py-16">
+      <div className="flex flex-col items-center justify-center py-16" aria-live="polite">
         <div className="animate-spin h-8 w-8 border-2 border-primary border-t-transparent rounded-full" />
         <p className="text-muted-foreground mt-4 text-sm">Detecting your device...</p>
       </div>
@@ -96,16 +96,18 @@ export function DeviceInfo() {
       <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3">
         <div>
           <h2 className="text-lg font-semibold text-foreground">
-            Device information
+            Device Information
           </h2>
           <p className="text-sm text-muted-foreground mt-1">
-            Get information about your current device (screen size, pixel ratio,
-            user agent, ...).
+            View browser, operating system, and display diagnostics for this
+            device.
           </p>
         </div>
         {info.device.userAgent && (
           <button
             onClick={handleCopyUserAgent}
+            type="button"
+            aria-label="Copy user agent string"
             className="inline-flex items-center gap-2 px-3 py-1.5 text-sm font-medium rounded-md border border-border hover:bg-muted/50 transition-colors"
           >
             {copied ? (
@@ -132,7 +134,7 @@ export function DeviceInfo() {
       />
 
       <SectionGrid
-        title="Device"
+        title="Browser & Device"
         icon={Smartphone}
         items={[
           { label: "Browser vendor", value: info.device.browserVendor },

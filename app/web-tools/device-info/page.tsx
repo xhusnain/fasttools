@@ -13,16 +13,24 @@ const DeviceInfoTool = dynamic(
 const toolConfig = createToolConfig({
   toolName: "Device Information",
   description:
-    "Free my device information online. Get device information pc, mobile. Screen size, user agent, pixel ratio. device information android, samsung. No signup.",
-  metaTitle: "Device Information Online - Screen, User Agent, My Device Info",
+    "View browser and device diagnostics including user agent, viewport, screen details, OS, and hardware signals.",
+  metaTitle: "Device Information Checker (Browser, Screen, User Agent)",
   metaDescription:
-    "Free my device information online. Get device information pc and mobile. Screen size, pixel ratio, user agent. device information android, samsung. No signup.",
+    "Check your current device and browser details: user agent, screen size, pixel ratio, OS, language, and viewport metrics.",
   path: "/web-tools/device-info",
+  keywords: [
+    "device information",
+    "user agent checker",
+    "screen resolution checker",
+    "browser info",
+    "viewport size",
+    "device diagnostics",
+  ],
 
   header: {
-    title: "Device information",
+    title: "Device Information",
     description:
-      "Get information about your current device (screen size, pixel ratio, user agent, ...).",
+      "See real-time browser and screen data for your current device.",
     titleSize: "medium",
     descriptionSize: "small",
   },
@@ -33,19 +41,16 @@ const toolConfig = createToolConfig({
   ],
 
   schemaOptions: {
-    applicationCategory: "UtilitiesApplication",
+    applicationCategory: "DeveloperApplication",
     description:
-      "Free my device information online. device information pc, mobile. Screen, user agent, pixel ratio.",
-    alternateName: [
-      "Device Information Tool",
-      "My Device Information Online",
-      "Device Info Online",
-    ],
+      "Inspect browser, screen, and system details directly in your browser.",
+    alternateName: ["Browser Device Info", "User Agent and Screen Checker"],
     featureList: [
-      "Screen size, orientation, pixel ratio",
-      "User agent, browser vendor, platform",
-      "device information pc and mobile",
-      "100% client-side, no signup",
+      "Screen and viewport dimensions",
+      "Pixel ratio and orientation",
+      "User agent and browser metadata",
+      "OS and platform snapshot",
+      "Client-side diagnostics",
     ],
     offers: {
       "@type": "Offer",
@@ -56,90 +61,91 @@ const toolConfig = createToolConfig({
 
   content: {
     overview:
-      "Free my device information online. Get device information pc, device information android, and mobile. View screen size, pixel ratio, orientation, user agent, browser vendor, platform. Works as my device information google alternative. No device information app or device info apk needed. No signup.",
+      "This tool gives a quick technical snapshot of the browser and device currently visiting the page. It helps with responsive debugging, support triage, and QA checks across desktop and mobile environments.",
 
     howToSteps: [
-      "Open this page on the device you want to inspect.",
-      "Device information loads automatically: screen size, orientation, color depth, pixel ratio, window size.",
-      "View device details: browser vendor, languages, platform, user agent. Copy user agent with one click.",
+      "Open this page from the device you want to inspect.",
+      "Review screen and browser sections for resolution, pixel ratio, user agent, and OS data.",
+      "Copy the user agent string when needed for support tickets or compatibility checks.",
     ],
 
     features: [
-      "Screen: size, orientation, orientation angle, color depth, pixel ratio, window size",
-      "Device: browser vendor, languages, platform, user agent, OS",
-      "Works on device information pc and my mobile device information",
-      "device information android, device information samsung compatible",
-      "100% client-side, no data sent to servers",
+      "Screen size, orientation, and pixel ratio",
+      "Viewport and browser metadata",
+      "User agent and platform details",
+      "Optional hardware and network hints when available",
+      "No installation required",
     ],
 
     useCases: [
-      "my device information online: Check screen and browser details without my device information google.",
-      "device information pc: Inspect display resolution, pixel ratio, and user agent on desktop.",
-      "my mobile device information: View device information android or device information samsung on your phone.",
-      "device information code: Use as reference for responsive design or feature detection.",
+      "Debugging responsive layout differences between devices",
+      "Collecting browser details for bug reports",
+      "Validating mobile vs desktop environment assumptions",
+      "Checking user-agent values during integration testing",
     ],
 
     aboutTool: (
       <div className="space-y-6 text-muted-foreground">
         <p>
-          This device information tool shows your browser and screen details
-          client-side. Get my device information online without a device
-          information app or device info apk. Works on device information pc and
-          my mobile device information. Shows screen size, orientation, pixel
-          ratio, user agent, browser vendor, platform. Similar to my device
-          information google or device information for android apps—but runs in
-          the browser. No signup, no installation.
+          Device and browser metadata can explain why a page behaves differently
+          across environments. This tool surfaces high-value diagnostics in one
+          place to speed up troubleshooting.
+        </p>
+        <p>
+          Data is read from browser APIs on your current device. It is intended
+          for technical checks, not user tracking.
         </p>
       </div>
     ),
 
     proTip:
-      "Use this my device information online tool to debug responsive layouts, verify pixel ratio for retina displays, or copy your user agent for support requests.",
+      "Capture this output alongside screenshots when reporting frontend bugs to reduce back-and-forth during triage.",
 
     faqs: [
       {
-        question: "How can I get my device information?",
+        question: "What information does this tool show?",
         answer:
-          "Use this free my device information online tool. Open the page on your device—screen size, pixel ratio, user agent, browser vendor, and more load automatically. Works on device information pc and my mobile device information. No device information app or device info apk required.",
+          "It shows screen metrics, orientation, viewport details, user agent, browser/platform data, and additional device hints when supported by your browser.",
       },
       {
-        question: "Where do I find device information?",
+        question: "Why do I need a user agent checker?",
         answer:
-          "On this page. Open fasttools.store/web-tools/device-info on your PC or phone. Device information loads instantly: screen size, orientation, user agent, platform. For device information android or device information samsung, open in Chrome or Samsung Internet.",
+          "User agent strings are useful for compatibility debugging, support diagnostics, and testing conditional logic in analytics or application code.",
       },
       {
-        question: "What is device information?",
+        question: "Can I use this on mobile devices?",
         answer:
-          "Device information includes screen size, pixel ratio, orientation, user agent, browser vendor, platform, and OS. This my device information online tool displays all of that. Useful for device information pc, my mobile device information, or device information for android troubleshooting.",
+          "Yes. Open the page directly on your phone or tablet to inspect mobile browser and screen values.",
       },
       {
-        question: "Is there a device information app or device info apk?",
+        question: "Is this data shared externally?",
         answer:
-          "You don't need a device information app or device info apk. This my device information online tool runs in your browser. Works on device information android, device information samsung, and device information pc. No install, no signup.",
+          "For normal use, values are read and displayed in-browser so you can inspect them locally.",
       },
       {
-        question: "How does my device information online compare to find my device?",
+        question: "Is this tool free?",
         answer:
-          "Find my device (e.g. Google) helps locate lost phones. This tool shows technical device information: screen, user agent, platform. Use for debugging, responsive design, or support. Free my device information online.",
+          "Yes. It is free to use with no signup.",
       },
     ],
 
     additionalContent: [
       {
-        heading: "My Device Information Online — PC & Mobile",
+        heading: "Useful for Responsive QA",
         content:
-          "Get my device information online on device information pc or my mobile device information. This tool shows screen size, pixel ratio, orientation, user agent, browser vendor, languages, platform. No device information app or device info apk. Works for device information android and device information samsung. Free, client-side.",
+          "Pair this output with CSS breakpoints to verify whether layout issues come from viewport width, pixel density, browser rendering differences, or device orientation.",
       },
       {
-        heading: "Device Information for Android & Samsung",
+        heading: "Support Workflow",
         content:
-          "Open this page on your Android or Samsung phone to view device information for android. See screen size, pixel ratio, user agent. Same as my device information online on PC. No device information code or device information app needed.",
+          "When a user reports a bug, asking for user agent, OS, and viewport values can significantly reduce reproduction time. This page centralizes those values in one screen.",
       },
     ],
 
     relatedTools: [
-      { name: "My Info (Location)", href: "/my-info" },
+      { name: "My Info", href: "/my-info" },
       { name: "URL Parser", href: "/web-tools/url-parser" },
+      { name: "Auth Header Generator", href: "/web-tools/auth-generator" },
       { name: "All Web Tools", href: "/web-tools" },
     ],
   },

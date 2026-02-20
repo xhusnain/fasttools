@@ -11,43 +11,46 @@ const HtmlEscape = dynamic(
 )
 
 const toolConfig = createToolConfig({
-  toolName: "Escape HTML entities",
+  toolName: "HTML Escape Unescape",
   description:
-    "Free HTML escape online. Escape html entities list. html escape js, php, python. Unescape html entities. HTML escape characters list. XSS prevention. No signup.",
-  metaTitle: "Escape HTML Entities Online - Free, JS, PHP, Python",
+    "Escape special HTML characters to entities and unescape entities back to plain text.",
+  metaTitle: "HTML Escape/Unescape Tool Online",
   metaDescription:
-    "Free HTML escape online. Escape html entities list, html escape characters list. html escape js, php, python. Unescape html entities. XSS prevention. No signup.",
+    "Convert <, >, &, quotes, and apostrophes to HTML entities and decode them back. Useful for safe rendering and XSS prevention workflows.",
   path: "/web-tools/html-escape",
+  keywords: [
+    "html escape",
+    "html unescape",
+    "html entities",
+    "xss prevention",
+    "escape html",
+    "unescape html",
+  ],
 
   header: {
-    title: "Escape HTML entities",
+    title: "HTML Escape Unescape",
     description:
-      "Escape special characters to HTML entities or unescape them. Prevents XSS, ensures correct display.",
+      "Escape special characters to HTML entities or decode entities back to readable text.",
     titleSize: "medium",
     descriptionSize: "small",
   },
 
   breadcrumbs: [
     { label: "Web Tools", href: "/web-tools" },
-    { label: "Escape HTML Entities", href: "/web-tools/html-escape" },
+    { label: "HTML Escape Unescape", href: "/web-tools/html-escape" },
   ],
 
   schemaOptions: {
-    applicationCategory: "UtilitiesApplication",
+    applicationCategory: "DeveloperApplication",
     description:
-      "Free HTML escape online. Escape html entities list. html escape js, php, python. Unescape html entities. XSS prevention.",
-    alternateName: [
-      "Escape HTML Entities Online",
-      "HTML Escape Online",
-      "HTML Escape Unescape Tool",
-    ],
+      "Escape and unescape HTML entities in-browser for safe output rendering.",
+    alternateName: ["HTML Entity Encoder", "HTML Entity Decoder"],
     featureList: [
-      "Escape HTML entities",
-      "Unescape HTML entities",
-      "HTML escape characters list",
-      "For JS, PHP, Python",
-      "XSS prevention",
-      "100% client-side, no signup",
+      "Escape reserved HTML characters",
+      "Unescape entity-encoded strings",
+      "Security-focused output formatting",
+      "Live conversion",
+      "Client-side processing",
     ],
     offers: {
       "@type": "Offer",
@@ -58,102 +61,92 @@ const toolConfig = createToolConfig({
 
   content: {
     overview:
-      "Free html escape online. Use this escape html entities list to convert &lt; &gt; &amp; &quot; &#39; into safe entity names. Works as unescape html entities python, html escape js, and html escape php alternative. Matches the html escape characters list from W3Schools. Supports html escape unicode. Prevents XSS. No signup.",
+      "This tool converts risky or reserved HTML characters (`<`, `>`, `&`, `\"`, `'`) into safe entities and decodes entities back to plain text when needed. It is useful for output sanitization checks, template debugging, and content migration tasks.",
 
     howToSteps: [
-      "Escape: Paste your HTML or text in the Escape panel. Special characters become &lt; &gt; &amp; &quot; &#39;.",
-      "Unescape: Paste escaped entities in the Unescape panel. Get plain text back.",
-      "Copy escaped or unescaped result with one click.",
+      "Paste raw text or markup in the Escape panel to generate entity-safe output.",
+      "Paste entity-encoded text in the Unescape panel to recover readable text.",
+      "Copy the result for templating, CMS input, or QA checks.",
     ],
 
     features: [
-      "Escape html entities: &lt; &gt; &amp; &quot; &#39; to entity names",
-      "Unescape: Convert escaped entities back to plain text",
-      "Full html escape characters list per W3Schools",
-      "html escape js, html escape php, unescape html entities python compatible",
-      "html escape unicode via decimal and hex references",
-      "XSS prevention; 100% client-side, no data sent",
+      "Escapes core HTML-reserved characters",
+      "Unescapes common named and numeric entities",
+      "Two-way conversion in one interface",
+      "Copy-ready output",
+      "Works locally in your browser",
     ],
 
     useCases: [
-      "Display user input safely: escape html entities before rendering to prevent XSS.",
-      "html escape js: Use this html escape online tool instead of manual DOM or replace.",
-      "html escape php: Quick check without PHP; same output as htmlspecialchars.",
-      "unescape html entities python: Paste escaped text to get plain text without opening a shell.",
+      "Verifying safe output before inserting user-generated content into HTML",
+      "Converting escaped content back to readable text during migrations",
+      "Comparing framework auto-escaping behavior against expected output",
+      "Troubleshooting rendering issues in email templates and CMS blocks",
     ],
 
     aboutTool: (
       <div className="space-y-6 text-muted-foreground">
         <p>
-          To escape html entities, convert special characters to entity names or
-          numeric references so they display correctly and don&apos;t execute as
-          code. The html escape characters list (W3Schools standard) includes:
-          &lt; → &amp;lt;, &gt; → &amp;gt;, &amp; → &amp;amp;, &quot; →
-          &amp;quot;, &#39; → &amp;#39;. For html escape js use
-          createTextNode or replace; for html escape php use htmlspecialchars;
-          for unescape html entities python use html.unescape. This html escape
-          online tool does both escape and unescape without code.
+          Escaping converts characters with special meaning in HTML into entity
+          forms, so they are displayed as text instead of interpreted as markup.
+          This is a foundational protection pattern against injection issues.
+        </p>
+        <p>
+          Unescaping is the reverse operation. It is useful when content is
+          stored or transported in encoded form and needs to be displayed or
+          compared in readable text.
         </p>
       </div>
     ),
 
     proTip:
-      "Escape on output (before rendering), not on input. React and Angular auto-escape; use this for manual HTML or legacy templates.",
+      "Escape on output boundaries where HTML is rendered, and keep raw source data unchanged when possible.",
 
     faqs: [
       {
-        question: "How to escape in HTML?",
+        question: "What does HTML escaping do?",
         answer:
-          "Replace &lt; with &amp;lt;, &gt; with &amp;gt;, &amp; with &amp;amp;, quotes with &amp;quot; and &amp;#39;. Paste your text in the Escape panel—this free html escape online tool does it instantly. Prevents XSS and ensures correct display.",
+          "It transforms reserved characters such as `<` and `&` into entities like `&lt;` and `&amp;` so browsers render them as text instead of HTML instructions.",
       },
       {
-        question: "What are HTML entities?",
+        question: "Why is escaping important for security?",
         answer:
-          "HTML entities are codes that represent special characters. &amp;lt; is &lt;, &amp;gt; is &gt;, &amp;amp; is &amp;. Use this escape html entities list: &lt; &gt; &amp; &quot; &#39;. This tool escapes and unescapes them.",
+          "Escaping user-controlled content before rendering helps prevent unintended script execution and markup injection in many output contexts.",
       },
       {
-        question: "How to unescape HTML entities in Python?",
+        question: "When should I unescape HTML entities?",
         answer:
-          "Use html.unescape() in Python. Or use this free unescape html entities python alternative—paste escaped text and get plain text. For escaping, use html.escape().",
+          "Unescape when you need to read or process content that was previously escaped, such as imported CMS fields, email templates, or API payloads.",
       },
       {
-        question: "How to escape HTML in JavaScript?",
+        question: "Does this replace full sanitization?",
         answer:
-          "Create a text node or use replace. This free html escape js alternative works online—paste text and get escaped output. For manual code: replace /[&<>\"']/g with entity map.",
+          "No. Escaping is one layer. Full security also depends on context-aware sanitization, validation, and safe rendering practices.",
       },
       {
-        question: "How to escape HTML in PHP?",
+        question: "Is this tool free and local?",
         answer:
-          "Use htmlspecialchars() or htmlentities() in PHP. This free html escape php alternative works online—paste text and get escaped output. Laravel uses e() which calls htmlspecialchars.",
-      },
-      {
-        question: "Is this HTML escape tool free?",
-        answer:
-          "Yes. This HTML escape/unescape tool is 100% free. Conversion runs in your browser—no data is sent to servers. No signup required. Use for html escape online, unescape html entities, XSS prevention.",
+          "Yes. It is free and runs client-side in your browser for normal usage.",
       },
     ],
 
     additionalContent: [
       {
-        heading: "Escape HTML Entities List — W3Schools Standard",
+        heading: "Characters Commonly Escaped",
         content:
-          "The escape html entities list used by W3Schools and OWASP includes five core characters: less-than (&lt;) as &amp;lt;, greater-than (&gt;) as &amp;gt;, ampersand (&amp;) as &amp;amp;, double quote (\") as &amp;quot;, and single quote (') as &#39;. This html escape online tool converts all five instantly. Use it for html escape js, html escape php, or as an unescape html entities python alternative when working in the browser.",
+          "Most workflows at minimum escape `<`, `>`, `&`, double quotes, and apostrophes. Depending on context, additional characters may also be encoded using numeric entities.",
       },
       {
-        heading: "HTML Escape Characters List & Unicode Support",
+        heading: "Developer Workflow Tip",
         content:
-          "The complete html escape characters list covers &lt; &gt; &amp; &quot; &#39;. For broader character support, html escape unicode handles extended characters via decimal (&#123;) and hex (&#x7B;) references. Whether you need html escape js, html escape php, or unescape html entities python—this free html escape online tool works without code.",
-      },
-      {
-        heading: "HTML Escape Online — No Code Required",
-        content:
-          "This html escape online tool runs entirely in your browser. Paste text with special characters and get escaped output. Paste escaped entities to unescape. Ideal for quick html escape js or html escape php checks, or as an unescape html entities python workflow when you need instant conversion without opening a terminal.",
+          "If rendering still looks wrong after escaping, inspect whether content was escaped twice. Double-escaped text often appears with `&amp;lt;` patterns.",
       },
     ],
 
     relatedTools: [
       { name: "URL Encoder Decoder", href: "/web-tools/url-encoder" },
       { name: "HTML Beautifier", href: "/dev-tools/html-beautifier" },
+      { name: "Markdown Previewer", href: "/dev-tools/markdown-previewer" },
       { name: "All Web Tools", href: "/web-tools" },
     ],
   },

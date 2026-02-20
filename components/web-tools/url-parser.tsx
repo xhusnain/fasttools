@@ -65,7 +65,7 @@ function UrlParserResult({ parsed }: { parsed: ParsedUrl }) {
       {parsed.queryParams.length > 0 && (
         <div>
           <h4 className="text-sm font-semibold text-foreground mb-2">
-            Query String (decoded)
+            Query Parameters (decoded)
           </h4>
           <div className="rounded-xl border border-border bg-card overflow-hidden">
             <table className="w-full text-left">
@@ -119,12 +119,10 @@ export function UrlParser() {
     <div className="space-y-6">
       <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3">
         <div>
-          <h2 className="text-lg font-semibold text-foreground">
-            Parse URL into components
-          </h2>
+          <h2 className="text-lg font-semibold text-foreground">URL Parser</h2>
           <p className="text-sm text-muted-foreground mt-1">
-            Break down a URL into scheme, host, path, query string, and hash.
-            url query string parser with decoded parameters.
+            Break down a URL into scheme, host, path, query parameters, and
+            hash.
           </p>
         </div>
         <div className="flex items-center gap-2">
@@ -156,6 +154,7 @@ export function UrlParser() {
             onChange={(e) => setInput(e.target.value)}
             placeholder="Paste a URL: https://example.com/path?key=value#hash"
             className="mt-1 min-h-[100px] font-mono text-sm"
+            aria-label="URL to parse"
           />
         </div>
 

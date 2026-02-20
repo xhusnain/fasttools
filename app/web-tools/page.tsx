@@ -3,13 +3,13 @@ import { ToolPageLayout } from "@/components/common/tool-page-layout"
 import { createToolConfig } from "@/lib/create-tool-config"
 import { GToolCard } from "@/ui/gtool-card"
 
-import { Link2, Globe } from "lucide-react"
+import { Link2 } from "lucide-react"
 
 const webTools = [
   {
     title: "URL Encoder Decoder",
     description:
-      "Encode text to URL-encoded format (percent-encoded), or decode from it. Free online web tool.",
+      "Encode text to URL-safe format (percent-encoding) and decode it back instantly.",
     href: "/web-tools/url-encoder",
     icon: Link2,
     popular: true,
@@ -17,7 +17,7 @@ const webTools = [
   {
     title: "Escape HTML Entities",
     description:
-      "Escape or unescape HTML entities. html escape online. Prevents XSS. Free.",
+      "Escape or unescape HTML entities to safely display user content in markup.",
     href: "/web-tools/html-escape",
     icon: Link2,
     popular: true,
@@ -25,7 +25,7 @@ const webTools = [
   {
     title: "URL Parser",
     description:
-      "Parse URLs into components. url query string parser with decode. Free.",
+      "Break URLs into protocol, host, path, query params, and hash for debugging.",
     href: "/web-tools/url-parser",
     icon: Link2,
     popular: true,
@@ -33,7 +33,7 @@ const webTools = [
   {
     title: "Device Information",
     description:
-      "Get my device information online. Screen size, user agent, pixel ratio. Free.",
+      "View browser and screen details like user agent, viewport, pixel ratio, and OS.",
     href: "/web-tools/device-info",
     icon: Link2,
     popular: true,
@@ -41,7 +41,7 @@ const webTools = [
   {
     title: "Auth Header Generator",
     description:
-      "basic auth generator online. Basic Auth, Bearer, API Key. Decode too. Free.",
+      "Generate Basic, Bearer, and API key headers for API clients and testing.",
     href: "/web-tools/auth-generator",
     icon: Link2,
     popular: true,
@@ -49,7 +49,7 @@ const webTools = [
   {
     title: "Outlook Safelink Decoder",
     description:
-      "Decode Outlook SafeLink links to original URL. safelinks decoder o365, safe link decoder. Free.",
+      "Extract original destination URLs from Microsoft Safe Links in Outlook emails.",
     href: "/web-tools/outlook-safelink-decoder",
     icon: Link2,
     popular: true,
@@ -57,18 +57,27 @@ const webTools = [
 ]
 
 const toolConfig = createToolConfig({
-  toolName: "Free Web Tools",
+  toolName: "Web Tools",
   description:
-    "Free online web tools for URL encoding, decoding, and web development. URL encode decode, percent-encoded. Free web tools list. No signup.",
-  metaTitle: "Free Web Tools Online | URL Encoder, Web Utilities",
+    "Browser-based web utilities for URL encoding, URL parsing, HTML escaping, device detection, auth headers, and Outlook Safe Links decoding.",
+  metaTitle: "Web Tools: URL Encoder, Parser, Device Info",
   metaDescription:
-    "Free online web tools for developers and webmasters. URL encode decode, percent-encoded strings. Free web tools list. No signup required.",
+    "Free web tools for developers and analysts: URL encoder/decoder, URL parser, HTML escape, auth header generator, device info, and Safe Links decoder.",
   path: "/web-tools",
+  keywords: [
+    "web tools",
+    "url encoder",
+    "url parser",
+    "html escape",
+    "auth header generator",
+    "device info",
+    "safelink decoder",
+  ],
   schemaOptions: {
     itemList: {
-      name: "Web Tools Collection - URL Encoder, Web Utilities",
+      name: "Web Tools Collection",
       description:
-        "Free online web tools for URL encoding, decoding, and web development. URL encode decode, percent-encoded. Free web tools list.",
+        "A collection of browser-based web utilities for encoding, parsing, debugging, and security workflows.",
       items: webTools.map((tool) => ({
         name: tool.title,
         description: tool.description,
@@ -78,9 +87,9 @@ const toolConfig = createToolConfig({
   },
 
   header: {
-    title: "Free Web Tools - URL Encoder & More",
+    title: "Web Tools",
     description:
-      "Online web tools for URL encoding, decoding, and web development. Free, fast, and secure. No signup required.",
+      "Practical utilities for everyday web development and troubleshooting. Fast, free, and browser-based.",
     titleSize: "medium",
     descriptionSize: "small",
   },
@@ -89,24 +98,26 @@ const toolConfig = createToolConfig({
 
   content: {
     overview:
-      "Free online web tools help you build, manage, test, and analyze websites. Our web tools list includes url encode decode online, url parser online, device information, auth generator, encode decode url formatted strings, and HTML escape. Explore web tools examples like URL encoders and url parser. This web tools website runs entirely in your browser—no signup or software needed.",
+      "This category includes focused web utilities for encoding, parsing, security checks, and browser diagnostics. Every tool runs client-side in your browser, so you can test quickly without installing packages or sharing sensitive data.",
 
     aboutTool: (
       <div className="space-y-6">
         <div>
           <h2 className="text-xl font-bold mb-4 text-foreground">
-            What Are Web Tools?
+            What This Category Covers
           </h2>
           <p className="text-sm text-muted-foreground leading-relaxed mb-4">
-            Web tools are online applications that help you build, manage, test,
-            design, or analyze websites. Web tools examples include URL encoders,
-            link checkers, DevTools, and PageSpeed Insights. This web tools
-            website offers free online web tools that run in your browser.
+            Web tools are small utilities that solve specific technical tasks:
+            encoding values, parsing URLs, generating auth headers, or checking
+            browser and device attributes. They are useful for API testing,
+            troubleshooting redirects, debugging analytics parameters, and
+            verifying suspicious links.
           </p>
           <p className="text-sm text-muted-foreground leading-relaxed">
-            Our free web tools list features url encode decode online, url parser online, device information, auth generator,
-            encode decode url formatted strings, HTML escape, and more. Use
-            any tool instantly—no signup, no software download.
+            FastTools Web Tools are designed for quick workflows: open a tool,
+            paste input, and copy output. The category includes URL
+            Encoder/Decoder, HTML Escape/Unescape, URL Parser, Device
+            Information, Auth Header Generator, and Outlook Safe Links Decoder.
           </p>
         </div>
       </div>
@@ -114,30 +125,35 @@ const toolConfig = createToolConfig({
 
     faqs: [
       {
-        question: "What are web tools?",
+        question: "Who are these web tools for?",
         answer:
-          "Web tools are online applications that help you build, manage, test, design, or analyze websites. Web tools examples include url encode decode online tools, encode decode url formatted strings utilities, DevTools, and PageSpeed Insights. This web tools website offers free online web tools accessible via browser.",
+          "They are built for developers, marketers, analysts, support teams, and technical writers who need fast transformations and diagnostics while working with URLs, HTML, auth headers, and browser or device data.",
       },
       {
-        question: "What are free online web tools?",
+        question: "Do these tools send my data to your servers?",
         answer:
-          "Free online web tools run in your browser without signup or payment. Our web tools list includes url encode decode online, url parser online, device information, auth generator, encode decode url formatted strings, HTML escape, JSON formatters, and more. All tools are free and client-side.",
+          "For this category, processing happens in your browser for normal text inputs and outputs. That makes these tools suitable for quick checks on sensitive strings, links, and headers.",
       },
       {
-        question: "Where can I find a web tools list?",
+        question: "Which tool should I use first?",
         answer:
-          "Visit fasttools.store/web-tools for our full web tools list. We offer url encode decode online, url parser online, device information, auth generator, encode decode url formatted strings, HTML escape, and other web tools examples. Free online web tools, no signup.",
+          "Use URL Encoder/Decoder for query-safe values, URL Parser for parameter analysis, HTML Escape for safe rendering, Auth Header Generator for API testing, Device Information for environment checks, and Safe Links Decoder for Outlook link inspection.",
       },
       {
-        question: "How to open web tools?",
+        question: "Can I use these tools on mobile?",
         answer:
-          "Web tools are accessed through a browser. For our free online web tools, visit fasttools.store/web-tools. For browser DevTools, press F12 or Ctrl+Shift+I (Cmd+Option+I on Mac).",
+          "Yes. The tools are responsive and work on desktop and mobile browsers. Some outputs, like long user-agent strings, are simply easier to inspect on larger screens.",
       },
       {
-        question: "How do web tools impact SEO?",
+        question: "Are these tools free?",
         answer:
-          "Web tools like url encode decode online, url parser online, device information, auth generator, sitemap validators, and meta tag generators help optimize sites for search engines. Proper encode decode url formatted strings ensures links work correctly. SEO tools analyze performance and content.",
+          "Yes. All tools in this category are free to use with no signup requirement.",
       },
+    ],
+    relatedTools: [
+      { name: "Developer Tools", href: "/dev-tools" },
+      { name: "SEO Tools", href: "/seo-tools" },
+      { name: "Converters", href: "/converters" },
     ],
   },
 })

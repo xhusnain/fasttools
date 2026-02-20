@@ -51,11 +51,10 @@ export function UrlEncoder() {
       <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3">
         <div>
           <h2 className="text-lg font-semibold text-foreground">
-            Encode/decode URL-formatted strings
+            URL Encoder/Decoder
           </h2>
           <p className="text-sm text-muted-foreground mt-1">
-            Encode text to URL-encoded format (also known as
-            &quot;percent-encoded&quot;), or decode from it.
+            Convert plain text to percent-encoding and decode it back instantly.
           </p>
         </div>
         <div className="flex items-center gap-2">
@@ -76,25 +75,23 @@ export function UrlEncoder() {
         <div className="space-y-4 rounded-xl border border-border bg-card p-4">
           <h3 className="text-sm font-semibold text-foreground">Encode</h3>
           <div>
-            <GLabel className="text-xs text-muted-foreground">
-              Your string :
-            </GLabel>
+            <GLabel className="text-xs text-muted-foreground">Input text</GLabel>
             <GTextarea
               value={encodeInput}
               onChange={(e) => setEncodeInput(e.target.value)}
               placeholder="Enter text to encode..."
               className="mt-1 min-h-[120px] font-mono text-sm"
+              aria-label="Text to encode"
             />
           </div>
           <div>
-            <GLabel className="text-xs text-muted-foreground">
-              Your string encoded :
-            </GLabel>
+            <GLabel className="text-xs text-muted-foreground">Encoded output</GLabel>
             <GTextarea
               value={encoded}
               readOnly
               placeholder="Encoded output will appear here"
               className="mt-1 min-h-[120px] font-mono text-sm bg-muted/30"
+              aria-label="Encoded output"
             />
           </div>
           {encoded && (
@@ -113,25 +110,23 @@ export function UrlEncoder() {
         <div className="space-y-4 rounded-xl border border-border bg-card p-4">
           <h3 className="text-sm font-semibold text-foreground">Decode</h3>
           <div>
-            <GLabel className="text-xs text-muted-foreground">
-              Your encoded string :
-            </GLabel>
+            <GLabel className="text-xs text-muted-foreground">Encoded input</GLabel>
             <GTextarea
               value={decodeInput}
               onChange={(e) => setDecodeInput(e.target.value)}
               placeholder="Enter URL-encoded string to decode..."
               className="mt-1 min-h-[120px] font-mono text-sm"
+              aria-label="Encoded text to decode"
             />
           </div>
           <div>
-            <GLabel className="text-xs text-muted-foreground">
-              Your string decoded :
-            </GLabel>
+            <GLabel className="text-xs text-muted-foreground">Decoded output</GLabel>
             <GTextarea
               value={decoded}
               readOnly
               placeholder="Decoded output will appear here"
               className="mt-1 min-h-[120px] font-mono text-sm bg-muted/30"
+              aria-label="Decoded output"
             />
           </div>
           {decoded && (

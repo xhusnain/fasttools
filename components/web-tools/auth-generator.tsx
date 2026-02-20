@@ -78,11 +78,11 @@ export function AuthGenerator() {
       <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3">
         <div>
           <h2 className="text-lg font-semibold text-foreground">
-            Auth header generator
+            Auth Header Generator
           </h2>
           <p className="text-sm text-muted-foreground mt-1">
-            Generate HTTP Basic Auth, Bearer, and API Key headers. basic auth
-            generator online with decode. Free auth generator.
+            Create and decode Basic Auth headers, plus generate Bearer and API
+            key headers.
           </p>
         </div>
       </div>
@@ -112,6 +112,7 @@ export function AuthGenerator() {
               onChange={(e) => setUsername(e.target.value)}
               placeholder="Your username..."
               className="mt-1 font-mono"
+              aria-label="Basic auth username"
             />
           </div>
           <div>
@@ -123,10 +124,12 @@ export function AuthGenerator() {
                 onChange={(e) => setPassword(e.target.value)}
                 placeholder="Your password..."
                 className="font-mono pr-10"
+                aria-label="Basic auth password"
               />
               <button
                 type="button"
                 onClick={() => setShowPassword(!showPassword)}
+                aria-label={showPassword ? "Hide password" : "Show password"}
                 className="absolute right-2 top-1/2 -translate-y-1/2 text-muted-foreground hover:text-foreground"
               >
                 {showPassword ? <EyeOff className="h-4 w-4" /> : <Eye className="h-4 w-4" />}
@@ -135,12 +138,13 @@ export function AuthGenerator() {
           </div>
           <div>
             <GLabel className="text-xs text-muted-foreground">
-              Authorization header:
+              Authorization header
             </GLabel>
             <GTextarea
               value={basicHeader}
               readOnly
               className="mt-1 min-h-[60px] font-mono text-sm bg-muted/30"
+              aria-label="Generated basic authorization header"
             />
             <div className="mt-2">
               <CopyButton text={basicHeader} label="Copy header" />
@@ -160,18 +164,19 @@ export function AuthGenerator() {
           </div>
           <div>
             <GLabel className="text-xs text-muted-foreground">
-              Paste header or Base64 (basic auth generator decode):
+              Paste Basic header or base64 value
             </GLabel>
             <GTextarea
               value={decodeInput}
               onChange={(e) => setDecodeInput(e.target.value)}
               placeholder="Authorization: Basic ... or paste base64"
               className="mt-1 min-h-[80px] font-mono text-sm"
+              aria-label="Header to decode"
             />
           </div>
           {decoded && (
             <div className="space-y-2 rounded-lg border border-border bg-muted/20 p-4">
-              <p className="text-sm text-muted-foreground">Convert basic auth to username:password</p>
+              <p className="text-sm text-muted-foreground">Decoded credentials</p>
               <div className="grid grid-cols-2 gap-4">
                 <div>
                   <p className="text-xs text-muted-foreground">Username</p>
@@ -189,7 +194,7 @@ export function AuthGenerator() {
             </div>
           )}
           {decodeInput.trim() && !decoded && (
-            <p className="text-sm text-destructive">Invalid Basic Auth header or Base64.</p>
+            <p className="text-sm text-destructive">Invalid Basic Auth header or Base64 value.</p>
           )}
         </GTabsContent>
 
@@ -201,16 +206,18 @@ export function AuthGenerator() {
               onChange={(e) => setBearerToken(e.target.value)}
               placeholder="Paste your JWT or access token..."
               className="mt-1 min-h-[80px] font-mono text-sm"
+              aria-label="Bearer token input"
             />
           </div>
           <div>
             <GLabel className="text-xs text-muted-foreground">
-              Authorization header:
+              Authorization header
             </GLabel>
             <GTextarea
               value={bearerHeader}
               readOnly
               className="mt-1 min-h-[60px] font-mono text-sm bg-muted/30"
+              aria-label="Generated bearer authorization header"
             />
             <div className="mt-2">
               <CopyButton text={bearerHeader} label="Copy header" />
@@ -227,6 +234,7 @@ export function AuthGenerator() {
               placeholder="Your API key..."
               type="password"
               className="mt-1 font-mono"
+              aria-label="API key input"
             />
           </div>
           <div>
@@ -236,14 +244,16 @@ export function AuthGenerator() {
               onChange={(e) => setApiKeyHeaderName(e.target.value)}
               placeholder="X-API-Key"
               className="mt-1 font-mono"
+              aria-label="API key header name"
             />
           </div>
           <div>
-            <GLabel className="text-xs text-muted-foreground">Header output:</GLabel>
+            <GLabel className="text-xs text-muted-foreground">Header output</GLabel>
             <GTextarea
               value={apiKeyHeaderOut}
               readOnly
               className="mt-1 min-h-[60px] font-mono text-sm bg-muted/30"
+              aria-label="Generated API key header"
             />
             <div className="mt-2">
               <CopyButton text={apiKeyHeaderOut} label="Copy header" />

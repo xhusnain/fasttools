@@ -37,12 +37,11 @@ export function HtmlEscape() {
       <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3">
         <div>
           <h2 className="text-lg font-semibold text-foreground">
-            Escape HTML entities
+            HTML Escape/Unescape
           </h2>
           <p className="text-sm text-muted-foreground mt-1">
-            Escape special characters to HTML entities (e.g. &lt; to &amp;lt;) or
-            unescape them back to plain text. Prevents XSS and ensures correct
-            display.
+            Convert special characters to HTML entities and decode entities back
+            to readable text.
           </p>
         </div>
         <div className="flex items-center gap-2">
@@ -62,28 +61,26 @@ export function HtmlEscape() {
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
         <div className="space-y-4 rounded-xl border border-border bg-card p-4">
           <h3 className="text-sm font-semibold text-foreground">
-            Escape (to HTML entities)
+            Escape to entities
           </h3>
           <div>
-            <GLabel className="text-xs text-muted-foreground">
-              Your HTML / text :
-            </GLabel>
+            <GLabel className="text-xs text-muted-foreground">Input text</GLabel>
             <GTextarea
               value={escapeInput}
               onChange={(e) => setEscapeInput(e.target.value)}
               placeholder={"Enter text with < > & \" ' to escape..."}
               className="mt-1 min-h-[140px] font-mono text-sm"
+              aria-label="Text to escape"
             />
           </div>
           <div>
-            <GLabel className="text-xs text-muted-foreground">
-              Escaped output :
-            </GLabel>
+            <GLabel className="text-xs text-muted-foreground">Escaped output</GLabel>
             <GTextarea
               value={escaped}
               readOnly
               placeholder="Escaped HTML entities will appear here"
               className="mt-1 min-h-[140px] font-mono text-sm bg-muted/30"
+              aria-label="Escaped output"
             />
           </div>
           {escaped && (
@@ -101,28 +98,26 @@ export function HtmlEscape() {
 
         <div className="space-y-4 rounded-xl border border-border bg-card p-4">
           <h3 className="text-sm font-semibold text-foreground">
-            Unescape (from HTML entities)
+            Unescape entities
           </h3>
           <div>
-            <GLabel className="text-xs text-muted-foreground">
-              Your escaped string :
-            </GLabel>
+            <GLabel className="text-xs text-muted-foreground">Encoded input</GLabel>
             <GTextarea
               value={unescapeInput}
               onChange={(e) => setUnescapeInput(e.target.value)}
-              placeholder="Enter &lt; &gt; &amp; &quot; &#39; etc. to unescape..."
+              placeholder="Enter &lt; &gt; &amp; &quot; &#39; etc. to decode..."
               className="mt-1 min-h-[140px] font-mono text-sm"
+              aria-label="Encoded text to unescape"
             />
           </div>
           <div>
-            <GLabel className="text-xs text-muted-foreground">
-              Unescaped output :
-            </GLabel>
+            <GLabel className="text-xs text-muted-foreground">Decoded output</GLabel>
             <GTextarea
               value={unescaped}
               readOnly
               placeholder="Plain text will appear here"
               className="mt-1 min-h-[140px] font-mono text-sm bg-muted/30"
+              aria-label="Decoded output"
             />
           </div>
           {unescaped && (

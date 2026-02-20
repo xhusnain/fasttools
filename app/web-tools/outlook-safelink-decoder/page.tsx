@@ -4,149 +4,141 @@ import { createToolConfig } from "@/lib/create-tool-config"
 import { OutlookSafelinkDecoder } from "@/components/web-tools/outlook-safelink-decoder"
 
 const toolConfig = createToolConfig({
-  toolName: "Outlook Safelink Decoder",
+  toolName: "Outlook Safe Links Decoder",
   description:
-    "Outlook safelink decoder. Decode Outlook SafeLink links to original URL. safelinks decoder o365, safe link decoder, safelinks url. Microsoft Safe Links test url. safelink checker. Free.",
-  metaTitle: "Outlook Safelink Decoder - Decode SafeLinks URL Online | Free",
+    "Extract the original destination URL from Microsoft Outlook Safe Links for faster verification and security review.",
+  metaTitle: "Outlook Safe Links Decoder Online",
   metaDescription:
-    "Free Outlook safelink decoder. Decode Outlook SafeLink links to original URL. safelinks decoder o365, safe link decoder, safelinks url. Microsoft Safe Links test url, safelink checker. No signup.",
+    "Decode Microsoft Safe Links URLs from Outlook and Office 365 to reveal original destinations without manually parsing query strings.",
   path: "/web-tools/outlook-safelink-decoder",
+  keywords: [
+    "outlook safelink decoder",
+    "safe links decoder",
+    "office 365 safelinks",
+    "safelinks.protection.outlook.com",
+    "decode outlook link",
+    "email link checker",
+  ],
 
   header: {
-    title: "Outlook Safelink decoder",
-    description: "Decode Outlook SafeLink links",
+    title: "Outlook Safe Links Decoder",
+    description:
+      "Reveal original URLs from Microsoft Safe Links used in Outlook and Office 365 emails.",
     titleSize: "medium",
     descriptionSize: "small",
   },
 
   breadcrumbs: [
     { label: "Web Tools", href: "/web-tools" },
-    { label: "Outlook Safelink Decoder", href: "/web-tools/outlook-safelink-decoder" },
+    { label: "Outlook Safe Links Decoder", href: "/web-tools/outlook-safelink-decoder" },
   ],
 
   schemaOptions: {
-    applicationCategory: "UtilitiesApplication",
+    applicationCategory: "SecurityApplication",
     description:
-      "Outlook safelink decoder. Decode Outlook SafeLink links to original URL. safelinks decoder o365, safe link decoder, safelinks url.",
+      "Decode Outlook Safe Links URLs to inspect original destinations.",
     alternateName: [
-      "Outlook Safelink Decoder",
-      "Safe Link Decoder",
-      "SafeLinks Decoder O365",
-      "Outlook Safelink Decoder iOS",
-      "Safelinks URL Decoder",
-      "Microsoft Safe Links Decoder",
-      "Safelink Checker",
+      "Safe Links Decoder",
+      "Office 365 Safe Link Decoder",
+      "Outlook Link Decoder",
     ],
     featureList: [
-      "Decode Outlook SafeLink links",
-      "safelinks decoder o365",
-      "safe link decoder - reveal original URL",
-      "safelinks url decoder",
-      "Microsoft Safe Links test url",
-      "safelink checker",
-      "100% client-side, no signup",
+      "Decode safelinks.protection.outlook.com URLs",
+      "Extract original destination parameter",
+      "Supports office365 and outlook safe links formats",
+      "Copy decoded URL",
+      "Client-side processing",
     ],
     offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },
   },
 
   content: {
     overview:
-      "Outlook safelink decoder reveals the original destination URL hidden inside Microsoft SafeLinks. SafeLinks (Office 365 ATP) rewrites email links to scan for threats. Use this safe link decoder to see where a link goes without clicking. safelinks decoder o365, outlook safelink decoder, safelinks url. Microsoft Safe Links test url. safelink checker. proofpoint url decoder alternative. Free.",
+      "Microsoft Safe Links rewrites email URLs for click-time scanning. This tool extracts the original destination from rewritten Safe Links URLs so you can review the target quickly during security checks, incident response, and support workflows.",
 
     howToSteps: [
-      "Paste the SafeLinks URL (from Outlook, Teams, or Office 365 email) into the input field.",
-      "The decoded original URL appears instantly in the output.",
-      "Use the copy button to copy the decoded URL.",
+      "Copy the full Safe Links URL from Outlook, Office 365 email, or Teams.",
+      "Paste it into the decoder input field.",
+      "Review and copy the extracted destination URL.",
     ],
 
     features: [
-      "outlook safelink decoder: Decode SafeLinks to original URL",
-      "safe link decoder: Reveal destination without clicking",
-      "safelinks decoder o365: Works with Office 365 SafeLinks",
-      "outlook safelink decoder ios: Use on iPhone, iPad",
-      "safelinks url: Supports safelinks.protection.outlook.com and safelinks.office.com",
-      "Microsoft Safe Links test url: Verify link destinations",
-      "safelink checker: Check where rewritten links point",
-      "proofpoint url decoder: Similar to Proofpoint URL decoder for SafeLinks",
+      "Decodes Safe Links URL formats used by Microsoft",
+      "Extracts original `url` parameter automatically",
+      "Shows validation errors for invalid links",
+      "Fast copy action for decoded destination",
+      "No account or setup required",
     ],
 
     useCases: [
-      "Verify link destination before clicking",
-      "Microsoft Safe Links test url: Test SafeLinks behavior",
-      "safelink checker: Audit email links",
-      "Copy original URL for documentation or reporting",
-      "outlook safelink decoder ios: Decode on mobile",
+      "Email security triage and phishing investigations",
+      "Help desk verification of rewritten user-reported links",
+      "Auditing campaign links after Outlook rewriting",
+      "Documenting original destinations for compliance and incident logs",
     ],
 
     aboutTool: (
       <div className="space-y-6 text-muted-foreground">
         <p>
-          Microsoft SafeLinks (Office 365 Advanced Threat Protection) rewrites
-          URLs in emails to redirect through Microsoft for scanning. The real
-          destination is stored in the <code>url</code> query parameter. This
-          Outlook safelink decoder extracts and decodes that parameter so you can
-          see the original URL without clicking. Use as safelinks decoder o365,
-          safe link decoder, or safelink checker. Works with outlook safelink
-          decoder ios and desktop.
+          Safe Links is part of Microsoft Defender for Office 365. It rewrites
+          links so Microsoft can evaluate destination safety when a user clicks.
+          The original destination is embedded inside query parameters.
         </p>
         <p>
-          SafeLinks URLs use domains like{" "}
-          <code>*.safelinks.protection.outlook.com</code> or{" "}
-          <code>safelinks.office.com</code>. This tool does not bypass Microsoft
-          protection—it only reveals the destination for inspection. Similar to
-          proofpoint url decoder for SafeLinks-style URLs.
+          This decoder does not bypass security controls. It simply helps you
+          inspect link destinations before visiting them.
         </p>
       </div>
     ),
 
     proTip:
-      "Right-click a link in Outlook and choose 'Copy Hyperlink' or 'Copy Link Address' to get the SafeLinks URL, then paste it here to decode.",
+      "Use this tool together with your email security workflow: decode first, then validate domain reputation before opening unknown links.",
 
     faqs: [
       {
-        question: "What do Outlook SafeLinks do?",
+        question: "What is an Outlook Safe Links URL?",
         answer:
-          "Outlook SafeLinks (Microsoft Defender for Office 365) rewrites URLs in emails so they pass through Microsoft for threat scanning. When you click, Microsoft checks the destination before redirecting. This protects against phishing and malware links.",
+          "It is a rewritten Microsoft Defender URL (often on `safelinks.protection.outlook.com`) that wraps the original destination for click-time threat checks.",
       },
       {
-        question: "How do I find the original URL of a safelink in Outlook?",
+        question: "Does decoding disable Safe Links protection?",
         answer:
-          "Use this Outlook safelink decoder. Copy the SafeLinks URL (right-click link → Copy Hyperlink), paste it here, and the original destination URL will be revealed without clicking.",
+          "No. Decoding only reveals the destination string. It does not remove tenant policies or bypass Microsoft scanning controls.",
       },
       {
-        question: "What is an example of a safelink URL?",
+        question: "Can I decode links from different Microsoft regions?",
         answer:
-          "Example: https://nam10.safelinks.protection.outlook.com/?url=https%3A%2F%2Fexample.com%2Fpage&data=... The original URL (example.com/page) is in the url parameter. This tool decodes it.",
+          "Yes. Region prefixes can vary, but the Safe Links structure is supported as long as the URL follows Microsoft Safe Links patterns.",
       },
       {
-        question: "What is nam10 SafeLinks Protection Outlook?",
+        question: "Why would support teams use this?",
         answer:
-          "nam10 is a Microsoft datacenter region code. SafeLinks URLs may use nam10, eur02, or other region prefixes (e.g. nam10.safelinks.protection.outlook.com). This decoder works with all SafeLinks regions.",
+          "It helps support and security teams quickly confirm link destinations reported by users without manually parsing long rewritten URLs.",
       },
       {
-        question: "Is there an outlook safelink decoder app?",
+        question: "Is this decoder free?",
         answer:
-          "This Outlook safelink decoder runs in any web browser—no app install needed. Use it on outlook safelink decoder ios (Safari), Android, or desktop. Works like an outlook safelink decoder app in your browser.",
+          "Yes. It is free and available in-browser.",
       },
     ],
 
     additionalContent: [
       {
-        heading: "safelinks url — Format",
+        heading: "Security Workflow Context",
         content:
-          "SafeLinks URLs look like: https://[region].safelinks.protection.outlook.com/?url=ENCODED_URL&data=... The url parameter contains the original link (URL-encoded). This tool extracts and decodes it. safelinks decoder o365, safe link decoder, safelink checker.",
+          "Decoding is only one step in link analysis. After extraction, validate domain age, reputation, and destination intent before interacting with unknown content.",
       },
       {
-        heading: "Microsoft Safe Links test url",
+        heading: "Why Rewritten URLs Cause Friction",
         content:
-          "Use this tool as a Microsoft Safe Links test url utility—paste a SafeLinks URL to verify where it points. Safe for security review, link audits, and documentation. Does not bypass protection.",
+          "Safe Links improve protection but can obscure destination readability in tickets and reports. A decoder restores transparency for analysts and support teams.",
       },
     ],
 
     relatedTools: [
-      { name: "URL Encoder Decoder", href: "/web-tools/url-encoder" },
       { name: "URL Parser", href: "/web-tools/url-parser" },
-      { name: "Device Information", href: "/web-tools/device-info" },
+      { name: "URL Encoder Decoder", href: "/web-tools/url-encoder" },
+      { name: "My Info", href: "/my-info" },
       { name: "All Web Tools", href: "/web-tools" },
     ],
   },

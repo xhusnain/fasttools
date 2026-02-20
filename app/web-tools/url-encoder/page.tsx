@@ -11,18 +11,26 @@ const UrlEncoder = dynamic(
 )
 
 const toolConfig = createToolConfig({
-  toolName: "Encode/decode URL-formatted strings",
+  toolName: "URL Encoder Decoder",
   description:
-    "Free URL encode decode online. Percent-encoded. encode decode url formatted strings javascript. URL encode, decode url java, c#. No signup.",
-  metaTitle: "URL Encode Decode Online - Free Percent-Encoded Tool",
+    "Encode text with percent-encoding for URLs, or decode URL-encoded strings back to readable text.",
+  metaTitle: "URL Encoder Decoder Online (Percent-Encoding)",
   metaDescription:
-    "Free URL encode decode online. Encode decode url formatted strings. Percent-encoded. For JavaScript, Java, C#. Decode URL encoded string. No signup.",
+    "Encode or decode URL components instantly. Convert spaces and special characters to percent-encoding and decode them back safely.",
   path: "/web-tools/url-encoder",
+  keywords: [
+    "url encoder",
+    "url decoder",
+    "percent-encoding",
+    "encodeURIComponent",
+    "decodeURIComponent",
+    "url encoded string",
+  ],
 
   header: {
-    title: "Encode/decode URL-formatted strings",
+    title: "URL Encoder Decoder",
     description:
-      "Encode text to URL-encoded format (also known as \"percent-encoded\"), or decode from it.",
+      "Convert text to URL-safe percent-encoding and decode encoded strings back to plain text.",
     titleSize: "medium",
     descriptionSize: "small",
   },
@@ -36,21 +44,16 @@ const toolConfig = createToolConfig({
   ],
 
   schemaOptions: {
-    applicationCategory: "UtilitiesApplication",
+    applicationCategory: "DeveloperApplication",
     description:
-      "Free URL encode decode online. Encode decode url formatted strings. Percent-encoded. For JavaScript, Java, C#.",
-    alternateName: [
-      "URL Encoder Decoder",
-      "URL Encode Decode Online",
-      "Encode Decode URL Formatted Strings",
-    ],
+      "Encode and decode URL strings with percent-encoding in the browser.",
+    alternateName: ["URL Encoder", "URL Decoder", "Percent Encoder"],
     featureList: [
-      "URL encode",
-      "URL decode",
-      "Percent-encoded format",
-      "For JavaScript, Java, C#",
-      "Live conversion as you type",
-      "100% client-side, no signup",
+      "Encode URL components",
+      "Decode URL-encoded values",
+      "Live input/output conversion",
+      "Copy encoded or decoded output",
+      "Client-side processing",
     ],
     offers: {
       "@type": "Offer",
@@ -61,91 +64,93 @@ const toolConfig = createToolConfig({
 
   content: {
     overview:
-      "Free url encode decode online. Encode text to percent-encoded format or decode url encoded string back to plain text. Works as encode decode url formatted strings javascript, url decode java, and url decode c# alternative. Decode url javascript, url encode online—no signup.",
+      "Use this tool to safely encode values for query strings, path fragments, or form payloads. It follows standard percent-encoding behavior (like JavaScript `encodeURIComponent`) and also decodes encoded values for debugging and QA.",
 
     howToSteps: [
-      "Encode: Enter your string in the Encode panel. The percent-encoded output appears instantly.",
-      "Decode: Enter your encoded string in the Decode panel. The decoded text appears instantly.",
-      "Copy encoded or decoded result with one click.",
+      "Paste plain text in the Encode panel to generate URL-safe output.",
+      "Paste an encoded string in the Decode panel to convert it back to readable text.",
+      "Copy either result for use in URLs, API requests, or troubleshooting.",
     ],
 
     features: [
-      "URL encode: Convert spaces and special characters to %XX format",
-      "URL decode: Convert percent-encoded strings back to plain text",
-      "Live conversion: Results update as you type",
-      "Copy to clipboard with one click",
-      "100% client-side, no data sent to servers",
+      "Percent-encodes reserved and special characters",
+      "Decodes encoded strings including %XX sequences",
+      "Live updates as you type",
+      "One-click copy for encoded and decoded outputs",
+      "Runs entirely in the browser",
     ],
 
     useCases: [
-      "Query strings: url encode parameters for safe URLs.",
-      "encode decode url formatted strings javascript: Use instead of encodeURIComponent/decodeURIComponent.",
-      "url decode java, url decode c#: Same result without opening an IDE.",
-      "decode url encoded string: Paste percent-encoded text to get plain text.",
+      "Preparing query parameter values before appending them to URLs",
+      "Checking encoded redirect URLs from ads, analytics, or email links",
+      "Debugging encoded payload values in logs and API requests",
+      "Validating output against encodeURIComponent/decodeURIComponent behavior",
     ],
 
     aboutTool: (
       <div className="space-y-6 text-muted-foreground">
         <p>
-          URL encoding (percent-encoding) converts special characters, spaces,
-          and non-ASCII symbols into a web-friendly format for safe transmission.
-          Use encodeURIComponent in JavaScript, URLEncoder in Java, or
-          HttpUtility.UrlEncode in C#. This tool works as an online alternative.
+          URL encoding (percent-encoding) converts characters that are unsafe in
+          URLs into `%`-prefixed hexadecimal values. For example, a space becomes
+          `%20`. This is required when sending user input through query strings
+          or URL components.
+        </p>
+        <p>
+          In JavaScript this is commonly handled with `encodeURIComponent` and
+          `decodeURIComponent`. This tool provides the same workflow in a visual
+          UI for quick checks without opening a console.
         </p>
       </div>
     ),
 
     proTip:
-      "Spaces become %20, colons become %3A. Use this for query strings, path segments, and any URL component that needs encoding.",
+      "Encode individual parameter values, not entire URLs, unless you intentionally need a fully encoded string.",
 
     faqs: [
       {
-        question: "How do I encode a URL?",
+        question: "What is URL percent-encoding?",
         answer:
-          "Paste your text in the Encode panel. The URL-encoded (percent-encoded) output appears instantly. Spaces become %20, special characters become %XX. Copy with one click. This free url encode online tool handles all characters.",
+          "Percent-encoding replaces unsafe URL characters with `%` followed by hexadecimal bytes. This keeps URLs valid and avoids parsing issues across browsers and servers.",
       },
       {
-        question: "How do I decode a URL encoded string?",
+        question: "When should I use a URL encoder?",
         answer:
-          "Paste your encoded string (e.g. Hello%20world%20%3A)) in the Decode panel. The decoded text appears instantly. This decode url encoded string tool handles percent-encoding. Copy with one click.",
+          "Use it when inserting user-provided values into query parameters, route segments, or redirect URLs to prevent broken links and malformed requests.",
       },
       {
-        question: "How to decode URL in JavaScript?",
+        question: "How is this different from encoding a full URL?",
         answer:
-          "Use decodeURIComponent() in JavaScript. Or use this free url encode decode online tool—paste encoded string and get decoded text. Ideal for decode url javascript workflows when you need a quick conversion.",
+          "Most workflows encode only parameter values. Encoding an entire URL can also encode separators (`?`, `&`, `/`) and may change meaning if done incorrectly.",
       },
       {
-        question: "How to decode URL in Java?",
+        question: "Does this match JavaScript encodeURIComponent?",
         answer:
-          "Use java.net.URLDecoder.decode() in Java. This free url decode java alternative works online—paste encoded string and get decoded text. No IDE or Maven needed.",
+          "Yes, the behavior is aligned with common browser URL encoding/decoding logic used in frontend applications.",
       },
       {
-        question: "How to decode URL in C#?",
+        question: "Is my input stored?",
         answer:
-          "Use HttpUtility.UrlDecode() or Uri.UnescapeDataString() in C#. This free url decode c# alternative works online—paste encoded string and get decoded text.",
-      },
-      {
-        question: "Is this URL encoder free?",
-        answer:
-          "Yes. This URL encode decode tool is 100% free. Conversion runs in your browser—no data is sent to servers. No signup required. Use for encode decode url formatted strings online workflows.",
+          "No. Conversion is handled client-side in your browser and is not uploaded for normal use.",
       },
     ],
 
     additionalContent: [
       {
-        heading: "Encode Decode URL Formatted Strings Online",
+        heading: "Common Encoding Pitfalls",
         content:
-          "This encode decode url formatted strings online tool converts between plain text and percent-encoded format. Use it for url encode or url decode without writing code. Works as encode decode url formatted strings javascript, url decode java, and url decode c# alternative. Decode url encoded string or url encode online in seconds. Supports decode url javascript workflows and html decode–style percent decoding.",
+          "A frequent mistake is double-encoding values. If you see `%2520`, the value was likely encoded twice. Decode once, verify the original string, then re-encode only where needed.",
       },
       {
-        heading: "URL Encode Online — JavaScript, Java, C#",
+        heading: "Typical SEO and Analytics Use",
         content:
-          "Need url encode online or decode url encoded string? Paste in either panel. For decode url javascript use decodeURIComponent; for url decode java use URLDecoder.decode; for url decode c# use HttpUtility.UrlDecode or Uri.UnescapeDataString. This free url encode decode online tool gives the same result in your browser—no IDE required.",
+          "Marketers and SEO teams often use URL encoding for campaign parameters and redirect chains. This tool helps verify UTM values and destination links before publishing.",
       },
     ],
 
     relatedTools: [
-      { name: "Base64 Encoder", href: "/dev-tools/base64-encoder" },
+      { name: "URL Parser", href: "/web-tools/url-parser" },
+      { name: "Escape HTML Entities", href: "/web-tools/html-escape" },
+      { name: "Auth Header Generator", href: "/web-tools/auth-generator" },
       { name: "All Web Tools", href: "/web-tools" },
     ],
   },
