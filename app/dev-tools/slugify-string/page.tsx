@@ -6,18 +6,26 @@ import { SlugifyString } from "@/components/dev-tools/slugify-string"
 const toolConfig = createToolConfig({
   toolName: "Slugify String",
   description:
-    "Slugify string online. Make a string url, filename and id safe. slugify string url. slugify - npm alternative. slugify typescript, slugify python, slugify string php. Free.",
-  metaTitle: "Slugify String - Online URL Slug Generator | slugify string url, filename",
+    "Convert text into URL-safe slugs for routes, file names, and stable identifiers.",
+  metaTitle: "Slugify String (URL Slug Generator)",
   metaDescription:
-    "Slugify string online. Make a string url, filename and id safe. slugify string url. slugify - npm, slugify typescript alternative. slugify string php, slugify python. Free.",
+    "Generate clean URL slugs from titles and text. Useful for SEO-friendly routes and content management workflows.",
   path: "/dev-tools/slugify-string",
+  keywords: [
+    "slugify string",
+    "url slug generator",
+    "slug generator",
+    "seo friendly url",
+    "text to slug",
+  ],
 
   header: {
-    title: "Slugify string",
+    title: "Slugify String",
     description:
-      "Make a string url, filename and id safe.",
+      "Turn raw text into clean, URL-safe slugs for publishing and routing workflows.",
     titleSize: "medium",
     descriptionSize: "small",
+    color: "blue",
   },
 
   breadcrumbs: [
@@ -28,121 +36,91 @@ const toolConfig = createToolConfig({
   schemaOptions: {
     applicationCategory: "DeveloperApplication",
     description:
-      "Slugify string online. Make a string url, filename and id safe. slugify string url, slugify - npm alternative.",
-    alternateName: [
-      "Slugify String Online",
-      "URL Slug Generator",
-      "slugify - npm",
-      "Slugify String URL",
-      "Slug Generator",
-    ],
+      "Text-to-slug conversion tool for route generation, URL hygiene, and content publishing.",
     featureList: [
-      "slugify string - URL-safe conversion",
-      "slugify string url - SEO-friendly slugs",
-      "slugify string online - No install, free",
-      "slugify filename and id safe",
-      "slugify - npm alternative in browser",
-      "slugify typescript, slugify python compatible output",
-      "100% client-side, no signup",
+      "Text to URL slug conversion",
+      "SEO-friendly slug output",
+      "Filename-safe formatting",
+      "Browser-based utility workflow",
     ],
     offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },
   },
 
   content: {
     overview:
-      "Slugify string online to make text url, filename and id safe. Convert any string to a slug—lowercase, hyphens, no special characters. slugify string url for SEO-friendly permalinks. slugify - npm alternative. slugify typescript, slugify python, slugify string php output format. sindresorhus/slugify compatible. Free slugify string online tool.",
+      "Use this tool to transform titles and phrases into normalized slugs. It helps keep URLs readable, stable, and consistent across blogs, docs, ecommerce pages, and CMS workflows.",
 
     howToSteps: [
-      "Enter your string in the input (e.g. 'My file path', 'Hello World!').",
-      "View the slug in the output (e.g. 'my-file-path', 'hello-world').",
-      "Click 'Copy slug' to copy to clipboard for use in URLs, filenames, or IDs.",
+      "Enter a title or phrase in the input field.",
+      "Review the generated slug output.",
+      "Copy the slug and use it in routes or file names.",
+      "Repeat with alternate titles to choose best URL format.",
     ],
 
     features: [
-      "slugify string: Convert any text to URL-safe slug",
-      "slugify string url: SEO-friendly permalinks",
-      "slugify string online: No npm install, works in browser",
-      "slugify filename: Safe for file and folder names",
-      "slugify id: Safe for HTML IDs, CSS classes",
-      "slugify - npm: Same output as slugify npm package",
-      "slugify typescript, slugify python, slugify string php compatible",
+      "Fast text-to-slug conversion",
+      "URL-safe normalization",
+      "Useful for route and filename naming",
+      "Copy-ready slug output",
+      "Browser-first workflow",
     ],
 
     useCases: [
-      "slugify string url: Blog post slugs, product URLs, category paths",
-      "slugify string php: Generate slugs for Laravel, WordPress, Drupal",
-      "slugify typescript: Next.js, React, Vue permalink generation",
-      "slugify python: Django, Flask URL slugs (python-slugify output)",
-      "slugify java, slugify nestjs: Backend slug generation",
-      "sindresorhus/slugify: Browser alternative to the npm package",
+      "Blog post URL generation",
+      "CMS permalink standardization",
+      "Product page route naming",
+      "Filename normalization for exports",
     ],
 
     aboutTool: (
       <div className="space-y-6 text-muted-foreground">
         <p>
-          Slugify string converts text to a URL, filename and id safe format:
-          lowercase, spaces to hyphens, special characters removed. slugify
-          string online for permalinks, file names, HTML IDs. slugify - npm and
-          sindresorhus/slugify produce similar output. slugify typescript,
-          slugify python (python-slugify), slugify string php all use this
-          pattern. Free slugify string online, no signup.
+          Slug generator pages rank best when they solve naming consistency fast.
+          This page focuses on clean conversion and quick reuse in real
+          publishing workflows.
+        </p>
+        <p>
+          It helps reduce broken links and duplicate-route mistakes by giving
+          predictable slug output from source text.
         </p>
       </div>
     ),
 
     proTip:
-      "Use slugs for URLs (blog/post-slug), filenames (my-document.pdf), HTML IDs (#section-id). Keeps URLs readable and SEO-friendly.",
+      "Keep slugs short and descriptive, and avoid changing published slugs without redirects.",
 
     faqs: [
       {
-        question: "What is slugify a string?",
+        question: "What is a slug in a URL?",
         answer:
-          "Slugify a string means converting text to a URL-safe, filename-safe format: lowercase, spaces to hyphens, special characters removed. Example: 'My File Path' → 'my-file-path'.",
+          "A slug is the readable final segment of a URL, typically derived from a page title.",
       },
       {
-        question: "What is a slug string?",
+        question: "Why should I slugify titles?",
         answer:
-          "A slug string is the URL-friendly version of a title: lowercase, hyphens instead of spaces, no special chars. Used in URLs like /blog/my-post-slug.",
+          "It creates clean, consistent URLs that are easier for users to read and share.",
       },
       {
-        question: "How to slugify string online?",
+        question: "Can I use this for file naming too?",
         answer:
-          "Use this slugify string online tool. Enter your text, get the slug, copy it. No slugify - npm install, slugify typescript, or slugify python needed.",
+          "Yes. Slug output is also useful for safe, normalized file names.",
       },
       {
-        question: "What does slugify do in Python?",
+        question: "Does slugifying guarantee better rankings?",
         answer:
-          "slugify python (python-slugify package) converts strings to slugs. This tool produces compatible output. slugify('Hello World') → 'hello-world'.",
+          "Slug quality helps URL clarity, but ranking depends on broader content and technical SEO signals.",
       },
       {
-        question: "Is this a slugify - npm alternative?",
+        question: "Should slugs include dates or IDs?",
         answer:
-          "Yes. Same concept as slugify npm and sindresorhus/slugify. slugify string online in browser without installing slugify typescript or slugify - npm.",
-      },
-      {
-        question: "How to slugify string php?",
-        answer:
-          "slugify string php: Use similar logic—strtolower, str_replace for spaces/special chars. This slugify string online tool gives you the output to match.",
-      },
-    ],
-
-    additionalContent: [
-      {
-        heading: "slugify string url — SEO & readability",
-        content:
-          "slugify string url creates SEO-friendly URLs. 'How to Build a React Component' → 'how-to-build-a-react-component'. Better than IDs for search engines and users.",
-      },
-      {
-        heading: "slugify - npm, slugify typescript, slugify string github",
-        content:
-          "slugify - npm (sindresorhus/slugify), slugify typescript, slugify string github—this tool is a browser-based alternative. No install for quick slugify string online.",
+          "Only when needed for your routing strategy. Keep slugs concise and stable where possible.",
       },
     ],
 
     relatedTools: [
-      { name: "Text Case Converter", href: "/converters/text-case" },
-      { name: "MIME Types", href: "/dev-tools/mime-types" },
-      { name: "Keycode Info", href: "/dev-tools/keycode-info" },
+      { name: "Markdown Previewer", href: "/dev-tools/markdown-previewer" },
+      { name: "HTML to Markdown", href: "/dev-tools/html-to-markdown" },
+      { name: "JSON to CSV Converter", href: "/dev-tools/json-to-csv" },
       { name: "All Developer Tools", href: "/dev-tools" },
     ],
   },

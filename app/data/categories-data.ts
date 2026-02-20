@@ -255,7 +255,7 @@ export const categories = [
     {
         id: "dev-tools",
         name: "Web Developer Tools & Utilities",
-        description: "Professional tools for developers and designers",
+        description: "Browser-based utilities for debugging, parsing, formatting, and data conversion.",
         icon: Code,
         href: "/dev-tools",
         borderColor: "border-border/40",
@@ -266,7 +266,7 @@ export const categories = [
         tools: [
             {
                 title: "Color Palette Generator",
-                description: "Generate beautiful, harmonious color schemes instantly for web design",
+                description: "Generate balanced color palettes for UI design and branding workflows.",
                 href: "/dev-tools/color-palette",
                 icon: Palette,
                 badge: "Design",
@@ -274,7 +274,7 @@ export const categories = [
             },
             {
                 title: "Hex to RGB Converter",
-                description: "Convert between HEX, RGB, HSL, and other color formats instantly",
+                description: "Convert HEX, RGB, and HSL color values for frontend implementation.",
                 href: "/dev-tools/hex-to-rgb",
                 icon: Palette,
                 badge: "Colors",
@@ -282,7 +282,7 @@ export const categories = [
             },
             {
                 title: "JSON Diff",
-                description: "Compare two JSON objects and find differences. json diff online. json diff javascript, python, npm. Free.",
+                description: "Compare two JSON structures and inspect value-level differences quickly.",
                 href: "/dev-tools/json-diff",
                 icon: FileCode,
                 badge: "New",
@@ -290,7 +290,7 @@ export const categories = [
             },
             {
                 title: "JSON to CSV Converter",
-                description: "Convert JSON data to CSV format quickly for data analysis and Excel",
+                description: "Convert JSON data to CSV for spreadsheet analysis and reporting workflows.",
                 href: "/dev-tools/json-to-csv",
                 icon: FileText,
                 badge: "Popular",
@@ -298,7 +298,7 @@ export const categories = [
             },
             {
                 title: "JWT Decoder",
-                description: "Decode and inspect JSON Web Tokens securely in your browser",
+                description: "Decode JWT headers and payloads for authentication debugging workflows.",
                 href: "/dev-tools/jwt-decoder",
                 icon: Code,
                 badge: "Security",
@@ -306,7 +306,7 @@ export const categories = [
             },
             {
                 title: "Base64 Encoder Decoder",
-                description: "Encode and decode strings to Base64. URL-safe mode and file support",
+                description: "Encode or decode Base64 for text, payloads, and URL-safe token workflows.",
                 href: "/dev-tools/base64-encoder",
                 icon: Binary,
                 badge: "Encoding",
@@ -314,7 +314,7 @@ export const categories = [
             },
             {
                 title: "MIME Types",
-                description: "MIME types list. Convert MIME types to file extensions. mime types pdf, images, excel. mime-types npm alternative.",
+                description: "Lookup MIME types and file extensions for uploads and Content-Type validation.",
                 href: "/dev-tools/mime-types",
                 icon: FileCode,
                 badge: "Reference",
@@ -322,7 +322,7 @@ export const categories = [
             },
             {
                 title: "Keycode Info",
-                description: "Find javascript keycode, code, location and modifiers. keycode list, keyboard key codes, event keycode. keycode tester.",
+                description: "Inspect keyboard event values like key, code, keyCode, and modifiers in real time.",
                 href: "/dev-tools/keycode-info",
                 icon: Code,
                 badge: "Dev",
@@ -330,7 +330,7 @@ export const categories = [
             },
             {
                 title: "Slugify String",
-                description: "Slugify string online. Make a string url, filename and id safe. slugify string url. slugify - npm alternative.",
+                description: "Convert text into URL-safe slugs for routes, filenames, and content systems.",
                 href: "/dev-tools/slugify-string",
                 icon: FileCode,
                 badge: "URL",
@@ -338,7 +338,7 @@ export const categories = [
             },
             {
                 title: "HTML WYSIWYG Editor",
-                description: "Free html wysiwyg editor online. Online html editor with live HTML source. Rich text editor.",
+                description: "Edit rich text and inspect generated HTML source in one browser-based editor.",
                 href: "/dev-tools/html-wysiwyg-editor",
                 icon: Code,
                 badge: "Editor",
@@ -346,7 +346,7 @@ export const categories = [
             },
             {
                 title: "User-Agent Parser",
-                description: "User agent parser online. Parse UA string to detect Browser, Engine, OS, CPU, Device. ua-parser-js alternative. Free.",
+                description: "Parse user-agent strings into browser, OS, engine, device, and CPU fields.",
                 href: "/dev-tools/user-agent-parser",
                 icon: Code,
                 badge: "Web",
@@ -354,7 +354,7 @@ export const categories = [
             },
             {
                 title: "HTTP Status Codes",
-                description: "HTTP status codes list. http status codes 200, 404, 500 with examples. http status codes table. http methods. Free.",
+                description: "Browse HTTP status code meanings and response classes for API debugging.",
                 href: "/dev-tools/http-status-codes",
                 icon: Code,
                 badge: "API",
@@ -362,7 +362,7 @@ export const categories = [
             },
             {
                 title: "Regex Tester",
-                description: "Test regular expressions with live results and instant pattern matching",
+                description: "Test regular expressions with live match feedback and capture-group checks.",
                 href: "/dev-tools/regex-tester",
                 icon: Search,
                 badge: "Advanced",
@@ -370,7 +370,7 @@ export const categories = [
             },
             {
                 title: "HTML Beautifier",
-                description: "Format and beautify HTML code with proper indentation and structure",
+                description: "Format and beautify HTML with consistent indentation and readable structure.",
                 href: "/dev-tools/html-beautifier",
                 icon: Code,
                 badge: "Format",
@@ -378,7 +378,7 @@ export const categories = [
             },
             {
                 title: "HTML to Markdown",
-                description: "Convert HTML content to Markdown format instantly for documentation",
+                description: "Convert HTML into Markdown for docs migration and publishing workflows.",
                 href: "/dev-tools/html-to-markdown",
                 icon: FileText,
                 badge: "Convert",
@@ -386,7 +386,7 @@ export const categories = [
             },
             {
                 title: "Markdown Previewer",
-                description: "Preview Markdown content in real-time with live rendering",
+                description: "Write Markdown and preview rendered output in real time.",
                 href: "/dev-tools/markdown-previewer",
                 icon: FileText,
                 badge: "Preview",
