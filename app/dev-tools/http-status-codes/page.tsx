@@ -1,23 +1,37 @@
 import type { Metadata } from "next"
+import dynamic from "next/dynamic"
+import { ToolLoader } from "@/components/common/tool-loader"
 import { ToolPageLayout } from "@/components/common/tool-page-layout"
 import { createToolConfig } from "@/lib/create-tool-config"
-import { HttpStatusCodes } from "@/components/dev-tools/http-status-codes"
+
+const HttpStatusCodes = dynamic(
+  () => import("@/components/dev-tools/http-status-codes").then((mod) => mod.HttpStatusCodes),
+  { loading: () => <ToolLoader /> }
+)
 
 const toolConfig = createToolConfig({
   toolName: "HTTP Status Codes",
   description:
-    "HTTP status codes list. http status codes 200, 201, 400, 404, 500 with examples. http status codes table. http stands for. http methods. http-status-codes npm, node http status codes, http status codes github. Free.",
-  metaTitle: "HTTP Status Codes - Complete List & Table | 200, 404, 500 with Examples",
+    "Reference HTTP status code classes and individual code meanings for API and web debugging workflows.",
+  metaTitle: "HTTP Status Codes Reference (1xx to 5xx)",
   metaDescription:
-    "Complete HTTP status codes list and table. http status codes 200, 201, 400, 404, 500 with examples. http stands for Hypertext Transfer Protocol. http methods. http-status-codes npm, node http status codes. SMTP, FTP codes. Free.",
+    "Browse HTTP status code meanings, classes, and common usage patterns for API development and troubleshooting.",
   path: "/dev-tools/http-status-codes",
+  keywords: [
+    "http status codes",
+    "http code list",
+    "http 404 meaning",
+    "http 500 error",
+    "api status codes",
+  ],
 
   header: {
-    title: "HTTP status codes",
+    title: "HTTP Status Codes",
     description:
-      "Complete list of HTTP, SMTP, and FTP status codes with search. 1xx informational, 2xx success, 3xx redirection, 4xx client error, 5xx server error.",
+      "Quick reference for HTTP response classes and common API/web error diagnostics.",
     titleSize: "medium",
     descriptionSize: "small",
+    color: "blue",
   },
 
   breadcrumbs: [
@@ -26,164 +40,92 @@ const toolConfig = createToolConfig({
   ],
 
   schemaOptions: {
-    applicationCategory: "DeveloperApplication",
+    applicationCategory: "ReferenceApplication",
     description:
-      "Complete HTTP status codes list and table. http status codes 200, 201, 400, 404, 500 with examples. http stands for, http methods. http-status-codes npm, node http status codes.",
-    alternateName: [
-      "HTTP Status Codes List",
-      "HTTP Status Codes Table",
-      "http-status-codes npm",
-      "Node HTTP Status Codes",
-      "HTTP Status Codes GitHub",
-      "List of HTTP Status Codes",
-    ],
+      "Browse HTTP status code references for request/response debugging and API implementation checks.",
     featureList: [
-      "Complete HTTP status codes - IANA registry",
-      "http status codes 200, 201, 400, 404, 500 with examples",
-      "http status codes table - searchable, filterable",
-      "http stands for Hypertext Transfer Protocol",
-      "http methods - GET, POST, PUT, DELETE, PATCH",
-      "1xx informational, 2xx success, 3xx redirection, 4xx client error, 5xx server error",
-      "SMTP and FTP status codes included",
-      "When/where/why for each code",
-      "100% free, no signup",
+      "Status code classes",
+      "Code-specific explanations",
+      "Searchable reference workflow",
+      "API debugging support",
     ],
     offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },
   },
 
   content: {
     overview:
-      "HTTP status codes are three-digit numbers returned by a server to indicate whether an HTTP request has been successfully completed. They are grouped into five classes: 1xx informational, 2xx success, 3xx redirection, 4xx client error, 5xx server error. Use this http status codes tool as a complete http status codes table. http status codes 200, 201, 400, 404, 500 with examples. http stands for Hypertext Transfer Protocol. http-status-codes npm alternative. node http status codes reference. http status codes github. Free.",
+      "Use this status-code reference to quickly interpret HTTP responses during API development, integration testing, and production debugging. It covers code classes and practical meaning.",
 
     howToSteps: [
-      "Search by code (e.g. 404, 200), name, or description.",
-      "Filter by protocol: HTTP, SMTP, or FTP. Filter by category: 1xx, 2xx, 3xx, 4xx, 5xx.",
-      "Click a row to expand and see when/where/why you get each status code.",
+      "Search for a status code or class group.",
+      "Review the response meaning and common causes.",
+      "Map the code to client/server handling logic.",
+      "Apply fixes and revalidate request behavior.",
     ],
 
     features: [
-      "http status codes table: Complete IANA-registered HTTP codes",
-      "http status codes 200: OK - standard success",
-      "http status codes 201: Created - resource created",
-      "http status codes 400: Bad Request - malformed request",
-      "http status codes 404: Not Found - resource not found",
-      "http status codes 500: Internal Server Error - server failure",
-      "http status codes with examples: When, where, why for each",
-      "http status codes cats: 418 I'm a teapot included",
-      "http stands for: Hypertext Transfer Protocol",
-      "http methods: GET, POST, PUT, DELETE, PATCH, HEAD, OPTIONS",
-      "SMTP and FTP status codes for email and file transfer",
-      "http-status-codes npm: Browser alternative",
-      "node http status codes: Reference for Express, Fastify",
+      "HTTP class-based organization",
+      "Code-level lookup utility",
+      "Useful for API and frontend debugging",
+      "Fast search and interpretation workflow",
+      "Reference-style developer page",
     ],
 
     useCases: [
-      "http status codes 200: Verify success responses in APIs",
-      "http status codes 404: Debug broken links, missing resources",
-      "http status codes 400: Understand validation errors",
-      "http status codes 500: Troubleshoot server errors",
-      "http status codes table: Quick reference for REST APIs",
-      "http-status-codes npm: Alternative to Node.js package",
-      "node http status codes: Use in Express res.status(200)",
-      "http status codes github: Reference for API design",
+      "API integration troubleshooting",
+      "Backend response design reviews",
+      "Frontend error handling validation",
+      "Support incident diagnosis",
     ],
 
     aboutTool: (
       <div className="space-y-6 text-muted-foreground">
         <p>
-          HTTP status codes are three-digit responses from a server indicating
-          request outcome. 1xx: Informational (request received, continuing). 2xx:
-          Success (request succeeded). 3xx: Redirection (further action needed).
-          4xx: Client Error (bad request, unauthorized, not found). 5xx: Server
-          Error (server failed). http stands for Hypertext Transfer Protocol. This
-          tool provides a complete http status codes table with http status codes
-          200, 201, 400, 404, 500 with examples. Also includes SMTP (email) and
-          FTP status codes. http-status-codes npm and node http status codes
-          alternative.
+          Status-code reference pages perform best when they are concise and easy
+          to navigate. This page focuses on that practical debugging intent.
         </p>
         <p>
-          Common codes: 200 OK (success), 201 Created (POST created resource),
-          204 No Content (success, no body), 301/302 (redirects), 304 Not
-          Modified (use cache), 400 Bad Request, 401 Unauthorized, 403 Forbidden,
-          404 Not Found, 429 Too Many Requests, 500 Internal Server Error, 502 Bad
-          Gateway, 503 Service Unavailable.
+          It helps teams reduce diagnosis time by quickly mapping response codes
+          to likely causes and next actions.
         </p>
       </div>
     ),
 
     proTip:
-      "Use 204 for successful DELETE. Use 201 with Location header for POST. Use 429 with Retry-After for rate limiting. http status codes 418 I'm a teapot is from RFC 2324 (April Fools).",
+      "Log response status with request context (method, route, correlation ID) to resolve production issues faster.",
 
     faqs: [
       {
-        question: "What are HTTP status codes?",
+        question: "What do 4xx codes usually indicate?",
         answer:
-          "HTTP status codes are three-digit numbers (100-599) returned by web servers to indicate request outcome. 1xx informational, 2xx success, 3xx redirection, 4xx client error, 5xx server error.",
+          "4xx responses generally indicate client-side request issues such as invalid input, auth failures, or missing resources.",
       },
       {
-        question: "What does HTTP stand for?",
+        question: "What do 5xx codes usually indicate?",
         answer:
-          "http stands for Hypertext Transfer Protocol. It is the foundation of data communication on the web.",
+          "5xx responses typically indicate server-side failures or upstream dependency problems.",
       },
       {
-        question: "What is http status code 200?",
+        question: "Is 304 an error?",
         answer:
-          "http status codes 200 means OK - the request succeeded. The response body contains the requested resource. Most common success code.",
+          "No. 304 is a caching-related response indicating content has not changed under conditional request logic.",
       },
       {
-        question: "What is http status code 404?",
+        question: "How should APIs use status codes?",
         answer:
-          "http status codes 404 means Not Found - the requested resource does not exist at the URL. Common for broken links.",
+          "APIs should use consistent status semantics aligned with operation outcomes and include structured error payloads.",
       },
       {
-        question: "What is http status code 500?",
+        question: "Can this help with frontend UX decisions?",
         answer:
-          "http status codes 500 means Internal Server Error - the server encountered an error and could not fulfill the request.",
-      },
-      {
-        question: "What is http status code 201?",
-        answer:
-          "http status codes 201 means Created - the request succeeded and a new resource was created. Used after successful POST.",
-      },
-      {
-        question: "What is http status code 400?",
-        answer:
-          "http status codes 400 means Bad Request - the server could not understand the request due to invalid syntax or malformed data.",
-      },
-      {
-        question: "Where can I find http status codes with examples?",
-        answer:
-          "This tool provides http status codes with examples including when, where, and why you get each code. Search and filter by protocol and category.",
-      },
-      {
-        question: "Is there http-status-codes npm package?",
-        answer:
-          "Yes. The http-status-codes npm package provides constants. This tool is a browser-based http status codes table and reference.",
-      },
-      {
-        question: "What are node http status codes?",
-        answer:
-          "Node http status codes are the same as standard HTTP. In Node/Express use res.status(200).json(). This tool lists all node http status codes.",
-      },
-    ],
-
-    additionalContent: [
-      {
-        heading: "http status codes table — Quick reference",
-        content:
-          "1xx: 100 Continue, 101 Switching Protocols, 102 Processing, 103 Early Hints. 2xx: 200 OK, 201 Created, 202 Accepted, 204 No Content, 206 Partial Content. 3xx: 301 Moved Permanently, 302 Found, 304 Not Modified, 307 Temporary Redirect, 308 Permanent Redirect. 4xx: 400 Bad Request, 401 Unauthorized, 403 Forbidden, 404 Not Found, 429 Too Many Requests. 5xx: 500 Internal Server Error, 502 Bad Gateway, 503 Service Unavailable, 504 Gateway Timeout.",
-      },
-      {
-        heading: "http methods and status codes",
-        content:
-          "http methods: GET (retrieve), POST (create), PUT (replace), PATCH (update), DELETE (remove), HEAD (headers only), OPTIONS (capabilities). Use 200/204 for GET/DELETE success, 201 for POST success, 400 for bad input, 404 for not found, 500 for server error.",
+          "Yes. Understanding status classes improves retry logic, messaging, and fallback behavior.",
       },
     ],
 
     relatedTools: [
-      { name: "User-Agent Parser", href: "/dev-tools/user-agent-parser" },
+      { name: "JSON Diff", href: "/dev-tools/json-diff" },
       { name: "JWT Decoder", href: "/dev-tools/jwt-decoder" },
-      { name: "Base64 Encoder", href: "/dev-tools/base64-encoder" },
+      { name: "User-Agent Parser", href: "/dev-tools/user-agent-parser" },
       { name: "All Developer Tools", href: "/dev-tools" },
     ],
   },

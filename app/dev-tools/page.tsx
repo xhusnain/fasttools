@@ -2,347 +2,260 @@ import type { Metadata } from "next"
 import { ToolPageLayout } from "@/components/common/tool-page-layout"
 import { createToolConfig } from "@/lib/create-tool-config"
 import { GToolCard } from "@/ui/gtool-card"
-
-import { Code2, FileJson, Palette, Hash, FileCode, Braces, Database, Sparkles, Binary, Monitor, Globe } from "lucide-react"
+import {
+  Binary,
+  Braces,
+  Code2,
+  Database,
+  FileCode,
+  FileJson,
+  Globe,
+  Hash,
+  Monitor,
+  Palette,
+  Sparkles,
+} from "lucide-react"
 
 const devTools = [
   {
     title: "JWT Decoder",
-    description: "Decode and inspect JWT tokens safely in your browser. Perfect for API development and authentication debugging.",
+    description:
+      "Decode JWT headers and payloads for authentication debugging and token inspections.",
     href: "/dev-tools/jwt-decoder",
     icon: Code2,
-    popular: true,
   },
   {
     title: "Base64 Encoder Decoder",
-    description: "Encode and decode strings to Base64. URL-safe mode, file support. Perfect for data URIs and JWT debugging.",
+    description:
+      "Encode/decode Base64 for strings and common data workflows, including URL-safe cases.",
     href: "/dev-tools/base64-encoder",
     icon: Binary,
-    popular: true,
   },
   {
     title: "MIME Types",
-    description: "MIME types list. Convert MIME types to file extensions and vice-versa. mime types pdf, images, excel. mime-types npm alternative.",
+    description:
+      "Lookup MIME types and file extensions for content-type headers and upload handling.",
     href: "/dev-tools/mime-types",
     icon: FileCode,
-    popular: true,
   },
   {
     title: "Keycode Info",
-    description: "Find javascript keycode, code, location and modifiers of any key. keycode list, keyboard key codes, event keycode. keycode tester.",
+    description:
+      "Inspect keyboard event values including key, code, and modifier states.",
     href: "/dev-tools/keycode-info",
     icon: Code2,
-    popular: true,
   },
   {
     title: "Slugify String",
-    description: "Slugify string online. Make a string url, filename and id safe. slugify string url. slugify - npm alternative.",
+    description:
+      "Convert text into URL-safe slugs for routes, filenames, and identifiers.",
     href: "/dev-tools/slugify-string",
     icon: FileCode,
-    popular: true,
   },
   {
     title: "HTML WYSIWYG Editor",
-    description: "Free html wysiwyg editor online. Online html editor with live HTML source. Rich text editor.",
+    description:
+      "Edit rich text and view generated HTML source in a browser-based workflow.",
     href: "/dev-tools/html-wysiwyg-editor",
     icon: Braces,
-    popular: true,
   },
   {
     title: "User-Agent Parser",
-    description: "Parse user agent string. Detect Browser, Engine, OS, CPU, Device. user agent parser online. ua-parser-js alternative. Free.",
+    description:
+      "Parse user-agent strings into browser, OS, engine, device, and CPU details.",
     href: "/dev-tools/user-agent-parser",
     icon: Monitor,
-    popular: true,
   },
   {
     title: "HTTP Status Codes",
-    description: "Complete HTTP status codes list. http status codes 200, 404, 500 with examples. http status codes table. http methods. Free.",
+    description:
+      "Browse HTTP status code references and meanings for API and web debugging.",
     href: "/dev-tools/http-status-codes",
     icon: Globe,
-    popular: true,
   },
   {
     title: "Agent Skill Builder",
-    description: "Generate custom SKILL.md files for Google Antigravity agents. Build, download, and share agent skills.",
+    description:
+      "Generate `SKILL.md` scaffolds for agent workflows and reusable coding tasks.",
     href: "/dev-tools/antigravity-skill-builder",
     icon: Sparkles,
-    popular: true,
   },
   {
     title: "Regex Tester",
-    description: "Test and debug regular expressions with live matching. Essential for data validation and text processing.",
+    description:
+      "Test regex patterns with match previews and iterative debugging support.",
     href: "/dev-tools/regex-tester",
     icon: Hash,
-    popular: true,
   },
   {
     title: "SQL to JSON Converter",
-    description: "Convert SQL INSERT statements to JSON format online free. Parse SQL data to JSON arrays instantly.",
+    description:
+      "Convert SQL INSERT statements into JSON objects for migration and API workflows.",
     href: "/dev-tools/sql-to-json",
     icon: Database,
-    popular: true,
   },
   {
     title: "JSON Diff",
-    description: "Compare two JSON objects and find differences. json diff online. json diff javascript, python, npm. Free.",
+    description:
+      "Compare two JSON structures and inspect semantic differences quickly.",
     href: "/dev-tools/json-diff",
     icon: FileJson,
-    popular: true,
   },
   {
     title: "JSON to CSV Converter",
-    description: "Convert JSON data to CSV format quickly and easily. Great for data analysis and API integration.",
+    description:
+      "Transform JSON arrays into CSV for spreadsheet analysis and exports.",
     href: "/dev-tools/json-to-csv",
     icon: FileJson,
-    popular: true,
   },
   {
     title: "HTML Beautifier",
-    description: "Format and beautify HTML code for better readability. Essential for web development and code maintenance.",
+    description:
+      "Format and minify HTML for readability, debugging, and optimization tasks.",
     href: "/dev-tools/html-beautifier",
     icon: Braces,
-    popular: true,
   },
   {
-    title: "1000+ Free Color Palettes",
-    description: "Explore 1000+ free color palettes with HEX codes for websites, branding & UI/UX design. 43 categories including aesthetic, pastel, vintage & modern themes.",
+    title: "Color Palette Generator",
+    description:
+      "Generate color palettes and copy hex values for product and UI design workflows.",
     href: "/dev-tools/color-palette",
     icon: Palette,
   },
   {
     title: "Hex to RGB Converter",
-    description: "Convert hex colors to RGB values instantly. Perfect for CSS development and color manipulation.",
+    description:
+      "Convert color values between HEX, RGB, and HSL for frontend development.",
     href: "/dev-tools/hex-to-rgb",
     icon: Palette,
   },
   {
     title: "HTML to Markdown",
-    description: "Convert HTML to Markdown format for documentation, content management, and technical writing.",
+    description:
+      "Convert HTML markup into Markdown for docs, blogs, and content migration.",
     href: "/dev-tools/html-to-markdown",
-    icon: FileCode,
+    icon: Braces,
   },
   {
     title: "Markdown Previewer",
-    description: "Live preview your Markdown content with real-time rendering. Perfect for documentation and blogging.",
+    description:
+      "Write Markdown and preview rendered output live for documentation workflows.",
     href: "/dev-tools/markdown-previewer",
     icon: FileCode,
   },
 ]
 
 const toolConfig = createToolConfig({
-  toolName: "Free Developer Tools",
-  description: "Free online developer tools: JWT decoder, regex tester, JSON to CSV converter, HTML beautifier & more. Essential coding utilities. No signup required.",
-  metaTitle: "Free Developer Tools Online | JWT Decoder, Regex Tester & More",
-  metaDescription: "Free online developer tools: JWT decoder, regex tester, JSON to CSV & more. Essential coding utilities for modern web development. No signup.",
+  toolName: "Developer Tools",
+  description:
+    "Browser-based developer utilities for encoding, parsing, formatting, validation, and content transformation workflows.",
+  metaTitle: "Developer Tools: JWT, Base64, Regex, JSON, HTML",
+  metaDescription:
+    "Free developer tools for JWT decoding, Base64, regex testing, JSON conversion/diffing, HTML formatting, MIME lookup, and more.",
   path: "/dev-tools",
+  keywords: [
+    "developer tools",
+    "jwt decoder",
+    "base64 encoder decoder",
+    "regex tester",
+    "json diff",
+    "html beautifier",
+    "mime types",
+  ],
+
   schemaOptions: {
     itemList: {
-      name: "Developer Tools Collection - Chrome, Safari, React DevTools",
-      description: "Free online developer tools for Chrome, Safari, Firefox, and Edge browsers. Includes React developer tools, JWT decoder, regex tester, JSON to CSV converter, HTML beautifier, and essential coding utilities.",
-      items: devTools.map(tool => ({
+      name: "Developer Tools Collection",
+      description:
+        "A collection of practical developer utilities for web, API, and data workflows.",
+      items: devTools.map((tool) => ({
         name: tool.title,
         description: tool.description,
-        url: tool.href
-      }))
-    }
+        url: tool.href,
+      })),
+    },
   },
 
   header: {
-    title: "Free Developer Tools - JWT, Regex, JSON to CSV & More",
-    description: "Essential coding utilities for developers. Decode JWT, test regex, convert data, beautify code — all free, fast, and secure. No signup required.",
-    titleSize: "medium",
+    title: "Developer Tools",
+    description:
+      "Task-focused utilities for everyday web development, debugging, and data transformation.",
+    titleSize: "large",
     descriptionSize: "small",
+    color: "blue",
   },
 
-  breadcrumbs: [
-    { label: "Developer Tools", href: "/dev-tools" },
-  ],
+  breadcrumbs: [{ label: "Developer Tools", href: "/dev-tools" }],
 
   content: {
-    overview: "Master chrome developer tools with our comprehensive guide. Learn how to open developer tools on chrome using multiple methods: chrome developer tools shortcut (F12 or Ctrl+Shift+I on Windows/Linux, Cmd+Option+I on Mac), chrome shortcut developer tools, or right-click and inspect with chrome developer tools. Access google chrome developer tools, chrome open developer tools, and developer tools google chrome across all platforms. Use chrome developer tools android, developer tools android chrome, developer tools mobile chrome, and how to open developer tools in chrome android mobile for mobile debugging. Features include chrome developer tools screenshot, chrome developer tools color picker, chrome developer tools enable, chrome developer tools on iphone, chrome developer tools ipad, and developer tools chrome ipad.",
+    overview:
+      "This category is designed for utility intent: open a tool, complete a technical task, and move on. It covers common development friction points including encoding/decoding, token inspection, HTTP semantics, JSON transforms, HTML/Markdown conversion, and identifier formatting.",
+
+    features: [
+      "Direct browser-based workflows with minimal setup",
+      "Tool pages structured with how-to and FAQ support",
+      "Cross-linking across related developer tasks",
+      "Suitable for debugging, QA, and implementation checks",
+      "Covers auth, parsing, formatting, and data conversion flows",
+    ],
+
+    useCases: [
+      "API and authentication debugging",
+      "Format conversion for content and data pipelines",
+      "Frontend utility workflows for colors, slugs, and markup",
+      "Regex and parsing checks during implementation",
+      "Documentation and editor workflows",
+    ],
 
     aboutTool: (
-      <div className="space-y-6">
-        <div>
-          <h2 className="text-xl font-bold mb-4 text-foreground">Professional Developer Tools for Modern Web Development</h2>
-          <p className="text-sm text-muted-foreground leading-relaxed mb-4">
-            Our comprehensive collection of free developer tools is designed to streamline your coding workflow. From debugging authentication with our **JWT Decoder** to testing complex patterns with the **Regex Tester**, every tool runs entirely in your browser for maximum speed and data privacy.
-          </p>
-          <p className="text-sm text-muted-foreground leading-relaxed">
-            Whether you are a frontend developer working with **React**, a backend engineer managing **SQL databases**, or a full-stack developer needing quick data conversions, FastTools provides the essential utilities you need without any signup or software installation.
-          </p>
-        </div>
+      <div className="space-y-6 text-muted-foreground">
+        <p>
+          High-performing developer tool pages prioritize immediate utility,
+          clear labels, and predictable output. This category is structured
+          around that expectation to reduce time-to-result.
+        </p>
+        <p>
+          Instead of generic content, each page focuses on a specific developer
+          problem with concise guidance, schema-backed metadata, and relevant
+          internal links for next-step workflows.
+        </p>
       </div>
     ),
 
     faqs: [
       {
-        question: "What are developer tools?",
-        answer: "Developer tools are built-in browser features that allow developers to inspect, debug, and analyze web pages and applications. They provide access to the HTML structure, CSS styling, JavaScript console, network activity, and performance metrics of any website. Features include DOM inspection, console logging, network monitoring, JavaScript debugging with breakpoints, performance profiling, and mobile device simulation."
+        question: "Who should use these developer tools?",
+        answer:
+          "Frontend and backend developers, QA engineers, technical writers, and API integrators can use these tools for fast diagnostics and transformations.",
       },
       {
-        question: "How to open developer tools in Chrome?",
-        answer: "Press F12, Ctrl+Shift+I (Windows/Linux), or Cmd+Option+I (Mac). Alternatively, right-click any element and select 'Inspect' or access through Chrome menu > More Tools > Developer Tools. On Android mobile, use remote debugging by connecting your device to a computer via USB and accessing chrome://inspect."
+        question: "Do I need to install packages to use these pages?",
+        answer:
+          "No. These tools are designed for browser-first usage to speed up common development tasks.",
       },
       {
-        question: "How to use developer tools in Chrome?",
-        answer: "Key features include: 1) Elements tab - inspect/modify HTML/CSS, 2) Console tab - execute JavaScript and view errors, 3) Network tab - monitor requests, 4) Sources tab - debug JavaScript, 5) Performance tab - analyze load times, 6) Application tab - inspect cookies and storage."
+        question: "Are these tools useful for production debugging?",
+        answer:
+          "Yes. They are commonly used to inspect payloads, validate transformations, and test assumptions during implementation.",
       },
       {
-        question: "Where is developer tools in Safari?",
-        answer: "First enable it in Safari > Preferences > Advanced > check 'Show Develop menu in menu bar'. Then press Cmd+Option+I or access through Develop menu > Show Web Inspector."
+        question: "Can I use these tools for learning as well as work?",
+        answer:
+          "Yes. Many pages include concise explanatory content that supports both practical execution and concept refresh.",
       },
       {
-        question: "Where is developer tools in Edge?",
-        answer: "Press F12, Ctrl+Shift+I (Windows), or Cmd+Option+I (Mac). It works identically to Chrome DevTools since Edge is Chromium-based."
+        question: "Are all tools in this category free?",
+        answer:
+          "Yes. The tools in this category are free to use with no required signup for standard workflows.",
       },
-      {
-        question: "Where is developer tools in Firefox?",
-        answer: "Press F12 or Ctrl+Shift+I (Windows/Linux), Cmd+Option+I (Mac). It appears as 'Web Developer Tools' in the menu."
-      },
-      {
-        question: "Where is developer tools in Opera?",
-        answer: "Press Ctrl+Shift+I or F12. Opera uses Chromium DevTools, so the interface is identical to Chrome."
-      },
-      {
-        question: "Where is developer tools in Excel?",
-        answer: "Go to File > Options > Customize Ribbon, then check 'Developer' in the right column under Main Tabs. This enables VBA programming, macros, and form controls."
-      },
-      {
-        question: "Where is developer tools in Word?",
-        answer: "Similar to Excel, go to File > Options > Customize Ribbon and enable 'Developer' tab for macros and advanced document automation."
-      },
-      {
-        question: "Can you use developer tools on mobile?",
-        answer: "Limited direct access exists. For iOS, connect to Mac Safari for remote inspection. For Android, use Chrome remote debugging via USB and chrome://inspect on desktop."
-      },
-      {
-        question: "What is React developer tools?",
-        answer: "A browser extension that adds React-specific debugging capabilities. It provides a 'Components' tab showing the React component hierarchy, props, state, and hooks, and a 'Profiler' tab for performance analysis."
-      },
-      {
-        question: "How can developer tools be used by attackers?",
-        answer: "Attackers can inspect page source, modify client-side validation, analyze network requests, manipulate cookies, and reverse engineer code. Always implement server-side validation and security measures."
-      },
-      {
-        question: "Why are developer tools disabled?",
-        answer: "Common causes include corporate IT policies, conflicting extensions, or corrupted browser settings. Try Incognito mode, disabling extensions, or resetting browser settings."
-      },
-      {
-        question: "What tools do developers use?",
-        answer: "Modern developers use IDEs (VS Code), version control (Git), browser DevTools, package managers (npm), build tools (Webpack), testing frameworks (Jest), containerization (Docker), and CI/CD platforms."
-      },
-      {
-        question: "What are developer tools used for?",
-        answer: "Debugging code, inspecting HTML/CSS, analyzing network performance, testing responsive designs, monitoring page load, examining storage, and learning from other websites."
-      },
-      {
-        question: "What are developer tools in resume?",
-        answer: "List skills like 'Chrome DevTools, React Developer Tools' and specific accomplishments like 'Reduced page load time using Performance profiler' or 'Debugged complex state issues'."
-      },
-      {
-        question: "What is developer tools console?",
-        answer: "A command-line interface for executing JavaScript, viewing errors/logs, and interacting with page variables. It's the primary tool for JavaScript debugging."
-      },
-      {
-        question: "What is developer tools in AWS?",
-        answer: "A suite of services including CodeCommit, CodeBuild, CodeDeploy, CodePipeline, and Cloud9 for building, testing, and deploying applications on AWS."
-      },
-      {
-        question: "Where is developer tools services in Home Assistant?",
-        answer: "Access Developer Tools from the sidebar. The Services tab allows calling any Home Assistant service for testing automations."
-      },
-      {
-        question: "What are Google developer tools?",
-        answer: "Includes Chrome DevTools, Google Cloud Platform, Firebase, Android Studio, Lighthouse, PageSpeed Insights, and Search Console."
-      },
-      {
-        question: "How many developers use AI tools?",
-        answer: "Over 92% of developers use or plan to use AI tools like GitHub Copilot and ChatGPT. There are approximately 27-28 million professional developers globally."
-      },
-      {
-        question: "Developer tools benefits and best practices",
-        answer: "Benefits include faster debugging, better code quality, and performance optimization. Best practices involve using console.table(), network throttling, and DOM breakpoints."
-      },
-      {
-        question: "Common troubleshooting: Can't find developer tools",
-        answer: "On Mac Safari, enable 'Show Develop menu'. If disabled, check IT policies or extensions. Use F12 or right-click 'Inspect' to open."
-      },
-      {
-        question: "How many DevOps tools are there?",
-        answer: "Hundreds, including Git, Jenkins, Docker, Kubernetes, Ansible, Prometheus, and Jira. Most developers use 10-15 core tools regularly."
-      },
-      {
-        question: "Developer Tools Shortcuts - Complete Keyboard Guide",
-        answer: "Universal: F12. Chrome/Edge/Opera: Ctrl+Shift+I (Win), Cmd+Option+I (Mac). Firefox: F12 or Ctrl+Shift+I. Safari: Cmd+Option+I."
-      },
-      {
-        question: "How to Close Developer Tools",
-        answer: "Press F12 again, click the X button, or use the close shortcut (Cmd+Option+I on Mac)."
-      },
-      {
-        question: "No Developer Tools Found - Installation Errors Fixed",
-        answer: "On Mac, run 'xcode-select --install' to fix missing Command Line Tools. This resolves errors like 'no developer tools were found requesting install'."
-      },
-      {
-        question: "Mobile Browser with Developer Tools",
-        answer: "Kiwi Browser (Android) supports extensions. Otherwise, use remote debugging via USB connection to a desktop browser."
-      },
-      {
-        question: "Download Video & Screenshot with Developer Tools",
-        answer: "Video: Inspect Network tab for media files. Screenshot: Use Device Mode or Run Command (Cmd+Shift+P) > 'Screenshot'."
-      },
-      {
-        question: "Must Have Tools for Developers - Essential List",
-        answer: "Chrome DevTools, VS Code, Git, Postman, Docker, npm, ESLint, Jest, React DevTools, and Figma."
-      },
-      {
-        question: "AI for Developers Tools - Modern Development",
-        answer: "GitHub Copilot, ChatGPT, Claude AI, and Tabnine assist with code generation, debugging, and documentation."
-      },
-      {
-        question: "Chrome with Developer Tools - Advanced Usage",
-        answer: "Use Panels: Elements (DOM), Console (JS), Sources (Debug), Network (Requests), Performance (Profile), Application (Storage)."
-      },
-      {
-        question: "Near Tool Shop - Finding Developer Resources",
-        answer: "Online: GitHub Marketplace, VS Code Marketplace, npm. Physical: Stores for peripherals like mechanical keyboards and monitors."
-      },
-      {
-        question: "Developer Tools Safari vs Chrome vs Firefox",
-        answer: "Safari: Best for iOS/Mac. Chrome: Best performance profiling and mobile Android debugging. Firefox: Best CSS/Grid tools."
-      },
-      {
-        question: "Developer Tools VS Code - IDE Integration",
-        answer: "VS Code integrates debugging (Ctrl+Shift+D) and extensions for React, Oracle, and more, creating a powerful dev environment."
-      },
-      {
-        question: "Developer Tools Chrome Extension & Browser Extensions",
-        answer: "Enhance DevTools with React DevTools, Redux DevTools, Vue DevTools, and Lighthouse."
-      },
-      {
-        question: "Developer Tools and Services - Complete Ecosystem",
-        answer: "Includes Cloud (AWS/Azure), CI/CD (GitHub Actions), Containers (Docker), and Frameworks (React/Angular)."
-      },
-      {
-        question: "Developer Tools Android - Mobile Development",
-        answer: "Android Studio, ADB, and Chrome Remote Debugging are essential for Android development."
-      },
-      {
-        question: "Development Tools Examples - Real-World Usage",
-        answer: "Frontend: Chrome DevTools. Backend: Postman, Docker. Full-stack: VS Code, Git, CI/CD pipelines."
-      },
-      {
-        question: "Oracle Developer Tools vs Xcode - Platform Comparison",
-        answer: "Oracle: Database dev in Visual Studio. Xcode: iOS/macOS dev with Simulator and Instruments."
-      },
-      {
-        question: "Tools I Use as a Developer - Professional Toolkit",
-        answer: "VS Code, Chrome DevTools, Git, Postman, Docker, Terminal, npm, and AI assistants like Copilot."
-      }
-    ]
-  }
+    ],
+
+    relatedTools: [
+      { name: "Web Tools", href: "/web-tools" },
+      { name: "Crypto Tools", href: "/crypto-tools" },
+      { name: "SEO Tools", href: "/seo-tools" },
+    ],
+  },
 })
 
 export const metadata: Metadata = toolConfig.metadata

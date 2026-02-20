@@ -1,23 +1,37 @@
 import type { Metadata } from "next"
+import dynamic from "next/dynamic"
+import { ToolLoader } from "@/components/common/tool-loader"
 import { ToolPageLayout } from "@/components/common/tool-page-layout"
 import { createToolConfig } from "@/lib/create-tool-config"
-import { JsonDiff } from "@/components/dev-tools/json-diff"
+
+const JsonDiff = dynamic(
+  () => import("@/components/dev-tools/json-diff").then((mod) => mod.JsonDiff),
+  { loading: () => <ToolLoader /> }
+)
 
 const toolConfig = createToolConfig({
   toolName: "JSON Diff",
   description:
-    "JSON diff online. Compare two JSON objects and find differences. json diff javascript, json diff python, json diff - npm. json-diff-ts, json diff java, json diff nodejs. Free semantic JSON compare.",
-  metaTitle: "JSON Diff - Compare Two JSON Objects Online | Find Differences",
+    "Compare two JSON objects and inspect structural or value differences for debugging and review workflows.",
+  metaTitle: "JSON Diff Tool (Compare Two JSON Objects)",
   metaDescription:
-    "Free JSON diff online. Compare two JSON objects and get semantic differences. json diff javascript, json diff python, json diff - npm, json-diff-ts. json diff java, json diff nodejs. No signup.",
+    "Compare JSON inputs and detect differences quickly. Useful for API response validation, config review, and regression checks.",
   path: "/dev-tools/json-diff",
+  keywords: [
+    "json diff",
+    "compare json",
+    "json compare tool",
+    "json differences",
+    "api response diff",
+  ],
 
   header: {
-    title: "JSON diff",
+    title: "JSON Diff",
     description:
-      "Compare two JSON objects and get the differences between them.",
+      "Compare JSON structures and values with fast difference detection.",
     titleSize: "medium",
     descriptionSize: "small",
+    color: "blue",
   },
 
   breadcrumbs: [
@@ -28,134 +42,90 @@ const toolConfig = createToolConfig({
   schemaOptions: {
     applicationCategory: "DeveloperApplication",
     description:
-      "JSON diff online. Compare two JSON objects and find semantic differences. json diff javascript, json diff python, json diff - npm.",
-    alternateName: [
-      "JSON Diff Tool",
-      "JSON Compare",
-      "json diff - npm",
-      "json-diff-ts",
-      "JSON Diff Online",
-      "Semantic JSON Compare",
-    ],
+      "Compare two JSON objects and detect semantic differences for debugging and validation workflows.",
     featureList: [
-      "Compare two JSON objects - semantic diff",
-      "json diff online - no signup, instant",
-      "json diff javascript - browser-based",
-      "json diff python alternative",
-      "json diff - npm alternative",
-      "json-diff-ts style output",
-      "Added, removed, modified highlighting",
-      "Copy diff paths to clipboard",
-      "100% client-side, private",
+      "JSON comparison",
+      "Semantic diffing",
+      "Copy-ready difference output",
+      "API validation utility",
     ],
     offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },
   },
 
   content: {
     overview:
-      "JSON diff compares two JSON objects and shows semantic differences—added keys, removed keys, and modified values. Use this json diff online tool to compare API responses, configs, or data exports. json diff javascript, json diff python, json diff - npm alternative. json-diff-ts compatible output. json diff java, json diff nodejs reference. Free.",
+      "Use this tool to compare two JSON documents and quickly identify what changed. It is useful for API response checks, schema transitions, and release validation workflows.",
 
     howToSteps: [
-      "Paste your first JSON in the left text area.",
-      "Paste the JSON to compare in the right text area.",
-      "View differences: added (green), removed (red), modified (amber). Click paths to copy.",
+      "Paste the original JSON into the left panel.",
+      "Paste the updated JSON into the right panel.",
+      "Run comparison and inspect highlighted differences.",
+      "Use results to update code, tests, or documentation.",
     ],
 
     features: [
-      "json diff online: Compare two JSON objects instantly in browser",
-      "Semantic diff: Key/value differences, not line-by-line",
-      "json diff javascript: No server; runs in browser",
-      "json diff python alternative: Same output as python json diff tools",
-      "json diff - npm: Alternative to json-diff, json-diff-kit packages",
-      "json-diff-ts: TypeScript-style diff output",
-      "Added/removed/modified: Color-coded diff entries",
-      "Nested objects and arrays: Recursive comparison",
-      "Copy paths: One-click copy for integration",
+      "Side-by-side JSON comparison",
+      "Difference highlighting",
+      "Useful for regression detection",
+      "Copy-friendly output",
+      "Browser-based validation workflow",
     ],
 
     useCases: [
-      "json diff javascript: Compare API responses before/after changes",
-      "json diff python: Validate config diffs in CI/CD",
-      "json diff - npm: Test output of json-diff in Node.js",
-      "json diff java: Reference for JSON comparison logic",
-      "json diff nodejs: Debug API contract changes",
-      "API testing: Compare expected vs actual JSON",
-      "Config management: Diff environment configs",
-      "Data migration: Verify JSON transformations",
+      "API response regression checks",
+      "Config changes between environments",
+      "Fixture and snapshot updates",
+      "Release review for payload modifications",
     ],
 
     aboutTool: (
       <div className="space-y-6 text-muted-foreground">
         <p>
-          JSON diff compares two JSON documents and shows semantic differences:
-          keys added in the second object, keys removed, and values that changed.
-          Unlike line-based diff tools, this compares structure and values so
-          property order and whitespace do not affect results. Use for API
-          testing, config comparison, or data validation. json diff online, json
-          diff javascript, json diff python, json diff - npm, json-diff-ts.
+          JSON diff pages rank best when they keep comparison workflow immediate
+          and easy to interpret. This page is optimized for that practical use.
         </p>
         <p>
-          Similar to json-diff-kit, json-diff (npm), and json-diff-ts. This tool
-          runs entirely in the browser with no server uploads. json diff java and
-          json diff nodejs developers can use it as a quick reference for diff
-          output format.
+          It helps reduce debugging time by showing exactly which keys or values
+          changed between versions of structured data.
         </p>
       </div>
     ),
 
     proTip:
-      "Use Load sample to see an example. Differences update automatically as you type. Copy paths to use in tests or scripts.",
+      "Normalize key ordering and formatting before compare runs to avoid noise and surface true semantic changes.",
 
     faqs: [
       {
-        question: "What is JSON diff?",
+        question: "Can this compare nested JSON objects?",
         answer:
-          "JSON diff is a tool that compares two JSON objects and reports differences: added keys, removed keys, and modified values. It performs semantic comparison, not line-by-line.",
+          "Yes. Nested structures are compared to identify deeper key/value differences.",
       },
       {
-        question: "How do I compare two JSON objects?",
+        question: "Is this useful for API response validation?",
         answer:
-          "Paste the first JSON in the left text area and the second in the right. Differences are shown automatically with added (green), removed (red), and modified (amber) highlighting.",
+          "Yes. It is commonly used to compare expected and actual payloads.",
       },
       {
-        question: "Is there a json diff npm package?",
+        question: "Why do equivalent objects sometimes look different?",
         answer:
-          "Yes. Packages like json-diff, json-diff-kit exist. This json diff online tool is a browser alternative—no installation required.",
+          "Differences can come from ordering, type mismatches, or subtle value changes such as null vs empty string.",
       },
       {
-        question: "How to do json diff in JavaScript?",
+        question: "Can I use this in release QA?",
         answer:
-          "Use this json diff javascript tool in the browser, or install json-diff-kit or json-diff from npm for programmatic use in Node.js.",
+          "Yes. JSON diffing is useful for detecting contract drift before deployment.",
       },
       {
-        question: "How to do json diff in Python?",
+        question: "Does this replace schema validation?",
         answer:
-          "In Python use deepdiff or jsondiff libraries. This json diff online tool provides the same style of semantic comparison in the browser.",
-      },
-      {
-        question: "What is json-diff-ts?",
-        answer:
-          "json-diff-ts is a TypeScript JSON diff library. This tool produces similar semantic diff output and works as a json-diff-ts style online comparator.",
-      },
-    ],
-
-    additionalContent: [
-      {
-        heading: "json diff online — Free & instant",
-        content:
-          "This json diff online tool compares two JSON documents in your browser. No uploads, no signup. Differences update as you type. Added keys appear in green, removed in red, modified values in amber. Copy any path for use in tests or automation.",
-      },
-      {
-        heading: "json diff javascript, python, npm, java, nodejs",
-        content:
-          "For json diff javascript use json-diff-kit or json-diff (npm). For json diff python use deepdiff. For json diff java use JsonNode comparison. For json diff nodejs use the same npm packages. This online tool works as a universal json diff reference.",
+          "No. It complements schema validation by showing concrete data-level differences.",
       },
     ],
 
     relatedTools: [
-      { name: "JSON to CSV", href: "/dev-tools/json-to-csv" },
-      { name: "JWT Decoder", href: "/dev-tools/jwt-decoder" },
-      { name: "Base64 Encoder", href: "/dev-tools/base64-encoder" },
+      { name: "JSON to CSV Converter", href: "/dev-tools/json-to-csv" },
+      { name: "SQL to JSON Converter", href: "/dev-tools/sql-to-json" },
+      { name: "HTTP Status Codes", href: "/dev-tools/http-status-codes" },
       { name: "All Developer Tools", href: "/dev-tools" },
     ],
   },

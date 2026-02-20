@@ -1,23 +1,37 @@
 import type { Metadata } from "next"
+import dynamic from "next/dynamic"
+import { ToolLoader } from "@/components/common/tool-loader"
 import { ToolPageLayout } from "@/components/common/tool-page-layout"
 import { createToolConfig } from "@/lib/create-tool-config"
-import { HtmlWysiwygEditor } from "@/components/dev-tools/html-wysiwyg-editor"
+
+const HtmlWysiwygEditor = dynamic(
+  () => import("@/components/dev-tools/html-wysiwyg-editor").then((mod) => mod.HtmlWysiwygEditor),
+  { loading: () => <ToolLoader /> }
+)
 
 const toolConfig = createToolConfig({
   toolName: "HTML WYSIWYG Editor",
   description:
-    "HTML WYSIWYG editor online. Free html wysiwyg editor. Online html editor. Rich text editor. html wysiwyg editor react alternative. Free html wysiwyg editor open source.",
-  metaTitle: "HTML WYSIWYG Editor - Free Online HTML Editor | Rich Text Editor",
+    "Edit rich text and view generated HTML source side-by-side for content and UI workflows.",
+  metaTitle: "HTML WYSIWYG Editor (Rich Text + HTML Source)",
   metaDescription:
-    "Free HTML WYSIWYG editor online. Online html editor with live HTML source. html wysiwyg editor free. Rich text editor. html editor online. Free.",
+    "Use a browser-based WYSIWYG editor with HTML source output for drafting, formatting, and embedding content quickly.",
   path: "/dev-tools/html-wysiwyg-editor",
+  keywords: [
+    "html wysiwyg editor",
+    "online rich text editor",
+    "html editor online",
+    "wysiwyg html source",
+    "content editor tool",
+  ],
 
   header: {
-    title: "HTML WYSIWYG editor",
+    title: "HTML WYSIWYG Editor",
     description:
-      "Online, feature-rich WYSIWYG HTML editor which generates the source code of the content immediately.",
+      "Draft rich content and inspect generated HTML source in one workflow.",
     titleSize: "medium",
     descriptionSize: "small",
+    color: "blue",
   },
 
   breadcrumbs: [
@@ -28,109 +42,83 @@ const toolConfig = createToolConfig({
   schemaOptions: {
     applicationCategory: "DeveloperApplication",
     description:
-      "HTML WYSIWYG editor online. Free html wysiwyg editor. Online html editor with live HTML source code generation.",
-    alternateName: [
-      "HTML WYSIWYG Editor Online",
-      "Free HTML WYSIWYG Editor",
-      "Online HTML Editor",
-      "HTML Editor Online",
-      "Rich Text Editor",
-    ],
+      "Rich text editing with corresponding HTML source output for content and embedding workflows.",
     featureList: [
-      "html wysiwyg editor - Visual editing",
-      "html editor online - No install",
-      "Live HTML source code generation",
-      "Bold, italic, headings H1-H4",
-      "Lists, blockquote, undo/redo",
-      "html wysiwyg editor free",
-      "100% client-side, no signup",
+      "Rich text editing",
+      "HTML source output",
+      "Copy-ready markup",
+      "Content drafting support",
     ],
     offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },
   },
 
   content: {
     overview:
-      "HTML WYSIWYG editor online. Free html wysiwyg editor that generates HTML source code immediately as you type. Online html editor with rich text formatting—bold, italic, headings (H1, H2, H3, H4), lists, blockquote. html wysiwyg editor free, html wysiwyg editor open source style. html wysiwyg editor react, javascript wysiwyg editor alternative. Free html wysiwyg editor for Windows, Linux, Mac.",
+      "Use this editor to compose formatted content and capture the resulting HTML for websites, CMS fields, email templates, and embedded content blocks.",
 
     howToSteps: [
-      "Type or paste content in the WYSIWYG editor. Use the toolbar for bold, italic, headings, lists.",
-      "Watch the HTML source update in real time in the right panel.",
-      "Click the copy icon to copy the generated HTML for use in your project.",
+      "Compose content using rich text controls.",
+      "Inspect generated HTML source output.",
+      "Adjust formatting or markup as needed.",
+      "Copy output into your target platform.",
     ],
 
     features: [
-      "html wysiwyg editor: What You See Is What You Get",
-      "html editor online: No download, works in browser",
-      "Live HTML source: Code generated immediately",
-      "Rich text: Bold, italic, strikethrough",
-      "Headings: H1, H2, H3, H4",
-      "Lists: Bullet and numbered",
-      "Blockquote, undo, redo",
-      "html wysiwyg editor free",
+      "Rich text authoring interface",
+      "Live HTML source workflow",
+      "Copy-ready output for integration",
+      "Useful for CMS and email content tasks",
+      "Browser-native editing utility",
     ],
 
     useCases: [
-      "html wysiwyg editor online: Quick HTML snippets for web pages",
-      "html editor: Blog posts, emails, landing pages",
-      "javascript wysiwyg editor: Test rich text without CKEditor or TinyMCE",
-      "html wysiwyg editor react: Prototype before integrating React rich text",
-      "html wysiwyg editor vscode: Browser alternative for quick HTML",
+      "CMS body field preparation",
+      "Email template drafting",
+      "Landing page copy block creation",
+      "Documentation and knowledge base editing",
     ],
 
     aboutTool: (
       <div className="space-y-6 text-muted-foreground">
         <p>
-          HTML WYSIWYG editor online lets you create formatted content visually
-          and get the HTML source instantly. Free html wysiwyg editor—no
-          signup, no install. html editor online for quick HTML generation.
-          html wysiwyg editor free alternative to TinyMCE, CKEditor, Froala.
-          html wysiwyg editor open source style. Works on html wysiwyg editor
-          windows, html wysiwyg editor linux.
+          WYSIWYG tools that rank well make source output transparent and easy to
+          extract. This page emphasizes that utility-first behavior.
+        </p>
+        <p>
+          It helps bridge editorial and development workflows by giving content
+          teams a visual editor while preserving direct HTML access.
         </p>
       </div>
     ),
 
     proTip:
-      "Use H1 for page titles, H2–H4 for sections. Copy the HTML and paste into your CMS, email template, or React/Vue component.",
+      "Review generated HTML in the target environment, especially for email clients and CMS sanitization rules.",
 
     faqs: [
       {
-        question: "What is an HTML WYSIWYG editor?",
+        question: "Can I see the generated HTML while editing?",
         answer:
-          "WYSIWYG means What You See Is What You Get. An html wysiwyg editor lets you format text visually (bold, headings, lists) and outputs the corresponding HTML code.",
+          "Yes. The tool is designed to pair rich editing with source-output visibility.",
       },
       {
-        question: "Is there a free HTML WYSIWYG editor online?",
+        question: "Is this suitable for email template drafting?",
         answer:
-          "Yes. This html wysiwyg editor free tool runs in your browser. html editor online, no signup. html wysiwyg editor open source compatible.",
+          "Yes, though client-specific rendering tests are still recommended before sending production campaigns.",
       },
       {
-        question: "How does the html editor online work?",
+        question: "Can I use the output in a CMS?",
         answer:
-          "Type in the visual panel. The HTML source updates in real time. Copy the HTML for use in your project. html wysiwyg editor online, free.",
+          "Yes. Copy the generated markup into compatible rich text or HTML-supported CMS fields.",
       },
       {
-        question: "Is this an html wysiwyg editor react?",
+        question: "Does this replace full page builders?",
         answer:
-          "This is a browser-based html wysiwyg editor. Use it as an html wysiwyg editor react alternative for quick HTML—or integrate similar logic into React with contenteditable.",
+          "No. It is optimized for content block authoring and source extraction, not full layout systems.",
       },
       {
-        question: "What about html wysiwyg editor vscode?",
+        question: "Should I clean output before publishing?",
         answer:
-          "For VS Code, use Live Server or built-in preview. This html wysiwyg editor online is for quick visual HTML generation in the browser.",
-      },
-    ],
-
-    additionalContent: [
-      {
-        heading: "html wysiwyg editor online — vs TinyMCE, CKEditor",
-        content:
-          "TinyMCE and CKEditor are full-featured javascript wysiwyg editor libraries. This html wysiwyg editor free tool is lighter—perfect for quick HTML generation without npm install. html editor online.",
-      },
-      {
-        heading: "html wysiwyg editor free, html wysiwyg editor open source",
-        content:
-          "Free html wysiwyg editor. html wysiwyg editor open source style—uses contenteditable and standard browser APIs. No proprietary libraries.",
+          "A quick sanitization/validation pass is recommended, especially for strict security or style pipelines.",
       },
     ],
 
