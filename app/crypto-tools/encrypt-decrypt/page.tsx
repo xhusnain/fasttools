@@ -1,129 +1,143 @@
-import { Metadata } from 'next';
+import type { Metadata } from "next"
 import { ToolPageLayout } from "@/components/common/tool-page-layout"
 import { createToolConfig } from "@/lib/create-tool-config"
 import { EncryptDecryptTool } from "@/components/crypto-tools/encrypt-decrypt"
-import Image from "next/image"
 
 const toolConfig = createToolConfig({
-    toolName: "Text Encrypt/Decrypt",
-    description: "Securely encrypt and decrypt text online using AES, TripleDES, Rabbit, and RC4. 100% client-side, private, and free.",
-    metaTitle: "Text Encrypt/Decrypt - Online AES, DES, Rabbit & RC4 Encryption Tool",
-    metaDescription: "Best free online text encryption and decryption tool. Secure your messages with AES, TripleDES, Rabbit, and RC4 algorithms. Runs entirely in your browser for maximum privacy.",
-    path: "/crypto-tools/encrypt-decrypt",
-    heroImage: "/images/text-encryption-hero.png",
-    schemaOptions: {
-        applicationCategory: "SecurityApplication",
-        operatingSystem: "Any",
-        featureList: [
-            "AES Encryption",
-            "TripleDES Encryption",
-            "Client-side privacy",
-            "Instant decryption"
-        ]
-    },
+  toolName: "Text Encrypt Decrypt",
+  description:
+    "Encrypt and decrypt text using common symmetric algorithms for development and interoperability testing.",
+  metaTitle: "Text Encrypt/Decrypt Tool (AES, TripleDES, RC4)",
+  metaDescription:
+    "Encrypt and decrypt text with algorithm and key controls. Useful for secure-message demos, compatibility checks, and integration testing.",
+  path: "/crypto-tools/encrypt-decrypt",
+  keywords: [
+    "text encrypt decrypt",
+    "aes encryption tool",
+    "online text decryption",
+    "encrypt string online",
+    "cipher tool",
+  ],
 
+  header: {
+    title: "Text Encrypt/Decrypt",
+    description:
+      "Test encryption and decryption workflows quickly with configurable algorithm settings.",
+    titleSize: "medium",
+    descriptionSize: "small",
+    color: "green",
+  },
 
-    header: {
-        title: "Text Encrypt/Decrypt Online - Bank-Grade Security for Your Words",
-        description: "Encrypt and decrypt text instantly with the world's most trusted algorithms: AES, TripleDES, Rabbit, and RC4. Private, client-side, and effectively unbreakable.",
-        titleSize: "medium",
-        descriptionSize: "small",
-        color: "blue",
-    },
+  breadcrumbs: [
+    { label: "Crypto Tools", href: "/crypto-tools" },
+    { label: "Text Encrypt/Decrypt", href: "/crypto-tools/encrypt-decrypt" },
+  ],
 
-    breadcrumbs: [
-        { label: "Crypto Tools", href: "/crypto-tools" },
-        { label: "Text Encrypt/Decrypt", href: "/crypto-tools/encrypt-decrypt" },
+  schemaOptions: {
+    applicationCategory: "SecurityApplication",
+    description:
+      "Encrypt and decrypt plain text using configurable symmetric cryptography options.",
+    alternateName: ["Text Encryption Tool", "AES Encrypt Decrypt"],
+    featureList: [
+      "Encryption and decryption",
+      "Multiple algorithm modes",
+      "Key input controls",
+      "Copy-ready output",
+    ],
+    offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },
+  },
+
+  content: {
+    overview:
+      "Use this tool to encrypt plain text and decrypt ciphertext during application testing and interoperability checks. It is useful for development, not a substitute for managed key infrastructure in production systems.",
+
+    howToSteps: [
+      "Choose an algorithm and enter the plaintext you want to protect.",
+      "Provide a key and generate encrypted output.",
+      "Switch to decrypt mode and test ciphertext recovery with the same key.",
+      "Copy outputs for integration, troubleshooting, or QA validation.",
     ],
 
-    content: {
-        overview: "Secure your communication in milliseconds. This powerful **online text encryption tool** transforms your sensitive data into unreadable cipher text using military-grade algorithms like **AES (Advanced Encryption Standard)**. Unlike other tools, we process everything **locally in your browser**, ensuring your secrets never touch a server.",
+    features: [
+      "Symmetric encryption/decryption workflow",
+      "Algorithm selection controls",
+      "Key visibility toggles for safer entry",
+      "Immediate output for test loops",
+      "Simple browser-based cryptography checks",
+    ],
 
-        howToSteps: [
-            "**Choose Your Weapon**: Select your preferred encryption algorithm. We recommend **AES** for maximum security or **TripleDES** for legacy compatibility.",
-            "**Enter Your Secret**: Type or paste the text you want to secure in the input field. There's no character limit.",
-            "**Set a Strong Key**: Create a secret password/key. This is the only way to unlock your message, so make it memorable!",
-            "**Encrypt/Decrypt Instantly**: The tool processes your text in real-time. Copy the result and share it safely."
-        ],
+    useCases: [
+      "Application encryption feature testing",
+      "Troubleshooting ciphertext interoperability",
+      "Training and demos for cryptography basics",
+      "Pre-integration checks for secure text pipelines",
+    ],
 
-        features: [
-            "**Military-Grade AES**: Use the same encryption standard trusted by governments and banks worldwide.",
-            "**100% Client-Side Privacy**: Your data, keys, and text NEVER leave your device. Zero server risk.",
-            "**Multi-Algorithm Support**: Switch between AES, TripleDES, Rabbit, and RC4 for versatile security needs.",
-            "**Instant Processing**: No loading bars, no wait times. Get your encrypted text immediately.",
-            "**Cross-Platform**: Works securely on mobile, desktop, and tablets without any software installation."
-        ],
+    aboutTool: (
+      <div className="space-y-6 text-muted-foreground">
+        <p>
+          Encryption tool pages in search perform best when they clearly separate
+          practical utility from security guarantees. This page prioritizes that
+          clarity: it supports fast testing while avoiding misleading claims.
+        </p>
+        <p>
+          For production use, pair cryptography with robust key management,
+          access control, and transport security rather than relying on a
+          standalone utility workflow.
+        </p>
+      </div>
+    ),
 
-        aboutTool: (
-            <div className="space-y-12 text-foreground">
-                <div className="relative w-full h-64 md:h-80 lg:h-96 rounded-xl overflow-hidden mb-8 border border-border/50 shadow-2xl">
-                    <Image
-                        src="/images/text-encryption-hero.png"
-                        alt="Secure Online Text Encryption Tool - AES, DES, RC4"
-                        fill
-                        className="object-cover transform hover:scale-105 transition-transform duration-700"
-                        priority
-                    />
-                </div>
+    proTip:
+      "Use modern algorithms and strong key handling policies for production systems, then validate round-trip behavior with known test vectors.",
 
-                <section>
-                    <h2 className="text-3xl font-bold mb-6">Why Use Our Online Text Encryption Tool?</h2>
-                    <p className="text-muted-foreground leading-relaxed text-lg mb-6">
-                        In an age of digital surveillance, **privacy is power**. Whether you're sending sensitive business credentials, personal notes, or just want to keep your conversations private, our **Text Encrypt/Decrypt tool** provides an impenetrable layer of security. We combine ease of use with robust cryptographic libraries to give you a fortress for your text.
-                    </p>
-                    <div className="grid md:grid-cols-2 gap-6">
-                        <div className="bg-card p-6 rounded-xl border border-border/50 shadow-sm">
-                            <h3 className="text-xl font-semibold mb-3 text-primary">AES: The Gold Standard</h3>
-                            <p className="text-muted-foreground">
-                                **AES (Advanced Encryption Standard)** is the primary choice for securing sensitive data globally. It's fast, efficient, and when used with a strong key, virtually uncrackable.
-                            </p>
-                        </div>
-                        <div className="bg-card p-6 rounded-xl border border-border/50 shadow-sm">
-                            <h3 className="text-xl font-semibold mb-3 text-primary">Rabbit & RC4: Speed & Legacy</h3>
-                            <p className="text-muted-foreground">
-                                Need raw speed? **Rabbit** is a high-performance stream cipher. Working with older systems? **RC4** and **TripleDES** ensure backward compatibility for your encrypted data.
-                            </p>
-                        </div>
-                    </div>
-                </section>
-            </div>
-        ),
+    faqs: [
+      {
+        question: "Can I use this tool for AES encryption?",
+        answer:
+          "Yes. The tool supports common symmetric options including AES and lets you test encryption/decryption behavior.",
+      },
+      {
+        question: "Is browser encryption enough for production security?",
+        answer:
+          "It is useful for testing and demos. Production security still requires managed key lifecycle, secure storage, and policy controls.",
+      },
+      {
+        question: "Why does decryption fail with the same text?",
+        answer:
+          "Failures usually come from mismatched key/algorithm or modified ciphertext formatting between steps.",
+      },
+      {
+        question: "Can I share encrypted output safely?",
+        answer:
+          "You can share ciphertext, but key exchange and storage must be handled securely to maintain confidentiality.",
+      },
+      {
+        question: "Does this replace a full cryptography library?",
+        answer:
+          "No. It is a utility for quick checks, while production systems should rely on vetted libraries and architecture-level controls.",
+      },
+    ],
 
-        faqs: [
-            {
-                question: "Is it safe to encrypt text online?",
-                answer: "Yes, but ONLY if the tool is client-side. Our tool runs entirely in your browser using JavaScript. No data is ever sent to our servers, meaning your 'secret key' and 'text' remain 100% private and under your control."
-            },
-            {
-                question: "Which encryption algorithm should I use?",
-                answer: "We strongly recommend **AES (Advanced Encryption Standard)**. It is the industry standard for security and offers the best balance of protection and performance. Use TripleDES or RC4 only if you have specific legacy requirements."
-            },
-            {
-                question: "Can you recover my text if I lose the key?",
-                answer: "No. Because we value your privacy, we store absolutely nothing. If you lose your secret key, the encrypted text cannot be recovered. This is a feature of true security, not a bug."
-            },
-            {
-                question: "Is this encryption tool free?",
-                answer: "Yes, it is 100% free with no usage limits. You can encrypt and decrypt as many strings as you need."
-            }
-        ]
-    }
+    relatedTools: [
+      { name: "HMAC Generator", href: "/crypto-tools/hmac-generator" },
+      { name: "RSA Key Pair Generator", href: "/crypto-tools/rsa-generator" },
+      { name: "Hash Text", href: "/crypto-tools/hash-text" },
+      { name: "All Crypto Tools", href: "/crypto-tools" },
+    ],
+  },
 })
 
-export const metadata: Metadata = {
-    ...toolConfig.metadata,
-    openGraph: {
-        ...toolConfig.metadata.openGraph,
-        images: ["/images/text-encryption-hero.png"]
-    }
-}
+export const metadata: Metadata = toolConfig.metadata
 
 export default function EncryptDecryptPage() {
-    return (
-        <ToolPageLayout
-            {...toolConfig.getLayoutProps(
-                <EncryptDecryptTool />
-            )}
-        />
-    )
+  return (
+    <ToolPageLayout
+      {...toolConfig.getLayoutProps(
+        <div className="p-3 sm:p-4 md:p-5 rounded-lg bg-card border border-border shadow">
+          <EncryptDecryptTool />
+        </div>
+      )}
+    />
+  )
 }

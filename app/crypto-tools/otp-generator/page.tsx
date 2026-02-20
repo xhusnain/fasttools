@@ -6,18 +6,26 @@ import { OtpGenerator } from "@/components/crypto-tools/otp-generator"
 const toolConfig = createToolConfig({
   toolName: "OTP Code Generator",
   description:
-    "Free otp code generator. totp generator, totp qr code generator. Time-based OTP for 2FA. verification code generator for gmail. otp generation algorithm. No signup.",
-  metaTitle: "OTP Code Generator - Free TOTP Generator, QR Code | 2FA",
+    "Generate RFC 6238 TOTP codes with secret and QR setup support for authenticator workflows.",
+  metaTitle: "OTP Code Generator (TOTP + QR Setup)",
   metaDescription:
-    "Free otp code generator. totp generator with totp qr code generator. Time-based OTP for multi-factor authentication. verification code generator for gmail. No signup.",
+    "Generate TOTP codes and setup values for authenticator apps. Useful for 2FA testing, integration checks, and support workflows.",
   path: "/crypto-tools/otp-generator",
+  keywords: [
+    "otp code generator",
+    "totp generator",
+    "2fa code generator",
+    "totp qr code",
+    "authenticator setup",
+  ],
 
   header: {
-    title: "OTP code generator",
+    title: "OTP Code Generator",
     description:
-      "Generate and validate time-based OTP (one time password) for multi-factor authentication.",
+      "Generate time-based one-time passwords (TOTP) and setup values for 2FA workflows.",
     titleSize: "medium",
     descriptionSize: "small",
+    color: "green",
   },
 
   breadcrumbs: [
@@ -28,104 +36,93 @@ const toolConfig = createToolConfig({
   schemaOptions: {
     applicationCategory: "SecurityApplication",
     description:
-      "Free otp code generator. totp generator, totp qr code generator. Time-based OTP for 2FA.",
-    alternateName: ["TOTP Generator", "OTP Generator", "Free OTP Code Generator"],
+      "Generate RFC 6238-compatible TOTP codes with setup URI and QR representation.",
+    alternateName: ["TOTP Generator", "2FA OTP Generator"],
     featureList: [
-      "totp generator",
-      "totp qr code generator",
-      "Time-based OTP",
-      "otp generation algorithm",
-      "100% client-side, no signup",
+      "TOTP code generation",
+      "Setup secret handling",
+      "QR setup support",
+      "Time-window code display",
     ],
     offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },
   },
 
   content: {
     overview:
-      "Free otp code generator. totp generator and totp qr code generator for time-based one-time passwords (RFC 6238). Use as verification code generator for gmail, 2FA, Google Authenticator. otp generation algorithm runs in browser. free otp code generator, no signup.",
+      "Use this tool to generate TOTP codes and setup values used by authenticator apps. It is useful for 2FA integration testing, account-recovery support checks, and implementation troubleshooting.",
 
     howToSteps: [
-      "Enter or generate a base32 secret. Use the refresh button for a new secret.",
-      "View current, previous, and next OTP. Countdown shows time until next code.",
-      "Scan the totp qr code generator output with Google Authenticator or similar apps.",
+      "Input or generate a base32 secret key.",
+      "Review current and adjacent time-window OTP values.",
+      "Use the setup QR/URI with your authenticator app when needed.",
+      "Validate codes in your target login or integration flow.",
     ],
 
     features: [
-      "totp generator: RFC 6238 time-based OTP",
-      "totp qr code generator: Scan with Google Authenticator, Authy",
-      "Previous, current, next OTP display",
-      "Countdown timer until next code",
-      "Secret in hex, epoch, iteration (otp generation algorithm details)",
-      "100% client-side, no data sent",
+      "RFC 6238 time-based code generation",
+      "Setup secret and QR workflow support",
+      "Current/next-window visibility",
+      "Useful for auth QA and support cases",
+      "Fast browser-based generation",
     ],
 
     useCases: [
-      "free otp code generator: Generate TOTP codes without an authenticator app.",
-      "totp generator: Test or validate TOTP setup. otp-generator npm alternative in browser.",
-      "totp qr code generator: Create QR code for authenticator app setup.",
-      "verification code generator for gmail: Same algorithm as Google 2FA.",
+      "2FA integration development",
+      "Authenticator app setup checks",
+      "Support troubleshooting for OTP mismatch",
+      "Security testing of login flows",
     ],
 
     aboutTool: (
       <div className="space-y-6 text-muted-foreground">
         <p>
-          This free otp code generator implements the totp generator algorithm (RFC
-          6238). It produces time-based one-time passwords used by Google
-          Authenticator, Authy, and other 2FA apps. The totp qr code generator
-          creates a scannable QR code for easy setup. Use as a verification code
-          generator for gmail-style 2FA or otp-generator npm alternative in the
-          browser. otp generation algorithm: HMAC-SHA1(secret, time_counter).
+          TOTP uses shared secrets and time windows to generate short-lived
+          verification codes. It is a common multi-factor mechanism across
+          consumer and enterprise systems.
+        </p>
+        <p>
+          This page is optimized for utility and troubleshooting workflows: set
+          secret, generate code, compare against your system, and verify timing
+          assumptions.
         </p>
       </div>
     ),
 
     proTip:
-      "Keep your secret safe. Anyone with the secret can generate the same OTP codes. Use the totp qr code generator to add to Google Authenticator.",
+      "When OTP validation fails, verify device clock sync and period settings first, then confirm secret encoding and issuer/account labels.",
 
     faqs: [
       {
-        question: "How to create an OTP code?",
+        question: "What standard does this OTP generator follow?",
         answer:
-          "Enter a base32 secret (A-Z, 2-7) or click regenerate. This free otp code generator shows the current OTP. Same totp generator algorithm as Google Authenticator. totp qr code generator creates a QR to scan into your app.",
+          "It follows TOTP behavior aligned with RFC 6238 workflows used by common authenticator apps.",
       },
       {
-        question: "How to generate random OTP?",
+        question: "Can I use this for Google Authenticator setup tests?",
         answer:
-          "TOTP codes are deterministic from secret + time—not random. Use the refresh button to generate a new secret. Each secret produces different OTPs. This free otp code generator supports the standard otp generation algorithm.",
+          "Yes. The setup URI/QR workflow can be used for compatibility checks with authenticator apps.",
       },
       {
-        question: "What is my 6 digit OTP number?",
+        question: "Why does my OTP code expire quickly?",
         answer:
-          "The 6-digit OTP is shown as 'Current OTP' when you enter a valid secret. It updates every 30 seconds. Same format as verification code generator for gmail 2FA.",
+          "TOTP codes are intentionally short-lived and rotate on fixed time intervals for security.",
       },
       {
-        question: "How to get OTP secret?",
+        question: "Why does my app show a different code?",
         answer:
-          "Click the refresh icon to generate a new base32 secret. Or enter one from your 2FA setup. Use the totp qr code generator to create a QR for authenticator apps.",
+          "Differences usually come from clock drift, mismatched secret values, or period/digit configuration mismatches.",
       },
       {
-        question: "Is this a free otp code generator?",
+        question: "Can this replace a full authenticator app?",
         answer:
-          "Yes. Free otp code generator, totp generator, totp qr code generator. 100% client-side. No signup. Use as otp-generator npm alternative or verification code generator for gmail testing.",
-      },
-    ],
-
-    additionalContent: [
-      {
-        heading: "totp generator — RFC 6238",
-        content:
-          "This totp generator implements RFC 6238 (Time-based One-Time Password). Same otp generation algorithm as Google Authenticator. free otp code generator with totp qr code generator. Use for 2FA testing or as otp-generator npm alternative.",
-      },
-      {
-        heading: "totp qr code generator",
-        content:
-          "The totp qr code generator produces a Key URI (otpauth://totp/...) QR code. Scan with Google Authenticator, Authy, or similar. verification code generator for gmail uses the same format.",
+          "It is useful for testing and troubleshooting, while production user flows usually rely on dedicated authenticator apps.",
       },
     ],
 
     relatedTools: [
       { name: "Token Generator", href: "/crypto-tools/token-generator" },
-      { name: "Auth Header Generator", href: "/web-tools/auth-generator" },
+      { name: "HMAC Generator", href: "/crypto-tools/hmac-generator" },
+      { name: "Bcrypt Generator", href: "/crypto-tools/bcrypt" },
       { name: "All Crypto Tools", href: "/crypto-tools" },
     ],
   },

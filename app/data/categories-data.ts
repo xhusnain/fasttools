@@ -31,6 +31,8 @@ import {
     TrendingUp,
     Key,
     Lock,
+    Shield,
+    Fingerprint,
 } from "lucide-react"
 
 export const categories = [
@@ -137,7 +139,7 @@ export const categories = [
     {
         id: "crypto-tools",
         name: "Crypto & Security Tools",
-        description: "Secure cryptographic tools for keys, tokens & passwords",
+        description: "Security-focused tools for hashing, tokens, 2FA, and key workflows",
         icon: Lock,
         href: "/crypto-tools",
         borderColor: "border-border",
@@ -148,7 +150,7 @@ export const categories = [
         tools: [
             {
                 title: "Token Generator",
-                description: "Generate secure random tokens, API keys, and passwords instantly",
+                description: "Generate secure random tokens and API keys with customizable formats",
                 href: "/crypto-tools/token-generator",
                 icon: Key,
                 badge: "Secure",
@@ -156,11 +158,35 @@ export const categories = [
             },
             {
                 title: "OTP Code Generator",
-                description: "Free totp generator, totp qr code generator. Time-based OTP for 2FA, Google Authenticator.",
+                description: "Generate TOTP codes and setup values for authenticator workflows",
                 href: "/crypto-tools/otp-generator",
-                icon: Key,
+                icon: Shield,
                 badge: "2FA",
                 badgeColor: "bg-green-600",
+            },
+            {
+                title: "Bcrypt Generator",
+                description: "Hash and verify passwords with configurable bcrypt cost factors",
+                href: "/crypto-tools/bcrypt",
+                icon: Shield,
+                badge: "Auth",
+                badgeColor: "bg-emerald-600",
+            },
+            {
+                title: "HMAC Generator",
+                description: "Create keyed signatures for API and webhook verification",
+                href: "/crypto-tools/hmac-generator",
+                icon: Lock,
+                badge: "API",
+                badgeColor: "bg-teal-600",
+            },
+            {
+                title: "UUID Generator",
+                description: "Generate UUIDs for records, entities, and distributed-system IDs",
+                href: "/crypto-tools/uuid-generator",
+                icon: Fingerprint,
+                badge: "ID",
+                badgeColor: "bg-cyan-600",
             },
         ],
     },

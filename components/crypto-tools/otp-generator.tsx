@@ -37,7 +37,9 @@ function CopyButton({
   if (!text) return null
   return (
     <button
+      type="button"
       onClick={handleCopy}
+      aria-label={label}
       className="p-1.5 rounded hover:bg-muted/50 text-muted-foreground hover:text-foreground transition-colors"
       title="Copy"
     >
@@ -188,7 +190,9 @@ export function OtpGenerator() {
             <div className="flex flex-col items-center gap-2">
               <img
                 src={qrDataUrl}
-                alt="TOTP QR Code"
+                alt="TOTP setup QR code"
+                loading="lazy"
+                decoding="async"
                 className="w-48 h-48 border border-border rounded-lg"
               />
               {keyUri && (

@@ -1,393 +1,228 @@
-import { Metadata } from 'next';
+import type { Metadata } from "next"
 import { ToolPageLayout } from "@/components/common/tool-page-layout"
 import { createToolConfig } from "@/lib/create-tool-config"
 import { GToolCard } from "@/ui/gtool-card"
-import Link from "next/link"
-import Image from "next/image"
-
-import { Key, Lock, Shield, FileKey, Fingerprint, RefreshCw, Hash } from "lucide-react"
+import {
+  Fingerprint,
+  Hash,
+  Key,
+  Lock,
+  Shield,
+  ShieldCheck,
+  UserRound,
+} from "lucide-react"
 
 const cryptoTools = [
-    {
-        title: "UUID Generator",
-        description: "Generate random (v4), time-based (v1, v6, v7) and namespace UUIDs instantly. Bulk generate and custom format unique identifiers.",
-        href: "/crypto-tools/uuid-generator",
-        icon: Fingerprint,
-        popular: true,
-    },
-    {
-        title: "ULID Generator",
-        description: "Universally Unique Lexicographical Sortable Identifiers. 128-bit compatible with UUID, sortable, and URL-friendly.",
-        href: "/crypto-tools/ulid-generator",
-        icon: Hash,
-        popular: true,
-    },
-    {
-        title: "Token Generator",
-        description: "Generate secure random tokens, API keys, and passwords. Customizable settings for length and character sets.",
-        href: "/crypto-tools/token-generator",
-        icon: Key,
-        popular: true,
-    },
-    {
-        title: "OTP Code Generator",
-        description: "Generate and validate time-based OTP (TOTP) for multi-factor authentication. totp qr code generator, free otp code generator.",
-        href: "/crypto-tools/otp-generator",
-        icon: Shield,
-        popular: true,
-    },
-    {
-        title: "Bcrypt Generator",
-        description: "Generate and verify secure Blowfish-based Bcrypt hashes with adjustable cost factors and strength detection.",
-        href: "/crypto-tools/bcrypt",
-        icon: Shield,
-        popular: true,
-    },
-    {
-        title: "Hash Text",
-        description: "Generate secure cryptographic hashes (MD5, SHA1, SHA256, SHA512) for any text string instantly.",
-        href: "/crypto-tools/hash-text",
-        icon: RefreshCw,
-        popular: true,
-    },
-    {
-        title: "Text Encrypt/Decrypt",
-        description: "Securely encrypt and decrypt text using AES, TripleDES, Rabbit, and RC4 algorithms.",
-        href: "/crypto-tools/encrypt-decrypt",
-        icon: Lock,
-        popular: true,
-    },
-    {
-        title: "BIP39 Generator",
-        description: "Generate secure BIP39 mnemonic phrases and seed codes.",
-        icon: Key,
-        href: "/crypto-tools/bip39-generator"
-    },
-    {
-        title: "HMAC Generator",
-        description: "Compute secure Keyed-Hash Message Authentication Codes.",
-        icon: Shield,
-        href: "/crypto-tools/hmac-generator"
-    },
-    {
-        title: "RSA Key Pair Generator",
-        description: "Generate 2048/4096-bit RSA private and public keys.",
-        icon: Lock,
-        href: "/crypto-tools/rsa-generator"
-    },
-    {
-        title: "Password Analyzer",
-        description: "Test password strength, entropy, and crack time.",
-        icon: Shield,
-        href: "/crypto-tools/password-strength-analyzer"
-    },
+  {
+    title: "UUID Generator",
+    description:
+      "Generate UUID versions including random and time-ordered formats for apps and databases.",
+    href: "/crypto-tools/uuid-generator",
+    icon: Fingerprint,
+  },
+  {
+    title: "ULID Generator",
+    description:
+      "Create lexicographically sortable 128-bit IDs suitable for ordered database inserts.",
+    href: "/crypto-tools/ulid-generator",
+    icon: Hash,
+  },
+  {
+    title: "Token Generator",
+    description:
+      "Generate secure random tokens, API keys, PINs, and formatted secrets.",
+    href: "/crypto-tools/token-generator",
+    icon: Key,
+  },
+  {
+    title: "OTP Code Generator",
+    description:
+      "Generate RFC 6238-compatible TOTP codes and setup QR values for authenticator apps.",
+    href: "/crypto-tools/otp-generator",
+    icon: Shield,
+  },
+  {
+    title: "Bcrypt Generator",
+    description:
+      "Hash and verify passwords with bcrypt using configurable cost factors.",
+    href: "/crypto-tools/bcrypt",
+    icon: ShieldCheck,
+  },
+  {
+    title: "Hash Text",
+    description:
+      "Generate message digests with MD5, SHA families, and related algorithms.",
+    href: "/crypto-tools/hash-text",
+    icon: Fingerprint,
+  },
+  {
+    title: "Text Encrypt/Decrypt",
+    description:
+      "Encrypt and decrypt plain text using common symmetric algorithms.",
+    href: "/crypto-tools/encrypt-decrypt",
+    icon: Lock,
+  },
+  {
+    title: "BIP39 Generator",
+    description:
+      "Generate and validate mnemonic seed phrases for compatible crypto wallets.",
+    href: "/crypto-tools/bip39-generator",
+    icon: Key,
+  },
+  {
+    title: "HMAC Generator",
+    description:
+      "Create keyed signatures for webhook verification and signed request workflows.",
+    href: "/crypto-tools/hmac-generator",
+    icon: Shield,
+  },
+  {
+    title: "RSA Key Pair Generator",
+    description:
+      "Generate RSA public/private key pairs for encryption and signing workflows.",
+    href: "/crypto-tools/rsa-generator",
+    icon: Lock,
+  },
+  {
+    title: "Password Analyzer",
+    description:
+      "Estimate password strength and entropy with modern security guidance.",
+    href: "/crypto-tools/password-strength-analyzer",
+    icon: UserRound,
+  },
 ]
 
 const toolConfig = createToolConfig({
-    toolName: "Free Crypto & Security Tools",
-    description: "Secure and free online crypto tools: Bcrypt Generator, Token Generator, and more. Essential security utilities.",
-    metaTitle: "Crypto Tools - Professional Security & Cryptography Utilities",
-    metaDescription: "Free online crypto tools for developers & security professionals. Bcrypt, Token Generator, Hash Text. Client-side, privacy-first & secure.",
-    path: "/crypto-tools",
+  toolName: "Crypto Tools",
+  description:
+    "Free browser-based cryptography and security tools for hashing, token generation, encryption, keys, and password analysis.",
+  metaTitle: "Crypto Tools: UUID, ULID, Tokens, Hashing, Keys",
+  metaDescription:
+    "Security-focused crypto tools for developers and teams: UUID/ULID generators, token and OTP tools, bcrypt/hash/HMAC, RSA keys, BIP39, and password analysis.",
+  path: "/crypto-tools",
+  keywords: [
+    "crypto tools",
+    "security tools",
+    "token generator",
+    "uuid generator",
+    "bcrypt generator",
+    "hmac generator",
+    "rsa key generator",
+  ],
 
-    schemaOptions: {
-        itemList: {
-            name: "Crypto Tools Collection",
-            description: "Collection of free online cryptography and security tools including Token Generator.",
-            items: cryptoTools.map(tool => ({
-                name: tool.title,
-                description: tool.description,
-                url: tool.href
-            }))
-        }
+  schemaOptions: {
+    itemList: {
+      name: "Crypto Tools Collection",
+      description:
+        "A collection of online cryptography and security utilities for developers and security teams.",
+      items: cryptoTools.map((tool) => ({
+        name: tool.title,
+        description: tool.description,
+        url: tool.href,
+      })),
     },
+  },
 
-    header: {
-        title: "Crypto Tools - Professional Security & Cryptography Utilities",
-        description: "Free Online Crypto Tools for Developers & Security Professionals. Discover our comprehensive collection running locally in your browser.",
-        titleSize: "medium",
-        descriptionSize: "small",
-        color: "green",
-    },
+  header: {
+    title: "Crypto Tools",
+    description:
+      "Practical browser tools for secure generation, hashing, encryption, verification, and credential analysis.",
+    titleSize: "large",
+    descriptionSize: "small",
+    color: "green",
+  },
 
-    breadcrumbs: [
-        { label: "Crypto Tools", href: "/crypto-tools" },
+  breadcrumbs: [{ label: "Crypto Tools", href: "/crypto-tools" }],
+
+  content: {
+    overview:
+      "This category is built for utility intent: generate secure values, validate cryptographic outputs, and move quickly during implementation or debugging. Each tool is task-focused and designed for immediate use in developer and security workflows.",
+
+    features: [
+      "Client-side execution for standard text/key workflows",
+      "Focused pages for hashing, key generation, and identifier utilities",
+      "Structured how-to guidance and FAQ coverage",
+      "Cross-linking between related security tasks",
+      "No-install workflows suitable for quick validation",
     ],
 
-    content: {
-        overview: "Discover our comprehensive collection of crypto tools designed for developers, security professionals, and blockchain enthusiasts. All tools are free, run locally in your browser, and prioritize your privacy with client-side processing.",
+    useCases: [
+      "Developer setup and API integration testing",
+      "Webhook signature verification",
+      "Authentication and password-hardening workflows",
+      "Database ID strategy (UUID/ULID) evaluation",
+      "Security QA and implementation checks",
+    ],
 
-        howToSteps: [
-            "Select a Tool: Choose the specific crypto tool you need from our collection, such as the Bcrypt Generator or Token Generator.",
-            "Configure Settings: Adjust the settings to match your requirements, such as salt rounds for Bcrypt or token length for the Generator.",
-            "Generate Instantly: Click the generate button. Our tools use your browser's built-in Web Crypto API or verified libraries to create cryptographically secure results instantly.",
-            "Copy & Use: Copy your secure output. Since everything runs client-side, your data remains private and never leaves your device."
-        ],
+    aboutTool: (
+      <div className="space-y-6 text-muted-foreground">
+        <p>
+          Security-tool SERPs usually favor pages that combine immediate utility
+          with implementation clarity. This category focuses on that pattern by
+          prioritizing direct interaction and concise, standards-aware guidance.
+        </p>
+        <p>
+          Instead of broad promotional content, each page is organized around
+          practical outcomes: generate, verify, export, and apply securely in a
+          real build workflow.
+        </p>
+      </div>
+    ),
 
-        features: [
-            "100% Client-Side: All cryptographic operations execute directly in your browser. No data is ever sent to our servers.",
-            "CSPRNG Security: Uses the Cryptographically Secure Pseudo-Random Number Generator standard for production-grade security.",
-            "Zero Data Storage: We don't store, track, or log any of your generated keys. Once you close the tab, it's gone.",
-            "Customizable Output: Flexible controls for length, character sets, and formatting to meet specific API or security requirements.",
-            "Instant & Free: Professional-grade security tools available instantly without registration or paywalls."
-        ],
+    faqs: [
+      {
+        question: "Who is this crypto tools category for?",
+        answer:
+          "Developers, DevOps teams, security engineers, QA analysts, and technically inclined users who need reliable cryptographic utilities.",
+      },
+      {
+        question: "Are these tools suitable for production workflows?",
+        answer:
+          "They are suitable for generation, testing, and validation workflows. Final production controls should still follow your security policy and key-management standards.",
+      },
+      {
+        question: "Do I need to install anything to use these tools?",
+        answer:
+          "No. The tools are browser-based and designed for quick usage without local package installation.",
+      },
+      {
+        question: "How should I choose between UUID and ULID?",
+        answer:
+          "UUID is widely supported across systems, while ULID offers lexicographic time ordering that can improve some database insert/index patterns.",
+      },
+      {
+        question: "Can these tools help with webhook and API signing checks?",
+        answer:
+          "Yes. HMAC, token, and hashing tools are commonly used for API and webhook validation workflows.",
+      },
+    ],
 
-        aboutTool: (
-            <div className="space-y-12 text-foreground">
-                <div className="relative w-full h-64 md:h-80 lg:h-96 rounded-xl overflow-hidden mb-8 border border-border/50 shadow-2xl">
-                    <Image
-                        src="/images/crypto-hero.png"
-                        alt="Crypto Tools Hero - Digital Security Illustration"
-                        fill
-                        className="object-cover transform hover:scale-105 transition-transform duration-700"
-                        priority
-                    />
-                </div>
-
-                <section>
-                    <h2 className="text-2xl font-bold mb-4">What Are Crypto Tools?</h2>
-                    <p className="text-muted-foreground leading-relaxed">
-                        <span className="font-semibold text-primary">Crypto tools</span> are specialized utilities that help developers and security professionals generate secure credentials, manage cryptographic data, and perform encryption tasks. From API key generation to token creation, these tools use industry-standard cryptographic algorithms to ensure maximum security for your digital assets.
-                    </p>
-                </section>
-
-                <hr className="border-border/40" />
-
-                <section>
-                    <h2 className="text-2xl font-bold mb-4">Best Crypto Trading Tools & Analysis Utilities</h2>
-                    <div className="bg-card p-6 rounded-xl border border-border/50">
-                        <h3 className="text-xl font-semibold mb-3 text-primary">Token Generator - Create Secure API Keys & Passwords</h3>
-                        <p className="text-muted-foreground mb-4">
-                            Generate cryptographically secure random tokens, API keys, session IDs, and passwords instantly. Our token generator uses the Web Crypto API's CSPRNG (Cryptographically Secure Pseudo-Random Number Generator) for production-ready security.
-                        </p>
-
-                        <div className="grid md:grid-cols-2 gap-6 mt-6">
-                            <div>
-                                <h4 className="font-semibold mb-2">Features:</h4>
-                                <ul className="list-disc pl-5 space-y-1 text-sm text-muted-foreground">
-                                    <li>Customizable token length (16-512 characters)</li>
-                                    <li>Multiple character sets (alphanumeric, symbols, hex)</li>
-                                    <li>Instant generation with one click</li>
-                                    <li>100% client-side processing for privacy</li>
-                                    <li>Copy to clipboard functionality</li>
-                                </ul>
-                            </div>
-                            <div>
-                                <h4 className="font-semibold mb-2">Use Cases:</h4>
-                                <ul className="list-disc pl-5 space-y-1 text-sm text-muted-foreground">
-                                    <li>API key generation for REST APIs</li>
-                                    <li>Session token creation</li>
-                                    <li>Secure password generation</li>
-                                    <li>Salt generation for password hashing</li>
-                                    <li>OAuth tokens and secrets</li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                </section>
-
-                <section>
-                    <h2 className="text-2xl font-bold mb-4">Crypto Analysis Tools for Research & Trading</h2>
-                    <p className="text-muted-foreground mb-4">
-                        While our current focus is on security and cryptography tools, we're expanding to include:
-                    </p>
-                    <ul className="grid md:grid-cols-2 lg:grid-cols-3 gap-3">
-                        <li className="flex items-center gap-2 p-3 bg-muted/30 rounded-lg text-sm"><span className="h-2 w-2 rounded-full bg-blue-500"></span>Crypto research tools</li>
-                        <li className="flex items-center gap-2 p-3 bg-muted/30 rounded-lg text-sm"><span className="h-2 w-2 rounded-full bg-blue-500"></span>Crypto charting tools</li>
-                        <li className="flex items-center gap-2 p-3 bg-muted/30 rounded-lg text-sm"><span className="h-2 w-2 rounded-full bg-blue-500"></span>Crypto price prediction tools</li>
-                        <li className="flex items-center gap-2 p-3 bg-muted/30 rounded-lg text-sm"><span className="h-2 w-2 rounded-full bg-blue-500"></span>Blockchain forensics tools</li>
-                        <li className="flex items-center gap-2 p-3 bg-muted/30 rounded-lg text-sm"><span className="h-2 w-2 rounded-full bg-blue-500"></span>Crypto analytics tools</li>
-                    </ul>
-                    <p className="text-sm italic text-muted-foreground mt-3">
-                        *Coming soon: Crypto trading tools for day trading, DeFi analysis, and blockchain monitoring.*
-                    </p>
-                </section>
-
-                <hr className="border-border/40" />
-
-                <section>
-                    <h2 className="text-2xl font-bold mb-6">Why Choose Our Crypto Tools?</h2>
-                    <div className="grid md:grid-cols-2 gap-6">
-                        <div className="space-y-2">
-                            <h3 className="font-bold text-lg">1. Bank-Level Security</h3>
-                            <p className="text-sm text-muted-foreground">All our <span className="font-semibold text-foreground">cryptography tools</span> use the Web Crypto API standard, ensuring your generated keys and tokens meet production security requirements. Perfect for developers building secure applications.</p>
-                        </div>
-                        <div className="space-y-2">
-                            <h3 className="font-bold text-lg">2. 100% Privacy-First</h3>
-                            <p className="text-sm text-muted-foreground">Unlike other online crypto tools, we never transmit your data. All processing happens locally in your browser, meaning your private keys, tokens, and passwords never leave your device.</p>
-                        </div>
-                        <div className="space-y-2">
-                            <h3 className="font-bold text-lg">3. Free & Unlimited</h3>
-                            <p className="text-sm text-muted-foreground">No registration, no limits, no hidden fees. Use our crypto currency tools as many times as you need, completely free.</p>
-                        </div>
-                        <div className="space-y-2">
-                            <h3 className="font-bold text-lg">4. Developer-Friendly</h3>
-                            <p className="text-sm text-muted-foreground">Clean interface, instant results, and copy-to-clipboard functionality make our tools perfect for developers who need quick, reliable crypto utilities.</p>
-                        </div>
-                    </div>
-                </section>
-
-                <section>
-                    <h2 className="text-2xl font-bold mb-6">Popular Crypto Tools Use Cases</h2>
-                    <div className="grid md:grid-cols-3 gap-6">
-                        <div className="bg-muted/20 p-5 rounded-lg">
-                            <h3 className="font-bold mb-3">For Blockchain Development</h3>
-                            <ul className="list-disc pl-4 space-y-1 text-sm text-muted-foreground">
-                                <li>Generate secure wallet addresses</li>
-                                <li>Create API keys for blockchain nodes</li>
-                                <li>Produce random seeds for testing</li>
-                                <li>Generate contract deployment keys</li>
-                            </ul>
-                        </div>
-                        <div className="bg-muted/20 p-5 rounded-lg">
-                            <h3 className="font-bold mb-3">For Web Development</h3>
-                            <ul className="list-disc pl-4 space-y-1 text-sm text-muted-foreground">
-                                <li>API authentication tokens</li>
-                                <li>Session management keys</li>
-                                <li>CSRF tokens</li>
-                                <li>JWT secrets</li>
-                                <li>Database encryption keys</li>
-                            </ul>
-                        </div>
-                        <div className="bg-muted/20 p-5 rounded-lg">
-                            <h3 className="font-bold mb-3">For Security Professionals</h3>
-                            <ul className="list-disc pl-4 space-y-1 text-sm text-muted-foreground">
-                                <li>Password generation and testing</li>
-                                <li>Security token creation</li>
-                                <li>Penetration testing credentials</li>
-                                <li>Secure random data generation</li>
-                            </ul>
-                        </div>
-                    </div>
-                </section>
-
-                <hr className="border-border/40" />
-
-                <section>
-                    <h2 className="text-2xl font-bold mb-4">Crypto Tools for Windows, macOS & Linux</h2>
-                    <p className="text-muted-foreground mb-4">
-                        Our <span className="font-semibold text-foreground">crypto tools online</span> work seamlessly across all platforms:
-                    </p>
-                    <ul className="grid grid-cols-2 md:grid-cols-4 gap-3 mb-4">
-                        <li className="text-center p-3 bg-card border rounded-lg text-sm font-medium">Windows 10/11</li>
-                        <li className="text-center p-3 bg-card border rounded-lg text-sm font-medium">macOS (Intel & Silicon)</li>
-                        <li className="text-center p-3 bg-card border rounded-lg text-sm font-medium">Linux (All Distros)</li>
-                        <li className="text-center p-3 bg-card border rounded-lg text-sm font-medium">iOS & Android</li>
-                    </ul>
-                    <p className="text-sm text-muted-foreground">
-                        No installation required - just visit our website and start using professional-grade cryptography tools instantly.
-                    </p>
-                </section>
-
-                <div className="grid md:grid-cols-2 gap-8">
-                    <section>
-                        <h2 className="text-xl font-bold mb-3">Best Crypto Tools for Day Trading (Coming Soon)</h2>
-                        <ul className="space-y-2 text-sm text-muted-foreground">
-                            <li>• Real-time market analysis</li>
-                            <li>• Portfolio tracking and rebalancing</li>
-                            <li>• Trading signal generators</li>
-                            <li>• Risk management calculators</li>
-                            <li>• Profit/loss trackers</li>
-                        </ul>
-                    </section>
-
-                    <section>
-                        <h2 className="text-xl font-bold mb-3">Crypto Mining Tools & Monitoring</h2>
-                        <ul className="space-y-2 text-sm text-muted-foreground">
-                            <li>• Mining profitability calculators</li>
-                            <li>• Hashrate monitors</li>
-                            <li>• Pool performance trackers</li>
-                            <li>• Hardware comparison tools</li>
-                            <li>• Energy cost calculators</li>
-                        </ul>
-                    </section>
-                </div>
-
-                <hr className="border-border/40" />
-
-                <section>
-                    <h2 className="text-2xl font-bold mb-4">Elite Crypto Tools for Professional Use</h2>
-                    <p className="text-muted-foreground mb-6">
-                        Our platform serves thousands of developers, security professionals, and blockchain engineers who need reliable, fast, and secure cryptography utilities. Whether you're building the next DeFi platform or securing enterprise APIs, our tools provide the foundation for cryptographic excellence.
-                    </p>
-                    <div className="space-y-2">
-                        <h3 className="font-bold">Key Benefits:</h3>
-                        <div className="flex flex-wrap gap-3">
-                            {["Military-grade randomness", "Zero server-side processing", "Instant results", "Mobile-responsive", "No tracking", "Open-source algorithms", "GDPR compliant"].map((benefit) => (
-                                <span key={benefit} className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-green-100 text-green-800 dark:bg-green-900/30 dark:text-green-400">
-                                    ✓ {benefit}
-                                </span>
-                            ))}
-                        </div>
-                    </div>
-                </section>
-
-                <section className="bg-muted/10 p-6 rounded-xl border border-dashed border-border">
-                    <h2 className="text-2xl font-bold mb-4">Get Started with Free Crypto Tools Today</h2>
-                    <p className="text-muted-foreground mb-4">
-                        No credit card required. No registration needed. Just visit our <span className="font-semibold text-foreground">crypto tools online</span> platform and start generating secure tokens, keys, and passwords instantly.
-                    </p>
-                    <p className="font-medium text-foreground">
-                        Ready to secure your applications? Try our Token Generator now.
-                    </p>
-                </section>
-
-                <section>
-                    <h2 className="text-xl font-bold mb-2">Why Privacy Matters in Crypto Tools</h2>
-                    <p className="text-muted-foreground">
-                        When working with sensitive cryptographic data, privacy isn't optional - it's essential. Many online tools send your data to servers for processing, creating security vulnerabilities. Our <strong>crypto tools website</strong> eliminates this risk entirely by processing everything locally. <span className="text-foreground font-semibold">Your data never leaves your browser. Period.</span>
-                    </p>
-                </section>
-            </div>
-        ),
-
-        faqs: [
-            {
-                question: "What is a crypto tool?",
-                answer: "A crypto tool is a software utility that performs cryptographic operations such as generating secure random data, creating encryption keys, hashing passwords, or managing digital signatures. These tools are essential for developers building secure applications."
-            },
-            {
-                question: "Are online crypto tools safe to use?",
-                answer: "Our crypto tools are completely safe because all processing happens locally in your browser using the Web Crypto API. Your generated tokens, keys, and passwords never leave your device, ensuring maximum privacy and security."
-            },
-            {
-                question: "What are the best crypto tools for beginners?",
-                answer: "For beginners, we recommend starting with our Token Generator to understand secure random generation. It's simple, intuitive, and teaches the fundamentals of cryptographic security without requiring technical expertise."
-            },
-            {
-                question: "Can I use these crypto tools for production applications?",
-                answer: "Absolutely. Our tools use CSPRNG (Cryptographically Secure Pseudo-Random Number Generator) which meets industry standards for production use. The generated tokens and keys are suitable for APIs, databases, and security-critical applications."
-            },
-            {
-                question: "Do I need to download crypto tools?",
-                answer: "No download required. Our crypto tools website runs entirely in your browser, providing instant access to professional cryptography utilities without installation, registration, or subscriptions."
-            },
-            {
-                question: "What's the difference between crypto tools and blockchain tools?",
-                answer: "Crypto tools focus on cryptographic operations (encryption, key generation, hashing), while blockchain tools specifically handle distributed ledger technologies. However, there's significant overlap - many blockchain applications require cryptographic tools for security."
-            }
-        ]
-    }
+    relatedTools: [
+      { name: "Web Tools", href: "/web-tools" },
+      { name: "Developer Tools", href: "/dev-tools" },
+      { name: "AI Tools", href: "/ai-tools" },
+    ],
+  },
 })
 
 export const metadata: Metadata = toolConfig.metadata
 
 export default function CryptoToolsPage() {
-    return (
-        <ToolPageLayout
-            {...toolConfig.getLayoutProps(
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
-                    {cryptoTools.map((tool) => (
-                        <GToolCard
-                            key={`crypto-tools-${tool.href}`}
-                            title={tool.title}
-                            description={tool.description}
-                            href={tool.href}
-                            icon={tool.icon}
-                        />
-                    ))}
-                </div>
-            )}
-        />
-    )
+  return (
+    <ToolPageLayout
+      {...toolConfig.getLayoutProps(
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
+          {cryptoTools.map((tool) => (
+            <GToolCard
+              key={`crypto-tools-${tool.href}`}
+              title={tool.title}
+              description={tool.description}
+              href={tool.href}
+              icon={tool.icon}
+            />
+          ))}
+        </div>
+      )}
+    />
+  )
 }
