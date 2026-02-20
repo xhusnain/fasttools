@@ -408,7 +408,7 @@ export const categories = [
         tools: [
             {
                 title: "Instagram DP Viewer",
-                description: "Lookup and view Instagram profile pictures for reference workflows.",
+                description: "Use Instagram DP Viewer to lookup and view full-size profile pictures for reference workflows.",
                 href: "/social-media-tools/instagram-dp",
                 icon: Download,
                 badge: "Popular",

@@ -25,8 +25,8 @@ export async function generateMetadata(props: Props): Promise<Metadata> {
   if (!variant) return {}
 
   return {
-    title: `${variant.headerTitle} | Instagram DP Viewer`,
-    description: `${variant.headerDescription} Focused profile-picture workflow page.`,
+    title: variant.metaTitle,
+    description: variant.metaDescription,
     alternates: {
       canonical: `/social-media-tools/instagram-dp/${slug}`,
     },
@@ -41,21 +41,27 @@ export default async function InstagramDpVariantPage(props: Props) {
     notFound()
   }
 
+  const relatedVariantLinks = Object.values(dpVariants)
+    .filter((item) => item.slug !== slug)
+    .slice(0, 4)
+    .map((item) => ({ name: item.headerTitle, href: `/social-media-tools/instagram-dp/${item.slug}` }))
+
   const toolConfig = createToolConfig({
-    toolName: variant.headerTitle,
-    description: `${variant.headerDescription} Use this route for focused profile-picture lookup workflows.`,
-    metaTitle: `${variant.headerTitle} | Instagram DP Viewer`,
-    metaDescription: `${variant.headerDescription} Browser-based lookup and download flow.`,
+    toolName: variant.toolName,
+    description: variant.metaDescription,
+    metaTitle: variant.metaTitle,
+    metaDescription: variant.metaDescription,
     path: `/social-media-tools/instagram-dp/${slug}`,
+    keywords: variant.keywords || ["instagram dp viewer", "insta dp viewer", "instagram profile picture viewer"],
 
     schemaOptions: {
       applicationCategory: "UtilitiesApplication",
-      description: "Instagram profile-picture variant page for focused lookup workflows.",
+      description: `${variant.headerTitle} variant page for focused Instagram profile-picture workflows.`,
       featureList: [
-        "Variant-specific profile-picture lookup",
-        "Username-based search",
-        "Download workflow",
-        "No-install utility",
+        `${variant.headerTitle} workflow`,
+        "Username-based profile-picture lookup",
+        "Download option",
+        "Browser-based utility",
       ],
       offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },
     },
@@ -74,66 +80,88 @@ export default async function InstagramDpVariantPage(props: Props) {
     ],
 
     content: {
-      overview:
-        `This variant page focuses on ${variant.headerTitle.toLowerCase()} use cases. Enter a username, review available profile-picture output, and continue your social workflow quickly.`,
+      overview: variant.overviewText,
 
-      howToSteps: [
-        "Enter the target Instagram username.",
-        "Run lookup and review the profile-picture output.",
-        "Inspect the result in preview.",
-        "Download if needed.",
+      howToSteps: variant.howToSteps || [
+        "Enter the Instagram username in the viewer input.",
+        "Run lookup to load profile-picture output.",
+        "Inspect the full-size preview.",
+        "Download if a local copy is needed.",
       ],
 
-      features: [
-        `Focused ${variant.headerTitle.toLowerCase()} workflow`,
-        "Username lookup",
-        "Fast preview output",
-        "Download option",
-        "Cross-device browser support",
+      features: variant.featureOverrides || [
+        `${variant.headerTitle} intent targeting`,
+        "Username-based lookup",
+        "Fast preview and download workflow",
+        "No-login browser utility",
+        "Desktop and mobile support",
       ],
 
       useCases: [
-        "Profile reference checks",
-        "Brand asset review",
-        "Creator research workflows",
-        "Team handoff operations",
+        "Long-tail keyword intent matching",
+        "Creator and brand profile checks",
+        "Editorial and design reference workflows",
+        "Team operations with variant-specific routing",
       ],
 
-      aboutTool:
-        "Variant routes support narrower search intents while preserving the same reliable lookup workflow and internal link structure.",
+      aboutTool: (
+        <div className="space-y-6 text-muted-foreground">
+          <div>
+            <h3 className="text-lg font-semibold text-foreground mb-2">Variant Intent</h3>
+            <p>
+              This page targets users searching for {variant.headerTitle.toLowerCase()} and related query variants. It keeps the same core viewer functionality while narrowing copy and metadata to a specific intent cluster.
+            </p>
+          </div>
+
+          <div>
+            <h3 className="text-lg font-semibold text-foreground mb-2">Keyword Focus</h3>
+            <p>
+              Primary terms for this route include: {(variant.keywords || ["instagram dp viewer", "insta dp viewer", "instagram profile picture viewer"]).slice(0, 3).join(", ")}. This helps avoid duplicate intent across DP pages and improves long-tail topical coverage.
+            </p>
+          </div>
+
+          <div>
+            <h3 className="text-lg font-semibold text-foreground mb-2">Scope and Limits</h3>
+            <p>
+              This page is limited to profile-picture workflows and does not provide access to private posts, stories, or restricted account content.
+            </p>
+          </div>
+        </div>
+      ),
 
       proTip:
-        "Use exact usernames to reduce lookup mismatches.",
+        "Use exact usernames and canonical Instagram profile links for best lookup accuracy.",
 
       faqs: [
+        ...(variant.faqOverrides || []),
         {
-          question: "Why are there variant pages for DP viewer?",
+          question: "What makes this variant different from the main DP page?",
           answer:
-            "They align with specific search intents while using the same core lookup functionality.",
+            "It targets a narrower query cluster while using the same underlying viewer workflow.",
         },
         {
-          question: "Can I use this on phone browsers?",
+          question: "Can I use this variant on mobile browsers?",
           answer: "Yes. Mobile and desktop browsers are supported.",
         },
         {
-          question: "Do I need signup?",
-          answer: "No. This is a browser-based utility with no signup required.",
+          question: "Do I need to login to use this page?",
+          answer: "No. It is designed for no-login usage.",
         },
         {
-          question: "Will every username return a result?",
+          question: "Will every username return output?",
           answer:
             "Output depends on source availability and account visibility.",
         },
         {
           question: "Is this free?",
-          answer: "Yes. It is available as a free utility.",
+          answer: "Yes. This variant page is free to use.",
         },
       ],
 
       relatedTools: [
         { name: "Instagram DP Viewer", href: "/social-media-tools/instagram-dp" },
+        ...relatedVariantLinks,
         { name: "Instagram Downloader", href: "/social-media-tools/instagram-downloader" },
-        { name: "Link in Bio Generator", href: "/social-media-tools/link-in-bio" },
         { name: "All Social Media Tools", href: "/social-media-tools" },
       ],
     },
