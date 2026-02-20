@@ -14,6 +14,8 @@ import {
 import type { ToolPageLayoutProps } from "@/types/tool-page-layout.types"
 import { SquareAd } from "@/components/ads/square-ad"
 import { ClickFortifyAd } from "@/components/custom-ads/cf-ads/ClickFortifyAd"
+import { WebMCPToolRegistration } from "@/components/common/webmcp-tool-registration"
+import { buildWebMCPDescription, getInteractionMode } from "@/lib/webmcp-utils"
 
 export function ToolPageLayout({
     header,
@@ -107,7 +109,10 @@ export function ToolPageLayout({
 
 
                         <div className="space-y-4 lg:space-y-6 min-w-0 max-w-full overflow-hidden">
-                            {toolComponent}
+                            {/* WebMCP: data-webmcp-tool marks this as the interactive tool region for AI agents */}
+                            <div data-webmcp-tool data-tool-name={toolContent.toolName} data-tool-path={expectedMetadata?.path || ""} data-interaction-mode={getInteractionMode(expectedMetadata?.path)}>
+                                {toolComponent}
+                            </div>
 
                             <section className="bg-card border border-border rounded-lg p-6">
                                 <div className="flex items-center gap-3 mb-4">
@@ -373,6 +378,18 @@ export function ToolPageLayout({
                     </div>
                 </div>
             </div>
+            {/* WebMCP: Register this tool with browser AI agent API (Chrome 146+) */}
+            <WebMCPToolRegistration
+                toolName={toolContent.toolName}
+                toolDescription={buildWebMCPDescription(
+                    toolContent.toolName,
+                    toolContent.overview,
+                    toolContent.features
+                )}
+                toolPath={expectedMetadata?.path || ""}
+                toolCategory={breadcrumbs?.[0]?.label}
+            />
+
             {process.env.NODE_ENV === "development" && expectedMetadata && (
                 <div className="hidden">
                     {/* Metadata validation placeholder if needed */}

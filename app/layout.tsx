@@ -26,7 +26,7 @@ export const metadata: Metadata = {
         default: "FastTools - 1000+ Free Online Tools",
         template: "%s",
     },
-    description: "FastTools provides 1000+ free online tools and expert articles: PDF tools, AI generators, calculators, developer utilities, and a tech blog with in-depth tutorials. 100% free, secure local processing, and works on all devices.",
+    description: "The world's first WebMCP-enabled tools platform. 170+ free AI-agent-interactable tools: calculators, converters, crypto, PDF, developer tools. AI agents can discover, fill, and use every tool automatically. 100% free, secure local processing.",
     authors: [{ name: "FastTools Team", url: "https://www.fasttools.store" }],
     robots: {
         index: true,
@@ -60,7 +60,7 @@ export default function RootLayout({
         name: "FastTools",
         alternateName: ["fasttools", "fast tools", "fasttools.store"],
         url: "https://www.fasttools.store",
-        description: "FastTools offers 1000+ free online tools and a comprehensive tech blog featuring AI generators, converters, calculators, and expert development guides. Fast, accurate, secure, and always free.",
+        description: "FastTools is the world's first WebMCP-enabled free online tools platform. 170+ tools that AI agents can discover, fill, and use automatically. Calculators, converters, crypto, PDF, developer tools — all AI-interactable.",
         foundingDate: "2024",
         sameAs: [
             "https://x.com/ZamanIsmail7",
@@ -79,6 +79,9 @@ export default function RootLayout({
             addressCountry: "US",
         },
         knowsAbout: [
+            "WebMCP",
+            "Web Model Context Protocol",
+            "AI Agent Interactivity",
             "Online Tools",
             "AI Content Generation",
             "Web Development Tools",
