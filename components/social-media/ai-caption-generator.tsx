@@ -7,16 +7,58 @@ import { GTextarea } from "@/ui/gtextarea"
 import { GCard } from "@/ui/gcard"
 import { GAlert, GAlertDescription } from "@/ui/galert"
 
-import { Copy, ImageIcon, Sparkles, AlertCircle, CheckCircle, RefreshCw } from "lucide-react"
+import {
+  AlertCircle,
+  CheckCircle,
+  Copy,
+  RefreshCw,
+  Sparkles,
+} from "lucide-react"
 import { LoadingSpinner } from "@/components/common/loading-spinner"
+
 const PLATFORMS = [
-  { value: "instagram", label: "Instagram", icon: "📸", description: "Visual storytelling with hashtags" },
-  { value: "facebook", label: "Facebook", icon: "👥", description: "Community-focused content" },
-  { value: "twitter", label: "Twitter/X", icon: "🐦", description: "Concise and engaging" },
-  { value: "linkedin", label: "LinkedIn", icon: "💼", description: "Professional insights" },
-  { value: "tiktok", label: "TikTok", icon: "🎵", description: "Trendy and viral content" },
-  { value: "pinterest", label: "Pinterest", icon: "📌", description: "Inspirational and searchable" },
-  { value: "youtube", label: "YouTube", icon: "📺", description: "Video descriptions" },
+  {
+    value: "instagram",
+    label: "Instagram",
+    icon: "📸",
+    description: "Visual storytelling with hashtags",
+  },
+  {
+    value: "facebook",
+    label: "Facebook",
+    icon: "👥",
+    description: "Community-focused content",
+  },
+  {
+    value: "twitter",
+    label: "Twitter/X",
+    icon: "🐦",
+    description: "Concise and engaging",
+  },
+  {
+    value: "linkedin",
+    label: "LinkedIn",
+    icon: "💼",
+    description: "Professional insights",
+  },
+  {
+    value: "tiktok",
+    label: "TikTok",
+    icon: "🎵",
+    description: "Trendy and viral content",
+  },
+  {
+    value: "pinterest",
+    label: "Pinterest",
+    icon: "📌",
+    description: "Inspirational and searchable",
+  },
+  {
+    value: "youtube",
+    label: "YouTube",
+    icon: "📺",
+    description: "Video descriptions",
+  },
 ]
 
 export function AiCaptionGenerator() {
@@ -28,7 +70,9 @@ export function AiCaptionGenerator() {
   const [copiedIndex, setCopiedIndex] = useState<number | null>(null)
 
   const generateCaptions = async () => {
-    if (!description.trim()) return
+    if (!description.trim()) {
+      return
+    }
 
     setLoading(true)
     setError(null)
@@ -40,7 +84,7 @@ export function AiCaptionGenerator() {
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
           action: "generate-captions",
-          data: { description, platform }
+          data: { description, platform },
         }),
       })
 
@@ -55,9 +99,13 @@ export function AiCaptionGenerator() {
       } else {
         throw new Error("Invalid response format")
       }
-    } catch (error) {
-      console.error("Error generating captions:", error)
-      setError(error instanceof Error ? error.message : "Something went wrong")
+    } catch (requestError) {
+      console.error("Error generating captions:", requestError)
+      setError(
+        requestError instanceof Error
+          ? requestError.message
+          : "Something went wrong"
+      )
     } finally {
       setLoading(false)
     }
@@ -68,16 +116,15 @@ export function AiCaptionGenerator() {
       await navigator.clipboard.writeText(caption)
       setCopiedIndex(index)
       setTimeout(() => setCopiedIndex(null), 2000)
-    } catch (error) {
-      console.error("Failed to copy:", error)
+    } catch (copyError) {
+      console.error("Failed to copy:", copyError)
     }
   }
 
-  const selectedPlatform = PLATFORMS.find(p => p.value === platform)
+  const selectedPlatform = PLATFORMS.find((item) => item.value === platform)
 
   return (
     <div className="space-y-8">
-      {/* Input Section */}
       <div className="grid gap-8">
         <div className="space-y-4">
           <GLabel htmlFor="description" className="text-base font-semibold">
@@ -87,12 +134,13 @@ export function AiCaptionGenerator() {
             id="description"
             placeholder="Describe your image or content... e.g., 'sunset at the beach with friends', 'coffee and laptop workspace', 'workout at the gym', 'delicious homemade pasta'"
             value={description}
-            onChange={(e) => setDescription(e.target.value)}
+            onChange={(event) => setDescription(event.target.value)}
             className="min-h-[120px] text-base border-2 border-primary/30 focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all duration-200"
             disabled={loading}
           />
           <p className="text-sm text-muted-foreground">
-            Be specific about what you want to share - the more details, the better the captions!
+            Be specific about what you want to share. Better context usually
+            produces better captions.
           </p>
         </div>
 
@@ -101,21 +149,25 @@ export function AiCaptionGenerator() {
             Choose Platform
           </GLabel>
           <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3">
-            {PLATFORMS.map((p) => (
+            {PLATFORMS.map((item) => (
               <button
-                key={p.value}
-                onClick={() => setPlatform(p.value)}
+                key={item.value}
+                type="button"
+                onClick={() => setPlatform(item.value)}
                 disabled={loading}
-                className={`p-3 rounded-lg border-2 transition-all duration-200 text-left hover:scale-105 ${platform === p.value
-                  ? "border-primary bg-primary/10 shadow-md"
-                  : "border-border hover:border-primary/50"
-                  } ${loading ? "opacity-50 cursor-not-allowed" : "cursor-pointer"}`}
+                aria-pressed={platform === item.value}
+                aria-label={`Select ${item.label} platform`}
+                className={`p-3 rounded-lg border-2 transition-all duration-200 text-left hover:scale-105 ${
+                  platform === item.value
+                    ? "border-primary bg-primary/10 shadow-md"
+                    : "border-border hover:border-primary/50"
+                } ${loading ? "opacity-50 cursor-not-allowed" : "cursor-pointer"}`}
               >
                 <div className="flex items-center gap-2 mb-1">
-                  <span className="text-lg">{p.icon}</span>
-                  <span className="font-medium text-sm">{p.label}</span>
+                  <span className="text-lg">{item.icon}</span>
+                  <span className="font-medium text-sm">{item.label}</span>
                 </div>
-                <p className="text-xs text-muted-foreground">{p.description}</p>
+                <p className="text-xs text-muted-foreground">{item.description}</p>
               </button>
             ))}
           </div>
@@ -141,7 +193,6 @@ export function AiCaptionGenerator() {
         </GButton>
       </div>
 
-      {/* Error Display */}
       {error && (
         <GAlert variant="destructive">
           <AlertCircle className="h-4 w-4" />
@@ -149,7 +200,6 @@ export function AiCaptionGenerator() {
         </GAlert>
       )}
 
-      {/* Results Section */}
       {captions.length > 0 && (
         <div className="space-y-4 animate-fade-in">
           <div className="flex items-center justify-between">
@@ -173,12 +223,15 @@ export function AiCaptionGenerator() {
             {captions.map((caption, index) => (
               <GCard key={index} className="p-4 hover:shadow-md transition-shadow">
                 <div className="flex items-start justify-between gap-4">
-                  <p className="text-sm leading-relaxed flex-1 font-medium">{caption}</p>
+                  <p className="text-sm leading-relaxed flex-1 font-medium">
+                    {caption}
+                  </p>
                   <GButton
                     variant="outline"
                     size="sm"
                     onClick={() => copyCaption(caption, index)}
                     className="flex-shrink-0"
+                    aria-label={`Copy caption ${index + 1}`}
                   >
                     {copiedIndex === index ? (
                       <CheckCircle className="h-4 w-4 text-heading-accent" />
@@ -196,13 +249,12 @@ export function AiCaptionGenerator() {
 
           <div className="text-center p-4 bg-muted/50 rounded-lg">
             <p className="text-sm text-muted-foreground">
-              💡 <strong>Pro Tip:</strong> Mix and match elements from different captions to create your perfect post!
+              Mix and match ideas from different outputs to create your final post copy.
             </p>
           </div>
         </div>
       )}
 
-      {/* Loading State */}
       {loading && (
         <div className="text-center py-8">
           <div className="inline-flex items-center gap-3 px-4 py-2 rounded-full bg-primary/10 text-primary">

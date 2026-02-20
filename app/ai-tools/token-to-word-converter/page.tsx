@@ -1,140 +1,172 @@
-"use client"
+import type { Metadata } from "next"
+import dynamic from "next/dynamic"
+import { ToolLoader } from "@/components/common/tool-loader"
+import { ToolPageLayout } from "@/components/common/tool-page-layout"
+import { createToolConfig } from "@/lib/create-tool-config"
 
-import { useState } from "react"
-import { GButton } from "@/ui/gbutton"
-import { GCard, GCardContent, GCardDescription, GCardHeader, GCardTitle } from "@/ui/gcard"
-import { GInput } from "@/ui/ginput"
-import { GLabel } from "@/ui/glabel"
-import { GTabs, GTabsContent, GTabsList, GTabsTrigger } from "@/ui/gtabs"
-import { Copy, RefreshCw } from "lucide-react"
-import { toast } from "sonner"
+const AiTokenToWordConverter = dynamic(
+  () =>
+    import("@/components/ai/ai-token-to-word-converter").then(
+      (mod) => mod.AiTokenToWordConverter
+    ),
+  { loading: () => <ToolLoader /> }
+)
 
-export default function TokenConverter() {
-  const [tokens, setTokens] = useState<string>("")
-  const [words, setWords] = useState<string>("")
-  const [mode, setMode] = useState<"tokens-to-words" | "words-to-tokens">("tokens-to-words")
+const toolConfig = createToolConfig({
+  toolName: "Token to Word Converter",
+  description:
+    "Estimate token and word counts for LLM prompts and response planning.",
+  metaTitle: "Token to Word Converter for OpenAI, Claude, Gemini",
+  metaDescription:
+    "Convert tokens to words and words to tokens for prompt sizing, context planning, and rough API cost estimation.",
+  path: "/ai-tools/token-to-word-converter",
+  keywords: [
+    "token to word converter",
+    "words to tokens calculator",
+    "llm token estimator",
+    "openai token calculator",
+    "prompt token count",
+  ],
 
-  // Conversion factor: ~0.75 words per token (English)
-  const FACTOR = 0.75
+  header: {
+    title: "Token to Word Converter",
+    description:
+      "Estimate prompt size quickly before sending requests to LLM APIs.",
+    titleSize: "large",
+    descriptionSize: "small",
+  },
 
-  const handleConvert = () => {
-    if (mode === "tokens-to-words") {
-      const tokenCount = parseInt(tokens.replace(/,/g, ""), 10)
-      if (isNaN(tokenCount)) return
-      const wordCount = Math.round(tokenCount * FACTOR)
-      setWords(wordCount.toLocaleString())
-    } else {
-      const wordCount = parseInt(words.replace(/,/g, ""), 10)
-      if (isNaN(wordCount)) return
-      const tokenCount = Math.round(wordCount / FACTOR)
-      setTokens(tokenCount.toLocaleString())
-    }
-  }
+  breadcrumbs: [
+    { label: "AI Tools", href: "/ai-tools" },
+    {
+      label: "Token to Word Converter",
+      href: "/ai-tools/token-to-word-converter",
+    },
+  ],
 
-  const handleCopy = (text: string) => {
-    navigator.clipboard.writeText(text)
-    toast.success("Copied to clipboard")
-  }
+  schemaOptions: {
+    applicationCategory: "DeveloperApplication",
+    description:
+      "Convert token counts to word estimates and reverse for LLM planning workflows.",
+    alternateName: ["LLM Token Converter", "Token Word Estimator"],
+    featureList: [
+      "Token-to-word conversion",
+      "Word-to-token conversion",
+      "Copy-ready output",
+      "Quick reset and recalculation",
+      "Prompt planning support",
+    ],
+    offers: {
+      "@type": "Offer",
+      price: "0",
+      priceCurrency: "USD",
+    },
+  },
 
-  const handleReset = () => {
-    setTokens("")
-    setWords("")
-  }
+  content: {
+    overview:
+      "This calculator gives a practical token-word estimate so you can size prompts, rough-check model limits, and plan API usage before running jobs. It is designed for fast utility workflows where approximate sizing is sufficient.",
 
-  return (
-    <div className="container mx-auto py-12 px-4 max-w-4xl">
-      <div className="text-center mb-12 space-y-4">
-        <h1 className="text-4xl font-bold tracking-tight lg:text-5xl bg-gradient-to-r from-primary to-blue-600 bg-clip-text text-transparent">
-          AI Token to Word Converter
-        </h1>
-        <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-          Instantly convert between LLM tokens and word counts. Essential for estimating API costs for OpenAI, Claude, and Gemini.
+    howToSteps: [
+      "Choose the conversion direction: tokens-to-words or words-to-tokens.",
+      "Enter your value as a whole number or decimal.",
+      "Run the conversion and copy the estimated output.",
+      "Use the estimate to plan prompt size, context usage, and expected cost range.",
+    ],
+
+    features: [
+      "Two-way conversion in a single UI",
+      "Copy-ready output for planning docs",
+      "Fast reset for repeat calculations",
+      "Input cleanup for simple number formats",
+      "Useful for pre-flight LLM budget checks",
+    ],
+
+    useCases: [
+      "Prompt engineering and context window planning",
+      "Rough API cost forecasting",
+      "Content brief sizing before batch generation",
+      "Team handoff for model usage estimates",
+    ],
+
+    aboutTool: (
+      <div className="space-y-6 text-muted-foreground">
+        <p>
+          Tokenization differs by model and tokenizer implementation, so this
+          page intentionally frames results as estimates. It helps you move fast
+          during planning while keeping expectations realistic.
+        </p>
+        <p>
+          For production-critical counting, use model-specific tokenizers. For
+          daily planning and editorial workflows, a fast approximation is often
+          enough to avoid oversized prompts and unexpected spend.
         </p>
       </div>
+    ),
 
-      <GCard className="border-2 shadow-lg">
-        <GCardHeader>
-          <GTabs value={mode} onValueChange={(v) => {
-            setMode(v as any)
-            handleReset()
-          }} className="w-full">
-            <GTabsList className="grid w-full grid-cols-2">
-              <GTabsTrigger value="tokens-to-words">Tokens → Words</GTabsTrigger>
-              <GTabsTrigger value="words-to-tokens">Words → Tokens</GTabsTrigger>
-            </GTabsList>
-            
-            {/* We need to render the content outside the list but inside the tabs provider, 
-                however GTabs structure puts content as a sibling. 
-                In this UI, the inputs depend on the mode state, so we can just use conditional rendering 
-                or keeping it simple with state. */}
-          </GTabs>
-        </GCardHeader>
-        <GCardContent className="space-y-6 pt-6">
-          <div className="grid gap-6 md:grid-cols-2 items-end">
-            <div className="space-y-2">
-              <GLabel htmlFor="input-val" className="text-lg">
-                {mode === "tokens-to-words" ? "Tokens (Input)" : "Words (Input)"}
-              </GLabel>
-              <GInput
-                id="input-val"
-                placeholder={mode === "tokens-to-words" ? "e.g. 1000" : "e.g. 750"}
-                value={mode === "tokens-to-words" ? tokens : words}
-                onChange={(e) => {
-                  const val = e.target.value
-                  if (mode === "tokens-to-words") setTokens(val)
-                  else setWords(val)
-                }}
-                className="text-xl h-12"
-                type="number"
-              />
-            </div>
-            
-            <div className="space-y-2">
-              <GLabel className="text-lg">
-                {mode === "tokens-to-words" ? "Est. Words" : "Est. Tokens"}
-              </GLabel>
-              <div className="flex h-12 w-full items-center justify-between rounded-md border border-input bg-muted/50 px-3 py-2 text-xl ring-offset-background">
-                <span className="font-mono font-bold">
-                  {mode === "tokens-to-words" ? (words || "0") : (tokens || "0")}
-                </span>
-                <GButton variant="ghost" size="icon" onClick={() => handleCopy(mode === "tokens-to-words" ? words : tokens)}>
-                  <Copy className="h-4 w-4" />
-                </GButton>
-              </div>
-            </div>
-          </div>
+    proTip:
+      "Use this converter as a pre-check, then validate with the exact tokenizer used by your target model for final production limits.",
 
-          <div className="flex gap-4">
-            <GButton onClick={handleConvert} className="flex-1 h-12 text-lg" size="lg">
-              Convert
-            </GButton>
-            <GButton onClick={handleReset} variant="outline" size="icon" className="h-12 w-12">
-              <RefreshCw className="h-5 w-5" />
-            </GButton>
-          </div>
-        </GCardContent>
-      </GCard>
+    faqs: [
+      {
+        question: "Is token-to-word conversion exact?",
+        answer:
+          "No. It is an estimate because tokenization varies by model, language, punctuation, and formatting.",
+      },
+      {
+        question: "Why do token counts differ between models?",
+        answer:
+          "Each model family may use different tokenization rules, so the same text can produce different counts.",
+      },
+      {
+        question: "Can I use this for API cost planning?",
+        answer:
+          "Yes, for rough planning. For precise billing estimates, confirm with the tokenizer and pricing model of your target provider.",
+      },
+      {
+        question: "What baseline ratio does this page use?",
+        answer:
+          "It uses an approximate English baseline where one token is roughly 0.75 words.",
+      },
+      {
+        question: "When should I use an exact tokenizer instead?",
+        answer:
+          "Use an exact tokenizer when you are near context limits, pricing thresholds, or any production guardrail that requires precision.",
+      },
+    ],
 
-      <section className="mt-16 prose dark:prose-invert max-w-none">
-        <h2>How AI Tokens Work</h2>
-        <p>
-          Large Language Models (LLMs) like GPT-4, Claude 3, and Gemini don't read words like humans do. They process text in chunks called <strong>tokens</strong>.
-        </p>
-        <ul>
-          <li><strong>1 Token ≈ 0.75 words</strong> (English)</li>
-          <li><strong>1000 Tokens ≈ 750 words</strong></li>
-          <li><strong>1 Word ≈ 1.33 tokens</strong></li>
-        </ul>
-        <p>
-          This calculator uses the standard conversion rate used by OpenAI. However, token counts can vary depending on the complexity of the text, special characters, and the specific model's tokenizer.
-        </p>
+    additionalContent: [
+      {
+        heading: "Estimate vs Exact Counting",
+        content:
+          "Estimates are best for quick planning. Exact token counting is required for model-limit enforcement and deterministic cost controls.",
+      },
+      {
+        heading: "Planning Workflow",
+        content:
+          "A practical flow is estimate first, draft prompt, then validate exact tokens before running high-volume or long-context requests.",
+      },
+    ],
 
-        <h3>Why Calculate Tokens?</h3>
-        <p>
-          <strong>Cost Estimation:</strong> API pricing is per 1M tokens. Knowing your word count helps you budget.<br />
-          <strong>Context Limits:</strong> Models have context windows (e.g., 128k tokens). This tool helps you ensure your prompt fits.
-        </p>
-      </section>
-    </div>
+    relatedTools: [
+      { name: "AI Lyrics Generator", href: "/ai-tools/lyrics-generator" },
+      { name: "AI Caption Generator", href: "/ai-tools/caption-generator" },
+      { name: "Keyword Density Checker", href: "/seo-tools/keyword-density" },
+      { name: "All AI Tools", href: "/ai-tools" },
+    ],
+  },
+})
+
+export const metadata: Metadata = toolConfig.metadata
+
+export default function TokenToWordConverterPage() {
+  return (
+    <ToolPageLayout
+      {...toolConfig.getLayoutProps(
+        <div className="bg-card border border-border rounded-xl p-2 xs:p-3 sm:p-4 md:p-5 lg:p-6 shadow-sm">
+          <AiTokenToWordConverter />
+        </div>
+      )}
+    />
   )
 }

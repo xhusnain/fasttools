@@ -117,7 +117,7 @@ export function AiLyricsGenerator() {
               <GLabel htmlFor="genre" className="text-sm font-semibold">Genre (Optional)</GLabel>
               <GSelect value={genre} onValueChange={setGenre}>
                 <GSelectTrigger className="h-11 border-2 border-primary/50 focus:border-primary">
-                  <GSelectValue placeholder="GSelect genre" />
+                  <GSelectValue placeholder="Select genre" />
                 </GSelectTrigger>
                 <GSelectContent>
                   <GSelectItem value="any">Any Genre</GSelectItem>
@@ -146,7 +146,7 @@ export function AiLyricsGenerator() {
               <GLabel htmlFor="mood" className="text-sm font-semibold">Mood (Optional)</GLabel>
               <GSelect value={mood} onValueChange={setMood}>
                 <GSelectTrigger className="h-11 border-2 border-primary/50 focus:border-primary">
-                  <GSelectValue placeholder="GSelect mood" />
+                  <GSelectValue placeholder="Select mood" />
                 </GSelectTrigger>
                 <GSelectContent>
                   <GSelectItem value="any">Any Mood</GSelectItem>
@@ -189,7 +189,7 @@ export function AiLyricsGenerator() {
               <GLabel htmlFor="language" className="text-sm font-semibold">Language</GLabel>
               <GSelect value={language} onValueChange={setLanguage}>
                 <GSelectTrigger className="h-11 border-2 border-primary/50 focus:border-primary">
-                  <GSelectValue placeholder="GSelect language" />
+                  <GSelectValue placeholder="Select language" />
                 </GSelectTrigger>
                 <GSelectContent className="max-h-[300px]">
                   <GSelectItem value="english">English</GSelectItem>
@@ -264,7 +264,7 @@ export function AiLyricsGenerator() {
 
           <div className="flex items-center gap-2 text-xs text-muted-foreground">
             <div className="h-1 w-1 rounded-full bg-secondary-accent" />
-            <span>Powered by Gemini AI • 100% Original • Commercial Use Allowed</span>
+            <span>Powered by AI • Review and edit before publishing</span>
           </div>
         </div>
       </GCard>
@@ -290,6 +290,7 @@ export function AiLyricsGenerator() {
                 size="sm"
                 onClick={copyLyrics}
                 className="h-9"
+                aria-label="Copy generated lyrics"
               >
                 {copied ? (
                   <>
@@ -308,6 +309,7 @@ export function AiLyricsGenerator() {
                 size="sm"
                 onClick={downloadLyrics}
                 className="h-9"
+                aria-label="Download generated lyrics"
               >
                 <Download className="h-4 w-4 mr-2" />
                 Download

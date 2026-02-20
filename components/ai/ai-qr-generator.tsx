@@ -922,7 +922,7 @@ END:VCARD`
                     className="py-3 [&_[role=slider]]:bg-primary [&_[role=slider]]:border-primary"
                   />
                   <div className="mt-2 p-2 bg-muted rounded flex justify-center">
-                    <img src={formData.logoImage} alt="Logo preview" className="max-w-[60px] max-h-[60px] object-contain" />
+                    <img src={formData.logoImage} alt="Uploaded logo preview" loading="lazy" decoding="async" className="max-w-[60px] max-h-[60px] object-contain" />
                   </div>
                   <p className="text-xs text-muted-foreground text-center">
                     ✓ Logo will appear in center of QR code
@@ -1013,7 +1013,7 @@ END:VCARD`
                     {bulkQRCodes.map((qr, index) => (
                       <div key={index} className="p-3 rounded-lg bg-muted border border-border">
                         <div className="flex items-start gap-3">
-                          <img src={qr.image} alt={`QR Code ${index + 1}`} className="w-20 h-20 shadow-sm rounded" />
+                          <img src={qr.image} alt={`Generated QR code ${index + 1}`} loading="lazy" decoding="async" className="w-20 h-20 shadow-sm rounded" />
                           <div className="flex-1 min-w-0">
                             <p className="text-xs font-medium mb-1">QR Code #{index + 1}</p>
                             <p className="text-xs text-muted-foreground truncate">{qr.text}</p>
@@ -1060,7 +1060,7 @@ END:VCARD`
                 {loading ? (
                   <LoadingSpinner className="h-8 w-8" />
                 ) : qrImage ? (
-                  <img src={qrImage} alt="Generated QR Code" className="max-w-full h-auto shadow-md rounded-lg" />
+                  <img src={qrImage} alt="Generated QR code preview" loading="eager" decoding="async" className="max-w-full h-auto shadow-md rounded-lg" />
                 ) : (
                   <div className="text-center text-sm text-muted-foreground">
                     <QrCode className="h-16 w-16 mx-auto mb-3 text-muted-foreground/30" />
