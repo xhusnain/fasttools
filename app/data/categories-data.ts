@@ -3,6 +3,7 @@ import {
     Radio,
     Binary,
     Calculator,
+    Minimize2,
     Sparkles,
     Palette,
     Code,
@@ -499,7 +500,7 @@ export const categories = [
     {
         id: "image-tools",
         name: "Free Image Editing & OCR Tools",
-        description: "Professional image editing powered by AI",
+        description: "Compress images and extract text with browser-based OCR tools",
         icon: Image,
         href: "/image-tools",
         borderColor: "border-border",
@@ -509,8 +510,16 @@ export const categories = [
         glowColor: "hover:shadow-pink-500/20",
         tools: [
             {
+                title: "Image Compressor",
+                description: "Compress JPG, PNG, and WebP images with quality and size controls",
+                href: "/image-tools/image-compressor",
+                icon: Minimize2,
+                badge: "Optimize",
+                badgeColor: "bg-primary/90",
+            },
+            {
                 title: "Image to Text (OCR)",
-                description: "Extract text from images with high-accuracy OCR technology",
+                description: "Extract editable text from screenshots and document images",
                 href: "/image-tools/image-to-text",
                 icon: FileText,
                 badge: "OCR",
