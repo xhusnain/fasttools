@@ -13,7 +13,7 @@ import { GTable } from "@/ui/gtable"
 const baseMetadata = createMetadata({
     title: "Triangle Calculator - Geometry & Angles",
     description:
-        "FastTools Triangle Calculator - Advanced calculator with area, perimeter, angles, heights, medians, inradius, circumradius calculations. Supports SSS, SAS, ASA, AAS, SSA triangle solving methods.",
+        "Solve triangles by SSS, SAS, ASA, AAS, or SSA and calculate area, perimeter, angles, and radius values.",
     path: "/calculator/triangle-calculator",
     breadcrumbs: [
         { label: "Calculator", href: "/calculator" },
@@ -309,8 +309,9 @@ export default function TriangleCalculatorPage() {
             }
             toolContent={toolContent}
             expectedMetadata={{
-                title: "FastTools - Triangle Calculator | Free Area, Perimeter & Angles Calculator",
-                description: "FastTools Triangle Calculator - Advanced calculator with area, perimeter, angles, heights, medians, inradius, circumradius calculations. Supports SSS, SAS, ASA, AAS, SSA triangle solving methods.",
+                title: "Triangle Calculator - Area, Perimeter & Angles",
+                description:
+                    "Solve triangles by SSS, SAS, ASA, AAS, or SSA and calculate area, perimeter, angles, and radius values.",
                 path: "/calculator/triangle-calculator"
             }}
         />

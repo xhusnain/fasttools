@@ -9,9 +9,9 @@ const CompoundInterestCalculator = dynamic(() => import("@/components/finance/co
 import { createMetadata } from "@/lib/metadata-base"
 
 const baseMetadata = createMetadata({
-  title: "Compound Interest - Calculate Investment Growth Free",
+  title: "Free Compound Interest Calculator - Investment Growth Estimator",
   description:
-    "Best free compound interest calculator online for. Calculate compound interest for SIP, fixed deposits, savings, retirement, loans. Supports India, UK, Canada, Australia with daily, monthly, quarterly, annual compounding.",
+    "Free compound interest calculator for SIP, fixed deposits, savings, retirement, and loan scenarios. Supports daily, monthly, quarterly, and annual compounding.",
   path: "/finance-tools/compound-interest",
   breadcrumbs: [
     { label: "Finance Tools", href: "/finance-tools" },
@@ -211,8 +211,8 @@ export default function CompoundInterestPage() {
       }
       toolContent={toolContent}
       expectedMetadata={{
-        title: "Free Compound Interest Calculator Online | Investment & SIP Calculator",
-        description: "Best free compound interest calculator. Calculate SIP, FD, savings & retirement returns. Supports India, UK, USA & more.",
+        title: "Compound Interest Calculator - Investment & SIP Growth",
+        description: "Calculate compound interest for SIP, fixed deposits, savings, and retirement with daily, monthly, quarterly, or annual compounding.",
         path: "/finance-tools/compound-interest"
       }}
     />

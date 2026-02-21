@@ -11,9 +11,9 @@ import { Calculator, Award, TrendingUp, Info, Globe, Target, Users, BarChart3, B
 import { GTable } from "@/ui/gtable"
 
 const baseMetadata = createMetadata({
-  title: "GPA Calculator - Calculate Your GPA",
+  title: "GPA Calculator - Weighted & Unweighted GPA",
   description:
-    "Calculate your GPA in seconds! Free GPA calculator used by 1M+ students. Supports weighted/unweighted, all scales (4.0, 5.0), high school & college. Try now!",
+    "Calculate weighted or unweighted GPA on 4.0 and 5.0 scales for high school and college courses.",
   path: "/calculator/gpa-calculator",
   breadcrumbs: [
     { label: "Calculator", href: "/calculator" },
@@ -44,7 +44,7 @@ export const metadata: Metadata = {
 export default function GPACalculatorPage() {
   const toolContent = {
     toolName: "GPA Calculator",
-    overview: "Calculate your GPA in seconds! Free GPA calculator used by 1M+ students. Supports weighted/unweighted, all scales (4.0, 5.0), high school & college. Try now!",
+    overview: "Calculate weighted or unweighted GPA on 4.0 and 5.0 scales for high school and college courses, with semester and cumulative planning.",
 
     howToSteps: [
       "Add Courses: Enter course name, grade, and credits for each class.",
@@ -504,7 +504,7 @@ export default function GPACalculatorPage() {
     <ToolPageLayout
       header={{
         title: "GPA Calculator",
-        description: "Calculate your GPA in seconds! Free GPA calculator used by 1M+ students. Supports weighted/unweighted, all scales (4.0, 5.0), high school & college. Try now!",
+        description: "Calculate weighted or unweighted GPA on 4.0 and 5.0 scales for high school and college courses.",
         titleSize: "medium",
         descriptionSize: "small",
         color: "blue"
@@ -520,8 +520,8 @@ export default function GPACalculatorPage() {
       }
       toolContent={toolContent}
       expectedMetadata={{
-        title: "GPA Calculator - The Ultimate Tool for College, High School, and University",
-        description: "Calculate your GPA in seconds! Free GPA calculator used by 1M+ students. Supports weighted/unweighted, all scales (4.0, 5.0), high school & college. Try now!",
+        title: "GPA Calculator - Weighted & Unweighted GPA",
+        description: "Calculate weighted or unweighted GPA on 4.0 and 5.0 scales for high school and college courses.",
         path: "/calculator/gpa-calculator"
       }}
     />

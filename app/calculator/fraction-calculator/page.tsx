@@ -13,7 +13,7 @@ import { GTable } from "@/ui/gtable"
 const baseMetadata = createMetadata({
   title: "Fraction Calculator - Solve Math Problems",
   description:
-    "FastTools Fraction Calculator - Advanced calculator with addition, subtraction, multiplication, division, simplification, and conversion between fractions and decimals. Free online math tool.",
+    "Solve fraction math with add, subtract, multiply, divide, simplify, and fraction-decimal conversion in one free calculator.",
   path: "/calculator/fraction-calculator",
   breadcrumbs: [
     { label: "Calculator", href: "/calculator" },
@@ -562,8 +562,9 @@ export default function FractionCalculatorPage() {
       }
       toolContent={toolContent}
       expectedMetadata={{
-        title: "FastTools - Fraction Calculator | Free Add, Subtract, Multiply & Divide",
-        description: "FastTools Fraction Calculator - Advanced calculator with addition, subtraction, multiplication, division, simplification, and conversion between fractions and decimals. Free online math tool.",
+        title: "Fraction Calculator - Add, Subtract, Multiply & Divide",
+        description:
+          "Solve fraction math with add, subtract, multiply, divide, simplify, and fraction-decimal conversion in one free calculator.",
         path: "/calculator/fraction-calculator"
       }}
     />

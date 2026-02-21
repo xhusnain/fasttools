@@ -3,7 +3,6 @@ import dynamic from "next/dynamic"
 import { ToolPageLayout } from "@/components/common/tool-page-layout"
 import { ToolLoader } from "@/components/common/tool-loader"
 import { createToolConfig } from "@/lib/create-tool-config"
-import { getCurrentYear } from "@/lib/utils"
 
 const FutureAgePredictor = dynamic(
   () => import("@/components/calculators/future-age-predictor").then(mod => mod.FutureAgePredictor),
@@ -31,7 +30,7 @@ const toolConfig = createToolConfig({
   ],
 
   header: {
-    title: `Future Age Predictor – How Old Will I Be? ()`,
+    title: "Future Age Predictor - How Old Will I Be?",
     description: "Discover your age future and calculate how old you'll be in any future year. Perfect for planning milestones, visualizing your future age, and sharing fun age predictions with friends and family. Our future age predictor helps you plan for retirement, education, or any age-related milestone.",
     titleSize: "medium",
     descriptionSize: "small",

@@ -12,7 +12,7 @@ import { getCurrentYear } from "@/lib/utils"
 
 const TOOL_TITLE = `Retirement Planner - Plan 401k & IRA Free`
 const TOOL_NAME = "Retirement Planner"
-const TOOL_DESCRIPTION = "Free retirement planner calculator with 401k, IRA, pension, and Social Security planning. Calculate how long $500k lasts, monthly retirement income, and replacement ratios. Perfect for couples and workers."
+const TOOL_DESCRIPTION = "Plan retirement income with 401k, IRA, pension, and Social Security estimates, including monthly income and savings longevity."
 
 const baseMetadata = createMetadata({
   title: TOOL_TITLE,

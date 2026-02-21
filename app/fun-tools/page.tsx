@@ -1,7 +1,6 @@
 import type { Metadata } from "next"
 import { ToolPageLayout } from "@/components/common/tool-page-layout"
 import { createToolConfig } from "@/lib/create-tool-config"
-import { getCurrentYear } from "@/lib/utils"
 import { GToolCard } from "@/ui/gtool-card"
 
 import { Calendar, Cake, PartyPopper, Code, Globe, Calculator, ArrowRight, Heart } from "lucide-react"
@@ -32,22 +31,34 @@ const tools = [
 
 const toolConfig = createToolConfig({
   toolName: "Fun Tools & Social Helpers",
-  description: "Discover fun and entertaining online tools including Love Calculator, Future Age Predictor, Birthday Countdown, Anniversary Calculator, and Instagram Hashtag Counter. Free and easy to use!",
-  metaTitle: `Free Fun Tools | Love Calculator, Birthday Countdown & More | FastTools`,
-  metaDescription: "Discover fun online tools: Love Calculator, Future Age Predictor, Birthday Countdown & more. Free, privacy-friendly & easy to use.",
+  description:
+    "Free fun tools for countdowns, age milestones, and anniversary tracking. Fast, private, and easy to use.",
+  metaTitle: "Free Fun Tools: Birthday Countdown, Future Age & Anniversary",
+  metaDescription:
+    "Use free fun tools for birthday countdowns, future age checks, and anniversary tracking. Quick results, mobile-friendly, and no signup needed.",
   path: "/fun-tools",
   keywords: [
-    "fun tools", "free online tools", "love calculator", "future age predictor",
-    "birthday countdown", "anniversary calculator", "hashtag counter",
-    "entertainment tools", "social media tools", "relationship tools",
-    "celebration tools", "party tools", "fun calculators",
-    "entertainment calculators", "social tools", "trending tools",
-    "viral tools", "fun apps", "entertainment apps", "online fun tools",
-    "free fun tools online", "online entertainment tools",
-    "online social media tools", "online party tools",
-    "free online calculators", "online celebration tools",
-    "free online fun apps", "online viral tools", "online trending tools"
+    "fun tools",
+    "birthday countdown",
+    "future age calculator",
+    "anniversary calculator",
+    "relationship milestone calculator",
+    "free online fun calculators",
+    "celebration tools",
+    "date tools",
+    "countdown tools",
+    "age calculator",
   ],
+  itemList: {
+    name: "Fun Tools",
+    description:
+      "Playful date and milestone tools including birthday countdown, future age, and anniversary calculators.",
+    items: tools.map((tool) => ({
+      name: tool.title,
+      description: tool.description,
+      url: tool.href,
+    })),
+  },
 
   header: {
     title: `Fun Tools & Social Helpers`,
@@ -62,14 +73,15 @@ const toolConfig = createToolConfig({
   ],
 
   content: {
-    overview: "Our collection of fun tools is designed to add a spark of joy and utility to your daily life. Whether you're planning a celebration, tracking relationship milestones, or just curious about the future, we have a tool for you. Built with privacy and speed in mind, these tools run directly in your browser, ensuring your personal moments stay personal.",
+    overview:
+      "This category helps with celebration and relationship milestones. Use it to track birthdays, estimate your age in future years, and calculate anniversary durations without installing apps or sharing sensitive data.",
 
     howToSteps: [
-      "Browse the Collection: Explore our range of fun and social tools listed below.",
-      "Select a Tool: Click on the card of the tool that interests you.",
-      "Enter Your Details: Input dates, names, or other required information.",
-      "Get Instant Results: See your countdowns, predictions, or calculations immediately.",
-      "Share the Fun: Use built-in sharing features to send results to friends and family."
+      "Choose a tool based on your task: birthday countdown, future age, or anniversary tracking.",
+      "Enter names, dates, or target year inputs in the form.",
+      "Review instant results and milestone breakdowns.",
+      "Adjust inputs to compare scenarios for events and planning.",
+      "Share results if you want to use them in messages or social posts.",
     ],
 
     features: [
@@ -83,10 +95,9 @@ const toolConfig = createToolConfig({
 
     useCases: [
       "Celebrations: Plan birthdays and anniversaries with precision.",
-      "Social Media: Create engaging content with accurate data.",
       "Relationships: Track milestones and celebrate special dates.",
       "Future Planning: Visualize future ages for long-term goals.",
-      "Entertainment: Have fun with friends predicting future ages.",
+      "Entertainment: Share milestone outputs with friends and family.",
       "Event Coordination: Use countdowns to keep planning on track."
     ],
 
@@ -146,7 +157,7 @@ const toolConfig = createToolConfig({
                 Social Content
               </h4>
               <p className="text-sm text-muted-foreground">
-                Manage hashtags cleanly, generate timely posts, and keep audiences engaged with lighthearted tools.
+                Use milestone outputs in captions, reminders, and event planning posts.
               </p>
             </div>
           </div>
@@ -173,11 +184,13 @@ const toolConfig = createToolConfig({
       },
       {
         question: "Can these tools help with content creation and social media strategy?",
-        answer: "Absolutely! These tools are invaluable for content creators. Birthday countdowns provide engaging content opportunities, anniversary calculators offer relationship-focused content ideas, and hashtag counters optimize social media performance."
+        answer:
+          "Yes. Birthday countdowns and anniversary milestones are useful for event posts, reminders, and community engagement content."
       },
       {
         question: "How accurate are the calculations?",
-        answer: "Our tools use precise algorithms and date libraries to ensure high accuracy. Whether it's calculating days until a birthday, determining future age, or counting hashtags, you can rely on the results."
+        answer:
+          "The tools use standard date arithmetic to calculate countdowns and milestone durations, which makes them reliable for everyday planning."
       },
       {
         question: "Can I share the results from these tools?",
@@ -185,9 +198,15 @@ const toolConfig = createToolConfig({
       },
       {
         question: "What makes these tools different from other online calculators?",
-        answer: "Our fun tools distinguish themselves through their focus on entertainment value, user experience, and practical application. They combine accuracy with engaging interfaces and meaningful results, designed with social sharing and privacy in mind."
+        answer:
+          "These tools are intentionally focused on milestone use cases with simple inputs, fast output, and privacy-first browser processing."
       }
-    ]
+    ],
+    relatedTools: [
+      { name: "Age Calculator", href: "/calculator/age-calculator" },
+      { name: "Love Calculator", href: "/calculator/love-calculator" },
+      { name: "Hashtag Counter", href: "/social-media-tools/hashtag-counter" },
+    ],
   }
 })
 

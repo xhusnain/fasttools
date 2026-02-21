@@ -9,12 +9,13 @@ import { createMetadata } from "@/lib/metadata-base"
 import { Calculator, Target, TrendingUp, BarChart3, CreditCard, Award, DollarSign, Percent, Zap, HelpCircle, ExternalLink, PiggyBank } from "lucide-react"
 import type { Metadata } from "next"
 
-const TOOL_TITLE = "Credit Card Payoff - Plan Debt Freedom"
+const TOOL_TITLE = "Credit Card Payoff Calculator - Debt & Interest Plan"
 const TOOL_NAME = "Credit Card Payoff Calculator"
 
 const baseMetadata = createMetadata({
   title: TOOL_TITLE,
-  description: "Free credit card payoff calculator with debt payoff timeline, interest savings, and avalanche vs snowball methods. Calculate how long to pay off credit card debt and save thousands in interest.",
+  description:
+    "Free credit card payoff calculator with payoff timeline, interest breakdown, and avalanche vs snowball comparison.",
   path: "/finance-tools/credit-card-payoff",
   breadcrumbs: [
     { label: "Finance Tools", href: "/finance-tools" },
@@ -161,8 +162,9 @@ export default function CreditCardPayoffPage() {
   return (
     <ToolPageLayout
       header={{
-        title: "Free Credit Card Payoff Calculator – Debt Payoff Timeline & Interest Savings",
-        description: "Free credit card payoff calculator with debt payoff timeline, interest savings, and avalanche vs snowball methods. Calculate how long to pay off credit card debt and save thousands in interest. Perfect for debt management and financial planning.",
+        title: "Credit Card Payoff Calculator",
+        description:
+          "Calculate debt payoff timeline, interest cost, and faster repayment strategies with avalanche vs snowball comparison.",
         titleSize: "medium",
         descriptionSize: "small",
         color: "blue"
@@ -179,7 +181,8 @@ export default function CreditCardPayoffPage() {
       toolContent={toolContent}
       expectedMetadata={{
         title: TOOL_TITLE,
-        description: "Free credit card payoff calculator with debt payoff timeline, interest savings, and avalanche vs snowball methods. Calculate how long to pay off credit card debt and save thousands in interest.",
+        description:
+          "Free credit card payoff calculator with payoff timeline, interest breakdown, and avalanche vs snowball comparison.",
         path: "/finance-tools/credit-card-payoff"
       }}
     />

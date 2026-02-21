@@ -11,7 +11,7 @@ import { createMetadata } from "@/lib/metadata-base"
 const baseMetadata = createMetadata({
   title: "Amortization Calculator | Free Loan Payment Calculator",
   description:
-    "Professional amortization calculator for detailed loan payment analysis. Calculate monthly payments, interest costs, amortization schedules, and extra payment savings.",
+    "Professional amortization calculator for loan payment analysis, including monthly payments, interest costs, schedules, and extra-payment savings.",
   path: "/finance-tools/amortization-calculator",
   breadcrumbs: [
     { label: "Finance Tools", href: "/finance-tools" },
@@ -150,7 +150,7 @@ export default function AmortizationCalculatorPage() {
     <ToolPageLayout
       header={{
         title: "Amortization Calculator - Advanced Loan Analysis",
-        description: "Professional amortization calculator for detailed loan payment analysis with comprehensive amortization schedules. Calculate monthly payments, interest costs, and extra payment savings.",
+        description: "Analyze monthly payments, interest costs, amortization schedules, and extra-payment savings for any loan.",
         titleSize: "medium",
         descriptionSize: "small"
       }}
@@ -166,7 +166,7 @@ export default function AmortizationCalculatorPage() {
       toolContent={toolContent}
       expectedMetadata={{
         title: "Amortization Calculator - Analyze Loan Payoff",
-        description: "Professional amortization calculator for detailed loan payment analysis. Calculate monthly payments, interest costs, amortization schedules, and extra payment savings.",
+        description: "Analyze monthly payments, interest costs, amortization schedules, and extra-payment savings for any loan.",
         path: "/finance-tools/amortization-calculator"
       }}
     />

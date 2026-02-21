@@ -13,7 +13,7 @@ import { Brain } from "lucide-react"
 const baseMetadata = createMetadata({
   title: "BMR Calculator | Free Basal Metabolic Rate Calculator",
   description:
-    "Calculate your Basal Metabolic Rate (BMR) with our advanced calculator. Get accurate calorie needs, TDEE, weight management goals & personalized nutrition recommendations.",
+    "Calculate your Basal Metabolic Rate (BMR), TDEE estimate, and calorie targets for weight loss, maintenance, or gain.",
   path: "/calculator/bmr-calculator",
   breadcrumbs: [
     { label: "Calculator", href: "/calculator" },
@@ -230,7 +230,8 @@ export default function BMRCalculatorPage() {
       toolContent={toolContent}
       expectedMetadata={{
         title: "BMR Calculator - Calculate Metabolic Rate",
-        description: "Calculate your Basal Metabolic Rate (BMR) with our advanced calculator. Get accurate calorie needs, TDEE, weight management goals & personalized nutrition recommendations.",
+        description:
+          "Calculate your Basal Metabolic Rate (BMR), TDEE estimate, and calorie targets for weight loss, maintenance, or gain.",
         path: "/calculator/bmr-calculator"
       }}
     />

@@ -10,9 +10,9 @@ import { createMetadata } from "@/lib/metadata-base"
 import { Calculator, Globe, DollarSign, TrendingUp, BarChart3, PieChart, Target, Building, Users, Award, CheckCircle, BookOpen, Zap, Sparkles, AlertTriangle } from "lucide-react"
 
 const baseMetadata = createMetadata({
-  title: "FastTools - Tax Calculator | Free Income, GST, VAT & Sales Tax",
+  title: "Tax Calculator - Income, GST, VAT & Sales Tax",
   description:
-    "FastTools Tax Calculator - Free online tax calculator for income tax, GST, VAT, and sales tax. Calculate tax on salary, capital gains, property, and more. Supports 9+ countries with accurate tax brackets.",
+    "Calculate income tax, GST, VAT, and sales tax with country-aware brackets and clear deductions for salary planning.",
   path: "/finance-tools/tax-calculator",
   breadcrumbs: [
     { label: "Finance Tools", href: "/finance-tools" },
@@ -126,7 +126,7 @@ export default function TaxCalculatorPage() {
                     <strong>Expertise:</strong> 15+ years combined experience in tax preparation, accounting, and financial planning
                   </p>
                   <p className="text-sm text-muted-foreground">
-                    <strong>Last Updated:</strong> January | Tax rates and brackets verified against official-2025 tax year regulations.
+                    <strong>Last Updated:</strong> February 21, 2026 | Verify final numbers with your official tax authority before filing.
                   </p>
                 </div>
               </div>
@@ -318,7 +318,8 @@ export default function TaxCalculatorPage() {
       toolContent={toolContent}
       expectedMetadata={{
         title: "Tax Calculator - Estimate Tax Liability",
-        description: "FastTools Tax Calculator - Free online tax calculator for income tax, GST, VAT, and sales tax. Calculate tax on salary, capital gains, property, and more. Supports 9+ countries with accurate tax brackets.",
+        description:
+          "Calculate income tax, GST, VAT, and sales tax with country-aware brackets and clear deductions for salary planning.",
         path: "/finance-tools/tax-calculator"
       }}
     />

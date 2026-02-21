@@ -16,7 +16,7 @@ const TOOL_NAME = "IP Subnet Calculator"
 
 const baseMetadata = createMetadata({
   title: "IP Subnet Calculator - IPv4/IPv6 CIDR & Network Mask",
-  description: "Free IP Subnet Calculator. Calculate network masks, CIDR, and IP ranges instantly. The best IPv4 depot for network engineers. Supports VLSM & Supernetting.",
+  description: "Calculate IPv4/IPv6 subnets, CIDR ranges, subnet masks, and host ranges. Supports VLSM and supernetting.",
   path: "/calculator/ip-subnet-calculator",
   breadcrumbs: [
     { label: "Calculator", href: "/calculator" },
@@ -756,7 +756,7 @@ export default function IPSubnetCalculatorPage() {
     <ToolPageLayout
       header={{
         title: "IP Subnet Calculator",
-        description: "Calculate IPv4/IPv6 subnets, CIDR, and network masks instantly. The ultimate tool for network engineers to analyze address ranges and broadcast domains.",
+        description: "Calculate IPv4/IPv6 subnets, CIDR ranges, and network masks to analyze host ranges and broadcast domains.",
         titleSize: "medium",
         descriptionSize: "small",
         color: "blue"
@@ -773,7 +773,7 @@ export default function IPSubnetCalculatorPage() {
       toolContent={toolContent}
       expectedMetadata={{
         title: TOOL_TITLE,
-        description: "Calculate IPv4/IPv6 subnets, CIDR notation, VLSM, and supernetting with our free IP Subnet Calculator. Perfect for network engineers to analyze network addresses, broadcast, and host ranges. Try now - no signup required!",
+        description: "Calculate IPv4/IPv6 subnets, CIDR notation, VLSM, and supernetting to analyze network, broadcast, and host ranges.",
         path: "/calculator/ip-subnet-calculator"
       }}
     />

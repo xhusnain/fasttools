@@ -13,7 +13,7 @@ import { GTable } from "@/ui/gtable"
 const baseMetadata = createMetadata({
   title: "Time Duration Calculator - Calculate Time Span",
   description:
-    "Calculate exact time duration between two points in hours, minutes & seconds. Free online time duration calculator for work hours, study time, events, payroll, and project management. Accurate, fast, and easy to use.",
+    "Calculate exact time duration between two points with tools for work hours, overtime, and schedule planning.",
   path: "/calculator/time-duration",
   breadcrumbs: [
     { label: "Calculator", href: "/calculator" },
@@ -361,7 +361,8 @@ export default function TimeDurationPage() {
       toolContent={toolContent}
       expectedMetadata={{
         title: "Time Duration Calculator | Free Online Time Tool",
-        description: "Calculate exact time duration between two points in hours, minutes & seconds. Free online time duration calculator for work hours, study time, events, payroll, and project management. Accurate, fast, and easy to use.",
+        description:
+          "Calculate exact time duration between two points with tools for work hours, overtime, and schedule planning.",
         path: "/calculator/time-duration"
       }}
     />

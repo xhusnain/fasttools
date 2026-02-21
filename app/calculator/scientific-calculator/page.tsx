@@ -13,11 +13,11 @@ import { GTable } from "@/ui/gtable"
 
 const toolConfig = createToolConfig({
   toolName: "Scientific Calculator - Advanced Math Online",
-  description: "Scientific Calculator Online Free - 70+ Functions. Trigonometry, logarithms, statistics. Better than CASIO fx-991EX. No download.",
+  description: "Free online scientific calculator with 70+ functions for trigonometry, logarithms, statistics, and engineering math.",
   path: "/calculator/scientific-calculator",
   header: {
     title: "Scientific Calculator - Advanced Math Online",
-    description: "Professional-grade scientific calculator with 70+ mathematical functions. Advanced trigonometry, logarithms, statistics, and engineering calculations. Free online calculator for students, engineers, and scientists. Compatible with CASIO, TI, Sharp, and HP calculator functions.",
+    description: "Online scientific calculator with 70+ functions, including trigonometry, logarithms, statistics, and engineering calculations.",
     titleSize: "medium",
     descriptionSize: "small",
     color: "blue"

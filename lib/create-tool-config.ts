@@ -17,6 +17,16 @@ export interface UnifiedToolConfig {
         duration?: string
     }
     heroImage?: string
+    itemList?: {
+        name: string
+        description: string
+        items: Array<{
+            name: string
+            description?: string
+            url: string
+            image?: string
+        }>
+    }
     schemaOptions?: {
         applicationCategory?: string
         description?: string
@@ -105,6 +115,8 @@ export function createToolConfig(config: UnifiedToolConfig) {
         howToSteps: config.content.howToSteps || [],
         video: config.video,
         schemaOptions: config.schemaOptions,
+        breadcrumbs: config.breadcrumbs,
+        itemList: config.itemList,
         ...(config.keywords && { keywords: config.keywords }),
     })
 

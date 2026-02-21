@@ -13,7 +13,7 @@ import { GTable } from "@/ui/gtable"
 const baseMetadata = createMetadata({
   title: "Standard Deviation Calculator - Statistics & Data",
   description:
-    "FastTools Standard Deviation Calculator - Calculate standard deviation, variance, mean, and confidence intervals instantly. Advanced statistics calculator with population and sample modes for data analysis.",
+    "Calculate standard deviation, variance, mean, and confidence intervals with population and sample modes.",
   path: "/calculator/standard-deviation-calculator",
   breadcrumbs: [
     { label: "Calculator", href: "/calculator" },
@@ -776,8 +776,9 @@ export default function StandardDeviationCalculatorPage() {
       }
       toolContent={toolContent}
       expectedMetadata={{
-        title: "FastTools - Standard Deviation Calculator | Free Statistics Tool",
-        description: "FastTools Standard Deviation Calculator - Calculate standard deviation, variance, mean, and confidence intervals instantly. Advanced statistics calculator with population and sample modes for data analysis.",
+        title: "Standard Deviation Calculator - Free Statistics Tool",
+        description:
+          "Calculate standard deviation, variance, mean, and confidence intervals with population and sample modes.",
         path: "/calculator/standard-deviation-calculator"
       }}
     />

@@ -13,7 +13,7 @@ import { Brain } from "lucide-react"
 const baseMetadata = createMetadata({
   title: "Conception Calculator - Find Conception Date",
   description:
-    "Calculate your conception date with our advanced pregnancy conception calculator. Get personalized trimester guidance, nutrition tips, and week-by-week pregnancy insights.",
+    "Estimate conception date, pregnancy week, and trimester stage using due date, LMP, or ultrasound-based inputs.",
   path: "/calculator/pregnancy-conception-calculator",
   breadcrumbs: [
     { label: "Calculator", href: "/calculator" },
@@ -216,7 +216,8 @@ export default function PregnancyConceptionCalculatorPage() {
       toolContent={toolContent}
       expectedMetadata={{
         title: "Pregnancy Conception Calculator | Free Online Tool",
-        description: "Calculate your conception date with our advanced pregnancy conception calculator. Get personalized trimester guidance, nutrition tips, and week-by-week pregnancy insights.",
+        description:
+          "Estimate conception date, pregnancy week, and trimester stage using due date, LMP, or ultrasound-based inputs.",
         path: "/calculator/pregnancy-conception-calculator"
       }}
     />

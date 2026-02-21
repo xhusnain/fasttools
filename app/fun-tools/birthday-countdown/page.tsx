@@ -3,7 +3,6 @@ import dynamic from "next/dynamic"
 import { ToolPageLayout } from "@/components/common/tool-page-layout"
 import { ToolLoader } from "@/components/common/tool-loader"
 import { createToolConfig } from "@/lib/create-tool-config"
-import { getCurrentYear } from "@/lib/utils"
 
 const BirthdayCountdown = dynamic(
   () => import("@/components/calculators/birthday-countdown").then(mod => mod.BirthdayCountdown),
@@ -34,7 +33,7 @@ const toolConfig = createToolConfig({
   ],
 
   header: {
-    title: `Birthday Countdown Timer – Real-Time Birthday Tracker ()`,
+    title: "Birthday Countdown Timer - Real-Time Birthday Tracker",
     description: "Real-time countdown to your next birthday showing days, hours, minutes, and seconds. Share the excitement with friends and family! Simply enter your birth date and watch the seconds tick away until your special day.",
     titleSize: "medium",
     descriptionSize: "small",

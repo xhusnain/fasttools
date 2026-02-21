@@ -10,9 +10,9 @@ import { createMetadata } from "@/lib/metadata-base"
 import { Calculator, BarChart3, TrendingUp, BookOpen, Users, Clock, Target, Home, DollarSign, FileText, Award, Globe, PieChart, Percent } from "lucide-react"
 
 const baseMetadata = createMetadata({
-  title: "FastTools - Sales Tax Calculator | Free Advanced State Tax Calculator",
+  title: "Sales Tax Calculator - Calculate Tax by State",
   description:
-    "FastTools Sales Tax Calculator - Calculate sales tax for all 50 US states with our advanced calculator. Get accurate tax calculations, state comparisons & compliance guidance.",
+    "Calculate sales tax by state, reverse tax from totals, and compare rates with clear breakdowns for purchases and invoices.",
   path: "/finance-tools/sales-tax-calculator",
   breadcrumbs: [
     { label: "Finance Tools", href: "/finance-tools" },
@@ -448,7 +448,8 @@ export default function SalesTaxCalculatorPage() {
       toolContent={toolContent}
       expectedMetadata={{
         title: "Sales Tax Calculator - Calculate Tax by State",
-        description: "FastTools Sales Tax Calculator - Calculate sales tax for all 50 US states with our advanced calculator. Get accurate tax calculations, state comparisons & compliance guidance.",
+        description:
+          "Calculate sales tax by state, reverse tax from totals, and compare rates with clear breakdowns for purchases and invoices.",
         path: "/finance-tools/sales-tax-calculator"
       }}
     />

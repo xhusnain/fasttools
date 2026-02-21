@@ -11,9 +11,9 @@ import { Heart, Users, Zap, Target, Sparkles, Star, Gift, Flower2, Calculator, T
 import { GTable } from "@/ui/gtable"
 
 const baseMetadata = createMetadata({
-  title: "Love Calculator - True Relationship Compatibility Test",
+  title: "Love Calculator - Relationship Compatibility Test",
   description:
-    "Free True Love Calculator. Test real relationship compatibility & love percentage by name. Accurate, fun, and instant results with zodiac analysis.",
+    "Test name-based relationship compatibility and love percentage. Fun, private, and instant.",
   path: "/calculator/love-calculator",
   breadcrumbs: [
     { label: "Calculator", href: "/calculator" },
@@ -733,7 +733,7 @@ export default function LoveCalculatorPage() {
     <ToolPageLayout
       header={{
         title: "Love Calculator & Compatibility Test",
-        description: "Test your true love match instantly. Enter two names to calculate relationship compatibility, friendship strength, and zodiac harmony.",
+        description: "Enter two names to estimate relationship and friendship compatibility in a fun, private way.",
         titleSize: "large",
         descriptionSize: "medium",
         color: "pink"
@@ -749,8 +749,8 @@ export default function LoveCalculatorPage() {
       }
       toolContent={toolContent}
       expectedMetadata={{
-        title: "FastTools - Love Calculator | Free Love Compatibility Test",
-        description: "FastTools Love Calculator - Free tool to test compatibility between two people. Calculate love percentage, relationship compatibility, and love meter. Share your love match results with friends!",
+        title: "Love Calculator - Compatibility Test",
+        description: "Test name-based compatibility and love percentage instantly with this fun and private love calculator.",
         path: "/calculator/love-calculator"
       }}
     />

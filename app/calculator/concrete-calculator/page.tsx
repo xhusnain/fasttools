@@ -44,7 +44,7 @@ const TOOL_NAME = "Concrete Calculator"
 
 const baseMetadata = createMetadata({
   title: TOOL_TITLE,
-  description: "Calculate concrete cubic yards and bags (40lb, 60lb, 80lb) for slabs, footings, and driveways. Free estimator with 5-10% waste factor and ready-mix cost.",
+  description: "Estimate concrete volume in cubic yards, bag counts (40/60/80 lb), and project cost for slabs, footings, and driveways.",
   path: "/calculator/concrete-calculator",
   breadcrumbs: [
     { label: "Calculator", href: "/calculator" },
@@ -587,7 +587,7 @@ export default function ConcreteCalculatorPage() {
     <ToolPageLayout
       header={{
         title: TOOL_TITLE,
-        description: "Calculate concrete volume, bags, and cost for slabs, footings, columns, and stairs. Free online concrete estimator with waste factor and mix ratios. Accurate & easy to use.",
+        description: "Estimate concrete volume, bag counts, and cost for slabs, footings, columns, and stairs with waste-factor support.",
         titleSize: "medium",
         descriptionSize: "small",
         color: "blue"
@@ -604,7 +604,7 @@ export default function ConcreteCalculatorPage() {
       toolContent={toolContent}
       expectedMetadata={{
         title: TOOL_TITLE,
-        description: "Calculate concrete volume, bags, and cost for slabs, footings, columns, and stairs. Free online concrete estimator with waste factor and mix ratios. Accurate & easy to use.",
+        description: "Estimate concrete volume, bag counts, and cost for slabs, footings, columns, and stairs with waste-factor support.",
         path: "/calculator/concrete-calculator"
       }}
     />

@@ -10,9 +10,9 @@ import { createMetadata } from "@/lib/metadata-base"
 import { Calculator, BarChart3, TrendingUp, BookOpen, Users, Clock, Target, Home, DollarSign, FileText, Award, Globe, PieChart, Percent } from "lucide-react"
 
 const baseMetadata = createMetadata({
-  title: "Inflation Calculator - Calculate Real Value Free",
+  title: "Inflation Calculator - CPI & Purchasing Power",
   description:
-    "FastTools Inflation Calculator - Professional tool with historical CPI data from 1913-2025. Calculate purchasing power, inflation rates, and investment strategies with comprehensive economic analysis.",
+    "Estimate purchasing power changes and inflation impact using long-term CPI history and value comparison tools.",
   path: "/finance-tools/inflation-calculator",
   breadcrumbs: [
     { label: "Finance Tools", href: "/finance-tools" },
@@ -23,7 +23,7 @@ const baseMetadata = createMetadata({
     alternateName: "CPI Calculator",
     applicationCategory: "FinanceApplication",
     featureList: [
-      "Historical CPI Data from 1913-2025",
+      "Historical CPI Data",
       "Multiple Calculation Methods",
       "Purchasing Power Analysis",
       "Inflation Rate Calculations",
@@ -109,7 +109,8 @@ export const metadata: Metadata = {
 export default function InflationCalculatorPage() {
   const toolContent = {
     toolName: "Inflation Calculator",
-    overview: "Professional inflation calculator with historical CPI data from 1913-2025 for comprehensive economic analysis. Calculate purchasing power, inflation rates, and investment strategies with our advanced CPI calculator.",
+    overview:
+      "Professional inflation calculator with long-term CPI history for purchasing power analysis, inflation trends, and value comparisons.",
 
     howToSteps: [
       "Choose Method: Select CPI data, forward rate, or backward rate calculation method.",
@@ -213,12 +214,12 @@ export default function InflationCalculatorPage() {
             <div className="p-4 bg-card border border-border rounded-lg">
               <h3 className="text-lg font-semibold text-foreground mb-3">Historical CPI Data</h3>
               <p className="text-muted-foreground mb-3 leading-relaxed">
-                Our calculator uses comprehensive CPI data from 1913 to, providing accurate inflation calculations for any time period. This data is sourced from the Bureau of Labor Statistics and updated regularly.
+                Our calculator uses comprehensive CPI data from 1913 to the present, providing accurate inflation calculations for long-term comparisons. This data is sourced from the Bureau of Labor Statistics and updated regularly.
               </p>
               <div className="grid sm:grid-cols-2 gap-4">
                 <div className="bg-muted p-4 rounded-lg border border-border">
                   <div className="text-sm font-medium text-foreground">Data Range</div>
-                  <div className="text-base font-bold text-primary">1913 -</div>
+                  <div className="text-base font-bold text-primary">1913 - Present</div>
                 </div>
                 <div className="bg-muted p-4 rounded-lg border border-border">
                   <div className="text-sm font-medium text-foreground">Update Frequency</div>
@@ -415,7 +416,8 @@ export default function InflationCalculatorPage() {
     <ToolPageLayout
       header={{
         title: "Inflation Calculator",
-        description: "Professional inflation calculator with historical CPI data (1913-2025). Calculate purchasing power and inflation rates instantly.",
+        description:
+          "Calculate purchasing power changes and inflation rates with historical CPI data and comparison outputs.",
         titleSize: "medium",
         descriptionSize: "small",
         color: "blue"
@@ -431,8 +433,9 @@ export default function InflationCalculatorPage() {
       }
       toolContent={toolContent}
       expectedMetadata={{
-        title: "FastTools - Inflation Calculator | Free Advanced CPI Calculator",
-        description: "FastTools Inflation Calculator - Professional tool with historical CPI data from 1913-2025. Calculate purchasing power, inflation rates, and investment strategies with comprehensive economic analysis.",
+        title: "Inflation Calculator - CPI & Purchasing Power",
+        description:
+          "Estimate purchasing power changes and inflation impact using long-term CPI history and value comparison tools.",
         path: "/finance-tools/inflation-calculator"
       }}
     />

@@ -8,9 +8,8 @@ import { ToolPageLayout } from "@/components/common/tool-page-layout"
 import { createMetadata } from "@/lib/metadata-base"
 import { Calculator, Percent, DollarSign, ShoppingCart, Tag, TrendingDown, Target, Zap, Shield, Globe, Clock, FileText, Palette, BarChart3, Smartphone, Settings, Eye, Code, Copy, ExternalLink, Users, Lightbulb, Search, CheckCircle, XCircle, Video, AlertCircle, Hash, ArrowRight, CreditCard, Banknote, Coins, TrendingUp, Receipt, Wallet, PiggyBank, ArrowUp, ArrowDown, Minus, Plus, Equal, HashIcon, HelpCircle, BookOpen, Star, Heart, Gift, PieChart, Award } from "lucide-react"
 import type { Metadata } from "next"
-import { getCurrentYear } from "@/lib/utils"
 
-const TOOL_TITLE = "Discount Calculator - Calculate Savings Free"
+const TOOL_TITLE = "Free Discount Calculator - Calculate Sale Price & Savings"
 const TOOL_NAME = "Discount Calculator"
 
 const baseMetadata = createMetadata({
@@ -230,7 +229,7 @@ export default function DiscountCalculatorPage() {
   return (
     <ToolPageLayout
       header={{
-        title: `Free Discount Calculator – Calculate Sale Price & Savings ()`,
+        title: "Free Discount Calculator - Calculate Sale Price & Savings",
         description: "Calculate percentage discounts, fixed amounts, and final sale prices instantly. Our free discount calculator supports multiple discounts, tax calculations, and works with any currency. Perfect for shopping, business pricing, and financial planning.",
         titleSize: "medium",
         descriptionSize: "small",

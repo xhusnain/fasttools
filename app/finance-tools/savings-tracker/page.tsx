@@ -12,7 +12,7 @@ import { getCurrentYear } from "@/lib/utils"
 
 const TOOL_TITLE = `Savings Tracker - Track Financial Goals Free`
 const TOOL_NAME = "Savings Tracker"
-const TOOL_DESCRIPTION = "Comprehensive financial planning tool with expense tracking, tax calculations, inflation adjustments, and multiple goal management. Perfect for budgeting and savings planning."
+const TOOL_DESCRIPTION = "Track savings goals with expense planning, tax and inflation adjustments, and multi-goal budgeting insights."
 
 const baseMetadata = createMetadata({
   title: TOOL_TITLE,

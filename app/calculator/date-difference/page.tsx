@@ -11,9 +11,9 @@ import { GTable } from "@/ui/gtable"
 import { Brain, Calendar, Target, BookOpen, Shield, Users, TrendingUp, Calculator, Clock, AlertTriangle, Info, Zap, CheckCircle } from "lucide-react"
 
 const baseMetadata = createMetadata({
-  title: "Date Difference - Calculate Days Between Dates",
+  title: "Date Difference Calculator - Days Between Dates",
   description:
-    "Calculate exact days, weeks, months & years between any two dates. Includes business days, leap years & multiple formats. Free, no signup required! ✓",
+    "Calculate days, weeks, months, and years between two dates, including business days and leap years.",
   path: "/calculator/date-difference",
   breadcrumbs: [
     { label: "Calculator", href: "/calculator" },
@@ -461,7 +461,7 @@ export default function DateDifferencePage() {
     <ToolPageLayout
       header={{
         title: "Date Difference Calculator",
-        description: "Calculate exact days, weeks, months & years between any two dates. Includes business days, leap years & multiple formats. Free, no signup required!",
+        description: "Calculate days, weeks, months, and years between two dates, including business days and leap years.",
         titleSize: "medium",
         descriptionSize: "small",
         color: "blue"
@@ -477,8 +477,8 @@ export default function DateDifferencePage() {
       }
       toolContent={toolContent}
       expectedMetadata={{
-        title: "Calculate Days Between Dates - Free Date Difference Calculator",
-        description: "Calculate exact days, weeks, months & years between any two dates. Includes business days, leap years & multiple formats. Free, no signup required! ✓",
+        title: "Date Difference Calculator - Days Between Dates",
+        description: "Calculate days, weeks, months, and years between two dates, including business days and leap years.",
         path: "/calculator/date-difference"
       }}
     />

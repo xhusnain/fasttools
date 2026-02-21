@@ -10,9 +10,9 @@ import { createMetadata } from "@/lib/metadata-base"
 import { Calculator, BarChart3, TrendingUp, BookOpen, Users, Clock, Target, Home, DollarSign, FileText, Award, Globe, PieChart, Percent, CreditCard, Wallet, Trophy } from "lucide-react"
 
 const baseMetadata = createMetadata({
-  title: "Salary Calculator - Convert & Analyze Pay Free",
+  title: "Salary Calculator - Convert Hourly, Monthly & Annual Pay",
   description:
-    "FastTools Salary Calculator - Convert salary amounts across all pay frequencies with holiday adjustments. Professional salary analysis, industry comparisons, and negotiation support.",
+    "Convert salary across pay frequencies with holiday-adjusted estimates for hourly, weekly, monthly, and annual income.",
   path: "/finance-tools/salary-calculator",
   breadcrumbs: [
     { label: "Finance Tools", href: "/finance-tools" },
@@ -255,8 +255,9 @@ export default function SalaryCalculatorPage() {
       }
       toolContent={toolContent}
       expectedMetadata={{
-        title: "FastTools - Salary Calculator | Free Advanced Pay Frequency Calculator",
-        description: "FastTools Salary Calculator - Convert salary amounts across all pay frequencies. Professional analysis & tax estimates.",
+        title: "Salary Calculator - Convert Hourly, Monthly & Annual Pay",
+        description:
+          "Convert salary across pay frequencies with holiday-adjusted estimates for hourly, weekly, monthly, and annual income.",
         path: "/finance-tools/salary-calculator"
       }}
     />

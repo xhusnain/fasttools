@@ -15,7 +15,7 @@ import {
 } from "lucide-react"
 
 const baseMetadata = createMetadata({
-  title: "Exact Age Calculator - Calculate Your Age in Seconds, Minutes & Days",
+  title: "Exact Age Calculator - Years, Months, Days & More",
   description:
     "How old are you exactly? Calculate your age in years, months, weeks, days, and even seconds. Find out when your next half-birthday is! 100% Free & Private.",
   path: "/calculator/age-calculator",
@@ -41,7 +41,7 @@ const baseMetadata = createMetadata({
 
 export const metadata: Metadata = {
   ...baseMetadata,
-  title: "Exact Age Calculator - Calculate Your Age in Seconds, Minutes & Days",
+  title: "Exact Age Calculator - Years, Months, Days & More",
   description: "How old are you exactly? Calculate your age in years, months, weeks, days, and even seconds. Find out when your next half-birthday is!",
   applicationName: "FastTools",
   category: "Date & Time",
@@ -536,7 +536,7 @@ export default function AgeCalculatorPage() {
       }
       toolContent={toolContent}
       expectedMetadata={{
-        title: "Exact Age Calculator - Calculate Your Age in Seconds, Minutes & Days",
+        title: "Exact Age Calculator - Years, Months, Days & More",
         description: "How old are you exactly? Calculate your age in years, months, weeks, days, and even seconds. Find out when your next half-birthday is!",
         path: "/calculator/age-calculator"
       }}

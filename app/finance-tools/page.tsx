@@ -1,240 +1,292 @@
 import { GToolCard } from "@/ui/gtool-card"
-
 import {
-  FileText, DollarSign, Percent, Calculator, Target, TrendingUp,
-  Users, CreditCard, Home, BadgePercent, PiggyBank, ChartLine, Coins,
-  ScrollText, Landmark, TrendingDown, Banknote
+  FileText,
+  DollarSign,
+  Percent,
+  Calculator,
+  Target,
+  TrendingUp,
+  Users,
+  CreditCard,
+  Home,
+  BadgePercent,
+  PiggyBank,
+  ChartLine,
+  Coins,
+  ScrollText,
+  Landmark,
+  TrendingDown,
+  Banknote,
 } from "lucide-react"
 import { ToolPageLayout } from "@/components/common/tool-page-layout"
-import { Metadata } from 'next';
+import { Metadata } from "next"
 import { createMetadata } from "@/lib/metadata-base"
 
+const financeTools = [
+  {
+    title: "Invoice Generator",
+    description:
+      "Create professional invoices for freelance or business work with tax and total calculations.",
+    icon: FileText,
+    href: "/finance-tools/invoice-generator",
+  },
+  {
+    title: "PayPal Fee Calculator",
+    description:
+      "Calculate PayPal processing fees and the amount you receive after transaction costs.",
+    icon: DollarSign,
+    href: "/finance-tools/paypal-fee",
+  },
+  {
+    title: "Discount Calculator",
+    description:
+      "Calculate sale prices, discount amounts, and final totals for shopping or pricing decisions.",
+    icon: Percent,
+    href: "/finance-tools/discount-calculator",
+  },
+  {
+    title: "Tip Calculator",
+    description:
+      "Calculate tips quickly and split bills fairly across multiple people.",
+    icon: Calculator,
+    href: "/finance-tools/tip-calculator",
+  },
+  {
+    title: "Savings Goal Tracker",
+    description:
+      "Track savings progress and estimate when you will reach your goal amount.",
+    icon: Target,
+    href: "/finance-tools/savings-tracker",
+  },
+  {
+    title: "Retirement Goal Planner",
+    description:
+      "Plan retirement contributions and estimate long-term portfolio growth.",
+    icon: TrendingUp,
+    href: "/finance-tools/retirement-planner",
+  },
+  {
+    title: "Bill Splitter",
+    description:
+      "Split shared expenses for friends, trips, or group events with clear totals.",
+    icon: Users,
+    href: "/finance-tools/bill-splitter",
+  },
+  {
+    title: "Credit Card Payoff Calculator",
+    description:
+      "Estimate debt payoff time and interest costs for credit card balances.",
+    icon: CreditCard,
+    href: "/finance-tools/credit-card-payoff",
+  },
+  {
+    title: "Loan Calculator",
+    description:
+      "Estimate monthly payments, total interest, and amortization for personal loans.",
+    icon: DollarSign,
+    href: "/finance-tools/loan-calculator",
+  },
+  {
+    title: "Mortgage Calculator",
+    description:
+      "Calculate monthly home loan payments including principal and interest details.",
+    icon: Home,
+    href: "/finance-tools/mortgage-calculator",
+  },
+  {
+    title: "Tax Calculator",
+    description:
+      "Estimate income tax, GST, or VAT to understand net and gross amounts.",
+    icon: FileText,
+    href: "/finance-tools/tax-calculator",
+  },
+  {
+    title: "Sales Tax Calculator",
+    description:
+      "Calculate sales tax for US states or custom tax rates with total cost output.",
+    icon: BadgePercent,
+    href: "/finance-tools/sales-tax-calculator",
+  },
+  {
+    title: "Retirement Calculator",
+    description:
+      "Project retirement savings outcomes using return rates and contribution schedules.",
+    icon: PiggyBank,
+    href: "/finance-tools/retirement-calculator",
+  },
+  {
+    title: "Investment Calculator",
+    description:
+      "Estimate investment growth over time with recurring contributions and returns.",
+    icon: ChartLine,
+    href: "/finance-tools/investment-calculator",
+  },
+  {
+    title: "Compound Interest Calculator",
+    description:
+      "Visualize compounding effects and compare long-term savings scenarios.",
+    icon: Coins,
+    href: "/finance-tools/compound-interest",
+  },
+  {
+    title: "Amortization Calculator",
+    description:
+      "Generate payment schedules showing principal and interest for each period.",
+    icon: ScrollText,
+    href: "/finance-tools/amortization-calculator",
+  },
+  {
+    title: "Finance Calculator",
+    description:
+      "Solve core time-value-of-money variables for planning and financial analysis.",
+    icon: Landmark,
+    href: "/finance-tools/finance-calculator",
+  },
+  {
+    title: "Inflation Calculator",
+    description:
+      "Estimate purchasing power changes over time based on inflation assumptions.",
+    icon: TrendingDown,
+    href: "/finance-tools/inflation-calculator",
+  },
+  {
+    title: "Interest Rate Calculator",
+    description:
+      "Solve for unknown interest rates from payment, term, and principal inputs.",
+    icon: Banknote,
+    href: "/finance-tools/interest-rate-calculator",
+  },
+  {
+    title: "Payment Calculator",
+    description:
+      "Calculate periodic payment amounts for different loan and financing setups.",
+    icon: CreditCard,
+    href: "/finance-tools/payment-calculator",
+  },
+  {
+    title: "Salary Calculator",
+    description:
+      "Convert salary across hourly, monthly, and yearly views with planning support.",
+    icon: Banknote,
+    href: "/finance-tools/salary-calculator",
+  },
+]
+
 export const metadata: Metadata = createMetadata({
-  title: "Free Online Finance Tools – Budget, Investment & Expense Calculators",
-  description: "Free finance tools: budget calculators, savings trackers, loan calculators, investment planners. Perfect for financial planning.",
+  title:
+    "Free Finance Calculators: Loan, Mortgage, Tax, Investment & Budget Tools",
+  description:
+    "Use free finance tools for loan, mortgage, tax, salary, savings, and investment planning. Fast, accurate calculators with no signup required.",
   path: "/finance-tools",
   includeSchema: false,
-  breadcrumbs: [
-    {
-      "label": "Finance Tools",
-      "href": "/finance-tools"
-    }
-  ]
+  keywords: [
+    "finance tools",
+    "finance calculator",
+    "loan calculator",
+    "mortgage calculator",
+    "tax calculator",
+    "investment calculator",
+    "retirement calculator",
+    "salary calculator",
+  ],
+  breadcrumbs: [{ label: "Finance Tools", href: "/finance-tools" }],
+  itemList: {
+    name: "Finance Tools",
+    description: "Free online finance calculators and business finance tools.",
+    items: financeTools.map((tool) => ({
+      name: tool.title,
+      description: tool.description,
+      url: tool.href,
+    })),
+  },
 })
 
 export default function FinanceToolsPage() {
-  const tools = [
-    {
-      title: "Invoice Generator",
-      description: "Create professional invoices for your freelance or business work. Add items, calculate totals, and generate invoices instantly.",
-      icon: FileText,
-      href: "/finance-tools/invoice-generator",
-    },
-    {
-      title: "PayPal Fee Calculator",
-      description: "Calculate PayPal transaction fees (2.9% + $0.30) and determine how much you'll receive or need to charge.",
-      icon: DollarSign,
-      href: "/finance-tools/paypal-fee",
-    },
-    {
-      title: "Discount Calculator",
-      description: "Calculate sale prices and savings. Perfect for shopping seasons to find out how much you save with discounts.",
-      icon: Percent,
-      href: "/finance-tools/discount-calculator",
-    },
-    {
-      title: "Tip Calculator",
-      description: "Calculate tips for restaurants and services. Split bills among multiple people with customizable tip percentages.",
-      icon: Calculator,
-      href: "/finance-tools/tip-calculator",
-    },
-    {
-      title: "Savings Goal Tracker",
-      description: "Track your savings goals and see when you'll reach them. Perfect for planning vacations, purchases, or emergency funds.",
-      icon: Target,
-      href: "/finance-tools/savings-tracker",
-    },
-    {
-      title: "Retirement Goal Planner",
-      description: "Plan your retirement with compound interest calculations. See how your savings will grow over time.",
-      icon: TrendingUp,
-      href: "/finance-tools/retirement-planner",
-    },
-    {
-      title: "Bill Splitter",
-      description: "Split bills and expenses fairly among friends or groups. Perfect for restaurants, trips, and shared expenses.",
-      icon: Users,
-      href: "/finance-tools/bill-splitter",
-    },
-    {
-      title: "Credit Card Payoff Calculator",
-      description: "Calculate how long it will take to pay off your credit card debt and how much interest you'll pay.",
-      icon: CreditCard,
-      href: "/finance-tools/credit-card-payoff",
-    },
-    {
-      title: "Loan Calculator",
-      description: "Calculate monthly loan payments, total interest, and amortization schedules. Perfect for car loans, personal loans, and mortgages.",
-      icon: DollarSign,
-      href: "/finance-tools/loan-calculator",
-    },
-    {
-      title: "Mortgage Calculator",
-      description: "Estimate monthly mortgage payments including principal, interest, taxes, and insurance. Plan your home purchase with confidence.",
-      icon: Home,
-      href: "/finance-tools/mortgage-calculator",
-    },
-    {
-      title: "Tax Calculator",
-      description: "Calculate income tax, GST, or VAT. Supports inclusive and exclusive tax calculations for accurate financial planning.",
-      icon: FileText,
-      href: "/finance-tools/tax-calculator",
-    },
-    {
-      title: "Sales Tax Calculator",
-      description: "Calculate sales tax for any US state or custom rate. Get total costs instantly for budgeting and purchasing.",
-      icon: BadgePercent,
-      href: "/finance-tools/sales-tax-calculator",
-    },
-    {
-      title: "Retirement Calculator",
-      description: "Plan your financial future. Estimate retirement savings growth and determine if you're on track for your goals.",
-      icon: PiggyBank,
-      href: "/finance-tools/retirement-calculator",
-    },
-    {
-      title: "Investment Calculator",
-      description: "Project investment growth over time with compound interest. Compare different return rates and contribution strategies.",
-      icon: ChartLine,
-      href: "/finance-tools/investment-calculator",
-    },
-    {
-      title: "Compound Interest Calculator",
-      description: "Visualize the power of compound interest. See how your money grows over time with reinvested earnings.",
-      icon: Coins,
-      href: "/finance-tools/compound-interest",
-    },
-    {
-      title: "Amortization Calculator",
-      description: "Generate detailed amortization schedules for loans. See principal and interest breakdown for each payment period.",
-      icon: ScrollText,
-      href: "/finance-tools/amortization-calculator",
-    },
-    {
-      title: "Finance Calculator",
-      description: "Comprehensive financial calculations for investments, loans, and savings. All-in-one financial planning tool.",
-      icon: Landmark,
-      href: "/finance-tools/finance-calculator",
-    },
-    {
-      title: "Inflation Calculator",
-      description: "Calculate the impact of inflation on purchasing power over time. Understand real value of money.",
-      icon: TrendingDown,
-      href: "/finance-tools/inflation-calculator",
-    },
-    {
-      title: "Interest Rate Calculator",
-      description: "Calculate interest rates for loans and investments. Determine APR, APY, and effective rates.",
-      icon: Banknote,
-      href: "/finance-tools/interest-rate-calculator",
-    },
-    {
-      title: "Payment Calculator",
-      description: "Calculate payment amounts for various loan types. Plan monthly budgets with accurate payment estimates.",
-      icon: CreditCard,
-      href: "/finance-tools/payment-calculator",
-    },
-    {
-      title: "Salary Calculator",
-      description: "Convert between hourly, weekly, monthly, and annual salary. Calculate take-home pay after taxes.",
-      icon: Banknote,
-      href: "/finance-tools/salary-calculator",
-    },
-  ]
-
   const toolContent = {
     toolName: "Finance Tools",
-    overview: "Our professional finance tools combine intuitive interfaces with accurate calculations. All invoice generation, PayPal fee calculations, and financial computations run locally for maximum privacy and speed. Whether you're a freelancer, business owner, or planning your personal finances, these tools provide the precision you need.",
+    overview:
+      "This category focuses on high-intent money decisions: borrowing, budgeting, taxes, debt payoff, and long-term investing. Use these calculators to estimate payments, compare scenarios, and plan with clearer numbers before you commit.",
     howToSteps: [
-      "Select the appropriate tool for your needs from the collection below.",
-      "Enter your financial data into the input fields (e.g., loan amount, interest rate, savings goal).",
-      "Review the instant calculations and detailed breakdowns provided.",
-      "Use the results to make informed financial decisions or generate professional documents like invoices."
+      "Choose the specific finance task (loan, tax, retirement, salary, or pricing).",
+      "Enter your values such as amount, rate, term, and payment assumptions.",
+      "Review totals, monthly breakdowns, and scenario comparisons.",
+      "Use the results to plan budgets, pricing, or savings targets with confidence.",
     ],
     features: [
-      "20+ Professional Finance Tools",
-      "100% Free & No Signup Required",
-      "Privacy-Focused (Client-Side Processing)",
-      "Mobile-Optimized for Any Device",
-      "Business-Ready Invoices & Reports",
-      "Global Currency Support"
+      "21 focused finance calculators",
+      "Fast browser-based calculations",
+      "Budgeting, debt, tax, and investment coverage",
+      "Cross-links between related money decisions",
+      "No signup required",
+      "Mobile-friendly workflows",
     ],
     aboutTool: `
-      ### Accurate Financial Calculations
-      Invoice generation with automatic tax calculations, precise PayPal fee computation (2.9% + $0.30), and real-time savings goal tracking — all optimized for business use.
+      ### Built for Real Financial Decisions
+      From monthly payment estimates to long-term retirement projections, these tools help you move from rough guesses to clear, actionable numbers.
 
-      ### Business-Ready Outputs
-      Professional invoice templates, detailed fee breakdowns, and comprehensive financial reports designed for freelancers, small businesses, and personal finance management.
+      ### Useful for Personal and Business Use
+      Individuals can plan debt payoff and savings goals, while freelancers and small businesses can handle invoicing, pricing, and fee calculations.
 
-      ### Freelancer & Small Business Tools
-      Create professional invoices for clients, calculate accurate PayPal fees for pricing, track business savings goals, and manage freelance finances with precision.
-
-      ### Personal Finance Management
-      Plan retirement savings, calculate restaurant tips, split group bills fairly, and optimize personal budgeting with our comprehensive financial calculators.
+      ### Better Comparison Before You Commit
+      Test different rates, terms, and contribution levels quickly so you can compare outcomes before selecting a loan, pricing plan, or investment path.
     `,
     faqs: [
       {
-        question: "What are the best free invoice generators and PayPal fee calculators?",
-        answer: "Our free invoice generator creates professional business invoices with automatic tax calculations, itemized billing, and PDF export capabilities. The PayPal fee calculator accurately computes transaction fees (2.9% + $0.30 domestic, 3.9% + fixed fee international) helping businesses set proper pricing and maintain profit margins."
+        question: "Which finance calculator should I start with?",
+        answer:
+          "Start with the tool that matches your immediate decision: Loan or Mortgage for borrowing, Tax or Sales Tax for purchase planning, and Investment or Retirement for long-term growth.",
       },
       {
-        question: "How do invoice generators work and what makes them professional?",
-        answer: "Invoice generators use structured templates and automated calculations to create professional invoices that meet business standards. They typically include fields for client information, itemized services or products, tax calculations, discounts, and payment terms."
+        question: "Are these finance calculations accurate?",
+        answer:
+          "The tools use standard finance formulas and are suitable for planning and comparison. For regulated decisions, confirm numbers with your lender, accountant, or financial advisor.",
       },
       {
-        question: "What's the best way to use PayPal fee calculators for business?",
-        answer: "PayPal fee calculators are essential for online businesses to understand true transaction costs and set appropriate pricing. Use them to determine net amounts after fees, calculate required charges to achieve target amounts, and compare different payment processing options."
+        question: "Can I compare multiple scenarios?",
+        answer:
+          "Yes. A practical workflow is to run baseline inputs first, then adjust one variable at a time (rate, term, contribution, or tax) and compare the impact.",
       },
       {
-        question: "Are these tools safe to use and do they protect my privacy?",
-        answer: "Our finance tools prioritize user privacy and security by operating entirely within your browser. All calculations, invoice generation, and financial analyses happen locally on your device, meaning no personal or financial data is transmitted to external servers."
+        question: "Do these tools work for business workflows?",
+        answer:
+          "Yes. Tools like Invoice Generator, PayPal Fee Calculator, Discount Calculator, and Salary Calculator are useful for day-to-day operations and pricing decisions.",
       },
       {
-        question: "Can these tools help with business growth and financial planning?",
-        answer: "Absolutely! These tools are invaluable for business growth, financial planning, and strategic decision-making. Invoice generators help maintain professional client relationships and ensure timely payments. Fee calculators optimize pricing strategies and improve profit margins."
-      }
+        question: "Are the finance tools free?",
+        answer:
+          "Yes. The calculators in this category are free to use with no account required.",
+      },
     ],
     relatedTools: [
-      { name: "Scientific Calculator", href: "/calculator/scientific-calculator" },
+      { name: "Online Calculators", href: "/calculator" },
+      { name: "Currency Converter", href: "/converters/currency" },
       { name: "Percentage Calculator", href: "/calculator/percentage-calculator" },
-      { name: "Currency Converter", href: "/converters/currency" }
     ],
     useCases: [
-      "Freelancers creating professional invoices",
-      "Small businesses calculating PayPal fees",
-      "Individuals planning retirement savings",
-      "Groups splitting bills and tips",
-      "Homeowners estimating mortgage payments",
-      "Shoppers calculating sales tax and discounts"
-    ]
+      "Compare loan and mortgage affordability",
+      "Estimate debt payoff timelines",
+      "Plan retirement and contribution targets",
+      "Calculate tax-inclusive and tax-exclusive totals",
+      "Price products or services with fee awareness",
+      "Track progress toward savings milestones",
+    ],
   }
 
   return (
     <ToolPageLayout
       header={{
         title: "Finance Tools & Calculators",
-        description: "Professional-grade financial calculators and business tools for invoice generation, PayPal fee calculation, and personal finance management. All free, fast, and easy to use.",
+        description:
+          "Free calculators for borrowing, budgeting, taxes, investments, and pricing decisions.",
         titleSize: "large",
         descriptionSize: "medium",
         centered: true,
-        color: "blue"
+        color: "blue",
       }}
-      breadcrumbs={[
-        { label: "Finance Tools", href: "/finance-tools" },
-      ]}
+      breadcrumbs={[{ label: "Finance Tools", href: "/finance-tools" }]}
       toolComponent={
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
-          {tools.map((tool) => (
+          {financeTools.map((tool) => (
             <GToolCard
               key={`finance-tools-${tool.href}`}
               title={tool.title}
@@ -247,9 +299,11 @@ export default function FinanceToolsPage() {
       }
       toolContent={toolContent}
       expectedMetadata={{
-        title: "Free Online Finance Tools – Budget, Investment & Expense Calculators",
-        description: "Free finance tools: budget calculators, savings trackers, loan calculators, investment planners. Perfect for financial planning.",
-        path: "/finance-tools"
+        title:
+          "Free Finance Calculators: Loan, Mortgage, Tax, Investment & Budget Tools",
+        description:
+          "Use free finance tools for loan, mortgage, tax, salary, savings, and investment planning. Fast, accurate calculators with no signup required.",
+        path: "/finance-tools",
       }}
     />
   )

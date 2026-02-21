@@ -649,7 +649,7 @@ export default function BMICalculatorPage() {
     <ToolPageLayout
       header={{
         title: "BMI Calculator - Free Body Mass Index Calculator",
-        description: "Calculate your BMI (Body Mass Index) instantly with our free, accurate calculator. Get your results, understand what your BMI means, see health risks by category, and receive personalized recommendations based on WHO & CDC guidelines.",
+        description: "Calculate BMI instantly with WHO and CDC categories. Get healthy weight range insights and practical next steps.",
         titleSize: "medium",
         descriptionSize: "small"
       }}
@@ -664,8 +664,8 @@ export default function BMICalculatorPage() {
       }
       toolContent={toolContent}
       expectedMetadata={{
-        title: "BMI Calculator - Free Body Mass Index Calculator | Check Your BMI",
-        description: "Calculate your BMI (Body Mass Index) free with our accurate calculator. Get instant results, understand what your BMI means, see health risks by category, and get personalized recommendations. Based on WHO & CDC guidelines.",
+        title: "BMI Calculator - Free Body Mass Index Calculator",
+        description: "Calculate BMI instantly with WHO and CDC categories. Get healthy weight range insights and practical next steps.",
         path: "/calculator/bmi-calculator"
       }}
     />

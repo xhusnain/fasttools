@@ -16,7 +16,8 @@ const TOOL_NAME = "Unit Converter"
 
 const baseMetadata = createMetadata({
   title: TOOL_TITLE,
-  description: "Free conversion calculator with 1000+ unit conversions. Convert length, weight, temperature, currency, time, area, volume, speed, power, and energy instantly. Accurate results validated against NIST, BIPM, and ISO standards.",
+  description:
+    "Free unit converter for length, weight, temperature, time, area, volume, speed, and more with instant results.",
   path: "/calculator/conversion-calculator",
   breadcrumbs: [
     { label: "Calculator", href: "/calculator" },
@@ -566,7 +567,8 @@ export default function ConversionCalculatorPage() {
       toolContent={toolContent}
       expectedMetadata={{
         title: TOOL_TITLE,
-        description: "Free conversion calculator with 1000+ unit conversions. Convert length, weight, temperature, currency, time, area, volume, speed, power, and energy instantly. Accurate results validated against NIST, BIPM, and ISO standards.",
+        description:
+          "Free unit converter for length, weight, temperature, time, area, volume, speed, and more with instant results.",
         path: "/calculator/conversion-calculator"
       }}
     />

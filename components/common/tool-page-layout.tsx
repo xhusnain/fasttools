@@ -1,4 +1,5 @@
 import Link from "next/link"
+import Image from "next/image"
 import { GHeader } from "@/ui/gheader"
 
 
@@ -88,7 +89,7 @@ export function ToolPageLayout({
                 <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
             )}
 
-            <div className="container mx-auto px-4 py-6 max-w-7xl">
+            <main id="tool-page-main" className="container mx-auto px-4 py-6 max-w-7xl">
                 {breadcrumbs && breadcrumbs.length > 0 && (
                     <Breadcrumbs items={breadcrumbs} />
                 )}
@@ -130,10 +131,12 @@ export function ToolPageLayout({
 
                             {heroImage && (
                                 <div className="relative w-full h-[300px] sm:h-[400px] rounded-xl overflow-hidden shadow-lg border border-border/50 my-6">
-                                    <img
+                                    <Image
                                         src={heroImage}
                                         alt={`${toolContent.toolName} Hero`}
-                                        className="w-full h-full object-cover"
+                                        fill
+                                        sizes="(max-width: 768px) 100vw, (max-width: 1280px) 80vw, 1200px"
+                                        className="object-cover"
                                     />
                                     <div className="absolute inset-0 bg-gradient-to-t from-background/10 to-transparent pointer-events-none" />
                                 </div>
@@ -377,7 +380,7 @@ export function ToolPageLayout({
                         </div>
                     </div>
                 </div>
-            </div>
+            </main>
             {/* WebMCP: Register this tool with browser AI agent API (Chrome 146+) */}
             <WebMCPToolRegistration
                 toolName={toolContent.toolName}

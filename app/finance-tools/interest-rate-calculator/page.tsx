@@ -10,9 +10,9 @@ import { createMetadata } from "@/lib/metadata-base"
 import { Calculator, BarChart3, TrendingUp, BookOpen, Users, Clock, Target, Home } from "lucide-react"
 
 const baseMetadata = createMetadata({
-  title: "FastTools - Interest Rate Calculator | Free Advanced Loan Rate Calculator",
+  title: "Interest Rate Calculator - Find APR from Payments",
   description:
-    "FastTools Interest Rate Calculator - Calculate real interest rates on loans with fixed terms and monthly payments. Advanced Newton-Raphson method for precise rate calculation and loan optimization.",
+    "Calculate the effective loan interest rate from payment amount, term, and principal with accurate iterative solving.",
   path: "/finance-tools/interest-rate-calculator",
   breadcrumbs: [
     { label: "Finance Tools", href: "/finance-tools" },
@@ -293,8 +293,9 @@ export default function InterestRateCalculatorPage() {
       }
       toolContent={toolContent}
       expectedMetadata={{
-        title: "Interest Rate Calculator - Find True Loan Cost",
-        description: "FastTools Interest Rate Calculator - Calculate real interest rates on loans with fixed terms and monthly payments. Advanced Newton-Raphson method for precise rate calculation and loan optimization.",
+        title: "Interest Rate Calculator - Find APR from Payments",
+        description:
+          "Calculate the effective loan interest rate from payment amount, term, and principal with accurate iterative solving.",
         path: "/finance-tools/interest-rate-calculator"
       }}
     />
