@@ -2,6 +2,9 @@
 
 ## High-Potential, Low-Competition Calculator Keywords
 
+### Researched Priority Candidate (2026-02-23)
+- [RESEARCHED] 1099 Quarterly Tax Estimator (US): High-intent recurring demand driven by IRS quarterly deadlines, clear penalty-avoidance pain point, and strong affiliate/lead monetization fit. Detailed brief: `tool-research-1099-quarterly-tax-estimator.txt`.
+
 ### SaaS/Business
 - SaaS Churn Rate Calculator: High value for B2B users.
 - SaaS Payback Period Calculator: High value for business owners.
