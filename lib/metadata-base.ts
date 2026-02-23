@@ -247,21 +247,26 @@ export function getCanonicalUrl(path: string): string {
 
 
 export function getWebsiteSchema(searchUrl?: string) {
-    return {
+    const websiteSchema: any = {
         "@context": "https://schema.org",
         "@type": "WebSite",
         name: SITE_NAME,
         alternateName: ["FastTools", "Fast Tools", "fasttools"],
         url: `${BASE_URL}/`,
-        potentialAction: {
+    }
+
+    if (searchUrl) {
+        websiteSchema.potentialAction = {
             "@type": "SearchAction",
             target: {
                 "@type": "EntryPoint",
-                urlTemplate: searchUrl || `${BASE_URL}/?q={search_term_string}`
+                urlTemplate: searchUrl
             },
             "query-input": "required name=search_term_string",
-        },
+        }
     }
+
+    return websiteSchema
 }
 
 export function createBreadcrumbSchema(breadcrumbs: BreadcrumbItem[], currentPath: string) {
