@@ -58,7 +58,7 @@ export default function RootLayout({
         "@context": "https://schema.org",
         "@type": "Organization",
         name: "FastTools",
-        alternateName: ["fasttools", "fast tools", "fasttools.store"],
+        alternateName: ["fasttools", "fast tools", "fasttools","online tools"],
         url: "https://www.fasttools.store",
         description: "FastTools is the world's first WebMCP-enabled free online tools platform. 170+ tools that AI agents can discover, fill, and use automatically. Calculators, converters, crypto, PDF, developer tools — all AI-interactable.",
         foundingDate: "2024",

@@ -3,7 +3,7 @@
 export const env = {
   // Site Configuration
   siteUrl: process.env.NEXT_PUBLIC_SITE_URL || "https://www.fasttools.store",
-  siteName: process.env.NEXT_PUBLIC_SITE_NAME || "fasttools.store",
+  siteName: process.env.NEXT_PUBLIC_SITE_NAME || "www.fasttools.store",
 
   // AI Configuration
   openaiApiKey: process.env.OPENAI_API_KEY || " ",

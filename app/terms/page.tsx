@@ -94,7 +94,7 @@ export default function TermsPage() {
                 </div>
                 <div className="space-y-4 text-muted-foreground leading-relaxed">
                   <p>
-                    These Terms of Service ("Terms") govern your use of FastTools ("we," "our," or "us") website located at fasttools.store (the "Site") and our free online tools and services (collectively, the "Services"). By accessing or using our Services, you agree to be bound by these Terms.
+                    These Terms of Service ("Terms") govern your use of FastTools ("we," "our," or "us") website located at https://www.fasttools.store (the "Site") and our free online tools and services (collectively, the "Services"). By accessing or using our Services, you agree to be bound by these Terms.
                   </p>
                   <p>
                     If you do not agree to these Terms, please do not use our Services. We reserve the right to modify these Terms at any time, and your continued use of our Services after such modifications constitutes acceptance of the updated Terms.

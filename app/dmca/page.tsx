@@ -38,7 +38,7 @@ export default function DmcaPage() {
                                     Introduction
                                 </h2>
                                 <p className="text-muted-foreground">
-                                    FastTools ("we", "our", or "us") respects the intellectual property rights of others and expects its users to do the same. In accordance with the Digital Millennium Copyright Act of 1998 ("DMCA"), the text of which may be found on the U.S. Copyright Office website at <a href="http://www.copyright.gov/legislation/dmca.pdf" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">http://www.copyright.gov/legislation/dmca.pdf</a>, we will respond expeditiously to claims of copyright infringement committed using the FastTools service and/or the FastTools website (the "Site") if such claims are reported to our Designated Copyright Agent identified in the sample notice below.
+                                    FastTools ("we", "our", or "us") respects the intellectual property rights of others and expects its users to do the same. In accordance with the Digital Millennium Copyright Act of 1998 ("DMCA"), the text of which may be found on the U.S. Copyright Office website at <a href="https://www.copyright.gov/legislation/dmca.pdf" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">https://www.copyright.gov/legislation/dmca.pdf</a>, we will respond expeditiously to claims of copyright infringement committed using the FastTools service and/or the FastTools website (the "Site") if such claims are reported to our Designated Copyright Agent identified in the sample notice below.
                                 </p>
                             </section>
 
