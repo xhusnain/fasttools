@@ -723,7 +723,7 @@ export const categories = [
             },
             {
                 title: "Currency Converter",
-                description: "Real-time currency conversion for 150+ currencies with live rates",
+                description: "Convert between global currencies with live exchange rates",
                 href: "/converters/currency",
                 icon: DollarSign,
                 badge: "Live",
@@ -739,7 +739,7 @@ export const categories = [
             },
             {
                 title: "Length Converter",
-                description: "Convert between meters, feet, inches, kilometers, miles, and more",
+                description: "Convert between metric and imperial length units instantly",
                 href: "/converters/length",
                 icon: Ruler,
                 badge: "Quick",
@@ -755,7 +755,7 @@ export const categories = [
             },
             {
                 title: "File Size Converter",
-                description: "Convert between bytes, KB, MB, GB, TB, and other storage units",
+                description: "Convert file-size units and compare storage values quickly",
                 href: "/converters/file-size",
                 icon: FileText,
                 badge: "Digital",
@@ -763,7 +763,7 @@ export const categories = [
             },
             {
                 title: "Timezone Converter",
-                description: "Convert time between different zones worldwide with DST support",
+                description: "Convert time across major GMT-offset zones instantly",
                 href: "/converters/timezone",
                 icon: Globe,
                 badge: "Time",
