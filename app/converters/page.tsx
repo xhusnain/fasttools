@@ -15,6 +15,7 @@ import {
   Ruler,
   Thermometer,
   Type,
+  AudioLines,
 } from "lucide-react"
 
 const converters = [
@@ -101,6 +102,13 @@ const converters = [
       "Convert text to NATO phonetic words and decode in reverse.",
     icon: Radio,
     href: "/converters/nato-phonetic",
+  },
+  {
+    title: "Morse Code Translator",
+    description:
+      "Translate text to Morse code and decode Morse to English with audio playback.",
+    icon: AudioLines,
+    href: "/converters/morse-code",
   },
   {
     title: "Base64 File Converter",

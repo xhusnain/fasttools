@@ -994,6 +994,12 @@ export const toolPages = [
         priority: 0.9,
     },
     {
+        url: "https://www.fasttools.store/converters/morse-code",
+        lastModified: new Date('2026-02-26'),
+        changeFrequency: "monthly" as const,
+        priority: 0.9,
+    },
+    {
         url: "https://www.fasttools.store/converters/ascii-binary",
         lastModified: new Date('2026-02-20'),
         changeFrequency: "monthly" as const,
