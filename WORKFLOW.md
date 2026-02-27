@@ -18,9 +18,12 @@ Follow the "Separation of Concerns" strictly:
 
 ## Phase 3: SEO & Content
 - **Keywords:** Research high-volume/low-competition keywords.
-- **Semantic Content:** Write "How to use," "Why use this," and FAQs.
-- **Technical SEO:** Add JSON-LD Schema (SoftwareApplication/HowTo).
-- **Optimization:** ensure < 100ms TBT (Total Blocking Time).
+- **Semantic Content:** Write answer-first block, "How to use," comparison section, and FAQs.
+- **Technical SEO:** Add JSON-LD Schema (WebApplication + FAQPage + BreadcrumbList).
+- **GEO/AEO:** Front-load answers, self-contained sections, verifiable data, AI crawler access.
+- **Performance:** Ensure INP < 200ms, LCP < 2.5s, CLS < 0.1.
+- **Linking:** Cross-link 3-5 related tools, link from hub page.
+- **Reference:** See full SEO skill at `.claude/memory/seo-skill.md`.
 
 ## Phase 4: Variations (The "Long Tail" Strategy)
 - If the tool has niche keywords (e.g., "Instagram Downloader" vs "Insta Saver"), create variation pages.
