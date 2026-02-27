@@ -17,6 +17,7 @@ import {
   Landmark,
   TrendingDown,
   Banknote,
+  Shield,
 } from "lucide-react"
 import { ToolPageLayout } from "@/components/common/tool-page-layout"
 import { Metadata } from "next"
@@ -99,6 +100,13 @@ const financeTools = [
       "Estimate income tax, GST, or VAT to understand net and gross amounts.",
     icon: FileText,
     href: "/finance-tools/tax-calculator",
+  },
+  {
+    title: "1099 Quarterly Tax Estimator",
+    description:
+      "Calculate quarterly estimated tax payments for 1099 income with safe harbor analysis and SE tax breakdown.",
+    icon: Shield,
+    href: "/finance-tools/quarterly-tax-estimator",
   },
   {
     title: "Sales Tax Calculator",

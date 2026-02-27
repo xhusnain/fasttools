@@ -525,6 +525,12 @@ export const toolPages = [
         priority: 0.85,
     },
     {
+        url: "https://www.fasttools.store/finance-tools/quarterly-tax-estimator",
+        lastModified: new Date('2026-02-27'),
+        changeFrequency: "monthly" as const,
+        priority: 0.9,
+    },
+    {
         url: "https://www.fasttools.store/calculator/percentage-calculator",
         lastModified: new Date('2026-02-21'),
         changeFrequency: "monthly" as const,
