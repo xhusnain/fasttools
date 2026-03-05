@@ -53,6 +53,17 @@ const toolConfig = createToolConfig({
   ],
 
   content: {
+    definition:
+      "A PDF Sign Tool is a free tool that lets you add signatures, initials, text, and date stamps to PDF documents without printing or scanning.",
+    quickAnswer:
+      "Upload a PDF, draw or type your signature, and place it anywhere on the document. Add text fields, dates, and checkmarks. Download the signed PDF. No account or subscription needed.",
+    keyTakeaways: [
+      "Draw, type, or upload an image of your signature",
+      "Place signatures, initials, text, and dates anywhere on the PDF",
+      "Multiple signature styles and colors available",
+      "Download the signed PDF immediately — no email verification",
+      "All signing happens locally — your document never leaves your browser",
+    ],
     overview:
       "Sign PDF is built for quick signature placement workflows. You can draw with mouse or touch, type your name as a signature, or upload an existing signature image and position it on one or more pages.",
 

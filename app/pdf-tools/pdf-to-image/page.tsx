@@ -52,6 +52,17 @@ const toolConfig = createToolConfig({
   ],
 
   content: {
+    definition:
+      "A PDF to Image Converter is a free tool that converts PDF pages into high-quality PNG or JPG images for sharing, presentations, and web use.",
+    quickAnswer:
+      "Upload a PDF to convert each page to an image. Choose PNG (lossless) or JPG (smaller size), set the resolution (DPI), and download individual page images or all pages as a ZIP file.",
+    keyTakeaways: [
+      "Converts each PDF page to a separate PNG or JPG image",
+      "Adjustable resolution: 72 DPI (web) to 300 DPI (print quality)",
+      "PNG for lossless quality, JPG for smaller file sizes",
+      "Download individual pages or all pages as a ZIP archive",
+      "All conversion runs locally in your browser",
+    ],
     overview:
       "PDF to Image Converter is built for page export workflows where PDF pages need to be reused as images. Choose output format and quality, convert all pages or specific pages, then download individual files or one ZIP package.",
 

@@ -60,6 +60,17 @@ const toolConfig = createToolConfig({
   },
 
   content: {
+    definition:
+      "An HTML Escape Tool is a free tool that converts special characters (<, >, &, \", ') into HTML entities and decodes HTML entities back to their original characters.",
+    quickAnswer:
+      "Paste text containing HTML special characters to escape them into safe entity codes (&lt; &gt; &amp;), or paste escaped HTML to decode it back to readable characters. Essential for displaying code snippets in web pages.",
+    keyTakeaways: [
+      "Escapes < > & \" ' to their HTML entity equivalents",
+      "Decodes HTML entities (&lt; &amp; &#39;) back to original characters",
+      "Prevents XSS attacks by escaping user input before rendering",
+      "Essential when embedding code snippets in HTML pages or blog posts",
+      "Supports both named entities (&amp;) and numeric entities (&#38;)",
+    ],
     overview:
       "This tool converts risky or reserved HTML characters (`<`, `>`, `&`, `\"`, `'`) into safe entities and decodes entities back to plain text when needed. It is useful for output sanitization checks, template debugging, and content migration tasks.",
 

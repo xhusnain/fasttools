@@ -47,6 +47,17 @@ const toolConfig = createToolConfig({
   },
 
   content: {
+    definition:
+      "A MIME Type Lookup Tool is a free tool that identifies the correct MIME type for any file extension and looks up file extensions for any MIME type.",
+    quickAnswer:
+      "Enter a file extension (e.g., .pdf, .json, .mp4) to find its MIME type, or enter a MIME type to find matching extensions. Covers 800+ registered MIME types from the IANA registry.",
+    keyTakeaways: [
+      "Looks up MIME types by file extension and extensions by MIME type",
+      "Covers 800+ IANA-registered media types",
+      "Common types: application/json, text/html, image/png, video/mp4",
+      "MIME types are required in HTTP Content-Type headers and file uploads",
+      "Searchable reference table with categories: text, image, audio, video, application",
+    ],
     overview:
       "Use this tool to validate file extension and MIME type mappings before configuring uploads, downloads, and response headers. It helps reduce content-type mistakes in backend and frontend implementations.",
 

@@ -62,6 +62,17 @@ const toolConfig = createToolConfig({
   },
 
   content: {
+    definition:
+      "A Unicode Converter is a free tool that converts text into Unicode code points and decodes Unicode escape sequences back into readable characters.",
+    quickAnswer:
+      "Paste text to see each character's Unicode code point (U+XXXX format), or enter Unicode sequences to decode them into readable text. Supports all scripts including Latin, CJK, Arabic, and emoji.",
+    keyTakeaways: [
+      "Converts text to U+XXXX code points and reverses the process",
+      "Supports all Unicode planes including emoji and CJK characters",
+      "Handles common escape formats: U+, \\u, &#x, and 0x notation",
+      "Unicode 15.1 defines over 149,000 characters across 161 scripts",
+      "Essential for debugging encoding issues in multilingual applications",
+    ],
     overview:
       "Use this tool to convert text into Unicode code points and decode Unicode notation back into readable text. It is useful for debugging string encoding, developer workflows, and multilingual text handling.",
 

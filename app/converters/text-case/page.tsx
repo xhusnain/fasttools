@@ -44,6 +44,17 @@ const toolConfig = createToolConfig({
   ],
 
   content: {
+    definition:
+      "A Text Case Converter is a free tool that transforms text between uppercase, lowercase, title case, sentence case, camelCase, snake_case, and other naming conventions.",
+    quickAnswer:
+      "Paste your text and click the desired case format. Supports UPPERCASE, lowercase, Title Case, Sentence case, camelCase, PascalCase, snake_case, kebab-case, and more. Copy the result with one click.",
+    keyTakeaways: [
+      "Supports 8+ case formats including programming naming conventions",
+      "camelCase and PascalCase for code variables and class names",
+      "snake_case for Python and database columns, kebab-case for URLs",
+      "Title Case capitalizes first letter of each word",
+      "Instant conversion with one-click copy",
+    ],
     overview:
       "Use this tool to quickly convert text into the format you need for documents, headlines, URLs, code variables, and naming conventions.",
 

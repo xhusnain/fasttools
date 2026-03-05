@@ -59,6 +59,18 @@ const toolConfig = createToolConfig({
   },
 
   content: {
+    definition:
+      "A QR Code Generator is a free tool that creates scannable QR codes for URLs, WiFi networks, contact cards (vCard), text, email, SMS, phone numbers, WhatsApp messages, and GPS locations.",
+    quickAnswer:
+      "Choose a QR type (URL, WiFi, vCard, etc.), enter your data, customize colors and logo, then download as PNG or SVG. The generated QR code is static — it works permanently as long as the destination exists. No account needed.",
+    keyTakeaways: [
+      "Supports 9 QR types: URL, WiFi, vCard, email, SMS, WhatsApp, phone, location, text",
+      "Static QR codes never expire — they work as long as the destination URL is active",
+      "Minimum print size: 2cm x 2cm for reliable scanning",
+      "Use high error correction (H) when adding a logo to maintain scannability",
+      "Export as SVG for print materials, PNG for digital use",
+      "Always test QR codes on 2+ devices before publishing",
+    ],
     overview:
       "Use this tool to generate scannable QR codes for web links, WiFi login, business contact data, and quick actions such as SMS or WhatsApp starts. The builder includes styling controls and export options so the same flow can be used for digital campaigns and print assets.",
 

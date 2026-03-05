@@ -55,6 +55,17 @@ const toolConfig = createToolConfig({
   },
 
   content: {
+    definition:
+      "A Meta Tag Generator is a free tool that creates HTML meta tags (title, description, Open Graph, Twitter Cards) for better SEO and social media sharing.",
+    quickAnswer:
+      "Enter your page title, description, and URL to generate complete meta tags. Includes SEO meta tags, Open Graph tags for Facebook, Twitter Card tags, and canonical URL. Copy the HTML and paste it into your page's <head> section.",
+    keyTakeaways: [
+      "Generates title, description, canonical, robots, and viewport meta tags",
+      "Creates Open Graph (og:) tags for Facebook and LinkedIn sharing",
+      "Creates Twitter Card meta tags for rich tweet previews",
+      "Title tag: keep under 60 characters for full display in search results",
+      "Meta description: keep under 160 characters for optimal SERP display",
+    ],
     overview:
       "Use this generator to create metadata for search snippets and social sharing. It helps you define title, description, canonical URL, Open Graph image fields, and Twitter card values in one place so pages render consistently when shared.",
 

@@ -47,6 +47,17 @@ const toolConfig = createToolConfig({
   },
 
   content: {
+    definition:
+      "A Keycode Info Tool is a free tool that displays the JavaScript keyCode, key, code, and event properties for any key you press on your keyboard.",
+    quickAnswer:
+      "Press any key on your keyboard to instantly see its keyCode, event.key, event.code, and modifier state (Shift, Ctrl, Alt, Meta). Useful for building keyboard shortcuts and handling key events in JavaScript.",
+    keyTakeaways: [
+      "Shows keyCode, event.key, event.code, and which for any keypress",
+      "event.key returns the character value, event.code returns the physical key",
+      "keyCode is deprecated — use event.key or event.code in new projects",
+      "Detects modifier keys: Shift, Control, Alt, and Meta (Cmd/Win)",
+      "Essential reference for building keyboard shortcut handlers",
+    ],
     overview:
       "Use this page to inspect keyboard event properties while building shortcuts, accessibility controls, and form interactions. It helps verify exact key behavior across browsers and layouts.",
 

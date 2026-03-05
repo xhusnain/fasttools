@@ -53,6 +53,17 @@ const toolConfig = createToolConfig({
   },
 
   content: {
+    definition:
+      "An HTTP Status Codes Reference is a free tool that lists all HTTP response status codes with descriptions, use cases, and troubleshooting guidance.",
+    quickAnswer:
+      "Search or browse HTTP status codes by category: 1xx (informational), 2xx (success), 3xx (redirection), 4xx (client error), 5xx (server error). Each code includes its meaning, common causes, and how to fix it.",
+    keyTakeaways: [
+      "200 OK, 201 Created, 204 No Content — successful responses",
+      "301 Moved Permanently, 302 Found, 304 Not Modified — redirections",
+      "400 Bad Request, 401 Unauthorized, 403 Forbidden, 404 Not Found — client errors",
+      "500 Internal Server Error, 502 Bad Gateway, 503 Service Unavailable — server errors",
+      "Searchable and filterable reference for API development and debugging",
+    ],
     overview:
       "Use this status-code reference to quickly interpret HTTP responses during API development, integration testing, and production debugging. It covers code classes and practical meaning.",
 

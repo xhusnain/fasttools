@@ -53,6 +53,17 @@ const toolConfig = createToolConfig({
   },
 
   content: {
+    definition:
+      "A JSON to CSV Converter is a free tool that transforms JSON arrays of objects into comma-separated values (CSV) format for use in spreadsheets and databases.",
+    quickAnswer:
+      "Paste a JSON array of objects to instantly convert it to CSV format. The tool auto-detects column headers from JSON keys, flattens nested objects, and lets you download the result as a .csv file.",
+    keyTakeaways: [
+      "Converts JSON arrays to CSV with auto-detected column headers",
+      "Flattens nested JSON objects using dot notation (user.name)",
+      "Handles arrays, nulls, and mixed data types gracefully",
+      "Download result as .csv file for Excel, Google Sheets, or databases",
+      "All processing runs locally — no data uploaded to servers",
+    ],
     overview:
       "Use this converter to transform JSON payloads into CSV for spreadsheets, data analysis, and reporting pipelines. It is useful for API output handling and quick export operations.",
 

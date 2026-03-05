@@ -61,6 +61,17 @@ const toolConfig = createToolConfig({
   },
 
   content: {
+    definition:
+      "An AI Lyrics Generator is a free tool that creates original song lyrics based on your theme, genre, mood, and style preferences using artificial intelligence.",
+    quickAnswer:
+      "Enter a theme or topic, select a music genre and mood, and get AI-generated lyrics instantly. Customize verse count, rhyme scheme, and structure. Edit the output to match your creative vision.",
+    keyTakeaways: [
+      "Generates original lyrics based on theme, genre, and mood",
+      "Supports multiple genres: pop, rap, rock, country, R&B, and more",
+      "Customizable structure: verses, chorus, bridge, and pre-chorus",
+      "Adjustable rhyme schemes and syllable patterns",
+      "Use as a creative starting point — refine and personalize the output",
+    ],
     overview:
       "This tool helps creators move from a blank page to a workable lyric draft quickly. Enter your theme, optionally pick style controls, and generate a first version you can rewrite for melody, cadence, and voice.",
 

@@ -53,6 +53,17 @@ const toolConfig = createToolConfig({
   },
 
   content: {
+    definition:
+      "A JWT Decoder is a free tool that decodes JSON Web Tokens to display the header, payload, and signature components without verifying the token.",
+    quickAnswer:
+      "Paste a JWT token to instantly decode and view its header (algorithm, type), payload (claims like sub, iat, exp), and signature. Check expiration status and inspect all claims. No secret key required for decoding.",
+    keyTakeaways: [
+      "Decodes JWT header, payload, and signature instantly",
+      "Shows all standard claims: iss, sub, aud, exp, iat, nbf, jti",
+      "Checks if the token is expired based on the exp claim",
+      "JWTs use Base64URL encoding — decoding does not require a secret",
+      "Common algorithms: HS256 (symmetric), RS256 (asymmetric), ES256 (ECDSA)",
+    ],
     overview:
       "Use this decoder to inspect JWT header and payload data while debugging authentication, authorization, and API session workflows.",
 

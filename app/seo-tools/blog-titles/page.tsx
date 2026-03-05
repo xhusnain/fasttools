@@ -55,6 +55,17 @@ const toolConfig = createToolConfig({
   },
 
   content: {
+    definition:
+      "A Blog Title Generator is a free tool that creates click-worthy headline ideas for blog posts, articles, and content marketing based on your topic or keyword.",
+    quickAnswer:
+      "Enter your topic or main keyword and select a content type (how-to, listicle, guide, etc.). Get dozens of headline ideas instantly. Filter by style, word count, and emotional appeal. Copy the titles you like.",
+    keyTakeaways: [
+      "Generates headline ideas based on topic and content type",
+      "Supports formats: how-to, listicle, question, comparison, and guide",
+      "Effective titles are 6-13 words and under 60 characters for SEO",
+      "Numbers in titles increase click-through rates by up to 36%",
+      "Power words (free, ultimate, proven) boost engagement",
+    ],
     overview:
       "This tool helps content teams generate stronger title options for blog posts and landing pages. It supports quick ideation across different headline styles so you can test clarity, intent alignment, and audience appeal before publishing.",
 

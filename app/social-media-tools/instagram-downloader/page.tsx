@@ -46,6 +46,17 @@ const toolConfig = createToolConfig({
   },
 
   content: {
+    definition:
+      "An Instagram Downloader is a free tool that downloads photos, videos, Reels, and carousel posts from Instagram in high quality.",
+    quickAnswer:
+      "Paste an Instagram post, Reel, or story URL to download the media in original quality. Supports single images, videos, carousels (multiple images), and Reels. No Instagram login required.",
+    keyTakeaways: [
+      "Downloads Instagram photos, videos, Reels, and carousels",
+      "Extracts media in original resolution without quality loss",
+      "Works with public posts — no Instagram login required",
+      "Carousel posts download all images in the slideshow",
+      "Only download content you have rights or permission to use",
+    ],
     overview:
       "Use this tool to process Instagram links and retrieve available media output for creator operations, audit tasks, and offline reference use.",
 

@@ -54,6 +54,17 @@ const toolConfig = createToolConfig({
   ],
 
   content: {
+    definition:
+      "A PDF Splitter & Merger is a free tool that splits PDF files into individual pages or custom ranges and merges multiple PDFs into a single document.",
+    quickAnswer:
+      "Upload PDFs to split them by page range or merge multiple files into one. Drag to reorder pages before merging. Download the result as a single PDF. All processing happens in your browser.",
+    keyTakeaways: [
+      "Split PDFs by page range (e.g., pages 1-3, 5, 7-10)",
+      "Merge multiple PDF files into a single document",
+      "Drag-and-drop page reordering before merging",
+      "Extract individual pages as separate PDF files",
+      "Browser-based processing — no file uploads to external servers",
+    ],
     overview:
       "PDF Splitter & Merger supports two core operations: split one PDF into selected outputs, and merge multiple PDFs into one combined file. In split mode, you can export all pages, a range, or specific pages. In merge mode, you can reorder files before final output.",
 

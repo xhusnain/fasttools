@@ -61,6 +61,17 @@ const toolConfig = createToolConfig({
   },
 
   content: {
+    definition:
+      "A Pet Name Generator is a free AI-powered tool that suggests creative, unique names for dogs, cats, and other pets based on breed, personality, and style preferences.",
+    quickAnswer:
+      "Select your pet type, enter optional details like breed or personality traits, choose a naming style (classic, funny, unique, etc.), and get instant name suggestions. Regenerate for more options until you find the perfect name.",
+    keyTakeaways: [
+      "AI-generated name suggestions based on pet type and personality",
+      "Multiple naming styles: classic, funny, unique, human names, and themed",
+      "Works for dogs, cats, birds, fish, reptiles, and other pets",
+      "Regenerate unlimited times for fresh suggestions",
+      "Popular 2026 trends: food names, nature names, and pop culture references",
+    ],
     overview:
       "This generator helps you move from generic name lists to personalized suggestions. Enter species and traits, then generate grouped name ideas with meanings and styles so you can shortlist faster.",
 

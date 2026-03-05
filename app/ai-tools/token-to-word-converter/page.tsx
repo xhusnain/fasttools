@@ -64,6 +64,17 @@ const toolConfig = createToolConfig({
   },
 
   content: {
+    definition:
+      "A Token to Word Converter is a free tool that estimates word count from AI token counts and converts between tokens and words for GPT, Claude, and other LLMs.",
+    quickAnswer:
+      "Enter a token count to estimate the equivalent word count, or enter text to see how many tokens it uses. Average ratio: 1 token ≈ 0.75 words for English text. Useful for estimating API costs and context limits.",
+    keyTakeaways: [
+      "Average ratio: 1 token ≈ 0.75 English words (4 characters)",
+      "GPT-4 context window: 128K tokens ≈ 96,000 words",
+      "Claude context window: up to 200K tokens ≈ 150,000 words",
+      "Token counts vary by language — non-English text uses more tokens per word",
+      "Useful for estimating API costs and staying within context limits",
+    ],
     overview:
       "This calculator gives a practical token-word estimate so you can size prompts, rough-check model limits, and plan API usage before running jobs. It is designed for fast utility workflows where approximate sizing is sufficient.",
 

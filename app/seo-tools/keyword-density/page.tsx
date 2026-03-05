@@ -55,6 +55,17 @@ const toolConfig = createToolConfig({
   },
 
   content: {
+    definition:
+      "A Keyword Density Checker is a free tool that analyzes text to calculate how frequently specific keywords and phrases appear as a percentage of total word count.",
+    quickAnswer:
+      "Paste your content to see keyword frequency and density percentages for single words, two-word phrases, and three-word phrases. Aim for 1-2% density for target keywords. Identifies over-optimized and under-used terms.",
+    keyTakeaways: [
+      "Calculates keyword density as a percentage of total word count",
+      "Analyzes 1-word, 2-word, and 3-word phrase frequencies",
+      "Recommended keyword density: 1-2% for primary keywords",
+      "Over 3% density may trigger search engine keyword stuffing penalties",
+      "Useful for on-page SEO optimization and content auditing",
+    ],
     overview:
       "This checker helps you understand how often keywords and phrases appear in content. Use it to review primary-topic focus, identify repetitive wording, and refine copy so it reads naturally while still signaling relevance.",
 

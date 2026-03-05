@@ -53,6 +53,17 @@ const toolConfig = createToolConfig({
   ],
 
   content: {
+    definition:
+      "A Currency Converter is a free tool that calculates how much one currency is worth in another using live exchange rates from global financial markets.",
+    quickAnswer:
+      "Enter an amount, select your source and target currencies, and get an instant conversion using live exchange rates. Supports 150+ currencies including USD, EUR, GBP, JPY, and crypto pairs. No signup required.",
+    keyTakeaways: [
+      "Live exchange rates updated throughout the day from market data",
+      "Supports 150+ world currencies and common crypto pairs",
+      "Bank rates differ from market rates due to fees and spreads (typically 1-3% markup)",
+      "Best time to exchange: mid-week (Tuesday-Thursday) when volatility is lower",
+      "Always compare rates across multiple providers before large transfers",
+    ],
     overview:
       "Use this tool to convert one currency to another in seconds. It is useful for travel budgets, invoices, international purchases, and quick exchange-rate checks during planning.",
 

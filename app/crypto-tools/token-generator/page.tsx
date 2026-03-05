@@ -48,6 +48,17 @@ const toolConfig = createToolConfig({
   },
 
   content: {
+    definition:
+      "A Token Generator is a free tool that creates secure random tokens in hex, Base64, or alphanumeric format for use as API keys, session tokens, and secret keys.",
+    quickAnswer:
+      "Select the token format (hex, Base64, alphanumeric), choose the length, and click generate. Copy the token for use in API keys, CSRF tokens, or password reset links. Uses cryptographically secure randomness.",
+    keyTakeaways: [
+      "Generates cryptographically secure random tokens",
+      "Multiple formats: hex, Base64, Base64URL, and alphanumeric",
+      "Configurable token length from 16 to 256 characters",
+      "Suitable for API keys, session tokens, CSRF tokens, and secrets",
+      "Uses Web Crypto API — all generation runs securely in your browser",
+    ],
     overview:
       "Use this tool to create secure random tokens for API auth, environment variables, test fixtures, and credential setup. It supports both preset formats and custom generation controls.",
 

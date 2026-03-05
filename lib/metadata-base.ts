@@ -47,6 +47,8 @@ export interface MetadataOptions {
     }>
     howToSteps?: string[]
     toolName?: string
+    /** One-sentence definition for DefinedTerm schema (AEO optimization). */
+    definition?: string
     breadcrumbs?: BreadcrumbItem[]
     icons?: Metadata['icons']
     video?: {
@@ -208,6 +210,21 @@ export function createMetadata(options: MetadataOptions): Metadata {
         schemas.push(createItemListSchema(options.itemList))
     }
 
+    // DefinedTerm schema for AI answer extraction (AEO)
+    if (options.definition && toolName) {
+        schemas.push({
+            "@context": "https://schema.org",
+            "@type": "DefinedTerm",
+            "name": toolName,
+            "description": options.definition,
+            "inDefinedTermSet": {
+                "@type": "DefinedTermSet",
+                "name": "Online Tools",
+                "url": BASE_URL
+            }
+        })
+    }
+
     return {
         title: fullTitle,
         description,
@@ -222,12 +239,16 @@ export function createMetadata(options: MetadataOptions): Metadata {
             description: twitterDescription || finalOgDescription,
             creator: twitterCreator || "@ZamanIsmail7",
         },
-        ...(noIndex && {
-            robots: {
-                index: false,
-                follow: false,
-            }
-        }),
+        robots: noIndex ? {
+            index: false,
+            follow: false,
+        } : {
+            index: true,
+            follow: true,
+            "max-snippet": -1,
+            "max-image-preview": "large" as const,
+            "max-video-preview": -1,
+        },
         ...(options.icons && { icons: options.icons }),
         ...(schemas.length > 0 && {
             other: {

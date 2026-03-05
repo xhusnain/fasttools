@@ -60,6 +60,17 @@ const toolConfig = createToolConfig({
   },
 
   content: {
+    definition:
+      "A URL Parser is a free tool that breaks down any URL into its individual components: protocol, hostname, port, path, query parameters, and fragment.",
+    quickAnswer:
+      "Paste any URL to instantly see it broken down into protocol, host, port, pathname, search parameters, and hash fragment. Each query parameter is displayed as a key-value pair. Useful for debugging redirects and API endpoints.",
+    keyTakeaways: [
+      "Parses URLs into protocol, hostname, port, path, query, and fragment",
+      "Displays each query parameter as a separate key-value pair",
+      "Follows the WHATWG URL Standard used by all modern browsers",
+      "Handles encoded characters, special characters, and Unicode in URLs",
+      "Essential for debugging API endpoints, redirects, and deep links",
+    ],
     overview:
       "Use this parser to inspect URL structure and query values in a readable format. It is useful for checking campaign links, redirect targets, API callback URLs, and malformed links before deployment.",
 

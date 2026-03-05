@@ -24,6 +24,12 @@ export interface ToolHeaderConfig {
 export interface ToolContentData {
     toolName: string
     overview: string | React.ReactNode
+    /** One-sentence definition AI systems can quote directly. Rendered in a <dfn> block. */
+    definition?: string
+    /** Concise 1-2 sentence answer to "What is [tool]?" for AI extraction. */
+    quickAnswer?: string
+    /** Key takeaways displayed as a scannable list at the top. */
+    keyTakeaways?: string[]
     howToSteps: (string | { title: string; description: string })[]
     features: (string | { title: string; description: string; icon?: string })[]
     aboutTool: string | React.ReactNode | { title: string; content: string }

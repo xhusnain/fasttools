@@ -62,6 +62,17 @@ const toolConfig = createToolConfig({
   },
 
   content: {
+    definition:
+      "A Base64 File Converter is a free tool that encodes files into Base64 strings and decodes Base64 strings back into downloadable files.",
+    quickAnswer:
+      "Upload a file to get its Base64 string, or paste a Base64 string to reconstruct the original file. Supports images, PDFs, documents, and any binary file. Copy the data URI or download the decoded file.",
+    keyTakeaways: [
+      "Encodes any file type into a Base64 text string",
+      "Decodes Base64 strings back into downloadable files",
+      "Generates data URIs for embedding images in HTML/CSS",
+      "Base64 encoding increases file size by approximately 33%",
+      "All processing happens in your browser — no file uploads to servers",
+    ],
     overview:
       "This converter handles both directions: file to Base64 and Base64 to file. It is useful for API payload prep, data URI handling, and quickly reconstructing files from encoded strings.",
 

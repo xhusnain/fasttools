@@ -49,6 +49,18 @@ const toolConfig = createToolConfig({
   ],
 
   content: {
+    definition:
+      "An Anniversary Calculator is a free tool that calculates exactly how long you have been together in years, months, days, hours, minutes, and seconds from any start date.",
+    quickAnswer:
+      "Enter your relationship start date to instantly see how long you have been together. The calculator shows years, months, days, total months, next anniversary date, and upcoming milestones like silver and golden anniversaries.",
+    keyTakeaways: [
+      "Calculate relationship duration in years, months, days, hours, minutes, and seconds",
+      "See total months for 'monthsary' celebrations",
+      "Countdown to your next anniversary date",
+      "Tracks milestones like 1000 days, silver (25 years), and golden (50 years) anniversaries",
+      "Works for dating, wedding, friendship, and work anniversaries",
+      "All calculations happen locally — no personal data stored",
+    ],
     overview: "Our **Love Days Counter** (also known as a **Dating Calculator**) is the ultimate relationship tracker. Accurately calculate exactly how long you've been together in years, months, and days. Whether you need a wedding anniversary calculator or simply want to check your **love days count**, this free tool does it all. Track upcoming 'monthsaries', find your next big milestone, and celebrate every moment with our precise **relationship counter**.",
 
     howToSteps: [

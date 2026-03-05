@@ -52,6 +52,17 @@ const toolConfig = createToolConfig({
   },
 
   content: {
+    definition:
+      "A YouTube Channel Name Generator is a free tool that creates unique, brandable channel name ideas based on your niche, style, and keywords.",
+    quickAnswer:
+      "Enter your niche or topic, select a naming style (professional, funny, creative, etc.), and get instant channel name suggestions. Check availability and refine results until you find the perfect name.",
+    keyTakeaways: [
+      "Generates channel name ideas based on your niche and preferred style",
+      "Multiple naming styles: professional, creative, funny, and keyword-based",
+      "Good channel names are short, memorable, and easy to spell",
+      "Check handle availability before committing to a name",
+      "A strong channel name supports brand recognition and search discoverability",
+    ],
     overview:
       "Use this tool to generate channel naming options quickly, then shortlist candidates for handle availability and brand consistency checks.",
 

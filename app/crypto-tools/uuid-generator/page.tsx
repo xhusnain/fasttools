@@ -54,6 +54,17 @@ const toolConfig = createToolConfig({
   },
 
   content: {
+    definition:
+      "A UUID Generator is a free tool that creates universally unique identifiers (UUIDs) in standard formats for use as database keys, session tokens, and resource identifiers.",
+    quickAnswer:
+      "Click generate to create a new UUID instantly. Choose between UUID v4 (random) or v1 (timestamp-based). Copy the result and use it in your code, database, or configuration. Bulk generation is supported.",
+    keyTakeaways: [
+      "UUID v4 uses cryptographically secure random numbers",
+      "Collision probability is astronomically low (1 in 2^122)",
+      "Standard 128-bit format: 8-4-4-4-12 hexadecimal characters",
+      "UUID v1 includes timestamp and MAC address, v4 is fully random",
+      "Supported by all major databases and programming languages",
+    ],
     overview:
       "Use this tool to generate UUID values for records, entities, and event identifiers. It supports common version families so you can choose random, time-based, or namespace-driven generation depending on your architecture.",
 

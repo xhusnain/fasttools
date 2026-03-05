@@ -62,6 +62,17 @@ const toolConfig = createToolConfig({
   },
 
   content: {
+    definition:
+      "An ASCII Binary Converter is a free tool that converts text into 8-bit binary ASCII representation and decodes binary sequences back into readable text.",
+    quickAnswer:
+      "Type or paste text to see each character as an 8-bit binary value, or enter binary digits to decode them back to text. Each ASCII character maps to a value between 0 and 127.",
+    keyTakeaways: [
+      "Converts each text character to its 8-bit binary representation",
+      "Decodes space-separated binary octets back to readable text",
+      "Standard ASCII defines 128 characters (0–127) including control codes",
+      "Capital A = 01000001 (65), lowercase a = 01100001 (97)",
+      "Useful for learning binary encoding, debugging, and CS education",
+    ],
     overview:
       "Use this tool to convert text into ASCII binary and decode binary values back to readable text. It is useful for learning encoding basics, debugging payloads, and checking binary message formats.",
 

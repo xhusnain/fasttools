@@ -65,6 +65,17 @@ const toolConfig = createToolConfig({
   },
 
   content: {
+    definition:
+      "An AI Caption Generator is a free tool that creates engaging social media captions for Instagram, TikTok, LinkedIn, and other platforms based on your topic and tone preferences.",
+    quickAnswer:
+      "Enter your topic or describe your post, select a platform and tone (professional, casual, funny, etc.), and get AI-generated captions instantly. Edit, customize, and copy the ones you like.",
+    keyTakeaways: [
+      "AI-generated captions tailored to specific social media platforms",
+      "Multiple tones: professional, casual, humorous, inspirational, witty",
+      "Optimized for Instagram (2,200 chars), Twitter/X (280 chars), LinkedIn",
+      "Includes hashtag suggestions and call-to-action options",
+      "Regenerate unlimited times until you find the perfect caption",
+    ],
     overview:
       "Use this tool to turn a short content description into multiple caption options tailored to where you plan to publish. It is optimized for utility intent: write faster, compare options, and ship posts with less drafting overhead.",
 

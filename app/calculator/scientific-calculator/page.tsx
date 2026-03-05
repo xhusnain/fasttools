@@ -23,6 +23,17 @@ const toolConfig = createToolConfig({
     color: "blue"
   },
   content: {
+    definition:
+      "A Scientific Calculator is a free online tool that performs advanced mathematical operations including trigonometry, logarithms, exponents, roots, and factorial calculations.",
+    quickAnswer:
+      "Use the calculator for basic arithmetic and advanced functions: sin, cos, tan, log, ln, square root, exponents, factorials, and constants (π, e). Supports parentheses for complex expressions. Works like a physical scientific calculator.",
+    keyTakeaways: [
+      "Supports trigonometric functions: sin, cos, tan and their inverses",
+      "Logarithmic functions: log (base 10) and ln (natural log)",
+      "Exponents, roots, factorials, and percentage calculations",
+      "Built-in constants: π (3.14159...) and e (2.71828...)",
+      "Supports degree and radian modes for trigonometric calculations",
+    ],
     overview: "Scientific Calculator Online Free - 70+ Functions is an advanced mathematical tool designed for complex calculations beyond basic arithmetic. Unlike standard calculators, scientific calculators include specialized functions for trigonometry, logarithms, exponentials, statistics, and advanced mathematics. Our free online scientific calculator provides all the functionality of professional calculators like CASIO fx-991EX, TI-84 Plus, HP 35s, and Sharp EL-W516X. It's perfect for students, engineers, scientists, and anyone who needs to perform advanced mathematical calculations.",
     howToSteps: [
       "Select Your Function: Choose from 70+ mathematical functions including trigonometry (sin, cos, tan), logarithms (ln, log), exponentials (e^x), powers, roots, and statistical operations.",

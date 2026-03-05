@@ -46,6 +46,17 @@ const toolConfig = createToolConfig({
   },
 
   content: {
+    definition:
+      "A Pinterest Downloader is a free tool that downloads images and videos from Pinterest pins in high resolution without watermarks.",
+    quickAnswer:
+      "Paste a Pinterest pin URL to download the image or video in full resolution. The tool extracts the highest quality version available. Works with standard pins, video pins, and idea pins.",
+    keyTakeaways: [
+      "Downloads Pinterest images in original high resolution",
+      "Supports image pins, video pins, and idea pins",
+      "No watermark added to downloaded files",
+      "Shows pin metadata: title, description, and board info",
+      "Respect copyright — only download content you have permission to use",
+    ],
     overview:
       "Use this downloader to process Pinterest pin links and retrieve available media output for design research, content review, and offline reference tasks.",
 

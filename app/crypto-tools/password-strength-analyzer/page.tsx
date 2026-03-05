@@ -51,6 +51,17 @@ const toolConfig = createToolConfig({
   },
 
   content: {
+    definition:
+      "A Password Strength Analyzer is a free tool that evaluates password security by checking length, complexity, entropy, and known breach databases.",
+    quickAnswer:
+      "Type a password to instantly see its strength rating, entropy score, estimated crack time, and specific improvement suggestions. The tool checks for common patterns, dictionary words, and known breached passwords.",
+    keyTakeaways: [
+      "Rates password strength from very weak to very strong",
+      "Calculates entropy (bits) — 80+ bits is considered strong",
+      "Estimates time to crack using brute force at various speeds",
+      "Detects common patterns: keyboard walks, repeated characters, dictionary words",
+      "All analysis runs locally — your password is never sent to any server",
+    ],
     overview:
       "This analyzer helps you evaluate password quality before credential rollout. It provides practical indicators for length, complexity patterns, and estimated resilience to common cracking approaches.",
 

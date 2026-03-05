@@ -48,6 +48,17 @@ const toolConfig = createToolConfig({
   },
 
   content: {
+    definition:
+      "An Encrypt/Decrypt Tool is a free tool that encrypts text using AES, DES, or other symmetric algorithms with a password, and decrypts ciphertext back to plaintext.",
+    quickAnswer:
+      "Enter your text and a password, select an encryption algorithm (AES-256 recommended), and click encrypt. To decrypt, paste the ciphertext and enter the same password. All operations run in your browser.",
+    keyTakeaways: [
+      "AES-256 is the industry standard for symmetric encryption",
+      "Encryption requires a password/key — keep it secret and stored safely",
+      "Ciphertext is Base64-encoded for safe text transmission",
+      "Decryption requires the exact same password and algorithm used for encryption",
+      "All encryption/decryption runs locally — no data sent to servers",
+    ],
     overview:
       "Use this tool to encrypt plain text and decrypt ciphertext during application testing and interoperability checks. It is useful for development, not a substitute for managed key infrastructure in production systems.",
 

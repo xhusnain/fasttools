@@ -44,6 +44,17 @@ const toolConfig = createToolConfig({
   ],
 
   content: {
+    definition:
+      "A Temperature Converter is a free tool that converts between Celsius, Fahrenheit, and Kelvin temperature scales instantly.",
+    quickAnswer:
+      "Enter a temperature value in Celsius, Fahrenheit, or Kelvin and see the equivalent in all other scales instantly. Formula: °F = (°C × 9/5) + 32. Useful for cooking, weather, science, and travel.",
+    keyTakeaways: [
+      "Converts between Celsius, Fahrenheit, and Kelvin in real time",
+      "°F = (°C × 9/5) + 32 and °C = (°F − 32) × 5/9",
+      "Water freezes at 0°C / 32°F and boils at 100°C / 212°F",
+      "Kelvin starts at absolute zero (−273.15°C) — used in science",
+      "−40° is the same in both Celsius and Fahrenheit",
+    ],
     overview:
       "This tool converts Celsius to Fahrenheit and Fahrenheit to Celsius in real time. It is useful for recipes, weather reports, classroom work, and everyday temperature checks.",
 

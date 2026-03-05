@@ -50,6 +50,17 @@ const toolConfig = createToolConfig({
   ],
 
   content: {
+    definition:
+      "A PDF Signature Checker is a free tool that verifies digital signatures in PDF documents to confirm document authenticity and detect tampering.",
+    quickAnswer:
+      "Upload a signed PDF to check if its digital signatures are valid. The tool verifies signature integrity, shows signer info, timestamps, and whether the document was modified after signing.",
+    keyTakeaways: [
+      "Verifies digital signatures in PDF documents for authenticity",
+      "Detects if a PDF was modified after being signed",
+      "Shows signer identity, timestamp, and certificate details",
+      "Digital signatures use PKI (Public Key Infrastructure) for verification",
+      "All verification runs locally — your PDF is never uploaded to servers",
+    ],
     overview:
       "PDF Signature Checker is designed for quick inspection of digitally signed PDFs. It detects signature blocks, extracts signer-related fields when available, and provides integrity-oriented check results for document review workflows.",
 

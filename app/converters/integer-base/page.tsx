@@ -48,6 +48,17 @@ const toolConfig = createToolConfig({
   ],
 
   content: {
+    definition:
+      "An Integer Base Converter is a free tool that converts numbers between binary, octal, decimal, hexadecimal, and any numeral base from 2 to 64.",
+    quickAnswer:
+      "Enter a number and select the source base to instantly see conversions across all common bases (binary, octal, decimal, hex). Supports custom bases up to 64, auto-detects 0x/0b/0o prefixes, and handles negative numbers.",
+    keyTakeaways: [
+      "Converts between binary (base 2), octal (8), decimal (10), and hex (16)",
+      "Supports any base from 2 to 64 for specialized use cases",
+      "Auto-detects 0x (hex), 0b (binary), and 0o (octal) prefixes",
+      "Handles negative numbers and shows conversion steps",
+      "Hex uses 0–9 and A–F: decimal 255 = hex FF = binary 11111111",
+    ],
     overview:
       "An integer base converter transforms numbers between different numeral systems (bases). Convert between binary (base 2), octal (base 8), decimal (base 10), hexadecimal (base 16), and any base 2–64. Unlike tools that only support four bases, ours handles 64. Auto-detects 0x, 0b, 0o prefixes, supports negative numbers, shows steps, and exports results. 100% free, runs in your browser.",
 

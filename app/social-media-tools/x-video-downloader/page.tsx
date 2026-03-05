@@ -46,6 +46,17 @@ const toolConfig = createToolConfig({
   },
 
   content: {
+    definition:
+      "An X (Twitter) Video Downloader is a free tool that downloads videos and GIFs from X/Twitter posts in MP4 format for offline use.",
+    quickAnswer:
+      "Paste an X/Twitter post URL containing a video or GIF. The tool extracts available video qualities and lets you download in MP4 format. Works with tweets, replies, and quoted posts.",
+    keyTakeaways: [
+      "Downloads videos and GIFs from X/Twitter posts as MP4 files",
+      "Multiple quality options when available (low, medium, high)",
+      "Works with tweet URLs from both x.com and twitter.com domains",
+      "GIFs are downloaded as MP4 video files (Twitter stores GIFs as MP4)",
+      "Only download content you have rights to use",
+    ],
     overview:
       "Use this downloader to process X links and retrieve available video output for research, reference, and workflow handoff tasks.",
 

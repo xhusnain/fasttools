@@ -55,6 +55,17 @@ const toolConfig = createToolConfig({
   },
 
   content: {
+    definition:
+      "An Instagram DP Viewer is a free online tool that lets you view and download Instagram profile pictures (display pictures) in full size without logging in.",
+    quickAnswer:
+      "An Instagram DP Viewer lets you see any Instagram profile picture in full size by entering a username. It works without login, supports HD downloads, and is completely free.",
+    keyTakeaways: [
+      "View any Instagram profile picture in full size by entering a username",
+      "Download profile pictures in SD or HD quality",
+      "No Instagram login or account required",
+      "Works on desktop and mobile browsers",
+      "Does not access private posts, stories, or reels",
+    ],
     overview:
       "Instagram DP Viewer helps you open profile pictures in larger size than the in-app avatar preview. Use it to check profile branding, review creator assets, and save reference copies in your workflow.",
 

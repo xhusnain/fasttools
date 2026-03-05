@@ -46,6 +46,17 @@ const toolConfig = createToolConfig({
   },
 
   content: {
+    definition:
+      "A CapCut Downloader is a free tool that downloads CapCut template videos and edits without watermark for offline use.",
+    quickAnswer:
+      "Paste a CapCut template or video URL to download it without watermark. The tool extracts the video in the highest available quality. Works with CapCut web template links.",
+    keyTakeaways: [
+      "Downloads CapCut template videos without watermark",
+      "Works with CapCut web template and shared video links",
+      "MP4 format compatible with all devices and editors",
+      "Shows template metadata: title, creator, and usage count",
+      "Only download templates and content you have rights to use",
+    ],
     overview:
       "Use this tool to process CapCut links and save downloadable video output for editing review, handoff, and offline reference workflows.",
 

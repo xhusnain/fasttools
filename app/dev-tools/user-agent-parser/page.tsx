@@ -47,6 +47,17 @@ const toolConfig = createToolConfig({
   },
 
   content: {
+    definition:
+      "A User Agent Parser is a free tool that decodes browser user-agent strings to identify the browser name, version, operating system, device type, and rendering engine.",
+    quickAnswer:
+      "Your current user-agent string is detected automatically. You can also paste any user-agent string to parse it. The tool extracts browser, OS, device, and engine details instantly.",
+    keyTakeaways: [
+      "Parses browser name, version, OS, device type, and rendering engine",
+      "Auto-detects your current browser's user-agent string",
+      "Identifies bots and crawlers (Googlebot, Bingbot, etc.)",
+      "User-agent strings follow the HTTP/1.1 specification (RFC 7231)",
+      "Useful for debugging browser-specific issues and analytics filtering",
+    ],
     overview:
       "Use this page to convert user-agent strings into readable device and browser fields. It is useful for analytics validation, support debugging, and cross-platform QA checks.",
 

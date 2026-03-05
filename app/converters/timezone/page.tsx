@@ -59,6 +59,17 @@ const toolConfig = createToolConfig({
   },
 
   content: {
+    definition:
+      "A Time Zone Converter is a free tool that converts time between major global zones including UTC, EST, PST, IST, JST, AEST, CET, and GMT.",
+    quickAnswer:
+      "Select a source time zone, enter the time, and choose one or more target zones to see the converted time instantly. Useful for scheduling meetings, coordinating across teams, and travel planning.",
+    keyTakeaways: [
+      "Converts between UTC, EST, PST, IST, JST, AEST, CET, GMT, and more",
+      "UTC is the global reference standard — all zones are offsets from UTC",
+      "EST is UTC−5, PST is UTC−8, IST is UTC+5:30, JST is UTC+9",
+      "Daylight saving shifts apply in some regions (e.g., EST → EDT)",
+      "Ideal for remote team scheduling and international coordination",
+    ],
     overview:
       "This converter helps you compare time across major global zones using fixed GMT offsets. It is useful for quick meeting checks, international communication, and travel planning.",
 

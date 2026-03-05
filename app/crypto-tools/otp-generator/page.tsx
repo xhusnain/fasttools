@@ -48,6 +48,17 @@ const toolConfig = createToolConfig({
   },
 
   content: {
+    definition:
+      "An OTP Generator is a free tool that creates one-time passwords and TOTP/HOTP codes for two-factor authentication testing and development.",
+    quickAnswer:
+      "Enter a secret key or generate one to create time-based (TOTP) or counter-based (HOTP) one-time passwords. The 6-digit code refreshes every 30 seconds. Useful for testing 2FA implementations.",
+    keyTakeaways: [
+      "Generates TOTP (time-based) and HOTP (counter-based) one-time passwords",
+      "Standard 6-digit codes that refresh every 30 seconds (TOTP)",
+      "Compatible with Google Authenticator, Authy, and other 2FA apps",
+      "Uses HMAC-SHA1, SHA256, or SHA512 algorithms per RFC 6238",
+      "Useful for developers testing 2FA integration in their applications",
+    ],
     overview:
       "Use this tool to generate TOTP codes and setup values used by authenticator apps. It is useful for 2FA integration testing, account-recovery support checks, and implementation troubleshooting.",
 

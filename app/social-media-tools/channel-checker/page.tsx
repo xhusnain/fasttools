@@ -59,6 +59,17 @@ const toolConfig = createToolConfig({
   },
 
   content: {
+    definition:
+      "A YouTube Handle Checker is a free tool that verifies whether a YouTube @handle or channel name is available before you create or rename your channel.",
+    quickAnswer:
+      "Enter any YouTube handle or channel name to instantly check if it is available. No YouTube account needed. The tool validates @handle format and availability in seconds.",
+    keyTakeaways: [
+      "YouTube handles are unique @usernames (e.g., @YourBrand) that appear in your channel URL",
+      "Handles must be 3-30 characters: letters, numbers, underscores, hyphens, periods only",
+      "Channel display names do NOT need to be unique — handles do",
+      "You can change your handle up to 2 times every 14 days",
+      "Check availability on YouTube, Instagram, TikTok, and X for brand consistency",
+    ],
     overview:
       "Use this checker to validate YouTube handle and channel name availability before you commit. A YouTube handle is your unique @username (e.g., @YourBrand) that appears in your channel URL and comments. Our tool helps creators, agencies, and brands avoid naming conflicts by checking availability instantly — no YouTube account needed.",
 

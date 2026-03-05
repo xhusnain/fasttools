@@ -59,6 +59,17 @@ const toolConfig = createToolConfig({
   },
 
   content: {
+    definition:
+      "A Length Converter is a free tool that converts between common distance and length units including meters, feet, inches, centimeters, kilometers, and miles.",
+    quickAnswer:
+      "Enter a value and select the source unit to see instant conversions across all length units. Supports metric (mm, cm, m, km) and imperial (in, ft, yd, mi) systems. Results update in real time.",
+    keyTakeaways: [
+      "Converts between metric and imperial length units instantly",
+      "1 inch = 2.54 cm, 1 foot = 30.48 cm, 1 mile = 1.609 km",
+      "Results update in real time as you type",
+      "Useful for construction, travel, education, and everyday calculations",
+      "Supports millimeters through kilometers and inches through miles",
+    ],
     overview:
       "This length converter helps convert values between common distance units for construction, education, travel, and daily calculations. Results update instantly as input changes.",
 

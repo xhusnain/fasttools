@@ -47,6 +47,17 @@ const toolConfig = createToolConfig({
   },
 
   content: {
+    definition:
+      "A String Slugify Tool is a free tool that converts text into URL-friendly slugs by lowercasing, removing special characters, and replacing spaces with hyphens.",
+    quickAnswer:
+      "Paste any text to instantly generate a clean, URL-safe slug. The tool lowercases everything, strips special characters, and replaces spaces with hyphens. Copy the slug with one click.",
+    keyTakeaways: [
+      "Converts text to lowercase URL-safe slugs automatically",
+      "Replaces spaces and special characters with hyphens",
+      "Removes accents and diacritics (é → e, ü → u)",
+      "Generates SEO-friendly URLs for blog posts and pages",
+      "Follows the same slugification rules used by WordPress and Next.js",
+    ],
     overview:
       "Use this tool to transform titles and phrases into normalized slugs. It helps keep URLs readable, stable, and consistent across blogs, docs, ecommerce pages, and CMS workflows.",
 

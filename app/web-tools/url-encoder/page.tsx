@@ -63,6 +63,17 @@ const toolConfig = createToolConfig({
   },
 
   content: {
+    definition:
+      "A URL Encoder/Decoder is a free tool that converts special characters in URLs to percent-encoded format (%XX) and decodes encoded URLs back to readable text.",
+    quickAnswer:
+      "Paste text to URL-encode it (spaces become %20, & becomes %26), or paste an encoded URL to decode it back to readable form. Essential for constructing query strings and debugging URL parameters.",
+    keyTakeaways: [
+      "Encodes special characters as %XX hex values per RFC 3986",
+      "Space encodes as %20 (URL) or + (form data)",
+      "Common encodings: & → %26, = → %3D, / → %2F, ? → %3F",
+      "UTF-8 characters encode as multi-byte sequences (%E2%9C%93)",
+      "Essential for building query strings, API calls, and redirect URLs",
+    ],
     overview:
       "Use this tool to safely encode values for query strings, path fragments, or form payloads. It follows standard percent-encoding behavior (like JavaScript `encodeURIComponent`) and also decodes encoded values for debugging and QA.",
 

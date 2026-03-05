@@ -60,6 +60,17 @@ const toolConfig = createToolConfig({
   },
 
   content: {
+    definition:
+      "A Device Info Tool is a free tool that detects and displays your browser, operating system, screen resolution, device type, and network information.",
+    quickAnswer:
+      "Open the tool to instantly see your device details: browser name and version, OS, screen resolution, viewport size, device pixel ratio, touch support, language, timezone, and connection type. No installation needed.",
+    keyTakeaways: [
+      "Detects browser name, version, and rendering engine automatically",
+      "Shows screen resolution, viewport size, and device pixel ratio",
+      "Identifies OS (Windows, macOS, Linux, iOS, Android) and version",
+      "Reports touch support, language, timezone, and connection type",
+      "Useful for debugging responsive design and browser compatibility issues",
+    ],
     overview:
       "This tool gives a quick technical snapshot of the browser and device currently visiting the page. It helps with responsive debugging, support triage, and QA checks across desktop and mobile environments.",
 

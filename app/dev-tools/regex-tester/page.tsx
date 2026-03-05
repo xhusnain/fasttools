@@ -53,6 +53,17 @@ const toolConfig = createToolConfig({
   },
 
   content: {
+    definition:
+      "A Regex Tester is a free tool that lets you write, test, and debug regular expressions against sample text with real-time match highlighting.",
+    quickAnswer:
+      "Enter a regex pattern and test string to see matches highlighted instantly. Supports JavaScript regex syntax with flags (g, i, m, s). View capture groups, match indices, and replacement results.",
+    keyTakeaways: [
+      "Real-time match highlighting as you type the pattern",
+      "Supports JavaScript regex flags: global (g), case-insensitive (i), multiline (m)",
+      "Shows numbered capture groups and named groups",
+      "Test replacement patterns with $1, $2 backreferences",
+      "Common patterns: email, URL, phone, IP address, date formats",
+    ],
     overview:
       "Use this tool to validate regex patterns before shipping them into production code. It helps with search, validation, extraction, and replace-style text workflows.",
 

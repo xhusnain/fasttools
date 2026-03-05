@@ -53,6 +53,17 @@ const toolConfig = createToolConfig({
   },
 
   content: {
+    definition:
+      "An HTML Beautifier is a free tool that formats and indents minified or messy HTML code into clean, readable markup with consistent indentation.",
+    quickAnswer:
+      "Paste unformatted HTML to instantly beautify it with proper indentation and line breaks. Customize indent size (2 or 4 spaces, tabs). Copy the formatted output or download it as an .html file.",
+    keyTakeaways: [
+      "Formats minified HTML into readable, properly indented code",
+      "Customizable indentation: 2 spaces, 4 spaces, or tabs",
+      "Preserves code structure without changing functionality",
+      "Handles inline styles, scripts, and nested elements correctly",
+      "Useful for debugging, code reviews, and cleaning up generated HTML",
+    ],
     overview:
       "Use this tool to reformat messy HTML for easier debugging or minify structured HTML for lighter delivery. It is useful in frontend development, content cleanup, and QA review workflows.",
 

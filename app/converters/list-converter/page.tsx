@@ -59,6 +59,17 @@ const toolConfig = createToolConfig({
   },
 
   content: {
+    definition:
+      "A List Converter is a free tool that transforms, cleans, and reformats text lists by changing separators, removing duplicates, sorting, and applying formatting rules.",
+    quickAnswer:
+      "Paste your list, choose input and output separators (comma, newline, tab, pipe, etc.), and apply optional transforms like deduplication, sorting, trimming, or case conversion. Copy the cleaned result instantly.",
+    keyTakeaways: [
+      "Converts between comma, newline, tab, pipe, and custom separators",
+      "Removes duplicate entries with one click",
+      "Sorts alphabetically, numerically, or by length",
+      "Trims whitespace and applies case formatting",
+      "Useful for SQL IN clauses, CSV prep, and spreadsheet imports",
+    ],
     overview:
       "Use this tool to clean and transform list text for spreadsheets, code snippets, SQL inputs, and content workflows. You can switch separators, remove duplicates, sort entries, and apply formatting rules.",
 

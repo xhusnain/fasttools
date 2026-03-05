@@ -62,6 +62,17 @@ const toolConfig = createToolConfig({
   },
 
   content: {
+    definition:
+      "A File Size Converter is a free tool that converts between digital storage units like bytes, KB, MB, GB, and TB in both decimal and binary standards.",
+    quickAnswer:
+      "Enter a value and select the source unit to instantly convert across all storage units. Toggle between decimal (KB = 1000 bytes) and binary (KiB = 1024 bytes) standards. Estimate file transfer times based on connection speed.",
+    keyTakeaways: [
+      "Converts between bytes, KB, MB, GB, TB, and PB instantly",
+      "Supports both decimal (SI) and binary (IEC) unit standards",
+      "1 MB = 1,000 KB (decimal) vs 1 MiB = 1,024 KiB (binary)",
+      "Includes file transfer time estimation based on connection speed",
+      "OS file sizes often use binary units while storage vendors use decimal",
+    ],
     overview:
       "This tool helps convert digital storage units and inspect file-size context for real workflows. It supports both decimal and binary standards, file analysis, and transfer-time estimation.",
 

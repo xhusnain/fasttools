@@ -51,6 +51,17 @@ const toolConfig = createToolConfig({
   ],
 
   content: {
+    definition:
+      "A PDF Unlocker is a free tool that removes password protection and permission restrictions from PDF files to enable printing, copying, and editing.",
+    quickAnswer:
+      "Upload a password-protected PDF and enter the document password (if required) to remove restrictions. The tool unlocks printing, copying, and editing permissions. Download the unrestricted PDF.",
+    keyTakeaways: [
+      "Removes PDF permission restrictions (print, copy, edit)",
+      "Owner password removal enables full document access",
+      "User password (open password) must be known to unlock",
+      "Does not crack unknown passwords — you must provide the password",
+      "Only unlock PDFs you own or have authorization to modify",
+    ],
     overview:
       "PDF Unlocker helps when you have legitimate access to a protected PDF but need a less restricted working copy. It can handle both permission-restricted files and password-required files where the correct password is provided.",
 

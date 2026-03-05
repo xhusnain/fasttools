@@ -79,6 +79,18 @@ export const metadata: Metadata = {
 export default function ConcreteCalculatorPage() {
   const toolContent = {
     toolName: TOOL_NAME,
+    definition:
+      "A Concrete Calculator is a free tool that estimates the volume of concrete needed for a project in cubic yards, the number of bags required (40, 60, or 80 lb), and the approximate cost.",
+    quickAnswer:
+      "To calculate concrete: multiply Length x Width x Thickness (in feet) to get cubic feet, then divide by 27 for cubic yards. One cubic yard needs about 45 bags of 80lb concrete. Always add 5-10% for waste.",
+    keyTakeaways: [
+      "Formula: Length x Width x Thickness (ft) / 27 = cubic yards",
+      "One cubic yard = 45 bags (80lb), 60 bags (60lb), or 90 bags (40lb)",
+      "Always add 5-10% waste factor to avoid running short",
+      "Standard slab thickness: 4 inches for patios, 5-6 inches for driveways",
+      "Ready-mix concrete costs $100-$150 per cubic yard; bagged costs more per yard but avoids delivery fees",
+      "Concrete reaches full strength after 28 days of curing",
+    ],
     overview: "Instantly calculate the concrete volume in cubic yards and the number of bags needed for your project. Whether you're pouring a slab, footing, or driveway, our free estimator accounts for waste factor and material costs.",
 
     howToSteps: [

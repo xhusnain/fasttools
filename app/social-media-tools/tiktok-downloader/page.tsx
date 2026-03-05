@@ -46,6 +46,17 @@ const toolConfig = createToolConfig({
   },
 
   content: {
+    definition:
+      "A TikTok Video Downloader is a free tool that downloads TikTok videos without watermark in HD quality for offline viewing and content repurposing.",
+    quickAnswer:
+      "Paste a TikTok video URL to download the video without the TikTok watermark. Select HD or SD quality. The tool also extracts video metadata like caption, likes, and creator info.",
+    keyTakeaways: [
+      "Downloads TikTok videos without watermark in HD quality",
+      "Works with standard TikTok URLs and vm.tiktok.com short links",
+      "Shows video metadata: caption, creator, likes, and shares",
+      "MP4 format compatible with all devices and editors",
+      "Respect creators' rights — get permission before reposting content",
+    ],
     overview:
       "Use this downloader to process TikTok links and retrieve available video output for creator workflows, review tasks, and offline reference.",
 

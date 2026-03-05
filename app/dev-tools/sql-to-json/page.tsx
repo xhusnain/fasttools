@@ -53,6 +53,17 @@ const toolConfig = createToolConfig({
   },
 
   content: {
+    definition:
+      "A SQL to JSON Converter is a free tool that transforms SQL query results or CREATE TABLE statements into structured JSON format.",
+    quickAnswer:
+      "Paste SQL output (SELECT results or CREATE TABLE statements) to instantly convert it to JSON. The tool maps rows to JSON objects and columns to keys. Copy the formatted JSON output.",
+    keyTakeaways: [
+      "Converts SQL SELECT results to JSON arrays of objects",
+      "Parses CREATE TABLE statements into JSON schema definitions",
+      "Maps SQL column names to JSON keys automatically",
+      "Handles common SQL data types: VARCHAR, INT, DATE, BOOLEAN",
+      "Useful for building REST APIs from database query results",
+    ],
     overview:
       "Use this converter to turn SQL INSERT statements into JSON arrays and objects. It is useful when moving relational data into API payloads, tests, or frontend mock data.",
 

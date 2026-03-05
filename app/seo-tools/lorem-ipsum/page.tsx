@@ -55,6 +55,17 @@ const toolConfig = createToolConfig({
   },
 
   content: {
+    definition:
+      "A Lorem Ipsum Generator is a free tool that creates placeholder text in paragraphs, sentences, or words for use in design mockups, wireframes, and development templates.",
+    quickAnswer:
+      "Select the amount (paragraphs, sentences, or words), set the count, and generate placeholder text instantly. Copy the Lorem Ipsum text for use in layouts, presentations, or code templates. Starts with the classic 'Lorem ipsum dolor sit amet.'",
+    keyTakeaways: [
+      "Generates placeholder text in paragraphs, sentences, or word counts",
+      "Lorem Ipsum has been used since the 1500s for typesetting previews",
+      "Based on a scrambled passage from Cicero's 'De Finibus Bonorum et Malorum'",
+      "Standard in web design, graphic design, and document templates",
+      "Customizable output length — from a few words to dozens of paragraphs",
+    ],
     overview:
       "Lorem Ipsum is standard placeholder copy used to test layout, spacing, and typography before final content is ready. This generator helps teams create the exact amount of text needed for UI components, templates, and publication drafts.",
 

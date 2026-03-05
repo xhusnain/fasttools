@@ -61,6 +61,17 @@ const toolConfig = createToolConfig({
   },
 
   content: {
+    definition:
+      "An Auth Generator is a free tool that creates HTTP Basic Authentication headers, Bearer token headers, and API key configurations for testing and development.",
+    quickAnswer:
+      "Enter your username/password or API token to generate the correct HTTP Authorization header. Supports Basic Auth (Base64-encoded credentials), Bearer tokens, and API key headers. Copy the header for use in API testing tools.",
+    keyTakeaways: [
+      "Generates HTTP Basic Auth headers with Base64-encoded credentials",
+      "Creates Bearer token Authorization headers for OAuth/JWT APIs",
+      "Supports API key headers in various formats (header, query, cookie)",
+      "Basic Auth format: Authorization: Basic base64(username:password)",
+      "Always use HTTPS when sending credentials — Basic Auth is not encrypted",
+    ],
     overview:
       "This tool helps you generate and validate HTTP auth headers without using command-line utilities. It supports Basic Auth encode/decode, Bearer token header formatting, and configurable API key headers for common API clients.",
 

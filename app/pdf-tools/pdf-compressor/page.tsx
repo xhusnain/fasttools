@@ -54,6 +54,17 @@ const toolConfig = createToolConfig({
   ],
 
   content: {
+    definition:
+      "A PDF Compressor is a free tool that reduces PDF file size by optimizing images, fonts, and metadata while preserving document readability.",
+    quickAnswer:
+      "Upload a PDF and select a compression level (low, medium, or high). The tool optimizes images and internal structures to reduce file size. Download the compressed PDF — typically 50-90% smaller.",
+    keyTakeaways: [
+      "Reduces PDF file size by up to 90% depending on content",
+      "Three compression levels: low (best quality), medium (balanced), high (smallest)",
+      "Preserves text selectability and document structure",
+      "Image-heavy PDFs see the largest size reductions",
+      "All compression runs locally in your browser — no upload to servers",
+    ],
     overview:
       "PDF Compressor helps reduce document size when files are too large for portals, email, or internal systems. You can switch between low, medium, and high compression to balance output size and visual quality.",
 

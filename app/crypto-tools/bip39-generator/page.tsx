@@ -48,6 +48,17 @@ const toolConfig = createToolConfig({
   },
 
   content: {
+    definition:
+      "A BIP39 Mnemonic Generator is a free tool that creates cryptographic seed phrases (12 or 24 words) for cryptocurrency wallet backup and recovery following the BIP39 standard.",
+    quickAnswer:
+      "Select word count (12 or 24) and click generate to create a BIP39 mnemonic phrase. The phrase can be used to back up and restore cryptocurrency wallets. Store it offline — never share it.",
+    keyTakeaways: [
+      "Generates 12-word (128-bit) or 24-word (256-bit) mnemonic phrases",
+      "Follows the BIP39 standard used by Bitcoin, Ethereum, and most crypto wallets",
+      "Words are drawn from a standardized 2048-word English wordlist",
+      "The last word includes a checksum for error detection",
+      "Generated in your browser using cryptographic randomness — never transmitted",
+    ],
     overview:
       "This tool helps you generate BIP39 mnemonic phrases and validate existing phrases for recovery readiness. It is intended for wallet setup checks, backup testing, and compatibility workflows.",
 

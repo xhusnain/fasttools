@@ -48,6 +48,17 @@ const toolConfig = createToolConfig({
   },
 
   content: {
+    definition:
+      "An RSA Key Generator is a free tool that creates RSA public/private key pairs in PEM format for use in encryption, digital signatures, and SSH authentication.",
+    quickAnswer:
+      "Select a key size (2048 or 4096 bits) and click generate. Download the public and private keys in PEM format. Use them for SSH, TLS certificates, JWT signing, or file encryption.",
+    keyTakeaways: [
+      "Generates RSA key pairs in standard PEM format",
+      "Supports 2048-bit and 4096-bit key sizes",
+      "2048-bit is the minimum recommended for security in 2026",
+      "4096-bit provides stronger security but slower operations",
+      "Keys are generated in your browser — private key never leaves your machine",
+    ],
     overview:
       "Use this tool to generate RSA key pairs for development and interoperability testing. It supports common key sizes and output handling for integration with signing and encryption pipelines.",
 

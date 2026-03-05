@@ -62,6 +62,17 @@ const toolConfig = createToolConfig({
   },
 
   content: {
+    definition:
+      "A JSON to TOML Converter is a free tool that transforms JSON objects into TOML configuration format for tools that require TOML input.",
+    quickAnswer:
+      "Paste JSON to instantly convert it to TOML format, or paste TOML to convert back to JSON. Handles nested objects, arrays, and all standard data types. Copy or download the converted output.",
+    keyTakeaways: [
+      "Converts JSON objects to TOML tables and vice versa",
+      "TOML is required by Cargo (Rust), pyproject (Python), and Hugo",
+      "JSON arrays map to TOML arrays, nested objects to [table] sections",
+      "Handles strings, numbers, booleans, and null values correctly",
+      "Useful when migrating configuration between JSON-based and TOML-based tools",
+    ],
     overview:
       "Use this converter to move configuration data between JSON and TOML. It is helpful when integrating tools that depend on different config standards.",
 

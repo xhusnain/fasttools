@@ -53,6 +53,17 @@ const toolConfig = createToolConfig({
   },
 
   content: {
+    definition:
+      "A Markdown Previewer is a free tool that renders Markdown syntax into formatted HTML in real time, showing exactly how your content will look.",
+    quickAnswer:
+      "Type or paste Markdown in the editor to see the rendered HTML preview side by side. Supports headings, lists, links, images, code blocks, tables, and GitHub Flavored Markdown (GFM).",
+    keyTakeaways: [
+      "Live side-by-side Markdown editing and HTML preview",
+      "Supports GitHub Flavored Markdown (GFM) with tables and task lists",
+      "Syntax highlighting for fenced code blocks",
+      "Renders headings, bold, italic, links, images, and blockquotes",
+      "Useful for README files, documentation, and blog post drafting",
+    ],
     overview:
       "Use this editor to write Markdown and validate output before publishing. It is useful for README files, internal docs, and blog content where formatting accuracy matters.",
 

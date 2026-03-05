@@ -52,6 +52,17 @@ const toolConfig = createToolConfig({
   },
 
   content: {
+    definition:
+      "A YouTube Tag Extractor is a free tool that reveals the hidden tags used on any YouTube video to help with keyword research and SEO optimization.",
+    quickAnswer:
+      "Paste a YouTube video URL to instantly extract all tags the creator used. Copy the tag list for your own videos. Useful for competitor analysis and discovering high-performing keywords in your niche.",
+    keyTakeaways: [
+      "Extracts hidden meta tags from any public YouTube video",
+      "YouTube tags help the algorithm understand video content and context",
+      "Tags are not publicly visible — this tool reveals what creators use",
+      "Copy extracted tags to use in your own video optimization",
+      "Useful for competitor keyword research and YouTube SEO strategy",
+    ],
     overview:
       "Use this tool to extract tag data from YouTube video links when researching keyword patterns, competitor positioning, and metadata strategy.",
 

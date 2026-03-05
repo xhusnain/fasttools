@@ -52,6 +52,17 @@ const toolConfig = createToolConfig({
   },
 
   content: {
+    definition:
+      "A YouTube Thumbnail Downloader is a free tool that extracts and downloads thumbnail images from any YouTube video in all available resolutions.",
+    quickAnswer:
+      "Paste a YouTube video URL to instantly see all available thumbnail sizes (default, medium, high, standard, maxres). Click download on the resolution you need. No account or software required.",
+    keyTakeaways: [
+      "Downloads thumbnails in all resolutions: 120×90 up to 1280×720 (maxres)",
+      "Works with any public YouTube video URL or video ID",
+      "Maxresdefault (1280×720) is the highest quality available",
+      "Thumbnails are saved as JPG files",
+      "Useful for content analysis, presentations, and social media reposts",
+    ],
     overview:
       "Use this tool to extract thumbnail images from YouTube video links for content research, creative benchmarking, and publishing asset workflows.",
 

@@ -62,6 +62,17 @@ const toolConfig = createToolConfig({
   },
 
   content: {
+    definition:
+      "A JSON to XML Converter is a free tool that transforms JSON objects into well-formed XML documents for use in SOAP APIs, legacy systems, and XML-based workflows.",
+    quickAnswer:
+      "Paste JSON to instantly convert it to XML format. The converter maps JSON objects to XML elements, arrays to repeated elements, and preserves the data hierarchy. Copy or download the XML output.",
+    keyTakeaways: [
+      "Converts JSON objects to XML elements with proper nesting",
+      "JSON arrays map to repeated XML elements with consistent tag names",
+      "Useful for SOAP API payloads, RSS feeds, and legacy system integration",
+      "Generates well-formed XML with proper escaping of special characters",
+      "All conversion runs locally in your browser",
+    ],
     overview:
       "Use this converter to transform data between JSON and XML formats. It is useful when modern APIs and legacy systems need compatible payload formats.",
 

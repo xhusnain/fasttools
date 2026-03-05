@@ -56,6 +56,17 @@ const toolConfig = createToolConfig({
   ],
 
   content: {
+    definition:
+      "An Image to Text (OCR) Tool is a free tool that extracts readable text from images, screenshots, and scanned documents using optical character recognition.",
+    quickAnswer:
+      "Upload an image containing text (screenshot, photo, scan) and the tool extracts all readable text using OCR. Supports PNG, JPG, and WebP formats. Copy the extracted text or download it as a text file.",
+    keyTakeaways: [
+      "Extracts text from images using OCR (Optical Character Recognition)",
+      "Supports PNG, JPG, WebP, and BMP image formats",
+      "Works with screenshots, photos, scanned documents, and receipts",
+      "Handles multiple languages and printed text",
+      "Accuracy depends on image quality — higher resolution gives better results",
+    ],
     overview:
       "Image to Text (OCR) converts readable text from screenshots, document photos, and image snippets into editable output. It is useful for quick copy workflows when you need text from visual content without manual typing.",
 

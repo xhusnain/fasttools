@@ -46,6 +46,17 @@ const toolConfig = createToolConfig({
   },
 
   content: {
+    definition:
+      "A YouTube Playlist Downloader is a free tool that downloads all videos from a YouTube playlist in your preferred format and quality.",
+    quickAnswer:
+      "Paste a YouTube playlist URL to see all videos in the playlist. Select quality and format preferences, then download individual videos or the entire playlist. Supports MP4 video and MP3 audio extraction.",
+    keyTakeaways: [
+      "Downloads all videos from a YouTube playlist in one workflow",
+      "Supports multiple quality options: 360p, 720p, 1080p, and higher",
+      "Extract audio as MP3 for music playlists and podcasts",
+      "Shows playlist metadata: title, video count, and total duration",
+      "Only download content you have rights to use",
+    ],
     overview:
       "Use this page to process YouTube playlist URLs and handle available output for batch-oriented media workflows and offline reference tasks.",
 

@@ -46,6 +46,17 @@ const toolConfig = createToolConfig({
   },
 
   content: {
+    definition:
+      "A YouTube Video Downloader is a free tool that downloads YouTube videos in MP4 format or extracts audio as MP3 files for offline viewing and listening.",
+    quickAnswer:
+      "Paste a YouTube video URL, select your preferred quality (360p to 4K) and format (MP4 or MP3), then download. The tool shows available resolutions and file sizes before downloading.",
+    keyTakeaways: [
+      "Downloads YouTube videos in MP4 format up to 4K quality",
+      "Extracts audio as MP3 for music and podcast content",
+      "Shows all available quality options with estimated file sizes",
+      "Works with standard youtube.com and youtu.be short URLs",
+      "Respect copyright — only download content you have permission to use",
+    ],
     overview:
       "Use this downloader to process YouTube video links and retrieve available output for content operations, review workflows, and offline reference tasks.",
 

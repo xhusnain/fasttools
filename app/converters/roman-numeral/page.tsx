@@ -62,6 +62,17 @@ const toolConfig = createToolConfig({
   },
 
   content: {
+    definition:
+      "A Roman Numeral Converter is a free tool that converts numbers and dates to Roman numerals and decodes Roman numerals back to standard numbers.",
+    quickAnswer:
+      "Enter a number (1–3999) to see its Roman numeral equivalent, or type a Roman numeral to convert it back to a number. Date conversion mode transforms full dates into Roman numeral format.",
+    keyTakeaways: [
+      "Converts numbers 1–3999 to Roman numerals and back",
+      "Seven base symbols: I (1), V (5), X (10), L (50), C (100), D (500), M (1000)",
+      "Subtractive notation: IV = 4, IX = 9, XL = 40, XC = 90, CD = 400, CM = 900",
+      "Date conversion mode for years, months, and full dates",
+      "Commonly used in clocks, outlines, movie titles, and historical dates",
+    ],
     overview:
       "Use this tool to convert integers and dates into Roman numerals and decode Roman input back to numbers. It is useful for dates, design references, tattoos, educational work, and historical notation.",
 

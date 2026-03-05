@@ -62,6 +62,17 @@ const toolConfig = createToolConfig({
   },
 
   content: {
+    definition:
+      "A YAML to TOML Converter is a free tool that transforms YAML configuration files into TOML format and vice versa.",
+    quickAnswer:
+      "Paste your YAML content to instantly convert it to TOML, or paste TOML to convert to YAML. The tool preserves data types, nested structures, and comments where possible. Copy or download the result.",
+    keyTakeaways: [
+      "Converts YAML to TOML and TOML to YAML in real time",
+      "Preserves data types: strings, numbers, booleans, arrays, and tables",
+      "YAML uses indentation, TOML uses explicit [table] headers",
+      "TOML is the standard for Rust (Cargo.toml) and Python (pyproject.toml)",
+      "All conversion runs locally in your browser",
+    ],
     overview:
       "Use this converter to switch between YAML and TOML formats in seconds. It helps when tools, frameworks, or teams use different configuration standards.",
 

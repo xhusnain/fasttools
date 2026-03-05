@@ -62,6 +62,17 @@ const toolConfig = createToolConfig({
   },
 
   content: {
+    definition:
+      "A JSON to YAML Converter is a free tool that transforms JSON data into YAML format for configuration files, CI/CD pipelines, and infrastructure-as-code workflows.",
+    quickAnswer:
+      "Paste JSON to instantly convert it to clean YAML output, or paste YAML to convert back to JSON. The tool preserves data types, nested structures, and array formatting. Copy the result with one click.",
+    keyTakeaways: [
+      "Converts JSON to YAML and YAML to JSON in real time",
+      "YAML uses indentation instead of braces — more human-readable",
+      "YAML is the standard for Docker Compose, Kubernetes, and GitHub Actions",
+      "Preserves strings, numbers, booleans, null, arrays, and nested objects",
+      "Useful for converting API responses into deployment configs",
+    ],
     overview:
       "This converter helps teams move structured data between JSON and YAML formats. It is practical for API docs, deployment configs, and development tooling.",
 

@@ -52,6 +52,17 @@ const toolConfig = createToolConfig({
   },
 
   content: {
+    definition:
+      "The Antigravity Skill Builder is a free tool that helps developers create and configure agent skills for AI coding assistants and automation frameworks.",
+    quickAnswer:
+      "Define your skill's name, description, triggers, and actions using the visual builder. Export the configuration as a YAML or JSON file ready to install in your agent framework. No coding required for basic skills.",
+    keyTakeaways: [
+      "Visual builder for creating AI agent skills and automation configs",
+      "Export skills as YAML or JSON for framework integration",
+      "Define triggers, conditions, and actions without writing code",
+      "Compatible with popular agent frameworks and coding assistants",
+      "Useful for developers building custom automation workflows",
+    ],
     overview:
       "Use this builder to create structured `SKILL.md` files that define repeatable agent behaviors for engineering tasks such as coding, testing, refactoring, and operational checks.",
 

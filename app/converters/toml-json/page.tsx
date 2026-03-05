@@ -62,6 +62,17 @@ const toolConfig = createToolConfig({
   },
 
   content: {
+    definition:
+      "A TOML to JSON Converter is a free tool that transforms TOML configuration files into JSON format for use in APIs, JavaScript, and JSON-based workflows.",
+    quickAnswer:
+      "Paste TOML content to instantly get the JSON equivalent. The converter maps TOML tables to JSON objects, arrays to arrays, and preserves all data types. Copy the formatted JSON output.",
+    keyTakeaways: [
+      "Converts TOML [tables] to JSON objects and inline tables to nested objects",
+      "JSON output is formatted with proper indentation for readability",
+      "Useful for importing TOML configs into Node.js, Python, or REST APIs",
+      "Handles datetime, integer, float, and boolean TOML types",
+      "All processing happens client-side with no data sent to servers",
+    ],
     overview:
       "Use this converter to transform TOML config files into JSON and back. It is useful for projects that mix tooling ecosystems and file format requirements.",
 

@@ -62,6 +62,17 @@ const toolConfig = createToolConfig({
   },
 
   content: {
+    definition:
+      "A NATO Phonetic Converter is a free tool that converts text into NATO phonetic alphabet words (Alpha, Bravo, Charlie) and decodes NATO words back to plain text.",
+    quickAnswer:
+      "Type or paste text to instantly see the NATO phonetic spelling. Each letter maps to a standard word (A=Alpha, B=Bravo, C=Charlie). Copy the result for use in phone calls, radio communication, or support tickets.",
+    keyTakeaways: [
+      "26 standard code words: Alpha through Zulu for A–Z",
+      "Adopted by NATO, ICAO, and the ITU for international communication",
+      "Reduces miscommunication when spelling over phone or radio",
+      "Numbers use standard pronunciation: 0=Zero, 9=Niner",
+      "Used by military, aviation, emergency services, and customer support",
+    ],
     overview:
       "Use this tool to convert plain text into NATO phonetic words (Alpha, Bravo, Charlie) and decode NATO words back to text. It is useful for calls, support workflows, aviation-style spelling, and radio clarity.",
 

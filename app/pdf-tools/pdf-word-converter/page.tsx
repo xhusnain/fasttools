@@ -52,6 +52,17 @@ const toolConfig = createToolConfig({
   ],
 
   content: {
+    definition:
+      "A PDF to Word Converter is a free tool that converts PDF documents into editable Word (DOCX) files while preserving formatting, tables, and images.",
+    quickAnswer:
+      "Upload a PDF file to convert it to an editable Word document. The tool preserves text formatting, tables, images, and layout structure. Download the result as a .docx file compatible with Microsoft Word and Google Docs.",
+    keyTakeaways: [
+      "Converts PDF to editable DOCX format preserving formatting",
+      "Preserves tables, images, headers, and text styles",
+      "Also supports Word to PDF conversion (DOCX → PDF)",
+      "Output compatible with Microsoft Word, Google Docs, and LibreOffice",
+      "Processing happens locally — your documents stay on your device",
+    ],
     overview:
       "This converter supports two directions: PDF to Word and Word to PDF. It is best for quick text-focused conversion workflows where you need editable output or a portable PDF version without leaving the browser.",
 

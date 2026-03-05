@@ -36,6 +36,17 @@ const toolConfig = createToolConfig({
     ],
 
     content: {
+        definition:
+            "A Turkey Defrost Calculator is a free tool that calculates the safe thawing time for frozen turkeys based on weight and defrosting method.",
+        quickAnswer:
+            "Enter your turkey's weight to see the recommended defrost time. Refrigerator: 24 hours per 4-5 pounds. Cold water: 30 minutes per pound. A 20 lb turkey needs 4-5 days in the fridge.",
+        keyTakeaways: [
+            "Refrigerator thawing: 24 hours per 4-5 pounds (safest method)",
+            "Cold water thawing: 30 minutes per pound (faster but requires attention)",
+            "A 20-pound turkey needs 4-5 days to thaw in the refrigerator",
+            "Never thaw at room temperature — bacteria grow rapidly above 40°F",
+            "USDA guidelines: cook turkey to internal temperature of 165°F (74°C)",
+        ],
         overview: "There is nothing worse than waking up on Christmas morning to a rock-solid bird. Defrosting a turkey takes significantly longer than most people realize—sometimes days. This tool does the math for you, working backward from your dinner time to tell you the exact moment you need to start thawing.",
 
         howToSteps: [

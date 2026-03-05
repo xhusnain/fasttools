@@ -48,6 +48,17 @@ const toolConfig = createToolConfig({
   },
 
   content: {
+    definition:
+      "An HMAC Generator is a free tool that creates Hash-based Message Authentication Codes using a secret key and a hash algorithm to verify data integrity and authenticity.",
+    quickAnswer:
+      "Enter a message and secret key, select a hash algorithm (SHA-256, SHA-512, etc.), and get the HMAC output instantly. Use it for API authentication, webhook verification, and message integrity checks.",
+    keyTakeaways: [
+      "HMAC combines a secret key with a hash function for authentication",
+      "Supports SHA-1, SHA-256, SHA-384, SHA-512, and MD5 algorithms",
+      "Used by APIs (AWS, Stripe, GitHub) for request signing and webhook verification",
+      "HMAC is more secure than plain hashing — it prevents length extension attacks",
+      "Output is a fixed-length hex string regardless of input size",
+    ],
     overview:
       "Use this tool to generate HMAC signatures from a payload and secret key. It helps validate webhook payload signing, test API auth flows, and troubleshoot signature mismatches.",
 

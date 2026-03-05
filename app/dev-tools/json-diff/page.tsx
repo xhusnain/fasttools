@@ -53,6 +53,17 @@ const toolConfig = createToolConfig({
   },
 
   content: {
+    definition:
+      "A JSON Diff Tool is a free tool that compares two JSON objects side by side and highlights additions, deletions, and modifications between them.",
+    quickAnswer:
+      "Paste two JSON objects into the left and right panels. The tool instantly highlights differences — additions in green, deletions in red, and modifications in yellow. Copy the diff report or use it for debugging.",
+    keyTakeaways: [
+      "Side-by-side visual comparison of two JSON structures",
+      "Color-coded highlights for additions, deletions, and changes",
+      "Handles nested objects and arrays at any depth",
+      "Useful for debugging API responses and config file changes",
+      "All processing happens locally in your browser",
+    ],
     overview:
       "Use this tool to compare two JSON documents and quickly identify what changed. It is useful for API response checks, schema transitions, and release validation workflows.",
 

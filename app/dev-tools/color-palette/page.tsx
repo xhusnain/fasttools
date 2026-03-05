@@ -53,6 +53,17 @@ const toolConfig = createToolConfig({
   },
 
   content: {
+    definition:
+      "A Color Palette Generator is a free tool that creates harmonious color schemes from a base color using color theory rules like complementary, analogous, and triadic relationships.",
+    quickAnswer:
+      "Pick a base color or enter a hex code to instantly generate color palettes. Choose from complementary, analogous, triadic, split-complementary, and monochromatic schemes. Copy hex, RGB, or HSL values for each color.",
+    keyTakeaways: [
+      "Generates palettes using color theory: complementary, analogous, triadic, tetradic",
+      "Pick any base color with the color picker or enter hex/RGB values",
+      "Export colors as hex, RGB, or HSL for CSS and design tools",
+      "Monochromatic palettes use tints and shades of a single hue",
+      "Useful for web design, branding, UI themes, and presentation styling",
+    ],
     overview:
       "Use this palette tool to generate color combinations and quickly test visual directions for interfaces, brand systems, and content design work.",
 

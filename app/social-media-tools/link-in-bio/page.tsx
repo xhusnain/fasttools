@@ -52,6 +52,17 @@ const toolConfig = createToolConfig({
   },
 
   content: {
+    definition:
+      "A Link in Bio Generator is a free tool that creates a customizable landing page with multiple links for use in Instagram, TikTok, and other social media bios.",
+    quickAnswer:
+      "Add your links, customize the layout and colors, and generate a shareable link-in-bio page. No account needed. Use the generated URL in your social media profiles to share multiple destinations from one link.",
+    keyTakeaways: [
+      "Create a multi-link landing page for social media bios",
+      "Customizable colors, layout, and button styles",
+      "No account or subscription required — completely free",
+      "Works with Instagram, TikTok, Twitter/X, YouTube, and any platform",
+      "Alternative to paid services like Linktree and Beacons",
+    ],
     overview:
       "Use this generator to create a single destination page that routes social traffic to your key links, products, profiles, and campaigns.",
 

@@ -46,6 +46,17 @@ const toolConfig = createToolConfig({
   },
 
   content: {
+    definition:
+      "A Facebook Video Downloader is a free tool that downloads videos from Facebook posts, pages, and groups in HD or SD quality.",
+    quickAnswer:
+      "Paste a Facebook video URL to download it in MP4 format. Choose between HD and SD quality options. Works with public videos from profiles, pages, groups, and shared posts.",
+    keyTakeaways: [
+      "Downloads Facebook videos in HD and SD quality as MP4 files",
+      "Works with public videos from profiles, pages, and groups",
+      "Supports regular posts, shared videos, and Facebook Watch content",
+      "Shows video metadata: title, duration, and quality options",
+      "Only download videos you have permission to use and share",
+    ],
     overview:
       "Use this downloader to process Facebook video links and save available output for review, analysis, and offline reference workflows.",
 

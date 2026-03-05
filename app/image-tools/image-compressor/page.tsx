@@ -60,6 +60,17 @@ const toolConfig = createToolConfig({
   ],
 
   content: {
+    definition:
+      "An Image Compressor is a free tool that reduces image file size while maintaining visual quality for faster web loading and smaller storage footprint.",
+    quickAnswer:
+      "Upload images (PNG, JPG, WebP) and adjust the quality slider to control compression. Preview the result and compare file sizes. Download optimized images individually or as a batch ZIP file.",
+    keyTakeaways: [
+      "Reduces image file size by 50-90% with minimal visual quality loss",
+      "Supports PNG, JPG, WebP, and GIF formats",
+      "Adjustable quality slider for fine-tuned compression",
+      "Batch processing for multiple images at once",
+      "All compression runs locally — images never leave your browser",
+    ],
     overview:
       "Image Compressor helps you reduce file size before publishing to websites, forms, email, and social platforms. You can tune output using quality, max-size, and max-resolution controls, then download each image or export all compressed files together.",
 

@@ -45,6 +45,17 @@ const toolConfig = createToolConfig({
   ],
 
   content: {
+    definition:
+      "A Birthday Countdown Timer is a free tool that shows exactly how many days, hours, minutes, and seconds remain until your next birthday.",
+    quickAnswer:
+      "Enter your birth date to see a live countdown to your next birthday. Shows days, hours, minutes, and seconds remaining. Also displays your current age and what day of the week your birthday falls on this year.",
+    keyTakeaways: [
+      "Live countdown showing days, hours, minutes, and seconds to your next birthday",
+      "Shows what day of the week your birthday falls on this year",
+      "Displays your current age in years, months, and days",
+      "Automatically switches to next year after your birthday passes",
+      "Handles leap year birthdays (Feb 29) correctly",
+    ],
     overview: "Our Birthday Countdown Timer is the ultimate way to build excitement for your special day. Whether you're counting down to your own birthday, a friend's, or a family member's, this tool provides a precise, real-time countdown. It handles leap years, time zones, and all the tricky date math automatically, so you can focus on the celebration. With instant sharing options, you can let everyone know exactly how long they have to get your gift ready!",
 
     howToSteps: [

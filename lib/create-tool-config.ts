@@ -84,6 +84,12 @@ export interface UnifiedToolConfig {
     }>
     content: {
         overview: string | React.ReactNode
+        /** One-sentence definition AI systems can quote. Rendered in a <dfn> block. */
+        definition?: string
+        /** Concise 1-2 sentence answer to "What is [tool]?" for AI extraction. */
+        quickAnswer?: string
+        /** Key takeaways displayed as a scannable summary list. */
+        keyTakeaways?: string[]
         howToSteps?: string[]
         features?: string[] | Array<{ title: string; description: string }>
         aboutTool: string | React.ReactNode
@@ -111,6 +117,7 @@ export function createToolConfig(config: UnifiedToolConfig) {
         description: config.metaDescription || config.description,
         path: config.path,
         toolName: config.toolName,
+        definition: config.content.definition,
         faqs: config.content.faqs,
         howToSteps: config.content.howToSteps || [],
         video: config.video,
@@ -128,6 +135,9 @@ export function createToolConfig(config: UnifiedToolConfig) {
         toolContent: {
             toolName: config.toolName,
             overview: config.content.overview,
+            definition: config.content.definition,
+            quickAnswer: config.content.quickAnswer,
+            keyTakeaways: config.content.keyTakeaways,
             howToSteps: config.content.howToSteps || [],
             features: config.content.features || [],
             aboutTool: config.content.aboutTool,

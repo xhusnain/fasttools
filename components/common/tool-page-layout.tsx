@@ -2,7 +2,6 @@ import Link from "next/link"
 import Image from "next/image"
 import { GHeader } from "@/ui/gheader"
 
-
 import { Breadcrumbs } from "@/components/common/breadcrumbs"
 
 import {
@@ -10,7 +9,9 @@ import {
     Package,
     Zap,
     Star,
-    ChevronRight
+    ChevronRight,
+    BookOpen,
+    ListChecks
 } from "lucide-react"
 import type { ToolPageLayoutProps } from "@/types/tool-page-layout.types"
 import { SquareAd } from "@/components/ads/square-ad"
@@ -28,9 +29,8 @@ export function ToolPageLayout({
     className
 }: ToolPageLayoutProps) {
 
-
     if (process.env.NODE_ENV === "development" && expectedMetadata) {
-        console.group("🔍 ToolPageLayout - Metadata Validation")
+        console.group("ToolPageLayout - Metadata Validation")
         console.log("Expected:", expectedMetadata)
         console.groupEnd()
     }
@@ -58,8 +58,22 @@ export function ToolPageLayout({
                         />
                     </div>
 
-                    <div className="grid lg:grid-cols-[1fr_350px] gap-4 lg:gap-8">
+                    {/* AI-extractable quick answer block — concise definition for AI Overviews / Perplexity */}
+                    {toolContent.quickAnswer && (
+                        <div
+                            className="mb-6 p-4 bg-primary/5 border border-primary/20 rounded-lg"
+                            data-ai-answer="true"
+                            role="note"
+                            aria-label={`Quick answer: ${toolContent.toolName}`}
+                        >
+                            <p className="text-base text-foreground leading-relaxed">
+                                <strong>{toolContent.toolName}:</strong>{" "}
+                                {toolContent.quickAnswer}
+                            </p>
+                        </div>
+                    )}
 
+                    <div className="grid lg:grid-cols-[1fr_350px] gap-4 lg:gap-8">
 
                         <div className="space-y-4 lg:space-y-6 min-w-0 max-w-full overflow-hidden">
                             {/* WebMCP: data-webmcp-tool marks this as the interactive tool region for AI agents */}
@@ -67,7 +81,36 @@ export function ToolPageLayout({
                                 {toolComponent}
                             </div>
 
-                            <section className="bg-card border border-border rounded-lg p-6">
+                            {/* Key Takeaways — scannable summary for AI systems and users */}
+                            {toolContent.keyTakeaways && toolContent.keyTakeaways.length > 0 && (
+                                <section
+                                    className="bg-card border border-border rounded-lg p-6"
+                                    data-ai-section="key-takeaways"
+                                >
+                                    <div className="flex items-center gap-3 mb-4">
+                                        <div className="p-2 bg-purple-100 dark:bg-purple-900/30 rounded-xl">
+                                            <ListChecks className="h-5 w-5 text-purple-600 dark:text-purple-400" />
+                                        </div>
+                                        <h2 className="text-2xl font-bold text-foreground">
+                                            Key Takeaways
+                                        </h2>
+                                    </div>
+                                    <ul className="space-y-2">
+                                        {toolContent.keyTakeaways.map((takeaway, index) => (
+                                            <li key={index} className="flex items-start gap-2 text-sm text-muted-foreground">
+                                                <ChevronRight className="h-4 w-4 text-primary flex-shrink-0 mt-0.5" />
+                                                <span>{takeaway}</span>
+                                            </li>
+                                        ))}
+                                    </ul>
+                                </section>
+                            )}
+
+                            {/* What is [Tool]? — primary definition section */}
+                            <article
+                                className="bg-card border border-border rounded-lg p-6"
+                                data-ai-section="definition"
+                            >
                                 <div className="flex items-center gap-3 mb-4">
                                     <div className="p-2 bg-blue-100 dark:bg-blue-900/30 rounded-xl">
                                         <Package className="h-5 w-5 text-blue-600 dark:text-blue-400" />
@@ -76,10 +119,15 @@ export function ToolPageLayout({
                                         What is {toolContent.toolName}?
                                     </h2>
                                 </div>
+                                {toolContent.definition && (
+                                    <p className="text-base text-foreground leading-relaxed mb-3 font-medium">
+                                        <dfn>{toolContent.toolName}</dfn> — {toolContent.definition}
+                                    </p>
+                                )}
                                 <div className="text-base text-muted-foreground leading-relaxed">
                                     {toolContent.overview}
                                 </div>
-                            </section>
+                            </article>
 
                             {heroImage && (
                                 <div className="relative w-full h-[300px] sm:h-[400px] rounded-xl overflow-hidden shadow-lg border border-border/50 my-6">
@@ -94,7 +142,11 @@ export function ToolPageLayout({
                                 </div>
                             )}
 
-                            <section className="bg-card border border-border rounded-lg p-6">
+                            {/* How to Use — step-by-step instructions */}
+                            <article
+                                className="bg-card border border-border rounded-lg p-6"
+                                data-ai-section="how-to"
+                            >
                                 <div className="flex items-center gap-3 mb-4">
                                     <div className="p-2 bg-amber-100 dark:bg-amber-900/30 rounded-xl">
                                         <Zap className="h-5 w-5 text-amber-600 dark:text-amber-400" />
@@ -103,9 +155,9 @@ export function ToolPageLayout({
                                         How to Use {toolContent.toolName}
                                     </h2>
                                 </div>
-                                <div className="space-y-4">
+                                <ol className="space-y-4 list-none">
                                     {(toolContent.howToSteps || []).map((step, index) => (
-                                        <div key={index} className="flex gap-4">
+                                        <li key={index} className="flex gap-4">
                                             <div className="flex-shrink-0 w-8 h-8 rounded-full bg-primary/10 dark:bg-primary/20 flex items-center justify-center">
                                                 <span className="text-sm font-bold text-primary">{index + 1}</span>
                                             </div>
@@ -119,17 +171,21 @@ export function ToolPageLayout({
                                                     </div>
                                                 )}
                                             </div>
-                                        </div>
+                                        </li>
                                     ))}
-                                </div>
-                            </section>
+                                </ol>
+                            </article>
 
-                            {/* In-content ad - visible on all screen sizes */}
+                            {/* In-content ad */}
                             <div className="flex justify-center">
                                 <SquareAd />
                             </div>
 
-                            <section className="bg-card border border-border rounded-lg p-6">
+                            {/* Key Features */}
+                            <section
+                                className="bg-card border border-border rounded-lg p-6"
+                                data-ai-section="features"
+                            >
                                 <div className="flex items-center gap-3 mb-4">
                                     <div className="p-2 bg-green-100 dark:bg-green-900/30 rounded-xl">
                                         <Star className="h-5 w-5 text-green-600 dark:text-green-400" />
@@ -184,8 +240,12 @@ export function ToolPageLayout({
                                 </section>
                             )}
 
+                            {/* Use Cases */}
                             {toolContent.useCases && toolContent.useCases.length > 0 && (
-                                <section className="bg-card border border-border rounded-lg p-6">
+                                <section
+                                    className="bg-card border border-border rounded-lg p-6"
+                                    data-ai-section="use-cases"
+                                >
                                     <h2 className="text-2xl font-bold mb-4 text-foreground">
                                         Use Cases
                                     </h2>
@@ -209,10 +269,19 @@ export function ToolPageLayout({
                                 </section>
                             )}
 
-                            <section className="bg-card border border-border rounded-lg p-6">
-                                <h2 className="text-2xl font-bold mb-4 text-foreground">
-                                    About {toolContent.toolName}
-                                </h2>
+                            {/* About Tool — deep content */}
+                            <article
+                                className="bg-card border border-border rounded-lg p-6"
+                                data-ai-section="about"
+                            >
+                                <div className="flex items-center gap-3 mb-4">
+                                    <div className="p-2 bg-indigo-100 dark:bg-indigo-900/30 rounded-xl">
+                                        <BookOpen className="h-5 w-5 text-indigo-600 dark:text-indigo-400" />
+                                    </div>
+                                    <h2 className="text-2xl font-bold text-foreground">
+                                        About {toolContent.toolName}
+                                    </h2>
+                                </div>
                                 <div className="prose prose-slate max-w-none">
                                     {typeof toolContent.aboutTool === 'string' ? (
                                         <p className="text-muted-foreground leading-relaxed whitespace-pre-line">
@@ -231,10 +300,11 @@ export function ToolPageLayout({
                                         </div>
                                     )}
                                 </div>
-                            </section>
+                            </article>
 
+                            {/* Pro Tip */}
                             {toolContent.proTip && (
-                                <section className="bg-gradient-to-r from-amber-50 to-blue-50 dark:from-amber-950/30 dark:to-blue-950/30 border border-amber-200 dark:border-amber-800 rounded-lg p-6">
+                                <aside className="bg-gradient-to-r from-amber-50 to-blue-50 dark:from-amber-950/30 dark:to-blue-950/30 border border-amber-200 dark:border-amber-800 rounded-lg p-6">
                                     <div className="flex items-start gap-4">
                                         <div className="flex-shrink-0">
                                             <div className="p-2 bg-amber-100 dark:bg-amber-900/50 rounded-lg">
@@ -243,16 +313,17 @@ export function ToolPageLayout({
                                         </div>
                                         <div>
                                             <h3 className="text-lg font-bold text-amber-900 dark:text-amber-100 mb-2">
-                                                💡 Pro Tip
+                                                Pro Tip
                                             </h3>
                                             <p className="text-amber-800 dark:text-amber-200 leading-relaxed">
                                                 {toolContent.proTip}
                                             </p>
                                         </div>
                                     </div>
-                                </section>
+                                </aside>
                             )}
 
+                            {/* Additional Content */}
                             {toolContent.additionalContent && toolContent.additionalContent.length > 0 && (
                                 <section className="bg-card border border-border rounded-lg p-6">
                                     <div className="space-y-6">
@@ -266,22 +337,27 @@ export function ToolPageLayout({
                                 </section>
                             )}
 
-                            <section className="bg-card border border-border rounded-lg p-6">
+                            {/* FAQ — using semantic <details>/<summary> for AI extraction */}
+                            <section
+                                className="bg-card border border-border rounded-lg p-6"
+                                data-ai-section="faq"
+                            >
                                 <h2 className="text-2xl font-bold mb-6 text-foreground">
                                     Frequently Asked Questions
                                 </h2>
-                                <div className="space-y-4">
+                                <dl className="space-y-4">
                                     {(toolContent.faqs || []).map((faq, index) => (
                                         <div key={index} className="p-4 bg-muted/50 rounded-lg border border-border">
-                                            <h3 className="font-semibold text-foreground mb-2">{faq.question}</h3>
-                                            <div className="text-sm text-muted-foreground leading-relaxed">{faq.answer}</div>
+                                            <dt className="font-semibold text-foreground mb-2">{faq.question}</dt>
+                                            <dd className="text-sm text-muted-foreground leading-relaxed">{faq.answer}</dd>
                                         </div>
                                     ))}
-                                </div>
+                                </dl>
                             </section>
 
+                            {/* Related Tools — mobile */}
                             {toolContent.relatedTools && toolContent.relatedTools.length > 0 && (
-                                <section className="bg-card border border-border rounded-lg p-6 lg:hidden">
+                                <nav className="bg-card border border-border rounded-lg p-6 lg:hidden" aria-label="Related tools">
                                     <h2 className="text-2xl font-bold mb-4 text-foreground">
                                         Related Tools
                                     </h2>
@@ -297,14 +373,15 @@ export function ToolPageLayout({
                                             </Link>
                                         ))}
                                     </div>
-                                </section>
+                                </nav>
                             )}
                         </div>
 
-                        <div className="space-y-6">
+                        {/* Sidebar */}
+                        <aside className="space-y-6">
                             <div className="sticky top-32 space-y-6 hidden lg:block">
                                 {toolContent.relatedTools && toolContent.relatedTools.length > 0 && (
-                                    <section className="bg-card border border-border rounded-lg p-6 shadow-sm">
+                                    <nav className="bg-card border border-border rounded-lg p-6 shadow-sm" aria-label="Related tools">
                                         <h2 className="text-lg font-bold mb-4 text-foreground">
                                             Related Tools
                                         </h2>
@@ -320,7 +397,7 @@ export function ToolPageLayout({
                                                 </Link>
                                             ))}
                                         </div>
-                                    </section>
+                                    </nav>
                                 )}
 
                                 {/* ads */}
@@ -329,7 +406,7 @@ export function ToolPageLayout({
                                     <SquareAd />
                                 </div>
                             </div>
-                        </div>
+                        </aside>
                     </div>
                 </div>
             </main>

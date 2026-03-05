@@ -53,6 +53,17 @@ const toolConfig = createToolConfig({
   },
 
   content: {
+    definition:
+      "A Base64 Encoder/Decoder is a free tool that encodes text into Base64 format and decodes Base64 strings back into readable text.",
+    quickAnswer:
+      "Paste text to encode it to Base64, or paste a Base64 string to decode it back to plain text. Supports UTF-8 encoding. Copy the result with one click. Useful for API payloads, data URIs, and email encoding.",
+    keyTakeaways: [
+      "Encodes any text to Base64 and decodes Base64 back to text",
+      "Base64 uses A–Z, a–z, 0–9, +, / and = for padding",
+      "Encoding increases size by approximately 33% (3 bytes → 4 characters)",
+      "Used in data URIs, email attachments (MIME), and API authentication headers",
+      "All encoding/decoding runs locally in your browser",
+    ],
     overview:
       "Use this tool to encode plain text into Base64 or decode Base64 back to readable output. It is useful for API debugging, payload inspection, and data URI workflows.",
 

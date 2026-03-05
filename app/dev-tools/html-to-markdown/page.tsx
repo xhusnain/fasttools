@@ -53,6 +53,17 @@ const toolConfig = createToolConfig({
   },
 
   content: {
+    definition:
+      "An HTML to Markdown Converter is a free tool that transforms HTML content into clean Markdown syntax for use in documentation, READMEs, and content management systems.",
+    quickAnswer:
+      "Paste HTML to instantly convert it to Markdown. The tool handles headings, paragraphs, links, images, lists, tables, and code blocks. Copy the Markdown output for use in GitHub, Notion, or any Markdown editor.",
+    keyTakeaways: [
+      "Converts HTML tags to equivalent Markdown syntax",
+      "Handles <h1>–<h6>, <a>, <img>, <ul>, <ol>, <table>, and <code>",
+      "Strips unnecessary HTML attributes and inline styles",
+      "Preserves code blocks and preformatted text",
+      "Useful for migrating CMS content to Markdown-based platforms",
+    ],
     overview:
       "Use this tool to convert HTML content into Markdown for README files, docs systems, and markdown-first publishing pipelines.",
 

@@ -46,6 +46,17 @@ const toolConfig = createToolConfig({
   },
 
   content: {
+    definition:
+      "A SoundCloud Downloader is a free tool that downloads SoundCloud tracks and playlists as MP3 files for offline listening.",
+    quickAnswer:
+      "Paste a SoundCloud track or playlist URL to download audio as MP3. The tool shows track info including title, artist, duration, and artwork. Works with public tracks only.",
+    keyTakeaways: [
+      "Downloads SoundCloud tracks as high-quality MP3 files",
+      "Shows track metadata: title, artist, duration, and play count",
+      "Works with individual tracks and playlist URLs",
+      "Only works with publicly accessible SoundCloud content",
+      "Respect artist rights — only download content you are permitted to use",
+    ],
     overview:
       "Use this tool to process SoundCloud links and retrieve available audio output for offline listening and workflow reference tasks.",
 

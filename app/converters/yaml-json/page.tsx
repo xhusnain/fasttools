@@ -62,6 +62,17 @@ const toolConfig = createToolConfig({
   },
 
   content: {
+    definition:
+      "A YAML to JSON Converter is a free tool that transforms YAML configuration files into JSON format for APIs, JavaScript apps, and data processing pipelines.",
+    quickAnswer:
+      "Paste YAML content to instantly get formatted JSON output. The converter handles multi-line strings, anchors, aliases, and all YAML data types. Copy the JSON result or download it as a file.",
+    keyTakeaways: [
+      "Converts YAML indentation-based format to JSON brace-based format",
+      "Handles YAML anchors (&), aliases (*), and multi-line strings",
+      "JSON output is formatted with 2-space indentation for readability",
+      "Useful for converting Kubernetes manifests to JSON for API calls",
+      "Browser-based processing with no server uploads",
+    ],
     overview:
       "Use this tool when you need to switch between YAML and JSON formats quickly. It is helpful for OpenAPI documents, deployment configs, CI files, and API payload checks.",
 

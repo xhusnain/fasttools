@@ -48,6 +48,17 @@ const toolConfig = createToolConfig({
   },
 
   content: {
+    definition:
+      "A Bcrypt Hash Generator is a free tool that hashes passwords using the bcrypt algorithm and verifies plaintext passwords against existing bcrypt hashes.",
+    quickAnswer:
+      "Enter a password and select a cost factor (10–12 recommended) to generate a bcrypt hash. To verify, paste a password and a bcrypt hash to check if they match. Used for secure password storage.",
+    keyTakeaways: [
+      "Bcrypt is a password hashing function designed to be slow — resistant to brute force",
+      "Cost factor (salt rounds) controls computational difficulty: 10 = ~100ms, 12 = ~400ms",
+      "Each hash includes a random salt — same password produces different hashes",
+      "Output format: $2b$[cost]$[22-char salt][31-char hash]",
+      "Industry standard for password storage in web applications",
+    ],
     overview:
       "Use this tool to generate bcrypt hashes for password storage and to verify plaintext/hash matches during testing. It is useful for backend auth workflows, migration checks, and implementation QA.",
 

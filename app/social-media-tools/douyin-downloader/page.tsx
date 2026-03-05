@@ -45,6 +45,17 @@ const toolConfig = createToolConfig({
   },
 
   content: {
+    definition:
+      "A Douyin Downloader is a free tool that downloads videos from Douyin (Chinese TikTok) without watermark in HD quality.",
+    quickAnswer:
+      "Paste a Douyin video URL or share link to download the video without watermark. The tool extracts the HD version and shows video metadata including creator info and caption.",
+    keyTakeaways: [
+      "Downloads Douyin videos without watermark in HD quality",
+      "Works with Douyin share links and standard video URLs",
+      "Douyin is TikTok's Chinese counterpart with separate content",
+      "MP4 format compatible with all devices and video editors",
+      "Respect creators' rights and copyright when downloading content",
+    ],
     overview:
       "Use this tool to process Douyin links and save available video output for review, reference, and creator workflow tasks.",
 

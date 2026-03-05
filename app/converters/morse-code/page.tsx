@@ -103,6 +103,17 @@ const toolConfig = createToolConfig({
   },
 
   content: {
+    definition:
+      "A Morse Code Translator is a free tool that converts plain text into Morse code dots and dashes and decodes Morse code back into readable text.",
+    quickAnswer:
+      "Type or paste text to instantly see the Morse code equivalent, or enter dots and dashes to decode back to text. Play audio to hear the pattern. Supports all letters, numbers, and common punctuation.",
+    keyTakeaways: [
+      "Converts text to Morse code and Morse code to text in real time",
+      "Audio playback lets you hear the dot-dash pattern at adjustable speed",
+      "Supports A–Z, 0–9, and common punctuation marks",
+      "Morse code uses only two signals: short (dit) and long (dah)",
+      "International Morse Code is standardized by the ITU since 1865",
+    ],
     overview:
       "Morse code is a method of encoding text as sequences of dots (short signals, called \"dits\") and dashes (long signals, called \"dahs\"). Invented by Samuel Morse and Alfred Vail in the 1830s for use with the electrical telegraph, it became the foundation of long-distance communication for over a century. This free Morse code translator lets you convert any text into International Morse Code instantly and decode Morse code back to readable English. You can also play the Morse code as audio to hear the dot-and-dash pattern at the standard 600 Hz tone frequency.",
 

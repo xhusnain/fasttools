@@ -53,6 +53,17 @@ const toolConfig = createToolConfig({
   },
 
   content: {
+    definition:
+      "An HTML WYSIWYG Editor is a free tool that lets you create and edit HTML content visually without writing code, then export the clean HTML source.",
+    quickAnswer:
+      "Type and format text using the visual toolbar (bold, italic, headings, lists, links, images). The tool generates clean HTML code in real time. Switch between visual and source views. Copy the HTML output.",
+    keyTakeaways: [
+      "Visual editing with toolbar for formatting, links, images, and tables",
+      "Real-time HTML source code generation as you edit",
+      "Switch between WYSIWYG and source code views",
+      "Clean HTML output without unnecessary tags or inline styles",
+      "Useful for email templates, CMS content, and quick HTML prototyping",
+    ],
     overview:
       "Use this editor to compose formatted content and capture the resulting HTML for websites, CMS fields, email templates, and embedded content blocks.",
 

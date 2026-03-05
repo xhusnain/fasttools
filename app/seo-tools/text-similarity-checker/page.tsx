@@ -55,6 +55,17 @@ const toolConfig = createToolConfig({
   },
 
   content: {
+    definition:
+      "A Text Similarity Checker is a free tool that compares two text passages and calculates their similarity percentage using multiple algorithms.",
+    quickAnswer:
+      "Paste two text passages to instantly see their similarity score as a percentage. The tool uses cosine similarity, Jaccard index, and other algorithms. Useful for plagiarism checks, content deduplication, and SEO cannibalization analysis.",
+    keyTakeaways: [
+      "Calculates similarity percentage between two text passages",
+      "Uses multiple algorithms: cosine similarity, Jaccard index, and Levenshtein distance",
+      "Highlights matching phrases and common words between texts",
+      "Useful for detecting content duplication and SEO cannibalization",
+      "All comparison runs locally — your text is never sent to external servers",
+    ],
     overview:
       "This checker compares two text inputs and returns a similarity score with technical metrics. It is useful for identifying near-duplicates, reviewing rewritten drafts, and auditing overlapping content before publishing.",
 

@@ -53,6 +53,17 @@ const toolConfig = createToolConfig({
   },
 
   content: {
+    definition:
+      "An Outlook SafeLink Decoder is a free tool that extracts the original URL from Microsoft Outlook SafeLinks (safelinks.protection.outlook.com) wrapped URLs.",
+    quickAnswer:
+      "Paste an Outlook SafeLink URL to instantly reveal the original destination URL hidden behind Microsoft's safe link protection. Copy the decoded URL. Works with all SafeLinks formats.",
+    keyTakeaways: [
+      "Decodes safelinks.protection.outlook.com wrapped URLs instantly",
+      "Reveals the original destination URL behind Microsoft's protection layer",
+      "SafeLinks is part of Microsoft Defender for Office 365",
+      "Useful when you need the real URL for sharing or documentation",
+      "All decoding runs locally — no URLs are sent to external servers",
+    ],
     overview:
       "Microsoft Safe Links rewrites email URLs for click-time scanning. This tool extracts the original destination from rewritten Safe Links URLs so you can review the target quickly during security checks, incident response, and support workflows.",
 

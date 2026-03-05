@@ -54,6 +54,17 @@ const toolConfig = createToolConfig({
   },
 
   content: {
+    definition:
+      "A ULID Generator is a free tool that creates Universally Unique Lexicographically Sortable Identifiers for use as database keys and distributed system IDs.",
+    quickAnswer:
+      "Click generate to create a new ULID instantly. ULIDs are 26-character strings that are sortable by creation time. Copy the result for use in databases, event logs, or distributed systems.",
+    keyTakeaways: [
+      "ULIDs are 128-bit identifiers encoded as 26-character Crockford Base32 strings",
+      "Lexicographically sortable — ULIDs created later sort after earlier ones",
+      "First 10 characters encode millisecond timestamp, last 16 are random",
+      "Drop-in replacement for UUIDs with better sorting and readability",
+      "No special characters — safe for URLs, filenames, and databases",
+    ],
     overview:
       "Use this tool to generate ULIDs for systems that benefit from time-ordered IDs. ULIDs are 128-bit identifiers designed to be sortable while maintaining high uniqueness characteristics.",
 
