@@ -58,10 +58,22 @@ export const mainPages = [
         priority: 0.95,
     },
     {
+        url: "https://www.fasttools.store/blog",
+        lastModified: new Date(),
+        changeFrequency: "weekly" as const,
+        priority: 0.8,
+    },
+    {
         url: "https://www.fasttools.store/blog/archive",
         lastModified: new Date(),
         changeFrequency: "weekly" as const,
         priority: 0.8,
+    },
+    {
+        url: "https://www.fasttools.store/all-tools",
+        lastModified: new Date(),
+        changeFrequency: "weekly" as const,
+        priority: 0.85,
     },
     {
         url: "https://www.fasttools.store/privacy-policy",
@@ -858,6 +870,24 @@ export const toolPages = [
                 caption: "Branding ideas for gaming channels"
             }
         ]
+    },
+    {
+        url: "https://www.fasttools.store/social-media-tools/channel-checker/handle-availability-2026",
+        lastModified: new Date('2026-03-05'),
+        changeFrequency: "weekly" as const,
+        priority: 0.95,
+    },
+    {
+        url: "https://www.fasttools.store/social-media-tools/channel-checker/channel-name-checker",
+        lastModified: new Date('2026-03-05'),
+        changeFrequency: "weekly" as const,
+        priority: 0.95,
+    },
+    {
+        url: "https://www.fasttools.store/social-media-tools/channel-checker/check-if-taken",
+        lastModified: new Date('2026-03-05'),
+        changeFrequency: "weekly" as const,
+        priority: 0.95,
     },
     {
         url: "https://www.fasttools.store/social-media-tools/youtube-channel-name-generator",

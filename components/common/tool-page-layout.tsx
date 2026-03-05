@@ -35,59 +35,11 @@ export function ToolPageLayout({
         console.groupEnd()
     }
 
-    const faqSchema = {
-        "@context": "https://schema.org",
-        "@type": "FAQPage",
-        mainEntity: (toolContent.faqs || []).map((faq) => ({
-            "@type": "Question",
-            name: faq.question,
-            acceptedAnswer: {
-                "@type": "Answer",
-                text: faq.answer,
-            },
-        })),
-    }
-
-    const howToSchema = {
-        "@context": "https://schema.org",
-        "@type": "HowTo",
-        name: `How to use ${toolContent.toolName}`,
-        step: (toolContent.howToSteps || []).map((step, index) => ({
-            "@type": "HowToStep",
-            position: index + 1,
-            text: typeof step === 'string' ? step : `${step.title}: ${step.description}`,
-        })),
-    }
-
-    // Generate BreadcrumbList schema if breadcrumbs are provided
-    const breadcrumbSchema = breadcrumbs && breadcrumbs.length > 0 ? {
-        "@context": "https://schema.org",
-        "@type": "BreadcrumbList",
-        itemListElement: [
-            {
-                "@type": "ListItem",
-                position: 1,
-                name: "Home",
-                item: "https://www.fasttools.store"
-            },
-            ...breadcrumbs.map((crumb, index) => ({
-                "@type": "ListItem",
-                position: index + 2,
-                name: crumb.label,
-                item: crumb.href.startsWith('http')
-                    ? crumb.href
-                    : `https://www.fasttools.store${crumb.href.startsWith('/') ? crumb.href : `/${crumb.href}`}`
-            }))
-        ]
-    } : null
+    // NOTE: FAQ, HowTo, and Breadcrumb schemas are already generated in metadata-base.ts
+    // and injected via Next.js Metadata in <head>. No duplicate body-level schemas needed.
 
     return (
         <div className={`min-h-screen bg-background overflow-x-hidden ${className}`}>
-            <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
-            <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(howToSchema) }} />
-            {breadcrumbSchema && (
-                <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
-            )}
 
             <main id="tool-page-main" className="container mx-auto px-4 py-6 max-w-7xl">
                 {breadcrumbs && breadcrumbs.length > 0 && (

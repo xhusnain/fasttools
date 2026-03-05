@@ -368,11 +368,16 @@ export function createSoftwareAppSchema(options: SoftwareAppSchemaOptions) {
             "priceCurrency": currency,
             "availability": "https://schema.org/InStock"
         },
-        "aggregateRating": {
-            "@type": "AggregateRating",
-            "ratingValue": aggregateRating?.ratingValue || ratingValue,
-            "ratingCount": aggregateRating?.ratingCount || ratingCount
-        },
+        ...(aggregateRating && {
+            "aggregateRating": {
+                "@type": "AggregateRating",
+                "ratingValue": aggregateRating.ratingValue,
+                ...(aggregateRating.ratingCount && { "ratingCount": aggregateRating.ratingCount }),
+                ...(aggregateRating.bestRating && { "bestRating": aggregateRating.bestRating }),
+                ...(aggregateRating.worstRating && { "worstRating": aggregateRating.worstRating }),
+                ...(aggregateRating.reviewCount && { "reviewCount": aggregateRating.reviewCount }),
+            }
+        }),
         "author": {
             "@type": "Organization",
             "name": SITE_NAME,
