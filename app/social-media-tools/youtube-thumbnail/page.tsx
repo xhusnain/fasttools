@@ -122,7 +122,7 @@ const toolConfig = createToolConfig({
 
     relatedTools: [
       { name: "YouTube Tag Extractor", href: "/social-media-tools/youtube-tags" },
-      { name: "YouTube Downloader", href: "/social-media-tools/youtube-downloader" },
+      { name: "YouTube Channel Checker", href: "/social-media-tools/channel-checker" },
       { name: "YouTube Name Generator", href: "/social-media-tools/youtube-channel-name-generator" },
       { name: "All Social Media Tools", href: "/social-media-tools" },
     ],

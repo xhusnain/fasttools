@@ -155,7 +155,7 @@ const toolConfig = createToolConfig({
     relatedTools: [
       { name: "Link in Bio Generator", href: "/social-media-tools/link-in-bio" },
       { name: "YouTube Tag Extractor", href: "/social-media-tools/youtube-tags" },
-      { name: "Instagram Downloader", href: "/social-media-tools/instagram-downloader" },
+      { name: "YouTube Channel Checker", href: "/social-media-tools/channel-checker" },
       { name: "All Social Media Tools", href: "/social-media-tools" },
     ],
   },

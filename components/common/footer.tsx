@@ -96,16 +96,16 @@ export function Footer() {
             </ul>
           </div>
 
-          {/* Popular Tools Column (Replacing generic listing) */}
+          {/* Popular Tools Column */}
           <div>
             <div className="text-sm font-semibold text-foreground mb-4">Trending</div>
             <ul className="space-y-2">
-              <li><Link href="/social-media-tools/instagram-downloader" className="text-sm text-muted-foreground hover:text-primary transition-colors">Instagram Downloader</Link></li>
-              <li><Link href="/social-media-tools/instagram-dp" className="text-sm text-muted-foreground hover:text-primary transition-colors">DP Viewer</Link></li>
-              <li><Link href="/social-media-tools/instagram-dp/private-downloader" className="text-sm text-muted-foreground hover:text-primary transition-colors">Private DP Viewer</Link></li>
-              <li><Link href="/social-media-tools/instagram-downloader/reels-downloader" className="text-sm text-muted-foreground hover:text-primary transition-colors">Reels Saver</Link></li>
-              <li><Link href="/social-media-tools/tiktok-downloader" className="text-sm text-muted-foreground hover:text-primary transition-colors">TikTok Downloader</Link></li>
-              <li><Link href="/social-media-tools/youtube-downloader" className="text-sm text-muted-foreground hover:text-primary transition-colors">YouTube Downloader</Link></li>
+              <li><Link href="/calculator/bmi-calculator" className="text-sm text-muted-foreground hover:text-primary transition-colors">BMI Calculator</Link></li>
+              <li><Link href="/ai-tools/qr-generator" className="text-sm text-muted-foreground hover:text-primary transition-colors">AI QR Generator</Link></li>
+              <li><Link href="/dev-tools/json-diff" className="text-sm text-muted-foreground hover:text-primary transition-colors">JSON Diff</Link></li>
+              <li><Link href="/pdf-tools/pdf-word-converter" className="text-sm text-muted-foreground hover:text-primary transition-colors">PDF to Word</Link></li>
+              <li><Link href="/converters/currency" className="text-sm text-muted-foreground hover:text-primary transition-colors">Currency Converter</Link></li>
+              <li><Link href="/social-media-tools/channel-checker" className="text-sm text-muted-foreground hover:text-primary transition-colors">Channel Checker</Link></li>
             </ul>
           </div>
 
@@ -116,7 +116,6 @@ export function Footer() {
               <li><Link href="/blog" title="Read our latest blog posts and tutorials" className="text-sm text-muted-foreground hover:text-primary transition-colors">Blog</Link></li>
               <li><Link href="/guides" title="Guides on how to build and earn with online tools" className="text-sm text-muted-foreground hover:text-primary transition-colors">Guides</Link></li>
               <li><Link href="/api-docs" title="FastTools API Documentation" className="text-sm text-muted-foreground hover:text-primary transition-colors">API Docs</Link></li>
-              <li><Link href="/downloaders" title="Free Video Downloaders" className="text-sm text-muted-foreground hover:text-primary transition-colors">Downloaders</Link></li>
               <li><Link href="/products" title="Browse all FastTools products" className="text-sm text-muted-foreground hover:text-primary transition-colors">Products</Link></li>
               <li><Link href="/faq" title="Frequently Asked Questions" className="text-sm text-muted-foreground hover:text-primary transition-colors">FAQ</Link></li>
             </ul>

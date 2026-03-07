@@ -5,7 +5,7 @@ import { Search, Sparkles, Grid, ArrowRight, Tag, ExternalLink } from "lucide-re
 
 export const metadata: Metadata = {
   title: "All Tools Directory - FastTools",
-  description: "Explore our complete collection of free online tools. From Instagram Downloaders to Calculators, find exactly what you need in seconds.",
+  description: "Explore our complete collection of free online tools. From Calculators to Converters, find exactly what you need in seconds.",
   alternates: {
     canonical: "/all-tools",
   },
@@ -49,7 +49,7 @@ export default function AllToolsPage() {
             Tools Directory
           </h1>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto leading-relaxed">
-            Browse our complete collection of utilities, calculators, and downloaders.
+            Browse our complete collection of utilities, calculators, and converters.
           </p>
           
           {/* Search Bar */}

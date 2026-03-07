@@ -84,22 +84,6 @@ Description: Professional-grade IP Subnet Calculator supporting IPv4, IPv6, CIDR
 URL: https://www.fasttools.store/social-media-tools/youtube-channel-name-generator
 Description: Free AI-powered YouTube Channel Name Generator. Creates unique, creative, and SEO-friendly channel names based on niche, tone, and target audience. Features include instant categorized results (Gaming, Playful, Professional), availability checking guidance, and support for "Free Fire" and specialized gaming names. Completely free, no login required, unlimited generations. Includes comprehensive naming guides, branding tips, and SEO advice for new creators.
 
-## CapCut Video Downloader
-URL: https://www.fasttools.store/social-media-tools/capcut-downloader
-Description: Download CapCut videos and templates without watermark in HD quality. Free online CapCut downloader for iPhone, Android, PC. No login required. Remove watermark instantly.
-
-## Douyin Downloader
-URL: https://www.fasttools.store/social-media-tools/douyin-downloader
-Description: Download Douyin videos (Chinese TikTok) without watermark. 抖音视频下载无水印. Free, fast, and secure HD saver.
-
-## Pinterest Downloader
-URL: https://www.fasttools.store/social-media-tools/pinterest-downloader
-Description: Download Pinterest videos and images in HD quality for free. Save pins to your device without watermark. Works on iPhone, Android, PC.
-
-## SoundCloud Downloader
-URL: https://www.fasttools.store/social-media-tools/soundcloud-downloader
-Description: Download SoundCloud songs to MP3 in high quality (320kbps). The best online SoundCloud Downloader. Free, fast, and safe.
-
 
 
 ## Open Graph Meta Generator
@@ -316,7 +300,6 @@ Description: Free YAML to JSON converter. Swagger YAML to JSON, OpenAPI YAML to 
 - https://www.fasttools.store/dev-tools/markdown-previewer
 - https://www.fasttools.store/dev-tools/regex-tester
 - https://www.fasttools.store/dev-tools/sql-to-json
-- https://www.fasttools.store/downloaders
 - https://www.fasttools.store/faq
 - https://www.fasttools.store/festivals
 - https://www.fasttools.store/festivals/christmas-font-converter
@@ -365,21 +348,10 @@ Description: Free YAML to JSON converter. Swagger YAML to JSON, OpenAPI YAML to 
 - https://www.fasttools.store/seo-tools/meta-tags
 - https://www.fasttools.store/seo-tools/text-similarity-checker
 - https://www.fasttools.store/social-media-tools
-- https://www.fasttools.store/social-media-tools/capcut-downloader
 - https://www.fasttools.store/social-media-tools/channel-checker
-- https://www.fasttools.store/social-media-tools/douyin-downloader
-- https://www.fasttools.store/social-media-tools/facebook-downloader
 - https://www.fasttools.store/social-media-tools/hashtag-counter
-- https://www.fasttools.store/social-media-tools/instagram-downloader
-- https://www.fasttools.store/social-media-tools/instagram-dp
 - https://www.fasttools.store/social-media-tools/link-in-bio
-- https://www.fasttools.store/social-media-tools/pinterest-downloader
-- https://www.fasttools.store/social-media-tools/soundcloud-downloader
-- https://www.fasttools.store/social-media-tools/tiktok-downloader
-- https://www.fasttools.store/social-media-tools/x-video-downloader
 - https://www.fasttools.store/social-media-tools/youtube-channel-name-generator
-- https://www.fasttools.store/social-media-tools/youtube-downloader
-- https://www.fasttools.store/social-media-tools/youtube-playlist-downloader
 - https://www.fasttools.store/social-media-tools/youtube-tags
 - https://www.fasttools.store/social-media-tools/youtube-thumbnail
 
@@ -437,7 +409,6 @@ Description: Free YAML to JSON converter. Swagger YAML to JSON, OpenAPI YAML to 
 - https://www.fasttools.store/guides/html-to-markdown-converter-guide
 - https://www.fasttools.store/guides/image-to-text-ocr-guide
 - https://www.fasttools.store/guides/inflation-calculator-guide
-- https://www.fasttools.store/guides/instagram-dp-viewer-guide
 - https://www.fasttools.store/guides/interest-rate-calculator-guide
 - https://www.fasttools.store/guides/investment-calculator-guide
 - https://www.fasttools.store/guides/invoice-generator-guide

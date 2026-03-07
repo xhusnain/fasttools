@@ -79,7 +79,6 @@ function shouldIncludeSchema(path: string): boolean {
         "calculator",
         "generator",
         "converter",
-        "downloader",
         "checker",
         "counter",
         "editor",

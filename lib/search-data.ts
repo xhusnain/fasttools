@@ -9,7 +9,6 @@ export interface SearchItem {
 export const searchItems: SearchItem[] = [
   // Main Pages
   { name: "Products", description: "Explore all our product categories and tools", path: "/products", category: "Pages" },
-  { name: "Downloaders", description: "Download videos and media from popular platforms", path: "/downloaders", category: "Pages" },
   { name: "API Docs", description: "Comprehensive API documentation for developers", path: "/api-docs", category: "Pages" },
   { name: "About Us", description: "Learn about FastTools and our mission", path: "/about", category: "Pages" },
   { name: "My Info", description: "View your digital footprint, IP address, and location information", path: "/my-info", category: "Pages" },
@@ -148,18 +147,7 @@ export const searchItems: SearchItem[] = [
 
 
   // Social Media Tools
-  { name: "Instagram DP Viewer", description: "View and download Instagram profile pictures", path: "/social-media-tools/instagram-dp", category: "Social Media" },
-  { name: "Instagram Downloader", description: "Download Instagram posts, reels, and images in HD", path: "/social-media-tools/instagram-downloader", category: "Social Media" },
-  { name: "TikTok Video Downloader", description: "Download TikTok videos without watermark", path: "/social-media-tools/tiktok-downloader", category: "Social Media" },
-  { name: "Facebook Video Downloader", description: "Download Facebook videos in HD quality", path: "/social-media-tools/facebook-downloader", category: "Social Media" },
-  { name: "X Video Downloader", description: "Download X (Twitter) videos in HD without watermark", path: "/social-media-tools/x-video-downloader", category: "Social Media" },
   { name: "YouTube Thumbnail Downloader", description: "Download YouTube thumbnails in HD", path: "/social-media-tools/youtube-thumbnail", category: "Social Media" },
-  { name: "YouTube Video Downloader", description: "Download YouTube videos via browser in HD/4K/8K", path: "/social-media-tools/youtube-downloader", category: "Social Media" },
-  { name: "YouTube Playlist Downloader", description: "Download entire YouTube playlists to MP4 or MP3", path: "/social-media-tools/youtube-playlist-downloader", category: "Social Media" },
-  { name: "CapCut Downloader", description: "Download CapCut videos without watermark", path: "/social-media-tools/capcut-downloader", category: "Social Media" },
-  { name: "Douyin Downloader", description: "Download Douyin videos without watermark", path: "/social-media-tools/douyin-downloader", category: "Social Media" },
-  { name: "Pinterest Downloader", description: "Download Pinterest videos and images in HD", path: "/social-media-tools/pinterest-downloader", category: "Social Media" },
-  { name: "SoundCloud Downloader", description: "Download SoundCloud tracks to MP3 in high quality", path: "/social-media-tools/soundcloud-downloader", category: "Social Media" },
   { name: "YouTube Tag Extractor", description: "Extract tags from any YouTube video", path: "/social-media-tools/youtube-tags", category: "Social Media" },
 
 

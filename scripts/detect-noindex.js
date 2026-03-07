@@ -74,12 +74,8 @@ async function main() {
 
         console.log(`Found ${urls.length} URLs in sitemap.`);
 
-        // Filter for tiktok downloader pages only for this specific check, or check all
-        const tiktokUrls = urls.filter(u => u.includes('tiktok-downloader'));
-        console.log(`Checking ${tiktokUrls.length} TikTok Downloader URLs...`);
-
         const results = [];
-        for (const url of tiktokUrls) {
+        for (const url of urls) {
             const result = await checkUrl(url);
             if (result.noindex) {
                 results.push(result);
@@ -92,7 +88,7 @@ async function main() {
         }
 
         console.log('\n--- Summary ---');
-        console.log(`Total Checked: ${tiktokUrls.length}`);
+        console.log(`Total Checked: ${urls.length}`);
         console.log(`Issues Found: ${results.length}`);
 
         if (results.length > 0) {

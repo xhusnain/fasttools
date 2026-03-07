@@ -1,5 +1,4 @@
 export * from "./api.types";
-export * from "./social-media-types/downloader.types";
 export * from "./image-processing.types";
 export * from "./ai.types";
 export * from "./tool-page-layout.types";

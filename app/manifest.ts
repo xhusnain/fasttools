@@ -50,12 +50,6 @@ export default function manifest(): MetadataRoute.Manifest {
                 description: "Social media management and analysis tools",
                 url: "/social-media-tools"
             },
-            {
-                name: "Downloaders",
-                short_name: "Download",
-                description: "Video and content downloaders",
-                url: "/downloaders"
-            }
         ],
         related_applications: [],
         prefer_related_applications: false

@@ -141,7 +141,7 @@ export default function Home() {
           name: "What types of tools can AI agents interact with?",
           acceptedAnswer: {
             "@type": "Answer",
-            text: "AI agents can interact with button-click tools (BMI calculator, loan calculator), realtime tools (temperature converter, hash generator), generator tools (UUID, token, RSA key generators), and API-dependent tools (currency converter, social media downloaders). File-upload tools like PDF compressor require manual user interaction. Each tool's interaction mode is exposed in the discovery API."
+            text: "AI agents can interact with button-click tools (BMI calculator, loan calculator), realtime tools (temperature converter, hash generator), generator tools (UUID, token, RSA key generators), and API-dependent tools (currency converter, YouTube tags extractor). File-upload tools like PDF compressor require manual user interaction. Each tool's interaction mode is exposed in the discovery API."
           }
         }
       ]

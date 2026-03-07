@@ -4,7 +4,6 @@ import {
     Binary,
     BookOpen,
     Calculator,
-    Camera,
     Code,
     FileText,
     Globe,
@@ -14,7 +13,6 @@ import {
     Settings,
     Sparkles,
     Type,
-    Video,
     DollarSign,
     Database,
     Smile,
@@ -35,8 +33,6 @@ import {
     Box,
     Crop,
     Eye,
-    Download,
-    Youtube,
     CreditCard,
     Percent,
     Receipt,
@@ -73,7 +69,6 @@ import {
     Users,
     Home,
     Zap,
-    User
 } from "lucide-react"
 
 
@@ -260,19 +255,8 @@ export const navigationConfig: MegaMenuSection[] = [
             {
                 title: "Social Media",
                 items: [
-                    { title: "TikTok Downloader", href: "/social-media-tools/tiktok-downloader", icon: Video },
-                    { title: "Instagram Saver", href: "/social-media-tools/instagram-downloader", icon: Camera },
-                    { title: "Facebook Downloader", href: "/social-media-tools/facebook-downloader", icon: Video },
-                    { title: "Pinterest Downloader", href: "/social-media-tools/pinterest-downloader", icon: Image },
-                    { title: "X (Twitter) Downloader", href: "/social-media-tools/x-video-downloader", icon: Video },
-                    { title: "SoundCloud Downloader", href: "/social-media-tools/soundcloud-downloader", icon: Music },
-                    { title: "YouTube Downloader", href: "/social-media-tools/youtube-downloader", icon: Youtube },
-                    { title: "YouTube Playlist", href: "/social-media-tools/youtube-playlist-downloader", icon: Youtube },
                     { title: "YouTube Thumbnail", href: "/social-media-tools/youtube-thumbnail", icon: Image },
                     { title: "YouTube Tags", href: "/social-media-tools/youtube-tags", icon: Hash },
-                    { title: "CapCut Downloader", href: "/social-media-tools/capcut-downloader", icon: Video },
-                    { title: "Douyin Downloader", href: "/social-media-tools/douyin-downloader", icon: Video },
-                    { title: "Instagram DP Viewer", href: "/social-media-tools/instagram-dp", icon: User },
                     { title: "Link in Bio", href: "/social-media-tools/link-in-bio", icon: Link2 },
                     { title: "Hashtag Generator", href: "/social-media-tools/hashtag-counter", icon: Hash },
                     { title: "Channel Name Gen", href: "/social-media-tools/youtube-channel-name-generator", icon: Type },

@@ -34,12 +34,6 @@ export const mainPages = [
         priority: 0.9,
     },
     {
-        url: "https://www.fasttools.store/downloaders",
-        lastModified: new Date('2025-11-25'),
-        changeFrequency: "monthly" as const,
-        priority: 0.95,
-    },
-    {
         url: "https://www.fasttools.store/about",
         lastModified: new Date('2025-11-25'),
         changeFrequency: "monthly" as const,
@@ -275,197 +269,7 @@ export const guidePages: any[] = []
 
 
 
-const instagramDpPages = [
-    {
-        url: "https://www.fasttools.store/social-media-tools/instagram-dp/private-downloader",
-        lastModified: new Date('2026-02-20'),
-        changeFrequency: "weekly" as const,
-        priority: 0.95,
-    },
-    {
-        url: "https://www.fasttools.store/social-media-tools/instagram-dp/hd-1080p",
-        lastModified: new Date('2026-02-20'),
-        changeFrequency: "weekly" as const,
-        priority: 0.95,
-    },
-    {
-        url: "https://www.fasttools.store/social-media-tools/instagram-dp/pc-viewer",
-        lastModified: new Date('2026-02-20'),
-        changeFrequency: "weekly" as const,
-        priority: 0.95,
-    },
-    {
-        url: "https://www.fasttools.store/social-media-tools/instagram-dp/zoom-profile-picture",
-        lastModified: new Date('2026-02-20'),
-        changeFrequency: "weekly" as const,
-        priority: 0.95,
-    },
-    {
-        url: "https://www.fasttools.store/social-media-tools/instagram-dp/anonymous-viewer",
-        lastModified: new Date('2026-02-20'),
-        changeFrequency: "weekly" as const,
-        priority: 0.95,
-    },
-]
-
-const instagramDownloaderPages = [
-    {
-        url: "https://www.fasttools.store/social-media-tools/instagram-downloader/reels-downloader",
-        lastModified: new Date('2026-02-20'),
-        changeFrequency: "daily" as const,
-        priority: 0.98,
-    },
-    {
-        url: "https://www.fasttools.store/social-media-tools/instagram-downloader/video-downloader",
-        lastModified: new Date('2026-02-20'),
-        changeFrequency: "daily" as const,
-        priority: 0.98,
-    },
-    {
-        url: "https://www.fasttools.store/social-media-tools/instagram-downloader/photo-downloader",
-        lastModified: new Date('2026-02-20'),
-        changeFrequency: "daily" as const,
-        priority: 0.98,
-    },
-    {
-        url: "https://www.fasttools.store/social-media-tools/instagram-downloader/carousel-downloader",
-        lastModified: new Date('2026-02-20'),
-        changeFrequency: "daily" as const,
-        priority: 0.98,
-    },
-    {
-        url: "https://www.fasttools.store/social-media-tools/instagram-downloader/audio-downloader",
-        lastModified: new Date('2026-02-20'),
-        changeFrequency: "daily" as const,
-        priority: 0.98,
-    },
-    {
-        url: "https://www.fasttools.store/social-media-tools/instagram-downloader/story-saver",
-        lastModified: new Date('2026-02-20'),
-        changeFrequency: "daily" as const,
-        priority: 0.98,
-    },
-    {
-        url: "https://www.fasttools.store/social-media-tools/instagram-downloader/app",
-        lastModified: new Date('2026-02-20'),
-        changeFrequency: "daily" as const,
-        priority: 0.98,
-    },
-    {
-        url: "https://www.fasttools.store/social-media-tools/instagram-downloader/save",
-        lastModified: new Date('2026-02-20'),
-        changeFrequency: "daily" as const,
-        priority: 0.98,
-    },
-    {
-        url: "https://www.fasttools.store/social-media-tools/instagram-downloader/4k",
-        lastModified: new Date('2026-02-20'),
-        changeFrequency: "daily" as const,
-        priority: 0.98,
-    },
-]
-
-const tiktokDownloaderPages = [
-    {
-        url: "https://www.fasttools.store/social-media-tools/tiktok-downloader/mp3",
-        lastModified: new Date('2026-02-20'),
-        changeFrequency: "daily" as const,
-        priority: 0.98,
-    },
-    {
-        url: "https://www.fasttools.store/social-media-tools/tiktok-downloader/no-watermark",
-        lastModified: new Date('2026-02-20'),
-        changeFrequency: "daily" as const,
-        priority: 0.98,
-    },
-    {
-        url: "https://www.fasttools.store/social-media-tools/tiktok-downloader/story",
-        lastModified: new Date('2026-02-20'),
-        changeFrequency: "daily" as const,
-        priority: 0.98,
-    },
-    {
-        url: "https://www.fasttools.store/social-media-tools/tiktok-downloader/story-downloader",
-        lastModified: new Date('2026-02-20'),
-        changeFrequency: "daily" as const,
-        priority: 0.98,
-    },
-    {
-        url: "https://www.fasttools.store/social-media-tools/tiktok-downloader/no-watermark-downloader",
-        lastModified: new Date('2026-02-20'),
-        changeFrequency: "daily" as const,
-        priority: 0.98,
-    },
-    {
-        url: "https://www.fasttools.store/social-media-tools/tiktok-downloader/hd-downloader",
-        lastModified: new Date('2026-02-20'),
-        changeFrequency: "daily" as const,
-        priority: 0.98,
-    },
-    {
-        url: "https://www.fasttools.store/social-media-tools/tiktok-downloader/video-downloader",
-        lastModified: new Date('2026-02-20'),
-        changeFrequency: "daily" as const,
-        priority: 0.98,
-    },
-    {
-        url: "https://www.fasttools.store/social-media-tools/tiktok-downloader/mp3-downloader",
-        lastModified: new Date('2026-02-20'),
-        changeFrequency: "daily" as const,
-        priority: 0.98,
-    },
-    {
-        url: "https://www.fasttools.store/social-media-tools/tiktok-downloader/app",
-        lastModified: new Date('2026-02-20'),
-        changeFrequency: "daily" as const,
-        priority: 0.98,
-    },
-    {
-        url: "https://www.fasttools.store/social-media-tools/tiktok-downloader/remove-watermark",
-        lastModified: new Date('2026-02-20'),
-        changeFrequency: "daily" as const,
-        priority: 0.98,
-    },
-    {
-        url: "https://www.fasttools.store/social-media-tools/tiktok-downloader/save",
-        lastModified: new Date('2026-02-20'),
-        changeFrequency: "daily" as const,
-        priority: 0.98,
-    },
-    {
-        url: "https://www.fasttools.store/social-media-tools/tiktok-downloader/1080p",
-        lastModified: new Date('2026-02-20'),
-        changeFrequency: "daily" as const,
-        priority: 0.98,
-    },
-]
-
-const pinterestDownloaderPages = [
-    {
-        url: "https://www.fasttools.store/social-media-tools/pinterest-downloader/video",
-        lastModified: new Date('2026-02-20'),
-        changeFrequency: "daily" as const,
-        priority: 0.98,
-    },
-    {
-        url: "https://www.fasttools.store/social-media-tools/pinterest-downloader/image",
-        lastModified: new Date('2026-02-20'),
-        changeFrequency: "daily" as const,
-        priority: 0.98,
-    },
-    {
-        url: "https://www.fasttools.store/social-media-tools/pinterest-downloader/gif",
-        lastModified: new Date('2026-02-20'),
-        changeFrequency: "daily" as const,
-        priority: 0.98,
-    },
-]
-
 export const toolPages = [
-    ...instagramDpPages,
-    ...instagramDownloaderPages,
-    ...tiktokDownloaderPages,
-    ...pinterestDownloaderPages,
     {
         url: "https://www.fasttools.store/festivals/christmas-font-converter",
         lastModified: new Date('2025-12-19'),
@@ -754,84 +558,6 @@ export const toolPages = [
         priority: 0.95,
     },
     {
-        url: "https://www.fasttools.store/social-media-tools/tiktok-downloader",
-        lastModified: new Date('2026-02-20'),
-        changeFrequency: "monthly" as const,
-        priority: 0.95,
-    },
-    {
-        url: "https://www.fasttools.store/social-media-tools/instagram-downloader",
-        lastModified: new Date('2026-02-20'),
-        changeFrequency: "monthly" as const,
-        priority: 0.95,
-    },
-
-
-    {
-        url: "https://www.fasttools.store/social-media-tools/capcut-downloader",
-        lastModified: new Date('2026-02-20'),
-        changeFrequency: "weekly" as const,
-        priority: 0.95,
-        images: [
-            {
-                url: "https://www.fasttools.store/images/capcut-downloader-hero.png",
-                title: "CapCut Downloader - Download Videos & Templates Free",
-                caption: "Download CapCut videos and templates in HD quality for free. Save CapCut edits without watermark. Works on iPhone, Android, PC, and Mac."
-            }
-        ]
-    },
-    {
-        url: "https://www.fasttools.store/social-media-tools/pinterest-downloader",
-        lastModified: new Date('2026-02-20'),
-        changeFrequency: "weekly" as const,
-        priority: 0.95,
-        images: [
-            {
-                url: "https://www.fasttools.store/images/pinterest-downloader-hero.png",
-                title: "Pinterest Downloader - Save Images & Videos HD Free",
-                caption: "Download Pinterest images and videos in HD quality for free. Save pins without watermark. Works on iPhone, Android, PC, and Mac."
-            }
-        ]
-    },
-    {
-        url: "https://www.fasttools.store/social-media-tools/douyin-downloader",
-        lastModified: new Date('2026-02-20'),
-        changeFrequency: "weekly" as const,
-        priority: 0.95,
-        images: [
-            {
-                url: "https://www.fasttools.store/images/tools/douyin-downloader.png",
-                title: "Douyin Downloader - No Watermark",
-                caption: "Download Douyin videos (Chinese TikTok) without watermark in HD. Free, fast, and secure Douyin video saver."
-            }
-        ]
-    },
-    {
-        url: "https://www.fasttools.store/social-media-tools/soundcloud-downloader",
-        lastModified: new Date('2026-02-20'),
-        changeFrequency: "weekly" as const,
-        priority: 0.95,
-        images: [
-            {
-                url: "https://www.fasttools.store/images/soundcloud_downloader_hero.png",
-                title: "SoundCloud Downloader - Download SoundCloud to MP3 (320kbps)",
-                caption: "Download SoundCloud songs to MP3 in high quality (320kbps). The best online SoundCloud Downloader. Free, fast, and safe. Works on mobile & PC."
-            }
-        ]
-    },
-    {
-        url: "https://www.fasttools.store/social-media-tools/facebook-downloader",
-        lastModified: new Date('2026-02-20'),
-        changeFrequency: "monthly" as const,
-        priority: 0.95,
-    },
-    {
-        url: "https://www.fasttools.store/social-media-tools/x-video-downloader",
-        lastModified: new Date('2026-02-20'),
-        changeFrequency: "monthly" as const,
-        priority: 0.95,
-    },
-    {
         url: "https://www.fasttools.store/social-media-tools/youtube-tags",
         lastModified: new Date('2026-02-20'),
         changeFrequency: "monthly" as const,
@@ -908,32 +634,6 @@ export const toolPages = [
         ]
     },
     {
-        url: "https://www.fasttools.store/social-media-tools/youtube-downloader",
-        lastModified: new Date('2026-02-20'),
-        changeFrequency: "weekly" as const,
-        priority: 1.0,
-        images: [
-            {
-                url: "https://www.fasttools.store/images/youtube-downloader-hero.png",
-                title: "YouTube Video Downloader - Download HD videos and MP3 audio",
-                caption: "Download YouTube videos online in HD, 4K, or 8K quality. Convert any YouTube video to MP4 for offline viewing or extract audio as MP3."
-            }
-        ]
-    },
-    {
-        url: "https://www.fasttools.store/social-media-tools/youtube-playlist-downloader",
-        lastModified: new Date('2026-02-20'),
-        changeFrequency: "weekly" as const,
-        priority: 1.0,
-        images: [
-            {
-                url: "https://www.fasttools.store/images/youtube-playlist-downloader-hero.png",
-                title: "YouTube Playlist Downloader Interface",
-                caption: "The ultimate tool to download YouTube playlists in bulk. Convert entire channels, music albums, or educational series to high-quality MP4 and MP3."
-            }
-        ]
-    },
-    {
         url: "https://www.fasttools.store/ad-tools/roas-calculator",
         lastModified: new Date('2025-12-15'),
         changeFrequency: "daily" as const,
@@ -953,12 +653,6 @@ export const toolPages = [
     },
     {
         url: "https://www.fasttools.store/social-media-tools/hashtag-counter",
-        lastModified: new Date('2026-02-20'),
-        changeFrequency: "monthly" as const,
-        priority: 0.95,
-    },
-    {
-        url: "https://www.fasttools.store/social-media-tools/instagram-dp",
         lastModified: new Date('2026-02-20'),
         changeFrequency: "monthly" as const,
         priority: 0.95,

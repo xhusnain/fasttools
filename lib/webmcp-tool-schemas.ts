@@ -611,82 +611,16 @@ export const toolSchemas: Record<string, ToolSchema> = {
             to_currency: { type: "radix-select", label: "To Currency" },
         },
     },
-    "/social-media-tools/instagram-dp": {
-        interactionMode: "api-dependent",
-        inputSchema: {
-            username: { type: "text", label: "Instagram Username", required: true },
-        },
-    },
-    "/social-media-tools/instagram-downloader": {
-        interactionMode: "api-dependent",
-        inputSchema: {
-            url: { type: "text", label: "Instagram URL", required: true },
-        },
-    },
-    "/social-media-tools/tiktok-downloader": {
-        interactionMode: "api-dependent",
-        inputSchema: {
-            url: { type: "text", label: "TikTok URL", required: true },
-        },
-    },
-    "/social-media-tools/facebook-downloader": {
-        interactionMode: "api-dependent",
-        inputSchema: {
-            url: { type: "text", label: "Facebook Video URL", required: true },
-        },
-    },
-    "/social-media-tools/x-video-downloader": {
-        interactionMode: "api-dependent",
-        inputSchema: {
-            url: { type: "text", label: "X/Twitter URL", required: true },
-        },
-    },
     "/social-media-tools/youtube-thumbnail": {
         interactionMode: "api-dependent",
         inputSchema: {
             url: { type: "text", label: "YouTube URL", required: true },
         },
     },
-    "/social-media-tools/youtube-downloader": {
-        interactionMode: "api-dependent",
-        inputSchema: {
-            url: { type: "text", label: "YouTube URL", required: true },
-        },
-    },
-    "/social-media-tools/capcut-downloader": {
-        interactionMode: "api-dependent",
-        inputSchema: {
-            url: { type: "text", label: "CapCut URL", required: true },
-        },
-    },
-    "/social-media-tools/douyin-downloader": {
-        interactionMode: "api-dependent",
-        inputSchema: {
-            url: { type: "text", label: "Douyin URL", required: true },
-        },
-    },
-    "/social-media-tools/pinterest-downloader": {
-        interactionMode: "api-dependent",
-        inputSchema: {
-            url: { type: "text", label: "Pinterest URL", required: true },
-        },
-    },
-    "/social-media-tools/soundcloud-downloader": {
-        interactionMode: "api-dependent",
-        inputSchema: {
-            url: { type: "text", label: "SoundCloud URL", required: true },
-        },
-    },
     "/social-media-tools/youtube-tags": {
         interactionMode: "api-dependent",
         inputSchema: {
             url: { type: "text", label: "YouTube URL", required: true },
-        },
-    },
-    "/social-media-tools/youtube-playlist-downloader": {
-        interactionMode: "api-dependent",
-        inputSchema: {
-            url: { type: "text", label: "YouTube Playlist URL", required: true },
         },
     },
 
