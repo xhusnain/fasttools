@@ -1,13 +1,11 @@
 import axios, { AxiosInstance, AxiosRequestConfig, AxiosResponse, AxiosError } from "axios";
-import { generateToken } from "@/lib/m2m-auth";
-import { env } from "@/config/env";
 import type { ApiResponse, ApiError } from "@/types/http-client.types";
 
 export type { ApiResponse, ApiError };
 
 const createHttpClient = (): AxiosInstance => {
   const instance = axios.create({
-    baseURL: env.apiUrl || "/api",
+    baseURL: "/api",
     timeout: 60000,
     headers: {
       "Content-Type": "application/json",
@@ -16,27 +14,9 @@ const createHttpClient = (): AxiosInstance => {
 
   instance.interceptors.request.use(
     async (config) => {
-      const token = await generateToken();
-      if (config.headers) {
-        (config.headers as any).Authorization = `Bearer ${token}`;
-      }
-
       // Let browser set Content-Type for FormData with boundary
       if (config.data instanceof FormData && config.headers) {
         delete (config.headers as any)['Content-Type'];
-      }
-
-      if (process.env.NODE_ENV === "development") {
-        const finalUrl = config.url?.startsWith('http') 
-          ? config.url 
-          : `${config.baseURL || env.apiUrl || ''}${config.url || ''}`;
-        const isMainApi = finalUrl.includes(env.apiUrl) || finalUrl.includes('api.fasttools');
-        console.log(`[HTTP] ${config.method?.toUpperCase()} ${finalUrl}`, {
-          hasToken: !!token,
-          tokenLength: token?.length || 0,
-          backend: isMainApi ? 'Main API (api.fasttools)' : 'Other',
-          authHeader: config.headers?.Authorization ? 'Present' : 'Missing',
-        });
       }
 
       return config;
