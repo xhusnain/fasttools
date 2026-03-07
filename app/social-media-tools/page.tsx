@@ -9,6 +9,7 @@ import {
   Link2,
   Search,
   Tags,
+  User,
 } from "lucide-react"
 
 const socialTools = [
@@ -47,6 +48,12 @@ const socialTools = [
     description: "Build a multi-link social bio page for campaign routing.",
     href: "/social-media-tools/link-in-bio",
     icon: Link2,
+  },
+  {
+    title: "Instagram DP Viewer",
+    description: "View and download Instagram profile pictures in full size HD.",
+    href: "/social-media-tools/instagram-dp",
+    icon: User,
   },
 ]
 

@@ -664,6 +664,12 @@ export const toolPages = [
         priority: 0.95,
     },
     {
+        url: "https://www.fasttools.store/social-media-tools/instagram-dp",
+        lastModified: new Date('2026-03-07'),
+        changeFrequency: "monthly" as const,
+        priority: 0.95,
+    },
+    {
         url: "https://www.fasttools.store/converters/currency-api",
         lastModified: new Date('2026-02-20'),
         changeFrequency: "monthly" as const,
