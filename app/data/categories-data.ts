@@ -494,6 +494,14 @@ export const categories = [
                 badge: "OCR",
                 badgeColor: "bg-heading-accent/90",
             },
+            {
+                title: "AI Image Detector",
+                description: "Detect AI-generated and deepfake images from Midjourney, DALL-E, Stable Diffusion & more",
+                href: "/image-tools/ai-image-detector",
+                icon: Shield,
+                badge: "New",
+                badgeColor: "bg-purple-600",
+            },
         ],
     },
     {

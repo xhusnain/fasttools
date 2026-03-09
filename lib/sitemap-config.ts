@@ -1048,6 +1048,12 @@ export const toolPages = [
         priority: 0.9,
     },
     {
+        url: "https://www.fasttools.store/image-tools/ai-image-detector",
+        lastModified: new Date('2026-03-09'),
+        changeFrequency: "weekly" as const,
+        priority: 0.95,
+    },
+    {
         url: "https://www.fasttools.store/pdf-tools/pdf-sign",
         lastModified: new Date('2026-02-20'),
         changeFrequency: "monthly" as const,

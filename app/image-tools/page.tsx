@@ -3,7 +3,7 @@ import { ToolPageLayout } from "@/components/common/tool-page-layout"
 import { createToolConfig } from "@/lib/create-tool-config"
 import { GToolCard } from "@/ui/gtool-card"
 
-import { FileText, Minimize2 } from "lucide-react"
+import { FileText, Minimize2, ShieldCheck } from "lucide-react"
 
 const imageTools = [
   {
@@ -20,15 +20,22 @@ const imageTools = [
     href: "/image-tools/image-to-text",
     popular: true,
   },
+  {
+    title: "AI Image Detector",
+    description: "Detect AI-generated images using 5 forensic signals — metadata, ELA, noise, color, and frequency analysis.",
+    icon: ShieldCheck,
+    href: "/image-tools/ai-image-detector",
+    popular: true,
+  },
 ]
 
 const toolConfig = createToolConfig({
   toolName: "Image Tools",
   description:
-    "Use free browser-based image tools to compress files and extract text with OCR.",
-  metaTitle: "Image Tools - Image Compressor and Image to Text OCR",
+    "Use free browser-based image tools to compress files, extract text with OCR, and detect AI-generated images.",
+  metaTitle: "Image Tools - Image Compressor, OCR, and AI Image Detector",
   metaDescription:
-    "Free image tools for two core tasks: compress JPG/PNG/WebP images and extract text from image files with OCR.",
+    "Free image tools: compress JPG/PNG/WebP images, extract text with OCR, and detect AI-generated images using forensic analysis.",
   path: "/image-tools",
 
   schemaOptions: {
