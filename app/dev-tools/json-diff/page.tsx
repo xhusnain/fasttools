@@ -13,22 +13,15 @@ const toolConfig = createToolConfig({
   toolName: "JSON Diff",
   description:
     "Compare two JSON objects and inspect structural or value differences for debugging and review workflows.",
-  metaTitle: "JSON Diff Tool (Compare Two JSON Objects)",
+  metaTitle: "JSON Diff — Compare Two JSON Objects Online Free (2026)",
   metaDescription:
-    "Compare JSON inputs and detect differences quickly. Useful for API response validation, config review, and regression checks.",
+    "Free online JSON diff tool. Compare two JSON objects side by side with color-coded highlighting for additions, deletions, and changes. Debug API responses and config differences.",
   path: "/dev-tools/json-diff",
-  keywords: [
-    "json diff",
-    "compare json",
-    "json compare tool",
-    "json differences",
-    "api response diff",
-  ],
 
   header: {
-    title: "JSON Diff",
+    title: "JSON Diff — Compare JSON Objects",
     description:
-      "Compare JSON structures and values with fast difference detection.",
+      "Compare two JSON objects side by side with color-coded difference highlighting. Additions in green, deletions in red, modifications in yellow. Handles nested objects and arrays at any depth.",
     titleSize: "medium",
     descriptionSize: "small",
     color: "blue",
@@ -65,7 +58,7 @@ const toolConfig = createToolConfig({
       "All processing happens locally in your browser",
     ],
     overview:
-      "Use this tool to compare two JSON documents and quickly identify what changed. It is useful for API response checks, schema transitions, and release validation workflows.",
+      "Compare two JSON objects side by side with this free online diff tool. Paste the original JSON in the left panel and the updated JSON in the right panel to instantly see all differences highlighted — additions in green, deletions in red, and modifications in yellow. The tool handles nested objects and arrays at any depth, making it easy to spot changes in complex API responses, configuration files, and database records. Useful for debugging API response regressions, reviewing config changes between environments, and validating data transformations.",
 
     howToSteps: [
       "Paste the original JSON into the left panel.",

@@ -50,14 +50,6 @@ const toolConfig = createToolConfig({
   metaDescription:
     "Free AI tools for QR code generation, lyrics, captions, pet names, and token/word estimation. Fast workflows for creators, marketers, and teams.",
   path: "/ai-tools",
-  keywords: [
-    "ai tools",
-    "qr code generator",
-    "ai lyrics generator",
-    "ai caption generator",
-    "pet name generator",
-    "token to word converter",
-  ],
   schemaOptions: {
     itemList: {
       name: "AI Tools Collection",

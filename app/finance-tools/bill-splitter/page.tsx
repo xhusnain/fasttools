@@ -43,28 +43,6 @@ export const metadata: Metadata = {
   ...baseMetadata,
   applicationName: "FastTools",
   category: "Finance Tools",
-  keywords: [
-    "bill splitter",
-    "free bill splitter",
-    "split bill calculator",
-    "expense splitter",
-    "group expense calculator",
-    "split check",
-    "dutch pay calculator",
-    "split bills with friends",
-    "expense sharing app",
-    "shared expense tracker",
-    "split restaurant bill",
-    "calculate who owes what",
-    "fair bill splitting",
-    "bill splitter app free",
-    "group expense manager",
-    "dinner bill splitter",
-    "travel expense splitter",
-    "fair expense splitter",
-    "online bill splitter",
-    "split bills equally"
-  ]
 }
 
 export default function BillSplitterPage() {

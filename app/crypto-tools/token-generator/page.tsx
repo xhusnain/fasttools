@@ -7,22 +7,15 @@ const toolConfig = createToolConfig({
   toolName: "Token Generator",
   description:
     "Generate random tokens, API keys, passwords, and formatted secrets with configurable settings.",
-  metaTitle: "Token Generator for API Keys, Passwords, and Secrets",
+  metaTitle: "Random Token Generator — Generate API Keys & Secure Tokens Free (2026)",
   metaDescription:
-    "Create secure random tokens with custom length, charset, and formatting. Useful for API keys, test secrets, and credential workflows.",
+    "Free random token generator. Create secure API keys, passwords, CSRF tokens, and secret keys in hex, Base64, or alphanumeric format. Cryptographically secure with custom length and charset.",
   path: "/crypto-tools/token-generator",
-  keywords: [
-    "token generator",
-    "api key generator",
-    "random secret generator",
-    "secure token tool",
-    "password token generator",
-  ],
 
   header: {
-    title: "Token Generator",
+    title: "Secure Random Token & API Key Generator",
     description:
-      "Generate secure random values for authentication, integration, and testing workflows.",
+      "Generate cryptographically secure random tokens for API keys, session tokens, CSRF tokens, password reset links, and secret keys. Choose hex, Base64, Base64URL, or alphanumeric format with custom length from 16 to 256 characters. Uses the Web Crypto API for true randomness.",
     titleSize: "medium",
     descriptionSize: "small",
     color: "green",
@@ -60,73 +53,74 @@ const toolConfig = createToolConfig({
       "Uses Web Crypto API — all generation runs securely in your browser",
     ],
     overview:
-      "Use this tool to create secure random tokens for API auth, environment variables, test fixtures, and credential setup. It supports both preset formats and custom generation controls.",
+      "Generate cryptographically secure random tokens with this free online tool. Create API keys, session tokens, CSRF tokens, password reset links, webhook secrets, and environment variable values. Choose from multiple formats: hexadecimal, Base64, Base64URL, and alphanumeric. Set custom token length from 16 to 256 characters, add prefixes (like sk_, pk_, api_), and generate in bulk. All tokens are created using the Web Crypto API (crypto.getRandomValues) for true cryptographic randomness — no pseudo-random fallback. Perfect for developers setting up authentication, provisioning test credentials, or generating .env file secrets.",
 
     howToSteps: [
-      "Select a preset (API key, password, PIN, hex, or custom).",
-      "Set length and character options for your security policy.",
-      "Apply optional prefixes, suffixes, or grouping rules.",
-      "Generate, copy, and store values in your secure secret-management workflow.",
+      "Select a token format: hex, Base64, Base64URL, or alphanumeric.",
+      "Set the desired length (32–64 characters recommended for API keys).",
+      "Add an optional prefix like sk_ or api_ for key identification.",
+      "Click Generate, copy the token, and store it in your secrets manager or .env file.",
     ],
 
     features: [
-      "Preset and custom token generation",
-      "Length and charset controls",
-      "Formatting options for prefixes/suffixes",
-      "Quick regenerate and copy flow",
-      "Useful for dev, QA, and integration tasks",
+      "Cryptographically secure randomness via Web Crypto API",
+      "Hex, Base64, Base64URL, and alphanumeric output formats",
+      "Custom length from 16 to 256 characters",
+      "Prefix and suffix support for API key naming conventions (sk_, pk_, api_)",
+      "Bulk generation for provisioning multiple secrets at once",
     ],
 
     useCases: [
-      "API credential provisioning",
-      "Temporary secrets for testing",
-      "Session-token simulation",
-      "Ops scripts and automation setup",
+      "Generating API keys and webhook signing secrets for web applications",
+      "Creating CSRF tokens and session identifiers for authentication systems",
+      "Producing secure .env file values for database passwords and JWT secrets",
+      "Generating test credentials for QA, staging, and integration environments",
     ],
 
     aboutTool: (
       <div className="space-y-6 text-muted-foreground">
         <p>
-          Token generators rank best when they provide immediate, configurable
-          output and avoid unnecessary friction. This page is optimized around
-          that utility pattern.
+          Secure token generation requires true cryptographic randomness, not Math.random(). This tool uses the Web Crypto API (crypto.getRandomValues) which provides cryptographically strong random values suitable for security-sensitive applications like API keys and session tokens.
         </p>
         <p>
-          For production usage, generated values should be stored in proper
-          secret-management systems with rotation, access control, and audit
-          practices.
+          For production use, store generated tokens in a proper secrets manager (AWS Secrets Manager, HashiCorp Vault, Doppler) with rotation policies and audit logging. Never commit secrets to source code repositories — use environment variables or encrypted config files instead.
         </p>
       </div>
     ),
 
     proTip:
-      "Use separate token scopes per environment and rotate credentials regularly to limit exposure impact.",
+      "Use 32+ character tokens for API keys and 64+ characters for signing secrets. Add prefixes like sk_ (secret key) or pk_ (public key) so leaked tokens can be quickly identified and revoked.",
 
     faqs: [
       {
-        question: "Can I generate API keys with prefixes?",
+        question: "Are these tokens truly random and secure?",
         answer:
-          "Yes. You can apply prefixes and other formatting options for compatibility with your internal conventions.",
+          "Yes. Tokens are generated using the Web Crypto API (crypto.getRandomValues) which provides cryptographically secure pseudo-random numbers, not Math.random().",
       },
       {
-        question: "What token length should I choose?",
+        question: "What token length should I use for API keys?",
         answer:
-          "Length depends on your policy and threat model. Longer random tokens generally improve resistance to guessing attacks.",
+          "32 characters in hex format provides 128 bits of entropy, suitable for most API keys. Use 64+ characters for signing secrets and HMAC keys.",
       },
       {
-        question: "Can this generate hex-format secrets?",
+        question: "Can I add a prefix like sk_ to generated tokens?",
         answer:
-          "Yes. Presets and custom settings support common hex-like secret workflows.",
+          "Yes. You can add custom prefixes and suffixes to match naming conventions like Stripe (sk_live_), OpenAI (sk-), or your own format.",
       },
       {
-        question: "Should generated tokens be stored in code?",
+        question: "Which format should I use: hex, Base64, or alphanumeric?",
         answer:
-          "No. Store secrets in environment managers or secure vault systems instead of source code.",
+          "Hex is standard for HMAC keys and signing secrets. Base64 is compact for JWTs and cookies. Alphanumeric is human-readable for API keys shared with users.",
       },
       {
-        question: "Is this useful for test data?",
+        question: "Should I store generated tokens in source code?",
         answer:
-          "Yes. It is commonly used to produce realistic random credentials for QA and integration testing.",
+          "Never. Store secrets in environment variables, .env files (gitignored), or a secrets manager like AWS Secrets Manager or HashiCorp Vault.",
+      },
+      {
+        question: "Can I generate multiple tokens at once?",
+        answer:
+          "Yes. Use bulk generation to create multiple unique tokens for provisioning multiple API keys, test accounts, or environment configs simultaneously.",
       },
     ],
 

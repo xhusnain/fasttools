@@ -11,9 +11,9 @@ import { GTable } from "@/ui/gtable"
 import { Brain, Activity, Target, BookOpen, Shield, Users, TrendingUp, Calculator, Heart, AlertTriangle, Info, Scale } from "lucide-react"
 
 const baseMetadata = createMetadata({
-  title: "Body Fat Calculator | Free Body Fat Percentage Calculator",
+  title: "Body Fat Calculator — Estimate Body Fat Percentage Online Free (2026)",
   description:
-    "Calculate your body fat percentage with advanced calculator. Uses U.S. Navy method & BMI method for accurate results with health recommendations.",
+    "Free body fat calculator using U.S. Navy method & BMI method. Get body fat percentage, fat mass vs lean mass breakdown, ACE fitness categories, and ideal body fat recommendations for men and women. Private & instant.",
   path: "/calculator/body-fat-calculator",
   breadcrumbs: [
     { label: "Calculator", href: "/calculator" },
@@ -43,35 +43,35 @@ export const metadata: Metadata = {
 
 export default function BodyFatCalculatorPage() {
   const toolContent = {
-    toolName: "Body Fat Calculator",
-    overview: "Calculate your body fat percentage with our advanced body fat calculator. Get accurate body composition analysis, fat mass and lean mass, ideal body fat recommendations, and personalized health insights for optimal fitness and health.",
+    toolName: "Body Fat Calculator — Body Fat Percentage Estimator",
+    overview: "Estimate your body fat percentage with our free online body fat calculator using the U.S. Navy circumference method (most accurate non-invasive method) and BMI-based estimation. Get a complete body composition analysis including fat mass vs. lean muscle mass breakdown, ACE (American Council on Exercise) fitness categories (essential fat, athletic, fitness, average, obese), ideal body fat ranges for men and women, and personalized health risk assessments. Supports metric (cm/kg) and imperial (inches/lbs) units with gender-specific calculations.",
 
     howToSteps: [
-      "Enter your information: Age, gender, height, and weight.",
-      "Take measurements: Measure neck, waist, and hip (for women) circumference.",
-      "Select method: Choose U.S. Navy method (recommended) or BMI method.",
-      "Get results: View your body fat percentage, fat mass, and lean mass.",
-      "Review recommendations: See your body fat category and health insights."
+      "Enter Your Details: Input age, gender, height, and weight in metric (cm/kg) or imperial (inches/lbs) units.",
+      "Take Body Measurements: Measure neck circumference, waist circumference at navel level, and hip circumference (women only) with a flexible tape measure.",
+      "Select Calculation Method: Choose U.S. Navy method (recommended — uses circumference measurements) or BMI method (uses height and weight only).",
+      "View Body Composition Results: See your body fat percentage, total fat mass (lbs/kg), lean body mass, and body fat category.",
+      "Review Health Recommendations: Get personalized insights on ideal body fat range, health risk assessment, and actionable fitness guidance."
     ],
 
     features: [
-      "Multiple Methods: U.S. Navy method (most accurate) and BMI method.",
-      "Body Composition: Detailed breakdown of fat mass vs. lean muscle mass.",
-      "Health Assessment: Categorizes your body fat level (e.g., Athletic, Fitness, Average).",
-      "Personalized Tips: Recommendations based on your specific results.",
-      "Gender Specific: Tailored calculations for men and women.",
-      "Metric & Imperial: Support for cm/kg and in/lbs.",
-      "Visual Charts: Easy-to-understand progress tracking.",
-      "Mobile Friendly: Check your stats anywhere."
+      "Dual Calculation Methods: U.S. Navy circumference method (most accurate non-invasive) and BMI-based body fat estimation.",
+      "Complete Body Composition: Detailed fat mass vs. lean muscle mass breakdown in pounds and kilograms.",
+      "ACE Fitness Categories: Classification into essential fat, athletic, fitness, average, and obese ranges per American Council on Exercise standards.",
+      "Gender-Specific Calculations: Separate formulas and ideal ranges for men (essential fat 2-5%) and women (essential fat 10-13%).",
+      "Personalized Health Insights: Actionable recommendations based on your specific body fat percentage and fitness category.",
+      "Metric & Imperial Support: Full support for cm/kg and inches/lbs measurement systems.",
+      "Visual Body Composition Charts: Easy-to-read charts showing your body fat percentage relative to healthy ranges.",
+      "Mobile Responsive: Access body composition analysis on any device — phone, tablet, or desktop."
     ],
 
     useCases: [
-      "Fitness Tracking: Monitor changes in body composition, not just weight.",
-      "Weight Loss: Ensure you are losing fat, not muscle.",
-      "Muscle Building: Track lean mass gains during bulking phases.",
-      "Health Monitoring: Assess risk factors associated with high or low body fat.",
-      "Athletic Performance: Optimize body composition for your sport.",
-      "Medical Assessment: Screen for obesity-related health risks."
+      "Fitness Progress Tracking: Monitor body composition changes over time — track fat loss and muscle gain beyond just scale weight.",
+      "Smart Weight Loss: Ensure you are losing body fat, not lean muscle mass, during calorie-deficit dieting phases.",
+      "Muscle Building Monitoring: Track lean mass gains and minimize fat accumulation during bulking and hypertrophy cycles.",
+      "Health Risk Screening: Assess obesity-related risk factors including cardiovascular disease, type 2 diabetes, and metabolic syndrome.",
+      "Athletic Performance Optimization: Achieve sport-specific body fat targets for endurance sports, bodybuilding, and competitive athletics.",
+      "Medical Body Composition Assessment: Screen for unhealthy body fat levels (essential fat deficiency or clinical obesity) requiring medical attention."
     ],
 
     aboutTool: (
@@ -555,8 +555,8 @@ export default function BodyFatCalculatorPage() {
   return (
     <ToolPageLayout
       header={{
-        title: "Body Fat Calculator - Advanced Body Composition Analysis",
-        description: "Calculate your body fat percentage with our advanced body fat calculator. Get accurate body composition analysis, fat mass and lean mass, ideal body fat recommendations, and personalized health insights.",
+        title: "Body Fat Calculator — Estimate Body Fat Percentage Online",
+        description: "Calculate body fat percentage using U.S. Navy method & BMI method. Get fat mass vs lean mass breakdown, ACE fitness categories, ideal body fat ranges for men and women, and personalized health insights. Free and private.",
         titleSize: "medium",
         descriptionSize: "small",
         color: "blue"
@@ -572,8 +572,8 @@ export default function BodyFatCalculatorPage() {
       }
       toolContent={toolContent}
       expectedMetadata={{
-        title: "Body Fat Calculator - Estimate Body Fat %",
-        description: "Calculate your body fat percentage with advanced calculator. Uses U.S. Navy method & BMI method for accurate results with health recommendations.",
+        title: "Body Fat Calculator — Estimate Body Fat Percentage Online Free (2026)",
+        description: "Free body fat calculator using U.S. Navy method & BMI method. Get body fat percentage, fat mass vs lean mass breakdown, ACE fitness categories, and ideal body fat recommendations for men and women. Private & instant.",
         path: "/calculator/body-fat-calculator"
       }}
     />

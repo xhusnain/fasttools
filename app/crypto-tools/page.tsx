@@ -100,15 +100,6 @@ const toolConfig = createToolConfig({
   metaDescription:
     "Security-focused crypto tools for developers and teams: UUID/ULID generators, token and OTP tools, bcrypt/hash/HMAC, RSA keys, BIP39, and password analysis.",
   path: "/crypto-tools",
-  keywords: [
-    "crypto tools",
-    "security tools",
-    "token generator",
-    "uuid generator",
-    "bcrypt generator",
-    "hmac generator",
-    "rsa key generator",
-  ],
 
   schemaOptions: {
     itemList: {

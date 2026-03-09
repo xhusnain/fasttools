@@ -11,9 +11,9 @@ import { Calculator, BarChart3, TrendingUp, BookOpen, Users, Clock, Target, Aler
 import { GTable } from "@/ui/gtable"
 
 const baseMetadata = createMetadata({
-  title: "Standard Deviation Calculator - Statistics & Data",
+  title: "Standard Deviation Calculator — Variance, Mean & Statistics Free (2026)",
   description:
-    "Calculate standard deviation, variance, mean, and confidence intervals with population and sample modes.",
+    "Free standard deviation calculator with population and sample modes. Compute variance, mean, median, confidence intervals, quartiles, z-scores, outlier detection, skewness, kurtosis, and coefficient of variation instantly.",
   path: "/calculator/standard-deviation-calculator",
   breadcrumbs: [
     { label: "Calculator", href: "/calculator" },
@@ -60,94 +60,18 @@ export const metadata: Metadata = {
   ...baseMetadata,
   applicationName: "FastTools",
   category: "Statistics",
-  keywords: [
-    "fasttools",
-    "fast tools",
-    "standard deviation calculator",
-    "online standard deviation calculator",
-    "sample standard deviation calculator",
-    "population standard deviation calculator",
-    "standard deviation formula calculator",
-    "standard deviation calculator with steps",
-    "standard deviation calculator for data set",
-    "standard deviation calculator excel",
-    "standard deviation calculator app",
-    "standard deviation calculator for statistics",
-    "standard deviation calculator for grouped data",
-    "standard deviation calculator for ungrouped data",
-    "standard deviation calculator for frequency distribution",
-    "standard deviation calculator for mean and variance",
-    "standard deviation calculator for probability",
-    "standard deviation calculator for normal distribution",
-    "standard deviation calculator for binomial distribution",
-    "standard deviation calculator for Poisson distribution",
-    "standard deviation calculator for sample size",
-    "standard deviation calculator for confidence interval",
-    "standard deviation calculator for margin of error",
-    "standard deviation calculator for z-score",
-    "standard deviation calculator for t-score",
-    "standard deviation calculator for chi-square",
-    "standard deviation calculator for ANOVA",
-    "standard deviation calculator for regression",
-    "standard deviation calculator for correlation",
-    "standard deviation calculator for covariance",
-    "standard deviation calculator for standard error",
-    "standard deviation calculator for coefficient of variation",
-    "standard deviation calculator for skewness",
-    "standard deviation calculator for kurtosis",
-    "standard deviation calculator for percentiles",
-    "standard deviation calculator for quartiles",
-    "standard deviation calculator for deciles",
-    "standard deviation calculator for percent error",
-    "standard deviation calculator for relative standard deviation",
-    "standard deviation calculator for absolute deviation",
-    "standard deviation calculator for mean absolute deviation",
-    "standard deviation calculator for root mean square",
-    "standard deviation calculator for variance analysis",
-    "standard deviation calculator for hypothesis testing",
-    "standard deviation calculator for p-value",
-    "standard deviation calculator for effect size",
-    "standard deviation calculator for power analysis",
-    "standard deviation calculator for sample variance",
-    "standard deviation calculator for population variance",
-    "standard deviation calculator for standard error of mean",
-    "standard deviation calculator for standard error of estimate",
-    "standard deviation calculator for standard error of proportion",
-    "standard deviation calculator for standard error of difference",
-    "standard deviation calculator for standard error of regression",
-    "standard deviation calculator for standard error of prediction",
-    "standard deviation calculator for standard error of measurement",
-    "standard deviation calculator for standard error of mean difference",
-    "standard deviation calculator for standard error of estimate difference",
-    "standard deviation calculator for standard error of proportion difference",
-    "standard deviation calculator for standard error of difference between means",
-    "standard deviation calculator for standard error of difference between proportions",
-    "standard deviation calculator for standard error of difference between variances",
-    "standard deviation calculator for standard error of difference between standard deviations",
-    "standard deviation calculator for standard error of difference between correlations",
-    "standard deviation calculator for standard error of difference between covariances",
-    "standard deviation calculator for standard error of difference between regression coefficients",
-    "standard deviation calculator for standard error of difference between intercepts",
-    "standard deviation calculator for standard error of difference between slopes",
-    "standard deviation calculator for standard error of difference between predictions",
-    "standard deviation calculator for standard error of difference between measurements",
-    "standard deviation calculator for standard error of difference between mean differences",
-    "standard deviation calculator for standard error of difference between estimate differences",
-    "standard deviation calculator for standard error of difference between proportion differences",
-    "standard deviation calculator for standard error of difference between variance differences"
-  ]
 }
 
 export default function StandardDeviationCalculatorPage() {
   const toolContent = {
     toolName: "Standard Deviation Calculator",
-    overview: "Calculate standard deviation, variance, mean, confidence intervals, and comprehensive statistical analysis instantly. Advanced calculator with population and sample modes, quartiles, outliers detection, and detailed distribution analysis.",
+    overview: "Calculate standard deviation, variance, mean, median, mode, confidence intervals (90%, 95%, 99%), quartiles, interquartile range, z-scores, outlier detection, skewness, kurtosis, coefficient of variation, and standard error with our free statistics calculator. Supporting both population (divide by N) and sample (divide by n-1) modes, the tool accepts comma-separated, space-separated, or line-break data input and provides exportable results — making it ideal for students, researchers, data analysts, quality-control engineers, and anyone performing descriptive or inferential statistical analysis.",
 
     howToSteps: [
-      "Enter Data Points: Input your numerical values using commas, spaces, or line breaks.",
-      "Choose Mode: Select between Population or Sample standard deviation.",
-      "Set Confidence Level: Select your desired confidence level (90%, 95%, or 99%).",
-      "Calculate & Analyze: Get comprehensive results and explore detailed statistics."
+      "Enter Data Points: Input your numerical values separated by commas, spaces, or line breaks. The calculator accepts any dataset size for descriptive statistical analysis.",
+      "Choose Mode: Select Population standard deviation (divide by N) for complete datasets, or Sample standard deviation (divide by n-1, Bessel's correction) for datasets drawn from a larger population.",
+      "Set Confidence Level: Choose 90%, 95%, or 99% confidence level for interval estimation. The tool computes both the confidence interval and the standard error of the mean.",
+      "Calculate & Analyze: Get comprehensive results including mean, median, mode, variance, standard deviation, coefficient of variation, quartiles (Q1/Q2/Q3), IQR, skewness, kurtosis, z-scores, and outlier detection via the 1.5xIQR rule."
     ],
 
     features: [
@@ -759,8 +683,8 @@ export default function StandardDeviationCalculatorPage() {
   return (
     <ToolPageLayout
       header={{
-        title: "Standard Deviation Calculator",
-        description: "Calculate standard deviation, variance, mean, confidence intervals, and comprehensive statistical analysis instantly. Advanced calculator with population and sample modes, quartiles, outliers detection, and detailed distribution analysis.",
+        title: "Standard Deviation Calculator — Population & Sample Statistics (2026)",
+        description: "Free statistics calculator to compute standard deviation (population and sample), variance, mean, median, mode, confidence intervals (90/95/99%), quartiles, IQR, z-scores, outlier detection, skewness, kurtosis, and coefficient of variation from any dataset.",
         titleSize: "medium",
         descriptionSize: "small",
         color: "blue"
@@ -776,9 +700,9 @@ export default function StandardDeviationCalculatorPage() {
       }
       toolContent={toolContent}
       expectedMetadata={{
-        title: "Standard Deviation Calculator - Free Statistics Tool",
+        title: "Standard Deviation Calculator — Variance, Mean & Statistics Free (2026)",
         description:
-          "Calculate standard deviation, variance, mean, and confidence intervals with population and sample modes.",
+          "Free standard deviation calculator with population and sample modes. Compute variance, mean, median, confidence intervals, quartiles, z-scores, outlier detection, skewness, kurtosis, and coefficient of variation instantly.",
         path: "/calculator/standard-deviation-calculator"
       }}
     />

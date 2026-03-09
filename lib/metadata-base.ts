@@ -25,7 +25,6 @@ export interface MetadataOptions {
     title: string
     description: string
     path: string
-    keywords?: string | string[]
     ogImageAlt?: string
     ogImage?: string | {
         url: string
@@ -227,7 +226,6 @@ export function createMetadata(options: MetadataOptions): Metadata {
     return {
         title: fullTitle,
         description,
-        ...(options.keywords && { keywords: options.keywords }),
         alternates: {
             canonical: canonicalUrl,
         },

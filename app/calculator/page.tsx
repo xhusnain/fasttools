@@ -530,16 +530,6 @@ const toolConfig = createToolConfig({
     "Free Online Calculators for Finance, Health, Math, Time & Statistics",
   metaDescription:
     "Use free online calculators for loans, BMI, percentages, dates, pace, GPA, and more. Fast, accurate, and mobile-friendly with no signup required.",
-  keywords: [
-    "online calculators",
-    "free calculator tools",
-    "finance calculators",
-    "health calculators",
-    "math calculators",
-    "date calculator",
-    "percentage calculator",
-    "scientific calculator",
-  ],
   itemList: {
     name: "Online Calculators",
     description:

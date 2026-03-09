@@ -11,9 +11,9 @@ import { GTable } from "@/ui/gtable"
 import { Brain } from "lucide-react"
 
 const baseMetadata = createMetadata({
-  title: "Conception Calculator - Find Conception Date",
+  title: "Conception Date Calculator — Estimate When You Conceived Free (2026)",
   description:
-    "Estimate conception date, pregnancy week, and trimester stage using due date, LMP, or ultrasound-based inputs.",
+    "Free conception calculator to estimate your conception date, fertile window, and pregnancy week from due date, last menstrual period, or ultrasound. Includes trimester guidance, nutrition tips, and milestone tracking.",
   path: "/calculator/pregnancy-conception-calculator",
   breadcrumbs: [
     { label: "Calculator", href: "/calculator" },
@@ -44,24 +44,24 @@ export const metadata: Metadata = {
 export default function PregnancyConceptionCalculatorPage() {
   const toolContent = {
     toolName: "Pregnancy Conception Calculator",
-    overview: "Calculate your conception date with our advanced pregnancy calculator. Get personalized trimester guidance, nutrition tips, exercise recommendations, and comprehensive week-by-week pregnancy insights.",
+    overview: "Reverse-calculate your probable conception date and fertile window using our free conception calculator. Enter your due date, last menstrual period (LMP), or first-trimester ultrasound date to estimate when fertilization occurred — accounting for the 3-5 day sperm survival window that separates intercourse date from actual conception. The tool also provides gestational vs. fetal age breakdowns, trimester-specific nutrition and exercise recommendations, and a complete milestone timeline from implantation through full term.",
 
     howToSteps: [
-      "Choose Calculation Method: Select Due Date, Last Menstrual Period, or Ultrasound Date.",
-      "Enter Your Information: Provide the required dates based on your chosen method.",
-      "Get Personalized Results: Receive detailed conception date estimates and trimester info.",
-      "Track Your Progress: Monitor pregnancy milestones and get week-by-week insights.",
-      "Review Recommendations: Check nutrition, exercise, and health tips for your stage."
+      "Choose Calculation Method: Select Due Date, Last Menstrual Period (LMP), or Ultrasound Date to reverse-calculate conception.",
+      "Enter Your Information: Provide the relevant date — the calculator accounts for the 3-5 day sperm survival window to give a conception date range rather than a single day.",
+      "Get Personalized Results: Receive your estimated conception date range, gestational age, fetal age, current trimester, and milestone timeline.",
+      "Track Your Progress: Monitor pregnancy milestones from implantation (6-12 days post-conception) through heartbeat, quickening, viability, and full term.",
+      "Review Recommendations: Check trimester-specific nutrition guidelines, safe exercise recommendations, and health tips tailored to your current pregnancy week."
     ],
 
     features: [
-      "Accurate Conception Date: Calculate precise conception date using multiple methods.",
-      "Trimester Analysis: Determine current trimester and pregnancy stage.",
-      "Health Tracking: Monitor pregnancy symptoms and health milestones.",
-      "Nutrition Guide: Get personalized nutrition recommendations.",
-      "Exercise Guidelines: Safe exercise recommendations for each trimester.",
-      "Week-by-Week: Detailed pregnancy progression tracking.",
-      "Mobile Friendly: Access your pregnancy data anywhere."
+      "Conception Date Range: Calculate probable conception date accounting for the 3-5 day sperm survival fertile window.",
+      "Multiple Input Methods: Reverse-calculate from due date, last menstrual period (LMP), or first-trimester ultrasound measurement.",
+      "Gestational vs. Fetal Age: Display both gestational age (from LMP, ~2 weeks more) and fetal age (from conception) side by side.",
+      "Trimester Classification: Automatically determine your current trimester and pregnancy stage with week-by-week progression.",
+      "Milestone Timeline: Track key milestones — implantation, heartbeat, first movement, viability, and full-term readiness.",
+      "Nutrition & Exercise Tips: Trimester-specific dietary guidelines and safe exercise recommendations.",
+      "Mobile-Responsive: Access conception date results and pregnancy tracking on any device."
     ],
 
     useCases: [
@@ -143,7 +143,7 @@ export default function PregnancyConceptionCalculatorPage() {
       </div>
     ),
 
-    proTip: "If you have an ultrasound date, use that! Early ultrasounds are generally the most accurate way to date a pregnancy, especially if you have irregular periods.",
+    proTip: "First-trimester ultrasounds (weeks 6-13) provide the most accurate dating, within 5-7 days, because fetal growth is most uniform in early pregnancy. If your periods are irregular, always prefer ultrasound-based calculation over LMP to get a reliable conception date range.",
 
     faqs: [
       {
@@ -198,8 +198,8 @@ export default function PregnancyConceptionCalculatorPage() {
   return (
     <ToolPageLayout
       header={{
-        title: "Pregnancy Conception Calculator",
-        description: "Calculate your conception date with our advanced pregnancy calculator. Get personalized trimester guidance, nutrition tips, exercise recommendations, and comprehensive week-by-week pregnancy insights.",
+        title: "Conception Date Calculator — Find When You Conceived (2026)",
+        description: "Free conception calculator to reverse-calculate your probable conception date and fertile window from a known due date, LMP, or ultrasound measurement. Get personalized trimester guidance, nutrition recommendations, safe exercise tips, and week-by-week pregnancy milestone tracking.",
         titleSize: "medium",
         descriptionSize: "small",
         color: "pink"
@@ -215,9 +215,9 @@ export default function PregnancyConceptionCalculatorPage() {
       }
       toolContent={toolContent}
       expectedMetadata={{
-        title: "Pregnancy Conception Calculator | Free Online Tool",
+        title: "Conception Date Calculator — Estimate When You Conceived Free (2026)",
         description:
-          "Estimate conception date, pregnancy week, and trimester stage using due date, LMP, or ultrasound-based inputs.",
+          "Free conception calculator to estimate your conception date, fertile window, and pregnancy week from due date, last menstrual period, or ultrasound. Includes trimester guidance, nutrition tips, and milestone tracking.",
         path: "/calculator/pregnancy-conception-calculator"
       }}
     />

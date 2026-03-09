@@ -15,24 +15,16 @@ const XmlJsonConverter = dynamic(
 const toolConfig = createToolConfig({
   toolName: "XML to JSON Converter",
   description:
-    "Convert XML to JSON and JSON to XML for API modernization and data transformation workflows.",
-  metaTitle: "XML to JSON Converter (with JSON to XML)",
+    "Convert XML to JSON and JSON to XML instantly online. Transform SOAP responses, RSS feeds, SVG data, Android layouts, Maven POM files, and any XML document into structured JSON with attribute and namespace handling.",
+  metaTitle: "XML to JSON Converter — Transform XML Documents to JSON Online Free (2026)",
   metaDescription:
-    "Free XML to JSON converter with reverse JSON to XML support. Useful for API integration, migration, and debugging.",
+    "Free XML to JSON converter with bidirectional JSON to XML support. Convert SOAP responses, RSS feeds, Maven POM, Android XML, and any XML document. Handles attributes, namespaces, CDATA, nested elements. No signup.",
   path: "/converters/xml-json",
-  keywords: [
-    "xml to json converter",
-    "json to xml converter",
-    "xml json converter",
-    "xml parser online",
-    "api payload converter",
-    "legacy data conversion",
-  ],
 
   header: {
     title: "XML to JSON Converter",
     description:
-      "Convert XML and JSON in both directions for integration, migration, and testing workflows.",
+      "Convert XML to JSON and JSON to XML instantly in your browser. Transform SOAP API responses, RSS/Atom feeds, Maven POM files, Android layout XML, SVG data, Spring configuration, and any XML document into structured JSON with proper attribute mapping, namespace handling, CDATA preservation, and nested element conversion.",
     titleSize: "medium",
     descriptionSize: "small",
   },
@@ -45,14 +37,18 @@ const toolConfig = createToolConfig({
   schemaOptions: {
     applicationCategory: "UtilitiesApplication",
     description:
-      "Two-way converter for XML to JSON and JSON to XML transformations.",
-    alternateName: ["XML JSON Converter", "JSON XML Converter"],
+      "Two-way converter for XML to JSON and JSON to XML transformations. Convert SOAP responses, RSS feeds, Maven POM files, Android XML, and enterprise XML documents with attribute mapping and namespace handling.",
+    alternateName: ["XML JSON Converter", "JSON XML Converter", "XML Parser Online", "Convert XML to JSON Online", "SOAP to JSON Converter"],
     featureList: [
-      "XML to JSON conversion",
-      "JSON to XML conversion",
-      "Formatted output",
-      "Live conversion",
-      "No signup",
+      "Bidirectional XML to JSON and JSON to XML conversion",
+      "XML attribute to JSON property mapping",
+      "XML namespace handling and preservation",
+      "CDATA section content extraction",
+      "Nested element to JSON object hierarchy conversion",
+      "SOAP response to JSON transformation",
+      "RSS/Atom feed to JSON conversion",
+      "Real-time parsing with syntax error detection",
+      "No signup required",
     ],
     offers: {
       "@type": "Offer",

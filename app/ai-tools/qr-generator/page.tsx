@@ -13,23 +13,15 @@ const toolConfig = createToolConfig({
   toolName: "QR Code Generator",
   description:
     "Create QR codes for URLs, WiFi, vCards, messages, and location sharing with color/logo customization.",
-  metaTitle: "Free QR Code Generator with Logo (URL, WiFi, vCard)",
+  metaTitle: "QR Code Generator — Create QR Codes with Logo & Colors Free (2026)",
   metaDescription:
-    "Generate QR codes for URL, WiFi, vCard, email, SMS, WhatsApp, phone, location, and text. Customize colors, logo, and export format.",
+    "Generate free QR codes for URLs, WiFi passwords, vCards, email, SMS, WhatsApp, phone, and GPS location. Custom colors, logo embedding, PNG/SVG export. No signup — 9 QR types with error correction and bulk generation.",
   path: "/ai-tools/qr-generator",
-  keywords: [
-    "qr code generator",
-    "qr code generator with logo",
-    "wifi qr code generator",
-    "vcard qr code",
-    "free qr code maker",
-    "static qr code",
-  ],
 
   header: {
     title: "QR Code Generator",
     description:
-      "Build custom QR codes for marketing, operations, and contact sharing in a single workflow.",
+      "Create custom QR codes for URLs, WiFi network credentials, vCard contact cards, email addresses, SMS messages, WhatsApp links, phone numbers, GPS locations, and plain text. Customize foreground/background colors, embed your logo, adjust error correction levels (L/M/Q/H), and export as high-resolution PNG or scalable SVG for print and digital use.",
     titleSize: "large",
     descriptionSize: "small",
   },
@@ -72,49 +64,67 @@ const toolConfig = createToolConfig({
       "Always test QR codes on 2+ devices before publishing",
     ],
     overview:
-      "Use this tool to generate scannable QR codes for web links, WiFi login, business contact data, and quick actions such as SMS or WhatsApp starts. The builder includes styling controls and export options so the same flow can be used for digital campaigns and print assets.",
+      "This free QR code generator creates scannable codes for 9 different data types: website URLs, WiFi network credentials (SSID, password, encryption type), vCard contact cards (name, phone, email, address), email compose links, SMS pre-filled messages, WhatsApp click-to-chat links, phone dial shortcuts, GPS coordinates for location sharing, and plain text. Each QR code is fully customizable with foreground and background colors, optional center logo embedding, adjustable error correction levels (Low 7%, Medium 15%, Quartile 25%, High 30% data recovery), and configurable size and margin settings. Export as PNG for digital use (websites, social media, email signatures) or SVG for print materials (business cards, posters, packaging, menus, flyers) with pixel-perfect scaling at any size. All QR codes are static — they encode data directly and work permanently without any server dependency, redirect service, or expiration date. Minimum recommended print size: 2cm x 2cm (0.8 inches) for reliable scanning.",
 
     howToSteps: [
-      "Choose a QR type such as URL, WiFi, vCard, email, or location.",
-      "Enter the required data and verify the preview updates correctly.",
-      "Customize colors, size, error-correction level, and optional center logo.",
-      "Download the final code as PNG or SVG and test scan behavior on mobile.",
+      "Select a QR code type: URL (website link), WiFi (network name, password, encryption), vCard (contact info), email, SMS, WhatsApp, phone number, GPS location, or plain text.",
+      "Enter the required data — the live preview updates instantly so you can verify the QR code content before finalizing.",
+      "Customize appearance: set foreground and background colors for brand consistency, upload a center logo (PNG/JPG), select error correction level (use H/High when adding logos), and adjust code size and quiet zone margin.",
+      "Download as PNG (web, email, social media) or SVG (print materials, packaging, business cards), then test-scan with 2+ different phones before publishing to ensure reliable readability.",
     ],
 
     features: [
-      "Supports URL, text, WiFi, vCard, email, SMS, WhatsApp, phone, and geo formats",
-      "Design controls for size, margin, colors, and transparent background",
-      "Optional logo embedding with adjustable logo scale",
-      "Download-ready output in PNG and SVG",
-      "Bulk generation for multi-link workflows",
+      "9 QR code types: URL, plain text, WiFi credentials, vCard contact card, email, SMS, WhatsApp, phone number, and GPS geolocation",
+      "Custom color picker for foreground and background — match your brand colors for marketing consistency",
+      "Logo embedding with adjustable scale — center your company logo, app icon, or profile picture inside the QR code",
+      "4 error correction levels: Low (7%), Medium (15%), Quartile (25%), High (30%) — higher levels allow more design overlay while staying scannable",
+      "PNG and SVG export formats — PNG for digital channels, SVG for lossless print scaling at any resolution",
+      "Configurable QR code size (100-1000px) and quiet zone margin for optimal scan distance compatibility",
+      "Bulk QR generation for creating multiple codes in a single workflow — ideal for inventory labels, multi-page menus, or event badge sets",
+      "Instant live preview that updates as you type — verify content accuracy before downloading",
+      "100% client-side generation — your data is never uploaded to any server",
     ],
 
     useCases: [
-      "Restaurant menus and table cards",
-      "Event WiFi access cards",
-      "Business cards with instant contact save",
-      "Printed posters and packaging redirects",
-      "Operational labels and support links",
+      "Restaurant digital menus — guests scan table QR codes to view menu, daily specials, and allergen info on their phones",
+      "WiFi QR codes for hotels, offices, Airbnb rentals, and events — guests connect instantly without typing passwords",
+      "Business cards with vCard QR codes — new contacts save your name, phone, email, company, and address with one scan",
+      "Product packaging and labels — link to user manuals, warranty registration, recipe ideas, or authenticity verification",
+      "Event badges and tickets — encode attendee info, session schedules, or check-in URLs for conference management",
+      "Real estate signs and flyers — link to virtual tours, property details, and agent contact information",
+      "Marketing campaigns — trackable URLs on posters, magazine ads, direct mail, and billboard advertising",
     ],
 
     aboutTool: (
       <div className="space-y-6 text-muted-foreground">
         <p>
-          High-performing QR pages in search usually win by combining immediate
-          utility with practical implementation guidance. This page is built for
-          that intent: users can generate codes instantly and still access
-          details on format selection, scan reliability, and deployment.
+          QR codes (Quick Response codes) are two-dimensional barcodes invented
+          by Denso Wave in 1994 for automotive manufacturing tracking. They encode
+          data in a matrix of black and white squares that smartphone cameras can
+          decode instantly. QR codes use Reed-Solomon error correction — the same
+          mathematics used in CDs and DVDs — to remain scannable even when partially
+          damaged or obscured. This is why you can place a logo in the center: the
+          error correction algorithm reconstructs the hidden data modules. The four
+          error correction levels (L/M/Q/H) control how much redundancy is added,
+          with High (H) allowing up to 30% of the code area to be obscured while
+          maintaining scannability.
         </p>
         <p>
-          For SEO and user trust, the page emphasizes accurate expectations:
-          what type each QR format is best for, how to test before publishing,
-          and why export/contrast decisions matter for scan success.
+          Static QR codes — like those generated by this tool — encode data directly
+          into the code pattern. They work permanently with no server dependency,
+          subscription cost, or expiration date. Dynamic QR codes (offered by paid
+          services) use a redirect URL that can be changed after printing, but
+          require an active server. For permanent destinations like your website
+          homepage, contact card, or WiFi credentials, static codes are the better
+          choice — they are faster to scan, more reliable, and completely free.
+          Always test generated QR codes on multiple devices (iPhone and Android)
+          and in the actual lighting/distance conditions where they will be scanned.
         </p>
       </div>
     ),
 
     proTip:
-      "For print assets, test the final PNG/SVG on at least two phones and keep strong foreground/background contrast.",
+      "Always use error correction level H (High, 30%) when embedding a logo, and maintain a minimum 4:1 contrast ratio between foreground and background colors. For print, export SVG and scale to at least 2cm x 2cm — larger for outdoor signage where scan distance exceeds 30cm. Test the final file on both iPhone (iOS Camera) and Android (Google Lens) before publishing.",
 
     faqs: [
       {

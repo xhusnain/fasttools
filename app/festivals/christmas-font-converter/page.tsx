@@ -17,12 +17,6 @@ const toolConfig = createToolConfig({
     metaTitle: `Christmas Font Generator & Emoji Text | Copy & Paste Festive Styles`,
     metaDescription: "Free Christmas font generator! Create aesthetic holiday text with emojis (🎄 𝓜𝓮𝓻𝓻𝔂 𝓒𝓱𝓻𝓲𝓼𝓽𝓶𝓪𝓼 🎅). Perfect for Instagram bios, comments, and captions.",
     path: "/festivals/christmas-font-converter",
-    keywords: [
-        "christmas font generator", "christmas text copy paste", "festive font converter",
-        "christmas emojis for instagram", "holiday text generator", "christmas aesthetic text",
-        "fancy christmas fonts", "unicode christmas text", "winter fonts copy paste",
-        "santa emoji font", "christmas bio ideas", "merry christmas text", "holiday greetings generator"
-    ],
 
     header: {
         title: "🎄 Christmas Font & Emoji Converter ❄️",

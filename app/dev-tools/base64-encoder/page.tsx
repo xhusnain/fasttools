@@ -13,22 +13,15 @@ const toolConfig = createToolConfig({
   toolName: "Base64 Encoder Decoder",
   description:
     "Encode and decode Base64 for text and common binary workflows including URL-safe variants.",
-  metaTitle: "Base64 Encoder Decoder (Text, File, URL-safe)",
+  metaTitle: "Base64 Encoder Decoder — Encode & Decode Base64 Online Free (2026)",
   metaDescription:
-    "Encode or decode Base64 strings in-browser. Useful for API payload debugging, data URI workflows, and URL-safe token handling.",
+    "Free online Base64 encoder and decoder. Encode text to Base64 or decode Base64 to text. Supports URL-safe Base64, file encoding, and data URIs. Runs locally in browser.",
   path: "/dev-tools/base64-encoder",
-  keywords: [
-    "base64 encoder decoder",
-    "base64 decode online",
-    "base64 url safe",
-    "base64 to text",
-    "base64 tool",
-  ],
 
   header: {
-    title: "Base64 Encoder Decoder",
+    title: "Base64 Encoder & Decoder",
     description:
-      "Convert text and data to or from Base64 with quick copy-ready outputs.",
+      "Encode text to Base64 or decode Base64 strings back to plain text. Supports standard and URL-safe Base64 with UTF-8 encoding. All processing runs locally — no data uploaded.",
     titleSize: "medium",
     descriptionSize: "small",
     color: "blue",
@@ -65,7 +58,7 @@ const toolConfig = createToolConfig({
       "All encoding/decoding runs locally in your browser",
     ],
     overview:
-      "Use this tool to encode plain text into Base64 or decode Base64 back to readable output. It is useful for API debugging, payload inspection, and data URI workflows.",
+      "Encode and decode Base64 online with this free tool. Paste plain text to encode it as Base64, or paste a Base64 string to decode it back to readable text. Supports both standard Base64 (A-Z, a-z, 0-9, +, /) and URL-safe Base64 (replaces + with - and / with _). Useful for API payload debugging, data URI creation, email encoding (MIME), JWT inspection, and embedding binary data in JSON or XML. All encoding and decoding runs locally in your browser — no data is sent to any server.",
 
     howToSteps: [
       "Choose encode or decode mode.",
@@ -89,47 +82,42 @@ const toolConfig = createToolConfig({
       "Encoding checks in integration tests",
     ],
 
-    aboutTool: (
-      <div className="space-y-6 text-muted-foreground">
-        <p>
-          Base64 is a transport encoding format, not encryption. It is often
-          used when binary or structured data must move through text channels.
-        </p>
-        <p>
-          This page is designed for utility intent: convert quickly, verify
-          output, and continue integration work.
-        </p>
-      </div>
-    ),
+    aboutTool:
+      "Base64 is a binary-to-text encoding scheme that converts data into ASCII characters for safe transport through text-based protocols. It is NOT encryption — anyone can decode Base64 without a key. Base64 is used in data URIs (embedding images in HTML/CSS), email attachments (MIME encoding), HTTP Basic authentication headers, JWT token segments, and API payloads that need to carry binary data as text. Standard Base64 uses A-Z, a-z, 0-9, +, / with = padding. URL-safe Base64 replaces + with - and / with _ to avoid conflicts in URLs and query strings. Encoding increases size by approximately 33% (every 3 bytes becomes 4 characters).",
 
     proTip:
-      "If decoded output looks incorrect, check whether the source uses standard Base64 or URL-safe Base64 variants.",
+      "If decoded output looks garbled, check whether the source uses standard Base64 or URL-safe Base64 (common in JWTs and URLs). Also check for missing = padding characters — some systems strip padding.",
 
     faqs: [
       {
-        question: "Is Base64 secure encryption?",
+        question: "What is Base64 encoding used for?",
         answer:
-          "No. Base64 is an encoding format for representation and transport, not a confidentiality mechanism.",
+          "Base64 is used to encode binary data as ASCII text for transport through text-based protocols. Common uses: data URIs in HTML/CSS, email attachments (MIME), JWT token segments, HTTP Basic auth headers, and embedding binary data in JSON or XML.",
+      },
+      {
+        question: "Is Base64 the same as encryption?",
+        answer:
+          "No. Base64 is an encoding format, not encryption. Anyone can decode Base64 without a key. It provides no security — use proper encryption (AES, RSA) for confidential data.",
       },
       {
         question: "What is URL-safe Base64?",
         answer:
-          "A variant that replaces certain characters to be safer in URL/query contexts.",
+          "URL-safe Base64 replaces + with - and / with _ to avoid characters that have special meaning in URLs. It is used in JWTs, URL query parameters, and file names. Some implementations also strip the = padding.",
       },
       {
-        question: "Can I use this for JWT payload inspection?",
+        question: "Why does Base64 increase file size?",
         answer:
-          "Yes, particularly for base64url-style segments used in token structures.",
+          "Base64 converts every 3 bytes of data into 4 ASCII characters, resulting in approximately 33% size increase. This is the trade-off for being able to embed binary data in text formats.",
       },
       {
-        question: "Why does decode fail for my input?",
+        question: "Can I encode files to Base64?",
         answer:
-          "Common causes are malformed padding, mixed variant usage, or non-Base64 characters.",
+          "Yes. The tool supports file encoding to Base64, which is useful for creating data URIs (e.g., data:image/png;base64,...) and embedding images in HTML or CSS.",
       },
       {
-        question: "Can I convert files too?",
+        question: "Is this Base64 tool free?",
         answer:
-          "Yes, the workflow supports common file/data conversion scenarios in addition to plain text.",
+          "Yes. Completely free, runs locally in your browser, and has no limits on encoding/decoding or registration requirements.",
       },
     ],
 

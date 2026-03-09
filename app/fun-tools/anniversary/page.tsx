@@ -13,13 +13,9 @@ import { Heart, Calendar, Clock, Gift, ArrowRight, CheckCircle, HelpCircle, Star
 const toolConfig = createToolConfig({
   toolName: "Love Days Counter & Anniversary Calculator",
   description: "Calculate exactly how long you've been together in years, months, and days with this relationship anniversary calculator.",
-  metaTitle: "Anniversary Calculator - Love Days Counter",
-  metaDescription: "Free love days counter and dating calculator. Track exactly how long you've been together. Perfect for checking your relationship days count.",
+  metaTitle: "Anniversary Calculator — Count Years, Months & Days Together (2026)",
+  metaDescription: "Free anniversary calculator to count how long you've been together. Track relationship years, months, and days. Love anniversary counter for couples — works for dating and wedding anniversaries.",
   path: "/fun-tools/anniversary",
-  keywords: [
-    "love days counter", "dating calculator", "relationship days counter", "how long have we been together",
-    "love counter", "anniversary calculator", "couple tracker", "days since we met"
-  ],
 
 
   schemaOptions: {

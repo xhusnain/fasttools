@@ -17,18 +17,6 @@ const toolConfig = createToolConfig({
   metaDescription:
     "Compress JPG, PNG, and WebP images online. Set target size, adjust quality, batch process up to 100 files, and download all as ZIP.",
   path: "/image-tools/image-compressor",
-  keywords: [
-    "image compressor",
-    "compress image online",
-    "compress jpg",
-    "compress png",
-    "compress webp",
-    "compress image to 50kb",
-    "compress image to 100kb",
-    "reduce image size",
-    "batch image compressor",
-    "free image compressor",
-  ],
 
   schemaOptions: {
     applicationCategory: "MultimediaApplication",

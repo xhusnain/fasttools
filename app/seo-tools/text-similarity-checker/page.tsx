@@ -17,14 +17,6 @@ const toolConfig = createToolConfig({
   metaDescription:
     "Check similarity between two texts with score, fingerprint output, and Hamming distance metrics for content QA and duplicate-content review.",
   path: "/seo-tools/text-similarity-checker",
-  keywords: [
-    "text similarity checker",
-    "duplicate content checker",
-    "near duplicate detector",
-    "simhash checker",
-    "text compare similarity",
-    "content similarity score",
-  ],
 
   header: {
     title: "Text Similarity Checker",

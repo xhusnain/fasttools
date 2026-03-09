@@ -12,9 +12,9 @@ const CalorieCalculator = dynamic(
 import { Brain, Activity, Target, BookOpen, Shield, Users, TrendingUp, Calculator, Heart, AlertTriangle, Info, Zap, Flame } from "lucide-react"
 
 const baseMetadata = createMetadata({
-  title: "Calorie Calculator | Free Daily Calorie Needs Calculator",
+  title: "Calorie Calculator — Calculate Daily Calorie Needs & TDEE Free (2026)",
   description:
-    "Calculate your daily calorie needs with our advanced calculator. Get BMR, TDEE, weight management goals & personalized nutrition recommendations.",
+    "Free calorie calculator with BMR, TDEE, weight loss/gain targets & zigzag calorie cycling. Uses Mifflin-St Jeor, Harris-Benedict & Katch-McArdle equations. Activity-based calorie burn reference, macro breakdown & meal planning guidance.",
   path: "/calculator/calorie-calculator",
   breadcrumbs: [
     { label: "Calculator", href: "/calculator" },
@@ -44,35 +44,35 @@ export const metadata: Metadata = {
 
 export default function CalorieCalculatorPage() {
   const toolContent = {
-    toolName: "Calorie Calculator",
-    overview: "Calculate your daily calorie needs with our advanced calorie calculator. Get BMR and TDEE analysis, weight management goals, zigzag calorie cycling, and personalized nutrition recommendations for optimal health and fitness.",
+    toolName: "Calorie Calculator — Daily Calorie Needs & TDEE",
+    overview: "Calculate how many calories you need per day with our free advanced calorie calculator. Get your Basal Metabolic Rate (BMR) using Mifflin-St Jeor, Harris-Benedict, or Katch-McArdle equations, then compute your Total Daily Energy Expenditure (TDEE) across five activity levels. Receive precise calorie targets for weight loss (500-1000 cal deficit), maintenance, or muscle gain (250-500 cal surplus), plus advanced zigzag calorie cycling plans to prevent metabolic adaptation. Includes activity calorie burn reference chart, thermic effect of food (TEF) insights, macronutrient breakdown guidance, and evidence-based meal planning tips.",
 
     howToSteps: [
-      "Enter your information: Age, gender, height, weight, and unit system.",
-      "Select calculation method: Mifflin-St Jeor (recommended), Harris-Benedict, or Katch-McArdle.",
-      "Choose activity level: From sedentary to extremely active to determine TDEE.",
-      "Get comprehensive results: View BMR, TDEE, and calorie targets for weight loss or gain.",
-      "Plan your nutrition: Use the insights to structure your meal plan and macros."
+      "Enter Your Details: Input age, gender, height (cm or inches), weight (kg or lbs), and select your preferred unit system.",
+      "Select BMR Equation: Choose Mifflin-St Jeor (most accurate, ±10-15%), Harris-Benedict (classic revised 1984), or Katch-McArdle (requires body fat %).",
+      "Choose Activity Level: Select from sedentary (1.2x), lightly active (1.375x), moderately active (1.55x), very active (1.725x), or extremely active (1.9x).",
+      "Review Calorie Results: View your BMR, TDEE, and specific calorie targets for maintenance, weight loss (-500/-1000 cal), or muscle gain (+250/+500 cal).",
+      "Plan Your Nutrition: Use zigzag calorie cycling suggestions, macro breakdown guidance, and meal planning tips to structure your daily diet."
     ],
 
     features: [
-      "Multiple Methods: Choose from Mifflin-St Jeor, Harris-Benedict, and Katch-McArdle equations.",
-      "BMR & TDEE Analysis: Understand your baseline and total energy expenditure.",
-      "Weight Goals: Specific calorie targets for maintenance, weight loss, and weight gain.",
-      "Zigzag Cycling: Advanced plans to prevent metabolic adaptation.",
-      "Activity Assessment: Accurate multipliers for different lifestyle levels.",
-      "Personalized Tips: Nutrition guidance based on your specific goals.",
-      "Macro Breakdown: Understand the balance of protein, carbs, and fats.",
-      "Mobile Friendly: Track your needs on the go."
+      "Three Validated Equations: Mifflin-St Jeor (most accurate), Harris-Benedict (revised 1984), and Katch-McArdle (lean body mass based).",
+      "BMR & TDEE Analysis: Calculate resting metabolic rate and total daily energy expenditure with precise activity multipliers.",
+      "Weight Management Targets: Specific calorie targets for maintenance, mild/moderate/extreme weight loss, and lean bulk surplus.",
+      "Zigzag Calorie Cycling: Advanced high/low day plans (+/-200-300 cal) to prevent metabolic adaptation and diet plateaus.",
+      "Activity Calorie Burn Chart: Reference table showing calories burned per 30 minutes for walking, running, cycling, swimming, and weight training.",
+      "Thermic Effect of Food (TEF): Understand how protein (20-30%), carbs (5-15%), and fats (0-3%) burn calories during digestion.",
+      "Macronutrient Breakdown: Recommended protein, carbohydrate, and fat ratios based on your weight management goal.",
+      "Mobile Responsive: Track daily calorie needs and meal plans on any device — phone, tablet, or desktop."
     ],
 
     useCases: [
-      "Weight Loss: Determine the calorie deficit needed to lose weight safely.",
-      "Muscle Gain: Calculate the surplus required for hypertrophy.",
-      "Maintenance: Find the exact calories to stay at your current weight.",
-      "Athletic Performance: Optimize fueling for training and competition.",
-      "Meal Planning: Structure daily intake around your energy needs.",
-      "Metabolic Health: Understand your body's energy requirements."
+      "Safe Weight Loss: Determine the exact calorie deficit (500-1000 cal/day) needed to lose 1-2 lbs of body fat per week without muscle loss.",
+      "Lean Muscle Gain: Calculate the moderate calorie surplus (250-500 cal above TDEE) required for hypertrophy combined with resistance training.",
+      "Weight Maintenance: Find your precise maintenance calories to sustain current weight and body composition long-term.",
+      "Athletic Fueling: Optimize pre-workout, intra-workout, and post-workout nutrition based on TDEE and training intensity.",
+      "Meal Plan Design: Structure daily meal timing, portion sizes, and macronutrient ratios around your specific energy needs.",
+      "Metabolic Health Monitoring: Track how aging, muscle gain, weight loss, and lifestyle changes affect your daily calorie requirements."
     ],
 
     aboutTool: (
@@ -310,7 +310,7 @@ export default function CalorieCalculatorPage() {
       </div>
     ),
 
-    proTip: "Don't eat back all your exercise calories. Fitness trackers often overestimate burns. A safe bet is to eat back only 50% of tracked exercise calories if you are trying to lose weight.",
+    proTip: "Fitness trackers overestimate calorie burn by 10-40%. If you are trying to lose weight, eat back only 50% of tracked exercise calories to account for this overestimation. Focus on protein-first meals (0.8-1g per pound of body weight) since protein has the highest thermic effect of food (20-30%) — meaning your body burns 20-30 calories just processing every 100 calories of protein consumed.",
 
     faqs: [
       {
@@ -453,8 +453,8 @@ export default function CalorieCalculatorPage() {
   return (
     <ToolPageLayout
       header={{
-        title: "Calorie Calculator - Advanced Daily Calorie Needs",
-        description: "Calculate your daily calorie needs with our advanced calculator. Get BMR, TDEE, weight management goals & personalized nutrition recommendations.",
+        title: "Calorie Calculator — Daily Calorie Needs, BMR & TDEE",
+        description: "Calculate daily calorie needs with BMR, TDEE, weight loss/gain targets, zigzag calorie cycling, activity burn chart, and macro breakdown. Uses Mifflin-St Jeor, Harris-Benedict & Katch-McArdle equations. Free and private.",
         titleSize: "medium",
         descriptionSize: "small",
         color: "blue"
@@ -470,8 +470,8 @@ export default function CalorieCalculatorPage() {
       }
       toolContent={toolContent}
       expectedMetadata={{
-        title: "Calorie Calculator - Daily Calorie Needs",
-        description: "Calculate your daily calorie needs with our advanced calculator. Get BMR, TDEE, weight management goals & personalized nutrition recommendations.",
+        title: "Calorie Calculator — Calculate Daily Calorie Needs & TDEE Free (2026)",
+        description: "Free calorie calculator with BMR, TDEE, weight loss/gain targets & zigzag calorie cycling. Uses Mifflin-St Jeor, Harris-Benedict & Katch-McArdle equations. Activity-based calorie burn reference, macro breakdown & meal planning guidance.",
         path: "/calculator/calorie-calculator"
       }}
     />

@@ -11,9 +11,9 @@ import { GTable } from "@/ui/gtable"
 import { Brain } from "lucide-react"
 
 const baseMetadata = createMetadata({
-  title: "BMR Calculator | Free Basal Metabolic Rate Calculator",
+  title: "BMR Calculator — Calculate Basal Metabolic Rate & TDEE Free (2026)",
   description:
-    "Calculate your Basal Metabolic Rate (BMR), TDEE estimate, and calorie targets for weight loss, maintenance, or gain.",
+    "Free BMR calculator using Mifflin-St Jeor, Harris-Benedict & Katch-McArdle equations. Get your basal metabolic rate, TDEE for 5 activity levels, and calorie targets for weight loss, maintenance, or muscle gain. Private & instant.",
   path: "/calculator/bmr-calculator",
   breadcrumbs: [
     { label: "Calculator", href: "/calculator" },
@@ -37,42 +37,42 @@ const baseMetadata = createMetadata({
 
 export const metadata: Metadata = {
   ...baseMetadata,
-  title: "BMR Calculator | Free Basal Metabolic Rate Calculator",
+  title: "BMR Calculator — Calculate Basal Metabolic Rate & TDEE Free (2026)",
   applicationName: "FastTools",
   category: "Health & Fitness",
 }
 
 export default function BMRCalculatorPage() {
   const toolContent = {
-    toolName: "BMR Calculator",
-    overview: "Calculate your Basal Metabolic Rate (BMR) with our advanced calculator. Get accurate calorie needs, TDEE analysis, weight management goals, and personalized nutrition recommendations for optimal health and fitness.",
+    toolName: "BMR Calculator — Basal Metabolic Rate & TDEE Analysis",
+    overview: "Calculate your Basal Metabolic Rate (BMR) and Total Daily Energy Expenditure (TDEE) with our free advanced BMR calculator. Choose from three scientifically validated equations — Mifflin-St Jeor (most accurate for general population), Harris-Benedict (classic formula), and Katch-McArdle (best for athletes with known body fat %). Get precise calorie targets for weight loss, maintenance, or muscle gain across five activity levels from sedentary to extra active. Understand metabolic adaptation, build personalized nutrition plans, and track changes in your resting metabolic rate over time.",
 
     howToSteps: [
-      "Enter your details: Age, gender, height, and weight.",
-      "Select equation: Mifflin-St Jeor (recommended), Harris-Benedict, or Katch-McArdle.",
-      "Review BMR: See how many calories your body burns at rest.",
-      "Check TDEE: Understand your total daily energy expenditure based on activity.",
-      "Set goals: Use the calorie targets for weight loss, maintenance, or muscle gain."
+      "Enter Your Details: Input your age, gender, height (cm or inches), and weight (kg or lbs) for accurate metabolic rate estimation.",
+      "Select BMR Equation: Choose Mifflin-St Jeor (recommended, ±10-15% accuracy), Harris-Benedict (classic), or Katch-McArdle (requires body fat %).",
+      "Review Your BMR: See exactly how many calories your body burns at complete rest to maintain vital functions like breathing and circulation.",
+      "Check TDEE by Activity Level: View total daily energy expenditure for sedentary (1.2x), lightly active (1.375x), moderately active (1.55x), very active (1.725x), and extra active (1.9x) lifestyles.",
+      "Set Calorie Goals: Use calculated targets for fat loss (500 cal deficit), maintenance, or lean muscle gain (250-500 cal surplus)."
     ],
 
     features: [
-      "Multiple Equations: Choose the formula that best fits your body type.",
-      "TDEE Analysis: Calculate total energy needs based on activity level.",
-      "Weight Goals: Specific calorie targets for losing, maintaining, or gaining weight.",
-      "Activity Levels: Detailed breakdown from sedentary to extra active.",
-      "Metabolic Insights: Understand the factors affecting your metabolism.",
-      "Personalized Tips: Nutrition and lifestyle advice based on your results.",
-      "Metric & Imperial: Support for all measurement systems.",
-      "Mobile Friendly: Access your metabolic data anywhere."
+      "Three BMR Equations: Mifflin-St Jeor (most accurate), Harris-Benedict (revised 1984), and Katch-McArdle (lean body mass based).",
+      "TDEE Analysis: Calculate total daily energy expenditure across 5 activity multipliers (1.2x to 1.9x).",
+      "Weight Management Targets: Specific calorie targets for fat loss (deficit), maintenance, and muscle gain (surplus).",
+      "Activity Level Breakdown: Detailed calorie needs from sedentary desk job to physical labor and twice-daily training.",
+      "Metabolic Adaptation Insights: Understand how starvation mode, muscle mass, age, and hormones affect your resting metabolism.",
+      "Personalized Nutrition Tips: Evidence-based nutrition and lifestyle advice tailored to your BMR and TDEE results.",
+      "Metric & Imperial Units: Full support for kg/cm and lbs/inches measurement systems.",
+      "Mobile Responsive: Access your metabolic rate analysis on any device — phone, tablet, or desktop."
     ],
 
     useCases: [
-      "Weight Loss: Determine the calorie deficit needed to lose fat.",
-      "Muscle Building: Calculate the surplus required for hypertrophy.",
-      "Maintenance: Find your exact maintenance calories.",
-      "Health Monitoring: Track changes in your metabolic rate over time.",
-      "Meal Planning: Base your diet on your specific energy needs.",
-      "Fitness Programming: Adjust calorie intake based on activity level."
+      "Fat Loss Planning: Determine the exact calorie deficit (typically 500 kcal/day) needed to lose 1 lb of body fat per week safely.",
+      "Muscle Hypertrophy: Calculate the calorie surplus (250-500 kcal above TDEE) combined with resistance training for lean mass gain.",
+      "Maintenance Calories: Find your precise daily calorie intake to maintain current weight and body composition.",
+      "Metabolic Health Tracking: Monitor BMR changes over time as you age, gain muscle, lose weight, or change activity levels.",
+      "Meal Plan Design: Structure daily macronutrient intake (protein, carbs, fats) based on your specific TDEE and fitness goals.",
+      "Athletic Performance: Adjust calorie and nutrient timing around training sessions based on your activity-adjusted TDEE."
     ],
 
     aboutTool: (
@@ -157,48 +157,36 @@ export default function BMRCalculatorPage() {
       </div>
     ),
 
-    proTip: "To increase your BMR, focus on strength training. Building muscle is the most effective way to permanently boost your resting metabolic rate, allowing you to eat more calories while maintaining your weight.",
+    proTip: "Each pound of muscle burns approximately 6-7 calories per day at rest versus just 2 calories per pound of fat. Focus on progressive resistance training 3-4 times per week to build lean muscle mass — the single most effective way to permanently increase your BMR and eat more calories while maintaining or losing weight.",
 
     faqs: [
       {
-        question: "Which BMR equation is best?",
-        answer: "For most people, the Mifflin-St Jeor equation is considered the most accurate. If you are very lean and know your body fat percentage, Katch-McArdle is superior."
+        question: "Which BMR equation should I use for the most accurate results?",
+        answer: "The Mifflin-St Jeor equation (developed in 1990) is considered the most accurate BMR formula for the general population, with accuracy within ±10-15%. If you are lean and know your body fat percentage, the Katch-McArdle formula is superior because it uses lean body mass rather than total body weight, providing more precise results for muscular individuals and athletes."
       },
       {
-        question: "How accurate is this calculator?",
-        answer: "It provides an estimate based on population averages. Your actual BMR may vary by 10-15%. Use it as a starting point and adjust based on real-world results."
+        question: "How accurate is this BMR calculator compared to lab testing?",
+        answer: "Our BMR calculator provides estimates within ±10-15% of laboratory-measured values (indirect calorimetry). Population-based equations can't account for individual genetics, thyroid function, or exact muscle-to-fat ratio. Use the result as a starting point, then adjust by 100-200 calories based on your actual weight change over 2-3 weeks for personalized accuracy."
       },
       {
-        question: "Can I eat below my BMR to lose weight faster?",
-        answer: "It is generally not recommended to eat below your BMR for extended periods. This can slow down your metabolism, cause muscle loss, and lead to nutrient deficiencies."
+        question: "Is it safe to eat below my BMR for faster weight loss?",
+        answer: "Eating below your BMR for extended periods is not recommended without medical supervision. Chronically under-eating triggers metabolic adaptation (starvation mode), causing your body to downregulate non-essential functions, reduce thyroid output, and conserve energy. This leads to muscle loss, fatigue, hormonal imbalances, and weight loss plateaus. Aim for a moderate 20-25% calorie deficit below TDEE while staying at or above BMR."
       },
       {
-        question: "Does exercise increase BMR?",
-        answer: "Exercise burns calories (increasing TDEE), but only strength training that builds muscle will significantly increase your BMR (resting burn) long-term."
+        question: "What is the difference between BMR and TDEE?",
+        answer: "BMR (Basal Metabolic Rate) is the minimum calories your body burns at complete rest — just to keep you alive (breathing, circulation, cell production). TDEE (Total Daily Energy Expenditure) is your total daily calorie burn including BMR plus physical activity, thermic effect of food (~10%), and NEAT (non-exercise activity). TDEE = BMR x Activity Multiplier (1.2 to 1.9 depending on lifestyle)."
       },
       {
-        question: "Why does BMR decrease with age?",
-        answer: "As we age, we tend to lose muscle mass and hormonal activity decreases, both of which contribute to a slower metabolic rate."
+        question: "Why does BMR decrease with age and how can I prevent it?",
+        answer: "BMR decreases with age primarily due to sarcopenia (age-related muscle loss of 3-8% per decade after 30), declining hormone levels (testosterone, estrogen, growth hormone), and reduced cellular metabolic activity. Counteract this with regular resistance training to preserve muscle mass, adequate protein intake (0.8-1g per pound of body weight), quality sleep (7-9 hours), and stress management."
       },
       {
-        question: "How often should I recalculate my BMR?",
-        answer: "Recalculate every time you lose or gain significant weight (e.g., 10 lbs), as a smaller body requires fewer calories to maintain."
+        question: "How often should I recalculate my BMR and TDEE?",
+        answer: "Recalculate your BMR every time you lose or gain 10+ pounds, change your activity level significantly, or every 2-3 months during active weight loss. A smaller body requires fewer calories to maintain, so your calorie targets need periodic adjustment to continue making progress toward your goals."
       },
       {
-        question: "What is 'Starvation Mode'?",
-        answer: "It's a metabolic adaptation where the body slows down energy expenditure to preserve energy during severe calorie restriction. Moderate deficits don't typically cause this."
-      },
-      {
-        question: "Do men have higher BMRs than women?",
-        answer: "Generally, yes. Men tend to have more muscle mass and less body fat than women of the same weight, leading to a higher metabolic rate."
-      },
-      {
-        question: "Does drinking water boost BMR?",
-        answer: "Drinking cold water can temporarily boost metabolism slightly as the body works to warm it up, but the effect is minimal for overall weight loss."
-      },
-      {
-        question: "How do I use BMR for weight gain?",
-        answer: "To gain weight (muscle), you need to eat in a surplus. Aim for 250-500 calories above your TDEE combined with resistance training."
+        question: "What is metabolic adaptation (starvation mode) and how do I avoid it?",
+        answer: "Metabolic adaptation occurs when your body reduces energy expenditure in response to prolonged severe calorie restriction. Symptoms include feeling cold, lethargic, weak, and experiencing weight loss plateaus. Avoid it by maintaining a moderate calorie deficit (20-25% below TDEE), including diet breaks (eating at maintenance for 1-2 weeks periodically), preserving muscle mass through resistance training, and never eating below your BMR long-term."
       }
     ],
 
@@ -212,8 +200,8 @@ export default function BMRCalculatorPage() {
   return (
     <ToolPageLayout
       header={{
-        title: "BMR Calculator - Advanced Basal Metabolic Rate Analysis",
-        description: "Calculate your BMR (Basal Metabolic Rate) with our advanced calculator. Get accurate calorie needs, TDEE analysis, weight management goals, and personalized nutrition recommendations.",
+        title: "BMR Calculator — Basal Metabolic Rate & TDEE Analysis",
+        description: "Calculate your BMR using Mifflin-St Jeor, Harris-Benedict & Katch-McArdle equations. Get TDEE for 5 activity levels, calorie targets for weight loss, maintenance, or muscle gain, and personalized metabolic insights. Free and private.",
         titleSize: "medium",
         descriptionSize: "small",
         color: "blue"
@@ -229,9 +217,9 @@ export default function BMRCalculatorPage() {
       }
       toolContent={toolContent}
       expectedMetadata={{
-        title: "BMR Calculator - Calculate Metabolic Rate",
+        title: "BMR Calculator — Calculate Basal Metabolic Rate & TDEE Free (2026)",
         description:
-          "Calculate your Basal Metabolic Rate (BMR), TDEE estimate, and calorie targets for weight loss, maintenance, or gain.",
+          "Free BMR calculator using Mifflin-St Jeor, Harris-Benedict & Katch-McArdle equations. Get your basal metabolic rate, TDEE for 5 activity levels, and calorie targets for weight loss, maintenance, or muscle gain. Private & instant.",
         path: "/calculator/bmr-calculator"
       }}
     />

@@ -44,28 +44,6 @@ export const metadata: Metadata = {
   ...baseMetadata,
   applicationName: "FastTools",
   category: "Finance Tools",
-  keywords: [
-    "credit card payoff calculator",
-    "free credit card payoff calculator",
-    "credit card debt calculator",
-    "debt payoff calculator",
-    "payoff timeline",
-    "interest savings",
-    "avalanche method",
-    "snowball method",
-    "debt repayment plan",
-    "extra payment calculator",
-    "monthly payment to pay off debt",
-    "how long to pay off credit card",
-    "debt free date calculator",
-    "interest rate calculator",
-    "apr credit card calculator",
-    "how to pay off credit card debt fast",
-    "credit card debt payoff strategy",
-    "debt free calculator",
-    "pay off credit card calculator",
-    "credit card payoff timeline"
-  ]
 }
 
 export default function CreditCardPayoffPage() {

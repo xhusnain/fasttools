@@ -40,38 +40,6 @@ export const metadata: Metadata = {
   ...baseMetadata,
   applicationName: "FastTools",
   category: "Finance Tools",
-  keywords: [
-    "fasttools",
-    "fast tools",
-    "tax calculator",
-    "income tax calculator",
-    "salary tax calculator",
-    "gst calculator",
-    "vat calculator",
-    "sales tax calculator",
-    "capital gains tax calculator",
-    "property tax calculator",
-    "business tax calculator",
-    "self employment tax calculator",
-    "tax return estimator",
-    "tax refund calculator",
-    "paycheck calculator",
-    "net salary calculator",
-    "gross to net calculator",
-    "tax bracket calculator",
-    "marginal tax rate calculator",
-    "effective tax rate calculator",
-    "us tax calculator",
-    "uk tax calculator",
-    "canada tax calculator",
-    "australia tax calculator",
-    "germany tax calculator",
-    "india tax calculator",
-    "pakistan tax calculator",
-    "tax planning tool",
-    "free tax calculator",
-    "online tax calculator"
-  ]
 }
 
 export default function TaxCalculatorPage() {

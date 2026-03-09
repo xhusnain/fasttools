@@ -13,22 +13,15 @@ const toolConfig = createToolConfig({
   toolName: "Markdown Previewer",
   description:
     "Write and preview Markdown with live rendering for README, docs, and publishing workflows.",
-  metaTitle: "Markdown Previewer (Live GFM Editor)",
+  metaTitle: "Markdown Previewer — Live Markdown Editor with GFM Support Free (2026)",
   metaDescription:
-    "Preview Markdown instantly with GitHub Flavored Markdown support. Useful for README writing, technical docs, and content drafting.",
+    "Free online Markdown previewer with live rendering. Write and preview Markdown with GitHub Flavored Markdown support — tables, code blocks, task lists. Perfect for README files and docs.",
   path: "/dev-tools/markdown-previewer",
-  keywords: [
-    "markdown previewer",
-    "live markdown editor",
-    "github flavored markdown",
-    "markdown to html preview",
-    "readme editor",
-  ],
 
   header: {
-    title: "Markdown Previewer",
+    title: "Live Markdown Editor & Previewer",
     description:
-      "Edit Markdown and see formatted output in real time with a fast side-by-side workflow.",
+      "Write Markdown and see the rendered HTML preview in real time. Supports GitHub Flavored Markdown (GFM) with tables, code blocks, task lists, and syntax highlighting. Perfect for README files, documentation, and blog posts.",
     titleSize: "medium",
     descriptionSize: "small",
     color: "blue",
@@ -65,7 +58,7 @@ const toolConfig = createToolConfig({
       "Useful for README files, documentation, and blog post drafting",
     ],
     overview:
-      "Use this editor to write Markdown and validate output before publishing. It is useful for README files, internal docs, and blog content where formatting accuracy matters.",
+      "Write and preview Markdown in real time with this free online editor. Type or paste Markdown in the editor panel and see the rendered HTML preview update instantly as you type. Supports full GitHub Flavored Markdown (GFM) including tables, fenced code blocks with syntax highlighting, task lists, strikethrough, and autolinks. Perfect for writing GitHub README files, project documentation, blog posts, and technical docs. The side-by-side layout lets you see exactly how your Markdown will look when published.",
 
     howToSteps: [
       "Paste or write Markdown in the editor panel.",

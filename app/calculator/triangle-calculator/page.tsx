@@ -11,9 +11,9 @@ import { Calculator, Triangle, Brain, BookOpen, Square } from "lucide-react"
 import { GTable } from "@/ui/gtable"
 
 const baseMetadata = createMetadata({
-    title: "Triangle Calculator - Geometry & Angles",
+    title: "Triangle Calculator — Solve Area, Angles & Sides Free (2026)",
     description:
-        "Solve triangles by SSS, SAS, ASA, AAS, or SSA and calculate area, perimeter, angles, and radius values.",
+        "Free triangle calculator to solve any triangle by SSS, SAS, ASA, AAS, or SSA. Calculate area (Heron's formula), perimeter, all angles, heights, medians, inradius, circumradius, and triangle type classification instantly.",
     path: "/calculator/triangle-calculator",
     breadcrumbs: [
         { label: "Calculator", href: "/calculator" },
@@ -42,89 +42,40 @@ export const metadata: Metadata = {
     ...baseMetadata,
     applicationName: "FastTools",
     category: "Geometry",
-    keywords: [
-        "fasttools",
-        "fast tools",
-        "triangle calculator",
-        "triangle area calculator",
-        "triangle perimeter calculator",
-        "triangle angle calculator",
-        "triangle height calculator",
-        "triangle sides calculator",
-        "right triangle calculator",
-        "equilateral triangle calculator",
-        "isosceles triangle calculator",
-        "scalene triangle calculator",
-        "triangle solver",
-        "triangle calculator online",
-        "free triangle calculator",
-        "triangle calculator with steps",
-        "triangle side and angle calculator",
-        "calculate triangle area",
-        "calculate triangle perimeter",
-        "calculate triangle angles",
-        "find missing side of triangle",
-        "triangle area from coordinates",
-        "triangle angle from sides",
-        "triangle perimeter formula",
-        "triangle angle formula",
-        "triangle side formula",
-        "triangle calculator by sides",
-        "triangle calculator by angles",
-        "triangle calculator by base and height",
-        "triangle area calculation formula",
-        "triangle area calculator using heron formula",
-        "triangle calculator heron's formula",
-        "right angled triangle calculator",
-        "triangle geometry solver",
-        "triangle height from sides calculator",
-        "triangle formulas",
-        "triangle theorems",
-        "triangle rules",
-        "triangle geometry formulas",
-        "heron's formula",
-        "pythagorean theorem",
-        "law of sines",
-        "law of cosines",
-        "triangle properties",
-        "triangle basics",
-        "geometry calculator",
-        "trigonometry calculator",
-        "angle calculator",
-        "side length calculator"
-    ]
 }
 
 export default function TriangleCalculatorPage() {
     const toolContent = {
         toolName: "Triangle Calculator",
-        overview: "Advanced triangle calculator with comprehensive geometry calculations including area, perimeter, angles, heights, medians, inradius, and circumradius. Supports all triangle solving methods: SSS, SAS, ASA, AAS, and SSA.",
+        overview: "Solve any triangle by entering known sides and angles using SSS, SAS, ASA, AAS, or SSA methods with our free triangle calculator. The tool computes triangle area via Heron's formula, base-height method, or SAS formula; finds all unknown angles using the Law of Cosines and Law of Sines; and calculates perimeter, semiperimeter, all three heights (altitudes), medians, inradius, circumradius, and triangle type classification (equilateral, isosceles, scalene, right, obtuse, acute). Results display in both degrees and radians with 6-decimal precision suitable for geometry homework, engineering structural analysis, architectural design, surveying, and construction layout.",
 
         howToSteps: [
-            "Choose Method: Select the solving method based on your known values (SSS, SAS, ASA, AAS, or SSA).",
-            "Enter Values: Input the known side lengths and/or angles.",
-            "Calculate: Click 'Calculate' to find all unknown properties.",
-            "Analyze: Review the detailed results including area, perimeter, heights, and more."
+            "Choose Solving Method: Select SSS (three sides), SAS (two sides + included angle), ASA (two angles + included side), AAS (two angles + non-included side), or SSA (two sides + non-included angle) based on your known values.",
+            "Enter Known Values: Input side lengths in any unit and angles in degrees or radians. The calculator validates inputs against the Triangle Inequality Theorem before solving.",
+            "Calculate All Properties: Click 'Calculate' to find all unknown sides, angles, area (via Heron's formula, base-height, or SAS), perimeter, semiperimeter, heights, medians, inradius, and circumradius.",
+            "Analyze Results: Review the triangle type classification (equilateral, isosceles, scalene, right, obtuse, acute), copy individual values, and access calculation history for comparison."
         ],
 
         features: [
-            "Calculate triangle area using multiple formulas",
-            "Calculate triangle perimeter and semiperimeter",
-            "Calculate all triangle angles from sides",
-            "Calculate triangle heights and medians",
-            "Calculate inradius and circumradius",
-            "Support for SSS, SAS, ASA, AAS, SSA methods",
-            "Degree and radian angle units",
-            "Triangle type classification",
-            "Calculation history and copy results",
-            "Professional-grade accuracy"
+            "Multiple Area Formulas: Calculate triangle area using Heron's formula (from three sides), base-times-height (A = 1/2 bh), or SAS formula (A = 1/2 ab sin C).",
+            "Perimeter & Semiperimeter: Compute total perimeter and semiperimeter used in Heron's formula and inradius calculations.",
+            "Angle Solver: Find all three angles from sides using the Law of Cosines and verify with the 180-degree angle sum theorem.",
+            "Heights & Medians: Calculate all three altitudes (heights) and all three medians connecting vertices to opposite midpoints.",
+            "Inradius & Circumradius: Compute the inscribed circle radius (r) and circumscribed circle radius (R) with Euler's inequality verification.",
+            "Five Solving Methods: Full support for SSS, SAS, ASA, AAS, and ambiguous SSA (with 0, 1, or 2 solution detection).",
+            "Degree & Radian Support: Toggle between degree and radian angle units for academic and engineering applications.",
+            "Triangle Type Classification: Automatically identify equilateral, isosceles, scalene, right, obtuse, and acute triangles.",
+            "History & Export: Save recent calculations and copy individual values to clipboard for reports and assignments.",
+            "6-Decimal Precision: Professional-grade accuracy suitable for engineering, surveying, and architectural applications."
         ],
 
         useCases: [
-            "Education: Learning and teaching geometry concepts.",
-            "Engineering: Structural analysis and surveying.",
-            "Architecture: Design and construction planning.",
-            "Construction: Roof framing and layout."
+            "Geometry Homework: Solve SSS, SAS, ASA, AAS, and SSA triangle problems with step-by-step results for high school and college geometry courses.",
+            "Structural Engineering: Analyze truss systems, beam load triangles, and stress distribution using the Law of Cosines and Law of Sines.",
+            "Surveying & Land Measurement: Calculate unknown distances and bearings between survey points using triangulation methods.",
+            "Architecture & Construction: Design roof pitch angles, rafter lengths, stairway stringers, and gable framing with precise triangle geometry.",
+            "Computer Graphics & Game Development: Compute triangle areas and angles for 3D mesh rendering, collision detection, and polygon tessellation.",
+            "Navigation & Physics: Apply triangle calculations to vector decomposition, force diagrams, projectile trajectories, and bearing-distance problems."
         ],
 
         aboutTool: (
@@ -292,8 +243,8 @@ export default function TriangleCalculatorPage() {
     return (
         <ToolPageLayout
             header={{
-                title: "Triangle Calculator",
-                description: "Advanced triangle calculator with comprehensive geometry calculations including area, perimeter, angles, heights, medians, inradius, and circumradius. Supports all triangle solving methods: SSS, SAS, ASA, AAS, and SSA.",
+                title: "Triangle Calculator — Solve Any Triangle by Sides or Angles (2026)",
+                description: "Free triangle solver supporting SSS, SAS, ASA, AAS, and SSA methods. Compute triangle area using Heron's formula, base-height, or SAS; find all unknown angles via the Law of Cosines and Law of Sines; calculate perimeter, semiperimeter, heights, medians, inradius, circumradius, and classify triangle type (equilateral, isosceles, scalene, right, obtuse).",
                 titleSize: "medium",
                 descriptionSize: "small",
                 color: "blue"
@@ -309,9 +260,9 @@ export default function TriangleCalculatorPage() {
             }
             toolContent={toolContent}
             expectedMetadata={{
-                title: "Triangle Calculator - Area, Perimeter & Angles",
+                title: "Triangle Calculator — Solve Area, Angles & Sides Free (2026)",
                 description:
-                    "Solve triangles by SSS, SAS, ASA, AAS, or SSA and calculate area, perimeter, angles, and radius values.",
+                    "Free triangle calculator to solve any triangle by SSS, SAS, ASA, AAS, or SSA. Calculate area (Heron's formula), perimeter, all angles, heights, medians, inradius, circumradius, and triangle type classification instantly.",
                 path: "/calculator/triangle-calculator"
             }}
         />

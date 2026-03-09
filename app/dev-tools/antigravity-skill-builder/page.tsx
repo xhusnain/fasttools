@@ -13,19 +13,13 @@ const toolConfig = createToolConfig({
   toolName: "Agent Skill Builder",
   description:
     "Generate structured `SKILL.md` files for agent workflows and reusable task automation.",
-  metaTitle: "Agent Skill Builder for SKILL.md Workflows",
+  metaTitle: "AI Agent Skill Builder — Create SKILL.md Files for Coding Agents Free (2026)",
   metaDescription:
     "Build and export `SKILL.md` files for agent task workflows. Useful for repeatable coding, QA, and operations instructions.",
   path: "/dev-tools/antigravity-skill-builder",
-  keywords: [
-    "skill.md builder",
-    "agent skill builder",
-    "ai agent workflow file",
-    "developer agent skills",
-  ],
 
   header: {
-    title: "Agent Skill Builder",
+    title: "AI Agent Skill Builder (SKILL.md)",
     description:
       "Create reusable `SKILL.md` instructions for agent-driven development workflows.",
     titleSize: "medium",

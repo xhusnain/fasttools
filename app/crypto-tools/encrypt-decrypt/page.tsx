@@ -7,22 +7,15 @@ const toolConfig = createToolConfig({
   toolName: "Text Encrypt Decrypt",
   description:
     "Encrypt and decrypt text using common symmetric algorithms for development and interoperability testing.",
-  metaTitle: "Text Encrypt/Decrypt Tool (AES, TripleDES, RC4)",
+  metaTitle: "Text Encrypt Decrypt Online — AES-256 Encryption & Decryption Free (2026)",
   metaDescription:
-    "Encrypt and decrypt text with algorithm and key controls. Useful for secure-message demos, compatibility checks, and integration testing.",
+    "Free online text encryption and decryption tool. Encrypt text with AES-256, TripleDES, or RC4 using a password. Decrypt ciphertext back to plaintext instantly in your browser.",
   path: "/crypto-tools/encrypt-decrypt",
-  keywords: [
-    "text encrypt decrypt",
-    "aes encryption tool",
-    "online text decryption",
-    "encrypt string online",
-    "cipher tool",
-  ],
 
   header: {
-    title: "Text Encrypt/Decrypt",
+    title: "Online Text Encrypt & Decrypt Tool",
     description:
-      "Test encryption and decryption workflows quickly with configurable algorithm settings.",
+      "Encrypt text with AES-256, TripleDES, or RC4 using a password key. Decrypt ciphertext back to plaintext instantly. All encryption runs locally in your browser — no data sent to servers. Supports Base64-encoded output for safe sharing.",
     titleSize: "medium",
     descriptionSize: "small",
     color: "green",
@@ -60,73 +53,79 @@ const toolConfig = createToolConfig({
       "All encryption/decryption runs locally — no data sent to servers",
     ],
     overview:
-      "Use this tool to encrypt plain text and decrypt ciphertext during application testing and interoperability checks. It is useful for development, not a substitute for managed key infrastructure in production systems.",
+      "Encrypt and decrypt text online with this free browser-based tool. Choose from AES-256 (industry standard), TripleDES, or RC4 symmetric encryption algorithms. Enter your plaintext and a password key to generate Base64-encoded ciphertext. Switch to decrypt mode, paste the ciphertext and the same password, and recover the original text instantly. All cryptographic operations run entirely in your browser using the Web Crypto API — no data is transmitted to any server. Ideal for developers testing encryption features, verifying ciphertext interoperability across platforms, and learning symmetric cryptography concepts.",
 
     howToSteps: [
-      "Choose an algorithm and enter the plaintext you want to protect.",
-      "Provide a key and generate encrypted output.",
-      "Switch to decrypt mode and test ciphertext recovery with the same key.",
-      "Copy outputs for integration, troubleshooting, or QA validation.",
+      "Enter your plaintext message and choose an encryption algorithm (AES-256 recommended).",
+      "Set a strong password key and click Encrypt to generate Base64-encoded ciphertext.",
+      "Switch to Decrypt mode, paste the ciphertext, and enter the same password to recover plaintext.",
+      "Copy the encrypted or decrypted output for use in your application, API, or testing workflow.",
     ],
 
     features: [
-      "Symmetric encryption/decryption workflow",
-      "Algorithm selection controls",
-      "Key visibility toggles for safer entry",
-      "Immediate output for test loops",
-      "Simple browser-based cryptography checks",
+      "AES-256, TripleDES, and RC4 symmetric encryption algorithms",
+      "Password-based key derivation for encrypt and decrypt operations",
+      "Base64-encoded ciphertext output for safe text transmission",
+      "Client-side only — no data sent to servers, fully private",
+      "Instant encrypt/decrypt toggle for round-trip verification testing",
     ],
 
     useCases: [
-      "Application encryption feature testing",
-      "Troubleshooting ciphertext interoperability",
-      "Training and demos for cryptography basics",
-      "Pre-integration checks for secure text pipelines",
+      "Testing AES encryption and decryption in web applications",
+      "Verifying ciphertext compatibility across programming languages",
+      "Encrypting sensitive text before sharing via email or messaging",
+      "Learning symmetric cryptography concepts with live examples",
     ],
 
     aboutTool: (
       <div className="space-y-6 text-muted-foreground">
         <p>
-          Encryption tool pages in search perform best when they clearly separate
-          practical utility from security guarantees. This page prioritizes that
-          clarity: it supports fast testing while avoiding misleading claims.
+          This text encryption tool uses symmetric algorithms where the same password encrypts and decrypts data. AES-256 (Advanced Encryption Standard with 256-bit keys) is the recommended choice — it is used by governments, banks, and enterprises worldwide for protecting classified and sensitive data.
         </p>
         <p>
-          For production use, pair cryptography with robust key management,
-          access control, and transport security rather than relying on a
-          standalone utility workflow.
+          For production systems, combine encryption with proper key management (AWS KMS, HashiCorp Vault), transport security (TLS), and access controls. This tool is designed for development testing, learning, and quick verification — not as a replacement for managed cryptographic infrastructure.
         </p>
       </div>
     ),
 
     proTip:
-      "Use modern algorithms and strong key handling policies for production systems, then validate round-trip behavior with known test vectors.",
+      "Always use AES-256 for new projects — TripleDES and RC4 are legacy algorithms with known weaknesses. Test round-trip encrypt/decrypt with known test vectors before deploying.",
 
     faqs: [
       {
-        question: "Can I use this tool for AES encryption?",
+        question: "What is AES-256 encryption?",
         answer:
-          "Yes. The tool supports common symmetric options including AES and lets you test encryption/decryption behavior.",
+          "AES-256 is the Advanced Encryption Standard with a 256-bit key, the industry standard for symmetric encryption used by governments and enterprises worldwide.",
       },
       {
-        question: "Is browser encryption enough for production security?",
+        question: "Is my data safe using this encryption tool?",
         answer:
-          "It is useful for testing and demos. Production security still requires managed key lifecycle, secure storage, and policy controls.",
+          "Yes. All encryption and decryption runs locally in your browser using the Web Crypto API. No data is sent to any server.",
       },
       {
-        question: "Why does decryption fail with the same text?",
+        question: "Why does decryption fail with the correct password?",
         answer:
-          "Failures usually come from mismatched key/algorithm or modified ciphertext formatting between steps.",
+          "Common causes include algorithm mismatch (encrypting with AES but decrypting with TripleDES), modified ciphertext, or extra whitespace in the password.",
       },
       {
-        question: "Can I share encrypted output safely?",
+        question: "What is the difference between AES, TripleDES, and RC4?",
         answer:
-          "You can share ciphertext, but key exchange and storage must be handled securely to maintain confidentiality.",
+          "AES-256 is the modern standard with strong security. TripleDES applies DES three times (slower, legacy). RC4 is a stream cipher considered insecure for new applications.",
       },
       {
-        question: "Does this replace a full cryptography library?",
+        question: "Can I encrypt files with this tool?",
         answer:
-          "No. It is a utility for quick checks, while production systems should rely on vetted libraries and architecture-level controls.",
+          "This tool encrypts text strings only. For file encryption, use dedicated tools like GPG, OpenSSL, or your operating system's built-in encryption features.",
+      },
+      {
+        question: "Is the encrypted output safe to share?",
+        answer:
+          "Yes, ciphertext is safe to share publicly — it cannot be decrypted without the password. However, always share the password through a separate secure channel.",
+      },
+      {
+        question: "Should I use this for production encryption?",
+        answer:
+          "Use it for development testing and learning. Production systems should use managed key infrastructure (AWS KMS, Azure Key Vault) with proper key rotation and access controls.",
       },
     ],
 

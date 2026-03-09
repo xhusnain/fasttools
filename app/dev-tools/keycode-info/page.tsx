@@ -7,22 +7,15 @@ const toolConfig = createToolConfig({
   toolName: "Keycode Info",
   description:
     "Inspect keyboard event values including key, code, keyCode, location, and modifier keys.",
-  metaTitle: "Keycode Info (Keyboard Event Inspector)",
+  metaTitle: "JavaScript Keycode Finder — Get Keyboard Event Key Codes Free (2026)",
   metaDescription:
-    "Check JavaScript keyboard event values in real time. Useful for shortcut handling and keydown debugging.",
+    "Free JavaScript keycode finder. Press any key to see its keyCode, key, code, which, and event properties. Debug keyboard shortcuts, keydown/keyup events, and input handling.",
   path: "/dev-tools/keycode-info",
-  keywords: [
-    "keycode info",
-    "keyboard event keycode",
-    "event.code tester",
-    "javascript keydown tool",
-    "keyboard shortcut debugging",
-  ],
 
   header: {
-    title: "Keycode Info",
+    title: "JavaScript Keycode Finder",
     description:
-      "Press any key to inspect keyboard event properties for frontend debugging.",
+      "Press any key to instantly see its JavaScript event properties — keyCode, key, code, which, location, and modifier states (Shift, Ctrl, Alt, Meta). Essential for building keyboard shortcuts and debugging keydown/keyup events.",
     titleSize: "medium",
     descriptionSize: "small",
     color: "blue",
@@ -59,7 +52,7 @@ const toolConfig = createToolConfig({
       "Essential reference for building keyboard shortcut handlers",
     ],
     overview:
-      "Use this page to inspect keyboard event properties while building shortcuts, accessibility controls, and form interactions. It helps verify exact key behavior across browsers and layouts.",
+      "Find JavaScript key codes instantly by pressing any key on your keyboard. This tool displays all keyboard event properties in real time — keyCode (deprecated but still used), key (modern standard), code (physical key location), which, location, and modifier states (Shift, Ctrl, Alt, Meta). Essential for building keyboard shortcuts, game controls, accessibility features, and form input handlers. Works with all keyboard layouts and special keys including function keys, arrow keys, and numpad.",
 
     howToSteps: [
       "Focus the capture area in the tool.",

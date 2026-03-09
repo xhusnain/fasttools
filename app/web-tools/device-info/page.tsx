@@ -14,23 +14,15 @@ const toolConfig = createToolConfig({
   toolName: "Device Information",
   description:
     "View browser and device diagnostics including user agent, viewport, screen details, OS, and hardware signals.",
-  metaTitle: "Device Information Checker (Browser, Screen, User Agent)",
+  metaTitle: "Device Info Checker — Browser, Screen Resolution, User Agent & OS Detection Free (2026)",
   metaDescription:
-    "Check your current device and browser details: user agent, screen size, pixel ratio, OS, language, and viewport metrics.",
+    "Detect your browser name and version, screen resolution, viewport size, device pixel ratio, operating system, user agent string, touch support, language, and timezone — free online device information tool.",
   path: "/web-tools/device-info",
-  keywords: [
-    "device information",
-    "user agent checker",
-    "screen resolution checker",
-    "browser info",
-    "viewport size",
-    "device diagnostics",
-  ],
 
   header: {
     title: "Device Information",
     description:
-      "See real-time browser and screen data for your current device.",
+      "Instantly detect and display your complete device fingerprint — browser name, version, and rendering engine, screen resolution and viewport dimensions, device pixel ratio (DPR), operating system and version, user agent string, touch/pointer support, preferred language, timezone, and network connection type — all from browser APIs with no installation required.",
     titleSize: "medium",
     descriptionSize: "small",
   },
@@ -72,71 +64,82 @@ const toolConfig = createToolConfig({
       "Useful for debugging responsive design and browser compatibility issues",
     ],
     overview:
-      "This tool gives a quick technical snapshot of the browser and device currently visiting the page. It helps with responsive debugging, support triage, and QA checks across desktop and mobile environments.",
+      "This free device information checker provides a comprehensive real-time technical snapshot of your browser and device environment using standard browser APIs. Detect your browser name, version number, and rendering engine (Blink, Gecko, WebKit). View your screen resolution (physical pixels), CSS viewport dimensions, and device pixel ratio (DPR/Retina scaling factor) for responsive design debugging. Identify your operating system (Windows 10/11, macOS Sonoma/Sequoia, Linux, iOS, Android) and version. Copy the full user agent string for bug reports, support tickets, and compatibility testing. Check touch and pointer support capabilities, preferred language and locale settings, timezone information, and network connection type (WiFi, 4G, 5G) when available through the Network Information API. Essential for frontend developers debugging responsive layouts across devices, QA engineers documenting test environments, IT support teams collecting diagnostic information from end users, and web designers verifying CSS breakpoint behavior on different screen sizes.",
 
     howToSteps: [
-      "Open this page from the device you want to inspect.",
-      "Review screen and browser sections for resolution, pixel ratio, user agent, and OS data.",
-      "Copy the user agent string when needed for support tickets or compatibility checks.",
+      "Open this page on the device you want to inspect — works on desktop browsers (Chrome, Firefox, Safari, Edge), mobile phones (iOS Safari, Android Chrome), and tablets.",
+      "Review the screen section for physical resolution, CSS viewport dimensions, device pixel ratio (DPR), screen orientation, and color depth.",
+      "Check the browser section for browser name, version, rendering engine, user agent string, preferred language, and timezone.",
+      "View OS detection results including operating system name, version, and platform architecture.",
+      "Copy the full user agent string or any specific values for support tickets, bug reports, QA documentation, or compatibility testing records.",
     ],
 
     features: [
-      "Screen size, orientation, and pixel ratio",
-      "Viewport and browser metadata",
-      "User agent and platform details",
-      "Optional hardware and network hints when available",
-      "No installation required",
+      "Screen resolution detection with physical pixel dimensions, CSS viewport size, and device pixel ratio (DPR/Retina scale)",
+      "Browser identification including name, version number, rendering engine (Blink/Gecko/WebKit), and JavaScript engine",
+      "Full user agent string display with one-click copy for bug reports and compatibility documentation",
+      "Operating system detection for Windows, macOS, Linux, ChromeOS, iOS, and Android with version numbers",
+      "Touch and pointer capability detection, screen orientation, color depth, and preferred language/locale",
+      "Network connection type (WiFi, 4G, 5G, Ethernet) via Network Information API when browser-supported",
     ],
 
     useCases: [
-      "Debugging responsive layout differences between devices",
-      "Collecting browser details for bug reports",
-      "Validating mobile vs desktop environment assumptions",
-      "Checking user-agent values during integration testing",
+      "Debugging responsive CSS layout issues by checking exact viewport dimensions, device pixel ratio, and screen orientation across different devices",
+      "Collecting browser name, version, OS, and user agent string for detailed bug reports and QA test environment documentation",
+      "IT help desk support — have end users visit this page and share their device info to speed up troubleshooting without manual question-and-answer",
+      "Verifying mobile vs desktop vs tablet detection logic by comparing real device properties against your application's responsive breakpoints",
+      "Testing user-agent-dependent code paths and browser feature detection during cross-browser compatibility development",
     ],
 
     aboutTool: (
       <div className="space-y-6 text-muted-foreground">
         <p>
-          Device and browser metadata can explain why a page behaves differently
-          across environments. This tool surfaces high-value diagnostics in one
-          place to speed up troubleshooting.
+          Modern web browsers expose a rich set of device and environment information through JavaScript APIs. The navigator object provides user agent strings, platform identification, language preferences, online status, and hardware concurrency (CPU cores). The screen object reports physical display resolution, color depth, and pixel depth. The window object reveals CSS viewport dimensions (innerWidth/innerHeight) and device pixel ratio (devicePixelRatio) — the critical scaling factor that determines how CSS pixels map to physical display pixels on Retina, HiDPI, and high-density mobile screens. The Network Information API (navigator.connection) can report connection type, effective bandwidth, and round-trip time estimates on supporting browsers.
         </p>
         <p>
-          Data is read from browser APIs on your current device. It is intended
-          for technical checks, not user tracking.
+          This device information tool reads all available browser APIs and presents the data in a structured, human-readable format. It is designed for technical diagnostics, not user tracking — all data is read and displayed locally in your browser without being sent to any server. The information is especially valuable for web developers debugging why responsive layouts break at specific viewport sizes, QA engineers documenting exact test environments for reproducibility, IT support teams collecting device specifications from end users remotely, and designers verifying that their CSS breakpoints and media queries trigger correctly across real device screen sizes and pixel densities.
         </p>
       </div>
     ),
 
     proTip:
-      "Capture this output alongside screenshots when reporting frontend bugs to reduce back-and-forth during triage.",
+      "When filing frontend bug reports, capture this device info output alongside a screenshot and browser console errors. Include the exact viewport dimensions, device pixel ratio, browser version, and OS — this eliminates 80% of the back-and-forth questions during triage and makes bugs reproducible on the first attempt.",
 
     faqs: [
       {
-        question: "What information does this tool show?",
+        question: "What device and browser information does this tool detect?",
         answer:
-          "It shows screen metrics, orientation, viewport details, user agent, browser/platform data, and additional device hints when supported by your browser.",
+          "It detects and displays: browser name and version (Chrome, Firefox, Safari, Edge), rendering engine (Blink, Gecko, WebKit), operating system and version, full user agent string, screen resolution in physical pixels, CSS viewport dimensions, device pixel ratio (DPR/Retina scale), screen orientation, color depth, touch/pointer support, preferred language and locale, timezone, and network connection type when available.",
       },
       {
-        question: "Why do I need a user agent checker?",
+        question: "What is device pixel ratio (DPR) and why does it matter for web development?",
         answer:
-          "User agent strings are useful for compatibility debugging, support diagnostics, and testing conditional logic in analytics or application code.",
+          "Device pixel ratio is the ratio of physical display pixels to CSS pixels. A DPR of 2 (common on Retina displays) means each CSS pixel maps to a 2x2 grid of physical pixels. Understanding DPR is critical for responsive design — it affects image sharpness (use 2x images for Retina), CSS media queries using resolution/min-resolution, canvas rendering, and why layouts may appear different sizes on screens with identical CSS viewport dimensions.",
       },
       {
-        question: "Can I use this on mobile devices?",
+        question: "How do I find my user agent string for a bug report?",
         answer:
-          "Yes. Open the page directly on your phone or tablet to inspect mobile browser and screen values.",
+          "Open this page and the full user agent string is displayed automatically. Click the copy button to copy it to your clipboard. Include this string in bug reports, support tickets, and compatibility issue documentation so developers can identify your exact browser, version, OS, and rendering engine for reproduction.",
       },
       {
-        question: "Is this data shared externally?",
+        question: "Can I check device info on my iPhone, Android phone, or tablet?",
         answer:
-          "For normal use, values are read and displayed in-browser so you can inspect them locally.",
+          "Yes. Open this page directly in any mobile browser (iOS Safari, Chrome for Android, Samsung Internet, Firefox Mobile) to see your mobile device's screen resolution, viewport dimensions, DPR, OS version, and user agent. This is especially useful for testing responsive layouts and debugging mobile-specific rendering issues.",
       },
       {
-        question: "Is this tool free?",
+        question: "What is the difference between screen resolution and viewport size?",
         answer:
-          "Yes. It is free to use with no signup.",
+          "Screen resolution is the total physical pixel dimensions of your display (e.g., 2560x1440). Viewport size is the CSS pixel area available to the web page after accounting for browser chrome, toolbars, and scrollbars (e.g., 1440x900). Responsive CSS media queries use viewport dimensions, not screen resolution, which is why both values are important for debugging layout breakpoints.",
+      },
+      {
+        question: "Is my device information stored or shared with any server?",
+        answer:
+          "No. All device detection runs 100% client-side using standard browser JavaScript APIs (navigator, screen, window objects). No data is transmitted to any server, stored in any database, or shared with third parties. The information is displayed only in your browser for your inspection.",
+      },
+      {
+        question: "Is this device information checker free to use?",
+        answer:
+          "Yes, completely free with no signup, no installation, and no usage limits. Works instantly in any modern browser on desktop computers, laptops, tablets, and mobile phones.",
       },
     ],
 

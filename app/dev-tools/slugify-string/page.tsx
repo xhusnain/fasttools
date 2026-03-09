@@ -7,22 +7,15 @@ const toolConfig = createToolConfig({
   toolName: "Slugify String",
   description:
     "Convert text into URL-safe slugs for routes, file names, and stable identifiers.",
-  metaTitle: "Slugify String (URL Slug Generator)",
+  metaTitle: "URL Slug Generator — Slugify Text to SEO-Friendly URLs Free (2026)",
   metaDescription:
-    "Generate clean URL slugs from titles and text. Useful for SEO-friendly routes and content management workflows.",
+    "Free URL slug generator. Convert text and titles into clean, SEO-friendly URL slugs. Lowercase, remove special characters, replace spaces with hyphens. Used by WordPress and Next.js.",
   path: "/dev-tools/slugify-string",
-  keywords: [
-    "slugify string",
-    "url slug generator",
-    "slug generator",
-    "seo friendly url",
-    "text to slug",
-  ],
 
   header: {
-    title: "Slugify String",
+    title: "URL Slug Generator (Slugify Text)",
     description:
-      "Turn raw text into clean, URL-safe slugs for publishing and routing workflows.",
+      "Convert text and titles into clean, SEO-friendly URL slugs. Lowercases text, removes special characters, replaces spaces with hyphens, and strips accents. Copy the slug with one click.",
     titleSize: "medium",
     descriptionSize: "small",
     color: "blue",
@@ -59,7 +52,7 @@ const toolConfig = createToolConfig({
       "Follows the same slugification rules used by WordPress and Next.js",
     ],
     overview:
-      "Use this tool to transform titles and phrases into normalized slugs. It helps keep URLs readable, stable, and consistent across blogs, docs, ecommerce pages, and CMS workflows.",
+      "Generate clean, SEO-friendly URL slugs from any text with this free online slug generator. Enter a page title, blog post headline, or product name and instantly get a URL-safe slug — lowercase, special characters removed, spaces replaced with hyphens, and accents stripped (é→e, ü→u). Follows the same slugification rules used by WordPress, Next.js, and other popular CMS platforms. Useful for creating blog post URLs, product page routes, documentation paths, and file names.",
 
     howToSteps: [
       "Enter a title or phrase in the input field.",

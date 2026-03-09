@@ -17,11 +17,6 @@ const toolConfig = createToolConfig({
     metaTitle: `Turkey Defrost Time Calculator | Late Turkey Rescue Tool`,
     metaDescription: "Forgot to defrost the turkey? Use our calculator to find the exact defrost time for Fridge or Cold Water methods. Add a reminder to your calendar calculation instantly.",
     path: "/festivals/turkey-defrost-calculator",
-    keywords: [
-        "turkey defrost calculator", "how long to defrost turkey", "when to take turkey out of freezer",
-        "turkey defrost time per lb", "emergency turkey defrost", "christmas turkey calculator",
-        "thanksgiving turkey defrost tool", "frozen turkey thaw time", "turkey thawing time chart"
-    ],
 
     header: {
         title: "🦃 Turkey Defrosting Deadline Calculator",

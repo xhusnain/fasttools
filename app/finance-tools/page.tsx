@@ -187,16 +187,6 @@ export const metadata: Metadata = createMetadata({
     "Use free finance tools for loan, mortgage, tax, salary, savings, and investment planning. Fast, accurate calculators with no signup required.",
   path: "/finance-tools",
   includeSchema: false,
-  keywords: [
-    "finance tools",
-    "finance calculator",
-    "loan calculator",
-    "mortgage calculator",
-    "tax calculator",
-    "investment calculator",
-    "retirement calculator",
-    "salary calculator",
-  ],
   breadcrumbs: [{ label: "Finance Tools", href: "/finance-tools" }],
   itemList: {
     name: "Finance Tools",

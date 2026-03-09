@@ -49,20 +49,6 @@ export const metadata: Metadata = {
   ...baseMetadata,
   applicationName: "FastTools",
   category: "Finance Tools",
-  keywords: [
-    "invoice generator",
-    "free invoice generator",
-    "free invoice maker",
-    "invoice template",
-    "professional invoice",
-    "freelance invoice",
-    "business invoice",
-    "multi-language invoice",
-    "international currency invoice",
-    "USD invoice",
-    "EUR invoice",
-    "GBP invoice"
-  ]
 }
 
 export default function InvoiceGeneratorPage() {

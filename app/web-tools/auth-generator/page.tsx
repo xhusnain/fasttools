@@ -14,23 +14,15 @@ const toolConfig = createToolConfig({
   toolName: "Auth Header Generator",
   description:
     "Generate HTTP Basic, Bearer, and API key headers for API testing and integration workflows.",
-  metaTitle: "Auth Header Generator (Basic, Bearer, API Key)",
+  metaTitle: "Auth Header Generator — Create Basic, Bearer & API Key Headers Free (2026)",
   metaDescription:
-    "Create and decode Basic Auth headers, build Bearer headers, and generate API key headers instantly for Postman, curl, and app testing.",
+    "Generate HTTP Basic Auth headers with Base64 encoding, Bearer token authorization headers for OAuth/JWT, and custom API key headers for Postman, curl, and REST API testing — free online tool.",
   path: "/web-tools/auth-generator",
-  keywords: [
-    "auth header generator",
-    "basic auth generator",
-    "basic auth decode",
-    "bearer token header",
-    "api key header",
-    "authorization header",
-  ],
 
   header: {
     title: "Auth Header Generator",
     description:
-      "Build Authorization headers for Basic, Bearer, and API key authentication.",
+      "Generate HTTP Authorization headers for Basic Auth (Base64-encoded credentials), Bearer token (OAuth 2.0 / JWT), and custom API key authentication — encode, decode, and copy headers ready for Postman, curl, fetch, and any REST client.",
     titleSize: "medium",
     descriptionSize: "small",
   },
@@ -73,72 +65,82 @@ const toolConfig = createToolConfig({
       "Always use HTTPS when sending credentials — Basic Auth is not encrypted",
     ],
     overview:
-      "This tool helps you generate and validate HTTP auth headers without using command-line utilities. It supports Basic Auth encode/decode, Bearer token header formatting, and configurable API key headers for common API clients.",
+      "This free auth header generator lets you create, encode, and decode HTTP Authorization headers directly in your browser without command-line tools. Build Basic Auth headers by entering a username and password to produce a Base64-encoded credential string in the standard 'Authorization: Basic <base64>' format. Generate Bearer token headers for OAuth 2.0, JWT, and personal access token workflows. Configure custom API key headers with flexible header names like X-API-Key, Authorization, or any provider-specific key. Each output is copy-ready for Postman, curl, Insomnia, HTTPie, and frontend fetch/axios requests — ideal for developers, QA engineers, and DevOps teams testing REST APIs and microservice integrations.",
 
     howToSteps: [
-      "Use the Basic Auth Encode tab to create an Authorization header from username and password.",
-      "Use Basic Auth Decode to recover credentials from a Basic header for debugging.",
-      "Use Bearer and API Key tabs to generate ready-to-copy headers for testing tools.",
+      "Select the Basic Auth Encode tab, enter your username and password, and instantly generate the Base64-encoded Authorization header string.",
+      "Switch to Basic Auth Decode to paste an existing Base64 header and recover the original username:password credentials for debugging API authentication failures.",
+      "Use the Bearer Token tab to wrap your OAuth 2.0, JWT, or personal access token in a properly formatted 'Authorization: Bearer <token>' header.",
+      "Configure the API Key tab with a custom header name (X-API-Key, api-key, etc.) and your key value for provider-specific authentication.",
+      "Copy any generated header with one click and paste it into Postman, curl, Insomnia, or your application code.",
     ],
 
     features: [
-      "Basic Auth header generation",
-      "Base64 decode for existing Basic headers",
-      "Bearer token header formatting",
-      "Custom API key header names",
-      "Copy-ready output for Postman/curl/HTTP clients",
+      "Basic Auth header generation with automatic Base64 encoding of username:password credentials",
+      "Base64 decode for existing Basic Authorization headers to recover original credentials",
+      "Bearer token header formatting for OAuth 2.0, JWT, and personal access token authentication",
+      "Custom API key header generation with configurable header names and placement options",
+      "One-click copy output formatted for Postman, curl, Insomnia, HTTPie, and fetch/axios code",
+      "Client-side processing — credentials never leave your browser for maximum security",
     ],
 
     useCases: [
-      "Preparing headers for API testing and QA",
-      "Debugging authentication failures from encoded credentials",
-      "Creating consistent auth templates for team documentation",
-      "Quickly switching between Basic, Bearer, and API key auth models",
+      "Preparing HTTP Authorization headers for REST API testing and integration QA in Postman or curl",
+      "Debugging 401 Unauthorized errors by decoding Base64 Basic Auth credentials to verify username and password",
+      "Creating standardized authentication header templates for team API documentation and onboarding guides",
+      "Rapidly switching between Basic Auth, Bearer token, and API key authentication methods during multi-service testing",
+      "Generating OAuth 2.0 Bearer headers for JWT-based microservice communication testing",
     ],
 
     aboutTool: (
       <div className="space-y-6 text-muted-foreground">
         <p>
-          Authorization headers are required by most API gateways and backend
-          services. This tool reduces manual formatting errors by generating the
-          exact header string for each authentication type.
+          HTTP Authorization headers are the standard mechanism for authenticating API requests across REST, GraphQL, and SOAP services. The three most common authentication schemes — Basic Auth, Bearer tokens, and API keys — each follow specific formatting rules defined by RFC 7235 and RFC 7617. Basic Authentication concatenates username and password with a colon separator, Base64-encodes the result, and prepends the &quot;Basic&quot; scheme identifier. Bearer authentication wraps an opaque token (typically a JWT or OAuth 2.0 access token) with the &quot;Bearer&quot; prefix. API key authentication varies by provider but commonly uses custom headers like X-API-Key.
         </p>
         <p>
-          For Basic Auth, credentials are base64-encoded and should always be
-          sent over HTTPS. For Bearer and API keys, keep secrets scoped and
-          rotated according to your security policy.
+          This auth header generator eliminates manual formatting errors that cause 401 Unauthorized and 403 Forbidden responses during API development. It produces correctly formatted headers you can paste directly into Postman collections, curl commands, Insomnia workspaces, or frontend code using fetch or axios. The decode feature is invaluable for debugging — paste any Base64-encoded Basic Auth string to instantly reveal the underlying credentials without writing terminal commands. All processing runs client-side in your browser, so sensitive credentials like passwords, JWT tokens, and API keys are never transmitted to external servers.
         </p>
       </div>
     ),
 
     proTip:
-      "Treat generated credentials as sensitive data. Use test keys whenever possible and avoid sharing production tokens in screenshots.",
+      "Always use HTTPS when sending Basic Auth headers — Base64 is encoding, not encryption. For production APIs, prefer Bearer tokens with short expiration times and rotate API keys on a regular schedule. Use environment variables in Postman and curl scripts instead of hardcoding credentials.",
 
     faqs: [
       {
-        question: "What is a Basic Auth header?",
+        question: "What is HTTP Basic Authentication and how does Base64 encoding work?",
         answer:
-          "It is an HTTP `Authorization` header in the format `Basic <base64(username:password)>` used by many APIs and legacy integrations.",
+          "HTTP Basic Authentication is defined in RFC 7617. It combines username and password as 'username:password', Base64-encodes the string, and sends it as 'Authorization: Basic <encoded-value>'. Base64 is an encoding scheme (not encryption), so Basic Auth must always be used over HTTPS to protect credentials in transit.",
       },
       {
-        question: "Can this tool decode Basic Auth headers?",
+        question: "How do I decode an existing Basic Auth header to see the username and password?",
         answer:
-          "Yes. Paste a Basic header or raw base64 string in the decode tab to recover username and password for debugging.",
+          "Paste the full 'Authorization: Basic ...' header or just the Base64 string into the decode tab. The tool instantly reverses the Base64 encoding to reveal the original username:password pair — useful for debugging 401 errors and verifying credential mismatches in API integrations.",
       },
       {
-        question: "How do Bearer headers work?",
+        question: "What is a Bearer token and when should I use Bearer authentication?",
         answer:
-          "Bearer headers use the format `Authorization: Bearer <token>` and are common in OAuth and JWT-based flows.",
+          "Bearer tokens are opaque access tokens (often JWTs from OAuth 2.0 flows) sent as 'Authorization: Bearer <token>'. Use Bearer auth for modern REST APIs, single-page applications, mobile apps, and microservice-to-microservice communication where tokens have scoped permissions and expiration times.",
       },
       {
-        question: "What header name should I use for API keys?",
+        question: "What is the difference between Basic Auth, Bearer tokens, and API key authentication?",
         answer:
-          "Common names include `X-API-Key` and `Authorization`, but always follow the API provider's documentation.",
+          "Basic Auth sends Base64-encoded username:password credentials per request. Bearer tokens use short-lived access tokens from OAuth/JWT flows. API keys are static secrets sent via custom headers (X-API-Key) or query parameters. Bearer tokens offer the best security for production APIs; Basic Auth is common for internal tools; API keys are simplest for third-party service integrations.",
       },
       {
-        question: "Is this auth generator free?",
+        question: "Can I use generated auth headers in Postman, curl, and Insomnia?",
         answer:
-          "Yes. It is free and runs in your browser for normal usage.",
+          "Yes. Copy the generated header and paste it as a raw header in Postman's Headers tab, as a '-H' flag in curl commands, or in Insomnia's header configuration. The output is formatted exactly as HTTP clients expect.",
+      },
+      {
+        question: "Is this auth header generator free and are my credentials secure?",
+        answer:
+          "Yes, completely free with no signup required. All encoding and decoding runs client-side in your browser using JavaScript — your passwords, tokens, and API keys are never sent to any server. For maximum security, still avoid using production credentials during testing.",
+      },
+      {
+        question: "How do I fix a 401 Unauthorized error when using Authorization headers?",
+        answer:
+          "Common causes include missing the 'Basic' or 'Bearer' prefix, extra whitespace in the header value, expired tokens, incorrect Base64 encoding, or using the wrong header name. Use the decode tab to verify your credentials, check token expiration with a JWT decoder, and confirm the API expects the authentication scheme you are sending.",
       },
     ],
 

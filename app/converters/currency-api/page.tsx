@@ -15,15 +15,15 @@ import { Breadcrumbs } from "@/components/common/breadcrumbs"
 import { createMetadata } from "@/lib/metadata-base"
 
 const baseMetadata = createMetadata({
-  title: "Free Currency Exchange API (Frankfurter) - No Key Required",
-  description: "Free currency exchange API powered by Frankfurter. Real-time rates, historical data & conversion. No API key required. Unlimited & Open Source compatible.",
+  title: "Free Currency Exchange Rate API — No API Key Required (2026)",
+  description: "Free currency converter API powered by Frankfurter. Real-time exchange rates, historical data, and currency conversion. No API key needed. Open source, unlimited requests, 30+ currencies.",
   path: "/converters/currency-api",
-  includeSchema: false
+  includeSchema: false,
 })
 
 export const metadata: Metadata = {
   ...baseMetadata,
-  title: "Free Currency Exchange API (No Key Required) | FastTools"
+  title: "Free Currency Exchange Rate API — No Key Required (2026) | FastTools"
 }
 
 export default function CurrencyAPIDocsPage() {

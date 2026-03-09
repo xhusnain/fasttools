@@ -44,36 +44,6 @@ export const metadata: Metadata = {
   ...baseMetadata,
   applicationName: "FastTools",
   category: "Finance Tools",
-  keywords: [
-    "paypal fee calculator",
-    `paypal fees`,
-    "calculate paypal fee",
-    "paypal fee calculator online",
-    "free paypal fee calculator",
-    "paypal fee tool",
-    "paypal fee estimator",
-    "paypal personal fee calculator",
-    "paypal business fee calculator",
-    "paypal merchant fee calculator",
-    "paypal commercial fee calculator",
-    "paypal donation fee calculator",
-    "paypal invoice fee calculator",
-    "paypal goods and services fee calculator",
-    "paypal friends and family fee calculator",
-    "paypal sending fee calculator",
-    "paypal receiving fee calculator",
-    "paypal transaction fee calculator",
-    "paypal payment fee calculator",
-    "paypal transfer fee calculator",
-    "paypal withdrawal fee calculator",
-    "paypal international fee calculator",
-    "paypal domestic fee calculator",
-    "paypal cross border fee calculator",
-    "paypal multi currency fee calculator",
-    "paypal foreign exchange fee calculator",
-    "paypal currency conversion fee calculator",
-    "paypal exchange rate fee calculator"
-  ]
 }
 
 export default function PayPalFeeCalculatorPage() {

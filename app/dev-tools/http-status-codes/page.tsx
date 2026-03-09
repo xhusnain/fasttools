@@ -13,22 +13,15 @@ const toolConfig = createToolConfig({
   toolName: "HTTP Status Codes",
   description:
     "Reference HTTP status code classes and individual code meanings for API and web debugging workflows.",
-  metaTitle: "HTTP Status Codes Reference (1xx to 5xx)",
+  metaTitle: "HTTP Status Codes Reference — Complete List 1xx to 5xx (2026)",
   metaDescription:
-    "Browse HTTP status code meanings, classes, and common usage patterns for API development and troubleshooting.",
+    "Complete HTTP status codes reference. Browse all codes from 1xx to 5xx with meanings and usage examples. 200 OK, 301 redirect, 404 not found, 500 server error, and more.",
   path: "/dev-tools/http-status-codes",
-  keywords: [
-    "http status codes",
-    "http code list",
-    "http 404 meaning",
-    "http 500 error",
-    "api status codes",
-  ],
 
   header: {
-    title: "HTTP Status Codes",
+    title: "HTTP Status Codes Reference",
     description:
-      "Quick reference for HTTP response classes and common API/web error diagnostics.",
+      "Complete reference for all HTTP status codes from 1xx Informational to 5xx Server Error. Each code includes its meaning, when to use it, and common scenarios. Essential for API development, debugging, and web infrastructure.",
     titleSize: "medium",
     descriptionSize: "small",
     color: "blue",
@@ -65,7 +58,7 @@ const toolConfig = createToolConfig({
       "Searchable and filterable reference for API development and debugging",
     ],
     overview:
-      "Use this status-code reference to quickly interpret HTTP responses during API development, integration testing, and production debugging. It covers code classes and practical meaning.",
+      "Browse all HTTP status codes with this comprehensive reference. Covers every code from 1xx (Informational) through 5xx (Server Error) with clear explanations and practical usage examples. Quickly look up what 200 OK, 201 Created, 301 Moved Permanently, 400 Bad Request, 401 Unauthorized, 403 Forbidden, 404 Not Found, 429 Too Many Requests, 500 Internal Server Error, and 503 Service Unavailable mean. Essential for REST API development, web server configuration, error handling, and debugging HTTP requests.",
 
     howToSteps: [
       "Search for a status code or class group.",

@@ -30,15 +30,6 @@ const toolConfig = createToolConfig({
   metaDescription:
     "Free image tools for two core tasks: compress JPG/PNG/WebP images and extract text from image files with OCR.",
   path: "/image-tools",
-  keywords: [
-    "image tools",
-    "image compressor",
-    "image to text",
-    "ocr online",
-    "compress image online",
-    "extract text from image",
-    "free image utilities",
-  ],
 
   schemaOptions: {
     applicationCategory: "UtilitiesApplication",

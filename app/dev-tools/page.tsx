@@ -153,15 +153,6 @@ const toolConfig = createToolConfig({
   metaDescription:
     "Free developer tools for JWT decoding, Base64, regex testing, JSON conversion/diffing, HTML formatting, MIME lookup, and more.",
   path: "/dev-tools",
-  keywords: [
-    "developer tools",
-    "jwt decoder",
-    "base64 encoder decoder",
-    "regex tester",
-    "json diff",
-    "html beautifier",
-    "mime types",
-  ],
 
   schemaOptions: {
     itemList: {

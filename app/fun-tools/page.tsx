@@ -37,18 +37,6 @@ const toolConfig = createToolConfig({
   metaDescription:
     "Use free fun tools for birthday countdowns, future age checks, and anniversary tracking. Quick results, mobile-friendly, and no signup needed.",
   path: "/fun-tools",
-  keywords: [
-    "fun tools",
-    "birthday countdown",
-    "future age calculator",
-    "anniversary calculator",
-    "relationship milestone calculator",
-    "free online fun calculators",
-    "celebration tools",
-    "date tools",
-    "countdown tools",
-    "age calculator",
-  ],
   itemList: {
     name: "Fun Tools",
     description:

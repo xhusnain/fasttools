@@ -18,13 +18,13 @@ const toolConfig = createToolConfig({
   toolName: "Integer Base Converter",
   description:
     "Convert integers between binary, decimal, hexadecimal, and any base 2-64. Free online calculator with steps, prefix detection, and instant results.",
-  metaTitle: "Integer Base Converter - Binary, Hex & 64 Bases Online",
+  metaTitle: "Integer Base Converter -- Binary Decimal Hex Octal Base 2-64 Free (2026)",
   metaDescription:
-    "Convert integers between binary, decimal, hex, and bases 2-64. Auto-detects 0x/0b prefixes, shows steps, supports negatives. 100% free, no signup.",
+    "Free integer base converter for binary, decimal, hexadecimal, octal, and any base 2-64. Auto-detects 0x/0b/0o prefixes, shows step-by-step conversion, supports negative numbers and BigInt precision. No signup.",
   path: "/converters/integer-base",
   schemaOptions: {
     applicationCategory: "UtilitiesApplication",
-    description: "Convert integers between binary, decimal, hexadecimal, and any base 2-64",
+    description: "Free online integer base converter for binary, decimal, hexadecimal, octal, and any numeral base from 2 to 64 with step-by-step conversion and BigInt precision.",
     featureList: [
       "Bases 2-64 (competitors only do 2, 8, 10, 16)",
       "Prefix auto-detection (0x, 0b, 0o)",
@@ -37,7 +37,7 @@ const toolConfig = createToolConfig({
   header: {
     title: "Integer Base Converter",
     description:
-      "Convert between binary, decimal, hexadecimal, and any base 2-64. Auto-detect prefixes, view conversion steps, handle large numbers.",
+      "Convert integers between binary (base 2), octal (base 8), decimal (base 10), hexadecimal (base 16), and any numeral base from 2 to 64. Auto-detects 0x, 0b, and 0o prefixes, displays step-by-step conversion logic, handles negative numbers, and uses BigInt for arbitrary-precision large number support.",
     titleSize: "medium",
     descriptionSize: "small",
   },
@@ -60,7 +60,7 @@ const toolConfig = createToolConfig({
       "Hex uses 0–9 and A–F: decimal 255 = hex FF = binary 11111111",
     ],
     overview:
-      "An integer base converter transforms numbers between different numeral systems (bases). Convert between binary (base 2), octal (base 8), decimal (base 10), hexadecimal (base 16), and any base 2–64. Unlike tools that only support four bases, ours handles 64. Auto-detects 0x, 0b, 0o prefixes, supports negative numbers, shows steps, and exports results. 100% free, runs in your browser.",
+      "This free integer base converter transforms numbers between all major numeral systems and any custom base from 2 to 64. Convert between binary (base 2), octal (base 8), decimal (base 10), hexadecimal (base 16), base 36, base 64, and any arbitrary base -- far beyond the 4-base limitation of most online calculators. The converter auto-detects input format through prefix recognition (0x for hexadecimal, 0b for binary, 0o for octal), supports signed negative numbers across all bases, and displays step-by-step conversion logic showing the mathematical process of dividing by the target base and collecting remainders. Built with BigInt for arbitrary precision, it handles very large integers (cryptographic keys, hash values, memory addresses) without loss of accuracy. Export all conversion results or copy individual values. 100% client-side, no data leaves your browser.",
 
     howToSteps: [
       "Enter your number—use 0x2a for hex, 0b101010 for binary, or 42 for decimal. Prefixes auto-detect the base.",
@@ -160,7 +160,7 @@ const toolConfig = createToolConfig({
     ),
 
     proTip:
-      "Use 0x, 0b, 0o prefixes for instant base detection. Unlike competitors limited to 4 bases, this tool supports bases 2–64. Enable digit grouping for long numbers.",
+      "Use 0x, 0b, 0o prefixes for instant base detection without manually selecting the input base. Enable digit grouping for long binary and hexadecimal numbers to improve readability (e.g., 1111 0000 instead of 11110000). For debugging hex color codes, memory addresses, or bit masks, use the simultaneous multi-base output to see all representations at once.",
 
     faqs: [
       {

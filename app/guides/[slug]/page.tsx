@@ -34,7 +34,6 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
         return {
             title: `${frontMatter.title} | FastTools Guides`,
             description: frontMatter.description,
-            keywords: frontMatter.keywords,
             openGraph: {
                 title: frontMatter.title,
                 description: frontMatter.description,

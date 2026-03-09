@@ -13,23 +13,15 @@ const toolConfig = createToolConfig({
   toolName: "Keyword Density Checker",
   description:
     "Analyze keyword frequency and phrase distribution to review on-page relevance and reduce over-optimization risk.",
-  metaTitle: "Keyword Density Checker (Words, Phrases, Frequency)",
+  metaTitle: "Keyword Density Checker — Analyze Word Frequency & Phrase Density Free (2026)",
   metaDescription:
-    "Check keyword frequency and density for 1-word, 2-word, and 3-word phrases. Review overuse patterns and improve on-page content balance.",
+    "Check keyword density percentage for 1-word, 2-word, and 3-word phrases. Detect keyword stuffing, optimize on-page SEO, and analyze content keyword frequency with n-gram analysis — free online tool.",
   path: "/seo-tools/keyword-density",
-  keywords: [
-    "keyword density checker",
-    "keyword frequency",
-    "keyword stuffing checker",
-    "on-page seo checker",
-    "phrase density",
-    "content optimization",
-  ],
 
   header: {
     title: "Keyword Density Checker",
     description:
-      "Measure keyword and phrase frequency to optimize content without overstuffing.",
+      "Analyze keyword frequency and density percentages for single words (unigrams), two-word phrases (bigrams), and three-word phrases (trigrams) in your content. Detect keyword stuffing patterns, verify target keyword usage is within the recommended 1-2% density range, and optimize on-page SEO balance before publishing.",
     titleSize: "large",
     descriptionSize: "small",
   },
@@ -67,41 +59,40 @@ const toolConfig = createToolConfig({
       "Useful for on-page SEO optimization and content auditing",
     ],
     overview:
-      "This checker helps you understand how often keywords and phrases appear in content. Use it to review primary-topic focus, identify repetitive wording, and refine copy so it reads naturally while still signaling relevance.",
+      "This free keyword density checker analyzes your content to calculate how frequently specific keywords and phrases appear as a percentage of total word count — the core metric for on-page SEO optimization and keyword stuffing detection. Paste any article, blog post, landing page copy, or product description to see density percentages for single words (unigrams), two-word phrases (bigrams), and three-word phrases (trigrams) ranked by frequency. The recommended keyword density for primary target keywords is 1-2%, with secondary keywords at 0.5-1%. Densities exceeding 3% may trigger Google's keyword stuffing filters and hurt rankings rather than help them. Use the n-gram analysis to identify repetitive phrase patterns, discover under-used related terms, compare your content's topical emphasis against top-ranking competitor pages, and refine copy for natural readability while maintaining strong topical relevance signals. Essential for content writers, SEO specialists, copywriters, and editorial teams performing pre-publish quality checks and content refresh audits.",
 
     howToSteps: [
-      "Paste your content or analyze a live URL.",
-      "Run analysis to view single-word and phrase-level frequency.",
-      "Review the highest-density terms and repeated n-grams.",
-      "Revise wording where repetition is excessive and rerun analysis.",
+      "Paste your article text, blog post content, landing page copy, or product description into the analysis input — or provide a URL for live page analysis.",
+      "Run the keyword density analysis to generate frequency tables for 1-word terms, 2-word phrases (bigrams), and 3-word phrases (trigrams).",
+      "Review the highest-density terms and check that your primary keyword falls within the recommended 1-2% range — flag any terms exceeding 3% for potential keyword stuffing.",
+      "Identify repetitive phrase patterns in the bigram and trigram tables that may signal over-optimization or unnatural writing.",
+      "Revise overstuffed sections by replacing repeated keywords with synonyms, related terms, and supporting subtopic language, then rerun the analysis to verify improvements.",
     ],
 
     features: [
-      "1-word, 2-word, and 3-word phrase analysis",
-      "Density percentages with counts",
-      "Support for large article drafts",
-      "Keyword overuse visibility",
-      "Quick re-check workflow after edits",
+      "N-gram analysis for unigrams (1-word), bigrams (2-word), and trigrams (3-word) with frequency counts and density percentages",
+      "Keyword density percentage calculation as (keyword count / total words) x 100 — the standard SEO metric formula",
+      "Handles large content: articles up to 10,000+ words, long-form guides, and complete landing page copy",
+      "Keyword stuffing detection with visual flagging of terms exceeding recommended density thresholds",
+      "Iterative re-check workflow — edit content and reanalyze instantly without reloading the page",
+      "Stop word filtering to focus analysis on meaningful content keywords rather than common function words",
     ],
 
     useCases: [
-      "On-page SEO review before publishing",
-      "Content refreshes for older articles",
-      "Competitor-page phrase pattern checks",
-      "Preventing repetitive anchor-topic language",
+      "Pre-publish on-page SEO review — verify target keyword density is within 1-2% and no unintentional keyword stuffing exists before publishing",
+      "Content refresh audits — analyze older articles for keyword density imbalances, outdated emphasis, and opportunities to add related terms",
+      "Competitor content analysis — paste top-ranking competitor page text to understand their keyword emphasis, phrase patterns, and topical coverage",
+      "SEO copywriting optimization — ensure landing page copy, product descriptions, and category pages maintain natural keyword usage without over-optimization",
+      "Content cannibalization detection — compare keyword density profiles across similar pages to identify overlapping keyword targeting",
     ],
 
     aboutTool: (
       <div className="space-y-6 text-muted-foreground">
         <p>
-          Keyword density is a directional signal, not a hard ranking formula.
-          The goal is topical clarity with natural language, not forcing exact
-          percentages.
+          Keyword density is calculated as (number of times a keyword appears / total word count) x 100, expressed as a percentage. For example, if &quot;email marketing&quot; appears 15 times in a 1,000-word article, its density is 1.5%. In modern SEO, keyword density serves as a diagnostic indicator rather than a precise ranking factor — Google&apos;s algorithms use sophisticated natural language processing (NLP) and semantic understanding that goes far beyond simple term frequency. However, keyword density analysis remains valuable because excessively high density (above 3%) can trigger Google&apos;s keyword stuffing penalties, very low density (below 0.5%) may signal weak topical relevance, and density patterns reveal whether content naturally covers a topic or artificially repeats phrases.
         </p>
         <p>
-          Phrase-level checks are especially useful because over-optimization
-          often happens through repeated two-word or three-word patterns, not
-          just single words.
+          N-gram analysis (examining 2-word and 3-word phrase frequencies) is particularly powerful for detecting over-optimization patterns that single-word analysis misses. Repeated bigrams like &quot;best software&quot; appearing 20 times or trigrams like &quot;best project management&quot; appearing 15 times are strong signals of unnatural writing that search engines can detect. The most effective content strategy uses your primary keyword at 1-2% density, includes semantic variations and synonyms naturally, covers related subtopics and entities that Google expects to see on the page (topical authority), and reads naturally to human audiences. Use this checker alongside your content writing workflow to balance SEO optimization with reader experience quality.
         </p>
       </div>
     ),

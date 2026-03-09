@@ -13,17 +13,10 @@ const toolConfig = createToolConfig({
   toolName: "Hashtag Counter",
   description:
     "Count hashtags, extract tags from text, and refine tag sets for social post optimization.",
-  metaTitle: "Hashtag Counter (Count and Extract Tags)",
+  metaTitle: "Hashtag Counter — Count Hashtags for Instagram, TikTok & X (2026)",
   metaDescription:
-    "Count and extract hashtags from captions or text blocks with a fast social-post workflow.",
+    "Free hashtag counter tool. Count, extract, and analyze hashtags in your captions. Check Instagram 30-hashtag limit, TikTok limits, and optimize your hashtag strategy.",
   path: "/social-media-tools/hashtag-counter",
-  keywords: [
-    "hashtag counter",
-    "count hashtags",
-    "hashtag extractor",
-    "instagram hashtag counter",
-    "social hashtag tool",
-  ],
 
   header: {
     title: "Hashtag Counter",

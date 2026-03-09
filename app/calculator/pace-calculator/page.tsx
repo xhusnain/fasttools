@@ -11,9 +11,9 @@ import { GTable } from "@/ui/gtable"
 import { Brain, Calculator, Target, BookOpen, Shield, Users, TrendingUp, Info, AlertTriangle, CheckCircle, Zap, Clock, Heart } from "lucide-react"
 
 const baseMetadata = createMetadata({
-  title: "Pace Calculator - Running Speed & Pace",
+  title: "Pace Calculator — Calculate Running Pace & Speed Free (2026)",
   description:
-    "Calculate running pace, training zones, heart rate zones, race predictions & VO2 Max. Perfect for runners, coaches & athletes.",
+    "Free pace calculator to compute running pace per mile and km, training zones, heart rate zones, VO2 Max estimation, and race time predictions for 5K, 10K, half marathon & marathon distances.",
   path: "/calculator/pace-calculator",
   breadcrumbs: [
     { label: "Calculator", href: "/calculator" },
@@ -45,34 +45,34 @@ export const metadata: Metadata = {
 export default function PaceCalculatorPage() {
   const toolContent = {
     toolName: "Pace Calculator",
-    overview: "Calculate running pace, training zones, heart rate zones, race predictions, and VO2 Max with our advanced pace calculator. Perfect for runners, coaches, and serious athletes looking to optimize their performance.",
+    overview: "Calculate running pace per mile and per kilometer, set heart rate training zones (Zones 1-5), estimate VO2 Max, predict race finish times for 5K, 10K, half marathon, and marathon distances, and analyze multipoint splits with our free advanced pace calculator. Whether you are planning a negative-split race strategy, building an 80/20 training plan, or tracking lactate threshold improvements, this tool delivers instant, accurate results for runners, coaches, and serious athletes worldwide.",
 
     howToSteps: [
-      "Enter your time: Input hours, minutes, and seconds.",
-      "Enter your distance: Choose from common race distances or enter a custom one.",
-      "Calculate Pace: Instantly see your pace per mile and per kilometer.",
-      "Analyze Splits: Use the multipoint tool to track pace variations.",
-      "Get Training Zones: View your heart rate zones and training intensities."
+      "Enter your time: Input hours, minutes, and seconds from your GPS watch, race results, or training log.",
+      "Enter your distance: Choose a preset race distance (5K, 10K, half marathon, marathon) or enter a custom distance in miles or kilometers.",
+      "Calculate Pace: Instantly see your pace per mile and per kilometer, plus equivalent speed in mph and km/h.",
+      "Analyze Splits: Use the multipoint split tool to track pace variations across different segments and identify positive or negative splits.",
+      "Get Training Zones: View your five heart rate training zones (Recovery through VO2 Max), estimated VO2 Max, and race time predictions for all standard distances."
     ],
 
     features: [
-      "Pace Calculation: Accurate splits for any distance.",
-      "Training Zones: Heart rate based zones for optimal training.",
-      "VO2 Max Estimate: Assess your cardiovascular fitness.",
-      "Race Predictor: Estimate finish times for 5K, 10K, Half, and Full Marathon.",
-      "Multipoint Analysis: Track pace across different segments.",
-      "Unit Conversion: Switch seamlessly between miles and kilometers.",
-      "Performance Metrics: Advanced insights for serious athletes.",
-      "Mobile Friendly: Check your pace on the go."
+      "Pace Calculation: Compute minutes per mile and minutes per kilometer for any distance with sub-second accuracy.",
+      "Heart Rate Training Zones: Five-zone breakdown (Recovery, Aerobic Base, Aerobic Threshold, Lactate Threshold, VO2 Max) based on max heart rate.",
+      "VO2 Max Estimation: Assess cardiovascular fitness level using the Riegel formula and current race performance.",
+      "Race Time Predictor: Estimate finish times for 5K, 10K, half marathon, and full marathon from a single race result.",
+      "Multipoint Split Analysis: Enter multiple time/distance checkpoints to identify pace variations, positive splits, and negative splits.",
+      "Mile-Kilometer Conversion: Switch seamlessly between imperial and metric pace units.",
+      "Speed Output: View equivalent speed in mph and km/h alongside pace values.",
+      "Mobile-Responsive: Fully optimized for smartphones and tablets for on-the-go use at races and training sessions."
     ],
 
     useCases: [
-      "Race Planning: Determine the pace needed to hit your goal time.",
-      "Training: Set precise intensity zones for different workouts.",
-      "Performance Analysis: Track improvements in speed and fitness.",
-      "Coaching: Design personalized training plans for athletes.",
-      "Marathon Prep: Calculate long run paces and race day strategy.",
-      "Fitness Tracking: Monitor VO2 Max and heart rate trends."
+      "Race Planning: Determine the exact pace per mile needed to achieve a target 5K, 10K, half marathon, or marathon finish time.",
+      "Training Plan Design: Set precise Zone 2 easy-run pace, tempo pace (lactate threshold), and interval pace (VO2 Max) for periodized training blocks.",
+      "Performance Tracking: Compare pace and VO2 Max estimates over weeks and months to quantify fitness improvements.",
+      "Coaching: Build personalized training plans with target paces for easy runs, tempo sessions, intervals, and race-specific workouts.",
+      "Negative Split Strategy: Plan even or negative-split pacing to conserve energy in the first half and finish strong.",
+      "Heart Rate Zone Calibration: Cross-reference heart rate training zones with pace zones for accurate intensity control in varying weather conditions."
     ],
 
     aboutTool: (
@@ -302,7 +302,7 @@ export default function PaceCalculatorPage() {
       </div>
     ),
 
-    proTip: "Most runners run their easy days too hard. Keep your easy runs in Zone 2 (conversational pace) to build a massive aerobic base without overtraining. Save the hard efforts for specific workout days.",
+    proTip: "Follow the 80/20 rule: keep 80% of weekly mileage in Zone 2 (conversational, easy pace) to build aerobic endurance without overtraining, and reserve 20% for tempo runs, interval sessions, and race-pace workouts. This polarized approach is proven to maximize performance gains while minimizing injury risk.",
 
     faqs: [
       {
@@ -470,8 +470,8 @@ export default function PaceCalculatorPage() {
   return (
     <ToolPageLayout
       header={{
-        title: "Pace Calculator - Advanced Running Pace & Zones",
-        description: "Calculate running pace, training zones, heart rate zones, race predictions, and VO2 Max with our advanced pace calculator. Perfect for runners, coaches, and serious athletes.",
+        title: "Pace Calculator — Running Pace, Speed & Training Zones (2026)",
+        description: "Free running pace calculator with pace-per-mile and pace-per-km output, 5K/10K/half marathon/marathon race predictions, heart rate training zones, VO2 Max estimation, split analysis, and negative-split planning for runners, coaches, and athletes.",
         titleSize: "medium",
         descriptionSize: "small",
         color: "blue"
@@ -487,8 +487,8 @@ export default function PaceCalculatorPage() {
       }
       toolContent={toolContent}
       expectedMetadata={{
-        title: "Pace Calculator | Free Advanced Running Pace Calculator",
-        description: "Calculate running pace, training zones, heart rate zones, race predictions & VO2 Max. Perfect for runners, coaches & athletes.",
+        title: "Pace Calculator — Calculate Running Pace & Speed Free (2026)",
+        description: "Free pace calculator to compute running pace per mile and km, training zones, heart rate zones, VO2 Max estimation, and race time predictions for 5K, 10K, half marathon & marathon distances.",
         path: "/calculator/pace-calculator"
       }}
     />

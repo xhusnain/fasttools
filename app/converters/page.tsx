@@ -190,15 +190,6 @@ const toolConfig = createToolConfig({
   metaDescription:
     "Use free online converters for currency, file size, temperature, text case, JSON/XML/YAML/TOML, and more.",
   path: "/converters",
-  keywords: [
-    "online converters",
-    "currency converter",
-    "unit converter",
-    "file size converter",
-    "text case converter",
-    "json xml converter",
-    "yaml json converter",
-  ],
 
   header: {
     title: "Online Converters",

@@ -11,9 +11,9 @@ import { GTable } from "@/ui/gtable"
 import { Brain, Calculator, Target, BookOpen, Shield, Users, TrendingUp, Info, AlertTriangle, CheckCircle, Zap, Percent, DollarSign } from "lucide-react"
 
 const baseMetadata = createMetadata({
-  title: "Percentage Calculator - Calculate Percentage Online (Free)",
+  title: "Percentage Calculator — Calculate Percentage Increase, Decrease & Difference Free (2026)",
   description:
-    "Free online Percentage Calculator. Calculate percentage increase/decrease instantly. Fast, accurate, and no signup required.",
+    "Free percentage calculator for increase, decrease, difference, discounts, tips, grades, profit margins & markup. Step-by-step formulas, reverse percentage, fraction-to-percent conversion. Instant, accurate, no signup.",
   path: "/calculator/percentage-calculator",
   breadcrumbs: [
     { label: "Calculator", href: "/calculator" },
@@ -46,36 +46,36 @@ export const metadata: Metadata = {
 
 export default function PercentageCalculatorPage() {
   const toolContent = {
-    toolName: "Percentage Calculator",
-    overview: "Free online percentage calculator for all your math needs. Calculate percentage increase, percentage decrease, percentage difference, discounts, tips, grades, profit margins, and more. Features accurate calculations with step-by-step formulas, perfect for students, professionals, and everyday use.",
+    toolName: "Percentage Calculator — Increase, Decrease, Difference & More",
+    overview: "Free online percentage calculator with 10+ calculation modes for percentage increase, percentage decrease, percentage difference, discount savings, tip calculation, grade-to-percentage conversion, profit margin, markup, reverse percentage, and percentage error. Each calculation shows step-by-step formula explanations so you can verify the math and learn the method. Supports fraction-to-percent conversion, decimal-to-percent conversion, and percentage-of-total calculations. Perfect for students solving homework, shoppers calculating sale prices, business owners analyzing profit margins, and professionals tracking KPI growth rates.",
 
     howToSteps: [
-      "Choose your calculation type (increase, decrease, difference, discount, etc.)",
-      "Enter the relevant numbers or percentage rates in the input fields",
-      "Press calculate to see the percentage output",
-      "Review the detailed formula and explanation provided",
-      "Copy or export the results for documentation"
+      "Choose Calculation Mode: Select from increase, decrease, difference, discount, markup, margin, tip, grade, reverse percentage, or basic percentage.",
+      "Enter Your Values: Input the relevant numbers (original value, new value, percentage rate) in the clearly labeled input fields.",
+      "Calculate Instantly: Press calculate to see the percentage result with step-by-step formula breakdown showing each arithmetic operation.",
+      "Review Formula Explanation: Verify the calculation method used and understand the underlying formula for learning purposes.",
+      "Copy or Export Results: Copy results for documentation, reports, spreadsheets, or further analysis."
     ],
 
     features: [
-      "Multiple Calculator Modes: Basic percentage, increase, decrease, difference, discount, markup, margin, and more",
-      "Step-by-Step Solutions: Clear formula explanations showing each calculation step",
-      "Reverse Calculations: Find the original value when you know the percentage and result",
-      "Discount Analysis: Calculate savings, final prices, and percentage off instantly",
-      "Grade Calculations: Convert marks to percentages and vice versa",
-      "Professional Tools: Profit margins, tax calculations, and financial percentages",
-      "No Signup Required: Free unlimited calculations without registration",
-      "Privacy-Friendly: All calculations happen in your browser, no data stored"
+      "10+ Calculator Modes: Basic percentage, increase, decrease, difference, discount, markup, margin, tip, grade, reverse percentage, and percentage error.",
+      "Step-by-Step Formula Solutions: Color-coded formula explanations showing each calculation step for learning and verification.",
+      "Reverse Percentage Calculation: Find the original value when you know the percentage and result (e.g., pre-discount price from sale price).",
+      "Discount & Savings Analysis: Calculate sale prices, savings amounts, and percentage off for shopping and retail decisions.",
+      "Grade-to-Percentage Conversion: Convert test marks, assignment scores, and GPA to percentages and vice versa.",
+      "Business Financial Tools: Profit margin, markup percentage, growth rate, and tax calculations for professional use.",
+      "No Signup Required: Free unlimited percentage calculations without registration, accounts, or fees.",
+      "Client-Side Privacy: All calculations happen in your browser using JavaScript — no data stored, tracked, or transmitted."
     ],
 
     useCases: [
-      "Shopping & Discounts: Calculate sale prices and savings percentages",
-      "Academic Grading: Convert raw scores to percentages and GPA",
-      "Financial Planning: Compute profit margins, interest rates, and investment returns",
-      "Business Analysis: Track growth rates, revenue changes, and KPIs",
-      "Health & Fitness: Monitor weight loss percentages and goal progress",
-      "Taxes & Tips: Calculate tax amounts and gratuity percentages",
-      "Data Analysis: Compare values and compute percentage differences"
+      "Shopping & Discounts: Calculate sale prices, savings amounts, and 'percentage off' for Black Friday, Prime Day, and clearance deals.",
+      "Academic Grading: Convert raw test scores to percentages, calculate GPA from marks, and track semester grade progress.",
+      "Financial Planning: Compute profit margins, interest rates, investment returns, and loan APR percentage calculations.",
+      "Business Growth Analysis: Track revenue growth rates, year-over-year KPI changes, market share percentages, and conversion rates.",
+      "Health & Fitness: Monitor body weight loss percentage, body fat reduction progress, and fitness goal completion rates.",
+      "Tax & Tip Calculation: Calculate sales tax amounts, income tax brackets, and restaurant gratuity (15%, 18%, 20% tips).",
+      "Data & Statistical Analysis: Compare values, compute percentage differences, calculate percentage error, and weighted averages."
     ],
 
     aboutTool: (
@@ -341,7 +341,7 @@ export default function PercentageCalculatorPage() {
       </div>
     ),
 
-    proTip: "When calculating percentage changes, always use the original value as the denominator, not the new value. For example, if a price increases from $100 to $150, the increase is 50% (not 33.33%). This is a common mistake that leads to incorrect percentage calculations.",
+    proTip: "The #1 percentage mistake: using the wrong base. For percentage change, always divide by the ORIGINAL value. Price goes from $100 to $150? The increase is ($150-$100)/$100 = 50%, not ($150-$100)/$150 = 33.33%. Also remember: percentage points and percentage are different — a rate rising from 10% to 15% is a 5 percentage point increase but a 50% relative increase.",
 
     faqs: [
       {
@@ -553,8 +553,8 @@ export default function PercentageCalculatorPage() {
   return (
     <ToolPageLayout
       header={{
-        title: "Free Online Percentage Calculator",
-        description: "Calculate percentage increase, decrease, difference, discounts, tips, grades, profit margins, and more. Accurate and quick online tool with step-by-step formulas.",
+        title: "Percentage Calculator — Increase, Decrease, Difference & Discount",
+        description: "Calculate percentage increase, decrease, difference, discounts, tips, grades, profit margins, markup, and reverse percentages. Step-by-step formula explanations, fraction and decimal conversion. Free, instant, and accurate.",
         titleSize: "medium",
         descriptionSize: "small"
       }}
@@ -577,8 +577,8 @@ export default function PercentageCalculatorPage() {
       }
       toolContent={toolContent}
       expectedMetadata={{
-        title: "Percentage Calculator | Free Accurate Math Tool",
-        description: "Calculate percentages instantly: increase, decrease, discounts, grades and more. Free, accurate percentage calculator with clear step-by-step formulas.",
+        title: "Percentage Calculator — Calculate Percentage Increase, Decrease & Difference Free (2026)",
+        description: "Free percentage calculator for increase, decrease, difference, discounts, tips, grades, profit margins & markup. Step-by-step formulas, reverse percentage, fraction-to-percent conversion. Instant, accurate, no signup.",
         path: "/calculator/percentage-calculator"
       }}
     />

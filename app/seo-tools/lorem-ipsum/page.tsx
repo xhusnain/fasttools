@@ -17,14 +17,6 @@ const toolConfig = createToolConfig({
   metaDescription:
     "Create dummy placeholder text instantly for design and development workflows. Generate paragraphs, sentences, or words with copy-ready output.",
   path: "/seo-tools/lorem-ipsum",
-  keywords: [
-    "lorem ipsum generator",
-    "placeholder text generator",
-    "dummy text",
-    "filler text",
-    "design placeholder text",
-    "lorem ipsum paragraphs",
-  ],
 
   header: {
     title: "Lorem Ipsum Generator",

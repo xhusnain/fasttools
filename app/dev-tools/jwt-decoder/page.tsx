@@ -13,22 +13,15 @@ const toolConfig = createToolConfig({
   toolName: "JWT Decoder",
   description:
     "Decode and inspect JSON Web Tokens for authentication debugging and implementation checks.",
-  metaTitle: "JWT Decoder (Header, Payload, Signature)",
+  metaTitle: "JWT Decoder — Decode JSON Web Tokens Online Free (2026)",
   metaDescription:
-    "Decode JWT tokens in-browser to inspect header and payload fields for auth debugging and integration workflows.",
+    "Free online JWT decoder. Paste a JWT token to instantly decode header, payload, and signature. Check expiration, inspect claims, debug authentication — no secret key needed.",
   path: "/dev-tools/jwt-decoder",
-  keywords: [
-    "jwt decoder",
-    "decode jwt",
-    "jwt token debugger",
-    "jwt payload viewer",
-    "jwt header parser",
-  ],
 
   header: {
-    title: "JWT Decoder",
+    title: "JWT Decoder & Token Inspector",
     description:
-      "Inspect token structure and claims quickly during authentication development.",
+      "Decode any JSON Web Token to inspect its header (algorithm, type), payload (claims like sub, iss, exp), and signature. Check token expiration, debug OAuth and API authentication — no secret key required.",
     titleSize: "medium",
     descriptionSize: "small",
     color: "blue",
@@ -65,72 +58,73 @@ const toolConfig = createToolConfig({
       "Common algorithms: HS256 (symmetric), RS256 (asymmetric), ES256 (ECDSA)",
     ],
     overview:
-      "Use this decoder to inspect JWT header and payload data while debugging authentication, authorization, and API session workflows.",
+      "Decode any JWT token instantly with this free online decoder. Paste a JSON Web Token to see its three decoded segments — header (algorithm and token type), payload (all claims including issuer, subject, audience, expiration), and signature. The decoder checks whether the token is expired based on the exp claim and highlights timing issues. Useful for debugging OAuth2 flows, API authentication, session management, and any system that uses JWTs. All decoding runs locally in your browser — no data sent to any server.",
 
     howToSteps: [
-      "Paste a JWT string into the decoder input.",
-      "Review decoded header and payload sections.",
-      "Inspect claim fields such as issuer, audience, and expiry.",
-      "Use findings to validate token generation and verification logic.",
+      "Copy the JWT token string from your API response, browser DevTools, or auth logs.",
+      "Paste the token into the decoder input field above.",
+      "Review the decoded header (algorithm, type) and payload (all claims with values).",
+      "Check the expiration status and use the decoded data to debug your authentication flow.",
     ],
 
     features: [
-      "JWT decoding workflow",
-      "Header/payload inspection",
-      "Claim-level visibility",
-      "Auth debugging support",
-      "Browser-based analysis utility",
+      "Instant JWT header, payload, and signature decoding",
+      "Token expiration check with human-readable timestamps",
+      "Support for HS256, RS256, ES256, and other JWT algorithms",
+      "All standard claims displayed: iss, sub, aud, exp, iat, nbf, jti",
+      "100% client-side — no token data leaves your browser",
+      "Copy decoded JSON output with one click",
     ],
 
     useCases: [
-      "Auth integration troubleshooting",
-      "Token claim validation",
-      "Session expiry debugging",
-      "API security QA workflows",
+      "Debug OAuth2 and OpenID Connect authentication flows",
+      "Inspect API access tokens and refresh tokens during development",
+      "Verify JWT claims (issuer, audience, scopes) match expected values",
+      "Troubleshoot token expiration and session timeout issues",
+      "Compare tokens across environments (dev, staging, production)",
     ],
 
-    aboutTool: (
-      <div className="space-y-6 text-muted-foreground">
-        <p>
-          JWT debugging pages perform best when they separate token inspection
-          from security assumptions. This page is optimized for that practical
-          engineering intent.
-        </p>
-        <p>
-          Decoding is helpful for visibility, but token trust decisions must
-          still rely on proper signature verification in your backend.
-        </p>
-      </div>
-    ),
+    aboutTool:
+      "JSON Web Tokens (JWTs) are the standard for API authentication, OAuth2, and session management. A JWT has three Base64URL-encoded segments separated by dots: header.payload.signature. The header contains the signing algorithm (HS256, RS256, ES256). The payload contains claims — key-value pairs like issuer (iss), subject (sub), audience (aud), and expiration (exp). This decoder parses and displays all three segments without requiring the signing secret. Important: decoding reveals token contents but does NOT verify the signature. Always verify signatures server-side before trusting token data.",
 
     proTip:
-      "Never treat decoded payload data as trusted unless signature verification and claim validation are completed server-side.",
+      "When debugging auth issues, first check the exp claim to rule out token expiration, then verify iss and aud match your expected values. If using RS256, the kid (key ID) in the header tells you which public key to use for verification.",
 
     faqs: [
       {
-        question: "Does decoding verify token signature validity?",
+        question: "What is a JWT token and how does it work?",
         answer:
-          "Decoding reveals token contents, but signature verification must be performed explicitly in your auth pipeline.",
+          "A JSON Web Token (JWT) is a compact, URL-safe token used for authentication and authorization. It has three parts: header (algorithm info), payload (claims/data), and signature (verification hash). The header and payload are Base64URL encoded and can be decoded without a secret key.",
       },
       {
-        question: "Can I inspect expired tokens?",
+        question: "Does decoding a JWT verify its signature?",
         answer:
-          "Yes. Decoding still shows claim data even when token expiry has passed.",
+          "No. Decoding only reveals the token contents. Signature verification requires the signing secret (HS256) or public key (RS256/ES256) and must be done server-side. Never trust decoded data without verification.",
       },
       {
-        question: "Is it safe to paste production tokens?",
+        question: "Is it safe to paste production JWT tokens here?",
         answer:
-          "Use caution and avoid exposing sensitive data. Follow your organization’s credential-handling policies.",
+          "All decoding runs locally in your browser — no data is sent to any server. However, follow your organization’s security policies regarding token handling and avoid sharing tokens in insecure contexts.",
       },
       {
-        question: "What claims should I check first?",
+        question: "What do the JWT claims (iss, sub, exp, aud) mean?",
         answer:
-          "Common checks include issuer, audience, subject, not-before, issued-at, and expiration values.",
+          "iss = issuer (who created the token), sub = subject (user ID), exp = expiration time, aud = audience (intended recipient), iat = issued at, nbf = not before, jti = JWT ID (unique identifier).",
       },
       {
-        question: "Can this help with auth library debugging?",
+        question: "Can I decode expired JWT tokens?",
         answer:
-          "Yes. It is often used to compare generated tokens against expected claim structures.",
+          "Yes. Expired tokens decode normally — the decoder shows all claims including the expiration timestamp. This is useful for debugging why authentication failed after a session timeout.",
+      },
+      {
+        question: "What is the difference between HS256 and RS256?",
+        answer:
+          "HS256 uses a shared secret key for both signing and verification (symmetric). RS256 uses a private key to sign and a public key to verify (asymmetric). RS256 is more common in production APIs because the public key can be shared safely.",
+      },
+      {
+        question: "Is this JWT decoder free?",
+        answer:
+          "Yes. Completely free, runs locally in your browser, and has no usage limits or registration requirements.",
       },
     ],
 

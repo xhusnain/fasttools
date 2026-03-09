@@ -7,22 +7,15 @@ const toolConfig = createToolConfig({
   toolName: "MIME Types",
   description:
     "Lookup MIME types and file extensions for upload validation, response headers, and API integration work.",
-  metaTitle: "MIME Types Lookup (Extension and Content-Type)",
+  metaTitle: "MIME Types Lookup — Find Content-Type by File Extension Free (2026)",
   metaDescription:
-    "Find MIME type mappings for common file extensions and verify Content-Type values for web and API workflows.",
+    "Free MIME type lookup tool. Search file extensions to find Content-Type values, or search MIME types to find extensions. Complete reference for web and API Content-Type headers.",
   path: "/dev-tools/mime-types",
-  keywords: [
-    "mime types",
-    "content type lookup",
-    "extension to mime",
-    "mime type list",
-    "http content type",
-  ],
 
   header: {
-    title: "MIME Types",
+    title: "MIME Types Lookup & Reference",
     description:
-      "Map file extensions to MIME types and verify content-type values quickly.",
+      "Search file extensions to find their MIME Content-Type values, or look up MIME types to find associated extensions. Complete reference for HTTP headers, file uploads, and API responses.",
     titleSize: "medium",
     descriptionSize: "small",
     color: "blue",
@@ -59,7 +52,7 @@ const toolConfig = createToolConfig({
       "Searchable reference table with categories: text, image, audio, video, application",
     ],
     overview:
-      "Use this tool to validate file extension and MIME type mappings before configuring uploads, downloads, and response headers. It helps reduce content-type mistakes in backend and frontend implementations.",
+      "Look up MIME types by file extension or search for extensions by MIME type with this free reference tool. MIME types (Content-Type values) tell browsers and APIs how to handle files — using the wrong type can break file downloads, uploads, and API responses. Search for common types like application/json, text/html, image/png, or video/mp4, or enter a file extension (.pdf, .csv, .webp) to find the correct Content-Type header value. Essential for web server MIME mappings, API response headers, and file upload validation.",
 
     howToSteps: [
       "Enter a file extension to find matching MIME types.",

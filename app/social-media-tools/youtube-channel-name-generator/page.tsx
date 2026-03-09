@@ -12,23 +12,16 @@ const YoutubeChannelNameGenerator = dynamic(
 const toolConfig = createToolConfig({
   toolName: "YouTube Name Generator",
   description:
-    "Generate YouTube channel name ideas based on niche, tone, and creator brand direction.",
-  metaTitle: "YouTube Name Generator (Channel Idea Tool)",
+    "Generate unique YouTube channel name ideas based on your niche, style, and keywords. Free AI-powered channel name generator with brandable suggestions.",
+  metaTitle: "YouTube Channel Name Generator — Unique Name Ideas Free (2026)",
   metaDescription:
-    "Generate channel name ideas for YouTube and shortlist options for branding and handle checks.",
+    "Generate unique YouTube channel name ideas for free. Enter your niche to get brandable, memorable channel names. Check handle availability instantly. AI-powered name suggestions.",
   path: "/social-media-tools/youtube-channel-name-generator",
-  keywords: [
-    "youtube name generator",
-    "channel name ideas",
-    "youtube channel name ideas",
-    "youtube brand name generator",
-    "creator name ideas",
-  ],
 
   header: {
-    title: "YouTube Name Generator",
+    title: "YouTube Channel Name Generator",
     description:
-      "Generate and refine channel-name ideas before checking availability.",
+      "Generate unique, brandable YouTube channel name ideas based on your niche and style. Enter your topic, get instant name suggestions, then check handle availability — free, no login needed.",
     titleSize: "medium",
     descriptionSize: "small",
   },
@@ -41,82 +34,99 @@ const toolConfig = createToolConfig({
   schemaOptions: {
     applicationCategory: "UtilitiesApplication",
     description:
-      "Channel-name idea generator for YouTube creator branding workflows.",
+      "Free YouTube channel name generator that creates unique, brandable name ideas based on niche, style, and keywords for creators and brands.",
     featureList: [
-      "Name idea generation",
-      "Niche-based suggestions",
-      "Branding brainstorm workflow",
-      "No-install utility",
+      "Generate unique YouTube channel name ideas from niche keywords",
+      "Multiple naming styles: professional, creative, funny, keyword-based",
+      "AI-powered name suggestions with brandability scoring",
+      "Instant handle availability check integration",
+      "Unlimited name generation batches",
+      "No login or software required",
     ],
     offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },
   },
 
   content: {
     definition:
-      "A YouTube Channel Name Generator is a free tool that creates unique, brandable channel name ideas based on your niche, style, and keywords.",
+      "A YouTube Channel Name Generator is a free AI-powered tool that creates unique, brandable channel name ideas based on your niche, content style, and target keywords — helping you find the perfect name before launching your channel.",
     quickAnswer:
-      "Enter your niche or topic, select a naming style (professional, funny, creative, etc.), and get instant channel name suggestions. Check availability and refine results until you find the perfect name.",
+      "Enter your niche or topic (e.g., 'tech reviews', 'cooking', 'gaming'), select a naming style (professional, funny, creative, keyword-based), and get instant channel name suggestions. Generate multiple batches to explore options, then check handle availability before committing.",
     keyTakeaways: [
-      "Generates channel name ideas based on your niche and preferred style",
-      "Multiple naming styles: professional, creative, funny, and keyword-based",
-      "Good channel names are short, memorable, and easy to spell",
-      "Check handle availability before committing to a name",
-      "A strong channel name supports brand recognition and search discoverability",
+      "Generates unique channel name ideas based on your niche, topic, and style preferences",
+      "Multiple naming styles available: professional, creative, funny, keyword-based, and more",
+      "Good YouTube channel names are short (under 20 characters), memorable, and easy to spell",
+      "Always check @handle availability before committing to a channel name",
+      "Consistent naming across YouTube, Instagram, TikTok, and X strengthens your brand",
+      "A strong channel name improves brand recall and YouTube search discoverability",
     ],
     overview:
-      "Use this tool to generate channel naming options quickly, then shortlist candidates for handle availability and brand consistency checks.",
+      "Find the perfect YouTube channel name with this free name generator. Enter your niche, content topic, or keywords, and the tool generates unique, brandable name ideas tailored to your style — professional, creative, funny, or keyword-focused. Generate multiple batches to explore different naming directions, then shortlist your favorites. Once you have a shortlist, check handle availability using our YouTube Handle Checker to ensure your chosen name is available as an @handle. A great channel name is short, memorable, easy to spell, and works as a brand across platforms.",
 
     howToSteps: [
-      "Enter niche, style, or keyword direction.",
-      "Generate a batch of name ideas.",
-      "Shortlist your top options.",
-      "Validate availability using the handle checker.",
+      "Enter your niche, topic, or keywords (e.g., 'fitness', 'tech reviews', 'travel vlog').",
+      "Select a naming style: professional, creative, funny, or keyword-based.",
+      "Generate a batch of channel name ideas and browse the suggestions.",
+      "Shortlist your favorites and check handle availability with our YouTube Handle Checker.",
     ],
 
     features: [
-      "Name-idea generation",
-      "Niche-driven suggestions",
-      "Fast iteration workflow",
-      "Branding prep support",
-      "Browser-based utility",
+      "AI-powered channel name ideas based on your niche and keywords",
+      "Multiple naming styles: professional, creative, funny, keyword-based",
+      "Generate unlimited batches to explore different naming directions",
+      "Short, brandable names optimized for YouTube and cross-platform use",
+      "No login, account, or software installation required",
+      "Works on mobile and desktop browsers",
     ],
 
     useCases: [
-      "New channel planning",
-      "Channel rebrand naming",
-      "Agency creator onboarding",
-      "Editorial vertical launches",
+      "New creators brainstorming YouTube channel names before their first upload",
+      "Existing creators rebranding their channel with a new name and identity",
+      "Agencies and MCNs generating name options for client creator channels",
+      "Brands launching YouTube presence and need a channel name matching their identity",
+      "Content teams starting niche-specific channels for editorial verticals",
     ],
 
     aboutTool:
-      "This page is optimized for utility intent with a fast brainstorm flow that helps creators move from vague concepts to shortlist-ready names.",
+      "Choosing a YouTube channel name is one of the most important branding decisions for a creator. Your channel name appears in search results, video recommendations, comments, and your channel URL. A good name should be: short (under 20 characters), easy to spell and pronounce, memorable, and available as an @handle on YouTube and other platforms. This generator creates name ideas tailored to your niche using multiple naming approaches — keyword-based names that are SEO-friendly, creative names that stand out, professional names for business channels, and fun/catchy names for entertainment. Generate multiple batches, compare options, and always check handle availability before deciding.",
 
     proTip:
-      "Pair each shortlisted name with handle checks and basic trademark screening before final selection.",
+      "After generating names, check availability on YouTube, Instagram, TikTok, and X simultaneously. Cross-platform consistency is crucial for brand building. Also do a quick Google search for your chosen name to make sure it doesn't conflict with an existing brand or trademark.",
 
     faqs: [
       {
-        question: "Can this generate niche-specific names?",
+        question: "How do I choose a good YouTube channel name?",
         answer:
-          "Yes. Add niche context to improve relevance of suggestions.",
+          "A good YouTube channel name is short (under 20 characters), easy to spell and pronounce, memorable, and relevant to your niche. Avoid numbers and special characters unless they are part of your brand. Check that the name is available as an @handle before committing.",
       },
       {
-        question: "Should I check handle availability after generating names?",
-        answer: "Yes. Validate handle and URL availability before launch.",
-      },
-      {
-        question: "Can this help with rebrands?",
+        question: "Can this generator create niche-specific channel names?",
         answer:
-          "Yes. It is useful for exploring alternatives during channel repositioning.",
+          "Yes. Enter your specific niche (e.g., 'vegan cooking', 'Minecraft gameplay', 'personal finance') and the generator creates names relevant to that topic. The more specific your input, the more targeted the suggestions.",
       },
       {
-        question: "Can I generate multiple batches?",
+        question: "Should I check handle availability after choosing a name?",
         answer:
-          "Yes. Run multiple rounds to compare naming patterns quickly.",
+          "Absolutely. Your YouTube channel name and @handle should ideally match. Use our YouTube Handle Checker to verify availability before creating your channel. Also check the same handle on Instagram, TikTok, and X.",
       },
       {
-        question: "Is this free?",
-        answer: "Yes. It is available as a free utility.",
+        question: "Can I change my YouTube channel name later?",
+        answer:
+          "Yes, you can change your display name anytime. However, your @handle (which affects your channel URL) can only be changed twice every 14 days, and your old handle becomes available for others to claim. Choose carefully the first time.",
+      },
+      {
+        question: "What makes a YouTube channel name SEO-friendly?",
+        answer:
+          "Including relevant keywords in your channel name helps with YouTube search discoverability. For example, 'TechSimplified' is more SEO-friendly than 'RandomName123'. However, balance SEO with brandability — a keyword-stuffed name is harder to remember.",
+      },
+      {
+        question: "Can I use this for rebranding my existing channel?",
+        answer:
+          "Yes. Enter your new content direction or niche, generate name ideas, and find a name that better represents your evolved brand. Check handle availability before making the switch.",
+      },
+      {
+        question: "Is this YouTube name generator free?",
+        answer:
+          "Yes. Completely free with unlimited name generation batches, no registration, and no login required.",
       },
     ],
 

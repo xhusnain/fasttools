@@ -11,29 +11,23 @@ const PDFToImage = dynamic(() => import("@/components/pdf/pdf-to-image").then((m
 const toolConfig = createToolConfig({
   toolName: "PDF to Image Converter",
   description:
-    "Convert PDF pages to JPG, PNG, or WebP images with quality presets and page selection.",
-  metaTitle: "PDF to Image Converter - Convert PDF to JPG, PNG, WebP",
+    "Convert PDF pages to high-quality JPG, PNG, or WebP images online for free. Export all pages or specific page ranges with adjustable quality settings and download individually or as a ZIP archive.",
+  metaTitle: "PDF to Image Converter — Convert PDF to JPG, PNG, WebP Free (2026)",
   metaDescription:
-    "Convert PDF pages to JPG, PNG, or WebP online. Export all pages or selected ranges, then download images individually or as ZIP.",
+    "Convert PDF to JPG, PNG, or WebP images online free. Export all pages or select specific ranges, adjust image quality, and download individually or as ZIP. No software installation needed.",
   path: "/pdf-tools/pdf-to-image",
-  keywords: [
-    "pdf to image",
-    "pdf to jpg",
-    "pdf to png",
-    "pdf to webp",
-    "convert pdf pages to images",
-    "extract images from pdf pages",
-  ],
 
   schemaOptions: {
     applicationCategory: "BusinessApplication",
     description:
-      "Browser-based PDF page to image converter with format selection, quality presets, and ZIP export.",
+      "Free online PDF to image converter supporting JPG, PNG, and WebP output formats. Features adjustable quality presets, all-page or selected-page conversion, individual image download, and bulk ZIP export with browser-based processing.",
     featureList: [
-      "Convert to JPG PNG WebP",
-      "All pages or selected pages",
-      "Quality presets",
-      "Individual and ZIP download",
+      "Convert PDF to JPG, PNG, or WebP format",
+      "All pages or custom page range selection",
+      "Low, medium, and high quality presets",
+      "Individual page image download",
+      "Bulk ZIP archive download",
+      "Client-side browser processing",
     ],
     softwareRequirements: "Modern web browser",
   },
@@ -41,7 +35,7 @@ const toolConfig = createToolConfig({
   header: {
     title: "PDF to Image Converter",
     description:
-      "Export PDF pages to JPG, PNG, or WebP with all-page and selected-page conversion options.",
+      "Convert PDF pages to high-quality JPG, PNG, or WebP images online for free. Export all pages or select specific page ranges, choose your quality level, and download images individually or as a ZIP archive — all processed locally in your browser.",
     titleSize: "medium",
     descriptionSize: "small",
   },
@@ -53,111 +47,110 @@ const toolConfig = createToolConfig({
 
   content: {
     definition:
-      "A PDF to Image Converter is a free tool that converts PDF pages into high-quality PNG or JPG images for sharing, presentations, and web use.",
+      "A PDF to Image Converter is a free online tool that renders each page of a PDF document into a high-quality raster image in JPG, PNG, or WebP format — ideal for presentations, social media, web publishing, and document archiving.",
     quickAnswer:
-      "Upload a PDF to convert each page to an image. Choose PNG (lossless) or JPG (smaller size), set the resolution (DPI), and download individual page images or all pages as a ZIP file.",
+      "Upload a PDF to convert pages into images. Select your output format — PNG for lossless quality with transparency support, JPG for smaller file sizes, or WebP for modern web-optimized output. Choose a quality preset (low, medium, or high), select all pages or specific page ranges, and download individual images or all pages as a ZIP archive.",
     keyTakeaways: [
-      "Converts each PDF page to a separate PNG or JPG image",
-      "Adjustable resolution: 72 DPI (web) to 300 DPI (print quality)",
-      "PNG for lossless quality, JPG for smaller file sizes",
-      "Download individual pages or all pages as a ZIP archive",
-      "All conversion runs locally in your browser",
+      "Converts each PDF page to a separate high-resolution JPG, PNG, or WebP image",
+      "Three quality presets: low (fast, smaller files), medium (balanced), high (maximum detail)",
+      "PNG for lossless quality and transparency, JPG for compact file sizes, WebP for web optimization",
+      "Download individual page images or export all pages as a single ZIP archive",
+      "Supports custom page range selection (e.g., pages 1-5, 8, 12-15)",
+      "All conversion processing runs locally in your browser — files never leave your device",
     ],
     overview:
-      "PDF to Image Converter is built for page export workflows where PDF pages need to be reused as images. Choose output format and quality, convert all pages or specific pages, then download individual files or one ZIP package.",
+      "This free PDF to image converter transforms PDF document pages into high-quality raster images suitable for presentations, social media posts, web publishing, email embedding, and digital archiving. The tool supports three output formats: PNG delivers lossless image quality ideal for text-heavy documents and graphics that need crisp edges; JPG produces smaller file sizes perfect for photo-heavy PDFs and email-friendly images; WebP provides modern compression with excellent quality-to-size ratio for web use. Choose from three quality presets to control the resolution and detail level of your output images. Convert all pages at once for complete document conversion, or select specific page ranges when you only need certain pages. Download images one at a time or grab everything in a single ZIP archive for batch workflows.",
 
     howToSteps: [
-      "Upload a PDF file.",
-      "Choose output format (JPG, PNG, or WebP) and quality preset.",
-      "Select conversion mode: all pages or specific pages/ranges.",
-      "Run conversion and download images individually or as ZIP.",
+      "Upload your PDF file by dragging and dropping or clicking the upload area.",
+      "Select the output image format: JPG (compact), PNG (lossless), or WebP (web-optimized).",
+      "Choose a quality preset: low for fast processing, medium for balanced output, or high for maximum detail.",
+      "Select conversion scope: all pages for complete conversion or enter specific page numbers/ranges.",
+      "Click convert and download individual page images or use the ZIP download for all pages at once.",
     ],
 
     features: [
-      "JPG, PNG, and WebP output",
-      "Low, medium, and high quality presets",
-      "All-pages or selected-pages conversion",
-      "Page range parsing (for specific mode)",
-      "Individual image download",
-      "Bulk ZIP download",
-      "No account required",
-      "Browser-based workflow",
+      "Three output formats: JPG (lossy, compact), PNG (lossless, transparent), WebP (modern web format)",
+      "Adjustable quality presets controlling image resolution and compression level",
+      "All-pages conversion for complete PDF-to-image extraction",
+      "Custom page range selector supporting individual pages and ranges (e.g., 1-3, 5, 8-12)",
+      "Individual image download for specific pages you need",
+      "Bulk ZIP download to export all converted pages in a single archive",
+      "100% browser-based processing — no uploads to external servers",
     ],
 
     useCases: [
-      "Export PDF slides as image assets",
-      "Create image snippets from reports",
-      "Prepare document pages for web publishing",
-      "Share selected PDF pages in image format",
-      "Build visual archives from PDF content",
+      "Convert PDF presentation slides to image files for embedding in PowerPoint or Google Slides",
+      "Extract PDF pages as images for social media posts, thumbnails, and content marketing",
+      "Prepare document pages as web-ready images for blog posts and online articles",
+      "Create image-based archives of important PDF documents for visual reference",
+      "Convert PDF charts, graphs, and infographics to standalone image files for reports",
+      "Share specific PDF pages as images via messaging apps and email where PDF viewing is limited",
     ],
 
     aboutTool: (
       <div className="space-y-6 text-muted-foreground">
         <div>
-          <h3 className="text-lg font-semibold text-foreground mb-2">Format Choice</h3>
+          <h3 className="text-lg font-semibold text-foreground mb-2">JPG vs. PNG vs. WebP: Choosing the Right Format</h3>
           <p>
-            Choose JPG for smaller image files, PNG for sharper text-heavy pages, and WebP for modern compressed web output.
+            JPG (JPEG) uses lossy compression to produce the smallest file sizes, making it ideal for photo-heavy PDFs, email sharing, and situations where file size matters more than pixel-perfect accuracy. PNG uses lossless compression that preserves every pixel, making it the best choice for text-heavy documents, screenshots, diagrams, and graphics with sharp edges or transparency. WebP is a modern format developed by Google that offers superior compression compared to both JPG and PNG — it produces smaller files at equivalent quality, making it perfect for web publishing and digital content creation.
           </p>
         </div>
 
         <div>
-          <h3 className="text-lg font-semibold text-foreground mb-2">Quality and File Size</h3>
+          <h3 className="text-lg font-semibold text-foreground mb-2">Understanding Quality Presets and Resolution</h3>
           <p>
-            Higher quality gives clearer detail but larger images. For publishing workflows, test medium first, then adjust up or down
-            based on clarity and size targets.
+            The quality preset controls the rendering resolution and compression level of the output images. Low quality produces smaller images suitable for quick previews and thumbnails. Medium quality provides a balanced output ideal for most screen-viewing and sharing scenarios. High quality renders pages at maximum resolution with minimal compression, suitable for printing, professional presentations, and situations requiring fine detail. For text documents, medium quality is usually sufficient. For detailed charts, photographs, or print-ready output, use high quality.
           </p>
         </div>
 
         <div>
-          <h3 className="text-lg font-semibold text-foreground mb-2">Intent Coverage</h3>
+          <h3 className="text-lg font-semibold text-foreground mb-2">Batch Conversion and ZIP Export</h3>
           <p>
-            This page is optimized for utility queries like "pdf to jpg" and "convert pdf to image" with task-first structure and direct
-            output actions.
+            When converting multi-page PDFs, the tool processes each page into a separate numbered image file. The ZIP download option packages all converted images into a single archive, making it easy to download and organize large document conversions. This is particularly useful for converting entire presentations, reports, or book chapters into image format for archival or republishing purposes.
           </p>
         </div>
       </div>
     ),
 
     proTip:
-      "Use specific-page mode when you only need a few pages. It reduces processing time and download size.",
+      "Use specific-page mode when you only need a few pages from a large PDF — it significantly reduces processing time and download size. For web publishing, WebP at medium quality offers the best balance of file size and visual quality.",
 
     faqs: [
       {
-        question: "How do I convert PDF pages to JPG?",
+        question: "How do I convert a PDF to JPG images online for free?",
         answer:
-          "Upload your PDF, choose JPG format, run conversion, then download the generated images.",
+          "Upload your PDF to this free converter, select JPG as the output format, choose your quality preset, and click convert. Download individual page images or use the ZIP option to get all pages at once. No account registration or software installation needed.",
       },
       {
-        question: "Can I export only selected pages?",
+        question: "Can I convert only specific pages from a PDF to images?",
         answer:
-          "Yes. Use specific-page mode and enter page numbers or ranges.",
+          "Yes. Switch to specific-page mode and enter individual page numbers (e.g., 1, 3, 7) or page ranges (e.g., 5-12). Only the selected pages will be converted, saving processing time and download bandwidth.",
       },
       {
-        question: "Which format should I choose: JPG, PNG, or WebP?",
+        question: "Should I choose JPG, PNG, or WebP for my PDF conversion?",
         answer:
-          "JPG is usually smaller, PNG is often better for text clarity, and WebP is good for modern web usage.",
+          "Choose JPG for the smallest file sizes — best for photos and email sharing. Choose PNG for lossless quality — best for text documents, screenshots, and graphics with sharp edges. Choose WebP for modern web use — it offers better compression than both JPG and PNG at equivalent visual quality.",
       },
       {
-        question: "Can I download all converted pages at once?",
-        answer: "Yes. Use the ZIP download option to export all converted pages together.",
-      },
-      {
-        question: "Is this tool free?",
-        answer: "Yes, it is available as a free browser-based utility.",
-      },
-      {
-        question: "Do I need to install an app?",
-        answer: "No. You can run conversions directly in your browser.",
-      },
-      {
-        question: "Can I use PDF to Image on mobile?",
-        answer: "Yes. It supports modern mobile and desktop browsers.",
-      },
-      {
-        question: "Can this convert encrypted PDFs?",
+        question: "Can I download all converted PDF pages as a single ZIP file?",
         answer:
-          "If a PDF is protected, unlock it first with PDF Unlocker and then run image conversion.",
+          "Yes. After conversion, click the ZIP download button to package all converted page images into a single archive. Each image is named with its page number for easy organization.",
+      },
+      {
+        question: "What image resolution does the PDF to image converter produce?",
+        answer:
+          "Resolution depends on your quality preset selection. Low quality produces web-preview sized images, medium quality generates screen-resolution images suitable for most uses, and high quality renders pages at maximum detail suitable for printing and professional presentations.",
+      },
+      {
+        question: "Is my PDF data safe when converting to images online?",
+        answer:
+          "Yes. All PDF rendering and image conversion happens locally in your browser using client-side JavaScript. Your PDF file is never uploaded to any server, making the tool safe for confidential, business, and personal documents.",
+      },
+      {
+        question: "Can I convert a password-protected PDF to images?",
+        answer:
+          "Protected PDFs must be unlocked first. Use our free PDF Unlocker tool to remove password restrictions, then upload the unlocked PDF to this converter for image extraction.",
       },
     ],
 

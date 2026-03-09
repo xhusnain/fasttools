@@ -64,15 +64,6 @@ const toolConfig = createToolConfig({
   metaDescription:
     "Free web tools for developers and analysts: URL encoder/decoder, URL parser, HTML escape, auth header generator, device info, and Safe Links decoder.",
   path: "/web-tools",
-  keywords: [
-    "web tools",
-    "url encoder",
-    "url parser",
-    "html escape",
-    "auth header generator",
-    "device info",
-    "safelink decoder",
-  ],
   schemaOptions: {
     itemList: {
       name: "Web Tools Collection",

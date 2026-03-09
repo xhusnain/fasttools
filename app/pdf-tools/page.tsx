@@ -65,18 +65,6 @@ const toolConfig = createToolConfig({
   metaDescription:
     "Use free PDF tools online: compress PDF, split or merge files, sign documents, unlock restrictions, convert formats, and check signatures.",
   path: "/pdf-tools",
-  keywords: [
-    "pdf tools",
-    "compress pdf",
-    "split pdf",
-    "merge pdf",
-    "sign pdf",
-    "unlock pdf",
-    "pdf to word",
-    "word to pdf",
-    "pdf to image",
-    "pdf signature checker",
-  ],
 
   schemaOptions: {
     applicationCategory: "BusinessApplication",

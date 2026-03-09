@@ -51,14 +51,6 @@ const toolConfig = createToolConfig({
   metaDescription:
     "Free SEO tools for metadata, keyword density, title generation, text similarity checks, and placeholder content workflows.",
   path: "/seo-tools",
-  keywords: [
-    "seo tools",
-    "meta tag generator",
-    "keyword density checker",
-    "blog title generator",
-    "text similarity checker",
-    "lorem ipsum generator",
-  ],
 
   header: {
     title: "SEO Tools",

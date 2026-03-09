@@ -11,9 +11,9 @@ import { Clock, Calculator, Target, TrendingUp, Globe, Calendar, Plus, Minus, Za
 import { GTable } from "@/ui/gtable"
 
 const baseMetadata = createMetadata({
-  title: "Time Duration Calculator - Calculate Time Span",
+  title: "Time Duration Calculator — Calculate Hours Between Times Free (2026)",
   description:
-    "Calculate exact time duration between two points with tools for work hours, overtime, and schedule planning.",
+    "Free time duration calculator to find exact hours, minutes & seconds between two times. Includes work hours tracker, overtime calculator, business hours filter, timezone converter, and work days counter for payroll and project management.",
   path: "/calculator/time-duration",
   breadcrumbs: [
     { label: "Calculator", href: "/calculator" },
@@ -47,31 +47,34 @@ export const metadata: Metadata = {
 export default function TimeDurationPage() {
   const toolContent = {
     toolName: "Time Duration Calculator",
-    overview: "Calculate exact time duration between two points in hours, minutes & seconds. Free online time duration calculator for work hours, study time, events, payroll, and project management. Accurate, fast, and easy to use.",
+    overview: "Calculate the exact time duration between any two points in hours, minutes, and seconds with our free online time duration calculator. Offering 7 calculation modes — elapsed time, time addition, time subtraction, business hours filtering, timezone conversion, work days counting, and overtime separation — this tool handles cross-midnight shifts, 24-hour rollover, and leap-year edge cases automatically. Perfect for payroll processing, project timeline estimation, shift scheduling, SLA compliance tracking, study session logging, and international meeting coordination.",
 
     howToSteps: [
-      "Select Calculation Type: Choose from 7 calculation types: Duration, Addition, Subtraction, Business Hours, Timezone Conversion, Work Days, or Overtime Calculator",
-      "Enter Time Values: Input the required time values based on your selected calculation type",
-      "Calculate Results: Click calculate to get detailed results with formulas and explanations"
+      "Select Calculation Type: Choose from 7 modes — Elapsed Duration, Time Addition, Time Subtraction, Business Hours Filter, Timezone Conversion, Work Days Counter, or Overtime Separator.",
+      "Enter Time Values: Input start time, end time, or duration values. The calculator handles AM/PM and 24-hour formats, cross-midnight shifts, and multi-day spans automatically.",
+      "Calculate Results: Click calculate to get detailed results in hours, minutes, and seconds with the underlying mathematical formula and step-by-step explanation displayed."
     ],
 
     features: [
-      "Time Duration Calculation",
-      "Time Addition & Subtraction",
-      "Business Hours Calculator",
-      "Timezone Conversion",
-      "Work Days Calculator",
-      "Overtime Calculator",
-      "Real-time Current Time Display",
-      "Mathematical Formula Display",
-      "Mobile-Responsive Design",
-      "Professional Time Management"
+      "Elapsed Duration: Calculate exact hours, minutes, and seconds between any two time points with cross-midnight support.",
+      "Time Addition & Subtraction: Add or subtract hours, minutes, and seconds to/from a start time with 24-hour overflow handling.",
+      "Business Hours Filter: Isolate only the hours within your defined business window (e.g., 9 AM-5 PM) for accurate billing and SLA calculations.",
+      "Timezone Converter: Convert times across international timezones for global meeting coordination and travel planning.",
+      "Work Days Calculator: Count business days between two dates, automatically excluding weekends and configurable holidays.",
+      "Overtime Separator: Split total hours into regular and overtime based on a configurable weekly threshold (default 40 hours) for payroll compliance.",
+      "Real-Time Clock Display: Live current-time readout so you can calculate durations from 'now' without looking up the time.",
+      "Formula Display: See the exact mathematical formula behind each calculation for transparency and verification.",
+      "Mobile-Responsive: Fully optimized for smartphones and tablets for on-the-go time tracking.",
+      "No Registration Required: Use all 7 calculation modes instantly with no signup or login needed."
     ],
 
     useCases: [
-      "Business & Finance: Calculate total hours worked, track project timelines, ensure SLA tracking, get detailed billing breakdowns.",
-      "Education & Productivity: Track study sessions, plan exam preparation, measure productivity, track habits.",
-      "Additional Applications: Track conference lengths, manage deadlines, handle international scheduling."
+      "Payroll & HR: Calculate total hours worked per shift, separate regular from overtime hours, and generate accurate timesheets for weekly or bi-weekly payroll processing.",
+      "Project Management: Estimate project timelines, track task durations, count remaining work days until deadlines, and calculate billable hours for client invoicing.",
+      "Shift Scheduling: Handle overnight and cross-midnight shifts in healthcare, manufacturing, hospitality, and security industries where standard 9-to-5 calculations fail.",
+      "Global Coordination: Convert meeting times across international timezones and calculate the best overlap windows for distributed teams in different regions.",
+      "Education & Productivity: Log study sessions, track exam preparation hours, measure focus time with Pomodoro intervals, and build habit-tracking streaks.",
+      "SLA & Compliance: Calculate business-hours-only response times for service-level agreements, excluding nights, weekends, and holidays from elapsed duration."
     ],
 
     aboutTool: (
@@ -343,8 +346,8 @@ export default function TimeDurationPage() {
   return (
     <ToolPageLayout
       header={{
-        title: "Time Duration Calculator",
-        description: "Calculate exact time duration between two points in hours, minutes & seconds. Free online time duration calculator for work hours, study time, events, payroll, and project management. Accurate, fast, and easy to use.",
+        title: "Time Duration Calculator — Hours Between Two Times (2026)",
+        description: "Free time duration calculator with 7 calculation modes: elapsed time, time addition/subtraction, business hours filter, timezone conversion, work days counter, and overtime separator. Ideal for payroll processing, project timelines, shift scheduling, and SLA tracking.",
         titleSize: "medium",
         descriptionSize: "small",
         color: "blue"
@@ -360,9 +363,9 @@ export default function TimeDurationPage() {
       }
       toolContent={toolContent}
       expectedMetadata={{
-        title: "Time Duration Calculator | Free Online Time Tool",
+        title: "Time Duration Calculator — Calculate Hours Between Times Free (2026)",
         description:
-          "Calculate exact time duration between two points with tools for work hours, overtime, and schedule planning.",
+          "Free time duration calculator to find exact hours, minutes & seconds between two times. Includes work hours tracker, overtime calculator, business hours filter, timezone converter, and work days counter for payroll and project management.",
         path: "/calculator/time-duration"
       }}
     />

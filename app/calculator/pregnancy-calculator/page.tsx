@@ -11,9 +11,9 @@ import { GTable } from "@/ui/gtable"
 import { Brain, Calculator, Target, BookOpen, Shield, Users, TrendingUp, Info, AlertTriangle, CheckCircle, Zap, Heart, Calendar, Baby } from "lucide-react"
 
 const baseMetadata = createMetadata({
-  title: "Pregnancy Calculator - Track Your Due Date",
+  title: "Pregnancy Calculator — Due Date & Week-by-Week Tracker Free (2026)",
   description:
-    "Track your pregnancy with our comprehensive pregnancy calculator. Get due date estimates, gestational age, weight gain recommendations, and trimester guidance.",
+    "Free pregnancy calculator to estimate your due date, track gestational age week by week, get IOM weight gain recommendations by BMI, and receive trimester-specific guidance using LMP, ultrasound, conception, or IVF transfer dates.",
   path: "/calculator/pregnancy-calculator",
   breadcrumbs: [
     { label: "Calculator", href: "/calculator" },
@@ -44,24 +44,24 @@ export const metadata: Metadata = {
 export default function PregnancyCalculatorPage() {
   const toolContent = {
     toolName: "Pregnancy Calculator",
-    overview: "Use our pregnancy tracking tool to monitor your journey. Receive estimated delivery dates, track how far along you are, get customized weight management advice, and access trimester-by-trimester support tailored to your needs.",
+    overview: "Calculate your estimated due date, track gestational age week by week, and receive personalized IOM weight gain recommendations based on pre-pregnancy BMI with our free pregnancy calculator. Supporting five calculation methods — last menstrual period (LMP), known due date, first-trimester ultrasound (Crown-Rump Length), conception date, and IVF transfer date (Day 3 or Day 5) — this tool uses Naegele's Rule and standard medical formulas to provide accurate trimester guidance, symptom tracking, milestone timelines, and nutrition tips for expectant mothers.",
 
     howToSteps: [
-      "Pick Your Input Method: Choose from due date, last period, ultrasound date, conception date, or IVF transfer.",
-      "Add Your Details: Enter the relevant dates and your pre-pregnancy height/weight.",
-      "Review Your Results: See your estimated due date, current week, and trimester.",
-      "Check Recommendations: View personalized weight gain advice and health tips.",
-      "Monitor Progress: Return weekly to track baby's growth and your milestones."
+      "Pick Your Input Method: Choose from five calculation methods — known due date, last menstrual period (LMP), first-trimester ultrasound date, conception date, or IVF embryo transfer (Day 3 or Day 5).",
+      "Add Your Details: Enter the relevant dates plus your pre-pregnancy height and weight so the tool can calculate BMI-based weight gain ranges.",
+      "Review Your Results: See your estimated due date (EDD), current gestational week and day, trimester stage, and fetal age.",
+      "Check Recommendations: View personalized IOM weight gain guidelines, trimester-specific nutrition advice, safe exercise tips, and upcoming milestone dates.",
+      "Monitor Progress: Return weekly to track your baby's size comparisons, developmental milestones, and common symptoms for your current week of pregnancy."
     ],
 
     features: [
-      "Multiple Calculation Methods: Support for LMP, Due Date, Ultrasound, Conception, and IVF.",
-      "Week-by-Week Tracking: Detailed updates on baby's size and development.",
-      "Weight Management: Personalized weight gain ranges based on BMI.",
-      "Trimester Guides: Specific advice for First, Second, and Third trimesters.",
-      "Symptom Tracker: Information on common symptoms for your current stage.",
-      "Milestone Timeline: Key dates for tests, scans, and baby's development.",
-      "Mobile Friendly: Track your pregnancy anywhere, anytime."
+      "Five Calculation Methods: Support for LMP (Naegele's Rule), known due date, first-trimester ultrasound (CRL), conception date, and IVF transfer (Day 3/Day 5).",
+      "Week-by-Week Tracking: Detailed gestational age updates with baby's size comparisons and developmental milestones each week.",
+      "BMI-Based Weight Management: Personalized IOM weight gain ranges for underweight, normal, overweight, and obese pre-pregnancy BMI categories.",
+      "Trimester-Specific Guides: Targeted advice, symptoms, and health tips for First (1-12 wk), Second (13-26 wk), and Third (27-40 wk) trimesters.",
+      "Symptom Information: Common symptoms mapped to your current gestational week to help you know what to expect.",
+      "Milestone Timeline: Key dates for blood tests, anatomy scan (20 wk), glucose screening (24-28 wk), and other prenatal checkpoints.",
+      "Mobile-Responsive Design: Track your pregnancy journey on smartphones, tablets, and desktops anywhere, anytime."
     ],
 
     useCases: [
@@ -281,7 +281,7 @@ export default function PregnancyCalculatorPage() {
       </div>
     ),
 
-    proTip: "Due dates are estimates, not deadlines! Only about 5% of babies are born on their exact due date. Most arrive within a window of two weeks before or after.",
+    proTip: "Due dates are estimates, not deadlines — only about 5% of babies arrive on their exact EDD. If your cycle is irregular, ask your provider for a first-trimester ultrasound (weeks 6-13) to date the pregnancy using Crown-Rump Length, which is accurate to within 5-7 days and considered the clinical gold standard.",
 
     faqs: [
       {
@@ -452,8 +452,8 @@ export default function PregnancyCalculatorPage() {
   return (
     <ToolPageLayout
       header={{
-        title: "Pregnancy Calculator - Track Your Journey",
-        description: "Track your pregnancy with our comprehensive pregnancy calculator. Get due date estimates, gestational age, weight gain recommendations, and trimester guidance.",
+        title: "Pregnancy Calculator — Due Date & Week-by-Week Tracker (2026)",
+        description: "Free pregnancy due date calculator supporting LMP, ultrasound, conception, and IVF transfer date methods. Track gestational age week by week, get personalized IOM weight gain recommendations based on pre-pregnancy BMI, and access trimester-specific health guidance and milestone timelines.",
         titleSize: "medium",
         descriptionSize: "small",
         color: "pink"
@@ -469,8 +469,8 @@ export default function PregnancyCalculatorPage() {
       }
       toolContent={toolContent}
       expectedMetadata={{
-        title: "Pregnancy Calculator | Free Online Tracking Tool",
-        description: "Track your pregnancy with our comprehensive pregnancy calculator. Get due date estimates, gestational age, weight gain recommendations, and trimester guidance.",
+        title: "Pregnancy Calculator — Due Date & Week-by-Week Tracker Free (2026)",
+        description: "Free pregnancy calculator to estimate your due date, track gestational age week by week, get IOM weight gain recommendations by BMI, and receive trimester-specific guidance using LMP, ultrasound, conception, or IVF transfer dates.",
         path: "/calculator/pregnancy-calculator"
       }}
     />

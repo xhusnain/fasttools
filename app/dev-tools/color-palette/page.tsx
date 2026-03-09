@@ -13,22 +13,15 @@ const toolConfig = createToolConfig({
   toolName: "Color Palette Generator",
   description:
     "Generate and refine color palettes with copy-ready hex values for UI and brand workflows.",
-  metaTitle: "Color Palette Generator (HEX Palette Tool)",
+  metaTitle: "Color Palette Generator — Create Color Schemes Online Free (2026)",
   metaDescription:
-    "Create random and curated color palettes for web and product design. Copy hex colors and iterate combinations quickly.",
+    "Free color palette generator. Create harmonious color schemes — complementary, analogous, triadic, monochromatic. Copy hex, RGB, HSL values for CSS and design. No signup required.",
   path: "/dev-tools/color-palette",
-  keywords: [
-    "color palette generator",
-    "hex color palette",
-    "ui color palette tool",
-    "color scheme generator",
-    "design palette creator",
-  ],
 
   header: {
     title: "Color Palette Generator",
     description:
-      "Build and iterate palette sets for interfaces, branding, and visual systems.",
+      "Generate harmonious color palettes using color theory — complementary, analogous, triadic, and monochromatic schemes. Pick a base color or enter a hex code, copy values in hex, RGB, or HSL for CSS and design.",
     titleSize: "medium",
     descriptionSize: "small",
     color: "blue",
@@ -65,7 +58,7 @@ const toolConfig = createToolConfig({
       "Useful for web design, branding, UI themes, and presentation styling",
     ],
     overview:
-      "Use this palette tool to generate color combinations and quickly test visual directions for interfaces, brand systems, and content design work.",
+      "Create beautiful color palettes with this free online generator. Pick a base color or enter a hex code to generate harmonious color schemes based on color theory — complementary, analogous, triadic, split-complementary, tetradic, and monochromatic relationships. Lock colors you like and regenerate the rest to explore variations. Copy colors as hex, RGB, or HSL values ready for CSS, Tailwind, Figma, or any design tool. Useful for web design, branding, UI theme creation, presentation styling, and social media graphics.",
 
     howToSteps: [
       "Generate a palette set from the tool controls.",
@@ -89,48 +82,42 @@ const toolConfig = createToolConfig({
       "Design handoff to development",
     ],
 
-    aboutTool: (
-      <div className="space-y-6 text-muted-foreground">
-        <p>
-          Palette generators rank well when they combine immediate visual output
-          with practical export behavior. This page is optimized for that
-          designer/developer intent.
-        </p>
-        <p>
-          Use it to shorten exploration cycles and move from inspiration to
-          implementation-ready color values quickly.
-        </p>
-      </div>
-    ),
+    aboutTool:
+      "Color harmony is based on mathematical relationships between hues on the color wheel. Complementary colors (opposite on the wheel) create high contrast and visual impact. Analogous colors (adjacent) feel natural and cohesive. Triadic colors (evenly spaced by 120°) offer vibrant balanced palettes. Monochromatic schemes use tints, tones, and shades of a single hue for elegant simplicity. This generator applies these rules to your chosen base color and produces ready-to-use palettes. All generated colors can be exported as hex (#FF5733), RGB (rgb(255, 87, 51)), or HSL (hsl(11, 100%, 60%)) for CSS stylesheets, design tokens, and Tailwind config files.",
 
     proTip:
-      "Validate contrast and readability in your actual UI before finalizing any palette for production.",
+      "Always check contrast ratios between text and background colors for WCAG accessibility compliance. A beautiful palette that fails contrast checks will cause readability issues. Use a 4.5:1 minimum ratio for body text and 3:1 for large headings.",
 
     faqs: [
       {
-        question: "Can I copy hex values directly?",
+        question: "What color scheme types can I generate?",
         answer:
-          "Yes. The palette workflow supports quick extraction of hex values for implementation.",
+          "Complementary (opposite hues), analogous (adjacent hues), triadic (3 evenly spaced), split-complementary, tetradic (4 colors), and monochromatic (tints/shades of one hue).",
       },
       {
-        question: "Is this useful for branding and UI both?",
+        question: "Can I copy colors as hex, RGB, and HSL?",
         answer:
-          "Yes. It supports early-stage palette exploration for brand and product interfaces.",
+          "Yes. Click on any color in the palette to copy its value in hex, RGB, or HSL format — ready for CSS, design tools, or code.",
       },
       {
-        question: "Should I rely on random palettes alone?",
+        question: "How do I build a palette for my brand?",
         answer:
-          "Random generation is a starting point; final palettes should be tested for accessibility and context fit.",
+          "Start with your primary brand color as the base, then generate complementary or analogous schemes for secondary and accent colors. Test the palette in context with your actual UI or brand materials before finalizing.",
       },
       {
-        question: "Can this replace full design tools?",
+        question: "Can I lock colors while regenerating the palette?",
         answer:
-          "It complements design tools by speeding up palette ideation and extraction.",
+          "Yes. Lock any color you like, then regenerate the rest. This lets you explore variations while keeping your favorite colors fixed.",
       },
       {
-        question: "Does this help with developer handoff?",
+        question: "Is this useful for Tailwind CSS or CSS variables?",
         answer:
-          "Yes. Copy-ready color values make it easier to transfer palette decisions into code.",
+          "Yes. Copy hex or HSL values directly into your Tailwind config (theme.extend.colors) or CSS custom properties (--primary: #hex).",
+      },
+      {
+        question: "Is this color palette generator free?",
+        answer:
+          "Yes. Completely free with no registration, no limits, and no watermarks on generated palettes.",
       },
     ],
 

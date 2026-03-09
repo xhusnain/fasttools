@@ -53,28 +53,6 @@ export const metadata: Metadata = {
   ...baseMetadata,
   applicationName: "FastTools",
   category: "Finance Tools",
-  keywords: [
-    "discount calculator",
-    `discount calculator`,
-    "free discount calculator",
-    "sale price calculator",
-    "percentage discount calculator",
-    "fixed discount calculator",
-    "discount calculator online",
-    "percentage discount",
-    "fixed discount",
-    "stacked discounts",
-    "multiple discounts",
-    "compound discounts",
-    "sequential discounts",
-    "cumulative discounts",
-    "progressive discounts",
-    "tiered discounts",
-    "bulk discounts",
-    "volume discounts",
-    "quantity discounts",
-    "black friday discount calculator"
-  ]
 }
 
 export default function DiscountCalculatorPage() {

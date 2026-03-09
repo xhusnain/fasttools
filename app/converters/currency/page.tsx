@@ -26,23 +26,15 @@ const toolConfig = createToolConfig({
   toolName: "Currency Converter",
   description:
     "Convert currencies with live exchange-rate data for travel, pricing, and payment planning.",
-  metaTitle: "Currency Converter (Live Rates) - Free Online Tool",
+  metaTitle: "Currency Converter — Convert Money With Live Exchange Rates Free (2026)",
   metaDescription:
-    "Convert between global currencies with live exchange rates. Free online currency converter for travel, business, and budgeting.",
+    "Free currency converter with live exchange rates for 150+ world currencies including USD, EUR, GBP, JPY, and crypto. Convert money instantly for travel budgets, international invoices, and cross-border payments — no signup required.",
   path: "/converters/currency",
-  keywords: [
-    "currency converter",
-    "live exchange rates",
-    "usd to eur converter",
-    "money converter",
-    "forex converter",
-    "free currency converter",
-  ],
 
   header: {
     title: "Currency Converter",
     description:
-      "Convert between major world currencies with live rate lookup and instant result updates.",
+      "Convert between 150+ world currencies with live exchange rates updated throughout the day. Supports USD, EUR, GBP, JPY, CAD, AUD, CHF, and crypto pairs with instant recalculation, one-click swap, and no signup required.",
     titleSize: "medium",
     descriptionSize: "small",
   },
@@ -65,37 +57,57 @@ const toolConfig = createToolConfig({
       "Always compare rates across multiple providers before large transfers",
     ],
     overview:
-      "Use this tool to convert one currency to another in seconds. It is useful for travel budgets, invoices, international purchases, and quick exchange-rate checks during planning.",
+      "This free online currency converter lets you convert money between 150+ global currencies using live exchange rates sourced from international financial markets. Whether you need to convert USD to EUR for a European trip, check GBP to INR for a freelance invoice, or compare JPY to AUD for an import order, the tool delivers instant results with mid-market reference rates. It is ideal for travel budgeting, cross-border e-commerce pricing, international payroll calculations, remittance planning, and quick forex rate checks. The converter updates rates throughout the trading day and supports one-click currency swap for reverse conversions.",
 
     howToSteps: [
-      "Enter an amount in the input field.",
-      "Select source and target currencies.",
-      "Review the converted amount and latest update time.",
-      "Swap currencies to compare the reverse rate.",
+      "Enter the amount you want to convert in the input field (supports decimals for precise calculations).",
+      "Select your source currency (e.g., USD, EUR, GBP) from the dropdown with 150+ supported currencies.",
+      "Choose your target currency to see the converted amount and the live exchange rate with last-updated timestamp.",
+      "Click the swap button to instantly reverse the conversion and compare the inverse rate.",
+      "Use the Top 10 Currencies reference table below for quick cross-rate comparisons.",
     ],
 
     features: [
-      "Live currency conversion",
-      "Large supported currency list",
-      "One-click currency swap",
-      "Instant recalculation after input changes",
-      "Top currency reference table",
-      "No signup required",
+      "Live exchange rate conversion with mid-market reference rates updated throughout the day",
+      "150+ supported currencies including major pairs (USD, EUR, GBP, JPY) and emerging market currencies",
+      "One-click currency swap to instantly compare reverse conversion rates",
+      "Real-time recalculation as you type with decimal precision for exact amounts",
+      "Top 10 world currencies reference table with current cross-rates",
+      "No signup, no account, and no usage limits — completely free to use",
     ],
 
     useCases: [
-      "Travel budgeting and trip cost estimates",
-      "Freelance and client invoice checks",
-      "E-commerce price comparisons",
-      "International payment planning",
-      "Quick exchange-rate comparisons before transfers",
+      "Travel budgeting — convert hotel, flight, and meal costs into your home currency before booking",
+      "Freelance invoicing — verify USD to EUR, GBP to INR, or other cross-border billing rates",
+      "E-commerce pricing — compare product costs across Amazon US, UK, JP, and EU marketplaces",
+      "International wire transfers — check mid-market rates before sending money via Wise, PayPal, or bank transfer",
+      "Import/export cost estimation — calculate landed costs with current forex rates for procurement planning",
+      "Crypto-to-fiat reference — quick BTC or ETH to USD/EUR spot rate checks",
     ],
 
     aboutTool: (
       <div className="space-y-6">
         <div>
+          <h3 className="text-lg font-semibold text-foreground mb-2">
+            How Currency Exchange Rates Work
+          </h3>
+          <p className="text-muted-foreground">
+            Currency exchange rates represent the price of one currency expressed in terms of another. The foreign exchange (forex) market is the largest financial market in the world, with over $7.5 trillion traded daily as of 2024. Exchange rates are determined by supply and demand, influenced by factors including interest rate differentials, inflation, trade balances, geopolitical events, and central bank monetary policy. The mid-market rate (also called the interbank rate) is the midpoint between the buy and sell prices — this is the rate our converter uses as a reference. Banks, payment providers, and money transfer services typically add a markup of 1-3% above the mid-market rate.
+          </p>
+        </div>
+
+        <div>
+          <h3 className="text-lg font-semibold text-foreground mb-2">
+            Understanding ISO 4217 Currency Codes
+          </h3>
+          <p className="text-muted-foreground">
+            Currency codes follow the ISO 4217 standard maintained by the International Organization for Standardization. Each code is three letters: the first two represent the country (ISO 3166-1 alpha-2), and the third represents the currency name. For example, USD = US + Dollar, GBP = GB + Pound, JPY = JP + Yen. This standardization ensures consistency across banking systems, trading platforms, and international payment networks like SWIFT.
+          </p>
+        </div>
+
+        <div>
           <h3 className="mb-3 text-lg font-bold text-heading-accent">
-            Common Currency Codes
+            Common Currency Codes Reference
           </h3>
           <GTable>
             <thead className="bg-muted font-semibold text-foreground">
@@ -114,7 +126,7 @@ const toolConfig = createToolConfig({
               <tr>
                 <td className="p-3 font-semibold">EUR</td>
                 <td className="p-3">Euro</td>
-                <td className="p-3">Eurozone</td>
+                <td className="p-3">Eurozone (20 countries)</td>
               </tr>
               <tr>
                 <td className="p-3 font-semibold">GBP</td>
@@ -136,37 +148,60 @@ const toolConfig = createToolConfig({
                 <td className="p-3">Australian Dollar</td>
                 <td className="p-3">Australia</td>
               </tr>
+              <tr>
+                <td className="p-3 font-semibold">CHF</td>
+                <td className="p-3">Swiss Franc</td>
+                <td className="p-3">Switzerland</td>
+              </tr>
+              <tr>
+                <td className="p-3 font-semibold">INR</td>
+                <td className="p-3">Indian Rupee</td>
+                <td className="p-3">India</td>
+              </tr>
             </tbody>
           </GTable>
         </div>
       </div>
     ),
 
+    proTip:
+      "Always compare the mid-market rate shown here against your bank or transfer provider's quoted rate to see the actual markup. For large transfers over $1,000, even a 0.5% difference in spread can save significant money — services like Wise and OFX typically offer rates closer to mid-market than traditional banks.",
+
     faqs: [
       {
-        question: "Are the rates on this converter live?",
+        question: "Are the exchange rates on this currency converter live and accurate?",
         answer:
-          "Rates are fetched from a live exchange-rate source and updated during use. Final transfer rates can differ by provider fees or spreads.",
+          "Yes. Exchange rates are fetched from a live market data source and updated throughout the trading day. The converter displays mid-market (interbank) reference rates. Actual transfer rates from banks and payment providers may differ due to markup fees and spreads, typically 1-3% above mid-market.",
       },
       {
-        question: "Can I use this for business invoices?",
+        question: "How many currencies does this converter support?",
         answer:
-          "Yes. It is useful for planning and quoting. For accounting records, also log the source, timestamp, and provider-specific settlement rate.",
+          "This free currency converter supports 150+ world currencies including all major pairs (USD, EUR, GBP, JPY, CHF, CAD, AUD, NZD), emerging market currencies (INR, BRL, MXN, ZAR, TRY), and common cryptocurrency pairs. You can convert between any two supported currencies instantly.",
       },
       {
-        question: "Why is my bank rate different from this tool?",
+        question: "Why is my bank's exchange rate different from this converter?",
         answer:
-          "Banks and payment apps add margins and service fees. This tool gives a market reference conversion, not a guaranteed settlement quote.",
+          "Banks, credit card companies, and money transfer services add a markup (spread) on top of the mid-market rate, typically 1-3% for retail customers. This converter shows the mid-market reference rate — the true midpoint between buy and sell prices on the forex market. Always compare your provider's quoted rate against this reference to understand the actual fee you are paying.",
       },
       {
-        question: "Does this tool support many currencies?",
+        question: "Can I use this currency converter for business invoices and accounting?",
         answer:
-          "Yes. The converter supports a broad set of global currencies and lets you switch pairs instantly.",
+          "Yes. The converter is useful for estimating invoice amounts, quoting international clients, and planning cross-border payments. For official accounting records, also document the source, timestamp, and the provider-specific settlement rate used in the actual transaction, as required by GAAP and IFRS standards.",
       },
       {
-        question: "Is the currency converter free?",
+        question: "What is the best time to exchange currency for the best rate?",
         answer:
-          "Yes. The converter is free to use and does not require signup.",
+          "Forex markets are most liquid during overlapping trading sessions — London/New York overlap (1:00-5:00 PM GMT) sees the highest volume and tightest spreads. Mid-week (Tuesday through Thursday) typically shows lower volatility than Monday or Friday. For large transfers, consider setting rate alerts and using limit orders through your transfer provider.",
+      },
+      {
+        question: "How do I convert USD to EUR, GBP, or other currencies?",
+        answer:
+          "Enter the dollar amount in the input field, select USD as your source currency, then choose EUR, GBP, JPY, or any other target currency from the dropdown. The converted amount appears instantly with the current exchange rate. Click the swap button to see the reverse conversion.",
+      },
+      {
+        question: "Is this online currency converter completely free?",
+        answer:
+          "Yes. This currency converter is 100% free to use with no signup, no account creation, and no usage limits. It provides mid-market reference rates for personal and business use. For API access to integrate live exchange rates into your own application, visit our Currency API page.",
       },
     ],
 

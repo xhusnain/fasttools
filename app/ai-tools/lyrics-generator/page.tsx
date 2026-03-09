@@ -16,22 +16,15 @@ const toolConfig = createToolConfig({
   toolName: "AI Lyrics Generator",
   description:
     "Generate draft song lyrics from a theme, genre, mood, length, and language.",
-  metaTitle: "AI Lyrics Generator Free (Genre, Mood, Language)",
+  metaTitle: "AI Lyrics Generator — Write Song Lyrics by Genre & Mood Free (2026)",
   metaDescription:
-    "Create lyric drafts from a song idea in seconds. Choose theme, genre, mood, duration, and language, then edit and export your output.",
+    "Generate original song lyrics with AI for any genre — pop, rap, rock, country, R&B. Choose mood, language, verse structure, and rhyme scheme. Free online songwriter tool with instant copy and download.",
   path: "/ai-tools/lyrics-generator",
-  keywords: [
-    "ai lyrics generator",
-    "song lyrics generator",
-    "rap lyrics generator",
-    "free lyrics writer",
-    "lyric generator by genre",
-  ],
 
   header: {
     title: "AI Lyrics Generator",
     description:
-      "Turn a rough song idea into an editable draft with structure, tone, and language controls.",
+      "Generate original song lyrics from any theme, genre, or mood in seconds. Create verses, chorus, bridge, and pre-chorus structures with AI-powered rhyme schemes, syllable patterns, and multilingual support — then copy or download your draft instantly.",
     titleSize: "large",
     descriptionSize: "small",
   },
@@ -73,74 +66,96 @@ const toolConfig = createToolConfig({
       "Use as a creative starting point — refine and personalize the output",
     ],
     overview:
-      "This tool helps creators move from a blank page to a workable lyric draft quickly. Enter your theme, optionally pick style controls, and generate a first version you can rewrite for melody, cadence, and voice.",
+      "This AI lyrics generator transforms any song idea into a structured lyric draft with verses, chorus, bridge, and pre-chorus sections. Choose from genres like pop, rap, hip-hop, rock, country, R&B, EDM, jazz, and indie — then fine-tune the mood (happy, sad, motivational, romantic, aggressive) and language to match your creative vision. The tool uses AI songwriting models to produce rhyming lyrics with natural cadence, making it ideal for singer-songwriters, music producers, content creators, and anyone who needs original lyrics fast. Generate unlimited drafts, compare versions, and export your favorite as a text file for studio sessions or collaboration.",
 
     howToSteps: [
-      "Enter your song theme or subject in plain language.",
-      "Select optional genre, mood, length, and language preferences.",
-      "Generate lyrics and review phrasing, structure, and clarity.",
-      "Copy or download the draft, then edit it for your final composition.",
+      "Enter your song theme, story, or emotion — describe the scene, narrative, or feeling you want the lyrics to convey.",
+      "Select genre (pop, rap, rock, country, R&B, EDM), mood (happy, melancholic, energetic), and target language for multilingual lyrics.",
+      "Generate AI lyrics and review verse structure, rhyme scheme, syllable flow, and emotional tone across each section.",
+      "Copy the full draft to clipboard or download as a .txt file, then refine phrasing, melody fit, and vocal cadence for your final recording.",
     ],
 
     features: [
-      "Theme-driven lyric generation",
-      "Genre and mood selection for style direction",
-      "Optional duration targeting for draft size",
-      "Language support for multilingual workflows",
-      "Copy/download actions for revision workflow",
+      "AI-powered lyric generation from any theme, topic, or narrative prompt",
+      "Genre selection: pop, rap, hip-hop, rock, country, R&B, EDM, jazz, folk, indie, and more",
+      "Mood controls: happy, sad, romantic, aggressive, motivational, chill, nostalgic",
+      "Customizable song structure with verse, chorus, bridge, pre-chorus, and outro sections",
+      "Multilingual lyrics generation — write songs in English, Spanish, French, Hindi, and 20+ languages",
+      "Adjustable rhyme scheme and syllable targeting for natural vocal cadence",
+      "One-click copy to clipboard and download as text file for studio collaboration",
+      "Unlimited regeneration to compare multiple lyric versions side by side",
     ],
 
     useCases: [
-      "Songwriting ideation before studio sessions",
-      "Drafting hooks and verse direction",
-      "Generating lyric starting points for content campaigns",
-      "Creating multilingual concept drafts",
+      "Singer-songwriters brainstorming verse ideas and hook concepts before recording sessions",
+      "Music producers generating placeholder lyrics for beat demos and instrumental tracks",
+      "Content creators writing original song lyrics for YouTube covers, TikTok videos, and social media content",
+      "Rappers and hip-hop artists drafting bars, punchlines, and freestyle starting points",
+      "Advertising teams creating jingle lyrics and branded song copy for marketing campaigns",
+      "Multilingual artists writing concept drafts in multiple languages for international releases",
     ],
 
     aboutTool: (
       <div className="space-y-6 text-muted-foreground">
         <p>
-          Competing lyric pages that rank well generally focus on immediate
-          interaction and clear positioning: enter prompt, generate, refine.
-          This page follows that pattern while adding quality controls so users
-          can steer tone and structure more effectively.
+          AI lyrics generation uses large language models (LLMs) trained on vast
+          corpora of text to produce coherent, rhyming song lyrics from natural
+          language prompts. The technology understands genre conventions — rap
+          lyrics favor internal rhyme, wordplay, and rhythmic density, while pop
+          lyrics lean toward melodic phrasing and repetitive hooks. By specifying
+          genre, mood, and theme, you guide the AI to generate lyrics that match
+          the stylistic norms of your target music style.
         </p>
         <p>
-          The page is optimized for utility intent first and informational intent
-          second. Users can generate quickly, then use guidance sections and FAQs
-          to improve output quality for real projects.
+          Modern AI songwriting tools use transformer-based architectures similar
+          to GPT and Claude to predict word sequences that satisfy both semantic
+          meaning and phonetic patterns. The result is a first draft that captures
+          rhyme, meter, and emotional tone — giving songwriters, producers, and
+          content creators a creative starting point that can be refined for melody
+          fit, vocal delivery, and personal artistic voice. Always treat AI-generated
+          lyrics as raw material to edit, not a finished product.
         </p>
       </div>
     ),
 
     proTip:
-      "Describe concrete imagery, narrative context, and emotional direction in your theme prompt for stronger first drafts.",
+      "Write your theme prompt as a mini-story with specific imagery, character perspective, and emotional arc — for example, 'a breakup letter from someone who still loves their ex, set in a rainy city at night' produces dramatically better lyrics than just typing 'breakup song'.",
 
     faqs: [
       {
-        question: "Can I choose a specific genre?",
+        question: "What genres does the AI lyrics generator support?",
         answer:
-          "Yes. You can pick genre and mood to shape vocabulary, pacing, and tone in the generated draft.",
+          "The generator supports all major music genres including pop, rap, hip-hop, rock, country, R&B, EDM, jazz, folk, indie, metal, reggae, and blues. Each genre selection adjusts the AI's vocabulary, pacing, rhyme density, and structural conventions to match that style's lyrical norms.",
       },
       {
-        question: "Does the generator support multiple languages?",
+        question: "Can I generate song lyrics in languages other than English?",
         answer:
-          "Yes. You can choose from many language options and generate lyrics aligned to that selection.",
+          "Yes. The AI lyrics generator supports multilingual lyric creation in over 20 languages including Spanish, French, Portuguese, German, Italian, Hindi, Japanese, Korean, and Arabic. Select your target language before generating to ensure vocabulary, grammar, and cultural phrasing align with native songwriting conventions.",
       },
       {
-        question: "Are generated lyrics final-ready?",
+        question: "Are AI-generated lyrics ready to record and publish?",
         answer:
-          "Treat them as draft material. Editing for originality, rhythm, and performance fit is recommended before release.",
+          "AI lyrics should be treated as high-quality first drafts, not finished songs. Edit for originality, melody fit, vocal cadence, and emotional authenticity before recording. Professional songwriters use AI as a creative accelerator — generating ideas 10x faster — then refine the output with personal artistic voice and performance nuance.",
       },
       {
-        question: "Can I export the generated text?",
+        question: "How do I write better prompts for AI lyric generation?",
         answer:
-          "Yes. You can copy the output directly or download it as a text file for your writing workflow.",
+          "Use specific, descriptive prompts with concrete imagery and narrative context. Instead of 'love song,' try 'a slow ballad about reconnecting with a childhood friend at a small-town diner after 10 years apart.' Include emotional tone (bittersweet, triumphant, heartbroken), character perspective (first-person confession), and setting details for dramatically better results.",
       },
       {
-        question: "What prompt style works best?",
+        question: "Can I generate rap lyrics and freestyle bars with this tool?",
         answer:
-          "Use specific context such as scene, speaker perspective, and emotional arc instead of a single broad keyword.",
+          "Yes. Select the rap or hip-hop genre to generate lyrics with internal rhyme, multisyllabic rhyme schemes, wordplay, punchlines, and rhythmic flow patterns. The AI understands bar structure, couplet formatting, and the difference between boom-bap and trap lyrical styles. Use it for freestyle practice, battle prep, or song demo creation.",
+      },
+      {
+        question: "How is this different from other AI songwriting tools?",
+        answer:
+          "This lyrics generator combines genre-aware AI with granular controls for mood, language, verse structure, and rhyme scheme — all in a free, no-signup browser tool. You get instant copy/download export, unlimited regeneration for comparing versions, and the ability to iterate rapidly without switching between apps or paying for subscriptions.",
+      },
+      {
+        question: "Can I use AI-generated lyrics commercially?",
+        answer:
+          "The generated text is original output created by AI from your prompt. You can use it as a starting point for commercial songs, but always edit substantially to add originality and personal creative expression. Check applicable copyright guidance in your jurisdiction, as AI-generated content laws vary by country and are evolving in 2026.",
       },
     ],
 

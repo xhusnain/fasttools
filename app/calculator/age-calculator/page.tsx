@@ -15,9 +15,9 @@ import {
 } from "lucide-react"
 
 const baseMetadata = createMetadata({
-  title: "Exact Age Calculator - Years, Months, Days & More",
+  title: "Age Calculator — Calculate Your Exact Age in Years, Months & Days Free (2026)",
   description:
-    "How old are you exactly? Calculate your age in years, months, weeks, days, and even seconds. Find out when your next half-birthday is! 100% Free & Private.",
+    "Free online age calculator to find your exact age in years, months, weeks, days, hours, minutes & seconds. Includes zodiac signs, birthday countdown, leap year handling & ISO 8601 format for passports and legal documents. 100% private.",
   path: "/calculator/age-calculator",
   breadcrumbs: [
     { label: "Calculator", href: "/calculator" },
@@ -41,40 +41,40 @@ const baseMetadata = createMetadata({
 
 export const metadata: Metadata = {
   ...baseMetadata,
-  title: "Exact Age Calculator - Years, Months, Days & More",
-  description: "How old are you exactly? Calculate your age in years, months, weeks, days, and even seconds. Find out when your next half-birthday is!",
+  title: "Age Calculator — Calculate Your Exact Age in Years, Months & Days Free (2026)",
+  description: "Free online age calculator to find your exact age in years, months, weeks, days, hours, minutes & seconds. Includes zodiac signs, birthday countdown, leap year handling & ISO 8601 format for passports and legal documents. 100% private.",
   applicationName: "FastTools",
   category: "Date & Time",
 }
 
 export default function AgeCalculatorPage() {
   const toolContent = {
-    toolName: "Calculate Your Exact Age Instantly",
-    overview: "Get your precise age in years, months, days, and even seconds. Perfect for birthdays, legal documents, and milestone planning. Unlike manual calculations, it automatically handles leap years, varying month lengths, and provides results in multiple formats—perfect for official documents, birthday planning, or just satisfying your curiosity.",
+    toolName: "Age Calculator — Find Your Exact Age Instantly",
+    overview: "Calculate your exact age in years, months, weeks, days, hours, minutes, and seconds with our free online age calculator. Perfect for passport applications, visa forms, birthday countdown planning, retirement eligibility checks, and milestone tracking. The calculator automatically handles leap years, varying month lengths (28-31 days), and ISO 8601 date intervals. Get your chronological age, Western & Chinese zodiac signs, birth weekday, estimated lifetime heartbeats and breaths, and next birthday countdown — all computed instantly in your browser with complete privacy.",
 
     howToSteps: [
-      "Enter Your Birth Date: Select day, month, and year from the date picker.",
-      "Choose Target Date: Defaults to today, or pick any past or future date.",
-      "Get Instant Results: View your age breakdown with zodiac signs and fun facts."
+      "Enter Your Birth Date: Select your exact date of birth (day, month, year) using the date picker or type it manually.",
+      "Choose Target Date: Defaults to today's date — or pick any past or future date for age-on-date calculations (e.g., visa application date, wedding date).",
+      "View Instant Age Breakdown: See your precise age in years, months, days, hours, minutes, and seconds with zodiac signs, birthday countdown, and lifetime statistics."
     ],
 
     features: [
-      "Precise Calculations: Accurate to the second with automatic leap year handling.",
-      "Zodiac Signs: Instant Western (Sun Sign) and Chinese Zodiac based on your birth date.",
-      "Birthday Countdown: Visual progress bar showing days until your next birthday.",
-      "Fun Statistics: Estimated total heartbeats, breaths, and days lived.",
-      "Day of Birth: Find out which day of the week you were born.",
-      "Official Format: Results formatted for passports, visas, and legal documents.",
-      "100% Private: All calculations happen in your browser. We never store your data."
+      "Second-Level Precision: Calculate exact age accurate to the second with automatic leap year and varying month-length handling.",
+      "Western & Chinese Zodiac: Instant Sun Sign and Chinese Zodiac animal determination based on your birth date.",
+      "Birthday Countdown Timer: Visual progress bar showing exact days, hours, and minutes until your next birthday.",
+      "Lifetime Statistics: Estimated total heartbeats (80 bpm), breaths (16/min), and total days lived since birth.",
+      "Birth Weekday Finder: Discover which day of the week you were born using Zeller's congruence algorithm.",
+      "Official Document Format: Age formatted as 'Years + Months + Days' for passports, visas, insurance, and legal forms.",
+      "100% Client-Side Privacy: All age calculations run in your browser — no data is stored, tracked, or transmitted to any server."
     ],
 
     useCases: [
-      "Official Documents: Complete passport, visa, and government forms with exact age requirements.",
-      "Milestone Planning: Plan 30th, 40th, 50th birthday celebrations with precision.",
-      "Retirement Calculation: Determine exact years until retirement eligibility.",
-      "Age Verification: Verify age for legal contracts, voting rights, or age-restricted services.",
-      "Historical Context: Discover what world events occurred during your lifetime.",
-      "Age Gap Calculation: Calculate exact age differences between family members or partners."
+      "Passport & Visa Applications: Get the exact 'Years, Months, Days' age format required by immigration agencies and consulates worldwide.",
+      "Birthday Milestone Planning: Precisely plan 18th, 21st, 30th, 40th, 50th, and 60th birthday celebrations with day-accurate countdowns.",
+      "Retirement Eligibility: Calculate exact years, months, and days until Social Security, pension, or 401(k) retirement age thresholds.",
+      "Legal Age Verification: Verify age for voting rights, driving license eligibility, alcohol purchase age, and legal contract signing.",
+      "School Enrollment Cutoffs: Determine your child's exact age on enrollment cutoff dates for kindergarten and grade-school admission.",
+      "Age Gap Calculation: Calculate precise age differences between partners, siblings, or family members in years, months, and days."
     ],
 
     aboutTool: (
@@ -519,8 +519,8 @@ export default function AgeCalculatorPage() {
   return (
     <ToolPageLayout
       header={{
-        title: "Exact Age Calculator",
-        description: "Calculate your exact age, Western & Chinese Zodiac signs, and fun biological stats. Free, accurate, and instant.",
+        title: "Age Calculator — Exact Age in Years, Months & Days",
+        description: "Calculate your exact age in years, months, weeks, days, hours, minutes & seconds. Includes Western & Chinese zodiac signs, birthday countdown, leap year handling, and ISO 8601 format for passports. Free, instant, and 100% private.",
         titleSize: "medium",
         descriptionSize: "small",
         color: "blue"
@@ -536,8 +536,8 @@ export default function AgeCalculatorPage() {
       }
       toolContent={toolContent}
       expectedMetadata={{
-        title: "Exact Age Calculator - Years, Months, Days & More",
-        description: "How old are you exactly? Calculate your age in years, months, weeks, days, and even seconds. Find out when your next half-birthday is!",
+        title: "Age Calculator — Calculate Your Exact Age in Years, Months & Days Free (2026)",
+        description: "Free online age calculator to find your exact age in years, months, weeks, days, hours, minutes & seconds. Includes zodiac signs, birthday countdown, leap year handling & ISO 8601 format for passports and legal documents. 100% private.",
         path: "/calculator/age-calculator"
       }}
     />

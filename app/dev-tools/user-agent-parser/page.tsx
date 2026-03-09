@@ -7,22 +7,15 @@ const toolConfig = createToolConfig({
   toolName: "User-Agent Parser",
   description:
     "Parse user-agent strings into browser, OS, engine, CPU, and device details for debugging and analytics workflows.",
-  metaTitle: "User-Agent Parser (Browser, OS, Device)",
+  metaTitle: "User-Agent Parser — Parse Browser, OS & Device Info Free (2026)",
   metaDescription:
-    "Parse raw user-agent strings and inspect browser, OS, device, and CPU fields for QA and integration checks.",
+    "Free user-agent string parser. Decode any user-agent to see browser name/version, operating system, device type, and engine details. Useful for analytics QA and debugging.",
   path: "/dev-tools/user-agent-parser",
-  keywords: [
-    "user agent parser",
-    "parse user agent",
-    "ua parser",
-    "browser detection tool",
-    "device detection from user agent",
-  ],
 
   header: {
-    title: "User-Agent Parser",
+    title: "User-Agent String Parser",
     description:
-      "Decode raw user-agent strings into structured browser, OS, and device metadata.",
+      "Parse any user-agent string to extract browser name and version, operating system, device type, CPU architecture, and rendering engine. Useful for analytics validation, device-specific debugging, and cross-browser QA.",
     titleSize: "medium",
     descriptionSize: "small",
     color: "blue",
@@ -59,7 +52,7 @@ const toolConfig = createToolConfig({
       "Useful for debugging browser-specific issues and analytics filtering",
     ],
     overview:
-      "Use this page to convert user-agent strings into readable device and browser fields. It is useful for analytics validation, support debugging, and cross-platform QA checks.",
+      "Parse and decode user-agent strings with this free online tool. Paste any user-agent string to instantly extract structured information — browser name and version, operating system and version, device type (desktop, mobile, tablet), CPU architecture, and rendering engine (Blink, Gecko, WebKit). Your current browser's user-agent is automatically detected and parsed. Useful for web analytics validation, device-specific bug reports, customer support debugging, and cross-browser testing.",
 
     howToSteps: [
       "Paste a user-agent string or use your current browser value.",

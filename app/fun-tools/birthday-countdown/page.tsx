@@ -16,21 +16,6 @@ const toolConfig = createToolConfig({
   metaTitle: `Birthday Countdown | Free Real-Time Timer`,
   metaDescription: "Live birthday countdown showing days, hours, minutes, and seconds until your next birthday. Share the timer with friends.",
   path: "/fun-tools/birthday-countdown",
-  keywords: [
-    "birthday countdown", "free birthday countdown", "birthday timer",
-    "days until birthday", "countdown to birthday", "birthday counter",
-    "happy birthday timer", "share birthday countdown", "birthday reminder",
-    "next birthday date", "live countdown", "party countdown", "celebration timer",
-    "birthday countdown timer", "birthday countdown clock", "birthday countdown online",
-    "free birthday countdown timer", "birthday countdown widget", "birthday countdown app",
-    "birthday countdown generator", "birthday countdown calculator",
-    "birthday countdown full screen", "birthday countdown for WhatsApp",
-    "birthday countdown free download", "birthday countdown share link",
-    "birthday countdown tool", "online birthday countdown timer",
-    "birthday countdown timer online free", "birthday countdown timer download",
-    "birthday countdown timer app", "birthday countdown timer widget online",
-    "birthday countdown timer full screen black background", "birthday countdown timer aesthetic"
-  ],
 
   header: {
     title: "Birthday Countdown Timer - Real-Time Birthday Tracker",

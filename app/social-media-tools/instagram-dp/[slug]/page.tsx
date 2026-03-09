@@ -52,7 +52,6 @@ export default async function InstagramDpVariantPage(props: Props) {
     metaTitle: variant.metaTitle,
     metaDescription: variant.metaDescription,
     path: `/social-media-tools/instagram-dp/${slug}`,
-    keywords: variant.keywords || ["instagram dp viewer", "insta dp viewer", "instagram profile picture viewer"],
 
     schemaOptions: {
       applicationCategory: "UtilitiesApplication",

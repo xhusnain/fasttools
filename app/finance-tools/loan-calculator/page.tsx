@@ -41,24 +41,6 @@ export const metadata: Metadata = {
   ...baseMetadata,
   applicationName: "FastTools",
   category: "Finance Tools",
-  keywords: [
-    "loan calculator",
-    "emi calculator",
-    "home loan calculator",
-    "car loan calculator",
-    "personal loan calculator",
-    "education loan calculator",
-    "loan amortization schedule",
-    "loan interest calculator",
-    "mortgage calculator",
-    "auto loan calculator",
-    "student loan calculator",
-    "business loan calculator",
-    "loan payment calculator",
-    "emi calculator india",
-    "sbi home loan calculator",
-    "hdfc loan calculator"
-  ]
 }
 
 export default function LoanCalculatorPage() {

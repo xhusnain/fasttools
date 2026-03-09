@@ -11,13 +11,13 @@ import { Calculator, Zap, Target, TrendingUp, BookOpen, Users, CheckCircle, Info
 import { GTable } from "@/ui/gtable"
 import Link from "next/link"
 
-const TOOL_TITLE = "Unit Converter - Convert Units Online"
+const TOOL_TITLE = "Unit Converter — Convert Length, Weight, Temperature & Currency Free (2026)"
 const TOOL_NAME = "Unit Converter"
 
 const baseMetadata = createMetadata({
   title: TOOL_TITLE,
   description:
-    "Free unit converter for length, weight, temperature, time, area, volume, speed, and more with instant results.",
+    "Free unit conversion calculator with 1000+ conversions across 12+ categories: length, weight, temperature, currency (real-time rates), volume, area, speed, power, energy, pressure, time & cooking measurements with 6-decimal precision.",
   path: "/calculator/conversion-calculator",
   breadcrumbs: [
     { label: "Calculator", href: "/calculator" },
@@ -42,52 +42,28 @@ export const metadata: Metadata = {
   ...baseMetadata,
   applicationName: "FastTools",
   category: "Utility",
-  keywords: [
-    "conversion calculator",
-    "unit converter",
-    "measurement conversions",
-    "currency converter",
-    "metric conversion",
-    "imperial conversion",
-    "length converter",
-    "weight converter",
-    "temperature converter",
-    "volume converter",
-    "area converter",
-    "speed converter",
-    "power converter",
-    "energy converter",
-    "pressure converter",
-    "time converter",
-    "cooking converter",
-    "scientific converter",
-    "kilometers to miles",
-    "pounds to kg",
-    "celsius to fahrenheit",
-    "usd to eur",
-    "liters to gallons",
-    "square feet to square meters"
-  ]
 }
 
 export default function ConversionCalculatorPage() {
   const toolContent = {
     toolName: TOOL_NAME,
-    overview: "Convert between 1000+ units instantly. Length, weight, temperature, currency, time, area, volume, speed, power, energy, pressure conversions.",
+    overview: "Convert between 1000+ units instantly across 12+ measurement categories — length (km to miles, feet to meters, inches to cm), weight (pounds to kg, grams to ounces), temperature (Celsius to Fahrenheit, Kelvin), currency (100+ real-time exchange rates), volume (liters to gallons, cups to ml), area (sq ft to sq m, acres to hectares), speed (mph to km/h), power (watts to HP), energy (joules to calories, kWh to BTU), pressure (PSI to bar), time, and cooking measurements. All conversions use NIST/BIPM-validated constants with 6-decimal precision, making this tool suitable for engineering, science, travel, cooking, and everyday use.",
 
     howToSteps: [
-      "Select Conversion Category: Choose from 12+ categories including length, weight, temperature, currency, time, area, volume, speed, power, energy, and pressure.",
-      "Choose Units: Select your source unit (From) and target unit (To) from comprehensive dropdown menus.",
-      "Enter Value & Get Results: Input the value you want to convert and receive instant, accurate results with 6 decimal place precision."
+      "Select Conversion Category: Choose from 12+ categories — length/distance, weight/mass, temperature, currency (100+ real-time rates), volume, area, speed, power, energy, pressure, time, and cooking/baking measurements.",
+      "Choose Source & Target Units: Select your 'From' unit and 'To' unit from comprehensive dropdowns. The calculator supports Metric-to-Imperial, Imperial-to-Metric, and within-system conversions.",
+      "Enter Value & Get Instant Results: Type or paste a number (integers, decimals, or scientific notation accepted) and receive the converted value instantly with 6-decimal NIST/BIPM-validated precision as you type."
     ],
 
     features: [
-      "1000+ Unit Conversions",
-      "Real-time Currency Rates",
-      "12+ Conversion Categories",
-      "Mathematical Precision",
-      "Mobile Responsive",
-      "Free Forever"
+      "1000+ Unit Conversions: Comprehensive coverage across length, weight, temperature, volume, area, speed, power, energy, pressure, time, and cooking units.",
+      "Real-Time Currency Exchange Rates: 100+ currencies updated every few minutes from live financial markets for accurate forex conversions.",
+      "12+ Conversion Categories: Organized categories for quick access — from everyday km-to-miles to specialized PSI-to-bar and watts-to-HP.",
+      "6-Decimal Precision: High-precision math validated against NIST, BIPM, and ISO international measurement standards.",
+      "Metric-Imperial Interconversion: Seamless bidirectional conversion between International System of Units (SI) and US Customary/British Imperial systems.",
+      "Instant Results: Real-time output as you type with no button click required — ideal for rapid reference and comparison.",
+      "Mobile-Responsive: Fully optimized for smartphones and tablets for on-the-go conversions during travel, cooking, or fieldwork.",
+      "Free Forever: No signup, no subscription, no ads — unlimited conversions for personal, educational, and professional use."
     ],
 
     useCases: [
@@ -549,8 +525,8 @@ export default function ConversionCalculatorPage() {
   return (
     <ToolPageLayout
       header={{
-        title: TOOL_TITLE,
-        description: "Convert between 1000+ units instantly. Length, weight, temperature, currency, time, area, volume, speed, power, energy, pressure conversions.",
+        title: "Unit Converter — Metric, Imperial & Currency Conversion (2026)",
+        description: "Free online unit converter with 1000+ instant conversions across length, weight, temperature, real-time currency exchange rates, volume, area, speed, power, energy, pressure, time, and cooking measurements. Metric-to-Imperial, Imperial-to-Metric, and scientific unit support with NIST-validated 6-decimal precision.",
         titleSize: "medium",
         descriptionSize: "small",
         color: "blue"
@@ -566,9 +542,9 @@ export default function ConversionCalculatorPage() {
       }
       toolContent={toolContent}
       expectedMetadata={{
-        title: TOOL_TITLE,
+        title: "Unit Converter — Convert Length, Weight, Temperature & Currency Free (2026)",
         description:
-          "Free unit converter for length, weight, temperature, time, area, volume, speed, and more with instant results.",
+          "Free unit conversion calculator with 1000+ conversions across 12+ categories: length, weight, temperature, currency (real-time rates), volume, area, speed, power, energy, pressure, time & cooking measurements with 6-decimal precision.",
         path: "/calculator/conversion-calculator"
       }}
     />

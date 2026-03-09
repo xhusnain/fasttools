@@ -13,22 +13,15 @@ const toolConfig = createToolConfig({
   toolName: "HTML Beautifier",
   description:
     "Format and minify HTML code for readability, debugging, and delivery optimization workflows.",
-  metaTitle: "HTML Beautifier & Minifier (Online)",
+  metaTitle: "HTML Beautifier & Minifier — Format HTML Online Free (2026)",
   metaDescription:
-    "Beautify or minify HTML in-browser with copy-ready output. Useful for code cleanup, debugging, and optimization tasks.",
+    "Free online HTML beautifier and minifier. Format messy HTML with proper indentation or minify for production. Customizable indent size. Runs locally in browser.",
   path: "/dev-tools/html-beautifier",
-  keywords: [
-    "html beautifier",
-    "html formatter",
-    "html minifier",
-    "format html online",
-    "minify html",
-  ],
 
   header: {
-    title: "HTML Beautifier",
+    title: "HTML Beautifier & Minifier",
     description:
-      "Format or compress HTML quickly for development and publishing workflows.",
+      "Format minified or messy HTML into clean, readable code with proper indentation — or minify HTML for production. Customizable indent size (2/4 spaces or tabs). Runs entirely in your browser.",
     titleSize: "medium",
     descriptionSize: "small",
     color: "blue",
@@ -65,7 +58,7 @@ const toolConfig = createToolConfig({
       "Useful for debugging, code reviews, and cleaning up generated HTML",
     ],
     overview:
-      "Use this tool to reformat messy HTML for easier debugging or minify structured HTML for lighter delivery. It is useful in frontend development, content cleanup, and QA review workflows.",
+      "Format and clean up HTML code with this free online beautifier and minifier. Paste minified or messy HTML to instantly beautify it with proper indentation and line breaks — or minify clean HTML into a compact single line for production. Customize indentation (2 spaces, 4 spaces, or tabs). The beautifier preserves HTML structure without changing functionality, making it easy to read nested elements, debug tag issues, and review generated markup. All formatting runs locally in your browser — no data uploaded.",
 
     howToSteps: [
       "Paste HTML into the editor.",

@@ -12,21 +12,21 @@ import Image from "next/image"
 import { GTable } from "@/ui/gtable"
 
 const toolConfig = createToolConfig({
-  toolName: "Scientific Calculator - Advanced Math Online",
-  description: "Free online scientific calculator with 70+ functions for trigonometry, logarithms, statistics, and engineering math.",
+  toolName: "Scientific Calculator — Advanced Math Calculator Online Free (2026)",
+  description: "Free online scientific calculator with 70+ functions: trigonometry (sin, cos, tan), logarithms (ln, log), exponents, roots, factorials, permutations, combinations & constants. Degree/radian modes, memory functions, calculation history. No download.",
   path: "/calculator/scientific-calculator",
   header: {
-    title: "Scientific Calculator - Advanced Math Online",
-    description: "Online scientific calculator with 70+ functions, including trigonometry, logarithms, statistics, and engineering calculations.",
+    title: "Scientific Calculator — 70+ Functions for Trig, Log & Statistics",
+    description: "Free online scientific calculator with 70+ functions: sin, cos, tan, ln, log, exponents, roots, factorials, nCr, nPr, and constants (pi, e, phi). Degree/radian modes, memory (M+/M-/MR/MC), calculation history, and keyboard shortcuts. No download required.",
     titleSize: "medium",
     descriptionSize: "small",
     color: "blue"
   },
   content: {
     definition:
-      "A Scientific Calculator is a free online tool that performs advanced mathematical operations including trigonometry, logarithms, exponents, roots, and factorial calculations.",
+      "A Scientific Calculator is a free online tool that performs 70+ advanced mathematical operations including trigonometric functions (sin, cos, tan and inverses), logarithms (ln, log, log base 2), exponents (x squared, x cubed, x to the y), roots (square root, cube root, nth root), factorials, permutations (nPr), combinations (nCr), and mathematical constants (pi, e, golden ratio).",
     quickAnswer:
-      "Use the calculator for basic arithmetic and advanced functions: sin, cos, tan, log, ln, square root, exponents, factorials, and constants (π, e). Supports parentheses for complex expressions. Works like a physical scientific calculator.",
+      "Use the calculator for basic arithmetic and advanced functions: sin, cos, tan, log, ln, square root, exponents, factorials, nCr, nPr, and constants (pi, e). Toggle between degree (DEG) and radian (RAD) modes. Use memory functions (M+, M-, MR, MC) for multi-step calculations. Full keyboard shortcuts supported.",
     keyTakeaways: [
       "Supports trigonometric functions: sin, cos, tan and their inverses",
       "Logarithmic functions: log (base 10) and ln (natural log)",
@@ -34,21 +34,23 @@ const toolConfig = createToolConfig({
       "Built-in constants: π (3.14159...) and e (2.71828...)",
       "Supports degree and radian modes for trigonometric calculations",
     ],
-    overview: "Scientific Calculator Online Free - 70+ Functions is an advanced mathematical tool designed for complex calculations beyond basic arithmetic. Unlike standard calculators, scientific calculators include specialized functions for trigonometry, logarithms, exponentials, statistics, and advanced mathematics. Our free online scientific calculator provides all the functionality of professional calculators like CASIO fx-991EX, TI-84 Plus, HP 35s, and Sharp EL-W516X. It's perfect for students, engineers, scientists, and anyone who needs to perform advanced mathematical calculations.",
+    overview: "Free online scientific calculator with 70+ mathematical functions for trigonometry (sin, cos, tan, arcsin, arccos, arctan, sinh, cosh, tanh), logarithms (ln, log base 10, log base 2), exponentials (e^x, 10^x), powers and roots (x squared, x cubed, x^y, square root, cube root, nth root), factorials (n!), permutations (nPr), combinations (nCr), and mathematical constants (pi, e, golden ratio). Equivalent to professional calculators like CASIO fx-991EX, TI-84 Plus, and HP 35s. Toggle between degree and radian modes, use memory functions (M+, M-, MR, MC) for multi-step calculations, and review calculation history. Perfect for students, engineers, scientists, and professionals needing advanced math calculations without downloading software.",
     howToSteps: [
-      "Select Your Function: Choose from 70+ mathematical functions including trigonometry (sin, cos, tan), logarithms (ln, log), exponentials (e^x), powers, roots, and statistical operations.",
-      "Set Angle Mode: Toggle between Degrees (DEG) and Radians (RAD) mode using the mode button, depending on your calculation requirements.",
-      "Enter Your Values: Input numbers using the keypad or keyboard. Use parentheses for complex expressions to ensure correct order of operations.",
-      "Calculate Results: Press equals (=) or Enter to get instant, accurate results. View calculation history to review previous operations.",
-      "Use Advanced Features: Access memory functions (M+, M-, MR, MC) for multi-step calculations, and use shift functions for inverse operations and additional capabilities."
+      "Select Mathematical Function: Choose from 70+ functions — trigonometry (sin, cos, tan, inverse trig, hyperbolic), logarithms (ln, log, log2), exponentials (e^x, 10^x), powers (x^2, x^3, x^y), roots (sqrt, cbrt, nth root), or combinatorics (n!, nCr, nPr).",
+      "Set Angle Mode (DEG/RAD): Toggle between Degrees (DEG) for geometry problems and Radians (RAD) for calculus. Check mode before every trig calculation to avoid the #1 student mistake.",
+      "Enter Values via Keypad or Keyboard: Input numbers using on-screen buttons or full keyboard shortcuts. Use parentheses for complex expressions to ensure correct PEMDAS order of operations.",
+      "Calculate and Review History: Press equals (=) or Enter for instant results. View calculation history to reference previous operations in multi-step problems.",
+      "Use Memory Functions (M+/M-/MR/MC): Store intermediate results with M+, subtract with M-, recall with MR, and clear with MC for efficient multi-step scientific calculations."
     ],
     features: [
-      "70+ Mathematical Functions",
-      "Trigonometry & Logarithms",
-      "Calculation History",
-      "Keyboard Shortcuts",
-      "Mobile Responsive",
-      "No Download Required"
+      "70+ Mathematical Functions: Complete scientific, trigonometric, logarithmic, exponential, and statistical function library.",
+      "Trigonometry Suite: sin, cos, tan, inverse trig (arcsin, arccos, arctan), and hyperbolic functions (sinh, cosh, tanh) with DEG/RAD toggle.",
+      "Logarithmic & Exponential: Natural log (ln), common log (log10), binary log (log2), e^x, and 10^x functions.",
+      "Powers, Roots & Factorials: x^2, x^3, x^y, sqrt, cbrt, nth root, n!, nCr, nPr, and gamma function.",
+      "Memory Functions (M+/M-/MR/MC): Store and recall intermediate results for multi-step scientific calculations.",
+      "Calculation History: Review and reuse previous calculations during your session for complex multi-step problems.",
+      "Full Keyboard Shortcuts: Efficient number, operator, and function key input for rapid calculations.",
+      "Mobile Responsive & No Download: Works on desktop, tablet, and phone browsers — no app installation required."
     ],
     aboutTool: (
       <>

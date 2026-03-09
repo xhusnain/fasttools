@@ -7,22 +7,15 @@ const toolConfig = createToolConfig({
   toolName: "RSA Key Pair Generator",
   description:
     "Generate RSA public/private key pairs for encryption, signing, and interoperability testing.",
-  metaTitle: "RSA Key Pair Generator (2048/4096 PEM)",
+  metaTitle: "RSA Key Pair Generator Online — Generate 2048/4096-bit Keys in PEM Free (2026)",
   metaDescription:
-    "Create RSA key pairs in browser-friendly workflows for testing and implementation checks. Supports common key sizes and export usage.",
+    "Free online RSA key pair generator. Create 2048-bit or 4096-bit RSA public and private keys in PEM format. Use for JWT signing, SSH keys, TLS certificates, and encryption testing.",
   path: "/crypto-tools/rsa-generator",
-  keywords: [
-    "rsa key generator",
-    "rsa public private key",
-    "pem key generator",
-    "rsa 2048 generator",
-    "rsa 4096 tool",
-  ],
 
   header: {
-    title: "RSA Key Pair Generator",
+    title: "RSA Key Pair Generator — Public & Private Keys",
     description:
-      "Generate public/private RSA keys for signing and encryption workflows.",
+      "Generate RSA public and private key pairs in standard PEM format (PKCS#8). Choose 2048-bit or 4096-bit key size for JWT RS256 signing, SSH authentication, TLS/SSL certificates, and file encryption. Keys are generated in your browser using the Web Crypto API — private keys never leave your machine.",
     titleSize: "medium",
     descriptionSize: "small",
     color: "green",
@@ -60,73 +53,74 @@ const toolConfig = createToolConfig({
       "Keys are generated in your browser — private key never leaves your machine",
     ],
     overview:
-      "Use this tool to generate RSA key pairs for development and interoperability testing. It supports common key sizes and output handling for integration with signing and encryption pipelines.",
+      "Generate RSA public and private key pairs online with this free tool. Create 2048-bit or 4096-bit RSA keys in standard PEM format (PKCS#8) for JWT RS256/RS512 signing, SSH authentication, TLS/SSL certificate generation, S/MIME email encryption, and file encryption. The public key encrypts data and verifies signatures; the private key decrypts data and creates signatures. Both keys are generated entirely in your browser using the Web Crypto API — the private key is never transmitted to any server. Copy or download keys directly for use in Node.js, Python, Java, Go, or OpenSSL workflows.",
 
     howToSteps: [
-      "Select the RSA key size required for your use case.",
-      "Generate a new key pair and review public/private outputs.",
-      "Copy or export keys to your test environment.",
-      "Validate encryption/signing operations in your target stack.",
+      "Select key size: 2048-bit (standard) or 4096-bit (higher security, slower operations).",
+      "Click Generate to create the RSA key pair in PEM format.",
+      "Copy the public key for sharing and the private key for secure storage.",
+      "Use the keys in your JWT signing, SSH config, TLS setup, or encryption workflow.",
     ],
 
     features: [
-      "RSA public/private pair generation",
-      "Common key-size controls",
-      "Output ready for integration testing",
-      "Copy-friendly developer workflow",
-      "Browser utility for quick key tasks",
+      "2048-bit and 4096-bit RSA key pair generation",
+      "Standard PEM format output (PKCS#8) compatible with OpenSSL",
+      "Separate public key (SPKI) and private key (PKCS#8) display",
+      "Browser-based generation via Web Crypto API — private key never leaves your device",
+      "One-click copy for quick integration into code, configs, and .pem files",
     ],
 
     useCases: [
-      "JWT and signature workflow testing",
-      "TLS and certificate lab checks",
-      "Service-to-service auth experiments",
-      "Developer onboarding and cryptography demos",
+      "Generating RSA keys for JWT RS256 token signing in authentication systems",
+      "Creating SSH key pairs for server access and Git authentication",
+      "Generating test certificates for TLS/SSL development and staging environments",
+      "Testing RSA encryption and decryption across Node.js, Python, and Java implementations",
     ],
 
     aboutTool: (
       <div className="space-y-6 text-muted-foreground">
         <p>
-          RSA remains widely used for signing and key exchange workflows across
-          enterprise systems. Correct key management is essential even when key
-          generation itself is straightforward.
+          RSA (Rivest–Shamir–Adleman) is the most widely deployed public-key cryptosystem, used for digital signatures, key exchange, and encryption. The security of RSA relies on the mathematical difficulty of factoring large prime numbers. A 2048-bit RSA key has ~112 bits of security strength, while 4096-bit provides ~140 bits — both are considered safe through 2030+ by NIST guidelines.
         </p>
         <p>
-          This page emphasizes practical implementation intent: generate keys,
-          validate behavior, and integrate safely into your test or staging
-          environment.
+          For production use, store private keys in hardware security modules (HSMs), cloud KMS services (AWS KMS, Google Cloud KMS, Azure Key Vault), or encrypted key stores. Never commit private keys to source code repositories. Rotate keys according to your organization’s security policy — typically every 1–2 years for signing keys.
         </p>
       </div>
     ),
 
     proTip:
-      "Use production-grade key storage and rotation policies; treat generated private keys as sensitive credentials.",
+      "Use 2048-bit keys for JWT signing and API authentication (fast enough for per-request signing). Use 4096-bit keys for long-lived TLS certificates and high-security signing requirements. Consider Ed25519 for new SSH key generation — it is faster and more secure than RSA.",
 
     faqs: [
       {
-        question: "What key size should I use?",
+        question: "Should I use 2048-bit or 4096-bit RSA keys?",
         answer:
-          "2048-bit keys are a common baseline, while 4096-bit may be used when policy requires higher margins.",
+          "2048-bit is the minimum recommended by NIST in 2026 and sufficient for most applications. Use 4096-bit for high-security requirements, long-lived certificates, or when compliance policy requires it. 4096-bit keys are ~4x slower for signing operations.",
       },
       {
-        question: "Can I use generated keys for JWT signing tests?",
+        question: "Can I use these RSA keys for JWT signing (RS256)?",
         answer:
-          "Yes. RSA key pairs are commonly used in signing and verification test flows.",
+          "Yes. Copy the private key to sign JWTs with RS256, RS384, or RS512 algorithms. Share the public key with services that need to verify the tokens. Standard PEM format works with jsonwebtoken (Node.js), PyJWT (Python), and all major JWT libraries.",
       },
       {
-        question: "Is browser generation suitable for production key management?",
+        question: "Is it safe to generate RSA keys in a browser?",
         answer:
-          "It is useful for development and testing. Production keys should follow your organization’s secure key lifecycle controls.",
+          "Yes for development and testing. The Web Crypto API provides cryptographically secure key generation. For production keys protecting sensitive data or infrastructure, use dedicated tools like OpenSSL or cloud HSM services.",
       },
       {
-        question: "Why do imported keys fail in my framework?",
+        question: "What is the difference between RSA and Ed25519?",
         answer:
-          "Failures are often due to formatting, algorithm mismatch, or incompatible key container/encoding expectations.",
+          "RSA is older and more widely supported. Ed25519 (elliptic curve) is newer, faster, and provides equivalent security with much smaller keys (256-bit vs 2048-bit). Ed25519 is now preferred for SSH keys; RSA remains standard for TLS and JWT.",
       },
       {
-        question: "Can I reuse one RSA key pair everywhere?",
+        question: "Why does my private key fail to import in my application?",
         answer:
-          "Avoid over-reuse. Segment keys by environment and use case to reduce blast radius.",
+          "Common causes: wrong key format (PKCS#1 vs PKCS#8), missing BEGIN/END markers, line break differences (CRLF vs LF), or algorithm mismatch (expecting EC key but getting RSA). Check your library’s expected format.",
+      },
+      {
+        question: "How should I store RSA private keys in production?",
+        answer:
+          "Use a secrets manager (AWS Secrets Manager, HashiCorp Vault), cloud KMS, or HSM. Never commit private keys to Git repositories. For application configs, use environment variables or encrypted config files with restricted file permissions (chmod 600).",
       },
     ],
 

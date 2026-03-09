@@ -13,24 +13,15 @@ const toolConfig = createToolConfig({
   toolName: "Instagram DP Viewer",
   description:
     "View and download Instagram profile pictures in full size by username with a fast browser workflow.",
-  metaTitle: "Instagram DP Viewer & Downloader (Full Size HD)",
+  metaTitle: "Instagram DP Viewer & Downloader — Full Size HD 1080p (2026)",
   metaDescription:
-    "View Instagram profile pictures in full size and download by username. Insta DP viewer with zoom-friendly output and no login required.",
+    "View and download Instagram profile pictures in full HD 1080p. Free insta DP viewer — zoom, save, and download any public profile picture by username. No login required.",
   path: "/social-media-tools/instagram-dp",
-  keywords: [
-    "instagram dp viewer",
-    "insta dp viewer",
-    "instagram profile picture viewer",
-    "instagram profile picture downloader",
-    "view instagram profile picture full size",
-    "instagram dp download",
-    "instagram pfp viewer",
-  ],
 
   header: {
     title: "Instagram DP Viewer & Profile Picture Downloader",
     description:
-      "Enter a username to view full-size profile-picture output and download if available.",
+      "View and download any Instagram profile picture in full size HD. Enter a username to zoom, preview, and save the DP — no login required, works on mobile and desktop.",
     titleSize: "medium",
     descriptionSize: "small",
   },
@@ -67,7 +58,7 @@ const toolConfig = createToolConfig({
       "Does not access private posts, stories, or reels",
     ],
     overview:
-      "Instagram DP Viewer helps you open profile pictures in larger size than the in-app avatar preview. Use it to check profile branding, review creator assets, and save reference copies in your workflow.",
+      "View any Instagram profile picture in full size with this free DP viewer and downloader. Instagram shows profile pictures as tiny circular avatars — this tool enlarges them to full HD resolution so you can zoom in and see the complete image. Enter any public Instagram username to instantly view and download their profile picture. Useful for checking creator branding, verifying accounts, saving reference images for design work, and reviewing profile visuals. No Instagram login, no app download — works in any browser on mobile and desktop.",
 
     howToSteps: [
       "Enter an Instagram username (with or without @).",

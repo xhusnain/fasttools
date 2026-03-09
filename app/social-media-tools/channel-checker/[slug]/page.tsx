@@ -52,7 +52,6 @@ export default async function ChannelCheckerVariantPage(props: Props) {
     metaTitle: variant.metaTitle,
     metaDescription: variant.metaDescription,
     path: `/social-media-tools/channel-checker/${slug}`,
-    keywords: variant.keywords || ["youtube handle checker", "youtube channel name checker", "youtube name availability"],
 
     schemaOptions: {
       applicationCategory: "WebApplication",

@@ -17,16 +17,6 @@ const toolConfig = createToolConfig({
   metaDescription:
     "Convert image to text online with browser OCR. Upload screenshot or document images, choose language, and copy extracted text in seconds.",
   path: "/image-tools/image-to-text",
-  keywords: [
-    "image to text converter",
-    "ocr online",
-    "extract text from image",
-    "copy text from image",
-    "photo to text converter",
-    "screenshot to text",
-    "image text extractor",
-    "free ocr tool",
-  ],
 
   schemaOptions: {
     applicationCategory: "UtilitiesApplication",

@@ -13,22 +13,15 @@ const toolConfig = createToolConfig({
   toolName: "HTML WYSIWYG Editor",
   description:
     "Edit rich text and view generated HTML source side-by-side for content and UI workflows.",
-  metaTitle: "HTML WYSIWYG Editor (Rich Text + HTML Source)",
+  metaTitle: "HTML WYSIWYG Editor — Rich Text to HTML Online Free (2026)",
   metaDescription:
-    "Use a browser-based WYSIWYG editor with HTML source output for drafting, formatting, and embedding content quickly.",
+    "Free online WYSIWYG HTML editor. Write rich text and get clean HTML source code. Format headings, lists, tables, images, and links visually. No software installation needed.",
   path: "/dev-tools/html-wysiwyg-editor",
-  keywords: [
-    "html wysiwyg editor",
-    "online rich text editor",
-    "html editor online",
-    "wysiwyg html source",
-    "content editor tool",
-  ],
 
   header: {
-    title: "HTML WYSIWYG Editor",
+    title: "HTML WYSIWYG Editor (Rich Text to HTML)",
     description:
-      "Draft rich content and inspect generated HTML source in one workflow.",
+      "Write and format rich text visually, then copy the clean HTML source code. Supports headings, bold, italic, lists, tables, links, and images. Perfect for CMS content, email templates, and web pages.",
     titleSize: "medium",
     descriptionSize: "small",
     color: "blue",
@@ -65,7 +58,7 @@ const toolConfig = createToolConfig({
       "Useful for email templates, CMS content, and quick HTML prototyping",
     ],
     overview:
-      "Use this editor to compose formatted content and capture the resulting HTML for websites, CMS fields, email templates, and embedded content blocks.",
+      "Create rich text content and generate clean HTML source code with this free online WYSIWYG editor. Format content visually using a toolbar — add headings, bold, italic, lists, tables, links, and images — then switch to source view to copy the generated HTML. Perfect for creating content for CMS platforms (WordPress, Shopify, Webflow), email templates, landing pages, and embedded HTML blocks. No coding knowledge needed — what you see is what you get.",
 
     howToSteps: [
       "Compose content using rich text controls.",

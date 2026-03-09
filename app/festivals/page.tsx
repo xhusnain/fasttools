@@ -21,10 +21,6 @@ const toolConfig = createToolConfig({
     metaTitle: "Festival Tools | Christmas Fonts, Holiday Generators & More",
     metaDescription: "Creative tools for every holiday and celebration. Generate festive text, find perfect captions, and make your special moments shine online.",
     path: "/festivals",
-    keywords: [
-        "festival tools", "holiday text generator", "christmas tools", "event planners",
-        "social media holiday tools", "celebration generators"
-    ],
 
     header: {
         title: "Festivals & Events",

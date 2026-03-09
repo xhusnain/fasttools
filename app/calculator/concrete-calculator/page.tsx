@@ -39,12 +39,12 @@ import {
 } from "lucide-react"
 import { GTable } from "@/ui/gtable"
 
-const TOOL_TITLE = "Concrete Calculator - Cubic Yards, Bags & Cost Estimator"
+const TOOL_TITLE = "Concrete Calculator — Estimate Cubic Yards, Bags & Cost Free (2026)"
 const TOOL_NAME = "Concrete Calculator"
 
 const baseMetadata = createMetadata({
   title: TOOL_TITLE,
-  description: "Estimate concrete volume in cubic yards, bag counts (40/60/80 lb), and project cost for slabs, footings, and driveways.",
+  description: "Free concrete calculator to estimate volume in cubic yards, bag counts (40/60/80 lb), material breakdown (cement, sand, gravel), and project cost for slabs, footings, driveways, columns, stairs & curbs with built-in waste factor.",
   path: "/calculator/concrete-calculator",
   breadcrumbs: [
     { label: "Calculator", href: "/calculator" },
@@ -91,37 +91,37 @@ export default function ConcreteCalculatorPage() {
       "Ready-mix concrete costs $100-$150 per cubic yard; bagged costs more per yard but avoids delivery fees",
       "Concrete reaches full strength after 28 days of curing",
     ],
-    overview: "Instantly calculate the concrete volume in cubic yards and the number of bags needed for your project. Whether you're pouring a slab, footing, or driveway, our free estimator accounts for waste factor and material costs.",
+    overview: "Instantly calculate concrete volume in cubic yards, exact bag counts for 40 lb, 60 lb, and 80 lb bags, material breakdown ratios (cement, sand, gravel), and estimated project cost with our free concrete calculator. Supporting slabs, patios, driveways, footings, columns (Sonotubes), stairs, curbs, and retaining walls, the tool accounts for adjustable waste factors (5-10%), multiple PSI strength mixes (2500-5000 PSI), and both metric and imperial units — helping DIY homeowners and professional contractors order the right amount of concrete every time.",
 
     howToSteps: [
-      "Select Project Type: Choose from slabs, columns, stairs, curbs, and more.",
-      "Enter Dimensions: Input length, width, height, and other measurements accurately.",
-      "Choose Mix Type: Select standard (3000 PSI) or high-strength (4000+ PSI) mix.",
-      "Get Results: View exact cubic yards, bag counts (40/60/80lb), and estimated cost."
+      "Select Project Type: Choose from slabs, patios, driveways, footings, columns (Sonotubes), stairs, curbs, gutters, retaining walls, fence posts, and more.",
+      "Enter Dimensions: Input length, width, and thickness in feet or meters. For circular columns, enter diameter and depth. The calculator handles unit conversion automatically.",
+      "Choose Mix Type: Select standard mix (3000 PSI, 1:2:3 ratio), high-strength (4000+ PSI), lightweight (2500 PSI), or fiber-reinforced (3500 PSI) and adjust the waste factor (5-10%).",
+      "Get Results: View exact cubic yards, cubic feet, bag counts for 40 lb, 60 lb, and 80 lb bags, material breakdown (cement, sand, gravel), and estimated project cost for both bagged and ready-mix delivery."
     ],
 
     features: [
-      "Cubic Yard & Foot Calculator",
-      "Bag Estimator (40lb, 60lb, 80lb)",
-      "Project Cost Estimation",
-      "Material Breakdown (Cement/Sand/Gravel)",
-      "Waste Factor Adjustment (5-10%)",
-      "Slab, Column & Footing Modes",
-      "Stairs & Steps Calculator",
-      "Curb & Gutter Support",
-      "Metric & Imperial Units",
-      "Professional Mix Ratios",
-      "Curing Time Guide"
+      "Cubic Yard & Cubic Foot Calculator: Compute concrete volume for any shape — rectangular, cylindrical, or irregular.",
+      "Bag Estimator: Exact bag counts for 40 lb (0.30 cu ft), 60 lb (0.45 cu ft), and 80 lb (0.60 cu ft) bags per cubic yard.",
+      "Cost Estimation: Compare bagged concrete vs. ready-mix truck delivery cost with up-to-date national pricing averages.",
+      "Material Breakdown: Cement, sand, and gravel quantities for 3000 PSI (1:2:3), 4000 PSI (1:1.5:2.5), and lightweight (1:1.5:2) mix ratios.",
+      "Adjustable Waste Factor: Built-in 5-10% waste factor to account for spillage, uneven subgrades, and formwork deflection.",
+      "Multiple Project Types: Slab, patio, driveway, footing, column (Sonotube), stair, curb, gutter, retaining wall, and fence post modes.",
+      "Metric & Imperial Units: Switch between feet/inches and meters/centimeters for international compatibility.",
+      "PSI Strength Selection: Choose from 2500 PSI lightweight, 3000 PSI standard, 3500 PSI fiber-reinforced, and 4000+ PSI high-strength mixes.",
+      "Curing Time Guide: Reference chart for walk-on time (24-48 hrs), drive-on time (7 days), and full-strength curing (28 days).",
+      "Pre-Pour Checklist: Integrated permit, 811 utility marking, formwork, rebar, and safety reminders.",
+      "Mobile-Responsive: Use on smartphones and tablets at the job site for quick on-location estimates."
     ],
 
     useCases: [
-      "Driveway & Patio Slabs: Calculate volume for large flatwork.",
-      "Deck Footings: Estimate concrete for sonar tubes and piers.",
-      "Retaining Walls: Calculate cubic yards for structural walls.",
-      "Sidewalks & Walkways: Determine bags needed for DIY paths.",
-      "Fence Posts: Calculate concrete for setting posts.",
-      "Garage Floors: Estimate ready-mix requirements.",
-      "Stairs & Steps: Complex volume calculations made simple."
+      "Driveway & Patio Slabs: Calculate cubic yards for large flatwork at standard 4-inch or heavy-duty 5-6-inch thickness.",
+      "Deck Footings & Piers: Estimate concrete volume for Sonotube columns using the cylinder formula (pi * r-squared * height) with frost-line depth.",
+      "Retaining Walls: Calculate cubic yards for structural walls with 6-12 inch thickness and separate footing volumes.",
+      "Sidewalks & Walkways: Determine exact bag counts for DIY paths at standard 36-48 inch width and 4-inch depth.",
+      "Fence Posts: Calculate concrete per post hole (6-12 inch diameter, 24-36 inch depth) and multiply by total post count.",
+      "Garage Floors: Estimate ready-mix truck requirements for 4-6 inch garage slabs with thickened edge beams.",
+      "Stairs & Steps: Complex multi-step volume calculations broken into individual tread-and-riser blocks with optional solid fill underneath."
     ],
 
     aboutTool: (
@@ -616,7 +616,7 @@ export default function ConcreteCalculatorPage() {
       toolContent={toolContent}
       expectedMetadata={{
         title: TOOL_TITLE,
-        description: "Estimate concrete volume, bag counts, and cost for slabs, footings, columns, and stairs with waste-factor support.",
+        description: "Free concrete calculator to estimate volume in cubic yards, bag counts (40/60/80 lb), material breakdown (cement, sand, gravel), and project cost for slabs, footings, driveways, columns, stairs & curbs with built-in waste factor.",
         path: "/calculator/concrete-calculator"
       }}
     />

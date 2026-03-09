@@ -11,9 +11,9 @@ import { Calculator, Plus, Minus, X, Divide, Brain, Square, BookOpen, Target, Sh
 import { GTable } from "@/ui/gtable"
 
 const baseMetadata = createMetadata({
-  title: "Fraction Calculator - Solve Math Problems",
+  title: "Fraction Calculator — Add, Subtract, Multiply & Divide Fractions Free (2026)",
   description:
-    "Solve fraction math with add, subtract, multiply, divide, simplify, and fraction-decimal conversion in one free calculator.",
+    "Free fraction calculator to add, subtract, multiply, and divide fractions with step-by-step solutions. Simplify fractions, convert between fractions and decimals, and solve mixed number operations instantly.",
   path: "/calculator/fraction-calculator",
   breadcrumbs: [
     { label: "Calculator", href: "/calculator" },
@@ -40,78 +40,37 @@ export const metadata: Metadata = {
   ...baseMetadata,
   applicationName: "FastTools",
   category: "Math",
-  keywords: [
-    "fasttools",
-    "fast tools",
-    "fraction calculator",
-    "fractions calculator",
-    "fraction calculator online",
-    "free fraction calculator",
-    "fraction calculator with steps",
-    "fraction math calculator",
-    "fraction solver",
-    "fraction simplifier",
-    "fraction addition calculator",
-    "fraction subtraction calculator",
-    "fraction multiplication calculator",
-    "fraction division calculator",
-    "fraction operations calculator",
-    "fraction calculator add subtract multiply divide",
-    "fraction calculator step by step",
-    "fraction to decimal calculator",
-    "decimal to fraction calculator",
-    "simplify fractions",
-    "reduce fractions calculator",
-    "fraction simplification tool",
-    "mixed number calculator",
-    "fraction calculator for students",
-    "fraction calculator for teachers",
-    "fraction calculator for school",
-    "fraction calculator for homework",
-    "fraction calculator for algebra",
-    "fraction calculator for geometry",
-    "fraction formulas",
-    "fraction equations",
-    "fraction rules",
-    "fraction math steps",
-    "fraction learning tool",
-    "how to calculate fractions online",
-    "how to simplify fractions",
-    "how to add fractions with different denominators",
-    "online calculator for fractions",
-    "fraction calculator with common denominator",
-    "step by step fraction solver"
-  ]
 }
 
 export default function FractionCalculatorPage() {
   const toolContent = {
     toolName: "Fraction Calculator",
-    overview: "Advanced fraction calculator with addition, subtraction, multiplication, division, simplification, and conversion between fractions and decimals. Perfect for students, teachers, and professionals.",
+    overview: "Add, subtract, multiply, and divide fractions with step-by-step solutions using our free fraction calculator. The tool automatically finds the least common denominator (LCD) for addition and subtraction, computes the greatest common divisor (GCD) for simplification, handles proper fractions, improper fractions, and mixed numbers, and converts between fractions, decimals, and percentages. Ideal for students solving homework, teachers demonstrating fraction operations, cooks scaling recipes, builders working with fractional measurements, and professionals needing exact arithmetic without decimal rounding drift.",
 
     howToSteps: [
-      "Select Operation: Choose from addition (+), subtraction (-), multiplication (×), or division (÷).",
-      "Enter Fractions: Input the numerator and denominator for both fractions. The calculator will automatically calculate the result.",
-      "View Results: See the result, simplification steps, and decimal conversion."
+      "Select Operation: Choose from addition (+), subtraction (-), multiplication (x), or division (/) — the calculator supports proper fractions, improper fractions, and mixed numbers for all operations.",
+      "Enter Fractions: Input the numerator and denominator for both fractions. For mixed numbers, enter the whole number separately. The tool auto-computes the LCD for addition/subtraction and finds reciprocals for division.",
+      "View Results: See the exact fraction result simplified to lowest terms (via GCD), the step-by-step solution showing intermediate calculations, the decimal equivalent, and the percentage conversion."
     ],
 
     features: [
-      "Fraction addition and subtraction",
-      "Fraction multiplication and division",
-      "Fraction simplification",
-      "Decimal to fraction conversion",
-      "Fraction to decimal conversion",
-      "Mixed number calculations",
-      "Step-by-step solutions",
-      "Fraction type classification"
+      "Addition & Subtraction: Auto-finds the least common denominator (LCD) and converts fractions before combining numerators.",
+      "Multiplication & Division: Multiplies numerators and denominators directly; for division, flips the divisor to its reciprocal first.",
+      "Auto-Simplification: Reduces every result to lowest terms by computing the greatest common divisor (GCD) of numerator and denominator.",
+      "Decimal Conversion: Converts fraction results to decimal form (up to 6 decimal places) and percentage equivalents.",
+      "Decimal-to-Fraction: Reverse-converts any decimal input (e.g., 0.375) into its simplified fraction form (3/8).",
+      "Mixed Number Support: Enter and calculate with mixed numbers (e.g., 2 3/4); automatically converts to improper fractions for computation.",
+      "Step-by-Step Solutions: Displays every intermediate calculation step — LCD finding, cross-multiplication, GCD simplification — for learning and verification.",
+      "Fraction Type Classification: Identifies whether results are proper, improper, or unit fractions and offers mixed-number conversion."
     ],
 
     useCases: [
-      "Education: Essential for learning and teaching fraction operations.",
-      "Cooking: Scaling recipes and adjusting ingredient quantities.",
-      "Construction: Working with measurements in inches and feet.",
-      "Science: Calculating ratios and concentrations.",
-      "Finance: Calculating interest rates and financial ratios."
+      "Math Homework & Exams: Solve fraction addition, subtraction, multiplication, and division problems with step-by-step solutions for algebra, pre-algebra, and geometry courses.",
+      "Teaching & Tutoring: Demonstrate LCD finding, cross-multiplication, GCD simplification, and mixed-number conversion with clear intermediate steps.",
+      "Cooking & Baking: Scale recipes up or down by multiplying or dividing ingredient fractions (e.g., 3/4 cup x 2 = 1 1/2 cups).",
+      "Construction & Carpentry: Add and subtract fractional inch measurements (e.g., 5/8 in + 3/16 in) for precise lumber cuts, tile layouts, and pipe fitting.",
+      "Science & Lab Work: Calculate molar ratios, solution concentrations, and dilution factors expressed as fractions.",
+      "Finance & Accounting: Compute fractional interest rates, stock splits, and financial ratios that require exact arithmetic without decimal rounding."
     ],
 
     aboutTool: (
@@ -545,8 +504,8 @@ export default function FractionCalculatorPage() {
   return (
     <ToolPageLayout
       header={{
-        title: "Fraction Calculator",
-        description: "Advanced fraction calculator with addition, subtraction, multiplication, division, simplification, and conversion between fractions and decimals. Perfect for students, teachers, and professionals.",
+        title: "Fraction Calculator — Add, Subtract, Multiply & Divide (2026)",
+        description: "Free fraction calculator with step-by-step solutions for addition, subtraction, multiplication, and division. Handles proper fractions, improper fractions, and mixed numbers with automatic simplification, GCD/LCM computation, and fraction-to-decimal conversion for students, teachers, and professionals.",
         titleSize: "medium",
         descriptionSize: "small",
         color: "blue"
@@ -562,9 +521,9 @@ export default function FractionCalculatorPage() {
       }
       toolContent={toolContent}
       expectedMetadata={{
-        title: "Fraction Calculator - Add, Subtract, Multiply & Divide",
+        title: "Fraction Calculator — Add, Subtract, Multiply & Divide Fractions Free (2026)",
         description:
-          "Solve fraction math with add, subtract, multiply, divide, simplify, and fraction-decimal conversion in one free calculator.",
+          "Free fraction calculator to add, subtract, multiply, and divide fractions with step-by-step solutions. Simplify fractions, convert between fractions and decimals, and solve mixed number operations instantly.",
         path: "/calculator/fraction-calculator"
       }}
     />

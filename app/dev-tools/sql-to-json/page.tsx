@@ -13,22 +13,15 @@ const toolConfig = createToolConfig({
   toolName: "SQL to JSON Converter",
   description:
     "Convert SQL INSERT statements into JSON objects for API mocks, migration tasks, and data workflows.",
-  metaTitle: "SQL to JSON Converter (INSERT Statements)",
+  metaTitle: "SQL to JSON Converter — Convert SQL Results to JSON Online Free (2026)",
   metaDescription:
-    "Convert SQL INSERT data to JSON in-browser with quick parsing and copy-ready output.",
+    "Free online SQL to JSON converter. Transform SQL query results and INSERT statements into JSON arrays and objects. Type-aware conversion with column-to-key mapping. No upload needed.",
   path: "/dev-tools/sql-to-json",
-  keywords: [
-    "sql to json converter",
-    "convert sql insert to json",
-    "sql dump to json",
-    "database export to json",
-    "insert statement parser",
-  ],
 
   header: {
     title: "SQL to JSON Converter",
     description:
-      "Transform SQL INSERT data into structured JSON for integration and analysis tasks.",
+      "Convert SQL INSERT statements and query results into structured JSON arrays and objects. Maps SQL columns to JSON keys with type-aware value conversion. All processing runs locally in your browser.",
     titleSize: "medium",
     descriptionSize: "small",
     color: "blue",
@@ -65,7 +58,7 @@ const toolConfig = createToolConfig({
       "Useful for building REST APIs from database query results",
     ],
     overview:
-      "Use this converter to turn SQL INSERT statements into JSON arrays and objects. It is useful when moving relational data into API payloads, tests, or frontend mock data.",
+      "Convert SQL to JSON format with this free online tool. Paste SQL INSERT statements, CREATE TABLE definitions, or query results to instantly transform them into structured JSON arrays and objects. The converter maps SQL column names to JSON keys and performs type-aware conversion — integers, booleans, nulls, and strings are mapped to their appropriate JSON types. Useful for building REST API mock data from database dumps, migrating relational data to NoSQL databases, creating seed data for tests, and bridging SQL-based backends with JSON-consuming frontends.",
 
     howToSteps: [
       "Paste SQL INSERT statements into the input field.",

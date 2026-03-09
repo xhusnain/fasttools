@@ -8,7 +8,6 @@ export interface UnifiedToolConfig {
     metaTitle?: string
     metaDescription?: string
     path: string
-    keywords?: string[]
     video?: {
         id: string
         title?: string
@@ -124,7 +123,6 @@ export function createToolConfig(config: UnifiedToolConfig) {
         schemaOptions: config.schemaOptions,
         breadcrumbs: config.breadcrumbs,
         itemList: config.itemList,
-        ...(config.keywords && { keywords: config.keywords }),
     })
 
     const getLayoutProps = (toolComponent: React.ReactNode): ToolPageLayoutProps => ({

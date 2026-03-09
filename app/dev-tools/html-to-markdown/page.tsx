@@ -13,22 +13,15 @@ const toolConfig = createToolConfig({
   toolName: "HTML to Markdown Converter",
   description:
     "Convert HTML markup into Markdown format for documentation and content migration workflows.",
-  metaTitle: "HTML to Markdown Converter (Online)",
+  metaTitle: "HTML to Markdown Converter — Convert HTML to MD Online Free (2026)",
   metaDescription:
-    "Convert HTML to clean Markdown in-browser. Useful for docs migration, blog workflows, and markdown-first publishing.",
+    "Free online HTML to Markdown converter. Convert HTML to clean Markdown syntax. Handles headings, links, images, tables, lists, and code blocks. Perfect for docs migration and README creation.",
   path: "/dev-tools/html-to-markdown",
-  keywords: [
-    "html to markdown",
-    "html markdown converter",
-    "convert html to md",
-    "markdown conversion tool",
-    "docs migration tool",
-  ],
 
   header: {
     title: "HTML to Markdown Converter",
     description:
-      "Transform HTML content into Markdown for docs and publishing workflows.",
+      "Convert HTML to clean Markdown syntax instantly. Handles headings, paragraphs, links, images, tables, lists, and code blocks. Perfect for migrating CMS content, creating README files, and markdown-first publishing.",
     titleSize: "medium",
     descriptionSize: "small",
     color: "blue",
@@ -65,7 +58,7 @@ const toolConfig = createToolConfig({
       "Useful for migrating CMS content to Markdown-based platforms",
     ],
     overview:
-      "Use this tool to convert HTML content into Markdown for README files, docs systems, and markdown-first publishing pipelines.",
+      "Convert HTML to Markdown instantly with this free online converter. Paste HTML source code and get clean Markdown output that preserves headings, paragraphs, links, images, lists, tables, and code blocks. The converter strips unnecessary HTML attributes and inline styles while preserving the document structure. Perfect for migrating content from WordPress, Drupal, or other CMS platforms to Markdown-based systems like GitHub, Notion, Docusaurus, or Next.js MDX. Copy the Markdown output with one click.",
 
     howToSteps: [
       "Paste HTML content into the converter input.",

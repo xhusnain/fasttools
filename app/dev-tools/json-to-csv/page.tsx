@@ -13,22 +13,15 @@ const toolConfig = createToolConfig({
   toolName: "JSON to CSV Converter",
   description:
     "Convert JSON arrays and object data to CSV format for spreadsheet and reporting workflows.",
-  metaTitle: "JSON to CSV Converter (Online)",
+  metaTitle: "JSON to CSV Converter — Convert JSON to CSV Online Free (2026)",
   metaDescription:
-    "Convert JSON to CSV quickly for Excel, Sheets, and data pipelines. Useful for API exports and analytics workflows.",
+    "Convert JSON to CSV online for free. Transform JSON arrays into CSV files for Excel, Google Sheets, and databases. Handles nested objects, auto-detects headers. No upload needed.",
   path: "/dev-tools/json-to-csv",
-  keywords: [
-    "json to csv converter",
-    "convert json to csv",
-    "json csv tool",
-    "api json to csv",
-    "data export converter",
-  ],
 
   header: {
     title: "JSON to CSV Converter",
     description:
-      "Transform JSON data into CSV output for analysis and spreadsheet workflows.",
+      "Convert JSON arrays to CSV format for Excel, Google Sheets, and databases. Auto-detects column headers from JSON keys, flattens nested objects, and lets you download as .csv — free, no data uploaded.",
     titleSize: "medium",
     descriptionSize: "small",
     color: "blue",
@@ -65,71 +58,68 @@ const toolConfig = createToolConfig({
       "All processing runs locally — no data uploaded to servers",
     ],
     overview:
-      "Use this converter to transform JSON payloads into CSV for spreadsheets, data analysis, and reporting pipelines. It is useful for API output handling and quick export operations.",
+      "Convert JSON to CSV format instantly with this free online converter. Paste a JSON array of objects and the tool auto-detects column headers from JSON keys, flattens nested objects using dot notation, and generates a clean CSV file ready for Excel, Google Sheets, or database import. Handles arrays, null values, and mixed data types. Download the result as a .csv file or copy to clipboard. All processing runs locally in your browser — no data uploaded to any server.",
 
     howToSteps: [
-      "Paste or upload JSON data in the input panel.",
-      "Run conversion to generate CSV output.",
-      "Review column mapping and value formatting.",
-      "Copy or download the CSV file for downstream use.",
+      "Paste your JSON data (array of objects) into the input panel.",
+      "The tool auto-detects column headers from JSON keys and generates CSV output.",
+      "Review the CSV preview — check column mapping and value formatting.",
+      "Download the .csv file or copy the CSV text to clipboard for Excel, Sheets, or database import.",
     ],
 
     features: [
-      "JSON-to-CSV transformation",
-      "Spreadsheet-compatible output",
-      "Copy/download support",
-      "Useful for API and analytics workflows",
-      "Browser-based conversion utility",
+      "Auto-detect column headers from JSON object keys",
+      "Flatten nested JSON objects using dot notation (e.g., user.name)",
+      "Handle arrays, nulls, booleans, and mixed data types",
+      "Download as .csv file or copy CSV text to clipboard",
+      "100% client-side processing — no data uploaded to servers",
+      "Supports large JSON datasets with thousands of records",
     ],
 
     useCases: [
-      "API data export to spreadsheets",
-      "Ad hoc reporting workflows",
-      "Data handoff to analysts",
-      "ETL prototyping and validation",
+      "Convert API JSON responses to CSV for analysis in Excel or Google Sheets",
+      "Export database query results from JSON to CSV for business reporting",
+      "Transform webhook payload data into spreadsheet-friendly format",
+      "Convert MongoDB/CouchDB JSON exports to CSV for data migration",
+      "Prepare JSON data for import into SQL databases or BI tools",
     ],
 
-    aboutTool: (
-      <div className="space-y-6 text-muted-foreground">
-        <p>
-          Conversion tools rank best when they produce predictable tabular
-          output quickly. This page is optimized for that utility-first intent.
-        </p>
-        <p>
-          It is particularly useful when API responses need rapid conversion
-          into analyst-friendly CSV format without extra setup.
-        </p>
-      </div>
-    ),
+    aboutTool:
+      "JSON is the standard data format for APIs and web applications, but analysts and business users work in spreadsheets. This converter bridges the gap by transforming JSON arrays into tabular CSV format. The tool handles common JSON patterns: flat objects become rows with key-based headers, nested objects are flattened using dot notation (e.g., address.city becomes a column named 'address.city'), and arrays within objects are serialized as comma-separated values within cells. All conversion runs in your browser using JavaScript — no data is uploaded to any server, making it safe for sensitive data.",
 
     proTip:
-      "Validate delimiter, encoding, and header behavior before importing into downstream BI or spreadsheet pipelines.",
+      "For best results, ensure your JSON is an array of objects with consistent keys. If your JSON has deeply nested structures, consider flattening it first for cleaner CSV columns. When importing into Excel, use 'Data → From Text/CSV' to correctly handle delimiters and encoding.",
 
     faqs: [
       {
-        question: "Can I convert nested JSON directly?",
+        question: "How do I convert JSON to CSV?",
         answer:
-          "Nested structures may need flattening depending on desired CSV column layout.",
+          "Paste your JSON array of objects into the input field. The tool automatically generates CSV with column headers from JSON keys. Download the .csv file or copy the text to clipboard.",
       },
       {
-        question: "Is this useful for API export workflows?",
+        question: "Can this handle nested JSON objects?",
         answer:
-          "Yes. It is commonly used to convert API responses into CSV for analysis.",
+          "Yes. Nested objects are flattened using dot notation — for example, {user: {name: 'John'}} becomes a column named 'user.name' with value 'John'.",
       },
       {
-        question: "Will data types be preserved?",
+        question: "Can I open the CSV output in Excel or Google Sheets?",
         answer:
-          "CSV is text-oriented, so type handling depends on the target application importing the file.",
+          "Yes. Download the .csv file and open it directly in Excel, Google Sheets, LibreOffice Calc, or any spreadsheet application.",
       },
       {
-        question: "Can I open the output in Excel or Google Sheets?",
+        question: "Is my JSON data uploaded to a server?",
         answer:
-          "Yes. Generated CSV output is intended for spreadsheet import workflows.",
+          "No. All conversion runs locally in your browser. No data is sent to any server — this makes it safe for sensitive or proprietary data.",
       },
       {
-        question: "Does this replace full ETL tools?",
+        question: "What JSON format does this converter expect?",
         answer:
-          "No. It is a fast conversion utility for practical day-to-day data tasks.",
+          "The converter works best with JSON arrays of objects, like [{\"name\":\"John\",\"age\":30},{\"name\":\"Jane\",\"age\":25}]. Each object becomes a CSV row, and keys become column headers.",
+      },
+      {
+        question: "Is this JSON to CSV converter free?",
+        answer:
+          "Yes. Completely free with no limits on data size, no registration, and no server-side processing.",
       },
     ],
 
