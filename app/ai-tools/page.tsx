@@ -2,7 +2,7 @@ import type { Metadata } from "next"
 import { ToolPageLayout } from "@/components/common/tool-page-layout"
 import { createToolConfig } from "@/lib/create-tool-config"
 import { GToolCard } from "@/ui/gtool-card"
-import { FileSearch, Hash, Heart, ImageIcon, Music, QrCode } from "lucide-react"
+import { Code2, FileSearch, Hash, Heart, ImageIcon, Music, QrCode } from "lucide-react"
 
 const aiTools = [
   {
@@ -46,6 +46,13 @@ const aiTools = [
       "Detect AI-written content from ChatGPT, Claude, Gemini using 5 statistical writing signals.",
     href: "/ai-tools/ai-text-detector",
     icon: FileSearch,
+  },
+  {
+    title: "AI Code Detector",
+    description:
+      "Detect AI-generated code from Copilot, ChatGPT, Claude across 12+ programming languages.",
+    href: "/ai-tools/ai-code-detector",
+    icon: Code2,
   },
 ]
 

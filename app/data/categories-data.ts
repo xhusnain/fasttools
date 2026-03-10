@@ -98,6 +98,14 @@ export const categories = [
                 badge: "New",
                 badgeColor: "bg-purple-600",
             },
+            {
+                title: "AI Code Detector",
+                description: "Detect AI-generated code from Copilot, ChatGPT, Claude across 12+ languages",
+                href: "/ai-tools/ai-code-detector",
+                icon: Code,
+                badge: "New",
+                badgeColor: "bg-purple-600",
+            },
         ],
     },
     {
