@@ -2,7 +2,7 @@ import type { Metadata } from "next"
 import { ToolPageLayout } from "@/components/common/tool-page-layout"
 import { createToolConfig } from "@/lib/create-tool-config"
 import { GToolCard } from "@/ui/gtool-card"
-import { Hash, Heart, ImageIcon, Music, QrCode } from "lucide-react"
+import { FileSearch, Hash, Heart, ImageIcon, Music, QrCode } from "lucide-react"
 
 const aiTools = [
   {
@@ -39,6 +39,13 @@ const aiTools = [
       "Estimate token and word counts for LLM planning, prompt sizing, and cost checks.",
     href: "/ai-tools/token-to-word-converter",
     icon: Hash,
+  },
+  {
+    title: "AI Text Detector",
+    description:
+      "Detect AI-written content from ChatGPT, Claude, Gemini using 5 statistical writing signals.",
+    href: "/ai-tools/ai-text-detector",
+    icon: FileSearch,
   },
 ]
 

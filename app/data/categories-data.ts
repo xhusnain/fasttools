@@ -90,6 +90,14 @@ export const categories = [
                 badge: "Utility",
                 badgeColor: "bg-indigo-600",
             },
+            {
+                title: "AI Text Detector",
+                description: "Detect AI-written content from ChatGPT, Claude, Gemini using statistical analysis",
+                href: "/ai-tools/ai-text-detector",
+                icon: FileText,
+                badge: "New",
+                badgeColor: "bg-purple-600",
+            },
         ],
     },
     {
