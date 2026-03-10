@@ -106,6 +106,14 @@ export const categories = [
                 badge: "New",
                 badgeColor: "bg-purple-600",
             },
+            {
+                title: "AI Readability Analyzer",
+                description: "Deep readability scoring with 7 algorithms including Flesch-Kincaid and SMOG",
+                href: "/ai-tools/ai-readability-analyzer",
+                icon: Ruler,
+                badge: "New",
+                badgeColor: "bg-blue-600",
+            },
         ],
     },
     {

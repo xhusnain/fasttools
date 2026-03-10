@@ -2,7 +2,7 @@ import type { Metadata } from "next"
 import { ToolPageLayout } from "@/components/common/tool-page-layout"
 import { createToolConfig } from "@/lib/create-tool-config"
 import { GToolCard } from "@/ui/gtool-card"
-import { Code2, FileSearch, Hash, Heart, ImageIcon, Music, QrCode } from "lucide-react"
+import { BookOpen, Code2, FileSearch, Hash, Heart, ImageIcon, Music, QrCode } from "lucide-react"
 
 const aiTools = [
   {
@@ -53,6 +53,13 @@ const aiTools = [
       "Detect AI-generated code from Copilot, ChatGPT, Claude across 12+ programming languages.",
     href: "/ai-tools/ai-code-detector",
     icon: Code2,
+  },
+  {
+    title: "AI Readability Analyzer",
+    description:
+      "Deep readability scoring with 7 algorithms: Flesch-Kincaid, Gunning Fog, SMOG, Coleman-Liau, ARI, Dale-Chall.",
+    href: "/ai-tools/ai-readability-analyzer",
+    icon: BookOpen,
   },
 ]
 

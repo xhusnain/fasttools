@@ -62,6 +62,7 @@ export const searchItems: SearchItem[] = [
   { name: "AI Pet Name Generator", description: "Discover unique, creative names for your pets using AI", path: "/ai-tools/pet-names", category: "AI" },
   { name: "AI Text Detector", description: "Free AI text detector to check if content was written by ChatGPT, Claude, Gemini, or AI. Analyzes burstiness, vocabulary, predictability patterns", path: "/ai-tools/ai-text-detector", category: "AI" },
   { name: "AI Code Detector", description: "Free AI code detector to check if code was written by GitHub Copilot, ChatGPT, Claude, or AI. Analyzes complexity, naming, error handling patterns", path: "/ai-tools/ai-code-detector", category: "AI" },
+  { name: "AI Readability Analyzer", description: "Free readability analyzer with 7 algorithms: Flesch-Kincaid, Gunning Fog, Coleman-Liau, SMOG, ARI, Dale-Chall. Grade level, audience match, reading time", path: "/ai-tools/ai-readability-analyzer", category: "AI" },
   { name: "Christmas Font Converter", description: "Convert text into aesthetic Christmas fonts with emojis", path: "/festivals/christmas-font-converter", category: "AI" },
 
   // Converter Tools
