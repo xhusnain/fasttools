@@ -1,5 +1,5 @@
 import type { Metadata } from "next"
-import { createMetadata } from "./metadata-base"
+import { createMetadata, buildSchemas } from "./metadata-base"
 import type { ToolPageLayoutProps } from "@/types/tool-page-layout.types"
 
 export interface UnifiedToolConfig {
@@ -111,7 +111,7 @@ export interface UnifiedToolConfig {
 }
 
 export function createToolConfig(config: UnifiedToolConfig) {
-    const metadata: Metadata = createMetadata({
+    const metadataOptions = {
         title: config.metaTitle || config.toolName,
         description: config.metaDescription || config.description,
         path: config.path,
@@ -123,13 +123,17 @@ export function createToolConfig(config: UnifiedToolConfig) {
         schemaOptions: config.schemaOptions,
         breadcrumbs: config.breadcrumbs,
         itemList: config.itemList,
-    })
+    }
+
+    const metadata: Metadata = createMetadata(metadataOptions)
+    const schemas = buildSchemas(metadataOptions)
 
     const getLayoutProps = (toolComponent: React.ReactNode): ToolPageLayoutProps => ({
         header: config.header,
         breadcrumbs: config.breadcrumbs,
         heroImage: config.heroImage,
         toolComponent,
+        schemas,
         toolContent: {
             toolName: config.toolName,
             overview: config.content.overview,

@@ -24,6 +24,7 @@ export function ToolPageLayout({
     breadcrumbs,
     heroImage,
     toolComponent,
+    schemas,
     toolContent,
     expectedMetadata,
     className
@@ -35,11 +36,16 @@ export function ToolPageLayout({
         console.groupEnd()
     }
 
-    // NOTE: FAQ, HowTo, and Breadcrumb schemas are already generated in metadata-base.ts
-    // and injected via Next.js Metadata in <head>. No duplicate body-level schemas needed.
-
     return (
         <div className={`min-h-screen bg-background overflow-x-hidden ${className}`}>
+            {/* JSON-LD Structured Data — rendered as proper <script> tags for Google */}
+            {schemas && schemas.map((schema, index) => (
+                <script
+                    key={index}
+                    type="application/ld+json"
+                    dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
+                />
+            ))}
 
             <main id="tool-page-main" className="container mx-auto px-4 py-6 max-w-7xl">
                 {breadcrumbs && breadcrumbs.length > 0 && (

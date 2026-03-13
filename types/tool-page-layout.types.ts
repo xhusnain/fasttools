@@ -61,6 +61,8 @@ export interface ToolPageLayoutProps {
     breadcrumbs?: BreadcrumbItem[]
     heroImage?: string
     toolComponent: React.ReactNode
+    /** JSON-LD structured data schemas to render as <script type="application/ld+json"> tags */
+    schemas?: any[]
     toolContent: ToolContentData
     expectedMetadata?: ExpectedMetadata
     className?: string

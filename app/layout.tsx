@@ -23,10 +23,10 @@ export const viewport = globalViewport
 export const metadata: Metadata = {
     metadataBase: new URL("https://www.fasttools.store"),
     title: {
-        default: "FastTools - 1000+ Free Online Tools",
+        default: "FastTools - 170+ Free Online Tools | Calculators, Converters & Developer Tools",
         template: "%s",
     },
-    description: "The world's first WebMCP-enabled tools platform. 170+ free AI-agent-interactable tools: calculators, converters, crypto, PDF, developer tools. AI agents can discover, fill, and use every tool automatically. 100% free, secure local processing.",
+    description: "170+ free online tools: calculators, converters, developer tools, SEO tools, image tools, PDF tools & more. No signup required, 100% free, secure local processing.",
     authors: [{ name: "FastTools Team", url: "https://www.fasttools.store" }],
     robots: {
         index: true,
@@ -58,10 +58,10 @@ export default function RootLayout({
         "@context": "https://schema.org",
         "@type": "Organization",
         name: "FastTools",
-        alternateName: ["fasttools", "fast tools", "fasttools","online tools"],
+        alternateName: ["fasttools", "fast tools", "online tools"],
         url: "https://www.fasttools.store",
-        description: "FastTools is the world's first WebMCP-enabled free online tools platform. 170+ tools that AI agents can discover, fill, and use automatically. Calculators, converters, crypto, PDF, developer tools — all AI-interactable.",
-        foundingDate: "2024",
+        description: "FastTools is a free online tools platform. 170+ tools: calculators, converters, crypto, PDF, developer tools — all free, no signup required.",
+        foundingDate: "2024-01-01",
         sameAs: [
             "https://x.com/ZamanIsmail7",
             "https://www.facebook.com/profile.php?id=61582711433268",
@@ -79,45 +79,16 @@ export default function RootLayout({
             addressCountry: "US",
         },
         knowsAbout: [
-            "WebMCP",
-            "Web Model Context Protocol",
-            "AI Agent Interactivity",
             "Online Tools",
-            "AI Content Generation",
             "Web Development Tools",
             "Digital Conversion Tools",
-            "Business Productivity Tools",
             "SEO Optimization",
             "Image Processing",
             "Financial Calculators",
             "Social Media Tools",
             "Developer Utilities",
             "Free Web Tools",
-            "Digital Productivity",
             "Online Calculators",
-            "Web Utilities",
-            "Browser Tools",
-            "Instant Tools",
-            "Cloud Tools",
-            "Digital Solutions",
-            "Online Services",
-            "Web Services",
-            "Digital Platform",
-            "Online Platform",
-            "Web Platform",
-            "Digital Toolkit",
-            "Professional Tools",
-            "Business Tools",
-            "Marketing Tools",
-            "Content Creation Tools",
-            "Workflow Tools",
-            "Automation Tools",
-            "Digital Resources",
-            "Online Resources",
-            "Web Resources",
-            "Digital Assets",
-            "Online Assets",
-            "Web Assets",
         ],
         makesOffer: {
             "@type": "Offer",
@@ -129,16 +100,9 @@ export default function RootLayout({
             price: "0",
             priceCurrency: "USD",
         },
-        aggregateRating: {
-            "@type": "AggregateRating",
-            ratingValue: "4.8",
-            ratingCount: "1250",
-            bestRating: "5",
-            worstRating: "1",
-        },
     }
 
-    const websiteSchema = getWebsiteSchema()
+    const websiteSchema = getWebsiteSchema("https://www.fasttools.store/all-tools?q={search_term_string}")
 
     return (
         <html lang="en" className={`antialiased ${roboto.variable} ${montserrat.variable}`} suppressHydrationWarning>

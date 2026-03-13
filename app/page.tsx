@@ -16,8 +16,8 @@ const HomeCategories = dynamic(() => import('@/components/common/home-categories
 const HomeRichContent = dynamic(() => import('@/components/common/home-rich-content').then(mod => ({ default: mod.HomeRichContent })))
 
 export const metadata: Metadata = createMetadata({
-  title: "FastTools - The #1 Free Online Tools Platform | WebMCP AI-Agent Ready",
-  description: "The world's first WebMCP-enabled tools platform. 170+ free tools that AI agents can discover, fill, and use automatically. Calculators, converters, crypto, PDF, developer tools — all AI-interactable. No signup.",
+  title: "FastTools - 170+ Free Online Tools | Calculators, Converters, Developer Tools",
+  description: "170+ free online tools: calculators, converters, developer tools, SEO tools, image tools & more. No signup, no ads, instant results. All tools run locally in your browser.",
   path: "/",
   includeSchema: false,
 })
@@ -43,9 +43,9 @@ export default function Home() {
       url: "https://www.fasttools.store"
     },
     datePublished: "2024-01-01",
-    dateModified: "2026-02-20",
+    dateModified: new Date().toISOString().split('T')[0],
     inLanguage: "en-US",
-    isFamilyFriendly: "true",
+    isFamilyFriendly: true,
     copyrightYear: new Date().getFullYear().toString(),
     copyrightHolder: {
       "@type": "Organization",
@@ -67,18 +67,6 @@ export default function Home() {
           "@type": "ListItem",
           position: 1,
           name: "Home",
-          item: "https://www.fasttools.store"
-        },
-        {
-          "@type": "ListItem",
-          position: 2,
-          name: "Tools Store",
-          item: "https://www.fasttools.store"
-        },
-        {
-          "@type": "ListItem",
-          position: 3,
-          name: "Free Online Tools Store - Digital Tools",
           item: "https://www.fasttools.store"
         }
       ]
@@ -167,16 +155,16 @@ export default function Home() {
 
           {/* Main Heading */}
           <h1 className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-black text-foreground leading-[1.1] tracking-tight mb-8">
-            <span className="block mb-2">Build faster with</span>
+            <span className="block mb-2">170+ Free Online</span>
             <span className="bg-clip-text text-transparent bg-gradient-to-r from-primary via-purple-500 to-indigo-500 animate-gradient-x">
-              AI-ready tools.
+              Tools, Instantly.
             </span>
           </h1>
 
           {/* Subheading */}
           <p className="text-lg sm:text-xl md:text-2xl text-muted-foreground font-medium max-w-3xl mx-auto leading-relaxed mb-12 px-4">
-            The world's first <strong className="text-foreground">WebMCP-enabled tools platform</strong>. 170+ free tools that AI agents can discover, fill, and use automatically.
-            Private, secure, instant.
+            Free calculators, converters, developer tools, SEO tools & more.
+            No signup required. <strong className="text-foreground">Private, secure, instant results</strong> — all processing happens in your browser.
           </p>
 
           {/* Central Search Bar & Quick Access Tags */}

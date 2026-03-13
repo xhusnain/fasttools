@@ -90,12 +90,17 @@ function shouldIncludeSchema(path: string): boolean {
     return toolKeywords.some(keyword => normalizedPath.includes(keyword))
 }
 
-export function createMetadata(options: MetadataOptions): Metadata {
-    const { title, description: rawDescription, path, ogImageAlt, ogImage, noIndex, ogTitle, ogDescription, twitterTitle, twitterDescription, twitterCreator, schemaOptions, faqs, howToSteps, toolName, breadcrumbs } = options
+/**
+ * Build JSON-LD schema array from metadata options.
+ * These must be rendered as <script type="application/ld+json"> tags in page components,
+ * NOT via Next.js metadata.other (which renders as <meta> tags and is invisible to Google).
+ */
+export function buildSchemas(options: MetadataOptions): any[] {
+    const { title, description: rawDescription, path, faqs, howToSteps, toolName, breadcrumbs } = options
     const description = rawDescription ? (rawDescription.length > 160 ? rawDescription.slice(0, 157) + "..." : rawDescription) : rawDescription
     const includeSchema = options.includeSchema ?? shouldIncludeSchema(path)
-
     const cleanPath = path.startsWith("/") ? path : `/${path}`
+
     let processedTitle = title
         .replace(/\|\s*FastTools/gi, "")
         .replace(/FastTools\s*[-–—|]?\s*/gi, "")
@@ -103,69 +108,17 @@ export function createMetadata(options: MetadataOptions): Metadata {
     if (shouldIncludeSchema(path) && !processedTitle.toLowerCase().startsWith("free")) {
         processedTitle = `Free ${processedTitle}`
     }
-
     const fullTitle = processedTitle
-    const canonicalUrl = getCanonicalUrl(cleanPath)
-
-
-
-    const finalOgTitle = ogTitle || fullTitle
-    const finalOgDescription = ogDescription || description || "Every tool you need, completely free. No signup required."
-    let ogImageConfig: any
-    if (ogImage) {
-        if (typeof ogImage === 'string') {
-            const imageUrl = ogImage.startsWith('http') ? ogImage : `${BASE_URL}${ogImage.startsWith('/') ? ogImage : `/${ogImage}`}`
-            ogImageConfig = {
-                url: imageUrl,
-                width: 1200,
-                height: 630,
-                alt: ogImageAlt || title,
-            }
-        } else {
-            const imageUrl = ogImage.url.startsWith('http') ? ogImage.url : `${BASE_URL}${ogImage.url.startsWith('/') ? ogImage.url : `/${ogImage.url}`}`
-            ogImageConfig = {
-                url: imageUrl,
-                width: ogImage.width || 1200,
-                height: ogImage.height || 630,
-                alt: ogImage.alt || ogImageAlt || title,
-            }
-        }
-    } else {
-        ogImageConfig = {
-            url: `${BASE_URL}/android-chrome-512x512.png`,
-            width: 512,
-            height: 512,
-            alt: ogImageAlt || "FastTools - Free Online Tools",
-        }
-    }
-
-    const openGraphConfig: any = {
-        title: finalOgTitle,
-        description: finalOgDescription,
-        url: canonicalUrl,
-        siteName: SITE_NAME,
-        type: "website" as const,
-        locale: "en_US" as const,
-        images: [ogImageConfig],
-    }
-
-
-
-    let softwareSchema: ReturnType<typeof createSoftwareAppSchema> | undefined
-
-    if (includeSchema) {
-        softwareSchema = createSoftwareAppSchema({
-            title,
-            description,
-            path: cleanPath,
-            ...schemaOptions
-        })
-    }
 
     const schemas: any[] = []
 
-    if (softwareSchema) {
-        schemas.push(softwareSchema)
+    if (includeSchema) {
+        schemas.push(createSoftwareAppSchema({
+            title,
+            description,
+            path: cleanPath,
+            ...options.schemaOptions
+        }))
     }
 
     if (faqs && faqs.length > 0) {
@@ -208,7 +161,6 @@ export function createMetadata(options: MetadataOptions): Metadata {
         schemas.push(createItemListSchema(options.itemList))
     }
 
-    // DefinedTerm schema for AI answer extraction (AEO)
     if (options.definition && toolName) {
         schemas.push({
             "@context": "https://schema.org",
@@ -221,6 +173,65 @@ export function createMetadata(options: MetadataOptions): Metadata {
                 "url": BASE_URL
             }
         })
+    }
+
+    return schemas
+}
+
+export function createMetadata(options: MetadataOptions): Metadata {
+    const { title, description: rawDescription, path, ogImageAlt, ogImage, noIndex, ogTitle, ogDescription, twitterTitle, twitterDescription, twitterCreator } = options
+    const description = rawDescription ? (rawDescription.length > 160 ? rawDescription.slice(0, 157) + "..." : rawDescription) : rawDescription
+
+    const cleanPath = path.startsWith("/") ? path : `/${path}`
+    let processedTitle = title
+        .replace(/\|\s*FastTools/gi, "")
+        .replace(/FastTools\s*[-–—|]?\s*/gi, "")
+        .trim()
+    if (shouldIncludeSchema(path) && !processedTitle.toLowerCase().startsWith("free")) {
+        processedTitle = `Free ${processedTitle}`
+    }
+
+    const fullTitle = processedTitle
+    const canonicalUrl = getCanonicalUrl(cleanPath)
+
+    const finalOgTitle = ogTitle || fullTitle
+    const finalOgDescription = ogDescription || description || "Every tool you need, completely free. No signup required."
+    let ogImageConfig: any
+    if (ogImage) {
+        if (typeof ogImage === 'string') {
+            const imageUrl = ogImage.startsWith('http') ? ogImage : `${BASE_URL}${ogImage.startsWith('/') ? ogImage : `/${ogImage}`}`
+            ogImageConfig = {
+                url: imageUrl,
+                width: 1200,
+                height: 630,
+                alt: ogImageAlt || title,
+            }
+        } else {
+            const imageUrl = ogImage.url.startsWith('http') ? ogImage.url : `${BASE_URL}${ogImage.url.startsWith('/') ? ogImage.url : `/${ogImage.url}`}`
+            ogImageConfig = {
+                url: imageUrl,
+                width: ogImage.width || 1200,
+                height: ogImage.height || 630,
+                alt: ogImage.alt || ogImageAlt || title,
+            }
+        }
+    } else {
+        ogImageConfig = {
+            url: `${BASE_URL}/android-chrome-512x512.png`,
+            width: 512,
+            height: 512,
+            alt: ogImageAlt || "FastTools - Free Online Tools",
+        }
+    }
+
+    const openGraphConfig: any = {
+        title: finalOgTitle,
+        description: finalOgDescription,
+        url: canonicalUrl,
+        siteName: SITE_NAME,
+        type: "website" as const,
+        locale: "en_US" as const,
+        images: [ogImageConfig],
     }
 
     return {
@@ -247,11 +258,6 @@ export function createMetadata(options: MetadataOptions): Metadata {
             "max-video-preview": -1,
         },
         ...(options.icons && { icons: options.icons }),
-        ...(schemas.length > 0 && {
-            other: {
-                "application/ld+json": JSON.stringify(schemas.length === 1 ? schemas[0] : schemas)
-            }
-        }),
     }
 }
 
@@ -357,8 +363,8 @@ export function createSoftwareAppSchema(options: SoftwareAppSchemaOptions) {
         operatingSystem = "Web Browser",
         price = "0",
         currency = "USD",
-        ratingValue = "4.8",
-        ratingCount = "50000",
+        ratingValue,
+        ratingCount,
         alternateName,
         featureList,
         version = "2.0",
@@ -460,11 +466,6 @@ export function createVideoObjectSchema(video: { id: string, title?: string, des
         "duration": video.duration,
         "contentUrl": `https://www.youtube.com/watch?v=${video.id}`,
         "embedUrl": `https://www.youtube.com/embed/${video.id}`,
-        "interactionStatistic": {
-            "@type": "InteractionCounter",
-            "interactionType": { "@type": "WatchAction" },
-            "userInteractionCount": 5000
-        },
         "publisher": {
             "@type": "Organization",
             "name": SITE_NAME,
