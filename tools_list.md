@@ -26,13 +26,10 @@
 - YouTube Tags Generator
 - YouTube Thumbnail Downloader
 - YouTube Channel Checker
-- Facebook Video Downloader
-- Instagram Downloader
-- Instagram DP Downloader
-- TikTok Video Downloader
-- X (Twitter) Video Downloader
+- Instagram DP Viewer
 - Hashtag Counter
 - Link in Bio Generator
+- TikTok Engagement Rate Calculator
 
 ## AI Tools
 - AI Token to Word Converter

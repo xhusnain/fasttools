@@ -134,7 +134,7 @@ const toolConfig = createToolConfig({
       { name: "YouTube Thumbnail Downloader", href: "/social-media-tools/youtube-thumbnail" },
       { name: "YouTube Name Generator", href: "/social-media-tools/youtube-channel-name-generator" },
       { name: "YouTube Handle Checker", href: "/social-media-tools/channel-checker" },
-      { name: "YouTube Downloader", href: "/social-media-tools/youtube-downloader" },
+      { name: "TikTok Engagement Calculator", href: "/social-media-tools/tiktok-engagement-calculator" },
       { name: "All Social Media Tools", href: "/social-media-tools" },
     ],
   },

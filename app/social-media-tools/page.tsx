@@ -5,32 +5,15 @@ import { GToolCard } from "@/ui/gtool-card"
 import {
   AtSign,
   Camera,
-  Download,
-  Film,
   Hash,
   Link2,
-  Music,
   Search,
   Tags,
-  Tv,
   User,
-  Video,
   Zap,
 } from "lucide-react"
 
 const socialTools = [
-  {
-    title: "YouTube Downloader",
-    description: "Process YouTube video links and download available output.",
-    href: "/social-media-tools/youtube-downloader",
-    icon: Download,
-  },
-  {
-    title: "YouTube Playlist Downloader",
-    description: "Process playlist URLs for batch-oriented download workflows.",
-    href: "/social-media-tools/youtube-playlist-downloader",
-    icon: Tv,
-  },
   {
     title: "YouTube Thumbnail Downloader",
     description: "Extract thumbnail image sizes from YouTube video links.",
@@ -56,58 +39,10 @@ const socialTools = [
     icon: AtSign,
   },
   {
-    title: "Instagram Downloader",
-    description: "Process Instagram links and download available media output.",
-    href: "/social-media-tools/instagram-downloader",
-    icon: Download,
-  },
-  {
     title: "Instagram DP Viewer",
     description: "Lookup and view profile-picture output from usernames.",
     href: "/social-media-tools/instagram-dp",
     icon: User,
-  },
-  {
-    title: "TikTok Downloader",
-    description: "Process TikTok video links in a fast browser workflow.",
-    href: "/social-media-tools/tiktok-downloader",
-    icon: Film,
-  },
-  {
-    title: "Douyin Downloader",
-    description: "Download available output from public Douyin links.",
-    href: "/social-media-tools/douyin-downloader",
-    icon: Film,
-  },
-  {
-    title: "CapCut Downloader",
-    description: "Process CapCut links and retrieve available video output.",
-    href: "/social-media-tools/capcut-downloader",
-    icon: Video,
-  },
-  {
-    title: "Pinterest Downloader",
-    description: "Process Pinterest pin links for media download workflows.",
-    href: "/social-media-tools/pinterest-downloader",
-    icon: Download,
-  },
-  {
-    title: "SoundCloud Downloader",
-    description: "Process SoundCloud track links and save audio output.",
-    href: "/social-media-tools/soundcloud-downloader",
-    icon: Music,
-  },
-  {
-    title: "Facebook Video Downloader",
-    description: "Process Facebook video URLs and download available output.",
-    href: "/social-media-tools/facebook-downloader",
-    icon: Video,
-  },
-  {
-    title: "X Video Downloader",
-    description: "Process X status links and download available video media.",
-    href: "/social-media-tools/x-video-downloader",
-    icon: Video,
   },
   {
     title: "Hashtag Counter",
@@ -132,10 +67,10 @@ const socialTools = [
 const toolConfig = createToolConfig({
   toolName: "Social Media Tools",
   description:
-    "Browser-based social media tools for download workflows, creator optimization, and channel growth tasks.",
+    "Browser-based social media tools for creator optimization, engagement analysis, and channel growth tasks.",
   metaTitle: "Social Media Tools: YouTube, Instagram, TikTok, More",
   metaDescription:
-    "Free social media utilities for YouTube, Instagram, TikTok, Pinterest, SoundCloud, and creator workflow optimization.",
+    "Free social media utilities for YouTube, Instagram, TikTok creator optimization, engagement analysis, and channel growth.",
   path: "/social-media-tools",
 
   schemaOptions: {
@@ -163,10 +98,10 @@ const toolConfig = createToolConfig({
 
   content: {
     overview:
-      "This category is built for utility intent: process links, extract useful social metadata, validate naming choices, and move quickly into production workflows.",
+      "This category is built for utility intent: analyze engagement metrics, extract useful social metadata, validate naming choices, and move quickly into production workflows.",
 
     features: [
-      "Video and media link processing tools",
+      "TikTok engagement rate analysis with benchmarks",
       "YouTube optimization and research utilities",
       "Creator branding and naming workflows",
       "Social publishing support tools",
