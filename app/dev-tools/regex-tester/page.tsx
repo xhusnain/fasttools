@@ -13,15 +13,15 @@ const toolConfig = createToolConfig({
   toolName: "Regex Tester",
   description:
     "Test regular expressions against sample text with match highlights and capture-group inspection.",
-  metaTitle: "Regex Tester — Test Regular Expressions Online Free (2026)",
+  metaTitle: "Regex Check Online — Test Regular Expressions & Ruby Regex Free (2026)",
   metaDescription:
-    "Free online regex tester. Test regular expressions with real-time match highlighting, capture groups, flags (g, i, m), and replacement. Supports JavaScript regex syntax.",
+    "Free regex check online tool. Test regular expressions with real-time match highlighting, capture groups, and flags. Ruby regex test, JavaScript regex tester — supports multiple syntax flavors. No signup required.",
   path: "/dev-tools/regex-tester",
 
   header: {
-    title: "Online Regex Tester & Debugger",
+    title: "Regex Check Online — Regular Expression Tester & Debugger",
     description:
-      "Test regular expressions with real-time match highlighting, capture group inspection, and flag support. Paste your regex pattern and test string to see matches instantly — supports JavaScript regex syntax.",
+      "Free regex check online tool with real-time match highlighting, capture group inspection, and flag support. Test JavaScript regex, Ruby regex patterns, and more — paste your pattern and test string to see matches instantly.",
     titleSize: "medium",
     descriptionSize: "small",
     color: "blue",
@@ -47,9 +47,9 @@ const toolConfig = createToolConfig({
 
   content: {
     definition:
-      "A Regex Tester is a free tool that lets you write, test, and debug regular expressions against sample text with real-time match highlighting.",
+      "A regex check online tool (regex tester) is a free utility that lets you write, test, and debug regular expressions against sample text with real-time match highlighting. Works for JavaScript, Ruby regex test, Python, and other flavors.",
     quickAnswer:
-      "Enter a regex pattern and test string to see matches highlighted instantly. Supports JavaScript regex syntax with flags (g, i, m, s). View capture groups, match indices, and replacement results.",
+      "Use this regex check online tool to enter a regex pattern and test string — see matches highlighted instantly. Supports JavaScript regex syntax with flags (g, i, m, s). Also useful as a Ruby regex test tool since most basic patterns are cross-compatible. View capture groups, match indices, and replacement results.",
     keyTakeaways: [
       "Real-time match highlighting as you type the pattern",
       "Supports JavaScript regex flags: global (g), case-insensitive (i), multiline (m)",
@@ -58,7 +58,7 @@ const toolConfig = createToolConfig({
       "Common patterns: email, URL, phone, IP address, date formats",
     ],
     overview:
-      "Test and debug regular expressions online with this free regex tester. Enter your regex pattern and test string to see matches highlighted in real time as you type. The tool supports JavaScript regex syntax with all flags — global (g), case-insensitive (i), multiline (m), dotAll (s), and unicode (u). Inspect numbered and named capture groups, view match indices, and test replacement patterns with backreferences ($1, $2). Useful for building form validation rules, log parsing patterns, text extraction logic, and search-and-replace operations before adding them to your code.",
+      "Regex check online — test and debug regular expressions with this free regex tester. Enter your regex pattern and test string to see matches highlighted in real time as you type. The tool supports JavaScript regex syntax with all flags — global (g), case-insensitive (i), multiline (m), dotAll (s), and unicode (u). Also works as a Ruby regex test tool since most standard regex patterns (character classes, quantifiers, anchors, groups) are compatible across JavaScript and Ruby. Inspect numbered and named capture groups, view match indices, and test replacement patterns with backreferences ($1, $2). Useful for building form validation rules, log parsing patterns, text extraction logic, and search-and-replace operations before adding them to your code.",
 
     howToSteps: [
       "Enter your regular expression pattern in the regex input field.",
@@ -112,9 +112,14 @@ const toolConfig = createToolConfig({
           "Yes. Enter a replacement string using $1, $2 backreferences for captured groups, or $& for the full match. The tool shows the replacement result in real time.",
       },
       {
+        question: "Can I use this as a Ruby regex test tool?",
+        answer:
+          "Yes. Most standard regex patterns work the same in Ruby and JavaScript — character classes, quantifiers, anchors, and groups are cross-compatible. This regex check online tool is ideal for testing Ruby regex patterns. Note that Ruby-specific features like \\p{Hiragana} or (?<name>) named groups have slightly different syntax.",
+      },
+      {
         question: "Will my regex work the same in Python or Java?",
         answer:
-          "Regex syntax varies between languages. This tester uses JavaScript regex. Most basic patterns work cross-language, but features like lookbehinds, named groups, and flags may differ in Python, Java, or Go.",
+          "Regex syntax varies between languages. This tester uses JavaScript regex. Most basic patterns work cross-language, but features like lookbehinds, named groups, and flags may differ in Python, Java, Ruby, or Go.",
       },
       {
         question: "Is this regex tester free?",

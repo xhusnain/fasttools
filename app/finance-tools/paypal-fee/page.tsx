@@ -10,12 +10,12 @@ import { Calculator, DollarSign, Target, TrendingUp, BarChart3, Copy, HelpCircle
 import { GImage } from "@/ui/gimage"
 import type { Metadata } from "next"
 
-const TOOL_TITLE = "PayPal Fee Calculator - Calculate Transaction Fees"
+const TOOL_TITLE = "PayPal Fee Calculator — Calculate PayPal Fees, G&S, Credit Card & Processing Fees"
 const TOOL_NAME = "PayPal Fee Calculator"
 
 const baseMetadata = createMetadata({
-  title: `PayPal Fee Calculator - Service & Transaction Fees`,
-  description: "Calculate PayPal transaction fees for business & personal payments. Understand international fees, Goods & Services vs Friends & Family charges.",
+  title: `PayPal Fee Calculator — Calculate PayPal Fees for Transactions, G&S & Credit Card (2026)`,
+  description: "Free PayPal fee calculator to calculate PayPal G&S fee, PayPal credit card fee, and PayPal processing fees. Instant PayPal calculator fee for domestic & international transactions — sellers, freelancers, and businesses.",
   path: "/finance-tools/paypal-fee",
   breadcrumbs: [
     { label: "Finance Tools", href: "/finance-tools" },
@@ -23,7 +23,7 @@ const baseMetadata = createMetadata({
   ],
   schemaOptions: {
     name: "PayPal Fee Calculator",
-    alternateName: "PayPal Fees Calculator",
+    alternateName: ["PayPal Fees Calculator", "PayPal Calculator Fee", "Calculate PayPal G&S Fee", "PayPal Credit Card Fee Calculator", "PayPal Processing Fees Calculator"],
     applicationCategory: "FinanceApplication",
     featureList: [
       "PayPal fee calculation",
@@ -49,7 +49,7 @@ export const metadata: Metadata = {
 export default function PayPalFeeCalculatorPage() {
   const toolContent = {
     toolName: TOOL_NAME,
-    overview: `Calculate PayPal transaction fees, net amounts, and required charges instantly. Perfect for sellers, freelancers, and businesses to understand payment processing costs. Our PayPal fee calculator online supports PayPal fee transfer, PayPal fee send money, PayPal fees as seller, PayPal G&S fee, and international calculations.`,
+    overview: `Free PayPal calculator fee tool to calculate PayPal fees, net amounts, and required charges instantly. Whether you need to calculate PayPal G&S fee, PayPal credit card fee, or PayPal processing fees — this calculator covers all transaction types. Perfect for sellers, freelancers, and businesses to understand payment processing costs. Supports domestic, international, Goods & Services, Friends & Family, and credit card PayPal fee calculations.`,
 
     howToSteps: [
       "Enter Transaction Amount: Input the total amount you are sending or receiving.",
@@ -84,8 +84,16 @@ export default function PayPalFeeCalculatorPage() {
 
     faqs: [
       {
-        question: "How are PayPal business fees calculated?",
-        answer: "For domestic business transactions, the standard fee is 2.9% of the transaction amount plus a fixed fee of $0.49. For example, on a $100 sale, you would pay $3.39 in fees ($2.90 + $0.49)."
+        question: "How do I calculate PayPal fees?",
+        answer: "Use our PayPal calculator fee tool — enter your transaction amount, select domestic or international, and choose the payment method. For domestic business transactions, the standard PayPal processing fee is 2.9% + $0.49. For example, on a $100 sale, the PayPal fee is $3.39 ($2.90 + $0.49)."
+      },
+      {
+        question: "How do I calculate PayPal G&S fee?",
+        answer: "To calculate PayPal G&S fee (Goods & Services), enter your amount in the calculator and select the G&S option. The standard PayPal G&S fee is 2.9% + $0.49 for domestic transactions. On a $100 G&S payment, the seller pays $3.39 in fees and receives $96.61."
+      },
+      {
+        question: "What is the PayPal credit card fee?",
+        answer: "The PayPal credit card fee for personal transactions is 2.9% + $0.30. For business transactions paid via credit card, the fee is 2.9% + $0.49. Use our PayPal credit card fee calculator to see exact amounts for any transaction size."
       },
       {
         question: "What are the fees for international payments?",
@@ -135,7 +143,7 @@ export default function PayPalFeeCalculatorPage() {
             height={450}
             className="w-full h-auto rounded-lg shadow-md"
           />
-          <h2 className="text-2xl font-bold text-foreground">Maximize Your Profits with Our PayPal Rates Calculator</h2>
+          <h2 className="text-2xl font-bold text-foreground">PayPal Calculator Fee — Maximize Your Profits with Our PayPal Fee Calculator</h2>
           <p className="text-base text-muted-foreground leading-relaxed">
             In the world of online business and freelancing, every cent counts. Understanding your transaction costs is essential for maintaining healthy profit margins. Our PayPal rates calculator is designed to demystify complex fee structures, giving you an instant, accurate breakdown of what you’ll pay and what you’ll keep.
           </p>
@@ -373,8 +381,8 @@ export default function PayPalFeeCalculatorPage() {
   return (
     <ToolPageLayout
       header={{
-        title: `Free PayPal Fee Calculator`,
-        description: "Calculate PayPal fees, net amounts & charges. Perfect for sellers & freelancers. Understand domestic & international costs instantly.",
+        title: `PayPal Fee Calculator — Calculate PayPal G&S, Credit Card & Processing Fees`,
+        description: "Free PayPal calculator fee tool. Calculate PayPal G&S fee, PayPal credit card fee calculator, and PayPal processing fees calculator. Instant results for sellers, freelancers & businesses.",
         titleSize: "medium",
         descriptionSize: "small",
         color: "blue"
@@ -391,7 +399,7 @@ export default function PayPalFeeCalculatorPage() {
       toolContent={toolContent}
       expectedMetadata={{
         title: TOOL_TITLE,
-        description: "Calculate PayPal fees instantly for domestic or international payments. Know exactly how much you'll receive or need to send. Free & supports all currencies.",
+        description: "Free PayPal calculator fee tool. Calculate PayPal G&S fee, PayPal credit card fee, and PayPal processing fees instantly. Know exactly how much you'll receive or need to send.",
         path: "/finance-tools/paypal-fee"
       }}
     />

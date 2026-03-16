@@ -11,9 +11,9 @@ import { GTable } from "@/ui/gtable"
 import { Brain, Calculator, Target, BookOpen, Shield, Users, TrendingUp, Info, AlertTriangle, CheckCircle, Zap, Percent, DollarSign } from "lucide-react"
 
 const baseMetadata = createMetadata({
-  title: "Percentage Calculator — Calculate Percentage Increase, Decrease & Difference Free (2026)",
+  title: "Percentage Calculator — Dividing by Percentages Calculator & More Free (2026)",
   description:
-    "Free percentage calculator for increase, decrease, difference, discounts, tips, grades, profit margins & markup. Step-by-step formulas, reverse percentage, fraction-to-percent conversion. Instant, accurate, no signup.",
+    "Free percentage calculator with dividing by percentages calculator, percentage increase, decrease, difference, discounts, tips, grades, profit margins & markup. Step-by-step formulas, reverse percentage, fraction-to-percent conversion. Instant, accurate, no signup.",
   path: "/calculator/percentage-calculator",
   breadcrumbs: [
     { label: "Calculator", href: "/calculator" },
@@ -46,8 +46,8 @@ export const metadata: Metadata = {
 
 export default function PercentageCalculatorPage() {
   const toolContent = {
-    toolName: "Percentage Calculator — Increase, Decrease, Difference & More",
-    overview: "Free online percentage calculator with 10+ calculation modes for percentage increase, percentage decrease, percentage difference, discount savings, tip calculation, grade-to-percentage conversion, profit margin, markup, reverse percentage, and percentage error. Each calculation shows step-by-step formula explanations so you can verify the math and learn the method. Supports fraction-to-percent conversion, decimal-to-percent conversion, and percentage-of-total calculations. Perfect for students solving homework, shoppers calculating sale prices, business owners analyzing profit margins, and professionals tracking KPI growth rates.",
+    toolName: "Percentage Calculator — Dividing by Percentages, Increase, Decrease & More",
+    overview: "Free online percentage calculator with 10+ calculation modes including a dividing by percentages calculator, percentage increase, percentage decrease, percentage difference, discount savings, tip calculation, grade-to-percentage conversion, profit margin, markup, reverse percentage, and percentage error. Need a dividing by percentages calculator? Enter your values and get step-by-step formula explanations. Supports fraction-to-percent conversion, decimal-to-percent conversion, and percentage-of-total calculations. Perfect for students solving homework, shoppers calculating sale prices, business owners analyzing profit margins, and professionals tracking KPI growth rates.",
 
     howToSteps: [
       "Choose Calculation Mode: Select from increase, decrease, difference, discount, markup, margin, tip, grade, reverse percentage, or basic percentage.",

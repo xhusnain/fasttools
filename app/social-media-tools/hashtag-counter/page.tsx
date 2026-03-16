@@ -13,15 +13,15 @@ const toolConfig = createToolConfig({
   toolName: "Hashtag Counter",
   description:
     "Count hashtags, extract tags from text, and refine tag sets for social post optimization.",
-  metaTitle: "Hashtag Counter — Count Hashtags for Instagram, TikTok & X (2026)",
+  metaTitle: "Social Media Tag Generator & Hashtag Counter for Instagram, TikTok & X (2026)",
   metaDescription:
-    "Free hashtag counter tool. Count, extract, and analyze hashtags in your captions. Check Instagram 30-hashtag limit, TikTok limits, and optimize your hashtag strategy.",
+    "Free social media tag generator and hashtag counter. Count, extract, and generate hashtags for Instagram, TikTok & X. Check the 30-hashtag limit, optimize your social media tag strategy, and generate tags for any niche.",
   path: "/social-media-tools/hashtag-counter",
 
   header: {
-    title: "Hashtag Counter",
+    title: "Social Media Tag Generator & Hashtag Counter",
     description:
-      "Count and extract hashtags to keep social captions clean and platform-ready.",
+      "Free social media tag generator — count, extract, and generate hashtags for Instagram, TikTok, X, and LinkedIn. Keep social captions optimized and platform-ready.",
     titleSize: "medium",
     descriptionSize: "small",
   },
@@ -46,9 +46,9 @@ const toolConfig = createToolConfig({
 
   content: {
     definition:
-      "A Hashtag Counter is a free tool that counts the number of hashtags in a text block and extracts them into a clean, copyable list.",
+      "A social media tag generator and hashtag counter is a free tool that counts, extracts, and helps generate hashtags for social media posts. Works as both a tag counter and social media tag generator.",
     quickAnswer:
-      "Paste your social media caption or text, and this tool instantly counts all hashtags and extracts them as a list. Instagram allows up to 30 hashtags per post, LinkedIn recommends 3-5, and X (Twitter) recommends 1-2.",
+      "Use this social media tag generator to count and extract hashtags from any text. Paste your social media caption, and the tool instantly counts all hashtags and extracts them. Instagram allows up to 30 hashtags per post, LinkedIn recommends 3-5, and X (Twitter) recommends 1-2.",
     keyTakeaways: [
       "Instagram allows up to 30 hashtags per post (optimal: 3-5 for reach)",
       "LinkedIn recommends 3-5 hashtags per post",

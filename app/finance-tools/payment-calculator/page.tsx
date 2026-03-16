@@ -10,9 +10,9 @@ import { createMetadata } from "@/lib/metadata-base"
 import { Calculator, BarChart3, TrendingUp, BookOpen, Users, Clock, Target, AlertCircle, Home, DollarSign, FileText, Award, Globe, PieChart, Percent, CreditCard, Wallet, GraduationCap, Car, Trophy, Stethoscope } from "lucide-react"
 
 const baseMetadata = createMetadata({
-  title: "Payment Calculator - Loan Payment Estimator",
+  title: "Pay Frequency Calculator & Payment Calculator — Loan Estimator (2026)",
   description:
-    "Estimate monthly loan payments, amortization schedule, and total interest for mortgage, auto, and personal loans.",
+    "Free pay frequency calculator and payment calculator. Calculate payments by pay frequency — weekly, biweekly, semi-monthly, monthly. Estimate loan payments, amortization schedule, and total interest for mortgage, auto, and personal loans.",
   path: "/finance-tools/payment-calculator",
   breadcrumbs: [
     { label: "Finance Tools", href: "/finance-tools" },

@@ -146,10 +146,10 @@ export function InstagramDpViewer() {
               </div>
               <div className="text-center sm:text-left min-w-0 overflow-hidden">
                 <h2 className="text-xl sm:text-2xl font-bold text-foreground break-words">
-                  Instagram DP Viewer
+                  InstaDp Profile Picture Viewer & Downloader
                 </h2>
                 <p className="text-muted-foreground text-sm sm:text-base break-words">
-                  View and download Instagram profile pictures in HD quality
+                  Free IG DP viewer HD — zoom and download Instagram profile pictures in full size
                 </p>
               </div>
             </div>

@@ -13,15 +13,15 @@ const toolConfig = createToolConfig({
   toolName: "JWT Decoder",
   description:
     "Decode and inspect JSON Web Tokens for authentication debugging and implementation checks.",
-  metaTitle: "JWT Decoder — Decode JSON Web Tokens Online Free (2026)",
+  metaTitle: "Fast JWT Decoder — Decode JSON Web Tokens Online Free (2026)",
   metaDescription:
-    "Free online JWT decoder. Paste a JWT token to instantly decode header, payload, and signature. Check expiration, inspect claims, debug authentication — no secret key needed.",
+    "Fast JWT decoder and token inspector. Paste a JWT token to instantly decode header, payload, and signature. Free fast JWT tool — check expiration, inspect claims, debug authentication. No secret key needed.",
   path: "/dev-tools/jwt-decoder",
 
   header: {
-    title: "JWT Decoder & Token Inspector",
+    title: "Fast JWT Decoder & Token Inspector",
     description:
-      "Decode any JSON Web Token to inspect its header (algorithm, type), payload (claims like sub, iss, exp), and signature. Check token expiration, debug OAuth and API authentication — no secret key required.",
+      "Fast JWT decoder — decode any JSON Web Token instantly to inspect its header (algorithm, type), payload (claims like sub, iss, exp), and signature. Check token expiration, debug OAuth and API authentication — no secret key required.",
     titleSize: "medium",
     descriptionSize: "small",
     color: "blue",
@@ -47,9 +47,9 @@ const toolConfig = createToolConfig({
 
   content: {
     definition:
-      "A JWT Decoder is a free tool that decodes JSON Web Tokens to display the header, payload, and signature components without verifying the token.",
+      "A fast JWT decoder is a free tool that instantly decodes JSON Web Tokens to display the header, payload, and signature components without verifying the token. Built for speed — paste and decode in milliseconds.",
     quickAnswer:
-      "Paste a JWT token to instantly decode and view its header (algorithm, type), payload (claims like sub, iat, exp), and signature. Check expiration status and inspect all claims. No secret key required for decoding.",
+      "Use this fast JWT decoder — paste a JWT token to instantly decode and view its header (algorithm, type), payload (claims like sub, iat, exp), and signature. Fast JWT inspection with expiration status checking. No secret key required for decoding.",
     keyTakeaways: [
       "Decodes JWT header, payload, and signature instantly",
       "Shows all standard claims: iss, sub, aud, exp, iat, nbf, jti",
@@ -58,7 +58,7 @@ const toolConfig = createToolConfig({
       "Common algorithms: HS256 (symmetric), RS256 (asymmetric), ES256 (ECDSA)",
     ],
     overview:
-      "Decode any JWT token instantly with this free online decoder. Paste a JSON Web Token to see its three decoded segments — header (algorithm and token type), payload (all claims including issuer, subject, audience, expiration), and signature. The decoder checks whether the token is expired based on the exp claim and highlights timing issues. Useful for debugging OAuth2 flows, API authentication, session management, and any system that uses JWTs. All decoding runs locally in your browser — no data sent to any server.",
+      "Fast JWT decoder — decode any JWT token instantly with this free online tool. Paste a JSON Web Token to see its three decoded segments — header (algorithm and token type), payload (all claims including issuer, subject, audience, expiration), and signature. This fast JWT tool checks whether the token is expired based on the exp claim and highlights timing issues. Useful for debugging OAuth2 flows, API authentication, session management, and any system that uses JWTs. All decoding runs locally in your browser — no data sent to any server.",
 
     howToSteps: [
       "Copy the JWT token string from your API response, browser DevTools, or auth logs.",
