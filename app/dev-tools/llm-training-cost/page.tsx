@@ -13,12 +13,12 @@ const LLMTrainingCostCalculator = dynamic(
   { loading: () => <ToolLoader /> }
 )
 
-const TOOL_TITLE = "LLM Training Cost Estimator — GPU Hours & Cloud Pricing (2026)"
+const TOOL_TITLE = "LLM Training Cost Calculator — Estimate GPU Hours & Cloud Cost"
 const TOOL_NAME = "LLM Training Cost Estimator"
 
 const baseMetadata = createMetadata({
   title: TOOL_TITLE,
-  description: "Free LLM training cost calculator. Estimate GPU hours, training time & cloud costs for large language models. Compare H100, A100, H200 across AWS, GCP, Azure, Lambda, CoreWeave.",
+  description: "Estimate LLM training costs free. Calculate GPU hours, training time & cloud pricing for AI models. Compare H100, A100, H200 on AWS, GCP, Azure, Lambda & CoreWeave.",
   path: "/dev-tools/llm-training-cost",
   breadcrumbs: [
     { label: "Developer Tools", href: "/dev-tools" },
@@ -435,7 +435,7 @@ export default function LLMTrainingCostPage() {
       toolContent={toolContent}
       expectedMetadata={{
         title: TOOL_TITLE,
-        description: "Free LLM training cost calculator. Estimate GPU hours, training time & cloud costs for large language models. Compare H100, A100, H200 across AWS, GCP, Azure, Lambda, CoreWeave.",
+        description: "Estimate LLM training costs free. Calculate GPU hours, training time & cloud pricing for AI models. Compare H100, A100, H200 on AWS, GCP, Azure, Lambda & CoreWeave.",
         path: "/dev-tools/llm-training-cost"
       }}
     />

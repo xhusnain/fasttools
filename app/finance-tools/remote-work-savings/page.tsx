@@ -13,12 +13,12 @@ const RemoteWorkSavingsCalculator = dynamic(
   { loading: () => <ToolLoader /> }
 )
 
-const TOOL_TITLE = "Remote Work Savings Calculator — How Much Do You Save Working From Home? (2026)"
+const TOOL_TITLE = "Work From Home Savings Calculator — How Much Do You Save?"
 const TOOL_NAME = "Remote Work Savings Calculator"
 
 const baseMetadata = createMetadata({
   title: TOOL_TITLE,
-  description: "Free remote work savings calculator. Calculate how much you save on commuting, meals, wardrobe & more by working from home. Includes time saved, environmental impact & 5-year projection.",
+  description: "How much do you save working from home? Free calculator for commute, gas, meals, wardrobe & time savings. Includes 5-year projection & environmental impact. No signup.",
   path: "/finance-tools/remote-work-savings",
   breadcrumbs: [
     { label: "Finance Tools", href: "/finance-tools" },
@@ -375,7 +375,7 @@ export default function RemoteWorkSavingsPage() {
       toolContent={toolContent}
       expectedMetadata={{
         title: TOOL_TITLE,
-        description: "Free remote work savings calculator. Calculate how much you save on commuting, meals, wardrobe & more by working from home. Includes time saved, environmental impact & 5-year projection.",
+        description: "How much do you save working from home? Free calculator for commute, gas, meals, wardrobe & time savings. Includes 5-year projection & environmental impact. No signup.",
         path: "/finance-tools/remote-work-savings"
       }}
     />

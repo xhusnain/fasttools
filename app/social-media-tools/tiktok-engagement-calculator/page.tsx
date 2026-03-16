@@ -13,12 +13,12 @@ const TikTokEngagementCalculator = dynamic(
   { loading: () => <ToolLoader /> }
 )
 
-const TOOL_TITLE = "TikTok Engagement Rate Calculator — Free Analysis Tool (2026)"
+const TOOL_TITLE = "Free TikTok Engagement Rate Calculator — Instant Analysis"
 const TOOL_NAME = "TikTok Engagement Rate Calculator"
 
 const baseMetadata = createMetadata({
   title: TOOL_TITLE,
-  description: "Free TikTok engagement rate calculator. Analyze likes, comments, shares, saves & views. Compare against benchmarks, see your influencer tier & cross-platform performance.",
+  description: "Calculate your TikTok engagement rate free. Analyze likes, comments, shares & saves. Benchmarks by follower count, influencer tier & cross-platform comparison. No signup.",
   path: "/social-media-tools/tiktok-engagement-calculator",
   breadcrumbs: [
     { label: "Social Media Tools", href: "/social-media-tools" },
@@ -471,7 +471,7 @@ export default function TikTokEngagementCalculatorPage() {
       toolContent={toolContent}
       expectedMetadata={{
         title: TOOL_TITLE,
-        description: "Free TikTok engagement rate calculator. Analyze likes, comments, shares, saves & views. Compare against benchmarks, see your influencer tier & cross-platform performance.",
+        description: "Calculate your TikTok engagement rate free. Analyze likes, comments, shares & saves. Benchmarks by follower count, influencer tier & cross-platform comparison. No signup.",
         path: "/social-media-tools/tiktok-engagement-calculator"
       }}
     />

@@ -13,12 +13,12 @@ const BiologicalAgeCalculator = dynamic(
   { loading: () => <ToolLoader /> }
 )
 
-const TOOL_TITLE = "Biological Age Calculator — How Old Is Your Body Really? (2026)"
+const TOOL_TITLE = "Biological Age Calculator — Free Body Age Test Online"
 const TOOL_NAME = "Biological Age Calculator"
 
 const baseMetadata = createMetadata({
   title: TOOL_TITLE,
-  description: "Free biological age calculator. Estimate your true body age based on resting heart rate, sleep, exercise, stress, diet, BMI & habits. Get personalised recommendations to age slower.",
+  description: "How old is your body really? Free biological age test based on heart rate, sleep, exercise, diet, stress & BMI. Get your real age score with personalised recommendations.",
   path: "/calculator/biological-age-calculator",
   breadcrumbs: [
     { label: "Calculator", href: "/calculator" },
@@ -371,7 +371,7 @@ export default function BiologicalAgeCalculatorPage() {
       toolContent={toolContent}
       expectedMetadata={{
         title: TOOL_TITLE,
-        description: "Free biological age calculator. Estimate your true body age based on resting heart rate, sleep, exercise, stress, diet, BMI & habits. Get personalised recommendations to age slower.",
+        description: "How old is your body really? Free biological age test based on heart rate, sleep, exercise, diet, stress & BMI. Get your real age score with personalised recommendations.",
         path: "/calculator/biological-age-calculator"
       }}
     />

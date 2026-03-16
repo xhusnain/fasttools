@@ -13,12 +13,12 @@ const InfluencerRateCalculator = dynamic(
   { loading: () => <ToolLoader /> }
 )
 
-const TOOL_TITLE = "Micro-Influencer Sponsorship Rate Calculator — Know Your Worth (2026)"
+const TOOL_TITLE = "Influencer Price Calculator — TikTok, Instagram & YouTube Rates"
 const TOOL_NAME = "Influencer Sponsorship Rate Calculator"
 
 const baseMetadata = createMetadata({
   title: TOOL_TITLE,
-  description: "Free influencer rate calculator. Calculate sponsorship rates for TikTok, Instagram, YouTube & X based on followers, engagement rate & niche. Built for creators & brands.",
+  description: "Free influencer pricing calculator. Estimate sponsorship rates for TikTok, Instagram, YouTube & X. Based on followers, engagement rate, niche & content type. No signup.",
   path: "/social-media-tools/influencer-rate-calculator",
   breadcrumbs: [
     { label: "Social Media Tools", href: "/social-media-tools" },
@@ -485,7 +485,7 @@ export default function InfluencerRateCalculatorPage() {
       toolContent={toolContent}
       expectedMetadata={{
         title: TOOL_TITLE,
-        description: "Free influencer rate calculator. Calculate sponsorship rates for TikTok, Instagram, YouTube & X based on followers, engagement rate & niche. Built for creators & brands.",
+        description: "Free influencer pricing calculator. Estimate sponsorship rates for TikTok, Instagram, YouTube & X. Based on followers, engagement rate, niche & content type. No signup.",
         path: "/social-media-tools/influencer-rate-calculator"
       }}
     />

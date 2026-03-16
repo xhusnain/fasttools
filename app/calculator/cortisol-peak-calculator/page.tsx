@@ -13,12 +13,12 @@ const CortisolCalculator = dynamic(
   { loading: () => <ToolLoader /> }
 )
 
-const TOOL_TITLE = "Cortisol Peak Time Calculator — Optimise Coffee, Workouts & Sleep (2026)"
+const TOOL_TITLE = "Cortisol Peak Time Calculator — Best Time to Drink Coffee"
 const TOOL_NAME = "Cortisol Peak Time Calculator"
 
 const baseMetadata = createMetadata({
   title: TOOL_TITLE,
-  description: "Free cortisol peak time calculator. Enter your wake-up time to find optimal caffeine timing, workout windows, deep focus blocks & ideal bedtime based on your cortisol rhythm.",
+  description: "When should you drink coffee? Free cortisol calculator — enter your wake-up time to find optimal caffeine windows, workout timing, focus blocks & ideal bedtime. Science-based.",
   path: "/calculator/cortisol-peak-calculator",
   breadcrumbs: [
     { label: "Calculator", href: "/calculator" },
@@ -471,7 +471,7 @@ export default function CortisolPeakCalculatorPage() {
       toolContent={toolContent}
       expectedMetadata={{
         title: TOOL_TITLE,
-        description: "Free cortisol peak time calculator. Enter your wake-up time to find optimal caffeine timing, workout windows, deep focus blocks & ideal bedtime based on your cortisol rhythm.",
+        description: "When should you drink coffee? Free cortisol calculator — enter your wake-up time to find optimal caffeine windows, workout timing, focus blocks & ideal bedtime. Science-based.",
         path: "/calculator/cortisol-peak-calculator"
       }}
     />

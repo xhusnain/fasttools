@@ -13,12 +13,12 @@ const CloudflareWorkersCostCalculator = dynamic(
   { loading: () => <ToolLoader /> }
 )
 
-const TOOL_TITLE = "Cloudflare Workers Cost Calculator — Estimate Your Monthly Bill (2026)"
+const TOOL_TITLE = "Cloudflare Workers Pricing Calculator — Free Cost Estimator"
 const TOOL_NAME = "Cloudflare Workers Cost Calculator"
 
 const baseMetadata = createMetadata({
   title: TOOL_TITLE,
-  description: "Free Cloudflare Workers cost calculator. Estimate monthly costs for Workers requests, CPU time, KV, R2, and Durable Objects. Compare free vs paid plans with scaling projections.",
+  description: "Estimate Cloudflare Workers costs free. Calculate monthly pricing for requests, CPU time, KV, R2 & Durable Objects. Free vs paid plan comparison with scaling projections.",
   path: "/dev-tools/cloudflare-workers-cost",
   breadcrumbs: [
     { label: "Developer Tools", href: "/dev-tools" },
@@ -348,7 +348,7 @@ export default function CloudflareWorkersCostPage() {
       toolContent={toolContent}
       expectedMetadata={{
         title: TOOL_TITLE,
-        description: "Free Cloudflare Workers cost calculator. Estimate monthly costs for Workers requests, CPU time, KV, R2, and Durable Objects. Compare free vs paid plans with scaling projections.",
+        description: "Estimate Cloudflare Workers costs free. Calculate monthly pricing for requests, CPU time, KV, R2 & Durable Objects. Free vs paid plan comparison with scaling projections.",
         path: "/dev-tools/cloudflare-workers-cost"
       }}
     />

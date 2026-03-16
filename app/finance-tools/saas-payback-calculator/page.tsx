@@ -13,12 +13,12 @@ const SaaSPaybackCalculator = dynamic(
   { loading: () => <ToolLoader /> }
 )
 
-const TOOL_TITLE = "SaaS Payback Period Calculator — CAC Recovery & LTV:CAC Ratio (2026)"
+const TOOL_TITLE = "CAC Payback Period Calculator — Free SaaS LTV:CAC Tool"
 const TOOL_NAME = "SaaS Payback Period Calculator"
 
 const baseMetadata = createMetadata({
   title: TOOL_TITLE,
-  description: "Free SaaS payback period calculator. Calculate months to recover CAC, LTV:CAC ratio, customer lifetime value & ROI projections. Built for SaaS founders & investors.",
+  description: "Calculate your CAC payback period free. SaaS tool for LTV:CAC ratio, customer lifetime value, gross margin & 36-month ROI projection. Industry benchmarks included.",
   path: "/finance-tools/saas-payback-calculator",
   breadcrumbs: [
     { label: "Finance Tools", href: "/finance-tools" },
@@ -349,7 +349,7 @@ export default function SaaSPaybackCalculatorPage() {
       toolContent={toolContent}
       expectedMetadata={{
         title: TOOL_TITLE,
-        description: "Free SaaS payback period calculator. Calculate months to recover CAC, LTV:CAC ratio, customer lifetime value & ROI projections. Built for SaaS founders & investors.",
+        description: "Calculate your CAC payback period free. SaaS tool for LTV:CAC ratio, customer lifetime value, gross margin & 36-month ROI projection. Industry benchmarks included.",
         path: "/finance-tools/saas-payback-calculator"
       }}
     />

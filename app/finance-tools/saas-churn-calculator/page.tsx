@@ -13,12 +13,12 @@ const SaaSChurnCalculator = dynamic(
   { loading: () => <ToolLoader /> }
 )
 
-const TOOL_TITLE = "SaaS Churn Rate Calculator — Measure & Reduce Customer Churn (2026)"
+const TOOL_TITLE = "Free SaaS Churn Rate Calculator — Customer & Revenue Churn"
 const TOOL_NAME = "SaaS Churn Rate Calculator"
 
 const baseMetadata = createMetadata({
   title: TOOL_TITLE,
-  description: "Free SaaS churn rate calculator. Calculate customer churn, revenue churn, net MRR churn, retention rate, CLV & 12-month projections. Built for SaaS founders & teams.",
+  description: "Calculate your SaaS churn rate instantly. Free tool for customer churn, revenue churn, net MRR churn, retention rate, CLV & 12-month projections. No signup required.",
   path: "/finance-tools/saas-churn-calculator",
   breadcrumbs: [
     { label: "Finance Tools", href: "/finance-tools" },
@@ -518,7 +518,7 @@ export default function SaaSChurnCalculatorPage() {
       toolContent={toolContent}
       expectedMetadata={{
         title: TOOL_TITLE,
-        description: "Free SaaS churn rate calculator. Calculate customer churn, revenue churn, net MRR churn, retention rate, CLV & 12-month projections. Built for SaaS founders & teams.",
+        description: "Calculate your SaaS churn rate instantly. Free tool for customer churn, revenue churn, net MRR churn, retention rate, CLV & 12-month projections. No signup required.",
         path: "/finance-tools/saas-churn-calculator"
       }}
     />

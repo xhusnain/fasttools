@@ -13,12 +13,12 @@ const ZakatCalculator = dynamic(
   { loading: () => <ToolLoader /> }
 )
 
-const TOOL_TITLE = "Zakat Calculator 2026 — Calculate Your Zakat Obligation Accurately"
+const TOOL_TITLE = "Zakat Calculator — Free Online | Gold, Silver, Cash & Stocks"
 const TOOL_NAME = "Zakat Calculator 2026"
 
 const baseMetadata = createMetadata({
   title: TOOL_TITLE,
-  description: "Free Zakat calculator 2026. Calculate Zakat on cash, gold, silver, investments, business assets & crypto. Nisab threshold, 8 recipient categories, multi-currency support. Based on Quran & Sunnah.",
+  description: "Calculate Zakat 2026 free. Accurate Zakat on cash, gold, silver, investments, business & crypto. Nisab threshold (gold & silver), 8 recipient categories. Based on Quran & Sunnah.",
   path: "/finance-tools/zakat-calculator",
   breadcrumbs: [
     { label: "Finance Tools", href: "/finance-tools" },
@@ -394,7 +394,7 @@ export default function ZakatCalculatorPage() {
       toolContent={toolContent}
       expectedMetadata={{
         title: TOOL_TITLE,
-        description: "Free Zakat calculator 2026. Calculate Zakat on cash, gold, silver, investments, business assets & crypto. Nisab threshold, 8 recipient categories, multi-currency support. Based on Quran & Sunnah.",
+        description: "Calculate Zakat 2026 free. Accurate Zakat on cash, gold, silver, investments, business & crypto. Nisab threshold (gold & silver), 8 recipient categories. Based on Quran & Sunnah.",
         path: "/finance-tools/zakat-calculator"
       }}
     />

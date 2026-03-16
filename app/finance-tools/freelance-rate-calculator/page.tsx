@@ -13,12 +13,12 @@ const FreelanceRateCalculator = dynamic(
   { loading: () => <ToolLoader /> }
 )
 
-const TOOL_TITLE = "Freelance Hourly Rate Calculator — Know Your Worth (2026)"
+const TOOL_TITLE = "Freelance Rate Calculator — Calculate Your Hourly Rate Free"
 const TOOL_NAME = "Freelance Hourly Rate Calculator"
 
 const baseMetadata = createMetadata({
   title: TOOL_TITLE,
-  description: "Free freelance hourly rate calculator. Factor in taxes, expenses, billable hours, vacation & profit margin to find your ideal rate. Built for freelancers & consultants.",
+  description: "Free freelance hourly rate calculator. Factor in taxes, expenses, billable hours, vacation & profit margin. Find out how much to charge as a freelancer or consultant.",
   path: "/finance-tools/freelance-rate-calculator",
   breadcrumbs: [
     { label: "Finance Tools", href: "/finance-tools" },
@@ -526,7 +526,7 @@ export default function FreelanceRateCalculatorPage() {
       toolContent={toolContent}
       expectedMetadata={{
         title: TOOL_TITLE,
-        description: "Free freelance hourly rate calculator. Factor in taxes, expenses, billable hours, vacation & profit margin to find your ideal rate. Built for freelancers & consultants.",
+        description: "Free freelance hourly rate calculator. Factor in taxes, expenses, billable hours, vacation & profit margin. Find out how much to charge as a freelancer or consultant.",
         path: "/finance-tools/freelance-rate-calculator"
       }}
     />
