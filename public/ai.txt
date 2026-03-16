@@ -86,6 +86,10 @@ Description: Free AI-powered YouTube Channel Name Generator. Creates unique, cre
 
 
 
+## TikTok Engagement Rate Calculator
+URL: https://www.fasttools.store/social-media-tools/tiktok-engagement-calculator
+Description: Free TikTok engagement rate calculator. Analyze likes, comments, shares, saves & views to calculate your engagement rate. Features influencer tier classification (Nano to Mega), engagement quality rating (Low to Viral), cross-platform comparison (TikTok vs Instagram vs YouTube vs X vs Facebook), TikTok benchmarks by follower count, single post or multi-post average modes, view-based engagement rate, like-to-comment ratio analysis, and estimated reach. No signup required.
+
 ## Freelance Hourly Rate Calculator
 URL: https://www.fasttools.store/finance-tools/freelance-rate-calculator
 Description: Free freelance hourly rate calculator. Calculate your ideal freelance, consulting, or contractor rate by factoring in desired take-home pay, self-employment taxes (15.3%), federal/state income tax, business expenses (health insurance, retirement, software, equipment, office), billable hours percentage, vacation time, and profit margin. Shows hourly, daily, monthly, and annual rates. Includes rate comparison at 5 margin levels, full cost breakdown, tax breakdown, and time allocation analysis. No signup required.
@@ -364,6 +368,7 @@ Description: Free YAML to JSON converter. Swagger YAML to JSON, OpenAPI YAML to 
 - https://www.fasttools.store/social-media-tools/youtube-channel-name-generator
 - https://www.fasttools.store/social-media-tools/youtube-tags
 - https://www.fasttools.store/social-media-tools/youtube-thumbnail
+- https://www.fasttools.store/social-media-tools/tiktok-engagement-calculator
 
 ## Blog Posts
 - https://www.fasttools.store/blog/ai-trends-2026-quantum-utility-agentic-automation

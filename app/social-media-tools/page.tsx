@@ -15,6 +15,7 @@ import {
   Tv,
   User,
   Video,
+  Zap,
 } from "lucide-react"
 
 const socialTools = [
@@ -119,6 +120,12 @@ const socialTools = [
     description: "Build a multi-link social bio page for campaign routing.",
     href: "/social-media-tools/link-in-bio",
     icon: Link2,
+  },
+  {
+    title: "TikTok Engagement Rate Calculator",
+    description: "Calculate TikTok engagement rate, compare benchmarks, and see your influencer tier.",
+    href: "/social-media-tools/tiktok-engagement-calculator",
+    icon: Zap,
   },
 ]
 

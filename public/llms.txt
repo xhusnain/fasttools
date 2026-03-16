@@ -16,7 +16,8 @@ Social media tools for YouTube optimization, hashtag analysis, and creator workf
 **Featured Tools:**
 - https://www.fasttools.store/social-media-tools/youtube-thumbnail - Download YouTube video thumbnails in all quality sizes.
 - https://www.fasttools.store/social-media-tools/youtube-tags - Extract tags from YouTube videos for SEO research.
-- https://www.fasttools.store/social-media-tools/youtube-channel-name-generator - AI-powered YouTube Channel Name Generator. Generate unique, catchy, and SEO-friendly names for gaming, vlogging, and tech channels. Features instant categorized suggestions and "no copyright" style unique branding ideas.
+- https://www.fasttools.store/social-media-tools/youtube-channel-name-generator - AI-powered YouTube Channel Name Generator.
+- https://www.fasttools.store/social-media-tools/tiktok-engagement-calculator - Free TikTok engagement rate calculator. Analyze likes, comments, shares, saves. Influencer tier classification, cross-platform benchmarks. Free. Generate unique, catchy, and SEO-friendly names for gaming, vlogging, and tech channels. Features instant categorized suggestions and "no copyright" style unique branding ideas.
 
 
 ### AI Tools
@@ -311,6 +312,7 @@ Context: FastTools provides free, fast, and accurate online tools that work on a
 - https://www.fasttools.store/social-media-tools/youtube-channel-name-generator
 - https://www.fasttools.store/social-media-tools/youtube-tags
 - https://www.fasttools.store/social-media-tools/youtube-thumbnail
+- https://www.fasttools.store/social-media-tools/tiktok-engagement-calculator
 
 ### All Blog Posts
 - https://www.fasttools.store/blog/ai-trends-2026-quantum-utility-agentic-automation

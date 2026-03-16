@@ -13,7 +13,7 @@
 - Weighted Grade Calculator by Semester: Specific search for finals week.
 
 ### Social Media
-- TikTok Engagement Rate Calculator: High demand, fewer quality tools.
+- [DONE] TikTok Engagement Rate Calculator: High demand, fewer quality tools.
 - Discord Server Member Growth Calculator: Niche, low competition.
 
 ### Developer
