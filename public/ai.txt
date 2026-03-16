@@ -86,6 +86,10 @@ Description: Free AI-powered YouTube Channel Name Generator. Creates unique, cre
 
 
 
+## Freelance Hourly Rate Calculator
+URL: https://www.fasttools.store/finance-tools/freelance-rate-calculator
+Description: Free freelance hourly rate calculator. Calculate your ideal freelance, consulting, or contractor rate by factoring in desired take-home pay, self-employment taxes (15.3%), federal/state income tax, business expenses (health insurance, retirement, software, equipment, office), billable hours percentage, vacation time, and profit margin. Shows hourly, daily, monthly, and annual rates. Includes rate comparison at 5 margin levels, full cost breakdown, tax breakdown, and time allocation analysis. No signup required.
+
 ## SaaS Churn Rate Calculator
 URL: https://www.fasttools.store/finance-tools/saas-churn-calculator
 Description: Free SaaS churn rate calculator. Calculate customer churn, revenue churn (MRR), net revenue churn, retention rate, Customer Lifetime Value (CLV), average customer lifespan, and 12-month projections. Includes churn health score with industry benchmarks (B2B, B2C, Enterprise). Three modes: Customer Churn, Revenue Churn, and Full Analysis. Shows formulas used. No signup required.
@@ -331,6 +335,7 @@ Description: Free YAML to JSON converter. Swagger YAML to JSON, OpenAPI YAML to 
 - https://www.fasttools.store/finance-tools/tax-calculator
 - https://www.fasttools.store/finance-tools/tip-calculator
 - https://www.fasttools.store/finance-tools/saas-churn-calculator
+- https://www.fasttools.store/finance-tools/freelance-rate-calculator
 - https://www.fasttools.store/fun-tools
 - https://www.fasttools.store/fun-tools/anniversary
 - https://www.fasttools.store/fun-tools/birthday-countdown

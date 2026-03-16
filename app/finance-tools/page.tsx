@@ -19,6 +19,7 @@ import {
   Banknote,
   Shield,
   Activity,
+  Briefcase,
 } from "lucide-react"
 import { ToolPageLayout } from "@/components/common/tool-page-layout"
 import { Metadata } from "next"
@@ -186,6 +187,13 @@ const financeTools = [
     icon: Activity,
     href: "/finance-tools/saas-churn-calculator",
   },
+  {
+    title: "Freelance Hourly Rate Calculator",
+    description:
+      "Calculate your ideal freelance rate based on desired income, taxes, expenses, billable hours & profit margin.",
+    icon: Briefcase,
+    href: "/finance-tools/freelance-rate-calculator",
+  },
 ]
 
 export const metadata: Metadata = createMetadata({
@@ -219,7 +227,7 @@ export default function FinanceToolsPage() {
       "Use the results to plan budgets, pricing, or savings targets with confidence.",
     ],
     features: [
-      "22 focused finance calculators",
+      "23 focused finance calculators",
       "Fast browser-based calculations",
       "Budgeting, debt, tax, and investment coverage",
       "Cross-links between related money decisions",

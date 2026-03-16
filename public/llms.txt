@@ -79,7 +79,8 @@ https://www.fasttools.store/finance-tools
 Financial planning and calculation tools including bill splitters, tip calculators, discount calculators, PayPal fee calculators, invoice generators, retirement planners, and SaaS churn rate calculators.
 
 **Featured Tools:**
-- https://www.fasttools.store/finance-tools/saas-churn-calculator - Free SaaS churn rate calculator. Calculate customer churn, revenue churn (MRR), net revenue churn, retention rate, CLV, and 12-month projections. Industry benchmarks for B2B, B2C, Enterprise SaaS. Free.
+- https://www.fasttools.store/finance-tools/saas-churn-calculator - Free SaaS churn rate calculator. Calculate customer churn, revenue churn (MRR), net revenue churn, retention rate, CLV, and 12-month projections. Free.
+- https://www.fasttools.store/finance-tools/freelance-rate-calculator - Free freelance hourly rate calculator. Factor in taxes, expenses, billable hours, vacation & profit margin to find your ideal rate. Free. Calculate customer churn, revenue churn (MRR), net revenue churn, retention rate, CLV, and 12-month projections. Industry benchmarks for B2B, B2C, Enterprise SaaS. Free.
 
 ### Web Tools
 https://www.fasttools.store/web-tools
@@ -281,6 +282,7 @@ Context: FastTools provides free, fast, and accurate online tools that work on a
 - https://www.fasttools.store/finance-tools/tax-calculator
 - https://www.fasttools.store/finance-tools/tip-calculator
 - https://www.fasttools.store/finance-tools/saas-churn-calculator
+- https://www.fasttools.store/finance-tools/freelance-rate-calculator
 - https://www.fasttools.store/fun-tools
 - https://www.fasttools.store/fun-tools/anniversary
 - https://www.fasttools.store/fun-tools/birthday-countdown

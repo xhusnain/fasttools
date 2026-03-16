@@ -5,7 +5,7 @@
 ### SaaS/Business
 - [DONE] SaaS Churn Rate Calculator: High value for B2B users.
 - SaaS Payback Period Calculator: High value for business owners.
-- Freelance Hourly Rate Calculator: Helps new freelancers calculate taxes + overhead.
+- [DONE] Freelance Hourly Rate Calculator: Helps new freelancers calculate taxes + overhead.
 - Remote Work Tax Savings Calculator: Calculate savings on commuting vs. home office costs.
 - Micro-Influencer Sponsorship Rate Calculator: Specifically for creators with 1k–10k followers.
 
