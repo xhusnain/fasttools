@@ -7,7 +7,7 @@
 - SaaS Payback Period Calculator: High value for business owners.
 - [DONE] Freelance Hourly Rate Calculator: Helps new freelancers calculate taxes + overhead.
 - Remote Work Tax Savings Calculator: Calculate savings on commuting vs. home office costs.
-- Micro-Influencer Sponsorship Rate Calculator: Specifically for creators with 1k–10k followers.
+- [DONE] Micro-Influencer Sponsorship Rate Calculator: Specifically for creators with 1k–10k followers.
 
 ### Academic
 - Weighted Grade Calculator by Semester: Specific search for finals week.

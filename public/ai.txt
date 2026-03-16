@@ -86,6 +86,10 @@ Description: Free AI-powered YouTube Channel Name Generator. Creates unique, cre
 
 
 
+## Influencer Sponsorship Rate Calculator
+URL: https://www.fasttools.store/social-media-tools/influencer-rate-calculator
+Description: Free influencer sponsorship rate calculator. Calculate how much to charge (or pay) for sponsored posts on TikTok, Instagram, YouTube, X, and Facebook. Factors in follower count, engagement rate, content type (post, reel, story, video, short, thread), and niche premiums (11 categories including finance +50%, tech +35%). Features influencer tier classification, cross-platform rate comparison, monthly/annual earnings projection, media kit summary, CPM and CPE calculation. No signup required.
+
 ## TikTok Engagement Rate Calculator
 URL: https://www.fasttools.store/social-media-tools/tiktok-engagement-calculator
 Description: Free TikTok engagement rate calculator. Analyze likes, comments, shares, saves & views to calculate your engagement rate. Features influencer tier classification (Nano to Mega), engagement quality rating (Low to Viral), cross-platform comparison (TikTok vs Instagram vs YouTube vs X vs Facebook), TikTok benchmarks by follower count, single post or multi-post average modes, view-based engagement rate, like-to-comment ratio analysis, and estimated reach. No signup required.
@@ -369,6 +373,7 @@ Description: Free YAML to JSON converter. Swagger YAML to JSON, OpenAPI YAML to 
 - https://www.fasttools.store/social-media-tools/youtube-tags
 - https://www.fasttools.store/social-media-tools/youtube-thumbnail
 - https://www.fasttools.store/social-media-tools/tiktok-engagement-calculator
+- https://www.fasttools.store/social-media-tools/influencer-rate-calculator
 
 ## Blog Posts
 - https://www.fasttools.store/blog/ai-trends-2026-quantum-utility-agentic-automation

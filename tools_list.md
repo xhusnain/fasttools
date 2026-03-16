@@ -30,6 +30,7 @@
 - Hashtag Counter
 - Link in Bio Generator
 - TikTok Engagement Rate Calculator
+- Influencer Sponsorship Rate Calculator
 
 ## AI Tools
 - AI Token to Word Converter

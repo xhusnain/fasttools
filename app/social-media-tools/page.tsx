@@ -11,6 +11,7 @@ import {
   Tags,
   User,
   Zap,
+  DollarSign,
 } from "lucide-react"
 
 const socialTools = [
@@ -61,6 +62,12 @@ const socialTools = [
     description: "Calculate TikTok engagement rate, compare benchmarks, and see your influencer tier.",
     href: "/social-media-tools/tiktok-engagement-calculator",
     icon: Zap,
+  },
+  {
+    title: "Influencer Sponsorship Rate Calculator",
+    description: "Calculate how much to charge for sponsored posts based on followers, engagement, platform & niche.",
+    href: "/social-media-tools/influencer-rate-calculator",
+    icon: DollarSign,
   },
 ]
 
