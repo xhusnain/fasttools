@@ -194,6 +194,13 @@ const financeTools = [
     icon: Briefcase,
     href: "/finance-tools/freelance-rate-calculator",
   },
+  {
+    title: "SaaS Payback Period Calculator",
+    description:
+      "Calculate months to recover CAC, LTV:CAC ratio, customer lifetime value & 36-month ROI projection.",
+    icon: TrendingUp,
+    href: "/finance-tools/saas-payback-calculator",
+  },
 ]
 
 export const metadata: Metadata = createMetadata({
@@ -227,7 +234,7 @@ export default function FinanceToolsPage() {
       "Use the results to plan budgets, pricing, or savings targets with confidence.",
     ],
     features: [
-      "23 focused finance calculators",
+      "24 focused finance calculators",
       "Fast browser-based calculations",
       "Budgeting, debt, tax, and investment coverage",
       "Cross-links between related money decisions",
