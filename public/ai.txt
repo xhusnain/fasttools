@@ -86,6 +86,10 @@ Description: Free AI-powered YouTube Channel Name Generator. Creates unique, cre
 
 
 
+## Cortisol Peak Time Calculator
+URL: https://www.fasttools.store/calculator/cortisol-peak-calculator
+Description: Free cortisol peak time calculator. Enter your wake-up time to get personalised caffeine timing (when to drink coffee), optimal workout windows, deep focus blocks, melatonin onset, and ideal bedtime — all based on your cortisol circadian rhythm. Features 24-hour cortisol curve visualisation, Cortisol Awakening Response (CAR) timing, caffeine cut-off time, and 8 time-stamped daily recommendations. No signup required.
+
 ## Influencer Sponsorship Rate Calculator
 URL: https://www.fasttools.store/social-media-tools/influencer-rate-calculator
 Description: Free influencer sponsorship rate calculator. Calculate how much to charge (or pay) for sponsored posts on TikTok, Instagram, YouTube, X, and Facebook. Factors in follower count, engagement rate, content type (post, reel, story, video, short, thread), and niche premiums (11 categories including finance +50%, tech +35%). Features influencer tier classification, cross-platform rate comparison, monthly/annual earnings projection, media kit summary, CPM and CPE calculation. No signup required.
@@ -269,6 +273,7 @@ Description: Free YAML to JSON converter. Swagger YAML to JSON, OpenAPI YAML to 
 - https://www.fasttools.store/calculator/standard-deviation-calculator
 - https://www.fasttools.store/calculator/time-duration
 - https://www.fasttools.store/calculator/triangle-calculator
+- https://www.fasttools.store/calculator/cortisol-peak-calculator
 - https://www.fasttools.store/converters
 - https://www.fasttools.store/converters/currency
 - https://www.fasttools.store/converters/currency-api

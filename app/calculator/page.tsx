@@ -29,7 +29,8 @@ import {
   CalendarHeart,
   Binary,
   Sigma,
-  Footprints
+  Footprints,
+  Sun
 
 } from "lucide-react"
 import { ToolPageLayout } from "@/components/common/tool-page-layout"
@@ -176,6 +177,13 @@ const tools = [
     icon: Heart,
     href: "/calculator/love-calculator",
     color: "pink"
+  },
+  {
+    title: "Cortisol Peak Time Calculator",
+    description: "Find optimal caffeine, workout, focus & sleep timing based on your wake-up time and cortisol rhythm.",
+    icon: Sun,
+    href: "/calculator/cortisol-peak-calculator",
+    color: "orange"
   }
 ]
 

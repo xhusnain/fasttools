@@ -528,6 +528,12 @@ export const toolPages = [
         priority: 0.95,
     },
     {
+        url: "https://www.fasttools.store/calculator/cortisol-peak-calculator",
+        lastModified: new Date('2026-03-16'),
+        changeFrequency: "monthly" as const,
+        priority: 0.95,
+    },
+    {
         url: "https://www.fasttools.store/ai-tools/qr-generator",
         lastModified: new Date('2026-02-20'),
         changeFrequency: "monthly" as const,

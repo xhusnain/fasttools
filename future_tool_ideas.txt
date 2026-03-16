@@ -24,7 +24,7 @@
 ### Health & Biohacking
 - Biological Age Calculator (Biohacking Edition): Uses inputs like resting heart rate, sleep quality.
 - Continuous Glucose Monitor (CGM) Range Calculator: For wearable health tech users.
-- Cortisol Peak Time Calculator: Based on waking time for caffeine optimization.
+- [DONE] Cortisol Peak Time Calculator: Based on waking time for caffeine optimization.
 
 ### Security/AI
 - Deepfake Detection Probability Calculator: High viral potential.
