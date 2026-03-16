@@ -201,6 +201,13 @@ const financeTools = [
     icon: TrendingUp,
     href: "/finance-tools/saas-payback-calculator",
   },
+  {
+    title: "Remote Work Savings Calculator",
+    description:
+      "Calculate how much you save working from home: commute, meals, wardrobe, time & environmental impact.",
+    icon: Home,
+    href: "/finance-tools/remote-work-savings",
+  },
 ]
 
 export const metadata: Metadata = createMetadata({
@@ -234,7 +241,7 @@ export default function FinanceToolsPage() {
       "Use the results to plan budgets, pricing, or savings targets with confidence.",
     ],
     features: [
-      "24 focused finance calculators",
+      "25 focused finance calculators",
       "Fast browser-based calculations",
       "Budgeting, debt, tax, and investment coverage",
       "Cross-links between related money decisions",
