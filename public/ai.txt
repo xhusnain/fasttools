@@ -86,6 +86,10 @@ Description: Free AI-powered YouTube Channel Name Generator. Creates unique, cre
 
 
 
+## Zakat Calculator 2026
+URL: https://www.fasttools.store/finance-tools/zakat-calculator
+Description: Free Zakat calculator 2026. Calculate Zakat obligation (2.5%) on cash, gold, silver, investments, business assets, cryptocurrency. Features Nisab threshold calculation (gold 87.48g or silver 612.36g standard), debt deductions, 8 Quranic recipient categories (Surah At-Tawbah 9:60) with distribution guide, and 10 currency support (USD, GBP, EUR, PKR, SAR, AED, MYR, IDR, BDT, INR). Based on Quran and Sunnah. No signup required.
+
 ## Remote Work Savings Calculator
 URL: https://www.fasttools.store/finance-tools/remote-work-savings
 Description: Free remote work savings calculator. Calculate how much you save working from home vs commuting. Includes commute costs (fuel, transit, parking, tolls, vehicle maintenance), meal and coffee savings, wardrobe costs, childcare flexibility, home office and utility cost offset, time reclaimed with dollar value, environmental impact (CO2 saved, miles, tree equivalent), equivalent hourly raise, and 5-year savings projection with inflation. No signup required.
@@ -374,6 +378,7 @@ Description: Free YAML to JSON converter. Swagger YAML to JSON, OpenAPI YAML to 
 - https://www.fasttools.store/finance-tools/freelance-rate-calculator
 - https://www.fasttools.store/finance-tools/saas-payback-calculator
 - https://www.fasttools.store/finance-tools/remote-work-savings
+- https://www.fasttools.store/finance-tools/zakat-calculator
 - https://www.fasttools.store/fun-tools
 - https://www.fasttools.store/fun-tools/anniversary
 - https://www.fasttools.store/fun-tools/birthday-countdown

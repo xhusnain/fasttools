@@ -20,6 +20,7 @@ import {
   Shield,
   Activity,
   Briefcase,
+  Heart,
 } from "lucide-react"
 import { ToolPageLayout } from "@/components/common/tool-page-layout"
 import { Metadata } from "next"
@@ -208,6 +209,13 @@ const financeTools = [
     icon: Home,
     href: "/finance-tools/remote-work-savings",
   },
+  {
+    title: "Zakat Calculator 2026",
+    description:
+      "Calculate your Zakat on cash, gold, silver, investments & business assets. Based on Quran & Sunnah.",
+    icon: Heart,
+    href: "/finance-tools/zakat-calculator",
+  },
 ]
 
 export const metadata: Metadata = createMetadata({
@@ -241,7 +249,7 @@ export default function FinanceToolsPage() {
       "Use the results to plan budgets, pricing, or savings targets with confidence.",
     ],
     features: [
-      "25 focused finance calculators",
+      "26 focused finance calculators",
       "Fast browser-based calculations",
       "Budgeting, debt, tax, and investment coverage",
       "Cross-links between related money decisions",

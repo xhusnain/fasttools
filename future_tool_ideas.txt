@@ -24,7 +24,7 @@
 - [DONE] Cortisol Peak Time Calculator: Based on waking time for caffeine optimization.
 
 ### Festival/Seasonal
-- Zakat Calculator 2026: High volume early in the year.
+- [DONE] Zakat Calculator 2026: High volume early in the year.
 - Christmas Gift Budget & Savings Tracker: Best to build early.
 
 ---

@@ -976,6 +976,12 @@ export const toolPages = [
         priority: 0.95,
     },
     {
+        url: "https://www.fasttools.store/finance-tools/zakat-calculator",
+        lastModified: new Date('2026-03-16'),
+        changeFrequency: "yearly" as const,
+        priority: 0.95,
+    },
+    {
         url: "https://www.fasttools.store/dev-tools/jwt-decoder",
         lastModified: new Date('2026-02-20'),
         changeFrequency: "monthly" as const,
