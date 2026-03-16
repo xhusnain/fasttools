@@ -86,6 +86,10 @@ Description: Free AI-powered YouTube Channel Name Generator. Creates unique, cre
 
 
 
+## Biological Age Calculator
+URL: https://www.fasttools.store/calculator/biological-age-calculator
+Description: Free biological age calculator. Estimate your true body age from 9 evidence-based factors: resting heart rate, BMI, sleep quality, exercise frequency, stress level, diet quality, smoking status, alcohol intake, and social connection. Features age rating (Exceptional to Concerning), 9-category score breakdown with year-by-year age impact, personalised recommendations with priority levels, longevity estimate, and overall health score percentile. No signup required.
+
 ## LLM Training Cost Estimator
 URL: https://www.fasttools.store/dev-tools/llm-training-cost
 Description: Free LLM training cost calculator. Estimate GPU hours, training time & cloud costs for training large language models. Supports 7 GPU types (H200, H100, A100 80GB, A100 40GB, L40S, A10G, T4), 5 cloud providers (AWS, GCP, Azure, Lambda Labs, CoreWeave), 5 precision modes (FP32, BF16, FP16, FP8, INT8). Features provider cost comparison, GPU performance comparison, reference model costs (Llama 3, GPT-3, GPT-4 class), Chinchilla-optimal FLOPs estimation, VRAM calculation, and cost breakdown. No signup required.
@@ -278,6 +282,7 @@ Description: Free YAML to JSON converter. Swagger YAML to JSON, OpenAPI YAML to 
 - https://www.fasttools.store/calculator/time-duration
 - https://www.fasttools.store/calculator/triangle-calculator
 - https://www.fasttools.store/calculator/cortisol-peak-calculator
+- https://www.fasttools.store/calculator/biological-age-calculator
 - https://www.fasttools.store/converters
 - https://www.fasttools.store/converters/currency
 - https://www.fasttools.store/converters/currency-api

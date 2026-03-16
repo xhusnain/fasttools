@@ -184,6 +184,13 @@ const tools = [
     icon: Sun,
     href: "/calculator/cortisol-peak-calculator",
     color: "orange"
+  },
+  {
+    title: "Biological Age Calculator",
+    description: "Estimate your true body age based on lifestyle, fitness, sleep, stress, diet, and habits. Get personalised recommendations.",
+    icon: Activity,
+    href: "/calculator/biological-age-calculator",
+    color: "green"
   }
 ]
 
