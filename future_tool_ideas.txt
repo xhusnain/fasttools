@@ -9,15 +9,12 @@
 - Remote Work Tax Savings Calculator: Calculate savings on commuting vs. home office costs.
 - [DONE] Micro-Influencer Sponsorship Rate Calculator: Specifically for creators with 1k–10k followers.
 
-### Academic
-- Weighted Grade Calculator by Semester: Specific search for finals week.
-
 ### Social Media
 - [DONE] TikTok Engagement Rate Calculator: High demand, fewer quality tools.
 - Discord Server Member Growth Calculator: Niche, low competition.
 
 ### Developer
-- Cloudflare Workers Cost Calculator: Specific to developers using edge computing.
+- [DONE] Cloudflare Workers Cost Calculator: Specific to developers using edge computing.
 - [DONE] AI Token to Word Converter: Great for developers/writers using LLMs.
 - [DONE] LLM Training Cost Estimator: For startups estimating GPU hours.
 
@@ -25,9 +22,6 @@
 - [DONE] Biological Age Calculator (Biohacking Edition): Uses inputs like resting heart rate, sleep quality.
 - Continuous Glucose Monitor (CGM) Range Calculator: For wearable health tech users.
 - [DONE] Cortisol Peak Time Calculator: Based on waking time for caffeine optimization.
-
-### Security/AI
-- Deepfake Detection Probability Calculator: High viral potential.
 
 ### Festival/Seasonal
 - Zakat Calculator 2026: High volume early in the year.

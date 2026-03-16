@@ -151,6 +151,13 @@ const devTools = [
     href: "/dev-tools/llm-training-cost",
     icon: Cpu,
   },
+  {
+    title: "Cloudflare Workers Cost Calculator",
+    description:
+      "Estimate monthly costs for Workers requests, CPU time, KV, R2 & Durable Objects with scaling projections.",
+    href: "/dev-tools/cloudflare-workers-cost",
+    icon: Globe,
+  },
 ]
 
 const toolConfig = createToolConfig({

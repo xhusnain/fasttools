@@ -86,6 +86,10 @@ Description: Free AI-powered YouTube Channel Name Generator. Creates unique, cre
 
 
 
+## Cloudflare Workers Cost Calculator
+URL: https://www.fasttools.store/dev-tools/cloudflare-workers-cost
+Description: Free Cloudflare Workers cost calculator. Estimate monthly costs for Workers requests, CPU time, KV store, R2 object storage, and Durable Objects. Compare free vs paid plans. Features cost breakdown, free tier usage tracker, scaling projection from 1M to 1B requests, pricing reference card, and Workers vs Lambda vs Vercel comparison. No signup required.
+
 ## Biological Age Calculator
 URL: https://www.fasttools.store/calculator/biological-age-calculator
 Description: Free biological age calculator. Estimate your true body age from 9 evidence-based factors: resting heart rate, BMI, sleep quality, exercise frequency, stress level, diet quality, smoking status, alcohol intake, and social connection. Features age rating (Exceptional to Concerning), 9-category score breakdown with year-by-year age impact, personalised recommendations with priority levels, longevity estimate, and overall health score percentile. No signup required.
@@ -331,6 +335,7 @@ Description: Free YAML to JSON converter. Swagger YAML to JSON, OpenAPI YAML to 
 - https://www.fasttools.store/dev-tools/regex-tester
 - https://www.fasttools.store/dev-tools/sql-to-json
 - https://www.fasttools.store/dev-tools/llm-training-cost
+- https://www.fasttools.store/dev-tools/cloudflare-workers-cost
 - https://www.fasttools.store/faq
 - https://www.fasttools.store/festivals
 - https://www.fasttools.store/festivals/christmas-font-converter

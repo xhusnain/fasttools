@@ -112,6 +112,7 @@ Tools for developers and programmers including JWT decoders, regex testers, JSON
 - https://www.fasttools.store/dev-tools/json-diff - JSON diff online. Compare two JSON objects and find differences. json diff javascript, json diff python, json diff - npm, json-diff-ts. Free.
 - https://www.fasttools.store/dev-tools/http-status-codes - HTTP status codes list. Complete http status codes table. http status codes 200, 201, 400, 404, 500 with examples. http stands for, http methods. http-status-codes npm, node http status codes. SMTP, FTP codes. Free.
 - https://www.fasttools.store/dev-tools/llm-training-cost - Free LLM training cost estimator. Estimate GPU hours, training time & cloud costs. Compare H100, A100, H200 across AWS, GCP, Azure, Lambda, CoreWeave. Free.
+- https://www.fasttools.store/dev-tools/cloudflare-workers-cost - Free Cloudflare Workers cost calculator. Estimate monthly costs for Workers, KV, R2, Durable Objects. Free vs paid plan comparison. Free.
 - https://www.fasttools.store/crypto-tools/uuid-generator - Free Online UUID Generator (v1, v4, v6, v7). Generate standardized Universally Unique Identifiers instantly. Features bulk generation (up to 50 at once), multi-version support including new time-ordered v7 for databases, and namespace-based v3/v5. Secure, client-side only generation.
 
 ### Crypto Tools
@@ -263,6 +264,7 @@ Context: FastTools provides free, fast, and accurate online tools that work on a
 - https://www.fasttools.store/dev-tools/regex-tester
 - https://www.fasttools.store/dev-tools/sql-to-json
 - https://www.fasttools.store/dev-tools/llm-training-cost
+- https://www.fasttools.store/dev-tools/cloudflare-workers-cost
 - https://www.fasttools.store/faq
 - https://www.fasttools.store/festivals
 - https://www.fasttools.store/festivals/christmas-font-converter

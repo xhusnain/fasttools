@@ -1012,6 +1012,12 @@ export const toolPages = [
         priority: 0.95,
     },
     {
+        url: "https://www.fasttools.store/dev-tools/cloudflare-workers-cost",
+        lastModified: new Date('2026-03-16'),
+        changeFrequency: "monthly" as const,
+        priority: 0.95,
+    },
+    {
         url: "https://www.fasttools.store/dev-tools/html-beautifier",
         lastModified: new Date('2026-02-20'),
         changeFrequency: "monthly" as const,
