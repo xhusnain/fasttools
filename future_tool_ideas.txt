@@ -1,0 +1,89 @@
+# Future Tool Ideas — High-Traffic, High-AdSense Revenue
+
+## Selection Criteria
+- Massive search volume (100K+ monthly searches)
+- High CPC niches (Finance $20-47, Insurance $25-50, Health $15-37, Real Estate $10-20)
+- Tools that calculator.net, NerdWallet, Bankrate dominate = proven traffic
+- Evergreen demand (not seasonal)
+- Tools we DON'T already have
+
+---
+
+## TOP 10 — Build Next (Ranked by Traffic + Revenue Potential)
+
+### 1. Home Affordability Calculator
+- **Category**: finance-tools
+- **Why**: "How much house can I afford" = one of the highest-searched finance queries. Bankrate, NerdWallet, Zillow all have this. CPC: $20-45 for mortgage keywords.
+- **Features**: Income, debts, down payment, interest rate, taxes, insurance → max home price, monthly payment, DTI ratio.
+- **Traffic**: Millions of monthly searches. Every homebuyer uses one.
+
+### 2. Auto Loan / Car Payment Calculator
+- **Category**: finance-tools
+- **Why**: "Car payment calculator" has massive volume. Auto loan CPC: $15-35. Every car buyer searches this.
+- **Features**: Vehicle price, down payment, trade-in, interest rate, loan term → monthly payment, total interest, amortization.
+- **Traffic**: Huge — people search before every car purchase.
+
+### 3. Rent vs Buy Calculator
+- **Category**: finance-tools
+- **Why**: "Should I rent or buy" is the most common housing question. High CPC ($15-40). Zillow, NerdWallet, Schwab all rank for this.
+- **Features**: Rent amount, home price, mortgage rate, down payment, maintenance, appreciation → break-even year, 10-year comparison.
+- **Traffic**: Evergreen, massive volume from first-time buyers.
+
+### 4. TDEE & Macro Calculator
+- **Category**: calculator
+- **Why**: "TDEE calculator" and "macro calculator" each have 500K+ monthly searches. Health CPC: $15-37. Fitness audience is enormous.
+- **Features**: Age, gender, height, weight, activity level → TDEE, BMR, macros for cutting/bulking/maintenance, meal plan split.
+- **Traffic**: 2M+ monthly combined. Fitness influencers share these constantly.
+
+### 5. Debt Payoff Calculator (Snowball & Avalanche)
+- **Category**: finance-tools
+- **Why**: "Debt payoff calculator" = high volume, high CPC ($20-40). Ramsey Solutions, Bankrate dominate. Personal finance is top AdSense niche.
+- **Features**: Multiple debts input, snowball vs avalanche comparison, payoff timeline, total interest saved, extra payment impact.
+- **Traffic**: Massive — anyone with credit card or student loan debt.
+
+### 6. Net Worth Calculator
+- **Category**: finance-tools
+- **Why**: "Net worth calculator" is searched by anyone doing financial planning. Finance CPC: $20-40.
+- **Features**: Assets (cash, investments, property, vehicles, retirement) - liabilities (mortgage, loans, credit cards) = net worth with age benchmark.
+- **Traffic**: High volume, highly shareable ("my net worth is $X").
+
+### 7. 401k / Retirement Savings Calculator
+- **Category**: finance-tools
+- **Why**: "401k calculator" has huge search volume. Retirement planning CPC: $25-45. Every working adult needs this.
+- **Features**: Current savings, monthly contribution, employer match, expected return, years to retirement → projected balance, income in retirement.
+- **Traffic**: Enormous — evergreen demand from entire working population.
+
+### 8. Ovulation & Fertility Calculator
+- **Category**: calculator
+- **Why**: "Ovulation calculator" = millions of monthly searches globally. Health CPC: $15-35. Extremely sticky (users return monthly).
+- **Features**: Last period date, cycle length → fertile window, ovulation day, next period, best days to conceive.
+- **Traffic**: Massive recurring traffic — women check monthly.
+
+### 9. Tax Bracket Calculator (US Federal + State)
+- **Category**: finance-tools
+- **Why**: "Tax bracket calculator" spikes every year (Jan-Apr) but has strong year-round volume. Tax CPC: $20-45.
+- **Features**: Filing status, income, deductions → effective tax rate, marginal rate, tax owed, bracket breakdown, state comparison.
+- **Traffic**: Huge seasonal spike + consistent base. Very high CPC.
+
+### 10. Startup Runway Calculator
+- **Category**: finance-tools
+- **Why**: "Startup runway calculator" = high-intent B2B SaaS keyword. Pairs with our SaaS Churn + Payback tools. CPC: $15-30 for startup keywords.
+- **Features**: Cash on hand, monthly burn rate, monthly revenue, growth rate → months of runway, zero-cash date, fundraise timing.
+- **Traffic**: Lower volume than consumer tools but extremely high CPC and completes our SaaS cluster.
+
+---
+
+## CPC Revenue Ranking (Estimated)
+
+| Rank | Tool | Est. CPC | Est. Monthly Searches | Revenue Potential |
+|------|------|----------|----------------------|-------------------|
+| 1 | Home Affordability | $25-45 | 1M+ | Very High |
+| 2 | 401k Calculator | $25-45 | 800K+ | Very High |
+| 3 | Tax Bracket | $20-45 | 500K-2M (seasonal) | Very High |
+| 4 | Auto Loan | $15-35 | 1M+ | High |
+| 5 | Debt Payoff | $20-40 | 500K+ | High |
+| 6 | Rent vs Buy | $15-40 | 500K+ | High |
+| 7 | TDEE & Macro | $15-37 | 2M+ | High (volume) |
+| 8 | Ovulation | $15-35 | 2M+ | High (volume + sticky) |
+| 9 | Net Worth | $20-40 | 300K+ | Medium-High |
+| 10 | Startup Runway | $15-30 | 50K+ | Medium (but highest intent) |
