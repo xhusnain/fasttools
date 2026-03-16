@@ -18,6 +18,7 @@ import {
   TrendingDown,
   Banknote,
   Shield,
+  Activity,
 } from "lucide-react"
 import { ToolPageLayout } from "@/components/common/tool-page-layout"
 import { Metadata } from "next"
@@ -178,6 +179,13 @@ const financeTools = [
     icon: Banknote,
     href: "/finance-tools/salary-calculator",
   },
+  {
+    title: "SaaS Churn Rate Calculator",
+    description:
+      "Calculate customer churn, revenue churn, retention rate, CLV & 12-month projections for SaaS businesses.",
+    icon: Activity,
+    href: "/finance-tools/saas-churn-calculator",
+  },
 ]
 
 export const metadata: Metadata = createMetadata({
@@ -211,7 +219,7 @@ export default function FinanceToolsPage() {
       "Use the results to plan budgets, pricing, or savings targets with confidence.",
     ],
     features: [
-      "21 focused finance calculators",
+      "22 focused finance calculators",
       "Fast browser-based calculations",
       "Budgeting, debt, tax, and investment coverage",
       "Cross-links between related money decisions",

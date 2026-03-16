@@ -3,7 +3,7 @@
 ## High-Potential, Low-Competition Calculator Keywords
 
 ### SaaS/Business
-- SaaS Churn Rate Calculator: High value for B2B users.
+- [DONE] SaaS Churn Rate Calculator: High value for B2B users.
 - SaaS Payback Period Calculator: High value for business owners.
 - Freelance Hourly Rate Calculator: Helps new freelancers calculate taxes + overhead.
 - Remote Work Tax Savings Calculator: Calculate savings on commuting vs. home office costs.
