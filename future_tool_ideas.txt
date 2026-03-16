@@ -19,7 +19,7 @@
 ### Developer
 - Cloudflare Workers Cost Calculator: Specific to developers using edge computing.
 - [DONE] AI Token to Word Converter: Great for developers/writers using LLMs.
-- LLM Training Cost Estimator: For startups estimating GPU hours.
+- [DONE] LLM Training Cost Estimator: For startups estimating GPU hours.
 
 ### Health & Biohacking
 - Biological Age Calculator (Biohacking Edition): Uses inputs like resting heart rate, sleep quality.

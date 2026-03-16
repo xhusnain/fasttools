@@ -14,6 +14,7 @@ import {
   Monitor,
   Palette,
   Sparkles,
+  Cpu,
 } from "lucide-react"
 
 const devTools = [
@@ -142,6 +143,13 @@ const devTools = [
       "Write Markdown and preview rendered output live for documentation workflows.",
     href: "/dev-tools/markdown-previewer",
     icon: FileCode,
+  },
+  {
+    title: "LLM Training Cost Estimator",
+    description:
+      "Estimate GPU hours, training time & cloud costs for training large language models across providers.",
+    href: "/dev-tools/llm-training-cost",
+    icon: Cpu,
   },
 ]
 
