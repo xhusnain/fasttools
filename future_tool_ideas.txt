@@ -11,7 +11,7 @@
 
 ## TOP 10 — Build Next (Ranked by Traffic + Revenue Potential)
 
-### 1. Home Affordability Calculator
+### 1. [DONE] Home Affordability Calculator
 - **Category**: finance-tools
 - **Why**: "How much house can I afford" = one of the highest-searched finance queries. Bankrate, NerdWallet, Zillow all have this. CPC: $20-45 for mortgage keywords.
 - **Features**: Income, debts, down payment, interest rate, taxes, insurance → max home price, monthly payment, DTI ratio.

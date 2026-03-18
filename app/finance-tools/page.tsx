@@ -216,6 +216,13 @@ const financeTools = [
     icon: Heart,
     href: "/finance-tools/zakat-calculator",
   },
+  {
+    title: "Home Affordability Calculator",
+    description:
+      "Find out how much house you can afford based on income, debts, down payment & mortgage rate.",
+    icon: Home,
+    href: "/finance-tools/home-affordability-calculator",
+  },
 ]
 
 export const metadata: Metadata = createMetadata({
@@ -249,7 +256,7 @@ export default function FinanceToolsPage() {
       "Use the results to plan budgets, pricing, or savings targets with confidence.",
     ],
     features: [
-      "26 focused finance calculators",
+      "27 focused finance calculators",
       "Fast browser-based calculations",
       "Budgeting, debt, tax, and investment coverage",
       "Cross-links between related money decisions",
