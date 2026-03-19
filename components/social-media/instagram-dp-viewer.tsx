@@ -146,10 +146,10 @@ export function InstagramDpViewer() {
               </div>
               <div className="text-center sm:text-left min-w-0 overflow-hidden">
                 <h2 className="text-xl sm:text-2xl font-bold text-foreground break-words">
-                  InstaDp Profile Picture Viewer & Downloader
+                  Instagram DP Viewer
                 </h2>
                 <p className="text-muted-foreground text-sm sm:text-base break-words">
-                  Free IG DP viewer HD — zoom and download Instagram profile pictures in full size
+                  View and download Instagram profile pictures in HD quality
                 </p>
               </div>
             </div>
@@ -197,6 +197,9 @@ export function InstagramDpViewer() {
                   <AlertCircle className="h-4 w-4" />
                   <span className="text-sm font-medium">{error}</span>
                 </div>
+                <p className="text-xs text-muted-foreground mt-2">
+                  💡 Alternative: Right-click on the profile picture and select "Save image as"
+                </p>
               </div>
             )}
           </div>
@@ -298,7 +301,7 @@ export function InstagramDpViewer() {
                     </tr>
                     <tr className="bg-background">
                       <td className="px-4 py-2 text-muted-foreground">Account Type</td>
-                      <td className="px-4 py-2 font-bold text-foreground">{profileData.is_private ? 'Private' : 'Public'}</td>
+                      <td className="px-4 py-2 font-bold text-foreground">{profileData.is_private ? 'Private 🔒' : 'Public 🌍'}</td>
                     </tr>
                   </tbody>
                 </table>
@@ -346,6 +349,33 @@ export function InstagramDpViewer() {
                     </GButton>
                   )}
                 </div>
+
+                {/* Cross-Sell Honey Pot */}
+                <div className="mt-4 p-4 rounded-lg bg-green-50 dark:bg-green-900/10 border border-green-200 dark:border-green-800 animate-fade-in">
+                  <div className="flex items-center gap-2 mb-2">
+                    <span className="text-xl">🔥</span>
+                    <h4 className="font-bold text-green-700 dark:text-green-300 text-sm">Trending Tools</h4>
+                  </div>
+                  <p className="text-xs text-green-600 dark:text-green-400 mb-3">
+                    Found the profile? Now download their content!
+                  </p>
+                  <div className="grid grid-cols-1 gap-2">
+                    <a
+                      href="/social-media-tools/youtube-thumbnail"
+                      className="flex items-center justify-between p-2 rounded bg-white dark:bg-card border border-green-100 dark:border-green-800 hover:shadow-sm transition-shadow group"
+                    >
+                      <span className="text-xs font-medium text-foreground group-hover:text-primary transition-colors">🎬 YouTube Thumbnail Grabber</span>
+                      <span className="text-xs text-muted-foreground">→</span>
+                    </a>
+                    <a
+                      href="/social-media-tools/tiktok-engagement-calculator"
+                      className="flex items-center justify-between p-2 rounded bg-white dark:bg-card border border-green-100 dark:border-green-800 hover:shadow-sm transition-shadow group"
+                    >
+                      <span className="text-xs font-medium text-foreground group-hover:text-primary transition-colors">📊 TikTok Engagement Calculator</span>
+                      <span className="text-xs text-muted-foreground">→</span>
+                    </a>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
@@ -355,11 +385,11 @@ export function InstagramDpViewer() {
       <GCard className="p-4 sm:p-6 bg-card border border-border shadow-lg">
         <h3 className="text-base sm:text-lg font-semibold text-foreground mb-3 sm:mb-4">How to Use</h3>
         <ul className="space-y-2 sm:space-y-3 text-sm sm:text-base text-muted-foreground leading-relaxed">
-          <li>Enter an Instagram username (with or without @) or paste a profile link</li>
-          <li>Examples: <code className="text-xs bg-muted px-1 rounded">test</code> or <code className="text-xs bg-muted px-1 rounded">https://www.instagram.com/test</code></li>
-          <li>Click &quot;View Profile Picture&quot; to load the image</li>
-          <li>Download the high-quality version if needed</li>
-          <li>Only works for public Instagram accounts</li>
+          <li>• Enter an Instagram username (with or without @) or paste a profile link</li>
+          <li>• Examples: <code className="text-xs bg-muted px-1 rounded">test</code> or <code className="text-xs bg-muted px-1 rounded">https://www.instagram.com/test</code></li>
+          <li>• Click "View Profile Picture" to load the image</li>
+          <li>• Download the high-quality version if needed</li>
+          <li>• Only works for public Instagram accounts</li>
         </ul>
       </GCard>
     </div>

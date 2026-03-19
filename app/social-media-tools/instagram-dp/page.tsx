@@ -12,16 +12,16 @@ const InstagramDpViewer = dynamic(
 const toolConfig = createToolConfig({
   toolName: "Instagram DP Viewer",
   description:
-    "View and download Instagram profile pictures in full size HD by username — free InstaDp profile picture downloader and insta DP zoomer.",
-  metaTitle: "InstaDp — Instagram DP Viewer & Profile Picture Downloader Full Size HD (2026)",
+    "View and download Instagram profile pictures in full size by username with a fast browser workflow.",
+  metaTitle: "Instagram DP Viewer & Downloader (Full Size HD)",
   metaDescription:
-    "Free InstaDp viewer to download Instagram profile pictures in full size HD. IG DP viewer HD, insta DP zoomer, and insta zoom DP tool — view, zoom, and save any profile picture by username. No login required.",
+    "View Instagram profile pictures in full size and download by username. Insta DP viewer with zoom-friendly output and no login required.",
   path: "/social-media-tools/instagram-dp",
 
   header: {
-    title: "InstaDp — Instagram Profile Picture Downloader & DP Viewer HD",
+    title: "Instagram DP Viewer & Profile Picture Downloader",
     description:
-      "Free InstaDp tool to view and download Instagram profile pictures in full size HD. Insta DP zoomer and IG DP viewer — zoom, preview, and save any profile picture by username. No login required.",
+      "Enter a username to view full-size profile-picture output and download if available.",
     titleSize: "medium",
     descriptionSize: "small",
   },
@@ -34,7 +34,7 @@ const toolConfig = createToolConfig({
   schemaOptions: {
     applicationCategory: "UtilitiesApplication",
     description:
-      "InstaDp — Instagram profile picture downloader and DP viewer HD. View and download full-size IG profile pictures by username.",
+      "Instagram DP viewer and downloader for full-size profile picture lookup by username.",
     featureList: [
       "Username-based DP lookup",
       "Full-size profile-picture view",
@@ -46,19 +46,8 @@ const toolConfig = createToolConfig({
   },
 
   content: {
-    definition:
-      "An InstaDp viewer (Instagram DP Viewer) is a free online tool that lets you view and download Instagram profile pictures in full size HD without logging in. Also known as an IG DP viewer or insta DP zoomer, it enlarges profile photos so you can see and save them at full resolution.",
-    quickAnswer:
-      "InstaDp lets you see any Instagram profile picture in full size by entering a username. This free IG DP viewer HD tool supports zoom, full-size downloads, and works without login on any device.",
-    keyTakeaways: [
-      "View any Instagram profile picture in full size HD by entering a username",
-      "InstaDp profile picture downloader with SD and HD quality options",
-      "Free IG DP viewer — no Instagram login or account required",
-      "Insta DP zoomer works on desktop and mobile browsers",
-      "Insta zoom DP tool that does not access private posts, stories, or reels",
-    ],
     overview:
-      "View and download any Instagram profile picture in full size with this free InstaDp viewer and profile picture downloader. Instagram shows profile pictures as tiny circular avatars — this IG DP viewer HD tool enlarges them to full resolution so you can zoom in and see the complete image. Use the insta DP zoomer to enter any public username and instantly view their profile picture at full size. Whether you need an insta zoom DP tool for checking creator branding, verifying accounts, or saving reference images — this InstaDp full size viewer handles it all. No Instagram login, no app download — works in any browser on mobile and desktop.",
+      "Instagram DP Viewer helps you open profile pictures in larger size than the in-app avatar preview. Use it to check profile branding, review creator assets, and save reference copies in your workflow.",
 
     howToSteps: [
       "Enter an Instagram username (with or without @).",
@@ -68,11 +57,11 @@ const toolConfig = createToolConfig({
     ],
 
     features: [
-      "InstaDp profile picture lookup by username",
-      "Full-size HD profile-picture output (IG DP viewer HD)",
-      "Insta DP zoomer with zoom-friendly preview",
-      "Insta zoom DP with quick download action",
-      "InstaDp full size browser-based utility (desktop and mobile)",
+      "Insta DP lookup by username",
+      "Full-size profile-picture output",
+      "Zoom-friendly preview workflow",
+      "Quick download action",
+      "Browser-based utility (desktop and mobile)",
     ],
 
     useCases: [
@@ -85,9 +74,9 @@ const toolConfig = createToolConfig({
     aboutTool: (
       <div className="space-y-6 text-muted-foreground">
         <div>
-          <h3 className="text-lg font-semibold text-foreground mb-2">What Is InstaDp / Instagram DP Viewer?</h3>
+          <h3 className="text-lg font-semibold text-foreground mb-2">What Is an Instagram DP Viewer?</h3>
           <p>
-            InstaDp (short for Instagram Display Picture) refers to tools that let you view Instagram profile pictures in full size. An IG DP viewer HD opens the profile image at full resolution so it can be zoomed, inspected, or downloaded. Whether you call it an insta DP zoomer, insta zoom DP tool, or InstaDp full size viewer — they all serve the same purpose: enlarging and downloading Instagram profile photos.
+            DP means display picture (profile picture). An Instagram DP viewer opens the profile image in larger size so it can be inspected or downloaded for reference use.
           </p>
         </div>
 
@@ -99,9 +88,9 @@ const toolConfig = createToolConfig({
         </div>
 
         <div>
-          <h3 className="text-lg font-semibold text-foreground mb-2">Why Use an InstaDp Profile Picture Downloader?</h3>
+          <h3 className="text-lg font-semibold text-foreground mb-2">Why This Matters for SEO and Creator Workflows</h3>
           <p>
-            Users search for &quot;instadp instagram profile picture downloader&quot;, &quot;ig dp viewer hd&quot;, &quot;instadp full size&quot;, &quot;insta dp zoomer&quot;, and &quot;insta zoom dp&quot; to view profile pictures beyond Instagram&apos;s tiny avatar crop. This tool serves all those intents — enter a username, zoom to full size, and download in HD quality.
+            Most users search variants like "insta dp viewer", "profile picture downloader", or "view full size Instagram profile photo". This page is structured around those intents with direct input, fast output, and related long-tail variant pages.
           </p>
         </div>
       </div>
@@ -112,19 +101,14 @@ const toolConfig = createToolConfig({
 
     faqs: [
       {
-        question: "What is InstaDp?",
+        question: "What is Insta DP?",
         answer:
-          "InstaDp (Insta DP) stands for Instagram Display Picture. It refers to an Instagram profile photo, and InstaDp tools like this one let you view and download profile pictures in full size HD.",
+          "Insta DP refers to an Instagram display picture, meaning the account profile photo.",
       },
       {
         question: "How do I view an Instagram profile picture in full size?",
         answer:
-          "Enter the username in this InstaDp viewer, click View Profile Picture, and the IG DP viewer HD will display the full-size image. You can then download it in SD or HD quality.",
-      },
-      {
-        question: "What is an insta DP zoomer?",
-        answer:
-          "An insta DP zoomer (also called insta zoom DP) is a tool that zooms and enlarges Instagram profile pictures beyond the small circular avatar shown on Instagram. This InstaDp full size viewer does exactly that.",
+          "Enter the username in the viewer, run lookup, then open the preview and download if needed.",
       },
       {
         question: "Does this work for private accounts?",
@@ -145,15 +129,18 @@ const toolConfig = createToolConfig({
         answer: "No. This tool is designed for no-login browser usage.",
       },
       {
-        question: "Is this InstaDp Instagram profile picture downloader free?",
-        answer: "Yes. This IG DP viewer HD and profile picture downloader is completely free with no login required.",
+        question: "Is Instagram DP Viewer free?",
+        answer: "Yes. The tool is available as a free utility.",
       },
     ],
 
     relatedTools: [
-      { name: "YouTube Thumbnail Downloader", href: "/social-media-tools/youtube-thumbnail" },
-      { name: "YouTube Tags Extractor", href: "/social-media-tools/youtube-tags" },
-      { name: "Hashtag Generator", href: "/social-media-tools/hashtag-counter" },
+      { name: "Private Instagram DP Viewer", href: "/social-media-tools/instagram-dp/private-downloader" },
+      { name: "Instagram DP Viewer HD 1080p", href: "/social-media-tools/instagram-dp/hd-1080p" },
+      { name: "Insta Zoom Profile Picture Viewer", href: "/social-media-tools/instagram-dp/zoom-profile-picture" },
+      { name: "Anonymous Instagram DP Viewer", href: "/social-media-tools/instagram-dp/anonymous-viewer" },
+      { name: "Instagram DP Viewer for PC", href: "/social-media-tools/instagram-dp/pc-viewer" },
+      { name: "Instagram Downloader", href: "/social-media-tools/instagram-downloader" },
       { name: "All Social Media Tools", href: "/social-media-tools" },
     ],
   },

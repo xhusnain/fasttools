@@ -40,19 +40,17 @@ export const dpVariants: Record<string, DpVariantConfig> = {
   },
   "hd-1080p": {
     slug: "hd-1080p",
-    toolName: "IG DP Viewer HD — Instagram DP Viewer 1080p",
-    metaTitle: "IG DP Viewer HD — Instagram DP Viewer HD 1080p Full Size (2026)",
+    toolName: "Instagram DP Viewer HD 1080p",
+    metaTitle: "Instagram DP Viewer HD 1080p (Full Size)",
     metaDescription:
-      "Free IG DP viewer HD to view and download Instagram profile pictures in full size 1080p. InstaDp full size viewer with HD download — no login required.",
-    headerTitle: "IG DP Viewer HD — Instagram Profile Picture Full Size 1080p",
+      "View and download full-size Instagram profile pictures in HD quality when available.",
+    headerTitle: "Instagram DP Viewer HD 1080p",
     headerDescription:
-      "Free IG DP viewer HD and InstaDp full size tool. View and download Instagram profile pictures in full HD 1080p resolution.",
+      "Focused on full-size and high-quality profile-picture output.",
     overviewText:
-      "This IG DP viewer HD is optimized for full-size and HD-intent queries. Whether you search for instagram dp viewer hd, ig dp viewer hd, or instadp full size — this tool delivers full 1080p resolution profile picture viewing and downloads.",
+      "This variant is optimized for full-size and HD-intent queries such as 1080p DP viewer and full-resolution profile photo lookup.",
     keywords: [
-      "ig dp viewer hd",
       "instagram dp viewer hd",
-      "instadp full size",
       "instagram dp 1080p",
       "full size instagram profile picture",
       "instagram profile picture full resolution",
@@ -78,18 +76,16 @@ export const dpVariants: Record<string, DpVariantConfig> = {
   },
   "zoom-profile-picture": {
     slug: "zoom-profile-picture",
-    toolName: "Insta DP Zoomer — Insta Zoom DP Viewer",
-    metaTitle: "Insta DP Zoomer — Insta Zoom DP & Profile Picture Viewer (2026)",
+    toolName: "Insta Zoom Profile Picture Viewer",
+    metaTitle: "Insta Zoom Profile Picture Viewer (Full Size)",
     metaDescription:
-      "Free insta DP zoomer to zoom and view Instagram profile pictures in full size. Insta zoom DP tool — enlarge any profile photo and download in HD. No login required.",
-    headerTitle: "Insta DP Zoomer — Zoom & View Instagram Profile Pictures",
+      "Zoom Instagram profile pictures and inspect full-size profile photo detail in-browser.",
+    headerTitle: "Insta Zoom Profile Picture Viewer",
     headerDescription:
-      "Free insta zoom DP tool to enlarge and view Instagram profile pictures in full size. Insta DP zoomer with HD download support.",
+      "Built for users searching Instagram DP zoom and enlarge workflows.",
     overviewText:
-      "This insta DP zoomer is built for users who want to zoom Instagram profile pictures and view them in full size. Whether you search for insta dp zoomer, insta zoom dp, or zoom profile picture — this tool lets you enlarge any Instagram profile photo, inspect the details, and download in HD quality.",
+      "This variant targets zoom-focused queries and provides a profile-picture inspection path for detail checks and larger-screen review.",
     keywords: [
-      "insta dp zoomer",
-      "insta zoom dp",
       "insta zoom profile picture",
       "instagram dp zoom",
       "zoom instagram profile picture",
