@@ -1,4 +1,4 @@
-import { permanentRedirects } from "./lib/redirects.ts"
+import { permanentRedirects } from "./lib/redirects.mjs"
 
 const nextConfig = {
   output: 'standalone',
