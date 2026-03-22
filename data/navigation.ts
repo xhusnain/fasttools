@@ -58,8 +58,6 @@ import {
     Languages,
     Text,
     Regex,
-    Gift,
-    Drumstick,
     PartyPopper,
     Tv,
     Key,
@@ -283,13 +281,6 @@ export const navigationConfig: MegaMenuSection[] = [
                     { title: "Birthday Countdown", href: "/fun-tools/birthday-countdown", icon: Calendar },
                     { title: "Future Age", href: "/fun-tools/future-age", icon: Clock },
                     { title: "Anniversary Calc", href: "/fun-tools/anniversary", icon: Heart },
-                ]
-            },
-            {
-                title: "Festivals",
-                items: [
-                    { title: "Christmas Font", href: "/festivals/christmas-font-converter", icon: Gift },
-                    { title: "Turkey Defrost", href: "/festivals/turkey-defrost-calculator", icon: Drumstick },
                 ]
             },
             {

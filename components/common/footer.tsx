@@ -15,7 +15,6 @@ export function Footer() {
     { name: "SEO Tools", href: "/seo-tools" },
     { name: "Social Media", href: "/social-media-tools" },
     { name: "Fun Tools", href: "/fun-tools" },
-    { name: "Festivals", href: "/festivals" },
   ]
 
   return (

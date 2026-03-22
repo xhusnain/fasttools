@@ -235,31 +235,12 @@ export const categoryPages = [
         changeFrequency: "monthly" as const,
         priority: 0.98,
     },
-
-    {
-        url: "https://www.fasttools.store/festivals",
-        lastModified: new Date('2025-12-19'),
-        changeFrequency: "weekly" as const,
-        priority: 0.9,
-    },
 ]
 
 
 
 
 export const toolPages = [
-    {
-        url: "https://www.fasttools.store/festivals/christmas-font-converter",
-        lastModified: new Date('2025-12-19'),
-        changeFrequency: "monthly" as const,
-        priority: 0.9,
-    },
-    {
-        url: "https://www.fasttools.store/festivals/turkey-defrost-calculator",
-        lastModified: new Date('2025-12-19'),
-        changeFrequency: "monthly" as const,
-        priority: 0.9,
-    },
     {
         url: "https://www.fasttools.store/calculator/conversion-calculator",
         lastModified: new Date('2026-02-21'),

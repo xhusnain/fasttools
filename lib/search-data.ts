@@ -53,7 +53,6 @@ export const searchItems: SearchItem[] = [
   { name: "Inflation Calculator", description: "Calculate purchasing power and inflation rates", path: "/finance-tools/inflation-calculator", category: "Calculator" },
   { name: "Amortization Calculator", description: "Professional amortization calculator for loan payment analysis", path: "/finance-tools/amortization-calculator", category: "Calculator" },
   { name: "Payment Calculator", description: "Professional payment calculator for loan analysis", path: "/finance-tools/payment-calculator", category: "Calculator" },
-  { name: "Turkey Defrost Calculator", description: "Calculate exactly when to start defrosting your turkey", path: "/festivals/turkey-defrost-calculator", category: "Calculator" },
 
   // AI Tools
   { name: "AI QR Code Generator", description: "Create stunning, branded QR codes with AI-powered customization", path: "/ai-tools/qr-generator", category: "AI" },
@@ -63,7 +62,6 @@ export const searchItems: SearchItem[] = [
   { name: "AI Text Detector", description: "Free AI text detector to check if content was written by ChatGPT, Claude, Gemini, or AI. Analyzes burstiness, vocabulary, predictability patterns", path: "/ai-tools/ai-text-detector", category: "AI" },
   { name: "AI Code Detector", description: "Free AI code detector to check if code was written by GitHub Copilot, ChatGPT, Claude, or AI. Analyzes complexity, naming, error handling patterns", path: "/ai-tools/ai-code-detector", category: "AI" },
   { name: "AI Readability Analyzer", description: "Free readability analyzer with 7 algorithms: Flesch-Kincaid, Gunning Fog, Coleman-Liau, SMOG, ARI, Dale-Chall. Grade level, audience match, reading time", path: "/ai-tools/ai-readability-analyzer", category: "AI" },
-  { name: "Christmas Font Converter", description: "Convert text into aesthetic Christmas fonts with emojis", path: "/festivals/christmas-font-converter", category: "AI" },
 
   // Converter Tools
   { name: "Currency Converter", description: "Real-time currency conversion for 150+ world currencies", path: "/converters/currency", category: "Converter" },

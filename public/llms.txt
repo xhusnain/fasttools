@@ -30,7 +30,6 @@ AI-powered content generation tools including QR code generators, caption genera
 - https://www.fasttools.store/ai-tools/caption-generator - AI-powered social media caption generator.
 - https://www.fasttools.store/ai-tools/lyrics-generator - Generate song lyrics in 40+ languages.
 - https://www.fasttools.store/ai-tools/pet-names - Generate 100+ AI-powered pet names.
-- https://www.fasttools.store/festivals/christmas-font-converter - Convert text into aesthetic Christmas fonts with emojis.
 
 ### PDF Tools
 https://www.fasttools.store/pdf-tools
@@ -54,7 +53,6 @@ Extensive collection of financial, health, and scientific calculators including 
 - https://www.fasttools.store/calculator/biological-age-calculator - Free biological age calculator. Estimate true body age from resting heart rate, sleep, exercise, stress, diet, BMI & habits. Personalised recommendations. Free.
 - https://www.fasttools.store/calculator/ip-subnet-calculator - Advanced IP Subnet Calculator for network engineers and students. Supports IPv4, IPv6, CIDR notation, and VLSM calculations. Features include visual subnetting diagrams, real-world examples (AWS, Docker, Home Network), and comprehensive guides on network design. Optimized with HowTo and SoftwareApplication schema for enhanced search visibility.
 - https://www.fasttools.store/calculator/date-difference - Calculate days, months, and years between two dates with business day options, leap year handling, and multiple date formats. Comprehensive guide with troubleshooting tips and best practices.
-- https://www.fasttools.store/festivals/turkey-defrost-calculator - Calculate exactly when to start defrosting your turkey (Fridge vs Water).
 
 ### Converter Tools
 https://www.fasttools.store/converters
@@ -268,9 +266,6 @@ Context: FastTools provides free, fast, and accurate online tools that work on a
 - https://www.fasttools.store/dev-tools/llm-training-cost
 - https://www.fasttools.store/dev-tools/cloudflare-workers-cost
 - https://www.fasttools.store/faq
-- https://www.fasttools.store/festivals
-- https://www.fasttools.store/festivals/christmas-font-converter
-- https://www.fasttools.store/festivals/turkey-defrost-calculator
 - https://www.fasttools.store/finance-tools
 - https://www.fasttools.store/finance-tools/amortization-calculator
 - https://www.fasttools.store/finance-tools/bill-splitter

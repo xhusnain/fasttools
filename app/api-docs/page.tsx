@@ -32,11 +32,11 @@ export const metadata: Metadata = createMetadata({
 
 const apis = [
   {
-    id: "currency-api",
-    name: "Currency Conversion API",
-    description: "Real-time currency exchange rates and conversion service. Access up-to-date information for over 150 currencies worldwide.",
+    id: "currency",
+    name: "Currency Converter",
+    description: "Real-time currency exchange rates and conversion. Access up-to-date rates for over 150 currencies worldwide.",
     icon: Globe,
-    href: "/converters/currency-api",
+    href: "/converters/currency",
     version: "v1",
     status: "active",
   },

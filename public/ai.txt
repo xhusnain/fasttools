@@ -30,7 +30,6 @@ Allow: /terms
 Allow: /cookie-preferences
 
 Allow: /my-info
-Allow: /festivals/
 
 # Disallowed Paths
 Disallow: /api/
@@ -137,14 +136,6 @@ Description: Free open graph meta generator online. open graph tag generator for
 ## Text Similarity Checker
 URL: https://www.fasttools.store/seo-tools/text-similarity-checker
 Description: Free online text similarity checker using SimHash algorithm. Compare two texts and get instant similarity percentage with fingerprint analysis. Best plagiarism detection.
-
-## Christmas Font Converter
-URL: https://www.fasttools.store/festivals/christmas-font-converter
-Description: Convert your text into aesthetic Christmas fonts with emojis. Copy and paste festive text styles for social media bios.
-
-## Turkey Defrost Calculator
-URL: https://www.fasttools.store/festivals/turkey-defrost-calculator
-Description: Calculate exactly when to start defrosting your turkey (Fridge vs Water). Get a calendar reminder.
 
 ## Antigravity Agent Skill Builder
 URL: https://www.fasttools.store/dev-tools/antigravity-skill-builder
@@ -348,9 +339,6 @@ Description: Free YAML to JSON converter. Swagger YAML to JSON, OpenAPI YAML to 
 - https://www.fasttools.store/dev-tools/llm-training-cost
 - https://www.fasttools.store/dev-tools/cloudflare-workers-cost
 - https://www.fasttools.store/faq
-- https://www.fasttools.store/festivals
-- https://www.fasttools.store/festivals/christmas-font-converter
-- https://www.fasttools.store/festivals/turkey-defrost-calculator
 - https://www.fasttools.store/finance-tools
 - https://www.fasttools.store/finance-tools/amortization-calculator
 - https://www.fasttools.store/finance-tools/bill-splitter

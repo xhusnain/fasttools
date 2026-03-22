@@ -650,16 +650,4 @@ export const toolSchemas: Record<string, ToolSchema> = {
             text: { type: "textarea", label: "Post Text", required: true },
         },
     },
-    "/festivals/turkey-defrost-calculator": {
-        interactionMode: "button-click",
-        inputSchema: {
-            weight: { type: "number", label: "Turkey Weight (lbs)", required: true },
-        },
-    },
-    "/festivals/christmas-font-converter": {
-        interactionMode: "realtime",
-        inputSchema: {
-            text: { type: "textarea", label: "Input Text", required: true },
-        },
-    },
 }
