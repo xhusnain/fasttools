@@ -204,20 +204,19 @@ export function YoutubeChannelNameGenerator() {
                 )}
             </GButton>
 
-            {/* Tutorial Video Link */}
             <Link
-                href="/tutorials/youtube-channel-name-guide"
+                href="/social-media-tools/channel-checker"
                 className="flex items-center gap-4 p-4 bg-gradient-to-r from-primary/10 to-primary/5 border border-primary/20 rounded-xl hover:border-primary/40 transition-all group"
             >
-                <div className="flex items-center justify-center h-12 w-12 rounded-full bg-[#FF0000]/10 group-hover:bg-[#FF0000]/20 transition-colors">
-                    <Play className="h-5 w-5 text-[#FF0000]" />
+                <div className="flex items-center justify-center h-12 w-12 rounded-full bg-primary/10 group-hover:bg-primary/20 transition-colors">
+                    <Play className="h-5 w-5 text-primary" />
                 </div>
                 <div className="flex-1">
                     <h4 className="font-semibold text-foreground group-hover:text-primary transition-colors">
-                        Watch: How to Choose the Perfect Channel Name
+                        Check If Your Channel Name Is Available
                     </h4>
                     <p className="text-sm text-muted-foreground">
-                        Learn expert naming strategies in our 8-minute video tutorial
+                        Verify your chosen name and @handle before creating your channel
                     </p>
                 </div>
             </Link>

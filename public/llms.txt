@@ -1,11 +1,11 @@
 # FastTools - Free Online Tools Platform
 # llms.txt - Guide for AI Crawlers and Language Models
 
-This file helps AI crawlers, language models, and summarizers discover and understand the most valuable content on FastTools, a comprehensive platform offering 1000+ free online tools.
+This file helps AI crawlers, language models, and summarizers discover and understand the most valuable content on FastTools, a comprehensive platform offering all free online tools.
 
 ## Brand Summary
 
-FastTools is a free online tools platform providing 1000+ tools with no registration required. All tools are fast, accurate, and work on all devices (PC, Mac, iPhone, Android). The platform is built with Next.js 15, React 19, and TypeScript, providing a modern, responsive user experience with comprehensive SEO optimization.
+FastTools is a free online tools platform providing all tools with no registration required. All tools are fast, accurate, and work on all devices (PC, Mac, iPhone, Android). The platform is built with Next.js 15, React 19, and TypeScript, providing a modern, responsive user experience with comprehensive SEO optimization.
 
 ## Key Expertise Areas
 

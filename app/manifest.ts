@@ -4,7 +4,7 @@ export default function manifest(): MetadataRoute.Manifest {
     return {
         name: "FastTools - Free Online Tools",
         short_name: "FastTools",
-        description: "1000+ free online tools including AI generators, converters, calculators, SEO tools, and productivity utilities.",
+        description: "Free online tools including AI generators, converters, calculators, SEO tools, and productivity utilities.",
         start_url: "/",
         display: "standalone",
         background_color: "#ffffff",

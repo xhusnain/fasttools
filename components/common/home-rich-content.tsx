@@ -14,7 +14,7 @@ export function HomeRichContent() {
                             </h2>
                             <div className="prose dark:prose-invert max-w-none text-muted-foreground">
                                 <p>
-                                    FastTools is the first platform where <strong className="text-foreground">AI agents can use every tool autonomously</strong>. Powered by the Web Model Context Protocol (WebMCP), AI agents in Chrome 146+ can discover all 170+ tools, fill forms, trigger calculations, and read structured results — all without human intervention.
+                                    FastTools is the first platform where <strong className="text-foreground">AI agents can use every tool autonomously</strong>. Powered by the Web Model Context Protocol (WebMCP), AI agents in Chrome 146+ can discover all all tools, fill forms, trigger calculations, and read structured results — all without human intervention.
                                 </p>
                                 <h3 className="text-xl font-semibold text-foreground mt-6 mb-3">How It Works: 4-Step Agent Workflow</h3>
                                 <p>
@@ -38,7 +38,7 @@ export function HomeRichContent() {
                                         </div>
                                         <div>
                                             <h4 className="font-semibold text-foreground mb-1">Full Tool Discovery API</h4>
-                                            <p className="text-sm text-muted-foreground">AI agents discover all 170+ tools from a single endpoint with input schemas, interaction modes, and categories — before visiting any page.</p>
+                                            <p className="text-sm text-muted-foreground">AI agents discover all all tools from a single endpoint with input schemas, interaction modes, and categories — before visiting any page.</p>
                                         </div>
                                     </div>
 

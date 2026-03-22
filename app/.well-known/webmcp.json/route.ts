@@ -9,7 +9,7 @@ export async function GET() {
         {
             name: "FastTools",
             description:
-                "170+ free online tools: calculators, converters, crypto, PDF, developer tools, and more.",
+                "Free online tools: calculators, converters, crypto, PDF, developer tools, and more.",
             provider: {
                 name: "FastTools",
                 url: "https://www.fasttools.store",

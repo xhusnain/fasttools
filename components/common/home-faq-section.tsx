@@ -32,7 +32,7 @@ const faqs: FAQ[] = [
     {
         number: "06",
         question: "What developer tools can help with coding and web development?",
-        answer: "Our developer tools include HTML beautifier for code formatting, JSON formatter for data validation, regex tester for pattern matching, JWT decoder for token analysis, base64 encoder/decoder for data encoding, and 1000+ free color palettes with HEX codes for design. These tools help developers write better code, debug more effectively, and streamline their development workflow."
+        answer: "Our developer tools include HTML beautifier for code formatting, JSON formatter for data validation, regex tester for pattern matching, JWT decoder for token analysis, base64 encoder/decoder for data encoding, and a color palette generator with HEX codes for design. These tools help developers write better code, debug more effectively, and streamline their development workflow."
     },
     {
         number: "07",
@@ -63,7 +63,7 @@ export function HomeFAQSection() {
                 <div className="mb-8 md:mb-12">
                     <GHeader
                         title="FAQ"
-                        description="Find quick answers to common questions about FastTools. Get instant clarity on features, pricing, security, and how to make the most of our 1000+ free online tools. Everything you need to know in one place."
+                        description="Find quick answers to common questions about FastTools. Get instant clarity on features, pricing, security, and how to make the most of our all our free online tools. Everything you need to know in one place."
                         titleSize="large"
                         descriptionSize="medium"
                         color="green"

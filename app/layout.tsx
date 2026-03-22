@@ -23,10 +23,10 @@ export const viewport = globalViewport
 export const metadata: Metadata = {
     metadataBase: new URL("https://www.fasttools.store"),
     title: {
-        default: "FastTools - 170+ Free Online Tools | Calculators, Converters & Developer Tools",
+        default: "FastTools - Free Online Tools | Calculators, Converters & Developer Tools",
         template: "%s",
     },
-    description: "170+ free online tools: calculators, converters, developer tools, SEO tools, image tools, PDF tools & more. No signup required, 100% free, secure local processing.",
+    description: "Free online tools: calculators, converters, developer tools, SEO tools, image tools, PDF tools & more. No signup required, 100% free, secure local processing.",
     authors: [{ name: "FastTools Team", url: "https://www.fasttools.store" }],
     robots: {
         index: true,
@@ -60,7 +60,7 @@ export default function RootLayout({
         name: "FastTools",
         alternateName: ["fasttools", "fast tools", "online tools"],
         url: "https://www.fasttools.store",
-        description: "FastTools is a free online tools platform. 170+ tools: calculators, converters, crypto, PDF, developer tools — all free, no signup required.",
+        description: "FastTools is a free online tools platform. Calculators, converters, crypto, PDF, developer tools — all free, no signup required.",
         foundingDate: "2024-01-01",
         sameAs: [
             "https://x.com/ZamanIsmail7",

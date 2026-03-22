@@ -16,7 +16,7 @@ import { createMetadata } from "@/lib/metadata-base"
 
 export const metadata: Metadata = createMetadata({
   title: "About Us",
-  description: "Discover FastTools, the comprehensive free online tools platform with 1000+ AI, converter, calculator, SEO and productivity utilities.",
+  description: "Discover FastTools, the comprehensive free online tools platform with all AI, converter, calculator, SEO and productivity utilities.",
   path: "/about",
   breadcrumbs: [
     { label: "About", href: "/about" }
@@ -28,13 +28,13 @@ export default function AboutPage() {
     "@context": "https://schema.org",
     "@type": "AboutPage",
     name: "About FastTools - Leading Free Online Tools Platform",
-    description: "Discover FastTools, the world's most comprehensive free online tools platform. Access 1000+ professional tools including AI generators, converters, calculators, SEO tools, and productivity utilities.",
+    description: "Discover FastTools, a free online tools platform. Access all professional tools including AI generators, converters, calculators, SEO tools, and productivity utilities.",
     url: "https://www.fasttools.store/about",
     mainEntity: {
       "@type": "Organization",
       name: "FastTools",
       alternateName: "www.fasttools.store",
-      description: "FastTools is the world's leading free online tools platform, offering 1000+ professional digital tools including AI generators, converters, calculators, SEO tools, and productivity utilities. Trusted by millions of users worldwide.",
+      description: "FastTools is a free online tools platform offering all digital tools including AI generators, converters, calculators, SEO tools, and productivity utilities.",
       url: "https://www.fasttools.store",
       foundingDate: "2024",
       contactPoint: {
@@ -149,7 +149,7 @@ export default function AboutPage() {
                   </div>
                   <h3 className="text-lg md:text-xl font-semibold text-heading-accent mb-2">All in One Place</h3>
                   <p className="text-sm md:text-base text-foreground leading-relaxed">
-                    Why waste hours searching across dozens of websites? We've consolidated 1000+ essential tools into one unified platform. Calculators, converters, generators, and more - all accessible instantly.
+                    Why waste hours searching across dozens of websites? We've consolidated essential tools into one unified platform. Calculators, converters, generators, and more - all accessible instantly.
                   </p>
                 </div>
 
@@ -212,7 +212,7 @@ export default function AboutPage() {
                 <h3 className="text-xl md:text-2xl font-bold text-heading-accent mt-8 mb-4">How FastTools Serves Millions Across 190+ Countries</h3>
 
                 <p>
-                  From its founding in, FastTools has grown rapidly to serve millions of users across 190+ countries. This global reach reflects universal need for reliable, accessible productivity tools. A student in India calculating GPA needs the same accurate formula as a university applicant in the United States. A freelancer in Brazil converting currency needs the same real-time exchange rates as an international trader in Singapore. FastTools delivers this consistency.
+                  Since its founding, FastTools has grown to serve users across many countries. The platform reflects a universal need for reliable, accessible productivity tools — whether it's a student calculating GPA, a freelancer converting currency, or a developer debugging JSON. FastTools delivers consistent, free tools for everyone.
                 </p>
 
                 <p>
@@ -230,7 +230,7 @@ export default function AboutPage() {
                 </p>
 
                 <p className="text-lg md:text-xl font-semibold text-foreground mt-8">
-                  Join millions of users worldwide who have made FastTools their trusted partner for digital productivity. Explore our tools, and experience the difference that genuine, reliable, completely free online tools can make in your daily work and life.
+                  Join thousands of daily users who rely on FastTools for digital productivity. Explore our tools and experience what genuine, reliable, completely free online tools can do for your daily work.
                 </p>
               </div>
             </div>
@@ -246,7 +246,7 @@ export default function AboutPage() {
                   <h2 className="text-xl md:text-2xl font-bold text-heading-accent">Vision</h2>
                 </div>
                 <p className="text-sm md:text-base text-foreground leading-relaxed">
-                  To lead the way in digital productivity by delivering innovative, sustainable, and accessible solutions that empower millions of users worldwide.
+                  To deliver innovative, sustainable, and accessible productivity tools that empower users worldwide.
                 </p>
               </div>
 
