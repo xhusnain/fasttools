@@ -335,6 +335,12 @@ export const toolPages = [
         priority: 0.85,
     },
     {
+        url: "https://www.fasttools.store/finance-tools/auto-loan-calculator",
+        lastModified: new Date('2026-03-22'),
+        changeFrequency: "weekly" as const,
+        priority: 0.95,
+    },
+    {
         url: "https://www.fasttools.store/finance-tools/tax-calculator",
         lastModified: new Date('2026-02-21'),
         changeFrequency: "monthly" as const,

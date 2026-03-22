@@ -21,6 +21,7 @@ import {
   Activity,
   Briefcase,
   Heart,
+  Car,
 } from "lucide-react"
 import { ToolPageLayout } from "@/components/common/tool-page-layout"
 import { Metadata } from "next"
@@ -89,6 +90,13 @@ const financeTools = [
       "Estimate monthly payments, total interest, and amortization for personal loans.",
     icon: DollarSign,
     href: "/finance-tools/loan-calculator",
+  },
+  {
+    title: "Auto Loan Calculator",
+    description:
+      "Calculate monthly car payments with trade-in, taxes, credit score rates, and term comparison.",
+    icon: Car,
+    href: "/finance-tools/auto-loan-calculator",
   },
   {
     title: "Mortgage Calculator",

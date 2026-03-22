@@ -33,6 +33,7 @@ import {
     Box,
     Crop,
     Eye,
+    Car,
     CreditCard,
     Percent,
     Receipt,
@@ -179,6 +180,7 @@ export const navigationConfig: MegaMenuSection[] = [
                 title: "Loans & Debt",
                 items: [
                     { title: "Loan Calculator", href: "/finance-tools/loan-calculator", icon: DollarSign },
+                    { title: "Auto Loan Calc", href: "/finance-tools/auto-loan-calculator", icon: Car },
                     { title: "Mortgage Calc", href: "/finance-tools/mortgage-calculator", icon: DollarSign },
                     { title: "Credit Card Payoff", href: "/finance-tools/credit-card-payoff", icon: CreditCard },
                     { title: "Amortization", href: "/finance-tools/amortization-calculator", icon: FileText },

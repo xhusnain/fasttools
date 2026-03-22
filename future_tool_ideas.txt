@@ -17,7 +17,7 @@
 - **Features**: Income, debts, down payment, interest rate, taxes, insurance → max home price, monthly payment, DTI ratio.
 - **Traffic**: Millions of monthly searches. Every homebuyer uses one.
 
-### 2. Auto Loan / Car Payment Calculator
+### 2. [DONE] Auto Loan / Car Payment Calculator
 - **Category**: finance-tools
 - **Why**: "Car payment calculator" has massive volume. Auto loan CPC: $15-35. Every car buyer searches this.
 - **Features**: Vehicle price, down payment, trade-in, interest rate, loan term → monthly payment, total interest, amortization.
@@ -87,3 +87,37 @@
 | 8 | Ovulation | $15-35 | 2M+ | High (volume + sticky) |
 | 9 | Net Worth | $20-40 | 300K+ | Medium-High |
 | 10 | Startup Runway | $15-30 | 50K+ | Medium (but highest intent) |
+
+---
+
+## IN QUEUE — Developer & Utility Tools (Added 2026-03-22)
+
+### 11. Cron Expression Generator
+- **Category**: developer-tools
+- **Why**: Extremely high dev search volume. "Cron expression generator" is searched by every backend developer. Sticky tool — users bookmark and return.
+- **Features**: Visual cron builder with drag/drop, human-readable output, next 5 run times preview, common presets, reverse parsing (paste cron → explain).
+- **Traffic**: 500K+ monthly dev searches. Low CPC but very high volume and repeat usage.
+
+### 12. Image Resizer ← BUILD NEXT
+- **Category**: image-tools
+- **Why**: Fills a major gap in our image tools lineup. "Resize image online" has massive search volume. Every content creator, marketer, and dev needs this.
+- **Features**: Custom dimensions (px/%), aspect ratio lock, social media presets (Instagram, Facebook, Twitter, LinkedIn), bulk resize, format conversion (JPG/PNG/WebP), drag-and-drop upload.
+- **Traffic**: 2M+ monthly searches. Very high repeat usage.
+
+### 13. AI Paraphraser / Rewriter
+- **Category**: ai-tools
+- **Why**: Trending AI tool with extremely sticky usage. Students, writers, marketers all use paraphrasers daily. "Paraphrasing tool" = massive volume.
+- **Features**: Multiple rewrite modes (formal, casual, creative, academic), tone adjustment, plagiarism-safe output, side-by-side comparison, word count tracking.
+- **Traffic**: 3M+ monthly searches. One of the highest-traffic AI tool categories.
+
+### 14. Schema Markup Generator (JSON-LD)
+- **Category**: seo-tools
+- **Why**: Strong SEO niche tool. Every webmaster and SEO professional needs structured data. "Schema markup generator" = high-intent traffic.
+- **Features**: Visual form builder for Article, Product, FAQ, HowTo, LocalBusiness, Event, Recipe schemas. Live JSON-LD preview, Google Rich Results validator link, copy-to-clipboard.
+- **Traffic**: 200K+ monthly searches. High CPC ($10-25) from SEO/marketing audience.
+
+### 15. DNS Lookup / SSL Checker
+- **Category**: web-tools
+- **Why**: High-traffic utility tools used by devs, sysadmins, and SEO professionals. "DNS lookup" and "SSL checker" have massive combined volume.
+- **Features**: DNS records (A, AAAA, MX, CNAME, TXT, NS), SSL certificate details (expiry, issuer, chain), WHOIS info, response time, propagation check.
+- **Traffic**: 1M+ monthly combined searches. Very high repeat usage from technical audience.
