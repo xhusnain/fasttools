@@ -75,13 +75,6 @@ const devTools = [
     icon: Globe,
   },
   {
-    title: "Agent Skill Builder",
-    description:
-      "Generate `SKILL.md` scaffolds for agent workflows and reusable coding tasks.",
-    href: "/dev-tools/antigravity-skill-builder",
-    icon: Sparkles,
-  },
-  {
     title: "Regex Tester",
     description:
       "Test regex patterns with match previews and iterative debugging support.",

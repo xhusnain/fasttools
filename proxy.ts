@@ -1,6 +1,8 @@
 import { NextRequest, NextResponse } from "next/server"
+import { noindexPaths } from "@/lib/noindex"
 
 const SEARCH_PLACEHOLDER = "{search_term_string}"
+const noindexSet = new Set(noindexPaths.map((p) => p.toLowerCase()))
 
 export function proxy(request: NextRequest) {
     const url = request.nextUrl.clone()
@@ -10,7 +12,13 @@ export function proxy(request: NextRequest) {
         return NextResponse.rewrite(url)
     }
 
-    return NextResponse.next()
+    const response = NextResponse.next()
+
+    if (noindexSet.has(url.pathname.toLowerCase())) {
+        response.headers.set("X-Robots-Tag", "noindex, nofollow")
+    }
+
+    return response
 }
 
 export const config = {

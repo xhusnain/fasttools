@@ -79,4 +79,9 @@ export const permanentRedirects = [
     destination: "/",
     permanent: true,
   },
+  {
+    source: "/dev-tools/antigravity-skill-builder",
+    destination: "/dev-tools",
+    permanent: true,
+  },
 ]

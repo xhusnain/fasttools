@@ -286,7 +286,6 @@ export const navigationConfig: MegaMenuSection[] = [
             {
                 title: "Featured",
                 items: [
-                    { title: "Agent Skill Builder", href: "/dev-tools/antigravity-skill-builder", icon: Zap },
                     { title: "ROAS Calculator", href: "/finance-tools/roas-calculator", icon: TrendingUp },
                     { title: "IP Subnet Calc", href: "/calculator/ip-subnet-calculator", icon: Network },
                 ]

@@ -1,6 +1,5 @@
 import type { Metadata } from "next"
 import dynamic from "next/dynamic"
-import Link from "next/link"
 import { ToolPageLayout } from "@/components/common/tool-page-layout"
 import { ToolLoader } from "@/components/common/tool-loader"
 import { createToolConfig } from "@/lib/create-tool-config"
@@ -206,7 +205,6 @@ const toolConfig = createToolConfig({
     ],
 
     relatedTools: [
-      { name: "Currency API", href: "/converters/currency-api" },
       { name: "Timezone Converter", href: "/converters/timezone" },
       { name: "File Size Converter", href: "/converters/file-size" },
       { name: "Finance Tools", href: "/finance-tools" },
@@ -224,24 +222,6 @@ export default function CurrencyConverterPage() {
           <div className="rounded-lg border border-border bg-card p-4 shadow sm:p-5">
             <CurrencyConverter />
 
-            <div className="mt-4 border-t border-border pt-4">
-              <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
-                <div>
-                  <h4 className="mb-1 text-sm font-semibold text-foreground">
-                    Need API Access?
-                  </h4>
-                  <p className="text-xs text-muted-foreground">
-                    Use our currency API page for developer integration docs.
-                  </p>
-                </div>
-                <Link
-                  href="/converters/currency-api"
-                  className="flex items-center justify-center gap-2 rounded-md bg-primary px-4 py-2 text-sm font-medium text-foreground hover:bg-primary"
-                >
-                  Get API Docs
-                </Link>
-              </div>
-            </div>
           </div>
 
           <Top10CurrenciesTable />

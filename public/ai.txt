@@ -137,10 +137,6 @@ Description: Free open graph meta generator online. open graph tag generator for
 URL: https://www.fasttools.store/seo-tools/text-similarity-checker
 Description: Free online text similarity checker using SimHash algorithm. Compare two texts and get instant similarity percentage with fingerprint analysis. Best plagiarism detection.
 
-## Antigravity Agent Skill Builder
-URL: https://www.fasttools.store/dev-tools/antigravity-skill-builder
-Description: Free AI tool to generate `SKILL.md` files for Google Antigravity agents. Converts natural language descriptions into valid YAML/Markdown protocols for the IDE. Features simplified creation flow, expert mode for "Chain of Thought" prompting, and a library of 30+ pre-built skills for React, Node.js, and Python.
-
 ## UUID Generator
 URL: https://www.fasttools.store/crypto-tools/uuid-generator
 Description: Professional UUID Generator supporting all standard versions (v1, v3, v4, v5, v6, v7). Specialized for developers with features like bulk generation, uppercase/lowercase toggle, and specific version algorithms (Random, Time-based, Namespace). Includes "Pro Tip" guides on using v7 for database primary keys to improve indexing performance. Secure client-side generation.
@@ -321,7 +317,6 @@ Description: Free YAML to JSON converter. Swagger YAML to JSON, OpenAPI YAML to 
 - https://www.fasttools.store/crypto-tools/hash-text
 - https://www.fasttools.store/crypto-tools/token-generator
 - https://www.fasttools.store/dev-tools
-- https://www.fasttools.store/dev-tools/antigravity-skill-builder
 - https://www.fasttools.store/dev-tools/color-palette
 - https://www.fasttools.store/dev-tools/hex-to-rgb
 - https://www.fasttools.store/dev-tools/html-beautifier
