@@ -1,4 +1,4 @@
-
+import { permanentRedirects } from "./lib/redirects.ts"
 
 const nextConfig = {
   output: 'standalone',
@@ -58,6 +58,10 @@ const nextConfig = {
         ],
       },
     ]
+  },
+
+  async redirects() {
+    return permanentRedirects
   },
 
   turbopack: {},

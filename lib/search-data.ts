@@ -93,7 +93,7 @@ export const searchItems: SearchItem[] = [
   { name: "Temperature Converter", description: "Convert between Celsius, Fahrenheit, Kelvin, and Rankine", path: "/converters/temperature", category: "Converter" },
   { name: "File Size Converter", description: "Convert between bytes, KB, MB, GB, TB", path: "/converters/file-size", category: "Converter" },
   { name: "Timezone Converter", description: "Convert time between different time zones worldwide", path: "/converters/timezone", category: "Converter" },
-  { name: "Currency API", description: "Free currency exchange API with real-time rates", path: "/converters/currency-api", category: "Converter" },
+  { name: "Currency Converter", description: "Convert between world currencies with real-time exchange rates", path: "/converters/currency", category: "Converter" },
 
   // Crypto Tools
   { name: "Crypto Tools", description: "Secure and free online crypto tools", path: "/crypto-tools", category: "Pages" },

@@ -77,13 +77,6 @@ export function Navbar() {
                     </NavigationMenuLink>
                 </NavigationMenuItem>
 
-                <NavigationMenuItem>
-                    <NavigationMenuLink asChild>
-                        <Link href="/blog" className={navigationMenuTriggerStyle()}>
-                            Blog
-                        </Link>
-                    </NavigationMenuLink>
-                </NavigationMenuItem>
             </NavigationMenuList>
         </NavigationMenu>
     )

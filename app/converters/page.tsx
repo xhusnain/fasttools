@@ -174,11 +174,11 @@ const converters = [
     href: "/converters/timezone",
   },
   {
-    title: "Currency API",
+    title: "Currency Converter",
     description:
-      "Access free currency-rate endpoints for development and integrations.",
+      "Convert between world currencies with real-time exchange rates.",
     icon: FileText,
-    href: "/converters/currency-api",
+    href: "/converters/currency",
   },
 ]
 

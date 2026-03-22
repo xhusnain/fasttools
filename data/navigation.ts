@@ -273,8 +273,6 @@ export const navigationConfig: MegaMenuSection[] = [
             {
                 title: "Pages",
                 items: [
-                    { title: "Blog", href: "/blog", icon: BookOpen },
-                    { title: "Guides", href: "/guides", icon: Sparkles },
                     { title: "Contact", href: "/contact", icon: Mail },
                     { title: "About", href: "/about", icon: Users },
                 ]

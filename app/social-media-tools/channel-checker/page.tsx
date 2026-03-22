@@ -13,9 +13,9 @@ const toolConfig = createToolConfig({
   toolName: "YouTube Handle Checker",
   description:
     "Check whether a YouTube handle and channel-name combination is available before launching a channel.",
-  metaTitle: "How to Check If YouTube Channel Name Is Available — YouTube Name Checker (2026)",
+  metaTitle: "YouTube Channel Name & Handle Checker — Free Availability Tool",
   metaDescription:
-    "Check if a YouTube channel name is available or taken. Free tool to check YouTube channel name availability and find available YouTube channel names. Verify @handles, custom URLs, and channel names instantly.",
+    "Instantly check if a YouTube channel name or @handle is available. No login needed. Free.",
   path: "/social-media-tools/channel-checker",
 
   header: {

@@ -770,14 +770,6 @@ export const categories = [
                 badge: "Time",
                 badgeColor: "bg-heading-accent/90",
             },
-            {
-                title: "Currency API",
-                description: "Free currency exchange API with real-time rates for developers",
-                href: "/converters/currency-api",
-                icon: Code,
-                badge: "API",
-                badgeColor: "bg-blue-500/90",
-            },
         ],
     },
     {

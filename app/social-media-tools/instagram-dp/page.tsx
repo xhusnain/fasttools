@@ -12,16 +12,16 @@ const InstagramDpViewer = dynamic(
 const toolConfig = createToolConfig({
   toolName: "Instagram DP Viewer",
   description:
-    "View and download Instagram profile pictures in full size by username with a fast browser workflow.",
-  metaTitle: "Instagram DP Viewer & Downloader (Full Size HD)",
+    "View Instagram profile pictures in full size by username with a fast browser workflow.",
+  metaTitle: "Instagram DP Viewer — Full Size HD Profile Picture (Free)",
   metaDescription:
-    "View Instagram profile pictures in full size and download by username. Insta DP viewer with zoom-friendly output and no login required.",
+    "View Instagram profile pictures in full size by username. Insta DP viewer with zoom-friendly output and no login required. Save images for reference.",
   path: "/social-media-tools/instagram-dp",
 
   header: {
-    title: "Instagram DP Viewer & Profile Picture Downloader",
+    title: "Instagram DP Viewer — View Full Size Profile Pictures",
     description:
-      "Enter a username to view full-size profile-picture output and download if available.",
+      "Enter a username to view full-size profile pictures. Save a copy for reference if needed.",
     titleSize: "medium",
     descriptionSize: "small",
   },
@@ -34,11 +34,11 @@ const toolConfig = createToolConfig({
   schemaOptions: {
     applicationCategory: "UtilitiesApplication",
     description:
-      "Instagram DP viewer and downloader for full-size profile picture lookup by username.",
+      "Instagram DP viewer for full-size profile picture lookup by username.",
     featureList: [
       "Username-based DP lookup",
       "Full-size profile-picture view",
-      "Download workflow",
+      "Save to device option",
       "Mobile and desktop browser support",
       "No-install utility",
     ],
@@ -53,14 +53,14 @@ const toolConfig = createToolConfig({
       "Enter an Instagram username (with or without @).",
       "Run lookup to load available profile-picture output.",
       "Open and inspect the preview in full size.",
-      "Download the image if you need a local copy.",
+      "Save the image if you need a local copy for reference.",
     ],
 
     features: [
       "Insta DP lookup by username",
       "Full-size profile-picture output",
       "Zoom-friendly preview workflow",
-      "Quick download action",
+      "Quick save action",
       "Browser-based utility (desktop and mobile)",
     ],
 
@@ -76,7 +76,7 @@ const toolConfig = createToolConfig({
         <div>
           <h3 className="text-lg font-semibold text-foreground mb-2">What Is an Instagram DP Viewer?</h3>
           <p>
-            DP means display picture (profile picture). An Instagram DP viewer opens the profile image in larger size so it can be inspected or downloaded for reference use.
+            DP means display picture (profile picture). An Instagram DP viewer opens the profile image in larger size so it can be inspected or saved for reference use.
           </p>
         </div>
 
@@ -90,7 +90,7 @@ const toolConfig = createToolConfig({
         <div>
           <h3 className="text-lg font-semibold text-foreground mb-2">Why This Matters for SEO and Creator Workflows</h3>
           <p>
-            Most users search variants like "insta dp viewer", "profile picture downloader", or "view full size Instagram profile photo". This page is structured around those intents with direct input, fast output, and related long-tail variant pages.
+            Most users search variants like "insta dp viewer", "view instagram profile picture", or "view full size Instagram profile photo". This page is structured around those intents with direct input, fast output, and related long-tail variant pages.
           </p>
         </div>
       </div>
@@ -108,7 +108,7 @@ const toolConfig = createToolConfig({
       {
         question: "How do I view an Instagram profile picture in full size?",
         answer:
-          "Enter the username in the viewer, run lookup, then open the preview and download if needed.",
+          "Enter the username in the viewer, run lookup, then open the preview and save if needed.",
       },
       {
         question: "Does this work for private accounts?",
@@ -135,12 +135,11 @@ const toolConfig = createToolConfig({
     ],
 
     relatedTools: [
-      { name: "Private Instagram DP Viewer", href: "/social-media-tools/instagram-dp/private-downloader" },
+      { name: "Private Instagram DP Viewer", href: "/social-media-tools/instagram-dp/private-account" },
       { name: "Instagram DP Viewer HD 1080p", href: "/social-media-tools/instagram-dp/hd-1080p" },
       { name: "Insta Zoom Profile Picture Viewer", href: "/social-media-tools/instagram-dp/zoom-profile-picture" },
       { name: "Anonymous Instagram DP Viewer", href: "/social-media-tools/instagram-dp/anonymous-viewer" },
       { name: "Instagram DP Viewer for PC", href: "/social-media-tools/instagram-dp/pc-viewer" },
-      { name: "Instagram Downloader", href: "/social-media-tools/instagram-downloader" },
       { name: "All Social Media Tools", href: "/social-media-tools" },
     ],
   },

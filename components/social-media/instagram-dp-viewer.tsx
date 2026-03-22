@@ -5,7 +5,7 @@ import { GButton } from "@/ui/gbutton"
 import { GInput } from "@/ui/ginput"
 import { GLabel } from "@/ui/glabel"
 import { GCard } from "@/ui/gcard"
-import { Download, AlertCircle, User, Eye, Lock, Globe, CheckCircle2 } from "lucide-react"
+import { Save, AlertCircle, User, Eye, Lock, Globe, CheckCircle2 } from "lucide-react"
 import { LoadingSpinner } from "@/components/common/loading-spinner"
 
 interface InstagramProfileData {
@@ -27,7 +27,7 @@ export function InstagramDpViewer() {
   const [profileData, setProfileData] = useState<InstagramProfileData | null>(null)
   const [loading, setLoading] = useState(false)
   const [error, setError] = useState<string | null>(null)
-  const [downloading, setDownloading] = useState(false)
+  const [saving, setSaving] = useState(false)
   const resultRef = useRef<HTMLDivElement>(null)
 
   useEffect(() => {
@@ -83,7 +83,7 @@ export function InstagramDpViewer() {
     return getProxyImageUrl(imageUrl)
   }
 
-  const downloadImage = async (quality: 'sd' | 'hd' = 'hd') => {
+  const saveImage = async (quality: 'sd' | 'hd' = 'hd') => {
     if (!profileData) return
 
     const imageUrl = quality === 'hd'
@@ -92,7 +92,7 @@ export function InstagramDpViewer() {
 
     if (!imageUrl) return
 
-    setDownloading(true)
+    setSaving(true)
 
     try {
       const proxyUrl = `/api/instagram/image-proxy?url=${encodeURIComponent(imageUrl)}`
@@ -115,10 +115,10 @@ export function InstagramDpViewer() {
 
       setTimeout(() => URL.revokeObjectURL(blobUrl), 100)
     } catch (error) {
-      console.error('Download error:', error)
-      setError('Failed to download image. Please try again.')
+      console.error('Save error:', error)
+      setError('Failed to save image. Please try again.')
     } finally {
-      setDownloading(false)
+      setSaving(false)
     }
   }
 
@@ -149,7 +149,7 @@ export function InstagramDpViewer() {
                   Instagram DP Viewer
                 </h2>
                 <p className="text-muted-foreground text-sm sm:text-base break-words">
-                  View and download Instagram profile pictures in HD quality
+                  View and save Instagram profile pictures in HD quality
                 </p>
               </div>
             </div>
@@ -311,39 +311,39 @@ export function InstagramDpViewer() {
                 <div className="grid grid-cols-2 gap-3">
                   {profileData.profile_pic_url && (
                     <GButton
-                      onClick={() => downloadImage('sd')}
-                      disabled={downloading}
+                      onClick={() => saveImage('sd')}
+                      disabled={saving}
                       variant="outline"
                       className="w-full h-10 sm:h-11 text-sm font-medium"
                     >
-                      {downloading ? (
+                      {saving ? (
                         <>
                           <LoadingSpinner className="mr-2 h-4 w-4" />
-                          <span>Downloading...</span>
+                          <span>Saving...</span>
                         </>
                       ) : (
                         <>
-                          <Download className="mr-2 h-4 w-4" />
-                          <span>Download SD</span>
+                          <Save className="mr-2 h-4 w-4" />
+                          <span>Save SD</span>
                         </>
                       )}
                     </GButton>
                   )}
                   {(profileData.profile_pic_url_hd || profileData.profile_pic_url) && (
                     <GButton
-                      onClick={() => downloadImage('hd')}
-                      disabled={downloading}
+                      onClick={() => saveImage('hd')}
+                      disabled={saving}
                       className="w-full h-10 sm:h-11 text-sm font-medium bg-gradient-to-r from-primary to-primary/90 hover:from-primary/90 hover:to-primary text-primary-foreground shadow-lg hover:shadow-xl transition-all duration-300"
                     >
-                      {downloading ? (
+                      {saving ? (
                         <>
                           <LoadingSpinner className="mr-2 h-4 w-4" />
-                          <span>Downloading...</span>
+                          <span>Saving...</span>
                         </>
                       ) : (
                         <>
-                          <Download className="mr-2 h-4 w-4" />
-                          <span>Download HD</span>
+                          <Save className="mr-2 h-4 w-4" />
+                          <span>Save HD</span>
                         </>
                       )}
                     </GButton>
@@ -357,7 +357,7 @@ export function InstagramDpViewer() {
                     <h4 className="font-bold text-green-700 dark:text-green-300 text-sm">Trending Tools</h4>
                   </div>
                   <p className="text-xs text-green-600 dark:text-green-400 mb-3">
-                    Found the profile? Now download their content!
+                    Found the profile? Explore more tools!
                   </p>
                   <div className="grid grid-cols-1 gap-2">
                     <a
@@ -388,7 +388,7 @@ export function InstagramDpViewer() {
           <li>• Enter an Instagram username (with or without @) or paste a profile link</li>
           <li>• Examples: <code className="text-xs bg-muted px-1 rounded">test</code> or <code className="text-xs bg-muted px-1 rounded">https://www.instagram.com/test</code></li>
           <li>• Click "View Profile Picture" to load the image</li>
-          <li>• Download the high-quality version if needed</li>
+          <li>• Save the high-quality version if needed</li>
           <li>• Only works for public Instagram accounts</li>
         </ul>
       </GCard>

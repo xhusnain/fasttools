@@ -52,18 +52,6 @@ export const mainPages = [
         priority: 0.95,
     },
     {
-        url: "https://www.fasttools.store/blog",
-        lastModified: new Date(),
-        changeFrequency: "weekly" as const,
-        priority: 0.8,
-    },
-    {
-        url: "https://www.fasttools.store/blog/archive",
-        lastModified: new Date(),
-        changeFrequency: "weekly" as const,
-        priority: 0.8,
-    },
-    {
         url: "https://www.fasttools.store/all-tools",
         lastModified: new Date(),
         changeFrequency: "weekly" as const,
@@ -254,17 +242,7 @@ export const categoryPages = [
         changeFrequency: "weekly" as const,
         priority: 0.9,
     },
-    {
-        url: "https://www.fasttools.store/guides",
-        lastModified: new Date('2025-12-22'),
-        changeFrequency: "weekly" as const,
-        priority: 0.95,
-    },
-
 ]
-
-// Guides are now generated dynamically
-export const guidePages: any[] = []
 
 
 
@@ -700,9 +678,9 @@ export const toolPages = [
         priority: 0.95,
     },
     {
-        url: "https://www.fasttools.store/converters/currency-api",
-        lastModified: new Date('2026-02-20'),
-        changeFrequency: "monthly" as const,
+        url: "https://www.fasttools.store/converters/currency",
+        lastModified: new Date('2026-03-23'),
+        changeFrequency: "weekly" as const,
         priority: 0.9,
     },
     {
@@ -1198,13 +1176,6 @@ export const toolPages = [
             }
         ]
     },
-    // Tutorial Pages (Video Watch Pages for Google Video Indexing)
-    {
-        url: "https://www.fasttools.store/tutorials/youtube-channel-name-guide",
-        lastModified: new Date('2025-12-17'),
-        changeFrequency: "monthly" as const,
-        priority: 0.85,
-    },
     {
         url: "https://www.fasttools.store/dev-tools/antigravity-skill-builder",
         lastModified: new Date('2026-02-20'),
@@ -1284,90 +1255,6 @@ export const toolPages = [
     },
 ]
 
-import { getAllPostsMeta } from "@/components/blog/blog"
-import { getAllGuidesMeta } from "@/components/guide/guide"
-import { slugifyCategory } from "@/lib/utils"
-
-export const generateGuideSitemap = () => {
-    const guides = getAllGuidesMeta()
-    return guides.map((guide) => ({
-        url: `${baseUrl}/guides/${guide.slug}`,
-        lastModified: new Date(guide.lastModified || guide.date),
-        changeFrequency: 'monthly' as const,
-        priority: 0.9,
-        images: guide.image
-            ? [{
-                url: guide.image.startsWith('http') ? guide.image : `${baseUrl}${guide.image}`,
-                title: guide.title,
-                caption: guide.description || ''
-            }]
-            : [],
-    }))
-}
-
-export const generateBlogSitemap = () => {
-    const posts = getAllPostsMeta()
-    return posts.map((post) => ({
-        url: `${baseUrl}/blog/${post.slug}`,
-        lastModified: new Date(post.lastModified || post.date),
-        changeFrequency: 'monthly' as const,
-        priority: 0.7,
-        images: post.image
-            ? [{
-                url: post.image.startsWith('http') ? post.image : `${baseUrl}${post.image}`,
-                title: post.title,
-                caption: post.description || ''
-            }]
-            : [],
-    }))
-}
-
-export const generateCategorySitemap = () => {
-    const posts = getAllPostsMeta()
-    const categories = Array.from(new Set(posts.map(post => post.category).filter(Boolean)))
-
-    return categories.map(category => ({
-        url: `${baseUrl}/blog/category/${slugifyCategory(category!)}`,
-        lastModified: new Date(),
-        changeFrequency: 'weekly' as const,
-        priority: 0.8,
-        images: []
-    }))
-}
-
 export const getAllSitemapPages = () => {
-    // 1. Get all static pages from config
-    const staticPages = [...mainPages, ...categoryPages, ...toolPages, ...guidePages]
-    const existingUrls = new Set(staticPages.map(p => p.url))
-
-    // 2. Archive Page
-    const archiveUrl = 'https://www.fasttools.store/blog/archive'
-    const dynamicPages: SitemapPage[] = []
-
-    if (!existingUrls.has(archiveUrl)) {
-        dynamicPages.push({
-            url: archiveUrl,
-            lastModified: new Date(),
-            changeFrequency: 'weekly' as const,
-            priority: 0.8,
-            images: []
-        })
-    }
-
-    // 3. Blog Posts
-    const blogPages = generateBlogSitemap()
-
-    // 4. Guides
-    const guidePagesGenerated = generateGuideSitemap()
-
-    // 4. Dynamic Categories
-    const dynamicCategoryPages = generateCategorySitemap()
-    dynamicCategoryPages.forEach(page => {
-        if (!existingUrls.has(page.url)) {
-            dynamicPages.push(page)
-        }
-    })
-
-    // Return flattened, de-duplicated list
-    return [...staticPages, ...blogPages, ...guidePagesGenerated, ...dynamicPages]
+    return [...mainPages, ...categoryPages, ...toolPages]
 }

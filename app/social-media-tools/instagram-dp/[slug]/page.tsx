@@ -59,7 +59,7 @@ export default async function InstagramDpVariantPage(props: Props) {
       featureList: [
         `${variant.headerTitle} workflow`,
         "Username-based profile-picture lookup",
-        "Download option",
+        "Save to device option",
         "Browser-based utility",
       ],
       offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },
@@ -85,13 +85,13 @@ export default async function InstagramDpVariantPage(props: Props) {
         "Enter the Instagram username in the viewer input.",
         "Run lookup to load profile-picture output.",
         "Inspect the full-size preview.",
-        "Download if a local copy is needed.",
+        "Save a copy for reference if needed.",
       ],
 
       features: variant.featureOverrides || [
         `${variant.headerTitle} intent targeting`,
         "Username-based lookup",
-        "Fast preview and download workflow",
+        "Fast preview and save workflow",
         "No-login browser utility",
         "Desktop and mobile support",
       ],

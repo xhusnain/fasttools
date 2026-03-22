@@ -3,7 +3,7 @@
 import Link from "next/link"
 import Image from "next/image"
 import { useState, useEffect } from "react"
-import { Menu, X, Sparkles } from "lucide-react"
+import { Menu, X } from "lucide-react"
 import { ThemeToggle } from "@/components/common/theme-toggle"
 import { usePathname } from "next/navigation"
 import { Navbar } from "@/components/common/navbar"
@@ -116,19 +116,6 @@ export function Header() {
           </div>
 
           <div className="flex-1 overflow-y-auto py-4 px-2">
-            <div className="space-y-1 mb-6">
-
-
-              <Link
-                href="/guides"
-                onClick={() => setMobileMenuOpen(false)}
-                className="flex items-center gap-3 px-4 py-3 rounded-lg hover:bg-primary/5 text-foreground/80 hover:text-primary font-medium transition-colors"
-              >
-                <Sparkles className="h-4 w-4 text-amber-400" />
-                Build & Earn
-              </Link>
-            </div>
-
             <div className="px-4 pb-2 text-xs font-semibold text-muted-foreground uppercase tracking-wider">
               Tools Categories
             </div>
@@ -171,13 +158,6 @@ export function Header() {
             </GAccordion>
 
             <div className="mt-6 space-y-1 px-2 pb-8">
-              <Link
-                href="/blog"
-                onClick={() => setMobileMenuOpen(false)}
-                className="block px-4 py-2.5 rounded-lg hover:bg-primary/5 text-sm font-medium text-foreground/80 hover:text-primary transition-colors"
-              >
-                Blog
-              </Link>
               <Link
                 href="/products"
                 onClick={() => setMobileMenuOpen(false)}
