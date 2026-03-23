@@ -1,6 +1,6 @@
 import { Metadata } from "next";
 import Link from "next/link";
-import { toolPages, mainPages } from "@/lib/sitemap-config";
+import { toolPages, mainPages } from "@/app/sitemap";
 import { Search, Sparkles, Grid, ArrowRight, Tag, ExternalLink } from "lucide-react";
 
 export const metadata: Metadata = {
