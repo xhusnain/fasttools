@@ -16,8 +16,8 @@ const HomeCategories = dynamic(() => import('@/components/common/home-categories
 const HomeRichContent = dynamic(() => import('@/components/common/home-rich-content').then(mod => ({ default: mod.HomeRichContent })))
 
 export const metadata: Metadata = createMetadata({
-  title: "FastTools - Free Online Tools | Calculators, Converters, Developer Tools",
-  description: "Free online tools: calculators, converters, developer tools, SEO tools, image tools & more. No signup, instant results. All tools run locally in your browser.",
+  title: "FastTools - 130+ Free Online Tools | Calculators, Converters, PDF & AI Tools",
+  description: "130+ free online tools: calculators, converters, PDF tools, AI generators, developer utilities & more. No signup, no uploads. Everything runs in your browser — private, fast, unlimited.",
   path: "/",
   includeSchema: false,
 })
@@ -28,14 +28,14 @@ export default function Home() {
   const jsonLd = {
     "@context": "https://schema.org",
     "@type": "WebPage",
-    name: "FastTools - The First WebMCP AI-Agent Ready Free Online Tools Platform",
-    description: "FastTools is the world's first WebMCP-enabled tools platform. all free online tools — calculators, converters, crypto, PDF, developer tools — all fully interactable by AI agents via the Web Model Context Protocol.",
+    name: "FastTools - 130+ Free Online Tools | Calculators, Converters, PDF & AI Tools",
+    description: "130+ free online tools — calculators, converters, PDF tools, AI generators, developer utilities & more. No signup, no uploads. Everything runs in your browser.",
     url: "https://www.fasttools.store",
     author: {
       "@type": "Organization",
       name: "FastTools",
       url: "https://www.fasttools.store",
-      description: "The world's first WebMCP-enabled free online tools platform. AI agents can discover, fill, and use all all tools automatically."
+      description: "Free online tools platform with 130+ calculators, converters, PDF tools, AI generators and developer utilities. All tools run locally in your browser."
     },
     publisher: {
       "@type": "Organization",
@@ -73,12 +73,12 @@ export default function Home() {
     },
     about: {
       "@type": "Thing",
-      name: "WebMCP-Enabled Free Online Tools",
-      description: "The first tools platform with full Web Model Context Protocol (WebMCP) support. AI agents can discover, interact with, and read results from all all tools automatically — no manual integration needed."
+      name: "Free Online Tools",
+      description: "A collection of 130+ free browser-based tools including calculators, unit converters, PDF editors, AI content generators, developer utilities, and SEO analyzers."
     },
     isPartOf: {
       "@type": "WebSite",
-      name: "fasttools",
+      name: "FastTools",
       url: "https://www.fasttools.store"
     },
     mainEntity: {
@@ -86,50 +86,50 @@ export default function Home() {
       mainEntity: [
         {
           "@type": "Question",
-          name: "What is WebMCP and how does FastTools use it?",
+          name: "Are all FastTools really free?",
           acceptedAnswer: {
             "@type": "Answer",
-            text: "WebMCP (Web Model Context Protocol) is a browser standard that lets AI agents interact with web tools programmatically. FastTools is the world's first platform to fully implement WebMCP — AI agents can discover all all tools via API, navigate to any tool page, fill inputs (including Radix UI selects, switches, and toggles), click action buttons, and read structured results. Every tool works automatically without manual integration."
+            text: "Yes, every tool on FastTools is 100% free with no hidden costs, no \"Pro\" tier, and no credit card required. All 130+ tools — including PDF compressor, AI generators, calculators, and converters — are completely free to use with no usage limits."
           }
         },
         {
           "@type": "Question",
-          name: "How can AI agents use FastTools?",
+          name: "Do I need to create an account to use these tools?",
           acceptedAnswer: {
             "@type": "Answer",
-            text: "AI agents follow a 4-step workflow: 1) Discover tools via GET /api/webmcp/tools which returns all all tools with input schemas. 2) Navigate to the tool page. 3) Call __describe to discover form fields, then __fill to populate inputs. 4) Call __click to trigger calculations and __results to read output. Realtime tools like temperature converter skip the click step entirely. The entire process works without modifying any individual tool component."
+            text: "No. FastTools requires no signup, no login, and no email. Just open any tool and start using it immediately. There are no accounts, no subscriptions, and no registration walls."
           }
         },
         {
           "@type": "Question",
-          name: "What AI tools are available for free content generation?",
+          name: "Is my data stored on your servers?",
           acceptedAnswer: {
             "@type": "Answer",
-            text: "Our free AI tools include AI caption generator, AI lyrics generator, AI pet name generator, and QR code generator. All tools use advanced AI technology to generate high-quality content instantly without any cost. Every AI tool is WebMCP-enabled, so AI agents can also use them programmatically."
+            text: "No. FastTools processes everything locally in your browser. Your files, text, and calculations never leave your device. We don't log inputs, store results, or track usage. When you close the tab, your data is gone."
           }
         },
         {
           "@type": "Question",
-          name: "Is my data safe when using these online tools?",
+          name: "What types of tools does FastTools offer?",
           acceptedAnswer: {
             "@type": "Answer",
-            text: "Yes, your data is completely safe. All our tools process data locally in your browser without uploading files to our servers. No registration required, no data collection, and no tracking. WebMCP interactions also happen entirely client-side — the AI agent interacts with the DOM in your browser, not with any server."
+            text: "FastTools offers 130+ tools across 12 categories: Calculators (BMI, age, loan, GPA), Converters (currency, temperature, JSON/YAML), PDF Tools (compress, split, merge, sign), AI Tools (QR generator, caption generator, text detector), Developer Tools (JWT decoder, regex tester, JSON diff), Social Media Tools (Instagram DP viewer, YouTube channel checker), Finance Tools (tax, mortgage, tip calculator), and more."
           }
         },
         {
           "@type": "Question",
-          name: "What categories of tools are available?",
+          name: "Can I use FastTools on my phone?",
           acceptedAnswer: {
             "@type": "Answer",
-            text: "We offer 10+ categories including AI Tools, Calculators, Converters, Crypto Tools, SEO Tools, Image Tools, Developer Tools, Finance Tools, Social Media Tools, PDF Tools, and Fun Tools. All all tools across every category are WebMCP-enabled and work on mobile, tablet, and desktop."
+            text: "Yes. Every tool is fully responsive and works on mobile phones, tablets, and desktop browsers. No app download needed — just visit fasttools.store in any modern browser."
           }
         },
         {
           "@type": "Question",
-          name: "What types of tools can AI agents interact with?",
+          name: "What is the best free PDF compressor online?",
           acceptedAnswer: {
             "@type": "Answer",
-            text: "AI agents can interact with button-click tools (BMI calculator, loan calculator), realtime tools (temperature converter, hash generator), generator tools (UUID, token, RSA key generators), and API-dependent tools (currency converter, YouTube tags extractor). File-upload tools like PDF compressor require manual user interaction. Each tool's interaction mode is exposed in the discovery API."
+            text: "FastTools offers a free PDF compressor that reduces file size directly in your browser. Unlike other tools, it doesn't upload your PDF to any server — compression happens locally on your device, making it faster and more private. It supports files up to 100MB with no daily limits."
           }
         }
       ]
@@ -153,18 +153,23 @@ export default function Home() {
           {/* Top Badge */}
 
 
+          {/* Tool Count Badge */}
+          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 border border-primary/20 text-primary text-sm font-semibold mb-6">
+            130+ Free Tools — No Signup Required
+          </div>
+
           {/* Main Heading */}
           <h1 className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-black text-foreground leading-[1.1] tracking-tight mb-8">
-            <span className="block mb-2">Every Free Online</span>
+            <span className="block mb-2">Free Online Tools</span>
             <span className="bg-clip-text text-transparent bg-gradient-to-r from-primary via-purple-500 to-indigo-500 animate-gradient-x">
-              Tools, Instantly.
+              Calculators, Converters & More
             </span>
           </h1>
 
           {/* Subheading */}
           <p className="text-lg sm:text-xl md:text-2xl text-muted-foreground font-medium max-w-3xl mx-auto leading-relaxed mb-12 px-4">
-            Free calculators, converters, developer tools, SEO tools & more.
-            No signup required. <strong className="text-foreground">Private, secure, instant results</strong> — all processing happens in your browser.
+            PDF tools, AI generators, developer utilities, finance calculators & SEO tools.
+            <strong className="text-foreground"> 100% free, private & instant</strong> — everything runs in your browser, nothing uploaded.
           </p>
 
           {/* Central Search Bar & Quick Access Tags */}

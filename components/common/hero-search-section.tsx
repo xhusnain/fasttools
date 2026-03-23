@@ -30,10 +30,12 @@ export function HeroSearchSection() {
             >
                 <span className="text-sm font-medium text-muted-foreground mr-2 py-1.5">Popular:</span>
                 {[
-                    { name: 'ROAS Calculator', path: '/ad-tools/roas-calculator' },
+                    { name: 'Instagram DP Viewer', path: '/social-media-tools/instagram-dp' },
+                    { name: 'Channel Name Checker', path: '/social-media-tools/channel-checker' },
                     { name: 'AI QR Generator', path: '/ai-tools/qr-generator' },
+                    { name: 'PDF Compressor', path: '/pdf-tools/pdf-compressor' },
                     { name: 'Currency Converter', path: '/converters/currency' },
-                    { name: 'YouTube Channel Name Checker', path: '/social-media-tools/channel-checker' }
+                    { name: 'Age Calculator', path: '/calculator/age-calculator' },
                 ].map((tool) => (
                     <Link
                         key={tool.name}

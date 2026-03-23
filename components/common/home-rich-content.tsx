@@ -1,64 +1,74 @@
 
-import { Shield, Zap, Lock, Globe, Bot, Cpu } from "lucide-react"
+import { Shield, Zap, Lock, Globe, FileText, Calculator, Code, TrendingUp } from "lucide-react"
 
 export function HomeRichContent() {
     return (
         <>
-            {/* WebMCP / AI-Agent Section */}
+            {/* What You Can Do Section */}
             <section className="py-16 md:py-24 bg-background relative z-10 border-b border-border/30">
                 <div className="container mx-auto px-4 max-w-6xl">
                     <div className="grid lg:grid-cols-2 gap-12 lg:gap-16">
                         <div className="space-y-8">
                             <h2 className="text-3xl md:text-4xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-indigo-500 to-primary">
-                                The World's First WebMCP-Enabled Tools Platform
+                                130+ Tools for Every Task — All Free, All Instant
                             </h2>
                             <div className="prose dark:prose-invert max-w-none text-muted-foreground">
                                 <p>
-                                    FastTools is the first platform where <strong className="text-foreground">AI agents can use every tool autonomously</strong>. Powered by the Web Model Context Protocol (WebMCP), AI agents in Chrome 146+ can discover all all tools, fill forms, trigger calculations, and read structured results — all without human intervention.
+                                    Whether you need to <strong className="text-foreground">compress a PDF</strong>, calculate your BMI, convert currencies, or generate AI captions — FastTools has you covered. Every tool loads instantly, works on any device, and requires zero signup.
                                 </p>
-                                <h3 className="text-xl font-semibold text-foreground mt-6 mb-3">How It Works: 4-Step Agent Workflow</h3>
+                                <h3 className="text-xl font-semibold text-foreground mt-6 mb-3">Built for Real Work, Not Demos</h3>
                                 <p>
-                                    AI agents follow a simple workflow: <strong className="text-foreground">Discover</strong> tools via our API endpoint, <strong className="text-foreground">Describe</strong> available inputs on any tool page, <strong className="text-foreground">Fill</strong> fields including dropdowns, switches, and toggles, then <strong className="text-foreground">Click &amp; Read</strong> to trigger actions and capture results. Realtime tools like the temperature converter skip the click step entirely.
+                                    Our calculators handle real formulas — loan amortization, tax estimation, IP subnets. Our converters support 30+ formats including JSON, YAML, XML, TOML, and Base64. Our PDF tools let you split, merge, compress, sign, and unlock documents without uploading anything.
                                 </p>
-                                <h3 className="text-xl font-semibold text-foreground mt-6 mb-3">Zero-Config for Future Tools</h3>
+                                <h3 className="text-xl font-semibold text-foreground mt-6 mb-3">Works on Every Device</h3>
                                 <p>
-                                    Every new tool added to FastTools is automatically WebMCP-compatible. Our architecture auto-discovers fields from the DOM, detects the interaction mode, and registers the tool with the browser's AI agent API — no per-tool configuration required.
+                                    Every tool is fully responsive. Use them on your phone during a commute, on a tablet in a meeting, or on your desktop at work. No app to download — just open your browser and go.
                                 </p>
                             </div>
                         </div>
 
                         <div className="bg-card/50 border border-border/50 rounded-2xl p-8 space-y-8 backdrop-blur-sm">
                             <div className="space-y-6">
-                                <h3 className="text-2xl font-semibold">AI-Agent Capabilities</h3>
+                                <h3 className="text-2xl font-semibold">Most Popular Categories</h3>
 
                                 <div className="grid gap-6">
                                     <div className="flex gap-4">
-                                        <div className="mt-1 bg-indigo-500/10 p-3 rounded-lg h-12 w-12 flex items-center justify-center shrink-0">
-                                            <Bot className="w-6 h-6 text-indigo-500" />
+                                        <div className="mt-1 bg-red-500/10 p-3 rounded-lg h-12 w-12 flex items-center justify-center shrink-0">
+                                            <FileText className="w-6 h-6 text-red-500" />
                                         </div>
                                         <div>
-                                            <h4 className="font-semibold text-foreground mb-1">Full Tool Discovery API</h4>
-                                            <p className="text-sm text-muted-foreground">AI agents discover all all tools from a single endpoint with input schemas, interaction modes, and categories — before visiting any page.</p>
+                                            <h4 className="font-semibold text-foreground mb-1">PDF Tools</h4>
+                                            <p className="text-sm text-muted-foreground">Compress, split, merge, sign, and convert PDFs — all in your browser. No file uploads to external servers.</p>
                                         </div>
                                     </div>
 
                                     <div className="flex gap-4">
-                                        <div className="mt-1 bg-primary/10 p-3 rounded-lg h-12 w-12 flex items-center justify-center shrink-0">
-                                            <Cpu className="w-6 h-6 text-primary" />
+                                        <div className="mt-1 bg-blue-500/10 p-3 rounded-lg h-12 w-12 flex items-center justify-center shrink-0">
+                                            <Calculator className="w-6 h-6 text-blue-500" />
                                         </div>
                                         <div>
-                                            <h4 className="font-semibold text-foreground mb-1">Smart Interaction Modes</h4>
-                                            <p className="text-sm text-muted-foreground">Button-click, realtime, generator, file-upload, and API-dependent — each tool type has optimized handling so agents know exactly when to click, wait, or read.</p>
+                                            <h4 className="font-semibold text-foreground mb-1">Calculators & Finance</h4>
+                                            <p className="text-sm text-muted-foreground">BMI, age, loan, mortgage, tax, GPA, and scientific calculators. Get accurate results instantly.</p>
                                         </div>
                                     </div>
 
                                     <div className="flex gap-4">
                                         <div className="mt-1 bg-purple-500/10 p-3 rounded-lg h-12 w-12 flex items-center justify-center shrink-0">
-                                            <Zap className="w-6 h-6 text-purple-500" />
+                                            <TrendingUp className="w-6 h-6 text-purple-500" />
                                         </div>
                                         <div>
-                                            <h4 className="font-semibold text-foreground mb-1">Radix UI & Custom Components</h4>
-                                            <p className="text-sm text-muted-foreground">Agents can fill Radix selects, toggle switches, click radio groups, and interact with every custom component — not just native HTML inputs.</p>
+                                            <h4 className="font-semibold text-foreground mb-1">Social Media & AI</h4>
+                                            <p className="text-sm text-muted-foreground">Instagram DP viewer, YouTube channel checker, AI QR generator, caption generator, and hashtag tools.</p>
+                                        </div>
+                                    </div>
+
+                                    <div className="flex gap-4">
+                                        <div className="mt-1 bg-green-500/10 p-3 rounded-lg h-12 w-12 flex items-center justify-center shrink-0">
+                                            <Code className="w-6 h-6 text-green-500" />
+                                        </div>
+                                        <div>
+                                            <h4 className="font-semibold text-foreground mb-1">Developer & Crypto Tools</h4>
+                                            <p className="text-sm text-muted-foreground">JWT decoder, regex tester, JSON diff, UUID generator, hash tools, and 20+ converters for developers.</p>
                                         </div>
                                     </div>
                                 </div>
@@ -68,31 +78,29 @@ export function HomeRichContent() {
                 </div>
             </section>
 
-            {/* Original Why FastTools Section */}
+            {/* Privacy & Trust Section */}
             <section className="py-16 md:py-24 bg-background relative z-10">
                 <div className="container mx-auto px-4 max-w-6xl">
                     <div className="grid lg:grid-cols-2 gap-12 lg:gap-16">
-                        {/* Main Content Column */}
                         <div className="space-y-8">
                             <h2 className="text-3xl md:text-4xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-primary to-purple-500">
-                                Why FastTools is the #1 Choice for Developers & Creators
+                                Your Data Never Leaves Your Device
                             </h2>
                             <div className="prose dark:prose-invert max-w-none text-muted-foreground">
                                 <p>
-                                    FastTools isn't just another collection of scripts. It's a comprehensive, privacy-first productivity platform designed to streamline your daily workflow. Whether you're a developer debugging JSON, a designer converting colors, or a content creator generating viral hashtags, our tools are engineered for speed and precision.
+                                    Most online tools upload your files to their servers to process them. <strong className="text-foreground">FastTools doesn't.</strong> Every calculation, conversion, and file operation runs locally in your browser using client-side JavaScript. Your PDFs, images, and text never touch our servers.
                                 </p>
-                                <h3 className="text-xl font-semibold text-foreground mt-6 mb-3">Client-Side Processing for Maximum Privacy</h3>
+                                <h3 className="text-xl font-semibold text-foreground mt-6 mb-3">No Accounts. No Tracking. No Limits.</h3>
                                 <p>
-                                    Unlike other platforms that upload your sensitive data to remote servers, FastTools performs 95% of operations right in your browser. When you use our PDF splitter or JSON converter, your files never leave your device. This "Local-First" architecture ensures enterprise-grade security for your data.
+                                    We don't ask for your email, don't set tracking cookies, and don't limit how many times you can use a tool. Every tool is free, unlimited, and works the same whether it's your first visit or your thousandth.
                                 </p>
-                                <h3 className="text-xl font-semibold text-foreground mt-6 mb-3">Optimized for Speed ("Fast" is in our name)</h3>
+                                <h3 className="text-xl font-semibold text-foreground mt-6 mb-3">Fast by Design</h3>
                                 <p>
-                                    We've obsessed over every millisecond. By removing bloated frameworks and tracking scripts, we deliver results instantly. Our tools are optimized for Core Web Vitals, ensuring seamless performance even on slow mobile connections.
+                                    No bloated frameworks, no unnecessary third-party scripts. Tools load in under a second and deliver results instantly. Optimized for Core Web Vitals so they work smoothly even on slow mobile connections.
                                 </p>
                             </div>
                         </div>
 
-                        {/* Features / Trust Signals Column */}
                         <div className="bg-card/50 border border-border/50 rounded-2xl p-8 space-y-8 backdrop-blur-sm">
                             <div className="space-y-6">
                                 <h3 className="text-2xl font-semibold">Our Privacy Promise</h3>
@@ -114,7 +122,17 @@ export function HomeRichContent() {
                                         </div>
                                         <div>
                                             <h4 className="font-semibold text-foreground mb-1">Encrypted Connections</h4>
-                                            <p className="text-sm text-muted-foreground">All traffic is secured with banking-grade SSL encryption, ensuring your connection is always safe.</p>
+                                            <p className="text-sm text-muted-foreground">All traffic is secured with SSL encryption. Your connection to FastTools is always private and secure.</p>
+                                        </div>
+                                    </div>
+
+                                    <div className="flex gap-4">
+                                        <div className="mt-1 bg-green-500/10 p-3 rounded-lg h-12 w-12 flex items-center justify-center shrink-0">
+                                            <Zap className="w-6 h-6 text-green-500" />
+                                        </div>
+                                        <div>
+                                            <h4 className="font-semibold text-foreground mb-1">Instant Results</h4>
+                                            <p className="text-sm text-muted-foreground">No waiting for server responses. Everything processes locally so you get results in milliseconds, not seconds.</p>
                                         </div>
                                     </div>
 
