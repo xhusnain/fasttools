@@ -6,7 +6,6 @@ import dynamic from "next/dynamic"
 import { Header } from "@/components/common/header"
 import { Footer } from "@/components/common/footer"
 import { ThemeProvider } from "@/components/common/theme-provider"
-import { env } from "@/config/env"
 import { createMetadata, globalViewport, getWebsiteSchema } from "@/lib/metadata-base"
 import { DeferredScript } from "@/components/common/deferred-script"
 import { roboto, montserrat } from "@/lib/fonts"
@@ -45,7 +44,6 @@ export const metadata: Metadata = {
     },
     twitter: {
         card: "summary_large_image",
-        creator: "@ZamanIsmail7",
     },
 }
 
@@ -63,10 +61,7 @@ export default function RootLayout({
         description: "FastTools is a free online tools platform. Calculators, converters, crypto, PDF, developer tools — all free, no signup required.",
         foundingDate: "2024-01-01",
         sameAs: [
-            "https://x.com/ZamanIsmail7",
-            "https://www.facebook.com/profile.php?id=61582711433268",
-            "https://www.youtube.com/@fasttools_official",
-            "https://www.linkedin.com/company/fasttools/?viewAsMember=true",
+            "https://github.com/AliHusnain-FastTools/fasttools",
         ],
         contactPoint: {
             "@type": "ContactPoint",
@@ -138,7 +133,7 @@ export default function RootLayout({
 
 
 
-                    {env.isProduction && (
+                    {process.env.NODE_ENV === "production" && (
                         <DeferredScript
                             src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6296569221534302"
                             id="adsbygoogle-script"

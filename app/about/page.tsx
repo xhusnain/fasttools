@@ -48,10 +48,7 @@ export default function AboutPage() {
         addressCountry: "US"
       },
       sameAs: [
-        "https://x.com/ZamanIsmail7",
-        "https://www.facebook.com/profile.php?id=61582711433268",
-        "https://www.youtube.com/@fasttools_official",
-        "https://www.linkedin.com/company/fasttools/?viewAsMember=true"
+        "https://github.com/AliHusnain-FastTools/fasttools"
       ]
     },
     breadcrumb: {

@@ -1,15 +1,8 @@
 import { runCloudflareAI } from "./utils"
 import { PROMPTS } from "./prompts"
 import { AIRequest, AIResponse } from "@/types/ai.types"
-import {env} from "@/config";
 
 export class AITextGenerator {
-    private apiKey: string
-
-    constructor(apiKey?: string) {
-        this.apiKey = apiKey || env.geminiApiKey || ""
-    }
-
     async generateText(request: AIRequest): Promise<AIResponse> {
         try {
             const {

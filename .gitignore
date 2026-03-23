@@ -19,6 +19,14 @@ yarn-error.log*
 
 # env files
 .env*
+production.env.yaml
+docker-compose.yml
+
+# credentials / service accounts
+*-credentials*.json
+*serviceaccount*.json
+fasttools-*.json
+*.pem
 
 # vercel
 .vercel
@@ -37,4 +45,9 @@ next-env.d.ts
 
 # IDE
 .idea/
+
+# Python cache
+__pycache__/
+*.pyc
+
 

@@ -22,11 +22,16 @@ export function getCurrentYearString(): string {
 }
 
 export async function runCloudflareAI(input: any) {
+  const accountId = process.env.CLOUDFLARE_ACCOUNT_ID
+  const apiToken = process.env.CLOUDFLARE_AI_TOKEN
+  if (!accountId || !apiToken) {
+    throw new Error("Missing CLOUDFLARE_ACCOUNT_ID or CLOUDFLARE_AI_TOKEN environment variables")
+  }
   const model = "@cf/meta/llama-3.1-8b-instruct-fast"
   const response = await fetch(
-    `https://api.cloudflare.com/client/v4/accounts/c64b9be052fb497f7b1a3121316d4d9f/ai/run/${model}`,
+    `https://api.cloudflare.com/client/v4/accounts/${accountId}/ai/run/${model}`,
     {
-      headers: { Authorization: "Bearer ***REMOVED***" },
+      headers: { Authorization: `Bearer ${apiToken}` },
       method: "POST",
       body: JSON.stringify(input),
     }

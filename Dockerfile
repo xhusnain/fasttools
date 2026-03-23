@@ -22,10 +22,6 @@ COPY --from=deps /app/node_modules ./node_modules
 COPY . .
 
 ENV NEXT_TELEMETRY_DISABLED 1
-ENV NEXT_PUBLIC_SITE_URL "https://www.fasttools.store"
-ENV NEXT_PUBLIC_SITE_NAME "fasttools"
-ENV NEXT_PUBLIC_GA_ID "G-4G804HZ22C"
-ENV NEXT_PUBLIC_GTM_ID ""
 
 # Ensure the build script runs
 RUN npm run build

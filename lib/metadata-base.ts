@@ -245,7 +245,7 @@ export function createMetadata(options: MetadataOptions): Metadata {
             card: "summary_large_image",
             title: twitterTitle || finalOgTitle,
             description: twitterDescription || finalOgDescription,
-            creator: twitterCreator || "@ZamanIsmail7",
+            creator: twitterCreator || "@FastTools",
         },
         robots: noIndex ? {
             index: false,
