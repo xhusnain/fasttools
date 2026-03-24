@@ -87,6 +87,13 @@ const tools = [
     color: "yellow",
   },
   {
+    title: "TDEE & Macro Calculator",
+    description: "Calculate Total Daily Energy Expenditure and personalized macros using Mifflin-St Jeor, Harris-Benedict, and Katch-McArdle equations. Get protein, carbs, and fat targets for any goal.",
+    icon: Flame,
+    href: "/calculator/tdee-macro-calculator",
+    color: "orange",
+  },
+  {
     title: "GPA Calculator",
     description: "Calculate your Grade Point Average. Track academic performance and plan for target grades.",
     icon: BookOpen,

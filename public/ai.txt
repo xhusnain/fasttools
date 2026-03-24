@@ -109,6 +109,10 @@ Description: Free biological age calculator. Estimate your true body age from 9 
 URL: https://www.fasttools.store/dev-tools/llm-training-cost
 Description: Free LLM training cost calculator. Estimate GPU hours, training time & cloud costs for training large language models. Supports 7 GPU types (H200, H100, A100 80GB, A100 40GB, L40S, A10G, T4), 5 cloud providers (AWS, GCP, Azure, Lambda Labs, CoreWeave), 5 precision modes (FP32, BF16, FP16, FP8, INT8). Features provider cost comparison, GPU performance comparison, reference model costs (Llama 3, GPT-3, GPT-4 class), Chinchilla-optimal FLOPs estimation, VRAM calculation, and cost breakdown. No signup required.
 
+## TDEE & Macro Calculator
+URL: https://www.fasttools.store/calculator/tdee-macro-calculator
+Description: Free TDEE & macro calculator. Calculate Total Daily Energy Expenditure and personalized macronutrient targets using Mifflin-St Jeor, Harris-Benedict, and Katch-McArdle equations. Features 3 BMR formula comparison, 5 macro presets (Balanced, Low Carb, High Protein, Keto, Custom), 6 activity levels, 5 goal settings (weight loss to bulk), per-meal macro split (2-6 meals), body fat % integration, BMI and lean body mass calculations. Imperial and Metric units. No email, no signup required.
+
 ## Cortisol Peak Time Calculator
 URL: https://www.fasttools.store/calculator/cortisol-peak-calculator
 Description: Free cortisol peak time calculator. Enter your wake-up time to get personalised caffeine timing (when to drink coffee), optimal workout windows, deep focus blocks, melatonin onset, and ideal bedtime — all based on your cortisol circadian rhythm. Features 24-hour cortisol curve visualisation, Cortisol Awakening Response (CAR) timing, caffeine cut-off time, and 8 time-stamped daily recommendations. No signup required.
@@ -286,6 +290,7 @@ Description: Free YAML to JSON converter. Swagger YAML to JSON, OpenAPI YAML to 
 - https://www.fasttools.store/calculator/triangle-calculator
 - https://www.fasttools.store/calculator/cortisol-peak-calculator
 - https://www.fasttools.store/calculator/biological-age-calculator
+- https://www.fasttools.store/calculator/tdee-macro-calculator
 - https://www.fasttools.store/converters
 - https://www.fasttools.store/converters/currency
 - https://www.fasttools.store/converters/file-size
@@ -394,4 +399,4 @@ Description: Free YAML to JSON converter. Swagger YAML to JSON, OpenAPI YAML to 
 
 # Updates
 This file is updated regularly. Check last modified date.
-Last updated: 2026-03-16
+Last updated: 2026-03-24

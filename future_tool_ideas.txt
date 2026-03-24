@@ -29,7 +29,7 @@
 - **Features**: Rent amount, home price, mortgage rate, down payment, maintenance, appreciation → break-even year, 10-year comparison.
 - **Traffic**: Evergreen, massive volume from first-time buyers.
 
-### 4. TDEE & Macro Calculator
+### 4. [DONE] TDEE & Macro Calculator
 - **Category**: calculator
 - **Why**: "TDEE calculator" and "macro calculator" each have 500K+ monthly searches. Health CPC: $15-37. Fitness audience is enormous.
 - **Features**: Age, gender, height, weight, activity level → TDEE, BMR, macros for cutting/bulking/maintenance, meal plan split.
