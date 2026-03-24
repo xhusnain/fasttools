@@ -35,7 +35,7 @@
 - **Features**: Age, gender, height, weight, activity level → TDEE, BMR, macros for cutting/bulking/maintenance, meal plan split.
 - **Traffic**: 2M+ monthly combined. Fitness influencers share these constantly.
 
-### 5. Debt Payoff Calculator (Snowball & Avalanche)
+### 5. [DONE] Debt Payoff Calculator (Snowball & Avalanche)
 - **Category**: finance-tools
 - **Why**: "Debt payoff calculator" = high volume, high CPC ($20-40). Ramsey Solutions, Bankrate dominate. Personal finance is top AdSense niche.
 - **Features**: Multiple debts input, snowball vs avalanche comparison, payoff timeline, total interest saved, extra payment impact.

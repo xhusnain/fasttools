@@ -238,6 +238,13 @@ const financeTools = [
     icon: Home,
     href: "/finance-tools/rent-vs-buy-calculator",
   },
+  {
+    title: "Debt Payoff Calculator",
+    description:
+      "Compare snowball vs avalanche strategies to pay off multiple debts. See your debt-free date, total interest saved, and month-by-month plan.",
+    icon: TrendingDown,
+    href: "/finance-tools/debt-payoff-calculator",
+  },
 ]
 
 export const metadata: Metadata = createMetadata({
