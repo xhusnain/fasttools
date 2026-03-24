@@ -23,7 +23,7 @@
 - **Features**: Vehicle price, down payment, trade-in, interest rate, loan term → monthly payment, total interest, amortization.
 - **Traffic**: Huge — people search before every car purchase.
 
-### 3. Rent vs Buy Calculator
+### 3. [DONE] Rent vs Buy Calculator
 - **Category**: finance-tools
 - **Why**: "Should I rent or buy" is the most common housing question. High CPC ($15-40). Zillow, NerdWallet, Schwab all rank for this.
 - **Features**: Rent amount, home price, mortgage rate, down payment, maintenance, appreciation → break-even year, 10-year comparison.

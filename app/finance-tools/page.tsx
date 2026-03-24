@@ -231,6 +231,13 @@ const financeTools = [
     icon: Home,
     href: "/finance-tools/home-affordability-calculator",
   },
+  {
+    title: "Rent vs Buy Calculator",
+    description:
+      "Compare the true cost of renting vs buying a home. Includes mortgage, taxes, opportunity cost, equity building, and break-even analysis.",
+    icon: Home,
+    href: "/finance-tools/rent-vs-buy-calculator",
+  },
 ]
 
 export const metadata: Metadata = createMetadata({

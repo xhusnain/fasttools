@@ -80,6 +80,7 @@ export const sitemapPages = [
   { url: u("/finance-tools/tip-calculator"), lastModified: new Date("2026-03-23"), changeFrequency: "monthly" as const, priority: 0.8 },
   { url: u("/finance-tools/savings-tracker"), lastModified: new Date("2026-03-23"), changeFrequency: "monthly" as const, priority: 0.8 },
   { url: u("/finance-tools/home-affordability-calculator"), lastModified: new Date("2026-03-18"), changeFrequency: "monthly" as const, priority: 0.8 },
+  { url: u("/finance-tools/rent-vs-buy-calculator"), lastModified: new Date("2026-03-24"), changeFrequency: "monthly" as const, priority: 0.8 },
   { url: u("/finance-tools/saas-churn-calculator"), lastModified: new Date("2026-03-16"), changeFrequency: "monthly" as const, priority: 0.8 },
   { url: u("/finance-tools/saas-payback-calculator"), lastModified: new Date("2026-03-16"), changeFrequency: "monthly" as const, priority: 0.8 },
   { url: u("/finance-tools/freelance-rate-calculator"), lastModified: new Date("2026-03-16"), changeFrequency: "monthly" as const, priority: 0.8 },

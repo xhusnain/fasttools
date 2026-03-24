@@ -113,6 +113,10 @@ Description: Free LLM training cost calculator. Estimate GPU hours, training tim
 URL: https://www.fasttools.store/calculator/tdee-macro-calculator
 Description: Free TDEE & macro calculator. Calculate Total Daily Energy Expenditure and personalized macronutrient targets using Mifflin-St Jeor, Harris-Benedict, and Katch-McArdle equations. Features 3 BMR formula comparison, 5 macro presets (Balanced, Low Carb, High Protein, Keto, Custom), 6 activity levels, 5 goal settings (weight loss to bulk), per-meal macro split (2-6 meals), body fat % integration, BMI and lean body mass calculations. Imperial and Metric units. No email, no signup required.
 
+## Rent vs Buy Calculator
+URL: https://www.fasttools.store/finance-tools/rent-vs-buy-calculator
+Description: Free rent vs buy calculator. Compare the true cost of renting vs buying a home over 3-30 years. Includes mortgage, property tax, insurance, PMI, HOA, maintenance, home appreciation, equity building, opportunity cost (renter invests the difference), tax deductions with SALT cap, closing costs, and selling costs. Features break-even year analysis, year-by-year comparison table, net worth projection, price-to-rent ratio, 5% rule indicator, and monthly cost breakdown. No signup required.
+
 ## Cortisol Peak Time Calculator
 URL: https://www.fasttools.store/calculator/cortisol-peak-calculator
 Description: Free cortisol peak time calculator. Enter your wake-up time to get personalised caffeine timing (when to drink coffee), optimal workout windows, deep focus blocks, melatonin onset, and ideal bedtime — all based on your cortisol circadian rhythm. Features 24-hour cortisol curve visualisation, Cortisol Awakening Response (CAR) timing, caffeine cut-off time, and 8 time-stamped daily recommendations. No signup required.
@@ -366,6 +370,7 @@ Description: Free YAML to JSON converter. Swagger YAML to JSON, OpenAPI YAML to 
 - https://www.fasttools.store/finance-tools/saas-payback-calculator
 - https://www.fasttools.store/finance-tools/remote-work-savings
 - https://www.fasttools.store/finance-tools/zakat-calculator
+- https://www.fasttools.store/finance-tools/rent-vs-buy-calculator
 - https://www.fasttools.store/fun-tools
 - https://www.fasttools.store/fun-tools/anniversary
 - https://www.fasttools.store/fun-tools/birthday-countdown

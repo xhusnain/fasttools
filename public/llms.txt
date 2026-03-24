@@ -86,6 +86,7 @@ Financial planning and calculation tools including bill splitters, tip calculato
 - https://www.fasttools.store/finance-tools/freelance-rate-calculator - Free freelance hourly rate calculator. Factor in taxes, expenses, billable hours, vacation & profit margin to find your ideal rate. Free.
 - https://www.fasttools.store/finance-tools/saas-payback-calculator - Free SaaS payback period calculator. Calculate CAC recovery, LTV:CAC ratio, customer lifetime value & 36-month ROI projection. Free.
 - https://www.fasttools.store/finance-tools/remote-work-savings - Free remote work savings calculator. Calculate commute, meal, wardrobe savings plus time reclaimed and environmental impact. Free.
+- https://www.fasttools.store/finance-tools/rent-vs-buy-calculator - Free rent vs buy calculator. Compare true cost of renting vs buying over 3-30 years. Mortgage, taxes, PMI, opportunity cost, equity, break-even analysis. Free.
 - https://www.fasttools.store/finance-tools/zakat-calculator - Free Zakat calculator 2026. Calculate Zakat on cash, gold, silver, investments, business & crypto. Nisab threshold, 8 recipient categories. Based on Quran & Sunnah. Free. Calculate customer churn, revenue churn (MRR), net revenue churn, retention rate, CLV, and 12-month projections. Industry benchmarks for B2B, B2C, Enterprise SaaS. Free.
 
 ### Web Tools
@@ -293,6 +294,7 @@ Context: FastTools provides free, fast, and accurate online tools that work on a
 - https://www.fasttools.store/finance-tools/saas-payback-calculator
 - https://www.fasttools.store/finance-tools/remote-work-savings
 - https://www.fasttools.store/finance-tools/zakat-calculator
+- https://www.fasttools.store/finance-tools/rent-vs-buy-calculator
 - https://www.fasttools.store/fun-tools
 - https://www.fasttools.store/fun-tools/anniversary
 - https://www.fasttools.store/fun-tools/birthday-countdown
