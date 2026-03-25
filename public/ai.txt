@@ -113,6 +113,10 @@ Description: Free LLM training cost calculator. Estimate GPU hours, training tim
 URL: https://www.fasttools.store/calculator/tdee-macro-calculator
 Description: Free TDEE & macro calculator. Calculate Total Daily Energy Expenditure and personalized macronutrient targets using Mifflin-St Jeor, Harris-Benedict, and Katch-McArdle equations. Features 3 BMR formula comparison, 5 macro presets (Balanced, Low Carb, High Protein, Keto, Custom), 6 activity levels, 5 goal settings (weight loss to bulk), per-meal macro split (2-6 meals), body fat % integration, BMI and lean body mass calculations. Imperial and Metric units. No email, no signup required.
 
+## Net Worth Calculator
+URL: https://www.fasttools.store/finance-tools/net-worth-calculator
+Description: Free personal net worth calculator. Add assets (cash, investments, retirement, real estate, vehicles) and liabilities (mortgage, student loans, auto loans, credit cards) to calculate total net worth, liquid net worth, debt-to-asset ratio with health rating, financial health grade (A+ through D), asset/liability allocation breakdown, and age-based percentile comparison using Federal Reserve SCF data. No signup required.
+
 ## Debt Payoff Calculator (Snowball & Avalanche)
 URL: https://www.fasttools.store/finance-tools/debt-payoff-calculator
 Description: Free debt payoff calculator comparing snowball and avalanche methods side by side. Add multiple debts with balance, APR, and minimum payment. Enter extra monthly payment. See debt-free date, total interest, interest savings, payoff order, full month-by-month payment schedule with principal/interest breakdown, and daily interest cost indicator. Payment rollover automatically cascades freed payments to the next priority debt. No signup required.
@@ -376,6 +380,7 @@ Description: Free YAML to JSON converter. Swagger YAML to JSON, OpenAPI YAML to 
 - https://www.fasttools.store/finance-tools/zakat-calculator
 - https://www.fasttools.store/finance-tools/rent-vs-buy-calculator
 - https://www.fasttools.store/finance-tools/debt-payoff-calculator
+- https://www.fasttools.store/finance-tools/net-worth-calculator
 - https://www.fasttools.store/fun-tools
 - https://www.fasttools.store/fun-tools/anniversary
 - https://www.fasttools.store/fun-tools/birthday-countdown

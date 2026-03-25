@@ -41,7 +41,7 @@
 - **Features**: Multiple debts input, snowball vs avalanche comparison, payoff timeline, total interest saved, extra payment impact.
 - **Traffic**: Massive — anyone with credit card or student loan debt.
 
-### 6. Net Worth Calculator
+### 6. [DONE] Net Worth Calculator
 - **Category**: finance-tools
 - **Why**: "Net worth calculator" is searched by anyone doing financial planning. Finance CPC: $20-40.
 - **Features**: Assets (cash, investments, property, vehicles, retirement) - liabilities (mortgage, loans, credit cards) = net worth with age benchmark.

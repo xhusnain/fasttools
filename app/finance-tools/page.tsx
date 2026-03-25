@@ -22,6 +22,7 @@ import {
   Briefcase,
   Heart,
   Car,
+  Wallet,
 } from "lucide-react"
 import { ToolPageLayout } from "@/components/common/tool-page-layout"
 import { Metadata } from "next"
@@ -244,6 +245,13 @@ const financeTools = [
       "Compare snowball vs avalanche strategies to pay off multiple debts. See your debt-free date, total interest saved, and month-by-month plan.",
     icon: TrendingDown,
     href: "/finance-tools/debt-payoff-calculator",
+  },
+  {
+    title: "Net Worth Calculator",
+    description:
+      "Calculate your personal net worth with asset/liability breakdown, debt-to-asset ratio, financial health grade, and age percentile comparison.",
+    icon: Wallet,
+    href: "/finance-tools/net-worth-calculator",
   },
 ]
 
