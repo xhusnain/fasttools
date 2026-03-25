@@ -1,11 +1,12 @@
+import http from "http";
 import https from "https";
+import tls from "tls";
+import { PROXY_LIST } from "./proxies";
 
 /**
- * Fetches Instagram profile data by scraping the profile page using Googlebot UA.
- * Instagram serves full og:meta tags to Googlebot, which includes the profile picture,
- * follower counts, and profile name — without requiring login or cookies.
- *
- * This is more reliable than the private API which now requires authentication.
+ * Fetches Instagram profile data by scraping the profile page with Googlebot UA.
+ * Uses Webshare residential proxies so Instagram sees a real IP (not datacenter).
+ * On Cloud Run, datacenter IPs get blocked — proxies solve this.
  */
 
 interface OgProfileData {
@@ -46,12 +47,129 @@ function decodeHtmlEntities(text: string): string {
     .replace(/&apos;/g, "'");
 }
 
-function fetchPage(urlPath: string): Promise<{ status: number; body: string }> {
+function getRandomProxy() {
+  const proxyStr = PROXY_LIST[Math.floor(Math.random() * PROXY_LIST.length)];
+  const [host, port, user, password] = proxyStr.split(":");
+  return { host, port: parseInt(port, 10), user, password };
+}
+
+/**
+ * Fetch a page through a Webshare HTTP proxy using CONNECT tunnel for HTTPS.
+ */
+function fetchPageViaProxy(
+  targetHost: string,
+  targetPath: string
+): Promise<{ status: number; body: string }> {
+  return new Promise((resolve, reject) => {
+    const proxy = getRandomProxy();
+    const auth = Buffer.from(`${proxy.user}:${proxy.password}`).toString("base64");
+
+    const connectReq = http.request({
+      host: proxy.host,
+      port: proxy.port,
+      method: "CONNECT",
+      path: `${targetHost}:443`,
+      headers: {
+        Host: `${targetHost}:443`,
+        "Proxy-Authorization": `Basic ${auth}`,
+      },
+      timeout: 12000,
+    });
+
+    connectReq.on("connect", (_res, socket) => {
+      // Upgrade to TLS through the proxy tunnel
+      const tlsSocket = tls.connect(
+        {
+          host: targetHost,
+          socket: socket,
+          servername: targetHost,
+        },
+        () => {
+          // Now make the HTTP request over TLS
+          const requestData = [
+            `GET ${targetPath} HTTP/1.1`,
+            `Host: ${targetHost}`,
+            `User-Agent: Mozilla/5.0 (compatible; Googlebot/2.1; +http://www.google.com/bot.html)`,
+            `Accept: text/html`,
+            `Accept-Language: en-US,en;q=0.9`,
+            `Connection: close`,
+            ``,
+            ``,
+          ].join("\r\n");
+
+          tlsSocket.write(requestData);
+
+          let rawResponse = "";
+          tlsSocket.on("data", (chunk: Buffer) => {
+            rawResponse += chunk.toString();
+          });
+
+          tlsSocket.on("end", () => {
+            tlsSocket.destroy();
+            // Parse HTTP response
+            const headerEnd = rawResponse.indexOf("\r\n\r\n");
+            if (headerEnd === -1) {
+              reject(new Error("Invalid HTTP response from proxy"));
+              return;
+            }
+            const headerPart = rawResponse.substring(0, headerEnd);
+            const body = rawResponse.substring(headerEnd + 4);
+            const statusMatch = headerPart.match(/HTTP\/\d\.\d (\d+)/);
+            const status = statusMatch ? parseInt(statusMatch[1], 10) : 0;
+
+            // Handle redirects
+            if ((status === 301 || status === 302)) {
+              const locMatch = headerPart.match(/Location:\s*(.+)/i);
+              if (locMatch) {
+                const loc = locMatch[1].trim();
+                const redirectPath = loc.startsWith("http")
+                  ? new URL(loc).pathname
+                  : loc;
+                fetchPageViaProxy(targetHost, redirectPath)
+                  .then(resolve)
+                  .catch(reject);
+                return;
+              }
+            }
+
+            resolve({ status, body });
+          });
+
+          tlsSocket.on("error", (err) => {
+            tlsSocket.destroy();
+            reject(err);
+          });
+        }
+      );
+
+      tlsSocket.on("error", (err) => {
+        socket.destroy();
+        reject(err);
+      });
+    });
+
+    connectReq.on("error", (err) => reject(err));
+    connectReq.on("timeout", () => {
+      connectReq.destroy();
+      reject(new Error("Proxy CONNECT timed out"));
+    });
+
+    connectReq.end();
+  });
+}
+
+/**
+ * Fetch a page directly (no proxy) — works locally / residential IPs.
+ */
+function fetchPageDirect(
+  targetHost: string,
+  targetPath: string
+): Promise<{ status: number; body: string }> {
   return new Promise((resolve, reject) => {
     const req = https.request(
       {
-        hostname: "www.instagram.com",
-        path: urlPath,
+        hostname: targetHost,
+        path: targetPath,
         method: "GET",
         headers: {
           "user-agent":
@@ -62,7 +180,6 @@ function fetchPage(urlPath: string): Promise<{ status: number; body: string }> {
         timeout: 10000,
       },
       (res) => {
-        // Follow redirects (max 2)
         if (
           (res.statusCode === 301 || res.statusCode === 302) &&
           res.headers.location
@@ -70,7 +187,9 @@ function fetchPage(urlPath: string): Promise<{ status: number; body: string }> {
           const redirectPath = res.headers.location.startsWith("http")
             ? new URL(res.headers.location).pathname
             : res.headers.location;
-          fetchPage(redirectPath).then(resolve).catch(reject);
+          fetchPageDirect(targetHost, redirectPath)
+            .then(resolve)
+            .catch(reject);
           return;
         }
 
@@ -94,7 +213,6 @@ function parseProfileFromHtml(
   html: string,
   username: string
 ): OgProfileData | null {
-  // Extract og:image
   const ogImage = html.match(
     /<meta[^>]*property="og:image"[^>]*content="([^"]+)"/
   );
@@ -111,30 +229,23 @@ function parseProfileFromHtml(
   const desc = ogDesc ? decodeHtmlEntities(ogDesc[1]) : "";
   const title = ogTitle ? decodeHtmlEntities(ogTitle[1]) : "";
 
-  // Parse name from title: "Name (@username) • Instagram photos and videos"
   const nameMatch = title.match(/^(.+?)\s*\(@/);
   const fullName = nameMatch ? nameMatch[1].trim() : username;
 
-  // Parse counts from description: "701M Followers, 226 Following, 8,378 Posts"
   const followersMatch = desc.match(/([\d,.]+[KMB]?)\s*Followers/i);
   const followingMatch = desc.match(/([\d,.]+[KMB]?)\s*Following/i);
   const postsMatch = desc.match(/([\d,.]+[KMB]?)\s*Posts/i);
 
-  // Build HD and SD URLs by modifying the size parameter
   const hdUrl = imgUrl.replace(/s\d+x\d+/, "s1080x1080");
   const sdUrl = imgUrl.replace(/s\d+x\d+/, "s320x320");
 
-  // Check for verified badge (blue checkmark in title)
   const isVerified =
     html.includes("is_verified") ||
     title.includes("✓") ||
     title.includes("☑");
 
-  // Check if private from description
   const isPrivate = desc.toLowerCase().includes("private");
 
-  // Try to extract biography from description
-  // Format: "COUNT Followers, COUNT Following, COUNT Posts - BIOGRAPHY_TEXT"
   const bioMatch = desc.match(
     /\d+\s*Posts?\s*[-–—]\s*(?:See Instagram photos and videos from .+|(.+))/i
   );
@@ -161,9 +272,8 @@ function parseProfileFromHtml(
 export async function fetchInstagramProfile(
   url: string,
   _headers: Record<string, string>,
-  maxRetries: number = 3
+  maxRetries: number = 4
 ): Promise<{ ok: boolean; status: number; data: any }> {
-  // Extract username from the API URL
   const usernameMatch = url.match(/username=([^&]+)/);
   const username = usernameMatch ? decodeURIComponent(usernameMatch[1]) : null;
 
@@ -172,27 +282,27 @@ export async function fetchInstagramProfile(
   }
 
   let lastError: Error | null = null;
+  const targetPath = `/${username}/`;
 
   for (let attempt = 1; attempt <= maxRetries; attempt++) {
+    // Attempt 1: direct (works locally). Attempts 2+: via proxy (for Cloud Run).
+    const useProxy = attempt > 1;
+
     try {
       console.log(
-        `[Instagram] Attempt ${attempt}: Fetching profile page for @${username}`
+        `[Instagram] Attempt ${attempt}: Fetching @${username} (proxy=${useProxy})`
       );
 
-      const { status, body } = await fetchPage(`/${username}/`);
+      const { status, body } = useProxy
+        ? await fetchPageViaProxy("www.instagram.com", targetPath)
+        : await fetchPageDirect("www.instagram.com", targetPath);
 
       if (status === 404 || body.includes("Sorry, this page isn't available")) {
-        return {
-          ok: false,
-          status: 404,
-          data: { error: "User not found" },
-        };
+        return { ok: false, status: 404, data: { error: "User not found" } };
       }
 
       if (status !== 200) {
-        console.warn(
-          `[Instagram] Attempt ${attempt}: Got status ${status}, retrying...`
-        );
+        console.warn(`[Instagram] Attempt ${attempt}: status ${status}`);
         lastError = new Error(`HTTP ${status}`);
         continue;
       }
@@ -200,18 +310,15 @@ export async function fetchInstagramProfile(
       const profileData = parseProfileFromHtml(body, username);
 
       if (!profileData) {
-        console.warn(
-          `[Instagram] Attempt ${attempt}: Could not parse profile from HTML, retrying...`
-        );
-        lastError = new Error("Failed to parse profile data from HTML");
+        console.warn(`[Instagram] Attempt ${attempt}: Could not parse og:meta from HTML`);
+        lastError = new Error("Failed to parse profile from HTML");
         continue;
       }
 
       console.log(
-        `[Instagram] Success: @${username} — ${profileData.full_name}, ${profileData.followers} followers`
+        `[Instagram] Success: @${username} — ${profileData.full_name}, ${profileData.followers} followers (proxy=${useProxy})`
       );
 
-      // Return in the same format as the old API for compatibility
       return {
         ok: true,
         status: 200,
@@ -223,9 +330,7 @@ export async function fetchInstagramProfile(
               biography: profileData.biography,
               edge_followed_by: { count: profileData.followers },
               edge_follow: { count: profileData.followees },
-              edge_owner_to_timeline_media: {
-                count: profileData.posts_count,
-              },
+              edge_owner_to_timeline_media: { count: profileData.posts_count },
               profile_pic_url: profileData.profile_pic_url,
               profile_pic_url_hd: profileData.profile_pic_url_hd,
               is_verified: profileData.is_verified,
@@ -238,7 +343,7 @@ export async function fetchInstagramProfile(
     } catch (error) {
       lastError = error instanceof Error ? error : new Error(String(error));
       console.warn(
-        `[Instagram] Attempt ${attempt} failed: ${lastError.message}`
+        `[Instagram] Attempt ${attempt} failed (proxy=${useProxy}): ${lastError.message}`
       );
     }
   }
