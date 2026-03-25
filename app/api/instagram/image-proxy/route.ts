@@ -38,8 +38,7 @@ function fetchImageViaProxy(imageUrl: string): Promise<{ status: number; buffer:
           const reqData = [
             `GET ${reqPath} HTTP/1.1`,
             `Host: ${parsed.hostname}`,
-            `User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36`,
-            `Referer: https://www.instagram.com/`,
+            `User-Agent: Mozilla/5.0 (compatible; Googlebot/2.1; +http://www.google.com/bot.html)`,
             `Accept: image/avif,image/webp,image/apng,image/*,*/*;q=0.8`,
             `Connection: close`,
             ``, ``
@@ -92,8 +91,8 @@ function fetchImageViaProxy(imageUrl: string): Promise<{ status: number; buffer:
 async function fetchImageDirect(imageUrl: string): Promise<{ status: number; buffer: Buffer; contentType: string }> {
   const response = await fetch(imageUrl, {
     headers: {
-      "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36",
-      Referer: "https://www.instagram.com/",
+      "User-Agent": "Mozilla/5.0 (compatible; Googlebot/2.1; +http://www.google.com/bot.html)",
+      Accept: "image/avif,image/webp,image/apng,image/*,*/*;q=0.8",
     },
   });
   const contentType = response.headers.get("content-type") || "image/jpeg";

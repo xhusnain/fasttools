@@ -236,8 +236,12 @@ function parseProfileFromHtml(
   const followingMatch = desc.match(/([\d,.]+[KMB]?)\s*Following/i);
   const postsMatch = desc.match(/([\d,.]+[KMB]?)\s*Posts/i);
 
-  const hdUrl = imgUrl.replace(/s\d+x\d+/, "s1080x1080");
-  const sdUrl = imgUrl.replace(/s\d+x\d+/, "s320x320");
+  // Instagram CDN URLs have signed auth tokens — modifying the stp size param
+  // (e.g. s100x100 → s1080x1080) invalidates the signature and returns 403.
+  // We use the original URL as-is from og:image. Both HD and SD point to the
+  // same signed URL — the component scales it up via CSS for display.
+  const hdUrl = imgUrl;
+  const sdUrl = imgUrl;
 
   const isVerified =
     html.includes("is_verified") ||
