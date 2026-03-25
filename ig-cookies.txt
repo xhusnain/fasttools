@@ -1,4 +1,0 @@
-{
-  "value": "csrftoken=socdMvm6pu6EilDP_lT1LU; mid=aawvUgALAAHaszP_oUpZgUXnLvOF",
-  "expiry": 1798811987978
-}
