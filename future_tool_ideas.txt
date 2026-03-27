@@ -53,7 +53,7 @@
 - **Features**: Current savings, monthly contribution, employer match, expected return, years to retirement → projected balance, income in retirement.
 - **Traffic**: Enormous — evergreen demand from entire working population.
 
-### 8. Ovulation & Fertility Calculator
+### 8. [DONE] Ovulation & Fertility Calculator
 - **Category**: calculator
 - **Why**: "Ovulation calculator" = millions of monthly searches globally. Health CPC: $15-35. Extremely sticky (users return monthly).
 - **Features**: Last period date, cycle length → fertile window, ovulation day, next period, best days to conceive.

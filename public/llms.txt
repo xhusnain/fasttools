@@ -52,6 +52,7 @@ Extensive collection of financial, health, and scientific calculators including 
 - https://www.fasttools.store/calculator/cortisol-peak-calculator - Free cortisol peak time calculator. Optimal caffeine timing, workout windows, deep focus blocks & ideal bedtime based on wake-up time and cortisol rhythm. Free.
 - https://www.fasttools.store/calculator/biological-age-calculator - Free biological age calculator. Estimate true body age from resting heart rate, sleep, exercise, stress, diet, BMI & habits. Personalised recommendations. Free.
 - https://www.fasttools.store/calculator/tdee-macro-calculator - Free TDEE & macro calculator. Calculate Total Daily Energy Expenditure and personalized macros using Mifflin-St Jeor, Harris-Benedict, Katch-McArdle equations. 5 macro presets, 6 activity levels, per-meal split, formula comparison. No signup. Free.
+- https://www.fasttools.store/calculator/ovulation-calculator - Free ovulation calculator. Fertile window, ovulation date, 6-cycle forecast, visual calendar, pregnancy test date, estimated due date. Based on ACOG/WHO guidelines. Free.
 - https://www.fasttools.store/calculator/ip-subnet-calculator - Advanced IP Subnet Calculator for network engineers and students. Supports IPv4, IPv6, CIDR notation, and VLSM calculations. Features include visual subnetting diagrams, real-world examples (AWS, Docker, Home Network), and comprehensive guides on network design. Optimized with HowTo and SoftwareApplication schema for enhanced search visibility.
 - https://www.fasttools.store/calculator/date-difference - Calculate days, months, and years between two dates with business day options, leap year handling, and multiple date formats. Comprehensive guide with troubleshooting tips and best practices.
 
@@ -221,6 +222,7 @@ Context: FastTools provides free, fast, and accurate online tools that work on a
 - https://www.fasttools.store/calculator/cortisol-peak-calculator
 - https://www.fasttools.store/calculator/biological-age-calculator
 - https://www.fasttools.store/calculator/tdee-macro-calculator
+- https://www.fasttools.store/calculator/ovulation-calculator
 - https://www.fasttools.store/converters
 - https://www.fasttools.store/converters/currency
 - https://www.fasttools.store/converters/file-size

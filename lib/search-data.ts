@@ -126,6 +126,8 @@ export const searchItems: SearchItem[] = [
   { name: "HTML to Markdown", description: "Convert HTML content to Markdown format", path: "/dev-tools/html-to-markdown", category: "Developer" },
   { name: "Markdown Previewer", description: "Preview Markdown content in real-time", path: "/dev-tools/markdown-previewer", category: "Developer" },
 
+  { name: "Ovulation Calculator", description: "Free ovulation calculator. Find your fertile window, ovulation date, best days to conceive, pregnancy test date, and estimated due date. 6-cycle forecast with visual fertility calendar.", path: "/calculator/ovulation-calculator", category: "Calculator" },
+
   // Image Tools
   { name: "Image Resizer", description: "Resize images online for free. Custom dimensions, 50+ social media presets for Instagram, Facebook, LinkedIn, YouTube, TikTok. JPG, PNG, WebP. No quality loss.", path: "/image-tools/image-resizer", category: "Image" },
   { name: "Image to Text (OCR)", description: "Extract text from images with OCR technology", path: "/image-tools/image-to-text", category: "Image" },

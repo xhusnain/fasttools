@@ -1118,6 +1118,14 @@ export const categories = [
                 badgeColor: "bg-blue-500/90",
             },
             {
+                title: "Ovulation Calculator",
+                description: "Find ovulation date, fertile window, and best days to conceive with 6-cycle forecast",
+                href: "/calculator/ovulation-calculator",
+                icon: Heart,
+                badge: "New",
+                badgeColor: "bg-green-600",
+            },
+            {
                 title: "Pregnancy Conception",
                 description: "Estimate conception date based on due date or ultrasound data",
                 href: "/calculator/pregnancy-conception-calculator",

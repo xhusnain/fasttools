@@ -129,6 +129,13 @@ const tools = [
     color: "pink"
   },
   {
+    title: "Ovulation & Fertility Calculator",
+    description: "Calculate ovulation date, fertile window, and best days to conceive. 6-cycle forecast with visual calendar.",
+    icon: Heart,
+    href: "/calculator/ovulation-calculator",
+    color: "pink"
+  },
+  {
     title: "Pregnancy Conception Calculator",
     description: "Calculate optimal conception dates and fertile windows. Plan pregnancy with ovulation tracking.",
     icon: CalendarHeart,

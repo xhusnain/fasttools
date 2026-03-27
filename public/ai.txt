@@ -270,6 +270,10 @@ URL: https://www.fasttools.store/converters/yaml-json
 Description: Free YAML to JSON converter. Swagger YAML to JSON, OpenAPI YAML to JSON. Convert YAML to JSON for Postman, Notepad++. YAML to JSON schema. JSON formatter. No signup.
 
 
+## Ovulation & Fertility Calculator
+URL: https://www.fasttools.store/calculator/ovulation-calculator
+Description: Free ovulation calculator online. Calculate ovulation date, fertile window, and best days to conceive based on last menstrual period and cycle length. Features 6-cycle forecast with period start, fertile window, ovulation date, pregnancy test date (14 DPO), and estimated due date. Visual color-coded fertility calendar (red = period, green = fertile, pink = ovulation day). Customizable cycle length (21-35 days), luteal phase (10-17 days), and period length. Peak fertility day highlighting. Based on ACOG, WHO, and NHS guidelines. 100% client-side — cycle data never leaves your device. No signup, no account required.
+
 ## Image Resizer
 URL: https://www.fasttools.store/image-tools/image-resizer
 Description: Free online image resizer. Resize images to custom pixel dimensions, percentage scale, or 50+ social media presets (Instagram, Facebook, Twitter/X, LinkedIn, YouTube, TikTok, Pinterest, WhatsApp). Supports JPG, PNG (with transparency), WebP, GIF, BMP, TIFF input. Output as JPG, PNG, or WebP with quality slider. Features aspect ratio lock/unlock, common size presets (Full HD, 4K, Passport Photo, Favicon, App Icon), instant preview with file size comparison, and drag-and-drop upload. 100% client-side browser processing — images never leave your device. No signup, no watermarks, no daily limits.
@@ -307,6 +311,7 @@ Description: Free online image resizer. Resize images to custom pixel dimensions
 - https://www.fasttools.store/calculator/cortisol-peak-calculator
 - https://www.fasttools.store/calculator/biological-age-calculator
 - https://www.fasttools.store/calculator/tdee-macro-calculator
+- https://www.fasttools.store/calculator/ovulation-calculator
 - https://www.fasttools.store/converters
 - https://www.fasttools.store/converters/currency
 - https://www.fasttools.store/converters/file-size

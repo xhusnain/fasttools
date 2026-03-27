@@ -102,6 +102,7 @@ export const navigationConfig: MegaMenuSection[] = [
                     { title: "Scientific Calc", href: "/calculator/scientific-calculator", icon: Calculator },
                     { title: "GPA Calculator", href: "/calculator/gpa-calculator", icon: GraduationCap },
                     { title: "Love Calculator", href: "/calculator/love-calculator", icon: Heart },
+                    { title: "Ovulation Calc", href: "/calculator/ovulation-calculator", icon: Heart },
                 ]
             },
             {
