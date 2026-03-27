@@ -144,6 +144,7 @@ export const navigationConfig: MegaMenuSection[] = [
             {
                 title: "Developer",
                 items: [
+                    { title: "Cron Generator", href: "/dev-tools/cron-expression-generator", icon: Clock },
                     { title: "JSON Diff", href: "/dev-tools/json-diff", icon: FileCode },
                     { title: "JSON to CSV", href: "/dev-tools/json-to-csv", icon: FileText },
                     { title: "Regex Tester", href: "/dev-tools/regex-tester", icon: Code },
@@ -193,6 +194,7 @@ export const navigationConfig: MegaMenuSection[] = [
                     { title: "Compound Interest", href: "/finance-tools/compound-interest", icon: BarChart },
                     { title: "Retirement Calc", href: "/finance-tools/retirement-calculator", icon: PiggyBank },
                     { title: "Savings Tracker", href: "/finance-tools/savings-tracker", icon: PiggyBank },
+                    { title: "Startup Runway", href: "/finance-tools/startup-runway-calculator", icon: TrendingUp },
                 ]
             },
             {
@@ -249,6 +251,7 @@ export const navigationConfig: MegaMenuSection[] = [
             {
                 title: "SEO Tools",
                 items: [
+                    { title: "Schema Generator", href: "/seo-tools/schema-markup-generator", icon: Code },
                     { title: "Keyword Density", href: "/seo-tools/keyword-density", icon: BarChart },
                     { title: "Open Graph Meta Generator", href: "/seo-tools/meta-tags", icon: Code },
                     { title: "Lorem Ipsum", href: "/seo-tools/lorem-ipsum", icon: FileText },

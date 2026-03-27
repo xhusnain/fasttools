@@ -270,6 +270,18 @@ URL: https://www.fasttools.store/converters/yaml-json
 Description: Free YAML to JSON converter. Swagger YAML to JSON, OpenAPI YAML to JSON. Convert YAML to JSON for Postman, Notepad++. YAML to JSON schema. JSON formatter. No signup.
 
 
+## Startup Runway Calculator
+URL: https://www.fasttools.store/finance-tools/startup-runway-calculator
+Description: Free startup runway calculator. Calculate months of runway, net/gross burn rate, zero-cash date, and fundraise timing based on cash on hand, monthly expenses, revenue, and growth rates. Features iterative month-by-month projections with revenue growth, burn multiple score, visual cash balance chart, monthly breakdown table, fundraise window alerts, and 2026 industry benchmarks by stage (Pre-seed, Seed, Series A, SaaS). Completes the SaaS cluster with SaaS Churn and Payback calculators. No signup required.
+
+## Schema Markup Generator (JSON-LD)
+URL: https://www.fasttools.store/seo-tools/schema-markup-generator
+Description: Free schema markup generator for JSON-LD structured data. Supports 11 schema types: Article, FAQPage, HowTo, LocalBusiness, Product, Event, Organization, Person, Recipe, BreadcrumbList, VideoObject. Visual form builder with required/recommended field badges, real-time JSON-LD preview, script tag output, one-click copy, and direct link to Google Rich Results Test. Supports nested schemas (Author, Publisher, Offer, AggregateRating), array fields (FAQ Q&As, HowTo steps, ingredients), and LocalBusiness subtypes. No signup required.
+
+## Cron Expression Generator
+URL: https://www.fasttools.store/dev-tools/cron-expression-generator
+Description: Free cron expression generator and crontab builder online. Visual builder with dropdown selectors for all 5 cron fields (minute, hour, day-of-month, month, day-of-week). Features 25+ quick presets (every 5 minutes, daily, weekly, monthly, business hours, quarterly, yearly), real-time English description of cron expressions, next 10 run time predictions in local timezone, bidirectional parsing (type cron to decode or build visually), syntax quick reference, and one-click copy. Supports standard Unix crontab format used by crontab, Kubernetes CronJobs, GitHub Actions, AWS EventBridge, and Jenkins. No signup required.
+
 ## Ovulation & Fertility Calculator
 URL: https://www.fasttools.store/calculator/ovulation-calculator
 Description: Free ovulation calculator online. Calculate ovulation date, fertile window, and best days to conceive based on last menstrual period and cycle length. Features 6-cycle forecast with period start, fertile window, ovulation date, pregnancy test date (14 DPO), and estimated due date. Visual color-coded fertility calendar (red = period, green = fertile, pink = ovulation day). Customizable cycle length (21-35 days), luteal phase (10-17 days), and period length. Peak fertility day highlighting. Based on ACOG, WHO, and NHS guidelines. 100% client-side — cycle data never leaves your device. No signup, no account required.
@@ -359,6 +371,7 @@ Description: Free online image resizer. Resize images to custom pixel dimensions
 - https://www.fasttools.store/dev-tools/sql-to-json
 - https://www.fasttools.store/dev-tools/llm-training-cost
 - https://www.fasttools.store/dev-tools/cloudflare-workers-cost
+- https://www.fasttools.store/dev-tools/cron-expression-generator
 - https://www.fasttools.store/faq
 - https://www.fasttools.store/finance-tools
 - https://www.fasttools.store/finance-tools/amortization-calculator
@@ -390,6 +403,7 @@ Description: Free online image resizer. Resize images to custom pixel dimensions
 - https://www.fasttools.store/finance-tools/rent-vs-buy-calculator
 - https://www.fasttools.store/finance-tools/debt-payoff-calculator
 - https://www.fasttools.store/finance-tools/net-worth-calculator
+- https://www.fasttools.store/finance-tools/startup-runway-calculator
 - https://www.fasttools.store/fun-tools
 - https://www.fasttools.store/fun-tools/anniversary
 - https://www.fasttools.store/fun-tools/birthday-countdown
@@ -412,6 +426,7 @@ Description: Free online image resizer. Resize images to custom pixel dimensions
 - https://www.fasttools.store/seo-tools/lorem-ipsum
 - https://www.fasttools.store/seo-tools/meta-tags
 - https://www.fasttools.store/seo-tools/text-similarity-checker
+- https://www.fasttools.store/seo-tools/schema-markup-generator
 - https://www.fasttools.store/social-media-tools
 - https://www.fasttools.store/social-media-tools/channel-checker
 - https://www.fasttools.store/social-media-tools/hashtag-counter

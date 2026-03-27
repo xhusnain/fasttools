@@ -5,6 +5,7 @@ import { GToolCard } from "@/ui/gtool-card"
 import {
   Binary,
   Braces,
+  Clock,
   Code2,
   Database,
   FileCode,
@@ -150,6 +151,13 @@ const devTools = [
       "Estimate monthly costs for Workers requests, CPU time, KV, R2 & Durable Objects with scaling projections.",
     href: "/dev-tools/cloudflare-workers-cost",
     icon: Globe,
+  },
+  {
+    title: "Cron Expression Generator",
+    description:
+      "Build cron expressions visually with 25+ presets, English descriptions, and next run time preview.",
+    href: "/dev-tools/cron-expression-generator",
+    icon: Clock,
   },
 ]
 

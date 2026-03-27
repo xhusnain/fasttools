@@ -3,7 +3,7 @@ import { GToolCard } from "@/ui/gtool-card"
 
 import { ToolPageLayout } from "@/components/common/tool-page-layout"
 import { createToolConfig } from "@/lib/create-tool-config"
-import { Code, FileText, Hash, Lightbulb, Search } from "lucide-react"
+import { Braces, Code, FileText, Hash, Lightbulb, Search } from "lucide-react"
 
 const tools = [
   {
@@ -40,6 +40,13 @@ const tools = [
       "Analyze keyword frequency and phrase distribution for on-page content review.",
     icon: Search,
     href: "/seo-tools/keyword-density",
+  },
+  {
+    title: "Schema Markup Generator",
+    description:
+      "Generate JSON-LD structured data for 11 schema types. Article, FAQ, Product, LocalBusiness, Event, Recipe & more.",
+    icon: Braces,
+    href: "/seo-tools/schema-markup-generator",
   },
 ]
 

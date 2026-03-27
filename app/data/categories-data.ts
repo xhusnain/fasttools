@@ -138,6 +138,14 @@ export const categories = [
                 badgeColor: "bg-blue-500/90",
             },
             {
+                title: "Schema Markup Generator",
+                description: "Generate JSON-LD structured data for Article, Product, FAQ, LocalBusiness & more",
+                href: "/seo-tools/schema-markup-generator",
+                icon: Code,
+                badge: "New",
+                badgeColor: "bg-green-600",
+            },
+            {
                 title: "Keyword Density Checker",
                 description: "Analyze keyword density in content for search engine optimization",
                 href: "/seo-tools/keyword-density",
@@ -386,6 +394,14 @@ export const categories = [
                 icon: Code,
                 badge: "API",
                 badgeColor: "bg-blue-500/90",
+            },
+            {
+                title: "Cron Expression Generator",
+                description: "Build cron expressions visually with presets, English descriptions, and run time preview.",
+                href: "/dev-tools/cron-expression-generator",
+                icon: Code,
+                badge: "New",
+                badgeColor: "bg-green-600",
             },
             {
                 title: "Regex Tester",
@@ -800,6 +816,14 @@ export const categories = [
                 icon: TrendingUp,
                 badge: "New",
                 badgeColor: "bg-blue-600/90",
+            },
+            {
+                title: "Startup Runway Calculator",
+                description: "Calculate months of runway, burn rate, zero-cash date, and fundraise timing",
+                href: "/finance-tools/startup-runway-calculator",
+                icon: Sparkles,
+                badge: "New",
+                badgeColor: "bg-green-600",
             },
             {
                 title: "Invoice Generator",

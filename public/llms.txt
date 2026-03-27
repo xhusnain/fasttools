@@ -42,6 +42,7 @@ Tools for search engine optimization and content marketing including meta tag ge
 **Featured Tools:**
 - https://www.fasttools.store/seo-tools/meta-tags - Open Graph meta generator online. open graph tag generator. open graph meta tags, open graph image size 1200x630. og meta checker. Free.
 - https://www.fasttools.store/seo-tools/text-similarity-checker - Check text similarity and detect duplicate content using SimHash algorithm.
+- https://www.fasttools.store/seo-tools/schema-markup-generator - Free JSON-LD schema markup generator. 11 types: Article, FAQ, Product, LocalBusiness, Event, Recipe, Organization, Person, HowTo, Breadcrumb, Video. Rich snippets. Free.
 
 ### Calculator Tools
 https://www.fasttools.store/calculator
@@ -94,6 +95,7 @@ Financial planning and calculation tools including bill splitters, tip calculato
 - https://www.fasttools.store/finance-tools/net-worth-calculator - Free net worth calculator. Assets, liabilities, debt-to-asset ratio, financial health grade, age percentile comparison using Federal Reserve data. Free.
 - https://www.fasttools.store/finance-tools/debt-payoff-calculator - Free debt payoff calculator. Compare snowball vs avalanche methods. Multiple debts, extra payments, debt-free date, interest savings, payment schedule. Free.
 - https://www.fasttools.store/finance-tools/rent-vs-buy-calculator - Free rent vs buy calculator. Compare true cost of renting vs buying over 3-30 years. Mortgage, taxes, PMI, opportunity cost, equity, break-even analysis. Free.
+- https://www.fasttools.store/finance-tools/startup-runway-calculator - Free startup runway calculator. Burn rate, zero-cash date, fundraise timing, revenue growth projections, burn multiple, industry benchmarks. Free.
 - https://www.fasttools.store/finance-tools/zakat-calculator - Free Zakat calculator 2026. Calculate Zakat on cash, gold, silver, investments, business & crypto. Nisab threshold, 8 recipient categories. Based on Quran & Sunnah. Free. Calculate customer churn, revenue churn (MRR), net revenue churn, retention rate, CLV, and 12-month projections. Industry benchmarks for B2B, B2C, Enterprise SaaS. Free.
 
 ### Web Tools
@@ -122,6 +124,7 @@ Tools for developers and programmers including JWT decoders, regex testers, JSON
 - https://www.fasttools.store/dev-tools/http-status-codes - HTTP status codes list. Complete http status codes table. http status codes 200, 201, 400, 404, 500 with examples. http stands for, http methods. http-status-codes npm, node http status codes. SMTP, FTP codes. Free.
 - https://www.fasttools.store/dev-tools/llm-training-cost - Free LLM training cost estimator. Estimate GPU hours, training time & cloud costs. Compare H100, A100, H200 across AWS, GCP, Azure, Lambda, CoreWeave. Free.
 - https://www.fasttools.store/dev-tools/cloudflare-workers-cost - Free Cloudflare Workers cost calculator. Estimate monthly costs for Workers, KV, R2, Durable Objects. Free vs paid plan comparison. Free.
+- https://www.fasttools.store/dev-tools/cron-expression-generator - Free cron expression generator. Visual builder, 25+ presets, English descriptions, next 10 run times. Unix crontab, Kubernetes, GitHub Actions, AWS. Free.
 - https://www.fasttools.store/crypto-tools/uuid-generator - Free Online UUID Generator (v1, v4, v6, v7). Generate standardized Universally Unique Identifiers instantly. Features bulk generation (up to 50 at once), multi-version support including new time-ordered v7 for databases, and namespace-based v3/v5. Secure, client-side only generation.
 
 ### Crypto Tools
@@ -274,6 +277,7 @@ Context: FastTools provides free, fast, and accurate online tools that work on a
 - https://www.fasttools.store/dev-tools/sql-to-json
 - https://www.fasttools.store/dev-tools/llm-training-cost
 - https://www.fasttools.store/dev-tools/cloudflare-workers-cost
+- https://www.fasttools.store/dev-tools/cron-expression-generator
 - https://www.fasttools.store/faq
 - https://www.fasttools.store/finance-tools
 - https://www.fasttools.store/finance-tools/amortization-calculator
@@ -305,6 +309,7 @@ Context: FastTools provides free, fast, and accurate online tools that work on a
 - https://www.fasttools.store/finance-tools/rent-vs-buy-calculator
 - https://www.fasttools.store/finance-tools/debt-payoff-calculator
 - https://www.fasttools.store/finance-tools/net-worth-calculator
+- https://www.fasttools.store/finance-tools/startup-runway-calculator
 - https://www.fasttools.store/fun-tools
 - https://www.fasttools.store/fun-tools/anniversary
 - https://www.fasttools.store/fun-tools/birthday-countdown
@@ -327,6 +332,7 @@ Context: FastTools provides free, fast, and accurate online tools that work on a
 - https://www.fasttools.store/seo-tools/lorem-ipsum
 - https://www.fasttools.store/seo-tools/meta-tags
 - https://www.fasttools.store/seo-tools/text-similarity-checker
+- https://www.fasttools.store/seo-tools/schema-markup-generator
 - https://www.fasttools.store/social-media-tools
 - https://www.fasttools.store/social-media-tools/channel-checker
 - https://www.fasttools.store/social-media-tools/hashtag-counter

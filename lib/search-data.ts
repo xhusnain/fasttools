@@ -114,6 +114,7 @@ export const searchItems: SearchItem[] = [
   { name: "JSON to CSV Converter", description: "Convert JSON data to CSV format", path: "/dev-tools/json-to-csv", category: "Developer" },
   { name: "SQL to JSON Converter", description: "Convert SQL INSERT statements to JSON format", path: "/dev-tools/sql-to-json", category: "Developer" },
   { name: "JWT Decoder", description: "Decode and inspect JSON Web Tokens securely", path: "/dev-tools/jwt-decoder", category: "Developer" },
+  { name: "Cron Expression Generator", description: "Free cron expression generator and crontab builder. Visual builder, 25+ presets, English descriptions, next 10 run times preview. Build cron jobs for Unix, Kubernetes, GitHub Actions, AWS.", path: "/dev-tools/cron-expression-generator", category: "Developer" },
   { name: "Base64 Encoder Decoder", description: "Encode and decode strings to Base64. URL-safe mode and file support", path: "/dev-tools/base64-encoder", category: "Developer" },
   { name: "MIME Types", description: "MIME types list. Convert MIME types to file extensions. mime types pdf, images, excel. mime-types npm alternative.", path: "/dev-tools/mime-types", category: "Developer" },
   { name: "Keycode Info", description: "Find javascript keycode, code, location and modifiers. keycode list, keyboard key codes, event keycode. keycode tester.", path: "/dev-tools/keycode-info", category: "Developer" },
@@ -146,6 +147,7 @@ export const searchItems: SearchItem[] = [
   // SEO Tools
   { name: "Open Graph Meta Generator", description: "open graph meta generator online. open graph tag generator. open graph meta tags, image size. Free.", path: "/seo-tools/meta-tags", category: "SEO" },
   { name: "Keyword Density Checker", description: "Analyze keyword density in content", path: "/seo-tools/keyword-density", category: "SEO" },
+  { name: "Schema Markup Generator", description: "Free JSON-LD schema markup generator for 11 types: Article, FAQ, Product, LocalBusiness, Event, Recipe, Organization, Person, HowTo, Breadcrumb, Video. Generate structured data for rich snippets.", path: "/seo-tools/schema-markup-generator", category: "SEO" },
   { name: "Lorem Ipsum Generator", description: "Generate placeholder text for design mockups", path: "/seo-tools/lorem-ipsum", category: "SEO" },
   { name: "Blog Title Generator", description: "Create catchy, SEO-friendly titles", path: "/seo-tools/blog-titles", category: "SEO" },
   { name: "Text Similarity Checker", description: "Check text similarity and detect duplicate content using SimHash", path: "/seo-tools/text-similarity-checker", category: "SEO" },
@@ -162,6 +164,8 @@ export const searchItems: SearchItem[] = [
   { name: "YouTube Channel Name Generator", description: "Generate catchy, unique names for your YouTube channel with AI", path: "/social-media-tools/youtube-channel-name-generator", category: "Social Media" },
   { name: "Hashtag Counter", description: "Count and extract hashtags from posts", path: "/social-media-tools/hashtag-counter", category: "Social Media" },
   { name: "Instagram DP Viewer", description: "View and download Instagram profile pictures in full size HD", path: "/social-media-tools/instagram-dp", category: "Social Media" },
+
+  { name: "Startup Runway Calculator", description: "Free startup runway calculator. Calculate months of runway, burn rate, zero-cash date, fundraise timing. Revenue growth projections, burn multiple, industry benchmarks by stage.", path: "/finance-tools/startup-runway-calculator", category: "Finance" },
 
   // Finance Tools
   { name: "Invoice Generator", description: "Create professional invoices for your business", path: "/finance-tools/invoice-generator", category: "Finance" },

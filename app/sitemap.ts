@@ -89,6 +89,7 @@ export const sitemapPages = [
   { url: u("/finance-tools/freelance-rate-calculator"), lastModified: new Date("2026-03-16"), changeFrequency: "monthly" as const, priority: 0.8 },
   { url: u("/finance-tools/remote-work-savings"), lastModified: new Date("2026-03-16"), changeFrequency: "monthly" as const, priority: 0.8 },
   { url: u("/finance-tools/zakat-calculator"), lastModified: new Date("2026-03-16"), changeFrequency: "yearly" as const, priority: 0.8 },
+  { url: u("/finance-tools/startup-runway-calculator"), lastModified: new Date("2026-03-27"), changeFrequency: "monthly" as const, priority: 0.8 },
   { url: u("/ad-tools/roas-calculator"), lastModified: new Date("2026-03-23"), changeFrequency: "monthly" as const, priority: 0.8 },
 
   // ─── AI Tools ────────────────────────────────────────────────────────
@@ -149,12 +150,14 @@ export const sitemapPages = [
   { url: u("/dev-tools/markdown-previewer"), lastModified: new Date("2026-03-23"), changeFrequency: "monthly" as const, priority: 0.7 },
   { url: u("/dev-tools/llm-training-cost"), lastModified: new Date("2026-03-16"), changeFrequency: "monthly" as const, priority: 0.7 },
   { url: u("/dev-tools/cloudflare-workers-cost"), lastModified: new Date("2026-03-16"), changeFrequency: "monthly" as const, priority: 0.7 },
+  { url: u("/dev-tools/cron-expression-generator"), lastModified: new Date("2026-03-27"), changeFrequency: "monthly" as const, priority: 0.7 },
 
   // ─── SEO Tools ───────────────────────────────────────────────────────
   { url: u("/seo-tools/meta-tags"), lastModified: new Date("2026-03-23"), changeFrequency: "monthly" as const, priority: 0.7 },
   { url: u("/seo-tools/lorem-ipsum"), lastModified: new Date("2026-03-23"), changeFrequency: "monthly" as const, priority: 0.7 },
   { url: u("/seo-tools/blog-titles"), lastModified: new Date("2026-03-23"), changeFrequency: "monthly" as const, priority: 0.7 },
   { url: u("/seo-tools/keyword-density"), lastModified: new Date("2026-03-23"), changeFrequency: "monthly" as const, priority: 0.7 },
+  { url: u("/seo-tools/schema-markup-generator"), lastModified: new Date("2026-03-27"), changeFrequency: "monthly" as const, priority: 0.7 },
 
   // ─── Image Tools ─────────────────────────────────────────────────────
   { url: u("/image-tools/image-compressor"), lastModified: new Date("2026-03-23"), changeFrequency: "weekly" as const, priority: 0.5 },

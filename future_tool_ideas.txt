@@ -65,7 +65,7 @@
 - **Features**: Filing status, income, deductions → effective tax rate, marginal rate, tax owed, bracket breakdown, state comparison.
 - **Traffic**: Huge seasonal spike + consistent base. Very high CPC.
 
-### 10. Startup Runway Calculator
+### 10. [DONE] Startup Runway Calculator
 - **Category**: finance-tools
 - **Why**: "Startup runway calculator" = high-intent B2B SaaS keyword. Pairs with our SaaS Churn + Payback tools. CPC: $15-30 for startup keywords.
 - **Features**: Cash on hand, monthly burn rate, monthly revenue, growth rate → months of runway, zero-cash date, fundraise timing.
@@ -92,7 +92,7 @@
 
 ## IN QUEUE — Developer & Utility Tools (Added 2026-03-22)
 
-### 11. Cron Expression Generator
+### 11. [DONE] Cron Expression Generator
 - **Category**: developer-tools
 - **Why**: Extremely high dev search volume. "Cron expression generator" is searched by every backend developer. Sticky tool — users bookmark and return.
 - **Features**: Visual cron builder with drag/drop, human-readable output, next 5 run times preview, common presets, reverse parsing (paste cron → explain).
@@ -110,7 +110,7 @@
 - **Features**: Multiple rewrite modes (formal, casual, creative, academic), tone adjustment, plagiarism-safe output, side-by-side comparison, word count tracking.
 - **Traffic**: 3M+ monthly searches. One of the highest-traffic AI tool categories.
 
-### 14. Schema Markup Generator (JSON-LD)
+### 14. [DONE] Schema Markup Generator (JSON-LD)
 - **Category**: seo-tools
 - **Why**: Strong SEO niche tool. Every webmaster and SEO professional needs structured data. "Schema markup generator" = high-intent traffic.
 - **Features**: Visual form builder for Article, Product, FAQ, HowTo, LocalBusiness, Event, Recipe schemas. Live JSON-LD preview, Google Rich Results validator link, copy-to-clipboard.

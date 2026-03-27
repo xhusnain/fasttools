@@ -23,6 +23,7 @@ import {
   Heart,
   Car,
   Wallet,
+  Rocket,
 } from "lucide-react"
 import { ToolPageLayout } from "@/components/common/tool-page-layout"
 import { Metadata } from "next"
@@ -203,6 +204,13 @@ const financeTools = [
       "Calculate your ideal freelance rate based on desired income, taxes, expenses, billable hours & profit margin.",
     icon: Briefcase,
     href: "/finance-tools/freelance-rate-calculator",
+  },
+  {
+    title: "Startup Runway Calculator",
+    description:
+      "Calculate months of runway, burn rate, zero-cash date, and fundraise timing with revenue growth projections.",
+    icon: Rocket,
+    href: "/finance-tools/startup-runway-calculator",
   },
   {
     title: "SaaS Payback Period Calculator",
