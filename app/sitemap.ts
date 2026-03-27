@@ -90,6 +90,7 @@ export const sitemapPages = [
   { url: u("/finance-tools/remote-work-savings"), lastModified: new Date("2026-03-16"), changeFrequency: "monthly" as const, priority: 0.8 },
   { url: u("/finance-tools/zakat-calculator"), lastModified: new Date("2026-03-16"), changeFrequency: "yearly" as const, priority: 0.8 },
   { url: u("/finance-tools/startup-runway-calculator"), lastModified: new Date("2026-03-27"), changeFrequency: "monthly" as const, priority: 0.8 },
+  { url: u("/finance-tools/tax-bracket-calculator"), lastModified: new Date("2026-03-27"), changeFrequency: "monthly" as const, priority: 0.8 },
   { url: u("/ad-tools/roas-calculator"), lastModified: new Date("2026-03-23"), changeFrequency: "monthly" as const, priority: 0.8 },
 
   // ─── AI Tools ────────────────────────────────────────────────────────
@@ -100,6 +101,7 @@ export const sitemapPages = [
   { url: u("/ai-tools/ai-text-detector"), lastModified: new Date("2026-03-10"), changeFrequency: "weekly" as const, priority: 0.9 },
   { url: u("/ai-tools/ai-code-detector"), lastModified: new Date("2026-03-10"), changeFrequency: "weekly" as const, priority: 0.9 },
   { url: u("/ai-tools/ai-readability-analyzer"), lastModified: new Date("2026-03-10"), changeFrequency: "weekly" as const, priority: 0.9 },
+  { url: u("/ai-tools/ai-paraphraser"), lastModified: new Date("2026-03-27"), changeFrequency: "weekly" as const, priority: 0.9 },
 
   // ─── Converters ──────────────────────────────────────────────────────
   { url: u("/converters/currency"), lastModified: new Date("2026-03-23"), changeFrequency: "weekly" as const, priority: 0.8 },
@@ -120,6 +122,7 @@ export const sitemapPages = [
   { url: u("/web-tools/device-info"), lastModified: new Date("2026-03-23"), changeFrequency: "monthly" as const, priority: 0.7 },
   { url: u("/web-tools/auth-generator"), lastModified: new Date("2026-03-23"), changeFrequency: "monthly" as const, priority: 0.7 },
   { url: u("/web-tools/outlook-safelink-decoder"), lastModified: new Date("2026-03-23"), changeFrequency: "monthly" as const, priority: 0.7 },
+  { url: u("/web-tools/dns-ssl-checker"), lastModified: new Date("2026-03-27"), changeFrequency: "monthly" as const, priority: 0.7 },
 
   // ─── Crypto Tools ────────────────────────────────────────────────────
   { url: u("/crypto-tools/encrypt-decrypt"), lastModified: new Date("2026-03-23"), changeFrequency: "monthly" as const, priority: 0.7 },

@@ -549,3 +549,58 @@ export async function generateAgentSkillService(data: import("@/types/ai.types")
         statusCode: 200
     }
 }
+
+/**
+ * Service function for AI paraphrasing/rewriting text
+ */
+export async function generateParaphraseService(data: { text: string; mode: string }) {
+    const { text, mode } = data
+
+    if (!text?.trim()) {
+        return { success: false, error: "Text is required", statusCode: 400 }
+    }
+
+    if (text.trim().length > 5000) {
+        return { success: false, error: "Text must be under 5,000 characters", statusCode: 400 }
+    }
+
+    const modeInstructions: Record<string, string> = {
+        standard: "Rewrite the text naturally while preserving the original meaning. Change sentence structure and vocabulary.",
+        fluency: "Rewrite the text to improve grammar, clarity, and readability. Fix any awkward phrasing. Keep the meaning identical.",
+        formal: "Rewrite the text in a formal, professional tone suitable for business communication or academic writing.",
+        creative: "Rewrite the text creatively with varied vocabulary, engaging language, and a more expressive style while preserving the core meaning.",
+        academic: "Rewrite the text in an academic, scholarly tone. Use precise terminology and complex sentence structures appropriate for research papers.",
+        shorten: "Rewrite the text to be significantly shorter and more concise. Remove unnecessary words. Keep only the essential meaning.",
+        expand: "Rewrite and expand the text with more detail, examples, and explanations. Make it more comprehensive while keeping the same core meaning.",
+    }
+
+    const instruction = modeInstructions[mode] || modeInstructions.standard
+
+    const prompt = `You are a professional text rewriter. ${instruction}
+
+IMPORTANT RULES:
+- Output ONLY the rewritten text, nothing else
+- Do NOT include any labels, headers, or explanations
+- Do NOT start with "Here is" or "Here's" or any introduction
+- Preserve the original language (if input is English, output English)
+- Maintain paragraph breaks if the original has them
+
+Text to rewrite:
+${text}`
+
+    const result = await aiTextGenerator.generateText({
+        prompt,
+        maxTokens: 2000,
+        temperature: mode === "creative" ? 0.9 : mode === "formal" || mode === "academic" ? 0.5 : 0.7,
+    })
+
+    if (!result.success) {
+        return { success: false, error: result.error || "Failed to paraphrase text", statusCode: 500 }
+    }
+
+    return {
+        success: true,
+        data: { paraphrasedText: result.text.trim() },
+        statusCode: 200,
+    }
+}

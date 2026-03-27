@@ -59,7 +59,7 @@
 - **Features**: Last period date, cycle length → fertile window, ovulation day, next period, best days to conceive.
 - **Traffic**: Massive recurring traffic — women check monthly.
 
-### 9. Tax Bracket Calculator (US Federal + State)
+### 9. [DONE] Tax Bracket Calculator (US Federal)
 - **Category**: finance-tools
 - **Why**: "Tax bracket calculator" spikes every year (Jan-Apr) but has strong year-round volume. Tax CPC: $20-45.
 - **Features**: Filing status, income, deductions → effective tax rate, marginal rate, tax owed, bracket breakdown, state comparison.
@@ -104,7 +104,7 @@
 - **Features**: Custom dimensions (px/%), aspect ratio lock, social media presets (Instagram, Facebook, Twitter, LinkedIn), bulk resize, format conversion (JPG/PNG/WebP), drag-and-drop upload.
 - **Traffic**: 2M+ monthly searches. Very high repeat usage.
 
-### 13. AI Paraphraser / Rewriter
+### 13. [DONE] AI Paraphraser / Rewriter
 - **Category**: ai-tools
 - **Why**: Trending AI tool with extremely sticky usage. Students, writers, marketers all use paraphrasers daily. "Paraphrasing tool" = massive volume.
 - **Features**: Multiple rewrite modes (formal, casual, creative, academic), tone adjustment, plagiarism-safe output, side-by-side comparison, word count tracking.
@@ -116,7 +116,7 @@
 - **Features**: Visual form builder for Article, Product, FAQ, HowTo, LocalBusiness, Event, Recipe schemas. Live JSON-LD preview, Google Rich Results validator link, copy-to-clipboard.
 - **Traffic**: 200K+ monthly searches. High CPC ($10-25) from SEO/marketing audience.
 
-### 15. DNS Lookup / SSL Checker
+### 15. [DONE] DNS Lookup / SSL Checker
 - **Category**: web-tools
 - **Why**: High-traffic utility tools used by devs, sysadmins, and SEO professionals. "DNS lookup" and "SSL checker" have massive combined volume.
 - **Features**: DNS records (A, AAAA, MX, CNAME, TXT, NS), SSL certificate details (expiry, issuer, chain), WHOIS info, response time, propagation check.

@@ -3,7 +3,7 @@ import { ToolPageLayout } from "@/components/common/tool-page-layout"
 import { createToolConfig } from "@/lib/create-tool-config"
 import { GToolCard } from "@/ui/gtool-card"
 
-import { Link2 } from "lucide-react"
+import { Globe, Link2 } from "lucide-react"
 
 const webTools = [
   {
@@ -52,6 +52,14 @@ const webTools = [
       "Extract original destination URLs from Microsoft Safe Links in Outlook emails.",
     href: "/web-tools/outlook-safelink-decoder",
     icon: Link2,
+    popular: true,
+  },
+  {
+    title: "DNS Lookup & SSL Checker",
+    description:
+      "Check DNS records (A, AAAA, MX, CNAME, TXT, NS) and verify SSL certificates for any domain.",
+    href: "/web-tools/dns-ssl-checker",
+    icon: Globe,
     popular: true,
   },
 ]

@@ -270,6 +270,18 @@ URL: https://www.fasttools.store/converters/yaml-json
 Description: Free YAML to JSON converter. Swagger YAML to JSON, OpenAPI YAML to JSON. Convert YAML to JSON for Postman, Notepad++. YAML to JSON schema. JSON formatter. No signup.
 
 
+## AI Paraphraser
+URL: https://www.fasttools.store/ai-tools/ai-paraphraser
+Description: Free AI paraphrasing tool. Rewrite any text in 7 modes: Standard (balanced rewrite), Fluency (grammar fix), Formal (professional tone), Creative (varied vocabulary), Academic (scholarly style), Shorten (concise), Expand (add detail). Powered by Cloudflare AI (Meta Llama 3.1). Side-by-side comparison, word count tracking, one-click copy, re-paraphrase button. Up to 5,000 characters per request. No signup required.
+
+## DNS Lookup & SSL Checker
+URL: https://www.fasttools.store/web-tools/dns-ssl-checker
+Description: Free DNS lookup and SSL certificate checker. Query A, AAAA, MX, CNAME, TXT, NS, SOA records for any domain. SSL verification: issuer, subject, validity dates, days until expiry with color-coded warnings, TLS protocol version, Subject Alternative Names (SAN), SHA-256 fingerprint. Combined DNS + SSL check in one request. No signup required.
+
+## Tax Bracket Calculator
+URL: https://www.fasttools.store/finance-tools/tax-bracket-calculator
+Description: Free US federal tax bracket calculator for 2025 and 2026. Calculate total federal tax, effective rate, marginal rate, after-tax income, and bracket-by-bracket breakdown. Supports all 4 filing statuses: Single, Married Filing Jointly, Married Filing Separately, Head of Household. Standard deduction auto-applied with toggle for itemized. Visual tax distribution chart. No signup required.
+
 ## Startup Runway Calculator
 URL: https://www.fasttools.store/finance-tools/startup-runway-calculator
 Description: Free startup runway calculator. Calculate months of runway, net/gross burn rate, zero-cash date, and fundraise timing based on cash on hand, monthly expenses, revenue, and growth rates. Features iterative month-by-month projections with revenue growth, burn multiple score, visual cash balance chart, monthly breakdown table, fundraise window alerts, and 2026 industry benchmarks by stage (Pre-seed, Seed, Series A, SaaS). Completes the SaaS cluster with SaaS Churn and Payback calculators. No signup required.
@@ -299,6 +311,7 @@ Description: Free online image resizer. Resize images to custom pixel dimensions
 - https://www.fasttools.store/ai-tools/lyrics-generator
 - https://www.fasttools.store/ai-tools/pet-names
 - https://www.fasttools.store/ai-tools/qr-generator
+- https://www.fasttools.store/ai-tools/ai-paraphraser
 - https://www.fasttools.store/calculator
 - https://www.fasttools.store/calculator/age-calculator
 - https://www.fasttools.store/calculator/bmi-calculator
@@ -350,6 +363,7 @@ Description: Free online image resizer. Resize images to custom pixel dimensions
 - https://www.fasttools.store/web-tools/device-info
 - https://www.fasttools.store/web-tools/auth-generator
 - https://www.fasttools.store/web-tools/outlook-safelink-decoder
+- https://www.fasttools.store/web-tools/dns-ssl-checker
 - https://www.fasttools.store/converters/yaml-toml
 - https://www.fasttools.store/crypto-tools
 - https://www.fasttools.store/crypto-tools/hash-text
@@ -404,6 +418,7 @@ Description: Free online image resizer. Resize images to custom pixel dimensions
 - https://www.fasttools.store/finance-tools/debt-payoff-calculator
 - https://www.fasttools.store/finance-tools/net-worth-calculator
 - https://www.fasttools.store/finance-tools/startup-runway-calculator
+- https://www.fasttools.store/finance-tools/tax-bracket-calculator
 - https://www.fasttools.store/fun-tools
 - https://www.fasttools.store/fun-tools/anniversary
 - https://www.fasttools.store/fun-tools/birthday-countdown

@@ -206,6 +206,13 @@ const financeTools = [
     href: "/finance-tools/freelance-rate-calculator",
   },
   {
+    title: "Tax Bracket Calculator",
+    description:
+      "Calculate 2025-2026 US federal income tax by bracket. Marginal vs effective rate, bracket breakdown.",
+    icon: Percent,
+    href: "/finance-tools/tax-bracket-calculator",
+  },
+  {
     title: "Startup Runway Calculator",
     description:
       "Calculate months of runway, burn rate, zero-cash date, and fundraise timing with revenue growth projections.",
