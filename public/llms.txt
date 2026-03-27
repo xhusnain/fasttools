@@ -75,7 +75,11 @@ Convert between different formats and units including currency, length, temperat
 
 ### Image Tools
 https://www.fasttools.store/image-tools
-Image editing, manipulation, and optimization tools including photo editing and OCR text extraction.
+Image editing, manipulation, and optimization tools including image resizing, compression, and OCR text extraction.
+
+**Featured Tools:**
+- https://www.fasttools.store/image-tools/image-resizer - Free online image resizer. Resize images to custom dimensions or 50+ social media presets (Instagram, Facebook, LinkedIn, YouTube, TikTok, Pinterest, WhatsApp). JPG, PNG, WebP. Quality control. 100% client-side. Free.
+- https://www.fasttools.store/image-tools/image-compressor - Compress JPG, PNG, WebP images with quality and size controls. Batch processing up to 100 images. Free.
 
 ### Finance Tools
 https://www.fasttools.store/finance-tools
@@ -305,6 +309,7 @@ Context: FastTools provides free, fast, and accurate online tools that work on a
 - https://www.fasttools.store/fun-tools/future-age
 - https://www.fasttools.store/image-tools
 - https://www.fasttools.store/image-tools/image-compressor
+- https://www.fasttools.store/image-tools/image-resizer - Free online image resizer. 50+ social media presets. Custom dimensions. JPG, PNG, WebP. Client-side processing. Free.
 - https://www.fasttools.store/image-tools/image-to-text
 - https://www.fasttools.store/pdf-tools
 - https://www.fasttools.store/pdf-tools/pdf-compressor

@@ -27,6 +27,7 @@ import {
     Ruler,
     Thermometer,
     HardDrive,
+    Maximize2,
     Hash,
     Heart,
     Calendar,
@@ -224,6 +225,7 @@ export const navigationConfig: MegaMenuSection[] = [
             {
                 title: "Image Tools",
                 items: [
+                    { title: "Image Resizer", href: "/image-tools/image-resizer", icon: Maximize2 },
                     { title: "Image Compressor", href: "/image-tools/image-compressor", icon: HardDrive },
                     { title: "Image to Text", href: "/image-tools/image-to-text", icon: ScanText },
                 ]

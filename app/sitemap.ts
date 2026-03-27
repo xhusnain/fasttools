@@ -157,6 +157,7 @@ export const sitemapPages = [
 
   // ─── Image Tools ─────────────────────────────────────────────────────
   { url: u("/image-tools/image-compressor"), lastModified: new Date("2026-03-23"), changeFrequency: "weekly" as const, priority: 0.5 },
+  { url: u("/image-tools/image-resizer"), lastModified: new Date("2026-03-27"), changeFrequency: "weekly" as const, priority: 0.5 },
   { url: u("/image-tools/image-to-text"), lastModified: new Date("2026-03-23"), changeFrequency: "monthly" as const, priority: 0.5 },
   { url: u("/image-tools/ai-image-detector"), lastModified: new Date("2026-03-09"), changeFrequency: "weekly" as const, priority: 0.5 },
 

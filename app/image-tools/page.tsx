@@ -3,7 +3,7 @@ import { ToolPageLayout } from "@/components/common/tool-page-layout"
 import { createToolConfig } from "@/lib/create-tool-config"
 import { GToolCard } from "@/ui/gtool-card"
 
-import { FileText, Minimize2, ShieldCheck } from "lucide-react"
+import { FileText, Maximize2, Minimize2, ShieldCheck } from "lucide-react"
 
 const imageTools = [
   {
@@ -21,6 +21,13 @@ const imageTools = [
     popular: true,
   },
   {
+    title: "Image Resizer",
+    description: "Resize images to custom dimensions or social media presets. JPG, PNG, WebP. 100% browser-based.",
+    icon: Maximize2,
+    href: "/image-tools/image-resizer",
+    popular: true,
+  },
+  {
     title: "AI Image Detector",
     description: "Detect AI-generated images using 5 forensic signals — metadata, ELA, noise, color, and frequency analysis.",
     icon: ShieldCheck,
@@ -33,9 +40,9 @@ const toolConfig = createToolConfig({
   toolName: "Image Tools",
   description:
     "Use free browser-based image tools to compress files, extract text with OCR, and detect AI-generated images.",
-  metaTitle: "Image Tools - Image Compressor, OCR, and AI Image Detector",
+  metaTitle: "Image Tools - Image Resizer, Compressor, OCR & AI Detector",
   metaDescription:
-    "Free image tools: compress JPG/PNG/WebP images, extract text with OCR, and detect AI-generated images using forensic analysis.",
+    "Free image tools: resize images for social media, compress JPG/PNG/WebP, extract text with OCR, and detect AI-generated images.",
   path: "/image-tools",
 
   schemaOptions: {
@@ -43,6 +50,7 @@ const toolConfig = createToolConfig({
     description:
       "Category page for browser-based image utilities including image compression and OCR text extraction.",
     featureList: [
+      "Image resizer with 50+ social media presets",
       "Image compression tool",
       "Image to text OCR tool",
       "No-login workflows",
@@ -157,6 +165,7 @@ const toolConfig = createToolConfig({
     ],
 
     relatedTools: [
+      { name: "Image Resizer", href: "/image-tools/image-resizer" },
       { name: "Image Compressor", href: "/image-tools/image-compressor" },
       { name: "Image to Text (OCR)", href: "/image-tools/image-to-text" },
       { name: "PDF to Image", href: "/pdf-tools/pdf-to-image" },

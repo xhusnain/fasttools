@@ -270,6 +270,10 @@ URL: https://www.fasttools.store/converters/yaml-json
 Description: Free YAML to JSON converter. Swagger YAML to JSON, OpenAPI YAML to JSON. Convert YAML to JSON for Postman, Notepad++. YAML to JSON schema. JSON formatter. No signup.
 
 
+## Image Resizer
+URL: https://www.fasttools.store/image-tools/image-resizer
+Description: Free online image resizer. Resize images to custom pixel dimensions, percentage scale, or 50+ social media presets (Instagram, Facebook, Twitter/X, LinkedIn, YouTube, TikTok, Pinterest, WhatsApp). Supports JPG, PNG (with transparency), WebP, GIF, BMP, TIFF input. Output as JPG, PNG, or WebP with quality slider. Features aspect ratio lock/unlock, common size presets (Full HD, 4K, Passport Photo, Favicon, App Icon), instant preview with file size comparison, and drag-and-drop upload. 100% client-side browser processing — images never leave your device. No signup, no watermarks, no daily limits.
+
 # Complete Index
 
 ## Tools
@@ -387,6 +391,7 @@ Description: Free YAML to JSON converter. Swagger YAML to JSON, OpenAPI YAML to 
 - https://www.fasttools.store/fun-tools/future-age
 - https://www.fasttools.store/image-tools
 - https://www.fasttools.store/image-tools/image-compressor
+- https://www.fasttools.store/image-tools/image-resizer
 - https://www.fasttools.store/image-tools/image-to-text
 - https://www.fasttools.store/pdf-tools
 - https://www.fasttools.store/pdf-tools/pdf-compressor

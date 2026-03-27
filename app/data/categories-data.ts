@@ -3,6 +3,7 @@ import {
     Radio,
     Binary,
     Calculator,
+    Maximize2,
     Minimize2,
     Sparkles,
     Palette,
@@ -502,6 +503,14 @@ export const categories = [
         iconColor: "text-foreground",
         glowColor: "hover:shadow-pink-500/20",
         tools: [
+            {
+                title: "Image Resizer",
+                description: "Resize images to custom dimensions or 50+ social media presets. JPG, PNG, WebP.",
+                href: "/image-tools/image-resizer",
+                icon: Maximize2,
+                badge: "New",
+                badgeColor: "bg-green-600",
+            },
             {
                 title: "Image Compressor",
                 description: "Compress JPG, PNG, and WebP images with quality and size controls",

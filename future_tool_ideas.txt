@@ -98,7 +98,7 @@
 - **Features**: Visual cron builder with drag/drop, human-readable output, next 5 run times preview, common presets, reverse parsing (paste cron → explain).
 - **Traffic**: 500K+ monthly dev searches. Low CPC but very high volume and repeat usage.
 
-### 12. Image Resizer ← BUILD NEXT
+### 12. [DONE] Image Resizer
 - **Category**: image-tools
 - **Why**: Fills a major gap in our image tools lineup. "Resize image online" has massive search volume. Every content creator, marketer, and dev needs this.
 - **Features**: Custom dimensions (px/%), aspect ratio lock, social media presets (Instagram, Facebook, Twitter, LinkedIn), bulk resize, format conversion (JPG/PNG/WebP), drag-and-drop upload.
