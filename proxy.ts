@@ -5,16 +5,29 @@ const SEARCH_PLACEHOLDER = "{search_term_string}"
 const noindexSet = new Set(noindexPaths.map((p) => p.toLowerCase()))
 
 export function proxy(request: NextRequest) {
-    const url = request.nextUrl.clone()
+    const { pathname, searchParams } = request.nextUrl
 
-    if (url.pathname === "/" && url.searchParams.get("q") === SEARCH_PLACEHOLDER) {
+    // Handle Google Sitelinks Searchbox placeholder
+    if (pathname === "/" && searchParams.get("q") === SEARCH_PLACEHOLDER) {
+        const url = request.nextUrl.clone()
         url.searchParams.delete("q")
         return NextResponse.rewrite(url)
     }
 
+    // Block common bot/attack paths early
+    if (
+        pathname.startsWith("/wp-") ||
+        pathname.startsWith("/xmlrpc") ||
+        pathname.endsWith(".php") ||
+        pathname.endsWith(".env")
+    ) {
+        return new NextResponse(null, { status: 404 })
+    }
+
     const response = NextResponse.next()
 
-    if (noindexSet.has(url.pathname.toLowerCase())) {
+    // Set noindex header for dead/low-value pages
+    if (noindexSet.has(pathname.toLowerCase())) {
         response.headers.set("X-Robots-Tag", "noindex, nofollow")
     }
 
@@ -22,5 +35,5 @@ export function proxy(request: NextRequest) {
 }
 
 export const config = {
-    matcher: ["/((?!_next/static|_next/image|favicon.ico).*)"],
+    matcher: ["/((?!_next/static|_next/image|favicon.ico|icon.png|apple-icon.png|manifest.webmanifest|robots.txt|sitemap.xml).*)"],
 }
