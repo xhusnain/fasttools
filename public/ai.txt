@@ -270,6 +270,10 @@ URL: https://www.fasttools.store/converters/yaml-json
 Description: Free YAML to JSON converter. Swagger YAML to JSON, OpenAPI YAML to JSON. Convert YAML to JSON for Postman, Notepad++. YAML to JSON schema. JSON formatter. No signup.
 
 
+## Pomodoro Timer
+URL: https://www.fasttools.store/fun-tools/pomodoro-timer
+Description: Free online Pomodoro focus timer with 8 ambient sounds (rain, cafe, brown noise, white noise, pink noise, fireplace, ocean, forest) generated via Web Audio API. Features customizable work/break durations (1-120 min), task list with pomodoro estimates and estimated finish time, daily session counter, browser notifications, keyboard shortcuts (Space, R, S, F), fullscreen focus mode, auto-start option, and color-coded modes (red focus, green short break, blue long break). All settings persist via localStorage. Based on the Pomodoro Technique by Francesco Cirillo. No signup required.
+
 ## AI Paraphraser
 URL: https://www.fasttools.store/ai-tools/ai-paraphraser
 Description: Free AI paraphrasing tool. Rewrite any text in 7 modes: Standard (balanced rewrite), Fluency (grammar fix), Formal (professional tone), Creative (varied vocabulary), Academic (scholarly style), Shorten (concise), Expand (add detail). Powered by Cloudflare AI (Meta Llama 3.1). Side-by-side comparison, word count tracking, one-click copy, re-paraphrase button. Up to 5,000 characters per request. No signup required.
@@ -423,6 +427,7 @@ Description: Free online image resizer. Resize images to custom pixel dimensions
 - https://www.fasttools.store/fun-tools/anniversary
 - https://www.fasttools.store/fun-tools/birthday-countdown
 - https://www.fasttools.store/fun-tools/future-age
+- https://www.fasttools.store/fun-tools/pomodoro-timer
 - https://www.fasttools.store/image-tools
 - https://www.fasttools.store/image-tools/image-compressor
 - https://www.fasttools.store/image-tools/image-resizer

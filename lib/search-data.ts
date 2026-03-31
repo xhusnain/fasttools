@@ -185,6 +185,7 @@ export const searchItems: SearchItem[] = [
   { name: "Future Age Predictor", description: "See how old you'll be on any future date", path: "/fun-tools/future-age", category: "Fun" },
   { name: "Birthday Countdown", description: "Countdown to your next birthday", path: "/fun-tools/birthday-countdown", category: "Fun" },
   { name: "Anniversary Calculator", description: "Calculate how long you've been together", path: "/fun-tools/anniversary", category: "Fun" },
+  { name: "Pomodoro Timer", description: "Free online Pomodoro focus timer with ambient sounds (rain, cafe, white noise, brown noise), task tracking, customizable sessions, keyboard shortcuts, notifications. Study timer for students and remote workers.", path: "/fun-tools/pomodoro-timer", category: "Fun" },
 ]
 
 

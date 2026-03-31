@@ -314,6 +314,7 @@ Context: FastTools provides free, fast, and accurate online tools that work on a
 - https://www.fasttools.store/fun-tools/anniversary
 - https://www.fasttools.store/fun-tools/birthday-countdown
 - https://www.fasttools.store/fun-tools/future-age
+- https://www.fasttools.store/fun-tools/pomodoro-timer - Free Pomodoro focus timer with ambient sounds, task tracking, customizable sessions, keyboard shortcuts, notifications. Study timer. Free.
 - https://www.fasttools.store/image-tools
 - https://www.fasttools.store/image-tools/image-compressor
 - https://www.fasttools.store/image-tools/image-resizer - Free online image resizer. 50+ social media presets. Custom dimensions. JPG, PNG, WebP. Client-side processing. Free.

@@ -3,7 +3,7 @@ import { ToolPageLayout } from "@/components/common/tool-page-layout"
 import { createToolConfig } from "@/lib/create-tool-config"
 import { GToolCard } from "@/ui/gtool-card"
 
-import { Calendar, Cake, PartyPopper, Code, Globe, Calculator, ArrowRight, Heart } from "lucide-react"
+import { Calendar, Cake, Clock, PartyPopper, Code, Globe, Calculator, ArrowRight, Heart } from "lucide-react"
 
 const tools = [
   {
@@ -26,6 +26,13 @@ const tools = [
     icon: PartyPopper,
     href: "/fun-tools/anniversary",
     popular: false,
+  },
+  {
+    title: "Pomodoro Timer",
+    description: "Free focus timer with ambient sounds, task tracking, and customizable sessions. Study and work productively.",
+    icon: Clock,
+    href: "/fun-tools/pomodoro-timer",
+    popular: true,
   },
 ]
 

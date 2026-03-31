@@ -287,6 +287,7 @@ export const navigationConfig: MegaMenuSection[] = [
                     { title: "Birthday Countdown", href: "/fun-tools/birthday-countdown", icon: Calendar },
                     { title: "Future Age", href: "/fun-tools/future-age", icon: Clock },
                     { title: "Anniversary Calc", href: "/fun-tools/anniversary", icon: Heart },
+                    { title: "Pomodoro Timer", href: "/fun-tools/pomodoro-timer", icon: Clock },
                 ]
             },
             {

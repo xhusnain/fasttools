@@ -181,6 +181,7 @@ export const sitemapPages = [
   { url: u("/fun-tools/anniversary"), lastModified: new Date("2026-03-23"), changeFrequency: "monthly" as const, priority: 0.5 },
   { url: u("/fun-tools/birthday-countdown"), lastModified: new Date("2026-03-23"), changeFrequency: "monthly" as const, priority: 0.5 },
   { url: u("/fun-tools/future-age"), lastModified: new Date("2026-03-23"), changeFrequency: "monthly" as const, priority: 0.5 },
+  { url: u("/fun-tools/pomodoro-timer"), lastModified: new Date("2026-03-27"), changeFrequency: "monthly" as const, priority: 0.7 },
 ]
 
 export const toolPages = sitemapPages.filter(p => !p.url.endsWith(".store") && ![ "/products", "/api-docs", "/about", "/contact", "/faq", "/all-tools", "/privacy-policy", "/terms", "/cookie-preferences", "/dmca" ].some(path => p.url.endsWith(path)))
