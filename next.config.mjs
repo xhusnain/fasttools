@@ -13,16 +13,8 @@ const nextConfig = {
     optimizeCss: true,
     optimizePackageImports: [
       'lucide-react',
-      '@radix-ui/react-icons',
-      '@iconify/react',
-      'react-icons',
       'recharts',
-      'date-fns',
       '@radix-ui/react-accordion',
-      '@radix-ui/react-alert-dialog',
-      '@radix-ui/react-dialog',
-      '@radix-ui/react-dropdown-menu',
-      '@radix-ui/react-popover',
       '@radix-ui/react-tooltip',
     ],
     // Enable compression
