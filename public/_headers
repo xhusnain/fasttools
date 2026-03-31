@@ -1,0 +1,97 @@
+/*
+  X-Frame-Options: SAMEORIGIN
+  X-Content-Type-Options: nosniff
+  Referrer-Policy: strict-origin-when-cross-origin
+  Permissions-Policy: camera=(), microphone=(), geolocation=()
+
+# ─── Noindex: Calculators (off-niche / dead / 0 clicks) ───────────────
+/calculator/concrete-calculator
+  X-Robots-Tag: noindex, nofollow
+/calculator/conversion-calculator
+  X-Robots-Tag: noindex, nofollow
+/calculator/body-fat-calculator
+  X-Robots-Tag: noindex, nofollow
+/calculator/fraction-calculator
+  X-Robots-Tag: noindex, nofollow
+/calculator/triangle-calculator
+  X-Robots-Tag: noindex, nofollow
+/calculator/pace-calculator
+  X-Robots-Tag: noindex, nofollow
+/calculator/time-duration
+  X-Robots-Tag: noindex, nofollow
+/calculator/standard-deviation-calculator
+  X-Robots-Tag: noindex, nofollow
+
+# ─── Noindex: Finance Tools (dead / too competitive) ──────────────────
+/finance-tools/retirement-planner
+  X-Robots-Tag: noindex, nofollow
+/finance-tools/retirement-calculator
+  X-Robots-Tag: noindex, nofollow
+/finance-tools/amortization-calculator
+  X-Robots-Tag: noindex, nofollow
+/finance-tools/credit-card-payoff
+  X-Robots-Tag: noindex, nofollow
+/finance-tools/interest-rate-calculator
+  X-Robots-Tag: noindex, nofollow
+/finance-tools/payment-calculator
+  X-Robots-Tag: noindex, nofollow
+/finance-tools/inflation-calculator
+  X-Robots-Tag: noindex, nofollow
+/finance-tools/finance-calculator
+  X-Robots-Tag: noindex, nofollow
+/finance-tools/tax-calculator
+  X-Robots-Tag: noindex, nofollow
+/finance-tools/investment-calculator
+  X-Robots-Tag: noindex, nofollow
+/finance-tools/salary-calculator
+  X-Robots-Tag: noindex, nofollow
+/finance-tools/compound-interest
+  X-Robots-Tag: noindex, nofollow
+/finance-tools/mortgage-calculator
+  X-Robots-Tag: noindex, nofollow
+
+# ─── Noindex: Converters (dead / very niche) ──────────────────────────
+/converters/roman-numeral
+  X-Robots-Tag: noindex, nofollow
+/converters/morse-code
+  X-Robots-Tag: noindex, nofollow
+/converters/nato-phonetic
+  X-Robots-Tag: noindex, nofollow
+/converters/ascii-binary
+  X-Robots-Tag: noindex, nofollow
+/converters/unicode
+  X-Robots-Tag: noindex, nofollow
+/converters/integer-base
+  X-Robots-Tag: noindex, nofollow
+/converters/toml-yaml
+  X-Robots-Tag: noindex, nofollow
+/converters/toml-json
+  X-Robots-Tag: noindex, nofollow
+/converters/json-toml
+  X-Robots-Tag: noindex, nofollow
+/converters/yaml-toml
+  X-Robots-Tag: noindex, nofollow
+/converters/xml-json
+  X-Robots-Tag: noindex, nofollow
+/converters/json-xml
+  X-Robots-Tag: noindex, nofollow
+
+# ─── Noindex: Dev Tools (dead) ────────────────────────────────────────
+/dev-tools/sql-to-json
+  X-Robots-Tag: noindex, nofollow
+/dev-tools/html-wysiwyg-editor
+  X-Robots-Tag: noindex, nofollow
+/dev-tools/color-palette
+  X-Robots-Tag: noindex, nofollow
+
+# ─── Noindex: AI Tools (dead / very niche) ────────────────────────────
+/ai-tools/token-to-word-converter
+  X-Robots-Tag: noindex, nofollow
+
+# ─── Noindex: SEO Tools (dead) ────────────────────────────────────────
+/seo-tools/text-similarity-checker
+  X-Robots-Tag: noindex, nofollow
+
+# ─── Noindex: Crypto Tools (very niche) ───────────────────────────────
+/crypto-tools/ulid-generator
+  X-Robots-Tag: noindex, nofollow
