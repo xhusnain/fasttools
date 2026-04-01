@@ -20,7 +20,7 @@
 - **Build**: 100% client-side. Pure JS timer + Web Audio API.
 - **Viral**: Students share in study groups. TikTok "study with me" trend.
 
-### 2. Background Remover
+### 2. [DONE] Background Remover
 - **Category**: image-tools
 - **Why**: Remove.bg gets 76-112M monthly visits. "Remove background" = 4-6M monthly searches. Every e-commerce seller, designer, and social media creator needs this.
 - **Features**: AI-powered background removal, transparent PNG output, background replacement (solid color, custom image), batch processing, edge refinement.

@@ -3,7 +3,7 @@ import { ToolPageLayout } from "@/components/common/tool-page-layout"
 import { createToolConfig } from "@/lib/create-tool-config"
 import { GToolCard } from "@/ui/gtool-card"
 
-import { FileText, Maximize2, Minimize2, ShieldCheck } from "lucide-react"
+import { FileText, Maximize2, Minimize2, ShieldCheck, Scissors } from "lucide-react"
 
 const imageTools = [
   {
@@ -34,15 +34,22 @@ const imageTools = [
     href: "/image-tools/ai-image-detector",
     popular: true,
   },
+  {
+    title: "Background Remover",
+    description: "Remove image backgrounds instantly with AI. Transparent PNG, color replacement, or custom backgrounds. 100% browser-based.",
+    icon: Scissors,
+    href: "/image-tools/background-remover",
+    popular: true,
+  },
 ]
 
 const toolConfig = createToolConfig({
   toolName: "Image Tools",
   description:
     "Use free browser-based image tools to compress files, extract text with OCR, and detect AI-generated images.",
-  metaTitle: "Image Tools - Image Resizer, Compressor, OCR & AI Detector",
+  metaTitle: "Image Tools - Background Remover, Resizer, Compressor, OCR & AI Detector",
   metaDescription:
-    "Free image tools: resize images for social media, compress JPG/PNG/WebP, extract text with OCR, and detect AI-generated images.",
+    "Free image tools: remove backgrounds with AI, resize images for social media, compress JPG/PNG/WebP, extract text with OCR, and detect AI-generated images.",
   path: "/image-tools",
 
   schemaOptions: {
@@ -165,6 +172,7 @@ const toolConfig = createToolConfig({
     ],
 
     relatedTools: [
+      { name: "Background Remover", href: "/image-tools/background-remover" },
       { name: "Image Resizer", href: "/image-tools/image-resizer" },
       { name: "Image Compressor", href: "/image-tools/image-compressor" },
       { name: "Image to Text (OCR)", href: "/image-tools/image-to-text" },

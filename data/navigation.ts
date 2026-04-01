@@ -228,6 +228,7 @@ export const navigationConfig: MegaMenuSection[] = [
             {
                 title: "Image Tools",
                 items: [
+                    { title: "Background Remover", href: "/image-tools/background-remover", icon: Scissors },
                     { title: "Image Resizer", href: "/image-tools/image-resizer", icon: Maximize2 },
                     { title: "Image Compressor", href: "/image-tools/image-compressor", icon: HardDrive },
                     { title: "Image to Text", href: "/image-tools/image-to-text", icon: ScanText },

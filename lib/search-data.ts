@@ -130,6 +130,7 @@ export const searchItems: SearchItem[] = [
   { name: "Ovulation Calculator", description: "Free ovulation calculator. Find your fertile window, ovulation date, best days to conceive, pregnancy test date, and estimated due date. 6-cycle forecast with visual fertility calendar.", path: "/calculator/ovulation-calculator", category: "Calculator" },
 
   // Image Tools
+  { name: "Background Remover", description: "Remove background from image for free with AI. Transparent PNG, color replacement, custom backgrounds. No signup, no watermark. 100% browser-based privacy.", path: "/image-tools/background-remover", category: "Image" },
   { name: "Image Resizer", description: "Resize images online for free. Custom dimensions, 50+ social media presets for Instagram, Facebook, LinkedIn, YouTube, TikTok. JPG, PNG, WebP. No quality loss.", path: "/image-tools/image-resizer", category: "Image" },
   { name: "Image to Text (OCR)", description: "Extract text from images with OCR technology", path: "/image-tools/image-to-text", category: "Image" },
   { name: "AI Image Detector", description: "Free AI image detector to check if a photo is AI-generated. Detects Midjourney, DALL-E, Stable Diffusion, Flux & deepfake images", path: "/image-tools/ai-image-detector", category: "Image" },

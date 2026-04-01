@@ -23,7 +23,7 @@ const nextConfig = {
     esmExternals: true,
   },
   // Optimize server components
-  serverExternalPackages: ['sharp'],
+  serverExternalPackages: ['sharp', 'onnxruntime-web'],
 
   // Compression
   compress: true,
@@ -92,6 +92,20 @@ const nextConfig = {
       canvas: 'commonjs canvas',
       'utf-8-validate': 'commonjs utf-8-validate',
       bufferutil: 'commonjs bufferutil',
+    })
+
+    // Handle onnxruntime-web for background-remover (client-side only)
+    config.resolve.alias = {
+      ...config.resolve.alias,
+      'onnxruntime-web/webgpu': false,
+    }
+
+    // Copy ONNX WASM files to static directory
+    config.module = config.module || {}
+    config.module.rules = config.module.rules || []
+    config.module.rules.push({
+      test: /\.wasm$/,
+      type: 'asset/resource',
     })
 
     return config

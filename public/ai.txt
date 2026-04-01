@@ -302,6 +302,10 @@ Description: Free cron expression generator and crontab builder online. Visual b
 URL: https://www.fasttools.store/calculator/ovulation-calculator
 Description: Free ovulation calculator online. Calculate ovulation date, fertile window, and best days to conceive based on last menstrual period and cycle length. Features 6-cycle forecast with period start, fertile window, ovulation date, pregnancy test date (14 DPO), and estimated due date. Visual color-coded fertility calendar (red = period, green = fertile, pink = ovulation day). Customizable cycle length (21-35 days), luteal phase (10-17 days), and period length. Peak fertility day highlighting. Based on ACOG, WHO, and NHS guidelines. 100% client-side — cycle data never leaves your device. No signup, no account required.
 
+## Background Remover
+URL: https://www.fasttools.store/image-tools/background-remover
+Description: Free AI background remover online. Remove background from any image instantly using deep learning segmentation. Output options: transparent PNG, solid color background (12 presets + custom hex), or custom image background. Supports JPG, PNG, WebP, BMP input up to 25 MB. Edge-aware AI for clean cutouts around hair, fur, and semi-transparent objects. Before/after comparison view with zoom controls. One-time AI model download cached for instant reuse. 100% client-side browser processing — images never uploaded to any server. No signup, no watermarks, no daily limits. Works offline after first model download.
+
 ## Image Resizer
 URL: https://www.fasttools.store/image-tools/image-resizer
 Description: Free online image resizer. Resize images to custom pixel dimensions, percentage scale, or 50+ social media presets (Instagram, Facebook, Twitter/X, LinkedIn, YouTube, TikTok, Pinterest, WhatsApp). Supports JPG, PNG (with transparency), WebP, GIF, BMP, TIFF input. Output as JPG, PNG, or WebP with quality slider. Features aspect ratio lock/unlock, common size presets (Full HD, 4K, Passport Photo, Favicon, App Icon), instant preview with file size comparison, and drag-and-drop upload. 100% client-side browser processing — images never leave your device. No signup, no watermarks, no daily limits.
@@ -429,6 +433,7 @@ Description: Free online image resizer. Resize images to custom pixel dimensions
 - https://www.fasttools.store/fun-tools/future-age
 - https://www.fasttools.store/fun-tools/pomodoro-timer
 - https://www.fasttools.store/image-tools
+- https://www.fasttools.store/image-tools/background-remover
 - https://www.fasttools.store/image-tools/image-compressor
 - https://www.fasttools.store/image-tools/image-resizer
 - https://www.fasttools.store/image-tools/image-to-text
