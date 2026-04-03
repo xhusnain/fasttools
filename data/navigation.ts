@@ -214,6 +214,7 @@ export const navigationConfig: MegaMenuSection[] = [
             {
                 title: "Content Generation",
                 items: [
+                    { title: "AI Text Summarizer", href: "/ai-tools/text-summarizer", icon: FileText },
                     { title: "AI QR Generator", href: "/ai-tools/qr-generator", icon: QrCode },
                     { title: "Caption Generator", href: "/ai-tools/caption-generator", icon: Type },
                     { title: "Lyrics Generator", href: "/ai-tools/lyrics-generator", icon: Music },

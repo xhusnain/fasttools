@@ -604,3 +604,59 @@ ${text}`
         statusCode: 200,
     }
 }
+
+/**
+ * Service function for AI text summarization
+ */
+export async function generateSummaryService(data: { text: string; mode: string; lengthPercent: number }) {
+    const { text, mode, lengthPercent = 30 } = data
+
+    if (!text?.trim()) {
+        return { success: false, error: "Text is required", statusCode: 400 }
+    }
+
+    if (text.trim().length > 10000) {
+        return { success: false, error: "Text must be under 10,000 characters", statusCode: 400 }
+    }
+
+    const inputWordCount = text.trim().split(/\s+/).length
+    const targetWords = Math.max(20, Math.round(inputWordCount * (lengthPercent / 100)))
+
+    const modeInstructions: Record<string, string> = {
+        paragraph: `Summarize the text into a concise paragraph of approximately ${targetWords} words. Write in flowing prose that captures the main ideas and key details.`,
+        bullets: `Summarize the text as a bullet-point list of the most important points. Aim for approximately ${targetWords} words total. Use "- " prefix for each bullet point.`,
+        keypoints: `Extract the top key takeaways from the text. Present them as numbered insights (1. 2. 3. etc). Aim for approximately ${targetWords} words total. Focus on actionable insights and critical information.`,
+        tldr: "Summarize the entire text in exactly ONE sentence. Be concise but capture the core message. Maximum 30 words.",
+    }
+
+    const instruction = modeInstructions[mode] || modeInstructions.paragraph
+
+    const prompt = `You are a professional text summarizer. ${instruction}
+
+IMPORTANT RULES:
+- Output ONLY the summary, nothing else
+- Do NOT include any labels, headers, or introductions like "Here is" or "Summary:"
+- Preserve the original language (if input is English, output English)
+- Be accurate — do not add information that is not in the original text
+- Focus on the most important ideas and key facts
+- Maintain objectivity — do not add opinions
+
+Text to summarize:
+${text}`
+
+    const result = await aiTextGenerator.generateText({
+        prompt,
+        maxTokens: mode === "tldr" ? 100 : Math.min(2000, targetWords * 3),
+        temperature: 0.3,
+    })
+
+    if (!result.success) {
+        return { success: false, error: result.error || "Failed to summarize text", statusCode: 500 }
+    }
+
+    return {
+        success: true,
+        data: { summary: result.text.trim() },
+        statusCode: 200,
+    }
+}

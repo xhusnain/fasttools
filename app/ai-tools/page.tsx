@@ -2,7 +2,7 @@ import type { Metadata } from "next"
 import { ToolPageLayout } from "@/components/common/tool-page-layout"
 import { createToolConfig } from "@/lib/create-tool-config"
 import { GToolCard } from "@/ui/gtool-card"
-import { BookOpen, Code2, FileSearch, Hash, Heart, ImageIcon, Music, QrCode, Wand2 } from "lucide-react"
+import { BookOpen, Code2, FileSearch, Hash, Heart, ImageIcon, Music, QrCode, Wand2, FileText } from "lucide-react"
 
 const aiTools = [
   {
@@ -68,15 +68,22 @@ const aiTools = [
     href: "/ai-tools/ai-paraphraser",
     icon: Wand2,
   },
+  {
+    title: "AI Text Summarizer",
+    description:
+      "Summarize articles, essays, and reports into paragraphs, bullet points, key takeaways, or TL;DR.",
+    href: "/ai-tools/text-summarizer",
+    icon: FileText,
+  },
 ]
 
 const toolConfig = createToolConfig({
   toolName: "AI Tools",
   description:
     "AI-assisted utilities for QR generation, lyric drafting, caption writing, pet naming, and token-to-word estimation.",
-  metaTitle: "AI Tools: QR, Lyrics, Captions, Pet Names, Tokens",
+  metaTitle: "AI Tools: Text Summarizer, Paraphraser, QR, Captions & More",
   metaDescription:
-    "Free AI tools for QR code generation, lyrics, captions, pet names, and token/word estimation. Fast workflows for creators, marketers, and teams.",
+    "Free AI tools: text summarizer, paraphraser, QR code generator, captions, lyrics, pet names, and more. Fast workflows for students, creators, and teams.",
   path: "/ai-tools",
   schemaOptions: {
     itemList: {

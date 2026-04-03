@@ -45,6 +45,14 @@ Description: Free online meme generator with 100+ trending templates. Create mem
 https://www.fasttools.store/fun-tools/meme-generator#how-to-make-a-meme
 Description: Step-by-step guide to creating memes: choose from 100+ templates or upload your own image, add and customize text with fonts/colors/outlines, drag text to position, and download as PNG.
 
+# AI Text Summarizer - Free AI-Powered Text Summarization
+https://www.fasttools.store/ai-tools/text-summarizer
+Description: Free AI text summarizer powered by Meta Llama 3.1. Summarize articles, essays, research papers, and reports into concise paragraphs, bullet points, key takeaways, or one-sentence TL;DR. Adjustable summary length (10-70%). Up to 10,000 characters per request. Shows word count, reading time, and reduction percentage. Copy, download, or re-summarize output. No signup required.
+
+# AI Text Summarizer FAQ
+https://www.fasttools.store/ai-tools/text-summarizer#faq
+Description: FAQ about AI text summarization covering summary modes, character limits, AI model transparency (Meta Llama 3.1), extractive vs abstractive summarization, plagiarism concerns, multi-language support, and academic usage guidelines.
+
 # Meme Generator FAQ
 https://www.fasttools.store/fun-tools/meme-generator#faq
 Description: Frequently asked questions about making memes online, including template availability, font options, text positioning, download formats, mobile support, commercial usage, and privacy guarantees.

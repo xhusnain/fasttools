@@ -36,7 +36,7 @@
 - **Build**: 100% client-side. Canvas API for text overlay on template images.
 - **Viral**: **Most viral tool type** — users share created memes on social media.
 
-### 4. AI Text Summarizer
+### 4. [DONE] AI Text Summarizer
 - **Category**: ai-tools
 - **Why**: Part of QuillBot's 56M visits. "Summarize text" = 1-2M monthly searches. Students summarizing articles, professionals condensing reports.
 - **Features**: Paste text or URL, bullet-point vs paragraph mode, key takeaways extraction, adjustable length (short/medium/detailed), word count tracking.

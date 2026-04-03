@@ -167,6 +167,7 @@ export const searchItems: SearchItem[] = [
   { name: "Instagram DP Viewer", description: "View and download Instagram profile pictures in full size HD", path: "/social-media-tools/instagram-dp", category: "Social Media" },
 
   { name: "AI Paraphraser", description: "Free AI paraphrasing tool. Rewrite text in 7 modes: Standard, Fluency, Formal, Creative, Academic, Shorten, Expand. Powered by AI.", path: "/ai-tools/ai-paraphraser", category: "AI" },
+  { name: "AI Text Summarizer", description: "Free AI text summarizer. Summarize articles, essays, reports into paragraphs, bullet points, key takeaways, or TL;DR. Adjustable length. Powered by AI.", path: "/ai-tools/text-summarizer", category: "AI" },
   { name: "DNS Lookup & SSL Checker", description: "Check DNS records (A, AAAA, MX, CNAME, TXT, NS, SOA) and verify SSL certificates for any domain. View issuer, expiry, TLS version.", path: "/web-tools/dns-ssl-checker", category: "Web" },
   { name: "Tax Bracket Calculator", description: "Calculate 2025-2026 US federal income tax by bracket. Marginal vs effective rate, bracket breakdown, all filing statuses.", path: "/finance-tools/tax-bracket-calculator", category: "Finance" },
   { name: "Startup Runway Calculator", description: "Free startup runway calculator. Calculate months of runway, burn rate, zero-cash date, fundraise timing. Revenue growth projections, burn multiple, industry benchmarks by stage.", path: "/finance-tools/startup-runway-calculator", category: "Finance" },

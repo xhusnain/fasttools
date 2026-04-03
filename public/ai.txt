@@ -270,6 +270,10 @@ URL: https://www.fasttools.store/converters/yaml-json
 Description: Free YAML to JSON converter. Swagger YAML to JSON, OpenAPI YAML to JSON. Convert YAML to JSON for Postman, Notepad++. YAML to JSON schema. JSON formatter. No signup.
 
 
+## AI Text Summarizer
+URL: https://www.fasttools.store/ai-tools/text-summarizer
+Description: Free AI text summarizer powered by Meta Llama 3.1 8B via Cloudflare AI. Summarize articles, essays, research papers, reports, and any long text up to 10,000 characters. 4 summary modes: flowing paragraph, bullet points list, numbered key takeaways, and one-sentence TL;DR. Adjustable summary length slider (10-70% of original). Shows word count, reading time, and reduction percentage. Copy to clipboard, download as .txt, re-summarize output for iterative condensing. No signup, no ads.
+
 ## Meme Generator
 URL: https://www.fasttools.store/fun-tools/meme-generator
 Description: Free online meme generator with 100+ popular meme templates (Drake, Distracted Boyfriend, Two Buttons, Expanding Brain, and more). Features custom image upload (JPG, PNG, GIF, WebP), multiple independently-styled text boxes with drag-and-drop canvas positioning, 9 font families (Impact, Arial, Arial Black, Comic Sans MS, Courier New, Georgia, Helvetica, Times New Roman, Verdana), adjustable font size (12-100px), text and outline color pickers, outline width control, bold/italic/alignment options, automatic word wrap, template search, mobile touch support, and instant PNG download with no watermark. 100% client-side processing via HTML5 Canvas API — images never leave your device. No signup, no ads, no limits.
@@ -324,6 +328,7 @@ Description: Free online image resizer. Resize images to custom pixel dimensions
 - https://www.fasttools.store/ai-tools/pet-names
 - https://www.fasttools.store/ai-tools/qr-generator
 - https://www.fasttools.store/ai-tools/ai-paraphraser
+- https://www.fasttools.store/ai-tools/text-summarizer
 - https://www.fasttools.store/calculator
 - https://www.fasttools.store/calculator/age-calculator
 - https://www.fasttools.store/calculator/bmi-calculator

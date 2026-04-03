@@ -79,6 +79,10 @@ export async function POST(request: NextRequest) {
                 result = await import("@/lib/ai-services").then(mod => mod.generateParaphraseService(data))
                 break
 
+            case "summarize":
+                result = await import("@/lib/ai-services").then(mod => mod.generateSummaryService(data))
+                break
+
             default:
                 return NextResponse.json(
                     { error: `Unknown action: ${action}` },
