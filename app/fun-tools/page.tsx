@@ -3,7 +3,7 @@ import { ToolPageLayout } from "@/components/common/tool-page-layout"
 import { createToolConfig } from "@/lib/create-tool-config"
 import { GToolCard } from "@/ui/gtool-card"
 
-import { Calendar, Cake, Clock, PartyPopper, Code, Globe, Calculator, ArrowRight, Heart } from "lucide-react"
+import { Calendar, Cake, Clock, PartyPopper, Code, Globe, Calculator, ArrowRight, Heart, Smile } from "lucide-react"
 
 const tools = [
   {
@@ -34,15 +34,22 @@ const tools = [
     href: "/fun-tools/pomodoro-timer",
     popular: true,
   },
+  {
+    title: "Meme Generator",
+    description: "Create memes with 100+ templates, custom text, fonts, and colors. Download PNG with no watermark.",
+    icon: Smile,
+    href: "/fun-tools/meme-generator",
+    popular: true,
+  },
 ]
 
 const toolConfig = createToolConfig({
   toolName: "Fun Tools & Social Helpers",
   description:
     "Free fun tools for countdowns, age milestones, and anniversary tracking. Fast, private, and easy to use.",
-  metaTitle: "Free Fun Tools: Birthday Countdown, Future Age & Anniversary",
+  metaTitle: "Free Fun Tools: Meme Generator, Birthday Countdown, Future Age & More",
   metaDescription:
-    "Use free fun tools for birthday countdowns, future age checks, and anniversary tracking. Quick results, mobile-friendly, and no signup needed.",
+    "Free fun tools: meme generator, birthday countdowns, future age predictor, anniversary calculator, and Pomodoro timer. Quick results, mobile-friendly, no signup.",
   path: "/fun-tools",
   itemList: {
     name: "Fun Tools",

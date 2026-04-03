@@ -270,6 +270,10 @@ URL: https://www.fasttools.store/converters/yaml-json
 Description: Free YAML to JSON converter. Swagger YAML to JSON, OpenAPI YAML to JSON. Convert YAML to JSON for Postman, Notepad++. YAML to JSON schema. JSON formatter. No signup.
 
 
+## Meme Generator
+URL: https://www.fasttools.store/fun-tools/meme-generator
+Description: Free online meme generator with 100+ popular meme templates (Drake, Distracted Boyfriend, Two Buttons, Expanding Brain, and more). Features custom image upload (JPG, PNG, GIF, WebP), multiple independently-styled text boxes with drag-and-drop canvas positioning, 9 font families (Impact, Arial, Arial Black, Comic Sans MS, Courier New, Georgia, Helvetica, Times New Roman, Verdana), adjustable font size (12-100px), text and outline color pickers, outline width control, bold/italic/alignment options, automatic word wrap, template search, mobile touch support, and instant PNG download with no watermark. 100% client-side processing via HTML5 Canvas API — images never leave your device. No signup, no ads, no limits.
+
 ## Pomodoro Timer
 URL: https://www.fasttools.store/fun-tools/pomodoro-timer
 Description: Free online Pomodoro focus timer with 8 ambient sounds (rain, cafe, brown noise, white noise, pink noise, fireplace, ocean, forest) generated via Web Audio API. Features customizable work/break durations (1-120 min), task list with pomodoro estimates and estimated finish time, daily session counter, browser notifications, keyboard shortcuts (Space, R, S, F), fullscreen focus mode, auto-start option, and color-coded modes (red focus, green short break, blue long break). All settings persist via localStorage. Based on the Pomodoro Technique by Francesco Cirillo. No signup required.
@@ -432,6 +436,7 @@ Description: Free online image resizer. Resize images to custom pixel dimensions
 - https://www.fasttools.store/fun-tools/birthday-countdown
 - https://www.fasttools.store/fun-tools/future-age
 - https://www.fasttools.store/fun-tools/pomodoro-timer
+- https://www.fasttools.store/fun-tools/meme-generator
 - https://www.fasttools.store/image-tools
 - https://www.fasttools.store/image-tools/background-remover
 - https://www.fasttools.store/image-tools/image-compressor

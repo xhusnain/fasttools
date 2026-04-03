@@ -285,6 +285,7 @@ export const navigationConfig: MegaMenuSection[] = [
             {
                 title: "Fun Tools",
                 items: [
+                    { title: "Meme Generator", href: "/fun-tools/meme-generator", icon: Smile },
                     { title: "Birthday Countdown", href: "/fun-tools/birthday-countdown", icon: Calendar },
                     { title: "Future Age", href: "/fun-tools/future-age", icon: Clock },
                     { title: "Anniversary Calc", href: "/fun-tools/anniversary", icon: Heart },
