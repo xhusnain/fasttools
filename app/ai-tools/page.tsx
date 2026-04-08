@@ -2,7 +2,7 @@ import type { Metadata } from "next"
 import { ToolPageLayout } from "@/components/common/tool-page-layout"
 import { createToolConfig } from "@/lib/create-tool-config"
 import { GToolCard } from "@/ui/gtool-card"
-import { BookOpen, Code2, FileSearch, Hash, Heart, ImageIcon, Music, QrCode, Wand2, FileText } from "lucide-react"
+import { BookOpen, Code2, FileSearch, Hash, Heart, ImageIcon, Music, QrCode, Wand2, FileText, Volume2 } from "lucide-react"
 
 const aiTools = [
   {
@@ -74,6 +74,13 @@ const aiTools = [
       "Summarize articles, essays, and reports into paragraphs, bullet points, key takeaways, or TL;DR.",
     href: "/ai-tools/text-summarizer",
     icon: FileText,
+  },
+  {
+    title: "Text to Speech",
+    description:
+      "Convert text to natural speech with 50+ languages, adjustable speed, pitch & volume. Word highlighting.",
+    href: "/ai-tools/text-to-speech",
+    icon: Volume2,
   },
 ]
 

@@ -52,7 +52,7 @@
 - **Build**: 100% client-side. Pure JS string analysis.
 - **Viral**: Low viral but massive organic return traffic.
 
-### 6. Text-to-Speech (TTS)
+### 6. [DONE] Text-to-Speech (TTS)
 - **Category**: ai-tools
 - **Why**: TTSMaker.com gets 2.2M monthly visits. "Text to speech" = 1.5-2.5M searches. Content creators, students, accessibility users.
 - **Features**: Web Speech API (free built-in voices), multiple languages, speed/pitch control, download as MP3, highlight text as it reads, voice preview.

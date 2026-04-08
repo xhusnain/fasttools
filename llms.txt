@@ -45,6 +45,14 @@ Description: Free online meme generator with 100+ trending templates. Create mem
 https://www.fasttools.store/fun-tools/meme-generator#how-to-make-a-meme
 Description: Step-by-step guide to creating memes: choose from 100+ templates or upload your own image, add and customize text with fonts/colors/outlines, drag text to position, and download as PNG.
 
+# Text to Speech - Free Online TTS Reader
+https://www.fasttools.store/ai-tools/text-to-speech
+Description: Free online text-to-speech tool. Convert text to natural speech with 50+ languages, multiple voices, adjustable speed (0.25x-4x), pitch, and volume controls. Real-time word highlighting during playback. 100% browser-based via Web Speech API. No signup required.
+
+# Text to Speech FAQ
+https://www.fasttools.store/ai-tools/text-to-speech#faq
+Description: FAQ about text-to-speech covering supported languages, voice quality by browser, privacy, character limits, speed settings, pitch control, mobile support, and accessibility use cases.
+
 # Word Counter & Text Analyzer
 https://www.fasttools.store/seo-tools/word-counter
 Description: Free online word counter with real-time word, character, sentence, and paragraph counting. Features reading time, speaking time, Flesch Reading Ease score, keyword density analysis, and character limit checking for 10 social media platforms. 100% client-side processing.
