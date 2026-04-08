@@ -162,6 +162,7 @@ export const sitemapPages = [
   { url: u("/seo-tools/blog-titles"), lastModified: new Date("2026-03-23"), changeFrequency: "monthly" as const, priority: 0.7 },
   { url: u("/seo-tools/keyword-density"), lastModified: new Date("2026-03-23"), changeFrequency: "monthly" as const, priority: 0.7 },
   { url: u("/seo-tools/schema-markup-generator"), lastModified: new Date("2026-03-27"), changeFrequency: "monthly" as const, priority: 0.7 },
+  { url: u("/seo-tools/word-counter"), lastModified: new Date("2026-04-08"), changeFrequency: "monthly" as const, priority: 0.9 },
 
   // ─── Image Tools ─────────────────────────────────────────────────────
   { url: u("/image-tools/image-compressor"), lastModified: new Date("2026-03-23"), changeFrequency: "weekly" as const, priority: 0.5 },

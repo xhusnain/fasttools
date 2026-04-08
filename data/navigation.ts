@@ -253,6 +253,7 @@ export const navigationConfig: MegaMenuSection[] = [
             {
                 title: "SEO Tools",
                 items: [
+                    { title: "Word Counter", href: "/seo-tools/word-counter", icon: Hash },
                     { title: "Schema Generator", href: "/seo-tools/schema-markup-generator", icon: Code },
                     { title: "Keyword Density", href: "/seo-tools/keyword-density", icon: BarChart },
                     { title: "Open Graph Meta Generator", href: "/seo-tools/meta-tags", icon: Code },

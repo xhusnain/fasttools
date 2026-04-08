@@ -152,6 +152,7 @@ export const searchItems: SearchItem[] = [
   { name: "Lorem Ipsum Generator", description: "Generate placeholder text for design mockups", path: "/seo-tools/lorem-ipsum", category: "SEO" },
   { name: "Blog Title Generator", description: "Create catchy, SEO-friendly titles", path: "/seo-tools/blog-titles", category: "SEO" },
   { name: "Text Similarity Checker", description: "Check text similarity and detect duplicate content using SimHash", path: "/seo-tools/text-similarity-checker", category: "SEO" },
+  { name: "Word Counter", description: "Free word counter and text analyzer. Word count, character count, reading time, speaking time, keyword density, Flesch readability score, social media character limits.", path: "/seo-tools/word-counter", category: "SEO" },
 
 
   // Social Media Tools

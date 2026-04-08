@@ -3,7 +3,7 @@ import { GToolCard } from "@/ui/gtool-card"
 
 import { ToolPageLayout } from "@/components/common/tool-page-layout"
 import { createToolConfig } from "@/lib/create-tool-config"
-import { Braces, Code, FileText, Hash, Lightbulb, Search } from "lucide-react"
+import { Braces, Code, FileText, Hash, Lightbulb, Search, LetterText } from "lucide-react"
 
 const tools = [
   {
@@ -48,15 +48,22 @@ const tools = [
     icon: Braces,
     href: "/seo-tools/schema-markup-generator",
   },
+  {
+    title: "Word Counter",
+    description:
+      "Count words, characters, sentences. Reading time, keyword density, readability score & social media limits.",
+    icon: LetterText,
+    href: "/seo-tools/word-counter",
+  },
 ]
 
 const toolConfig = createToolConfig({
   toolName: "SEO Tools",
   description:
     "A practical SEO toolkit for metadata generation, keyword analysis, headline ideation, duplicate-content review, and placeholder content creation.",
-  metaTitle: "SEO Tools: Meta Tags, Keyword Density, Titles",
+  metaTitle: "SEO Tools: Word Counter, Meta Tags, Keyword Density & More",
   metaDescription:
-    "Free SEO tools for metadata, keyword density, title generation, text similarity checks, and placeholder content workflows.",
+    "Free SEO tools: word counter, keyword density, meta tag generator, schema markup, text similarity, blog titles, and lorem ipsum. No signup.",
   path: "/seo-tools",
 
   header: {

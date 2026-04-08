@@ -45,6 +45,14 @@ Description: Free online meme generator with 100+ trending templates. Create mem
 https://www.fasttools.store/fun-tools/meme-generator#how-to-make-a-meme
 Description: Step-by-step guide to creating memes: choose from 100+ templates or upload your own image, add and customize text with fonts/colors/outlines, drag text to position, and download as PNG.
 
+# Word Counter & Text Analyzer
+https://www.fasttools.store/seo-tools/word-counter
+Description: Free online word counter with real-time word, character, sentence, and paragraph counting. Features reading time, speaking time, Flesch Reading Ease score, keyword density analysis, and character limit checking for 10 social media platforms. 100% client-side processing.
+
+# Word Counter FAQ
+https://www.fasttools.store/seo-tools/word-counter#faq
+Description: FAQ about word counting, character limits, reading time calculations (238 WPM), speaking time (150 WPM), Flesch readability scores, keyword density for SEO, and social media platform character limits.
+
 # AI Text Summarizer - Free AI-Powered Text Summarization
 https://www.fasttools.store/ai-tools/text-summarizer
 Description: Free AI text summarizer powered by Meta Llama 3.1. Summarize articles, essays, research papers, and reports into concise paragraphs, bullet points, key takeaways, or one-sentence TL;DR. Adjustable summary length (10-70%). Up to 10,000 characters per request. Shows word count, reading time, and reduction percentage. Copy, download, or re-summarize output. No signup required.
