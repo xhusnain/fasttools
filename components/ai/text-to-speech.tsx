@@ -157,11 +157,11 @@ export function TextToSpeech() {
 
   // Kokoro filtered voices
   const filteredKokoroVoices = useMemo(() => {
-    if (kokoroLangFilter === "all") return KOKORO_VOICES
-    return KOKORO_VOICES.filter((v) => v.lang === kokoroLangFilter)
-  }, [kokoroLangFilter])
+    if (kokoroAccentFilter === "all") return KOKORO_VOICES
+    return KOKORO_VOICES.filter((v) => v.accent === kokoroAccentFilter)
+  }, [kokoroAccentFilter])
 
-  // Auto-select first voice when language filter changes
+  // Auto-select first voice when accent filter changes
   useEffect(() => {
     const isCurrentInFiltered = filteredKokoroVoices.some((v) => v.id === selectedKokoroVoice)
     if (!isCurrentInFiltered && filteredKokoroVoices.length > 0) {
