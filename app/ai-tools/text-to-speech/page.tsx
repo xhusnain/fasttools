@@ -12,21 +12,21 @@ const TextToSpeech = dynamic(
 const toolConfig = createToolConfig({
   toolName: "Text to Speech",
   description:
-    "Free AI text-to-speech with natural human-like voices. Powered by Kokoro 82M neural TTS running in your browser. 54 AI voices in 8 languages. Download audio as WAV. Browser voices fallback with 50+ languages. No signup needed.",
+    "Free AI text-to-speech with natural human-like voices. Powered by Kokoro 82M neural TTS running in your browser. 28 AI voices with American & British accents. Download audio as WAV. Browser voices fallback with 50+ languages. No signup needed.",
   metaTitle: "Free AI Text to Speech Online - Natural Voices & TTS Reader (2026)",
   metaDescription:
-    "Convert text to speech free with AI voices that sound human. 30 neural voices, 8 languages, download WAV audio. Kokoro AI runs in your browser. No signup, no limits.",
+    "Convert text to speech free with AI voices that sound human. 28 neural voices, American & British accents, download WAV audio. Kokoro AI runs in your browser. No signup.",
   path: "/ai-tools/text-to-speech",
 
   schemaOptions: {
     applicationCategory: "MultimediaApplication",
     description:
-      "Free AI text-to-speech tool powered by Kokoro 82M neural TTS model running directly in the browser via ONNX WebAssembly. 54 natural human-like AI voices (American/British male/female, plus Spanish, French, Hindi, Italian, Japanese, Portuguese, Chinese). Download generated audio as WAV files. Browser voices fallback with 50+ additional languages via Web Speech API. Speed control (0.5x-2x), volume control (0-100%), play/pause/stop. Up to 5,000 characters per session. 100% client-side processing.",
+      "Free AI text-to-speech tool powered by Kokoro 82M neural TTS model running directly in the browser via ONNX WebAssembly. 28 natural human-like English AI voices — 11 American female, 9 American male, 4 British female, 4 British male. Download generated audio as WAV files. Browser voices fallback with 50+ additional languages via Web Speech API. Speed control (0.5x-2x), volume control (0-100%), play/pause/stop. Up to 5,000 characters per session. 100% client-side processing.",
     featureList: [
-      "54 AI voices powered by Kokoro 82M neural TTS model",
+      "28 AI voices powered by Kokoro 82M neural TTS model",
       "Human-like natural speech quality via deep learning",
-      "8 languages: English, Spanish, French, Hindi, Italian, Japanese, Portuguese, Chinese",
-      "American and British accents with male and female voices",
+      "11 American female + 9 American male + 4 British female + 4 British male voices",
+      "American and British accents with distinct named characters",
       "Download generated audio as WAV file",
       "100% browser-based AI inference via ONNX WebAssembly",
       "Browser voices fallback with 50+ additional languages",
@@ -43,7 +43,7 @@ const toolConfig = createToolConfig({
   header: {
     title: "Free AI Text to Speech Online",
     description:
-      "Convert text to human-like speech with 54 AI voices powered by Kokoro neural TTS. 8 languages, American & British accents. Download audio as WAV. Runs in your browser.",
+      "Convert text to human-like speech with 28 AI voices — American & British accents, male & female. Powered by Kokoro neural TTS in your browser. Download audio as WAV.",
     titleSize: "medium",
     descriptionSize: "small",
   },
@@ -58,11 +58,11 @@ const toolConfig = createToolConfig({
       "An AI text-to-speech (TTS) tool converts written text into natural, human-like spoken audio using a neural network (Kokoro 82M) that runs directly in your browser via WebAssembly — producing speech that sounds like a real person rather than a robotic synthesizer.",
 
     quickAnswer:
-      "Select the AI Voices tab, choose from 54 natural voices in 8 languages, paste your text (up to 5,000 characters), and click Speak. The AI model generates human-like audio in your browser. Click Download to save as WAV. Switch to Browser Voices for 50+ additional languages via Web Speech API. No signup needed.",
+      "Select the AI Voices tab, choose from 28 natural English voices (American & British accents), paste your text (up to 5,000 characters), and click Speak. The AI model generates human-like audio in your browser. Click Download to save as WAV. Switch to Browser Voices for 50+ additional languages via Web Speech API. No signup needed.",
 
     keyTakeaways: [
-      "54 AI voices powered by Kokoro 82M neural TTS — sounds natural and human-like, not robotic",
-      "8 languages: English (American & British), Spanish, French, Hindi, Italian, Japanese, Portuguese, Chinese",
+      "28 AI voices powered by Kokoro 82M neural TTS — sounds natural and human-like, not robotic",
+      "American & British English accents: 11 American female, 9 American male, 4 British female, 4 British male voices",
       "Download generated speech as WAV audio files — perfect for presentations, videos, and podcasts",
       "100% browser-based AI: the 82M parameter model runs locally via ONNX WebAssembly — your text never leaves your device",
       "Browser Voices fallback with 50+ languages for quick previews using the Web Speech API",
@@ -70,7 +70,7 @@ const toolConfig = createToolConfig({
     ],
 
     overview:
-      "This tool converts text to natural, human-like speech using Kokoro 82M, an open-source neural TTS model that runs directly in your browser. Unlike traditional browser TTS (Web Speech API) which sounds robotic, Kokoro uses deep learning to generate speech that closely mimics a real human voice — with natural pacing, intonation, and pronunciation. Choose from 54 AI voices across 8 languages (English, Spanish, French, Hindi, Italian, Japanese, Portuguese, Chinese), including both American and British accents with male and female options. The ~92MB model downloads once and is cached for instant future use. You can download the generated audio as a WAV file for use in videos, presentations, or podcasts. For languages not covered by AI voices, switch to the Browser Voices tab for 50+ additional languages via the Web Speech API.",
+      "This tool converts text to natural, human-like speech using Kokoro 82M, an open-source neural TTS model that runs directly in your browser. Unlike traditional browser TTS (Web Speech API) which sounds robotic, Kokoro uses deep learning to generate speech that closely mimics a real human voice — with natural pacing, intonation, and pronunciation. Choose from 28 AI voices with American and British English accents — 11 American female, 9 American male, 4 British female, and 4 British male voices, each with a distinct character and vocal quality. The ~92MB model downloads once and is cached for instant future use. You can download the generated audio as a WAV file for use in videos, presentations, or podcasts. For other languages, switch to the Browser Voices tab for 50+ languages via the Web Speech API.",
 
     howToSteps: [
       "Select the 'AI Voices (Kokoro)' tab for natural human-like speech, or 'Browser Voices' for quick playback with 50+ languages. The AI model (~92MB) loads automatically on first use and is cached.",
@@ -82,7 +82,7 @@ const toolConfig = createToolConfig({
 
     features: [
       "Kokoro 82M Neural TTS: An 82-million parameter AI model that generates human-like speech with natural pacing, emotion, and pronunciation — far beyond robotic browser voices.",
-      "30 AI Voices: Named characters including Heart, Bella, Nicole, Nova, Adam, Michael, Alice, Emma, Daniel, George — each with distinct vocal qualities and personality.",
+      "28 AI Voices: Named characters including Heart, Bella, Nicole, Nova, Adam, Michael, Alice, Emma, Daniel, George — each with distinct vocal qualities and personality.",
       "8 Languages: English (11 American female + 10 American male + 4 British female + 4 British male voices), Spanish, French, Hindi, Italian, Japanese, Portuguese, and Chinese with native-sounding pronunciation.",
       "WAV Audio Download: Save generated speech as a high-quality WAV file for use in YouTube videos, presentations, podcasts, audiobooks, or any project.",
       "Browser-Based AI: The neural network runs entirely in your browser via ONNX WebAssembly. No server calls, no API keys, no cloud processing — 100% private.",
@@ -99,7 +99,7 @@ const toolConfig = createToolConfig({
       "Content Creation: Generate natural voiceovers for YouTube videos, TikTok, Instagram Reels, and podcasts without recording yourself. Download as WAV.",
       "Proofreading: Listen to your writing read aloud by an AI voice to catch errors, awkward phrasing, and flow issues invisible when reading silently.",
       "Accessibility: High-quality alternative to screen readers for people with visual impairments, dyslexia, or reading difficulties.",
-      "Language Learning: Listen to text in Spanish, French, Hindi, Italian, Japanese, Portuguese, or Chinese with native-sounding AI pronunciation. Slow to 0.5x for practice.",
+      "Language Learning: Use Browser Voices to listen to text in 50+ languages for pronunciation practice. Slow to 0.5x for clear listening. AI voices perfect for English accent training (American vs British).",
       "Presentations: Preview how your speech script sounds before delivering it. Download the audio to use as a backup or accessibility aid.",
       "Education: Convert study notes, textbook passages, and lecture summaries to audio for auditory learning reinforcement.",
       "E-Learning: Create narration for online courses, tutorials, and training materials without hiring a voice actor.",
@@ -185,7 +185,7 @@ const toolConfig = createToolConfig({
       {
         question: "What languages are supported?",
         answer:
-          "AI voices support 8 languages: English (American and British accents), Spanish, French, Hindi, Italian, Japanese, Portuguese, and Chinese. Browser voices (fallback) support 50+ languages depending on your browser and OS, including German, Korean, Arabic, Russian, Dutch, and many more.",
+          "AI voices (Kokoro) currently support English with American and British accents — 28 voices total. Browser voices (fallback) support 50+ languages depending on your browser and OS, including Spanish, French, German, Chinese, Japanese, Korean, Arabic, Hindi, Portuguese, Russian, and many more.",
       },
       {
         question: "Can I download the generated audio?",
@@ -205,7 +205,7 @@ const toolConfig = createToolConfig({
       {
         question: "What is the difference between AI voices and browser voices?",
         answer:
-          "AI voices (Kokoro) use a 82M parameter neural network to generate human-like speech with natural intonation and emotion — they sound like a real person. Browser voices use the Web Speech API built into your browser — they work instantly with no download but sound more robotic. AI voices support 8 languages with 54 voices; browser voices support 50+ languages.",
+          "AI voices (Kokoro) use an 82M parameter neural network to generate human-like speech with natural intonation and emotion — they sound like a real person. Browser voices use the Web Speech API built into your browser — they work instantly with no download but sound more robotic. AI voices currently support English (28 voices, American & British accents); browser voices support 50+ languages.",
       },
       {
         question: "How do I get the best voice quality?",
@@ -230,7 +230,7 @@ const toolConfig = createToolConfig({
       {
         question: "Can I use this for language learning?",
         answer:
-          "Yes. Select a voice in your target language (Spanish, French, Hindi, Italian, Japanese, Portuguese, or Chinese), paste text you want to practice, and slow the speed to 0.5x to clearly hear pronunciation. The AI voices provide native-sounding pronunciation that's more natural than traditional TTS, making them ideal for learning correct intonation and rhythm.",
+          "Yes. For English learners, AI voices offer natural American and British pronunciation at adjustable speeds — slow to 0.5x to hear every word clearly. For other languages, switch to the Browser Voices tab which supports 50+ languages including Spanish, French, German, Chinese, Japanese, Korean, Hindi, and more.",
       },
       {
         question: "What audio format is the download?",

@@ -447,18 +447,18 @@ export function TextToSpeech() {
           <GCardContent className="space-y-4">
             {engineMode === "ai" ? (
               <>
-                {/* Kokoro Language Filter */}
+                {/* Kokoro Accent Filter */}
                 <div className="space-y-1.5">
-                  <label className="text-xs text-muted-foreground">Language</label>
-                  <GSelect value={kokoroLangFilter} onValueChange={setKokoroLangFilter}>
+                  <label className="text-xs text-muted-foreground">Accent</label>
+                  <GSelect value={kokoroAccentFilter} onValueChange={setKokoroAccentFilter}>
                     <GSelectTrigger className="w-full">
                       <GSelectValue />
                     </GSelectTrigger>
                     <GSelectContent>
-                      <GSelectItem value="all">All Languages ({KOKORO_VOICES.length} voices)</GSelectItem>
-                      {KOKORO_LANGUAGES.map((l) => (
-                        <GSelectItem key={l.code} value={l.code}>
-                          {l.name} ({KOKORO_VOICES.filter((v) => v.lang === l.code).length})
+                      <GSelectItem value="all">All Voices ({KOKORO_VOICES.length})</GSelectItem>
+                      {KOKORO_ACCENTS.map((a) => (
+                        <GSelectItem key={a.code} value={a.code}>
+                          {a.name} ({a.count})
                         </GSelectItem>
                       ))}
                     </GSelectContent>
@@ -590,8 +590,8 @@ export function TextToSpeech() {
           {engineMode === "ai" ? (
             <>
               <strong>AI Voices (Kokoro):</strong> Uses an 82M parameter neural network running directly in your browser via WebAssembly.
-              The ~92MB model downloads once and is cached for future visits. Produces natural, human-like speech.
-              Supports English, Spanish, French, Hindi, Italian, Japanese, Portuguese, and Chinese.
+              The ~92MB model downloads once and is cached for future visits. Produces natural, human-like English speech
+              with 28 voices across American and British accents.
               You can download the generated audio as a WAV file.
             </>
           ) : (

@@ -272,7 +272,7 @@ Description: Free YAML to JSON converter. Swagger YAML to JSON, OpenAPI YAML to 
 
 ## Text to Speech (TTS)
 URL: https://www.fasttools.store/ai-tools/text-to-speech
-Description: Free AI text-to-speech tool powered by Kokoro 82M neural TTS model running directly in the browser via ONNX WebAssembly. 54 natural human-like AI voices (11 American female, 10 American male, 4 British female, 4 British male, plus Spanish, French, Hindi, Italian, Japanese, Portuguese, Chinese voices). Download generated audio as WAV files. Browser voices fallback with 50+ additional languages via Web Speech API. Speed control (0.5x-2x), volume control, play/pause/stop. ~92MB model downloads once and is cached. 100% client-side AI processing — audio never leaves your device. No signup, no ads.
+Description: Free AI text-to-speech tool powered by Kokoro 82M neural TTS model running directly in the browser via ONNX WebAssembly. 28 natural human-like English AI voices (11 American female, 9 American male, 4 British female, 4 British male). Download generated audio as WAV files. Browser voices fallback with 50+ additional languages via Web Speech API. Speed control (0.5x-2x), volume control, play/pause/stop. ~92MB model downloads once and is cached. 100% client-side AI processing — audio never leaves your device. No signup, no ads.
 
 ## Word Counter & Text Analyzer
 URL: https://www.fasttools.store/seo-tools/word-counter
