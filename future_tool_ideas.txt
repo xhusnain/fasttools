@@ -84,7 +84,7 @@
 - **Build**: Mostly client-side. CrossRef API (free) for DOI/ISBN auto-fill.
 - **Viral**: Students share with entire study groups. Word-of-mouth in schools.
 
-### 10. Password Generator & Strength Checker
+### 10. [DONE] Password Generator & Strength Checker
 - **Category**: crypto-tools
 - **Why**: "Password generator" = 1.5-3M monthly searches. Every account creation triggers this need. Security awareness growing.
 - **Features**: Customizable length, uppercase/lowercase/numbers/symbols, passphrase mode (4-6 random words), strength meter, breach checking (Have I Been Pwned k-anonymity API), copy to clipboard, bulk generation.

@@ -132,6 +132,7 @@ export const sitemapPages = [
   { url: u("/crypto-tools/hmac-generator"), lastModified: new Date("2026-03-23"), changeFrequency: "monthly" as const, priority: 0.7 },
   { url: u("/crypto-tools/rsa-generator"), lastModified: new Date("2026-03-23"), changeFrequency: "monthly" as const, priority: 0.7 },
   { url: u("/crypto-tools/password-strength-analyzer"), lastModified: new Date("2026-03-23"), changeFrequency: "monthly" as const, priority: 0.7 },
+  { url: u("/crypto-tools/password-generator"), lastModified: new Date("2026-04-10"), changeFrequency: "monthly" as const, priority: 0.9 },
   { url: u("/crypto-tools/uuid-generator"), lastModified: new Date("2026-03-23"), changeFrequency: "monthly" as const, priority: 0.7 },
   { url: u("/crypto-tools/bcrypt"), lastModified: new Date("2026-03-23"), changeFrequency: "monthly" as const, priority: 0.7 },
   { url: u("/crypto-tools/token-generator"), lastModified: new Date("2026-03-23"), changeFrequency: "monthly" as const, priority: 0.7 },

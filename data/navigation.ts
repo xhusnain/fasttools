@@ -170,6 +170,7 @@ export const navigationConfig: MegaMenuSection[] = [
                     { title: "UUID Generator", href: "/crypto-tools/uuid-generator", icon: Fingerprint },
                     { title: "Bcrypt Generator", href: "/crypto-tools/bcrypt", icon: Shield },
                     { title: "Password Analyzer", href: "/crypto-tools/password-strength-analyzer", icon: Shield },
+                    { title: "Password Generator", href: "/crypto-tools/password-generator", icon: Key },
                     { title: "Token Generator", href: "/crypto-tools/token-generator", icon: Key },
                     { title: "OTP Code Generator", href: "/crypto-tools/otp-generator", icon: Shield },
                 ]

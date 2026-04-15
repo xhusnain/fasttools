@@ -45,6 +45,14 @@ Description: Free online meme generator with 100+ trending templates. Create mem
 https://www.fasttools.store/fun-tools/meme-generator#how-to-make-a-meme
 Description: Step-by-step guide to creating memes: choose from 100+ templates or upload your own image, add and customize text with fonts/colors/outlines, drag text to position, and download as PNG.
 
+# Password Generator - Free Strong Password & Passphrase Tool
+https://www.fasttools.store/crypto-tools/password-generator
+Description: Free cryptographically-secure password generator. Uses window.crypto.getRandomValues() CSPRNG. Features password mode (4-64 chars with toggles), passphrase mode (Diceware-style 3-10 words), entropy meter in bits, crack-time estimate, Have I Been Pwned breach checker via k-anonymity, bulk generation up to 50. 100% client-side.
+
+# Password Generator FAQ
+https://www.fasttools.store/crypto-tools/password-generator#faq
+Description: FAQ about password generation covering entropy in bits, passphrase vs password strength, HIBP k-anonymity breach checking, why crypto.getRandomValues() beats Math.random(), NIST SP 800-63B guidance, and password rotation myths.
+
 # Citation Generator - Free APA, MLA, Chicago, Harvard
 https://www.fasttools.store/education-tools/citation-generator
 Description: Free online citation generator supporting APA 7th, MLA 9th, Chicago 17th, and Harvard styles. Auto-fill from DOI (CrossRef) and ISBN (OpenLibrary). Cite books, journal articles, websites, newspapers, YouTube videos, and podcasts. Build bibliographies and export as plain text or BibTeX (.bib) for LaTeX. 100% free with no paywall — unlike EasyBib and Citation Machine.

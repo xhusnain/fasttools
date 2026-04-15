@@ -100,6 +100,7 @@ export const searchItems: SearchItem[] = [
   { name: "BIP39 Passphrase Generator", description: "Generate secure BIP39 mnemonic phrases and seed codes online. Convert entropy to mnemonic.", path: "/crypto-tools/bip39-generator", category: "Crypto" },
   { name: "HMAC Generator", description: "Calculate secure Hash-based Message Authentication Codes (HMAC) using SHA-256, MD5, SHA-512 and secret keys.", path: "/crypto-tools/hmac-generator", category: "Crypto" },
   { name: "Token Generator", description: "Generate secure random tokens, API keys, and passwords", path: "/crypto-tools/token-generator", category: "Crypto" },
+  { name: "Password Generator", description: "Free password generator with entropy meter, HIBP breach checker, passphrase mode (Diceware), bulk generation. Cryptographically secure using crypto.getRandomValues().", path: "/crypto-tools/password-generator", category: "Crypto" },
   { name: "Hash Text Generator", description: "Generate secure cryptographic hashes (MD5, SHA1, SHA256) for any text", path: "/crypto-tools/hash-text", category: "Crypto" },
   { name: "UUID Generator", description: "Bulk generate secure random and time-based UUIDs (v4, v7)", path: "/crypto-tools/uuid-generator", category: "Crypto" },
   { name: "ULID Generator", description: "Generate Universally Unique Lexicographical Sortable Identifiers", path: "/crypto-tools/ulid-generator", category: "Crypto" },

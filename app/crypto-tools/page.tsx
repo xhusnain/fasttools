@@ -28,6 +28,13 @@ const cryptoTools = [
     icon: Hash,
   },
   {
+    title: "Password Generator",
+    description:
+      "Strong passwords & passphrases with entropy meter, HIBP breach check, and bulk generation. Cryptographically secure.",
+    href: "/crypto-tools/password-generator",
+    icon: Key,
+  },
+  {
     title: "Token Generator",
     description:
       "Generate secure random tokens, API keys, PINs, and formatted secrets.",
