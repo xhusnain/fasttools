@@ -278,6 +278,10 @@ Description: Free AI text-to-speech tool powered by Kokoro 82M neural TTS model 
 URL: https://www.fasttools.store/seo-tools/word-counter
 Description: Free online word counter and text analyzer. Real-time word count, character count (with and without spaces), sentence count, paragraph count, reading time (238 WPM), speaking time (150 WPM), Flesch Reading Ease score with grade level, top 15 keyword density analysis with frequency bars, syllable count, average word and sentence length, longest word detection, and social media character limit checker for 10 platforms (Twitter/X 280, Instagram 2200, Meta Description 160, Meta Title 60, Facebook 63206, LinkedIn 3000, YouTube Title 100, YouTube Description 5000, Pinterest 500, TikTok 2200). Copy all stats to clipboard. 100% client-side processing. No signup, no ads.
 
+## Color Palette Generator
+URL: https://www.fasttools.store/dev-tools/color-palette
+Description: Free online color palette generator with 7 color harmony modes (complementary, analogous, triadic, tetradic, split-complementary, monochromatic, random) based on classical color theory. Features image-to-palette extraction via HTML5 Canvas color quantization (upload JPG/PNG/GIF/WebP), WCAG AA/AAA contrast ratio checker for each color on white and black backgrounds, per-color locking with spacebar keyboard shortcut for regeneration, color picker and manual hex input, HEX/RGB/HSL value display with one-click copy, 5 export formats (CSS variables, Tailwind config, SCSS variables, JSON with all value formats, plain hex list), and variable palette size from 2 to 10 colors. Download exported palette as CSS/JSON/SCSS/JS/TXT file. 100% client-side processing — images and palettes never leave your browser. No signup, no ads, no limits.
+
 ## AI Text Summarizer
 URL: https://www.fasttools.store/ai-tools/text-summarizer
 Description: Free AI text summarizer powered by Meta Llama 3.1 8B via Cloudflare AI. Summarize articles, essays, research papers, reports, and any long text up to 10,000 characters. 4 summary modes: flowing paragraph, bullet points list, numbered key takeaways, and one-sentence TL;DR. Adjustable summary length slider (10-70% of original). Shows word count, reading time, and reduction percentage. Copy to clipboard, download as .txt, re-summarize output for iterative condensing. No signup, no ads.
@@ -402,6 +406,7 @@ Description: Free online image resizer. Resize images to custom pixel dimensions
 - https://www.fasttools.store/dev-tools/html-wysiwyg-editor
 - https://www.fasttools.store/dev-tools/user-agent-parser
 - https://www.fasttools.store/dev-tools/http-status-codes
+- https://www.fasttools.store/dev-tools/color-palette
 - https://www.fasttools.store/dev-tools/json-diff
 - https://www.fasttools.store/dev-tools/json-to-csv
 - https://www.fasttools.store/dev-tools/jwt-decoder

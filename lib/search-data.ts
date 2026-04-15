@@ -108,7 +108,7 @@ export const searchItems: SearchItem[] = [
   { name: "OTP Code Generator", description: "Free otp code generator, totp generator, totp qr code generator. Time-based OTP for 2FA.", path: "/crypto-tools/otp-generator", category: "Crypto" },
 
   // Developer Tools
-  { name: "Color Palette Generator", description: "Generate beautiful, harmonious color schemes", path: "/dev-tools/color-palette", category: "Developer" },
+  { name: "Color Palette Generator", description: "Free color palette generator. 7 harmony modes (complementary, analogous, triadic, tetradic, monochromatic), image extraction, WCAG contrast checker, export to CSS/Tailwind/SCSS/JSON.", path: "/dev-tools/color-palette", category: "Developer" },
   { name: "Hex to RGB Converter", description: "Convert between HEX, RGB, HSL, and other color formats", path: "/dev-tools/hex-to-rgb", category: "Developer" },
   { name: "JSON Diff", description: "Compare two JSON objects and find differences. json diff online. json diff javascript, python, npm.", path: "/dev-tools/json-diff", category: "Developer" },
   { name: "JSON to CSV Converter", description: "Convert JSON data to CSV format", path: "/dev-tools/json-to-csv", category: "Developer" },

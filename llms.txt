@@ -45,6 +45,14 @@ Description: Free online meme generator with 100+ trending templates. Create mem
 https://www.fasttools.store/fun-tools/meme-generator#how-to-make-a-meme
 Description: Step-by-step guide to creating memes: choose from 100+ templates or upload your own image, add and customize text with fonts/colors/outlines, drag text to position, and download as PNG.
 
+# Color Palette Generator - Free Online Color Scheme Tool
+https://www.fasttools.store/dev-tools/color-palette
+Description: Free color palette generator with 7 harmony modes (complementary, analogous, triadic, tetradic, split-complementary, monochromatic, random), image extraction via canvas quantization, WCAG AA/AAA contrast checker, and export to CSS variables, Tailwind config, SCSS, JSON, or plain hex. Press spacebar to regenerate. 100% client-side processing.
+
+# Color Palette Generator FAQ
+https://www.fasttools.store/dev-tools/color-palette#faq
+Description: FAQ about color palette generation covering harmony modes, image color extraction, WCAG accessibility contrast, color locking, export formats (CSS/Tailwind/SCSS/JSON), and color theory fundamentals.
+
 # Text to Speech - Free Online TTS Reader
 https://www.fasttools.store/ai-tools/text-to-speech
 Description: Free online text-to-speech tool. Convert text to natural speech with 50+ languages, multiple voices, adjustable speed (0.25x-4x), pitch, and volume controls. Real-time word highlighting during playback. 100% browser-based via Web Speech API. No signup required.

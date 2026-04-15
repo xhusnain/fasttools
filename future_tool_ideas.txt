@@ -60,7 +60,7 @@
 - **Build**: Mostly client-side (Web Speech API). For premium voices, use Cloudflare AI or ElevenLabs.
 - **Viral**: Audio output shared in videos and presentations.
 
-### 7. Color Palette Generator
+### 7. [DONE] Color Palette Generator
 - **Category**: dev-tools
 - **Why**: Coolors.co and HTMLColorCodes.com collectively get 10M+ visits. "Color palette generator" = 1.5-2.5M searches.
 - **Features**: Random palette generation, lock/unlock colors, extract palette from image, accessibility contrast checker (WCAG), CSS/Tailwind export, gradient generator, color blindness simulator.

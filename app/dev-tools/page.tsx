@@ -113,7 +113,7 @@ const devTools = [
   {
     title: "Color Palette Generator",
     description:
-      "Generate color palettes and copy hex values for product and UI design workflows.",
+      "7 harmony modes, image extraction, WCAG contrast checker, export to CSS/Tailwind/SCSS/JSON.",
     href: "/dev-tools/color-palette",
     icon: Palette,
   },
