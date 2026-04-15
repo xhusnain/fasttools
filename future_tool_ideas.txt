@@ -1,175 +1,341 @@
-# Future Tool Ideas — High-Traffic, Interesting & Viral Tools
+# Future Tool Ideas — Round 2 (Verified Unique, High-Traffic)
+# Cross-checked against existing catalog. Zero duplicates.
+# Research date: 2026-04-10
 
-## Selection Criteria
-- Massive search volume (500K+ monthly searches)
-- NOT finance calculators (we have enough)
-- Sticky tools (users bookmark and return daily/weekly)
-- Viral potential (users share output on social media)
-- Client-side preferred (no ongoing API costs)
-- Tools we DON'T already have
+## Strategic Goals
+- Add NEW Security category (steganography + privacy tools)
+- Expand Education category (currently only Citation Generator)
+- Cover high-traffic gaps across existing categories
+- Prioritize tools with daily/weekly repeat usage + viral mechanics
+- 100% client-side where possible (privacy + zero server costs)
 
 ---
 
-## TOP 15 — Ranked by Traffic + Viral Potential
+## NEW CATEGORY: SECURITY (/security-tools)
 
-### 1. [DONE] Pomodoro / Focus Timer
-- **Category**: productivity-tools
-- **Why**: Pomofocus.io gets 6M+ monthly visits. Students and remote workers use it daily for hours. "Pomodoro timer" = 1-2M monthly searches.
-- **Features**: 25/5/15 min timer, ambient sounds (rain, cafe, lo-fi), task list, session stats, focus mode (fullscreen), break reminders, daily/weekly streaks.
-- **Traffic**: 1-2M searches. Most sticky tool possible — open for hours daily.
-- **Build**: 100% client-side. Pure JS timer + Web Audio API.
-- **Viral**: Students share in study groups. TikTok "study with me" trend.
+### S1. Image Steganography Tool
+- **Category**: security-tools (NEW)
+- **Search Volume**: 110K/mo — "steganography online" (40K), "hide text in image" (45K), "image steganography tool" (25K)
+- **Description**: Hide secret text inside PNG/JPG images via LSB (least-significant-bit) encoding. Extract hidden text from stego-images. Optional AES-GCM password layer for extra encryption.
+- **Features**: Encode text in image, decode from image, optional password, preview both images, download stego-image.
+- **Why build**: USER-SPECIFICALLY REQUESTED. Competitors (stylesuxx.github.io, futureboy.us) have ugly/dated UIs. Privacy-critical → client-side is a selling point.
+- **Build**: Medium. Canvas API + bitwise ops, crypto.subtle for AES.
+- **Client-side**: 100%
+- **Top 3 competitors**: stylesuxx.github.io/steganography, futureboy.us/stegano, 8gwifi.org
 
-### 2. [DONE] Background Remover
+### S2. EXIF Metadata Viewer & Remover
+- **Category**: security-tools
+- **Search Volume**: 450K/mo — "exif viewer" (180K), "remove exif" (135K), "exif data" (135K)
+- **Description**: Drag image → view GPS/camera/date metadata, one-click strip all metadata, re-download clean image.
+- **Features**: View all EXIF tags (GPS coords, camera make/model, date, orientation), remove all or specific tags, batch processing, before/after comparison.
+- **Why build**: Privacy tool — strong AEO/GEO for "how to remove location from photo." Daily use by journalists, Facebook sellers, dating-app users.
+- **Build**: Low. Use exifr or piexifjs library.
+- **Client-side**: 100%
+- **Top 3 competitors**: exifdata.com, verexif.com, exif.tools
+
+### S3. URL Safety Checker / Phishing Detector
+- **Category**: security-tools
+- **Search Volume**: 680K/mo — "is this link safe" (300K), "url checker" (210K), "phishing link checker" (170K)
+- **Description**: Paste a URL → check against Google Safe Browsing, PhishTank, domain age, SSL cert status, redirect chain, IP reputation.
+- **Features**: Real-time scan, threat types shown (malware/phishing/deceptive), redirect trace, domain WHOIS date, SSL grade.
+- **Why build**: Massive intent, repeat usage, trust-building. No direct equivalent in our web-tools.
+- **Build**: Medium. Needs APIs (Google Safe Browsing free tier + Cloudflare Workers for WHOIS/redirects).
+- **Client-side**: No (requires API)
+- **Top 3 competitors**: virustotal.com, urlvoid.com, sucuri.net/sitecheck
+
+### S4. Private Self-Destructing Notes (Encrypted Pastebin)
+- **Category**: security-tools
+- **Search Volume**: 320K/mo — "privnote alternative" (40K), "self destructing note" (90K), "encrypted pastebin" (120K), "send secret message" (70K)
+- **Description**: Write note → generates one-time URL → note encrypted in-browser (AES-GCM) with key in URL fragment (never sent to server) → destroys after first read.
+- **Features**: Client-side encryption, key-in-fragment (zero-knowledge), self-destruct on read or after N hours, optional password, QR code for sharing.
+- **Why build**: Viral sharing mechanic — every link shared = inbound visit. High repeat usage.
+- **Build**: Medium. Client-side AES-GCM + Cloudflare KV for ciphertext storage.
+- **Client-side**: Hybrid (encryption client-side, only ciphertext stored)
+- **Top 3 competitors**: privnote.com, onetimesecret.com, scrt.link
+
+---
+
+## EDUCATION CATEGORY EXPANSION (/education-tools)
+
+### E1. Periodic Table (Interactive)
+- **Category**: education-tools
+- **Search Volume**: 2.1M/mo — "periodic table" (1.8M), "interactive periodic table" (210K), "periodic table with names" (95K)
+- **Description**: Fully interactive periodic table. Click any element to see electron configuration, isotopes, bonding, discovery date, trends visualization, physical properties.
+- **Features**: Search by name/symbol/atomic number, filter by property (metal/non-metal/state), trend heatmaps (atomic radius, electronegativity), dark mode, mobile-responsive.
+- **Why build**: MASSIVE search volume. ptable.com dominates but is 2008-era UI. Chemistry students return weekly during school year.
+- **Build**: Medium. Static data + solid UX.
+- **Client-side**: 100%
+- **Top 3 competitors**: ptable.com, rsc.org/periodic-table, periodictable.com
+
+### E2. Flashcard Maker with Spaced Repetition (SRS)
+- **Category**: education-tools
+- **Search Volume**: 540K/mo — "flashcard maker" (260K), "online flashcards" (180K), "spaced repetition" (100K)
+- **Description**: Create decks of flashcards. SM-2 (Anki) spaced repetition algorithm schedules reviews. IndexedDB local storage (no signup).
+- **Features**: Create/edit decks, CSV/Anki import, SM-2 review scheduling, flip animation, progress tracking, shareable deck URLs, dark mode.
+- **Why build**: Daily repeat usage during semesters. Quizlet paywalled features in 2024 creating massive gap. Students share decks with classmates = viral loop.
+- **Build**: Medium-High. IndexedDB + SM-2 algorithm + UI polish.
+- **Client-side**: 100%
+- **Top 3 competitors**: quizlet.com, anki (desktop), cram.com
+
+### E3. LaTeX / Math Equation Editor
+- **Category**: education-tools
+- **Search Volume**: 410K/mo — "latex editor online" (150K), "equation editor" (140K), "math equation to image" (120K)
+- **Description**: Live-render LaTeX equations with KaTeX. Visual symbol palette (Greek letters, integrals, matrices). Export PNG/SVG, copy MathML.
+- **Features**: Syntax highlighting, error messages, symbol picker, templates (quadratic, matrix, integrals), export PNG/SVG with transparency, copy to Word/Google Docs.
+- **Why build**: STEM students + researchers use daily. Long-tail SEO goldmine for symbol queries.
+- **Build**: Medium. KaTeX drop-in + symbol palette UI.
+- **Client-side**: 100%
+- **Top 3 competitors**: codecogs.com/latex/eqneditor, mathjax.org, overleaf.com
+
+### E4. Plagiarism Checker (Basic)
+- **Category**: education-tools
+- **Search Volume**: 3.4M/mo — "plagiarism checker" (2.1M), "plagiarism checker free" (810K), "duplicate content checker" (490K)
+- **Description**: Paste text → chunk and search via SerpAPI/Bing → show matching sources with % overlap. Free tier 1000 words/check.
+- **Features**: Sentence-level matching, color-coded match highlighting, source URLs, similarity %, downloadable report.
+- **Why build**: Top education query globally. Even freemium capture = massive traffic. Pairs naturally with AI Text Detector we already have.
+- **Build**: High. Needs search API (costs) or clever workaround (search index over public texts).
+- **Client-side**: No (search API needed)
+- **Top 3 competitors**: smallseotools.com/plagiarism-checker, duplichecker.com, quetext.com
+
+---
+
+## HIGH-VOLUME SINGLE TOOLS
+
+### T1. Countdown Timer / Stopwatch (Shareable)
+- **Category**: fun-tools
+- **Search Volume**: 2.8M/mo — "countdown timer" (1.9M), "online stopwatch" (680K), "timer online" (230K)
+- **Description**: Full-screen countdown timer + stopwatch. Share URL with preset time. Custom title, alarm sound, background themes.
+- **Features**: Countdown or count-up, shareable URL (?time=1h30m), alarm sounds, full-screen mode, lap times, background themes (gradient/image), audio notifications.
+- **Why build**: ENORMOUS volume. Our Pomodoro is technique-specific; general timer is different intent. online-stopwatch.com dominates with ugly UI.
+- **Build**: Low. Pure JS timer logic + polished UI.
+- **Client-side**: 100%
+- **Top 3 competitors**: timer.net, online-stopwatch.com, timeanddate.com/timer
+
+### T2. Image Cropper (Dedicated, Social Preset)
 - **Category**: image-tools
-- **Why**: Remove.bg gets 76-112M monthly visits. "Remove background" = 4-6M monthly searches. Every e-commerce seller, designer, and social media creator needs this.
-- **Features**: AI-powered background removal, transparent PNG output, background replacement (solid color, custom image), batch processing, edge refinement.
-- **Traffic**: 4-6M searches. Massive repeat usage.
-- **Build**: Needs ML model — use @xenova/transformers (client-side ONNX) or Cloudflare AI. Can do browser-based with WebGPU.
-- **Viral**: Users share before/after on social media.
+- **Search Volume**: 1.2M/mo — "crop image online" (680K), "image cropper" (340K), "crop photo" (180K)
+- **Description**: Crop images with aspect-ratio presets for Instagram (square/portrait/story), Facebook cover, YouTube thumbnail, Twitter banner, LinkedIn. Free-form crop, rotate, flip.
+- **Features**: 15+ social media aspect presets, free crop, fixed ratio, rotate 90°/flip, zoom/pan, PNG/JPG output with quality slider.
+- **Why build**: Our Image Resizer ≠ Cropper (different search intent). Social-media preset angle = differentiator.
+- **Build**: Low. cropperjs library + preset library.
+- **Client-side**: 100%
+- **Top 3 competitors**: iloveimg.com/crop-image, croppola.com, imagecropper.com
 
-### 3. [DONE] Meme Generator
+### T3. QR Code Scanner (Webcam + Upload)
+- **Category**: web-tools
+- **Search Volume**: 890K/mo — "qr code scanner online" (420K), "scan qr from image" (270K), "qr reader" (200K)
+- **Description**: Scan QR codes via webcam (jsQR) or upload QR image to decode. Parse WiFi/vCard/URL/SMS/email payloads.
+- **Features**: Live webcam scan, image upload, paste image, parse all payload types (WiFi config, contact card, URL, etc.), scan history, copy result.
+- **Why build**: Complements our QR Generator perfectly. Mobile traffic goldmine.
+- **Build**: Low. jsQR + MediaDevices.getUserMedia.
+- **Client-side**: 100%
+- **Top 3 competitors**: qrcodescan.in, webqr.com, scanqr.org
+
+### T4. Random Wheel Spinner / Picker Wheel
 - **Category**: fun-tools
-- **Why**: Imgflip.com gets 11.4M monthly visits. "Meme generator" = 2-3M monthly searches. Social media culture drives constant demand.
-- **Features**: 100+ trending templates, custom text overlay, drag-and-drop positioning, custom image upload, no watermark, AI caption suggestions, download as PNG/GIF.
-- **Traffic**: 2-3M searches. Spikes during trending events.
-- **Build**: 100% client-side. Canvas API for text overlay on template images.
-- **Viral**: **Most viral tool type** — users share created memes on social media.
+- **Search Volume**: 1.1M/mo — "wheel spinner" (620K), "picker wheel" (310K), "random wheel" (170K)
+- **Description**: Enter a list of items → animated spinning wheel picks random. Teachers use daily for classroom picking.
+- **Features**: Paste list or add individually, save wheels (localStorage), share via URL, multiple wheels side-by-side, confetti on pick, remove-after-pick option, sound effects.
+- **Why build**: wheelofnames.com ranks #1 with very simple tech. Teachers use daily. Easy to beat with better UX.
+- **Build**: Low-Medium. Canvas animation.
+- **Client-side**: 100%
+- **Top 3 competitors**: wheelofnames.com, pickerwheel.com, spinthewheel.app
 
-### 4. [DONE] AI Text Summarizer
-- **Category**: ai-tools
-- **Why**: Part of QuillBot's 56M visits. "Summarize text" = 1-2M monthly searches. Students summarizing articles, professionals condensing reports.
-- **Features**: Paste text or URL, bullet-point vs paragraph mode, key takeaways extraction, adjustable length (short/medium/detailed), word count tracking.
-- **Traffic**: 1-2M searches. Very sticky for students and researchers.
-- **Build**: Uses Cloudflare AI (already integrated). Simple prompt engineering.
-- **Viral**: Students share with classmates.
+### T5. Favicon Generator (ICO + All Sizes)
+- **Category**: image-tools
+- **Search Volume**: 520K/mo — "favicon generator" (310K), "favicon.ico generator" (120K), "png to ico" (90K)
+- **Description**: Upload any image → generates complete favicon package: favicon.ico (multi-size), apple-touch-icon, Android icons, manifest.json, HTML snippet to paste.
+- **Features**: Upload image or draw, generates 16x16/32x32/48x48 ICO + 180x180 Apple + 192/512 Android, manifest.json, ready-to-paste HTML, ZIP download.
+- **Why build**: Developer staple. Every new site needs one. realfavicongenerator has ads + complexity.
+- **Build**: Medium. Canvas resizing + ICO encoding.
+- **Client-side**: 100%
+- **Top 3 competitors**: realfavicongenerator.net, favicon.io, favicon-generator.org
 
-### 5. [DONE] Word Counter & Text Analyzer
-- **Category**: seo-tools
-- **Why**: WordCounter.net gets 5M+ monthly visits. "Word counter" = 2-4M monthly searches. Writers, students, and social media managers check limits constantly.
-- **Features**: Real-time word/character/sentence/paragraph count, reading time, speaking time, platform limits (Twitter 280, Instagram 2200, meta desc 160), keyword density, readability score, top words cloud.
-- **Traffic**: 2-4M searches. Bookmarked and used daily.
-- **Build**: 100% client-side. Pure JS string analysis.
-- **Viral**: Low viral but massive organic return traffic.
+### T6. MP3 Cutter / Audio Trimmer
+- **Category**: NEW media-tools (or keep in image-tools under "media")
+- **Search Volume**: 1.4M/mo — "mp3 cutter online" (680K), "audio trimmer" (420K), "cut audio online" (300K)
+- **Description**: Upload MP3/WAV/M4A → waveform UI → trim, fade in/out, export MP3 or WAV. Ringtone preset (30 seconds).
+- **Features**: Drag waveform trim handles, fade in/fade out, ringtone preset, precise time input, keyboard shortcuts, format conversion (MP3↔WAV).
+- **Why build**: Starts a NEW media-tools category. Huge volume, underserved by quality tools (mp3cut.net is ad-heavy).
+- **Build**: Medium. WaveSurfer.js + FFmpeg.wasm for export.
+- **Client-side**: 100%
+- **Top 3 competitors**: mp3cut.net, audio-joiner.com, bearaudio.com
 
-### 6. [DONE] Text-to-Speech (TTS)
-- **Category**: ai-tools
-- **Why**: TTSMaker.com gets 2.2M monthly visits. "Text to speech" = 1.5-2.5M searches. Content creators, students, accessibility users.
-- **Features**: Web Speech API (free built-in voices), multiple languages, speed/pitch control, download as MP3, highlight text as it reads, voice preview.
-- **Traffic**: 1.5-2.5M searches. Content creators return for every video.
-- **Build**: Mostly client-side (Web Speech API). For premium voices, use Cloudflare AI or ElevenLabs.
-- **Viral**: Audio output shared in videos and presentations.
-
-### 7. [DONE] Color Palette Generator
+### T7. CSS Gradient Generator
 - **Category**: dev-tools
-- **Why**: Coolors.co and HTMLColorCodes.com collectively get 10M+ visits. "Color palette generator" = 1.5-2.5M searches.
-- **Features**: Random palette generation, lock/unlock colors, extract palette from image, accessibility contrast checker (WCAG), CSS/Tailwind export, gradient generator, color blindness simulator.
-- **Traffic**: 1.5-2.5M searches. Designers use daily.
-- **Build**: 100% client-side. Canvas API for image extraction, color math for harmonies.
-- **Viral**: Palettes shared on Pinterest, Dribbble, design communities.
+- **Search Volume**: 380K/mo — "css gradient generator" (180K), "gradient generator" (140K), "gradient maker" (60K)
+- **Description**: Visual multi-stop gradient builder. Linear, radial, conic. Copy CSS + Tailwind classes. Export as PNG.
+- **Features**: Multi-stop color picker, angle control, radial center positioning, conic gradient, CSS/SCSS/Tailwind export, preset gallery, PNG export.
+- **Why build**: Complements our Color Palette Generator (different intent). Developers repeat-use.
+- **Build**: Low. CSS gradient strings + color picker.
+- **Client-side**: 100%
+- **Top 3 competitors**: cssgradient.io, uigradients.com, gradient.style
 
-### 8. [DONE] Diff Checker / Text Compare
+### T8. Code Screenshot Generator (Carbon-like)
 - **Category**: dev-tools
-- **Why**: Diffchecker.com gets 2.26M monthly visits. "Diff checker" = 800K-1.5M searches. Developers, lawyers, writers comparing versions.
-- **Features**: Side-by-side diff, inline diff, syntax highlighting for code, ignore whitespace toggle, character-level diff, merge editor, shareable diff links.
-- **Traffic**: 800K-1.5M searches. Developers use multiple times daily.
-- **Build**: 100% client-side. Myers diff algorithm in JS.
-- **Viral**: Low viral but extremely sticky (daily dev use).
+- **Search Volume**: 240K/mo — "code to image" (130K), "carbon code screenshot" (60K), "beautiful code screenshot" (50K)
+- **Description**: Paste code → beautiful themed, syntax-highlighted PNG/SVG. Perfect for Twitter/X, LinkedIn, blog thumbnails.
+- **Features**: 50+ languages syntax highlighting (shiki), 15+ themes (Dracula, Nord, Monokai, etc.), window chrome (macOS/Win), custom backgrounds/gradients, padding control, export PNG/SVG.
+- **Why build**: Goes viral on dev Twitter/LinkedIn → strong backlink profile. carbon.now.sh dominates but no updates in years.
+- **Build**: Medium. html-to-image + shiki.
+- **Client-side**: 100%
+- **Top 3 competitors**: carbon.now.sh, ray.so, codeimage.dev
 
-### 9. [DONE] Citation Generator (APA, MLA, Chicago)
-- **Category**: education-tools
-- **Why**: Citation Machine gets 6M visits, EasyBib gets 1.8M. "Citation generator" = 1-2M searches. Every student needs this.
-- **Features**: APA 7th, MLA 9th, Chicago, Harvard formats — ALL FREE (competitors paywall some). Auto-detect from URL/DOI, book ISBN lookup, bulk citations, export to Word/BibTeX.
-- **Traffic**: 1-2M searches. Massive seasonal spikes during school terms.
-- **Build**: Mostly client-side. CrossRef API (free) for DOI/ISBN auto-fill.
-- **Viral**: Students share with entire study groups. Word-of-mouth in schools.
+### T9. Video to GIF Converter
+- **Category**: media-tools (or image-tools)
+- **Search Volume**: 720K/mo — "video to gif" (410K), "mp4 to gif" (260K), "gif maker from video" (50K)
+- **Description**: Upload MP4/MOV/WebM → trim, set FPS/size → output optimized GIF.
+- **Features**: Video preview, trim handles, FPS slider (5-30), size control, quality slider, max file size targeting.
+- **Why build**: Ezgif is ad-heavy. Social creators use weekly.
+- **Build**: Medium. FFmpeg.wasm.
+- **Client-side**: 100% (FFmpeg.wasm)
+- **Top 3 competitors**: ezgif.com, giphy.com/create, cloudconvert.com
 
-### 10. [DONE] Password Generator & Strength Checker
-- **Category**: crypto-tools
-- **Why**: "Password generator" = 1.5-3M monthly searches. Every account creation triggers this need. Security awareness growing.
-- **Features**: Customizable length, uppercase/lowercase/numbers/symbols, passphrase mode (4-6 random words), strength meter, breach checking (Have I Been Pwned k-anonymity API), copy to clipboard, bulk generation.
-- **Traffic**: 1.5-3M searches. Users return for every new account.
-- **Build**: 100% client-side. Crypto.getRandomValues() for security. HIBP API for breach check.
-- **Viral**: Shared as security tip. Password manager alternatives recommend standalone generators.
+### T10. Emoji Translator & Fancy Text Generator
+- **Category**: social-media-tools (or fun-tools)
+- **Search Volume**: 470K/mo for emoji + 820K/mo for fancy text = 1.3M/mo combined
+- **Description**: Two tools in one: (a) Emoji translator — replace words with emoji, search emoji by meaning. (b) Fancy text — Unicode font variants (bold, italic, script, strikethrough) for Instagram/TikTok bios.
+- **Features**: Word→emoji with AI suggestions (via Cloudflare AI), emoji search by meaning, 30+ fancy text variants, copy individual or all, favorites.
+- **Why build**: Gen-Z/social traffic, viral/repeat usage. Instagram bio traffic massive.
+- **Build**: Low-Medium. Emoji database + Unicode substitution tables.
+- **Client-side**: 100% (AI suggestions optional)
+- **Top 3 competitors**: emojitranslate.com, lingojam.com, fancytextguru.com
 
-### 11. Flashcard / Study Tool
-- **Category**: education-tools
-- **Why**: Quizlet paywalled key features in 2024, creating massive gap. Knowt growing to 700K+ students. "Flashcard maker" = 1-2M searches.
-- **Features**: Create flashcards, spaced repetition (SM-2 algorithm), import from Quizlet/CSV, AI generation from pasted notes, flip animation, test mode, progress tracking via localStorage.
-- **Traffic**: 1-2M searches. Students study daily for weeks during exam season.
-- **Build**: 100% client-side with localStorage. AI generation via Cloudflare AI.
-- **Viral**: **Extremely viral** — shared across entire study groups and classrooms.
-
-### 12. Resume / CV Builder
-- **Category**: productivity-tools
-- **Why**: "Resume builder" = 2-3M monthly searches. Everyone needs a resume. Canva/Zety dominate but push premium.
-- **Features**: 5-10 clean templates, drag-and-drop sections, ATS-friendly output, export to PDF, real-time preview, AI-powered bullet point suggestions, custom sections.
-- **Traffic**: 2-3M searches. Seasonal spikes during hiring seasons (Jan, Sep).
-- **Build**: Mostly client-side. HTML-to-PDF via browser. AI suggestions via Cloudflare AI.
-- **Viral**: Job seekers share template recommendations. LinkedIn communities discuss.
-
-### 13. Typing Speed Test
+### T11. White Noise / Focus Sounds Generator
 - **Category**: fun-tools
-- **Why**: Monkeytype.com gets 10M+ monthly visits. "Typing test" = 1-2M searches. Gamified, addictive, competitive.
-- **Features**: 15/30/60 second tests, WPM and accuracy tracking, custom text or random words, difficulty levels, leaderboard (localStorage), dark mode, keyboard heatmap.
-- **Traffic**: 1-2M searches. Users return to beat their score. Open for long sessions.
-- **Build**: 100% client-side. Pure JS keystroke tracking.
-- **Viral**: Users screenshot and share WPM scores. Competitive friends challenge each other.
+- **Search Volume**: 610K/mo — "white noise" (310K), "brown noise" (180K), "rain sounds" (120K)
+- **Description**: Generate white/pink/brown noise in-browser via Web Audio API. Nature sound loops (rain, ocean, forest, café).
+- **Features**: 3 noise colors (white/pink/brown) procedurally generated, 8+ nature loops, volume mixing, sleep timer, shareable presets, visualizer.
+- **Why build**: Repeat daily sessions → strong time-on-site metric. Complements our Pomodoro.
+- **Build**: Low. Web Audio API noise generation.
+- **Client-side**: 100%
+- **Top 3 competitors**: mynoise.net, noisli.com, rainymood.com
 
-### 14. Lorem Ipsum / Placeholder Text Generator (Advanced)
-- **Category**: dev-tools
-- **Why**: We have basic lorem ipsum but can massively upgrade it. "Lorem ipsum generator" + "placeholder text" = 500K-1M searches.
-- **Features**: Classic Lorem Ipsum, Hipster Ipsum, Bacon Ipsum, Corporate Ipsum, Tech Ipsum, Pirate Ipsum, custom themed placeholder. Generate paragraphs, sentences, words, or lists. HTML output with formatting.
-- **Traffic**: 500K-1M searches. Developers and designers use during every project.
-- **Build**: 100% client-side. Text database with randomization.
-- **Viral**: Fun themed modes get shared in design communities.
+### T12. Signature / Handwriting Generator
+- **Category**: fun-tools (or dev-tools)
+- **Search Volume**: 330K/mo — "signature generator" (210K), "signature maker" (90K), "handwritten text generator" (30K)
+- **Description**: Type your name → render in handwriting/signature fonts → download as PNG/SVG with transparent background.
+- **Features**: 30+ signature fonts, color/stroke width, canvas drawing mode (draw your own), PNG/SVG transparent export, paste into PDF Sign.
+- **Why build**: Pairs perfectly with our PDF Sign tool. Freelancers/consultants high-intent.
+- **Build**: Low. Font-based rendering + canvas drawing.
+- **Client-side**: 100%
+- **Top 3 competitors**: signaturely.com, mylivesignature.com, signature-maker.net
 
-### 15. Invoice Template / Generator (Enhanced)
-- **Category**: productivity-tools
-- **Why**: We have an invoice generator but can build a much more polished version. "Invoice template" = 1-2M searches. Freelancers, small businesses.
-- **Features**: 5+ professional templates, logo upload, auto-calculations (subtotal, tax, discount, total), recurring invoice presets, multi-currency, export to PDF, payment link integration.
-- **Traffic**: 1-2M searches. Freelancers use monthly.
-- **Build**: 100% client-side. HTML-to-PDF via browser print.
-- **Viral**: Freelancers share templates in communities.
+### T13. ASCII Art Generator
+- **Category**: fun-tools or dev-tools
+- **Search Volume**: 290K/mo — "ascii art generator" (170K), "text to ascii art" (80K), "image to ascii" (40K)
+- **Description**: Two modes: Text→ASCII banner (figlet fonts) + Image→ASCII art (grayscale pixel conversion).
+- **Features**: 50+ figlet fonts, text input, image upload to ASCII, width control, color/BW modes, copy/download.
+- **Why build**: patorjk.com is 2005 UI. Easy modernize win. Viral for Twitter.
+- **Build**: Low. figlet.js + Canvas pixel sampling.
+- **Client-side**: 100%
+- **Top 3 competitors**: patorjk.com/software/taag, asciiart.eu, manytools.org
+
+### T14. Sticky Notes / Kanban (URL-Shareable)
+- **Category**: fun-tools (or future productivity-tools)
+- **Search Volume**: 390K/mo — "online sticky notes" (190K), "online kanban free" (120K), "notes online free" (80K)
+- **Description**: Drag-and-drop sticky notes on a virtual board. Color-code, save to localStorage, optional share via encrypted URL.
+- **Features**: Unlimited notes, drag-drop, color picker, text formatting, kanban columns, zoom/pan, save/load, share URL (encrypted), no signup.
+- **Why build**: No-signup angle beats Padlet/Miro funnel-traps.
+- **Build**: Medium. Drag-drop + localStorage/IndexedDB.
+- **Client-side**: 100%
+- **Top 3 competitors**: stickies.io, post-it.com/app, padlet.com
+
+### T15. Word Cloud Generator
+- **Category**: seo-tools (or education)
+- **Search Volume**: 280K/mo — "word cloud generator" (210K), "free word cloud" (50K), "word cloud from text" (20K)
+- **Description**: Paste text → stylized word cloud with color/shape/font options. Export PNG/SVG.
+- **Features**: Stop words filter, frequency-weighted sizing, color palette picker, shape masks (circle, heart, star), 10+ fonts, PNG/SVG export.
+- **Why build**: Teachers/marketers use weekly. Pairs with our Keyword Density + Word Counter.
+- **Build**: Medium. d3-cloud library.
+- **Client-side**: 100%
+- **Top 3 competitors**: wordclouds.com, wordart.com, mentimeter.com/word-cloud
 
 ---
 
-## Quick-Build Priority (100% Client-Side, No API Costs)
+## PRIORITY BUILD ORDER (ROI-weighted)
 
-| Priority | Tool | Est. Monthly Searches | Build Complexity |
-|----------|------|----------------------|------------------|
-| 1 | Pomodoro Timer | 1-2M | Low |
-| 2 | Word Counter & Analyzer | 2-4M | Low |
-| 3 | Meme Generator | 2-3M | Medium |
-| 4 | Typing Speed Test | 1-2M | Medium |
-| 5 | Diff Checker | 800K-1.5M | Medium |
-| 6 | Password Generator | 1.5-3M | Low |
-| 7 | Color Palette Generator | 1.5-2.5M | Medium |
-| 8 | Flashcard Study Tool | 1-2M | Medium |
-| 9 | Citation Generator | 1-2M | Medium |
+### Tier 1 — Build First (Highest Volume + Low Complexity)
+| Priority | Tool | Volume | Category | Complexity |
+|----------|------|--------|----------|------------|
+| 1 | **Image Steganography** | 110K | security (NEW) | Medium — USER REQUEST |
+| 2 | **Periodic Table** | 2.1M | education | Medium |
+| 3 | **Countdown Timer** | 2.8M | fun-tools | Low |
+| 4 | **QR Code Scanner** | 890K | web-tools | Low |
+| 5 | **Image Cropper** | 1.2M | image-tools | Low |
+| 6 | **Wheel Spinner** | 1.1M | fun-tools | Low |
+| 7 | **EXIF Viewer/Remover** | 450K | security | Low |
 
-## Needs API (Cloudflare AI Already Integrated)
+### Tier 2 — Strong Secondary
+| Priority | Tool | Volume | Category | Complexity |
+|----------|------|--------|----------|------------|
+| 8 | **Favicon Generator** | 520K | image-tools | Medium |
+| 9 | **MP3 Cutter** | 1.4M | media-tools (NEW) | Medium |
+| 10 | **Flashcard SRS** | 540K | education | Medium-High |
+| 11 | **Self-Destructing Notes** | 320K | security | Medium (viral) |
+| 12 | **CSS Gradient Generator** | 380K | dev-tools | Low |
+| 13 | **URL Safety Checker** | 680K | security | Medium |
 
-| Priority | Tool | Est. Monthly Searches | Build Complexity |
-|----------|------|----------------------|------------------|
-| 1 | AI Text Summarizer | 1-2M | Low (prompt only) |
-| 2 | Text-to-Speech | 1.5-2.5M | Medium |
-| 3 | Background Remover | 4-6M | High (ML model) |
-| 4 | Resume Builder | 2-3M | High |
+### Tier 3 — Niche Value
+| Priority | Tool | Volume | Category | Complexity |
+|----------|------|--------|----------|------------|
+| 14 | **LaTeX Editor** | 410K | education | Medium |
+| 15 | **Plagiarism Checker** | 3.4M | education | High (API cost) |
+| 16 | **Code Screenshot** | 240K | dev-tools | Medium |
+| 17 | **Video to GIF** | 720K | media-tools | Medium |
+| 18 | **Emoji/Fancy Text** | 1.3M | social-media | Low-Med |
+| 19 | **White Noise Gen** | 610K | fun-tools | Low |
+| 20 | **Signature Generator** | 330K | fun-tools | Low |
+| 21 | **ASCII Art Generator** | 290K | fun-tools | Low |
+| 22 | **Sticky Notes/Kanban** | 390K | fun-tools | Medium |
+| 23 | **Word Cloud Generator** | 280K | seo-tools | Medium |
 
 ---
 
-## Competitor Traffic Reference
+## STRATEGIC NOTES
+
+### New Categories Justified
+- **`security-tools`** — 4 tools ready (Steganography, EXIF, URL Safety, Self-Destruct Notes)
+- **`media-tools`** — MP3 Cutter + Video→GIF start this category; can add audio joiner, video compressor, screen recorder later
+
+### Cloudflare AI Integration Opportunities
+- Plagiarism Checker — LLM paraphrase detection as bonus layer beyond keyword match
+- URL Safety — Cloudflare Workers AI content classification for phishing patterns
+- Emoji Translator — AI-powered emotional/meaning mapping (beats dictionary lookup)
+
+### Cross-Sell Flywheel (Internal Linking Gold)
+- Password Generator → Password Analyzer → Self-Destruct Notes (share password)
+- QR Generator → QR Scanner
+- Background Remover → Image Cropper → Image Compressor → Favicon Generator
+- Signature Generator → PDF Sign
+- Word Counter → Plagiarism Checker → AI Text Detector
+- Pomodoro Timer → White Noise → Countdown Timer
+
+### Viral Growth Mechanics
+- Self-Destructing Notes — every share = inbound link/visit
+- Wheel Spinner — teachers share in classrooms
+- Code Screenshot — dev Twitter/LinkedIn sharing
+- Flashcard Decks — student shares deck URLs
+- Meme Generator (already built) — social sharing
+
+### Verified Zero Duplication
+All 23 tools above cross-checked against existing /app directory. No overlaps confirmed.
+
+---
+
+## COMPETITOR TRAFFIC REFERENCE
 
 | Competitor | Monthly Visits | Our Target Tool |
 |-----------|---------------|-----------------|
-| Remove.bg | 76-112M | Background Remover |
-| QuillBot | 56M | AI Paraphraser [DONE], Summarizer |
-| Imgflip | 11.4M | Meme Generator |
-| Monkeytype | 10M+ | Typing Speed Test |
-| Pomofocus.io | 6M | Pomodoro Timer |
-| Citation Machine | 6M | Citation Generator |
-| WordCounter.net | 5M | Word Counter |
-| Coolors.co | 5M+ | Color Palette |
-| Diffchecker | 2.26M | Diff Checker |
-| TTSMaker | 2.2M | Text-to-Speech |
+| Quizlet | 100M+ | Flashcard SRS |
+| ptable.com | 15M+ | Periodic Table |
+| wheelofnames.com | 25M+ | Wheel Spinner |
+| privnote.com | 7M+ | Self-Destruct Notes |
+| carbon.now.sh | 2M+ | Code Screenshot |
+| mp3cut.net | 10M+ | MP3 Cutter |
+| ezgif.com | 40M+ | Video to GIF |
+| ptable.com | 15M+ | Periodic Table |
+| virustotal.com | 60M+ | URL Safety Checker |
+| online-stopwatch.com | 15M+ | Countdown Timer |
+| realfavicongenerator.net | 2M+ | Favicon Generator |
+| wordclouds.com | 1M+ | Word Cloud Generator |
