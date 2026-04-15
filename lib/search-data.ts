@@ -110,6 +110,10 @@ export const searchItems: SearchItem[] = [
   // Developer Tools
   { name: "Color Palette Generator", description: "Free color palette generator. 7 harmony modes (complementary, analogous, triadic, tetradic, monochromatic), image extraction, WCAG contrast checker, export to CSS/Tailwind/SCSS/JSON.", path: "/dev-tools/color-palette", category: "Developer" },
   { name: "Diff Checker", description: "Free online diff checker and text compare tool. Find differences between two texts side-by-side, inline, or unified view with character-level highlighting. Ignore whitespace/case options.", path: "/dev-tools/diff-checker", category: "Developer" },
+
+  // Education Tools
+  { name: "Education Tools", description: "Free education tools for students and researchers. Citation generators, study aids, academic writing helpers.", path: "/education-tools", category: "Pages" },
+  { name: "Citation Generator", description: "Free citation generator for APA 7th, MLA 9th, Chicago 17th, and Harvard. Auto-fill from DOI (CrossRef) and ISBN (OpenLibrary). Build bibliographies, export as text or BibTeX.", path: "/education-tools/citation-generator", category: "Education" },
   { name: "Hex to RGB Converter", description: "Convert between HEX, RGB, HSL, and other color formats", path: "/dev-tools/hex-to-rgb", category: "Developer" },
   { name: "JSON Diff", description: "Compare two JSON objects and find differences. json diff online. json diff javascript, python, npm.", path: "/dev-tools/json-diff", category: "Developer" },
   { name: "JSON to CSV Converter", description: "Convert JSON data to CSV format", path: "/dev-tools/json-to-csv", category: "Developer" },

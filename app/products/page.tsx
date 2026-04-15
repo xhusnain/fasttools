@@ -123,6 +123,13 @@ const categories = [
     icon: Sparkles,
     href: "/fun-tools",
   },
+  {
+    id: "education-tools",
+    name: "Education Tools",
+    description: "Free tools for students, researchers, and educators. Citation generators (APA, MLA, Chicago, Harvard), study aids, and academic writing helpers.",
+    icon: GraduationCap,
+    href: "/education-tools",
+  },
 ]
 
 const benefits = [

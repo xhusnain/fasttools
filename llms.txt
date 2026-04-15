@@ -45,6 +45,14 @@ Description: Free online meme generator with 100+ trending templates. Create mem
 https://www.fasttools.store/fun-tools/meme-generator#how-to-make-a-meme
 Description: Step-by-step guide to creating memes: choose from 100+ templates or upload your own image, add and customize text with fonts/colors/outlines, drag text to position, and download as PNG.
 
+# Citation Generator - Free APA, MLA, Chicago, Harvard
+https://www.fasttools.store/education-tools/citation-generator
+Description: Free online citation generator supporting APA 7th, MLA 9th, Chicago 17th, and Harvard styles. Auto-fill from DOI (CrossRef) and ISBN (OpenLibrary). Cite books, journal articles, websites, newspapers, YouTube videos, and podcasts. Build bibliographies and export as plain text or BibTeX (.bib) for LaTeX. 100% free with no paywall — unlike EasyBib and Citation Machine.
+
+# Citation Generator FAQ
+https://www.fasttools.store/education-tools/citation-generator#faq
+Description: FAQ about citation generation covering APA 7th vs 6th differences, DOI/ISBN auto-fill, multi-author formatting rules per style, BibTeX export for LaTeX, privacy, and comparison with EasyBib/Citation Machine/BibMe.
+
 # Diff Checker - Free Online Text Compare Tool
 https://www.fasttools.store/dev-tools/diff-checker
 Description: Free online diff checker for comparing two texts, code, or documents. Three view modes (side-by-side, inline, unified patch format), character-level diff highlighting, ignore whitespace/case options, LCS-based algorithm with Unicode support. 100% client-side processing. No signup, no limits, no feature paywalls.

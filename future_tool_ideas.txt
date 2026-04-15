@@ -76,7 +76,7 @@
 - **Build**: 100% client-side. Myers diff algorithm in JS.
 - **Viral**: Low viral but extremely sticky (daily dev use).
 
-### 9. Citation Generator (APA, MLA, Chicago)
+### 9. [DONE] Citation Generator (APA, MLA, Chicago)
 - **Category**: education-tools
 - **Why**: Citation Machine gets 6M visits, EasyBib gets 1.8M. "Citation generator" = 1-2M searches. Every student needs this.
 - **Features**: APA 7th, MLA 9th, Chicago, Harvard formats — ALL FREE (competitors paywall some). Auto-detect from URL/DOI, book ISBN lookup, bulk citations, export to Word/BibTeX.

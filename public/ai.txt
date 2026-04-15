@@ -20,6 +20,7 @@ Allow: /dev-tools/
 Allow: /crypto-tools/
 Allow: /web-tools/
 Allow: /fun-tools/
+Allow: /education-tools/
 Allow: /products
 Allow: /api-docs
 Allow: /faq
@@ -278,6 +279,10 @@ Description: Free AI text-to-speech tool powered by Kokoro 82M neural TTS model 
 URL: https://www.fasttools.store/seo-tools/word-counter
 Description: Free online word counter and text analyzer. Real-time word count, character count (with and without spaces), sentence count, paragraph count, reading time (238 WPM), speaking time (150 WPM), Flesch Reading Ease score with grade level, top 15 keyword density analysis with frequency bars, syllable count, average word and sentence length, longest word detection, and social media character limit checker for 10 platforms (Twitter/X 280, Instagram 2200, Meta Description 160, Meta Title 60, Facebook 63206, LinkedIn 3000, YouTube Title 100, YouTube Description 5000, Pinterest 500, TikTok 2200). Copy all stats to clipboard. 100% client-side processing. No signup, no ads.
 
+## Citation Generator
+URL: https://www.fasttools.store/education-tools/citation-generator
+Description: Free online citation generator supporting the current editions of 4 major academic styles: APA 7th (2019), MLA 9th (2021), Chicago 17th, and Harvard. Handles 6 source types: books, journal articles, websites, newspapers, YouTube videos, and podcasts. Auto-fills citation metadata from DOI (via CrossRef API — the same service used by Zotero and Mendeley) and ISBN (via OpenLibrary API) — both free, no API keys required. Features unlimited authors with correct style-specific formatting rules (APA allows up to 20 authors, MLA uses 'et al.' after 2, Chicago lists up to 3, Harvard lists up to 3), live citation preview with proper italics, bibliography builder to compile multiple sources, copy individual citations or entire bibliography, and export bibliography as plain text (.txt) or BibTeX (.bib) for LaTeX / Overleaf. Unlike EasyBib, Citation Machine, and BibMe which paywall APA and Chicago behind paid tiers, every style and every feature is completely free. No signup, no ads, no paywall.
+
 ## Diff Checker
 URL: https://www.fasttools.store/dev-tools/diff-checker
 Description: Free online diff checker and text compare tool. Find differences between two texts, code snippets, or documents with three view modes (side-by-side, inline, unified/patch format). Features character-level diff highlighting within changed lines, ignore whitespace option for semantic code diffs, ignore case option for case-insensitive comparison, real-time line statistics (added/removed/unchanged), LCS-based diff algorithm with full Unicode support, line numbers on both sides, copy unified diff to clipboard, and download as .diff patch file. Works with any text: code (all languages), JSON, YAML, CSV, SQL, logs, configs, prose. 100% client-side — texts never uploaded to any server. Unlimited text size, no signup, no ads, no feature paywalls (unlike Diffchecker which gates large files and private diffs).
@@ -460,6 +465,8 @@ Description: Free online image resizer. Resize images to custom pixel dimensions
 - https://www.fasttools.store/fun-tools/future-age
 - https://www.fasttools.store/fun-tools/pomodoro-timer
 - https://www.fasttools.store/fun-tools/meme-generator
+- https://www.fasttools.store/education-tools
+- https://www.fasttools.store/education-tools/citation-generator
 - https://www.fasttools.store/image-tools
 - https://www.fasttools.store/image-tools/background-remover
 - https://www.fasttools.store/image-tools/image-compressor

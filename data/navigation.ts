@@ -298,6 +298,12 @@ export const navigationConfig: MegaMenuSection[] = [
                 ]
             },
             {
+                title: "Education",
+                items: [
+                    { title: "Citation Generator", href: "/education-tools/citation-generator", icon: GraduationCap },
+                ]
+            },
+            {
                 title: "Featured",
                 items: [
                     { title: "ROAS Calculator", href: "/finance-tools/roas-calculator", icon: TrendingUp },
