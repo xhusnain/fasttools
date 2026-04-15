@@ -68,7 +68,7 @@
 - **Build**: 100% client-side. Canvas API for image extraction, color math for harmonies.
 - **Viral**: Palettes shared on Pinterest, Dribbble, design communities.
 
-### 8. Diff Checker / Text Compare
+### 8. [DONE] Diff Checker / Text Compare
 - **Category**: dev-tools
 - **Why**: Diffchecker.com gets 2.26M monthly visits. "Diff checker" = 800K-1.5M searches. Developers, lawyers, writers comparing versions.
 - **Features**: Side-by-side diff, inline diff, syntax highlighting for code, ignore whitespace toggle, character-level diff, merge editor, shareable diff links.

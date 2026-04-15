@@ -152,6 +152,7 @@ export const sitemapPages = [
   { url: u("/dev-tools/http-status-codes"), lastModified: new Date("2026-03-23"), changeFrequency: "monthly" as const, priority: 0.7 },
   { url: u("/dev-tools/hex-to-rgb"), lastModified: new Date("2026-03-23"), changeFrequency: "monthly" as const, priority: 0.7 },
   { url: u("/dev-tools/color-palette"), lastModified: new Date("2026-04-10"), changeFrequency: "monthly" as const, priority: 0.9 },
+  { url: u("/dev-tools/diff-checker"), lastModified: new Date("2026-04-10"), changeFrequency: "monthly" as const, priority: 0.9 },
   { url: u("/dev-tools/html-to-markdown"), lastModified: new Date("2026-03-23"), changeFrequency: "monthly" as const, priority: 0.7 },
   { url: u("/dev-tools/markdown-previewer"), lastModified: new Date("2026-03-23"), changeFrequency: "monthly" as const, priority: 0.7 },
   { url: u("/dev-tools/llm-training-cost"), lastModified: new Date("2026-03-16"), changeFrequency: "monthly" as const, priority: 0.7 },

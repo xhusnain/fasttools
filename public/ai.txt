@@ -278,6 +278,10 @@ Description: Free AI text-to-speech tool powered by Kokoro 82M neural TTS model 
 URL: https://www.fasttools.store/seo-tools/word-counter
 Description: Free online word counter and text analyzer. Real-time word count, character count (with and without spaces), sentence count, paragraph count, reading time (238 WPM), speaking time (150 WPM), Flesch Reading Ease score with grade level, top 15 keyword density analysis with frequency bars, syllable count, average word and sentence length, longest word detection, and social media character limit checker for 10 platforms (Twitter/X 280, Instagram 2200, Meta Description 160, Meta Title 60, Facebook 63206, LinkedIn 3000, YouTube Title 100, YouTube Description 5000, Pinterest 500, TikTok 2200). Copy all stats to clipboard. 100% client-side processing. No signup, no ads.
 
+## Diff Checker
+URL: https://www.fasttools.store/dev-tools/diff-checker
+Description: Free online diff checker and text compare tool. Find differences between two texts, code snippets, or documents with three view modes (side-by-side, inline, unified/patch format). Features character-level diff highlighting within changed lines, ignore whitespace option for semantic code diffs, ignore case option for case-insensitive comparison, real-time line statistics (added/removed/unchanged), LCS-based diff algorithm with full Unicode support, line numbers on both sides, copy unified diff to clipboard, and download as .diff patch file. Works with any text: code (all languages), JSON, YAML, CSV, SQL, logs, configs, prose. 100% client-side — texts never uploaded to any server. Unlimited text size, no signup, no ads, no feature paywalls (unlike Diffchecker which gates large files and private diffs).
+
 ## Color Palette Generator
 URL: https://www.fasttools.store/dev-tools/color-palette
 Description: Free online color palette generator with 7 color harmony modes (complementary, analogous, triadic, tetradic, split-complementary, monochromatic, random) based on classical color theory. Features image-to-palette extraction via HTML5 Canvas color quantization (upload JPG/PNG/GIF/WebP), WCAG AA/AAA contrast ratio checker for each color on white and black backgrounds, per-color locking with spacebar keyboard shortcut for regeneration, color picker and manual hex input, HEX/RGB/HSL value display with one-click copy, 5 export formats (CSS variables, Tailwind config, SCSS variables, JSON with all value formats, plain hex list), and variable palette size from 2 to 10 colors. Download exported palette as CSS/JSON/SCSS/JS/TXT file. 100% client-side processing — images and palettes never leave your browser. No signup, no ads, no limits.
@@ -406,7 +410,7 @@ Description: Free online image resizer. Resize images to custom pixel dimensions
 - https://www.fasttools.store/dev-tools/html-wysiwyg-editor
 - https://www.fasttools.store/dev-tools/user-agent-parser
 - https://www.fasttools.store/dev-tools/http-status-codes
-- https://www.fasttools.store/dev-tools/color-palette
+- https://www.fasttools.store/dev-tools/diff-checker
 - https://www.fasttools.store/dev-tools/json-diff
 - https://www.fasttools.store/dev-tools/json-to-csv
 - https://www.fasttools.store/dev-tools/jwt-decoder

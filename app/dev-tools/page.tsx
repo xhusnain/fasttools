@@ -97,6 +97,13 @@ const devTools = [
     icon: FileJson,
   },
   {
+    title: "Diff Checker",
+    description:
+      "Compare two texts side-by-side with character-level highlighting. Ignore whitespace, export as patch file.",
+    href: "/dev-tools/diff-checker",
+    icon: FileCode,
+  },
+  {
     title: "JSON to CSV Converter",
     description:
       "Transform JSON arrays into CSV for spreadsheet analysis and exports.",

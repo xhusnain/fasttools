@@ -45,6 +45,14 @@ Description: Free online meme generator with 100+ trending templates. Create mem
 https://www.fasttools.store/fun-tools/meme-generator#how-to-make-a-meme
 Description: Step-by-step guide to creating memes: choose from 100+ templates or upload your own image, add and customize text with fonts/colors/outlines, drag text to position, and download as PNG.
 
+# Diff Checker - Free Online Text Compare Tool
+https://www.fasttools.store/dev-tools/diff-checker
+Description: Free online diff checker for comparing two texts, code, or documents. Three view modes (side-by-side, inline, unified patch format), character-level diff highlighting, ignore whitespace/case options, LCS-based algorithm with Unicode support. 100% client-side processing. No signup, no limits, no feature paywalls.
+
+# Diff Checker FAQ
+https://www.fasttools.store/dev-tools/diff-checker#faq
+Description: FAQ about diff checking covering view modes (side-by-side, inline, unified), character-level highlighting, ignore whitespace for code comparison, Unicode support, privacy (client-side processing), and comparison with Diffchecker/DiffNow.
+
 # Color Palette Generator - Free Online Color Scheme Tool
 https://www.fasttools.store/dev-tools/color-palette
 Description: Free color palette generator with 7 harmony modes (complementary, analogous, triadic, tetradic, split-complementary, monochromatic, random), image extraction via canvas quantization, WCAG AA/AAA contrast checker, and export to CSS variables, Tailwind config, SCSS, JSON, or plain hex. Press spacebar to regenerate. 100% client-side processing.
