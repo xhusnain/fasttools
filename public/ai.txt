@@ -506,3 +506,10 @@ Description: Free online image resizer. Resize images to custom pixel dimensions
 # Updates
 This file is updated regularly. Check last modified date.
 Last updated: 2026-03-24
+
+# Image Steganography Tool
+URL: https://www.fasttools.store/security-tools/image-steganography
+Category: Security & Privacy Tools
+Description: Free online image steganography tool for hiding secret text inside PNG/JPG images using LSB (least-significant-bit) encoding. Optional AES-GCM password encryption. Extract hidden messages from encoded images. 100% client-side processing with no server uploads. Perfect for secure communication, digital watermarking, and privacy protection.
+Content: The tool provides both encoding and decoding functionality. Hide messages in images using LSB steganography (3 bits per pixel). Optional AES-256 GCM encryption with PBKDF2 key derivation. Supports PNG and JPG input, PNG output (lossless). Processing happens entirely in your browser.
+Related: JWT Decoder, Bcrypt Generator, Token Generator, Base64 Encoder/Decoder

@@ -350,3 +350,10 @@ For AI-related requests, permissions, or questions:
 - Website: https://www.fasttools.store/contact
 - Platform: FastTools
 - Domain: https://www.fasttools.store
+
+# Image Steganography Tool
+URL: https://www.fasttools.store/security-tools/image-steganography
+Category: Security & Privacy Tools
+Description: Hide secret messages inside PNG/JPG images using LSB steganography with optional AES-GCM encryption. Extract hidden text from images. 100% client-side, no registration required. Secure communication tool for privacy-focused users.
+Keywords: steganography online, hide text in image, image steganography tool, secret message, image encryption, LSB encoding
+Features: LSB encoding/decoding, AES-GCM encryption, client-side processing, password protection, batch processing capability
