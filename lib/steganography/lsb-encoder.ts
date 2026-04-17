@@ -28,11 +28,14 @@ export async function encodeMessageInImage(
 
   // Store message length in first 32 bits (bits 0-1 of first 16 pixels)
   const messageLength = messageBytes.length;
-  const lengthBytes = new Uint32Array([messageLength]);
 
   // Combined payload: length (4 bytes) + message
   const payload = new Uint8Array(4 + messageBytes.length);
-  payload.set(new Uint8Array(lengthBytes.buffer), 0);
+
+  // Store length in big-endian (network byte order)
+  const dv = new DataView(payload.buffer);
+  dv.setUint32(0, messageLength, false); // false = big-endian
+
   payload.set(messageBytes, 4);
 
   // Convert payload to bit array

@@ -39,13 +39,41 @@ export async function decodeMessageFromImage(
   }
 
   // Extract message bits
+  // The encoder stores bits sequentially: all bits are packed starting from pixel 0 channel 0
+  // We've already extracted 32 bits for the length, now we continue extracting
   const messageBits: boolean[] = [];
-  bitIndex = 32;
 
-  for (let i = 0; i < data.length && messageBits.length < messageLength * 8; i += 4) {
-    messageBits.push((data[i] & 1) === 1);
-    if (messageBits.length < messageLength * 8) messageBits.push((data[i + 1] & 1) === 1);
-    if (messageBits.length < messageLength * 8) messageBits.push((data[i + 2] & 1) === 1);
+  // Calculate how many pixels we've used for the 32 length bits
+  // 32 bits / 3 bits per pixel = 10.67, so we use pixels 0-10 (first 31 bits), then bit 31 comes from pixel 11 ch 0
+  // Let me recalculate: we need a continuous bit stream
+  // The length bits extraction uses the loop at line 18-22, which goes through all pixels
+  // Let's track the byte position after extracting 32 bits
+
+  // Re-extract bits to track position correctly
+  let totalBitIndex = 32; // We've already used 32 bits for length
+  let pixelByteIndex = 0;
+  let channelIndex = 0; // 0=R, 1=G, 2=B, then repeat
+
+  // Find starting position for message bits
+  for (let bit = 0; bit < totalBitIndex; bit++) {
+    channelIndex++;
+    if (channelIndex === 3) {
+      channelIndex = 0;
+      pixelByteIndex += 4;
+    }
+  }
+
+  // Now extract message bits starting from current position
+  for (let messageDataIndex = 0; messageDataIndex < data.length && messageBits.length < messageLength * 8; ) {
+    if (channelIndex < 3 && pixelByteIndex + channelIndex < data.length) {
+      messageBits.push((data[pixelByteIndex + channelIndex] & 1) === 1);
+      channelIndex++;
+    }
+    if (channelIndex === 3) {
+      channelIndex = 0;
+      pixelByteIndex += 4;
+      messageDataIndex++;
+    }
   }
 
   // Convert bits to bytes

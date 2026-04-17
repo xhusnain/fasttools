@@ -3,11 +3,11 @@
 import { useState } from 'react';
 import { encodeMessageInImage, imageToImageData } from '@/lib/steganography/lsb-encoder';
 import { decodeMessageFromImage, canvasToImageData } from '@/lib/steganography/lsb-decoder';
-import GButton from '@/ui/gbutton';
-import GInput from '@/ui/ginput';
-import GCard from '@/ui/gcard';
-import GAlert from '@/ui/galert';
-import GTabs from '@/ui/gtabs';
+import { GButton } from '@/ui/gbutton';
+import { GInput } from '@/ui/ginput';
+import { GCard } from '@/ui/gcard';
+import { GAlert } from '@/ui/galert';
+import { GTabs } from '@/ui/gtabs';
 
 type TabType = 'encode' | 'decode';
 
