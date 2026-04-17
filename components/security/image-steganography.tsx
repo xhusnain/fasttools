@@ -97,6 +97,7 @@ export default function ImageSteganography() {
 
     setLoading(true);
     setError('');
+    setSuccess('');
     setDecodedMessage('');
     try {
       const imageData = await imageToImageData(decodeImage);
@@ -105,9 +106,11 @@ export default function ImageSteganography() {
         decodePassword || undefined
       );
       setDecodedMessage(result.message);
-      setSuccess(`Message decoded successfully${result.isEncrypted ? ' (decrypted)' : ''}!`);
+      setSuccess(`Message extracted successfully${result.isEncrypted ? ' (decrypted)' : ''}!`);
     } catch (err) {
-      setError(err instanceof Error ? err.message : 'Decoding failed');
+      const errorMsg = err instanceof Error ? err.message : 'Failed to extract message';
+      setError(errorMsg);
+      setDecodedMessage('');
     } finally {
       setLoading(false);
     }
