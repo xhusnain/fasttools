@@ -555,6 +555,28 @@ export const categories = [
         ],
     },
     {
+        id: "security-tools",
+        name: "Security & Privacy Tools",
+        description: "Privacy-focused tools for encryption, data protection, and secure information handling",
+        icon: Lock,
+        href: "/security-tools",
+        borderColor: "border-border",
+        hoverBorder: "hover:border-border",
+        iconBg: "bg-emerald-500/20",
+        iconColor: "text-green-700",
+        glowColor: "hover:shadow-emerald-500/20",
+        tools: [
+            {
+                title: "Image Steganography",
+                description: "Hide secret text inside images using LSB encoding with optional AES-GCM encryption",
+                href: "/security-tools/image-steganography",
+                icon: Shield,
+                badge: "Privacy",
+                badgeColor: "bg-green-600",
+            },
+        ],
+    },
+    {
         id: "pdf-tools",
         name: "Online PDF Converters & Editors",
         description: "Complete PDF management solution",
