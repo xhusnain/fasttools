@@ -31,6 +31,13 @@ export async function decodeMessageFromImage(
     throw new Error('Invalid message length detected. No hidden message found or corrupted data.');
   }
 
+  // Validate image has enough capacity
+  const requiredPixels = Math.ceil((32 + (messageLength * 8)) / 3); // 32 bits for length + message bits, 3 bits per pixel
+  const availablePixels = imageData.data.length / 4; // RGBA has 4 values per pixel
+  if (requiredPixels > availablePixels) {
+    throw new Error(`Image too small to contain message. Need ${requiredPixels} pixels, image has ${availablePixels}.`);
+  }
+
   // Extract message bits
   const messageBits: boolean[] = [];
   bitIndex = 32;

@@ -3,19 +3,19 @@ interface EncodeOptions {
   password?: string;
 }
 
-interface EncodeResult {
-  canvas: HTMLCanvasElement;
-  dataUrl: string;
-  messageLength: number;
-}
-
 // Encode text into image using LSB (least significant bit) encoding
 export async function encodeMessageInImage(
   imageData: ImageData,
   message: string,
   password?: string
 ): Promise<ImageData> {
-  const data = imageData.data;
+  // Clone imageData to avoid modifying the original
+  const clonedData = new ImageData(
+    new Uint8ClampedArray(imageData.data),
+    imageData.width,
+    imageData.height
+  );
+  const data = clonedData.data;
 
   // If password provided, encrypt message first
   let messageBytes: Uint8Array;
@@ -63,7 +63,7 @@ export async function encodeMessageInImage(
     }
   }
 
-  return imageData;
+  return clonedData;
 }
 
 // Decrypt encrypted message (placeholder - implementation in aes-encryption.ts)
