@@ -197,6 +197,9 @@ export const searchItems: SearchItem[] = [
   { name: "Anniversary Calculator", description: "Calculate how long you've been together", path: "/fun-tools/anniversary", category: "Fun" },
   { name: "Pomodoro Timer", description: "Free online Pomodoro focus timer with ambient sounds (rain, cafe, white noise, brown noise), task tracking, customizable sessions, keyboard shortcuts, notifications. Study timer for students and remote workers.", path: "/fun-tools/pomodoro-timer", category: "Fun" },
   { name: "Meme Generator", description: "Free meme generator with 100+ templates, custom text overlay, drag-and-drop positioning, multiple fonts, and PNG download. No watermark, no signup.", path: "/fun-tools/meme-generator", category: "Fun" },
+
+  // Security Tools
+  { name: "Image Steganography", description: "Hide secret messages inside PNG/JPG images using LSB encoding with optional AES-GCM encryption", path: "/security-tools/image-steganography", category: "Security" },
 ]
 
 
