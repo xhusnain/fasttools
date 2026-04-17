@@ -118,8 +118,18 @@ export default function ImageSteganography() {
 
   return (
     <div className="space-y-6">
-      {error && <GAlert variant="error" title="Error">{error}</GAlert>}
-      {success && <GAlert variant="success" title="Success">{success}</GAlert>}
+      {error && (
+        <GAlert variant="destructive">
+          <div className="font-semibold">Error</div>
+          <div className="text-sm mt-1">{error}</div>
+        </GAlert>
+      )}
+      {success && (
+        <GAlert variant="default">
+          <div className="font-semibold">Success</div>
+          <div className="text-sm mt-1">{success}</div>
+        </GAlert>
+      )}
 
       <GTabs value={activeTab} onValueChange={(tab) => setActiveTab(tab as TabType)}>
         <GTabsList>
@@ -203,10 +213,10 @@ export default function ImageSteganography() {
           {decodedMessage && (
             <div className="border rounded p-3 bg-blue-50 dark:bg-blue-950">
               <p className="text-sm font-medium mb-2">Extracted Message:</p>
-              <p className="text-sm break-words whitespace-pre-wrap">{decodedMessage}</p>
+              <p className="text-sm break-all whitespace-pre-wrap">{decodedMessage}</p>
               <button
-                onClick={() => {
-                  navigator.clipboard.writeText(decodedMessage);
+                onClick={async () => {
+                  await navigator.clipboard.writeText(decodedMessage);
                   setSuccess('Message copied to clipboard!');
                 }}
                 className="mt-2 text-xs text-blue-600 hover:underline"
