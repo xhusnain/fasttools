@@ -13,15 +13,16 @@
 
 ## NEW CATEGORY: SECURITY (/security-tools)
 
-### S1. Image Steganography Tool
+### S1. Image Steganography Tool ✅ COMPLETE
 - **Category**: security-tools (NEW)
 - **Search Volume**: 110K/mo — "steganography online" (40K), "hide text in image" (45K), "image steganography tool" (25K)
 - **Description**: Hide secret text inside PNG/JPG images via LSB (least-significant-bit) encoding. Extract hidden text from stego-images. Optional AES-GCM password layer for extra encryption.
 - **Features**: Encode text in image, decode from image, optional password, preview both images, download stego-image.
-- **Why build**: USER-SPECIFICALLY REQUESTED. Competitors (stylesuxx.github.io, futureboy.us) have ugly/dated UIs. Privacy-critical → client-side is a selling point.
+- **Status**: ✅ COMPLETE — Fully implemented with LSB steganography, AES-256-GCM encryption, React component, SEO-optimized page, unit tests passing.
 - **Build**: Medium. Canvas API + bitwise ops, crypto.subtle for AES.
 - **Client-side**: 100%
 - **Top 3 competitors**: stylesuxx.github.io/steganography, futureboy.us/stegano, 8gwifi.org
+- **URL**: /security-tools/image-steganography
 
 ### S2. EXIF Metadata Viewer & Remover
 - **Category**: security-tools
@@ -256,15 +257,15 @@
 ## PRIORITY BUILD ORDER (ROI-weighted)
 
 ### Tier 1 — Build First (Highest Volume + Low Complexity)
-| Priority | Tool | Volume | Category | Complexity |
-|----------|------|--------|----------|------------|
-| 1 | **Image Steganography** | 110K | security (NEW) | Medium — USER REQUEST |
-| 2 | **Periodic Table** | 2.1M | education | Medium |
-| 3 | **Countdown Timer** | 2.8M | fun-tools | Low |
-| 4 | **QR Code Scanner** | 890K | web-tools | Low |
-| 5 | **Image Cropper** | 1.2M | image-tools | Low |
-| 6 | **Wheel Spinner** | 1.1M | fun-tools | Low |
-| 7 | **EXIF Viewer/Remover** | 450K | security | Low |
+| Priority | Tool | Volume | Category | Status | Complexity |
+|----------|------|--------|----------|--------|------------|
+| 1 | **Image Steganography** | 110K | security (NEW) | ✅ COMPLETE | Medium — USER REQUEST |
+| 2 | **Periodic Table** | 2.1M | education | Pending | Medium |
+| 3 | **Countdown Timer** | 2.8M | fun-tools | Pending | Low |
+| 4 | **QR Code Scanner** | 890K | web-tools | Pending | Low |
+| 5 | **Image Cropper** | 1.2M | image-tools | Pending | Low |
+| 6 | **Wheel Spinner** | 1.1M | fun-tools | Pending | Low |
+| 7 | **EXIF Viewer/Remover** | 450K | security | Pending | Low |
 
 ### Tier 2 — Strong Secondary
 | Priority | Tool | Volume | Category | Complexity |
