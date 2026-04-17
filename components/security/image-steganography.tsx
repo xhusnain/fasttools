@@ -142,22 +142,27 @@ export default function ImageSteganography() {
             </div>
           )}
 
-          <GInput
-            label="Secret Message"
-            value={encodeMessage}
-            onChange={setEncodeMessage}
-            placeholder="Enter the text to hide in the image"
-            rows={4}
-            as="textarea"
-          />
+          <div>
+            <label className="block text-sm font-medium mb-2">Secret Message</label>
+            <textarea
+              value={encodeMessage}
+              onChange={(e) => setEncodeMessage(e.target.value)}
+              placeholder="Enter the text to hide in the image"
+              rows={4}
+              className="w-full px-3 py-2 border rounded text-sm focus:outline-none focus:ring-2 focus:ring-blue-500"
+            />
+          </div>
 
-          <GInput
-            label="Password (Optional)"
-            value={encodePassword}
-            onChange={setEncodePassword}
-            placeholder="Add password for extra encryption (AES-GCM)"
-            type="password"
-          />
+          <div>
+            <label className="block text-sm font-medium mb-2">Password (Optional)</label>
+            <GInput
+              value={encodePassword}
+              onChange={(e) => setEncodePassword(e.target.value)}
+              placeholder="Add password for extra encryption (AES-GCM)"
+              type="password"
+              autoComplete="new-password"
+            />
+          </div>
 
           <GButton onClick={handleEncode} disabled={loading || !encodeImage}>
             {loading ? 'Encoding...' : 'Hide Message in Image'}
@@ -177,13 +182,16 @@ export default function ImageSteganography() {
             />
           </div>
 
-          <GInput
-            label="Password (if encrypted)"
-            value={decodePassword}
-            onChange={setDecodePassword}
-            placeholder="Enter password if message was encrypted"
-            type="password"
-          />
+          <div>
+            <label className="block text-sm font-medium mb-2">Password (if encrypted)</label>
+            <GInput
+              value={decodePassword}
+              onChange={(e) => setDecodePassword(e.target.value)}
+              placeholder="Enter password if message was encrypted"
+              type="password"
+              autoComplete="off"
+            />
+          </div>
 
           <GButton onClick={handleDecode} disabled={loading || !decodeImage}>
             {loading ? 'Extracting...' : 'Extract Hidden Message'}
