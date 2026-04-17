@@ -75,6 +75,13 @@ const categories = [
     href: "/crypto-tools",
   },
   {
+    id: "security-tools",
+    name: "Security & Privacy Tools",
+    description: "Advanced tools for data protection, privacy, and secure communication. Encrypt, hide, and protect your sensitive information.",
+    icon: LockIcon,
+    href: "/security-tools",
+  },
+  {
     id: "dev-tools",
     name: "Developer Tools",
     description: "Boost your productivity with essential utilities for developers, from formatters and validators to code generators and debuggers.",
