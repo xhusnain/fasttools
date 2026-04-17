@@ -7,7 +7,7 @@ import { GButton } from '@/ui/gbutton';
 import { GInput } from '@/ui/ginput';
 import { GCard } from '@/ui/gcard';
 import { GAlert } from '@/ui/galert';
-import { GTabs } from '@/ui/gtabs';
+import { GTabs, GTabsList, GTabsTrigger, GTabsContent } from '@/ui/gtabs';
 
 type TabType = 'encode' | 'decode';
 
@@ -113,23 +113,18 @@ export default function ImageSteganography() {
     }
   };
 
-  const tabs = [
-    { id: 'encode', label: 'Hide Message' },
-    { id: 'decode', label: 'Extract Message' },
-  ];
-
   return (
     <div className="space-y-6">
       {error && <GAlert variant="error" title="Error">{error}</GAlert>}
       {success && <GAlert variant="success" title="Success">{success}</GAlert>}
 
-      <GTabs
-        tabs={tabs}
-        activeTab={activeTab}
-        onTabChange={(tab) => setActiveTab(tab as TabType)}
-      />
+      <GTabs value={activeTab} onValueChange={(tab) => setActiveTab(tab as TabType)}>
+        <GTabsList>
+          <GTabsTrigger value="encode">Hide Message</GTabsTrigger>
+          <GTabsTrigger value="decode">Extract Message</GTabsTrigger>
+        </GTabsList>
 
-      {activeTab === 'encode' && (
+        <GTabsContent value="encode">
         <GCard className="space-y-4">
           <div>
             <label className="block text-sm font-medium mb-2">Select Image (PNG/JPG)</label>
@@ -168,9 +163,9 @@ export default function ImageSteganography() {
             {loading ? 'Encoding...' : 'Hide Message in Image'}
           </GButton>
         </GCard>
-      )}
+        </GTabsContent>
 
-      {activeTab === 'decode' && (
+        <GTabsContent value="decode">
         <GCard className="space-y-4">
           <div>
             <label className="block text-sm font-medium mb-2">Select Image with Hidden Message</label>
@@ -210,7 +205,8 @@ export default function ImageSteganography() {
             </div>
           )}
         </GCard>
-      )}
+        </GTabsContent>
+      </GTabs>
     </div>
   );
 }
