@@ -77,6 +77,14 @@ Description: Free color palette generator with 7 harmony modes (complementary, a
 https://www.fasttools.store/dev-tools/color-palette#faq
 Description: FAQ about color palette generation covering harmony modes, image color extraction, WCAG accessibility contrast, color locking, export formats (CSS/Tailwind/SCSS/JSON), and color theory fundamentals.
 
+# CSS Gradient Generator - Free Linear, Radial & Conic CSS Gradient Tool
+https://www.fasttools.store/dev-tools/css-gradient-generator
+Description: Free CSS gradient generator with live visual editor. Supports linear-gradient(), radial-gradient(), and conic-gradient() types. Multi-stop color editor with per-stop position sliders, angle control (0°–360°), radial shape and size options, 20+ curated presets, random gradient generator. Exports CSS background property, Tailwind from-*/via-*/to-* classes, and SCSS variable. 100% client-side, no signup.
+
+# CSS Gradient Generator FAQ
+https://www.fasttools.store/dev-tools/css-gradient-generator#faq
+Description: FAQ covering CSS gradient types (linear, radial, conic), the gray dead zone problem and OKLCH color spaces, gradient text technique using background-clip:text, Tailwind gradient classes, browser support (Chrome/Firefox/Safari/Edge), multi-color stops, transparent gradients, and SCSS export.
+
 # Text to Speech - Free Online TTS Reader
 https://www.fasttools.store/ai-tools/text-to-speech
 Description: Free online text-to-speech tool. Convert text to natural speech with 50+ languages, multiple voices, adjustable speed (0.25x-4x), pitch, and volume controls. Real-time word highlighting during playback. 100% browser-based via Web Speech API. No signup required.

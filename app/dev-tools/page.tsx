@@ -125,6 +125,13 @@ const devTools = [
     icon: Palette,
   },
   {
+    title: "CSS Gradient Generator",
+    description:
+      "Create linear, radial, and conic CSS gradients visually with color stops and angle control. Copy CSS, Tailwind, or SCSS.",
+    href: "/dev-tools/css-gradient-generator",
+    icon: Palette,
+  },
+  {
     title: "Hex to RGB Converter",
     description:
       "Convert color values between HEX, RGB, and HSL for frontend development.",

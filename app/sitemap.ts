@@ -154,6 +154,7 @@ export const sitemapPages = [
   { url: u("/dev-tools/http-status-codes"), lastModified: new Date("2026-03-23"), changeFrequency: "monthly" as const, priority: 0.7 },
   { url: u("/dev-tools/hex-to-rgb"), lastModified: new Date("2026-03-23"), changeFrequency: "monthly" as const, priority: 0.7 },
   { url: u("/dev-tools/color-palette"), lastModified: new Date("2026-04-10"), changeFrequency: "monthly" as const, priority: 0.9 },
+  { url: u("/dev-tools/css-gradient-generator"), lastModified: new Date("2026-04-21"), changeFrequency: "monthly" as const, priority: 0.9 },
   { url: u("/dev-tools/diff-checker"), lastModified: new Date("2026-04-10"), changeFrequency: "monthly" as const, priority: 0.9 },
 
   // ─── Education Tools ────────────────────────────────────────────────

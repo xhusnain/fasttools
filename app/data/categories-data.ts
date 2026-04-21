@@ -309,6 +309,14 @@ export const categories = [
                 badgeColor: "bg-pink-600",
             },
             {
+                title: "CSS Gradient Generator",
+                description: "Create linear, radial, and conic CSS gradients visually with color stops and angle control.",
+                href: "/dev-tools/css-gradient-generator",
+                icon: Palette,
+                badge: "New",
+                badgeColor: "bg-blue-500/90",
+            },
+            {
                 title: "Hex to RGB Converter",
                 description: "Convert HEX, RGB, and HSL color values for frontend implementation.",
                 href: "/dev-tools/hex-to-rgb",

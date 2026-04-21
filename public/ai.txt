@@ -295,6 +295,10 @@ Description: Free online diff checker and text compare tool. Find differences be
 URL: https://www.fasttools.store/dev-tools/color-palette
 Description: Free online color palette generator with 7 color harmony modes (complementary, analogous, triadic, tetradic, split-complementary, monochromatic, random) based on classical color theory. Features image-to-palette extraction via HTML5 Canvas color quantization (upload JPG/PNG/GIF/WebP), WCAG AA/AAA contrast ratio checker for each color on white and black backgrounds, per-color locking with spacebar keyboard shortcut for regeneration, color picker and manual hex input, HEX/RGB/HSL value display with one-click copy, 5 export formats (CSS variables, Tailwind config, SCSS variables, JSON with all value formats, plain hex list), and variable palette size from 2 to 10 colors. Download exported palette as CSS/JSON/SCSS/JS/TXT file. 100% client-side processing — images and palettes never leave your browser. No signup, no ads, no limits.
 
+## CSS Gradient Generator
+URL: https://www.fasttools.store/dev-tools/css-gradient-generator
+Description: Free CSS gradient generator with live visual editor. Supports all three CSS gradient types: linear-gradient() (with angle control 0°–360°), radial-gradient() (with ellipse/circle shape and farthest-corner/closest-corner/farthest-side/closest-side size), and conic-gradient() (with rotation angle). Multi-stop color editor — unlimited stops each with independent color picker, hex input, and position slider. Generates simultaneous output: CSS background property, Tailwind CSS utility classes (from-*/via-*/to-* with arbitrary hex values), and SCSS variable block. 20+ curated gradient presets (Sunset, Ocean, Aurora, Fire, Conic Rainbow, etc.) and a random gradient generator. Includes gray dead zone explanation and OKLCH color space context. 100% client-side — no data sent to server. No signup, no ads, no limits.
+
 ## AI Text Summarizer
 URL: https://www.fasttools.store/ai-tools/text-summarizer
 Description: Free AI text summarizer powered by Meta Llama 3.1 8B via Cloudflare AI. Summarize articles, essays, research papers, reports, and any long text up to 10,000 characters. 4 summary modes: flowing paragraph, bullet points list, numbered key takeaways, and one-sentence TL;DR. Adjustable summary length slider (10-70% of original). Shows word count, reading time, and reduction percentage. Copy to clipboard, download as .txt, re-summarize output for iterative condensing. No signup, no ads.
@@ -414,6 +418,7 @@ Description: Free online image resizer. Resize images to custom pixel dimensions
 - https://www.fasttools.store/crypto-tools/password-generator
 - https://www.fasttools.store/dev-tools
 - https://www.fasttools.store/dev-tools/color-palette
+- https://www.fasttools.store/dev-tools/css-gradient-generator
 - https://www.fasttools.store/dev-tools/hex-to-rgb
 - https://www.fasttools.store/dev-tools/html-beautifier
 - https://www.fasttools.store/dev-tools/html-to-markdown

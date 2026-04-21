@@ -110,6 +110,7 @@ export const searchItems: SearchItem[] = [
 
   // Developer Tools
   { name: "Color Palette Generator", description: "Free color palette generator. 7 harmony modes (complementary, analogous, triadic, tetradic, monochromatic), image extraction, WCAG contrast checker, export to CSS/Tailwind/SCSS/JSON.", path: "/dev-tools/color-palette", category: "Developer" },
+  { name: "CSS Gradient Generator", description: "Free CSS gradient generator. Create linear, radial, and conic CSS gradients visually. Edit color stops, set angles, pick from 20+ presets, copy as CSS, Tailwind classes, or SCSS. linear-gradient radial-gradient conic-gradient tailwind gradient.", path: "/dev-tools/css-gradient-generator", category: "Developer" },
   { name: "Diff Checker", description: "Free online diff checker and text compare tool. Find differences between two texts side-by-side, inline, or unified view with character-level highlighting. Ignore whitespace/case options.", path: "/dev-tools/diff-checker", category: "Developer" },
 
   // Education Tools
