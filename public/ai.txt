@@ -307,6 +307,10 @@ Description: Free AI text summarizer powered by Meta Llama 3.1 8B via Cloudflare
 URL: https://www.fasttools.store/fun-tools/meme-generator
 Description: Free online meme generator with 100+ popular meme templates (Drake, Distracted Boyfriend, Two Buttons, Expanding Brain, and more). Features custom image upload (JPG, PNG, GIF, WebP), multiple independently-styled text boxes with drag-and-drop canvas positioning, 9 font families (Impact, Arial, Arial Black, Comic Sans MS, Courier New, Georgia, Helvetica, Times New Roman, Verdana), adjustable font size (12-100px), text and outline color pickers, outline width control, bold/italic/alignment options, automatic word wrap, template search, mobile touch support, and instant PNG download with no watermark. 100% client-side processing via HTML5 Canvas API — images never leave your device. No signup, no ads, no limits.
 
+## Countdown Timer & Stopwatch
+URL: https://www.fasttools.store/fun-tools/countdown-timer
+Description: Free online countdown timer and stopwatch. Countdown features: custom hours/minutes/seconds input, 9 quick presets (1 min, 3 min, 5 min, 10 min, 15 min, 25 min, 30 min, 45 min, 1 hr), circular SVG progress ring, audio alarm via Web Audio API (three-tone chime, no audio file), ±10s/±30s/±60s quick adjustments while paused, start/pause/resume/reset controls. Stopwatch features: millisecond-precision display (MM:SS.cs), unlimited lap recording with split and cumulative times, automatic fastest/slowest lap highlighting in green/red, live current-lap display. Both modes support fullscreen. System-clock-anchored timing via Date.now() — no drift on pause/resume. 100% client-side, no signup, no ads.
+
 ## Pomodoro Timer
 URL: https://www.fasttools.store/fun-tools/pomodoro-timer
 Description: Free online Pomodoro focus timer with 8 ambient sounds (rain, cafe, brown noise, white noise, pink noise, fireplace, ocean, forest) generated via Web Audio API. Features customizable work/break durations (1-120 min), task list with pomodoro estimates and estimated finish time, daily session counter, browser notifications, keyboard shortcuts (Space, R, S, F), fullscreen focus mode, auto-start option, and color-coded modes (red focus, green short break, blue long break). All settings persist via localStorage. Based on the Pomodoro Technique by Francesco Cirillo. No signup required.
@@ -474,6 +478,7 @@ Description: Free online image resizer. Resize images to custom pixel dimensions
 - https://www.fasttools.store/fun-tools/birthday-countdown
 - https://www.fasttools.store/fun-tools/future-age
 - https://www.fasttools.store/fun-tools/pomodoro-timer
+- https://www.fasttools.store/fun-tools/countdown-timer
 - https://www.fasttools.store/fun-tools/meme-generator
 - https://www.fasttools.store/education-tools
 - https://www.fasttools.store/education-tools/citation-generator

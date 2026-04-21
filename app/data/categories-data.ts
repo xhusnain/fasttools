@@ -966,6 +966,14 @@ export const categories = [
                 badge: "New",
                 badgeColor: "bg-green-600",
             },
+            {
+                title: "Countdown Timer & Stopwatch",
+                description: "Online countdown timer and stopwatch with presets, alarm, lap times, and fullscreen mode.",
+                href: "/fun-tools/countdown-timer",
+                icon: Clock,
+                badge: "New",
+                badgeColor: "bg-blue-500/90",
+            },
         ],
     },
     {

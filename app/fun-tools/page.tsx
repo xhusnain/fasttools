@@ -41,6 +41,13 @@ const tools = [
     href: "/fun-tools/meme-generator",
     popular: true,
   },
+  {
+    title: "Countdown Timer & Stopwatch",
+    description: "Online countdown timer and stopwatch with presets, alarm sound, fullscreen mode, and lap times.",
+    icon: Clock,
+    href: "/fun-tools/countdown-timer",
+    popular: true,
+  },
 ]
 
 const toolConfig = createToolConfig({

@@ -37,6 +37,14 @@ Description: Technical explanation of how AI background removal works using deep
 https://www.fasttools.store/image-tools/background-remover#faq
 Description: Frequently asked questions about removing backgrounds from images, including comparisons with remove.bg, privacy guarantees, supported formats, processing speed, and e-commerce product photo tips.
 
+# Countdown Timer & Stopwatch - Free Online Timer
+https://www.fasttools.store/fun-tools/countdown-timer
+Description: Free online countdown timer and stopwatch. Supports custom hours/minutes/seconds input, 9 quick presets (1 min to 1 hr), audio alarm on completion via Web Audio API, ±10s/±30s/±60s time adjustment, circular progress ring, fullscreen mode, and stopwatch with unlimited lap tracking showing fastest/slowest laps. No download, no signup, 100% client-side.
+
+# Countdown Timer FAQ
+https://www.fasttools.store/fun-tools/countdown-timer#faq
+Description: FAQ covering timer vs stopwatch differences, background tab behavior, accuracy (system clock anchor via Date.now()), max duration, lap time recording, Pomodoro usage (25-min preset), mobile support, and setting multiple simultaneous timers.
+
 # Meme Generator - Free Online Meme Maker
 https://www.fasttools.store/fun-tools/meme-generator
 Description: Free online meme generator with 100+ trending templates. Create memes with custom text overlay, 9 font families (Impact, Arial, Comic Sans MS, etc.), drag-and-drop text positioning, text and outline color customization, multiple text boxes, and instant PNG download with no watermark. 100% client-side processing — images never leave your device. No signup, no ads, unlimited usage.
