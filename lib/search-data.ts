@@ -138,6 +138,7 @@ export const searchItems: SearchItem[] = [
 
   // Image Tools
   { name: "Background Remover", description: "Remove background from image for free with AI. Transparent PNG, color replacement, custom backgrounds. No signup, no watermark. 100% browser-based privacy.", path: "/image-tools/background-remover", category: "Image" },
+  { name: "Image Cropper", description: "Free online image cropper. Crop JPG, PNG, WebP images with drag handles. Aspect ratio presets (1:1, 16:9, 4:3, 9:16), exact pixel input, rotate, flip. No signup, no watermark, 100% browser-based.", path: "/image-tools/image-cropper", category: "Image" },
   { name: "Image Resizer", description: "Resize images online for free. Custom dimensions, 50+ social media presets for Instagram, Facebook, LinkedIn, YouTube, TikTok. JPG, PNG, WebP. No quality loss.", path: "/image-tools/image-resizer", category: "Image" },
   { name: "Image to Text (OCR)", description: "Extract text from images with OCR technology", path: "/image-tools/image-to-text", category: "Image" },
   { name: "AI Image Detector", description: "Free AI image detector to check if a photo is AI-generated. Detects Midjourney, DALL-E, Stable Diffusion, Flux & deepfake images", path: "/image-tools/ai-image-detector", category: "Image" },

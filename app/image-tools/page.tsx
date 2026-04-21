@@ -3,7 +3,7 @@ import { ToolPageLayout } from "@/components/common/tool-page-layout"
 import { createToolConfig } from "@/lib/create-tool-config"
 import { GToolCard } from "@/ui/gtool-card"
 
-import { FileText, Maximize2, Minimize2, ShieldCheck, Scissors } from "lucide-react"
+import { FileText, Maximize2, Minimize2, ShieldCheck, Scissors, Crop } from "lucide-react"
 
 const imageTools = [
   {
@@ -39,6 +39,13 @@ const imageTools = [
     description: "Remove image backgrounds instantly with AI. Transparent PNG, color replacement, or custom backgrounds. 100% browser-based.",
     icon: Scissors,
     href: "/image-tools/background-remover",
+    popular: true,
+  },
+  {
+    title: "Image Cropper",
+    description: "Crop JPG, PNG, and WebP images online. Drag handles, lock aspect ratio, enter exact pixels, rotate & flip. No upload to server.",
+    icon: Crop,
+    href: "/image-tools/image-cropper",
     popular: true,
   },
 ]

@@ -180,6 +180,7 @@ export const sitemapPages = [
   { url: u("/image-tools/image-to-text"), lastModified: new Date("2026-03-23"), changeFrequency: "monthly" as const, priority: 0.5 },
   { url: u("/image-tools/ai-image-detector"), lastModified: new Date("2026-03-09"), changeFrequency: "weekly" as const, priority: 0.5 },
   { url: u("/image-tools/background-remover"), lastModified: new Date("2026-04-01"), changeFrequency: "weekly" as const, priority: 0.8 },
+  { url: u("/image-tools/image-cropper"), lastModified: new Date("2026-04-21"), changeFrequency: "monthly" as const, priority: 0.9 },
 
   // ─── Security Tools ──────────────────────────────────────────────────
   { url: u("/security-tools/image-steganography"), lastModified: new Date("2026-04-17"), changeFrequency: "monthly" as const, priority: 0.9 },

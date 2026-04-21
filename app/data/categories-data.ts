@@ -560,6 +560,14 @@ export const categories = [
                 badge: "New",
                 badgeColor: "bg-purple-600",
             },
+            {
+                title: "Image Cropper",
+                description: "Crop JPG, PNG, and WebP images online. Drag handles, aspect ratio presets, exact pixels, rotate & flip.",
+                href: "/image-tools/image-cropper",
+                icon: Scissors,
+                badge: "New",
+                badgeColor: "bg-blue-500/90",
+            },
         ],
     },
     {

@@ -25,6 +25,14 @@ Description: Information on how GPA is calculated in different countries, includ
 https://www.fasttools.store/calculator/gpa-calculator#faq
 Description: A comprehensive FAQ section that answers the most common questions about GPA, CGPA, and how to use the calculator. This is a key resource for answering user queries.
 
+# Image Cropper - Free Online Image Crop Tool
+https://www.fasttools.store/image-tools/image-cropper
+Description: Free online image cropper with visual drag-handle selection. Supports JPG, PNG, WebP, GIF, BMP up to 20MB. Features: 8-point drag handles for resize, 9 aspect ratio presets (Free, 1:1, 4:3, 16:9, 3:2, 2:3, 9:16, 21:9, 5:4), exact pixel width/height input, 90° rotation, horizontal/vertical flip, rule-of-thirds overlay, JPEG/PNG/WebP output with quality control. 100% client-side via HTML5 Canvas — images never uploaded to server. No signup, no watermark.
+
+# Image Cropper FAQ
+https://www.fasttools.store/image-tools/image-cropper#faq
+Description: FAQ covering how to crop to specific pixel sizes, aspect ratio locking (1:1 square, 16:9 YouTube, 9:16 Instagram Stories), privacy (browser-only processing), supported formats, lossless crop with PNG, Instagram crop presets, rotation before cropping, and the rule-of-thirds composition principle.
+
 # Background Remover - Free AI Background Removal Tool
 https://www.fasttools.store/image-tools/background-remover
 Description: Free AI-powered background remover. Remove background from any image (portraits, products, logos, pets) instantly. Outputs transparent PNG, solid color backgrounds, or custom image backgrounds. 100% client-side processing — images never leave your device. No signup, no watermarks, no limits. Uses deep learning segmentation via ONNX/WebAssembly for edge-aware cutouts around hair, fur, and complex objects.
