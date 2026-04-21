@@ -128,3 +128,11 @@ Description: FAQ about AI text summarization covering summary modes, character l
 # Meme Generator FAQ
 https://www.fasttools.store/fun-tools/meme-generator#faq
 Description: Frequently asked questions about making memes online, including template availability, font options, text positioning, download formats, mobile support, commercial usage, and privacy guarantees.
+
+# Wheel Spinner - Free Random Name Picker Wheel
+https://www.fasttools.store/fun-tools/wheel-spinner
+Description: Free online wheel spinner and random name picker. Add names or options, spin an animated roulette-style wheel, and get a random result. 8 built-in presets (Yes/No, Days of Week, Rock/Paper/Scissors, Heads/Tails, Months, Numbers 1–10), remove-winner mode for raffles, spin history (last 20), clipboard copy. 100% client-side Canvas rendering — no signup, no ads.
+
+# Wheel Spinner FAQ
+https://www.fasttools.store/fun-tools/wheel-spinner#faq
+Description: FAQ covering what a wheel spinner is, how it works, randomness methodology, remove-winner mode for raffles, available presets, classroom use for cold-calling students, giveaway use cases, mobile support, and how to weight outcomes by adding duplicate entries.

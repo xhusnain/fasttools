@@ -528,3 +528,11 @@ Category: Security & Privacy Tools
 Description: Free online image steganography tool for hiding secret text inside PNG/JPG images using LSB (least-significant-bit) encoding. Optional AES-GCM password encryption. Extract hidden messages from encoded images. 100% client-side processing with no server uploads. Perfect for secure communication, digital watermarking, and privacy protection.
 Content: The tool provides both encoding and decoding functionality. Hide messages in images using LSB steganography (3 bits per pixel). Optional AES-256 GCM encryption with PBKDF2 key derivation. Supports PNG and JPG input, PNG output (lossless). Processing happens entirely in your browser.
 Related: JWT Decoder, Bcrypt Generator, Token Generator, Base64 Encoder/Decoder
+
+# Wheel Spinner Tool
+URL: https://www.fasttools.store/fun-tools/wheel-spinner
+Category: Fun Tools
+Description: Free online wheel spinner and random name picker. Spin an animated Canvas-based roulette wheel to randomly select a name, option, or decision. Add custom items, use 8 built-in presets (Yes/No, Days of Week, Rock/Paper/Scissors, Heads/Tails, True/False, Months, Numbers 1-10), enable remove-winner mode for raffles and classroom use, view spin history (last 20 results), and copy winner to clipboard. 100% client-side using HTML5 Canvas API — no login, no ads, no signup required. Works on desktop and mobile.
+Content: Canvas-based wheel with easeOut animation via requestAnimationFrame. 16-color auto-assigned slice palette. Winner detected by normalizing final rotation angle against slice arc size. Remove-winner toggle eliminates selected item after each spin. Preset configurations load instantly. History tab records results in session memory.
+Related: Countdown Timer, Meme Generator, Pomodoro Timer, Password Generator
+- https://www.fasttools.store/fun-tools/wheel-spinner

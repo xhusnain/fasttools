@@ -37,6 +37,8 @@ import {
     Lock,
     Shield,
     Fingerprint,
+    Scissors,
+    Shuffle,
 } from "lucide-react"
 
 export const categories = [
@@ -979,6 +981,14 @@ export const categories = [
                 description: "Online countdown timer and stopwatch with presets, alarm, lap times, and fullscreen mode.",
                 href: "/fun-tools/countdown-timer",
                 icon: Clock,
+                badge: "New",
+                badgeColor: "bg-blue-500/90",
+            },
+            {
+                title: "Wheel Spinner",
+                description: "Free random name picker wheel. Add names or options, spin to decide. 8 built-in presets, history, no login.",
+                href: "/fun-tools/wheel-spinner",
+                icon: Shuffle,
                 badge: "New",
                 badgeColor: "bg-blue-500/90",
             },

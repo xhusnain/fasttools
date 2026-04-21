@@ -3,7 +3,7 @@ import { ToolPageLayout } from "@/components/common/tool-page-layout"
 import { createToolConfig } from "@/lib/create-tool-config"
 import { GToolCard } from "@/ui/gtool-card"
 
-import { Calendar, Cake, Clock, PartyPopper, Code, Globe, Calculator, ArrowRight, Heart, Smile } from "lucide-react"
+import { Calendar, Cake, Clock, PartyPopper, Code, Globe, Calculator, ArrowRight, Heart, Smile, Shuffle } from "lucide-react"
 
 const tools = [
   {
@@ -46,6 +46,13 @@ const tools = [
     description: "Online countdown timer and stopwatch with presets, alarm sound, fullscreen mode, and lap times.",
     icon: Clock,
     href: "/fun-tools/countdown-timer",
+    popular: true,
+  },
+  {
+    title: "Wheel Spinner",
+    description: "Random name picker wheel. Add names or options, spin to decide. 8 presets, history, no login.",
+    icon: Shuffle,
+    href: "/fun-tools/wheel-spinner",
     popular: true,
   },
 ]

@@ -132,7 +132,7 @@
 - **Client-side**: 100%
 - **Top 3 competitors**: qrcodescan.in, webqr.com, scanqr.org
 
-### T4. Random Wheel Spinner / Picker Wheel
+### T4. Random Wheel Spinner / Picker Wheel ✅ COMPLETE — /fun-tools/wheel-spinner
 - **Category**: fun-tools
 - **Search Volume**: 1.1M/mo — "wheel spinner" (620K), "picker wheel" (310K), "random wheel" (170K)
 - **Description**: Enter a list of items → animated spinning wheel picks random. Teachers use daily for classroom picking.
@@ -265,7 +265,7 @@
 | 3 | **Countdown Timer** | 2.8M | fun-tools | ✅ COMPLETE | Low |
 | 4 | **QR Code Scanner** | 890K | web-tools | Pending | Low |
 | 5 | **Image Cropper** | 1.2M | image-tools | ✅ COMPLETE | Low |
-| 6 | **Wheel Spinner** | 1.1M | fun-tools | Pending | Low |
+| 6 | **Wheel Spinner** | 1.1M | fun-tools | ✅ COMPLETE | Low |
 | 7 | **EXIF Viewer/Remover** | 450K | security | Pending | Low |
 
 ### Tier 2 — Strong Secondary

@@ -199,6 +199,7 @@ export const searchItems: SearchItem[] = [
   { name: "Anniversary Calculator", description: "Calculate how long you've been together", path: "/fun-tools/anniversary", category: "Fun" },
   { name: "Pomodoro Timer", description: "Free online Pomodoro focus timer with ambient sounds (rain, cafe, white noise, brown noise), task tracking, customizable sessions, keyboard shortcuts, notifications. Study timer for students and remote workers.", path: "/fun-tools/pomodoro-timer", category: "Fun" },
   { name: "Countdown Timer & Stopwatch", description: "Free online countdown timer and stopwatch. Custom time input, 9 quick presets (1 min to 1 hr), alarm sound, circular progress ring, fullscreen mode, lap times with fastest/slowest tracking. Pomodoro timer online. timer online stopwatch.", path: "/fun-tools/countdown-timer", category: "Fun" },
+  { name: "Wheel Spinner", description: "Free online wheel spinner and random name picker. Add names or options, spin the animated wheel, get a random winner. 8 built-in presets: Yes/No, Days of Week, Rock/Paper/Scissors, Heads/Tails, Months, Numbers 1-10. Remove winner mode, spin history. No login, no ads. spin the wheel random name picker decision wheel.", path: "/fun-tools/wheel-spinner", category: "Fun" },
   { name: "Meme Generator", description: "Free meme generator with 100+ templates, custom text overlay, drag-and-drop positioning, multiple fonts, and PNG download. No watermark, no signup.", path: "/fun-tools/meme-generator", category: "Fun" },
 
   // Security Tools

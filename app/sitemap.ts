@@ -200,6 +200,7 @@ export const sitemapPages = [
   { url: u("/fun-tools/future-age"), lastModified: new Date("2026-03-23"), changeFrequency: "monthly" as const, priority: 0.5 },
   { url: u("/fun-tools/pomodoro-timer"), lastModified: new Date("2026-03-27"), changeFrequency: "monthly" as const, priority: 0.7 },
   { url: u("/fun-tools/countdown-timer"), lastModified: new Date("2026-04-21"), changeFrequency: "monthly" as const, priority: 0.9 },
+  { url: u("/fun-tools/wheel-spinner"), lastModified: new Date("2026-04-21"), changeFrequency: "monthly" as const, priority: 0.9 },
   { url: u("/fun-tools/meme-generator"), lastModified: new Date("2026-04-03"), changeFrequency: "weekly" as const, priority: 0.8 },
 ]
 
