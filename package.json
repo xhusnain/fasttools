@@ -7,7 +7,9 @@
     "dev": "next dev",
     "lint": "next lint",
     "start": "next start",
-    "test": "jest"
+    "test": "jest",
+    "update-ai-pricing": "node scripts/update-ai-pricing.mjs",
+    "update-ai-pricing:write": "node scripts/update-ai-pricing.mjs --write"
   },
   "dependencies": {
     "@iarna/toml": "^2.2.5",
