@@ -334,12 +334,14 @@ export default function TimeDurationPage() {
     ],
 
     relatedTools: [
-      { name: "Age Calculator", href: "/calculator/age-calculator" },
       { name: "Date Difference Calculator", href: "/calculator/date-difference" },
-      { name: "Loan EMI Calculator", href: "/finance-tools/loan-calculator" },
-      { name: "Percentage Calculator", href: "/calculator/percentage-calculator" },
-      { name: "BMI Calculator", href: "/calculator/bmi-calculator" },
-      { name: "Compound Interest Calculator", href: "/finance-tools/compound-interest" }
+      { name: "Age Calculator", href: "/calculator/age-calculator" },
+      { name: "Future Age Calculator", href: "/fun-tools/future-age" },
+      { name: "Anniversary Calculator", href: "/fun-tools/anniversary" },
+      { name: "Countdown Timer", href: "/fun-tools/countdown-timer" },
+      { name: "Pomodoro Timer", href: "/fun-tools/pomodoro-timer" },
+      { name: "Birthday Countdown", href: "/fun-tools/birthday-countdown" },
+      { name: "Timezone Converter", href: "/converters/timezone" }
     ]
   }
 

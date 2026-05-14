@@ -229,14 +229,14 @@ export default function TriangleCalculatorPage() {
         ],
 
         relatedTools: [
-            { name: "BMI Calculator", href: "/calculator/bmi-calculator" },
-            { name: "Age Calculator", href: "/calculator/age-calculator" },
-            { name: "Percentage Calculator", href: "/calculator/percentage-calculator" },
-            { name: "Mortgage Calculator", href: "/finance-tools/mortgage-calculator" },
-            { name: "Loan Calculator", href: "/finance-tools/loan-calculator" },
-            { name: "Tax Calculator", href: "/finance-tools/tax-calculator" },
             { name: "Scientific Calculator", href: "/calculator/scientific-calculator" },
-            { name: "Time Duration", href: "/calculator/time-duration" }
+            { name: "Fraction Calculator", href: "/calculator/fraction-calculator" },
+            { name: "Standard Deviation Calculator", href: "/calculator/standard-deviation-calculator" },
+            { name: "Percentage Calculator", href: "/calculator/percentage-calculator" },
+            { name: "Concrete Calculator (slabs)", href: "/calculator/concrete-calculator" },
+            { name: "IP Subnet Calculator", href: "/calculator/ip-subnet-calculator" },
+            { name: "Conversion Calculator", href: "/calculator/conversion-calculator" },
+            { name: "Length Converter", href: "/converters/length" }
         ]
     }
 
