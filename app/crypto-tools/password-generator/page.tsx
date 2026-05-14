@@ -174,16 +174,128 @@ const toolConfig = createToolConfig({
         <div>
           <h3 className="text-lg font-semibold text-foreground mb-2">Why Not Math.random()?</h3>
           <p>
-            Many free online password generators use JavaScript&apos;s <code>Math.random()</code>{" "}
-            function, which is <strong>not cryptographically secure</strong> and produces
-            predictable sequences. In 2013, researchers demonstrated that Math.random() output
-            could be predicted from a few samples. This tool uses{" "}
-            <code>window.crypto.getRandomValues()</code> — the Web Crypto API&apos;s CSPRNG
-            (cryptographically secure pseudo-random number generator) — which uses OS-level
-            entropy sources (hardware RNG, keyboard timing, mouse movements, etc.). This is the
-            same randomness source used by 1Password, Bitwarden, NordPass, and all major
-            password managers. The difference is critical for any password protecting real
-            accounts.
+            Many free online password generators use JavaScript&apos;s <code>Math.random()</code> function, which is <strong>not cryptographically secure</strong> and produces predictable sequences. In 2013, researchers demonstrated that Math.random() output could be predicted from a few samples. This tool uses <code>window.crypto.getRandomValues()</code> — the Web Crypto API&apos;s CSPRNG (cryptographically secure pseudo-random number generator) — which uses OS-level entropy sources (hardware RNG, keyboard timing, mouse movements, etc.). This is the same randomness source used by 1Password, Bitwarden, NordPass, and all major password managers. The difference is critical for any password protecting real accounts.
+          </p>
+        </div>
+
+        <div>
+          <h3 className="text-lg font-semibold text-foreground mb-2">Password Length vs Cracking Time</h3>
+          <table className="w-full border-collapse text-sm">
+            <thead>
+              <tr className="border-b border-border">
+                <th className="text-left py-2 px-2 text-foreground">Length</th>
+                <th className="text-left py-2 px-2 text-foreground">Charset (a-zA-Z0-9 + symbols)</th>
+                <th className="text-left py-2 px-2 text-foreground">Entropy bits</th>
+                <th className="text-left py-2 px-2 text-foreground">Crack time at 10B guesses/sec</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr className="border-b border-border">
+                <td className="py-2 px-2">8</td>
+                <td className="py-2 px-2">95 chars</td>
+                <td className="py-2 px-2">~52</td>
+                <td className="py-2 px-2 text-red-500">~7 hours</td>
+              </tr>
+              <tr className="border-b border-border">
+                <td className="py-2 px-2">10</td>
+                <td className="py-2 px-2">95 chars</td>
+                <td className="py-2 px-2">~65</td>
+                <td className="py-2 px-2 text-orange-500">~2 months</td>
+              </tr>
+              <tr className="border-b border-border">
+                <td className="py-2 px-2">12</td>
+                <td className="py-2 px-2">95 chars</td>
+                <td className="py-2 px-2">~78</td>
+                <td className="py-2 px-2 text-orange-500">~1,500 years</td>
+              </tr>
+              <tr className="border-b border-border">
+                <td className="py-2 px-2"><strong>16</strong></td>
+                <td className="py-2 px-2">95 chars</td>
+                <td className="py-2 px-2"><strong>~105</strong></td>
+                <td className="py-2 px-2 text-green-500"><strong>3.4 × 10<sup>13</sup> years</strong></td>
+              </tr>
+              <tr className="border-b border-border">
+                <td className="py-2 px-2">20</td>
+                <td className="py-2 px-2">95 chars</td>
+                <td className="py-2 px-2">~131</td>
+                <td className="py-2 px-2 text-green-500">Beyond universe age</td>
+              </tr>
+              <tr>
+                <td className="py-2 px-2">24</td>
+                <td className="py-2 px-2">95 chars</td>
+                <td className="py-2 px-2">~157</td>
+                <td className="py-2 px-2 text-green-500">Beyond universe age (quantum-resistant)</td>
+              </tr>
+            </tbody>
+          </table>
+          <p className="mt-3">
+            The sweet spot for random passwords is <strong>16 characters with all character types</strong> (~105 bits of entropy). For master passwords, use 20+ chars or a 6-8 word passphrase.
+          </p>
+        </div>
+
+        <div>
+          <h3 className="text-lg font-semibold text-foreground mb-2">2026 Password Best Practices (NIST SP 800-63B)</h3>
+          <ul className="list-disc pl-6 space-y-1">
+            <li><strong>Length over complexity:</strong> NIST recommends minimum 8 chars, ideally 64+; complexity rules (must have number / symbol) are now considered harmful</li>
+            <li><strong>No forced rotation:</strong> the &quot;change every 90 days&quot; rule is officially obsolete. Only change after a breach event</li>
+            <li><strong>No password hints:</strong> hints often reveal too much; just use a password manager</li>
+            <li><strong>No security questions:</strong> &quot;mother&apos;s maiden name&quot; is findable on social media; treat as a secondary password</li>
+            <li><strong>Check against breach lists:</strong> NIST mandates checking submitted passwords against known-breached lists (this tool does via HIBP)</li>
+            <li><strong>Allow all printable characters:</strong> sites that block special characters are doing it wrong</li>
+            <li><strong>Don&apos;t truncate:</strong> bcrypt&apos;s 72-byte limit is a workaround issue, not user-facing policy</li>
+            <li><strong>Show password option:</strong> users should be able to see what they typed (preventing typos)</li>
+            <li><strong>2FA / passkeys for high-value accounts:</strong> password strength alone isn&apos;t enough against phishing</li>
+          </ul>
+        </div>
+
+        <div>
+          <h3 className="text-lg font-semibold text-foreground mb-2">Password Manager Recommendations</h3>
+          <p>
+            You shouldn&apos;t memorize 100+ unique strong passwords — that&apos;s what password managers are for. Generate strong random passwords with this tool, save to a manager, use the manager&apos;s autofill. Reputable options:
+          </p>
+          <ul className="list-disc pl-6 mt-2 space-y-1">
+            <li><strong>1Password (paid):</strong> mature, family plans, business features. ~$3/month.</li>
+            <li><strong>Bitwarden (free + paid):</strong> open-source, free tier is excellent, $10/year premium.</li>
+            <li><strong>KeePassXC (free, open-source):</strong> local-only, no cloud sync built-in but works with Dropbox/etc.</li>
+            <li><strong>Apple Passwords / iCloud Keychain (free for Apple users):</strong> built into macOS / iOS, syncs to Mac and iPhone.</li>
+            <li><strong>Google Password Manager (free):</strong> built into Chrome / Android. Less feature-rich but better than nothing.</li>
+          </ul>
+          <p className="mt-3">
+            <strong>Avoid:</strong> LastPass (multiple security breaches), Dashlane Free (limited features), and any &quot;free password manager&quot; you&apos;ve never heard of.
+          </p>
+        </div>
+
+        <div>
+          <h3 className="text-lg font-semibold text-foreground mb-2">When Random Passwords Aren&apos;t Enough</h3>
+          <p>
+            Even the strongest password can be:
+          </p>
+          <ul className="list-disc pl-6 mt-2 space-y-1">
+            <li><strong>Phished:</strong> typed into a fake login page; password manager + 2FA / passkeys prevent this</li>
+            <li><strong>Keylogged:</strong> malware on your device captures every keystroke; password manager autofill mitigates</li>
+            <li><strong>Leaked via breach:</strong> the service&apos;s database is compromised; unique passwords + HIBP check limit blast radius</li>
+            <li><strong>Captured via shoulder surfing:</strong> someone watches you type; use show/hide toggle</li>
+            <li><strong>Forgotten and recovered insecurely:</strong> password reset email goes to compromised email account</li>
+          </ul>
+          <p className="mt-3">
+            <strong>Defense in depth:</strong> strong random password (this tool) + password manager + 2FA / passkeys + verified device + unique per service. Together these stop 99%+ of attacks.
+          </p>
+        </div>
+
+        <div>
+          <h3 className="text-lg font-semibold text-foreground mb-2">Diceware Passphrase Math</h3>
+          <p>
+            Diceware uses a wordlist of 7,776 words (6^5) — exactly the number of possible 5-dice rolls. Each word contributes <code>log<sub>2</sub>(7776) ≈ 12.92 bits</code> of entropy. So:
+          </p>
+          <ul className="list-disc pl-6 mt-2 space-y-1">
+            <li><strong>4 words:</strong> ~52 bits — strong against most online attacks, weak against offline</li>
+            <li><strong>5 words:</strong> ~65 bits — strong against most attacks, borderline for offline</li>
+            <li><strong>6 words:</strong> ~77 bits — secure against current offline attacks</li>
+            <li><strong>7 words:</strong> ~90 bits — extremely secure, future-proof through 2050+</li>
+            <li><strong>8 words:</strong> ~103 bits — equivalent to a 16-char random password, easier to type</li>
+          </ul>
+          <p className="mt-3">
+            Use 6 words minimum for password manager master passwords; 7-8 for cryptocurrency wallets or other &quot;recovery is impossible&quot; scenarios.
           </p>
         </div>
       </div>
