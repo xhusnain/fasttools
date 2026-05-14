@@ -17,12 +17,7 @@
 
 | # | Tool | Path | GSC Signal | Status |
 |---|---|---|---|---|
-| 1 | Future Age Calculator | `/fun-tools/future-age` | 6,500+ imp / 5 clicks across "future age calculation", "age calculation future", "how old will i be" | [~] |
-| 2 | YouTube Channel Name & Handle Checker | `/social-media-tools/channel-checker` | 5,000+ imp / 75 clicks but mostly branded; near-zero on "how to check if youtube channel name is available" (503), "youtube username availability checker" (422), "youtube handle availability check" (360) | [~] |
-| 3 | Anniversary Calculator | `/fun-tools/anniversary` | 1,800+ imp / 8 clicks on "anniversary calculator" + variants | [~] |
-| 4 | Concrete Calculator | `/calculator/concrete-calculator` | 960+ imp / 0 clicks (was missing from sitemap, now fixed) | [ ] |
-| 5 | PayPal Fee Calculator | `/finance-tools/paypal-fee` | 830+ imp on "paypal fee calculator" + variants | [~] |
-| 6 | Free Online Calculator hub | `/calculator` | 514 imp / 0 clicks on "free online calculator" | [~] |
+| 1 | Free Online Calculator hub | `/calculator` | 514 imp / 0 clicks on "free online calculator" | [~] |
 | 7 | Hashtag Counter | `/social-media-tools/hashtag-counter` | 550+ imp ("hashtag counter" 358 alone) | [~] |
 | 8 | Savings Tracker | `/finance-tools/savings-tracker` | 272 imp on "savings tracking tool" | [~] |
 | 9 | Pregnancy Conception Calculator | `/calculator/pregnancy-conception-calculator` | 180+ imp / 5 clicks "conception calculator" | [ ] |
@@ -273,6 +268,6 @@ For each tool, do this in order:
 ## Cumulative progress
 
 - Total tools: 179 + 8 variants = 187
-- Completed (deep): 0
-- Partial (titles only from earlier batch): 8
-- Remaining: 187
+- Completed (deep): 5 (future-age, channel-checker, anniversary, concrete, paypal-fee)
+- Partial (titles only from earlier batch): 4
+- Remaining: 182
