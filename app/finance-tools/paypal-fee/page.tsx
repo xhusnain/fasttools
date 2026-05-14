@@ -6,7 +6,7 @@ const PayPalFeeCalculator = dynamic(() => import("@/components/finance/paypal-fe
 })
 import { ToolPageLayout } from "@/components/common/tool-page-layout"
 import { createMetadata } from "@/lib/metadata-base"
-import { Calculator, DollarSign, Target, TrendingUp, BarChart3, Copy, HelpCircle, Lightbulb, Star, Info } from "lucide-react"
+import { Calculator, DollarSign, Target, TrendingUp, BarChart3, Copy, HelpCircle, Lightbulb, Star, Info, FileText } from "lucide-react"
 import { GImage } from "@/ui/gimage"
 import type { Metadata } from "next"
 
@@ -130,6 +130,30 @@ export default function PayPalFeeCalculatorPage() {
       {
         question: "Does PayPal have hidden fees?",
         answer: "While standard transaction fees are transparent, 'hidden' costs often appear in the form of currency conversion spreads (3-4% markup) and cross-border fees (1.5%). Always review the detailed fee breakdown before finalizing international transactions."
+      },
+      {
+        question: "What are PayPal fees in the UK?",
+        answer: "UK domestic PayPal fees are 2.9% + £0.30 for standard Goods & Services payments (different from the US's 2.99% + $0.49). Cross-border within the EEA adds 1.29%, and non-EEA international payments add ~1.99%. Currency conversion adds a 3.0–4.0% spread on top. Our calculator handles GBP and applies the right rates when you select the UK as the seller location."
+      },
+      {
+        question: "What's the PayPal micropayment fee rate?",
+        answer: "PayPal offers a special micropayment rate for transactions under ~$10: 4.99% + $0.09 per transaction (replacing the standard 2.99% + $0.49). It's optimized for very small payments where the fixed $0.49 fee would eat a large chunk of revenue. You have to opt in to micropayments at the account level — it's not automatic, and you cannot mix-and-match per transaction."
+      },
+      {
+        question: "Are PayPal QR code / in-person fees different?",
+        answer: "Yes. PayPal in-person QR-code payments are charged at 1.90% + $0.10 — significantly cheaper than the 2.99% + $0.49 online rate. This applies when a buyer scans a QR code at a physical location using the PayPal app. The calculator above supports this fee type if you're processing in-person sales."
+      },
+      {
+        question: "Do PayPal fees come out before or after I receive the money?",
+        answer: "Fees are deducted automatically before the money is credited to your PayPal balance. If a customer sends you $100 on a 2.99% + $0.49 G&S transaction, you'll see $96.52 land in your account, never the full $100. The fee comes off the top — this is why the reverse-calculation feature (entering the amount you want to RECEIVE) is so useful for setting invoice amounts."
+      },
+      {
+        question: "Has PayPal raised fees in 2026?",
+        answer: "PayPal's standard merchant rate has been incrementally rising over the past few years (from 2.9% + $0.30 historically to 2.99% + $0.49, and 3.49% + $0.49 for some Checkout flows). Always check PayPal's official fee page for current rates before settling on a fee model for your business. Our calculator uses the latest published rates."
+      },
+      {
+        question: "How is this PayPal fee calculator different from PayPal's own?",
+        answer: "PayPal's own calculator (in their help center) only handles basic domestic G&S. Our tool covers G&S vs Friends & Family vs credit card vs micropayment vs QR-code, plus international cross-border, currency conversion, reverse gross-up, and multiple country fee schedules — all in one screen, free, with no PayPal login needed."
       }
     ],
 
@@ -364,15 +388,104 @@ export default function PayPalFeeCalculatorPage() {
             Conclusion: Making Informed Decisions
           </h3>
           <p className="text-base text-muted-foreground leading-relaxed">
-            PayPal is a powerful tool for global commerce, but its convenience comes with a price tag in the form of currency conversion fees. By understanding how these hidden costs work—specifically the 3-4% markup—you can make smarter financial decisions. Whether it's choosing to pay in the local currency or using alternative transfer services for large amounts, being informed is the first step to saving money on every transaction.
+            PayPal is a powerful tool for global commerce, but its convenience comes with a price tag in the form of currency conversion fees. By understanding how these hidden costs work—specifically the 3-4% markup—you can make smarter financial decisions. Whether it&apos;s choosing to pay in the local currency or using alternative transfer services for large amounts, being informed is the first step to saving money on every transaction.
           </p>
+        </article>
+
+        <article className="space-y-4">
+          <h2 className="text-2xl font-bold text-foreground flex items-center gap-2">
+            <BarChart3 className="h-6 w-6 text-primary" />
+            PayPal Fee Schedule by Country (2026)
+          </h2>
+          <p className="text-base text-muted-foreground leading-relaxed">
+            PayPal rates differ by seller country. Use the table below as a reference; the calculator above applies the right rate when you select your country.
+          </p>
+          <div className="overflow-x-auto">
+            <table className="min-w-full text-sm border border-border">
+              <thead className="bg-muted text-foreground font-semibold">
+                <tr>
+                  <th className="p-3 text-left border-b border-border">Seller country</th>
+                  <th className="p-3 text-left border-b border-border">Domestic G&amp;S rate</th>
+                  <th className="p-3 text-left border-b border-border">Cross-border surcharge</th>
+                  <th className="p-3 text-left border-b border-border">Notes</th>
+                </tr>
+              </thead>
+              <tbody className="divide-y divide-border">
+                <tr><td className="p-3 font-semibold">United States</td><td className="p-3">2.99% + $0.49 (3.49% + $0.49 for Checkout)</td><td className="p-3">+1.5%</td><td className="p-3">Micropayments: 4.99% + $0.09; QR: 1.90% + $0.10</td></tr>
+                <tr><td className="p-3 font-semibold">United Kingdom</td><td className="p-3">2.9% + £0.30</td><td className="p-3">+1.29% (EEA) / +1.99% (non-EEA)</td><td className="p-3">Different rate by buyer location</td></tr>
+                <tr><td className="p-3 font-semibold">European Union</td><td className="p-3">2.49% + €0.35 (EEA)</td><td className="p-3">+1.29% (non-EEA only)</td><td className="p-3">No surcharge within EEA</td></tr>
+                <tr><td className="p-3 font-semibold">Australia</td><td className="p-3">2.6% + A$0.30</td><td className="p-3">+1.5% (international)</td><td className="p-3">Different rate for charity (1.1%)</td></tr>
+                <tr><td className="p-3 font-semibold">Canada</td><td className="p-3">2.9% + C$0.30</td><td className="p-3">+1.5% (international)</td><td className="p-3">Currency conversion: ~2.5% spread</td></tr>
+                <tr><td className="p-3 font-semibold">India</td><td className="p-3">4.4% + ₹3 (international receive only)</td><td className="p-3">included</td><td className="p-3">PayPal India only supports cross-border</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <p className="text-xs text-muted-foreground">
+            <em>Rates change. Always verify against PayPal&apos;s official country-specific fee page before pricing your products.</em>
+          </p>
+        </article>
+
+        <article className="space-y-4">
+          <h2 className="text-2xl font-bold text-foreground flex items-center gap-2">
+            <Target className="h-6 w-6 text-primary" />
+            FastTools vs Other Free PayPal Fee Calculators
+          </h2>
+          <div className="overflow-x-auto">
+            <table className="min-w-full text-sm border border-border">
+              <thead className="bg-muted text-foreground font-semibold">
+                <tr>
+                  <th className="p-3 text-left border-b border-border">Feature</th>
+                  <th className="p-3 text-left border-b border-border text-green-600">FastTools</th>
+                  <th className="p-3 text-left border-b border-border">Airwallex</th>
+                  <th className="p-3 text-left border-b border-border">Salecalc</th>
+                  <th className="p-3 text-left border-b border-border">PayPal&apos;s own</th>
+                </tr>
+              </thead>
+              <tbody className="divide-y divide-border">
+                <tr><td className="p-3 font-semibold">Domestic G&amp;S fee</td><td className="p-3 text-green-600">✓</td><td className="p-3">✓</td><td className="p-3">✓</td><td className="p-3">✓</td></tr>
+                <tr><td className="p-3 font-semibold">International + currency conversion</td><td className="p-3 text-green-600">✓</td><td className="p-3">✓</td><td className="p-3">partial</td><td className="p-3 text-red-500">✗</td></tr>
+                <tr><td className="p-3 font-semibold">G&amp;S vs Friends &amp; Family distinction</td><td className="p-3 text-green-600">✓</td><td className="p-3 text-red-500">✗</td><td className="p-3 text-red-500">✗</td><td className="p-3 text-red-500">✗</td></tr>
+                <tr><td className="p-3 font-semibold">Credit card vs PayPal balance</td><td className="p-3 text-green-600">✓</td><td className="p-3 text-red-500">✗</td><td className="p-3 text-red-500">✗</td><td className="p-3 text-red-500">✗</td></tr>
+                <tr><td className="p-3 font-semibold">Micropayments + QR rates</td><td className="p-3 text-green-600">✓</td><td className="p-3 text-red-500">✗</td><td className="p-3 text-red-500">✗</td><td className="p-3 text-red-500">✗</td></tr>
+                <tr><td className="p-3 font-semibold">Reverse calc (gross-up)</td><td className="p-3 text-green-600">✓</td><td className="p-3">partial</td><td className="p-3">✓</td><td className="p-3 text-red-500">✗</td></tr>
+                <tr><td className="p-3 font-semibold">Multi-country (US/UK/EU/AU/CA/IN)</td><td className="p-3 text-green-600">✓</td><td className="p-3">50+ countries</td><td className="p-3">50+ countries</td><td className="p-3 text-red-500">✗ (one country at a time)</td></tr>
+                <tr><td className="p-3 font-semibold">No login, no upsell</td><td className="p-3 text-green-600">✓</td><td className="p-3">upsells Airwallex</td><td className="p-3">✓</td><td className="p-3 text-red-500">requires PayPal login</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </article>
+
+        <article className="space-y-4">
+          <h2 className="text-2xl font-bold text-foreground flex items-center gap-2">
+            <FileText className="h-6 w-6 text-primary" />
+            The Same Tool, Many Names
+          </h2>
+          <p className="text-base text-muted-foreground leading-relaxed">
+            This calculator answers every PayPal fee question — whether you call it a fee, charge, processing cost, or commission:
+          </p>
+          <ul className="grid grid-cols-1 md:grid-cols-2 gap-3 text-sm text-muted-foreground">
+            <li className="flex items-start gap-2"><Lightbulb className="h-4 w-4 text-primary mt-0.5 flex-shrink-0" /><span>paypal fee calculator / paypal fees calculator</span></li>
+            <li className="flex items-start gap-2"><Lightbulb className="h-4 w-4 text-primary mt-0.5 flex-shrink-0" /><span>paypal calculator fee / paypal calculator fees</span></li>
+            <li className="flex items-start gap-2"><Lightbulb className="h-4 w-4 text-primary mt-0.5 flex-shrink-0" /><span>paypal g&amp;s fee calculator / paypal goods and service fee calculator</span></li>
+            <li className="flex items-start gap-2"><Lightbulb className="h-4 w-4 text-primary mt-0.5 flex-shrink-0" /><span>paypal credit card fee calculator</span></li>
+            <li className="flex items-start gap-2"><Lightbulb className="h-4 w-4 text-primary mt-0.5 flex-shrink-0" /><span>paypal processing fee calculator</span></li>
+            <li className="flex items-start gap-2"><Lightbulb className="h-4 w-4 text-primary mt-0.5 flex-shrink-0" /><span>paypal fees calculator uk / paypal calculator uk</span></li>
+            <li className="flex items-start gap-2"><Lightbulb className="h-4 w-4 text-primary mt-0.5 flex-shrink-0" /><span>paypal fee calculator india / australia / canada</span></li>
+            <li className="flex items-start gap-2"><Lightbulb className="h-4 w-4 text-primary mt-0.5 flex-shrink-0" /><span>calculate paypal fees / how much does paypal charge</span></li>
+            <li className="flex items-start gap-2"><Lightbulb className="h-4 w-4 text-primary mt-0.5 flex-shrink-0" /><span>paypal cost calculator / paypal commission calculator</span></li>
+            <li className="flex items-start gap-2"><Lightbulb className="h-4 w-4 text-primary mt-0.5 flex-shrink-0" /><span>paypal micropayment calculator / paypal QR fee</span></li>
+          </ul>
         </article>
       </div>
     ),
 
     relatedTools: [
       { name: "Invoice Generator", href: "/finance-tools/invoice-generator" },
+      { name: "Freelance Rate Calculator", href: "/finance-tools/freelance-rate-calculator" },
+      { name: "Sales Tax Calculator", href: "/finance-tools/sales-tax-calculator" },
+      { name: "Currency Converter", href: "/converters/currency" },
       { name: "Discount Calculator", href: "/finance-tools/discount-calculator" },
+      { name: "Tax Calculator", href: "/finance-tools/tax-calculator" },
       { name: "Bill Splitter", href: "/finance-tools/bill-splitter" },
       { name: "Tip Calculator", href: "/finance-tools/tip-calculator" }
     ]
