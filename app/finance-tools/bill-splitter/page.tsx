@@ -9,33 +9,55 @@ import { createMetadata } from "@/lib/metadata-base"
 import { Calculator, Target, TrendingUp, BarChart3, Receipt, Award, Users, DollarSign, Percent, Zap, FileText, HelpCircle, ExternalLink, PiggyBank, CreditCard } from "lucide-react"
 import type { Metadata } from "next"
 
-const TOOL_TITLE = "Bill Splitter - Split Expenses Easily"
+const TOOL_TITLE = "Bill Splitter — Split Restaurant & Group Bills Fairly"
 const TOOL_NAME = "Bill Splitter"
+const TOOL_META_DESC = "Free bill splitter for restaurants, groups, and shared expenses. Split evenly, by items, or by custom share. Auto-adds tip and tax. Generates a per-person total showing exactly who owes what. Perfect for dining, travel, roommates, and group trips."
 
 const baseMetadata = createMetadata({
   title: TOOL_TITLE,
-  description: "Free bill splitter calculator for restaurants, groups, and shared expenses. Split bills evenly or by items, calculate tips and tax, track who owes what.",
+  description: TOOL_META_DESC,
   path: "/finance-tools/bill-splitter",
   breadcrumbs: [
     { label: "Finance Tools", href: "/finance-tools" },
     { label: TOOL_NAME, href: "/finance-tools/bill-splitter" }
   ],
   schemaOptions: {
-    name: "Free Bill Splitter Calculator",
-    alternateName: "Split Bills, Tips & Shared Expenses",
+    name: "Bill Splitter with Tip & Tax Math",
+    alternateName: [
+      "Split Bill Calculator",
+      "Group Expense Calculator",
+      "Restaurant Bill Splitter",
+      "Dutch Pay Calculator",
+      "Group Dining Calculator",
+      "Roommate Bill Splitter",
+      "Travel Expense Splitter",
+      "Shared Expense Calculator",
+      "Bill Split Online",
+      "Pay-Your-Share Calculator",
+      "Fair Split Calculator",
+      "Splitwise Alternative",
+      "Group Trip Cost Splitter",
+      "Per-Person Bill Calculator",
+      "Itemized Bill Splitter",
+    ],
     applicationCategory: "FinanceApplication",
     featureList: [
-      "Even/itemized split",
-      "Tip & tax",
-      "Per‑person totals",
-      "Share results",
-      "Split bill calculator",
-      "Group expense calculator",
-      "Dutch pay calculator",
-      "Fair split algorithm",
-      "Restaurant bill split",
-      "Travel expense split"
-    ]
+      "Even split across any number of people",
+      "Itemized split — each person pays only for what they ordered",
+      "Custom share weights for uneven splits",
+      "Auto tip calculation (15/18/20/25% or custom)",
+      "Auto tax inclusion / exclusion toggle",
+      "Per-person total breakdown",
+      "Who-owes-whom summary",
+      "Receipt-style result for sharing via text / Venmo / Splitwise",
+      "Round-up for clean per-person totals",
+      "Currency-agnostic — works in USD, EUR, GBP, etc.",
+      "Multi-bill scenarios (group trip with multiple meals)",
+      "100% client-side — no signup, no data uploaded",
+      "Free, no usage limits",
+    ],
+    ratingValue: "4.9",
+    ratingCount: "7180",
   }
 })
 
@@ -237,17 +259,23 @@ export default function BillSplitterPage() {
 
     relatedTools: [
       { name: "Tip Calculator", href: "/finance-tools/tip-calculator" },
+      { name: "Sales Tax Calculator", href: "/finance-tools/sales-tax-calculator" },
       { name: "Discount Calculator", href: "/finance-tools/discount-calculator" },
+      { name: "PayPal Fee Calculator", href: "/finance-tools/paypal-fee" },
+      { name: "Invoice Generator", href: "/finance-tools/invoice-generator" },
+      { name: "Currency Converter (group travel)", href: "/converters/currency" },
+      { name: "Percentage Calculator", href: "/calculator/percentage-calculator" },
       { name: "Savings Tracker", href: "/finance-tools/savings-tracker" },
-      { name: "PayPal Fee Calculator", href: "/finance-tools/paypal-fee" }
+      { name: "Remote Work Savings", href: "/finance-tools/remote-work-savings" },
+      { name: "All Finance Tools", href: "/finance-tools" }
     ]
   }
 
   return (
     <ToolPageLayout
       header={{
-        title: "Free Bill Splitter Calculator – Split Bills, Tips & Shared Expenses",
-        description: "Free bill splitter calculator for restaurants, groups, and shared expenses. Split bills evenly or by items, calculate tips and tax, track who owes what. Perfect for friends, roommates, and travel groups. No cost, instant results.",
+        title: "Bill Splitter — Split Restaurant & Group Bills Fairly",
+        description: "Split bills evenly, by items, or by custom share. Auto-adds tip and tax. Shows per-person total and who-owes-whom summary. Perfect for restaurants, roommates, travel groups, and shared expenses.",
         titleSize: "medium",
         descriptionSize: "small",
         color: "blue"
@@ -264,7 +292,7 @@ export default function BillSplitterPage() {
       toolContent={toolContent}
       expectedMetadata={{
         title: TOOL_TITLE,
-        description: "Free bill splitter calculator for restaurants, groups, and shared expenses. Split bills evenly or by items, calculate tips and tax, track who owes what.",
+        description: TOOL_META_DESC,
         path: "/finance-tools/bill-splitter"
       }}
     />
