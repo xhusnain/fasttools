@@ -155,11 +155,141 @@ const toolConfig = createToolConfig({
         <div>
           <h3 className="text-lg font-semibold text-foreground mb-2">Timezone Considerations</h3>
           <p>
-            Standard cron uses the system&apos;s local timezone. Cloud services vary: AWS CloudWatch and
-            EventBridge default to UTC, Kubernetes CronJobs use the kube-controller-manager timezone
-            (UTC by default), and GitHub Actions uses UTC. This tool shows next run times in your
-            browser&apos;s local timezone for easy verification.
+            Standard cron uses the system&apos;s local timezone. Cloud services vary: AWS CloudWatch and EventBridge default to UTC, Kubernetes CronJobs use the kube-controller-manager timezone (UTC by default), and GitHub Actions uses UTC. This tool shows next run times in your browser&apos;s local timezone for easy verification. <strong>The most common cron mistake</strong> is scheduling jobs in local time when the server runs in UTC — &quot;run at 9 AM&quot; in your config becomes 9 AM UTC, which is 4 AM EST. Always check what timezone your cron service uses, and either convert mentally or set timezone explicitly (Kubernetes CronJobs 1.25+ support a `spec.timeZone` field).
           </p>
+        </div>
+
+        <div>
+          <h3 className="text-lg font-semibold text-foreground mb-2">25+ Most-Used Cron Recipes</h3>
+          <table className="w-full border-collapse text-sm">
+            <thead>
+              <tr className="border-b border-border">
+                <th className="text-left py-2 px-2 text-foreground">Expression</th>
+                <th className="text-left py-2 px-2 text-foreground">Meaning</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr className="border-b border-border"><td className="py-2 px-2"><code>* * * * *</code></td><td className="py-2 px-2">Every minute (use sparingly)</td></tr>
+              <tr className="border-b border-border"><td className="py-2 px-2"><code>*/5 * * * *</code></td><td className="py-2 px-2">Every 5 minutes</td></tr>
+              <tr className="border-b border-border"><td className="py-2 px-2"><code>*/15 * * * *</code></td><td className="py-2 px-2">Every 15 minutes</td></tr>
+              <tr className="border-b border-border"><td className="py-2 px-2"><code>*/30 * * * *</code></td><td className="py-2 px-2">Every 30 minutes</td></tr>
+              <tr className="border-b border-border"><td className="py-2 px-2"><code>0 * * * *</code></td><td className="py-2 px-2">Every hour on the hour</td></tr>
+              <tr className="border-b border-border"><td className="py-2 px-2"><code>0 */2 * * *</code></td><td className="py-2 px-2">Every 2 hours</td></tr>
+              <tr className="border-b border-border"><td className="py-2 px-2"><code>0 0 * * *</code></td><td className="py-2 px-2">Every day at midnight</td></tr>
+              <tr className="border-b border-border"><td className="py-2 px-2"><code>0 12 * * *</code></td><td className="py-2 px-2">Every day at noon</td></tr>
+              <tr className="border-b border-border"><td className="py-2 px-2"><code>0 9 * * 1-5</code></td><td className="py-2 px-2">9 AM, Monday through Friday</td></tr>
+              <tr className="border-b border-border"><td className="py-2 px-2"><code>0 17 * * 1-5</code></td><td className="py-2 px-2">5 PM, Monday through Friday</td></tr>
+              <tr className="border-b border-border"><td className="py-2 px-2"><code>0 9 * * 1,3,5</code></td><td className="py-2 px-2">9 AM, Mon / Wed / Fri</td></tr>
+              <tr className="border-b border-border"><td className="py-2 px-2"><code>0 0 * * 0</code></td><td className="py-2 px-2">Sunday midnight</td></tr>
+              <tr className="border-b border-border"><td className="py-2 px-2"><code>0 0 * * 6</code></td><td className="py-2 px-2">Saturday midnight</td></tr>
+              <tr className="border-b border-border"><td className="py-2 px-2"><code>0 0 1 * *</code></td><td className="py-2 px-2">1st of every month, midnight</td></tr>
+              <tr className="border-b border-border"><td className="py-2 px-2"><code>0 0 15 * *</code></td><td className="py-2 px-2">15th of every month, midnight</td></tr>
+              <tr className="border-b border-border"><td className="py-2 px-2"><code>0 0 1,15 * *</code></td><td className="py-2 px-2">1st and 15th of every month</td></tr>
+              <tr className="border-b border-border"><td className="py-2 px-2"><code>0 0 1 */3 *</code></td><td className="py-2 px-2">Quarterly (1st of Jan/Apr/Jul/Oct)</td></tr>
+              <tr className="border-b border-border"><td className="py-2 px-2"><code>0 0 1 1 *</code></td><td className="py-2 px-2">Yearly on Jan 1 (also <code>@yearly</code>)</td></tr>
+              <tr className="border-b border-border"><td className="py-2 px-2"><code>0 22 * * 5</code></td><td className="py-2 px-2">Friday 10 PM (weekly backups)</td></tr>
+              <tr className="border-b border-border"><td className="py-2 px-2"><code>30 18 * * 1-5</code></td><td className="py-2 px-2">6:30 PM weekdays (end-of-day batch)</td></tr>
+              <tr className="border-b border-border"><td className="py-2 px-2"><code>0 8 * * 1</code></td><td className="py-2 px-2">8 AM Monday (weekly team report)</td></tr>
+              <tr><td className="py-2 px-2"><code>@reboot</code></td><td className="py-2 px-2">Run once at system startup (Unix only)</td></tr>
+            </tbody>
+          </table>
+          <p className="mt-3">
+            Unix cron also supports <strong>shorthand strings</strong>: <code>@yearly</code> (= 0 0 1 1 *), <code>@monthly</code> (= 0 0 1 * *), <code>@weekly</code> (= 0 0 * * 0), <code>@daily</code> (= 0 0 * * *), <code>@hourly</code> (= 0 * * * *), <code>@reboot</code> (run at startup).
+          </p>
+        </div>
+
+        <div>
+          <h3 className="text-lg font-semibold text-foreground mb-2">Common Cron Mistakes</h3>
+          <ul className="list-disc pl-6 space-y-1">
+            <li><strong>Day of month + Day of week:</strong> when BOTH fields are set (not *), the schedule fires when EITHER matches in Unix cron. Quartz / Spring use AND. Most platforms use OR — confusing!</li>
+            <li><strong>Confusing day-of-month and day-of-week:</strong> for &quot;every weekday at 9,&quot; you want <code>0 9 * * 1-5</code> — leave day-of-month as `*`. Putting 1-5 in day-of-month means &quot;1st through 5th of the month.&quot;</li>
+            <li><strong>Sunday is both 0 and 7:</strong> in Unix cron, day-of-week 0 and 7 both mean Sunday. Quartz treats Sunday as 1 (different system entirely).</li>
+            <li><strong>Timezone confusion:</strong> cron in UTC vs local time leads to schedules firing at unexpected hours. Always verify with the &quot;next run times&quot; display.</li>
+            <li><strong>30-second jobs in cron:</strong> impossible in Unix cron (1-minute granularity). For sub-minute, use a different scheduler or sleep loop inside a per-minute cron.</li>
+            <li><strong>Missing newline at end of crontab:</strong> POSIX requires a trailing newline. Without it, the last entry may be silently skipped.</li>
+            <li><strong>PATH not set:</strong> cron runs with a minimal PATH. Always use absolute paths to binaries (e.g., <code>/usr/bin/curl</code>, not <code>curl</code>) or set <code>PATH=</code> at the top of your crontab.</li>
+            <li><strong>Output goes to /dev/null:</strong> any output cron jobs produce is emailed to root. Either redirect with <code>&gt; /dev/null 2&gt;&amp;1</code> or capture: <code>&gt;&gt; /var/log/myjob.log 2&gt;&amp;1</code>.</li>
+            <li><strong>Step values starting from 0:</strong> <code>*/5</code> means &quot;every 5 starting from 0&quot; (0, 5, 10, …), not &quot;5 minutes from now.&quot; Surprising for cron beginners.</li>
+            <li><strong>Overlapping jobs:</strong> if your job takes longer than the cron interval, multiple instances run concurrently. Use a lockfile (flock on Linux) to prevent.</li>
+          </ul>
+        </div>
+
+        <div>
+          <h3 className="text-lg font-semibold text-foreground mb-2">Cron Platform Comparison</h3>
+          <table className="w-full border-collapse text-sm">
+            <thead>
+              <tr className="border-b border-border">
+                <th className="text-left py-2 px-2 text-foreground">Platform</th>
+                <th className="text-left py-2 px-2 text-foreground">Fields</th>
+                <th className="text-left py-2 px-2 text-foreground">Smallest unit</th>
+                <th className="text-left py-2 px-2 text-foreground">Special chars</th>
+                <th className="text-left py-2 px-2 text-foreground">Notes</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr className="border-b border-border">
+                <td className="py-2 px-2"><strong>Unix crontab</strong></td>
+                <td className="py-2 px-2">5</td>
+                <td className="py-2 px-2">1 min</td>
+                <td className="py-2 px-2">* / , -</td>
+                <td className="py-2 px-2">Most basic, widest support</td>
+              </tr>
+              <tr className="border-b border-border">
+                <td className="py-2 px-2">Quartz (Java)</td>
+                <td className="py-2 px-2">6 or 7</td>
+                <td className="py-2 px-2">1 sec</td>
+                <td className="py-2 px-2">* / , - ? L W #</td>
+                <td className="py-2 px-2">Seconds + optional year, ?, L, W, # specials</td>
+              </tr>
+              <tr className="border-b border-border">
+                <td className="py-2 px-2">Spring Boot @Scheduled</td>
+                <td className="py-2 px-2">6</td>
+                <td className="py-2 px-2">1 sec</td>
+                <td className="py-2 px-2">* / , - ?</td>
+                <td className="py-2 px-2">Quartz-like but no L/W/#</td>
+              </tr>
+              <tr className="border-b border-border">
+                <td className="py-2 px-2">Kubernetes CronJob</td>
+                <td className="py-2 px-2">5</td>
+                <td className="py-2 px-2">1 min</td>
+                <td className="py-2 px-2">* / , -</td>
+                <td className="py-2 px-2">Standard Unix syntax; v1.25+ timezone support</td>
+              </tr>
+              <tr className="border-b border-border">
+                <td className="py-2 px-2">GitHub Actions</td>
+                <td className="py-2 px-2">5</td>
+                <td className="py-2 px-2">5 min granularity</td>
+                <td className="py-2 px-2">* / , -</td>
+                <td className="py-2 px-2">UTC only; 5-min smallest interval; may delay under load</td>
+              </tr>
+              <tr className="border-b border-border">
+                <td className="py-2 px-2">AWS EventBridge</td>
+                <td className="py-2 px-2">6</td>
+                <td className="py-2 px-2">1 min</td>
+                <td className="py-2 px-2">* / , - ? L W #</td>
+                <td className="py-2 px-2">6 fields with year; supports rate() alternative syntax</td>
+              </tr>
+              <tr>
+                <td className="py-2 px-2">Cloudflare Workers Cron</td>
+                <td className="py-2 px-2">5</td>
+                <td className="py-2 px-2">1 min</td>
+                <td className="py-2 px-2">* / , -</td>
+                <td className="py-2 px-2">UTC only; expressions like <code>*/2 * * * *</code></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div>
+          <h3 className="text-lg font-semibold text-foreground mb-2">Cron Alternatives Worth Knowing</h3>
+          <ul className="list-disc pl-6 space-y-1">
+            <li><strong>systemd timers:</strong> modern Linux replacement for cron. More flexible (calendar expressions, randomized delays, dependencies), better logging via journalctl.</li>
+            <li><strong>Airflow / Dagster / Prefect:</strong> workflow orchestrators with cron-style scheduling plus DAGs and retries. Use for complex data pipelines.</li>
+            <li><strong>BullMQ / Sidekiq / Celery:</strong> language-specific job queues with cron-style periodic jobs plus retry / failure handling.</li>
+            <li><strong>cron.cf / EasyCron / Cronitor:</strong> hosted cron-as-a-service with monitoring / alerting on missed runs.</li>
+            <li><strong>at (one-off):</strong> for one-time scheduled jobs (not recurring), <code>at</code> command is simpler than cron.</li>
+            <li><strong>anacron:</strong> for laptops / desktops that may be off — runs missed jobs after powerup.</li>
+          </ul>
         </div>
       </div>
     ),

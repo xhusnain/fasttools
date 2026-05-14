@@ -106,20 +106,103 @@ const toolConfig = createToolConfig({
 
     aboutTool: (
       <div className="space-y-6 text-muted-foreground">
-        <p>
-          MIME mapping pages perform best when they provide fast, predictable
-          lookups. This page is optimized for practical developer intent rather
-          than generic reference copy.
-        </p>
-        <p>
-          It helps teams align client and server behavior by validating content
-          types before deployment.
-        </p>
+        <div>
+          <h3 className="text-lg font-semibold text-foreground mb-2">What Is a MIME Type?</h3>
+          <p>
+            MIME (Multipurpose Internet Mail Extensions) types are standardized two-part identifiers — <code>type/subtype</code> — that tell software the format of transmitted data. Originally created for email attachments in 1992, they became the foundation for HTTP&apos;s <code>Content-Type</code> header. Now every modern protocol that transmits data identifies the format using MIME types: HTTP, MQTT, AMQP, gRPC&apos;s metadata, S3 object metadata, browser file pickers, multipart forms — all use the same registry. The IANA maintains the official registry at <code>iana.org/assignments/media-types/</code>.
+          </p>
+        </div>
+
+        <div>
+          <h3 className="text-lg font-semibold text-foreground mb-2">MIME Type Anatomy</h3>
+          <p>Every MIME type has two parts separated by a slash: <code>type/subtype</code>. Additional parameters may follow with semicolons:</p>
+          <pre className="bg-muted p-3 rounded mt-2 text-xs overflow-x-auto">
+            <code>{`Content-Type: text/html; charset=utf-8
+Content-Type: application/json; charset=utf-8
+Content-Type: multipart/form-data; boundary=----WebKitFormBoundary7MA4YWxkTrZu0gW`}</code>
+          </pre>
+          <p className="mt-3">The 8 top-level types are:</p>
+          <ul className="list-disc pl-6 mt-2 space-y-1">
+            <li><strong>text/</strong> — human-readable text (html, plain, css, javascript — deprecated for JS, use application/javascript now)</li>
+            <li><strong>image/</strong> — bitmap and vector images (png, jpeg, webp, avif, svg+xml, gif)</li>
+            <li><strong>audio/</strong> — sound files (mpeg = MP3, ogg, wav, flac, aac)</li>
+            <li><strong>video/</strong> — video files (mp4, webm, ogg, quicktime)</li>
+            <li><strong>application/</strong> — binary data and structured formats (json, xml, pdf, zip, octet-stream)</li>
+            <li><strong>font/</strong> — modern fonts (woff, woff2, ttf, otf)</li>
+            <li><strong>model/</strong> — 3D models (gltf+json, gltf-binary, obj)</li>
+            <li><strong>multipart/</strong> — combined payloads (form-data, byteranges, mixed)</li>
+            <li><strong>message/</strong> — emails and HTTP messages (rfc822, http)</li>
+            <li><strong>chemical/</strong> — scientific data (rare)</li>
+          </ul>
+        </div>
+
+        <div>
+          <h3 className="text-lg font-semibold text-foreground mb-2">Subtype Prefixes: x- and vnd.</h3>
+          <ul className="list-disc pl-6 space-y-1">
+            <li><strong>application/x-*:</strong> &quot;experimental&quot; or vendor-specific types not officially registered. Examples: <code>application/x-www-form-urlencoded</code>, <code>application/x-shockwave-flash</code>. The <code>x-</code> prefix was deprecated by IANA in 2012 but persists.</li>
+            <li><strong>application/vnd.*:</strong> vendor-specific officially-registered types. Examples: <code>application/vnd.openxmlformats-officedocument.wordprocessingml.document</code> (.docx), <code>application/vnd.ms-excel</code> (.xls), <code>application/vnd.android.package-archive</code> (.apk).</li>
+            <li><strong>application/prs.*:</strong> personal / experimental types — rarely seen.</li>
+            <li><strong>+json, +xml, +zip:</strong> structured suffix indicating the underlying serialization. Example: <code>application/vnd.api+json</code> (JSON API spec) — both JSON-parsable and JSON-API-specific.</li>
+          </ul>
+        </div>
+
+        <div>
+          <h3 className="text-lg font-semibold text-foreground mb-2">Common Confusions and Gotchas</h3>
+          <ul className="list-disc pl-6 space-y-1">
+            <li><strong>MP3 isn&apos;t audio/mp3:</strong> the correct MIME is <code>audio/mpeg</code>. Counterintuitive — &quot;mp3&quot; is the file extension, not the format name.</li>
+            <li><strong>JavaScript is application/javascript:</strong> <code>text/javascript</code> is deprecated since 2009 (RFC 4329), though browsers still accept it. Use <code>application/javascript</code> in new HTTP responses.</li>
+            <li><strong>JSON vs application/x-json:</strong> use <code>application/json</code> only. The <code>x-json</code> variant is wrong.</li>
+            <li><strong>application/octet-stream:</strong> the catch-all for &quot;unknown binary data.&quot; Browsers download these as files instead of displaying. Useful for forced downloads.</li>
+            <li><strong>multipart/form-data vs application/x-www-form-urlencoded:</strong> the former handles file uploads with a boundary string; the latter is for simple key=value pairs. The default for HTML forms is <code>x-www-form-urlencoded</code>.</li>
+            <li><strong>SVG is image/svg+xml, not image/svg:</strong> the <code>+xml</code> suffix indicates the underlying format.</li>
+            <li><strong>YAML has no standard MIME type:</strong> <code>application/x-yaml</code>, <code>text/yaml</code>, and <code>application/yaml</code> are all in use. RFC 9512 (2024) standardized <code>application/yaml</code>.</li>
+            <li><strong>Excel files have two MIMEs:</strong> <code>application/vnd.ms-excel</code> for .xls (binary) and <code>application/vnd.openxmlformats-officedocument.spreadsheetml.sheet</code> for .xlsx (zip-based).</li>
+            <li><strong>JPEG can be image/jpeg or image/jpg:</strong> only <code>image/jpeg</code> is correct per IANA, but browsers accept both.</li>
+          </ul>
+        </div>
+
+        <div>
+          <h3 className="text-lg font-semibold text-foreground mb-2">Security Considerations</h3>
+          <ul className="list-disc pl-6 space-y-1">
+            <li><strong>Don&apos;t trust client-supplied Content-Type:</strong> uploaders can lie about MIME type. Always sniff the actual file bytes server-side (magic number / signature detection) to verify type.</li>
+            <li><strong>MIME sniffing prevention:</strong> set <code>X-Content-Type-Options: nosniff</code> on all responses. This stops browsers from second-guessing your declared Content-Type, preventing some XSS attacks.</li>
+            <li><strong>Polyglot files:</strong> a single file can be valid in multiple formats simultaneously (e.g., a file that&apos;s valid PDF and valid HTML). Attackers use these to bypass content filters. Validate via byte signatures.</li>
+            <li><strong>Server upload allow-list:</strong> never block-list extensions; always allow-list specific MIMEs you accept. Block-lists miss new formats and unusual aliases.</li>
+            <li><strong>Validate after rendering:</strong> ImageMagick, Ghostscript, and other parsers have had CVEs for malformed files. Sandbox processing of user uploads.</li>
+            <li><strong>Force download with Content-Disposition:</strong> for user-uploaded files, set <code>Content-Disposition: attachment; filename=&quot;safe.ext&quot;</code> to prevent browser execution.</li>
+          </ul>
+        </div>
+
+        <div>
+          <h3 className="text-lg font-semibold text-foreground mb-2">Server-Side MIME Configuration</h3>
+          <ul className="list-disc pl-6 space-y-1">
+            <li><strong>Nginx:</strong> <code>/etc/nginx/mime.types</code> — ships with hundreds of mappings; check yours covers webp / avif / wasm / m3u8</li>
+            <li><strong>Apache:</strong> <code>mime.types</code> or per-extension <code>AddType</code> directives in <code>.htaccess</code></li>
+            <li><strong>Node.js:</strong> <code>mime-types</code> NPM package (used internally by Express, etc.)</li>
+            <li><strong>Python:</strong> <code>mimetypes</code> standard library module — has a known issue not detecting modern formats; install <code>python-magic</code> for file-signature-based detection</li>
+            <li><strong>S3 / Cloud storage:</strong> set explicit <code>Content-Type</code> metadata on upload; otherwise everything defaults to <code>application/octet-stream</code> which prevents browser display</li>
+            <li><strong>CDN configuration:</strong> CloudFront, Cloudflare, Fastly all let you override Content-Type per response — useful for fixing misconfigured origins without changing the origin</li>
+          </ul>
+        </div>
+
+        <div>
+          <h3 className="text-lg font-semibold text-foreground mb-2">Modern Format Notes</h3>
+          <ul className="list-disc pl-6 space-y-1">
+            <li><strong>WebP:</strong> <code>image/webp</code> — Google&apos;s modern format, smaller than JPEG/PNG, supported in all modern browsers</li>
+            <li><strong>AVIF:</strong> <code>image/avif</code> — even better compression than WebP, AV1-based, supported in Chrome 85+, Firefox 93+, Safari 16.4+</li>
+            <li><strong>JXL (JPEG XL):</strong> <code>image/jxl</code> — newer still, Apple is pushing it; Chrome dropped it in 2023</li>
+            <li><strong>HEIC / HEIF:</strong> <code>image/heic</code> / <code>image/heif</code> — Apple&apos;s default photo format on iPhone</li>
+            <li><strong>WebM:</strong> <code>video/webm</code> — VP8/VP9 video container, broad web support</li>
+            <li><strong>WASM:</strong> <code>application/wasm</code> — WebAssembly binary modules; required Content-Type to instantiate without fetch</li>
+            <li><strong>HLS:</strong> <code>application/vnd.apple.mpegurl</code> or <code>application/x-mpegURL</code> — for .m3u8 video streaming playlists</li>
+            <li><strong>DASH:</strong> <code>application/dash+xml</code> — for .mpd streaming manifests</li>
+          </ul>
+        </div>
       </div>
     ),
 
     proTip:
-      "Always validate MIME type checks server-side even when client-side upload filters are in place.",
+      "Three critical rules: (1) Never trust client-supplied Content-Type — always verify server-side using file magic numbers. (2) Set X-Content-Type-Options: nosniff on every response to prevent MIME sniffing attacks. (3) For user uploads, allow-list specific MIMEs you accept; never block-list — block-lists miss new formats and unusual aliases. For modern image formats (WebP, AVIF), serve them via `<picture>` tags with fallbacks rather than relying on Accept-header negotiation, which is fragile in proxies.",
 
     faqs: [
       {
