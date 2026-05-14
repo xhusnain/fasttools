@@ -202,12 +202,42 @@ const toolConfig = createToolConfig({
         answer:
           "Yes. This currency converter is 100% free to use with no signup, no account creation, and no usage limits. It provides mid-market reference rates for personal and business use. For API access to integrate live exchange rates into your own application, visit our Currency API page.",
       },
+      {
+        question: "What free currency exchange rate API powers this converter?",
+        answer:
+          "This converter uses the free Frankfurter API (api.frankfurter.dev) under the hood — a free, no-API-key exchange rate service powered by the European Central Bank reference rates, with about 30 currencies. It updates once daily around 16:00 CET. Frankfurter is open-source (github.com/lineofflight/frankfurter) and a popular free alternative to paid services like Open Exchange Rates or Fixer.io when you don't need crypto or minute-by-minute data.",
+      },
+      {
+        question: "Can I get the exchange rate data directly via an API?",
+        answer:
+          "Yes. The underlying data source is api.frankfurter.dev — call e.g. `https://api.frankfurter.dev/v1/latest?base=USD&symbols=EUR` to get USD→EUR. Historical data: `https://api.frankfurter.dev/v1/2024-01-01..` returns full daily timeseries. No API key needed, no rate limits for normal use. Free for commercial and personal use under the public-domain license.",
+      },
+      {
+        question: "How is this different from Wise, Revolut, or PayPal exchange?",
+        answer:
+          "Wise, Revolut, and PayPal show you the rate THEY will give you at the moment of transfer — including their markup over mid-market. This converter shows the unmarked mid-market reference rate. The difference between the two is the fee you're paying. For Wise it's typically 0.3-0.5%, for Revolut 0.5-2% on weekends, for PayPal 3-4%. Compare always.",
+      },
+      {
+        question: "Does this converter support cryptocurrencies?",
+        answer:
+          "Major fiat currencies (USD, EUR, GBP, JPY, INR, etc.) are covered with live updates. Crypto pairs (BTC, ETH, etc.) are supported on a slightly delayed basis when available — note that crypto markets trade 24/7 unlike forex, so rates fluctuate more rapidly than the daily-updated fiat rates. For active crypto trading, use a dedicated exchange's live feed.",
+      },
+      {
+        question: "What's a good free currency API alternative if Frankfurter is down?",
+        answer:
+          "Top free alternatives in 2026: ExchangeRate-API (1,500 free requests/month, requires key), Open Exchange Rates free tier (1,000/month, USD base only), Currency Beacon (5,000/month, requires key), and Currencylayer free tier (100/month). None are as no-strings as Frankfurter — most require an API key and rate-limit you. For most personal projects, Frankfurter is the right starting point.",
+      },
     ],
 
     relatedTools: [
       { name: "Timezone Converter", href: "/converters/timezone" },
       { name: "File Size Converter", href: "/converters/file-size" },
-      { name: "Finance Tools", href: "/finance-tools" },
+      { name: "Length Converter", href: "/converters/length" },
+      { name: "Temperature Converter", href: "/converters/temperature" },
+      { name: "PayPal Fee Calculator", href: "/finance-tools/paypal-fee" },
+      { name: "Tax Calculator", href: "/finance-tools/tax-calculator" },
+      { name: "Discount Calculator", href: "/finance-tools/discount-calculator" },
+      { name: "All Converters", href: "/converters" },
     ],
   },
 })
