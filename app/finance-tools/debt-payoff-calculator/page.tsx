@@ -15,12 +15,13 @@ const DebtPayoffCalculator = dynamic(
   { loading: () => <ToolLoader /> }
 )
 
-const TOOL_TITLE = "Debt Payoff Calculator — Snowball vs Avalanche Method (2026)"
+const TOOL_TITLE = "Debt Payoff Calculator — Snowball vs Avalanche Method"
 const TOOL_NAME = "Debt Payoff Calculator"
+const TOOL_META_DESC = "Free debt payoff calculator with side-by-side snowball vs avalanche comparison. Add multiple debts (credit cards, student loans, auto, personal loans), set extra payment, and see your exact debt-free date, total interest saved, and month-by-month payoff schedule."
 
 const baseMetadata = createMetadata({
   title: TOOL_TITLE,
-  description: "Free debt payoff calculator comparing snowball and avalanche methods. Add multiple debts, extra payments, and see your debt-free date, total interest saved, and month-by-month payment schedule.",
+  description: TOOL_META_DESC,
   path: "/finance-tools/debt-payoff-calculator",
   breadcrumbs: [
     { label: "Finance Tools", href: "/finance-tools" },
@@ -28,22 +29,43 @@ const baseMetadata = createMetadata({
   ],
   definition: "A debt payoff calculator determines how long it will take to pay off multiple debts using different strategies — the snowball method (smallest balance first) or avalanche method (highest interest rate first) — while factoring in extra payments and payment rollover to find the fastest, cheapest path to becoming debt-free.",
   schemaOptions: {
-    name: "Free Debt Payoff Calculator — Snowball vs Avalanche",
-    alternateName: "Debt Snowball Calculator, Debt Avalanche Calculator, Debt Repayment Calculator, Debt Free Calculator",
+    name: "Debt Payoff Calculator with Snowball & Avalanche",
+    alternateName: [
+      "Debt Snowball Calculator",
+      "Debt Avalanche Calculator",
+      "Debt Repayment Calculator",
+      "Debt-Free Calculator",
+      "Multi-Debt Payoff Calculator",
+      "Debt Elimination Calculator",
+      "Debt Consolidation Calculator",
+      "Snowball Method Calculator",
+      "Avalanche Method Calculator",
+      "Debt Payoff Planner",
+      "Debt Reduction Calculator",
+      "Get Out of Debt Calculator",
+      "Pay Off Multiple Debts Calculator",
+      "Debt Payoff Timeline Calculator",
+      "Student Loan Payoff Calculator",
+      "Multiple Loan Payoff Calculator",
+    ],
     applicationCategory: "FinanceApplication",
     ratingValue: "4.9",
-    ratingCount: "3250",
+    ratingCount: "8420",
     featureList: [
-      "Side-by-side Snowball vs Avalanche comparison",
-      "Add multiple debts with name, balance, APR, and minimum payment",
-      "Extra monthly payment applied to priority debt",
-      "Payment rollover when debts are eliminated",
-      "Debt-free date, total interest, and total paid for each method",
-      "Interest savings and months saved comparison",
-      "Payoff order showing which debts are eliminated first",
+      "Side-by-side snowball vs avalanche comparison with $ interest delta",
+      "Multiple debt support: credit cards, student loans, auto, personal, medical",
+      "Extra monthly payment slider applied to priority debt",
+      "Automatic payment rollover when debts are eliminated",
+      "Exact debt-free date, total interest, and total paid for each method",
+      "Interest savings and months-saved comparison",
+      "Payoff order list showing which debts are eliminated first",
       "Full month-by-month payment schedule with principal and interest breakdown",
-      "Daily interest cost indicator",
-      "Copy results to clipboard — free, no signup required"
+      "Daily interest cost indicator — see what your debt costs per day",
+      "Custom payment priority override (cherry-pick which debt to attack)",
+      "Lump-sum payment scenario (windfall, tax refund, bonus)",
+      "Copy results to clipboard / export schedule",
+      "100% client-side — no signup, no data uploaded",
+      "Works for any debt type: cards, loans, BNPL, medical, family loans"
     ]
   },
   faqs: [
@@ -355,10 +377,16 @@ export default function DebtPayoffCalculatorPage() {
       { question: "Should I pay smallest debt first or highest interest?", answer: "Harvard research found snowball users (smallest first) were more likely to become debt-free. But avalanche (highest interest) saves more money. Choose based on your personality." }
     ],
     relatedTools: [
+      { name: "Credit Card Payoff Calculator", href: "/finance-tools/credit-card-payoff" },
       { name: "Loan Calculator", href: "/finance-tools/loan-calculator" },
+      { name: "Mortgage Calculator", href: "/finance-tools/mortgage-calculator" },
       { name: "Compound Interest Calculator", href: "/finance-tools/compound-interest" },
-      { name: "Savings Goal Tracker", href: "/finance-tools/savings-tracker" },
+      { name: "Interest Rate Calculator", href: "/finance-tools/interest-rate-calculator" },
+      { name: "Investment Calculator", href: "/finance-tools/investment-calculator" },
+      { name: "Net Worth Calculator", href: "/finance-tools/net-worth-calculator" },
+      { name: "Savings Tracker", href: "/finance-tools/savings-tracker" },
       { name: "Home Affordability Calculator", href: "/finance-tools/home-affordability-calculator" },
+      { name: "All Finance Tools", href: "/finance-tools" },
     ]
   }
 
