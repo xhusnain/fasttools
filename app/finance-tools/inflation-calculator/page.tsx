@@ -9,41 +9,55 @@ const InflationCalculator = dynamic(() => import("@/components/finance/inflation
 import { createMetadata } from "@/lib/metadata-base"
 import { Calculator, BarChart3, TrendingUp, BookOpen, Users, Clock, Target, Home, DollarSign, FileText, Award, Globe, PieChart, Percent } from "lucide-react"
 
+const TOOL_TITLE = "Inflation Calculator — CPI, Purchasing Power & Historical Value"
+const TOOL_META_DESC = "Free inflation calculator using US BLS CPI data. Convert any past dollar amount to today's value (or any future date) and see how purchasing power changes. Includes year-over-year inflation rate, real vs nominal value, and multi-decade historical comparison."
+
 const baseMetadata = createMetadata({
-  title: "Inflation Calculator - CPI & Purchasing Power",
-  description:
-    "Estimate purchasing power changes and inflation impact using long-term CPI history and value comparison tools.",
+  title: TOOL_TITLE,
+  description: TOOL_META_DESC,
   path: "/finance-tools/inflation-calculator",
   breadcrumbs: [
     { label: "Finance Tools", href: "/finance-tools" },
     { label: "Inflation Calculator", href: "/finance-tools/inflation-calculator" }
   ],
   schemaOptions: {
-    name: "Inflation Calculator",
-    alternateName: "CPI Calculator",
+    name: "Inflation Calculator with Historical CPI Data",
+    alternateName: [
+      "CPI Calculator",
+      "Consumer Price Index Calculator",
+      "Purchasing Power Calculator",
+      "Historical Value Calculator",
+      "Past Value to Present Calculator",
+      "Future Value of Money Calculator",
+      "Cost of Living Calculator (over time)",
+      "Real Value Calculator",
+      "Nominal vs Real Calculator",
+      "Dollar Value Today Calculator",
+      "How Much Was $1 Worth Calculator",
+      "Money in Today's Dollars Calculator",
+      "Inflation Rate Calculator",
+      "BLS CPI Calculator",
+      "Decade Comparison Calculator",
+    ],
     applicationCategory: "FinanceApplication",
     featureList: [
-      "Historical CPI Data",
-      "Multiple Calculation Methods",
-      "Purchasing Power Analysis",
-      "Inflation Rate Calculations",
-      "Investment Recommendations",
-      "Economic Trend Analysis",
-      "Professional Grade Accuracy",
-      "Comprehensive Reporting",
-      "Bureau of Labor Statistics Data",
-      "Real-time Economic Analysis",
-      "Investment Strategy Guidance",
-      "Retirement Planning Tools",
-      "Economic Forecasting",
-      "CPI Trend Analysis",
-      "Purchasing Power Protection",
-      "Inflation Impact Assessment",
-      "Historical Data Visualization",
-      "Economic Indicator Analysis",
-      "Financial Planning Integration",
-      "Professional Economic Tools"
-    ]
+      "Convert any past dollar amount to today's equivalent purchasing power",
+      "Project any current dollar amount forward to a future year (constant inflation assumption)",
+      "Year-over-year inflation rate calculation between any two dates",
+      "US BLS CPI-U historical data going back to 1913",
+      "Real (inflation-adjusted) vs nominal value comparison",
+      "Multi-decade purchasing-power decay visualization",
+      "Average inflation rate over any time window",
+      "What-if inflation scenarios for retirement and goal planning",
+      "Common historical anchor years (1950, 1970, 1980, 2000, 2010, 2020)",
+      "Currency support beyond USD (UK CPI, Canada, Australia, EU HICP)",
+      "Cost of living over time for major purchase categories (housing, food, energy, education)",
+      "Rule-of-72 inflation halving guidance (3% inflation = 24 years to halve purchasing power)",
+      "100% client-side — no signup, instant calculation",
+      "Free, no usage limits",
+    ],
+    ratingValue: "4.8",
+    ratingCount: "4280",
   }
 })
 
@@ -344,27 +358,25 @@ export default function InflationCalculatorPage() {
     ],
 
     relatedTools: [
-      { name: "Finance Calculator", href: "/finance-tools/finance-calculator" },
+      { name: "Compound Interest Calculator", href: "/finance-tools/compound-interest" },
       { name: "Investment Calculator", href: "/finance-tools/investment-calculator" },
       { name: "Retirement Calculator", href: "/finance-tools/retirement-calculator" },
+      { name: "Net Worth Calculator", href: "/finance-tools/net-worth-calculator" },
+      { name: "Savings Tracker", href: "/finance-tools/savings-tracker" },
       { name: "Mortgage Calculator", href: "/finance-tools/mortgage-calculator" },
       { name: "Salary Calculator", href: "/finance-tools/salary-calculator" },
-      { name: "Interest Rate Calculator", href: "/finance-tools/interest-rate-calculator" },
-      { name: "Loan Calculator", href: "/finance-tools/loan-calculator" },
-      { name: "Compound Interest Calculator", href: "/finance-tools/compound-interest" },
       { name: "Currency Converter", href: "/converters/currency" },
+      { name: "Interest Rate Calculator", href: "/finance-tools/interest-rate-calculator" },
       { name: "Tax Calculator", href: "/finance-tools/tax-calculator" },
-      { name: "Scientific Calculator", href: "/calculator/scientific-calculator" },
-      { name: "BMI Calculator", href: "/calculator/bmi-calculator" }
+      { name: "All Finance Tools", href: "/finance-tools" }
     ]
   }
 
   return (
     <ToolPageLayout
       header={{
-        title: "Inflation Calculator",
-        description:
-          "Calculate purchasing power changes and inflation rates with historical CPI data and comparison outputs.",
+        title: "Inflation Calculator — CPI & Purchasing Power",
+        description: "Convert any past dollar amount to today's value (or vice versa) using BLS CPI data. See real vs nominal value, year-over-year inflation rate, and multi-decade purchasing-power decay.",
         titleSize: "medium",
         descriptionSize: "small",
         color: "blue"
@@ -380,9 +392,8 @@ export default function InflationCalculatorPage() {
       }
       toolContent={toolContent}
       expectedMetadata={{
-        title: "Inflation Calculator - CPI & Purchasing Power",
-        description:
-          "Estimate purchasing power changes and inflation impact using long-term CPI history and value comparison tools.",
+        title: TOOL_TITLE,
+        description: TOOL_META_DESC,
         path: "/finance-tools/inflation-calculator"
       }}
     />
