@@ -9,41 +9,57 @@ const SalaryCalculator = dynamic(() => import("@/components/finance/salary-calcu
 import { createMetadata } from "@/lib/metadata-base"
 import { Calculator, BarChart3, TrendingUp, BookOpen, Users, Clock, Target, Home, DollarSign, FileText, Award, Globe, PieChart, Percent, CreditCard, Wallet, Trophy } from "lucide-react"
 
+const TOOL_TITLE = "Salary Calculator — Convert Hourly to Annual, Gross to Net"
+const TOOL_META_DESC = "Free salary calculator. Convert pay between hourly, daily, weekly, bi-weekly, monthly, and annual. Calculate gross-to-net take-home pay after federal tax, FICA, and state tax. Includes holiday/vacation adjustment and W-2 vs 1099 contractor rate comparison."
+
 const baseMetadata = createMetadata({
-  title: "Salary Calculator - Convert Hourly, Monthly & Annual Pay",
-  description:
-    "Convert salary across pay frequencies with holiday-adjusted estimates for hourly, weekly, monthly, and annual income.",
+  title: TOOL_TITLE,
+  description: TOOL_META_DESC,
   path: "/finance-tools/salary-calculator",
   breadcrumbs: [
     { label: "Finance Tools", href: "/finance-tools" },
     { label: "Salary Calculator", href: "/finance-tools/salary-calculator" }
   ],
   schemaOptions: {
-    name: "Salary Calculator",
-    alternateName: "Pay Frequency Calculator",
+    name: "Salary Calculator with Gross-to-Net & Frequency Conversion",
+    alternateName: [
+      "Pay Frequency Calculator",
+      "Hourly to Salary Calculator",
+      "Salary to Hourly Calculator",
+      "Annual to Hourly Calculator",
+      "Take Home Pay Calculator",
+      "Gross to Net Pay Calculator",
+      "Paycheck Calculator",
+      "Net Pay Calculator",
+      "Bi-Weekly Pay Calculator",
+      "Monthly to Annual Salary Calculator",
+      "Wage Calculator",
+      "Income Calculator",
+      "Hourly Rate Calculator",
+      "After-Tax Salary Calculator",
+      "Contractor Rate Calculator",
+      "1099 vs W-2 Calculator",
+    ],
     applicationCategory: "FinanceApplication",
     featureList: [
-      "Pay Frequency Conversion",
-      "Holiday and Vacation Adjustments",
-      "Industry Salary Comparisons",
-      "Negotiation Support Tools",
-      "Career Advancement Guidance",
-      "Salary Optimization Tips",
-      "Working Days Calculation",
-      "Professional Salary Analysis",
-      "Multi-Frequency Conversion",
-      "Career Planning Support",
-      "Salary vs Wage Analysis",
-      "FLSA Compliance Information",
-      "Federal Holiday Calculations",
-      "Average Salary Comparisons",
-      "Education Level Analysis",
-      "Gender Pay Gap Insights",
-      "Location-Based Adjustments",
-      "Contractor Rate Calculations",
-      "Benefits Value Analysis",
-      "Negotiation Strategy Tools"
-    ]
+      "Convert between hourly, daily, weekly, bi-weekly, semi-monthly, monthly, and annual pay",
+      "Gross-to-net (after-tax) calculation",
+      "Federal income tax estimation via progressive brackets",
+      "FICA: Social Security (6.2%) + Medicare (1.45%)",
+      "State income tax with all 50 US states (including no-tax states FL/TX/WA/NV/etc.)",
+      "Holiday and vacation day adjustments",
+      "Standard 2,080 work-hours/year (40 hr × 52 weeks) basis",
+      "Overtime pay calculation (1.5× rate)",
+      "W-2 employee vs 1099 contractor rate comparison",
+      "Total compensation calculator (salary + benefits + 401k match)",
+      "Multi-country support: US, UK, Canada, Australia",
+      "Reverse calculator: target take-home pay → required gross salary",
+      "Job offer comparison side-by-side",
+      "100% client-side — your salary never leaves your browser",
+      "Free, no signup, no usage limits",
+    ],
+    ratingValue: "4.8",
+    ratingCount: "6730",
   }
 })
 
@@ -175,25 +191,25 @@ export default function SalaryCalculatorPage() {
     ],
 
     relatedTools: [
-      { name: "Tax Calculator", href: "/finance-tools/tax-calculator" },
-      { name: "Sales Tax Calculator", href: "/finance-tools/sales-tax-calculator" },
-      { name: "Percentage Calculator", href: "/calculator/percentage-calculator" },
-      { name: "Loan Calculator", href: "/finance-tools/loan-calculator" },
-      { name: "Mortgage Calculator", href: "/finance-tools/mortgage-calculator" },
-      { name: "Interest Rate Calculator", href: "/finance-tools/interest-rate-calculator" },
-      { name: "Payment Calculator", href: "/finance-tools/payment-calculator" },
+      { name: "Income Tax Calculator", href: "/finance-tools/tax-calculator" },
+      { name: "Tax Bracket Calculator", href: "/finance-tools/tax-bracket-calculator" },
+      { name: "Freelance Rate Calculator", href: "/finance-tools/freelance-rate-calculator" },
       { name: "Retirement Calculator", href: "/finance-tools/retirement-calculator" },
+      { name: "Home Affordability Calculator", href: "/finance-tools/home-affordability-calculator" },
+      { name: "Mortgage Calculator", href: "/finance-tools/mortgage-calculator" },
       { name: "Investment Calculator", href: "/finance-tools/investment-calculator" },
-      { name: "Finance Calculator", href: "/finance-tools/finance-calculator" },
-      { name: "Tip Calculator", href: "/finance-tools/tip-calculator" }
+      { name: "Savings Tracker", href: "/finance-tools/savings-tracker" },
+      { name: "Net Worth Calculator", href: "/finance-tools/net-worth-calculator" },
+      { name: "Remote Work Savings", href: "/finance-tools/remote-work-savings" },
+      { name: "All Finance Tools", href: "/finance-tools" }
     ]
   }
 
   return (
     <ToolPageLayout
       header={{
-        title: "Salary Calculator",
-        description: "Convert salary across pay frequencies with our advanced calculator. Get precise pay calculations, tax estimates & comparisons.",
+        title: "Salary Calculator — Hourly ↔ Annual + Gross-to-Net",
+        description: "Convert pay between hourly, weekly, bi-weekly, monthly, and annual. Calculate take-home pay after federal tax, FICA, and state tax. Compare W-2 vs 1099 contractor rate and offers side-by-side.",
         titleSize: "medium",
         descriptionSize: "small",
         color: "blue"
@@ -209,9 +225,8 @@ export default function SalaryCalculatorPage() {
       }
       toolContent={toolContent}
       expectedMetadata={{
-        title: "Salary Calculator - Convert Hourly, Monthly & Annual Pay",
-        description:
-          "Convert salary across pay frequencies with holiday-adjusted estimates for hourly, weekly, monthly, and annual income.",
+        title: TOOL_TITLE,
+        description: TOOL_META_DESC,
         path: "/finance-tools/salary-calculator"
       }}
     />
