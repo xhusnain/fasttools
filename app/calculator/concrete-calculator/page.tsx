@@ -425,11 +425,123 @@ export default function ConcreteCalculatorPage() {
                 <div className="min-w-6 h-6 rounded-full bg-destructive/10 flex items-center justify-center text-destructive font-bold text-xs">!</div>
                 <div>
                   <strong className="text-foreground block mb-1">Ignoring Ground Slope</strong>
-                  If your ground isn't perfectly level, your slab thickness will vary. Measure the depth at multiple points and use the average, or better yet, grade the soil properly before pouring.
+                  If your ground isn&apos;t perfectly level, your slab thickness will vary. Measure the depth at multiple points and use the average, or better yet, grade the soil properly before pouring.
                 </div>
               </li>
             </ul>
           </div>
+        </article>
+
+        <article className="space-y-4">
+          <h2 className="text-2xl font-bold text-foreground flex items-center gap-2">
+            <DollarSign className="h-6 w-6 text-primary" />
+            Concrete Slab Cost Calculator (2026 Prices)
+          </h2>
+          <p className="text-base text-muted-foreground leading-relaxed">
+            How much will your concrete slab actually cost? In 2026, the average price for ready-mix concrete in the US is <strong>$125–$165 per cubic yard delivered</strong>. For bagged DIY work, an 80-lb bag of Quikrete runs <strong>~$6</strong>. The installed total (concrete + labor + finishing) usually lands at <strong>$6–$12 per square foot</strong>. Use the table below for quick slab-cost estimates at a standard 4&quot; thickness; for non-standard thickness multiply the per-sq-ft cost by (thickness ÷ 4).
+          </p>
+          <div className="overflow-x-auto">
+            <GTable>
+              <thead className="bg-muted text-foreground font-semibold">
+                <tr>
+                  <th className="p-3 text-left">Slab size (4&quot; thick)</th>
+                  <th className="p-3 text-left">Cubic yards</th>
+                  <th className="p-3 text-left">Ready-mix delivered ($145/yd³)</th>
+                  <th className="p-3 text-left">Bagged DIY (80-lb @ $6)</th>
+                  <th className="p-3 text-left">Installed total ($9/sq ft)</th>
+                </tr>
+              </thead>
+              <tbody className="divide-y divide-border text-sm">
+                <tr><td className="p-3 font-semibold">10 × 10 ft (100 sq ft)</td><td className="p-3">1.23</td><td className="p-3">$178</td><td className="p-3">~55 bags × $6 = $330</td><td className="p-3">$900</td></tr>
+                <tr><td className="p-3 font-semibold">12 × 12 ft (144 sq ft)</td><td className="p-3">1.78</td><td className="p-3">$258</td><td className="p-3">~80 bags × $6 = $480</td><td className="p-3">$1,296</td></tr>
+                <tr><td className="p-3 font-semibold">16 × 16 ft (256 sq ft)</td><td className="p-3">3.16</td><td className="p-3">$458</td><td className="p-3">~141 bags × $6 = $846</td><td className="p-3">$2,304</td></tr>
+                <tr><td className="p-3 font-semibold">20 × 20 ft (400 sq ft)</td><td className="p-3">4.94</td><td className="p-3">$716</td><td className="p-3">~221 bags × $6 = $1,326</td><td className="p-3">$3,600</td></tr>
+                <tr><td className="p-3 font-semibold">24 × 24 ft (576 sq ft, 2-car garage)</td><td className="p-3">7.11</td><td className="p-3">$1,031</td><td className="p-3">~318 bags × $6 = $1,908</td><td className="p-3">$5,184</td></tr>
+                <tr><td className="p-3 font-semibold">30 × 30 ft (900 sq ft)</td><td className="p-3">11.11</td><td className="p-3">$1,611</td><td className="p-3">~498 bags × $6 = $2,988</td><td className="p-3">$8,100</td></tr>
+              </tbody>
+            </GTable>
+          </div>
+          <p className="text-base text-muted-foreground leading-relaxed">
+            <strong>Cost-saving tips:</strong> Below 1 cubic yard, bagged concrete is often cheaper than the delivery minimum + short-load fee from ready-mix suppliers. Above 2 cubic yards, ready-mix wins on both cost and labor time. The break-even point is around 1.5 cubic yards — use this calculator&apos;s bag-count output to compare directly before ordering.
+          </p>
+        </article>
+
+        <article className="space-y-4">
+          <h2 className="text-2xl font-bold text-foreground flex items-center gap-2">
+            <Ruler className="h-6 w-6 text-primary" />
+            Standard Slab Thickness by Project Type
+          </h2>
+          <div className="overflow-x-auto">
+            <GTable>
+              <thead className="bg-muted text-foreground font-semibold">
+                <tr>
+                  <th className="p-3 text-left">Project</th>
+                  <th className="p-3 text-left">Recommended thickness</th>
+                  <th className="p-3 text-left">PSI</th>
+                  <th className="p-3 text-left">Notes</th>
+                </tr>
+              </thead>
+              <tbody className="divide-y divide-border text-sm">
+                <tr><td className="p-3 font-semibold">Patio / walkway / sidewalk</td><td className="p-3">4&quot;</td><td className="p-3">3,000</td><td className="p-3">Add 4&quot; compacted gravel subbase</td></tr>
+                <tr><td className="p-3 font-semibold">Residential driveway</td><td className="p-3">4–5&quot;</td><td className="p-3">3,500–4,000</td><td className="p-3">5&quot; if heavy vehicles (trucks, RVs)</td></tr>
+                <tr><td className="p-3 font-semibold">Garage floor</td><td className="p-3">4–6&quot;</td><td className="p-3">4,000</td><td className="p-3">6&quot; if used for storage/lifting</td></tr>
+                <tr><td className="p-3 font-semibold">Hot tub / heavy equipment pad</td><td className="p-3">6–8&quot;</td><td className="p-3">4,000–5,000</td><td className="p-3">Reinforce with rebar grid</td></tr>
+                <tr><td className="p-3 font-semibold">House foundation slab</td><td className="p-3">4&quot; + 12&quot; perimeter beam</td><td className="p-3">4,000</td><td className="p-3">Check local frost line depth</td></tr>
+                <tr><td className="p-3 font-semibold">Shed / outbuilding</td><td className="p-3">4&quot;</td><td className="p-3">3,000</td><td className="p-3">Add &quot;turn-down&quot; thickened edge</td></tr>
+              </tbody>
+            </GTable>
+          </div>
+        </article>
+
+        <article className="space-y-4">
+          <h2 className="text-2xl font-bold text-foreground flex items-center gap-2">
+            <Award className="h-6 w-6 text-primary" />
+            FastTools vs Other Free Concrete Calculators
+          </h2>
+          <div className="overflow-x-auto">
+            <GTable>
+              <thead className="bg-muted text-foreground font-semibold">
+                <tr>
+                  <th className="p-3 text-left">Feature</th>
+                  <th className="p-3 text-left text-green-600">FastTools</th>
+                  <th className="p-3 text-left">Calculator.net</th>
+                  <th className="p-3 text-left">ConcreteNetwork</th>
+                  <th className="p-3 text-left">CostFlowAI</th>
+                </tr>
+              </thead>
+              <tbody className="divide-y divide-border text-sm">
+                <tr><td className="p-3 font-semibold">Cubic yards output</td><td className="p-3 text-green-600">✓</td><td className="p-3">✓</td><td className="p-3">✓</td><td className="p-3">✓</td></tr>
+                <tr><td className="p-3 font-semibold">Bag counts (40 / 60 / 80 lb)</td><td className="p-3 text-green-600">all three</td><td className="p-3">all three</td><td className="p-3">all three</td><td className="p-3">80 lb only</td></tr>
+                <tr><td className="p-3 font-semibold">Slab cost estimate</td><td className="p-3 text-green-600">2026 prices</td><td className="p-3 text-red-500">✗</td><td className="p-3">range</td><td className="p-3 text-green-600">ZIP-aware</td></tr>
+                <tr><td className="p-3 font-semibold">Material breakdown (cement/sand/gravel)</td><td className="p-3 text-green-600">✓</td><td className="p-3 text-red-500">✗</td><td className="p-3 text-red-500">✗</td><td className="p-3">partial</td></tr>
+                <tr><td className="p-3 font-semibold">Stairs / curb / column / footing</td><td className="p-3 text-green-600">all</td><td className="p-3 text-green-600">all</td><td className="p-3">slab + footing</td><td className="p-3">slab + footing</td></tr>
+                <tr><td className="p-3 font-semibold">Waste-factor input</td><td className="p-3 text-green-600">✓</td><td className="p-3 text-red-500">✗</td><td className="p-3 text-red-500">✗</td><td className="p-3">10% default</td></tr>
+                <tr><td className="p-3 font-semibold">Free, no signup</td><td className="p-3 text-green-600">✓</td><td className="p-3">✓</td><td className="p-3">✓</td><td className="p-3">free tier</td></tr>
+              </tbody>
+            </GTable>
+          </div>
+        </article>
+
+        <article className="space-y-4">
+          <h2 className="text-2xl font-bold text-foreground flex items-center gap-2">
+            <ClipboardCheck className="h-6 w-6 text-primary" />
+            The Same Tool, Many Names
+          </h2>
+          <p className="text-base text-muted-foreground leading-relaxed">
+            This calculator handles every concrete-estimation query — whether you call it a calculator, estimator, or cost tool:
+          </p>
+          <ul className="grid grid-cols-1 md:grid-cols-2 gap-3 text-sm">
+            <li className="flex items-start gap-2"><CheckCircle className="h-4 w-4 text-green-500 mt-0.5 flex-shrink-0" /><span>concrete calculator / concrete estimator / cement calculator</span></li>
+            <li className="flex items-start gap-2"><CheckCircle className="h-4 w-4 text-green-500 mt-0.5 flex-shrink-0" /><span>concrete slab calculator / concrete slab cost calculator</span></li>
+            <li className="flex items-start gap-2"><CheckCircle className="h-4 w-4 text-green-500 mt-0.5 flex-shrink-0" /><span>concrete yards calculator / concrete cubic yards calculator</span></li>
+            <li className="flex items-start gap-2"><CheckCircle className="h-4 w-4 text-green-500 mt-0.5 flex-shrink-0" /><span>concrete bag calculator / bag count calculator</span></li>
+            <li className="flex items-start gap-2"><CheckCircle className="h-4 w-4 text-green-500 mt-0.5 flex-shrink-0" /><span>concrete cost calculator / concrete price calculator</span></li>
+            <li className="flex items-start gap-2"><CheckCircle className="h-4 w-4 text-green-500 mt-0.5 flex-shrink-0" /><span>driveway concrete calculator / patio concrete calculator</span></li>
+            <li className="flex items-start gap-2"><CheckCircle className="h-4 w-4 text-green-500 mt-0.5 flex-shrink-0" /><span>sidewalk concrete calculator / curb concrete calculator</span></li>
+            <li className="flex items-start gap-2"><CheckCircle className="h-4 w-4 text-green-500 mt-0.5 flex-shrink-0" /><span>foundation / footing / column concrete calculator</span></li>
+            <li className="flex items-start gap-2"><CheckCircle className="h-4 w-4 text-green-500 mt-0.5 flex-shrink-0" /><span>stair / step concrete calculator</span></li>
+            <li className="flex items-start gap-2"><CheckCircle className="h-4 w-4 text-green-500 mt-0.5 flex-shrink-0" /><span>how much concrete do I need calculator</span></li>
+          </ul>
         </article>
       </div>
     ),
@@ -582,16 +694,16 @@ export default function ConcreteCalculatorPage() {
     ],
 
     relatedTools: [
-      { name: "Mortgage Calculator", href: "/finance-tools/mortgage-calculator" },
-      { name: "Loan Calculator", href: "/finance-tools/loan-calculator" },
-      { name: "Tax Calculator", href: "/finance-tools/tax-calculator" },
-      { name: "Percentage Calculator", href: "/calculator/percentage-calculator" },
-      { name: "BMI Calculator", href: "/calculator/bmi-calculator" },
-      { name: "Age Calculator", href: "/calculator/age-calculator" },
-      { name: "Time Duration", href: "/calculator/time-duration" },
+      { name: "Conversion Calculator (units)", href: "/calculator/conversion-calculator" },
+      { name: "Triangle Calculator (geometry)", href: "/calculator/triangle-calculator" },
+      { name: "Fraction Calculator", href: "/calculator/fraction-calculator" },
+      { name: "Mortgage Calculator (home project loan)", href: "/finance-tools/mortgage-calculator" },
+      { name: "Home Affordability Calculator", href: "/finance-tools/home-affordability-calculator" },
+      { name: "Loan Calculator (construction)", href: "/finance-tools/loan-calculator" },
+      { name: "Discount Calculator (material savings)", href: "/finance-tools/discount-calculator" },
+      { name: "Length Converter (ft, m, in)", href: "/converters/length" },
       { name: "Scientific Calculator", href: "/calculator/scientific-calculator" },
-      { name: "Investment Calculator", href: "/finance-tools/investment-calculator" },
-      { name: "Retirement Calculator", href: "/finance-tools/retirement-calculator" }
+      { name: "All Calculators", href: "/calculator" }
     ]
   }
 
