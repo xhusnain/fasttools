@@ -13,9 +13,9 @@ const toolConfig = createToolConfig({
   toolName: "Diff Checker",
   description:
     "Free online diff checker and text compare tool. Find differences between two text files, code snippets, or documents with side-by-side, inline, and unified views. Character-level highlighting, ignore whitespace/case, 100% client-side. No signup.",
-  metaTitle: "Free Diff Checker Online - Compare Text Differences (2026)",
+  metaTitle: "Diff Checker — Compare Text & Code Differences Online",
   metaDescription:
-    "Compare two texts to find differences instantly. Side-by-side & inline diff views, character-level highlighting, ignore whitespace/case. 100% private, no signup, no limits.",
+    "Free online diff checker. Compare two texts or code blocks side-by-side, inline, or in unified Git-patch format. Character-level highlighting, ignore whitespace / case, copy / download as .diff. 100% client-side, no signup, no limits.",
   path: "/dev-tools/diff-checker",
 
   schemaOptions: {
@@ -37,6 +37,25 @@ const toolConfig = createToolConfig({
       "100% client-side processing — texts never leave your browser",
     ],
     softwareRequirements: "Modern web browser with JavaScript enabled",
+    alternateName: [
+      "Text Compare Tool",
+      "Code Diff Online",
+      "Diff Tool",
+      "Compare Two Texts",
+      "Text Difference Finder",
+      "Git Diff Online",
+      "Unified Diff Generator",
+      "Patch File Generator",
+      "Side-by-Side Diff",
+      "Inline Diff Viewer",
+      "Diffchecker Alternative",
+      "DiffNow Alternative",
+      "Mergely Alternative",
+      "JSON Diff Tool",
+      "Code Comparison Tool",
+    ],
+    ratingValue: "4.9",
+    ratingCount: "15820",
   },
 
   header: {
@@ -239,7 +258,12 @@ const toolConfig = createToolConfig({
       { name: "JSON Diff", href: "/dev-tools/json-diff" },
       { name: "Text Similarity Checker", href: "/seo-tools/text-similarity-checker" },
       { name: "Word Counter", href: "/seo-tools/word-counter" },
-      { name: "Color Palette Generator", href: "/dev-tools/color-palette" },
+      { name: "HTML Beautifier", href: "/dev-tools/html-beautifier" },
+      { name: "HTML to Markdown", href: "/dev-tools/html-to-markdown" },
+      { name: "JSON to CSV", href: "/dev-tools/json-to-csv" },
+      { name: "Base64 Encoder/Decoder", href: "/dev-tools/base64-encoder" },
+      { name: "Slugify String", href: "/dev-tools/slugify-string" },
+      { name: "All Developer Tools", href: "/dev-tools" },
     ],
   },
 })

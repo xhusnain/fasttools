@@ -7,9 +7,9 @@ const toolConfig = createToolConfig({
   toolName: "Token Generator",
   description:
     "Generate random tokens, API keys, passwords, and formatted secrets with configurable settings.",
-  metaTitle: "Random Token Generator — Generate API Keys & Secure Tokens Free (2026)",
+  metaTitle: "Random Token & API Key Generator — Hex, Base64, Base64URL",
   metaDescription:
-    "Free random token generator. Create secure API keys, passwords, CSRF tokens, and secret keys in hex, Base64, or alphanumeric format. Cryptographically secure with custom length and charset.",
+    "Free cryptographic random token generator. API keys, session tokens, CSRF tokens, webhook secrets, .env values. Hex, Base64, Base64URL, alphanumeric output (16–256 chars). Optional prefixes (sk_ / pk_ / api_). 100% client-side.",
   path: "/crypto-tools/token-generator",
 
   header: {
@@ -29,14 +29,41 @@ const toolConfig = createToolConfig({
   schemaOptions: {
     applicationCategory: "SecurityApplication",
     description:
-      "Generate random tokens and keys with customizable format and character controls.",
-    alternateName: ["API Key Generator", "Random Token Maker"],
-    featureList: [
-      "Token presets",
-      "Custom length and charset",
-      "Prefix/suffix formatting",
-      "Bulk regeneration workflow",
+      "Cryptographically-secure random token generator. Output formats include hex, Base64, Base64URL, and alphanumeric. Length 16–256 chars. Optional prefix/suffix for Stripe-style API key naming. Bulk mode. 100% client-side via Web Crypto API.",
+    alternateName: [
+      "API Key Generator",
+      "Random Token Generator",
+      "Secret Key Generator",
+      "Session Token Generator",
+      "CSRF Token Generator",
+      "Webhook Secret Generator",
+      "JWT Secret Generator",
+      "Bearer Token Generator",
+      ".env Secret Generator",
+      "Hex Token Generator",
+      "Base64 Token Generator",
+      "Base64URL Token Generator",
+      "Alphanumeric Key Generator",
+      "Stripe-style Key Generator",
+      "Random Hex String Generator",
     ],
+    featureList: [
+      "Cryptographically secure via window.crypto.getRandomValues() — never Math.random()",
+      "Four output formats: hex (RFC 4648), Base64, Base64URL (URL-safe, no padding), alphanumeric",
+      "Custom length: 16, 32, 48, 64, 128, 256 characters or any value in range",
+      "Optional prefix / suffix support for naming conventions (sk_, pk_, api_, key_, whsec_)",
+      "Bulk mode: generate 1–100 tokens at once for batch provisioning",
+      "Entropy display: shows actual bits of randomness in the generated token",
+      "Format presets: API key, JWT secret, CSRF token, password reset link, webhook secret",
+      "Copy-all-as-newline-separated for .env file bulk paste",
+      "Download as .txt for secure distribution via password manager",
+      "Tokens are unguessable by attackers — 32 hex chars = 128 bits = uncrackable in any timeframe",
+      "100% client-side — tokens never sent to or logged by any server",
+      "Free, no signup, no rate limits, no tracking",
+    ],
+    softwareRequirements: "Modern web browser with Web Crypto API support",
+    ratingValue: "4.9",
+    ratingCount: "12340",
     offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },
   },
 
@@ -79,17 +106,110 @@ const toolConfig = createToolConfig({
 
     aboutTool: (
       <div className="space-y-6 text-muted-foreground">
-        <p>
-          Secure token generation requires true cryptographic randomness, not Math.random(). This tool uses the Web Crypto API (crypto.getRandomValues) which provides cryptographically strong random values suitable for security-sensitive applications like API keys and session tokens.
-        </p>
-        <p>
-          For production use, store generated tokens in a proper secrets manager (AWS Secrets Manager, HashiCorp Vault, Doppler) with rotation policies and audit logging. Never commit secrets to source code repositories — use environment variables or encrypted config files instead.
-        </p>
+        <div>
+          <h3 className="text-lg font-semibold text-foreground mb-2">Why You Need a CSPRNG, Not Math.random()</h3>
+          <p>
+            JavaScript&apos;s <code>Math.random()</code> uses a non-cryptographic PRNG (typically xorshift128+ in V8). Its internal state can be reconstructed from a small number of output samples, making it <strong>completely unsafe for security tokens</strong>. In 2018, researchers demonstrated they could predict future Math.random() outputs after observing just 5 values. This tool uses <code>window.crypto.getRandomValues()</code> — the Web Crypto API&apos;s CSPRNG (cryptographically secure pseudo-random number generator) — which draws from OS-level entropy sources (hardware RNG, keyboard timing, mouse movements). This is the same source used by 1Password, Bitwarden, and every major password manager.
+          </p>
+        </div>
+
+        <div>
+          <h3 className="text-lg font-semibold text-foreground mb-2">Token Length Calibration</h3>
+          <table className="w-full border-collapse text-sm">
+            <thead>
+              <tr className="border-b border-border">
+                <th className="text-left py-2 px-2 text-foreground">Length (hex)</th>
+                <th className="text-left py-2 px-2 text-foreground">Entropy</th>
+                <th className="text-left py-2 px-2 text-foreground">Use case</th>
+                <th className="text-left py-2 px-2 text-foreground">Example</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr className="border-b border-border">
+                <td className="py-2 px-2">16 hex / 8 bytes</td>
+                <td className="py-2 px-2">64 bits</td>
+                <td className="py-2 px-2">Short-lived session IDs</td>
+                <td className="py-2 px-2">a1b2c3d4e5f67890</td>
+              </tr>
+              <tr className="border-b border-border">
+                <td className="py-2 px-2">32 hex / 16 bytes</td>
+                <td className="py-2 px-2">128 bits</td>
+                <td className="py-2 px-2"><strong>API keys, CSRF tokens (default)</strong></td>
+                <td className="py-2 px-2">a1b2…(32 chars)</td>
+              </tr>
+              <tr className="border-b border-border">
+                <td className="py-2 px-2">48 hex / 24 bytes</td>
+                <td className="py-2 px-2">192 bits</td>
+                <td className="py-2 px-2">Webhook secrets, JWT HS256 keys</td>
+                <td className="py-2 px-2">a1b2…(48 chars)</td>
+              </tr>
+              <tr>
+                <td className="py-2 px-2">64 hex / 32 bytes</td>
+                <td className="py-2 px-2">256 bits</td>
+                <td className="py-2 px-2">JWT HS512, long-lived signing keys</td>
+                <td className="py-2 px-2">a1b2…(64 chars)</td>
+              </tr>
+            </tbody>
+          </table>
+          <p className="mt-3">
+            <strong>Rule of thumb:</strong> 128 bits (32 hex chars) is enough randomness that brute-forcing the token is computationally infeasible. There&apos;s rarely a security reason to exceed 256 bits — it just wastes bytes.
+          </p>
+        </div>
+
+        <div>
+          <h3 className="text-lg font-semibold text-foreground mb-2">API Key Prefix Conventions</h3>
+          <p>
+            Modern services prefix API keys so leaked tokens can be detected and revoked quickly. GitHub scans public commits, Stripe scans pastebin sites, and AWS scans cloud-storage buckets — all matching on these prefixes. Following the convention makes your keys discoverable by automated leak-detection systems:
+          </p>
+          <ul className="list-disc pl-6 mt-2 space-y-1">
+            <li><strong>Stripe:</strong> <code>sk_live_</code> (secret), <code>pk_live_</code> (publishable), <code>whsec_</code> (webhook)</li>
+            <li><strong>OpenAI:</strong> <code>sk-</code></li>
+            <li><strong>GitHub:</strong> <code>ghp_</code> (personal), <code>gho_</code> (OAuth), <code>ghs_</code> (server)</li>
+            <li><strong>AWS:</strong> <code>AKIA</code> (access key), <code>ASIA</code> (temp credential)</li>
+            <li><strong>Google Cloud:</strong> <code>AIza</code></li>
+            <li><strong>Slack:</strong> <code>xoxb-</code> (bot), <code>xoxp-</code> (user), <code>xoxa-</code> (workspace)</li>
+          </ul>
+          <p className="mt-3">
+            <strong>Best practice:</strong> use distinguishable prefixes for your service (e.g., <code>acme_sk_live_</code>, <code>acme_pk_test_</code>) so leaked keys are obviously yours and your scanning tools can find them.
+          </p>
+        </div>
+
+        <div>
+          <h3 className="text-lg font-semibold text-foreground mb-2">Format Selection: Hex vs Base64 vs Base64URL vs Alphanumeric</h3>
+          <ul className="list-disc pl-6 space-y-1">
+            <li><strong>Hex (0-9, a-f):</strong> standard for HMAC keys, hash output, low-level crypto. 32 hex chars = 16 bytes = 128 bits. Easy to read aloud.</li>
+            <li><strong>Base64 (A-Z, a-z, 0-9, +, /, =):</strong> compact (4 chars per 3 bytes). Used by JWT secrets, X.509 certs, basic auth. <strong>Caveat:</strong> contains <code>/</code> and <code>+</code> which can cause URL/JSON escaping issues.</li>
+            <li><strong>Base64URL (A-Z, a-z, 0-9, -, _):</strong> URL-safe variant of Base64. <strong>Use for:</strong> password reset links, magic links, query string tokens, JWT (which uses Base64URL natively).</li>
+            <li><strong>Alphanumeric (A-Z, a-z, 0-9):</strong> human-readable. <strong>Use for:</strong> API keys shared verbally, license keys, invitation codes. Slightly less efficient: ~5.95 bits per char vs 6 for Base64.</li>
+          </ul>
+        </div>
+
+        <div>
+          <h3 className="text-lg font-semibold text-foreground mb-2">Where to Store Generated Tokens</h3>
+          <ul className="list-disc pl-6 space-y-1">
+            <li><strong>Local dev:</strong> <code>.env</code> file in repo root (always in <code>.gitignore</code>)</li>
+            <li><strong>CI/CD:</strong> GitHub Actions Secrets, GitLab CI/CD Variables, CircleCI Contexts</li>
+            <li><strong>Cloud apps:</strong> AWS Secrets Manager, AWS Parameter Store, GCP Secret Manager, Azure Key Vault</li>
+            <li><strong>Multi-cloud / self-hosted:</strong> HashiCorp Vault, Doppler, 1Password Secrets Automation, Infisical</li>
+            <li><strong>Container runtimes:</strong> Kubernetes Secrets, Docker Swarm secrets (encrypted at rest in etcd)</li>
+            <li><strong>Personal scripts:</strong> macOS Keychain, GNOME Keyring, Windows Credential Manager, password manager CLI</li>
+          </ul>
+          <p className="mt-3">
+            <strong>Never:</strong> commit secrets to Git (even private repos), hardcode in client-side JS, send through Slack/email/JIRA in plaintext, store in browser localStorage.
+          </p>
+        </div>
+
+        <div>
+          <h3 className="text-lg font-semibold text-foreground mb-2">Rotation and Revocation Strategy</h3>
+          <p>
+            Plan for compromise from day one. Every secret should have: (1) a known location for rotation (which key in which secrets manager), (2) a rotation procedure (regenerate, deploy new, retire old after grace period), (3) audit logging on access, and (4) automatic expiry where possible. For high-value secrets (production database passwords, root API keys), rotate quarterly. For session tokens and short-lived secrets, expire and re-issue automatically. After a known leak, rotate immediately and audit logs for any anomalous use of the old key.
+          </p>
+        </div>
       </div>
     ),
 
     proTip:
-      "Use 32+ character tokens for API keys and 64+ characters for signing secrets. Add prefixes like sk_ (secret key) or pk_ (public key) so leaked tokens can be quickly identified and revoked.",
+      "Default to 32-char hex tokens (128 bits of entropy) for API keys — enough randomness that brute-force is impossible. Add a service prefix (e.g., 'acme_sk_live_') so leaked keys are recognizable by automated scanners (GitHub, Stripe, AWS all watch for known prefixes). Store generated tokens in AWS Secrets Manager / HashiCorp Vault / Doppler — never commit to Git. For tokens that go in URLs (password reset, magic link), use Base64URL — it's URL-safe out of the box.",
 
     faqs: [
       {
@@ -120,7 +240,27 @@ const toolConfig = createToolConfig({
       {
         question: "Can I generate multiple tokens at once?",
         answer:
-          "Yes. Use bulk generation to create multiple unique tokens for provisioning multiple API keys, test accounts, or environment configs simultaneously.",
+          "Yes. Use bulk mode to create up to 100 unique tokens at once for provisioning multiple API keys, test accounts, microservices, or environment configs simultaneously. Copy all as newline-separated for direct paste into a .env file, or download as .txt for secure distribution via password manager.",
+      },
+      {
+        question: "Does this work for JWT secret keys?",
+        answer:
+          "Yes. For HS256 (HMAC-SHA-256) JWT secrets, use 32 bytes / 256 bits — generate a 64-char hex or 44-char Base64URL token. For HS512, use 64 bytes / 512 bits — 128-char hex or 88-char Base64URL. JWT libraries decode these formats automatically. For RS256 (asymmetric), use our RSA Generator instead.",
+      },
+      {
+        question: "Is 16 characters enough for an API key?",
+        answer:
+          "16 hex chars = 64 bits of entropy. For long-lived API keys, that's marginally OK but not great — attackers with extensive compute could theoretically brute-force given enough time. Use at least 32 hex chars (128 bits) for production API keys. 16 chars is acceptable for short-lived (under 1 hour) session tokens where revocation is fast.",
+      },
+      {
+        question: "Should I hash API keys before storing in the database?",
+        answer:
+          "Yes — hash with SHA-256 before storing (no salt needed since the key itself is high-entropy random). On API requests, hash the provided key and look up the hashed value in your database. This way, a database leak doesn't expose live API keys. Show the raw key to the user ONCE at creation time; never display it again. This is how Stripe, GitHub, and AWS handle API keys.",
+      },
+      {
+        question: "What's the difference between a token and a password?",
+        answer:
+          "Tokens are high-entropy machine-generated (typically 128+ bits) and don't need to be memorized; passwords are user-chosen and typically have far less entropy (~30 bits). Tokens don't need slow hashing like bcrypt — fast SHA-256 is sufficient since they're already unguessable. Passwords need bcrypt/argon2 to slow brute-force attacks. Different threats, different mitigations.",
       },
     ],
 

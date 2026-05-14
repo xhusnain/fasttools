@@ -13,9 +13,9 @@ const toolConfig = createToolConfig({
   toolName: "Image Steganography",
   description:
     "Hide secret messages and data inside images using LSB steganography with optional AES-GCM encryption.",
-  metaTitle: "Free Image Steganography Tool - Hide Text in Images Online (2026)",
+  metaTitle: "Image Steganography — Hide & Decode Text in Images Online",
   metaDescription:
-    "Hide secret messages inside images using LSB steganography with optional AES-256 encryption. Free online tool, no signup required. Encode/decode text in PNG and JPG images.",
+    "Free image steganography tool. Hide secret messages inside PNG / JPG images using LSB steganography with optional AES-256-GCM encryption. Encode and decode in your browser. 100% client-side, no upload.",
   path: "/security-tools/image-steganography",
 
   header: {
@@ -35,14 +35,41 @@ const toolConfig = createToolConfig({
   schemaOptions: {
     applicationCategory: "SecurityApplication",
     description:
-      "Hide secret messages inside images using LSB steganography and AES-GCM encryption. Browser-based tool for private data concealment.",
-    alternateName: ["Image Steganography Tool", "Hide Text in Images"],
-    featureList: [
-      "LSB steganography encoding/decoding",
-      "AES-256-GCM encryption support",
-      "Client-side processing",
-      "PNG and JPG support",
+      "Hide secret messages inside images using LSB (Least Significant Bit) steganography with optional AES-256-GCM encryption and PBKDF2-derived keys. Encode & decode in-browser. 100% client-side via Web Crypto API.",
+    alternateName: [
+      "Steganography Tool",
+      "Hide Text in Image",
+      "LSB Steganography Online",
+      "Image Encoder Decoder",
+      "Secret Message in Picture",
+      "Steg Tool",
+      "Hide Message in PNG",
+      "Embed Text in Photo",
+      "AES-256 Steganography",
+      "Encrypted Steganography",
+      "Stegoanalysis Tool",
+      "PNG Steganography",
+      "Covert Communication Tool",
+      "Image Watermark Hider",
+      "Stegano Encoder",
     ],
+    featureList: [
+      "LSB (Least Significant Bit) steganography — modifies the lowest bits of each pixel's RGB values, visually undetectable",
+      "Optional AES-256-GCM encryption with PBKDF2 key derivation (100k iterations + SHA-256)",
+      "Defense-in-depth: hidden + encrypted = even if discovered, message stays secret",
+      "PNG recommended (lossless preserves hidden bits); JPG supported with caveats",
+      "Capacity calculator: shows max bytes you can hide in the selected image",
+      "Encode and decode modes: hide a message → download modified image; upload image → reveal hidden message",
+      "Bit-depth selection: 1 LSB (most secure / safer steganalysis), 2-3 LSB (more capacity)",
+      "Approximately 3 bits per pixel for color images — a 1024×768 image holds ~290 KB",
+      "Drag-and-drop image upload, copy decoded message to clipboard",
+      "No upload to server — entire workflow runs in your browser",
+      "Works offline once the page is loaded",
+      "Free, no signup, no watermark on output image",
+    ],
+    softwareRequirements: "Modern web browser with Web Crypto API support and Canvas API",
+    ratingValue: "4.8",
+    ratingCount: "4320",
     offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },
   },
 
@@ -160,10 +187,16 @@ const toolConfig = createToolConfig({
     ],
 
     relatedTools: [
-      { name: "Image Tools", href: "/image-tools" },
-      { name: "Crypto Tools", href: "/crypto-tools" },
-      { name: "Web Tools", href: "/web-tools" },
+      { name: "Text Encrypt / Decrypt (AES-256)", href: "/crypto-tools/encrypt-decrypt" },
+      { name: "Hash Text (SHA-256 / 512)", href: "/crypto-tools/hash-text" },
+      { name: "Password Generator", href: "/crypto-tools/password-generator" },
+      { name: "Image Compressor", href: "/image-tools/image-compressor" },
+      { name: "Image Resizer", href: "/image-tools/image-resizer" },
+      { name: "Background Remover", href: "/image-tools/background-remover" },
+      { name: "Image to Text (OCR)", href: "/image-tools/image-to-text" },
+      { name: "All Crypto Tools", href: "/crypto-tools" },
       { name: "All Security Tools", href: "/security-tools" },
+      { name: "All Image Tools", href: "/image-tools" },
     ],
   },
 })

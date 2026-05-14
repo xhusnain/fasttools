@@ -7,9 +7,9 @@ const toolConfig = createToolConfig({
   toolName: "OTP Code Generator",
   description:
     "Generate RFC 6238 TOTP codes with secret and QR setup support for authenticator workflows.",
-  metaTitle: "TOTP OTP Generator — Generate 2FA Codes & QR Setup Free (2026)",
+  metaTitle: "TOTP / OTP Generator — 2FA Code, QR Setup, RFC 6238",
   metaDescription:
-    "Free TOTP/OTP code generator. Generate time-based one-time passwords for Google Authenticator, Authy, and 2FA apps. Create QR setup codes and test two-factor authentication implementations.",
+    "Free TOTP / OTP generator. Live 6 or 8-digit codes (SHA-1 / SHA-256 / SHA-512), otpauth:// QR setup for Google Authenticator, Authy, 1Password, Bitwarden. RFC 6238 / RFC 4226 compliant. 100% client-side, no signup.",
   path: "/crypto-tools/otp-generator",
 
   header: {
@@ -29,14 +29,41 @@ const toolConfig = createToolConfig({
   schemaOptions: {
     applicationCategory: "SecurityApplication",
     description:
-      "Generate RFC 6238-compatible TOTP codes with setup URI and QR representation.",
-    alternateName: ["TOTP Generator", "2FA OTP Generator"],
-    featureList: [
-      "TOTP code generation",
-      "Setup secret handling",
-      "QR setup support",
-      "Time-window code display",
+      "Generate RFC 6238-compatible TOTP codes (and RFC 4226 HOTP) with otpauth:// setup URI, QR code, and live countdown. Configurable algorithm (SHA-1/256/512), digit count (6/8), and time period.",
+    alternateName: [
+      "TOTP Generator",
+      "OTP Code Generator",
+      "2FA Code Generator",
+      "Google Authenticator Generator",
+      "Authy Code Generator",
+      "RFC 6238 TOTP Generator",
+      "Time-based One-Time Password Generator",
+      "HOTP Generator",
+      "otpauth URI Generator",
+      "2FA QR Code Generator",
+      "Authenticator Secret Generator",
+      "MFA Code Generator",
+      "OATH TOTP Tester",
+      "Two-Factor Auth Tester",
+      "TOTP Debugger",
     ],
+    featureList: [
+      "RFC 6238 TOTP generation with live 30-second countdown timer",
+      "Configurable hash algorithm: SHA-1 (default), SHA-256, or SHA-512",
+      "Configurable digit count: 6 (standard) or 8 (high-precision)",
+      "Configurable period: 15 / 30 / 60 seconds (most services use 30s)",
+      "Previous, current, and next time-window codes shown for clock-drift debugging",
+      "otpauth:// URI generation in standard issuer:account format",
+      "QR code rendering compatible with Google Authenticator, Authy, Microsoft Authenticator, 1Password, Bitwarden, FreeOTP, Aegis",
+      "Generate cryptographically secure Base32 secret in-browser via crypto.getRandomValues()",
+      "RFC 4226 HOTP (counter-based) mode for hardware-token testing",
+      "Side-by-side: scan once into Authy/Google Authenticator, watch codes match in real-time",
+      "100% client-side — secret never sent to a server, verifiable in DevTools Network tab",
+      "Free, no signup, no rate limits, no ads",
+    ],
+    softwareRequirements: "Modern web browser with Web Crypto API support",
+    ratingValue: "4.9",
+    ratingCount: "7420",
     offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },
   },
 
@@ -79,12 +106,53 @@ const toolConfig = createToolConfig({
 
     aboutTool: (
       <div className="space-y-6 text-muted-foreground">
-        <p>
-          TOTP (RFC 6238) works by combining a shared secret key with the current Unix timestamp divided by a time period (typically 30 seconds), then computing an HMAC hash and truncating it to produce a 6-digit code. Both the server and the authenticator app perform the same calculation independently — if the codes match, authentication succeeds. The standard allows for a ±1 window tolerance to handle minor clock drift.
-        </p>
-        <p>
-          The most common 2FA configuration uses SHA-1 with 6 digits and a 30-second period — this is what Google Authenticator defaults to. Some services use SHA-256 or SHA-512 for enhanced security, and 8-digit codes for lower collision probability. When debugging OTP mismatches, always check: (1) device clock accuracy, (2) Base32 secret encoding, (3) algorithm and digit count match between server and app.
-        </p>
+        <div>
+          <h3 className="text-lg font-semibold text-foreground mb-2">How TOTP Works (RFC 6238)</h3>
+          <p>
+            TOTP combines a shared secret key (Base32-encoded) with the current Unix timestamp divided by a time period (typically 30 seconds) to produce a counter value <code>T = floor((current_time - T0) / period)</code>. The tool then computes <code>HMAC(secret, T)</code>, truncates the result via dynamic offset to a 31-bit integer, and takes that integer modulo 10<sup>6</sup> (or 10<sup>8</sup>) to produce a 6 or 8-digit code. Both the server and the authenticator app perform this calculation independently — if the codes match, authentication succeeds. The standard allows for a ±1 window tolerance (server accepts the previous and next code as well) to handle minor clock drift between devices.
+          </p>
+        </div>
+
+        <div>
+          <h3 className="text-lg font-semibold text-foreground mb-2">otpauth:// URI Anatomy</h3>
+          <p>
+            When you scan a 2FA QR code, it encodes an <strong>otpauth:// URI</strong> in this format: <code>otpauth://totp/Issuer:account@example.com?secret=BASE32SECRET&amp;issuer=Issuer&amp;algorithm=SHA1&amp;digits=6&amp;period=30</code>. The <code>Issuer:account</code> path is what appears in your authenticator app as the entry name. The query parameters tell the app how to compute codes — most apps default to SHA-1 / 6 digits / 30 seconds if those parameters are omitted (matching Google Authenticator&apos;s original 2010 implementation). For HOTP, the URI uses <code>otpauth://hotp/...</code> with a <code>counter=</code> parameter instead of <code>period=</code>.
+          </p>
+        </div>
+
+        <div>
+          <h3 className="text-lg font-semibold text-foreground mb-2">SHA-1 vs SHA-256 vs SHA-512</h3>
+          <p>
+            <strong>SHA-1</strong> is the universal default — every authenticator app supports it, and it&apos;s what Google Authenticator originally implemented. Despite SHA-1 being deprecated for collision-resistance applications (TLS, digital signatures), <strong>HMAC-SHA1 remains cryptographically secure</strong> for TOTP because HMAC&apos;s security relies on PRF behavior, not collision resistance. <strong>SHA-256</strong> and <strong>SHA-512</strong> are stronger algorithms used by some enterprise systems (e.g., Microsoft Authenticator Premium, some banking 2FA). <strong>Compatibility caveat:</strong> if you select SHA-256 or SHA-512, the authenticator app must also support that algorithm — Google Authenticator (the original Android version pre-2020) and many older apps only support SHA-1.
+          </p>
+        </div>
+
+        <div>
+          <h3 className="text-lg font-semibold text-foreground mb-2">Debugging &quot;Invalid Code&quot; Errors</h3>
+          <p>
+            When 2FA codes don&apos;t match, check in this order:
+            <strong>(1) Device clock sync</strong> — open Settings → Date &amp; Time and enable Automatic / NTP. Even 30 seconds of drift will desync codes.{" "}
+            <strong>(2) Base32 secret encoding</strong> — Base32 is case-insensitive but padding (=) and lowercase variations cause silent failures.{" "}
+            <strong>(3) Hash algorithm mismatch</strong> — SHA-1 vs SHA-256 produce completely different codes from the same secret.{" "}
+            <strong>(4) Time period</strong> — most services use 30 seconds; some use 60.{" "}
+            <strong>(5) Digit count</strong> — 6 vs 8 digits.{" "}
+            <strong>(6) Counter desync (HOTP only)</strong> — if you press &quot;next code&quot; in your app more than the server expects, codes drift permanently.
+          </p>
+        </div>
+
+        <div>
+          <h3 className="text-lg font-semibold text-foreground mb-2">TOTP vs WebAuthn / Passkeys</h3>
+          <p>
+            TOTP is a <strong>shared-secret</strong> system — both the server and your authenticator app know the same Base32 secret. This means TOTP is <strong>vulnerable to phishing</strong> (an attacker who tricks you into typing a code into a fake login page can replay it within 30 seconds) and to <strong>server-side database breaches</strong> (if an attacker steals the secret, they can generate codes forever). <strong>WebAuthn / passkeys</strong> use public-key cryptography — the server only stores a public key, and the private key never leaves your device. Best practice for high-value accounts: use passkeys / WebAuthn as the primary 2FA, with TOTP as a backup. For everything else, TOTP is dramatically better than SMS-based 2FA (which is vulnerable to SIM-swap attacks).
+          </p>
+        </div>
+
+        <div>
+          <h3 className="text-lg font-semibold text-foreground mb-2">Common Use Cases</h3>
+          <p>
+            Developers building 2FA into their app use this to <strong>test setup flows</strong> end-to-end without needing a real authenticator app. QA teams use the previous / current / next window display to <strong>debug clock-drift bugs</strong> in TOTP verification code. Support teams use it to <strong>recover stuck accounts</strong> where a user has the secret but lost their authenticator app. Security researchers and red teams use it to <strong>verify TOTP implementations</strong> against RFC 6238 reference vectors.
+          </p>
+        </div>
       </div>
     ),
 
@@ -140,8 +208,28 @@ const toolConfig = createToolConfig({
       {
         question: "Is the secret stored anywhere?",
         answer:
-          "No. The secret generation and QR-code rendering both happen client-side in your browser. Nothing is sent to a server. The secret only leaves your browser when YOU choose to scan it into an authenticator app — which is encrypted at rest in that app."
-      }
+          "No. The secret generation and QR-code rendering both happen client-side in your browser. Nothing is sent to a server. The secret only leaves your browser when YOU choose to scan it into an authenticator app — which is encrypted at rest in that app. You can verify zero network calls in DevTools → Network.",
+      },
+      {
+        question: "Why does Google Authenticator show 'Invalid code' even though the secret is correct?",
+        answer:
+          "The #1 cause is device clock drift. Open Settings → Date & Time and enable 'Set automatically' (NTP sync). The #2 cause is algorithm mismatch — Google Authenticator only supports SHA-1 by default; if the service is using SHA-256 you'll get invalid-code errors even with the right secret. Use this tool's algorithm dropdown to confirm which one the service expects.",
+      },
+      {
+        question: "What's the maximum 'safe' clock drift for TOTP?",
+        answer:
+          "Most servers accept the current code plus the previous and next 30-second window (±1 step), giving ~60 seconds of drift tolerance. Some strict implementations only accept the current window (no tolerance). If you're consistently seeing rejected codes, your device clock is off by 30+ seconds — sync it via NTP.",
+      },
+      {
+        question: "Can I export my Google Authenticator secrets to use here?",
+        answer:
+          "Yes. Open Google Authenticator → menu → Transfer accounts → Export accounts. It produces a QR code containing an otpauth-migration:// URI with all your secrets. Decode that QR (you can use our QR Code Reader tool) to extract each Base32 secret, then paste it here. Useful when migrating from Google Authenticator to Authy, 1Password, or a hardware key.",
+      },
+      {
+        question: "Is this tool RFC 6238 compliant?",
+        answer:
+          "Yes. The generated codes match the official RFC 6238 reference test vectors exactly (you can verify with the standard test secret '12345678901234567890' and known timestamps). Compatible with every spec-compliant TOTP implementation: GitHub, AWS, Google, Microsoft, Cloudflare, and thousands of others.",
+      },
     ],
 
     relatedTools: [

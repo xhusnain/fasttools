@@ -80,34 +80,36 @@
 
 | # | Tool | Path | Status |
 |---|---|---|---|
-| 70 | Password Generator | `/crypto-tools/password-generator` | [ ] |
-| 71 | Encrypt / Decrypt | `/crypto-tools/encrypt-decrypt` | [ ] |
-| 72 | Hash Text | `/crypto-tools/hash-text` | [ ] |
-| 73 | HMAC Generator | `/crypto-tools/hmac-generator` | [ ] |
-| 74 | RSA Key Pair Generator | `/crypto-tools/rsa-generator` | [ ] |
-| 75 | Bcrypt | `/crypto-tools/bcrypt` | [ ] |
-| 76 | Token Generator | `/crypto-tools/token-generator` | [ ] |
-| 77 | UUID Generator | `/crypto-tools/uuid-generator` | [ ] |
-| 78 | ULID Generator | `/crypto-tools/ulid-generator` | [ ] |
-| 79 | Password Strength Analyzer | `/crypto-tools/password-strength-analyzer` | [ ] |
-| 80 | Image Steganography | `/security-tools/image-steganography` | [ ] |
+| 70 | Password Generator | `/crypto-tools/password-generator` | [x] |
+| 71 | Encrypt / Decrypt | `/crypto-tools/encrypt-decrypt` | [x] |
+| 72 | Hash Text | `/crypto-tools/hash-text` | [x] |
+| 73 | HMAC Generator | `/crypto-tools/hmac-generator` | [x] |
+| 74 | RSA Key Pair Generator | `/crypto-tools/rsa-generator` | [x] |
+| 75 | Bcrypt | `/crypto-tools/bcrypt` | [x] |
+| 76 | Token Generator | `/crypto-tools/token-generator` | [x] |
+| 77 | UUID Generator | `/crypto-tools/uuid-generator` | [x] |
+| 78 | ULID Generator | `/crypto-tools/ulid-generator` | [x] |
+| 79 | Password Strength Analyzer | `/crypto-tools/password-strength-analyzer` | [x] |
+| 80 | Image Steganography | `/security-tools/image-steganography` | [x] |
+| 80a | BIP39 Mnemonic Generator | `/crypto-tools/bip39-generator` | [x] |
+| 80b | OTP / TOTP Generator | `/crypto-tools/otp-generator` | [x] |
 
 ## Group E — Dev Tools
 
 | # | Tool | Path | Status |
 |---|---|---|---|
-| 81 | Diff Checker | `/dev-tools/diff-checker` | [ ] |
+| 81 | Diff Checker | `/dev-tools/diff-checker` | [x] |
 | 82 | Color Palette | `/dev-tools/color-palette` | [ ] |
 | 83 | CSS Gradient Generator | `/dev-tools/css-gradient-generator` | [ ] |
-| 84 | JWT Decoder | `/dev-tools/jwt-decoder` | [ ] |
-| 85 | JSON Diff | `/dev-tools/json-diff` | [ ] |
-| 86 | JSON to CSV | `/dev-tools/json-to-csv` | [ ] |
-| 87 | SQL to JSON | `/dev-tools/sql-to-json` | [ ] |
+| 84 | JWT Decoder | `/dev-tools/jwt-decoder` | [x] |
+| 85 | JSON Diff | `/dev-tools/json-diff` | [x] |
+| 86 | JSON to CSV | `/dev-tools/json-to-csv` | [x] |
+| 87 | SQL to JSON | `/dev-tools/sql-to-json` | [x] |
 | 88 | HTML Beautifier | `/dev-tools/html-beautifier` | [ ] |
 | 89 | HTML to Markdown | `/dev-tools/html-to-markdown` | [ ] |
 | 90 | Markdown Previewer | `/dev-tools/markdown-previewer` | [ ] |
 | 91 | HTML WYSIWYG Editor | `/dev-tools/html-wysiwyg-editor` | [ ] |
-| 92 | Base64 Encoder | `/dev-tools/base64-encoder` | [ ] |
+| 92 | Base64 Encoder | `/dev-tools/base64-encoder` | [x] |
 | 93 | Cron Expression Generator | `/dev-tools/cron-expression-generator` | [ ] |
 | 94 | MIME Types | `/dev-tools/mime-types` | [ ] |
 | 95 | HTTP Status Codes | `/dev-tools/http-status-codes` | [ ] |

@@ -239,7 +239,7 @@
 - **Description**: Drag-and-drop sticky notes on a virtual board. Color-code, save to localStorage, optional share via encrypted URL.
 - **Features**: Unlimited notes, drag-drop, color picker, text formatting, kanban columns, zoom/pan, save/load, share URL (encrypted), no signup.
 - **Why build**: No-signup angle beats Padlet/Miro funnel-traps.
-- **Build**: Medium. Drag-drop + localStorage/IndexedDB.
+- **Build**: Medium. Drag-drop + localStorage/IndexedDB .
 - **Client-side**: 100%
 - **Top 3 competitors**: stickies.io, post-it.com/app, padlet.com
 
