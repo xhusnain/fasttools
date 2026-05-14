@@ -285,14 +285,18 @@ swaps + 1-2 FAQs), the **new depth target** for every tool is:
 - Site-wide infrastructure: ✅ done
 - Group A (20 tools): ✅ Deep audits (close to new standard but pre-dating it)
 - Groups B-D (~50 tools): partial — internal linking improved
-- **Tools at NEW full deep standard: 25/199** — finance category nearly
-  complete:
-  - mortgage, loan, auto-loan, retirement, compound-interest, investment,
-    credit-card-payoff, debt-payoff, amortization, interest-rate
-  - tax, salary, net-worth, inflation, home-affordability, rent-vs-buy
-  - sales-tax, tip, discount, bill-splitter, invoice-generator
-  - payment, finance, tax-bracket, retirement-planner
-- All use evergreen language (no specific date references like "2026")
-- Total tools touched: 81 / 199
+- **Tools at NEW full deep standard: 45/199**
+  - Finance (33): mortgage, loan, auto-loan, retirement, compound-interest,
+    investment, credit-card-payoff, debt-payoff, amortization, interest-rate,
+    tax, salary, net-worth, inflation, home-affordability, rent-vs-buy,
+    sales-tax, tip, discount, bill-splitter, invoice-generator, payment,
+    finance, tax-bracket, retirement-planner, quarterly-tax-estimator,
+    freelance-rate, zakat, saas-churn, saas-payback, startup-runway,
+    remote-work-savings, ROAS
+  - Image (6): cropper, compressor, resizer, image-to-text, ai-image-detector,
+    background-remover
+  - PDF (7): pdf-sign, pdf-signature-checker, pdf-splitter-merger,
+    pdf-unlocker, pdf-compressor, pdf-word-converter, pdf-to-image
+- All evergreen — no specific date references
+- Total tools touched: 101 / 199
 - Build verified clean throughout
-- Realistic depth: 5-10 tools per session at the new standard
