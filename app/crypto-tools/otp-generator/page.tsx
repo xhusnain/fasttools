@@ -122,12 +122,36 @@ const toolConfig = createToolConfig({
         answer:
           "Yes. TOTP is a proven standard used by Google, GitHub, AWS, and most major services. For highest security, combine TOTP with phishing-resistant methods like WebAuthn/passkeys as a primary factor.",
       },
+      {
+        question: "How do I generate an OTP QR code?",
+        answer:
+          "Enter your service name and secret (or click 'generate random secret') above. The tool produces a QR code following the standard otpauth://totp/Issuer:account?secret=BASE32SECRET&issuer=Issuer URI format. Scan it with Google Authenticator, Authy, 1Password, Bitwarden, or any RFC 6238 TOTP authenticator. The same code can be entered manually if scanning isn't possible — useful for cross-device setup."
+      },
+      {
+        question: "Can I generate a TOTP QR code for Google Authenticator?",
+        answer:
+          "Yes. The QR code uses the otpauth:// URI scheme that Google Authenticator, Authy, Microsoft Authenticator, 1Password, Bitwarden, and Aegis all support. Just scan and the account is added. The tool defaults to 6-digit codes with a 30-second period (the standard Google uses), but you can change to 8 digits or 60-second period for compatibility with services that require those settings."
+      },
+      {
+        question: "What's the difference between HOTP and TOTP?",
+        answer:
+          "HOTP (HMAC-based One-Time Password, RFC 4226) generates codes from a counter that increments each use — the server and client must stay in sync. TOTP (Time-based, RFC 6238) generates codes from the current Unix time divided by a period (usually 30 seconds) — no counter sync needed. Google Authenticator and most modern apps use TOTP. HOTP is rare today but still seen in hardware tokens (YubiKey OATH-HOTP mode)."
+      },
+      {
+        question: "Is the secret stored anywhere?",
+        answer:
+          "No. The secret generation and QR-code rendering both happen client-side in your browser. Nothing is sent to a server. The secret only leaves your browser when YOU choose to scan it into an authenticator app — which is encrypted at rest in that app."
+      }
     ],
 
     relatedTools: [
       { name: "Token Generator", href: "/crypto-tools/token-generator" },
       { name: "HMAC Generator", href: "/crypto-tools/hmac-generator" },
       { name: "Bcrypt Generator", href: "/crypto-tools/bcrypt" },
+      { name: "Hash Text (SHA-256)", href: "/crypto-tools/hash-text" },
+      { name: "Password Generator", href: "/crypto-tools/password-generator" },
+      { name: "QR Code Generator", href: "/ai-tools/qr-generator" },
+      { name: "BIP39 Mnemonic Generator", href: "/crypto-tools/bip39-generator" },
       { name: "All Crypto Tools", href: "/crypto-tools" },
     ],
   },

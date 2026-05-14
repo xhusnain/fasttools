@@ -439,13 +439,26 @@ export default function PregnancyCalculatorPage() {
       {
         question: "What is the best pregnancy calculator?",
         answer: "The best pregnancy calculator is free, accurate, easy to use, supports multiple calculation methods (LMP, ultrasound, conception, IVF), provides comprehensive information (due date, gestational age, trimester, weight gain), works on all devices, processes data locally for privacy, and offers regular updates. Our calculator meets all these criteria—it's completely free, accurate, user-friendly, and privacy-focused, making it perfect for pregnancy tracking."
+      },
+      {
+        question: "How is the pregnancy week calculated?",
+        answer: "Pregnancy weeks are counted from the first day of your last menstrual period (LMP), not from conception. So you're technically 'pregnant' for 2 weeks before fertilization happens. This LMP-based counting (called gestational age) is what doctors, ultrasound machines, and pregnancy apps use. The actual embryo age (fetal age or conception age) is approximately 2 weeks less than the gestational age."
+      },
+      {
+        question: "Is this a free pregnancy week calculator?",
+        answer: "Yes. Enter your LMP, due date, or conception date and the tool calculates your current week of pregnancy, days until due date, and the trimester you're in. 100% free, no signup, all calculations run in your browser."
       }
     ],
 
     relatedTools: [
-      { name: "Pregnancy Conception Calculator", href: "/calculator/pregnancy-conception-calculator" },
+      { name: "Conception Date Calculator", href: "/calculator/pregnancy-conception-calculator" },
+      { name: "Ovulation Calculator", href: "/calculator/ovulation-calculator" },
+      { name: "Anniversary Calculator", href: "/fun-tools/anniversary" },
+      { name: "Birthday Countdown", href: "/fun-tools/birthday-countdown" },
+      { name: "Future Age Calculator", href: "/fun-tools/future-age" },
       { name: "BMI Calculator", href: "/calculator/bmi-calculator" },
-      { name: "Calorie Calculator", href: "/calculator/calorie-calculator" }
+      { name: "Calorie Calculator", href: "/calculator/calorie-calculator" },
+      { name: "Date Difference Calculator", href: "/calculator/date-difference" }
     ]
   }
 

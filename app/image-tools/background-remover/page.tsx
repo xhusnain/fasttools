@@ -215,13 +215,32 @@ const toolConfig = createToolConfig({
         answer:
           "Yes, the tool works on modern mobile browsers (Chrome, Safari, Firefox). However, background removal is computationally intensive, so processing may be slower on older mobile devices compared to desktop. For best performance, use a recent smartphone or a desktop/laptop computer.",
       },
+      {
+        question: "Is this a free alternative to remove.bg?",
+        answer:
+          "Yes — and a privacy-respecting one. Remove.bg processes images on their servers (your image leaves your device) and has a 50-image-per-month limit on the free tier with a 0.25 MP output cap. This tool runs the entire AI model in your browser using ONNX/WebAssembly — your image never leaves your device, there's no monthly limit, no signup, and full-resolution output. The tradeoff: remove.bg uses a larger paid model that's slightly more accurate on hair/fur edges; this tool is good enough for product photos, profile pictures, and most use cases."
+      },
+      {
+        question: "Is this a free bgremover / background removal tool?",
+        answer:
+          "Yes. 'bgremover' or 'bg remover' is a common shortened search for background remover tools — this is one. Free, unlimited use, no signup, no watermarks, output as transparent PNG. Drag and drop an image to start."
+      },
+      {
+        question: "Can I add a solid color or custom background after removing the original?",
+        answer:
+          "Yes. After removing the background you can set a solid color (white for product photos, transparent for layered design, gradient for social-media backgrounds) or upload a custom background image. Output downloads as PNG with transparent or composited background."
+      }
     ],
 
     relatedTools: [
       { name: "Image Resizer", href: "/image-tools/image-resizer" },
       { name: "Image Compressor", href: "/image-tools/image-compressor" },
+      { name: "Image Cropper", href: "/image-tools/image-cropper" },
       { name: "Image to Text (OCR)", href: "/image-tools/image-to-text" },
       { name: "AI Image Detector", href: "/image-tools/ai-image-detector" },
+      { name: "Color Palette Generator", href: "/dev-tools/color-palette" },
+      { name: "CSS Gradient Generator", href: "/dev-tools/css-gradient-generator" },
+      { name: "All Image Tools", href: "/image-tools" },
     ],
   },
 })

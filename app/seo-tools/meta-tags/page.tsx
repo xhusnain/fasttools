@@ -154,7 +154,11 @@ const toolConfig = createToolConfig({
     relatedTools: [
       { name: "Blog Title Generator", href: "/seo-tools/blog-titles" },
       { name: "Keyword Density Checker", href: "/seo-tools/keyword-density" },
+      { name: "Schema Markup Generator", href: "/seo-tools/schema-markup-generator" },
+      { name: "Word Counter", href: "/seo-tools/word-counter" },
       { name: "URL Parser", href: "/web-tools/url-parser" },
+      { name: "URL Encoder/Decoder", href: "/web-tools/url-encoder" },
+      { name: "HTML Beautifier", href: "/dev-tools/html-beautifier" },
       { name: "All SEO Tools", href: "/seo-tools" },
     ],
   },
