@@ -219,10 +219,14 @@ const toolConfig = createToolConfig({
     ],
 
     relatedTools: [
-      { name: "Pomodoro Timer", href: "/fun-tools/pomodoro-timer" },
+      { name: "Pomodoro Timer (25/5 cycles)", href: "/fun-tools/pomodoro-timer" },
+      { name: "Wheel Spinner (random picker)", href: "/fun-tools/wheel-spinner" },
       { name: "Birthday Countdown", href: "/fun-tools/birthday-countdown" },
-      { name: "Age Calculator", href: "/calculator/age-calculator" },
       { name: "Anniversary Calculator", href: "/fun-tools/anniversary" },
+      { name: "Future Age Calculator", href: "/fun-tools/future-age" },
+      { name: "Time Duration Calculator", href: "/calculator/time-duration" },
+      { name: "Date Difference Calculator", href: "/calculator/date-difference" },
+      { name: "Age Calculator", href: "/calculator/age-calculator" },
     ],
   },
 })
