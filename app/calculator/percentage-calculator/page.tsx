@@ -543,9 +543,13 @@ export default function PercentageCalculatorPage() {
     ],
 
     relatedTools: [
-      { name: "Loan Calculator", href: "/finance-tools/loan-calculator" },
+      { name: "Fraction Calculator", href: "/calculator/fraction-calculator" },
+      { name: "Scientific Calculator", href: "/calculator/scientific-calculator" },
+      { name: "Discount Calculator (% off)", href: "/finance-tools/discount-calculator" },
+      { name: "Tip Calculator (% tip)", href: "/finance-tools/tip-calculator" },
+      { name: "Sales Tax Calculator", href: "/finance-tools/sales-tax-calculator" },
       { name: "GPA Calculator", href: "/calculator/gpa-calculator" },
-      { name: "BMI Calculator", href: "/calculator/bmi-calculator" },
+      { name: "Standard Deviation Calculator", href: "/calculator/standard-deviation-calculator" },
       { name: "All Calculators", href: "/calculator" }
     ]
   }

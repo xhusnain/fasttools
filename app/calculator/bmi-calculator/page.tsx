@@ -641,6 +641,31 @@ export default function BMICalculatorPage() {
         name: "BMR Calculator",
         href: "/calculator/bmr-calculator",
         description: "Find your baseline energy needs."
+      },
+      {
+        name: "TDEE Macro Calculator",
+        href: "/calculator/tdee-macro-calculator",
+        description: "Daily energy expenditure with macros."
+      },
+      {
+        name: "Biological Age Calculator",
+        href: "/calculator/biological-age-calculator",
+        description: "Lifestyle-adjusted age vs chronological."
+      },
+      {
+        name: "Pace Calculator",
+        href: "/calculator/pace-calculator",
+        description: "Running and walking pace tracker."
+      },
+      {
+        name: "Pregnancy Calculator",
+        href: "/calculator/pregnancy-calculator",
+        description: "Due date and trimester tracking."
+      },
+      {
+        name: "Age Calculator",
+        href: "/calculator/age-calculator",
+        description: "Exact age in years, months, days."
       }
     ]
   }

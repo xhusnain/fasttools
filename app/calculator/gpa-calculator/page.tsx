@@ -492,11 +492,13 @@ export default function GPACalculatorPage() {
 
     relatedTools: [
       { name: "Percentage Calculator", href: "/calculator/percentage-calculator" },
-      { name: "Age Calculator", href: "/calculator/age-calculator" },
-      { name: "BMI Calculator", href: "/calculator/bmi-calculator" },
-      { name: "Time Duration", href: "/calculator/time-duration" },
+      { name: "Fraction Calculator", href: "/calculator/fraction-calculator" },
+      { name: "Standard Deviation Calculator", href: "/calculator/standard-deviation-calculator" },
       { name: "Scientific Calculator", href: "/calculator/scientific-calculator" },
-      { name: "Loan Calculator", href: "/finance-tools/loan-calculator" }
+      { name: "Citation Generator (APA/MLA)", href: "/education-tools/citation-generator" },
+      { name: "Word Counter (essays)", href: "/seo-tools/word-counter" },
+      { name: "Age Calculator", href: "/calculator/age-calculator" },
+      { name: "Time Duration Calculator", href: "/calculator/time-duration" }
     ]
   }
 
