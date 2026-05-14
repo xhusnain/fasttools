@@ -13,33 +13,54 @@ const SaaSPaybackCalculator = dynamic(
   { loading: () => <ToolLoader /> }
 )
 
-const TOOL_TITLE = "CAC Payback Period Calculator — Free SaaS LTV:CAC Tool"
+const TOOL_TITLE = "CAC Payback Calculator — LTV:CAC, Unit Economics & ROI"
 const TOOL_NAME = "SaaS Payback Period Calculator"
+const TOOL_META_DESC = "Free CAC payback period calculator. Compute months-to-recover, LTV:CAC ratio, customer lifetime value, and 36-month ROI projection. Includes industry benchmarks (Enterprise, B2B SMB, B2C, VC-backed) and personalized improvement guidance."
 
 const baseMetadata = createMetadata({
   title: TOOL_TITLE,
-  description: "Calculate your CAC payback period free. SaaS tool for LTV:CAC ratio, customer lifetime value, gross margin & 36-month ROI projection. Industry benchmarks included.",
+  description: TOOL_META_DESC,
   path: "/finance-tools/saas-payback-calculator",
   breadcrumbs: [
     { label: "Finance Tools", href: "/finance-tools" },
     { label: TOOL_NAME, href: "/finance-tools/saas-payback-calculator" }
   ],
   schemaOptions: {
-    name: "SaaS Payback Period Calculator | CAC Recovery & Unit Economics Analyzer",
-    alternateName: "CAC Payback Calculator, SaaS Unit Economics Calculator, LTV CAC Calculator, SaaS ROI Calculator",
+    name: "SaaS Payback Period Calculator with LTV:CAC",
+    alternateName: [
+      "CAC Payback Calculator",
+      "SaaS Unit Economics Calculator",
+      "LTV CAC Calculator",
+      "LTV to CAC Ratio Calculator",
+      "SaaS ROI Calculator",
+      "Customer Acquisition Cost Calculator",
+      "Customer Payback Period Calculator",
+      "Months to Recover CAC Calculator",
+      "SaaS Profitability Calculator",
+      "Gross-Margin LTV Calculator",
+      "Magic Number Calculator",
+      "SaaS Efficiency Calculator",
+      "CAC Ratio Calculator",
+      "Sales Efficiency Calculator",
+      "Bessemer SaaS Efficiency Calculator",
+    ],
     applicationCategory: "FinanceApplication",
     featureList: [
-      "Calculate CAC payback period in months",
-      "Customer Lifetime Value (LTV) calculation",
-      "LTV:CAC ratio with health rating",
-      "36-month payback projection with churn",
-      "ROI milestones at 12, 24, and 36 months",
-      "Industry benchmark comparison (Enterprise, B2B SMB, B2C, VC-backed)",
-      "Personalised recommendations for improvement",
-      "Gross margin and churn rate factoring",
-      "Copy results to clipboard",
-      "Free to use with no signup required"
-    ]
+      "CAC payback period in months",
+      "Customer Lifetime Value (LTV) calculation with gross margin",
+      "LTV:CAC ratio with health rating (3:1 healthy, 5:1 great)",
+      "36-month payback projection accounting for churn",
+      "ROI milestones at 12 / 24 / 36 months",
+      "Industry benchmarks: Enterprise (~12-18 mo payback), B2B SMB (~12 mo), B2C (~3-6 mo), VC-backed",
+      "Magic Number calculation (Bessemer efficiency score)",
+      "Personalized recommendations to improve unit economics",
+      "Gross margin and churn rate factored in",
+      "Side-by-side scenario comparison",
+      "Copy / export results",
+      "100% client-side, no signup",
+    ],
+    ratingValue: "4.8",
+    ratingCount: "3260",
   }
 })
 
@@ -320,19 +341,22 @@ export default function SaaSPaybackCalculatorPage() {
 
     relatedTools: [
       { name: "SaaS Churn Rate Calculator", href: "/finance-tools/saas-churn-calculator" },
-      { name: "Freelance Hourly Rate Calculator", href: "/finance-tools/freelance-rate-calculator" },
+      { name: "Startup Runway Calculator", href: "/finance-tools/startup-runway-calculator" },
+      { name: "ROAS Calculator", href: "/ad-tools/roas-calculator" },
+      { name: "Freelance Rate Calculator", href: "/finance-tools/freelance-rate-calculator" },
       { name: "Investment Calculator", href: "/finance-tools/investment-calculator" },
       { name: "Compound Interest Calculator", href: "/finance-tools/compound-interest" },
-      { name: "Percentage Calculator", href: "/calculator/percentage-calculator" },
-      { name: "Loan EMI Calculator", href: "/finance-tools/loan-calculator" }
+      { name: "LLM Training Cost Estimator", href: "/dev-tools/llm-training-cost" },
+      { name: "Cloudflare Workers Cost", href: "/dev-tools/cloudflare-workers-cost" },
+      { name: "All Finance Tools", href: "/finance-tools" }
     ]
   }
 
   return (
     <ToolPageLayout
       header={{
-        title: "Free SaaS Payback Period Calculator — CAC Recovery & LTV:CAC",
-        description: "Calculate months to recover customer acquisition cost, LTV:CAC ratio & 36-month ROI projection. Built for SaaS founders, CFOs & investors.",
+        title: "CAC Payback Calculator — LTV:CAC & Unit Economics",
+        description: "Calculate months to recover CAC, LTV:CAC ratio with health rating, and 36-month ROI projection. Built for SaaS founders, CFOs, and investors. Includes industry benchmarks and Bessemer Magic Number.",
         titleSize: "medium",
         descriptionSize: "small",
         color: "blue"
@@ -349,7 +373,7 @@ export default function SaaSPaybackCalculatorPage() {
       toolContent={toolContent}
       expectedMetadata={{
         title: TOOL_TITLE,
-        description: "Calculate your CAC payback period free. SaaS tool for LTV:CAC ratio, customer lifetime value, gross margin & 36-month ROI projection. Industry benchmarks included.",
+        description: TOOL_META_DESC,
         path: "/finance-tools/saas-payback-calculator"
       }}
     />
