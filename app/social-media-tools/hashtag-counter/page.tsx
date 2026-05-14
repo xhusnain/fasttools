@@ -12,16 +12,16 @@ const HashtagCounter = dynamic(
 const toolConfig = createToolConfig({
   toolName: "Hashtag Counter",
   description:
-    "Count hashtags, extract tags from text, and refine tag sets for social post optimization.",
-  metaTitle: "Social Media Tag Generator & Hashtag Counter for Instagram, TikTok & X (2026)",
+    "Free hashtag counter — instantly count and extract hashtags from any text. Works for Instagram, TikTok, X, Facebook, and LinkedIn captions.",
+  metaTitle: "Hashtag Counter — Count Hashtags in Instagram, TikTok, X Captions (Free)",
   metaDescription:
-    "Free social media tag generator and hashtag counter. Count, extract, and generate hashtags for Instagram, TikTok & X. Check the 30-hashtag limit, optimize your social media tag strategy, and generate tags for any niche.",
+    "Free hashtag counter. Paste any social media caption to instantly count hashtags and extract the full tag list. Check Instagram's 30-tag limit, TikTok's 100-char limit, and stay platform-compliant on X, LinkedIn & Facebook.",
   path: "/social-media-tools/hashtag-counter",
 
   header: {
-    title: "Social Media Tag Generator & Hashtag Counter",
+    title: "Hashtag Counter — Count Hashtags in Any Caption",
     description:
-      "Free social media tag generator — count, extract, and generate hashtags for Instagram, TikTok, X, and LinkedIn. Keep social captions optimized and platform-ready.",
+      "Paste an Instagram, TikTok, X, Facebook, or LinkedIn caption to instantly count every hashtag and extract the full tag list. Free hashtag counter with platform-specific limit warnings — keep your captions clean and platform-compliant.",
     titleSize: "medium",
     descriptionSize: "small",
   },

@@ -11,10 +11,10 @@ const AnniversaryCalculator = dynamic(
 import { Heart, Calendar, Clock, Gift, ArrowRight, CheckCircle, HelpCircle, Star } from "lucide-react"
 
 const toolConfig = createToolConfig({
-  toolName: "Love Days Counter & Anniversary Calculator",
-  description: "Calculate exactly how long you've been together in years, months, and days with this relationship anniversary calculator.",
-  metaTitle: "Anniversary Calculator — Count Years, Months & Days Together (2026)",
-  metaDescription: "Free anniversary calculator to count how long you've been together. Track relationship years, months, and days. Love anniversary counter for couples — works for dating and wedding anniversaries.",
+  toolName: "Anniversary Calculator",
+  description: "Free anniversary calculator. Calculate exactly how long you've been together in years, months, days, hours, minutes, and seconds.",
+  metaTitle: "Anniversary Calculator — How Long Have We Been Together? (Free)",
+  metaDescription: "Free anniversary calculator — enter your relationship start date to see exactly how long you've been together in years, months, days, hours, and seconds. Tracks monthsaries, next anniversary, and milestones like silver and golden. Works for dating, wedding, friendship, and work anniversaries.",
   path: "/fun-tools/anniversary",
 
 
@@ -33,8 +33,8 @@ const toolConfig = createToolConfig({
   },
 
   header: {
-    title: "Love Days Counter & Anniversary Calculator",
-    description: "Calculate exactly how long you've been together. See your love days count, total months, and years since your special date.",
+    title: "Anniversary Calculator — How Long Have We Been Together?",
+    description: "Calculate exactly how long you've been together. See your relationship in years, months, days, total months for monthsaries, and a countdown to your next anniversary.",
     titleSize: "medium",
     descriptionSize: "small",
   },

@@ -554,11 +554,11 @@ function answerForQuestion(q: string): { answer: string; links?: string[] } {
 const toolConfig = createToolConfig({
   toolName: "Online Calculators",
   description:
-    "Free online calculators for finance, health, math, statistics, date/time, and construction planning.",
+    "Free online calculator hub — every calculator you need for finance, health, math, statistics, date/time, and construction planning. No signup, no install, mobile-friendly.",
   metaTitle:
-    "Free Online Calculators for Finance, Health, Math, Time & Statistics",
+    "Free Online Calculator — Every Calculator You Need (Finance, Health, Math)",
   metaDescription:
-    "Use free online calculators for loans, BMI, percentages, dates, pace, GPA, and more. Fast, accurate, and mobile-friendly with no signup required.",
+    "Free online calculator for everything: BMI, percentage, GPA, age, mortgage, pace, concrete, pregnancy, scientific, IP subnet, and dozens more. Mobile-friendly, no signup, no ads in the calculator itself — just answers.",
   itemList: {
     name: "Online Calculators",
     description:

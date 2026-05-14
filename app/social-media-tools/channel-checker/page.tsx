@@ -10,18 +10,18 @@ const YoutubeChannelChecker = dynamic(
 )
 
 const toolConfig = createToolConfig({
-  toolName: "YouTube Handle Checker",
+  toolName: "YouTube Channel Name & Handle Checker",
   description:
-    "Check whether a YouTube handle and channel-name combination is available before launching a channel.",
-  metaTitle: "YouTube Channel Name & Handle Checker — Free Availability Tool",
+    "Free YouTube channel name availability checker. Instantly check if a YouTube channel name or @handle is available before launching your channel.",
+  metaTitle: "YouTube Channel Name Availability Checker — Check If Handle Is Available (2026)",
   metaDescription:
-    "Instantly check if a YouTube channel name or @handle is available. No login needed. Free.",
+    "Check if a YouTube channel name or @handle is available — instantly. Free YouTube username checker, channel name availability tool, and handle availability check. No login, no signup, works for any name in 2026.",
   path: "/social-media-tools/channel-checker",
 
   header: {
-    title: "Check If YouTube Channel Name Is Available — Free Name Checker",
+    title: "YouTube Channel Name Availability Checker — Is Your Handle Available?",
     description:
-      "How to check if a YouTube channel name is available or taken? Use this free tool to check YouTube channel name availability, find available YouTube channel names, and verify @handles instantly. No login required.",
+      "Instantly check if a YouTube channel name or @handle is available before you create or rebrand your channel. Free YouTube username checker that covers handle availability, channel name uniqueness, and custom URL — no YouTube login required.",
     titleSize: "medium",
     descriptionSize: "small",
   },

@@ -12,14 +12,14 @@ import { Calendar, Globe, Calculator, ArrowRight, CheckCircle, HelpCircle, Star,
 
 const toolConfig = createToolConfig({
   toolName: "Future Age Calculator",
-  description: "See how old you'll be in any future year. Fun age prediction with milestones, planning ideas, and shareable results.",
-  metaTitle: "Age Calculator Future — How Old Will I Be? Future Age Calculator (2026)",
-  metaDescription: "Free age calculator future tool. Find out how old you will be on any future date. Calculate your future age in 2030, 2040, 2050 — plan milestones, retirement, and events with our age calculator future predictor.",
+  description: "Calculate exactly how old you'll be on any future date. Free future age calculation tool with years, months, days, and life milestones.",
+  metaTitle: "Future Age Calculator — How Old Will I Be? (Free 2026 Tool)",
+  metaDescription: "Free future age calculator. Calculate exactly how old you will be on any future date — 2030, 2040, 2050, or your retirement date. Shows your future age in years, months, and days. Instant, accurate future age calculation.",
   path: "/fun-tools/future-age",
 
   header: {
-    title: "Age Calculator Future — How Old Will I Be in Any Future Year?",
-    description: "Free age calculator future tool to discover how old you'll be in any future year. Calculate your future age for planning milestones, retirement, education, and events. Our age calculator future predictor gives exact results in years, months, and days.",
+    title: "Future Age Calculator — How Old Will I Be on Any Future Date?",
+    description: "Calculate exactly how old you'll be on any future date. Get your future age in years, months, and days for retirement planning, milestone birthdays, or future event planning. Free future age calculation — instant and accurate.",
     titleSize: "medium",
     descriptionSize: "small",
   },
@@ -31,17 +31,17 @@ const toolConfig = createToolConfig({
 
   content: {
     definition:
-      "An age calculator future tool (future age calculator) is a free utility that calculates how old you will be on any future date, showing your exact age in years, months, and days.",
+      "A future age calculator is a free tool that performs future age calculation — taking your birth date and a future target date, then computing exactly how old you will be on that future date in years, months, and days.",
     quickAnswer:
-      "Use this age calculator future tool — enter your birth date and a future target date to see exactly how old you will be. Shows age in years, months, and days. Useful for planning milestones, retirement, events, and curiosity about future birthdays.",
+      "Enter your birth date and any future date to see exactly how old you will be. The future age calculator handles leap years, varying month lengths, and gives results in years, months, and days. Works for any year — 2030, 2050, 2100, or your retirement date.",
     keyTakeaways: [
-      "Calculates your exact age on any future date in years, months, and days",
-      "Handles leap years and varying month lengths accurately",
-      "Shows total days, weeks, and months until the target date",
-      "Useful for retirement planning, milestone birthdays, and event planning",
-      "All calculations happen locally — no personal data stored",
+      "Future age calculation in years, months, and days — accurate for any future date",
+      "Leap-year aware — handles every February 29 and partial-year math correctly",
+      "Shows total days, weeks, and months from today until the target date",
+      "Built for retirement planning, milestone birthdays, kids' future ages, and event planning",
+      "100% client-side — your birth date never leaves your browser",
     ],
-    overview: "Our age calculator future tool uses precise date mathematics to determine your exact age on any future date. It accounts for leap years, varying month lengths, and provides accurate age future predictions instantly. Whether you need an age calculator future for retirement planning, milestone birthdays, or just for fun — this future age calculator gives you precise calculations in years, months, and days.",
+    overview: "This future age calculator answers the simple question: how old will I be on a future date? Enter your birth date and a target date — the tool returns your exact future age in years, months, and days, plus the total elapsed days, weeks, and months. Future age calculation uses precise calendar arithmetic, accounting for leap years and varying month lengths, so the result is accurate whether you're checking your age in 2030, on your 50th wedding anniversary, on your retirement date, or in the year 3000. All math happens in your browser — nothing is sent to a server.",
 
     howToSteps: [
       "Enter Birth Date: Select your birth date using the simple date picker.",
