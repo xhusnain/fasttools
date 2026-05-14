@@ -140,6 +140,72 @@ export default function PregnancyConceptionCalculatorPage() {
             <strong>Conception Age:</strong> Measured from the actual date of fertilization. This is usually about 2 weeks less than gestational age.
           </p>
         </section>
+
+        <section className="space-y-4">
+          <h2 className="text-2xl font-bold">3 Ways to Estimate Your Conception Date</h2>
+          <div className="overflow-x-auto">
+            <GTable>
+              <thead className="bg-muted text-foreground font-semibold">
+                <tr>
+                  <th className="p-3 text-left">Method</th>
+                  <th className="p-3 text-left">Inputs needed</th>
+                  <th className="p-3 text-left">Accuracy</th>
+                  <th className="p-3 text-left">Best for</th>
+                </tr>
+              </thead>
+              <tbody className="divide-y divide-border text-sm">
+                <tr><td className="p-3 font-semibold">Last Menstrual Period (LMP)</td><td className="p-3">First day of last period</td><td className="p-3">±1–2 weeks</td><td className="p-3">Regular 28-day cycle, period date known</td></tr>
+                <tr><td className="p-3 font-semibold">Due Date Reverse-Calc</td><td className="p-3">EDD (estimated due date)</td><td className="p-3">±3–5 days</td><td className="p-3">Already have an OB-confirmed due date</td></tr>
+                <tr><td className="p-3 font-semibold">First-Trimester Ultrasound (CRL)</td><td className="p-3">CRL measurement in mm</td><td className="p-3">±3–5 days</td><td className="p-3">Most accurate for irregular cycles</td></tr>
+              </tbody>
+            </GTable>
+          </div>
+          <p className="text-sm text-muted-foreground">
+            <strong>If methods disagree:</strong> ultrasound is the gold standard. If LMP and ultrasound estimates differ by more than 5–7 days in the first trimester, doctors revise the due date based on the ultrasound.
+          </p>
+        </section>
+
+        <section className="space-y-4">
+          <h2 className="text-2xl font-bold">Conception Date from Due Date — Quick Reference</h2>
+          <p className="text-sm text-muted-foreground">
+            The formula is <code>conception date ≈ due date − 266 days</code> (or due date − 38 weeks). For someone with a regular 28-day cycle, this gives the day of ovulation, which is when conception most likely happened.
+          </p>
+          <div className="overflow-x-auto">
+            <GTable>
+              <thead className="bg-muted text-foreground font-semibold">
+                <tr>
+                  <th className="p-3 text-left">Due date</th>
+                  <th className="p-3 text-left">Likely conception date</th>
+                  <th className="p-3 text-left">Fertile window (±5 days)</th>
+                </tr>
+              </thead>
+              <tbody className="divide-y divide-border text-sm">
+                <tr><td className="p-3 font-semibold">Jan 1, 2027</td><td className="p-3">Apr 10, 2026</td><td className="p-3">Apr 5 – Apr 15, 2026</td></tr>
+                <tr><td className="p-3 font-semibold">Apr 1, 2027</td><td className="p-3">Jul 9, 2026</td><td className="p-3">Jul 4 – Jul 14, 2026</td></tr>
+                <tr><td className="p-3 font-semibold">Jul 1, 2027</td><td className="p-3">Oct 8, 2026</td><td className="p-3">Oct 3 – Oct 13, 2026</td></tr>
+                <tr><td className="p-3 font-semibold">Oct 1, 2027</td><td className="p-3">Jan 8, 2027</td><td className="p-3">Jan 3 – Jan 13, 2027</td></tr>
+                <tr><td className="p-3 font-semibold">Dec 25, 2027</td><td className="p-3">Apr 2, 2027</td><td className="p-3">Mar 28 – Apr 7, 2027</td></tr>
+              </tbody>
+            </GTable>
+          </div>
+          <p className="text-sm text-muted-foreground italic">Use the calculator above for your exact due date — these are reference values.</p>
+        </section>
+
+        <section className="space-y-4">
+          <h2 className="text-2xl font-bold">The Same Tool, Many Names</h2>
+          <ul className="grid grid-cols-1 md:grid-cols-2 gap-2 text-sm text-muted-foreground">
+            <li>· conception calculator / conceive calculator</li>
+            <li>· conception date calculator</li>
+            <li>· date of conception calculator</li>
+            <li>· estimated conception date</li>
+            <li>· accurate conception calculator</li>
+            <li>· conception calendar</li>
+            <li>· determine conception date</li>
+            <li>· when did I conceive calculator</li>
+            <li>· conception date based on due date</li>
+            <li>· pregnancy conception calculator</li>
+          </ul>
+        </section>
       </div>
     ),
 
@@ -185,11 +251,36 @@ export default function PregnancyConceptionCalculatorPage() {
       {
         question: "Can it predict gender?",
         answer: "No, gender is determined at conception but can only be revealed by medical tests (ultrasound/blood test) later in pregnancy."
+      },
+      {
+        question: "How do I find my conception date from my due date?",
+        answer: "Subtract 266 days (or 38 weeks) from your estimated due date to get the most likely conception date. The fertile window spans roughly ±5 days around that date because sperm survive for up to 5 days before ovulation. Enter your due date in the calculator above for an exact answer with the fertile window included."
+      },
+      {
+        question: "What's the difference between conception date and implantation date?",
+        answer: "Conception is when the sperm fertilizes the egg (occurs in the fallopian tube, usually within 24 hours of ovulation). Implantation is when the fertilized embryo attaches to the uterus, typically 6–12 days later. Both happen close together but they're not the same event — conception age is measured from fertilization, not from implantation."
+      },
+      {
+        question: "Why is my conception date 2 weeks after my last period?",
+        answer: "Because ovulation in a standard 28-day cycle happens about 14 days after the first day of your last period. Doctors count pregnancy from the LMP (last menstrual period), but conception itself doesn't happen until ovulation — so 'gestational week 2' is actually conception week 0. This is why a 'pregnant 6 weeks' reading means about 4 weeks since conception."
+      },
+      {
+        question: "Can the calculator help with IUI or IVF timing?",
+        answer: "For IUI, your conception date is the IUI procedure date. For IVF, conception (fertilization in the lab) happens during the egg retrieval cycle — typically 3 or 5 days before embryo transfer, depending on whether you transferred a Day 3 or Day 5 (blastocyst) embryo. Enter the procedure date directly rather than using the LMP method."
+      },
+      {
+        question: "How accurate is ultrasound-based conception dating?",
+        answer: "Most accurate. First-trimester ultrasounds (weeks 6-13) measure the crown-rump length (CRL) of the embryo, which has very predictable growth — accuracy is ±3-5 days. After week 14, ultrasound dating becomes less accurate (±1-2 weeks) because fetal growth varies more between individuals. If your LMP estimate disagrees with the first-trimester ultrasound by more than 7 days, doctors revise the due date."
       }
     ],
 
     relatedTools: [
-      { name: "Pregnancy Calculator", href: "/calculator/pregnancy-calculator" },
+      { name: "Pregnancy Due Date Calculator", href: "/calculator/pregnancy-calculator" },
+      { name: "Ovulation Calculator", href: "/calculator/ovulation-calculator" },
+      { name: "Age Calculator", href: "/calculator/age-calculator" },
+      { name: "Anniversary Calculator", href: "/fun-tools/anniversary" },
+      { name: "Birthday Countdown", href: "/fun-tools/birthday-countdown" },
+      { name: "Future Age Calculator", href: "/fun-tools/future-age" },
       { name: "BMI Calculator", href: "/calculator/bmi-calculator" },
       { name: "Calorie Calculator", href: "/calculator/calorie-calculator" }
     ]
