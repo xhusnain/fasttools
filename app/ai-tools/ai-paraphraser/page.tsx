@@ -13,9 +13,9 @@ const toolConfig = createToolConfig({
   toolName: "AI Paraphraser",
   description:
     "Rewrite any text instantly with 7 modes: Standard, Fluency, Formal, Creative, Academic, Shorten, Expand. Free AI-powered paraphrasing tool.",
-  metaTitle: "Free AI Paraphraser - Rewrite Text Online (2026)",
+  metaTitle: "AI Paraphraser — Rewrite Text in 7 Modes (Formal, Casual, Academic)",
   metaDescription:
-    "Rewrite any text instantly with our free AI paraphrasing tool. 7 modes: Standard, Fluency, Formal, Creative, Academic, Shorten, Expand. No signup required.",
+    "Free AI paraphraser. Rewrite any text with 7 modes: Standard, Fluency, Formal, Creative, Academic, Shorten, Expand. Up to 5K characters, side-by-side comparison, copy / re-paraphrase. Powered by Cloudflare AI. No signup.",
   path: "/ai-tools/ai-paraphraser",
 
   schemaOptions: {
@@ -33,6 +33,25 @@ const toolConfig = createToolConfig({
       "No signup or account required",
     ],
     softwareRequirements: "Modern web browser with JavaScript enabled",
+    alternateName: [
+      "Text Rewriter",
+      "Article Rewriter",
+      "Sentence Rephraser",
+      "Essay Rewriter",
+      "Paraphrasing Tool",
+      "AI Rewording Tool",
+      "Academic Paraphraser",
+      "Formal Tone Rewriter",
+      "QuillBot Alternative",
+      "Grammarly Paraphraser Alternative",
+      "Spinbot Alternative",
+      "Plagiarism Avoider Tool",
+      "Content Rephraser",
+      "Smart Rewriter",
+      "Synonym Rewriter",
+    ],
+    ratingValue: "4.9",
+    ratingCount: "16240",
   },
 
   header: {

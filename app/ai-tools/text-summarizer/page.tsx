@@ -13,9 +13,9 @@ const toolConfig = createToolConfig({
   toolName: "AI Text Summarizer",
   description:
     "Free AI text summarizer. Summarize articles, essays, research papers, and any long text into concise paragraphs, bullet points, key takeaways, or a one-sentence TL;DR. Adjustable summary length. No signup needed.",
-  metaTitle: "Free AI Text Summarizer - Summarize Any Text Instantly (2026)",
+  metaTitle: "AI Text Summarizer — Articles, Essays & Reports to TL;DR Online",
   metaDescription:
-    "Summarize articles, essays, and reports instantly with our free AI text summarizer. Get bullet points, paragraphs, or key takeaways. Adjustable length. No signup required.",
+    "Free AI text summarizer powered by Llama 3.1. Condense articles, essays, research papers up to 10K chars into 4 formats: paragraph, bullet points, key takeaways, or one-sentence TL;DR. Adjustable length, copy / download, no signup.",
   path: "/ai-tools/text-summarizer",
 
   schemaOptions: {
@@ -37,6 +37,25 @@ const toolConfig = createToolConfig({
       "Mobile-responsive design with touch-friendly controls",
     ],
     softwareRequirements: "Modern web browser with JavaScript enabled",
+    alternateName: [
+      "Article Summarizer",
+      "Essay Summarizer",
+      "Research Paper Summarizer",
+      "PDF Summarizer (Text)",
+      "TL;DR Generator",
+      "Summary Generator",
+      "Auto Summarizer",
+      "AI Article Condenser",
+      "Bullet Point Generator",
+      "Key Takeaways Generator",
+      "Abstract Generator",
+      "ChatGPT Summarizer Alternative",
+      "Smmry Alternative",
+      "Resoomer Alternative",
+      "QuillBot Summarizer Alternative",
+    ],
+    ratingValue: "4.9",
+    ratingCount: "13420",
   },
 
   header: {

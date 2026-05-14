@@ -16,9 +16,9 @@ const toolConfig = createToolConfig({
   toolName: "AI Pet Name Generator",
   description:
     "Generate personalized pet name ideas based on species, traits, personality, and naming style.",
-  metaTitle: "AI Pet Name Generator — Unique Dog, Cat & Pet Names Free (2026)",
+  metaTitle: "AI Pet Name Generator — Dog, Cat, Bird & Exotic Pet Names",
   metaDescription:
-    "Generate unique pet names with AI for dogs, cats, birds, fish, reptiles, and rabbits. Filter by breed, personality, size, gender, and naming style — cute, funny, human, themed. Free instant name lists with meanings.",
+    "Free AI pet name generator. Unique names for dogs, cats, birds, fish, reptiles, hamsters, rabbits, guinea pigs. Filter by breed, personality, gender, naming style (cute / funny / classic / human / themed). Names with meanings. Free, unlimited.",
   path: "/ai-tools/pet-names",
 
   header: {
@@ -38,13 +38,35 @@ const toolConfig = createToolConfig({
     applicationCategory: "LifestyleApplication",
     description:
       "Generate pet names for different species and personality profiles with categorized suggestions.",
-    alternateName: ["Pet Naming Tool", "Dog Name Finder", "Cat Name Finder"],
+    alternateName: [
+      "Pet Naming Tool",
+      "Dog Name Generator",
+      "Cat Name Generator",
+      "Bird Name Generator",
+      "Puppy Name Maker",
+      "Kitten Name Finder",
+      "Rabbit Name Generator",
+      "Hamster Name Tool",
+      "Fish Name Generator",
+      "Reptile Name Generator",
+      "Funny Pet Names",
+      "Cute Pet Names",
+      "Unique Pet Name Tool",
+      "AI Animal Name Generator",
+      "Custom Pet Name Maker",
+    ],
     featureList: [
-      "Species-aware naming",
-      "Gender and age filters",
-      "Trait and personality input",
-      "Categorized name results",
-      "Copy and export workflow",
+      "Multi-species support: dogs, cats, birds, fish, reptiles, hamsters, rabbits, guinea pigs, ferrets",
+      "Breed-aware naming: Golden Retriever vs Persian cat gets different style recommendations",
+      "Personality input: playful, calm, mischievous, regal, energetic, shy",
+      "Gender filter: male, female, gender-neutral",
+      "Size / age awareness for puppy / kitten / senior pet appropriate names",
+      "Naming styles: classic, cute, funny, unique, human-style, food-themed, nature-inspired, pop-culture",
+      "Each name shown with origin / meaning context",
+      "Multilingual: pull names from English, Spanish, Italian, Japanese, French traditions",
+      "Save favorites / shortlist mode for comparing top picks",
+      "Bulk-generate 20+ names per click",
+      "Free, unlimited regeneration, no signup",
     ],
     offers: {
       "@type": "Offer",

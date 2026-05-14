@@ -125,17 +125,17 @@
 
 | # | Tool | Path | Status |
 |---|---|---|---|
-| 102 | Text Summarizer | `/ai-tools/text-summarizer` | [ ] |
-| 103 | Text to Speech | `/ai-tools/text-to-speech` | [ ] |
-| 104 | AI Text Detector | `/ai-tools/ai-text-detector` | [ ] |
-| 105 | AI Code Detector | `/ai-tools/ai-code-detector` | [ ] |
-| 106 | AI Readability Analyzer | `/ai-tools/ai-readability-analyzer` | [ ] |
-| 107 | AI Paraphraser | `/ai-tools/ai-paraphraser` | [ ] |
-| 108 | QR Generator | `/ai-tools/qr-generator` | [ ] |
-| 109 | Caption Generator | `/ai-tools/caption-generator` | [ ] |
-| 110 | Lyrics Generator | `/ai-tools/lyrics-generator` | [ ] |
-| 111 | Pet Names | `/ai-tools/pet-names` | [ ] |
-| 112 | Token to Word Converter | `/ai-tools/token-to-word-converter` | [ ] |
+| 102 | Text Summarizer | `/ai-tools/text-summarizer` | [x] |
+| 103 | Text to Speech | `/ai-tools/text-to-speech` | [x] |
+| 104 | AI Text Detector | `/ai-tools/ai-text-detector` | [x] |
+| 105 | AI Code Detector | `/ai-tools/ai-code-detector` | [x] |
+| 106 | AI Readability Analyzer | `/ai-tools/ai-readability-analyzer` | [x] |
+| 107 | AI Paraphraser | `/ai-tools/ai-paraphraser` | [x] |
+| 108 | QR Generator | `/ai-tools/qr-generator` | [x] |
+| 109 | Caption Generator | `/ai-tools/caption-generator` | [x] |
+| 110 | Lyrics Generator | `/ai-tools/lyrics-generator` | [x] |
+| 111 | Pet Names | `/ai-tools/pet-names` | [x] |
+| 112 | Token to Word Converter | `/ai-tools/token-to-word-converter` | [x] |
 
 ## Group G — Finance
 

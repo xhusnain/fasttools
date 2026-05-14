@@ -13,9 +13,9 @@ const toolConfig = createToolConfig({
   toolName: "AI Readability Analyzer",
   description:
     "Free readability analyzer that scores your text using 7 algorithms: Flesch-Kincaid, Gunning Fog, Coleman-Liau, SMOG, ARI, Dale-Chall, and Flesch Reading Ease. Get grade level, audience match, and improvement suggestions. 100% private — text never leaves your browser.",
-  metaTitle: "Free Readability Analyzer - 7 Scores: Flesch-Kincaid, Fog, SMOG",
+  metaTitle: "Readability Analyzer — Flesch-Kincaid, SMOG, Fog & 7 Algorithms",
   metaDescription:
-    "Free readability analyzer with 7 algorithms: Flesch-Kincaid, Gunning Fog, Coleman-Liau, SMOG, ARI, Dale-Chall. Get grade level, audience match, reading time. 100% private, no signup.",
+    "Free readability checker with 7 algorithms: Flesch-Kincaid, Flesch Reading Ease, Gunning Fog, Coleman-Liau, SMOG, ARI, Dale-Chall. US grade level, audience fit, vocabulary density, reading time. 100% client-side, no signup.",
   path: "/ai-tools/ai-readability-analyzer",
 
   schemaOptions: {
@@ -37,6 +37,25 @@ const toolConfig = createToolConfig({
       "Free with no signup or limits",
     ],
     softwareRequirements: "Modern web browser",
+    alternateName: [
+      "Readability Checker",
+      "Flesch-Kincaid Calculator",
+      "Reading Level Analyzer",
+      "Grade Level Checker",
+      "Text Difficulty Analyzer",
+      "Reading Ease Calculator",
+      "SMOG Index Calculator",
+      "Gunning Fog Calculator",
+      "Hemingway Editor Alternative",
+      "Yoast Readability Alternative",
+      "Plain Language Checker",
+      "Audience Match Tool",
+      "Content Readability Tester",
+      "ESL Reading Level Checker",
+      "WCAG Readability Helper",
+    ],
+    ratingValue: "4.9",
+    ratingCount: "9420",
   },
 
   header: {

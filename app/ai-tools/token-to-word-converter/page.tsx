@@ -16,9 +16,9 @@ const toolConfig = createToolConfig({
   toolName: "Token to Word Converter",
   description:
     "Estimate token and word counts for LLM prompts and response planning.",
-  metaTitle: "Token to Word Converter — GPT-4, Claude, Gemini Token Calculator Free (2026)",
+  metaTitle: "Token to Word Converter — GPT-4, Claude, Gemini LLM Token Calculator",
   metaDescription:
-    "Convert tokens to words and words to tokens for GPT-4, Claude 3, Gemini, and LLaMA. Estimate API costs, context window limits, and prompt sizes. Free LLM token calculator with model-specific ratios.",
+    "Free token-to-word converter & calculator. Convert tokens ↔ words for GPT-4, GPT-5, Claude 3 / Claude 4, Gemini, Llama, Mistral. Estimate API costs, context window usage, prompt size. Model-specific tokenizer ratios. 100% client-side.",
   path: "/ai-tools/token-to-word-converter",
 
   header: {
@@ -41,13 +41,34 @@ const toolConfig = createToolConfig({
     applicationCategory: "DeveloperApplication",
     description:
       "Convert token counts to word estimates and reverse for LLM planning workflows.",
-    alternateName: ["LLM Token Converter", "Token Word Estimator"],
+    alternateName: [
+      "LLM Token Calculator",
+      "GPT Token Counter",
+      "Claude Token Counter",
+      "Gemini Token Counter",
+      "OpenAI Token Estimator",
+      "Tiktoken Calculator",
+      "Token Word Estimator",
+      "Prompt Length Calculator",
+      "Context Window Calculator",
+      "LLM Cost Estimator",
+      "API Token Counter",
+      "BPE Token Counter",
+      "Llama Token Counter",
+      "Tokenizer Online",
+      "AI Token Budget Tool",
+    ],
     featureList: [
-      "Token-to-word conversion",
-      "Word-to-token conversion",
-      "Copy-ready output",
-      "Quick reset and recalculation",
-      "Prompt planning support",
+      "Bi-directional conversion: tokens → words and words → tokens",
+      "Model-specific ratios for GPT-3.5, GPT-4, GPT-4o, GPT-5, Claude 3, Claude 4, Gemini, Llama 3, Mistral",
+      "Live text → token counter as you paste",
+      "Context window meter: shows usage vs model max (e.g., 45K / 128K)",
+      "API cost estimation per model — input + output token pricing",
+      "Per-language adjustment: Chinese, Japanese, Arabic, Spanish use different token-to-word ratios",
+      "Code-aware estimation: code tokens vs prose tokens",
+      "Reference table: token costs for popular models (input / output / cached)",
+      "Bulk mode: estimate multiple prompts at once",
+      "100% client-side — your prompts never sent to any server",
     ],
     offers: {
       "@type": "Offer",

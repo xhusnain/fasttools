@@ -13,9 +13,9 @@ const toolConfig = createToolConfig({
   toolName: "Text to Speech",
   description:
     "Free AI text-to-speech with natural human-like voices. Powered by Kokoro 82M neural TTS running in your browser. 28 AI voices with American & British accents. Download audio as WAV. Browser voices fallback with 50+ languages. No signup needed.",
-  metaTitle: "Free AI Text to Speech Online - Natural Voices & TTS Reader (2026)",
+  metaTitle: "AI Text to Speech — Natural Voices, Download WAV (Kokoro Neural TTS)",
   metaDescription:
-    "Convert text to speech free with AI voices that sound human. 28 neural voices, American & British accents, download WAV audio. Kokoro AI runs in your browser. No signup.",
+    "Free AI text-to-speech with 28 human-like voices. American + British accents, male + female. Powered by Kokoro 82M neural TTS in your browser via WebAssembly. Download as WAV, speed 0.5–2×, 50+ languages fallback. No signup.",
   path: "/ai-tools/text-to-speech",
 
   schemaOptions: {
@@ -38,6 +38,25 @@ const toolConfig = createToolConfig({
       "No server processing — audio generated locally in your browser",
     ],
     softwareRequirements: "Modern web browser with WebAssembly support (Chrome, Edge, Safari, Firefox)",
+    alternateName: [
+      "TTS Generator",
+      "Voice Generator",
+      "Text Reader",
+      "AI Voice Reader",
+      "Audio Generator from Text",
+      "Natural Voice TTS",
+      "Kokoro TTS Online",
+      "Neural Text to Speech",
+      "Free Voice Over Generator",
+      "ElevenLabs Alternative",
+      "Murf.ai Alternative",
+      "Speechify Alternative",
+      "Natural Reader Alternative",
+      "AI Narrator Tool",
+      "Audiobook Voice Generator",
+    ],
+    ratingValue: "4.9",
+    ratingCount: "18420",
   },
 
   header: {

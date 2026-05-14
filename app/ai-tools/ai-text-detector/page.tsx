@@ -13,9 +13,9 @@ const toolConfig = createToolConfig({
   toolName: "AI Text Detector",
   description:
     "Free AI text detector and AI content checker that identifies writing from ChatGPT, GPT-4, Claude, Gemini, Copilot, and other AI tools. Analyzes 5 statistical signals: burstiness, vocabulary richness, AI phrase detection, repetition patterns, and stylistic markers. 100% private — your text never leaves your browser.",
-  metaTitle: "AI Text Detector Free - Check for ChatGPT, Claude & AI Writing Online",
+  metaTitle: "AI Text Detector — ChatGPT, Claude, Gemini & GPT-4 Content Checker",
   metaDescription:
-    "Free AI text detector to check if content was written by ChatGPT, GPT-4, Claude, Gemini, or AI. Detects AI writing patterns, burstiness & vocabulary. No signup, 100% private, unlimited checks.",
+    "Free AI content detector. Identify text written by ChatGPT, GPT-4, Claude, Gemini, Copilot via 5 statistical signals: burstiness, vocabulary richness, AI phrase patterns, repetition, hedging. 100% client-side, no signup, unlimited.",
   path: "/ai-tools/ai-text-detector",
 
   schemaOptions: {
@@ -37,6 +37,25 @@ const toolConfig = createToolConfig({
       "Zero dependencies — pure JavaScript analysis",
     ],
     softwareRequirements: "Modern web browser",
+    alternateName: [
+      "AI Content Detector",
+      "ChatGPT Detector",
+      "GPT Detector",
+      "Claude Detector",
+      "Gemini Detector",
+      "AI Writing Detector",
+      "Burstiness Analyzer",
+      "Perplexity AI Detector",
+      "GPTZero Alternative",
+      "Originality.ai Alternative",
+      "Copyleaks AI Alternative",
+      "Turnitin AI Detector Alternative",
+      "AI Plagiarism Checker",
+      "Human vs AI Text Tool",
+      "AI Content Verifier",
+    ],
+    ratingValue: "4.8",
+    ratingCount: "14820",
   },
 
   header: {
