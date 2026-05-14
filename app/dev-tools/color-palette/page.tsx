@@ -169,14 +169,122 @@ const toolConfig = createToolConfig({
         <div>
           <h3 className="text-lg font-semibold text-foreground mb-2">Using Palettes in Your Code</h3>
           <p>
-            The export feature gives you production-ready code in 5 formats.{" "}
-            <strong>CSS Variables</strong> output <code>:root</code> custom properties you can
-            reference anywhere with <code>var(--color-1)</code>. <strong>Tailwind Config</strong>{" "}
-            gives you a <code>theme.extend.colors</code> block to paste into{" "}
-            <code>tailwind.config.js</code>. <strong>SCSS</strong> provides Sass variables for
-            design systems. <strong>JSON</strong> includes HEX/RGB/HSL for every color — perfect
-            for design tokens, React themes, or mobile app asset catalogs. Download as a file or
-            copy directly to your clipboard.
+            The export feature gives you production-ready code in 5 formats. <strong>CSS Variables</strong> output <code>:root</code> custom properties you can reference anywhere with <code>var(--color-1)</code>. <strong>Tailwind Config</strong> gives you a <code>theme.extend.colors</code> block to paste into <code>tailwind.config.js</code>. <strong>SCSS</strong> provides Sass variables for design systems. <strong>JSON</strong> includes HEX/RGB/HSL for every color — perfect for design tokens, React themes, or mobile app asset catalogs. Download as a file or copy directly to your clipboard.
+          </p>
+        </div>
+
+        <div>
+          <h3 className="text-lg font-semibold text-foreground mb-2">60-30-10 Rule for Web Design</h3>
+          <p>
+            Beyond picking colors, the question is <em>how to use them</em>. The most reliable rule in interior design and web UI: <strong>60% dominant + 30% secondary + 10% accent</strong>. Translate this to a 5-color palette:
+          </p>
+          <ul className="list-disc pl-6 mt-2 space-y-1">
+            <li><strong>Color 1 (60% — dominant):</strong> background — white, off-white, or very dark. The page baseline.</li>
+            <li><strong>Color 2 (30% — secondary):</strong> primary brand color — navigation, cards, key surfaces.</li>
+            <li><strong>Color 3 (10% — accent):</strong> call-to-action buttons, links, emphasis. The color that drives action.</li>
+            <li><strong>Colors 4-5 (utility):</strong> body text gray, muted text gray, success/warning/error semantic colors.</li>
+          </ul>
+          <p className="mt-3">
+            This distribution gives visual hierarchy automatically. When everything is one color, nothing stands out — when colors fight for attention equally, the user&apos;s eye can&apos;t land. The 60-30-10 rule is why most well-designed websites look balanced even at first glance.
+          </p>
+        </div>
+
+        <div>
+          <h3 className="text-lg font-semibold text-foreground mb-2">Color Psychology by Industry</h3>
+          <table className="w-full border-collapse text-sm">
+            <thead>
+              <tr className="border-b border-border">
+                <th className="text-left py-2 px-2 text-foreground">Color</th>
+                <th className="text-left py-2 px-2 text-foreground">Common emotion</th>
+                <th className="text-left py-2 px-2 text-foreground">Best for industries</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr className="border-b border-border">
+                <td className="py-2 px-2"><strong>Blue</strong></td>
+                <td className="py-2 px-2">Trust, calm, professionalism</td>
+                <td className="py-2 px-2">Banking (Chase, Capital One), tech (Facebook, IBM), healthcare</td>
+              </tr>
+              <tr className="border-b border-border">
+                <td className="py-2 px-2">Red</td>
+                <td className="py-2 px-2">Energy, urgency, passion</td>
+                <td className="py-2 px-2">Food (Coca-Cola, KFC), entertainment (Netflix, YouTube), sales</td>
+              </tr>
+              <tr className="border-b border-border">
+                <td className="py-2 px-2">Green</td>
+                <td className="py-2 px-2">Growth, money, nature, health</td>
+                <td className="py-2 px-2">Finance (Robinhood), eco (Whole Foods), wellness (Spotify)</td>
+              </tr>
+              <tr className="border-b border-border">
+                <td className="py-2 px-2">Yellow</td>
+                <td className="py-2 px-2">Optimism, caution, attention</td>
+                <td className="py-2 px-2">Fast food (McDonald&apos;s), construction, kids&apos; products</td>
+              </tr>
+              <tr className="border-b border-border">
+                <td className="py-2 px-2">Orange</td>
+                <td className="py-2 px-2">Friendly, affordable, creative</td>
+                <td className="py-2 px-2">Marketing (HubSpot), e-commerce (Amazon), entertainment</td>
+              </tr>
+              <tr className="border-b border-border">
+                <td className="py-2 px-2">Purple</td>
+                <td className="py-2 px-2">Luxury, creativity, royalty</td>
+                <td className="py-2 px-2">Beauty (Hallmark), creative tools (Twitch, Figma), premium</td>
+              </tr>
+              <tr className="border-b border-border">
+                <td className="py-2 px-2">Pink</td>
+                <td className="py-2 px-2">Feminine, modern, friendly</td>
+                <td className="py-2 px-2">Beauty, dating (Pinterest, Lyft historical)</td>
+              </tr>
+              <tr>
+                <td className="py-2 px-2">Black</td>
+                <td className="py-2 px-2">Luxury, sophistication, power</td>
+                <td className="py-2 px-2">Fashion (Chanel), luxury cars, premium tech (Apple)</td>
+              </tr>
+            </tbody>
+          </table>
+          <p className="mt-3">
+            Caveat: color psychology is culturally relative. White means &quot;mourning&quot; in some Asian cultures; red means &quot;luck&quot; in China but &quot;debt&quot; in financial UIs. Always verify your color choices match your target audience&apos;s cultural context.
+          </p>
+        </div>
+
+        <div>
+          <h3 className="text-lg font-semibold text-foreground mb-2">Common Palette Mistakes to Avoid</h3>
+          <ul className="list-disc pl-6 space-y-1">
+            <li><strong>Too many colors:</strong> 4-6 colors max for most websites; design systems use 8-12. More than that creates visual chaos and is hard to maintain.</li>
+            <li><strong>No neutral colors:</strong> palettes need grays/off-whites for text and backgrounds. Pure black on pure white is hard to read; use #111 on #f8f8f8 or similar.</li>
+            <li><strong>Equal saturation:</strong> all colors at high saturation = visual noise. Vary saturation: brand colors saturated, utilities desaturated.</li>
+            <li><strong>Ignoring contrast:</strong> if your brand colors don&apos;t hit 4.5:1 contrast for text, you need separate text colors. Check WCAG.</li>
+            <li><strong>Trend chasing:</strong> &quot;Y2K orange&quot; or &quot;coquette pink&quot; trends die fast. Pick timeless or grounded options for brand work.</li>
+            <li><strong>No accessibility check:</strong> 1 in 12 men have some form of color blindness. Don&apos;t encode information by color alone — always pair with text or icons.</li>
+            <li><strong>Inconsistent across modes:</strong> design palette in both light AND dark mode from the start, not retrofit later.</li>
+          </ul>
+        </div>
+
+        <div>
+          <h3 className="text-lg font-semibold text-foreground mb-2">OKLCH: The Modern Color Space</h3>
+          <p>
+            Traditional HEX / RGB / HSL color spaces have a flaw: equal numeric changes don&apos;t produce equal visual changes. A 10% lightness change in HSL is far more visible in some hues than others. <strong>OKLCH</strong> (Oklab Lightness Chroma Hue) is a perceptually uniform color space — equal numeric changes produce equal visual changes. This makes it ideal for: generating tints / shades programmatically, animating between colors smoothly without &quot;gray dead zone,&quot; designing accessible palettes mathematically. CSS Color Level 4 supports OKLCH natively: <code>oklch(70% 0.15 200)</code>. All modern browsers (Chrome 111+, Firefox 113+, Safari 15.4+) support it.
+          </p>
+        </div>
+
+        <div>
+          <h3 className="text-lg font-semibold text-foreground mb-2">Design System Color Tokens</h3>
+          <p>
+            Modern design systems don&apos;t use raw color values directly — they use <strong>semantic tokens</strong>: <code>color-surface-primary</code>, <code>color-text-default</code>, <code>color-action-primary</code>, etc. Tokens map to actual colors but can be reassigned without code changes. Example token structure:
+          </p>
+          <pre className="bg-muted p-3 rounded mt-2 text-xs overflow-x-auto">
+            <code>{`/* Base color palette (from this generator) */
+--color-blue-500: #3b82f6;
+--color-gray-100: #f3f4f6;
+--color-gray-900: #111827;
+
+/* Semantic tokens (what your code uses) */
+--color-action-primary: var(--color-blue-500);
+--color-text-default: var(--color-gray-900);
+--color-surface-primary: var(--color-gray-100);`}</code>
+          </pre>
+          <p className="mt-3">
+            When rebranding, you only change the semantic token mapping — every component using the token updates automatically. This is the foundation of Figma Tokens, Tailwind&apos;s token system, and Material Design 3&apos;s color roles.
           </p>
         </div>
       </div>
