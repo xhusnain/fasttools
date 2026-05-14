@@ -17,9 +17,6 @@
 
 | # | Tool | Path | GSC Signal | Status |
 |---|---|---|---|---|
-| 1 | TikTok Engagement Calculator | `/social-media-tools/tiktok-engagement-calculator` | 21 imp / 4 clicks "tiktok hashtag counter" | [ ] |
-| 20 | TikTok Engagement Calculator | `/social-media-tools/tiktok-engagement-calculator` | 21 imp / 4 clicks "tiktok hashtag counter" | [ ] |
-
 ## Group B — Mid signal, growth potential (~5–50 GSC imp)
 
 | # | Tool | Path | Status |
@@ -255,6 +252,6 @@ For each tool, do this in order:
 ## Cumulative progress
 
 - Total tools: 179 + 8 variants = 187
-- Completed (deep): 19 (added currency, regex-tester, yt-name-gen, yt-tags, bip39, otp-gen, background-remover, pregnancy-calc, meta-tags)
+- Completed (deep): 20 (added tiktok-engagement)
 - Partial: 0
-- Remaining: 168
+- Remaining: 167 (all Group A done, moving to Group B with leaner per-tool effort)
