@@ -271,22 +271,103 @@ export default function SavingsTrackerPage() {
       }
     ],
 
-    aboutTool: `
-      ### Savings Tracker
-      Our Savings Tracker is your personal financial cheerleader, helping you stay motivated and on track to reach your financial goals. Whether you're saving for a rainy day or a dream vacation, this tool makes the process simple and rewarding.
+    aboutTool: (
+      <div className="space-y-8">
+        <article className="space-y-4">
+          <h2 className="text-2xl font-bold text-foreground">What Is a Savings Tracking Tool?</h2>
+          <p className="text-base text-muted-foreground leading-relaxed">
+            A savings tracking tool is a calculator that takes your savings goal, target date, and current savings, then computes the monthly contribution you need plus a real-time progress view. Unlike a basic compound-interest calculator, it&apos;s built for active goal management — adjust the contribution and watch the timeline shift, add another goal alongside the first, and prioritize when cash is short.
+          </p>
+        </article>
 
-      ### Key Features
-      - **Goal Visualization:** See your progress with clear, motivating visual indicators.
-      - **Timeline Calculation:** Instantly see when you'll reach your goal based on your current savings rate.
-      - **Multiple Goals:** Track savings for different objectives simultaneously (e.g., House, Car, Travel).
-      - **Flexible Planning:** Adjust your monthly contributions to see how it affects your timeline.
-    `,
+        <article className="space-y-4">
+          <h2 className="text-2xl font-bold text-foreground">Common Savings Goals &amp; Realistic Timelines</h2>
+          <div className="overflow-x-auto">
+            <table className="min-w-full text-sm border border-border">
+              <thead className="bg-muted text-foreground font-semibold">
+                <tr>
+                  <th className="p-3 text-left border-b border-border">Goal</th>
+                  <th className="p-3 text-left border-b border-border">Typical amount (US, 2026)</th>
+                  <th className="p-3 text-left border-b border-border">Realistic timeline</th>
+                  <th className="p-3 text-left border-b border-border">Monthly to hit it</th>
+                </tr>
+              </thead>
+              <tbody className="divide-y divide-border">
+                <tr><td className="p-3 font-semibold">Emergency fund (3 months)</td><td className="p-3">$10,000–$15,000</td><td className="p-3">12 months</td><td className="p-3">$850–$1,250</td></tr>
+                <tr><td className="p-3 font-semibold">Emergency fund (6 months)</td><td className="p-3">$20,000–$30,000</td><td className="p-3">24 months</td><td className="p-3">$830–$1,250</td></tr>
+                <tr><td className="p-3 font-semibold">Vacation (international, 2-week)</td><td className="p-3">$5,000–$8,000</td><td className="p-3">8 months</td><td className="p-3">$625–$1,000</td></tr>
+                <tr><td className="p-3 font-semibold">New car (used, reliable)</td><td className="p-3">$15,000–$25,000</td><td className="p-3">18 months</td><td className="p-3">$830–$1,390</td></tr>
+                <tr><td className="p-3 font-semibold">House down payment (10%, US median)</td><td className="p-3">$42,000</td><td className="p-3">36 months</td><td className="p-3">$1,170</td></tr>
+                <tr><td className="p-3 font-semibold">Wedding</td><td className="p-3">$25,000–$35,000</td><td className="p-3">24 months</td><td className="p-3">$1,040–$1,460</td></tr>
+                <tr><td className="p-3 font-semibold">First-year baby costs</td><td className="p-3">$15,000–$20,000</td><td className="p-3">12 months</td><td className="p-3">$1,250–$1,670</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </article>
+
+        <article className="space-y-4">
+          <h2 className="text-2xl font-bold text-foreground">How to Track Multiple Savings Goals at Once</h2>
+          <ul className="list-disc list-inside space-y-2 ml-2 text-muted-foreground">
+            <li><strong>Prioritize ruthlessly.</strong> Most households can&apos;t fund all goals at full speed. Rank by deadline + necessity (emergency fund &gt; debt &gt; house &gt; vacation).</li>
+            <li><strong>Allocate by percentage, not flat amount.</strong> If you save $1,500/month total, splitting as 50% emergency / 30% house / 20% vacation scales with raises automatically.</li>
+            <li><strong>Use separate buckets.</strong> Many savings accounts (Ally, Marcus, SoFi) let you create named sub-accounts for free — visually separating goals prevents accidental spending.</li>
+            <li><strong>Recalculate quarterly.</strong> Inflation, raises, surprise expenses — re-run the tracker every 3 months to adjust contributions before you fall behind.</li>
+            <li><strong>Inflation-adjust long-term goals.</strong> A $42,000 down payment in 2026 dollars is $48,500 in 5 years at 3% inflation. The tool above lets you bake this in.</li>
+          </ul>
+        </article>
+
+        <article className="space-y-4">
+          <h2 className="text-2xl font-bold text-foreground">FastTools vs Other Savings Tracking Tools</h2>
+          <div className="overflow-x-auto">
+            <table className="min-w-full text-sm border border-border">
+              <thead className="bg-muted text-foreground font-semibold">
+                <tr>
+                  <th className="p-3 text-left border-b border-border">Feature</th>
+                  <th className="p-3 text-left border-b border-border text-green-600">FastTools</th>
+                  <th className="p-3 text-left border-b border-border">Mint / Rocket Money</th>
+                  <th className="p-3 text-left border-b border-border">NerdWallet calc</th>
+                  <th className="p-3 text-left border-b border-border">Bankrate calc</th>
+                </tr>
+              </thead>
+              <tbody className="divide-y divide-border">
+                <tr><td className="p-3 font-semibold">No signup / no account link</td><td className="p-3 text-green-600">✓</td><td className="p-3 text-red-500">✗ links bank</td><td className="p-3 text-green-600">✓</td><td className="p-3 text-green-600">✓</td></tr>
+                <tr><td className="p-3 font-semibold">Multi-goal tracking</td><td className="p-3 text-green-600">✓</td><td className="p-3">✓</td><td className="p-3 text-red-500">single goal</td><td className="p-3 text-red-500">single goal</td></tr>
+                <tr><td className="p-3 font-semibold">Tax + inflation adjustment</td><td className="p-3 text-green-600">✓</td><td className="p-3 text-red-500">✗</td><td className="p-3 text-red-500">✗</td><td className="p-3">partial</td></tr>
+                <tr><td className="p-3 font-semibold">Client-side (no data leaves browser)</td><td className="p-3 text-green-600">✓</td><td className="p-3 text-red-500">cloud</td><td className="p-3 text-green-600">✓</td><td className="p-3 text-green-600">✓</td></tr>
+                <tr><td className="p-3 font-semibold">Priority-based goal ranking</td><td className="p-3 text-green-600">✓</td><td className="p-3">✓</td><td className="p-3 text-red-500">✗</td><td className="p-3 text-red-500">✗</td></tr>
+                <tr><td className="p-3 font-semibold">Free, no upsell to paid tier</td><td className="p-3 text-green-600">✓</td><td className="p-3 text-red-500">free with paid upsell</td><td className="p-3 text-green-600">✓</td><td className="p-3 text-green-600">✓</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </article>
+
+        <article className="space-y-4">
+          <h2 className="text-2xl font-bold text-foreground">The Same Tool, Many Names</h2>
+          <ul className="grid grid-cols-1 md:grid-cols-2 gap-2 text-sm text-muted-foreground">
+            <li>· savings tracker / savings tracking tool</li>
+            <li>· savings goal calculator</li>
+            <li>· financial goal tracker</li>
+            <li>· money savings calculator</li>
+            <li>· monthly savings planner</li>
+            <li>· multi-goal budget tracker</li>
+            <li>· emergency fund calculator</li>
+            <li>· house down payment savings calculator</li>
+            <li>· vacation savings calculator</li>
+            <li>· how much should I save each month calculator</li>
+          </ul>
+        </article>
+      </div>
+    ),
 
     relatedTools: [
+      { name: "Compound Interest Calculator", href: "/finance-tools/compound-interest" },
+      { name: "Investment Calculator", href: "/finance-tools/investment-calculator" },
+      { name: "Retirement Calculator", href: "/finance-tools/retirement-calculator" },
       { name: "Retirement Planner", href: "/finance-tools/retirement-planner" },
-      { name: "Credit Card Payoff", href: "/finance-tools/credit-card-payoff" },
-      { name: "Invoice Generator", href: "/finance-tools/invoice-generator" },
-      { name: "Discount Calculator", href: "/finance-tools/discount-calculator" }
+      { name: "Debt Payoff Calculator", href: "/finance-tools/debt-payoff-calculator" },
+      { name: "Net Worth Calculator", href: "/finance-tools/net-worth-calculator" },
+      { name: "Home Affordability Calculator", href: "/finance-tools/home-affordability-calculator" },
+      { name: "Inflation Calculator", href: "/finance-tools/inflation-calculator" }
     ]
   }
 
