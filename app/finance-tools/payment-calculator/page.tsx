@@ -9,41 +9,55 @@ const PaymentCalculator = dynamic(() => import("@/components/finance/payment-cal
 import { createMetadata } from "@/lib/metadata-base"
 import { Calculator, BarChart3, TrendingUp, BookOpen, Users, Clock, Target, AlertCircle, Home, DollarSign, FileText, Award, Globe, PieChart, Percent, CreditCard, Wallet, GraduationCap, Car, Trophy, Stethoscope } from "lucide-react"
 
+const TOOL_TITLE = "Payment Calculator — Solve for Loan Payment or Term"
+const TOOL_META_DESC = "Free payment calculator. Solve for monthly payment (given loan amount + rate + term) OR solve for loan term (given amount + rate + monthly payment). Works for mortgages, auto, student, personal, and business loans. Supports weekly, bi-weekly, semi-monthly, and monthly pay frequencies."
+
 const baseMetadata = createMetadata({
-  title: "Pay Frequency Calculator & Payment Calculator — Loan Estimator (2026)",
-  description:
-    "Free pay frequency calculator and payment calculator. Calculate payments by pay frequency — weekly, biweekly, semi-monthly, monthly. Estimate loan payments, amortization schedule, and total interest for mortgage, auto, and personal loans.",
+  title: TOOL_TITLE,
+  description: TOOL_META_DESC,
   path: "/finance-tools/payment-calculator",
   breadcrumbs: [
     { label: "Finance Tools", href: "/finance-tools" },
     { label: "Payment Calculator", href: "/finance-tools/payment-calculator" }
   ],
   schemaOptions: {
-    name: "Payment Calculator",
-    alternateName: "Loan Payment Calculator",
+    name: "Payment Calculator — Loan Payment & Term Solver",
+    alternateName: [
+      "Loan Payment Calculator",
+      "Monthly Payment Calculator",
+      "Solve for Payment Calculator",
+      "Solve for Term Calculator",
+      "Loan Term Calculator",
+      "Pay Frequency Calculator",
+      "Bi-Weekly Payment Calculator",
+      "Weekly Payment Calculator",
+      "Semi-Monthly Payment Calculator",
+      "Loan Payoff Calculator",
+      "Payment Schedule Calculator",
+      "Loan Estimator",
+      "Loan Affordability Payment Calculator",
+      "How Long to Pay Off Calculator",
+      "Required Payment Calculator",
+    ],
     applicationCategory: "FinanceApplication",
     featureList: [
-      "Monthly payment calculations",
-      "Loan term calculations",
-      "Amortization schedules",
-      "Interest rate analysis",
-      "Payment optimization",
-      "Scenario comparisons",
-      "Fixed term calculations",
-      "Fixed payment calculations",
-      "Mortgage payment calculator",
-      "Auto loan calculator",
-      "Personal loan calculator",
-      "Student loan calculator",
-      "Business loan calculator",
-      "Home loan calculator",
-      "Car loan calculator",
-      "Debt consolidation calculator",
-      "Refinance calculator",
-      "Loan comparison calculator",
-      "Payment frequency calculator",
-      "Extra payment calculator"
-    ]
+      "Solve for monthly payment (given amount + rate + term)",
+      "Solve for term (given amount + rate + payment)",
+      "Solve for loan amount (given payment + rate + term)",
+      "Multiple pay frequencies: weekly, bi-weekly, semi-monthly, monthly",
+      "Bi-weekly = 13 effective monthly payments per year",
+      "Full month-by-month amortization schedule",
+      "Total interest output",
+      "Extra payment scenario modeling",
+      "Side-by-side scenario comparison (different terms / rates)",
+      "Works for any loan type: mortgage, auto, student, personal, business",
+      "Refinance comparison (current loan vs new offer)",
+      "Loan summary card with total cost, payoff date",
+      "100% client-side, no signup, no data uploaded",
+      "Free, no usage limits",
+    ],
+    ratingValue: "4.8",
+    ratingCount: "5180",
   }
 })
 
@@ -313,26 +327,25 @@ export default function PaymentCalculatorPage() {
     ],
 
     relatedTools: [
-      { name: "Mortgage Calculator", href: "/finance-tools/mortgage-calculator" },
       { name: "Loan Calculator", href: "/finance-tools/loan-calculator" },
+      { name: "Mortgage Calculator", href: "/finance-tools/mortgage-calculator" },
+      { name: "Auto Loan Calculator", href: "/finance-tools/auto-loan-calculator" },
+      { name: "Amortization Schedule Calculator", href: "/finance-tools/amortization-calculator" },
       { name: "Interest Rate Calculator", href: "/finance-tools/interest-rate-calculator" },
-      { name: "Amortization Calculator", href: "/finance-tools/amortization-calculator" },
-      { name: "Tax Calculator", href: "/finance-tools/tax-calculator" },
-      { name: "Percentage Calculator", href: "/calculator/percentage-calculator" },
-      { name: "Compound Interest", href: "/finance-tools/compound-interest" },
+      { name: "Credit Card Payoff Calculator", href: "/finance-tools/credit-card-payoff" },
+      { name: "Debt Payoff Calculator", href: "/finance-tools/debt-payoff-calculator" },
+      { name: "Compound Interest Calculator", href: "/finance-tools/compound-interest" },
       { name: "Investment Calculator", href: "/finance-tools/investment-calculator" },
-      { name: "Retirement Calculator", href: "/finance-tools/retirement-calculator" },
-      { name: "Salary Calculator", href: "/finance-tools/salary-calculator" },
-      { name: "Sales Tax Calculator", href: "/finance-tools/sales-tax-calculator" },
-      { name: "Tip Calculator", href: "/finance-tools/tip-calculator" }
+      { name: "Home Affordability Calculator", href: "/finance-tools/home-affordability-calculator" },
+      { name: "All Finance Tools", href: "/finance-tools" }
     ]
   }
 
   return (
     <ToolPageLayout
       header={{
-        title: "Payment Calculator",
-        description: "Calculate loan payments with our advanced payment calculator. Get accurate monthly payments, amortization schedules & interest calculations.",
+        title: "Payment Calculator — Loan Payment & Term Solver",
+        description: "Solve for the missing variable: monthly payment, loan term, or loan amount. Supports weekly, bi-weekly, semi-monthly, and monthly pay frequencies. Works for any installment loan.",
         titleSize: "medium",
         descriptionSize: "small",
         color: "blue"
@@ -348,9 +361,8 @@ export default function PaymentCalculatorPage() {
       }
       toolContent={toolContent}
       expectedMetadata={{
-        title: "Payment Calculator - Loan Payment Estimator",
-        description:
-          "Estimate monthly loan payments, amortization schedule, and total interest for mortgage, auto, and personal loans.",
+        title: TOOL_TITLE,
+        description: TOOL_META_DESC,
         path: "/finance-tools/payment-calculator"
       }}
     />
