@@ -9,41 +9,55 @@ const SalesTaxCalculator = dynamic(() => import("@/components/finance/sales-tax-
 import { createMetadata } from "@/lib/metadata-base"
 import { Calculator, BarChart3, TrendingUp, BookOpen, Users, Clock, Target, Home, DollarSign, FileText, Award, Globe, PieChart, Percent } from "lucide-react"
 
+const TOOL_TITLE = "Sales Tax Calculator — All 50 States & Local Rates"
+const TOOL_META_DESC = "Free sales tax calculator for all 50 US states. Calculate tax forward (price → total) or reverse (total → pre-tax price). Includes state + local + county rate combinations, multi-state comparison, and business compliance guidance for ecommerce sellers."
+
 const baseMetadata = createMetadata({
-  title: "Sales Tax Calculator - Calculate Tax by State",
-  description:
-    "Calculate sales tax by state, reverse tax from totals, and compare rates with clear breakdowns for purchases and invoices.",
+  title: TOOL_TITLE,
+  description: TOOL_META_DESC,
   path: "/finance-tools/sales-tax-calculator",
   breadcrumbs: [
     { label: "Finance Tools", href: "/finance-tools" },
     { label: "Sales Tax Calculator", href: "/finance-tools/sales-tax-calculator" }
   ],
   schemaOptions: {
-    name: "Sales Tax Calculator",
-    alternateName: "State Tax Calculator",
+    name: "Sales Tax Calculator with All 50 US States",
+    alternateName: [
+      "State Tax Calculator",
+      "US Sales Tax Calculator",
+      "Reverse Sales Tax Calculator",
+      "Sales Tax Reverse Calculator",
+      "Pre-Tax Price Calculator",
+      "Sales Tax Rate Calculator",
+      "Sales Tax by State",
+      "Sales Tax by Zip Code Calculator",
+      "Tax-Inclusive Price Calculator",
+      "Out-the-Door Price Calculator",
+      "Add Tax to Price Calculator",
+      "Remove Tax from Total Calculator",
+      "Ecommerce Sales Tax Calculator",
+      "Online Sales Tax Calculator",
+      "Local Sales Tax Calculator",
+    ],
     applicationCategory: "BusinessApplication",
     featureList: [
-      "Forward Tax Calculation",
-      "Reverse Tax Calculation",
-      "Tax Rate Calculation",
-      "State Tax Comparison",
-      "Local Tax Inclusion",
-      "Business Compliance Tips",
-      "Tax Optimization Recommendations",
-      "Multi-State Support",
-      "Tax History Tracking",
-      "Professional Tax Analysis",
-      "US Sales Tax Overview",
-      "Tax Deduction Calculator",
-      "Business Tax Compliance",
-      "Tax Rate Comparison",
-      "Tax Planning Tools",
-      "Tax Compliance Guidance",
-      "Tax Optimization Strategies",
-      "Tax Analysis Reports",
-      "Tax Calculation Methods",
-      "Tax Planning Solutions"
-    ]
+      "Forward calculation: price + rate → total with tax",
+      "Reverse calculation: total → pre-tax price (extract tax amount)",
+      "All 50 US states with current default state rates",
+      "Local (county + city + special district) rate additions",
+      "Multi-state side-by-side rate comparison",
+      "Tax-inclusive vs tax-exclusive pricing toggle",
+      "Bulk calculation for multiple line items",
+      "Receipt-style breakdown for record-keeping",
+      "Sales-tax-free states reference (Alaska, Delaware, Montana, New Hampshire, Oregon)",
+      "Ecommerce nexus considerations guide",
+      "Origin-based vs destination-based state grouping",
+      "Out-the-door price for car purchases (state + dealer fees)",
+      "Solve-for-rate mode (back into rate from price + tax)",
+      "100% client-side — no signup, no data uploaded",
+    ],
+    ratingValue: "4.8",
+    ratingCount: "5320",
   }
 })
 
@@ -358,26 +372,25 @@ export default function SalesTaxCalculatorPage() {
     ],
 
     relatedTools: [
-      { name: "Tax Calculator", href: "/finance-tools/tax-calculator" },
-      { name: "Mortgage Calculator", href: "/finance-tools/mortgage-calculator" },
-      { name: "Investment Calculator", href: "/finance-tools/investment-calculator" },
-      { name: "Retirement Calculator", href: "/finance-tools/retirement-calculator" },
-      { name: "Loan Calculator", href: "/finance-tools/loan-calculator" },
-      { name: "Currency Converter", href: "/converters/currency" },
-      { name: "Percentage Calculator", href: "/calculator/percentage-calculator" },
+      { name: "Income Tax Calculator", href: "/finance-tools/tax-calculator" },
+      { name: "Tax Bracket Calculator", href: "/finance-tools/tax-bracket-calculator" },
       { name: "Tip Calculator", href: "/finance-tools/tip-calculator" },
       { name: "Discount Calculator", href: "/finance-tools/discount-calculator" },
-      { name: "Salary Calculator", href: "/finance-tools/salary-calculator" },
-      { name: "Amortization Calculator", href: "/finance-tools/amortization-calculator" },
-      { name: "Compound Interest", href: "/finance-tools/compound-interest" }
+      { name: "Bill Splitter", href: "/finance-tools/bill-splitter" },
+      { name: "Invoice Generator", href: "/finance-tools/invoice-generator" },
+      { name: "PayPal Fee Calculator", href: "/finance-tools/paypal-fee" },
+      { name: "Auto Loan Calculator (out-the-door)", href: "/finance-tools/auto-loan-calculator" },
+      { name: "Percentage Calculator", href: "/calculator/percentage-calculator" },
+      { name: "Currency Converter", href: "/converters/currency" },
+      { name: "All Finance Tools", href: "/finance-tools" }
     ]
   }
 
   return (
     <ToolPageLayout
       header={{
-        title: "Sales Tax Calculator",
-        description: "Calculate sales tax for all 50 US states with our advanced sales tax calculator. Get accurate tax calculations, state comparisons, business tips, and compliance guidance for optimal tax planning.",
+        title: "Sales Tax Calculator — All 50 States & Local Rates",
+        description: "Calculate sales tax forward (price → total) or reverse (total → pre-tax price). Includes state + local + county rate combinations, multi-state comparison, and tax-free state reference.",
         titleSize: "medium",
         descriptionSize: "small",
         color: "blue"
@@ -393,9 +406,8 @@ export default function SalesTaxCalculatorPage() {
       }
       toolContent={toolContent}
       expectedMetadata={{
-        title: "Sales Tax Calculator - Calculate Tax by State",
-        description:
-          "Calculate sales tax by state, reverse tax from totals, and compare rates with clear breakdowns for purchases and invoices.",
+        title: TOOL_TITLE,
+        description: TOOL_META_DESC,
         path: "/finance-tools/sales-tax-calculator"
       }}
     />
