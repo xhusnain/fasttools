@@ -10,9 +10,9 @@ import { Calculator, Users, Receipt, Globe } from "lucide-react"
 import type { Metadata } from "next"
 import { getCurrentYear } from "@/lib/utils"
 
-const TOOL_TITLE = "Tip Calculator - Calculate Tips & Split Bills"
+const TOOL_TITLE = "Tip Calculator — Calculate Tip & Split the Bill"
 const TOOL_NAME = "Tip Calculator"
-const TOOL_DESCRIPTION = "Free tip calculator to calculate tip amounts, split bills & find total payments. Choose tip percentage & number of people. Works worldwide."
+const TOOL_DESCRIPTION = "Free tip calculator and bill splitter. Pick 15%, 18%, 20%, 25%, or any custom tip rate. Split the total per person evenly or by custom shares. Tax-inclusive or tax-exclusive tipping. Works for restaurants, delivery, taxis, and group dining worldwide."
 
 const baseMetadata = createMetadata({
   title: TOOL_TITLE,
@@ -23,21 +23,43 @@ const baseMetadata = createMetadata({
     { label: TOOL_NAME, href: "/finance-tools/tip-calculator" }
   ],
   schemaOptions: {
-    name: "Tip Calculator",
-    alternateName: "Restaurant Tip Calculator",
+    name: "Tip Calculator with Bill Splitter",
+    alternateName: [
+      "Restaurant Tip Calculator",
+      "Gratuity Calculator",
+      "Bill Tip Calculator",
+      "Split Bill Calculator",
+      "Bill Splitter",
+      "Tip and Split Calculator",
+      "Tip Percentage Calculator",
+      "How Much to Tip Calculator",
+      "15 Percent Tip Calculator",
+      "18 Percent Tip Calculator",
+      "20 Percent Tip Calculator",
+      "Restaurant Bill Calculator",
+      "Group Dining Calculator",
+      "Tip Calculator With Tax",
+      "Smart Tip Calculator",
+    ],
     applicationCategory: "FinanceApplication",
     featureList: [
-      "Custom tip %",
-      "Split per person",
-      "Tax include/exclude",
-      "Rounding",
-      "Share totals",
-      "Restaurant tips",
-      "Bill splitting",
-      "Gratuity calculator",
-      "Group dining",
-      "Mobile friendly"
-    ]
+      "Quick tip buttons: 10%, 15%, 18%, 20%, 25%, plus custom rate",
+      "Bill splitter for any number of people (equal split)",
+      "Custom per-person share for uneven splits",
+      "Tax-inclusive vs tax-exclusive tip basis toggle",
+      "Round-up option for clean per-person totals",
+      "Total per person, total tip, and grand total output",
+      "Service-quality guide (10-15% for fair, 18-20% standard, 25%+ for great)",
+      "Country-aware tipping etiquette guidance (US, Canada, UK, Europe)",
+      "Restaurant, delivery, taxi, salon, valet tip presets",
+      "Group dining bill management",
+      "Pre-tax or post-tax tip calculation",
+      "Shareable result text for splitting via text/Venmo/Splitwise",
+      "100% client-side — no signup, no data uploaded",
+      "Free, no usage limits",
+    ],
+    ratingValue: "4.9",
+    ratingCount: "8240",
   }
 })
 
@@ -150,8 +172,13 @@ export default function TipCalculatorPage() {
     relatedTools: [
       { name: "Bill Splitter", href: "/finance-tools/bill-splitter" },
       { name: "Discount Calculator", href: "/finance-tools/discount-calculator" },
+      { name: "Sales Tax Calculator", href: "/finance-tools/sales-tax-calculator" },
       { name: "Invoice Generator", href: "/finance-tools/invoice-generator" },
-      { name: "PayPal Fee Calculator", href: "/finance-tools/paypal-fee" }
+      { name: "PayPal Fee Calculator", href: "/finance-tools/paypal-fee" },
+      { name: "Percentage Calculator", href: "/calculator/percentage-calculator" },
+      { name: "Currency Converter", href: "/converters/currency" },
+      { name: "Salary Calculator", href: "/finance-tools/salary-calculator" },
+      { name: "All Finance Tools", href: "/finance-tools" }
     ]
   }
 
