@@ -606,46 +606,113 @@ const toolConfig = createToolConfig({
       "Fitness tracking for pace and performance goals",
     ],
     aboutTool: (
-      <div className="space-y-6">
-        <div className="p-6 rounded-lg bg-card border border-border shadow-sm">
-          <h2 className="text-2xl font-bold mb-3 text-foreground">
-            Category Overview
-          </h2>
+      <div className="space-y-8">
+        <article className="space-y-4">
+          <h2 className="text-2xl font-bold text-foreground">Every Free Online Calculator You Need, In One Place</h2>
           <p className="text-muted-foreground leading-relaxed">
-            The calculator hub is organized by intent so users can reach the
-            right workflow quickly: finance and cost planning, health and
-            fitness metrics, student and statistics tasks, and utility
-            date/time tools.
+            FastTools is a free online calculator hub with 30+ purpose-built calculators across finance, health, math, statistics, dates, and everyday planning. Every calculator is browser-based, runs locally on your device, requires no signup, and has no ads inside the calculator itself. Use whichever one you need — or jump between them to build a complete picture (e.g. BMI → BMR → Calorie → TDEE for a full fitness plan, or Loan → Amortization → Mortgage → Affordability for a home purchase).
           </p>
-        </div>
+        </article>
 
-        <div className="p-6 rounded-lg bg-card border border-border shadow-sm">
-          <h2 className="text-2xl font-bold mb-3 text-foreground">
-            Why This Category Helps
-          </h2>
-          <div className="space-y-3 text-muted-foreground">
-            <p>
-              Each tool is focused on one job, with clear inputs and result
-              sections that support quick checks as well as deeper comparison.
-            </p>
-            <p>
-              You can move between related tools without starting over, which
-              is useful when one decision depends on another.
-            </p>
+        <article className="space-y-4">
+          <h2 className="text-2xl font-bold text-foreground">Most-Used Free Calculators (by category)</h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <div className="p-4 rounded-lg bg-card border border-border">
+              <h3 className="font-semibold text-foreground mb-2">Health &amp; Body</h3>
+              <ul className="text-sm space-y-1 text-muted-foreground">
+                <li><a href="/calculator/bmi-calculator" className="hover:text-foreground underline">BMI Calculator</a> — body mass index per WHO categories</li>
+                <li><a href="/calculator/bmr-calculator" className="hover:text-foreground underline">BMR Calculator</a> — resting metabolic rate</li>
+                <li><a href="/calculator/calorie-calculator" className="hover:text-foreground underline">Calorie Calculator</a> — daily intake target</li>
+                <li><a href="/calculator/tdee-macro-calculator" className="hover:text-foreground underline">TDEE Macro Calculator</a> — protein/carbs/fat split</li>
+                <li><a href="/calculator/body-fat-calculator" className="hover:text-foreground underline">Body Fat Calculator</a> — Navy method</li>
+                <li><a href="/calculator/biological-age-calculator" className="hover:text-foreground underline">Biological Age Calculator</a></li>
+              </ul>
+            </div>
+            <div className="p-4 rounded-lg bg-card border border-border">
+              <h3 className="font-semibold text-foreground mb-2">Pregnancy &amp; Family</h3>
+              <ul className="text-sm space-y-1 text-muted-foreground">
+                <li><a href="/calculator/pregnancy-calculator" className="hover:text-foreground underline">Pregnancy Due Date Calculator</a></li>
+                <li><a href="/calculator/pregnancy-conception-calculator" className="hover:text-foreground underline">Conception Date Calculator</a></li>
+                <li><a href="/calculator/ovulation-calculator" className="hover:text-foreground underline">Ovulation Calculator</a></li>
+                <li><a href="/calculator/age-calculator" className="hover:text-foreground underline">Age Calculator</a></li>
+                <li><a href="/fun-tools/future-age" className="hover:text-foreground underline">Future Age Calculator</a></li>
+              </ul>
+            </div>
+            <div className="p-4 rounded-lg bg-card border border-border">
+              <h3 className="font-semibold text-foreground mb-2">Math &amp; Statistics</h3>
+              <ul className="text-sm space-y-1 text-muted-foreground">
+                <li><a href="/calculator/scientific-calculator" className="hover:text-foreground underline">Scientific Calculator</a> — trig, log, exp</li>
+                <li><a href="/calculator/percentage-calculator" className="hover:text-foreground underline">Percentage Calculator</a></li>
+                <li><a href="/calculator/fraction-calculator" className="hover:text-foreground underline">Fraction Calculator</a></li>
+                <li><a href="/calculator/triangle-calculator" className="hover:text-foreground underline">Triangle Calculator</a></li>
+                <li><a href="/calculator/standard-deviation-calculator" className="hover:text-foreground underline">Standard Deviation Calculator</a></li>
+                <li><a href="/calculator/gpa-calculator" className="hover:text-foreground underline">GPA Calculator</a></li>
+              </ul>
+            </div>
+            <div className="p-4 rounded-lg bg-card border border-border">
+              <h3 className="font-semibold text-foreground mb-2">Date &amp; Time</h3>
+              <ul className="text-sm space-y-1 text-muted-foreground">
+                <li><a href="/calculator/date-difference" className="hover:text-foreground underline">Date Difference Calculator</a></li>
+                <li><a href="/calculator/time-duration" className="hover:text-foreground underline">Time Duration Calculator</a></li>
+                <li><a href="/calculator/age-calculator" className="hover:text-foreground underline">Age Calculator</a></li>
+                <li><a href="/fun-tools/anniversary" className="hover:text-foreground underline">Anniversary Calculator</a></li>
+                <li><a href="/fun-tools/birthday-countdown" className="hover:text-foreground underline">Birthday Countdown</a></li>
+              </ul>
+            </div>
+            <div className="p-4 rounded-lg bg-card border border-border">
+              <h3 className="font-semibold text-foreground mb-2">Construction &amp; Physical</h3>
+              <ul className="text-sm space-y-1 text-muted-foreground">
+                <li><a href="/calculator/concrete-calculator" className="hover:text-foreground underline">Concrete Calculator</a> — cubic yards, bags, cost</li>
+                <li><a href="/calculator/conversion-calculator" className="hover:text-foreground underline">Unit Conversion Calculator</a></li>
+                <li><a href="/calculator/pace-calculator" className="hover:text-foreground underline">Running Pace Calculator</a></li>
+              </ul>
+            </div>
+            <div className="p-4 rounded-lg bg-card border border-border">
+              <h3 className="font-semibold text-foreground mb-2">Networking &amp; Technical</h3>
+              <ul className="text-sm space-y-1 text-muted-foreground">
+                <li><a href="/calculator/ip-subnet-calculator" className="hover:text-foreground underline">IP Subnet / VPC CIDR Calculator</a></li>
+              </ul>
+            </div>
           </div>
-        </div>
+        </article>
 
-        <div className="p-6 rounded-lg bg-card border border-border shadow-sm">
-          <h2 className="text-2xl font-bold mb-3 text-foreground">
-            Popular Workflows
-          </h2>
-          <ul className="space-y-2 text-sm text-muted-foreground">
-            <li>Compare loan, interest, and payment outcomes before borrowing.</li>
-            <li>Track BMI, BMR, calories, and pace for health planning.</li>
-            <li>Handle percentages, fractions, statistics, and GPA study tasks.</li>
-            <li>Calculate date differences, durations, and schedule windows.</li>
+        <article className="space-y-4">
+          <h2 className="text-2xl font-bold text-foreground">Why FastTools Calculators vs Calculator.net or Omni?</h2>
+          <ul className="space-y-2 text-sm text-muted-foreground list-disc list-inside ml-2">
+            <li><strong>Client-side privacy:</strong> Health, finance, and pregnancy inputs never leave your browser. Calculator.net and most competitors run calculations server-side.</li>
+            <li><strong>No ads inside the calculator:</strong> Other free calculator sites surround the input fields with ad units. Ours don&apos;t — the calculator UI is clean.</li>
+            <li><strong>2026-current data:</strong> Where calculators depend on rates (PayPal fees, tax brackets, concrete prices), we use the latest published numbers, not 2020 references.</li>
+            <li><strong>Deep linking:</strong> Every calculator is its own page with focused content, FAQs, and worked examples — not a single mega-page with 50 calculators crammed into tabs.</li>
+            <li><strong>Free with no &quot;Pro&quot; tier:</strong> No watermarks, no signup walls, no daily limits.</li>
           </ul>
-        </div>
+        </article>
+
+        <article className="space-y-4">
+          <h2 className="text-2xl font-bold text-foreground">Calculator Workflows You Can Chain</h2>
+          <p className="text-muted-foreground leading-relaxed">Most planning decisions need 2–3 calculators in sequence. Here are common chains:</p>
+          <ul className="space-y-2 text-sm text-muted-foreground list-disc list-inside ml-2">
+            <li><strong>Buying a home:</strong> <a href="/finance-tools/home-affordability-calculator" className="underline">Home Affordability</a> → <a href="/finance-tools/mortgage-calculator" className="underline">Mortgage</a> → <a href="/finance-tools/amortization-calculator" className="underline">Amortization</a> → <a href="/finance-tools/rent-vs-buy-calculator" className="underline">Rent vs Buy</a></li>
+            <li><strong>Fitness plan:</strong> <a href="/calculator/bmi-calculator" className="underline">BMI</a> → <a href="/calculator/bmr-calculator" className="underline">BMR</a> → <a href="/calculator/calorie-calculator" className="underline">Calorie</a> → <a href="/calculator/tdee-macro-calculator" className="underline">TDEE Macro</a> → <a href="/calculator/body-fat-calculator" className="underline">Body Fat</a></li>
+            <li><strong>Pregnancy timeline:</strong> <a href="/calculator/ovulation-calculator" className="underline">Ovulation</a> → <a href="/calculator/pregnancy-conception-calculator" className="underline">Conception</a> → <a href="/calculator/pregnancy-calculator" className="underline">Due Date</a></li>
+            <li><strong>Investment plan:</strong> <a href="/finance-tools/compound-interest" className="underline">Compound Interest</a> → <a href="/finance-tools/investment-calculator" className="underline">Investment Growth</a> → <a href="/finance-tools/retirement-calculator" className="underline">Retirement</a></li>
+            <li><strong>Concrete project:</strong> <a href="/calculator/concrete-calculator" className="underline">Concrete Calc</a> → <a href="/converters/length" className="underline">Length Converter</a> → <a href="/finance-tools/discount-calculator" className="underline">Discount Calculator</a> (material savings)</li>
+          </ul>
+        </article>
+
+        <article className="space-y-4">
+          <h2 className="text-2xl font-bold text-foreground">The Same Hub, Many Names</h2>
+          <p className="text-sm text-muted-foreground">Different search phrasings, same page:</p>
+          <ul className="grid grid-cols-1 md:grid-cols-2 gap-2 text-sm text-muted-foreground">
+            <li>· free online calculator</li>
+            <li>· online calculator hub</li>
+            <li>· best free online calculators 2026</li>
+            <li>· math finance health calculator list</li>
+            <li>· free advanced calculator</li>
+            <li>· browser-based calculators</li>
+            <li>· calculator without download</li>
+            <li>· free online calculator no signup</li>
+          </ul>
+        </article>
       </div>
     ),
     aboutToolText:
@@ -654,6 +721,11 @@ const toolConfig = createToolConfig({
       { name: "Finance Tools", href: "/finance-tools" },
       { name: "Fun Tools", href: "/fun-tools" },
       { name: "Converters", href: "/converters" },
+      { name: "SEO Tools", href: "/seo-tools" },
+      { name: "Crypto Tools", href: "/crypto-tools" },
+      { name: "Image Tools", href: "/image-tools" },
+      { name: "PDF Tools", href: "/pdf-tools" },
+      { name: "All Tools", href: "/all-tools" },
     ],
     faqs: userFaqQuestions.map((q) => {
       const { answer, links } = answerForQuestion(q)
