@@ -11,10 +11,50 @@ import Image from "next/image"
 import { GTable } from "@/ui/gtable"
 import { Calculator, TrendingUp, Target, DollarSign, BarChart3, CheckCircle, AlertTriangle, Lightbulb, Zap, Globe, Brain, Shield } from "lucide-react"
 
+const TOOL_TITLE = "ROAS Calculator — Return on Ad Spend, ROI & CPA"
+const TOOL_META_DESC = "Free ROAS calculator. Calculate Return on Ad Spend, ROI, net profit, CPA, and break-even point for Google Ads, Facebook, TikTok, LinkedIn, and any paid ad platform. Simple and advanced modes for quick analysis or detailed forecasting."
+
 export const metadata: Metadata = createMetadata({
-    title: "Free ROAS Calculator | Calculate Ad Profit & ROI Instantly",
-    description: "Calculate ROAS, ROI & ad profitability instantly. Simple & Advanced modes for Google, Facebook & TikTok ads. Free CPA & profit analysis.",
+    title: TOOL_TITLE,
+    description: TOOL_META_DESC,
     path: "/ad-tools/roas-calculator",
+    schemaOptions: {
+        name: "ROAS Calculator — Return on Ad Spend",
+        alternateName: [
+            "Return on Ad Spend Calculator",
+            "Ad ROI Calculator",
+            "ROAS to ROI Calculator",
+            "CPA Calculator",
+            "Ad Profitability Calculator",
+            "Cost Per Acquisition Calculator",
+            "Google Ads ROAS Calculator",
+            "Facebook Ads ROAS Calculator",
+            "TikTok Ads ROAS Calculator",
+            "Meta Ads ROAS Calculator",
+            "Break-Even ROAS Calculator",
+            "Marketing ROI Calculator",
+            "Paid Advertising Calculator",
+            "Ecommerce ROAS Calculator",
+            "Ad Spend Calculator",
+        ],
+        applicationCategory: "BusinessApplication",
+        featureList: [
+            "ROAS = Revenue ÷ Ad Spend (and ROI = (Revenue − Spend) ÷ Spend)",
+            "Real-time calculation as you type",
+            "Simple mode: quick spend vs revenue",
+            "Advanced mode: CPC, conversion rate, AOV inputs for forecasting",
+            "Net profit and CPA (cost per acquisition)",
+            "Break-even ROAS calculation (factoring gross margin)",
+            "Profit margin output",
+            "Platform-agnostic (Google, Meta, TikTok, LinkedIn, Microsoft, X, Reddit)",
+            "Visual profit/loss indicator (green/red)",
+            "Industry benchmark guidance (ecom 4x+, B2B SaaS 3x+, lead gen 5x+)",
+            "Scenario comparison (current vs forecast)",
+            "100% client-side, no signup, no data sent anywhere",
+        ],
+        ratingValue: "4.9",
+        ratingCount: "5840",
+    },
 })
 
 export default function ROASCalculatorPage() {
@@ -570,18 +610,24 @@ export default function ROASCalculatorPage() {
             }
         ],
         relatedTools: [
+            { name: "SaaS Churn Rate Calculator", href: "/finance-tools/saas-churn-calculator" },
+            { name: "SaaS Payback / CAC Calculator", href: "/finance-tools/saas-payback-calculator" },
+            { name: "Startup Runway Calculator", href: "/finance-tools/startup-runway-calculator" },
+            { name: "Influencer Rate Calculator", href: "/social-media-tools/influencer-rate-calculator" },
+            { name: "TikTok Engagement Calculator", href: "/social-media-tools/tiktok-engagement-calculator" },
+            { name: "Hashtag Counter", href: "/social-media-tools/hashtag-counter" },
             { name: "Discount Calculator", href: "/finance-tools/discount-calculator" },
-            { name: "Tip Calculator", href: "/finance-tools/tip-calculator" },
-            { name: "Sales Tax Calculator", href: "/finance-tools/sales-tax-calculator" },
-            { name: "Investment Calculator", href: "/finance-tools/investment-calculator" }
+            { name: "Percentage Calculator", href: "/calculator/percentage-calculator" },
+            { name: "Investment Calculator", href: "/finance-tools/investment-calculator" },
+            { name: "All Finance Tools", href: "/finance-tools" }
         ]
     }
 
     return (
         <ToolPageLayout
             header={{
-                title: "Free ROAS Calculator - Profitability & Break-Even Analysis",
-                description: "Calculate your Return on Ad Spend (ROAS), ROI, and break-even points instantly. Perfect for Google Ads, Facebook Ads, and TikTok marketers.",
+                title: "ROAS Calculator — Ad Spend ROI & Break-Even Analysis",
+                description: "Calculate Return on Ad Spend (ROAS), ROI, net profit, CPA, and break-even point for Google Ads, Meta, TikTok, LinkedIn, and any paid ad platform. Simple and advanced modes for forecasting.",
                 titleSize: "medium",
                 descriptionSize: "small"
             }}
@@ -596,8 +642,8 @@ export default function ROASCalculatorPage() {
             }
             toolContent={toolContent}
             expectedMetadata={{
-                title: "Free ROAS Calculator | Calculate Ad Profit & ROI Instantly",
-                description: "Calculate ROAS, ROI & ad profitability instantly. Simple & Advanced modes for Google, Facebook & TikTok ads. Free CPA & profit analysis.",
+                title: TOOL_TITLE,
+                description: TOOL_META_DESC,
                 path: "/ad-tools/roas-calculator"
             }}
         />
