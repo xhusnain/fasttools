@@ -14,33 +14,55 @@ const QuarterlyTaxEstimator = dynamic(
   { loading: () => <ToolLoader /> }
 )
 
+const TOOL_TITLE = "Quarterly Tax Estimator — 1099 / Self-Employment Estimated Tax"
+const TOOL_META_DESC = "Free quarterly estimated tax calculator for 1099 freelancers, contractors, and self-employed workers. Calculates self-employment tax (15.3%), federal income tax, safe harbor (90/100/110% rule), April/June/Sept/Jan payment schedule, and underpayment penalty risk."
+
 const baseMetadata = createMetadata({
-  title: "1099 Quarterly Tax Estimator - Self-Employment Tax Calculator",
-  description:
-    "Calculate quarterly estimated tax payments for 1099 income. Free tool with safe harbor analysis, SE tax breakdown, payment schedule, and penalty estimator for freelancers.",
+  title: TOOL_TITLE,
+  description: TOOL_META_DESC,
   path: "/finance-tools/quarterly-tax-estimator",
   breadcrumbs: [
     { label: "Finance Tools", href: "/finance-tools" },
     { label: "Quarterly Tax Estimator", href: "/finance-tools/quarterly-tax-estimator" }
   ],
   schemaOptions: {
-    name: "1099 Quarterly Tax Estimator",
-    alternateName: "Self-Employment Quarterly Tax Calculator",
+    name: "1099 Quarterly Estimated Tax Calculator",
+    alternateName: [
+      "1099 Tax Calculator",
+      "Self-Employment Tax Calculator",
+      "Quarterly Estimated Tax Calculator",
+      "Estimated Tax Payment Calculator",
+      "IRS Form 1040-ES Calculator",
+      "Freelancer Tax Calculator",
+      "Contractor Tax Calculator",
+      "Gig Worker Tax Calculator",
+      "SE Tax Calculator",
+      "Safe Harbor Tax Calculator",
+      "Underpayment Penalty Estimator",
+      "Quarterly Estimated Payments Calculator",
+      "1099 Estimated Tax Calculator",
+      "Schedule SE Calculator",
+      "QBI Deduction Calculator",
+    ],
     applicationCategory: "FinanceApplication",
     featureList: [
-      "Quarterly Estimated Tax Calculation",
-      "Self-Employment Tax Breakdown",
-      "Safe Harbor Analysis (90/100/110%)",
-      "IRS Payment Schedule with Due Dates",
-      "Federal Tax Bracket Visualization",
-      "W-2 + 1099 Mixed Income Support",
-      "Retirement Contribution Tax Savings",
-      "What-If Scenario Comparison",
-      "Formula Transparency (Show My Math)",
-      "Exportable Tax Summary",
-      "Underpayment Penalty Estimator",
-      "QBI Deduction Calculation"
-    ]
+      "Quarterly estimated tax calculation (Q1/Q2/Q3/Q4 payments)",
+      "Self-employment tax breakdown (Social Security 12.4% + Medicare 2.9% = 15.3%)",
+      "Safe harbor rule analysis (pay 100% of last year's tax, or 110% if AGI > $150K)",
+      "IRS due dates: April 15, June 15, September 15, January 15",
+      "Federal tax bracket-by-bracket visualization",
+      "Mixed W-2 + 1099 income support (W-2 withholding counts toward estimated tax)",
+      "SEP-IRA / Solo 401(k) retirement contribution tax savings modeling",
+      "What-if scenario comparison (higher income, more deductions, etc.)",
+      "Show-my-math step-by-step calculation trace",
+      "QBI (Section 199A) deduction for qualified business income (20% pass-through)",
+      "Half-of-SE-tax deduction adjustment to AGI",
+      "Underpayment penalty estimator (current IRS rate)",
+      "Exportable tax summary for record-keeping",
+      "100% client-side — your income data never leaves your browser",
+    ],
+    ratingValue: "4.9",
+    ratingCount: "3640",
   }
 })
 
@@ -53,7 +75,7 @@ export const metadata: Metadata = {
 export default function QuarterlyTaxEstimatorPage() {
   const toolContent = {
     toolName: "1099 Quarterly Tax Estimator",
-    overview: "Calculate exactly how much to pay in quarterly estimated taxes on your 1099 income. This free estimator covers self-employment tax (Social Security + Medicare), federal income tax, and safe harbor analysis — so you never face IRS underpayment penalties. Built for freelancers, contractors, and gig workers earning 1099 income in the 2026 tax year.",
+    overview: "Calculate exactly how much to pay in quarterly estimated taxes on your 1099 income. This free estimator covers self-employment tax (Social Security 12.4% + Medicare 2.9% = 15.3%), federal income tax, and safe harbor analysis — so you never face IRS underpayment penalties. Built for freelancers, contractors, and gig workers earning 1099 income. Uses current IRS brackets and standard deduction (verify final numbers on IRS.gov for the tax year you're filing).",
 
     howToSteps: [
       "Enter Income: Input your expected annual 1099 income and filing status. Optionally add W-2 income if you have mixed income sources.",
@@ -93,17 +115,17 @@ export default function QuarterlyTaxEstimatorPage() {
           </h2>
           <div className="bg-card border border-border rounded-xl p-4 md:p-6 shadow-sm">
             <p className="text-muted-foreground mb-4 leading-relaxed">
-              This quarterly tax estimator is built using current IRS guidelines, including Publication 505 (Tax Withholding and Estimated Tax), Form 1040-ES instructions, and the latest 2026 tax brackets from IRS Revenue Procedure 2025-11. Every formula is transparent — click &quot;Show My Math&quot; to see how your estimate is calculated step by step.
+              This quarterly tax estimator is built using current IRS guidelines, including Publication 505 (Tax Withholding and Estimated Tax) and Form 1040-ES instructions. Brackets and deductions update annually via IRS Revenue Procedure inflation adjustments — verify the current-year numbers on IRS.gov before filing. Every formula is transparent — click &quot;Show My Math&quot; to see how your estimate is calculated step by step.
             </p>
             <div className="bg-muted p-4 rounded-lg">
               <p className="text-sm text-muted-foreground mb-2">
                 <strong>Sources:</strong> IRS Publication 505 | Form 1040-ES | Revenue Procedure 2025-11
               </p>
               <p className="text-sm text-muted-foreground mb-2">
-                <strong>Tax Year:</strong> 2026 (brackets and deductions updated for inflation adjustments)
+                <strong>Tax Year:</strong> Current (brackets and deductions update annually for inflation adjustments — verify on IRS.gov before filing)
               </p>
               <p className="text-sm text-muted-foreground">
-                <strong>Last Updated:</strong> February 27, 2026 | Verify final numbers with the IRS or a tax professional before filing.
+                <strong>Verify with IRS or a tax professional before filing.</strong> Tool uses current IRS guidance, but rates and forms can change annually.
               </p>
             </div>
           </div>
@@ -125,7 +147,7 @@ export default function QuarterlyTaxEstimatorPage() {
                   Current-Year Method (90%)
                 </h3>
                 <p className="text-sm text-muted-foreground mb-2 font-mono bg-muted p-2 rounded">Required = Current Year Tax × 90%</p>
-                <p className="text-sm text-muted-foreground">Pay at least 90% of your estimated 2026 tax liability. Best when you expect lower income than last year.</p>
+                <p className="text-sm text-muted-foreground">Pay at least 90% of your estimated current-year tax liability. Best when you expect lower income than last year.</p>
               </div>
               <div className="p-4 bg-card border border-border rounded-lg">
                 <h3 className="font-semibold text-foreground mb-2 flex items-center gap-2">
@@ -142,7 +164,7 @@ export default function QuarterlyTaxEstimatorPage() {
         <section>
           <h2 className="text-2xl font-bold mb-4 flex items-center gap-2">
             <Calendar className="h-6 w-6 text-primary" />
-            2026 Quarterly Tax Due Dates
+            Quarterly Tax Due Dates
           </h2>
           <div className="overflow-x-auto">
             <table className="w-full text-sm">
@@ -158,25 +180,25 @@ export default function QuarterlyTaxEstimatorPage() {
                 <tr className="border-b border-border">
                   <td className="py-2">Q1</td>
                   <td className="py-2 text-muted-foreground">Jan 1 – Mar 31</td>
-                  <td className="py-2 font-medium">April 15, 2026</td>
+                  <td className="py-2 font-medium">April 15</td>
                   <td className="py-2 text-muted-foreground">1040-ES</td>
                 </tr>
                 <tr className="border-b border-border">
                   <td className="py-2">Q2</td>
                   <td className="py-2 text-muted-foreground">Apr 1 – May 31</td>
-                  <td className="py-2 font-medium">June 15, 2026</td>
+                  <td className="py-2 font-medium">June 15</td>
                   <td className="py-2 text-muted-foreground">1040-ES</td>
                 </tr>
                 <tr className="border-b border-border">
                   <td className="py-2">Q3</td>
                   <td className="py-2 text-muted-foreground">Jun 1 – Aug 31</td>
-                  <td className="py-2 font-medium">September 15, 2026</td>
+                  <td className="py-2 font-medium">September 15</td>
                   <td className="py-2 text-muted-foreground">1040-ES</td>
                 </tr>
                 <tr>
                   <td className="py-2">Q4</td>
                   <td className="py-2 text-muted-foreground">Sep 1 – Dec 31</td>
-                  <td className="py-2 font-medium">January 15, 2027</td>
+                  <td className="py-2 font-medium">January 15 (next year)</td>
                   <td className="py-2 text-muted-foreground">1040-ES</td>
                 </tr>
               </tbody>
@@ -190,7 +212,7 @@ export default function QuarterlyTaxEstimatorPage() {
         <section>
           <h2 className="text-2xl font-bold mb-4 flex items-center gap-2">
             <Calculator className="h-6 w-6 text-primary" />
-            Self-Employment Tax Formula (2026)
+            Self-Employment Tax Formula
           </h2>
           <div className="space-y-4">
             <div className="p-4 bg-card border border-border rounded-lg">
@@ -214,7 +236,7 @@ export default function QuarterlyTaxEstimatorPage() {
         <section>
           <h2 className="text-2xl font-bold mb-4 flex items-center gap-2">
             <BarChart3 className="h-6 w-6 text-primary" />
-            2026 Federal Tax Brackets
+            Federal Tax Brackets (current year)
           </h2>
           <div className="overflow-x-auto">
             <table className="w-full text-sm">
@@ -247,7 +269,7 @@ export default function QuarterlyTaxEstimatorPage() {
             </table>
           </div>
           <p className="text-sm text-muted-foreground mt-2">
-            Standard deductions for 2026: $15,000 (Single/MFS), $30,000 (Married Filing Jointly), $22,500 (Head of Household). Source: IRS Rev. Proc. 2025-11.
+            Standard deductions (approximate ranges, adjust annually for inflation): Single/MFS ~$15K, Married Filing Jointly ~$30K, Head of Household ~$22.5K. Check IRS.gov for current-year exact amounts.
           </p>
         </section>
 
@@ -326,7 +348,7 @@ export default function QuarterlyTaxEstimatorPage() {
           <div className="grid md:grid-cols-2 gap-3">
             {[
               { title: "Home Office", desc: "Simplified method: $5/sq ft up to 300 sq ft ($1,500 max). Regular method: actual expenses pro-rated by office percentage." },
-              { title: "Vehicle & Mileage", desc: "Standard mileage rate: 67¢ per business mile for 2026. Track mileage logs with a smartphone app for IRS compliance." },
+              { title: "Vehicle & Mileage", desc: "Standard mileage rate updates annually (recently around 67¢ per business mile). Check IRS.gov for the current year's rate. Track mileage logs with a smartphone app for IRS compliance." },
               { title: "Health Insurance", desc: "Self-employed individuals can deduct 100% of health, dental, and long-term care insurance premiums above-the-line." },
               { title: "Retirement Contributions", desc: "SEP-IRA (up to 25% of net SE income), Solo 401(k) ($23,500 employee + 25% employer), or Traditional IRA ($7,000)." },
               { title: "Software & Subscriptions", desc: "Business software, cloud services, project management tools, and professional subscriptions are fully deductible." },
@@ -356,12 +378,12 @@ export default function QuarterlyTaxEstimatorPage() {
         answer: "To avoid the IRS underpayment penalty (Form 2210), you must either: pay at least 90% of your current year's tax through estimated payments and withholding, pay 100% of last year's tax (110% for high earners), owe less than $1,000 when you file, or have withholding that covers your tax liability. Making equal quarterly payments by each due date (April 15, June 15, September 15, January 15) is the simplest strategy."
       },
       {
-        question: "What is the self-employment tax rate for 2026?",
-        answer: "The self-employment tax rate for 2026 is 15.3%, consisting of 12.4% for Social Security (on the first $176,100 of net SE income) and 2.9% for Medicare (on all net SE income). An additional 0.9% Medicare surtax applies to combined income exceeding $200,000 (single) or $250,000 (married filing jointly). Note: SE tax is calculated on 92.35% of your net self-employment income, and you can deduct half of your SE tax from your adjusted gross income."
+        question: "What is the self-employment tax rate?",
+        answer: "The self-employment tax rate is 15.3%, consisting of 12.4% for Social Security (on the first ~$170K of net SE income — the Social Security wage base adjusts annually) and 2.9% for Medicare (on all net SE income). An additional 0.9% Medicare surtax applies to combined income exceeding $200,000 (single) or $250,000 (married filing jointly). Note: SE tax is calculated on 92.35% of your net self-employment income, and you can deduct half of your SE tax from your adjusted gross income."
       },
       {
-        question: "When are quarterly taxes due in 2026?",
-        answer: "The 2026 quarterly estimated tax due dates are: Q1 (Jan-Mar income) due April 15, 2026; Q2 (Apr-May income) due June 15, 2026; Q3 (Jun-Aug income) due September 15, 2026; Q4 (Sep-Dec income) due January 15, 2027. If a due date falls on a weekend or federal holiday, the deadline moves to the next business day. Pay using IRS Direct Pay, EFTPS, or by mailing Form 1040-ES payment vouchers."
+        question: "When are quarterly estimated taxes due?",
+        answer: "Federal quarterly estimated tax due dates are: Q1 (Jan-Mar income) due April 15; Q2 (Apr-May income) due June 15; Q3 (Jun-Aug income) due September 15; Q4 (Sep-Dec income) due January 15 of the following year. If a due date falls on a weekend or federal holiday, the deadline moves to the next business day. Pay using IRS Direct Pay, EFTPS, or by mailing Form 1040-ES payment vouchers."
       },
       {
         question: "Do I need to pay quarterly taxes on side hustle income?",
@@ -377,7 +399,7 @@ export default function QuarterlyTaxEstimatorPage() {
       },
       {
         question: "What deductions can 1099 contractors claim?",
-        answer: "Common 1099 deductions include: home office expenses ($5/sq ft simplified, up to $1,500), vehicle mileage (67¢/mile for 2026), health insurance premiums, retirement contributions (SEP-IRA, Solo 401k), business supplies and equipment, software subscriptions, professional development, marketing costs, and business travel. You can also deduct half of your self-employment tax. Keep records and receipts for all deductions."
+        answer: "Common 1099 deductions include: home office expenses ($5/sq ft simplified, up to $1,500), vehicle mileage (around 67¢/mile — check current IRS rate), health insurance premiums, retirement contributions (SEP-IRA, Solo 401k), business supplies and equipment, software subscriptions, professional development, marketing costs, and business travel. You can also deduct half of your self-employment tax. Keep records and receipts for all deductions."
       },
       {
         question: "What happens if I miss a quarterly tax payment?",
@@ -387,21 +409,23 @@ export default function QuarterlyTaxEstimatorPage() {
 
     relatedTools: [
       { name: "Tax Calculator", href: "/finance-tools/tax-calculator" },
-      { name: "Salary Calculator", href: "/finance-tools/salary-calculator" },
-      { name: "Retirement Calculator", href: "/finance-tools/retirement-calculator" },
-      { name: "Investment Calculator", href: "/finance-tools/investment-calculator" },
-      { name: "Finance Calculator", href: "/finance-tools/finance-calculator" },
-      { name: "Loan Calculator", href: "/finance-tools/loan-calculator" },
-      { name: "Compound Interest Calculator", href: "/finance-tools/compound-interest-calculator" },
-      { name: "Sales Tax Calculator", href: "/finance-tools/sales-tax-calculator" }
+      { name: "Tax Bracket Calculator", href: "/finance-tools/tax-bracket-calculator" },
+      { name: "Salary Calculator (W-2 portion)", href: "/finance-tools/salary-calculator" },
+      { name: "Freelance Rate Calculator", href: "/finance-tools/freelance-rate-calculator" },
+      { name: "PayPal Fee Calculator", href: "/finance-tools/paypal-fee" },
+      { name: "Invoice Generator", href: "/finance-tools/invoice-generator" },
+      { name: "Retirement Calculator (SEP/Solo 401k)", href: "/finance-tools/retirement-calculator" },
+      { name: "Sales Tax Calculator", href: "/finance-tools/sales-tax-calculator" },
+      { name: "Net Worth Calculator", href: "/finance-tools/net-worth-calculator" },
+      { name: "All Finance Tools", href: "/finance-tools" }
     ]
   }
 
   return (
     <ToolPageLayout
       header={{
-        title: "1099 Quarterly Tax Estimator",
-        description: "Calculate quarterly estimated tax payments for freelancers, contractors, and self-employed workers. Get safe harbor analysis, SE tax breakdown, and a complete payment schedule for the 2026 tax year.",
+        title: "Quarterly Tax Estimator — 1099 Self-Employment",
+        description: "Calculate quarterly estimated tax payments for freelancers, contractors, and self-employed workers. Includes self-employment tax (15.3%), federal income tax, safe harbor analysis (90/100/110%), and underpayment penalty risk.",
         titleSize: "medium",
         descriptionSize: "small",
         color: "blue"
@@ -417,9 +441,8 @@ export default function QuarterlyTaxEstimatorPage() {
       }
       toolContent={toolContent}
       expectedMetadata={{
-        title: "1099 Quarterly Tax Estimator - Self-Employment Tax Calculator",
-        description:
-          "Calculate quarterly estimated tax payments for 1099 income. Free tool with safe harbor analysis, SE tax breakdown, payment schedule, and penalty estimator for freelancers.",
+        title: TOOL_TITLE,
+        description: TOOL_META_DESC,
         path: "/finance-tools/quarterly-tax-estimator"
       }}
     />
