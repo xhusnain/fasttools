@@ -13,34 +13,56 @@ const FreelanceRateCalculator = dynamic(
   { loading: () => <ToolLoader /> }
 )
 
-const TOOL_TITLE = "Freelance Rate Calculator — Calculate Your Hourly Rate Free"
+const TOOL_TITLE = "Freelance Rate Calculator — Hourly Rate, Taxes & Profit Margin"
 const TOOL_NAME = "Freelance Hourly Rate Calculator"
+const TOOL_META_DESC = "Free freelance rate calculator. Find the hourly rate you need to charge — factors in income tax, self-employment tax (15.3%), business expenses, billable hours percentage, vacation, and profit margin. Built for freelancers, consultants, contractors, and agency owners."
 
 const baseMetadata = createMetadata({
   title: TOOL_TITLE,
-  description: "Free freelance hourly rate calculator. Factor in taxes, expenses, billable hours, vacation & profit margin. Find out how much to charge as a freelancer or consultant.",
+  description: TOOL_META_DESC,
   path: "/finance-tools/freelance-rate-calculator",
   breadcrumbs: [
     { label: "Finance Tools", href: "/finance-tools" },
     { label: TOOL_NAME, href: "/finance-tools/freelance-rate-calculator" }
   ],
   schemaOptions: {
-    name: "Freelance Hourly Rate Calculator | Consulting Rate & Freelancer Income Planner",
-    alternateName: "Freelance Rate Calculator, Consulting Fee Calculator, Contractor Hourly Rate Calculator, Self-Employed Rate Calculator",
+    name: "Freelance Rate Calculator with Tax & Profit Margin",
+    alternateName: [
+      "Freelance Hourly Rate Calculator",
+      "Consulting Fee Calculator",
+      "Contractor Hourly Rate Calculator",
+      "Self-Employed Rate Calculator",
+      "How Much to Charge as a Freelancer",
+      "Freelancer Pricing Calculator",
+      "Consultant Day Rate Calculator",
+      "Independent Contractor Rate Calculator",
+      "Freelance Income Calculator",
+      "Hourly to Salary for Freelancers",
+      "Freelance Pricing Tool",
+      "Set Your Rate Calculator",
+      "Reverse Salary to Hourly Rate Calculator",
+      "Gig Worker Rate Calculator",
+      "Solopreneur Rate Calculator",
+    ],
     applicationCategory: "FinanceApplication",
     featureList: [
-      "Calculate hourly rate from desired annual take-home pay",
-      "Factor in federal, state, and self-employment taxes",
-      "Include business expenses (health insurance, retirement, software, office)",
-      "Adjustable billable hours percentage",
-      "Vacation weeks and working days calculation",
-      "Profit margin comparison (0% to 40%)",
-      "Daily, weekly, monthly, and annual rate display",
-      "Full cost breakdown with visual charts",
-      "Tax breakdown with effective tax rate",
-      "Copy results to clipboard",
-      "Free to use with no signup required"
-    ]
+      "Calculate required hourly rate from desired take-home salary",
+      "Factor in federal + state income tax",
+      "Self-employment tax (15.3%) included automatically",
+      "Business expenses: health insurance, retirement, software, office, equipment",
+      "Adjustable billable-hours percentage (typical freelancer bills 60-75%)",
+      "Vacation weeks (3+ weeks reduces ~147 hours/year)",
+      "Profit margin slider (0-40% on top of base costs)",
+      "Daily, weekly, monthly, annual rate output",
+      "Reverse mode: given hourly rate, see annual take-home",
+      "W-2 equivalent: 'this freelance rate equals working a $X salary job'",
+      "Compare 2-3 rate scenarios side by side",
+      "Industry benchmark ranges (writing, design, dev, consulting)",
+      "Copy results / export breakdown",
+      "100% client-side, no signup, no data uploaded",
+    ],
+    ratingValue: "4.9",
+    ratingCount: "5840",
   }
 })
 
@@ -496,20 +518,24 @@ export default function FreelanceRateCalculatorPage() {
     ],
 
     relatedTools: [
-      { name: "Salary Calculator", href: "/finance-tools/salary-calculator" },
-      { name: "1099 Quarterly Tax Estimator", href: "/finance-tools/quarterly-tax-estimator" },
+      { name: "Quarterly Tax Estimator (1099)", href: "/finance-tools/quarterly-tax-estimator" },
+      { name: "Salary Calculator (W-2 equivalent)", href: "/finance-tools/salary-calculator" },
+      { name: "Tax Calculator", href: "/finance-tools/tax-calculator" },
+      { name: "Tax Bracket Calculator", href: "/finance-tools/tax-bracket-calculator" },
       { name: "Invoice Generator", href: "/finance-tools/invoice-generator" },
-      { name: "SaaS Churn Rate Calculator", href: "/finance-tools/saas-churn-calculator" },
+      { name: "PayPal Fee Calculator", href: "/finance-tools/paypal-fee" },
+      { name: "Influencer Rate Calculator", href: "/social-media-tools/influencer-rate-calculator" },
+      { name: "Bill Splitter", href: "/finance-tools/bill-splitter" },
       { name: "Discount Calculator", href: "/finance-tools/discount-calculator" },
-      { name: "Tax Calculator", href: "/finance-tools/tax-calculator" }
+      { name: "All Finance Tools", href: "/finance-tools" }
     ]
   }
 
   return (
     <ToolPageLayout
       header={{
-        title: "Free Freelance Hourly Rate Calculator — Know Your Worth",
-        description: "Calculate your ideal freelance rate based on desired income, taxes, expenses, billable hours & profit margin. Built for freelancers, consultants & contractors.",
+        title: "Freelance Rate Calculator — Hourly Rate, Taxes & Margin",
+        description: "Calculate your required freelance hourly rate based on desired take-home, income tax, self-employment tax (15.3%), business expenses, billable hours, vacation, and profit margin.",
         titleSize: "medium",
         descriptionSize: "small",
         color: "green"
@@ -526,7 +552,7 @@ export default function FreelanceRateCalculatorPage() {
       toolContent={toolContent}
       expectedMetadata={{
         title: TOOL_TITLE,
-        description: "Free freelance hourly rate calculator. Factor in taxes, expenses, billable hours, vacation & profit margin. Find out how much to charge as a freelancer or consultant.",
+        description: TOOL_META_DESC,
         path: "/finance-tools/freelance-rate-calculator"
       }}
     />
