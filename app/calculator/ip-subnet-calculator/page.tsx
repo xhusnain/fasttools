@@ -723,10 +723,35 @@ export default function IPSubnetCalculatorPage() {
       {
         question: "How accurate is the subnet calculator?",
         answer: "Our subnet calculator is highly accurate, using precise binary arithmetic and standard networking formulas. The calculations match industry-standard methods used by network equipment and protocols. Results are suitable for production network planning, cloud VPC design, and professional use. The calculator follows RFC standards for IP addressing and subnetting."
+      },
+      {
+        question: "What is a VPC CIDR and how do I plan one in AWS or GCP?",
+        answer: "A VPC CIDR is the IP range that defines your cloud Virtual Private Cloud. AWS supports VPC CIDRs from /16 (65,536 IPs) to /28 (16 IPs); GCP supports /8 to /29; Azure supports /2 to /29. Use a private RFC 1918 range (10.0.0.0/8, 172.16.0.0/12, or 192.168.0.0/16) for non-routable internal traffic. A typical 3-tier app with multi-AZ HA needs a /22 (1,024 IPs) split into 6 subnets (3 public, 3 private). Use this calculator to plan the subnet split before you provision."
+      },
+      {
+        question: "Why does AWS reserve 5 IP addresses per subnet?",
+        answer: "AWS reserves the first 4 and the last 1 IP of every VPC subnet: .0 (network), .1 (VPC router), .2 (DNS), .3 (future use), and .255/.254 (broadcast equivalent). This means a /24 subnet (256 IPs) gives you 251 usable IPs in AWS, not 254. GCP reserves 4 (network, gateway, second-to-last, broadcast). Azure reserves 5 (similar to AWS). Plan VPC sizing with these reservations in mind — our calculator displays usable host count using standard subnetting rules; subtract 5 for AWS planning."
+      },
+      {
+        question: "What's the maximum and minimum VPC CIDR size for each cloud?",
+        answer: "AWS: /16 max (65,536 IPs) down to /28 min (16 IPs). GCP: /8 max (16,777,216 IPs) down to /29 min (8 IPs). Azure: /2 max (just over 1 billion IPs) down to /29 min (8 IPs). For most production workloads, AWS users pick a /16 VPC and subnet it into /24s; GCP users often go with a /16 or /20 primary range plus secondary ranges for GKE pods."
+      },
+      {
+        question: "How do I split a /16 into subnets for multi-AZ HA?",
+        answer: "Take a 10.0.0.0/16 (65,536 IPs). For a 3-AZ deployment, split into six /20 subnets: 10.0.0.0/20 (public AZ-a), 10.0.16.0/20 (public AZ-b), 10.0.32.0/20 (public AZ-c), 10.0.128.0/20 (private AZ-a), 10.0.144.0/20 (private AZ-b), 10.0.160.0/20 (private AZ-c). Each /20 has 4,094 usable IPs. Reserve the upper half (10.0.128.0/17) for future expansion."
       }
     ],
 
-
+    relatedTools: [
+      { name: "Conversion Calculator", href: "/calculator/conversion-calculator" },
+      { name: "Integer Base Converter", href: "/converters/integer-base" },
+      { name: "ASCII Binary Converter", href: "/converters/ascii-binary" },
+      { name: "Hex to RGB Converter", href: "/dev-tools/hex-to-rgb" },
+      { name: "JWT Decoder", href: "/dev-tools/jwt-decoder" },
+      { name: "User-Agent Parser", href: "/dev-tools/user-agent-parser" },
+      { name: "DNS / SSL Checker", href: "/web-tools/dns-ssl-checker" },
+      { name: "Cloudflare Workers Cost", href: "/dev-tools/cloudflare-workers-cost" }
+    ]
   }
 
   return (
