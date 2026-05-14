@@ -160,6 +160,123 @@ const toolConfig = createToolConfig({
             All JSON parsing, normalization, and diffing happens entirely in your browser using JavaScript. Your JSON payloads — including any tokens, PII, or sensitive data they may contain — never leave your device. No analytics, no logging, no server calls. Verify in DevTools → Network: paste a payload, click diff, and confirm zero outgoing requests.
           </p>
         </div>
+
+        <div>
+          <h3 className="text-lg font-semibold text-foreground mb-2">JSON Patch (RFC 6902) Operations</h3>
+          <p>JSON Patch is a standardized format for describing JSON changes. Each operation has an <code>op</code>, <code>path</code>, and operation-specific fields:</p>
+          <table className="w-full border-collapse text-sm mt-3">
+            <thead>
+              <tr className="border-b border-border">
+                <th className="text-left py-2 px-2 text-foreground">Operation</th>
+                <th className="text-left py-2 px-2 text-foreground">Purpose</th>
+                <th className="text-left py-2 px-2 text-foreground">Example</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr className="border-b border-border">
+                <td className="py-2 px-2"><code>add</code></td>
+                <td className="py-2 px-2">Insert a new value</td>
+                <td className="py-2 px-2"><code>&#123;&quot;op&quot;:&quot;add&quot;,&quot;path&quot;:&quot;/foo&quot;,&quot;value&quot;:1&#125;</code></td>
+              </tr>
+              <tr className="border-b border-border">
+                <td className="py-2 px-2"><code>remove</code></td>
+                <td className="py-2 px-2">Delete a value</td>
+                <td className="py-2 px-2"><code>&#123;&quot;op&quot;:&quot;remove&quot;,&quot;path&quot;:&quot;/foo&quot;&#125;</code></td>
+              </tr>
+              <tr className="border-b border-border">
+                <td className="py-2 px-2"><code>replace</code></td>
+                <td className="py-2 px-2">Change an existing value</td>
+                <td className="py-2 px-2"><code>&#123;&quot;op&quot;:&quot;replace&quot;,&quot;path&quot;:&quot;/foo&quot;,&quot;value&quot;:2&#125;</code></td>
+              </tr>
+              <tr className="border-b border-border">
+                <td className="py-2 px-2"><code>move</code></td>
+                <td className="py-2 px-2">Move value to new path</td>
+                <td className="py-2 px-2"><code>&#123;&quot;op&quot;:&quot;move&quot;,&quot;from&quot;:&quot;/a&quot;,&quot;path&quot;:&quot;/b&quot;&#125;</code></td>
+              </tr>
+              <tr className="border-b border-border">
+                <td className="py-2 px-2"><code>copy</code></td>
+                <td className="py-2 px-2">Duplicate value to new path</td>
+                <td className="py-2 px-2"><code>&#123;&quot;op&quot;:&quot;copy&quot;,&quot;from&quot;:&quot;/a&quot;,&quot;path&quot;:&quot;/b&quot;&#125;</code></td>
+              </tr>
+              <tr>
+                <td className="py-2 px-2"><code>test</code></td>
+                <td className="py-2 px-2">Assert value (for atomic patches)</td>
+                <td className="py-2 px-2"><code>&#123;&quot;op&quot;:&quot;test&quot;,&quot;path&quot;:&quot;/foo&quot;,&quot;value&quot;:1&#125;</code></td>
+              </tr>
+            </tbody>
+          </table>
+          <p className="mt-3">
+            Path uses <strong>JSON Pointer (RFC 6901)</strong> syntax: <code>/key</code> for object, <code>/arr/0</code> for array index, <code>/users/3/name</code> for nested. Use <code>~0</code> to escape <code>~</code> and <code>~1</code> to escape <code>/</code> in keys.
+          </p>
+        </div>
+
+        <div>
+          <h3 className="text-lg font-semibold text-foreground mb-2">JSON Diff vs jq, jdiff, json-diff CLI</h3>
+          <table className="w-full border-collapse text-sm">
+            <thead>
+              <tr className="border-b border-border">
+                <th className="text-left py-2 px-2 text-foreground">Tool</th>
+                <th className="text-left py-2 px-2 text-foreground">Strengths</th>
+                <th className="text-left py-2 px-2 text-foreground">When to use</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr className="border-b border-border">
+                <td className="py-2 px-2"><strong>This tool (browser)</strong></td>
+                <td className="py-2 px-2">Visual side-by-side, no install, private</td>
+                <td className="py-2 px-2">Ad-hoc comparison, debugging, no environment</td>
+              </tr>
+              <tr className="border-b border-border">
+                <td className="py-2 px-2"><code>jq --argjson</code></td>
+                <td className="py-2 px-2">Scriptable, Unix-friendly, supports complex queries</td>
+                <td className="py-2 px-2">CLI pipelines, automation, CI checks</td>
+              </tr>
+              <tr className="border-b border-border">
+                <td className="py-2 px-2"><code>json-diff</code> npm</td>
+                <td className="py-2 px-2">Node.js library, returns structured patches</td>
+                <td className="py-2 px-2">Programmatic diffing in apps</td>
+              </tr>
+              <tr className="border-b border-border">
+                <td className="py-2 px-2">Python <code>deepdiff</code></td>
+                <td className="py-2 px-2">Most feature-rich, tolerates fuzzy matching</td>
+                <td className="py-2 px-2">Python data science / test assertions</td>
+              </tr>
+              <tr>
+                <td className="py-2 px-2"><code>diff -u file1.json file2.json</code></td>
+                <td className="py-2 px-2">Universally available</td>
+                <td className="py-2 px-2">Quick textual check; falls down on key reorder</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div>
+          <h3 className="text-lg font-semibold text-foreground mb-2">Working with API Responses</h3>
+          <p>
+            JSON diff is most useful for API regression testing. Common pattern:
+          </p>
+          <ol className="list-decimal pl-6 mt-2 space-y-1">
+            <li>Capture the <strong>baseline response</strong> from your production API (or whatever you consider the &quot;correct&quot; version)</li>
+            <li>Capture the <strong>new response</strong> from your staging or feature-branch deploy</li>
+            <li>Paste both into this tool</li>
+            <li>Review the path-summary diff to identify what your backend changed</li>
+            <li>Categorize changes: <strong>Expected</strong> (new feature shipped), <strong>Unexpected</strong> (regression!), <strong>Cosmetic</strong> (key reorder — safe to ignore)</li>
+          </ol>
+          <p className="mt-3">
+            For automated regression testing, export the diff as JSON Patch and assert in your test suite: <code>expect(diff(baseline, current)).toEqual(expectedPatch)</code>.
+          </p>
+        </div>
+
+        <div>
+          <h3 className="text-lg font-semibold text-foreground mb-2">Common Pitfalls</h3>
+          <ul className="list-disc pl-6 space-y-1">
+            <li><strong>Timestamps differ every call:</strong> if your API includes <code>timestamp</code> or <code>requestId</code> fields that change per request, you&apos;ll see them as &quot;changed&quot; on every diff. Strip them before comparing, or use the &quot;ignore paths&quot; option (if available).</li>
+            <li><strong>Pagination cursor changes:</strong> the same query with different cursors will show different pagination metadata — focus on the data array, not the wrapper.</li>
+            <li><strong>UUIDs in responses:</strong> if your API generates new UUIDs per call, every record will appear &quot;changed.&quot; Normalize or strip UUIDs for diffing.</li>
+            <li><strong>Float precision:</strong> JavaScript&apos;s number format can cause <code>0.1 + 0.2 = 0.30000000000000004</code>. Round floats before comparing if your data has math.</li>
+            <li><strong>Array order matters by default:</strong> <code>[1,2,3]</code> and <code>[3,2,1]</code> show 3 changes. Use &quot;match by key&quot; for arrays of objects with stable IDs.</li>
+          </ul>
+        </div>
       </div>
     ),
 

@@ -110,8 +110,139 @@ const toolConfig = createToolConfig({
       "Color consistency validation",
     ],
 
-    aboutTool:
-      "CSS and design tools use different color formats. CSS stylesheets commonly use hex codes (#FF5733), JavaScript and CSS-in-JS use rgb(255, 87, 51), and modern CSS uses hsl(11, 100%, 60%) for more intuitive color manipulation. Figma and Sketch export colors in hex, while Tailwind CSS config files accept hex, RGB, or HSL. This converter translates between all three formats instantly with a live color swatch so you can visually confirm the color. Supports both 3-digit shorthand (#F00) and 6-digit (#FF0000) hex codes. Alpha channel support converts to rgba() and hsla() formats.",
+    aboutTool: (
+      <div className="space-y-6 text-muted-foreground">
+        <div>
+          <h3 className="text-lg font-semibold text-foreground mb-2">Why So Many Color Formats?</h3>
+          <p>
+            CSS and design tools use different color formats because each one optimizes for different use cases. <strong>HEX</strong> (#FF5733) is compact and historical — it&apos;s how every computer color was specified for decades. <strong>RGB</strong> (red, green, blue 0-255) directly represents how monitors render light. <strong>HSL</strong> (hue, saturation, lightness) matches human perception — adjusting lightness creates intuitive tints / shades. <strong>HSV</strong> (hue, saturation, value) is similar but more intuitive for picking colors. <strong>OKLCH</strong> is the modern perceptually-uniform space — equal numeric changes produce equal visual changes. <strong>LAB</strong> is the absolute color space used in print and high-end design. Most workflows use multiple formats: HEX for storage / serialization, HSL for programmatic color manipulation, OKLCH for accessibility-conscious design tokens.
+          </p>
+        </div>
+
+        <div>
+          <h3 className="text-lg font-semibold text-foreground mb-2">Color Format Conversion Matrix</h3>
+          <table className="w-full border-collapse text-sm">
+            <thead>
+              <tr className="border-b border-border">
+                <th className="text-left py-2 px-2 text-foreground">Format</th>
+                <th className="text-left py-2 px-2 text-foreground">Syntax</th>
+                <th className="text-left py-2 px-2 text-foreground">Range</th>
+                <th className="text-left py-2 px-2 text-foreground">Best for</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr className="border-b border-border">
+                <td className="py-2 px-2"><strong>HEX</strong></td>
+                <td className="py-2 px-2">#RRGGBB</td>
+                <td className="py-2 px-2">00-FF per channel</td>
+                <td className="py-2 px-2">Storage, CSS, design files</td>
+              </tr>
+              <tr className="border-b border-border">
+                <td className="py-2 px-2">HEX 8-digit</td>
+                <td className="py-2 px-2">#RRGGBBAA</td>
+                <td className="py-2 px-2">00-FF per channel + alpha</td>
+                <td className="py-2 px-2">Colors with transparency</td>
+              </tr>
+              <tr className="border-b border-border">
+                <td className="py-2 px-2"><strong>RGB</strong></td>
+                <td className="py-2 px-2">rgb(R, G, B)</td>
+                <td className="py-2 px-2">0-255 per channel</td>
+                <td className="py-2 px-2">JavaScript, programmatic color</td>
+              </tr>
+              <tr className="border-b border-border">
+                <td className="py-2 px-2">RGBA</td>
+                <td className="py-2 px-2">rgba(R, G, B, A)</td>
+                <td className="py-2 px-2">0-255 RGB + 0-1 alpha</td>
+                <td className="py-2 px-2">Translucent colors in CSS</td>
+              </tr>
+              <tr className="border-b border-border">
+                <td className="py-2 px-2"><strong>HSL</strong></td>
+                <td className="py-2 px-2">hsl(H, S%, L%)</td>
+                <td className="py-2 px-2">0-360°, 0-100%, 0-100%</td>
+                <td className="py-2 px-2">Tints, shades, theme generation</td>
+              </tr>
+              <tr className="border-b border-border">
+                <td className="py-2 px-2">HSV / HSB</td>
+                <td className="py-2 px-2">hsv(H, S%, V%)</td>
+                <td className="py-2 px-2">0-360°, 0-100%, 0-100%</td>
+                <td className="py-2 px-2">Color pickers (Photoshop, GIMP)</td>
+              </tr>
+              <tr className="border-b border-border">
+                <td className="py-2 px-2"><strong>OKLCH</strong></td>
+                <td className="py-2 px-2">oklch(L% C H)</td>
+                <td className="py-2 px-2">0-100%, 0-0.4+, 0-360°</td>
+                <td className="py-2 px-2">Modern design tokens, accessibility</td>
+              </tr>
+              <tr>
+                <td className="py-2 px-2">CMYK</td>
+                <td className="py-2 px-2">cmyk(C%, M%, Y%, K%)</td>
+                <td className="py-2 px-2">0-100% per channel</td>
+                <td className="py-2 px-2">Print design (Adobe / InDesign)</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div>
+          <h3 className="text-lg font-semibold text-foreground mb-2">HEX Format Variations</h3>
+          <ul className="list-disc pl-6 space-y-1">
+            <li><strong>6-digit hex (#FF0000):</strong> standard — 2 hex chars per channel (Red, Green, Blue)</li>
+            <li><strong>3-digit shorthand (#F00):</strong> each char doubled — #F00 = #FF0000. Only works when each channel has two identical hex digits.</li>
+            <li><strong>8-digit hex (#FF000080):</strong> 6-digit + 2-char alpha. Modern browsers (Chrome 62+, Firefox 49+, Safari 9.1+). #FF000080 = red with 50% opacity.</li>
+            <li><strong>4-digit shorthand (#F008):</strong> 3-digit + 1-char alpha — #F008 = #FF000088 = red ~53% opaque.</li>
+            <li><strong>Case insensitive:</strong> #ff0000 = #FF0000 = #Ff0000. Lowercase is most common in code; uppercase in print/design.</li>
+          </ul>
+        </div>
+
+        <div>
+          <h3 className="text-lg font-semibold text-foreground mb-2">Quick Conversion Formulas</h3>
+          <p><strong>HEX → RGB:</strong> split into 3 pairs, convert each pair from base-16 to base-10:</p>
+          <pre className="bg-muted p-3 rounded mt-2 text-xs overflow-x-auto">
+            <code>{`#FF5733 → FF=255, 57=87, 33=51 → rgb(255, 87, 51)`}</code>
+          </pre>
+          <p className="mt-3"><strong>RGB → HSL:</strong> more complex — normalize to 0-1, find max/min, derive hue from dominant channel:</p>
+          <pre className="bg-muted p-3 rounded mt-2 text-xs overflow-x-auto">
+            <code>{`L = (max + min) / 2
+S = (max - min) / (1 - |2L - 1|)   if L > 0.5
+S = (max - min) / (max + min)       otherwise
+H = depends on which channel is max (see CSS Color spec)`}</code>
+          </pre>
+        </div>
+
+        <div>
+          <h3 className="text-lg font-semibold text-foreground mb-2">When to Use Each Format in Code</h3>
+          <ul className="list-disc pl-6 space-y-1">
+            <li><strong>Use HEX:</strong> static CSS, design tokens, Tailwind config, Figma/Sketch exports. Most compact for storage.</li>
+            <li><strong>Use RGB / RGBA:</strong> programmatic JavaScript color manipulation, CSS-in-JS (styled-components, emotion), when you need to vary alpha.</li>
+            <li><strong>Use HSL:</strong> theme generation (adjust just lightness for hover states), creating tints / shades programmatically.</li>
+            <li><strong>Use OKLCH:</strong> modern design systems, accessibility-first palettes, color interpolation that looks smooth.</li>
+            <li><strong>Use CSS color-mix() with HSL/OKLCH:</strong> mix colors programmatically: <code>color-mix(in oklch, var(--brand) 50%, white)</code>.</li>
+          </ul>
+        </div>
+
+        <div>
+          <h3 className="text-lg font-semibold text-foreground mb-2">Accessibility: WCAG Contrast</h3>
+          <p>
+            Converting color formats is often part of accessibility work. WCAG 2.1 requires <strong>4.5:1 contrast ratio</strong> between text and background for AA compliance (3:1 for large text 18pt+). The contrast ratio is calculated using <strong>relative luminance</strong> — a perceptually-weighted version of brightness. RGB matters here: not all colors with the same lightness in HSL have the same contrast against white! Yellow (#FFFF00) and blue (#0000FF) have the same HSL lightness (50%) but radically different contrast against white. Always test the actual contrast ratio, not just &quot;light enough lightness.&quot;
+          </p>
+        </div>
+
+        <div>
+          <h3 className="text-lg font-semibold text-foreground mb-2">CSS Color Level 4 New Features</h3>
+          <p>
+            Modern browsers (Chrome 111+, Firefox 113+, Safari 15.4+) support CSS Color Level 4 with new features:
+          </p>
+          <ul className="list-disc pl-6 mt-2 space-y-1">
+            <li><strong>oklch() / oklab() / lab() / lch():</strong> perceptually uniform color spaces</li>
+            <li><strong>color() function:</strong> use specific color spaces like sRGB, P3, ProPhoto</li>
+            <li><strong>color-mix():</strong> mix two colors programmatically with chosen interpolation space</li>
+            <li><strong>Display P3:</strong> wide-gamut colors that show on modern displays (iPhones, MacBooks)</li>
+            <li><strong>HD color (HDR):</strong> emerging support for high dynamic range colors</li>
+            <li><strong>Relative colors:</strong> <code>oklch(from var(--brand) calc(l + 0.1) c h)</code> — derive colors from other colors</li>
+          </ul>
+        </div>
+      </div>
+    ),
 
     proTip:
       "For design systems, store your canonical color values in hex and derive RGB/HSL programmatically. Use HSL for dynamic theme generation — adjusting lightness creates consistent tints and shades without manual color picking.",
