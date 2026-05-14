@@ -242,6 +242,9 @@ Text similarity checker. Jaccard, cosine, Levenshtein distance.
 
 ## AI Tools
 
+https://www.fasttools.store/ai-tools/ai-api-cost-calculator
+AI API cost calculator and comparator. Compare LLM pricing across OpenAI (GPT-5, GPT-5 mini, GPT-5 nano, GPT-4o, o3), Anthropic (Claude Opus 4.7 with 1M context, Sonnet 4.6, Haiku 4.5), Google Gemini 2.5 Pro/Flash/Flash-Lite, DeepSeek V3/R1, Mistral Large 2/Small 3/Codestral, Meta Llama 4 Maverick/Scout via Together AI, Llama via Groq, xAI Grok 4/Mini, Cohere Command R+/R. 25+ models across 10 providers. 7 realistic workload presets: light chatbot, production chatbot (3M req/mo), RAG knowledge base, agentic workflow, document summarization, code generation, batch processing. Cached-input pricing modeled (~90% discount on repeated system prompts and RAG context). Per-request, per-month, and per-year cost in one comparison table sorted cheapest first. Shareable URLs encode every input parameter. Copy-as-text summary for Slack/decks/RFCs. Pricing live-synced from LiteLLM open-source pricing database (MIT licensed, community-maintained). 100% client-side calculation — usage figures never sent to a server.
+
 https://www.fasttools.store/ai-tools/text-summarizer
 Free AI text summarizer. Meta Llama 3.1. Modes: paragraph, bullets, key takeaways, TL;DR. Up to 10K chars. Adjustable length 10–70%.
 

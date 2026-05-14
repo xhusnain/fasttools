@@ -26,6 +26,8 @@ https://www.fasttools.store/ai-tools
 AI-powered content generation tools including QR code generators, caption generators, lyrics generators, and pet name generators. All premium features are free.
 
 **Featured Tools:**
+- https://www.fasttools.store/ai-tools/ai-api-cost-calculator - Compare LLM API pricing across OpenAI (GPT-5, GPT-4o), Anthropic (Claude Opus 4.7, Sonnet 4.6, Haiku 4.5), Google Gemini 2.5, DeepSeek V3/R1, Mistral, Llama 4, xAI Grok 4, Cohere. 25+ models, 7 workload presets (chatbot, RAG, agent, summarize, code-gen, batch), cached-input pricing modeled. Live-synced from LiteLLM.
+- https://www.fasttools.store/ai-tools/token-to-word-converter - LLM token calculator for GPT-5, Claude, Gemini with context window and cost estimation.
 - https://www.fasttools.store/ai-tools/qr-generator - Generate QR codes with customizable designs, colors, and logos.
 - https://www.fasttools.store/ai-tools/caption-generator - AI-powered social media caption generator.
 - https://www.fasttools.store/ai-tools/lyrics-generator - Generate song lyrics in 40+ languages.

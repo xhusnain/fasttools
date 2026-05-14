@@ -105,6 +105,7 @@ export const sitemapPages = [
   { url: u("/ai-tools/ai-paraphraser"), lastModified: new Date("2026-03-27"), changeFrequency: "weekly" as const, priority: 0.9 },
   { url: u("/ai-tools/text-summarizer"), lastModified: new Date("2026-04-03"), changeFrequency: "weekly" as const, priority: 0.9 },
   { url: u("/ai-tools/text-to-speech"), lastModified: new Date("2026-04-08"), changeFrequency: "monthly" as const, priority: 0.9 },
+  { url: u("/ai-tools/ai-api-cost-calculator"), lastModified: new Date("2026-05-14"), changeFrequency: "weekly" as const, priority: 1.0 },
 
   // ─── Converters ──────────────────────────────────────────────────────
   { url: u("/converters/currency"), lastModified: new Date("2026-03-23"), changeFrequency: "weekly" as const, priority: 0.8 },
