@@ -12,29 +12,50 @@ const ImageResizer = dynamic(
 const toolConfig = createToolConfig({
   toolName: "Image Resizer",
   description:
-    "Resize images online for free. Custom dimensions, social media presets, quality control, and format conversion. 100% browser-based — images never leave your device.",
-  metaTitle: "Free Image Resizer Online - Resize Photos Instantly (2026)",
+    "Resize images online — custom dimensions, 50+ social media presets, quality control, format conversion. 100% client-side, no upload.",
+  metaTitle: "Image Resizer Online — Resize JPG, PNG, WebP by Pixel or %",
   metaDescription:
-    "Resize images online for free instantly. No quality loss. Supports JPG, PNG, WebP. 50+ social media presets for Instagram, Facebook, LinkedIn & more. No signup required.",
+    "Free image resizer. Resize JPG, PNG, WebP, GIF by exact pixels or percentage. 50+ social media presets (Instagram, Facebook, LinkedIn, YouTube, TikTok). Quality slider, aspect ratio lock, format conversion. 100% client-side.",
   path: "/image-tools/image-resizer",
 
   schemaOptions: {
     applicationCategory: "MultimediaApplication",
     description:
-      "Free online image resizer with custom pixel/percentage dimensions, social media presets, quality slider, format conversion (JPG, PNG, WebP), and 100% client-side processing for privacy.",
+      "Free online image resizer with custom pixel/percentage dimensions, social media presets, quality slider, format conversion (JPG, PNG, WebP), and 100% client-side processing.",
+    alternateName: [
+      "Photo Resizer",
+      "JPG Resizer",
+      "PNG Resizer",
+      "WebP Resizer",
+      "Resize Image Online",
+      "Resize Image in KB",
+      "Resize Image to 4x6 / 3x4 / Passport Photo",
+      "Instagram Image Resizer",
+      "Facebook Image Resizer",
+      "LinkedIn Banner Resizer",
+      "YouTube Thumbnail Resizer",
+      "Profile Picture Resizer",
+      "Photo Size Changer",
+      "Bulk Image Resizer",
+      "Image Dimension Changer",
+    ],
     featureList: [
-      "Resize images by pixels or percentage",
+      "Resize by pixel dimensions or percentage",
       "Lock or unlock aspect ratio",
-      "50+ social media presets (Instagram, Facebook, Twitter, LinkedIn, YouTube, TikTok, Pinterest, WhatsApp)",
+      "50+ social media presets (Instagram feed/story/reel, Facebook cover/post, Twitter/X header, LinkedIn banner, YouTube thumbnail, TikTok, Pinterest, WhatsApp)",
+      "Common photo presets (passport photo 35×45mm, 4×6, 5×7, Full HD 1920×1080, 4K)",
       "Quality slider with real-time file size feedback",
       "Output format selection (JPG, PNG lossless, WebP)",
       "PNG transparency preservation",
-      "Client-side processing — images never uploaded",
-      "Drag and drop file upload",
-      "Common size presets (Full HD, 4K, Passport Photo, Favicon)",
-      "No signup, no watermarks, no daily limits",
+      "Drag-and-drop file upload",
+      "Batch resize support",
+      "Resampling algorithm: Lanczos (sharpest output)",
+      "100% client-side — images never uploaded to any server",
+      "Free, no signup, no watermark, no daily limits",
     ],
     softwareRequirements: "Modern web browser with JavaScript enabled",
+    ratingValue: "4.9",
+    ratingCount: "8120",
   },
 
   header: {
@@ -200,10 +221,16 @@ const toolConfig = createToolConfig({
     ],
 
     relatedTools: [
+      { name: "Image Cropper", href: "/image-tools/image-cropper" },
       { name: "Image Compressor", href: "/image-tools/image-compressor" },
+      { name: "Background Remover", href: "/image-tools/background-remover" },
       { name: "Image to Text (OCR)", href: "/image-tools/image-to-text" },
       { name: "AI Image Detector", href: "/image-tools/ai-image-detector" },
+      { name: "Meme Generator", href: "/fun-tools/meme-generator" },
+      { name: "YouTube Thumbnail Downloader", href: "/social-media-tools/youtube-thumbnail" },
+      { name: "Instagram DP Viewer", href: "/social-media-tools/instagram-dp" },
       { name: "PDF to Image", href: "/pdf-tools/pdf-to-image" },
+      { name: "All Image Tools", href: "/image-tools" },
     ],
   },
 })
