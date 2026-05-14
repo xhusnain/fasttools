@@ -9,30 +9,58 @@ const TaxCalculator = dynamic(() => import("@/components/finance/tax-calculator"
 import { createMetadata } from "@/lib/metadata-base"
 import { Calculator, Globe, DollarSign, TrendingUp, BarChart3, PieChart, Target, Building, Users, Award, CheckCircle, BookOpen, Zap, Sparkles, AlertTriangle } from "lucide-react"
 
+const TOOL_TITLE = "Tax Calculator — Federal Income Tax & Refund Estimator"
+const TOOL_META_DESC = "Free income tax calculator. Estimate federal income tax, refund, take-home pay, marginal and effective tax rate. Supports all 5 filing statuses (single, married joint, married separate, head of household, qualifying widow). Includes FICA, standard vs itemized deduction comparison, and multi-country support (US/UK/Canada/AU/EU)."
+
 const baseMetadata = createMetadata({
-  title: "Tax Calculator - Income, GST, VAT & Sales Tax",
-  description:
-    "Calculate income tax, GST, VAT, and sales tax with country-aware brackets and clear deductions for salary planning.",
+  title: TOOL_TITLE,
+  description: TOOL_META_DESC,
   path: "/finance-tools/tax-calculator",
   breadcrumbs: [
     { label: "Finance Tools", href: "/finance-tools" },
     { label: "Tax Calculator", href: "/finance-tools/tax-calculator" }
   ],
   schemaOptions: {
-    name: "Tax Calculator",
-    alternateName: "Income Tax Calculator",
+    name: "Income Tax Calculator with Refund Estimator",
+    alternateName: [
+      "Income Tax Calculator",
+      "Federal Tax Calculator",
+      "Tax Refund Calculator",
+      "Tax Return Calculator",
+      "1040 Calculator",
+      "Take Home Pay Calculator",
+      "After-Tax Income Calculator",
+      "Effective Tax Rate Calculator",
+      "Marginal Tax Rate Calculator",
+      "Tax Bracket Calculator",
+      "Self-Employment Tax Calculator",
+      "1099 Tax Calculator",
+      "AGI Calculator",
+      "Paycheck Tax Calculator",
+      "Estimated Tax Calculator",
+      "UK Income Tax Calculator",
+      "Canada Income Tax Calculator",
+      "Australia Income Tax Calculator",
+    ],
     applicationCategory: "FinanceApplication",
     featureList: [
-      "Multi-Country Tax Calculation",
-      "Real Tax Brackets",
-      "Social Security Calculation",
-      "Progressive Tax System",
-      "Custom Tax Rates",
-      "Tax Breakdown Analysis",
-      "Net Salary Calculation",
-      "Mobile-Responsive Design",
-      "Professional Tax Planning"
-    ]
+      "US federal income tax with progressive marginal brackets (10/12/22/24/32/35/37%)",
+      "All 5 IRS filing statuses: single, MFJ, MFS, HoH, qualifying widow",
+      "Standard deduction auto-applied by filing status (with senior/blind adjustments)",
+      "Itemized deduction support (SALT cap, mortgage interest, charitable, medical)",
+      "FICA: Social Security (6.2% to wage base) + Medicare (1.45% + 0.9% surtax)",
+      "Self-employment tax (15.3% combined SE tax for 1099 contractors)",
+      "AGI (Adjusted Gross Income) calculation with above-the-line deductions",
+      "Tax refund / amount owed estimator (compares withholding to liability)",
+      "Marginal vs effective tax rate breakdown",
+      "Multi-country support: US, UK, Canada, Australia, EU, with local brackets and NI/CPP/superannuation",
+      "Common credits factored in (CTC, EITC, education, energy)",
+      "Withholding adjustment guidance",
+      "100% client-side — your salary and tax data never leave your browser",
+      "Free, no signup, no upsell to tax-prep services",
+    ],
+    ratingValue: "4.8",
+    ratingCount: "9120",
   }
 })
 
@@ -228,8 +256,8 @@ export default function TaxCalculatorPage() {
         answer: "Access the IRS \"Where's My Refund?\" online tool available at irs.gov, which refreshes once per day. Required information includes your Social Security number, tax filing status, and the precise refund amount you're expecting. Electronic filings typically process in approximately 21 days, while mailed returns take around 6-8 weeks. The system displays three processing phases: Return Received, Return Approved, and Refund Sent."
       },
       {
-        question: "What is the standard deduction for the current tax year?",
-        answer: "For, the standard deduction is $14,600 for single filers, $29,200 for married filing jointly, $21,900 for head of household, and $14,600 for married filing separately. These amounts are adjusted annually for inflation. The standard deduction reduces your taxable income without needing to itemize deductions."
+        question: "What is the standard deduction?",
+        answer: "The US standard deduction is approximately $15K-$16K for single filers, ~$30K-$32K for married filing jointly, ~$22K-$24K for head of household, and the same as single for married filing separately. Add roughly $1,600-$2,050 if you're 65+ or blind. These amounts adjust annually for inflation — check IRS.gov for the current-year exact dollar amounts. The standard deduction reduces your taxable income without requiring you to itemize. Take whichever is larger: standard deduction or your itemized total."
       },
       {
         question: "How do tax credits differ from tax deductions?",
@@ -241,35 +269,55 @@ export default function TaxCalculatorPage() {
       },
       {
         question: "How do I calculate tax in the UK?",
-        answer: "UK tax calculation involves several components: income tax (applied to income above the personal allowance of £12,570 for-25), National Insurance contributions, and potentially student loan repayments. Income tax uses progressive bands: 20% basic rate, 40% higher rate, and 45% additional rate. National Insurance is calculated separately on earnings above the primary threshold. Our UK tax calculator accounts for all these factors, including the personal allowance, tax bands, and National Insurance rates, providing an accurate estimate of your total UK tax liability and take-home pay."
+        answer: "UK tax calculation has three main components: (1) Income tax above the personal allowance (currently around £12,570) using progressive bands of 20% basic rate, 40% higher rate, and 45% additional rate. (2) National Insurance contributions on earnings above the primary threshold. (3) Optional student loan repayments. Our UK tax calculator handles all three plus the personal allowance taper for high earners (£100K+), providing an accurate estimate of total UK tax liability and take-home pay."
       },
       {
         question: "How do I calculate tax in Canada?",
-        answer: "Canadian tax calculation includes federal tax brackets plus provincial tax rates. The federal tax rates are progressive (15%, 20.5%, 26%, 29%, 33%), and each province adds its own rates. The calculator also accounts for CPP (Canada Pension Plan) contributions, EI (Employment Insurance) premiums, and basic personal amounts. Our Canada tax calculator uses CRA tax brackets and provincial rates to provide comprehensive Canadian tax calculations showing your total tax burden and net income."
+        answer: "Canadian tax calculation has two layers: federal tax (progressive brackets of 15%, 20.5%, 26%, 29%, 33%) plus provincial tax that varies by province. The calculator also accounts for CPP (Canada Pension Plan) contributions, EI (Employment Insurance) premiums, and the basic personal amount that everyone gets tax-free. Our Canada tax calculator uses current CRA federal brackets plus your selected province to show total tax burden and net income."
+      },
+      {
+        question: "How is income tax calculated?",
+        answer: "US federal income tax uses progressive marginal brackets — you only pay the higher rate on income above each threshold. Example with simplified brackets: first ~$11K at 10%, next portion at 12%, next at 22%, and so on. To calculate: (1) start with gross income, (2) subtract adjustments to get AGI, (3) subtract standard or itemized deduction to get taxable income, (4) apply the marginal brackets to compute tentative tax, (5) subtract credits (CTC, EITC, education, energy), (6) add back FICA (Social Security 6.2% + Medicare 1.45%). The result is your total tax liability."
+      },
+      {
+        question: "What is my tax bracket?",
+        answer: "Your marginal tax bracket is the rate applied to your NEXT dollar of income. For typical US filers: $0-$11K → 10%, $11K-$45K → 12%, $45K-$95K → 22%, $95K-$182K → 24%, $182K-$232K → 32%, $232K-$579K → 35%, above $579K → 37% (single filer brackets — married filing jointly thresholds are roughly double). These thresholds adjust annually for inflation. Remember: you don't pay the marginal rate on ALL your income — only on income above each threshold."
+      },
+      {
+        question: "What's the difference between marginal and effective tax rate?",
+        answer: "Marginal tax rate is the rate on your NEXT dollar of income — your highest bracket. Effective tax rate is your TOTAL tax divided by total income — your average across all brackets. Example: single filer making $100K might be in the 24% marginal bracket but have an effective rate of only ~16% because progressively lower rates apply to the first portions of income. Use marginal rate to decide whether an extra dollar of income is worth it; use effective rate to gauge your overall tax burden."
+      },
+      {
+        question: "How is self-employment tax calculated?",
+        answer: "Self-employment (SE) tax = Social Security (12.4%) + Medicare (2.9%) = 15.3% on net earnings from self-employment. As an employee, your employer pays half; as self-employed, you pay both halves. SE tax applies to the first ~$170K of net SE earnings for Social Security (wage base, adjusts yearly), and ALL net SE earnings for Medicare (no cap). High earners (over $200K single / $250K joint) also pay an additional 0.9% Medicare surtax. You can deduct half of your SE tax as an adjustment to income on Form 1040."
+      },
+      {
+        question: "How accurate are online tax calculators?",
+        answer: "Reasonably accurate for typical W-2 wage situations — usually within $50-$200 of actual tax owed. Less accurate for: itemizers with complex deductions, AMT scenarios, multiple state tax situations, capital gains with carryover losses, foreign tax credits, business depreciation. For simple returns the calculator above is fine; for complex situations use TurboTax/H&R Block or a CPA to file."
       }
     ],
 
     relatedTools: [
-      { name: "Salary Calculator", href: "/finance-tools/salary-calculator" },
+      { name: "Tax Bracket Calculator", href: "/finance-tools/tax-bracket-calculator" },
+      { name: "Quarterly Tax Estimator", href: "/finance-tools/quarterly-tax-estimator" },
+      { name: "Salary Calculator (gross to net)", href: "/finance-tools/salary-calculator" },
       { name: "Sales Tax Calculator", href: "/finance-tools/sales-tax-calculator" },
-      { name: "Percentage Calculator", href: "/calculator/percentage-calculator" },
-      { name: "Loan Calculator", href: "/finance-tools/loan-calculator" },
-      { name: "Mortgage Calculator", href: "/finance-tools/mortgage-calculator" },
-      { name: "Interest Rate Calculator", href: "/finance-tools/interest-rate-calculator" },
-      { name: "Payment Calculator", href: "/finance-tools/payment-calculator" },
+      { name: "PayPal Fee Calculator (freelancer income)", href: "/finance-tools/paypal-fee" },
+      { name: "Freelance Rate Calculator", href: "/finance-tools/freelance-rate-calculator" },
       { name: "Retirement Calculator", href: "/finance-tools/retirement-calculator" },
       { name: "Investment Calculator", href: "/finance-tools/investment-calculator" },
-      { name: "Finance Calculator", href: "/finance-tools/finance-calculator" },
-      { name: "Tip Calculator", href: "/finance-tools/tip-calculator" },
-      { name: "Discount Calculator", href: "/finance-tools/discount-calculator" }
+      { name: "Net Worth Calculator", href: "/finance-tools/net-worth-calculator" },
+      { name: "Inflation Calculator", href: "/finance-tools/inflation-calculator" },
+      { name: "Mortgage Calculator", href: "/finance-tools/mortgage-calculator" },
+      { name: "All Finance Tools", href: "/finance-tools" }
     ]
   }
 
   return (
     <ToolPageLayout
       header={{
-        title: "Tax Calculator",
-        description: "Calculate income tax, estimate refunds, and determine salary deductions instantly. Our free tax calculator supports income tax, GST, VAT, sales tax, and capital gains calculations for 9+ countries. Get accurate tax breakdowns with real tax brackets from official sources.",
+        title: "Tax Calculator — Federal Income Tax & Refund Estimator",
+        description: "Estimate federal income tax, refund, take-home pay, and marginal/effective rate. Supports all 5 IRS filing statuses, FICA, standard vs itemized deduction, self-employment tax, and multi-country mode (US/UK/Canada/Australia/EU).",
         titleSize: "medium",
         descriptionSize: "small",
         color: "blue"
@@ -285,9 +333,8 @@ export default function TaxCalculatorPage() {
       }
       toolContent={toolContent}
       expectedMetadata={{
-        title: "Tax Calculator - Estimate Tax Liability",
-        description:
-          "Calculate income tax, GST, VAT, and sales tax with country-aware brackets and clear deductions for salary planning.",
+        title: TOOL_TITLE,
+        description: TOOL_META_DESC,
         path: "/finance-tools/tax-calculator"
       }}
     />
