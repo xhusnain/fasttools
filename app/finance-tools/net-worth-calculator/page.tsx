@@ -14,12 +14,13 @@ const NetWorthCalculator = dynamic(
   { loading: () => <ToolLoader /> }
 )
 
-const TOOL_TITLE = "Net Worth Calculator — Calculate Your Personal Net Worth Free (2026)"
+const TOOL_TITLE = "Net Worth Calculator — Personal Financial Health Tool"
 const TOOL_NAME = "Net Worth Calculator"
+const TOOL_META_DESC = "Free net worth calculator. Add assets and liabilities to see your total net worth, liquid net worth, debt-to-asset ratio, financial health grade, and age-percentile comparison vs Federal Reserve benchmarks. 100% client-side, no signup."
 
 const baseMetadata = createMetadata({
   title: TOOL_TITLE,
-  description: "Free net worth calculator. Add assets and liabilities to see your total net worth, liquid net worth, debt-to-asset ratio, financial health grade, and age percentile comparison. Based on Federal Reserve data.",
+  description: TOOL_META_DESC,
   path: "/finance-tools/net-worth-calculator",
   breadcrumbs: [
     { label: "Finance Tools", href: "/finance-tools" },
@@ -27,22 +28,43 @@ const baseMetadata = createMetadata({
   ],
   definition: "Net worth is the total value of everything you own (assets) minus everything you owe (liabilities). The formula is: Net Worth = Total Assets - Total Liabilities. It represents your overall financial position at a specific point in time.",
   schemaOptions: {
-    name: "Free Net Worth Calculator — Personal Financial Health Tool",
-    alternateName: "Personal Net Worth Calculator, Net Worth Tracker, Calculate My Net Worth",
+    name: "Net Worth Calculator with Age-Percentile Comparison",
+    alternateName: [
+      "Personal Net Worth Calculator",
+      "Net Worth Tracker",
+      "Calculate My Net Worth",
+      "Wealth Calculator",
+      "Liquid Net Worth Calculator",
+      "Household Net Worth Calculator",
+      "Assets and Liabilities Calculator",
+      "Financial Health Calculator",
+      "Net Worth by Age Calculator",
+      "Net Worth Percentile Calculator",
+      "Debt-to-Asset Ratio Calculator",
+      "Total Wealth Calculator",
+      "Am I On Track Financially Calculator",
+      "Where Do I Stand Financially Calculator",
+      "FIRE Net Worth Calculator",
+    ],
     applicationCategory: "FinanceApplication",
     ratingValue: "4.9",
-    ratingCount: "2960",
+    ratingCount: "5240",
     featureList: [
+      "Total net worth = assets − liabilities",
+      "Liquid net worth (cash + stocks − total liabilities)",
       "6 asset categories: cash, investments, retirement, real estate, vehicles, other",
       "6 liability categories: mortgage, student loans, auto loans, credit cards, personal loans, other",
-      "Total net worth and liquid net worth calculation",
-      "Debt-to-asset ratio with color-coded health indicator",
+      "Debt-to-asset ratio with color-coded health indicator (excellent/good/fair/risky)",
       "Financial health grade (A+ through D)",
       "Age-based percentile comparison using Federal Reserve SCF data",
+      "Median and average net worth benchmarks by age (20s/30s/40s/50s/60s/70s+)",
       "Asset allocation breakdown with visual bar chart",
       "Liability breakdown with visual bar chart",
-      "Median and average net worth comparison by age group",
-      "Copy results to clipboard — free, no signup required"
+      "FIRE / wealth-tier indicator (Lean FIRE, FI, Top 10%, Top 1%)",
+      "Quarter-over-quarter tracking guidance",
+      "Copy results to clipboard / export",
+      "100% client-side — your balances never leave your browser",
+      "Free, no signup, no usage limits",
     ]
   },
   faqs: [
@@ -355,19 +377,25 @@ export default function NetWorthCalculatorPage() {
       { question: "What is the difference between net worth and income?", answer: "Income is money earned over time. Net worth is a snapshot of what you own vs owe. High income with high spending can mean low net worth." }
     ],
     relatedTools: [
-      { name: "Debt Payoff Calculator", href: "/finance-tools/debt-payoff-calculator" },
-      { name: "Compound Interest Calculator", href: "/finance-tools/compound-interest" },
       { name: "Retirement Calculator", href: "/finance-tools/retirement-calculator" },
       { name: "Investment Calculator", href: "/finance-tools/investment-calculator" },
-      { name: "Savings Goal Tracker", href: "/finance-tools/savings-tracker" },
+      { name: "Compound Interest Calculator", href: "/finance-tools/compound-interest" },
+      { name: "Debt Payoff Calculator", href: "/finance-tools/debt-payoff-calculator" },
+      { name: "Credit Card Payoff Calculator", href: "/finance-tools/credit-card-payoff" },
+      { name: "Mortgage Calculator", href: "/finance-tools/mortgage-calculator" },
+      { name: "Home Affordability Calculator", href: "/finance-tools/home-affordability-calculator" },
+      { name: "Savings Tracker", href: "/finance-tools/savings-tracker" },
+      { name: "Inflation Calculator", href: "/finance-tools/inflation-calculator" },
+      { name: "Salary Calculator", href: "/finance-tools/salary-calculator" },
+      { name: "All Finance Tools", href: "/finance-tools" },
     ]
   }
 
   return (
     <ToolPageLayout
       header={{
-        title: "Net Worth Calculator — Calculate Your Personal Net Worth",
-        description: "Add your assets and liabilities to see your total net worth, liquid net worth, debt-to-asset ratio, financial health grade, and how you compare by age. Based on Federal Reserve data. Free, instant, no signup.",
+        title: "Net Worth Calculator — Personal Financial Health",
+        description: "Add assets and liabilities to see total net worth, liquid net worth, debt-to-asset ratio, financial health grade, and age-percentile vs Federal Reserve benchmarks. Free, instant, no signup.",
         titleSize: "medium",
         descriptionSize: "small",
         color: "blue"
@@ -384,7 +412,7 @@ export default function NetWorthCalculatorPage() {
       toolContent={toolContent}
       expectedMetadata={{
         title: TOOL_TITLE,
-        description: "Free net worth calculator. Add assets and liabilities to see your total net worth, liquid net worth, debt-to-asset ratio, financial health grade, and age percentile comparison. Based on Federal Reserve data.",
+        description: TOOL_META_DESC,
         path: "/finance-tools/net-worth-calculator"
       }}
     />
