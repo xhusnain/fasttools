@@ -17,10 +17,7 @@
 
 | # | Tool | Path | GSC Signal | Status |
 |---|---|---|---|---|
-| 1 | Savings Tracker | `/finance-tools/savings-tracker` | 272 imp on "savings tracking tool" | [~] |
-| 9 | Pregnancy Conception Calculator | `/calculator/pregnancy-conception-calculator` | 180+ imp / 5 clicks "conception calculator" | [ ] |
-| 10 | IP Subnet / VPC CIDR Calculator | `/calculator/ip-subnet-calculator` | 44 imp on "vpc cidr calculator" + general subnet queries | [~] |
-| 11 | Currency Converter | `/converters/currency` | 700+ imp from API/Frankfurter queries | [ ] |
+| 1 | Currency Converter | `/converters/currency` | 700+ imp from API/Frankfurter queries | [ ] |
 | 12 | Regex Tester | `/dev-tools/regex-tester` | 77 imp on "ruby regex tester" | [ ] |
 | 13 | YouTube Channel Name Generator | `/social-media-tools/youtube-channel-name-generator` | 134 imp / 0 clicks "youtube channel name generator", 71 imp "youtube channel name generator ai" | [ ] |
 | 14 | YouTube Tag Extractor | `/social-media-tools/youtube-tags` | 43 imp "youtube tags extractor", 42 imp "youtube tag extractor", 29 imp "extract tags from youtube video" | [ ] |
@@ -266,6 +263,6 @@ For each tool, do this in order:
 ## Cumulative progress
 
 - Total tools: 179 + 8 variants = 187
-- Completed (deep): 7 (future-age, channel-checker, anniversary, concrete, paypal-fee, calculator-hub, hashtag-counter)
-- Partial (titles only from earlier batch): 2
-- Remaining: 180
+- Completed (deep): 10 (future-age, channel-checker, anniversary, concrete, paypal-fee, calculator-hub, hashtag-counter, savings-tracker, pregnancy-conception, ip-subnet)
+- Partial (titles only from earlier batch): 0
+- Remaining: 177
