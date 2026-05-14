@@ -155,11 +155,150 @@ const toolConfig = createToolConfig({
         <div>
           <h3 className="text-lg font-semibold text-foreground mb-2">How to Validate Your Schema</h3>
           <p>
-            After generating your JSON-LD, validate it using Google&apos;s Rich Results Test
-            (search.google.com/test/rich-results) to check eligibility for rich results, and the
-            Schema Markup Validator (validator.schema.org) for full Schema.org compliance. Fix any
-            errors or warnings before publishing to ensure maximum search visibility.
+            After generating your JSON-LD, validate it using <strong>Google&apos;s Rich Results Test</strong> (<code>search.google.com/test/rich-results</code>) to check eligibility for rich results, and the <strong>Schema Markup Validator</strong> (<code>validator.schema.org</code>) for full Schema.org compliance. Fix any errors or warnings before publishing to ensure maximum search visibility. After deployment, use <strong>Google Search Console&apos;s Enhancements report</strong> to monitor rich result performance over time and fix any errors Google detects after crawling.
           </p>
+        </div>
+
+        <div>
+          <h3 className="text-lg font-semibold text-foreground mb-2">Schema Type Priority by Page Type</h3>
+          <table className="w-full border-collapse text-sm">
+            <thead>
+              <tr className="border-b border-border">
+                <th className="text-left py-2 px-2 text-foreground">Page type</th>
+                <th className="text-left py-2 px-2 text-foreground">Primary schema</th>
+                <th className="text-left py-2 px-2 text-foreground">Secondary schemas to add</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr className="border-b border-border">
+                <td className="py-2 px-2">Blog post / article</td>
+                <td className="py-2 px-2"><strong>Article</strong> (or BlogPosting)</td>
+                <td className="py-2 px-2">Person (author), Organization (publisher), BreadcrumbList</td>
+              </tr>
+              <tr className="border-b border-border">
+                <td className="py-2 px-2">Product page</td>
+                <td className="py-2 px-2"><strong>Product</strong></td>
+                <td className="py-2 px-2">Offer (price), AggregateRating, Review, BreadcrumbList</td>
+              </tr>
+              <tr className="border-b border-border">
+                <td className="py-2 px-2">Local business</td>
+                <td className="py-2 px-2"><strong>LocalBusiness</strong> (or subtype: Restaurant, Store, etc.)</td>
+                <td className="py-2 px-2">PostalAddress, GeoCoordinates, OpeningHoursSpecification</td>
+              </tr>
+              <tr className="border-b border-border">
+                <td className="py-2 px-2">Homepage (company)</td>
+                <td className="py-2 px-2"><strong>Organization</strong></td>
+                <td className="py-2 px-2">WebSite (with SearchAction), ContactPoint</td>
+              </tr>
+              <tr className="border-b border-border">
+                <td className="py-2 px-2">Recipe</td>
+                <td className="py-2 px-2"><strong>Recipe</strong></td>
+                <td className="py-2 px-2">Person (chef), NutritionInformation, AggregateRating</td>
+              </tr>
+              <tr className="border-b border-border">
+                <td className="py-2 px-2">Event</td>
+                <td className="py-2 px-2"><strong>Event</strong> (or subtype: Conference, Concert)</td>
+                <td className="py-2 px-2">Place, Offer (tickets), Performer</td>
+              </tr>
+              <tr className="border-b border-border">
+                <td className="py-2 px-2">Video</td>
+                <td className="py-2 px-2"><strong>VideoObject</strong></td>
+                <td className="py-2 px-2">Clip (timestamps), BroadcastEvent</td>
+              </tr>
+              <tr className="border-b border-border">
+                <td className="py-2 px-2">FAQ / Help center page</td>
+                <td className="py-2 px-2">FAQPage (gov/health only for rich results)</td>
+                <td className="py-2 px-2">BreadcrumbList, Organization</td>
+              </tr>
+              <tr className="border-b border-border">
+                <td className="py-2 px-2">Person / Author page</td>
+                <td className="py-2 px-2"><strong>Person</strong> (ProfilePage for E-E-A-T)</td>
+                <td className="py-2 px-2">Organization (employer)</td>
+              </tr>
+              <tr>
+                <td className="py-2 px-2">Category / collection</td>
+                <td className="py-2 px-2"><strong>BreadcrumbList</strong> + CollectionPage</td>
+                <td className="py-2 px-2">ItemList (of products / articles)</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div>
+          <h3 className="text-lg font-semibold text-foreground mb-2">Critical 2025-2026 Schema Updates</h3>
+          <ul className="list-disc pl-6 space-y-1">
+            <li><strong>FAQPage is RESTRICTED:</strong> as of August 2023, FAQ rich results only appear for &quot;well-known authoritative government and health websites&quot;. Schema still helps AI engines understand structure, but no rich snippet visual benefit for commercial sites. Keep it for AI search; don&apos;t expect SERP enhancement.</li>
+            <li><strong>HowTo is DEPRECATED:</strong> rich results fully removed September 2023. Google says it&apos;s not a ranking factor anymore. Schema markup is harmless to keep but no SEO benefit.</li>
+            <li><strong>ProfilePage gains importance:</strong> Google&apos;s December 2025 E-E-A-T applies to ALL competitive queries. Author profile pages with ProfilePage + Person schema help establish expertise.</li>
+            <li><strong>AggregateRating requires real reviews:</strong> Google detects fake ratings now; only use AggregateRating if you have genuine reviewer data.</li>
+            <li><strong>VideoObject for SEO video search:</strong> Video schema is increasingly important as Google integrates video results into SERPs. Add Clip schema with seekToAction for chapter rich results.</li>
+            <li><strong>Speakable schema (audio search):</strong> emerging — schema.org Speakable annotation helps voice assistants find relevant content for audio reading.</li>
+          </ul>
+        </div>
+
+        <div>
+          <h3 className="text-lg font-semibold text-foreground mb-2">Microdata vs RDFa vs JSON-LD — Why JSON-LD Wins</h3>
+          <table className="w-full border-collapse text-sm">
+            <thead>
+              <tr className="border-b border-border">
+                <th className="text-left py-2 px-2 text-foreground">Format</th>
+                <th className="text-left py-2 px-2 text-foreground">Where it lives</th>
+                <th className="text-left py-2 px-2 text-foreground">Google preference</th>
+                <th className="text-left py-2 px-2 text-foreground">Maintenance</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr className="border-b border-border">
+                <td className="py-2 px-2"><strong>JSON-LD</strong></td>
+                <td className="py-2 px-2">Separate <code>&lt;script&gt;</code> tag</td>
+                <td className="py-2 px-2 text-green-500">Strongly recommended</td>
+                <td className="py-2 px-2">Easy — change schema without touching HTML</td>
+              </tr>
+              <tr className="border-b border-border">
+                <td className="py-2 px-2">Microdata</td>
+                <td className="py-2 px-2">Inline HTML attributes (itemscope / itemprop)</td>
+                <td className="py-2 px-2 text-orange-500">Accepted</td>
+                <td className="py-2 px-2">Harder — schema entangled with content</td>
+              </tr>
+              <tr>
+                <td className="py-2 px-2">RDFa</td>
+                <td className="py-2 px-2">Inline HTML attributes (vocab / typeof / property)</td>
+                <td className="py-2 px-2 text-orange-500">Accepted but rarely used</td>
+                <td className="py-2 px-2">Hardest — verbose syntax</td>
+              </tr>
+            </tbody>
+          </table>
+          <p className="mt-3">
+            <strong>Always use JSON-LD for new implementations.</strong> Don&apos;t mix formats on the same page — Google can usually handle it, but it&apos;s a source of subtle errors. Migrate legacy Microdata pages to JSON-LD over time.
+          </p>
+        </div>
+
+        <div>
+          <h3 className="text-lg font-semibold text-foreground mb-2">Common Implementation Mistakes</h3>
+          <ul className="list-disc pl-6 space-y-1">
+            <li><strong>Schema for content NOT on the page:</strong> Google&apos;s docs explicitly say schema must describe content visible to users. Don&apos;t add FAQ schema for FAQs that aren&apos;t visible.</li>
+            <li><strong>Missing required fields:</strong> each schema type has required and recommended fields. Article requires <code>headline</code>, <code>author</code>, <code>datePublished</code>. Product requires <code>name</code> + <code>image</code> + <code>description</code> + <code>offers</code>.</li>
+            <li><strong>Mismatched data:</strong> if your schema says <code>aggregateRating: 4.5</code> but page displays 3.5, Google may consider it manipulative and ignore the schema entirely.</li>
+            <li><strong>Multiple schemas conflicting:</strong> if you have two Article schemas on one page, Google picks one or ignores both.</li>
+            <li><strong>Wrong nesting:</strong> Author should be a Person object nested in Article, not a separate top-level item.</li>
+            <li><strong>Skipping breadcrumbs:</strong> BreadcrumbList schema improves SERP appearance for ~70% of pages — easy win, often skipped.</li>
+            <li><strong>Forgetting to update dynamically:</strong> articles need <code>dateModified</code> updated when content changes; products need <code>price</code> kept in sync.</li>
+          </ul>
+        </div>
+
+        <div>
+          <h3 className="text-lg font-semibold text-foreground mb-2">Schema for AI Search (GEO)</h3>
+          <p>
+            Generative Engine Optimization (GEO) — optimizing for AI search like ChatGPT, Perplexity, Claude, and Google AI Overviews — relies heavily on structured data. AI engines parse schema to understand <em>what</em> your page is, <em>who</em> wrote it, <em>when</em> it was updated, and <em>how authoritative</em> it is. To win citations from AI engines:
+          </p>
+          <ul className="list-disc pl-6 mt-2 space-y-1">
+            <li><strong>Person schema for authors:</strong> with sameAs links to Twitter / LinkedIn / Wikipedia for entity recognition</li>
+            <li><strong>Organization schema with knowsAbout:</strong> tells AI what topics your brand is authoritative on</li>
+            <li><strong>Article schema with all metadata:</strong> author, publisher, dates, image, articleSection</li>
+            <li><strong>FAQPage even if no SERP benefit:</strong> AI engines still use it to extract Q&amp;A pairs</li>
+            <li><strong>HowTo for instructional content:</strong> AI cites tools that have clean structured how-to content</li>
+            <li><strong>VideoObject with transcript:</strong> AI engines now index video content via transcripts in VideoObject</li>
+          </ul>
         </div>
       </div>
     ),
