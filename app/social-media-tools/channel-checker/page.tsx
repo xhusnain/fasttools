@@ -3,6 +3,8 @@ import dynamic from "next/dynamic"
 import { ToolPageLayout } from "@/components/common/tool-page-layout"
 import { ToolLoader } from "@/components/common/tool-loader"
 import { createToolConfig } from "@/lib/create-tool-config"
+import { GTable } from "@/ui/gtable"
+import { CheckCircle, XCircle } from "lucide-react"
 
 const YoutubeChannelChecker = dynamic(
   () => import("@/components/social-media/youtube-channel-checker").then((mod) => mod.YoutubeChannelChecker),
@@ -87,34 +89,183 @@ const toolConfig = createToolConfig({
     ],
 
     aboutTool: (
-      <div className="space-y-6 text-muted-foreground">
-        <div>
-          <h3 className="text-lg font-semibold text-foreground mb-2">What Is a YouTube Handle?</h3>
+      <div className="space-y-10 text-muted-foreground">
+        <article className="space-y-4">
+          <h2 className="text-2xl font-bold text-foreground">How to Check If a YouTube Channel Name Is Available (Step-by-Step)</h2>
           <p>
-            A YouTube handle is your unique identifier that starts with @ (for example, @YourChannelName). Introduced in 2022, handles replaced the old custom URL system. Your handle appears in your channel URL (youtube.com/@YourHandle), in comments, in Shorts, and anywhere your channel is mentioned. Unlike display names, handles must be unique across all of YouTube.
+            There are three reliable ways to check YouTube channel name availability in 2026. Use whichever is fastest for you:
           </p>
-        </div>
+          <ol className="list-decimal list-inside space-y-3 ml-2">
+            <li><strong>Use this tool above (recommended).</strong> Type any handle or channel name, press check, and get an instant answer with format validation. Saves you from repeatedly typing URLs.</li>
+            <li><strong>Check directly on YouTube.</strong> Open <code className="text-foreground">youtube.com/@desiredname</code> in your browser. If you see &quot;This page isn&apos;t available&quot; or a 404, the handle <em>may</em> be free. If you see an existing channel, it&apos;s taken.</li>
+            <li><strong>YouTube Studio claim flow.</strong> Inside YouTube Studio → Settings → Channel → Basic info, the handle field shows a green check if available or a red error if taken. This is the most authoritative source but requires you to be logged in.</li>
+          </ol>
+          <p>
+            <strong>Important:</strong> the URL-probe method (method 2) sometimes returns false positives because YouTube reserves certain handles, blocks some patterns for trademark reasons, or has caching delays right after a channel is renamed. The tool above accounts for those edge cases.
+          </p>
+        </article>
 
-        <div>
-          <h3 className="text-lg font-semibold text-foreground mb-2">YouTube Handle vs Channel Name — What Is the Difference?</h3>
+        <article className="space-y-4">
+          <h2 className="text-2xl font-bold text-foreground">YouTube Handle Format Rules (2026)</h2>
           <p>
-            Your <strong>channel name</strong> (display name) is what viewers see at the top of your channel page — it does not have to be unique. Multiple channels can share the same display name. Your <strong>handle</strong>, however, is your unique @username that no other channel can use. When checking availability, you want to verify that the handle is free, since the display name can always be set to whatever you prefer.
+            Before you check availability, make sure the handle you want is actually valid. YouTube rejects handles that fail any of these rules — checking format first avoids wasting time on handles that could never work.
           </p>
-        </div>
+          <div className="overflow-x-auto">
+            <GTable>
+              <thead className="bg-muted text-foreground font-semibold">
+                <tr>
+                  <th className="p-3 text-left">Rule</th>
+                  <th className="p-3 text-left">Valid</th>
+                  <th className="p-3 text-left">Invalid</th>
+                </tr>
+              </thead>
+              <tbody className="divide-y divide-border text-sm">
+                <tr>
+                  <td className="p-3 font-semibold">Length 3–30 characters</td>
+                  <td className="p-3 text-green-600">@cookwithme</td>
+                  <td className="p-3 text-red-500">@a, @verylongchannelnamethatexceedsthirtycharacterslimit</td>
+                </tr>
+                <tr>
+                  <td className="p-3 font-semibold">Letters, numbers, _ - . only</td>
+                  <td className="p-3 text-green-600">@cook_with_me.2026</td>
+                  <td className="p-3 text-red-500">@cook!me, @cook@me, @cook me</td>
+                </tr>
+                <tr>
+                  <td className="p-3 font-semibold">Case-insensitive</td>
+                  <td className="p-3 text-green-600">@MyBrand = @mybrand</td>
+                  <td className="p-3 text-red-500">— (treated as the same handle)</td>
+                </tr>
+                <tr>
+                  <td className="p-3 font-semibold">No impersonation / trademark</td>
+                  <td className="p-3 text-green-600">@TechByMaya</td>
+                  <td className="p-3 text-red-500">@YouTube, @Google, @Apple (blocked)</td>
+                </tr>
+                <tr>
+                  <td className="p-3 font-semibold">No slurs or hate terms</td>
+                  <td className="p-3 text-green-600">— (your handle, your call)</td>
+                  <td className="p-3 text-red-500">Blocked by community guidelines</td>
+                </tr>
+                <tr>
+                  <td className="p-3 font-semibold">Cannot start with a period</td>
+                  <td className="p-3 text-green-600">@my.channel</td>
+                  <td className="p-3 text-red-500">@.channel</td>
+                </tr>
+              </tbody>
+            </GTable>
+          </div>
+        </article>
 
-        <div>
-          <h3 className="text-lg font-semibold text-foreground mb-2">YouTube Handle Requirements (2026)</h3>
+        <article className="space-y-4">
+          <h2 className="text-2xl font-bold text-foreground">Handle vs Channel Name — Why It Matters</h2>
           <p>
-            YouTube handles must be between 3 and 30 characters, can only contain letters, numbers, underscores, hyphens, and periods, and must be unique. Handles are case-insensitive (@MyChannel and @mychannel are treated the same). You cannot use handles that impersonate others, contain slurs, or violate YouTube community guidelines.
+            Many creators confuse handle availability with channel name availability. They are different checks:
           </p>
-        </div>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <div className="p-4 rounded-lg bg-card border border-border">
+              <h4 className="font-semibold text-foreground mb-2">@Handle (must be unique)</h4>
+              <p className="text-sm">Your <code className="text-foreground">@handle</code> appears in your channel URL (<code className="text-foreground">youtube.com/@handle</code>), in comments, in Shorts, and in @mentions. Every YouTube channel has exactly one handle, and no two channels can share the same handle. This is what our tool checks.</p>
+            </div>
+            <div className="p-4 rounded-lg bg-card border border-border">
+              <h4 className="font-semibold text-foreground mb-2">Channel name (does NOT need to be unique)</h4>
+              <p className="text-sm">Your <strong>channel name</strong> (display name) is the title shown at the top of your channel and on videos. Multiple channels can use the same display name — &quot;Tech Reviews&quot; could be the channel name of hundreds of channels at the same time. There is no availability to check, you can just set it.</p>
+            </div>
+          </div>
+        </article>
 
-        <div>
-          <h3 className="text-lg font-semibold text-foreground mb-2">Tips for Choosing a Good YouTube Handle</h3>
+        <article className="space-y-4">
+          <h2 className="text-2xl font-bold text-foreground">If Your Handle Is Taken: 7 Variation Strategies That Work</h2>
           <p>
-            Keep it short and memorable. Match it across platforms (Instagram, TikTok, X) for brand consistency. Avoid numbers or special characters unless they are part of your brand. Check availability on multiple platforms before committing. Consider how the handle looks in a URL and how easy it is to spell when spoken aloud.
+            Most short, common, single-word handles are already taken — YouTube has 100M+ channels. Try these patterns to find an available alternative:
           </p>
-        </div>
+          <div className="overflow-x-auto">
+            <GTable>
+              <thead className="bg-muted text-foreground font-semibold">
+                <tr>
+                  <th className="p-3 text-left">Strategy</th>
+                  <th className="p-3 text-left">Taken: @cooking</th>
+                  <th className="p-3 text-left">Try instead</th>
+                </tr>
+              </thead>
+              <tbody className="divide-y divide-border text-sm">
+                <tr><td className="p-3 font-semibold">Add your name</td><td className="p-3">@cooking</td><td className="p-3 text-green-600">@cookingwithsarah</td></tr>
+                <tr><td className="p-3 font-semibold">Add niche modifier</td><td className="p-3">@cooking</td><td className="p-3 text-green-600">@cookingvegan, @cookingitalian</td></tr>
+                <tr><td className="p-3 font-semibold">Add location</td><td className="p-3">@cooking</td><td className="p-3 text-green-600">@cookingnyc, @cookinglondon</td></tr>
+                <tr><td className="p-3 font-semibold">Add &quot;the&quot;</td><td className="p-3">@cooking</td><td className="p-3 text-green-600">@thecooking, @thecookingchannel</td></tr>
+                <tr><td className="p-3 font-semibold">Add &quot;real&quot; or &quot;official&quot;</td><td className="p-3">@cooking</td><td className="p-3 text-green-600">@realcooking, @cookingofficial</td></tr>
+                <tr><td className="p-3 font-semibold">Use underscores or periods</td><td className="p-3">@cooking</td><td className="p-3 text-green-600">@cooking_, @cooking.tv</td></tr>
+                <tr><td className="p-3 font-semibold">Use a synonym or verb form</td><td className="p-3">@cooking</td><td className="p-3 text-green-600">@cookery, @icook, @letscook</td></tr>
+              </tbody>
+            </GTable>
+          </div>
+          <p>
+            Avoid generic number suffixes (@cooking123, @cooking2026) — they look spammy in URLs and hurt brand recall.
+          </p>
+        </article>
+
+        <article className="space-y-4">
+          <h2 className="text-2xl font-bold text-foreground">Cross-Platform Handle Check (Brand Consistency)</h2>
+          <p>
+            A YouTube handle being available doesn&apos;t mean the same handle is free on Instagram, TikTok, or X. For brand consistency, check all major platforms before committing. Most creators want the same handle everywhere. Here&apos;s a quick checklist:
+          </p>
+          <ul className="space-y-2">
+            <li className="flex items-start gap-2"><CheckCircle className="h-4 w-4 text-green-500 mt-0.5 flex-shrink-0" /><span><strong>YouTube</strong>: <code>youtube.com/@yourhandle</code> — or use the tool above</span></li>
+            <li className="flex items-start gap-2"><CheckCircle className="h-4 w-4 text-green-500 mt-0.5 flex-shrink-0" /><span><strong>Instagram</strong>: <code>instagram.com/yourhandle</code></span></li>
+            <li className="flex items-start gap-2"><CheckCircle className="h-4 w-4 text-green-500 mt-0.5 flex-shrink-0" /><span><strong>TikTok</strong>: <code>tiktok.com/@yourhandle</code></span></li>
+            <li className="flex items-start gap-2"><CheckCircle className="h-4 w-4 text-green-500 mt-0.5 flex-shrink-0" /><span><strong>X / Twitter</strong>: <code>x.com/yourhandle</code></span></li>
+            <li className="flex items-start gap-2"><CheckCircle className="h-4 w-4 text-green-500 mt-0.5 flex-shrink-0" /><span><strong>Twitch</strong>: <code>twitch.tv/yourhandle</code></span></li>
+            <li className="flex items-start gap-2"><CheckCircle className="h-4 w-4 text-green-500 mt-0.5 flex-shrink-0" /><span><strong>GitHub</strong> (for developers): <code>github.com/yourhandle</code></span></li>
+          </ul>
+          <p>
+            If your preferred handle is taken on one platform, consider picking an alternative that&apos;s available <em>everywhere</em> rather than juggling different handles per platform.
+          </p>
+        </article>
+
+        <article className="space-y-4">
+          <h2 className="text-2xl font-bold text-foreground">FastTools vs Other YouTube Handle Checkers</h2>
+          <p>
+            How FastTools compares to the most popular free YouTube name checkers in 2026:
+          </p>
+          <div className="overflow-x-auto">
+            <GTable>
+              <thead className="bg-muted text-foreground font-semibold">
+                <tr>
+                  <th className="p-3 text-left">Feature</th>
+                  <th className="p-3 text-left text-green-600">FastTools</th>
+                  <th className="p-3 text-left">BrandSnag</th>
+                  <th className="p-3 text-left">Hopper HQ</th>
+                  <th className="p-3 text-left">TubePilot</th>
+                </tr>
+              </thead>
+              <tbody className="divide-y divide-border text-sm">
+                <tr><td className="p-3 font-semibold">YouTube handle check</td><td className="p-3 text-green-600">✓</td><td className="p-3">✓</td><td className="p-3">✓</td><td className="p-3">✓</td></tr>
+                <tr><td className="p-3 font-semibold">Format validation (length, chars)</td><td className="p-3 text-green-600">✓</td><td className="p-3">partial</td><td className="p-3 text-red-500">✗</td><td className="p-3 text-red-500">✗</td></tr>
+                <tr><td className="p-3 font-semibold">Bulk check (10+ handles)</td><td className="p-3 text-green-600">iterate fast</td><td className="p-3 text-red-500">✗</td><td className="p-3 text-red-500">✗</td><td className="p-3">up to 10</td></tr>
+                <tr><td className="p-3 font-semibold">Cross-platform suggestion</td><td className="p-3 text-green-600">guidance + variant pages</td><td className="p-3">15 platforms</td><td className="p-3 text-red-500">✗</td><td className="p-3 text-red-500">✗</td></tr>
+                <tr><td className="p-3 font-semibold">No upsell to paid scheduling service</td><td className="p-3 text-green-600">✓</td><td className="p-3">✓</td><td className="p-3 text-red-500">✗</td><td className="p-3">✓</td></tr>
+                <tr><td className="p-3 font-semibold">No login</td><td className="p-3 text-green-600">✓</td><td className="p-3">✓</td><td className="p-3">✓</td><td className="p-3">✓</td></tr>
+              </tbody>
+            </GTable>
+          </div>
+        </article>
+
+        <article className="space-y-4">
+          <h2 className="text-2xl font-bold text-foreground">The Same Tool, Many Names</h2>
+          <p>
+            This checker answers all of these phrasings — they all describe the same thing:
+          </p>
+          <ul className="grid grid-cols-1 md:grid-cols-2 gap-3 text-sm">
+            <li className="flex items-start gap-2"><CheckCircle className="h-4 w-4 text-green-500 mt-0.5 flex-shrink-0" /><span>youtube channel name availability checker</span></li>
+            <li className="flex items-start gap-2"><CheckCircle className="h-4 w-4 text-green-500 mt-0.5 flex-shrink-0" /><span>youtube username availability checker</span></li>
+            <li className="flex items-start gap-2"><CheckCircle className="h-4 w-4 text-green-500 mt-0.5 flex-shrink-0" /><span>youtube handle availability check</span></li>
+            <li className="flex items-start gap-2"><CheckCircle className="h-4 w-4 text-green-500 mt-0.5 flex-shrink-0" /><span>how to check if youtube channel name is available</span></li>
+            <li className="flex items-start gap-2"><CheckCircle className="h-4 w-4 text-green-500 mt-0.5 flex-shrink-0" /><span>how to check if a youtube handle is taken</span></li>
+            <li className="flex items-start gap-2"><CheckCircle className="h-4 w-4 text-green-500 mt-0.5 flex-shrink-0" /><span>youtube name checker / yt name checker</span></li>
+            <li className="flex items-start gap-2"><CheckCircle className="h-4 w-4 text-green-500 mt-0.5 flex-shrink-0" /><span>check youtube channel name uniqueness</span></li>
+            <li className="flex items-start gap-2"><CheckCircle className="h-4 w-4 text-green-500 mt-0.5 flex-shrink-0" /><span>available youtube channel names / handles</span></li>
+            <li className="flex items-start gap-2"><CheckCircle className="h-4 w-4 text-green-500 mt-0.5 flex-shrink-0" /><span>is my youtube name taken</span></li>
+            <li className="flex items-start gap-2"><CheckCircle className="h-4 w-4 text-green-500 mt-0.5 flex-shrink-0" /><span>youtube custom URL availability</span></li>
+          </ul>
+        </article>
       </div>
     ),
 
@@ -180,6 +331,41 @@ const toolConfig = createToolConfig({
         question: "Can I use the same handle on YouTube and other platforms?",
         answer:
           "YouTube does not enforce cross-platform uniqueness, so a handle available on YouTube may already be taken on Instagram, TikTok, or X (and vice versa). We recommend checking all platforms before committing to ensure consistent branding.",
+      },
+      {
+        question: "What is the difference between a YouTube handle and a custom URL?",
+        answer:
+          "There is no difference anymore. In 2022 YouTube merged the old custom URL system into handles. Your @handle IS your custom URL — they're the same string, controlled from the same setting. Old channels that had pre-2022 custom URLs were auto-migrated; their existing URL became their handle.",
+      },
+      {
+        question: "How do I check if a YouTube name is unique?",
+        answer:
+          "Two facts matter: (1) display names do NOT have to be unique — multiple channels can be called 'Tech Reviews', so there's nothing to check for the display name; (2) handles MUST be unique. So 'is my YouTube name unique?' really means 'is my desired @handle available?' — use the tool above to check that exactly.",
+      },
+      {
+        question: "Can two YouTube channels have the same name in 2026?",
+        answer:
+          "Yes — display names are not enforced as unique on YouTube. Two channels can both be called 'Cooking Channel' at the same time. What can't be shared is the handle (@cookingchannel). Search results disambiguate by handle, subscriber count, and verification status. If brand confusion is a concern, choose a more distinctive display name plus a unique handle.",
+      },
+      {
+        question: "How do I check YouTube channel name availability without an account?",
+        answer:
+          "Use this tool — it doesn't require a YouTube account or login. We probe the public youtube.com/@handle URL to detect whether a channel exists, then format-validate the input against YouTube's handle rules. No data is stored.",
+      },
+      {
+        question: "How fast does YouTube release handles from deleted channels?",
+        answer:
+          "As of 2026, YouTube does not have a published policy for releasing handles from deleted or banned channels. Anecdotally, handles from terminated channels remain locked indefinitely to prevent impersonation of the previous owner. Handles from voluntarily deleted personal channels sometimes become available after several months, but not reliably. Plan on the assumption that taken = permanently taken.",
+      },
+      {
+        question: "Does this tool check handles in bulk?",
+        answer:
+          "The tool above checks one handle at a time, but iteration is fast — most users can check 20–30 handle variations in under a minute. For agency or brand-protection use cases that need bulk lookup across hundreds of handles, the YouTube Data API v3 (channels.list with the forHandle parameter) is the right approach.",
+      },
+      {
+        question: "Can I check if a YouTube handle is taken for a different language or country?",
+        answer:
+          "YouTube handles are global — they're not scoped by country or language. The handle @cooking taken by a creator in Brazil is the same @cooking that would block a creator in Korea. Our tool detects taken handles regardless of which country's YouTube the channel is registered in.",
       },
     ],
 
