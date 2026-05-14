@@ -115,12 +115,124 @@ const toolConfig = createToolConfig({
 
     aboutTool: (
       <div className="space-y-6 text-muted-foreground">
-        <p>
-          HTTP Authorization headers are the standard mechanism for authenticating API requests across REST, GraphQL, and SOAP services. The three most common authentication schemes — Basic Auth, Bearer tokens, and API keys — each follow specific formatting rules defined by RFC 7235 and RFC 7617. Basic Authentication concatenates username and password with a colon separator, Base64-encodes the result, and prepends the &quot;Basic&quot; scheme identifier. Bearer authentication wraps an opaque token (typically a JWT or OAuth 2.0 access token) with the &quot;Bearer&quot; prefix. API key authentication varies by provider but commonly uses custom headers like X-API-Key.
-        </p>
-        <p>
-          This auth header generator eliminates manual formatting errors that cause 401 Unauthorized and 403 Forbidden responses during API development. It produces correctly formatted headers you can paste directly into Postman collections, curl commands, Insomnia workspaces, or frontend code using fetch or axios. The decode feature is invaluable for debugging — paste any Base64-encoded Basic Auth string to instantly reveal the underlying credentials without writing terminal commands. All processing runs client-side in your browser, so sensitive credentials like passwords, JWT tokens, and API keys are never transmitted to external servers.
-        </p>
+        <div>
+          <h3 className="text-lg font-semibold text-foreground mb-2">HTTP Authentication Schemes Compared</h3>
+          <table className="w-full border-collapse text-sm">
+            <thead>
+              <tr className="border-b border-border">
+                <th className="text-left py-2 px-2 text-foreground">Scheme</th>
+                <th className="text-left py-2 px-2 text-foreground">Header format</th>
+                <th className="text-left py-2 px-2 text-foreground">RFC</th>
+                <th className="text-left py-2 px-2 text-foreground">Security</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr className="border-b border-border">
+                <td className="py-2 px-2"><strong>Basic Auth</strong></td>
+                <td className="py-2 px-2"><code>Authorization: Basic [base64(user:pass)]</code></td>
+                <td className="py-2 px-2">RFC 7617</td>
+                <td className="py-2 px-2 text-orange-500">Low (Base64 ≠ encryption; needs HTTPS)</td>
+              </tr>
+              <tr className="border-b border-border">
+                <td className="py-2 px-2"><strong>Bearer (OAuth 2.0)</strong></td>
+                <td className="py-2 px-2"><code>Authorization: Bearer [token]</code></td>
+                <td className="py-2 px-2">RFC 6750</td>
+                <td className="py-2 px-2 text-green-500">Medium-High (token expires, scoped)</td>
+              </tr>
+              <tr className="border-b border-border">
+                <td className="py-2 px-2">Digest Auth</td>
+                <td className="py-2 px-2"><code>Authorization: Digest [...]</code></td>
+                <td className="py-2 px-2">RFC 7616</td>
+                <td className="py-2 px-2 text-orange-500">Medium (mostly obsolete)</td>
+              </tr>
+              <tr className="border-b border-border">
+                <td className="py-2 px-2">API Key</td>
+                <td className="py-2 px-2"><code>X-API-Key: [key]</code> (varies)</td>
+                <td className="py-2 px-2">No standard</td>
+                <td className="py-2 px-2 text-orange-500">Medium (long-lived, often single-use)</td>
+              </tr>
+              <tr className="border-b border-border">
+                <td className="py-2 px-2">AWS Signature v4</td>
+                <td className="py-2 px-2"><code>Authorization: AWS4-HMAC-SHA256 [...]</code></td>
+                <td className="py-2 px-2">AWS spec</td>
+                <td className="py-2 px-2 text-green-500">High (request-signed, time-limited)</td>
+              </tr>
+              <tr>
+                <td className="py-2 px-2">HMAC custom</td>
+                <td className="py-2 px-2"><code>Authorization: HMAC-SHA256 [...]</code></td>
+                <td className="py-2 px-2">Custom</td>
+                <td className="py-2 px-2 text-green-500">High (replay-protected if done right)</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div>
+          <h3 className="text-lg font-semibold text-foreground mb-2">Basic Auth Anatomy</h3>
+          <p>Basic Authentication (RFC 7617) is simple but critical to get right:</p>
+          <ol className="list-decimal pl-6 mt-2 space-y-1">
+            <li>Combine username and password with a colon: <code>alice:s3cret123</code></li>
+            <li>Base64-encode the result: <code>YWxpY2U6czNjcmV0MTIz</code></li>
+            <li>Prepend with &quot;Basic &quot;: <code>Basic YWxpY2U6czNjcmV0MTIz</code></li>
+            <li>Send as the Authorization header value</li>
+          </ol>
+          <p className="mt-3">
+            <strong>Critical:</strong> Base64 is encoding, NOT encryption. Anyone intercepting the request can decode and read the credentials. Basic Auth must <strong>always</strong> be used over HTTPS. Even then, prefer Bearer tokens or API keys for production use — Basic Auth has no expiration / rotation built in.
+          </p>
+        </div>
+
+        <div>
+          <h3 className="text-lg font-semibold text-foreground mb-2">Bearer Tokens: OAuth 2.0 Standard</h3>
+          <p>
+            Bearer tokens (RFC 6750) are the modern standard for API authentication. The token is opaque to the client — typically a JWT (JSON Web Token, RFC 7519) or a reference/opaque token that the server looks up. The format is simple: <code>Authorization: Bearer eyJhbGc...</code>. Bearer tokens have key advantages over Basic Auth:
+          </p>
+          <ul className="list-disc pl-6 mt-2 space-y-1">
+            <li><strong>Expiration:</strong> tokens have <code>exp</code> claims; expired tokens are rejected</li>
+            <li><strong>Scoped:</strong> tokens grant specific permissions (read-only, admin, etc.)</li>
+            <li><strong>Revocable:</strong> tokens can be invalidated server-side without changing user credentials</li>
+            <li><strong>Stateless verification:</strong> JWTs are self-contained — no DB lookup needed</li>
+            <li><strong>Refreshable:</strong> short-lived access tokens + long-lived refresh tokens</li>
+          </ul>
+          <p className="mt-3">
+            See our <a href="/dev-tools/jwt-decoder" className="text-primary underline">JWT Decoder</a> to inspect token claims.
+          </p>
+        </div>
+
+        <div>
+          <h3 className="text-lg font-semibold text-foreground mb-2">API Key Patterns Across Services</h3>
+          <table className="w-full border-collapse text-sm">
+            <thead>
+              <tr className="border-b border-border">
+                <th className="text-left py-2 px-2 text-foreground">Service</th>
+                <th className="text-left py-2 px-2 text-foreground">Header / format</th>
+                <th className="text-left py-2 px-2 text-foreground">Key format</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr className="border-b border-border"><td className="py-2 px-2">Stripe</td><td className="py-2 px-2"><code>Authorization: Bearer sk_live_...</code></td><td className="py-2 px-2"><code>sk_live_</code> or <code>sk_test_</code> prefix</td></tr>
+              <tr className="border-b border-border"><td className="py-2 px-2">OpenAI</td><td className="py-2 px-2"><code>Authorization: Bearer sk-...</code></td><td className="py-2 px-2"><code>sk-</code> prefix, 51 chars</td></tr>
+              <tr className="border-b border-border"><td className="py-2 px-2">SendGrid</td><td className="py-2 px-2"><code>Authorization: Bearer SG.[key]</code></td><td className="py-2 px-2"><code>SG.</code> prefix</td></tr>
+              <tr className="border-b border-border"><td className="py-2 px-2">Twilio</td><td className="py-2 px-2"><code>Authorization: Basic [base64(SID:auth_token)]</code></td><td className="py-2 px-2">Account SID + Auth Token (Basic)</td></tr>
+              <tr className="border-b border-border"><td className="py-2 px-2">GitHub</td><td className="py-2 px-2"><code>Authorization: token ghp_...</code> or <code>Bearer</code></td><td className="py-2 px-2"><code>ghp_</code> personal, <code>gho_</code> OAuth</td></tr>
+              <tr className="border-b border-border"><td className="py-2 px-2">AWS</td><td className="py-2 px-2"><code>Authorization: AWS4-HMAC-SHA256 [signature]</code></td><td className="py-2 px-2">Access key ID + signed request</td></tr>
+              <tr className="border-b border-border"><td className="py-2 px-2">Google Cloud</td><td className="py-2 px-2"><code>Authorization: Bearer [OAuth2 token]</code></td><td className="py-2 px-2">OAuth2 access token</td></tr>
+              <tr><td className="py-2 px-2">Mailchimp</td><td className="py-2 px-2"><code>Authorization: Basic [base64(anystring:apikey)]</code></td><td className="py-2 px-2">API key as password</td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div>
+          <h3 className="text-lg font-semibold text-foreground mb-2">Common Debugging Scenarios</h3>
+          <ul className="list-disc pl-6 space-y-1">
+            <li><strong>401 Unauthorized:</strong> bad credentials, expired token, or missing Authorization header. Verify header format and credentials.</li>
+            <li><strong>403 Forbidden:</strong> credentials valid but lack permission. Different from 401 — check user roles / token scopes.</li>
+            <li><strong>Token works in Postman but not in code:</strong> Postman uses different default URL encoding; check that special chars in tokens aren&apos;t double-encoded.</li>
+            <li><strong>Basic Auth works locally, fails in production:</strong> often an HTTPS issue — some platforms enforce HTTPS for Basic Auth headers.</li>
+            <li><strong>Bearer token rejected:</strong> verify the issuer (iss), audience (aud), and expiration (exp) in the JWT. Server clock skew &gt;30s causes &quot;not yet valid&quot; failures.</li>
+            <li><strong>API key with special chars failing:</strong> check URL encoding — characters like <code>+</code>, <code>=</code>, <code>/</code> in keys need encoding when in URLs.</li>
+            <li><strong>CORS blocking auth:</strong> server must allow Authorization in Access-Control-Allow-Headers, and Authorization isn&apos;t a &quot;simple&quot; header — triggers preflight.</li>
+          </ul>
+        </div>
       </div>
     ),
 

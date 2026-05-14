@@ -114,12 +114,127 @@ const toolConfig = createToolConfig({
 
     aboutTool: (
       <div className="space-y-6 text-muted-foreground">
-        <p>
-          A URL (Uniform Resource Locator) follows a standardized structure defined by RFC 3986 and the WHATWG URL Standard. Every URL consists of up to seven components: scheme/protocol (https, http, ftp), authority containing hostname and optional port (example.com:8080), pathname (/api/v2/users), query string (?page=1&amp;limit=50), and fragment/hash (#section-3). Each component serves a specific purpose in resource identification and navigation. This parser decomposes any URL into these individual parts using the same URL API that modern browsers use internally, ensuring parsing behavior matches real-world browser interpretation.
-        </p>
-        <p>
-          Query string parsing is particularly valuable because query parameters frequently contain percent-encoded special characters, nested values, array syntax (key[]=value), and multi-level data structures. This tool decodes each parameter value automatically, making it easy to verify UTM campaign tags for marketing attribution, inspect API pagination and filter parameters, validate OAuth redirect URIs and state tokens, audit SEO canonical parameters, and debug tracking pixels from advertising platforms. The visual breakdown eliminates the need to manually parse long URLs in a text editor or write throwaway scripts to extract specific parameter values.
-        </p>
+        <div>
+          <h3 className="text-lg font-semibold text-foreground mb-2">URL Structure (RFC 3986 + WHATWG)</h3>
+          <p>A URL has up to 9 components in the standard pattern:</p>
+          <pre className="bg-muted p-3 rounded mt-2 text-xs overflow-x-auto">
+            <code>{`scheme://username:password@host:port/path?query#fragment
+\______/   \______/ \______/ \__/ \__/ \__/ \___/ \______/
+   |          |        |       |    |    |    |      |
+ https     user     pass    host port path query fragment`}</code>
+          </pre>
+          <p className="mt-3">Each component:</p>
+          <ul className="list-disc pl-6 mt-2 space-y-1">
+            <li><strong>scheme / protocol</strong> (https, http, ftp, ws, wss, file, mailto, tel): how to access the resource</li>
+            <li><strong>userinfo</strong> (rare today): legacy auth in URL — Basic Auth credentials</li>
+            <li><strong>host</strong> (domain or IP): server location</li>
+            <li><strong>port</strong> (optional, default 443/80): server listening port</li>
+            <li><strong>pathname</strong>: resource location on server (/api/v2/users/123)</li>
+            <li><strong>query / search</strong>: key=value pairs separated by &amp;</li>
+            <li><strong>fragment / hash</strong>: client-side anchor (#section-3); never sent to server</li>
+            <li><strong>origin</strong> (derived): scheme + host + port — used for same-origin policy</li>
+          </ul>
+        </div>
+
+        <div>
+          <h3 className="text-lg font-semibold text-foreground mb-2">Why Parse URLs?</h3>
+          <ul className="list-disc pl-6 space-y-1">
+            <li><strong>UTM campaign audit:</strong> verify utm_source, utm_medium, utm_campaign, utm_content, utm_term values are correctly set for Google Analytics</li>
+            <li><strong>OAuth debugging:</strong> inspect redirect_uri, state, code parameters during auth flow</li>
+            <li><strong>Redirect chain analysis:</strong> trace through 301/302 redirects, see what each step changed</li>
+            <li><strong>API endpoint validation:</strong> verify pagination, filtering, sorting parameters are correctly formatted</li>
+            <li><strong>SEO canonical checks:</strong> compare actual URLs vs canonical URLs vs sitemap URLs</li>
+            <li><strong>Marketing attribution debug:</strong> trace which tracking params come from ad platforms vs your own</li>
+            <li><strong>Webhook payload inspection:</strong> decode signed redirect URLs from Stripe, PayPal, etc.</li>
+            <li><strong>Affiliate link tracking:</strong> see what affiliate IDs and tracking pixels are appended</li>
+            <li><strong>Email tracking decode:</strong> Mailchimp, ConvertKit, ActiveCampaign wrap clicks in tracking URLs</li>
+          </ul>
+        </div>
+
+        <div>
+          <h3 className="text-lg font-semibold text-foreground mb-2">UTM Parameters: The Marketing Standard</h3>
+          <p>Google&apos;s Urchin Tracking Module (UTM) is the universal standard for marketing attribution. The five UTM parameters:</p>
+          <table className="w-full border-collapse text-sm mt-3">
+            <thead>
+              <tr className="border-b border-border">
+                <th className="text-left py-2 px-2 text-foreground">Parameter</th>
+                <th className="text-left py-2 px-2 text-foreground">Purpose</th>
+                <th className="text-left py-2 px-2 text-foreground">Example values</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr className="border-b border-border">
+                <td className="py-2 px-2"><code>utm_source</code> <span className="text-red-500">*required</span></td>
+                <td className="py-2 px-2">Where the traffic came from (referrer)</td>
+                <td className="py-2 px-2">google, facebook, newsletter, partner_name</td>
+              </tr>
+              <tr className="border-b border-border">
+                <td className="py-2 px-2"><code>utm_medium</code></td>
+                <td className="py-2 px-2">Marketing medium / channel type</td>
+                <td className="py-2 px-2">cpc, email, social, organic, banner</td>
+              </tr>
+              <tr className="border-b border-border">
+                <td className="py-2 px-2"><code>utm_campaign</code></td>
+                <td className="py-2 px-2">Specific campaign name</td>
+                <td className="py-2 px-2">summer_sale, product_launch, q4_promo</td>
+              </tr>
+              <tr className="border-b border-border">
+                <td className="py-2 px-2"><code>utm_content</code></td>
+                <td className="py-2 px-2">A/B test variant or specific ad creative</td>
+                <td className="py-2 px-2">banner_top, button_red, variant_a</td>
+              </tr>
+              <tr>
+                <td className="py-2 px-2"><code>utm_term</code></td>
+                <td className="py-2 px-2">Paid keyword (mostly for Google Ads)</td>
+                <td className="py-2 px-2">running+shoes, blue+widget</td>
+              </tr>
+            </tbody>
+          </table>
+          <p className="mt-3">
+            <strong>Best practice:</strong> lowercase consistently (utm tags are case-sensitive!), no spaces (use + or _), keep concise. Audit your UTM strategy quarterly — inconsistent naming destroys Google Analytics reports.
+          </p>
+        </div>
+
+        <div>
+          <h3 className="text-lg font-semibold text-foreground mb-2">Query Parameter Patterns</h3>
+          <ul className="list-disc pl-6 space-y-1">
+            <li><strong>Simple key=value:</strong> <code>?name=alice</code></li>
+            <li><strong>Multiple values:</strong> <code>?tag=red&amp;tag=blue</code> — server may treat as array</li>
+            <li><strong>Array syntax (PHP / Rails):</strong> <code>?tags[]=red&amp;tags[]=blue</code></li>
+            <li><strong>Nested syntax:</strong> <code>?user[name]=alice&amp;user[age]=30</code></li>
+            <li><strong>Comma-separated:</strong> <code>?tags=red,blue,green</code> — common in REST APIs</li>
+            <li><strong>JSON-encoded value:</strong> <code>?filter=&#123;&quot;status&quot;:&quot;active&quot;&#125;</code> (after URL-encoding)</li>
+            <li><strong>Boolean flags:</strong> <code>?active=true</code> or shorthand <code>?active</code></li>
+            <li><strong>Empty value:</strong> <code>?key=</code> — usually means &quot;reset to default&quot;</li>
+          </ul>
+        </div>
+
+        <div>
+          <h3 className="text-lg font-semibold text-foreground mb-2">Hash / Fragment Use Cases</h3>
+          <p>The hash (#) is special — it&apos;s the only URL part that never goes to the server. The browser keeps it client-side. Common uses:</p>
+          <ul className="list-disc pl-6 mt-2 space-y-1">
+            <li><strong>Anchor links:</strong> <code>#section-3</code> — scroll to element with that ID</li>
+            <li><strong>SPA routes:</strong> <code>#/users/123</code> — old client-side routing (pre-history API)</li>
+            <li><strong>Tab state:</strong> <code>#settings</code> — track active tab without round-trip to server</li>
+            <li><strong>OAuth implicit flow:</strong> tokens passed in fragment (e.g., <code>#access_token=xyz</code>) so they never reach server logs</li>
+            <li><strong>Magic link verification:</strong> sometimes tokens placed in fragment for similar reasons</li>
+          </ul>
+        </div>
+
+        <div>
+          <h3 className="text-lg font-semibold text-foreground mb-2">Common URL Bugs This Tool Catches</h3>
+          <ul className="list-disc pl-6 space-y-1">
+            <li><strong>Double encoding:</strong> <code>%2520</code> in your URL = space was encoded twice</li>
+            <li><strong>Duplicate parameters:</strong> two <code>utm_source</code> entries — analytics tracks only one</li>
+            <li><strong>Empty trailing query:</strong> <code>?</code> with no params is technically valid but indicates a bug</li>
+            <li><strong>Wrong port:</strong> https on port 8080 won&apos;t work without specifying</li>
+            <li><strong>Subdomain typos:</strong> <code>ww.example.com</code> vs <code>www.example.com</code></li>
+            <li><strong>Trailing slashes:</strong> <code>/page</code> vs <code>/page/</code> — SEO-relevant duplicates</li>
+            <li><strong>Mixed case in domain:</strong> <code>Example.com</code> works but creates inconsistency</li>
+            <li><strong>Missing parameter values:</strong> <code>?key=</code> may indicate a templating bug</li>
+            <li><strong>Wrong fragment syntax:</strong> <code>#</code> before <code>?</code> in URL — fragment must come last</li>
+          </ul>
+        </div>
       </div>
     ),
 

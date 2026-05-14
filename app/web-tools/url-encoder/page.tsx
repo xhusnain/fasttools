@@ -116,12 +116,92 @@ const toolConfig = createToolConfig({
 
     aboutTool: (
       <div className="space-y-6 text-muted-foreground">
-        <p>
-          URL encoding (formally called percent-encoding) is defined in RFC 3986 as the standard method for representing special characters in Uniform Resource Identifiers (URIs). Every character that is not an unreserved character (A-Z, a-z, 0-9, hyphen, underscore, period, tilde) must be encoded as a percent sign followed by two hexadecimal digits representing the character&apos;s byte value. For example, a space becomes %20, an ampersand becomes %26, an equals sign becomes %3D, and a forward slash becomes %2F. UTF-8 Unicode characters encode as multi-byte sequences — a checkmark character becomes %E2%9C%93. This encoding ensures URLs remain valid across all browsers, servers, and network infrastructure without ambiguity.
-        </p>
-        <p>
-          In web development, JavaScript provides encodeURIComponent() for encoding individual URL components (query parameter values, path segments) and encodeURI() for encoding complete URLs while preserving structural characters like ://?#. The critical distinction: always encode individual parameter values with encodeURIComponent(), never entire URLs, to avoid breaking URL structure. This online tool replicates encodeURIComponent/decodeURIComponent behavior in a visual interface for quick verification without opening browser DevTools or writing scripts. It is especially valuable for marketers building UTM-tagged campaign URLs, developers debugging API query strings, QA engineers verifying redirect chains, and analysts decoding tracking URLs from advertising platforms.
-        </p>
+        <div>
+          <h3 className="text-lg font-semibold text-foreground mb-2">What Is URL Percent-Encoding?</h3>
+          <p>
+            URL encoding (formally called <strong>percent-encoding</strong>) is defined in RFC 3986 as the standard method for representing special characters in Uniform Resource Identifiers (URIs). Every character that is not an <strong>unreserved character</strong> (A-Z, a-z, 0-9, hyphen, underscore, period, tilde) must be encoded as a percent sign followed by two hexadecimal digits representing the character&apos;s byte value. For example, a space becomes <code>%20</code>, an ampersand becomes <code>%26</code>, an equals sign becomes <code>%3D</code>. UTF-8 Unicode characters encode as multi-byte sequences — a checkmark (✓) becomes <code>%E2%9C%93</code>. This ensures URLs remain valid across all browsers, servers, and network infrastructure without ambiguity.
+          </p>
+        </div>
+
+        <div>
+          <h3 className="text-lg font-semibold text-foreground mb-2">Common Encoded Character Reference</h3>
+          <table className="w-full border-collapse text-sm">
+            <thead>
+              <tr className="border-b border-border">
+                <th className="text-left py-2 px-2 text-foreground">Char</th>
+                <th className="text-left py-2 px-2 text-foreground">Encoded</th>
+                <th className="text-left py-2 px-2 text-foreground">When it must be encoded</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr className="border-b border-border"><td className="py-2 px-2">Space</td><td className="py-2 px-2"><code>%20</code> or <code>+</code></td><td className="py-2 px-2">Always (+ only in query string)</td></tr>
+              <tr className="border-b border-border"><td className="py-2 px-2"><code>!</code></td><td className="py-2 px-2"><code>%21</code></td><td className="py-2 px-2">In path / fragment</td></tr>
+              <tr className="border-b border-border"><td className="py-2 px-2"><code>&quot;</code></td><td className="py-2 px-2"><code>%22</code></td><td className="py-2 px-2">Always</td></tr>
+              <tr className="border-b border-border"><td className="py-2 px-2"><code>#</code></td><td className="py-2 px-2"><code>%23</code></td><td className="py-2 px-2">In values (it&apos;s the fragment delimiter)</td></tr>
+              <tr className="border-b border-border"><td className="py-2 px-2"><code>$</code></td><td className="py-2 px-2"><code>%24</code></td><td className="py-2 px-2">In query parameter values</td></tr>
+              <tr className="border-b border-border"><td className="py-2 px-2"><code>&amp;</code></td><td className="py-2 px-2"><code>%26</code></td><td className="py-2 px-2">In values (it&apos;s the parameter delimiter)</td></tr>
+              <tr className="border-b border-border"><td className="py-2 px-2"><code>&apos;</code></td><td className="py-2 px-2"><code>%27</code></td><td className="py-2 px-2">Always</td></tr>
+              <tr className="border-b border-border"><td className="py-2 px-2"><code>+</code></td><td className="py-2 px-2"><code>%2B</code></td><td className="py-2 px-2">In query (+ means space there)</td></tr>
+              <tr className="border-b border-border"><td className="py-2 px-2"><code>/</code></td><td className="py-2 px-2"><code>%2F</code></td><td className="py-2 px-2">In values (it&apos;s the path delimiter)</td></tr>
+              <tr className="border-b border-border"><td className="py-2 px-2"><code>:</code></td><td className="py-2 px-2"><code>%3A</code></td><td className="py-2 px-2">In values (it&apos;s scheme delimiter)</td></tr>
+              <tr className="border-b border-border"><td className="py-2 px-2"><code>;</code></td><td className="py-2 px-2"><code>%3B</code></td><td className="py-2 px-2">In path / query values</td></tr>
+              <tr className="border-b border-border"><td className="py-2 px-2"><code>=</code></td><td className="py-2 px-2"><code>%3D</code></td><td className="py-2 px-2">In values (it&apos;s the key/value delimiter)</td></tr>
+              <tr className="border-b border-border"><td className="py-2 px-2"><code>?</code></td><td className="py-2 px-2"><code>%3F</code></td><td className="py-2 px-2">In values (it&apos;s the query delimiter)</td></tr>
+              <tr className="border-b border-border"><td className="py-2 px-2"><code>@</code></td><td className="py-2 px-2"><code>%40</code></td><td className="py-2 px-2">In user info / values</td></tr>
+              <tr><td className="py-2 px-2"><code>%</code></td><td className="py-2 px-2"><code>%25</code></td><td className="py-2 px-2"><strong>Always</strong> (it&apos;s the encoding prefix!)</td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div>
+          <h3 className="text-lg font-semibold text-foreground mb-2">encodeURI vs encodeURIComponent</h3>
+          <p>JavaScript provides two URL encoding functions with crucial differences:</p>
+          <ul className="list-disc pl-6 mt-2 space-y-1">
+            <li><strong><code>encodeURI()</code></strong> — encodes characters that aren&apos;t part of valid URL syntax. Does <em>not</em> encode structural characters: <code>: / ? # [ ] @ ! $ &amp; &apos; ( ) * + , ; =</code>. Use to encode a complete URL where structure should be preserved.</li>
+            <li><strong><code>encodeURIComponent()</code></strong> — encodes ALL characters except unreserved. Encodes <code>: / ? # @</code> etc. Use to encode individual values (query parameters, path segments).</li>
+          </ul>
+          <p className="mt-3">
+            <strong>The rule:</strong> always use <code>encodeURIComponent()</code> for individual values. Use <code>encodeURI()</code> only on complete URLs you want to mostly preserve. <strong>The big mistake:</strong> calling <code>encodeURI()</code> on a parameter value preserves <code>&amp;</code> and <code>=</code>, breaking the URL structure if the value contains those chars.
+          </p>
+        </div>
+
+        <div>
+          <h3 className="text-lg font-semibold text-foreground mb-2">+ vs %20 for Spaces</h3>
+          <p>
+            Both <code>+</code> and <code>%20</code> represent space in URLs, but they&apos;re context-dependent:
+          </p>
+          <ul className="list-disc pl-6 mt-2 space-y-1">
+            <li><strong>%20:</strong> always works in any URL position (path, query, fragment)</li>
+            <li><strong>+ (plus sign):</strong> only means space in <code>application/x-www-form-urlencoded</code> bodies and query strings. In the path, <code>+</code> is a literal plus character.</li>
+            <li><strong>encodeURIComponent</strong> uses <code>%20</code>; the older <code>escape()</code> used <code>%20</code>; the legacy <code>encodeURIComponent()</code> + form encoding might use either.</li>
+          </ul>
+          <p className="mt-3">
+            <strong>Safest:</strong> always use <code>%20</code>. Reserve <code>+</code> for form-data contexts where the server explicitly decodes it as space.
+          </p>
+        </div>
+
+        <div>
+          <h3 className="text-lg font-semibold text-foreground mb-2">Double Encoding Trap</h3>
+          <p>
+            A common bug: encoding an already-encoded URL. <code>%20</code> (a space) becomes <code>%2520</code> (literally &quot;%20&quot;), which then decodes to <code>%20</code>, not a space. If you see <code>%25</code> followed by another hex byte in your output (or <code>%2520</code>, <code>%2526</code>), the data was double-encoded somewhere in the pipeline. <strong>Fix:</strong> trace the encoding chain. Common culprits: server-side framework auto-encoded a value that was already encoded; URL was concatenated with already-encoded parameter.
+          </p>
+        </div>
+
+        <div>
+          <h3 className="text-lg font-semibold text-foreground mb-2">Common Use Cases</h3>
+          <ul className="list-disc pl-6 space-y-1">
+            <li><strong>UTM campaign URLs:</strong> encode brand names with spaces / special chars in <code>utm_campaign</code></li>
+            <li><strong>API requests:</strong> encode user input before appending to query strings</li>
+            <li><strong>OAuth redirect URIs:</strong> the <code>redirect_uri</code> parameter must be percent-encoded</li>
+            <li><strong>Email subject lines in mailto: links:</strong> <code>?subject=Hello%20World</code></li>
+            <li><strong>Webhook URLs in JSON:</strong> URLs nested in JSON often need extra encoding layer</li>
+            <li><strong>QR code data:</strong> some QR scanners URL-decode automatically; pre-encoding ensures consistency</li>
+            <li><strong>Form-data POST bodies:</strong> <code>application/x-www-form-urlencoded</code> uses same encoding</li>
+            <li><strong>Search queries:</strong> <code>?q=hello%20world</code> works universally</li>
+            <li><strong>File paths in URLs:</strong> filenames with spaces / Unicode</li>
+            <li><strong>Decoding analytics tracking URLs:</strong> ad platforms wrap original URLs in tracking redirects</li>
+          </ul>
+        </div>
       </div>
     ),
 
