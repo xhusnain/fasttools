@@ -128,6 +128,21 @@ const toolConfig = createToolConfig({
         answer:
           "Yes. Completely free with no limits on extractions, no login required, and no software to install.",
       },
+      {
+        question: "How do I extract tags from a YouTube video?",
+        answer:
+          "Copy any YouTube video URL (the long youtube.com/watch?v=… or short youtu.be/… form), paste it in the box above, and click extract. The tool fetches the public video metadata and returns every tag the creator set, along with a count and one-click copy of the comma-separated list. Works for any public video, even ones where tags are hidden from the description."
+      },
+      {
+        question: "Can I extract tags from YouTube Shorts?",
+        answer:
+          "Yes. YouTube Shorts use the same metadata system as regular videos — paste the Shorts URL (youtube.com/shorts/…) and the tool returns the creator's tags. Shorts tags are particularly valuable for trend research because Shorts content moves faster than long-form."
+      },
+      {
+        question: "How do tag extractors actually find the hidden tags?",
+        answer:
+          "YouTube embeds video tags in the page's HTML metadata (the keywords meta tag and the embedded JSON state) — they're not visible in the UI but they're publicly accessible. Tag extractors fetch the video page and parse this metadata. The YouTube Data API v3's videos.list endpoint with part=snippet returns the same tags via the official API if you have a key."
+      }
     ],
 
     relatedTools: [
@@ -135,6 +150,9 @@ const toolConfig = createToolConfig({
       { name: "YouTube Name Generator", href: "/social-media-tools/youtube-channel-name-generator" },
       { name: "YouTube Handle Checker", href: "/social-media-tools/channel-checker" },
       { name: "TikTok Engagement Calculator", href: "/social-media-tools/tiktok-engagement-calculator" },
+      { name: "Hashtag Counter", href: "/social-media-tools/hashtag-counter" },
+      { name: "Keyword Density Checker", href: "/seo-tools/keyword-density" },
+      { name: "AI Caption Generator", href: "/ai-tools/caption-generator" },
       { name: "All Social Media Tools", href: "/social-media-tools" },
     ],
   },

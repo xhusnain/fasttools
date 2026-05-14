@@ -122,12 +122,36 @@ const toolConfig = createToolConfig({
         answer:
           "They can restore your wallet and access all funds. If you suspect your seed phrase is compromised, immediately transfer all assets to a new wallet with a freshly generated seed phrase.",
       },
+      {
+        question: "How do I generate a 12-word seed phrase?",
+        answer:
+          "Select 12 words from the strength dropdown above and click generate. The tool uses your browser's cryptographically-secure random number generator (window.crypto.getRandomValues()) to produce 128 bits of entropy, then encodes that entropy into 12 words from the standard BIP39 English wordlist. A 12-word phrase has ~128 bits of security — strong enough that brute-forcing it would take longer than the age of the universe."
+      },
+      {
+        question: "Is a 24-word seed phrase more secure than 12 words?",
+        answer:
+          "Yes, mathematically — 24 words = 256 bits of entropy vs 12 words = 128 bits. But 128 bits is already infeasible to brute-force with any current or foreseeable technology. The practical difference: 24 words is required for some hardware wallets and post-quantum threat models; 12 words is fine for most Bitcoin and Ethereum use. Both protect against the same realistic attacks (theft of physical device, social engineering, malware) — those are mitigated by storage practices, not seed length."
+      },
+      {
+        question: "Is this a BIP39 mnemonic / mnemonic seed phrase generator?",
+        answer:
+          "Yes. The tool generates a BIP39-spec mnemonic phrase — also called a 'seed phrase', 'recovery phrase', 'mnemonic seed phrase', or '12/24 word phrase'. All these terms refer to the same standard (Bitcoin Improvement Proposal 39) used by Bitcoin, Ethereum, Solana, and most other cryptocurrency wallets to encode a master private key as human-readable words."
+      },
+      {
+        question: "Can I add a BIP39 passphrase for extra protection?",
+        answer:
+          "Yes — BIP39 allows an optional passphrase (sometimes called the '25th word' or 'extension word') that combines with your seed phrase to produce a completely different wallet. Even if someone steals your physical seed phrase, they can't access funds without also knowing the passphrase. Most hardware wallets support this. Use a passphrase you can remember — losing it means the funds are unrecoverable."
+      }
     ],
 
     relatedTools: [
       { name: "Token Generator", href: "/crypto-tools/token-generator" },
+      { name: "Password Generator", href: "/crypto-tools/password-generator" },
+      { name: "Password Strength Analyzer", href: "/crypto-tools/password-strength-analyzer" },
       { name: "HMAC Generator", href: "/crypto-tools/hmac-generator" },
       { name: "RSA Key Pair Generator", href: "/crypto-tools/rsa-generator" },
+      { name: "UUID Generator", href: "/crypto-tools/uuid-generator" },
+      { name: "Hash Text (SHA-256/512)", href: "/crypto-tools/hash-text" },
       { name: "All Crypto Tools", href: "/crypto-tools" },
     ],
   },

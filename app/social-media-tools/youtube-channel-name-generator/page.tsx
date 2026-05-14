@@ -128,12 +128,36 @@ const toolConfig = createToolConfig({
         answer:
           "Yes. Completely free with unlimited name generation batches, no registration, and no login required.",
       },
+      {
+        question: "Is this an AI YouTube channel name generator?",
+        answer:
+          "Yes. The generator combines your niche keywords with curated name patterns (compound words, alliterations, action verbs, niche+adjective combos) using AI techniques to produce brandable, memorable channel names. Each batch returns a fresh set so you can iterate until something clicks. Unlike simple word combiners, the names are filtered for pronounceability and trademark-collision risk."
+      },
+      {
+        question: "What makes a good YouTube channel name?",
+        answer:
+          "A good YouTube channel name is short (1-3 words, 6-15 characters), pronounceable when spoken aloud, descriptive of your niche, available as an @handle on YouTube + IG + TikTok + X for cross-platform consistency, and free of trademark conflicts (search uspto.gov for US trademarks). Avoid numbers unless they're part of your brand (@2pac yes, @gamer123 no), and avoid year suffixes like @cooking2026 since they age badly."
+      },
+      {
+        question: "Should I match my YouTube channel name to my Instagram or TikTok handle?",
+        answer:
+          "Yes — cross-platform consistency dramatically improves brand recall and discoverability. Pick a name that's available everywhere you plan to post (YouTube, Instagram, TikTok, X, Threads at minimum). Use this generator to get candidates, then use the YouTube Channel Checker tool to verify availability before committing."
+      },
+      {
+        question: "Can I generate names by niche (gaming, beauty, tech, cooking)?",
+        answer:
+          "Yes. Enter your niche as a keyword (e.g., 'gaming', 'beauty', 'crypto', 'pets', 'cooking', 'fitness') and the generator weights the suggestions toward your topic. You can also enter your own name or a defining word to anchor the suggestions personally."
+      }
     ],
 
     relatedTools: [
       { name: "YouTube Handle Checker", href: "/social-media-tools/channel-checker" },
       { name: "YouTube Tag Extractor", href: "/social-media-tools/youtube-tags" },
+      { name: "YouTube Thumbnail Downloader", href: "/social-media-tools/youtube-thumbnail" },
+      { name: "Hashtag Counter", href: "/social-media-tools/hashtag-counter" },
       { name: "Link in Bio Generator", href: "/social-media-tools/link-in-bio" },
+      { name: "AI Caption Generator", href: "/ai-tools/caption-generator" },
+      { name: "Influencer Rate Calculator", href: "/social-media-tools/influencer-rate-calculator" },
       { name: "All Social Media Tools", href: "/social-media-tools" },
     ],
   },
