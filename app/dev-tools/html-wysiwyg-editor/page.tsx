@@ -113,14 +113,110 @@ const toolConfig = createToolConfig({
 
     aboutTool: (
       <div className="space-y-6 text-muted-foreground">
-        <p>
-          WYSIWYG tools that rank well make source output transparent and easy to
-          extract. This page emphasizes that utility-first behavior.
-        </p>
-        <p>
-          It helps bridge editorial and development workflows by giving content
-          teams a visual editor while preserving direct HTML access.
-        </p>
+        <div>
+          <h3 className="text-lg font-semibold text-foreground mb-2">What WYSIWYG Editors Do</h3>
+          <p>
+            WYSIWYG (What You See Is What You Get) editors let you format text visually — bold, italic, headings, lists, links, images — and produce the underlying HTML code without you writing markup. The concept dates to 1974 (Xerox PARC&apos;s Bravo editor), commercialized in Microsoft Word and Adobe PageMaker in the 1980s, and ported to the web in the 1990s. Today, WYSIWYG editors power the content authoring experience in WordPress, Notion, Google Docs, Medium, Substack, and virtually every CMS. They make web content accessible to non-technical users.
+          </p>
+        </div>
+
+        <div>
+          <h3 className="text-lg font-semibold text-foreground mb-2">When to Use a WYSIWYG vs Markdown vs Code</h3>
+          <table className="w-full border-collapse text-sm">
+            <thead>
+              <tr className="border-b border-border">
+                <th className="text-left py-2 px-2 text-foreground">Approach</th>
+                <th className="text-left py-2 px-2 text-foreground">Best for</th>
+                <th className="text-left py-2 px-2 text-foreground">Trade-offs</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr className="border-b border-border">
+                <td className="py-2 px-2"><strong>WYSIWYG</strong></td>
+                <td className="py-2 px-2">Non-technical content authors, marketing teams, executive content</td>
+                <td className="py-2 px-2">Output HTML can be messy; copy-paste from Word brings garbage</td>
+              </tr>
+              <tr className="border-b border-border">
+                <td className="py-2 px-2">Markdown</td>
+                <td className="py-2 px-2">Developers, technical writing, documentation, blogs</td>
+                <td className="py-2 px-2">Learning curve; limited rich formatting</td>
+              </tr>
+              <tr className="border-b border-border">
+                <td className="py-2 px-2">Raw HTML</td>
+                <td className="py-2 px-2">Complex layouts, custom components, email templates</td>
+                <td className="py-2 px-2">Requires HTML knowledge; tedious</td>
+              </tr>
+              <tr>
+                <td className="py-2 px-2">MDX (Markdown + JSX)</td>
+                <td className="py-2 px-2">Developer documentation with interactive components</td>
+                <td className="py-2 px-2">React stack only; complex tooling</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div>
+          <h3 className="text-lg font-semibold text-foreground mb-2">Common WYSIWYG Use Cases</h3>
+          <ul className="list-disc pl-6 space-y-1">
+            <li><strong>Email templates:</strong> compose marketing emails visually; copy HTML to Mailchimp / ConvertKit / SendGrid template</li>
+            <li><strong>WordPress / CMS content blocks:</strong> draft posts and pages with rich formatting</li>
+            <li><strong>Landing page hero copy:</strong> structure heading hierarchy, bullet lists, CTAs</li>
+            <li><strong>Knowledge base articles:</strong> Zendesk, Intercom, Help Scout articles benefit from visual editing</li>
+            <li><strong>Course content (LMS):</strong> Moodle, Canvas, Teachable accept HTML for lesson content</li>
+            <li><strong>Product descriptions:</strong> Shopify, WooCommerce product pages</li>
+            <li><strong>FAQ entries:</strong> structured Q&amp;A with rich formatting</li>
+            <li><strong>Blog post drafts:</strong> compose, format, paste HTML into your CMS</li>
+            <li><strong>Internal documentation:</strong> Confluence-style rich text for team wikis</li>
+            <li><strong>Newsletter content:</strong> Substack, beehiiv, ghost newsletter content</li>
+          </ul>
+        </div>
+
+        <div>
+          <h3 className="text-lg font-semibold text-foreground mb-2">The &quot;Word Paste&quot; Problem</h3>
+          <p>
+            When users paste content from Microsoft Word into a web editor, Word includes massive amounts of inline styling, namespace tags, and conditional CSS comments. A simple sentence pasted from Word might produce:
+          </p>
+          <pre className="bg-muted p-3 rounded mt-2 text-xs overflow-x-auto">
+            <code>{`<p class="MsoNormal" style="margin: 0in; font-family: 'Calibri',sans-serif;">
+  <o:p>&nbsp;</o:p>
+  <span lang=EN-US>Hello world</span>
+</p>`}</code>
+          </pre>
+          <p className="mt-3">
+            Modern editors strip this automatically via &quot;paste as plain text&quot; or transparent sanitization. <strong>Always check pasted content</strong> — Word artifacts in your CMS create rendering inconsistencies and bloat page weight by 5-10×.
+          </p>
+        </div>
+
+        <div>
+          <h3 className="text-lg font-semibold text-foreground mb-2">HTML Output Quality Considerations</h3>
+          <ul className="list-disc pl-6 space-y-1">
+            <li><strong>Semantic tags:</strong> good editors output <code>&lt;strong&gt;</code> not <code>&lt;b&gt;</code>, <code>&lt;em&gt;</code> not <code>&lt;i&gt;</code> — semantic tags signal meaning to screen readers and SEO</li>
+            <li><strong>Heading hierarchy:</strong> H1 → H2 → H3 in order; never skip levels. The editor should enforce this</li>
+            <li><strong>Lists vs paragraphs:</strong> use <code>&lt;ul&gt;</code>/<code>&lt;ol&gt;</code> for actual lists, not styled paragraphs</li>
+            <li><strong>No inline styles:</strong> CSS belongs in stylesheets, not <code>style=&quot;&quot;</code> attributes. Inline styles in user content fight your design system.</li>
+            <li><strong>Link rel attributes:</strong> external links should have <code>rel=&quot;noopener&quot;</code> for security; some editors add <code>nofollow</code> by default</li>
+            <li><strong>Alt text on images:</strong> required for accessibility and SEO; the editor should prompt for it</li>
+            <li><strong>Class names:</strong> editor classes (e.g., <code>ck-content</code>) should not appear in output; strip on export</li>
+          </ul>
+        </div>
+
+        <div>
+          <h3 className="text-lg font-semibold text-foreground mb-2">WYSIWYG vs Headless / Block Editors</h3>
+          <p>The WYSIWYG landscape has evolved beyond classic toolbar editors:</p>
+          <ul className="list-disc pl-6 mt-2 space-y-1">
+            <li><strong>Classic WYSIWYG (TinyMCE, CKEditor, Froala):</strong> traditional toolbar + canvas. Best for email / CMS body fields.</li>
+            <li><strong>Block editors (Gutenberg / WordPress, Notion, ContentKit):</strong> content as discrete blocks (text, image, video, callout). Modern, structured output. Better for design systems.</li>
+            <li><strong>Hybrid (Quill, ProseMirror, TipTap):</strong> framework-agnostic, customizable. Power most modern editors (Notion, Atlassian, Linear).</li>
+            <li><strong>Markdown editors with preview (StackEdit, Dillinger):</strong> not WYSIWYG strictly, but offer side-by-side preview. Lower learning curve than raw HTML.</li>
+          </ul>
+        </div>
+
+        <div>
+          <h3 className="text-lg font-semibold text-foreground mb-2">Privacy</h3>
+          <p>
+            This editor runs entirely in your browser. Content you type is not sent to any server. The rich-text-to-HTML conversion happens locally via contenteditable API. Safe for proprietary copy, internal documentation, or any content you don&apos;t want stored elsewhere.
+          </p>
+        </div>
       </div>
     ),
 

@@ -116,12 +116,92 @@ const toolConfig = createToolConfig({
 
     aboutTool: (
       <div className="space-y-6 text-muted-foreground">
-        <p>
-          Modern web browsers expose a rich set of device and environment information through JavaScript APIs. The navigator object provides user agent strings, platform identification, language preferences, online status, and hardware concurrency (CPU cores). The screen object reports physical display resolution, color depth, and pixel depth. The window object reveals CSS viewport dimensions (innerWidth/innerHeight) and device pixel ratio (devicePixelRatio) — the critical scaling factor that determines how CSS pixels map to physical display pixels on Retina, HiDPI, and high-density mobile screens. The Network Information API (navigator.connection) can report connection type, effective bandwidth, and round-trip time estimates on supporting browsers.
-        </p>
-        <p>
-          This device information tool reads all available browser APIs and presents the data in a structured, human-readable format. It is designed for technical diagnostics, not user tracking — all data is read and displayed locally in your browser without being sent to any server. The information is especially valuable for web developers debugging why responsive layouts break at specific viewport sizes, QA engineers documenting exact test environments for reproducibility, IT support teams collecting device specifications from end users remotely, and designers verifying that their CSS breakpoints and media queries trigger correctly across real device screen sizes and pixel densities.
-        </p>
+        <div>
+          <h3 className="text-lg font-semibold text-foreground mb-2">What Information Browsers Expose</h3>
+          <p>
+            Modern web browsers expose device and environment data through several JavaScript APIs:
+          </p>
+          <ul className="list-disc pl-6 mt-2 space-y-1">
+            <li><strong>navigator object:</strong> userAgent, platform, language, onLine, hardwareConcurrency (CPU cores), deviceMemory (RAM in GB)</li>
+            <li><strong>screen object:</strong> width/height (physical display), availWidth/availHeight (excluding taskbar/dock), colorDepth, pixelDepth, orientation</li>
+            <li><strong>window object:</strong> innerWidth/innerHeight (CSS viewport), outerWidth/outerHeight (full browser window), devicePixelRatio (DPR for Retina/HiDPI)</li>
+            <li><strong>navigator.connection:</strong> connection type (4G/5G/WiFi), effective speed, downlink, RTT, saveData flag</li>
+            <li><strong>Intl APIs:</strong> timezone, calendar, number format, currency preferences</li>
+            <li><strong>matchMedia():</strong> CSS media query support — prefers-color-scheme, prefers-reduced-motion, hover capability</li>
+          </ul>
+        </div>
+
+        <div>
+          <h3 className="text-lg font-semibold text-foreground mb-2">Device Pixel Ratio (DPR) Explained</h3>
+          <p>
+            DPR is the most-confusing-yet-most-important number in modern web design. It&apos;s the ratio of physical display pixels to CSS pixels. <strong>DPR = 1</strong> on traditional displays — 1 CSS pixel = 1 physical pixel. <strong>DPR = 2</strong> on standard Retina displays — 1 CSS pixel = 2×2 = 4 physical pixels. <strong>DPR = 3</strong> on iPhone 12 Pro+ and similar — 1 CSS pixel = 3×3 = 9 physical pixels. <strong>Why it matters:</strong> a 1px CSS border is razor-thin on DPR 3 displays; a non-Retina image at 100×100 CSS pixels looks blurry on DPR 2 displays (must serve 200×200 source). Always serve <code>2x</code> and <code>3x</code> images via <code>srcset</code> for Retina compatibility.
+          </p>
+        </div>
+
+        <div>
+          <h3 className="text-lg font-semibold text-foreground mb-2">Common DPR Values by Device</h3>
+          <table className="w-full border-collapse text-sm">
+            <thead>
+              <tr className="border-b border-border">
+                <th className="text-left py-2 px-2 text-foreground">Device</th>
+                <th className="text-left py-2 px-2 text-foreground">DPR</th>
+                <th className="text-left py-2 px-2 text-foreground">CSS viewport</th>
+                <th className="text-left py-2 px-2 text-foreground">Physical pixels</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr className="border-b border-border"><td className="py-2 px-2">Standard desktop monitor</td><td className="py-2 px-2">1</td><td className="py-2 px-2">1920×1080</td><td className="py-2 px-2">1920×1080</td></tr>
+              <tr className="border-b border-border"><td className="py-2 px-2">MacBook Pro 14&quot;</td><td className="py-2 px-2">2</td><td className="py-2 px-2">1512×982</td><td className="py-2 px-2">3024×1964</td></tr>
+              <tr className="border-b border-border"><td className="py-2 px-2">iPhone 15</td><td className="py-2 px-2">3</td><td className="py-2 px-2">393×852</td><td className="py-2 px-2">1179×2556</td></tr>
+              <tr className="border-b border-border"><td className="py-2 px-2">iPhone 15 Pro Max</td><td className="py-2 px-2">3</td><td className="py-2 px-2">430×932</td><td className="py-2 px-2">1290×2796</td></tr>
+              <tr className="border-b border-border"><td className="py-2 px-2">iPad Pro 12.9&quot;</td><td className="py-2 px-2">2</td><td className="py-2 px-2">1024×1366</td><td className="py-2 px-2">2048×2732</td></tr>
+              <tr><td className="py-2 px-2">Samsung Galaxy S23</td><td className="py-2 px-2">2.625</td><td className="py-2 px-2">412×915</td><td className="py-2 px-2">1080×2400</td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div>
+          <h3 className="text-lg font-semibold text-foreground mb-2">Common Mobile Viewport Sizes</h3>
+          <table className="w-full border-collapse text-sm">
+            <thead>
+              <tr className="border-b border-border">
+                <th className="text-left py-2 px-2 text-foreground">Device</th>
+                <th className="text-left py-2 px-2 text-foreground">Width (CSS)</th>
+                <th className="text-left py-2 px-2 text-foreground">Height (CSS)</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr className="border-b border-border"><td className="py-2 px-2">iPhone SE / 8</td><td className="py-2 px-2">375</td><td className="py-2 px-2">667</td></tr>
+              <tr className="border-b border-border"><td className="py-2 px-2">iPhone X / 11 / 12 / 13</td><td className="py-2 px-2">375 / 390</td><td className="py-2 px-2">812 / 844</td></tr>
+              <tr className="border-b border-border"><td className="py-2 px-2">iPhone 14 / 15 Plus</td><td className="py-2 px-2">428 / 430</td><td className="py-2 px-2">926 / 932</td></tr>
+              <tr className="border-b border-border"><td className="py-2 px-2">Galaxy S20-S23 (standard)</td><td className="py-2 px-2">360 / 412</td><td className="py-2 px-2">800 / 915</td></tr>
+              <tr className="border-b border-border"><td className="py-2 px-2">Pixel 6/7/8</td><td className="py-2 px-2">412</td><td className="py-2 px-2">915</td></tr>
+              <tr className="border-b border-border"><td className="py-2 px-2">iPad Mini</td><td className="py-2 px-2">744</td><td className="py-2 px-2">1133</td></tr>
+              <tr className="border-b border-border"><td className="py-2 px-2">iPad Air / 10th gen</td><td className="py-2 px-2">820</td><td className="py-2 px-2">1180</td></tr>
+              <tr><td className="py-2 px-2">iPad Pro 12.9&quot;</td><td className="py-2 px-2">1024</td><td className="py-2 px-2">1366</td></tr>
+            </tbody>
+          </table>
+          <p className="mt-3">Use these as targets for your responsive CSS breakpoints. Common breakpoints: 360, 375, 414, 768, 1024, 1280, 1440px.</p>
+        </div>
+
+        <div>
+          <h3 className="text-lg font-semibold text-foreground mb-2">Debugging Workflow</h3>
+          <ol className="list-decimal pl-6 space-y-1">
+            <li><strong>User reports bug:</strong> &quot;site looks broken on my phone&quot;</li>
+            <li><strong>Send them to this page:</strong> &quot;Open fasttools.store/web-tools/device-info on the affected device and paste the JSON output&quot;</li>
+            <li><strong>Receive structured data:</strong> exact browser, OS, viewport, DPR — no back-and-forth</li>
+            <li><strong>Reproduce in DevTools:</strong> use Chrome DevTools&apos; Device Toolbar to set viewport + DPR exactly</li>
+            <li><strong>Test fixes against same params:</strong> verify the fix works at that specific configuration</li>
+            <li><strong>Document fix in commit:</strong> &quot;Fixed broken nav on iPhone 15 (390×844, DPR 3, Safari 17.2)&quot;</li>
+          </ol>
+        </div>
+
+        <div>
+          <h3 className="text-lg font-semibold text-foreground mb-2">Privacy &amp; Fingerprinting Note</h3>
+          <p>
+            The combination of all device properties exposed by browsers can uniquely identify a user — this is called <strong>browser fingerprinting</strong>. Common high-entropy fields: user agent + screen resolution + DPR + timezone + language + installed fonts + WebGL renderer. Privacy-focused browsers (Tor, Brave, Safari with ITP) reduce or randomize these properties to defeat fingerprinting. <strong>This tool only displays the info to you</strong> — none is sent to any server or stored. If you want to reduce your fingerprint, use Tor Browser, Brave, or Firefox with <code>privacy.resistFingerprinting</code> enabled.
+          </p>
+        </div>
       </div>
     ),
 
