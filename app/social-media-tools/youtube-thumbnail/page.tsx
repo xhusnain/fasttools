@@ -105,11 +105,119 @@ const toolConfig = createToolConfig({
       "Compare thumbnail styles across channels for A/B testing ideas",
     ],
 
-    aboutTool:
-      "YouTube automatically generates multiple thumbnail sizes for every video. These thumbnails are publicly accessible via YouTube's image CDN. Our tool constructs the URLs for all 5 standard sizes (default 120×90, mqdefault 320×180, hqdefault 480×360, sddefault 640×480, maxresdefault 1280×720) and displays them with download buttons. Not all videos have the maxresdefault size — if a creator uploaded a custom thumbnail, maxresdefault is almost always available. For auto-generated thumbnails, the tool falls back to the highest available size. Thumbnails are JPG images suitable for presentations, blog posts, and design research.",
+    aboutTool: (
+      <div className="space-y-6 text-muted-foreground">
+        <div>
+          <h3 className="text-lg font-semibold text-foreground mb-2">How YouTube Thumbnails Work</h3>
+          <p>
+            YouTube automatically generates 5 standard thumbnail sizes for every uploaded video. These thumbnails are publicly accessible via YouTube&apos;s image CDN at predictable URLs based on the video ID. The tool constructs each URL pattern and shows you all available sizes with download buttons. For videos uploaded in HD with a custom thumbnail, all 5 sizes are available. For older or auto-thumbnailed videos, the largest (maxresdefault 1280×720) may not exist — the tool falls back to hqdefault or sddefault.
+          </p>
+        </div>
+
+        <div>
+          <h3 className="text-lg font-semibold text-foreground mb-2">YouTube Thumbnail Resolution Reference</h3>
+          <table className="w-full border-collapse text-sm">
+            <thead>
+              <tr className="border-b border-border">
+                <th className="text-left py-2 px-2 text-foreground">URL slug</th>
+                <th className="text-left py-2 px-2 text-foreground">Resolution</th>
+                <th className="text-left py-2 px-2 text-foreground">Aspect</th>
+                <th className="text-left py-2 px-2 text-foreground">Always available?</th>
+                <th className="text-left py-2 px-2 text-foreground">Use case</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr className="border-b border-border">
+                <td className="py-2 px-2"><code>default.jpg</code></td>
+                <td className="py-2 px-2">120 × 90</td>
+                <td className="py-2 px-2">4:3</td>
+                <td className="py-2 px-2 text-green-500">Yes</td>
+                <td className="py-2 px-2">Small preview / playlist tile</td>
+              </tr>
+              <tr className="border-b border-border">
+                <td className="py-2 px-2"><code>mqdefault.jpg</code></td>
+                <td className="py-2 px-2">320 × 180</td>
+                <td className="py-2 px-2">16:9</td>
+                <td className="py-2 px-2 text-green-500">Yes</td>
+                <td className="py-2 px-2">Mobile feed display</td>
+              </tr>
+              <tr className="border-b border-border">
+                <td className="py-2 px-2"><code>hqdefault.jpg</code></td>
+                <td className="py-2 px-2">480 × 360</td>
+                <td className="py-2 px-2">4:3 (with letterbox)</td>
+                <td className="py-2 px-2 text-green-500">Yes</td>
+                <td className="py-2 px-2">Reliable fallback for blog embeds</td>
+              </tr>
+              <tr className="border-b border-border">
+                <td className="py-2 px-2"><code>sddefault.jpg</code></td>
+                <td className="py-2 px-2">640 × 480</td>
+                <td className="py-2 px-2">4:3 (with letterbox)</td>
+                <td className="py-2 px-2 text-orange-500">Most videos</td>
+                <td className="py-2 px-2">Mid-quality embeds</td>
+              </tr>
+              <tr>
+                <td className="py-2 px-2"><strong><code>maxresdefault.jpg</code></strong></td>
+                <td className="py-2 px-2"><strong>1280 × 720</strong></td>
+                <td className="py-2 px-2"><strong>16:9 (HD)</strong></td>
+                <td className="py-2 px-2 text-orange-500">HD uploads + custom thumbs only</td>
+                <td className="py-2 px-2"><strong>Design analysis, presentations, blog hero</strong></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div>
+          <h3 className="text-lg font-semibold text-foreground mb-2">Anatomy of High-CTR YouTube Thumbnails</h3>
+          <p>
+            Looking at top-performing YouTube thumbnails reveals consistent patterns. Analyzing competitor thumbnails (which is the most common use of this tool) is gold for CTR optimization:
+          </p>
+          <ul className="list-disc pl-6 mt-2 space-y-1">
+            <li><strong>Single bold face with intense expression</strong> (surprise, shock, emphasis) — MrBeast, Mark Rober, virtually every top creator</li>
+            <li><strong>3-5 word large text overlay</strong> in bold sans-serif fonts (Impact, Bebas Neue, Anton, Montserrat Bold)</li>
+            <li><strong>High-contrast colors</strong> — bright red / yellow / blue against contrasting backgrounds; avoid muted tones</li>
+            <li><strong>Curiosity gap visual cues</strong> — circled or arrow-pointed elements, &quot;before/after&quot; layouts, numbered countdowns</li>
+            <li><strong>Mobile-first composition</strong> — face fills 30-40% of frame so it&apos;s legible at thumbnail size</li>
+            <li><strong>Brand consistency</strong> — color palettes, fonts, and frame layouts that signal the channel within ~0.1 seconds</li>
+            <li><strong>Emotional triggers</strong> — surprise, anger, fear, curiosity all outperform calm / professional shots</li>
+            <li><strong>Numbers / superlatives</strong> — &quot;$100,000 vs $1,&quot; &quot;LAST TO LEAVE WINS,&quot; &quot;I QUIT MY JOB&quot; — specific stakes</li>
+          </ul>
+          <p className="mt-3">
+            Download competitor thumbnails at maxresdefault, open them in Figma / Photoshop, and reverse-engineer the structure: where is the face placed? What font weight? What colors? Apply the patterns to your own thumbnails without copying.
+          </p>
+        </div>
+
+        <div>
+          <h3 className="text-lg font-semibold text-foreground mb-2">Custom vs Auto-Generated Thumbnails</h3>
+          <p>
+            <strong>Custom thumbnails</strong> are uploaded by the creator separately from the video. They always have maxresdefault (1280×720) available. <strong>Auto-generated thumbnails</strong> are YouTube&apos;s algorithmic choice from three video frames — these typically don&apos;t have maxresdefault, only hqdefault. <strong>Custom thumbnails outperform auto-generated by 30-90% on CTR</strong> in YouTube&apos;s own studies, which is why every serious creator uploads custom thumbnails. To use the custom-thumbnail feature in YouTube Studio, you need a verified phone number on your account.
+          </p>
+        </div>
+
+        <div>
+          <h3 className="text-lg font-semibold text-foreground mb-2">Privacy and Public Image Status</h3>
+          <p>
+            YouTube thumbnails are <strong>public assets</strong> served by YouTube&apos;s CDN — anyone can access them without login. The tool doesn&apos;t scrape, doesn&apos;t download from your account, doesn&apos;t require authentication. It just constructs the predictable image URL based on the video ID and fetches it. The image is delivered directly from YouTube to your browser — we don&apos;t see or store the download. <strong>Copyright note:</strong> downloading is legal; reusing thumbnails commercially without permission may infringe on creator copyright. For editorial / commentary / criticism uses, U.S. fair use generally applies; for monetization on YouTube/elsewhere, get explicit permission from the original creator.
+          </p>
+        </div>
+
+        <div>
+          <h3 className="text-lg font-semibold text-foreground mb-2">Common Use Cases</h3>
+          <ul className="list-disc pl-6 space-y-1">
+            <li><strong>CTR research:</strong> download top performers in your niche, identify thumbnail patterns, apply to your own</li>
+            <li><strong>Blog post embeds:</strong> use hqdefault or maxresdefault as featured images for video-related blog posts</li>
+            <li><strong>Press kits:</strong> include thumbnails of media coverage videos in PR materials</li>
+            <li><strong>Newsletter content:</strong> include video thumbnails as preview images in email content blocks</li>
+            <li><strong>Educational presentations:</strong> reference and discuss specific videos with their thumbnails</li>
+            <li><strong>Compilation videos:</strong> use clip thumbnails as section dividers in your own video edits</li>
+            <li><strong>Course materials:</strong> reference instructional videos with their thumbnails as visual anchors</li>
+            <li><strong>Channel rebranding analysis:</strong> compare a channel&apos;s old and new thumbnail styles for design evolution</li>
+          </ul>
+        </div>
+      </div>
+    ),
 
     proTip:
-      "The maxresdefault (1280×720) is the best quality for design analysis and presentations. If maxresdefault is not available for a video, use hqdefault (480×360) as a reliable fallback. Custom-uploaded thumbnails always have maxresdefault available.",
+      "Always go for maxresdefault (1280×720) when available — it's the only HD-quality YouTube thumbnail. If it's not available, hqdefault (480×360) is the most reliable fallback. For CTR research, download 10-20 thumbnails from top performers in your niche and look for patterns: face expressions, text font/size, color schemes, number/superlative usage. Apply the patterns (not the specific designs) to your thumbnails.",
 
     faqs: [
       {

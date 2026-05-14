@@ -162,15 +162,141 @@ const toolConfig = createToolConfig({
         </div>
 
         <div>
-          <h3 className="text-lg font-semibold text-foreground mb-2">Social Media Character Limits in 2026</h3>
+          <h3 className="text-lg font-semibold text-foreground mb-2">Social Media Character Limits</h3>
+          <table className="w-full border-collapse text-sm">
+            <thead>
+              <tr className="border-b border-border">
+                <th className="text-left py-2 px-2 text-foreground">Platform</th>
+                <th className="text-left py-2 px-2 text-foreground">Limit</th>
+                <th className="text-left py-2 px-2 text-foreground">Optimal</th>
+                <th className="text-left py-2 px-2 text-foreground">Display cutoff</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr className="border-b border-border">
+                <td className="py-2 px-2">Twitter / X (post)</td>
+                <td className="py-2 px-2">280</td>
+                <td className="py-2 px-2">71-100</td>
+                <td className="py-2 px-2">100 chars (full visible without expand)</td>
+              </tr>
+              <tr className="border-b border-border">
+                <td className="py-2 px-2">Instagram caption</td>
+                <td className="py-2 px-2">2,200</td>
+                <td className="py-2 px-2">125-150</td>
+                <td className="py-2 px-2">125 chars (mobile truncation)</td>
+              </tr>
+              <tr className="border-b border-border">
+                <td className="py-2 px-2">LinkedIn post</td>
+                <td className="py-2 px-2">3,000</td>
+                <td className="py-2 px-2">200-500</td>
+                <td className="py-2 px-2">140 chars (&quot;...see more&quot;)</td>
+              </tr>
+              <tr className="border-b border-border">
+                <td className="py-2 px-2">Facebook post</td>
+                <td className="py-2 px-2">63,206</td>
+                <td className="py-2 px-2">40-80</td>
+                <td className="py-2 px-2">477 chars (mobile)</td>
+              </tr>
+              <tr className="border-b border-border">
+                <td className="py-2 px-2">TikTok caption</td>
+                <td className="py-2 px-2">2,200</td>
+                <td className="py-2 px-2">100-150</td>
+                <td className="py-2 px-2">~150 chars before truncation</td>
+              </tr>
+              <tr className="border-b border-border">
+                <td className="py-2 px-2">YouTube title</td>
+                <td className="py-2 px-2">100</td>
+                <td className="py-2 px-2">60-70</td>
+                <td className="py-2 px-2">~70 chars on mobile feed</td>
+              </tr>
+              <tr className="border-b border-border">
+                <td className="py-2 px-2">YouTube description</td>
+                <td className="py-2 px-2">5,000</td>
+                <td className="py-2 px-2">First 157 chars critical</td>
+                <td className="py-2 px-2">157 chars (above-fold)</td>
+              </tr>
+              <tr className="border-b border-border">
+                <td className="py-2 px-2">Pinterest pin description</td>
+                <td className="py-2 px-2">500</td>
+                <td className="py-2 px-2">200-300</td>
+                <td className="py-2 px-2">75 chars (truncated)</td>
+              </tr>
+              <tr className="border-b border-border">
+                <td className="py-2 px-2"><strong>Meta description (Google SERP)</strong></td>
+                <td className="py-2 px-2"><strong>160</strong></td>
+                <td className="py-2 px-2"><strong>150-155</strong></td>
+                <td className="py-2 px-2"><strong>120 (mobile) / 158 (desktop)</strong></td>
+              </tr>
+              <tr className="border-b border-border">
+                <td className="py-2 px-2"><strong>Meta title (Google SERP)</strong></td>
+                <td className="py-2 px-2"><strong>60</strong></td>
+                <td className="py-2 px-2"><strong>50-58</strong></td>
+                <td className="py-2 px-2"><strong>~580 pixels (varies)</strong></td>
+              </tr>
+              <tr>
+                <td className="py-2 px-2">Threads (Meta)</td>
+                <td className="py-2 px-2">500</td>
+                <td className="py-2 px-2">100-200</td>
+                <td className="py-2 px-2">~150 before truncation</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div>
+          <h3 className="text-lg font-semibold text-foreground mb-2">Content Length Sweet Spots</h3>
+          <p>Different content types have different optimal lengths backed by research:</p>
+          <ul className="list-disc pl-6 mt-2 space-y-1">
+            <li><strong>Blog post (Google ranking):</strong> 1,500–2,500 words. HubSpot/Backlinko studies show this range correlates with higher rankings.</li>
+            <li><strong>Newsletter:</strong> 200-300 words (5-min read max). Higher engagement than longer formats.</li>
+            <li><strong>Email subject line:</strong> 30-60 characters. Mobile cutoff is ~35 chars.</li>
+            <li><strong>Email body (cold outreach):</strong> 50-125 words. Response rates plateau beyond.</li>
+            <li><strong>Tweet:</strong> 71-100 characters has highest engagement (under 280 limit).</li>
+            <li><strong>Instagram caption:</strong> 125-150 characters first paragraph (before &quot;more&quot; cutoff).</li>
+            <li><strong>YouTube video script:</strong> 150 words/min — so 10 min = 1,500 words.</li>
+            <li><strong>Podcast script:</strong> 130-150 words/min (slightly slower for clarity).</li>
+            <li><strong>Presentation:</strong> 100-130 words/min (need pauses for slides + audience).</li>
+            <li><strong>Job application cover letter:</strong> 250-400 words. Single page max.</li>
+            <li><strong>Resume bullet:</strong> ~10-20 words each. Concise impact statements.</li>
+            <li><strong>Conference talk:</strong> 5,500 words = ~45-min keynote at 120 words/min.</li>
+          </ul>
+        </div>
+
+        <div>
+          <h3 className="text-lg font-semibold text-foreground mb-2">Word Count vs Character Count</h3>
           <p>
-            Each platform has different limits: Twitter/X allows 280 characters per post,
-            Instagram captions max at 2,200 characters, LinkedIn posts at 3,000, and YouTube
-            titles at 100. Meta descriptions should stay under 160 characters to display fully
-            in Google search results. This tool checks your text against all major platforms
-            simultaneously with color-coded indicators: green (safe), yellow (approaching limit),
-            and red (over limit).
+            <strong>Word count</strong> is what writers, editors, and academic assignments use. <strong>Character count</strong> is what platforms enforce. The conversion isn&apos;t exact because words have different lengths, but a useful rule: 1 word ≈ 5 characters (including spaces). So a 50-word tweet ≈ 250 characters, fitting comfortably under Twitter&apos;s 280 limit. Some platforms (TikTok, Twitter) count emojis as 2 characters each, so emoji-heavy captions hit limits faster than letter-only captions.
           </p>
+        </div>
+
+        <div>
+          <h3 className="text-lg font-semibold text-foreground mb-2">Reading Speed Variations</h3>
+          <p>
+            The default 238 WPM reading speed is an average for adult web content. Actual speeds vary significantly:
+          </p>
+          <ul className="list-disc pl-6 mt-2 space-y-1">
+            <li><strong>5th grader:</strong> ~100 WPM</li>
+            <li><strong>8th grader:</strong> ~150 WPM</li>
+            <li><strong>Average adult (web reading):</strong> 200-250 WPM</li>
+            <li><strong>Adult (paperback novel):</strong> 250-300 WPM</li>
+            <li><strong>College student / academic reader:</strong> 300 WPM</li>
+            <li><strong>Speed reader (Tim Ferriss method):</strong> 450-600 WPM</li>
+            <li><strong>Skimming vs deep reading:</strong> 600+ WPM for skim, 150-200 for retention</li>
+          </ul>
+          <p className="mt-3">
+            For audiobook / podcast / video script timing, use 150 WPM (the standard conversational rate). For dense academic content, target 200 WPM. For casual web content, 250 WPM is realistic.
+          </p>
+        </div>
+
+        <div>
+          <h3 className="text-lg font-semibold text-foreground mb-2">Word Counter vs Microsoft Word, Google Docs, Online Counters</h3>
+          <ul className="list-disc pl-6 space-y-1">
+            <li><strong>vs Microsoft Word Count:</strong> Word is offline but slower for quick check. This tool: instant, browser-only, more metrics (readability, density, platform limits).</li>
+            <li><strong>vs Google Docs:</strong> Docs requires opening a document. This tool: paste-and-go, no doc needed.</li>
+            <li><strong>vs wordcounter.net:</strong> Similar core feature; this tool adds readability scoring + 10 platform-specific limits + keyword density in one view.</li>
+            <li><strong>vs Hemingway Editor:</strong> Hemingway focuses on style; this tool focuses on metrics. Use together for full content audit.</li>
+            <li><strong>vs Yoast SEO (WordPress plugin):</strong> Yoast checks SEO inside WordPress; this tool works anywhere with any text.</li>
+          </ul>
         </div>
       </div>
     ),
