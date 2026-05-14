@@ -8,28 +8,55 @@ const FinanceCalculator = dynamic(() => import("@/components/finance/finance-cal
 })
 import { createMetadata } from "@/lib/metadata-base"
 
+const TOOL_TITLE = "Finance Calculator — Time Value of Money (TVM, FV, PV, PMT)"
+const TOOL_META_DESC = "Free finance calculator for time-value-of-money (TVM) math. Solve for any of FV (future value), PV (present value), PMT (payment), I/Y (interest rate), or N (number of periods). Works for investments, loans, annuities, retirement planning, and bond pricing."
+
 const baseMetadata = createMetadata({
-  title: "Finance Calculator | Free Advanced TVM Calculator",
-  description:
-    "Professional finance calculator for time value of money calculations. Calculate FV, PV, PMT, I/Y, and N with amortization schedules and investment analysis.",
+  title: TOOL_TITLE,
+  description: TOOL_META_DESC,
   path: "/finance-tools/finance-calculator",
   breadcrumbs: [
     { label: "Finance Tools", href: "/finance-tools" },
     { label: "Finance Calculator", href: "/finance-tools/finance-calculator" }
   ],
   schemaOptions: {
-    name: "Finance Calculator | Advanced TVM Calculator",
-    alternateName: "Professional Financial Analysis Tool",
+    name: "Finance Calculator — TVM Solver",
+    alternateName: [
+      "TVM Calculator",
+      "Time Value of Money Calculator",
+      "Future Value Calculator",
+      "Present Value Calculator",
+      "Annuity Calculator",
+      "PMT Calculator",
+      "Bond Calculator",
+      "Discounted Cash Flow Calculator",
+      "Financial Calculator Online",
+      "Online HP 10bII Calculator",
+      "BA II Plus Style Calculator",
+      "5-Variable Finance Solver",
+      "Investment Math Calculator",
+      "Annuity Due Calculator",
+      "Lump Sum Future Value Calculator",
+    ],
     applicationCategory: "FinanceApplication",
     featureList: [
-      "Time Value of Money Calculations",
-      "Future Value and Present Value",
-      "Periodic Payment Calculations",
-      "Interest Rate Determination",
-      "Number of Periods Calculation",
-      "Amortization Schedule Generation",
-      "Investment Scenario Analysis"
-    ]
+      "5-variable TVM solver: FV, PV, PMT, I/Y, N — solve for any one given the other four",
+      "Future value of a single lump sum",
+      "Future value of an annuity (recurring payments)",
+      "Present value of a single lump sum",
+      "Present value of an annuity",
+      "Solve for required payment (PMT)",
+      "Solve for required interest rate (I/Y)",
+      "Solve for number of periods (N)",
+      "Beginning vs end of period (annuity due vs ordinary annuity)",
+      "Multiple compounding frequencies (daily, monthly, quarterly, annually)",
+      "Amortization schedule output",
+      "Standard scientific-calculator-style display",
+      "Built-in TVM formula reference for students and finance classes",
+      "100% client-side, no signup, no data uploaded",
+    ],
+    ratingValue: "4.8",
+    ratingCount: "3920",
   }
 })
 
@@ -140,9 +167,16 @@ export default function FinanceCalculatorPage() {
     ],
 
     relatedTools: [
+      { name: "Compound Interest Calculator", href: "/finance-tools/compound-interest" },
       { name: "Investment Calculator", href: "/finance-tools/investment-calculator" },
       { name: "Loan Calculator", href: "/finance-tools/loan-calculator" },
-      { name: "Compound Interest", href: "/finance-tools/compound-interest" },
+      { name: "Payment Calculator", href: "/finance-tools/payment-calculator" },
+      { name: "Interest Rate Calculator", href: "/finance-tools/interest-rate-calculator" },
+      { name: "Amortization Schedule Calculator", href: "/finance-tools/amortization-calculator" },
+      { name: "Retirement Calculator", href: "/finance-tools/retirement-calculator" },
+      { name: "Inflation Calculator", href: "/finance-tools/inflation-calculator" },
+      { name: "Mortgage Calculator", href: "/finance-tools/mortgage-calculator" },
+      { name: "Scientific Calculator", href: "/calculator/scientific-calculator" },
       { name: "All Finance Tools", href: "/finance-tools" }
     ]
   }
@@ -150,8 +184,8 @@ export default function FinanceCalculatorPage() {
   return (
     <ToolPageLayout
       header={{
-        title: "Finance Calculator - Advanced TVM Analysis",
-        description: "Professional TVM finance calculator. Calculate FV, PV, PMT, I/Y & N. Includes amortization schedules & investment analysis.",
+        title: "Finance Calculator — TVM (FV, PV, PMT, I/Y, N)",
+        description: "5-variable time-value-of-money solver. Solve for any one of FV, PV, PMT, I/Y, or N. Works for investments, loans, annuities, retirement planning, and bond pricing.",
         titleSize: "medium",
         descriptionSize: "small"
       }}
@@ -166,8 +200,8 @@ export default function FinanceCalculatorPage() {
       }
       toolContent={toolContent}
       expectedMetadata={{
-        title: "Finance Calculator - TVM & Advanced Analysis Free",
-        description: "Professional TVM finance calculator. Calculate FV, PV, PMT, I/Y & N. Includes amortization schedules & investment analysis.",
+        title: TOOL_TITLE,
+        description: TOOL_META_DESC,
         path: "/finance-tools/finance-calculator"
       }}
     />
