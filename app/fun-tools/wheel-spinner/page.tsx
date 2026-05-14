@@ -173,18 +173,119 @@ const toolConfig = createToolConfig({
     ],
 
     aboutTool: (
-      <span>
-        The wheel spinner uses the HTML5 Canvas API for rendering and <code>requestAnimationFrame</code> for
-        animation. The spin duration is randomly chosen from a range each time, so the wheel always stops at
-        an unpredictable position — not at a predetermined angle. Winner detection works by normalizing the
-        final rotation angle and dividing by the arc size of each slice to find the index of the segment
-        under the pointer. All state is stored in React component memory — nothing is persisted to a
-        server, and the page works fully offline once loaded.
-      </span>
+      <div className="space-y-6 text-muted-foreground">
+        <div>
+          <h3 className="text-lg font-semibold text-foreground mb-2">How the Wheel Picks a Random Result</h3>
+          <p>
+            The wheel spinner uses the HTML5 Canvas API for rendering and <code>requestAnimationFrame</code> for animation. On each spin, a random duration (typically 4–7 seconds) is chosen, the wheel accelerates briefly, then decelerates with an <strong>easeOut cubic curve</strong> — the same curve real-world physics produces when a spinning object decelerates due to friction. The final rotation angle is unpredictable because the random duration determines exactly when the wheel stops. Winner detection works by normalizing the final rotation angle modulo 360°, then dividing by the arc size of each slice (360° ÷ number of items) to find the index of the segment under the pointer. All state lives in React component memory — nothing persists to a server, and the page works fully offline once loaded.
+          </p>
+        </div>
+
+        <div>
+          <h3 className="text-lg font-semibold text-foreground mb-2">Wheel Spinner vs Coin Flip vs Dice Roll</h3>
+          <p>
+            For binary decisions (yes/no, do it / don&apos;t), a coin flip is statistically equivalent. For 3-6 options, dice work. But the wheel has three advantages: <strong>(1) visual drama</strong> — watching the wheel spin builds anticipation in a way that &quot;heads&quot; or a single die roll never does, which is huge for live audiences (classrooms, streams, parties); <strong>(2) any number of options</strong> — 2, 5, 20, 100 — coins and dice can&apos;t scale; <strong>(3) custom labels</strong> — &quot;Pizza,&quot; &quot;Sushi,&quot; &quot;Burgers&quot; instead of abstract numbers. For decisions where the visual experience matters (streaming, classroom engagement, group consensus), the wheel wins.
+          </p>
+        </div>
+
+        <div>
+          <h3 className="text-lg font-semibold text-foreground mb-2">Wheel Spinner vs Excel RAND, Python random, Lottery Apps</h3>
+          <table className="w-full border-collapse text-sm">
+            <thead>
+              <tr className="border-b border-border">
+                <th className="text-left py-2 px-2 text-foreground">Method</th>
+                <th className="text-left py-2 px-2 text-foreground">Visual?</th>
+                <th className="text-left py-2 px-2 text-foreground">Trust factor</th>
+                <th className="text-left py-2 px-2 text-foreground">Setup time</th>
+                <th className="text-left py-2 px-2 text-foreground">Best for</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr className="border-b border-border">
+                <td className="py-2 px-2"><strong>Wheel Spinner (this)</strong></td>
+                <td className="py-2 px-2">Yes</td>
+                <td className="py-2 px-2">High — visible animation</td>
+                <td className="py-2 px-2">Seconds</td>
+                <td className="py-2 px-2"><strong>Public decisions, streams, classrooms, raffles</strong></td>
+              </tr>
+              <tr className="border-b border-border">
+                <td className="py-2 px-2">Excel RAND / RANDBETWEEN</td>
+                <td className="py-2 px-2">No</td>
+                <td className="py-2 px-2">Medium — invisible math</td>
+                <td className="py-2 px-2">Minutes</td>
+                <td className="py-2 px-2">Spreadsheet data sampling</td>
+              </tr>
+              <tr className="border-b border-border">
+                <td className="py-2 px-2">Python random.choice</td>
+                <td className="py-2 px-2">No</td>
+                <td className="py-2 px-2">Medium — script-only</td>
+                <td className="py-2 px-2">Code required</td>
+                <td className="py-2 px-2">Automation, large datasets</td>
+              </tr>
+              <tr className="border-b border-border">
+                <td className="py-2 px-2">Coin flip (real)</td>
+                <td className="py-2 px-2">Yes</td>
+                <td className="py-2 px-2">High</td>
+                <td className="py-2 px-2">Seconds</td>
+                <td className="py-2 px-2">Binary in-person decisions</td>
+              </tr>
+              <tr>
+                <td className="py-2 px-2">Lottery app</td>
+                <td className="py-2 px-2">Yes</td>
+                <td className="py-2 px-2">Medium</td>
+                <td className="py-2 px-2">Account signup</td>
+                <td className="py-2 px-2">Cash lotteries (different use case)</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div>
+          <h3 className="text-lg font-semibold text-foreground mb-2">Use Cases Beyond the Obvious</h3>
+          <ul className="list-disc pl-6 space-y-1">
+            <li><strong>Twitch / YouTube live streams:</strong> use the wheel on-screen to pick viewer-submitted prompts, giveaway winners, &quot;Wheel of Misfortune&quot; punishment selections, or chat-suggested challenges</li>
+            <li><strong>Hiring panels:</strong> randomize the order presenters speak to remove any &quot;first impression&quot; bias</li>
+            <li><strong>Stand-ups / scrum meetings:</strong> spin to pick who shares first — adds energy to a routine meeting and ensures rotation</li>
+            <li><strong>Couples / families:</strong> &quot;Who picks tonight&apos;s movie?&quot; — spin to settle a fair winner without lengthy debate</li>
+            <li><strong>Trivia hosts:</strong> spin to pick the player to answer the next question, with &quot;Remove winner&quot; to ensure equal participation</li>
+            <li><strong>Kids&apos; chores:</strong> add chores to the wheel; spin assigns daily duty fairly so no one feels singled out</li>
+            <li><strong>Decision paralysis:</strong> when you genuinely can&apos;t pick between options of equal value, externalizing the choice reduces fatigue</li>
+            <li><strong>Improv / writing prompts:</strong> add prompts, spin to get a topic to write about for the next 10 minutes</li>
+            <li><strong>Restaurant menu:</strong> add menu items you keep meaning to try; spin to pick what to order tonight</li>
+            <li><strong>Workout selection:</strong> spin between cardio / strength / yoga / rest to break decision fatigue at the gym</li>
+          </ul>
+        </div>
+
+        <div>
+          <h3 className="text-lg font-semibold text-foreground mb-2">Why &quot;Remove Winner&quot; Mode Matters</h3>
+          <p>
+            Naive random selection (with replacement) means the same person can be picked twice in a row, leading to &quot;why is it always Sarah?&quot; complaints in classrooms. <strong>Remove Winner mode</strong> implements <em>random selection without replacement</em>: each winner is taken off the wheel for the rest of the session, guaranteeing every entrant gets selected before anyone repeats. Mathematically: with N entries, in N spins you select N unique winners — perfect for fair classroom cold-calling, raffles, prize distribution, presentation order assignment, or any scenario where repetition feels unfair. After all N are selected, you can reset the wheel to start a fresh round.
+          </p>
+        </div>
+
+        <div>
+          <h3 className="text-lg font-semibold text-foreground mb-2">Tips for Live Streams and Classrooms</h3>
+          <ul className="list-disc pl-6 space-y-1">
+            <li><strong>Pre-load items in advance</strong> — paste student rosters / viewer names before going live so you don&apos;t fumble during the moment</li>
+            <li><strong>Use the History tab for transparency</strong> — show that previous winners weren&apos;t fake; legitimacy matters for audience trust</li>
+            <li><strong>Combine with overlay tools</strong> — capture the wheel in OBS as a browser source for clean stream layouts</li>
+            <li><strong>Save common lists</strong> — keep an alphabetized class roster in a text file; paste it line-by-line for repeated use</li>
+            <li><strong>Add &quot;Spin again&quot; as an option</strong> — yes, you can put &quot;SPIN AGAIN&quot; as one of the wheel items for chaotic fun</li>
+            <li><strong>Use color-themed lists</strong> — for branding, the 16-color palette cycles consistently so brand colors land in predictable positions</li>
+          </ul>
+        </div>
+
+        <div>
+          <h3 className="text-lg font-semibold text-foreground mb-2">Privacy and Offline</h3>
+          <p>
+            Every spin runs in your browser using JavaScript and the Canvas API. The names, options, or any data you add are not sent to any server, not logged, not stored. After the page loads, you can disconnect from the internet and the wheel continues to work fully — useful for classroom use without WiFi. Saved state lives only in your tab&apos;s memory; closing the tab clears everything (no cookies, no localStorage beyond optional settings).
+          </p>
+        </div>
+      </div>
     ),
 
     proTip:
-      "For classroom use: load your student list in the Items tab, enable 'Remove winner after spin', and spin until everyone has been selected. This guarantees every student participates before anyone is called twice — much fairer than random without elimination.",
+      "For classroom use: load your student list, enable 'Remove winner after spin', and spin until everyone has been selected. Guarantees every student participates before anyone is called twice — far fairer than random with replacement. For live streams, pre-load items before going live and combine the page with OBS Browser Source for a clean overlay. For decision-paralysis use, write all options on the wheel even if some seem 'wrong' — the act of externalizing the choice reduces fatigue, and a 'wrong' winner still gives you the gut-check answer (you'll feel relief or disappointment, which tells you what you actually wanted).",
 
     faqs: [
       {

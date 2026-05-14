@@ -162,11 +162,98 @@ const toolConfig = createToolConfig({
         <div>
           <h3 className="text-lg font-semibold text-foreground mb-2">Pomodoro Technique for ADHD</h3>
           <p>
-            Many people with ADHD find the Pomodoro Technique helpful because it breaks overwhelming
-            tasks into manageable chunks, provides external structure, and builds in regular breaks to
-            prevent hyperfocus burnout. The countdown creates a sense of urgency that can help initiate
-            tasks (overcoming the &quot;starting problem&quot;), and ambient sounds mask distracting
-            environmental noise. If 25 minutes feels too long, start with 15 and gradually increase.
+            Many people with ADHD find the Pomodoro Technique helpful because it breaks overwhelming tasks into manageable chunks, provides external structure, and builds in regular breaks to prevent hyperfocus burnout. The countdown creates a sense of urgency that can help initiate tasks (overcoming the &quot;starting problem&quot;), and ambient sounds mask distracting environmental noise. If 25 minutes feels too long, start with 15 and gradually increase as your concentration stamina builds.
+          </p>
+        </div>
+
+        <div>
+          <h3 className="text-lg font-semibold text-foreground mb-2">Optimal Work/Break Ratios by Task Type</h3>
+          <table className="w-full border-collapse text-sm">
+            <thead>
+              <tr className="border-b border-border">
+                <th className="text-left py-2 px-2 text-foreground">Task type</th>
+                <th className="text-left py-2 px-2 text-foreground">Suggested cycle</th>
+                <th className="text-left py-2 px-2 text-foreground">Why</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr className="border-b border-border">
+                <td className="py-2 px-2">Routine email / admin</td>
+                <td className="py-2 px-2">15 / 5</td>
+                <td className="py-2 px-2">Short cycles work for low-cognitive tasks</td>
+              </tr>
+              <tr className="border-b border-border">
+                <td className="py-2 px-2"><strong>Most knowledge work</strong></td>
+                <td className="py-2 px-2"><strong>25 / 5 (classic)</strong></td>
+                <td className="py-2 px-2">Cirillo&apos;s original — proven sweet spot</td>
+              </tr>
+              <tr className="border-b border-border">
+                <td className="py-2 px-2">Writing / coding</td>
+                <td className="py-2 px-2">50 / 10</td>
+                <td className="py-2 px-2">Deep work needs longer flow state windows</td>
+              </tr>
+              <tr className="border-b border-border">
+                <td className="py-2 px-2">Studying / cramming</td>
+                <td className="py-2 px-2">25 / 5 or 45 / 15</td>
+                <td className="py-2 px-2">Frequent breaks aid memory consolidation</td>
+              </tr>
+              <tr className="border-b border-border">
+                <td className="py-2 px-2">Creative ideation</td>
+                <td className="py-2 px-2">45 / 15 + walk</td>
+                <td className="py-2 px-2">Insight often comes during break, not focus</td>
+              </tr>
+              <tr className="border-b border-border">
+                <td className="py-2 px-2">Math / problem solving</td>
+                <td className="py-2 px-2">52 / 17 (DeskTime ratio)</td>
+                <td className="py-2 px-2">Highest productivity ratio per DeskTime study</td>
+              </tr>
+              <tr>
+                <td className="py-2 px-2">Repetitive (data entry, transcription)</td>
+                <td className="py-2 px-2">90 / 20</td>
+                <td className="py-2 px-2">Matches ultradian rhythm cycles</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div>
+          <h3 className="text-lg font-semibold text-foreground mb-2">The Science: Why Timed Work Works</h3>
+          <ul className="list-disc pl-6 space-y-1">
+            <li><strong>Ultradian rhythms:</strong> Your brain operates in 90-120 minute cycles of high focus → fatigue. Pomodoros let you ride the peaks without crashing.</li>
+            <li><strong>Parkinson&apos;s Law:</strong> Work expands to fill the time available. A 25-minute deadline forces tighter scoping and faster decisions.</li>
+            <li><strong>Decision fatigue prevention:</strong> Predetermined breaks remove the &quot;should I take a break?&quot; decision, conserving willpower for actual work.</li>
+            <li><strong>Memory consolidation:</strong> Short breaks help the hippocampus encode short-term memory into long-term storage — especially valuable for studying.</li>
+            <li><strong>Anti-rumination effect:</strong> Anxious thoughts and worry need open mental space to spiral. Focused timer-tracked work crowds them out.</li>
+            <li><strong>Visible progress feedback:</strong> Watching the countdown decrease creates a sense of forward motion that boosts dopamine.</li>
+            <li><strong>Stopping problem solved:</strong> The hardest part of work is often stopping — pomodoros mandate stops, preventing burnout creep.</li>
+          </ul>
+        </div>
+
+        <div>
+          <h3 className="text-lg font-semibold text-foreground mb-2">Pomodoro Timer vs Forest, Be Focused, Focus@Will</h3>
+          <p>
+            <strong>Forest (mobile app):</strong> gamifies pomodoros by planting virtual trees. Beautiful UX but requires app install and limited customization. <strong>Be Focused (Mac/iOS):</strong> integrates with task management; paid Pro version. <strong>Focus@Will:</strong> subscription-based ambient music curated for focus. <strong>This tool&apos;s advantages:</strong> (1) browser-based — no install, works on any device including locked-down work computers; (2) 8 ambient sounds built-in via Web Audio API (zero downloads); (3) fully customizable durations from 1-120 min; (4) free forever, no signup; (5) task tracking + estimated finish time without a paywall; (6) keyboard shortcuts for fast control. Trade-off: no cloud sync, no team collaboration, no statistics across devices.
+          </p>
+        </div>
+
+        <div>
+          <h3 className="text-lg font-semibold text-foreground mb-2">Ambient Sound Guide</h3>
+          <ul className="list-disc pl-6 space-y-1">
+            <li><strong>Brown noise:</strong> deepest, most relaxing — masks low-frequency office HVAC and traffic. Best for ADHD focus.</li>
+            <li><strong>Pink noise:</strong> balanced lower frequencies — feels natural like rainfall, used in sleep studies for memory consolidation.</li>
+            <li><strong>White noise:</strong> all frequencies equal — masks high-pitched distractions (chatter, clicking) but can sound harsh at length.</li>
+            <li><strong>Rain:</strong> nature sound proven to reduce cortisol by ~18%. Steady drumming masks distractions without surprises.</li>
+            <li><strong>Cafe ambience:</strong> ~70 dB has been shown to boost creative thinking (the &quot;coffee shop effect&quot; — University of Illinois study).</li>
+            <li><strong>Ocean waves:</strong> meditative, calming — good for anxious focus or pre-work-break wind-down.</li>
+            <li><strong>Forest sounds:</strong> birds + wind in trees — restorative for nature-deprived urban workers.</li>
+            <li><strong>Fireplace:</strong> warm, intimate — good for evening focus sessions.</li>
+          </ul>
+        </div>
+
+        <div>
+          <h3 className="text-lg font-semibold text-foreground mb-2">Privacy and Browser Offline</h3>
+          <p>
+            All timer logic, task tracking, sound generation, and session counting runs in your browser. Nothing is sent to any server. LocalStorage persists your settings, task list, and daily session count locally — clear browser data to reset. The ambient sounds use the Web Audio API to generate noise procedurally (zero downloads, infinite duration). Once the page loads, it works fully offline — useful when you need to focus without WiFi distractions.
           </p>
         </div>
       </div>

@@ -165,12 +165,145 @@ const toolConfig = createToolConfig({
         <div>
           <h3 className="text-lg font-semibold text-foreground mb-2">Privacy and Security</h3>
           <p>
-            Unlike many online meme generators that upload your images to their servers, this tool
-            processes everything locally in your browser using the HTML5 Canvas API. Your images
-            never leave your device, making it safe to use with personal photos, work-related
-            content, or any image you wouldn&apos;t want stored on a third-party server. There&apos;s no
-            account creation, no tracking, and no ads.
+            Unlike many online meme generators that upload your images to their servers, this tool processes everything locally in your browser using the HTML5 Canvas API. Your images never leave your device, making it safe to use with personal photos, work-related content, or any image you wouldn&apos;t want stored on a third-party server. There&apos;s no account creation, no tracking, and no ads.
           </p>
+        </div>
+
+        <div>
+          <h3 className="text-lg font-semibold text-foreground mb-2">Top Meme Templates and When to Use Each</h3>
+          <table className="w-full border-collapse text-sm">
+            <thead>
+              <tr className="border-b border-border">
+                <th className="text-left py-2 px-2 text-foreground">Template</th>
+                <th className="text-left py-2 px-2 text-foreground">Best for</th>
+                <th className="text-left py-2 px-2 text-foreground">Format</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr className="border-b border-border">
+                <td className="py-2 px-2"><strong>Drake (Hotline Bling)</strong></td>
+                <td className="py-2 px-2">Preference comparisons (X vs Y)</td>
+                <td className="py-2 px-2">Two text boxes, top/bottom</td>
+              </tr>
+              <tr className="border-b border-border">
+                <td className="py-2 px-2">Distracted Boyfriend</td>
+                <td className="py-2 px-2">Disloyalty / temptation jokes</td>
+                <td className="py-2 px-2">Three labels (boyfriend, girlfriend, new girl)</td>
+              </tr>
+              <tr className="border-b border-border">
+                <td className="py-2 px-2">Expanding Brain</td>
+                <td className="py-2 px-2">Escalating sophistication / absurdity</td>
+                <td className="py-2 px-2">4-panel progression</td>
+              </tr>
+              <tr className="border-b border-border">
+                <td className="py-2 px-2">Two Buttons</td>
+                <td className="py-2 px-2">Difficult decisions / dilemmas</td>
+                <td className="py-2 px-2">Two button labels + sweating face</td>
+              </tr>
+              <tr className="border-b border-border">
+                <td className="py-2 px-2">Roll Safe / Tap Forehead</td>
+                <td className="py-2 px-2">&quot;Smart&quot; logic (mock cleverness)</td>
+                <td className="py-2 px-2">Top + bottom text</td>
+              </tr>
+              <tr className="border-b border-border">
+                <td className="py-2 px-2">Surprised Pikachu</td>
+                <td className="py-2 px-2">Predictable consequences</td>
+                <td className="py-2 px-2">Single setup text</td>
+              </tr>
+              <tr className="border-b border-border">
+                <td className="py-2 px-2">Woman Yelling at Cat</td>
+                <td className="py-2 px-2">Confused / wrong-takes</td>
+                <td className="py-2 px-2">Two labels (woman / cat sides)</td>
+              </tr>
+              <tr>
+                <td className="py-2 px-2">Mocking SpongeBob</td>
+                <td className="py-2 px-2">Imitating dumb statements</td>
+                <td className="py-2 px-2">Bottom alternating-case text</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div>
+          <h3 className="text-lg font-semibold text-foreground mb-2">Meme Lifecycle: Trend, Plateau, Decline</h3>
+          <p>
+            Most memes follow a 6-month-ish lifecycle: <strong>(1) Discovery</strong> on a niche subreddit / TikTok / 4chan; <strong>(2) Mainstream</strong> as Twitter and Instagram normies adopt it; <strong>(3) Brand adoption</strong> — once Wendy&apos;s or Netflix tweets it, it&apos;s 2 weeks from peak; <strong>(4) Boomer phase</strong> — your aunt shares it on Facebook; <strong>(5) Ironic revival</strong> — Gen Z rediscovers it as &quot;cringe&quot; nostalgia. <strong>The rule for brand / marketing use:</strong> if you saw it on a corporate Twitter account or LinkedIn, it&apos;s already too late — find what&apos;s trending on niche TikTok subcultures for genuine engagement. <strong>For personal use:</strong> nostalgia memes (templates from 5-10 years ago) often outperform current ones in niche communities because they signal in-group knowledge.
+          </p>
+        </div>
+
+        <div>
+          <h3 className="text-lg font-semibold text-foreground mb-2">Meme Generator vs Imgflip, Kapwing, Meme Generator.net</h3>
+          <table className="w-full border-collapse text-sm">
+            <thead>
+              <tr className="border-b border-border">
+                <th className="text-left py-2 px-2 text-foreground">Feature</th>
+                <th className="text-left py-2 px-2 text-foreground">This tool</th>
+                <th className="text-left py-2 px-2 text-foreground">Imgflip Free</th>
+                <th className="text-left py-2 px-2 text-foreground">Kapwing Free</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr className="border-b border-border">
+                <td className="py-2 px-2">Watermark</td>
+                <td className="py-2 px-2 text-green-500">No watermark</td>
+                <td className="py-2 px-2 text-red-500">Yes (paid removes)</td>
+                <td className="py-2 px-2 text-red-500">Yes (paid removes)</td>
+              </tr>
+              <tr className="border-b border-border">
+                <td className="py-2 px-2">Signup required</td>
+                <td className="py-2 px-2 text-green-500">No</td>
+                <td className="py-2 px-2 text-orange-500">Optional</td>
+                <td className="py-2 px-2 text-red-500">Required after 7 days</td>
+              </tr>
+              <tr className="border-b border-border">
+                <td className="py-2 px-2">Image upload privacy</td>
+                <td className="py-2 px-2 text-green-500">100% local</td>
+                <td className="py-2 px-2 text-red-500">Server uploaded</td>
+                <td className="py-2 px-2 text-red-500">Server uploaded</td>
+              </tr>
+              <tr className="border-b border-border">
+                <td className="py-2 px-2">Template count</td>
+                <td className="py-2 px-2">100+</td>
+                <td className="py-2 px-2">1000+</td>
+                <td className="py-2 px-2">500+</td>
+              </tr>
+              <tr className="border-b border-border">
+                <td className="py-2 px-2">Custom upload</td>
+                <td className="py-2 px-2 text-green-500">Yes (drag-drop)</td>
+                <td className="py-2 px-2 text-green-500">Yes</td>
+                <td className="py-2 px-2 text-green-500">Yes</td>
+              </tr>
+              <tr className="border-b border-border">
+                <td className="py-2 px-2">Drag text positioning</td>
+                <td className="py-2 px-2 text-green-500">Yes</td>
+                <td className="py-2 px-2 text-green-500">Yes</td>
+                <td className="py-2 px-2 text-green-500">Yes</td>
+              </tr>
+              <tr>
+                <td className="py-2 px-2">Free forever</td>
+                <td className="py-2 px-2 text-green-500">Yes</td>
+                <td className="py-2 px-2 text-orange-500">Limited (paid Pro)</td>
+                <td className="py-2 px-2 text-orange-500">Limited (paid Pro)</td>
+              </tr>
+            </tbody>
+          </table>
+          <p className="mt-3">
+            Trade-off: Imgflip has a much larger template library but watermarks free downloads and uploads your images. This tool prioritizes <strong>privacy + no watermark + zero signup</strong> over template volume.
+          </p>
+        </div>
+
+        <div>
+          <h3 className="text-lg font-semibold text-foreground mb-2">Meme Distribution Tips</h3>
+          <ul className="list-disc pl-6 space-y-1">
+            <li><strong>Twitter / X:</strong> 16:9 or 1:1 aspect ratio works best; max 5MB. Memes get 2x retweets vs text posts.</li>
+            <li><strong>Instagram:</strong> 1:1 (square) for feed, 9:16 for Stories / Reels. Use the meme as a Reel cover.</li>
+            <li><strong>TikTok:</strong> 9:16 vertical only. Static memes work as &quot;photo mode&quot; posts.</li>
+            <li><strong>Reddit:</strong> hyperspecific subreddits (e.g. r/ProgrammerHumor) reward niche-relatable memes. Read the rules first.</li>
+            <li><strong>Discord:</strong> max 8MB free / 50MB Nitro; PNG works fine for static memes.</li>
+            <li><strong>WhatsApp:</strong> compress slightly for faster forward (auto-compression hits anyway).</li>
+            <li><strong>LinkedIn:</strong> stick to milder, work-appropriate humor — your boss is watching</li>
+            <li><strong>Slack / Teams:</strong> office memes; avoid politically sensitive content unless explicitly welcome</li>
+          </ul>
         </div>
       </div>
     ),
