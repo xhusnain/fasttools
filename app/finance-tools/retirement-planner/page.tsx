@@ -10,9 +10,9 @@ import { Calculator, PiggyBank, Receipt, CreditCard } from "lucide-react"
 import type { Metadata } from "next"
 import { getCurrentYear } from "@/lib/utils"
 
-const TOOL_TITLE = `Retirement Planner - Plan 401k & IRA Free`
+const TOOL_TITLE = `Retirement Planner — 401k, IRA, Pension & Social Security`
 const TOOL_NAME = "Retirement Planner"
-const TOOL_DESCRIPTION = "Plan retirement income with 401k, IRA, pension, and Social Security estimates, including monthly income and savings longevity."
+const TOOL_DESCRIPTION = "Free comprehensive retirement planner. Combine 401(k), IRA, Roth IRA, pension, and Social Security to project monthly retirement income. Models inflation, tax treatment, and how long savings will last."
 
 const baseMetadata = createMetadata({
   title: TOOL_TITLE,
@@ -23,8 +23,24 @@ const baseMetadata = createMetadata({
     { label: TOOL_NAME, href: "/finance-tools/retirement-planner" }
   ],
   schemaOptions: {
-    name: "Free Retirement Planner Calculator",
-    alternateName: "401k, IRA & Pension Planning Tool",
+    name: "Retirement Planner — Multi-Account Income Projection",
+    alternateName: [
+      "401k Planner",
+      "IRA Planner",
+      "Roth IRA Planner",
+      "Retirement Income Planner",
+      "Retirement Income Calculator",
+      "Pension Planner",
+      "Social Security Planner",
+      "Multi-Account Retirement Calculator",
+      "Withdrawal Strategy Planner",
+      "Retirement Glide Path Calculator",
+      "401k Withdrawal Calculator",
+      "IRA RMD Calculator",
+      "Retirement Income Replacement Calculator",
+      "Comprehensive Retirement Calculator",
+      "Pre-Retirement Planning Tool",
+    ],
     applicationCategory: "FinanceApplication",
     featureList: [
       "Advanced retirement planning",
@@ -253,10 +269,16 @@ export default function RetirementPlannerPage() {
     `,
 
     relatedTools: [
+      { name: "Retirement Calculator", href: "/finance-tools/retirement-calculator" },
+      { name: "Investment Calculator", href: "/finance-tools/investment-calculator" },
+      { name: "Compound Interest Calculator", href: "/finance-tools/compound-interest" },
+      { name: "Inflation Calculator", href: "/finance-tools/inflation-calculator" },
+      { name: "Net Worth Calculator", href: "/finance-tools/net-worth-calculator" },
       { name: "Savings Tracker", href: "/finance-tools/savings-tracker" },
-      { name: "Discount Calculator", href: "/finance-tools/discount-calculator" },
-      { name: "Tip Calculator", href: "/finance-tools/tip-calculator" },
-      { name: "PayPal Fee Calculator", href: "/finance-tools/paypal-fee" }
+      { name: "Tax Calculator", href: "/finance-tools/tax-calculator" },
+      { name: "Salary Calculator", href: "/finance-tools/salary-calculator" },
+      { name: "Future Age Calculator", href: "/fun-tools/future-age" },
+      { name: "All Finance Tools", href: "/finance-tools" }
     ]
   }
 
