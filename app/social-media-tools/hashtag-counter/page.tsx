@@ -94,7 +94,7 @@ const toolConfig = createToolConfig({
         </article>
 
         <article className="space-y-4">
-          <h2 className="text-2xl font-bold text-foreground">Hashtag Limits by Platform (2026)</h2>
+          <h2 className="text-2xl font-bold text-foreground">Hashtag Limits by Platform</h2>
           <div className="overflow-x-auto">
             <table className="min-w-full text-sm border border-border">
               <thead className="bg-muted text-foreground font-semibold">
@@ -121,11 +121,11 @@ const toolConfig = createToolConfig({
         </article>
 
         <article className="space-y-4">
-          <h2 className="text-2xl font-bold text-foreground">How to Choose Effective Hashtags (2026 Best Practices)</h2>
+          <h2 className="text-2xl font-bold text-foreground">How to Choose Effective Hashtags (Best Practices)</h2>
           <ul className="list-disc list-inside space-y-2 ml-2">
             <li><strong>Mix tag sizes.</strong> Pair 1–2 popular tags (500K+ posts, for discovery) with 2–3 niche tags (10K–100K posts, for targeted reach). All-popular tags get buried; all-niche tags don&apos;t scale.</li>
             <li><strong>Rotate sets between posts.</strong> Posting the exact same 30 hashtags every time looks automated and can trigger Instagram&apos;s spam filter. Keep 3–5 different sets organized by content theme.</li>
-            <li><strong>Check for banned hashtags.</strong> Instagram silently restricts certain tags. Common banned tags as of 2026 include #beautyblogger, #valentinesday (during the holiday), #adulting, and many others — always changing. If a hashtag&apos;s page has limited or no content, it&apos;s likely restricted.</li>
+            <li><strong>Check for banned hashtags.</strong> Instagram silently restricts certain tags. Common banned tags as of include #beautyblogger, #valentinesday (during the holiday), #adulting, and many others — always changing. If a hashtag&apos;s page has limited or no content, it&apos;s likely restricted.</li>
             <li><strong>Use platform-native search.</strong> When picking new tags, type them into the platform&apos;s search to see post volume and recency. Tags with no posts in the last 7 days are dead.</li>
             <li><strong>Match content language.</strong> Don&apos;t use English-only tags on a Spanish-language post — you&apos;re losing native-language reach.</li>
           </ul>

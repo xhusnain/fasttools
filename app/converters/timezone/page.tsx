@@ -13,7 +13,7 @@ const toolConfig = createToolConfig({
   toolName: "Time Zone Converter",
   description:
     "Convert time across 20+ global time zones including UTC, EST, PST, CST, IST, JST, AEST, CET, and GMT with daylight saving awareness and 12/24-hour format support.",
-  metaTitle: "Time Zone Converter -- Convert UTC EST PST IST JST Times Free (2026)",
+  metaTitle: "Time Zone Converter -- Convert UTC EST PST IST JST Times Free",
   metaDescription:
     "Free time zone converter for 20+ global zones. Instantly convert between UTC, EST, PST, CST, IST, JST, AEST, CET, and GMT. AM/PM and 24-hour toggle, auto-detect local time, no signup required.",
   path: "/converters/timezone",

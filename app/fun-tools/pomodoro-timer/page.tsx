@@ -13,7 +13,7 @@ const toolConfig = createToolConfig({
   toolName: "Pomodoro Timer",
   description:
     "Free online Pomodoro timer with ambient sounds, task tracking, and customizable sessions. Stay focused with rain, cafe, and noise sounds. No signup needed.",
-  metaTitle: "Free Pomodoro Timer Online - Focus Timer with Sounds (2026)",
+  metaTitle: "Free Pomodoro Timer Online - Focus Timer with Sounds",
   metaDescription:
     "Free online Pomodoro timer with ambient sounds, task tracking, and customizable sessions. Stay focused with rain, cafe, white noise & more. No signup needed.",
   path: "/fun-tools/pomodoro-timer",

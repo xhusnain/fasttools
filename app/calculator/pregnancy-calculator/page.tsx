@@ -11,7 +11,7 @@ import { GTable } from "@/ui/gtable"
 import { Brain, Calculator, Target, BookOpen, Shield, Users, TrendingUp, Info, AlertTriangle, CheckCircle, Zap, Heart, Calendar, Baby } from "lucide-react"
 
 const baseMetadata = createMetadata({
-  title: "Pregnancy Calculator — Due Date & Week-by-Week Tracker Free (2026)",
+  title: "Pregnancy Calculator — Due Date, Week-by-Week Tracker & IOM Weight",
   description:
     "Free pregnancy calculator to estimate your due date, track gestational age week by week, get IOM weight gain recommendations by BMI, and receive trimester-specific guidance using LMP, ultrasound, conception, or IVF transfer dates.",
   path: "/calculator/pregnancy-calculator",
@@ -21,7 +21,23 @@ const baseMetadata = createMetadata({
   ],
   schemaOptions: {
     name: "Pregnancy Calculator | Free Online Pregnancy Tracking Tool",
-    alternateName: "Advanced Pregnancy Calculator with Comprehensive Tracking",
+    alternateName: [
+      "Due Date Calculator",
+      "Pregnancy Due Date Estimator",
+      "Gestational Age Calculator",
+      "EDD Calculator",
+      "Weeks Pregnant Calculator",
+      "Pregnancy Week Tracker",
+      "LMP Pregnancy Calculator",
+      "Ultrasound Due Date",
+      "IVF Due Date Calculator",
+      "Pregnancy Weight Gain Tracker",
+      "BabyCenter Alternative",
+      "What to Expect Tracker Alternative",
+      "Trimester Calculator",
+      "Pregnancy Conception Tracker",
+      "Naegele's Rule Calculator",
+    ],
     applicationCategory: "HealthApplication",
     featureList: [
       "Due Date Calculation",
@@ -465,7 +481,7 @@ export default function PregnancyCalculatorPage() {
   return (
     <ToolPageLayout
       header={{
-        title: "Pregnancy Calculator — Due Date & Week-by-Week Tracker (2026)",
+        title: "Pregnancy Calculator — Due Date & Week-by-Week Tracker",
         description: "Free pregnancy due date calculator supporting LMP, ultrasound, conception, and IVF transfer date methods. Track gestational age week by week, get personalized IOM weight gain recommendations based on pre-pregnancy BMI, and access trimester-specific health guidance and milestone timelines.",
         titleSize: "medium",
         descriptionSize: "small",
@@ -482,7 +498,7 @@ export default function PregnancyCalculatorPage() {
       }
       toolContent={toolContent}
       expectedMetadata={{
-        title: "Pregnancy Calculator — Due Date & Week-by-Week Tracker Free (2026)",
+        title: "Pregnancy Calculator — Due Date, Week-by-Week Tracker & IOM Weight",
         description: "Free pregnancy calculator to estimate your due date, track gestational age week by week, get IOM weight gain recommendations by BMI, and receive trimester-specific guidance using LMP, ultrasound, conception, or IVF transfer dates.",
         path: "/calculator/pregnancy-calculator"
       }}

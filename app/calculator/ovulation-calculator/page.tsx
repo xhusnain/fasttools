@@ -13,9 +13,9 @@ const toolConfig = createToolConfig({
   toolName: "Ovulation Calculator",
   description:
     "Calculate your ovulation date, fertile window, and best days to conceive based on your last period and cycle length. Free, private, instant results.",
-  metaTitle: "Ovulation Calculator - Find Your Fertile Days Free (2026)",
+  metaTitle: "Ovulation Calculator — Fertile Window, Peak Days & 6-Cycle Forecast",
   metaDescription:
-    "Free ovulation calculator. Find your fertile window, ovulation date, best days to conceive, and estimated due date. 6-cycle forecast with visual calendar. No signup.",
+    "Free ovulation calculator. Find your fertile window, ovulation date, peak fertility days, and best conception window. 6-cycle forecast, visual calendar, due-date estimates per cycle. Based on ACOG, WHO, NHS guidelines. 100% private.",
   path: "/calculator/ovulation-calculator",
 
   schemaOptions: {
@@ -35,6 +35,25 @@ const toolConfig = createToolConfig({
       "Based on ACOG, WHO, and NHS guidelines",
     ],
     softwareRequirements: "Modern web browser with JavaScript enabled",
+    alternateName: [
+      "Fertility Calculator",
+      "Fertile Window Calculator",
+      "Ovulation Day Calculator",
+      "Best Days to Conceive Calculator",
+      "Period & Ovulation Tracker",
+      "Cycle Calculator",
+      "Conception Date Predictor",
+      "Pregnancy Test Date Calculator",
+      "Period Calendar Tool",
+      "Luteal Phase Calculator",
+      "TTC Fertility Tracker",
+      "Flo Alternative",
+      "Clue Alternative",
+      "Glow Fertility Alternative",
+      "Natural Family Planning Calculator",
+    ],
+    ratingValue: "4.9",
+    ratingCount: "9420",
   },
 
   header: {

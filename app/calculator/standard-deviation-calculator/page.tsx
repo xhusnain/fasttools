@@ -11,7 +11,7 @@ import { Calculator, BarChart3, TrendingUp, BookOpen, Users, Clock, Target, Aler
 import { GTable } from "@/ui/gtable"
 
 const baseMetadata = createMetadata({
-  title: "Standard Deviation Calculator — Variance, Mean & Statistics Free (2026)",
+  title: "Standard Deviation Calculator — Variance, Mean, Median & Z-Scores",
   description:
     "Free standard deviation calculator with population and sample modes. Compute variance, mean, median, confidence intervals, quartiles, z-scores, outlier detection, skewness, kurtosis, and coefficient of variation instantly.",
   path: "/calculator/standard-deviation-calculator",
@@ -21,7 +21,23 @@ const baseMetadata = createMetadata({
   ],
   schemaOptions: {
     name: "Standard Deviation Calculator",
-    alternateName: "Statistics Calculator",
+    alternateName: [
+      "SD Calculator",
+      "Statistics Calculator",
+      "Variance Calculator",
+      "Mean Median Mode Calculator",
+      "Sample Standard Deviation",
+      "Population Standard Deviation",
+      "Z-Score Calculator",
+      "Confidence Interval Calculator",
+      "Quartile Calculator",
+      "Outlier Detector",
+      "Skewness Kurtosis Calculator",
+      "Coefficient of Variation",
+      "Descriptive Statistics Tool",
+      "Statistical Distribution Analyzer",
+      "Data Set Statistics Tool",
+    ],
     applicationCategory: "UtilityApplication",
     featureList: [
       "Standard Deviation Calculation",
@@ -683,7 +699,7 @@ export default function StandardDeviationCalculatorPage() {
   return (
     <ToolPageLayout
       header={{
-        title: "Standard Deviation Calculator — Population & Sample Statistics (2026)",
+        title: "Standard Deviation Calculator — Population & Sample Statistics",
         description: "Free statistics calculator to compute standard deviation (population and sample), variance, mean, median, mode, confidence intervals (90/95/99%), quartiles, IQR, z-scores, outlier detection, skewness, kurtosis, and coefficient of variation from any dataset.",
         titleSize: "medium",
         descriptionSize: "small",
@@ -700,7 +716,7 @@ export default function StandardDeviationCalculatorPage() {
       }
       toolContent={toolContent}
       expectedMetadata={{
-        title: "Standard Deviation Calculator — Variance, Mean & Statistics Free (2026)",
+        title: "Standard Deviation Calculator — Variance, Mean, Median & Z-Scores",
         description:
           "Free standard deviation calculator with population and sample modes. Compute variance, mean, median, confidence intervals, quartiles, z-scores, outlier detection, skewness, kurtosis, and coefficient of variation instantly.",
         path: "/calculator/standard-deviation-calculator"

@@ -13,7 +13,7 @@ const toolConfig = createToolConfig({
   toolName: "List Converter",
   description:
     "Convert between comma-separated and line-separated lists with options for trim, dedupe, sort, and wrapping.",
-  metaTitle: "List Converter — Comma to Line, Sort, Dedupe, Format Lists Free (2026)",
+  metaTitle: "List Converter — Comma to Line, Sort, Dedupe, Format Lists Free",
   metaDescription:
     "Free list converter to transform comma-separated values to newlines, remove duplicates, sort alphabetically, trim whitespace, and add prefix/suffix wrapping. Convert CSV columns, SQL IN clauses, and array data instantly — no signup required.",
   path: "/converters/list-converter",

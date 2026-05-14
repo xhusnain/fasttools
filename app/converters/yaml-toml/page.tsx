@@ -16,7 +16,7 @@ const toolConfig = createToolConfig({
   toolName: "YAML to TOML Converter",
   description:
     "Convert YAML to TOML and TOML to YAML online. Handles nested mappings, sequences, anchors, and all data types for Kubernetes, Docker Compose, Ansible, Cargo.toml, and pyproject.toml workflows.",
-  metaTitle: "YAML to TOML Converter -- Convert YAML to TOML Online Free (2026)",
+  metaTitle: "YAML to TOML Converter -- Convert YAML to TOML Online Free",
   metaDescription:
     "Free YAML to TOML converter with bidirectional TOML to YAML support. Convert Kubernetes, Docker Compose, and Ansible YAML configs to TOML format. Handles nested mappings, sequences, and all data types. No signup.",
   path: "/converters/yaml-toml",

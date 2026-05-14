@@ -12,9 +12,9 @@ const BMICalculatorPageContent = dynamic(
 import { Brain, Activity, Target, BookOpen, AlertTriangle, Users, TrendingUp, Shield, Calculator, Heart, Info, Scale } from "lucide-react"
 
 const baseMetadata = createMetadata({
-  title: "BMI Calculator — Calculate Body Mass Index Online Free (2026)",
+  title: "BMI Calculator — Body Mass Index for Adults, Teens & Asian Thresholds",
   description:
-    "Free online BMI calculator with WHO & CDC categories, healthy weight range, BMI Prime, Ponderal Index, and Asian BMI thresholds. Supports metric & imperial units for adults and teens. Instant, private results.",
+    "Free BMI calculator with WHO & CDC categories, healthy weight range, BMI Prime, Ponderal Index, and Asian BMI cutoffs. Metric (kg/cm) and Imperial (lbs/in) units for adults and teenagers. Visual gauge, instant private results.",
   path: "/calculator/bmi-calculator",
   breadcrumbs: [
     { label: "Calculator", href: "/calculator" },
@@ -22,7 +22,23 @@ const baseMetadata = createMetadata({
   ],
   schemaOptions: {
     name: "Free BMI Calculator - Body Mass Index Calculator",
-    alternateName: "Body Mass Index Calculator",
+    alternateName: [
+      "Body Mass Index Calculator",
+      "BMI Index Calculator",
+      "Weight to Height Ratio Calculator",
+      "Healthy Weight Calculator",
+      "Obesity Calculator",
+      "BMI Chart Lookup",
+      "Underweight Calculator",
+      "Overweight Calculator",
+      "Asian BMI Calculator",
+      "Teen BMI Calculator",
+      "Imperial BMI Calculator",
+      "Metric BMI Calculator",
+      "WHO BMI Calculator",
+      "CDC BMI Calculator",
+      "BMI Prime Calculator",
+    ],
     applicationCategory: "HealthApplication",
     ratingValue: "4.9",
     ratingCount: "3420",
@@ -689,7 +705,7 @@ export default function BMICalculatorPage() {
       }
       toolContent={toolContent}
       expectedMetadata={{
-        title: "BMI Calculator — Calculate Body Mass Index Online Free (2026)",
+        title: "BMI Calculator — Calculate Body Mass Index Online Free",
         description: "Free online BMI calculator with WHO & CDC categories, healthy weight range, BMI Prime, Ponderal Index, and Asian BMI thresholds. Supports metric & imperial units for adults and teens. Instant, private results.",
         path: "/calculator/bmi-calculator"
       }}

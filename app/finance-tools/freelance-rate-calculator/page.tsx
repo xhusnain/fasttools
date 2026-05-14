@@ -177,7 +177,7 @@ export default function FreelanceRateCalculatorPage() {
         <section className="bg-card border border-border rounded-lg p-6">
           <h2 className="text-2xl font-bold mb-6 flex items-center gap-2 text-foreground">
             <BarChart3 className="h-6 w-6 text-primary" />
-            Freelance Rate Benchmarks by Industry (2026)
+            Freelance Rate Benchmarks by Industry
           </h2>
           <div className="overflow-x-auto">
             <table className="w-full text-sm text-left">

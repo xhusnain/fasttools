@@ -17,7 +17,7 @@ const toolConfig = createToolConfig({
   toolName: "Text Case Converter",
   description:
     "Convert text between uppercase, lowercase, title case, sentence case, camelCase, snake_case, and more.",
-  metaTitle: "Text Case Converter — Uppercase, Lowercase, camelCase, snake_case Free (2026)",
+  metaTitle: "Text Case Converter — Uppercase, Lowercase, camelCase, snake_case Free",
   metaDescription:
     "Free text case converter for UPPERCASE, lowercase, Title Case, Sentence case, camelCase, PascalCase, snake_case, kebab-case, and dot.case. Convert text for code variables, URL slugs, headlines, and file naming — instant results with one-click copy.",
   path: "/converters/text-case",

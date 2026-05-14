@@ -11,7 +11,7 @@ import { GTable } from "@/ui/gtable"
 import { Brain, Activity, Target, BookOpen, Shield, Users, TrendingUp, Calculator, Heart, AlertTriangle, Info, Scale } from "lucide-react"
 
 const baseMetadata = createMetadata({
-  title: "Body Fat Calculator — Estimate Body Fat Percentage Online Free (2026)",
+  title: "Body Fat Calculator — Percentage via U.S. Navy & BMI Methods",
   description:
     "Free body fat calculator using U.S. Navy method & BMI method. Get body fat percentage, fat mass vs lean mass breakdown, ACE fitness categories, and ideal body fat recommendations for men and women. Private & instant.",
   path: "/calculator/body-fat-calculator",
@@ -21,7 +21,23 @@ const baseMetadata = createMetadata({
   ],
   schemaOptions: {
     name: "Body Fat Calculator | Advanced Body Fat Percentage Calculator",
-    alternateName: "Professional Body Composition Analysis Tool",
+    alternateName: [
+      "Body Composition Calculator",
+      "Body Fat Percentage Calculator",
+      "Navy Body Fat Calculator",
+      "BMI Body Fat Estimator",
+      "Lean Mass Calculator",
+      "Fat Mass Calculator",
+      "Athletic Body Fat Tool",
+      "Ideal Body Fat Calculator",
+      "Skinfold Body Fat Calculator",
+      "ACE Fitness Body Fat",
+      "Body Fat Range Tool",
+      "BFP Calculator",
+      "Body Fat % Estimator",
+      "Body Fat Tape Measure Tool",
+      "Visceral Fat Estimator",
+    ],
     applicationCategory: "HealthApplication",
     featureList: [
       "U.S. Navy Method Calculation",
@@ -577,7 +593,7 @@ export default function BodyFatCalculatorPage() {
       }
       toolContent={toolContent}
       expectedMetadata={{
-        title: "Body Fat Calculator — Estimate Body Fat Percentage Online Free (2026)",
+        title: "Body Fat Calculator — Percentage via U.S. Navy & BMI Methods",
         description: "Free body fat calculator using U.S. Navy method & BMI method. Get body fat percentage, fat mass vs lean mass breakdown, ACE fitness categories, and ideal body fat recommendations for men and women. Private & instant.",
         path: "/calculator/body-fat-calculator"
       }}

@@ -16,7 +16,7 @@ const toolConfig = createToolConfig({
   toolName: "NATO Phonetic Converter",
   description:
     "Convert text to NATO phonetic alphabet words and decode NATO words back to plain text.",
-  metaTitle: "NATO Phonetic Alphabet Converter — Text to Alpha Bravo Charlie Free (2026)",
+  metaTitle: "NATO Phonetic Alphabet Converter — Text to Alpha Bravo Charlie Free",
   metaDescription:
     "Free NATO phonetic alphabet converter to translate text into Alpha Bravo Charlie format and decode NATO words back to plain text. Supports A-Z letters and 0-9 digits with interactive reference chart — used by military, aviation, and call centers.",
   path: "/converters/nato-phonetic",

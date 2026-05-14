@@ -15,7 +15,7 @@ const toolConfig = createToolConfig({
   toolName: "YouTube Channel Name & Handle Checker",
   description:
     "Free YouTube channel name availability checker. Instantly check if a YouTube channel name or @handle is available before launching your channel.",
-  metaTitle: "YouTube Channel Name Availability Checker — Check If Handle Is Available (2026)",
+  metaTitle: "YouTube Channel Name Availability Checker — Check If Handle Is Available",
   metaDescription:
     "Check if a YouTube channel name or @handle is available — instantly. Free YouTube username checker, channel name availability tool, and handle availability check. No login, no signup, works for any name in 2026.",
   path: "/social-media-tools/channel-checker",
@@ -106,7 +106,7 @@ const toolConfig = createToolConfig({
         </article>
 
         <article className="space-y-4">
-          <h2 className="text-2xl font-bold text-foreground">YouTube Handle Format Rules (2026)</h2>
+          <h2 className="text-2xl font-bold text-foreground">YouTube Handle Format Rules</h2>
           <p>
             Before you check availability, make sure the handle you want is actually valid. YouTube rejects handles that fail any of these rules — checking format first avoids wasting time on handles that could never work.
           </p>

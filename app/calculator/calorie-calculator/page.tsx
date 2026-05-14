@@ -12,7 +12,7 @@ const CalorieCalculator = dynamic(
 import { Brain, Activity, Target, BookOpen, Shield, Users, TrendingUp, Calculator, Heart, AlertTriangle, Info, Zap, Flame } from "lucide-react"
 
 const baseMetadata = createMetadata({
-  title: "Calorie Calculator — Calculate Daily Calorie Needs & TDEE Free (2026)",
+  title: "Calorie Calculator — Daily Calorie Needs, TDEE & Zigzag Plans",
   description:
     "Free calorie calculator with BMR, TDEE, weight loss/gain targets & zigzag calorie cycling. Uses Mifflin-St Jeor, Harris-Benedict & Katch-McArdle equations. Activity-based calorie burn reference, macro breakdown & meal planning guidance.",
   path: "/calculator/calorie-calculator",
@@ -22,7 +22,23 @@ const baseMetadata = createMetadata({
   ],
   schemaOptions: {
     name: "Calorie Calculator | Advanced Daily Calorie Needs Calculator",
-    alternateName: "Professional Calorie Analysis Tool",
+    alternateName: [
+      "Daily Calorie Calculator",
+      "Calorie Needs Calculator",
+      "TDEE Calculator",
+      "Weight Loss Calorie Calculator",
+      "Maintenance Calorie Calculator",
+      "Muscle Gain Calorie Calculator",
+      "Calorie Deficit Calculator",
+      "Calorie Surplus Calculator",
+      "Zigzag Diet Calculator",
+      "Macro Calculator",
+      "Calorie Cycling Tool",
+      "BMR & TDEE Tool",
+      "MyFitnessPal Calorie Alternative",
+      "LoseIt Calorie Alternative",
+      "Diet Calorie Estimator",
+    ],
     applicationCategory: "HealthApplication",
     featureList: [
       "BMR Calculation with Multiple Equations",
@@ -475,7 +491,7 @@ export default function CalorieCalculatorPage() {
       }
       toolContent={toolContent}
       expectedMetadata={{
-        title: "Calorie Calculator — Calculate Daily Calorie Needs & TDEE Free (2026)",
+        title: "Calorie Calculator — Daily Calorie Needs, TDEE & Zigzag Plans",
         description: "Free calorie calculator with BMR, TDEE, weight loss/gain targets & zigzag calorie cycling. Uses Mifflin-St Jeor, Harris-Benedict & Katch-McArdle equations. Activity-based calorie burn reference, macro breakdown & meal planning guidance.",
         path: "/calculator/calorie-calculator"
       }}

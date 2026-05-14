@@ -16,7 +16,7 @@ const toolConfig = createToolConfig({
   toolName: "Unicode Converter",
   description:
     "Convert text to Unicode code points (U+XXXX) and decode Unicode escape sequences back to readable characters. Supports UTF-8, UTF-16, HTML entities, JavaScript \\u escapes, Python \\u escapes, and all Unicode planes including emoji and CJK.",
-  metaTitle: "Unicode Converter — Text to Unicode Code Points & Decoder Free (2026)",
+  metaTitle: "Unicode Converter — Text to Unicode Code Points & Decoder Free",
   metaDescription:
     "Free Unicode converter. Convert text to U+XXXX code points, decode \\u escape sequences, HTML entities (&#x), and hex notation. Supports emoji, CJK, Arabic, Cyrillic, and all 149,000+ Unicode characters. Browser-based.",
   path: "/converters/unicode",

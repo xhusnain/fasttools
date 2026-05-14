@@ -12,7 +12,7 @@ import Image from "next/image"
 import { GTable } from "@/ui/gtable"
 
 const toolConfig = createToolConfig({
-  toolName: "Scientific Calculator — Advanced Math Calculator Online Free (2026)",
+  toolName: "Scientific Calculator — Trig, Logs, Exponents & Stats Online",
   description: "Free online scientific calculator with 70+ functions: trigonometry (sin, cos, tan), logarithms (ln, log), exponents, roots, factorials, permutations, combinations & constants. Degree/radian modes, memory functions, calculation history. No download.",
   path: "/calculator/scientific-calculator",
   header: {

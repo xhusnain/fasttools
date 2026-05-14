@@ -79,7 +79,7 @@ const toolConfig = createToolConfig({
     keyTakeaways: [
       "Schema markup (JSON-LD) helps Google and AI engines understand your content for rich snippets",
       "Google officially recommends JSON-LD format over Microdata or RDFa",
-      "72% of first-page Google results use schema markup (2026)",
+      "72% of first-page Google results use schema markup",
       "Rich snippets from schema increase click-through rates by 20-40%",
       "AI search engines (Google AI Overviews, ChatGPT, Perplexity) cite pages with structured data more often",
     ],

@@ -14,7 +14,7 @@ const TOOL_TITLE = "PayPal Fee Calculator — Calculate PayPal Fees, G&S, Credit
 const TOOL_NAME = "PayPal Fee Calculator"
 
 const baseMetadata = createMetadata({
-  title: `PayPal Fee Calculator — Instant Fees, G&S, Credit Card & International (2026)`,
+  title: `PayPal Fee Calculator — Instant Fees, G&S, Credit Card & International`,
   description: "Free PayPal fee calculator. Calculate PayPal G&S fee, PayPal credit card fee, and processing fees for any transaction. Domestic and international rates, micropayments, and reverse-fee gross-up — for sellers, freelancers, and businesses.",
   path: "/finance-tools/paypal-fee",
   breadcrumbs: [
@@ -395,7 +395,7 @@ export default function PayPalFeeCalculatorPage() {
         <article className="space-y-4">
           <h2 className="text-2xl font-bold text-foreground flex items-center gap-2">
             <BarChart3 className="h-6 w-6 text-primary" />
-            PayPal Fee Schedule by Country (2026)
+            PayPal Fee Schedule by Country
           </h2>
           <p className="text-base text-muted-foreground leading-relaxed">
             PayPal rates differ by seller country. Use the table below as a reference; the calculator above applies the right rate when you select your country.

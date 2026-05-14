@@ -16,7 +16,7 @@ const toolConfig = createToolConfig({
   toolName: "YAML to JSON Converter",
   description:
     "Convert YAML to JSON and JSON to YAML instantly online. Supports OpenAPI specs, Kubernetes manifests, Docker Compose files, CI/CD pipelines, and all YAML configuration formats with real-time parsing.",
-  metaTitle: "YAML to JSON Converter — Convert YAML Config Files Online Free (2026)",
+  metaTitle: "YAML to JSON Converter — Convert YAML Config Files Online Free",
   metaDescription:
     "Free YAML to JSON converter with bidirectional JSON to YAML support. Convert OpenAPI specs, Kubernetes manifests, Docker Compose, GitHub Actions, and CI/CD configs instantly. Browser-based, no signup.",
   path: "/converters/yaml-json",

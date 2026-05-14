@@ -16,7 +16,7 @@ const toolConfig = createToolConfig({
   toolName: "XML to JSON Converter",
   description:
     "Convert XML to JSON and JSON to XML instantly online. Transform SOAP responses, RSS feeds, SVG data, Android layouts, Maven POM files, and any XML document into structured JSON with attribute and namespace handling.",
-  metaTitle: "XML to JSON Converter — Transform XML Documents to JSON Online Free (2026)",
+  metaTitle: "XML to JSON Converter — Transform XML Documents to JSON Online Free",
   metaDescription:
     "Free XML to JSON converter with bidirectional JSON to XML support. Convert SOAP responses, RSS feeds, Maven POM, Android XML, and any XML document. Handles attributes, namespaces, CDATA, nested elements. No signup.",
   path: "/converters/xml-json",

@@ -16,7 +16,7 @@ const toolConfig = createToolConfig({
   toolName: "TOML to YAML Converter",
   description:
     "Convert TOML to YAML and YAML to TOML instantly online. Migrate configuration files between Rust/Python TOML ecosystems and Kubernetes/Docker/CI-CD YAML ecosystems with full data type preservation.",
-  metaTitle: "TOML to YAML Converter — Convert Config Files Between Formats Free (2026)",
+  metaTitle: "TOML to YAML Converter — Convert Config Files Between Formats Free",
   metaDescription:
     "Free TOML to YAML converter with bidirectional YAML to TOML support. Migrate configs between Cargo.toml, pyproject.toml and Kubernetes YAML, Docker Compose, GitHub Actions. Preserves tables, arrays, datetimes. No signup.",
   path: "/converters/toml-yaml",

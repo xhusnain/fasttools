@@ -10,7 +10,7 @@ import { Calculator, PiggyBank, CreditCard, FileText } from "lucide-react"
 import type { Metadata } from "next"
 import { getCurrentYear } from "@/lib/utils"
 
-const TOOL_TITLE = `Savings Tracker — Free Online Savings Tracking Tool (2026)`
+const TOOL_TITLE = `Savings Tracker — Free Online Savings Tracking Tool`
 const TOOL_NAME = "Savings Tracker"
 const TOOL_DESCRIPTION = "Free savings tracking tool to set and track financial goals. Plan monthly contributions, adjust for tax and inflation, prioritize multiple goals, and see how long until you hit your target."
 
@@ -312,7 +312,7 @@ export default function SavingsTrackerPage() {
             <li><strong>Allocate by percentage, not flat amount.</strong> If you save $1,500/month total, splitting as 50% emergency / 30% house / 20% vacation scales with raises automatically.</li>
             <li><strong>Use separate buckets.</strong> Many savings accounts (Ally, Marcus, SoFi) let you create named sub-accounts for free — visually separating goals prevents accidental spending.</li>
             <li><strong>Recalculate quarterly.</strong> Inflation, raises, surprise expenses — re-run the tracker every 3 months to adjust contributions before you fall behind.</li>
-            <li><strong>Inflation-adjust long-term goals.</strong> A $42,000 down payment in 2026 dollars is $48,500 in 5 years at 3% inflation. The tool above lets you bake this in.</li>
+            <li><strong>Inflation-adjust long-term goals.</strong> A $42,000 down payment in dollars is $48,500 in 5 years at 3% inflation. The tool above lets you bake this in.</li>
           </ul>
         </article>
 

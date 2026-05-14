@@ -11,7 +11,7 @@ import { Calculator, Triangle, Brain, BookOpen, Square } from "lucide-react"
 import { GTable } from "@/ui/gtable"
 
 const baseMetadata = createMetadata({
-    title: "Triangle Calculator — Solve Area, Angles & Sides Free (2026)",
+    title: "Triangle Calculator — Solve Area, Angles & Sides (SSS, SAS, ASA)",
     description:
         "Free triangle calculator to solve any triangle by SSS, SAS, ASA, AAS, or SSA. Calculate area (Heron's formula), perimeter, all angles, heights, medians, inradius, circumradius, and triangle type classification instantly.",
     path: "/calculator/triangle-calculator",
@@ -21,7 +21,23 @@ const baseMetadata = createMetadata({
     ],
     schemaOptions: {
         name: "Triangle Calculator",
-        alternateName: "Triangle Solver",
+        alternateName: [
+          "Triangle Solver",
+          "Triangle Area Calculator",
+          "Heron's Formula Calculator",
+          "Right Triangle Calculator",
+          "SSS Triangle Solver",
+          "SAS Triangle Solver",
+          "ASA Triangle Solver",
+          "AAS Triangle Solver",
+          "Pythagorean Theorem Calculator",
+          "Law of Sines Calculator",
+          "Law of Cosines Calculator",
+          "Triangle Perimeter Calculator",
+          "Triangle Angle Calculator",
+          "Triangle Hypotenuse Calculator",
+          "Geometry Triangle Tool",
+        ],
         applicationCategory: "EducationalApplication",
         featureList: [
             "Calculate triangle area using multiple formulas",
@@ -243,7 +259,7 @@ export default function TriangleCalculatorPage() {
     return (
         <ToolPageLayout
             header={{
-                title: "Triangle Calculator — Solve Any Triangle by Sides or Angles (2026)",
+                title: "Triangle Calculator — Solve Any Triangle by Sides or Angles",
                 description: "Free triangle solver supporting SSS, SAS, ASA, AAS, and SSA methods. Compute triangle area using Heron's formula, base-height, or SAS; find all unknown angles via the Law of Cosines and Law of Sines; calculate perimeter, semiperimeter, heights, medians, inradius, circumradius, and classify triangle type (equilateral, isosceles, scalene, right, obtuse).",
                 titleSize: "medium",
                 descriptionSize: "small",
@@ -260,7 +276,7 @@ export default function TriangleCalculatorPage() {
             }
             toolContent={toolContent}
             expectedMetadata={{
-                title: "Triangle Calculator — Solve Area, Angles & Sides Free (2026)",
+                title: "Triangle Calculator — Solve Area, Angles & Sides (SSS, SAS, ASA)",
                 description:
                     "Free triangle calculator to solve any triangle by SSS, SAS, ASA, AAS, or SSA. Calculate area (Heron's formula), perimeter, all angles, heights, medians, inradius, circumradius, and triangle type classification instantly.",
                 path: "/calculator/triangle-calculator"

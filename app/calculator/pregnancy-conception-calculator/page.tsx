@@ -11,7 +11,7 @@ import { GTable } from "@/ui/gtable"
 import { Brain } from "lucide-react"
 
 const baseMetadata = createMetadata({
-  title: "Conception Date Calculator — Estimate When You Conceived Free (2026)",
+  title: "Conception Date Calculator — When Did I Conceive? From Due Date or LMP",
   description:
     "Free conception calculator to estimate your conception date, fertile window, and pregnancy week from due date, last menstrual period, or ultrasound. Includes trimester guidance, nutrition tips, and milestone tracking.",
   path: "/calculator/pregnancy-conception-calculator",
@@ -21,7 +21,23 @@ const baseMetadata = createMetadata({
   ],
   schemaOptions: {
     name: "Pregnancy Conception Calculator | Free Online Pregnancy Tool",
-    alternateName: "Advanced Pregnancy Calculator with Trimester Guidance",
+    alternateName: [
+      "Conception Calculator",
+      "Date of Conception Calculator",
+      "Estimated Conception Date",
+      "When Did I Conceive Calculator",
+      "Reverse Pregnancy Calculator",
+      "Conception From Due Date",
+      "Conception From LMP",
+      "Conception From Ultrasound",
+      "Implantation Date Calculator",
+      "Pregnancy Week to Conception",
+      "DOC Calculator",
+      "Trimester Calculator",
+      "Fertility Date Estimator",
+      "Pregnancy Conception Tracker",
+      "Naegele Rule Conception Reverse",
+    ],
     applicationCategory: "HealthApplication",
     featureList: [
       "Conception Date Calculation",
@@ -289,7 +305,7 @@ export default function PregnancyConceptionCalculatorPage() {
   return (
     <ToolPageLayout
       header={{
-        title: "Conception Date Calculator — Find When You Conceived (2026)",
+        title: "Conception Date Calculator — Find When You Conceived",
         description: "Free conception calculator to reverse-calculate your probable conception date and fertile window from a known due date, LMP, or ultrasound measurement. Get personalized trimester guidance, nutrition recommendations, safe exercise tips, and week-by-week pregnancy milestone tracking.",
         titleSize: "medium",
         descriptionSize: "small",
@@ -306,7 +322,7 @@ export default function PregnancyConceptionCalculatorPage() {
       }
       toolContent={toolContent}
       expectedMetadata={{
-        title: "Conception Date Calculator — Estimate When You Conceived Free (2026)",
+        title: "Conception Date Calculator — When Did I Conceive? From Due Date or LMP",
         description:
           "Free conception calculator to estimate your conception date, fertile window, and pregnancy week from due date, last menstrual period, or ultrasound. Includes trimester guidance, nutrition tips, and milestone tracking.",
         path: "/calculator/pregnancy-conception-calculator"

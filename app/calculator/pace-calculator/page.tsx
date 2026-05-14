@@ -11,7 +11,7 @@ import { GTable } from "@/ui/gtable"
 import { Brain, Calculator, Target, BookOpen, Shield, Users, TrendingUp, Info, AlertTriangle, CheckCircle, Zap, Clock, Heart } from "lucide-react"
 
 const baseMetadata = createMetadata({
-  title: "Pace Calculator — Calculate Running Pace & Speed Free (2026)",
+  title: "Pace Calculator — Running Pace, Race Time & Heart Rate Zones",
   description:
     "Free pace calculator to compute running pace per mile and km, training zones, heart rate zones, VO2 Max estimation, and race time predictions for 5K, 10K, half marathon & marathon distances.",
   path: "/calculator/pace-calculator",
@@ -21,7 +21,23 @@ const baseMetadata = createMetadata({
   ],
   schemaOptions: {
     name: "Pace Calculator | Advanced Running Pace Calculator",
-    alternateName: "Professional Running Tool with Training Zones",
+    alternateName: [
+      "Running Pace Calculator",
+      "Pace Per Mile Calculator",
+      "Pace Per Km Calculator",
+      "Race Time Calculator",
+      "Marathon Pace Calculator",
+      "Half Marathon Pace Calculator",
+      "5K Pace Calculator",
+      "10K Pace Calculator",
+      "Treadmill Pace Calculator",
+      "Heart Rate Zone Calculator",
+      "VO2 Max Estimator",
+      "Negative Split Calculator",
+      "Strava Pace Tool",
+      "Garmin Pace Tool",
+      "Cyclist Speed Calculator",
+    ],
     applicationCategory: "SportsApplication",
     featureList: [
       "Basic Pace Calculation",
@@ -474,7 +490,7 @@ export default function PaceCalculatorPage() {
   return (
     <ToolPageLayout
       header={{
-        title: "Pace Calculator — Running Pace, Speed & Training Zones (2026)",
+        title: "Pace Calculator — Running Pace, Speed & Training Zones",
         description: "Free running pace calculator with pace-per-mile and pace-per-km output, 5K/10K/half marathon/marathon race predictions, heart rate training zones, VO2 Max estimation, split analysis, and negative-split planning for runners, coaches, and athletes.",
         titleSize: "medium",
         descriptionSize: "small",
@@ -491,7 +507,7 @@ export default function PaceCalculatorPage() {
       }
       toolContent={toolContent}
       expectedMetadata={{
-        title: "Pace Calculator — Calculate Running Pace & Speed Free (2026)",
+        title: "Pace Calculator — Running Pace, Race Time & Heart Rate Zones",
         description: "Free pace calculator to compute running pace per mile and km, training zones, heart rate zones, VO2 Max estimation, and race time predictions for 5K, 10K, half marathon & marathon distances.",
         path: "/calculator/pace-calculator"
       }}

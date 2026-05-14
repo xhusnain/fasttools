@@ -13,7 +13,7 @@ const toolConfig = createToolConfig({
   toolName: "Link in Bio Generator",
   description:
     "Create a free link-in-bio page with multiple links for Instagram, TikTok, YouTube, and other social profiles. Free Linktree alternative — no account needed.",
-  metaTitle: "Free Link in Bio Generator — Linktree Alternative for Instagram & TikTok (2026)",
+  metaTitle: "Free Link in Bio Generator — Linktree Alternative for Instagram & TikTok",
   metaDescription:
     "Create a free link-in-bio page for Instagram, TikTok, and YouTube. Add multiple links, customize colors and layout. Free Linktree alternative — no signup required.",
   path: "/social-media-tools/link-in-bio",

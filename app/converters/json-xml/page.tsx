@@ -16,7 +16,7 @@ const toolConfig = createToolConfig({
   toolName: "JSON to XML Converter",
   description:
     "Convert JSON to XML and XML to JSON for API integrations and legacy data formats.",
-  metaTitle: "JSON to XML Converter — Transform JSON to XML Online Free (2026)",
+  metaTitle: "JSON to XML Converter — Transform JSON to XML Online Free",
   metaDescription:
     "Free JSON to XML converter with bidirectional XML to JSON support. Convert API payloads, SOAP requests, RSS feeds, and legacy system data instantly in your browser — no signup required.",
   path: "/converters/json-xml",

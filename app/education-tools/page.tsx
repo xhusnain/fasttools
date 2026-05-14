@@ -19,7 +19,7 @@ const toolConfig = createToolConfig({
   toolName: "Education Tools",
   description:
     "Free education tools for students, researchers, and educators. Citation generators, study aids, and academic writing helpers. All free, no signup.",
-  metaTitle: "Free Education Tools for Students: Citation Generator & More (2026)",
+  metaTitle: "Free Education Tools for Students: Citation Generator & More",
   metaDescription:
     "Free online education tools for students. Citation generators (APA, MLA, Chicago, Harvard), study aids, and writing tools. All free, no signup, no ads.",
   path: "/education-tools",

@@ -12,7 +12,7 @@ const TDEEMacroCalculatorPageContent = dynamic(
 )
 
 const baseMetadata = createMetadata({
-  title: "TDEE & Macro Calculator — Calculate Daily Calories & Macros Free (2026)",
+  title: "TDEE & Macro Calculator — Daily Calories, Protein, Carbs & Fats",
   description:
     "Free TDEE & macro calculator with Mifflin-St Jeor, Harris-Benedict & Katch-McArdle equations. Calculate BMR, daily calories, protein, carbs & fats for weight loss, maintenance or muscle gain. Instant results.",
   path: "/calculator/tdee-macro-calculator",
@@ -23,7 +23,23 @@ const baseMetadata = createMetadata({
   definition: "A TDEE (Total Daily Energy Expenditure) calculator estimates the total number of calories your body burns per day, including your Basal Metabolic Rate, physical activity, and the thermic effect of food, while a macro calculator converts those calories into personalized protein, carbohydrate, and fat targets.",
   schemaOptions: {
     name: "Free TDEE & Macro Calculator — Daily Calories & Macronutrients",
-    alternateName: "Total Daily Energy Expenditure Calculator",
+    alternateName: [
+      "TDEE Calculator",
+      "Macro Calculator",
+      "Macronutrient Calculator",
+      "Total Daily Energy Expenditure Calculator",
+      "Keto Macro Calculator",
+      "IIFYM Calculator",
+      "Flexible Dieting Calculator",
+      "Protein Calculator",
+      "Carb Calculator",
+      "Fat Macro Calculator",
+      "Cutting Macro Calculator",
+      "Bulking Macro Calculator",
+      "Mifflin-St Jeor Macro Tool",
+      "Katch-McArdle Macro Tool",
+      "Athlete Macro Calculator",
+    ],
     applicationCategory: "HealthApplication",
     ratingValue: "4.9",
     ratingCount: "4180",
@@ -691,7 +707,7 @@ export default function TDEEMacroCalculatorPage() {
       }
       toolContent={toolContent}
       expectedMetadata={{
-        title: "TDEE & Macro Calculator — Calculate Daily Calories & Macros Free (2026)",
+        title: "TDEE & Macro Calculator — Daily Calories, Protein, Carbs & Fats",
         description: "Free TDEE & macro calculator with Mifflin-St Jeor, Harris-Benedict & Katch-McArdle equations. Calculate BMR, daily calories, protein, carbs & fats for weight loss, maintenance or muscle gain. Instant results.",
         path: "/calculator/tdee-macro-calculator"
       }}

@@ -83,7 +83,7 @@ export default function LLMTrainingCostPage() {
       "GPU utilization (MFU) is typically 30-50% — meaning you use only 30-50% of theoretical GPU performance. This is the biggest cost multiplier most people miss",
       "Cloud GPU pricing varies 2x between providers: CoreWeave H100 at $2.23/hr vs AWS at $4.15/hr for the same hardware",
       "Training a GPT-4 class model (1.8T MoE, 13T tokens) would cost $50M-$100M+ on 8 H100s — frontier labs use thousands of GPUs",
-      "BF16 (bfloat16) is the standard training precision in 2026 — FP8 training is emerging with 1.8x speedup but requires architecture support"
+      "BF16 (bfloat16) is the standard training precision in — FP8 training is emerging with 1.8x speedup but requires architecture support"
     ],
 
     howToSteps: [
@@ -96,7 +96,7 @@ export default function LLMTrainingCostPage() {
     features: [
       "Chinchilla FLOPs Estimation: Uses the standard 6×P×T formula for compute requirement calculation.",
       "7 GPU Options: From T4 ($0.35/hr) to H200 ($3.29/hr) with real TFLOPS and VRAM specs.",
-      "5 Cloud Providers: AWS, GCP, Azure, Lambda Labs, and CoreWeave with 2026 pricing.",
+      "5 Cloud Providers: AWS, GCP, Azure, Lambda Labs, and CoreWeave with pricing.",
       "Provider Comparison: Side-by-side cost comparison showing cheapest option and savings.",
       "GPU Comparison: See how different GPUs affect training time and cost for your workload.",
       "Reference Model Costs: What Llama 3 8B, Mistral 7B, GPT-3, Llama 3 70B, and GPT-4 would cost with your setup.",
@@ -148,7 +148,7 @@ export default function LLMTrainingCostPage() {
         <section className="bg-card border border-border rounded-lg p-6">
           <h2 className="text-2xl font-bold mb-6 flex items-center gap-2 text-foreground">
             <Server className="h-6 w-6 text-primary" />
-            GPU Comparison for LLM Training (2026)
+            GPU Comparison for LLM Training
           </h2>
           <div className="overflow-x-auto">
             <table className="w-full text-sm text-left">
@@ -205,7 +205,7 @@ export default function LLMTrainingCostPage() {
         <section className="bg-card border border-border rounded-lg p-6">
           <h2 className="text-2xl font-bold mb-6 flex items-center gap-2 text-foreground">
             <Cloud className="h-6 w-6 text-primary" />
-            Cloud Provider Pricing Landscape (2026)
+            Cloud Provider Pricing Landscape
           </h2>
           <div className="space-y-4 text-foreground leading-relaxed">
             <p>
@@ -406,7 +406,7 @@ export default function LLMTrainingCostPage() {
       },
       {
         question: "What is the cost per token for LLM training?",
-        answer: "Cost per token varies by model size and setup. Rough estimates at 2026 H100 prices: Training — $0.000001-$0.00005 per token (depending on model size). For reference: 1B tokens costs $1-$50 to process during training. Inference is much cheaper: $0.0000001-$0.000001 per token. The key insight: training is a one-time cost amortised over all future inference. A $1M training cost spread over 1 trillion inference tokens = $0.000001/token."
+        answer: "Cost per token varies by model size and setup. Rough estimates at H100 prices: Training — $0.000001-$0.00005 per token (depending on model size). For reference: 1B tokens costs $1-$50 to process during training. Inference is much cheaper: $0.0000001-$0.000001 per token. The key insight: training is a one-time cost amortised over all future inference. A $1M training cost spread over 1 trillion inference tokens = $0.000001/token."
       },
       {
         question: "How accurate is this calculator?",

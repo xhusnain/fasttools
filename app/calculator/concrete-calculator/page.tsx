@@ -39,7 +39,7 @@ import {
 } from "lucide-react"
 import { GTable } from "@/ui/gtable"
 
-const TOOL_TITLE = "Concrete Calculator — Estimate Cubic Yards, Bags & Cost Free (2026)"
+const TOOL_TITLE = "Concrete Calculator — Cubic Yards, Bags (40/60/80 lb) & Cost"
 const TOOL_NAME = "Concrete Calculator"
 
 const baseMetadata = createMetadata({
@@ -53,7 +53,23 @@ const baseMetadata = createMetadata({
   toolName: TOOL_NAME,
   schemaOptions: {
     name: "Concrete Estimator & Calculator",
-    alternateName: "Cement Calculator, Concrete Slab Estimator, Cubic Yard Calculator",
+    alternateName: [
+      "Cement Calculator",
+      "Concrete Slab Estimator",
+      "Cubic Yard Calculator",
+      "Concrete Volume Calculator",
+      "Concrete Bag Calculator",
+      "Driveway Concrete Estimator",
+      "Patio Concrete Calculator",
+      "Footing Concrete Calculator",
+      "Stair Concrete Estimator",
+      "Column Concrete Calculator",
+      "Sidewalk Concrete Calculator",
+      "Foundation Concrete Estimator",
+      "Concrete Cost Estimator",
+      "QUIKRETE Bag Calculator",
+      "Ready-Mix Concrete Tool",
+    ],
     applicationCategory: "ConstructionApplication",
     featureList: [
       "Cubic Yard Calculator",

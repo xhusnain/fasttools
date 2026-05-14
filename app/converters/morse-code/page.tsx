@@ -17,7 +17,7 @@ const toolConfig = createToolConfig({
   description:
     "Free online Morse code translator to convert text to Morse code and decode Morse code to text with audio playback. Supports all letters, numbers, and punctuation.",
   metaTitle:
-    "Morse Code Translator — Text to Morse Code Converter With Audio Free (2026)",
+    "Morse Code Translator — Text to Morse Code Converter With Audio Free",
   metaDescription:
     "Free Morse code translator to convert text to dots and dashes and decode Morse code to English instantly. Audio playback at 600Hz, full A-Z alphabet chart, SOS signal reference, and ITU-standard timing — no signup required.",
   path: "/converters/morse-code",

@@ -11,7 +11,7 @@ import { Calculator, Zap, Target, TrendingUp, BookOpen, Users, CheckCircle, Info
 import { GTable } from "@/ui/gtable"
 import Link from "next/link"
 
-const TOOL_TITLE = "Unit Converter — Convert Length, Weight, Temperature & Currency Free (2026)"
+const TOOL_TITLE = "Unit Converter — Length, Weight, Temperature, Currency & More"
 const TOOL_NAME = "Unit Converter"
 
 const baseMetadata = createMetadata({
@@ -25,7 +25,23 @@ const baseMetadata = createMetadata({
   ],
   schemaOptions: {
     name: TOOL_NAME,
-    alternateName: "Conversion Calculator, Unit Converter Online, Measurement Converter",
+    alternateName: [
+      "Unit Converter",
+      "Measurement Converter",
+      "Conversion Calculator",
+      "Universal Converter",
+      "Metric to Imperial Converter",
+      "Imperial to Metric Converter",
+      "Length Converter",
+      "Weight Converter",
+      "Temperature Converter",
+      "Currency Converter",
+      "Volume Converter",
+      "Area Converter",
+      "Speed Converter",
+      "Power Converter",
+      "Cooking Converter",
+    ],
     applicationCategory: "UtilityApplication",
     featureList: [
       "1000+ Unit Conversions",
@@ -525,7 +541,7 @@ export default function ConversionCalculatorPage() {
   return (
     <ToolPageLayout
       header={{
-        title: "Unit Converter — Metric, Imperial & Currency Conversion (2026)",
+        title: "Unit Converter — Metric, Imperial & Currency Conversion",
         description: "Free online unit converter with 1000+ instant conversions across length, weight, temperature, real-time currency exchange rates, volume, area, speed, power, energy, pressure, time, and cooking measurements. Metric-to-Imperial, Imperial-to-Metric, and scientific unit support with NIST-validated 6-decimal precision.",
         titleSize: "medium",
         descriptionSize: "small",
@@ -542,7 +558,7 @@ export default function ConversionCalculatorPage() {
       }
       toolContent={toolContent}
       expectedMetadata={{
-        title: "Unit Converter — Convert Length, Weight, Temperature & Currency Free (2026)",
+        title: "Unit Converter — Convert Length, Weight, Temperature & Currency Free",
         description:
           "Free unit conversion calculator with 1000+ conversions across 12+ categories: length, weight, temperature, currency (real-time rates), volume, area, speed, power, energy, pressure, time & cooking measurements with 6-decimal precision.",
         path: "/calculator/conversion-calculator"

@@ -15,7 +15,7 @@ const InstagramDpViewer = dynamic(
 )
 
 const baseMetadata = createMetadata({
-  title: "Instagram DP Viewer — View & Download Full Size Profile Picture Free (2026)",
+  title: "Instagram DP Viewer — View & Download Full Size Profile Picture Free",
   description:
     "Free Instagram DP viewer and profile picture downloader. View any Insta DP in full size HD by username. InstaDp viewer online — anonymous, no login required. Works for public and private account profile photos.",
   path: "/social-media-tools/instagram-dp",
@@ -224,7 +224,7 @@ export default function InstagramDpPage() {
         <article className="space-y-6">
           <h2 className="text-2xl font-bold text-foreground flex items-center gap-2">
             <Info className="h-6 w-6 text-primary" />
-            Instagram Profile Picture Size Guide (2026)
+            Instagram Profile Picture Size Guide
           </h2>
           <p className="text-base text-muted-foreground leading-relaxed">
             Understanding Instagram&apos;s profile picture sizes explains why a DP viewer is useful. Instagram uses different resolutions at different stages:
@@ -402,7 +402,7 @@ export default function InstagramDpPage() {
       }
       toolContent={toolContent}
       expectedMetadata={{
-        title: "Instagram DP Viewer — View & Download Full Size Profile Picture Free (2026)",
+        title: "Instagram DP Viewer — View & Download Full Size Profile Picture Free",
         description: "Free Instagram DP viewer and profile picture downloader. View any Insta DP in full size HD by username. InstaDp viewer online — anonymous, no login required. Works for public and private account profile photos.",
         path: "/social-media-tools/instagram-dp"
       }}

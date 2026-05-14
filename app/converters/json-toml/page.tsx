@@ -16,7 +16,7 @@ const toolConfig = createToolConfig({
   toolName: "JSON to TOML Converter",
   description:
     "Convert JSON to TOML and TOML to JSON online. Handles nested objects, arrays, inline tables, and all TOML data types for Cargo.toml, pyproject.toml, Hugo, and config file workflows.",
-  metaTitle: "JSON to TOML Converter -- Convert JSON to TOML Online Free (2026)",
+  metaTitle: "JSON to TOML Converter -- Convert JSON to TOML Online Free",
   metaDescription:
     "Free JSON to TOML converter with bidirectional TOML to JSON support. Convert nested objects, arrays, and tables for Cargo.toml, pyproject.toml, Hugo configs. Browser-based, no signup.",
   path: "/converters/json-toml",

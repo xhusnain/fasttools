@@ -11,7 +11,7 @@ import { Clock, Calculator, Target, TrendingUp, Globe, Calendar, Plus, Minus, Za
 import { GTable } from "@/ui/gtable"
 
 const baseMetadata = createMetadata({
-  title: "Time Duration Calculator — Calculate Hours Between Times Free (2026)",
+  title: "Time Duration Calculator — Hours, Work Time, Overtime & Timezones",
   description:
     "Free time duration calculator to find exact hours, minutes & seconds between two times. Includes work hours tracker, overtime calculator, business hours filter, timezone converter, and work days counter for payroll and project management.",
   path: "/calculator/time-duration",
@@ -21,7 +21,23 @@ const baseMetadata = createMetadata({
   ],
   schemaOptions: {
     name: "Time Duration Calculator",
-    alternateName: "Free Online Time Duration Calculator",
+    alternateName: [
+      "Hours Calculator",
+      "Time Between Two Times",
+      "Work Hours Calculator",
+      "Overtime Calculator",
+      "Time Sheet Calculator",
+      "Time Card Calculator",
+      "Payroll Hours Calculator",
+      "Project Time Calculator",
+      "Elapsed Time Calculator",
+      "Time Add / Subtract Tool",
+      "Business Hours Calculator",
+      "Timezone Converter",
+      "Work Days Calculator",
+      "Clock In Clock Out Calculator",
+      "Hours & Minutes Calculator",
+    ],
     applicationCategory: "Time Management Tool",
     featureList: [
       "Time Duration Calculation",
@@ -348,7 +364,7 @@ export default function TimeDurationPage() {
   return (
     <ToolPageLayout
       header={{
-        title: "Time Duration Calculator — Hours Between Two Times (2026)",
+        title: "Time Duration Calculator — Hours Between Two Times",
         description: "Free time duration calculator with 7 calculation modes: elapsed time, time addition/subtraction, business hours filter, timezone conversion, work days counter, and overtime separator. Ideal for payroll processing, project timelines, shift scheduling, and SLA tracking.",
         titleSize: "medium",
         descriptionSize: "small",
@@ -365,7 +381,7 @@ export default function TimeDurationPage() {
       }
       toolContent={toolContent}
       expectedMetadata={{
-        title: "Time Duration Calculator — Calculate Hours Between Times Free (2026)",
+        title: "Time Duration Calculator — Hours, Work Time, Overtime & Timezones",
         description:
           "Free time duration calculator to find exact hours, minutes & seconds between two times. Includes work hours tracker, overtime calculator, business hours filter, timezone converter, and work days counter for payroll and project management.",
         path: "/calculator/time-duration"

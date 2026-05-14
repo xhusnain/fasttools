@@ -13,7 +13,7 @@ const toolConfig = createToolConfig({
   toolName: "YouTube Name Generator",
   description:
     "Generate unique YouTube channel name ideas based on your niche, style, and keywords. Free AI-powered channel name generator with brandable suggestions.",
-  metaTitle: "YouTube Channel Name Generator — Unique Name Ideas Free (2026)",
+  metaTitle: "YouTube Channel Name Generator — Unique Name Ideas Free",
   metaDescription:
     "Generate unique YouTube channel name ideas for free. Enter your niche to get brandable, memorable channel names. Check handle availability instantly. AI-powered name suggestions.",
   path: "/social-media-tools/youtube-channel-name-generator",
@@ -136,7 +136,7 @@ const toolConfig = createToolConfig({
       {
         question: "What makes a good YouTube channel name?",
         answer:
-          "A good YouTube channel name is short (1-3 words, 6-15 characters), pronounceable when spoken aloud, descriptive of your niche, available as an @handle on YouTube + IG + TikTok + X for cross-platform consistency, and free of trademark conflicts (search uspto.gov for US trademarks). Avoid numbers unless they're part of your brand (@2pac yes, @gamer123 no), and avoid year suffixes like @cooking2026 since they age badly."
+          "A good YouTube channel name is short (1-3 words, 6-15 characters), pronounceable when spoken aloud, descriptive of your niche, available as an @handle on YouTube + IG + TikTok + X for cross-platform consistency, and free of trademark conflicts (search uspto.gov for US trademarks). Avoid numbers unless they're part of your brand (@2pac yes, @gamer123 no), and avoid year suffixes like @cookingsince they age badly."
       },
       {
         question: "Should I match my YouTube channel name to my Instagram or TikTok handle?",

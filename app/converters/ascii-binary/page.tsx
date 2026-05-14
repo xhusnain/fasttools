@@ -16,7 +16,7 @@ const toolConfig = createToolConfig({
   toolName: "ASCII Binary Converter",
   description:
     "Convert text to 8-bit ASCII binary code and decode binary back to readable text. Supports all 128 ASCII characters, space-separated octets, and instant bidirectional encoding/decoding.",
-  metaTitle: "ASCII to Binary Converter -- Text to Binary & Binary to Text Free (2026)",
+  metaTitle: "ASCII to Binary Converter -- Text to Binary & Binary to Text Free",
   metaDescription:
     "Free ASCII to binary converter. Convert text to 8-bit binary code and decode binary to text instantly. Supports all 128 ASCII characters, space-separated octets, input validation. No signup.",
   path: "/converters/ascii-binary",

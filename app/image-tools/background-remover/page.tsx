@@ -13,7 +13,7 @@ const toolConfig = createToolConfig({
   toolName: "Background Remover",
   description:
     "Remove background from any image instantly using AI. 100% free, no signup, no watermarks. Transparent PNG output, background replacement with solid colors or custom images. Runs entirely in your browser — images never leave your device.",
-  metaTitle: "Free Background Remover Online - Remove Image Background Instantly (2026)",
+  metaTitle: "Free Background Remover Online - Remove Image Background Instantly",
   metaDescription:
     "Remove background from image for free in seconds. AI-powered background remover with transparent PNG output, color replacement & custom backgrounds. No signup, no watermark. 100% private — runs in your browser.",
   path: "/image-tools/background-remover",

@@ -126,7 +126,7 @@ export default function InfluencerRateCalculatorPage() {
         <section className="bg-card border border-border rounded-lg p-6">
           <h2 className="text-2xl font-bold mb-6 flex items-center gap-2 text-foreground">
             <BarChart3 className="h-6 w-6 text-primary" />
-            Sponsorship Rate Benchmarks by Tier (2026)
+            Sponsorship Rate Benchmarks by Tier
           </h2>
           <div className="overflow-x-auto">
             <table className="w-full text-sm text-left">

@@ -164,7 +164,7 @@ export default function ZakatCalculatorPage() {
                   <tr>
                     <th className="p-3">Standard</th>
                     <th className="p-3">Weight</th>
-                    <th className="p-3">Approx. Value (2026)</th>
+                    <th className="p-3">Approx. Value</th>
                     <th className="p-3">Who Recommends</th>
                   </tr>
                 </thead>
@@ -324,7 +324,7 @@ export default function ZakatCalculatorPage() {
       },
       {
         question: "How much is Zakat in 2026?",
-        answer: "Zakat is always 2.5% (1/40th) of your net zakatable wealth. The amount varies per person based on their assets and debts. The Nisab threshold for 2026 (approximate): Silver standard = ~$673 USD, Gold standard = ~$8,311 USD. If your net zakatable wealth exceeds Nisab, you pay 2.5% of the total net amount, not just the amount above Nisab."
+        answer: "Zakat is always 2.5% (1/40th) of your net zakatable wealth. The amount varies per person based on their assets and debts. The Nisab threshold for (approximate): Silver standard = ~$673 USD, Gold standard = ~$8,311 USD. If your net zakatable wealth exceeds Nisab, you pay 2.5% of the total net amount, not just the amount above Nisab."
       },
       {
         question: "What is Nisab and which standard should I use?",

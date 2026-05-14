@@ -11,11 +11,11 @@ import { Network, Globe, Shield, Info, Database, Zap, Target, CheckCircle, Users
 import { GTable } from "@/ui/gtable"
 import Image from "next/image"
 
-const TOOL_TITLE = "IP Subnet & VPC CIDR Calculator — VLSM, IPv4/IPv6 (Free 2026)"
+const TOOL_TITLE = "IP Subnet & VPC CIDR Calculator — VLSM, IPv4 / IPv6 / AWS / GCP"
 const TOOL_NAME = "IP Subnet Calculator"
 
 const baseMetadata = createMetadata({
-  title: "IP Subnet & VPC CIDR Calculator — IPv4/IPv6 VLSM (Free 2026)",
+  title: "IP Subnet & VPC CIDR Calculator — VLSM, IPv4 / IPv6 / AWS / GCP",
   description: "Free IP subnet and VPC CIDR calculator for IPv4 and IPv6 networks. Plan AWS, GCP, or Azure VPC ranges, compute subnet masks, network/broadcast addresses, usable host counts, wildcard masks, VLSM, supernetting, and binary/hex conversions.",
   path: "/calculator/ip-subnet-calculator",
   breadcrumbs: [
@@ -24,7 +24,23 @@ const baseMetadata = createMetadata({
   ],
   schemaOptions: {
     name: TOOL_NAME,
-    alternateName: "Subnet Calculator, CIDR Calculator, IP Calculator",
+    alternateName: [
+      "Subnet Calculator",
+      "CIDR Calculator",
+      "IP Calculator",
+      "IPv4 Calculator",
+      "IPv6 Calculator",
+      "VPC CIDR Planner",
+      "VLSM Calculator",
+      "Supernetting Tool",
+      "Network Mask Calculator",
+      "Subnet Mask Calculator",
+      "AWS VPC Planner",
+      "GCP VPC Planner",
+      "Azure VNet Planner",
+      "Wildcard Mask Calculator",
+      "Network Address Calculator",
+    ],
     applicationCategory: "UtilityApplication",
     featureList: [
       "IPv4 Subnet Calculation",
@@ -757,7 +773,7 @@ export default function IPSubnetCalculatorPage() {
   return (
     <ToolPageLayout
       header={{
-        title: "IP Subnet Calculator — CIDR, VLSM & Network Analysis (2026)",
+        title: "IP Subnet Calculator — CIDR, VLSM & Network Analysis",
         description: "Free IPv4/IPv6 subnet calculator with CIDR notation, subnet mask computation, network/broadcast address identification, usable host range analysis, wildcard mask generation, VLSM variable-length subnetting, supernetting route aggregation, and binary/hexadecimal IP conversions for network engineers and IT professionals.",
         titleSize: "medium",
         descriptionSize: "small",
@@ -774,7 +790,7 @@ export default function IPSubnetCalculatorPage() {
       }
       toolContent={toolContent}
       expectedMetadata={{
-        title: "IP Subnet Calculator — Calculate CIDR, VLSM & Network Masks Free (2026)",
+        title: "IP Subnet Calculator — Calculate CIDR, VLSM & Network Masks Free",
         description: "Free IP subnet calculator for IPv4 and IPv6 networks. Compute CIDR notation, subnet masks, network/broadcast addresses, usable host ranges, wildcard masks, VLSM subnetting, supernetting, and binary/hex conversions instantly.",
         path: "/calculator/ip-subnet-calculator"
       }}

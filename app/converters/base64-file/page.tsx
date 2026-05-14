@@ -16,7 +16,7 @@ const toolConfig = createToolConfig({
   toolName: "Base64 File Converter",
   description:
     "Encode any file to Base64 string and decode Base64 data back to downloadable files. Supports images, PDFs, documents, audio, video, and binary files with data URI generation for HTML/CSS embedding.",
-  metaTitle: "Base64 File Encoder & Decoder — Convert Files to Base64 Online Free (2026)",
+  metaTitle: "Base64 File Encoder & Decoder — Convert Files to Base64 Online Free",
   metaDescription:
     "Free Base64 file encoder and decoder. Convert images, PDFs, documents to Base64 strings. Decode Base64 to downloadable files with image preview. Generate data URIs for HTML/CSS embedding. No upload to servers.",
   path: "/converters/base64-file",

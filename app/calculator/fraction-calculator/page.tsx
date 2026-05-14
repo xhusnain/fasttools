@@ -11,7 +11,7 @@ import { Calculator, Plus, Minus, X, Divide, Brain, Square, BookOpen, Target, Sh
 import { GTable } from "@/ui/gtable"
 
 const baseMetadata = createMetadata({
-  title: "Fraction Calculator — Add, Subtract, Multiply & Divide Fractions Free (2026)",
+  title: "Fraction Calculator — Add, Subtract, Multiply, Divide & Simplify",
   description:
     "Free fraction calculator to add, subtract, multiply, and divide fractions with step-by-step solutions. Simplify fractions, convert between fractions and decimals, and solve mixed number operations instantly.",
   path: "/calculator/fraction-calculator",
@@ -21,7 +21,23 @@ const baseMetadata = createMetadata({
   ],
   schemaOptions: {
     name: "Fraction Calculator",
-    alternateName: "Fraction Operations Calculator",
+    alternateName: [
+      "Fraction Operations Calculator",
+      "Add Fractions Calculator",
+      "Subtract Fractions Calculator",
+      "Multiply Fractions Calculator",
+      "Divide Fractions Calculator",
+      "Mixed Number Calculator",
+      "Fraction Simplifier",
+      "Improper Fraction Converter",
+      "Decimal to Fraction Tool",
+      "Fraction to Decimal Tool",
+      "LCD Calculator",
+      "GCD Calculator",
+      "Recipe Fraction Calculator",
+      "Math Homework Fraction Helper",
+      "Fraction Word Problem Solver",
+    ],
     applicationCategory: "MathApplication",
     featureList: [
       "Fraction addition and subtraction",
@@ -506,7 +522,7 @@ export default function FractionCalculatorPage() {
   return (
     <ToolPageLayout
       header={{
-        title: "Fraction Calculator — Add, Subtract, Multiply & Divide (2026)",
+        title: "Fraction Calculator — Add, Subtract, Multiply & Divide",
         description: "Free fraction calculator with step-by-step solutions for addition, subtraction, multiplication, and division. Handles proper fractions, improper fractions, and mixed numbers with automatic simplification, GCD/LCM computation, and fraction-to-decimal conversion for students, teachers, and professionals.",
         titleSize: "medium",
         descriptionSize: "small",
@@ -523,7 +539,7 @@ export default function FractionCalculatorPage() {
       }
       toolContent={toolContent}
       expectedMetadata={{
-        title: "Fraction Calculator — Add, Subtract, Multiply & Divide Fractions Free (2026)",
+        title: "Fraction Calculator — Add, Subtract, Multiply, Divide & Simplify",
         description:
           "Free fraction calculator to add, subtract, multiply, and divide fractions with step-by-step solutions. Simplify fractions, convert between fractions and decimals, and solve mixed number operations instantly.",
         path: "/calculator/fraction-calculator"

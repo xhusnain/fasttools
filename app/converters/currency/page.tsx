@@ -25,7 +25,7 @@ const toolConfig = createToolConfig({
   toolName: "Currency Converter",
   description:
     "Convert currencies with live exchange-rate data for travel, pricing, and payment planning.",
-  metaTitle: "Currency Converter — Convert Money With Live Exchange Rates Free (2026)",
+  metaTitle: "Currency Converter — Convert Money With Live Exchange Rates Free",
   metaDescription:
     "Free currency converter with live exchange rates for 150+ world currencies including USD, EUR, GBP, JPY, and crypto. Convert money instantly for travel budgets, international invoices, and cross-border payments — no signup required.",
   path: "/converters/currency",

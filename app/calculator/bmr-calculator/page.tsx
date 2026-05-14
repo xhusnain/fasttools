@@ -11,7 +11,7 @@ import { GTable } from "@/ui/gtable"
 import { Brain } from "lucide-react"
 
 const baseMetadata = createMetadata({
-  title: "BMR Calculator — Calculate Basal Metabolic Rate & TDEE Free (2026)",
+  title: "BMR Calculator — Basal Metabolic Rate, TDEE & Calorie Targets",
   description:
     "Free BMR calculator using Mifflin-St Jeor, Harris-Benedict & Katch-McArdle equations. Get your basal metabolic rate, TDEE for 5 activity levels, and calorie targets for weight loss, maintenance, or muscle gain. Private & instant.",
   path: "/calculator/bmr-calculator",
@@ -21,7 +21,23 @@ const baseMetadata = createMetadata({
   ],
   schemaOptions: {
     name: "BMR Calculator | Basal Metabolic Rate Calculator",
-    alternateName: "Professional Metabolic Analysis Tool",
+    alternateName: [
+      "Basal Metabolic Rate Calculator",
+      "Resting Metabolic Rate Calculator",
+      "TDEE Calculator",
+      "Calorie Burn Calculator",
+      "Mifflin-St Jeor Calculator",
+      "Harris-Benedict Calculator",
+      "Katch-McArdle Calculator",
+      "Daily Calorie Needs",
+      "Maintenance Calorie Calculator",
+      "Weight Loss Calorie Calculator",
+      "Activity Multiplier Calculator",
+      "RMR Estimator",
+      "Energy Expenditure Calculator",
+      "Macro Calorie Planner",
+      "Fitness Calorie Tool",
+    ],
     applicationCategory: "HealthApplication",
     featureList: [
       "BMR Calculation with Multiple Equations",
@@ -37,7 +53,7 @@ const baseMetadata = createMetadata({
 
 export const metadata: Metadata = {
   ...baseMetadata,
-  title: "BMR Calculator — Calculate Basal Metabolic Rate & TDEE Free (2026)",
+  title: "BMR Calculator — Basal Metabolic Rate, TDEE & Calorie Targets",
   applicationName: "FastTools",
   category: "Health & Fitness",
 }
@@ -222,7 +238,7 @@ export default function BMRCalculatorPage() {
       }
       toolContent={toolContent}
       expectedMetadata={{
-        title: "BMR Calculator — Calculate Basal Metabolic Rate & TDEE Free (2026)",
+        title: "BMR Calculator — Basal Metabolic Rate, TDEE & Calorie Targets",
         description:
           "Free BMR calculator using Mifflin-St Jeor, Harris-Benedict & Katch-McArdle equations. Get your basal metabolic rate, TDEE for 5 activity levels, and calorie targets for weight loss, maintenance, or muscle gain. Private & instant.",
         path: "/calculator/bmr-calculator"

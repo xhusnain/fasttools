@@ -29,26 +29,30 @@
 | 26 | Wheel Spinner | `/fun-tools/wheel-spinner` | [ ] |
 | 27 | Meme Generator | `/fun-tools/meme-generator` | [ ] |
 | 28 | Pomodoro Timer | `/fun-tools/pomodoro-timer` | [ ] |
-| 29 | Age Calculator | `/calculator/age-calculator` | [ ] |
-| 30 | BMI Calculator | `/calculator/bmi-calculator` | [ ] |
-| 31 | BMR Calculator | `/calculator/bmr-calculator` | [ ] |
-| 32 | Calorie Calculator | `/calculator/calorie-calculator` | [ ] |
-| 33 | TDEE Macro Calculator | `/calculator/tdee-macro-calculator` | [ ] |
-| 34 | Percentage Calculator | `/calculator/percentage-calculator` | [ ] |
-| 35 | GPA Calculator | `/calculator/gpa-calculator` | [ ] |
-| 36 | Scientific Calculator | `/calculator/scientific-calculator` | [ ] |
-| 37 | Date Difference Calculator | `/calculator/date-difference` | [ ] |
-| 38 | Time Duration Calculator | `/calculator/time-duration` | [ ] |
-| 39 | Love Calculator | `/calculator/love-calculator` | [ ] |
-| 40 | Ovulation Calculator | `/calculator/ovulation-calculator` | [ ] |
-| 41 | Body Fat Calculator | `/calculator/body-fat-calculator` | [ ] |
-| 42 | Biological Age Calculator | `/calculator/biological-age-calculator` | [ ] |
-| 43 | Cortisol Peak Calculator | `/calculator/cortisol-peak-calculator` | [ ] |
-| 44 | Fraction Calculator | `/calculator/fraction-calculator` | [ ] |
-| 45 | Triangle Calculator | `/calculator/triangle-calculator` | [ ] |
-| 46 | Standard Deviation Calculator | `/calculator/standard-deviation-calculator` | [ ] |
-| 47 | Conversion Calculator | `/calculator/conversion-calculator` | [ ] |
-| 48 | Pace Calculator | `/calculator/pace-calculator` | [ ] |
+| 29 | Age Calculator | `/calculator/age-calculator` | [x] |
+| 30 | BMI Calculator | `/calculator/bmi-calculator` | [x] |
+| 31 | BMR Calculator | `/calculator/bmr-calculator` | [x] |
+| 32 | Calorie Calculator | `/calculator/calorie-calculator` | [x] |
+| 33 | TDEE Macro Calculator | `/calculator/tdee-macro-calculator` | [x] |
+| 34 | Percentage Calculator | `/calculator/percentage-calculator` | [x] |
+| 35 | GPA Calculator | `/calculator/gpa-calculator` | [~] |
+| 36 | Scientific Calculator | `/calculator/scientific-calculator` | [x] |
+| 37 | Date Difference Calculator | `/calculator/date-difference` | [~] |
+| 38 | Time Duration Calculator | `/calculator/time-duration` | [x] |
+| 39 | Love Calculator | `/calculator/love-calculator` | [~] |
+| 40 | Ovulation Calculator | `/calculator/ovulation-calculator` | [x] |
+| 41 | Body Fat Calculator | `/calculator/body-fat-calculator` | [x] |
+| 42 | Biological Age Calculator | `/calculator/biological-age-calculator` | [~] |
+| 43 | Cortisol Peak Calculator | `/calculator/cortisol-peak-calculator` | [~] |
+| 44 | Fraction Calculator | `/calculator/fraction-calculator` | [x] |
+| 45 | Triangle Calculator | `/calculator/triangle-calculator` | [x] |
+| 46 | Standard Deviation Calculator | `/calculator/standard-deviation-calculator` | [x] |
+| 47 | Conversion Calculator | `/calculator/conversion-calculator` | [x] |
+| 48 | Pace Calculator | `/calculator/pace-calculator` | [x] |
+| 48a | Pregnancy Calculator | `/calculator/pregnancy-calculator` | [x] |
+| 48b | Pregnancy Conception Calculator | `/calculator/pregnancy-conception-calculator` | [x] |
+| 48c | Concrete Calculator | `/calculator/concrete-calculator` | [x] |
+| 48d | IP Subnet Calculator | `/calculator/ip-subnet-calculator` | [x] |
 
 ## Group C — Converters
 

@@ -11,7 +11,7 @@ import { GTable } from "@/ui/gtable"
 import { Brain, Calculator, Target, BookOpen, Shield, Users, TrendingUp, Info, AlertTriangle, CheckCircle, Zap, Percent, DollarSign } from "lucide-react"
 
 const baseMetadata = createMetadata({
-  title: "Percentage Calculator — Dividing by Percentages Calculator & More Free (2026)",
+  title: "Percentage Calculator — Increase, Decrease, Discount, Markup & More",
   description:
     "Free percentage calculator with dividing by percentages calculator, percentage increase, decrease, difference, discounts, tips, grades, profit margins & markup. Step-by-step formulas, reverse percentage, fraction-to-percent conversion. Instant, accurate, no signup.",
   path: "/calculator/percentage-calculator",
@@ -21,7 +21,23 @@ const baseMetadata = createMetadata({
   ],
   schemaOptions: {
     name: "FastTools Percentage Calculator",
-    alternateName: "Free Online Percentage Calculator",
+    alternateName: [
+      "% Calculator",
+      "Percent Calculator",
+      "Percentage Increase Calculator",
+      "Percentage Decrease Calculator",
+      "Percent Change Calculator",
+      "Discount Calculator",
+      "Markup Calculator",
+      "Sale Price Calculator",
+      "Tip Calculator",
+      "Grade Percentage Calculator",
+      "Percentage Difference Calculator",
+      "Reverse Percentage Calculator",
+      "Fraction to Percent Converter",
+      "Percent of a Number",
+      "Profit Margin Percent",
+    ],
     applicationCategory: "UtilitiesApplication",
     ratingValue: "4.8",
     ratingCount: "1250",
@@ -581,7 +597,7 @@ export default function PercentageCalculatorPage() {
       }
       toolContent={toolContent}
       expectedMetadata={{
-        title: "Percentage Calculator — Calculate Percentage Increase, Decrease & Difference Free (2026)",
+        title: "Percentage Calculator — Calculate Percentage Increase, Decrease & Difference Free",
         description: "Free percentage calculator for increase, decrease, difference, discounts, tips, grades, profit margins & markup. Step-by-step formulas, reverse percentage, fraction-to-percent conversion. Instant, accurate, no signup.",
         path: "/calculator/percentage-calculator"
       }}

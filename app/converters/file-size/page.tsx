@@ -16,7 +16,7 @@ const toolConfig = createToolConfig({
   toolName: "File Size Converter",
   description:
     "Convert between bytes, KB, MB, GB, TB, and PB in both decimal (SI) and binary (IEC) standards. Analyze actual file sizes, estimate transfer times, and compare storage unit differences.",
-  metaTitle: "File Size Converter -- Convert Bytes KB MB GB TB PB Free (2026)",
+  metaTitle: "File Size Converter -- Convert Bytes KB MB GB TB PB Free",
   metaDescription:
     "Free file size converter for bytes, KB, MB, GB, TB, PB in decimal (SI) and binary (IEC) units. Drag-and-drop file analyzer, transfer time estimator, MB vs MiB comparison. No signup.",
   path: "/converters/file-size",

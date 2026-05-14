@@ -13,7 +13,7 @@ const toolConfig = createToolConfig({
   toolName: "Length Converter",
   description:
     "Convert between metric and imperial length units instantly. Supports millimeters, centimeters, meters, kilometers, inches, feet, yards, miles, nautical miles, and more with adjustable decimal precision.",
-  metaTitle: "Length Converter — Convert Meters, Feet, Inches, Km, Miles Free (2026)",
+  metaTitle: "Length Converter — Convert Meters, Feet, Inches, Km, Miles Free",
   metaDescription:
     "Free length and distance unit converter. Convert meters to feet, inches to cm, km to miles, yards to meters, and more. Supports metric, imperial, and nautical units with adjustable precision. Instant results.",
   path: "/converters/length",

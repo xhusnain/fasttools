@@ -13,7 +13,7 @@ const toolConfig = createToolConfig({
   toolName: "YouTube Thumbnail Downloader",
   description:
     "Download YouTube video thumbnails in all resolutions from 120×90 to 1280×720 (maxresdefault). Free YouTube thumbnail grabber — extract and save thumbnail images instantly.",
-  metaTitle: "YouTube Thumbnail Downloader — Download Thumbnails in HD 1280×720 Free (2026)",
+  metaTitle: "YouTube Thumbnail Downloader — Download Thumbnails in HD 1280×720 Free",
   metaDescription:
     "Download YouTube thumbnails in all sizes including HD 1280×720 maxresdefault. Free YouTube thumbnail grabber — paste any video URL to extract and save thumbnail images.",
   path: "/social-media-tools/youtube-thumbnail",

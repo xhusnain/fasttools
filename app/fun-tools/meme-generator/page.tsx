@@ -13,7 +13,7 @@ const toolConfig = createToolConfig({
   toolName: "Meme Generator",
   description:
     "Free online meme generator with 100+ trending templates, custom text overlay, drag-and-drop positioning, multiple fonts, and instant PNG download. No watermark, no signup, no ads.",
-  metaTitle: "Free Meme Generator Online - Create Memes Instantly (2026)",
+  metaTitle: "Free Meme Generator Online - Create Memes Instantly",
   metaDescription:
     "Create memes free online with 100+ trending templates. Custom text, fonts, colors & outlines. Drag-and-drop positioning. Download PNG with no watermark. No signup needed.",
   path: "/fun-tools/meme-generator",

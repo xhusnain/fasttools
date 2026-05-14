@@ -246,7 +246,7 @@ export default function NetWorthCalculatorPage() {
               </tbody>
             </GTable>
           </div>
-          <p className="text-sm text-muted-foreground">Sources: Federal Reserve Survey of Consumer Finances (2022), Empower Average Net Worth by Age (2026)</p>
+          <p className="text-sm text-muted-foreground">Sources: Federal Reserve Survey of Consumer Finances (2022), Empower Average Net Worth by Age</p>
         </article>
 
         <article className="space-y-6">

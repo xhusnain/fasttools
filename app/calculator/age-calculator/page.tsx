@@ -15,7 +15,7 @@ import {
 } from "lucide-react"
 
 const baseMetadata = createMetadata({
-  title: "Age Calculator — Calculate Your Exact Age in Years, Months & Days Free (2026)",
+  title: "Age Calculator — Exact Age in Years, Months, Days, Hours & Seconds",
   description:
     "Free online age calculator to find your exact age in years, months, weeks, days, hours, minutes & seconds. Includes zodiac signs, birthday countdown, leap year handling & ISO 8601 format for passports and legal documents. 100% private.",
   path: "/calculator/age-calculator",
@@ -25,7 +25,23 @@ const baseMetadata = createMetadata({
   ],
   schemaOptions: {
     name: "Exact Age Calculator - Seconds, Minutes & Days",
-    alternateName: "Precise Age Calculator",
+    alternateName: [
+      "Date of Birth Calculator",
+      "How Old Am I Calculator",
+      "Birthday Age Calculator",
+      "Precise Age Calculator",
+      "Age in Days Calculator",
+      "Age in Hours Calculator",
+      "Age Difference Calculator",
+      "Zodiac Sign Calculator",
+      "Chinese Zodiac Calculator",
+      "Birthday Countdown Tool",
+      "Passport Age Calculator",
+      "Visa Age Calculator",
+      "Retirement Age Checker",
+      "Birthday Weekday Finder",
+      "Lifetime Stats Calculator",
+    ],
     applicationCategory: "UtilityApplication",
     featureList: [
       "Precise Calculations: Accurate to the second",
@@ -41,7 +57,7 @@ const baseMetadata = createMetadata({
 
 export const metadata: Metadata = {
   ...baseMetadata,
-  title: "Age Calculator — Calculate Your Exact Age in Years, Months & Days Free (2026)",
+  title: "Age Calculator — Exact Age in Years, Months, Days, Hours & Seconds",
   description: "Free online age calculator to find your exact age in years, months, weeks, days, hours, minutes & seconds. Includes zodiac signs, birthday countdown, leap year handling & ISO 8601 format for passports and legal documents. 100% private.",
   applicationName: "FastTools",
   category: "Date & Time",
@@ -540,7 +556,7 @@ export default function AgeCalculatorPage() {
       }
       toolContent={toolContent}
       expectedMetadata={{
-        title: "Age Calculator — Calculate Your Exact Age in Years, Months & Days Free (2026)",
+        title: "Age Calculator — Exact Age in Years, Months, Days, Hours & Seconds",
         description: "Free online age calculator to find your exact age in years, months, weeks, days, hours, minutes & seconds. Includes zodiac signs, birthday countdown, leap year handling & ISO 8601 format for passports and legal documents. 100% private.",
         path: "/calculator/age-calculator"
       }}

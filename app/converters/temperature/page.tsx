@@ -17,7 +17,7 @@ const toolConfig = createToolConfig({
   toolName: "Temperature Converter",
   description:
     "Convert temperatures between Celsius and Fahrenheit instantly for cooking, weather, and daily use.",
-  metaTitle: "Temperature Converter — Celsius to Fahrenheit Calculator Free (2026)",
+  metaTitle: "Temperature Converter — Celsius to Fahrenheit Calculator Free",
   metaDescription:
     "Free temperature converter for Celsius to Fahrenheit and Fahrenheit to Celsius. Instant C to F and F to C conversion with formulas, reference table for cooking, weather, body temp, and science — no signup required.",
   path: "/converters/temperature",

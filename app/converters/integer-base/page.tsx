@@ -18,7 +18,7 @@ const toolConfig = createToolConfig({
   toolName: "Integer Base Converter",
   description:
     "Convert integers between binary, decimal, hexadecimal, and any base 2-64. Free online calculator with steps, prefix detection, and instant results.",
-  metaTitle: "Integer Base Converter -- Binary Decimal Hex Octal Base 2-64 Free (2026)",
+  metaTitle: "Integer Base Converter -- Binary Decimal Hex Octal Base 2-64 Free",
   metaDescription:
     "Free integer base converter for binary, decimal, hexadecimal, octal, and any base 2-64. Auto-detects 0x/0b/0o prefixes, shows step-by-step conversion, supports negative numbers and BigInt precision. No signup.",
   path: "/converters/integer-base",
