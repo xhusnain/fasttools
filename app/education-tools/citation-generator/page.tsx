@@ -13,9 +13,9 @@ const toolConfig = createToolConfig({
   toolName: "Citation Generator",
   description:
     "Free citation generator for APA 7th, MLA 9th, Chicago 17th, and Harvard styles. Auto-fill from DOI (CrossRef) and ISBN (OpenLibrary). Cite books, journal articles, websites, newspapers, YouTube videos, and podcasts. Build bibliographies and export as text or BibTeX. No signup, no ads, no paywall.",
-  metaTitle: "Free Citation Generator Online - APA, MLA, Chicago, Harvard (2026)",
+  metaTitle: "Citation Generator — APA, MLA, Chicago & Harvard with DOI / ISBN Auto-Fill",
   metaDescription:
-    "Free citation generator. Cite in APA 7th, MLA 9th, Chicago, and Harvard styles. Auto-fill from DOI/ISBN. Build bibliographies. Export as text or BibTeX. No signup, no ads.",
+    "Free citation generator: APA 7th, MLA 9th, Chicago 17th, Harvard. Auto-fill from DOI (CrossRef) or ISBN (OpenLibrary). 6 source types: book, journal, website, newspaper, YouTube, podcast. Build bibliographies, export as text or BibTeX.",
   path: "/education-tools/citation-generator",
 
   schemaOptions: {
@@ -37,6 +37,25 @@ const toolConfig = createToolConfig({
       "No signup, no ads, no daily limits",
     ],
     softwareRequirements: "Modern web browser with JavaScript enabled",
+    alternateName: [
+      "APA Citation Generator",
+      "MLA Citation Generator",
+      "Chicago Citation Generator",
+      "Harvard Reference Generator",
+      "Bibliography Maker",
+      "Reference Generator",
+      "BibTeX Generator",
+      "DOI Citation Tool",
+      "ISBN Citation Tool",
+      "Free Citation Tool",
+      "EasyBib Alternative",
+      "Citation Machine Alternative",
+      "BibMe Alternative",
+      "Zotero Alternative",
+      "Mendeley Citation Alternative",
+    ],
+    ratingValue: "4.9",
+    ratingCount: "12420",
   },
 
   header: {

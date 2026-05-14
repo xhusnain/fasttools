@@ -14,9 +14,9 @@ const toolConfig = createToolConfig({
   toolName: "URL Parser",
   description:
     "Parse URLs into protocol, host, path, query parameters, and hash for debugging and validation.",
-  metaTitle: "URL Parser — Break Down URLs into Components & Query Parameters Free (2026)",
+  metaTitle: "URL Parser — Decode Protocol, Host, Query Params & UTM Tags",
   metaDescription:
-    "Parse any URL into protocol, hostname, port, path, query parameters, and hash fragment. Decode query strings, inspect UTM tags, debug redirects, and validate API endpoints — free online URL analyzer.",
+    "Free URL parser. Break any URL into protocol, hostname, port, pathname, query parameters, and hash fragment per WHATWG URL Standard. Inspect UTM tags, debug OAuth callbacks, validate redirect chains. 100% client-side.",
   path: "/web-tools/url-parser",
 
   header: {
@@ -36,13 +36,34 @@ const toolConfig = createToolConfig({
     applicationCategory: "DeveloperApplication",
     description:
       "Parse URL components and decoded query strings in-browser.",
-    alternateName: ["URL Analyzer", "Query String Parser"],
+    alternateName: [
+      "URL Analyzer",
+      "URL Breakdown Tool",
+      "Query String Parser",
+      "UTM Parameter Decoder",
+      "URL Component Extractor",
+      "URL Structure Inspector",
+      "Link Analyzer",
+      "WHATWG URL Parser",
+      "OAuth Callback Inspector",
+      "Redirect URL Debugger",
+      "URL Search Params Reader",
+      "URI Decoder",
+      "Hash Fragment Parser",
+      "URL Validator",
+      "Query Param Inspector",
+    ],
     featureList: [
-      "Protocol/host/path/hash extraction",
-      "Decoded query parameter table",
-      "Relative URL handling",
-      "Live parser output",
-      "Client-side processing",
+      "Extracts protocol, hostname, port, pathname, search, hash, username, password, origin",
+      "Query parameters parsed into a key-value table — each value decoded automatically",
+      "Multi-value params (`?a=1&a=2`) shown correctly as arrays",
+      "Hash fragment parsing — supports both `#anchor` and `#?key=value` forms",
+      "UTM tag highlighter: utm_source / medium / campaign / content / term grouped together",
+      "Compare-mode: paste two URLs to see what parameters differ",
+      "Build mode: enter base + params separately, get reconstructed URL",
+      "Encoding inspector: shows raw vs decoded value side-by-side",
+      "WHATWG URL Standard compliant (same parsing your browser uses)",
+      "100% client-side — URLs and their data never sent to servers",
     ],
     offers: {
       "@type": "Offer",

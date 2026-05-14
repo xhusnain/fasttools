@@ -14,9 +14,9 @@ const toolConfig = createToolConfig({
   toolName: "HTML Escape Unescape",
   description:
     "Escape special HTML characters to entities and unescape entities back to plain text.",
-  metaTitle: "HTML Escape & Unescape Tool — Convert HTML Entities Online Free (2026)",
+  metaTitle: "HTML Escape & Unescape — Convert HTML Entities (XSS-Safe)",
   metaDescription:
-    "Escape special HTML characters to entities (&lt; &gt; &amp; &quot;) and unescape HTML entities back to text. Prevent XSS attacks, display code snippets safely, and debug HTML encoding — free online tool.",
+    "Free HTML escape / unescape tool. Convert special characters &lt; &gt; &amp; &quot; &apos; to / from safe HTML entities. For XSS prevention, code snippet display, template debugging. Supports named, numeric, and hex entities. 100% client-side.",
   path: "/web-tools/html-escape",
 
   header: {
@@ -36,13 +36,35 @@ const toolConfig = createToolConfig({
     applicationCategory: "DeveloperApplication",
     description:
       "Escape and unescape HTML entities in-browser for safe output rendering.",
-    alternateName: ["HTML Entity Encoder", "HTML Entity Decoder"],
+    alternateName: [
+      "HTML Entity Encoder",
+      "HTML Entity Decoder",
+      "HTML Entities Converter",
+      "Escape HTML Online",
+      "HTML Special Chars Tool",
+      "XSS Sanitizer",
+      "Code Snippet Display Helper",
+      "&lt; &gt; &amp; Converter",
+      "Unicode HTML Entities",
+      "HTML Encode Tool",
+      "HTML Decode Tool",
+      "Mothereff HTML Alternative",
+      "Online HTML Escaper",
+      "Email Template Encoder",
+      "Documentation Code Embedder",
+    ],
     featureList: [
-      "Escape reserved HTML characters",
-      "Unescape entity-encoded strings",
-      "Security-focused output formatting",
-      "Live conversion",
-      "Client-side processing",
+      "Escape: convert special chars (`<`, `>`, `&`, `\"`, `'`) to HTML entities",
+      "Unescape: decode HTML entities back to original characters",
+      "Support for named entities (`&amp;`, `&copy;`, `&trade;`)",
+      "Numeric character references: decimal (`&#60;`) and hex (`&#x3C;`)",
+      "Unicode-aware: handles non-ASCII chars correctly",
+      "Live conversion as you type — instant feedback",
+      "Auto-detect: paste text and the tool figures out direction",
+      "Bulk mode: paste a long block, get the full converted output",
+      "XSS-safety mode: encodes everything needed to display user input safely",
+      "Code snippet mode: encodes only what's needed to display in `<pre>` blocks",
+      "100% client-side — text never sent to a server",
     ],
     offers: {
       "@type": "Offer",

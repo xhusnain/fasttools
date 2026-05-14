@@ -14,9 +14,9 @@ const toolConfig = createToolConfig({
   toolName: "URL Encoder Decoder",
   description:
     "Encode text with percent-encoding for URLs, or decode URL-encoded strings back to readable text.",
-  metaTitle: "URL Encoder Decoder — Percent-Encode & Decode URLs Online Free (2026)",
+  metaTitle: "URL Encoder & Decoder — Percent-Encode (RFC 3986) Online",
   metaDescription:
-    "Encode special characters to percent-encoding (%20, %26, %3D) and decode URL-encoded strings back to readable text. Supports encodeURIComponent, UTF-8, query strings, and API parameters — free online tool.",
+    "Free URL encoder / decoder. Convert special chars to percent-encoded %XX format (RFC 3986). Encode query strings, UTF-8 text, redirect URLs, UTM links. Decode %20 %26 %3D back to text. Matches encodeURIComponent. 100% client-side.",
   path: "/web-tools/url-encoder",
 
   header: {
@@ -39,13 +39,34 @@ const toolConfig = createToolConfig({
     applicationCategory: "DeveloperApplication",
     description:
       "Encode and decode URL strings with percent-encoding in the browser.",
-    alternateName: ["URL Encoder", "URL Decoder", "Percent Encoder"],
+    alternateName: [
+      "URL Encoder",
+      "URL Decoder",
+      "Percent Encoding Tool",
+      "URI Component Encoder",
+      "Query String Encoder",
+      "encodeURIComponent Tool",
+      "decodeURIComponent Tool",
+      "UTM Builder Helper",
+      "Redirect URL Encoder",
+      "API Parameter Encoder",
+      "RFC 3986 Encoder",
+      "UTF-8 URL Encoder",
+      "Unicode URL Tool",
+      "URL Escape Tool",
+      "URL Sanitizer",
+    ],
     featureList: [
-      "Encode URL components",
-      "Decode URL-encoded values",
-      "Live input/output conversion",
-      "Copy encoded or decoded output",
-      "Client-side processing",
+      "Bi-directional: encode plain text → percent-encoded, or decode %XX → plain text",
+      "RFC 3986 compliant percent-encoding",
+      "UTF-8 multi-byte character support (emoji, Chinese, Arabic, accented chars)",
+      "Live conversion as you type — instant feedback",
+      "Two encoding modes: encodeURI (preserves /, ?, #) and encodeURIComponent (encodes everything)",
+      "Iframe / batch mode for encoding multiple URLs at once",
+      "Auto-detect: paste a URL and the tool figures out whether to encode or decode",
+      "Copy result with one click",
+      "Common substitutions reference: %20 (space), %2F (/), %3F (?), %26 (&), %3D (=), %23 (#)",
+      "100% client-side — no data sent to servers",
     ],
     offers: {
       "@type": "Offer",

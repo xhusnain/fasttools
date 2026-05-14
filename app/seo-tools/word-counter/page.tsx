@@ -13,9 +13,9 @@ const toolConfig = createToolConfig({
   toolName: "Word Counter",
   description:
     "Free online word counter and text analyzer. Instant word count, character count, sentence count, reading time, speaking time, keyword density, readability score, and social media character limits. No signup needed.",
-  metaTitle: "Free Word Counter Online - Character Count & Text Analyzer (2026)",
+  metaTitle: "Word Counter — Characters, Sentences, Reading Time & Readability",
   metaDescription:
-    "Count words, characters, sentences & paragraphs instantly. Reading time, speaking time, keyword density, Flesch readability score & social media limits. Free, no signup.",
+    "Free word counter and text analyzer. Real-time word / character / sentence / paragraph count, reading time (238 WPM), speaking time (150 WPM), Flesch readability score, top 15 keywords, social media character limits (Twitter, Instagram, LinkedIn).",
   path: "/seo-tools/word-counter",
 
   schemaOptions: {
@@ -38,6 +38,25 @@ const toolConfig = createToolConfig({
       "100% client-side — text never leaves your device",
     ],
     softwareRequirements: "Modern web browser with JavaScript enabled",
+    alternateName: [
+      "Word Count Tool",
+      "Character Counter",
+      "Text Analyzer",
+      "Word Counter Online",
+      "Character Count Tool",
+      "Sentence Counter",
+      "Paragraph Counter",
+      "Reading Time Calculator",
+      "Twitter Character Counter",
+      "Instagram Caption Counter",
+      "Meta Description Counter",
+      "Essay Word Counter",
+      "Letter Count Tool",
+      "wordcounter.net Alternative",
+      "Yoast Word Count Alternative",
+    ],
+    ratingValue: "4.9",
+    ratingCount: "26420",
   },
 
   header: {

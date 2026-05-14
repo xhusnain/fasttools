@@ -196,20 +196,21 @@
 
 | # | Tool | Path | Status |
 |---|---|---|---|
-| 158 | Word Counter | `/seo-tools/word-counter` | [ ] |
-| 159 | Keyword Density | `/seo-tools/keyword-density` | [ ] |
-| 160 | Schema Markup Generator | `/seo-tools/schema-markup-generator` | [ ] |
-| 161 | Lorem Ipsum | `/seo-tools/lorem-ipsum` | [ ] |
-| 162 | Blog Titles | `/seo-tools/blog-titles` | [ ] |
-| 163 | Text Similarity Checker | `/seo-tools/text-similarity-checker` | [ ] |
-| 164 | URL Encoder | `/web-tools/url-encoder` | [ ] |
-| 165 | URL Parser | `/web-tools/url-parser` | [ ] |
-| 166 | HTML Escape | `/web-tools/html-escape` | [ ] |
-| 167 | Device Info | `/web-tools/device-info` | [ ] |
-| 168 | Auth Generator | `/web-tools/auth-generator` | [ ] |
-| 169 | Outlook SafeLink Decoder | `/web-tools/outlook-safelink-decoder` | [ ] |
-| 170 | DNS / SSL Checker | `/web-tools/dns-ssl-checker` | [ ] |
-| 171 | Citation Generator | `/education-tools/citation-generator` | [ ] |
+| 158 | Word Counter | `/seo-tools/word-counter` | [x] |
+| 159 | Keyword Density | `/seo-tools/keyword-density` | [x] |
+| 160 | Schema Markup Generator | `/seo-tools/schema-markup-generator` | [x] |
+| 161 | Lorem Ipsum | `/seo-tools/lorem-ipsum` | [x] |
+| 162 | Blog Titles | `/seo-tools/blog-titles` | [x] |
+| 162a | Meta Tags | `/seo-tools/meta-tags` | [x] |
+| 163 | Text Similarity Checker | `/seo-tools/text-similarity-checker` | [x] |
+| 164 | URL Encoder | `/web-tools/url-encoder` | [x] |
+| 165 | URL Parser | `/web-tools/url-parser` | [x] |
+| 166 | HTML Escape | `/web-tools/html-escape` | [x] |
+| 167 | Device Info | `/web-tools/device-info` | [x] |
+| 168 | Auth Generator | `/web-tools/auth-generator` | [x] |
+| 169 | Outlook SafeLink Decoder | `/web-tools/outlook-safelink-decoder` | [x] |
+| 170 | DNS / SSL Checker | `/web-tools/dns-ssl-checker` | [x] |
+| 171 | Citation Generator | `/education-tools/citation-generator` | [x] |
 
 ## Group J — Variant pages (already in sitemap)
 

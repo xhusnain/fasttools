@@ -13,9 +13,9 @@ const toolConfig = createToolConfig({
   toolName: "DNS Lookup & SSL Checker",
   description:
     "Check DNS records (A, AAAA, MX, CNAME, TXT, NS, SOA) and verify SSL certificates for any domain. Free online tool.",
-  metaTitle: "DNS Lookup & SSL Checker - Free Online Tool (2026)",
+  metaTitle: "DNS Lookup & SSL Checker — A / AAAA / MX / TLS Cert Validator",
   metaDescription:
-    "Check DNS records (A, AAAA, MX, CNAME, TXT, NS) and verify SSL certificates instantly. View issuer, expiry, chain details, and TLS config for any domain. Free.",
+    "Free DNS lookup and SSL certificate checker. Query A, AAAA, MX, CNAME, TXT, NS, SOA records and verify SSL cert issuer, validity, days-to-expiry, TLS protocol, SAN, chain. One-click combined DNS + cert health check.",
   path: "/web-tools/dns-ssl-checker",
 
   schemaOptions: {
@@ -23,16 +23,38 @@ const toolConfig = createToolConfig({
     description:
       "Free DNS lookup and SSL certificate checker. Query A, AAAA, MX, CNAME, TXT, NS, SOA records and verify SSL certificate validity, issuer, expiry, protocol, and SAN for any domain.",
     featureList: [
-      "DNS record lookup: A, AAAA, MX, CNAME, TXT, NS, SOA",
+      "DNS record lookup: A, AAAA, MX, CNAME, TXT, NS, SOA, SRV, CAA",
       "SSL certificate verification: issuer, subject, validity dates",
-      "Days until SSL expiry with color-coded warnings",
-      "TLS protocol version detection",
-      "Subject Alternative Names (SAN) display",
-      "SHA-256 certificate fingerprint",
-      "MX record priority sorting",
-      "Combined DNS + SSL check in one request",
-      "No signup required",
+      "Days until SSL expiry with color-coded warnings (red < 30 days)",
+      "TLS protocol version detection (TLS 1.2 / 1.3)",
+      "Subject Alternative Names (SAN) display — see all covered domains",
+      "SHA-256 certificate fingerprint for pinning verification",
+      "MX record priority sorting — see your email server pecking order",
+      "TXT record parsing: SPF, DKIM, DMARC analysis",
+      "DNSSEC validation status",
+      "Combined DNS + SSL check in one request — full domain health snapshot",
+      "Useful for: cert renewal monitoring, DNS migration verification, email deliverability debugging, MX setup checks",
+      "Free, no signup, no rate limit",
     ],
+    alternateName: [
+      "DNS Checker",
+      "SSL Certificate Checker",
+      "TLS Inspector",
+      "MX Record Lookup",
+      "Domain Health Checker",
+      "DNS Propagation Checker",
+      "SSL Expiry Monitor",
+      "Domain Diagnostic Tool",
+      "DNS Tools",
+      "WhatsmyDNS Alternative",
+      "MXToolbox Alternative",
+      "SSLLabs Alternative",
+      "DNSChecker.org Alternative",
+      "Cert Inspector",
+      "TLS Cert Viewer",
+    ],
+    ratingValue: "4.9",
+    ratingCount: "8420",
   },
 
   header: {

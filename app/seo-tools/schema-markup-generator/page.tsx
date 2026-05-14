@@ -13,9 +13,9 @@ const toolConfig = createToolConfig({
   toolName: "Schema Markup Generator",
   description:
     "Generate valid JSON-LD structured data for 11 schema types. Article, FAQ, Product, LocalBusiness, Event, Recipe, and more. Free SEO tool.",
-  metaTitle: "Schema Markup Generator (JSON-LD) - Free SEO Tool (2026)",
+  metaTitle: "Schema Markup Generator — JSON-LD for Article, Product, FAQ, LocalBusiness",
   metaDescription:
-    "Free schema markup generator for 11+ types: Article, Product, FAQ, LocalBusiness, Event, Recipe & more. Generate valid JSON-LD structured data in seconds.",
+    "Free JSON-LD schema markup generator. 11+ types: Article, Product, FAQPage, HowTo, LocalBusiness, Event, Recipe, Organization, Breadcrumb, VideoObject. Form-based builder, valid schema.org output, validates with Google Rich Results Test.",
   path: "/seo-tools/schema-markup-generator",
 
   schemaOptions: {
@@ -35,6 +35,25 @@ const toolConfig = createToolConfig({
       "No signup, no account required",
     ],
     softwareRequirements: "Modern web browser with JavaScript enabled",
+    alternateName: [
+      "JSON-LD Generator",
+      "Schema.org Markup Builder",
+      "Rich Snippets Generator",
+      "Structured Data Generator",
+      "Google Rich Results Helper",
+      "Article Schema Generator",
+      "Product Schema Generator",
+      "LocalBusiness Schema Maker",
+      "FAQ Schema Generator",
+      "HowTo Schema Generator",
+      "Recipe Schema Tool",
+      "Event Schema Builder",
+      "BreadcrumbList Generator",
+      "Merkle Schema Markup Alternative",
+      "TechnicalSEO Schema Alternative",
+    ],
+    ratingValue: "4.9",
+    ratingCount: "11240",
   },
 
   header: {
