@@ -106,15 +106,139 @@ const toolConfig = createToolConfig({
 
     aboutTool: (
       <div className="space-y-6 text-muted-foreground">
-        <p>
-          Key event tooling works best when it clearly separates character output
-          from physical key position. This page focuses on that distinction with
-          quick, readable event values.
-        </p>
-        <p>
-          It is useful when migrating from legacy keyCode checks to modern
-          key/code handling while keeping backward compatibility.
-        </p>
+        <div>
+          <h3 className="text-lg font-semibold text-foreground mb-2">KeyboardEvent Properties Explained</h3>
+          <p>
+            When you press a key in a browser, JavaScript fires a <code>KeyboardEvent</code> with multiple properties describing what happened. Each property answers a different question:
+          </p>
+          <ul className="list-disc pl-6 mt-2 space-y-1">
+            <li><strong><code>event.key</code></strong> — the <em>logical</em> character produced (&quot;A&quot;, &quot;a&quot;, &quot;Enter&quot;, &quot;ArrowUp&quot;, &quot;$&quot;). Reflects keyboard layout and modifier state. Shift+a = &quot;A&quot;. <strong>Use this for character-based logic</strong> (text input, single-char shortcuts).</li>
+            <li><strong><code>event.code</code></strong> — the <em>physical</em> key position (&quot;KeyA&quot;, &quot;Enter&quot;, &quot;ArrowUp&quot;, &quot;Digit1&quot;). Independent of layout — Shift+a still gives &quot;KeyA&quot;. <strong>Use this for game controls, layout-independent shortcuts</strong> (WASD movement, Ctrl+Z based on physical Z key).</li>
+            <li><strong><code>event.keyCode</code></strong> (<em>deprecated</em>) — legacy numeric code (65 for A, 13 for Enter). Inconsistent across browsers. Use only for IE/legacy support; otherwise prefer <code>key</code> or <code>code</code>.</li>
+            <li><strong><code>event.which</code></strong> (<em>deprecated</em>) — same as keyCode, even older.</li>
+            <li><strong><code>event.location</code></strong> — distinguishes left vs right Shift/Ctrl/Alt (0=standard, 1=left, 2=right, 3=numpad).</li>
+            <li><strong><code>event.repeat</code></strong> — true when key is held down (repeated keydown events).</li>
+            <li><strong><code>event.shiftKey</code> / <code>ctrlKey</code> / <code>altKey</code> / <code>metaKey</code></strong> — modifier states. metaKey = Cmd on Mac, Win key on Windows.</li>
+            <li><strong><code>event.isComposing</code></strong> — true during IME (Input Method Editor) composition. Important for CJK input.</li>
+          </ul>
+        </div>
+
+        <div>
+          <h3 className="text-lg font-semibold text-foreground mb-2">key vs code: Which to Use</h3>
+          <table className="w-full border-collapse text-sm">
+            <thead>
+              <tr className="border-b border-border">
+                <th className="text-left py-2 px-2 text-foreground">Use case</th>
+                <th className="text-left py-2 px-2 text-foreground">Use</th>
+                <th className="text-left py-2 px-2 text-foreground">Why</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr className="border-b border-border">
+                <td className="py-2 px-2">Text input fields</td>
+                <td className="py-2 px-2"><code>event.key</code></td>
+                <td className="py-2 px-2">Reflects actual character user wants</td>
+              </tr>
+              <tr className="border-b border-border">
+                <td className="py-2 px-2">&quot;Press Enter to submit&quot;</td>
+                <td className="py-2 px-2"><code>event.key === &quot;Enter&quot;</code></td>
+                <td className="py-2 px-2">Enter is layout-independent character</td>
+              </tr>
+              <tr className="border-b border-border">
+                <td className="py-2 px-2">Arrow keys for nav</td>
+                <td className="py-2 px-2"><code>event.key</code> (&quot;ArrowUp&quot; etc.)</td>
+                <td className="py-2 px-2">Logical navigation intent</td>
+              </tr>
+              <tr className="border-b border-border">
+                <td className="py-2 px-2">WASD game controls</td>
+                <td className="py-2 px-2"><code>event.code</code> (&quot;KeyW&quot;)</td>
+                <td className="py-2 px-2">Physical position — works on Dvorak / AZERTY too</td>
+              </tr>
+              <tr className="border-b border-border">
+                <td className="py-2 px-2">Ctrl+S to save</td>
+                <td className="py-2 px-2"><code>event.code === &quot;KeyS&quot;</code></td>
+                <td className="py-2 px-2">Same physical key across layouts</td>
+              </tr>
+              <tr className="border-b border-border">
+                <td className="py-2 px-2">&quot;Type &amp; to add tag&quot;</td>
+                <td className="py-2 px-2"><code>event.key === &quot;&amp;&quot;</code></td>
+                <td className="py-2 px-2">Reflects actual character even on different layouts</td>
+              </tr>
+              <tr>
+                <td className="py-2 px-2">Numpad-specific behavior</td>
+                <td className="py-2 px-2"><code>event.code</code> (&quot;Numpad1&quot;) + <code>event.location === 3</code></td>
+                <td className="py-2 px-2">Distinguishes numpad from regular row</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div>
+          <h3 className="text-lg font-semibold text-foreground mb-2">Common Special Key Values</h3>
+          <table className="w-full border-collapse text-sm">
+            <thead>
+              <tr className="border-b border-border">
+                <th className="text-left py-2 px-2 text-foreground">Key</th>
+                <th className="text-left py-2 px-2 text-foreground">event.key</th>
+                <th className="text-left py-2 px-2 text-foreground">event.code</th>
+                <th className="text-left py-2 px-2 text-foreground">Legacy keyCode</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr className="border-b border-border"><td className="py-2 px-2">Enter</td><td className="py-2 px-2"><code>&quot;Enter&quot;</code></td><td className="py-2 px-2"><code>&quot;Enter&quot;</code></td><td className="py-2 px-2">13</td></tr>
+              <tr className="border-b border-border"><td className="py-2 px-2">Tab</td><td className="py-2 px-2"><code>&quot;Tab&quot;</code></td><td className="py-2 px-2"><code>&quot;Tab&quot;</code></td><td className="py-2 px-2">9</td></tr>
+              <tr className="border-b border-border"><td className="py-2 px-2">Escape</td><td className="py-2 px-2"><code>&quot;Escape&quot;</code></td><td className="py-2 px-2"><code>&quot;Escape&quot;</code></td><td className="py-2 px-2">27</td></tr>
+              <tr className="border-b border-border"><td className="py-2 px-2">Space</td><td className="py-2 px-2"><code>&quot; &quot;</code></td><td className="py-2 px-2"><code>&quot;Space&quot;</code></td><td className="py-2 px-2">32</td></tr>
+              <tr className="border-b border-border"><td className="py-2 px-2">Backspace</td><td className="py-2 px-2"><code>&quot;Backspace&quot;</code></td><td className="py-2 px-2"><code>&quot;Backspace&quot;</code></td><td className="py-2 px-2">8</td></tr>
+              <tr className="border-b border-border"><td className="py-2 px-2">Delete</td><td className="py-2 px-2"><code>&quot;Delete&quot;</code></td><td className="py-2 px-2"><code>&quot;Delete&quot;</code></td><td className="py-2 px-2">46</td></tr>
+              <tr className="border-b border-border"><td className="py-2 px-2">Arrow Up</td><td className="py-2 px-2"><code>&quot;ArrowUp&quot;</code></td><td className="py-2 px-2"><code>&quot;ArrowUp&quot;</code></td><td className="py-2 px-2">38</td></tr>
+              <tr className="border-b border-border"><td className="py-2 px-2">Arrow Down</td><td className="py-2 px-2"><code>&quot;ArrowDown&quot;</code></td><td className="py-2 px-2"><code>&quot;ArrowDown&quot;</code></td><td className="py-2 px-2">40</td></tr>
+              <tr className="border-b border-border"><td className="py-2 px-2">F1-F12</td><td className="py-2 px-2"><code>&quot;F1&quot;</code>...</td><td className="py-2 px-2"><code>&quot;F1&quot;</code>...</td><td className="py-2 px-2">112-123</td></tr>
+              <tr><td className="py-2 px-2">Letter A</td><td className="py-2 px-2"><code>&quot;a&quot;</code> / <code>&quot;A&quot;</code></td><td className="py-2 px-2"><code>&quot;KeyA&quot;</code></td><td className="py-2 px-2">65</td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div>
+          <h3 className="text-lg font-semibold text-foreground mb-2">Common Keyboard Shortcut Patterns</h3>
+          <pre className="bg-muted p-3 rounded mt-2 text-xs overflow-x-auto">
+            <code>{`// Single key
+if (event.key === "Escape") closeModal()
+
+// Combo: Ctrl+S (Cmd+S on Mac)
+if ((event.ctrlKey || event.metaKey) && event.key === "s") {
+  event.preventDefault()
+  save()
+}
+
+// Modifier-aware: only Shift+Tab (not Ctrl+Shift+Tab)
+if (event.key === "Tab" && event.shiftKey && !event.ctrlKey) {
+  navigateBackward()
+}
+
+// Layout-independent (game): WASD
+const moves = { KeyW: "up", KeyA: "left", KeyS: "down", KeyD: "right" }
+const direction = moves[event.code]
+if (direction) movePlayer(direction)
+
+// Number row vs numpad
+if (event.code.startsWith("Digit")) handleTopRowNumber()
+if (event.code.startsWith("Numpad")) handleNumpadNumber()`}</code>
+          </pre>
+        </div>
+
+        <div>
+          <h3 className="text-lg font-semibold text-foreground mb-2">Browser Compatibility Gotchas</h3>
+          <ul className="list-disc pl-6 space-y-1">
+            <li><strong>Mac Command vs Windows Ctrl:</strong> use <code>event.metaKey || event.ctrlKey</code> for &quot;modifier+key&quot; shortcuts that should work on both platforms</li>
+            <li><strong>IE / legacy:</strong> only <code>event.keyCode</code> works pre-IE9. Modern code can ignore IE.</li>
+            <li><strong>Safari quirks:</strong> some keys fire only <code>keydown</code> / <code>keyup</code>, never <code>keypress</code>. Prefer <code>keydown</code> for shortcuts.</li>
+            <li><strong>Dead keys (`, ´, ^):</strong> on French/German layouts, fire keydown without producing a character — <code>event.key</code> = &quot;Dead&quot;.</li>
+            <li><strong>IME composition:</strong> CJK input fires keydown for each composition step; check <code>event.isComposing</code> to filter.</li>
+            <li><strong>preventDefault for browser shortcuts:</strong> Ctrl+T (new tab), Ctrl+W (close tab) can&apos;t be prevented — browser intercepts before JS.</li>
+            <li><strong>Mobile keyboards:</strong> Android software keyboards often fire <code>keydown</code> with <code>key === &quot;Unidentified&quot;</code>. Use <code>input</code> event for mobile-compatible text capture.</li>
+          </ul>
+        </div>
       </div>
     ),
 

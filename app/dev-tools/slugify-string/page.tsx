@@ -106,15 +106,123 @@ const toolConfig = createToolConfig({
 
     aboutTool: (
       <div className="space-y-6 text-muted-foreground">
-        <p>
-          Slug generator pages rank best when they solve naming consistency fast.
-          This page focuses on clean conversion and quick reuse in real
-          publishing workflows.
-        </p>
-        <p>
-          It helps reduce broken links and duplicate-route mistakes by giving
-          predictable slug output from source text.
-        </p>
+        <div>
+          <h3 className="text-lg font-semibold text-foreground mb-2">What Is a URL Slug?</h3>
+          <p>
+            A <strong>slug</strong> is the human-readable part of a URL that identifies a specific page or resource. In <code>example.com/blog/<strong>how-to-bake-sourdough-bread</strong></code>, the bolded portion is the slug. Slugs are derived from page titles by lowercasing, removing punctuation, replacing spaces with hyphens, and stripping accents. They serve three purposes: <strong>(1) readability</strong> — users see what a URL leads to before clicking; <strong>(2) SEO</strong> — keywords in URLs help search engines understand content; <strong>(3) shareability</strong> — clean slugs are easier to share verbally or in print than UUID-laced URLs.
+          </p>
+        </div>
+
+        <div>
+          <h3 className="text-lg font-semibold text-foreground mb-2">Slug Best Practices for SEO</h3>
+          <ul className="list-disc pl-6 space-y-1">
+            <li><strong>Keep slugs short:</strong> 3-5 words / 50-60 characters max. Search engines truncate long URLs in display, and short slugs are more shareable.</li>
+            <li><strong>Include the primary keyword:</strong> &quot;How to Bake Sourdough Bread&quot; → <code>/how-to-bake-sourdough-bread</code> — includes &quot;sourdough bread,&quot; the likely search term.</li>
+            <li><strong>Remove stopwords carefully:</strong> &quot;a&quot;, &quot;an&quot;, &quot;the&quot;, &quot;of&quot; add little value but can also help readability. Compromise: strip the truly meaningless ones, keep ones that aid comprehension.</li>
+            <li><strong>Use hyphens, not underscores:</strong> Google explicitly recommends hyphens. Underscores are treated as part of the word; <code>blog_post</code> reads as one token.</li>
+            <li><strong>Never change a published slug:</strong> changing creates 404s for every link to the old URL. If you must change, set up a 301 redirect from old → new.</li>
+            <li><strong>Don&apos;t include dates unless evergreen:</strong> <code>/2024/01/article</code> ages immediately; <code>/article</code> stays fresh forever. Same for category prefixes that may change.</li>
+            <li><strong>Lowercase always:</strong> mixed case creates duplicate URLs (Search engines treat <code>/About</code> and <code>/about</code> differently in some cases).</li>
+            <li><strong>Avoid query parameters for indexable pages:</strong> <code>?page=5</code> is less crawlable than <code>/page-5</code>.</li>
+          </ul>
+        </div>
+
+        <div>
+          <h3 className="text-lg font-semibold text-foreground mb-2">Slugify Conventions by Framework</h3>
+          <table className="w-full border-collapse text-sm">
+            <thead>
+              <tr className="border-b border-border">
+                <th className="text-left py-2 px-2 text-foreground">Framework</th>
+                <th className="text-left py-2 px-2 text-foreground">Default function</th>
+                <th className="text-left py-2 px-2 text-foreground">Behavior</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr className="border-b border-border">
+                <td className="py-2 px-2">WordPress</td>
+                <td className="py-2 px-2"><code>sanitize_title()</code></td>
+                <td className="py-2 px-2">Lowercase, accent strip, hyphen separator</td>
+              </tr>
+              <tr className="border-b border-border">
+                <td className="py-2 px-2">Hugo</td>
+                <td className="py-2 px-2">URL field or auto from filename</td>
+                <td className="py-2 px-2">Lowercase, hyphenate, configurable in config.toml</td>
+              </tr>
+              <tr className="border-b border-border">
+                <td className="py-2 px-2">Jekyll</td>
+                <td className="py-2 px-2">Front-matter <code>permalink</code></td>
+                <td className="py-2 px-2">Manual control, auto from filename</td>
+              </tr>
+              <tr className="border-b border-border">
+                <td className="py-2 px-2">Next.js / Astro / Gatsby</td>
+                <td className="py-2 px-2">File-based or programmatic (slugify npm)</td>
+                <td className="py-2 px-2">Custom — use slugify package</td>
+              </tr>
+              <tr className="border-b border-border">
+                <td className="py-2 px-2">Django</td>
+                <td className="py-2 px-2"><code>slugify()</code> utility</td>
+                <td className="py-2 px-2">Lowercase, hyphen, max 50 chars default</td>
+              </tr>
+              <tr className="border-b border-border">
+                <td className="py-2 px-2">Rails</td>
+                <td className="py-2 px-2"><code>parameterize</code></td>
+                <td className="py-2 px-2">Lowercase, hyphen, accent strip</td>
+              </tr>
+              <tr>
+                <td className="py-2 px-2">Laravel</td>
+                <td className="py-2 px-2"><code>Str::slug()</code></td>
+                <td className="py-2 px-2">Lowercase, hyphen, locale-aware transliteration</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div>
+          <h3 className="text-lg font-semibold text-foreground mb-2">Handling Non-Latin Characters</h3>
+          <p>
+            Slugs for non-English content can be handled three ways:
+          </p>
+          <ul className="list-disc pl-6 mt-2 space-y-1">
+            <li><strong>Transliterate to ASCII:</strong> <em>&quot;Hôtel&quot; → &quot;hotel&quot;</em>. English-only audience; loses meaning for non-Latin scripts.</li>
+            <li><strong>Keep original Unicode (IRI):</strong> <em>&quot;京都&quot; → &quot;京都&quot;</em>. RFC 3987 allows this. Modern browsers handle it; works well for native-language audiences but creates ugly punycode in copy-paste.</li>
+            <li><strong>Romanize:</strong> <em>&quot;京都&quot; → &quot;kyoto&quot;</em>. Best of both — readable in English and pronounceable. Requires per-language romanization rules.</li>
+          </ul>
+          <p className="mt-3">
+            <strong>For international SEO:</strong> match what your target users search for. If Japanese users search in Japanese, keep Japanese slugs (Unicode URLs). If they search in romaji, romanize.
+          </p>
+        </div>
+
+        <div>
+          <h3 className="text-lg font-semibold text-foreground mb-2">Slug Uniqueness Strategy</h3>
+          <p>
+            Two articles can have the same title. Strategies for handling collisions:
+          </p>
+          <ul className="list-disc pl-6 mt-2 space-y-1">
+            <li><strong>Auto-suffix:</strong> first &quot;hello-world,&quot; second &quot;hello-world-2,&quot; etc. Simple but ugly. WordPress default.</li>
+            <li><strong>Date prefix:</strong> <code>/2024/03/hello-world</code>. Avoids collisions, but ages content visually.</li>
+            <li><strong>ID suffix:</strong> <code>/hello-world-abc123</code>. Used by Medium, Stack Overflow. Permanent uniqueness with readable slug.</li>
+            <li><strong>Category prefix:</strong> <code>/recipes/sourdough</code> + <code>/tutorials/sourdough</code>. Works if categories are stable.</li>
+            <li><strong>Random suffix:</strong> <code>/hello-world-xyz</code>. Privacy-friendly (can&apos;t enumerate URLs) but less readable.</li>
+          </ul>
+        </div>
+
+        <div>
+          <h3 className="text-lg font-semibold text-foreground mb-2">When to Use Slugs vs IDs vs UUIDs in URLs</h3>
+          <ul className="list-disc pl-6 space-y-1">
+            <li><strong>Slug only (<code>/post/sourdough</code>):</strong> editorial content where URLs are forever. Best SEO.</li>
+            <li><strong>Slug + ID (<code>/post/123/sourdough</code>):</strong> permanent identifier + readable slug. Stack Overflow, Reddit pattern.</li>
+            <li><strong>ID only (<code>/post/123</code>):</strong> high-volume / auto-generated content where slugs don&apos;t add value (data export pages).</li>
+            <li><strong>UUID (<code>/share/550e8400-...</code>):</strong> unguessable URLs for shared content, password reset links, invitation tokens.</li>
+            <li><strong>Slug + UUID (<code>/share/sourdough-550e8400</code>):</strong> readable but unguessable. Used by Notion, Figma.</li>
+          </ul>
+        </div>
+
+        <div>
+          <h3 className="text-lg font-semibold text-foreground mb-2">Privacy &amp; Performance</h3>
+          <p>
+            All slug conversion runs in your browser using JavaScript. Your text is not sent to any server. The bulk mode processes thousands of items in milliseconds. Works fully offline once the page loads.
+          </p>
+        </div>
       </div>
     ),
 
