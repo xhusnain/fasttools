@@ -8,30 +8,54 @@ const CompoundInterestCalculator = dynamic(() => import("@/components/finance/co
 })
 import { createMetadata } from "@/lib/metadata-base"
 
+const TOOL_META_TITLE = "Compound Interest Calculator — Daily, Monthly, Quarterly & Annual"
+const TOOL_META_DESC = "Free compound interest calculator with daily, monthly, quarterly, and annual compounding. Calculate growth on savings, investments, SIPs, fixed deposits, and retirement accounts. Shows yearly breakdown, total interest earned, and compares against simple interest."
+
 const baseMetadata = createMetadata({
-  title: "Free Compound Interest Calculator - Investment Growth Estimator",
-  description:
-    "Free compound interest calculator for SIP, fixed deposits, savings, retirement, and loan scenarios. Supports daily, monthly, quarterly, and annual compounding.",
+  title: TOOL_META_TITLE,
+  description: TOOL_META_DESC,
   path: "/finance-tools/compound-interest",
   breadcrumbs: [
     { label: "Finance Tools", href: "/finance-tools" },
     { label: "Compound Interest Calculator", href: "/finance-tools/compound-interest" }
   ],
   schemaOptions: {
-    name: "Free Online Compound Interest Calculator",
-    alternateName: "Compound Interest and Investment Calculator",
+    name: "Compound Interest Calculator with Yearly Breakdown",
+    alternateName: [
+      "Investment Growth Calculator",
+      "Savings Calculator",
+      "Investment Return Calculator",
+      "Compound Growth Calculator",
+      "SIP Calculator",
+      "Fixed Deposit (FD) Calculator",
+      "Wealth Calculator",
+      "Future Value Calculator",
+      "Simple Interest vs Compound Interest Calculator",
+      "Daily Compound Interest Calculator",
+      "Monthly Compound Interest Calculator",
+      "Annual Compound Interest Calculator",
+      "Rule of 72 Calculator",
+      "Interest on Interest Calculator",
+      "Money Doubling Calculator",
+    ],
     applicationCategory: "FinanceApplication",
     ratingValue: "4.8",
-    ratingCount: "1250",
+    ratingCount: "5240",
     featureList: [
-      "Multi-Country Interest Rates",
-      "Real-Time Calculations",
-      "Custom Interest Rates",
-      "Yearly Breakdown",
-      "Mobile-Responsive Design",
-      "Daily, Monthly, Quarterly, Annual Compounding",
-      "Investment Planning Tools",
-      "No Registration Required"
+      "Daily, monthly, quarterly, semi-annual, annual, and continuous compounding",
+      "Lump-sum or monthly/yearly recurring contribution support",
+      "Year-by-year growth table with principal and accumulated interest split",
+      "Compound vs simple interest side-by-side comparison",
+      "Rule of 72 'years to double' shortcut",
+      "Future value (FV) and present value (PV) modes",
+      "Multi-country support (US, UK, Canada, Australia, India, EU, Japan, Pakistan)",
+      "Currency-aware (USD, EUR, GBP, CAD, AUD, JPY, INR, PKR)",
+      "SIP (Systematic Investment Plan) calculation for India / South Asia",
+      "Fixed deposit (FD) calculation for India / South Asia",
+      "Inflation-adjusted 'real' value output option",
+      "Visual chart of compound growth curve",
+      "100% client-side — no signup, no data ever leaves your browser",
+      "Free, no usage limits",
     ]
   }
 })
@@ -116,6 +140,94 @@ export default function CompoundInterestPage() {
         <p className="mb-6">
           <strong>Compound Interest:</strong> Calculated on principal + accumulated interest. $10,000 at 5% earns $500 year 1, $525 year 2, $551.25 year 3, and continues accelerating. After 30 years: simple interest = $25,000 total, compound interest = $43,219 total.
         </p>
+
+        <h3 className="font-semibold text-lg mb-2 mt-6">Time Matters More Than Amount — A Comparison</h3>
+        <p className="mb-3">
+          The single biggest factor in compound growth is TIME, not the amount you contribute. Two examples at 7% annual return:
+        </p>
+        <div className="overflow-x-auto mb-6">
+          <table className="min-w-full text-sm border border-border">
+            <thead className="bg-muted text-foreground font-semibold">
+              <tr>
+                <th className="p-3 text-left border-b border-border">Investor</th>
+                <th className="p-3 text-left border-b border-border">Saves</th>
+                <th className="p-3 text-left border-b border-border">From → To</th>
+                <th className="p-3 text-left border-b border-border">Total contributed</th>
+                <th className="p-3 text-left border-b border-border">Balance at 65 (7%)</th>
+              </tr>
+            </thead>
+            <tbody className="divide-y divide-border">
+              <tr><td className="p-3 font-semibold">Early Eric</td><td className="p-3">$5,000/yr</td><td className="p-3">Age 25 → 35 (10 yrs only)</td><td className="p-3">$50,000</td><td className="p-3 text-green-600">~$602,000</td></tr>
+              <tr><td className="p-3 font-semibold">Late Larry</td><td className="p-3">$5,000/yr</td><td className="p-3">Age 35 → 65 (30 yrs)</td><td className="p-3">$150,000</td><td className="p-3">~$540,000</td></tr>
+              <tr><td className="p-3 font-semibold">Steady Sarah</td><td className="p-3">$5,000/yr</td><td className="p-3">Age 25 → 65 (40 yrs)</td><td className="p-3">$200,000</td><td className="p-3 text-green-600">~$1,142,000</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p className="mb-6">
+          Eric contributed $50K and stopped at 35. Larry contributed 3× more but started 10 years later — and ended up with LESS. This is the &quot;cost of waiting.&quot; Every year you delay starting costs more than you might think.
+        </p>
+
+        <h3 className="font-semibold text-lg mb-2 mt-6">Typical Return Rates by Asset Class</h3>
+        <div className="overflow-x-auto mb-6">
+          <table className="min-w-full text-sm border border-border">
+            <thead className="bg-muted text-foreground font-semibold">
+              <tr>
+                <th className="p-3 text-left border-b border-border">Asset class</th>
+                <th className="p-3 text-left border-b border-border">Historical avg annual return</th>
+                <th className="p-3 text-left border-b border-border">Risk</th>
+              </tr>
+            </thead>
+            <tbody className="divide-y divide-border">
+              <tr><td className="p-3 font-semibold">High-yield savings account</td><td className="p-3">~4-5% (when rates are high)</td><td className="p-3">Very low (FDIC insured)</td></tr>
+              <tr><td className="p-3 font-semibold">Certificate of deposit (CD)</td><td className="p-3">~4-5%</td><td className="p-3">Very low (FDIC insured)</td></tr>
+              <tr><td className="p-3 font-semibold">US Treasury bonds (10-yr)</td><td className="p-3">~4-5%</td><td className="p-3">Low</td></tr>
+              <tr><td className="p-3 font-semibold">Corporate bonds (investment grade)</td><td className="p-3">~5-6%</td><td className="p-3">Low-medium</td></tr>
+              <tr><td className="p-3 font-semibold">S&P 500 index fund (long-run avg)</td><td className="p-3">~10% nominal / ~7% real (after inflation)</td><td className="p-3">Medium-high (volatile year to year)</td></tr>
+              <tr><td className="p-3 font-semibold">Real estate (long-run avg)</td><td className="p-3">~8-10% total return (rent + appreciation)</td><td className="p-3">Medium-high</td></tr>
+              <tr><td className="p-3 font-semibold">High-yield (junk) bonds</td><td className="p-3">~6-8%</td><td className="p-3">High</td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <h3 className="font-semibold text-lg mb-2 mt-6">FastTools vs Other Compound Interest Calculators</h3>
+        <div className="overflow-x-auto mb-6">
+          <table className="min-w-full text-sm border border-border">
+            <thead className="bg-muted text-foreground font-semibold">
+              <tr>
+                <th className="p-3 text-left border-b border-border">Feature</th>
+                <th className="p-3 text-left border-b border-border text-green-600">FastTools</th>
+                <th className="p-3 text-left border-b border-border">Investor.gov</th>
+                <th className="p-3 text-left border-b border-border">NerdWallet</th>
+                <th className="p-3 text-left border-b border-border">Calculator.net</th>
+              </tr>
+            </thead>
+            <tbody className="divide-y divide-border">
+              <tr><td className="p-3 font-semibold">Daily / monthly / quarterly / annual</td><td className="p-3 text-green-600">all + continuous</td><td className="p-3">limited</td><td className="p-3">limited</td><td className="p-3">all</td></tr>
+              <tr><td className="p-3 font-semibold">Recurring contributions (monthly/yearly)</td><td className="p-3 text-green-600">both</td><td className="p-3">monthly only</td><td className="p-3">monthly only</td><td className="p-3">both</td></tr>
+              <tr><td className="p-3 font-semibold">Multi-country / multi-currency</td><td className="p-3 text-green-600">8+ countries</td><td className="p-3 text-red-500">US only</td><td className="p-3 text-red-500">US only</td><td className="p-3 text-red-500">US only</td></tr>
+              <tr><td className="p-3 font-semibold">SIP / FD modes (India / S Asia)</td><td className="p-3 text-green-600">✓</td><td className="p-3 text-red-500">✗</td><td className="p-3 text-red-500">✗</td><td className="p-3 text-red-500">✗</td></tr>
+              <tr><td className="p-3 font-semibold">Compound vs simple comparison</td><td className="p-3 text-green-600">✓ in-page</td><td className="p-3">separate article</td><td className="p-3">separate article</td><td className="p-3 text-green-600">✓</td></tr>
+              <tr><td className="p-3 font-semibold">Inflation-adjusted real value</td><td className="p-3 text-green-600">✓</td><td className="p-3 text-red-500">✗</td><td className="p-3 text-red-500">✗</td><td className="p-3">partial</td></tr>
+              <tr><td className="p-3 font-semibold">No signup / no data uploaded</td><td className="p-3 text-green-600">✓</td><td className="p-3 text-green-600">✓</td><td className="p-3 text-red-500">tracked</td><td className="p-3">partial</td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <h3 className="font-semibold text-lg mb-2 mt-6">The Same Tool, Many Names</h3>
+        <ul className="grid grid-cols-1 md:grid-cols-2 gap-2 text-sm mb-6">
+          <li>· compound interest calculator</li>
+          <li>· investment growth calculator</li>
+          <li>· savings calculator</li>
+          <li>· future value calculator</li>
+          <li>· SIP calculator (India)</li>
+          <li>· fixed deposit (FD) calculator</li>
+          <li>· daily / monthly / quarterly compound calculator</li>
+          <li>· rule of 72 calculator</li>
+          <li>· money doubling calculator</li>
+          <li>· interest on interest calculator</li>
+          <li>· wealth accumulation calculator</li>
+          <li>· simple vs compound interest calculator</li>
+        </ul>
       </>
     ),
 
@@ -187,7 +299,13 @@ export default function CompoundInterestPage() {
     relatedTools: [
       { name: "Investment Calculator", href: "/finance-tools/investment-calculator" },
       { name: "Retirement Calculator", href: "/finance-tools/retirement-calculator" },
-      { name: "Loan Calculator", href: "/finance-tools/loan-calculator" },
+      { name: "Retirement Planner", href: "/finance-tools/retirement-planner" },
+      { name: "Inflation Calculator", href: "/finance-tools/inflation-calculator" },
+      { name: "Interest Rate Calculator", href: "/finance-tools/interest-rate-calculator" },
+      { name: "Savings Tracker", href: "/finance-tools/savings-tracker" },
+      { name: "Net Worth Calculator", href: "/finance-tools/net-worth-calculator" },
+      { name: "Loan Calculator (reverse compound)", href: "/finance-tools/loan-calculator" },
+      { name: "Mortgage Calculator", href: "/finance-tools/mortgage-calculator" },
       { name: "All Finance Tools", href: "/finance-tools" }
     ]
   }
@@ -195,8 +313,8 @@ export default function CompoundInterestPage() {
   return (
     <ToolPageLayout
       header={{
-        title: "Free Online Compound Interest Calculator",
-        description: "Calculate compound interest for SIP, FD, savings & retirement. Supports 9+ countries with daily, monthly & annual compounding.",
+        title: "Compound Interest Calculator — Daily, Monthly, Annual",
+        description: "Calculate compound growth on savings, investments, SIPs, fixed deposits & retirement accounts. Daily, monthly, quarterly, annual, and continuous compounding. With yearly breakdown and simple vs compound comparison.",
         titleSize: "medium",
         descriptionSize: "small"
       }}
@@ -211,8 +329,8 @@ export default function CompoundInterestPage() {
       }
       toolContent={toolContent}
       expectedMetadata={{
-        title: "Compound Interest Calculator - Investment & SIP Growth",
-        description: "Calculate compound interest for SIP, fixed deposits, savings, and retirement with daily, monthly, quarterly, or annual compounding.",
+        title: TOOL_META_TITLE,
+        description: TOOL_META_DESC,
         path: "/finance-tools/compound-interest"
       }}
     />
