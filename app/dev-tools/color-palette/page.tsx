@@ -230,10 +230,14 @@ const toolConfig = createToolConfig({
     ],
 
     relatedTools: [
-      { name: "Schema Markup Generator", href: "/seo-tools/schema-markup-generator" },
-      { name: "Open Graph Meta Generator", href: "/seo-tools/meta-tags" },
-      { name: "JSON to CSV Converter", href: "/dev-tools/json-to-csv" },
+      { name: "CSS Gradient Generator", href: "/dev-tools/css-gradient-generator" },
+      { name: "Hex to RGB Converter", href: "/dev-tools/hex-to-rgb" },
+      { name: "Background Remover", href: "/image-tools/background-remover" },
       { name: "Image Resizer", href: "/image-tools/image-resizer" },
+      { name: "Image Cropper", href: "/image-tools/image-cropper" },
+      { name: "Meme Generator", href: "/fun-tools/meme-generator" },
+      { name: "Schema Markup Generator", href: "/seo-tools/schema-markup-generator" },
+      { name: "All Developer Tools", href: "/dev-tools" },
     ],
   },
 })

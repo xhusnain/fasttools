@@ -405,11 +405,13 @@ export default function LLMTrainingCostPage() {
     ],
 
     relatedTools: [
-      { name: "UUID Generator", href: "/crypto-tools/uuid-generator" },
-      { name: "JSON Diff", href: "/dev-tools/json-diff" },
-      { name: "JWT Decoder", href: "/dev-tools/jwt-decoder" },
-      { name: "Regex Tester", href: "/dev-tools/regex-tester" },
+      { name: "Cloudflare Workers Cost", href: "/dev-tools/cloudflare-workers-cost" },
+      { name: "Token to Word Converter (LLM)", href: "/ai-tools/token-to-word-converter" },
+      { name: "Text Summarizer", href: "/ai-tools/text-summarizer" },
+      { name: "AI Text Detector", href: "/ai-tools/ai-text-detector" },
       { name: "SaaS Churn Rate Calculator", href: "/finance-tools/saas-churn-calculator" },
+      { name: "SaaS Payback Calculator", href: "/finance-tools/saas-payback-calculator" },
+      { name: "Startup Runway Calculator", href: "/finance-tools/startup-runway-calculator" },
       { name: "Percentage Calculator", href: "/calculator/percentage-calculator" }
     ]
   }

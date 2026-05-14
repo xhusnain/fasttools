@@ -127,9 +127,13 @@ const toolConfig = createToolConfig({
     ],
 
     relatedTools: [
-      { name: "JSON Diff", href: "/dev-tools/json-diff" },
       { name: "JWT Decoder", href: "/dev-tools/jwt-decoder" },
+      { name: "MIME Types Reference", href: "/dev-tools/mime-types" },
       { name: "User-Agent Parser", href: "/dev-tools/user-agent-parser" },
+      { name: "URL Parser", href: "/web-tools/url-parser" },
+      { name: "URL Encoder", href: "/web-tools/url-encoder" },
+      { name: "DNS / SSL Checker", href: "/web-tools/dns-ssl-checker" },
+      { name: "JSON Diff", href: "/dev-tools/json-diff" },
       { name: "All Developer Tools", href: "/dev-tools" },
     ],
   },

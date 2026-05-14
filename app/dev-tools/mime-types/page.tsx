@@ -122,9 +122,13 @@ const toolConfig = createToolConfig({
     ],
 
     relatedTools: [
-      { name: "Base64 Encoder Decoder", href: "/dev-tools/base64-encoder" },
+      { name: "Base64 Encoder/Decoder", href: "/dev-tools/base64-encoder" },
       { name: "HTTP Status Codes", href: "/dev-tools/http-status-codes" },
-      { name: "JSON to CSV Converter", href: "/dev-tools/json-to-csv" },
+      { name: "User-Agent Parser", href: "/dev-tools/user-agent-parser" },
+      { name: "File Size Converter", href: "/converters/file-size" },
+      { name: "Base64 File Converter", href: "/converters/base64-file" },
+      { name: "URL Parser", href: "/web-tools/url-parser" },
+      { name: "JSON Diff", href: "/dev-tools/json-diff" },
       { name: "All Developer Tools", href: "/dev-tools" },
     ],
   },
