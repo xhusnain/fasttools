@@ -109,12 +109,131 @@ const toolConfig = createToolConfig({
 
     aboutTool: (
       <div className="space-y-6 text-muted-foreground">
-        <p>
-          Blog titles and article headlines are the single most important on-page element for both SEO click-through rate and reader engagement. Research from content marketing platforms shows that titles with numbers generate 36% more clicks than titles without, question-based headlines perform 23% better for informational search queries, and titles containing power words (free, ultimate, proven, essential, step-by-step) trigger stronger emotional responses that drive clicks. Google displays approximately 60 characters of the title tag in search results — titles exceeding this limit are truncated with ellipsis, potentially cutting off your most compelling words. Front-loading your primary keyword in the title also signals topical relevance to search engine ranking algorithms.
-        </p>
-        <p>
-          Effective headline creation is an iterative process, not a one-shot task. Professional content teams typically generate 10-25 title candidates per article, evaluate each against search intent (informational, navigational, commercial, transactional), check for keyword prominence and natural readability, verify character count fits SERP display limits, and test top candidates through email subject line splits or social media engagement data before finalizing. This blog title generator accelerates that iterative workflow by producing diverse headline variations across proven formats — how-to titles, numbered listicles, question headlines, comparison frameworks, and authority-building guide titles — so you can move from brainstorming to publishing with confidence in your headline quality.
-        </p>
+        <div>
+          <h3 className="text-lg font-semibold text-foreground mb-2">Why Headlines Matter More Than Anything Else</h3>
+          <p>
+            David Ogilvy famously said: <em>&quot;On average, five times as many people read the headline as read the body copy. When you have written your headline, you have spent eighty cents out of your dollar.&quot;</em> In digital terms: the headline is the only piece of content most people see. It determines click-through from search results, social feeds, email previews. A great article with a weak headline gets 1/10th the traffic of a mediocre article with a strong headline. <strong>The headline is your highest-leverage content investment.</strong>
+          </p>
+        </div>
+
+        <div>
+          <h3 className="text-lg font-semibold text-foreground mb-2">High-Performing Headline Patterns</h3>
+          <table className="w-full border-collapse text-sm">
+            <thead>
+              <tr className="border-b border-border">
+                <th className="text-left py-2 px-2 text-foreground">Pattern</th>
+                <th className="text-left py-2 px-2 text-foreground">Example</th>
+                <th className="text-left py-2 px-2 text-foreground">Best for</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr className="border-b border-border">
+                <td className="py-2 px-2"><strong>Numbered listicle</strong></td>
+                <td className="py-2 px-2">&quot;7 Proven Email Subject Lines That Get 50% Open Rates&quot;</td>
+                <td className="py-2 px-2">High CTR; promises scannability</td>
+              </tr>
+              <tr className="border-b border-border">
+                <td className="py-2 px-2"><strong>How-to</strong></td>
+                <td className="py-2 px-2">&quot;How to Set Up Google Analytics 4 in 10 Minutes&quot;</td>
+                <td className="py-2 px-2">Tutorial / instructional content</td>
+              </tr>
+              <tr className="border-b border-border">
+                <td className="py-2 px-2"><strong>Question</strong></td>
+                <td className="py-2 px-2">&quot;Why Is My Email Open Rate Below 15%? (Diagnosis Guide)&quot;</td>
+                <td className="py-2 px-2">Matches PAA queries; problem-solving</td>
+              </tr>
+              <tr className="border-b border-border">
+                <td className="py-2 px-2"><strong>Ultimate guide</strong></td>
+                <td className="py-2 px-2">&quot;The Ultimate Guide to Cold Email (40+ Templates)&quot;</td>
+                <td className="py-2 px-2">Long-form authority content</td>
+              </tr>
+              <tr className="border-b border-border">
+                <td className="py-2 px-2"><strong>Comparison / vs</strong></td>
+                <td className="py-2 px-2">&quot;Mailchimp vs ConvertKit: Which Is Right for Your Business?&quot;</td>
+                <td className="py-2 px-2">Commercial-intent / decision queries</td>
+              </tr>
+              <tr className="border-b border-border">
+                <td className="py-2 px-2"><strong>Case study</strong></td>
+                <td className="py-2 px-2">&quot;How We Grew Our Newsletter from 0 to 10K in 6 Months&quot;</td>
+                <td className="py-2 px-2">Authority + curiosity gap</td>
+              </tr>
+              <tr className="border-b border-border">
+                <td className="py-2 px-2"><strong>Mistake / warning</strong></td>
+                <td className="py-2 px-2">&quot;5 SEO Mistakes That Are Killing Your Rankings (And How to Fix Them)&quot;</td>
+                <td className="py-2 px-2">Fear-driven; outperforms positive framings</td>
+              </tr>
+              <tr className="border-b border-border">
+                <td className="py-2 px-2"><strong>Contrarian</strong></td>
+                <td className="py-2 px-2">&quot;Why Email Marketing Is Better Than Ever in 2026&quot;</td>
+                <td className="py-2 px-2">Pattern interrupt; thought leadership</td>
+              </tr>
+              <tr className="border-b border-border">
+                <td className="py-2 px-2"><strong>Data-driven</strong></td>
+                <td className="py-2 px-2">&quot;We Analyzed 10,000 Email Subject Lines. Here&apos;s What Works.&quot;</td>
+                <td className="py-2 px-2">Research-backed authority</td>
+              </tr>
+              <tr>
+                <td className="py-2 px-2"><strong>Personal story</strong></td>
+                <td className="py-2 px-2">&quot;I Sent 1,000 Cold Emails. Here&apos;s What I Learned.&quot;</td>
+                <td className="py-2 px-2">Engaging narrative; high shareability</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div>
+          <h3 className="text-lg font-semibold text-foreground mb-2">Headline Math: Click-Through Rate Data</h3>
+          <p>Research from major content platforms (Backlinko, HubSpot, Conductor) consistently shows:</p>
+          <ul className="list-disc pl-6 mt-2 space-y-1">
+            <li><strong>Numbered titles get 36% more clicks</strong> than non-numbered</li>
+            <li><strong>Odd numbers outperform even</strong> (7 outperforms 6 or 8)</li>
+            <li><strong>Question headlines get 23% more CTR</strong> for informational queries</li>
+            <li><strong>Negative framing outperforms positive 60% of the time</strong> (&quot;5 mistakes&quot; beats &quot;5 wins&quot;)</li>
+            <li><strong>Personal pronouns (&quot;you,&quot; &quot;your&quot;) increase CTR by 7%</strong></li>
+            <li><strong>Brackets/parentheses increase CTR by 38%</strong> ([Updated 2024], (with examples), [Free Template])</li>
+            <li><strong>Power words boost CTR by 12-20%</strong> (proven, ultimate, essential, definitive, complete, easy, free)</li>
+            <li><strong>Specificity wins over vagueness</strong> (&quot;47% increase&quot; beats &quot;huge increase&quot;)</li>
+          </ul>
+        </div>
+
+        <div>
+          <h3 className="text-lg font-semibold text-foreground mb-2">Title Optimization for Google SERP</h3>
+          <ul className="list-disc pl-6 space-y-1">
+            <li><strong>Length:</strong> 50-60 characters or ~580 pixels wide. Anything longer truncates with &quot;...&quot;</li>
+            <li><strong>Front-load the primary keyword:</strong> Google weights early words more heavily. &quot;Email Marketing Guide&quot; → put &quot;Email Marketing&quot; first.</li>
+            <li><strong>Match search intent precisely:</strong> a query for &quot;email marketing software&quot; needs a title focused on tools, not strategy.</li>
+            <li><strong>Brand in title (optional):</strong> append &quot;| Your Brand&quot; for brand awareness — but watch character budget.</li>
+            <li><strong>Title ≠ H1 always:</strong> the meta title (in <code>&lt;title&gt;</code>) is for SERP; the H1 is for on-page. They can differ if the SERP-optimized version is too short for clarity on the page.</li>
+            <li><strong>Avoid clickbait:</strong> Google&apos;s helpful content update penalizes content that doesn&apos;t deliver on the title&apos;s promise.</li>
+          </ul>
+        </div>
+
+        <div>
+          <h3 className="text-lg font-semibold text-foreground mb-2">Common Headline Mistakes</h3>
+          <ul className="list-disc pl-6 space-y-1">
+            <li><strong>Vague intrigue:</strong> &quot;You Won&apos;t Believe What Happened Next&quot; — feels spammy and gets low CTR with sophisticated audiences</li>
+            <li><strong>Generic terms:</strong> &quot;Email Marketing Tips&quot; — competes against millions; be specific</li>
+            <li><strong>Keyword stuffing:</strong> &quot;Email Marketing | Best Email Marketing Software for Email Marketing&quot;</li>
+            <li><strong>Misleading promises:</strong> if the title says &quot;10 tips&quot; but content has 3, you&apos;ll lose trust and SEO ranking</li>
+            <li><strong>Front-loading branded terms:</strong> only do this if your brand is searched for itself; otherwise prioritize keywords</li>
+            <li><strong>All caps (most platforms):</strong> reads as SHOUTING; tolerated only on YouTube where it&apos;s normalized</li>
+            <li><strong>Special character abuse:</strong> 🔥💯⚡️ emojis work in moderation; overuse looks desperate</li>
+            <li><strong>Tense / number agreement:</strong> &quot;5 Tips For Improving Your SEO&quot; vs &quot;5 Tip For Improve Your SEO&quot; — proofread!</li>
+          </ul>
+        </div>
+
+        <div>
+          <h3 className="text-lg font-semibold text-foreground mb-2">Optimal Title Length Reference</h3>
+          <ul className="list-disc pl-6 space-y-1">
+            <li><strong>Google SERP:</strong> 50-60 characters</li>
+            <li><strong>Bing SERP:</strong> 60-65 characters</li>
+            <li><strong>YouTube title:</strong> 60 characters before mobile truncation</li>
+            <li><strong>Twitter/X share card:</strong> 60-70 characters</li>
+            <li><strong>LinkedIn share card:</strong> 90 characters</li>
+            <li><strong>Email subject line (mobile):</strong> 30-40 characters before truncation</li>
+            <li><strong>Pinterest pin title:</strong> 100 characters max</li>
+          </ul>
+        </div>
       </div>
     ),
 

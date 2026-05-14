@@ -109,12 +109,157 @@ const toolConfig = createToolConfig({
 
     aboutTool: (
       <div className="space-y-6 text-muted-foreground">
-        <p>
-          Meta tags are HTML elements placed in a page&apos;s &lt;head&gt; section that provide structured information to search engines and social media platforms. The title tag and meta description directly influence Google search result snippets — Google displays approximately 60 characters of the title and 160 characters of the description in SERPs. The canonical tag (rel=&quot;canonical&quot;) tells search engines which URL is the preferred version of a page, preventing duplicate content indexing issues. The robots meta tag controls crawler behavior with directives like index/noindex and follow/nofollow. The Open Graph protocol (created by Facebook in 2010) uses property attributes (og:title, og:description, og:image, og:url, og:type) to control how URLs render as rich previews when shared on Facebook, LinkedIn, Pinterest, Slack, Discord, WhatsApp, and iMessage.
-        </p>
-        <p>
-          Twitter Cards (now X Cards) use their own meta tag namespace (twitter:card, twitter:title, twitter:description, twitter:image, twitter:site) to control tweet preview appearance. The two main card types are &quot;summary&quot; (small thumbnail) and &quot;summary_large_image&quot; (wide image banner). When Twitter Card tags are not present, X falls back to Open Graph tags, but using both protocols ensures maximum control across all platforms. For og:image and twitter:image, the recommended dimensions are 1200x630 pixels for landscape images, with a minimum of 600x315 pixels. Images should be hosted on HTTPS URLs and be under 5MB. After deploying meta tags, validate them using Facebook&apos;s Sharing Debugger, Twitter&apos;s Card Validator, and LinkedIn&apos;s Post Inspector to verify correct rendering before sharing publicly.
-        </p>
+        <div>
+          <h3 className="text-lg font-semibold text-foreground mb-2">The 8 Essential Meta Tags Every Page Needs</h3>
+          <table className="w-full border-collapse text-sm">
+            <thead>
+              <tr className="border-b border-border">
+                <th className="text-left py-2 px-2 text-foreground">Tag</th>
+                <th className="text-left py-2 px-2 text-foreground">Purpose</th>
+                <th className="text-left py-2 px-2 text-foreground">Length / format</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr className="border-b border-border">
+                <td className="py-2 px-2"><code>&lt;title&gt;</code></td>
+                <td className="py-2 px-2">SERP display + browser tab</td>
+                <td className="py-2 px-2">50-60 chars</td>
+              </tr>
+              <tr className="border-b border-border">
+                <td className="py-2 px-2"><code>&lt;meta name=&quot;description&quot;&gt;</code></td>
+                <td className="py-2 px-2">SERP snippet</td>
+                <td className="py-2 px-2">150-160 chars</td>
+              </tr>
+              <tr className="border-b border-border">
+                <td className="py-2 px-2"><code>&lt;link rel=&quot;canonical&quot;&gt;</code></td>
+                <td className="py-2 px-2">Prevent duplicate-content issues</td>
+                <td className="py-2 px-2">Absolute URL</td>
+              </tr>
+              <tr className="border-b border-border">
+                <td className="py-2 px-2"><code>&lt;meta name=&quot;robots&quot;&gt;</code></td>
+                <td className="py-2 px-2">Crawler directives</td>
+                <td className="py-2 px-2">index/noindex, follow/nofollow</td>
+              </tr>
+              <tr className="border-b border-border">
+                <td className="py-2 px-2"><code>&lt;meta name=&quot;viewport&quot;&gt;</code></td>
+                <td className="py-2 px-2">Mobile responsiveness</td>
+                <td className="py-2 px-2"><code>width=device-width, initial-scale=1</code></td>
+              </tr>
+              <tr className="border-b border-border">
+                <td className="py-2 px-2"><code>&lt;meta charset&gt;</code></td>
+                <td className="py-2 px-2">Text encoding</td>
+                <td className="py-2 px-2"><code>UTF-8</code></td>
+              </tr>
+              <tr className="border-b border-border">
+                <td className="py-2 px-2"><code>og:* tags</code></td>
+                <td className="py-2 px-2">Facebook / LinkedIn previews</td>
+                <td className="py-2 px-2">og:title, og:description, og:image</td>
+              </tr>
+              <tr>
+                <td className="py-2 px-2"><code>twitter:* tags</code></td>
+                <td className="py-2 px-2">X / Twitter card previews</td>
+                <td className="py-2 px-2">twitter:card, twitter:image</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div>
+          <h3 className="text-lg font-semibold text-foreground mb-2">Open Graph Tags: Facebook, LinkedIn, Slack, Discord, WhatsApp</h3>
+          <p>
+            Created by Facebook in 2010, Open Graph (OG) tags have become the universal standard for link previews across virtually every modern messaging and social platform. The core tags:
+          </p>
+          <ul className="list-disc pl-6 mt-2 space-y-1">
+            <li><strong>og:title</strong> — title shown in the preview card (often same as page title)</li>
+            <li><strong>og:description</strong> — 2-3 line description below the title</li>
+            <li><strong>og:image</strong> — preview image (1200×630px ideal, &lt;5MB, HTTPS URL)</li>
+            <li><strong>og:url</strong> — canonical URL for the page</li>
+            <li><strong>og:type</strong> — content type: website, article, book, profile, video.movie, etc.</li>
+            <li><strong>og:site_name</strong> — your site / brand name</li>
+            <li><strong>og:locale</strong> — language + region (e.g., <code>en_US</code>, <code>fr_FR</code>)</li>
+            <li><strong>og:image:alt</strong> — accessibility text for the image</li>
+            <li><strong>og:image:width / og:image:height</strong> — dimensions for faster preview rendering</li>
+          </ul>
+          <p className="mt-3">
+            Platforms that read OG tags: Facebook, LinkedIn, Pinterest, Slack, Discord, WhatsApp, iMessage, Telegram, Signal, and many more. Without OG tags, these platforms guess at preview content — often badly.
+          </p>
+        </div>
+
+        <div>
+          <h3 className="text-lg font-semibold text-foreground mb-2">Twitter Card Types</h3>
+          <ul className="list-disc pl-6 space-y-1">
+            <li><strong>summary:</strong> small square image to the left of title/description. Older, less visual.</li>
+            <li><strong>summary_large_image:</strong> wide banner image above title — modern preferred card. <strong>Use this by default.</strong></li>
+            <li><strong>app:</strong> for promoting mobile apps with iOS / Android download links</li>
+            <li><strong>player:</strong> for embedding video / audio players directly in tweets</li>
+          </ul>
+          <p className="mt-3">
+            If Twitter Card tags are absent, X falls back to Open Graph. <strong>Include both</strong> to maintain control across all platforms.
+          </p>
+        </div>
+
+        <div>
+          <h3 className="text-lg font-semibold text-foreground mb-2">Image Specifications for Maximum Compatibility</h3>
+          <table className="w-full border-collapse text-sm">
+            <thead>
+              <tr className="border-b border-border">
+                <th className="text-left py-2 px-2 text-foreground">Spec</th>
+                <th className="text-left py-2 px-2 text-foreground">Value</th>
+                <th className="text-left py-2 px-2 text-foreground">Notes</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr className="border-b border-border"><td className="py-2 px-2">Dimensions</td><td className="py-2 px-2"><strong>1200 × 630px</strong></td><td className="py-2 px-2">1.91:1 ratio; works on FB, LinkedIn, Twitter, Slack</td></tr>
+              <tr className="border-b border-border"><td className="py-2 px-2">Minimum</td><td className="py-2 px-2">600 × 315px</td><td className="py-2 px-2">Below this, some platforms show no preview</td></tr>
+              <tr className="border-b border-border"><td className="py-2 px-2">File size</td><td className="py-2 px-2">&lt; 5 MB</td><td className="py-2 px-2">Facebook caps at 5MB; aim for &lt;1MB</td></tr>
+              <tr className="border-b border-border"><td className="py-2 px-2">Format</td><td className="py-2 px-2">PNG, JPG, GIF</td><td className="py-2 px-2">WebP / AVIF not yet universally supported</td></tr>
+              <tr className="border-b border-border"><td className="py-2 px-2">URL</td><td className="py-2 px-2">Absolute HTTPS only</td><td className="py-2 px-2">Relative paths break; HTTP gets blocked</td></tr>
+              <tr><td className="py-2 px-2">Text overlay</td><td className="py-2 px-2">Center-safe area</td><td className="py-2 px-2">Cropping varies per platform; keep text in middle 70%</td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div>
+          <h3 className="text-lg font-semibold text-foreground mb-2">Validation Tools</h3>
+          <ul className="list-disc pl-6 space-y-1">
+            <li><strong>Facebook Sharing Debugger</strong> (<code>developers.facebook.com/tools/debug</code>) — see exactly how Facebook will render your URL; force re-fetch to clear FB cache</li>
+            <li><strong>X / Twitter Card Validator</strong> (cards-dev.twitter.com/validator) — preview Twitter cards before sharing</li>
+            <li><strong>LinkedIn Post Inspector</strong> (<code>linkedin.com/post-inspector</code>) — verify LinkedIn previews</li>
+            <li><strong>OpenGraph.xyz</strong> — universal preview across many platforms</li>
+            <li><strong>Schema Markup Validator</strong> (validator.schema.org) — for JSON-LD structured data</li>
+            <li><strong>Google Rich Results Test</strong> (search.google.com/test/rich-results) — Google-specific rich snippet eligibility</li>
+            <li><strong>WhatsApp Link Preview Bot</strong> — message a URL to yourself to see how it renders</li>
+          </ul>
+        </div>
+
+        <div>
+          <h3 className="text-lg font-semibold text-foreground mb-2">Robots Meta Tag Directives</h3>
+          <ul className="list-disc pl-6 space-y-1">
+            <li><strong>index, follow</strong> (default if no robots tag): allow indexing and link following</li>
+            <li><strong>noindex:</strong> don&apos;t include in search results (use for thank-you pages, login pages, internal admin)</li>
+            <li><strong>nofollow:</strong> don&apos;t follow links on this page (rarely needed at page level)</li>
+            <li><strong>noarchive:</strong> don&apos;t show cached version in search results</li>
+            <li><strong>nosnippet:</strong> don&apos;t show a description snippet (very rare use)</li>
+            <li><strong>max-snippet:N:</strong> limit snippet to N characters (Google-specific)</li>
+            <li><strong>max-image-preview:large/standard/none:</strong> control image preview size</li>
+            <li><strong>noimageindex:</strong> don&apos;t index images on this page</li>
+            <li><strong>unavailable_after:[date]:</strong> stop indexing after a specific date (Google-specific)</li>
+          </ul>
+        </div>
+
+        <div>
+          <h3 className="text-lg font-semibold text-foreground mb-2">Implementation in Modern Frameworks</h3>
+          <ul className="list-disc pl-6 space-y-1">
+            <li><strong>Next.js 13+ App Router:</strong> export a <code>metadata</code> object or <code>generateMetadata()</code> function from page.tsx</li>
+            <li><strong>Next.js Pages Router:</strong> use <code>next/head</code> component</li>
+            <li><strong>Nuxt 3:</strong> <code>useSeoMeta()</code> composable or <code>useHead()</code></li>
+            <li><strong>Astro:</strong> add tags directly in the <code>&lt;head&gt;</code> of layouts</li>
+            <li><strong>WordPress:</strong> use Yoast SEO, Rank Math, or All in One SEO plugins</li>
+            <li><strong>Shopify:</strong> edit theme.liquid&apos;s <code>&lt;head&gt;</code> section</li>
+            <li><strong>Webflow:</strong> Site Settings → SEO + page-level overrides</li>
+            <li><strong>React (vanilla):</strong> react-helmet-async or react-helmet</li>
+          </ul>
+        </div>
       </div>
     ),
 

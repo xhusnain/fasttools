@@ -109,12 +109,90 @@ const toolConfig = createToolConfig({
 
     aboutTool: (
       <div className="space-y-6 text-muted-foreground">
-        <p>
-          Keyword density is calculated as (number of times a keyword appears / total word count) x 100, expressed as a percentage. For example, if &quot;email marketing&quot; appears 15 times in a 1,000-word article, its density is 1.5%. In modern SEO, keyword density serves as a diagnostic indicator rather than a precise ranking factor — Google&apos;s algorithms use sophisticated natural language processing (NLP) and semantic understanding that goes far beyond simple term frequency. However, keyword density analysis remains valuable because excessively high density (above 3%) can trigger Google&apos;s keyword stuffing penalties, very low density (below 0.5%) may signal weak topical relevance, and density patterns reveal whether content naturally covers a topic or artificially repeats phrases.
-        </p>
-        <p>
-          N-gram analysis (examining 2-word and 3-word phrase frequencies) is particularly powerful for detecting over-optimization patterns that single-word analysis misses. Repeated bigrams like &quot;best software&quot; appearing 20 times or trigrams like &quot;best project management&quot; appearing 15 times are strong signals of unnatural writing that search engines can detect. The most effective content strategy uses your primary keyword at 1-2% density, includes semantic variations and synonyms naturally, covers related subtopics and entities that Google expects to see on the page (topical authority), and reads naturally to human audiences. Use this checker alongside your content writing workflow to balance SEO optimization with reader experience quality.
-        </p>
+        <div>
+          <h3 className="text-lg font-semibold text-foreground mb-2">Keyword Density: The Math + The Reality</h3>
+          <p>
+            Keyword density is calculated as <code>(keyword occurrences / total words) × 100</code>, expressed as a percentage. If &quot;email marketing&quot; appears 15 times in a 1,000-word article, density is 1.5%. <strong>In 2026 SEO, density is a diagnostic indicator, not a ranking factor.</strong> Google&apos;s algorithms use sophisticated natural language processing (NLP) — BERT, MUM, and successor models — that understand semantic meaning far beyond term frequency. But density analysis still matters because:
+          </p>
+          <ul className="list-disc pl-6 mt-2 space-y-1">
+            <li><strong>Excessive density (&gt;3%) triggers keyword stuffing detection</strong> and can hurt rankings</li>
+            <li><strong>Very low density (&lt;0.5%) may signal weak topical relevance</strong> — Google may not understand what your page is &quot;about&quot;</li>
+            <li><strong>Patterns reveal AI-generated content</strong> — natural writing has variable repetition; AI tends toward consistent patterns</li>
+            <li><strong>Competitor analysis</strong> — see how your density compares to top-ranking pages</li>
+            <li><strong>Topical coverage gaps</strong> — n-gram analysis surfaces missing subtopics</li>
+          </ul>
+        </div>
+
+        <div>
+          <h3 className="text-lg font-semibold text-foreground mb-2">Optimal Keyword Density by Use Case</h3>
+          <table className="w-full border-collapse text-sm">
+            <thead>
+              <tr className="border-b border-border">
+                <th className="text-left py-2 px-2 text-foreground">Content type</th>
+                <th className="text-left py-2 px-2 text-foreground">Primary keyword density</th>
+                <th className="text-left py-2 px-2 text-foreground">Secondary keywords</th>
+                <th className="text-left py-2 px-2 text-foreground">Notes</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr className="border-b border-border"><td className="py-2 px-2"><strong>Blog post (informational)</strong></td><td className="py-2 px-2">0.5-1.5%</td><td className="py-2 px-2">0.2-0.5%</td><td className="py-2 px-2">Focus on E-E-A-T and topical depth</td></tr>
+              <tr className="border-b border-border"><td className="py-2 px-2">Long-form guide (3,000+ words)</td><td className="py-2 px-2">0.5-1%</td><td className="py-2 px-2">0.1-0.3%</td><td className="py-2 px-2">Lower density natural at length</td></tr>
+              <tr className="border-b border-border"><td className="py-2 px-2"><strong>Product page</strong></td><td className="py-2 px-2">1-2%</td><td className="py-2 px-2">0.5-1%</td><td className="py-2 px-2">Be explicit about product name</td></tr>
+              <tr className="border-b border-border"><td className="py-2 px-2">Service page (local)</td><td className="py-2 px-2">1-2%</td><td className="py-2 px-2">0.5%</td><td className="py-2 px-2">Include location keywords too</td></tr>
+              <tr className="border-b border-border"><td className="py-2 px-2">Landing page (PPC)</td><td className="py-2 px-2">2-3%</td><td className="py-2 px-2">0.5%</td><td className="py-2 px-2">Higher density tolerable; match ad copy</td></tr>
+              <tr className="border-b border-border"><td className="py-2 px-2">Category / collection page</td><td className="py-2 px-2">0.5-1%</td><td className="py-2 px-2">N/A</td><td className="py-2 px-2">Mostly navigational; less keyword density</td></tr>
+              <tr><td className="py-2 px-2 text-red-500"><strong>&gt;3% anywhere</strong></td><td className="py-2 px-2">N/A</td><td className="py-2 px-2">N/A</td><td className="py-2 px-2 text-red-500">Likely stuffing — rewrite for natural flow</td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div>
+          <h3 className="text-lg font-semibold text-foreground mb-2">N-Gram Analysis: What 2- and 3-Word Phrases Reveal</h3>
+          <p>
+            Single-word frequency misses patterns. N-gram analysis (bigrams, trigrams) reveals:
+          </p>
+          <ul className="list-disc pl-6 mt-2 space-y-1">
+            <li><strong>Stuffing patterns:</strong> &quot;best software&quot; appearing 20 times in a 1,000-word post signals unnatural emphasis</li>
+            <li><strong>Variation gaps:</strong> if your trigrams cluster around 2-3 phrases, content lacks variety</li>
+            <li><strong>Long-tail opportunities:</strong> low-frequency trigrams pointing to user questions you didn&apos;t fully address</li>
+            <li><strong>AI-generated tells:</strong> ChatGPT/Claude tend to repeat phrases like &quot;in conclusion,&quot; &quot;it&apos;s important to,&quot; &quot;when it comes to&quot; — high trigram density of these = AI signature</li>
+            <li><strong>Topic clusters:</strong> bigrams cluster around themes; ideal content has multiple cluster centers</li>
+          </ul>
+        </div>
+
+        <div>
+          <h3 className="text-lg font-semibold text-foreground mb-2">Modern SEO: TF-IDF, BM25, and Semantic Coverage</h3>
+          <p>
+            Pure density is 1990s SEO. Modern search engines use more sophisticated approaches:
+          </p>
+          <ul className="list-disc pl-6 mt-2 space-y-1">
+            <li><strong>TF-IDF (Term Frequency-Inverse Document Frequency):</strong> measures how unusual a term is in your document vs. the broader web. Low-IDF terms (like &quot;the&quot;) are filtered out; high-IDF terms (specific jargon) signal expertise.</li>
+            <li><strong>BM25:</strong> Elasticsearch&apos;s default ranking function. Like TF-IDF but with diminishing returns on repetition — appearing 100 times isn&apos;t much more valuable than 10 times.</li>
+            <li><strong>Semantic vectors (BERT, MUM):</strong> Google compares your content&apos;s semantic embedding to query embeddings. Synonyms and related concepts count, not just exact keyword matches.</li>
+            <li><strong>Topical authority:</strong> covering related subtopics, entities, and questions signals expertise. A page about &quot;email marketing&quot; that mentions deliverability, list segmentation, A/B testing, GDPR, etc., ranks higher than one obsessing only on the exact phrase.</li>
+            <li><strong>E-E-A-T signals:</strong> Experience, Expertise, Authoritativeness, Trust. Density matters far less than depth.</li>
+          </ul>
+        </div>
+
+        <div>
+          <h3 className="text-lg font-semibold text-foreground mb-2">Practical Content Workflow</h3>
+          <ol className="list-decimal pl-6 space-y-1">
+            <li><strong>Write naturally first.</strong> Don&apos;t check density mid-draft — write for the reader.</li>
+            <li><strong>Audit with this tool.</strong> Check density of your primary keyword and top-ranking competitors&apos; densities.</li>
+            <li><strong>If too high (&gt;3%):</strong> replace duplicates with synonyms, pronouns, or related phrases. Add subtopic sections to dilute.</li>
+            <li><strong>If too low (&lt;0.5%):</strong> review the H1, intro paragraph, and conclusion — these high-weight sections should mention the primary keyword.</li>
+            <li><strong>Check n-grams:</strong> any 2-word or 3-word phrases appearing &gt;15-20 times? Replace 30-50% of them with variations.</li>
+            <li><strong>Add LSI (Latent Semantic Indexing) keywords:</strong> related terms Google expects. For &quot;email marketing,&quot; add deliverability, segmentation, automation, conversion rates, etc.</li>
+            <li><strong>Compare to ranking competitors:</strong> if competitors cover topics you missed, add those sections.</li>
+          </ol>
+        </div>
+
+        <div>
+          <h3 className="text-lg font-semibold text-foreground mb-2">Stop Words and Why They&apos;re Filtered</h3>
+          <p>
+            Words like &quot;the,&quot; &quot;a,&quot; &quot;an,&quot; &quot;of,&quot; &quot;in,&quot; &quot;to,&quot; &quot;and,&quot; &quot;is&quot; appear in every text — they have no topical meaning. Search engines and SEO tools filter these as <strong>stop words</strong> before counting density. If your tool says &quot;the&quot; is your top word, it&apos;s not configured to filter stops. This tool uses the standard English stop word list (~150 words) by default; you can paste any text knowing meaningful terms will surface to the top.
+          </p>
+        </div>
       </div>
     ),
 
