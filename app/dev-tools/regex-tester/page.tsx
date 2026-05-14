@@ -126,12 +126,31 @@ const toolConfig = createToolConfig({
         answer:
           "Yes. Completely free, runs locally in your browser, and has no limits on pattern testing or registration requirements.",
       },
+      {
+        question: "Is this a Ruby regex tester?",
+        answer:
+          "It tests JavaScript regex by default (the regex engine that powers Node.js, web browsers, and most online editors). Ruby regex (Oniguruma engine) is mostly compatible — the same patterns for character classes, quantifiers, anchors, and alternation work in both. The main Ruby-specific extras the JS engine doesn't natively support are named captures with /(?<name>pattern)/ syntax (works in modern JS too), POSIX character classes [:alpha:], and Ruby-only flags like /m for multiline-anything (in Ruby /m means 'dot matches newline', in JS the same flag means 'multiline anchors'). For Ruby-exclusive features, test patterns in irb or rubular.com after prototyping here."
+      },
+      {
+        question: "What's the difference between JavaScript, Ruby, PCRE, and Python regex?",
+        answer:
+          "All four are descendants of Perl-compatible regex with mostly overlapping syntax. JavaScript regex is the smallest set (no named captures historically, no lookbehind until ES2018, no \\K reset). Ruby uses Oniguruma which adds Unicode property classes \\p{...}, advanced quantifiers, and named captures. PCRE (used in PHP, nginx, R) is the most feature-complete — recursive patterns, conditionals, backreferences. Python's re module sits between PCRE and JS. For maximum portability, stick to the common subset: basic character classes, quantifiers, anchors, and alternation."
+      },
+      {
+        question: "How do I test a regex online?",
+        answer:
+          "Paste your pattern in the regex field above and your test string in the input field. Matches are highlighted in real time. You can toggle flags (g for global, i for case-insensitive, m for multiline, s for dotall, u for unicode, y for sticky). For step-through debugging, regex101.com shows match-by-match execution; this tool focuses on quick verification."
+      }
     ],
 
     relatedTools: [
       { name: "JSON Diff", href: "/dev-tools/json-diff" },
       { name: "Markdown Previewer", href: "/dev-tools/markdown-previewer" },
       { name: "HTTP Status Codes", href: "/dev-tools/http-status-codes" },
+      { name: "Slugify String", href: "/dev-tools/slugify-string" },
+      { name: "User-Agent Parser", href: "/dev-tools/user-agent-parser" },
+      { name: "HTML Beautifier", href: "/dev-tools/html-beautifier" },
+      { name: "Base64 Encoder", href: "/dev-tools/base64-encoder" },
       { name: "All Developer Tools", href: "/dev-tools" },
     ],
   },
