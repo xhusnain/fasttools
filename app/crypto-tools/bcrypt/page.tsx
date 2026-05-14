@@ -125,9 +125,13 @@ const toolConfig = createToolConfig({
     ],
 
     relatedTools: [
-      { name: "Password Analyzer", href: "/crypto-tools/password-strength-analyzer" },
+      { name: "Password Strength Analyzer", href: "/crypto-tools/password-strength-analyzer" },
+      { name: "Password Generator", href: "/crypto-tools/password-generator" },
+      { name: "Hash Text (SHA-256/512)", href: "/crypto-tools/hash-text" },
+      { name: "HMAC Generator", href: "/crypto-tools/hmac-generator" },
       { name: "Token Generator", href: "/crypto-tools/token-generator" },
-      { name: "Hash Text", href: "/crypto-tools/hash-text" },
+      { name: "Text Encrypt/Decrypt", href: "/crypto-tools/encrypt-decrypt" },
+      { name: "JWT Decoder", href: "/dev-tools/jwt-decoder" },
       { name: "All Crypto Tools", href: "/crypto-tools" },
     ],
   },

@@ -133,7 +133,11 @@ const toolConfig = createToolConfig({
     relatedTools: [
       { name: "UUID Generator", href: "/crypto-tools/uuid-generator" },
       { name: "Token Generator", href: "/crypto-tools/token-generator" },
+      { name: "Password Generator", href: "/crypto-tools/password-generator" },
       { name: "Hash Text", href: "/crypto-tools/hash-text" },
+      { name: "Cron Expression Generator", href: "/dev-tools/cron-expression-generator" },
+      { name: "JWT Decoder", href: "/dev-tools/jwt-decoder" },
+      { name: "Slugify String", href: "/dev-tools/slugify-string" },
       { name: "All Crypto Tools", href: "/crypto-tools" },
     ],
   },

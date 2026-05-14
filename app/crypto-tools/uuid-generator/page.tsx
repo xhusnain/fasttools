@@ -133,7 +133,11 @@ const toolConfig = createToolConfig({
     relatedTools: [
       { name: "ULID Generator", href: "/crypto-tools/ulid-generator" },
       { name: "Token Generator", href: "/crypto-tools/token-generator" },
+      { name: "Password Generator", href: "/crypto-tools/password-generator" },
       { name: "RSA Key Pair Generator", href: "/crypto-tools/rsa-generator" },
+      { name: "Hash Text", href: "/crypto-tools/hash-text" },
+      { name: "BIP39 Mnemonic Generator", href: "/crypto-tools/bip39-generator" },
+      { name: "Wheel Spinner (random picker)", href: "/fun-tools/wheel-spinner" },
       { name: "All Crypto Tools", href: "/crypto-tools" },
     ],
   },

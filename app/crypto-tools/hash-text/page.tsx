@@ -132,7 +132,11 @@ const toolConfig = createToolConfig({
     relatedTools: [
       { name: "HMAC Generator", href: "/crypto-tools/hmac-generator" },
       { name: "Text Encrypt/Decrypt", href: "/crypto-tools/encrypt-decrypt" },
+      { name: "Bcrypt Hash Generator", href: "/crypto-tools/bcrypt" },
+      { name: "RSA Key Pair Generator", href: "/crypto-tools/rsa-generator" },
       { name: "Token Generator", href: "/crypto-tools/token-generator" },
+      { name: "JWT Decoder", href: "/dev-tools/jwt-decoder" },
+      { name: "Base64 Encoder", href: "/dev-tools/base64-encoder" },
       { name: "All Crypto Tools", href: "/crypto-tools" },
     ],
   },

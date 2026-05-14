@@ -127,7 +127,11 @@ const toolConfig = createToolConfig({
     relatedTools: [
       { name: "Hash Text", href: "/crypto-tools/hash-text" },
       { name: "Text Encrypt/Decrypt", href: "/crypto-tools/encrypt-decrypt" },
+      { name: "RSA Key Pair Generator", href: "/crypto-tools/rsa-generator" },
+      { name: "Bcrypt Hash Generator", href: "/crypto-tools/bcrypt" },
       { name: "Token Generator", href: "/crypto-tools/token-generator" },
+      { name: "Auth Generator (HTTP)", href: "/web-tools/auth-generator" },
+      { name: "JWT Decoder", href: "/dev-tools/jwt-decoder" },
       { name: "All Crypto Tools", href: "/crypto-tools" },
     ],
   },
