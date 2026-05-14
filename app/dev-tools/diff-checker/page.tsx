@@ -171,14 +171,103 @@ const toolConfig = createToolConfig({
         <div>
           <h3 className="text-lg font-semibold text-foreground mb-2">Privacy and Security</h3>
           <p>
-            Many online diff checkers upload your text to their servers for processing, which
-            creates privacy risks — especially for code, contracts, or sensitive documents. This
-            tool runs entirely in your browser using JavaScript. Your text is never uploaded,
-            never logged, never stored on any server. You can even use it offline once the page
-            is loaded. This makes it safe for comparing proprietary code, legal documents, medical
-            records, or any confidential content. The processing happens in milliseconds even for
-            large texts.
+            Many online diff checkers upload your text to their servers for processing, which creates privacy risks — especially for code, contracts, or sensitive documents. This tool runs entirely in your browser using JavaScript. Your text is never uploaded, never logged, never stored on any server. You can even use it offline once the page is loaded. This makes it safe for comparing proprietary code, legal documents, medical records, or any confidential content. The processing happens in milliseconds even for large texts.
           </p>
+        </div>
+
+        <div>
+          <h3 className="text-lg font-semibold text-foreground mb-2">Diff Algorithm Variants</h3>
+          <p>Most diff tools — Git, Unix diff, this tool — use variants of the same core algorithm. The choices matter for specific cases:</p>
+          <ul className="list-disc pl-6 mt-2 space-y-1">
+            <li><strong>Myers&apos; algorithm (default):</strong> the standard since 1986. Fast, produces minimal diffs. What you get by default.</li>
+            <li><strong>Patience diff:</strong> Bram Cohen&apos;s improvement — finds matches of unique lines first, then matches between them. Produces more readable diffs for code rearrangement. Used by `git diff --patience`.</li>
+            <li><strong>Histogram diff:</strong> further refinement of Patience. Used by `git diff --histogram` and IntelliJ. Best for refactored code where blocks moved.</li>
+            <li><strong>Word-level diff:</strong> instead of comparing lines, compare individual words. Useful for prose changes where line breaks would otherwise mark whole paragraphs as different.</li>
+            <li><strong>Character-level diff:</strong> what this tool uses within changed lines to show exact letter-level changes.</li>
+          </ul>
+        </div>
+
+        <div>
+          <h3 className="text-lg font-semibold text-foreground mb-2">Diff Checker vs Git, GitHub PRs, VS Code, Beyond Compare</h3>
+          <table className="w-full border-collapse text-sm">
+            <thead>
+              <tr className="border-b border-border">
+                <th className="text-left py-2 px-2 text-foreground">Tool</th>
+                <th className="text-left py-2 px-2 text-foreground">Best for</th>
+                <th className="text-left py-2 px-2 text-foreground">Limitations</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr className="border-b border-border">
+                <td className="py-2 px-2"><strong>This tool</strong></td>
+                <td className="py-2 px-2">Ad-hoc text comparison, sensitive content, quick paste-and-compare</td>
+                <td className="py-2 px-2">No file upload, no Git integration</td>
+              </tr>
+              <tr className="border-b border-border">
+                <td className="py-2 px-2">Git diff CLI</td>
+                <td className="py-2 px-2">Within a Git repo, scriptable</td>
+                <td className="py-2 px-2">Requires Git context; terminal only</td>
+              </tr>
+              <tr className="border-b border-border">
+                <td className="py-2 px-2">GitHub PR view</td>
+                <td className="py-2 px-2">Team code reviews with comments</td>
+                <td className="py-2 px-2">Requires GitHub; tied to commits</td>
+              </tr>
+              <tr className="border-b border-border">
+                <td className="py-2 px-2">VS Code Compare</td>
+                <td className="py-2 px-2">Live editing during comparison</td>
+                <td className="py-2 px-2">Needs files on disk; editor open</td>
+              </tr>
+              <tr className="border-b border-border">
+                <td className="py-2 px-2">Beyond Compare (paid)</td>
+                <td className="py-2 px-2">3-way merge, folder diffs, FTP/SCP</td>
+                <td className="py-2 px-2">$60+ per license</td>
+              </tr>
+              <tr className="border-b border-border">
+                <td className="py-2 px-2">Diffchecker.com</td>
+                <td className="py-2 px-2">PDF / image diffs, saved diffs</td>
+                <td className="py-2 px-2">Paywall on large files; uploads text to server</td>
+              </tr>
+              <tr>
+                <td className="py-2 px-2">Meld (Linux)</td>
+                <td className="py-2 px-2">3-way merge, folder comparison</td>
+                <td className="py-2 px-2">Desktop install required</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div>
+          <h3 className="text-lg font-semibold text-foreground mb-2">Unified Diff Format (Git Patch)</h3>
+          <p>The unified view output follows the standard <code>diff -u</code> format used by Git, patch, and most code review tools:</p>
+          <pre className="bg-muted p-3 rounded mt-2 text-xs overflow-x-auto">
+            <code>{`--- original.txt    2024-01-01 00:00:00
++++ modified.txt    2024-01-01 00:00:00
+@@ -1,5 +1,5 @@
+ unchanged line above
+-removed line
++added line
+ unchanged line below`}</code>
+          </pre>
+          <p className="mt-3">
+            The header lines (<code>---</code> / <code>+++</code>) identify the files. <code>@@</code> hunks show the line ranges. Lines prefixed with <code>-</code> were removed, <code>+</code> were added, and unprefixed lines are unchanged context. You can save the unified output as <code>.diff</code> or <code>.patch</code> and apply with <code>git apply file.diff</code> or <code>patch &lt; file.diff</code>.
+          </p>
+        </div>
+
+        <div>
+          <h3 className="text-lg font-semibold text-foreground mb-2">Common Use Cases Beyond Code Review</h3>
+          <ul className="list-disc pl-6 space-y-1">
+            <li><strong>Contract / legal document comparison:</strong> compare versions of contracts, NDAs, terms of service to spot changed clauses. Use character-level highlighting to catch single-word changes.</li>
+            <li><strong>Manuscript editing:</strong> compare draft 1 vs draft 2 of an article / book chapter / paper</li>
+            <li><strong>Translation QA:</strong> compare source and translated text to verify structure preservation and find missing sections</li>
+            <li><strong>Config file environments:</strong> compare dev / staging / prod configs to find drift</li>
+            <li><strong>Log file analysis:</strong> compare last week&apos;s logs vs this week&apos;s to find new error patterns</li>
+            <li><strong>SQL query comparison:</strong> compare two query versions during optimization to see exactly what changed</li>
+            <li><strong>API response comparison:</strong> compare what an API returned today vs what it returned last month (use Ignore Whitespace + sort first for stable comparison)</li>
+            <li><strong>Email draft review:</strong> compare a teammate&apos;s edits to your draft</li>
+            <li><strong>Plagiarism detection:</strong> compare two essays to identify identical passages</li>
+            <li><strong>Resume version tracking:</strong> see what you changed between job application versions</li>
+          </ul>
         </div>
       </div>
     ),

@@ -118,26 +118,133 @@ const toolConfig = createToolConfig({
 
     aboutTool: (
       <div className="space-y-6 text-muted-foreground">
-        <p>
-          Social media algorithms in 2026 heavily weight caption engagement signals
-          — comments, saves, and shares — when deciding how widely to distribute
-          your content. Instagram&apos;s algorithm favors captions that prompt
-          conversation (questions, polls, controversial takes), while TikTok&apos;s
-          For You Page algorithm uses caption keywords for content classification
-          and discovery. LinkedIn&apos;s algorithm rewards &quot;dwell time,&quot; making
-          hook-style openings that stop the scroll critical for reach. Understanding
-          these platform-specific dynamics is why AI-generated captions need to be
-          tailored per network rather than copy-pasted across all channels.
-        </p>
-        <p>
-          This caption generator uses AI language models trained on high-performing
-          social media content patterns to produce captions that follow proven
-          engagement frameworks: hook-story-CTA for LinkedIn, emoji-rich micro-stories
-          for Instagram, trend-aware keyword hooks for TikTok, and concise punchy
-          statements for X/Twitter. The multi-variation output lets you test different
-          messaging angles — educational vs entertaining, question vs statement, short
-          vs long — and learn what resonates with your specific audience over time.
-        </p>
+        <div>
+          <h3 className="text-lg font-semibold text-foreground mb-2">Why Platform-Specific Captions Matter</h3>
+          <p>
+            Social media algorithms weight caption engagement signals — comments, saves, and shares — when deciding how widely to distribute your content. <strong>Instagram&apos;s algorithm</strong> favors captions that prompt conversation (questions, polls, controversial takes). <strong>TikTok&apos;s For You Page algorithm</strong> uses caption keywords for content classification — keyword-rich captions help the AI place your video in the right niche. <strong>LinkedIn&apos;s algorithm</strong> rewards &quot;dwell time,&quot; making hook-style openings critical. <strong>X / Twitter</strong> punishes long captions — concise hooks win. Cross-posting the same caption across all platforms typically <strong>underperforms by 40-60%</strong> compared to platform-tailored captions.
+          </p>
+        </div>
+
+        <div>
+          <h3 className="text-lg font-semibold text-foreground mb-2">Anatomy of a High-Performing Caption</h3>
+          <p>The best-performing captions across platforms follow the <strong>Hook-Story-CTA</strong> framework:</p>
+          <ul className="list-disc pl-6 mt-2 space-y-1">
+            <li><strong>Hook (first 125 chars):</strong> the part visible before &quot;...more&quot; truncation. Must stop the scroll. Use a bold statement, surprising statistic, provocative question, or pattern interrupt.</li>
+            <li><strong>Story (middle):</strong> relatable mini-narrative, behind-the-scenes detail, educational content, or value-add. Builds connection and gives the audience a reason to stay.</li>
+            <li><strong>CTA (end):</strong> clear action — comment, share, save, tag a friend, click link in bio. Without a CTA, posts get views but no engagement; with one, comments triple.</li>
+          </ul>
+          <p className="mt-3">
+            Optional add-ons: emoji to add visual rhythm and break up text, line breaks to make reading easier on mobile, hashtags grouped at the end (or in first comment for Instagram) to avoid cluttering the main caption.
+          </p>
+        </div>
+
+        <div>
+          <h3 className="text-lg font-semibold text-foreground mb-2">Platform-Specific Caption Best Practices</h3>
+          <table className="w-full border-collapse text-sm">
+            <thead>
+              <tr className="border-b border-border">
+                <th className="text-left py-2 px-2 text-foreground">Platform</th>
+                <th className="text-left py-2 px-2 text-foreground">Optimal length</th>
+                <th className="text-left py-2 px-2 text-foreground">Tone</th>
+                <th className="text-left py-2 px-2 text-foreground">Hashtags</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr className="border-b border-border">
+                <td className="py-2 px-2"><strong>Instagram (feed)</strong></td>
+                <td className="py-2 px-2">125-150 chars before fold + 50-300 words after</td>
+                <td className="py-2 px-2">Personal, story-driven, emoji-rich</td>
+                <td className="py-2 px-2">3-5 (in first comment)</td>
+              </tr>
+              <tr className="border-b border-border">
+                <td className="py-2 px-2">Instagram Reels</td>
+                <td className="py-2 px-2">125 chars (visible only)</td>
+                <td className="py-2 px-2">Short hook + 1-2 emojis</td>
+                <td className="py-2 px-2">3-5 (in caption)</td>
+              </tr>
+              <tr className="border-b border-border">
+                <td className="py-2 px-2">TikTok</td>
+                <td className="py-2 px-2">100-150 chars</td>
+                <td className="py-2 px-2">Keyword-rich, hook-first, conversational</td>
+                <td className="py-2 px-2">3-5 niche + 1 broad</td>
+              </tr>
+              <tr className="border-b border-border">
+                <td className="py-2 px-2"><strong>LinkedIn</strong></td>
+                <td className="py-2 px-2">200-500 words, line-broken</td>
+                <td className="py-2 px-2">Professional but personal, thought leadership</td>
+                <td className="py-2 px-2">3-5 industry-specific</td>
+              </tr>
+              <tr className="border-b border-border">
+                <td className="py-2 px-2">X / Twitter</td>
+                <td className="py-2 px-2">71-100 chars</td>
+                <td className="py-2 px-2">Concise, witty, opinionated</td>
+                <td className="py-2 px-2">1-2 max (engagement drops &gt;2)</td>
+              </tr>
+              <tr className="border-b border-border">
+                <td className="py-2 px-2">Facebook</td>
+                <td className="py-2 px-2">40-80 chars</td>
+                <td className="py-2 px-2">Personal, conversational, emotional</td>
+                <td className="py-2 px-2">2-3 max</td>
+              </tr>
+              <tr className="border-b border-border">
+                <td className="py-2 px-2">Pinterest</td>
+                <td className="py-2 px-2">200-300 chars in description</td>
+                <td className="py-2 px-2">Keyword-rich, SEO-style, descriptive</td>
+                <td className="py-2 px-2">3-5 within description</td>
+              </tr>
+              <tr>
+                <td className="py-2 px-2">YouTube (description)</td>
+                <td className="py-2 px-2">First 157 chars above fold</td>
+                <td className="py-2 px-2">SEO + summary + timestamps</td>
+                <td className="py-2 px-2">3-5 in description</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div>
+          <h3 className="text-lg font-semibold text-foreground mb-2">Hook Patterns That Stop the Scroll</h3>
+          <ul className="list-disc pl-6 space-y-1">
+            <li><strong>Bold contrarian statement:</strong> &quot;Everyone says X. They&apos;re wrong.&quot;</li>
+            <li><strong>Specific number / statistic:</strong> &quot;We tested 47 versions of this email. Here&apos;s what won.&quot;</li>
+            <li><strong>Provocative question:</strong> &quot;What if your morning routine is sabotaging your day?&quot;</li>
+            <li><strong>Pattern interrupt:</strong> &quot;I quit my $200K job and I&apos;m not coming back. Here&apos;s why...&quot;</li>
+            <li><strong>Curiosity gap:</strong> &quot;The 3-word sentence that doubled my response rate.&quot;</li>
+            <li><strong>Negative framing:</strong> &quot;Don&apos;t do this if you want to grow on LinkedIn.&quot;</li>
+            <li><strong>Numbered list tease:</strong> &quot;5 things I wish I knew when I started my business.&quot;</li>
+            <li><strong>Mistake story:</strong> &quot;I lost $50K making this one mistake. Here&apos;s the lesson.&quot;</li>
+            <li><strong>Direct address:</strong> &quot;If you&apos;re a [niche], read this before posting today.&quot;</li>
+            <li><strong>Time-bound urgency:</strong> &quot;This stopped working in 2024. Here&apos;s what to do now.&quot;</li>
+          </ul>
+        </div>
+
+        <div>
+          <h3 className="text-lg font-semibold text-foreground mb-2">Hashtag Strategy by Platform</h3>
+          <p>
+            More hashtags ≠ more reach. Each platform has an optimal range. Use the <a href="/social-media-tools/hashtag-counter" className="text-primary underline">Hashtag Counter</a> to verify you&apos;re within limits before posting.
+          </p>
+          <ul className="list-disc pl-6 mt-2 space-y-1">
+            <li><strong>Instagram (3-5 hashtags):</strong> 1-2 mega-popular (#travel = 600M+ posts), 2-3 niche-specific (#solofemaletravel = 5M posts), 1-2 long-tail (#solotravelparis).</li>
+            <li><strong>TikTok (3-5 hashtags):</strong> 1 broad (#fyp, #foryou — questionable but expected), 3-4 niche to help algorithm classify your video.</li>
+            <li><strong>LinkedIn (3-5 hashtags):</strong> Industry-specific (#productmanagement, #saas), not generic (#business, #motivation).</li>
+            <li><strong>X / Twitter (1-2):</strong> engagement drops ~17% above 2 hashtags. Less is more here.</li>
+            <li><strong>Pinterest (2-5):</strong> embed within description naturally; pinterest treats descriptions like SEO content.</li>
+          </ul>
+        </div>
+
+        <div>
+          <h3 className="text-lg font-semibold text-foreground mb-2">When NOT to Use AI Captions</h3>
+          <ul className="list-disc pl-6 space-y-1">
+            <li><strong>Personal stories:</strong> AI can&apos;t replicate the specific texture of your real life. Use AI for templates / structure, write the personal story yourself.</li>
+            <li><strong>Crisis communication:</strong> tone, nuance, and accountability matter — don&apos;t outsource these to AI.</li>
+            <li><strong>Sponsored / FTC-regulated content:</strong> AI may miss required disclosures (#ad, #sponsored, #partnership). Always personally verify compliance.</li>
+            <li><strong>Audience-specific in-jokes:</strong> if your audience has shared references, AI can&apos;t replicate them.</li>
+            <li><strong>Breaking news / time-sensitive:</strong> AI may use stale information; verify facts.</li>
+          </ul>
+          <p className="mt-3">
+            The best AI caption workflow: <strong>generate → select best option → personalize for 2-3 minutes</strong>. AI does 80% of the work; your final pass adds the specific texture that AI can&apos;t produce.
+          </p>
+        </div>
       </div>
     ),
 
