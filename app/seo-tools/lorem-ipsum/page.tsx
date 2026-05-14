@@ -105,20 +105,120 @@ const toolConfig = createToolConfig({
 
     aboutTool: (
       <div className="space-y-6 text-muted-foreground">
-        <p>
-          Placeholder content helps teams evaluate visual hierarchy without being
-          biased by final wording. It keeps attention on structure, spacing,
-          rhythm, and readability.
-        </p>
-        <p>
-          When real copy is ready, replace placeholders with production text and
-          re-test line breaks, truncation, and component behavior.
-        </p>
+        <div>
+          <h3 className="text-lg font-semibold text-foreground mb-2">The Origin: 500 Years of Placeholder Text</h3>
+          <p>
+            Lorem Ipsum is not random gibberish — it&apos;s scrambled Latin from <em>De Finibus Bonorum et Malorum</em> (&quot;On the Ends of Good and Evil&quot;), a 45 BC essay by Roman philosopher and statesman <strong>Cicero</strong>. The opening line of section 1.10.32 reads &quot;<em>Neque porro quisquam est qui dolorem ipsum quia dolor sit amet...</em>&quot; — translating roughly to &quot;Nor is there anyone who loves pain itself, who seeks after it...&quot;. In the 1500s, an unknown printer scrambled this passage to create dummy type for typesetting samples, and the corrupted version (starting &quot;Lorem ipsum dolor sit amet...&quot;) became the printing industry&apos;s standard placeholder. Adobe popularized it digitally in the 1980s by including it in PageMaker and InDesign. It&apos;s now in literally every design tool: Figma, Sketch, Adobe XD, Microsoft Word, Google Docs.
+          </p>
+        </div>
+
+        <div>
+          <h3 className="text-lg font-semibold text-foreground mb-2">Why Designers Use Lorem Ipsum Instead of Real Words</h3>
+          <ul className="list-disc pl-6 space-y-1">
+            <li><strong>Removes meaning bias:</strong> Real English text makes viewers focus on the content (&quot;Is this offensive? Accurate? Funny?&quot;) instead of the visual hierarchy. Lorem Ipsum&apos;s nonsense lets you evaluate <em>spacing, rhythm, type pairing, line height</em> without distraction.</li>
+            <li><strong>Realistic character distribution:</strong> Lorem Ipsum has a similar letter distribution to English, including ascenders, descenders, capitals, and punctuation — giving an accurate sense of how real copy will visually render.</li>
+            <li><strong>Variable length:</strong> Mimics actual prose with short and long words mixed naturally, exposing line-break issues that &quot;same word repeated&quot; placeholders miss.</li>
+            <li><strong>Industry expectation:</strong> Stakeholders / clients recognize Lorem Ipsum as &quot;not final copy,&quot; preventing premature copy critique during design review.</li>
+            <li><strong>Internationally recognized:</strong> Works across language teams — Lorem Ipsum is universal in design tooling.</li>
+          </ul>
+        </div>
+
+        <div>
+          <h3 className="text-lg font-semibold text-foreground mb-2">When NOT to Use Lorem Ipsum</h3>
+          <ul className="list-disc pl-6 space-y-1">
+            <li><strong>Production pages:</strong> Critical — Lorem Ipsum should never reach public servers. Google indexes it as low-quality content and it can harm SEO. Always replace before launch.</li>
+            <li><strong>Stakeholder approval rounds:</strong> Real copy (or at least the copy direction) is needed for stakeholder approval since they may make decisions about layout based on word length / tone.</li>
+            <li><strong>Accessibility testing:</strong> Screen reader testing needs real content to verify pronunciation, navigation flow, and skip-link logic.</li>
+            <li><strong>SEO testing:</strong> Heading hierarchy and content-related layout choices need real keywords / phrasing to validate.</li>
+            <li><strong>User testing:</strong> Real users will say &quot;but what does it say?&quot; — comprehension testing requires comprehensible content.</li>
+          </ul>
+        </div>
+
+        <div>
+          <h3 className="text-lg font-semibold text-foreground mb-2">Alternative Placeholder Text Styles</h3>
+          <p>Beyond classic Latin Lorem Ipsum, several alternative placeholder styles exist for specific situations:</p>
+          <table className="w-full border-collapse text-sm mt-3">
+            <thead>
+              <tr className="border-b border-border">
+                <th className="text-left py-2 px-2 text-foreground">Style</th>
+                <th className="text-left py-2 px-2 text-foreground">Sample</th>
+                <th className="text-left py-2 px-2 text-foreground">Use case</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr className="border-b border-border">
+                <td className="py-2 px-2"><strong>Classic Lorem Ipsum</strong></td>
+                <td className="py-2 px-2">&quot;Lorem ipsum dolor sit amet...&quot;</td>
+                <td className="py-2 px-2">Default for any design</td>
+              </tr>
+              <tr className="border-b border-border">
+                <td className="py-2 px-2">Bacon Ipsum</td>
+                <td className="py-2 px-2">&quot;Bacon ipsum dolor amet pork chop...&quot;</td>
+                <td className="py-2 px-2">Food / restaurant mockups</td>
+              </tr>
+              <tr className="border-b border-border">
+                <td className="py-2 px-2">Cupcake Ipsum</td>
+                <td className="py-2 px-2">&quot;Cupcake ipsum dolor sit amet lemon...&quot;</td>
+                <td className="py-2 px-2">Sweet shops / dessert sites</td>
+              </tr>
+              <tr className="border-b border-border">
+                <td className="py-2 px-2">Hipster Ipsum</td>
+                <td className="py-2 px-2">&quot;Artisan ipsum dolor sit amet kale chips...&quot;</td>
+                <td className="py-2 px-2">Lifestyle / boutique brands</td>
+              </tr>
+              <tr className="border-b border-border">
+                <td className="py-2 px-2">Pirate Ipsum</td>
+                <td className="py-2 px-2">&quot;Yarrr ye scallywag dolor sit amet...&quot;</td>
+                <td className="py-2 px-2">Themed sites, games</td>
+              </tr>
+              <tr className="border-b border-border">
+                <td className="py-2 px-2">Corporate Ipsum</td>
+                <td className="py-2 px-2">&quot;Synergize verticals dolor sit amet...&quot;</td>
+                <td className="py-2 px-2">B2B / enterprise mockups</td>
+              </tr>
+              <tr>
+                <td className="py-2 px-2">Real content drafts</td>
+                <td className="py-2 px-2">Actual draft copy (best for late-stage design)</td>
+                <td className="py-2 px-2">Pre-launch QA, stakeholder rev</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div>
+          <h3 className="text-lg font-semibold text-foreground mb-2">Lorem Ipsum in Modern Tooling</h3>
+          <p>
+            Most developers use Lorem Ipsum within design workflows: Figma&apos;s built-in &quot;Lorem ipsum&quot; plugin, Sketch&apos;s &quot;Data Populator,&quot; Adobe XD&apos;s &quot;Repeat Grid&quot; with built-in placeholder, or just paste from a generator like this one. For developers, many code editors include shortcuts: VS Code supports <code>lorem10</code> as an Emmet abbreviation that generates 10 words of Lorem Ipsum, or <code>p*5&gt;lorem</code> to generate 5 paragraphs of `&lt;p&gt;` tags with Lorem inside. Modern responsive web frameworks (Tailwind, Bootstrap, Material UI) ship sample mockups with Lorem Ipsum baked in.
+          </p>
+        </div>
+
+        <div>
+          <h3 className="text-lg font-semibold text-foreground mb-2">Testing Layouts with Variable Length</h3>
+          <p>
+            The most common mistake in design: using a single &quot;just right&quot; placeholder length and only catching layout issues when real content arrives. Best practice:
+          </p>
+          <ul className="list-disc pl-6 mt-2 space-y-1">
+            <li><strong>Short variant:</strong> 1-2 sentences for headlines / hero text</li>
+            <li><strong>Standard variant:</strong> 2-3 paragraphs for body content</li>
+            <li><strong>Long variant:</strong> 6+ paragraphs to test overflow / scroll / truncation</li>
+            <li><strong>Edge cases:</strong> single word headline, 200-character heading, empty state</li>
+          </ul>
+          <p className="mt-3">
+            Generate each variant separately to test how your design responds. Components with fixed heights or grid layouts especially need long-text testing.
+          </p>
+        </div>
+
+        <div>
+          <h3 className="text-lg font-semibold text-foreground mb-2">When Real Copy Arrives</h3>
+          <p>
+            When real copy is ready, replace placeholders carefully — real word lengths often surprise you. Test line breaks, truncation rules, and component behavior. The transition from Lorem Ipsum to real copy is where many designs &quot;break&quot;: brand names are short or super long, technical terms have unusual character counts, real headlines are punchier or wordier than the placeholder. Plan for both extremes.
+          </p>
+        </div>
       </div>
     ),
 
     proTip:
-      "Test with short and long placeholder variants to ensure your layout handles real-world content length changes.",
+      "Test layouts with at least 3 length variants: short (1 sentence), medium (1 paragraph), and long (5+ paragraphs). Real-world content is rarely 'just right' — short brand names break carousels, long product descriptions break grid layouts. For SEO-sensitive sites, never deploy Lorem Ipsum to production — Google can index it and it counts as 'thin content' against your domain. Always replace placeholder text in QA before launch, and add 'lorem' to your pre-launch checklist.",
 
     faqs: [
       {
