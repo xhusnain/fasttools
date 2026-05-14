@@ -252,8 +252,45 @@ For each tool, do this in order:
 ## Cumulative progress
 
 - Total tools: 179 + 8 variants = 187
-- Site-wide infrastructure: ✅ done (sitemap +42, Free dedup, OG image, llms.txt rewrite, homepage tool count)
-- Group A (top 20 GSC near-miss): ✅ DEEP audits done (competitor research, comparison tables, 5-15 new FAQs each, semantic synonyms)
-- Groups B-D batches done: ~50 tools — better related tools, focused FAQs, broken-link fixes (2 found and fixed: css-gradient→html-editor and ai-readability→/text-tools)
-- Total tools improved: 70 / 199
-- Remaining: finance tools (~33), image/PDF (~12), some dev-tools (~14), web/edu (~7), variants (~8) ≈ 74 left for next session
+## Depth standards
+
+After user feedback that batches 24+ were too shallow (just related-tools
+swaps + 1-2 FAQs), the **new depth target** for every tool is:
+
+1. **WebFetch top 5 competitors** for the dominant query — pull their
+   real `<title>`, `<meta description>`, H1, H2s, FAQ questions verbatim
+2. Rewrite **title** following competitor pattern (modifier-stack title
+   like "Mortgage Calculator with PMI, Taxes & Insurance (May 2026)")
+3. Rewrite **meta description** with current data points (rates,
+   prices, percentages — whatever's current for that tool's domain)
+4. Rewrite **schemaOptions.alternateName** with 10+ real synonyms from
+   competitors
+5. Rewrite **schemaOptions.featureList** with 12-15 specific features
+   matching what competitors actually showcase
+6. Update header.title + header.description to match
+7. Rewrite **overview**, **definition**, **quickAnswer**,
+   **keyTakeaways** with current data
+8. Build **aboutTool** with 6-10 deep sections including:
+   - The actual formula or math
+   - A current-data reference table (rates, prices, limits)
+   - Comparison tables (15 vs 30, FHA vs conventional, etc.)
+   - Competitor comparison table with honest assessment
+   - "Same tool, many names" semantic synonym block
+9. Build **15+ FAQs** using verbatim People-Also-Ask questions from
+   Google for that query
+10. Rewrite **relatedTools** with 8-10 workflow-relevant crosslinks
+
+Reference commit: `d5146aa5 seo(mortgage-calculator): full deep rewrite`
+
+## Progress
+
+- Site-wide infrastructure: ✅ done
+- Group A (20 tools): ✅ Deep audits (close to new standard but pre-dating it)
+- Groups B-D (~50 tools): partial — internal linking improved but
+  needs revisit for the full title/meta/schema rewrite at new standard
+- **Mortgage Calculator: ✅ full new-standard rewrite** (reference)
+- Total tools touched: 71 / 199
+- Tools at NEW standard: 1 / 199 (mortgage-calculator)
+- Tools at deep-but-not-full standard: 20 (Group A — still good, just missing
+  the systematic schema-alternateName/featureList overhaul)
+- Realistic depth: 3-5 tools per session at the new standard
