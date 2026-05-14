@@ -98,15 +98,130 @@ const toolConfig = createToolConfig({
 
     aboutTool: (
       <div className="space-y-6 text-muted-foreground">
-        <p>
-          Base64 is a binary-to-text encoding scheme that represents binary data using a set of 64 ASCII characters (A-Z, a-z, 0-9, +, /). It was designed to transmit binary data through text-only channels such as email (MIME encoding), JSON API payloads, XML documents, and URL parameters. Every 3 bytes of binary input produce 4 bytes of Base64 output, resulting in approximately 33% size increase.
-        </p>
-        <p>
-          Data URIs (data:[MIME-type];base64,[encoded-data]) allow files to be embedded directly in HTML and CSS without separate HTTP requests. This technique is commonly used for small images, icons, fonts, and SVG graphics in web development. For example, embedding a logo as a Base64 data URI in an HTML &lt;img&gt; tag eliminates one network round-trip, which can improve page load performance for critical above-the-fold content.
-        </p>
-        <p>
-          This tool uses the browser's built-in FileReader API and atob/btoa functions (or their modern equivalents) for encoding and decoding, ensuring fast processing without any server communication. Your files — whether they contain sensitive documents, proprietary images, or confidential data — are processed entirely in memory on your device and are never transmitted over the network.
-        </p>
+        <div>
+          <h3 className="text-lg font-semibold text-foreground mb-2">What Is Base64 Encoding for Files?</h3>
+          <p>
+            Base64 is a binary-to-text encoding scheme (RFC 4648) that represents binary data using 64 ASCII characters (A-Z, a-z, 0-9, +, /). It was designed to transmit binary data through text-only channels: email (MIME encoding), JSON API payloads, XML documents, URL parameters, and any context where raw binary would corrupt or be invalid. Every 3 bytes of binary input produce 4 bytes of Base64 output, resulting in approximately 33% size increase — the price you pay for safe text transport.
+          </p>
+        </div>
+
+        <div>
+          <h3 className="text-lg font-semibold text-foreground mb-2">Data URIs: Inline File Embedding</h3>
+          <p>
+            A <strong>data URI</strong> embeds file content directly in an HTML / CSS / JSON / Markdown document instead of linking to an external file. Format:
+          </p>
+          <pre className="bg-muted p-3 rounded mt-2 text-xs overflow-x-auto">
+            <code>{`data:[MIME-type];base64,[encoded-data]
+
+Example:
+data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAA...`}</code>
+          </pre>
+          <p className="mt-3">
+            Use cases: embedding logos / icons in HTML <code>&lt;img&gt;</code> tags, CSS <code>background-image</code> properties, or as PDF / image attachments in JSON API payloads. Modern email templates use data URIs for inline images that survive forwarding.
+          </p>
+        </div>
+
+        <div>
+          <h3 className="text-lg font-semibold text-foreground mb-2">When to Use Base64 (Pros / Cons)</h3>
+          <table className="w-full border-collapse text-sm">
+            <thead>
+              <tr className="border-b border-border">
+                <th className="text-left py-2 px-2 text-foreground">Scenario</th>
+                <th className="text-left py-2 px-2 text-foreground">Use Base64?</th>
+                <th className="text-left py-2 px-2 text-foreground">Why</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr className="border-b border-border">
+                <td className="py-2 px-2">Email image attachments (MIME)</td>
+                <td className="py-2 px-2 text-green-500">Yes</td>
+                <td className="py-2 px-2">Email is text-only by spec; required</td>
+              </tr>
+              <tr className="border-b border-border">
+                <td className="py-2 px-2">Small icons / logos in HTML / CSS</td>
+                <td className="py-2 px-2 text-green-500">Yes (&lt; 10KB)</td>
+                <td className="py-2 px-2">Eliminates HTTP round-trip for tiny files</td>
+              </tr>
+              <tr className="border-b border-border">
+                <td className="py-2 px-2">File uploads in JSON APIs</td>
+                <td className="py-2 px-2 text-green-500">Yes</td>
+                <td className="py-2 px-2">JSON can&apos;t carry raw binary</td>
+              </tr>
+              <tr className="border-b border-border">
+                <td className="py-2 px-2">PDF certificates in JWT claims</td>
+                <td className="py-2 px-2 text-green-500">Yes</td>
+                <td className="py-2 px-2">JWT is JSON-encoded; binary needs Base64</td>
+              </tr>
+              <tr className="border-b border-border">
+                <td className="py-2 px-2">Profile photos &gt; 100KB</td>
+                <td className="py-2 px-2 text-red-500">No</td>
+                <td className="py-2 px-2">Use multipart/form-data uploads instead</td>
+              </tr>
+              <tr className="border-b border-border">
+                <td className="py-2 px-2">Large videos / files in CSS</td>
+                <td className="py-2 px-2 text-red-500">No</td>
+                <td className="py-2 px-2">CSS file bloat hurts caching</td>
+              </tr>
+              <tr className="border-b border-border">
+                <td className="py-2 px-2">Storing files in databases</td>
+                <td className="py-2 px-2 text-orange-500">Maybe</td>
+                <td className="py-2 px-2">Use BLOB column or external storage instead</td>
+              </tr>
+              <tr>
+                <td className="py-2 px-2">Hidden / obscured files (security)</td>
+                <td className="py-2 px-2 text-red-500">No</td>
+                <td className="py-2 px-2">Base64 ≠ encryption; trivially reversible</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div>
+          <h3 className="text-lg font-semibold text-foreground mb-2">Performance: When Inline Beats Separate Files</h3>
+          <ul className="list-disc pl-6 space-y-1">
+            <li><strong>&lt; 1 KB:</strong> almost always faster inline (HTTP request overhead exceeds file content)</li>
+            <li><strong>1-10 KB:</strong> inline typically wins for above-the-fold critical content (no separate request blocking render)</li>
+            <li><strong>10-50 KB:</strong> mixed — inline if rarely reused; external if cached across pages</li>
+            <li><strong>&gt; 50 KB:</strong> always serve as separate file with HTTP caching</li>
+          </ul>
+          <p className="mt-3">
+            <strong>Key insight:</strong> separate files benefit from HTTP caching. If your logo is on every page, an inline Base64 logo costs ~5 KB × N pages, but the same logo as a separate file is downloaded once and cached. For widely-repeated assets, external wins.
+          </p>
+        </div>
+
+        <div>
+          <h3 className="text-lg font-semibold text-foreground mb-2">Common File MIME Types for Data URIs</h3>
+          <ul className="list-disc pl-6 space-y-1">
+            <li><strong>Images:</strong> <code>image/png</code>, <code>image/jpeg</code>, <code>image/webp</code>, <code>image/svg+xml</code>, <code>image/gif</code>, <code>image/avif</code></li>
+            <li><strong>Documents:</strong> <code>application/pdf</code>, <code>application/msword</code>, <code>application/vnd.openxmlformats-officedocument.wordprocessingml.document</code> (.docx)</li>
+            <li><strong>Audio:</strong> <code>audio/mpeg</code> (mp3), <code>audio/ogg</code>, <code>audio/wav</code>, <code>audio/mp4</code></li>
+            <li><strong>Video:</strong> <code>video/mp4</code>, <code>video/webm</code>, <code>video/ogg</code></li>
+            <li><strong>Fonts:</strong> <code>font/woff</code>, <code>font/woff2</code>, <code>font/ttf</code></li>
+            <li><strong>Archives:</strong> <code>application/zip</code>, <code>application/x-tar</code></li>
+            <li><strong>Text:</strong> <code>text/plain</code>, <code>text/csv</code>, <code>application/json</code>, <code>application/xml</code></li>
+            <li><strong>Generic binary:</strong> <code>application/octet-stream</code> (forces browser download)</li>
+          </ul>
+        </div>
+
+        <div>
+          <h3 className="text-lg font-semibold text-foreground mb-2">Common API Patterns</h3>
+          <ul className="list-disc pl-6 space-y-1">
+            <li><strong>AWS Lambda invoke:</strong> binary input/output must be Base64-encoded when going through API Gateway</li>
+            <li><strong>Stripe receipts as PDF:</strong> some endpoints return PDF data Base64-encoded in JSON</li>
+            <li><strong>Twilio media:</strong> SMS/MMS attachments can be sent as Base64 in JSON payloads</li>
+            <li><strong>SendGrid email attachments:</strong> attached files are Base64-encoded inside the JSON request</li>
+            <li><strong>Webhook payloads with binary:</strong> Stripe, GitHub, etc. encode binary fields as Base64</li>
+            <li><strong>X.509 certificates:</strong> PEM format is Base64-encoded with header/footer lines</li>
+            <li><strong>JWT signatures:</strong> the signature segment of a JWT is Base64URL-encoded</li>
+          </ul>
+        </div>
+
+        <div>
+          <h3 className="text-lg font-semibold text-foreground mb-2">Privacy</h3>
+          <p>
+            All encoding and decoding happens in your browser using the FileReader API and standard JavaScript functions. Files never leave your device. Safe for sensitive documents, proprietary images, confidential business data. No upload progress bars, no &quot;processing&quot; spinners that would indicate server work — everything happens instantly in your browser&apos;s memory.
+          </p>
+        </div>
       </div>
     ),
 
