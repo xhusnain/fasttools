@@ -8,7 +8,8 @@ const AnniversaryCalculator = dynamic(
   () => import("@/components/calculators/anniversary-calculator").then(mod => mod.AnniversaryCalculator),
   { loading: () => <ToolLoader /> }
 )
-import { Heart, Calendar, Clock, Gift, ArrowRight, CheckCircle, HelpCircle, Star } from "lucide-react"
+import { Heart, Calendar, Clock, Gift, ArrowRight, CheckCircle, HelpCircle, Star, Briefcase, Sigma, GitCompare, BookOpen } from "lucide-react"
+import { GTable } from "@/ui/gtable"
 
 const toolConfig = createToolConfig({
   toolName: "Anniversary Calculator",
@@ -231,6 +232,171 @@ const toolConfig = createToolConfig({
             Every year of marriage is a testament to love and partnership. From the Silver Anniversary (25 years) to the Golden Anniversary (50 years), knowing your exact milestone helps you plan the perfect party, vow renewal, or sentimental gift.
           </p>
         </article>
+
+        <article className="space-y-4">
+          <h2 className="text-2xl font-bold text-foreground flex items-center gap-2">
+            <BookOpen className="h-6 w-6 text-primary" />
+            How to Count Your Relationship Anniversary (the Right Way)
+          </h2>
+          <p className="text-base text-muted-foreground leading-relaxed">
+            There&apos;s actually a debate about when an anniversary &quot;starts.&quot; The rules below are the consensus among couples and event planners:
+          </p>
+          <ul className="list-decimal list-inside space-y-3 ml-2 text-muted-foreground">
+            <li><strong>Pick the right start date.</strong> For dating couples, the most common &quot;day 1&quot; is the date you became &quot;official&quot; (DTR — defined the relationship), not the first date. For married couples, it&apos;s the wedding date. For long-distance couples, some count from the first in-person meeting.</li>
+            <li><strong>Day 1 = the start date itself.</strong> If you started dating on Jan 1, then Jan 1 is day 1, Jan 2 is day 2. You hit 100 days on April 10 of that same year (not April 11).</li>
+            <li><strong>Month count is calendar-based.</strong> If you started on Jan 15, your one-month anniversary is Feb 15 — not 30 days later. Months have different lengths but anniversaries don&apos;t care.</li>
+            <li><strong>Year anniversaries skip leap day quirks.</strong> If you married on Feb 29 (leap day), your anniversary is observed on Feb 28 in non-leap years. The calculator handles this automatically.</li>
+            <li><strong>&quot;Monthsary&quot; is just a portmanteau.</strong> It&apos;s not in dictionaries but is widely used by dating couples for monthly milestones (especially in the Philippines, India, and South Asia).</li>
+          </ul>
+        </article>
+
+        <article className="space-y-4">
+          <h2 className="text-2xl font-bold text-foreground flex items-center gap-2">
+            <Gift className="h-6 w-6 text-primary" />
+            Traditional &amp; Modern Anniversary Gifts (Years 1–60)
+          </h2>
+          <p className="text-base text-muted-foreground leading-relaxed">
+            Every wedding anniversary has a traditional gift theme (the older, symbolic list) and a modern gift theme (updated for the 20th century). Both are still used today — pick whichever fits the couple.
+          </p>
+          <div className="overflow-x-auto">
+            <GTable>
+              <thead className="bg-muted text-foreground font-semibold">
+                <tr>
+                  <th className="p-3 text-left">Year</th>
+                  <th className="p-3 text-left">Traditional</th>
+                  <th className="p-3 text-left">Modern</th>
+                </tr>
+              </thead>
+              <tbody className="divide-y divide-border text-sm">
+                <tr><td className="p-3 font-semibold">1</td><td className="p-3">Paper</td><td className="p-3">Clocks</td></tr>
+                <tr><td className="p-3 font-semibold">2</td><td className="p-3">Cotton</td><td className="p-3">China</td></tr>
+                <tr><td className="p-3 font-semibold">3</td><td className="p-3">Leather</td><td className="p-3">Crystal / Glass</td></tr>
+                <tr><td className="p-3 font-semibold">5</td><td className="p-3">Wood</td><td className="p-3">Silverware</td></tr>
+                <tr><td className="p-3 font-semibold">7</td><td className="p-3">Wool / Copper</td><td className="p-3">Desk sets</td></tr>
+                <tr><td className="p-3 font-semibold">10</td><td className="p-3">Tin / Aluminum</td><td className="p-3">Diamond jewelry</td></tr>
+                <tr><td className="p-3 font-semibold">15</td><td className="p-3">Crystal</td><td className="p-3">Watches</td></tr>
+                <tr><td className="p-3 font-semibold">20</td><td className="p-3">China</td><td className="p-3">Platinum</td></tr>
+                <tr><td className="p-3 font-semibold">25</td><td className="p-3 font-bold text-green-600">Silver</td><td className="p-3">Silver / Sterling</td></tr>
+                <tr><td className="p-3 font-semibold">30</td><td className="p-3">Pearl</td><td className="p-3">Diamond</td></tr>
+                <tr><td className="p-3 font-semibold">35</td><td className="p-3">Coral</td><td className="p-3">Jade</td></tr>
+                <tr><td className="p-3 font-semibold">40</td><td className="p-3">Ruby</td><td className="p-3">Ruby</td></tr>
+                <tr><td className="p-3 font-semibold">45</td><td className="p-3">Sapphire</td><td className="p-3">Sapphire</td></tr>
+                <tr><td className="p-3 font-semibold">50</td><td className="p-3 font-bold text-yellow-600">Gold</td><td className="p-3">Gold</td></tr>
+                <tr><td className="p-3 font-semibold">55</td><td className="p-3">Emerald</td><td className="p-3">Emerald</td></tr>
+                <tr><td className="p-3 font-semibold">60</td><td className="p-3 font-bold text-blue-600">Diamond</td><td className="p-3">Diamond</td></tr>
+              </tbody>
+            </GTable>
+          </div>
+        </article>
+
+        <article className="space-y-4">
+          <h2 className="text-2xl font-bold text-foreground flex items-center gap-2">
+            <Star className="h-6 w-6 text-primary" />
+            Monthsary &amp; Early-Stage Dating Milestones
+          </h2>
+          <p className="text-base text-muted-foreground leading-relaxed">
+            Dating couples celebrate smaller, more frequent milestones than married couples — especially in the first 1–2 years. Common ones:
+          </p>
+          <div className="overflow-x-auto">
+            <GTable>
+              <thead className="bg-muted text-foreground font-semibold">
+                <tr>
+                  <th className="p-3 text-left">Milestone</th>
+                  <th className="p-3 text-left">Typical Celebration</th>
+                </tr>
+              </thead>
+              <tbody className="divide-y divide-border text-sm">
+                <tr><td className="p-3 font-semibold">1 month</td><td className="p-3">Small handwritten note, dinner at home</td></tr>
+                <tr><td className="p-3 font-semibold">3 months</td><td className="p-3">First &quot;significant&quot; date — fancy restaurant, weekend trip</td></tr>
+                <tr><td className="p-3 font-semibold">6 months</td><td className="p-3">Often the first &quot;meet the family&quot; milestone</td></tr>
+                <tr><td className="p-3 font-semibold">100 days</td><td className="p-3">Popular in Korean/East Asian dating culture — photoshoot or matching gift</td></tr>
+                <tr><td className="p-3 font-semibold">1 year</td><td className="p-3">First major anniversary — trip, jewelry, or symbolic gift</td></tr>
+                <tr><td className="p-3 font-semibold">2 years</td><td className="p-3">Many couples discuss future plans / moving in</td></tr>
+                <tr><td className="p-3 font-semibold">1000 days</td><td className="p-3">≈2 years 9 months — popular &quot;deep love&quot; milestone</td></tr>
+              </tbody>
+            </GTable>
+          </div>
+        </article>
+
+        <article className="space-y-4">
+          <h2 className="text-2xl font-bold text-foreground flex items-center gap-2">
+            <Briefcase className="h-6 w-6 text-primary" />
+            Work Anniversaries &amp; Service Tenure
+          </h2>
+          <p className="text-base text-muted-foreground leading-relaxed">
+            The same calculator works for employment tenure. Enter your hire date as the start date to track years of service — useful for milestone bonuses (5, 10, 25 years), retirement vesting schedules, and recognition awards. Most HR systems use full elapsed years for service awards, with partial years rounded down.
+          </p>
+        </article>
+
+        <article className="space-y-4">
+          <h2 className="text-2xl font-bold text-foreground flex items-center gap-2">
+            <Sigma className="h-6 w-6 text-primary" />
+            How Anniversary Math Actually Works
+          </h2>
+          <p className="text-base text-muted-foreground leading-relaxed">
+            For total elapsed time the formula is straightforward:
+          </p>
+          <div className="p-4 rounded-lg bg-muted/40 border border-border font-mono text-sm leading-relaxed">
+            <div><strong>total_days</strong> = (today − start_date) in days, leap-year aware</div>
+            <div><strong>total_months</strong> = floor(total_days / average month length), then refined to calendar months</div>
+            <div><strong>years</strong> = floor(total_months / 12)</div>
+            <div><strong>days_to_next_anniversary</strong> = days from today to start_date + (years + 1)</div>
+          </div>
+          <p className="text-base text-muted-foreground leading-relaxed">
+            <strong>Why total months matters for monthsaries:</strong> if your relationship is 3 years and 7 months, total_months = 43. That&apos;s the right number for celebrating &quot;our 43-month anniversary&quot; — much more sentimental than a years-only count.
+          </p>
+        </article>
+
+        <article className="space-y-4">
+          <h2 className="text-2xl font-bold text-foreground flex items-center gap-2">
+            <GitCompare className="h-6 w-6 text-primary" />
+            FastTools vs Other Free Anniversary Calculators
+          </h2>
+          <div className="overflow-x-auto">
+            <GTable>
+              <thead className="bg-muted text-foreground font-semibold">
+                <tr>
+                  <th className="p-3 text-left">Feature</th>
+                  <th className="p-3 text-left text-green-600">FastTools</th>
+                  <th className="p-3 text-left">AnniversaryCalc.org</th>
+                  <th className="p-3 text-left">Omni Calculator</th>
+                  <th className="p-3 text-left">GigaCalculator</th>
+                </tr>
+              </thead>
+              <tbody className="divide-y divide-border text-sm">
+                <tr><td className="p-3 font-semibold">Years + months + days output</td><td className="p-3 text-green-600">✓</td><td className="p-3">✓</td><td className="p-3">✓</td><td className="p-3">✓</td></tr>
+                <tr><td className="p-3 font-semibold">Hours / minutes / seconds output</td><td className="p-3 text-green-600">✓</td><td className="p-3 text-red-500">✗</td><td className="p-3 text-red-500">✗</td><td className="p-3 text-red-500">✗</td></tr>
+                <tr><td className="p-3 font-semibold">Monthsary total-months count</td><td className="p-3 text-green-600">✓</td><td className="p-3">partial</td><td className="p-3 text-red-500">✗</td><td className="p-3 text-red-500">✗</td></tr>
+                <tr><td className="p-3 font-semibold">Next-anniversary countdown</td><td className="p-3 text-green-600">✓</td><td className="p-3">✓</td><td className="p-3">✓</td><td className="p-3 text-red-500">✗</td></tr>
+                <tr><td className="p-3 font-semibold">Traditional + modern gift list</td><td className="p-3 text-green-600">on this page</td><td className="p-3">✓</td><td className="p-3">✓</td><td className="p-3">✓</td></tr>
+                <tr><td className="p-3 font-semibold">Work-anniversary use case</td><td className="p-3 text-green-600">✓</td><td className="p-3">✓</td><td className="p-3 text-red-500">✗</td><td className="p-3">partial</td></tr>
+                <tr><td className="p-3 font-semibold">No signup, no save-account</td><td className="p-3 text-green-600">✓</td><td className="p-3 text-red-500">save needs account</td><td className="p-3">✓</td><td className="p-3">✓</td></tr>
+              </tbody>
+            </GTable>
+          </div>
+        </article>
+
+        <article className="space-y-4">
+          <h2 className="text-2xl font-bold text-foreground flex items-center gap-2">
+            <Heart className="h-6 w-6 text-primary" />
+            The Same Tool, Many Names
+          </h2>
+          <p className="text-base text-muted-foreground leading-relaxed">
+            People search for this exact tool many different ways. The calculator above handles every one:
+          </p>
+          <ul className="grid grid-cols-1 md:grid-cols-2 gap-3 text-sm">
+            <li className="flex items-start gap-2"><CheckCircle className="h-4 w-4 text-green-500 mt-0.5 flex-shrink-0" /><span>anniversary calculator / anniversary counter</span></li>
+            <li className="flex items-start gap-2"><CheckCircle className="h-4 w-4 text-green-500 mt-0.5 flex-shrink-0" /><span>anniversary calculator months / years / days</span></li>
+            <li className="flex items-start gap-2"><CheckCircle className="h-4 w-4 text-green-500 mt-0.5 flex-shrink-0" /><span>love anniversary calculator / love days counter</span></li>
+            <li className="flex items-start gap-2"><CheckCircle className="h-4 w-4 text-green-500 mt-0.5 flex-shrink-0" /><span>relationship anniversary calculator / dating calculator</span></li>
+            <li className="flex items-start gap-2"><CheckCircle className="h-4 w-4 text-green-500 mt-0.5 flex-shrink-0" /><span>how to count anniversary in relationship</span></li>
+            <li className="flex items-start gap-2"><CheckCircle className="h-4 w-4 text-green-500 mt-0.5 flex-shrink-0" /><span>how long have we / I been together calculator</span></li>
+            <li className="flex items-start gap-2"><CheckCircle className="h-4 w-4 text-green-500 mt-0.5 flex-shrink-0" /><span>how long have I been married calculator</span></li>
+            <li className="flex items-start gap-2"><CheckCircle className="h-4 w-4 text-green-500 mt-0.5 flex-shrink-0" /><span>work anniversary calculator / service anniversary</span></li>
+            <li className="flex items-start gap-2"><CheckCircle className="h-4 w-4 text-green-500 mt-0.5 flex-shrink-0" /><span>monthsary calculator / 100 days calculator</span></li>
+            <li className="flex items-start gap-2"><CheckCircle className="h-4 w-4 text-green-500 mt-0.5 flex-shrink-0" /><span>silver / golden / diamond anniversary year calculator</span></li>
+          </ul>
+        </article>
       </div>
     ),
 
@@ -282,18 +448,19 @@ const toolConfig = createToolConfig({
     ],
 
     relatedTools: [
-      { name: "Birthday Countdown", href: "/fun-tools/birthday-countdown" },
       { name: "Future Age Calculator", href: "/fun-tools/future-age" },
+      { name: "Birthday Countdown", href: "/fun-tools/birthday-countdown" },
       { name: "Age Calculator", href: "/calculator/age-calculator" },
-      { name: "Link in Bio Generator", href: "/social-media-tools/link-in-bio" }
+      { name: "Date Difference Calculator", href: "/calculator/date-difference" },
+      { name: "Time Duration Calculator", href: "/calculator/time-duration" },
+      { name: "Pregnancy Calculator", href: "/calculator/pregnancy-calculator" },
+      { name: "Conception Date Calculator", href: "/calculator/pregnancy-conception-calculator" },
+      { name: "All Fun Tools", href: "/fun-tools" },
     ]
   }
 })
 
-export const metadata: Metadata = {
-  ...toolConfig.metadata,
-  title: `Relationship Anniversary Calculator - Years, Months, Days`
-}
+export const metadata: Metadata = toolConfig.metadata
 
 export default function AnniversaryPage() {
   return <ToolPageLayout {...toolConfig.getLayoutProps(<AnniversaryCalculator />)} />
