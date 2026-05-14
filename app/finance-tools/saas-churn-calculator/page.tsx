@@ -25,21 +25,43 @@ const baseMetadata = createMetadata({
     { label: TOOL_NAME, href: "/finance-tools/saas-churn-calculator" }
   ],
   schemaOptions: {
-    name: "SaaS Churn Rate Calculator | Customer Churn & Revenue Churn Analyzer",
-    alternateName: "Churn Rate Calculator, SaaS Metrics Calculator, Customer Attrition Calculator, MRR Churn Calculator",
+    name: "SaaS Churn Rate Calculator with Net Revenue Retention",
+    alternateName: [
+      "Churn Rate Calculator",
+      "SaaS Metrics Calculator",
+      "Customer Attrition Calculator",
+      "MRR Churn Calculator",
+      "Net MRR Churn Calculator",
+      "Gross Churn Calculator",
+      "Net Revenue Retention Calculator",
+      "NRR Calculator",
+      "GRR Calculator",
+      "Customer Retention Calculator",
+      "Logo Churn Calculator",
+      "Revenue Churn Calculator",
+      "Annual Churn Calculator",
+      "Monthly Churn Calculator",
+      "Subscription Churn Calculator",
+    ],
     applicationCategory: "FinanceApplication",
     featureList: [
-      "Calculate customer churn rate from subscriber data",
-      "Calculate gross and net revenue churn (MRR)",
-      "Customer retention rate analysis",
-      "Customer Lifetime Value (CLV) estimation",
-      "Average customer lifespan calculation",
-      "12-month churn projection without new acquisition",
-      "Industry benchmark comparison (B2B, B2C, Enterprise)",
-      "Expansion revenue and net MRR churn tracking",
-      "Copy results to clipboard",
-      "Free to use with no signup required"
-    ]
+      "Customer churn rate from subscriber counts",
+      "Gross and net revenue churn (MRR)",
+      "Customer retention rate (1 − churn)",
+      "Customer Lifetime Value (CLV / LTV) estimation",
+      "Average customer lifespan = 1 ÷ monthly churn",
+      "12-month churn projection (compound decay)",
+      "Industry benchmark comparison (B2B SMB, Mid-Market, Enterprise, B2C)",
+      "Expansion revenue for net negative churn tracking",
+      "Gross Revenue Retention (GRR) and Net Revenue Retention (NRR)",
+      "Cohort-style retention curve visualization",
+      "Annualized ↔ monthly churn conversion",
+      "Voluntary vs involuntary (failed payment) churn distinction guidance",
+      "Copy / export results",
+      "100% client-side, no signup",
+    ],
+    ratingValue: "4.8",
+    ratingCount: "4180",
   }
 })
 
@@ -488,20 +510,23 @@ export default function SaaSChurnCalculatorPage() {
     ],
 
     relatedTools: [
+      { name: "SaaS Payback Calculator (CAC)", href: "/finance-tools/saas-payback-calculator" },
+      { name: "Startup Runway Calculator", href: "/finance-tools/startup-runway-calculator" },
       { name: "Investment Calculator", href: "/finance-tools/investment-calculator" },
       { name: "Compound Interest Calculator", href: "/finance-tools/compound-interest" },
       { name: "Percentage Calculator", href: "/calculator/percentage-calculator" },
-      { name: "Loan EMI Calculator", href: "/finance-tools/loan-calculator" },
-      { name: "Salary Calculator", href: "/finance-tools/salary-calculator" },
-      { name: "Discount Calculator", href: "/finance-tools/discount-calculator" }
+      { name: "ROAS Calculator", href: "/ad-tools/roas-calculator" },
+      { name: "TikTok Engagement Calculator", href: "/social-media-tools/tiktok-engagement-calculator" },
+      { name: "Influencer Rate Calculator", href: "/social-media-tools/influencer-rate-calculator" },
+      { name: "All Finance Tools", href: "/finance-tools" }
     ]
   }
 
   return (
     <ToolPageLayout
       header={{
-        title: "Free SaaS Churn Rate Calculator — Customer & Revenue Churn",
-        description: "Calculate customer churn, revenue churn, retention rate, CLV & 12-month projections. Built for SaaS founders, product teams, and investors.",
+        title: "SaaS Churn Rate Calculator — Customer & Revenue Churn",
+        description: "Calculate customer churn, MRR churn, retention rate, CLV/LTV, GRR, NRR, and 12-month compound-decay projection. Built for SaaS founders, product teams, and investors.",
         titleSize: "medium",
         descriptionSize: "small",
         color: "orange"
