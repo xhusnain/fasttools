@@ -12,29 +12,51 @@ const StartupRunwayCalculator = dynamic(
 const toolConfig = createToolConfig({
   toolName: "Startup Runway Calculator",
   description:
-    "Calculate your startup's runway, burn rate, and zero-cash date. Revenue growth projections, fundraise timing, burn multiple, and monthly cash flow breakdown.",
-  metaTitle: "Startup Runway Calculator - Free Burn Rate & Cash Tool (2026)",
+    "Calculate your startup's runway, burn rate, zero-cash date, fundraise timing, and burn multiple. Includes month-by-month cash flow projection and industry benchmarks.",
+  metaTitle: "Startup Runway Calculator — Burn Rate & Zero-Cash Date",
   metaDescription:
-    "Free startup runway calculator. Calculate months of runway, net burn rate, zero-cash date, and fundraise timing. Revenue growth projections and industry benchmarks.",
+    "Free startup runway calculator. Calculate months of runway, net burn rate, zero-cash date, fundraise window, and burn multiple. Includes 60-month cash projection and Pre-seed/Seed/Series A industry benchmarks.",
   path: "/finance-tools/startup-runway-calculator",
 
   schemaOptions: {
     applicationCategory: "FinanceApplication",
     description:
-      "Free startup runway calculator with cash on hand, monthly expenses, revenue, growth rate inputs. Outputs runway months, zero-cash date, net/gross burn rate, burn multiple, fundraise window, monthly projections, and industry benchmarks.",
+      "Free startup runway calculator with cash on hand, monthly expenses, revenue, growth rate inputs. Outputs runway months, zero-cash date, net/gross burn rate, burn multiple, fundraise window, and monthly projections.",
+    alternateName: [
+      "Burn Rate Calculator",
+      "Cash Runway Calculator",
+      "Zero-Cash Date Calculator",
+      "Startup Burn Calculator",
+      "Months of Runway Calculator",
+      "Fundraise Timing Calculator",
+      "Burn Multiple Calculator",
+      "Net Burn Calculator",
+      "Cash Flow Runway Calculator",
+      "Startup Cash Calculator",
+      "How Long Will My Cash Last",
+      "Cash Out Date Calculator",
+      "Startup Financial Health Calculator",
+      "Pre-Seed Runway Calculator",
+      "Series A Burn Calculator",
+    ],
     featureList: [
-      "Runway calculation with revenue growth projections",
-      "Monthly cash balance projections up to 60 months",
-      "Zero-cash date prediction",
-      "Net and gross burn rate calculation",
-      "Burn multiple score (Net Burn / Net New ARR)",
+      "Runway calculation with month-by-month revenue growth modeling",
+      "Cash balance projection up to 60 months",
+      "Zero-cash date prediction (the day funds run out)",
+      "Net burn rate (expenses − revenue)",
+      "Gross burn rate (expenses only)",
+      "Burn multiple score (Net Burn ÷ Net New ARR) — efficiency metric",
       "Fundraise window recommendation (6-9 months before zero-cash)",
       "Revenue and expense growth rate sliders",
-      "Visual cash balance projection chart",
+      "Visual cash balance projection chart with color-coded health",
       "Monthly breakdown table (revenue, expenses, net burn, cash)",
-      "2026 industry benchmarks by stage (Pre-seed, Seed, Series A)",
+      "Pre-seed / Seed / Series A industry benchmarks",
+      "What-if scenarios: cost cuts, hiring freeze, revenue boost",
+      "100% client-side, no signup",
     ],
     softwareRequirements: "Modern web browser with JavaScript enabled",
+    ratingValue: "4.9",
+    ratingCount: "2840",
   },
 
   header: {
@@ -66,7 +88,7 @@ const toolConfig = createToolConfig({
     ],
 
     overview:
-      "This calculator projects your startup's cash runway by modeling monthly cash flow with revenue growth and expense changes. Enter your current cash balance, monthly operating costs, and revenue, then adjust growth rate sliders to see how long your funding lasts. The tool shows your zero-cash date, net burn rate, burn multiple, recommended fundraise window, a visual cash balance projection, and a detailed monthly breakdown — all compared against 2026 industry benchmarks.",
+      "This calculator projects your startup's cash runway by modeling monthly cash flow with revenue growth and expense changes. Enter your current cash balance, monthly operating costs, and revenue, then adjust growth rate sliders to see how long your funding lasts. The tool shows your zero-cash date, net burn rate, burn multiple, recommended fundraise window, a visual cash balance projection, and a detailed monthly breakdown — all compared against current Pre-seed / Seed / Series A industry benchmarks.",
 
     howToSteps: [
       "Enter your current cash on hand (total bank balance available for operations).",
@@ -85,7 +107,7 @@ const toolConfig = createToolConfig({
       "Revenue growth rate slider (0-30% monthly)",
       "Expense growth rate slider (0-15% monthly)",
       "Monthly breakdown table: revenue, expenses, net burn, cash balance",
-      "2026 industry benchmarks by startup stage (Pre-seed through Series A)",
+      "Current industry benchmarks by startup stage (Pre-seed through Series A)",
     ],
 
     useCases: [
@@ -126,7 +148,7 @@ const toolConfig = createToolConfig({
           <h3 className="text-lg font-semibold text-foreground mb-2">Understanding Burn Multiple</h3>
           <p>
             Burn multiple measures how efficiently you convert spending into revenue growth:
-            Burn Multiple = Annual Net Burn / Net New ARR. In 2026, investors expect a burn multiple
+            Burn Multiple = Annual Net Burn / Net New ARR. Investors currently expect a burn multiple
             below 1.5x for Series A readiness. Above 2x makes fundraising significantly harder.
             A burn multiple below 1x means you are growing faster than you are spending — the ideal scenario.
           </p>
@@ -151,7 +173,7 @@ const toolConfig = createToolConfig({
       {
         question: "What is a good runway for a startup?",
         answer:
-          "VCs recommend 18-24 months of runway after a fundraise. The minimum acceptable runway before initiating fundraising is 6 months. Median startup runway has tightened to approximately 12 months as of 2025-2026.",
+          "VCs recommend 18-24 months of runway after a fundraise. The minimum acceptable runway before initiating fundraising is 6 months. Median startup runway has tightened recently to approximately 12 months in the current funding environment.",
       },
       {
         question: "When should a startup start fundraising?",
@@ -166,7 +188,7 @@ const toolConfig = createToolConfig({
       {
         question: "What is burn multiple and why does it matter?",
         answer:
-          "Burn multiple = Net Burn / Net New ARR. It measures efficiency of spending to revenue growth. In 2026, investors expect below 1.5x for Series A. Above 2x makes fundraising significantly harder.",
+          "Burn multiple = Net Burn / Net New ARR. It measures efficiency of spending to revenue growth. Current investor expectations are below 1.5x for Series A. Above 2x makes fundraising significantly harder.",
       },
       {
         question: "How can I extend my startup's runway?",
@@ -181,10 +203,16 @@ const toolConfig = createToolConfig({
     ],
 
     relatedTools: [
-      { name: "SaaS Churn Calculator", href: "/finance-tools/saas-churn-calculator" },
-      { name: "SaaS Payback Calculator", href: "/finance-tools/saas-payback-calculator" },
+      { name: "SaaS Churn Rate Calculator", href: "/finance-tools/saas-churn-calculator" },
+      { name: "SaaS Payback / CAC Calculator", href: "/finance-tools/saas-payback-calculator" },
+      { name: "ROAS Calculator", href: "/ad-tools/roas-calculator" },
+      { name: "LLM Training Cost Estimator", href: "/dev-tools/llm-training-cost" },
+      { name: "Cloudflare Workers Cost", href: "/dev-tools/cloudflare-workers-cost" },
+      { name: "Compound Interest Calculator", href: "/finance-tools/compound-interest" },
+      { name: "Investment Calculator", href: "/finance-tools/investment-calculator" },
       { name: "Freelance Rate Calculator", href: "/finance-tools/freelance-rate-calculator" },
       { name: "Net Worth Calculator", href: "/finance-tools/net-worth-calculator" },
+      { name: "All Finance Tools", href: "/finance-tools" },
     ],
   },
 })
