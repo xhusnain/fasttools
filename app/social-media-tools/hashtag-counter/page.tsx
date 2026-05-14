@@ -85,25 +85,93 @@ const toolConfig = createToolConfig({
     ],
 
     aboutTool: (
-      <div className="space-y-6 text-muted-foreground">
-        <div>
-          <h3 className="text-lg font-semibold text-foreground mb-2">Why Hashtag Count Matters</h3>
+      <div className="space-y-8 text-muted-foreground">
+        <article className="space-y-4">
+          <h2 className="text-2xl font-bold text-foreground">Why Hashtag Count Matters</h2>
           <p>
-            Each social platform has different hashtag limits and best practices. Instagram allows up to 30 hashtags but research shows 3-5 targeted hashtags often perform better for reach. LinkedIn recommends 3-5 hashtags. X (Twitter) works best with 1-2 hashtags. Going over limits can reduce visibility or prevent posting entirely.
+            Every social platform has different hashtag limits, optimal counts, and shadowban triggers. Going over a limit can prevent your post from publishing, hide it from hashtag search (shadowban), or just look spammy and hurt engagement. This counter tells you exactly how many you have so you can stay in the safe range for each platform.
           </p>
-        </div>
-        <div>
-          <h3 className="text-lg font-semibold text-foreground mb-2">How to Choose Effective Hashtags</h3>
-          <p>
-            Mix popular broad hashtags with niche-specific ones. Use a combination of high-volume tags (500K+ posts) for discovery and low-volume tags (10K-100K posts) for targeted reach. Avoid banned or spammy hashtags that can shadowban your content. Rotate hashtag sets between posts to avoid being flagged for repetitive behavior.
-          </p>
-        </div>
-        <div>
-          <h3 className="text-lg font-semibold text-foreground mb-2">Hashtag Limits by Platform (2026)</h3>
-          <p>
-            Instagram: 30 max (3-5 recommended). LinkedIn: no hard limit (3-5 recommended). X/Twitter: no hard limit (1-2 recommended). TikTok: 100 characters of hashtags. Facebook: no limit (2-3 recommended). YouTube: 15 tags max in video settings. Pinterest: 20 max (2-5 recommended).
-          </p>
-        </div>
+        </article>
+
+        <article className="space-y-4">
+          <h2 className="text-2xl font-bold text-foreground">Hashtag Limits by Platform (2026)</h2>
+          <div className="overflow-x-auto">
+            <table className="min-w-full text-sm border border-border">
+              <thead className="bg-muted text-foreground font-semibold">
+                <tr>
+                  <th className="p-3 text-left border-b border-border">Platform</th>
+                  <th className="p-3 text-left border-b border-border">Hard limit</th>
+                  <th className="p-3 text-left border-b border-border">Optimal count</th>
+                  <th className="p-3 text-left border-b border-border">Risk if exceeded</th>
+                </tr>
+              </thead>
+              <tbody className="divide-y divide-border">
+                <tr><td className="p-3 font-semibold">Instagram (feed)</td><td className="p-3">30 hashtags</td><td className="p-3">3–5</td><td className="p-3">Shadowban, hidden from hashtag search</td></tr>
+                <tr><td className="p-3 font-semibold">Instagram (Reels)</td><td className="p-3">30 hashtags</td><td className="p-3">3–5</td><td className="p-3">Reduced reach</td></tr>
+                <tr><td className="p-3 font-semibold">TikTok</td><td className="p-3">100 chars total caption</td><td className="p-3">3–5</td><td className="p-3">Caption truncation</td></tr>
+                <tr><td className="p-3 font-semibold">X (Twitter)</td><td className="p-3">no platform limit</td><td className="p-3">1–2</td><td className="p-3">~17% engagement drop above 2</td></tr>
+                <tr><td className="p-3 font-semibold">LinkedIn</td><td className="p-3">no platform limit</td><td className="p-3">3–5</td><td className="p-3">Looks spammy, lower reach</td></tr>
+                <tr><td className="p-3 font-semibold">Facebook</td><td className="p-3">no platform limit</td><td className="p-3">2–3</td><td className="p-3">Limited platform impact</td></tr>
+                <tr><td className="p-3 font-semibold">YouTube (description)</td><td className="p-3">15 tags shown / 60 total</td><td className="p-3">3–5</td><td className="p-3">YouTube ignores extras &gt; 15</td></tr>
+                <tr><td className="p-3 font-semibold">Pinterest</td><td className="p-3">20 hashtags</td><td className="p-3">2–5</td><td className="p-3">No major risk, low impact</td></tr>
+                <tr><td className="p-3 font-semibold">Threads</td><td className="p-3">1 hashtag per post</td><td className="p-3">0–1</td><td className="p-3">Hard limit — extras ignored</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </article>
+
+        <article className="space-y-4">
+          <h2 className="text-2xl font-bold text-foreground">How to Choose Effective Hashtags (2026 Best Practices)</h2>
+          <ul className="list-disc list-inside space-y-2 ml-2">
+            <li><strong>Mix tag sizes.</strong> Pair 1–2 popular tags (500K+ posts, for discovery) with 2–3 niche tags (10K–100K posts, for targeted reach). All-popular tags get buried; all-niche tags don&apos;t scale.</li>
+            <li><strong>Rotate sets between posts.</strong> Posting the exact same 30 hashtags every time looks automated and can trigger Instagram&apos;s spam filter. Keep 3–5 different sets organized by content theme.</li>
+            <li><strong>Check for banned hashtags.</strong> Instagram silently restricts certain tags. Common banned tags as of 2026 include #beautyblogger, #valentinesday (during the holiday), #adulting, and many others — always changing. If a hashtag&apos;s page has limited or no content, it&apos;s likely restricted.</li>
+            <li><strong>Use platform-native search.</strong> When picking new tags, type them into the platform&apos;s search to see post volume and recency. Tags with no posts in the last 7 days are dead.</li>
+            <li><strong>Match content language.</strong> Don&apos;t use English-only tags on a Spanish-language post — you&apos;re losing native-language reach.</li>
+          </ul>
+        </article>
+
+        <article className="space-y-4">
+          <h2 className="text-2xl font-bold text-foreground">FastTools vs Other Hashtag Counters</h2>
+          <div className="overflow-x-auto">
+            <table className="min-w-full text-sm border border-border">
+              <thead className="bg-muted text-foreground font-semibold">
+                <tr>
+                  <th className="p-3 text-left border-b border-border">Feature</th>
+                  <th className="p-3 text-left border-b border-border text-green-600">FastTools</th>
+                  <th className="p-3 text-left border-b border-border">All-Hashtag.com</th>
+                  <th className="p-3 text-left border-b border-border">DisplayPurposes</th>
+                </tr>
+              </thead>
+              <tbody className="divide-y divide-border">
+                <tr><td className="p-3 font-semibold">Real-time count as you type</td><td className="p-3 text-green-600">✓</td><td className="p-3 text-red-500">✗</td><td className="p-3 text-red-500">✗</td></tr>
+                <tr><td className="p-3 font-semibold">Extract from pasted caption</td><td className="p-3 text-green-600">✓</td><td className="p-3 text-red-500">✗</td><td className="p-3">partial</td></tr>
+                <tr><td className="p-3 font-semibold">Per-platform limit warnings</td><td className="p-3 text-green-600">✓</td><td className="p-3 text-red-500">✗</td><td className="p-3 text-red-500">✗</td></tr>
+                <tr><td className="p-3 font-semibold">Free, no signup</td><td className="p-3 text-green-600">✓</td><td className="p-3">✓</td><td className="p-3">✓</td></tr>
+                <tr><td className="p-3 font-semibold">One-click copy</td><td className="p-3 text-green-600">✓</td><td className="p-3">✓</td><td className="p-3">✓</td></tr>
+                <tr><td className="p-3 font-semibold">No ads in the tool itself</td><td className="p-3 text-green-600">✓</td><td className="p-3 text-red-500">heavy ads</td><td className="p-3">partial</td></tr>
+                <tr><td className="p-3 font-semibold">Client-side (no upload)</td><td className="p-3 text-green-600">✓</td><td className="p-3 text-red-500">server</td><td className="p-3 text-red-500">server</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </article>
+
+        <article className="space-y-4">
+          <h2 className="text-2xl font-bold text-foreground">The Same Tool, Many Names</h2>
+          <p>This counter handles every related search:</p>
+          <ul className="grid grid-cols-1 md:grid-cols-2 gap-2 text-sm">
+            <li>· hashtag counter / hashtags counter</li>
+            <li>· instagram hashtag counter</li>
+            <li>· tiktok hashtag counter</li>
+            <li>· facebook hashtag counter</li>
+            <li>· tag counter / count hashtags</li>
+            <li>· hashtag extractor / tag extractor</li>
+            <li>· hashtag finder in caption</li>
+            <li>· count tags in instagram caption</li>
+            <li>· how many hashtags in this post</li>
+            <li>· keyword frequency analysis (for hashtag overlap)</li>
+          </ul>
+        </article>
       </div>
     ),
 
@@ -143,12 +211,36 @@ const toolConfig = createToolConfig({
         question: "Is the hashtag counter free?",
         answer: "Yes. The tool is completely free with no registration, no limits on usage, and no data collection. All counting happens in your browser.",
       },
+      {
+        question: "How many hashtags should I use on TikTok?",
+        answer: "TikTok works best with 3–5 highly relevant hashtags. The platform allows hashtags within the 4,000-character caption limit, but stuffing 30 tags into a TikTok caption looks spammy and won't increase reach. Pair 1 broad trending tag with 2–4 niche tags for the best balance.",
+      },
+      {
+        question: "Is there a hashtag counter for Facebook?",
+        answer: "Yes — this tool counts hashtags in Facebook captions the same way it does for Instagram or X. Facebook has no platform limit, but research shows 2–3 hashtags per post performs best. More than that adds visual noise without increasing reach.",
+      },
+      {
+        question: "Can this tool extract hashtags from a YouTube description?",
+        answer: "Yes. Paste a YouTube description and the tool extracts every word starting with #. Note: YouTube only displays the first 3 hashtags above a video title, so put your most important hashtags first in the description.",
+      },
+      {
+        question: "What's the difference between hashtag counting and hashtag generating?",
+        answer: "Hashtag counting (this tool) tells you how many tags are in a caption you already wrote. Hashtag generators suggest new tags based on a topic. Both are useful — count first to stay within limits, then generate variants if you need more relevant ones.",
+      },
+      {
+        question: "Does the tool detect hashtags with emojis or special characters?",
+        answer: "Yes. Any token that starts with # and contains letters, numbers, underscores, or Unicode characters is detected. Hashtags with emojis don't work on most platforms (they break at the emoji), but the counter will still pick them up so you can see and remove them.",
+      },
     ],
 
     relatedTools: [
       { name: "Link in Bio Generator", href: "/social-media-tools/link-in-bio" },
       { name: "YouTube Tag Extractor", href: "/social-media-tools/youtube-tags" },
       { name: "YouTube Channel Checker", href: "/social-media-tools/channel-checker" },
+      { name: "YouTube Channel Name Generator", href: "/social-media-tools/youtube-channel-name-generator" },
+      { name: "AI Caption Generator", href: "/ai-tools/caption-generator" },
+      { name: "TikTok Engagement Calculator", href: "/social-media-tools/tiktok-engagement-calculator" },
+      { name: "Influencer Rate Calculator", href: "/social-media-tools/influencer-rate-calculator" },
       { name: "All Social Media Tools", href: "/social-media-tools" },
     ],
   },
