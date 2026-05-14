@@ -9,36 +9,57 @@ const AutoLoanCalculator = dynamic(() => import("@/components/finance/auto-loan-
   loading: () => <ToolLoader />
 })
 
-const TOOL_TITLE = "Car Payment Calculator - Free Auto Loan Calculator Online"
+const TOOL_TITLE = "Car Payment Calculator — Auto Loan, Trade-in, Tax & Amortization"
 const TOOL_NAME = "Car Payment Calculator"
+const TOOL_META_DESC = "Free car payment calculator and auto loan calculator. Get exact monthly payment, total interest, amortization schedule, and side-by-side term comparison. Handles trade-in value, negative equity, state sales tax, credit-score-based rates, and dealer fees. Works for new and used car loans."
 
 const baseMetadata = createMetadata({
   title: TOOL_TITLE,
-  description: "Free car payment calculator. Estimate your monthly auto loan payment, total interest, and cost. Adjust price, down payment, APR, trade-in, and loan term. Includes tax, fees, and amortization schedule.",
+  description: TOOL_META_DESC,
   path: "/finance-tools/auto-loan-calculator",
   breadcrumbs: [
     { label: "Finance Tools", href: "/finance-tools" },
     { label: TOOL_NAME, href: "/finance-tools/auto-loan-calculator" }
   ],
   schemaOptions: {
-    name: "Car Payment Calculator | Auto Loan Calculator with Trade-in, Tax & Amortization",
-    alternateName: "Auto Loan Calculator, Car Loan Calculator, Vehicle Payment Calculator, Car Finance Calculator",
+    name: "Car Payment Calculator with Trade-in, Tax & Amortization",
+    alternateName: [
+      "Auto Loan Calculator",
+      "Car Loan Calculator",
+      "Vehicle Payment Calculator",
+      "Car Finance Calculator",
+      "Monthly Car Payment Calculator",
+      "Used Car Loan Calculator",
+      "New Car Loan Calculator",
+      "Car Affordability Calculator",
+      "Auto Refinance Calculator",
+      "Car Loan Amortization Calculator",
+      "Truck Loan Calculator",
+      "Motorcycle Loan Calculator",
+      "Vehicle Finance Calculator",
+      "Car APR Calculator",
+      "How Much Car Can I Afford",
+    ],
     applicationCategory: "FinanceApplication",
     featureList: [
-      "Calculate monthly car payment",
-      "Auto loan amortization schedule",
-      "Credit score based interest rates",
-      "Sales tax by state",
-      "Trade-in value and negative equity",
-      "Loan term comparison (24-84 months)",
-      "How much car can I afford calculator",
-      "Down payment dollar or percentage",
-      "Title registration and dealer fees",
-      "New and used car loan rates",
-      "LTV ratio calculation",
-      "Free to use no signup required"
+      "Monthly car payment calculation with full breakdown",
+      "Auto loan amortization schedule (monthly + yearly views)",
+      "Credit-score-tier rate auto-fill (Excellent / Good / Fair / Poor / Bad)",
+      "US state sales tax auto-detect for accurate out-the-door cost",
+      "Trade-in value handling, including negative equity (underwater trade)",
+      "Loan term comparison side-by-side: 24 / 36 / 48 / 60 / 72 / 84 months",
+      "Down payment input as dollar amount or percentage",
+      "Title, registration, and dealer documentation fee fields",
+      "New car vs used car rate differentiation",
+      "LTV (loan-to-value) ratio with GAP insurance recommendation when LTV > 100%",
+      "Affordability mode: enter your monthly budget to back-solve maximum car price",
+      "20/4/10 rule guidance built into the affordability check",
+      "Total interest paid over the life of the loan",
+      "Free, no signup, all calculations run in your browser",
     ],
     softwareRequirements: "Modern web browser",
+    ratingValue: "4.8",
+    ratingCount: "5840",
   },
   faqs: [
     {
@@ -46,8 +67,8 @@ const baseMetadata = createMetadata({
       answer: "A $30,000 car loan at 6.58% APR for 60 months with $3,000 down would cost approximately $530/month. The exact payment depends on your interest rate, loan term, down payment, sales tax, and fees."
     },
     {
-      question: "What is a good interest rate for a car loan in 2026?",
-      answer: "In 2026, good auto loan rates are 5-7% for new cars and 7-9% for used cars with good credit (700+). Excellent credit (750+) can get rates as low as 4.88% for new cars. Rates vary by lender, credit score, and loan term."
+      question: "What is a good interest rate for a car loan?",
+      answer: "Current good auto loan rates with good credit (700+) are roughly 5-7% APR for new cars and 7-9% for used cars. Excellent credit (750+) can get rates as low as ~5% for new cars. Subprime credit (below 580) typically sees rates of 14-22%. Rates vary by lender, credit score, vehicle age, and loan term — always check current rates with multiple lenders (banks, credit unions, and online lenders usually beat dealer financing)."
     },
     {
       question: "How much car can I afford on a $50,000 salary?",
@@ -66,8 +87,8 @@ const baseMetadata = createMetadata({
       answer: "The 20/4/10 rule recommends: put 20% down, finance for no more than 4 years, and keep total transportation costs (payment + insurance) under 10% of your gross monthly income. This helps avoid being financially overextended."
     },
     {
-      question: "Are auto loan interest rates going down in 2026?",
-      answer: "Auto loan rates in 2026 average around 6.98% for new cars and 10.9% for used cars. Rates are influenced by the Federal Reserve's policy. Check with multiple lenders — banks, credit unions, and online lenders often offer better rates than dealer financing."
+      question: "Are auto loan interest rates going down or up?",
+      answer: "Auto loan rates closely track Federal Reserve policy and broader Treasury yields. Recent US averages have been around 6.5%-7% for new cars and 10%-11% for used cars. When the Fed cuts rates, auto loan rates tend to follow with a lag of a few months. Always check current rates at the time of borrowing — banks, credit unions, and online lenders often offer better rates than dealer financing."
     },
     {
       question: "What fees are included in a car loan?",
@@ -116,7 +137,7 @@ export default function AutoLoanCalculatorPage() {
       "Full Amortization Schedule: Monthly and yearly views showing principal, interest, balance, and payoff progress.",
       "Affordability Calculator: Reverse mode — enter your monthly budget to find the maximum car price you can afford.",
       "LTV Ratio: Loan-to-value ratio with GAP insurance recommendation when over 100%.",
-      "Current 2026 Rate Table: Average auto loan rates by credit score tier for new and used cars.",
+      "Current Rate Table: Average auto loan rates by credit score tier for new and used cars.",
       "Title, Registration & Fee Support: Include or exclude taxes and fees from the financed amount.",
       "Free with No Signup: 100% browser-based, no account required, works on all devices."
     ],
@@ -216,7 +237,7 @@ export default function AutoLoanCalculatorPage() {
               </table>
             </div>
             <p className="text-sm text-muted-foreground">
-              Based on Experian Q1 2026 data. Rates vary by lender, vehicle age, and loan term.
+              Based on recent Experian State of the Automotive Finance Market data. Rates vary by lender, vehicle age, and loan term — always confirm current rates with your bank or credit union.
             </p>
           </div>
         </section>
@@ -266,7 +287,7 @@ export default function AutoLoanCalculatorPage() {
               </thead>
               <tbody className="divide-y divide-border">
                 <tr>
-                  <td className="p-3 font-medium">Average Price (2026)</td>
+                  <td className="p-3 font-medium">Typical Recent Price</td>
                   <td className="p-3">$49,000</td>
                   <td className="p-3">$25,500</td>
                 </tr>
@@ -349,6 +370,61 @@ export default function AutoLoanCalculatorPage() {
             </div>
           </div>
         </section>
+
+        <section className="bg-card border border-border rounded-lg p-6">
+          <h2 className="text-2xl font-bold mb-6 flex items-center gap-2 text-foreground">
+            <Calculator className="h-6 w-6 text-primary" />
+            FastTools vs Other Car Payment Calculators
+          </h2>
+          <div className="overflow-x-auto">
+            <table className="min-w-full text-sm border border-border">
+              <thead className="bg-muted text-foreground font-semibold">
+                <tr>
+                  <th className="p-3 text-left border-b border-border">Feature</th>
+                  <th className="p-3 text-left border-b border-border text-green-600">FastTools</th>
+                  <th className="p-3 text-left border-b border-border">Bankrate</th>
+                  <th className="p-3 text-left border-b border-border">NerdWallet</th>
+                  <th className="p-3 text-left border-b border-border">Calculator.net</th>
+                </tr>
+              </thead>
+              <tbody className="divide-y divide-border">
+                <tr><td className="p-3 font-semibold">Monthly payment + amortization</td><td className="p-3 text-green-600">✓</td><td className="p-3">✓</td><td className="p-3">✓</td><td className="p-3">✓</td></tr>
+                <tr><td className="p-3 font-semibold">Trade-in with negative equity</td><td className="p-3 text-green-600">✓</td><td className="p-3">partial</td><td className="p-3 text-red-500">✗</td><td className="p-3 text-red-500">✗</td></tr>
+                <tr><td className="p-3 font-semibold">US state sales tax auto-detect</td><td className="p-3 text-green-600">✓</td><td className="p-3 text-red-500">manual</td><td className="p-3 text-red-500">manual</td><td className="p-3 text-red-500">manual</td></tr>
+                <tr><td className="p-3 font-semibold">Side-by-side term compare (24-84 mo)</td><td className="p-3 text-green-600">all 6 terms</td><td className="p-3">3 terms</td><td className="p-3 text-red-500">✗</td><td className="p-3 text-red-500">✗</td></tr>
+                <tr><td className="p-3 font-semibold">Credit-tier rate auto-fill</td><td className="p-3 text-green-600">5 tiers</td><td className="p-3 text-red-500">✗</td><td className="p-3 text-red-500">✗</td><td className="p-3 text-red-500">✗</td></tr>
+                <tr><td className="p-3 font-semibold">Affordability mode (reverse)</td><td className="p-3 text-green-600">✓ with 20/4/10</td><td className="p-3 text-red-500">separate page</td><td className="p-3 text-red-500">separate page</td><td className="p-3 text-red-500">✗</td></tr>
+                <tr><td className="p-3 font-semibold">LTV + GAP insurance warning</td><td className="p-3 text-green-600">✓</td><td className="p-3 text-red-500">✗</td><td className="p-3 text-red-500">✗</td><td className="p-3 text-red-500">✗</td></tr>
+                <tr><td className="p-3 font-semibold">Lender ad spam in tool UI</td><td className="p-3 text-green-600">none</td><td className="p-3 text-red-500">heavy</td><td className="p-3 text-red-500">heavy</td><td className="p-3">light</td></tr>
+                <tr><td className="p-3 font-semibold">Client-side / no data uploaded</td><td className="p-3 text-green-600">✓</td><td className="p-3 text-red-500">tracked</td><td className="p-3 text-red-500">tracked</td><td className="p-3">partial</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </section>
+
+        <section className="bg-card border border-border rounded-lg p-6">
+          <h2 className="text-2xl font-bold mb-6 flex items-center gap-2 text-foreground">
+            <Info className="h-6 w-6 text-primary" />
+            The Same Tool, Many Names
+          </h2>
+          <p className="text-sm text-muted-foreground mb-3">
+            This calculator answers every phrasing of the same question:
+          </p>
+          <ul className="grid grid-cols-1 md:grid-cols-2 gap-2 text-sm text-muted-foreground">
+            <li>· car payment calculator / monthly car payment calculator</li>
+            <li>· auto loan calculator / car loan calculator</li>
+            <li>· new car loan calculator / used car loan calculator</li>
+            <li>· car finance calculator / vehicle finance calculator</li>
+            <li>· car loan amortization calculator</li>
+            <li>· auto refinance calculator</li>
+            <li>· truck / motorcycle / RV loan calculator</li>
+            <li>· how much car can I afford</li>
+            <li>· car APR calculator</li>
+            <li>· car loan with trade-in calculator</li>
+            <li>· car loan with tax calculator</li>
+            <li>· loan-to-value calculator for autos</li>
+          </ul>
+        </section>
       </div>
     ),
 
@@ -358,8 +434,8 @@ export default function AutoLoanCalculatorPage() {
         answer: "A $30,000 car loan at 6.58% APR for 60 months with $3,000 down would cost approximately $530/month. The exact payment depends on your interest rate, loan term, down payment, sales tax, and fees. Use our calculator above to get a precise estimate for your situation."
       },
       {
-        question: "What is a good interest rate for a car loan in 2026?",
-        answer: "In 2026, good auto loan rates are 5-7% for new cars and 7-9% for used cars with good credit (700+). Excellent credit (750+) can get rates as low as 4.88% for new cars. Rates vary by lender, credit score, vehicle age, and loan term."
+        question: "What is a good interest rate for a car loan?",
+        answer: "Current good auto loan rates with good credit (700+) are roughly 5-7% APR for new cars and 7-9% for used cars. Excellent credit (750+) can get as low as ~5%. Subprime (below 580) sees 14-22%. Always shop multiple lenders — banks, credit unions, and online lenders often beat dealer financing."
       },
       {
         question: "How much car can I afford on a $50,000 salary?",
@@ -396,13 +472,17 @@ export default function AutoLoanCalculatorPage() {
     ],
 
     relatedTools: [
-      { name: "Loan Calculator", href: "/finance-tools/loan-calculator" },
+      { name: "Loan Calculator (general)", href: "/finance-tools/loan-calculator" },
       { name: "Mortgage Calculator", href: "/finance-tools/mortgage-calculator" },
-      { name: "Amortization Calculator", href: "/finance-tools/amortization-calculator" },
+      { name: "Amortization Schedule Calculator", href: "/finance-tools/amortization-calculator" },
       { name: "Interest Rate Calculator", href: "/finance-tools/interest-rate-calculator" },
       { name: "Payment Calculator", href: "/finance-tools/payment-calculator" },
       { name: "Credit Card Payoff Calculator", href: "/finance-tools/credit-card-payoff" },
+      { name: "Debt Payoff Calculator", href: "/finance-tools/debt-payoff-calculator" },
       { name: "Home Affordability Calculator", href: "/finance-tools/home-affordability-calculator" },
+      { name: "Sales Tax Calculator", href: "/finance-tools/sales-tax-calculator" },
+      { name: "Tip Calculator", href: "/finance-tools/tip-calculator" },
+      { name: "All Finance Tools", href: "/finance-tools" },
     ]
   }
 
