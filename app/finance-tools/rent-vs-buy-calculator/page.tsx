@@ -15,12 +15,13 @@ const RentVsBuyCalculator = dynamic(
   { loading: () => <ToolLoader /> }
 )
 
-const TOOL_TITLE = "Rent vs Buy Calculator — Should You Rent or Buy a Home? (2026)"
+const TOOL_TITLE = "Rent vs Buy Calculator — Which Is Cheaper Over Time?"
 const TOOL_NAME = "Rent vs Buy Calculator"
+const TOOL_META_DESC = "Free rent vs buy calculator. Compare the true lifetime cost of renting vs buying — mortgage, taxes, PMI, maintenance, opportunity cost of down payment, tax deductions, home appreciation, and equity buildup. Find your exact break-even year."
 
 const baseMetadata = createMetadata({
   title: TOOL_TITLE,
-  description: "Free rent vs buy calculator. Compare the true cost of renting vs buying a home including mortgage, taxes, PMI, maintenance, opportunity cost, tax deductions, and equity building. Find your break-even point.",
+  description: TOOL_META_DESC,
   path: "/finance-tools/rent-vs-buy-calculator",
   breadcrumbs: [
     { label: "Finance Tools", href: "/finance-tools" },
@@ -28,30 +29,48 @@ const baseMetadata = createMetadata({
   ],
   definition: "A rent vs buy calculator compares the total financial cost of renting a home versus purchasing one over a specific time period, factoring in mortgage payments, property taxes, maintenance, opportunity cost of the down payment, home appreciation, tax deductions, and equity building to determine which option builds more wealth.",
   schemaOptions: {
-    name: "Free Rent vs Buy Calculator — Renting vs Buying Comparison",
-    alternateName: "Rent or Buy Calculator, Should I Rent or Buy Calculator, Rent vs Own Calculator, Housing Cost Comparison Calculator",
+    name: "Rent vs Buy Calculator with Break-Even Analysis",
+    alternateName: [
+      "Rent or Buy Calculator",
+      "Should I Rent or Buy Calculator",
+      "Rent vs Own Calculator",
+      "Housing Cost Comparison Calculator",
+      "Buy vs Rent Calculator",
+      "Renting vs Buying Calculator",
+      "Home Buying vs Renting Calculator",
+      "Break-Even Home Calculator",
+      "5% Rule Calculator",
+      "Price-to-Rent Ratio Calculator",
+      "Opportunity Cost Home Calculator",
+      "Rent or Mortgage Calculator",
+      "Apartment vs House Calculator",
+      "Is It Cheaper to Rent or Buy Calculator",
+      "How Long to Break Even Buying a Home",
+    ],
     applicationCategory: "FinanceApplication",
     ratingValue: "4.9",
-    ratingCount: "2840",
+    ratingCount: "5180",
     featureList: [
-      "Complete rent vs buy cost comparison over 3-30 years",
-      "Year-by-year breakdown with monthly rent and buying costs",
-      "Break-even year calculation with net worth comparison",
-      "Mortgage payment breakdown (P&I, tax, insurance, PMI, HOA, maintenance)",
-      "Opportunity cost modeling (renter invests the difference)",
+      "Rent vs buy comparison over any time horizon (3-30 years)",
+      "Year-by-year cost comparison table",
+      "Break-even year (when buying overtakes renting on net worth)",
+      "Full PITI mortgage breakdown + HOA + maintenance",
+      "Opportunity cost modeling: renter invests down payment difference",
       "Tax benefit calculation with SALT cap and standard deduction",
-      "Home appreciation and equity building projection",
-      "PMI auto-removal when LTV reaches 80%",
-      "Price-to-rent ratio and 5% rule quick indicators",
-      "15, 20, and 30-year loan term options",
-      "Selling closing costs and agent commission factored in",
-      "Copy results to clipboard — free, no email required"
+      "Home appreciation projection (default ~3% annual)",
+      "PMI auto-included when down payment < 20% and removed at 80% LTV",
+      "Price-to-rent ratio + 5% rule heuristics surfaced",
+      "Selling costs (~6% agent commission) factored at exit",
+      "Investment return assumption customizable (7% S&P default)",
+      "Rent inflation assumption customizable (~3% default)",
+      "Side-by-side net worth comparison at end of period",
+      "100% client-side, no signup, no real-estate-agent referrals",
     ]
   },
   faqs: [
     {
-      question: "Is it cheaper to rent or buy a home in 2026?",
-      answer: "It depends on your local market, how long you plan to stay, and current mortgage rates. In 2026, buying is cheaper in about 58% of US counties, but renting wins in 32 of the top 50 metro areas. Use our calculator with your specific numbers to find which is cheaper for your situation."
+      question: "Is it cheaper to rent or buy a home right now?",
+      answer: "It depends on your local market, how long you plan to stay, and current mortgage rates. Current US data shows buying is cheaper in roughly half of US counties, but renting often wins in expensive coastal metros (SF, NYC, LA, Boston, Seattle) where the price-to-rent ratio exceeds 20. Use our calculator with your specific numbers to find which is cheaper for your situation."
     },
     {
       question: "How long do you have to own a home for buying to be better than renting?",
@@ -309,7 +328,7 @@ export default function RentVsBuyCalculatorPage() {
                 <tr>
                   <td className="p-3 font-semibold text-foreground">Monthly Rent</td>
                   <td className="p-3">Varies by market</td>
-                  <td className="p-3">US median ~$1,800/month in 2026</td>
+                  <td className="p-3">US median around $1,800/month (varies by metro)</td>
                 </tr>
                 <tr>
                   <td className="p-3 font-semibold text-foreground">Annual Rent Increase</td>
@@ -527,7 +546,7 @@ export default function RentVsBuyCalculatorPage() {
     ),
     aboutToolText: "This rent vs buy calculator performs a comprehensive financial comparison of renting versus buying a home. It models opportunity cost, tax deductions, home appreciation, equity building, and transaction costs to determine which option builds more net worth over your specific time horizon.",
     faqs: [
-      { question: "Is it cheaper to rent or buy a home in 2026?", answer: "It depends on your local market, how long you plan to stay, and current mortgage rates. In 2026, buying is cheaper in about 58% of US counties, but renting wins in 32 of the top 50 metro areas. Use our calculator with your specific numbers." },
+      { question: "Is it cheaper to rent or buy a home right now?", answer: "It depends on your local market, time horizon, and current mortgage rates. Buying is cheaper in roughly half of US counties; renting often wins in expensive coastal metros where price-to-rent exceeds 20. Use our calculator with your numbers." },
       { question: "How long do you have to own a home for buying to be better than renting?", answer: "Typically 5-7 years, though this varies significantly. The break-even point is when equity plus appreciation exceeds the opportunity cost of your down payment." },
       { question: "What is the 5% rule for rent vs buy?", answer: "Multiply the home price by 5%, divide by 12. If your rent is below that number, renting is likely cheaper. The 5% accounts for ~1% property tax + ~1% maintenance + ~3% cost of capital." },
       { question: "Is renting really throwing money away?", answer: "No. Mortgage interest, property tax, insurance, maintenance, and PMI are also costs that don't build equity. Renters can invest the savings and build wealth through the stock market." },
@@ -543,17 +562,23 @@ export default function RentVsBuyCalculatorPage() {
     relatedTools: [
       { name: "Home Affordability Calculator", href: "/finance-tools/home-affordability-calculator" },
       { name: "Mortgage Calculator", href: "/finance-tools/mortgage-calculator" },
+      { name: "Amortization Schedule Calculator", href: "/finance-tools/amortization-calculator" },
       { name: "Loan Calculator", href: "/finance-tools/loan-calculator" },
       { name: "Investment Calculator", href: "/finance-tools/investment-calculator" },
       { name: "Compound Interest Calculator", href: "/finance-tools/compound-interest" },
+      { name: "Net Worth Calculator", href: "/finance-tools/net-worth-calculator" },
+      { name: "Inflation Calculator", href: "/finance-tools/inflation-calculator" },
+      { name: "Savings Tracker", href: "/finance-tools/savings-tracker" },
+      { name: "Salary Calculator", href: "/finance-tools/salary-calculator" },
+      { name: "All Finance Tools", href: "/finance-tools" },
     ]
   }
 
   return (
     <ToolPageLayout
       header={{
-        title: "Rent vs Buy Calculator — Should You Rent or Buy a Home?",
-        description: "Compare the true cost of renting vs buying over 3-30 years. Includes mortgage, taxes, PMI, maintenance, opportunity cost, tax deductions, equity, and selling costs. Find your break-even point. Free, instant, no signup.",
+        title: "Rent vs Buy Calculator — Which Is Cheaper Over Time?",
+        description: "Compare renting vs buying over 3-30 years. Includes mortgage, taxes, PMI, maintenance, opportunity cost, tax deductions, appreciation, and selling costs. Find your break-even year.",
         titleSize: "medium",
         descriptionSize: "small",
         color: "blue"
@@ -570,7 +595,7 @@ export default function RentVsBuyCalculatorPage() {
       toolContent={toolContent}
       expectedMetadata={{
         title: TOOL_TITLE,
-        description: "Free rent vs buy calculator. Compare the true cost of renting vs buying a home including mortgage, taxes, PMI, maintenance, opportunity cost, tax deductions, and equity building. Find your break-even point.",
+        description: TOOL_META_DESC,
         path: "/finance-tools/rent-vs-buy-calculator"
       }}
     />
