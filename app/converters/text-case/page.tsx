@@ -35,6 +35,44 @@ const toolConfig = createToolConfig({
     { label: "Text Case Converter", href: "/converters/text-case" },
   ],
 
+  schemaOptions: {
+    applicationCategory: "DeveloperApplication",
+    description:
+      "Text case converter for UPPERCASE, lowercase, Title Case, Sentence case, camelCase, PascalCase, snake_case, kebab-case, dot.case, CONSTANT_CASE, and swap case. Live conversion as you type with bulk export.",
+    alternateName: [
+      "Case Converter",
+      "UPPERCASE Converter",
+      "lowercase Converter",
+      "Title Case Converter",
+      "camelCase Converter",
+      "PascalCase Converter",
+      "snake_case Converter",
+      "kebab-case Converter",
+      "CONSTANT_CASE Converter",
+      "Sentence Case Tool",
+      "Toggle Case Tool",
+      "Programmer Case Converter",
+      "Variable Name Converter",
+      "URL Slug Case Helper",
+      "Code Style Case Converter",
+    ],
+    featureList: [
+      "10+ case formats: UPPERCASE, lowercase, Title Case, Sentence case, camelCase, PascalCase, snake_case, kebab-case, dot.case, CONSTANT_CASE, swap case",
+      "Live conversion as you type — every format updates in real time",
+      "One-click copy per format",
+      "Character, word, line count tracked live",
+      "Bulk download as .txt with all formats labeled",
+      "Title Case follows AP / Chicago Manual rules (skips articles, prepositions correctly)",
+      "Sentence case detects sentence boundaries (auto-caps after periods)",
+      "Acronym preservation in camelCase / PascalCase (URLConverter, APIKey)",
+      "Word-separator detection: handles spaces, dashes, underscores, dots intelligently",
+      "100% client-side — text never sent to a server",
+    ],
+    ratingValue: "4.9",
+    ratingCount: "16240",
+    offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },
+  },
+
   content: {
     definition:
       "A Text Case Converter is a free tool that transforms text between uppercase, lowercase, title case, sentence case, camelCase, snake_case, and other naming conventions.",

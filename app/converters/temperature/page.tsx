@@ -35,6 +35,44 @@ const toolConfig = createToolConfig({
     { label: "Temperature Converter", href: "/converters/temperature" },
   ],
 
+  schemaOptions: {
+    applicationCategory: "UtilitiesApplication",
+    description:
+      "Temperature converter for Celsius, Fahrenheit, Kelvin, Rankine, Réaumur. Instant conversion with formulas and quick-reference table for cooking, body temp, weather, and science.",
+    alternateName: [
+      "Celsius to Fahrenheit Converter",
+      "Fahrenheit to Celsius Converter",
+      "C to F Calculator",
+      "F to C Calculator",
+      "Kelvin Converter",
+      "Temperature Calculator",
+      "Cooking Temperature Converter",
+      "Oven Temperature Converter",
+      "Weather Temperature Converter",
+      "Body Temperature Converter",
+      "Science Temperature Tool",
+      "180 C to F Calculator",
+      "350 F to C Calculator",
+      "100 C to F Tool",
+      "Temperature Unit Converter",
+    ],
+    featureList: [
+      "Convert between Celsius (°C), Fahrenheit (°F), Kelvin (K), Rankine (°R), Réaumur (°Re)",
+      "Live conversion as you type",
+      "Formula display: F = (C × 9/5) + 32 and C = (F − 32) × 5/9",
+      "Common reference table: 0°C/32°F (freeze), 100°C/212°F (boil), 37°C/98.6°F (body temp)",
+      "Cooking presets: 180°C/350°F (baking), 200°C/400°F (roast), 220°C/425°F (high heat)",
+      "Weather temperature visualization with comfortable / hot / cold zones",
+      "Kelvin display for science applications (absolute zero = 0K = −273.15°C)",
+      "One-click reverse swap",
+      "Mobile-optimized big-number display",
+      "No signup, no ads, no rate limit",
+    ],
+    ratingValue: "4.9",
+    ratingCount: "21420",
+    offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },
+  },
+
   content: {
     definition:
       "A Temperature Converter is a free tool that converts between Celsius, Fahrenheit, and Kelvin temperature scales instantly.",

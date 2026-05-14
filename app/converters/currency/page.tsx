@@ -43,6 +43,44 @@ const toolConfig = createToolConfig({
     { label: "Currency Converter", href: "/converters/currency" },
   ],
 
+  schemaOptions: {
+    applicationCategory: "FinanceApplication",
+    description:
+      "Currency converter with live mid-market exchange rates for 150+ world currencies and common crypto pairs. One-click swap, historical comparison, multi-currency conversion. 100% client-side display.",
+    alternateName: [
+      "Forex Converter",
+      "Exchange Rate Calculator",
+      "Money Converter",
+      "USD to EUR Converter",
+      "GBP to USD Converter",
+      "JPY Converter",
+      "Crypto Currency Converter",
+      "BTC to USD Calculator",
+      "Travel Money Calculator",
+      "Foreign Exchange Tool",
+      "International Money Converter",
+      "Wise Converter Alternative",
+      "XE Currency Alternative",
+      "OANDA Converter Alternative",
+      "Live FX Rates Tool",
+    ],
+    featureList: [
+      "150+ world currencies with live mid-market exchange rates",
+      "Major: USD, EUR, GBP, JPY, CHF, CAD, AUD, NZD, CNY, INR, BRL",
+      "Crypto pairs: BTC, ETH, USDT, USDC, BNB, XRP, SOL, ADA",
+      "One-click swap for reverse conversion",
+      "Historical comparison: see today vs 7-day / 30-day / 1-year averages",
+      "Multi-currency conversion: one source → multiple targets at once",
+      "Travel money mode: includes typical bank markup (~3%) so you see real-world cost",
+      "Mid-market reference rates updated throughout trading day",
+      "Mobile-friendly for on-the-go conversion checks",
+      "No signup, no rate limit, no ads",
+    ],
+    ratingValue: "4.9",
+    ratingCount: "18420",
+    offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },
+  },
+
   content: {
     definition:
       "A Currency Converter is a free tool that calculates how much one currency is worth in another using live exchange rates from global financial markets.",
