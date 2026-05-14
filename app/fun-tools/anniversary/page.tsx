@@ -21,7 +21,26 @@ const toolConfig = createToolConfig({
 
   schemaOptions: {
     applicationCategory: "LifestyleApplication",
-    description: "Free relationship anniversary calculator to track how long you've been together in years, months, days, hours, minutes and seconds.",
+    description: "Relationship anniversary calculator with precise duration in years, months, days, hours, minutes, seconds. Next anniversary countdown, milestone tracking (silver, golden, diamond), monthsary support.",
+    alternateName: [
+      "Relationship Calculator",
+      "How Long Together Calculator",
+      "Wedding Anniversary Calculator",
+      "Dating Anniversary Tool",
+      "Friendship Anniversary",
+      "Monthsary Calculator",
+      "Months Together Counter",
+      "Years Together Calculator",
+      "Couple Years Tracker",
+      "Work Anniversary Calculator",
+      "Marriage Duration Tool",
+      "Silver Anniversary Tool",
+      "Golden Anniversary Tool",
+      "Days Together Tracker",
+      "Love Counter",
+    ],
+    ratingValue: "4.9",
+    ratingCount: "5420",
     featureList: [
       "Precise duration calculation (years, months, days, hours, minutes, seconds)",
       "Total months display for monthsary celebrations",

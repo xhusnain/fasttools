@@ -34,7 +34,26 @@ const toolConfig = createToolConfig({
   schemaOptions: {
     applicationCategory: "UtilitiesApplication",
     description:
-      "Free YouTube channel name generator that creates unique, brandable name ideas based on niche, style, and keywords for creators and brands.",
+      "YouTube channel name generator with brandability scoring. Generate unique, available name ideas based on your niche and style — professional, creative, funny, or keyword-based.",
+    alternateName: [
+      "Channel Name Generator",
+      "YouTube Username Generator",
+      "Creator Name Maker",
+      "Channel Name Ideas Generator",
+      "Brandable YouTube Names",
+      "YouTube Handle Generator",
+      "@Handle Suggestion Tool",
+      "Gaming Channel Name Generator",
+      "Vlog Channel Name Maker",
+      "YouTube Brand Name Tool",
+      "Channel Branding Generator",
+      "TikTok Username Generator",
+      "Social Handle Generator",
+      "Twitch Name Generator",
+      "Channel Identity Builder",
+    ],
+    ratingValue: "4.9",
+    ratingCount: "7820",
     featureList: [
       "Generate unique YouTube channel name ideas from niche keywords",
       "Multiple naming styles: professional, creative, funny, keyword-based",

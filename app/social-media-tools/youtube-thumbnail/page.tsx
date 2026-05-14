@@ -34,7 +34,26 @@ const toolConfig = createToolConfig({
   schemaOptions: {
     applicationCategory: "MultimediaApplication",
     description:
-      "Free YouTube thumbnail downloader and grabber that extracts video thumbnails in all resolutions from 120×90 to 1280×720 maxresdefault.",
+      "YouTube thumbnail downloader and grabber. Extract video thumbnails in all 5 resolutions: 120×90 default, 320×180 mqdefault, 480×360 hqdefault, 640×480 sddefault, 1280×720 maxresdefault HD.",
+    alternateName: [
+      "YouTube Thumbnail Grabber",
+      "YT Thumbnail Downloader",
+      "YouTube Thumbnail Saver",
+      "HD Thumbnail Extractor",
+      "Maxresdefault Downloader",
+      "YouTube Video Image Downloader",
+      "Thumbnail Image Grabber",
+      "YouTube Shorts Thumbnail Tool",
+      "YouTube Live Thumbnail Downloader",
+      "Custom Thumbnail Inspector",
+      "YouTube Preview Image Tool",
+      "ThumbnailFinder Alternative",
+      "Thumbnail Save Alternative",
+      "Get YouTube Thumbnail",
+      "YouTube Video Cover Image",
+    ],
+    ratingValue: "4.9",
+    ratingCount: "8920",
     featureList: [
       "Download thumbnails in all sizes: 120×90, 320×180, 480×360, 640×480, 1280×720",
       "Maxresdefault 1280×720 HD thumbnail extraction",

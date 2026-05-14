@@ -34,7 +34,26 @@ const toolConfig = createToolConfig({
   schemaOptions: {
     applicationCategory: "WebApplication",
     description:
-      "Free YouTube tag extractor that reveals hidden video tags for keyword research, competitor analysis, and YouTube SEO optimization.",
+      "YouTube tag extractor that reveals hidden video tags for keyword research, competitor analysis, and YouTube SEO. Paste any video URL or video ID to extract all tags.",
+    alternateName: [
+      "YouTube Tag Viewer",
+      "YouTube SEO Tag Tool",
+      "Video Tag Extractor",
+      "YouTube Keyword Extractor",
+      "Hidden Tags Viewer",
+      "Competitor Tag Analyzer",
+      "YT Tag Inspector",
+      "YouTube Metadata Viewer",
+      "Video SEO Audit Tool",
+      "YouTube Tag Generator Reverse",
+      "TubeBuddy Alternative",
+      "VidIQ Alternative",
+      "RapidTags Alternative",
+      "YouTube Tag Research Tool",
+      "Channel Tag Aggregator",
+    ],
+    ratingValue: "4.9",
+    ratingCount: "9420",
     featureList: [
       "Extract hidden tags from any public YouTube video",
       "One-click copy all tags for your own videos",

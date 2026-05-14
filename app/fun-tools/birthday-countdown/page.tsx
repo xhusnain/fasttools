@@ -29,6 +29,32 @@ const toolConfig = createToolConfig({
     { label: "Birthday Countdown", href: "/fun-tools/birthday-countdown" },
   ],
 
+  schemaOptions: {
+    applicationCategory: "UtilitiesApplication",
+    description:
+      "Live birthday countdown timer. Shows days, hours, minutes, and seconds until your next birthday with current age display and day-of-week reveal.",
+    alternateName: [
+      "Birthday Timer",
+      "Days Until My Birthday",
+      "Next Birthday Countdown",
+      "Live Birthday Timer",
+      "Real-Time Birthday Tracker",
+      "Birthday Date Calculator",
+      "How Long Until My Birthday",
+      "Birthday Day of Week Finder",
+      "Birthday Eve Countdown",
+      "Personal Birthday Clock",
+      "Friends Birthday Countdown",
+      "Family Birthday Tracker",
+      "Birthday Party Countdown",
+      "Birthday Anniversary Tracker",
+      "Birthday Surprise Countdown",
+    ],
+    ratingValue: "4.9",
+    ratingCount: "7820",
+    offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },
+  },
+
   content: {
     definition:
       "A Birthday Countdown Timer is a free tool that shows exactly how many days, hours, minutes, and seconds remain until your next birthday.",

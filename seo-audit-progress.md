@@ -21,14 +21,21 @@
 
 | # | Tool | Path | Status |
 |---|---|---|---|
-| 21 | YouTube Thumbnail Downloader | `/social-media-tools/youtube-thumbnail` | [ ] |
-| 22 | Influencer Rate Calculator | `/social-media-tools/influencer-rate-calculator` | [ ] |
-| 23 | Link-in-Bio Generator | `/social-media-tools/link-in-bio` | [ ] |
-| 24 | Birthday Countdown | `/fun-tools/birthday-countdown` | [ ] |
-| 25 | Countdown Timer & Stopwatch | `/fun-tools/countdown-timer` | [ ] |
-| 26 | Wheel Spinner | `/fun-tools/wheel-spinner` | [ ] |
-| 27 | Meme Generator | `/fun-tools/meme-generator` | [ ] |
-| 28 | Pomodoro Timer | `/fun-tools/pomodoro-timer` | [ ] |
+| 21 | YouTube Thumbnail Downloader | `/social-media-tools/youtube-thumbnail` | [x] |
+| 22 | Influencer Rate Calculator | `/social-media-tools/influencer-rate-calculator` | [x] |
+| 23 | Link-in-Bio Generator | `/social-media-tools/link-in-bio` | [x] |
+| 23a | Hashtag Counter | `/social-media-tools/hashtag-counter` | [x] |
+| 23b | Instagram DP | `/social-media-tools/instagram-dp` | [x] |
+| 23c | TikTok Engagement Calculator | `/social-media-tools/tiktok-engagement-calculator` | [x] |
+| 23d | YouTube Channel Name Generator | `/social-media-tools/youtube-channel-name-generator` | [x] |
+| 23e | YouTube Tag Extractor | `/social-media-tools/youtube-tags` | [x] |
+| 24 | Birthday Countdown | `/fun-tools/birthday-countdown` | [x] |
+| 24a | Anniversary | `/fun-tools/anniversary` | [x] |
+| 24b | Future Age | `/fun-tools/future-age` | [x] |
+| 25 | Countdown Timer & Stopwatch | `/fun-tools/countdown-timer` | [x] |
+| 26 | Wheel Spinner | `/fun-tools/wheel-spinner` | [x] |
+| 27 | Meme Generator | `/fun-tools/meme-generator` | [x] |
+| 28 | Pomodoro Timer | `/fun-tools/pomodoro-timer` | [x] |
 | 29 | Age Calculator | `/calculator/age-calculator` | [x] |
 | 30 | BMI Calculator | `/calculator/bmi-calculator` | [x] |
 | 31 | BMR Calculator | `/calculator/bmr-calculator` | [x] |

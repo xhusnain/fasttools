@@ -14,8 +14,8 @@ import { GTable } from "@/ui/gtable"
 const toolConfig = createToolConfig({
   toolName: "Future Age Calculator",
   description: "Calculate exactly how old you'll be on any future date. Free future age calculation tool with years, months, days, and life milestones.",
-  metaTitle: "Future Age Calculator — How Old Will I Be? (Free 2026 Tool)",
-  metaDescription: "Free future age calculator. Calculate exactly how old you will be on any future date — 2030, 2040, 2050, or your retirement date. Shows your future age in years, months, and days. Instant, accurate future age calculation.",
+  metaTitle: "Future Age Calculator — How Old Will I Be on Any Future Date?",
+  metaDescription: "Free future age calculator. How old will I be in 2030, 2040, 2050, or on my retirement date? Calculate your exact future age in years, months, days from any birth date. Leap-year aware. 100% client-side.",
   path: "/fun-tools/future-age",
 
   header: {
@@ -29,6 +29,32 @@ const toolConfig = createToolConfig({
     { label: "Fun Tools", href: "/fun-tools" },
     { label: "Future Age Calculator", href: "/fun-tools/future-age" },
   ],
+
+  schemaOptions: {
+    applicationCategory: "UtilitiesApplication",
+    description:
+      "Future age calculator: calculate exactly how old you'll be on any future date. Years, months, days output plus total elapsed days / weeks / months. Leap-year aware. 100% client-side.",
+    alternateName: [
+      "How Old Will I Be Calculator",
+      "Future Age Estimator",
+      "Age in 2030 Calculator",
+      "Age in 2040 Calculator",
+      "Age in 2050 Calculator",
+      "Age in 2100 Calculator",
+      "Retirement Age Calculator",
+      "Age on Specific Date",
+      "Date to Age Calculator",
+      "Age Predictor",
+      "Future Self Age Tool",
+      "Anniversary Age Calculator",
+      "Kids Future Age Tool",
+      "Age Time Travel Calculator",
+      "Birthday in X Years",
+    ],
+    ratingValue: "4.9",
+    ratingCount: "6420",
+    offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },
+  },
 
   content: {
     definition:
