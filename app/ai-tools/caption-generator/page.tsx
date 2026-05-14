@@ -179,8 +179,13 @@ const toolConfig = createToolConfig({
     ],
 
     relatedTools: [
+      { name: "Hashtag Counter", href: "/social-media-tools/hashtag-counter" },
+      { name: "YouTube Channel Name Generator", href: "/social-media-tools/youtube-channel-name-generator" },
+      { name: "Link-in-Bio Generator", href: "/social-media-tools/link-in-bio" },
+      { name: "Influencer Rate Calculator", href: "/social-media-tools/influencer-rate-calculator" },
+      { name: "TikTok Engagement Calculator", href: "/social-media-tools/tiktok-engagement-calculator" },
       { name: "AI Lyrics Generator", href: "/ai-tools/lyrics-generator" },
-      { name: "AI Pet Name Generator", href: "/ai-tools/pet-names" },
+      { name: "AI Paraphraser", href: "/ai-tools/ai-paraphraser" },
       { name: "Blog Title Generator", href: "/seo-tools/blog-titles" },
       { name: "All AI Tools", href: "/ai-tools" },
     ],

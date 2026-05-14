@@ -226,9 +226,13 @@ const toolConfig = createToolConfig({
 
     relatedTools: [
       { name: "AI Paraphraser", href: "/ai-tools/ai-paraphraser" },
-      { name: "Caption Generator", href: "/ai-tools/caption-generator" },
+      { name: "AI Readability Analyzer", href: "/ai-tools/ai-readability-analyzer" },
+      { name: "AI Text Detector", href: "/ai-tools/ai-text-detector" },
+      { name: "Word Counter", href: "/seo-tools/word-counter" },
+      { name: "Keyword Density Checker", href: "/seo-tools/keyword-density" },
       { name: "Text Similarity Checker", href: "/seo-tools/text-similarity-checker" },
-      { name: "Lorem Ipsum Generator", href: "/seo-tools/lorem-ipsum" },
+      { name: "Caption Generator", href: "/ai-tools/caption-generator" },
+      { name: "All AI Tools", href: "/ai-tools" },
     ],
   },
 })

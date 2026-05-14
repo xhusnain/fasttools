@@ -173,9 +173,13 @@ const toolConfig = createToolConfig({
     ],
 
     relatedTools: [
+      { name: "OTP / TOTP QR Code Generator", href: "/crypto-tools/otp-generator" },
+      { name: "URL Encoder/Decoder", href: "/web-tools/url-encoder" },
+      { name: "URL Parser", href: "/web-tools/url-parser" },
+      { name: "Link-in-Bio Generator", href: "/social-media-tools/link-in-bio" },
+      { name: "Meme Generator", href: "/fun-tools/meme-generator" },
       { name: "AI Caption Generator", href: "/ai-tools/caption-generator" },
-      { name: "Token to Word Converter", href: "/ai-tools/token-to-word-converter" },
-      { name: "URL Encoder Decoder", href: "/web-tools/url-encoder" },
+      { name: "Background Remover", href: "/image-tools/background-remover" },
       { name: "All AI Tools", href: "/ai-tools" },
     ],
   },

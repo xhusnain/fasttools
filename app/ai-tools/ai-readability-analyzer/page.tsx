@@ -312,8 +312,12 @@ const toolConfig = createToolConfig({
     relatedTools: [
       { name: "AI Text Detector", href: "/ai-tools/ai-text-detector" },
       { name: "AI Code Detector", href: "/ai-tools/ai-code-detector" },
-      { name: "Word Counter", href: "/text-tools/word-counter" },
-      { name: "AI Image Detector", href: "/image-tools/ai-image-detector" },
+      { name: "AI Paraphraser", href: "/ai-tools/ai-paraphraser" },
+      { name: "Word Counter", href: "/seo-tools/word-counter" },
+      { name: "Keyword Density Checker", href: "/seo-tools/keyword-density" },
+      { name: "Text Summarizer", href: "/ai-tools/text-summarizer" },
+      { name: "Blog Title Generator", href: "/seo-tools/blog-titles" },
+      { name: "All AI Tools", href: "/ai-tools" },
     ],
   },
 })
