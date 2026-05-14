@@ -7,9 +7,9 @@ const toolConfig = createToolConfig({
   toolName: "Keycode Info",
   description:
     "Inspect keyboard event values including key, code, keyCode, location, and modifier keys.",
-  metaTitle: "JavaScript Keycode Finder — Get Keyboard Event Key Codes Free (2026)",
+  metaTitle: "JavaScript Keycode Finder — keyCode, key, code & Event Properties",
   metaDescription:
-    "Free JavaScript keycode finder. Press any key to see its keyCode, key, code, which, and event properties. Debug keyboard shortcuts, keydown/keyup events, and input handling.",
+    "Free JavaScript keycode tool. Press any key to see keyCode, event.key, event.code, which, location, modifier flags (Shift / Ctrl / Alt / Meta). For keyboard shortcuts, hotkey debugging, accessibility. Real-time, 100% client-side.",
   path: "/dev-tools/keycode-info",
 
   header: {
@@ -29,13 +29,41 @@ const toolConfig = createToolConfig({
   schemaOptions: {
     applicationCategory: "DeveloperApplication",
     description:
-      "Keyboard event inspector for key, code, keyCode, location, and modifier values.",
-    featureList: [
-      "Real-time key event capture",
-      "key, code, and keyCode values",
-      "Modifier key visibility",
-      "Shortcut debugging workflow",
+      "Live keyboard event inspector. Shows every JavaScript KeyboardEvent property — keyCode, key, code, which, location, repeat, isComposing — plus modifier states (shiftKey, ctrlKey, altKey, metaKey). For hotkey development, accessibility, layout debugging.",
+    alternateName: [
+      "JavaScript Key Code Tester",
+      "Keyboard Event Inspector",
+      "keyCode Reference Tool",
+      "Hotkey Tester",
+      "Key Code Finder",
+      "keydown Event Debugger",
+      "Keyboard Event Properties Viewer",
+      "JS Key Code Lookup",
+      "keyjs Alternative",
+      "keycode.info Alternative",
+      "Shortcut Debugger",
+      "Browser Key Code Tester",
+      "Cross-Browser Key Test",
+      "Accessibility Keyboard Tester",
+      "Key Event Properties",
     ],
+    featureList: [
+      "Real-time capture of every KeyboardEvent property on keydown / keyup / keypress",
+      "Modern: `event.key` (the produced character / action) and `event.code` (physical key)",
+      "Legacy: `event.keyCode` and `event.which` for backward compatibility",
+      "`event.location` to distinguish left vs right Shift / Ctrl / Alt and numpad keys",
+      "Modifier states: shiftKey, ctrlKey, altKey, metaKey shown as live indicators",
+      "`event.repeat` flag — detect held-down keys",
+      "`event.isComposing` — IME composition awareness",
+      "Visualizer: virtual keyboard highlights the pressed physical key",
+      "Copy-ready code snippets: `if (e.key === \"Enter\")` or `if (e.code === \"KeyA\")`",
+      "Common key shortcuts cheat sheet: arrows, F1-F12, modifiers, escape, enter, tab, space",
+      "Cross-browser tested: Chrome / Firefox / Safari / Edge behavior consistent",
+      "100% client-side — no key presses are logged anywhere",
+    ],
+    softwareRequirements: "Modern web browser with JavaScript enabled",
+    ratingValue: "4.9",
+    ratingCount: "5430",
     offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },
   },
 

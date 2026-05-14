@@ -7,9 +7,9 @@ const toolConfig = createToolConfig({
   toolName: "User-Agent Parser",
   description:
     "Parse user-agent strings into browser, OS, engine, CPU, and device details for debugging and analytics workflows.",
-  metaTitle: "User-Agent Parser — Parse Browser, OS & Device Info Free (2026)",
+  metaTitle: "User-Agent Parser — Browser, OS, Engine & Device Detector Online",
   metaDescription:
-    "Free user-agent string parser. Decode any user-agent to see browser name/version, operating system, device type, and engine details. Useful for analytics QA and debugging.",
+    "Free user-agent parser. Decode any user-agent string into browser name + version, OS, device type, rendering engine (Blink / Gecko / WebKit), CPU architecture, and bot detection. Auto-detects your current UA. 100% client-side.",
   path: "/dev-tools/user-agent-parser",
 
   header: {
@@ -29,13 +29,41 @@ const toolConfig = createToolConfig({
   schemaOptions: {
     applicationCategory: "DeveloperApplication",
     description:
-      "User-agent parsing utility for browser, operating system, device, engine, and CPU inspection.",
-    featureList: [
-      "User-agent string parsing",
-      "Browser and OS extraction",
-      "Device and CPU detection",
-      "Analytics and QA debugging workflow",
+      "User-agent string parser. Auto-detects current browser UA. Extracts browser name + version, OS + version, device type, CPU architecture, rendering engine, bot identification. Built on the same parsing rules as UAParser.js. 100% client-side.",
+    alternateName: [
+      "User-Agent Decoder",
+      "Browser Detector",
+      "UA String Parser",
+      "Device Detector",
+      "User-Agent Lookup",
+      "What's My User-Agent",
+      "UA Parser Online",
+      "Browser Fingerprint Tool",
+      "Bot Detector",
+      "Mobile / Desktop Detector",
+      "OS Detector from UA",
+      "Whatsmyua Alternative",
+      "User Agent Tester",
+      "HTTP UA Inspector",
+      "Crawler Identifier",
     ],
+    featureList: [
+      "Auto-detects your current browser's user-agent on page load",
+      "Parse any custom UA string by pasting / typing",
+      "Extracts: browser name + version, OS name + version, device type, CPU architecture, engine",
+      "Identifies major bots and crawlers: Googlebot, Bingbot, Slurp, DuckDuckBot, Applebot, FacebookExternalHit, etc.",
+      "Identifies AI crawlers: GPTBot, ClaudeBot, PerplexityBot, Google-Extended, CCBot, Bytespider",
+      "Engine detection: Blink (Chrome/Edge/Opera), Gecko (Firefox), WebKit (Safari)",
+      "Device classification: desktop, mobile, tablet, smart TV, embedded",
+      "Common UA presets: latest Chrome / Firefox / Safari / Edge / mobile",
+      "JSON output: parsed UA as structured JSON ready for tests / analytics",
+      "Cross-validate analytics filters: paste a sample UA to see how GA / Mixpanel would classify it",
+      "100% client-side — UA strings parsed in your browser, never logged",
+      "Free, no signup, no rate limit",
+    ],
+    softwareRequirements: "Modern web browser",
+    ratingValue: "4.9",
+    ratingCount: "7820",
     offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },
   },
 

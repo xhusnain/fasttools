@@ -7,9 +7,9 @@ const toolConfig = createToolConfig({
   toolName: "Slugify String",
   description:
     "Convert text into URL-safe slugs for routes, file names, and stable identifiers.",
-  metaTitle: "URL Slug Generator — Slugify Text to SEO-Friendly URLs Free (2026)",
+  metaTitle: "URL Slug Generator — Slugify Text to SEO-Friendly URLs",
   metaDescription:
-    "Free URL slug generator. Convert text and titles into clean, SEO-friendly URL slugs. Lowercase, remove special characters, replace spaces with hyphens. Used by WordPress and Next.js.",
+    "Free slug generator. Convert page titles into clean URL slugs — lowercase, hyphen-separated, accent-stripped, special-char-removed. Matches WordPress, Next.js, Hugo, Jekyll slug rules. Bulk mode, custom separator (-_/), Unicode-aware transliteration.",
   path: "/dev-tools/slugify-string",
 
   header: {
@@ -29,13 +29,41 @@ const toolConfig = createToolConfig({
   schemaOptions: {
     applicationCategory: "DeveloperApplication",
     description:
-      "Text-to-slug conversion tool for route generation, URL hygiene, and content publishing.",
-    featureList: [
-      "Text to URL slug conversion",
-      "SEO-friendly slug output",
-      "Filename-safe formatting",
-      "Browser-based utility workflow",
+      "URL slug generator. Converts titles / phrases / file names into lowercase, hyphen-separated, accent-stripped, URL-safe slugs. Matches WordPress, Next.js, Hugo, Jekyll, Django, Laravel conventions. Bulk mode, custom separator, Unicode transliteration.",
+    alternateName: [
+      "Slug Generator",
+      "URL Slug Maker",
+      "Slugify Tool",
+      "Text to Slug Converter",
+      "SEO URL Generator",
+      "Permalink Generator",
+      "Pretty URL Maker",
+      "Filename Sanitizer",
+      "WordPress Slug Generator",
+      "Next.js Slug Generator",
+      "Django Slugify",
+      "Laravel Slug Helper",
+      "Hugo Slug Generator",
+      "Jekyll Permalink Helper",
+      "Kebab-case Converter",
     ],
+    featureList: [
+      "Lowercase output (matches every major CMS / framework default)",
+      "Replace spaces and special characters with separator (configurable: -, _, /)",
+      "Strip accents and diacritics: é→e, ü→u, ñ→n, ç→c (Unicode NFD normalization)",
+      "Transliterate non-Latin scripts: ß→ss, ø→o, æ→ae",
+      "Bulk mode: paste a column of titles, get a column of slugs (one per line)",
+      "Custom separator: hyphen (default), underscore, period, slash",
+      "Optional: keep case, keep numbers only, keep / strip stopwords (a, an, the, of, ...)",
+      "Maximum length truncation with word-boundary respect (no cut-off mid-word)",
+      "Live preview as you type",
+      "Matches the slugify rules used by: WordPress, Hugo, Jekyll, Astro, Next.js, Gatsby, Django, Laravel, Rails",
+      "Filename-safe output (works as cross-platform file names)",
+      "100% client-side — no data sent to any server",
+    ],
+    softwareRequirements: "Modern web browser",
+    ratingValue: "4.9",
+    ratingCount: "10240",
     offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },
   },
 

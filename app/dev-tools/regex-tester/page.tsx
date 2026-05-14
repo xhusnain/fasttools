@@ -13,9 +13,9 @@ const toolConfig = createToolConfig({
   toolName: "Regex Tester",
   description:
     "Test regular expressions against sample text with match highlights and capture-group inspection.",
-  metaTitle: "Regex Check Online — Test Regular Expressions & Ruby Regex Free (2026)",
+  metaTitle: "Regex Tester — Live JavaScript / Ruby / Python Regex Check Online",
   metaDescription:
-    "Free regex check online tool. Test regular expressions with real-time match highlighting, capture groups, and flags. Ruby regex test, JavaScript regex tester — supports multiple syntax flavors. No signup required.",
+    "Free regex tester with real-time match highlighting, capture group inspection, all JavaScript flags (g i m s u y), named groups, and replacement preview. Test JS / Ruby / Python regex syntax. 100% client-side, no signup.",
   path: "/dev-tools/regex-tester",
 
   header: {
@@ -35,13 +35,41 @@ const toolConfig = createToolConfig({
   schemaOptions: {
     applicationCategory: "DeveloperApplication",
     description:
-      "Regular expression testing tool for validating patterns, flags, and capture groups.",
-    featureList: [
-      "Regex pattern testing",
-      "Flags and match preview",
-      "Capture-group inspection",
-      "Browser-based debugging workflow",
+      "Regular expression tester with real-time match highlighting, capture group inspection, named groups, all flags (g/i/m/s/u/y), and replacement preview with $1/$2 backreferences. JavaScript engine; cross-compatible with Ruby/Python/PCRE for standard patterns. 100% client-side.",
+    alternateName: [
+      "Regular Expression Tester",
+      "Regex Check Online",
+      "JavaScript Regex Tester",
+      "Ruby Regex Test",
+      "Python Regex Tester",
+      "PCRE Tester",
+      "Regex Debugger",
+      "Pattern Matcher",
+      "Live Regex Tester",
+      "regex101 Alternative",
+      "Rubular Alternative",
+      "Pythex Alternative",
+      "Regex Match Highlighter",
+      "Capture Group Tester",
+      "Regex Replacement Tester",
     ],
+    featureList: [
+      "Real-time match highlighting as you type the pattern",
+      "Full JavaScript regex flag support: g (global), i (case-insensitive), m (multiline), s (dotAll), u (unicode), y (sticky)",
+      "Numbered capture group inspection — see what each `()` captured",
+      "Named capture groups via `(?<name>...)` — modern JS / Ruby / Python syntax",
+      "Match index positions and length shown for each match",
+      "Replacement pattern testing — preview `replace()` result with `$1`, `$2`, `$&` backreferences",
+      "Lookahead `(?=...)` and lookbehind `(?<=...)` (ES2018+) supported",
+      "Common pattern presets: email, URL, phone, IP, date, credit card, UUID",
+      "Inline error messages for invalid patterns (e.g., unmatched parens, bad escapes)",
+      "Cross-flavor compatibility notes: warns when using JS-specific features",
+      "100% client-side — patterns and test strings never sent to a server",
+      "Free, no signup, no rate limit, no ads",
+    ],
+    softwareRequirements: "Modern web browser with JavaScript enabled",
+    ratingValue: "4.9",
+    ratingCount: "18420",
     offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },
   },
 

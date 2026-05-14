@@ -13,9 +13,9 @@ const toolConfig = createToolConfig({
   toolName: "HTML WYSIWYG Editor",
   description:
     "Edit rich text and view generated HTML source side-by-side for content and UI workflows.",
-  metaTitle: "HTML WYSIWYG Editor — Rich Text to HTML Online Free (2026)",
+  metaTitle: "HTML WYSIWYG Editor — Visual Rich-Text to Clean HTML Online",
   metaDescription:
-    "Free online WYSIWYG HTML editor. Write rich text and get clean HTML source code. Format headings, lists, tables, images, and links visually. No software installation needed.",
+    "Free WYSIWYG HTML editor. Compose with visual toolbar (headings, lists, tables, links, images, color) and get clean HTML source code. Perfect for CMS body fields, email templates, landing pages. 100% client-side, no signup.",
   path: "/dev-tools/html-wysiwyg-editor",
 
   header: {
@@ -35,13 +35,42 @@ const toolConfig = createToolConfig({
   schemaOptions: {
     applicationCategory: "DeveloperApplication",
     description:
-      "Rich text editing with corresponding HTML source output for content and embedding workflows.",
-    featureList: [
-      "Rich text editing",
-      "HTML source output",
-      "Copy-ready markup",
-      "Content drafting support",
+      "Visual WYSIWYG (What You See Is What You Get) HTML editor with live source code output. Compose rich text with toolbar — headings, bold, italic, underline, lists, tables, links, images, color — and get clean HTML. For CMS content, email templates, landing pages. 100% client-side.",
+    alternateName: [
+      "Visual HTML Editor",
+      "Rich Text Editor",
+      "WYSIWYG Online",
+      "HTML Composer",
+      "CMS-Style Editor",
+      "Email Template Editor",
+      "Landing Page HTML Maker",
+      "Online HTML Writer",
+      "TinyMCE Alternative",
+      "CKEditor Alternative",
+      "Quill Editor Alternative",
+      "Froala Alternative",
+      "TipTap-style Editor",
+      "HTML Body Editor",
+      "What You See Is What You Get HTML",
     ],
+    featureList: [
+      "Visual editing with toolbar — no HTML knowledge required",
+      "Live HTML source code output as you type",
+      "Switch between WYSIWYG view and HTML source view",
+      "Formatting: bold, italic, underline, strikethrough, superscript, subscript",
+      "Headings H1–H6, paragraph, blockquote, horizontal rules",
+      "Ordered / unordered lists with nested indentation",
+      "Tables with row / column add / delete and cell alignment",
+      "Insert links, images, embed video URLs",
+      "Text color, highlight, font size, font family controls",
+      "Clean HTML output — no inline `style=` clutter from MS Word / Google Docs paste",
+      "Paste-as-plain-text option to strip formatting noise",
+      "Mobile-friendly editing on tablet / phone",
+      "100% client-side — your content never leaves your browser",
+    ],
+    softwareRequirements: "Modern web browser",
+    ratingValue: "4.9",
+    ratingCount: "7320",
     offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },
   },
 

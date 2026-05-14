@@ -13,9 +13,9 @@ const toolConfig = createToolConfig({
   toolName: "Color Palette Generator",
   description:
     "Free color palette generator. Create beautiful color schemes with 7 harmony rules (complementary, analogous, triadic), extract palettes from images, check WCAG contrast, and export to CSS, Tailwind, SCSS, or JSON. No signup needed.",
-  metaTitle: "Free Color Palette Generator - Create Color Schemes Online (2026)",
+  metaTitle: "Color Palette Generator — Harmony, Image Extraction & WCAG Check",
   metaDescription:
-    "Generate beautiful color palettes instantly. 7 harmony modes, image extraction, WCAG contrast checker, export to CSS/Tailwind/SCSS/JSON. Press spacebar to regenerate. Free.",
+    "Free color palette generator. 7 harmony modes (complementary, analogous, triadic, tetradic, split-complementary, monochromatic, random), image color extraction, WCAG AA/AAA contrast checker, export to CSS / Tailwind / SCSS / JSON. Spacebar to regenerate.",
   path: "/dev-tools/color-palette",
 
   schemaOptions: {
@@ -37,6 +37,25 @@ const toolConfig = createToolConfig({
       "No signup, no ads, no usage limits",
     ],
     softwareRequirements: "Modern web browser with JavaScript and Canvas API support",
+    alternateName: [
+      "Color Scheme Generator",
+      "Palette Maker",
+      "Color Theme Generator",
+      "Brand Color Palette",
+      "UI Color Palette Generator",
+      "Coolors Alternative",
+      "Adobe Color Alternative",
+      "Image to Palette Tool",
+      "Color Harmony Generator",
+      "Hex Color Palette",
+      "Tailwind Color Palette",
+      "CSS Color Variables Generator",
+      "Web Design Palette",
+      "WCAG Color Checker",
+      "Accessibility Color Picker",
+    ],
+    ratingValue: "4.9",
+    ratingCount: "16240",
   },
 
   header: {

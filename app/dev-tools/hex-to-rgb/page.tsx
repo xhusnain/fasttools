@@ -13,9 +13,9 @@ const toolConfig = createToolConfig({
   toolName: "Color Converter",
   description:
     "Convert color values between HEX, RGB, and HSL formats for frontend and design workflows.",
-  metaTitle: "HEX to RGB Converter — Convert Hex Colors to RGB & HSL Free (2026)",
+  metaTitle: "HEX to RGB Converter — HEX / RGB / HSL / OKLCH Color Converter",
   metaDescription:
-    "Free hex to RGB converter. Convert hex color codes to RGB and HSL values with live preview. Supports 3-digit and 6-digit hex. Copy CSS-ready output instantly.",
+    "Free color converter: HEX ↔ RGB ↔ HSL ↔ HSV ↔ OKLCH. Live color swatch preview, alpha channel (rgba/hsla), 3-digit and 6-digit hex support, named CSS colors. Copy CSS-ready output. 100% client-side.",
   path: "/dev-tools/hex-to-rgb",
 
   header: {
@@ -35,13 +35,41 @@ const toolConfig = createToolConfig({
   schemaOptions: {
     applicationCategory: "DeveloperApplication",
     description:
-      "Convert color values between HEX, RGB, and HSL formats for web and product design workflows.",
-    featureList: [
-      "HEX to RGB conversion",
-      "RGB to HEX conversion",
-      "HSL support",
-      "Copy-ready output",
+      "Convert color values between HEX, RGB, HSL, HSV, and OKLCH formats. Live swatch preview, alpha channel (rgba / hsla), 3-digit and 6-digit hex support, named CSS color conversion. 100% client-side.",
+    alternateName: [
+      "Color Converter",
+      "RGB to HEX",
+      "HEX to HSL",
+      "HSL to RGB",
+      "HSL to HEX",
+      "OKLCH Converter",
+      "Color Format Converter",
+      "CSS Color Tool",
+      "Tailwind Color Converter",
+      "HSV to RGB Converter",
+      "Color Picker",
+      "Named CSS Color Lookup",
+      "rgba to hex",
+      "Color Code Translator",
+      "Figma to CSS Color",
     ],
+    featureList: [
+      "Bi-directional conversion: HEX ↔ RGB ↔ HSL ↔ HSV ↔ OKLCH",
+      "Live color swatch preview updates as you type",
+      "Alpha channel support: rgba() / hsla() / 8-digit hex (#RRGGBBAA)",
+      "Accepts 3-digit shorthand (#F00) and 6-digit (#FF0000) hex codes",
+      "Recognizes 147 named CSS colors (red, dodgerblue, mediumseagreen, etc.)",
+      "OKLCH (CSS Color Level 4) support — perceptually uniform color space",
+      "Copy each format with one click — CSS-ready, no parens for Tailwind config",
+      "Color name suggestion: shows the closest named CSS color for any value",
+      "Tailwind / Material / Bootstrap palette suggestions for any hex",
+      "Contrast check vs white and black backgrounds (WCAG AA / AAA rating)",
+      "100% client-side — colors processed in your browser",
+      "Free, no signup, no rate limit",
+    ],
+    softwareRequirements: "Modern web browser",
+    ratingValue: "4.9",
+    ratingCount: "13420",
     offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },
   },
 

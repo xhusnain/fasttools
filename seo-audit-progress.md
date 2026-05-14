@@ -99,26 +99,27 @@
 | # | Tool | Path | Status |
 |---|---|---|---|
 | 81 | Diff Checker | `/dev-tools/diff-checker` | [x] |
-| 82 | Color Palette | `/dev-tools/color-palette` | [ ] |
-| 83 | CSS Gradient Generator | `/dev-tools/css-gradient-generator` | [ ] |
+| 82 | Color Palette | `/dev-tools/color-palette` | [x] |
+| 83 | CSS Gradient Generator | `/dev-tools/css-gradient-generator` | [x] |
 | 84 | JWT Decoder | `/dev-tools/jwt-decoder` | [x] |
 | 85 | JSON Diff | `/dev-tools/json-diff` | [x] |
 | 86 | JSON to CSV | `/dev-tools/json-to-csv` | [x] |
 | 87 | SQL to JSON | `/dev-tools/sql-to-json` | [x] |
-| 88 | HTML Beautifier | `/dev-tools/html-beautifier` | [ ] |
-| 89 | HTML to Markdown | `/dev-tools/html-to-markdown` | [ ] |
-| 90 | Markdown Previewer | `/dev-tools/markdown-previewer` | [ ] |
-| 91 | HTML WYSIWYG Editor | `/dev-tools/html-wysiwyg-editor` | [ ] |
+| 88 | HTML Beautifier | `/dev-tools/html-beautifier` | [x] |
+| 89 | HTML to Markdown | `/dev-tools/html-to-markdown` | [x] |
+| 90 | Markdown Previewer | `/dev-tools/markdown-previewer` | [x] |
+| 91 | HTML WYSIWYG Editor | `/dev-tools/html-wysiwyg-editor` | [x] |
 | 92 | Base64 Encoder | `/dev-tools/base64-encoder` | [x] |
-| 93 | Cron Expression Generator | `/dev-tools/cron-expression-generator` | [ ] |
-| 94 | MIME Types | `/dev-tools/mime-types` | [ ] |
-| 95 | HTTP Status Codes | `/dev-tools/http-status-codes` | [ ] |
-| 96 | Keycode Info | `/dev-tools/keycode-info` | [ ] |
-| 97 | Hex to RGB | `/dev-tools/hex-to-rgb` | [ ] |
-| 98 | Slugify String | `/dev-tools/slugify-string` | [ ] |
-| 99 | User-Agent Parser | `/dev-tools/user-agent-parser` | [ ] |
-| 100 | LLM Training Cost | `/dev-tools/llm-training-cost` | [ ] |
-| 101 | Cloudflare Workers Cost | `/dev-tools/cloudflare-workers-cost` | [ ] |
+| 93 | Cron Expression Generator | `/dev-tools/cron-expression-generator` | [x] |
+| 94 | MIME Types | `/dev-tools/mime-types` | [x] |
+| 95 | HTTP Status Codes | `/dev-tools/http-status-codes` | [x] |
+| 96 | Keycode Info | `/dev-tools/keycode-info` | [x] |
+| 97 | Hex to RGB | `/dev-tools/hex-to-rgb` | [x] |
+| 98 | Slugify String | `/dev-tools/slugify-string` | [x] |
+| 99 | User-Agent Parser | `/dev-tools/user-agent-parser` | [x] |
+| 100 | LLM Training Cost | `/dev-tools/llm-training-cost` | [x] |
+| 101 | Cloudflare Workers Cost | `/dev-tools/cloudflare-workers-cost` | [x] |
+| 101a | Regex Tester | `/dev-tools/regex-tester` | [x] |
 
 ## Group F — AI Tools
 

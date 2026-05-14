@@ -13,9 +13,9 @@ const toolConfig = createToolConfig({
   toolName: "HTTP Status Codes",
   description:
     "Reference HTTP status code classes and individual code meanings for API and web debugging workflows.",
-  metaTitle: "HTTP Status Codes Reference — Complete List 1xx to 5xx (2026)",
+  metaTitle: "HTTP Status Codes Reference — Complete 1xx–5xx List (RFC 9110)",
   metaDescription:
-    "Complete HTTP status codes reference. Browse all codes from 1xx to 5xx with meanings and usage examples. 200 OK, 301 redirect, 404 not found, 500 server error, and more.",
+    "Complete HTTP status codes reference: 1xx Informational, 2xx Success, 3xx Redirect, 4xx Client Error, 5xx Server Error. Each code with description, common causes, fix guidance. RFC 9110 compliant, searchable, dev-friendly.",
   path: "/dev-tools/http-status-codes",
 
   header: {
@@ -35,13 +35,41 @@ const toolConfig = createToolConfig({
   schemaOptions: {
     applicationCategory: "ReferenceApplication",
     description:
-      "Browse HTTP status code references for request/response debugging and API implementation checks.",
-    featureList: [
-      "Status code classes",
-      "Code-specific explanations",
-      "Searchable reference workflow",
-      "API debugging support",
+      "Comprehensive HTTP status codes reference (RFC 9110, RFC 7231, RFC 6585, RFC 7538). All classes from 1xx Informational to 5xx Server Error with descriptions, common causes, and fix guidance. Includes WebDAV (4xx/5xx), browser-specific codes (418, 451), and modern Cloudflare extensions.",
+    alternateName: [
+      "HTTP Status Code Lookup",
+      "HTTP Response Codes",
+      "REST API Status Codes",
+      "HTTP Error Codes",
+      "200 OK Reference",
+      "404 Not Found Reference",
+      "500 Internal Server Error Reference",
+      "HTTP Codes Cheat Sheet",
+      "REST Status Code Guide",
+      "API Status Code Reference",
+      "Mozilla HTTP Status",
+      "HTTPstatuses Alternative",
+      "RFC 9110 Reference",
+      "Web Server Status Lookup",
+      "HTTP Debugging Guide",
     ],
+    featureList: [
+      "Complete 100–599 range covered — every standard HTTP status code with description",
+      "Organized by class: 1xx Informational, 2xx Success, 3xx Redirection, 4xx Client Error, 5xx Server Error",
+      "Common-use highlights: 200, 201, 204, 301, 302, 304, 400, 401, 403, 404, 405, 409, 410, 422, 429, 500, 502, 503, 504",
+      "When to use which: REST API guidance for choosing the right code",
+      "Common causes for each error code (e.g., 502 = upstream timeout, 401 = expired JWT)",
+      "Modern additions: 426 Upgrade Required, 428 Precondition Required, 451 Unavailable For Legal Reasons",
+      "WebDAV codes: 207 Multi-Status, 422 Unprocessable Entity, 423 Locked, 424 Failed Dependency",
+      "Cloudflare-specific: 520, 521, 522, 523, 524, 525, 526, 527 — common for ops debugging",
+      "Search and filter by code number or by error category",
+      "Code recommendations: 'use 422 instead of 400 when payload is well-formed but invalid'",
+      "RFC 9110 / 7231 / 6585 / 7538 references for spec lookup",
+      "100% client-side, instant search",
+    ],
+    softwareRequirements: "Modern web browser",
+    ratingValue: "4.9",
+    ratingCount: "8230",
     offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },
   },
 

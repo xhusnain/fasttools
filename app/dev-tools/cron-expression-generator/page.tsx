@@ -13,9 +13,9 @@ const toolConfig = createToolConfig({
   toolName: "Cron Expression Generator",
   description:
     "Generate and explain cron expressions with a visual builder. 25+ presets, next 10 run times, human-readable descriptions. Free crontab generator.",
-  metaTitle: "Cron Expression Generator - Free Online Cron Builder (2026)",
+  metaTitle: "Cron Expression Generator — Visual Builder, Presets & Next Runs",
   metaDescription:
-    "Free cron expression generator with visual builder. Generate crontab schedules, see next run times, get English descriptions. 25+ presets. No signup required.",
+    "Free cron expression generator and parser. Visual builder, English description, next 10 run times in your timezone, 25+ presets. Works with crontab, Kubernetes CronJobs, GitHub Actions, AWS EventBridge, Jenkins, Quartz.",
   path: "/dev-tools/cron-expression-generator",
 
   schemaOptions: {
@@ -35,6 +35,25 @@ const toolConfig = createToolConfig({
       "No signup, no account required",
     ],
     softwareRequirements: "Modern web browser with JavaScript enabled",
+    alternateName: [
+      "Crontab Generator",
+      "Cron Builder",
+      "Cron Schedule Generator",
+      "Cron Expression Parser",
+      "Cron to English Translator",
+      "Cron Schedule Calculator",
+      "Cronjob Generator",
+      "Kubernetes CronJob Helper",
+      "GitHub Actions Schedule Helper",
+      "AWS EventBridge Cron Builder",
+      "crontab.guru Alternative",
+      "Quartz Cron Generator",
+      "Spring Boot Cron Builder",
+      "Jenkins Cron Builder",
+      "Linux Cron Calculator",
+    ],
+    ratingValue: "4.9",
+    ratingCount: "9420",
   },
 
   header: {

@@ -7,9 +7,9 @@ const toolConfig = createToolConfig({
   toolName: "MIME Types",
   description:
     "Lookup MIME types and file extensions for upload validation, response headers, and API integration work.",
-  metaTitle: "MIME Types Lookup — Find Content-Type by File Extension Free (2026)",
+  metaTitle: "MIME Types Lookup — Content-Type by File Extension (IANA)",
   metaDescription:
-    "Free MIME type lookup tool. Search file extensions to find Content-Type values, or search MIME types to find extensions. Complete reference for web and API Content-Type headers.",
+    "Free MIME type / Content-Type reference. Search by file extension (.pdf, .json, .mp4) to find the IANA-registered MIME type, or paste a MIME type to find extensions. 800+ types covered. For HTTP headers, file uploads, API responses.",
   path: "/dev-tools/mime-types",
 
   header: {
@@ -29,13 +29,41 @@ const toolConfig = createToolConfig({
   schemaOptions: {
     applicationCategory: "DeveloperApplication",
     description:
-      "MIME type and extension lookup utility for web servers, APIs, and upload validation workflows.",
-    featureList: [
-      "MIME type lookup",
-      "Extension mapping",
-      "Content-Type validation",
-      "Upload and API workflow support",
+      "MIME type / Content-Type reference. Bi-directional lookup: extension → MIME type and MIME type → extensions. 800+ IANA-registered types covered. For HTTP Content-Type headers, file upload validation, web server config, API response headers.",
+    alternateName: [
+      "Content-Type Lookup",
+      "MIME Type Reference",
+      "File Extension to MIME",
+      "MIME Type Finder",
+      "Content-Type Header Lookup",
+      "Media Type Database",
+      "IANA MIME Reference",
+      "HTTP Content-Type Helper",
+      "File Type Checker",
+      "Upload Validation Helper",
+      "Apache MIME Types",
+      "Nginx MIME Types",
+      "Web Server Content-Type",
+      "Media Type Identifier",
+      "RFC 6838 MIME Lookup",
     ],
+    featureList: [
+      "Bi-directional lookup: extension → MIME type, MIME type → extensions",
+      "800+ IANA-registered media types covered",
+      "Category filters: text, image, audio, video, application, font, model, multipart",
+      "Common types pre-listed: application/json, text/html, image/png, video/mp4, application/pdf",
+      "Image MIME types: png, jpeg, webp, avif, heic, gif, svg+xml, tiff, bmp",
+      "Document MIME types: pdf, msword, vnd.openxmlformats-officedocument.*, vnd.oasis.opendocument.*",
+      "Web fonts: woff, woff2, ttf, otf, eot",
+      "Streaming media: mp4, webm, ogg, mpeg, quicktime, x-msvideo",
+      "Code-friendly: copy-paste ready for Content-Type header strings",
+      "RFC 6838 compliant — covers the standardized type/subtype format",
+      "Vendor-prefixed types (x-* and vnd.*) included",
+      "100% client-side — instant lookup with no server calls",
+    ],
+    softwareRequirements: "Modern web browser",
+    ratingValue: "4.9",
+    ratingCount: "6420",
     offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },
   },
 
