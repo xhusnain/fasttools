@@ -11,12 +11,12 @@ import { Network, Globe, Shield, Info, Database, Zap, Target, CheckCircle, Users
 import { GTable } from "@/ui/gtable"
 import Image from "next/image"
 
-const TOOL_TITLE = "IP Subnet Calculator — Calculate CIDR, VLSM & Network Masks Free (2026)"
+const TOOL_TITLE = "IP Subnet & VPC CIDR Calculator — VLSM, IPv4/IPv6 (Free 2026)"
 const TOOL_NAME = "IP Subnet Calculator"
 
 const baseMetadata = createMetadata({
-  title: "IP Subnet Calculator — IPv4/IPv6 CIDR & VLSM Tool Free (2026)",
-  description: "Free IP subnet calculator for IPv4 and IPv6 networks. Compute CIDR notation, subnet masks, network/broadcast addresses, usable host ranges, wildcard masks, VLSM subnetting, supernetting, and binary/hex conversions instantly.",
+  title: "IP Subnet & VPC CIDR Calculator — IPv4/IPv6 VLSM (Free 2026)",
+  description: "Free IP subnet and VPC CIDR calculator for IPv4 and IPv6 networks. Plan AWS, GCP, or Azure VPC ranges, compute subnet masks, network/broadcast addresses, usable host counts, wildcard masks, VLSM, supernetting, and binary/hex conversions.",
   path: "/calculator/ip-subnet-calculator",
   breadcrumbs: [
     { label: "Calculator", href: "/calculator" },
