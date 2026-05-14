@@ -9,20 +9,37 @@ import { createMetadata } from "@/lib/metadata-base"
 import { Calculator, Percent, DollarSign, ShoppingCart, Tag, TrendingDown, Target, Zap, Shield, Globe, Clock, FileText, Palette, BarChart3, Smartphone, Settings, Eye, Code, Copy, ExternalLink, Users, Lightbulb, Search, CheckCircle, XCircle, Video, AlertCircle, Hash, ArrowRight, CreditCard, Banknote, Coins, TrendingUp, Receipt, Wallet, PiggyBank, ArrowUp, ArrowDown, Minus, Plus, Equal, HashIcon, HelpCircle, BookOpen, Star, Heart, Gift, PieChart, Award } from "lucide-react"
 import type { Metadata } from "next"
 
-const TOOL_TITLE = "Free Discount Calculator - Calculate Sale Price & Savings"
+const TOOL_TITLE = "Discount Calculator — Sale Price, Savings & Percent Off"
 const TOOL_NAME = "Discount Calculator"
+const TOOL_META_DESC = "Free discount calculator. Calculate sale price, total savings, original price, or discount percentage. Handles stacked discounts, BOGO, coupons, tax-inclusive or tax-exclusive pricing. Works for Black Friday, clearance, employee, and student deals."
 
 const baseMetadata = createMetadata({
   title: TOOL_TITLE,
-  description: "Free discount calculator to find final price after discount. Calculate savings, sale price or original price easily. Works with any currency & tax.",
+  description: TOOL_META_DESC,
   path: "/finance-tools/discount-calculator",
   breadcrumbs: [
     { label: "Finance Tools", href: "/finance-tools" },
     { label: TOOL_NAME, href: "/finance-tools/discount-calculator" }
   ],
   schemaOptions: {
-    name: "Discount Calculator",
-    alternateName: "Sale Price Calculator",
+    name: "Discount Calculator with Sale Price & Savings",
+    alternateName: [
+      "Sale Price Calculator",
+      "Percent Off Calculator",
+      "Markdown Calculator",
+      "Savings Calculator",
+      "Original Price Calculator",
+      "Reverse Discount Calculator",
+      "Discount Percentage Calculator",
+      "Black Friday Calculator",
+      "Cyber Monday Calculator",
+      "BOGO Calculator",
+      "Coupon Calculator",
+      "Stacked Discount Calculator",
+      "Final Price Calculator",
+      "Holiday Sale Calculator",
+      "Clearance Calculator",
+    ],
     applicationCategory: "FinanceApplication",
     featureList: [
       "Percentage discount calculator",
@@ -197,18 +214,24 @@ export default function DiscountCalculatorPage() {
     `,
 
     relatedTools: [
+      { name: "Sales Tax Calculator", href: "/finance-tools/sales-tax-calculator" },
       { name: "Tip Calculator", href: "/finance-tools/tip-calculator" },
       { name: "Bill Splitter", href: "/finance-tools/bill-splitter" },
+      { name: "Percentage Calculator", href: "/calculator/percentage-calculator" },
+      { name: "Currency Converter", href: "/converters/currency" },
+      { name: "Invoice Generator", href: "/finance-tools/invoice-generator" },
+      { name: "PayPal Fee Calculator", href: "/finance-tools/paypal-fee" },
       { name: "Savings Tracker", href: "/finance-tools/savings-tracker" },
-      { name: "PayPal Fee Calculator", href: "/finance-tools/paypal-fee" }
+      { name: "Auto Loan Calculator (haggle)", href: "/finance-tools/auto-loan-calculator" },
+      { name: "All Finance Tools", href: "/finance-tools" }
     ]
   }
 
   return (
     <ToolPageLayout
       header={{
-        title: "Free Discount Calculator - Calculate Sale Price & Savings",
-        description: "Calculate percentage discounts, fixed amounts, and final sale prices instantly. Our free discount calculator supports multiple discounts, tax calculations, and works with any currency. Perfect for shopping, business pricing, and financial planning.",
+        title: "Discount Calculator — Sale Price, Savings & Percent Off",
+        description: "Calculate sale price after discount, total savings, percent off, or reverse-engineer the original price. Handles stacked discounts, BOGO, coupons, tax-inclusive or tax-exclusive pricing.",
         titleSize: "medium",
         descriptionSize: "small",
         color: "blue"
@@ -225,7 +248,7 @@ export default function DiscountCalculatorPage() {
       toolContent={toolContent}
       expectedMetadata={{
         title: TOOL_TITLE,
-        description: "Free discount calculator to find final price after discount. Calculate savings, sale price or original price easily. Works with any currency & tax.",
+        description: TOOL_META_DESC,
         path: "/finance-tools/discount-calculator"
       }}
     />
