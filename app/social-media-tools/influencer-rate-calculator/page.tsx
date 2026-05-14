@@ -458,8 +458,11 @@ export default function InfluencerRateCalculatorPage() {
       { name: "TikTok Engagement Rate Calculator", href: "/social-media-tools/tiktok-engagement-calculator" },
       { name: "YouTube Tag Extractor", href: "/social-media-tools/youtube-tags" },
       { name: "Hashtag Counter", href: "/social-media-tools/hashtag-counter" },
+      { name: "YouTube Channel Checker", href: "/social-media-tools/channel-checker" },
+      { name: "Link in Bio Generator", href: "/social-media-tools/link-in-bio" },
+      { name: "AI Caption Generator", href: "/ai-tools/caption-generator" },
       { name: "Freelance Hourly Rate Calculator", href: "/finance-tools/freelance-rate-calculator" },
-      { name: "SaaS Churn Rate Calculator", href: "/finance-tools/saas-churn-calculator" },
+      { name: "ROAS Calculator", href: "/ad-tools/roas-calculator" },
       { name: "Percentage Calculator", href: "/calculator/percentage-calculator" }
     ]
   }

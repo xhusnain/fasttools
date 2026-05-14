@@ -128,6 +128,16 @@ const toolConfig = createToolConfig({
         answer:
           "Yes. 100% free with no account required, no subscription, no ads, and no limits on links or customization.",
       },
+      {
+        question: "Is this a free alternative to Linktree or Beacons?",
+        answer:
+          "Yes — and one without the paid-feature paywall. Linktree's free tier shows their branding, limits analytics, and gates customization behind $5–$24/month plans. Beacons follows a similar freemium model. This generator produces a fully customizable link-in-bio page with no branding, no monthly cost, no signup, and no analytics-tracking on you (the user). The tradeoff: no cloud-saved profile — you generate, deploy, and host the page yourself."
+      },
+      {
+        question: "Where do I host the link-in-bio page after generating?",
+        answer:
+          "Several free options: GitHub Pages (free, custom domain), Vercel (free hobby tier), Netlify (free starter), or Cloudflare Pages (free, unlimited bandwidth). Drop the generated HTML into a public repo and connect it to one of these hosts. For a custom domain like youname.com/links, point your existing site at the page."
+      }
     ],
 
     relatedTools: [
@@ -135,6 +145,9 @@ const toolConfig = createToolConfig({
       { name: "YouTube Name Generator", href: "/social-media-tools/youtube-channel-name-generator" },
       { name: "YouTube Handle Checker", href: "/social-media-tools/channel-checker" },
       { name: "Instagram DP Viewer", href: "/social-media-tools/instagram-dp" },
+      { name: "QR Code Generator", href: "/ai-tools/qr-generator" },
+      { name: "Influencer Rate Calculator", href: "/social-media-tools/influencer-rate-calculator" },
+      { name: "AI Caption Generator", href: "/ai-tools/caption-generator" },
       { name: "All Social Media Tools", href: "/social-media-tools" },
     ],
   },

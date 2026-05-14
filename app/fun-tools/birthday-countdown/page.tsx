@@ -176,6 +176,14 @@ const toolConfig = createToolConfig({
       {
         question: "Is there a limit to how far in advance I can count down?",
         answer: "There's no practical limit to how far in advance you can count down to a birthday using our tool. Whether you're counting down days, weeks, months, or even years until someone's next birthday, the tool will provide accurate calculations."
+      },
+      {
+        question: "Can I use this as a general countdown timer for non-birthday events?",
+        answer: "Yes — set any future date as the target and you'll get a live countdown to it. Useful for weddings, vacations, exams, product launches, holidays, retirement dates, or any anticipated event. For event-style countdowns (rather than recurring annual birthdays), see our Countdown Timer too."
+      },
+      {
+        question: "How is this different from a regular countdown timer?",
+        answer: "A birthday countdown auto-targets the NEXT occurrence of the date you enter — so if their birthday already passed this year, it counts to next year. A regular countdown timer counts down to one specific moment that doesn't repeat. Pick the right tool for the job: this for annual recurring dates, the Countdown Timer for one-time events."
       }
     ],
 
@@ -183,6 +191,10 @@ const toolConfig = createToolConfig({
       { name: "Anniversary Calculator", href: "/fun-tools/anniversary" },
       { name: "Future Age Calculator", href: "/fun-tools/future-age" },
       { name: "Age Calculator", href: "/calculator/age-calculator" },
+      { name: "Countdown Timer", href: "/fun-tools/countdown-timer" },
+      { name: "Date Difference Calculator", href: "/calculator/date-difference" },
+      { name: "Time Duration Calculator", href: "/calculator/time-duration" },
+      { name: "Pomodoro Timer", href: "/fun-tools/pomodoro-timer" },
       { name: "Link in Bio Generator", href: "/social-media-tools/link-in-bio" }
     ]
   }

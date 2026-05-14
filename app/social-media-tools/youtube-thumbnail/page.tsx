@@ -128,12 +128,26 @@ const toolConfig = createToolConfig({
         answer:
           "Yes. 100% free with no limits on downloads, no registration, and no watermarks added to thumbnail images.",
       },
+      {
+        question: "What thumbnail resolutions does YouTube provide?",
+        answer:
+          "YouTube auto-generates 6 thumbnail sizes for every video: maxresdefault (1280×720 HD), sddefault (640×480 SD), hqdefault (480×360), mqdefault (320×180), default (120×90), and 3 storyboard variants. Not every video has maxresdefault — only HD-uploaded videos do. The tool downloads the largest available size automatically and lets you pick smaller versions if needed."
+      },
+      {
+        question: "How do I download a Shorts thumbnail?",
+        answer:
+          "Paste the YouTube Shorts URL (youtube.com/shorts/VIDEO_ID) — the tool extracts the same thumbnail set as regular videos. Shorts thumbnails are typically the first frame of the video unless the creator uploaded a custom thumbnail."
+      }
     ],
 
     relatedTools: [
       { name: "YouTube Tag Extractor", href: "/social-media-tools/youtube-tags" },
       { name: "YouTube Channel Checker", href: "/social-media-tools/channel-checker" },
       { name: "YouTube Name Generator", href: "/social-media-tools/youtube-channel-name-generator" },
+      { name: "Image Resizer", href: "/image-tools/image-resizer" },
+      { name: "Image Compressor", href: "/image-tools/image-compressor" },
+      { name: "Image Cropper", href: "/image-tools/image-cropper" },
+      { name: "Background Remover", href: "/image-tools/background-remover" },
       { name: "All Social Media Tools", href: "/social-media-tools" },
     ],
   },
