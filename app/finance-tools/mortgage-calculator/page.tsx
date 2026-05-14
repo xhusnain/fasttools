@@ -10,8 +10,8 @@ const MortgageCalculator = dynamic(
   { loading: () => <ToolLoader /> }
 )
 
-const TOOL_TITLE = "Mortgage Calculator with PMI, Taxes & Insurance (May 2026 Rates)"
-const TOOL_META_DESC = "Free mortgage calculator with PMI, property taxes, home insurance, HOA, and extra payments. Calculate monthly PITI payment, full amortization schedule, and bi-weekly savings using current 2026 rates (~6.37% 30-yr, ~5.7% 15-yr). Works for FHA, VA, conventional, and jumbo loans."
+const TOOL_TITLE = "Mortgage Calculator with PMI, Taxes & Insurance — Latest Rates"
+const TOOL_META_DESC = "Free mortgage calculator with PMI, property taxes, home insurance, HOA, and extra payments. Calculate monthly PITI payment, full amortization schedule, and bi-weekly savings using the latest US mortgage rates. Works for FHA, VA, conventional, and jumbo loans."
 
 const baseMetadata = createMetadata({
   title: TOOL_TITLE,
@@ -53,7 +53,7 @@ const baseMetadata = createMetadata({
       "Affordability check using 28/36 DTI rule",
       "Visual amortization charts (balance + interest decay)",
       "Down payment percentage and dollar input modes",
-      "2026 current mortgage rate context built in",
+      "Current US mortgage rate context built in",
       "100% free, no signup, no data sent to servers",
     ],
     ratingValue: "4.8",
@@ -71,10 +71,10 @@ export default function MortgageCalculatorPage() {
   const toolContent = {
     toolName: "Mortgage Calculator",
     definition: "A mortgage calculator is a financial tool that computes the monthly PITI payment (principal, interest, taxes, insurance) on a home loan by combining loan amount, interest rate, term, down payment, and recurring costs like PMI and HOA, plus a full amortization schedule showing how each payment splits between principal and interest over the life of the loan.",
-    quickAnswer: "Enter home price, down payment, loan term, and interest rate to see your monthly PITI payment plus a full amortization schedule. As of May 2026 the average 30-year fixed mortgage rate is around 6.37% and the 15-year is around 5.7%. The calculator handles FHA, VA, conventional, and jumbo loans, adds PMI automatically when your down payment is below 20%, and lets you model extra payments or a bi-weekly schedule to see how much interest you'd save.",
+    quickAnswer: "Enter home price, down payment, loan term, and interest rate to see your monthly PITI payment plus a full amortization schedule. Current US 30-year fixed mortgage rates have hovered in the 6%-7% range, with 15-year fixed about 0.7% lower. The calculator handles FHA, VA, conventional, and jumbo loans, adds PMI automatically when your down payment is below 20%, and lets you model extra payments or a bi-weekly schedule to see how much interest you'd save.",
     keyTakeaways: [
       "Monthly payment = Principal + Interest + Taxes + Insurance (PITI), plus PMI if down payment < 20%, plus HOA if applicable",
-      "May 2026 US average rates: ~6.37% 30-year fixed, ~5.7% 15-year fixed (Freddie Mac PMMS)",
+      "Current US averages: ~6-7% 30-year fixed, ~0.7% lower for 15-year fixed (Freddie Mac PMMS)",
       "PMI runs 0.46%–1.5% of the loan annually until you reach 20% home equity, then it drops off",
       "FHA loans accept 3.5% down (with FICO 580+); conventional needs 3–5% min; 20% avoids PMI on conventional",
       "Bi-weekly payments = 13 monthly payments per year — typically cuts a 30-year mortgage to ~25 years",
@@ -82,13 +82,13 @@ export default function MortgageCalculatorPage() {
       "100% client-side — your income, balance, and rate inputs never leave your browser",
     ],
     overview:
-      "Free mortgage calculator that computes your full monthly PITI payment — principal, interest, property taxes, home insurance, plus PMI if applicable and HOA fees if any — along with a complete month-by-month amortization schedule. Works for every common loan type: 30-year fixed, 15-year fixed, 5/1 ARM, FHA, VA, USDA, conventional, and jumbo. Built around the May 2026 US rate environment (~6.37% 30-year fixed, ~5.7% 15-year fixed per Freddie Mac PMMS) but updates as you enter your own rate. Model the savings from extra principal payments or a bi-weekly payment schedule, compare 15-year vs 30-year totals, check affordability with the 28/36 DTI rule, and see when PMI drops off at 20% equity. No signup, no upsell to a lender, no data ever leaves your browser.",
+      "Free mortgage calculator that computes your full monthly PITI payment — principal, interest, property taxes, home insurance, plus PMI if applicable and HOA fees if any — along with a complete month-by-month amortization schedule. Works for every common loan type: 30-year fixed, 15-year fixed, 5/1 ARM, FHA, VA, USDA, conventional, and jumbo. Built around the current US rate environment but updates as you enter your own rate. Model the savings from extra principal payments or a bi-weekly payment schedule, compare 15-year vs 30-year totals, check affordability with the 28/36 DTI rule, and see when PMI drops off at 20% equity. No signup, no upsell to a lender, no data ever leaves your browser.",
 
     howToSteps: [
       "Enter the home price you're considering (or refinance balance).",
       "Set your down payment in dollars or as a percentage — 20% avoids PMI on conventional loans.",
       "Pick your loan term: 30, 25, 20, 15, or 10 years (15 and 30 are most common).",
-      "Enter the interest rate (or use the current 2026 baseline shown).",
+      "Enter the interest rate (or use the current baseline shown).",
       "Add property tax (US average ~1.1% of home value/year), home insurance (~0.35%/year), and HOA if applicable.",
       "Toggle PMI on/off — the calculator adds it automatically if down payment is below 20%.",
       "Review monthly PITI, total interest over the life of the loan, and the amortization schedule.",
@@ -102,7 +102,7 @@ export default function MortgageCalculatorPage() {
       "Extra-payment modeling: one-time, monthly, or yearly principal additions",
       "Side-by-side 15 vs 20 vs 30 year term comparison",
       "FHA, VA, USDA, conventional, and jumbo loan support with the right PMI / MIP rules",
-      "2026 rate context — current 30-year and 15-year averages displayed so you can sanity-check your quote",
+      "Current rate context — 30-year and 15-year averages displayed so you can sanity-check your quote",
       "Affordability check using both the 28/36 DTI rule and Ramsey's 25%-of-take-home rule",
       "Interactive amortization chart showing principal vs interest over time",
       "100% client-side privacy — no data leaves your browser, no signup, no lender pitches",
@@ -135,21 +135,21 @@ export default function MortgageCalculatorPage() {
             <div>· <strong>n</strong> = total number of monthly payments (years × 12)</div>
           </div>
           <p className="text-base text-muted-foreground leading-relaxed">
-            On a $400,000 home with 20% down ($80,000), a 30-year fixed at 6.37%, the principal &amp; interest portion is <strong>$1,997/month</strong>. Add $367/month for 1.1% property tax, $117/month for 0.35% insurance, and you&apos;re at <strong>$2,481/month PITI</strong> total. With less than 20% down, add roughly $115–$375/month in PMI.
+            On a $400,000 home with 20% down ($80,000), a 30-year fixed at a typical current rate around 6.4%, the principal &amp; interest portion is roughly <strong>$2,000/month</strong>. Add $367/month for 1.1% property tax, $117/month for 0.35% insurance, and you&apos;re at <strong>~$2,480/month PITI</strong> total. With less than 20% down, add roughly $115–$375/month in PMI.
           </p>
         </article>
 
         <article className="space-y-4">
-          <h2 className="text-2xl font-bold text-foreground">May 2026 Mortgage Rate Reference</h2>
+          <h2 className="text-2xl font-bold text-foreground">latest Mortgage Rate Reference</h2>
           <p className="text-base text-muted-foreground leading-relaxed">
-            Rates are current as of early May 2026 based on Freddie Mac PMMS and Mortgage News Daily averages. Your individual quote depends on credit score, loan-to-value ratio, location, and lender.
+            Rates are current as of early latest based on Freddie Mac PMMS and Mortgage News Daily averages. Your individual quote depends on credit score, loan-to-value ratio, location, and lender.
           </p>
           <div className="overflow-x-auto">
             <GTable>
               <thead className="bg-muted text-foreground font-semibold">
                 <tr>
                   <th className="p-3 text-left">Loan type</th>
-                  <th className="p-3 text-left">May 2026 avg rate</th>
+                  <th className="p-3 text-left">latest avg rate</th>
                   <th className="p-3 text-left">Best for</th>
                 </tr>
               </thead>
@@ -160,7 +160,7 @@ export default function MortgageCalculatorPage() {
                 <tr><td className="p-3 font-semibold">5/1 ARM</td><td className="p-3">~6.05%</td><td className="p-3">Plan to move/refinance in 5–7 years</td></tr>
                 <tr><td className="p-3 font-semibold">FHA 30-year</td><td className="p-3">~6.20%</td><td className="p-3">Lower credit score (FICO 580+), 3.5% down</td></tr>
                 <tr><td className="p-3 font-semibold">VA 30-year</td><td className="p-3">~5.95%</td><td className="p-3">Veterans, 0% down, no PMI</td></tr>
-                <tr><td className="p-3 font-semibold">Jumbo 30-year</td><td className="p-3">~6.45%</td><td className="p-3">Loans above the conforming limit ($766,550 in 2026)</td></tr>
+                <tr><td className="p-3 font-semibold">Jumbo 30-year</td><td className="p-3">~0.1% above conventional</td><td className="p-3">Loans above the conforming limit (~$766K currently)</td></tr>
               </tbody>
             </GTable>
           </div>
@@ -169,7 +169,7 @@ export default function MortgageCalculatorPage() {
         <article className="space-y-4">
           <h2 className="text-2xl font-bold text-foreground">15-Year vs 30-Year Mortgage — Side by Side</h2>
           <p className="text-base text-muted-foreground leading-relaxed">
-            Example: $320,000 loan (after 20% down on $400K home), May 2026 average rates.
+            Example: $320,000 loan (after 20% down on $400K home), latest average rates.
           </p>
           <div className="overflow-x-auto">
             <GTable>
@@ -231,7 +231,7 @@ export default function MortgageCalculatorPage() {
             Bi-weekly payments = paying half your monthly payment every two weeks instead of once a month. Sounds the same — but isn&apos;t. There are 52 weeks in a year, which means 26 bi-weekly payments, which equals <strong>13 effective monthly payments per year</strong> instead of 12. That extra payment goes 100% to principal.
           </p>
           <p className="text-base text-muted-foreground leading-relaxed">
-            On a $320,000 loan at 6.37% 30-year fixed, switching to bi-weekly:
+            On a $320,000 loan at a ~6.4% 30-year fixed, switching to bi-weekly:
           </p>
           <ul className="list-disc list-inside space-y-1 ml-2 text-muted-foreground">
             <li><strong>Standard monthly:</strong> 360 payments, paid off in 30 years, $398,920 total interest</li>
@@ -259,7 +259,7 @@ export default function MortgageCalculatorPage() {
                 <tr><td className="p-3 font-semibold">Min down payment</td><td className="p-3">3.5% (FICO 580+)</td><td className="p-3">3–5%</td><td className="p-3">0%</td><td className="p-3">10–20%</td></tr>
                 <tr><td className="p-3 font-semibold">Min credit score</td><td className="p-3">500 (with 10% down)</td><td className="p-3">620</td><td className="p-3">580 typical</td><td className="p-3">700+</td></tr>
                 <tr><td className="p-3 font-semibold">Mortgage insurance</td><td className="p-3">MIP (life of loan if &lt;10% down)</td><td className="p-3">PMI (until 20% equity)</td><td className="p-3">No PMI, has funding fee</td><td className="p-3">PMI until 20%</td></tr>
-                <tr><td className="p-3 font-semibold">Loan limit (2026)</td><td className="p-3">$524,225 (high-cost areas higher)</td><td className="p-3">$766,550 conforming</td><td className="p-3">No limit</td><td className="p-3">Above $766,550</td></tr>
+                <tr><td className="p-3 font-semibold">Loan limit (current)</td><td className="p-3">~$524K (high-cost areas higher)</td><td className="p-3">~$766K conforming</td><td className="p-3">No limit</td><td className="p-3">Above conforming limit</td></tr>
                 <tr><td className="p-3 font-semibold">Best for</td><td className="p-3">First-time buyers, lower credit</td><td className="p-3">Strong credit, 20%+ down</td><td className="p-3">Veterans &amp; active military</td><td className="p-3">Luxury/expensive markets</td></tr>
               </tbody>
             </GTable>
@@ -336,7 +336,7 @@ export default function MortgageCalculatorPage() {
       </div>
     ),
 
-    proTip: "The single biggest interest saver isn't a lower rate — it's extra principal. Adding just $100/month to your principal on a $320K 30-year mortgage at 6.37% saves about $59,000 in interest and pays off the loan 4 years 8 months early. Try it in the calculator above with and without to see the exact number for your loan.",
+    proTip: "The single biggest interest saver isn't a lower rate — it's extra principal. Adding just $100/month to your principal on a $320K 30-year mortgage at ~6.4% saves about $59,000 in interest and pays off the loan 4 years 8 months early. Try it in the calculator above with and without to see the exact number for your loan.",
 
     faqs: [
       {
@@ -352,8 +352,8 @@ export default function MortgageCalculatorPage() {
         answer: "Use the 28/36 rule: housing costs (PITI + HOA) ≤ 28% of gross monthly income, total debt payments ≤ 36% of gross monthly income. So at $8,000/month gross, max housing is ~$2,240/month. A more conservative rule (Dave Ramsey) caps your monthly payment at 25% of take-home pay on a 15-year fixed. The 43% DTI is the regulatory ceiling most lenders won't cross. Enter your numbers in the affordability section above to see your range.",
       },
       {
-        question: "What are mortgage rates right now (May 2026)?",
-        answer: "As of early May 2026, US national averages per Freddie Mac PMMS: ~6.37% for 30-year fixed, ~5.70% for 15-year fixed, ~6.05% for 5/1 ARM. FHA loans average ~6.20%, VA loans ~5.95%, jumbo loans ~6.45%. Your individual quote depends on credit score (760+ gets the best rates), loan-to-value ratio, debt-to-income ratio, and the property's location.",
+        question: "What are mortgage rates right now (latest)?",
+        answer: "As of early latest, US national averages per Freddie Mac PMMS: ~6.37% for 30-year fixed, ~5.70% for 15-year fixed, ~6.05% for 5/1 ARM. FHA loans average ~6.20%, VA loans ~5.95%, jumbo loans ~6.45%. Your individual quote depends on credit score (760+ gets the best rates), loan-to-value ratio, debt-to-income ratio, and the property's location.",
       },
       {
         question: "How much should my down payment be?",
@@ -373,11 +373,11 @@ export default function MortgageCalculatorPage() {
       },
       {
         question: "How do extra principal payments affect my mortgage?",
-        answer: "Every extra dollar applied to principal directly reduces your loan balance, which means less interest accrued every month after. On a $320,000 30-year loan at 6.37%, adding just $100/month to principal saves about $59,000 in interest and pays off the loan ~4 years 8 months earlier. Adding $300/month saves $134,000 and shaves off ~10 years. The earlier in the loan you start, the more dramatic the savings — extra payments in year 1 have far more impact than in year 25.",
+        answer: "Every extra dollar applied to principal directly reduces your loan balance, which means less interest accrued every month after. On a $320,000 30-year loan at a ~6.4% rate, adding just $100/month to principal saves about $59,000 in interest and pays off the loan ~4 years 8 months earlier. Adding $300/month saves $134,000 and shaves off ~10 years. The earlier in the loan you start, the more dramatic the savings — extra payments in year 1 have far more impact than in year 25.",
       },
       {
         question: "FHA vs Conventional — which should I choose?",
-        answer: "FHA wins if you have a lower credit score (500–679), less savings (3.5% down OK), or are a first-time buyer. Downsides: MIP for life of loan if <10% down, lower loan limits ($524K vs $767K conventional in 2026). Conventional wins if you have 720+ credit and 5–20% down: better rates, PMI drops off at 20% equity, higher loan limits. A common path: start with FHA, build equity for 5–7 years, then refinance into conventional to drop the MIP. Run the same purchase under both in the calculator to see the lifetime cost difference.",
+        answer: "FHA wins if you have a lower credit score (500–679), less savings (3.5% down OK), or are a first-time buyer. Downsides: MIP for life of loan if <10% down, lower loan limits (~$524K vs ~$767K conventional). Conventional wins if you have 720+ credit and 5–20% down: better rates, PMI drops off at 20% equity, higher loan limits. A common path: start with FHA, build equity for 5–7 years, then refinance into conventional to drop the MIP. Run the same purchase under both in the calculator to see the lifetime cost difference.",
       },
       {
         question: "What's the difference between APR and interest rate?",
@@ -392,7 +392,7 @@ export default function MortgageCalculatorPage() {
         answer: "Yes. Enter your current remaining balance as the loan amount, the new rate you're being quoted, and the new term. Compare the resulting monthly PITI to your current PITI. Don't forget to subtract the closing costs (estimate 2–5% of the refinanced amount) from the lifetime savings. If the break-even period exceeds how long you plan to stay in the house, it's probably not worth refinancing.",
       },
       {
-        question: "What credit score do I need for a mortgage in 2026?",
+        question: "What credit score do I need for a mortgage?",
         answer: "Conventional: 620 minimum; 740+ for best rates. FHA: 580 with 3.5% down, or 500 with 10% down. VA: most lenders want 620, some accept 580. Jumbo: 700–740 minimum. Beyond the threshold, every 20-point credit score improvement is typically worth ~0.125%–0.25% in interest rate, which compounds to thousands in lifetime savings. If your score is borderline, paying down credit cards and disputing errors before applying is one of the highest-ROI moves you can make.",
       },
       {
@@ -423,7 +423,7 @@ export default function MortgageCalculatorPage() {
     <ToolPageLayout
       header={{
         title: "Mortgage Calculator — with PMI, Taxes & Insurance",
-        description: "Free mortgage calculator covering PITI, full amortization, PMI, bi-weekly payments, and 15-vs-30 year comparison. Built around current May 2026 US mortgage rates.",
+        description: "Free mortgage calculator covering PITI, full amortization, PMI, bi-weekly payments, and 15-vs-30 year comparison. Built around current latest US mortgage rates.",
         titleSize: "medium",
         descriptionSize: "small"
       }}
