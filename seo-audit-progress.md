@@ -280,28 +280,19 @@ swaps + 1-2 FAQs), the **new depth target** for every tool is:
    Google for that query
 10. Rewrite **relatedTools** with 8-10 workflow-relevant crosslinks
 
-Reference commits: `d5146aa5 mortgage`, `57443939 loan`,
-`f732ec16 auto-loan`, `21b868ec retirement`, `682e825d compound-interest`,
-`c1cdade8 investment`, `10163e54 credit-card-payoff`, `db9f2036 debt-payoff`,
-`eea74ad3 amortization`, `75248882 interest-rate`
-
 ## Progress
 
 - Site-wide infrastructure: ✅ done
 - Group A (20 tools): ✅ Deep audits (close to new standard but pre-dating it)
 - Groups B-D (~50 tools): partial — internal linking improved
-- **Tools at NEW full deep standard: 10/199** — all 10 major finance tools done:
-  - mortgage-calculator (full rewrite)
-  - loan-calculator (full rewrite — pivoted from India-only to global)
-  - auto-loan-calculator (schema + evergreen)
-  - retirement-calculator (full rewrite)
-  - compound-interest (schema + content additions)
-  - investment-calculator (full rewrite)
-  - credit-card-payoff (full rewrite)
-  - debt-payoff-calculator (schema upgrade)
-  - amortization-calculator (full rewrite)
-  - interest-rate-calculator (schema upgrade)
-- All use evergreen language (no specific dates like "May 2026")
+- **Tools at NEW full deep standard: 25/199** — finance category nearly
+  complete:
+  - mortgage, loan, auto-loan, retirement, compound-interest, investment,
+    credit-card-payoff, debt-payoff, amortization, interest-rate
+  - tax, salary, net-worth, inflation, home-affordability, rent-vs-buy
+  - sales-tax, tip, discount, bill-splitter, invoice-generator
+  - payment, finance, tax-bracket, retirement-planner
+- All use evergreen language (no specific date references like "2026")
 - Total tools touched: 81 / 199
 - Build verified clean throughout
 - Realistic depth: 5-10 tools per session at the new standard
