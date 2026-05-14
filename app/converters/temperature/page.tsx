@@ -187,8 +187,10 @@ const toolConfig = createToolConfig({
 
     relatedTools: [
       { name: "Length Converter", href: "/converters/length" },
-      { name: "File Size Converter", href: "/converters/file-size" },
+      { name: "Conversion Calculator (units)", href: "/calculator/conversion-calculator" },
+      { name: "Scientific Calculator", href: "/calculator/scientific-calculator" },
       { name: "Time Zone Converter", href: "/converters/timezone" },
+      { name: "File Size Converter", href: "/converters/file-size" },
       { name: "All Converters", href: "/converters" },
     ],
   },
