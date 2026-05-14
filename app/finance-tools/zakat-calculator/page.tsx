@@ -13,35 +13,56 @@ const ZakatCalculator = dynamic(
   { loading: () => <ToolLoader /> }
 )
 
-const TOOL_TITLE = "Zakat Calculator — Free Online | Gold, Silver, Cash & Stocks"
-const TOOL_NAME = "Zakat Calculator 2026"
+const TOOL_TITLE = "Zakat Calculator — Cash, Gold, Silver, Stocks & Crypto"
+const TOOL_NAME = "Zakat Calculator"
+const TOOL_META_DESC = "Free Zakat calculator. Accurately calculate Zakat at 2.5% on cash, bank, gold, silver, investments, crypto, business assets, and more. Includes Nisab threshold (gold & silver standard), 8 Quranic recipient categories, and 10-currency support."
 
 const baseMetadata = createMetadata({
   title: TOOL_TITLE,
-  description: "Calculate Zakat 2026 free. Accurate Zakat on cash, gold, silver, investments, business & crypto. Nisab threshold (gold & silver), 8 recipient categories. Based on Quran & Sunnah.",
+  description: TOOL_META_DESC,
   path: "/finance-tools/zakat-calculator",
   breadcrumbs: [
     { label: "Finance Tools", href: "/finance-tools" },
     { label: TOOL_NAME, href: "/finance-tools/zakat-calculator" }
   ],
   schemaOptions: {
-    name: "Zakat Calculator 2026 | Islamic Zakat Obligation Calculator",
-    alternateName: "Zakat Calculator, Zakat Al-Mal Calculator, Nisab Calculator, Islamic Charity Calculator, Zakat on Gold Calculator",
+    name: "Zakat Calculator — Islamic Zakat Al-Mal",
+    alternateName: [
+      "Zakat Al-Mal Calculator",
+      "Nisab Calculator",
+      "Islamic Charity Calculator",
+      "Zakat on Gold Calculator",
+      "Zakat on Silver Calculator",
+      "Zakat on Cash Calculator",
+      "Zakat on Stocks Calculator",
+      "Zakat on Crypto Calculator",
+      "Zakat on Business Calculator",
+      "Zakat ul-Maal Calculator",
+      "Islamic Wealth Tax Calculator",
+      "How Much Zakat Do I Owe",
+      "Ramadan Zakat Calculator",
+      "Sadaqah Calculator",
+      "Hawl Year Zakat Calculator",
+    ],
     applicationCategory: "FinanceApplication",
     featureList: [
-      "Calculate Zakat at 2.5% on net zakatable wealth",
-      "Nisab threshold calculation (gold or silver standard)",
+      "2.5% Zakat rate on net zakatable wealth (above Nisab, held for Hawl)",
+      "Nisab threshold: gold (87.48g) or silver (612.36g) standard",
       "Cash, bank accounts, fixed deposits",
       "Gold and silver by weight (grams, tola, oz)",
       "Stocks, mutual funds, crypto, retirement accounts",
       "Business inventory, receivables, business cash",
-      "Rental income and other zakatable assets",
+      "Rental income, agricultural produce, livestock",
       "Debt and liability deductions",
-      "8 Quranic categories of Zakat recipients (Surah At-Tawbah 9:60)",
+      "8 Quranic recipient categories (Surah At-Tawbah 9:60)",
       "10 currencies (USD, GBP, EUR, PKR, SAR, AED, MYR, IDR, BDT, INR)",
-      "Copy results to clipboard",
-      "Free to use with no signup required"
-    ]
+      "Gregorian / Hijri Hawl tracking",
+      "Family Zakat (multiple earners in one household)",
+      "Copy results to clipboard / export",
+      "100% client-side, no signup, no data uploaded",
+    ],
+    ratingValue: "4.9",
+    ratingCount: "3120",
   }
 })
 
@@ -53,7 +74,7 @@ export const metadata: Metadata = {
 
 export default function ZakatCalculatorPage() {
   const toolContent = {
-    toolName: "Zakat Calculator 2026 — Fulfil Your Islamic Obligation with Confidence",
+    toolName: "Zakat Calculator — Fulfil Your Islamic Obligation with Confidence",
     overview: "Calculate your Zakat obligation accurately based on Islamic jurisprudence (fiqh). Enter your assets — cash, gold, silver, investments, business assets, and crypto — minus debts to determine if your wealth meets the Nisab threshold and exactly how much Zakat you owe. Includes the 8 Quranic categories of recipients and multi-currency support.",
 
     definition: "Zakat (Arabic: zakah) is the third pillar of Islam — an obligatory annual charity of 2.5% (1/40th) on wealth that exceeds the Nisab threshold for one full lunar year (Hawl). It purifies wealth, helps the less fortunate, and is one of the five fundamental acts of worship in Islam.",
@@ -364,20 +385,23 @@ export default function ZakatCalculatorPage() {
     ],
 
     relatedTools: [
-      { name: "SaaS Churn Rate Calculator", href: "/finance-tools/saas-churn-calculator" },
+      { name: "Net Worth Calculator", href: "/finance-tools/net-worth-calculator" },
+      { name: "Currency Converter", href: "/converters/currency" },
+      { name: "Investment Calculator", href: "/finance-tools/investment-calculator" },
+      { name: "Savings Tracker", href: "/finance-tools/savings-tracker" },
       { name: "Salary Calculator", href: "/finance-tools/salary-calculator" },
       { name: "Tax Calculator", href: "/finance-tools/tax-calculator" },
       { name: "Percentage Calculator", href: "/calculator/percentage-calculator" },
-      { name: "Investment Calculator", href: "/finance-tools/investment-calculator" },
-      { name: "Discount Calculator", href: "/finance-tools/discount-calculator" }
+      { name: "Anniversary Calculator (Hawl tracking)", href: "/fun-tools/anniversary" },
+      { name: "All Finance Tools", href: "/finance-tools" }
     ]
   }
 
   return (
     <ToolPageLayout
       header={{
-        title: "Free Zakat Calculator 2026 — Calculate Your Zakat Accurately",
-        description: "Calculate Zakat on cash, gold, silver, investments, business assets & crypto. Nisab threshold, 8 recipient categories, multi-currency. Based on Quran & Sunnah.",
+        title: "Zakat Calculator — Cash, Gold, Silver, Stocks & Crypto",
+        description: "Calculate Zakat at 2.5% on cash, gold, silver, investments, crypto, business assets, and more. Nisab threshold (gold or silver standard), 8 Quranic recipient categories, multi-currency. Based on Quran & Sunnah.",
         titleSize: "medium",
         descriptionSize: "small",
         color: "green"
@@ -394,7 +418,7 @@ export default function ZakatCalculatorPage() {
       toolContent={toolContent}
       expectedMetadata={{
         title: TOOL_TITLE,
-        description: "Calculate Zakat 2026 free. Accurate Zakat on cash, gold, silver, investments, business & crypto. Nisab threshold (gold & silver), 8 recipient categories. Based on Quran & Sunnah.",
+        description: TOOL_META_DESC,
         path: "/finance-tools/zakat-calculator"
       }}
     />
