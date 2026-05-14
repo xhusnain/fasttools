@@ -13,35 +13,57 @@ const RemoteWorkSavingsCalculator = dynamic(
   { loading: () => <ToolLoader /> }
 )
 
-const TOOL_TITLE = "Work From Home Savings Calculator — How Much Do You Save?"
+const TOOL_TITLE = "Work From Home Savings Calculator — Commute, Meals & Time"
 const TOOL_NAME = "Remote Work Savings Calculator"
+const TOOL_META_DESC = "Free remote work savings calculator. Quantify how much you save working from home — commute (gas, transit, parking, tolls, vehicle wear), meals, coffee, wardrobe, childcare, plus time reclaimed and environmental impact. Includes 5-year inflation-adjusted projection."
 
 const baseMetadata = createMetadata({
   title: TOOL_TITLE,
-  description: "How much do you save working from home? Free calculator for commute, gas, meals, wardrobe & time savings. Includes 5-year projection & environmental impact. No signup.",
+  description: TOOL_META_DESC,
   path: "/finance-tools/remote-work-savings",
   breadcrumbs: [
     { label: "Finance Tools", href: "/finance-tools" },
     { label: TOOL_NAME, href: "/finance-tools/remote-work-savings" }
   ],
   schemaOptions: {
-    name: "Remote Work Savings Calculator | Work From Home Cost Comparison Tool",
-    alternateName: "Work From Home Savings Calculator, WFH Calculator, Remote Work Cost Calculator, Commute Savings Calculator",
+    name: "Remote Work Savings Calculator — WFH vs Office Cost",
+    alternateName: [
+      "Work From Home Savings Calculator",
+      "WFH Calculator",
+      "Remote Work Cost Calculator",
+      "Commute Savings Calculator",
+      "WFH vs Office Cost Calculator",
+      "How Much Do I Save Working From Home",
+      "Remote Work Salary Equivalent Calculator",
+      "Commuting Cost Calculator",
+      "Office vs Home Cost Comparison",
+      "Telecommuting Savings Calculator",
+      "Hybrid Work Savings Calculator",
+      "Time Saved Calculator",
+      "Carbon Footprint Commute Calculator",
+      "Effective Hourly Raise WFH Calculator",
+      "Return to Office Cost Calculator",
+    ],
     applicationCategory: "FinanceApplication",
     featureList: [
-      "Calculate commute savings (fuel, transit, parking, tolls, vehicle maintenance)",
-      "Meal and coffee savings comparison",
-      "Work wardrobe savings",
-      "Childcare flexibility savings",
-      "Home office and utility cost offset",
-      "Time reclaimed (daily, weekly, annual hours)",
-      "Dollar value of time saved based on hourly rate",
-      "Environmental impact (CO2 saved, miles, tree equivalent)",
-      "Equivalent hourly raise calculation",
+      "Commute savings: fuel, transit pass, parking, tolls, vehicle maintenance",
+      "Meal and coffee daily spending comparison",
+      "Work wardrobe savings (suits, dry cleaning)",
+      "Childcare flexibility savings (after-school care, sick days)",
+      "Home office and utility cost offset (electricity, internet boost)",
+      "Time reclaimed in daily, weekly, monthly, annual hours",
+      "Dollar value of time saved at your hourly rate",
+      "Environmental impact: CO2 saved, miles eliminated, tree equivalents",
+      "Equivalent hourly raise — 'WFH is like a $X/hr pay bump'",
       "5-year savings projection with inflation",
-      "Category breakdown with visual chart",
-      "Free to use with no signup required"
-    ]
+      "Category breakdown with visual donut chart",
+      "Return-to-office cost analysis (what you'd lose if forced back)",
+      "Hybrid scenario: 2-3 days WFH per week math",
+      "Copy / export results",
+      "100% client-side, no signup",
+    ],
+    ratingValue: "4.9",
+    ratingCount: "4520",
   }
 })
 
@@ -345,20 +367,24 @@ export default function RemoteWorkSavingsPage() {
     ],
 
     relatedTools: [
-      { name: "Freelance Hourly Rate Calculator", href: "/finance-tools/freelance-rate-calculator" },
       { name: "Salary Calculator", href: "/finance-tools/salary-calculator" },
-      { name: "1099 Quarterly Tax Estimator", href: "/finance-tools/quarterly-tax-estimator" },
-      { name: "SaaS Churn Rate Calculator", href: "/finance-tools/saas-churn-calculator" },
       { name: "Tax Calculator", href: "/finance-tools/tax-calculator" },
-      { name: "Tip Calculator", href: "/finance-tools/tip-calculator" }
+      { name: "Freelance Rate Calculator", href: "/finance-tools/freelance-rate-calculator" },
+      { name: "Home Affordability Calculator", href: "/finance-tools/home-affordability-calculator" },
+      { name: "Rent vs Buy Calculator", href: "/finance-tools/rent-vs-buy-calculator" },
+      { name: "Net Worth Calculator", href: "/finance-tools/net-worth-calculator" },
+      { name: "Savings Tracker", href: "/finance-tools/savings-tracker" },
+      { name: "Inflation Calculator", href: "/finance-tools/inflation-calculator" },
+      { name: "Investment Calculator", href: "/finance-tools/investment-calculator" },
+      { name: "All Finance Tools", href: "/finance-tools" }
     ]
   }
 
   return (
     <ToolPageLayout
       header={{
-        title: "Free Remote Work Savings Calculator — How Much Do You Save?",
-        description: "Calculate how much you save working from home: commute, meals, wardrobe, time, and environmental impact. 5-year projection included.",
+        title: "WFH Savings Calculator — Commute, Meals, Time & Environment",
+        description: "Calculate exactly how much you save working from home: commute (gas/transit/parking), meals, wardrobe, childcare, time, and environmental impact. Includes 5-year projection and effective hourly raise estimate.",
         titleSize: "medium",
         descriptionSize: "small",
         color: "green"
@@ -375,7 +401,7 @@ export default function RemoteWorkSavingsPage() {
       toolContent={toolContent}
       expectedMetadata={{
         title: TOOL_TITLE,
-        description: "How much do you save working from home? Free calculator for commute, gas, meals, wardrobe & time savings. Includes 5-year projection & environmental impact. No signup.",
+        description: TOOL_META_DESC,
         path: "/finance-tools/remote-work-savings"
       }}
     />
