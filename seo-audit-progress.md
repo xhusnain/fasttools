@@ -17,15 +17,7 @@
 
 | # | Tool | Path | GSC Signal | Status |
 |---|---|---|---|---|
-| 1 | Currency Converter | `/converters/currency` | 700+ imp from API/Frankfurter queries | [ ] |
-| 12 | Regex Tester | `/dev-tools/regex-tester` | 77 imp on "ruby regex tester" | [ ] |
-| 13 | YouTube Channel Name Generator | `/social-media-tools/youtube-channel-name-generator` | 134 imp / 0 clicks "youtube channel name generator", 71 imp "youtube channel name generator ai" | [ ] |
-| 14 | YouTube Tag Extractor | `/social-media-tools/youtube-tags` | 43 imp "youtube tags extractor", 42 imp "youtube tag extractor", 29 imp "extract tags from youtube video" | [ ] |
-| 15 | BIP39 Mnemonic Generator | `/crypto-tools/bip39-generator` | 32 + 25 + 20 imp across BIP39 / 12-word phrase queries | [ ] |
-| 16 | TOTP / OTP Generator | `/crypto-tools/otp-generator` | 38 imp "totp qr code generator", 76 imp "otp qr code generator" | [ ] |
-| 17 | Background Remover | `/image-tools/background-remover` | 42 imp "bgremover", remove.bg comparison queries | [ ] |
-| 18 | Pregnancy Calculator (due date) | `/calculator/pregnancy-calculator` | 197 imp / 1 click | [ ] |
-| 19 | Meta Tag Generator | `/seo-tools/meta-tags` | 8 imp "open graph meta tags generator", 3 imp "og tags generator" | [ ] |
+| 1 | TikTok Engagement Calculator | `/social-media-tools/tiktok-engagement-calculator` | 21 imp / 4 clicks "tiktok hashtag counter" | [ ] |
 | 20 | TikTok Engagement Calculator | `/social-media-tools/tiktok-engagement-calculator` | 21 imp / 4 clicks "tiktok hashtag counter" | [ ] |
 
 ## Group B — Mid signal, growth potential (~5–50 GSC imp)
@@ -263,6 +255,6 @@ For each tool, do this in order:
 ## Cumulative progress
 
 - Total tools: 179 + 8 variants = 187
-- Completed (deep): 10 (future-age, channel-checker, anniversary, concrete, paypal-fee, calculator-hub, hashtag-counter, savings-tracker, pregnancy-conception, ip-subnet)
-- Partial (titles only from earlier batch): 0
-- Remaining: 177
+- Completed (deep): 19 (added currency, regex-tester, yt-name-gen, yt-tags, bip39, otp-gen, background-remover, pregnancy-calc, meta-tags)
+- Partial: 0
+- Remaining: 168
