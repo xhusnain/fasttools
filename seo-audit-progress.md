@@ -254,6 +254,6 @@ For each tool, do this in order:
 - Total tools: 179 + 8 variants = 187
 - Site-wide infrastructure: ✅ done (sitemap +42, Free dedup, OG image, llms.txt rewrite, homepage tool count)
 - Group A (top 20 GSC near-miss): ✅ DEEP audits done (competitor research, comparison tables, 5-15 new FAQs each, semantic synonyms)
-- Group B-onward (~38 more touched): related tools rewritten with workflow-relevant crosslinks, 2-4 new FAQs per tool where needed
-- Total tools improved: 58 / 199
-- Remaining: dev-tools (~21), AI tools (~11), finance tools (~33), image/PDF (~12), SEO/web/edu (~14), variants (~8)
+- Groups B-D batches done: ~50 tools — better related tools, focused FAQs, broken-link fixes (2 found and fixed: css-gradient→html-editor and ai-readability→/text-tools)
+- Total tools improved: 70 / 199
+- Remaining: finance tools (~33), image/PDF (~12), some dev-tools (~14), web/edu (~7), variants (~8) ≈ 74 left for next session
