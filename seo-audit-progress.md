@@ -252,6 +252,8 @@ For each tool, do this in order:
 ## Cumulative progress
 
 - Total tools: 179 + 8 variants = 187
-- Completed (deep): 20 (added tiktok-engagement)
-- Partial: 0
-- Remaining: 167 (all Group A done, moving to Group B with leaner per-tool effort)
+- Site-wide infrastructure: ✅ done (sitemap +42, Free dedup, OG image, llms.txt rewrite, homepage tool count)
+- Group A (top 20 GSC near-miss): ✅ DEEP audits done (competitor research, comparison tables, 5-15 new FAQs each, semantic synonyms)
+- Group B-onward (~38 more touched): related tools rewritten with workflow-relevant crosslinks, 2-4 new FAQs per tool where needed
+- Total tools improved: 58 / 199
+- Remaining: dev-tools (~21), AI tools (~11), finance tools (~33), image/PDF (~12), SEO/web/edu (~14), variants (~8)
