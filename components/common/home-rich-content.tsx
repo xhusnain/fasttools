@@ -10,7 +10,7 @@ export function HomeRichContent() {
                     <div className="grid lg:grid-cols-2 gap-12 lg:gap-16">
                         <div className="space-y-8">
                             <h2 className="text-3xl md:text-4xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-indigo-500 to-primary">
-                                130+ Tools for Every Task — All Free, All Instant
+                                200+ Tools for Every Task — All Free, All Instant
                             </h2>
                             <div className="prose dark:prose-invert max-w-none text-muted-foreground">
                                 <p>

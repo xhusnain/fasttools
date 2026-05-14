@@ -16,8 +16,8 @@ const HomeCategories = dynamic(() => import('@/components/common/home-categories
 const HomeRichContent = dynamic(() => import('@/components/common/home-rich-content').then(mod => ({ default: mod.HomeRichContent })))
 
 export const metadata: Metadata = createMetadata({
-  title: "FastTools - 130+ Free Online Tools | Calculators, Converters, PDF & AI Tools",
-  description: "130+ free online tools: calculators, converters, PDF tools, AI generators, developer utilities & more. No signup, no uploads. Everything runs in your browser — private, fast, unlimited.",
+  title: "FastTools - 200+ Free Online Tools | Calculators, Converters, PDF & AI Tools",
+  description: "200+ free online tools: calculators, converters, PDF tools, AI generators, developer utilities & more. No signup, no uploads. Everything runs in your browser — private, fast, unlimited.",
   path: "/",
   includeSchema: false,
 })
@@ -28,14 +28,14 @@ export default function Home() {
   const jsonLd = {
     "@context": "https://schema.org",
     "@type": "WebPage",
-    name: "FastTools - 130+ Free Online Tools | Calculators, Converters, PDF & AI Tools",
-    description: "130+ free online tools — calculators, converters, PDF tools, AI generators, developer utilities & more. No signup, no uploads. Everything runs in your browser.",
+    name: "FastTools - 200+ Free Online Tools | Calculators, Converters, PDF & AI Tools",
+    description: "200+ free online tools — calculators, converters, PDF tools, AI generators, developer utilities & more. No signup, no uploads. Everything runs in your browser.",
     url: "https://www.fasttools.store",
     author: {
       "@type": "Organization",
       name: "FastTools",
       url: "https://www.fasttools.store",
-      description: "Free online tools platform with 130+ calculators, converters, PDF tools, AI generators and developer utilities. All tools run locally in your browser."
+      description: "Free online tools platform with 200+ calculators, converters, PDF tools, AI generators and developer utilities. All tools run locally in your browser."
     },
     publisher: {
       "@type": "Organization",
@@ -74,7 +74,7 @@ export default function Home() {
     about: {
       "@type": "Thing",
       name: "Free Online Tools",
-      description: "A collection of 130+ free browser-based tools including calculators, unit converters, PDF editors, AI content generators, developer utilities, and SEO analyzers."
+      description: "A collection of 200+ free browser-based tools including calculators, unit converters, PDF editors, AI content generators, developer utilities, and SEO analyzers."
     },
     isPartOf: {
       "@type": "WebSite",
@@ -89,7 +89,7 @@ export default function Home() {
           name: "Are all FastTools really free?",
           acceptedAnswer: {
             "@type": "Answer",
-            text: "Yes, every tool on FastTools is 100% free with no hidden costs, no \"Pro\" tier, and no credit card required. All 130+ tools — including PDF compressor, AI generators, calculators, and converters — are completely free to use with no usage limits."
+            text: "Yes, every tool on FastTools is 100% free with no hidden costs, no \"Pro\" tier, and no credit card required. All 200+ tools — including PDF compressor, AI generators, calculators, and converters — are completely free to use with no usage limits."
           }
         },
         {
@@ -113,7 +113,7 @@ export default function Home() {
           name: "What types of tools does FastTools offer?",
           acceptedAnswer: {
             "@type": "Answer",
-            text: "FastTools offers 130+ tools across 12 categories: Calculators (BMI, age, loan, GPA), Converters (currency, temperature, JSON/YAML), PDF Tools (compress, split, merge, sign), AI Tools (QR generator, caption generator, text detector), Developer Tools (JWT decoder, regex tester, JSON diff), Social Media Tools (Instagram DP viewer, YouTube channel checker), Finance Tools (tax, mortgage, tip calculator), and more."
+            text: "FastTools offers 200+ tools across 12 categories: Calculators (BMI, age, loan, GPA), Converters (currency, temperature, JSON/YAML), PDF Tools (compress, split, merge, sign), AI Tools (QR generator, caption generator, text detector), Developer Tools (JWT decoder, regex tester, JSON diff), Social Media Tools (Instagram DP viewer, YouTube channel checker), Finance Tools (tax, mortgage, tip calculator), and more."
           }
         },
         {
@@ -155,7 +155,7 @@ export default function Home() {
 
           {/* Tool Count Badge */}
           <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 border border-primary/20 text-primary text-sm font-semibold mb-6">
-            130+ Free Tools — No Signup Required
+            200+ Free Tools — No Signup Required
           </div>
 
           {/* Main Heading */}

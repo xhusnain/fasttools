@@ -17,7 +17,7 @@ export function HomeCategories({ categories }: HomeCategoriesProps) {
                     </div>
 
                     <GHeader
-                        title="All 130+ Free Online Tools by Category"
+                        title="All 200+ Free Online Tools by Category"
                         description="Calculators, converters, PDF tools, AI generators, developer utilities & more — browse by category or search above"
                         titleSize="medium"
                         descriptionSize="small"
