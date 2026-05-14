@@ -17,9 +17,7 @@
 
 | # | Tool | Path | GSC Signal | Status |
 |---|---|---|---|---|
-| 1 | Free Online Calculator hub | `/calculator` | 514 imp / 0 clicks on "free online calculator" | [~] |
-| 7 | Hashtag Counter | `/social-media-tools/hashtag-counter` | 550+ imp ("hashtag counter" 358 alone) | [~] |
-| 8 | Savings Tracker | `/finance-tools/savings-tracker` | 272 imp on "savings tracking tool" | [~] |
+| 1 | Savings Tracker | `/finance-tools/savings-tracker` | 272 imp on "savings tracking tool" | [~] |
 | 9 | Pregnancy Conception Calculator | `/calculator/pregnancy-conception-calculator` | 180+ imp / 5 clicks "conception calculator" | [ ] |
 | 10 | IP Subnet / VPC CIDR Calculator | `/calculator/ip-subnet-calculator` | 44 imp on "vpc cidr calculator" + general subnet queries | [~] |
 | 11 | Currency Converter | `/converters/currency` | 700+ imp from API/Frankfurter queries | [ ] |
@@ -268,6 +266,6 @@ For each tool, do this in order:
 ## Cumulative progress
 
 - Total tools: 179 + 8 variants = 187
-- Completed (deep): 5 (future-age, channel-checker, anniversary, concrete, paypal-fee)
-- Partial (titles only from earlier batch): 4
-- Remaining: 182
+- Completed (deep): 7 (future-age, channel-checker, anniversary, concrete, paypal-fee, calculator-hub, hashtag-counter)
+- Partial (titles only from earlier batch): 2
+- Remaining: 180
