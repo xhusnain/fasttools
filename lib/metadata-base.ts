@@ -105,7 +105,7 @@ export function buildSchemas(options: MetadataOptions): any[] {
         .replace(/\|\s*FastTools/gi, "")
         .replace(/FastTools\s*[-–—|]?\s*/gi, "")
         .trim()
-    if (shouldIncludeSchema(path) && !processedTitle.toLowerCase().startsWith("free")) {
+    if (shouldIncludeSchema(path) && !/\bfree\b/i.test(processedTitle)) {
         processedTitle = `Free ${processedTitle}`
     }
     const fullTitle = processedTitle
@@ -187,7 +187,7 @@ export function createMetadata(options: MetadataOptions): Metadata {
         .replace(/\|\s*FastTools/gi, "")
         .replace(/FastTools\s*[-–—|]?\s*/gi, "")
         .trim()
-    if (shouldIncludeSchema(path) && !processedTitle.toLowerCase().startsWith("free")) {
+    if (shouldIncludeSchema(path) && !/\bfree\b/i.test(processedTitle)) {
         processedTitle = `Free ${processedTitle}`
     }
 
@@ -196,33 +196,6 @@ export function createMetadata(options: MetadataOptions): Metadata {
 
     const finalOgTitle = ogTitle || fullTitle
     const finalOgDescription = ogDescription || description || "Every tool you need, completely free. No signup required."
-    let ogImageConfig: any
-    if (ogImage) {
-        if (typeof ogImage === 'string') {
-            const imageUrl = ogImage.startsWith('http') ? ogImage : `${BASE_URL}${ogImage.startsWith('/') ? ogImage : `/${ogImage}`}`
-            ogImageConfig = {
-                url: imageUrl,
-                width: 1200,
-                height: 630,
-                alt: ogImageAlt || title,
-            }
-        } else {
-            const imageUrl = ogImage.url.startsWith('http') ? ogImage.url : `${BASE_URL}${ogImage.url.startsWith('/') ? ogImage.url : `/${ogImage.url}`}`
-            ogImageConfig = {
-                url: imageUrl,
-                width: ogImage.width || 1200,
-                height: ogImage.height || 630,
-                alt: ogImage.alt || ogImageAlt || title,
-            }
-        }
-    } else {
-        ogImageConfig = {
-            url: `${BASE_URL}/android-chrome-512x512.png`,
-            width: 512,
-            height: 512,
-            alt: ogImageAlt || "FastTools - Free Online Tools",
-        }
-    }
 
     const openGraphConfig: any = {
         title: finalOgTitle,
@@ -231,8 +204,27 @@ export function createMetadata(options: MetadataOptions): Metadata {
         siteName: SITE_NAME,
         type: "website" as const,
         locale: "en_US" as const,
-        images: [ogImageConfig],
     }
+    if (ogImage) {
+        if (typeof ogImage === 'string') {
+            const imageUrl = ogImage.startsWith('http') ? ogImage : `${BASE_URL}${ogImage.startsWith('/') ? ogImage : `/${ogImage}`}`
+            openGraphConfig.images = [{
+                url: imageUrl,
+                width: 1200,
+                height: 630,
+                alt: ogImageAlt || title,
+            }]
+        } else {
+            const imageUrl = ogImage.url.startsWith('http') ? ogImage.url : `${BASE_URL}${ogImage.url.startsWith('/') ? ogImage.url : `/${ogImage.url}`}`
+            openGraphConfig.images = [{
+                url: imageUrl,
+                width: ogImage.width || 1200,
+                height: ogImage.height || 630,
+                alt: ogImage.alt || ogImageAlt || title,
+            }]
+        }
+    }
+    // If no ogImage provided, Next.js auto-discovers app/opengraph-image.tsx (1200×630)
 
     return {
         title: fullTitle,

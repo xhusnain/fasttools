@@ -195,13 +195,66 @@ export const sitemapPages = [
   { url: u("/pdf-tools/pdf-signature-checker"), lastModified: new Date("2026-03-23"), changeFrequency: "weekly" as const, priority: 0.9 },
 
   // ─── Fun Tools ───────────────────────────────────────────────────────
-  { url: u("/fun-tools/anniversary"), lastModified: new Date("2026-03-23"), changeFrequency: "monthly" as const, priority: 0.5 },
+  { url: u("/fun-tools/anniversary"), lastModified: new Date("2026-05-14"), changeFrequency: "monthly" as const, priority: 0.7 },
   { url: u("/fun-tools/birthday-countdown"), lastModified: new Date("2026-03-23"), changeFrequency: "monthly" as const, priority: 0.5 },
-  { url: u("/fun-tools/future-age"), lastModified: new Date("2026-03-23"), changeFrequency: "monthly" as const, priority: 0.5 },
+  { url: u("/fun-tools/future-age"), lastModified: new Date("2026-05-14"), changeFrequency: "monthly" as const, priority: 0.8 },
   { url: u("/fun-tools/pomodoro-timer"), lastModified: new Date("2026-03-27"), changeFrequency: "monthly" as const, priority: 0.7 },
   { url: u("/fun-tools/countdown-timer"), lastModified: new Date("2026-04-21"), changeFrequency: "monthly" as const, priority: 0.9 },
   { url: u("/fun-tools/wheel-spinner"), lastModified: new Date("2026-04-21"), changeFrequency: "monthly" as const, priority: 0.9 },
   { url: u("/fun-tools/meme-generator"), lastModified: new Date("2026-04-03"), changeFrequency: "weekly" as const, priority: 0.8 },
+
+  // ─── Previously missing — added 2026-05-14 ────────────────────────────
+  // AI Tools
+  { url: u("/ai-tools/token-to-word-converter"), lastModified: new Date("2026-05-14"), changeFrequency: "monthly" as const, priority: 0.7 },
+
+  // Calculators (high-impression GSC queries: concrete calculator 279 imp, body fat, fraction, triangle, time duration, conversion)
+  { url: u("/calculator/body-fat-calculator"), lastModified: new Date("2026-05-14"), changeFrequency: "monthly" as const, priority: 0.8 },
+  { url: u("/calculator/concrete-calculator"), lastModified: new Date("2026-05-14"), changeFrequency: "monthly" as const, priority: 0.8 },
+  { url: u("/calculator/conversion-calculator"), lastModified: new Date("2026-05-14"), changeFrequency: "monthly" as const, priority: 0.7 },
+  { url: u("/calculator/fraction-calculator"), lastModified: new Date("2026-05-14"), changeFrequency: "monthly" as const, priority: 0.8 },
+  { url: u("/calculator/pace-calculator"), lastModified: new Date("2026-05-14"), changeFrequency: "monthly" as const, priority: 0.7 },
+  { url: u("/calculator/standard-deviation-calculator"), lastModified: new Date("2026-05-14"), changeFrequency: "monthly" as const, priority: 0.7 },
+  { url: u("/calculator/time-duration"), lastModified: new Date("2026-05-14"), changeFrequency: "monthly" as const, priority: 0.7 },
+  { url: u("/calculator/triangle-calculator"), lastModified: new Date("2026-05-14"), changeFrequency: "monthly" as const, priority: 0.7 },
+
+  // Converters (utility tools — low individual volume but high cumulative)
+  { url: u("/converters/ascii-binary"), lastModified: new Date("2026-05-14"), changeFrequency: "monthly" as const, priority: 0.6 },
+  { url: u("/converters/integer-base"), lastModified: new Date("2026-05-14"), changeFrequency: "monthly" as const, priority: 0.6 },
+  { url: u("/converters/json-toml"), lastModified: new Date("2026-05-14"), changeFrequency: "monthly" as const, priority: 0.6 },
+  { url: u("/converters/json-xml"), lastModified: new Date("2026-05-14"), changeFrequency: "monthly" as const, priority: 0.6 },
+  { url: u("/converters/morse-code"), lastModified: new Date("2026-05-14"), changeFrequency: "monthly" as const, priority: 0.7 },
+  { url: u("/converters/nato-phonetic"), lastModified: new Date("2026-05-14"), changeFrequency: "monthly" as const, priority: 0.6 },
+  { url: u("/converters/roman-numeral"), lastModified: new Date("2026-05-14"), changeFrequency: "monthly" as const, priority: 0.7 },
+  { url: u("/converters/toml-json"), lastModified: new Date("2026-05-14"), changeFrequency: "monthly" as const, priority: 0.6 },
+  { url: u("/converters/toml-yaml"), lastModified: new Date("2026-05-14"), changeFrequency: "monthly" as const, priority: 0.6 },
+  { url: u("/converters/unicode"), lastModified: new Date("2026-05-14"), changeFrequency: "monthly" as const, priority: 0.6 },
+  { url: u("/converters/xml-json"), lastModified: new Date("2026-05-14"), changeFrequency: "monthly" as const, priority: 0.6 },
+  { url: u("/converters/yaml-toml"), lastModified: new Date("2026-05-14"), changeFrequency: "monthly" as const, priority: 0.6 },
+
+  // Crypto Tools
+  { url: u("/crypto-tools/ulid-generator"), lastModified: new Date("2026-05-14"), changeFrequency: "monthly" as const, priority: 0.6 },
+
+  // Dev Tools
+  { url: u("/dev-tools/html-wysiwyg-editor"), lastModified: new Date("2026-05-14"), changeFrequency: "monthly" as const, priority: 0.7 },
+  { url: u("/dev-tools/sql-to-json"), lastModified: new Date("2026-05-14"), changeFrequency: "monthly" as const, priority: 0.7 },
+
+  // Finance Tools (large untapped category — multiple high-volume queries)
+  { url: u("/finance-tools/amortization-calculator"), lastModified: new Date("2026-05-14"), changeFrequency: "monthly" as const, priority: 0.8 },
+  { url: u("/finance-tools/compound-interest"), lastModified: new Date("2026-05-14"), changeFrequency: "monthly" as const, priority: 0.8 },
+  { url: u("/finance-tools/credit-card-payoff"), lastModified: new Date("2026-05-14"), changeFrequency: "monthly" as const, priority: 0.8 },
+  { url: u("/finance-tools/finance-calculator"), lastModified: new Date("2026-05-14"), changeFrequency: "monthly" as const, priority: 0.7 },
+  { url: u("/finance-tools/inflation-calculator"), lastModified: new Date("2026-05-14"), changeFrequency: "monthly" as const, priority: 0.8 },
+  { url: u("/finance-tools/interest-rate-calculator"), lastModified: new Date("2026-05-14"), changeFrequency: "monthly" as const, priority: 0.8 },
+  { url: u("/finance-tools/investment-calculator"), lastModified: new Date("2026-05-14"), changeFrequency: "monthly" as const, priority: 0.8 },
+  { url: u("/finance-tools/mortgage-calculator"), lastModified: new Date("2026-05-14"), changeFrequency: "monthly" as const, priority: 0.9 },
+  { url: u("/finance-tools/payment-calculator"), lastModified: new Date("2026-05-14"), changeFrequency: "monthly" as const, priority: 0.7 },
+  { url: u("/finance-tools/retirement-calculator"), lastModified: new Date("2026-05-14"), changeFrequency: "monthly" as const, priority: 0.8 },
+  { url: u("/finance-tools/retirement-planner"), lastModified: new Date("2026-05-14"), changeFrequency: "monthly" as const, priority: 0.7 },
+  { url: u("/finance-tools/salary-calculator"), lastModified: new Date("2026-05-14"), changeFrequency: "monthly" as const, priority: 0.8 },
+  { url: u("/finance-tools/tax-calculator"), lastModified: new Date("2026-05-14"), changeFrequency: "monthly" as const, priority: 0.8 },
+
+  // SEO Tools
+  { url: u("/seo-tools/text-similarity-checker"), lastModified: new Date("2026-05-14"), changeFrequency: "monthly" as const, priority: 0.7 },
 ]
 
 export const toolPages = sitemapPages.filter(p => !p.url.endsWith(".store") && ![ "/products", "/api-docs", "/about", "/contact", "/faq", "/all-tools", "/privacy-policy", "/terms", "/cookie-preferences", "/dmca" ].some(path => p.url.endsWith(path)))
