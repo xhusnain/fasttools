@@ -280,17 +280,22 @@ swaps + 1-2 FAQs), the **new depth target** for every tool is:
    Google for that query
 10. Rewrite **relatedTools** with 8-10 workflow-relevant crosslinks
 
-Reference commit: `d5146aa5 seo(mortgage-calculator): full deep rewrite`
+Reference commits: `d5146aa5 mortgage-calculator`, `57443939 loan-calculator`,
+`f732ec16 auto-loan-calculator`, `21b868ec retirement-calculator`,
+`682e825d compound-interest`, `c1cdade8 investment-calculator`
 
 ## Progress
 
 - Site-wide infrastructure: ✅ done
 - Group A (20 tools): ✅ Deep audits (close to new standard but pre-dating it)
-- Groups B-D (~50 tools): partial — internal linking improved but
-  needs revisit for the full title/meta/schema rewrite at new standard
-- **Mortgage Calculator: ✅ full new-standard rewrite** (reference)
-- Total tools touched: 71 / 199
-- Tools at NEW standard: 1 / 199 (mortgage-calculator)
-- Tools at deep-but-not-full standard: 20 (Group A — still good, just missing
-  the systematic schema-alternateName/featureList overhaul)
-- Realistic depth: 3-5 tools per session at the new standard
+- Groups B-D (~50 tools): partial — internal linking improved
+- **Tools at NEW full deep standard: 6/199** — all major finance tools so far:
+  - mortgage-calculator
+  - loan-calculator (pivoted from India-only to global)
+  - auto-loan-calculator
+  - retirement-calculator
+  - compound-interest
+  - investment-calculator
+- All use evergreen language (no specific dates like "May 2026")
+- Total tools touched: 77 / 199
+- Realistic depth: 3-6 tools per session at the new standard
