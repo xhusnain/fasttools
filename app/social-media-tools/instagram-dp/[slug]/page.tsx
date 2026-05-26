@@ -43,8 +43,19 @@ export default async function InstagramDpVariantPage(props: Props) {
 
   const relatedVariantLinks = Object.values(dpVariants)
     .filter((item) => item.slug !== slug)
-    .slice(0, 4)
+    .slice(0, 2)
     .map((item) => ({ name: item.headerTitle, href: `/social-media-tools/instagram-dp/${item.slug}` }))
+
+  // Pass authority from this high-traffic DP page out to related (page-2) social
+  // tools. All are genuinely relevant to the same creator / Instagram audience —
+  // contextual, not link-stuffing.
+  const relatedSocialTools = [
+    { name: "Hashtag Counter — Instagram, TikTok & X", href: "/social-media-tools/hashtag-counter" },
+    { name: "YouTube Channel Name & Handle Checker", href: "/social-media-tools/channel-checker" },
+    { name: "Link-in-Bio Generator", href: "/social-media-tools/link-in-bio" },
+    { name: "YouTube Tag Extractor", href: "/social-media-tools/youtube-tags" },
+    { name: "YouTube Thumbnail Downloader", href: "/social-media-tools/youtube-thumbnail" },
+  ]
 
   const toolConfig = createToolConfig({
     toolName: variant.toolName,
@@ -160,6 +171,7 @@ export default async function InstagramDpVariantPage(props: Props) {
       relatedTools: [
         { name: "Instagram DP Viewer", href: "/social-media-tools/instagram-dp" },
         ...relatedVariantLinks,
+        ...relatedSocialTools,
         { name: "All Social Media Tools", href: "/social-media-tools" },
       ],
     },

@@ -32,6 +32,8 @@ export function HeroSearchSection() {
                 {[
                     { name: 'Instagram DP Viewer', path: '/social-media-tools/instagram-dp' },
                     { name: 'Channel Name Checker', path: '/social-media-tools/channel-checker' },
+                    { name: 'Anniversary Calculator', path: '/fun-tools/anniversary' },
+                    { name: 'Hashtag Counter', path: '/social-media-tools/hashtag-counter' },
                     { name: 'AI QR Generator', path: '/ai-tools/qr-generator' },
                     { name: 'PDF Compressor', path: '/pdf-tools/pdf-compressor' },
                     { name: 'Currency Converter', path: '/converters/currency' },

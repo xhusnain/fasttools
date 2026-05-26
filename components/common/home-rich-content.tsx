@@ -1,4 +1,5 @@
 
+import Link from "next/link"
 import { Shield, Zap, Lock, Globe, FileText, Calculator, Code, TrendingUp } from "lucide-react"
 
 export function HomeRichContent() {
@@ -58,7 +59,7 @@ export function HomeRichContent() {
                                         </div>
                                         <div>
                                             <h4 className="font-semibold text-foreground mb-1">Social Media & AI</h4>
-                                            <p className="text-sm text-muted-foreground">Instagram DP viewer, YouTube channel checker, AI QR generator, caption generator, and hashtag tools.</p>
+                                            <p className="text-sm text-muted-foreground"><Link href="/social-media-tools/instagram-dp" className="underline underline-offset-2 hover:text-foreground">Instagram DP viewer</Link>, <Link href="/social-media-tools/channel-checker" className="underline underline-offset-2 hover:text-foreground">YouTube channel checker</Link>, <Link href="/ai-tools/qr-generator" className="underline underline-offset-2 hover:text-foreground">AI QR generator</Link>, caption generator, and a <Link href="/social-media-tools/hashtag-counter" className="underline underline-offset-2 hover:text-foreground">hashtag counter</Link>.</p>
                                         </div>
                                     </div>
 
