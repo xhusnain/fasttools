@@ -27,7 +27,7 @@ export async function runCloudflareAI(input: any) {
   if (!accountId || !apiToken) {
     throw new Error("Missing CLOUDFLARE_ACCOUNT_ID or CLOUDFLARE_AI_TOKEN environment variables")
   }
-  const model = "@cf/meta/llama-3.1-8b-instruct-fast"
+  const model = "@cf/meta/llama-4-scout-17b-16e-instruct"
   const response = await fetch(
     `https://api.cloudflare.com/client/v4/accounts/${accountId}/ai/run/${model}`,
     {
