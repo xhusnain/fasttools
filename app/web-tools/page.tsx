@@ -62,6 +62,14 @@ const webTools = [
     icon: Globe,
     popular: true,
   },
+  {
+    title: "WHOIS & Domain Lookup",
+    description:
+      "Look up domain registration data — registrar, dates, status, nameservers, and DNSSEC via RDAP.",
+    href: "/web-tools/whois-lookup",
+    icon: Globe,
+    popular: true,
+  },
 ]
 
 const toolConfig = createToolConfig({

@@ -127,6 +127,7 @@ export const sitemapPages = [
   { url: u("/web-tools/auth-generator"), lastModified: new Date("2026-03-23"), changeFrequency: "monthly" as const, priority: 0.7 },
   { url: u("/web-tools/outlook-safelink-decoder"), lastModified: new Date("2026-03-23"), changeFrequency: "monthly" as const, priority: 0.7 },
   { url: u("/web-tools/dns-ssl-checker"), lastModified: new Date("2026-03-27"), changeFrequency: "monthly" as const, priority: 0.7 },
+  { url: u("/web-tools/whois-lookup"), lastModified: new Date("2026-05-29"), changeFrequency: "monthly" as const, priority: 0.7 },
 
   // ─── Crypto Tools ────────────────────────────────────────────────────
   { url: u("/crypto-tools/encrypt-decrypt"), lastModified: new Date("2026-03-23"), changeFrequency: "monthly" as const, priority: 0.7 },
