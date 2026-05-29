@@ -121,6 +121,7 @@ export const searchItems: SearchItem[] = [
   { name: "JSON to CSV Converter", description: "Convert JSON data to CSV format", path: "/dev-tools/json-to-csv", category: "Developer" },
   { name: "SQL to JSON Converter", description: "Convert SQL INSERT statements to JSON format", path: "/dev-tools/sql-to-json", category: "Developer" },
   { name: "JWT Decoder", description: "Decode and inspect JSON Web Tokens securely", path: "/dev-tools/jwt-decoder", category: "Developer" },
+  { name: "Unix Timestamp Converter", description: "Convert Unix/epoch timestamps to human dates and back in seconds, milliseconds, or microseconds. Live current epoch, UTC, ISO 8601.", path: "/dev-tools/timestamp-converter", category: "Developer" },
   { name: "Cron Expression Generator", description: "Free cron expression generator and crontab builder. Visual builder, 25+ presets, English descriptions, next 10 run times preview. Build cron jobs for Unix, Kubernetes, GitHub Actions, AWS.", path: "/dev-tools/cron-expression-generator", category: "Developer" },
   { name: "Base64 Encoder Decoder", description: "Encode and decode strings to Base64. URL-safe mode and file support", path: "/dev-tools/base64-encoder", category: "Developer" },
   { name: "MIME Types", description: "MIME types list. Convert MIME types to file extensions. mime types pdf, images, excel. mime-types npm alternative.", path: "/dev-tools/mime-types", category: "Developer" },

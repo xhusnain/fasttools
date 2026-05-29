@@ -173,6 +173,13 @@ const devTools = [
     href: "/dev-tools/cron-expression-generator",
     icon: Clock,
   },
+  {
+    title: "Unix Timestamp Converter",
+    description:
+      "Convert Unix/epoch timestamps to dates and back — seconds, milliseconds, or microseconds. Live current epoch.",
+    href: "/dev-tools/timestamp-converter",
+    icon: Clock,
+  },
 ]
 
 const toolConfig = createToolConfig({

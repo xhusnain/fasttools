@@ -148,6 +148,7 @@ export const navigationConfig: MegaMenuSection[] = [
                 title: "Developer",
                 items: [
                     { title: "Cron Generator", href: "/dev-tools/cron-expression-generator", icon: Clock },
+                    { title: "Unix Timestamp Converter", href: "/dev-tools/timestamp-converter", icon: Clock },
                     { title: "JSON Diff", href: "/dev-tools/json-diff", icon: FileCode },
                     { title: "Diff Checker", href: "/dev-tools/diff-checker", icon: FileCode },
                     { title: "JSON to CSV", href: "/dev-tools/json-to-csv", icon: FileText },

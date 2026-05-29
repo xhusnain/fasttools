@@ -173,6 +173,7 @@ export const sitemapPages = [
   { url: u("/dev-tools/llm-training-cost"), lastModified: new Date("2026-03-16"), changeFrequency: "monthly" as const, priority: 0.7 },
   { url: u("/dev-tools/cloudflare-workers-cost"), lastModified: new Date("2026-03-16"), changeFrequency: "monthly" as const, priority: 0.7 },
   { url: u("/dev-tools/cron-expression-generator"), lastModified: new Date("2026-03-27"), changeFrequency: "monthly" as const, priority: 0.7 },
+  { url: u("/dev-tools/timestamp-converter"), lastModified: new Date("2026-05-29"), changeFrequency: "monthly" as const, priority: 0.7 },
 
   // ─── SEO Tools ───────────────────────────────────────────────────────
   { url: u("/seo-tools/meta-tags"), lastModified: new Date("2026-03-23"), changeFrequency: "monthly" as const, priority: 0.7 },
