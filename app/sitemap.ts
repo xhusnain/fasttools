@@ -1,8 +1,14 @@
 import type { MetadataRoute } from "next"
+import { noindexPaths } from "@/lib/noindex"
 
 export const baseUrl = "https://www.fasttools.store"
 
 const u = (path: string) => `${baseUrl}${path}`
+
+// Full URLs of pages marked noindex (via proxy.ts X-Robots-Tag). These must never
+// appear in the sitemap, /all-tools listings, or IndexNow submissions — doing so
+// sends Google conflicting "crawl this / don't index this" signals and wastes crawl budget.
+const noindexUrlSet = new Set(noindexPaths.map((p) => `${baseUrl}${p}`))
 
 export const sitemapPages = [
   // ─── Main Pages ──────────────────────────────────────────────────────
@@ -259,11 +265,15 @@ export const sitemapPages = [
   { url: u("/seo-tools/text-similarity-checker"), lastModified: new Date("2026-05-14"), changeFrequency: "monthly" as const, priority: 0.7 },
 ]
 
-export const toolPages = sitemapPages.filter(p => !p.url.endsWith(".store") && ![ "/products", "/api-docs", "/about", "/contact", "/faq", "/all-tools", "/privacy-policy", "/terms", "/cookie-preferences", "/dmca" ].some(path => p.url.endsWith(path)))
-export const mainPages = sitemapPages.filter(p => !toolPages.includes(p))
+// Indexable pages only — noindex pages are removed so they never leak into the
+// sitemap, internal /all-tools listings, or IndexNow pings.
+export const indexablePages = sitemapPages.filter((p) => !noindexUrlSet.has(p.url))
+
+export const toolPages = indexablePages.filter(p => !p.url.endsWith(".store") && ![ "/products", "/api-docs", "/about", "/contact", "/faq", "/all-tools", "/privacy-policy", "/terms", "/cookie-preferences", "/dmca" ].some(path => p.url.endsWith(path)))
+export const mainPages = indexablePages.filter(p => !toolPages.includes(p))
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  return sitemapPages.map((page) => ({
+  return indexablePages.map((page) => ({
     url: page.url,
     lastModified: page.lastModified,
     changeFrequency: page.changeFrequency,
