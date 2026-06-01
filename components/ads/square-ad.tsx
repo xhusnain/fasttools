@@ -32,10 +32,15 @@ export function SquareAd() {
         <div className="my-6 overflow-hidden w-full mx-auto">
             <ins
                 className="adsbygoogle"
-                style={{ display: "block" }}
+                // Explicit width prevents AdSense's availableWidth=0 TagError
+                // when the parent (flex container, hidden sidebar) hasn't
+                // sized this slot at the moment adsbygoogle.push() runs.
+                // minHeight reserves space so layout doesn't shift.
+                style={{ display: "block", width: "100%", minHeight: "250px" }}
                 data-ad-client="ca-pub-6296569221534302"
                 data-ad-slot="4114475250"
                 data-ad-format="auto"
+                data-full-width-responsive="true"
             ></ins>
         </div>
     )

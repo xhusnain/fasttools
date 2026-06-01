@@ -183,7 +183,7 @@ export function ToolPageLayout({
                             </article>
 
                             {/* In-content ad */}
-                            <div className="flex justify-center">
+                            <div className="w-full">
                                 <SquareAd />
                             </div>
 
