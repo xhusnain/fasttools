@@ -1,6 +1,12 @@
 import { NextRequest, NextResponse } from "next/server";
 import { fetchInstagramProfile } from "@/lib/instagram-profile";
 
+// Force per-request execution. Without this, Next 16 prerenders the GET
+// handler at build time and Netlify serves the static result — every query
+// returns whatever username happened to hit it during build.
+export const dynamic = "force-dynamic";
+export const runtime = "nodejs";
+
 const PROFILE_CACHE_HEADERS = {
   "Cache-Control": "public, s-maxage=86400, stale-while-revalidate=604800",
 };
