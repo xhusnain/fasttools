@@ -304,6 +304,14 @@ export function InstagramDpViewer() {
                   </thead>
                   <tbody className="divide-y divide-border">
                     <tr className="bg-background">
+                      <td className="px-4 py-2 text-muted-foreground">Username</td>
+                      <td className="px-4 py-2 font-bold text-foreground break-all">@{profileData.username}</td>
+                    </tr>
+                    <tr className="bg-background">
+                      <td className="px-4 py-2 text-muted-foreground">Full Name</td>
+                      <td className="px-4 py-2 font-bold text-foreground">{profileData.full_name || '—'}</td>
+                    </tr>
+                    <tr className="bg-background">
                       <td className="px-4 py-2 text-muted-foreground">Posts</td>
                       <td className="px-4 py-2 font-bold text-foreground">{(profileData.posts_count || 0).toLocaleString()}</td>
                     </tr>
@@ -316,8 +324,31 @@ export function InstagramDpViewer() {
                       <td className="px-4 py-2 font-bold text-foreground">{(profileData.followees || 0).toLocaleString()}</td>
                     </tr>
                     <tr className="bg-background">
+                      <td className="px-4 py-2 text-muted-foreground">Verified</td>
+                      <td className="px-4 py-2 font-bold text-foreground">{profileData.is_verified ? 'Yes ✓' : 'No'}</td>
+                    </tr>
+                    <tr className="bg-background">
                       <td className="px-4 py-2 text-muted-foreground">Account Type</td>
                       <td className="px-4 py-2 font-bold text-foreground">{profileData.is_private ? 'Private 🔒' : 'Public 🌍'}</td>
+                    </tr>
+                    <tr className="bg-background">
+                      <td className="px-4 py-2 text-muted-foreground align-top">Bio</td>
+                      <td className="px-4 py-2 font-medium text-foreground whitespace-pre-wrap break-words">{profileData.biography || '—'}</td>
+                    </tr>
+                    <tr className="bg-background">
+                      <td className="px-4 py-2 text-muted-foreground">Website</td>
+                      <td className="px-4 py-2 font-medium text-foreground break-all">
+                        {profileData.external_url ? (
+                          <a
+                            href={profileData.external_url.startsWith('http') ? profileData.external_url : `https://${profileData.external_url}`}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="text-primary hover:underline"
+                          >
+                            {profileData.external_url.replace(/^https?:\/\//, '').replace(/\/$/, '')}
+                          </a>
+                        ) : '—'}
+                      </td>
                     </tr>
                   </tbody>
                 </table>
