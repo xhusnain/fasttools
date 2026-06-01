@@ -22,6 +22,13 @@ interface InstagramProfileData {
   external_url: string | null;
 }
 
+function normalizeInstagramLookup(input: string): string {
+  const trimmed = input.trim()
+  const urlMatch = trimmed.match(/(?:instagram\.com|instagr\.am)\/([a-zA-Z0-9._]+)/)
+  const value = urlMatch?.[1] || trimmed.replace(/^@/, "")
+  return value.replace(/\/+$/, "").toLowerCase()
+}
+
 export function InstagramDpViewer() {
   const [username, setUsername] = useState("")
   const [profileData, setProfileData] = useState<InstagramProfileData | null>(null)
@@ -47,7 +54,8 @@ export function InstagramDpViewer() {
       setError(null)
       setProfileData(null)
 
-      const response = await fetch(`/api/instagram/profile?url=${encodeURIComponent(username.trim())}`)
+      const normalizedUsername = normalizeInstagramLookup(username)
+      const response = await fetch(`/api/instagram/profile?username=${encodeURIComponent(normalizedUsername)}`)
       const data = await response.json()
 
       if (!response.ok) {
@@ -198,7 +206,7 @@ export function InstagramDpViewer() {
                   <span className="text-sm font-medium">{error}</span>
                 </div>
                 <p className="text-xs text-muted-foreground mt-2">
-                  💡 Alternative: Right-click on the profile picture and select "Save image as"
+                  Tip: use a public Instagram username or profile URL, then try again.
                 </p>
               </div>
             )}
