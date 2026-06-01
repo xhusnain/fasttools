@@ -69,7 +69,6 @@ export function InstagramDpViewer() {
       }
       setError(null)
     } catch (error: any) {
-      console.error("API Error:", error)
       setError(error?.message || "Failed to fetch profile. Please try again.")
       setProfileData(null)
     } finally {
@@ -130,8 +129,7 @@ export function InstagramDpViewer() {
       document.body.removeChild(link)
 
       setTimeout(() => URL.revokeObjectURL(blobUrl), 100)
-    } catch (error) {
-      console.error('Save error:', error)
+    } catch {
       setError('Failed to save image. Please try again.')
     } finally {
       setSaving(false)

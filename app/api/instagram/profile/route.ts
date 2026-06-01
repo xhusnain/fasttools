@@ -97,8 +97,7 @@ export async function GET(request: NextRequest) {
       },
       { headers: NO_CACHE_HEADERS }
     );
-  } catch (error) {
-    console.error("Instagram profile fetch error:", error);
+  } catch {
     return NextResponse.json(
       { error: "Failed to fetch Instagram profile. Please try again." },
       { status: 500 }

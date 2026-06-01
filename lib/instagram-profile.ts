@@ -13,13 +13,21 @@ import type { RequestInit as UndiciRequestInit, Response as UndiciResponse } fro
  * (auth), we fall through to the next URL in the list.
  */
 
-// Ordered Webshare rotating-proxy accounts. Failover walks left-to-right.
-// To add/rotate: edit this list.
-// Note: 429 from these endpoints is a per-account BURST rate limit (requests
-// per ~minute), not the monthly bandwidth quota. The cooldown logic skips a
-// 429'd account for 30s so it can recover — don't remove an account just
-// because a rapid test burst saw 429s.
+// Ordered proxy accounts. Failover walks left-to-right; sticky pointer locks
+// onto the first one that succeeds. Home gost-via-bore-tunnel is listed first
+// because it's an unlimited-bandwidth residential IP — Webshare is the safety
+// net for when the Mac/tunnel is offline.
+//
+// HOME PROXY (gost on Mac + bore.pub tunnel):
+//   - Port changes every time `bore local 8080 --to bore.pub` restarts.
+//   - To rotate: rerun the bore command, copy the new port, update the URL.
+//   - Mac must be on + gost running + bore running for this to work.
+//
+// WEBSHARE (fallback):
+//   - 429 = per-account burst rate limit (~req/min), NOT monthly quota.
+//   - Cooldown logic skips a 429'd account for 30s.
 const WEBSHARE_PROXY_URLS = [
+  "http://fasttools:***REMOVED***@bore.pub:55737",
   "http://flwacgtc-rotate:***REMOVED***@p.webshare.io:80",
   "http://wizdafld-rotate:***REMOVED***@p.webshare.io:80",
   "http://xtwwtjom-rotate:***REMOVED***@p.webshare.io:80",
@@ -36,10 +44,11 @@ function getDispatcher(proxyUrl: string): ProxyAgent {
   return agent;
 }
 
-// Sticky pointer to the last proxy that served a successful response. Avoids
-// re-trying a known-dead proxy on every request within the same process. Resets
-// to 0 on cold-start (each Vercel function instance starts fresh).
-let preferredProxyIndex = 0;
+// Every request starts iteration at index 0 (the home proxy). The cooldown
+// array below skips proxies that just failed, so when the home Mac is offline
+// we don't waste an attempt on it for the next 30s — but we DO retry it as
+// soon as the cooldown expires, so the home proxy automatically gets used
+// again the moment it's back online.
 
 // Webshare's rotating endpoint serves a different exit IP per request. Many
 // IPs are flagged by Instagram (login wall / shell). Retrying 3× per account
@@ -71,21 +80,16 @@ export async function fetchHtmlViaWebshare(
   init: Omit<UndiciRequestInit, "dispatcher">,
   isAcceptableBody: (body: string) => boolean
 ): Promise<{ status: number; body: string }> {
-  // Snapshot at request start so mid-loop sticky updates don't perturb
-  // this request's iteration order.
-  const startIndex = preferredProxyIndex;
+  // Always start at index 0 (home proxy first). Cooldowns prevent us from
+  // wasting attempts on a recently-failed proxy, but each request still
+  // RE-TRIES the home proxy as soon as its cooldown expires — so when the
+  // home Mac/tunnel comes back online, we resume using it immediately.
   let lastResult: { status: number; body: string } | null = null;
   let lastError: Error | null = null;
-  let sawRateLimit = false;
 
   for (let attempt = 0; attempt < MAX_PROXY_ATTEMPTS; attempt++) {
-    const index = pickProxyIndex(startIndex, attempt);
-    if (index === null) {
-      console.warn(
-        `[Webshare] all accounts cooling down at attempt ${attempt + 1}/${MAX_PROXY_ATTEMPTS}; fast-failing`
-      );
-      break;
-    }
+    const index = pickProxyIndex(0, attempt);
+    if (index === null) break;
     const proxyUrl = WEBSHARE_PROXY_URLS[index];
 
     try {
@@ -97,10 +101,6 @@ export async function fetchHtmlViaWebshare(
       if (response.status === 429 || response.status === 407) {
         await response.body?.cancel();
         cooldownUntil[index] = Date.now() + RATE_LIMIT_COOLDOWN_MS;
-        sawRateLimit = true;
-        console.warn(
-          `[Webshare] proxy #${index} ${response.status} (attempt ${attempt + 1}/${MAX_PROXY_ATTEMPTS}); cooling down 30s`
-        );
         continue;
       }
 
@@ -109,48 +109,33 @@ export async function fetchHtmlViaWebshare(
 
       if (!isAcceptableBody(body)) {
         lastResult = result;
-        console.warn(
-          `[Webshare] proxy #${index} bad body size=${body.length} (attempt ${attempt + 1}/${MAX_PROXY_ATTEMPTS})`
-        );
         continue;
       }
 
-      preferredProxyIndex = index;
       return result;
     } catch (error) {
-      lastError =
-        error instanceof Error ? error : new Error(String(error));
-      console.warn(
-        `[Webshare] proxy #${index} threw ${lastError.message} (attempt ${attempt + 1}/${MAX_PROXY_ATTEMPTS})`
-      );
+      // Network-level failure (proxy unreachable / DNS / TLS / timeout).
+      // Cool the proxy so the next request skips this dead endpoint for 30s.
+      // Don't surface error.message — undici can embed the proxy URL (with
+      // credentials) in cause chains.
+      cooldownUntil[index] = Date.now() + RATE_LIMIT_COOLDOWN_MS;
+      lastError = error instanceof Error ? error : new Error(String(error));
     }
   }
 
-  // All attempts exhausted. If we got rate-limited, advance the sticky pointer
-  // so the NEXT request doesn't restart at the same burnt-out account.
-  if (sawRateLimit) {
-    preferredProxyIndex =
-      (startIndex + 1) % WEBSHARE_PROXY_URLS.length;
-  }
-
   if (lastResult) return lastResult;
-  throw lastError || new Error("All Webshare proxies failed");
+  throw lastError || new Error("All proxies failed");
 }
 
 export async function fetchViaWebshare(
   targetUrl: string,
   init: Omit<UndiciRequestInit, "dispatcher"> = {}
 ): Promise<UndiciResponse> {
-  const startIndex = preferredProxyIndex;
   let lastError: Error | null = null;
-  let sawRateLimit = false;
 
   for (let attempt = 0; attempt < WEBSHARE_PROXY_URLS.length; attempt++) {
-    const index = pickProxyIndex(startIndex, attempt);
-    if (index === null) {
-      console.warn(`[Webshare] all accounts cooling down; fast-failing`);
-      break;
-    }
+    const index = pickProxyIndex(0, attempt);
+    if (index === null) break;
     const proxyUrl = WEBSHARE_PROXY_URLS[index];
 
     try {
@@ -162,27 +147,14 @@ export async function fetchViaWebshare(
       if (response.status === 429 || response.status === 407) {
         await response.body?.cancel();
         cooldownUntil[index] = Date.now() + RATE_LIMIT_COOLDOWN_MS;
-        sawRateLimit = true;
-        console.warn(
-          `[Webshare] proxy #${index} ${response.status}; cooling down 30s`
-        );
         continue;
       }
 
-      preferredProxyIndex = index;
       return response;
     } catch (error) {
-      lastError =
-        error instanceof Error ? error : new Error(String(error));
-      console.warn(
-        `[Webshare] proxy #${index} threw ${lastError.message}; failing over`
-      );
+      cooldownUntil[index] = Date.now() + RATE_LIMIT_COOLDOWN_MS;
+      lastError = error instanceof Error ? error : new Error(String(error));
     }
-  }
-
-  if (sawRateLimit) {
-    preferredProxyIndex =
-      (startIndex + 1) % WEBSHARE_PROXY_URLS.length;
   }
 
   throw lastError || new Error("All Webshare proxies failed");
@@ -433,9 +405,6 @@ async function fetchProfile(username: string): Promise<InstagramProfile> {
   const { status, body } = await fetchProfilePage(
     `/${encodeURIComponent(username)}/`
   );
-  console.log(
-    `[Instagram] @${username} status=${status} size=${body.length}`
-  );
 
   if (status === 404) {
     throw new ProfileFetchError("User not found", 404);
@@ -480,10 +449,7 @@ export async function fetchInstagramProfile(
 
   const cacheKey = getCacheKey(username);
   const fresh = getCachedProfile(cacheKey);
-  if (fresh) {
-    console.log(`[Instagram] Cache hit: @${username}`);
-    return fresh;
-  }
+  if (fresh) return fresh;
 
   try {
     const profile = await fetchProfile(username);
@@ -499,21 +465,24 @@ export async function fetchInstagramProfile(
       return { ok: false, status: 404, data: { error: "User not found" } };
     }
 
-    const message = error instanceof Error ? error.message : String(error);
-    console.warn(`[Instagram] Fetch failed for @${username}: ${message}`);
-
     const stale = getCachedProfile(cacheKey, true);
-    if (stale) {
-      console.warn(`[Instagram] Serving stale cache for @${username}`);
-      return stale;
-    }
+    if (stale) return stale;
 
-    const status =
-      error instanceof ProfileFetchError ? error.status : 502;
+    // Only surface ProfileFetchError messages (our own, known-safe strings).
+    // Generic errors (from undici/network) get a sanitized fallback message so
+    // we never accidentally leak proxy URLs / credentials embedded in cause
+    // chains back to the client.
+    if (error instanceof ProfileFetchError) {
+      return {
+        ok: false,
+        status: error.status,
+        data: { error: error.message },
+      };
+    }
     return {
       ok: false,
-      status,
-      data: { error: message || "Failed to fetch Instagram profile" },
+      status: 502,
+      data: { error: "Failed to fetch Instagram profile" },
     };
   }
 }
