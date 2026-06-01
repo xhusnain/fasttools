@@ -15,7 +15,6 @@ import { PROXY_LIST } from "./proxies";
  */
 
 const PROFILE_HTML_USER_AGENT = "undici";
-const SERPAPI_PROFILE_URL = "https://serpapi.com/search.json";
 const DEFAULT_TIMEOUT_MS = 9000;
 const DEFAULT_PROFILE_CACHE_TTL_SECONDS = 86400;
 const DEFAULT_PROFILE_STALE_TTL_SECONDS = 604800;
@@ -329,24 +328,6 @@ function parseRawHttpResponse(raw: Buffer): RawHttpResponse {
   return { status, headers, body };
 }
 
-async function fetchWithTimeout(
-  input: string,
-  init: RequestInit = {},
-  timeoutMs: number = getTimeoutMs()
-): Promise<Response> {
-  const controller = new AbortController();
-  const timeout = setTimeout(() => controller.abort(), timeoutMs);
-
-  try {
-    return await fetch(input, {
-      ...init,
-      signal: controller.signal,
-    });
-  } finally {
-    clearTimeout(timeout);
-  }
-}
-
 function proxyAuthHeader(proxy: ProxyConfig): string | undefined {
   if (!proxy.user || !proxy.password) return undefined;
   return `Basic ${Buffer.from(`${proxy.user}:${proxy.password}`).toString(
@@ -361,7 +342,8 @@ function fetchPageViaProxy(
   proxy: ProxyConfig,
   targetHost: string,
   targetPath: string,
-  redirectsRemaining = 3
+  redirectsRemaining = 3,
+  extraHeaders: Record<string, string> = {}
 ): Promise<{ status: number; body: string }> {
   return new Promise((resolve, reject) => {
     const auth = proxyAuthHeader(proxy);
@@ -393,12 +375,19 @@ function fetchPageViaProxy(
           servername: targetHost,
         },
         () => {
+          const mergedHeaders: Record<string, string> = {
+            "User-Agent": PROFILE_HTML_USER_AGENT,
+            Accept: "*/*",
+            "Accept-Language": "*",
+            ...extraHeaders,
+          };
+          const headerLines = Object.entries(mergedHeaders).map(
+            ([key, value]) => `${key}: ${value}`
+          );
           const requestData = [
             `GET ${targetPath} HTTP/1.1`,
             `Host: ${targetHost}`,
-            `User-Agent: ${PROFILE_HTML_USER_AGENT}`,
-            "Accept: */*",
-            "Accept-Language: *",
+            ...headerLines,
             "Connection: close",
             "",
             "",
@@ -433,7 +422,8 @@ function fetchPageViaProxy(
                   proxy,
                   targetHost,
                   redirect.pathname + redirect.search,
-                  redirectsRemaining - 1
+                  redirectsRemaining - 1,
+                  extraHeaders
                 )
                   .then(resolve)
                   .catch(reject);
@@ -477,7 +467,8 @@ function fetchPageViaProxy(
 function fetchPageDirect(
   targetHost: string,
   targetPath: string,
-  redirectsRemaining = 3
+  redirectsRemaining = 3,
+  extraHeaders: Record<string, string> = {}
 ): Promise<{ status: number; body: string }> {
   return new Promise((resolve, reject) => {
     const req = https.request(
@@ -489,6 +480,7 @@ function fetchPageDirect(
           "user-agent": PROFILE_HTML_USER_AGENT,
           accept: "*/*",
           "accept-language": "*",
+          ...extraHeaders,
         },
         timeout: getTimeoutMs(),
       },
@@ -512,7 +504,8 @@ function fetchPageDirect(
           fetchPageDirect(
             targetHost,
             redirect.pathname + redirect.search,
-            redirectsRemaining - 1
+            redirectsRemaining - 1,
+            extraHeaders
           )
             .then(resolve)
             .catch(reject);
@@ -538,29 +531,50 @@ function fetchPageDirect(
   });
 }
 
+// Instagram's logged-out page exposes the real profile picture in og:image
+// only some of the time. On many server IPs it now returns an empty og:image
+// (profile_picture_ssr_error) or the static UI logo (…/rsrc.php/…). Neither is
+// a usable profile picture, so we must not treat them as one.
+function isUsableProfilePic(url: string | null): url is string {
+  if (!url) return false;
+  if (!/^https?:\/\//i.test(url)) return false;
+  // Static UI assets (logo / placeholders) are not a profile picture.
+  if (/static\.cdninstagram\.com\/rsrc\.php/i.test(url)) return false;
+  return true;
+}
+
 function parseProfileFromHtml(
   html: string,
   username: string
 ): OgProfileData | null {
-  const imgUrl = getMetaContent(html, "og:image");
-  if (!imgUrl) return null;
-
   const desc = getMetaContent(html, "og:description") || "";
   const title = getMetaContent(html, "og:title") || "";
-
-  const nameMatch = title.match(/^(.+?)\s*\(@/);
-  const fullName = nameMatch ? nameMatch[1].trim() : username;
 
   const followersMatch = desc.match(/([\d,.]+[KMB]?)\s*Followers/i);
   const followingMatch = desc.match(/([\d,.]+[KMB]?)\s*Following/i);
   const postsMatch = desc.match(/([\d,.]+[KMB]?)\s*Posts/i);
+  const titleMatch = title.match(/^(.+?)\s*\(@[\w.]+\)/);
 
-  // Signed Instagram CDN URLs break if their size params are modified.
-  const hdUrl = imgUrl;
-  const sdUrl = imgUrl;
+  // The logged-out "wall" page Instagram serves to blocked IPs has no follower
+  // stats and no "Name (@handle)" title — only a static logo in og:image. If we
+  // see neither signal this is NOT a real profile page, so bail (return null)
+  // rather than returning a hollow 0/0/0 object. Returning null lets the caller
+  // fall through to proxy / paid-provider attempts instead of caching garbage.
+  if (!followersMatch && !titleMatch) {
+    return null;
+  }
+
+  const fullName = titleMatch ? titleMatch[1].trim() : username;
+
+  // Do NOT gate on og:image — it is now frequently empty even on valid
+  // profiles. Keep it only when it points at a real CDN image.
+  const rawImg = getMetaContent(html, "og:image");
+  const picUrl = isUsableProfilePic(rawImg) ? rawImg : "";
 
   const isVerified =
-    html.includes("is_verified") || title.includes("✓") || title.includes("☑");
+    html.includes('"is_verified":true') ||
+    title.includes("✓") ||
+    title.includes("☑");
 
   const isPrivate = desc.toLowerCase().includes("private");
 
@@ -579,19 +593,21 @@ function parseProfileFromHtml(
     followers: parseCountText(followersMatch?.[1] || "0"),
     followees: parseCountText(followingMatch?.[1] || "0"),
     posts_count: parseCountText(postsMatch?.[1] || "0"),
-    profile_pic_url: sdUrl,
-    profile_pic_url_hd: hdUrl,
+    profile_pic_url: picUrl,
+    profile_pic_url_hd: picUrl,
     is_verified: isVerified,
     is_private: isPrivate,
     external_url: null,
   };
 }
 
-function normalizeProviderProfile(user: any, fallbackUsername: string) {
+function normalizeProviderProfile(
+  user: any,
+  fallbackUsername: string
+): OgProfileData | null {
   if (!user || typeof user !== "object") return null;
 
   const profilePicUrl = firstString(
-    user.serpapi_profile_pic_url,
     user.profile_pic_url,
     user.profilePictureUrl,
     user.profile_picture,
@@ -599,7 +615,6 @@ function normalizeProviderProfile(user: any, fallbackUsername: string) {
     user.avatar
   );
   const profilePicUrlHd = firstString(
-    user.serpapi_profile_pic_url_hd,
     user.profile_pic_url_hd,
     user.hd_profile_pic_url,
     user.hd_profile_pic_url_info?.url,
@@ -646,55 +661,126 @@ function normalizeProviderProfile(user: any, fallbackUsername: string) {
   };
 }
 
-async function fetchProfileViaSerpApi(
-  username: string
+function getSessionIds(): string[] {
+  return getEnv("INSTAGRAM_SESSIONID")
+    .split(/[\s,]+/)
+    .map((value) => value.trim())
+    .filter(Boolean);
+}
+
+function instagramApiHeaders(sessionId: string): Record<string, string> {
+  return {
+    "user-agent":
+      "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36",
+    accept: "*/*",
+    "accept-language": "en-US,en;q=0.9",
+    "x-ig-app-id": "936619743392459",
+    "x-requested-with": "XMLHttpRequest",
+    cookie: `sessionid=${sessionId}`,
+    referer: "https://www.instagram.com/",
+  };
+}
+
+/**
+ * Custom (no third-party) profile fetch using Instagram's own web_profile_info
+ * JSON API. This is the ONLY path that returns the real profile picture, but
+ * Instagram now requires an authenticated session, so it is enabled only when
+ * an INSTAGRAM_SESSIONID is configured. Requests go direct first, then through
+ * the residential proxy pool (server IPs are frequently blocked).
+ */
+async function fetchProfileViaInstagramJson(
+  username: string,
+  maxRetries: number
 ): Promise<OgProfileData> {
-  const apiKey = getEnv("SERPAPI_API_KEY");
-  if (!apiKey) {
-    throw new Error("SERPAPI_API_KEY is not configured");
+  const sessionId = getSessionIds()[0];
+  if (!sessionId) {
+    throw new Error("INSTAGRAM_SESSIONID is not configured");
   }
 
-  const params = new URLSearchParams({
-    engine: "instagram_profile",
-    profile_id: username,
-    api_key: apiKey,
-  });
+  const targetHost = "www.instagram.com";
+  const targetPath = `/api/v1/users/web_profile_info/?username=${encodeURIComponent(
+    username
+  )}`;
+  const headers = instagramApiHeaders(sessionId);
 
-  const response = await fetchWithTimeout(
-    `${SERPAPI_PROFILE_URL}?${params.toString()}`,
-    {
-      headers: {
-        accept: "application/json",
-      },
+  const parse = (status: number, body: string): OgProfileData => {
+    if (status === 404) {
+      throw new ProfileFetchError("User not found", 404);
     }
+    if (status === 401 || status === 403) {
+      throw new Error(
+        `web_profile_info auth rejected (HTTP ${status}) — INSTAGRAM_SESSIONID may be expired`
+      );
+    }
+    if (status !== 200) {
+      throw new Error(`HTTP ${status}`);
+    }
+
+    let payload: any;
+    try {
+      payload = JSON.parse(body);
+    } catch {
+      throw new Error("web_profile_info returned non-JSON (likely a block page)");
+    }
+
+    if (payload?.require_login || payload?.status === "fail") {
+      throw new Error("web_profile_info requires login (session rejected)");
+    }
+
+    const profile = normalizeProviderProfile(payload?.data?.user, username);
+    if (!profile) {
+      throw new Error("web_profile_info response had no usable profile");
+    }
+    return profile;
+  };
+
+  let lastError: Error | null = null;
+
+  try {
+    console.log(`[Instagram] JSON native attempt: @${username}`);
+    const { status, body } = await fetchPageDirect(
+      targetHost,
+      targetPath,
+      3,
+      headers
+    );
+    return parse(status, body);
+  } catch (error) {
+    if (error instanceof ProfileFetchError && error.status === 404) throw error;
+    lastError = error instanceof Error ? error : new Error(String(error));
+    console.warn(`[Instagram] JSON native attempt failed: ${lastError.message}`);
+  }
+
+  const proxyAttempts = getOrderedProxyList().slice(
+    0,
+    getProxyMaxAttempts(maxRetries)
   );
 
-  if (response.status === 404) {
-    throw new ProfileFetchError("User not found", 404);
+  for (let index = 0; index < proxyAttempts.length; index++) {
+    try {
+      console.log(
+        `[Instagram] JSON proxy attempt ${index + 1}/${proxyAttempts.length}: @${username}`
+      );
+      const { status, body } = await fetchPageViaProxy(
+        proxyAttempts[index],
+        targetHost,
+        targetPath,
+        3,
+        headers
+      );
+      return parse(status, body);
+    } catch (error) {
+      if (error instanceof ProfileFetchError && error.status === 404) {
+        throw error;
+      }
+      lastError = error instanceof Error ? error : new Error(String(error));
+      console.warn(
+        `[Instagram] JSON proxy attempt ${index + 1} failed: ${lastError.message}`
+      );
+    }
   }
 
-  if (!response.ok) {
-    throw new Error(`SerpApi HTTP ${response.status}`);
-  }
-
-  const payload = await response.json();
-  if (payload?.error) {
-    throw new Error(`SerpApi error: ${payload.error}`);
-  }
-
-  const status = payload?.search_metadata?.status;
-  if (status && status !== "Success") {
-    throw new Error(`SerpApi status: ${status}`);
-  }
-
-  const user = payload?.profile_results;
-  const profile = normalizeProviderProfile(user, username);
-
-  if (!profile) {
-    throw new Error("SerpApi response did not include a profile image");
-  }
-
-  return profile;
+  throw lastError || new Error("All web_profile_info attempts failed");
 }
 
 async function fetchProfileViaInstagramHtml(
@@ -820,14 +906,18 @@ export async function fetchInstagramProfile(
     fetchProfile: () => Promise<OgProfileData>;
   }> = [
     {
+      // Custom authenticated path — the only source that returns the real
+      // profile picture. Enabled only when an Instagram session is configured.
+      name: "instagram-json",
+      enabled: getSessionIds().length > 0,
+      fetchProfile: () => fetchProfileViaInstagramJson(username, maxRetries),
+    },
+    {
+      // Unauthenticated og-tag scrape. Always on as a fallback; returns stats
+      // (followers/following/posts/name) but no profile picture.
       name: "instagram-html",
       enabled: true,
       fetchProfile: () => fetchProfileViaInstagramHtml(username, maxRetries),
-    },
-    {
-      name: "serpapi",
-      enabled: Boolean(getEnv("SERPAPI_API_KEY")),
-      fetchProfile: () => fetchProfileViaSerpApi(username),
     },
   ];
 

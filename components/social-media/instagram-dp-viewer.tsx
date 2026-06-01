@@ -85,10 +85,18 @@ export function InstagramDpViewer() {
     return imageUrl ? `/api/instagram/image-proxy?url=${encodeURIComponent(imageUrl)}` : ''
   }
 
+  // Self-contained fallback avatar (no external service). Used when Instagram
+  // does not expose a profile picture for a logged-out request.
+  const getInitialAvatar = (): string => {
+    const letter = (profileData?.username?.charAt(0) || '?').toUpperCase()
+    const svg = `<svg xmlns="http://www.w3.org/2000/svg" width="400" height="400"><rect width="400" height="400" fill="#6366f1"/><text x="50%" y="50%" dy=".35em" text-anchor="middle" font-family="sans-serif" font-size="200" fill="#ffffff">${letter}</text></svg>`
+    return `data:image/svg+xml;utf8,${encodeURIComponent(svg)}`
+  }
+
   const getProfilePictureUrl = (): string => {
     if (!profileData) return ''
     const imageUrl = profileData.profile_pic_url_hd || profileData.profile_pic_url
-    return getProxyImageUrl(imageUrl)
+    return imageUrl ? getProxyImageUrl(imageUrl) : getInitialAvatar()
   }
 
   const saveImage = async (quality: 'sd' | 'hd' = 'hd') => {
@@ -230,10 +238,10 @@ export function InstagramDpViewer() {
                   loading="lazy"
                   onError={(e) => {
                     const target = e.currentTarget
-                    if (profileData.profile_pic_url_hd && target.src.includes(encodeURIComponent(profileData.profile_pic_url_hd))) {
+                    if (profileData.profile_pic_url_hd && profileData.profile_pic_url && target.src.includes(encodeURIComponent(profileData.profile_pic_url_hd))) {
                       target.src = getProxyImageUrl(profileData.profile_pic_url)
-                    } else {
-                      target.src = `https://via.placeholder.com/400x400/6366f1/ffffff?text=${profileData.username.charAt(0).toUpperCase()}`
+                    } else if (target.src !== getInitialAvatar()) {
+                      target.src = getInitialAvatar()
                     }
                   }}
                 />
