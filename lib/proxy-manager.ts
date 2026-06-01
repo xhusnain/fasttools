@@ -14,7 +14,11 @@ import { PROXY_LIST } from "./proxies";
  * fallback-only, because per-search pricing gets expensive quickly.
  */
 
-const PROFILE_HTML_USER_AGENT = "undici";
+const PROFILE_HTML_USER_AGENT =
+  "Mozilla/5.0 (compatible; Googlebot/2.1; +http://www.google.com/bot.html)";
+const PROFILE_HTML_ACCEPT =
+  "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8";
+const PROFILE_HTML_ACCEPT_LANGUAGE = "en-US,en;q=0.9";
 const DEFAULT_TIMEOUT_MS = 9000;
 const DEFAULT_PROFILE_CACHE_TTL_SECONDS = 86400;
 const DEFAULT_PROFILE_STALE_TTL_SECONDS = 604800;
@@ -377,8 +381,8 @@ function fetchPageViaProxy(
         () => {
           const mergedHeaders: Record<string, string> = {
             "User-Agent": PROFILE_HTML_USER_AGENT,
-            Accept: "*/*",
-            "Accept-Language": "*",
+            Accept: PROFILE_HTML_ACCEPT,
+            "Accept-Language": PROFILE_HTML_ACCEPT_LANGUAGE,
             ...extraHeaders,
           };
           const headerLines = Object.entries(mergedHeaders).map(
@@ -478,8 +482,8 @@ function fetchPageDirect(
         method: "GET",
         headers: {
           "user-agent": PROFILE_HTML_USER_AGENT,
-          accept: "*/*",
-          "accept-language": "*",
+          accept: PROFILE_HTML_ACCEPT,
+          "accept-language": PROFILE_HTML_ACCEPT_LANGUAGE,
           ...extraHeaders,
         },
         timeout: getTimeoutMs(),
