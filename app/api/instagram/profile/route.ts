@@ -5,15 +5,18 @@ import { fetchInstagramProfile } from "@/lib/instagram-profile";
 // handler at build time and Netlify serves the static result — every query
 // returns whatever username happened to hit it during build.
 export const dynamic = "force-dynamic";
+export const revalidate = 0;
 export const runtime = "nodejs";
 
-const PROFILE_CACHE_HEADERS = {
-  "Cache-Control": "public, s-maxage=86400, stale-while-revalidate=604800",
-};
-
-const NOT_FOUND_CACHE_HEADERS = {
-  "Cache-Control": "public, s-maxage=3600, stale-while-revalidate=86400",
-};
+// Disable caching at every layer. Long-lived edge caching was returning the
+// wrong user's data on Netlify (the same Usha Singh response for any query).
+// The in-memory cache in lib/instagram-profile.ts still provides fast repeat
+// lookups within a hot Node container — no need to also cache at the edge.
+const NO_CACHE_HEADERS = {
+  "Cache-Control": "private, no-store, max-age=0, must-revalidate",
+  "CDN-Cache-Control": "no-store",
+  "Netlify-CDN-Cache-Control": "no-store",
+} as const;
 
 function extractUsername(input: string): string | null {
   if (!input) return null;
@@ -57,7 +60,7 @@ export async function GET(request: NextRequest) {
       if (status === 404) {
         return NextResponse.json(
           { error: "User not found" },
-          { status: 404, headers: NOT_FOUND_CACHE_HEADERS }
+          { status: 404, headers: NO_CACHE_HEADERS }
         );
       }
       return NextResponse.json(
@@ -71,7 +74,7 @@ export async function GET(request: NextRequest) {
     if (!user) {
       return NextResponse.json(
         { error: "User not found" },
-        { status: 404, headers: NOT_FOUND_CACHE_HEADERS }
+        { status: 404, headers: NO_CACHE_HEADERS }
       );
     }
 
@@ -92,7 +95,7 @@ export async function GET(request: NextRequest) {
           external_url: user.external_url,
         },
       },
-      { headers: PROFILE_CACHE_HEADERS }
+      { headers: NO_CACHE_HEADERS }
     );
   } catch (error) {
     console.error("Instagram profile fetch error:", error);
