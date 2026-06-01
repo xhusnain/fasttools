@@ -1,16 +1,138 @@
-import https from "https";
+import { fetch, ProxyAgent } from "undici";
+import type { RequestInit as UndiciRequestInit, Response as UndiciResponse } from "undici";
 
 /**
  * Instagram serves complete og:meta tags to Googlebot for SEO indexing, so a
  * single GET with a Googlebot User-Agent returns username, full name, follower
- * counts, posts, verified flag, and profile picture URL — no cookies, no
- * session, no proxies.
+ * counts, posts, verified flag, and profile picture URL — no cookies and no
+ * session needed.
  *
- * Failure mode: if Instagram blocks the production server IP, the page comes
- * back without og:title/og:description and parseProfileFromHtml returns null,
- * which surfaces as a 502 to the client. There is no silent degradation — when
- * it breaks, redeploy with a different UA.
+ * On Vercel / other datacenter IPs Instagram returns a generic shell with no
+ * og:meta, so every Instagram request routes through one of the Webshare
+ * rotating proxies below. When a proxy returns 429 (quota/rate limit) or 407
+ * (auth), we fall through to the next URL in the list.
  */
+
+// Ordered Webshare rotating-proxy accounts. Failover walks left-to-right.
+// To add/rotate: edit this list.
+const WEBSHARE_PROXY_URLS = [
+  "http://flwacgtc-rotate:***REMOVED***@p.webshare.io:80",
+  "http://wizdafld-rotate:***REMOVED***@p.webshare.io:80",
+  "http://xtwwtjom-rotate:***REMOVED***@p.webshare.io:80",
+];
+
+const proxyDispatchers = new Map<string, ProxyAgent>();
+
+function getDispatcher(proxyUrl: string): ProxyAgent {
+  let agent = proxyDispatchers.get(proxyUrl);
+  if (!agent) {
+    agent = new ProxyAgent(proxyUrl);
+    proxyDispatchers.set(proxyUrl, agent);
+  }
+  return agent;
+}
+
+// Sticky pointer to the last proxy that served a successful response. Avoids
+// re-trying a known-dead proxy on every request within the same process. Resets
+// to 0 on cold-start (each Vercel function instance starts fresh).
+let preferredProxyIndex = 0;
+
+// Webshare's rotating endpoint serves a different exit IP per request. Many
+// IPs are flagged by Instagram (login wall / shell). Retrying up to 2× per
+// account lets us stitch together a usable success rate from the clean fraction.
+const MAX_PROXY_ATTEMPTS = WEBSHARE_PROXY_URLS.length * 2;
+
+export async function fetchHtmlViaWebshare(
+  targetUrl: string,
+  init: Omit<UndiciRequestInit, "dispatcher">,
+  isAcceptableBody: (body: string) => boolean
+): Promise<{ status: number; body: string }> {
+  let lastResult: { status: number; body: string } | null = null;
+  let lastError: Error | null = null;
+
+  for (let attempt = 0; attempt < MAX_PROXY_ATTEMPTS; attempt++) {
+    const index =
+      (preferredProxyIndex + attempt) % WEBSHARE_PROXY_URLS.length;
+    const proxyUrl = WEBSHARE_PROXY_URLS[index];
+
+    try {
+      const response = await fetch(targetUrl, {
+        ...init,
+        dispatcher: getDispatcher(proxyUrl),
+      });
+
+      if (response.status === 429 || response.status === 407) {
+        await response.body?.cancel();
+        console.warn(
+          `[Webshare] proxy #${index} ${response.status} (attempt ${attempt + 1}/${MAX_PROXY_ATTEMPTS})`
+        );
+        continue;
+      }
+
+      const body = await response.text();
+      const result = { status: response.status, body };
+
+      if (!isAcceptableBody(body)) {
+        lastResult = result;
+        console.warn(
+          `[Webshare] proxy #${index} bad body size=${body.length} (attempt ${attempt + 1}/${MAX_PROXY_ATTEMPTS})`
+        );
+        continue;
+      }
+
+      if (preferredProxyIndex !== index) preferredProxyIndex = index;
+      return result;
+    } catch (error) {
+      lastError =
+        error instanceof Error ? error : new Error(String(error));
+      console.warn(
+        `[Webshare] proxy #${index} threw ${lastError.message} (attempt ${attempt + 1}/${MAX_PROXY_ATTEMPTS})`
+      );
+    }
+  }
+
+  if (lastResult) return lastResult;
+  throw lastError || new Error("All Webshare proxies failed");
+}
+
+export async function fetchViaWebshare(
+  targetUrl: string,
+  init: Omit<UndiciRequestInit, "dispatcher"> = {}
+): Promise<UndiciResponse> {
+  let lastError: Error | null = null;
+
+  for (let attempt = 0; attempt < WEBSHARE_PROXY_URLS.length; attempt++) {
+    const index =
+      (preferredProxyIndex + attempt) % WEBSHARE_PROXY_URLS.length;
+    const proxyUrl = WEBSHARE_PROXY_URLS[index];
+
+    try {
+      const response = await fetch(targetUrl, {
+        ...init,
+        dispatcher: getDispatcher(proxyUrl),
+      });
+
+      if (response.status === 429 || response.status === 407) {
+        await response.body?.cancel();
+        console.warn(
+          `[Webshare] proxy #${index} ${response.status}; failing over`
+        );
+        continue;
+      }
+
+      if (preferredProxyIndex !== index) preferredProxyIndex = index;
+      return response;
+    } catch (error) {
+      lastError =
+        error instanceof Error ? error : new Error(String(error));
+      console.warn(
+        `[Webshare] proxy #${index} threw ${lastError.message}; failing over`
+      );
+    }
+  }
+
+  throw lastError || new Error("All Webshare proxies failed");
+}
 
 const USER_AGENT =
   "Mozilla/5.0 (compatible; Googlebot/2.1; +http://www.google.com/bot.html)";
@@ -228,71 +350,37 @@ function parseProfileFromHtml(
   };
 }
 
-function fetchProfilePage(
-  path: string,
-  redirectsRemaining = 3
+// Real profile pages always carry og:title. Login walls have no og: meta at
+// all (just <title>Login • Instagram</title>). Empty shell pages (real 404s
+// or blocked exits) also have no og: meta. So og:title presence is the signal.
+function isRealProfilePage(body: string): boolean {
+  return /<meta[^>]*property=["']og:title["']/.test(body);
+}
+
+async function fetchProfilePage(
+  path: string
 ): Promise<{ status: number; body: string }> {
-  return new Promise((resolve, reject) => {
-    const req = https.request(
-      {
-        hostname: "www.instagram.com",
-        path,
-        method: "GET",
-        headers: {
-          "user-agent": USER_AGENT,
-          accept: ACCEPT,
-          "accept-language": ACCEPT_LANGUAGE,
-        },
-        timeout: getTimeoutMs(),
+  return fetchHtmlViaWebshare(
+    `https://www.instagram.com${path}`,
+    {
+      headers: {
+        "user-agent": USER_AGENT,
+        accept: ACCEPT,
+        "accept-language": ACCEPT_LANGUAGE,
       },
-      (res) => {
-        if (
-          res.statusCode &&
-          res.statusCode >= 300 &&
-          res.statusCode < 400 &&
-          res.headers.location &&
-          redirectsRemaining > 0
-        ) {
-          const redirect = new URL(
-            res.headers.location,
-            `https://www.instagram.com${path}`
-          );
-          if (redirect.hostname !== "www.instagram.com") {
-            reject(new Error(`Redirected to ${redirect.hostname}`));
-            return;
-          }
-          fetchProfilePage(
-            redirect.pathname + redirect.search,
-            redirectsRemaining - 1
-          )
-            .then(resolve)
-            .catch(reject);
-          return;
-        }
-
-        const chunks: Buffer[] = [];
-        res.on("data", (chunk: Buffer) => chunks.push(chunk));
-        res.on("end", () =>
-          resolve({
-            status: res.statusCode || 0,
-            body: Buffer.concat(chunks).toString("utf8"),
-          })
-        );
-      }
-    );
-
-    req.on("error", reject);
-    req.on("timeout", () => {
-      req.destroy();
-      reject(new Error("Request timed out"));
-    });
-    req.end();
-  });
+      signal: AbortSignal.timeout(getTimeoutMs()),
+      redirect: "follow",
+    },
+    isRealProfilePage
+  );
 }
 
 async function fetchProfile(username: string): Promise<InstagramProfile> {
   const { status, body } = await fetchProfilePage(
     `/${encodeURIComponent(username)}/`
+  );
+  console.log(
+    `[Instagram] @${username} status=${status} size=${body.length}`
   );
 
   if (status === 404) {
@@ -344,7 +432,6 @@ export async function fetchInstagramProfile(
   }
 
   try {
-    console.log(`[Instagram] Fetching: @${username}`);
     const profile = await fetchProfile(username);
     const response: InstagramProfileResponse = {
       ok: true,

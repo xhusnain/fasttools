@@ -1,4 +1,5 @@
 import { NextRequest, NextResponse } from "next/server";
+import { fetchViaWebshare } from "@/lib/instagram-profile";
 
 export const runtime = "nodejs";
 
@@ -43,7 +44,7 @@ export async function GET(request: NextRequest) {
   }
 
   try {
-    const response = await fetch(imageUrl, {
+    const response = await fetchViaWebshare(imageUrl, {
       headers: { "User-Agent": USER_AGENT, Accept: IMAGE_ACCEPT },
     });
 
