@@ -38,21 +38,44 @@ function getDispatcher(proxyUrl: string): ProxyAgent {
 let preferredProxyIndex = 0;
 
 // Webshare's rotating endpoint serves a different exit IP per request. Many
-// IPs are flagged by Instagram (login wall / shell). Retrying up to 2× per
-// account lets us stitch together a usable success rate from the clean fraction.
-const MAX_PROXY_ATTEMPTS = WEBSHARE_PROXY_URLS.length * 2;
+// IPs are flagged by Instagram (login wall / shell). Retrying 3× per account
+// stitches together a usable success rate from the clean fraction. Measured:
+// ~20% clean per attempt → 9 attempts ≈ 87% overall success.
+const MAX_PROXY_ATTEMPTS = WEBSHARE_PROXY_URLS.length * 3;
+
+// Cooldown for an account that just returned 429 or 407. Skipped during this
+// window so we don't burn attempts on a known-rate-limited account.
+const RATE_LIMIT_COOLDOWN_MS = 30_000;
+const cooldownUntil = new Array<number>(WEBSHARE_PROXY_URLS.length).fill(0);
+
+function pickProxyIndex(start: number, attempt: number): number {
+  // Walk attempts in round-robin order from `start`, skipping accounts that
+  // are still inside their rate-limit cooldown window.
+  const now = Date.now();
+  for (let i = 0; i < WEBSHARE_PROXY_URLS.length; i++) {
+    const candidate =
+      (start + attempt + i) % WEBSHARE_PROXY_URLS.length;
+    if (cooldownUntil[candidate] <= now) return candidate;
+  }
+  // All accounts in cooldown — fall back to the round-robin pick anyway,
+  // since something has to be tried.
+  return (start + attempt) % WEBSHARE_PROXY_URLS.length;
+}
 
 export async function fetchHtmlViaWebshare(
   targetUrl: string,
   init: Omit<UndiciRequestInit, "dispatcher">,
   isAcceptableBody: (body: string) => boolean
 ): Promise<{ status: number; body: string }> {
+  // Snapshot at request start so mid-loop sticky updates don't perturb
+  // this request's iteration order.
+  const startIndex = preferredProxyIndex;
   let lastResult: { status: number; body: string } | null = null;
   let lastError: Error | null = null;
+  let sawRateLimit = false;
 
   for (let attempt = 0; attempt < MAX_PROXY_ATTEMPTS; attempt++) {
-    const index =
-      (preferredProxyIndex + attempt) % WEBSHARE_PROXY_URLS.length;
+    const index = pickProxyIndex(startIndex, attempt);
     const proxyUrl = WEBSHARE_PROXY_URLS[index];
 
     try {
@@ -63,8 +86,10 @@ export async function fetchHtmlViaWebshare(
 
       if (response.status === 429 || response.status === 407) {
         await response.body?.cancel();
+        cooldownUntil[index] = Date.now() + RATE_LIMIT_COOLDOWN_MS;
+        sawRateLimit = true;
         console.warn(
-          `[Webshare] proxy #${index} ${response.status} (attempt ${attempt + 1}/${MAX_PROXY_ATTEMPTS})`
+          `[Webshare] proxy #${index} ${response.status} (attempt ${attempt + 1}/${MAX_PROXY_ATTEMPTS}); cooling down 30s`
         );
         continue;
       }
@@ -80,7 +105,7 @@ export async function fetchHtmlViaWebshare(
         continue;
       }
 
-      if (preferredProxyIndex !== index) preferredProxyIndex = index;
+      preferredProxyIndex = index;
       return result;
     } catch (error) {
       lastError =
@@ -91,6 +116,13 @@ export async function fetchHtmlViaWebshare(
     }
   }
 
+  // All attempts exhausted. If we got rate-limited, advance the sticky pointer
+  // so the NEXT request doesn't restart at the same burnt-out account.
+  if (sawRateLimit) {
+    preferredProxyIndex =
+      (startIndex + 1) % WEBSHARE_PROXY_URLS.length;
+  }
+
   if (lastResult) return lastResult;
   throw lastError || new Error("All Webshare proxies failed");
 }
@@ -99,11 +131,12 @@ export async function fetchViaWebshare(
   targetUrl: string,
   init: Omit<UndiciRequestInit, "dispatcher"> = {}
 ): Promise<UndiciResponse> {
+  const startIndex = preferredProxyIndex;
   let lastError: Error | null = null;
+  let sawRateLimit = false;
 
   for (let attempt = 0; attempt < WEBSHARE_PROXY_URLS.length; attempt++) {
-    const index =
-      (preferredProxyIndex + attempt) % WEBSHARE_PROXY_URLS.length;
+    const index = pickProxyIndex(startIndex, attempt);
     const proxyUrl = WEBSHARE_PROXY_URLS[index];
 
     try {
@@ -114,13 +147,15 @@ export async function fetchViaWebshare(
 
       if (response.status === 429 || response.status === 407) {
         await response.body?.cancel();
+        cooldownUntil[index] = Date.now() + RATE_LIMIT_COOLDOWN_MS;
+        sawRateLimit = true;
         console.warn(
-          `[Webshare] proxy #${index} ${response.status}; failing over`
+          `[Webshare] proxy #${index} ${response.status}; cooling down 30s`
         );
         continue;
       }
 
-      if (preferredProxyIndex !== index) preferredProxyIndex = index;
+      preferredProxyIndex = index;
       return response;
     } catch (error) {
       lastError =
@@ -129,6 +164,11 @@ export async function fetchViaWebshare(
         `[Webshare] proxy #${index} threw ${lastError.message}; failing over`
       );
     }
+  }
+
+  if (sawRateLimit) {
+    preferredProxyIndex =
+      (startIndex + 1) % WEBSHARE_PROXY_URLS.length;
   }
 
   throw lastError || new Error("All Webshare proxies failed");
