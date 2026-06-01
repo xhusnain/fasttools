@@ -15,6 +15,10 @@ import type { RequestInit as UndiciRequestInit, Response as UndiciResponse } fro
 
 // Ordered Webshare rotating-proxy accounts. Failover walks left-to-right.
 // To add/rotate: edit this list.
+// Note: 429 from these endpoints is a per-account BURST rate limit (requests
+// per ~minute), not the monthly bandwidth quota. The cooldown logic skips a
+// 429'd account for 30s so it can recover — don't remove an account just
+// because a rapid test burst saw 429s.
 const WEBSHARE_PROXY_URLS = [
   "http://flwacgtc-rotate:***REMOVED***@p.webshare.io:80",
   "http://wizdafld-rotate:***REMOVED***@p.webshare.io:80",
@@ -48,18 +52,18 @@ const MAX_PROXY_ATTEMPTS = WEBSHARE_PROXY_URLS.length * 3;
 const RATE_LIMIT_COOLDOWN_MS = 30_000;
 const cooldownUntil = new Array<number>(WEBSHARE_PROXY_URLS.length).fill(0);
 
-function pickProxyIndex(start: number, attempt: number): number {
+function pickProxyIndex(start: number, attempt: number): number | null {
   // Walk attempts in round-robin order from `start`, skipping accounts that
-  // are still inside their rate-limit cooldown window.
+  // are still inside their rate-limit cooldown window. Returns null when ALL
+  // accounts are cooling down — callers should fast-fail rather than waste
+  // attempts on accounts we already know are 429'd.
   const now = Date.now();
   for (let i = 0; i < WEBSHARE_PROXY_URLS.length; i++) {
     const candidate =
       (start + attempt + i) % WEBSHARE_PROXY_URLS.length;
     if (cooldownUntil[candidate] <= now) return candidate;
   }
-  // All accounts in cooldown — fall back to the round-robin pick anyway,
-  // since something has to be tried.
-  return (start + attempt) % WEBSHARE_PROXY_URLS.length;
+  return null;
 }
 
 export async function fetchHtmlViaWebshare(
@@ -76,6 +80,12 @@ export async function fetchHtmlViaWebshare(
 
   for (let attempt = 0; attempt < MAX_PROXY_ATTEMPTS; attempt++) {
     const index = pickProxyIndex(startIndex, attempt);
+    if (index === null) {
+      console.warn(
+        `[Webshare] all accounts cooling down at attempt ${attempt + 1}/${MAX_PROXY_ATTEMPTS}; fast-failing`
+      );
+      break;
+    }
     const proxyUrl = WEBSHARE_PROXY_URLS[index];
 
     try {
@@ -137,6 +147,10 @@ export async function fetchViaWebshare(
 
   for (let attempt = 0; attempt < WEBSHARE_PROXY_URLS.length; attempt++) {
     const index = pickProxyIndex(startIndex, attempt);
+    if (index === null) {
+      console.warn(`[Webshare] all accounts cooling down; fast-failing`);
+      break;
+    }
     const proxyUrl = WEBSHARE_PROXY_URLS[index];
 
     try {
