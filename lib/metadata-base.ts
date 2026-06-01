@@ -1,7 +1,12 @@
 import type { Metadata, Viewport } from "next"
+import { noindexPaths } from "./noindex"
 
 const BASE_URL = "https://www.fasttools.store"
 const SITE_NAME = "FastTools"
+
+// Dead/low-value pages to keep out of the index. Enforced here as a <meta robots>
+// tag (instead of via middleware) so content pages stay statically cacheable.
+const noindexSet = new Set(noindexPaths.map((p) => p.toLowerCase()))
 
 
 export const globalViewport: Viewport = {
@@ -193,6 +198,7 @@ export function createMetadata(options: MetadataOptions): Metadata {
 
     const fullTitle = processedTitle
     const canonicalUrl = getCanonicalUrl(cleanPath)
+    const effectiveNoIndex = noIndex || noindexSet.has(cleanPath.toLowerCase())
 
     const finalOgTitle = ogTitle || fullTitle
     const finalOgDescription = ogDescription || description || "Every tool you need, completely free. No signup required."
@@ -239,7 +245,7 @@ export function createMetadata(options: MetadataOptions): Metadata {
             description: twitterDescription || finalOgDescription,
             creator: twitterCreator || "@FastTools",
         },
-        robots: noIndex ? {
+        robots: effectiveNoIndex ? {
             index: false,
             follow: false,
         } : {

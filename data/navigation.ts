@@ -140,12 +140,15 @@ export const navigationConfig: MegaMenuSection[] = [
                     { title: "Device Information", href: "/web-tools/device-info", icon: Link2 },
                     { title: "Auth Generator", href: "/web-tools/auth-generator", icon: Link2 },
                     { title: "Outlook Safelink Decoder", href: "/web-tools/outlook-safelink-decoder", icon: Link2 },
+                    { title: "DNS Lookup & SSL Checker", href: "/web-tools/dns-ssl-checker", icon: Link2 },
+                    { title: "WHOIS & Domain Lookup", href: "/web-tools/whois-lookup", icon: Link2 },
                 ]
             },
             {
                 title: "Developer",
                 items: [
                     { title: "Cron Generator", href: "/dev-tools/cron-expression-generator", icon: Clock },
+                    { title: "Unix Timestamp Converter", href: "/dev-tools/timestamp-converter", icon: Clock },
                     { title: "JSON Diff", href: "/dev-tools/json-diff", icon: FileCode },
                     { title: "Diff Checker", href: "/dev-tools/diff-checker", icon: FileCode },
                     { title: "JSON to CSV", href: "/dev-tools/json-to-csv", icon: FileText },

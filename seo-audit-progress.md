@@ -7,6 +7,13 @@
 > internal links → optionally split into variant pages → build + commit
 > → tick off below.
 
+> ⚠️ **2026 policy update (May 2026) — read `.claude/memory/seo-skill.md` first.**
+> FAQ rich results were deprecated **May 7 2026** (HowTo back in 2023), and
+> Google's official AI guide says to stop chasing `llms.txt`/`ai.txt`, synonym
+> walls, and verbatim People-Also-Ask copy. The methodology + depth standards
+> below are revised to match. **Net: keep the deep `aboutTool` work — that's the
+> real win — and drop the stuffing.**
+
 **Already ranking — SKIP:** `/social-media-tools/instagram-dp` (32,947 imp / 307 clicks — defended, do not touch)
 
 **Status legend:** [ ] not started · [~] partial (titles/meta only) · [x] deep done
@@ -255,7 +262,7 @@ For each tool, do this in order:
 4. **Audit**: title, meta description, H1, quickAnswer, definition, keyTakeaways, FAQs, useCases, related tools, schema, internal links
 5. **Rewrite** title/meta to lead with the dominant query phrase (preserve "Free" once, no keyword stuffing)
 6. **Improve AEO**: tight `definition` ≤ 30 words, `quickAnswer` ≤ 2 sentences, 5–7 punchy `keyTakeaways`
-7. **Improve GEO**: add a comparison vs the top competitor (use real names: namechk, namecheckup, removebg, paypal.com fees page, etc.), add a synonym/term-mapping section so LLMs match all phrasings
+7. **Improve GEO** (= just good SEO): add a comparison vs the top competitor (use real names: namechk, namecheckup, removebg, paypal.com fees page, etc.). **Skip synonym/term-mapping walls** — Google resolves synonyms itself; one natural mention of common names is enough
 8. **Internal links**: add 4–6 contextually relevant `relatedTools` entries
 9. **Variants**: if a tool has 3+ distinct keyword clusters with real GSC impressions, create variant pages (like instagram-dp has 5 variants)
 10. **Build verify**: `npx tsc --noEmit` minimum, full `npm run build` every 3–5 tools
@@ -272,27 +279,32 @@ For each tool, do this in order:
 After user feedback that batches 24+ were too shallow (just related-tools
 swaps + 1-2 FAQs), the **new depth target** for every tool is:
 
-1. **WebFetch top 5 competitors** for the dominant query — pull their
-   real `<title>`, `<meta description>`, H1, H2s, FAQ questions verbatim
+1. **WebFetch top 5 competitors** for the dominant query — capture their
+   real `<title>`, `<meta description>`, H1, H2s, FAQ questions **as research /
+   gap analysis** (to find what to cover & beat — not to copy; see step 9)
 2. Rewrite **title** following competitor pattern (modifier-stack title
    like "Mortgage Calculator with PMI, Taxes & Insurance (May 2026)")
 3. Rewrite **meta description** with current data points (rates,
    prices, percentages — whatever's current for that tool's domain)
-4. Rewrite **schemaOptions.alternateName** with 10+ real synonyms from
-   competitors
+4. Set **schemaOptions.alternateName** to a *handful* of genuine alternate
+   names users actually search (real product/competitor names + natural
+   synonyms) — **not** a 10+ keyword wall (Google handles synonyms itself)
 5. Rewrite **schemaOptions.featureList** with 12-15 specific features
    matching what competitors actually showcase
 6. Update header.title + header.description to match
 7. Rewrite **overview**, **definition**, **quickAnswer**,
    **keyTakeaways** with current data
-8. Build **aboutTool** with 6-10 deep sections including:
+8. Build **aboutTool** with 6-10 deep sections (THE win — first-hand substance):
    - The actual formula or math
-   - A current-data reference table (rates, prices, limits)
+   - A current-data reference table (rates, prices, limits — dated)
    - Comparison tables (15 vs 30, FHA vs conventional, etc.)
-   - Competitor comparison table with honest assessment
-   - "Same tool, many names" semantic synonym block
-9. Build **15+ FAQs** using verbatim People-Also-Ask questions from
-   Google for that query
+   - Competitor comparison table with honest assessment (incl. where they win)
+   - A short trust note (how we compute / what we don't store)
+   - ~~"Same tool, many names" synonym block~~ → **dropped; reads as stuffing**
+9. Build **5–10 high-quality FAQs** answering real People-Also-Ask questions
+   **in our own words** — original, useful answers; **never paste PAA verbatim**
+   (recycled copy risks the scaled-content-abuse policy). Quality over count.
+   FAQ rich results are gone (May 2026); the content is for users + AI citation
 10. Rewrite **relatedTools** with 8-10 workflow-relevant crosslinks
 
 ## Progress

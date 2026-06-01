@@ -4,10 +4,20 @@ import tls from "tls";
 import { PROXY_LIST } from "./proxies";
 
 /**
- * Fetches Instagram profile data by scraping the profile page with Googlebot UA.
- * Uses Webshare residential proxies so Instagram sees a real IP (not datacenter).
- * On Cloud Run, datacenter IPs get blocked — proxies solve this.
+ * Instagram profile lookup is intentionally layered:
+ * 1. Native public profile HTML lookup.
+ * 2. Residential/datacenter proxy retries for hosts where Instagram blocks
+ *    the server IP.
+ * 3. Optional paid provider fallback for emergency reliability.
+ *
+ * This keeps high-volume traffic on our own low-cost path. Paid APIs should be
+ * fallback-only, because per-search pricing gets expensive quickly.
  */
+
+const PROFILE_HTML_USER_AGENT = "undici";
+const DEFAULT_TIMEOUT_MS = 9000;
+const DEFAULT_PROFILE_CACHE_TTL_SECONDS = 86400;
+const DEFAULT_PROFILE_STALE_TTL_SECONDS = 604800;
 
 interface OgProfileData {
   username: string;
@@ -23,6 +33,95 @@ interface OgProfileData {
   external_url: string | null;
 }
 
+interface ProxyConfig {
+  host: string;
+  port: number;
+  user?: string;
+  password?: string;
+}
+
+interface RawHttpResponse {
+  status: number;
+  headers: Record<string, string>;
+  body: Buffer;
+}
+
+interface ProfileCacheEntry {
+  expiresAt: number;
+  staleUntil: number;
+  response: { ok: boolean; status: number; data: any };
+}
+
+const profileCache = new Map<string, ProfileCacheEntry>();
+
+class ProfileFetchError extends Error {
+  status: number;
+
+  constructor(message: string, status: number) {
+    super(message);
+    this.name = "ProfileFetchError";
+    this.status = status;
+  }
+}
+
+function getEnv(name: string): string {
+  return process.env[name]?.trim() || "";
+}
+
+function getTimeoutMs(): number {
+  const configured = Number(getEnv("INSTAGRAM_FETCH_TIMEOUT_MS"));
+  return Number.isFinite(configured) && configured >= 1000
+    ? configured
+    : DEFAULT_TIMEOUT_MS;
+}
+
+function getPositiveNumberEnv(name: string, fallback: number): number {
+  const configured = Number(getEnv(name));
+  return Number.isFinite(configured) && configured > 0 ? configured : fallback;
+}
+
+function getCacheKey(username: string): string {
+  return username.toLowerCase();
+}
+
+function getCachedProfile(cacheKey: string, allowStale = false) {
+  const cached = profileCache.get(cacheKey);
+  if (!cached) return null;
+
+  const now = Date.now();
+  if (cached.expiresAt > now || (allowStale && cached.staleUntil > now)) {
+    return cached.response;
+  }
+
+  profileCache.delete(cacheKey);
+  return null;
+}
+
+function setCachedProfile(
+  cacheKey: string,
+  response: { ok: boolean; status: number; data: any }
+) {
+  if (!response.ok) return;
+
+  const ttlMs =
+    getPositiveNumberEnv(
+      "INSTAGRAM_PROFILE_CACHE_TTL_SECONDS",
+      DEFAULT_PROFILE_CACHE_TTL_SECONDS
+    ) * 1000;
+  const staleMs =
+    getPositiveNumberEnv(
+      "INSTAGRAM_PROFILE_STALE_TTL_SECONDS",
+      DEFAULT_PROFILE_STALE_TTL_SECONDS
+    ) * 1000;
+  const now = Date.now();
+
+  profileCache.set(cacheKey, {
+    expiresAt: now + ttlMs,
+    staleUntil: now + ttlMs + staleMs,
+    response,
+  });
+}
+
 function parseCountText(text: string): number {
   if (!text) return 0;
   const cleaned = text.replace(/,/g, "").trim();
@@ -36,10 +135,33 @@ function parseCountText(text: string): number {
   return Math.round(num);
 }
 
+function readCount(...values: any[]): number {
+  for (const value of values) {
+    if (typeof value === "number" && Number.isFinite(value)) return value;
+    if (typeof value === "string") {
+      const count = parseCountText(value);
+      if (count > 0 || value === "0") return count;
+    }
+    if (value && typeof value.count === "number") return value.count;
+  }
+  return 0;
+}
+
+function firstString(...values: any[]): string {
+  for (const value of values) {
+    if (typeof value === "string" && value.trim()) return value.trim();
+  }
+  return "";
+}
+
 function decodeHtmlEntities(text: string): string {
   return text
-    .replace(/&#x([0-9a-fA-F]+);/g, (_, hex) => String.fromCharCode(parseInt(hex, 16)))
-    .replace(/&#(\d+);/g, (_, dec) => String.fromCharCode(parseInt(dec, 10)))
+    .replace(/&#x([0-9a-fA-F]+);/g, (_, hex) =>
+      String.fromCharCode(parseInt(hex, 16))
+    )
+    .replace(/&#(\d+);/g, (_, dec) =>
+      String.fromCharCode(parseInt(dec, 10))
+    )
     .replace(/&amp;/g, "&")
     .replace(/&lt;/g, "<")
     .replace(/&gt;/g, ">")
@@ -47,94 +169,275 @@ function decodeHtmlEntities(text: string): string {
     .replace(/&apos;/g, "'");
 }
 
-function getRandomProxy() {
-  const proxyStr = PROXY_LIST[Math.floor(Math.random() * PROXY_LIST.length)];
-  const [host, port, user, password] = proxyStr.split(":");
-  return { host, port: parseInt(port, 10), user, password };
+function escapeRegExp(value: string): string {
+  return value.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+}
+
+function getMetaContent(html: string, key: string): string | null {
+  const tags = html.match(/<meta\s+[^>]*>/gi) || [];
+  const keyPattern = new RegExp(
+    `(?:property|name)=["']${escapeRegExp(key)}["']`,
+    "i"
+  );
+
+  for (const tag of tags) {
+    if (!keyPattern.test(tag)) continue;
+    const content = tag.match(/\scontent=["']([^"']*)["']/i);
+    if (content?.[1]) return decodeHtmlEntities(content[1]);
+  }
+
+  return null;
+}
+
+function parseProxy(proxyStr: string): ProxyConfig | null {
+  const value = proxyStr.trim();
+  if (!value) return null;
+
+  if (value.includes("://")) {
+    try {
+      const url = new URL(value);
+      if (!url.hostname || !url.port) return null;
+      return {
+        host: url.hostname,
+        port: Number(url.port),
+        user: decodeURIComponent(url.username || ""),
+        password: decodeURIComponent(url.password || ""),
+      };
+    } catch {
+      return null;
+    }
+  }
+
+  const [host, port, user, password] = value.split(":");
+  if (!host || !port) return null;
+
+  return {
+    host,
+    port: Number(port),
+    user,
+    password,
+  };
+}
+
+function getProxyList(): ProxyConfig[] {
+  const envProxyList = getEnv("INSTAGRAM_PROXY_LIST");
+  const entries = envProxyList
+    ? envProxyList.split(/[\s,]+/)
+    : PROXY_LIST;
+
+  return entries
+    .map(parseProxy)
+    .filter((proxy): proxy is ProxyConfig => {
+      return Boolean(
+        proxy &&
+          proxy.host &&
+          Number.isFinite(proxy.port) &&
+          proxy.port > 0
+      );
+    });
+}
+
+function getOrderedProxyList(): ProxyConfig[] {
+  const proxies = getProxyList();
+  if (proxies.length <= 1) return proxies;
+
+  const startIndex = Math.floor(Math.random() * proxies.length);
+  return [...proxies.slice(startIndex), ...proxies.slice(0, startIndex)];
+}
+
+function getProxyMaxAttempts(maxRetries: number): number {
+  const configured = Number(getEnv("INSTAGRAM_PROXY_MAX_ATTEMPTS"));
+  if (Number.isFinite(configured) && configured >= 0) return configured;
+
+  const proxyCount = getProxyList().length;
+  return Math.min(proxyCount, Math.max(maxRetries - 1, 6));
+}
+
+function findHeaderSeparator(raw: Buffer): number {
+  for (let i = 0; i <= raw.length - 4; i++) {
+    if (
+      raw[i] === 0x0d &&
+      raw[i + 1] === 0x0a &&
+      raw[i + 2] === 0x0d &&
+      raw[i + 3] === 0x0a
+    ) {
+      return i;
+    }
+  }
+  return -1;
+}
+
+function findLineEnd(buffer: Buffer, start: number): number {
+  for (let i = start; i <= buffer.length - 2; i++) {
+    if (buffer[i] === 0x0d && buffer[i + 1] === 0x0a) return i;
+  }
+  return -1;
+}
+
+function decodeChunkedBody(
+  body: Buffer<ArrayBufferLike>
+): Buffer<ArrayBufferLike> {
+  const chunks: Buffer<ArrayBufferLike>[] = [];
+  let offset = 0;
+
+  while (offset < body.length) {
+    const lineEnd = findLineEnd(body, offset);
+    if (lineEnd === -1) return body;
+
+    const sizeLine = body.subarray(offset, lineEnd).toString("ascii");
+    const size = parseInt(sizeLine.split(";")[0].trim(), 16);
+    if (!Number.isFinite(size)) return body;
+    if (size === 0) break;
+
+    const chunkStart = lineEnd + 2;
+    const chunkEnd = chunkStart + size;
+    if (chunkEnd > body.length) return body;
+
+    chunks.push(body.subarray(chunkStart, chunkEnd));
+    offset = chunkEnd + 2;
+  }
+
+  return Buffer.concat(chunks);
+}
+
+function parseRawHttpResponse(raw: Buffer): RawHttpResponse {
+  const separatorIndex = findHeaderSeparator(raw);
+  if (separatorIndex === -1) {
+    throw new Error("Invalid HTTP response");
+  }
+
+  const headerText = raw.subarray(0, separatorIndex).toString("latin1");
+  const lines = headerText.split("\r\n");
+  const statusMatch = lines[0]?.match(/HTTP\/\d\.\d\s+(\d+)/);
+  const status = statusMatch ? parseInt(statusMatch[1], 10) : 0;
+  const headers: Record<string, string> = {};
+
+  for (const line of lines.slice(1)) {
+    const splitAt = line.indexOf(":");
+    if (splitAt === -1) continue;
+    headers[line.slice(0, splitAt).trim().toLowerCase()] = line
+      .slice(splitAt + 1)
+      .trim();
+  }
+
+  let body: Buffer<ArrayBufferLike> = raw.subarray(separatorIndex + 4);
+  if (/chunked/i.test(headers["transfer-encoding"] || "")) {
+    body = decodeChunkedBody(body);
+  }
+
+  return { status, headers, body };
+}
+
+function proxyAuthHeader(proxy: ProxyConfig): string | undefined {
+  if (!proxy.user || !proxy.password) return undefined;
+  return `Basic ${Buffer.from(`${proxy.user}:${proxy.password}`).toString(
+    "base64"
+  )}`;
 }
 
 /**
- * Fetch a page through a Webshare HTTP proxy using CONNECT tunnel for HTTPS.
+ * Fetch a page through an HTTP proxy using CONNECT tunnel for HTTPS.
  */
 function fetchPageViaProxy(
+  proxy: ProxyConfig,
   targetHost: string,
-  targetPath: string
+  targetPath: string,
+  redirectsRemaining = 3,
+  extraHeaders: Record<string, string> = {}
 ): Promise<{ status: number; body: string }> {
   return new Promise((resolve, reject) => {
-    const proxy = getRandomProxy();
-    const auth = Buffer.from(`${proxy.user}:${proxy.password}`).toString("base64");
+    const auth = proxyAuthHeader(proxy);
+    const headers: Record<string, string> = {
+      Host: `${targetHost}:443`,
+    };
+    if (auth) headers["Proxy-Authorization"] = auth;
 
     const connectReq = http.request({
       host: proxy.host,
       port: proxy.port,
       method: "CONNECT",
       path: `${targetHost}:443`,
-      headers: {
-        Host: `${targetHost}:443`,
-        "Proxy-Authorization": `Basic ${auth}`,
-      },
-      timeout: 12000,
+      headers,
+      timeout: getTimeoutMs(),
     });
 
-    connectReq.on("connect", (_res, socket) => {
-      // Upgrade to TLS through the proxy tunnel
+    connectReq.on("connect", (res, socket) => {
+      if (res.statusCode !== 200) {
+        socket.destroy();
+        reject(new Error(`Proxy CONNECT ${res.statusCode || 0}`));
+        return;
+      }
+
       const tlsSocket = tls.connect(
         {
           host: targetHost,
-          socket: socket,
+          socket,
           servername: targetHost,
         },
         () => {
-          // Now make the HTTP request over TLS
+          const mergedHeaders: Record<string, string> = {
+            "User-Agent": PROFILE_HTML_USER_AGENT,
+            Accept: "*/*",
+            "Accept-Language": "*",
+            ...extraHeaders,
+          };
+          const headerLines = Object.entries(mergedHeaders).map(
+            ([key, value]) => `${key}: ${value}`
+          );
           const requestData = [
             `GET ${targetPath} HTTP/1.1`,
             `Host: ${targetHost}`,
-            `User-Agent: Mozilla/5.0 (compatible; Googlebot/2.1; +http://www.google.com/bot.html)`,
-            `Accept: text/html`,
-            `Accept-Language: en-US,en;q=0.9`,
-            `Connection: close`,
-            ``,
-            ``,
+            ...headerLines,
+            "Connection: close",
+            "",
+            "",
           ].join("\r\n");
 
           tlsSocket.write(requestData);
 
-          let rawResponse = "";
-          tlsSocket.on("data", (chunk: Buffer) => {
-            rawResponse += chunk.toString();
-          });
-
+          const chunks: Buffer[] = [];
+          tlsSocket.on("data", (chunk: Buffer) => chunks.push(chunk));
           tlsSocket.on("end", () => {
             tlsSocket.destroy();
-            // Parse HTTP response
-            const headerEnd = rawResponse.indexOf("\r\n\r\n");
-            if (headerEnd === -1) {
-              reject(new Error("Invalid HTTP response from proxy"));
-              return;
-            }
-            const headerPart = rawResponse.substring(0, headerEnd);
-            const body = rawResponse.substring(headerEnd + 4);
-            const statusMatch = headerPart.match(/HTTP\/\d\.\d (\d+)/);
-            const status = statusMatch ? parseInt(statusMatch[1], 10) : 0;
 
-            // Handle redirects
-            if ((status === 301 || status === 302)) {
-              const locMatch = headerPart.match(/Location:\s*(.+)/i);
-              if (locMatch) {
-                const loc = locMatch[1].trim();
-                const redirectPath = loc.startsWith("http")
-                  ? new URL(loc).pathname
-                  : loc;
-                fetchPageViaProxy(targetHost, redirectPath)
+            try {
+              const parsed = parseRawHttpResponse(Buffer.concat(chunks));
+
+              if (
+                parsed.status >= 300 &&
+                parsed.status < 400 &&
+                parsed.headers.location &&
+                redirectsRemaining > 0
+              ) {
+                const redirect = new URL(
+                  parsed.headers.location,
+                  `https://${targetHost}${targetPath}`
+                );
+                if (redirect.hostname !== targetHost) {
+                  reject(new Error(`Redirected to ${redirect.hostname}`));
+                  return;
+                }
+
+                fetchPageViaProxy(
+                  proxy,
+                  targetHost,
+                  redirect.pathname + redirect.search,
+                  redirectsRemaining - 1,
+                  extraHeaders
+                )
                   .then(resolve)
                   .catch(reject);
                 return;
               }
+
+              resolve({
+                status: parsed.status,
+                body: parsed.body.toString("utf8"),
+              });
+            } catch (error) {
+              reject(error);
             }
-
-            resolve({ status, body });
           });
-
           tlsSocket.on("error", (err) => {
             tlsSocket.destroy();
             reject(err);
@@ -159,11 +462,13 @@ function fetchPageViaProxy(
 }
 
 /**
- * Fetch a page directly (no proxy) — works locally / residential IPs.
+ * Fetch a page directly (no proxy) - works locally and on some residential IPs.
  */
 function fetchPageDirect(
   targetHost: string,
-  targetPath: string
+  targetPath: string,
+  redirectsRemaining = 3,
+  extraHeaders: Record<string, string> = {}
 ): Promise<{ status: number; body: string }> {
   return new Promise((resolve, reject) => {
     const req = https.request(
@@ -172,31 +477,48 @@ function fetchPageDirect(
         path: targetPath,
         method: "GET",
         headers: {
-          "user-agent":
-            "Mozilla/5.0 (compatible; Googlebot/2.1; +http://www.google.com/bot.html)",
-          accept: "text/html",
-          "accept-language": "en-US,en;q=0.9",
+          "user-agent": PROFILE_HTML_USER_AGENT,
+          accept: "*/*",
+          "accept-language": "*",
+          ...extraHeaders,
         },
-        timeout: 10000,
+        timeout: getTimeoutMs(),
       },
       (res) => {
         if (
-          (res.statusCode === 301 || res.statusCode === 302) &&
-          res.headers.location
+          res.statusCode &&
+          res.statusCode >= 300 &&
+          res.statusCode < 400 &&
+          res.headers.location &&
+          redirectsRemaining > 0
         ) {
-          const redirectPath = res.headers.location.startsWith("http")
-            ? new URL(res.headers.location).pathname
-            : res.headers.location;
-          fetchPageDirect(targetHost, redirectPath)
+          const redirect = new URL(
+            res.headers.location,
+            `https://${targetHost}${targetPath}`
+          );
+          if (redirect.hostname !== targetHost) {
+            reject(new Error(`Redirected to ${redirect.hostname}`));
+            return;
+          }
+
+          fetchPageDirect(
+            targetHost,
+            redirect.pathname + redirect.search,
+            redirectsRemaining - 1,
+            extraHeaders
+          )
             .then(resolve)
             .catch(reject);
           return;
         }
 
-        let data = "";
-        res.on("data", (chunk: Buffer) => (data += chunk.toString()));
+        const chunks: Buffer[] = [];
+        res.on("data", (chunk: Buffer) => chunks.push(chunk));
         res.on("end", () =>
-          resolve({ status: res.statusCode || 0, body: data })
+          resolve({
+            status: res.statusCode || 0,
+            body: Buffer.concat(chunks).toString("utf8"),
+          })
         );
       }
     );
@@ -209,42 +531,48 @@ function fetchPageDirect(
   });
 }
 
+// Instagram's logged-out page exposes the real profile picture in og:image
+// only some of the time. On many server IPs it now returns an empty og:image
+// (profile_picture_ssr_error) or the static UI logo (…/rsrc.php/…). Neither is
+// a usable profile picture, so we must not treat them as one.
+function isUsableProfilePic(url: string | null): url is string {
+  if (!url) return false;
+  if (!/^https?:\/\//i.test(url)) return false;
+  // Static UI assets (logo / placeholders) are not a profile picture.
+  if (/static\.cdninstagram\.com\/rsrc\.php/i.test(url)) return false;
+  return true;
+}
+
 function parseProfileFromHtml(
   html: string,
   username: string
 ): OgProfileData | null {
-  const ogImage = html.match(
-    /<meta[^>]*property="og:image"[^>]*content="([^"]+)"/
-  );
-  if (!ogImage) return null;
-
-  const ogTitle = html.match(
-    /<meta[^>]*property="og:title"[^>]*content="([^"]+)"/
-  );
-  const ogDesc = html.match(
-    /<meta[^>]*property="og:description"[^>]*content="([^"]+)"/
-  );
-
-  const imgUrl = decodeHtmlEntities(ogImage[1]);
-  const desc = ogDesc ? decodeHtmlEntities(ogDesc[1]) : "";
-  const title = ogTitle ? decodeHtmlEntities(ogTitle[1]) : "";
-
-  const nameMatch = title.match(/^(.+?)\s*\(@/);
-  const fullName = nameMatch ? nameMatch[1].trim() : username;
+  const desc = getMetaContent(html, "og:description") || "";
+  const title = getMetaContent(html, "og:title") || "";
 
   const followersMatch = desc.match(/([\d,.]+[KMB]?)\s*Followers/i);
   const followingMatch = desc.match(/([\d,.]+[KMB]?)\s*Following/i);
   const postsMatch = desc.match(/([\d,.]+[KMB]?)\s*Posts/i);
+  const titleMatch = title.match(/^(.+?)\s*\(@[\w.]+\)/);
 
-  // Instagram CDN URLs have signed auth tokens — modifying the stp size param
-  // (e.g. s100x100 → s1080x1080) invalidates the signature and returns 403.
-  // We use the original URL as-is from og:image. Both HD and SD point to the
-  // same signed URL — the component scales it up via CSS for display.
-  const hdUrl = imgUrl;
-  const sdUrl = imgUrl;
+  // The logged-out "wall" page Instagram serves to blocked IPs has no follower
+  // stats and no "Name (@handle)" title — only a static logo in og:image. If we
+  // see neither signal this is NOT a real profile page, so bail (return null)
+  // rather than returning a hollow 0/0/0 object. Returning null lets the caller
+  // fall through to proxy / paid-provider attempts instead of caching garbage.
+  if (!followersMatch && !titleMatch) {
+    return null;
+  }
+
+  const fullName = titleMatch ? titleMatch[1].trim() : username;
+
+  // Do NOT gate on og:image — it is now frequently empty even on valid
+  // profiles. Keep it only when it points at a real CDN image.
+  const rawImg = getMetaContent(html, "og:image");
+  const picUrl = isUsableProfilePic(rawImg) ? rawImg : "";
 
   const isVerified =
-    html.includes("is_verified") ||
+    html.includes('"is_verified":true') ||
     title.includes("✓") ||
     title.includes("☑");
 
@@ -265,18 +593,298 @@ function parseProfileFromHtml(
     followers: parseCountText(followersMatch?.[1] || "0"),
     followees: parseCountText(followingMatch?.[1] || "0"),
     posts_count: parseCountText(postsMatch?.[1] || "0"),
-    profile_pic_url: sdUrl,
-    profile_pic_url_hd: hdUrl,
+    profile_pic_url: picUrl,
+    profile_pic_url_hd: picUrl,
     is_verified: isVerified,
     is_private: isPrivate,
     external_url: null,
   };
 }
 
+function normalizeProviderProfile(
+  user: any,
+  fallbackUsername: string
+): OgProfileData | null {
+  if (!user || typeof user !== "object") return null;
+
+  const profilePicUrl = firstString(
+    user.profile_pic_url,
+    user.profilePictureUrl,
+    user.profile_picture,
+    user.profilePicture,
+    user.avatar
+  );
+  const profilePicUrlHd = firstString(
+    user.profile_pic_url_hd,
+    user.hd_profile_pic_url,
+    user.hd_profile_pic_url_info?.url,
+    user.profile_picture_hd,
+    profilePicUrl
+  );
+
+  if (!profilePicUrl && !profilePicUrlHd) return null;
+
+  const username = firstString(user.username, user.handle, fallbackUsername);
+  const biography = firstString(
+    user.biography_with_entities?.raw_text,
+    user.biography,
+    user.bio
+  );
+
+  return {
+    username,
+    full_name: firstString(user.full_name, user.fullName, user.name, username),
+    biography,
+    followers: readCount(
+      user.edge_followed_by,
+      user.followers,
+      user.follower_count,
+      user.followers_count
+    ),
+    followees: readCount(
+      user.edge_follow,
+      user.following,
+      user.following_count,
+      user.followees
+    ),
+    posts_count: readCount(
+      user.edge_owner_to_timeline_media,
+      user.posts_count,
+      user.media_count,
+      user.post_count
+    ),
+    profile_pic_url: profilePicUrl || profilePicUrlHd,
+    profile_pic_url_hd: profilePicUrlHd || profilePicUrl,
+    is_verified: Boolean(user.is_verified || user.verified),
+    is_private: Boolean(user.is_private || user.private),
+    external_url: firstString(user.external_url, user.url) || null,
+  };
+}
+
+function getSessionIds(): string[] {
+  return getEnv("INSTAGRAM_SESSIONID")
+    .split(/[\s,]+/)
+    .map((value) => value.trim())
+    .filter(Boolean);
+}
+
+function instagramApiHeaders(sessionId: string): Record<string, string> {
+  return {
+    "user-agent":
+      "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36",
+    accept: "*/*",
+    "accept-language": "en-US,en;q=0.9",
+    "x-ig-app-id": "936619743392459",
+    "x-requested-with": "XMLHttpRequest",
+    cookie: `sessionid=${sessionId}`,
+    referer: "https://www.instagram.com/",
+  };
+}
+
+/**
+ * Custom (no third-party) profile fetch using Instagram's own web_profile_info
+ * JSON API. This is the ONLY path that returns the real profile picture, but
+ * Instagram now requires an authenticated session, so it is enabled only when
+ * an INSTAGRAM_SESSIONID is configured. Requests go direct first, then through
+ * the residential proxy pool (server IPs are frequently blocked).
+ */
+async function fetchProfileViaInstagramJson(
+  username: string,
+  maxRetries: number
+): Promise<OgProfileData> {
+  const sessionId = getSessionIds()[0];
+  if (!sessionId) {
+    throw new Error("INSTAGRAM_SESSIONID is not configured");
+  }
+
+  const targetHost = "www.instagram.com";
+  const targetPath = `/api/v1/users/web_profile_info/?username=${encodeURIComponent(
+    username
+  )}`;
+  const headers = instagramApiHeaders(sessionId);
+
+  const parse = (status: number, body: string): OgProfileData => {
+    if (status === 404) {
+      throw new ProfileFetchError("User not found", 404);
+    }
+    if (status === 401 || status === 403) {
+      throw new Error(
+        `web_profile_info auth rejected (HTTP ${status}) — INSTAGRAM_SESSIONID may be expired`
+      );
+    }
+    if (status !== 200) {
+      throw new Error(`HTTP ${status}`);
+    }
+
+    let payload: any;
+    try {
+      payload = JSON.parse(body);
+    } catch {
+      throw new Error("web_profile_info returned non-JSON (likely a block page)");
+    }
+
+    if (payload?.require_login || payload?.status === "fail") {
+      throw new Error("web_profile_info requires login (session rejected)");
+    }
+
+    const profile = normalizeProviderProfile(payload?.data?.user, username);
+    if (!profile) {
+      throw new Error("web_profile_info response had no usable profile");
+    }
+    return profile;
+  };
+
+  let lastError: Error | null = null;
+
+  try {
+    console.log(`[Instagram] JSON native attempt: @${username}`);
+    const { status, body } = await fetchPageDirect(
+      targetHost,
+      targetPath,
+      3,
+      headers
+    );
+    return parse(status, body);
+  } catch (error) {
+    if (error instanceof ProfileFetchError && error.status === 404) throw error;
+    lastError = error instanceof Error ? error : new Error(String(error));
+    console.warn(`[Instagram] JSON native attempt failed: ${lastError.message}`);
+  }
+
+  const proxyAttempts = getOrderedProxyList().slice(
+    0,
+    getProxyMaxAttempts(maxRetries)
+  );
+
+  for (let index = 0; index < proxyAttempts.length; index++) {
+    try {
+      console.log(
+        `[Instagram] JSON proxy attempt ${index + 1}/${proxyAttempts.length}: @${username}`
+      );
+      const { status, body } = await fetchPageViaProxy(
+        proxyAttempts[index],
+        targetHost,
+        targetPath,
+        3,
+        headers
+      );
+      return parse(status, body);
+    } catch (error) {
+      if (error instanceof ProfileFetchError && error.status === 404) {
+        throw error;
+      }
+      lastError = error instanceof Error ? error : new Error(String(error));
+      console.warn(
+        `[Instagram] JSON proxy attempt ${index + 1} failed: ${lastError.message}`
+      );
+    }
+  }
+
+  throw lastError || new Error("All web_profile_info attempts failed");
+}
+
+async function fetchProfileViaInstagramHtml(
+  username: string,
+  maxRetries: number
+): Promise<OgProfileData> {
+  const targetHost = "www.instagram.com";
+  const targetPath = `/${encodeURIComponent(username)}/`;
+  let lastError: Error | null = null;
+
+  try {
+    console.log(`[Instagram] Native attempt: @${username} (proxy=false)`);
+    const { status, body } = await fetchPageDirect(targetHost, targetPath);
+
+    if (status === 404 || body.includes("Sorry, this page isn't available")) {
+      throw new ProfileFetchError("User not found", 404);
+    }
+
+    if (status !== 200) {
+      throw new Error(`HTTP ${status}`);
+    }
+
+    const profileData = parseProfileFromHtml(body, username);
+    if (profileData) return profileData;
+
+    throw new Error("Failed to parse profile from Instagram HTML");
+  } catch (error) {
+    if (error instanceof ProfileFetchError && error.status === 404) {
+      throw error;
+    }
+    lastError = error instanceof Error ? error : new Error(String(error));
+    console.warn(`[Instagram] Native attempt failed: ${lastError.message}`);
+  }
+
+  const proxyAttempts = getOrderedProxyList().slice(
+    0,
+    getProxyMaxAttempts(maxRetries)
+  );
+
+  for (let index = 0; index < proxyAttempts.length; index++) {
+    const proxy = proxyAttempts[index];
+    try {
+      console.log(
+        `[Instagram] Proxy attempt ${index + 1}/${proxyAttempts.length}: @${username}`
+      );
+
+      const { status, body } = await fetchPageViaProxy(
+        proxy,
+        targetHost,
+        targetPath
+      );
+
+      if (status === 404 || body.includes("Sorry, this page isn't available")) {
+        throw new ProfileFetchError("User not found", 404);
+      }
+
+      if (status !== 200) {
+        throw new Error(`HTTP ${status}`);
+      }
+
+      const profileData = parseProfileFromHtml(body, username);
+      if (!profileData) {
+        throw new Error("Failed to parse profile from Instagram HTML");
+      }
+
+      return profileData;
+    } catch (error) {
+      if (error instanceof ProfileFetchError && error.status === 404) {
+        throw error;
+      }
+      lastError = error instanceof Error ? error : new Error(String(error));
+      console.warn(
+        `[Instagram] Proxy attempt ${index + 1} failed: ${lastError.message}`
+      );
+    }
+  }
+
+  throw lastError || new Error("All Instagram profile attempts failed");
+}
+
+function buildInstagramApiResponse(profile: OgProfileData) {
+  return {
+    data: {
+      user: {
+        username: profile.username,
+        full_name: profile.full_name,
+        biography: profile.biography,
+        edge_followed_by: { count: profile.followers },
+        edge_follow: { count: profile.followees },
+        edge_owner_to_timeline_media: { count: profile.posts_count },
+        profile_pic_url: profile.profile_pic_url,
+        profile_pic_url_hd: profile.profile_pic_url_hd,
+        is_verified: profile.is_verified,
+        is_private: profile.is_private,
+        external_url: profile.external_url,
+      },
+    },
+  };
+}
+
 export async function fetchInstagramProfile(
   url: string,
   _headers: Record<string, string>,
-  maxRetries: number = 4
+  maxRetries: number = 8
 ): Promise<{ ok: boolean; status: number; data: any }> {
   const usernameMatch = url.match(/username=([^&]+)/);
   const username = usernameMatch ? decodeURIComponent(usernameMatch[1]) : null;
@@ -285,72 +893,81 @@ export async function fetchInstagramProfile(
     return { ok: false, status: 400, data: { error: "No username provided" } };
   }
 
-  let lastError: Error | null = null;
-  const targetPath = `/${username}/`;
+  const cacheKey = getCacheKey(username);
+  const freshCached = getCachedProfile(cacheKey);
+  if (freshCached) {
+    console.log(`[Instagram] Cache hit: @${username}`);
+    return freshCached;
+  }
 
-  for (let attempt = 1; attempt <= maxRetries; attempt++) {
-    // Attempt 1: direct (works locally). Attempts 2+: via proxy (for Cloud Run).
-    const useProxy = attempt > 1;
+  const providerAttempts: Array<{
+    name: string;
+    enabled: boolean;
+    fetchProfile: () => Promise<OgProfileData>;
+  }> = [
+    {
+      // Custom authenticated path — the only source that returns the real
+      // profile picture. Enabled only when an Instagram session is configured.
+      name: "instagram-json",
+      enabled: getSessionIds().length > 0,
+      fetchProfile: () => fetchProfileViaInstagramJson(username, maxRetries),
+    },
+    {
+      // Unauthenticated og-tag scrape. Always on as a fallback; returns stats
+      // (followers/following/posts/name) but no profile picture.
+      name: "instagram-html",
+      enabled: true,
+      fetchProfile: () => fetchProfileViaInstagramHtml(username, maxRetries),
+    },
+  ];
+
+  let lastError: Error | null = null;
+
+  for (const attempt of providerAttempts) {
+    if (!attempt.enabled) continue;
 
     try {
+      const profileData = await attempt.fetchProfile();
       console.log(
-        `[Instagram] Attempt ${attempt}: Fetching @${username} (proxy=${useProxy})`
+        `[Instagram] Success via ${attempt.name}: @${profileData.username}`
       );
 
-      const { status, body } = useProxy
-        ? await fetchPageViaProxy("www.instagram.com", targetPath)
-        : await fetchPageDirect("www.instagram.com", targetPath);
-
-      if (status === 404 || body.includes("Sorry, this page isn't available")) {
-        return { ok: false, status: 404, data: { error: "User not found" } };
-      }
-
-      if (status !== 200) {
-        console.warn(`[Instagram] Attempt ${attempt}: status ${status}`);
-        lastError = new Error(`HTTP ${status}`);
-        continue;
-      }
-
-      const profileData = parseProfileFromHtml(body, username);
-
-      if (!profileData) {
-        console.warn(`[Instagram] Attempt ${attempt}: Could not parse og:meta from HTML`);
-        lastError = new Error("Failed to parse profile from HTML");
-        continue;
-      }
-
-      console.log(
-        `[Instagram] Success: @${username} — ${profileData.full_name}, ${profileData.followers} followers (proxy=${useProxy})`
-      );
-
-      return {
+      const response = {
         ok: true,
         status: 200,
-        data: {
-          data: {
-            user: {
-              username: profileData.username,
-              full_name: profileData.full_name,
-              biography: profileData.biography,
-              edge_followed_by: { count: profileData.followers },
-              edge_follow: { count: profileData.followees },
-              edge_owner_to_timeline_media: { count: profileData.posts_count },
-              profile_pic_url: profileData.profile_pic_url,
-              profile_pic_url_hd: profileData.profile_pic_url_hd,
-              is_verified: profileData.is_verified,
-              is_private: profileData.is_private,
-              external_url: profileData.external_url,
-            },
-          },
-        },
+        data: buildInstagramApiResponse(profileData),
       };
+      setCachedProfile(cacheKey, response);
+      return response;
     } catch (error) {
+      if (error instanceof ProfileFetchError && error.status === 404) {
+        return {
+          ok: false,
+          status: 404,
+          data: { error: "User not found" },
+        };
+      }
+
       lastError = error instanceof Error ? error : new Error(String(error));
       console.warn(
-        `[Instagram] Attempt ${attempt} failed (proxy=${useProxy}): ${lastError.message}`
+        `[Instagram] ${attempt.name} failed for @${username}: ${lastError.message}`
       );
     }
   }
 
-  throw lastError || new Error("All attempts failed");
+  const staleCached = getCachedProfile(cacheKey, true);
+  if (staleCached) {
+    console.warn(`[Instagram] Serving stale cache for @${username}`);
+    return staleCached;
+  }
+
+  return {
+    ok: false,
+    status: 502,
+    data: {
+      error:
+        lastError?.message ||
+        "Failed to fetch Instagram profile from all configured providers",
+    },
+  };
 }

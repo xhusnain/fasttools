@@ -1,39 +1,24 @@
-import { NextRequest, NextResponse } from "next/server"
-import { noindexPaths } from "@/lib/noindex"
+import { NextResponse } from "next/server"
 
-const SEARCH_PLACEHOLDER = "{search_term_string}"
-const noindexSet = new Set(noindexPaths.map((p) => p.toLowerCase()))
-
-export function proxy(request: NextRequest) {
-    const { pathname, searchParams } = request.nextUrl
-
-    // Handle Google Sitelinks Searchbox placeholder
-    if (pathname === "/" && searchParams.get("q") === SEARCH_PLACEHOLDER) {
-        const url = request.nextUrl.clone()
-        url.searchParams.delete("q")
-        return NextResponse.rewrite(url)
-    }
-
-    // Block common bot/attack paths early
-    if (
-        pathname.startsWith("/wp-") ||
-        pathname.startsWith("/xmlrpc") ||
-        pathname.endsWith(".php") ||
-        pathname.endsWith(".env")
-    ) {
-        return new NextResponse(null, { status: 404 })
-    }
-
-    const response = NextResponse.next()
-
-    // Set noindex header for dead/low-value pages
-    if (noindexSet.has(pathname.toLowerCase())) {
-        response.headers.set("X-Robots-Tag", "noindex, nofollow")
-    }
-
-    return response
+// Block common WordPress / bot probe paths with a fast 404.
+//
+// IMPORTANT: the matcher below is scoped to these probe patterns ONLY. Content pages
+// are intentionally NOT matched by middleware, because Next.js forces
+// `Cache-Control: no-store` on every middleware-matched route — which would block CDN
+// caching of our static (prerendered) pages and slow down crawling/indexing.
+//
+// noindex enforcement was moved to <meta robots> in lib/metadata-base.ts (createMetadata),
+// which Google honors identically and keeps the pages cacheable.
+export function proxy() {
+    return new NextResponse(null, { status: 404 })
 }
 
 export const config = {
-    matcher: ["/((?!_next/static|_next/image|favicon.ico|icon.png|apple-icon.png|manifest.webmanifest|robots.txt|sitemap.xml).*)"],
+    matcher: [
+        "/wp-admin/:path*",
+        "/wp-includes/:path*",
+        "/wp-content/:path*",
+        "/wp-login.php",
+        "/xmlrpc.php",
+    ],
 }

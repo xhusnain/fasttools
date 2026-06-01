@@ -390,11 +390,14 @@ export default function InstagramDpPage() {
       { question: "Can I view my own profile picture?", answer: "Yes. Enter your own username to check image quality, verify the circular crop looks good, or download a backup of your own profile photo." }
     ],
     relatedTools: [
-      { name: "Private Instagram DP Viewer", href: "/social-media-tools/instagram-dp/private-account" },
-      { name: "Instagram DP Viewer HD 1080p", href: "/social-media-tools/instagram-dp/hd-1080p" },
       { name: "Insta Zoom Profile Picture Viewer", href: "/social-media-tools/instagram-dp/zoom-profile-picture" },
-      { name: "Anonymous Instagram DP Viewer", href: "/social-media-tools/instagram-dp/anonymous-viewer" },
-      { name: "Instagram DP Viewer for PC", href: "/social-media-tools/instagram-dp/pc-viewer" },
+      { name: "Instagram DP Viewer HD 1080p", href: "/social-media-tools/instagram-dp/hd-1080p" },
+      { name: "Private Instagram DP Viewer", href: "/social-media-tools/instagram-dp/private-account" },
+      // Out-of-cluster links: push authority to page-2 social tools (same creator audience)
+      { name: "Hashtag Counter — Instagram, TikTok & X", href: "/social-media-tools/hashtag-counter" },
+      { name: "YouTube Channel Name & Handle Checker", href: "/social-media-tools/channel-checker" },
+      { name: "Link-in-Bio Generator", href: "/social-media-tools/link-in-bio" },
+      { name: "YouTube Tag Extractor", href: "/social-media-tools/youtube-tags" },
       { name: "All Social Media Tools", href: "/social-media-tools" },
     ],
   }

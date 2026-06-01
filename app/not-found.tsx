@@ -1,9 +1,8 @@
 import Link from "next/link"
-import { headers } from "next/headers"
 import { GButton } from "@/ui/gbutton"
 import { GToolCard } from "@/ui/gtool-card"
 
-import { Calculator, Home, Search, AlertCircle, Activity, Calendar, DollarSign } from "lucide-react"
+import { Calculator, Home, Search, Activity, Calendar, DollarSign } from "lucide-react"
 import type { Metadata } from "next"
 
 export const metadata: Metadata = {
@@ -15,39 +14,26 @@ export const metadata: Metadata = {
   },
 }
 
-export default async function NotFound() {
-  const headersList = await headers()
-  const isGone = headersList.get("x-gone") === "true"
-
+export default function NotFound() {
   return (
     <div className="min-h-screen flex items-center justify-center bg-background">
       <div className="container mx-auto px-4 py-16">
         <div className="max-w-2xl mx-auto text-center space-y-8">
           {/* Icon */}
           <div className="flex justify-center">
-            <div className={`h-24 w-24 rounded-full flex items-center justify-center ${isGone ? "bg-destructive/10" : "bg-primary/10"}`}>
-              {isGone ? (
-                <AlertCircle className="h-12 w-12 text-destructive" />
-              ) : (
-                <Calculator className="h-12 w-12 text-primary" />
-              )}
+            <div className="h-24 w-24 rounded-full flex items-center justify-center bg-primary/10">
+              <Calculator className="h-12 w-12 text-primary" />
             </div>
           </div>
 
           {/* Content */}
           <div className="space-y-4">
-            <h1 className={`text-6xl md:text-8xl font-bold ${isGone ? "text-foreground text-4xl md:text-5xl" : "text-primary"}`}>
-              {isGone ? "Service Discontinued" : "404"}
-            </h1>
-            {!isGone && (
-              <h2 className="text-2xl md:text-3xl font-semibold text-foreground">
-                Page Not Found
-              </h2>
-            )}
+            <h1 className="text-6xl md:text-8xl font-bold text-primary">404</h1>
+            <h2 className="text-2xl md:text-3xl font-semibold text-foreground">
+              Page Not Found
+            </h2>
             <p className="text-lg text-muted-foreground max-w-lg mx-auto">
-              {isGone
-                ? "Oops! This tool has been discontinued and is no longer available. We are constantly updating our platform to provide the best tools."
-                : "Sorry, the page you're looking for doesn't exist. It might have been moved, deleted, or you entered the wrong URL."}
+              Sorry, the page you're looking for doesn't exist. It might have been moved, deleted, or you entered the wrong URL.
             </p>
           </div>
 

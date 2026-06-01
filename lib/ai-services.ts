@@ -8,6 +8,43 @@ import {
     ChannelNameRequest
 } from "@/types/ai.types"
 
+function getGeneratedText(result: { text?: unknown }): string {
+    if (typeof result.text === "string") return result.text
+    if (result.text === null || result.text === undefined) return ""
+
+    try {
+        return JSON.stringify(result.text)
+    } catch {
+        return String(result.text)
+    }
+}
+
+function stripMarkdownCodeFence(text: string): string {
+    let cleaned = text.trim()
+
+    if (cleaned.startsWith("```json")) {
+        cleaned = cleaned.replace(/^```json\s*/, "").replace(/\s*```$/, "")
+    } else if (cleaned.startsWith("```markdown")) {
+        cleaned = cleaned.replace(/^```markdown\s*/, "").replace(/\s*```$/, "")
+    } else if (cleaned.startsWith("```")) {
+        cleaned = cleaned.replace(/^```\s*/, "").replace(/\s*```$/, "")
+    }
+
+    return cleaned.trim()
+}
+
+function extractJsonArrayText(text: string): string {
+    const cleaned = stripMarkdownCodeFence(text)
+    const jsonMatch = cleaned.match(/\[[\s\S]*?\]/)
+    return jsonMatch ? jsonMatch[0] : cleaned
+}
+
+function extractJsonObjectText(text: string): string {
+    const cleaned = stripMarkdownCodeFence(text)
+    const jsonMatch = cleaned.match(/\{[\s\S]*\}/)
+    return jsonMatch ? jsonMatch[0] : cleaned
+}
+
 /**
  * Service function for generating social media captions
  */
@@ -51,24 +88,8 @@ export async function generateCaptionsService(data: CaptionsRequest) {
     }
 
     try {
-        let jsonText = result.text.trim()
-
-        if (jsonText.includes('```json')) {
-            const match = jsonText.match(/```json\s*([\s\S]*?)\s*```/)
-            if (match) {
-                jsonText = match[1].trim()
-            }
-        } else if (jsonText.includes('```')) {
-            const match = jsonText.match(/```\s*([\s\S]*?)\s*```/)
-            if (match) {
-                jsonText = match[1].trim()
-            }
-        }
-
-        const jsonMatch = jsonText.match(/\[[\s\S]*?\]/)
-        if (jsonMatch) {
-            jsonText = jsonMatch[0]
-        }
+        const rawText = getGeneratedText(result)
+        const jsonText = extractJsonArrayText(rawText)
 
         const captions = JSON.parse(jsonText)
 
@@ -83,7 +104,7 @@ export async function generateCaptionsService(data: CaptionsRequest) {
         }
     } catch (parseError) {
         console.error("Failed to parse AI response:", parseError)
-        console.error("Raw response:", result.text)
+        console.error("Raw response:", getGeneratedText(result))
         return {
             success: false,
             error: "Failed to process AI response. Please try again.",
@@ -133,7 +154,7 @@ export async function generateHashtagsService(data: HashtagsRequest) {
         }
     }
 
-    const generatedText = response.text || ""
+    const generatedText = getGeneratedText(response)
     const hashtags = extractHashtags(generatedText)
 
     if (hashtags.length === 0) {
@@ -250,7 +271,7 @@ export async function generateLyricsService(data: LyricsRequest) {
         }
     }
 
-    let lyrics = response.text.trim()
+    let lyrics = getGeneratedText(response).trim()
     lyrics = lyrics.replace(/```[\w]*\n?/g, "")
     lyrics = lyrics.replace(/```/g, "")
 
@@ -311,7 +332,7 @@ Make it funny, relatable, and suitable for a classic meme format.`
     }
 
     try {
-        const memeText = JSON.parse(response.text)
+        const memeText = JSON.parse(extractJsonObjectText(getGeneratedText(response)))
         return {
             success: true,
             data: { memeText },
@@ -360,7 +381,8 @@ export async function generatePetNamesService(data: PetNameRequest) {
         maxTokens: 4000,
     })
 
-    if (!result.success || !result.text) {
+    const petNamesText = getGeneratedText(result)
+    if (!result.success || !petNamesText) {
         return {
             success: false,
             error: result.error || "Something went wrong. Please try again later.",
@@ -368,7 +390,7 @@ export async function generatePetNamesService(data: PetNameRequest) {
         }
     }
 
-    const response = result.text
+    const response = petNamesText
     let parsedNames
 
     try {
@@ -452,7 +474,8 @@ export async function generateChannelNamesService(data: ChannelNameRequest) {
         maxTokens: 4000,
     })
 
-    if (!result.success || !result.text) {
+    const channelNamesText = getGeneratedText(result)
+    if (!result.success || !channelNamesText) {
         return {
             success: false,
             error: result.error || "Failed to generate channel names. Please try again.",
@@ -461,14 +484,7 @@ export async function generateChannelNamesService(data: ChannelNameRequest) {
     }
 
     try {
-        let jsonText = result.text.trim()
-
-        // Clean up markdown code blocks if present
-        if (jsonText.startsWith('```json')) {
-            jsonText = jsonText.replace(/^```json\s*/, '').replace(/\s*```$/, '')
-        } else if (jsonText.startsWith('```')) {
-            jsonText = jsonText.replace(/^```\s*/, '').replace(/\s*```$/, '')
-        }
+        const jsonText = stripMarkdownCodeFence(channelNamesText)
 
         const parsedNames = JSON.parse(jsonText)
 
@@ -488,7 +504,7 @@ export async function generateChannelNamesService(data: ChannelNameRequest) {
 
     } catch (parseError) {
         console.error("Error parsing AI response:", parseError)
-        console.log("Raw response:", result.text)
+        console.log("Raw response:", channelNamesText)
 
         return {
             success: false,
@@ -520,7 +536,8 @@ export async function generateAgentSkillService(data: import("@/types/ai.types")
         maxTokens: 3000,
     })
 
-    if (!result.success || !result.text) {
+    const agentSkillText = getGeneratedText(result)
+    if (!result.success || !agentSkillText) {
         return {
             success: false,
             error: result.error || "Failed to generate agent skill. Please try again.",
@@ -528,7 +545,7 @@ export async function generateAgentSkillService(data: import("@/types/ai.types")
         }
     }
 
-    let skillContent = result.text.trim()
+    let skillContent = agentSkillText.trim()
 
     // Clean up markdown code blocks if present (the prompt asks not to, but AI often disobeys)
     if (skillContent.startsWith('```markdown')) {
@@ -600,7 +617,7 @@ ${text}`
 
     return {
         success: true,
-        data: { paraphrasedText: result.text.trim() },
+        data: { paraphrasedText: getGeneratedText(result).trim() },
         statusCode: 200,
     }
 }
@@ -656,7 +673,7 @@ ${text}`
 
     return {
         success: true,
-        data: { summary: result.text.trim() },
+        data: { summary: getGeneratedText(result).trim() },
         statusCode: 200,
     }
 }

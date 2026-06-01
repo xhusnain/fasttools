@@ -2,6 +2,46 @@ import { runCloudflareAI } from "./utils"
 import { PROMPTS } from "./prompts"
 import { AIRequest, AIResponse } from "@/types/ai.types"
 
+function extractTextFromAIResponse(value: any): string {
+    if (typeof value === "string") return value
+    if (value === null || value === undefined) return ""
+    if (typeof value === "number" || typeof value === "boolean") return String(value)
+
+    if (Array.isArray(value)) {
+        return value
+            .map((item) => extractTextFromAIResponse(item))
+            .filter(Boolean)
+            .join("\n")
+    }
+
+    if (typeof value === "object") {
+        const nestedCandidates = [
+            value.response,
+            value.text,
+            value.content,
+            value.output_text,
+            value.output,
+            value.message?.content,
+            value.choices?.[0]?.message?.content,
+            value.choices?.[0]?.text,
+            value.data,
+        ]
+
+        for (const candidate of nestedCandidates) {
+            const text = extractTextFromAIResponse(candidate)
+            if (text) return text
+        }
+
+        try {
+            return JSON.stringify(value)
+        } catch {
+            return ""
+        }
+    }
+
+    return ""
+}
+
 export class AITextGenerator {
     async generateText(request: AIRequest): Promise<AIResponse> {
         try {
@@ -31,7 +71,16 @@ export class AITextGenerator {
                 }
             }
 
-            const text = response.result?.response || ""
+            const text = extractTextFromAIResponse(response.result?.response ?? response.result).trim()
+
+            if (!text) {
+                console.error("Cloudflare AI returned an empty response:", response.result)
+                return {
+                    text: "",
+                    success: false,
+                    error: "AI service returned an empty response. Please try again."
+                }
+            }
 
             return {
                 text,

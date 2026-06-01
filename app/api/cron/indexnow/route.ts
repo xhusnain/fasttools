@@ -1,8 +1,8 @@
 import { NextResponse } from 'next/server';
-import { sitemapPages } from '@/app/sitemap';
+import { indexablePages } from '@/app/sitemap';
 
 export async function GET(request: Request) {
-    const urlList = sitemapPages.map(p => p.url);
+    const urlList = indexablePages.map(p => p.url);
 
     const body = {
         host: "www.fasttools.store",

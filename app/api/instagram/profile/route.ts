@@ -19,6 +19,14 @@ const INSTAGRAM_HEADERS: Record<string, string> = {
   origin: "https://www.instagram.com",
 };
 
+const PROFILE_CACHE_HEADERS = {
+  "Cache-Control": "public, s-maxage=86400, stale-while-revalidate=604800",
+};
+
+const NOT_FOUND_CACHE_HEADERS = {
+  "Cache-Control": "public, s-maxage=3600, stale-while-revalidate=86400",
+};
+
 function extractUsername(input: string): string | null {
   if (!input) return null;
 
@@ -64,11 +72,11 @@ export async function GET(request: NextRequest) {
       if (status === 404) {
         return NextResponse.json(
           { error: "User not found" },
-          { status: 404 }
+          { status: 404, headers: NOT_FOUND_CACHE_HEADERS }
         );
       }
       return NextResponse.json(
-        { error: `Failed to fetch profile (status ${status})` },
+        { error: data?.error || `Failed to fetch profile (status ${status})` },
         { status }
       );
     }
@@ -78,26 +86,29 @@ export async function GET(request: NextRequest) {
     if (!user) {
       return NextResponse.json(
         { error: "User not found" },
-        { status: 404 }
+        { status: 404, headers: NOT_FOUND_CACHE_HEADERS }
       );
     }
 
-    return NextResponse.json({
-      platform: "Instagram",
-      data: {
-        username: user.username,
-        full_name: user.full_name,
-        biography: user.biography,
-        followers: user.edge_followed_by?.count ?? 0,
-        followees: user.edge_follow?.count ?? 0,
-        posts_count: user.edge_owner_to_timeline_media?.count ?? 0,
-        profile_pic_url: user.profile_pic_url,
-        profile_pic_url_hd: user.profile_pic_url_hd,
-        is_verified: user.is_verified,
-        is_private: user.is_private,
-        external_url: user.external_url,
+    return NextResponse.json(
+      {
+        platform: "Instagram",
+        data: {
+          username: user.username,
+          full_name: user.full_name,
+          biography: user.biography,
+          followers: user.edge_followed_by?.count ?? 0,
+          followees: user.edge_follow?.count ?? 0,
+          posts_count: user.edge_owner_to_timeline_media?.count ?? 0,
+          profile_pic_url: user.profile_pic_url,
+          profile_pic_url_hd: user.profile_pic_url_hd,
+          is_verified: user.is_verified,
+          is_private: user.is_private,
+          external_url: user.external_url,
+        },
       },
-    });
+      { headers: PROFILE_CACHE_HEADERS }
+    );
   } catch (error) {
     console.error("Instagram profile fetch error:", error);
     return NextResponse.json(

@@ -1,8 +1,14 @@
 import type { MetadataRoute } from "next"
+import { noindexPaths } from "@/lib/noindex"
 
 export const baseUrl = "https://www.fasttools.store"
 
 const u = (path: string) => `${baseUrl}${path}`
+
+// Full URLs of pages marked noindex (via proxy.ts X-Robots-Tag). These must never
+// appear in the sitemap, /all-tools listings, or IndexNow submissions — doing so
+// sends Google conflicting "crawl this / don't index this" signals and wastes crawl budget.
+const noindexUrlSet = new Set(noindexPaths.map((p) => `${baseUrl}${p}`))
 
 export const sitemapPages = [
   // ─── Main Pages ──────────────────────────────────────────────────────
@@ -127,6 +133,7 @@ export const sitemapPages = [
   { url: u("/web-tools/auth-generator"), lastModified: new Date("2026-03-23"), changeFrequency: "monthly" as const, priority: 0.7 },
   { url: u("/web-tools/outlook-safelink-decoder"), lastModified: new Date("2026-03-23"), changeFrequency: "monthly" as const, priority: 0.7 },
   { url: u("/web-tools/dns-ssl-checker"), lastModified: new Date("2026-03-27"), changeFrequency: "monthly" as const, priority: 0.7 },
+  { url: u("/web-tools/whois-lookup"), lastModified: new Date("2026-05-29"), changeFrequency: "monthly" as const, priority: 0.7 },
 
   // ─── Crypto Tools ────────────────────────────────────────────────────
   { url: u("/crypto-tools/encrypt-decrypt"), lastModified: new Date("2026-03-23"), changeFrequency: "monthly" as const, priority: 0.7 },
@@ -166,6 +173,7 @@ export const sitemapPages = [
   { url: u("/dev-tools/llm-training-cost"), lastModified: new Date("2026-03-16"), changeFrequency: "monthly" as const, priority: 0.7 },
   { url: u("/dev-tools/cloudflare-workers-cost"), lastModified: new Date("2026-03-16"), changeFrequency: "monthly" as const, priority: 0.7 },
   { url: u("/dev-tools/cron-expression-generator"), lastModified: new Date("2026-03-27"), changeFrequency: "monthly" as const, priority: 0.7 },
+  { url: u("/dev-tools/timestamp-converter"), lastModified: new Date("2026-05-29"), changeFrequency: "monthly" as const, priority: 0.7 },
 
   // ─── SEO Tools ───────────────────────────────────────────────────────
   { url: u("/seo-tools/meta-tags"), lastModified: new Date("2026-03-23"), changeFrequency: "monthly" as const, priority: 0.7 },
@@ -258,11 +266,15 @@ export const sitemapPages = [
   { url: u("/seo-tools/text-similarity-checker"), lastModified: new Date("2026-05-14"), changeFrequency: "monthly" as const, priority: 0.7 },
 ]
 
-export const toolPages = sitemapPages.filter(p => !p.url.endsWith(".store") && ![ "/products", "/api-docs", "/about", "/contact", "/faq", "/all-tools", "/privacy-policy", "/terms", "/cookie-preferences", "/dmca" ].some(path => p.url.endsWith(path)))
-export const mainPages = sitemapPages.filter(p => !toolPages.includes(p))
+// Indexable pages only — noindex pages are removed so they never leak into the
+// sitemap, internal /all-tools listings, or IndexNow pings.
+export const indexablePages = sitemapPages.filter((p) => !noindexUrlSet.has(p.url))
+
+export const toolPages = indexablePages.filter(p => !p.url.endsWith(".store") && ![ "/products", "/api-docs", "/about", "/contact", "/faq", "/all-tools", "/privacy-policy", "/terms", "/cookie-preferences", "/dmca" ].some(path => p.url.endsWith(path)))
+export const mainPages = indexablePages.filter(p => !toolPages.includes(p))
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  return sitemapPages.map((page) => ({
+  return indexablePages.map((page) => ({
     url: page.url,
     lastModified: page.lastModified,
     changeFrequency: page.changeFrequency,

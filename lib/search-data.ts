@@ -121,6 +121,7 @@ export const searchItems: SearchItem[] = [
   { name: "JSON to CSV Converter", description: "Convert JSON data to CSV format", path: "/dev-tools/json-to-csv", category: "Developer" },
   { name: "SQL to JSON Converter", description: "Convert SQL INSERT statements to JSON format", path: "/dev-tools/sql-to-json", category: "Developer" },
   { name: "JWT Decoder", description: "Decode and inspect JSON Web Tokens securely", path: "/dev-tools/jwt-decoder", category: "Developer" },
+  { name: "Unix Timestamp Converter", description: "Convert Unix/epoch timestamps to human dates and back in seconds, milliseconds, or microseconds. Live current epoch, UTC, ISO 8601.", path: "/dev-tools/timestamp-converter", category: "Developer" },
   { name: "Cron Expression Generator", description: "Free cron expression generator and crontab builder. Visual builder, 25+ presets, English descriptions, next 10 run times preview. Build cron jobs for Unix, Kubernetes, GitHub Actions, AWS.", path: "/dev-tools/cron-expression-generator", category: "Developer" },
   { name: "Base64 Encoder Decoder", description: "Encode and decode strings to Base64. URL-safe mode and file support", path: "/dev-tools/base64-encoder", category: "Developer" },
   { name: "MIME Types", description: "MIME types list. Convert MIME types to file extensions. mime types pdf, images, excel. mime-types npm alternative.", path: "/dev-tools/mime-types", category: "Developer" },
@@ -179,6 +180,7 @@ export const searchItems: SearchItem[] = [
   { name: "AI Text Summarizer", description: "Free AI text summarizer. Summarize articles, essays, reports into paragraphs, bullet points, key takeaways, or TL;DR. Adjustable length. Powered by AI.", path: "/ai-tools/text-summarizer", category: "AI" },
   { name: "Text to Speech", description: "Free text to speech online. Convert text to natural speech with 50+ languages, adjustable speed, pitch, volume. Word highlighting. No signup.", path: "/ai-tools/text-to-speech", category: "AI" },
   { name: "DNS Lookup & SSL Checker", description: "Check DNS records (A, AAAA, MX, CNAME, TXT, NS, SOA) and verify SSL certificates for any domain. View issuer, expiry, TLS version.", path: "/web-tools/dns-ssl-checker", category: "Web" },
+  { name: "WHOIS & Domain Lookup", description: "Free WHOIS / RDAP domain lookup. View registrar, creation and expiry dates, status codes, nameservers, DNSSEC, and contact info for any domain.", path: "/web-tools/whois-lookup", category: "Web" },
   { name: "Tax Bracket Calculator", description: "Calculate 2025-2026 US federal income tax by bracket. Marginal vs effective rate, bracket breakdown, all filing statuses.", path: "/finance-tools/tax-bracket-calculator", category: "Finance" },
   { name: "Startup Runway Calculator", description: "Free startup runway calculator. Calculate months of runway, burn rate, zero-cash date, fundraise timing. Revenue growth projections, burn multiple, industry benchmarks by stage.", path: "/finance-tools/startup-runway-calculator", category: "Finance" },
 
