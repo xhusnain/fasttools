@@ -43,6 +43,7 @@ export const sitemapPages = [
 
   // ─── Social Media Tools ──────────────────────────────────────────────
   { url: u("/social-media-tools/instagram-dp"), lastModified: new Date("2026-03-07"), changeFrequency: "weekly" as const, priority: 1.0 },
+  { url: u("/social-media-tools/instagram-profile-picture-viewer"), lastModified: new Date("2026-06-02"), changeFrequency: "weekly" as const, priority: 0.95 },
   { url: u("/social-media-tools/instagram-dp/private-account"), lastModified: new Date("2026-03-23"), changeFrequency: "monthly" as const, priority: 0.9 },
   { url: u("/social-media-tools/instagram-dp/hd-1080p"), lastModified: new Date("2026-03-23"), changeFrequency: "monthly" as const, priority: 0.9 },
   { url: u("/social-media-tools/instagram-dp/pc-viewer"), lastModified: new Date("2026-03-23"), changeFrequency: "monthly" as const, priority: 0.9 },

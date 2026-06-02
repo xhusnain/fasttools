@@ -5,7 +5,22 @@ import { GButton } from "@/ui/gbutton"
 import { GInput } from "@/ui/ginput"
 import { GLabel } from "@/ui/glabel"
 import { GCard } from "@/ui/gcard"
-import { Save, AlertCircle, User, Eye, Lock, Globe, CheckCircle2, TrendingUp, ExternalLink } from "lucide-react"
+import {
+  AlertCircle,
+  CheckCircle2,
+  ExternalLink,
+  Eye,
+  Globe,
+  Lock,
+  Maximize2,
+  RotateCcw,
+  Save,
+  TrendingUp,
+  User,
+  X,
+  ZoomIn,
+  ZoomOut,
+} from "lucide-react"
 import { LoadingSpinner } from "@/components/common/loading-spinner"
 
 interface InstagramProfileData {
@@ -35,6 +50,8 @@ export function InstagramDpViewer() {
   const [loading, setLoading] = useState(false)
   const [error, setError] = useState<string | null>(null)
   const [saving, setSaving] = useState(false)
+  const [zoomOpen, setZoomOpen] = useState(false)
+  const [zoomLevel, setZoomLevel] = useState(100)
   const resultRef = useRef<HTMLDivElement>(null)
 
   useEffect(() => {
@@ -96,6 +113,11 @@ export function InstagramDpViewer() {
     if (!profileData) return ''
     const imageUrl = profileData.profile_pic_url_hd || profileData.profile_pic_url
     return imageUrl ? getProxyImageUrl(imageUrl) : getInitialAvatar()
+  }
+
+  const openZoomViewer = () => {
+    setZoomLevel(100)
+    setZoomOpen(true)
   }
 
   const saveImage = async (quality: 'sd' | 'hd' = 'hd') => {
@@ -230,10 +252,11 @@ export function InstagramDpViewer() {
                 <img
                   src={getProfilePictureUrl()}
                   alt={`${profileData.username} profile picture`}
-                  className="w-32 h-32 sm:w-40 sm:h-40 rounded-full border-4 border-white ring-1 ring-border shadow-sm object-cover"
+                  className="w-32 h-32 sm:w-40 sm:h-40 rounded-full border-4 border-white ring-1 ring-border shadow-sm object-cover cursor-zoom-in"
                   title={`${profileData.username} profile picture`}
                   referrerPolicy="no-referrer"
                   loading="lazy"
+                  onClick={openZoomViewer}
                   onError={(e) => {
                     const target = e.currentTarget
                     if (profileData.profile_pic_url_hd && profileData.profile_pic_url && target.src.includes(encodeURIComponent(profileData.profile_pic_url_hd))) {
@@ -353,6 +376,17 @@ export function InstagramDpViewer() {
               </div>
 
               <div className="w-full max-w-sm sm:max-w-md space-y-3">
+                {(profileData.profile_pic_url_hd || profileData.profile_pic_url) && (
+                  <GButton
+                    onClick={openZoomViewer}
+                    variant="outline"
+                    className="w-full h-10 sm:h-11 text-sm font-medium"
+                  >
+                    <Maximize2 className="mr-2 h-4 w-4" />
+                    <span>Zoom Full Size</span>
+                  </GButton>
+                )}
+
                 <div className="grid grid-cols-2 gap-3">
                   {profileData.profile_pic_url && (
                     <GButton
@@ -424,6 +458,117 @@ export function InstagramDpViewer() {
             </div>
           </div>
         </GCard>
+      )}
+
+      {profileData && zoomOpen && (
+        <div
+          className="fixed inset-0 z-50 bg-background/95 backdrop-blur-sm flex flex-col"
+          role="dialog"
+          aria-modal="true"
+          aria-label={`${profileData.username} full-size profile picture`}
+        >
+          <div className="flex items-center justify-between gap-3 p-4 border-b border-border bg-card">
+            <div className="min-w-0">
+              <h3 className="text-base sm:text-lg font-bold text-foreground truncate">
+                @{profileData.username} profile picture
+              </h3>
+              <p className="text-xs text-muted-foreground">Zoom and inspect the full-size Instagram DP</p>
+            </div>
+            <GButton
+              onClick={() => setZoomOpen(false)}
+              variant="outline"
+              className="h-10 w-10 p-0 flex-shrink-0"
+              aria-label="Close zoom viewer"
+            >
+              <X className="h-4 w-4" />
+            </GButton>
+          </div>
+
+          <div className="flex-1 min-h-0 overflow-auto">
+            <div className="min-h-full flex items-center justify-center p-4 sm:p-8">
+              <img
+                src={getProfilePictureUrl()}
+                alt={`${profileData.username} full-size Instagram profile picture`}
+                className="max-w-[92vw] max-h-[72vh] rounded-lg border border-border bg-card object-contain shadow-lg transition-transform duration-150"
+                style={{ transform: `scale(${zoomLevel / 100})` }}
+                referrerPolicy="no-referrer"
+                onError={(e) => {
+                  const target = e.currentTarget
+                  if (profileData.profile_pic_url_hd && profileData.profile_pic_url && target.src.includes(encodeURIComponent(profileData.profile_pic_url_hd))) {
+                    target.src = getProxyImageUrl(profileData.profile_pic_url)
+                  } else if (target.src !== getInitialAvatar()) {
+                    target.src = getInitialAvatar()
+                  }
+                }}
+              />
+            </div>
+          </div>
+
+          <div className="border-t border-border bg-card p-4">
+            <div className="mx-auto max-w-3xl flex flex-col sm:flex-row items-stretch sm:items-center gap-3">
+              <div className="flex items-center gap-2">
+                <GButton
+                  onClick={() => setZoomLevel((value) => Math.max(75, value - 25))}
+                  variant="outline"
+                  className="h-10 w-10 p-0"
+                  aria-label="Zoom out"
+                >
+                  <ZoomOut className="h-4 w-4" />
+                </GButton>
+                <GButton
+                  onClick={() => setZoomLevel(100)}
+                  variant="outline"
+                  className="h-10 w-10 p-0"
+                  aria-label="Reset zoom"
+                >
+                  <RotateCcw className="h-4 w-4" />
+                </GButton>
+                <GButton
+                  onClick={() => setZoomLevel((value) => Math.min(300, value + 25))}
+                  variant="outline"
+                  className="h-10 w-10 p-0"
+                  aria-label="Zoom in"
+                >
+                  <ZoomIn className="h-4 w-4" />
+                </GButton>
+              </div>
+
+              <div className="flex-1 flex items-center gap-3 min-w-0">
+                <input
+                  type="range"
+                  min="75"
+                  max="300"
+                  step="25"
+                  value={zoomLevel}
+                  onChange={(event) => setZoomLevel(Number(event.target.value))}
+                  className="w-full accent-primary"
+                  aria-label="Profile picture zoom level"
+                />
+                <span className="w-12 text-right text-sm font-medium text-muted-foreground">
+                  {zoomLevel}%
+                </span>
+              </div>
+
+              <GButton
+                onClick={() => saveImage('hd')}
+                disabled={saving}
+                className="h-10 text-sm font-medium"
+              >
+                {saving ? (
+                  <>
+                    <LoadingSpinner className="mr-2 h-4 w-4" />
+                    <span>Saving...</span>
+                  </>
+                ) : (
+                  <>
+                    <Save className="mr-2 h-4 w-4" />
+                    <span>Save HD</span>
+                  </>
+                )}
+              </GButton>
+            </div>
+          </div>
+        </div>
       )}
 
       <GCard className="p-4 sm:p-6 bg-card border border-border shadow-sm">

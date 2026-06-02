@@ -16,7 +16,7 @@ export const dpVariants: Record<string, DpVariantConfig> = {
   "private-account": {
     slug: "private-account",
     toolName: "Private Instagram DP Viewer",
-    metaTitle: "View Private Instagram Profile Picture — DP Viewer for Private Accounts",
+    metaTitle: "Private Instagram DP Viewer - View Profile Picture",
     metaDescription:
       "View profile pictures of private Instagram accounts. Profile photos are publicly visible even on private accounts. No login required. Free.",
     headerTitle: "Private Instagram Account DP Viewer",
@@ -65,14 +65,14 @@ export const dpVariants: Record<string, DpVariantConfig> = {
   "hd-1080p": {
     slug: "hd-1080p",
     toolName: "Instagram DP Viewer HD 1080p",
-    metaTitle: "Instagram DP Viewer HD 1080p — Full Size Profile Picture",
+    metaTitle: "Instagram DP Viewer HD - Full Size 1080p Profile Picture",
     metaDescription:
       "View full-size Instagram profile pictures in HD quality. Zoom and save high-resolution DPs. Free, no login required.",
     headerTitle: "Instagram DP Viewer HD 1080p",
     headerDescription:
       "View full-size and high-quality Instagram profile pictures.",
     overviewText:
-      "This variant is optimized for full-size and HD-intent queries such as 1080p DP viewer and full-resolution profile photo lookup.",
+      "Use this HD Instagram DP viewer when you want the largest available profile picture preview instead of the small circular thumbnail shown in the Instagram app. It is built for full-size profile picture checks, 1080p-style searches, and high-resolution DP downloads.",
     keywords: [
       "instagram dp viewer hd",
       "instagram dp 1080p",
@@ -83,14 +83,14 @@ export const dpVariants: Record<string, DpVariantConfig> = {
   "pc-viewer": {
     slug: "pc-viewer",
     toolName: "Instagram DP Viewer for PC",
-    metaTitle: "Instagram DP Viewer for PC & Mac — View Profile Pictures on Desktop",
+    metaTitle: "Instagram DP Viewer for PC - View Profile Pictures on Desktop",
     metaDescription:
       "Use Instagram DP Viewer on desktop to view and save profile pictures with a larger-screen workflow. Free, no login.",
     headerTitle: "Instagram DP Viewer for PC",
     headerDescription:
       "Desktop-focused profile-picture viewing for PC and Mac users.",
     overviewText:
-      "This route is designed for desktop-intent searches, with guidance tailored for PC and Mac browsing workflows.",
+      "Use the Instagram DP viewer on PC or Mac when you want a larger desktop preview, easier right-click saving, and a clearer view of profile pictures than the Instagram mobile app provides.",
     keywords: [
       "instagram dp viewer for pc",
       "instagram profile picture viewer pc",
@@ -101,14 +101,14 @@ export const dpVariants: Record<string, DpVariantConfig> = {
   "zoom-profile-picture": {
     slug: "zoom-profile-picture",
     toolName: "Insta Zoom Profile Picture Viewer",
-    metaTitle: "Insta Zoom Profile Picture — View Full Size Instagram DP",
+    metaTitle: "Insta Zoom - View Instagram Profile Picture Full Size",
     metaDescription:
-      "Zoom Instagram profile pictures and view full-size profile photo detail in-browser. Free, no login.",
+      "Use Insta Zoom to view Instagram profile pictures in full size. Zoom profile photos, inspect details, and save the available DP. Free, no login.",
     headerTitle: "Insta Zoom Profile Picture Viewer",
     headerDescription:
       "Built for users searching Instagram DP zoom and enlarge workflows.",
     overviewText:
-      "This variant targets zoom-focused queries and provides a profile-picture inspection path for detail checks and larger-screen review.",
+      "Use this Insta Zoom profile picture viewer to enlarge an Instagram DP, inspect profile photo details, and save the available full-size image. It is designed for users who search for insta zoom, Instagram profile zoom, and profile picture zoom workflows.",
     keywords: [
       "insta zoom profile picture",
       "instagram dp zoom",
@@ -119,7 +119,7 @@ export const dpVariants: Record<string, DpVariantConfig> = {
   "anonymous-viewer": {
     slug: "anonymous-viewer",
     toolName: "Anonymous Instagram DP Viewer",
-    metaTitle: "Anonymous Instagram DP Viewer — View Profile Pictures Without Login",
+    metaTitle: "Anonymous Instagram DP Viewer - No Login Profile Picture",
     metaDescription:
       "View Instagram profile pictures anonymously without logging in. No account needed. Free browser-based DP viewer with no tracking.",
     headerTitle: "Anonymous Instagram DP Viewer — No Login Required",

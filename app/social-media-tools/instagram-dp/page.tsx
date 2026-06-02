@@ -2,7 +2,7 @@ import type { Metadata } from "next"
 import dynamic from "next/dynamic"
 import { ToolPageLayout } from "@/components/common/tool-page-layout"
 import { ToolLoader } from "@/components/common/tool-loader"
-import { createMetadata } from "@/lib/metadata-base"
+import { buildSchemas, createMetadata } from "@/lib/metadata-base"
 import { GTable } from "@/ui/gtable"
 import {
   Camera, Eye, Download, Shield, Smartphone, Monitor,
@@ -14,10 +14,10 @@ const InstagramDpViewer = dynamic(
   { loading: () => <ToolLoader /> }
 )
 
-const baseMetadata = createMetadata({
-  title: "Instagram DP Viewer — View & Download Full Size Profile Picture Free",
+const instagramDpMetadataOptions = {
+  title: "Free Instagram DP Viewer & Downloader - Full Size",
   description:
-    "Free Instagram DP viewer and profile picture downloader. View any Insta DP in full size HD by username. InstaDp viewer online — anonymous, no login required. Works for public and private account profile photos.",
+    "View and download Instagram DP in full size HD by username. Free Insta DP viewer and profile picture zoom. No login, anonymous, works for private accounts.",
   path: "/social-media-tools/instagram-dp",
   breadcrumbs: [
     { label: "Social Media Tools", href: "/social-media-tools" },
@@ -128,7 +128,10 @@ const baseMetadata = createMetadata({
     "Download the image in HD or SD quality, or right-click to save"
   ],
   toolName: "Instagram DP Viewer"
-})
+}
+
+const baseMetadata = createMetadata(instagramDpMetadataOptions)
+const schemas = buildSchemas(instagramDpMetadataOptions)
 
 export const metadata: Metadata = {
   ...baseMetadata,
@@ -138,7 +141,7 @@ export const metadata: Metadata = {
 
 export default function InstagramDpPage() {
   const toolContent = {
-    toolName: "Instagram DP Viewer — View & Download Full Size Insta Profile Pictures",
+    toolName: "Instagram DP Viewer",
     quickAnswer: "Instagram displays profile pictures at just 110x110 pixels in the app with no way to zoom in. This free Instagram DP viewer lets you view any profile picture in full HD resolution (up to 1080x1080) by entering a username. No login, no app install, no notifications sent to the profile owner.",
     keyTakeaways: [
       "Instagram stores profile pictures at up to 1080x1080 pixels but only displays them at 110x110 — this tool shows the full-size version",
@@ -390,6 +393,7 @@ export default function InstagramDpPage() {
       { question: "Can I view my own profile picture?", answer: "Yes. Enter your own username to check image quality, verify the circular crop looks good, or download a backup of your own profile photo." }
     ],
     relatedTools: [
+      { name: "Instagram Profile Picture Viewer", href: "/social-media-tools/instagram-profile-picture-viewer" },
       { name: "Insta Zoom Profile Picture Viewer", href: "/social-media-tools/instagram-dp/zoom-profile-picture" },
       { name: "Instagram DP Viewer HD 1080p", href: "/social-media-tools/instagram-dp/hd-1080p" },
       { name: "Private Instagram DP Viewer", href: "/social-media-tools/instagram-dp/private-account" },
@@ -404,9 +408,10 @@ export default function InstagramDpPage() {
 
   return (
     <ToolPageLayout
+      schemas={schemas}
       header={{
-        title: "Instagram DP Viewer — View & Download Full Size Profile Pictures",
-        description: "View any Instagram profile picture in full HD resolution by username. Download Insta DP in one click. Anonymous, no login required, works on all devices. Free InstaDp viewer online.",
+        title: "Instagram DP Viewer",
+        description: "View and download Instagram profile pictures in full-size HD. Enter a username, zoom the DP, and save it anonymously with no login.",
         titleSize: "medium",
         descriptionSize: "small",
       }}
@@ -421,8 +426,8 @@ export default function InstagramDpPage() {
       }
       toolContent={toolContent}
       expectedMetadata={{
-        title: "Instagram DP Viewer — View & Download Full Size Profile Picture Free",
-        description: "Free Instagram DP viewer and profile picture downloader. View any Insta DP in full size HD by username. InstaDp viewer online — anonymous, no login required. Works for public and private account profile photos.",
+        title: "Free Instagram DP Viewer & Downloader - Full Size",
+        description: "View and download Instagram DP in full size HD by username. Free Insta DP viewer and profile picture zoom. No login, anonymous, works for private accounts.",
         path: "/social-media-tools/instagram-dp"
       }}
     />
