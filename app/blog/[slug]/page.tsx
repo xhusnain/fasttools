@@ -43,6 +43,8 @@ export default async function BlogPostPage(props: Props) {
 
   const relatedPosts = getRelatedBlogPosts(post)
   const schemas = createBlogPostSchemas(post)
+  const bodyHasFaqSection = /^##\s+FAQ\b/im.test(post.content)
+  const showFrontmatterFaq = !bodyHasFaqSection && post.faq.length > 0
 
   return (
     <div className="min-h-screen bg-background">
@@ -131,6 +133,22 @@ export default async function BlogPostPage(props: Props) {
               className="blog-content mx-auto max-w-3xl"
               dangerouslySetInnerHTML={{ __html: post.html }}
             />
+
+            {showFrontmatterFaq && (
+              <section className="mx-auto mt-12 max-w-3xl rounded-lg border border-border bg-card p-6">
+                <h2 className="mb-5 text-2xl font-bold text-foreground">
+                  Frequently Asked Questions
+                </h2>
+                <div className="divide-y divide-border">
+                  {post.faq.map((item) => (
+                    <div key={item.question} className="py-5 first:pt-0 last:pb-0">
+                      <h3 className="mb-2 text-lg font-semibold text-foreground">{item.question}</h3>
+                      <p className="text-sm leading-6 text-muted-foreground">{item.answer}</p>
+                    </div>
+                  ))}
+                </div>
+              </section>
+            )}
 
             {post.tags.length > 0 && (
               <div className="mx-auto mt-10 flex max-w-3xl flex-wrap gap-2 border-t border-border pt-6">

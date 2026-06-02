@@ -21,6 +21,11 @@ export interface BlogTocItem {
     id: string
 }
 
+export interface BlogFaqItem {
+    question: string
+    answer: string
+}
+
 export interface BlogPost {
     slug: string
     title: string
@@ -30,6 +35,8 @@ export interface BlogPost {
     author: string
     category: string
     tags: string[]
+    keywords: string[]
+    faq: BlogFaqItem[]
     image: string
     imageAlt: string
     featured: boolean
@@ -91,7 +98,7 @@ export function getBlogPost(slug: string, { includeDrafts = false } = {}): BlogP
         return null
     }
 
-    const prepared = prepareMarkdownContent(content)
+    const prepared = prepareMarkdownContent(transformBlogComponents(content))
     const html = sanitizeRenderedHtml(
         marked.parse(prepared.content, {
             async: false,
@@ -107,7 +114,13 @@ export function getBlogPost(slug: string, { includeDrafts = false } = {}): BlogP
         html,
         toc: prepared.toc,
         readingTime: readingTimeResult,
-        searchContent: cleanContentForSearch(content),
+        searchContent: cleanContentForSearch(
+            [
+                content,
+                frontmatter.keywords.join(" "),
+                frontmatter.faq.map((item) => `${item.question} ${item.answer}`).join(" "),
+            ].join(" ")
+        ),
     }
 }
 
@@ -148,6 +161,7 @@ export function createBlogMetadata(post: BlogPost): Metadata {
         title: post.title,
         description: post.description,
         path: post.canonicalPath,
+        keywords: post.keywords.length > 0 ? post.keywords : post.tags,
         ogImage: {
             url: post.image,
             width: 1200,
@@ -211,6 +225,7 @@ export function createBlogIndexSchemas(posts: BlogPost[]) {
 
 export function createBlogPostSchemas(post: BlogPost) {
     const canonicalUrl = getCanonicalUrl(post.canonicalPath)
+    const keywords = post.keywords.length > 0 ? post.keywords : post.tags
 
     return [
         createBreadcrumbSchema(
@@ -222,7 +237,7 @@ export function createBlogPostSchemas(post: BlogPost) {
         ),
         {
             "@context": "https://schema.org",
-            "@type": "BlogPosting",
+            "@type": "Article",
             "@id": `${canonicalUrl}#article`,
             mainEntityOfPage: {
                 "@type": "WebPage",
@@ -236,7 +251,11 @@ export function createBlogPostSchemas(post: BlogPost) {
             author: createAuthorSchema(post.author),
             publisher: createPublisherSchema(),
             articleSection: post.category,
-            keywords: post.tags.join(", "),
+            keywords: keywords.join(", "),
+            about: keywords.slice(0, 6).map((keyword) => ({
+                "@type": "Thing",
+                name: keyword,
+            })),
             wordCount: post.readingTime.words,
             timeRequired: `PT${Math.max(1, Math.ceil(post.readingTime.minutes))}M`,
             inLanguage: "en-US",
@@ -276,6 +295,8 @@ function normalizeFrontmatter(data: BlogMatter, slug: string, content: string) {
     const author = asString(data.author) || DEFAULT_AUTHOR
     const category = asString(data.category) || DEFAULT_CATEGORY
     const tags = asStringArray(data.tags)
+    const keywords = asStringArray(data.keywords)
+    const faq = asFaqArray(data.faq)
     const image = asString(data.image) || DEFAULT_IMAGE
     const imageAlt = asString(data.imageAlt) || title
     const excerpt = asString(data.excerpt) || cleanContentForSearch(content, 220)
@@ -289,6 +310,8 @@ function normalizeFrontmatter(data: BlogMatter, slug: string, content: string) {
         author,
         category,
         tags,
+        keywords,
+        faq,
         image,
         imageAlt,
         featured: Boolean(data.featured),
@@ -296,6 +319,25 @@ function normalizeFrontmatter(data: BlogMatter, slug: string, content: string) {
         canonicalPath: `/blog/${slug}`,
         excerpt,
     }
+}
+
+function transformBlogComponents(content: string): string {
+    return content.replace(/<AnswerLead>\s*([\s\S]*?)\s*<\/AnswerLead>/g, (_match, body: string) => {
+        const renderedBody = marked.parse(body.trim(), {
+            async: false,
+            gfm: true,
+            breaks: false,
+        }) as string
+
+        return [
+            '<aside class="answer-lead" aria-label="Key takeaway">',
+            '<p class="answer-lead__label">At a glance</p>',
+            '<div class="answer-lead__content">',
+            renderedBody.trim(),
+            "</div>",
+            "</aside>",
+        ].join("\n")
+    })
 }
 
 function prepareMarkdownContent(content: string): { content: string; toc: BlogTocItem[] } {
@@ -373,7 +415,9 @@ function asString(value: unknown): string | undefined {
 
 function asStringArray(value: unknown): string[] {
     if (Array.isArray(value)) {
-        return value.filter((item): item is string => typeof item === "string" && item.trim().length > 0)
+        return value
+            .map((item) => (typeof item === "string" ? item.trim() : ""))
+            .filter(Boolean)
     }
 
     if (typeof value === "string") {
@@ -384,6 +428,24 @@ function asStringArray(value: unknown): string[] {
     }
 
     return []
+}
+
+function asFaqArray(value: unknown): BlogFaqItem[] {
+    if (!Array.isArray(value)) {
+        return []
+    }
+
+    return value.flatMap((item) => {
+        if (!item || typeof item !== "object") {
+            return []
+        }
+
+        const record = item as Record<string, unknown>
+        const question = asString(record.question)
+        const answer = asString(record.answer)
+
+        return question && answer ? [{ question, answer }] : []
+    })
 }
 
 function asDate(value: unknown): string {

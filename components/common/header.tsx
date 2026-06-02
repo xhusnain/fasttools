@@ -155,6 +155,16 @@ export function Header() {
 
             <div className="mt-6 space-y-1 px-2 pb-8">
               <Link
+                href="/blog"
+                onClick={() => setMobileMenuOpen(false)}
+                className={`block px-4 py-2.5 rounded-lg text-sm font-medium transition-colors ${pathname === "/blog" || pathname.startsWith("/blog/")
+                  ? "bg-primary/10 text-primary"
+                  : "text-foreground/80 hover:text-primary hover:bg-primary/5"
+                  }`}
+              >
+                Blog
+              </Link>
+              <Link
                 href="/products"
                 onClick={() => setMobileMenuOpen(false)}
                 className="block px-4 py-2.5 rounded-lg hover:bg-primary/5 text-sm font-medium text-foreground/80 hover:text-primary transition-colors"

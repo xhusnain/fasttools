@@ -30,6 +30,7 @@ export interface MetadataOptions {
     title: string
     description: string
     path: string
+    keywords?: string | string[]
     ogImageAlt?: string
     ogImage?: string | {
         url: string
@@ -186,6 +187,7 @@ export function buildSchemas(options: MetadataOptions): any[] {
 export function createMetadata(options: MetadataOptions): Metadata {
     const { title, description: rawDescription, path, ogImageAlt, ogImage, noIndex, ogTitle, ogDescription, twitterTitle, twitterDescription, twitterCreator } = options
     const description = rawDescription ? (rawDescription.length > 160 ? rawDescription.slice(0, 157) + "..." : rawDescription) : rawDescription
+    const keywords = normalizeMetadataKeywords(options.keywords)
 
     const cleanPath = path.startsWith("/") ? path : `/${path}`
     let processedTitle = title
@@ -255,8 +257,21 @@ export function createMetadata(options: MetadataOptions): Metadata {
             "max-image-preview": "large" as const,
             "max-video-preview": -1,
         },
+        ...(keywords && { keywords }),
         ...(options.icons && { icons: options.icons }),
     }
+}
+
+function normalizeMetadataKeywords(keywords: string | string[] | undefined): string | string[] | undefined {
+    if (Array.isArray(keywords)) {
+        const filtered = keywords
+            .map((keyword) => keyword.trim())
+            .filter(Boolean)
+
+        return filtered.length > 0 ? filtered : undefined
+    }
+
+    return typeof keywords === "string" && keywords.trim() ? keywords.trim() : undefined
 }
 
 
@@ -496,4 +511,3 @@ export function createItemListSchema(options: { name: string, description: strin
         }))
     }
 }
-
