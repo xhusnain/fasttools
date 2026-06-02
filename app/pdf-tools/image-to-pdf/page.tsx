@@ -12,31 +12,24 @@ const toolConfig = createToolConfig({
   toolName: "Image to PDF Converter",
   description:
     "Convert JPG, PNG, and WebP images to a single PDF online. Upload multiple images, reorder pages, choose A4, Letter, Legal, or image-fit pages, then download the PDF.",
-  metaTitle: "Image to PDF Converter - Convert JPG, PNG, WebP to PDF",
+  metaTitle: "Image to PDF Converter - Create PDFs from Photos and Screenshots",
   metaDescription:
-    "Free Image to PDF converter. Convert JPG, PNG, and WebP images into one PDF with page size, orientation, margin, quality, and reorder controls. Browser-based, no signup.",
+    "Create a PDF from photos, screenshots, scans, receipts, JPG, PNG, or WebP images. Reorder pages, set paper size and margins, then download in your browser.",
   path: "/pdf-tools/image-to-pdf",
 
   schemaOptions: {
     applicationCategory: "BusinessApplication",
     description:
-      "Browser-based Image to PDF converter for combining JPG, PNG, and WebP images into a PDF document with page size, margin, orientation, image-fit, and quality controls.",
+      "Browser-based document utility for turning photos, screenshots, scans, receipts, JPG, PNG, and WebP images into an ordered PDF document with page layout controls.",
     alternateName: [
       "JPG to PDF Converter",
       "PNG to PDF Converter",
       "Photo to PDF Converter",
       "Picture to PDF Converter",
-      "Convert Images to PDF",
-      "Combine Images into PDF",
-      "Image PDF Maker",
-      "Online Image to PDF",
-      "JPG PNG to PDF",
       "Multiple Images to PDF",
-      "Scan Images to PDF",
+      "Screenshot to PDF Converter",
+      "Receipt Photo to PDF",
       "PDF from Photos",
-      "iLovePDF JPG to PDF Alternative",
-      "Smallpdf JPG to PDF Alternative",
-      "Adobe JPG to PDF Alternative",
     ],
     featureList: [
       "Convert JPG, PNG, and WebP images to PDF",
@@ -52,8 +45,6 @@ const toolConfig = createToolConfig({
       "Free, no signup, no watermark",
     ],
     softwareRequirements: "Modern web browser",
-    ratingValue: "4.9",
-    ratingCount: "6840",
   },
 
   header: {
@@ -75,7 +66,7 @@ const toolConfig = createToolConfig({
     quickAnswer:
       "Upload one or more images, reorder them if needed, choose page size, orientation, margins, and fit mode, then convert them into a single PDF. The conversion runs in your browser, so your images are not uploaded to a server.",
     keyTakeaways: [
-      "Converts JPG, PNG, and WebP images into one PDF",
+      "Creates PDF documents from photos, screenshots, scans, receipts, JPG, PNG, and WebP images",
       "Supports multiple images with page reordering before export",
       "Includes A4, US Letter, US Legal, and fit-to-image page sizes",
       "Offers margin, orientation, image-fit, and quality controls",
@@ -147,6 +138,24 @@ const toolConfig = createToolConfig({
 
     proTip:
       "For scanned documents, use A4 or US Letter with small margins and balanced JPG quality. For screenshots with small text, switch the PDF image type to PNG.",
+
+    additionalContent: [
+      {
+        heading: "What This Tool Is Best For",
+        content:
+          "Use Image to PDF when your source files are visual pages rather than editable documents: phone photos of paperwork, receipt images, screenshots, scanned notes, whiteboard photos, product images, worksheets, or design proofs. The goal is to package related images into one ordered PDF that is easier to email, archive, submit, or share.",
+      },
+      {
+        heading: "Image to PDF vs PDF to Image",
+        content:
+          "Image to PDF builds a document from images. PDF to Image does the reverse by exporting existing PDF pages as JPG, PNG, or WebP files. If you need a finished document, start here. If you need separate page images from an existing PDF, use the PDF to Image tool.",
+      },
+      {
+        heading: "Layout Choices That Matter",
+        content:
+          "Paper size controls how the finished PDF behaves in printers, email previews, and document portals. A4 and US Letter are best for paperwork, fit-to-image is best for preserving photo proportions, and margins help scanned or screenshot content look less cramped on the page.",
+      },
+    ],
 
     faqs: [
       {
