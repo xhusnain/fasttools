@@ -18,15 +18,16 @@ import type { RequestInit as UndiciRequestInit, Response as UndiciResponse } fro
 // because it's an unlimited-bandwidth residential IP — Webshare is the safety
 // net for when the Mac/tunnel is offline.
 //
-// HOME PROXY (gost on Mac + bore.pub tunnel):
+// HOME PROXIES (gost + bore.pub tunnel):
 //   - Port changes every time `bore local 8080 --to bore.pub` restarts.
 //   - To rotate: rerun the bore command, copy the new port, update the URL.
-//   - Mac must be on + gost running + bore running for this to work.
+//   - Host machine must be on + gost running + bore running for this to work.
 //
 // WEBSHARE (fallback):
 //   - 429 = per-account burst rate limit (~req/min), NOT monthly quota.
 //   - Cooldown logic skips a 429'd account for 30s.
 const WEBSHARE_PROXY_URLS = [
+  "http://fasttools:***REMOVED***@bore.pub:31963",
   "http://fasttools:***REMOVED***@bore.pub:55737",
   "http://flwacgtc-rotate:***REMOVED***@p.webshare.io:80",
   "http://wizdafld-rotate:***REMOVED***@p.webshare.io:80",
