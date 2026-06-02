@@ -268,12 +268,14 @@ export function InfluencerRateCalculator() {
             <div className="grid grid-cols-2 sm:grid-cols-5 gap-2">
               {platforms.map((p) => (
                 <button
+                  type="button"
                   key={p.id}
                   onClick={() => { setPlatform(p.id); setContentType(contentTypes[p.id][0].id) }}
-                  className={`p-3 rounded-lg border-2 transition-all duration-300 text-center ${
+                  aria-pressed={platform === p.id}
+                  className={`p-3 rounded-lg border transition-all duration-300 text-center ${
                     platform === p.id
-                      ? "border-primary bg-primary/10 text-foreground"
-                      : "border-border hover:border-primary/50 bg-card text-muted-foreground"
+                      ? "border-primary bg-primary text-primary-foreground shadow-sm"
+                      : "border-border hover:border-primary/30 bg-white text-muted-foreground hover:bg-accent hover:text-primary"
                   }`}
                 >
                   <div className="text-lg mb-0.5">{p.icon}</div>
@@ -292,12 +294,14 @@ export function InfluencerRateCalculator() {
             <div className="flex flex-wrap gap-2">
               {contentTypes[platform].map((ct) => (
                 <button
+                  type="button"
                   key={ct.id}
                   onClick={() => setContentType(ct.id)}
-                  className={`px-4 py-2 rounded-lg border-2 text-sm transition-all ${
+                  aria-pressed={contentType === ct.id}
+                  className={`px-4 py-2 rounded-lg border text-sm transition-all ${
                     contentType === ct.id
-                      ? "border-primary bg-primary/10 text-foreground font-medium"
-                      : "border-border hover:border-primary/50 bg-card text-muted-foreground"
+                      ? "border-primary bg-primary text-primary-foreground font-semibold shadow-sm"
+                      : "border-border hover:border-primary/30 bg-white text-muted-foreground hover:bg-accent hover:text-primary"
                   }`}
                 >
                   {ct.label}
@@ -349,17 +353,19 @@ export function InfluencerRateCalculator() {
             <div className="grid grid-cols-2 sm:grid-cols-4 gap-2">
               {niches.map((n) => (
                 <button
+                  type="button"
                   key={n.id}
                   onClick={() => setNiche(n.id)}
-                  className={`px-3 py-2 rounded-lg border-2 text-xs transition-all ${
+                  aria-pressed={niche === n.id}
+                  className={`px-3 py-2 rounded-lg border text-xs transition-all ${
                     niche === n.id
-                      ? "border-primary bg-primary/10 text-foreground font-medium"
-                      : "border-border hover:border-primary/50 bg-card text-muted-foreground"
+                      ? "border-primary bg-primary text-primary-foreground font-semibold shadow-sm"
+                      : "border-border hover:border-primary/30 bg-white text-muted-foreground hover:bg-accent hover:text-primary"
                   }`}
                 >
                   {n.label}
                   {n.multiplier > 1 && (
-                    <span className="ml-1 text-[10px] text-primary">+{Math.round((n.multiplier - 1) * 100)}%</span>
+                    <span className={`ml-1 text-[10px] ${niche === n.id ? "text-primary-foreground/80" : "text-primary"}`}>+{Math.round((n.multiplier - 1) * 100)}%</span>
                   )}
                 </button>
               ))}

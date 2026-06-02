@@ -7,7 +7,7 @@ interface ToolLoaderProps {
 
 export function ToolLoader({ toolName, description }: ToolLoaderProps = {}) {
     return (
-        <div className="flex flex-col items-center justify-center min-h-[400px] w-full gap-4 bg-card/50 rounded-xl border border-dashed border-border/50">
+        <div className="flex flex-col items-center justify-center min-h-[400px] w-full gap-4 bg-card rounded-lg border border-dashed border-border">
             <GLoader size="lg" />
             <div className="text-center space-y-2 px-4">
                 <p className="text-muted-foreground animate-pulse font-medium">

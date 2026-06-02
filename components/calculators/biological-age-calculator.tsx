@@ -43,7 +43,7 @@ export function BiologicalAgeCalculator() {
 
   const selectButton = (selected: boolean) =>
     `px-3 py-1.5 rounded-lg border text-xs transition-all ${
-      selected ? "border-primary bg-primary/10 text-foreground font-medium" : "border-border hover:border-primary/50 bg-card text-muted-foreground"
+      selected ? "border-primary bg-primary text-primary-foreground font-semibold shadow-sm" : "border-border hover:border-primary/30 bg-white text-muted-foreground hover:bg-accent hover:text-primary"
     }`
 
   const calculateBioAge = () => {

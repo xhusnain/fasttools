@@ -66,7 +66,7 @@ export function HomeFAQSection() {
                         description="Find quick answers to common questions about FastTools. Get instant clarity on features, pricing, security, and how to make the most of our all our free online tools. Everything you need to know in one place."
                         titleSize="large"
                         descriptionSize="medium"
-                        color="green"
+                        color="blue"
                         as="h2"
                     />
                 </div>
@@ -75,14 +75,14 @@ export function HomeFAQSection() {
                     {faqs.map((faq, i) => (
                         <div
                             key={i}
-                            className="group relative bg-card/50 backdrop-blur-md rounded-2xl border border-border/50 hover:border-primary/50 transition-all duration-300 hover:shadow-lg hover:shadow-primary/5 overflow-hidden p-6 sm:p-8"
+                            className="group relative bg-card rounded-lg border border-border hover:border-primary/30 transition-all duration-300 hover:shadow-md overflow-hidden p-6 sm:p-8"
                         >
                             <div className="absolute -top-4 -right-4 opacity-[0.03] group-hover:opacity-[0.08] transition-opacity select-none">
                                 <span className="text-9xl font-black text-primary">{faq.number}</span>
                             </div>
                             <div className="relative z-10">
                                 <h3 className="text-lg sm:text-xl font-bold text-foreground mb-3 pr-4">{faq.question}</h3>
-                                <p className="text-sm sm:text-base text-foreground leading-relaxed">{faq.answer}</p>
+                                <p className="text-sm sm:text-base text-muted-foreground leading-relaxed">{faq.answer}</p>
                             </div>
                         </div>
                     ))}

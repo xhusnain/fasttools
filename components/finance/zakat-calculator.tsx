@@ -251,15 +251,15 @@ export function ZakatCalculator() {
                 <Scale className="h-4 w-4" /> Nisab Standard
               </GLabel>
               <div className="flex gap-2">
-                <button onClick={() => setNisabStandard("silver")}
-                  className={`flex-1 p-2.5 rounded-lg border-2 text-xs text-center transition-all ${nisabStandard === "silver" ? "border-primary bg-primary/10 text-foreground font-medium" : "border-border hover:border-primary/50 bg-card text-muted-foreground"}`}>
+                <button type="button" onClick={() => setNisabStandard("silver")} aria-pressed={nisabStandard === "silver"}
+                  className={`flex-1 p-2.5 rounded-lg border text-xs text-center transition-all ${nisabStandard === "silver" ? "border-primary bg-primary text-primary-foreground font-semibold shadow-sm" : "border-border hover:border-primary/30 bg-white text-muted-foreground hover:bg-accent hover:text-primary"}`}>
                   Silver (612.36g)
-                  <div className="text-[10px] text-muted-foreground mt-0.5">Recommended by majority</div>
+                  <div className={`text-[10px] mt-0.5 ${nisabStandard === "silver" ? "text-primary-foreground/80" : "text-muted-foreground"}`}>Recommended by majority</div>
                 </button>
-                <button onClick={() => setNisabStandard("gold")}
-                  className={`flex-1 p-2.5 rounded-lg border-2 text-xs text-center transition-all ${nisabStandard === "gold" ? "border-primary bg-primary/10 text-foreground font-medium" : "border-border hover:border-primary/50 bg-card text-muted-foreground"}`}>
+                <button type="button" onClick={() => setNisabStandard("gold")} aria-pressed={nisabStandard === "gold"}
+                  className={`flex-1 p-2.5 rounded-lg border text-xs text-center transition-all ${nisabStandard === "gold" ? "border-primary bg-primary text-primary-foreground font-semibold shadow-sm" : "border-border hover:border-primary/30 bg-white text-muted-foreground hover:bg-accent hover:text-primary"}`}>
                   Gold (87.48g)
-                  <div className="text-[10px] text-muted-foreground mt-0.5">Higher threshold</div>
+                  <div className={`text-[10px] mt-0.5 ${nisabStandard === "gold" ? "text-primary-foreground/80" : "text-muted-foreground"}`}>Higher threshold</div>
                 </button>
               </div>
             </div>

@@ -249,10 +249,10 @@ export function RemoteWorkSavingsCalculator() {
               <Car className="h-4 w-4" /> Commute
             </h3>
             <div className="flex flex-wrap gap-2 mb-3">
-              <button onClick={() => setCommuteMethod("car")} className={`px-3 py-1.5 rounded-lg border text-xs transition-all ${commuteMethod === "car" ? "border-primary bg-primary/10 text-foreground font-medium" : "border-border hover:border-primary/50 bg-card text-muted-foreground"}`}>
+              <button type="button" onClick={() => setCommuteMethod("car")} aria-pressed={commuteMethod === "car"} className={`px-3 py-1.5 rounded-lg border text-xs transition-all ${commuteMethod === "car" ? "border-primary bg-primary text-primary-foreground font-semibold shadow-sm" : "border-border hover:border-primary/30 bg-white text-muted-foreground hover:bg-accent hover:text-primary"}`}>
                 Drive (Car)
               </button>
-              <button onClick={() => setCommuteMethod("transit")} className={`px-3 py-1.5 rounded-lg border text-xs transition-all ${commuteMethod === "transit" ? "border-primary bg-primary/10 text-foreground font-medium" : "border-border hover:border-primary/50 bg-card text-muted-foreground"}`}>
+              <button type="button" onClick={() => setCommuteMethod("transit")} aria-pressed={commuteMethod === "transit"} className={`px-3 py-1.5 rounded-lg border text-xs transition-all ${commuteMethod === "transit" ? "border-primary bg-primary text-primary-foreground font-semibold shadow-sm" : "border-border hover:border-primary/30 bg-white text-muted-foreground hover:bg-accent hover:text-primary"}`}>
                 Public Transit
               </button>
             </div>

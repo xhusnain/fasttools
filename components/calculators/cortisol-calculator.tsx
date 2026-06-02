@@ -339,12 +339,14 @@ export function CortisolCalculator() {
             <div className="flex flex-wrap gap-2">
               {presets.map((p) => (
                 <button
+                  type="button"
                   key={p.value}
                   onClick={() => setWakeUpTime(p.value)}
+                  aria-pressed={wakeUpTime === p.value}
                   className={`px-3 py-1.5 rounded-lg border text-xs transition-all ${
                     wakeUpTime === p.value
-                      ? "border-primary bg-primary/10 text-foreground font-medium"
-                      : "border-border hover:border-primary/50 bg-card text-muted-foreground"
+                      ? "border-primary bg-primary text-primary-foreground font-semibold shadow-sm"
+                      : "border-border hover:border-primary/30 bg-white text-muted-foreground hover:bg-accent hover:text-primary"
                   }`}
                 >
                   {p.label}

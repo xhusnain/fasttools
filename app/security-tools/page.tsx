@@ -42,7 +42,7 @@ const toolConfig = createToolConfig({
       "Privacy-focused tools for encryption, data protection, steganography, and secure information handling. All tools work offline in your browser.",
     titleSize: "large",
     descriptionSize: "small",
-    color: "purple",
+    color: "blue",
   },
 
   breadcrumbs: [{ label: "Security Tools", href: "/security-tools" }],

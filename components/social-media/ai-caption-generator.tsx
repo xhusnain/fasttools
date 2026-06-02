@@ -157,17 +157,17 @@ export function AiCaptionGenerator() {
                 disabled={loading}
                 aria-pressed={platform === item.value}
                 aria-label={`Select ${item.label} platform`}
-                className={`p-3 rounded-lg border-2 transition-all duration-200 text-left hover:scale-105 ${
+                className={`p-3 rounded-lg border transition-all duration-200 text-left hover:scale-[1.02] ${
                   platform === item.value
-                    ? "border-primary bg-primary/10 shadow-md"
-                    : "border-border hover:border-primary/50"
+                    ? "border-primary bg-primary text-primary-foreground shadow-sm"
+                    : "border-border bg-white hover:border-primary/30 hover:bg-accent hover:text-primary"
                 } ${loading ? "opacity-50 cursor-not-allowed" : "cursor-pointer"}`}
               >
                 <div className="flex items-center gap-2 mb-1">
                   <span className="text-lg">{item.icon}</span>
                   <span className="font-medium text-sm">{item.label}</span>
                 </div>
-                <p className="text-xs text-muted-foreground">{item.description}</p>
+                <p className={`text-xs ${platform === item.value ? "text-primary-foreground/80" : "text-muted-foreground"}`}>{item.description}</p>
               </button>
             ))}
           </div>

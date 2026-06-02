@@ -42,133 +42,114 @@ const tools = [
     description: "Advanced scientific calculator with trigonometric functions (sin, cos, tan), logarithms, exponents, and more. Perfect for students, engineers, and professionals needing precise calculations.",
     icon: Calculator,
     href: "/calculator/scientific-calculator",
-    color: "blue",
   },
   {
     title: "Percentage Calculator",
     description: "Calculate percentage increases, decreases, differences, and parts of a whole. Essential for discounts, tax calculations, and growth rates.",
     icon: Percent,
     href: "/calculator/percentage-calculator",
-    color: "green",
   },
   {
     title: "Date Difference Calculator",
     description: "Calculate the exact duration between two dates in years, months, weeks, and days. Includes leap year adjustments and business day calculations.",
     icon: Calendar,
     href: "/calculator/date-difference",
-    color: "purple"
   },
   {
     title: "Time Duration Calculator",
     description: "Calculate time differences in hours, minutes, and seconds. Perfect for tracking work hours, event durations, and time intervals.",
     icon: Clock,
     href: "/calculator/time-duration",
-    color: "blue"
   },
   {
     title: "BMI Calculator",
     description: "Calculate Body Mass Index (BMI) to assess weight categories. Based on WHO guidelines for healthy weight monitoring.",
     icon: Activity,
     href: "/calculator/bmi-calculator",
-    color: "pink",
   },
   {
     title: "BMR Calculator",
     description: "Calculate Basal Metabolic Rate to know how many calories your body burns at rest. Essential for diet planning and weight management.",
     icon: Flame,
     href: "/calculator/bmr-calculator",
-    color: "red"
   },
   {
     title: "Calorie Calculator",
     description: "Estimate daily calorie needs for weight loss, maintenance, or gain. customized based on activity level and fitness goals.",
     icon: Utensils,
     href: "/calculator/calorie-calculator",
-    color: "yellow",
   },
   {
     title: "TDEE & Macro Calculator",
     description: "Calculate Total Daily Energy Expenditure and personalized macros using Mifflin-St Jeor, Harris-Benedict, and Katch-McArdle equations. Get protein, carbs, and fat targets for any goal.",
     icon: Flame,
     href: "/calculator/tdee-macro-calculator",
-    color: "orange",
   },
   {
     title: "GPA Calculator",
     description: "Calculate your Grade Point Average. Track academic performance and plan for target grades.",
     icon: BookOpen,
     href: "/calculator/gpa-calculator",
-    color: "blue"
   },
   {
     title: "Concrete Calculator",
     description: "Estimate concrete volume for slabs, footings, and columns. Essential for construction and DIY projects.",
     icon: Blocks,
     href: "/calculator/concrete-calculator",
-    color: "stone"
   },
   {
     title: "IP Subnet Calculator",
     description: "Calculate subnet masks, network addresses, and host ranges. Essential tool for network engineers and IT professionals.",
     icon: Router,
     href: "/calculator/ip-subnet-calculator",
-    color: "slate"
   },
   {
     title: "Age Calculator",
     description: "Calculate exact age in years, months, and days. Also calculates days until next birthday.",
     icon: Cake,
     href: "/calculator/age-calculator",
-    color: "blue"
   },
   {
     title: "Pregnancy Calculator",
     description: "Estimate due date and track pregnancy milestones. Based on last menstrual period or conception date.",
     icon: Stethoscope,
     href: "/calculator/pregnancy-calculator",
-    color: "pink"
   },
   {
     title: "Ovulation & Fertility Calculator",
     description: "Calculate ovulation date, fertile window, and best days to conceive. 6-cycle forecast with visual calendar.",
     icon: Heart,
     href: "/calculator/ovulation-calculator",
-    color: "pink"
   },
   {
     title: "Pregnancy Conception Calculator",
     description: "Calculate optimal conception dates and fertile windows. Plan pregnancy with ovulation tracking.",
     icon: CalendarHeart,
     href: "/calculator/pregnancy-conception-calculator",
-    color: "rose"
   },
   {
     title: "Fraction Calculator",
     description: "Add, subtract, multiply, and divide fractions. Simplifies results and converts to decimals.",
     icon: Binary,
     href: "/calculator/fraction-calculator",
-    color: "blue"
   },
   {
     title: "Standard Deviation Calculator",
     description: "Calculate mean, variance, and standard deviation. Essential for statistical analysis and data science.",
     icon: Sigma,
     href: "/calculator/standard-deviation-calculator",
-    color: "violet"
   },
   {
     title: "Triangle Calculator",
     description: "Solve triangle problems. Calculate area, perimeter, angles, and side lengths using various theorems.",
     icon: Triangle,
     href: "/calculator/triangle-calculator",
-    color: "indigo"
   },
   {
     title: "Pace Calculator",
     description: "Calculate running or cycling pace. Plan training targets and race strategies.",
     icon: Footprints,
     href: "/calculator/pace-calculator",
-    color: "emerald"
   },
 
   {
@@ -176,35 +157,30 @@ const tools = [
     description: "Estimate body fat percentage using various measurement methods. Track fitness progress beyond weight alone.",
     icon: HeartPulse,
     href: "/calculator/body-fat-calculator",
-    color: "purple"
   },
   {
     title: "Conversion Calculator",
     description: "Universal unit converter for length, weight, temperature, and more. Quick conversions for everyday needs.",
     icon: ArrowRightLeft,
     href: "/calculator/conversion-calculator",
-    color: "teal"
   },
   {
     title: "Love Calculator",
     description: "Fun compatibility calculator based on names. Entertainment tool for calculating love percentages.",
     icon: Heart,
     href: "/calculator/love-calculator",
-    color: "pink"
   },
   {
     title: "Cortisol Peak Time Calculator",
     description: "Find optimal caffeine, workout, focus & sleep timing based on your wake-up time and cortisol rhythm.",
     icon: Sun,
     href: "/calculator/cortisol-peak-calculator",
-    color: "orange"
   },
   {
     title: "Biological Age Calculator",
     description: "Estimate your true body age based on lifestyle, fitness, sleep, stress, diet, and habits. Get personalised recommendations.",
     icon: Activity,
     href: "/calculator/biological-age-calculator",
-    color: "green"
   }
 ]
 
@@ -760,7 +736,7 @@ function CalculatorGrid() {
   return (
     <div className="space-y-8">
       {/* Hero Image */}
-      <div className="relative w-full h-64 md:h-80 rounded-2xl overflow-hidden border border-border shadow-xl">
+      <div className="relative w-full h-64 md:h-80 rounded-lg overflow-hidden border border-border shadow-md">
         <Image
           src="/images/calculator-hero.png"
           alt="Calculator Tools Illustration"
@@ -771,21 +747,21 @@ function CalculatorGrid() {
       </div>
 
       <div className="grid grid-cols-2 md:grid-cols-4 gap-4 text-sm">
-        <div className="flex items-center justify-center gap-2 px-4 py-3 rounded-lg bg-card border border-primary shadow-md hover:shadow-lg transition-all duration-300">
+        <div className="flex items-center justify-center gap-2 px-4 py-3 rounded-lg bg-card border border-primary/20 shadow-sm hover:shadow-md transition-all duration-300">
           <Calculator className="h-4 w-4 text-primary" />
           <span className="text-primary font-medium text-sm">50+ Tools</span>
         </div>
-        <div className="flex items-center justify-center gap-2 px-4 py-3 rounded-lg bg-card border border-heading-accent-border shadow-md hover:shadow-lg transition-all duration-300">
-          <Users className="h-4 w-4 text-heading-accent" />
-          <span className="text-heading-accent font-medium text-sm">1M+ Users</span>
+        <div className="flex items-center justify-center gap-2 px-4 py-3 rounded-lg bg-card border border-primary/20 shadow-sm hover:shadow-md transition-all duration-300">
+          <Users className="h-4 w-4 text-primary" />
+          <span className="text-primary font-medium text-sm">1M+ Users</span>
         </div>
-        <div className="flex items-center justify-center gap-2 px-4 py-3 rounded-lg bg-card border border-accent shadow-md hover:shadow-lg transition-all duration-300">
-          <Zap className="h-4 w-4 text-accent" />
-          <span className="text-accent font-medium text-sm">Free Forever</span>
+        <div className="flex items-center justify-center gap-2 px-4 py-3 rounded-lg bg-card border border-primary/20 shadow-sm hover:shadow-md transition-all duration-300">
+          <Zap className="h-4 w-4 text-primary" />
+          <span className="text-primary font-medium text-sm">Free Forever</span>
         </div>
-        <div className="flex items-center justify-center gap-2 px-4 py-3 rounded-lg bg-card border border-secondary-accent shadow-md hover:shadow-lg transition-all duration-300">
-          <Target className="h-4 w-4 text-secondary-accent" />
-          <span className="text-secondary-accent font-medium text-sm">Professional</span>
+        <div className="flex items-center justify-center gap-2 px-4 py-3 rounded-lg bg-card border border-primary/20 shadow-sm hover:shadow-md transition-all duration-300">
+          <Target className="h-4 w-4 text-primary" />
+          <span className="text-primary font-medium text-sm">Professional</span>
         </div>
       </div>
 

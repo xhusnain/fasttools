@@ -10,6 +10,7 @@ export const searchItems: SearchItem[] = [
   // Main Pages
   { name: "Products", description: "Explore all our product categories and tools", path: "/products", category: "Pages" },
   { name: "API Docs", description: "Comprehensive API documentation for developers", path: "/api-docs", category: "Pages" },
+  { name: "FastTools Blog", description: "Practical guides for online tools, privacy, SEO workflows, calculators, converters, and developer utilities", path: "/blog", category: "Pages" },
   { name: "About Us", description: "Learn about FastTools and our mission", path: "/about", category: "Pages" },
   { name: "My Info", description: "View your digital footprint, IP address, and location information", path: "/my-info", category: "Pages" },
 
@@ -207,7 +208,6 @@ export const searchItems: SearchItem[] = [
   // Security Tools
   { name: "Image Steganography", description: "Hide secret messages inside PNG/JPG images using LSB encoding with optional AES-GCM encryption", path: "/security-tools/image-steganography", category: "Security" },
 ]
-
 
 
 

@@ -85,7 +85,7 @@ export function GMessage({
     return (
         <div
             className={cn(
-                "relative w-full overflow-hidden rounded-xl border backdrop-blur-md transition-all duration-300 animate-in fade-in slide-in-from-top-2",
+                "relative w-full overflow-hidden rounded-lg border backdrop-blur-md transition-all duration-300 animate-in fade-in slide-in-from-top-2",
                 variant.container,
                 className
             )}

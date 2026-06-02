@@ -10,7 +10,7 @@ export function HomeRichContent() {
                 <div className="container mx-auto px-4 max-w-6xl">
                     <div className="grid lg:grid-cols-2 gap-12 lg:gap-16">
                         <div className="space-y-8">
-                            <h2 className="text-3xl md:text-4xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-indigo-500 to-primary">
+                            <h2 className="text-3xl md:text-4xl font-bold text-foreground">
                                 200+ Tools for Every Task — All Free, All Instant
                             </h2>
                             <div className="prose dark:prose-invert max-w-none text-muted-foreground">
@@ -28,14 +28,14 @@ export function HomeRichContent() {
                             </div>
                         </div>
 
-                        <div className="bg-card/50 border border-border/50 rounded-2xl p-8 space-y-8 backdrop-blur-sm">
+                        <div className="bg-card border border-border rounded-lg p-8 space-y-8 shadow-sm">
                             <div className="space-y-6">
                                 <h3 className="text-2xl font-semibold">Most Popular Categories</h3>
 
                                 <div className="grid gap-6">
                                     <div className="flex gap-4">
-                                        <div className="mt-1 bg-red-500/10 p-3 rounded-lg h-12 w-12 flex items-center justify-center shrink-0">
-                                            <FileText className="w-6 h-6 text-red-500" />
+                                        <div className="mt-1 bg-primary/10 p-3 rounded-lg h-12 w-12 flex items-center justify-center shrink-0 border border-primary/15">
+                                            <FileText className="w-6 h-6 text-primary" />
                                         </div>
                                         <div>
                                             <h4 className="font-semibold text-foreground mb-1">PDF Tools</h4>
@@ -44,8 +44,8 @@ export function HomeRichContent() {
                                     </div>
 
                                     <div className="flex gap-4">
-                                        <div className="mt-1 bg-blue-500/10 p-3 rounded-lg h-12 w-12 flex items-center justify-center shrink-0">
-                                            <Calculator className="w-6 h-6 text-blue-500" />
+                                        <div className="mt-1 bg-primary/10 p-3 rounded-lg h-12 w-12 flex items-center justify-center shrink-0 border border-primary/15">
+                                            <Calculator className="w-6 h-6 text-primary" />
                                         </div>
                                         <div>
                                             <h4 className="font-semibold text-foreground mb-1">Calculators & Finance</h4>
@@ -54,8 +54,8 @@ export function HomeRichContent() {
                                     </div>
 
                                     <div className="flex gap-4">
-                                        <div className="mt-1 bg-purple-500/10 p-3 rounded-lg h-12 w-12 flex items-center justify-center shrink-0">
-                                            <TrendingUp className="w-6 h-6 text-purple-500" />
+                                        <div className="mt-1 bg-primary/10 p-3 rounded-lg h-12 w-12 flex items-center justify-center shrink-0 border border-primary/15">
+                                            <TrendingUp className="w-6 h-6 text-primary" />
                                         </div>
                                         <div>
                                             <h4 className="font-semibold text-foreground mb-1">Social Media & AI</h4>
@@ -64,8 +64,8 @@ export function HomeRichContent() {
                                     </div>
 
                                     <div className="flex gap-4">
-                                        <div className="mt-1 bg-green-500/10 p-3 rounded-lg h-12 w-12 flex items-center justify-center shrink-0">
-                                            <Code className="w-6 h-6 text-green-500" />
+                                        <div className="mt-1 bg-primary/10 p-3 rounded-lg h-12 w-12 flex items-center justify-center shrink-0 border border-primary/15">
+                                            <Code className="w-6 h-6 text-primary" />
                                         </div>
                                         <div>
                                             <h4 className="font-semibold text-foreground mb-1">Developer & Crypto Tools</h4>
@@ -84,7 +84,7 @@ export function HomeRichContent() {
                 <div className="container mx-auto px-4 max-w-6xl">
                     <div className="grid lg:grid-cols-2 gap-12 lg:gap-16">
                         <div className="space-y-8">
-                            <h2 className="text-3xl md:text-4xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-primary to-purple-500">
+                            <h2 className="text-3xl md:text-4xl font-bold text-foreground">
                                 Your Data Never Leaves Your Device
                             </h2>
                             <div className="prose dark:prose-invert max-w-none text-muted-foreground">
@@ -102,13 +102,13 @@ export function HomeRichContent() {
                             </div>
                         </div>
 
-                        <div className="bg-card/50 border border-border/50 rounded-2xl p-8 space-y-8 backdrop-blur-sm">
+                        <div className="bg-card border border-border rounded-lg p-8 space-y-8 shadow-sm">
                             <div className="space-y-6">
                                 <h3 className="text-2xl font-semibold">Our Privacy Promise</h3>
 
                                 <div className="grid gap-6">
                                     <div className="flex gap-4">
-                                        <div className="mt-1 bg-primary/10 p-3 rounded-lg h-12 w-12 flex items-center justify-center shrink-0">
+                                        <div className="mt-1 bg-primary/10 p-3 rounded-lg h-12 w-12 flex items-center justify-center shrink-0 border border-primary/15">
                                             <Shield className="w-6 h-6 text-primary" />
                                         </div>
                                         <div>
@@ -118,8 +118,8 @@ export function HomeRichContent() {
                                     </div>
 
                                     <div className="flex gap-4">
-                                        <div className="mt-1 bg-purple-500/10 p-3 rounded-lg h-12 w-12 flex items-center justify-center shrink-0">
-                                            <Lock className="w-6 h-6 text-purple-500" />
+                                        <div className="mt-1 bg-primary/10 p-3 rounded-lg h-12 w-12 flex items-center justify-center shrink-0 border border-primary/15">
+                                            <Lock className="w-6 h-6 text-primary" />
                                         </div>
                                         <div>
                                             <h4 className="font-semibold text-foreground mb-1">Encrypted Connections</h4>
@@ -128,8 +128,8 @@ export function HomeRichContent() {
                                     </div>
 
                                     <div className="flex gap-4">
-                                        <div className="mt-1 bg-green-500/10 p-3 rounded-lg h-12 w-12 flex items-center justify-center shrink-0">
-                                            <Zap className="w-6 h-6 text-green-500" />
+                                        <div className="mt-1 bg-primary/10 p-3 rounded-lg h-12 w-12 flex items-center justify-center shrink-0 border border-primary/15">
+                                            <Zap className="w-6 h-6 text-primary" />
                                         </div>
                                         <div>
                                             <h4 className="font-semibold text-foreground mb-1">Instant Results</h4>
@@ -138,8 +138,8 @@ export function HomeRichContent() {
                                     </div>
 
                                     <div className="flex gap-4">
-                                        <div className="mt-1 bg-blue-500/10 p-3 rounded-lg h-12 w-12 flex items-center justify-center shrink-0">
-                                            <Globe className="w-6 h-6 text-blue-500" />
+                                        <div className="mt-1 bg-primary/10 p-3 rounded-lg h-12 w-12 flex items-center justify-center shrink-0 border border-primary/15">
+                                            <Globe className="w-6 h-6 text-primary" />
                                         </div>
                                         <div>
                                             <h4 className="font-semibold text-foreground mb-1">100% Free Forever</h4>

@@ -4,7 +4,6 @@ import Link from "next/link"
 import Image from "next/image"
 import { useState, useEffect } from "react"
 import { Menu, X } from "lucide-react"
-import { ThemeToggle } from "@/components/common/theme-toggle"
 import { usePathname } from "next/navigation"
 import { Navbar } from "@/components/common/navbar"
 import { navigationConfig } from "@/data/navigation"
@@ -34,8 +33,8 @@ export function Header() {
     <>
       <header
         className={`sticky top-0 z-50 w-full transition-all duration-300 border-b ${scrolled
-          ? "bg-background/80 backdrop-blur-md border-border/10 shadow-md"
-          : "bg-background/60 backdrop-blur-sm border-transparent"
+          ? "bg-white/90 backdrop-blur-md border-border shadow-sm"
+          : "bg-white/75 backdrop-blur-sm border-transparent"
           }`}
       >
         <div className="w-full h-14 px-4 flex items-center justify-center gap-x-10">
@@ -65,12 +64,9 @@ export function Header() {
 
           {/* Actions */}
           <div className="flex items-center gap-3 shrink-0">
-            {/* Desktop TV Link */}
-            <ThemeToggle />
-
             {/* Mobile Menu Toggle */}
             <button
-              className="p-2 rounded-xl text-foreground/70 hover:text-primary hover:bg-primary/10 transition-colors lg:hidden"
+              className="p-2 rounded-lg text-foreground/70 hover:text-primary hover:bg-primary/10 transition-colors lg:hidden"
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
               aria-label="Toggle menu"
             >
@@ -82,7 +78,7 @@ export function Header() {
 
       {/* Mobile Menu Overlay */}
       <div
-        className={`lg:hidden fixed inset-0 z-40 bg-background/80 backdrop-blur-sm transition-opacity duration-300 ${mobileMenuOpen ? "opacity-100" : "opacity-0 pointer-events-none"
+        className={`lg:hidden fixed inset-0 z-40 bg-white/80 backdrop-blur-sm transition-opacity duration-300 ${mobileMenuOpen ? "opacity-100" : "opacity-0 pointer-events-none"
           }`
         }
         onClick={() => setMobileMenuOpen(false)}
@@ -90,11 +86,11 @@ export function Header() {
 
       {/* Mobile Menu Content */}
       <div
-        className={`lg:hidden fixed right-0 top-0 h-full w-[300px] z-50 bg-background/95 backdrop-blur-xl border-l border-border/10 shadow-2xl transition-transform duration-300 ease-out transform ${mobileMenuOpen ? "translate-x-0" : "translate-x-full"
+        className={`lg:hidden fixed right-0 top-0 h-full w-[300px] z-50 bg-white/95 backdrop-blur-xl border-l border-border shadow-xl transition-transform duration-300 ease-out transform ${mobileMenuOpen ? "translate-x-0" : "translate-x-full"
           }`}
       >
         <div className="flex flex-col h-full">
-          <div className="flex items-center justify-between p-4 border-b border-border/10">
+          <div className="flex items-center justify-between p-4 border-b border-border">
             <div className="flex items-center gap-2">
               <div className="relative h-8 w-8 overflow-hidden rounded-lg">
                 <Image

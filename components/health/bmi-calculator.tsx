@@ -187,15 +187,19 @@ Risk Level: ${result.riskLevel}`
             </div>
             <div className="flex gap-2 p-1 bg-card border border-border rounded-lg">
               <button
+                type="button"
                 onClick={() => setUnit("metric")}
-                className={`flex-1 py-3 px-4 rounded-md text-sm font-medium transition-all ${unit === "metric" ? "bg-primary text-white shadow-sm" : "bg-card text-muted-foreground hover:bg-secondary border border-border"
+                aria-pressed={unit === "metric"}
+                className={`flex-1 py-3 px-4 rounded-lg border text-sm font-semibold transition-all ${unit === "metric" ? "border-primary bg-primary text-primary-foreground shadow-sm" : "border-border bg-white text-muted-foreground hover:border-primary/30 hover:bg-accent hover:text-primary"
                   }`}
               >
                 Metric (kg/cm)
               </button>
               <button
+                type="button"
                 onClick={() => setUnit("imperial")}
-                className={`flex-1 py-3 px-4 rounded-md text-sm font-medium transition-all ${unit === "imperial" ? "bg-primary text-white shadow-sm" : "bg-card text-muted-foreground hover:bg-secondary border border-border"
+                aria-pressed={unit === "imperial"}
+                className={`flex-1 py-3 px-4 rounded-lg border text-sm font-semibold transition-all ${unit === "imperial" ? "border-primary bg-primary text-primary-foreground shadow-sm" : "border-border bg-white text-muted-foreground hover:border-primary/30 hover:bg-accent hover:text-primary"
                   }`}
               >
                 Imperial (lbs/in)
@@ -262,22 +266,28 @@ Risk Level: ${result.riskLevel}`
               </GLabel>
               <div className="flex gap-2">
                 <button
+                  type="button"
                   onClick={() => setGender("male")}
-                  className={`flex-1 py-2 px-3 rounded-md text-sm font-medium transition-all ${gender === "male" ? "bg-primary text-white shadow-sm" : "bg-card text-muted-foreground hover:bg-secondary border border-border"
+                  aria-pressed={gender === "male"}
+                  className={`flex-1 py-2 px-3 rounded-lg border text-sm font-semibold transition-all ${gender === "male" ? "border-primary bg-primary text-primary-foreground shadow-sm" : "border-border bg-white text-muted-foreground hover:border-primary/30 hover:bg-accent hover:text-primary"
                     }`}
                 >
                   Male
                 </button>
                 <button
+                  type="button"
                   onClick={() => setGender("female")}
-                  className={`flex-1 py-2 px-3 rounded-md text-sm font-medium transition-all ${gender === "female" ? "bg-primary text-white shadow-sm" : "bg-card text-muted-foreground hover:bg-secondary border border-border"
+                  aria-pressed={gender === "female"}
+                  className={`flex-1 py-2 px-3 rounded-lg border text-sm font-semibold transition-all ${gender === "female" ? "border-primary bg-primary text-primary-foreground shadow-sm" : "border-border bg-white text-muted-foreground hover:border-primary/30 hover:bg-accent hover:text-primary"
                     }`}
                 >
                   Female
                 </button>
                 <button
+                  type="button"
                   onClick={() => setGender("other")}
-                  className={`flex-1 py-2 px-3 rounded-md text-sm font-medium transition-all ${gender === "other" ? "bg-primary text-white shadow-sm" : "bg-card text-muted-foreground hover:bg-secondary border border-border"
+                  aria-pressed={gender === "other"}
+                  className={`flex-1 py-2 px-3 rounded-lg border text-sm font-semibold transition-all ${gender === "other" ? "border-primary bg-primary text-primary-foreground shadow-sm" : "border-border bg-white text-muted-foreground hover:border-primary/30 hover:bg-accent hover:text-primary"
                     }`}
                 >
                   Other

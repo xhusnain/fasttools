@@ -296,18 +296,22 @@ export function CloudflareWorkersCostCalculator() {
             </GLabel>
             <div className="grid grid-cols-2 gap-3">
               <button
+                type="button"
                 onClick={() => setPlan("free")}
-                className={`p-3 rounded-lg border-2 transition-all text-left ${plan === "free" ? "border-primary bg-primary/10 text-foreground" : "border-border hover:border-primary/50 bg-card text-muted-foreground"}`}
+                aria-pressed={plan === "free"}
+                className={`p-3 rounded-lg border transition-all text-left ${plan === "free" ? "border-primary bg-primary text-primary-foreground shadow-sm" : "border-border hover:border-primary/30 bg-white text-muted-foreground hover:bg-accent hover:text-primary"}`}
               >
                 <div className="text-sm font-medium">Free</div>
-                <div className="text-xs text-muted-foreground">100K req/day, 10ms CPU</div>
+                <div className={`text-xs ${plan === "free" ? "text-primary-foreground/80" : "text-muted-foreground"}`}>100K req/day, 10ms CPU</div>
               </button>
               <button
+                type="button"
                 onClick={() => setPlan("paid")}
-                className={`p-3 rounded-lg border-2 transition-all text-left ${plan === "paid" ? "border-primary bg-primary/10 text-foreground" : "border-border hover:border-primary/50 bg-card text-muted-foreground"}`}
+                aria-pressed={plan === "paid"}
+                className={`p-3 rounded-lg border transition-all text-left ${plan === "paid" ? "border-primary bg-primary text-primary-foreground shadow-sm" : "border-border hover:border-primary/30 bg-white text-muted-foreground hover:bg-accent hover:text-primary"}`}
               >
                 <div className="text-sm font-medium">Workers Paid — $5/mo</div>
-                <div className="text-xs text-muted-foreground">10M req included, 30s CPU</div>
+                <div className={`text-xs ${plan === "paid" ? "text-primary-foreground/80" : "text-muted-foreground"}`}>10M req included, 30s CPU</div>
               </button>
             </div>
           </div>

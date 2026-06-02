@@ -26,7 +26,7 @@ export const GCode = ({ children, className, ...props }: React.HTMLAttributes<HT
     }
 
     return (
-        <div className="relative group my-8 rounded-xl overflow-hidden border border-border bg-card shadow-2xl">
+        <div className="relative group my-8 rounded-lg overflow-hidden border border-border bg-card shadow-md">
             {/* Mac-style Window Header */}
             <div className="flex items-center justify-between px-4 py-3 bg-muted/50 border-b border-border">
                 <div className="flex items-center gap-2">

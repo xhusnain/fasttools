@@ -21,16 +21,16 @@ const buttonVariants = cva(
                 ghost: "hover:bg-accent hover:text-accent-foreground",
                 link: "text-primary underline-offset-4 hover:underline",
                 success:
-                    "bg-emerald-500 text-white hover:bg-emerald-600 shadow-sm hover:shadow-md transition-all duration-200",
+                    "bg-primary text-primary-foreground hover:bg-blue-700 shadow-sm hover:shadow-md transition-all duration-200",
                 warning:
-                    "bg-amber-500 text-white hover:bg-amber-600 shadow-sm hover:shadow-md transition-all duration-200",
-                info: "bg-blue-500 text-white hover:bg-blue-600 shadow-sm hover:shadow-md transition-all duration-200"
+                    "bg-slate-700 text-white hover:bg-slate-800 shadow-sm hover:shadow-md transition-all duration-200",
+                info: "bg-primary text-primary-foreground hover:bg-blue-700 shadow-sm hover:shadow-md transition-all duration-200"
             },
             size: {
-                xs: "h-7 px-2.5 text-xs rounded-sm",
-                sm: "h-8 px-3 text-sm rounded-md",
-                default: "h-10 px-4 py-2 text-sm rounded-md",
-                lg: "h-11 px-6 py-2.5 text-base rounded-md",
+                xs: "h-7 px-2.5 text-xs rounded-md",
+                sm: "h-8 px-3 text-sm rounded-lg",
+                default: "h-10 px-4 py-2 text-sm rounded-lg",
+                lg: "h-11 px-6 py-2.5 text-base rounded-lg",
                 xl: "h-12 px-8 py-3 text-lg rounded-lg",
                 icon: "h-10 w-10"
             }
@@ -85,7 +85,7 @@ const GButton = React.forwardRef<HTMLButtonElement, GButtonProps>(
                 case 'destructive':
                     return "bg-destructive text-destructive-foreground hover:bg-destructive/90"
                 case 'success':
-                    return "bg-[var(--secondary-accent)] text-[var(--secondary-accent-foreground)] hover:opacity-90"
+                    return "bg-primary text-primary-foreground hover:bg-blue-700"
                 default:
                     return ""
             }
@@ -97,7 +97,6 @@ const GButton = React.forwardRef<HTMLButtonElement, GButtonProps>(
                 className={cn(
                     buttonVariants({ variant: customColor ? "default" : variant, size, className }),
                     "relative overflow-hidden transition-all duration-300",
-                    enableHoverEffect && !isLoading && !disabled && "hover:-translate-y-0.5 active:translate-y-0",
                     enableHoverEffect && !isLoading && !disabled && "hover:-translate-y-0.5 active:translate-y-0",
                     colorClasses
                 )}

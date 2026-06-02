@@ -169,6 +169,10 @@ interface FeeCalculationResult {
   cryptocurrencyFee?: number
 }
 
+const selectTriggerClass = "h-9 w-full border border-input bg-white text-sm text-foreground focus-visible:border-primary focus-visible:ring-ring/25"
+const selectContentClass = "bg-popover border border-border"
+const selectItemClass = "text-foreground hover:bg-primary/5 focus:bg-primary/5 text-sm"
+
 export function PayPalFeeCalculator() {
   const [loading, setLoading] = useState(false)
   const [amount, setAmount] = useState("")
@@ -397,10 +401,22 @@ International: ${result.isInternational ? 'Yes' : 'No'}`
         </GCardHeader>
         <GCardContent className="space-y-4">
           <GTabs value={activeTab} onValueChange={setActiveTab} className="w-full">
-            <GTabsList className="grid w-full grid-cols-3 mb-6 bg-primary/10 p-1">
-              <GTabsTrigger value="standard" className="text-sm data-[state=active]:bg-primary data-[state=active]:text-white">Standard Calculator</GTabsTrigger>
-              <GTabsTrigger value="bulk" className="text-sm data-[state=active]:bg-primary data-[state=active]:text-white">Bulk Mode</GTabsTrigger>
-              <GTabsTrigger value="analysis" className="text-sm data-[state=active]:bg-primary data-[state=active]:text-white">Fee Analysis & Help</GTabsTrigger>
+            <GTabsList className="grid w-full grid-cols-3 mb-6">
+              <GTabsTrigger value="standard" className="gap-2 px-2 text-xs sm:text-sm">
+                <Calculator className="hidden h-4 w-4 sm:block" />
+                <span className="hidden sm:inline">Standard Calculator</span>
+                <span className="sm:hidden">Standard</span>
+              </GTabsTrigger>
+              <GTabsTrigger value="bulk" className="gap-2 px-2 text-xs sm:text-sm">
+                <List className="hidden h-4 w-4 sm:block" />
+                <span className="hidden sm:inline">Bulk Mode</span>
+                <span className="sm:hidden">Bulk</span>
+              </GTabsTrigger>
+              <GTabsTrigger value="analysis" className="gap-2 px-2 text-xs sm:text-sm">
+                <Info className="hidden h-4 w-4 sm:block" />
+                <span className="hidden sm:inline">Fee Analysis & Help</span>
+                <span className="sm:hidden">Help</span>
+              </GTabsTrigger>
             </GTabsList>
 
             <GTabsContent value="standard" className="space-y-4">
@@ -409,7 +425,7 @@ International: ${result.isInternational ? 'Yes' : 'No'}`
                 {/* Left Column - GInput Fields */}
                 <div className="space-y-4">
                   <h3 className="text-lg font-semibold text-foreground flex items-center gap-2">
-                    <Settings className="h-4 w-4 text-foreground" />
+                    <Settings className="h-4 w-4 text-primary" />
                     Transaction Details
                   </h3>
 
@@ -418,14 +434,14 @@ International: ${result.isInternational ? 'Yes' : 'No'}`
                     <div className="space-y-1">
                       <GLabel className="text-xs font-medium text-muted-foreground">Transaction Type</GLabel>
                       <GSelect value={transactionType} onValueChange={setTransactionType}>
-                        <GSelectTrigger className="h-9 border-2 border-primary/30 focus:border-primary focus:ring-2 focus:ring-primary/20 bg-background text-foreground text-sm">
-                          <GSelectValue placeholder="GSelect type" />
+                        <GSelectTrigger className={selectTriggerClass}>
+                          <GSelectValue placeholder="Select type" />
                         </GSelectTrigger>
-                        <GSelectContent className="bg-background border-2 border-primary/30">
-                          <GSelectItem value="personal" className="text-foreground hover:bg-primary/10 text-sm">Personal</GSelectItem>
-                          <GSelectItem value="commercial" className="text-foreground hover:bg-primary/10 text-sm">Commercial</GSelectItem>
-                          <GSelectItem value="donations" className="text-foreground hover:bg-primary/10 text-sm">Donations</GSelectItem>
-                          <GSelectItem value="cryptocurrency" className="text-foreground hover:bg-primary/10 text-sm">Cryptocurrency</GSelectItem>
+                        <GSelectContent className={selectContentClass}>
+                          <GSelectItem value="personal" className={selectItemClass}>Personal</GSelectItem>
+                          <GSelectItem value="commercial" className={selectItemClass}>Commercial</GSelectItem>
+                          <GSelectItem value="donations" className={selectItemClass}>Donations</GSelectItem>
+                          <GSelectItem value="cryptocurrency" className={selectItemClass}>Cryptocurrency</GSelectItem>
                         </GSelectContent>
                       </GSelect>
                     </div>
@@ -433,12 +449,12 @@ International: ${result.isInternational ? 'Yes' : 'No'}`
                     <div className="space-y-1">
                       <GLabel className="text-xs font-medium text-muted-foreground">Payment Method</GLabel>
                       <GSelect value={paymentMethod} onValueChange={setPaymentMethod}>
-                        <GSelectTrigger className="h-9 border-2 border-primary/30 focus:border-primary focus:ring-2 focus:ring-primary/20 bg-background text-foreground text-sm">
-                          <GSelectValue placeholder="GSelect method" />
+                        <GSelectTrigger className={selectTriggerClass}>
+                          <GSelectValue placeholder="Select method" />
                         </GSelectTrigger>
-                        <GSelectContent className="bg-background border-2 border-primary/30">
+                        <GSelectContent className={selectContentClass}>
                           {getPaymentMethodOptions().map((option) => (
-                            <GSelectItem key={option.value} value={option.value} className="text-foreground hover:bg-primary/10 text-sm">
+                            <GSelectItem key={option.value} value={option.value} className={selectItemClass}>
                               {option.label}
                             </GSelectItem>
                           ))}
@@ -452,12 +468,12 @@ International: ${result.isInternational ? 'Yes' : 'No'}`
                     <div className="space-y-1">
                       <GLabel className="text-xs font-medium text-muted-foreground">From Country</GLabel>
                       <GSelect value={senderCountry} onValueChange={setSenderCountry}>
-                        <GSelectTrigger className="h-9 border-2 border-primary/30 focus:border-primary focus:ring-2 focus:ring-primary/20 bg-background text-foreground text-sm">
-                          <GSelectValue placeholder="GSelect country" />
+                        <GSelectTrigger className={selectTriggerClass}>
+                          <GSelectValue placeholder="Select country" />
                         </GSelectTrigger>
-                        <GSelectContent className="bg-background border-2 border-primary/30">
+                        <GSelectContent className={selectContentClass}>
                           {Object.entries(COUNTRIES).map(([code, data]) => (
-                            <GSelectItem key={code} value={code} className="text-foreground hover:bg-primary/10 text-sm">
+                            <GSelectItem key={code} value={code} className={selectItemClass}>
                               {data.name}
                             </GSelectItem>
                           ))}
@@ -468,12 +484,12 @@ International: ${result.isInternational ? 'Yes' : 'No'}`
                     <div className="space-y-1">
                       <GLabel className="text-xs font-medium text-muted-foreground">To Country</GLabel>
                       <GSelect value={receiverCountry} onValueChange={setReceiverCountry}>
-                        <GSelectTrigger className="h-9 border-2 border-primary/30 focus:border-primary focus:ring-2 focus:ring-primary/20 bg-background text-foreground text-sm">
-                          <GSelectValue placeholder="GSelect country" />
+                        <GSelectTrigger className={selectTriggerClass}>
+                          <GSelectValue placeholder="Select country" />
                         </GSelectTrigger>
-                        <GSelectContent className="bg-background border-2 border-primary/30">
+                        <GSelectContent className={selectContentClass}>
                           {Object.entries(COUNTRIES).map(([code, data]) => (
-                            <GSelectItem key={code} value={code} className="text-foreground hover:bg-primary/10 text-sm">
+                            <GSelectItem key={code} value={code} className={selectItemClass}>
                               {data.name}
                             </GSelectItem>
                           ))}
@@ -487,12 +503,12 @@ International: ${result.isInternational ? 'Yes' : 'No'}`
                     <div className="space-y-1">
                       <GLabel className="text-xs font-medium text-muted-foreground">Currency</GLabel>
                       <GSelect value={currency} onValueChange={setCurrency}>
-                        <GSelectTrigger className="h-9 border-2 border-primary/30 focus:border-primary focus:ring-2 focus:ring-primary/20 bg-background text-foreground text-sm">
-                          <GSelectValue placeholder="GSelect currency" />
+                        <GSelectTrigger className={selectTriggerClass}>
+                          <GSelectValue placeholder="Select currency" />
                         </GSelectTrigger>
-                        <GSelectContent className="bg-background border-2 border-primary/30">
+                        <GSelectContent className={selectContentClass}>
                           {Object.entries(FIXED_FEES_BY_CURRENCY).map(([code, fee]) => (
-                            <GSelectItem key={code} value={code} className="text-foreground hover:bg-primary/10 text-sm">
+                            <GSelectItem key={code} value={code} className={selectItemClass}>
                               {code} {fee > 0 ? `(${fee})` : ''}
                             </GSelectItem>
                           ))}
@@ -509,7 +525,7 @@ International: ${result.isInternational ? 'Yes' : 'No'}`
                         onChange={(e) => setAmount(e.target.value)}
                         min="0"
                         step="0.01"
-                        className="h-9 text-sm border-2 border-primary/30 focus:border-primary focus:ring-2 focus:ring-primary/20 bg-background text-foreground placeholder:text-muted-foreground"
+                        className="h-9 text-sm"
                       />
                     </div>
                   </div>
@@ -518,7 +534,7 @@ International: ${result.isInternational ? 'Yes' : 'No'}`
                     onClick={calculateFee}
                     disabled={loading || !amount || Number.parseFloat(amount) <= 0}
                     isLoading={loading}
-                    className="w-full h-9 text-sm font-medium shadow-sm hover:shadow-md transition-all bg-primary hover:bg-primary text-white"
+                    className="w-full h-9 text-sm font-medium shadow-sm"
                   >
                     {loading ? "Calculating..." : (
                       <>
@@ -532,14 +548,14 @@ International: ${result.isInternational ? 'Yes' : 'No'}`
                 {/* Right Column - Results */}
                 <div className="space-y-4">
                   <h3 className="text-lg font-semibold text-foreground flex items-center gap-2">
-                    <DollarSign className="h-4 w-4 text-heading-accent" />
+                    <DollarSign className="h-4 w-4 text-primary" />
                     Fee Breakdown
                   </h3>
 
                   {result ? (
                     <div className="space-y-3">
                       {/* Transaction Summary */}
-                      <div className="p-3 bg-card rounded-lg border-2 border-primary/30">
+                      <div className="p-3 bg-primary/5 rounded-lg border border-primary/20">
                         <div className="grid grid-cols-2 gap-2 text-xs">
                           <div className="flex justify-between">
                             <span className="text-muted-foreground">Type:</span>
@@ -555,7 +571,7 @@ International: ${result.isInternational ? 'Yes' : 'No'}`
                           </div>
                           <div className="flex justify-between">
                             <span className="text-muted-foreground">International:</span>
-                            <span className={`font-medium ${result.isInternational ? 'text-foreground' : 'text-heading-accent'}`}>
+                            <span className={`font-medium ${result.isInternational ? 'text-foreground' : 'text-primary'}`}>
                               {result.isInternational ? 'Yes' : 'No'}
                             </span>
                           </div>
@@ -564,23 +580,23 @@ International: ${result.isInternational ? 'Yes' : 'No'}`
 
                       {/* Amount & Fees */}
                       <div className="space-y-2">
-                        <div className="flex justify-between items-center p-2 bg-card rounded border border-primary/30">
+                        <div className="flex justify-between items-center p-2 bg-white rounded border border-border">
                           <span className="text-sm text-muted-foreground">Transaction Amount:</span>
                           <span className="text-sm font-bold text-foreground">{result.currency} {result.amount}</span>
                         </div>
 
-                        <div className="flex justify-between items-center p-2 bg-card rounded border border-primary/30">
+                        <div className="flex justify-between items-center p-2 bg-white rounded border border-border">
                           <span className="text-sm text-muted-foreground">Percentage Fee:</span>
                           <span className="text-sm font-bold text-foreground">{result.currency} {result.percentageFee}</span>
                         </div>
 
-                        <div className="flex justify-between items-center p-2 bg-card rounded border border-primary/30">
+                        <div className="flex justify-between items-center p-2 bg-white rounded border border-border">
                           <span className="text-sm text-muted-foreground">Fixed Fee:</span>
                           <span className="text-sm font-bold text-foreground">{result.currency} {result.fixedFee}</span>
                         </div>
 
                         {result.currencyConversionFee && (
-                          <div className="flex justify-between items-center p-2 bg-card rounded border border-primary/30">
+                          <div className="flex justify-between items-center p-2 bg-white rounded border border-border">
                             <span className="text-sm text-muted-foreground">Currency Conversion:</span>
                             <span className="text-sm font-bold text-foreground">{result.currency} {result.currencyConversionFee}</span>
                           </div>
@@ -588,19 +604,19 @@ International: ${result.isInternational ? 'Yes' : 'No'}`
                       </div>
 
                       {/* Total Fee */}
-                      <div className="flex justify-between items-center p-3 bg-primary/10 rounded-lg border-2 border-primary">
+                      <div className="flex justify-between items-center p-3 bg-primary/5 rounded-lg border border-primary/20">
                         <span className="text-sm font-medium text-foreground">Total Fee:</span>
-                        <span className="text-lg font-bold text-foreground">{result.currency} {result.totalFee}</span>
+                        <span className="text-lg font-bold text-primary">{result.currency} {result.totalFee}</span>
                       </div>
 
                       {/* You Receive */}
-                      <div className="flex justify-between items-center p-3 bg-secondary-accent/10 rounded-lg border-2 border-secondary-accent">
+                      <div className="flex justify-between items-center p-3 bg-primary/5 rounded-lg border border-primary/20">
                         <span className="text-sm font-medium text-foreground">You Receive:</span>
-                        <span className="text-lg font-bold text-heading-accent">{result.currency} {result.netAmount}</span>
+                        <span className="text-lg font-bold text-primary">{result.currency} {result.netAmount}</span>
                       </div>
 
                       {/* Amount to Charge */}
-                      <div className="p-3 bg-primary/10 rounded-lg border-2 border-primary">
+                      <div className="p-3 bg-primary/5 rounded-lg border border-primary/20">
                         <p className="text-xs text-muted-foreground mb-1">To receive exactly {result.currency} {result.amount}:</p>
                         <div className="flex justify-between items-center">
                           <span className="text-sm font-medium text-foreground">Charge:</span>
@@ -611,14 +627,14 @@ International: ${result.isInternational ? 'Yes' : 'No'}`
                       <GButton
                         onClick={copyResult}
                         variant="outline"
-                        className="w-full h-8 text-xs font-medium hover:bg-accent transition-all bg-transparent border-primary/30"
+                        className="w-full h-8 text-xs font-medium"
                       >
                         <Copy className="mr-2 h-3 w-3" />
                         Copy Results
                       </GButton>
                     </div>
                   ) : (
-                    <div className="p-6 text-center text-muted-foreground border-2 border-dashed border-primary/30 rounded-lg">
+                    <div className="p-6 text-center text-muted-foreground border border-dashed border-border rounded-lg">
                       <Calculator className="h-8 w-8 mx-auto mb-2 opacity-50" />
                       <p className="text-sm">Enter transaction details and click "Calculate Fee" to see results</p>
                     </div>
@@ -641,17 +657,17 @@ International: ${result.isInternational ? 'Yes' : 'No'}`
 1200, 55"
                       value={bulkInput}
                       onChange={(e) => setBulkInput(e.target.value)}
-                      className="min-h-[200px] font-mono text-sm border-2 border-primary/30 focus:border-primary"
+                      className="min-h-[200px] font-mono text-sm"
                     />
                   </div>
-                  <div className="p-3 bg-yellow-500/10 border border-yellow-500/30 rounded-lg text-xs text-muted-foreground">
-                    <span className="font-bold text-yellow-600 dark:text-yellow-500">Note:</span> Bulk calculation assumes standard domestic commercial rate (2.9% + $0.49). For precise international or mixed rates, calculate individually.
+                  <div className="p-3 bg-primary/5 border border-primary/20 rounded-lg text-xs text-muted-foreground">
+                    <span className="font-bold text-primary">Note:</span> Bulk calculation assumes standard domestic commercial rate (2.9% + $0.49). For precise international or mixed rates, calculate individually.
                   </div>
                   <GButton
                     onClick={calculateBulkFees}
                     disabled={loading || !bulkInput}
                     isLoading={loading}
-                    className="w-full bg-primary hover:bg-primary text-white"
+                    className="w-full"
                   >
                     Calculate Bulk Fees
                   </GButton>
@@ -659,11 +675,11 @@ International: ${result.isInternational ? 'Yes' : 'No'}`
 
                 <div className="space-y-4">
                   <h3 className="text-lg font-semibold flex items-center gap-2">
-                    <TrendingUp className="h-5 w-5 text-heading-accent" />
+                    <TrendingUp className="h-5 w-5 text-primary" />
                     Bulk Results
                   </h3>
                   {bulkResult ? (
-                    <div className="bg-card p-6 rounded-lg border-2 border-primary/30 space-y-4">
+                    <div className="bg-card p-6 rounded-lg border border-border space-y-4">
                       <div className="flex justify-between items-center pb-2 border-b border-border">
                         <span className="text-muted-foreground">Transactions Processed:</span>
                         <span className="font-bold text-foreground">{bulkResult.count}</span>
@@ -674,11 +690,11 @@ International: ${result.isInternational ? 'Yes' : 'No'}`
                       </div>
                       <div className="flex justify-between items-center">
                         <span className="text-muted-foreground">Total PayPal Fees:</span>
-                        <span className="font-bold text-red-500 text-lg">-${bulkResult.totalFees}</span>
+                        <span className="font-bold text-destructive text-lg">-${bulkResult.totalFees}</span>
                       </div>
                       <div className="flex justify-between items-center pt-2 border-t border-border">
                         <span className="font-bold text-foreground">Total Net (You Keep):</span>
-                        <span className="font-bold text-green-600 text-xl">${bulkResult.totalNet}</span>
+                        <span className="font-bold text-primary text-xl">${bulkResult.totalNet}</span>
                       </div>
 
                       <GButton
@@ -693,7 +709,7 @@ International: ${result.isInternational ? 'Yes' : 'No'}`
                       </GButton>
                     </div>
                   ) : (
-                    <div className="h-[200px] flex items-center justify-center border-2 border-dashed border-primary/30 rounded-lg text-muted-foreground text-sm p-6 text-center">
+                    <div className="h-[200px] flex items-center justify-center border border-dashed border-border rounded-lg text-muted-foreground text-sm p-6 text-center">
                       Enter amounts to see the sum of fees and net profit.
                     </div>
                   )}
@@ -705,8 +721,8 @@ International: ${result.isInternational ? 'Yes' : 'No'}`
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 {/* Chargeback Calculator */}
                 <div className="space-y-4">
-                  <div className="p-4 rounded-lg bg-red-500/5 border border-red-500/20">
-                    <h3 className="text-lg font-semibold flex items-center gap-2 mb-4 text-red-700 dark:text-red-400">
+                  <div className="p-4 rounded-lg bg-destructive/5 border border-destructive/20">
+                    <h3 className="text-lg font-semibold flex items-center gap-2 mb-4 text-destructive">
                       <ShieldAlert className="h-5 w-5" />
                       Dispute & Chargeback Cost
                     </h3>
@@ -718,16 +734,16 @@ International: ${result.isInternational ? 'Yes' : 'No'}`
                           placeholder="0.00"
                           value={disputeAmount}
                           onChange={(e) => setDisputeAmount(e.target.value)}
-                          className="bg-background"
+                          className="bg-white"
                         />
                         <GButton onClick={calculateDisputeCost} variant="destructive">Calculate</GButton>
                       </div>
 
                       {disputeResult && (
-                        <div className="mt-4 space-y-2 text-sm bg-background p-3 rounded border border-red-200 dark:border-red-900/50">
+                        <div className="mt-4 space-y-2 text-sm bg-white p-3 rounded border border-destructive/20">
                           <div className="flex justify-between"><span>Original Amount:</span> <span>${disputeResult.amount.toFixed(2)}</span></div>
-                          <div className="flex justify-between text-red-600 font-medium"><span>Dispute Fee:</span> <span>+${disputeResult.fee.toFixed(2)}</span></div>
-                          <div className="border-t pt-2 mt-2 flex justify-between font-bold text-red-700"><span>Total Loss:</span> <span>${disputeResult.totalLoss.toFixed(2)}</span></div>
+                          <div className="flex justify-between text-destructive font-medium"><span>Dispute Fee:</span> <span>+${disputeResult.fee.toFixed(2)}</span></div>
+                          <div className="border-t pt-2 mt-2 flex justify-between font-bold text-destructive"><span>Total Loss:</span> <span>${disputeResult.totalLoss.toFixed(2)}</span></div>
                           <p className="text-xs text-muted-foreground mt-2 italic">
                             *Note: You lose the original transaction amount plus the dispute fee if you lose the case.
                           </p>
@@ -739,25 +755,25 @@ International: ${result.isInternational ? 'Yes' : 'No'}`
 
                 {/* Decision Helper */}
                 <div className="space-y-4">
-                  <div className="p-4 rounded-lg bg-blue-500/5 border border-blue-500/20 h-full">
-                    <h3 className="text-lg font-semibold flex items-center gap-2 mb-4 text-blue-700 dark:text-blue-400">
+                  <div className="p-4 rounded-lg bg-primary/5 border border-primary/20 h-full">
+                    <h3 className="text-lg font-semibold flex items-center gap-2 mb-4 text-primary">
                       <Info className="h-5 w-5" />
                       Friends & Family vs. Goods & Services
                     </h3>
                     <div className="space-y-3 text-sm">
                       <div className="grid gap-2">
                         <div className="flex items-start gap-2">
-                          <div className="mt-1 bg-green-100 p-1 rounded text-green-700"><Coins className="h-3 w-3" /></div>
+                          <div className="mt-1 bg-primary/10 p-1 rounded text-primary"><Coins className="h-3 w-3" /></div>
                           <div>
                             <span className="font-semibold block text-foreground">Friends & Family</span>
-                            <span className="text-muted-foreground text-xs">Best for sending money to people you know and trust. No fees for bank transfers, but <strong className="text-red-500">ZERO protection</strong> if something goes wrong.</span>
+                            <span className="text-muted-foreground text-xs">Best for sending money to people you know and trust. No fees for bank transfers, but <strong className="text-destructive">ZERO protection</strong> if something goes wrong.</span>
                           </div>
                         </div>
-                        <div className="flex items-start gap-2 pt-2 border-t border-blue-200/30">
-                          <div className="mt-1 bg-blue-100 p-1 rounded text-blue-700"><ShieldAlert className="h-3 w-3" /></div>
+                        <div className="flex items-start gap-2 pt-2 border-t border-primary/20">
+                          <div className="mt-1 bg-primary/10 p-1 rounded text-primary"><ShieldAlert className="h-3 w-3" /></div>
                           <div>
                             <span className="font-semibold block text-foreground">Goods & Services</span>
-                            <span className="text-muted-foreground text-xs">Mandatory for buying/selling. Seller pays the fee, but Buyer gets <strong className="text-green-600">Purchase Protection</strong>.</span>
+                            <span className="text-muted-foreground text-xs">Mandatory for buying/selling. Seller pays the fee, but Buyer gets <strong className="text-primary">Purchase Protection</strong>.</span>
                           </div>
                         </div>
                       </div>

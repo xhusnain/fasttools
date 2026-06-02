@@ -465,11 +465,12 @@ export function ImageResizer() {
                         <button
                           type="button"
                           onClick={() => setLockAspect(!lockAspect)}
+                          aria-pressed={lockAspect}
                           className={cn(
-                            "mb-1 p-2 rounded-md transition-colors",
+                            "mb-1 p-2 rounded-lg border transition-colors",
                             lockAspect
-                              ? "bg-primary/10 text-primary"
-                              : "bg-muted text-muted-foreground"
+                              ? "border-primary bg-primary text-primary-foreground shadow-sm"
+                              : "border-border bg-muted text-muted-foreground hover:border-primary/30 hover:bg-accent hover:text-primary"
                           )}
                           title={lockAspect ? "Unlock aspect ratio" : "Lock aspect ratio"}
                         >

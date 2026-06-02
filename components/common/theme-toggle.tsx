@@ -12,11 +12,11 @@ export function ThemeToggle() {
   React.useEffect(() => {
     setMounted(true)
     
-    // Ensure default theme is dark if no theme is stored
+    // Ensure default theme is light if no theme is stored
     // next-themes will load from localStorage automatically, but we ensure default
     const storedTheme = typeof window !== "undefined" ? localStorage.getItem("theme") : null
-    if (!storedTheme && theme !== "dark") {
-      setTheme("dark")
+    if (!storedTheme && theme !== "light") {
+      setTheme("light")
     }
   }, [theme, setTheme])
 
@@ -55,6 +55,5 @@ export function ThemeToggle() {
     </button>
   )
 }
-
 
 

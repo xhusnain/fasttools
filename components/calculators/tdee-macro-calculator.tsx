@@ -279,14 +279,18 @@ Fat: ${result.macros.fat}g (${result.macros.fatPct}%)`
             </div>
             <div className="flex gap-2 p-1 bg-card border border-border rounded-lg">
               <button
+                type="button"
                 onClick={() => setUnit("imperial")}
-                className={`flex-1 py-3 px-4 rounded-md text-sm font-medium transition-all ${unit === "imperial" ? "bg-primary text-white shadow-sm" : "bg-card text-muted-foreground hover:bg-secondary border border-border"}`}
+                aria-pressed={unit === "imperial"}
+                className={`flex-1 py-3 px-4 rounded-lg border text-sm font-semibold transition-all ${unit === "imperial" ? "border-primary bg-primary text-primary-foreground shadow-sm" : "border-border bg-white text-muted-foreground hover:border-primary/30 hover:bg-accent hover:text-primary"}`}
               >
                 Imperial (lbs/ft)
               </button>
               <button
+                type="button"
                 onClick={() => setUnit("metric")}
-                className={`flex-1 py-3 px-4 rounded-md text-sm font-medium transition-all ${unit === "metric" ? "bg-primary text-white shadow-sm" : "bg-card text-muted-foreground hover:bg-secondary border border-border"}`}
+                aria-pressed={unit === "metric"}
+                className={`flex-1 py-3 px-4 rounded-lg border text-sm font-semibold transition-all ${unit === "metric" ? "border-primary bg-primary text-primary-foreground shadow-sm" : "border-border bg-white text-muted-foreground hover:border-primary/30 hover:bg-accent hover:text-primary"}`}
               >
                 Metric (kg/cm)
               </button>
@@ -301,14 +305,18 @@ Fat: ${result.macros.fat}g (${result.macros.fatPct}%)`
             </div>
             <div className="flex gap-2">
               <button
+                type="button"
                 onClick={() => setGender("male")}
-                className={`flex-1 py-3 px-4 rounded-md text-sm font-medium transition-all ${gender === "male" ? "bg-primary text-white shadow-sm" : "bg-card text-muted-foreground hover:bg-secondary border border-border"}`}
+                aria-pressed={gender === "male"}
+                className={`flex-1 py-3 px-4 rounded-lg border text-sm font-semibold transition-all ${gender === "male" ? "border-primary bg-primary text-primary-foreground shadow-sm" : "border-border bg-white text-muted-foreground hover:border-primary/30 hover:bg-accent hover:text-primary"}`}
               >
                 Male
               </button>
               <button
+                type="button"
                 onClick={() => setGender("female")}
-                className={`flex-1 py-3 px-4 rounded-md text-sm font-medium transition-all ${gender === "female" ? "bg-primary text-white shadow-sm" : "bg-card text-muted-foreground hover:bg-secondary border border-border"}`}
+                aria-pressed={gender === "female"}
+                className={`flex-1 py-3 px-4 rounded-lg border text-sm font-semibold transition-all ${gender === "female" ? "border-primary bg-primary text-primary-foreground shadow-sm" : "border-border bg-white text-muted-foreground hover:border-primary/30 hover:bg-accent hover:text-primary"}`}
               >
                 Female
               </button>
@@ -406,16 +414,18 @@ Fat: ${result.macros.fat}g (${result.macros.fatPct}%)`
             <div className="grid grid-cols-2 sm:grid-cols-3 gap-2">
               {(Object.entries(ACTIVITY_LEVELS) as [ActivityLevel, typeof ACTIVITY_LEVELS[ActivityLevel]][]).map(([key, val]) => (
                 <button
+                  type="button"
                   key={key}
                   onClick={() => setActivityLevel(key)}
-                  className={`py-3 px-3 rounded-lg text-sm font-medium transition-all text-left ${
+                  aria-pressed={activityLevel === key}
+                  className={`py-3 px-3 rounded-lg border text-sm font-medium transition-all text-left ${
                     activityLevel === key
-                      ? "bg-primary text-white shadow-sm ring-2 ring-primary/30"
-                      : "bg-card text-muted-foreground hover:bg-secondary border border-border"
+                      ? "border-primary bg-primary text-primary-foreground shadow-sm"
+                      : "border-border bg-white text-muted-foreground hover:border-primary/30 hover:bg-accent hover:text-primary"
                   }`}
                 >
                   <div className="font-semibold text-xs sm:text-sm">{val.label}</div>
-                  <div className={`text-[10px] sm:text-xs mt-0.5 ${activityLevel === key ? "text-white/80" : "text-muted-foreground"}`}>
+                  <div className={`text-[10px] sm:text-xs mt-0.5 ${activityLevel === key ? "text-primary-foreground/80" : "text-muted-foreground"}`}>
                     {val.description}
                   </div>
                 </button>
@@ -432,16 +442,18 @@ Fat: ${result.macros.fat}g (${result.macros.fatPct}%)`
             <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-2">
               {(Object.entries(GOAL_ADJUSTMENTS) as [Goal, typeof GOAL_ADJUSTMENTS[Goal]][]).map(([key, val]) => (
                 <button
+                  type="button"
                   key={key}
                   onClick={() => setGoal(key as Goal)}
-                  className={`py-3 px-3 rounded-lg text-sm font-medium transition-all text-left ${
+                  aria-pressed={goal === key}
+                  className={`py-3 px-3 rounded-lg border text-sm font-medium transition-all text-left ${
                     goal === key
-                      ? "bg-primary text-white shadow-sm ring-2 ring-primary/30"
-                      : "bg-card text-muted-foreground hover:bg-secondary border border-border"
+                      ? "border-primary bg-primary text-primary-foreground shadow-sm"
+                      : "border-border bg-white text-muted-foreground hover:border-primary/30 hover:bg-accent hover:text-primary"
                   }`}
                 >
                   <div className="font-semibold text-xs sm:text-sm">{val.label}</div>
-                  <div className={`text-[10px] sm:text-xs mt-0.5 ${goal === key ? "text-white/80" : "text-muted-foreground"}`}>
+                  <div className={`text-[10px] sm:text-xs mt-0.5 ${goal === key ? "text-primary-foreground/80" : "text-muted-foreground"}`}>
                     {val.description}
                   </div>
                 </button>
@@ -487,26 +499,32 @@ Fat: ${result.macros.fat}g (${result.macros.fatPct}%)`
                 </div>
                 <div className="grid grid-cols-1 sm:grid-cols-3 gap-2">
                   <button
+                    type="button"
                     onClick={() => setFormula("mifflin")}
-                    className={`py-3 px-3 rounded-lg text-sm font-medium transition-all text-left ${formula === "mifflin" ? "bg-primary text-white shadow-sm ring-2 ring-primary/30" : "bg-card text-muted-foreground hover:bg-secondary border border-border"}`}
+                    aria-pressed={formula === "mifflin"}
+                    className={`py-3 px-3 rounded-lg border text-sm font-medium transition-all text-left ${formula === "mifflin" ? "border-primary bg-primary text-primary-foreground shadow-sm" : "border-border bg-white text-muted-foreground hover:border-primary/30 hover:bg-accent hover:text-primary"}`}
                   >
                     <div className="font-semibold">Mifflin-St Jeor</div>
-                    <div className={`text-xs mt-0.5 ${formula === "mifflin" ? "text-white/80" : "text-muted-foreground"}`}>Most accurate for general population</div>
+                    <div className={`text-xs mt-0.5 ${formula === "mifflin" ? "text-primary-foreground/80" : "text-muted-foreground"}`}>Most accurate for general population</div>
                   </button>
                   <button
+                    type="button"
                     onClick={() => setFormula("harris")}
-                    className={`py-3 px-3 rounded-lg text-sm font-medium transition-all text-left ${formula === "harris" ? "bg-primary text-white shadow-sm ring-2 ring-primary/30" : "bg-card text-muted-foreground hover:bg-secondary border border-border"}`}
+                    aria-pressed={formula === "harris"}
+                    className={`py-3 px-3 rounded-lg border text-sm font-medium transition-all text-left ${formula === "harris" ? "border-primary bg-primary text-primary-foreground shadow-sm" : "border-border bg-white text-muted-foreground hover:border-primary/30 hover:bg-accent hover:text-primary"}`}
                   >
                     <div className="font-semibold">Harris-Benedict</div>
-                    <div className={`text-xs mt-0.5 ${formula === "harris" ? "text-white/80" : "text-muted-foreground"}`}>Revised 1984, widely used</div>
+                    <div className={`text-xs mt-0.5 ${formula === "harris" ? "text-primary-foreground/80" : "text-muted-foreground"}`}>Revised 1984, widely used</div>
                   </button>
                   <button
+                    type="button"
                     onClick={() => setFormula("katch")}
                     disabled={!bodyFat}
-                    className={`py-3 px-3 rounded-lg text-sm font-medium transition-all text-left ${formula === "katch" ? "bg-primary text-white shadow-sm ring-2 ring-primary/30" : !bodyFat ? "bg-muted text-muted-foreground/50 border border-border cursor-not-allowed" : "bg-card text-muted-foreground hover:bg-secondary border border-border"}`}
+                    aria-pressed={formula === "katch"}
+                    className={`py-3 px-3 rounded-lg border text-sm font-medium transition-all text-left ${formula === "katch" ? "border-primary bg-primary text-primary-foreground shadow-sm" : !bodyFat ? "border-border bg-muted text-muted-foreground/50 cursor-not-allowed" : "border-border bg-white text-muted-foreground hover:border-primary/30 hover:bg-accent hover:text-primary"}`}
                   >
                     <div className="font-semibold">Katch-McArdle</div>
-                    <div className={`text-xs mt-0.5 ${formula === "katch" ? "text-white/80" : "text-muted-foreground"}`}>{bodyFat ? "Uses lean body mass" : "Requires body fat %"}</div>
+                    <div className={`text-xs mt-0.5 ${formula === "katch" ? "text-primary-foreground/80" : "text-muted-foreground"}`}>{bodyFat ? "Uses lean body mass" : "Requires body fat %"}</div>
                   </button>
                 </div>
               </div>
@@ -520,16 +538,18 @@ Fat: ${result.macros.fat}g (${result.macros.fatPct}%)`
                 <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-2">
                   {(Object.entries(MACRO_PRESETS) as [MacroPreset, typeof MACRO_PRESETS[MacroPreset]][]).map(([key, val]) => (
                     <button
+                      type="button"
                       key={key}
                       onClick={() => setMacroPreset(key as MacroPreset)}
-                      className={`py-3 px-3 rounded-lg text-sm font-medium transition-all text-left ${
+                      aria-pressed={macroPreset === key}
+                      className={`py-3 px-3 rounded-lg border text-sm font-medium transition-all text-left ${
                         macroPreset === key
-                          ? "bg-primary text-white shadow-sm ring-2 ring-primary/30"
-                          : "bg-card text-muted-foreground hover:bg-secondary border border-border"
+                          ? "border-primary bg-primary text-primary-foreground shadow-sm"
+                          : "border-border bg-white text-muted-foreground hover:border-primary/30 hover:bg-accent hover:text-primary"
                       }`}
                     >
                       <div className="font-semibold text-xs sm:text-sm">{val.label}</div>
-                      <div className={`text-[10px] sm:text-xs mt-0.5 ${macroPreset === key ? "text-white/80" : "text-muted-foreground"}`}>
+                      <div className={`text-[10px] sm:text-xs mt-0.5 ${macroPreset === key ? "text-primary-foreground/80" : "text-muted-foreground"}`}>
                         {val.description}
                       </div>
                     </button>
@@ -587,9 +607,11 @@ Fat: ${result.macros.fat}g (${result.macros.fatPct}%)`
                 <div className="flex gap-2">
                   {["2", "3", "4", "5", "6"].map((m) => (
                     <button
+                      type="button"
                       key={m}
                       onClick={() => setMeals(m)}
-                      className={`flex-1 py-2 px-3 rounded-md text-sm font-medium transition-all ${meals === m ? "bg-primary text-white shadow-sm" : "bg-card text-muted-foreground hover:bg-secondary border border-border"}`}
+                      aria-pressed={meals === m}
+                      className={`flex-1 py-2 px-3 rounded-lg border text-sm font-semibold transition-all ${meals === m ? "border-primary bg-primary text-primary-foreground shadow-sm" : "border-border bg-white text-muted-foreground hover:border-primary/30 hover:bg-accent hover:text-primary"}`}
                     >
                       {m}
                     </button>

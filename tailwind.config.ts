@@ -90,7 +90,7 @@ const config: Config = {
         md: 'var(--shadow-md)',
         lg: 'var(--shadow-lg)',
         xl: 'var(--shadow-xl)',
-        'input-focus': '0 0 0 3px rgba(124, 58, 237, 0.1)',
+        'input-focus': '0 0 0 3px rgba(37, 99, 235, 0.14)',
       },
       animation: {
         'pulse-slow': 'pulse 8s cubic-bezier(0.4, 0, 0.6, 1) infinite',

@@ -185,17 +185,19 @@ export function SaaSChurnCalculator() {
                 const Icon = m.icon
                 return (
                   <button
+                    type="button"
                     key={m.id}
                     onClick={() => setMode(m.id)}
-                    className={`p-3 rounded-lg border-2 transition-all duration-300 text-left ${
+                    aria-pressed={mode === m.id}
+                    className={`p-3 rounded-lg border transition-all duration-300 text-left ${
                       mode === m.id
-                        ? "border-primary bg-primary/10 text-foreground"
-                        : "border-border hover:border-primary/50 bg-card text-muted-foreground"
+                        ? "border-primary bg-primary text-primary-foreground shadow-sm"
+                        : "border-border hover:border-primary/30 bg-white text-muted-foreground hover:bg-accent hover:text-primary"
                     }`}
                   >
-                    <Icon className={`h-5 w-5 mb-1.5 ${mode === m.id ? "text-primary" : "text-muted-foreground"}`} />
+                    <Icon className={`h-5 w-5 mb-1.5 ${mode === m.id ? "text-primary-foreground" : "text-muted-foreground"}`} />
                     <div className="text-sm font-medium">{m.label}</div>
-                    <div className="text-xs text-muted-foreground mt-0.5">{m.description}</div>
+                    <div className={`text-xs mt-0.5 ${mode === m.id ? "text-primary-foreground/80" : "text-muted-foreground"}`}>{m.description}</div>
                   </button>
                 )
               })}

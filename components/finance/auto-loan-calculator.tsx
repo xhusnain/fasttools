@@ -264,22 +264,26 @@ export function AutoLoanCalculator() {
 
   return (
     <div className="space-y-6">
-      <div className="flex gap-2 p-1 bg-muted rounded-lg">
+      <div className="flex gap-2 p-1 bg-muted border border-border rounded-lg shadow-sm">
         <button
+          type="button"
           onClick={() => setActiveTab("calculator")}
-          className={`flex-1 py-2.5 px-4 rounded-md text-sm font-medium transition-all ${activeTab === "calculator"
-            ? "bg-card text-foreground shadow-sm"
-            : "text-muted-foreground hover:text-foreground"
+          aria-pressed={activeTab === "calculator"}
+          className={`flex-1 py-2.5 px-4 rounded-lg border text-sm font-semibold transition-all ${activeTab === "calculator"
+            ? "border-primary bg-primary text-primary-foreground shadow-sm"
+            : "border-transparent text-muted-foreground hover:border-primary/30 hover:bg-white hover:text-primary"
             }`}
         >
           <Calculator className="h-4 w-4 inline-block mr-2" />
           Loan Calculator
         </button>
         <button
+          type="button"
           onClick={() => setActiveTab("affordability")}
-          className={`flex-1 py-2.5 px-4 rounded-md text-sm font-medium transition-all ${activeTab === "affordability"
-            ? "bg-card text-foreground shadow-sm"
-            : "text-muted-foreground hover:text-foreground"
+          aria-pressed={activeTab === "affordability"}
+          className={`flex-1 py-2.5 px-4 rounded-lg border text-sm font-semibold transition-all ${activeTab === "affordability"
+            ? "border-primary bg-primary text-primary-foreground shadow-sm"
+            : "border-transparent text-muted-foreground hover:border-primary/30 hover:bg-white hover:text-primary"
             }`}
         >
           <Target className="h-4 w-4 inline-block mr-2" />
@@ -315,11 +319,13 @@ export function AutoLoanCalculator() {
                     const Icon = type.icon
                     return (
                       <button
+                        type="button"
                         key={type.id}
                         onClick={() => setVehicleType(type.id as "new" | "used")}
-                        className={`p-3 rounded-lg border-2 transition-all duration-300 flex items-center justify-center gap-2 ${vehicleType === type.id
-                          ? "border-primary bg-primary/10 text-foreground"
-                          : "border-border hover:border-primary/50 bg-card text-muted-foreground"
+                        aria-pressed={vehicleType === type.id}
+                        className={`p-3 rounded-lg border transition-all duration-300 flex items-center justify-center gap-2 ${vehicleType === type.id
+                          ? "border-primary bg-primary text-primary-foreground shadow-sm"
+                          : "border-border hover:border-primary/30 bg-white text-muted-foreground hover:bg-accent hover:text-primary"
                           }`}
                       >
                         <Icon className="h-5 w-5" />
@@ -338,11 +344,13 @@ export function AutoLoanCalculator() {
                 <div className="grid grid-cols-2 sm:grid-cols-3 gap-2">
                   {(Object.entries(CREDIT_SCORE_RATES) as [CreditScoreTier, typeof CREDIT_SCORE_RATES[CreditScoreTier]][]).map(([key, tier]) => (
                     <button
+                      type="button"
                       key={key}
                       onClick={() => setCreditScore(key)}
-                      className={`p-2.5 rounded-lg border-2 transition-all text-left ${creditScore === key
-                        ? "border-primary bg-primary/10 text-foreground"
-                        : "border-border hover:border-primary/50 bg-card text-muted-foreground"
+                      aria-pressed={creditScore === key}
+                      className={`p-2.5 rounded-lg border transition-all text-left ${creditScore === key
+                        ? "border-primary bg-primary text-primary-foreground shadow-sm"
+                        : "border-border hover:border-primary/30 bg-white text-muted-foreground hover:bg-accent hover:text-primary"
                         }`}
                     >
                       <div className="text-xs font-medium">{tier.label}</div>
@@ -379,12 +387,16 @@ export function AutoLoanCalculator() {
                     Down Payment
                     <div className="ml-auto flex gap-1">
                       <button
+                        type="button"
                         onClick={() => setDownPaymentType("dollar")}
-                        className={`px-2 py-0.5 rounded text-[10px] font-medium ${downPaymentType === "dollar" ? "bg-primary text-white" : "bg-muted text-muted-foreground"}`}
+                        aria-pressed={downPaymentType === "dollar"}
+                        className={`px-2 py-0.5 rounded text-[10px] font-semibold ${downPaymentType === "dollar" ? "bg-primary text-primary-foreground" : "bg-muted text-muted-foreground hover:text-primary"}`}
                       >$</button>
                       <button
+                        type="button"
                         onClick={() => setDownPaymentType("percent")}
-                        className={`px-2 py-0.5 rounded text-[10px] font-medium ${downPaymentType === "percent" ? "bg-primary text-white" : "bg-muted text-muted-foreground"}`}
+                        aria-pressed={downPaymentType === "percent"}
+                        className={`px-2 py-0.5 rounded text-[10px] font-semibold ${downPaymentType === "percent" ? "bg-primary text-primary-foreground" : "bg-muted text-muted-foreground hover:text-primary"}`}
                       >%</button>
                     </div>
                   </GLabel>
@@ -426,11 +438,13 @@ export function AutoLoanCalculator() {
                   <div className="grid grid-cols-3 gap-2">
                     {LOAN_TERMS.map((t) => (
                       <button
+                        type="button"
                         key={t}
                         onClick={() => setLoanTerm(t.toString())}
-                        className={`p-2 rounded-lg border-2 text-center transition-all ${parseInt(loanTerm) === t
-                          ? "border-primary bg-primary/10 text-foreground"
-                          : "border-border hover:border-primary/50 bg-card text-muted-foreground"
+                        aria-pressed={parseInt(loanTerm) === t}
+                        className={`p-2 rounded-lg border text-center transition-all ${parseInt(loanTerm) === t
+                          ? "border-primary bg-primary text-primary-foreground shadow-sm"
+                          : "border-border hover:border-primary/30 bg-white text-muted-foreground hover:bg-accent hover:text-primary"
                           }`}
                       >
                         <div className="text-sm font-semibold">{t} mo</div>

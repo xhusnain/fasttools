@@ -36,6 +36,9 @@ export function ToolPageLayout({
         console.groupEnd()
     }
 
+    const sectionIconClass = "p-2 bg-primary/10 border border-primary/15 rounded-lg"
+    const sectionIconColor = "h-5 w-5 text-primary"
+
     return (
         <div className={`min-h-screen bg-background overflow-x-hidden ${className}`}>
             {/* JSON-LD Structured Data — rendered as proper <script> tags for Google */}
@@ -94,8 +97,8 @@ export function ToolPageLayout({
                                     data-ai-section="key-takeaways"
                                 >
                                     <div className="flex items-center gap-3 mb-4">
-                                        <div className="p-2 bg-purple-100 dark:bg-purple-900/30 rounded-xl">
-                                            <ListChecks className="h-5 w-5 text-purple-600 dark:text-purple-400" />
+                                        <div className={sectionIconClass}>
+                                            <ListChecks className={sectionIconColor} />
                                         </div>
                                         <h2 className="text-2xl font-bold text-foreground">
                                             Key Takeaways
@@ -118,8 +121,8 @@ export function ToolPageLayout({
                                 data-ai-section="definition"
                             >
                                 <div className="flex items-center gap-3 mb-4">
-                                    <div className="p-2 bg-blue-100 dark:bg-blue-900/30 rounded-xl">
-                                        <Package className="h-5 w-5 text-blue-600 dark:text-blue-400" />
+                                    <div className={sectionIconClass}>
+                                        <Package className={sectionIconColor} />
                                     </div>
                                     <h2 className="text-2xl font-bold text-foreground">
                                         What is {toolContent.toolName}?
@@ -136,7 +139,7 @@ export function ToolPageLayout({
                             </article>
 
                             {heroImage && (
-                                <div className="relative w-full h-[300px] sm:h-[400px] rounded-xl overflow-hidden shadow-lg border border-border/50 my-6">
+                                <div className="relative w-full h-[300px] sm:h-[400px] rounded-lg overflow-hidden shadow-md border border-border my-6">
                                     <Image
                                         src={heroImage}
                                         alt={`${toolContent.toolName} Hero`}
@@ -154,8 +157,8 @@ export function ToolPageLayout({
                                 data-ai-section="how-to"
                             >
                                 <div className="flex items-center gap-3 mb-4">
-                                    <div className="p-2 bg-amber-100 dark:bg-amber-900/30 rounded-xl">
-                                        <Zap className="h-5 w-5 text-amber-600 dark:text-amber-400" />
+                                    <div className={sectionIconClass}>
+                                        <Zap className={sectionIconColor} />
                                     </div>
                                     <h2 className="text-2xl font-bold text-foreground">
                                         How to Use {toolContent.toolName}
@@ -193,8 +196,8 @@ export function ToolPageLayout({
                                 data-ai-section="features"
                             >
                                 <div className="flex items-center gap-3 mb-4">
-                                    <div className="p-2 bg-green-100 dark:bg-green-900/30 rounded-xl">
-                                        <Star className="h-5 w-5 text-green-600 dark:text-green-400" />
+                                    <div className={sectionIconClass}>
+                                        <Star className={sectionIconColor} />
                                     </div>
                                     <h2 className="text-2xl font-bold text-foreground">
                                         Key Features
@@ -220,8 +223,8 @@ export function ToolPageLayout({
                             {toolContent.video && (
                                 <section className="bg-card border border-border rounded-lg p-6">
                                     <div className="flex items-center gap-3 mb-4">
-                                        <div className="p-2 bg-red-100 dark:bg-red-900/30 rounded-xl">
-                                            <Zap className="h-5 w-5 text-red-600 dark:text-red-400" />
+                                        <div className={sectionIconClass}>
+                                            <Zap className={sectionIconColor} />
                                         </div>
                                         <h2 className="text-2xl font-bold text-foreground">
                                             Video Tutorial
@@ -281,8 +284,8 @@ export function ToolPageLayout({
                                 data-ai-section="about"
                             >
                                 <div className="flex items-center gap-3 mb-4">
-                                    <div className="p-2 bg-indigo-100 dark:bg-indigo-900/30 rounded-xl">
-                                        <BookOpen className="h-5 w-5 text-indigo-600 dark:text-indigo-400" />
+                                    <div className={sectionIconClass}>
+                                        <BookOpen className={sectionIconColor} />
                                     </div>
                                     <h2 className="text-2xl font-bold text-foreground">
                                         About {toolContent.toolName}
@@ -310,18 +313,18 @@ export function ToolPageLayout({
 
                             {/* Pro Tip */}
                             {toolContent.proTip && (
-                                <aside className="bg-gradient-to-r from-amber-50 to-blue-50 dark:from-amber-950/30 dark:to-blue-950/30 border border-amber-200 dark:border-amber-800 rounded-lg p-6">
+                                <aside className="bg-primary/5 border border-primary/20 rounded-lg p-6">
                                     <div className="flex items-start gap-4">
                                         <div className="flex-shrink-0">
-                                            <div className="p-2 bg-amber-100 dark:bg-amber-900/50 rounded-lg">
-                                                <Lightbulb className="h-6 w-6 text-amber-600 dark:text-amber-400" />
+                                            <div className="p-2 bg-primary/10 border border-primary/15 rounded-lg">
+                                                <Lightbulb className="h-6 w-6 text-primary" />
                                             </div>
                                         </div>
                                         <div>
-                                            <h3 className="text-lg font-bold text-amber-900 dark:text-amber-100 mb-2">
+                                            <h3 className="text-lg font-bold text-foreground mb-2">
                                                 Pro Tip
                                             </h3>
-                                            <p className="text-amber-800 dark:text-amber-200 leading-relaxed">
+                                            <p className="text-muted-foreground leading-relaxed">
                                                 {toolContent.proTip}
                                             </p>
                                         </div>

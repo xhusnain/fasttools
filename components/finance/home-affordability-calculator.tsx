@@ -279,7 +279,7 @@ export function HomeAffordabilityCalculator() {
               </GLabel>
               <div className="flex gap-2">
                 {["15", "20", "30"].map(t => (
-                  <button key={t} onClick={() => setLoanTerm(t)} className={`flex-1 h-10 sm:h-12 rounded-lg border-2 text-sm font-medium transition-all ${loanTerm === t ? "border-primary bg-primary/10 text-foreground" : "border-border hover:border-primary/50 bg-card text-muted-foreground"}`}>
+                  <button type="button" key={t} onClick={() => setLoanTerm(t)} aria-pressed={loanTerm === t} className={`flex-1 h-10 sm:h-12 rounded-lg border text-sm font-semibold transition-all ${loanTerm === t ? "border-primary bg-primary text-primary-foreground shadow-sm" : "border-border hover:border-primary/30 bg-white text-muted-foreground hover:bg-accent hover:text-primary"}`}>
                     {t}yr
                   </button>
                 ))}

@@ -496,12 +496,14 @@ export function CitationGenerator() {
                 const Icon = t.icon
                 return (
                   <button
+                    type="button"
                     key={t.value}
                     onClick={() => updateType(t.value)}
+                    aria-pressed={sourceType === t.value}
                     className={`flex flex-col items-center gap-1 p-2 rounded-lg border text-xs transition-colors ${
                       sourceType === t.value
-                        ? "border-primary bg-primary/10 text-foreground"
-                        : "border-border hover:border-primary/50 text-muted-foreground"
+                        ? "border-primary bg-primary text-primary-foreground font-semibold shadow-sm"
+                        : "border-border bg-white hover:border-primary/30 hover:bg-accent hover:text-primary text-muted-foreground"
                     }`}
                   >
                     <Icon className="h-4 w-4" />

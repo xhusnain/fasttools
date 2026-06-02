@@ -5,7 +5,7 @@ import { GButton } from "@/ui/gbutton"
 import { GInput } from "@/ui/ginput"
 import { GLabel } from "@/ui/glabel"
 import { GCard } from "@/ui/gcard"
-import { Save, AlertCircle, User, Eye, Lock, Globe, CheckCircle2 } from "lucide-react"
+import { Save, AlertCircle, User, Eye, Lock, Globe, CheckCircle2, TrendingUp, ExternalLink } from "lucide-react"
 import { LoadingSpinner } from "@/components/common/loading-spinner"
 
 interface InstagramProfileData {
@@ -88,7 +88,7 @@ export function InstagramDpViewer() {
   // does not expose a profile picture for a logged-out request.
   const getInitialAvatar = (): string => {
     const letter = (profileData?.username?.charAt(0) || '?').toUpperCase()
-    const svg = `<svg xmlns="http://www.w3.org/2000/svg" width="400" height="400"><rect width="400" height="400" fill="#6366f1"/><text x="50%" y="50%" dy=".35em" text-anchor="middle" font-family="sans-serif" font-size="200" fill="#ffffff">${letter}</text></svg>`
+    const svg = `<svg xmlns="http://www.w3.org/2000/svg" width="400" height="400"><rect width="400" height="400" fill="#2563eb"/><text x="50%" y="50%" dy=".35em" text-anchor="middle" font-family="sans-serif" font-size="200" fill="#ffffff">${letter}</text></svg>`
     return `data:image/svg+xml;utf8,${encodeURIComponent(svg)}`
   }
 
@@ -138,24 +138,24 @@ export function InstagramDpViewer() {
 
   return (
     <div className="w-full max-w-full overflow-hidden mx-auto space-y-4 sm:space-y-6">
-      <GCard className="p-4 sm:p-6 bg-gradient-to-br from-primary/20 to-primary/10 border border-primary/30 shadow-lg max-w-full overflow-hidden">
+      <GCard className="p-4 sm:p-6 bg-primary/5 border border-primary/20 shadow-sm max-w-full overflow-hidden">
         <div className="flex gap-3 sm:gap-4">
           <AlertCircle className="h-5 w-5 sm:h-6 sm:w-6 text-primary flex-shrink-0 mt-0.5" />
           <div className="space-y-2 min-w-0 overflow-hidden">
             <p className="text-sm sm:text-base font-medium text-foreground truncate">Important Notice</p>
             <p className="text-xs sm:text-sm text-muted-foreground leading-relaxed break-words">
               This tool is for educational purposes only. Please respect user privacy and Instagram's terms of service.
-              Only view profile pictures of public accounts.
+              It only works with profile pictures and does not access private posts, stories, or restricted content.
             </p>
           </div>
         </div>
       </GCard>
 
-      <GCard className="border-2 border-border bg-card shadow-2xl max-w-full overflow-hidden">
+      <GCard className="border border-border bg-card shadow-sm max-w-full overflow-hidden">
         <div className="p-4 sm:p-6 space-y-4 sm:space-y-6">
           <div className="text-center space-y-3 sm:space-y-4">
             <div className="flex flex-col sm:flex-row items-center justify-center gap-3 mb-4">
-              <div className="h-10 w-10 sm:h-12 sm:w-12 rounded-xl bg-gradient-to-br from-primary to-primary/90 flex items-center justify-center shadow-lg">
+              <div className="h-10 w-10 sm:h-12 sm:w-12 rounded-lg bg-primary flex items-center justify-center shadow-sm">
                 <User className="h-5 w-5 sm:h-6 sm:w-6 text-primary-foreground" />
               </div>
               <div className="text-center sm:text-left min-w-0 overflow-hidden">
@@ -181,14 +181,14 @@ export function InstagramDpViewer() {
                 value={username}
                 onChange={(e) => setUsername(e.target.value)}
                 onKeyPress={(e) => e.key === 'Enter' && handleView()}
-                className="h-10 sm:h-11 text-sm bg-background border-border text-foreground placeholder:text-muted-foreground"
+                className="h-10 sm:h-11 text-sm bg-white text-foreground placeholder:text-muted-foreground"
               />
             </div>
 
             <GButton
               onClick={handleView}
               disabled={!username || loading}
-              className="w-full h-10 sm:h-11 text-sm font-medium bg-gradient-to-r from-primary to-primary/90 hover:from-primary/90 hover:to-primary text-primary-foreground shadow-lg hover:shadow-xl transition-all duration-300"
+              className="w-full h-10 sm:h-11 text-sm font-medium shadow-sm"
             >
               {loading ? (
                 <>
@@ -206,13 +206,13 @@ export function InstagramDpViewer() {
             </GButton>
 
             {error && (
-              <div className="p-4 rounded-lg bg-destructive/20 border border-destructive/30">
-                <div className="flex items-center gap-2 text-destructive-foreground">
+              <div className="p-4 rounded-lg bg-destructive/10 border border-destructive/20">
+                <div className="flex items-center gap-2 text-destructive">
                   <AlertCircle className="h-4 w-4" />
                   <span className="text-sm font-medium">{error}</span>
                 </div>
                 <p className="text-xs text-muted-foreground mt-2">
-                  Tip: use a public Instagram username or profile URL, then try again.
+                  Tip: use a valid Instagram username or profile URL, then try again.
                 </p>
               </div>
             )}
@@ -221,7 +221,7 @@ export function InstagramDpViewer() {
       </GCard>
 
       {profileData && (
-        <GCard ref={resultRef} className="p-4 sm:p-6 bg-card border border-border shadow-lg hover:shadow-xl transition-all duration-300 animate-fade-in max-w-full overflow-hidden">
+        <GCard ref={resultRef} className="p-4 sm:p-6 bg-card border border-border shadow-sm animate-fade-in max-w-full overflow-hidden">
           <div className="space-y-4 sm:space-y-6">
             <h3 className="text-lg sm:text-xl font-semibold text-foreground text-center">Profile Information</h3>
 
@@ -230,7 +230,7 @@ export function InstagramDpViewer() {
                 <img
                   src={getProfilePictureUrl()}
                   alt={`${profileData.username} profile picture`}
-                  className="w-32 h-32 sm:w-40 sm:h-40 rounded-full border-4 border-border shadow-lg object-cover"
+                  className="w-32 h-32 sm:w-40 sm:h-40 rounded-full border-4 border-white ring-1 ring-border shadow-sm object-cover"
                   title={`${profileData.username} profile picture`}
                   referrerPolicy="no-referrer"
                   loading="lazy"
@@ -244,12 +244,12 @@ export function InstagramDpViewer() {
                   }}
                 />
                 {profileData.is_verified && (
-                  <div className="absolute -bottom-2 -right-2 w-8 h-8 bg-primary rounded-full flex items-center justify-center border-2 border-background shadow-lg">
+                  <div className="absolute -bottom-2 -right-2 w-8 h-8 bg-primary rounded-full flex items-center justify-center border-2 border-card shadow-sm">
                     <CheckCircle2 className="h-4 w-4 text-primary-foreground" />
                   </div>
                 )}
                 {profileData.is_private && !profileData.is_verified && (
-                  <div className="absolute -bottom-2 -right-2 w-8 h-8 bg-muted rounded-full flex items-center justify-center border-2 border-background shadow-lg">
+                  <div className="absolute -bottom-2 -right-2 w-8 h-8 bg-muted rounded-full flex items-center justify-center border-2 border-card shadow-sm">
                     <Lock className="h-4 w-4 text-muted-foreground" />
                   </div>
                 )}
@@ -301,39 +301,39 @@ export function InstagramDpViewer() {
                     </tr>
                   </thead>
                   <tbody className="divide-y divide-border">
-                    <tr className="bg-background">
+                    <tr className="bg-card">
                       <td className="px-4 py-2 text-muted-foreground">Username</td>
                       <td className="px-4 py-2 font-bold text-foreground break-all">@{profileData.username}</td>
                     </tr>
-                    <tr className="bg-background">
+                    <tr className="bg-card">
                       <td className="px-4 py-2 text-muted-foreground">Full Name</td>
                       <td className="px-4 py-2 font-bold text-foreground">{profileData.full_name || '—'}</td>
                     </tr>
-                    <tr className="bg-background">
+                    <tr className="bg-card">
                       <td className="px-4 py-2 text-muted-foreground">Posts</td>
                       <td className="px-4 py-2 font-bold text-foreground">{(profileData.posts_count || 0).toLocaleString()}</td>
                     </tr>
-                    <tr className="bg-background">
+                    <tr className="bg-card">
                       <td className="px-4 py-2 text-muted-foreground">Followers</td>
                       <td className="px-4 py-2 font-bold text-foreground">{(profileData.followers || 0).toLocaleString()}</td>
                     </tr>
-                    <tr className="bg-background">
+                    <tr className="bg-card">
                       <td className="px-4 py-2 text-muted-foreground">Following</td>
                       <td className="px-4 py-2 font-bold text-foreground">{(profileData.followees || 0).toLocaleString()}</td>
                     </tr>
-                    <tr className="bg-background">
+                    <tr className="bg-card">
                       <td className="px-4 py-2 text-muted-foreground">Verified</td>
-                      <td className="px-4 py-2 font-bold text-foreground">{profileData.is_verified ? 'Yes ✓' : 'No'}</td>
+                      <td className="px-4 py-2 font-bold text-foreground">{profileData.is_verified ? 'Yes' : 'No'}</td>
                     </tr>
-                    <tr className="bg-background">
+                    <tr className="bg-card">
                       <td className="px-4 py-2 text-muted-foreground">Account Type</td>
-                      <td className="px-4 py-2 font-bold text-foreground">{profileData.is_private ? 'Private 🔒' : 'Public 🌍'}</td>
+                      <td className="px-4 py-2 font-bold text-foreground">{profileData.is_private ? 'Private' : 'Public'}</td>
                     </tr>
-                    <tr className="bg-background">
+                    <tr className="bg-card">
                       <td className="px-4 py-2 text-muted-foreground align-top">Bio</td>
                       <td className="px-4 py-2 font-medium text-foreground whitespace-pre-wrap break-words">{profileData.biography || '—'}</td>
                     </tr>
-                    <tr className="bg-background">
+                    <tr className="bg-card">
                       <td className="px-4 py-2 text-muted-foreground">Website</td>
                       <td className="px-4 py-2 font-medium text-foreground break-all">
                         {profileData.external_url ? (
@@ -378,7 +378,7 @@ export function InstagramDpViewer() {
                     <GButton
                       onClick={() => saveImage('hd')}
                       disabled={saving}
-                      className="w-full h-10 sm:h-11 text-sm font-medium bg-gradient-to-r from-primary to-primary/90 hover:from-primary/90 hover:to-primary text-primary-foreground shadow-lg hover:shadow-xl transition-all duration-300"
+                      className="w-full h-10 sm:h-11 text-sm font-medium shadow-sm"
                     >
                       {saving ? (
                         <>
@@ -395,29 +395,28 @@ export function InstagramDpViewer() {
                   )}
                 </div>
 
-                {/* Cross-Sell Honey Pot */}
-                <div className="mt-4 p-4 rounded-lg bg-green-50 dark:bg-green-900/10 border border-green-200 dark:border-green-800 animate-fade-in">
+                <div className="mt-4 p-4 rounded-lg bg-primary/5 border border-primary/20 animate-fade-in">
                   <div className="flex items-center gap-2 mb-2">
-                    <span className="text-xl">🔥</span>
-                    <h4 className="font-bold text-green-700 dark:text-green-300 text-sm">Trending Tools</h4>
+                    <TrendingUp className="h-4 w-4 text-primary" />
+                    <h4 className="font-bold text-primary text-sm">Related Social Tools</h4>
                   </div>
-                  <p className="text-xs text-green-600 dark:text-green-400 mb-3">
+                  <p className="text-xs text-muted-foreground mb-3">
                     Found the profile? Explore more tools!
                   </p>
                   <div className="grid grid-cols-1 gap-2">
                     <a
                       href="/social-media-tools/youtube-thumbnail"
-                      className="flex items-center justify-between p-2 rounded bg-white dark:bg-card border border-green-100 dark:border-green-800 hover:shadow-sm transition-shadow group"
+                      className="flex items-center justify-between p-2 rounded bg-white border border-primary/10 hover:border-primary/30 hover:bg-primary/5 transition-colors group"
                     >
-                      <span className="text-xs font-medium text-foreground group-hover:text-primary transition-colors">🎬 YouTube Thumbnail Grabber</span>
-                      <span className="text-xs text-muted-foreground">→</span>
+                      <span className="text-xs font-medium text-foreground group-hover:text-primary transition-colors">YouTube Thumbnail Grabber</span>
+                      <ExternalLink className="h-3 w-3 text-muted-foreground group-hover:text-primary" />
                     </a>
                     <a
                       href="/social-media-tools/tiktok-engagement-calculator"
-                      className="flex items-center justify-between p-2 rounded bg-white dark:bg-card border border-green-100 dark:border-green-800 hover:shadow-sm transition-shadow group"
+                      className="flex items-center justify-between p-2 rounded bg-white border border-primary/10 hover:border-primary/30 hover:bg-primary/5 transition-colors group"
                     >
-                      <span className="text-xs font-medium text-foreground group-hover:text-primary transition-colors">📊 TikTok Engagement Calculator</span>
-                      <span className="text-xs text-muted-foreground">→</span>
+                      <span className="text-xs font-medium text-foreground group-hover:text-primary transition-colors">TikTok Engagement Calculator</span>
+                      <ExternalLink className="h-3 w-3 text-muted-foreground group-hover:text-primary" />
                     </a>
                   </div>
                 </div>
@@ -427,14 +426,14 @@ export function InstagramDpViewer() {
         </GCard>
       )}
 
-      <GCard className="p-4 sm:p-6 bg-card border border-border shadow-lg">
+      <GCard className="p-4 sm:p-6 bg-card border border-border shadow-sm">
         <h3 className="text-base sm:text-lg font-semibold text-foreground mb-3 sm:mb-4">How to Use</h3>
-        <ul className="space-y-2 sm:space-y-3 text-sm sm:text-base text-muted-foreground leading-relaxed">
-          <li>• Enter an Instagram username (with or without @) or paste a profile link</li>
-          <li>• Examples: <code className="text-xs bg-muted px-1 rounded">test</code> or <code className="text-xs bg-muted px-1 rounded">https://www.instagram.com/test</code></li>
-          <li>• Click "View Profile Picture" to load the image</li>
-          <li>• Save the high-quality version if needed</li>
-          <li>• Only works for public Instagram accounts</li>
+        <ul className="list-disc space-y-2 sm:space-y-3 pl-5 text-sm sm:text-base text-muted-foreground leading-relaxed">
+          <li>Enter an Instagram username (with or without @) or paste a profile link</li>
+          <li>Examples: <code className="text-xs bg-muted px-1 rounded">test</code> or <code className="text-xs bg-muted px-1 rounded">https://www.instagram.com/test</code></li>
+          <li>Click "View Profile Picture" to load the image</li>
+          <li>Save the high-quality version if needed</li>
+          <li>Works for profile pictures on public and private accounts; it does not access private posts or stories</li>
         </ul>
       </GCard>
     </div>

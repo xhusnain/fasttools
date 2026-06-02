@@ -408,11 +408,13 @@ export function LinkInBioGenerator() {
             <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-3">
               {themes.map((theme) => (
                 <button
+                  type="button"
                   key={theme.id}
                   onClick={() => setSelectedTheme(theme.id)}
+                  aria-pressed={selectedTheme === theme.id}
                   className={`p-3 rounded-lg border-2 transition-all ${selectedTheme === theme.id
-                    ? "border-primary bg-primary/10"
-                    : "border-border hover:border-primary/50"
+                    ? "border-primary bg-primary/10 shadow-md ring-2 ring-primary/25"
+                    : "border-border hover:border-primary/50 bg-white"
                     }`}
                 >
                   <div className="space-y-2">
@@ -438,10 +440,12 @@ export function LinkInBioGenerator() {
                 </button>
               ))}
               <button
+                type="button"
                 onClick={() => setSelectedTheme("custom")}
+                aria-pressed={selectedTheme === "custom"}
                 className={`p-3 rounded-lg border-2 transition-all ${selectedTheme === "custom"
-                  ? "border-primary bg-primary/10"
-                  : "border-border hover:border-primary/50"
+                  ? "border-primary bg-primary/10 shadow-md ring-2 ring-primary/25"
+                  : "border-border hover:border-primary/50 bg-white"
                   }`}
               >
                 <div className="space-y-2">

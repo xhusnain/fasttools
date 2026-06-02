@@ -339,12 +339,12 @@ export function YoutubeChannelChecker() {
           </GCard>
 
           {error && (
-            <GCard className="p-6 bg-card border-red-500 shadow-sm animate-fade-in">
+            <GCard className="p-6 bg-destructive/5 border-destructive/20 shadow-sm animate-fade-in">
               <div className="flex items-center gap-3">
-                <AlertCircle className="h-6 w-6 text-foreground" />
+                <AlertCircle className="h-6 w-6 text-destructive" />
                 <div>
-                  <h3 className="text-base font-semibold text-foreground">Error</h3>
-                  <p className="text-sm text-foreground">{error}</p>
+                  <h3 className="text-base font-semibold text-destructive">Error</h3>
+                  <p className="text-sm text-muted-foreground">{error}</p>
                 </div>
               </div>
             </GCard>
@@ -386,10 +386,12 @@ export function YoutubeChannelChecker() {
                     {suggestionCategories.map((category) => (
                       <button
                         key={category}
+                        type="button"
+                        aria-pressed={activeCategory === category}
                         onClick={() => setActiveCategory(category)}
-                        className={`px-3 py-1.5 text-sm font-medium rounded-md whitespace-nowrap transition-colors ${activeCategory === category
-                          ? 'bg-primary text-primary-foreground'
-                          : 'bg-muted text-muted-foreground hover:bg-muted/80'
+                        className={`min-h-[36px] rounded-md border px-3 py-1.5 text-sm font-semibold whitespace-nowrap transition-colors ${activeCategory === category
+                          ? 'border-primary bg-primary text-primary-foreground shadow-sm'
+                          : 'border-border bg-white text-muted-foreground hover:border-primary/30 hover:bg-primary/5 hover:text-primary'
                           }`}
                       >
                         {category}
@@ -418,14 +420,14 @@ export function YoutubeChannelChecker() {
             </GCard>
           )}
 
-          <GCard className="p-6 bg-muted/30 border-border">
+          <GCard className="p-6 bg-card border-border shadow-sm">
             <h3 className="text-base font-semibold text-foreground mb-3">How to Use</h3>
-            <ul className="space-y-2 text-sm text-muted-foreground leading-relaxed">
-              <li>• Enter multiple channel names separated by commas</li>
-              <li>• Click "Check Availability" to start the checking process</li>
-              <li>• Get 100+ AI-powered channel name suggestions tailored to your niche</li>
-              <li>• Watch the countdown timer and progress indicator</li>
-              <li>• Copy suggested names with one click</li>
+            <ul className="list-disc space-y-2 pl-5 text-sm text-muted-foreground leading-relaxed">
+              <li>Enter multiple channel names separated by commas</li>
+              <li>Click "Check Availability" to start the checking process</li>
+              <li>Get AI-powered channel name suggestions tailored to your niche</li>
+              <li>Watch the countdown timer and progress indicator</li>
+              <li>Copy suggested names with one click</li>
             </ul>
           </GCard>
         </GTabsContent>
@@ -453,40 +455,40 @@ interface ChannelResultCardProps {
 
 const ChannelResultCard = memo(({ result, isChecking }: ChannelResultCardProps) => {
   return (
-    <GCard className={`p-4 bg-card border-border shadow-sm animate-fade-in ${isChecking ? 'ring-2 ring-primary bg-muted/30' : ''}`}>
+    <GCard className={`p-4 bg-card border-border shadow-sm animate-fade-in ${isChecking ? 'ring-2 ring-primary bg-primary/5' : ''}`}>
       <div className="space-y-3">
         {/* Status Icon and Channel Name */}
         <div className="flex items-center gap-2">
           {result.error === 'Pending...' ? (
             <>
-              <LoadingSpinner className="h-6 w-6 text-accent" />
+              <LoadingSpinner className="h-6 w-6 text-primary" />
               <div className="flex-1 min-w-0">
                 <h4 className="text-sm font-semibold text-foreground truncate">{result.channelName}</h4>
-                <p className="text-xs text-accent">Waiting...</p>
+                <p className="text-xs text-primary">Waiting...</p>
               </div>
             </>
           ) : result.error && result.error !== 'Pending...' ? (
             <>
-              <AlertCircle className="h-6 w-6 text-foreground" />
+              <AlertCircle className="h-6 w-6 text-destructive" />
               <div className="flex-1 min-w-0">
                 <h4 className="text-sm font-semibold text-foreground truncate">{result.channelName}</h4>
-                <p className="text-xs text-foreground">Error</p>
+                <p className="text-xs text-destructive">Error</p>
               </div>
             </>
           ) : result.available ? (
             <>
-              <CheckCircle className="h-6 w-6 text-heading-accent" />
+              <CheckCircle className="h-6 w-6 text-primary" />
               <div className="flex-1 min-w-0">
                 <h4 className="text-sm font-semibold text-foreground truncate">{result.channelName}</h4>
-                <p className="text-xs text-heading-accent">Available!</p>
+                <p className="text-xs text-primary">Available</p>
               </div>
             </>
           ) : (
             <>
-              <XCircle className="h-6 w-6 text-foreground" />
+              <XCircle className="h-6 w-6 text-muted-foreground" />
               <div className="flex-1 min-w-0">
                 <h4 className="text-sm font-semibold text-foreground truncate">{result.channelName}</h4>
-                <p className="text-xs text-foreground">Taken</p>
+                <p className="text-xs text-muted-foreground">Taken</p>
               </div>
             </>
           )}

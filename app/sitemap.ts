@@ -1,5 +1,6 @@
 import type { MetadataRoute } from "next"
 import { noindexPaths } from "@/lib/noindex"
+import { getBlogSitemapPages } from "@/lib/blog"
 
 export const baseUrl = "https://www.fasttools.store"
 
@@ -18,6 +19,7 @@ export const sitemapPages = [
   { url: u("/about"), lastModified: new Date("2026-03-23"), changeFrequency: "monthly" as const, priority: 0.5 },
   { url: u("/contact"), lastModified: new Date("2026-03-23"), changeFrequency: "monthly" as const, priority: 0.5 },
   { url: u("/faq"), lastModified: new Date("2026-03-23"), changeFrequency: "monthly" as const, priority: 0.6 },
+  { url: u("/blog"), lastModified: new Date("2026-06-02"), changeFrequency: "weekly" as const, priority: 0.7 },
   { url: u("/all-tools"), lastModified: new Date(), changeFrequency: "weekly" as const, priority: 0.8 },
   { url: u("/privacy-policy"), lastModified: new Date("2025-11-25"), changeFrequency: "yearly" as const, priority: 0.3 },
   { url: u("/terms"), lastModified: new Date("2025-11-25"), changeFrequency: "yearly" as const, priority: 0.3 },
@@ -264,14 +266,40 @@ export const sitemapPages = [
 
   // SEO Tools
   { url: u("/seo-tools/text-similarity-checker"), lastModified: new Date("2026-05-14"), changeFrequency: "monthly" as const, priority: 0.7 },
+
+  // ─── Blog Content ────────────────────────────────────────────────────
+  ...getBlogSitemapPages(),
 ]
 
 // Indexable pages only — noindex pages are removed so they never leak into the
 // sitemap, internal /all-tools listings, or IndexNow pings.
 export const indexablePages = sitemapPages.filter((p) => !noindexUrlSet.has(p.url))
 
-export const toolPages = indexablePages.filter(p => !p.url.endsWith(".store") && ![ "/products", "/api-docs", "/about", "/contact", "/faq", "/all-tools", "/privacy-policy", "/terms", "/cookie-preferences", "/dmca" ].some(path => p.url.endsWith(path)))
-export const mainPages = indexablePages.filter(p => !toolPages.includes(p))
+const mainPagePaths = new Set([
+  "/products",
+  "/api-docs",
+  "/about",
+  "/contact",
+  "/faq",
+  "/blog",
+  "/all-tools",
+  "/privacy-policy",
+  "/terms",
+  "/cookie-preferences",
+  "/dmca",
+])
+
+const pathFromUrl = (url: string) => url.replace(baseUrl, "")
+
+export const contentPages = indexablePages.filter((p) => pathFromUrl(p.url).startsWith("/blog/"))
+export const mainPages = indexablePages.filter((p) => {
+  const path = pathFromUrl(p.url)
+  return path === "" || mainPagePaths.has(path)
+})
+export const toolPages = indexablePages.filter((p) => {
+  const path = pathFromUrl(p.url)
+  return path !== "" && !mainPagePaths.has(path) && !path.startsWith("/blog/")
+})
 
 export default function sitemap(): MetadataRoute.Sitemap {
   return indexablePages.map((page) => ({

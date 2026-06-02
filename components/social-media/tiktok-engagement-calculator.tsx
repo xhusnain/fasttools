@@ -195,28 +195,32 @@ export function TikTokEngagementCalculator() {
             </GLabel>
             <div className="grid grid-cols-2 gap-3">
               <button
+                type="button"
                 onClick={() => { setMode("single"); setNumberOfPosts("1") }}
-                className={`p-3 rounded-lg border-2 transition-all duration-300 text-left ${
+                aria-pressed={mode === "single"}
+                className={`p-3 rounded-lg border transition-all duration-300 text-left ${
                   mode === "single"
-                    ? "border-primary bg-primary/10 text-foreground"
-                    : "border-border hover:border-primary/50 bg-card text-muted-foreground"
+                    ? "border-primary bg-primary text-primary-foreground shadow-sm"
+                    : "border-border hover:border-primary/30 bg-white text-muted-foreground hover:bg-accent hover:text-primary"
                 }`}
               >
-                <BarChart3 className={`h-5 w-5 mb-1 ${mode === "single" ? "text-primary" : "text-muted-foreground"}`} />
+                <BarChart3 className={`h-5 w-5 mb-1 ${mode === "single" ? "text-primary-foreground" : "text-muted-foreground"}`} />
                 <div className="text-sm font-medium">Single Post</div>
-                <div className="text-xs text-muted-foreground">Analyze one video</div>
+                <div className={`text-xs ${mode === "single" ? "text-primary-foreground/80" : "text-muted-foreground"}`}>Analyze one video</div>
               </button>
               <button
+                type="button"
                 onClick={() => setMode("average")}
-                className={`p-3 rounded-lg border-2 transition-all duration-300 text-left ${
+                aria-pressed={mode === "average"}
+                className={`p-3 rounded-lg border transition-all duration-300 text-left ${
                   mode === "average"
-                    ? "border-primary bg-primary/10 text-foreground"
-                    : "border-border hover:border-primary/50 bg-card text-muted-foreground"
+                    ? "border-primary bg-primary text-primary-foreground shadow-sm"
+                    : "border-border hover:border-primary/30 bg-white text-muted-foreground hover:bg-accent hover:text-primary"
                 }`}
               >
-                <TrendingUp className={`h-5 w-5 mb-1 ${mode === "average" ? "text-primary" : "text-muted-foreground"}`} />
+                <TrendingUp className={`h-5 w-5 mb-1 ${mode === "average" ? "text-primary-foreground" : "text-muted-foreground"}`} />
                 <div className="text-sm font-medium">Multiple Posts</div>
-                <div className="text-xs text-muted-foreground">Average across posts</div>
+                <div className={`text-xs ${mode === "average" ? "text-primary-foreground/80" : "text-muted-foreground"}`}>Average across posts</div>
               </button>
             </div>
           </div>

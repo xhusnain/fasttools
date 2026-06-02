@@ -178,12 +178,12 @@ Next Birthday: ${result.nextBirthday}`
   return (
     <div className="space-y-8">
       {/* Today's Date Display */}
-      <GCard className="shadow-lg border-border bg-card">
+      <GCard className="shadow-sm border-border bg-card">
         <GCardContent className="p-6">
           <div className="flex items-center justify-center gap-3 text-sm">
             <div className="flex items-center gap-2">
               <Clock className="h-5 w-5 text-primary" />
-              <span className="text-muted-foreground font-medium">Today (UTC) is:</span>
+              <span className="text-muted-foreground font-medium">Today is:</span>
             </div>
             <div className="text-center">
               <div className="font-bold text-lg text-foreground">
@@ -202,7 +202,7 @@ Next Birthday: ${result.nextBirthday}`
         </GCardContent>
       </GCard>
 
-      <GCard className="shadow-lg border-border hover:shadow-xl transition-all duration-300 bg-card">
+      <GCard className="shadow-sm border-border bg-card">
         <GCardHeader className="pb-4">
           <GCardTitle className="flex items-center gap-3 text-2xl">
             <div className="p-2 bg-primary/10 rounded-lg">
@@ -228,7 +228,7 @@ Next Birthday: ${result.nextBirthday}`
                 value={birthDate}
                 onChange={(e) => setBirthDate(e.target.value)}
                 max={new Date().toISOString().split("T")[0]}
-                className="flex h-10 sm:h-12 w-full rounded-lg border-2 border-input bg-background px-3 sm:px-4 py-2 sm:py-3 text-sm sm:text-base font-medium ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 transition-all hover:border-primary/50"
+                className="flex h-10 sm:h-12 w-full rounded-lg border border-input bg-white px-3 sm:px-4 py-2 sm:py-3 text-sm sm:text-base font-medium ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring/25 focus-visible:ring-offset-0 disabled:cursor-not-allowed disabled:opacity-50 transition-colors hover:border-primary/40"
               />
             </div>
 
@@ -243,14 +243,14 @@ Next Birthday: ${result.nextBirthday}`
                 value={targetDate}
                 onChange={(e) => setTargetDate(e.target.value)}
                 min={birthDate}
-                className="flex h-10 sm:h-12 w-full rounded-lg border-2 border-input bg-background px-3 sm:px-4 py-2 sm:py-3 text-sm sm:text-base font-medium ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 transition-all hover:border-primary/50"
+                className="flex h-10 sm:h-12 w-full rounded-lg border border-input bg-white px-3 sm:px-4 py-2 sm:py-3 text-sm sm:text-base font-medium ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring/25 focus-visible:ring-offset-0 disabled:cursor-not-allowed disabled:opacity-50 transition-colors hover:border-primary/40"
               />
             </div>
           </div>
 
           <GButton
             onClick={calculateAge}
-            className="w-full h-12 sm:h-14 text-base sm:text-lg font-semibold shadow-lg hover:shadow-xl transition-all duration-300 bg-gradient-to-r from-primary to-primary/90 hover:from-primary/90 hover:to-primary"
+            className="w-full h-12 sm:h-14 text-base sm:text-lg font-semibold shadow-sm"
             disabled={!birthDate || isCalculating}
             isLoading={isCalculating}
           >
@@ -271,11 +271,11 @@ Next Birthday: ${result.nextBirthday}`
       </GCard>
 
       {result && !isCalculating && (
-        <GCard className="shadow-lg border-primary/20 animate-fade-in-up bg-card">
+        <GCard className="shadow-sm border-border animate-fade-in-up bg-card">
           <GCardHeader className="pb-4">
             <GCardTitle className="text-2xl flex items-center gap-3">
-              <div className="p-2 bg-secondary-accent/10 dark:bg-secondary-accent/30 rounded-lg">
-                <Heart className="h-6 w-6 text-heading-accent" />
+              <div className="p-2 bg-primary/10 rounded-lg">
+                <Heart className="h-6 w-6 text-primary" />
               </div>
               Your Age Results
             </GCardTitle>
@@ -287,17 +287,17 @@ Next Birthday: ${result.nextBirthday}`
           <GCardContent className="space-y-8">
             {/* Main Age Display */}
             <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 sm:gap-4">
-              <div className="text-center p-4 sm:p-6 rounded-xl bg-card border-2 border-border hover:shadow-lg transition-all duration-300">
+              <div className="text-center p-4 sm:p-6 rounded-lg bg-card border border-border shadow-sm">
                 <div className="text-3xl sm:text-4xl font-bold text-foreground mb-1 sm:mb-2">{result.years}</div>
                 <div className="text-xs sm:text-sm font-semibold text-foreground">Years</div>
               </div>
-              <div className="text-center p-4 sm:p-6 rounded-xl bg-card border-2 border-border hover:shadow-lg transition-all duration-300">
+              <div className="text-center p-4 sm:p-6 rounded-lg bg-card border border-border shadow-sm">
                 <div className="text-3xl sm:text-4xl font-bold text-foreground mb-1 sm:mb-2">{result.months}</div>
                 <div className="text-xs sm:text-sm font-semibold text-foreground">Months</div>
               </div>
-              <div className="text-center p-4 sm:p-6 rounded-xl bg-card border-2 border-border hover:shadow-lg transition-all duration-300">
-                <div className="text-3xl sm:text-4xl font-bold text-heading-accent mb-1 sm:mb-2">{result.days}</div>
-                <div className="text-xs sm:text-sm font-semibold text-heading-accent">Days</div>
+              <div className="text-center p-4 sm:p-6 rounded-lg bg-card border border-border shadow-sm">
+                <div className="text-3xl sm:text-4xl font-bold text-primary mb-1 sm:mb-2">{result.days}</div>
+                <div className="text-xs sm:text-sm font-semibold text-primary">Days</div>
               </div>
             </div>
 
@@ -310,7 +310,7 @@ Next Birthday: ${result.nextBirthday}`
                 </div>
                 <div className="w-full bg-secondary/30 rounded-full h-3 overflow-hidden">
                   <div
-                    className="bg-gradient-to-r from-primary to-secondary h-full rounded-full transition-all duration-1000"
+                    className="bg-primary h-full rounded-full transition-all duration-1000"
                     style={{ width: `${((365 - result.daysUntilNextBirthday) / 365) * 100}%` }}
                   />
                 </div>
@@ -318,8 +318,8 @@ Next Birthday: ${result.nextBirthday}`
 
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 <div className="p-4 bg-card border border-border rounded-xl flex items-center gap-3">
-                  <div className="p-2 rounded-full bg-blue-100 dark:bg-blue-900/30">
-                    <Sparkles className="h-5 w-5 text-blue-500" />
+                  <div className="p-2 rounded-full bg-primary/10">
+                    <Sparkles className="h-5 w-5 text-primary" />
                   </div>
                   <div>
                     <div className="text-xs text-muted-foreground font-medium">Alive for</div>
@@ -331,8 +331,8 @@ Next Birthday: ${result.nextBirthday}`
                 </div>
 
                 <div className="p-4 bg-card border border-border rounded-xl flex items-center gap-3">
-                  <div className="p-2 rounded-full bg-blue-100 dark:bg-blue-900/30">
-                    <Calendar className="h-5 w-5 text-blue-500" />
+                  <div className="p-2 rounded-full bg-primary/10">
+                    <Calendar className="h-5 w-5 text-primary" />
                   </div>
                   <div>
                     <div className="text-xs text-muted-foreground font-medium">Born on a</div>
@@ -346,7 +346,7 @@ Next Birthday: ${result.nextBirthday}`
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               <div className="space-y-4">
                 <h3 className="text-lg font-semibold flex items-center gap-2">
-                  <Sparkles className="h-5 w-5 text-yellow-500" />
+                  <Sparkles className="h-5 w-5 text-primary" />
                   Fun Facts
                 </h3>
                 <div className="space-y-3">
@@ -363,7 +363,7 @@ Next Birthday: ${result.nextBirthday}`
 
               <div className="space-y-4">
                 <h3 className="text-lg font-semibold flex items-center gap-2">
-                  <Settings className="h-5 w-5 text-purple-500" />
+                  <Settings className="h-5 w-5 text-primary" />
                   Astrology
                 </h3>
                 <div className="grid grid-cols-2 gap-3">
@@ -380,7 +380,7 @@ Next Birthday: ${result.nextBirthday}`
             </div>
 
             {/* Detailed Breakdown */}
-            <div className="space-y-4 p-4 sm:p-6 bg-card rounded-xl border-2 border-border">
+            <div className="space-y-4 p-4 sm:p-6 bg-card rounded-lg border border-border">
               <h3 className="text-base sm:text-lg font-semibold text-center mb-3 sm:mb-4 flex items-center justify-center gap-2">
                 <Clock className="h-4 w-4 sm:h-5 sm:w-5 text-primary" />
                 Detailed Time Breakdown
@@ -395,8 +395,8 @@ Next Birthday: ${result.nextBirthday}`
                   <span className="font-bold text-lg text-foreground">{result.weeks.toLocaleString()}</span>
                 </div>
                 <div className="flex justify-between items-center p-3 bg-card rounded-lg border border-border">
-                  <span className="text-sm font-medium text-heading-accent">Total Hours</span>
-                  <span className="font-bold text-lg text-heading-accent">{result.totalHours.toLocaleString()}</span>
+                  <span className="text-sm font-medium text-primary">Total Hours</span>
+                  <span className="font-bold text-lg text-primary">{result.totalHours.toLocaleString()}</span>
                 </div>
                 <div className="flex justify-between items-center p-3 bg-card rounded-lg border border-border">
                   <span className="text-sm font-medium text-foreground">Total Minutes</span>
@@ -414,7 +414,7 @@ Next Birthday: ${result.nextBirthday}`
             </div>
 
             {/* Answer Summary */}
-            <div className="p-6 bg-card rounded-xl border-2 border-primary/20">
+            <div className="p-6 bg-primary/5 rounded-lg border border-primary/20">
               <div className="text-center">
                 <div className="text-3xl font-bold text-primary mb-2">
                   {result.years} Years, {result.months} Months, {result.days} Days
@@ -429,7 +429,7 @@ Next Birthday: ${result.nextBirthday}`
             </div>
 
             {/* Birthday Information */}
-            <div className="space-y-4 p-4 sm:p-6 bg-card rounded-xl border-2 border-border">
+            <div className="space-y-4 p-4 sm:p-6 bg-card rounded-lg border border-border">
               <h3 className="text-base sm:text-lg font-semibold flex items-center gap-2 text-foreground">
                 <Gift className="h-4 w-4 sm:h-5 sm:w-5" />
                 Birthday Information
@@ -463,20 +463,20 @@ Next Birthday: ${result.nextBirthday}`
             </div>
 
             {/* Shareable Link */}
-            <div className="space-y-4 p-4 sm:p-6 bg-card rounded-xl border-2 border-border">
+            <div className="space-y-4 p-4 sm:p-6 bg-card rounded-lg border border-border">
               <h3 className="text-base sm:text-lg font-semibold text-foreground">Save this link to check age given DOB:</h3>
               <div className="flex flex-col sm:flex-row gap-2">
                 <input
                   type="text"
                   value={result.shareableLink}
                   readOnly
-                  className="flex-1 px-3 sm:px-4 py-2 sm:py-3 text-xs sm:text-sm border-2 border-border rounded-lg bg-background text-foreground"
+                  className="flex-1 px-3 sm:px-4 py-2 sm:py-3 text-xs sm:text-sm border border-input rounded-lg bg-white text-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring/25"
                 />
                 <GButton
                   onClick={copyLink}
                   variant="outline"
                   size="sm"
-                  className="h-10 sm:h-12 px-3 sm:px-4 border-2 border-border"
+                  className="h-10 sm:h-12 px-3 sm:px-4"
                 >
                   {copied ? <Check className="h-4 w-4" /> : <Copy className="h-4 w-4" />}
                 </GButton>
@@ -488,7 +488,7 @@ Next Birthday: ${result.nextBirthday}`
               <GButton
                 onClick={copyResult}
                 variant="outline"
-                className="flex-1 h-10 sm:h-12 text-sm sm:text-base font-semibold transition-all duration-300 border-2 border-border"
+                className="flex-1 h-10 sm:h-12 text-sm sm:text-base font-semibold"
               >
                 {copied ? (
                   <>
@@ -507,7 +507,7 @@ Next Birthday: ${result.nextBirthday}`
               <GButton
                 onClick={shareResult}
                 variant="outline"
-                className="flex-1 h-10 sm:h-12 text-sm sm:text-base font-semibold transition-all duration-300 border-2 border-border"
+                className="flex-1 h-10 sm:h-12 text-sm sm:text-base font-semibold"
               >
                 <Share2 className="mr-2 sm:mr-3 h-4 w-4 sm:h-5 sm:w-5" />
                 <span className="hidden sm:inline">Share Results</span>

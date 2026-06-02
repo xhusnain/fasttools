@@ -18,7 +18,7 @@ export function Footer() {
   ]
 
   return (
-    <footer className="relative bg-gradient-to-b from-background to-background/95 border-t border-border/50">
+    <footer className="relative bg-white border-t border-border">
       {/* Main Footer Content */}
       <div className="container mx-auto max-w-7xl px-4 py-10 md:py-12">
         <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-8 md:gap-6">
@@ -65,6 +65,7 @@ export function Footer() {
           <div>
             <div className="text-sm font-semibold text-foreground mb-4">Resources</div>
             <ul className="space-y-2">
+              <li><Link href="/blog" title="FastTools Blog" className="text-sm text-muted-foreground hover:text-primary transition-colors">Blog</Link></li>
               <li><Link href="/api-docs" title="FastTools API Documentation" className="text-sm text-muted-foreground hover:text-primary transition-colors">API Docs</Link></li>
               <li><Link href="/products" title="Browse all FastTools products" className="text-sm text-muted-foreground hover:text-primary transition-colors">Products</Link></li>
               <li><Link href="/faq" title="Frequently Asked Questions" className="text-sm text-muted-foreground hover:text-primary transition-colors">FAQ</Link></li>

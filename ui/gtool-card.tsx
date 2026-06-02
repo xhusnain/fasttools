@@ -25,12 +25,12 @@ export function GToolCard({
     href,
     icon: Icon,
     badge,
-    badgeColor = "bg-primary/90",
-    iconBg = "bg-primary/10",
-    iconColor = "text-primary",
-    borderColor = "border-border",
-    hoverBorder = "hover:border-primary/50",
-    glowColor = "hover:shadow-[var(--secondary-accent)]/20",
+    badgeColor: _badgeColor,
+    iconBg: _iconBg,
+    iconColor: _iconColor,
+    borderColor: _borderColor,
+    hoverBorder: _hoverBorder,
+    glowColor: _glowColor,
     className,
     ctaText = "Use Tool",
     children,
@@ -38,7 +38,7 @@ export function GToolCard({
 }: GToolCardProps) {
     if (children) {
         return (
-            <div className={cn("relative rounded-2xl border bg-card transition-all duration-300", className)} {...props}>
+            <div className={cn("relative rounded-lg border border-border bg-card shadow-sm transition-all duration-300", className)} {...props}>
                 {children}
             </div>
         )
@@ -48,25 +48,17 @@ export function GToolCard({
         <Link href={href!} className={cn("group block h-full", className)}>
             <div
                 className={cn(
-                    "relative h-full rounded-2xl border bg-card p-6 space-y-4 transition-all duration-300",
-                    "hover:-translate-y-1 hover:shadow-2xl",
-                    "dark:bg-card/50 dark:hover:bg-card/80", // Subtle dark mode background change
-                    borderColor,
-                    hoverBorder,
-                    glowColor
+                    "relative h-full rounded-lg border border-border bg-card p-6 space-y-4 shadow-sm transition-all duration-300",
+                    "hover:-translate-y-0.5 hover:border-primary/30 hover:shadow-md"
                 )}
             >
-                {/* Gradient Overlay on Hover */}
-                <div className="absolute inset-0 rounded-2xl bg-gradient-to-br from-primary/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none" />
+                <div className="absolute inset-0 rounded-lg bg-primary/[0.03] opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none" />
 
                 {/* Badge and Icon */}
                 <div className="relative flex items-start justify-between z-10">
                     {badge ? (
                         <div
-                            className={cn(
-                                "px-3 py-1 rounded-full text-white text-[10px] uppercase tracking-wider font-bold shadow-sm",
-                                badgeColor
-                            )}
+                            className="px-3 py-1 rounded-md bg-secondary text-secondary-foreground border border-primary/10 text-[10px] uppercase tracking-wider font-bold"
                         >
                             {badge}
                         </div>
@@ -74,13 +66,9 @@ export function GToolCard({
                         <div />
                     )}
                     <div
-                        className={cn(
-                            "p-3 rounded-xl border shadow-sm transition-transform duration-300 group-hover:scale-110 group-hover:rotate-3",
-                            iconBg,
-                            borderColor
-                        )}
+                        className="p-3 rounded-lg border border-primary/15 bg-primary/10 shadow-sm transition-transform duration-300 group-hover:scale-105"
                     >
-                        {Icon && <Icon className={cn("h-6 w-6", iconColor)} />}
+                        {Icon && <Icon className="h-6 w-6 text-primary" />}
                     </div>
                 </div>
 

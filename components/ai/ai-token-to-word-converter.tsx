@@ -132,8 +132,9 @@ export function AiTokenToWordConverter() {
           <GButton onClick={handleConvert} className="flex-1" size="lg">
             Convert
           </GButton>
-          <GButton onClick={reset} variant="outline" size="icon" aria-label="Reset values">
+          <GButton onClick={reset} variant="outline" size="lg" aria-label="Reset values" className="gap-2">
             <RefreshCw className="h-4 w-4" />
+            Reset
           </GButton>
         </div>
 

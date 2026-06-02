@@ -310,16 +310,18 @@ export function LLMTrainingCostCalculator() {
               <div className="grid grid-cols-2 sm:grid-cols-4 gap-2">
                 {(Object.entries(gpuSpecs) as [GpuType, GpuSpec][]).map(([key, spec]) => (
                   <button
+                    type="button"
                     key={key}
                     onClick={() => setGpuType(key)}
-                    className={`p-2.5 rounded-lg border-2 text-left transition-all ${
+                    aria-pressed={gpuType === key}
+                    className={`p-2.5 rounded-lg border text-left transition-all ${
                       gpuType === key
-                        ? "border-primary bg-primary/10 text-foreground"
-                        : "border-border hover:border-primary/50 bg-card text-muted-foreground"
+                        ? "border-primary bg-primary text-primary-foreground shadow-sm"
+                        : "border-border hover:border-primary/30 bg-white text-muted-foreground hover:bg-accent hover:text-primary"
                     }`}
                   >
                     <div className="text-xs font-medium">{spec.name.replace("NVIDIA ", "")}</div>
-                    <div className="text-[10px] text-muted-foreground">{spec.tflops_bf16} TFLOPS · {spec.memory}GB</div>
+                    <div className={`text-[10px] ${gpuType === key ? "text-primary-foreground/80" : "text-muted-foreground"}`}>{spec.tflops_bf16} TFLOPS · {spec.memory}GB</div>
                   </button>
                 ))}
               </div>
@@ -357,12 +359,14 @@ export function LLMTrainingCostCalculator() {
                 <div className="flex flex-wrap gap-1.5">
                   {(Object.entries(precisionMultiplier) as [PrecisionType, typeof precisionMultiplier.fp32][]).map(([key, val]) => (
                     <button
+                      type="button"
                       key={key}
                       onClick={() => setPrecision(key)}
-                      className={`px-2.5 py-1.5 rounded border text-xs transition-all ${
+                      aria-pressed={precision === key}
+                      className={`px-2.5 py-1.5 rounded-lg border text-xs transition-all ${
                         precision === key
-                          ? "border-primary bg-primary/10 text-foreground font-medium"
-                          : "border-border hover:border-primary/50 bg-card text-muted-foreground"
+                          ? "border-primary bg-primary text-primary-foreground font-semibold shadow-sm"
+                          : "border-border hover:border-primary/30 bg-white text-muted-foreground hover:bg-accent hover:text-primary"
                       }`}
                     >
                       {val.label}
@@ -382,12 +386,14 @@ export function LLMTrainingCostCalculator() {
             <div className="grid grid-cols-2 sm:grid-cols-5 gap-2">
               {(Object.entries(providerPricing) as [CloudProvider, typeof providerPricing.aws][]).map(([key, p]) => (
                 <button
+                  type="button"
                   key={key}
                   onClick={() => setProvider(key)}
-                  className={`p-2.5 rounded-lg border-2 text-center transition-all ${
+                  aria-pressed={provider === key}
+                  className={`p-2.5 rounded-lg border text-center transition-all ${
                     provider === key
-                      ? "border-primary bg-primary/10 text-foreground"
-                      : "border-border hover:border-primary/50 bg-card text-muted-foreground"
+                      ? "border-primary bg-primary text-primary-foreground shadow-sm"
+                      : "border-border hover:border-primary/30 bg-white text-muted-foreground hover:bg-accent hover:text-primary"
                   }`}
                 >
                   <div className="text-xs font-medium">{p.name.split(" (")[0]}</div>

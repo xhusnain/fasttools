@@ -206,14 +206,16 @@ export function EMICalculator() {
                 const Icon = type.icon
                 return (
                   <button
+                    type="button"
                     key={type.id}
                     onClick={() => setLoanType(type.id as any)}
-                    className={`p-3 rounded-lg border-2 transition-all duration-300 ${loanType === type.id
-                      ? 'border-primary bg-primary/10 text-foreground'
-                      : 'border-border hover:border-primary/50 bg-card text-muted-foreground'
+                    aria-pressed={loanType === type.id}
+                    className={`p-3 rounded-lg border transition-all duration-300 ${loanType === type.id
+                      ? 'border-primary bg-primary text-primary-foreground shadow-sm'
+                      : 'border-border hover:border-primary/30 bg-white text-muted-foreground hover:bg-accent hover:text-primary'
                       }`}
                   >
-                    <Icon className={`h-5 w-5 mx-auto mb-2 ${type.color}`} />
+                    <Icon className={`h-5 w-5 mx-auto mb-2 ${loanType === type.id ? "text-primary-foreground" : type.color}`} />
                     <div className="text-sm font-medium">{type.label}</div>
                   </button>
                 )
@@ -288,19 +290,23 @@ export function EMICalculator() {
               </GLabel>
               <div className="flex gap-4">
                 <button
+                  type="button"
                   onClick={() => setEmiInAdvance(false)}
-                  className={`px-4 py-2 rounded-lg border-2 transition-all ${!emiInAdvance
-                    ? 'border-primary bg-primary/10 text-foreground'
-                    : 'border-border bg-card text-muted-foreground'
+                  aria-pressed={!emiInAdvance}
+                  className={`px-4 py-2 rounded-lg border transition-all ${!emiInAdvance
+                    ? 'border-primary bg-primary text-primary-foreground font-semibold shadow-sm'
+                    : 'border-border bg-white text-muted-foreground hover:border-primary/30 hover:bg-accent hover:text-primary'
                     }`}
                 >
                   EMI in Arrears
                 </button>
                 <button
+                  type="button"
                   onClick={() => setEmiInAdvance(true)}
-                  className={`px-4 py-2 rounded-lg border-2 transition-all ${emiInAdvance
-                    ? 'border-primary bg-primary/10 text-foreground'
-                    : 'border-border bg-card text-muted-foreground'
+                  aria-pressed={emiInAdvance}
+                  className={`px-4 py-2 rounded-lg border transition-all ${emiInAdvance
+                    ? 'border-primary bg-primary text-primary-foreground font-semibold shadow-sm'
+                    : 'border-border bg-white text-muted-foreground hover:border-primary/30 hover:bg-accent hover:text-primary'
                     }`}
                 >
                   EMI in Advance

@@ -532,7 +532,7 @@ export function MemeGenerator() {
                   onClick={() => setSelectedTextId(tb.id)}
                   className={`flex items-center gap-2 p-2 rounded-md cursor-pointer transition-colors ${
                     selectedTextId === tb.id
-                      ? "bg-primary/10 border border-primary/30"
+                      ? "bg-primary/5 border border-primary/40 ring-2 ring-primary/20"
                       : "bg-muted/50 hover:bg-muted border border-transparent"
                   }`}
                 >

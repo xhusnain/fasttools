@@ -31,9 +31,10 @@ const GTabsList = React.forwardRef<
   <div
     ref={ref}
     className={cn(
-      "inline-flex h-auto items-center justify-center rounded-md bg-muted p-1 text-muted-foreground",
+      "inline-flex h-auto items-center justify-center rounded-lg border border-border bg-muted p-1 text-muted-foreground shadow-sm",
       className
     )}
+    role="tablist"
     {...props}
   />
 ))
@@ -52,12 +53,16 @@ const GTabsTrigger = React.forwardRef<
     <button
       ref={ref}
       className={cn(
-        "inline-flex items-center justify-center whitespace-nowrap rounded-sm px-3 py-2 text-sm font-medium ring-offset-background transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 min-h-[40px]",
+        "inline-flex items-center justify-center whitespace-nowrap rounded-lg border border-transparent px-3 py-2 text-sm font-semibold ring-offset-background transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring/40 focus-visible:ring-offset-0 disabled:pointer-events-none disabled:opacity-50 min-h-[40px]",
         isSelected
-          ? "bg-background text-foreground shadow-sm"
-          : "hover:bg-background/50",
+          ? "bg-primary text-primary-foreground shadow-sm"
+          : "text-muted-foreground hover:bg-white hover:text-primary hover:border-primary/15",
         className
       )}
+      type="button"
+      role="tab"
+      aria-selected={isSelected}
+      data-state={isSelected ? "active" : "inactive"}
       onClick={() => onValueChange(value)}
       {...props}
     />
@@ -80,6 +85,8 @@ const GTabsContent = React.forwardRef<
   return (
     <div
       ref={ref}
+      role="tabpanel"
+      data-state="active"
       className={cn(
         "mt-2 ring-offset-background focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2",
         className

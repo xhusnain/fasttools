@@ -26,11 +26,11 @@ export function MegaMenu() {
 
                     return (
                         <NavigationMenuItem key={section.title}>
-                            <NavigationMenuTrigger className="h-9 px-3 text-sm font-medium text-foreground/80 hover:text-foreground hover:bg-white/5 data-[state=open]:bg-white/10 data-[state=open]:text-foreground rounded-md transition-colors bg-transparent">
+                            <NavigationMenuTrigger className="h-9 px-3 text-sm font-medium text-foreground/80 hover:text-primary hover:bg-accent data-[state=open]:bg-accent data-[state=open]:text-primary rounded-lg transition-colors bg-transparent">
                                 {section.title}
                             </NavigationMenuTrigger>
                             <NavigationMenuContent>
-                                <div className="p-5 bg-popover border border-border/50 rounded-xl shadow-2xl">
+                                <div className="p-5 bg-popover border border-border rounded-lg shadow-lg">
                                     <div className={cn(
                                         "flex gap-8",
                                         numCategories >= 4 && "flex-wrap max-w-[700px]"
@@ -64,7 +64,7 @@ export function MegaMenu() {
                     <NavigationMenuLink asChild>
                         <Link
                             href="/api-docs"
-                            className="h-9 px-3 text-sm font-medium text-foreground/80 hover:text-foreground hover:bg-white/5 rounded-md transition-colors inline-flex items-center"
+                            className="h-9 px-3 text-sm font-medium text-foreground/80 hover:text-primary hover:bg-accent rounded-lg transition-colors inline-flex items-center"
                         >
                             API Docs
                         </Link>
@@ -85,8 +85,8 @@ const ListItem = React.forwardRef<
                 <a
                     ref={ref}
                     className={cn(
-                        "group flex items-center gap-2 rounded-md px-2 py-1.5 text-sm leading-none no-underline outline-none transition-all whitespace-nowrap",
-                        "text-foreground/70 hover:text-foreground hover:bg-white/5",
+                        "group flex items-center gap-2 rounded-lg px-2 py-1.5 text-sm leading-none no-underline outline-none transition-all whitespace-nowrap",
+                        "text-foreground/70 hover:text-primary hover:bg-accent",
                         active && "bg-primary/10 text-primary font-medium",
                         className
                     )}
@@ -95,7 +95,7 @@ const ListItem = React.forwardRef<
                     {Icon && (
                         <Icon className={cn(
                             "h-4 w-4 shrink-0",
-                            active ? "text-primary" : "text-muted-foreground group-hover:text-foreground"
+                            active ? "text-primary" : "text-muted-foreground group-hover:text-primary"
                         )} />
                     )}
                     <span>{title}</span>
