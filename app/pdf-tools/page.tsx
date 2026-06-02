@@ -3,7 +3,7 @@ import { ToolPageLayout } from "@/components/common/tool-page-layout"
 import { createToolConfig } from "@/lib/create-tool-config"
 import { GToolCard } from "@/ui/gtool-card"
 
-import { FileSignature, RefreshCw, FileStack, Unlock, Minimize2, Image, Shield } from "lucide-react"
+import { FileSignature, RefreshCw, FileStack, Unlock, Minimize2, Image, Shield, Images } from "lucide-react"
 
 const pdfTools = [
   {
@@ -42,6 +42,13 @@ const pdfTools = [
     popular: true,
   },
   {
+    title: "Image to PDF Converter",
+    description: "Combine JPG, PNG, and WebP images into one PDF with page size and margin controls.",
+    icon: Images,
+    href: "/pdf-tools/image-to-pdf",
+    popular: true,
+  },
+  {
     title: "PDF to Image Converter",
     description: "Export PDF pages to JPG, PNG, or WebP with quality presets.",
     icon: Image,
@@ -75,7 +82,7 @@ const toolConfig = createToolConfig({
       "PDF split and merge",
       "PDF signing",
       "PDF unlocking",
-      "PDF and image conversion",
+      "Image to PDF and PDF to image conversion",
       "PDF signature checking",
     ],
     softwareRequirements: "Modern web browser",
@@ -115,6 +122,7 @@ const toolConfig = createToolConfig({
       "Extract or combine document sections for operations teams",
       "Collect signatures without print-scan loops",
       "Convert pages for image-based publishing workflows",
+      "Combine photos or screenshots into one PDF",
       "Verify signature status before approvals",
     ],
 
@@ -183,11 +191,12 @@ const toolConfig = createToolConfig({
       {
         question: "Can I convert between PDF and image formats?",
         answer:
-          "Yes. PDF to Image converts pages to JPG, PNG, or WebP. For text extraction from images, use the Image to Text tool.",
+          "Yes. Image to PDF combines JPG, PNG, and WebP images into a PDF. PDF to Image converts PDF pages to JPG, PNG, or WebP. For text extraction from images, use the Image to Text tool.",
       },
     ],
 
     relatedTools: [
+      { name: "Image to PDF", href: "/pdf-tools/image-to-pdf" },
       { name: "PDF Compressor", href: "/pdf-tools/pdf-compressor" },
       { name: "PDF Splitter & Merger", href: "/pdf-tools/pdf-splitter-merger" },
       { name: "PDF to Word & Word to PDF", href: "/pdf-tools/pdf-word-converter" },

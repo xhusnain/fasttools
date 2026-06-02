@@ -38,7 +38,7 @@ export const sitemapPages = [
   { url: u("/image-tools"), lastModified: new Date("2026-03-23"), changeFrequency: "monthly" as const, priority: 0.9 },
   { url: u("/seo-tools"), lastModified: new Date("2026-03-23"), changeFrequency: "monthly" as const, priority: 0.9 },
   { url: u("/fun-tools"), lastModified: new Date("2026-03-23"), changeFrequency: "monthly" as const, priority: 0.9 },
-  { url: u("/pdf-tools"), lastModified: new Date("2026-03-23"), changeFrequency: "monthly" as const, priority: 0.9 },
+  { url: u("/pdf-tools"), lastModified: new Date("2026-06-02"), changeFrequency: "monthly" as const, priority: 0.9 },
   { url: u("/security-tools"), lastModified: new Date("2026-04-17"), changeFrequency: "weekly" as const, priority: 0.9 },
 
   // ─── Social Media Tools ──────────────────────────────────────────────
@@ -197,6 +197,7 @@ export const sitemapPages = [
   { url: u("/security-tools/image-steganography"), lastModified: new Date("2026-04-17"), changeFrequency: "monthly" as const, priority: 0.9 },
 
   // ─── PDF Tools ───────────────────────────────────────────────────────
+  { url: u("/pdf-tools/image-to-pdf"), lastModified: new Date("2026-06-02"), changeFrequency: "weekly" as const, priority: 0.9 },
   { url: u("/pdf-tools/pdf-sign"), lastModified: new Date("2026-03-23"), changeFrequency: "monthly" as const, priority: 0.9 },
   { url: u("/pdf-tools/pdf-word-converter"), lastModified: new Date("2026-03-23"), changeFrequency: "monthly" as const, priority: 0.9 },
   { url: u("/pdf-tools/pdf-splitter-merger"), lastModified: new Date("2026-03-23"), changeFrequency: "monthly" as const, priority: 0.9 },

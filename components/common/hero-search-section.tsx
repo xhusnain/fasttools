@@ -35,6 +35,7 @@ export function HeroSearchSection() {
                     { name: 'Anniversary Calculator', path: '/fun-tools/anniversary' },
                     { name: 'Hashtag Counter', path: '/social-media-tools/hashtag-counter' },
                     { name: 'AI QR Generator', path: '/ai-tools/qr-generator' },
+                    { name: 'Image to PDF', path: '/pdf-tools/image-to-pdf' },
                     { name: 'PDF Compressor', path: '/pdf-tools/pdf-compressor' },
                     { name: 'Currency Converter', path: '/converters/currency' },
                     { name: 'Age Calculator', path: '/calculator/age-calculator' },

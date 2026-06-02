@@ -180,6 +180,7 @@ const toolConfig = createToolConfig({
     ],
 
     relatedTools: [
+      { name: "Image to PDF Converter", href: "/pdf-tools/image-to-pdf" },
       { name: "PDF Splitter & Merger", href: "/pdf-tools/pdf-splitter-merger" },
       { name: "PDF Compressor", href: "/pdf-tools/pdf-compressor" },
       { name: "PDF Unlocker", href: "/pdf-tools/pdf-unlocker" },

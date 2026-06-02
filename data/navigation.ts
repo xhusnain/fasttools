@@ -8,6 +8,7 @@ import {
     FileText,
     Globe,
     Image,
+    Images,
     Palette,
     Search,
     Settings,
@@ -245,6 +246,7 @@ export const navigationConfig: MegaMenuSection[] = [
             {
                 title: "PDF Tools",
                 items: [
+                    { title: "Image to PDF", href: "/pdf-tools/image-to-pdf", icon: Images },
                     { title: "PDF to Word", href: "/pdf-tools/pdf-word-converter", icon: FileText },
                     { title: "PDF to Image", href: "/pdf-tools/pdf-to-image", icon: FileImage },
                     { title: "Compress PDF", href: "/pdf-tools/pdf-compressor", icon: FileText },

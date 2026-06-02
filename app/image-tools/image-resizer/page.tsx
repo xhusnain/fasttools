@@ -221,6 +221,7 @@ const toolConfig = createToolConfig({
     ],
 
     relatedTools: [
+      { name: "Image to PDF Converter", href: "/pdf-tools/image-to-pdf" },
       { name: "Image Cropper", href: "/image-tools/image-cropper" },
       { name: "Image Compressor", href: "/image-tools/image-compressor" },
       { name: "Background Remover", href: "/image-tools/background-remover" },

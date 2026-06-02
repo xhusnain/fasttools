@@ -3,9 +3,16 @@ import { ToolPageLayout } from "@/components/common/tool-page-layout"
 import { createToolConfig } from "@/lib/create-tool-config"
 import { GToolCard } from "@/ui/gtool-card"
 
-import { FileText, Maximize2, Minimize2, ShieldCheck, Scissors, Crop } from "lucide-react"
+import { FileText, Maximize2, Minimize2, ShieldCheck, Scissors, Crop, Images } from "lucide-react"
 
 const imageTools = [
+  {
+    title: "Image to PDF Converter",
+    description: "Combine JPG, PNG, and WebP images into one PDF with page size, order, and margin controls.",
+    icon: Images,
+    href: "/pdf-tools/image-to-pdf",
+    popular: true,
+  },
   {
     title: "Image Compressor",
     description: "Compress JPG, PNG, and WebP with quality, size, and resolution controls.",
@@ -67,6 +74,7 @@ const toolConfig = createToolConfig({
       "Image resizer with 50+ social media presets",
       "Image compression tool",
       "Image to text OCR tool",
+      "Image to PDF document conversion",
       "No-login workflows",
       "Desktop and mobile browser support",
     ],
@@ -84,7 +92,7 @@ const toolConfig = createToolConfig({
 
   content: {
     overview:
-      "This category focuses on two high-intent image tasks: file-size reduction and OCR text extraction. Use Image Compressor when upload size or page speed is the problem, and use Image to Text when you need editable text from screenshots or document images.",
+      "This category focuses on high-intent image tasks: file-size reduction, OCR text extraction, resizing, cropping, background removal, AI image checks, and document conversion. Use Image to PDF when you need to combine photos, screenshots, or scanned image pages into a shareable PDF.",
 
     howToSteps: [
       "Choose the tool based on your goal: compression or OCR extraction.",
@@ -103,6 +111,7 @@ const toolConfig = createToolConfig({
 
     useCases: [
       "Web and app image optimization",
+      "Image-to-PDF document creation",
       "Document and screenshot text extraction",
       "Marketing asset preparation",
       "Admin workflows that require fast copyable text",
@@ -114,8 +123,9 @@ const toolConfig = createToolConfig({
         <div>
           <h3 className="text-lg font-semibold text-foreground mb-2">Category Intent</h3>
           <p>
-            Search intent in this cluster is mainly utility-driven: users want either smaller image files or editable text from images.
-            This page routes users quickly to the right tool based on that immediate task.
+            Search intent in this cluster is mainly utility-driven: users want smaller image files, editable text from images, quick
+            image edits, or document output from photos and screenshots. This page routes users quickly to the right tool based on that
+            immediate task.
           </p>
         </div>
 
@@ -144,12 +154,12 @@ const toolConfig = createToolConfig({
       {
         question: "What tools are included in this image category?",
         answer:
-          "The category currently includes Image Compressor and Image to Text (OCR).",
+          "The category includes Image to PDF, Image Compressor, Image to Text (OCR), Image Resizer, Image Cropper, Background Remover, and AI Image Detector.",
       },
       {
         question: "Which tool should I use first?",
         answer:
-          "Use Image Compressor for file-size reduction and Image to Text for extracting editable text from images.",
+          "Use Image to PDF for document creation, Image Compressor for file-size reduction, Image Resizer or Cropper for dimensions, and Image to Text for extracting editable text from images.",
       },
       {
         question: "Are these image tools free?",
@@ -169,7 +179,7 @@ const toolConfig = createToolConfig({
       {
         question: "Can I use these tools with PDF workflows?",
         answer:
-          "Yes. You can pair them with related PDF tools like PDF to Image and PDF Compressor when your source files are PDFs.",
+          "Yes. Use Image to PDF to create PDFs from photos, PDF to Image to extract page images, and PDF Compressor when the final document is too large.",
       },
       {
         question: "How is this category organized for SEO intent?",
@@ -179,6 +189,7 @@ const toolConfig = createToolConfig({
     ],
 
     relatedTools: [
+      { name: "Image to PDF", href: "/pdf-tools/image-to-pdf" },
       { name: "Background Remover", href: "/image-tools/background-remover" },
       { name: "Image Resizer", href: "/image-tools/image-resizer" },
       { name: "Image Compressor", href: "/image-tools/image-compressor" },

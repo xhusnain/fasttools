@@ -146,6 +146,9 @@ export const searchItems: SearchItem[] = [
   { name: "AI Image Detector", description: "Free AI image detector to check if a photo is AI-generated. Detects Midjourney, DALL-E, Stable Diffusion, Flux & deepfake images", path: "/image-tools/ai-image-detector", category: "Image" },
 
   // PDF Tools
+  { name: "Image to PDF Converter", description: "Convert JPG, PNG, and WebP images into one PDF with page order, size, margin, and quality controls", path: "/pdf-tools/image-to-pdf", category: "PDF" },
+  { name: "JPG to PDF", description: "Convert JPG photos and screenshots to a PDF document online", path: "/pdf-tools/image-to-pdf", category: "PDF" },
+  { name: "PNG to PDF", description: "Convert PNG images into a PDF file online", path: "/pdf-tools/image-to-pdf", category: "PDF" },
   { name: "PDF to Word Converter", description: "Convert PDF to editable Word documents", path: "/pdf-tools/pdf-word-converter", category: "PDF" },
   { name: "PDF Compressor", description: "Reduce PDF file size efficiently", path: "/pdf-tools/pdf-compressor", category: "PDF" },
   { name: "PDF to Image", description: "Convert PDF pages to JPG and PNG images", path: "/pdf-tools/pdf-to-image", category: "PDF" },
@@ -208,6 +211,5 @@ export const searchItems: SearchItem[] = [
   // Security Tools
   { name: "Image Steganography", description: "Hide secret messages inside PNG/JPG images using LSB encoding with optional AES-GCM encryption", path: "/security-tools/image-steganography", category: "Security" },
 ]
-
 
 

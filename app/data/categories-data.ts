@@ -14,6 +14,7 @@ import {
     Search,
     DollarSign,
     Image,
+    Images,
     Smile,
     Globe,
     Link2,
@@ -521,7 +522,7 @@ export const categories = [
     {
         id: "image-tools",
         name: "Free Image Editing & OCR Tools",
-        description: "Compress images and extract text with browser-based OCR tools",
+        description: "Resize, compress, crop, convert images to PDF, and extract text with browser-based tools",
         icon: Image,
         href: "/image-tools",
         borderColor: "border-border",
@@ -530,6 +531,14 @@ export const categories = [
         iconColor: "text-foreground",
         glowColor: "hover:shadow-pink-500/20",
         tools: [
+            {
+                title: "Image to PDF Converter",
+                description: "Turn JPG, PNG, and WebP images into one ordered PDF document",
+                href: "/pdf-tools/image-to-pdf",
+                icon: Images,
+                badge: "New",
+                badgeColor: "bg-blue-600",
+            },
             {
                 title: "Image Resizer",
                 description: "Resize images to custom dimensions or 50+ social media presets. JPG, PNG, WebP.",
@@ -606,6 +615,14 @@ export const categories = [
         iconColor: "text-indigo-700",
         glowColor: "hover:shadow-indigo-500/20",
         tools: [
+            {
+                title: "Image to PDF Converter",
+                description: "Combine JPG, PNG, and WebP images into one PDF with page order, paper size, and margin controls",
+                href: "/pdf-tools/image-to-pdf",
+                icon: Images,
+                badge: "New",
+                badgeColor: "bg-blue-600",
+            },
             {
                 title: "PDF to Word Converter",
                 description: "Convert PDF text to editable DOCX and export Word content to PDF",

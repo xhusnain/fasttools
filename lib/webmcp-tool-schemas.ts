@@ -574,6 +574,9 @@ export const toolSchemas: Record<string, ToolSchema> = {
     },
 
     // ── File Upload Tools ────────────────────────────────────────────
+    "/pdf-tools/image-to-pdf": {
+        interactionMode: "file-upload",
+    },
     "/pdf-tools/pdf-compressor": {
         interactionMode: "file-upload",
     },

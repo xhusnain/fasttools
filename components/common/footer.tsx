@@ -54,6 +54,7 @@ export function Footer() {
             <ul className="space-y-2">
               <li><Link href="/calculator/bmi-calculator" className="text-sm text-muted-foreground hover:text-primary transition-colors">BMI Calculator</Link></li>
               <li><Link href="/ai-tools/qr-generator" className="text-sm text-muted-foreground hover:text-primary transition-colors">AI QR Generator</Link></li>
+              <li><Link href="/pdf-tools/image-to-pdf" className="text-sm text-muted-foreground hover:text-primary transition-colors">Image to PDF</Link></li>
               <li><Link href="/dev-tools/json-diff" className="text-sm text-muted-foreground hover:text-primary transition-colors">JSON Diff</Link></li>
               <li><Link href="/pdf-tools/pdf-word-converter" className="text-sm text-muted-foreground hover:text-primary transition-colors">PDF to Word</Link></li>
               <li><Link href="/converters/currency" className="text-sm text-muted-foreground hover:text-primary transition-colors">Currency Converter</Link></li>
