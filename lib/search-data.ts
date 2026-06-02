@@ -179,6 +179,7 @@ export const searchItems: SearchItem[] = [
   { name: "YouTube Channel Name Generator", description: "Generate catchy, unique names for your YouTube channel with AI", path: "/social-media-tools/youtube-channel-name-generator", category: "Social Media" },
   { name: "Hashtag Counter", description: "Count and extract hashtags from posts", path: "/social-media-tools/hashtag-counter", category: "Social Media" },
   { name: "Instagram DP Viewer", description: "View and download Instagram profile pictures in full size HD", path: "/social-media-tools/instagram-dp", category: "Social Media" },
+  { name: "Instagram Profile Picture Viewer", description: "View, zoom, and save full-size Instagram profile pictures", path: "/social-media-tools/instagram-profile-picture-viewer", category: "Social Media" },
 
   { name: "AI Paraphraser", description: "Free AI paraphrasing tool. Rewrite text in 7 modes: Standard, Fluency, Formal, Creative, Academic, Shorten, Expand. Powered by AI.", path: "/ai-tools/ai-paraphraser", category: "AI" },
   { name: "AI Text Summarizer", description: "Free AI text summarizer. Summarize articles, essays, reports into paragraphs, bullet points, key takeaways, or TL;DR. Adjustable length. Powered by AI.", path: "/ai-tools/text-summarizer", category: "AI" },
@@ -211,5 +212,4 @@ export const searchItems: SearchItem[] = [
   // Security Tools
   { name: "Image Steganography", description: "Hide secret messages inside PNG/JPG images using LSB encoding with optional AES-GCM encryption", path: "/security-tools/image-steganography", category: "Security" },
 ]
-
 
