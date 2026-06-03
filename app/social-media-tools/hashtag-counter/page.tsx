@@ -13,9 +13,9 @@ const toolConfig = createToolConfig({
   toolName: "Hashtag Counter",
   description:
     "Free hashtag counter — instantly count and extract hashtags from any text. Works for Instagram, TikTok, X, Facebook, and LinkedIn captions.",
-  metaTitle: "Hashtag Counter — Count Hashtags in Instagram, TikTok, X Captions (Free)",
+  metaTitle: "Hashtag Counter & Tag Counter - Instagram, TikTok, X",
   metaDescription:
-    "Free hashtag counter. Paste any social media caption to instantly count hashtags and extract the full tag list. Check Instagram's 30-tag limit, TikTok's 100-char limit, and stay platform-compliant on X, LinkedIn & Facebook.",
+    "Free hashtag counter and tag counter. Paste a caption to count hashtags, extract tags, find duplicates, and check Instagram, TikTok, X, LinkedIn, and Facebook limits.",
   path: "/social-media-tools/hashtag-counter",
 
   header: {
@@ -70,9 +70,9 @@ const toolConfig = createToolConfig({
 
   content: {
     definition:
-      "A social media tag generator and hashtag counter is a free tool that counts, extracts, and helps generate hashtags for social media posts. Works as both a tag counter and social media tag generator.",
+      "A Hashtag Counter is a free tag counter that counts and extracts hashtags from social media captions, bios, comments, and bulk text.",
     quickAnswer:
-      "Use this social media tag generator to count and extract hashtags from any text. Paste your social media caption, and the tool instantly counts all hashtags and extracts them. Instagram allows up to 30 hashtags per post, LinkedIn recommends 3-5, and X (Twitter) recommends 1-2.",
+      "Paste any caption or text to count hashtags and extract the full tag list. Instagram allows up to 30 hashtags per post, LinkedIn works best with 3-5, and X usually works best with 1-2.",
     keyTakeaways: [
       "Instagram allows up to 30 hashtags per post (optimal: 3-5 for reach)",
       "LinkedIn recommends 3-5 hashtags per post",
@@ -149,7 +149,7 @@ const toolConfig = createToolConfig({
           <ul className="list-disc list-inside space-y-2 ml-2">
             <li><strong>Mix tag sizes.</strong> Pair 1–2 popular tags (500K+ posts, for discovery) with 2–3 niche tags (10K–100K posts, for targeted reach). All-popular tags get buried; all-niche tags don&apos;t scale.</li>
             <li><strong>Rotate sets between posts.</strong> Posting the exact same 30 hashtags every time looks automated and can trigger Instagram&apos;s spam filter. Keep 3–5 different sets organized by content theme.</li>
-            <li><strong>Check for banned hashtags.</strong> Instagram silently restricts certain tags. Common banned tags as of include #beautyblogger, #valentinesday (during the holiday), #adulting, and many others — always changing. If a hashtag&apos;s page has limited or no content, it&apos;s likely restricted.</li>
+            <li><strong>Check for restricted hashtags.</strong> Instagram restrictions change often. If a hashtag&apos;s page has limited or no recent content, treat it as risky and replace it with a more specific active tag.</li>
             <li><strong>Use platform-native search.</strong> When picking new tags, type them into the platform&apos;s search to see post volume and recency. Tags with no posts in the last 7 days are dead.</li>
             <li><strong>Match content language.</strong> Don&apos;t use English-only tags on a Spanish-language post — you&apos;re losing native-language reach.</li>
           </ul>

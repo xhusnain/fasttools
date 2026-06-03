@@ -467,6 +467,7 @@ const toolConfig = createToolConfig({
     ],
 
     relatedTools: [
+      { name: "Monthsary Calculator", href: "/fun-tools/monthsary-calculator" },
       { name: "Future Age Calculator", href: "/fun-tools/future-age" },
       { name: "Birthday Countdown", href: "/fun-tools/birthday-countdown" },
       { name: "Age Calculator", href: "/calculator/age-calculator" },

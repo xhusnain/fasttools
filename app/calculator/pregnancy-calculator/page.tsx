@@ -6,11 +6,11 @@ import { ToolLoader } from "@/components/common/tool-loader"
 const PregnancyCalculator = dynamic(() => import("@/components/health/pregnancy-calculator"), {
   loading: () => <ToolLoader />
 })
-import { createMetadata } from "@/lib/metadata-base"
+import { buildSchemas, createMetadata } from "@/lib/metadata-base"
 import { GTable } from "@/ui/gtable"
 import { Brain, Calculator, Target, BookOpen, Shield, Users, TrendingUp, Info, AlertTriangle, CheckCircle, Zap, Heart, Calendar, Baby } from "lucide-react"
 
-const baseMetadata = createMetadata({
+const pregnancyMetadataOptions = {
   title: "Pregnancy Calculator — Due Date, Week-by-Week Tracker & IOM Weight",
   description:
     "Free pregnancy calculator to estimate your due date, track gestational age week by week, get IOM weight gain recommendations by BMI, and receive trimester-specific guidance using LMP, ultrasound, conception, or IVF transfer dates.",
@@ -49,7 +49,10 @@ const baseMetadata = createMetadata({
       "Nutrition Recommendations"
     ]
   }
-})
+}
+
+const baseMetadata = createMetadata(pregnancyMetadataOptions)
+const schemas = buildSchemas(pregnancyMetadataOptions)
 
 export const metadata: Metadata = {
   ...baseMetadata,
@@ -305,6 +308,10 @@ export default function PregnancyCalculatorPage() {
         answer: "It uses standard medical formulas. Ultrasound dating in the first trimester is the most accurate method, but LMP and conception dates provide very good estimates."
       },
       {
+        question: "What medical guidance is this calculator based on?",
+        answer: "Due-date logic follows standard obstetric dating principles such as LMP dating, Naegele's Rule, conception-date dating, IVF dating, and first-trimester ultrasound dating. Weight-gain ranges follow Institute of Medicine guidance used by CDC materials. This tool is for estimates and education only; your healthcare provider's dating and advice should take priority."
+      },
+      {
         question: "What if I don't know my exact conception date?",
         answer: "That's common! Use the 'First Day of Last Period' method, which is the standard way doctors date pregnancies."
       },
@@ -491,6 +498,7 @@ export default function PregnancyCalculatorPage() {
         { label: "Calculator", href: "/calculator" },
         { label: "Pregnancy Calculator", href: "/calculator/pregnancy-calculator" }
       ]}
+      schemas={schemas}
       toolComponent={
         <div className="p-3 sm:p-4 md:p-5 rounded-lg bg-card border border-border shadow">
           <PregnancyCalculator />

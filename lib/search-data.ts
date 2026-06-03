@@ -98,7 +98,7 @@ export const searchItems: SearchItem[] = [
   { name: "Crypto Tools", description: "Secure and free online crypto tools", path: "/crypto-tools", category: "Pages" },
   { name: "Bcrypt Generator", description: "Generate and verify secure Blowfish-based Bcrypt hashes with adjustable cost factors", path: "/crypto-tools/bcrypt", category: "Crypto" },
   { name: "Text Encrypt/Decrypt", description: "Securely encrypt and decrypt text using AES, TripleDES, Rabbit, or RC4 directly in your browser.", path: "/crypto-tools/encrypt-decrypt", category: "Crypto" },
-  { name: "BIP39 Passphrase Generator", description: "Generate secure BIP39 mnemonic phrases and seed codes online. Convert entropy to mnemonic.", path: "/crypto-tools/bip39-generator", category: "Crypto" },
+  { name: "BIP39 Passphrase Generator", description: "Generate and validate BIP39 mnemonic phrases for testing and wallet recovery workflows.", path: "/crypto-tools/bip39-generator", category: "Crypto" },
   { name: "HMAC Generator", description: "Calculate secure Hash-based Message Authentication Codes (HMAC) using SHA-256, MD5, SHA-512 and secret keys.", path: "/crypto-tools/hmac-generator", category: "Crypto" },
   { name: "Token Generator", description: "Generate secure random tokens, API keys, and passwords", path: "/crypto-tools/token-generator", category: "Crypto" },
   { name: "Password Generator", description: "Free password generator with entropy meter, HIBP breach checker, passphrase mode (Diceware), bulk generation. Cryptographically secure using crypto.getRandomValues().", path: "/crypto-tools/password-generator", category: "Crypto" },
@@ -108,6 +108,7 @@ export const searchItems: SearchItem[] = [
   { name: "RSA Key Generator", description: "Generate secure RSA public and private key pairs (2048/4096-bit) in PEM format", path: "/crypto-tools/rsa-generator", category: "Crypto" },
   { name: "Password Strength Analyzer", description: "Analyze password strength, entropy, and estimated crack time using zxcvbn.", path: "/crypto-tools/password-strength-analyzer", category: "Crypto" },
   { name: "OTP Code Generator", description: "Free otp code generator, totp generator, totp qr code generator. Time-based OTP for 2FA.", path: "/crypto-tools/otp-generator", category: "Crypto" },
+  { name: "TOTP QR Code Generator", description: "Create otpauth setup QR codes for Google Authenticator, Authy, and 2FA apps.", path: "/crypto-tools/totp-qr-code-generator", category: "Crypto" },
 
   // Developer Tools
   { name: "Color Palette Generator", description: "Free color palette generator. 7 harmony modes (complementary, analogous, triadic, tetradic, monochromatic), image extraction, WCAG contrast checker, export to CSS/Tailwind/SCSS/JSON.", path: "/dev-tools/color-palette", category: "Developer" },
@@ -192,6 +193,7 @@ export const searchItems: SearchItem[] = [
   // Finance Tools
   { name: "Invoice Generator", description: "Create professional invoices for your business", path: "/finance-tools/invoice-generator", category: "Finance" },
   { name: "PayPal Fee Calculator", description: "Calculate PayPal transaction fees", path: "/finance-tools/paypal-fee", category: "Finance" },
+  { name: "PayPal G&S Fee Calculator", description: "Calculate PayPal Goods and Services fees, seller net, and gross-up amount", path: "/finance-tools/paypal-goods-and-services-fee-calculator", category: "Finance" },
   { name: "Discount Calculator", description: "Calculate sale prices and savings", path: "/finance-tools/discount-calculator", category: "Finance" },
   { name: "Tip Calculator", description: "Calculate tips for restaurants and services", path: "/finance-tools/tip-calculator", category: "Finance" },
   { name: "Savings Goal Tracker", description: "Track your savings goals", path: "/finance-tools/savings-tracker", category: "Finance" },
@@ -204,6 +206,7 @@ export const searchItems: SearchItem[] = [
   { name: "Future Age Predictor", description: "See how old you'll be on any future date", path: "/fun-tools/future-age", category: "Fun" },
   { name: "Birthday Countdown", description: "Countdown to your next birthday", path: "/fun-tools/birthday-countdown", category: "Fun" },
   { name: "Anniversary Calculator", description: "Calculate how long you've been together", path: "/fun-tools/anniversary", category: "Fun" },
+  { name: "Monthsary Calculator", description: "Count total months together and next monthly relationship milestone", path: "/fun-tools/monthsary-calculator", category: "Fun" },
   { name: "Pomodoro Timer", description: "Free online Pomodoro focus timer with ambient sounds (rain, cafe, white noise, brown noise), task tracking, customizable sessions, keyboard shortcuts, notifications. Study timer for students and remote workers.", path: "/fun-tools/pomodoro-timer", category: "Fun" },
   { name: "Countdown Timer & Stopwatch", description: "Free online countdown timer and stopwatch. Custom time input, 9 quick presets (1 min to 1 hr), alarm sound, circular progress ring, fullscreen mode, lap times with fastest/slowest tracking. Pomodoro timer online. timer online stopwatch.", path: "/fun-tools/countdown-timer", category: "Fun" },
   { name: "Wheel Spinner", description: "Free online wheel spinner and random name picker. Add names or options, spin the animated wheel, get a random winner. 8 built-in presets: Yes/No, Days of Week, Rock/Paper/Scissors, Heads/Tails, Months, Numbers 1-10. Remove winner mode, spin history. No login, no ads. spin the wheel random name picker decision wheel.", path: "/fun-tools/wheel-spinner", category: "Fun" },
@@ -212,4 +215,3 @@ export const searchItems: SearchItem[] = [
   // Security Tools
   { name: "Image Steganography", description: "Hide secret messages inside PNG/JPG images using LSB encoding with optional AES-GCM encryption", path: "/security-tools/image-steganography", category: "Security" },
 ]
-

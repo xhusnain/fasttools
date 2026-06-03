@@ -265,6 +265,7 @@ const toolConfig = createToolConfig({
     ],
 
     relatedTools: [
+      { name: "TOTP QR Code Generator", href: "/crypto-tools/totp-qr-code-generator" },
       { name: "OTP / TOTP Generator", href: "/crypto-tools/otp-generator" },
       { name: "Password Generator", href: "/crypto-tools/password-generator" },
       { name: "UUID Generator", href: "/crypto-tools/uuid-generator" },

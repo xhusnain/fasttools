@@ -157,6 +157,21 @@ const toolConfig = createToolConfig({
           "In decimal: 1 GB = 1,000 MB, 1 TB = 1,000 GB. In binary: 1 GiB = 1,024 MiB, 1 TiB = 1,024 GiB. Enter your value in any unit, and the converter instantly shows the equivalent in all other units. For example, 1,500 MB = 1.5 GB (decimal) or 1,500 MiB = approximately 1.465 GiB (binary).",
       },
       {
+        question: "How many MB is 1500 bytes?",
+        answer:
+          "1500 bytes equals 0.0015 MB in decimal units because 1 MB = 1,000,000 bytes. In binary units, 1500 bytes equals about 0.00143 MiB because 1 MiB = 1,048,576 bytes.",
+      },
+      {
+        question: "How many KB is 1,000,000 bytes?",
+        answer:
+          "1,000,000 bytes equals 1,000 KB in decimal units. In binary units, it equals about 976.56 KiB.",
+      },
+      {
+        question: "How many MB is 1,000,000,000 bytes?",
+        answer:
+          "1,000,000,000 bytes equals 1,000 MB in decimal units, which is also 1 GB. In binary units, it equals about 953.67 MiB.",
+      },
+      {
         question: "What is the difference between bits and bytes in file sizes?",
         answer:
           "1 byte = 8 bits. File sizes are measured in bytes (B, KB, MB, GB), while network bandwidth is measured in bits per second (bps, Kbps, Mbps, Gbps). A 100 Mbps internet connection transfers about 12.5 MB per second. This distinction matters when estimating download times -- always divide the Mbps speed by 8 to get the MB/s transfer rate.",

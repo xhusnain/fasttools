@@ -5,7 +5,7 @@ const PayPalFeeCalculator = dynamic(() => import("@/components/finance/paypal-fe
   loading: () => <ToolLoader />
 })
 import { ToolPageLayout } from "@/components/common/tool-page-layout"
-import { createMetadata } from "@/lib/metadata-base"
+import { buildSchemas, createMetadata } from "@/lib/metadata-base"
 import { Calculator, DollarSign, Target, TrendingUp, BarChart3, Copy, HelpCircle, Lightbulb, Star, Info, FileText } from "lucide-react"
 import { GImage } from "@/ui/gimage"
 import type { Metadata } from "next"
@@ -13,7 +13,7 @@ import type { Metadata } from "next"
 const TOOL_TITLE = "PayPal Fee Calculator — Calculate PayPal Fees, G&S, Credit Card & Processing Fees"
 const TOOL_NAME = "PayPal Fee Calculator"
 
-const baseMetadata = createMetadata({
+const paypalMetadataOptions = {
   title: `PayPal Fee Calculator — Instant Fees, G&S, Credit Card & International`,
   description: "Free PayPal fee calculator. Calculate PayPal G&S fee, PayPal credit card fee, and processing fees for any transaction. Domestic and international rates, micropayments, and reverse-fee gross-up — for sellers, freelancers, and businesses.",
   path: "/finance-tools/paypal-fee",
@@ -54,7 +54,10 @@ const baseMetadata = createMetadata({
       "Fee comparison tools"
     ]
   }
-})
+}
+
+const baseMetadata = createMetadata(paypalMetadataOptions)
+const schemas = buildSchemas(paypalMetadataOptions)
 
 export const metadata: Metadata = {
   ...baseMetadata,
@@ -496,6 +499,7 @@ export default function PayPalFeeCalculatorPage() {
     ),
 
     relatedTools: [
+      { name: "PayPal G&S Fee Calculator", href: "/finance-tools/paypal-goods-and-services-fee-calculator" },
       { name: "Invoice Generator", href: "/finance-tools/invoice-generator" },
       { name: "Freelance Rate Calculator", href: "/finance-tools/freelance-rate-calculator" },
       { name: "Sales Tax Calculator", href: "/finance-tools/sales-tax-calculator" },
@@ -520,6 +524,7 @@ export default function PayPalFeeCalculatorPage() {
         { label: "Finance Tools", href: "/finance-tools" },
         { label: TOOL_NAME, href: "/finance-tools/paypal-fee" }
       ]}
+      schemas={schemas}
       toolComponent={
         <div className="p-4 rounded-lg bg-card border border-border shadow">
           <PayPalFeeCalculator />

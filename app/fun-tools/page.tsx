@@ -28,6 +28,13 @@ const tools = [
     popular: false,
   },
   {
+    title: "Monthsary Calculator",
+    description: "Count total months together and find your next monthly relationship milestone.",
+    icon: Heart,
+    href: "/fun-tools/monthsary-calculator",
+    popular: true,
+  },
+  {
     title: "Pomodoro Timer",
     description: "Free focus timer with ambient sounds, task tracking, and customizable sessions. Study and work productively.",
     icon: Clock,

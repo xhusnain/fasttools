@@ -202,6 +202,16 @@ const toolConfig = createToolConfig({
           "37 degrees Celsius equals 98.6 degrees Fahrenheit. This is the normal human body temperature. A fever is generally considered to start at 38C (100.4F). Medical professionals in the US use Fahrenheit, while most other countries use Celsius for body temperature readings.",
       },
       {
+        question: "What is 177C to Fahrenheit?",
+        answer:
+          "177 degrees Celsius equals 350.6 degrees Fahrenheit. For cooking, this is usually rounded to 350F, a common moderate oven temperature for baking.",
+      },
+      {
+        question: "What is 350F in Celsius?",
+        answer:
+          "350 degrees Fahrenheit equals 176.67 degrees Celsius, usually rounded to 177C or 180C depending on the oven and recipe.",
+      },
+      {
         question: "How do I convert oven temperatures between Celsius and Fahrenheit for cooking?",
         answer:
           "Common oven temperature conversions: 150C = 302F (slow oven), 180C = 356F (moderate oven, most baking), 200C = 392F (hot oven), 220C = 428F (very hot), 250C = 482F (pizza/broiling). European recipes typically use Celsius while American recipes use Fahrenheit. Gas mark conversions: Gas Mark 4 = 180C = 350F.",

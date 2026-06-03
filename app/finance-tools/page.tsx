@@ -45,6 +45,13 @@ const financeTools = [
     href: "/finance-tools/paypal-fee",
   },
   {
+    title: "PayPal G&S Fee Calculator",
+    description:
+      "Calculate PayPal Goods and Services fees, seller net amount, and gross-up totals.",
+    icon: DollarSign,
+    href: "/finance-tools/paypal-goods-and-services-fee-calculator",
+  },
+  {
     title: "Discount Calculator",
     description:
       "Calculate sale prices, discount amounts, and final totals for shopping or pricing decisions.",

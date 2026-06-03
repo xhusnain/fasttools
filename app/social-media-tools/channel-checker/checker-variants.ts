@@ -127,4 +127,42 @@ export const checkerVariants: Record<string, CheckerVariantConfig> = {
       "Try alternative spellings or variations and check again until you find one that is available.",
     ],
   },
+  "youtube-username-checker": {
+    slug: "youtube-username-checker",
+    toolName: "YouTube Username Checker",
+    metaTitle: "YouTube Username Checker - Check Handle Availability",
+    metaDescription:
+      "Free YouTube username checker. Check if a YouTube @username or channel handle is available, taken, valid, or ready to claim before creating your channel.",
+    headerTitle: "YouTube Username Checker",
+    headerDescription:
+      "Check whether a YouTube username, @handle, or matching channel URL is available before you launch or rename a channel.",
+    overviewText:
+      "YouTube usernames now map most closely to handles: the unique @name shown in channel URLs, comments, Shorts, and mentions. This checker helps you test a YouTube username idea before you commit to branding. Enter the username with or without @, confirm whether the format is valid, and see whether the public youtube.com/@username URL is already claimed.",
+    keywords: [
+      "youtube username checker",
+      "youtube username availability checker",
+      "check youtube username availability",
+      "youtube username availability",
+      "yt username checker",
+      "youtube account name checker",
+    ],
+    faqOverrides: [
+      {
+        question: "Is a YouTube username the same as a YouTube handle?",
+        answer:
+          "For modern YouTube channels, the unique public username is the @handle. A channel display name can be shared by many channels, but the @handle is unique and appears in the channel URL.",
+      },
+      {
+        question: "Can I use spaces in a YouTube username?",
+        answer:
+          "No. YouTube handles cannot contain spaces. Use letters, numbers, underscores, hyphens, or periods, and keep the handle between 3 and 30 characters.",
+      },
+    ],
+    howToSteps: [
+      "Enter the YouTube username or @handle you want to check.",
+      "Review the format result to confirm the username follows YouTube handle rules.",
+      "Check availability to see whether the matching youtube.com/@username page is already claimed.",
+      "Try cleaner variations if the username is taken, too short, or blocked.",
+    ],
+  },
 }

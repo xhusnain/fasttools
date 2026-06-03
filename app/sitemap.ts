@@ -53,6 +53,7 @@ export const sitemapPages = [
   { url: u("/social-media-tools/channel-checker/handle-availability-2026"), lastModified: new Date("2026-03-05"), changeFrequency: "weekly" as const, priority: 0.9 },
   { url: u("/social-media-tools/channel-checker/channel-name-checker"), lastModified: new Date("2026-03-05"), changeFrequency: "weekly" as const, priority: 0.9 },
   { url: u("/social-media-tools/channel-checker/check-if-taken"), lastModified: new Date("2026-03-05"), changeFrequency: "weekly" as const, priority: 0.9 },
+  { url: u("/social-media-tools/channel-checker/youtube-username-checker"), lastModified: new Date("2026-06-03"), changeFrequency: "weekly" as const, priority: 0.9 },
   { url: u("/social-media-tools/youtube-channel-name-generator"), lastModified: new Date("2026-03-23"), changeFrequency: "daily" as const, priority: 0.9 },
   { url: u("/social-media-tools/youtube-tags"), lastModified: new Date("2026-03-23"), changeFrequency: "monthly" as const, priority: 0.9 },
   { url: u("/social-media-tools/youtube-thumbnail"), lastModified: new Date("2026-03-23"), changeFrequency: "monthly" as const, priority: 0.9 },
@@ -88,6 +89,7 @@ export const sitemapPages = [
   { url: u("/finance-tools/discount-calculator"), lastModified: new Date("2026-03-23"), changeFrequency: "monthly" as const, priority: 0.8 },
   { url: u("/finance-tools/invoice-generator"), lastModified: new Date("2026-03-23"), changeFrequency: "monthly" as const, priority: 0.8 },
   { url: u("/finance-tools/paypal-fee"), lastModified: new Date("2026-03-23"), changeFrequency: "monthly" as const, priority: 0.8 },
+  { url: u("/finance-tools/paypal-goods-and-services-fee-calculator"), lastModified: new Date("2026-06-03"), changeFrequency: "monthly" as const, priority: 0.8 },
   { url: u("/finance-tools/tip-calculator"), lastModified: new Date("2026-03-23"), changeFrequency: "monthly" as const, priority: 0.8 },
   { url: u("/finance-tools/savings-tracker"), lastModified: new Date("2026-03-23"), changeFrequency: "monthly" as const, priority: 0.8 },
   { url: u("/finance-tools/home-affordability-calculator"), lastModified: new Date("2026-03-18"), changeFrequency: "monthly" as const, priority: 0.8 },
@@ -150,6 +152,7 @@ export const sitemapPages = [
   { url: u("/crypto-tools/token-generator"), lastModified: new Date("2026-03-23"), changeFrequency: "monthly" as const, priority: 0.7 },
   { url: u("/crypto-tools/hash-text"), lastModified: new Date("2026-03-23"), changeFrequency: "monthly" as const, priority: 0.7 },
   { url: u("/crypto-tools/otp-generator"), lastModified: new Date("2026-03-23"), changeFrequency: "monthly" as const, priority: 0.7 },
+  { url: u("/crypto-tools/totp-qr-code-generator"), lastModified: new Date("2026-06-03"), changeFrequency: "monthly" as const, priority: 0.75 },
 
   // ─── Dev Tools ───────────────────────────────────────────────────────
   { url: u("/dev-tools/jwt-decoder"), lastModified: new Date("2026-03-23"), changeFrequency: "monthly" as const, priority: 0.7 },
@@ -209,6 +212,7 @@ export const sitemapPages = [
 
   // ─── Fun Tools ───────────────────────────────────────────────────────
   { url: u("/fun-tools/anniversary"), lastModified: new Date("2026-05-14"), changeFrequency: "monthly" as const, priority: 0.7 },
+  { url: u("/fun-tools/monthsary-calculator"), lastModified: new Date("2026-06-03"), changeFrequency: "monthly" as const, priority: 0.75 },
   { url: u("/fun-tools/birthday-countdown"), lastModified: new Date("2026-03-23"), changeFrequency: "monthly" as const, priority: 0.5 },
   { url: u("/fun-tools/future-age"), lastModified: new Date("2026-05-14"), changeFrequency: "monthly" as const, priority: 0.8 },
   { url: u("/fun-tools/pomodoro-timer"), lastModified: new Date("2026-03-27"), changeFrequency: "monthly" as const, priority: 0.7 },

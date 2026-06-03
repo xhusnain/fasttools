@@ -300,6 +300,7 @@ const toolConfig = createToolConfig({
       { name: "Age Calculator (current age)", href: "/calculator/age-calculator" },
       { name: "Date Difference Calculator", href: "/calculator/date-difference" },
       { name: "Anniversary Calculator", href: "/fun-tools/anniversary" },
+      { name: "Monthsary Calculator", href: "/fun-tools/monthsary-calculator" },
       { name: "Birthday Countdown", href: "/fun-tools/birthday-countdown" },
       { name: "Pregnancy Calculator", href: "/calculator/pregnancy-calculator" },
       { name: "Biological Age Calculator", href: "/calculator/biological-age-calculator" },

@@ -49,6 +49,13 @@ const cryptoTools = [
     icon: Shield,
   },
   {
+    title: "TOTP QR Code Generator",
+    description:
+      "Create otpauth setup QR codes and live OTP previews for authenticator apps.",
+    href: "/crypto-tools/totp-qr-code-generator",
+    icon: Shield,
+  },
+  {
     title: "Bcrypt Generator",
     description:
       "Hash and verify passwords with bcrypt using configurable cost factors.",

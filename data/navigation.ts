@@ -177,6 +177,7 @@ export const navigationConfig: MegaMenuSection[] = [
                     { title: "Password Generator", href: "/crypto-tools/password-generator", icon: Key },
                     { title: "Token Generator", href: "/crypto-tools/token-generator", icon: Key },
                     { title: "OTP Code Generator", href: "/crypto-tools/otp-generator", icon: Shield },
+                    { title: "TOTP QR Generator", href: "/crypto-tools/totp-qr-code-generator", icon: Shield },
                 ]
             }
         ]
@@ -210,6 +211,7 @@ export const navigationConfig: MegaMenuSection[] = [
                     { title: "Tip Calculator", href: "/finance-tools/tip-calculator", icon: Receipt },
                     { title: "Bill Splitter", href: "/finance-tools/bill-splitter", icon: Receipt },
                     { title: "Invoice Generator", href: "/finance-tools/invoice-generator", icon: FileText },
+                    { title: "PayPal G&S", href: "/finance-tools/paypal-goods-and-services-fee-calculator", icon: DollarSign },
                     { title: "Discount Calc", href: "/finance-tools/discount-calculator", icon: Percent },
                 ]
             }
@@ -301,6 +303,7 @@ export const navigationConfig: MegaMenuSection[] = [
                     { title: "Birthday Countdown", href: "/fun-tools/birthday-countdown", icon: Calendar },
                     { title: "Future Age", href: "/fun-tools/future-age", icon: Clock },
                     { title: "Anniversary Calc", href: "/fun-tools/anniversary", icon: Heart },
+                    { title: "Monthsary Calc", href: "/fun-tools/monthsary-calculator", icon: Heart },
                     { title: "Pomodoro Timer", href: "/fun-tools/pomodoro-timer", icon: Clock },
                 ]
             },

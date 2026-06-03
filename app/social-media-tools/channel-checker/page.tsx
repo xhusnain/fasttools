@@ -389,6 +389,7 @@ const toolConfig = createToolConfig({
       { name: "YouTube Handle Availability 2026", href: "/social-media-tools/channel-checker/handle-availability-2026" },
       { name: "YouTube Channel Name Checker", href: "/social-media-tools/channel-checker/channel-name-checker" },
       { name: "Check If YouTube Handle Is Taken", href: "/social-media-tools/channel-checker/check-if-taken" },
+      { name: "YouTube Username Checker", href: "/social-media-tools/channel-checker/youtube-username-checker" },
       { name: "YouTube Name Generator", href: "/social-media-tools/youtube-channel-name-generator" },
       { name: "YouTube Tag Extractor", href: "/social-media-tools/youtube-tags" },
       { name: "YouTube Thumbnail Downloader", href: "/social-media-tools/youtube-thumbnail" },

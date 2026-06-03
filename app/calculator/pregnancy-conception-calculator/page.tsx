@@ -6,11 +6,11 @@ import { ToolLoader } from "@/components/common/tool-loader"
 const PregnancyConceptionCalculator = dynamic(() => import("@/components/health/pregnancy-conception-calculator"), {
   loading: () => <ToolLoader />
 })
-import { createMetadata } from "@/lib/metadata-base"
+import { buildSchemas, createMetadata } from "@/lib/metadata-base"
 import { GTable } from "@/ui/gtable"
 import { Brain } from "lucide-react"
 
-const baseMetadata = createMetadata({
+const conceptionMetadataOptions = {
   title: "Conception Date Calculator — When Did I Conceive? From Due Date or LMP",
   description:
     "Free conception calculator to estimate your conception date, fertile window, and pregnancy week from due date, last menstrual period, or ultrasound. Includes trimester guidance, nutrition tips, and milestone tracking.",
@@ -49,7 +49,10 @@ const baseMetadata = createMetadata({
       "Lifestyle Tips"
     ]
   }
-})
+}
+
+const baseMetadata = createMetadata(conceptionMetadataOptions)
+const schemas = buildSchemas(conceptionMetadataOptions)
 
 export const metadata: Metadata = {
   ...baseMetadata,
@@ -233,6 +236,10 @@ export default function PregnancyConceptionCalculatorPage() {
         answer: "It provides estimates based on standard medical formulas. Ultrasound dating is most accurate (±3-5 days), followed by due date (±1-2 weeks). LMP is least accurate for irregular cycles."
       },
       {
+        question: "What medical guidance is this conception estimate based on?",
+        answer: "The calculator uses standard pregnancy dating relationships: due date minus about 266 days for likely conception, LMP plus about 14 days for a regular 28-day cycle, and ultrasound-based dating when available. ACOG notes that first-trimester ultrasound using crown-rump length is the most accurate way to establish or confirm gestational age. Use this as an estimate and follow your clinician's dating if it differs."
+      },
+      {
         question: "Why is there a conception date range?",
         answer: "Because sperm can survive inside the body for 3-5 days, conception could have occurred on any of those days. The range covers this fertile window."
       },
@@ -315,6 +322,7 @@ export default function PregnancyConceptionCalculatorPage() {
         { label: "Calculator", href: "/calculator" },
         { label: "Pregnancy Conception Calculator", href: "/calculator/pregnancy-conception-calculator" }
       ]}
+      schemas={schemas}
       toolComponent={
         <div className="p-3 sm:p-4 md:p-5 rounded-lg bg-card border border-border shadow">
           <PregnancyConceptionCalculator />
