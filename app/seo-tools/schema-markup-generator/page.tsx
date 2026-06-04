@@ -59,7 +59,7 @@ const toolConfig = createToolConfig({
   header: {
     title: "Schema Markup Generator (JSON-LD)",
     description:
-      "Generate valid JSON-LD structured data for 11 schema types. Fill in the form, copy the code, and paste it into your HTML for rich snippets.",
+      "Generate JSON-LD structured data for 11 schema types. Fill in the form, copy the code, paste it into your HTML, and validate before publishing.",
     titleSize: "medium",
     descriptionSize: "small",
   },
@@ -71,17 +71,17 @@ const toolConfig = createToolConfig({
 
   content: {
     definition:
-      "A Schema Markup Generator is a free tool that creates JSON-LD structured data code for your website without manual coding, helping search engines and AI systems understand your content to enable rich snippets, knowledge panels, and enhanced search visibility.",
+      "A Schema Markup Generator creates JSON-LD structured data code for a web page without manually writing Schema.org markup.",
 
     quickAnswer:
-      "Select a schema type (Article, Product, FAQ, LocalBusiness, etc.), fill in the form fields, and click Copy to get the JSON-LD script tag. Paste it into your HTML head section and validate with Google Rich Results Test. Schema markup helps Google show rich snippets that increase click-through rates by 20-40%.",
+      "Select a schema type, fill in the form fields, and copy the JSON-LD script tag. Paste it into your page and validate it with Google's Rich Results Test or Schema Markup Validator before publishing.",
 
     keyTakeaways: [
-      "Schema markup (JSON-LD) helps Google and AI engines understand your content for rich snippets",
+      "Schema markup helps search engines understand the entities and content on a page",
       "Google officially recommends JSON-LD format over Microdata or RDFa",
-      "72% of first-page Google results use schema markup",
-      "Rich snippets from schema increase click-through rates by 20-40%",
-      "AI search engines (Google AI Overviews, ChatGPT, Perplexity) cite pages with structured data more often",
+      "Structured data must describe content that is visible on the page",
+      "Valid markup can make eligible pages qualify for rich-result appearances",
+      "FAQ rich results are limited to well-known government and health sites",
     ],
 
     overview:
@@ -109,7 +109,7 @@ const toolConfig = createToolConfig({
 
     useCases: [
       "Add Article schema to blog posts for enhanced search appearance with author and date",
-      "Generate FAQ schema to help AI engines understand your Q&A content",
+      "Generate FAQ schema for visible question-and-answer sections",
       "Create Product schema for e-commerce pages with price, availability, and ratings",
       "Add LocalBusiness schema for Google Maps and local search visibility",
       "Generate Event schema for conferences, concerts, and meetups with ticket info",
@@ -134,21 +134,20 @@ const toolConfig = createToolConfig({
         <div>
           <h3 className="text-lg font-semibold text-foreground mb-2">Why Schema Markup Matters in 2026</h3>
           <p>
-            In 2026, schema markup is more important than ever. 72% of first-page Google results use
-            structured data, and pages with schema see 20-40% higher click-through rates from rich snippets.
-            AI search engines (Google AI Overviews, ChatGPT, Perplexity) increasingly cite pages with
-            structured data because it clearly describes what content is about, who wrote it, and when it
-            was updated. Only ~17% of websites currently implement schema — a massive opportunity.
+            Schema markup gives search engines explicit clues about the page: what type of content it is,
+            who created it, what product or event it describes, what breadcrumbs lead to it, and which
+            visible details are important. It does not guarantee a rich result or a ranking boost, but valid
+            structured data can make eligible content easier for search systems to interpret and display.
           </p>
         </div>
 
         <div>
           <h3 className="text-lg font-semibold text-foreground mb-2">FAQ and HowTo Rich Results Update</h3>
           <p>
-            Google deprecated HowTo rich results in 2023-2024. FAQ rich results are now limited to
-            authoritative government and health websites. However, implementing FAQPage and HowTo markup
-            still helps AI engines understand your content structure, even without visual rich results in
-            search. The markup remains valuable for AI search citation and content comprehension.
+            FAQ rich results are now limited to well-known, authoritative government-focused and health-focused
+            sites. HowTo rich results were removed from Google Search earlier. You can still create FAQPage
+            and HowTo JSON-LD when it accurately describes visible page content, but do not expect those types
+            to create a visual rich result for a normal commercial site.
           </p>
         </div>
 
@@ -225,14 +224,14 @@ const toolConfig = createToolConfig({
         </div>
 
         <div>
-          <h3 className="text-lg font-semibold text-foreground mb-2">Critical 2025-2026 Schema Updates</h3>
+          <h3 className="text-lg font-semibold text-foreground mb-2">Schema Rules to Avoid Errors</h3>
           <ul className="list-disc pl-6 space-y-1">
-            <li><strong>FAQPage is RESTRICTED:</strong> as of August 2023, FAQ rich results only appear for &quot;well-known authoritative government and health websites&quot;. Schema still helps AI engines understand structure, but no rich snippet visual benefit for commercial sites. Keep it for AI search; don&apos;t expect SERP enhancement.</li>
-            <li><strong>HowTo is DEPRECATED:</strong> rich results fully removed September 2023. Google says it&apos;s not a ranking factor anymore. Schema markup is harmless to keep but no SEO benefit.</li>
-            <li><strong>ProfilePage gains importance:</strong> Google&apos;s December 2025 E-E-A-T applies to ALL competitive queries. Author profile pages with ProfilePage + Person schema help establish expertise.</li>
-            <li><strong>AggregateRating requires real reviews:</strong> Google detects fake ratings now; only use AggregateRating if you have genuine reviewer data.</li>
-            <li><strong>VideoObject for SEO video search:</strong> Video schema is increasingly important as Google integrates video results into SERPs. Add Clip schema with seekToAction for chapter rich results.</li>
-            <li><strong>Speakable schema (audio search):</strong> emerging — schema.org Speakable annotation helps voice assistants find relevant content for audio reading.</li>
+            <li><strong>Markup must match visible content:</strong> do not add schema for information users cannot see on the page.</li>
+            <li><strong>Required fields matter:</strong> incomplete markup may be valid JSON but still ineligible for a rich result.</li>
+            <li><strong>FAQPage is restricted:</strong> ordinary commercial pages should not expect FAQ rich-result display.</li>
+            <li><strong>Use real ratings only:</strong> add AggregateRating only when the page shows genuine review data.</li>
+            <li><strong>Keep dynamic data synced:</strong> prices, availability, dates, and modified times should match the page.</li>
+            <li><strong>Validate before publishing:</strong> use both the Rich Results Test and Schema Markup Validator when possible.</li>
           </ul>
         </div>
 
@@ -287,18 +286,10 @@ const toolConfig = createToolConfig({
         </div>
 
         <div>
-          <h3 className="text-lg font-semibold text-foreground mb-2">Schema for AI Search (GEO)</h3>
+          <h3 className="text-lg font-semibold text-foreground mb-2">Schema and Content Quality</h3>
           <p>
-            Generative Engine Optimization (GEO) — optimizing for AI search like ChatGPT, Perplexity, Claude, and Google AI Overviews — relies heavily on structured data. AI engines parse schema to understand <em>what</em> your page is, <em>who</em> wrote it, <em>when</em> it was updated, and <em>how authoritative</em> it is. To win citations from AI engines:
+            Structured data supports clear interpretation, but it does not replace useful page content. The visible page still needs accurate facts, original explanation, helpful media where relevant, and a good user experience. Treat JSON-LD as a clean label for content that already exists, not as a way to create relevance that the page does not earn.
           </p>
-          <ul className="list-disc pl-6 mt-2 space-y-1">
-            <li><strong>Person schema for authors:</strong> with sameAs links to Twitter / LinkedIn / Wikipedia for entity recognition</li>
-            <li><strong>Organization schema with knowsAbout:</strong> tells AI what topics your brand is authoritative on</li>
-            <li><strong>Article schema with all metadata:</strong> author, publisher, dates, image, articleSection</li>
-            <li><strong>FAQPage even if no SERP benefit:</strong> AI engines still use it to extract Q&amp;A pairs</li>
-            <li><strong>HowTo for instructional content:</strong> AI cites tools that have clean structured how-to content</li>
-            <li><strong>VideoObject with transcript:</strong> AI engines now index video content via transcripts in VideoObject</li>
-          </ul>
         </div>
       </div>
     ),
@@ -310,7 +301,7 @@ const toolConfig = createToolConfig({
       {
         question: "What is schema markup and why is it important for SEO?",
         answer:
-          "Schema markup is structured data code (JSON-LD) added to web pages that helps search engines understand your content. It enables rich snippets (stars, prices, FAQs) in search results that increase click-through rates by 20-40%. In 2026, 72% of first-page Google results use schema markup.",
+          "Schema markup is structured data code, often JSON-LD, added to web pages to help search engines understand the page's content. Valid structured data can make eligible pages qualify for richer search appearances, but it does not guarantee them.",
       },
       {
         question: "What is JSON-LD and why does Google prefer it?",
@@ -320,7 +311,7 @@ const toolConfig = createToolConfig({
       {
         question: "Does schema markup directly improve search rankings?",
         answer:
-          "Schema markup is not a direct ranking factor. However, it enables rich snippets that increase CTR by 20-40%, which indirectly improves rankings. AI engines like Google AI Overviews, ChatGPT, and Perplexity also cite pages with structured data more frequently.",
+          "Schema markup is not a direct ranking factor. It can help search engines understand eligible content and may enable richer appearances when the page follows Google's guidelines.",
       },
       {
         question: "Which schema types are most important for SEO?",
@@ -345,12 +336,12 @@ const toolConfig = createToolConfig({
       {
         question: "Does schema markup help with AI search engines?",
         answer:
-          "Yes. Google, Microsoft, and ChatGPT confirmed they use structured data for generative AI features. Pages with schema markup are more often cited in AI-generated answers because structured data clearly describes content, authorship, and recency.",
+          "Structured data can clarify what a page contains, but there is no special schema shortcut for AI search visibility. Useful, crawlable, accurate content remains the main requirement.",
       },
       {
         question: "What happened to FAQ and HowTo rich results?",
         answer:
-          "Google deprecated HowTo rich results entirely in 2023-2024. FAQ rich results are now only shown for well-known authoritative government and health websites. However, the markup still helps AI engines understand your content.",
+          "FAQ rich results are limited to well-known authoritative government and health websites. HowTo rich results were removed from Google Search. You can still mark up visible FAQ or step content, but normal commercial pages should not expect these rich-result displays.",
       },
       {
         question: "What is the difference between schema markup and rich snippets?",
@@ -364,6 +355,7 @@ const toolConfig = createToolConfig({
       { name: "Keyword Density Checker", href: "/seo-tools/keyword-density" },
       { name: "Blog Title Generator", href: "/seo-tools/blog-titles" },
       { name: "Text Similarity Checker", href: "/seo-tools/text-similarity-checker" },
+      { name: "All SEO Tools", href: "/seo-tools" },
     ],
   },
 })

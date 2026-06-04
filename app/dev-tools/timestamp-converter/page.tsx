@@ -12,26 +12,26 @@ const TimestampConverter = dynamic(
 const toolConfig = createToolConfig({
   toolName: "Unix Timestamp Converter",
   description:
-    "Free Unix timestamp (epoch) converter. Convert Unix timestamps to human-readable dates and back, in seconds, milliseconds, or microseconds. Live current epoch time.",
+    "Free Unix timestamp (epoch) converter. Convert second, millisecond, or microsecond epoch values to readable dates, and convert dates back to seconds or milliseconds. Live current epoch time.",
   metaTitle: "Unix Timestamp Converter — Epoch to Date & Date to Epoch (Online)",
   metaDescription:
-    "Free online Unix timestamp / epoch converter. Convert epoch to human date and date to epoch in seconds, milliseconds, or microseconds. Shows UTC, local time, ISO 8601, and the live current timestamp. No signup.",
+    "Free online Unix timestamp / epoch converter. Convert epoch seconds, milliseconds, or microseconds to a human date, and convert dates to epoch seconds or milliseconds. Shows UTC, local time, ISO 8601, and live current time.",
   path: "/dev-tools/timestamp-converter",
 
   schemaOptions: {
     applicationCategory: "DeveloperApplication",
     description:
-      "Free Unix timestamp and epoch converter. Convert Unix timestamps to human-readable dates and dates to Unix timestamps, in seconds, milliseconds, or microseconds, with UTC, local time, and ISO 8601 output.",
+      "Unix timestamp and epoch converter. Convert Unix timestamps to human-readable dates, and convert dates to Unix timestamps in seconds or milliseconds, with UTC, local time, and ISO 8601 output.",
     featureList: [
       "Live current Unix timestamp (seconds and milliseconds), updating every second",
       "Timestamp → date: auto-detects seconds / milliseconds / microseconds",
-      "Date → timestamp: pick any date and time",
+      "Date → timestamp: pick any date and time and get seconds or milliseconds",
       "Outputs local time, UTC, and ISO 8601",
       "Relative time (e.g. '3 hours ago')",
       "Day of week and day of year",
       "One-click copy for every value",
-      "100% client-side — your data never leaves the browser",
-      "Free, no signup, no rate limit",
+      "Browser-side timestamp conversion",
+      "Browser-side date conversion",
     ],
     alternateName: [
       "Epoch Converter",
@@ -53,7 +53,7 @@ const toolConfig = createToolConfig({
   header: {
     title: "Unix Timestamp Converter",
     description:
-      "Convert Unix timestamps (epoch) to human-readable dates and back — in seconds, milliseconds, or microseconds. See the live current timestamp.",
+      "Convert Unix timestamps to readable dates, including seconds, milliseconds, and microseconds. Convert dates back to epoch seconds or milliseconds.",
     titleSize: "medium",
     descriptionSize: "small",
   },
@@ -68,7 +68,7 @@ const toolConfig = createToolConfig({
       "A Unix timestamp (also called epoch time) is the number of seconds that have elapsed since 00:00:00 UTC on 1 January 1970, not counting leap seconds. A Unix timestamp converter translates that number into a human-readable date and time, and vice versa.",
 
     quickAnswer:
-      "Paste a Unix timestamp to see its date in your local time, UTC, and ISO 8601 — the tool auto-detects whether the value is in seconds, milliseconds, or microseconds. Or pick a date and time to get its Unix timestamp. The live current epoch time is shown at the top.",
+      "Paste a Unix timestamp to see its date in your local time, UTC, and ISO 8601 — the tool auto-detects whether the value is in seconds, milliseconds, or microseconds. Or pick a date and time to get epoch seconds and milliseconds. The live current epoch time is shown at the top.",
 
     keyTakeaways: [
       "Unix time counts seconds since 1 January 1970 00:00:00 UTC (the 'epoch')",
@@ -79,7 +79,7 @@ const toolConfig = createToolConfig({
     ],
 
     overview:
-      "This Unix timestamp converter does three things: shows the live current epoch time (seconds and milliseconds), converts any timestamp into a readable date (local, UTC, ISO 8601, plus relative time and day-of-year), and converts a chosen date back into a Unix timestamp. It auto-detects whether your input is in seconds, milliseconds, or microseconds, so you can paste values from databases, logs, JWTs, or APIs without conversion math. Everything runs client-side.",
+      "This Unix timestamp converter does three things: shows the live current epoch time (seconds and milliseconds), converts any timestamp into a readable date (local, UTC, ISO 8601, plus relative time and day-of-year), and converts a chosen date back into epoch seconds and milliseconds. It auto-detects whether your input timestamp is in seconds, milliseconds, or microseconds, so you can paste values from databases, logs, JWTs, or APIs without conversion math. Everything runs client-side.",
 
     howToSteps: [
       "To convert a timestamp: paste the number into 'Timestamp → Date'. The unit (s / ms / µs) is detected automatically — adjust it with the toggle if needed.",
@@ -91,6 +91,7 @@ const toolConfig = createToolConfig({
     features: [
       "Live current Unix timestamp in seconds and milliseconds",
       "Automatic unit detection (seconds, milliseconds, microseconds)",
+      "Date to epoch output in seconds and milliseconds",
       "Local time, UTC, and ISO 8601 output",
       "Relative time, day of week, and day of year",
       "Date-and-time picker for reverse conversion",

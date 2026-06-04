@@ -57,6 +57,17 @@ export const metadata: Metadata = {
 export default function LoveCalculatorPage() {
   const toolContent = {
     toolName: "Love Calculator",
+    definition:
+      "A love calculator is an entertainment tool that turns two names into a playful compatibility score and relationship message.",
+    quickAnswer:
+      "Enter two names to get a fun love percentage and compatibility message. The result is for entertainment, sharing, and party games, not a real relationship assessment.",
+    keyTakeaways: [
+      "Love calculator results are playful and not scientific",
+      "Use it for fun with friends, social posts, and relationship jokes",
+      "Name-based compatibility does not predict real relationship success",
+      "Communication, respect, values, and trust matter more than any score",
+      "Share the result only when both people are comfortable with it",
+    ],
     overview: "Discover your love compatibility with our romantic love calculator. Enter two names and see your match percentage and relationship compatibility!",
 
     howToSteps: [

@@ -12,16 +12,16 @@ const HTMLBeautifier = dynamic(
 const toolConfig = createToolConfig({
   toolName: "HTML Beautifier",
   description:
-    "Format and minify HTML code for readability, debugging, and delivery optimization workflows.",
-  metaTitle: "HTML Beautifier & Minifier — Pretty-Print or Compress HTML Online",
+    "Beautify or minify pasted HTML with indentation options, optional comment removal, output stats, copy, and download.",
+  metaTitle: "HTML Beautifier and Minifier - Format HTML Online",
   metaDescription:
-    "Free HTML beautifier and minifier. Format messy / minified HTML with proper indentation (2-space, 4-space, or tab) or compress to single-line for production. Handles inline scripts, styles, comments. 100% client-side, no upload.",
+    "Format pasted HTML online. Beautify markup with 2, 4, or 8-space indentation, minify whitespace, optionally remove comments, then copy or download the result.",
   path: "/dev-tools/html-beautifier",
 
   header: {
     title: "HTML Beautifier & Minifier",
     description:
-      "Format minified or messy HTML into clean, readable code with proper indentation — or minify HTML for production. Customizable indent size (2/4 spaces or tabs). Runs entirely in your browser.",
+      "Paste HTML, choose beautify or minify mode, and copy or download the formatted result.",
     titleSize: "medium",
     descriptionSize: "small",
     color: "blue",
@@ -35,7 +35,7 @@ const toolConfig = createToolConfig({
   schemaOptions: {
     applicationCategory: "DeveloperApplication",
     description:
-      "HTML beautifier and minifier. Format messy or minified HTML with proper indentation, or compress to single-line for production. Handles inline JS / CSS, comments, void elements, self-closing tags. 100% client-side.",
+      "HTML beautifier and minifier for pasted markup. Supports beautify mode, minify mode, 2/4/8-space indentation, optional HTML comment removal, basic structure feedback, output stats, copy, and .html download.",
     alternateName: [
       "HTML Formatter",
       "HTML Pretty Print",
@@ -44,28 +44,19 @@ const toolConfig = createToolConfig({
       "HTML Compressor",
       "Format HTML Online",
       "Beautify HTML Code",
-      "HTML Cleaner",
-      "HTML Code Tidy",
       "Unminify HTML",
-      "Decompress HTML",
       "HTML Source Formatter",
-      "HTML Linter",
-      "JSFiddle-style HTML Formatter",
-      "HTML Tidy Alternative",
     ],
     featureList: [
-      "Beautify mode: indent and line-break messy / minified HTML for readability",
-      "Minify mode: strip whitespace, comments, and redundant attribute quotes for production",
-      "Configurable indent: 2 spaces, 4 spaces, or tab",
-      "Preserves inline `<script>` and `<style>` blocks correctly (no breaking JS / CSS)",
-      "Handles HTML5 void elements (img, br, hr, input, meta, link) — no incorrect closing tags",
-      "Preserves HTML comments by default; option to strip in minify mode",
-      "Self-closing tag handling for XHTML / JSX compatibility",
-      "Conditional comments (`<!--[if IE]>...<![endif]-->`) preserved",
-      "Whitespace-sensitive elements (`<pre>`, `<textarea>`, `<code>`) keep their content untouched",
-      "Live preview: see formatted output update as you type / paste",
-      "Copy to clipboard or download as .html",
-      "100% client-side — your HTML never leaves your browser",
+      "Beautify pasted HTML with line breaks and indentation",
+      "Minify pasted HTML by collapsing whitespace",
+      "Indent options: 2 spaces, 4 spaces, or 8 spaces",
+      "Optional HTML comment removal",
+      "Basic structure feedback",
+      "Input and output line/character stats",
+      "Copy formatted output",
+      "Download output as beautified.html or minified.html",
+      "Browser-side formatting",
     ],
     softwareRequirements: "Modern web browser",
     ratingValue: "4.9",
@@ -75,129 +66,115 @@ const toolConfig = createToolConfig({
 
   content: {
     definition:
-      "An HTML Beautifier is a free tool that formats and indents minified or messy HTML code into clean, readable markup with consistent indentation.",
+      "An HTML beautifier formats compact or messy markup into a more readable shape by adding line breaks and indentation.",
     quickAnswer:
-      "Paste unformatted HTML to instantly beautify it with proper indentation and line breaks. Customize indent size (2 or 4 spaces, tabs). Copy the formatted output or download it as an .html file.",
+      "Paste HTML, choose Beautify or Minify, pick an indent size, optionally remove comments, then copy or download the output. The tool is for readability and quick cleanup, not full HTML validation.",
     keyTakeaways: [
-      "Formats minified HTML into readable, properly indented code",
-      "Customizable indentation: 2 spaces, 4 spaces, or tabs",
-      "Preserves code structure without changing functionality",
-      "Handles inline styles, scripts, and nested elements correctly",
-      "Useful for debugging, code reviews, and cleaning up generated HTML",
+      "Beautifies pasted HTML into indented output",
+      "Minifies pasted HTML by reducing whitespace",
+      "Supports 2, 4, or 8-space indentation",
+      "Can keep or remove HTML comments",
+      "Shows basic output stats and downloads .html files",
     ],
     overview:
-      "Format and clean up HTML code with this free online beautifier and minifier. Paste minified or messy HTML to instantly beautify it with proper indentation and line breaks — or minify clean HTML into a compact single line for production. Customize indentation (2 spaces, 4 spaces, or tabs). The beautifier preserves HTML structure without changing functionality, making it easy to read nested elements, debug tag issues, and review generated markup. All formatting runs locally in your browser — no data uploaded.",
+      "Use this HTML beautifier when you need to read, review, or quickly compress pasted markup. Beautify mode adds line breaks and indentation to make nested tags easier to inspect. Minify mode collapses whitespace and can remove comments when that option is enabled. The tool also shows simple line and character counts so you can see how the output changed.",
 
     howToSteps: [
-      "Paste HTML into the editor.",
-      "Choose beautify or minify mode.",
-      "Review output and confirm structure.",
-      "Copy the formatted result into your project files.",
+      "Paste HTML into the input box.",
+      "Choose Beautify or Minify.",
+      "Select 2, 4, or 8-space indentation for beautify mode.",
+      "Choose whether to keep or remove HTML comments.",
+      "Copy the output or download it as an .html file.",
     ],
 
     features: [
-      "Beautify and minify modes",
-      "Fast code cleanup workflow",
-      "Copy-friendly output",
-      "Useful for debugging markup structure",
-      "Browser-based formatting utility",
+      "Beautify mode",
+      "Minify mode",
+      "Indent-size control",
+      "Comment removal option",
+      "Basic structure feedback",
+      "Copy and download output",
     ],
 
     useCases: [
-      "Debugging nested markup",
-      "Preparing HTML for code review",
-      "Compressing templates for deployment",
-      "Cleaning generated HTML from external editors",
+      "Read minified page source",
+      "Review generated CMS markup",
+      "Clean AI-generated HTML before editing",
+      "Compress simple HTML snippets",
+      "Compare input and output length before deployment",
     ],
 
     aboutTool: (
       <div className="space-y-6 text-muted-foreground">
         <div>
-          <h3 className="text-lg font-semibold text-foreground mb-2">Beautify vs Minify — When to Use Each</h3>
+          <h3 className="text-lg font-semibold text-foreground mb-2">Beautify vs Minify</h3>
           <p>
-            <strong>Beautify mode</strong> takes minified or messy HTML and adds line breaks + indentation to make it readable. Use it when: debugging a production page&apos;s HTML (View Source), reviewing markup from a CMS or generator, code review, learning from another site&apos;s HTML, fixing nested-tag issues. <strong>Minify mode</strong> strips whitespace, removes comments, and removes redundant attribute quotes to compress HTML for production. Use it when: preparing static HTML for deployment, optimizing email templates (every byte counts), reducing page weight for performance / SEO, generating HTML strings for embedding in JS/JSON.
+            Beautify mode makes markup easier to read by splitting tags onto separate lines and
+            adding indentation. Minify mode reduces extra whitespace and can remove HTML comments.
+            Keep a readable source version for editing, then minify only when you need compact
+            output.
           </p>
         </div>
 
         <div>
-          <h3 className="text-lg font-semibold text-foreground mb-2">What Minification Saves (and Doesn&apos;t)</h3>
+          <h3 className="text-lg font-semibold text-foreground mb-2">What the Basic Check Means</h3>
           <p>
-            Typical HTML minification saves 20–40% of file size by removing whitespace, comments, and redundant quotes. <strong>However:</strong> if you serve HTML over gzip/brotli (which every modern server does), most of those savings disappear — compression already handles repeated whitespace efficiently. The real wins come from: (1) inline / static HTML in JSON payloads (where compression isn&apos;t applied), (2) email templates (no gzip), (3) HTML embedded in JavaScript strings, (4) data URIs containing HTML. For a normal HTTP-served webpage, minification reduces uncompressed size but barely affects compressed size — typically less than 1-2% gain over gzip. Still worth doing for performance hygiene; just don&apos;t expect dramatic results.
+            The status message is a light structure check, not a standards validator. It helps
+            catch obviously unusual input, but it does not replace a full HTML validator, browser
+            test, accessibility audit, or email-client test.
           </p>
         </div>
 
         <div>
-          <h3 className="text-lg font-semibold text-foreground mb-2">Preservation of Critical Elements</h3>
+          <h3 className="text-lg font-semibold text-foreground mb-2">Minification Limits</h3>
+          <p>
+            This minifier focuses on whitespace and optional comments. It does not rewrite
+            attributes, optimize inline CSS or JavaScript, remove redundant attributes, or perform
+            build-pipeline optimizations. For production websites, use this for quick snippets and
+            use a build tool for full optimization.
+          </p>
+        </div>
+
+        <div>
+          <h3 className="text-lg font-semibold text-foreground mb-2">When to Review Manually</h3>
           <ul className="list-disc pl-6 space-y-1">
-            <li><strong>Inline scripts (`&lt;script&gt;...&lt;/script&gt;`):</strong> contents preserved verbatim. JS is not parsed or modified — beautifying HTML doesn&apos;t beautify the JS inside.</li>
-            <li><strong>Inline styles (`&lt;style&gt;...&lt;/style&gt;`):</strong> contents preserved verbatim. CSS is not parsed or modified.</li>
-            <li><strong>Whitespace-sensitive elements:</strong> `&lt;pre&gt;`, `&lt;textarea&gt;`, `&lt;code&gt;` content kept untouched (whitespace is semantically meaningful there).</li>
-            <li><strong>Conditional comments:</strong> `&lt;!--[if IE]&gt;...&lt;![endif]--&gt;` preserved exactly (still relevant for some legacy email templates).</li>
-            <li><strong>Void elements:</strong> `&lt;img&gt;`, `&lt;br&gt;`, `&lt;hr&gt;`, `&lt;input&gt;`, `&lt;meta&gt;`, `&lt;link&gt;` are correctly handled as self-closing per HTML5 spec.</li>
-            <li><strong>Tag case:</strong> preserved as written. Most stylesheets and JS rely on lowercase tags but the tool doesn&apos;t force-lowercase your input.</li>
+            <li>HTML with inline JavaScript or CSS that depends on exact whitespace.</li>
+            <li>Email templates, where clients can be sensitive to markup changes.</li>
+            <li>Template languages mixed into HTML attributes.</li>
+            <li>Whitespace-sensitive content inside preformatted blocks.</li>
           </ul>
-        </div>
-
-        <div>
-          <h3 className="text-lg font-semibold text-foreground mb-2">Common Use Cases</h3>
-          <ul className="list-disc pl-6 space-y-1">
-            <li><strong>Debugging messy CMS output:</strong> WordPress, Drupal, and other CMSs often produce HTML with bizarre indentation</li>
-            <li><strong>Reviewing minified production HTML:</strong> View Source on a competitor&apos;s page; paste here to read it</li>
-            <li><strong>Cleaning up Word / Google Docs HTML:</strong> tons of inline styles and span tags need beautification to be readable</li>
-            <li><strong>Email template development:</strong> beautify during dev, minify for sending</li>
-            <li><strong>HTML in JSON strings:</strong> beautify before pasting into a JSON viewer; minify before sending in an API</li>
-            <li><strong>JSX / Vue template prep:</strong> beautify HTML before converting to JSX (handles void elements correctly)</li>
-            <li><strong>Code review for AI-generated HTML:</strong> LLM output often lacks consistent indentation</li>
-          </ul>
-        </div>
-
-        <div>
-          <h3 className="text-lg font-semibold text-foreground mb-2">Privacy</h3>
-          <p>
-            All parsing, beautification, and minification happens locally in your browser. No data is sent to any server. Safe for proprietary templates, customer-specific HTML, or internal admin panel markup. Verify via DevTools → Network: zero outgoing requests.
-          </p>
         </div>
       </div>
     ),
 
     proTip:
-      "For debugging, set indent to 2 spaces (matches GitHub / VS Code defaults) — easier diffing later. For email templates, minify before sending: every byte matters in HTML emails since many clients don't apply compression. Don't minify HTML you'll later edit by hand — minified HTML is unreadable. Keep readable source in your repo, minify only in build / deploy.",
+      "Use beautify mode for inspection and code review. Use minify mode only after you are done editing, and retest the output in the page, CMS, or email client where it will be used.",
 
     faqs: [
       {
-        question: "What is the difference between beautify and minify?",
+        question: "Does beautifying change how HTML renders?",
         answer:
-          "Beautify adds line breaks and indentation to make HTML readable (good for debugging, code review, learning). Minify removes whitespace, comments, and redundant quotes to compress HTML (good for production, email templates, embedded HTML in JSON). They're inverse operations — paste minified HTML, beautify to read, edit, then re-minify for deployment.",
+          "Usually no for normal markup, but whitespace-sensitive blocks and mixed template code should still be reviewed manually.",
       },
       {
-        question: "Will minification break my HTML?",
+        question: "Does this validate HTML?",
         answer:
-          "If done correctly, no — minification removes only insignificant whitespace and comments. Risks: (1) whitespace inside `<pre>` and `<textarea>` is preserved automatically; (2) inline JavaScript that depends on specific whitespace (rare but possible) could break — review JS-heavy templates after minification; (3) if you used HTML comments as template delimiters (e.g., conditional comments for IE or some email clients), make sure 'preserve conditional comments' is enabled.",
+          "No. It provides only a basic structure signal. Use a dedicated validator when standards compliance matters.",
       },
       {
-        question: "Will beautification change the rendered output?",
+        question: "Does minify remove comments?",
         answer:
-          "Almost never. HTML rendering treats consecutive whitespace as a single space in most contexts, so adding line breaks for readability doesn't change the visual output. Exceptions: content inside `<pre>`, `<textarea>`, `<code>` where whitespace is preserved. The tool handles these correctly.",
+          "Only when you choose the remove-comments option. Otherwise comments are kept.",
       },
       {
-        question: "Can I beautify HTML with mixed languages (PHP, Twig, Liquid)?",
+        question: "Can I download the output?",
         answer:
-          "Yes — the tool preserves template delimiters like `<?php ?>`, `{{ var }}`, `{% if %}`, `<%= %>` as text inside the HTML. They're treated as opaque content. This means beautifying a PHP/Liquid/Twig template won't break the templating; it just formats the surrounding HTML. Caveat: complex inline template logic mixed with HTML attributes (rare) may produce odd indentation.",
+          "Yes. Beautify mode downloads beautified.html and minify mode downloads minified.html.",
       },
       {
-        question: "Should I commit minified HTML to source control?",
+        question: "Does this optimize JavaScript or CSS inside HTML?",
         answer:
-          "No — keep readable source HTML in your repo. Minify only as a build step (using webpack-html-minifier, htmlmin, or similar). This way: (1) diffs are reviewable, (2) you can edit easily, (3) the build is deterministic. The 'commit beautified, deploy minified' pattern is standard.",
-      },
-      {
-        question: "Can this help find unclosed tags or invalid nesting?",
-        answer:
-          "Yes — beautified HTML makes structural problems obvious. If a `</div>` is missing, the indentation cascades incorrectly and you'll spot it immediately. The tool doesn't strictly validate (use a dedicated HTML validator like the W3C validator for that), but the visual structure of beautified output is the fastest way to find malformed nesting.",
-      },
-      {
-        question: "Is my HTML data private?",
-        answer:
-          "Yes — completely. All formatting runs in your browser. Your HTML, including any proprietary code, customer data, or internal admin panel markup, never leaves your device. Safe for confidential content. Verify in DevTools → Network: zero outgoing requests.",
+          "No. It formats the HTML string. Use a CSS or JavaScript minifier for inline code optimization.",
       },
     ],
 
@@ -206,7 +183,6 @@ const toolConfig = createToolConfig({
       { name: "Markdown Previewer", href: "/dev-tools/markdown-previewer" },
       { name: "HTML WYSIWYG Editor", href: "/dev-tools/html-wysiwyg-editor" },
       { name: "HTML Escape", href: "/web-tools/html-escape" },
-      { name: "Regex Tester", href: "/dev-tools/regex-tester" },
       { name: "JSON to CSV", href: "/dev-tools/json-to-csv" },
       { name: "Slugify String", href: "/dev-tools/slugify-string" },
       { name: "Diff Checker", href: "/dev-tools/diff-checker" },

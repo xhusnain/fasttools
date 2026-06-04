@@ -75,6 +75,17 @@ export const metadata: Metadata = {
 export default function QuarterlyTaxEstimatorPage() {
   const toolContent = {
     toolName: "1099 Quarterly Tax Estimator",
+    definition:
+      "A quarterly tax estimator calculates estimated federal tax payments for freelancers, contractors, self-employed workers, and other taxpayers with income not fully covered by withholding.",
+    quickAnswer:
+      "Enter your expected 1099 income, deductions, filing status, prior-year tax, and any W-2 withholding to estimate quarterly payments. The calculator includes self-employment tax, federal income tax, safe harbor checks, and the April, June, September, and January IRS payment schedule.",
+    keyTakeaways: [
+      "Freelancers and contractors often need estimated tax payments because no employer withholds tax",
+      "Self-employment tax includes Social Security and Medicare tax on net self-employment earnings",
+      "Safe harbor rules can reduce underpayment penalty risk when income is uncertain",
+      "Quarterly due dates usually fall in April, June, September, and January",
+      "Business deductions and retirement contributions can reduce taxable income and estimated payments",
+    ],
     overview: "Calculate exactly how much to pay in quarterly estimated taxes on your 1099 income. This free estimator covers self-employment tax (Social Security 12.4% + Medicare 2.9% = 15.3%), federal income tax, and safe harbor analysis — so you never face IRS underpayment penalties. Built for freelancers, contractors, and gig workers earning 1099 income. Uses current IRS brackets and standard deduction (verify final numbers on IRS.gov for the tax year you're filing).",
 
     howToSteps: [

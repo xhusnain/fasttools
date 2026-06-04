@@ -15,7 +15,7 @@ const toolConfig = createToolConfig({
     "Decode and inspect JSON Web Tokens for authentication debugging and implementation checks.",
   metaTitle: "JWT Decoder — Decode JSON Web Tokens Online (Header & Payload)",
   metaDescription:
-    "Free online JWT decoder. Paste a JWT to instantly reveal header, payload, and signature claims (iss, sub, aud, exp, iat, nbf, jti, scope). Expiration status, algorithm detection (HS256 / RS256 / ES256). 100% client-side, no token logged.",
+    "Free online JWT decoder. Paste a JWT to reveal its header, payload claims, and signature segment. Inspect exp, iat, nbf, iss, sub, aud, scopes, algorithm, and expiration status.",
   path: "/dev-tools/jwt-decoder",
 
   header: {
@@ -35,7 +35,7 @@ const toolConfig = createToolConfig({
   schemaOptions: {
     applicationCategory: "DeveloperApplication",
     description:
-      "JWT (JSON Web Token) decoder and inspector. Splits token into header, payload, signature; decodes Base64URL; parses all standard claims (iss, sub, aud, exp, iat, nbf, jti, scope); detects algorithm; shows expiration status. 100% client-side.",
+      "JWT (JSON Web Token) decoder and inspector. Splits token into header, payload, and signature segments; decodes Base64URL; parses standard claims (iss, sub, aud, exp, iat, nbf, jti, scope); detects algorithm; shows expiration status; and supports comparison, export, and security review helpers.",
     alternateName: [
       "JWT Decoder",
       "JSON Web Token Decoder",
@@ -65,7 +65,7 @@ const toolConfig = createToolConfig({
       "Validation warnings: alg=none, expired, not-yet-valid (nbf in future), missing iss / aud",
       "Pretty-printed JSON output for header and payload — copy with one click",
       "Base64URL handling: correctly decodes JWT URL-safe Base64 (no padding required)",
-      "100% client-side — your token never leaves the browser, no logging",
+      "Browser-side token decoding for development inspection",
     ],
     softwareRequirements: "Modern web browser with JavaScript enabled",
     ratingValue: "4.9",
@@ -86,7 +86,7 @@ const toolConfig = createToolConfig({
       "Common algorithms: HS256 (symmetric), RS256 (asymmetric), ES256 (ECDSA)",
     ],
     overview:
-      "Fast JWT decoder — decode any JWT token instantly with this free online tool. Paste a JSON Web Token to see its three decoded segments — header (algorithm and token type), payload (all claims including issuer, subject, audience, expiration), and signature. This fast JWT tool checks whether the token is expired based on the exp claim and highlights timing issues. Useful for debugging OAuth2 flows, API authentication, session management, and any system that uses JWTs. All decoding runs locally in your browser — no data sent to any server.",
+      "Fast JWT decoder — decode any JWT token with this online tool. Paste a JSON Web Token to see its three segments: header (algorithm and token type), payload (claims including issuer, subject, audience, and expiration), and signature. The tool checks whether the token is expired based on the exp claim and highlights timing issues. Useful for debugging OAuth2 flows, API authentication, session management, and systems that use JWTs. Decoding is for inspection only; signature verification still belongs in trusted server-side code.",
 
     howToSteps: [
       "Copy the JWT token string from your API response, browser DevTools, or auth logs.",
@@ -100,7 +100,7 @@ const toolConfig = createToolConfig({
       "Token expiration check with human-readable timestamps",
       "Support for HS256, RS256, ES256, and other JWT algorithms",
       "All standard claims displayed: iss, sub, aud, exp, iat, nbf, jti",
-      "100% client-side — no token data leaves your browser",
+      "Browser-side decode workflow for development inspection",
       "Copy decoded JSON output with one click",
     ],
 
@@ -250,7 +250,7 @@ const toolConfig = createToolConfig({
       {
         question: "Is it safe to paste production JWT tokens here?",
         answer:
-          "All decoding runs locally in your browser — no data is sent to any server. However, follow your organization’s security policies regarding token handling and avoid sharing tokens in insecure contexts.",
+          "Avoid pasting production JWTs or secrets into any web page unless your organization’s security policy allows it. JWTs can authenticate as the user or service they represent, and decoded payloads can expose internal IDs or personal data.",
       },
       {
         question: "What do the JWT claims (iss, sub, exp, aud) mean?",
@@ -270,7 +270,7 @@ const toolConfig = createToolConfig({
       {
         question: "Is this JWT decoder free?",
         answer:
-          "Yes — 100% free, runs locally in your browser, no usage limits, no registration. Unlike some alternatives, your token is never sent to any server or logged.",
+          "Yes. You can paste a JWT, inspect the decoded header and payload, check timing claims, use comparison/export helpers, and copy output without creating an account.",
       },
       {
         question: "How do I get a JWT to decode?",

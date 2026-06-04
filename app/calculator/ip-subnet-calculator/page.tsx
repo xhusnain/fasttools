@@ -74,6 +74,17 @@ export const metadata: Metadata = {
 export default function IPSubnetCalculatorPage() {
   const toolContent = {
     toolName: TOOL_NAME,
+    definition:
+      "An IP subnet calculator derives network address, broadcast address, subnet mask, CIDR prefix, host range, and usable host count from an IP address and subnet.",
+    quickAnswer:
+      "Enter an IPv4 or IPv6 address with a CIDR prefix or subnet mask to calculate the network address, broadcast address, usable host range, wildcard mask, and total hosts. Use it for VLSM planning, firewall rules, AWS VPCs, and network exams.",
+    keyTakeaways: [
+      "CIDR prefix length controls subnet size and host capacity",
+      "IPv4 /24 usually means 256 total addresses and 254 usable hosts",
+      "Network and broadcast addresses are not usable host addresses in typical IPv4 subnets",
+      "VLSM helps allocate different subnet sizes efficiently",
+      "Private IPv4 ranges include 10.0.0.0/8, 172.16.0.0/12, and 192.168.0.0/16",
+    ],
     overview: "Calculate IPv4 and IPv6 subnets, CIDR prefix lengths, subnet masks, network addresses, broadcast addresses, usable host ranges, and wildcard masks with our free IP subnet calculator. Supporting VLSM (Variable Length Subnet Masking) for efficient IP allocation, supernetting for route aggregation, private/public IP detection (RFC 1918), multicast identification, and binary/hexadecimal conversions, this tool automates the complex binary math required for network planning, AWS VPC design, firewall ACL configuration, and CCNA/CCNP certification study.",
 
     howToSteps: [

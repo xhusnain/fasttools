@@ -12,23 +12,22 @@ const ImageResizer = dynamic(
 const toolConfig = createToolConfig({
   toolName: "Image Resizer",
   description:
-    "Resize images online — custom dimensions, 50+ social media presets, quality control, format conversion. 100% client-side, no upload.",
+    "Resize images online with exact pixel dimensions, percentage scaling, 30+ social media presets, quality control, and JPG/PNG/WebP output.",
   metaTitle: "Image Resizer Online — Resize JPG, PNG, WebP by Pixel or %",
   metaDescription:
-    "Free image resizer. Resize JPG, PNG, WebP, GIF by exact pixels or percentage. 50+ social media presets (Instagram, Facebook, LinkedIn, YouTube, TikTok). Quality slider, aspect ratio lock, format conversion. 100% client-side.",
+    "Free image resizer. Resize JPG, PNG, WebP, GIF, BMP, and TIFF by exact pixels or percentage. 30+ social presets, quality slider, aspect ratio lock.",
   path: "/image-tools/image-resizer",
 
   schemaOptions: {
     applicationCategory: "MultimediaApplication",
     description:
-      "Free online image resizer with custom pixel/percentage dimensions, social media presets, quality slider, format conversion (JPG, PNG, WebP), and 100% client-side processing.",
+      "Free online image resizer with custom pixel and percentage dimensions, social media presets, quality slider, JPG/PNG/WebP output, and browser-based processing.",
     alternateName: [
       "Photo Resizer",
       "JPG Resizer",
       "PNG Resizer",
       "WebP Resizer",
       "Resize Image Online",
-      "Resize Image in KB",
       "Resize Image to 4x6 / 3x4 / Passport Photo",
       "Instagram Image Resizer",
       "Facebook Image Resizer",
@@ -36,21 +35,19 @@ const toolConfig = createToolConfig({
       "YouTube Thumbnail Resizer",
       "Profile Picture Resizer",
       "Photo Size Changer",
-      "Bulk Image Resizer",
       "Image Dimension Changer",
     ],
     featureList: [
       "Resize by pixel dimensions or percentage",
       "Lock or unlock aspect ratio",
-      "50+ social media presets (Instagram feed/story/reel, Facebook cover/post, Twitter/X header, LinkedIn banner, YouTube thumbnail, TikTok, Pinterest, WhatsApp)",
+      "30+ social media presets (Instagram feed/story/reel, Facebook cover/post, Twitter/X header, LinkedIn banner, YouTube thumbnail, TikTok, Pinterest, WhatsApp)",
       "Common photo presets (passport photo 35×45mm, 4×6, 5×7, Full HD 1920×1080, 4K)",
-      "Quality slider with real-time file size feedback",
+      "Quality slider for JPG and WebP output",
       "Output format selection (JPG, PNG lossless, WebP)",
       "PNG transparency preservation",
       "Drag-and-drop file upload",
-      "Batch resize support",
-      "Resampling algorithm: Lanczos (sharpest output)",
-      "100% client-side — images never uploaded to any server",
+      "High-quality browser canvas resizing",
+      "Browser-based processing",
       "Free, no signup, no watermark, no daily limits",
     ],
     softwareRequirements: "Modern web browser with JavaScript enabled",
@@ -76,22 +73,22 @@ const toolConfig = createToolConfig({
       "An Image Resizer is a free online tool that changes the pixel dimensions (width and height) of any image — by exact pixels, percentage, or social media presets — while preserving quality and privacy through client-side browser processing.",
 
     quickAnswer:
-      "Upload an image (JPG, PNG, WebP, GIF), enter target width and height or pick a social media preset, adjust quality, then click Resize and Download. Processing happens in your browser — images never leave your device.",
+      "Upload an image, enter target width and height or choose a social media preset, adjust quality, then click Resize and Download. The tool exports JPG, PNG, or WebP output from your browser.",
 
     keyTakeaways: [
       "Resize images instantly in your browser — free, no signup, no watermarks",
-      "50+ one-click presets for Instagram, Facebook, LinkedIn, YouTube, TikTok, Pinterest, WhatsApp, and common sizes",
+      "30+ one-click presets for Instagram, Facebook, LinkedIn, YouTube, TikTok, Pinterest, WhatsApp, and common sizes",
       "Supports JPG, PNG (with transparency), WebP, GIF, BMP, TIFF input",
       "Quality slider lets you balance file size vs visual quality",
-      "100% private — images are processed locally and never uploaded to any server",
+      "Exports resized images as JPG, PNG, or WebP",
     ],
 
     overview:
-      "Image Resizer lets you change image dimensions for any use case: social media posts, website graphics, passport photos, print materials, or app icons. Upload your image, choose your target size using pixels, percentage, or one of 50+ social media presets, and download the resized result instantly. All processing happens in your browser using the Canvas API, so your files are never uploaded to a server.",
+      "Image Resizer lets you change image dimensions for social media posts, website graphics, profile photos, passport-style photos, print layouts, favicons, and app icons. Upload one image, choose a target size using pixels, percentage scaling, or one of 30+ presets, then download the resized result as JPG, PNG, or WebP. It is useful when a platform asks for exact dimensions such as 1080x1080, 1080x1920, 1280x720, 1500x500, 1920x1080, or 600x600.",
 
     howToSteps: [
       "Upload your image by dragging it into the drop zone or clicking to browse. Supports JPG, PNG, WebP, GIF, BMP, and TIFF formats.",
-      "Set your target size: enter exact width and height in pixels, scale by percentage (25%–400%), or choose a one-click social media preset.",
+      "Set your target size: enter exact width and height in pixels, scale by percentage, or choose a one-click social media preset.",
       "Adjust quality (10–100%) and output format (JPG, PNG, or WebP) to control the file size and visual quality balance.",
       "Click 'Resize Image' to process. Preview the result, then click 'Download' to save the resized image to your device.",
     ],
@@ -99,14 +96,14 @@ const toolConfig = createToolConfig({
     features: [
       "Resize by exact pixel dimensions or percentage scale",
       "Lock/unlock aspect ratio to prevent distortion",
-      "50+ social media presets: Instagram (Post, Story, Reel, Profile), Facebook (Cover, Post, Profile, Event), Twitter/X, LinkedIn, YouTube, TikTok, Pinterest, WhatsApp",
+      "30+ social media presets: Instagram (Post, Story, Reel, Profile), Facebook (Cover, Post, Profile, Event), Twitter/X, LinkedIn, YouTube, TikTok, Pinterest, WhatsApp",
       "Common size presets: Full HD (1920x1080), 4K UHD, HD 720p, Passport Photo, A4 Print, Favicon, App Icon",
       "Quality slider with real-time feedback for JPG and WebP output",
       "PNG transparency preservation — alpha channel maintained during resize",
       "Output format selection: JPG (smallest), PNG (lossless), WebP (modern compression)",
       "Drag-and-drop or click-to-upload interface",
       "Instant preview with file size comparison (original vs resized)",
-      "Client-side Canvas API processing — zero server uploads, zero privacy risk",
+      "Browser Canvas API processing with no software installation",
     ],
 
     useCases: [
@@ -126,9 +123,9 @@ const toolConfig = createToolConfig({
           <h3 className="text-lg font-semibold text-foreground mb-2">How Image Resizing Works</h3>
           <p>
             Image resizing changes the pixel dimensions of a digital image. Unlike cropping, which removes parts of the image,
-            resizing scales the entire image up or down. This tool uses the browser Canvas API with high-quality bicubic
-            interpolation to produce sharp results with minimal artifacts. Downscaling (making smaller) preserves quality well,
-            while upscaling (making larger) works best within 200% of the original size.
+            resizing scales the entire image up or down. This tool uses the browser Canvas API with high-quality smoothing to
+            produce clean resized output. Downscaling usually preserves quality well, while upscaling works best when the target
+            size is not much larger than the original image.
           </p>
         </div>
 
@@ -146,9 +143,18 @@ const toolConfig = createToolConfig({
           <h3 className="text-lg font-semibold text-foreground mb-2">Privacy-First Processing</h3>
           <p>
             Unlike most online image resizers that upload your files to remote servers, this tool processes everything
-            locally in your browser. Your images never leave your device, making it safe for sensitive photos, documents,
-            and professional assets. There are no file size limits imposed by server constraints, and the tool works
-            offline after the page loads.
+            locally in your browser session. Your images are not sent to a remote image-resizing service, making it useful for
+            quick edits to personal photos, documents, and professional assets. Very large images still depend on your browser
+            memory and device performance.
+          </p>
+        </div>
+
+        <div>
+          <h3 className="text-lg font-semibold text-foreground mb-2">Exact Size Examples</h3>
+          <p>
+            Common targets include 1080x1080 for square posts, 1080x1920 for stories and reels, 1280x720 for YouTube thumbnails,
+            1500x500 for X/Twitter headers, 1584x396 for LinkedIn banners, 600x600 for US passport-style output, and 1920x1080
+            for full-HD web graphics. Use aspect-ratio lock when you need to avoid stretching faces, logos, or product images.
           </p>
         </div>
 
@@ -211,7 +217,7 @@ const toolConfig = createToolConfig({
       {
         question: "Can I resize an image to a specific file size like 100KB?",
         answer:
-          "While this tool resizes by dimensions, you can reduce file size by: lowering the quality slider (try 60–70%), choosing JPG or WebP format, and reducing dimensions. The file size preview updates after each resize so you can dial in your target.",
+          "This tool resizes by dimensions, not exact file-size target. To reduce file size, lower the quality slider, choose JPG or WebP output, and reduce the dimensions. Use Image Compressor when the main goal is a target such as 100KB.",
       },
       {
         question: "What is the best image size for website performance?",

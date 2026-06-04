@@ -18,6 +18,153 @@
 
 **Status legend:** [ ] not started · [~] partial (titles/meta only) · [x] deep done
 
+**Visibility rule added 2026-06-04:** `[x]` only means a page has been
+structurally/deep-content improved. It does **not** mean SEO is strong. If a
+tool has no pasted-query GSC evidence, keep treating it as weak until
+page-level GSC data proves otherwise. See
+`docs/seo/gsc-visibility-buckets-2026-06-04.md`.
+
+---
+
+## Discovery audit — 2026-06-03
+
+Goal: find tools that exist in the sitemap but are weakly discoverable from
+FastTools itself. These are likely candidates for no impressions, very low
+impressions, or impressions with no clicks until GSC page-level data confirms
+the exact bucket.
+
+**Fixed in this pass**
+
+- All 179 static tool pages are now present in `app/data/categories-data.ts`.
+- All 179 static tool pages are now present in `lib/search-data.ts`.
+- The first 19 highest-risk hidden pages were added to `data/navigation.ts`.
+- Semantic keyword/query map added at `docs/seo/tool-semantic-keyword-map-2026-06-03.md`.
+- `/finance-tools/paypal-fee` started as the first content-semantic rewrite:
+  added definition, quick answer, key takeaways, and current 2026 fee language.
+- First finance semantic batch also started:
+  `/finance-tools/salary-calculator`, `/finance-tools/tip-calculator`,
+  `/finance-tools/invoice-generator`, and `/finance-tools/bill-splitter`
+  now have definition, quick answer, and key takeaways blocks.
+- Full semantic answer-field audit completed:
+  all `179` static tool pages now have `definition`, `quickAnswer`, and
+  `keyTakeaways` fields for top-of-page semantic extraction.
+- GSC visibility bucket tracker added:
+  `36` base tools have pasted-query visibility evidence and `143` base tools
+  are weak until proven otherwise.
+- First non-finance/non-calculator weak-bucket content pass started:
+  `/converters/xml-json` and `/image-tools/image-to-text` now have deeper
+  semantic sections, query-intent FAQs, use cases, pitfalls, and related-tool
+  links.
+- Converter/image/PDF cluster pass started:
+  `/image-tools/image-compressor` and `/pdf-tools/pdf-compressor` were corrected
+  for tool-accurate SEO claims and expanded around KB/MB targets, upload limits,
+  compression levels, scan/photo PDFs, searchability limits, and workflow links.
+- Continued image/PDF weak-bucket batch:
+  `/image-tools/image-resizer`, `/image-tools/image-cropper`,
+  `/pdf-tools/image-to-pdf`, and `/pdf-tools/pdf-to-image` were corrected
+  against actual tool behavior and expanded for exact-size, aspect-ratio,
+  page-range, JPG/PNG/WebP, and workflow intent.
+- Remaining-category weak-bucket pass started:
+  `/web-tools/dns-ssl-checker`, `/web-tools/whois-lookup`, and
+  `/security-tools/image-steganography` were corrected against actual tool
+  behavior and expanded for DNS/SSL limits, RDAP availability, TXT verification,
+  LSB capacity, PNG preservation, password encryption, and decode-limit intent.
+- SEO-tools weak-bucket batch completed:
+  `/seo-tools/blog-titles`, `/seo-tools/keyword-density`,
+  `/seo-tools/lorem-ipsum`, `/seo-tools/schema-markup-generator`, and
+  `/seo-tools/text-similarity-checker` were corrected for actual UI behavior,
+  stale-year output, schema policy, text similarity algorithm limits, and
+  placeholder-text output modes.
+- Education weak-bucket pass completed:
+  `/education-tools/citation-generator` now avoids stale Chicago-edition and
+  brittle competitor/paywall claims, and adds clearer DOI/ISBN metadata and
+  final style-guide review guidance.
+- Dev-tools weak-bucket pass started:
+  `/dev-tools/diff-checker`, `/dev-tools/sql-to-json`, and
+  `/dev-tools/timestamp-converter` were corrected against actual component
+  behavior. SQL-to-JSON now targets simple `INSERT INTO ... VALUES` conversion
+  instead of unsupported dump/CREATE/SELECT workflows; diff checker now describes
+  its `.diff` export as review-focused unified-style text, not an applyable Git
+  patch; timestamp converter now distinguishes microsecond timestamp input from
+  date-to-seconds/milliseconds output.
+- Dev-tools noindex/page-claim pass continued:
+  `/dev-tools/color-palette` had absolute privacy/no-limit language softened
+  while preserving supported harmony, image extraction, WCAG, and export intent;
+  `/dev-tools/html-wysiwyg-editor` was rewritten around the actual
+  contenteditable toolbar and now clearly says links, images, tables, colors,
+  font controls, source editing, and page-builder features are not supported.
+- Dev-tools security/encoding pass continued:
+  `/dev-tools/base64-encoder` now accurately describes file upload as Base64
+  payload output rather than a full data-URI generator, and no longer claims
+  no size/rate limits. `/dev-tools/jwt-decoder` now avoids no-logging/no-limit
+  promises and the UI no longer presents its demo signature check as real
+  cryptographic verification; share-link copy now warns that token data is
+  encoded in the URL.
+- Dev-tools JSON workflow pass continued:
+  `/dev-tools/json-to-csv` now actually supports union headers across rows,
+  dot-notation flattening, JSON-stringified arrays, comma/semicolon/tab
+  delimiters, UTF-8 BOM downloads, and proper CSV escaping. `/dev-tools/json-diff`
+  was rewritten around its real path-level added/removed/modified output and no
+  longer claims JSON Patch export, match-by-key arrays, ignore-path rules, or
+  patch downloads.
+- Dev-tools HTML/Markdown pass continued:
+  `/dev-tools/html-beautifier` now describes the actual beautify/minify,
+  2/4/8-space indent, comment, stats, copy, and download workflow instead of a
+  full HTML Tidy/minifier. `/dev-tools/html-to-markdown` now uses a DOM-based
+  converter for common article/document tags and has copy-accurate SEO.
+  `/dev-tools/markdown-previewer` now documents actual marked/GFM preview
+  behavior, includes basic rendered-HTML sanitization, and no longer claims
+  syntax highlighting, Mermaid, math, TOC, export, or exact GitHub parity.
+- Dev-tools visual/scheduling pass continued:
+  `/dev-tools/css-gradient-generator` now avoids unsupported OKLCH, mesh,
+  alpha, and universal Tailwind-output claims; `/dev-tools/hex-to-rgb` now
+  targets real HEX/RGB/HSL/RGBA/HSLA behavior instead of HSV/OKLCH/named-color
+  claims; `/dev-tools/slugify-string` now matches the actual slug rules with
+  improved accent normalization; `/dev-tools/cron-expression-generator` now
+  targets standard 5-field cron and its next-run preview handles the common Unix
+  day-of-month/day-of-week OR behavior.
+- Dev-tools reference/cost pass continued:
+  `/dev-tools/http-status-codes` now matches the actual searchable HTTP/SMTP/FTP
+  reference and no longer claims Cloudflare vendor codes; `/dev-tools/mime-types`
+  now targets the real `mime-db` lookup/table behavior; `/dev-tools/keycode-info`
+  now displays `which`, `repeat`, and `isComposing`; `/dev-tools/user-agent-parser`
+  now auto-loads the current UA and avoids bot/JSON/preset claims;
+  `/dev-tools/cloudflare-workers-cost` now applies the paid-plan CPU inclusion
+  and Durable Objects GB-second duration math; `/dev-tools/llm-training-cost`
+  now frames cloud GPU pricing as approximate planning rates instead of stable
+  guaranteed prices.
+- Crawl blocker cleanup started:
+  removed `noindex` from `/converters/xml-json`,
+  `/seo-tools/text-similarity-checker`, `/dev-tools/sql-to-json`,
+  `/dev-tools/color-palette`, and `/dev-tools/html-wysiwyg-editor` after their
+  content rewrites, so the improved pages are not hidden from indexing.
+- No accidental pasted/client text found in `app`, `lib`, or `data`.
+
+**First hidden-page batch now exposed in categories + search + nav**
+
+| Group | Paths |
+|---|---|
+| AI / dev | `/ai-tools/ai-api-cost-calculator`, `/dev-tools/llm-training-cost`, `/dev-tools/cloudflare-workers-cost` |
+| Calculators / converters | `/calculator/tdee-macro-calculator`, `/calculator/biological-age-calculator`, `/calculator/cortisol-peak-calculator`, `/converters/morse-code` |
+| Finance | `/finance-tools/debt-payoff-calculator`, `/finance-tools/freelance-rate-calculator`, `/finance-tools/home-affordability-calculator`, `/finance-tools/net-worth-calculator`, `/finance-tools/quarterly-tax-estimator`, `/finance-tools/remote-work-savings`, `/finance-tools/rent-vs-buy-calculator`, `/finance-tools/saas-churn-calculator`, `/finance-tools/saas-payback-calculator`, `/finance-tools/zakat-calculator` |
+| Social | `/social-media-tools/influencer-rate-calculator`, `/social-media-tools/tiktok-engagement-calculator` |
+
+**Category/search omissions now fixed**
+
+| Surface | Paths |
+|---|---|
+| Category cards | `/ai-tools/ai-paraphraser`, `/ai-tools/text-summarizer`, `/ai-tools/text-to-speech`, `/converters/roman-numeral`, `/crypto-tools/bip39-generator`, `/crypto-tools/encrypt-decrypt`, `/crypto-tools/hash-text`, `/crypto-tools/password-generator`, `/crypto-tools/password-strength-analyzer`, `/crypto-tools/rsa-generator`, `/crypto-tools/ulid-generator`, `/dev-tools/diff-checker`, `/dev-tools/sql-to-json`, `/dev-tools/timestamp-converter`, `/education-tools/citation-generator`, `/finance-tools/auto-loan-calculator`, `/finance-tools/tax-bracket-calculator`, `/fun-tools/meme-generator`, `/image-tools/background-remover`, `/seo-tools/text-similarity-checker`, `/seo-tools/word-counter`, `/web-tools/dns-ssl-checker`, `/web-tools/whois-lookup` |
+| Internal search | `/ai-tools/token-to-word-converter`, `/finance-tools/auto-loan-calculator`, `/finance-tools/salary-calculator`, `/image-tools/image-compressor` |
+
+**Next one-by-one SEO order**
+
+1. Fix pages with GSC impressions but no/low clicks: converters, PayPal/finance,
+   OTP/token, and YouTube/Instagram variants from the pasted query list.
+2. Then work through tools absent from the pasted query list, starting with the
+   pages that were hidden from category/search before this pass.
+3. Request or export GSC page-level data to separate true zero-impression pages
+   from pages that have impressions under uncopied queries.
+
 ---
 
 ## Group A — Highest GSC near-miss (do first, biggest immediate ROI)
@@ -85,7 +232,7 @@
 | 59 | JSON ↔ TOML | `/converters/json-toml` | [ ] |
 | 60 | YAML ↔ TOML | `/converters/yaml-toml` | [ ] |
 | 61 | TOML ↔ YAML | `/converters/toml-yaml` | [ ] |
-| 62 | XML ↔ JSON | `/converters/xml-json` | [ ] |
+| 62 | XML ↔ JSON | `/converters/xml-json` | [x] |
 | 63 | JSON ↔ XML | `/converters/json-xml` | [ ] |
 | 64 | Morse Code | `/converters/morse-code` | [ ] |
 | 65 | NATO Phonetic | `/converters/nato-phonetic` | [ ] |
@@ -197,18 +344,19 @@
 
 | # | Tool | Path | Status |
 |---|---|---|---|
-| 146 | Image Cropper | `/image-tools/image-cropper` | [ ] |
-| 147 | Image Compressor | `/image-tools/image-compressor` | [ ] |
-| 148 | Image Resizer | `/image-tools/image-resizer` | [ ] |
-| 149 | Image to Text (OCR) | `/image-tools/image-to-text` | [ ] |
+| 146 | Image Cropper | `/image-tools/image-cropper` | [x] |
+| 147 | Image Compressor | `/image-tools/image-compressor` | [x] |
+| 148 | Image Resizer | `/image-tools/image-resizer` | [x] |
+| 149 | Image to Text (OCR) | `/image-tools/image-to-text` | [x] |
+| 149a | Image to PDF | `/pdf-tools/image-to-pdf` | [x] |
 | 150 | AI Image Detector | `/image-tools/ai-image-detector` | [ ] |
 | 151 | PDF Sign | `/pdf-tools/pdf-sign` | [ ] |
 | 152 | PDF Signature Checker | `/pdf-tools/pdf-signature-checker` | [ ] |
 | 153 | PDF Splitter / Merger | `/pdf-tools/pdf-splitter-merger` | [ ] |
 | 154 | PDF Unlocker | `/pdf-tools/pdf-unlocker` | [ ] |
-| 155 | PDF Compressor | `/pdf-tools/pdf-compressor` | [ ] |
+| 155 | PDF Compressor | `/pdf-tools/pdf-compressor` | [x] |
 | 156 | PDF to Word | `/pdf-tools/pdf-word-converter` | [ ] |
-| 157 | PDF to Image | `/pdf-tools/pdf-to-image` | [ ] |
+| 157 | PDF to Image | `/pdf-tools/pdf-to-image` | [x] |
 
 ## Group I — SEO / Web / Education
 

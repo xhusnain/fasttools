@@ -81,6 +81,17 @@ export const metadata: Metadata = {
 export default function StandardDeviationCalculatorPage() {
   const toolContent = {
     toolName: "Standard Deviation Calculator",
+    definition:
+      "A standard deviation calculator measures how spread out a dataset is from its mean and can calculate variance, mean, quartiles, z-scores, and related statistics.",
+    quickAnswer:
+      "Enter your data values separated by commas, spaces, or new lines, then choose sample or population mode. The calculator returns standard deviation, variance, mean, median, quartiles, confidence intervals, z-scores, and outlier checks.",
+    keyTakeaways: [
+      "Standard deviation shows typical distance from the mean",
+      "Population standard deviation divides by N; sample standard deviation divides by n-1",
+      "Variance is the square of standard deviation",
+      "A higher standard deviation means values are more spread out",
+      "Use sample mode when your data is a sample from a larger population",
+    ],
     overview: "Calculate standard deviation, variance, mean, median, mode, confidence intervals (90%, 95%, 99%), quartiles, interquartile range, z-scores, outlier detection, skewness, kurtosis, coefficient of variation, and standard error with our free statistics calculator. Supporting both population (divide by N) and sample (divide by n-1) modes, the tool accepts comma-separated, space-separated, or line-break data input and provides exportable results — making it ideal for students, researchers, data analysts, quality-control engineers, and anyone performing descriptive or inferential statistical analysis.",
 
     howToSteps: [

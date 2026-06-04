@@ -70,6 +70,17 @@ export const metadata: Metadata = {
 export default function BillSplitterPage() {
   const toolContent = {
     toolName: TOOL_NAME,
+    definition:
+      "A bill splitter divides a shared bill among people, including tax, tip, itemized shares, custom shares, and per-person totals.",
+    quickAnswer:
+      "Enter the bill amount, number of people, tax, and tip to split a restaurant or shared expense fairly. Use equal split for simple groups or itemized/custom split when people ordered different things.",
+    keyTakeaways: [
+      "Equal split divides the full bill, tax, and tip by the number of people",
+      "Itemized split is fairer when people ordered different items",
+      "Tip and tax should be included before calculating each person's final share",
+      "Round-up mode makes cash or mobile-payment settlement easier",
+      "Use the shareable breakdown so everyone can see exactly who owes what",
+    ],
     overview: "Free bill splitter calculator for restaurants, groups, and shared expenses. Split bills evenly or by items, calculate tips and tax, track who owes what. Perfect for friends, roommates, and travel groups. No cost, instant results.",
 
     howToSteps: [

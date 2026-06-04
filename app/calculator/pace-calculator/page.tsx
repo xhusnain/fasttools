@@ -61,6 +61,17 @@ export const metadata: Metadata = {
 export default function PaceCalculatorPage() {
   const toolContent = {
     toolName: "Pace Calculator",
+    definition:
+      "A pace calculator converts running time and distance into pace, speed, splits, and predicted race finish times.",
+    quickAnswer:
+      "Enter your distance and finish time to calculate pace per mile, pace per kilometer, speed, and race splits. You can also enter a target pace to estimate finish times for 5K, 10K, half marathon, marathon, or custom distances.",
+    keyTakeaways: [
+      "Running pace = time divided by distance",
+      "Pace per mile and pace per kilometer are the most common runner formats",
+      "Negative splits mean later segments are faster than earlier segments",
+      "Race predictions are estimates and depend on training, course, weather, and fatigue",
+      "Use consistent units when comparing workouts and race goals",
+    ],
     overview: "Calculate running pace per mile and per kilometer, set heart rate training zones (Zones 1-5), estimate VO2 Max, predict race finish times for 5K, 10K, half marathon, and marathon distances, and analyze multipoint splits with our free advanced pace calculator. Whether you are planning a negative-split race strategy, building an 80/20 training plan, or tracking lactate threshold improvements, this tool delivers instant, accurate results for runners, coaches, and serious athletes worldwide.",
 
     howToSteps: [

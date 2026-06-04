@@ -61,6 +61,17 @@ export const metadata: Metadata = {
 export default function FractionCalculatorPage() {
   const toolContent = {
     toolName: "Fraction Calculator",
+    definition:
+      "A fraction calculator performs arithmetic with fractions, mixed numbers, improper fractions, decimals, and percentages.",
+    quickAnswer:
+      "Enter two fractions and choose add, subtract, multiply, or divide to get a simplified result with steps. The calculator also converts mixed numbers, decimals, and percentages to exact fractions when possible.",
+    keyTakeaways: [
+      "Fraction addition and subtraction require a common denominator",
+      "Fraction multiplication multiplies numerators and denominators directly",
+      "Fraction division uses the reciprocal of the second fraction",
+      "Every result should be reduced to lowest terms using the greatest common divisor",
+      "Mixed numbers are converted to improper fractions before calculation",
+    ],
     overview: "Add, subtract, multiply, and divide fractions with step-by-step solutions using our free fraction calculator. The tool automatically finds the least common denominator (LCD) for addition and subtraction, computes the greatest common divisor (GCD) for simplification, handles proper fractions, improper fractions, and mixed numbers, and converts between fractions, decimals, and percentages. Ideal for students solving homework, teachers demonstrating fraction operations, cooks scaling recipes, builders working with fractional measurements, and professionals needing exact arithmetic without decimal rounding drift.",
 
     howToSteps: [

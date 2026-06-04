@@ -70,6 +70,17 @@ export const metadata: Metadata = {
 export default function TipCalculatorPage() {
   const toolContent = {
     toolName: TOOL_NAME,
+    definition:
+      "A tip calculator calculates gratuity from a bill amount and tip percentage, then can split the total bill among multiple people.",
+    quickAnswer:
+      "Enter the bill amount, choose a tip percentage such as 15%, 18%, or 20%, and set the number of people to split with. The calculator shows the tip amount, grand total, and per-person payment instantly.",
+    keyTakeaways: [
+      "Tip amount = bill amount multiplied by tip percentage",
+      "A 20% tip is easy mental math: move the decimal one place left and double it",
+      "Use pre-tax tipping when you want to tip only on the service amount",
+      "Split mode divides the total bill, tip, and tax into a per-person amount",
+      "Custom tip percentages work for restaurants, delivery, salons, taxis, and group dining",
+    ],
     overview: `Calculate restaurant tips, gratuity, and split bills instantly. Our free tip calculator supports customizable percentages, tax options, and bill splitting. Perfect for dining, delivery, and service industries. Features simple tip calculator, tip percentage calculator, bill and tip calculator, and smart tip calculator with split options.`,
 
     howToSteps: [

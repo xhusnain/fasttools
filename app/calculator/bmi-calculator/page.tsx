@@ -109,6 +109,17 @@ export const metadata: Metadata = {
 export default function BMICalculatorPage() {
   const toolContent = {
     toolName: "BMI Calculator — Body Mass Index Calculator",
+    definition:
+      "A BMI calculator estimates body mass index from height and weight to classify weight status using standard BMI ranges.",
+    quickAnswer:
+      "Enter your height and weight to calculate BMI. BMI = weight in kilograms divided by height in meters squared; standard adult categories are underweight below 18.5, healthy weight 18.5-24.9, overweight 25-29.9, and obesity 30 or above.",
+    keyTakeaways: [
+      "BMI is a screening measure, not a complete diagnosis of health or body composition",
+      "BMI formula: kg/m², or 703 × pounds / inches² for US units",
+      "Adult BMI categories do not account for muscle mass, age, sex, ethnicity, or pregnancy",
+      "Children and teens require BMI-for-age percentiles instead of adult ranges",
+      "Use BMI with waist size, body fat, activity, and clinical context for better interpretation",
+    ],
     overview:
       "Calculate your Body Mass Index (BMI) instantly with our free online BMI calculator. Get WHO and CDC standard weight classifications, healthy weight range for your height, BMI Prime ratio, Ponderal Index, and personalized health action plans. Supports both metric (kg/cm) and imperial (lbs/inches) units with ethnic-specific guidelines including Asian BMI thresholds. Designed for adults and teenagers, this tool provides a visual BMI gauge, health risk assessment, and practical next steps — all processed privately in your browser.",
     howToSteps: [

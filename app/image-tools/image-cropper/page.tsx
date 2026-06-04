@@ -46,8 +46,6 @@ const toolConfig = createToolConfig({
       "JPEG/WebP quality control (10–100%)",
       "Live crop coordinates display (x, y, width, height)",
       "File support: JPG, PNG, WebP, GIF, BMP up to 20 MB",
-      "Instagram, Twitter, Facebook, YouTube social preset shortcuts",
-      "Profile picture round-preview mode",
       "100% client-side via HTML5 Canvas — images never uploaded to any server",
       "Free, no signup, no watermark, no usage limits",
     ],
@@ -92,7 +90,7 @@ const toolConfig = createToolConfig({
         This free online image cropper gives you full visual control over your crop. After uploading an image, a
         crop box with <strong>8 drag handles</strong> appears over the full image. Drag any handle to reshape the
         selection, or drag the box itself to move it. Use the <strong>aspect ratio presets</strong> (1:1 for
-        Instagram squares, 16:9 for YouTube thumbnails, 9:16 for Stories and Reels) to lock the proportions so
+        square profile images, 16:9 for YouTube thumbnails, 9:16 for Stories and Reels) to lock the proportions so
         the box resizes correctly. For precise requirements, type an exact pixel width and height directly. A{" "}
         <strong>rule-of-thirds grid</strong> overlays the crop area to help you align subjects to the visual
         sweet spots. When ready, hit Crop Image and download your result as JPEG, PNG, or WebP.
@@ -176,14 +174,43 @@ const toolConfig = createToolConfig({
     ],
 
     aboutTool: (
-      <span>
-        The Image Cropper uses the browser&apos;s native <code>HTML5 Canvas API</code> to perform the crop operation
-        entirely client-side. When you click Crop Image, the tool draws the source image onto an off-screen canvas
-        sized to your crop dimensions, optionally applying rotation and flip transforms before rendering. The result
-        is exported via <code>canvas.toBlob()</code> directly to a download URL — no round trip to a server, no
-        file size limits imposed by upload bandwidth. This approach also means the tool works offline once the page
-        has loaded.
-      </span>
+      <div className="space-y-6 text-muted-foreground">
+        <div>
+          <h3 className="text-lg font-semibold text-foreground mb-2">How Cropping Works</h3>
+          <p>
+            The cropper uses the browser&apos;s native <code>HTML5 Canvas API</code> to draw only the selected region into a new image.
+            The crop box stores x, y, width, and height coordinates in image pixels. When you click Crop Image, the selected region is
+            rendered to an off-screen canvas and exported as a JPG, PNG, or WebP file.
+          </p>
+        </div>
+
+        <div>
+          <h3 className="text-lg font-semibold text-foreground mb-2">Choosing the Right Aspect Ratio</h3>
+          <p>
+            Use 1:1 for square avatars and profile pictures, 16:9 for thumbnails and landscape previews, 9:16 for vertical stories and
+            reels, 4:3 for general photo framing, and Free mode when the final platform does not require fixed proportions. Aspect ratio
+            lock prevents accidental stretching while you move or resize the crop box.
+          </p>
+        </div>
+
+        <div>
+          <h3 className="text-lg font-semibold text-foreground mb-2">Exact Pixel Cropping</h3>
+          <p>
+            Exact pixel input is useful for ad creatives, templates, document portals, product images, and app assets. Enter the required
+            width and height, apply the size, then move the crop box over the part of the image you want to keep. The output dimensions
+            match the selected crop area.
+          </p>
+        </div>
+
+        <div>
+          <h3 className="text-lg font-semibold text-foreground mb-2">Format and Quality Choices</h3>
+          <p>
+            Use JPG for photos and smaller files, PNG for screenshots, transparent graphics, and lossless output, and WebP for modern web
+            use where smaller files are useful. For JPG and WebP, increase quality when the crop contains small text, product labels, or
+            detailed textures.
+          </p>
+        </div>
+      </div>
     ),
 
     proTip:
@@ -223,7 +250,7 @@ const toolConfig = createToolConfig({
       {
         question: "How do I crop an image for Instagram?",
         answer:
-          "For Instagram feed posts, use the 1:1 preset (square) or 4:5 vertical. For Stories and Reels, use the 9:16 preset. For landscape posts, use 1.91:1 — the closest available preset is 16:9.",
+          "For Instagram feed posts, use the 1:1 preset for a square crop. For Stories and Reels, use the 9:16 preset. For landscape posts, use 16:9 as a close web-friendly option.",
       },
       {
         question: "Can I rotate the image before cropping?",

@@ -46,11 +46,45 @@ export function JSONToCSV() {
   const [csv, setCsv] = useState("")
   const [error, setError] = useState("")
   const [copied, setCopied] = useState(false)
+  const [delimiter, setDelimiter] = useState<"," | ";" | "\t">(",")
+  const [includeBom, setIncludeBom] = useState(false)
 
   const loadSampleData = () => {
     setJson(SAMPLE_JSON)
     setError("")
     setCsv("")
+  }
+
+  const flattenValue = (value: unknown, prefix: string, output: Record<string, string>) => {
+    if (value === null || value === undefined) {
+      output[prefix] = ""
+      return
+    }
+
+    if (Array.isArray(value)) {
+      output[prefix] = JSON.stringify(value)
+      return
+    }
+
+    if (typeof value === "object") {
+      const entries = Object.entries(value as Record<string, unknown>)
+      if (entries.length === 0) {
+        output[prefix] = "{}"
+        return
+      }
+      for (const [key, childValue] of entries) {
+        flattenValue(childValue, prefix ? `${prefix}.${key}` : key, output)
+      }
+      return
+    }
+
+    output[prefix] = String(value)
+  }
+
+  const escapeCsvValue = (value: string) => {
+    const needsQuotes =
+      value.includes(delimiter) || value.includes('"') || value.includes("\n") || value.includes("\r")
+    return needsQuotes ? `"${value.replace(/"/g, '""')}"` : value
   }
 
   const convertToCSV = () => {
@@ -71,20 +105,34 @@ export function JSONToCSV() {
         return
       }
 
-      // Get headers from first object
-      const headers = Object.keys(array[0])
-      const csvHeaders = headers.join(",")
+      const flattenedRows = array.map((row) => {
+        const flattened: Record<string, string> = {}
+        if (row !== null && typeof row === "object" && !Array.isArray(row)) {
+          for (const [key, value] of Object.entries(row as Record<string, unknown>)) {
+            flattenValue(value, key, flattened)
+          }
+        } else {
+          flattenValue(row, "value", flattened)
+        }
+        return flattened
+      })
 
-      // Convert rows
-      const csvRows = array.map((row) => {
+      const headers = Array.from(
+        flattenedRows.reduce((set, row) => {
+          Object.keys(row).forEach((key) => set.add(key))
+          return set
+        }, new Set<string>())
+      )
+
+      const csvHeaders = headers.map(escapeCsvValue).join(delimiter)
+
+      const csvRows = flattenedRows.map((row) => {
         return headers
           .map((header) => {
-            const value = row[header]
-            // Escape quotes and wrap in quotes if contains comma
-            const stringValue = String(value ?? "")
-            return stringValue.includes(",") ? `"${stringValue.replace(/"/g, '""')}"` : stringValue
+            const stringValue = row[header] ?? ""
+            return escapeCsvValue(stringValue)
           })
-          .join(",")
+          .join(delimiter)
       })
 
       const csvContent = [csvHeaders, ...csvRows].join("\n")
@@ -95,7 +143,7 @@ export function JSONToCSV() {
   }
 
   const downloadCSV = () => {
-    const blob = new Blob([csv], { type: "text/csv" })
+    const blob = new Blob([includeBom ? `\uFEFF${csv}` : csv], { type: "text/csv;charset=utf-8" })
     const url = window.URL.createObjectURL(blob)
     const a = document.createElement("a")
     a.href = url
@@ -131,6 +179,33 @@ export function JSONToCSV() {
           onChange={(e) => setJson(e.target.value)}
           className="min-h-48 font-mono text-sm border-2 border-blue-300 focus:border-primary"
         />
+      </div>
+
+      <div className="flex flex-wrap items-center gap-4 rounded-lg border border-border bg-muted/20 p-3 text-sm">
+        <label className="flex items-center gap-2">
+          <span className="text-muted-foreground">Delimiter</span>
+          <select
+            value={delimiter}
+            onChange={(e) => {
+              setDelimiter(e.target.value as "," | ";" | "\t")
+              setCsv("")
+            }}
+            className="rounded-md border border-border bg-background px-2 py-1 text-foreground"
+          >
+            <option value={","}>Comma (,)</option>
+            <option value={";"}>Semicolon (;)</option>
+            <option value={"\t"}>Tab</option>
+          </select>
+        </label>
+        <label className="flex items-center gap-2 text-muted-foreground">
+          <input
+            type="checkbox"
+            checked={includeBom}
+            onChange={(e) => setIncludeBom(e.target.checked)}
+            className="h-4 w-4 rounded border-border"
+          />
+          Add UTF-8 BOM on download
+        </label>
       </div>
 
       <GButton onClick={convertToCSV} className="w-full">

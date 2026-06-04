@@ -10,18 +10,18 @@ const SQLToJSON = dynamic(
 )
 
 const toolConfig = createToolConfig({
-  toolName: "SQL to JSON Converter",
+  toolName: "SQL INSERT to JSON Converter",
   description:
-    "Convert SQL INSERT statements into JSON objects for API mocks, migration tasks, and data workflows.",
-  metaTitle: "SQL to JSON Converter — INSERT Statements & Query Results to JSON",
+    "Convert simple SQL INSERT INTO statements into a formatted JSON array for API mocks, fixtures, and quick data handoffs.",
+  metaTitle: "SQL INSERT to JSON Converter - Convert VALUES Rows Online",
   metaDescription:
-    "Free SQL to JSON converter. Parse INSERT statements, CREATE TABLE schemas, or SELECT result dumps into clean JSON arrays. Type-aware conversion (INT, BOOLEAN, NULL, DATE). MySQL / PostgreSQL / SQLite / MSSQL dialects. 100% client-side.",
+    "Convert SQL INSERT INTO statements to JSON arrays online. Paste INSERT rows with columns and VALUES, then copy or download formatted JSON for mocks, fixtures, and data handoffs.",
   path: "/dev-tools/sql-to-json",
 
   header: {
-    title: "SQL to JSON Converter",
+    title: "SQL INSERT to JSON Converter",
     description:
-      "Convert SQL INSERT statements and query results into structured JSON arrays and objects. Maps SQL columns to JSON keys with type-aware value conversion. All processing runs locally in your browser.",
+      "Paste a simple INSERT INTO statement and convert its VALUES rows into a JSON array. Best for seed data, API mocks, and small table exports.",
     titleSize: "medium",
     descriptionSize: "small",
     color: "blue",
@@ -29,43 +29,33 @@ const toolConfig = createToolConfig({
 
   breadcrumbs: [
     { label: "Developer Tools", href: "/dev-tools" },
-    { label: "SQL to JSON Converter", href: "/dev-tools/sql-to-json" },
+    { label: "SQL INSERT to JSON Converter", href: "/dev-tools/sql-to-json" },
   ],
 
   schemaOptions: {
     applicationCategory: "DeveloperApplication",
     description:
-      "Convert SQL INSERT statements, CREATE TABLE schemas, or SELECT result dumps into structured JSON. Type-aware (INT, BOOLEAN, NULL, DATE, JSON). MySQL / PostgreSQL / SQLite / MSSQL syntax. 100% client-side.",
+      "Browser-based SQL INSERT to JSON converter for simple INSERT INTO table (columns) VALUES (...) statements. Converts rows into a formatted JSON array with basic literal type detection.",
     alternateName: [
       "SQL to JSON",
       "SQL INSERT to JSON",
-      "MySQL Dump to JSON",
-      "PostgreSQL Dump to JSON",
-      "SQLite to JSON",
-      "SQL Result to JSON",
-      "Database Export to JSON",
-      "SQL Query Result Converter",
-      "MySQL Backup to JSON",
-      "phpMyAdmin SQL to JSON",
-      "CREATE TABLE to JSON Schema",
+      "INSERT Statement to JSON",
+      "SQL Values to JSON",
+      "SQL Seed Data to JSON",
+      "SQL Fixture Converter",
+      "Database Insert to JSON",
       "SQL to API Mock JSON",
-      "SQL Seed to JSON",
-      "Database Migration Helper",
-      "SQL Dump Parser",
     ],
     featureList: [
-      "Parse SQL INSERT INTO statements with single or multi-row VALUES syntax",
-      "Parse SELECT result dumps from mysql CLI, psql, sqlcmd output",
-      "Parse CREATE TABLE statements into JSON schema definitions (with column types)",
-      "Type-aware conversion: INT → number, BOOLEAN → true/false, NULL → null, DATE → ISO 8601 string",
-      "Multi-dialect support: MySQL, PostgreSQL, SQLite, MSSQL (SQL Server), Oracle",
-      "Handle quoted / escaped strings — single quotes, double quotes, backticks for identifiers",
-      "Schema-aware: when CREATE TABLE and INSERT are pasted together, types are inferred from the schema",
-      "Output as JSON array of objects (default) or JSON Lines (newline-delimited) for streaming",
-      "Pretty-print with configurable indentation, or minified single-line output",
-      "Detect and preserve JSON columns inside SQL (Postgres jsonb, MySQL JSON)",
-      "Copy to clipboard or download as .json / .jsonl",
-      "100% client-side — your SQL data never leaves your browser",
+      "Converts INSERT INTO table (columns) VALUES (...) statements",
+      "Supports single-row and multi-row VALUES syntax",
+      "Maps SQL column names to JSON object keys",
+      "Converts NULL, true, false, numbers, and quoted strings",
+      "Outputs a formatted JSON array",
+      "Copy JSON to clipboard",
+      "Download the result as data.json",
+      "Includes sample INSERT data for quick testing",
+      "Runs conversion in the browser",
     ],
     softwareRequirements: "Modern web browser",
     ratingValue: "4.8",
@@ -75,215 +65,168 @@ const toolConfig = createToolConfig({
 
   content: {
     definition:
-      "A SQL to JSON Converter is a free tool that transforms SQL query results or CREATE TABLE statements into structured JSON format.",
+      "A SQL INSERT to JSON converter turns rows from an INSERT INTO ... VALUES statement into JSON objects, using the listed SQL columns as JSON keys.",
     quickAnswer:
-      "Paste SQL output (SELECT results or CREATE TABLE statements) to instantly convert it to JSON. The tool maps rows to JSON objects and columns to keys. Copy the formatted JSON output.",
+      "Paste an INSERT INTO table (columns) VALUES (...); statement, click Convert to JSON, then copy or download the formatted JSON array. The converter is designed for simple INSERT statements, not full SQL dumps or SELECT result tables.",
     keyTakeaways: [
-      "Converts SQL SELECT results to JSON arrays of objects",
-      "Parses CREATE TABLE statements into JSON schema definitions",
-      "Maps SQL column names to JSON keys automatically",
-      "Handles common SQL data types: VARCHAR, INT, DATE, BOOLEAN",
-      "Useful for building REST APIs from database query results",
+      "Converts simple SQL INSERT statements into JSON arrays",
+      "Supports multi-row VALUES lists when column names are included",
+      "Maps columns such as id, name, and email to JSON object keys",
+      "Detects basic values: NULL, true, false, numbers, and quoted strings",
+      "Best for API mocks, test fixtures, seed data, and small table handoffs",
     ],
     overview:
-      "Convert SQL to JSON format with this free online tool. Paste SQL INSERT statements, CREATE TABLE definitions, or query results to instantly transform them into structured JSON arrays and objects. The converter maps SQL column names to JSON keys and performs type-aware conversion — integers, booleans, nulls, and strings are mapped to their appropriate JSON types. Useful for building REST API mock data from database dumps, migrating relational data to NoSQL databases, creating seed data for tests, and bridging SQL-based backends with JSON-consuming frontends.",
+      "Use this SQL INSERT to JSON converter when you have a small INSERT statement and need JSON quickly. The tool reads statements in the form INSERT INTO table (column1, column2) VALUES (...), (...); and converts each VALUES tuple into one JSON object. It is useful for turning seed data into fixtures, preparing mock API responses, sharing small database examples with a frontend team, or cleaning up example records for documentation. It does not execute SQL and it is not a full database dump parser.",
 
     howToSteps: [
-      "Paste SQL INSERT statements into the input field.",
-      "Run conversion to parse rows and column values.",
-      "Review generated JSON output and validate structure.",
-      "Copy or export JSON for downstream workflows.",
+      "Paste an INSERT INTO statement with a column list and VALUES rows.",
+      "Make sure the statement ends with a semicolon.",
+      "Click Convert to JSON.",
+      "Review the generated JSON array.",
+      "Copy the JSON or download it as data.json.",
     ],
 
     features: [
       "SQL INSERT statement conversion",
-      "Structured JSON output",
-      "Practical migration workflow",
-      "Copy-ready result format",
-      "Runs directly in the browser",
+      "Multi-row VALUES support",
+      "Column-to-key JSON mapping",
+      "Basic SQL literal conversion",
+      "Formatted JSON output",
+      "Copy and download actions",
+      "Sample data loader",
     ],
 
     useCases: [
-      "Database export conversion for APIs",
-      "Mock payload generation",
-      "Seed data preparation for test suites",
-      "Data handoff between backend and frontend teams",
+      "Convert SQL seed data into JSON fixtures",
+      "Build mock REST API payloads from example table rows",
+      "Share small database examples with frontend developers",
+      "Prepare demo data for JavaScript, TypeScript, Python, or Node projects",
+      "Turn simple INSERT exports into copy-ready JSON for documentation",
     ],
 
     aboutTool: (
       <div className="space-y-6 text-muted-foreground">
         <div>
-          <h3 className="text-lg font-semibold text-foreground mb-2">Why Convert SQL to JSON?</h3>
+          <h3 className="text-lg font-semibold text-foreground mb-2">What This Converter Accepts</h3>
           <p>
-            SQL is the lingua franca of relational databases — every legacy system, BI tool, and operational backend speaks it. JSON is the format of modern APIs, NoSQL stores, frontend frameworks, and serverless functions. Bridging the two is a daily task: migrating from MySQL to MongoDB, building REST API mocks from a database dump, seeding a new microservice with relational data, sharing data between teams using different stacks. This converter parses raw SQL — INSERT statements, CREATE TABLE schemas, SELECT result dumps — and produces clean JSON ready to paste into <code>fetch()</code> mocks, fixtures, MongoDB <code>insertMany()</code>, or any other JSON-consuming workflow.
+            This page is focused on one common workflow: converting simple SQL{" "}
+            <code>INSERT INTO</code> statements into JSON. The input should include a table name,
+            a parenthesized column list, a <code>VALUES</code> clause, and a semicolon.
           </p>
+          <pre className="bg-muted p-3 rounded mt-3 text-xs overflow-x-auto">
+            <code>{`INSERT INTO users (id, name, active) VALUES
+(1, 'Alice', true),
+(2, 'Bob', false);`}</code>
+          </pre>
         </div>
 
         <div>
-          <h3 className="text-lg font-semibold text-foreground mb-2">Supported SQL Input Formats</h3>
-          <ul className="list-disc pl-6 space-y-1">
-            <li><strong>INSERT statements:</strong> <code>INSERT INTO users (id, name, email) VALUES (1, &apos;Alice&apos;, &apos;a@x.com&apos;);</code></li>
-            <li><strong>Multi-row INSERT:</strong> <code>INSERT INTO ... VALUES (1,&apos;A&apos;), (2,&apos;B&apos;), (3,&apos;C&apos;);</code></li>
-            <li><strong>CREATE TABLE + INSERT pairs:</strong> uses the schema to infer column types correctly</li>
-            <li><strong>mysqldump output:</strong> processes complete dump files with comments, locks, etc.</li>
-            <li><strong>psql / pg_dump output:</strong> handles PostgreSQL-specific syntax (jsonb, arrays, RETURNING)</li>
-            <li><strong>mysql / psql CLI result tables:</strong> the ASCII-art result tables you see when running SELECT in a terminal</li>
-            <li><strong>phpMyAdmin / TablePlus / DBeaver exports:</strong> handles common GUI export formats</li>
-          </ul>
-        </div>
-
-        <div>
-          <h3 className="text-lg font-semibold text-foreground mb-2">Type-Aware Conversion</h3>
+          <h3 className="text-lg font-semibold text-foreground mb-2">How Values Are Converted</h3>
           <table className="w-full border-collapse text-sm">
             <thead>
               <tr className="border-b border-border">
-                <th className="text-left py-2 px-2 text-foreground">SQL type</th>
-                <th className="text-left py-2 px-2 text-foreground">JSON output</th>
+                <th className="text-left py-2 px-2 text-foreground">SQL value</th>
+                <th className="text-left py-2 px-2 text-foreground">JSON value</th>
                 <th className="text-left py-2 px-2 text-foreground">Example</th>
               </tr>
             </thead>
             <tbody>
               <tr className="border-b border-border">
-                <td className="py-2 px-2">INT / BIGINT / SMALLINT</td>
-                <td className="py-2 px-2">number</td>
-                <td className="py-2 px-2"><code>42</code></td>
-              </tr>
-              <tr className="border-b border-border">
-                <td className="py-2 px-2">DECIMAL / FLOAT / DOUBLE</td>
-                <td className="py-2 px-2">number</td>
-                <td className="py-2 px-2"><code>3.14</code></td>
-              </tr>
-              <tr className="border-b border-border">
-                <td className="py-2 px-2">VARCHAR / TEXT / CHAR</td>
-                <td className="py-2 px-2">string</td>
-                <td className="py-2 px-2"><code>&quot;Alice&quot;</code></td>
-              </tr>
-              <tr className="border-b border-border">
-                <td className="py-2 px-2">BOOLEAN / BIT(1) / TINYINT(1)</td>
-                <td className="py-2 px-2">boolean</td>
-                <td className="py-2 px-2"><code>true</code></td>
-              </tr>
-              <tr className="border-b border-border">
-                <td className="py-2 px-2">NULL</td>
+                <td className="py-2 px-2"><code>NULL</code></td>
                 <td className="py-2 px-2">null</td>
                 <td className="py-2 px-2"><code>null</code></td>
               </tr>
               <tr className="border-b border-border">
-                <td className="py-2 px-2">DATE / DATETIME / TIMESTAMP</td>
-                <td className="py-2 px-2">ISO 8601 string</td>
-                <td className="py-2 px-2"><code>&quot;2025-04-15T13:45:00Z&quot;</code></td>
+                <td className="py-2 px-2"><code>true</code> / <code>false</code></td>
+                <td className="py-2 px-2">boolean</td>
+                <td className="py-2 px-2"><code>true</code></td>
               </tr>
               <tr className="border-b border-border">
-                <td className="py-2 px-2">JSON / JSONB (Postgres)</td>
-                <td className="py-2 px-2">nested object</td>
-                <td className="py-2 px-2"><code>&#123;&quot;foo&quot;:&quot;bar&quot;&#125;</code></td>
+                <td className="py-2 px-2">Bare numbers</td>
+                <td className="py-2 px-2">number</td>
+                <td className="py-2 px-2"><code>42</code></td>
               </tr>
               <tr>
-                <td className="py-2 px-2">UUID</td>
+                <td className="py-2 px-2">Single- or double-quoted text</td>
                 <td className="py-2 px-2">string</td>
-                <td className="py-2 px-2"><code>&quot;550e8400-...&quot;</code></td>
+                <td className="py-2 px-2"><code>&quot;Alice&quot;</code></td>
               </tr>
             </tbody>
           </table>
         </div>
 
         <div>
-          <h3 className="text-lg font-semibold text-foreground mb-2">Output Formats</h3>
+          <h3 className="text-lg font-semibold text-foreground mb-2">Best Uses</h3>
           <ul className="list-disc pl-6 space-y-1">
-            <li><strong>JSON array (default):</strong> <code>[&#123;...&#125;, &#123;...&#125;]</code> — directly usable as a JavaScript / Python data structure</li>
-            <li><strong>JSON Lines (.jsonl):</strong> one object per line — ideal for streaming, log-style processing, and direct ingestion by BigQuery / Athena / Spark</li>
-            <li><strong>Pretty-printed:</strong> 2-space or 4-space indentation for human review</li>
-            <li><strong>Minified:</strong> single-line output for production transmission</li>
-            <li><strong>Schema-only:</strong> when CREATE TABLE is the input, output JSON Schema describing column types and constraints (NOT NULL, UNIQUE, etc.)</li>
+            <li><strong>API mocks:</strong> convert sample rows into JSON for mock endpoints.</li>
+            <li><strong>Test fixtures:</strong> turn seed data into a JSON file for Jest, Vitest, Playwright, or pytest.</li>
+            <li><strong>Frontend handoff:</strong> share realistic records without asking someone to connect to a database.</li>
+            <li><strong>Documentation:</strong> convert small SQL examples into JSON examples for API docs.</li>
           </ul>
         </div>
 
         <div>
-          <h3 className="text-lg font-semibold text-foreground mb-2">Common Use Cases</h3>
-          <ul className="list-disc pl-6 space-y-1">
-            <li><strong>MySQL → MongoDB migration:</strong> mysqldump → SQL-to-JSON → MongoDB Compass import</li>
-            <li><strong>Mock API responses:</strong> SQL query result → JSON for Mock Service Worker, MSW, JSON Server</li>
-            <li><strong>Test fixtures:</strong> SELECT * from production-like data → JSON fixtures for Jest, Vitest, pytest</li>
-            <li><strong>Cross-team handoffs:</strong> backend dev has SQL data, frontend team needs JSON to wire up the UI</li>
-            <li><strong>SQL → NoSQL exports:</strong> Firestore, DynamoDB, CosmosDB all import JSON documents</li>
-            <li><strong>API contract documentation:</strong> CREATE TABLE → JSON Schema → OpenAPI</li>
-            <li><strong>Data warehouse ingestion:</strong> JSON Lines output → BigQuery / Snowflake / Redshift bulk load</li>
-            <li><strong>Frontend prototyping:</strong> dump a real SQL table, paste here, paste JSON output into a static <code>data.json</code></li>
-          </ul>
-        </div>
-
-        <div>
-          <h3 className="text-lg font-semibold text-foreground mb-2">Handling Edge Cases</h3>
-          <ul className="list-disc pl-6 space-y-1">
-            <li><strong>Multi-line strings:</strong> properly handles SQL strings containing newlines (escaped as \\n in JSON)</li>
-            <li><strong>Single quotes in values:</strong> SQL escapes apostrophes as <code>&apos;&apos;</code> (double single-quote); the parser correctly unescapes</li>
-            <li><strong>Backticks vs quotes for identifiers:</strong> MySQL uses backticks, others use double quotes — both supported</li>
-            <li><strong>BINARY / BLOB columns:</strong> Base64-encoded in output (you usually shouldn&apos;t put binary in JSON anyway)</li>
-            <li><strong>Comments:</strong> SQL <code>-- comment</code> and <code>/* block comment */</code> are skipped, not included in output</li>
-            <li><strong>Transactions:</strong> <code>BEGIN; ... COMMIT;</code> blocks are processed; the keywords ignored</li>
-            <li><strong>Unicode:</strong> full UTF-8 support including emoji, CJK, accented characters</li>
-          </ul>
-        </div>
-
-        <div>
-          <h3 className="text-lg font-semibold text-foreground mb-2">When NOT to Use This Tool</h3>
+          <h3 className="text-lg font-semibold text-foreground mb-2">Limits to Know</h3>
           <p>
-            This is a focused utility for ad-hoc conversion, debugging, and prototyping. <strong>It is not a replacement for full ETL pipelines.</strong> For production data migrations (millions of rows, ongoing sync), use dedicated tools: <code>mysqldump | mysqltocouch</code>, AWS DMS, Airbyte, Fivetran, or write a script using your language&apos;s SQL driver + JSON serializer. Also, this tool processes whatever SQL you paste — it doesn&apos;t execute queries against a live database; you provide the SQL output as text.
+            This is not a SQL engine and it does not parse every database dialect. It does not
+            convert <code>CREATE TABLE</code> schemas, terminal-style <code>SELECT</code> result
+            tables, stored procedures, full dumps, transactions, comments, or dialect-specific
+            clauses such as <code>RETURNING</code> or <code>ON CONFLICT</code>. Complex strings,
+            nested parentheses, functions, binary values, and unusual escaping may need cleanup
+            before conversion. For production migrations or very large exports, use a script or
+            database export library that understands your database format.
           </p>
         </div>
 
         <div>
-          <h3 className="text-lg font-semibold text-foreground mb-2">Privacy</h3>
+          <h3 className="text-lg font-semibold text-foreground mb-2">Privacy Note</h3>
           <p>
-            All SQL parsing and JSON generation runs in your browser using JavaScript. Your SQL data — including production records, PII, business secrets — never reaches any server. No analytics, no logging, no upload. Verify in DevTools → Network: zero outgoing requests. Safe for confidential database content.
+            The conversion logic runs in your browser after the page loads; the tool does not need
+            to send your SQL to a conversion API. Still, avoid pasting passwords, private customer
+            data, or regulated records into any web tool unless your own security policy allows it.
           </p>
         </div>
       </div>
     ),
 
     proTip:
-      "If you have BOTH the CREATE TABLE and INSERT statements, paste them together — the tool uses the schema to correctly type values (e.g., '1' becomes true if the column is BOOLEAN, but 1 if INT). For large dumps with many tables, paste them one table at a time so each conversion produces a focused JSON array per entity. For data warehouse ingestion (BigQuery, Snowflake), use JSON Lines output format — newline-delimited JSON ingests far faster than nested JSON arrays.",
+      "If conversion fails, check three things first: the input starts with INSERT INTO, the column list is present, and the statement ends with a semicolon. For a large export, paste one table's INSERT block at a time so the JSON stays easy to review.",
 
     faqs: [
       {
-        question: "Which SQL dialects does this support?",
+        question: "What SQL format does this converter support?",
         answer:
-          "MySQL, PostgreSQL, SQLite, MSSQL (SQL Server), and Oracle SQL all work — the parser handles dialect-specific syntax like MySQL's backtick identifiers, PostgreSQL's E'...' escape strings and jsonb columns, SQLite's flexible typing, and MSSQL's NVARCHAR. If you have a specific dialect quirk that doesn't parse, paste it and we'll add support.",
+          "It supports simple INSERT INTO table (columns) VALUES (...); statements, including multi-row VALUES lists. It expects the column names to be present in the INSERT statement.",
       },
       {
-        question: "Can I use this for MySQL → MongoDB migration?",
+        question: "Can it convert CREATE TABLE statements?",
         answer:
-          "Yes — this is one of the most common use cases. Take your mysqldump output (or a SELECT * dump), paste here, convert to JSON, then use MongoDB Compass's 'Import Data' feature or the `mongoimport` CLI with `--jsonArray` to load the result. For large datasets, use the JSON Lines output and `mongoimport --jsonArray --file=data.jsonl` for streaming.",
+          "No. This tool converts INSERT rows into JSON objects. It does not generate JSON Schema from CREATE TABLE definitions.",
+      },
+      {
+        question: "Can it convert SELECT query results?",
+        answer:
+          "No. It does not parse terminal tables or pasted SELECT output. If you need JSON from a live query, use your database driver, SQL client export option, or a script that serializes result rows to JSON.",
       },
       {
         question: "Does it handle multi-row INSERT statements?",
         answer:
-          "Yes — single-row, multi-row, and even thousand-row VALUES clauses are parsed correctly. Each tuple becomes one JSON object. Best for files up to ~10MB; very large dumps (100MB+) may slow the browser but will eventually complete.",
+          "Yes. A VALUES list such as (1, 'A'), (2, 'B'), (3, 'C') is converted into three JSON objects when the INSERT statement includes matching column names.",
       },
       {
-        question: "What about CREATE TABLE statements?",
+        question: "How are SQL values typed?",
         answer:
-          "Paste CREATE TABLE statements to generate a JSON Schema (RFC draft 2020-12) describing the table structure — column names, types, NULL/NOT NULL, defaults, primary keys. Useful for generating OpenAPI specs from existing databases, or scaffolding JSON validation in TypeScript / Zod.",
+          "NULL becomes null, true and false become booleans, bare numeric values become numbers, and quoted values become strings. Dates and timestamps inside quotes remain strings.",
       },
       {
-        question: "Does conversion preserve numeric and boolean types?",
+        question: "Why did my SQL fail to parse?",
         answer:
-          "Yes. When CREATE TABLE is provided, the schema is used to type values precisely (INT → number, BOOLEAN → true/false, DECIMAL → number, etc.). When only INSERT is provided, the tool infers types from value syntax: bare numbers → number, 'true'/'false' → boolean (configurable), 'NULL' → null, anything in quotes → string.",
+          "Most failures happen when the input is missing a semicolon, lacks the column list, includes a full dump with comments or transactions, or uses complex expressions inside VALUES. Try isolating one simple INSERT block first.",
       },
       {
-        question: "Can I process a 100MB SQL dump in one pass?",
+        question: "Is this a replacement for ETL or database migration tools?",
         answer:
-          "For very large files, chunking input by table or by INSERT block improves reviewability. The tool processes whatever you paste, but browser memory becomes the limit around 200MB+. For multi-gigabyte exports, use a CLI tool: `pg_dump --data-only | sqltojson` or write a Python/Node script using a streaming SQL parser.",
-      },
-      {
-        question: "Is my SQL data uploaded to a server?",
-        answer:
-          "No — completely client-side. Your SQL data, which may include production records, PII, credentials, or business secrets, never leaves your browser. No analytics, no logging. Verify in DevTools → Network: zero outgoing requests during conversion.",
-      },
-      {
-        question: "Is this a replacement for full ETL tooling?",
-        answer:
-          "No — it's a fast utility for focused conversion tasks: prototyping, debugging, ad-hoc handoffs, test fixtures. For ongoing production data migration or sync (millions of rows, schedule-based), use dedicated ETL tools: AWS DMS, Airbyte, Fivetran, or custom scripts using your language's native SQL drivers.",
+          "No. It is a quick utility for small conversion tasks, fixtures, mocks, and examples. For production data migration, use a database export pipeline, a SQL driver, or a streaming parser built for your database.",
       },
     ],
 

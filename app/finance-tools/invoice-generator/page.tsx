@@ -72,6 +72,17 @@ export const metadata: Metadata = {
 export default function InvoiceGeneratorPage() {
   const toolContent = {
     toolName: TOOL_NAME,
+    definition:
+      "An invoice generator creates professional invoices with client details, line items, taxes, discounts, payment terms, and downloadable PDF output.",
+    quickAnswer:
+      "Add your business details, client details, line items, tax, discount, and payment terms, then download a professional PDF invoice. This invoice maker works in multiple currencies and runs in your browser without signup or watermark.",
+    keyTakeaways: [
+      "Creates PDF invoices for freelancers, contractors, agencies, and small businesses",
+      "Supports line items, quantities, unit prices, tax, discounts, due dates, and payment terms",
+      "Use clear invoice numbers such as INV-2026-001 for easier bookkeeping",
+      "Payment terms like due on receipt, Net 7, Net 14, and Net 30 tell clients when to pay",
+      "Invoice data is processed locally in the browser for privacy",
+    ],
     overview: "Create professional invoices in 15+ languages and 200+ currencies. Auto tax, logo upload, instant PDF download — free, secure, and no sign-up needed. Perfect for freelancers, small businesses, and agencies worldwide.",
 
     features: [

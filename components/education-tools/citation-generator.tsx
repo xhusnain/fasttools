@@ -79,7 +79,7 @@ const SOURCE_TYPES: { value: SourceType; label: string; icon: typeof BookOpen }[
 const STYLES: { value: CiteStyle; label: string; description: string }[] = [
   { value: "apa", label: "APA 7th", description: "American Psychological Association" },
   { value: "mla", label: "MLA 9th", description: "Modern Language Association" },
-  { value: "chicago", label: "Chicago 17th", description: "Chicago Manual of Style" },
+  { value: "chicago", label: "Chicago", description: "Chicago author-date style" },
   { value: "harvard", label: "Harvard", description: "Harvard Referencing Style" },
 ]
 

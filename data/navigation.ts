@@ -105,6 +105,9 @@ export const navigationConfig: MegaMenuSection[] = [
                     { title: "GPA Calculator", href: "/calculator/gpa-calculator", icon: GraduationCap },
                     { title: "Love Calculator", href: "/calculator/love-calculator", icon: Heart },
                     { title: "Ovulation Calc", href: "/calculator/ovulation-calculator", icon: Heart },
+                    { title: "TDEE & Macros", href: "/calculator/tdee-macro-calculator", icon: Activity },
+                    { title: "Biological Age", href: "/calculator/biological-age-calculator", icon: Activity },
+                    { title: "Cortisol Peak", href: "/calculator/cortisol-peak-calculator", icon: Timer },
                 ]
             },
             {
@@ -122,6 +125,7 @@ export const navigationConfig: MegaMenuSection[] = [
                     { title: "Text to Unicode", href: "/converters/unicode", icon: Type },
                     { title: "Text to ASCII Binary", href: "/converters/ascii-binary", icon: Binary },
                     { title: "Text to NATO Alphabet", href: "/converters/nato-phonetic", icon: Radio },
+                    { title: "Morse Code", href: "/converters/morse-code", icon: Radio },
                     { title: "Base64 File Converter", href: "/converters/base64-file", icon: FileImage },
                     { title: "Integer Base Converter", href: "/converters/integer-base", icon: Binary },
                     { title: "Roman Numeral Converter", href: "/converters/roman-numeral", icon: BookOpen },
@@ -165,6 +169,8 @@ export const navigationConfig: MegaMenuSection[] = [
                     { title: "Color Palette", href: "/dev-tools/color-palette", icon: Palette },
                     { title: "Markdown Preview", href: "/dev-tools/markdown-previewer", icon: Eye },
                     { title: "HTML Beautifier", href: "/dev-tools/html-beautifier", icon: Code },
+                    { title: "LLM Training Cost", href: "/dev-tools/llm-training-cost", icon: Calculator },
+                    { title: "Cloudflare Cost", href: "/dev-tools/cloudflare-workers-cost", icon: Zap },
                 ]
             },
             {
@@ -192,7 +198,10 @@ export const navigationConfig: MegaMenuSection[] = [
                     { title: "Auto Loan Calc", href: "/finance-tools/auto-loan-calculator", icon: Car },
                     { title: "Mortgage Calc", href: "/finance-tools/mortgage-calculator", icon: DollarSign },
                     { title: "Credit Card Payoff", href: "/finance-tools/credit-card-payoff", icon: CreditCard },
+                    { title: "Debt Payoff", href: "/finance-tools/debt-payoff-calculator", icon: CreditCard },
                     { title: "Amortization", href: "/finance-tools/amortization-calculator", icon: FileText },
+                    { title: "Rent vs Buy", href: "/finance-tools/rent-vs-buy-calculator", icon: Home },
+                    { title: "Home Affordability", href: "/finance-tools/home-affordability-calculator", icon: Home },
                 ]
             },
             {
@@ -202,7 +211,10 @@ export const navigationConfig: MegaMenuSection[] = [
                     { title: "Compound Interest", href: "/finance-tools/compound-interest", icon: BarChart },
                     { title: "Retirement Calc", href: "/finance-tools/retirement-calculator", icon: PiggyBank },
                     { title: "Savings Tracker", href: "/finance-tools/savings-tracker", icon: PiggyBank },
+                    { title: "Net Worth", href: "/finance-tools/net-worth-calculator", icon: PiggyBank },
                     { title: "Startup Runway", href: "/finance-tools/startup-runway-calculator", icon: TrendingUp },
+                    { title: "SaaS Churn", href: "/finance-tools/saas-churn-calculator", icon: TrendingUp },
+                    { title: "SaaS Payback", href: "/finance-tools/saas-payback-calculator", icon: TrendingUp },
                 ]
             },
             {
@@ -213,6 +225,10 @@ export const navigationConfig: MegaMenuSection[] = [
                     { title: "Invoice Generator", href: "/finance-tools/invoice-generator", icon: FileText },
                     { title: "PayPal G&S", href: "/finance-tools/paypal-goods-and-services-fee-calculator", icon: DollarSign },
                     { title: "Discount Calc", href: "/finance-tools/discount-calculator", icon: Percent },
+                    { title: "Freelance Rate", href: "/finance-tools/freelance-rate-calculator", icon: DollarSign },
+                    { title: "Quarterly Tax", href: "/finance-tools/quarterly-tax-estimator", icon: Receipt },
+                    { title: "Remote Savings", href: "/finance-tools/remote-work-savings", icon: Home },
+                    { title: "Zakat Calculator", href: "/finance-tools/zakat-calculator", icon: Scale },
                 ]
             }
         ]
@@ -226,6 +242,7 @@ export const navigationConfig: MegaMenuSection[] = [
                     { title: "AI Text Summarizer", href: "/ai-tools/text-summarizer", icon: FileText },
                     { title: "Text to Speech", href: "/ai-tools/text-to-speech", icon: Volume2 },
                     { title: "AI QR Generator", href: "/ai-tools/qr-generator", icon: QrCode },
+                    { title: "AI API Cost", href: "/ai-tools/ai-api-cost-calculator", icon: Calculator },
                     { title: "Caption Generator", href: "/ai-tools/caption-generator", icon: Type },
                     { title: "Lyrics Generator", href: "/ai-tools/lyrics-generator", icon: Music },
                     { title: "Pet Name Generator", href: "/ai-tools/pet-names", icon: Smile },
@@ -282,6 +299,8 @@ export const navigationConfig: MegaMenuSection[] = [
                     { title: "Channel Name Gen", href: "/social-media-tools/youtube-channel-name-generator", icon: Type },
                     { title: "Instagram DP Viewer", href: "/social-media-tools/instagram-dp", icon: Eye },
                     { title: "Profile Pic Viewer", href: "/social-media-tools/instagram-profile-picture-viewer", icon: Eye },
+                    { title: "Influencer Rate", href: "/social-media-tools/influencer-rate-calculator", icon: DollarSign },
+                    { title: "TikTok Engagement", href: "/social-media-tools/tiktok-engagement-calculator", icon: TrendingUp },
                 ]
             }
         ]

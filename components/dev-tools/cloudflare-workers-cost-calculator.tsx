@@ -29,6 +29,7 @@ const PRICING = {
     baseFee: 5, // $5/month
     requestsIncluded: 10_000_000,
     requestCostPerMillion: 0.30,
+    cpuIncludedMs: 30_000_000,
     cpuCostPerMillionMs: 0.02, // $0.02 per million ms (Standard pricing)
     kv: {
       readsPerMillion: 0.50,
@@ -50,11 +51,11 @@ const PRICING = {
     },
     durableObjects: {
       requestsPerMillion: 0.15,
-      durationPerMillionSeconds: 12.50, // wall-clock
+      durationPerMillionGbSeconds: 12.50,
       storagePerGB: 0.20,
       storedPerGBIncluded: 1,
       requestsIncluded: 1_000_000,
-      durationIncludedHours: 400_000, // seconds
+      durationIncludedGbSeconds: 400_000,
     }
   }
 }
@@ -112,11 +113,12 @@ export function CloudflareWorkersCostCalculator() {
       // CPU cost (Standard pricing)
       const totalCpuMs = monthlyRequests * cpuMs
       const totalCpuSeconds = totalCpuMs / 1000
-      const cpuTotal = (totalCpuMs / 1_000_000) * p.cpuCostPerMillionMs
+      const billableCpuMs = Math.max(0, totalCpuMs - p.cpuIncludedMs)
+      const cpuTotal = (billableCpuMs / 1_000_000) * p.cpuCostPerMillionMs
       const cpuCost: CpuCost = {
         avgCpuTimeMs: cpuMs,
         totalCpuTimeSeconds: Math.round(totalCpuSeconds),
-        billableCpuTime: totalCpuMs,
+        billableCpuTime: billableCpuMs,
         costPerMillionMs: p.cpuCostPerMillionMs,
         total: plan === "free" ? 0 : Number.parseFloat(cpuTotal.toFixed(2))
       }
@@ -168,13 +170,12 @@ export function CloudflareWorkersCostCalculator() {
       const doHours = Number.parseFloat(doWallClockHours) || 0
       const doGB = Number.parseFloat(doStorageGB) || 0
       const doBillableReq = Math.max(0, doReq - p.durableObjects.requestsIncluded)
-      const doBillableDuration = Math.max(0, doHours * 3600 - p.durableObjects.durationIncludedHours)
+      const doDurationGbSeconds = doHours * 3600 * 0.125
+      const doBillableDuration = Math.max(0, doDurationGbSeconds - p.durableObjects.durationIncludedGbSeconds)
       const doBillableStorage = Math.max(0, doGB - p.durableObjects.storedPerGBIncluded)
       const doReqCost = (doBillableReq / 1_000_000) * p.durableObjects.requestsPerMillion
-      const doDurCost = (doBillableDuration / 1_000_000) * p.durableObjects.durationPerMillionSeconds * 1_000_000 / 1 // per million seconds
       const doStorCost = doBillableStorage * p.durableObjects.storagePerGB
-      // Simplified DO duration cost
-      const doActualDurCost = (doBillableDuration / 1_000_000) * p.durableObjects.durationPerMillionSeconds
+      const doActualDurCost = (doBillableDuration / 1_000_000) * p.durableObjects.durationPerMillionGbSeconds
       const durableObjectsCost: DurableObjectsCost = {
         requests: doReq,
         wallClockHours: doHours,
@@ -215,7 +216,7 @@ export function CloudflareWorkersCostCalculator() {
       const calcScaled = (reqs: number): number => {
         const billable = Math.max(0, reqs - p.requestsIncluded)
         const reqCost = (billable / 1_000_000) * p.requestCostPerMillion
-        const cpu = (reqs * cpuMs / 1_000_000) * p.cpuCostPerMillionMs
+        const cpu = (Math.max(0, reqs * cpuMs - p.cpuIncludedMs) / 1_000_000) * p.cpuCostPerMillionMs
         return p.baseFee + reqCost + cpu
       }
       const scalingProjection: ScalingProjection[] = [
@@ -563,7 +564,7 @@ export function CloudflareWorkersCostCalculator() {
                 </div>
                 <div className="p-2 bg-muted rounded border border-border">
                   <div className="font-medium text-foreground">CPU Time</div>
-                  <div className="text-muted-foreground">$0.02 / million ms</div>
+                  <div className="text-muted-foreground">$0.02 / million ms (30M free)</div>
                 </div>
                 <div className="p-2 bg-muted rounded border border-border">
                   <div className="font-medium text-foreground">KV Reads</div>

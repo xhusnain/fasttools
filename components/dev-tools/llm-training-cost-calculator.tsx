@@ -33,7 +33,8 @@ const gpuSpecs: Record<GpuType, GpuSpec> = {
   t4: { name: "NVIDIA T4", tflops_bf16: 65, memory: 16, tdp: 70 },
 }
 
-// Price per GPU-hour by provider and GPU type (approximate 2026 rates)
+// Approximate public on-demand GPU-hour rates for planning only.
+// Cloud GPU prices vary by region, commitment, availability, tax, and contract.
 const providerPricing: Record<CloudProvider, { name: string; prices: Partial<Record<GpuType, number>> }> = {
   aws: {
     name: "AWS (SageMaker/EC2)",
@@ -49,11 +50,11 @@ const providerPricing: Record<CloudProvider, { name: string; prices: Partial<Rec
   },
   lambda: {
     name: "Lambda Labs",
-    prices: { h100: 2.49, h200: 3.29, a100_80: 1.99, a100_40: 1.29, a10g: 0.60 }
+    prices: { h100: 3.99, a100_80: 2.79, a100_40: 1.99, a10g: 0.60 }
   },
   coreweave: {
     name: "CoreWeave",
-    prices: { h100: 2.23, h200: 3.05, a100_80: 1.85, a100_40: 1.21, l40s: 1.15 }
+    prices: { h100: 6.16, h200: 6.31, a100_80: 2.70, l40s: 2.25 }
   },
 }
 
@@ -256,7 +257,7 @@ export function LLMTrainingCostCalculator() {
             LLM Training Cost Estimator
           </GCardTitle>
           <GCardDescription className="text-base text-muted-foreground">
-            Estimate GPU hours, training time, and cloud costs for training large language models
+            Estimate GPU hours, training time, and cloud costs for training large language models. Provider rates are approximate planning inputs; verify current pricing before buying capacity.
           </GCardDescription>
         </GCardHeader>
         <GCardContent className="space-y-6">
@@ -381,8 +382,11 @@ export function LLMTrainingCostCalculator() {
           <div className="space-y-3">
             <h3 className="text-sm font-semibold text-heading-accent flex items-center gap-2">
               <Cloud className="h-4 w-4" />
-              Cloud Provider
-            </h3>
+                Cloud Provider
+              </h3>
+              <p className="text-xs text-muted-foreground">
+                Public GPU rates change often and differ by region, commitment, and availability.
+              </p>
             <div className="grid grid-cols-2 sm:grid-cols-5 gap-2">
               {(Object.entries(providerPricing) as [CloudProvider, typeof providerPricing.aws][]).map(([key, p]) => (
                 <button
@@ -504,7 +508,7 @@ export function LLMTrainingCostCalculator() {
                 <div className="p-1.5 bg-primary/10 rounded-lg">
                   <Cloud className="h-4 w-4 text-foreground" />
                 </div>
-                Cloud Provider Comparison
+                Approximate Provider Comparison
               </GCardTitle>
             </GCardHeader>
             <GCardContent>
@@ -551,7 +555,7 @@ export function LLMTrainingCostCalculator() {
                 <div className="p-1.5 bg-primary/10 rounded-lg">
                   <Cpu className="h-4 w-4 text-foreground" />
                 </div>
-                GPU Comparison (Best Provider Price)
+                GPU Comparison (Lowest Sample Provider Rate)
               </GCardTitle>
             </GCardHeader>
             <GCardContent>

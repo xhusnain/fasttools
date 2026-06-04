@@ -61,6 +61,17 @@ export const metadata: Metadata = {
 export default function BMRCalculatorPage() {
   const toolContent = {
     toolName: "BMR Calculator — Basal Metabolic Rate & TDEE Analysis",
+    definition:
+      "A BMR calculator estimates basal metabolic rate, the calories your body burns at rest to support basic life functions.",
+    quickAnswer:
+      "Enter age, sex, height, weight, and optional body fat percentage to estimate BMR. Multiply BMR by an activity factor to estimate TDEE, then use the result for maintenance, weight loss, or muscle-gain calorie targets.",
+    keyTakeaways: [
+      "BMR is resting energy burn before exercise and daily activity are added",
+      "Mifflin-St Jeor is commonly used for general adult BMR estimates",
+      "TDEE = BMR multiplied by an activity-level factor",
+      "A 500-calorie daily deficit is often used as a moderate weight-loss starting point",
+      "BMR estimates are not medical tests and can vary with muscle mass, hormones, and health status",
+    ],
     overview: "Calculate your Basal Metabolic Rate (BMR) and Total Daily Energy Expenditure (TDEE) with our free advanced BMR calculator. Choose from three scientifically validated equations — Mifflin-St Jeor (most accurate for general population), Harris-Benedict (classic formula), and Katch-McArdle (best for athletes with known body fat %). Get precise calorie targets for weight loss, maintenance, or muscle gain across five activity levels from sedentary to extra active. Understand metabolic adaptation, build personalized nutrition plans, and track changes in your resting metabolic rate over time.",
 
     howToSteps: [

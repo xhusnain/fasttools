@@ -13,15 +13,15 @@ const toolConfig = createToolConfig({
   toolName: "Base64 Encoder Decoder",
   description:
     "Encode and decode Base64 for text and common binary workflows including URL-safe variants.",
-  metaTitle: "Base64 Encoder / Decoder — Text, File & Data URI Tool",
+  metaTitle: "Base64 Encoder / Decoder — Text, File & URL-Safe Tool",
   metaDescription:
-    "Free Base64 encoder & decoder online. Convert text, files, or images to Base64; decode Base64 back to text or binary. Standard + URL-safe variants, data URI builder, UTF-8 support. 100% client-side, no upload.",
+    "Free Base64 encoder and decoder online. Convert text, files, or images to Base64; decode Base64 back to text, hex, previewable images, or downloadable bytes. Standard and URL-safe modes.",
   path: "/dev-tools/base64-encoder",
 
   header: {
     title: "Base64 Encoder & Decoder",
     description:
-      "Encode text to Base64 or decode Base64 strings back to plain text. Supports standard and URL-safe Base64 with UTF-8 encoding. All processing runs locally — no data uploaded.",
+      "Encode text or files to Base64, or decode Base64 strings back to text, hex, previewable images, or downloadable bytes. Supports standard and URL-safe Base64.",
     titleSize: "medium",
     descriptionSize: "small",
     color: "blue",
@@ -35,7 +35,7 @@ const toolConfig = createToolConfig({
   schemaOptions: {
     applicationCategory: "DeveloperApplication",
     description:
-      "Base64 encoder / decoder for text, files, and images. Standard Base64 + URL-safe Base64URL. Data URI generator for HTML / CSS embedding. UTF-8 aware. 100% client-side.",
+      "Base64 encoder / decoder for text, files, and images. Standard Base64 and URL-safe Base64URL modes. UTF-8 text encoding, file-to-Base64 payload output, decoded image preview, decoded byte download, and optional hex output.",
     alternateName: [
       "Base64 Encoder",
       "Base64 Decoder",
@@ -43,7 +43,7 @@ const toolConfig = createToolConfig({
       "Base64URL Encoder",
       "URL-Safe Base64 Tool",
       "Image to Base64 Converter",
-      "Data URI Generator",
+      "File to Base64 Converter",
       "Base64 to Image Decoder",
       "Base64 Text Tool",
       "MIME Base64 Encoder",
@@ -56,16 +56,16 @@ const toolConfig = createToolConfig({
     featureList: [
       "Encode any UTF-8 text to Base64 (standard or URL-safe variant)",
       "Decode Base64 / Base64URL back to plain UTF-8 text",
-      "File / image encoding: upload a file and get its Base64 representation (for data URIs)",
-      "Data URI generator: produces `data:image/png;base64,...` ready to paste into HTML / CSS",
-      "Base64 to image decoder: paste a data URI and download the original file",
-      "Auto-detect URL-safe variant (replaces + → -, / → _, optional padding strip)",
-      "Padding handling: keep / strip trailing = chars as needed",
+      "File / image encoding: choose a file and get its Base64 payload",
+      "Base64 to image preview for recognized image bytes",
+      "Decoded byte download with detected PNG, JPG, GIF, WebP, PDF, or binary extension",
+      "URL-safe mode for Base64URL strings (replaces + with - and / with _)",
+      "Padding handling for URL-safe input with stripped = characters",
       "Line-break-aware (handles 76-char line breaks from MIME / PEM)",
       "Compatible with Node.js Buffer, Python base64, OpenSSL base64, JavaScript atob/btoa",
       "Real-time conversion as you type — instant feedback",
-      "100% client-side — text, files, and images never leave your browser",
-      "Free, no signup, no size limit, no rate limit",
+      "Browser-side text and file conversion",
+      "No account required",
     ],
     softwareRequirements: "Modern web browser",
     ratingValue: "4.9",
@@ -82,11 +82,11 @@ const toolConfig = createToolConfig({
       "Encodes any text to Base64 and decodes Base64 back to text",
       "Base64 uses A–Z, a–z, 0–9, +, / and = for padding",
       "Encoding increases size by approximately 33% (3 bytes → 4 characters)",
-      "Used in data URIs, email attachments (MIME), and API authentication headers",
-      "All encoding/decoding runs locally in your browser",
+      "Used in data URI payloads, email attachments (MIME), and API authentication headers",
+      "Includes URL-safe mode, decoded hex output, image preview, and decoded byte download",
     ],
     overview:
-      "Encode and decode Base64 online with this free tool. Paste plain text to encode it as Base64, or paste a Base64 string to decode it back to readable text. Supports both standard Base64 (A-Z, a-z, 0-9, +, /) and URL-safe Base64 (replaces + with - and / with _). Useful for API payload debugging, data URI creation, email encoding (MIME), JWT inspection, and embedding binary data in JSON or XML. All encoding and decoding runs locally in your browser — no data is sent to any server.",
+      "Encode and decode Base64 online with this tool. Paste plain text to encode it as Base64, choose a file to get its Base64 payload, or paste a Base64 string to decode it back to readable text, hex, previewable image bytes, or a downloadable file. Supports standard Base64 (A-Z, a-z, 0-9, +, /) and URL-safe Base64 (replaces + with - and / with _). Useful for API payload debugging, JWT inspection, MIME-style encoding checks, and preparing Base64 payloads for JSON, XML, or data URI workflows.",
 
     howToSteps: [
       "Choose encode or decode mode.",
@@ -106,7 +106,7 @@ const toolConfig = createToolConfig({
     useCases: [
       "API request/response debugging",
       "JWT-related base64url checks",
-      "Data URI generation and inspection",
+      "Preparing Base64 payloads for data URI workflows",
       "Encoding checks in integration tests",
     ],
 
@@ -226,17 +226,17 @@ const toolConfig = createToolConfig({
       {
         question: "Can I encode files to Base64?",
         answer:
-          "Yes. The tool supports file encoding to Base64, which is useful for creating data URIs (e.g., data:image/png;base64,...) and embedding images in HTML or CSS.",
+          "Yes. Choose a file and the tool outputs the Base64 payload. If you need a full data URI, add the correct prefix yourself, such as data:image/png;base64, before the Base64 payload.",
       },
       {
         question: "Is this Base64 tool free?",
         answer:
-          "Yes — 100% free, runs locally in your browser, no rate limit, no size limit, no signup. Unlike some tools that gate large-file encoding behind paid tiers, every feature is unlimited here.",
+          "Yes. You can encode and decode text, use URL-safe mode, choose a file, copy output, and download decoded bytes without creating an account.",
       },
       {
         question: "How do I encode an image to Base64 for HTML / CSS?",
         answer:
-          "Upload the image in this tool — it produces a data URI like `data:image/png;base64,iVBORw...` ready to paste into an `<img src=\"...\">` tag or `background-image: url(...)` CSS rule. Best for small icons / SVGs / logos under ~10KB; for larger images, separate file requests are faster due to HTTP caching and the 33% Base64 size penalty.",
+          "Choose the image file and copy the Base64 payload. For HTML or CSS, prepend the correct data URI prefix, for example `data:image/png;base64,` before the payload. Data URIs are best for very small assets; for larger images, separate file requests are usually better because Base64 adds about 33% size overhead and separate files can be cached.",
       },
       {
         question: "Why does Base64 add about 33% to file size?",

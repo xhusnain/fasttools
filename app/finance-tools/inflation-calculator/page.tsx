@@ -70,6 +70,17 @@ export const metadata: Metadata = {
 export default function InflationCalculatorPage() {
   const toolContent = {
     toolName: "Inflation Calculator",
+    definition:
+      "An inflation calculator adjusts money values across years using price-index changes to show purchasing power in past, present, or future dollars.",
+    quickAnswer:
+      "Enter an amount, starting year, and ending year to estimate what that money is worth after inflation. The calculator compares nominal value with real purchasing power using CPI-style inflation math.",
+    keyTakeaways: [
+      "Inflation reduces purchasing power, so the same dollar amount buys less over time",
+      "CPI-based inflation calculators compare price levels between two dates",
+      "Real value is inflation-adjusted; nominal value is the face-dollar amount",
+      "Average inflation rate helps compare long periods, but yearly inflation can vary sharply",
+      "Use inflation-adjusted values when comparing salaries, prices, savings goals, or historical costs",
+    ],
     overview:
       "Professional inflation calculator with long-term CPI history for purchasing power analysis, inflation trends, and value comparisons.",
 

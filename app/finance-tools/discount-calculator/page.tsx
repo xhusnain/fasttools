@@ -75,6 +75,17 @@ export const metadata: Metadata = {
 export default function DiscountCalculatorPage() {
   const toolContent = {
     toolName: TOOL_NAME,
+    definition:
+      "A discount calculator finds the sale price, savings amount, original price, or discount percentage from retail pricing inputs.",
+    quickAnswer:
+      "Enter the original price and discount percentage to calculate the final sale price and total savings. You can also reverse-calculate the original price, apply stacked discounts, and include sales tax to estimate the checkout total.",
+    keyTakeaways: [
+      "Sale price = original price minus original price times discount percentage",
+      "A 25% discount on $80 saves $20 and gives a $60 sale price",
+      "Stacked discounts are applied one after another, not added together",
+      "Reverse discount mode helps recover the original price from a sale price",
+      "Tax should be added after the discount unless local rules say otherwise",
+    ],
     overview: `Calculate percentage discounts, fixed amounts, and final sale prices instantly. Our free discount calculator supports multiple discounts, tax calculations, and works with any currency. Perfect for shopping, business pricing, and financial planning.`,
 
     howToSteps: [

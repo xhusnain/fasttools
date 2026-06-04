@@ -12,7 +12,7 @@ const ColorPaletteGenerator = dynamic(
 const toolConfig = createToolConfig({
   toolName: "Color Palette Generator",
   description:
-    "Free color palette generator. Create beautiful color schemes with 7 harmony rules (complementary, analogous, triadic), extract palettes from images, check WCAG contrast, and export to CSS, Tailwind, SCSS, or JSON. No signup needed.",
+    "Color palette generator for web and UI projects. Create color schemes with 7 harmony rules, extract palettes from images, check WCAG contrast, and export to CSS, Tailwind, SCSS, JSON, or hex.",
   metaTitle: "Color Palette Generator — Harmony, Image Extraction & WCAG Check",
   metaDescription:
     "Free color palette generator. 7 harmony modes (complementary, analogous, triadic, tetradic, split-complementary, monochromatic, random), image color extraction, WCAG AA/AAA contrast checker, export to CSS / Tailwind / SCSS / JSON. Spacebar to regenerate.",
@@ -21,7 +21,7 @@ const toolConfig = createToolConfig({
   schemaOptions: {
     applicationCategory: "DesignApplication",
     description:
-      "Free online color palette generator with 7 color harmony modes (complementary, analogous, triadic, tetradic, split-complementary, monochromatic, random), drag-and-drop image upload with color quantization to extract dominant colors, WCAG AA/AAA contrast ratio checker (on white and black backgrounds), per-color locking with spacebar regeneration, HEX/RGB/HSL value display, and export in 5 formats: CSS variables, Tailwind config, SCSS variables, JSON, and plain hex list. 2-10 colors per palette, 100% client-side processing.",
+      "Online color palette generator with 7 color harmony modes (complementary, analogous, triadic, tetradic, split-complementary, monochromatic, random), image upload with color quantization to extract dominant colors, WCAG AA/AAA contrast ratio checker on white and black backgrounds, per-color locking with spacebar regeneration, HEX/RGB/HSL value display, and export in 5 formats: CSS variables, Tailwind config, SCSS variables, JSON, and plain hex list. 2-10 colors per palette.",
     featureList: [
       "7 color harmony modes: complementary, analogous, triadic, tetradic, split-complementary, monochromatic, random",
       "Extract color palettes from any uploaded image via canvas color quantization",
@@ -33,8 +33,8 @@ const toolConfig = createToolConfig({
       "Export to 5 formats: CSS variables, Tailwind config, SCSS, JSON, plain hex",
       "Variable palette size from 2 to 10 colors",
       "Download exported palette as CSS/JSON/SCSS/JS/TXT file",
-      "100% client-side processing — images and palettes never leave your browser",
-      "No signup, no ads, no usage limits",
+      "Browser-side image color extraction",
+      "No account required",
     ],
     softwareRequirements: "Modern web browser with JavaScript and Canvas API support",
     alternateName: [
@@ -79,16 +79,16 @@ const toolConfig = createToolConfig({
       "Click 'Generate' or press the spacebar to create a random palette. Choose a harmony mode (complementary, triadic, analogous, etc.) for coordinated colors, or upload an image to extract its dominant colors. Click any color to see WCAG contrast ratings and HEX/RGB/HSL values. Lock colors you love, then regenerate the rest. Export as CSS, Tailwind, SCSS, or JSON.",
 
     keyTakeaways: [
-      "7 color harmony modes based on classical color theory — complementary, analogous, triadic, tetradic, split-complementary, monochromatic, and random",
+      "7 color harmony modes based on the color wheel — complementary, analogous, triadic, tetradic, split-complementary, monochromatic, and random",
       "Extract palettes from any uploaded image using canvas-based color quantization (JPG, PNG, GIF, WebP)",
       "WCAG AA/AAA contrast ratio checker built in — verify accessibility on white and black backgrounds for every color",
       "Lock individual colors and regenerate only the rest — press spacebar for instant iteration",
       "Export to 5 developer-friendly formats: CSS custom properties, Tailwind config, SCSS, JSON, and plain hex",
-      "100% client-side — your images and palettes stay in your browser, no server upload",
+      "Image extraction runs in the browser after upload selection",
     ],
 
     overview:
-      "This color palette generator creates beautiful, coordinated color schemes using classical color theory. Choose from 7 harmony modes: complementary (opposite colors for contrast), analogous (adjacent hues for harmony), triadic (3 evenly-spaced colors), tetradic (4-color squares), split-complementary, monochromatic (single-hue variations), or random. Upload any image to extract its dominant colors via client-side quantization. Check WCAG AA/AAA contrast ratios in real time to ensure your palette meets accessibility standards. Lock colors you want to keep and press spacebar to regenerate the rest. When ready, export to CSS variables, Tailwind config, SCSS, JSON, or plain hex — ready to paste into your project. Everything runs in your browser with zero server calls.",
+      "This color palette generator creates coordinated color schemes using common color-wheel relationships. Choose from 7 harmony modes: complementary (opposite colors for contrast), analogous (adjacent hues for harmony), triadic (3 evenly-spaced colors), tetradic (4-color squares), split-complementary, monochromatic (single-hue variations), or random. Upload an image to extract dominant colors with browser-side quantization. Check WCAG AA/AAA contrast ratios in real time to evaluate text readability on white or black backgrounds. Lock colors you want to keep and press spacebar to regenerate the rest. When ready, export to CSS variables, Tailwind config, SCSS, JSON, or a plain hex list.",
 
     howToSteps: [
       "Press 'Generate' or hit the spacebar to create a random 5-color palette. Change the harmony mode to get coordinated colors using color theory rules.",
@@ -99,7 +99,7 @@ const toolConfig = createToolConfig({
     ],
 
     features: [
-      "Color Harmony Modes: 7 scientifically-grounded harmony options based on the color wheel — complementary (180° opposite), analogous (adjacent), triadic (120° apart), tetradic (90° apart), split-complementary, monochromatic (same hue, varied lightness), and random.",
+      "Color Harmony Modes: 7 harmony options based on the color wheel — complementary (180° opposite), analogous (adjacent), triadic (120° apart), tetradic (90° apart), split-complementary, monochromatic (same hue, varied lightness), and random.",
       "Image-Based Palette Extraction: Upload any image (JPG, PNG, GIF, WebP) and the tool uses canvas color quantization to extract the most prominent colors. Great for matching brand photos or design references.",
       "WCAG Contrast Checker: Every selected color shows its contrast ratio against white and black backgrounds, with AA/AAA/Large/Fail ratings built right into the UI. No separate accessibility tool needed.",
       "Color Locking: Lock any color to preserve it while regenerating the rest. Build your palette incrementally by locking good choices and exploring alternatives for the remaining slots.",
@@ -109,8 +109,8 @@ const toolConfig = createToolConfig({
       "Variable Palette Size: Generate 2 to 10 colors per palette. Start with 5 (standard) or expand for more complex design systems.",
       "Multiple Value Formats: Every color is shown in HEX, RGB, and HSL simultaneously — one-click copy for any format.",
       "Remove Individual Colors: Trash any color you don't like without regenerating everything.",
-      "Privacy First: 100% client-side processing. Your uploaded images and generated palettes never leave your browser.",
-      "No Account Needed: No signup, no login, no ads, no daily limits. Use it as much as you want.",
+      "Browser-Side Extraction: Uploaded images are read with Canvas in the page to extract colors.",
+      "No Account Needed: Generate palettes, copy color values, and export formats without creating an account.",
     ],
 
     useCases: [
@@ -302,12 +302,12 @@ const toolConfig = createToolConfig({
       {
         question: "Is this color palette generator free?",
         answer:
-          "Yes, 100% free with no signup, no ads, and no daily limits. You can generate unlimited palettes, extract colors from unlimited images, and export in any format without ever creating an account.",
+          "Yes. You can generate palettes, extract colors from images, and export in the supported formats without creating an account.",
       },
       {
         question: "How do I extract a color palette from an image?",
         answer:
-          "Click the 'From Image' tab, then upload any image (JPG, PNG, GIF, WebP). The tool uses canvas-based color quantization to extract the most prominent colors — typically 5 by default, adjustable from 2 to 10. Processing happens entirely in your browser, so your images never leave your device.",
+          "Click the 'From Image' tab, then upload an image. The tool uses canvas-based color quantization to extract the most prominent colors — typically 5 by default, adjustable from 2 to 10.",
       },
       {
         question: "What are color harmony modes?",
@@ -352,7 +352,7 @@ const toolConfig = createToolConfig({
       {
         question: "Is my data private?",
         answer:
-          "Yes. This tool runs 100% in your browser. Images you upload are processed locally via HTML5 Canvas — they're never uploaded to any server. Generated palettes also stay on your device until you explicitly copy or download them.",
+          "Image color extraction runs in the browser with HTML5 Canvas after you choose a file. Avoid uploading confidential material into any web page unless your own policy allows it.",
       },
     ],
 

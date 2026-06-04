@@ -63,6 +63,17 @@ export const metadata: Metadata = {
 export default function TriangleCalculatorPage() {
     const toolContent = {
         toolName: "Triangle Calculator",
+        definition:
+            "A triangle calculator solves missing sides, angles, area, perimeter, heights, medians, inradius, and circumradius from known triangle measurements.",
+        quickAnswer:
+            "Enter the triangle values you know, such as three sides, two sides and an angle, or two angles and a side. The calculator solves the missing sides and angles and returns area, perimeter, triangle type, and related geometry values.",
+        keyTakeaways: [
+            "SSS, SAS, ASA, AAS, and SSA inputs solve different triangle cases",
+            "Triangle side lengths must satisfy the triangle inequality theorem",
+            "The angles of any triangle add to 180 degrees",
+            "Heron's formula calculates area from three side lengths",
+            "SSA can be ambiguous and may produce zero, one, or two valid triangles",
+        ],
         overview: "Solve any triangle by entering known sides and angles using SSS, SAS, ASA, AAS, or SSA methods with our free triangle calculator. The tool computes triangle area via Heron's formula, base-height method, or SAS formula; finds all unknown angles using the Law of Cosines and Law of Sines; and calculates perimeter, semiperimeter, all three heights (altitudes), medians, inradius, circumradius, and triangle type classification (equilateral, isosceles, scalene, right, obtuse, acute). Results display in both degrees and radians with 6-decimal precision suitable for geometry homework, engineering structural analysis, architectural design, surveying, and construction layout.",
 
         howToSteps: [

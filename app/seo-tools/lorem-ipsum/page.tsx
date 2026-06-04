@@ -12,10 +12,10 @@ const LoremIpsumGenerator = dynamic(
 const toolConfig = createToolConfig({
   toolName: "Lorem Ipsum Generator",
   description:
-    "Generate placeholder text in paragraph, sentence, or word format for wireframes, prototypes, and publishing templates.",
-  metaTitle: "Lorem Ipsum Generator — Paragraphs, Sentences, Words & HTML Markup",
+    "Generate plain-text Lorem Ipsum paragraphs for wireframes, prototypes, mockups, and draft layouts.",
+  metaTitle: "Lorem Ipsum Generator — Plain Text Paragraphs for Mockups",
   metaDescription:
-    "Free Lorem Ipsum placeholder text generator. Paragraphs, sentences, words, or list items. Configurable count. Plain text, HTML markup with `<p>` tags, or markdown. Classic Lorem opener option. For designers, devs, and mockups.",
+    "Free Lorem Ipsum generator for placeholder paragraphs. Choose 1-10 paragraphs, generate plain text, and copy it for designs, wireframes, CMS drafts, and mockups.",
   path: "/seo-tools/lorem-ipsum",
 
   header: {
@@ -44,53 +44,45 @@ const toolConfig = createToolConfig({
       "Mockup Text Tool",
       "Wireframe Text Generator",
       "Design Filler Generator",
-      "HTML Lorem Ipsum",
-      "Markdown Lorem Generator",
-      "Bacon Ipsum Alternative",
-      "Hipster Ipsum Alternative",
-      "Lipsum.com Alternative",
       "Random Text Generator",
       "Test Content Generator",
     ],
     featureList: [
-      "Generate paragraphs (1-100), sentences (1-200), or words (1-2000)",
-      "Output as plain text, HTML with `<p>` tags, or Markdown",
-      "Optional classic opener: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit'",
-      "Variable sentence length for realistic-looking copy",
-      "Bulleted / numbered list mode for menu mockups",
+      "Generate 1-10 Lorem Ipsum paragraphs",
+      "Plain text output for easy pasting",
+      "Classic Lorem Ipsum starter paragraph included",
+      "Cycles through five standard placeholder paragraphs for longer output",
       "One-click copy to clipboard",
-      "Download as .txt or .html",
-      "Counter showing words / chars / paragraphs in output",
-      "100% client-side, no signup",
+      "Fast regeneration for design iteration",
+      "No signup required",
     ],
     offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },
   },
 
   content: {
     definition:
-      "A Lorem Ipsum Generator is a free tool that creates placeholder text in paragraphs, sentences, or words for use in design mockups, wireframes, and development templates.",
+      "A Lorem Ipsum Generator creates placeholder paragraphs for design mockups, wireframes, development templates, and draft layouts.",
     quickAnswer:
-      "Select the amount (paragraphs, sentences, or words), set the count, and generate placeholder text instantly. Copy the Lorem Ipsum text for use in layouts, presentations, or code templates. Starts with the classic 'Lorem ipsum dolor sit amet.'",
+      "Enter the number of paragraphs, generate Lorem Ipsum, and copy the plain-text output into your design file, CMS draft, or code template.",
     keyTakeaways: [
-      "Generates placeholder text in paragraphs, sentences, or word counts",
+      "Generates 1-10 plain-text Lorem Ipsum paragraphs",
       "Lorem Ipsum has been used since the 1500s for typesetting previews",
       "Based on a scrambled passage from Cicero's 'De Finibus Bonorum et Malorum'",
       "Standard in web design, graphic design, and document templates",
-      "Customizable output length — from a few words to dozens of paragraphs",
+      "Useful for testing layout rhythm, overflow, and responsive text blocks",
     ],
     overview:
       "Lorem Ipsum is standard placeholder copy used to test layout, spacing, and typography before final content is ready. This generator helps teams create the exact amount of text needed for UI components, templates, and publication drafts.",
 
     howToSteps: [
-      "Choose output type: paragraphs, sentences, or words.",
-      "Set quantity for the layout you are testing.",
+      "Enter how many paragraphs you need, from 1 to 10.",
       "Generate and copy the output.",
       "Paste into your design file, CMS draft, or code template.",
     ],
 
     features: [
-      "Paragraph, sentence, and word generation modes",
-      "Adjustable output volume",
+      "Plain-text paragraph generation",
+      "Adjustable paragraph count from 1 to 10",
       "Fast regeneration for iteration",
       "Copy-ready output for design tools and editors",
       "Useful for web, product, and print workflows",

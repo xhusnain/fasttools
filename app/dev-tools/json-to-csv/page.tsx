@@ -12,16 +12,16 @@ const JSONToCSV = dynamic(
 const toolConfig = createToolConfig({
   toolName: "JSON to CSV Converter",
   description:
-    "Convert JSON arrays and object data to CSV format for spreadsheet and reporting workflows.",
-  metaTitle: "JSON to CSV Converter — Convert JSON Arrays to Excel-Ready CSV",
+    "Convert JSON arrays or objects to CSV with union headers, dot-notation flattening, delimiter choice, and optional UTF-8 BOM for spreadsheet workflows.",
+  metaTitle: "JSON to CSV Converter - Convert JSON Arrays to Excel CSV",
   metaDescription:
-    "Free JSON to CSV converter. Transform JSON arrays / API responses into CSV for Excel, Google Sheets, BigQuery, Snowflake. Auto-detect headers, flatten nested objects with dot notation, choose delimiter, UTF-8 BOM toggle. 100% client-side.",
+    "Convert JSON to CSV online. Paste a JSON array or object, flatten nested objects with dot notation, choose comma/semicolon/tab delimiter, copy CSV, or download with optional UTF-8 BOM.",
   path: "/dev-tools/json-to-csv",
 
   header: {
     title: "JSON to CSV Converter",
     description:
-      "Convert JSON arrays to CSV format for Excel, Google Sheets, and databases. Auto-detects column headers from JSON keys, flattens nested objects, and lets you download as .csv — free, no data uploaded.",
+      "Convert JSON arrays and objects into CSV for Excel, Google Sheets, reports, and data handoffs. Flattens nested objects and supports comma, semicolon, or tab delimiters.",
     titleSize: "medium",
     descriptionSize: "small",
     color: "blue",
@@ -35,37 +35,33 @@ const toolConfig = createToolConfig({
   schemaOptions: {
     applicationCategory: "DeveloperApplication",
     description:
-      "JSON to CSV converter: transforms JSON arrays of objects into RFC 4180-compliant CSV. Auto-detects column headers, flattens nested objects with dot notation, handles arrays, nulls, dates. Configurable delimiter (comma/semicolon/tab) and UTF-8 BOM. 100% client-side.",
+      "JSON to CSV converter for JSON arrays or single objects. Builds a union of all object keys, flattens nested objects with dot notation, JSON-stringifies arrays, escapes CSV values, supports comma/semicolon/tab delimiters, copies CSV, and downloads data.csv with optional UTF-8 BOM.",
     alternateName: [
       "JSON to CSV",
       "Convert JSON to Excel",
+      "JSON Array to CSV",
       "JSON Array to Spreadsheet",
       "API Response to CSV",
       "JSON to Google Sheets",
       "JSON to TSV Converter",
-      "MongoDB Export to CSV",
-      "JSON Flattener",
       "Nested JSON to CSV",
-      "ConvertCSV Alternative",
       "JSON Table Generator",
       "JSON to Excel Converter",
       "Webhook JSON to CSV",
-      "JSON Data Exporter",
       "Array to CSV",
     ],
     featureList: [
-      "Auto-detects all unique keys across array to build complete column header set",
-      "Flattens nested objects with dot notation (e.g., `address.city`, `meta.tags[0]`)",
-      "Configurable delimiter: comma (RFC 4180 standard), semicolon (European Excel), tab (.tsv), pipe",
-      "Properly escapes commas, quotes, and newlines within values per RFC 4180",
-      "UTF-8 BOM toggle for Excel-on-Windows compatibility with non-ASCII characters",
-      "Null handling: empty string, NULL literal, or omit",
-      "Array-within-object handling: pipe-separated, comma-separated, or JSON-stringified",
-      "Date / timestamp preservation in ISO 8601 format",
-      "Compatible output for: Excel, Google Sheets, LibreOffice Calc, BigQuery, Snowflake, PostgreSQL COPY, MySQL LOAD DATA",
-      "Live preview: see CSV update as you paste / edit JSON",
-      "Download as .csv or .tsv, or copy CSV text directly to clipboard",
-      "100% client-side — large JSON files (10MB+) processed without server upload",
+      "Converts JSON arrays of objects to CSV rows",
+      "Wraps a single JSON object as one CSV row",
+      "Builds column headers from the union of keys across all rows",
+      "Flattens nested objects with dot notation such as user.email",
+      "Serializes arrays as JSON strings inside CSV cells",
+      "Escapes delimiter characters, double quotes, and line breaks",
+      "Delimiter options: comma, semicolon, and tab",
+      "Optional UTF-8 BOM on download for Excel compatibility",
+      "Copy CSV output to clipboard",
+      "Download output as data.csv",
+      "Browser-side conversion",
     ],
     softwareRequirements: "Modern web browser",
     ratingValue: "4.9",
@@ -75,182 +71,153 @@ const toolConfig = createToolConfig({
 
   content: {
     definition:
-      "A JSON to CSV Converter is a free tool that transforms JSON arrays of objects into comma-separated values (CSV) format for use in spreadsheets and databases.",
+      "A JSON to CSV converter transforms JSON values into comma-separated rows so the data can be opened in spreadsheets, reports, and database import workflows.",
     quickAnswer:
-      "Paste a JSON array of objects to instantly convert it to CSV format. The tool auto-detects column headers from JSON keys, flattens nested objects, and lets you download the result as a .csv file.",
+      "Paste a JSON array of objects, choose a delimiter, click Convert to CSV, then copy or download the output. Nested objects become dot-notation columns such as user.name, and arrays are kept as JSON strings inside cells.",
     keyTakeaways: [
-      "Converts JSON arrays to CSV with auto-detected column headers",
-      "Flattens nested JSON objects using dot notation (user.name)",
-      "Handles arrays, nulls, and mixed data types gracefully",
-      "Download result as .csv file for Excel, Google Sheets, or databases",
-      "All processing runs locally — no data uploaded to servers",
+      "Converts JSON arrays and single objects into CSV",
+      "Builds headers from all object keys, not only the first row",
+      "Flattens nested objects into dot-notation columns",
+      "Supports comma, semicolon, and tab delimiters",
+      "Can add a UTF-8 BOM to downloaded CSV files for Excel compatibility",
     ],
     overview:
-      "Convert JSON to CSV format instantly with this free online converter. Paste a JSON array of objects and the tool auto-detects column headers from JSON keys, flattens nested objects using dot notation, and generates a clean CSV file ready for Excel, Google Sheets, or database import. Handles arrays, null values, and mixed data types. Download the result as a .csv file or copy to clipboard. All processing runs locally in your browser — no data uploaded to any server.",
+      "Use this JSON to CSV converter when you need to move API responses, webhook payloads, exported records, or sample JSON into a spreadsheet-friendly format. The converter parses the JSON, flattens nested objects with dot notation, builds a full header row from every key found across the data, and escapes values so commas, quotes, and line breaks do not break the CSV. Arrays are preserved as JSON strings in their cells. You can copy the CSV text or download a data.csv file.",
 
     howToSteps: [
-      "Paste your JSON data (array of objects) into the input panel.",
-      "The tool auto-detects column headers from JSON keys and generates CSV output.",
-      "Review the CSV preview — check column mapping and value formatting.",
-      "Download the .csv file or copy the CSV text to clipboard for Excel, Sheets, or database import.",
+      "Paste a JSON array of objects, a single object, or a top-level primitive value.",
+      "Choose the delimiter: comma, semicolon, or tab.",
+      "Enable UTF-8 BOM if you plan to open the downloaded file in Excel on Windows.",
+      "Click Convert to CSV.",
+      "Copy the CSV text or download data.csv.",
     ],
 
     features: [
-      "Auto-detect column headers from JSON object keys",
-      "Flatten nested JSON objects using dot notation (e.g., user.name)",
-      "Handle arrays, nulls, booleans, and mixed data types",
-      "Download as .csv file or copy CSV text to clipboard",
-      "100% client-side processing — no data uploaded to servers",
-      "Supports large JSON datasets with thousands of records",
+      "JSON array to CSV conversion",
+      "Single-object JSON conversion",
+      "Nested object flattening",
+      "Union header detection",
+      "Array values preserved as JSON strings",
+      "CSV escaping for quotes, delimiters, and newlines",
+      "Comma, semicolon, and tab delimiter modes",
+      "Optional UTF-8 BOM on download",
+      "Copy and download output",
     ],
 
     useCases: [
-      "Convert API JSON responses to CSV for analysis in Excel or Google Sheets",
-      "Export database query results from JSON to CSV for business reporting",
-      "Transform webhook payload data into spreadsheet-friendly format",
-      "Convert MongoDB/CouchDB JSON exports to CSV for data migration",
-      "Prepare JSON data for import into SQL databases or BI tools",
+      "Convert API JSON responses into CSV for Excel or Google Sheets",
+      "Turn webhook payloads into rows for reporting",
+      "Prepare sample JSON data for CSV-based imports",
+      "Flatten small MongoDB or NoSQL-style records for inspection",
+      "Create quick CSV fixtures from JSON test data",
     ],
 
     aboutTool: (
       <div className="space-y-6 text-muted-foreground">
         <div>
-          <h3 className="text-lg font-semibold text-foreground mb-2">From JSON to Spreadsheet: Why You Need This</h3>
+          <h3 className="text-lg font-semibold text-foreground mb-2">How Nested JSON Becomes CSV</h3>
           <p>
-            JSON is the standard data format for APIs, NoSQL databases, and configs — but analysts, business users, and BI tools live in spreadsheets and SQL tables. This converter bridges the gap. Paste a JSON array of objects, get a clean CSV file ready for Excel, Google Sheets, BigQuery LOAD, Snowflake COPY, PostgreSQL COPY, or any other tool that accepts CSV. The tool handles the messy parts: header normalization, value escaping per RFC 4180, nested-object flattening, array serialization, UTF-8 encoding for international characters.
+            Nested objects are flattened with dot notation. A value such as{" "}
+            <code>&#123;&quot;user&quot;:&#123;&quot;email&quot;:&quot;a@example.com&quot;&#125;&#125;</code>{" "}
+            becomes a CSV column named <code>user.email</code>. This keeps nested API
+            responses readable while still producing a flat table that spreadsheet tools can open.
           </p>
         </div>
 
         <div>
-          <h3 className="text-lg font-semibold text-foreground mb-2">How Nested Objects Become Columns</h3>
-          <p>Given JSON:</p>
-          <pre className="bg-muted p-3 rounded mt-2 text-xs overflow-x-auto">
-            <code>{`[
-  { "id": 1, "user": { "name": "Alice", "email": "a@x.com" }, "tags": ["admin", "vip"] },
-  { "id": 2, "user": { "name": "Bob",   "email": "b@x.com" }, "tags": ["user"] }
-]`}</code>
-          </pre>
-          <p className="mt-3">CSV output:</p>
-          <pre className="bg-muted p-3 rounded mt-2 text-xs overflow-x-auto">
-            <code>{`id,user.name,user.email,tags
-1,Alice,a@x.com,"admin|vip"
-2,Bob,b@x.com,user`}</code>
-          </pre>
-          <p className="mt-3">
-            Nested objects are flattened using dot notation (<code>user.name</code>, <code>user.email</code>). Arrays inside objects can be joined with a separator (<code>|</code> by default — configurable to comma or JSON-stringified). This produces a flat tabular structure that fits naturally into spreadsheet / SQL paradigms.
+          <h3 className="text-lg font-semibold text-foreground mb-2">Header Detection</h3>
+          <p>
+            The converter scans every row and builds a union of all keys it finds. If row one has
+            <code>name</code> and row two has <code>email</code>, the output includes both columns.
+            Missing values are left as empty cells. This is useful for NoSQL-style exports where
+            records do not always share the same shape.
           </p>
         </div>
 
         <div>
-          <h3 className="text-lg font-semibold text-foreground mb-2">Delimiter Choice: Comma vs Semicolon vs Tab</h3>
+          <h3 className="text-lg font-semibold text-foreground mb-2">Arrays and Complex Values</h3>
+          <p>
+            Arrays are serialized as JSON strings inside their CSV cell, for example{" "}
+            <code>[&quot;admin&quot;,&quot;editor&quot;]</code>. Empty objects are written as{" "}
+            <code>&#123;&#125;</code>, and null or undefined values become empty cells. If your
+            target system needs arrays split into multiple rows, transform the JSON before
+            converting it to CSV.
+          </p>
+        </div>
+
+        <div>
+          <h3 className="text-lg font-semibold text-foreground mb-2">Delimiter Choice</h3>
           <ul className="list-disc pl-6 space-y-1">
-            <li><strong>Comma (.csv, RFC 4180 default):</strong> universal — works in Excel (English locale), Google Sheets, BigQuery, Snowflake, programming languages</li>
-            <li><strong>Semicolon (.csv, European Excel):</strong> required for Excel installations with European locales (Germany, France, etc.) where comma is the decimal separator. Excel auto-detects but to be safe, use semicolons for European audiences.</li>
-            <li><strong>Tab (.tsv):</strong> for pasting directly into Excel / Google Sheets cells; also used by BigQuery and some database loaders</li>
-            <li><strong>Pipe (|):</strong> rare but useful when values contain both commas and quotes — pipes are unambiguous</li>
+            <li><strong>Comma:</strong> standard CSV and the best default for most tools.</li>
+            <li><strong>Semicolon:</strong> useful for spreadsheet locales where comma is a decimal separator.</li>
+            <li><strong>Tab:</strong> useful for TSV-style output or pasting into spreadsheet cells.</li>
           </ul>
         </div>
 
         <div>
-          <h3 className="text-lg font-semibold text-foreground mb-2">RFC 4180 Escaping — Why It Matters</h3>
+          <h3 className="text-lg font-semibold text-foreground mb-2">CSV Escaping</h3>
           <p>
-            Values containing commas, double quotes, or line breaks must be escaped or your CSV breaks. RFC 4180 specifies: wrap any value containing <code>,</code> <code>&quot;</code> or newline in double quotes; double up any embedded double quote. So <code>He said &quot;hi&quot;</code> becomes <code>&quot;He said &quot;&quot;hi&quot;&quot;&quot;</code>. The tool handles this automatically — if a column value contains a comma, it&apos;s quoted; if it contains a newline (common in long descriptions), it&apos;s also quoted and the newline preserved within the quotes. Without this escaping, Excel and pandas will split your row at the wrong commas.
+            Values containing the selected delimiter, double quotes, or line breaks are wrapped in
+            double quotes. Existing quotes are doubled, which is the standard CSV escaping pattern.
+            This prevents values like <code>ACME, Inc.</code> or multi-line descriptions from
+            splitting into the wrong columns.
           </p>
         </div>
 
         <div>
-          <h3 className="text-lg font-semibold text-foreground mb-2">UTF-8 BOM for Excel Compatibility</h3>
+          <h3 className="text-lg font-semibold text-foreground mb-2">Excel UTF-8 BOM</h3>
           <p>
-            Excel on Windows doesn&apos;t detect UTF-8 by default — if your data contains non-ASCII characters (accented letters, Chinese, emoji), Excel may render them as garbage. The fix: prepend a UTF-8 BOM (Byte Order Mark: <code>0xEF 0xBB 0xBF</code>) to the CSV. The tool offers a checkbox to include the BOM. Enable it for Excel-on-Windows users; disable for programmatic consumers (pandas, etc.) which see the BOM as part of the first column header.
+            The UTF-8 BOM option adds a byte-order marker to downloaded files. This helps some
+            Excel installations recognize non-ASCII text such as accented characters and emoji.
+            Leave it off when another program complains about an unexpected marker in the first
+            column name.
           </p>
         </div>
 
         <div>
-          <h3 className="text-lg font-semibold text-foreground mb-2">Common Use Cases</h3>
-          <ul className="list-disc pl-6 space-y-1">
-            <li><strong>API response → spreadsheet analysis:</strong> curl an API, paste the JSON response, download CSV, open in Excel</li>
-            <li><strong>MongoDB / Firestore export:</strong> dump documents as JSON, convert to CSV for SQL import or BI tools</li>
-            <li><strong>Webhook payload analysis:</strong> save webhook bodies, batch-convert for reporting</li>
-            <li><strong>GA4 / analytics platform exports:</strong> JSON from APIs → CSV for stakeholders</li>
-            <li><strong>Customer data migration:</strong> CRM JSON → CSV → spreadsheet for editing → import to new system</li>
-            <li><strong>Survey response export:</strong> JSON survey data → CSV for analysis in Excel / SPSS / R</li>
-            <li><strong>Log analysis:</strong> JSON application logs → CSV → pivot tables in Excel</li>
-            <li><strong>ETL prototyping:</strong> quick JSON → CSV step before building a proper pipeline</li>
-          </ul>
-        </div>
-
-        <div>
-          <h3 className="text-lg font-semibold text-foreground mb-2">Privacy</h3>
+          <h3 className="text-lg font-semibold text-foreground mb-2">Limits to Review</h3>
           <p>
-            All JSON parsing, flattening, and CSV generation runs in your browser using JavaScript. Your data — including any PII, tokens, or confidential business data — never touches a server. No analytics, no logging, no upload. Verify in DevTools → Network: paste a JSON payload, click convert, and confirm zero outgoing requests. Safe for proprietary data, GDPR-sensitive content, HIPAA-relevant records.
+            Conversion happens in the browser, so very large JSON payloads depend on browser memory
+            and device speed. For production-scale exports, streaming conversion through a script,
+            database export tool, or ETL pipeline is more reliable.
           </p>
         </div>
       </div>
     ),
 
     proTip:
-      "For Excel-on-Windows users with non-ASCII data, enable the UTF-8 BOM checkbox — without it, accented characters and emoji display as garbage. For European Excel users, use semicolon delimiter. For SQL import (PostgreSQL COPY, MySQL LOAD DATA), keep comma delimiter and disable BOM. For nested JSON, the dot-notation columns make great BI-tool dimensions. For arrays-within-objects, choose 'pipe-separated' if values are simple strings, or 'JSON stringified' if you need to preserve the original structure for later processing.",
+      "For Excel on Windows, enable the UTF-8 BOM before downloading if your data includes non-ASCII characters. For deeply nested or array-heavy data, review the flattened columns before importing into a database or BI tool.",
 
     faqs: [
       {
-        question: "How do I convert JSON to CSV?",
+        question: "What JSON format works best?",
         answer:
-          "Paste your JSON array of objects into the input field. The tool automatically generates CSV with column headers from JSON keys. Download the .csv file or copy the text to clipboard.",
+          "A JSON array of objects works best, for example [{\"name\":\"John\"},{\"name\":\"Jane\"}]. A single object also works and becomes one CSV row.",
       },
       {
         question: "Can this handle nested JSON objects?",
         answer:
-          "Yes. Nested objects are flattened using dot notation — for example, {user: {name: 'John'}} becomes a column named 'user.name' with value 'John'.",
+          "Yes. Nested objects are flattened with dot notation. For example, {\"user\":{\"name\":\"John\"}} becomes a column named user.name.",
       },
       {
-        question: "Can I open the CSV output in Excel or Google Sheets?",
+        question: "How are arrays handled?",
         answer:
-          "Yes. Download the .csv file and open it directly in Excel, Google Sheets, LibreOffice Calc, or any spreadsheet application.",
+          "Arrays are written as JSON strings inside the CSV cell. If you need each array item as its own row, reshape the JSON before conversion.",
       },
       {
-        question: "Is my JSON data uploaded to a server?",
+        question: "Can I use the output in Excel or Google Sheets?",
         answer:
-          "No. All conversion runs locally in your browser. No data is sent to any server — this makes it safe for sensitive or proprietary data.",
+          "Yes. Download the CSV file or copy the output and open it in Excel, Google Sheets, LibreOffice Calc, or another spreadsheet tool.",
       },
       {
-        question: "What JSON format does this converter expect?",
+        question: "Why should I use semicolon or tab output?",
         answer:
-          "The converter works best with JSON arrays of objects, like [{\"name\":\"John\",\"age\":30},{\"name\":\"Jane\",\"age\":25}]. Each object becomes a CSV row, and keys become column headers.",
+          "Semicolon output can be useful for spreadsheet locales that use comma as a decimal separator. Tab output is useful for TSV-style files or direct spreadsheet pasting.",
       },
       {
-        question: "Is this JSON to CSV converter free?",
+        question: "Is this a full ETL converter?",
         answer:
-          "Yes — 100% free, no signup, no rate limit, no size limit. Unlike some tools that gate features behind paid tiers or require sign-in for large files, every feature here is unlimited and free forever.",
-      },
-      {
-        question: "How do I open the CSV in Excel without garbled characters?",
-        answer:
-          "Enable the UTF-8 BOM checkbox before downloading. Excel on Windows requires the BOM to correctly detect UTF-8 encoding — without it, accented characters and emoji appear as 'Ã©' or '?'. The BOM is a 3-byte marker (EF BB BF) at the start of the file that tells Excel 'this is UTF-8'. For European locales, also use semicolon delimiter instead of comma.",
-      },
-      {
-        question: "Can I convert JSON with thousands of rows?",
-        answer:
-          "Yes — easily. The tool handles JSON files with hundreds of thousands of rows. Processing is client-side so the constraint is browser memory, typically allowing files up to ~50-100 MB on a modern machine. For larger datasets, split into chunks or use a CLI tool like jq + csvkit.",
-      },
-      {
-        question: "What if my JSON objects have different keys?",
-        answer:
-          "The converter scans ALL objects and builds a union of every unique key as columns. Missing values produce empty cells (or whatever you set as the 'null handling' option). This handles inconsistent JSON (common from MongoDB or NoSQL exports) gracefully — every row gets every column, just with empty values where the source didn't have that key.",
-      },
-      {
-        question: "Can I convert nested JSON to CSV?",
-        answer:
-          "Yes. Nested objects are flattened with dot notation: `{user: {name: 'Alice'}}` becomes column `user.name` with value `Alice`. Deeply nested structures (3+ levels) flatten the same way: `user.address.city`. Arrays inside objects are joined with a configurable separator (pipe, comma, or JSON-stringified for preservation).",
-      },
-      {
-        question: "Will this work for BigQuery / Snowflake / Redshift COPY?",
-        answer:
-          "Yes — the output is RFC 4180-compliant CSV that all major data warehouses accept. Use comma delimiter, disable BOM (data warehouses don't need it and may interpret it as data), and ensure NULL handling matches your target (BigQuery wants empty for NULL, Snowflake accepts both empty and the literal 'NULL').",
-      },
-      {
-        question: "Is my JSON data uploaded anywhere?",
-        answer:
-          "No. All conversion runs locally in your browser. Your JSON data — including any tokens, PII, or business-sensitive content — never reaches any server. Safe for proprietary data. Verify by opening DevTools → Network tab while converting: zero outgoing requests.",
+          "No. It is a quick browser tool for pasted JSON and small-to-medium handoffs. For large exports or recurring jobs, use a script or data pipeline.",
       },
     ],
 

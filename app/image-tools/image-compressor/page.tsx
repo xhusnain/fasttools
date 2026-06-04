@@ -12,16 +12,16 @@ const ImageCompressor = dynamic(
 const toolConfig = createToolConfig({
   toolName: "Image Compressor",
   description:
-    "Compress JPG, PNG, WebP, and GIF in your browser with quality and target-size controls. Batch up to 100 images, ZIP download, 100% client-side.",
+    "Compress JPG, PNG, and WebP images in your browser with quality, max file size, and resolution controls. Batch up to 100 images and download a ZIP.",
   metaTitle: "Image Compressor — Reduce JPG, PNG, WebP File Size",
   metaDescription:
-    "Free image compressor. Compress JPG, PNG, WebP, and GIF to a target KB/MB or by quality slider. Batch up to 100 images, ZIP download. 100% client-side — images never leave your browser.",
+    "Free image compressor. Compress JPG, PNG, and WebP with quality, max MB, and resolution sliders. Batch up to 100 images, ZIP download, browser-based.",
   path: "/image-tools/image-compressor",
 
   schemaOptions: {
     applicationCategory: "MultimediaApplication",
     description:
-      "Browser-based image compressor for JPG, PNG, WebP, and GIF with quality slider, target file size in KB/MB, batch processing, and ZIP download.",
+      "Browser-based image compressor for JPG, PNG, and WebP with quality slider, max file size control, max resolution control, batch processing, and ZIP download.",
     alternateName: [
       "Photo Compressor",
       "JPG Compressor",
@@ -30,28 +30,23 @@ const toolConfig = createToolConfig({
       "Reduce Image File Size",
       "Compress Image to KB",
       "Compress Image to MB",
-      "Compress Image to 20KB / 50KB / 100KB / 200KB / 500KB / 1MB",
+      "Compress Image to 50KB / 100KB / 200KB / 500KB / 1MB",
       "Batch Image Compressor",
       "Bulk Image Compressor",
       "Image Optimizer",
-      "TinyPNG Alternative",
-      "ShortPixel Alternative",
       "JPEG Optimizer",
       "Photo Size Reducer",
     ],
     featureList: [
-      "Compress JPG, PNG, WebP, GIF (lossy and lossless)",
+      "Compress JPG, PNG, and WebP images",
       "Quality slider (10–100%)",
-      "Target file size mode — compress to exact KB or MB",
-      "Common targets: 20KB, 50KB, 100KB, 200KB, 500KB, 1MB",
-      "Resolution downscaling option",
+      "Max file size slider from 0.01 MB to 5 MB",
+      "Resolution downscaling up to 4096 px",
       "Batch processing up to 100 images at once",
-      "Side-by-side before/after preview with file size delta",
+      "Before and after file size comparison",
       "ZIP download for batch output",
       "Drag-and-drop upload",
-      "Preserves EXIF or strips for privacy",
-      "Output format conversion (JPG → WebP for ~30% smaller)",
-      "100% client-side — images never uploaded to any server",
+      "100% browser-based processing",
       "Free, no signup, no watermark, no usage limits",
     ],
     softwareRequirements: "Modern web browser",
@@ -78,20 +73,20 @@ const toolConfig = createToolConfig({
     definition:
       "An Image Compressor is a free tool that reduces image file size while maintaining visual quality for faster web loading and smaller storage footprint.",
     quickAnswer:
-      "Upload images (PNG, JPG, WebP) and adjust the quality slider to control compression. Preview the result and compare file sizes. Download optimized images individually or as a batch ZIP file.",
+      "Upload JPG, PNG, or WebP images, then adjust quality, max file size, and max resolution to reduce file size. Compare the before/after size and download each compressed image or all results as a ZIP.",
     keyTakeaways: [
-      "Reduces image file size by 50-90% with minimal visual quality loss",
-      "Supports PNG, JPG, WebP, and GIF formats",
-      "Adjustable quality slider for fine-tuned compression",
-      "Batch processing for multiple images at once",
-      "All compression runs locally — images never leave your browser",
+      "Compresses JPG, PNG, and WebP images with quality and size controls",
+      "Max file size slider can target small outputs such as 50KB, 100KB, 200KB, 500KB, or 1MB",
+      "Max resolution control helps when quality compression alone is not enough",
+      "Batch processing supports up to 100 images with ZIP download",
+      "Compression runs in your browser session without an account",
     ],
     overview:
-      "Image Compressor helps you reduce file size before publishing to websites, forms, email, and social platforms. You can tune output using quality, max-size, and max-resolution controls, then download each image or export all compressed files together.",
+      "Image Compressor helps reduce JPG, PNG, and WebP file size before publishing to websites, submitting forms, sending email attachments, or uploading to social platforms. Use the quality slider for visual compression, the max file size slider for KB/MB targets, and the max resolution slider when dimensions are too large. After compression, compare original and output sizes, download individual images, or export all compressed files together as a ZIP.",
 
     howToSteps: [
-      "Upload one or more images (JPG, PNG, WebP).",
-      "Adjust quality, maximum file size, and resolution sliders based on your target output.",
+      "Upload one or more JPG, PNG, or WebP images.",
+      "Adjust quality, maximum file size, and maximum resolution based on your target output.",
       "Review the compressed size and reduction percentage for each file.",
       "Download single files or click Download All to export a ZIP.",
     ],
@@ -100,8 +95,8 @@ const toolConfig = createToolConfig({
       "Supports JPG, PNG, and WebP uploads",
       "Batch compression workflow for up to 100 images",
       "Quality slider for visual vs size balance",
-      "Max file size slider for KB/MB targeting",
-      "Resolution control for additional reduction",
+      "Max file size slider for practical KB/MB targeting",
+      "Max resolution control for additional reduction on large photos",
       "Per-file compression results and reduction stats",
       "One-click ZIP export for bulk downloads",
       "Runs in browser with no account required",
@@ -114,6 +109,8 @@ const toolConfig = createToolConfig({
       "Shrink product photos for marketplaces",
       "Prepare lighter email attachments",
       "Optimize social media uploads while keeping clarity",
+      "Compress screenshots and documentation images before adding them to support tickets",
+      "Reduce camera photos before sending through chat, CRM, or project-management tools",
     ],
 
     aboutTool: (
@@ -121,16 +118,28 @@ const toolConfig = createToolConfig({
         <div>
           <h3 className="text-lg font-semibold text-foreground mb-2">What This Tool Optimizes</h3>
           <p>
-            The compressor focuses on practical web output: smaller files, acceptable visual quality, and repeatable settings for bulk work.
-            It is designed for users who need quick results rather than manual desktop editing.
+            The compressor focuses on practical web output: smaller files, acceptable visual quality, and repeatable settings for bulk work. It is designed for users who need quick results without opening a desktop editor. The best results usually come from combining quality reduction with sensible max-resolution limits.
           </p>
         </div>
 
         <div>
-          <h3 className="text-lg font-semibold text-foreground mb-2">Quality vs File Size</h3>
+          <h3 className="text-lg font-semibold text-foreground mb-2">Quality, Max Size, and Resolution</h3>
           <p>
-            Start with quality around 75-85 for photos and 85-90 for images with text or UI elements. If the file is still too large,
-            reduce max resolution before lowering quality aggressively.
+            Start with quality around 75-85% for photos and 85-90% for screenshots or images with text. If the file is still too large, reduce max resolution before lowering quality aggressively. A 4000px camera photo often shrinks more cleanly when capped at 1600-1920px than when quality is pushed too low.
+          </p>
+        </div>
+
+        <div>
+          <h3 className="text-lg font-semibold text-foreground mb-2">Compress Image to KB or MB Targets</h3>
+          <p>
+            The max file size slider lets you aim for common upload targets like 50KB, 100KB, 200KB, 500KB, or 1MB. Exact output can vary because image content matters: flat graphics, screenshots, photos, gradients, and transparent PNGs compress differently. If a target is not reached, lower quality slightly or reduce the max resolution.
+          </p>
+        </div>
+
+        <div>
+          <h3 className="text-lg font-semibold text-foreground mb-2">JPG, PNG, and WebP Behavior</h3>
+          <p>
+            JPG photos usually compress the most. PNG screenshots and transparent graphics may shrink less because they preserve sharp edges and alpha data. WebP often starts smaller than JPG or PNG, so the percentage reduction may be lower even when the final file is already efficient.
           </p>
         </div>
 
@@ -151,12 +160,12 @@ const toolConfig = createToolConfig({
       {
         question: "How can I compress an image to 50KB or 100KB?",
         answer:
-          "Upload the file and reduce the Max File Size slider to your target (for example 0.05 MB for 50KB or 0.1 MB for 100KB). Then fine-tune quality until the output meets your size goal.",
+          "Upload the file and reduce the Max File Size slider to your target: 0.05 MB for about 50KB or 0.1 MB for about 100KB. If the result is still too large, lower quality or reduce max resolution.",
       },
       {
         question: "Which formats are supported?",
         answer:
-          "This tool supports JPG/JPEG, PNG, and WebP uploads. Compressed output is generated from the processed image in your browser workflow.",
+          "This tool supports JPG/JPEG, PNG, and WebP uploads. GIF upload is not currently supported by this compressor.",
       },
       {
         question: "Can I compress multiple images at once?",
@@ -181,7 +190,7 @@ const toolConfig = createToolConfig({
       {
         question: "Why is one image not shrinking much?",
         answer:
-          "Some files are already optimized or contain content that does not compress efficiently. Lowering max resolution can help when quality reduction alone is not enough.",
+          "Some files are already optimized or contain content that does not compress efficiently. PNG screenshots, transparent images, and already-compressed WebP files may shrink less. Lowering max resolution can help when quality reduction alone is not enough.",
       },
       {
         question: "Can I download compressed files individually?",

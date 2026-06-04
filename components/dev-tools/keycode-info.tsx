@@ -7,8 +7,11 @@ import { cn } from "@/lib/utils"
 interface KeyInfo {
   key: string
   keyCode: number
+  which: number
   code: string
   location: number
+  repeat: boolean
+  isComposing: boolean
   modifiers: string
 }
 
@@ -82,8 +85,11 @@ export function KeycodeInfo() {
       setKeyInfo({
         key: e.key || "—",
         keyCode,
+        which: typeof e.which === "number" ? e.which : keyCode,
         code: e.code || "—",
         location: e.location ?? 0,
+        repeat: e.repeat,
+        isComposing: e.isComposing,
         modifiers,
       })
       setDisplayKey(e.key || e.code || "—")
@@ -124,8 +130,11 @@ export function KeycodeInfo() {
             <>
               <InfoRow label="Key :" value={keyInfo.key} />
               <InfoRow label="Keycode :" value={String(keyInfo.keyCode)} />
+              <InfoRow label="Which :" value={String(keyInfo.which)} />
               <InfoRow label="Code :" value={keyInfo.code} />
               <InfoRow label="Location :" value={String(keyInfo.location)} />
+              <InfoRow label="Repeat :" value={String(keyInfo.repeat)} />
+              <InfoRow label="Is composing :" value={String(keyInfo.isComposing)} />
               <InfoRow label="Modifiers :" value={keyInfo.modifiers} />
             </>
           ) : (

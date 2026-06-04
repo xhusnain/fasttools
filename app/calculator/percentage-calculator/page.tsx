@@ -63,6 +63,17 @@ export const metadata: Metadata = {
 export default function PercentageCalculatorPage() {
   const toolContent = {
     toolName: "Percentage Calculator — Dividing by Percentages, Increase, Decrease & More",
+    definition:
+      "A percentage calculator solves percent-of, percentage increase, percentage decrease, percentage difference, discount, markup, margin, and reverse percentage problems.",
+    quickAnswer:
+      "Choose a percentage mode, enter the known values, and get the result with the formula. Common examples include finding 20% of a number, calculating percentage increase or decrease, and reversing a sale price to the original price.",
+    keyTakeaways: [
+      "Percent means per 100, so 25% equals 25/100 or 0.25",
+      "Percent of a number = number multiplied by percentage divided by 100",
+      "Percentage change = difference divided by original value times 100",
+      "Discount price = original price minus the discount amount",
+      "Reverse percentage finds the original value when the final value and percent are known",
+    ],
     overview: "Free online percentage calculator with 10+ calculation modes including a dividing by percentages calculator, percentage increase, percentage decrease, percentage difference, discount savings, tip calculation, grade-to-percentage conversion, profit margin, markup, reverse percentage, and percentage error. Need a dividing by percentages calculator? Enter your values and get step-by-step formula explanations. Supports fraction-to-percent conversion, decimal-to-percent conversion, and percentage-of-total calculations. Perfect for students solving homework, shoppers calculating sale prices, business owners analyzing profit margins, and professionals tracking KPI growth rates.",
 
     howToSteps: [

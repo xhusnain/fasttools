@@ -12,16 +12,16 @@ const DiffChecker = dynamic(
 const toolConfig = createToolConfig({
   toolName: "Diff Checker",
   description:
-    "Free online diff checker and text compare tool. Find differences between two text files, code snippets, or documents with side-by-side, inline, and unified views. Character-level highlighting, ignore whitespace/case, 100% client-side. No signup.",
+    "Free online diff checker and text compare tool. Find differences between two text blocks, code snippets, or documents with side-by-side, inline, and unified-style views. Character-level highlighting, ignore whitespace/case, and browser-side comparison.",
   metaTitle: "Diff Checker — Compare Text & Code Differences Online",
   metaDescription:
-    "Free online diff checker. Compare two texts or code blocks side-by-side, inline, or in unified Git-patch format. Character-level highlighting, ignore whitespace / case, copy / download as .diff. 100% client-side, no signup, no limits.",
+    "Free online diff checker. Compare two texts or code blocks side-by-side, inline, or in unified-style format. Character-level highlighting, ignore whitespace / case, copy or download as .diff.",
   path: "/dev-tools/diff-checker",
 
   schemaOptions: {
     applicationCategory: "DeveloperApplication",
     description:
-      "Free online diff checker for comparing two texts, code snippets, or documents. Features three view modes (side-by-side, inline, unified/patch format), character-level diff highlighting within changed lines, ignore whitespace and ignore case options, real-time line statistics (added/removed/unchanged), copy diff to clipboard, download as .diff patch file, and swap/clear controls. Uses LCS-based diff algorithm with full Unicode support. 100% client-side — texts are never uploaded to any server. Unlimited text size, no signup, no ads, no limits.",
+      "Online diff checker for comparing two texts, code snippets, or documents. Features three view modes (side-by-side, inline, unified-style output), character-level diff highlighting within changed lines, ignore whitespace and ignore case options, real-time line statistics (added/removed/unchanged), copy diff to clipboard, download as a .diff text file, and swap/clear controls. Uses an LCS-based diff algorithm.",
     featureList: [
       "Three view modes: side-by-side, inline, and unified (patch-style)",
       "Character-level diff highlighting within changed lines",
@@ -29,12 +29,12 @@ const toolConfig = createToolConfig({
       "Ignore case option for case-insensitive comparison",
       "Real-time diff statistics: added, removed, and unchanged line counts",
       "LCS-based diff algorithm with full Unicode support",
-      "Copy diff output to clipboard in unified format",
-      "Download diff as .diff patch file",
+      "Copy diff output to clipboard in unified-style format",
+      "Download diff output as a .diff text file",
       "Swap texts with one click",
       "Line numbers on both sides for easy reference",
       "Works with any text: code, prose, JSON, CSV, logs, configs",
-      "100% client-side processing — texts never leave your browser",
+      "Browser-side text comparison",
     ],
     softwareRequirements: "Modern web browser with JavaScript enabled",
     alternateName: [
@@ -44,8 +44,8 @@ const toolConfig = createToolConfig({
       "Compare Two Texts",
       "Text Difference Finder",
       "Git Diff Online",
-      "Unified Diff Generator",
-      "Patch File Generator",
+      "Unified Diff Viewer",
+      "Diff File Generator",
       "Side-by-Side Diff",
       "Inline Diff Viewer",
       "Diffchecker Alternative",
@@ -61,7 +61,7 @@ const toolConfig = createToolConfig({
   header: {
     title: "Free Diff Checker - Compare Text Differences",
     description:
-      "Find differences between two texts, code snippets, or documents with character-level highlighting. Side-by-side, inline, and unified views. 100% private.",
+      "Find differences between two texts, code snippets, or documents with character-level highlighting. Side-by-side, inline, and unified-style views.",
     titleSize: "medium",
     descriptionSize: "small",
   },
@@ -76,41 +76,41 @@ const toolConfig = createToolConfig({
       "A diff checker is a tool that compares two pieces of text — code, documents, or any string content — and highlights the differences line by line and character by character, showing what was added, removed, or changed between the two versions.",
 
     quickAnswer:
-      "Paste the original text in the left panel and the modified text in the right panel. The tool instantly shows differences with color-coded highlighting — red for removed lines, green for added lines, with character-level highlighting inside changed lines. Switch between side-by-side, inline, and unified (patch) views. Toggle 'Ignore whitespace' or 'Ignore case' for semantic comparison. Copy or download the diff as a patch file.",
+      "Paste the original text in the left panel and the modified text in the right panel. The tool instantly shows differences with color-coded highlighting — red for removed lines, green for added lines, with character-level highlighting inside changed lines. Switch between side-by-side, inline, and unified-style views. Toggle 'Ignore whitespace' or 'Ignore case' for cleaner comparison. Copy or download the diff text as a .diff file.",
 
     keyTakeaways: [
-      "Three view modes: side-by-side (classic diff), inline (sequential changes), and unified (Git patch format)",
+      "Three view modes: side-by-side (classic diff), inline (sequential changes), and unified-style diff output",
       "Character-level diff highlighting shows exact changes within modified lines — not just line-level red/green",
       "Ignore whitespace and ignore case options for semantic comparison that ignores trivial formatting differences",
-      "LCS-based diff algorithm with full Unicode support — works with any language, emojis, and special characters",
-      "100% client-side processing — your texts never leave the browser, no privacy concerns",
-      "Unlimited text size, no signup, no ads, no daily limits — completely free",
+      "LCS-based diff algorithm works with plain text, code, JSON, CSV, logs, and configs",
+      "Browser-side comparison keeps the pasted text in the page during diff generation",
+      "Copy the generated diff text or download it as a .diff file",
     ],
 
     overview:
-      "This diff checker compares two pieces of text and highlights their differences in real time. Paste your original text on the left and the modified version on the right, and the tool instantly computes a diff using an LCS (Longest Common Subsequence) algorithm. Changes are shown with color coding: red for removed lines, green for added lines, and plain for unchanged content. Character-level highlighting within modified lines shows exactly what changed — not just the entire line. Toggle between three views: side-by-side (classic diff view), inline (sequential changes), or unified (Git patch format ready to apply). Options to ignore whitespace and case let you focus on semantic differences. The diff can be copied to clipboard or downloaded as a .diff patch file. Everything runs in your browser — no server uploads, no signup, no limits.",
+      "This diff checker compares two pieces of text and highlights their differences in real time. Paste your original text on the left and the modified version on the right, and the tool computes a diff using an LCS (Longest Common Subsequence) algorithm. Changes are shown with color coding: red for removed lines, green for added lines, and plain for unchanged content. Character-level highlighting within modified lines shows exactly what changed — not just the entire line. Toggle between three views: side-by-side (classic diff view), inline (sequential changes), or unified-style diff output. Options to ignore whitespace and case help you focus on meaningful differences. The diff text can be copied to clipboard or downloaded as a .diff file.",
 
     howToSteps: [
       "Paste or type the original text into the left 'Original Text' panel.",
       "Paste or type the modified text into the right 'Modified Text' panel. The diff updates in real time below.",
       "Toggle 'Ignore whitespace' or 'Ignore case' in the options if you want to focus on semantic changes only.",
       "Switch between Side by Side, Inline, and Unified view modes depending on how you want to review the differences.",
-      "Click 'Copy Diff' to copy the unified-format patch to your clipboard, or 'Download' to save it as a .diff file.",
+      "Click 'Copy Diff' to copy the unified-style output to your clipboard, or 'Download' to save it as a .diff file.",
     ],
 
     features: [
-      "Three View Modes: Side-by-side (original | modified), inline (sequential with +/- markers), and unified (Git-style patch format with --- and +++ headers).",
+      "Three View Modes: Side-by-side (original | modified), inline (sequential with +/- markers), and unified-style output with --- and +++ headers.",
       "Character-Level Highlighting: When a line is modified, the exact characters that changed are highlighted inside the line — not just the whole line in red/green. This makes small changes instantly visible.",
       "Ignore Whitespace: Toggle to ignore tabs, spaces, and line-break differences — useful for comparing code that's been reformatted or text that's been re-wrapped.",
       "Ignore Case: Toggle case-insensitive comparison — useful for comparing text where casing shouldn't matter (like emails, keywords, or titles).",
       "Real-Time Statistics: Live counters show added lines, removed lines, and unchanged lines as you type or paste.",
       "Line Numbers: Both panels show original and modified line numbers for precise reference.",
-      "LCS Diff Algorithm: Uses Longest Common Subsequence for accurate, minimal diffs — the same core algorithm used by Git and Unix diff.",
-      "Unicode Support: Works with any language, including Chinese, Arabic, emojis, and special characters.",
-      "Copy Diff: One-click copy of the unified diff format to clipboard — ready to paste into a patch file or code review.",
-      "Download as Patch: Save the diff as a .diff file with standard unified patch headers — applicable with git apply or patch.",
+      "LCS Diff Algorithm: Uses Longest Common Subsequence to identify added, removed, and unchanged lines.",
+      "Unicode Support: Works with Unicode text including multi-byte characters and emojis.",
+      "Copy Diff: One-click copy of the unified-style diff text to clipboard.",
+      "Download Diff: Save the generated diff text as a .diff file for review or sharing.",
       "Swap Texts: Quickly swap the original and modified panels with one click.",
-      "100% Private: All processing happens in your browser. Texts are never sent to any server, never logged, never stored.",
+      "Browser-Side Comparison: The diff calculation runs in the page after your text is pasted.",
     ],
 
     useCases: [
@@ -148,10 +148,9 @@ const toolConfig = createToolConfig({
             modified on the right in parallel columns — best for reviewing large changes where
             spatial context matters. <strong>Inline view</strong> shows all changes sequentially
             in one column with +/- markers — better for small screens and quick scanning.{" "}
-            <strong>Unified view</strong> uses the Git patch format with <code>---</code> and{" "}
-            <code>+++</code> headers, producing output that can be applied with{" "}
-            <code>git apply</code> or the <code>patch</code> command. Choose the view that
-            matches your workflow.
+            <strong>Unified view</strong> uses <code>---</code> and <code>+++</code> headers with
+            added and removed line prefixes, which is useful for compact review, copying, and
+            sharing. Choose the view that matches your workflow.
           </p>
         </div>
 
@@ -171,18 +170,26 @@ const toolConfig = createToolConfig({
         <div>
           <h3 className="text-lg font-semibold text-foreground mb-2">Privacy and Security</h3>
           <p>
-            Many online diff checkers upload your text to their servers for processing, which creates privacy risks — especially for code, contracts, or sensitive documents. This tool runs entirely in your browser using JavaScript. Your text is never uploaded, never logged, never stored on any server. You can even use it offline once the page is loaded. This makes it safe for comparing proprietary code, legal documents, medical records, or any confidential content. The processing happens in milliseconds even for large texts.
+            The comparison runs in your browser using JavaScript, so the tool does not need to
+            send pasted text to a diff-processing API. That is useful for quick checks of code,
+            contracts, drafts, and configuration files. For highly confidential or regulated
+            material, follow your organization&apos;s policy before pasting content into any web
+            page.
           </p>
         </div>
 
         <div>
-          <h3 className="text-lg font-semibold text-foreground mb-2">Diff Algorithm Variants</h3>
-          <p>Most diff tools — Git, Unix diff, this tool — use variants of the same core algorithm. The choices matter for specific cases:</p>
+          <h3 className="text-lg font-semibold text-foreground mb-2">Diff Algorithm Notes</h3>
+          <p>
+            This tool uses a dynamic-programming LCS comparison for lines, and then applies a
+            character-level comparison inside paired changed lines. Other developer tools may use
+            different algorithms depending on the workflow:
+          </p>
           <ul className="list-disc pl-6 mt-2 space-y-1">
-            <li><strong>Myers&apos; algorithm (default):</strong> the standard since 1986. Fast, produces minimal diffs. What you get by default.</li>
-            <li><strong>Patience diff:</strong> Bram Cohen&apos;s improvement — finds matches of unique lines first, then matches between them. Produces more readable diffs for code rearrangement. Used by `git diff --patience`.</li>
-            <li><strong>Histogram diff:</strong> further refinement of Patience. Used by `git diff --histogram` and IntelliJ. Best for refactored code where blocks moved.</li>
-            <li><strong>Word-level diff:</strong> instead of comparing lines, compare individual words. Useful for prose changes where line breaks would otherwise mark whole paragraphs as different.</li>
+            <li><strong>LCS line diff:</strong> the method used here to mark lines as unchanged, added, or removed.</li>
+            <li><strong>Myers diff:</strong> common in command-line diff tools and source-control workflows.</li>
+            <li><strong>Patience and histogram diff:</strong> useful in some Git workflows when code blocks have moved.</li>
+            <li><strong>Word-level diff:</strong> useful for prose changes where line breaks would otherwise mark whole paragraphs as different.</li>
             <li><strong>Character-level diff:</strong> what this tool uses within changed lines to show exact letter-level changes.</li>
           </ul>
         </div>
@@ -224,9 +231,9 @@ const toolConfig = createToolConfig({
                 <td className="py-2 px-2">$60+ per license</td>
               </tr>
               <tr className="border-b border-border">
-                <td className="py-2 px-2">Diffchecker.com</td>
-                <td className="py-2 px-2">PDF / image diffs, saved diffs</td>
-                <td className="py-2 px-2">Paywall on large files; uploads text to server</td>
+                <td className="py-2 px-2">Dedicated hosted diff services</td>
+                <td className="py-2 px-2">Saved comparisons, file uploads, extra media formats</td>
+                <td className="py-2 px-2">May be more than you need for a quick pasted-text comparison</td>
               </tr>
               <tr>
                 <td className="py-2 px-2">Meld (Linux)</td>
@@ -238,19 +245,21 @@ const toolConfig = createToolConfig({
         </div>
 
         <div>
-          <h3 className="text-lg font-semibold text-foreground mb-2">Unified Diff Format (Git Patch)</h3>
-          <p>The unified view output follows the standard <code>diff -u</code> format used by Git, patch, and most code review tools:</p>
+          <h3 className="text-lg font-semibold text-foreground mb-2">Unified-Style Diff Output</h3>
+          <p>The unified view gives a compact text representation with file-style headers and line prefixes:</p>
           <pre className="bg-muted p-3 rounded mt-2 text-xs overflow-x-auto">
-            <code>{`--- original.txt    2024-01-01 00:00:00
-+++ modified.txt    2024-01-01 00:00:00
-@@ -1,5 +1,5 @@
+            <code>{`--- Original
++++ Modified
  unchanged line above
 -removed line
 +added line
  unchanged line below`}</code>
           </pre>
           <p className="mt-3">
-            The header lines (<code>---</code> / <code>+++</code>) identify the files. <code>@@</code> hunks show the line ranges. Lines prefixed with <code>-</code> were removed, <code>+</code> were added, and unprefixed lines are unchanged context. You can save the unified output as <code>.diff</code> or <code>.patch</code> and apply with <code>git apply file.diff</code> or <code>patch &lt; file.diff</code>.
+            The header lines (<code>---</code> / <code>+++</code>) identify the two sides. Lines
+            prefixed with <code>-</code> were removed, <code>+</code> were added, and unprefixed
+            lines are unchanged context. The downloaded <code>.diff</code> file is intended for
+            review, sharing, or archiving; it is not a generated Git patch with hunk line ranges.
           </p>
         </div>
 
@@ -273,7 +282,7 @@ const toolConfig = createToolConfig({
     ),
 
     proTip:
-      "For code reviews, enable 'Ignore whitespace' to avoid seeing every line change due to indentation or reformatting — this keeps you focused on real semantic differences. For config file comparisons, use the Unified view to get Git-style patch output you can save and apply later. Use character-level highlighting (on by default) to instantly spot small changes like a changed variable name or a typo in a long line.",
+      "For code reviews, enable 'Ignore whitespace' to avoid seeing every line change due to indentation or reformatting. For config file comparisons, use the Unified view to get compact diff text you can save or share. Use character-level highlighting to spot small changes like a changed variable name or a typo in a long line.",
 
     faqs: [
       {
@@ -284,7 +293,7 @@ const toolConfig = createToolConfig({
       {
         question: "Is this diff checker free?",
         answer:
-          "Yes, 100% free with no signup, no ads, no daily limits, and no feature paywalls. Unlike Diffchecker or DiffNow which gate features like large files, private diffs, or PDF comparison behind paid plans, every feature here is free and unlimited.",
+          "Yes. You can compare pasted text directly in the browser and use the side-by-side, inline, unified-style, copy, and download options without creating an account.",
       },
       {
         question: "Is my text private?",
@@ -299,7 +308,7 @@ const toolConfig = createToolConfig({
       {
         question: "What's the difference between side-by-side, inline, and unified views?",
         answer:
-          "Side-by-side shows original and modified in parallel columns — best for spatial comparison. Inline shows all changes sequentially with + and - markers — better for narrow screens. Unified produces Git-style patch output (with --- and +++ headers) that can be applied with 'git apply' or 'patch'.",
+          "Side-by-side shows original and modified in parallel columns — best for spatial comparison. Inline shows all changes sequentially with + and - markers — better for narrow screens. Unified shows a compact diff-style text view with --- and +++ headers.",
       },
       {
         question: "Does it work with code, JSON, or CSV?",
@@ -319,22 +328,17 @@ const toolConfig = createToolConfig({
       {
         question: "Can I download the diff output?",
         answer:
-          "Yes. Click 'Download' to save the diff as a .diff file in unified patch format. This file can be applied to the original text using 'git apply' or the 'patch' command. You can also click 'Copy Diff' to copy the same format to your clipboard.",
+          "Yes. Click 'Download' to save the generated diff text as a .diff file. You can also click 'Copy Diff' to copy the same output to your clipboard.",
       },
       {
         question: "Is there a file size limit?",
         answer:
-          "There are no hard limits — the tool processes whatever you paste. Performance scales with text size; even 10,000+ line comparisons run in under a second in modern browsers. For extremely large files (100K+ lines) performance may slow, but it will still work.",
-      },
-      {
-        question: "How is this different from Diffchecker or DiffNow?",
-        answer:
-          "Diffchecker gates features like PDF comparison, private diffs, and large file support behind paid plans. DiffNow limits free diffs to 2048 lines. This tool is 100% free with no feature paywalls, runs entirely client-side for privacy, and has no ads. The core algorithm and view modes are comparable.",
+          "There is no separate upload limit because you paste text into the page, but performance depends on browser memory, device speed, and text size. Very large files are better compared with Git, a desktop editor, or a command-line diff tool.",
       },
       {
         question: "Can I use this to compare code in a pull request workflow?",
         answer:
-          "Yes. Paste the 'before' and 'after' versions of your code to see a full diff with character-level highlighting. Use 'Ignore whitespace' to filter out reformatting noise. Download as a .diff patch file to share with reviewers or archive with the change.",
+          "Yes. Paste the before and after versions of your code to see a text diff with character-level highlighting. Use 'Ignore whitespace' to filter out reformatting noise, then copy or download the diff text for review.",
       },
       {
         question: "Does it support Unicode and emojis?",

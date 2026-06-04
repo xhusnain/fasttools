@@ -351,9 +351,9 @@ International: ${result.isInternational ? 'Yes' : 'No'}`
       let totalAmount = 0
       let totalFees = 0
 
-      // Using standard domestic fee (2.9% + $0.49) as a baseline for bulk estimate
+      // Using standard domestic credit/debit fee (2.99% + $0.49) as a baseline for bulk estimate.
       // In a real app complexity, we might want to let user select settings for bulk too
-      const percentage = 2.9
+      const percentage = 2.99
       const fixed = 0.49
 
       amounts.forEach(amt => {
@@ -661,7 +661,7 @@ International: ${result.isInternational ? 'Yes' : 'No'}`
                     />
                   </div>
                   <div className="p-3 bg-primary/5 border border-primary/20 rounded-lg text-xs text-muted-foreground">
-                    <span className="font-bold text-primary">Note:</span> Bulk calculation assumes standard domestic commercial rate (2.9% + $0.49). For precise international or mixed rates, calculate individually.
+                    <span className="font-bold text-primary">Note:</span> Bulk calculation assumes standard domestic credit/debit commercial rate (2.99% + $0.49). For precise international or mixed rates, calculate individually.
                   </div>
                   <GButton
                     onClick={calculateBulkFees}

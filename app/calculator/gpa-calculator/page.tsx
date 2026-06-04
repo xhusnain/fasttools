@@ -44,6 +44,17 @@ export const metadata: Metadata = {
 export default function GPACalculatorPage() {
   const toolContent = {
     toolName: "GPA Calculator",
+    definition:
+      "A GPA calculator computes grade point average from course grades, credit hours, and weighted or unweighted grading scales.",
+    quickAnswer:
+      "Enter each course grade and credit value to calculate semester GPA or cumulative GPA. Use weighted mode for honors, AP, IB, or advanced classes and unweighted mode for the standard 4.0 scale.",
+    keyTakeaways: [
+      "GPA is calculated by dividing total grade points by total credits",
+      "Weighted GPA gives extra points to advanced courses such as honors, AP, or IB",
+      "Unweighted GPA usually uses a 4.0 scale",
+      "Cumulative GPA combines current and previous semesters",
+      "Credit hours matter because high-credit classes affect GPA more",
+    ],
     overview: "Calculate weighted or unweighted GPA on 4.0 and 5.0 scales for high school and college courses, with semester and cumulative planning.",
 
     howToSteps: [

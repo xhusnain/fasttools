@@ -36,20 +36,12 @@ export const noindexPaths: string[] = [
   "/converters/toml-json",
   "/converters/json-toml",
   "/converters/yaml-toml",
-  "/converters/xml-json",
   "/converters/json-xml",
-
-  // ─── Dev Tools (dead) ──────────────────────────────────────────────────
-  "/dev-tools/sql-to-json",
-  "/dev-tools/html-wysiwyg-editor",
-  "/dev-tools/color-palette",
 
   // ─── AI Tools (dead / very niche) ──────────────────────────────────────
   "/ai-tools/token-to-word-converter",
 
   // ─── SEO Tools (dead) ──────────────────────────────────────────────────
-  "/seo-tools/text-similarity-checker",
-
   // ─── Crypto Tools (very niche) ─────────────────────────────────────────
   "/crypto-tools/ulid-generator",
 ]

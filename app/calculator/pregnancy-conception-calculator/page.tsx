@@ -63,6 +63,17 @@ export const metadata: Metadata = {
 export default function PregnancyConceptionCalculatorPage() {
   const toolContent = {
     toolName: "Pregnancy Conception Calculator",
+    definition:
+      "A pregnancy conception calculator estimates the likely conception date or fertile window from a due date, last menstrual period, or ultrasound dating information.",
+    quickAnswer:
+      "Enter your due date, LMP, or ultrasound date to estimate the probable conception date range. Because sperm can survive several days and ovulation timing varies, the result is best treated as a window rather than one exact date.",
+    keyTakeaways: [
+      "Conception is usually estimated around ovulation, not necessarily the intercourse date",
+      "Gestational age is counted from LMP and is typically about two weeks ahead of fetal age",
+      "Due-date based conception estimates work backward from about 266 days before delivery",
+      "First-trimester ultrasound can improve dating when cycle history is uncertain",
+      "Conception calculators estimate a range and cannot prove paternity or exact fertilization day",
+    ],
     overview: "Reverse-calculate your probable conception date and fertile window using our free conception calculator. Enter your due date, last menstrual period (LMP), or first-trimester ultrasound date to estimate when fertilization occurred — accounting for the 3-5 day sperm survival window that separates intercourse date from actual conception. The tool also provides gestational vs. fetal age breakdowns, trimester-specific nutrition and exercise recommendations, and a complete milestone timeline from implantation through full term.",
 
     howToSteps: [

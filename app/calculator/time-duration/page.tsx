@@ -63,6 +63,17 @@ export const metadata: Metadata = {
 export default function TimeDurationPage() {
   const toolContent = {
     toolName: "Time Duration Calculator",
+    definition:
+      "A time duration calculator finds elapsed time between start and end times or adds and subtracts hours, minutes, and seconds.",
+    quickAnswer:
+      "Enter a start time and end time to calculate elapsed hours, minutes, and seconds. The calculator handles AM/PM, 24-hour time, cross-midnight shifts, business hours, overtime separation, and time addition or subtraction.",
+    keyTakeaways: [
+      "Elapsed time is end time minus start time",
+      "Cross-midnight calculations require rolling into the next day",
+      "Business-hours mode counts only time inside a defined work window",
+      "Overtime mode separates regular and overtime hours for payroll checks",
+      "Use consistent time zones when calculating international meeting or SLA durations",
+    ],
     overview: "Calculate the exact time duration between any two points in hours, minutes, and seconds with our free online time duration calculator. Offering 7 calculation modes — elapsed time, time addition, time subtraction, business hours filtering, timezone conversion, work days counting, and overtime separation — this tool handles cross-midnight shifts, 24-hour rollover, and leap-year edge cases automatically. Perfect for payroll processing, project timeline estimation, shift scheduling, SLA compliance tracking, study session logging, and international meeting coordination.",
 
     howToSteps: [

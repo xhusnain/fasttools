@@ -70,6 +70,17 @@ export const metadata: Metadata = {
 export default function SalesTaxCalculatorPage() {
   const toolContent = {
     toolName: "Sales Tax Calculator",
+    definition:
+      "A sales tax calculator adds or removes sales tax from a price using state, local, county, city, or custom tax rates.",
+    quickAnswer:
+      "Enter the item price and sales tax rate to calculate the tax amount and total price, or use reverse mode to remove tax from a tax-included total. The calculator supports state/local rate estimates and custom rates for receipts, ecommerce, and purchase planning.",
+    keyTakeaways: [
+      "Forward sales tax calculation: tax = price times tax rate",
+      "Reverse sales tax removes tax from a tax-included total",
+      "US sales tax can combine state, county, city, and special district rates",
+      "Some states have no statewide sales tax, but local rules may still matter",
+      "Ecommerce sellers should verify nexus and destination-based rules before collecting tax",
+    ],
     overview: "Calculate sales tax for all 50 US states with our advanced sales tax calculator. Get accurate tax calculations, state comparisons, business tips, and compliance guidance for optimal tax planning.",
 
     howToSteps: [

@@ -63,6 +63,17 @@ export const metadata: Metadata = {
 export default function PregnancyCalculatorPage() {
   const toolContent = {
     toolName: "Pregnancy Calculator",
+    definition:
+      "A pregnancy calculator estimates due date, gestational age, trimester, fetal age, and pregnancy milestones from LMP, conception date, ultrasound, due date, or IVF transfer date.",
+    quickAnswer:
+      "Enter your last menstrual period, conception date, ultrasound date, known due date, or IVF transfer date to estimate your due date and current pregnancy week. The calculator also shows trimester, milestone dates, and BMI-based weight-gain guidance.",
+    keyTakeaways: [
+      "Due date estimates are commonly based on 40 weeks from the last menstrual period",
+      "First-trimester ultrasound can be more accurate when LMP is uncertain",
+      "Gestational age is usually about two weeks more than fetal age",
+      "Only a small share of babies are born exactly on the estimated due date",
+      "Use results as planning guidance and confirm medical dates with your clinician",
+    ],
     overview: "Calculate your estimated due date, track gestational age week by week, and receive personalized IOM weight gain recommendations based on pre-pregnancy BMI with our free pregnancy calculator. Supporting five calculation methods — last menstrual period (LMP), known due date, first-trimester ultrasound (Crown-Rump Length), conception date, and IVF transfer date (Day 3 or Day 5) — this tool uses Naegele's Rule and standard medical formulas to provide accurate trimester guidance, symptom tracking, milestone timelines, and nutrition tips for expectant mothers.",
 
     howToSteps: [

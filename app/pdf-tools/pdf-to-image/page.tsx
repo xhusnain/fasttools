@@ -42,13 +42,11 @@ const toolConfig = createToolConfig({
       "Convert PDF to JPG, PNG, or WebP format",
       "All pages or custom page range selection (e.g., 1-3, 5, 10-15)",
       "Quality presets: low (smaller files), medium, high (sharp)",
-      "DPI control (72, 150, 300 DPI for print quality)",
       "Individual page image download",
       "Bulk ZIP archive download",
-      "Transparent PNG support",
-      "Page thumbnail preview before conversion",
-      "Multi-page document support (up to 500 pages)",
-      "Auto-rotate landscape page handling",
+      "PDF page count detection after upload",
+      "Low, medium, and high render-scale presets",
+      "Multi-page document support",
       "100% client-side via PDF.js — your PDF never uploaded",
       "Free, no signup, no watermark",
     ],
@@ -78,13 +76,13 @@ const toolConfig = createToolConfig({
     keyTakeaways: [
       "Converts each PDF page to a separate high-resolution JPG, PNG, or WebP image",
       "Three quality presets: low (fast, smaller files), medium (balanced), high (maximum detail)",
-      "PNG for lossless quality and transparency, JPG for compact file sizes, WebP for web optimization",
+      "PNG for crisp text and graphics, JPG for compact files, WebP for modern web output",
       "Download individual page images or export all pages as a single ZIP archive",
       "Supports custom page range selection (e.g., pages 1-5, 8, 12-15)",
       "All conversion processing runs locally in your browser — files never leave your device",
     ],
     overview:
-      "This free PDF to image converter transforms PDF document pages into high-quality raster images suitable for presentations, social media posts, web publishing, email embedding, and digital archiving. The tool supports three output formats: PNG delivers lossless image quality ideal for text-heavy documents and graphics that need crisp edges; JPG produces smaller file sizes perfect for photo-heavy PDFs and email-friendly images; WebP provides modern compression with excellent quality-to-size ratio for web use. Choose from three quality presets to control the resolution and detail level of your output images. Convert all pages at once for complete document conversion, or select specific page ranges when you only need certain pages. Download images one at a time or grab everything in a single ZIP archive for batch workflows.",
+      "This free PDF to image converter transforms PDF document pages into high-quality raster images suitable for presentations, social media posts, web publishing, email embedding, support tickets, and visual document archives. The tool supports JPG, PNG, and WebP output. Choose low quality for quick previews, medium for balanced sharing, or high for sharper page rendering. Convert all pages at once for a complete document export, or select specific pages and ranges when you only need part of the PDF. Download images one at a time or grab everything in a single ZIP archive for batch workflows.",
 
     howToSteps: [
       "Upload your PDF file by dragging and dropping or clicking the upload area.",
@@ -95,8 +93,8 @@ const toolConfig = createToolConfig({
     ],
 
     features: [
-      "Three output formats: JPG (lossy, compact), PNG (lossless, transparent), WebP (modern web format)",
-      "Adjustable quality presets controlling image resolution and compression level",
+      "Three output formats: JPG (lossy, compact), PNG (crisp), WebP (modern web format)",
+      "Low, medium, and high quality presets controlling render scale and compression",
       "All-pages conversion for complete PDF-to-image extraction",
       "Custom page range selector supporting individual pages and ranges (e.g., 1-3, 5, 8-12)",
       "Individual image download for specific pages you need",
@@ -118,14 +116,14 @@ const toolConfig = createToolConfig({
         <div>
           <h3 className="text-lg font-semibold text-foreground mb-2">JPG vs. PNG vs. WebP: Choosing the Right Format</h3>
           <p>
-            JPG (JPEG) uses lossy compression to produce the smallest file sizes, making it ideal for photo-heavy PDFs, email sharing, and situations where file size matters more than pixel-perfect accuracy. PNG uses lossless compression that preserves every pixel, making it the best choice for text-heavy documents, screenshots, diagrams, and graphics with sharp edges or transparency. WebP is a modern format developed by Google that offers superior compression compared to both JPG and PNG — it produces smaller files at equivalent quality, making it perfect for web publishing and digital content creation.
+            JPG (JPEG) uses lossy compression to produce smaller files, making it useful for photo-heavy PDFs, email sharing, and situations where file size matters more than pixel-perfect accuracy. PNG is best for text-heavy documents, screenshots, diagrams, and graphics with sharp edges. WebP is a modern format with strong compression for web publishing and digital content workflows.
           </p>
         </div>
 
         <div>
           <h3 className="text-lg font-semibold text-foreground mb-2">Understanding Quality Presets and Resolution</h3>
           <p>
-            The quality preset controls the rendering resolution and compression level of the output images. Low quality produces smaller images suitable for quick previews and thumbnails. Medium quality provides a balanced output ideal for most screen-viewing and sharing scenarios. High quality renders pages at maximum resolution with minimal compression, suitable for printing, professional presentations, and situations requiring fine detail. For text documents, medium quality is usually sufficient. For detailed charts, photographs, or print-ready output, use high quality.
+            The quality preset controls the render scale and compression level of the output images. Low quality produces smaller images suitable for quick previews and thumbnails. Medium quality provides balanced output for screen viewing and sharing. High quality renders pages at a larger scale with more detail, which is better for small text, charts, diagrams, and presentation exports.
           </p>
         </div>
 
@@ -165,7 +163,7 @@ const toolConfig = createToolConfig({
       {
         question: "What image resolution does the PDF to image converter produce?",
         answer:
-          "Resolution depends on your quality preset selection. Low quality produces web-preview sized images, medium quality generates screen-resolution images suitable for most uses, and high quality renders pages at maximum detail suitable for printing and professional presentations.",
+          "Resolution depends on the quality preset. Low uses a smaller render scale for quick previews, medium balances size and clarity, and high renders pages at a larger scale for sharper text and details.",
       },
       {
         question: "Is my PDF data safe when converting to images online?",

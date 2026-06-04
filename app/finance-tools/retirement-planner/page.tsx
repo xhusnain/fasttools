@@ -84,6 +84,17 @@ export const metadata: Metadata = {
 export default function RetirementPlannerPage() {
   const toolContent = {
     toolName: TOOL_NAME,
+    definition:
+      "A retirement planner projects retirement savings, income, withdrawals, inflation, taxes, and account balances across future retirement years.",
+    quickAnswer:
+      "Enter your age, retirement age, current savings, contributions, expected return, and retirement spending goal to estimate whether your savings may last. The planner combines 401(k), IRA, pension, Social Security, inflation, and withdrawal assumptions into one projection.",
+    keyTakeaways: [
+      "Retirement planning compares future income sources with expected retirement expenses",
+      "Starting earlier gives compound growth more time to work",
+      "Inflation can make the same retirement income buy less over time",
+      "Roth, traditional, taxable, pension, and Social Security income can have different tax treatment",
+      "Test multiple scenarios instead of relying on one expected return",
+    ],
     overview: `Plan your retirement with comprehensive financial planning tools. Calculate compound interest, inflation adjustments, tax optimization, and multiple account types. Features 401k calculator, IRA calculator, Roth vs Traditional analysis, and wealth building strategies. Our advanced retirement planner uses AI-powered algorithms to analyze your financial situation, predict future needs, and automatically suggest optimal retirement strategies.`,
 
     howToSteps: [

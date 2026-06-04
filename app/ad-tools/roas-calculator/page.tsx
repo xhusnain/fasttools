@@ -60,6 +60,17 @@ export const metadata: Metadata = createMetadata({
 export default function ROASCalculatorPage() {
     const toolContent = {
         toolName: "ROAS Calculator",
+        definition:
+            "A ROAS calculator measures return on ad spend by dividing campaign revenue by advertising cost.",
+        quickAnswer:
+            "Enter ad spend and revenue to calculate ROAS instantly. ROAS = revenue divided by ad spend, so $4,000 revenue from $1,000 ad spend equals 4x ROAS or 400%.",
+        keyTakeaways: [
+            "ROAS shows revenue generated for every dollar spent on ads",
+            "ROAS formula: revenue divided by ad spend",
+            "A 4x ROAS means $4 in revenue for every $1 spent",
+            "ROAS does not include product costs, overhead, or profit margin unless you add them separately",
+            "Use break-even ROAS to decide whether a campaign is profitable after margins",
+        ],
         overview: "Not sure if your advertising campaigns are actually making money? Our ROAS Calculator helps you understand exactly how much revenue you're generating for every dollar spent on ads—whether you're running Google Ads, Facebook campaigns, TikTok promotions, or any other platform. ROAS (Return on Ad Spend) is the metric that separates profitable campaigns from budget-draining ones.",
 
         howToSteps: [

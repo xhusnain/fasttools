@@ -244,12 +244,15 @@ function getNextRunTimes(expression: string, count: number = 10): Date[] {
     const m = check.getMonth() + 1
     const dow = check.getDay()
 
+    const domMatches = matchesField(d, domExpr, 31)
+    const dowMatches = matchesField(dow, dowExpr, 6)
+    const dayMatches = domExpr !== "*" && dowExpr !== "*" ? domMatches || dowMatches : domMatches && dowMatches
+
     if (
       matchesField(min, minExpr, 59) &&
       matchesField(hr, hourExpr, 23) &&
-      matchesField(d, domExpr, 31) &&
-      matchesField(m, monthExpr, 12) &&
-      matchesField(dow, dowExpr, 6)
+      dayMatches &&
+      matchesField(m, monthExpr, 12)
     ) {
       results.push(new Date(check))
     }

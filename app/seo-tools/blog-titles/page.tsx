@@ -15,13 +15,13 @@ const toolConfig = createToolConfig({
     "Generate headline ideas for articles, landing pages, and campaigns with intent-focused wording and SEO-friendly structure.",
   metaTitle: "Blog Title Generator — SEO Headlines, Listicles, How-To & Guide Titles",
   metaDescription:
-    "Free blog title generator. Create SEO-optimized headlines from your topic / keyword. Formats: how-to, listicle, question, comparison, ultimate guide, data-driven. Power words, CTR triggers, character count for SERP display. Free, unlimited.",
+    "Free blog title generator. Enter a topic or keyword and get 30 headline ideas using how-to, listicle, comparison, guide, trend, problem, and beginner templates.",
   path: "/seo-tools/blog-titles",
 
   header: {
     title: "Blog Title Generator",
     description:
-      "Generate dozens of click-worthy blog post titles, SEO-optimized headlines, and article title ideas from your target keyword or topic. Supports how-to titles, numbered listicles, question headlines, comparison posts, ultimate guides, and data-driven formats — with power words, emotional triggers, and character count optimization for Google SERP display.",
+      "Generate 30 blog post title ideas from a keyword or topic, including how-to, listicle, question, comparison, guide, beginner, advanced, tool, trend, and problem-solving formats.",
     titleSize: "large",
     descriptionSize: "small",
   },
@@ -39,30 +39,20 @@ const toolConfig = createToolConfig({
       "Headline Generator",
       "SEO Title Generator",
       "Article Title Creator",
-      "Click-Worthy Headline Maker",
       "Listicle Title Generator",
       "How-To Title Generator",
       "Blog Post Idea Generator",
-      "YouTube Title Generator",
       "Content Title Brainstorm Tool",
-      "CTR Headline Optimizer",
-      "Power Word Title Tool",
-      "CoSchedule Alternative",
-      "Sumo Headline Studio Alternative",
-      "Blog Headline Analyzer",
-      "Article Title Tester",
+      "Article Headline Ideas",
+      "Content Headline Generator",
     ],
     featureList: [
-      "Multiple title format options: how-to, listicle (5/7/10/15), question, comparison, ultimate guide, data-driven",
-      "Power-word injection: 'ultimate', 'proven', 'essential', 'complete', 'definitive', 'free'",
-      "Number-based titles for higher CTR (numbered listicles get ~36% more clicks)",
-      "Character count meter — keeps titles under 60 chars for Google SERP display (no truncation)",
-      "Emotional value scoring per title (urgency, curiosity, fear, surprise)",
-      "Keyword placement: front-loaded for maximum SEO weight",
-      "Bracket / parenthesis modifiers (e.g., '[2024 Update]', '(Step-by-Step)') for context",
-      "Bulk generation: 20-50 title variants per click",
-      "Save / shortlist mode to compare top picks",
-      "Free, unlimited, no signup",
+      "Generates 30 shuffled title ideas per click",
+      "Uses templates for how-to, guide, listicle, question, comparison, expert, trend, problem, benefit, case study, beginner, advanced, tools, mistakes, quick, comprehensive, practical, and innovative angles",
+      "Copies individual title ideas to clipboard",
+      "Works from a single keyword or topic input",
+      "Useful for blog posts, article briefs, content calendars, and headline brainstorming",
+      "Free and no signup required",
     ],
     offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },
   },
@@ -71,32 +61,32 @@ const toolConfig = createToolConfig({
     definition:
       "A Blog Title Generator is a free tool that creates click-worthy headline ideas for blog posts, articles, and content marketing based on your topic or keyword.",
     quickAnswer:
-      "Enter your topic or main keyword and select a content type (how-to, listicle, guide, etc.). Get dozens of headline ideas instantly. Filter by style, word count, and emotional appeal. Copy the titles you like.",
+      "Enter your topic or main keyword and generate 30 headline ideas instantly. Review the list, copy the title you like, and edit it to match the exact search intent of your article.",
     keyTakeaways: [
-      "Generates headline ideas based on topic and content type",
-      "Supports formats: how-to, listicle, question, comparison, and guide",
-      "Effective titles are 6-13 words and under 60 characters for SEO",
-      "Numbers in titles increase click-through rates by up to 36%",
-      "Power words (free, ultimate, proven) boost engagement",
+      "Generates 30 title ideas from one keyword or topic",
+      "Includes how-to, listicle, question, comparison, guide, and trend-style templates",
+      "Copy individual titles and refine them for your target query",
+      "Best titles match search intent, make a specific promise, and fit the page content",
+      "Use generated ideas as drafts, not final claims you cannot support",
     ],
     overview:
-      "This free blog title generator creates dozens of headline ideas optimized for search engine click-through rates and audience engagement. Enter your target keyword or topic to generate title variations across proven headline formats: how-to guides, numbered listicles (7 Ways, 10 Tips, 15 Best), question-based titles that match search queries, comparison posts (X vs Y), ultimate/complete guides, and data-driven headlines with statistics. Each generated title incorporates SEO best practices including front-loaded keywords, power words (free, proven, ultimate, essential, complete) that boost emotional engagement, numbers that increase CTR by up to 36% according to content marketing research, and optimal length targeting under 60 characters for full Google SERP title display. Use this tool for editorial calendar planning, content brief creation, A/B title testing for underperforming blog posts, email subject line ideation, social media headline optimization, and YouTube video title brainstorming.",
+      "This free blog title generator creates 30 headline ideas from a keyword or topic using a broad set of editorial templates. It helps writers and SEO teams move from a blank page to workable title options for how-to guides, listicles, comparison posts, beginner guides, advanced tutorials, trend pieces, mistake posts, tool roundups, and practical articles. Use the output as a brainstorming list, then edit the title for search intent, accuracy, length, and the real value your article provides.",
 
     howToSteps: [
       "Enter your primary keyword, topic, or subject matter (e.g., 'email marketing', 'React performance optimization', 'meal prep for beginners') into the generator input.",
-      "Select content type or format preferences — how-to, listicle, question, comparison, guide, or generate across all formats simultaneously.",
-      "Review the generated headline ideas and shortlist titles that best match your target search intent (informational, commercial, transactional) and audience expectations.",
-      "Check character length to ensure titles stay under 60 characters for full Google SERP display without truncation.",
+      "Click Generate Blog Titles to create 30 shuffled title ideas from the available templates.",
+      "Review the generated headline ideas and choose titles that best match your target search intent and audience expectations.",
+      "Edit the title for accuracy, specificity, and length before publishing.",
       "Copy your chosen title and use it in your blog post, content brief, editorial calendar, or as an A/B test variant for underperforming existing content.",
     ],
 
     features: [
-      "Multiple proven headline structures: how-to, numbered listicle, question, comparison (X vs Y), ultimate guide, and data-driven formats",
-      "Power word integration (free, proven, ultimate, essential, complete, step-by-step) for higher emotional engagement and CTR",
-      "SEO-optimized title generation with front-loaded keywords and character count awareness for Google SERP display limits",
-      "Rapid batch ideation — generate dozens of title variants in seconds for editorial planning and content brief creation",
-      "A/B title testing workflow — generate multiple variants to test against underperforming blog posts in Google Search Console",
-      "Versatile output useful for blog posts, email subject lines, YouTube video titles, social media headlines, and landing page H1 tags",
+      "30 headline ideas per generation",
+      "Template families for guides, lists, questions, comparisons, trends, mistakes, tools, and practical examples",
+      "One-click copy for each generated title",
+      "Fast regeneration for multiple brainstorming passes",
+      "Useful for article briefs, editorial planning, content refreshes, and title testing ideas",
+      "No registration required",
     ],
 
     useCases: [
@@ -182,17 +172,16 @@ const toolConfig = createToolConfig({
         </div>
 
         <div>
-          <h3 className="text-lg font-semibold text-foreground mb-2">Headline Math: Click-Through Rate Data</h3>
-          <p>Research from major content platforms (Backlinko, HubSpot, Conductor) consistently shows:</p>
+          <h3 className="text-lg font-semibold text-foreground mb-2">Headline Quality Checklist</h3>
+          <p>A generated title is a draft. Before publishing, check whether it passes these editorial tests:</p>
           <ul className="list-disc pl-6 mt-2 space-y-1">
-            <li><strong>Numbered titles get 36% more clicks</strong> than non-numbered</li>
-            <li><strong>Odd numbers outperform even</strong> (7 outperforms 6 or 8)</li>
-            <li><strong>Question headlines get 23% more CTR</strong> for informational queries</li>
-            <li><strong>Negative framing outperforms positive 60% of the time</strong> (&quot;5 mistakes&quot; beats &quot;5 wins&quot;)</li>
-            <li><strong>Personal pronouns (&quot;you,&quot; &quot;your&quot;) increase CTR by 7%</strong></li>
-            <li><strong>Brackets/parentheses increase CTR by 38%</strong> ([Updated 2024], (with examples), [Free Template])</li>
-            <li><strong>Power words boost CTR by 12-20%</strong> (proven, ultimate, essential, definitive, complete, easy, free)</li>
-            <li><strong>Specificity wins over vagueness</strong> (&quot;47% increase&quot; beats &quot;huge increase&quot;)</li>
+            <li><strong>Intent match:</strong> the title should fit what the searcher wants to do or learn.</li>
+            <li><strong>Specificity:</strong> replace vague promises with clear scope, examples, audience, or outcome.</li>
+            <li><strong>Accuracy:</strong> do not promise data, templates, tools, or case studies the article does not contain.</li>
+            <li><strong>Readable length:</strong> keep the most important words near the front so truncation does not hide the point.</li>
+            <li><strong>Natural language:</strong> avoid keyword stuffing and awkward repeated phrases.</li>
+            <li><strong>Freshness:</strong> use a year only when the article is genuinely maintained for that year.</li>
+            <li><strong>Brand fit:</strong> match the tone of the site and audience instead of chasing generic clickbait.</li>
           </ul>
         </div>
 
@@ -259,7 +248,7 @@ const toolConfig = createToolConfig({
       {
         question: "Do numbers in blog titles really increase click-through rate?",
         answer:
-          "Yes. Content marketing research consistently shows that titles with numbers generate 36% more clicks than titles without. Odd numbers (7, 9, 11) slightly outperform even numbers. Specific numbers outperform round numbers ('143% Increase' vs. 'Big Increase'). Listicle formats (10 Ways, 7 Tips, 15 Best) set clear content expectations and are preferred for informational search queries.",
+          "Numbers can help when they set clear expectations, such as '7 examples' or '10 steps.' They are not a magic ranking factor. Use a number only when the article actually contains that many items and the list format matches the search intent.",
       },
       {
         question: "How do I improve blog post click-through rate (CTR) with better titles?",
@@ -274,7 +263,7 @@ const toolConfig = createToolConfig({
       {
         question: "Is this blog title generator free?",
         answer:
-          "Yes, completely free with no signup, no usage limits, and no ads. Generate unlimited headline ideas for blog posts, articles, email campaigns, videos, and social media content.",
+          "Yes. It is free to use without signup. Enter a topic, generate 30 headline ideas, and copy any title you want to refine.",
       },
     ],
 

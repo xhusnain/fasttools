@@ -137,8 +137,8 @@ export const sitemapPages = [
   { url: u("/web-tools/device-info"), lastModified: new Date("2026-03-23"), changeFrequency: "monthly" as const, priority: 0.7 },
   { url: u("/web-tools/auth-generator"), lastModified: new Date("2026-03-23"), changeFrequency: "monthly" as const, priority: 0.7 },
   { url: u("/web-tools/outlook-safelink-decoder"), lastModified: new Date("2026-03-23"), changeFrequency: "monthly" as const, priority: 0.7 },
-  { url: u("/web-tools/dns-ssl-checker"), lastModified: new Date("2026-03-27"), changeFrequency: "monthly" as const, priority: 0.7 },
-  { url: u("/web-tools/whois-lookup"), lastModified: new Date("2026-05-29"), changeFrequency: "monthly" as const, priority: 0.7 },
+  { url: u("/web-tools/dns-ssl-checker"), lastModified: new Date("2026-06-04"), changeFrequency: "monthly" as const, priority: 0.7 },
+  { url: u("/web-tools/whois-lookup"), lastModified: new Date("2026-06-04"), changeFrequency: "monthly" as const, priority: 0.7 },
 
   // ─── Crypto Tools ────────────────────────────────────────────────────
   { url: u("/crypto-tools/encrypt-decrypt"), lastModified: new Date("2026-03-23"), changeFrequency: "monthly" as const, priority: 0.7 },
@@ -155,59 +155,59 @@ export const sitemapPages = [
   { url: u("/crypto-tools/totp-qr-code-generator"), lastModified: new Date("2026-06-03"), changeFrequency: "monthly" as const, priority: 0.75 },
 
   // ─── Dev Tools ───────────────────────────────────────────────────────
-  { url: u("/dev-tools/jwt-decoder"), lastModified: new Date("2026-03-23"), changeFrequency: "monthly" as const, priority: 0.7 },
+  { url: u("/dev-tools/jwt-decoder"), lastModified: new Date("2026-06-04"), changeFrequency: "monthly" as const, priority: 0.7 },
   { url: u("/dev-tools/regex-tester"), lastModified: new Date("2026-03-23"), changeFrequency: "monthly" as const, priority: 0.7 },
-  { url: u("/dev-tools/json-diff"), lastModified: new Date("2026-03-23"), changeFrequency: "monthly" as const, priority: 0.7 },
-  { url: u("/dev-tools/json-to-csv"), lastModified: new Date("2026-03-23"), changeFrequency: "monthly" as const, priority: 0.7 },
-  { url: u("/dev-tools/html-beautifier"), lastModified: new Date("2026-03-23"), changeFrequency: "monthly" as const, priority: 0.7 },
-  { url: u("/dev-tools/base64-encoder"), lastModified: new Date("2026-03-23"), changeFrequency: "monthly" as const, priority: 0.7 },
-  { url: u("/dev-tools/mime-types"), lastModified: new Date("2026-03-23"), changeFrequency: "monthly" as const, priority: 0.7 },
-  { url: u("/dev-tools/keycode-info"), lastModified: new Date("2026-03-23"), changeFrequency: "monthly" as const, priority: 0.7 },
-  { url: u("/dev-tools/slugify-string"), lastModified: new Date("2026-03-23"), changeFrequency: "monthly" as const, priority: 0.7 },
-  { url: u("/dev-tools/user-agent-parser"), lastModified: new Date("2026-03-23"), changeFrequency: "monthly" as const, priority: 0.7 },
-  { url: u("/dev-tools/http-status-codes"), lastModified: new Date("2026-03-23"), changeFrequency: "monthly" as const, priority: 0.7 },
-  { url: u("/dev-tools/hex-to-rgb"), lastModified: new Date("2026-03-23"), changeFrequency: "monthly" as const, priority: 0.7 },
-  { url: u("/dev-tools/color-palette"), lastModified: new Date("2026-04-10"), changeFrequency: "monthly" as const, priority: 0.9 },
-  { url: u("/dev-tools/css-gradient-generator"), lastModified: new Date("2026-04-21"), changeFrequency: "monthly" as const, priority: 0.9 },
-  { url: u("/dev-tools/diff-checker"), lastModified: new Date("2026-04-10"), changeFrequency: "monthly" as const, priority: 0.9 },
+  { url: u("/dev-tools/json-diff"), lastModified: new Date("2026-06-04"), changeFrequency: "monthly" as const, priority: 0.7 },
+  { url: u("/dev-tools/json-to-csv"), lastModified: new Date("2026-06-04"), changeFrequency: "monthly" as const, priority: 0.7 },
+  { url: u("/dev-tools/html-beautifier"), lastModified: new Date("2026-06-04"), changeFrequency: "monthly" as const, priority: 0.7 },
+  { url: u("/dev-tools/base64-encoder"), lastModified: new Date("2026-06-04"), changeFrequency: "monthly" as const, priority: 0.7 },
+  { url: u("/dev-tools/mime-types"), lastModified: new Date("2026-06-04"), changeFrequency: "monthly" as const, priority: 0.7 },
+  { url: u("/dev-tools/keycode-info"), lastModified: new Date("2026-06-04"), changeFrequency: "monthly" as const, priority: 0.7 },
+  { url: u("/dev-tools/slugify-string"), lastModified: new Date("2026-06-04"), changeFrequency: "monthly" as const, priority: 0.7 },
+  { url: u("/dev-tools/user-agent-parser"), lastModified: new Date("2026-06-04"), changeFrequency: "monthly" as const, priority: 0.7 },
+  { url: u("/dev-tools/http-status-codes"), lastModified: new Date("2026-06-04"), changeFrequency: "monthly" as const, priority: 0.7 },
+  { url: u("/dev-tools/hex-to-rgb"), lastModified: new Date("2026-06-04"), changeFrequency: "monthly" as const, priority: 0.7 },
+  { url: u("/dev-tools/color-palette"), lastModified: new Date("2026-06-04"), changeFrequency: "monthly" as const, priority: 0.9 },
+  { url: u("/dev-tools/css-gradient-generator"), lastModified: new Date("2026-06-04"), changeFrequency: "monthly" as const, priority: 0.9 },
+  { url: u("/dev-tools/diff-checker"), lastModified: new Date("2026-06-04"), changeFrequency: "monthly" as const, priority: 0.9 },
 
   // ─── Education Tools ────────────────────────────────────────────────
   { url: u("/education-tools"), lastModified: new Date("2026-04-10"), changeFrequency: "weekly" as const, priority: 0.9 },
-  { url: u("/education-tools/citation-generator"), lastModified: new Date("2026-04-10"), changeFrequency: "monthly" as const, priority: 0.9 },
-  { url: u("/dev-tools/html-to-markdown"), lastModified: new Date("2026-03-23"), changeFrequency: "monthly" as const, priority: 0.7 },
-  { url: u("/dev-tools/markdown-previewer"), lastModified: new Date("2026-03-23"), changeFrequency: "monthly" as const, priority: 0.7 },
-  { url: u("/dev-tools/llm-training-cost"), lastModified: new Date("2026-03-16"), changeFrequency: "monthly" as const, priority: 0.7 },
-  { url: u("/dev-tools/cloudflare-workers-cost"), lastModified: new Date("2026-03-16"), changeFrequency: "monthly" as const, priority: 0.7 },
-  { url: u("/dev-tools/cron-expression-generator"), lastModified: new Date("2026-03-27"), changeFrequency: "monthly" as const, priority: 0.7 },
-  { url: u("/dev-tools/timestamp-converter"), lastModified: new Date("2026-05-29"), changeFrequency: "monthly" as const, priority: 0.7 },
+  { url: u("/education-tools/citation-generator"), lastModified: new Date("2026-06-04"), changeFrequency: "monthly" as const, priority: 0.9 },
+  { url: u("/dev-tools/html-to-markdown"), lastModified: new Date("2026-06-04"), changeFrequency: "monthly" as const, priority: 0.7 },
+  { url: u("/dev-tools/markdown-previewer"), lastModified: new Date("2026-06-04"), changeFrequency: "monthly" as const, priority: 0.7 },
+  { url: u("/dev-tools/llm-training-cost"), lastModified: new Date("2026-06-04"), changeFrequency: "monthly" as const, priority: 0.7 },
+  { url: u("/dev-tools/cloudflare-workers-cost"), lastModified: new Date("2026-06-04"), changeFrequency: "monthly" as const, priority: 0.7 },
+  { url: u("/dev-tools/cron-expression-generator"), lastModified: new Date("2026-06-04"), changeFrequency: "monthly" as const, priority: 0.7 },
+  { url: u("/dev-tools/timestamp-converter"), lastModified: new Date("2026-06-04"), changeFrequency: "monthly" as const, priority: 0.7 },
 
   // ─── SEO Tools ───────────────────────────────────────────────────────
   { url: u("/seo-tools/meta-tags"), lastModified: new Date("2026-03-23"), changeFrequency: "monthly" as const, priority: 0.7 },
-  { url: u("/seo-tools/lorem-ipsum"), lastModified: new Date("2026-03-23"), changeFrequency: "monthly" as const, priority: 0.7 },
-  { url: u("/seo-tools/blog-titles"), lastModified: new Date("2026-03-23"), changeFrequency: "monthly" as const, priority: 0.7 },
-  { url: u("/seo-tools/keyword-density"), lastModified: new Date("2026-03-23"), changeFrequency: "monthly" as const, priority: 0.7 },
-  { url: u("/seo-tools/schema-markup-generator"), lastModified: new Date("2026-03-27"), changeFrequency: "monthly" as const, priority: 0.7 },
+  { url: u("/seo-tools/lorem-ipsum"), lastModified: new Date("2026-06-04"), changeFrequency: "monthly" as const, priority: 0.7 },
+  { url: u("/seo-tools/blog-titles"), lastModified: new Date("2026-06-04"), changeFrequency: "monthly" as const, priority: 0.7 },
+  { url: u("/seo-tools/keyword-density"), lastModified: new Date("2026-06-04"), changeFrequency: "monthly" as const, priority: 0.7 },
+  { url: u("/seo-tools/schema-markup-generator"), lastModified: new Date("2026-06-04"), changeFrequency: "monthly" as const, priority: 0.7 },
   { url: u("/seo-tools/word-counter"), lastModified: new Date("2026-04-08"), changeFrequency: "monthly" as const, priority: 0.9 },
 
   // ─── Image Tools ─────────────────────────────────────────────────────
-  { url: u("/image-tools/image-compressor"), lastModified: new Date("2026-03-23"), changeFrequency: "weekly" as const, priority: 0.5 },
-  { url: u("/image-tools/image-resizer"), lastModified: new Date("2026-03-27"), changeFrequency: "weekly" as const, priority: 0.5 },
-  { url: u("/image-tools/image-to-text"), lastModified: new Date("2026-03-23"), changeFrequency: "monthly" as const, priority: 0.5 },
+  { url: u("/image-tools/image-compressor"), lastModified: new Date("2026-06-04"), changeFrequency: "weekly" as const, priority: 0.5 },
+  { url: u("/image-tools/image-resizer"), lastModified: new Date("2026-06-04"), changeFrequency: "weekly" as const, priority: 0.5 },
+  { url: u("/image-tools/image-to-text"), lastModified: new Date("2026-06-04"), changeFrequency: "monthly" as const, priority: 0.5 },
   { url: u("/image-tools/ai-image-detector"), lastModified: new Date("2026-03-09"), changeFrequency: "weekly" as const, priority: 0.5 },
   { url: u("/image-tools/background-remover"), lastModified: new Date("2026-04-01"), changeFrequency: "weekly" as const, priority: 0.8 },
-  { url: u("/image-tools/image-cropper"), lastModified: new Date("2026-04-21"), changeFrequency: "monthly" as const, priority: 0.9 },
+  { url: u("/image-tools/image-cropper"), lastModified: new Date("2026-06-04"), changeFrequency: "monthly" as const, priority: 0.9 },
 
   // ─── Security Tools ──────────────────────────────────────────────────
-  { url: u("/security-tools/image-steganography"), lastModified: new Date("2026-04-17"), changeFrequency: "monthly" as const, priority: 0.9 },
+  { url: u("/security-tools/image-steganography"), lastModified: new Date("2026-06-04"), changeFrequency: "monthly" as const, priority: 0.9 },
 
   // ─── PDF Tools ───────────────────────────────────────────────────────
-  { url: u("/pdf-tools/image-to-pdf"), lastModified: new Date("2026-06-02"), changeFrequency: "weekly" as const, priority: 0.9 },
+  { url: u("/pdf-tools/image-to-pdf"), lastModified: new Date("2026-06-04"), changeFrequency: "weekly" as const, priority: 0.9 },
   { url: u("/pdf-tools/pdf-sign"), lastModified: new Date("2026-03-23"), changeFrequency: "monthly" as const, priority: 0.9 },
   { url: u("/pdf-tools/pdf-word-converter"), lastModified: new Date("2026-03-23"), changeFrequency: "monthly" as const, priority: 0.9 },
   { url: u("/pdf-tools/pdf-splitter-merger"), lastModified: new Date("2026-03-23"), changeFrequency: "monthly" as const, priority: 0.9 },
   { url: u("/pdf-tools/pdf-unlocker"), lastModified: new Date("2026-03-23"), changeFrequency: "monthly" as const, priority: 0.9 },
-  { url: u("/pdf-tools/pdf-compressor"), lastModified: new Date("2026-03-23"), changeFrequency: "monthly" as const, priority: 0.9 },
-  { url: u("/pdf-tools/pdf-to-image"), lastModified: new Date("2026-03-23"), changeFrequency: "monthly" as const, priority: 0.9 },
+  { url: u("/pdf-tools/pdf-compressor"), lastModified: new Date("2026-06-04"), changeFrequency: "monthly" as const, priority: 0.9 },
+  { url: u("/pdf-tools/pdf-to-image"), lastModified: new Date("2026-06-04"), changeFrequency: "monthly" as const, priority: 0.9 },
   { url: u("/pdf-tools/pdf-signature-checker"), lastModified: new Date("2026-03-23"), changeFrequency: "weekly" as const, priority: 0.9 },
 
   // ─── Fun Tools ───────────────────────────────────────────────────────
@@ -245,15 +245,15 @@ export const sitemapPages = [
   { url: u("/converters/toml-json"), lastModified: new Date("2026-05-14"), changeFrequency: "monthly" as const, priority: 0.6 },
   { url: u("/converters/toml-yaml"), lastModified: new Date("2026-05-14"), changeFrequency: "monthly" as const, priority: 0.6 },
   { url: u("/converters/unicode"), lastModified: new Date("2026-05-14"), changeFrequency: "monthly" as const, priority: 0.6 },
-  { url: u("/converters/xml-json"), lastModified: new Date("2026-05-14"), changeFrequency: "monthly" as const, priority: 0.6 },
+  { url: u("/converters/xml-json"), lastModified: new Date("2026-06-04"), changeFrequency: "monthly" as const, priority: 0.6 },
   { url: u("/converters/yaml-toml"), lastModified: new Date("2026-05-14"), changeFrequency: "monthly" as const, priority: 0.6 },
 
   // Crypto Tools
   { url: u("/crypto-tools/ulid-generator"), lastModified: new Date("2026-05-14"), changeFrequency: "monthly" as const, priority: 0.6 },
 
   // Dev Tools
-  { url: u("/dev-tools/html-wysiwyg-editor"), lastModified: new Date("2026-05-14"), changeFrequency: "monthly" as const, priority: 0.7 },
-  { url: u("/dev-tools/sql-to-json"), lastModified: new Date("2026-05-14"), changeFrequency: "monthly" as const, priority: 0.7 },
+  { url: u("/dev-tools/html-wysiwyg-editor"), lastModified: new Date("2026-06-04"), changeFrequency: "monthly" as const, priority: 0.7 },
+  { url: u("/dev-tools/sql-to-json"), lastModified: new Date("2026-06-04"), changeFrequency: "monthly" as const, priority: 0.7 },
 
   // Finance Tools (large untapped category — multiple high-volume queries)
   { url: u("/finance-tools/amortization-calculator"), lastModified: new Date("2026-05-14"), changeFrequency: "monthly" as const, priority: 0.8 },
@@ -271,7 +271,7 @@ export const sitemapPages = [
   { url: u("/finance-tools/tax-calculator"), lastModified: new Date("2026-05-14"), changeFrequency: "monthly" as const, priority: 0.8 },
 
   // SEO Tools
-  { url: u("/seo-tools/text-similarity-checker"), lastModified: new Date("2026-05-14"), changeFrequency: "monthly" as const, priority: 0.7 },
+  { url: u("/seo-tools/text-similarity-checker"), lastModified: new Date("2026-06-04"), changeFrequency: "monthly" as const, priority: 0.7 },
 
   // ─── Blog Content ────────────────────────────────────────────────────
   ...getBlogSitemapPages(),

@@ -11,10 +11,10 @@ const ImageToPDF = dynamic(() => import("@/components/pdf/image-to-pdf").then((m
 const toolConfig = createToolConfig({
   toolName: "Image to PDF Converter",
   description:
-    "Convert JPG, PNG, and WebP images to a single PDF online. Upload multiple images, reorder pages, choose A4, Letter, Legal, or image-fit pages, then download the PDF.",
+    "Convert JPG, PNG, and WebP images to a single PDF online. Upload up to 75 images, reorder pages, choose A4, Letter, Legal, or image-fit pages, then download the PDF.",
   metaTitle: "Image to PDF Converter - Create PDFs from Photos and Screenshots",
   metaDescription:
-    "Create a PDF from photos, screenshots, scans, receipts, JPG, PNG, or WebP images. Reorder pages, set paper size and margins, then download in your browser.",
+    "Create a PDF from photos, screenshots, scans, receipts, JPG, PNG, or WebP images. Reorder up to 75 pages, set paper size and margins, then download.",
   path: "/pdf-tools/image-to-pdf",
 
   schemaOptions: {
@@ -33,7 +33,8 @@ const toolConfig = createToolConfig({
     ],
     featureList: [
       "Convert JPG, PNG, and WebP images to PDF",
-      "Combine multiple images into one PDF document",
+      "Combine up to 75 images into one PDF document",
+      "25 MB per-image upload limit",
       "Reorder image pages before export",
       "A4, US Letter, US Legal, and image-fit page sizes",
       "Auto, portrait, and landscape page orientation",
@@ -64,16 +65,17 @@ const toolConfig = createToolConfig({
     definition:
       "An Image to PDF Converter is a free online tool that combines JPG, PNG, and WebP images into a downloadable PDF document.",
     quickAnswer:
-      "Upload one or more images, reorder them if needed, choose page size, orientation, margins, and fit mode, then convert them into a single PDF. The conversion runs in your browser, so your images are not uploaded to a server.",
+      "Upload up to 75 JPG, PNG, or WebP images, reorder them if needed, choose page size, orientation, margins, and fit mode, then convert them into a single PDF. The conversion runs in your browser session.",
     keyTakeaways: [
       "Creates PDF documents from photos, screenshots, scans, receipts, JPG, PNG, and WebP images",
-      "Supports multiple images with page reordering before export",
+      "Supports up to 75 images with page reordering before export",
+      "Each image can be up to 25 MB",
       "Includes A4, US Letter, US Legal, and fit-to-image page sizes",
       "Offers margin, orientation, image-fit, and quality controls",
       "Runs locally in the browser with no account requirement",
     ],
     overview:
-      "This Image to PDF converter is built for everyday document workflows: turning photos, screenshots, scanned pages, receipts, design mockups, and image sets into a shareable PDF. Upload multiple images, move pages up or down, pick a standard paper size such as A4 or US Letter, and control whether each image is contained, cropped, or stretched inside the page. The tool can embed images as compact JPG for smaller PDFs or PNG for sharper lossless output.",
+      "This Image to PDF converter is built for everyday document workflows: turning photos, screenshots, scanned pages, receipts, design mockups, and image sets into a shareable PDF. Upload up to 75 JPG, PNG, or WebP images, move pages up or down, pick a standard paper size such as A4 or US Letter, and control whether each image is contained, cropped, or stretched inside the page. The tool can embed images as compact JPG for smaller PDFs or PNG for sharper output.",
 
     howToSteps: [
       "Upload JPG, PNG, or WebP images by dragging them into the upload area or selecting files from your device.",
@@ -85,6 +87,8 @@ const toolConfig = createToolConfig({
 
     features: [
       "Multi-image upload for JPG, PNG, and WebP files",
+      "Up to 75 images per PDF",
+      "25 MB maximum per image",
       "Page order controls before PDF creation",
       "A4, US Letter, US Legal, and fit-to-image page sizes",
       "Auto orientation based on each image, plus portrait and landscape modes",
@@ -113,6 +117,15 @@ const toolConfig = createToolConfig({
             JPG output is best when you want a smaller PDF from photos, receipts, and screenshots. PNG output is better when the images
             contain sharp UI text, diagrams, or flat graphics where lossless quality matters more than file size. For most mixed image
             sets, balanced JPG output gives the best size-to-quality result.
+          </p>
+        </div>
+
+        <div>
+          <h3 className="text-lg font-semibold text-foreground mb-2">Photos, Screenshots, and Scans</h3>
+          <p>
+            Use JPG output for camera photos, receipt photos, product shots, and scans where a smaller PDF matters. Use PNG output for
+            screenshots, diagrams, UI captures, forms, or images with small text. If the final PDF is too large, compress source images
+            first or choose compact JPG quality.
           </p>
         </div>
 
@@ -166,7 +179,7 @@ const toolConfig = createToolConfig({
       {
         question: "Can I combine multiple images into one PDF?",
         answer:
-          "Yes. Add multiple images and the tool will create one PDF with each image placed on its own page. You can move images up or down before converting.",
+          "Yes. Add up to 75 images and the tool will create one PDF with each image placed on its own page. You can move images up or down before converting.",
       },
       {
         question: "Can I convert JPG to PDF and PNG to PDF?",
@@ -197,6 +210,11 @@ const toolConfig = createToolConfig({
         question: "Does this work on mobile?",
         answer:
           "Yes. The tool works in modern mobile and desktop browsers. Very large batches may perform better on desktop because image processing uses browser memory.",
+      },
+      {
+        question: "What is the maximum image size?",
+        answer:
+          "Each image can be up to 25 MB, and you can add up to 75 images per PDF. For large camera photos, compress or resize images first to keep the final PDF manageable.",
       },
     ],
 

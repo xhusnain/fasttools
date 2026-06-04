@@ -264,13 +264,11 @@ export function JWTDecoder() {
                 return
             }
 
-            // This is a simplified verification - in production, use proper JWT libraries
-            // For demo purposes, we'll just check if the token structure is valid
+            // This component does not perform cryptographic JWT verification.
+            // Keep the result neutral so the UI never implies a real signature check passed.
             const parts = token.split(".")
             if (parts.length === 3 && algorithm) {
-                // Note: Real verification requires proper crypto implementation
-                // This is just a UI indication
-                setIsVerified(true)
+                setIsVerified(false)
             } else {
                 setIsVerified(false)
             }
@@ -1834,16 +1832,16 @@ metadata:
                             {/* Signature Verification */}
                             <GCard className="p-5 space-y-4 w-full max-w-full overflow-hidden">
                                 <div className="space-y-4">
-                                    <h3 className="text-lg font-bold text-foreground">Verify Signature (Optional)</h3>
+                                    <h3 className="text-lg font-bold text-foreground">Signature Check Note</h3>
                                     <p className="text-sm text-muted-foreground">
-                                        Enter the secret key to verify the JWT signature. Note: This is for demonstration only. Always verify signatures server-side.
+                                        This tool decodes JWTs for inspection but does not perform cryptographic signature verification. Always verify signatures server-side with a trusted JWT library.
                                     </p>
                                     <div className="space-y-3">
                                         <GLabel className="text-base font-medium">Secret Key</GLabel>
                                         <div className="flex gap-2">
                                             <GInput
                                                 type="text"
-                                                placeholder="Enter your secret key..."
+                                                placeholder="Do not paste production secrets here"
                                                 value={secret}
                                                 onChange={(e) => setSecret(e.target.value)}
                                                 className="font-mono text-base border-2 border-blue-300 focus:border-primary"
@@ -1854,27 +1852,17 @@ metadata:
                                                 disabled={!secret}
                                                 className="text-base px-6"
                                             >
-                                                Verify
+                                                Check
                                             </GButton>
                                         </div>
                                     </div>
 
                                     {isVerified !== null && (
-                                        <div className={`p-4 rounded-lg flex items-center gap-3 ${isVerified
-                                            ? "bg-card border border-border"
-                                            : "bg-destructive/10 border border-destructive/20"
-                                            }`}>
-                                            {isVerified ? (
-                                                <>
-                                                    <CheckCircle2 className="h-6 w-6 text-heading-accent" />
-                                                    <span className="text-base font-medium text-heading-accent">Signature Verified</span>
-                                                </>
-                                            ) : (
-                                                <>
-                                                    <AlertCircle className="h-6 w-6 text-destructive" />
-                                                    <span className="text-base font-medium text-destructive">Invalid Signature</span>
-                                                </>
-                                            )}
+                                        <div className="p-4 rounded-lg flex items-center gap-3 bg-card border border-border">
+                                            <AlertCircle className="h-6 w-6 text-muted-foreground" />
+                                            <span className="text-base font-medium text-foreground">
+                                                Signature not verified in browser. Use the generated server-side examples for real verification.
+                                            </span>
                                         </div>
                                     )}
                                 </div>
@@ -2044,7 +2032,7 @@ metadata:
                                 </GButton>
                             </div>
                             <p className="text-xs text-muted-foreground">
-                                📌 This link never expires and can be shared with anyone. The token data is encoded in the URL.
+                                Token data is encoded in the URL. Review the masked output before sharing and avoid sharing production tokens.
                             </p>
                         </div>
 
@@ -2053,15 +2041,15 @@ metadata:
                             <div className="flex items-start gap-2">
                                 <CheckCircle2 className="h-5 w-5 text-heading-accent mt-0.5 shrink-0" />
                                 <div>
-                                    <p className="text-sm font-medium text-foreground">No Expiration</p>
-                                    <p className="text-xs text-muted-foreground">Link works forever</p>
+                                    <p className="text-sm font-medium text-foreground">URL-Based Link</p>
+                                    <p className="text-xs text-muted-foreground">Anyone with the URL can view the encoded token data</p>
                                 </div>
                             </div>
                             <div className="flex items-start gap-2">
                                 <CheckCircle2 className="h-5 w-5 text-heading-accent mt-0.5 shrink-0" />
                                 <div>
-                                    <p className="text-sm font-medium text-foreground">Privacy Protected</p>
-                                    <p className="text-xs text-muted-foreground">Sensitive data masked</p>
+                                    <p className="text-sm font-medium text-foreground">Optional Masking</p>
+                                    <p className="text-xs text-muted-foreground">Sensitive-looking fields are masked on a best-effort basis</p>
                                 </div>
                             </div>
                             <div className="flex items-start gap-2">
@@ -2075,7 +2063,7 @@ metadata:
                                 <CheckCircle2 className="h-5 w-5 text-heading-accent mt-0.5 shrink-0" />
                                 <div>
                                     <p className="text-sm font-medium text-foreground">Team Debugging</p>
-                                    <p className="text-xs text-muted-foreground">Perfect for collaboration</p>
+                                    <p className="text-xs text-muted-foreground">Use only with safe or redacted tokens</p>
                                 </div>
                             </div>
                         </div>
@@ -2203,8 +2191,8 @@ metadata:
                             <div className="flex items-start gap-2">
                                 <CheckCircle2 className="h-5 w-5 text-heading-accent mt-0.5 shrink-0" />
                                 <div>
-                                    <p className="text-sm font-medium text-foreground">Token Verification</p>
-                                    <p className="text-xs text-muted-foreground">Validates JWT signature</p>
+                                    <p className="text-sm font-medium text-foreground">Verification Example</p>
+                                    <p className="text-xs text-muted-foreground">Shows library-based server-side verification patterns</p>
                                 </div>
                             </div>
                             <div className="flex items-start gap-2">
@@ -2224,8 +2212,8 @@ metadata:
                             <div className="flex items-start gap-2">
                                 <CheckCircle2 className="h-5 w-5 text-heading-accent mt-0.5 shrink-0" />
                                 <div>
-                                    <p className="text-sm font-medium text-foreground">Production Ready</p>
-                                    <p className="text-xs text-muted-foreground">Best practices included</p>
+                                    <p className="text-sm font-medium text-foreground">Implementation Starting Point</p>
+                                    <p className="text-xs text-muted-foreground">Review and adapt before production use</p>
                                 </div>
                             </div>
                         </div>
@@ -3535,7 +3523,7 @@ except jwt.InvalidTokenError:
                                 {/* Feature 10: Share Anonymously */}
                                 <div className="p-3 bg-card rounded-lg">
                                     <h4 className="font-semibold text-foreground mb-2">🔗 Share Token Anonymously</h4>
-                                    <p className="text-xs">Need to debug with your team? Click &quot;Share&quot; to generate a shareable link. You can choose to mask sensitive data (like emails or passwords) before sharing. The link never expires and your token is encoded in the URL - no data stored on our servers!</p>
+                                    <p className="text-xs">Need to debug with your team? Click &quot;Share&quot; to generate a link with the token encoded in the URL. You can choose to mask sensitive-looking fields before sharing, but always review the output and avoid production tokens.</p>
                                 </div>
                             </div>
                         </div>

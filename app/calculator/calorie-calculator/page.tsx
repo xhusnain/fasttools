@@ -61,6 +61,17 @@ export const metadata: Metadata = {
 export default function CalorieCalculatorPage() {
   const toolContent = {
     toolName: "Calorie Calculator — Daily Calorie Needs & TDEE",
+    definition:
+      "A calorie calculator estimates daily calorie needs from BMR, activity level, body size, age, sex, and goal.",
+    quickAnswer:
+      "Enter your age, sex, height, weight, activity level, and goal to estimate daily calories for maintenance, weight loss, or muscle gain. The calculator uses BMR equations and activity multipliers to estimate TDEE.",
+    keyTakeaways: [
+      "Maintenance calories are usually estimated from TDEE, not BMR alone",
+      "TDEE combines resting metabolism, daily activity, exercise, and digestion",
+      "Weight loss generally requires a calorie deficit; muscle gain usually requires a modest surplus",
+      "Activity level selection is often the biggest source of estimation error",
+      "Track actual weight and energy trends to adjust the estimate over time",
+    ],
     overview: "Calculate how many calories you need per day with our free advanced calorie calculator. Get your Basal Metabolic Rate (BMR) using Mifflin-St Jeor, Harris-Benedict, or Katch-McArdle equations, then compute your Total Daily Energy Expenditure (TDEE) across five activity levels. Receive precise calorie targets for weight loss (500-1000 cal deficit), maintenance, or muscle gain (250-500 cal surplus), plus advanced zigzag calorie cycling plans to prevent metabolic adaptation. Includes activity calorie burn reference chart, thermic effect of food (TEF) insights, macronutrient breakdown guidance, and evidence-based meal planning tips.",
 
     howToSteps: [

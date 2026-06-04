@@ -651,7 +651,7 @@ export function ColorPaletteGenerator() {
                 )}
                 <p className="text-xs text-muted-foreground">
                   Extracts the {colorCount} most prominent colors from your image using color quantization.
-                  100% client-side — images never leave your device.
+                  Runs in the browser with Canvas after you choose a file.
                 </p>
               </GTabsContent>
             </GTabs>

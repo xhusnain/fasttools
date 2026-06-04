@@ -85,63 +85,87 @@ const toolConfig = createToolConfig({
       "Accuracy depends on image quality — higher resolution gives better results",
     ],
     overview:
-      "Image to Text (OCR) converts readable text from screenshots, document photos, and image snippets into editable output. It is useful for quick copy workflows when you need text from visual content without manual typing.",
+      "Image to Text (OCR) converts readable text inside an image into editable, copyable text. Use it for screenshots, photos of documents, scanned pages, receipts, invoices, business cards, notes, labels, UI mockups, and research images where retyping would be slow or error-prone. The tool is designed for quick browser-based extraction: choose the OCR language, upload the image, review the recognized text, then copy or download the result.",
 
     howToSteps: [
-      "Choose an OCR language from the selector.",
-      "Upload an image file (up to 10MB).",
-      "Wait for OCR to process and preview extracted text.",
-      "Copy the result, or rerun OCR with another language.",
+      "Choose the OCR language that best matches the text in your image.",
+      "Upload a clear JPG, PNG, WebP, BMP, or other browser-supported image file.",
+      "Wait for the OCR engine to scan the image and generate editable text.",
+      "Review the output for spelling, line-break, or number-recognition errors.",
+      "Copy the extracted text or download it for use in documents, spreadsheets, notes, or translation tools.",
+      "If the result is weak, crop the image, increase contrast, or rerun with the correct language.",
     ],
 
     features: [
-      "Browser-based OCR workflow",
-      "Language selection for multilingual extraction",
-      "Progress indicator while text recognition runs",
+      "Image to editable text extraction using OCR",
+      "Works with screenshots, photos, scans, receipts, labels, and document images",
+      "Language selection for multilingual OCR workflows",
+      "Progress indicator while recognition runs",
       "One-click copy to clipboard",
-      "Reset and rerun flow for quick retries",
-      "No login required",
+      "Download recognized text as a reusable file",
+      "Reset and rerun flow for retries with cleaner images or another language",
+      "Runs in the browser with no login required",
       "Works on mobile and desktop browsers",
     ],
 
     useCases: [
-      "Copy text from screenshots into documents",
-      "Extract notes from document photos",
-      "Convert UI mockup text into editable copy",
-      "Capture text from images for translation workflows",
-      "Reduce manual typing in research and admin tasks",
+      "Copy text from screenshots into documents, emails, tickets, or notes",
+      "Extract receipt, invoice, and business-card text for bookkeeping or CRM entry",
+      "Turn scanned document photos into editable text snippets",
+      "Capture text from UI mockups, app screenshots, or website screenshots for product work",
+      "Extract printed notes, book passages, labels, forms, or signs for research",
+      "Prepare image text for translation, summarization, cleanup, or spreadsheet entry",
+      "Reduce manual typing in admin, student, research, and support workflows",
     ],
 
     aboutTool: (
       <div className="space-y-6 text-muted-foreground">
         <div>
-          <h3 className="text-lg font-semibold text-foreground mb-2">What OCR Output Depends On</h3>
+          <h3 className="text-lg font-semibold text-foreground mb-2">What OCR Means</h3>
           <p>
-            OCR accuracy improves with clear contrast, sharp focus, and horizontal text. Low light, blur, and heavily stylized fonts
-            usually reduce extraction quality.
+            OCR stands for optical character recognition. It scans an image, detects shapes that look like letters or numbers, and converts those shapes into editable text. OCR works best on printed text with clear contrast and predictable fonts, but it can also help with screenshots, scans, forms, receipts, and some handwriting.
+          </p>
+        </div>
+
+        <div>
+          <h3 className="text-lg font-semibold text-foreground mb-2">What OCR Accuracy Depends On</h3>
+          <p>
+            OCR accuracy improves with sharp focus, high resolution, good lighting, horizontal text, and clear contrast between text and background. Low light, motion blur, perspective distortion, shadows, tiny fonts, decorative typefaces, watermarks, and compressed screenshots can reduce extraction quality.
+          </p>
+        </div>
+
+        <div>
+          <h3 className="text-lg font-semibold text-foreground mb-2">Screenshots, Photos, and Scans</h3>
+          <p>
+            Screenshots usually produce the cleanest output because the text is flat and high contrast. Photos of documents can work well if the camera is steady and the page is not angled. Scanned pages are strong input when the scan is not too compressed. For receipts and labels, crop out the background so the OCR engine focuses on the text area.
           </p>
         </div>
 
         <div>
           <h3 className="text-lg font-semibold text-foreground mb-2">Language-Aware Extraction</h3>
           <p>
-            You can select the OCR language before processing and rerun with another language if needed. Choosing the correct language
-            typically improves recognition for non-English content.
+            Choose the OCR language before processing whenever possible. The correct language helps the recognition engine interpret accents, symbols, character shapes, and word patterns. If an image mixes languages, run OCR once with the dominant language and rerun with another language if important text is missed.
           </p>
         </div>
 
         <div>
-          <h3 className="text-lg font-semibold text-foreground mb-2">Privacy and Session Behavior</h3>
+          <h3 className="text-lg font-semibold text-foreground mb-2">Handwriting and Difficult Images</h3>
           <p>
-            OCR processing is designed for browser-based usage and quick copy workflows. For best results, process clean input images
-            and review extracted text before final use.
+            Handwriting OCR is less reliable than printed text OCR because handwriting varies from person to person. Clear block letters work better than cursive. If a result contains mistakes, try cropping tighter, increasing contrast, rotating the image upright, or using a sharper photo before running OCR again.
+          </p>
+        </div>
+
+        <div>
+          <h3 className="text-lg font-semibold text-foreground mb-2">Privacy and Review</h3>
+          <p>
+            The OCR workflow is designed for browser-based extraction and quick copy tasks. Always review the result before using it in invoices, legal documents, school work, medical notes, or financial records because OCR can misread similar characters such as O/0, I/1, S/5, and B/8.
           </p>
         </div>
       </div>
     ),
 
     proTip:
-      "If OCR output contains errors, increase image contrast and rerun using the exact document language.",
+      "For best OCR accuracy, crop to only the text area, rotate the image upright, increase contrast, and select the exact document language before processing.",
 
     faqs: [
       {
@@ -152,7 +176,7 @@ const toolConfig = createToolConfig({
       {
         question: "Which file types can I upload?",
         answer:
-          "The uploader accepts image files supported by your browser, including common formats like JPG, PNG, and WebP.",
+          "The uploader accepts image files supported by your browser, including common formats like JPG, PNG, WebP, BMP, and GIF. For best OCR accuracy, use a sharp PNG or high-quality JPG.",
       },
       {
         question: "What is the maximum file size?",
@@ -165,6 +189,16 @@ const toolConfig = createToolConfig({
           "Yes. The tool includes a language selector with multiple options including English, Spanish, French, German, Italian, Portuguese, Dutch, and Hindi.",
       },
       {
+        question: "Can I copy text from a screenshot?",
+        answer:
+          "Yes. Screenshots are one of the best OCR inputs because the text is usually flat, sharp, and high contrast. Upload the screenshot, run OCR, then copy the extracted text.",
+      },
+      {
+        question: "Can this extract text from receipts or invoices?",
+        answer:
+          "Yes, if the receipt or invoice photo is clear. Crop the image to the document area, avoid shadows, and review numbers carefully because OCR can confuse similar characters.",
+      },
+      {
         question: "Does this OCR tool work for handwriting?",
         answer:
           "It can extract some handwriting when letters are clear and well spaced, but typed/printed text usually gives more reliable results.",
@@ -173,6 +207,11 @@ const toolConfig = createToolConfig({
         question: "Can I extract text from PDFs directly?",
         answer:
           "This page processes image uploads. For PDF files, convert pages to images first, then run OCR on those images.",
+      },
+      {
+        question: "Why is my OCR output missing words?",
+        answer:
+          "Missing words usually come from blur, low contrast, small text, angled photos, shadows, unusual fonts, or the wrong OCR language. Try a sharper image, crop closer, rotate upright, and run OCR again.",
       },
       {
         question: "Is this free and no-login?",
@@ -193,6 +232,8 @@ const toolConfig = createToolConfig({
       { name: "Image Cropper", href: "/image-tools/image-cropper" },
       { name: "Image Resizer", href: "/image-tools/image-resizer" },
       { name: "Background Remover", href: "/image-tools/background-remover" },
+      { name: "Image to PDF Converter", href: "/pdf-tools/image-to-pdf" },
+      { name: "PDF Compressor", href: "/pdf-tools/pdf-compressor" },
       { name: "Text Case Converter", href: "/converters/text-case" },
       { name: "Word Counter", href: "/seo-tools/word-counter" },
       { name: "AI Text Detector", href: "/ai-tools/ai-text-detector" },

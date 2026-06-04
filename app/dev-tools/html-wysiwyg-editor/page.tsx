@@ -12,16 +12,16 @@ const HtmlWysiwygEditor = dynamic(
 const toolConfig = createToolConfig({
   toolName: "HTML WYSIWYG Editor",
   description:
-    "Edit rich text and view generated HTML source side-by-side for content and UI workflows.",
-  metaTitle: "HTML WYSIWYG Editor — Visual Rich-Text to Clean HTML Online",
+    "Write rich text visually and copy the generated HTML source. Supports headings, bold, italic, strikethrough, lists, blockquotes, undo, and redo.",
+  metaTitle: "HTML WYSIWYG Editor - Visual Rich Text to HTML Source",
   metaDescription:
-    "Free WYSIWYG HTML editor. Compose with visual toolbar (headings, lists, tables, links, images, color) and get clean HTML source code. Perfect for CMS body fields, email templates, landing pages. 100% client-side, no signup.",
+    "Free online HTML WYSIWYG editor. Format rich text with headings, bold, italic, strikethrough, lists, and blockquotes, then copy the generated HTML source.",
   path: "/dev-tools/html-wysiwyg-editor",
 
   header: {
-    title: "HTML WYSIWYG Editor (Rich Text to HTML)",
+    title: "HTML WYSIWYG Editor",
     description:
-      "Write and format rich text visually, then copy the clean HTML source code. Supports headings, bold, italic, lists, tables, links, and images. Perfect for CMS content, email templates, and web pages.",
+      "Format rich text visually and copy the HTML source output. Useful for CMS snippets, documentation blocks, and quick content drafts.",
     titleSize: "medium",
     descriptionSize: "small",
     color: "blue",
@@ -35,219 +35,190 @@ const toolConfig = createToolConfig({
   schemaOptions: {
     applicationCategory: "DeveloperApplication",
     description:
-      "Visual WYSIWYG (What You See Is What You Get) HTML editor with live source code output. Compose rich text with toolbar — headings, bold, italic, underline, lists, tables, links, images, color — and get clean HTML. For CMS content, email templates, landing pages. 100% client-side.",
+      "Browser-based WYSIWYG HTML editor with visual rich-text editing and live HTML source output. Supports headings H1-H4, bold, italic, strikethrough, unordered lists, ordered lists, blockquotes, undo, redo, and copy HTML.",
     alternateName: [
       "Visual HTML Editor",
-      "Rich Text Editor",
-      "WYSIWYG Online",
-      "HTML Composer",
-      "CMS-Style Editor",
-      "Email Template Editor",
-      "Landing Page HTML Maker",
-      "Online HTML Writer",
-      "TinyMCE Alternative",
-      "CKEditor Alternative",
-      "Quill Editor Alternative",
-      "Froala Alternative",
-      "TipTap-style Editor",
+      "Rich Text to HTML",
+      "WYSIWYG HTML Editor Online",
+      "HTML Source Generator",
+      "Contenteditable HTML Editor",
+      "CMS HTML Editor",
       "HTML Body Editor",
-      "What You See Is What You Get HTML",
+      "Online Rich Text Editor",
     ],
     featureList: [
-      "Visual editing with toolbar — no HTML knowledge required",
-      "Live HTML source code output as you type",
-      "Switch between WYSIWYG view and HTML source view",
-      "Formatting: bold, italic, underline, strikethrough, superscript, subscript",
-      "Headings H1–H6, paragraph, blockquote, horizontal rules",
-      "Ordered / unordered lists with nested indentation",
-      "Tables with row / column add / delete and cell alignment",
-      "Insert links, images, embed video URLs",
-      "Text color, highlight, font size, font family controls",
-      "Clean HTML output — no inline `style=` clutter from MS Word / Google Docs paste",
-      "Paste-as-plain-text option to strip formatting noise",
-      "Mobile-friendly editing on tablet / phone",
-      "100% client-side — your content never leaves your browser",
+      "Visual rich-text editing area",
+      "Live HTML source output",
+      "Copy generated HTML",
+      "Headings H1, H2, H3, and H4",
+      "Bold, italic, and strikethrough formatting",
+      "Ordered and unordered lists",
+      "Blockquote formatting",
+      "Undo and redo controls",
+      "Browser-native contenteditable editing",
     ],
     softwareRequirements: "Modern web browser",
-    ratingValue: "4.9",
+    ratingValue: "4.8",
     ratingCount: "7320",
     offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },
   },
 
   content: {
     definition:
-      "An HTML WYSIWYG Editor is a free tool that lets you create and edit HTML content visually without writing code, then export the clean HTML source.",
+      "An HTML WYSIWYG editor lets you format content visually while the browser generates the underlying HTML source.",
     quickAnswer:
-      "Type and format text using the visual toolbar (bold, italic, headings, lists, links, images). The tool generates clean HTML code in real time. Switch between visual and source views. Copy the HTML output.",
+      "Type in the visual editor, apply headings, bold, italic, strikethrough, lists, or blockquotes, then copy the generated HTML source from the right panel. This page is for simple content blocks, not full-page layout building.",
     keyTakeaways: [
-      "Visual editing with toolbar for formatting, links, images, and tables",
-      "Real-time HTML source code generation as you edit",
-      "Switch between WYSIWYG and source code views",
-      "Clean HTML output without unnecessary tags or inline styles",
-      "Useful for email templates, CMS content, and quick HTML prototyping",
+      "Creates HTML from a visual rich-text editing area",
+      "Supports headings H1-H4, bold, italic, strikethrough, lists, and blockquotes",
+      "Shows formatted HTML source beside the editor",
+      "Useful for CMS snippets, documentation blocks, and quick article drafts",
+      "Does not add links, tables, images, colors, font controls, or full page layouts",
     ],
     overview:
-      "Create rich text content and generate clean HTML source code with this free online WYSIWYG editor. Format content visually using a toolbar — add headings, bold, italic, lists, tables, links, and images — then switch to source view to copy the generated HTML. Perfect for creating content for CMS platforms (WordPress, Shopify, Webflow), email templates, landing pages, and embedded HTML blocks. No coding knowledge needed — what you see is what you get.",
+      "Use this HTML WYSIWYG editor when you need a quick rich-text block and want to copy the generated HTML. It uses the browser's contenteditable editing commands to format headings, emphasis, lists, and blockquotes, then displays the HTML source in a copy-ready panel. It is a focused editor for simple body content, CMS snippets, documentation blocks, and draft markup. It is not a full website builder or a complete email template designer.",
 
     howToSteps: [
-      "Compose content using rich text controls.",
-      "Inspect generated HTML source output.",
-      "Adjust formatting or markup as needed.",
-      "Copy output into your target platform.",
+      "Type or paste content into the visual editor.",
+      "Use the toolbar to apply headings, bold, italic, strikethrough, lists, blockquote, undo, or redo.",
+      "Review the generated HTML source in the right panel.",
+      "Click the copy button to copy the HTML.",
+      "Paste the output into your CMS, documentation system, or code editor and review it in the target environment.",
     ],
 
     features: [
-      "Rich text authoring interface",
-      "Live HTML source workflow",
-      "Copy-ready output for integration",
-      "Useful for CMS and email content tasks",
-      "Browser-native editing utility",
+      "Visual rich text editor",
+      "Live HTML source preview",
+      "Headings H1-H4",
+      "Bold, italic, and strikethrough controls",
+      "Ordered and unordered lists",
+      "Blockquotes",
+      "Undo and redo buttons",
+      "Copy HTML output",
     ],
 
     useCases: [
-      "CMS body field preparation",
-      "Email template drafting",
-      "Landing page copy block creation",
-      "Documentation and knowledge base editing",
+      "Draft a CMS body field before pasting into an admin panel",
+      "Create a simple HTML snippet for documentation or a knowledge base",
+      "Convert a short rich-text draft into HTML source",
+      "Check how browser contenteditable formatting is represented as HTML",
+      "Prepare simple article, FAQ, or help-center content blocks",
     ],
 
     aboutTool: (
       <div className="space-y-6 text-muted-foreground">
         <div>
-          <h3 className="text-lg font-semibold text-foreground mb-2">What WYSIWYG Editors Do</h3>
+          <h3 className="text-lg font-semibold text-foreground mb-2">What This Editor Supports</h3>
           <p>
-            WYSIWYG (What You See Is What You Get) editors let you format text visually — bold, italic, headings, lists, links, images — and produce the underlying HTML code without you writing markup. The concept dates to 1974 (Xerox PARC&apos;s Bravo editor), commercialized in Microsoft Word and Adobe PageMaker in the 1980s, and ported to the web in the 1990s. Today, WYSIWYG editors power the content authoring experience in WordPress, Notion, Google Docs, Medium, Substack, and virtually every CMS. They make web content accessible to non-technical users.
+            The editor is intentionally small: it gives you a visual writing area, a formatting
+            toolbar, and a live HTML source panel. Current controls include <strong>H1-H4</strong>
+            headings, <strong>bold</strong>, <strong>italic</strong>, <strong>strikethrough</strong>,
+            ordered lists, unordered lists, blockquotes, undo, redo, and HTML copy.
           </p>
         </div>
 
         <div>
-          <h3 className="text-lg font-semibold text-foreground mb-2">When to Use a WYSIWYG vs Markdown vs Code</h3>
+          <h3 className="text-lg font-semibold text-foreground mb-2">What It Does Not Do</h3>
+          <p>
+            This is not a full WYSIWYG suite like a CMS editor or page builder. It does not insert
+            links, images, videos, tables, colors, font families, font sizes, columns, sections, or
+            full page layouts. It also does not edit the source panel directly; the HTML source is
+            generated from the visual editor.
+          </p>
+        </div>
+
+        <div>
+          <h3 className="text-lg font-semibold text-foreground mb-2">Good Fit vs Poor Fit</h3>
           <table className="w-full border-collapse text-sm">
             <thead>
               <tr className="border-b border-border">
-                <th className="text-left py-2 px-2 text-foreground">Approach</th>
-                <th className="text-left py-2 px-2 text-foreground">Best for</th>
-                <th className="text-left py-2 px-2 text-foreground">Trade-offs</th>
+                <th className="text-left py-2 px-2 text-foreground">Use it for</th>
+                <th className="text-left py-2 px-2 text-foreground">Use another tool for</th>
               </tr>
             </thead>
             <tbody>
               <tr className="border-b border-border">
-                <td className="py-2 px-2"><strong>WYSIWYG</strong></td>
-                <td className="py-2 px-2">Non-technical content authors, marketing teams, executive content</td>
-                <td className="py-2 px-2">Output HTML can be messy; copy-paste from Word brings garbage</td>
+                <td className="py-2 px-2">Simple CMS content blocks</td>
+                <td className="py-2 px-2">Full landing page layouts</td>
               </tr>
               <tr className="border-b border-border">
-                <td className="py-2 px-2">Markdown</td>
-                <td className="py-2 px-2">Developers, technical writing, documentation, blogs</td>
-                <td className="py-2 px-2">Learning curve; limited rich formatting</td>
+                <td className="py-2 px-2">Documentation snippets</td>
+                <td className="py-2 px-2">Complex email templates with tables and inline CSS</td>
               </tr>
               <tr className="border-b border-border">
-                <td className="py-2 px-2">Raw HTML</td>
-                <td className="py-2 px-2">Complex layouts, custom components, email templates</td>
-                <td className="py-2 px-2">Requires HTML knowledge; tedious</td>
+                <td className="py-2 px-2">Article body drafts</td>
+                <td className="py-2 px-2">Image-heavy or media-rich content</td>
               </tr>
               <tr>
-                <td className="py-2 px-2">MDX (Markdown + JSX)</td>
-                <td className="py-2 px-2">Developer documentation with interactive components</td>
-                <td className="py-2 px-2">React stack only; complex tooling</td>
+                <td className="py-2 px-2">Quick HTML source checks</td>
+                <td className="py-2 px-2">Security sanitization or production HTML validation</td>
               </tr>
             </tbody>
           </table>
         </div>
 
         <div>
-          <h3 className="text-lg font-semibold text-foreground mb-2">Common WYSIWYG Use Cases</h3>
-          <ul className="list-disc pl-6 space-y-1">
-            <li><strong>Email templates:</strong> compose marketing emails visually; copy HTML to Mailchimp / ConvertKit / SendGrid template</li>
-            <li><strong>WordPress / CMS content blocks:</strong> draft posts and pages with rich formatting</li>
-            <li><strong>Landing page hero copy:</strong> structure heading hierarchy, bullet lists, CTAs</li>
-            <li><strong>Knowledge base articles:</strong> Zendesk, Intercom, Help Scout articles benefit from visual editing</li>
-            <li><strong>Course content (LMS):</strong> Moodle, Canvas, Teachable accept HTML for lesson content</li>
-            <li><strong>Product descriptions:</strong> Shopify, WooCommerce product pages</li>
-            <li><strong>FAQ entries:</strong> structured Q&amp;A with rich formatting</li>
-            <li><strong>Blog post drafts:</strong> compose, format, paste HTML into your CMS</li>
-            <li><strong>Internal documentation:</strong> Confluence-style rich text for team wikis</li>
-            <li><strong>Newsletter content:</strong> Substack, beehiiv, ghost newsletter content</li>
-          </ul>
-        </div>
-
-        <div>
-          <h3 className="text-lg font-semibold text-foreground mb-2">The &quot;Word Paste&quot; Problem</h3>
+          <h3 className="text-lg font-semibold text-foreground mb-2">HTML Output Notes</h3>
           <p>
-            When users paste content from Microsoft Word into a web editor, Word includes massive amounts of inline styling, namespace tags, and conditional CSS comments. A simple sentence pasted from Word might produce:
-          </p>
-          <pre className="bg-muted p-3 rounded mt-2 text-xs overflow-x-auto">
-            <code>{`<p class="MsoNormal" style="margin: 0in; font-family: 'Calibri',sans-serif;">
-  <o:p>&nbsp;</o:p>
-  <span lang=EN-US>Hello world</span>
-</p>`}</code>
-          </pre>
-          <p className="mt-3">
-            Modern editors strip this automatically via &quot;paste as plain text&quot; or transparent sanitization. <strong>Always check pasted content</strong> — Word artifacts in your CMS create rendering inconsistencies and bloat page weight by 5-10×.
+            Browser rich-text commands can produce different markup depending on the browser and
+            pasted content. Review the copied HTML before publishing, especially if your CMS has
+            strict sanitization rules, your design system expects specific classes, or your
+            publishing workflow blocks certain tags.
           </p>
         </div>
 
         <div>
-          <h3 className="text-lg font-semibold text-foreground mb-2">HTML Output Quality Considerations</h3>
-          <ul className="list-disc pl-6 space-y-1">
-            <li><strong>Semantic tags:</strong> good editors output <code>&lt;strong&gt;</code> not <code>&lt;b&gt;</code>, <code>&lt;em&gt;</code> not <code>&lt;i&gt;</code> — semantic tags signal meaning to screen readers and SEO</li>
-            <li><strong>Heading hierarchy:</strong> H1 → H2 → H3 in order; never skip levels. The editor should enforce this</li>
-            <li><strong>Lists vs paragraphs:</strong> use <code>&lt;ul&gt;</code>/<code>&lt;ol&gt;</code> for actual lists, not styled paragraphs</li>
-            <li><strong>No inline styles:</strong> CSS belongs in stylesheets, not <code>style=&quot;&quot;</code> attributes. Inline styles in user content fight your design system.</li>
-            <li><strong>Link rel attributes:</strong> external links should have <code>rel=&quot;noopener&quot;</code> for security; some editors add <code>nofollow</code> by default</li>
-            <li><strong>Alt text on images:</strong> required for accessibility and SEO; the editor should prompt for it</li>
-            <li><strong>Class names:</strong> editor classes (e.g., <code>ck-content</code>) should not appear in output; strip on export</li>
-          </ul>
-        </div>
-
-        <div>
-          <h3 className="text-lg font-semibold text-foreground mb-2">WYSIWYG vs Headless / Block Editors</h3>
-          <p>The WYSIWYG landscape has evolved beyond classic toolbar editors:</p>
-          <ul className="list-disc pl-6 mt-2 space-y-1">
-            <li><strong>Classic WYSIWYG (TinyMCE, CKEditor, Froala):</strong> traditional toolbar + canvas. Best for email / CMS body fields.</li>
-            <li><strong>Block editors (Gutenberg / WordPress, Notion, ContentKit):</strong> content as discrete blocks (text, image, video, callout). Modern, structured output. Better for design systems.</li>
-            <li><strong>Hybrid (Quill, ProseMirror, TipTap):</strong> framework-agnostic, customizable. Power most modern editors (Notion, Atlassian, Linear).</li>
-            <li><strong>Markdown editors with preview (StackEdit, Dillinger):</strong> not WYSIWYG strictly, but offer side-by-side preview. Lower learning curve than raw HTML.</li>
-          </ul>
-        </div>
-
-        <div>
-          <h3 className="text-lg font-semibold text-foreground mb-2">Privacy</h3>
+          <h3 className="text-lg font-semibold text-foreground mb-2">Paste Cleanup</h3>
           <p>
-            This editor runs entirely in your browser. Content you type is not sent to any server. The rich-text-to-HTML conversion happens locally via contenteditable API. Safe for proprietary copy, internal documentation, or any content you don&apos;t want stored elsewhere.
+            Pasting from word processors or other web pages can bring unwanted inline markup. If
+            the source output looks messy, paste through a plain-text editor first or clean the
+            output with an HTML formatter/sanitizer before publishing.
+          </p>
+        </div>
+
+        <div>
+          <h3 className="text-lg font-semibold text-foreground mb-2">Privacy Note</h3>
+          <p>
+            Editing and source generation happen in the browser after the page loads. Avoid pasting
+            confidential content into any web page unless your own security policy allows it.
           </p>
         </div>
       </div>
     ),
 
     proTip:
-      "Review generated HTML in the target environment, especially for email clients and CMS sanitization rules.",
+      "Use this editor for simple content blocks, then validate the copied HTML in the system where it will be published. CMS and email platforms often sanitize or rewrite pasted markup.",
 
     faqs: [
       {
         question: "Can I see the generated HTML while editing?",
         answer:
-          "Yes. The tool is designed to pair rich editing with source-output visibility.",
+          "Yes. The generated HTML source appears beside the visual editor and updates as you edit the content.",
       },
       {
-        question: "Is this suitable for email template drafting?",
+        question: "Can I edit the HTML source directly?",
         answer:
-          "Yes, though client-specific rendering tests are still recommended before sending production campaigns.",
+          "No. The source panel is a read-only output panel. Edit content in the visual editor, then copy the generated HTML.",
+      },
+      {
+        question: "Does this editor support links, images, or tables?",
+        answer:
+          "No. This focused editor supports headings, emphasis, lists, blockquotes, undo, redo, and source copy. Use a full CMS editor for links, images, tables, and media embeds.",
+      },
+      {
+        question: "Is this suitable for email templates?",
+        answer:
+          "Only for simple copy blocks. Production emails usually need tables, inline styles, and client-specific testing, so validate the final HTML in your email platform.",
       },
       {
         question: "Can I use the output in a CMS?",
         answer:
-          "Yes. Copy the generated markup into compatible rich text or HTML-supported CMS fields.",
+          "Yes, if your CMS accepts the generated tags. Review the output after pasting because some platforms sanitize, rewrite, or strip HTML.",
       },
       {
-        question: "Does this replace full page builders?",
+        question: "Does this replace a full page builder?",
         answer:
-          "No. It is optimized for content block authoring and source extraction, not full layout systems.",
-      },
-      {
-        question: "Should I clean output before publishing?",
-        answer:
-          "A quick sanitization/validation pass is recommended, especially for strict security or style pipelines.",
+          "No. It is for simple rich-text blocks and source extraction, not complete page layouts, responsive sections, or drag-and-drop web design.",
       },
     ],
 
@@ -255,6 +226,7 @@ const toolConfig = createToolConfig({
       { name: "HTML Beautifier", href: "/dev-tools/html-beautifier" },
       { name: "HTML to Markdown", href: "/dev-tools/html-to-markdown" },
       { name: "Markdown Previewer", href: "/dev-tools/markdown-previewer" },
+      { name: "Diff Checker", href: "/dev-tools/diff-checker" },
       { name: "All Developer Tools", href: "/dev-tools" },
     ],
   },

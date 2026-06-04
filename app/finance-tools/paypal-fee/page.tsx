@@ -12,11 +12,14 @@ import type { Metadata } from "next"
 
 const TOOL_TITLE = "PayPal Fee Calculator — Calculate PayPal Fees, G&S, Credit Card & Processing Fees"
 const TOOL_NAME = "PayPal Fee Calculator"
+const TOOL_DEFINITION = "A PayPal fee calculator estimates transaction fees, seller net amount, and the gross amount to ask for across PayPal Checkout, Goods and Services, cards, international payments, QR payments, and micropayments."
 
 const paypalMetadataOptions = {
   title: `PayPal Fee Calculator — Instant Fees, G&S, Credit Card & International`,
   description: "Free PayPal fee calculator. Calculate PayPal G&S fee, PayPal credit card fee, and processing fees for any transaction. Domestic and international rates, micropayments, and reverse-fee gross-up — for sellers, freelancers, and businesses.",
   path: "/finance-tools/paypal-fee",
+  toolName: TOOL_NAME,
+  definition: TOOL_DEFINITION,
   breadcrumbs: [
     { label: "Finance Tools", href: "/finance-tools" },
     { label: TOOL_NAME, href: "/finance-tools/paypal-fee" }
@@ -68,6 +71,16 @@ export const metadata: Metadata = {
 export default function PayPalFeeCalculatorPage() {
   const toolContent = {
     toolName: TOOL_NAME,
+    definition: TOOL_DEFINITION,
+    quickAnswer: "Enter the payment amount, choose the PayPal payment type, and the calculator shows the fee, what you receive, and what to ask for if you want the buyer to cover the fee. For US domestic commercial payments, common 2026 rates include 3.49% + $0.49 for PayPal Checkout and 2.99% + $0.49 for standard credit/debit card payments; international commercial payments add 1.50%.",
+    keyTakeaways: [
+      "PayPal fees depend on payment type, seller country, buyer country, currency, and funding method",
+      "US PayPal Checkout, Guest Checkout, and Pay with Venmo are commonly 3.49% + fixed fee",
+      "US standard credit/debit card commercial payments are commonly 2.99% + fixed fee",
+      "US Send/Receive Money for Goods and Services is listed separately at 2.99% on PayPal's current merchant fee page",
+      "International commercial payments usually add a 1.50% cross-border fee plus any currency conversion spread",
+      "Use the gross-up result when you need to receive an exact net amount after PayPal deducts fees",
+    ],
     overview: `Free PayPal calculator fee tool to calculate PayPal fees, net amounts, and required charges instantly. Whether you need to calculate PayPal G&S fee, PayPal credit card fee, or PayPal processing fees — this calculator covers all transaction types. Perfect for sellers, freelancers, and businesses to understand payment processing costs. Supports domestic, international, Goods & Services, Friends & Family, and credit card PayPal fee calculations.`,
 
     howToSteps: [
@@ -86,9 +99,9 @@ export default function PayPalFeeCalculatorPage() {
     ],
 
     useCases: [
-      "PayPal Domestic Fees: Standard PayPal fee structure for domestic transactions (Business: 2.9% + $0.49, Personal Credit Card: 2.9% + $0.30).",
+      "PayPal Domestic Fees: Standard US commercial rates vary by payment type, including 3.49% + fixed fee for PayPal Checkout and 2.99% + fixed fee for standard credit/debit card payments.",
       "PayPal International Fees: Cross-border PayPal fee calculations (+1.5% international fee, 3-4% currency conversion fee).",
-      "PayPal Special Rates: Reduced PayPal fees for micropayments (5% + $0.05) and nonprofits (1.99% + $0.49).",
+      "PayPal Special Rates: Calculate separate fee models for micropayments, charity/donation payments, QR payments, and other special transaction types.",
       "PayPal G&S Fee vs Friends & Family: Compare Goods and Services fees (seller protection) vs Friends & Family (no protection).",
       "PayPal Fee Merchant & Business Accounts: Advanced features and fee structures for high-volume merchants.",
       "PayPal vs Xoom Fee Comparison: Compare international transfer costs between PayPal and Xoom.",
@@ -104,15 +117,15 @@ export default function PayPalFeeCalculatorPage() {
     faqs: [
       {
         question: "How do I calculate PayPal fees?",
-        answer: "Use our PayPal calculator fee tool — enter your transaction amount, select domestic or international, and choose the payment method. For domestic business transactions, the standard PayPal processing fee is 2.9% + $0.49. For example, on a $100 sale, the PayPal fee is $3.39 ($2.90 + $0.49)."
+        answer: "Enter the transaction amount, choose domestic or international, then select the payment type. For a US PayPal Checkout payment, the common commercial rate is 3.49% + $0.49, so a $100 payment has a $3.98 fee and leaves $96.02. For standard credit/debit card commercial payments, PayPal lists 2.99% + fixed fee."
       },
       {
         question: "How do I calculate PayPal G&S fee?",
-        answer: "To calculate PayPal G&S fee (Goods & Services), enter your amount in the calculator and select the G&S option. The standard PayPal G&S fee is 2.9% + $0.49 for domestic transactions. On a $100 G&S payment, the seller pays $3.39 in fees and receives $96.61."
+        answer: "To calculate a PayPal Goods and Services fee, enter the amount and choose the Goods and Services option. PayPal's current US merchant fee page lists Send/Receive Money for Goods and Services at 2.99%, while PayPal Checkout, Guest Checkout, and Venmo commercial flows are 3.49% + fixed fee. Pick the payment type that matches how the buyer is paying."
       },
       {
         question: "What is the PayPal credit card fee?",
-        answer: "The PayPal credit card fee for personal transactions is 2.9% + $0.30. For business transactions paid via credit card, the fee is 2.9% + $0.49. Use our PayPal credit card fee calculator to see exact amounts for any transaction size."
+        answer: "For US commercial transactions, PayPal lists standard credit and debit card payments at 2.99% + the fixed fee for the currency received, which is $0.49 for USD. Personal card-funded transfers use a separate personal-transfer fee schedule."
       },
       {
         question: "What are the fees for international payments?",
@@ -120,7 +133,7 @@ export default function PayPalFeeCalculatorPage() {
       },
       {
         question: "Does PayPal charge for sending money to friends and family?",
-        answer: "Sending money to friends and family is free if you use your PayPal Balance or linked bank account for domestic transfers. However, if you use a credit or debit card, a fee of 2.9% + $0.30 applies."
+        answer: "Eligible domestic Friends & Family transfers are usually free when funded from a PayPal balance or linked bank account. Card-funded personal transfers use a separate personal fee schedule, so select the personal card option in the calculator or verify the current PayPal consumer fee page for your country."
       },
       {
         question: "How does the PayPal currency conversion fee work?",
@@ -136,7 +149,7 @@ export default function PayPalFeeCalculatorPage() {
       },
       {
         question: "What is the difference between Goods & Services and Friends & Family fees?",
-        answer: "'Goods & Services' payments include Purchase Protection but charge the seller a fee (typically 2.9% + $0.49). 'Friends & Family' payments have no fee for bank transfers but offer no buyer/seller protection."
+        answer: "'Goods & Services' payments are commercial payments and usually charge the seller a fee, while eligible domestic 'Friends & Family' bank or balance transfers can be free but do not provide buyer/seller protection. Do not use Friends & Family for business transactions just to avoid fees."
       },
       {
         question: "Are PayPal fees tax deductible?",
@@ -152,7 +165,7 @@ export default function PayPalFeeCalculatorPage() {
       },
       {
         question: "What are PayPal fees in the UK?",
-        answer: "UK domestic PayPal fees are 2.9% + £0.30 for standard Goods & Services payments (different from the US's 2.99% + $0.49). Cross-border within the EEA adds 1.29%, and non-EEA international payments add ~1.99%. Currency conversion adds a 3.0–4.0% spread on top. Our calculator handles GBP and applies the right rates when you select the UK as the seller location."
+        answer: "UK PayPal fees use a different country-specific schedule from US fees. Select GBP and the UK seller location in the calculator for an estimate, then verify against PayPal's official UK fee page before using the result for invoices or pricing."
       },
       {
         question: "What's the PayPal micropayment fee rate?",
@@ -164,7 +177,7 @@ export default function PayPalFeeCalculatorPage() {
       },
       {
         question: "Do PayPal fees come out before or after I receive the money?",
-        answer: "Fees are deducted automatically before the money is credited to your PayPal balance. If a customer sends you $100 on a 2.99% + $0.49 G&S transaction, you'll see $96.52 land in your account, never the full $100. The fee comes off the top — this is why the reverse-calculation feature (entering the amount you want to RECEIVE) is so useful for setting invoice amounts."
+        answer: "Fees are deducted automatically before the money is credited to your PayPal balance. If a customer sends $100 through a 3.49% + $0.49 Checkout flow, the fee is $3.98 and you receive $96.02. This is why the reverse-calculation feature is useful when you need to receive an exact net amount."
       },
       {
         question: "Has PayPal raised fees in 2026?",
@@ -212,7 +225,7 @@ export default function PayPalFeeCalculatorPage() {
 
           <h3 className="text-xl font-bold text-foreground mt-6 mb-4">How the Rates are Calculated</h3>
           <p className="text-base text-muted-foreground leading-relaxed">
-            Most domestic commercial transactions follow a standard percentage + fixed fee model (e.g., 2.9% + $0.30 in the US). However, for international sales, QR code payments, or invoicing, these rates can jump significantly. Our PayPal rates tracker is updated with the latest fee data to ensure your math is always current.
+            Most PayPal commercial transactions follow a percentage plus fixed-fee model. On PayPal&apos;s US merchant fee page, updated May 19, 2026, PayPal Checkout, Guest Checkout, and Pay with Venmo are listed at 3.49% + fixed fee; standard credit and debit card payments are 2.99% + fixed fee; and Send/Receive Money for Goods and Services is listed at 2.99%. International commercial payments add a 1.50% cross-border fee. The calculator separates these fee types so you can match the exact payment flow.
           </p>
 
           <h3 className="text-xl font-bold text-foreground mt-6 mb-4">100% Accuracy for Freelancers and Merchants</h3>
@@ -232,25 +245,25 @@ export default function PayPalFeeCalculatorPage() {
               <h4 className="font-semibold text-foreground mb-2">Freelancer Payment ($500)</h4>
               <p className="text-sm text-muted-foreground mb-3">Receiving a $500 payment from a US client.</p>
               <div className="space-y-1 text-sm">
-                <div className="flex justify-between"><span>Fee (2.9% + $0.49):</span> <span className="text-red-500">-$14.99</span></div>
-                <div className="flex justify-between font-bold border-t border-border pt-1"><span>You Keep:</span> <span className="text-green-600">$485.01</span></div>
+                <div className="flex justify-between"><span>Checkout fee (3.49% + $0.49):</span> <span className="text-red-500">-$17.94</span></div>
+                <div className="flex justify-between font-bold border-t border-border pt-1"><span>You Keep:</span> <span className="text-green-600">$482.06</span></div>
               </div>
             </div>
             <div className="p-4 rounded-lg bg-card border border-border shadow-sm">
               <h4 className="font-semibold text-foreground mb-2">Small Business Sale ($50)</h4>
               <p className="text-sm text-muted-foreground mb-3">Selling a $50 handmade item online.</p>
               <div className="space-y-1 text-sm">
-                <div className="flex justify-between"><span>Fee (2.9% + $0.49):</span> <span className="text-red-500">-$1.94</span></div>
-                <div className="flex justify-between font-bold border-t border-border pt-1"><span>You Keep:</span> <span className="text-green-600">$48.06</span></div>
+                <div className="flex justify-between"><span>Checkout fee (3.49% + $0.49):</span> <span className="text-red-500">-$2.24</span></div>
+                <div className="flex justify-between font-bold border-t border-border pt-1"><span>You Keep:</span> <span className="text-green-600">$47.77</span></div>
               </div>
             </div>
             <div className="p-4 rounded-lg bg-card border border-border shadow-sm">
               <h4 className="font-semibold text-foreground mb-2">International Transfer ($1,000)</h4>
               <p className="text-sm text-muted-foreground mb-3">Sending $1,000 to family in Europe.</p>
               <div className="space-y-1 text-sm">
-                <div className="flex justify-between"><span>Intl Fee (5%):</span> <span className="text-red-500">-$4.99 (Max)</span></div>
+                <div className="flex justify-between"><span>Cross-border fee:</span> <span className="text-red-500">+1.50%</span></div>
                 <div className="flex justify-between"><span>FX Markup (~4%):</span> <span className="text-red-500">~$40.00</span></div>
-                <div className="flex justify-between font-bold border-t border-border pt-1"><span>Total Cost:</span> <span className="text-red-600">~$44.99</span></div>
+                <div className="flex justify-between font-bold border-t border-border pt-1"><span>Total Extra Cost:</span> <span className="text-red-600">varies by currency</span></div>
               </div>
             </div>
           </div>
@@ -287,7 +300,7 @@ export default function PayPalFeeCalculatorPage() {
               <tbody className="text-muted-foreground">
                 <tr className="border-b border-border">
                   <td className="py-3 px-4 border-r border-border font-medium text-heading-accent">PayPal</td>
-                  <td className="py-3 px-4 border-r border-border">2.9% + $0.49</td>
+                  <td className="py-3 px-4 border-r border-border">3.49% + $0.49 (Checkout/Venmo); 2.99% + $0.49 cards</td>
                   <td className="py-3 px-4">1.75% (Max $25)</td>
                 </tr>
                 <tr className="border-b border-border">
@@ -297,7 +310,7 @@ export default function PayPalFeeCalculatorPage() {
                 </tr>
                 <tr className="border-b border-border">
                   <td className="py-3 px-4 border-r border-border font-medium text-heading-accent">Stripe</td>
-                  <td className="py-3 px-4 border-r border-border">2.9% + $0.30</td>
+                  <td className="py-3 px-4 border-r border-border">2.9% + $0.30 (standard online cards)</td>
                   <td className="py-3 px-4">1% (Min $0.50)</td>
                 </tr>
                 <tr className="border-b border-border">
@@ -392,7 +405,7 @@ export default function PayPalFeeCalculatorPage() {
             </div>
             <div className="border-l-4 border-primary pl-4">
               <h4 className="font-semibold text-foreground">Payment Method Surcharge</h4>
-              <p className="text-sm text-muted-foreground">Sending money via a credit/debit card personally costs <strong>2.9% + $0.30</strong>, whereas bank transfers are often free.</p>
+              <p className="text-sm text-muted-foreground">Personal card-funded transfers use a separate personal-transfer fee schedule, whereas eligible domestic bank or balance transfers are often free.</p>
             </div>
             <div className="border-l-4 border-primary pl-4">
               <h4 className="font-semibold text-foreground">Pending Holds</h4>
@@ -431,10 +444,10 @@ export default function PayPalFeeCalculatorPage() {
               </thead>
               <tbody className="divide-y divide-border">
                 <tr><td className="p-3 font-semibold">United States</td><td className="p-3">2.99% + $0.49 (3.49% + $0.49 for Checkout)</td><td className="p-3">+1.5%</td><td className="p-3">Micropayments: 4.99% + $0.09; QR: 1.90% + $0.10</td></tr>
-                <tr><td className="p-3 font-semibold">United Kingdom</td><td className="p-3">2.9% + £0.30</td><td className="p-3">+1.29% (EEA) / +1.99% (non-EEA)</td><td className="p-3">Different rate by buyer location</td></tr>
+                <tr><td className="p-3 font-semibold">United Kingdom</td><td className="p-3">Varies by PayPal UK fee schedule</td><td className="p-3">Varies by buyer location</td><td className="p-3">Verify current UK-specific rates before invoicing</td></tr>
                 <tr><td className="p-3 font-semibold">European Union</td><td className="p-3">2.49% + €0.35 (EEA)</td><td className="p-3">+1.29% (non-EEA only)</td><td className="p-3">No surcharge within EEA</td></tr>
                 <tr><td className="p-3 font-semibold">Australia</td><td className="p-3">2.6% + A$0.30</td><td className="p-3">+1.5% (international)</td><td className="p-3">Different rate for charity (1.1%)</td></tr>
-                <tr><td className="p-3 font-semibold">Canada</td><td className="p-3">2.9% + C$0.30</td><td className="p-3">+1.5% (international)</td><td className="p-3">Currency conversion: ~2.5% spread</td></tr>
+                <tr><td className="p-3 font-semibold">Canada</td><td className="p-3">Varies by PayPal Canada fee schedule</td><td className="p-3">Varies by buyer location</td><td className="p-3">Verify current Canada-specific rates before invoicing</td></tr>
                 <tr><td className="p-3 font-semibold">India</td><td className="p-3">4.4% + ₹3 (international receive only)</td><td className="p-3">included</td><td className="p-3">PayPal India only supports cross-border</td></tr>
               </tbody>
             </table>

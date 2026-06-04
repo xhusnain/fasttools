@@ -60,6 +60,17 @@ export const metadata: Metadata = {
 export default function BodyFatCalculatorPage() {
   const toolContent = {
     toolName: "Body Fat Calculator — Body Fat Percentage Estimator",
+    definition:
+      "A body fat calculator estimates body fat percentage from measurements such as height, weight, waist, neck, hips, sex, and age.",
+    quickAnswer:
+      "Enter your body measurements to estimate body fat percentage using methods such as the U.S. Navy circumference formula or BMI-based estimation. The calculator also shows estimated fat mass, lean mass, and body fat category.",
+    keyTakeaways: [
+      "Body fat percentage estimates how much body weight is fat versus lean mass",
+      "The U.S. Navy method uses circumference measurements and is more informative than BMI alone",
+      "Men and women use different formulas and healthy body fat ranges",
+      "Tape-measure accuracy strongly affects the result",
+      "Use body fat estimates as a trend tool, not a medical diagnosis",
+    ],
     overview: "Estimate your body fat percentage with our free online body fat calculator using the U.S. Navy circumference method (most accurate non-invasive method) and BMI-based estimation. Get a complete body composition analysis including fat mass vs. lean muscle mass breakdown, ACE (American Council on Exercise) fitness categories (essential fat, athletic, fitness, average, obese), ideal body fat ranges for men and women, and personalized health risk assessments. Supports metric (cm/kg) and imperial (inches/lbs) units with gender-specific calculations.",
 
     howToSteps: [

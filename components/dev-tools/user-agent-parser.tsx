@@ -47,6 +47,10 @@ export function UserAgentParser() {
   const [ua, setUa] = useState(DEFAULT_UA)
   const [parsed, setParsed] = useState<ReturnType<UAParser["getResult"]> | null>(null)
 
+  useEffect(() => {
+    if (typeof navigator !== "undefined") setUa(navigator.userAgent)
+  }, [])
+
   const parse = useCallback(() => {
     if (!ua.trim()) {
       setParsed(null)

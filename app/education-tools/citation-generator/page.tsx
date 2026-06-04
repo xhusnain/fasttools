@@ -12,29 +12,28 @@ const CitationGenerator = dynamic(
 const toolConfig = createToolConfig({
   toolName: "Citation Generator",
   description:
-    "Free citation generator for APA 7th, MLA 9th, Chicago 17th, and Harvard styles. Auto-fill from DOI (CrossRef) and ISBN (OpenLibrary). Cite books, journal articles, websites, newspapers, YouTube videos, and podcasts. Build bibliographies and export as text or BibTeX. No signup, no ads, no paywall.",
-  metaTitle: "Citation Generator — APA, MLA, Chicago & Harvard with DOI / ISBN Auto-Fill",
+    "Free citation generator for APA 7th, MLA 9th, Chicago author-date, and Harvard styles. Auto-fill from DOI or ISBN, cite common source types, and export bibliographies.",
+  metaTitle: "Citation Generator — APA, MLA, Chicago & Harvard References",
   metaDescription:
-    "Free citation generator: APA 7th, MLA 9th, Chicago 17th, Harvard. Auto-fill from DOI (CrossRef) or ISBN (OpenLibrary). 6 source types: book, journal, website, newspaper, YouTube, podcast. Build bibliographies, export as text or BibTeX.",
+    "Free citation generator for APA 7th, MLA 9th, Chicago author-date, and Harvard. Cite books, journals, websites, newspapers, YouTube, and podcasts. DOI/ISBN auto-fill.",
   path: "/education-tools/citation-generator",
 
   schemaOptions: {
     applicationCategory: "EducationalApplication",
     description:
-      "Free online citation generator supporting the latest editions of 4 major academic styles: APA 7th (2019), MLA 9th (2021), Chicago 17th, and Harvard. Handles 6 source types: books, journal articles, websites, newspapers, YouTube videos, and podcasts. Auto-fills citation metadata from DOI (via CrossRef API) and ISBN (via OpenLibrary API) — no API key required. Features include unlimited authors with proper formatting rules per style, live citation preview, bibliography builder with add/remove/reorder, copy individual citations or entire bibliography to clipboard, and export as plain text or BibTeX (.bib) file. 100% client-side except for DOI/ISBN lookups which use free public APIs. No signup, no ads, no paywall — every style and every feature is free.",
+      "Free online citation generator for APA 7th, MLA 9th, Chicago author-date, and Harvard references. Handles books, journal articles, websites, newspapers, YouTube videos, and podcasts. Auto-fills citation metadata from DOI via CrossRef and ISBN via OpenLibrary. Includes live citation preview, bibliography builder, clipboard copy, and plain text or BibTeX export.",
     featureList: [
-      "4 citation styles: APA 7th, MLA 9th, Chicago 17th, Harvard",
+      "4 citation styles: APA 7th, MLA 9th, Chicago author-date, Harvard",
       "6 source types: book, journal article, website, newspaper, YouTube video, podcast",
-      "Auto-fill from DOI via CrossRef API (free, no auth)",
-      "Auto-fill from ISBN via OpenLibrary API (free, no auth)",
-      "Unlimited authors with correct formatting per style (et al., & signs, etc.)",
+      "Auto-fill from DOI via CrossRef",
+      "Auto-fill from ISBN via OpenLibrary",
+      "Multiple authors with style-specific formatting",
       "Live citation preview with proper italics",
       "Build a full bibliography with multiple sources",
       "Copy individual citations or entire bibliography",
       "Export bibliography as plain text (.txt) or BibTeX (.bib) format",
-      "Correct per-style author rules: APA uses up to 20 authors, MLA uses 'et al.' after 2, etc.",
-      "100% free — no style paywalls (unlike EasyBib, Citation Machine, BibMe which charge for APA/Chicago)",
-      "No signup, no ads, no daily limits",
+      "Style-specific author rules for APA, MLA, Chicago, and Harvard",
+      "No signup required",
     ],
     softwareRequirements: "Modern web browser with JavaScript enabled",
     alternateName: [
@@ -48,11 +47,6 @@ const toolConfig = createToolConfig({
       "DOI Citation Tool",
       "ISBN Citation Tool",
       "Free Citation Tool",
-      "EasyBib Alternative",
-      "Citation Machine Alternative",
-      "BibMe Alternative",
-      "Zotero Alternative",
-      "Mendeley Citation Alternative",
     ],
     ratingValue: "4.9",
     ratingCount: "12420",
@@ -61,7 +55,7 @@ const toolConfig = createToolConfig({
   header: {
     title: "Free Citation Generator",
     description:
-      "Cite in APA 7th, MLA 9th, Chicago, and Harvard styles. Auto-fill from DOI or ISBN. Build bibliographies. Export as text or BibTeX.",
+      "Cite in APA 7th, MLA 9th, Chicago author-date, and Harvard styles. Auto-fill from DOI or ISBN, build bibliographies, and export as text or BibTeX.",
     titleSize: "medium",
     descriptionSize: "small",
   },
@@ -73,25 +67,25 @@ const toolConfig = createToolConfig({
 
   content: {
     definition:
-      "A citation generator is an online tool that formats source references into standardized academic styles (APA, MLA, Chicago, Harvard) for research papers, essays, and bibliographies — ensuring every author, title, date, and publisher is presented according to the rules of the chosen style.",
+      "A citation generator formats source details into academic references for research papers, essays, bibliographies, and works cited pages.",
 
     quickAnswer:
-      "Pick a citation style (APA, MLA, Chicago, or Harvard), choose a source type (book, journal, website, etc.), and fill in the details. For fastest results, paste a DOI or ISBN into the Auto-Fill box — the tool fetches everything from CrossRef or OpenLibrary automatically. Click 'Add to Bibliography' to build your full reference list, then copy it or download as a .txt or .bib file.",
+      "Pick APA, MLA, Chicago, or Harvard, choose a source type, and fill in the details. You can also paste a DOI or ISBN to auto-fill metadata, then add the citation to a bibliography and export it as text or BibTeX.",
 
     keyTakeaways: [
-      "4 styles supported: APA 7th (2019), MLA 9th (2021), Chicago 17th, Harvard — all free, no paywalls",
+      "4 styles supported: APA 7th, MLA 9th, Chicago author-date, and Harvard",
       "6 source types: book, journal article, website, newspaper, YouTube video, podcast",
-      "Auto-fill from DOI (CrossRef) or ISBN (OpenLibrary) — free, no API keys needed",
+      "Auto-fill from DOI through CrossRef or ISBN through OpenLibrary",
       "Per-style author formatting: APA uses up to 20 authors before 'et al.', MLA uses 'et al.' after 2 authors, Chicago lists up to 3, Harvard up to 3",
       "Build full bibliographies and export as plain text (.txt) or BibTeX (.bib) for LaTeX / Overleaf",
-      "100% free with no signup, no ads, no feature paywalls — every style is free",
+      "Always verify generated citations against your instructor, journal, or institutional style guide",
     ],
 
     overview:
-      "This citation generator formats references in the four most-used academic styles: APA 7th edition, MLA 9th edition, Chicago 17th edition, and Harvard. Unlike EasyBib, Citation Machine, and BibMe — which paywall APA and Chicago behind paid tiers — every style and every feature here is completely free. Fill in source details manually or paste a DOI to auto-fill from CrossRef (for journal articles), or an ISBN to auto-fill from OpenLibrary (for books). Both APIs are free and require no registration. The tool supports 6 source types: books, journal articles, websites, newspapers, YouTube videos, and podcasts. As you type, the citation preview updates live with correct italics, punctuation, and author formatting rules specific to your chosen style. Click 'Add to Bibliography' to compile a reference list, then copy it to clipboard or download as a plain text file or BibTeX (.bib) for use in LaTeX / Overleaf.",
+      "This citation generator formats references in APA 7th, MLA 9th, Chicago author-date, and Harvard styles. Fill in source details manually or paste a DOI to auto-fill journal metadata from CrossRef, or an ISBN to auto-fill book metadata from OpenLibrary. The tool supports books, journal articles, websites, newspapers, YouTube videos, and podcasts. As you type, the citation preview updates with italics, punctuation, and author formatting rules for the selected style. Add citations to a bibliography, copy the full list, or download plain text or BibTeX for LaTeX and Overleaf.",
 
     howToSteps: [
-      "Pick a citation style (APA 7th, MLA 9th, Chicago 17th, or Harvard) and source type (book, journal, website, newspaper, YouTube video, or podcast).",
+      "Pick a citation style (APA 7th, MLA 9th, Chicago, or Harvard) and source type (book, journal, website, newspaper, YouTube video, or podcast).",
       "Either fill in the source details manually, or use the Auto-Fill box: paste a DOI for journal articles (fetches from CrossRef) or an ISBN for books (fetches from OpenLibrary). All metadata fills in automatically.",
       "Review and edit any fields. Add additional authors with the 'Add Author' button — the tool will format them correctly per your chosen style (et al., & signs, serial commas).",
       "Check the live citation preview. Click 'Copy' to grab a single citation, or 'Add to Bibliography' to build a full reference list.",
@@ -101,16 +95,15 @@ const toolConfig = createToolConfig({
     features: [
       "APA 7th Edition: The current American Psychological Association style (published 2019). Full support for up to 20 authors before 'et al.' — matches the official 2019 revision.",
       "MLA 9th Edition: The current Modern Language Association style (published 2021). Proper 'Works Cited' formatting with container elements.",
-      "Chicago 17th Edition: Full Chicago Manual of Style support. Author-date style with proper italicization and punctuation.",
-      "Harvard Referencing: The most common UK / Commonwealth style, with correct 'Available at' URL formatting and '(Accessed:)' dates.",
-      "Auto-Fill from DOI: Paste any DOI (e.g., 10.1038/nature12373) and the tool fetches title, authors, journal, volume, issue, pages, and year from CrossRef — the same API used by Zotero and Mendeley.",
+      "Chicago author-date style: Formats references with author, year, title, source, and publication details.",
+      "Harvard Referencing: Generates author-year references with 'Available at' URL formatting and '(Accessed:)' dates for web sources.",
+      "Auto-Fill from DOI: Paste any DOI (e.g., 10.1038/nature12373) and the tool fetches title, authors, journal, volume, issue, pages, and year from CrossRef.",
       "Auto-Fill from ISBN: Paste any 10- or 13-digit ISBN and the tool fetches book title, authors, publisher, and year from OpenLibrary.",
       "6 Source Types: Books, journal articles, websites, newspapers, YouTube videos, and podcasts — covering most academic citation needs.",
-      "Unlimited Authors: Add as many authors as needed. The tool applies each style's specific rules: APA lists up to 20 before 'et al.', MLA uses 'et al.' after 2, Chicago lists up to 3, Harvard lists up to 3.",
+      "Multiple Authors: Add as many authors as needed. The tool applies each style's specific rules: APA lists up to 20 before 'et al.', MLA uses 'et al.' after 2, Chicago lists up to 3, Harvard lists up to 3.",
       "Live Preview: The formatted citation updates as you type, with proper italics (for book/journal/website titles), correct punctuation, and style-specific author formatting.",
       "Bibliography Builder: Add multiple citations to build a complete reference list. Remove individual entries or copy the whole list.",
       "Export Formats: Plain text (.txt) for pasting into Word or Google Docs, or BibTeX (.bib) for use in LaTeX / Overleaf.",
-      "No Paywalls: Unlike EasyBib, Citation Machine, and BibMe which charge for APA and Chicago, every style and every feature here is completely free.",
     ],
 
     useCases: [
@@ -130,15 +123,15 @@ const toolConfig = createToolConfig({
           <h3 className="text-lg font-semibold text-foreground mb-2">The Four Most-Used Citation Styles</h3>
           <p>
             <strong>APA (American Psychological Association)</strong> is used primarily in
-            psychology, education, and social sciences. The current edition is the 7th (2019),
-            which allows up to 20 authors before using &quot;et al.&quot; and removed the publisher
-            location requirement. <strong>MLA (Modern Language Association)</strong> is used in
-            literature, language studies, and humanities. The current edition is the 9th (2021),
-            which reinforces the &quot;container&quot; system and supports inclusive language.{" "}
-            <strong>Chicago</strong> is used in history, arts, and some humanities — the current
-            edition is the 17th, offering both author-date and notes-bibliography systems.{" "}
-            <strong>Harvard</strong> is the most common UK / Commonwealth style, though there is
-            no single authority — the de facto standard is Cite Them Right.
+            psychology, education, and social sciences. APA 7th is widely required; it allows
+            up to 20 authors before using &quot;et al.&quot; and removed the publisher location
+            requirement. <strong>MLA (Modern Language Association)</strong> is used in
+            literature, language studies, and humanities. MLA 9th uses a flexible source
+            container system. <strong>Chicago</strong> is used in history, arts, and some
+            humanities; this tool focuses on Chicago-style author-date references rather than
+            footnote notes-bibliography formatting. <strong>Harvard</strong> is common in the UK
+            and Commonwealth, but requirements vary by institution, so always check your local
+            guide.
           </p>
         </div>
 
@@ -146,12 +139,12 @@ const toolConfig = createToolConfig({
           <h3 className="text-lg font-semibold text-foreground mb-2">How Auto-Fill Works</h3>
           <p>
             When you paste a DOI, the tool calls the <strong>CrossRef API</strong>{" "}
-            (api.crossref.org) — the same service used by Zotero, Mendeley, and virtually every
-            academic reference manager. CrossRef holds metadata for over 140 million scholarly
-            records. When you paste an ISBN, the tool calls <strong>OpenLibrary</strong>{" "}
+            (api.crossref.org) for scholarly metadata such as title, authors, journal, volume,
+            issue, pages, and year. When you paste an ISBN, the tool calls <strong>OpenLibrary</strong>{" "}
             (openlibrary.org), a free public library project by the Internet Archive with data
-            for millions of books. Both APIs are free and require no registration. The metadata
-            is fetched directly in your browser — we don&apos;t proxy or log your queries.
+            for books. The metadata is fetched directly in your browser. Always review the
+            returned fields because public metadata can be incomplete, duplicated, or formatted
+            differently from your institution&apos;s requirements.
           </p>
         </div>
 
@@ -180,32 +173,42 @@ const toolConfig = createToolConfig({
             physics, and engineering.
           </p>
         </div>
+        <div>
+          <h3 className="text-lg font-semibold text-foreground mb-2">Limits to Review Before Submission</h3>
+          <p>
+            Citation generators save time, but they do not replace a final style check. Confirm
+            capitalization, missing authors, date precision, DOI format, access dates, edition
+            numbers, and whether your assignment requires Chicago notes-bibliography rather than
+            author-date. If your university uses a local Harvard variant, adjust the final output
+            to that guide.
+          </p>
+        </div>
       </div>
     ),
 
     proTip:
-      "For journal articles, always try the DOI auto-fill first — it pulls correctly-capitalized author names, full journal titles, and volume/issue/page info directly from CrossRef. This is far more accurate than typing everything manually. For books, ISBN auto-fill via OpenLibrary is fastest, but double-check the publisher field since OpenLibrary occasionally has generic entries. Always verify the auto-filled data against the source before submitting — APIs can have gaps or outdated info.",
+      "For journal articles, try DOI auto-fill first — it can pull author names, journal titles, and volume/issue/page info from CrossRef. For books, ISBN auto-fill via OpenLibrary is fastest, but double-check the publisher and year because public metadata can have gaps or outdated entries.",
 
     faqs: [
       {
         question: "What is a citation generator?",
         answer:
-          "A citation generator is an online tool that formats source references into standardized academic styles (APA, MLA, Chicago, Harvard) for research papers, essays, and bibliographies. You enter the source details (author, title, year, etc.) and the tool generates a correctly-formatted citation according to the chosen style's rules.",
+          "A citation generator is an online tool that formats source references into academic styles such as APA, MLA, Chicago, and Harvard. You enter source details like author, title, year, and publisher, then review the generated citation against your required style guide.",
       },
       {
         question: "Is this citation generator free?",
         answer:
-          "Yes, completely free with no paywalls. Unlike EasyBib, Citation Machine, and BibMe — which charge for APA and Chicago citations — every style (APA, MLA, Chicago, Harvard) and every feature here is free. No signup, no ads, no daily limits.",
+          "Yes. You can generate citations and bibliographies without signup.",
       },
       {
         question: "Which citation styles are supported?",
         answer:
-          "APA 7th edition (2019, current), MLA 9th edition (2021, current), Chicago 17th edition, and Harvard. These are the four most-used academic styles covering ~95% of citation needs in English-language academia.",
+          "APA 7th, MLA 9th, Chicago author-date, and Harvard. If your class requires Chicago notes-bibliography or a specific local Harvard variant, review and adjust the final output.",
       },
       {
         question: "How do I use DOI auto-fill?",
         answer:
-          "In the Auto-Fill box, select 'DOI' and paste the DOI (e.g., 10.1038/nature12373). Click the search button and the tool fetches title, authors, journal, volume, issue, pages, and year from the CrossRef API — the same data source used by Zotero and Mendeley. You can still edit any field before finalizing the citation.",
+          "In the Auto-Fill box, select 'DOI' and paste the DOI (e.g., 10.1038/nature12373). Click the search button and the tool fetches title, authors, journal, volume, issue, pages, and year from CrossRef. You can still edit any field before finalizing the citation.",
       },
       {
         question: "How do I use ISBN auto-fill?",
@@ -215,12 +218,12 @@ const toolConfig = createToolConfig({
       {
         question: "Can I cite YouTube videos and podcasts?",
         answer:
-          "Yes. Select 'YouTube Video' or 'Podcast' as the source type. The tool supports the official APA 7th, MLA 9th, Chicago 17th, and Harvard rules for multimedia sources — including channel name (for YouTube) and host/show name (for podcasts).",
+          "Yes. Select 'YouTube Video' or 'Podcast' as the source type. The tool formats multimedia references with fields such as channel name, video URL, host, show name, episode number, and publish date.",
       },
       {
         question: "How do I cite a source with many authors?",
         answer:
-          "Click 'Add Author' as many times as needed. The tool applies each style's specific rules: APA 7th allows up to 20 authors before using 'et al.', MLA 9th uses 'et al.' after 2 authors, Chicago 17th lists up to 3 before 'et al.', and Harvard lists up to 3 before 'et al.'",
+          "Click 'Add Author' as many times as needed. The tool applies style-specific rules: APA 7th allows up to 20 authors before using 'et al.', MLA 9th uses 'et al.' after 2 authors, Chicago author-date lists up to 3 before 'et al.', and Harvard lists up to 3 before 'et al.'",
       },
       {
         question: "Can I build a bibliography with multiple sources?",
@@ -245,7 +248,7 @@ const toolConfig = createToolConfig({
       {
         question: "Can I use this for my PhD thesis or journal submission?",
         answer:
-          "Yes. The tool follows the official APA 7th, MLA 9th, Chicago 17th, and Harvard rules. Always verify the final output against your institution's specific style guide — some universities have local variations (e.g., 'Harvard UTS' vs 'Harvard UKOU'). Export as BibTeX if you're writing in LaTeX.",
+          "You can use it to build draft references and bibliographies, including BibTeX export for LaTeX. Always verify final citations against your institution's or journal's style guide before submission.",
       },
       {
         question: "How do I cite a website with no author?",

@@ -63,6 +63,17 @@ export const metadata: Metadata = {
 export default function ConversionCalculatorPage() {
   const toolContent = {
     toolName: TOOL_NAME,
+    definition:
+      "A conversion calculator converts values between measurement units such as length, weight, temperature, volume, area, speed, pressure, time, and currency.",
+    quickAnswer:
+      "Choose a category, select the from and to units, and enter a value to convert instantly. The calculator supports common metric, imperial, scientific, cooking, time, and currency conversions in one place.",
+    keyTakeaways: [
+      "Unit conversion changes measurement units without changing the underlying quantity",
+      "Metric and imperial conversions use fixed ratios for length, weight, area, and volume",
+      "Temperature conversions require formulas, not simple multiplication",
+      "Currency conversion depends on changing exchange rates",
+      "Use exact unit names when converting engineering, science, or recipe values",
+    ],
     overview: "Convert between 1000+ units instantly across 12+ measurement categories — length (km to miles, feet to meters, inches to cm), weight (pounds to kg, grams to ounces), temperature (Celsius to Fahrenheit, Kelvin), currency (100+ real-time exchange rates), volume (liters to gallons, cups to ml), area (sq ft to sq m, acres to hectares), speed (mph to km/h), power (watts to HP), energy (joules to calories, kWh to BTU), pressure (PSI to bar), time, and cooking measurements. All conversions use NIST/BIPM-validated constants with 6-decimal precision, making this tool suitable for engineering, science, travel, cooking, and everyday use.",
 
     howToSteps: [

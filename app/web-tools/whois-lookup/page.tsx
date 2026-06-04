@@ -36,7 +36,7 @@ const toolConfig = createToolConfig({
       "Registrar abuse contact email and phone",
       "Internationalized Domain Name (IDN / Unicode) support",
       "Live data via official IANA RDAP bootstrap — modern WHOIS replacement",
-      "Free, no signup, no API key, no rate limit",
+      "Free, no signup, no API key required",
     ],
     alternateName: [
       "WHOIS Lookup",
@@ -155,6 +155,15 @@ const toolConfig = createToolConfig({
             on its way to expiry and potential re-registration.
           </p>
         </div>
+        <div>
+          <h3 className="text-lg font-semibold text-foreground mb-2">Availability and registry limits</h3>
+          <p>
+            If the registry returns no RDAP record, the tool can report that a domain appears
+            available. Treat that as a lookup signal, not a final purchase guarantee. Registrars
+            may reserve names, mark names as premium, delay updates, or apply their own pricing
+            and eligibility rules. Some registries can also throttle repeated RDAP requests.
+          </p>
+        </div>
       </div>
     ),
 
@@ -188,6 +197,16 @@ const toolConfig = createToolConfig({
           "Yes. If no registration record exists in the registry, the tool reports the domain as available (unregistered). Confirm final availability and pricing at a registrar, as some names are premium or reserved.",
       },
       {
+        question: "Why does the result differ from my registrar?",
+        answer:
+          "RDAP data comes from the registry or registrar RDAP service and can lag behind account dashboards, renewal actions, pending transfers, premium-name rules, or registrar-specific availability checks. Use this lookup for public registration facts, then confirm purchase or renewal details inside your registrar account.",
+      },
+      {
+        question: "Can RDAP or WHOIS lookups be rate limited?",
+        answer:
+          "Yes. This page is free to use and does not require an API key, but registries and RDAP services can throttle repeated automated requests. If a lookup fails temporarily, wait and try again.",
+      },
+      {
         question: "Does this work for all domain extensions (TLDs)?",
         answer:
           "It works for virtually every TLD that publishes RDAP — which now covers all gTLDs (.com, .net, .org, .tech, .dev, .io, and more) and many ccTLDs, resolved automatically via the IANA RDAP bootstrap.",
@@ -204,6 +223,8 @@ const toolConfig = createToolConfig({
       { name: "URL Parser", href: "/web-tools/url-parser" },
       { name: "Device Info", href: "/web-tools/device-info" },
       { name: "Auth Generator", href: "/web-tools/auth-generator" },
+      { name: "URL Encoder/Decoder", href: "/web-tools/url-encoder" },
+      { name: "All Web Tools", href: "/web-tools" },
     ],
   },
 })

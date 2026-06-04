@@ -12,22 +12,22 @@ const PDFCompressor = dynamic(
 const toolConfig = createToolConfig({
   toolName: "PDF Compressor",
   description:
-    "Compress PDF files online for free with adjustable low, medium, and high compression levels to reduce file size by up to 90% while preserving document quality.",
+    "Compress PDF files online for free with adjustable low, medium, and high compression levels. Reduce file size by rendering pages into optimized image-based PDF output.",
   metaTitle: "PDF Compressor — Reduce PDF File Size to KB or MB",
   metaDescription:
-    "Free PDF compressor. Reduce PDF file size by up to 90% with low/medium/high compression. Compress to a target KB or MB for email, upload portals, and storage limits. 100% client-side, no upload.",
+    "Free PDF compressor. Reduce PDF file size with low, medium, and high compression modes for email, upload portals, forms, and storage limits. Browser-based, no signup.",
   path: "/pdf-tools/pdf-compressor",
 
   schemaOptions: {
     applicationCategory: "BusinessApplication",
     description:
-      "Free online PDF compressor with low, medium, and high compression modes. Reduces PDF file size by optimizing images, fonts, and metadata while preserving readability.",
+      "Free online PDF compressor with low, medium, and high compression modes. Reduces PDF file size by rendering pages into optimized image-based PDF output.",
     alternateName: [
       "Reduce PDF Size",
       "Compress PDF Online",
       "Shrink PDF",
       "PDF Size Reducer",
-      "Compress PDF to 100KB / 200KB / 500KB / 1MB / 2MB",
+      "Compress PDF to Smaller Size",
       "PDF Optimizer",
       "PDF File Size Reducer",
       "Make PDF Smaller",
@@ -41,15 +41,12 @@ const toolConfig = createToolConfig({
     ],
     featureList: [
       "Three compression levels: low (best quality), medium, high (smallest)",
-      "Target file size mode: compress to exact KB or MB",
-      "PDF size reduction up to 90%",
-      "Image optimization (downscale embedded images, JPEG re-encoding)",
-      "Font subsetting (only embed used glyphs)",
-      "Metadata stripping option",
+      "PDF size reduction for image-heavy and scanned documents",
+      "Page rendering with JPEG re-encoding",
+      "Low, medium, and high quality presets",
       "Original vs compressed size comparison",
-      "Batch compress up to 20 PDFs",
-      "Side-by-side preview before download",
-      "Preserve text searchability (no flattening)",
+      "Download compressed PDF output",
+      "Works well for scanned pages, photos, forms, and visual PDFs",
       "100% client-side — your PDF never uploaded to any server",
       "Free, no signup, no watermark",
     ],
@@ -58,10 +55,10 @@ const toolConfig = createToolConfig({
     ratingCount: "11240",
   },
 
-  header: {
+    header: {
     title: "PDF Compressor Online",
     description:
-      "Reduce PDF file size by up to 90% with adjustable compression levels. Optimize images, fonts, and metadata in your browser — perfect for email attachments, upload portals, and cloud storage limits.",
+      "Reduce PDF file size with adjustable compression levels. Best for scanned PDFs, photo PDFs, forms, and visual documents that need to fit email, upload, or storage limits.",
     titleSize: "medium",
     descriptionSize: "small",
   },
@@ -73,23 +70,23 @@ const toolConfig = createToolConfig({
 
   content: {
     definition:
-      "A PDF Compressor is a free online tool that reduces PDF file size by optimizing embedded images, subsetting fonts, removing duplicate resources, and stripping unnecessary metadata — all while preserving text selectability and document structure.",
+      "A PDF Compressor is a free online tool that reduces PDF file size by re-encoding pages at lower quality or resolution so the document is easier to upload, email, or store.",
     quickAnswer:
-      "Upload a PDF and select a compression level (low, medium, or high). The tool optimizes images using JPEG/FLATE recompression, subsets embedded fonts, and removes redundant PDF objects to reduce file size. Download the compressed PDF — typically 50-90% smaller than the original.",
+      "Upload a PDF and select a compression level: low for better quality, medium for balance, or high for the smallest file. The tool renders pages into optimized image-based PDF output, then shows the before/after size so you can download the smaller file.",
     keyTakeaways: [
-      "Reduces PDF file size by up to 90% depending on content type and compression level",
-      "Three compression modes: low (best quality, ~30% reduction), medium (balanced, ~60%), high (smallest file, ~90%)",
-      "Preserves text selectability, hyperlinks, bookmarks, and document structure",
-      "Image-heavy PDFs with scans and photos see the largest size reductions",
-      "All PDF compression runs locally in your browser — files never leave your device",
+      "Reduces PDF file size depending on page content and compression level",
+      "Low, medium, and high modes control the quality-versus-size tradeoff",
+      "Works best on scanned PDFs, image-heavy documents, forms, and photo PDFs",
+      "Compressed output is image-based, so selectable/searchable text may not be preserved",
+      "All PDF compression runs locally in your browser session",
     ],
     overview:
-      "This free online PDF compressor helps you reduce PDF file size when documents are too large for email attachment limits, upload portals, application forms, or cloud storage quotas. The tool uses advanced image recompression algorithms, font subsetting, and metadata optimization to shrink PDFs while maintaining visual quality. Switch between low compression for maximum fidelity, medium compression for balanced file size and quality, or high compression when you need the smallest possible output. Whether you are compressing scanned documents, presentation handouts, research papers, or business reports, the browser-based processing ensures your files stay private and processing completes in seconds.",
+      "This free online PDF compressor helps reduce PDF file size when documents are too large for email attachment limits, upload portals, application forms, or cloud storage quotas. The tool renders each PDF page and rebuilds a smaller image-based PDF using the selected compression level. Use low compression when readability and visual detail matter, medium compression for everyday sharing, or high compression when the strictest file-size limit matters more than image sharpness.",
 
     howToSteps: [
       "Upload your PDF file by dragging and dropping or clicking the upload area.",
       "Select your compression level: low (best quality), medium (balanced), or high (smallest size).",
-      "Click compress and wait for the optimization engine to process your document.",
+      "Click compress and wait while the browser renders each page and rebuilds the smaller PDF.",
       "Review the file size comparison showing original vs. compressed size and savings percentage.",
       "Download the compressed PDF file ready for email, upload, or sharing.",
     ],
@@ -97,15 +94,15 @@ const toolConfig = createToolConfig({
     features: [
       "Three-tier compression selector (low, medium, high) for precise size-quality control",
       "Real-time file size comparison showing original size, compressed size, and percentage saved",
-      "Image recompression using optimized JPEG quality settings per compression level",
-      "Font subsetting to remove unused character glyphs from embedded fonts",
-      "Metadata stripping to remove unnecessary PDF object data",
+      "Page rendering with JPEG quality settings matched to each compression level",
+      "Image-based PDF rebuilding for strong reduction on scanned and photo-heavy files",
+      "Clear warning that text selectability may not survive aggressive compression",
       "100% browser-based processing — no server uploads, no data collection",
       "Works on desktop, tablet, and mobile browsers without software installation",
     ],
 
     useCases: [
-      "Compress large PDFs to fit within email attachment size limits (10-25 MB)",
+      "Compress large PDFs to fit within email attachment size limits",
       "Reduce file size for government, university, and job application upload portals",
       "Optimize scanned documents and photo-heavy PDFs for faster cloud storage sync",
       "Shrink presentation handouts and training materials for easy distribution",
@@ -118,14 +115,21 @@ const toolConfig = createToolConfig({
         <div>
           <h3 className="text-lg font-semibold text-foreground mb-2">How PDF Compression Works</h3>
           <p>
-            PDF compression reduces file size through multiple optimization techniques. Embedded images — often the largest component of a PDF — are recompressed using lossy JPEG compression at quality levels matched to your selected mode. Fonts are subsetted to include only the characters actually used in the document, removing unused glyph data. Redundant PDF objects, duplicate resources, and unnecessary metadata (like editing history and thumbnail previews) are stripped. The result is a smaller PDF that retains text selectability, hyperlinks, and visual layout.
+            This compressor reduces file size by rendering each PDF page and saving it into a new PDF with JPEG image compression. That approach is effective for scanned documents, photos, forms, and visual PDFs because those files are usually dominated by page images. It is different from a structural PDF optimizer that subsets fonts or preserves every selectable text layer.
           </p>
         </div>
 
         <div>
           <h3 className="text-lg font-semibold text-foreground mb-2">Choosing the Right Compression Level</h3>
           <p>
-            Low compression preserves maximum image quality and is ideal for documents with detailed charts, diagrams, or photographs that need to remain sharp. Medium compression provides the best balance between file size and quality for most business documents, reports, and forms. High compression delivers the smallest output and works well for text-heavy documents, archival copies, or situations where strict file size limits apply. For scanned PDFs, even low compression often achieves 40-60% size reduction because scan images contain significant compressible data.
+            Low compression preserves more visual detail and is best for pages with small text, charts, diagrams, or signatures. Medium compression is the safest first choice for most scanned documents and forms. High compression creates the smallest output, but image clarity can drop, especially on tiny text or detailed graphics. If the file must remain searchable or selectable, keep an original copy before compression.
+          </p>
+        </div>
+
+        <div>
+          <h3 className="text-lg font-semibold text-foreground mb-2">Selectable Text and Searchability</h3>
+          <p>
+            Because this tool rebuilds pages as compressed images, the output may not preserve selectable text, hyperlinks, bookmarks, form fields, or accessibility tags. Use it when smaller file size matters most. For legal, archival, accessibility, or searchable document workflows, keep the original PDF and verify the compressed copy before submitting it.
           </p>
         </div>
 
@@ -139,28 +143,28 @@ const toolConfig = createToolConfig({
     ),
 
     proTip:
-      "Start with medium compression for most documents — it typically reduces file size by 50-70% with minimal quality loss. Only switch to high if you need to meet a strict size limit, and use low for documents with important visual details like architectural plans or medical images.",
+      "Start with medium compression. Use low for small text or detailed diagrams, and use high only when the upload limit is strict and visual quality can be reduced.",
 
     faqs: [
       {
         question: "How much can this PDF compressor reduce file size?",
         answer:
-          "File size reduction depends on content type and compression level. Image-heavy PDFs (scans, photos, presentations) typically compress by 60-90%. Text-heavy PDFs with few images may compress by 20-40%. The tool displays exact before/after size and percentage saved after compression.",
+          "File size reduction depends on the original PDF and compression level. Scanned PDFs, photos, and image-heavy documents usually shrink the most. Text-only PDFs may not shrink much and can even grow if they are already optimized.",
       },
       {
         question: "Can I compress a PDF to a specific file size like 1 MB or 200 KB?",
         answer:
-          "This tool uses level-based compression (low, medium, high) rather than target-size input. Start with high compression for the smallest output. If the result is still too large, consider splitting the PDF into sections using our PDF Splitter tool and compressing each section individually.",
+          "This tool uses level-based compression instead of exact target-size input. Choose high compression for the smallest output. If the result is still too large, split the PDF into smaller sections and compress each section separately.",
       },
       {
         question: "Does PDF compression affect text quality and readability?",
         answer:
-          "Text remains fully selectable and searchable at all compression levels because compression primarily targets embedded images and redundant data. Low and medium modes preserve excellent visual quality. High mode may reduce image clarity on photo-heavy or scanned pages, but text elements remain sharp.",
+          "The visible text remains readable if the compression level is appropriate, but the compressed PDF may become image-based instead of selectable/searchable text. Use low or medium compression for documents with small text.",
       },
       {
         question: "Is this online PDF compressor free to use without limits?",
         answer:
-          "Yes, the PDF compressor is completely free with no file size limits, no watermarks, and no account registration required. You can compress as many PDFs as needed directly in your browser.",
+          "Yes, the PDF compressor is free with no watermarks and no account registration required. The current upload limit is 2GB per PDF, and very large files may depend on your browser memory and device performance.",
       },
       {
         question: "Is my PDF data safe when using this compressor?",
@@ -170,12 +174,17 @@ const toolConfig = createToolConfig({
       {
         question: "Can I compress scanned PDF documents?",
         answer:
-          "Yes, scanned PDFs often see the best compression results because they contain large raster images. Even low compression can reduce scanned PDFs by 40-60%, while high compression may achieve 80-90% reduction depending on scan resolution and color depth.",
+          "Yes. Scanned PDFs often see the best compression results because they contain large page images. Use low or medium compression if the scan includes small text, signatures, stamps, or fine details.",
+      },
+      {
+        question: "Will the compressed PDF stay searchable?",
+        answer:
+          "Not always. This compressor can create image-based PDF pages, which means selectable text and searchability may not be preserved. Keep your original PDF if search, copy-paste, links, forms, or accessibility tags matter.",
       },
       {
         question: "Why does my PDF file size barely change after compression?",
         answer:
-          "The file may already be optimized, or it may be a text-only PDF with minimal compressible data. Try a higher compression level, or use our PDF Splitter to extract only the pages you need, which effectively reduces the working file size.",
+          "The file may already be optimized, text-only, or made from low-resolution images. Try a higher compression level, or use PDF Splitter to keep only the pages you need.",
       },
     ],
 

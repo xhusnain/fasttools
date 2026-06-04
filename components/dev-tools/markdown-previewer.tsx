@@ -18,11 +18,19 @@ export function MarkdownPreviewer() {
   const renderMarkdown = (md: string): string => {
     try {
       // Use marked.parse() for synchronous parsing (v4+) or fallback to marked() with type assertion
+      const sanitize = (html: string) =>
+        html
+          .replace(/<script[\s\S]*?>[\s\S]*?<\/script>/gi, "")
+          .replace(/<(iframe|object|embed)[\s\S]*?>[\s\S]*?<\/\1>/gi, "")
+          .replace(/<(iframe|object|embed)\b[^>]*\/?>/gi, "")
+          .replace(/\son\w+=(?:"[^"]*"|'[^']*'|[^\s>]+)/gi, "")
+          .replace(/\s(href|src)=("|')\s*javascript:[\s\S]*?\2/gi, ' $1="#"')
+
       if ('parse' in marked && typeof (marked as any).parse === 'function') {
-        return (marked as any).parse(md, { breaks: true, gfm: true }) as string
+        return sanitize((marked as any).parse(md, { breaks: true, gfm: true }) as string)
       }
       // Fallback for older versions or when parse() is not available
-      return marked(md, { breaks: true, gfm: true }) as string
+      return sanitize(marked(md, { breaks: true, gfm: true }) as string)
     } catch (error) {
       console.error("Markdown parsing error:", error)
       return "<p>Error parsing markdown</p>"
