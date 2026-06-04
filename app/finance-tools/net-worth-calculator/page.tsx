@@ -191,7 +191,7 @@ export default function NetWorthCalculatorPage() {
         <article className="space-y-6">
           <h2 className="text-2xl font-bold text-foreground flex items-center gap-2">
             <BarChart3 className="h-6 w-6 text-primary" />
-            Average Net Worth by Age in 2026
+            Average Net Worth by Age
           </h2>
           <p className="text-base text-muted-foreground leading-relaxed">
             Net worth varies dramatically by age. The median (middle value) is more representative than the average because averages are skewed by ultra-wealthy outliers. Here are the latest benchmarks from the Federal Reserve Survey of Consumer Finances and Empower:

@@ -154,7 +154,7 @@ const toolConfig = createToolConfig({
               </tr>
               <tr className="border-b border-border">
                 <td className="py-2 px-2"><strong>Contrarian</strong></td>
-                <td className="py-2 px-2">&quot;Why Email Marketing Is Better Than Ever in 2026&quot;</td>
+                <td className="py-2 px-2">&quot;Why Email Marketing Is Better Than Ever&quot;</td>
                 <td className="py-2 px-2">Pattern interrupt; thought leadership</td>
               </tr>
               <tr className="border-b border-border">
@@ -243,7 +243,7 @@ const toolConfig = createToolConfig({
       {
         question: "Should I put my target keyword at the beginning of the blog title?",
         answer:
-          "Yes, front-loading your primary keyword is an SEO best practice. Placing the keyword in the first 30 characters ensures it remains visible even if the title gets truncated in SERPs. It also signals strong topical relevance to search engines. Example: 'React Performance: 10 Optimization Tips for 2026' front-loads 'React Performance' rather than burying it at the end.",
+          "Yes, front-loading your primary keyword is an SEO best practice. Placing the keyword in the first 30 characters ensures it remains visible even if the title gets truncated in SERPs. It also signals strong topical relevance to search engines. Example: 'React Performance: 10 Optimization Tips' front-loads 'React Performance' rather than burying it at the end.",
       },
       {
         question: "Do numbers in blog titles really increase click-through rate?",

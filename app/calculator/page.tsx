@@ -657,7 +657,7 @@ const toolConfig = createToolConfig({
           <ul className="space-y-2 text-sm text-muted-foreground list-disc list-inside ml-2">
             <li><strong>Client-side privacy:</strong> Health, finance, and pregnancy inputs never leave your browser. Calculator.net and most competitors run calculations server-side.</li>
             <li><strong>No ads inside the calculator:</strong> Other free calculator sites surround the input fields with ad units. Ours don&apos;t — the calculator UI is clean.</li>
-            <li><strong>2026-current data:</strong> Where calculators depend on rates (PayPal fees, tax brackets, concrete prices), we use the latest published numbers, not 2020 references.</li>
+            <li><strong>Current data:</strong> Where calculators depend on rates (PayPal fees, tax brackets, concrete prices), we use the latest published numbers, not 2020 references.</li>
             <li><strong>Deep linking:</strong> Every calculator is its own page with focused content, FAQs, and worked examples — not a single mega-page with 50 calculators crammed into tabs.</li>
             <li><strong>Free with no &quot;Pro&quot; tier:</strong> No watermarks, no signup walls, no daily limits.</li>
           </ul>
@@ -681,7 +681,7 @@ const toolConfig = createToolConfig({
           <ul className="grid grid-cols-1 md:grid-cols-2 gap-2 text-sm text-muted-foreground">
             <li>· free online calculator</li>
             <li>· online calculator hub</li>
-            <li>· best free online calculators 2026</li>
+            <li>· best free online calculators</li>
             <li>· math finance health calculator list</li>
             <li>· free advanced calculator</li>
             <li>· browser-based calculators</li>

@@ -426,7 +426,7 @@ export function AutoLoanCalculator() {
                     className="h-11 bg-card border-border text-foreground"
                   />
                   <div className="text-xs text-muted-foreground">
-                    Avg 2026: {vehicleType === "new" ? `${MARKET_AVERAGES.newCarRate}%` : `${MARKET_AVERAGES.usedCarRate}%`} ({vehicleType})
+                    Avg: {vehicleType === "new" ? `${MARKET_AVERAGES.newCarRate}%` : `${MARKET_AVERAGES.usedCarRate}%`} ({vehicleType})
                   </div>
                 </div>
 
@@ -1055,7 +1055,7 @@ export function AutoLoanCalculator() {
             <div className="p-1.5 bg-primary/10 rounded-lg">
               <TrendingUp className="h-4 w-4 text-foreground" />
             </div>
-            Average Auto Loan Interest Rates by Credit Score (2026)
+            Average Auto Loan Interest Rates by Credit Score
           </GCardTitle>
         </GCardHeader>
         <GCardContent>

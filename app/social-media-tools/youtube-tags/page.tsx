@@ -128,7 +128,7 @@ const toolConfig = createToolConfig({
           "Extract tags from 5-10 top-performing videos in your niche, identify common keywords, and adapt them for your content. Don't copy tags exactly — customize them for your specific video topic. Mix broad and long-tail keywords within YouTube's 500-character tag limit.",
       },
       {
-        question: "Are YouTube tags still important for SEO in 2026?",
+        question: "Are YouTube tags still important for SEO?",
         answer:
           "Tags are less important than title, description, and engagement metrics, but they still help YouTube understand your video's context. They are especially useful for associating your video with commonly misspelled keywords and related topics.",
       },

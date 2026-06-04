@@ -236,7 +236,7 @@ const toolConfig = createToolConfig({
 
     additionalContent: [
       {
-        heading: "Signs of AI-Generated Code in 2026",
+        heading: "Signs of AI-Generated Code",
         content:
           "Common markers of AI-generated code include: very low cyclomatic complexity with shallow nesting (AI avoids complex branching), generic variable names like 'result', 'data', 'item', 'output', 'temp' instead of domain-specific terminology, missing error handling (no try-catch blocks, null checks, or input validation), uniform line lengths and consistent formatting, generic explanatory comments ('This function does X', 'Initialize the Y'), short isolated functions rather than evolving complex methods, and missing boundary condition checks. Even the latest AI tools — GitHub Copilot with GPT-4, Claude 3.5, and Gemini — exhibit these patterns because they optimize for the most probable code rather than robust production code.",
       },

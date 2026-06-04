@@ -162,7 +162,7 @@ const toolConfig = createToolConfig({
       {
         question: "How do I calculate OpenAI API costs from token counts?",
         answer:
-          "Multiply your input tokens by the per-token input price and output tokens by the per-token output price. For GPT-4 Turbo (2026 pricing): ~$0.01/1K input tokens and ~$0.03/1K output tokens. A 10,000-token prompt generating a 2,000-token response costs approximately $0.10 + $0.06 = $0.16. Use this converter to estimate token counts from your word counts, then apply your provider's current pricing.",
+          "Multiply your input tokens by the per-token input price and output tokens by the per-token output price. For GPT-4 Turbo (approximate pricing): ~$0.01/1K input tokens and ~$0.03/1K output tokens. A 10,000-token prompt generating a 2,000-token response costs approximately $0.10 + $0.06 = $0.16. Use this converter to estimate token counts from your word counts, then apply your provider's current pricing.",
       },
       {
         question: "Why does code use more tokens than regular English text?",

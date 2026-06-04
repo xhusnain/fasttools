@@ -377,7 +377,7 @@ export function StartupRunwayCalculator() {
           <GCard>
             <GCardHeader className="pb-3">
               <GCardTitle className="text-base flex items-center gap-2">
-                <Banknote className="h-5 w-5" /> Industry Benchmarks (2026)
+                <Banknote className="h-5 w-5" /> Industry Benchmarks
               </GCardTitle>
             </GCardHeader>
             <GCardContent>

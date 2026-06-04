@@ -234,7 +234,7 @@ const toolConfig = createToolConfig({
         </div>
 
         <div>
-          <h3 className="text-lg font-semibold text-foreground mb-2">2026 Password Best Practices (NIST SP 800-63B)</h3>
+          <h3 className="text-lg font-semibold text-foreground mb-2">Password Best Practices (NIST SP 800-63B)</h3>
           <ul className="list-disc pl-6 space-y-1">
             <li><strong>Length over complexity:</strong> NIST recommends minimum 8 chars, ideally 64+; complexity rules (must have number / symbol) are now considered harmful</li>
             <li><strong>No forced rotation:</strong> the &quot;change every 90 days&quot; rule is officially obsolete. Only change after a breach event</li>

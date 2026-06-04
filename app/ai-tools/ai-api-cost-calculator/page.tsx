@@ -99,7 +99,7 @@ const toolConfig = createToolConfig({
     ],
 
     overview:
-      "This AI API cost calculator helps engineering teams, founders, and AI product builders compare per-request and per-month LLM spend across every major commercial provider in 2026: OpenAI (GPT-5, GPT-4o family, o-series reasoning), Anthropic (Claude Opus 4.7 with 1M context, Sonnet 4.6, Haiku 4.5), Google (Gemini 2.5 Pro / Flash / Flash-Lite), DeepSeek (V3, R1), Mistral (Large 2, Small 3, Codestral), Meta Llama 4 (via Together AI and Groq), xAI (Grok 4, Grok 4 Mini), and Cohere (Command R+ / Command R). Pick a workload preset — light chatbot, production chatbot, RAG knowledge base, agentic workflow, summarization, code generation, or batch processing — and the tool instantly shows you per-request cost, monthly bill, annual bill, and the savings from switching to a cheaper model with comparable quality. Cached-input pricing is calculated automatically (most providers now offer ~90% discount on repeated context like system prompts and RAG chunks), so your estimate matches what you'll actually see on the invoice. Every input is encoded into a shareable URL so you can paste your scenario in Slack, an investor deck, or your engineering team's RFC for instant peer review.",
+      "This AI API cost calculator helps engineering teams, founders, and AI product builders compare per-request and per-month LLM spend across every major commercial provider: OpenAI (GPT-5, GPT-4o family, o-series reasoning), Anthropic (Claude Opus 4.7 with 1M context, Sonnet 4.6, Haiku 4.5), Google (Gemini 2.5 Pro / Flash / Flash-Lite), DeepSeek (V3, R1), Mistral (Large 2, Small 3, Codestral), Meta Llama 4 (via Together AI and Groq), xAI (Grok 4, Grok 4 Mini), and Cohere (Command R+ / Command R). Pick a workload preset — light chatbot, production chatbot, RAG knowledge base, agentic workflow, summarization, code generation, or batch processing — and the tool instantly shows you per-request cost, monthly bill, annual bill, and the savings from switching to a cheaper model with comparable quality. Cached-input pricing is calculated automatically (most providers now offer ~90% discount on repeated context like system prompts and RAG chunks), so your estimate matches what you'll actually see on the invoice. Every input is encoded into a shareable URL so you can paste your scenario in Slack, an investor deck, or your engineering team's RFC for instant peer review.",
 
     howToSteps: [
       "Pick a use-case preset — Light chatbot, Production chatbot, RAG, Agentic workflow, Summarization, Code generation, or Batch processing — to seed realistic numbers, or skip directly to manual entry.",
@@ -110,7 +110,7 @@ const toolConfig = createToolConfig({
     ],
 
     features: [
-      "25+ models across 10 providers — every major commercial LLM API in 2026, including frontier (GPT-5, Claude Opus 4.7, Gemini 2.5 Pro, Grok 4, Llama 4 Maverick), balanced (Sonnet 4.6, GPT-4o, Mistral Large), reasoning (o3, DeepSeek R1), and fast/cheap (Haiku, Flash-Lite, GPT-5 nano, DeepSeek V3).",
+      "25+ models across 10 providers — every major commercial LLM API, including frontier (GPT-5, Claude Opus 4.7, Gemini 2.5 Pro, Grok 4, Llama 4 Maverick), balanced (Sonnet 4.6, GPT-4o, Mistral Large), reasoning (o3, DeepSeek R1), and fast/cheap (Haiku, Flash-Lite, GPT-5 nano, DeepSeek V3).",
       "Seven workload presets that reflect real production patterns — light chatbot (50K req/mo), production chatbot (3M req/mo), RAG with cacheable system prompt, multi-step agentic workflows, document summarization with long input + short output, IDE-plugin code generation, and bulk batch processing.",
       "Cached-input pricing modeled correctly — most providers (OpenAI, Anthropic, Google) discount repeated prompt context by ~90%. The slider lets you set what share of your input is cacheable; total cost reflects the savings.",
       "Per-request, per-month, and per-year cost shown in one table, sorted cheapest first with the cheapest model highlighted and a savings callout vs the most expensive selected option.",
@@ -136,7 +136,7 @@ const toolConfig = createToolConfig({
         <div>
           <h3 className="text-lg font-semibold text-foreground mb-2">Why LLM Cost Comparison Is Suddenly Critical</h3>
           <p>
-            In 2024, AI pricing was simple: pay OpenAI. In 2026, the market has five frontier-tier providers (OpenAI, Anthropic, Google, xAI, Meta/Llama-hosters) plus a dozen open-source-hosted alternatives, and prices vary by <strong>50–300× between cheap and expensive options for comparable quality on a given task</strong>. The same chatbot can cost $500/month on DeepSeek V3 or $50,000/month on Claude Opus 4.7 — without anyone in your team realizing the gap until the bill arrives. Picking the right model is now one of the highest-leverage decisions in your AI feature stack, and it requires actual math, not vibes.
+            In 2024, AI pricing was simple: pay OpenAI. Today, the market has five frontier-tier providers (OpenAI, Anthropic, Google, xAI, Meta/Llama-hosters) plus a dozen open-source-hosted alternatives, and prices vary by <strong>50–300× between cheap and expensive options for comparable quality on a given task</strong>. The same chatbot can cost $500/month on DeepSeek V3 or $50,000/month on Claude Opus 4.7 — without anyone in your team realizing the gap until the bill arrives. Picking the right model is now one of the highest-leverage decisions in your AI feature stack, and it requires actual math, not vibes.
           </p>
         </div>
 
@@ -268,7 +268,7 @@ monthly_cost = per_request_cost × requests_per_month`}</code>
       {
         question: "Which AI API is cheapest for a production chatbot?",
         answer:
-          "For most production chatbots in 2026: Claude Haiku 4.5 ($1 input / $5 output per million), Gemini 2.5 Flash ($0.30 / $2.50), or GPT-5 nano ($0.05 / $0.40) deliver strong quality at low cost. For absolute cheapest hosted frontier-quality, look at DeepSeek V3 ($0.27 / $1.10) or Llama 4 Maverick via Together AI ($0.27 / $0.85). Run a realistic eval against your actual chat traffic before committing — quality varies significantly by task. Don't forget cached-input pricing: for a chatbot with a fixed system prompt, enabling caching often saves more money than switching models.",
+          "For most production chatbots: Claude Haiku 4.5 ($1 input / $5 output per million), Gemini 2.5 Flash ($0.30 / $2.50), or GPT-5 nano ($0.05 / $0.40) deliver strong quality at low cost. For absolute cheapest hosted frontier-quality, look at DeepSeek V3 ($0.27 / $1.10) or Llama 4 Maverick via Together AI ($0.27 / $0.85). Run a realistic eval against your actual chat traffic before committing — quality varies significantly by task. Don't forget cached-input pricing: for a chatbot with a fixed system prompt, enabling caching often saves more money than switching models.",
       },
       {
         question: "Why is Claude Opus 4.7 so much more expensive than GPT-5?",

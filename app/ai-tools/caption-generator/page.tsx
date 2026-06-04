@@ -265,7 +265,7 @@ const toolConfig = createToolConfig({
       {
         question: "Can I generate captions for LinkedIn professional content?",
         answer:
-          "Yes. The LinkedIn tone generates professional, thought-leadership-style captions with hook openings that drive dwell time. LinkedIn's algorithm in 2026 rewards posts that keep people reading — so the AI creates opening lines designed to stop the scroll, followed by structured content with line breaks, bullet points, and a conversation-starting question at the end to drive comments.",
+          "Yes. The LinkedIn tone generates professional, thought-leadership-style captions with hook openings that drive dwell time. LinkedIn's algorithm rewards posts that keep people reading — so the AI creates opening lines designed to stop the scroll, followed by structured content with line breaks, bullet points, and a conversation-starting question at the end to drive comments.",
       },
       {
         question: "How many caption variations does each generation produce?",

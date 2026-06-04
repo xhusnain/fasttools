@@ -241,7 +241,7 @@ const financeTools = [
     href: "/finance-tools/remote-work-savings",
   },
   {
-    title: "Zakat Calculator 2026",
+    title: "Zakat Calculator",
     description:
       "Calculate your Zakat on cash, gold, silver, investments & business assets. Based on Quran & Sunnah.",
     icon: Heart,

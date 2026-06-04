@@ -72,7 +72,7 @@ export default function PayPalFeeCalculatorPage() {
   const toolContent = {
     toolName: TOOL_NAME,
     definition: TOOL_DEFINITION,
-    quickAnswer: "Enter the payment amount, choose the PayPal payment type, and the calculator shows the fee, what you receive, and what to ask for if you want the buyer to cover the fee. For US domestic commercial payments, common 2026 rates include 3.49% + $0.49 for PayPal Checkout and 2.99% + $0.49 for standard credit/debit card payments; international commercial payments add 1.50%.",
+    quickAnswer: "Enter the payment amount, choose the PayPal payment type, and the calculator shows the fee, what you receive, and what to ask for if you want the buyer to cover the fee. For US domestic commercial payments, common rates include 3.49% + $0.49 for PayPal Checkout and 2.99% + $0.49 for standard credit/debit card payments; international commercial payments add 1.50%.",
     keyTakeaways: [
       "PayPal fees depend on payment type, seller country, buyer country, currency, and funding method",
       "US PayPal Checkout, Guest Checkout, and Pay with Venmo are commonly 3.49% + fixed fee",
@@ -180,7 +180,7 @@ export default function PayPalFeeCalculatorPage() {
         answer: "Fees are deducted automatically before the money is credited to your PayPal balance. If a customer sends $100 through a 3.49% + $0.49 Checkout flow, the fee is $3.98 and you receive $96.02. This is why the reverse-calculation feature is useful when you need to receive an exact net amount."
       },
       {
-        question: "Has PayPal raised fees in 2026?",
+        question: "Has PayPal raised its fees?",
         answer: "PayPal's standard merchant rate has been incrementally rising over the past few years (from 2.9% + $0.30 historically to 2.99% + $0.49, and 3.49% + $0.49 for some Checkout flows). Always check PayPal's official fee page for current rates before settling on a fee model for your business. Our calculator uses the latest published rates."
       },
       {

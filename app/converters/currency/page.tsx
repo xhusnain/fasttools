@@ -263,7 +263,7 @@ const toolConfig = createToolConfig({
       {
         question: "What's a good free currency API alternative if Frankfurter is down?",
         answer:
-          "Top free alternatives in 2026: ExchangeRate-API (1,500 free requests/month, requires key), Open Exchange Rates free tier (1,000/month, USD base only), Currency Beacon (5,000/month, requires key), and Currencylayer free tier (100/month). None are as no-strings as Frankfurter — most require an API key and rate-limit you. For most personal projects, Frankfurter is the right starting point.",
+          "Top free alternatives: ExchangeRate-API (1,500 free requests/month, requires key), Open Exchange Rates free tier (1,000/month, USD base only), Currency Beacon (5,000/month, requires key), and Currencylayer free tier (100/month). None are as no-strings as Frankfurter — most require an API key and rate-limit you. For most personal projects, Frankfurter is the right starting point.",
       },
     ],
 

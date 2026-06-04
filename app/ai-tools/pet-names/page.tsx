@@ -85,7 +85,7 @@ const toolConfig = createToolConfig({
       "Multiple naming styles: classic, funny, unique, human names, and themed",
       "Works for dogs, cats, birds, fish, reptiles, and other pets",
       "Regenerate unlimited times for fresh suggestions",
-      "Popular 2026 trends: food names, nature names, and pop culture references",
+      "Popular trends: food names, nature names, and pop culture references",
     ],
     overview:
       "This AI pet name generator creates personalized name suggestions based on your pet's species, breed, personality, appearance, and your preferred naming style. Unlike generic pet name lists, it uses AI to match names to your specific animal — a playful Golden Retriever gets different suggestions than a dignified Persian cat or a colorful Betta fish. Choose from classic names (Max, Bella, Charlie), cute names (Mochi, Biscuit, Pudding), funny names (Sir Barks-a-Lot, Chonk, Taco), unique names (Zephyr, Solstice, Nebula), human names (Oliver, Sophie, Henry), or pop culture themed names. Each suggestion comes with meaning and context, making it easy to shortlist the perfect name for your new companion. Works for dogs, cats, birds, fish, reptiles, hamsters, rabbits, and guinea pigs.",
@@ -130,7 +130,7 @@ const toolConfig = createToolConfig({
           meaningful and practical for daily use and training.
         </p>
         <p>
-          The 2026 pet naming trends show a strong shift toward food-inspired
+          Pet naming trends show a strong shift toward food-inspired
           names (Mochi, Biscuit, Waffles), nature names (Willow, River, Storm),
           human names (Oliver, Sophie, Henry), and pop culture references from
           trending shows and movies. This generator stays current with these
@@ -158,9 +158,9 @@ const toolConfig = createToolConfig({
           "The AI uses your breed, personality traits, color, and size inputs to generate contextually relevant names. A playful Golden Retriever might get names like Sunny, Scout, or Bounce, while a dignified Persian cat might receive suggestions like Duchess, Velvet, or Cashmere. The more details you provide, the more personalized and fitting the results.",
       },
       {
-        question: "What are the most popular pet names in 2026?",
+        question: "What are the most popular pet names?",
         answer:
-          "Top dog names in 2026 include Luna, Milo, Bella, Charlie, Daisy, Cooper, and Teddy. Top cat names include Nala, Oliver, Mochi, Willow, Loki, and Cleo. Trending categories include food names (Biscuit, Waffles, Mango), nature names (Storm, River, Sage), and pop culture references from current movies and shows.",
+          "Top dog names include Luna, Milo, Bella, Charlie, Daisy, Cooper, and Teddy. Top cat names include Nala, Oliver, Mochi, Willow, Loki, and Cleo. Trending categories include food names (Biscuit, Waffles, Mango), nature names (Storm, River, Sage), and pop culture references from current movies and shows.",
       },
       {
         question: "Can I generate gender-neutral and unisex pet names?",

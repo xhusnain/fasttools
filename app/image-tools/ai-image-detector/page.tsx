@@ -342,7 +342,7 @@ const toolConfig = createToolConfig({
           "While this tool automates detection, there are visual signs you can check manually. AI-generated images often have unnaturally smooth skin lacking pores and fine texture. Hands and fingers may have extra digits, fused joints, or impossible angles — though the latest models (Midjourney V7, DALL-E 3) have significantly improved this. Text in AI images is frequently garbled or nonsensical upon close inspection. Backgrounds may contain objects that fade into each other or have impossible geometry. Accessories like earrings or glasses may not match between sides of a face. Hair strands often merge or disappear at the tips. Reflections in eyes may be inconsistent or missing entirely. These visual checks complement the automated forensic analysis this tool performs.",
       },
       {
-        heading: "Why AI Image Detection Matters in 2026",
+        heading: "Why AI Image Detection Matters",
         content:
           "As AI image generators become more sophisticated and accessible, the ability to distinguish real photographs from AI-generated content becomes critical for maintaining trust in visual media. Misinformation campaigns increasingly use AI-generated images to create fake evidence, fabricate news events, and impersonate real people. Social media platforms, news organizations, legal teams, educators, and everyday users all need reliable tools to verify image authenticity. This AI image detector contributes to that effort by making forensic analysis accessible, transparent, and free — without requiring users to upload sensitive images to third-party servers.",
       },

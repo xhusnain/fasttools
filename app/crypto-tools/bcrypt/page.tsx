@@ -244,7 +244,7 @@ ver cost salt (22 chars)        hash (31 chars)`}</code>
       {
         question: "What cost factor (salt rounds) should I use for bcrypt?",
         answer:
-          "Use 10–12 for production web applications in 2026. Cost factor 10 takes ~100ms, 12 takes ~400ms. Each increment doubles the time. Use 4–6 for unit tests to keep test suites fast.",
+          "Use 10–12 for production web applications. Cost factor 10 takes ~100ms, 12 takes ~400ms. Each increment doubles the time. Use 4–6 for unit tests to keep test suites fast.",
       },
       {
         question: "Why does the same password produce different bcrypt hashes?",

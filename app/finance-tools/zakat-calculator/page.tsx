@@ -79,7 +79,7 @@ export default function ZakatCalculatorPage() {
 
     definition: "Zakat (Arabic: zakah) is the third pillar of Islam — an obligatory annual charity of 2.5% (1/40th) on wealth that exceeds the Nisab threshold for one full lunar year (Hawl). It purifies wealth, helps the less fortunate, and is one of the five fundamental acts of worship in Islam.",
 
-    quickAnswer: "Zakat is 2.5% of your net zakatable wealth (cash + gold + silver + investments + business assets - debts) if it exceeds the Nisab threshold. Nisab based on silver (612.36g) is approximately $673 in 2026; based on gold (87.48g) is approximately $8,311. Most scholars recommend using the silver standard to benefit more recipients.",
+    quickAnswer: "Zakat is 2.5% of your net zakatable wealth (cash + gold + silver + investments + business assets - debts) if it exceeds the Nisab threshold. Nisab based on silver (612.36g) is approximately $673; based on gold (87.48g) is approximately $8,311. Most scholars recommend using the silver standard to benefit more recipients.",
 
     keyTakeaways: [
       "Zakat rate is 2.5% (1/40th) of net zakatable wealth held for one full lunar year (Hawl)",
@@ -323,7 +323,7 @@ export default function ZakatCalculatorPage() {
         answer: "Zakat is the third pillar of Islam — an obligatory annual charity of 2.5% on wealth exceeding the Nisab threshold. It is mandatory (fard) for every sane, adult Muslim who possesses wealth above Nisab for one full lunar year. It is not optional like Sadaqah (voluntary charity). Refusing to pay Zakat while meeting the criteria is considered a major sin in Islam."
       },
       {
-        question: "How much is Zakat in 2026?",
+        question: "How much is Zakat?",
         answer: "Zakat is always 2.5% (1/40th) of your net zakatable wealth. The amount varies per person based on their assets and debts. The Nisab threshold for (approximate): Silver standard = ~$673 USD, Gold standard = ~$8,311 USD. If your net zakatable wealth exceeds Nisab, you pay 2.5% of the total net amount, not just the amount above Nisab."
       },
       {

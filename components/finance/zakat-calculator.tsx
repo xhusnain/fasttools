@@ -223,7 +223,7 @@ export function ZakatCalculator() {
             <div className="p-2 bg-primary/10 rounded-lg">
               <HandHeart className="h-6 w-6 text-foreground" />
             </div>
-            Zakat Calculator 2026
+            Zakat Calculator
           </GCardTitle>
           <GCardDescription className="text-base text-muted-foreground">
             Calculate your Zakat obligation according to Islamic jurisprudence (fiqh). Based on Quran and Sunnah.

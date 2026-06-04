@@ -75,7 +75,7 @@ const toolConfig = createToolConfig({
     keyTakeaways: [
       "Generates RSA key pairs in standard PEM format",
       "Supports 2048-bit and 4096-bit key sizes",
-      "2048-bit is the minimum recommended for security in 2026",
+      "2048-bit is the minimum recommended for security",
       "4096-bit provides stronger security but slower operations",
       "Keys are generated in your browser — private key never leaves your machine",
     ],
@@ -219,7 +219,7 @@ const toolConfig = createToolConfig({
       {
         question: "Should I use 2048-bit or 4096-bit RSA keys?",
         answer:
-          "2048-bit is the minimum recommended by NIST in 2026 and sufficient for most applications. Use 4096-bit for high-security requirements, long-lived certificates, or when compliance policy requires it. 4096-bit keys are ~4x slower for signing operations.",
+          "2048-bit is the minimum recommended by NIST and sufficient for most applications. Use 4096-bit for high-security requirements, long-lived certificates, or when compliance policy requires it. 4096-bit keys are ~4x slower for signing operations.",
       },
       {
         question: "Can I use these RSA keys for JWT signing (RS256)?",
@@ -252,7 +252,7 @@ const toolConfig = createToolConfig({
           "Not directly — OpenSSH uses a different key format. Generate the RSA key here, save the PEM private key to a file, then convert: `ssh-keygen -p -m PEM -f your-key.pem` then `ssh-keygen -y -f your-key.pem > your-key.pub` to get the ssh-rsa public key. Easier path: just use `ssh-keygen -t ed25519` directly on your machine for new SSH keys.",
       },
       {
-        question: "Is 2048-bit RSA still safe in 2026?",
+        question: "Is 2048-bit RSA still safe?",
         answer:
           "Yes. NIST SP 800-57 marks 2048-bit RSA as acceptable through 2030. There is no known practical attack faster than the General Number Field Sieve, which would take billions of CPU-years for a 2048-bit key. For keys with a planned lifetime past 2030, upgrade to 3072-bit.",
       },

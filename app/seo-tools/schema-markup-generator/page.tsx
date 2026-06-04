@@ -132,7 +132,7 @@ const toolConfig = createToolConfig({
         </div>
 
         <div>
-          <h3 className="text-lg font-semibold text-foreground mb-2">Why Schema Markup Matters in 2026</h3>
+          <h3 className="text-lg font-semibold text-foreground mb-2">Why Schema Markup Matters</h3>
           <p>
             Schema markup gives search engines explicit clues about the page: what type of content it is,
             who created it, what product or event it describes, what breadcrumbs lead to it, and which

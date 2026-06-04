@@ -19,13 +19,13 @@ export function BlogTitleGenerator() {
   const templates: BlogTitleTemplates = {
     howTo: [
       "How to {keyword}: A Complete Guide",
-      "How to {keyword} in 2026: Step-by-Step Tutorial",
+      "How to {keyword}: Step-by-Step Tutorial",
       "How to {keyword} for Beginners: Expert Tips",
       "How to {keyword} Like a Pro: Advanced Techniques",
       "How to {keyword} Fast: Quick and Easy Methods",
     ],
     ultimate: [
-      "The Ultimate {keyword} Guide for 2026",
+      "The Ultimate {keyword} Guide",
       "Ultimate {keyword} Handbook: Everything You Need",
       "The Complete {keyword} Guide: From Basics to Advanced",
       "Ultimate {keyword} Mastery: Pro Tips and Strategies",
@@ -38,11 +38,11 @@ export function BlogTitleGenerator() {
       "5 Common {keyword} Mistakes to Avoid",
       "7 Proven {keyword} Techniques for Success",
       "12 {keyword} Tools You Need to Know",
-      "8 {keyword} Trends Shaping 2026",
+      "8 {keyword} Trends to Watch",
     ],
     questions: [
       "What is {keyword}? Complete Beginner's Guide",
-      "Why {keyword} Matters in 2026: Key Insights",
+      "Why {keyword} Matters: Key Insights",
       "Is {keyword} Right for You? Find Out Here",
       "What Makes {keyword} Effective? Expert Analysis",
       "How Does {keyword} Work? Detailed Explanation",
@@ -63,10 +63,10 @@ export function BlogTitleGenerator() {
     ],
     trends: [
       "The Future of {keyword}: Trends and Predictions",
-      "{keyword} Trends 2026: What's Coming Next",
+      "{keyword} Trends: What's Coming Next",
       "Latest {keyword} Developments: Industry Updates",
       "Emerging {keyword} Technologies: Future Outlook",
-      "{keyword} Innovation: What's New in 2026",
+      "{keyword} Innovation: What's New",
     ],
     problems: [
       "Common {keyword} Problems and Solutions",

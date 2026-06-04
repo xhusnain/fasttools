@@ -177,7 +177,7 @@ const toolConfig = createToolConfig({
 
         <div>
           <h3 className="text-lg font-semibold text-foreground mb-2">
-            Signs of AI-Generated Text in 2026
+            Signs of AI-Generated Text
           </h3>
           <p>
             Common markers of AI-generated content include: overuse of formal transition phrases like &quot;Furthermore&quot;, &quot;Moreover&quot;, &quot;Additionally&quot;, and &quot;It&apos;s worth noting&quot;; low contraction rates (&quot;do not&quot; instead of &quot;don&apos;t&quot;, &quot;it is&quot; instead of &quot;it&apos;s&quot;); excessive hedging language (&quot;arguably&quot;, &quot;it could be said&quot;, &quot;generally speaking&quot;); formulaic paragraph structures with consistent opening patterns; unusually uniform sentence lengths; repeated parallel phrasing; and minimal use of first-person pronouns, colloquialisms, and humor. Even the latest models — GPT-4o, Claude 3.5, and Gemini Ultra — exhibit these patterns when generating longer texts.
@@ -211,7 +211,7 @@ const toolConfig = createToolConfig({
           "AI language models like ChatGPT (GPT-4, GPT-4o), Claude, and Gemini generate text by predicting the most likely next token based on training data. This creates five measurable statistical differences from human writing. First, uniform sentence length — AI averages 15-25 words per sentence consistently, while humans naturally vary between 3 and 40+ words (high burstiness). Second, formulaic transitions — ChatGPT and Claude heavily overuse phrases like 'Moreover', 'Furthermore', 'Additionally', 'It's worth noting', and 'In conclusion'. Third, low vocabulary diversity — AI reuses common words instead of employing synonyms, idioms, or rare terms (hapax legomena). Fourth, formal register — AI avoids contractions ('do not' vs 'don't'), first-person pronouns, humor, and colloquialisms unless specifically prompted. Fifth, parallel structure — AI creates lists, paragraphs, and arguments with repetitive syntactic templates. These patterns are measurable with statistical analysis even without machine learning.",
       },
       {
-        heading: "Why AI Content Detection Matters in 2026",
+        heading: "Why AI Content Detection Matters",
         content:
           "With ChatGPT, Claude, Gemini, Copilot, Jasper, and hundreds of AI writing tools now ubiquitous, reliable AI content detection is critical across every industry. Academic integrity — universities and schools need to verify that student essays, dissertations, and homework represent genuine learning, not ChatGPT output. Google's helpful content system — Google explicitly prioritizes original, human-written content that demonstrates experience, expertise, authoritativeness, and trustworthiness (E-E-A-T). AI-generated SEO content risks ranking penalties. Publishing standards — editors and publishers need to verify content authenticity and maintain reader trust. Hiring and recruitment — recruiters need to evaluate genuine writing ability from cover letters, writing samples, and assessment submissions. Legal and compliance — AI-generated content in legal filings, contracts, and regulatory submissions raises authenticity concerns. Trust and transparency — readers, stakeholders, and audiences deserve to know whether content they consume was human-crafted or AI-generated. This free AI text detector helps address all of these use cases with 100% privacy.",
       },

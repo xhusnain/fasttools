@@ -76,7 +76,7 @@ export default function TikTokEngagementCalculatorPage() {
     quickAnswer: "To calculate TikTok engagement rate: add up likes + comments + shares + saves on a post, divide by your total follower count, and multiply by 100. For example, 5,350 total engagements / 50,000 followers = 10.7% engagement rate. The average TikTok engagement rate is 4-6%, so anything above 6% is considered excellent.",
 
     keyTakeaways: [
-      "The average TikTok engagement rate in is 4.25% — significantly higher than Instagram (1.23%) and YouTube (3.80%)",
+      "The average TikTok engagement rate is 4.25% — significantly higher than Instagram (1.23%) and YouTube (3.80%)",
       "Nano creators (1K-10K followers) typically have the highest engagement rates (8-15%) due to tight-knit audiences",
       "Saves and shares are weighted more heavily by TikTok's algorithm than likes — they indicate high-value content",
       "A like-to-comment ratio below 20:1 indicates an active, conversational audience — highly valued by brands",
@@ -376,7 +376,7 @@ export default function TikTokEngagementCalculatorPage() {
     faqs: [
       {
         question: "What is a good TikTok engagement rate?",
-        answer: "A good TikTok engagement rate depends on your follower count. For nano creators (1K-10K followers), 8-15% is typical. For micro creators (10K-50K), 5-10% is good. For mid-tier (50K-100K), 4-7% is healthy. For macro (100K-1M), 3-5% is solid. For mega creators (1M+), 1-3% is normal. The overall TikTok average across all accounts is approximately 4.25% in 2026."
+        answer: "A good TikTok engagement rate depends on your follower count. For nano creators (1K-10K followers), 8-15% is typical. For micro creators (10K-50K), 5-10% is good. For mid-tier (50K-100K), 4-7% is healthy. For macro (100K-1M), 3-5% is solid. For mega creators (1M+), 1-3% is normal. The overall TikTok average across all accounts is approximately 4.25%."
       },
       {
         question: "How is TikTok engagement rate calculated?",
@@ -448,7 +448,7 @@ export default function TikTokEngagementCalculatorPage() {
       },
       {
         question: "Does video length affect engagement rate on TikTok?",
-        answer: "Yes. Shorter videos (15-30 seconds) tend to have higher completion rates, which boosts algorithmic distribution. However, longer videos (1-3 minutes) that maintain attention can generate more comments and saves. The sweet spot in is 30-90 seconds for most content types. The key metric is completion rate — a 30-second video watched fully beats a 3-minute video watched for 20 seconds. Test different lengths and track which generates the best engagement for your niche."
+        answer: "Yes. Shorter videos (15-30 seconds) tend to have higher completion rates, which boosts algorithmic distribution. However, longer videos (1-3 minutes) that maintain attention can generate more comments and saves. The sweet spot is 30-90 seconds for most content types. The key metric is completion rate — a 30-second video watched fully beats a 3-minute video watched for 20 seconds. Test different lengths and track which generates the best engagement for your niche."
       },
       {
         question: "What is negative net engagement and should I worry about it?",

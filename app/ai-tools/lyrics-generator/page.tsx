@@ -178,7 +178,7 @@ const toolConfig = createToolConfig({
       {
         question: "Can I use AI-generated lyrics commercially?",
         answer:
-          "The generated text is original output created by AI from your prompt. You can use it as a starting point for commercial songs, but always edit substantially to add originality and personal creative expression. Check applicable copyright guidance in your jurisdiction, as AI-generated content laws vary by country and are evolving in 2026.",
+          "The generated text is original output created by AI from your prompt. You can use it as a starting point for commercial songs, but always edit substantially to add originality and personal creative expression. Check applicable copyright guidance in your jurisdiction, as AI-generated content laws vary by country and are still evolving.",
       },
     ],
 

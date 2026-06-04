@@ -261,7 +261,7 @@ export default function InfluencerRateCalculatorPage() {
           </h2>
           <div className="space-y-4 text-foreground leading-relaxed">
             <p>
-              Micro-influencers (10K–50K followers) are the <strong>sweet spot of influencer marketing</strong> in 2026. Here&apos;s why brands increasingly prefer them over mega-influencers:
+              Micro-influencers (10K–50K followers) are the <strong>sweet spot of influencer marketing</strong>. Here&apos;s why brands increasingly prefer them over mega-influencers:
             </p>
             <div className="grid md:grid-cols-2 gap-4">
               <div className="p-4 rounded-lg border border-green-500/30 bg-green-500/5">

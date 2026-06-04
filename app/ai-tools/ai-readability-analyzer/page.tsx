@@ -236,7 +236,7 @@ const toolConfig = createToolConfig({
 
     additionalContent: [
       {
-        heading: "Understanding Readability Grade Levels in 2026",
+        heading: "Understanding Readability Grade Levels",
         content:
           "Flesch-Kincaid Grade Level and similar formulas output a US school grade level (1-16+). Grade 5 means a 5th grader can understand the text. Grade 8 means 8th grade reading level. Grade 13+ means college level. The average American reads at 7th-8th grade level. Most successful web content targets grade 6-9. The New York Times writes at grade 10. Academic journals average grade 14-16. Trump's 2016 campaign speeches scored grade 4. Obama's scored grade 8. Amazon product descriptions average grade 7. Google's documentation averages grade 10. Knowing these benchmarks helps you calibrate your writing for your audience. This tool calculates grade levels from 5 independent algorithms so you get a reliable consensus rather than depending on a single formula.",
       },

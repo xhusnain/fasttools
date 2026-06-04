@@ -451,10 +451,10 @@ export default function ConcreteCalculatorPage() {
         <article className="space-y-4">
           <h2 className="text-2xl font-bold text-foreground flex items-center gap-2">
             <DollarSign className="h-6 w-6 text-primary" />
-            Concrete Slab Cost Calculator (2026 Prices)
+            Concrete Slab Cost Calculator
           </h2>
           <p className="text-base text-muted-foreground leading-relaxed">
-            How much will your concrete slab actually cost? In 2026, the average price for ready-mix concrete in the US is <strong>$125–$165 per cubic yard delivered</strong>. For bagged DIY work, an 80-lb bag of Quikrete runs <strong>~$6</strong>. The installed total (concrete + labor + finishing) usually lands at <strong>$6–$12 per square foot</strong>. Use the table below for quick slab-cost estimates at a standard 4&quot; thickness; for non-standard thickness multiply the per-sq-ft cost by (thickness ÷ 4).
+            How much will your concrete slab actually cost? The average price for ready-mix concrete in the US is <strong>$125–$165 per cubic yard delivered</strong>. For bagged DIY work, an 80-lb bag of Quikrete runs <strong>~$6</strong>. The installed total (concrete + labor + finishing) usually lands at <strong>$6–$12 per square foot</strong>. Use the table below for quick slab-cost estimates at a standard 4&quot; thickness; for non-standard thickness multiply the per-sq-ft cost by (thickness ÷ 4).
           </p>
           <div className="overflow-x-auto">
             <GTable>
@@ -528,7 +528,7 @@ export default function ConcreteCalculatorPage() {
               <tbody className="divide-y divide-border text-sm">
                 <tr><td className="p-3 font-semibold">Cubic yards output</td><td className="p-3 text-green-600">✓</td><td className="p-3">✓</td><td className="p-3">✓</td><td className="p-3">✓</td></tr>
                 <tr><td className="p-3 font-semibold">Bag counts (40 / 60 / 80 lb)</td><td className="p-3 text-green-600">all three</td><td className="p-3">all three</td><td className="p-3">all three</td><td className="p-3">80 lb only</td></tr>
-                <tr><td className="p-3 font-semibold">Slab cost estimate</td><td className="p-3 text-green-600">2026 prices</td><td className="p-3 text-red-500">✗</td><td className="p-3">range</td><td className="p-3 text-green-600">ZIP-aware</td></tr>
+                <tr><td className="p-3 font-semibold">Slab cost estimate</td><td className="p-3 text-green-600">Current prices</td><td className="p-3 text-red-500">✗</td><td className="p-3">range</td><td className="p-3 text-green-600">ZIP-aware</td></tr>
                 <tr><td className="p-3 font-semibold">Material breakdown (cement/sand/gravel)</td><td className="p-3 text-green-600">✓</td><td className="p-3 text-red-500">✗</td><td className="p-3 text-red-500">✗</td><td className="p-3">partial</td></tr>
                 <tr><td className="p-3 font-semibold">Stairs / curb / column / footing</td><td className="p-3 text-green-600">all</td><td className="p-3 text-green-600">all</td><td className="p-3">slab + footing</td><td className="p-3">slab + footing</td></tr>
                 <tr><td className="p-3 font-semibold">Waste-factor input</td><td className="p-3 text-green-600">✓</td><td className="p-3 text-red-500">✗</td><td className="p-3 text-red-500">✗</td><td className="p-3">10% default</td></tr>

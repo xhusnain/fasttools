@@ -123,7 +123,7 @@ export default function RemoteWorkSavingsPage() {
         <section className="bg-card border border-border rounded-lg p-6">
           <h2 className="text-2xl font-bold mb-6 flex items-center gap-2 text-foreground">
             <DollarSign className="h-6 w-6 text-primary" />
-            The True Cost of Commuting in 2026
+            The True Cost of Commuting
           </h2>
           <div className="space-y-4 text-foreground leading-relaxed">
             <p>
