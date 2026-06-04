@@ -136,11 +136,12 @@ export default function CloudflareWorkersCostPage() {
     ],
 
     relatedTools: [
-      { name: "LLM Training Cost Estimator", href: "/dev-tools/llm-training-cost" },
+      { name: "LLM Training Cost Calculator", href: "/dev-tools/llm-training-cost" },
+      { name: "AI API Cost Calculator", href: "/ai-tools/ai-api-cost-calculator" },
       { name: "SaaS Payback Calculator", href: "/finance-tools/saas-payback-calculator" },
-      { name: "SaaS Churn Rate Calculator", href: "/finance-tools/saas-churn-calculator" },
+      { name: "SaaS Churn Calculator", href: "/finance-tools/saas-churn-calculator" },
       { name: "Startup Runway Calculator", href: "/finance-tools/startup-runway-calculator" },
-      { name: "DNS / SSL Checker", href: "/web-tools/dns-ssl-checker" },
+      { name: "DNS Lookup & SSL Checker", href: "/web-tools/dns-ssl-checker" },
       { name: "HTTP Status Codes", href: "/dev-tools/http-status-codes" },
       { name: "All Developer Tools", href: "/dev-tools" },
     ],

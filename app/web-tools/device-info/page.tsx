@@ -260,9 +260,13 @@ const toolConfig = createToolConfig({
     ],
 
     relatedTools: [
-      { name: "My Info", href: "/my-info" },
+      { name: "User-Agent Parser", href: "/dev-tools/user-agent-parser" },
+      { name: "DNS Lookup & SSL Checker", href: "/web-tools/dns-ssl-checker" },
+      { name: "WHOIS & Domain Lookup", href: "/web-tools/whois-lookup" },
       { name: "URL Parser", href: "/web-tools/url-parser" },
-      { name: "Auth Header Generator", href: "/web-tools/auth-generator" },
+      { name: "IP Subnet Calculator", href: "/calculator/ip-subnet-calculator" },
+      { name: "Keycode Info", href: "/dev-tools/keycode-info" },
+      { name: "HTTP Status Codes", href: "/dev-tools/http-status-codes" },
       { name: "All Web Tools", href: "/web-tools" },
     ],
   },

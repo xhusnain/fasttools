@@ -218,14 +218,14 @@ export default function BMRCalculatorPage() {
     ],
 
     relatedTools: [
-      { name: "Calorie Calculator (daily intake)", href: "/calculator/calorie-calculator" },
-      { name: "TDEE Macro Calculator", href: "/calculator/tdee-macro-calculator" },
+      { name: "Calorie Calculator", href: "/calculator/calorie-calculator" },
+      { name: "TDEE & Macro Calculator", href: "/calculator/tdee-macro-calculator" },
       { name: "BMI Calculator", href: "/calculator/bmi-calculator" },
       { name: "Body Fat Calculator", href: "/calculator/body-fat-calculator" },
       { name: "Biological Age Calculator", href: "/calculator/biological-age-calculator" },
-      { name: "Pace Calculator (runners)", href: "/calculator/pace-calculator" },
+      { name: "Pace Calculator", href: "/calculator/pace-calculator" },
       { name: "Cortisol Peak Calculator", href: "/calculator/cortisol-peak-calculator" },
-      { name: "Age Calculator", href: "/calculator/age-calculator" }
+      { name: "All Calculators", href: "/calculator" }
     ]
   }
 

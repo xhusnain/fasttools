@@ -390,15 +390,13 @@ export default function RetirementCalculatorPage() {
     ],
 
     relatedTools: [
-      { name: "Retirement Planner (multi-account)", href: "/finance-tools/retirement-planner" },
+      { name: "Retirement Planner", href: "/finance-tools/retirement-planner" },
       { name: "Investment Calculator", href: "/finance-tools/investment-calculator" },
       { name: "Compound Interest Calculator", href: "/finance-tools/compound-interest" },
       { name: "Inflation Calculator", href: "/finance-tools/inflation-calculator" },
       { name: "Net Worth Calculator", href: "/finance-tools/net-worth-calculator" },
-      { name: "Mortgage Calculator", href: "/finance-tools/mortgage-calculator" },
       { name: "Tax Calculator", href: "/finance-tools/tax-calculator" },
-      { name: "Savings Tracker", href: "/finance-tools/savings-tracker" },
-      { name: "Future Age Calculator", href: "/fun-tools/future-age" },
+      { name: "Savings Goal Tracker", href: "/finance-tools/savings-tracker" },
       { name: "All Finance Tools", href: "/finance-tools" }
     ]
   }

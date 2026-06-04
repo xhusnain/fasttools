@@ -536,14 +536,14 @@ export default function AgeCalculatorPage() {
     ],
 
     relatedTools: [
-      { name: "Future Age Calculator", href: "/fun-tools/future-age" },
+      { name: "Future Age Predictor", href: "/fun-tools/future-age" },
       { name: "Date Difference Calculator", href: "/calculator/date-difference" },
       { name: "Time Duration Calculator", href: "/calculator/time-duration" },
       { name: "Anniversary Calculator", href: "/fun-tools/anniversary" },
       { name: "Birthday Countdown", href: "/fun-tools/birthday-countdown" },
       { name: "Biological Age Calculator", href: "/calculator/biological-age-calculator" },
       { name: "Pregnancy Calculator", href: "/calculator/pregnancy-calculator" },
-      { name: "Retirement Calculator", href: "/finance-tools/retirement-calculator" }
+      { name: "All Calculators", href: "/calculator" }
     ]
   }
 

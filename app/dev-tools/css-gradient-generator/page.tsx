@@ -165,10 +165,10 @@ const toolConfig = createToolConfig({
     relatedTools: [
       { name: "Color Palette Generator", href: "/dev-tools/color-palette" },
       { name: "Hex to RGB Converter", href: "/dev-tools/hex-to-rgb" },
-      { name: "HTML Beautifier / Minifier", href: "/dev-tools/html-beautifier" },
+      { name: "HTML Beautifier", href: "/dev-tools/html-beautifier" },
       { name: "HTML WYSIWYG Editor", href: "/dev-tools/html-wysiwyg-editor" },
       { name: "Background Remover", href: "/image-tools/background-remover" },
-      { name: "Meta Tag Generator", href: "/seo-tools/meta-tags" },
+      { name: "Open Graph Meta Generator", href: "/seo-tools/meta-tags" },
       { name: "Schema Markup Generator", href: "/seo-tools/schema-markup-generator" },
       { name: "All Developer Tools", href: "/dev-tools" },
     ],

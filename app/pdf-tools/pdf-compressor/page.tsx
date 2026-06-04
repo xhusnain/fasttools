@@ -190,11 +190,10 @@ const toolConfig = createToolConfig({
 
     relatedTools: [
       { name: "Image to PDF Converter", href: "/pdf-tools/image-to-pdf" },
-      { name: "PDF Splitter & Merger", href: "/pdf-tools/pdf-splitter-merger" },
+      { name: "Merge PDF", href: "/pdf-tools/pdf-splitter-merger" },
       { name: "PDF Unlocker", href: "/pdf-tools/pdf-unlocker" },
       { name: "PDF to Image", href: "/pdf-tools/pdf-to-image" },
       { name: "PDF to Word Converter", href: "/pdf-tools/pdf-word-converter" },
-      { name: "Sign PDF", href: "/pdf-tools/pdf-sign" },
       { name: "Image Compressor", href: "/image-tools/image-compressor" },
       { name: "Image Resizer", href: "/image-tools/image-resizer" },
       { name: "File Size Converter", href: "/converters/file-size" },

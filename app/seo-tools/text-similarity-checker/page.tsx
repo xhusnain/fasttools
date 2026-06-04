@@ -254,8 +254,12 @@ const toolConfig = createToolConfig({
 
     relatedTools: [
       { name: "Keyword Density Checker", href: "/seo-tools/keyword-density" },
-      { name: "Open Graph Meta Tag Generator", href: "/seo-tools/meta-tags" },
-      { name: "URL Parser", href: "/web-tools/url-parser" },
+      { name: "Word Counter", href: "/seo-tools/word-counter" },
+      { name: "Open Graph Meta Generator", href: "/seo-tools/meta-tags" },
+      { name: "AI Text Detector", href: "/ai-tools/ai-text-detector" },
+      { name: "AI Paraphraser", href: "/ai-tools/ai-paraphraser" },
+      { name: "AI Text Summarizer", href: "/ai-tools/text-summarizer" },
+      { name: "AI Readability Analyzer", href: "/ai-tools/ai-readability-analyzer" },
       { name: "All SEO Tools", href: "/seo-tools" },
     ],
   },

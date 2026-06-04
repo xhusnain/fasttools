@@ -276,8 +276,12 @@ const toolConfig = createToolConfig({
 
     relatedTools: [
       { name: "URL Encoder Decoder", href: "/web-tools/url-encoder" },
+      { name: "URL Parser", href: "/web-tools/url-parser" },
       { name: "HTML Beautifier", href: "/dev-tools/html-beautifier" },
+      { name: "HTML to Markdown", href: "/dev-tools/html-to-markdown" },
       { name: "Markdown Previewer", href: "/dev-tools/markdown-previewer" },
+      { name: "Base64 Encoder Decoder", href: "/dev-tools/base64-encoder" },
+      { name: "Text to Unicode", href: "/converters/unicode" },
       { name: "All Web Tools", href: "/web-tools" },
     ],
   },

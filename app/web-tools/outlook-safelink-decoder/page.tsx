@@ -169,7 +169,11 @@ const toolConfig = createToolConfig({
     relatedTools: [
       { name: "URL Parser", href: "/web-tools/url-parser" },
       { name: "URL Encoder Decoder", href: "/web-tools/url-encoder" },
-      { name: "My Info", href: "/my-info" },
+      { name: "Escape HTML Entities", href: "/web-tools/html-escape" },
+      { name: "WHOIS & Domain Lookup", href: "/web-tools/whois-lookup" },
+      { name: "DNS Lookup & SSL Checker", href: "/web-tools/dns-ssl-checker" },
+      { name: "Base64 Encoder Decoder", href: "/dev-tools/base64-encoder" },
+      { name: "JWT Decoder", href: "/dev-tools/jwt-decoder" },
       { name: "All Web Tools", href: "/web-tools" },
     ],
   },

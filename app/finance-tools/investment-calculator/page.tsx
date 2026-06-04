@@ -343,10 +343,8 @@ export default function InvestmentCalculatorPage() {
       { name: "Retirement Planner", href: "/finance-tools/retirement-planner" },
       { name: "Inflation Calculator", href: "/finance-tools/inflation-calculator" },
       { name: "Net Worth Calculator", href: "/finance-tools/net-worth-calculator" },
-      { name: "Savings Tracker", href: "/finance-tools/savings-tracker" },
-      { name: "Tax Calculator", href: "/finance-tools/tax-calculator" },
-      { name: "Finance Calculator (general)", href: "/finance-tools/finance-calculator" },
-      { name: "Mortgage Calculator", href: "/finance-tools/mortgage-calculator" },
+      { name: "Savings Goal Tracker", href: "/finance-tools/savings-tracker" },
+      { name: "Finance Calculator", href: "/finance-tools/finance-calculator" },
       { name: "All Finance Tools", href: "/finance-tools" }
     ]
   }

@@ -183,10 +183,8 @@ export default function FinanceCalculatorPage() {
       { name: "Loan Calculator", href: "/finance-tools/loan-calculator" },
       { name: "Payment Calculator", href: "/finance-tools/payment-calculator" },
       { name: "Interest Rate Calculator", href: "/finance-tools/interest-rate-calculator" },
-      { name: "Amortization Schedule Calculator", href: "/finance-tools/amortization-calculator" },
+      { name: "Amortization Calculator", href: "/finance-tools/amortization-calculator" },
       { name: "Retirement Calculator", href: "/finance-tools/retirement-calculator" },
-      { name: "Inflation Calculator", href: "/finance-tools/inflation-calculator" },
-      { name: "Mortgage Calculator", href: "/finance-tools/mortgage-calculator" },
       { name: "Scientific Calculator", href: "/calculator/scientific-calculator" },
       { name: "All Finance Tools", href: "/finance-tools" }
     ]

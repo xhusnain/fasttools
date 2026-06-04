@@ -151,9 +151,12 @@ const toolConfig = createToolConfig({
 
     relatedTools: [
       { name: "HTTP Status Codes", href: "/dev-tools/http-status-codes" },
-      { name: "MIME Types Reference", href: "/dev-tools/mime-types" },
+      { name: "MIME Types", href: "/dev-tools/mime-types" },
       { name: "JWT Decoder", href: "/dev-tools/jwt-decoder" },
       { name: "Regex Tester", href: "/dev-tools/regex-tester" },
+      { name: "Keycode Info", href: "/dev-tools/keycode-info" },
+      { name: "Device Information", href: "/web-tools/device-info" },
+      { name: "URL Parser", href: "/web-tools/url-parser" },
       { name: "All Developer Tools", href: "/dev-tools" },
     ],
   },

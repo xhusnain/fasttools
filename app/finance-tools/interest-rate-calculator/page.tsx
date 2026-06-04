@@ -243,11 +243,9 @@ export default function InterestRateCalculatorPage() {
       { name: "Auto Loan Calculator", href: "/finance-tools/auto-loan-calculator" },
       { name: "Amortization Calculator", href: "/finance-tools/amortization-calculator" },
       { name: "Credit Card Payoff Calculator", href: "/finance-tools/credit-card-payoff" },
-      { name: "Debt Payoff Calculator", href: "/finance-tools/debt-payoff-calculator" },
       { name: "Compound Interest Calculator", href: "/finance-tools/compound-interest" },
-      { name: "Investment Calculator", href: "/finance-tools/investment-calculator" },
-      { name: "Inflation Calculator", href: "/finance-tools/inflation-calculator" },
-      { name: "Finance Calculator (general)", href: "/finance-tools/finance-calculator" }
+      { name: "Finance Calculator", href: "/finance-tools/finance-calculator" },
+      { name: "All Finance Tools", href: "/finance-tools" }
     ]
   }
 

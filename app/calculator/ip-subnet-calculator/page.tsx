@@ -772,12 +772,12 @@ export default function IPSubnetCalculatorPage() {
     relatedTools: [
       { name: "Conversion Calculator", href: "/calculator/conversion-calculator" },
       { name: "Integer Base Converter", href: "/converters/integer-base" },
-      { name: "ASCII Binary Converter", href: "/converters/ascii-binary" },
+      { name: "Text to ASCII Binary", href: "/converters/ascii-binary" },
       { name: "Hex to RGB Converter", href: "/dev-tools/hex-to-rgb" },
       { name: "JWT Decoder", href: "/dev-tools/jwt-decoder" },
       { name: "User-Agent Parser", href: "/dev-tools/user-agent-parser" },
-      { name: "DNS / SSL Checker", href: "/web-tools/dns-ssl-checker" },
-      { name: "Cloudflare Workers Cost", href: "/dev-tools/cloudflare-workers-cost" }
+      { name: "DNS Lookup & SSL Checker", href: "/web-tools/dns-ssl-checker" },
+      { name: "All Calculators", href: "/calculator" }
     ]
   }
 

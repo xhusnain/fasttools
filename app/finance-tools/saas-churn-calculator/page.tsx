@@ -510,7 +510,7 @@ export default function SaaSChurnCalculatorPage() {
     ],
 
     relatedTools: [
-      { name: "SaaS Payback Calculator (CAC)", href: "/finance-tools/saas-payback-calculator" },
+      { name: "SaaS Payback Calculator", href: "/finance-tools/saas-payback-calculator" },
       { name: "Startup Runway Calculator", href: "/finance-tools/startup-runway-calculator" },
       { name: "Investment Calculator", href: "/finance-tools/investment-calculator" },
       { name: "Compound Interest Calculator", href: "/finance-tools/compound-interest" },

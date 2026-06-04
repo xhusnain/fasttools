@@ -182,7 +182,7 @@ const toolConfig = createToolConfig({
       { name: "Markdown Previewer", href: "/dev-tools/markdown-previewer" },
       { name: "HTML Beautifier", href: "/dev-tools/html-beautifier" },
       { name: "HTML WYSIWYG Editor", href: "/dev-tools/html-wysiwyg-editor" },
-      { name: "HTML Escape", href: "/web-tools/html-escape" },
+      { name: "Escape HTML Entities", href: "/web-tools/html-escape" },
       { name: "JSON to CSV Converter", href: "/dev-tools/json-to-csv" },
       { name: "Slugify String", href: "/dev-tools/slugify-string" },
       { name: "Word Counter", href: "/seo-tools/word-counter" },

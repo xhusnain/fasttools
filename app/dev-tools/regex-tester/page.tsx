@@ -399,7 +399,7 @@ const toolConfig = createToolConfig({
       { name: "Slugify String", href: "/dev-tools/slugify-string" },
       { name: "User-Agent Parser", href: "/dev-tools/user-agent-parser" },
       { name: "HTML Beautifier", href: "/dev-tools/html-beautifier" },
-      { name: "Base64 Encoder", href: "/dev-tools/base64-encoder" },
+      { name: "Base64 Encoder Decoder", href: "/dev-tools/base64-encoder" },
       { name: "All Developer Tools", href: "/dev-tools" },
     ],
   },

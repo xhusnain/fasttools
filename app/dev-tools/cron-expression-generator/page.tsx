@@ -164,10 +164,13 @@ const toolConfig = createToolConfig({
     ],
 
     relatedTools: [
-      { name: "JSON Diff", href: "/dev-tools/json-diff" },
+      { name: "Unix Timestamp Converter", href: "/dev-tools/timestamp-converter" },
+      { name: "Timezone Converter", href: "/converters/timezone" },
       { name: "Regex Tester", href: "/dev-tools/regex-tester" },
-      { name: "JWT Decoder", href: "/dev-tools/jwt-decoder" },
+      { name: "JSON Diff", href: "/dev-tools/json-diff" },
       { name: "HTTP Status Codes", href: "/dev-tools/http-status-codes" },
+      { name: "Cloudflare Workers Cost Calculator", href: "/dev-tools/cloudflare-workers-cost" },
+      { name: "User-Agent Parser", href: "/dev-tools/user-agent-parser" },
       { name: "All Developer Tools", href: "/dev-tools" },
     ],
   },

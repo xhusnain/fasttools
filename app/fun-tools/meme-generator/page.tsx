@@ -390,9 +390,9 @@ const toolConfig = createToolConfig({
       { name: "Image Compressor", href: "/image-tools/image-compressor" },
       { name: "Image Cropper", href: "/image-tools/image-cropper" },
       { name: "AI Caption Generator", href: "/ai-tools/caption-generator" },
-      { name: "Lyrics Generator", href: "/ai-tools/lyrics-generator" },
-      { name: "Pet Names Generator", href: "/ai-tools/pet-names" },
-      { name: "QR Code Generator", href: "/ai-tools/qr-generator" },
+      { name: "Wheel Spinner", href: "/fun-tools/wheel-spinner" },
+      { name: "Countdown Timer & Stopwatch", href: "/fun-tools/countdown-timer" },
+      { name: "All Fun Tools", href: "/fun-tools" },
     ],
   },
 })

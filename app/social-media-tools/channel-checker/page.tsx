@@ -386,13 +386,13 @@ const toolConfig = createToolConfig({
     ],
 
     relatedTools: [
-      { name: "YouTube Handle Availability", href: "/social-media-tools/channel-checker/handle-availability-2026" },
-      { name: "YouTube Channel Name Checker", href: "/social-media-tools/channel-checker/channel-name-checker" },
-      { name: "Check If YouTube Handle Is Taken", href: "/social-media-tools/channel-checker/check-if-taken" },
-      { name: "YouTube Username Checker", href: "/social-media-tools/channel-checker/youtube-username-checker" },
-      { name: "YouTube Name Generator", href: "/social-media-tools/youtube-channel-name-generator" },
+      { name: "YouTube Channel Name Generator", href: "/social-media-tools/youtube-channel-name-generator" },
       { name: "YouTube Tag Extractor", href: "/social-media-tools/youtube-tags" },
       { name: "YouTube Thumbnail Downloader", href: "/social-media-tools/youtube-thumbnail" },
+      { name: "Hashtag Counter", href: "/social-media-tools/hashtag-counter" },
+      { name: "Link in Bio Generator", href: "/social-media-tools/link-in-bio" },
+      { name: "Instagram DP Viewer", href: "/social-media-tools/instagram-dp" },
+      { name: "TikTok Engagement Calculator", href: "/social-media-tools/tiktok-engagement-calculator" },
       { name: "All Social Media Tools", href: "/social-media-tools" },
     ],
   },

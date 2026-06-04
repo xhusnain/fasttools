@@ -222,12 +222,12 @@ const toolConfig = createToolConfig({
 
     relatedTools: [
       { name: "List Converter", href: "/converters/list-converter" },
-      { name: "Unicode Converter", href: "/converters/unicode" },
+      { name: "Text to Unicode", href: "/converters/unicode" },
+      { name: "Roman Numeral Converter", href: "/converters/roman-numeral" },
       { name: "Slugify String", href: "/dev-tools/slugify-string" },
       { name: "Word Counter", href: "/seo-tools/word-counter" },
       { name: "Keyword Density Checker", href: "/seo-tools/keyword-density" },
-      { name: "URL Encoder", href: "/web-tools/url-encoder" },
-      { name: "HTML Escape", href: "/web-tools/html-escape" },
+      { name: "URL Encoder Decoder", href: "/web-tools/url-encoder" },
       { name: "All Converters", href: "/converters" },
     ],
   },

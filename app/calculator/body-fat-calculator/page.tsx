@@ -576,11 +576,12 @@ export default function BodyFatCalculatorPage() {
       { name: "BMI Calculator", href: "/calculator/bmi-calculator" },
       { name: "Calorie Calculator", href: "/calculator/calorie-calculator" },
       { name: "BMR Calculator", href: "/calculator/bmr-calculator" },
-      { name: "TDEE Macro Calculator", href: "/calculator/tdee-macro-calculator" },
+      { name: "TDEE & Macro Calculator", href: "/calculator/tdee-macro-calculator" },
       { name: "Biological Age Calculator", href: "/calculator/biological-age-calculator" },
-      { name: "Pace Calculator (running)", href: "/calculator/pace-calculator" },
+      { name: "Pace Calculator", href: "/calculator/pace-calculator" },
       { name: "Cortisol Peak Calculator", href: "/calculator/cortisol-peak-calculator" },
-      { name: "Age Calculator", href: "/calculator/age-calculator" }
+      { name: "Age Calculator", href: "/calculator/age-calculator" },
+      { name: "All Calculators", href: "/calculator" }
     ]
   }
 

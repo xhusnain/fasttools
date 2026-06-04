@@ -170,13 +170,13 @@ const toolConfig = createToolConfig({
     ],
 
     relatedTools: [
-      { name: "YouTube Handle Checker", href: "/social-media-tools/channel-checker" },
+      { name: "YouTube Channel Checker", href: "/social-media-tools/channel-checker" },
       { name: "YouTube Tag Extractor", href: "/social-media-tools/youtube-tags" },
       { name: "YouTube Thumbnail Downloader", href: "/social-media-tools/youtube-thumbnail" },
       { name: "Hashtag Counter", href: "/social-media-tools/hashtag-counter" },
       { name: "Link in Bio Generator", href: "/social-media-tools/link-in-bio" },
-      { name: "AI Caption Generator", href: "/ai-tools/caption-generator" },
       { name: "Influencer Rate Calculator", href: "/social-media-tools/influencer-rate-calculator" },
+      { name: "Blog Title Generator", href: "/seo-tools/blog-titles" },
       { name: "All Social Media Tools", href: "/social-media-tools" },
     ],
   },

@@ -352,13 +352,13 @@ const toolConfig = createToolConfig({
 
     relatedTools: [
       { name: "Countdown Timer & Stopwatch", href: "/fun-tools/countdown-timer" },
-      { name: "Meme Generator", href: "/fun-tools/meme-generator" },
       { name: "Pomodoro Timer", href: "/fun-tools/pomodoro-timer" },
-      { name: "Anniversary Calculator", href: "/fun-tools/anniversary" },
+      { name: "Meme Generator", href: "/fun-tools/meme-generator" },
       { name: "Birthday Countdown", href: "/fun-tools/birthday-countdown" },
-      { name: "Future Age Calculator", href: "/fun-tools/future-age" },
-      { name: "Random UUID Generator", href: "/crypto-tools/uuid-generator" },
-      { name: "Password Generator", href: "/crypto-tools/password-generator" },
+      { name: "Anniversary Calculator", href: "/fun-tools/anniversary" },
+      { name: "Future Age Predictor", href: "/fun-tools/future-age" },
+      { name: "Love Calculator", href: "/calculator/love-calculator" },
+      { name: "All Fun Tools", href: "/fun-tools" },
     ],
   },
 })

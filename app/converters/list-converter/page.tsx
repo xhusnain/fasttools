@@ -172,8 +172,12 @@ const toolConfig = createToolConfig({
 
     relatedTools: [
       { name: "Text Case Converter", href: "/converters/text-case" },
+      { name: "Text to Unicode", href: "/converters/unicode" },
+      { name: "Roman Numeral Converter", href: "/converters/roman-numeral" },
+      { name: "Text to ASCII Binary", href: "/converters/ascii-binary" },
       { name: "JSON to CSV Converter", href: "/dev-tools/json-to-csv" },
-      { name: "Unicode Converter", href: "/converters/unicode" },
+      { name: "Slugify String", href: "/dev-tools/slugify-string" },
+      { name: "Word Counter", href: "/seo-tools/word-counter" },
       { name: "All Converters", href: "/converters" },
     ],
   },

@@ -154,7 +154,11 @@ const toolConfig = createToolConfig({
     relatedTools: [
       { name: "JSON to YAML Converter", href: "/converters/json-yaml" },
       { name: "JSON to XML Converter", href: "/converters/json-xml" },
+      { name: "XML to JSON Converter", href: "/converters/xml-json" },
       { name: "TOML to JSON Converter", href: "/converters/toml-json" },
+      { name: "YAML to TOML", href: "/converters/yaml-toml" },
+      { name: "JSON Diff", href: "/dev-tools/json-diff" },
+      { name: "JSON to CSV Converter", href: "/dev-tools/json-to-csv" },
       { name: "All Converters", href: "/converters" },
     ],
   },

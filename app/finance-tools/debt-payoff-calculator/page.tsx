@@ -380,12 +380,10 @@ export default function DebtPayoffCalculatorPage() {
       { name: "Credit Card Payoff Calculator", href: "/finance-tools/credit-card-payoff" },
       { name: "Loan Calculator", href: "/finance-tools/loan-calculator" },
       { name: "Mortgage Calculator", href: "/finance-tools/mortgage-calculator" },
-      { name: "Compound Interest Calculator", href: "/finance-tools/compound-interest" },
       { name: "Interest Rate Calculator", href: "/finance-tools/interest-rate-calculator" },
-      { name: "Investment Calculator", href: "/finance-tools/investment-calculator" },
+      { name: "Amortization Calculator", href: "/finance-tools/amortization-calculator" },
       { name: "Net Worth Calculator", href: "/finance-tools/net-worth-calculator" },
-      { name: "Savings Tracker", href: "/finance-tools/savings-tracker" },
-      { name: "Home Affordability Calculator", href: "/finance-tools/home-affordability-calculator" },
+      { name: "Savings Goal Tracker", href: "/finance-tools/savings-tracker" },
       { name: "All Finance Tools", href: "/finance-tools" },
     ]
   }

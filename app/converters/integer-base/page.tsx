@@ -223,10 +223,14 @@ const toolConfig = createToolConfig({
     ],
 
     relatedTools: [
-      { name: "Hex to RGB", href: "/dev-tools/hex-to-rgb" },
-      { name: "JWT Decoder", href: "/dev-tools/jwt-decoder" },
+      { name: "Roman Numeral Converter", href: "/converters/roman-numeral" },
+      { name: "Text to ASCII Binary", href: "/converters/ascii-binary" },
+      { name: "Text to Unicode", href: "/converters/unicode" },
       { name: "Text Case Converter", href: "/converters/text-case" },
       { name: "Length Converter", href: "/converters/length" },
+      { name: "Hex to RGB Converter", href: "/dev-tools/hex-to-rgb" },
+      { name: "JWT Decoder", href: "/dev-tools/jwt-decoder" },
+      { name: "All Converters", href: "/converters" },
     ],
   },
 })

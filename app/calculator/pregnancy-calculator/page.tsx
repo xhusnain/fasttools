@@ -485,14 +485,14 @@ export default function PregnancyCalculatorPage() {
     ],
 
     relatedTools: [
-      { name: "Conception Date Calculator", href: "/calculator/pregnancy-conception-calculator" },
+      { name: "Pregnancy Conception Calculator", href: "/calculator/pregnancy-conception-calculator" },
       { name: "Ovulation Calculator", href: "/calculator/ovulation-calculator" },
-      { name: "Anniversary Calculator", href: "/fun-tools/anniversary" },
-      { name: "Birthday Countdown", href: "/fun-tools/birthday-countdown" },
-      { name: "Future Age Calculator", href: "/fun-tools/future-age" },
+      { name: "Age Calculator", href: "/calculator/age-calculator" },
+      { name: "Future Age Predictor", href: "/fun-tools/future-age" },
       { name: "BMI Calculator", href: "/calculator/bmi-calculator" },
       { name: "Calorie Calculator", href: "/calculator/calorie-calculator" },
-      { name: "Date Difference Calculator", href: "/calculator/date-difference" }
+      { name: "Date Difference Calculator", href: "/calculator/date-difference" },
+      { name: "All Calculators", href: "/calculator" }
     ]
   }
 

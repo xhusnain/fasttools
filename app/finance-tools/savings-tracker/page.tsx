@@ -378,7 +378,8 @@ export default function SavingsTrackerPage() {
       { name: "Debt Payoff Calculator", href: "/finance-tools/debt-payoff-calculator" },
       { name: "Net Worth Calculator", href: "/finance-tools/net-worth-calculator" },
       { name: "Home Affordability Calculator", href: "/finance-tools/home-affordability-calculator" },
-      { name: "Inflation Calculator", href: "/finance-tools/inflation-calculator" }
+      { name: "Inflation Calculator", href: "/finance-tools/inflation-calculator" },
+      { name: "All Finance Tools", href: "/finance-tools" }
     ]
   }
 

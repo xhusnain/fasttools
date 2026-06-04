@@ -297,13 +297,12 @@ const toolConfig = createToolConfig({
     ],
 
     relatedTools: [
-      { name: "Age Calculator (current age)", href: "/calculator/age-calculator" },
-      { name: "Date Difference Calculator", href: "/calculator/date-difference" },
+      { name: "Birthday Countdown", href: "/fun-tools/birthday-countdown" },
       { name: "Anniversary Calculator", href: "/fun-tools/anniversary" },
       { name: "Monthsary Calculator", href: "/fun-tools/monthsary-calculator" },
-      { name: "Birthday Countdown", href: "/fun-tools/birthday-countdown" },
-      { name: "Pregnancy Calculator", href: "/calculator/pregnancy-calculator" },
+      { name: "Age Calculator", href: "/calculator/age-calculator" },
       { name: "Biological Age Calculator", href: "/calculator/biological-age-calculator" },
+      { name: "Date Difference Calculator", href: "/calculator/date-difference" },
       { name: "Time Duration Calculator", href: "/calculator/time-duration" },
       { name: "All Fun Tools", href: "/fun-tools" },
     ]

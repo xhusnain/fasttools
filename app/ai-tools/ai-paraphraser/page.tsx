@@ -169,14 +169,14 @@ const toolConfig = createToolConfig({
     ],
 
     relatedTools: [
-      { name: "AI Text Detector", href: "/ai-tools/ai-text-detector" },
+      { name: "AI Text Summarizer", href: "/ai-tools/text-summarizer" },
       { name: "AI Readability Analyzer", href: "/ai-tools/ai-readability-analyzer" },
-      { name: "Text Summarizer", href: "/ai-tools/text-summarizer" },
-      { name: "Text-to-Speech", href: "/ai-tools/text-to-speech" },
-      { name: "Caption Generator", href: "/ai-tools/caption-generator" },
+      { name: "AI Text Detector", href: "/ai-tools/ai-text-detector" },
+      { name: "AI Caption Generator", href: "/ai-tools/caption-generator" },
+      { name: "Text to Speech", href: "/ai-tools/text-to-speech" },
       { name: "Blog Title Generator", href: "/seo-tools/blog-titles" },
       { name: "Word Counter", href: "/seo-tools/word-counter" },
-      { name: "Keyword Density Checker", href: "/seo-tools/keyword-density" },
+      { name: "All AI Tools", href: "/ai-tools" },
     ],
   },
 })

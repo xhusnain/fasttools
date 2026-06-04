@@ -394,14 +394,12 @@ export default function InstagramDpPage() {
     ],
     relatedTools: [
       { name: "Instagram Profile Picture Viewer", href: "/social-media-tools/instagram-profile-picture-viewer" },
-      { name: "Insta Zoom Profile Picture Viewer", href: "/social-media-tools/instagram-dp/zoom-profile-picture" },
-      { name: "Instagram DP Viewer HD 1080p", href: "/social-media-tools/instagram-dp/hd-1080p" },
-      { name: "Private Instagram DP Viewer", href: "/social-media-tools/instagram-dp/private-account" },
-      // Out-of-cluster links: push authority to page-2 social tools (same creator audience)
-      { name: "Hashtag Counter — Instagram, TikTok & X", href: "/social-media-tools/hashtag-counter" },
-      { name: "YouTube Channel Name & Handle Checker", href: "/social-media-tools/channel-checker" },
-      { name: "Link-in-Bio Generator", href: "/social-media-tools/link-in-bio" },
-      { name: "YouTube Tag Extractor", href: "/social-media-tools/youtube-tags" },
+      { name: "Hashtag Counter", href: "/social-media-tools/hashtag-counter" },
+      { name: "Link in Bio Generator", href: "/social-media-tools/link-in-bio" },
+      { name: "YouTube Channel Checker", href: "/social-media-tools/channel-checker" },
+      { name: "Influencer Rate Calculator", href: "/social-media-tools/influencer-rate-calculator" },
+      { name: "Image Cropper", href: "/image-tools/image-cropper" },
+      { name: "Image Resizer", href: "/image-tools/image-resizer" },
       { name: "All Social Media Tools", href: "/social-media-tools" },
     ],
   }

@@ -462,13 +462,13 @@ export default function DateDifferencePage() {
 
     relatedTools: [
       { name: "Age Calculator", href: "/calculator/age-calculator" },
-      { name: "Future Age Calculator", href: "/fun-tools/future-age" },
+      { name: "Future Age Predictor", href: "/fun-tools/future-age" },
       { name: "Time Duration Calculator", href: "/calculator/time-duration" },
       { name: "Anniversary Calculator", href: "/fun-tools/anniversary" },
       { name: "Birthday Countdown", href: "/fun-tools/birthday-countdown" },
-      { name: "Countdown Timer", href: "/fun-tools/countdown-timer" },
-      { name: "Pregnancy Calculator", href: "/calculator/pregnancy-calculator" },
-      { name: "Timezone Converter", href: "/converters/timezone" }
+      { name: "Countdown Timer & Stopwatch", href: "/fun-tools/countdown-timer" },
+      { name: "Timezone Converter", href: "/converters/timezone" },
+      { name: "All Calculators", href: "/calculator" }
     ]
   }
 

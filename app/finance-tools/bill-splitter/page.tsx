@@ -274,10 +274,8 @@ export default function BillSplitterPage() {
       { name: "Discount Calculator", href: "/finance-tools/discount-calculator" },
       { name: "PayPal Fee Calculator", href: "/finance-tools/paypal-fee" },
       { name: "Invoice Generator", href: "/finance-tools/invoice-generator" },
-      { name: "Currency Converter (group travel)", href: "/converters/currency" },
+      { name: "Currency Converter", href: "/converters/currency" },
       { name: "Percentage Calculator", href: "/calculator/percentage-calculator" },
-      { name: "Savings Tracker", href: "/finance-tools/savings-tracker" },
-      { name: "Remote Work Savings", href: "/finance-tools/remote-work-savings" },
       { name: "All Finance Tools", href: "/finance-tools" }
     ]
   }

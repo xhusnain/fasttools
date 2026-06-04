@@ -195,12 +195,13 @@ const toolConfig = createToolConfig({
     ],
 
     relatedTools: [
-      { name: "URL Encoder/Decoder", href: "/web-tools/url-encoder" },
-      { name: "URL Parser", href: "/web-tools/url-parser" },
       { name: "WHOIS & Domain Lookup", href: "/web-tools/whois-lookup" },
-      { name: "Device Info", href: "/web-tools/device-info" },
-      { name: "Auth Generator", href: "/web-tools/auth-generator" },
-      { name: "HTML Escape Unescape", href: "/web-tools/html-escape" },
+      { name: "URL Parser", href: "/web-tools/url-parser" },
+      { name: "URL Encoder Decoder", href: "/web-tools/url-encoder" },
+      { name: "Device Information", href: "/web-tools/device-info" },
+      { name: "IP Subnet Calculator", href: "/calculator/ip-subnet-calculator" },
+      { name: "HTTP Status Codes", href: "/dev-tools/http-status-codes" },
+      { name: "User-Agent Parser", href: "/dev-tools/user-agent-parser" },
       { name: "All Web Tools", href: "/web-tools" },
     ],
   },

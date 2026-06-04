@@ -285,10 +285,9 @@ export default function RetirementPlannerPage() {
       { name: "Compound Interest Calculator", href: "/finance-tools/compound-interest" },
       { name: "Inflation Calculator", href: "/finance-tools/inflation-calculator" },
       { name: "Net Worth Calculator", href: "/finance-tools/net-worth-calculator" },
-      { name: "Savings Tracker", href: "/finance-tools/savings-tracker" },
-      { name: "Tax Calculator", href: "/finance-tools/tax-calculator" },
-      { name: "Salary Calculator", href: "/finance-tools/salary-calculator" },
-      { name: "Future Age Calculator", href: "/fun-tools/future-age" },
+      { name: "Savings Goal Tracker", href: "/finance-tools/savings-tracker" },
+      { name: "Finance Calculator", href: "/finance-tools/finance-calculator" },
+      { name: "Future Age Predictor", href: "/fun-tools/future-age" },
       { name: "All Finance Tools", href: "/finance-tools" }
     ]
   }

@@ -710,15 +710,13 @@ export default function ConcreteCalculatorPage() {
     ],
 
     relatedTools: [
-      { name: "Conversion Calculator (units)", href: "/calculator/conversion-calculator" },
-      { name: "Triangle Calculator (geometry)", href: "/calculator/triangle-calculator" },
-      { name: "Fraction Calculator", href: "/calculator/fraction-calculator" },
-      { name: "Mortgage Calculator (home project loan)", href: "/finance-tools/mortgage-calculator" },
-      { name: "Home Affordability Calculator", href: "/finance-tools/home-affordability-calculator" },
-      { name: "Loan Calculator (construction)", href: "/finance-tools/loan-calculator" },
-      { name: "Discount Calculator (material savings)", href: "/finance-tools/discount-calculator" },
-      { name: "Length Converter (ft, m, in)", href: "/converters/length" },
+      { name: "Conversion Calculator", href: "/calculator/conversion-calculator" },
+      { name: "Triangle Calculator", href: "/calculator/triangle-calculator" },
       { name: "Scientific Calculator", href: "/calculator/scientific-calculator" },
+      { name: "Length Converter", href: "/converters/length" },
+      { name: "Mortgage Calculator", href: "/finance-tools/mortgage-calculator" },
+      { name: "Loan Calculator", href: "/finance-tools/loan-calculator" },
+      { name: "Home Affordability Calculator", href: "/finance-tools/home-affordability-calculator" },
       { name: "All Calculators", href: "/calculator" }
     ]
   }

@@ -166,10 +166,10 @@ const toolConfig = createToolConfig({
 
     relatedTools: [
       { name: "YouTube Thumbnail Downloader", href: "/social-media-tools/youtube-thumbnail" },
-      { name: "YouTube Name Generator", href: "/social-media-tools/youtube-channel-name-generator" },
-      { name: "YouTube Handle Checker", href: "/social-media-tools/channel-checker" },
-      { name: "TikTok Engagement Calculator", href: "/social-media-tools/tiktok-engagement-calculator" },
+      { name: "YouTube Channel Name Generator", href: "/social-media-tools/youtube-channel-name-generator" },
+      { name: "YouTube Channel Checker", href: "/social-media-tools/channel-checker" },
       { name: "Hashtag Counter", href: "/social-media-tools/hashtag-counter" },
+      { name: "TikTok Engagement Calculator", href: "/social-media-tools/tiktok-engagement-calculator" },
       { name: "Keyword Density Checker", href: "/seo-tools/keyword-density" },
       { name: "AI Caption Generator", href: "/ai-tools/caption-generator" },
       { name: "All Social Media Tools", href: "/social-media-tools" },

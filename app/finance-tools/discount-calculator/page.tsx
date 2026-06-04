@@ -231,9 +231,7 @@ export default function DiscountCalculatorPage() {
       { name: "Percentage Calculator", href: "/calculator/percentage-calculator" },
       { name: "Currency Converter", href: "/converters/currency" },
       { name: "Invoice Generator", href: "/finance-tools/invoice-generator" },
-      { name: "PayPal Fee Calculator", href: "/finance-tools/paypal-fee" },
-      { name: "Savings Tracker", href: "/finance-tools/savings-tracker" },
-      { name: "Auto Loan Calculator (haggle)", href: "/finance-tools/auto-loan-calculator" },
+      { name: "Savings Goal Tracker", href: "/finance-tools/savings-tracker" },
       { name: "All Finance Tools", href: "/finance-tools" }
     ]
   }

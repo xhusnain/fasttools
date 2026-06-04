@@ -219,16 +219,14 @@ const toolConfig = createToolConfig({
     ],
 
     relatedTools: [
-      { name: "PDF to Image Converter", href: "/pdf-tools/pdf-to-image" },
+      { name: "PDF to Image", href: "/pdf-tools/pdf-to-image" },
       { name: "PDF Compressor", href: "/pdf-tools/pdf-compressor" },
-      { name: "PDF Splitter & Merger", href: "/pdf-tools/pdf-splitter-merger" },
+      { name: "Merge PDF", href: "/pdf-tools/pdf-splitter-merger" },
       { name: "PDF to Word Converter", href: "/pdf-tools/pdf-word-converter" },
       { name: "Image Compressor", href: "/image-tools/image-compressor" },
       { name: "Image Resizer", href: "/image-tools/image-resizer" },
       { name: "Image Cropper", href: "/image-tools/image-cropper" },
-      { name: "Image to Text (OCR)", href: "/image-tools/image-to-text" },
       { name: "All PDF Tools", href: "/pdf-tools" },
-      { name: "All Image Tools", href: "/image-tools" },
     ],
   },
 })

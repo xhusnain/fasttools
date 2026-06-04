@@ -562,14 +562,12 @@ export default function RentVsBuyCalculatorPage() {
     relatedTools: [
       { name: "Home Affordability Calculator", href: "/finance-tools/home-affordability-calculator" },
       { name: "Mortgage Calculator", href: "/finance-tools/mortgage-calculator" },
-      { name: "Amortization Schedule Calculator", href: "/finance-tools/amortization-calculator" },
+      { name: "Amortization Calculator", href: "/finance-tools/amortization-calculator" },
       { name: "Loan Calculator", href: "/finance-tools/loan-calculator" },
       { name: "Investment Calculator", href: "/finance-tools/investment-calculator" },
       { name: "Compound Interest Calculator", href: "/finance-tools/compound-interest" },
       { name: "Net Worth Calculator", href: "/finance-tools/net-worth-calculator" },
       { name: "Inflation Calculator", href: "/finance-tools/inflation-calculator" },
-      { name: "Savings Tracker", href: "/finance-tools/savings-tracker" },
-      { name: "Salary Calculator", href: "/finance-tools/salary-calculator" },
       { name: "All Finance Tools", href: "/finance-tools" },
     ]
   }

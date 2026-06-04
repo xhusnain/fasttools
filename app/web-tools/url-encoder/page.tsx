@@ -262,7 +262,11 @@ const toolConfig = createToolConfig({
     relatedTools: [
       { name: "URL Parser", href: "/web-tools/url-parser" },
       { name: "Escape HTML Entities", href: "/web-tools/html-escape" },
-      { name: "Auth Header Generator", href: "/web-tools/auth-generator" },
+      { name: "Outlook Safelink Decoder", href: "/web-tools/outlook-safelink-decoder" },
+      { name: "Base64 Encoder Decoder", href: "/dev-tools/base64-encoder" },
+      { name: "Text to Unicode", href: "/converters/unicode" },
+      { name: "JWT Decoder", href: "/dev-tools/jwt-decoder" },
+      { name: "Slugify String", href: "/dev-tools/slugify-string" },
       { name: "All Web Tools", href: "/web-tools" },
     ],
   },

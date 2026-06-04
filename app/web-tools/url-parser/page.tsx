@@ -295,7 +295,11 @@ const toolConfig = createToolConfig({
     relatedTools: [
       { name: "URL Encoder Decoder", href: "/web-tools/url-encoder" },
       { name: "Outlook Safelink Decoder", href: "/web-tools/outlook-safelink-decoder" },
-      { name: "Device Information", href: "/web-tools/device-info" },
+      { name: "Escape HTML Entities", href: "/web-tools/html-escape" },
+      { name: "WHOIS & Domain Lookup", href: "/web-tools/whois-lookup" },
+      { name: "DNS Lookup & SSL Checker", href: "/web-tools/dns-ssl-checker" },
+      { name: "User-Agent Parser", href: "/dev-tools/user-agent-parser" },
+      { name: "JWT Decoder", href: "/dev-tools/jwt-decoder" },
       { name: "All Web Tools", href: "/web-tools" },
     ],
   },

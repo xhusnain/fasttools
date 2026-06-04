@@ -360,11 +360,13 @@ const toolConfig = createToolConfig({
     ],
 
     relatedTools: [
-      { name: "NATO Phonetic Converter", href: "/converters/nato-phonetic" },
-      { name: "ASCII Binary Converter", href: "/converters/ascii-binary" },
-      { name: "Unicode Converter", href: "/converters/unicode" },
+      { name: "Text to NATO Alphabet", href: "/converters/nato-phonetic" },
+      { name: "Text to ASCII Binary", href: "/converters/ascii-binary" },
+      { name: "Text to Unicode", href: "/converters/unicode" },
       { name: "Text Case Converter", href: "/converters/text-case" },
       { name: "Roman Numeral Converter", href: "/converters/roman-numeral" },
+      { name: "Integer Base Converter", href: "/converters/integer-base" },
+      { name: "List Converter", href: "/converters/list-converter" },
       { name: "All Converters", href: "/converters" },
     ],
   },

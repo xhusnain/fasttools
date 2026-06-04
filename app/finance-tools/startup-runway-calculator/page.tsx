@@ -203,15 +203,13 @@ const toolConfig = createToolConfig({
     ],
 
     relatedTools: [
-      { name: "SaaS Churn Rate Calculator", href: "/finance-tools/saas-churn-calculator" },
-      { name: "SaaS Payback / CAC Calculator", href: "/finance-tools/saas-payback-calculator" },
+      { name: "SaaS Churn Calculator", href: "/finance-tools/saas-churn-calculator" },
+      { name: "SaaS Payback Calculator", href: "/finance-tools/saas-payback-calculator" },
       { name: "ROAS Calculator", href: "/ad-tools/roas-calculator" },
-      { name: "LLM Training Cost Estimator", href: "/dev-tools/llm-training-cost" },
-      { name: "Cloudflare Workers Cost", href: "/dev-tools/cloudflare-workers-cost" },
+      { name: "Cloudflare Workers Cost Calculator", href: "/dev-tools/cloudflare-workers-cost" },
       { name: "Compound Interest Calculator", href: "/finance-tools/compound-interest" },
       { name: "Investment Calculator", href: "/finance-tools/investment-calculator" },
       { name: "Freelance Rate Calculator", href: "/finance-tools/freelance-rate-calculator" },
-      { name: "Net Worth Calculator", href: "/finance-tools/net-worth-calculator" },
       { name: "All Finance Tools", href: "/finance-tools" },
     ],
   },

@@ -317,13 +317,13 @@ const toolConfig = createToolConfig({
 
     relatedTools: [
       { name: "Countdown Timer & Stopwatch", href: "/fun-tools/countdown-timer" },
+      { name: "Wheel Spinner", href: "/fun-tools/wheel-spinner" },
+      { name: "Birthday Countdown", href: "/fun-tools/birthday-countdown" },
+      { name: "Future Age Predictor", href: "/fun-tools/future-age" },
+      { name: "Anniversary Calculator", href: "/fun-tools/anniversary" },
       { name: "Time Duration Calculator", href: "/calculator/time-duration" },
       { name: "Date Difference Calculator", href: "/calculator/date-difference" },
-      { name: "Wheel Spinner (decision maker)", href: "/fun-tools/wheel-spinner" },
-      { name: "Birthday Countdown", href: "/fun-tools/birthday-countdown" },
-      { name: "Anniversary Calculator", href: "/fun-tools/anniversary" },
-      { name: "Future Age Calculator", href: "/fun-tools/future-age" },
-      { name: "Age Calculator", href: "/calculator/age-calculator" },
+      { name: "All Fun Tools", href: "/fun-tools" },
     ],
   },
 })

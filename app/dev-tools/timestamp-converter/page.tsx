@@ -180,8 +180,12 @@ const toolConfig = createToolConfig({
     relatedTools: [
       { name: "Cron Expression Generator", href: "/dev-tools/cron-expression-generator" },
       { name: "JWT Decoder", href: "/dev-tools/jwt-decoder" },
+      { name: "Integer Base Converter", href: "/converters/integer-base" },
+      { name: "Regex Tester", href: "/dev-tools/regex-tester" },
       { name: "Timezone Converter", href: "/converters/timezone" },
       { name: "Date Difference Calculator", href: "/calculator/date-difference" },
+      { name: "Time Duration Calculator", href: "/calculator/time-duration" },
+      { name: "All Developer Tools", href: "/dev-tools" },
     ],
   },
 })

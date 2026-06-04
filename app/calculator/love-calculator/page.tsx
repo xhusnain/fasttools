@@ -729,14 +729,12 @@ export default function LoveCalculatorPage() {
     relatedTools: [
       { name: "Age Calculator", href: "/calculator/age-calculator" },
       { name: "Percentage Calculator", href: "/calculator/percentage-calculator" },
-      { name: "BMI Calculator", href: "/calculator/bmi-calculator" },
-      { name: "Pace Calculator", href: "/calculator/pace-calculator" },
-      { name: "Calorie Calculator", href: "/calculator/calorie-calculator" },
-      { name: "Pregnancy Calculator", href: "/calculator/pregnancy-calculator" },
       { name: "Anniversary Calculator", href: "/fun-tools/anniversary" },
+      { name: "Monthsary Calculator", href: "/fun-tools/monthsary-calculator" },
       { name: "Birthday Countdown", href: "/fun-tools/birthday-countdown" },
-      { name: "Hashtag Counter", href: "/social-media-tools/hashtag-counter" },
-      { name: "Fun Tools", href: "/fun-tools" }
+      { name: "Future Age Predictor", href: "/fun-tools/future-age" },
+      { name: "Wheel Spinner", href: "/fun-tools/wheel-spinner" },
+      { name: "All Calculators", href: "/calculator" }
     ]
   }
 

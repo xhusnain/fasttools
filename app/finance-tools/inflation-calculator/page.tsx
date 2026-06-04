@@ -373,12 +373,10 @@ export default function InflationCalculatorPage() {
       { name: "Investment Calculator", href: "/finance-tools/investment-calculator" },
       { name: "Retirement Calculator", href: "/finance-tools/retirement-calculator" },
       { name: "Net Worth Calculator", href: "/finance-tools/net-worth-calculator" },
-      { name: "Savings Tracker", href: "/finance-tools/savings-tracker" },
-      { name: "Mortgage Calculator", href: "/finance-tools/mortgage-calculator" },
-      { name: "Salary Calculator", href: "/finance-tools/salary-calculator" },
-      { name: "Currency Converter", href: "/converters/currency" },
+      { name: "Savings Goal Tracker", href: "/finance-tools/savings-tracker" },
       { name: "Interest Rate Calculator", href: "/finance-tools/interest-rate-calculator" },
-      { name: "Tax Calculator", href: "/finance-tools/tax-calculator" },
+      { name: "Finance Calculator", href: "/finance-tools/finance-calculator" },
+      { name: "Currency Converter", href: "/converters/currency" },
       { name: "All Finance Tools", href: "/finance-tools" }
     ]
   }

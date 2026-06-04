@@ -182,13 +182,12 @@ const toolConfig = createToolConfig({
 
     relatedTools: [
       { name: "PDF Signature Checker", href: "/pdf-tools/pdf-signature-checker" },
-      { name: "PDF Splitter & Merger", href: "/pdf-tools/pdf-splitter-merger" },
+      { name: "Merge PDF", href: "/pdf-tools/pdf-splitter-merger" },
       { name: "PDF Compressor", href: "/pdf-tools/pdf-compressor" },
       { name: "PDF Unlocker", href: "/pdf-tools/pdf-unlocker" },
       { name: "PDF to Word Converter", href: "/pdf-tools/pdf-word-converter" },
-      { name: "PDF to Image", href: "/pdf-tools/pdf-to-image" },
-      { name: "Image Cropper (signature image)", href: "/image-tools/image-cropper" },
-      { name: "Background Remover (signature PNG)", href: "/image-tools/background-remover" },
+      { name: "Image Cropper", href: "/image-tools/image-cropper" },
+      { name: "Background Remover", href: "/image-tools/background-remover" },
       { name: "Invoice Generator", href: "/finance-tools/invoice-generator" },
       { name: "All PDF Tools", href: "/pdf-tools" },
     ],

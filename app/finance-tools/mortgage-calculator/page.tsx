@@ -406,15 +406,14 @@ export default function MortgageCalculatorPage() {
     ],
 
     relatedTools: [
-      { name: "Amortization Schedule Calculator", href: "/finance-tools/amortization-calculator" },
+      { name: "Amortization Calculator", href: "/finance-tools/amortization-calculator" },
       { name: "Home Affordability Calculator", href: "/finance-tools/home-affordability-calculator" },
       { name: "Rent vs Buy Calculator", href: "/finance-tools/rent-vs-buy-calculator" },
-      { name: "Loan Calculator (auto, personal)", href: "/finance-tools/loan-calculator" },
-      { name: "Compound Interest Calculator", href: "/finance-tools/compound-interest" },
+      { name: "Loan Calculator", href: "/finance-tools/loan-calculator" },
+      { name: "Auto Loan Calculator", href: "/finance-tools/auto-loan-calculator" },
       { name: "Interest Rate Calculator", href: "/finance-tools/interest-rate-calculator" },
       { name: "Credit Card Payoff Calculator", href: "/finance-tools/credit-card-payoff" },
       { name: "Debt Payoff Calculator", href: "/finance-tools/debt-payoff-calculator" },
-      { name: "Tax Calculator", href: "/finance-tools/tax-calculator" },
       { name: "All Finance Tools", href: "/finance-tools" },
     ],
   }

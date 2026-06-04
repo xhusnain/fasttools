@@ -325,13 +325,11 @@ const toolConfig = createToolConfig({
     relatedTools: [
       { name: "AI Text Detector", href: "/ai-tools/ai-text-detector" },
       { name: "AI Code Detector", href: "/ai-tools/ai-code-detector" },
-      { name: "Image Compressor", href: "/image-tools/image-compressor" },
-      { name: "Image Cropper", href: "/image-tools/image-cropper" },
-      { name: "Image to Text (OCR)", href: "/image-tools/image-to-text" },
       { name: "Background Remover", href: "/image-tools/background-remover" },
-      { name: "Hash Text (SHA-256 verify)", href: "/crypto-tools/hash-text" },
-      { name: "PDF Signature Checker", href: "/pdf-tools/pdf-signature-checker" },
+      { name: "Image to Text (OCR)", href: "/image-tools/image-to-text" },
+      { name: "Image Compressor", href: "/image-tools/image-compressor" },
       { name: "Image Steganography", href: "/security-tools/image-steganography" },
+      { name: "PDF Signature Checker", href: "/pdf-tools/pdf-signature-checker" },
       { name: "All Image Tools", href: "/image-tools" },
     ],
 

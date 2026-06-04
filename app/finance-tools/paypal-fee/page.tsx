@@ -516,11 +516,10 @@ export default function PayPalFeeCalculatorPage() {
       { name: "Invoice Generator", href: "/finance-tools/invoice-generator" },
       { name: "Freelance Rate Calculator", href: "/finance-tools/freelance-rate-calculator" },
       { name: "Sales Tax Calculator", href: "/finance-tools/sales-tax-calculator" },
-      { name: "Currency Converter", href: "/converters/currency" },
       { name: "Discount Calculator", href: "/finance-tools/discount-calculator" },
-      { name: "Tax Calculator", href: "/finance-tools/tax-calculator" },
       { name: "Bill Splitter", href: "/finance-tools/bill-splitter" },
-      { name: "Tip Calculator", href: "/finance-tools/tip-calculator" }
+      { name: "Tip Calculator", href: "/finance-tools/tip-calculator" },
+      { name: "All Finance Tools", href: "/finance-tools" }
     ]
   }
 

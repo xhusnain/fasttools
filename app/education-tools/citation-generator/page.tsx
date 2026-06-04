@@ -259,9 +259,13 @@ const toolConfig = createToolConfig({
 
     relatedTools: [
       { name: "Word Counter", href: "/seo-tools/word-counter" },
-      { name: "AI Text Summarizer", href: "/ai-tools/text-summarizer" },
-      { name: "AI Paraphraser", href: "/ai-tools/ai-paraphraser" },
       { name: "Text Similarity Checker", href: "/seo-tools/text-similarity-checker" },
+      { name: "Keyword Density Checker", href: "/seo-tools/keyword-density" },
+      { name: "AI Paraphraser", href: "/ai-tools/ai-paraphraser" },
+      { name: "AI Readability Analyzer", href: "/ai-tools/ai-readability-analyzer" },
+      { name: "AI Text Summarizer", href: "/ai-tools/text-summarizer" },
+      { name: "GPA Calculator", href: "/calculator/gpa-calculator" },
+      { name: "All Education Tools", href: "/education-tools" },
     ],
   },
 })

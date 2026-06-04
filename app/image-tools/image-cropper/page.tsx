@@ -270,16 +270,13 @@ const toolConfig = createToolConfig({
     ],
 
     relatedTools: [
-      { name: "Image to PDF Converter", href: "/pdf-tools/image-to-pdf" },
       { name: "Image Resizer", href: "/image-tools/image-resizer" },
       { name: "Image Compressor", href: "/image-tools/image-compressor" },
       { name: "Background Remover", href: "/image-tools/background-remover" },
       { name: "Image to Text (OCR)", href: "/image-tools/image-to-text" },
       { name: "AI Image Detector", href: "/image-tools/ai-image-detector" },
-      { name: "Meme Generator", href: "/fun-tools/meme-generator" },
-      { name: "Color Palette Generator", href: "/dev-tools/color-palette" },
-      { name: "CSS Gradient Generator", href: "/dev-tools/css-gradient-generator" },
-      { name: "Instagram DP Viewer", href: "/social-media-tools/instagram-dp" },
+      { name: "Image to PDF Converter", href: "/pdf-tools/image-to-pdf" },
+      { name: "YouTube Thumbnail Downloader", href: "/social-media-tools/youtube-thumbnail" },
       { name: "All Image Tools", href: "/image-tools" },
     ],
   },

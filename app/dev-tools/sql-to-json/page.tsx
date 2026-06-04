@@ -236,7 +236,7 @@ const toolConfig = createToolConfig({
       { name: "Regex Tester", href: "/dev-tools/regex-tester" },
       { name: "HTML Beautifier", href: "/dev-tools/html-beautifier" },
       { name: "Diff Checker", href: "/dev-tools/diff-checker" },
-      { name: "Base64 Encoder/Decoder", href: "/dev-tools/base64-encoder" },
+      { name: "JSON to YAML Converter", href: "/converters/json-yaml" },
       { name: "Slugify String", href: "/dev-tools/slugify-string" },
       { name: "All Developer Tools", href: "/dev-tools" },
     ],

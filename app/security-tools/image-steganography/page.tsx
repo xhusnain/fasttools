@@ -205,16 +205,14 @@ const toolConfig = createToolConfig({
     ],
 
     relatedTools: [
-      { name: "Text Encrypt / Decrypt (AES-256)", href: "/crypto-tools/encrypt-decrypt" },
-      { name: "Hash Text (SHA-256 / 512)", href: "/crypto-tools/hash-text" },
+      { name: "Text Encrypt/Decrypt", href: "/crypto-tools/encrypt-decrypt" },
+      { name: "Hash Text Generator", href: "/crypto-tools/hash-text" },
       { name: "Password Generator", href: "/crypto-tools/password-generator" },
+      { name: "Base64 Encoder Decoder", href: "/dev-tools/base64-encoder" },
       { name: "Image Compressor", href: "/image-tools/image-compressor" },
       { name: "Image Resizer", href: "/image-tools/image-resizer" },
-      { name: "Background Remover", href: "/image-tools/background-remover" },
       { name: "Image to Text (OCR)", href: "/image-tools/image-to-text" },
-      { name: "All Crypto Tools", href: "/crypto-tools" },
       { name: "All Security Tools", href: "/security-tools" },
-      { name: "All Image Tools", href: "/image-tools" },
     ],
   },
 })

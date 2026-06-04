@@ -368,12 +368,11 @@ export default function RemoteWorkSavingsPage() {
 
     relatedTools: [
       { name: "Salary Calculator", href: "/finance-tools/salary-calculator" },
-      { name: "Tax Calculator", href: "/finance-tools/tax-calculator" },
       { name: "Freelance Rate Calculator", href: "/finance-tools/freelance-rate-calculator" },
       { name: "Home Affordability Calculator", href: "/finance-tools/home-affordability-calculator" },
       { name: "Rent vs Buy Calculator", href: "/finance-tools/rent-vs-buy-calculator" },
       { name: "Net Worth Calculator", href: "/finance-tools/net-worth-calculator" },
-      { name: "Savings Tracker", href: "/finance-tools/savings-tracker" },
+      { name: "Savings Goal Tracker", href: "/finance-tools/savings-tracker" },
       { name: "Inflation Calculator", href: "/finance-tools/inflation-calculator" },
       { name: "Investment Calculator", href: "/finance-tools/investment-calculator" },
       { name: "All Finance Tools", href: "/finance-tools" }

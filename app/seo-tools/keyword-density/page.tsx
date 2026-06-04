@@ -210,9 +210,13 @@ const toolConfig = createToolConfig({
     ],
 
     relatedTools: [
+      { name: "Word Counter", href: "/seo-tools/word-counter" },
       { name: "Text Similarity Checker", href: "/seo-tools/text-similarity-checker" },
       { name: "Blog Title Generator", href: "/seo-tools/blog-titles" },
-      { name: "Open Graph Meta Tag Generator", href: "/seo-tools/meta-tags" },
+      { name: "Open Graph Meta Generator", href: "/seo-tools/meta-tags" },
+      { name: "AI Readability Analyzer", href: "/ai-tools/ai-readability-analyzer" },
+      { name: "AI Text Summarizer", href: "/ai-tools/text-summarizer" },
+      { name: "AI Paraphraser", href: "/ai-tools/ai-paraphraser" },
       { name: "All SEO Tools", href: "/seo-tools" },
     ],
   },

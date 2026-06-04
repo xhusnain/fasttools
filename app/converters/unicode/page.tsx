@@ -153,9 +153,13 @@ const toolConfig = createToolConfig({
     ],
 
     relatedTools: [
-      { name: "ASCII Binary Converter", href: "/converters/ascii-binary" },
+      { name: "Text to ASCII Binary", href: "/converters/ascii-binary" },
       { name: "Base64 File Converter", href: "/converters/base64-file" },
+      { name: "Morse Code Translator", href: "/converters/morse-code" },
+      { name: "Text to NATO Alphabet", href: "/converters/nato-phonetic" },
       { name: "Text Case Converter", href: "/converters/text-case" },
+      { name: "Integer Base Converter", href: "/converters/integer-base" },
+      { name: "List Converter", href: "/converters/list-converter" },
       { name: "All Converters", href: "/converters" },
     ],
   },

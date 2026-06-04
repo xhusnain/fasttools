@@ -164,15 +164,14 @@ const toolConfig = createToolConfig({
     ],
 
     relatedTools: [
-      { name: "Income Tax Calculator", href: "/finance-tools/tax-calculator" },
+      { name: "Tax Calculator", href: "/finance-tools/tax-calculator" },
       { name: "Quarterly Tax Estimator", href: "/finance-tools/quarterly-tax-estimator" },
-      { name: "Salary Calculator (gross to net)", href: "/finance-tools/salary-calculator" },
+      { name: "Salary Calculator", href: "/finance-tools/salary-calculator" },
       { name: "Sales Tax Calculator", href: "/finance-tools/sales-tax-calculator" },
       { name: "Freelance Rate Calculator", href: "/finance-tools/freelance-rate-calculator" },
       { name: "Retirement Calculator", href: "/finance-tools/retirement-calculator" },
       { name: "Investment Calculator", href: "/finance-tools/investment-calculator" },
       { name: "Net Worth Calculator", href: "/finance-tools/net-worth-calculator" },
-      { name: "PayPal Fee Calculator", href: "/finance-tools/paypal-fee" },
       { name: "All Finance Tools", href: "/finance-tools" },
     ],
   },

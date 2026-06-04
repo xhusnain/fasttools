@@ -262,7 +262,11 @@ const toolConfig = createToolConfig({
       { name: "AI Text Summarizer", href: "/ai-tools/text-summarizer" },
       { name: "AI Paraphraser", href: "/ai-tools/ai-paraphraser" },
       { name: "AI Readability Analyzer", href: "/ai-tools/ai-readability-analyzer" },
+      { name: "AI Caption Generator", href: "/ai-tools/caption-generator" },
+      { name: "AI Lyrics Generator", href: "/ai-tools/lyrics-generator" },
+      { name: "Image to Text (OCR)", href: "/image-tools/image-to-text" },
       { name: "Word Counter", href: "/seo-tools/word-counter" },
+      { name: "All AI Tools", href: "/ai-tools" },
     ],
   },
 })

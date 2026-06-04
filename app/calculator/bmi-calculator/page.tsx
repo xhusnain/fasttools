@@ -654,46 +654,14 @@ export default function BMICalculatorPage() {
       }
     ],
     relatedTools: [
-      {
-        name: "Body Fat Calculator",
-        href: "/calculator/body-fat-calculator",
-        description: "Get more precise body composition data."
-      },
-      {
-        name: "Calorie Calculator",
-        href: "/calculator/calorie-calculator",
-        description: "Plan your meals for healthy weight management."
-      },
-      {
-        name: "BMR Calculator",
-        href: "/calculator/bmr-calculator",
-        description: "Find your baseline energy needs."
-      },
-      {
-        name: "TDEE Macro Calculator",
-        href: "/calculator/tdee-macro-calculator",
-        description: "Daily energy expenditure with macros."
-      },
-      {
-        name: "Biological Age Calculator",
-        href: "/calculator/biological-age-calculator",
-        description: "Lifestyle-adjusted age vs chronological."
-      },
-      {
-        name: "Pace Calculator",
-        href: "/calculator/pace-calculator",
-        description: "Running and walking pace tracker."
-      },
-      {
-        name: "Pregnancy Calculator",
-        href: "/calculator/pregnancy-calculator",
-        description: "Due date and trimester tracking."
-      },
-      {
-        name: "Age Calculator",
-        href: "/calculator/age-calculator",
-        description: "Exact age in years, months, days."
-      }
+      { name: "Body Fat Calculator", href: "/calculator/body-fat-calculator" },
+      { name: "Calorie Calculator", href: "/calculator/calorie-calculator" },
+      { name: "BMR Calculator", href: "/calculator/bmr-calculator" },
+      { name: "TDEE & Macro Calculator", href: "/calculator/tdee-macro-calculator" },
+      { name: "Biological Age Calculator", href: "/calculator/biological-age-calculator" },
+      { name: "Pace Calculator", href: "/calculator/pace-calculator" },
+      { name: "Cortisol Peak Calculator", href: "/calculator/cortisol-peak-calculator" },
+      { name: "All Calculators", href: "/calculator" }
     ]
   }
 

@@ -202,16 +202,14 @@ export default function SalaryCalculatorPage() {
     ],
 
     relatedTools: [
-      { name: "Income Tax Calculator", href: "/finance-tools/tax-calculator" },
+      { name: "Tax Calculator", href: "/finance-tools/tax-calculator" },
       { name: "Tax Bracket Calculator", href: "/finance-tools/tax-bracket-calculator" },
       { name: "Freelance Rate Calculator", href: "/finance-tools/freelance-rate-calculator" },
-      { name: "Retirement Calculator", href: "/finance-tools/retirement-calculator" },
+      { name: "Quarterly Tax Estimator", href: "/finance-tools/quarterly-tax-estimator" },
       { name: "Home Affordability Calculator", href: "/finance-tools/home-affordability-calculator" },
-      { name: "Mortgage Calculator", href: "/finance-tools/mortgage-calculator" },
-      { name: "Investment Calculator", href: "/finance-tools/investment-calculator" },
-      { name: "Savings Tracker", href: "/finance-tools/savings-tracker" },
       { name: "Net Worth Calculator", href: "/finance-tools/net-worth-calculator" },
-      { name: "Remote Work Savings", href: "/finance-tools/remote-work-savings" },
+      { name: "Remote Work Savings Calculator", href: "/finance-tools/remote-work-savings" },
+      { name: "Retirement Planner", href: "/finance-tools/retirement-planner" },
       { name: "All Finance Tools", href: "/finance-tools" }
     ]
   }

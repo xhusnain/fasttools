@@ -267,9 +267,13 @@ data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAA...`}</cod
     ],
 
     relatedTools: [
-      { name: "Base64 Encoder", href: "/dev-tools/base64-encoder" },
-      { name: "ASCII Binary Converter", href: "/converters/ascii-binary" },
-      { name: "Unicode Converter", href: "/converters/unicode" },
+      { name: "Text to ASCII Binary", href: "/converters/ascii-binary" },
+      { name: "Text to Unicode", href: "/converters/unicode" },
+      { name: "File Size Converter", href: "/converters/file-size" },
+      { name: "Base64 Encoder Decoder", href: "/dev-tools/base64-encoder" },
+      { name: "URL Encoder Decoder", href: "/web-tools/url-encoder" },
+      { name: "JWT Decoder", href: "/dev-tools/jwt-decoder" },
+      { name: "Image to Text (OCR)", href: "/image-tools/image-to-text" },
       { name: "All Converters", href: "/converters" },
     ],
   },

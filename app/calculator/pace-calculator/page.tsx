@@ -490,11 +490,12 @@ export default function PaceCalculatorPage() {
       { name: "BMI Calculator", href: "/calculator/bmi-calculator" },
       { name: "Calorie Calculator", href: "/calculator/calorie-calculator" },
       { name: "BMR Calculator", href: "/calculator/bmr-calculator" },
-      { name: "TDEE Macro Calculator", href: "/calculator/tdee-macro-calculator" },
+      { name: "TDEE & Macro Calculator", href: "/calculator/tdee-macro-calculator" },
       { name: "Body Fat Calculator", href: "/calculator/body-fat-calculator" },
       { name: "Biological Age Calculator", href: "/calculator/biological-age-calculator" },
       { name: "Time Duration Calculator", href: "/calculator/time-duration" },
-      { name: "Length Converter (km/mi)", href: "/converters/length" }
+      { name: "Length Converter", href: "/converters/length" },
+      { name: "All Calculators", href: "/calculator" }
     ]
   }
 

@@ -292,8 +292,12 @@ const toolConfig = createToolConfig({
 
     relatedTools: [
       { name: "JWT Decoder", href: "/dev-tools/jwt-decoder" },
-      { name: "Base64 Encoder", href: "/dev-tools/base64-encoder" },
+      { name: "Base64 Encoder Decoder", href: "/dev-tools/base64-encoder" },
       { name: "Token Generator", href: "/crypto-tools/token-generator" },
+      { name: "Password Generator", href: "/crypto-tools/password-generator" },
+      { name: "Hash Text Generator", href: "/crypto-tools/hash-text" },
+      { name: "HMAC Generator", href: "/crypto-tools/hmac-generator" },
+      { name: "URL Encoder Decoder", href: "/web-tools/url-encoder" },
       { name: "All Web Tools", href: "/web-tools" },
     ],
   },

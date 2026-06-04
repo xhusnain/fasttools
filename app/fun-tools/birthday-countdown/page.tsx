@@ -215,13 +215,13 @@ const toolConfig = createToolConfig({
 
     relatedTools: [
       { name: "Anniversary Calculator", href: "/fun-tools/anniversary" },
-      { name: "Future Age Calculator", href: "/fun-tools/future-age" },
+      { name: "Future Age Predictor", href: "/fun-tools/future-age" },
+      { name: "Monthsary Calculator", href: "/fun-tools/monthsary-calculator" },
+      { name: "Countdown Timer & Stopwatch", href: "/fun-tools/countdown-timer" },
       { name: "Age Calculator", href: "/calculator/age-calculator" },
-      { name: "Countdown Timer", href: "/fun-tools/countdown-timer" },
       { name: "Date Difference Calculator", href: "/calculator/date-difference" },
       { name: "Time Duration Calculator", href: "/calculator/time-duration" },
-      { name: "Pomodoro Timer", href: "/fun-tools/pomodoro-timer" },
-      { name: "Link in Bio Generator", href: "/social-media-tools/link-in-bio" }
+      { name: "All Fun Tools", href: "/fun-tools" }
     ]
   }
 })

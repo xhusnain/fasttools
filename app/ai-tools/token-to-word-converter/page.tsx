@@ -200,8 +200,12 @@ const toolConfig = createToolConfig({
     ],
 
     relatedTools: [
-      { name: "AI Lyrics Generator", href: "/ai-tools/lyrics-generator" },
-      { name: "AI Caption Generator", href: "/ai-tools/caption-generator" },
+      { name: "AI API Cost Calculator", href: "/ai-tools/ai-api-cost-calculator" },
+      { name: "LLM Training Cost Calculator", href: "/dev-tools/llm-training-cost" },
+      { name: "AI Text Summarizer", href: "/ai-tools/text-summarizer" },
+      { name: "AI Code Detector", href: "/ai-tools/ai-code-detector" },
+      { name: "AI Text Detector", href: "/ai-tools/ai-text-detector" },
+      { name: "Word Counter", href: "/seo-tools/word-counter" },
       { name: "Keyword Density Checker", href: "/seo-tools/keyword-density" },
       { name: "All AI Tools", href: "/ai-tools" },
     ],

@@ -189,13 +189,12 @@ const toolConfig = createToolConfig({
 
     relatedTools: [
       { name: "Sign PDF", href: "/pdf-tools/pdf-sign" },
-      { name: "PDF Splitter & Merger", href: "/pdf-tools/pdf-splitter-merger" },
+      { name: "Merge PDF", href: "/pdf-tools/pdf-splitter-merger" },
       { name: "PDF Unlocker", href: "/pdf-tools/pdf-unlocker" },
-      { name: "PDF Compressor", href: "/pdf-tools/pdf-compressor" },
-      { name: "AI Image Detector (deepfake check)", href: "/image-tools/ai-image-detector" },
-      { name: "Hash Text (SHA-256 verify)", href: "/crypto-tools/hash-text" },
-      { name: "RSA Key Pair Generator", href: "/crypto-tools/rsa-generator" },
-      { name: "DNS / SSL Checker", href: "/web-tools/dns-ssl-checker" },
+      { name: "AI Image Detector", href: "/image-tools/ai-image-detector" },
+      { name: "Hash Text Generator", href: "/crypto-tools/hash-text" },
+      { name: "RSA Key Generator", href: "/crypto-tools/rsa-generator" },
+      { name: "DNS Lookup & SSL Checker", href: "/web-tools/dns-ssl-checker" },
       { name: "Image Steganography", href: "/security-tools/image-steganography" },
       { name: "All PDF Tools", href: "/pdf-tools" },
     ],

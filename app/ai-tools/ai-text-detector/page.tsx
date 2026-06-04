@@ -299,10 +299,14 @@ const toolConfig = createToolConfig({
     ],
 
     relatedTools: [
+      { name: "AI Code Detector", href: "/ai-tools/ai-code-detector" },
       { name: "AI Image Detector", href: "/image-tools/ai-image-detector" },
+      { name: "AI Readability Analyzer", href: "/ai-tools/ai-readability-analyzer" },
+      { name: "AI Paraphraser", href: "/ai-tools/ai-paraphraser" },
+      { name: "AI Text Summarizer", href: "/ai-tools/text-summarizer" },
       { name: "Text Similarity Checker", href: "/seo-tools/text-similarity-checker" },
-      { name: "Keyword Density Checker", href: "/seo-tools/keyword-density" },
-      { name: "Token to Word Converter", href: "/ai-tools/token-to-word-converter" },
+      { name: "Word Counter", href: "/seo-tools/word-counter" },
+      { name: "All AI Tools", href: "/ai-tools" },
     ],
   },
 })

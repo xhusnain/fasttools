@@ -260,10 +260,10 @@ export default function TriangleCalculatorPage() {
             { name: "Fraction Calculator", href: "/calculator/fraction-calculator" },
             { name: "Standard Deviation Calculator", href: "/calculator/standard-deviation-calculator" },
             { name: "Percentage Calculator", href: "/calculator/percentage-calculator" },
-            { name: "Concrete Calculator (slabs)", href: "/calculator/concrete-calculator" },
-            { name: "IP Subnet Calculator", href: "/calculator/ip-subnet-calculator" },
+            { name: "Concrete Calculator", href: "/calculator/concrete-calculator" },
             { name: "Conversion Calculator", href: "/calculator/conversion-calculator" },
-            { name: "Length Converter", href: "/converters/length" }
+            { name: "Length Converter", href: "/converters/length" },
+            { name: "All Calculators", href: "/calculator" }
         ]
     }
 

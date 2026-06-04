@@ -184,12 +184,13 @@ const toolConfig = createToolConfig({
     ],
 
     relatedTools: [
+      { name: "Length Converter", href: "/converters/length" },
+      { name: "Temperature Converter", href: "/converters/temperature" },
+      { name: "Timezone Converter", href: "/converters/timezone" },
       { name: "Base64 File Converter", href: "/converters/base64-file" },
       { name: "Image Compressor", href: "/image-tools/image-compressor" },
       { name: "PDF Compressor", href: "/pdf-tools/pdf-compressor" },
       { name: "Image Resizer", href: "/image-tools/image-resizer" },
-      { name: "Length Converter", href: "/converters/length" },
-      { name: "Time Zone Converter", href: "/converters/timezone" },
       { name: "All Converters", href: "/converters" },
     ],
   },

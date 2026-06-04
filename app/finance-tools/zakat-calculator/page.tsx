@@ -388,11 +388,10 @@ export default function ZakatCalculatorPage() {
       { name: "Net Worth Calculator", href: "/finance-tools/net-worth-calculator" },
       { name: "Currency Converter", href: "/converters/currency" },
       { name: "Investment Calculator", href: "/finance-tools/investment-calculator" },
-      { name: "Savings Tracker", href: "/finance-tools/savings-tracker" },
+      { name: "Savings Goal Tracker", href: "/finance-tools/savings-tracker" },
       { name: "Salary Calculator", href: "/finance-tools/salary-calculator" },
       { name: "Tax Calculator", href: "/finance-tools/tax-calculator" },
       { name: "Percentage Calculator", href: "/calculator/percentage-calculator" },
-      { name: "Anniversary Calculator (Hawl tracking)", href: "/fun-tools/anniversary" },
       { name: "All Finance Tools", href: "/finance-tools" }
     ]
   }

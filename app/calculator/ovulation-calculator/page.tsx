@@ -227,14 +227,14 @@ const toolConfig = createToolConfig({
     ],
 
     relatedTools: [
-      { name: "Pregnancy Due Date Calculator", href: "/calculator/pregnancy-calculator" },
-      { name: "Conception Date Calculator", href: "/calculator/pregnancy-conception-calculator" },
+      { name: "Pregnancy Calculator", href: "/calculator/pregnancy-calculator" },
+      { name: "Pregnancy Conception Calculator", href: "/calculator/pregnancy-conception-calculator" },
       { name: "BMI Calculator", href: "/calculator/bmi-calculator" },
       { name: "BMR Calculator", href: "/calculator/bmr-calculator" },
       { name: "Calorie Calculator", href: "/calculator/calorie-calculator" },
       { name: "Age Calculator", href: "/calculator/age-calculator" },
-      { name: "Anniversary Calculator", href: "/fun-tools/anniversary" },
       { name: "Date Difference Calculator", href: "/calculator/date-difference" },
+      { name: "All Calculators", href: "/calculator" },
     ],
   },
 })

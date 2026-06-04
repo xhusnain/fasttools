@@ -296,7 +296,7 @@ ver cost salt (22 chars)        hash (31 chars)`}</code>
     relatedTools: [
       { name: "Password Strength Analyzer", href: "/crypto-tools/password-strength-analyzer" },
       { name: "Password Generator", href: "/crypto-tools/password-generator" },
-      { name: "Hash Text (SHA-256/512)", href: "/crypto-tools/hash-text" },
+      { name: "Hash Text Generator", href: "/crypto-tools/hash-text" },
       { name: "HMAC Generator", href: "/crypto-tools/hmac-generator" },
       { name: "Token Generator", href: "/crypto-tools/token-generator" },
       { name: "Text Encrypt/Decrypt", href: "/crypto-tools/encrypt-decrypt" },

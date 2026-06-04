@@ -518,15 +518,13 @@ export default function FreelanceRateCalculatorPage() {
     ],
 
     relatedTools: [
-      { name: "Quarterly Tax Estimator (1099)", href: "/finance-tools/quarterly-tax-estimator" },
-      { name: "Salary Calculator (W-2 equivalent)", href: "/finance-tools/salary-calculator" },
+      { name: "Quarterly Tax Estimator", href: "/finance-tools/quarterly-tax-estimator" },
+      { name: "Salary Calculator", href: "/finance-tools/salary-calculator" },
       { name: "Tax Calculator", href: "/finance-tools/tax-calculator" },
       { name: "Tax Bracket Calculator", href: "/finance-tools/tax-bracket-calculator" },
       { name: "Invoice Generator", href: "/finance-tools/invoice-generator" },
       { name: "PayPal Fee Calculator", href: "/finance-tools/paypal-fee" },
       { name: "Influencer Rate Calculator", href: "/social-media-tools/influencer-rate-calculator" },
-      { name: "Bill Splitter", href: "/finance-tools/bill-splitter" },
-      { name: "Discount Calculator", href: "/finance-tools/discount-calculator" },
       { name: "All Finance Tools", href: "/finance-tools" }
     ]
   }

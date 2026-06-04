@@ -335,7 +335,7 @@ export const navigationConfig: MegaMenuSection[] = [
             {
                 title: "Featured",
                 items: [
-                    { title: "ROAS Calculator", href: "/finance-tools/roas-calculator", icon: TrendingUp },
+                    { title: "ROAS Calculator", href: "/ad-tools/roas-calculator", icon: TrendingUp },
                     { title: "IP Subnet Calc", href: "/calculator/ip-subnet-calculator", icon: Network },
                 ]
             }

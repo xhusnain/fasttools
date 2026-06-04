@@ -141,11 +141,11 @@ export default function LLMTrainingCostPage() {
     ],
 
     relatedTools: [
-      { name: "Cloudflare Workers Cost", href: "/dev-tools/cloudflare-workers-cost" },
+      { name: "Cloudflare Workers Cost Calculator", href: "/dev-tools/cloudflare-workers-cost" },
+      { name: "AI API Cost Calculator", href: "/ai-tools/ai-api-cost-calculator" },
       { name: "Token to Word Converter", href: "/ai-tools/token-to-word-converter" },
-      { name: "Text Summarizer", href: "/ai-tools/text-summarizer" },
-      { name: "AI Text Detector", href: "/ai-tools/ai-text-detector" },
-      { name: "SaaS Churn Rate Calculator", href: "/finance-tools/saas-churn-calculator" },
+      { name: "AI Text Summarizer", href: "/ai-tools/text-summarizer" },
+      { name: "SaaS Churn Calculator", href: "/finance-tools/saas-churn-calculator" },
       { name: "Startup Runway Calculator", href: "/finance-tools/startup-runway-calculator" },
       { name: "Percentage Calculator", href: "/calculator/percentage-calculator" },
       { name: "All Developer Tools", href: "/dev-tools" },

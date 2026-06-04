@@ -147,7 +147,7 @@ const toolConfig = createToolConfig({
     ],
 
     relatedTools: [
-      { name: "Base64 Encoder/Decoder", href: "/dev-tools/base64-encoder" },
+      { name: "Base64 Encoder Decoder", href: "/dev-tools/base64-encoder" },
       { name: "HTTP Status Codes", href: "/dev-tools/http-status-codes" },
       { name: "User-Agent Parser", href: "/dev-tools/user-agent-parser" },
       { name: "File Size Converter", href: "/converters/file-size" },

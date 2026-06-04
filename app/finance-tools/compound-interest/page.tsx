@@ -313,10 +313,8 @@ export default function CompoundInterestPage() {
       { name: "Retirement Planner", href: "/finance-tools/retirement-planner" },
       { name: "Inflation Calculator", href: "/finance-tools/inflation-calculator" },
       { name: "Interest Rate Calculator", href: "/finance-tools/interest-rate-calculator" },
-      { name: "Savings Tracker", href: "/finance-tools/savings-tracker" },
+      { name: "Savings Goal Tracker", href: "/finance-tools/savings-tracker" },
       { name: "Net Worth Calculator", href: "/finance-tools/net-worth-calculator" },
-      { name: "Loan Calculator (reverse compound)", href: "/finance-tools/loan-calculator" },
-      { name: "Mortgage Calculator", href: "/finance-tools/mortgage-calculator" },
       { name: "All Finance Tools", href: "/finance-tools" }
     ]
   }

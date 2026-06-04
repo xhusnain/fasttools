@@ -235,10 +235,11 @@ const toolConfig = createToolConfig({
 
     relatedTools: [
       { name: "Length Converter", href: "/converters/length" },
-      { name: "Conversion Calculator (units)", href: "/calculator/conversion-calculator" },
-      { name: "Scientific Calculator", href: "/calculator/scientific-calculator" },
-      { name: "Time Zone Converter", href: "/converters/timezone" },
       { name: "File Size Converter", href: "/converters/file-size" },
+      { name: "Timezone Converter", href: "/converters/timezone" },
+      { name: "Currency Converter", href: "/converters/currency" },
+      { name: "Conversion Calculator", href: "/calculator/conversion-calculator" },
+      { name: "Scientific Calculator", href: "/calculator/scientific-calculator" },
       { name: "All Converters", href: "/converters" },
     ],
   },

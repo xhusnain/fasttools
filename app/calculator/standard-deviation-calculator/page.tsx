@@ -693,17 +693,13 @@ export default function StandardDeviationCalculatorPage() {
 
     relatedTools: [
       { name: "Percentage Calculator", href: "/calculator/percentage-calculator" },
-      { name: "BMI Calculator", href: "/calculator/bmi-calculator" },
       { name: "Scientific Calculator", href: "/calculator/scientific-calculator" },
       { name: "Fraction Calculator", href: "/calculator/fraction-calculator" },
-      { name: "Age Calculator", href: "/calculator/age-calculator" },
-      { name: "Time Duration", href: "/calculator/time-duration" },
-      { name: "Investment Calculator", href: "/finance-tools/investment-calculator" },
-      { name: "Retirement Calculator", href: "/finance-tools/retirement-calculator" },
-      { name: "Mortgage Calculator", href: "/finance-tools/mortgage-calculator" },
-      { name: "Tax Calculator", href: "/finance-tools/tax-calculator" },
-      { name: "Currency Converter", href: "/converters/currency" },
-      { name: "Temperature Converter", href: "/converters/temperature" }
+      { name: "Triangle Calculator", href: "/calculator/triangle-calculator" },
+      { name: "GPA Calculator", href: "/calculator/gpa-calculator" },
+      { name: "Conversion Calculator", href: "/calculator/conversion-calculator" },
+      { name: "Integer Base Converter", href: "/converters/integer-base" },
+      { name: "All Calculators", href: "/calculator" }
     ]
   }
 

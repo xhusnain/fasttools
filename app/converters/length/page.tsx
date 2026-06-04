@@ -148,11 +148,12 @@ const toolConfig = createToolConfig({
 
     relatedTools: [
       { name: "Temperature Converter", href: "/converters/temperature" },
-      { name: "Pace Calculator (km/mi)", href: "/calculator/pace-calculator" },
-      { name: "Concrete Calculator", href: "/calculator/concrete-calculator" },
-      { name: "Triangle Calculator", href: "/calculator/triangle-calculator" },
       { name: "File Size Converter", href: "/converters/file-size" },
-      { name: "Time Zone Converter", href: "/converters/timezone" },
+      { name: "Timezone Converter", href: "/converters/timezone" },
+      { name: "Currency Converter", href: "/converters/currency" },
+      { name: "Conversion Calculator", href: "/calculator/conversion-calculator" },
+      { name: "Pace Calculator", href: "/calculator/pace-calculator" },
+      { name: "Concrete Calculator", href: "/calculator/concrete-calculator" },
       { name: "All Converters", href: "/converters" },
     ],
   },

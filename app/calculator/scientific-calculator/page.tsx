@@ -298,12 +298,12 @@ const toolConfig = createToolConfig({
     relatedTools: [
       { name: "Fraction Calculator", href: "/calculator/fraction-calculator" },
       { name: "Percentage Calculator", href: "/calculator/percentage-calculator" },
-      { name: "Triangle Calculator (geometry)", href: "/calculator/triangle-calculator" },
+      { name: "Triangle Calculator", href: "/calculator/triangle-calculator" },
       { name: "Standard Deviation Calculator", href: "/calculator/standard-deviation-calculator" },
       { name: "GPA Calculator", href: "/calculator/gpa-calculator" },
-      { name: "Integer Base Converter (hex/binary)", href: "/converters/integer-base" },
-      { name: "IP Subnet Calculator", href: "/calculator/ip-subnet-calculator" },
-      { name: "Conversion Calculator (units)", href: "/calculator/conversion-calculator" }
+      { name: "Integer Base Converter", href: "/converters/integer-base" },
+      { name: "Conversion Calculator", href: "/calculator/conversion-calculator" },
+      { name: "All Calculators", href: "/calculator" }
     ]
   }
 })

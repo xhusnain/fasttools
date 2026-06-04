@@ -205,13 +205,13 @@ const toolConfig = createToolConfig({
     ],
 
     relatedTools: [
-      { name: "Diff Checker (text)", href: "/dev-tools/diff-checker" },
+      { name: "Diff Checker", href: "/dev-tools/diff-checker" },
       { name: "JSON to CSV Converter", href: "/dev-tools/json-to-csv" },
       { name: "SQL to JSON Converter", href: "/dev-tools/sql-to-json" },
+      { name: "JSON to YAML Converter", href: "/converters/json-yaml" },
+      { name: "XML to JSON Converter", href: "/converters/xml-json" },
       { name: "HTML Beautifier", href: "/dev-tools/html-beautifier" },
-      { name: "Slugify String", href: "/dev-tools/slugify-string" },
-      { name: "HTTP Status Codes", href: "/dev-tools/http-status-codes" },
-      { name: "MIME Types Lookup", href: "/dev-tools/mime-types" },
+      { name: "MIME Types", href: "/dev-tools/mime-types" },
       { name: "Regex Tester", href: "/dev-tools/regex-tester" },
       { name: "All Developer Tools", href: "/dev-tools" },
     ],

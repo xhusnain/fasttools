@@ -143,8 +143,7 @@ export default function InvoiceGeneratorPage() {
       { name: "Discount Calculator", href: "/finance-tools/discount-calculator" },
       { name: "Bill Splitter", href: "/finance-tools/bill-splitter" },
       { name: "Tip Calculator", href: "/finance-tools/tip-calculator" },
-      { name: "Currency Converter", href: "/converters/currency" },
-      { name: "Tax Calculator (1099 income)", href: "/finance-tools/tax-calculator" },
+      { name: "Tax Calculator", href: "/finance-tools/tax-calculator" },
       { name: "Quarterly Tax Estimator", href: "/finance-tools/quarterly-tax-estimator" },
       { name: "All Finance Tools", href: "/finance-tools" }
     ]

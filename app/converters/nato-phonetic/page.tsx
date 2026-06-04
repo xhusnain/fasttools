@@ -183,9 +183,13 @@ const toolConfig = createToolConfig({
     ],
 
     relatedTools: [
+      { name: "Morse Code Translator", href: "/converters/morse-code" },
+      { name: "Text to ASCII Binary", href: "/converters/ascii-binary" },
+      { name: "Text to Unicode", href: "/converters/unicode" },
       { name: "Text Case Converter", href: "/converters/text-case" },
-      { name: "ASCII Binary Converter", href: "/converters/ascii-binary" },
-      { name: "Unicode Converter", href: "/converters/unicode" },
+      { name: "Roman Numeral Converter", href: "/converters/roman-numeral" },
+      { name: "Integer Base Converter", href: "/converters/integer-base" },
+      { name: "List Converter", href: "/converters/list-converter" },
       { name: "All Converters", href: "/converters" },
     ],
   },

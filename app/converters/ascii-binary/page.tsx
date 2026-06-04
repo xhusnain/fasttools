@@ -168,9 +168,13 @@ const toolConfig = createToolConfig({
     ],
 
     relatedTools: [
-      { name: "Unicode Converter", href: "/converters/unicode" },
+      { name: "Text to Unicode", href: "/converters/unicode" },
       { name: "Integer Base Converter", href: "/converters/integer-base" },
       { name: "Base64 File Converter", href: "/converters/base64-file" },
+      { name: "Morse Code Translator", href: "/converters/morse-code" },
+      { name: "Text to NATO Alphabet", href: "/converters/nato-phonetic" },
+      { name: "Text Case Converter", href: "/converters/text-case" },
+      { name: "Roman Numeral Converter", href: "/converters/roman-numeral" },
       { name: "All Converters", href: "/converters" },
     ],
   },

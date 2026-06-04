@@ -342,11 +342,13 @@ export default function BiologicalAgeCalculatorPage() {
 
     relatedTools: [
       { name: "BMI Calculator", href: "/calculator/bmi-calculator" },
-      { name: "Cortisol Peak Time Calculator", href: "/calculator/cortisol-peak-calculator" },
+      { name: "Cortisol Peak Calculator", href: "/calculator/cortisol-peak-calculator" },
       { name: "Calorie Calculator", href: "/calculator/calorie-calculator" },
       { name: "BMR Calculator", href: "/calculator/bmr-calculator" },
       { name: "Body Fat Calculator", href: "/calculator/body-fat-calculator" },
-      { name: "Age Calculator", href: "/calculator/age-calculator" }
+      { name: "TDEE & Macro Calculator", href: "/calculator/tdee-macro-calculator" },
+      { name: "Age Calculator", href: "/calculator/age-calculator" },
+      { name: "All Calculators", href: "/calculator" }
     ]
   }
 

@@ -383,16 +383,13 @@ export default function SalesTaxCalculatorPage() {
     ],
 
     relatedTools: [
-      { name: "Income Tax Calculator", href: "/finance-tools/tax-calculator" },
+      { name: "Tax Calculator", href: "/finance-tools/tax-calculator" },
       { name: "Tax Bracket Calculator", href: "/finance-tools/tax-bracket-calculator" },
       { name: "Tip Calculator", href: "/finance-tools/tip-calculator" },
       { name: "Discount Calculator", href: "/finance-tools/discount-calculator" },
       { name: "Bill Splitter", href: "/finance-tools/bill-splitter" },
       { name: "Invoice Generator", href: "/finance-tools/invoice-generator" },
-      { name: "PayPal Fee Calculator", href: "/finance-tools/paypal-fee" },
-      { name: "Auto Loan Calculator (out-the-door)", href: "/finance-tools/auto-loan-calculator" },
       { name: "Percentage Calculator", href: "/calculator/percentage-calculator" },
-      { name: "Currency Converter", href: "/converters/currency" },
       { name: "All Finance Tools", href: "/finance-tools" }
     ]
   }

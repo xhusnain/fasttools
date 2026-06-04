@@ -363,12 +363,12 @@ export default function TimeDurationPage() {
     relatedTools: [
       { name: "Date Difference Calculator", href: "/calculator/date-difference" },
       { name: "Age Calculator", href: "/calculator/age-calculator" },
-      { name: "Future Age Calculator", href: "/fun-tools/future-age" },
+      { name: "Future Age Predictor", href: "/fun-tools/future-age" },
       { name: "Anniversary Calculator", href: "/fun-tools/anniversary" },
-      { name: "Countdown Timer", href: "/fun-tools/countdown-timer" },
-      { name: "Pomodoro Timer", href: "/fun-tools/pomodoro-timer" },
+      { name: "Countdown Timer & Stopwatch", href: "/fun-tools/countdown-timer" },
       { name: "Birthday Countdown", href: "/fun-tools/birthday-countdown" },
-      { name: "Timezone Converter", href: "/converters/timezone" }
+      { name: "Timezone Converter", href: "/converters/timezone" },
+      { name: "All Calculators", href: "/calculator" }
     ]
   }
 

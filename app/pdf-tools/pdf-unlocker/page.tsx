@@ -180,15 +180,14 @@ const toolConfig = createToolConfig({
     ],
 
     relatedTools: [
-      { name: "PDF Splitter & Merger", href: "/pdf-tools/pdf-splitter-merger" },
+      { name: "Merge PDF", href: "/pdf-tools/pdf-splitter-merger" },
       { name: "PDF Compressor", href: "/pdf-tools/pdf-compressor" },
-      { name: "PDF to Image", href: "/pdf-tools/pdf-to-image" },
       { name: "PDF to Word Converter", href: "/pdf-tools/pdf-word-converter" },
       { name: "Sign PDF", href: "/pdf-tools/pdf-sign" },
       { name: "PDF Signature Checker", href: "/pdf-tools/pdf-signature-checker" },
       { name: "Password Generator", href: "/crypto-tools/password-generator" },
       { name: "Password Strength Analyzer", href: "/crypto-tools/password-strength-analyzer" },
-      { name: "Encrypt / Decrypt Text", href: "/crypto-tools/encrypt-decrypt" },
+      { name: "Text Encrypt/Decrypt", href: "/crypto-tools/encrypt-decrypt" },
       { name: "All PDF Tools", href: "/pdf-tools" },
     ],
   },

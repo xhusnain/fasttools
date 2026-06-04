@@ -287,12 +287,12 @@ const toolConfig = createToolConfig({
 
     relatedTools: [
       { name: "Password Generator", href: "/crypto-tools/password-generator" },
-      { name: "Bcrypt Hash Generator", href: "/crypto-tools/bcrypt" },
-      { name: "BIP39 Mnemonic Generator", href: "/crypto-tools/bip39-generator" },
-      { name: "TOTP / OTP Generator", href: "/crypto-tools/otp-generator" },
+      { name: "Bcrypt Generator", href: "/crypto-tools/bcrypt" },
+      { name: "BIP39 Passphrase Generator", href: "/crypto-tools/bip39-generator" },
+      { name: "OTP Code Generator", href: "/crypto-tools/otp-generator" },
       { name: "Token Generator", href: "/crypto-tools/token-generator" },
-      { name: "Hash Text (SHA-256)", href: "/crypto-tools/hash-text" },
-      { name: "Auth Generator (HTTP)", href: "/web-tools/auth-generator" },
+      { name: "Hash Text Generator", href: "/crypto-tools/hash-text" },
+      { name: "Auth Generator", href: "/web-tools/auth-generator" },
       { name: "All Crypto Tools", href: "/crypto-tools" },
     ],
   },

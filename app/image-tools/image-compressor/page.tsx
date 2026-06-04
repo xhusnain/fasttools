@@ -200,16 +200,13 @@ const toolConfig = createToolConfig({
     ],
 
     relatedTools: [
-      { name: "Image to PDF Converter", href: "/pdf-tools/image-to-pdf" },
       { name: "Image Resizer", href: "/image-tools/image-resizer" },
       { name: "Image Cropper", href: "/image-tools/image-cropper" },
       { name: "Background Remover", href: "/image-tools/background-remover" },
       { name: "Image to Text (OCR)", href: "/image-tools/image-to-text" },
+      { name: "Image to PDF Converter", href: "/pdf-tools/image-to-pdf" },
       { name: "PDF Compressor", href: "/pdf-tools/pdf-compressor" },
-      { name: "PDF to Image", href: "/pdf-tools/pdf-to-image" },
       { name: "File Size Converter", href: "/converters/file-size" },
-      { name: "Base64 File Converter", href: "/converters/base64-file" },
-      { name: "Meme Generator", href: "/fun-tools/meme-generator" },
       { name: "All Image Tools", href: "/image-tools" },
     ],
   },

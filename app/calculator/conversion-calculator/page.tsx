@@ -538,14 +538,12 @@ export default function ConversionCalculatorPage() {
     relatedTools: [
       { name: "Scientific Calculator", href: "/calculator/scientific-calculator" },
       { name: "Percentage Calculator", href: "/calculator/percentage-calculator" },
-      { name: "BMI Calculator", href: "/calculator/bmi-calculator" },
-      { name: "Age Calculator", href: "/calculator/age-calculator" },
-      { name: "Time Duration", href: "/calculator/time-duration" },
-      { name: "Investment Calculator", href: "/finance-tools/investment-calculator" },
-      { name: "Retirement Calculator", href: "/finance-tools/retirement-calculator" },
-      { name: "Mortgage Calculator", href: "/finance-tools/mortgage-calculator" },
-      { name: "Loan Calculator", href: "/finance-tools/loan-calculator" },
-      { name: "Tax Calculator", href: "/finance-tools/tax-calculator" }
+      { name: "Fraction Calculator", href: "/calculator/fraction-calculator" },
+      { name: "Triangle Calculator", href: "/calculator/triangle-calculator" },
+      { name: "Standard Deviation Calculator", href: "/calculator/standard-deviation-calculator" },
+      { name: "Length Converter", href: "/converters/length" },
+      { name: "Temperature Converter", href: "/converters/temperature" },
+      { name: "All Calculators", href: "/calculator" }
     ]
   }
 

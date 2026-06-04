@@ -458,13 +458,13 @@ export default function TikTokEngagementCalculatorPage() {
 
     relatedTools: [
       { name: "Influencer Rate Calculator", href: "/social-media-tools/influencer-rate-calculator" },
-      { name: "Hashtag Counter (TikTok-aware)", href: "/social-media-tools/hashtag-counter" },
+      { name: "Hashtag Counter", href: "/social-media-tools/hashtag-counter" },
       { name: "YouTube Tag Extractor", href: "/social-media-tools/youtube-tags" },
-      { name: "YouTube Channel Name Generator", href: "/social-media-tools/youtube-channel-name-generator" },
-      { name: "YouTube Channel Checker", href: "/social-media-tools/channel-checker" },
       { name: "Link in Bio Generator", href: "/social-media-tools/link-in-bio" },
       { name: "AI Caption Generator", href: "/ai-tools/caption-generator" },
-      { name: "Percentage Calculator", href: "/calculator/percentage-calculator" },
+      { name: "ROAS Calculator", href: "/ad-tools/roas-calculator" },
+      { name: "Freelance Rate Calculator", href: "/finance-tools/freelance-rate-calculator" },
+      { name: "All Social Media Tools", href: "/social-media-tools" },
     ]
   }
 

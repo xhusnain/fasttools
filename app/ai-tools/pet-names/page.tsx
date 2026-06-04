@@ -200,7 +200,11 @@ const toolConfig = createToolConfig({
     relatedTools: [
       { name: "AI Caption Generator", href: "/ai-tools/caption-generator" },
       { name: "AI Lyrics Generator", href: "/ai-tools/lyrics-generator" },
-      { name: "Token to Word Converter", href: "/ai-tools/token-to-word-converter" },
+      { name: "AI QR Code Generator", href: "/ai-tools/qr-generator" },
+      { name: "YouTube Channel Name Generator", href: "/social-media-tools/youtube-channel-name-generator" },
+      { name: "Blog Title Generator", href: "/seo-tools/blog-titles" },
+      { name: "Love Calculator", href: "/calculator/love-calculator" },
+      { name: "Wheel Spinner", href: "/fun-tools/wheel-spinner" },
       { name: "All AI Tools", href: "/ai-tools" },
     ],
   },
