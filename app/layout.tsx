@@ -40,6 +40,7 @@ export const metadata: Metadata = {
             "p:domain_verify": "603c992f6d70753cf89c1a0141990c73",
             "facebook-domain-verification": "m4jw5d6c1jsteghq2xo00wflvif79x",
             "google-adsense-account": "ca-pub-6296569221534302",
+            "xenonflare-verify": "55f590ebda61c7a79474ce067499c857",
         },
     },
     twitter: {
