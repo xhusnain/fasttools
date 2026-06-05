@@ -201,7 +201,15 @@ const toolConfig = createToolConfig({
   },
 })
 
-export const metadata: Metadata = toolConfig.metadata
+// Canonical points to the main Instagram DP Viewer page — this page serves the
+// same tool and would otherwise cannibalize its rankings for DP-viewer queries.
+export const metadata: Metadata = {
+  ...toolConfig.metadata,
+  alternates: {
+    ...toolConfig.metadata.alternates,
+    canonical: "https://fasttools.store/social-media-tools/instagram-dp",
+  },
+}
 
 export default function InstagramProfilePictureViewerPage() {
   return <ToolPageLayout {...toolConfig.getLayoutProps(<InstagramDpViewer />)} />

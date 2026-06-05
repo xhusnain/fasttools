@@ -3,7 +3,7 @@ import { searchItems } from "@/lib/search-data"
 import { toolSchemas } from "@/lib/webmcp-tool-schemas"
 import type { WebMCPToolCatalogEntry, WebMCPToolCatalogResponse } from "@/types/webmcp.types"
 
-const BASE_URL = "https://www.fasttools.store"
+const BASE_URL = "https://fasttools.store"
 
 function slugify(name: string): string {
     return name

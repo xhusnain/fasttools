@@ -2,7 +2,7 @@ import type { MetadataRoute } from "next"
 import { noindexPaths } from "@/lib/noindex"
 import { getBlogSitemapPages } from "@/lib/blog"
 
-export const baseUrl = "https://www.fasttools.store"
+export const baseUrl = "https://fasttools.store"
 
 const u = (path: string) => `${baseUrl}${path}`
 
@@ -42,8 +42,8 @@ export const sitemapPages = [
   { url: u("/security-tools"), lastModified: new Date("2026-04-17"), changeFrequency: "weekly" as const, priority: 0.9 },
 
   // ─── Social Media Tools ──────────────────────────────────────────────
-  { url: u("/social-media-tools/instagram-dp"), lastModified: new Date("2026-03-07"), changeFrequency: "weekly" as const, priority: 1.0 },
-  { url: u("/social-media-tools/instagram-profile-picture-viewer"), lastModified: new Date("2026-06-02"), changeFrequency: "weekly" as const, priority: 0.95 },
+  { url: u("/social-media-tools/instagram-dp"), lastModified: new Date("2026-06-05"), changeFrequency: "weekly" as const, priority: 1.0 },
+  // instagram-profile-picture-viewer intentionally excluded: it canonicals to /instagram-dp (cannibalization fix)
   { url: u("/social-media-tools/instagram-dp/private-account"), lastModified: new Date("2026-03-23"), changeFrequency: "monthly" as const, priority: 0.9 },
   { url: u("/social-media-tools/instagram-dp/hd-1080p"), lastModified: new Date("2026-03-23"), changeFrequency: "monthly" as const, priority: 0.9 },
   { url: u("/social-media-tools/instagram-dp/pc-viewer"), lastModified: new Date("2026-03-23"), changeFrequency: "monthly" as const, priority: 0.9 },

@@ -39,7 +39,18 @@ const proxyDispatchers = new Map<string, ProxyAgent>();
 function getDispatcher(proxyUrl: string): ProxyAgent {
   let agent = proxyDispatchers.get(proxyUrl);
   if (!agent) {
-    agent = new ProxyAgent(proxyUrl);
+    // keepAliveTimeout/keepAliveMaxTimeout = 1 disables connection reuse —
+    // every request gets a fresh TCP handshake. Slightly more latency, but
+    // bore.pub's tunnel closes idle connections aggressively, so a pooled
+    // socket is often half-dead by the next request and undici hangs or
+    // throws broken-pipe. Fresh-per-request is the reliable path.
+    // pipelining: 0 disables HTTP pipelining for the same reason.
+    agent = new ProxyAgent({
+      uri: proxyUrl,
+      keepAliveTimeout: 1,
+      keepAliveMaxTimeout: 1,
+      pipelining: 0,
+    });
     proxyDispatchers.set(proxyUrl, agent);
   }
   return agent;
@@ -57,9 +68,16 @@ function getDispatcher(proxyUrl: string): ProxyAgent {
 // ~20% clean per attempt → 9 attempts ≈ 87% overall success.
 const MAX_PROXY_ATTEMPTS = WEBSHARE_PROXY_URLS.length * 3;
 
-// Cooldown for an account that just returned 429 or 407. Skipped during this
-// window so we don't burn attempts on a known-rate-limited account.
+// Cooldown for an account that just returned 429 or 407 — Webshare's
+// account-level burst rate limit takes ~30s to reset, so skip during that
+// window to avoid burning attempts on a known-bad account.
 const RATE_LIMIT_COOLDOWN_MS = 30_000;
+
+// Shorter cooldown for transient network errors (broken pipe, TLS reset,
+// timeout). Used for the home gost+bore proxy which has occasional TCP
+// disconnects but recovers in seconds — a 30s cooldown would needlessly
+// keep falling back to Webshare for ~6× longer than necessary.
+const NETWORK_ERROR_COOLDOWN_MS = 5_000;
 const cooldownUntil = new Array<number>(WEBSHARE_PROXY_URLS.length).fill(0);
 
 function pickProxyIndex(start: number, attempt: number): number | null {
@@ -115,11 +133,11 @@ export async function fetchHtmlViaWebshare(
 
       return result;
     } catch (error) {
-      // Network-level failure (proxy unreachable / DNS / TLS / timeout).
-      // Cool the proxy so the next request skips this dead endpoint for 30s.
-      // Don't surface error.message — undici can embed the proxy URL (with
-      // credentials) in cause chains.
-      cooldownUntil[index] = Date.now() + RATE_LIMIT_COOLDOWN_MS;
+      // Network-level failure (proxy unreachable / DNS / TLS / broken pipe).
+      // Use the short cooldown — bore tunnel disconnects recover in seconds,
+      // not minutes. Don't surface error.message — undici can embed the proxy
+      // URL (with credentials) in cause chains.
+      cooldownUntil[index] = Date.now() + NETWORK_ERROR_COOLDOWN_MS;
       lastError = error instanceof Error ? error : new Error(String(error));
     }
   }
@@ -153,7 +171,7 @@ export async function fetchViaWebshare(
 
       return response;
     } catch (error) {
-      cooldownUntil[index] = Date.now() + RATE_LIMIT_COOLDOWN_MS;
+      cooldownUntil[index] = Date.now() + NETWORK_ERROR_COOLDOWN_MS;
       lastError = error instanceof Error ? error : new Error(String(error));
     }
   }

@@ -8,7 +8,7 @@ import { marked } from "marked"
 import { cleanContentForSearch } from "@/lib/text-utils"
 import { createBreadcrumbSchema, createMetadata, getCanonicalUrl } from "@/lib/metadata-base"
 
-const BASE_URL = "https://www.fasttools.store"
+const BASE_URL = "https://fasttools.store"
 const SITE_NAME = "FastTools"
 const BLOG_CONTENT_DIR = path.join(process.cwd(), "content", "blog")
 const DEFAULT_AUTHOR = "FastTools Team"

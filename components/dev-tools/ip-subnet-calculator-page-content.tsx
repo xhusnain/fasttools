@@ -153,11 +153,11 @@ export function IPSubnetCalculatorPageContent() {
           description: "Free online IP subnet calculator for IPv4 and IPv6 networks. Calculate subnets, CIDR notation, VLSM, supernetting, and comprehensive network analysis.",
           applicationCategory: "NetworkApplication",
           operatingSystem: "Any",
-          url: "https://www.fasttools.store/calculator/ip-subnet-calculator",
+          url: "https://fasttools.store/calculator/ip-subnet-calculator",
           author: {
             "@type": "Organization",
             name: "FastTools",
-            url: "https://www.fasttools.store"
+            url: "https://fasttools.store"
           },
           datePublished: "2024-01-01",
           dateModified: new Date().toISOString().split('T')[0],
@@ -213,19 +213,19 @@ export function IPSubnetCalculatorPageContent() {
                 "@type": "ListItem",
                 position: 1,
                 name: "Home",
-                item: "https://www.fasttools.store"
+                item: "https://fasttools.store"
               },
               {
                 "@type": "ListItem",
                 position: 2,
                 name: "Calculator",
-                item: "https://www.fasttools.store/calculator"
+                item: "https://fasttools.store/calculator"
               },
               {
                 "@type": "ListItem",
                 position: 3,
                 name: "IP Subnet Calculator",
-                item: "https://www.fasttools.store/calculator/ip-subnet-calculator"
+                item: "https://fasttools.store/calculator/ip-subnet-calculator"
               }
             ]
           }

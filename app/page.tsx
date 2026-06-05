@@ -31,17 +31,17 @@ export default function Home() {
     "@type": "WebPage",
     name: "FastTools - 200+ Free Online Tools | Calculators, Converters, PDF & AI Tools",
     description: "200+ free online tools — calculators, converters, PDF tools, AI generators, developer utilities & more. No signup, no uploads. Everything runs in your browser.",
-    url: "https://www.fasttools.store",
+    url: "https://fasttools.store",
     author: {
       "@type": "Organization",
       name: "FastTools",
-      url: "https://www.fasttools.store",
+      url: "https://fasttools.store",
       description: "Free online tools platform with 200+ calculators, converters, PDF tools, AI generators and developer utilities. All tools run locally in your browser."
     },
     publisher: {
       "@type": "Organization",
       name: "FastTools",
-      url: "https://www.fasttools.store"
+      url: "https://fasttools.store"
     },
     datePublished: "2024-01-01",
     dateModified: new Date().toISOString().split('T')[0],
@@ -68,7 +68,7 @@ export default function Home() {
           "@type": "ListItem",
           position: 1,
           name: "Home",
-          item: "https://www.fasttools.store"
+          item: "https://fasttools.store"
         }
       ]
     },
@@ -80,7 +80,7 @@ export default function Home() {
     isPartOf: {
       "@type": "WebSite",
       name: "FastTools",
-      url: "https://www.fasttools.store"
+      url: "https://fasttools.store"
     },
     mainEntity: {
       "@type": "FAQPage",

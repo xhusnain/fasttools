@@ -32,11 +32,11 @@ export default function CookiePreferencesPage() {
     "@type": "WebPage",
     name: "Cookie Policy - FastTools",
     description: "Comprehensive cookie policy covering Google AdSense cookies, Google Analytics, user consent management, and GDPR/CCPA compliance.",
-    url: "https://www.fasttools.store/cookie-preferences",
+    url: "https://fasttools.store/cookie-preferences",
     publisher: {
       "@type": "Organization",
       name: "FastTools",
-      url: "https://www.fasttools.store"
+      url: "https://fasttools.store"
     },
     datePublished: "2025-11-01",
     dateModified: "2025-11-01",

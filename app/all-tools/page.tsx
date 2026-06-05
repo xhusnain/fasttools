@@ -16,7 +16,7 @@ export default function AllToolsPage() {
   const groupedTools: Record<string, typeof toolPages> = {};
 
   toolPages.forEach((tool) => {
-    const path = tool.url.replace("https://www.fasttools.store", "");
+    const path = tool.url.replace("https://fasttools.store", "");
     const category = path.split("/")[1] || "general";
     
     if (!groupedTools[category]) {
@@ -91,7 +91,7 @@ export default function AllToolsPage() {
                 {/* Tools Grid - Pure Links, No Cards */}
                 <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-x-8 gap-y-4">
                   {tools.map((tool) => {
-                    const path = tool.url.replace("https://www.fasttools.store", "");
+                    const path = tool.url.replace("https://fasttools.store", "");
                     const name = path.split("/").pop()
                         ?.replace(/-/g, " ")
                         .replace(/^\w/, (c) => c.toUpperCase()) || "Tool";
@@ -124,7 +124,7 @@ export default function AllToolsPage() {
           
           <div className="flex flex-wrap gap-x-6 gap-y-3">
               {mainPages.map((page) => {
-                  const path = page.url.replace("https://www.fasttools.store", "");
+                  const path = page.url.replace("https://fasttools.store", "");
                   if (path === "") return null;
                   const label = path.replace("/", "").replace(/-/g, " ").toUpperCase();
                   

@@ -1,7 +1,7 @@
 import type { Metadata, Viewport } from "next"
 import { noindexPaths } from "./noindex"
 
-const BASE_URL = "https://www.fasttools.store"
+const BASE_URL = "https://fasttools.store"
 const SITE_NAME = "FastTools"
 
 // Dead/low-value pages to keep out of the index. Enforced here as a <meta robots>

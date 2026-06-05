@@ -38,11 +38,11 @@ export default function PrivacyPolicyPage() {
     "@type": "WebPage",
     name: "Privacy Policy - FastTools",
     description: "Comprehensive privacy policy covering GDPR, CCPA compliance, Google AdSense policies, and transparent data protection practices.",
-    url: "https://www.fasttools.store/privacy-policy",
+    url: "https://fasttools.store/privacy-policy",
     publisher: {
       "@type": "Organization",
       name: "FastTools",
-      url: "https://www.fasttools.store"
+      url: "https://fasttools.store"
     },
     datePublished: "2025-11-01",
     dateModified: "2025-11-01",
@@ -97,7 +97,7 @@ export default function PrivacyPolicyPage() {
                 </div>
                 <div className="space-y-4 text-muted-foreground leading-relaxed">
                   <p>
-                    At FastTools ("we," "our," or "us"), we are committed to protecting your privacy and ensuring the security of your personal information. This Privacy Policy explains how we collect, use, disclose, and safeguard your information when you visit our website https://www.fasttools.store (the "Site") and use our free online tools and services.
+                    At FastTools ("we," "our," or "us"), we are committed to protecting your privacy and ensuring the security of your personal information. This Privacy Policy explains how we collect, use, disclose, and safeguard your information when you visit our website https://fasttools.store (the "Site") and use our free online tools and services.
                   </p>
                   <p>
                     By using our Site, you consent to the data practices described in this Privacy Policy. If you do not agree with the terms of this Privacy Policy, please do not use our Site.
@@ -435,9 +435,9 @@ export default function PrivacyPolicyPage() {
                       </div>
                       <div>
                         <h4 className="font-semibold text-foreground mb-2">Website</h4>
-                        <a href="https://www.fasttools.store" className="flex items-center gap-2 text-foreground hover:text-foreground hover:underline font-medium">
+                        <a href="https://fasttools.store" className="flex items-center gap-2 text-foreground hover:text-foreground hover:underline font-medium">
                           <Globe className="h-4 w-4" />
-                          https://www.fasttools.store
+                          https://fasttools.store
                         </a>
                       </div>
                     </div>

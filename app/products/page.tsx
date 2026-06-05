@@ -182,14 +182,14 @@ export default function ProductsPage() {
     "@type": "ItemList",
     name: "FastTools Products - All Tool Categories",
     description: "Complete collection of free online tools organized by category, designed for productivity, creativity, and convenience.",
-    url: "https://www.fasttools.store/products",
+    url: "https://fasttools.store/products",
     numberOfItems: categories.length,
     itemListElement: categories.map((category, index) => ({
       "@type": "ListItem",
       position: index + 1,
       name: category.name,
       description: category.description,
-      url: `https://www.fasttools.store${category.href}`
+      url: `https://fasttools.store${category.href}`
     }))
   }
 
@@ -201,13 +201,13 @@ export default function ProductsPage() {
         "@type": "ListItem",
         position: 1,
         name: "Home",
-        item: "https://www.fasttools.store/"
+        item: "https://fasttools.store/"
       },
       {
         "@type": "ListItem",
         position: 2,
         name: "Products",
-        item: "https://www.fasttools.store/products"
+        item: "https://fasttools.store/products"
       }
     ]
   }

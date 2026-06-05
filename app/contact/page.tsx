@@ -99,7 +99,7 @@ export default function ContactPage() {
     "@type": "ContactPage",
     name: "Contact FastTools",
     description: "Get in touch with FastTools for support, feedback, or any questions about our free online tools. We are here to help you with our calculators, converters, and AI-powered utilities.",
-    url: "https://www.fasttools.store/contact",
+    url: "https://fasttools.store/contact",
     mainEntity: {
       "@type": "Organization",
       name: "FastTools",
@@ -118,13 +118,13 @@ export default function ContactPage() {
           "@type": "ListItem",
           position: 1,
           name: "Home",
-          item: "https://www.fasttools.store"
+          item: "https://fasttools.store"
         },
         {
           "@type": "ListItem",
           position: 2,
           name: "Contact",
-          item: "https://www.fasttools.store/contact"
+          item: "https://fasttools.store/contact"
         }
       ]
     }

@@ -5,9 +5,9 @@ export async function GET(request: Request) {
     const urlList = indexablePages.map(p => p.url);
 
     const body = {
-        host: "www.fasttools.store",
+        host: "fasttools.store",
         key: "3294d73fd9654aa08ebfd8971f3faf01",
-        keyLocation: "https://www.fasttools.store/3294d73fd9654aa08ebfd8971f3faf01.txt",
+        keyLocation: "https://fasttools.store/3294d73fd9654aa08ebfd8971f3faf01.txt",
         urlList: urlList
     };
 

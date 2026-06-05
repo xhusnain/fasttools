@@ -29,13 +29,13 @@ export default function AboutPage() {
     "@type": "AboutPage",
     name: "About FastTools - Leading Free Online Tools Platform",
     description: "Discover FastTools, a free online tools platform. Access all professional tools including AI generators, converters, calculators, SEO tools, and productivity utilities.",
-    url: "https://www.fasttools.store/about",
+    url: "https://fasttools.store/about",
     mainEntity: {
       "@type": "Organization",
       name: "FastTools",
-      alternateName: "www.fasttools.store",
+      alternateName: "fasttools.store",
       description: "FastTools is a free online tools platform offering all digital tools including AI generators, converters, calculators, SEO tools, and productivity utilities.",
-      url: "https://www.fasttools.store",
+      url: "https://fasttools.store",
       foundingDate: "2024",
       contactPoint: {
         "@type": "ContactPoint",
@@ -58,13 +58,13 @@ export default function AboutPage() {
           "@type": "ListItem",
           position: 1,
           name: "Home",
-          item: "https://www.fasttools.store"
+          item: "https://fasttools.store"
         },
         {
           "@type": "ListItem",
           position: 2,
           name: "About",
-          item: "https://www.fasttools.store/about"
+          item: "https://fasttools.store/about"
         }
       ]
     }
@@ -78,13 +78,13 @@ export default function AboutPage() {
         "@type": "ListItem",
         position: 1,
         name: "Home",
-        item: "https://www.fasttools.store/"
+        item: "https://fasttools.store/"
       },
       {
         "@type": "ListItem",
         position: 2,
         name: "About",
-        item: "https://www.fasttools.store/about"
+        item: "https://fasttools.store/about"
       }
     ]
   }

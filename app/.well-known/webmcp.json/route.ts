@@ -12,9 +12,9 @@ export async function GET() {
                 "Free online tools: calculators, converters, crypto, PDF, developer tools, and more.",
             provider: {
                 name: "FastTools",
-                url: "https://www.fasttools.store",
+                url: "https://fasttools.store",
             },
-            tools_endpoint: "https://www.fasttools.store/api/webmcp/tools",
+            tools_endpoint: "https://fasttools.store/api/webmcp/tools",
             version: "1.0.0",
         },
         {
