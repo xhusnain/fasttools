@@ -1,47 +1,8 @@
-export const noindexPaths: string[] = [
-
-  // ─── Calculators (off-niche / dead / 0 clicks) ────────────────────────
-  "/calculator/concrete-calculator",
-  "/calculator/conversion-calculator",
-  "/calculator/body-fat-calculator",
-  "/calculator/fraction-calculator",
-  "/calculator/triangle-calculator",
-  "/calculator/pace-calculator",
-  "/calculator/time-duration",
-  "/calculator/standard-deviation-calculator",
-
-  // ─── Finance Tools (dead / too competitive) ────────────────────────────
-  "/finance-tools/retirement-planner",
-  "/finance-tools/retirement-calculator",
-  "/finance-tools/amortization-calculator",
-  "/finance-tools/credit-card-payoff",
-  "/finance-tools/interest-rate-calculator",
-  "/finance-tools/payment-calculator",
-  "/finance-tools/inflation-calculator",
-  "/finance-tools/finance-calculator",
-  "/finance-tools/tax-calculator",
-  "/finance-tools/investment-calculator",
-  "/finance-tools/salary-calculator",
-  "/finance-tools/compound-interest",
-  "/finance-tools/mortgage-calculator",
-
-  // ─── Converters (dead / very niche) ────────────────────────────────────
-  "/converters/roman-numeral",
-  "/converters/morse-code",
-  "/converters/nato-phonetic",
-  "/converters/ascii-binary",
-  "/converters/unicode",
-  "/converters/integer-base",
-  "/converters/toml-yaml",
-  "/converters/toml-json",
-  "/converters/json-toml",
-  "/converters/yaml-toml",
-  "/converters/json-xml",
-
-  // ─── AI Tools (dead / very niche) ──────────────────────────────────────
-  "/ai-tools/token-to-word-converter",
-
-  // ─── SEO Tools (dead) ──────────────────────────────────────────────────
-  // ─── Crypto Tools (very niche) ─────────────────────────────────────────
-  "/crypto-tools/ulid-generator",
-]
+// No pages are noindexed. Every tool/page is indexable (index, follow).
+//
+// Previously this list noindexed ~34 finance/calculator/converter pages judged
+// "dead / 0 clicks" — but those 0 clicks were caused by the un-redirected
+// /tools/* restructure (the pages were 404ing), not by low value. De-indexing
+// them on top of the 404s deepened the traffic loss, so the list was cleared.
+// Add a path here only to deliberately noindex a specific page.
+export const noindexPaths: string[] = []
