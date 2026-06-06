@@ -90,11 +90,11 @@ export default function ApiDocsPage() {
     "@type": "WebPage",
     name: "FastTools API Documentation",
     description: "Comprehensive API documentation for FastTools services, offering free, reliable, and easy-to-use developer tools.",
-    url: "https://www.fasttools.store/api-docs",
+    url: "https://fasttools.store/api-docs",
     provider: {
       "@type": "Organization",
       name: "FastTools",
-      url: "https://www.fasttools.store"
+      url: "https://fasttools.store"
     }
   }
 
@@ -106,13 +106,13 @@ export default function ApiDocsPage() {
         "@type": "ListItem",
         position: 1,
         name: "Home",
-        item: "https://www.fasttools.store/"
+        item: "https://fasttools.store/"
       },
       {
         "@type": "ListItem",
         position: 2,
         name: "API Docs",
-        item: "https://www.fasttools.store/api-docs"
+        item: "https://fasttools.store/api-docs"
       }
     ]
   }

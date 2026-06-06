@@ -2,7 +2,7 @@ import type { MetadataRoute } from "next"
 import { noindexPaths } from "@/lib/noindex"
 import { getBlogSitemapPages } from "@/lib/blog"
 
-export const baseUrl = "https://www.fasttools.store"
+export const baseUrl = "https://fasttools.store"
 
 const u = (path: string) => `${baseUrl}${path}`
 

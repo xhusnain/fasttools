@@ -20,13 +20,13 @@ const CookieConsent = dynamic(
 export const viewport = globalViewport
 
 export const metadata: Metadata = {
-    metadataBase: new URL("https://www.fasttools.store"),
+    metadataBase: new URL("https://fasttools.store"),
     title: {
         default: "FastTools - Free Online Tools | Calculators, Converters & Developer Tools",
         template: "%s",
     },
     description: "Free online tools: calculators, converters, developer tools, SEO tools, image tools, PDF tools & more. No signup required, 100% free, secure local processing.",
-    authors: [{ name: "FastTools Team", url: "https://www.fasttools.store" }],
+    authors: [{ name: "FastTools Team", url: "https://fasttools.store" }],
     robots: {
         index: true,
         follow: true,
@@ -58,7 +58,7 @@ export default function RootLayout({
         "@type": "Organization",
         name: "FastTools",
         alternateName: ["fasttools", "fast tools", "online tools"],
-        url: "https://www.fasttools.store",
+        url: "https://fasttools.store",
         description: "FastTools is a free online tools platform. Calculators, converters, crypto, PDF, developer tools — all free, no signup required.",
         foundingDate: "2024-01-01",
         sameAs: [
@@ -98,7 +98,7 @@ export default function RootLayout({
         },
     }
 
-    const websiteSchema = getWebsiteSchema("https://www.fasttools.store/all-tools?q={search_term_string}")
+    const websiteSchema = getWebsiteSchema("https://fasttools.store/all-tools?q={search_term_string}")
 
     return (
         <html lang="en" className={`antialiased ${roboto.variable} ${montserrat.variable}`} suppressHydrationWarning>
