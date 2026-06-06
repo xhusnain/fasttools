@@ -3,8 +3,8 @@
 
 # TEAM
 
-    Developer: www.fasttools.store Team
-    Contact: hello [at] www.fasttools.store
+    Developer: fasttools.store Team
+    Contact: hello [at] fasttools.store
     From: United States
 
 # THANKS
@@ -18,7 +18,7 @@
     Icons: Lucide React
     Analytics: Google Analytics
     Hosting: Self-hosted VM
-    Domain: www.fasttools.store
+    Domain: fasttools.store
 
 # SITE
 

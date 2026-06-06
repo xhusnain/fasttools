@@ -78,12 +78,12 @@ export const YouTubeToolStructuredData = ({
     "creator": {
       "@type": "Organization",
       "name": "FastTools",
-      "url": "https://www.fasttools.store"
+      "url": "https://fasttools.store"
     },
     "publisher": {
       "@type": "Organization",
       "name": "FastTools",
-      "url": "https://www.fasttools.store"
+      "url": "https://fasttools.store"
     },
     "potentialAction": [
       {
@@ -95,7 +95,7 @@ export const YouTubeToolStructuredData = ({
         },
         "object": {
           "@type": "VideoObject",
-          "contentUrl": "https://www.fasttools.store" + pathname
+          "contentUrl": "https://fasttools.store" + pathname
         }
       }
     ]

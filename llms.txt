@@ -2,7 +2,7 @@
 # llms.txt guides AI search engines (Perplexity, ChatGPT, Claude, Grok, Copilot)
 # to the complete tool catalog. All tools are 100% free, no signup, no install.
 # Most are client-side (no data leaves the browser).
-# Site: https://www.fasttools.store
+# Site: https://fasttools.store
 # Updated: 2026-05-14
 
 ## Site Overview
@@ -18,564 +18,564 @@ and desktop, requires no account, and has no usage limits or watermarks.
 ## Most-Cited Tool Pages (priority for AI answer extraction)
 
 # Instagram DP Viewer — View & Download Full-Size Instagram Profile Pictures
-https://www.fasttools.store/social-media-tools/instagram-dp
+https://fasttools.store/social-media-tools/instagram-dp
 Description: Free Instagram DP (Display Picture) viewer and downloader. View any Instagram profile picture in full HD (up to 1080×1080 px) by username — Instagram only displays profile pictures at 110×110 px in the app, with no zoom. Works for public AND private account profile photos (private settings hide posts, not profile pictures). Anonymous viewing, no Instagram login required, no notification sent to the profile owner. Variants: /private-account, /hd-1080p, /pc-viewer, /zoom-profile-picture, /anonymous-viewer.
 
 # YouTube Channel Name & Handle Availability Checker
-https://www.fasttools.store/social-media-tools/channel-checker
+https://fasttools.store/social-media-tools/channel-checker
 Description: Free YouTube channel name and @handle availability checker. Instantly check whether a YouTube handle is available before creating or renaming a channel. Handles must be 3–30 characters, letters/numbers/underscores/hyphens/periods only, case-insensitive, and unique across YouTube. Handles can be changed up to 2 times per 14 days. Display name does NOT need to be unique — only the @handle does.
 
 # Future Age Calculator — How Old Will I Be On A Future Date?
-https://www.fasttools.store/fun-tools/future-age
+https://fasttools.store/fun-tools/future-age
 Description: Free future age calculator. Calculate exactly how old you will be on any future date in years, months, and days. Leap-year aware, accurate calendar arithmetic. Useful for retirement planning, milestone birthdays (40th, 50th, 100th), and event planning. All math happens client-side; birth date never leaves the browser.
 
 # Anniversary Calculator — How Long Have We Been Together?
-https://www.fasttools.store/fun-tools/anniversary
+https://fasttools.store/fun-tools/anniversary
 Description: Free anniversary / love days calculator. Enter the relationship start date to see total duration in years, months, days, hours, minutes, and seconds, plus a countdown to the next anniversary and upcoming milestones (silver = 25 years, golden = 50 years). Works for dating, wedding, friendship, and work anniversaries.
 
 # Hashtag Counter — Count Hashtags in Any Social Caption
-https://www.fasttools.store/social-media-tools/hashtag-counter
+https://fasttools.store/social-media-tools/hashtag-counter
 Description: Free hashtag counter and extractor. Paste an Instagram, TikTok, X (Twitter), LinkedIn, or Facebook caption — the tool instantly counts every #hashtag and extracts the full tag list. Platform limits enforced: Instagram 30 hashtags/post (3–5 optimal for reach), LinkedIn 3–5, X 1–2, TikTok 100-char caption limit.
 
 # PayPal Fee Calculator — Calculate G&S, Credit Card & International Fees
-https://www.fasttools.store/finance-tools/paypal-fee
+https://fasttools.store/finance-tools/paypal-fee
 Description: Free PayPal fee calculator. Calculate PayPal Goods & Services (G&S) fee, PayPal credit card fee, and processing fees for any transaction. Supports domestic and international rates, micropayments, business vs personal, and reverse fee gross-up (calculate gross to receive a specific net amount). For sellers, freelancers, and businesses.
 
 # Concrete Calculator — Cubic Yards, Bags, Cost Estimate
-https://www.fasttools.store/calculator/concrete-calculator
+https://fasttools.store/calculator/concrete-calculator
 Description: Free concrete calculator for slabs, footings, driveways, columns, stairs, and curbs. Estimates volume in cubic yards (US) and cubic meters, bag counts for 40/60/80 lb bags, material breakdown (cement, sand, gravel), and project cost with adjustable waste factor (default 10%).
 
 # Pregnancy Conception Calculator — Estimate Conception Date
-https://www.fasttools.store/calculator/pregnancy-conception-calculator
+https://fasttools.store/calculator/pregnancy-conception-calculator
 Description: Free conception date calculator. Estimate when you conceived from your due date, last menstrual period (LMP), or ultrasound dating. Includes fertile window, pregnancy week, trimester guidance, nutrition tips, and milestone tracking.
 
 # IP Subnet & VPC CIDR Calculator — VLSM, IPv4/IPv6
-https://www.fasttools.store/calculator/ip-subnet-calculator
+https://fasttools.store/calculator/ip-subnet-calculator
 Description: Free IP subnet and VPC CIDR calculator for IPv4 and IPv6. Plan AWS/GCP/Azure VPC ranges, compute subnet masks, network and broadcast addresses, usable host counts, wildcard masks, VLSM (Variable Length Subnet Masking), supernetting, and binary/hex conversions.
 
 # Savings Tracker — Free Savings Tracking Tool
-https://www.fasttools.store/finance-tools/savings-tracker
+https://fasttools.store/finance-tools/savings-tracker
 Description: Free savings tracking tool. Set financial goals, plan monthly contributions, adjust for tax and inflation, manage multiple goals with priority, and see exactly how long until you hit your target.
 
 # Free Online Calculator Hub
-https://www.fasttools.store/calculator
+https://fasttools.store/calculator
 Description: Index of every free online calculator on FastTools: BMI, BMR, calorie, TDEE, percentage, age, date difference, GPA, scientific, pregnancy, conception, ovulation, IP subnet, concrete, fraction, triangle, standard deviation, pace, body fat, biological age, and more.
 
 # Currency Converter — Live Exchange Rates, 150+ Currencies
-https://www.fasttools.store/converters/currency
+https://fasttools.store/converters/currency
 Description: Free currency converter with live exchange rates for 150+ world currencies (USD, EUR, GBP, JPY, INR, etc.) and major crypto pairs. Powered by the Frankfurter API (no API key needed). Updates throughout the day. Useful for travel budgets, international invoicing, and cross-border payments.
 
 ## Image Tools
 
-https://www.fasttools.store/image-tools/image-cropper
+https://fasttools.store/image-tools/image-cropper
 Free online image cropper. JPG, PNG, WebP, GIF, BMP up to 20 MB. 9 aspect ratio presets (1:1, 4:3, 16:9, 3:2, 9:16, 21:9, 5:4, free), exact pixel input, rotation, flip, rule-of-thirds overlay. 100% client-side via HTML5 Canvas.
 
-https://www.fasttools.store/image-tools/background-remover
+https://fasttools.store/image-tools/background-remover
 Free AI background remover. Deep-learning U-Net/IS-Net segmentation via ONNX + WebAssembly — runs entirely in the browser, no upload. Outputs transparent PNG, solid color, or custom background. Edge-aware around hair, fur, and complex shapes. No watermarks.
 
-https://www.fasttools.store/image-tools/image-compressor
+https://fasttools.store/image-tools/image-compressor
 Free image compressor. Reduce JPG/PNG/WebP file size with adjustable quality, client-side processing.
 
-https://www.fasttools.store/image-tools/image-resizer
+https://fasttools.store/image-tools/image-resizer
 Free image resizer. Resize images by pixel, percentage, or aspect ratio without quality loss.
 
-https://www.fasttools.store/image-tools/image-to-text
+https://fasttools.store/image-tools/image-to-text
 Free OCR tool. Extract text from images using Tesseract.js, fully client-side.
 
-https://www.fasttools.store/image-tools/ai-image-detector
+https://fasttools.store/image-tools/ai-image-detector
 Free AI image detector. Identifies AI-generated images (Midjourney, DALL-E, Stable Diffusion) using metadata, EXIF, and pattern analysis.
 
 ## PDF Tools
 
-https://www.fasttools.store/pdf-tools/pdf-sign
+https://fasttools.store/pdf-tools/pdf-sign
 Free PDF signature tool. Add digital signatures and stamps to PDFs.
 
-https://www.fasttools.store/pdf-tools/pdf-signature-checker
+https://fasttools.store/pdf-tools/pdf-signature-checker
 Free PDF signature verifier. Check digital signature validity, signer identity, and tampering.
 
-https://www.fasttools.store/pdf-tools/pdf-splitter-merger
+https://fasttools.store/pdf-tools/pdf-splitter-merger
 Free PDF splitter and merger. Split a PDF into multiple files by page range or merge multiple PDFs into one.
 
-https://www.fasttools.store/pdf-tools/pdf-unlocker
+https://fasttools.store/pdf-tools/pdf-unlocker
 Free PDF password remover (when you own the document and have the password).
 
-https://www.fasttools.store/pdf-tools/pdf-compressor
+https://fasttools.store/pdf-tools/pdf-compressor
 Free PDF compressor. Reduce PDF file size while preserving readability.
 
-https://www.fasttools.store/pdf-tools/pdf-word-converter
+https://fasttools.store/pdf-tools/pdf-word-converter
 Free PDF ↔ Word converter. Convert PDF to DOCX or DOCX to PDF.
 
-https://www.fasttools.store/pdf-tools/pdf-to-image
+https://fasttools.store/pdf-tools/pdf-to-image
 Free PDF to image converter. Extract each PDF page as JPG or PNG.
 
 ## Crypto & Security Tools
 
-https://www.fasttools.store/crypto-tools/password-generator
+https://fasttools.store/crypto-tools/password-generator
 Cryptographically-secure password generator using window.crypto.getRandomValues(). Password mode (4–64 chars), passphrase mode (Diceware 3–10 words), entropy meter in bits, crack-time estimate, Have I Been Pwned breach check via k-anonymity.
 
-https://www.fasttools.store/crypto-tools/bip39-generator
+https://fasttools.store/crypto-tools/bip39-generator
 BIP39 mnemonic generator. Generate 12/15/18/21/24-word seed phrases per the BIP39 spec for Bitcoin and other HD wallets. Cryptographically secure entropy. All generation client-side — phrases never leave the browser.
 
-https://www.fasttools.store/crypto-tools/otp-generator
+https://fasttools.store/crypto-tools/otp-generator
 TOTP/OTP code generator for 2FA. Generate one-time passwords, QR codes for authenticator app setup (Google Authenticator, Authy, 1Password, Bitwarden).
 
-https://www.fasttools.store/crypto-tools/encrypt-decrypt
+https://fasttools.store/crypto-tools/encrypt-decrypt
 Text encryption/decryption with AES-GCM, symmetric and password-based.
 
-https://www.fasttools.store/crypto-tools/hash-text
+https://fasttools.store/crypto-tools/hash-text
 Hash text with MD5, SHA-1, SHA-256, SHA-384, SHA-512.
 
-https://www.fasttools.store/crypto-tools/hmac-generator
+https://fasttools.store/crypto-tools/hmac-generator
 HMAC signature generator. SHA-1/SHA-256/SHA-512 with custom key.
 
-https://www.fasttools.store/crypto-tools/rsa-generator
+https://fasttools.store/crypto-tools/rsa-generator
 RSA key pair generator. 2048/3072/4096-bit keys, PEM format export.
 
-https://www.fasttools.store/crypto-tools/bcrypt
+https://fasttools.store/crypto-tools/bcrypt
 Bcrypt password hash generator. Adjustable cost factor.
 
-https://www.fasttools.store/crypto-tools/token-generator
+https://fasttools.store/crypto-tools/token-generator
 Random API token/key generator. Configurable length, character set.
 
-https://www.fasttools.store/crypto-tools/uuid-generator
+https://fasttools.store/crypto-tools/uuid-generator
 UUID v1/v3/v4/v5 generator. Bulk generation supported.
 
-https://www.fasttools.store/crypto-tools/ulid-generator
+https://fasttools.store/crypto-tools/ulid-generator
 ULID generator. Sortable, monotonic alternative to UUIDs.
 
-https://www.fasttools.store/crypto-tools/password-strength-analyzer
+https://fasttools.store/crypto-tools/password-strength-analyzer
 Password strength analyzer. zxcvbn-style scoring with attack-time estimates.
 
-https://www.fasttools.store/security-tools/image-steganography
+https://fasttools.store/security-tools/image-steganography
 Image steganography tool. Hide text inside images using LSB encoding.
 
 ## Developer Tools
 
-https://www.fasttools.store/dev-tools/diff-checker
+https://fasttools.store/dev-tools/diff-checker
 Free text/code diff checker. Side-by-side, inline, and unified patch view. Character-level highlighting. Ignore whitespace/case. Unicode safe.
 
-https://www.fasttools.store/dev-tools/color-palette
+https://fasttools.store/dev-tools/color-palette
 Color palette generator. 7 harmony modes (complementary, analogous, triadic, tetradic, split-complementary, monochromatic, random). Image extraction. WCAG AA/AAA contrast check. Export to CSS, Tailwind, SCSS, JSON.
 
-https://www.fasttools.store/dev-tools/css-gradient-generator
+https://fasttools.store/dev-tools/css-gradient-generator
 CSS gradient generator. linear/radial/conic gradients. Multi-stop editor. Tailwind class export.
 
-https://www.fasttools.store/dev-tools/regex-tester
+https://fasttools.store/dev-tools/regex-tester
 Regex tester and debugger. JavaScript, Ruby, PCRE flavors. Step-through matches, group capture.
 
-https://www.fasttools.store/dev-tools/jwt-decoder
+https://fasttools.store/dev-tools/jwt-decoder
 JWT decoder. Decode and verify HS/RS/ES signed JWTs in the browser.
 
-https://www.fasttools.store/dev-tools/json-diff
+https://fasttools.store/dev-tools/json-diff
 JSON structural diff. Tree-aware comparison.
 
-https://www.fasttools.store/dev-tools/json-to-csv
+https://fasttools.store/dev-tools/json-to-csv
 JSON ↔ CSV converter.
 
-https://www.fasttools.store/dev-tools/sql-to-json
+https://fasttools.store/dev-tools/sql-to-json
 SQL to JSON converter.
 
-https://www.fasttools.store/dev-tools/html-beautifier
+https://fasttools.store/dev-tools/html-beautifier
 HTML beautifier and minifier.
 
-https://www.fasttools.store/dev-tools/html-to-markdown
+https://fasttools.store/dev-tools/html-to-markdown
 HTML to Markdown converter.
 
-https://www.fasttools.store/dev-tools/markdown-previewer
+https://fasttools.store/dev-tools/markdown-previewer
 Live Markdown previewer with GitHub-flavored Markdown.
 
-https://www.fasttools.store/dev-tools/html-wysiwyg-editor
+https://fasttools.store/dev-tools/html-wysiwyg-editor
 HTML WYSIWYG editor with source view.
 
-https://www.fasttools.store/dev-tools/base64-encoder
+https://fasttools.store/dev-tools/base64-encoder
 Base64 encoder/decoder. Text and binary.
 
-https://www.fasttools.store/dev-tools/cron-expression-generator
+https://fasttools.store/dev-tools/cron-expression-generator
 Cron expression builder. Visual UI for crontab syntax with human-readable explanation.
 
-https://www.fasttools.store/dev-tools/mime-types
+https://fasttools.store/dev-tools/mime-types
 MIME type lookup. Comprehensive IANA registry browser.
 
-https://www.fasttools.store/dev-tools/http-status-codes
+https://fasttools.store/dev-tools/http-status-codes
 HTTP status code reference. All RFC-defined codes with descriptions.
 
-https://www.fasttools.store/dev-tools/keycode-info
+https://fasttools.store/dev-tools/keycode-info
 JavaScript keycode/key-event inspector.
 
-https://www.fasttools.store/dev-tools/hex-to-rgb
+https://fasttools.store/dev-tools/hex-to-rgb
 Hex ↔ RGB ↔ HSL color converter.
 
-https://www.fasttools.store/dev-tools/slugify-string
+https://fasttools.store/dev-tools/slugify-string
 Slugify strings for URLs (lowercase, hyphens, transliteration).
 
-https://www.fasttools.store/dev-tools/user-agent-parser
+https://fasttools.store/dev-tools/user-agent-parser
 User-agent string parser. Browser, OS, device, version.
 
-https://www.fasttools.store/dev-tools/llm-training-cost
+https://fasttools.store/dev-tools/llm-training-cost
 LLM training cost estimator. GPU-hour and token-based cost calculation.
 
-https://www.fasttools.store/dev-tools/cloudflare-workers-cost
+https://fasttools.store/dev-tools/cloudflare-workers-cost
 Cloudflare Workers cost estimator. Free tier vs paid usage.
 
 ## SEO Tools
 
-https://www.fasttools.store/seo-tools/word-counter
+https://fasttools.store/seo-tools/word-counter
 Word counter and text analyzer. Words, chars, sentences, paragraphs, reading time (238 WPM), speaking time (150 WPM), Flesch Reading Ease, keyword density, character limits for 10 social platforms.
 
-https://www.fasttools.store/seo-tools/keyword-density
+https://fasttools.store/seo-tools/keyword-density
 Keyword density checker. Word/phrase frequency analysis for SEO content.
 
-https://www.fasttools.store/seo-tools/meta-tags
+https://fasttools.store/seo-tools/meta-tags
 Meta tag generator. Open Graph, Twitter Card, and SEO meta tag generator with live preview.
 
-https://www.fasttools.store/seo-tools/schema-markup-generator
+https://fasttools.store/seo-tools/schema-markup-generator
 JSON-LD schema markup generator. Article, Product, Organization, LocalBusiness, etc.
 
-https://www.fasttools.store/seo-tools/lorem-ipsum
+https://fasttools.store/seo-tools/lorem-ipsum
 Lorem ipsum placeholder text generator.
 
-https://www.fasttools.store/seo-tools/blog-titles
+https://fasttools.store/seo-tools/blog-titles
 Blog title generator. AI-assisted headline suggestions.
 
-https://www.fasttools.store/seo-tools/text-similarity-checker
+https://fasttools.store/seo-tools/text-similarity-checker
 Text similarity checker. Jaccard, cosine, Levenshtein distance.
 
 ## AI Tools
 
-https://www.fasttools.store/ai-tools/ai-api-cost-calculator
+https://fasttools.store/ai-tools/ai-api-cost-calculator
 AI API cost calculator and comparator. Compare LLM pricing across OpenAI (GPT-5, GPT-5 mini, GPT-5 nano, GPT-4o, o3), Anthropic (Claude Opus 4.7 with 1M context, Sonnet 4.6, Haiku 4.5), Google Gemini 2.5 Pro/Flash/Flash-Lite, DeepSeek V3/R1, Mistral Large 2/Small 3/Codestral, Meta Llama 4 Maverick/Scout via Together AI, Llama via Groq, xAI Grok 4/Mini, Cohere Command R+/R. 25+ models across 10 providers. 7 realistic workload presets: light chatbot, production chatbot (3M req/mo), RAG knowledge base, agentic workflow, document summarization, code generation, batch processing. Cached-input pricing modeled (~90% discount on repeated system prompts and RAG context). Per-request, per-month, and per-year cost in one comparison table sorted cheapest first. Shareable URLs encode every input parameter. Copy-as-text summary for Slack/decks/RFCs. Pricing live-synced from LiteLLM open-source pricing database (MIT licensed, community-maintained). 100% client-side calculation — usage figures never sent to a server.
 
-https://www.fasttools.store/ai-tools/text-summarizer
+https://fasttools.store/ai-tools/text-summarizer
 Free AI text summarizer. Meta Llama 3.1. Modes: paragraph, bullets, key takeaways, TL;DR. Up to 10K chars. Adjustable length 10–70%.
 
-https://www.fasttools.store/ai-tools/text-to-speech
+https://fasttools.store/ai-tools/text-to-speech
 Free TTS. Web Speech API, 50+ languages, multiple voices, adjustable speed/pitch/volume, real-time word highlighting.
 
-https://www.fasttools.store/ai-tools/ai-text-detector
+https://fasttools.store/ai-tools/ai-text-detector
 AI text detector. Identifies AI-generated text (ChatGPT, Claude, Gemini, etc.).
 
-https://www.fasttools.store/ai-tools/ai-code-detector
+https://fasttools.store/ai-tools/ai-code-detector
 AI code detector. Identifies AI-generated code (Copilot, ChatGPT, Claude).
 
-https://www.fasttools.store/ai-tools/ai-readability-analyzer
+https://fasttools.store/ai-tools/ai-readability-analyzer
 Readability analyzer. Flesch-Kincaid, Gunning Fog, SMOG, Coleman-Liau, ARI.
 
-https://www.fasttools.store/ai-tools/ai-paraphraser
+https://fasttools.store/ai-tools/ai-paraphraser
 AI paraphraser. Rewrites text in different tones and styles.
 
-https://www.fasttools.store/ai-tools/qr-generator
+https://fasttools.store/ai-tools/qr-generator
 QR code generator. URL, vCard, WiFi, email, phone, SMS, geo. Custom colors, logos.
 
-https://www.fasttools.store/ai-tools/caption-generator
+https://fasttools.store/ai-tools/caption-generator
 AI social caption generator. Instagram, TikTok, X, LinkedIn captions.
 
-https://www.fasttools.store/ai-tools/lyrics-generator
+https://fasttools.store/ai-tools/lyrics-generator
 AI lyric generator. Song lyrics in various genres and styles.
 
-https://www.fasttools.store/ai-tools/pet-names
+https://fasttools.store/ai-tools/pet-names
 AI pet name generator.
 
-https://www.fasttools.store/ai-tools/token-to-word-converter
+https://fasttools.store/ai-tools/token-to-word-converter
 LLM token-to-word converter. Estimate words from token count and vice-versa for OpenAI, Anthropic, etc.
 
 ## Finance Tools
 
-https://www.fasttools.store/finance-tools/loan-calculator
+https://fasttools.store/finance-tools/loan-calculator
 Loan calculator. Monthly payment, total interest, amortization schedule.
 
-https://www.fasttools.store/finance-tools/auto-loan-calculator
+https://fasttools.store/finance-tools/auto-loan-calculator
 Auto loan calculator. Car loan with taxes, fees, trade-in.
 
-https://www.fasttools.store/finance-tools/mortgage-calculator
+https://fasttools.store/finance-tools/mortgage-calculator
 Mortgage calculator. Principal & interest, taxes, insurance, PMI.
 
-https://www.fasttools.store/finance-tools/amortization-calculator
+https://fasttools.store/finance-tools/amortization-calculator
 Amortization schedule generator. Month-by-month principal/interest breakdown.
 
-https://www.fasttools.store/finance-tools/compound-interest
+https://fasttools.store/finance-tools/compound-interest
 Compound interest calculator. Daily, monthly, quarterly, annual compounding.
 
-https://www.fasttools.store/finance-tools/credit-card-payoff
+https://fasttools.store/finance-tools/credit-card-payoff
 Credit card payoff calculator. Minimum payment vs accelerated payoff comparison.
 
-https://www.fasttools.store/finance-tools/debt-payoff-calculator
+https://fasttools.store/finance-tools/debt-payoff-calculator
 Debt payoff calculator. Avalanche vs snowball method.
 
-https://www.fasttools.store/finance-tools/discount-calculator
+https://fasttools.store/finance-tools/discount-calculator
 Discount and sale price calculator.
 
-https://www.fasttools.store/finance-tools/inflation-calculator
+https://fasttools.store/finance-tools/inflation-calculator
 Inflation calculator. Real vs nominal value over time.
 
-https://www.fasttools.store/finance-tools/interest-rate-calculator
+https://fasttools.store/finance-tools/interest-rate-calculator
 Interest rate calculator. Solve for rate given principal, payment, term.
 
-https://www.fasttools.store/finance-tools/investment-calculator
+https://fasttools.store/finance-tools/investment-calculator
 Investment growth calculator. Compound growth with contributions.
 
-https://www.fasttools.store/finance-tools/retirement-calculator
+https://fasttools.store/finance-tools/retirement-calculator
 Retirement calculator. Savings goal, withdrawal rate, longevity.
 
-https://www.fasttools.store/finance-tools/retirement-planner
+https://fasttools.store/finance-tools/retirement-planner
 Retirement planner. Detailed planning with 401k, IRA, Social Security.
 
-https://www.fasttools.store/finance-tools/home-affordability-calculator
+https://fasttools.store/finance-tools/home-affordability-calculator
 Home affordability calculator. Income-based mortgage limit.
 
-https://www.fasttools.store/finance-tools/rent-vs-buy-calculator
+https://fasttools.store/finance-tools/rent-vs-buy-calculator
 Rent vs buy calculator. NPV comparison with appreciation, taxes.
 
-https://www.fasttools.store/finance-tools/salary-calculator
+https://fasttools.store/finance-tools/salary-calculator
 Salary calculator. Annual to hourly, gross to net.
 
-https://www.fasttools.store/finance-tools/tax-calculator
+https://fasttools.store/finance-tools/tax-calculator
 Tax calculator. Federal and state income tax estimation.
 
-https://www.fasttools.store/finance-tools/tax-bracket-calculator
+https://fasttools.store/finance-tools/tax-bracket-calculator
 Tax bracket calculator. Marginal vs effective rate.
 
-https://www.fasttools.store/finance-tools/quarterly-tax-estimator
+https://fasttools.store/finance-tools/quarterly-tax-estimator
 Quarterly estimated tax calculator. Self-employment and 1099 tax planning.
 
-https://www.fasttools.store/finance-tools/sales-tax-calculator
+https://fasttools.store/finance-tools/sales-tax-calculator
 US state sales tax calculator.
 
-https://www.fasttools.store/finance-tools/net-worth-calculator
+https://fasttools.store/finance-tools/net-worth-calculator
 Net worth calculator. Assets minus liabilities tracker.
 
-https://www.fasttools.store/finance-tools/payment-calculator
+https://fasttools.store/finance-tools/payment-calculator
 Payment calculator. Solve for payment given principal, rate, term.
 
-https://www.fasttools.store/finance-tools/finance-calculator
+https://fasttools.store/finance-tools/finance-calculator
 General-purpose finance calculator. PV, FV, PMT, rate, n.
 
-https://www.fasttools.store/finance-tools/bill-splitter
+https://fasttools.store/finance-tools/bill-splitter
 Bill splitter. Split restaurant/group bills with tip, tax, custom shares.
 
-https://www.fasttools.store/finance-tools/tip-calculator
+https://fasttools.store/finance-tools/tip-calculator
 Tip calculator. Per-person split with tax breakdown.
 
-https://www.fasttools.store/finance-tools/invoice-generator
+https://fasttools.store/finance-tools/invoice-generator
 Invoice generator. Itemized invoices with logo, branding, PDF export.
 
-https://www.fasttools.store/finance-tools/freelance-rate-calculator
+https://fasttools.store/finance-tools/freelance-rate-calculator
 Freelance rate calculator. Target salary to hourly rate with taxes, time off.
 
-https://www.fasttools.store/finance-tools/zakat-calculator
+https://fasttools.store/finance-tools/zakat-calculator
 Zakat calculator. Annual zakat on wealth per Islamic finance rules.
 
-https://www.fasttools.store/finance-tools/saas-churn-calculator
+https://fasttools.store/finance-tools/saas-churn-calculator
 SaaS churn calculator. Customer/revenue churn rate, retention curves.
 
-https://www.fasttools.store/finance-tools/saas-payback-calculator
+https://fasttools.store/finance-tools/saas-payback-calculator
 SaaS CAC payback calculator.
 
-https://www.fasttools.store/finance-tools/startup-runway-calculator
+https://fasttools.store/finance-tools/startup-runway-calculator
 Startup runway calculator. Cash, burn rate, months remaining.
 
-https://www.fasttools.store/finance-tools/remote-work-savings
+https://fasttools.store/finance-tools/remote-work-savings
 Remote work savings calculator. Commute, lunch, clothing savings.
 
-https://www.fasttools.store/ad-tools/roas-calculator
+https://fasttools.store/ad-tools/roas-calculator
 ROAS (Return on Ad Spend) calculator.
 
 ## Social Media Tools
 
-https://www.fasttools.store/social-media-tools/youtube-channel-name-generator
+https://fasttools.store/social-media-tools/youtube-channel-name-generator
 YouTube channel name generator. AI-powered name ideas by niche, with handle availability check.
 
-https://www.fasttools.store/social-media-tools/youtube-tags
+https://fasttools.store/social-media-tools/youtube-tags
 YouTube tag extractor. Reveal hidden tags from any YouTube video URL for SEO research.
 
-https://www.fasttools.store/social-media-tools/youtube-thumbnail
+https://fasttools.store/social-media-tools/youtube-thumbnail
 YouTube thumbnail downloader. Download in HD (maxresdefault), SD, and all sizes.
 
-https://www.fasttools.store/social-media-tools/link-in-bio
+https://fasttools.store/social-media-tools/link-in-bio
 Link-in-bio page generator. Single landing page with all social links.
 
-https://www.fasttools.store/social-media-tools/influencer-rate-calculator
+https://fasttools.store/social-media-tools/influencer-rate-calculator
 Influencer rate calculator. Suggested fee per platform based on followers, engagement.
 
-https://www.fasttools.store/social-media-tools/tiktok-engagement-calculator
+https://fasttools.store/social-media-tools/tiktok-engagement-calculator
 TikTok engagement rate calculator. Likes, comments, shares as % of views/followers.
 
 ## Converters
 
-https://www.fasttools.store/converters/file-size
+https://fasttools.store/converters/file-size
 File size converter. Bytes, KB, MB, GB, TB, PB (binary and decimal).
 
-https://www.fasttools.store/converters/length
+https://fasttools.store/converters/length
 Length unit converter. Metric, imperial, nautical.
 
-https://www.fasttools.store/converters/temperature
+https://fasttools.store/converters/temperature
 Temperature converter. Celsius, Fahrenheit, Kelvin, Rankine.
 
-https://www.fasttools.store/converters/text-case
+https://fasttools.store/converters/text-case
 Text case converter. Upper, lower, title, sentence, camel, snake, kebab, etc.
 
-https://www.fasttools.store/converters/timezone
+https://fasttools.store/converters/timezone
 Timezone converter. IST, UTC, EST, PST, etc. with DST.
 
-https://www.fasttools.store/converters/list-converter
+https://fasttools.store/converters/list-converter
 List format converter. Bulleted, numbered, comma-separated, line-separated.
 
-https://www.fasttools.store/converters/base64-file
+https://fasttools.store/converters/base64-file
 File to Base64 encoder/decoder.
 
-https://www.fasttools.store/converters/yaml-json
+https://fasttools.store/converters/yaml-json
 YAML ↔ JSON converter.
 
-https://www.fasttools.store/converters/json-yaml
+https://fasttools.store/converters/json-yaml
 JSON ↔ YAML converter.
 
-https://www.fasttools.store/converters/toml-json
+https://fasttools.store/converters/toml-json
 TOML ↔ JSON converter.
 
-https://www.fasttools.store/converters/json-toml
+https://fasttools.store/converters/json-toml
 JSON ↔ TOML converter.
 
-https://www.fasttools.store/converters/yaml-toml
+https://fasttools.store/converters/yaml-toml
 YAML ↔ TOML converter.
 
-https://www.fasttools.store/converters/toml-yaml
+https://fasttools.store/converters/toml-yaml
 TOML ↔ YAML converter.
 
-https://www.fasttools.store/converters/xml-json
+https://fasttools.store/converters/xml-json
 XML ↔ JSON converter.
 
-https://www.fasttools.store/converters/json-xml
+https://fasttools.store/converters/json-xml
 JSON ↔ XML converter.
 
-https://www.fasttools.store/converters/morse-code
+https://fasttools.store/converters/morse-code
 Morse code translator. Text ↔ Morse with audio playback.
 
-https://www.fasttools.store/converters/nato-phonetic
+https://fasttools.store/converters/nato-phonetic
 NATO phonetic alphabet converter. Alpha, Bravo, Charlie, etc.
 
-https://www.fasttools.store/converters/roman-numeral
+https://fasttools.store/converters/roman-numeral
 Roman numeral converter. Arabic ↔ Roman (I, V, X, L, C, D, M).
 
-https://www.fasttools.store/converters/ascii-binary
+https://fasttools.store/converters/ascii-binary
 ASCII ↔ Binary converter.
 
-https://www.fasttools.store/converters/integer-base
+https://fasttools.store/converters/integer-base
 Integer base converter. Decimal, binary, octal, hex.
 
-https://www.fasttools.store/converters/unicode
+https://fasttools.store/converters/unicode
 Unicode character converter and lookup.
 
 ## Web Tools
 
-https://www.fasttools.store/web-tools/url-encoder
+https://fasttools.store/web-tools/url-encoder
 URL encoder/decoder.
 
-https://www.fasttools.store/web-tools/url-parser
+https://fasttools.store/web-tools/url-parser
 URL parser. Breaks URL into protocol, host, port, path, query, fragment.
 
-https://www.fasttools.store/web-tools/html-escape
+https://fasttools.store/web-tools/html-escape
 HTML entity encoder/decoder.
 
-https://www.fasttools.store/web-tools/device-info
+https://fasttools.store/web-tools/device-info
 Browser/device info inspector.
 
-https://www.fasttools.store/web-tools/auth-generator
+https://fasttools.store/web-tools/auth-generator
 HTTP auth header generator. Basic, Bearer, API key.
 
-https://www.fasttools.store/web-tools/outlook-safelink-decoder
+https://fasttools.store/web-tools/outlook-safelink-decoder
 Microsoft Outlook SafeLinks decoder. Reveals original URL behind safelinks.protection.outlook.com wrapper.
 
-https://www.fasttools.store/web-tools/dns-ssl-checker
+https://fasttools.store/web-tools/dns-ssl-checker
 DNS and SSL/TLS certificate checker. A/AAAA/MX/TXT/SOA records, cert expiry, chain validation.
 
 ## Education Tools
 
-https://www.fasttools.store/education-tools/citation-generator
+https://fasttools.store/education-tools/citation-generator
 Citation generator (APA 7, MLA 9, Chicago 17, Harvard). Auto-fill from DOI (CrossRef) and ISBN (OpenLibrary). Cite books, journals, websites, videos, podcasts. Plain-text and BibTeX (.bib) export.
 
 ## Health & Body Calculators
 
-https://www.fasttools.store/calculator/bmi-calculator
+https://fasttools.store/calculator/bmi-calculator
 BMI calculator. WHO BMI categories, healthy weight range.
 
-https://www.fasttools.store/calculator/bmr-calculator
+https://fasttools.store/calculator/bmr-calculator
 BMR (Basal Metabolic Rate) calculator. Mifflin-St Jeor and Harris-Benedict.
 
-https://www.fasttools.store/calculator/calorie-calculator
+https://fasttools.store/calculator/calorie-calculator
 Daily calorie needs calculator. Maintenance, loss, gain.
 
-https://www.fasttools.store/calculator/tdee-macro-calculator
+https://fasttools.store/calculator/tdee-macro-calculator
 TDEE & macronutrient calculator. Activity-adjusted with protein/carbs/fat targets.
 
-https://www.fasttools.store/calculator/body-fat-calculator
+https://fasttools.store/calculator/body-fat-calculator
 Body fat percentage calculator. Navy method, Jackson-Pollock.
 
-https://www.fasttools.store/calculator/biological-age-calculator
+https://fasttools.store/calculator/biological-age-calculator
 Biological age calculator. Lifestyle-adjusted vs chronological age.
 
-https://www.fasttools.store/calculator/pregnancy-calculator
+https://fasttools.store/calculator/pregnancy-calculator
 Pregnancy due date calculator. From LMP or conception date.
 
-https://www.fasttools.store/calculator/ovulation-calculator
+https://fasttools.store/calculator/ovulation-calculator
 Ovulation calculator. Fertile window, best conception days, 6-cycle forecast.
 
-https://www.fasttools.store/calculator/cortisol-peak-calculator
+https://fasttools.store/calculator/cortisol-peak-calculator
 Cortisol peak calculator. Circadian timing.
 
 ## Math & Science Calculators
 
-https://www.fasttools.store/calculator/scientific-calculator
+https://fasttools.store/calculator/scientific-calculator
 Scientific calculator. Trig, log, exp, factorials, parentheses.
 
-https://www.fasttools.store/calculator/percentage-calculator
+https://fasttools.store/calculator/percentage-calculator
 Percentage calculator. Increase, decrease, of, change.
 
-https://www.fasttools.store/calculator/fraction-calculator
+https://fasttools.store/calculator/fraction-calculator
 Fraction calculator. Add, subtract, multiply, divide. Mixed numbers.
 
-https://www.fasttools.store/calculator/triangle-calculator
+https://fasttools.store/calculator/triangle-calculator
 Triangle calculator. SSS, SAS, ASA, AAS, SSA. Sides, angles, area.
 
-https://www.fasttools.store/calculator/standard-deviation-calculator
+https://fasttools.store/calculator/standard-deviation-calculator
 Standard deviation calculator. Population and sample SD, variance, mean.
 
-https://www.fasttools.store/calculator/conversion-calculator
+https://fasttools.store/calculator/conversion-calculator
 Unit conversion calculator. Length, mass, volume, temperature, time, energy.
 
-https://www.fasttools.store/calculator/pace-calculator
+https://fasttools.store/calculator/pace-calculator
 Pace calculator. Running/cycling. Time, distance, pace; mile/km splits.
 
 ## Date & Age Calculators
 
-https://www.fasttools.store/calculator/age-calculator
+https://fasttools.store/calculator/age-calculator
 Age calculator. Years, months, days from birth to today or any date.
 
-https://www.fasttools.store/calculator/date-difference
+https://fasttools.store/calculator/date-difference
 Date difference calculator. Calendar and business days.
 
-https://www.fasttools.store/calculator/time-duration
+https://fasttools.store/calculator/time-duration
 Time duration calculator. Hours/minutes/seconds between two times.
 
-https://www.fasttools.store/calculator/gpa-calculator
+https://fasttools.store/calculator/gpa-calculator
 GPA calculator with weighted/unweighted, US/Canada/Australia/India/Pakistan grading.
 
-https://www.fasttools.store/calculator/love-calculator
+https://fasttools.store/calculator/love-calculator
 Love compatibility calculator. Name-based fun calculator.
 
 ## Fun Tools
 
-https://www.fasttools.store/fun-tools/countdown-timer
+https://fasttools.store/fun-tools/countdown-timer
 Countdown timer and stopwatch. Audio alarm, presets, lap tracking.
 
-https://www.fasttools.store/fun-tools/wheel-spinner
+https://fasttools.store/fun-tools/wheel-spinner
 Random name picker wheel / decision wheel. Animated spin with 8 presets.
 
-https://www.fasttools.store/fun-tools/meme-generator
+https://fasttools.store/fun-tools/meme-generator
 Meme generator. 100+ templates, custom text, drag positioning, PNG download.
 
-https://www.fasttools.store/fun-tools/birthday-countdown
+https://fasttools.store/fun-tools/birthday-countdown
 Birthday countdown timer. Live days/hours/minutes to next birthday.
 
-https://www.fasttools.store/fun-tools/pomodoro-timer
+https://fasttools.store/fun-tools/pomodoro-timer
 Pomodoro productivity timer. 25/5 minute work/break cycles.
 
 ## Crawler Guidance

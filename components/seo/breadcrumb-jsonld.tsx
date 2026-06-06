@@ -5,7 +5,7 @@
  * proper BreadcrumbList structured data for Google Search Console.
  */
 
-const BASE_URL = "https://www.fasttools.store"
+const BASE_URL = "https://fasttools.store"
 
 export interface BreadcrumbItem {
     label: string

@@ -33,7 +33,7 @@ export default function AboutPage() {
     mainEntity: {
       "@type": "Organization",
       name: "FastTools",
-      alternateName: "www.fasttools.store",
+      alternateName: "fasttools.store",
       description: "FastTools is a free online tools platform offering all digital tools including AI generators, converters, calculators, SEO tools, and productivity utilities.",
       url: "https://fasttools.store",
       foundingDate: "2024",
