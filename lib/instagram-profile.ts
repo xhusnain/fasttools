@@ -8,30 +8,15 @@ import type { RequestInit as UndiciRequestInit, Response as UndiciResponse } fro
  * session needed.
  *
  * On Vercel / other datacenter IPs Instagram returns a generic shell with no
- * og:meta, so every Instagram request routes through one of the Webshare
- * rotating proxies below. When a proxy returns 429 (quota/rate limit) or 407
- * (auth), we fall through to the next URL in the list.
+ * og:meta, so every Instagram request routes through the proxy below. When the
+ * proxy returns 429 (rate limit) or 407 (auth), the request is retried.
  */
 
-// Ordered proxy accounts. Failover walks left-to-right; sticky pointer locks
-// onto the first one that succeeds. Home gost-via-bore-tunnel is listed first
-// because it's an unlimited-bandwidth residential IP — Webshare is the safety
-// net for when the Mac/tunnel is offline.
-//
-// HOME PROXIES (gost + bore.pub tunnel):
-//   - Port changes every time `bore local 8080 --to bore.pub` restarts.
-//   - To rotate: rerun the bore command, copy the new port, update the URL.
-//   - Host machine must be on + gost running + bore running for this to work.
-//
-// WEBSHARE (fallback):
-//   - 429 = per-account burst rate limit (~req/min), NOT monthly quota.
-//   - Cooldown logic skips a 429'd account for 30s.
+// Single upstream proxy for all Instagram requests. The failover/cooldown
+// machinery below still applies (it just iterates over a one-entry list), so a
+// 429/407 or network error triggers a short cooldown + retry on the same proxy.
 const WEBSHARE_PROXY_URLS = [
-  "http://fasttools:***REMOVED***@bore.pub:31963",
-  "http://fasttools:***REMOVED***@bore.pub:55737",
-  "http://flwacgtc-rotate:***REMOVED***@p.webshare.io:80",
-  "http://wizdafld-rotate:***REMOVED***@p.webshare.io:80",
-  "http://xtwwtjom-rotate:***REMOVED***@p.webshare.io:80",
+  "http://husnain:***REMOVED***@47.84.202.125:8080",
 ];
 
 const proxyDispatchers = new Map<string, ProxyAgent>();
@@ -41,10 +26,10 @@ function getDispatcher(proxyUrl: string): ProxyAgent {
   if (!agent) {
     // keepAliveTimeout/keepAliveMaxTimeout = 1 disables connection reuse —
     // every request gets a fresh TCP handshake. Slightly more latency, but
-    // bore.pub's tunnel closes idle connections aggressively, so a pooled
-    // socket is often half-dead by the next request and undici hangs or
-    // throws broken-pipe. Fresh-per-request is the reliable path.
-    // pipelining: 0 disables HTTP pipelining for the same reason.
+    // proxied tunnels can close idle connections, leaving a pooled socket
+    // half-dead by the next request so undici hangs or throws broken-pipe.
+    // Fresh-per-request is the reliable path. pipelining: 0 disables HTTP
+    // pipelining for the same reason.
     agent = new ProxyAgent({
       uri: proxyUrl,
       keepAliveTimeout: 1,
@@ -56,27 +41,17 @@ function getDispatcher(proxyUrl: string): ProxyAgent {
   return agent;
 }
 
-// Every request starts iteration at index 0 (the home proxy). The cooldown
-// array below skips proxies that just failed, so when the home Mac is offline
-// we don't waste an attempt on it for the next 30s — but we DO retry it as
-// soon as the cooldown expires, so the home proxy automatically gets used
-// again the moment it's back online.
-
-// Webshare's rotating endpoint serves a different exit IP per request. Many
-// IPs are flagged by Instagram (login wall / shell). Retrying 3× per account
-// stitches together a usable success rate from the clean fraction. Measured:
-// ~20% clean per attempt → 9 attempts ≈ 87% overall success.
+// Retry the proxy a few times before giving up. Instagram occasionally serves
+// a login wall / shell even through a clean IP, so a couple of retries
+// stitches together a usable success rate from the clean fraction.
 const MAX_PROXY_ATTEMPTS = WEBSHARE_PROXY_URLS.length * 3;
 
-// Cooldown for an account that just returned 429 or 407 — Webshare's
-// account-level burst rate limit takes ~30s to reset, so skip during that
-// window to avoid burning attempts on a known-bad account.
+// Cooldown after a 429 or 407 — back off ~30s before retrying so we don't
+// hammer a proxy that's currently rate-limited / auth-rejected.
 const RATE_LIMIT_COOLDOWN_MS = 30_000;
 
 // Shorter cooldown for transient network errors (broken pipe, TLS reset,
-// timeout). Used for the home gost+bore proxy which has occasional TCP
-// disconnects but recovers in seconds — a 30s cooldown would needlessly
-// keep falling back to Webshare for ~6× longer than necessary.
+// timeout) which usually recover within seconds.
 const NETWORK_ERROR_COOLDOWN_MS = 5_000;
 const cooldownUntil = new Array<number>(WEBSHARE_PROXY_URLS.length).fill(0);
 
@@ -184,6 +159,10 @@ const USER_AGENT =
 const ACCEPT =
   "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8";
 const ACCEPT_LANGUAGE = "en-US,en;q=0.9";
+// Netlify's free-plan function timeout is a hard 10s and can't be raised, so
+// cap the fetch just under it (leaving ~1s for the handler to serialize its
+// response / fall back to stale cache) rather than letting the platform
+// hard-kill the function mid-request.
 const DEFAULT_TIMEOUT_MS = 9000;
 const DEFAULT_CACHE_TTL_SECONDS = 86400;
 const DEFAULT_STALE_TTL_SECONDS = 604800;
