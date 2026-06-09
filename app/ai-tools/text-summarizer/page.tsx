@@ -15,7 +15,7 @@ const toolConfig = createToolConfig({
     "Free AI text summarizer. Summarize articles, essays, research papers, and any long text into concise paragraphs, bullet points, key takeaways, or a one-sentence TL;DR. Adjustable summary length. No signup needed.",
   metaTitle: "AI Text Summarizer — Articles, Essays & Reports to TL;DR Online",
   metaDescription:
-    "Free AI text summarizer powered by Llama 3.1. Condense articles, essays, research papers up to 10K chars into 4 formats: paragraph, bullet points, key takeaways, or one-sentence TL;DR. Adjustable length, copy / download, no signup.",
+    "Free AI text summarizer. Condense articles, essays & papers into a paragraph, bullets, key takeaways or a TL;DR. Adjustable length, no signup.",
   path: "/ai-tools/text-summarizer",
 
   schemaOptions: {

@@ -11,7 +11,7 @@ import { GTable } from "@/ui/gtable"
 import { Brain } from "lucide-react"
 
 const conceptionMetadataOptions = {
-  title: "Conception Date Calculator — When Did I Conceive? From Due Date or LMP",
+  title: "Conception Date Calculator — From Due Date or LMP",
   description:
     "Free conception calculator to estimate your conception date, fertile window, and pregnancy week from due date, last menstrual period, or ultrasound. Includes trimester guidance, nutrition tips, and milestone tracking.",
   path: "/calculator/pregnancy-conception-calculator",
@@ -341,7 +341,7 @@ export default function PregnancyConceptionCalculatorPage() {
       }
       toolContent={toolContent}
       expectedMetadata={{
-        title: "Conception Date Calculator — When Did I Conceive? From Due Date or LMP",
+        title: "Conception Date Calculator — From Due Date or LMP",
         description:
           "Free conception calculator to estimate your conception date, fertile window, and pregnancy week from due date, last menstrual period, or ultrasound. Includes trimester guidance, nutrition tips, and milestone tracking.",
         path: "/calculator/pregnancy-conception-calculator"

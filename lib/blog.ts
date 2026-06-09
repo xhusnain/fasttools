@@ -84,6 +84,20 @@ export function getAllBlogPosts({ includeDrafts = false } = {}): BlogPost[] {
         })
 }
 
+// Cached newest-first list for cross-linking widgets (tool pages, "read more" blocks).
+// Blog content is build-time, so a single read per process is safe.
+let cachedPublishedPosts: BlogPost[] | null = null
+
+export function getRecentBlogPosts(limit = 5, excludeSlug?: string): BlogPost[] {
+    if (!cachedPublishedPosts) {
+        cachedPublishedPosts = getAllBlogPosts()
+    }
+
+    return cachedPublishedPosts
+        .filter((post) => post.slug !== excludeSlug)
+        .slice(0, limit)
+}
+
 export function getBlogPost(slug: string, { includeDrafts = false } = {}): BlogPost | null {
     const file = getBlogFile(slug)
 

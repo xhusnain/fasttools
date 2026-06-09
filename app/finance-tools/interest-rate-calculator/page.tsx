@@ -9,7 +9,7 @@ const InterestRateCalculator = dynamic(() => import("@/components/finance/intere
 import { createMetadata } from "@/lib/metadata-base"
 import { Calculator, BarChart3, TrendingUp, BookOpen, Users, Clock, Target, Home } from "lucide-react"
 
-const TOOL_TITLE = "Interest Rate Calculator — Solve for Rate from Payment, Term & Principal"
+const TOOL_TITLE = "Interest Rate Calculator — Solve for Rate"
 const TOOL_META_DESC = "Free interest rate calculator. Reverse-engineer the effective APR on any loan from the monthly payment, principal, and term. Includes APR vs interest rate breakdown, fixed vs variable comparison, and refinance break-even math. Works for mortgages, auto loans, student loans, and personal loans."
 
 const baseMetadata = createMetadata({

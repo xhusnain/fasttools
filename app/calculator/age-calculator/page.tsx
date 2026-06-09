@@ -17,7 +17,7 @@ import {
 const baseMetadata = createMetadata({
   title: "Age Calculator — Exact Age in Years, Months, Days, Hours & Seconds",
   description:
-    "Free online age calculator to find your exact age in years, months, weeks, days, hours, minutes & seconds. Includes zodiac signs, birthday countdown, leap year handling & ISO 8601 format for passports and legal documents. 100% private.",
+    "Free age calculator. Find your exact age in years, months, weeks, days, hours, minutes & seconds. Includes zodiac signs and birthday countdown.",
   path: "/calculator/age-calculator",
   breadcrumbs: [
     { label: "Calculator", href: "/calculator" },
@@ -58,7 +58,7 @@ const baseMetadata = createMetadata({
 export const metadata: Metadata = {
   ...baseMetadata,
   title: "Age Calculator — Exact Age in Years, Months, Days, Hours & Seconds",
-  description: "Free online age calculator to find your exact age in years, months, weeks, days, hours, minutes & seconds. Includes zodiac signs, birthday countdown, leap year handling & ISO 8601 format for passports and legal documents. 100% private.",
+  description: "Free age calculator. Find your exact age in years, months, weeks, days, hours, minutes & seconds. Includes zodiac signs and birthday countdown.",
   applicationName: "FastTools",
   category: "Date & Time",
 }
@@ -568,7 +568,7 @@ export default function AgeCalculatorPage() {
       toolContent={toolContent}
       expectedMetadata={{
         title: "Age Calculator — Exact Age in Years, Months, Days, Hours & Seconds",
-        description: "Free online age calculator to find your exact age in years, months, weeks, days, hours, minutes & seconds. Includes zodiac signs, birthday countdown, leap year handling & ISO 8601 format for passports and legal documents. 100% private.",
+        description: "Free age calculator. Find your exact age in years, months, weeks, days, hours, minutes & seconds. Includes zodiac signs and birthday countdown.",
         path: "/calculator/age-calculator"
       }}
     />

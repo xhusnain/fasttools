@@ -13,9 +13,9 @@ const toolConfig = createToolConfig({
   toolName: "Text to Speech",
   description:
     "Free AI text-to-speech with natural human-like voices. Powered by Kokoro 82M neural TTS running in your browser. 28 AI voices with American & British accents. Download audio as WAV. Browser voices fallback with 50+ languages. No signup needed.",
-  metaTitle: "AI Text to Speech — Natural Voices, Download WAV (Kokoro Neural TTS)",
+  metaTitle: "AI Text to Speech — Natural Voices, WAV Download",
   metaDescription:
-    "Free AI text-to-speech with 28 human-like voices. American + British accents, male + female. Powered by Kokoro 82M neural TTS in your browser via WebAssembly. Download as WAV, speed 0.5–2×, 50+ languages fallback. No signup.",
+    "Free AI text-to-speech with 28 human-like voices. Powered by Kokoro neural TTS in your browser. Download as WAV, adjustable speed, no signup.",
   path: "/ai-tools/text-to-speech",
 
   schemaOptions: {

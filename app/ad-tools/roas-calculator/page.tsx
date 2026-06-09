@@ -12,7 +12,7 @@ import { GTable } from "@/ui/gtable"
 import { Calculator, TrendingUp, Target, DollarSign, BarChart3, CheckCircle, AlertTriangle, Lightbulb, Zap, Globe, Brain, Shield } from "lucide-react"
 
 const TOOL_TITLE = "ROAS Calculator — Return on Ad Spend, ROI & CPA"
-const TOOL_META_DESC = "Free ROAS calculator. Calculate Return on Ad Spend, ROI, net profit, CPA, and break-even point for Google Ads, Facebook, TikTok, LinkedIn, and any paid ad platform. Simple and advanced modes for quick analysis or detailed forecasting."
+const TOOL_META_DESC = "Free ROAS calculator. Find Return on Ad Spend, ROI, net profit, CPA & break-even for Google, Facebook, TikTok & any paid ad platform."
 
 export const metadata: Metadata = createMetadata({
     title: TOOL_TITLE,

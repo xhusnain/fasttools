@@ -13,7 +13,7 @@ const toolConfig = createToolConfig({
   toolName: "Blog Title Generator",
   description:
     "Generate headline ideas for articles, landing pages, and campaigns with intent-focused wording and SEO-friendly structure.",
-  metaTitle: "Blog Title Generator — SEO Headlines, Listicles, How-To & Guide Titles",
+  metaTitle: "Blog Title Generator — SEO Headlines & Listicles",
   metaDescription:
     "Free blog title generator. Enter a topic or keyword and get 30 headline ideas using how-to, listicle, comparison, guide, trend, problem, and beginner templates.",
   path: "/seo-tools/blog-titles",

@@ -279,7 +279,7 @@ const financeTools = [
 
 export const metadata: Metadata = createMetadata({
   title:
-    "Free Finance Calculators: Loan, Mortgage, Tax, Investment & Budget Tools",
+    "Finance Calculators — Loan, Mortgage & Tax",
   description:
     "Use free finance tools for loan, mortgage, tax, salary, savings, and investment planning. Fast, accurate calculators with no signup required.",
   path: "/finance-tools",
@@ -395,7 +395,7 @@ export default function FinanceToolsPage() {
       toolContent={toolContent}
       expectedMetadata={{
         title:
-          "Free Finance Calculators: Loan, Mortgage, Tax, Investment & Budget Tools",
+          "Finance Calculators — Loan, Mortgage & Tax",
         description:
           "Use free finance tools for loan, mortgage, tax, salary, savings, and investment planning. Fast, accurate calculators with no signup required.",
         path: "/finance-tools",

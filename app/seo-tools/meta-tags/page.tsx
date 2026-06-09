@@ -13,7 +13,7 @@ const toolConfig = createToolConfig({
   toolName: "Open Graph Meta Tag Generator",
   description:
     "Generate Open Graph, Twitter Card, and essential SEO meta tags for better search snippets and social previews.",
-  metaTitle: "Meta Tag Generator — SEO, Open Graph & Twitter Card HTML Generator",
+  metaTitle: "Meta Tag Generator — SEO, Open Graph & Twitter",
   metaDescription:
     "Free meta tag generator. Build SEO title / meta-description, Open Graph (og:title, og:image, og:description for Facebook + LinkedIn + Slack + Discord), Twitter Card tags, canonical, robots, viewport. Live character validation, copy-ready HTML.",
   path: "/seo-tools/meta-tags",
@@ -318,6 +318,7 @@ const toolConfig = createToolConfig({
     ],
 
     relatedTools: [
+      { name: "Guide: Why Google Doesn't Use Third-Party SEO Tools", href: "/blog/why-google-doesnt-use-third-party-seo-tools" },
       { name: "Schema Markup Generator", href: "/seo-tools/schema-markup-generator" },
       { name: "Blog Title Generator", href: "/seo-tools/blog-titles" },
       { name: "Keyword Density Checker", href: "/seo-tools/keyword-density" },

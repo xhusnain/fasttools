@@ -15,7 +15,7 @@ const toolConfig = createToolConfig({
     "Create QR codes for URLs, WiFi, vCards, messages, and location sharing with color/logo customization.",
   metaTitle: "QR Code Generator — Free Static QR Codes That Never Expire + Logo",
   metaDescription:
-    "Free QR code generator with permanent static codes (no expiration, no subscription). 9 types: URL, WiFi, vCard, email, SMS, WhatsApp, phone, GPS, plain text. Custom colors, logo embed, PNG / SVG export. 100% client-side, no signup.",
+    "Free QR code generator with permanent static codes — no expiration. 9 types: URL, WiFi, vCard, email & more. Custom colors, logo, PNG/SVG.",
   path: "/ai-tools/qr-generator",
 
   header: {

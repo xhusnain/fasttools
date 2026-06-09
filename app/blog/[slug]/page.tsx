@@ -11,6 +11,7 @@ import {
   formatBlogDate,
   getBlogPost,
   getBlogSlugs,
+  getRecentBlogPosts,
   getRelatedBlogPosts,
 } from "@/lib/blog"
 
@@ -42,6 +43,7 @@ export default async function BlogPostPage(props: Props) {
   }
 
   const relatedPosts = getRelatedBlogPosts(post)
+  const morePosts = getRecentBlogPosts(6, post.slug)
   const schemas = createBlogPostSchemas(post)
   const bodyHasFaqSection = /^##\s+FAQ\b/im.test(post.content)
   const showFrontmatterFaq = !bodyHasFaqSection && post.faq.length > 0
@@ -165,26 +167,6 @@ export default async function BlogPostPage(props: Props) {
           </article>
 
           <aside className="space-y-6 lg:sticky lg:top-24 lg:self-start">
-            {post.toc.length > 0 && (
-              <nav className="rounded-lg border border-border bg-card p-5" aria-label="Table of contents">
-                <h2 className="mb-3 text-sm font-bold uppercase text-muted-foreground">
-                  Contents
-                </h2>
-                <ol className="space-y-2 text-sm">
-                  {post.toc.map((item) => (
-                    <li key={item.id} className={item.level === 3 ? "pl-4" : undefined}>
-                      <a
-                        href={`#${item.id}`}
-                        className="block leading-6 text-muted-foreground hover:text-primary"
-                      >
-                        {item.text}
-                      </a>
-                    </li>
-                  ))}
-                </ol>
-              </nav>
-            )}
-
             {relatedPosts.length > 0 && (
               <nav className="rounded-lg border border-border bg-card p-5" aria-label="Related posts">
                 <h2 className="mb-4 text-sm font-bold uppercase text-muted-foreground">
@@ -211,6 +193,52 @@ export default async function BlogPostPage(props: Props) {
             )}
           </aside>
         </div>
+
+        {morePosts.length > 0 && (
+          <section className="border-t border-border bg-muted/20">
+            <div className="container mx-auto max-w-7xl px-4 py-12">
+              <div className="mb-8 flex items-end justify-between gap-4">
+                <h2 className="text-2xl font-bold tracking-tight text-foreground md:text-3xl">
+                  Read more from the FastTools blog
+                </h2>
+                <Link
+                  href="/blog"
+                  className="inline-flex shrink-0 items-center gap-1.5 text-sm font-semibold text-primary"
+                >
+                  All guides
+                  <ArrowRight className="h-4 w-4" />
+                </Link>
+              </div>
+
+              <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+                {morePosts.map((morePost) => (
+                  <Link
+                    key={morePost.slug}
+                    href={morePost.canonicalPath}
+                    className="group flex flex-col rounded-lg border border-border bg-card p-5 transition-colors hover:border-primary"
+                  >
+                    <span className="mb-2 inline-flex items-center gap-2 text-xs font-medium text-muted-foreground">
+                      <Tag className="h-3.5 w-3.5" />
+                      {morePost.category}
+                      <span aria-hidden>·</span>
+                      {morePost.readingTime.text}
+                    </span>
+                    <span className="mb-2 text-lg font-bold leading-snug text-foreground group-hover:text-primary">
+                      {morePost.title}
+                    </span>
+                    <span className="mb-4 line-clamp-3 text-sm leading-6 text-muted-foreground">
+                      {morePost.excerpt}
+                    </span>
+                    <span className="mt-auto inline-flex items-center gap-1 text-sm font-semibold text-primary">
+                      Read guide
+                      <ArrowRight className="h-4 w-4" />
+                    </span>
+                  </Link>
+                ))}
+              </div>
+            </div>
+          </section>
+        )}
       </main>
     </div>
   )

@@ -13,9 +13,9 @@ const toolConfig = createToolConfig({
   toolName: "AI Paraphraser",
   description:
     "Rewrite any text instantly with 7 modes: Standard, Fluency, Formal, Creative, Academic, Shorten, Expand. Free AI-powered paraphrasing tool.",
-  metaTitle: "AI Paraphraser — Rewrite Text in 7 Modes (Formal, Casual, Academic)",
+  metaTitle: "AI Paraphraser — Rewrite Text in 7 Modes",
   metaDescription:
-    "Free AI paraphraser. Rewrite any text with 7 modes: Standard, Fluency, Formal, Creative, Academic, Shorten, Expand. Up to 5K characters, side-by-side comparison, copy / re-paraphrase. Powered by Cloudflare AI. No signup.",
+    "Free AI paraphraser. Rewrite any text in 7 modes — Standard, Fluency, Formal, Creative, Academic, Shorten, Expand. Up to 5K chars, no signup.",
   path: "/ai-tools/ai-paraphraser",
 
   schemaOptions: {

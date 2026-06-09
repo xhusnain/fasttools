@@ -18,7 +18,7 @@ const toolConfig = createToolConfig({
     "Generate personalized pet name ideas based on species, traits, personality, and naming style.",
   metaTitle: "AI Pet Name Generator — Dog, Cat, Bird & Exotic Pet Names",
   metaDescription:
-    "Free AI pet name generator. Unique names for dogs, cats, birds, fish, reptiles, hamsters, rabbits, guinea pigs. Filter by breed, personality, gender, naming style (cute / funny / classic / human / themed). Names with meanings. Free, unlimited.",
+    "Free AI pet name generator for dogs, cats, birds, fish & reptiles. Filter by breed, personality, gender & style. Names with meanings.",
   path: "/ai-tools/pet-names",
 
   header: {

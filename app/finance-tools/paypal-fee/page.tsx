@@ -10,12 +10,12 @@ import { Calculator, DollarSign, Target, TrendingUp, BarChart3, Copy, HelpCircle
 import { GImage } from "@/ui/gimage"
 import type { Metadata } from "next"
 
-const TOOL_TITLE = "PayPal Fee Calculator — Calculate PayPal Fees, G&S, Credit Card & Processing Fees"
+const TOOL_TITLE = "PayPal Fee Calculator — Instant Fees & G&S"
 const TOOL_NAME = "PayPal Fee Calculator"
 const TOOL_DEFINITION = "A PayPal fee calculator estimates transaction fees, seller net amount, and the gross amount to ask for across PayPal Checkout, Goods and Services, cards, international payments, QR payments, and micropayments."
 
 const paypalMetadataOptions = {
-  title: `PayPal Fee Calculator — Instant Fees, G&S, Credit Card & International`,
+  title: `PayPal Fee Calculator — Instant Fees & G&S`,
   description: "Free PayPal fee calculator. Calculate PayPal G&S fee, PayPal credit card fee, and processing fees for any transaction. Domestic and international rates, micropayments, and reverse-fee gross-up — for sellers, freelancers, and businesses.",
   path: "/finance-tools/paypal-fee",
   toolName: TOOL_NAME,

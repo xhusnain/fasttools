@@ -16,9 +16,9 @@ const toolConfig = createToolConfig({
   toolName: "AI Caption Generator",
   description:
     "Generate social media captions from a content description with platform-specific output options.",
-  metaTitle: "AI Caption Generator — Instagram, TikTok, LinkedIn Captions & Hashtags",
+  metaTitle: "AI Caption Generator — Instagram, TikTok & X",
   metaDescription:
-    "Free AI caption generator for Instagram (2200 chars), TikTok (4000), LinkedIn (3000), X/Twitter (280), Facebook, Pinterest, YouTube. Choose tone (professional, witty, inspirational, casual, funny), get hashtag suggestions, one-click copy.",
+    "Free AI caption generator for Instagram, TikTok, LinkedIn, X, Facebook & Pinterest. Pick a tone, get hashtag ideas, copy in one click.",
   path: "/ai-tools/caption-generator",
 
   header: {

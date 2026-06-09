@@ -99,7 +99,7 @@ const faqs: FAQItem[] = [
 ]
 
 export const metadata: Metadata = createMetadata({
-    title: "FAQ",
+    title: "Frequently Asked Questions About FastTools",
     description: "Get answers to frequently asked questions about FastTools — learn about our tools, privacy, features, and more.",
     path: "/faq",
     includeSchema: false,

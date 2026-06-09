@@ -61,7 +61,7 @@ const toolConfig = createToolConfig({
   toolName: "Image Tools",
   description:
     "Use free browser-based image tools to compress files, extract text with OCR, and detect AI-generated images.",
-  metaTitle: "Image Tools - Background Remover, Resizer, Compressor, OCR & AI Detector",
+  metaTitle: "Image Tools — Remover, Resizer, Compressor & OCR",
   metaDescription:
     "Free image tools: remove backgrounds with AI, resize images for social media, compress JPG/PNG/WebP, extract text with OCR, and detect AI-generated images.",
   path: "/image-tools",

@@ -13,7 +13,7 @@ const toolConfig = createToolConfig({
   toolName: "Schema Markup Generator",
   description:
     "Generate valid JSON-LD structured data for 11 schema types. Article, FAQ, Product, LocalBusiness, Event, Recipe, and more. Free SEO tool.",
-  metaTitle: "Schema Markup Generator — JSON-LD for Article, Product, FAQ, LocalBusiness",
+  metaTitle: "Schema Markup Generator — JSON-LD for SEO",
   metaDescription:
     "Free JSON-LD schema markup generator. 11+ types: Article, Product, FAQPage, HowTo, LocalBusiness, Event, Recipe, Organization, Breadcrumb, VideoObject. Form-based builder, valid schema.org output, validates with Google Rich Results Test.",
   path: "/seo-tools/schema-markup-generator",
@@ -351,6 +351,7 @@ const toolConfig = createToolConfig({
     ],
 
     relatedTools: [
+      { name: "Guide: Why Google Doesn't Use Third-Party SEO Tools", href: "/blog/why-google-doesnt-use-third-party-seo-tools" },
       { name: "Open Graph Meta Generator", href: "/seo-tools/meta-tags" },
       { name: "Keyword Density Checker", href: "/seo-tools/keyword-density" },
       { name: "Blog Title Generator", href: "/seo-tools/blog-titles" },

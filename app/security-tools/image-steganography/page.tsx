@@ -205,6 +205,7 @@ const toolConfig = createToolConfig({
     ],
 
     relatedTools: [
+      { name: "Guide: How to Hide Text in an Image", href: "/blog/how-to-hide-text-in-an-image-online" },
       { name: "Text Encrypt/Decrypt", href: "/crypto-tools/encrypt-decrypt" },
       { name: "Hash Text Generator", href: "/crypto-tools/hash-text" },
       { name: "Password Generator", href: "/crypto-tools/password-generator" },

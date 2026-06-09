@@ -11,7 +11,7 @@ import { GTable } from "@/ui/gtable"
 import { Brain, Calculator, Target, BookOpen, Shield, Users, TrendingUp, Info, AlertTriangle, CheckCircle, Zap, Heart, Calendar, Baby } from "lucide-react"
 
 const pregnancyMetadataOptions = {
-  title: "Pregnancy Calculator — Due Date, Week-by-Week Tracker & IOM Weight",
+  title: "Pregnancy Calculator — Due Date & Week Tracker",
   description:
     "Free pregnancy calculator to estimate your due date, track gestational age week by week, get IOM weight gain recommendations by BMI, and receive trimester-specific guidance using LMP, ultrasound, conception, or IVF transfer dates.",
   path: "/calculator/pregnancy-calculator",
@@ -517,7 +517,7 @@ export default function PregnancyCalculatorPage() {
       }
       toolContent={toolContent}
       expectedMetadata={{
-        title: "Pregnancy Calculator — Due Date, Week-by-Week Tracker & IOM Weight",
+        title: "Pregnancy Calculator — Due Date & Week Tracker",
         description: "Free pregnancy calculator to estimate your due date, track gestational age week by week, get IOM weight gain recommendations by BMI, and receive trimester-specific guidance using LMP, ultrasound, conception, or IVF transfer dates.",
         path: "/calculator/pregnancy-calculator"
       }}

@@ -532,7 +532,7 @@ const toolConfig = createToolConfig({
   description:
     "Free online calculator hub — every calculator you need for finance, health, math, statistics, date/time, and construction planning. No signup, no install, mobile-friendly.",
   metaTitle:
-    "Free Online Calculator — Every Calculator You Need (Finance, Health, Math)",
+    "Online Calculator — Finance, Health & Math",
   metaDescription:
     "Free online calculator for everything: BMI, percentage, GPA, age, mortgage, pace, concrete, pregnancy, scientific, IP subnet, and dozens more. Mobile-friendly, no signup, no ads in the calculator itself — just answers.",
   itemList: {

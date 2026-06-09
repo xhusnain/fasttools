@@ -15,7 +15,7 @@ import { Metadata } from 'next';
 import { createMetadata } from "@/lib/metadata-base"
 
 export const metadata: Metadata = createMetadata({
-  title: "About Us",
+  title: "About FastTools — Free Online Tools",
   description: "Discover FastTools, the comprehensive free online tools platform with all AI, converter, calculator, SEO and productivity utilities.",
   path: "/about",
   breadcrumbs: [

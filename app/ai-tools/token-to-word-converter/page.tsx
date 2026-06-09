@@ -16,7 +16,7 @@ const toolConfig = createToolConfig({
   toolName: "Token to Word Converter",
   description:
     "Estimate token and word counts for LLM prompts and response planning.",
-  metaTitle: "Token to Word Converter — GPT-4, Claude, Gemini LLM Token Calculator",
+  metaTitle: "Token to Word Converter for GPT, Claude & Gemini",
   metaDescription:
     "Free token-to-word converter & calculator. Convert tokens ↔ words for GPT-4, GPT-5, Claude 3 / Claude 4, Gemini, Llama, Mistral. Estimate API costs, context window usage, prompt size. Model-specific tokenizer ratios. 100% client-side.",
   path: "/ai-tools/token-to-word-converter",

@@ -13,9 +13,9 @@ const toolConfig = createToolConfig({
   toolName: "AI Text Detector",
   description:
     "Free AI text detector and AI content checker that identifies writing from ChatGPT, GPT-4, Claude, Gemini, Copilot, and other AI tools. Analyzes 5 statistical signals: burstiness, vocabulary richness, AI phrase detection, repetition patterns, and stylistic markers. 100% private — your text never leaves your browser.",
-  metaTitle: "AI Text Detector — ChatGPT, Claude, Gemini & GPT-4 Content Checker",
+  metaTitle: "AI Text Detector — ChatGPT, Claude & Gemini Checker",
   metaDescription:
-    "Free AI content detector. Identify text written by ChatGPT, GPT-4, Claude, Gemini, Copilot via 5 statistical signals: burstiness, vocabulary richness, AI phrase patterns, repetition, hedging. 100% client-side, no signup, unlimited.",
+    "Free AI content detector. Spot text from ChatGPT, Claude, Gemini & Copilot via 5 statistical signals. 100% client-side, no signup, unlimited.",
   path: "/ai-tools/ai-text-detector",
 
   schemaOptions: {

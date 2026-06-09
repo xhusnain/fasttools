@@ -16,7 +16,7 @@ const toolConfig = createToolConfig({
   toolName: "Roman Numeral Converter",
   description:
     "Convert numbers to Roman numerals and Roman numerals to numbers instantly. Includes date-to-Roman conversion for birthdays, anniversaries, and tattoo designs. Supports values 1 to 3,999 with full subtractive notation.",
-  metaTitle: "Roman Numeral Converter — Numbers, Dates & Years to Roman Numerals Free",
+  metaTitle: "Roman Numeral Converter — Numbers, Dates & Years",
   metaDescription:
     "Free Roman numeral converter. Convert numbers 1-3999 to Roman numerals, decode Roman numerals to numbers, and transform dates to Roman format. Perfect for tattoos, design, education, and historical references.",
   path: "/converters/roman-numeral",

@@ -14,7 +14,7 @@ const toolConfig = createToolConfig({
   toolName: "Device Information",
   description:
     "View browser and device diagnostics including user agent, viewport, screen details, OS, and hardware signals.",
-  metaTitle: "Device Info — Browser, Screen Resolution, User Agent & OS Detector",
+  metaTitle: "Device Info — Browser, Screen & User Agent",
   metaDescription:
     "Free device info checker. Auto-detect browser name + version, screen resolution, viewport, device pixel ratio (DPR), OS, user agent, touch / pointer support, preferred language, timezone, network connection type. 100% client-side.",
   path: "/web-tools/device-info",

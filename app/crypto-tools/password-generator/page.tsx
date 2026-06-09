@@ -13,7 +13,7 @@ const toolConfig = createToolConfig({
   toolName: "Password Generator",
   description:
     "Free password generator. Create strong, cryptographically secure passwords and passphrases with entropy-based strength meter, Have I Been Pwned breach checker, and bulk generation. 100% client-side using crypto.getRandomValues. No signup, no ads, no tracking.",
-  metaTitle: "Password Generator — Strong, Secure & Random Passwords + Passphrases",
+  metaTitle: "Password Generator — Strong, Random & Secure",
   metaDescription:
     "Free password generator. Create cryptographically-secure passwords (4–64 chars) or Diceware-style passphrases. Entropy meter in bits, crack-time estimate, Have I Been Pwned breach check, bulk mode up to 50. 100% client-side.",
   path: "/crypto-tools/password-generator",

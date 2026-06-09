@@ -12,7 +12,7 @@ const BMICalculatorPageContent = dynamic(
 import { Brain, Activity, Target, BookOpen, AlertTriangle, Users, TrendingUp, Shield, Calculator, Heart, Info, Scale } from "lucide-react"
 
 const baseMetadata = createMetadata({
-  title: "BMI Calculator — Body Mass Index for Adults, Teens & Asian Thresholds",
+  title: "BMI Calculator — Body Mass Index for Adults & Teens",
   description:
     "Free BMI calculator with WHO & CDC categories, healthy weight range, BMI Prime, Ponderal Index, and Asian BMI cutoffs. Metric (kg/cm) and Imperial (lbs/in) units for adults and teenagers. Visual gauge, instant private results.",
   path: "/calculator/bmi-calculator",

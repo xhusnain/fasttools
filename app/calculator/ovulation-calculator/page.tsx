@@ -13,7 +13,7 @@ const toolConfig = createToolConfig({
   toolName: "Ovulation Calculator",
   description:
     "Calculate your ovulation date, fertile window, and best days to conceive based on your last period and cycle length. Free, private, instant results.",
-  metaTitle: "Ovulation Calculator — Fertile Window, Peak Days & 6-Cycle Forecast",
+  metaTitle: "Ovulation Calculator — Fertile Window & Peak Days",
   metaDescription:
     "Free ovulation calculator. Find your fertile window, ovulation date, peak fertility days, and best conception window. 6-cycle forecast, visual calendar, due-date estimates per cycle. Based on ACOG, WHO, NHS guidelines. 100% private.",
   path: "/calculator/ovulation-calculator",

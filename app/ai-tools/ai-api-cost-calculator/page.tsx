@@ -16,9 +16,9 @@ const toolConfig = createToolConfig({
   toolName: "AI API Cost Calculator & Comparator",
   description:
     "Compare LLM API pricing across OpenAI, Anthropic, Google, DeepSeek, Mistral, Llama, xAI, and Cohere for your exact usage. Per-request, monthly, and annual cost in one view.",
-  metaTitle: "AI API Cost Calculator — Compare GPT-5, Claude, Gemini, Llama Pricing",
+  metaTitle: "AI API Cost Calculator — GPT-5, Claude & Gemini",
   metaDescription:
-    "Free AI API cost calculator. Compare per-month spend across GPT-5, Claude Opus 4.7, Sonnet 4.6, Haiku, Gemini 2.5 Pro/Flash, DeepSeek V3/R1, Llama 4, Mistral, Grok 4. 25+ models, 7 use-case presets, cached-input pricing, shareable links. 100% client-side.",
+    "Free AI API cost calculator. Compare per-month spend across GPT-5, Claude, Gemini, DeepSeek, Llama & Grok. 25+ models, presets, cached-input pricing.",
   path: "/ai-tools/ai-api-cost-calculator",
 
   header: {

@@ -16,9 +16,9 @@ const toolConfig = createToolConfig({
   toolName: "AI Lyrics Generator",
   description:
     "Generate draft song lyrics from a theme, genre, mood, length, and language.",
-  metaTitle: "AI Lyrics Generator — Write Original Song Lyrics by Genre, Mood & Style",
+  metaTitle: "AI Lyrics Generator — Songs by Genre & Mood",
   metaDescription:
-    "Free AI lyrics generator. Write original song lyrics in any genre (pop, rap, rock, country, R&B, indie, EDM, jazz). Choose mood, rhyme scheme, verse structure, language. Generate verses, chorus, bridge, pre-chorus. Copy / download instantly.",
+    "Free AI lyrics generator. Write original song lyrics in any genre — pop, rap, rock, country, R&B. Choose mood, rhyme scheme & structure.",
   path: "/ai-tools/lyrics-generator",
 
   header: {

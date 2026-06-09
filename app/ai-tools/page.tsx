@@ -117,7 +117,7 @@ const toolConfig = createToolConfig({
 
   content: {
     overview:
-      "This category groups task-focused AI helpers for creators and operators. Use it to generate QR codes for campaigns, draft lyrics and captions faster, produce pet name ideas, and estimate token usage before sending prompts to LLM APIs.",
+      "This AI tools category groups task-focused utilities that turn a single input into a finished result you can copy, download, or refine. Generate QR codes for campaigns, draft song lyrics and social captions in seconds, brainstorm pet names, detect AI-written text or code, summarize long articles, check readability, paraphrase paragraphs, convert text to natural speech, and estimate token usage before you send prompts to an LLM API. Every tool runs in your browser with no signup, so you get fast, private output for content, publishing, and developer workflows.",
 
     features: [
       "Tool-specific AI workflows instead of generic chat prompts",
