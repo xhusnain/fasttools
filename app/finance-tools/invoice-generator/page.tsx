@@ -58,8 +58,6 @@ const baseMetadata = createMetadata({
       "100% client-side — your data and clients never leave your browser",
       "Free, no signup, no watermark, no usage limits",
     ],
-    ratingValue: "4.9",
-    ratingCount: "11240",
   }
 })
 

@@ -53,8 +53,6 @@ const toolConfig = createToolConfig({
       "Clear input and use-current-browser controls",
     ],
     softwareRequirements: "Modern web browser",
-    ratingValue: "4.9",
-    ratingCount: "7820",
     offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },
   },
 

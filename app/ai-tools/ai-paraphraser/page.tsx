@@ -50,8 +50,6 @@ const toolConfig = createToolConfig({
       "Smart Rewriter",
       "Synonym Rewriter",
     ],
-    ratingValue: "4.9",
-    ratingCount: "16240",
   },
 
   header: {

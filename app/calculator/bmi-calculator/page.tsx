@@ -40,8 +40,6 @@ const baseMetadata = createMetadata({
       "BMI Prime Calculator",
     ],
     applicationCategory: "HealthApplication",
-    ratingValue: "4.9",
-    ratingCount: "3420",
     featureList: [
       "Instant BMI calculation for adults and teenagers",
       "Personalized health action plan based on results",

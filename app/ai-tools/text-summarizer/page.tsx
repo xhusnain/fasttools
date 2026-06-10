@@ -54,8 +54,6 @@ const toolConfig = createToolConfig({
       "Resoomer Alternative",
       "QuillBot Summarizer Alternative",
     ],
-    ratingValue: "4.9",
-    ratingCount: "13420",
   },
 
   header: {

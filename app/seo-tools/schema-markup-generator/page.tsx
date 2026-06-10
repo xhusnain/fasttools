@@ -52,8 +52,6 @@ const toolConfig = createToolConfig({
       "Merkle Schema Markup Alternative",
       "TechnicalSEO Schema Alternative",
     ],
-    ratingValue: "4.9",
-    ratingCount: "11240",
   },
 
   header: {

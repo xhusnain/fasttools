@@ -68,8 +68,6 @@ const toolConfig = createToolConfig({
       "Mobile-optimized big-number display",
       "No signup, no ads, no rate limit",
     ],
-    ratingValue: "4.9",
-    ratingCount: "21420",
     offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },
   },
 

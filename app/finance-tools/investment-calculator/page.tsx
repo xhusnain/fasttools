@@ -56,8 +56,6 @@ const baseMetadata = createMetadata({
       "Visual chart: principal vs accumulated growth over time",
       "100% client-side, no signup, no data sent anywhere",
     ],
-    ratingValue: "4.8",
-    ratingCount: "6310",
   },
 })
 

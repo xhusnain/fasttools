@@ -58,8 +58,6 @@ const baseMetadata = createMetadata({
       "Donut chart showing total interest paid vs total principal",
       "100% client-side — your balance and rate never leave your browser",
     ],
-    ratingValue: "4.8",
-    ratingCount: "7450",
   },
 })
 

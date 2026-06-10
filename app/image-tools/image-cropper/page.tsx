@@ -51,8 +51,6 @@ const toolConfig = createToolConfig({
     ],
     softwareRequirements: "Modern web browser with JavaScript enabled",
     operatingSystem: "Any",
-    ratingValue: "4.9",
-    ratingCount: "9180",
   },
 
   header: {

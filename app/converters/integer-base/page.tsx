@@ -52,8 +52,6 @@ const toolConfig = createToolConfig({
       "ASCII representation when result is a valid character",
       "Copy individual base outputs or full multi-base report",
     ],
-    ratingValue: "4.9",
-    ratingCount: "5210",
   },
 
   header: {

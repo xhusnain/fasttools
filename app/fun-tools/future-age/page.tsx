@@ -51,8 +51,6 @@ const toolConfig = createToolConfig({
       "Age Time Travel Calculator",
       "Birthday in X Years",
     ],
-    ratingValue: "4.9",
-    ratingCount: "6420",
     offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },
   },
 

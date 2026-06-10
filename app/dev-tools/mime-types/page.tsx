@@ -50,8 +50,6 @@ const toolConfig = createToolConfig({
       "Common Content-Type values such as application/json, text/html, image/png, video/mp4, and application/pdf",
     ],
     softwareRequirements: "Modern web browser",
-    ratingValue: "4.9",
-    ratingCount: "6420",
     offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },
   },
 

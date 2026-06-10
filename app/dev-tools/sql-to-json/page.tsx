@@ -58,8 +58,6 @@ const toolConfig = createToolConfig({
       "Runs conversion in the browser",
     ],
     softwareRequirements: "Modern web browser",
-    ratingValue: "4.8",
-    ratingCount: "5230",
     offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },
   },
 

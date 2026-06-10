@@ -56,8 +56,6 @@ const baseMetadata = createMetadata({
       "Current US mortgage rate context built in",
       "100% free, no signup, no data sent to servers",
     ],
-    ratingValue: "4.8",
-    ratingCount: "8200",
   },
 })
 

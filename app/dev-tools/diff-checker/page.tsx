@@ -54,8 +54,6 @@ const toolConfig = createToolConfig({
       "JSON Diff Tool",
       "Code Comparison Tool",
     ],
-    ratingValue: "4.9",
-    ratingCount: "15820",
   },
 
   header: {

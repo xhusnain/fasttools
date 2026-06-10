@@ -50,8 +50,6 @@ const toolConfig = createToolConfig({
       "Free, no signup",
     ],
     softwareRequirements: "Modern web browser",
-    ratingValue: "4.8",
-    ratingCount: "2840",
   },
 
   heroImage: "/images/pdf_signature_check_hero.png",

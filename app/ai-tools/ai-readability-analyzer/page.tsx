@@ -54,8 +54,6 @@ const toolConfig = createToolConfig({
       "ESL Reading Level Checker",
       "WCAG Readability Helper",
     ],
-    ratingValue: "4.9",
-    ratingCount: "9420",
   },
 
   header: {

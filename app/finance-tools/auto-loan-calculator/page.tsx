@@ -58,8 +58,6 @@ const baseMetadata = createMetadata({
       "Free, no signup, all calculations run in your browser",
     ],
     softwareRequirements: "Modern web browser",
-    ratingValue: "4.8",
-    ratingCount: "5840",
   },
   faqs: [
     {

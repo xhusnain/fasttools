@@ -57,8 +57,6 @@ const baseMetadata = createMetadata({
       "Includes 70-80% income replacement rule of thumb",
       "100% client-side — your income, savings, and balance never leave your browser",
     ],
-    ratingValue: "4.8",
-    ratingCount: "7100",
   },
 })
 

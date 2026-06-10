@@ -61,8 +61,6 @@ const baseMetadata = createMetadata({
       "Exportable tax summary for record-keeping",
       "100% client-side — your income data never leaves your browser",
     ],
-    ratingValue: "4.9",
-    ratingCount: "3640",
   }
 })
 

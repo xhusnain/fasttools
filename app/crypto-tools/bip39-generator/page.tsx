@@ -62,8 +62,6 @@ const toolConfig = createToolConfig({
       "Free forever, no signup, no ads, no telemetry",
     ],
     softwareRequirements: "Modern web browser with Web Crypto API support",
-    ratingValue: "4.9",
-    ratingCount: "9870",
     offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },
   },
 

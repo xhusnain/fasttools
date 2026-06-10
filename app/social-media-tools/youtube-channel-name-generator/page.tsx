@@ -52,8 +52,6 @@ const toolConfig = createToolConfig({
       "Twitch Name Generator",
       "Channel Identity Builder",
     ],
-    ratingValue: "4.9",
-    ratingCount: "7820",
     featureList: [
       "Generate unique YouTube channel name ideas from niche keywords",
       "Multiple naming styles: professional, creative, funny, keyword-based",

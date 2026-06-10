@@ -36,8 +36,6 @@ const baseMetadata = createMetadata({
       "Pre-training Budget Calculator",
       "MFU GPU Hours Calculator",
     ],
-    ratingValue: "4.9",
-    ratingCount: "3210",
     applicationCategory: "DeveloperApplication",
     featureList: [
       "Estimate total FLOPs using 6 x parameters x tokens",

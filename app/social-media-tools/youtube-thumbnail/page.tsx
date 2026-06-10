@@ -52,8 +52,6 @@ const toolConfig = createToolConfig({
       "Get YouTube Thumbnail",
       "YouTube Video Cover Image",
     ],
-    ratingValue: "4.9",
-    ratingCount: "8920",
     featureList: [
       "Download thumbnails in all sizes: 120×90, 320×180, 480×360, 640×480, 1280×720",
       "Maxresdefault 1280×720 HD thumbnail extraction",

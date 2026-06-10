@@ -52,8 +52,6 @@ export const metadata: Metadata = createMetadata({
             "Scenario comparison (current vs forecast)",
             "100% client-side, no signup, no data sent anywhere",
         ],
-        ratingValue: "4.9",
-        ratingCount: "5840",
     },
 })
 

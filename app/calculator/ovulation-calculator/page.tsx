@@ -52,8 +52,6 @@ const toolConfig = createToolConfig({
       "Glow Fertility Alternative",
       "Natural Family Planning Calculator",
     ],
-    ratingValue: "4.9",
-    ratingCount: "9420",
   },
 
   header: {

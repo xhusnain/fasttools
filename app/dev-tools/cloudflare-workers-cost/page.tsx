@@ -32,8 +32,6 @@ const baseMetadata = createMetadata({
       "Edge Compute Cost Estimator",
       "Cloudflare Serverless Cost Calculator",
     ],
-    ratingValue: "4.9",
-    ratingCount: "2840",
     applicationCategory: "DeveloperApplication",
     featureList: [
       "Estimate Workers requests and CPU time",

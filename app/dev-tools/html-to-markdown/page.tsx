@@ -61,8 +61,6 @@ const toolConfig = createToolConfig({
       "Browser-side conversion",
     ],
     softwareRequirements: "Modern web browser",
-    ratingValue: "4.9",
-    ratingCount: "9870",
     offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },
   },
 

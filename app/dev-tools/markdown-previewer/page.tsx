@@ -58,8 +58,6 @@ const toolConfig = createToolConfig({
       "Browser-side preview",
     ],
     softwareRequirements: "Modern web browser",
-    ratingValue: "4.9",
-    ratingCount: "11240",
     offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },
   },
 

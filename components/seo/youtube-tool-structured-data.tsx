@@ -11,8 +11,6 @@ interface YouTubeToolStructuredDataProps {
   applicationCategory?: string;
   operatingSystem?: string;
   price?: string;
-  ratingValue?: number;
-  ratingCount?: number;
   features?: string[];
   softwareVersion?: string;
   datePublished?: string;
@@ -27,8 +25,6 @@ export const YouTubeToolStructuredData = ({
   applicationCategory = "MultimediaApplication",
   operatingSystem = "Web Browser",
   price = "0",
-  ratingValue = 4.8,
-  ratingCount = 10000,
   features = [],
   softwareVersion = "2026.0",
   datePublished = "2024-01-01",
@@ -54,13 +50,6 @@ export const YouTubeToolStructuredData = ({
       "@type": "Offer",
       "price": price,
       "priceCurrency": "USD"
-    },
-    "aggregateRating": {
-      "@type": "AggregateRating",
-      "ratingValue": ratingValue,
-      "reviewCount": ratingCount,
-      "bestRating": 5,
-      "worstRating": 1
     },
     "featureList": features,
     "softwareVersion": softwareVersion,

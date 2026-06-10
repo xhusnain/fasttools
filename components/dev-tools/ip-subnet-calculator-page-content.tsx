@@ -167,11 +167,6 @@ export function IPSubnetCalculatorPageContent() {
             price: "0",
             priceCurrency: "USD",
           },
-          aggregateRating: {
-            "@type": "AggregateRating",
-            ratingValue: "4.9",
-            ratingCount: "2847",
-          },
           featureList: [
             "IPv4 and IPv6 subnet calculation",
             "CIDR notation support",

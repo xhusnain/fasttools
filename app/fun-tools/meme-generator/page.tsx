@@ -56,8 +56,6 @@ const toolConfig = createToolConfig({
       "Top/Bottom Text Meme Maker",
       "Reaction Meme Generator",
     ],
-    ratingValue: "4.9",
-    ratingCount: "21420",
   },
 
   header: {

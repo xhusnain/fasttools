@@ -57,8 +57,6 @@ const baseMetadata = createMetadata({
       "Prepayment / lump-sum payment scenarios",
       "100% free, no signup, runs in your browser",
     ],
-    ratingValue: "4.8",
-    ratingCount: "6420",
   },
 })
 

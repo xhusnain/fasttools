@@ -30,11 +30,6 @@ export interface UnifiedToolConfig {
         applicationCategory?: string
         description?: string
         price?: string
-        ratingValue?: string
-        ratingCount?: string
-        reviewCount?: string
-        bestRating?: string
-        worstRating?: string
         alternateName?: string | string[]
         featureList?: string[]
         softwareRequirements?: string
@@ -49,14 +44,6 @@ export interface UnifiedToolConfig {
             "@type": string
             price: string
             priceCurrency: string
-        }
-        aggregateRating?: {
-            ratingValue: string
-            ratingCount?: string
-            bestRating?: string
-            worstRating?: string
-            reviewCount?: string
-            "@type"?: string
         }
         itemList?: {
             name: string

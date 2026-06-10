@@ -48,8 +48,6 @@ const toolConfig = createToolConfig({
       "ISBN Citation Tool",
       "Free Citation Tool",
     ],
-    ratingValue: "4.9",
-    ratingCount: "12420",
   },
 
   header: {

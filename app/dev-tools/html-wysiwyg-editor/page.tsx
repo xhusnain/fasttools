@@ -58,8 +58,6 @@ const toolConfig = createToolConfig({
       "Browser-native contenteditable editing",
     ],
     softwareRequirements: "Modern web browser",
-    ratingValue: "4.8",
-    ratingCount: "7320",
     offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },
   },
 

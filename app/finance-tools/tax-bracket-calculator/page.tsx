@@ -52,8 +52,6 @@ const toolConfig = createToolConfig({
       "Side-by-side year comparison",
       "100% client-side, no signup",
     ],
-    ratingValue: "4.8",
-    ratingCount: "5640",
   },
 
   header: {

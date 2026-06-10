@@ -47,8 +47,6 @@ const baseMetadata = createMetadata({
       "FIRE Net Worth Calculator",
     ],
     applicationCategory: "FinanceApplication",
-    ratingValue: "4.9",
-    ratingCount: "5240",
     featureList: [
       "Total net worth = assets − liabilities",
       "Liquid net worth (cash + stocks − total liabilities)",

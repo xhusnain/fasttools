@@ -58,8 +58,6 @@ const baseMetadata = createMetadata({
       "100% client-side — your salary never leaves your browser",
       "Free, no signup, no usage limits",
     ],
-    ratingValue: "4.8",
-    ratingCount: "6730",
   }
 })
 

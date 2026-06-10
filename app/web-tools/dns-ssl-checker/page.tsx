@@ -46,8 +46,6 @@ const toolConfig = createToolConfig({
       "Cert Inspector",
       "TLS Cert Viewer",
     ],
-    ratingValue: "4.9",
-    ratingCount: "8420",
   },
 
   header: {

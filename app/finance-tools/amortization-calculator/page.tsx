@@ -55,8 +55,6 @@ const baseMetadata = createMetadata({
       "Total interest paid summary at top of schedule",
       "Free, no signup, all calculations in your browser",
     ],
-    ratingValue: "4.8",
-    ratingCount: "5810",
   },
 })
 

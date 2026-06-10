@@ -61,8 +61,6 @@ const baseMetadata = createMetadata({
       "Multi-state cost-of-living adjustment guidance",
       "100% client-side, no signup, no lender hand-off",
     ],
-    ratingValue: "4.8",
-    ratingCount: "6480",
   }
 })
 

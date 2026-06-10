@@ -68,8 +68,6 @@ const toolConfig = createToolConfig({
       "Browser-side token decoding for development inspection",
     ],
     softwareRequirements: "Modern web browser with JavaScript enabled",
-    ratingValue: "4.9",
-    ratingCount: "21340",
     offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },
   },
 

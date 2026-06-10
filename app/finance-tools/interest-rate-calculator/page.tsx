@@ -57,8 +57,6 @@ const baseMetadata = createMetadata({
       "100% client-side — no signup, no data uploaded",
       "Free, no usage limits",
     ],
-    ratingValue: "4.8",
-    ratingCount: "4720",
   }
 })
 

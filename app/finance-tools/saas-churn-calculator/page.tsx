@@ -60,8 +60,6 @@ const baseMetadata = createMetadata({
       "Copy / export results",
       "100% client-side, no signup",
     ],
-    ratingValue: "4.8",
-    ratingCount: "4180",
   }
 })
 

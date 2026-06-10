@@ -50,8 +50,6 @@ const toolConfig = createToolConfig({
       "Free, no signup, no watermark, no usage limits",
     ],
     softwareRequirements: "Modern web browser",
-    ratingValue: "4.9",
-    ratingCount: "10840",
   },
 
   heroImage: "/image-compressor-hero.png",

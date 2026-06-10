@@ -54,8 +54,6 @@ const toolConfig = createToolConfig({
       "PhotoRoom Alternative",
       "Adobe Express BG Remover Alternative",
     ],
-    ratingValue: "4.9",
-    ratingCount: "23420",
   },
 
   header: {

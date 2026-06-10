@@ -50,8 +50,6 @@ const toolConfig = createToolConfig({
       "Birthday Anniversary Tracker",
       "Birthday Surprise Countdown",
     ],
-    ratingValue: "4.9",
-    ratingCount: "7820",
     offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },
   },
 

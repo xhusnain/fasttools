@@ -68,8 +68,6 @@ const toolConfig = createToolConfig({
       "No account required",
     ],
     softwareRequirements: "Modern web browser",
-    ratingValue: "4.9",
-    ratingCount: "23410",
     offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },
   },
 

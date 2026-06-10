@@ -56,8 +56,6 @@ const baseMetadata = createMetadata({
       "Solve-for-rate mode (back into rate from price + tax)",
       "100% client-side — no signup, no data uploaded",
     ],
-    ratingValue: "4.8",
-    ratingCount: "5320",
   }
 })
 

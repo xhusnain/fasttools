@@ -57,8 +57,6 @@ const toolConfig = createToolConfig({
       "Copy HEX, RGB, RGBA, HSL, HSLA, and CSS variable output",
     ],
     softwareRequirements: "Modern web browser",
-    ratingValue: "4.9",
-    ratingCount: "13420",
     offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },
   },
 

@@ -79,6 +79,10 @@ export interface MetadataOptions {
 
 
 function shouldIncludeSchema(path: string): boolean {
+    const normalizedFullPath = (path.startsWith("/") ? path : `/${path}`).toLowerCase()
+    // Blog posts are articles, not tools — a slug containing a tool keyword
+    // (e.g. /blog/...-seo-tools) must not get tool schema or the "Free " prefix.
+    if (normalizedFullPath.startsWith("/blog")) return false
     const toolKeywords = [
         "tools",
         "calculator",
@@ -348,22 +352,12 @@ export interface SoftwareAppSchemaOptions {
     operatingSystem?: string
     price?: string
     currency?: string
-    ratingValue?: string
-    ratingCount?: string
     alternateName?: string | string[]
     featureList?: string[]
     version?: string
     softwareVersion?: string
     softwareRequirements?: string
     screenshot?: string
-    aggregateRating?: {
-        ratingValue: string
-        ratingCount?: string
-        bestRating?: string
-        worstRating?: string
-        reviewCount?: string
-        "@type"?: string
-    }
 }
 
 export function createSoftwareAppSchema(options: SoftwareAppSchemaOptions) {
@@ -376,14 +370,11 @@ export function createSoftwareAppSchema(options: SoftwareAppSchemaOptions) {
         operatingSystem = "Web Browser",
         price = "0",
         currency = "USD",
-        ratingValue,
-        ratingCount,
         alternateName,
         featureList,
         version = "2.0",
         softwareRequirements,
-        screenshot,
-        aggregateRating
+        screenshot
     } = options
 
     const appName = name || (title ? extractToolName(title) : "")
@@ -405,16 +396,9 @@ export function createSoftwareAppSchema(options: SoftwareAppSchemaOptions) {
             "priceCurrency": currency,
             "availability": "https://schema.org/InStock"
         },
-        ...(aggregateRating && {
-            "aggregateRating": {
-                "@type": "AggregateRating",
-                "ratingValue": aggregateRating.ratingValue,
-                ...(aggregateRating.ratingCount && { "ratingCount": aggregateRating.ratingCount }),
-                ...(aggregateRating.bestRating && { "bestRating": aggregateRating.bestRating }),
-                ...(aggregateRating.worstRating && { "worstRating": aggregateRating.worstRating }),
-                ...(aggregateRating.reviewCount && { "reviewCount": aggregateRating.reviewCount }),
-            }
-        }),
+        // No aggregateRating here, ever: FastTools has no review system, and
+        // self-asserted ratings violate Google's structured-data spam policy
+        // (manual-action risk).
         "author": {
             "@type": "Organization",
             "name": SITE_NAME,

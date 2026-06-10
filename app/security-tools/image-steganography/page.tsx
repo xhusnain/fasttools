@@ -65,8 +65,6 @@ const toolConfig = createToolConfig({
       "Free, no signup, no watermark on output image",
     ],
     softwareRequirements: "Modern web browser with Web Crypto API support and Canvas API",
-    ratingValue: "4.8",
-    ratingCount: "4320",
     offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },
   },
 

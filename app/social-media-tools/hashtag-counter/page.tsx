@@ -63,8 +63,6 @@ const toolConfig = createToolConfig({
       "Character count for whole caption",
       "Copy clean hashtag list to clipboard",
     ],
-    ratingValue: "4.9",
-    ratingCount: "4820",
     offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },
   },
 

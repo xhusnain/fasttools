@@ -57,8 +57,6 @@ const toolConfig = createToolConfig({
       "Includes HTTP method reference with safe and idempotent markers",
     ],
     softwareRequirements: "Modern web browser",
-    ratingValue: "4.9",
-    ratingCount: "8230",
     offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },
   },
 

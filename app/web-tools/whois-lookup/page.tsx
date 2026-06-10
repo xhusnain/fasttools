@@ -55,8 +55,6 @@ const toolConfig = createToolConfig({
       "Domain Availability Checker",
       "Nameserver Lookup",
     ],
-    ratingValue: "4.9",
-    ratingCount: "6240",
   },
 
   header: {

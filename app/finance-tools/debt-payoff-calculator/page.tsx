@@ -49,8 +49,6 @@ const baseMetadata = createMetadata({
       "Multiple Loan Payoff Calculator",
     ],
     applicationCategory: "FinanceApplication",
-    ratingValue: "4.9",
-    ratingCount: "8420",
     featureList: [
       "Side-by-side snowball vs avalanche comparison with $ interest delta",
       "Multiple debt support: credit cards, student loans, auto, personal, medical",

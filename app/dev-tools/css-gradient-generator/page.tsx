@@ -47,8 +47,6 @@ const toolConfig = createToolConfig({
       "Color Stop Editor",
       "Hero Background Generator",
     ],
-    ratingValue: "4.9",
-    ratingCount: "11820",
   },
 
   header: {

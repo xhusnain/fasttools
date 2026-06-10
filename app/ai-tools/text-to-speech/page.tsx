@@ -55,8 +55,6 @@ const toolConfig = createToolConfig({
       "AI Narrator Tool",
       "Audiobook Voice Generator",
     ],
-    ratingValue: "4.9",
-    ratingCount: "18420",
   },
 
   header: {

@@ -59,8 +59,6 @@ const baseMetadata = createMetadata({
       "100% client-side — your salary and tax data never leave your browser",
       "Free, no signup, no upsell to tax-prep services",
     ],
-    ratingValue: "4.8",
-    ratingCount: "9120",
   }
 })
 

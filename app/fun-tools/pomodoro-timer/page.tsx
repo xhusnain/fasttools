@@ -54,8 +54,6 @@ const toolConfig = createToolConfig({
       "Focus@Will Alternative",
       "Study Pomodoro App",
     ],
-    ratingValue: "4.9",
-    ratingCount: "16240",
   },
 
   header: {

@@ -46,8 +46,6 @@ const toolConfig = createToolConfig({
       "Current Unix Timestamp",
       "Milliseconds to Date Converter",
     ],
-    ratingValue: "4.9",
-    ratingCount: "5120",
   },
 
   header: {

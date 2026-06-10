@@ -54,8 +54,6 @@ const toolConfig = createToolConfig({
       "Copilot Code Verifier",
       "Human vs AI Code Tool",
     ],
-    ratingValue: "4.8",
-    ratingCount: "5840",
   },
 
   header: {

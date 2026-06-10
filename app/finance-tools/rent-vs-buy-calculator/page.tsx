@@ -48,8 +48,6 @@ const baseMetadata = createMetadata({
       "How Long to Break Even Buying a Home",
     ],
     applicationCategory: "FinanceApplication",
-    ratingValue: "4.9",
-    ratingCount: "5180",
     featureList: [
       "Rent vs buy comparison over any time horizon (3-30 years)",
       "Year-by-year cost comparison table",

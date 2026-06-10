@@ -62,8 +62,6 @@ const toolConfig = createToolConfig({
       "Free, no signup, no rate limit, no telemetry",
     ],
     softwareRequirements: "Modern web browser",
-    ratingValue: "4.9",
-    ratingCount: "8410",
     offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },
   },
 

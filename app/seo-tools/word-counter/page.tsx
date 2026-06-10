@@ -55,8 +55,6 @@ const toolConfig = createToolConfig({
       "wordcounter.net Alternative",
       "Yoast Word Count Alternative",
     ],
-    ratingValue: "4.9",
-    ratingCount: "26420",
   },
 
   header: {

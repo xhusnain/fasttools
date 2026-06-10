@@ -53,8 +53,6 @@ const toolConfig = createToolConfig({
       "Copy buttons for individual values",
     ],
     softwareRequirements: "Modern web browser with JavaScript enabled",
-    ratingValue: "4.9",
-    ratingCount: "5430",
     offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },
   },
 

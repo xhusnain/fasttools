@@ -72,8 +72,6 @@ const toolConfig = createToolConfig({
       "100% client-side — your usage figures never leave your browser",
     ],
     softwareRequirements: "Modern web browser with JavaScript enabled",
-    ratingValue: "4.9",
-    ratingCount: "2840",
     offers: {
       "@type": "Offer",
       price: "0",

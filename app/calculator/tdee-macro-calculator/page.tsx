@@ -41,8 +41,6 @@ const baseMetadata = createMetadata({
       "Athlete Macro Calculator",
     ],
     applicationCategory: "HealthApplication",
-    ratingValue: "4.9",
-    ratingCount: "4180",
     featureList: [
       "TDEE calculation with 3 BMR equations (Mifflin-St Jeor, Harris-Benedict, Katch-McArdle)",
       "Personalized macronutrient breakdown (protein, carbs, fat in grams)",

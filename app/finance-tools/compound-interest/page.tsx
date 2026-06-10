@@ -39,8 +39,6 @@ const baseMetadata = createMetadata({
       "Money Doubling Calculator",
     ],
     applicationCategory: "FinanceApplication",
-    ratingValue: "4.8",
-    ratingCount: "5240",
     featureList: [
       "Daily, monthly, quarterly, semi-annual, annual, and continuous compounding",
       "Lump-sum or monthly/yearly recurring contribution support",

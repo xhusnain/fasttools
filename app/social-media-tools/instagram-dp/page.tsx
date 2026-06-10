@@ -44,8 +44,6 @@ const instagramDpMetadataOptions = {
       "Instagram Profile Image Downloader",
     ],
     applicationCategory: "UtilitiesApplication",
-    ratingValue: "4.8",
-    ratingCount: "12450",
     featureList: [
       "View Instagram profile pictures in full size HD resolution",
       "Download Instagram DP to your device in one click",

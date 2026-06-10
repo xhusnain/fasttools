@@ -50,8 +50,6 @@ const toolConfig = createToolConfig({
       "Spin the Wheel Online",
       "Random Group Picker",
     ],
-    ratingValue: "4.9",
-    ratingCount: "14820",
   },
 
   header: {

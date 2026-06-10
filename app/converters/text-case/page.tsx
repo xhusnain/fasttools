@@ -68,8 +68,6 @@ const toolConfig = createToolConfig({
       "Word-separator detection: handles spaces, dashes, underscores, dots intelligently",
       "100% client-side — text never sent to a server",
     ],
-    ratingValue: "4.9",
-    ratingCount: "16240",
     offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },
   },
 

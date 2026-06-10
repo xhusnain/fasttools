@@ -55,8 +55,6 @@ const baseMetadata = createMetadata({
       "Built-in TVM formula reference for students and finance classes",
       "100% client-side, no signup, no data uploaded",
     ],
-    ratingValue: "4.8",
-    ratingCount: "3920",
   }
 })
 

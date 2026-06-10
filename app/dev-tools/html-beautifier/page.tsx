@@ -59,8 +59,6 @@ const toolConfig = createToolConfig({
       "Browser-side formatting",
     ],
     softwareRequirements: "Modern web browser",
-    ratingValue: "4.9",
-    ratingCount: "12340",
     offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },
   },
 

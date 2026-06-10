@@ -55,8 +55,6 @@ const toolConfig = createToolConfig({
       "100% client-side, no signup",
     ],
     softwareRequirements: "Modern web browser with JavaScript enabled",
-    ratingValue: "4.9",
-    ratingCount: "2840",
   },
 
   header: {

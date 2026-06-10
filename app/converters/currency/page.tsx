@@ -76,8 +76,6 @@ const toolConfig = createToolConfig({
       "Mobile-friendly for on-the-go conversion checks",
       "No signup, no rate limit, no ads",
     ],
-    ratingValue: "4.9",
-    ratingCount: "18420",
     offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },
   },
 

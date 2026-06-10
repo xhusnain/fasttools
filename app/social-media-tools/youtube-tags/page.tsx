@@ -52,8 +52,6 @@ const toolConfig = createToolConfig({
       "YouTube Tag Research Tool",
       "Channel Tag Aggregator",
     ],
-    ratingValue: "4.9",
-    ratingCount: "9420",
     featureList: [
       "Extract hidden tags from any public YouTube video",
       "One-click copy all tags for your own videos",

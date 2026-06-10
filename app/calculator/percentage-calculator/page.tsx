@@ -39,8 +39,6 @@ const baseMetadata = createMetadata({
       "Profit Margin Percent",
     ],
     applicationCategory: "UtilitiesApplication",
-    ratingValue: "4.8",
-    ratingCount: "1250",
     featureList: [
       "Percentage increase calculations",
       "Percentage decrease comparisons",

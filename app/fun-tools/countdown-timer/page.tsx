@@ -49,8 +49,6 @@ const toolConfig = createToolConfig({
       "Vclock Alternative",
       "Browser Countdown Timer",
     ],
-    ratingValue: "4.9",
-    ratingCount: "12420",
   },
 
   header: {

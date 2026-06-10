@@ -54,8 +54,6 @@ const toolConfig = createToolConfig({
       "Free, no signup, no email verification, no watermark",
     ],
     softwareRequirements: "Modern web browser",
-    ratingValue: "4.9",
-    ratingCount: "7240",
   },
 
   header: {

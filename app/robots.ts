@@ -7,7 +7,9 @@ export default function robots(): MetadataRoute.Robots {
             {
                 userAgent: '*',
                 allow: ['/', '/llms.txt', '/humans.txt', '/ai.txt'],
-                disallow: ['/api/', '/_next/', '/private/', '/temp/'],
+                // /_next/ must stay crawlable: Google needs the JS/CSS chunks to
+                // render pages; blocking them degrades indexing quality.
+                disallow: ['/api/', '/private/', '/temp/'],
             },
 
         ],

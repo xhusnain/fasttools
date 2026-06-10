@@ -51,8 +51,6 @@ const toolConfig = createToolConfig({
       "Copy-ready output",
     ],
     softwareRequirements: "Modern web browser",
-    ratingValue: "4.9",
-    ratingCount: "10240",
     offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },
   },
 

@@ -45,8 +45,6 @@ const toolConfig = createToolConfig({
       "GitHub Actions Schedule Helper",
       "Cloudflare Workers Cron Helper",
     ],
-    ratingValue: "4.9",
-    ratingCount: "9420",
   },
 
   header: {

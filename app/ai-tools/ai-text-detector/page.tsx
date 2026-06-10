@@ -54,8 +54,6 @@ const toolConfig = createToolConfig({
       "Human vs AI Text Tool",
       "AI Content Verifier",
     ],
-    ratingValue: "4.8",
-    ratingCount: "14820",
   },
 
   header: {

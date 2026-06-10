@@ -54,8 +54,6 @@ const toolConfig = createToolConfig({
       "Only works on PDFs you own / are authorized to unlock",
     ],
     softwareRequirements: "Modern web browser",
-    ratingValue: "4.8",
-    ratingCount: "5640",
   },
 
   header: {

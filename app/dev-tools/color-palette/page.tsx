@@ -54,8 +54,6 @@ const toolConfig = createToolConfig({
       "WCAG Color Checker",
       "Accessibility Color Picker",
     ],
-    ratingValue: "4.9",
-    ratingCount: "16240",
   },
 
   header: {

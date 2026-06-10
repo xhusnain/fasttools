@@ -52,8 +52,6 @@ const toolConfig = createToolConfig({
       "Social Bio Link Page",
       "Influencer Landing Page Tool",
     ],
-    ratingValue: "4.9",
-    ratingCount: "6420",
     featureList: [
       "Create multi-link bio landing pages",
       "Customizable colors, fonts, and button styles",

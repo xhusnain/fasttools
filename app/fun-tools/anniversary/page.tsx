@@ -39,8 +39,6 @@ const toolConfig = createToolConfig({
       "Days Together Tracker",
       "Love Counter",
     ],
-    ratingValue: "4.9",
-    ratingCount: "5420",
     featureList: [
       "Precise duration calculation (years, months, days, hours, minutes, seconds)",
       "Total months display for monthsary celebrations",
