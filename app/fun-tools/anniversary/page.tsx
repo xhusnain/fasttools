@@ -24,6 +24,7 @@ const toolConfig = createToolConfig({
     description: "Relationship anniversary calculator with precise duration in years, months, days, hours, minutes, seconds. Next anniversary countdown, milestone tracking (silver, golden, diamond), monthsary support.",
     alternateName: [
       "Relationship Calculator",
+      "Relationship Anniversary Calculator",
       "How Long Together Calculator",
       "Wedding Anniversary Calculator",
       "Dating Anniversary Tool",
@@ -75,7 +76,7 @@ const toolConfig = createToolConfig({
       "Works for dating, wedding, friendship, and work anniversaries",
       "All calculations happen locally — no personal data stored",
     ],
-    overview: "Our **Love Days Counter** (also known as a **Dating Calculator**) is the ultimate relationship tracker. Accurately calculate exactly how long you've been together in years, months, and days. Whether you need a wedding anniversary calculator or simply want to check your **love days count**, this free tool does it all. Track upcoming 'monthsaries', find your next big milestone, and celebrate every moment with our precise **relationship counter**.",
+    overview: "Our **Love Days Counter** (also known as a **Dating Calculator**) is the ultimate relationship tracker. Accurately calculate exactly how long you've been together in years, months, and days. Whether you need a wedding anniversary calculator or simply want to check your **love days count**, this free tool does it all. It works just as well for marriage milestones — see exactly how many years you've been married — and it can count friendship anniversaries too. Track upcoming 'monthsaries' with the total-months count, find your next big milestone, and celebrate every moment with our precise **relationship counter**.",
 
     howToSteps: [
       "Enter Start Date: Select the date your relationship started (dating, wedding, or any other milestone) using the date picker.",
@@ -423,8 +424,20 @@ const toolConfig = createToolConfig({
         answer: "Our anniversary calculator provides precise accuracy by calculating relationship duration in years, months, days, hours, minutes, and seconds. It also provides a 'Total Months' count for monthly celebrations. The calculation accounts for different month lengths, leap years, and handles edge cases like February 29th birthdays to ensure complete accuracy."
       },
       {
-        question: "Can I use this calculator for any type of relationship?",
+        question: "Does this work for dating and friendship anniversaries too?",
         answer: "Absolutely! Our anniversary calculator is designed to work for any type of relationship milestone. Whether you're celebrating a dating anniversary, engagement anniversary, wedding anniversary, friendship anniversary, or any other significant relationship milestone, the tool will calculate your time together accurately."
+      },
+      {
+        question: "What is a monthsary and how do I calculate it?",
+        answer: "A monthsary is a monthly anniversary — the same calendar day each month as your start date, a term especially popular in the Philippines. If you became a couple on March 9, every 9th of the month is a monthsary. Enter your start date above and the calculator counts both your total months together and your full years, so you can celebrate either milestone."
+      },
+      {
+        question: "How do I count how long we've been together in months?",
+        answer: "Enter your relationship start date and the calculator instantly shows your total months together alongside years and days. Month counting is calendar-based: if you started dating on January 15, you complete one month on February 15, regardless of how many days each month has. The total-months figure is the one to use for monthsary posts and monthly milestone celebrations."
+      },
+      {
+        question: "How do I calculate my wedding or marriage anniversary years?",
+        answer: "Enter your wedding date as the start date and the calculator shows exactly how many years you've been married, plus the extra months and days on top. It also counts down to your next wedding anniversary and highlights milestone years like silver (25) and golden (50). It's the quickest way to settle the 'how long have we been married?' question before planning a celebration."
       },
       {
         question: "How does the calculator handle leap years and different month lengths?",

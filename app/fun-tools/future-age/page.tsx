@@ -36,6 +36,7 @@ const toolConfig = createToolConfig({
       "Future age calculator: calculate exactly how old you'll be on any future date. Years, months, days output plus total elapsed days / weeks / months. Leap-year aware. 100% client-side.",
     alternateName: [
       "How Old Will I Be Calculator",
+      "Future Age Calculation",
       "Future Age Estimator",
       "Age in 2030 Calculator",
       "Age in 2040 Calculator",
@@ -152,6 +153,9 @@ const toolConfig = createToolConfig({
               </tbody>
             </GTable>
           </div>
+          <p className="text-base text-muted-foreground leading-relaxed">
+            A few quick worked examples: a 10-year-old in 2026 turns 14 in 2030 and 34 in 2050. A 12-year-old today will be 16 in 2030 and 36 in 2050, while an 11-year-old will be about 35 in 2050 and 85 in 2100. The method is always the same — add the gap between the current year and the target year to your current age, then subtract one if your birthday hasn't happened yet in the target year.
+          </p>
         </article>
 
         <article className="space-y-4">
@@ -243,6 +247,14 @@ const toolConfig = createToolConfig({
       {
         question: "How old will I be in 2050?",
         answer: "Add 50 minus your current age, roughly. Precisely: 2050 − birth year, minus one if your birthday in 2050 hasn't happened yet by the target date. Someone born in 1990 will be 60 in 2050. Born in 2000 → 50. Born in 2010 → 40. Born in 2020 → 30. Use the calculator above for an exact answer including months and days."
+      },
+      {
+        question: "If I am 11 now, how old will I be in 2050?",
+        answer: "If you're 11 in 2026, you'll be about 35 in 2050 — or 34 if your birthday hasn't come around yet that year. The general method: subtract the current year from the target year (2050 − 2026 = 24) and add that to your current age (11 + 24 = 35). The same trick works for any year — the same 11-year-old would be about 85 in 2100. Enter your exact birth date above for an answer precise to the day."
+      },
+      {
+        question: "How do I calculate my age on a future date?",
+        answer: "Subtract your birth year from the future year, then subtract one more if the future date falls before your birthday in that year. For example, someone born in June 1995 will be 2040 − 1995 − 1 = 44 on March 1, 2040, because their June birthday won't have happened yet. The calculator above does this automatically and also gives the exact remaining months and days."
       },
       {
         question: "How accurate are future age calculations?",

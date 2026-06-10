@@ -34,6 +34,7 @@ const instagramDpMetadataOptions = {
       "Instagram DP Download",
       "Insta DP Download",
       "Instagram PFP Downloader",
+      "Instagram PFP Viewer",
       "Full Size DP Viewer",
       "HD Profile Picture Tool",
       "Instagram Avatar Downloader",
@@ -41,6 +42,8 @@ const instagramDpMetadataOptions = {
       "Private Account DP Viewer",
       "Insta Profile Photo Saver",
       "IG DP Zoom Tool",
+      "Insta Zoom",
+      "InstaZoom",
       "Instagram Profile Image Downloader",
     ],
     applicationCategory: "UtilitiesApplication",
@@ -63,8 +66,12 @@ const instagramDpMetadataOptions = {
       answer: "InstaDp (Insta DP) means Instagram Display Picture — the profile photo shown on an Instagram account. An InstaDp viewer is a tool that lets you view this profile picture in full size HD resolution, since Instagram only displays it as a tiny 110x110 pixel circle in the app. Our tool fetches the full-resolution version (up to 1080x1080) so you can view, zoom, and download it."
     },
     {
+      question: "What does PFP mean on Instagram?",
+      answer: "PFP stands for Profile Picture — the photo shown at the top of an Instagram account. PFP, DP (display picture), and avatar are commonly used interchangeably for the profile photo, so this tool also works as an Insta PFP viewer and downloader. Enter any username to see the PFP in full size and save it to your device."
+    },
+    {
       question: "How do I view an Instagram profile picture in full size?",
-      answer: "Enter the Instagram username (with or without @) in the viewer above and click search. The tool fetches the profile picture in the highest available resolution. You can then view it in full size, zoom in, and download it to your device. No Instagram login is needed."
+      answer: "Enter the Instagram username (with or without @) in the viewer above and click search. The tool looks up the Insta DP by username — you don't need a profile link — and fetches the picture in the highest available resolution. You can then view it in full size, zoom in, and download it to your device. No Instagram login is needed."
     },
     {
       question: "Can I view a private account's profile picture?",
@@ -234,7 +241,7 @@ export default function InstagramDpPage() {
             DP stands for <strong>Display Picture</strong> — the profile photo shown on every Instagram account. It&apos;s also commonly called PFP (Profile Picture), profile photo, or avatar. Instagram displays this image as a small circle on your profile, in feeds, comments, stories, and DMs. The term &quot;Insta DP&quot; or &quot;InstaDp&quot; specifically refers to an Instagram profile picture, and an InstaDp viewer is a tool that lets you see this image in its full, uncropped resolution.
           </p>
           <p className="text-base text-muted-foreground leading-relaxed">
-            Instagram intentionally limits how profile pictures are displayed — showing them at just 110&times;110 pixels on mobile and 180&times;180 on desktop, with no native way to tap, zoom, or enlarge them. However, Instagram stores the original image at up to 1080&times;1080 pixels on their servers. Our Instagram DP viewer accesses this full-resolution version directly, letting you see details that are invisible in the app.
+            Instagram intentionally limits how profile pictures are displayed — showing them at just 110&times;110 pixels on mobile and 180&times;180 on desktop, with no native way to tap, zoom, or enlarge them. However, Instagram stores the original image at up to 1080&times;1080 pixels on their servers. Our Instagram DP viewer accesses this full-resolution version directly, letting you see details that are invisible in the app. If you simply want to enlarge a photo without saving it, our <a href="/social-media-tools/instagram-dp/zoom-profile-picture" className="text-primary underline">Insta Zoom profile picture viewer</a> is built for exactly that.
           </p>
         </article>
 
@@ -375,7 +382,8 @@ export default function InstagramDpPage() {
     proTip: "For best results, use the exact Instagram username (not display name). You can also paste a full Instagram profile URL. If the profile picture doesn't load, the account may have been recently deactivated or the username may be misspelled.",
     faqs: [
       { question: "What is InstaDp?", answer: "InstaDp means Instagram Display Picture — the profile photo on an Instagram account. An InstaDp viewer lets you see this image in full HD resolution (up to 1080x1080) instead of the tiny 110x110 pixel version shown in the app." },
-      { question: "How do I view an Instagram profile picture in full size?", answer: "Enter the username in the viewer above and click search. The tool fetches the full-resolution profile picture. You can then view it enlarged, zoom in, and download it. No login needed." },
+      { question: "What does PFP mean on Instagram?", answer: "PFP stands for Profile Picture — the same image as a DP or avatar. This tool doubles as an Insta PFP viewer and downloader: enter a username to see and save any PFP in full size." },
+      { question: "How do I view an Instagram profile picture in full size?", answer: "Enter the username in the viewer above and click search. The tool finds the Insta DP by username — no profile link needed — and fetches it in full resolution. You can then view it enlarged, zoom in, and download it. No login required." },
       { question: "Can I view a private account's profile picture?", answer: "Yes. Profile pictures are publicly visible even on private accounts. Private settings only hide posts, reels, and stories — not the profile photo." },
       { question: "Does the owner get notified?", answer: "No. Instagram does not notify users when someone views their profile picture. Our tool accesses publicly available data without any account interaction." },
       { question: "Is it legal to download Instagram profile pictures?", answer: "Viewing and downloading for personal reference is generally permissible. Using someone's image for commercial purposes, impersonation, or harassment may violate copyright law and Instagram's Terms of Service." },

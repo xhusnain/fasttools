@@ -79,7 +79,7 @@ export default function SavingsTrackerPage() {
       "Multiple goals should be prioritized by urgency, risk, and deadline",
       "Track progress regularly so stale balances do not distort the plan",
     ],
-    overview: `Comprehensive financial planning tool with expense tracking, tax calculations, inflation adjustments, and multiple goal management. Perfect for budgeting, savings planning, and achieving financial objectives. Features advanced expense categories, tax deductions, priority-based goal setting, and intelligent recommendations.`,
+    overview: `A comprehensive savings tracking tool with expense management, tax calculations, inflation adjustments, and support for multiple goals. Perfect for budgeting, savings planning, and achieving financial objectives. Features advanced expense categories, tax deductions, priority-based goal setting, and intelligent recommendations.`,
 
     howToSteps: [
       "Set Your Goal: Define what you are saving for (e.g., Emergency Fund, Vacation, New Car).",
@@ -112,6 +112,14 @@ export default function SavingsTrackerPage() {
     ],
 
     faqs: [
+      {
+        question: "What is the best free way to track savings online?",
+        answer: "The simplest free way to track savings online is a browser-based tracker that lets you set a goal, enter your current balance, and watch your progress without creating an account. This tool runs entirely in your browser, so there is no signup and no bank linking required. Enter a target amount and monthly contribution and it shows exactly how long the goal will take, with optional tax and inflation adjustments for longer timelines."
+      },
+      {
+        question: "Can I track multiple savings goals?",
+        answer: "Yes — you can add as many savings goals as you need and manage them side by side. Each goal has its own target amount, current balance, deadline, category, and priority level, and the tool totals everything to show the combined monthly contribution required. It also flags when your monthly savings fall short, so you can decide which high-priority goals to fund first."
+      },
       {
         question: "How to calculate savings timeline and reach financial goals",
         answer: "To calculate savings timeline: Timeline = (Goal Amount - Current Savings) ÷ Monthly Contribution. Our savings tracker automatically calculates exact timelines based on your inputs. For example, saving $10,000 with $500 monthly contributions: ($10,000 - $2,000) ÷ $500 = 16 months. Adjust contributions to accelerate or extend timelines as needed."

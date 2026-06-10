@@ -32,6 +32,7 @@ const toolConfig = createToolConfig({
       "Cryptographically-secure random token generator. Output formats include hex, Base64, Base64URL, and alphanumeric. Length 16–256 chars. Optional prefix/suffix for Stripe-style API key naming. Bulk mode. 100% client-side via Web Crypto API.",
     alternateName: [
       "API Key Generator",
+      "API Token Generator",
       "Random Token Generator",
       "Secret Key Generator",
       "Session Token Generator",
@@ -78,7 +79,7 @@ const toolConfig = createToolConfig({
       "Uses Web Crypto API — all generation runs securely in your browser",
     ],
     overview:
-      "Generate cryptographically secure random tokens with this free online tool. Create API keys, session tokens, CSRF tokens, password reset links, webhook secrets, and environment variable values. Choose from multiple formats: hexadecimal, Base64, Base64URL, and alphanumeric. Set custom token length from 16 to 256 characters, add prefixes (like sk_, pk_, api_), and generate in bulk. All tokens are created using the Web Crypto API (crypto.getRandomValues) for true cryptographic randomness — no pseudo-random fallback. Perfect for developers setting up authentication, provisioning test credentials, or generating .env file secrets.",
+      "Generate cryptographically secure random tokens with this free online tool. Create API keys, session tokens, CSRF tokens, password reset links, webhook secrets, and environment variable values. Choose from multiple formats: hexadecimal, Base64, Base64URL, and alphanumeric. Set custom token length from 16 to 256 characters, add prefixes (like sk_, pk_, api_), and generate in bulk. All tokens are created using the Web Crypto API (crypto.getRandomValues) for true cryptographic randomness — no pseudo-random fallback. Whether you need to generate a random API token online for a quick integration or produce a batch of secure random tokens for production services, there's nothing to install and no signup required. Perfect for developers setting up authentication, provisioning test credentials, or generating .env file secrets.",
 
     howToSteps: [
       "Select a token format: hex, Base64, Base64URL, or alphanumeric.",
@@ -211,14 +212,24 @@ const toolConfig = createToolConfig({
 
     faqs: [
       {
+        question: "How do I generate a random API token online?",
+        answer:
+          "Choose an output format (hex, Base64, Base64URL, or alphanumeric), set the length — 32 characters is a solid default — and click Generate; the token appears instantly and can be copied with one click. Add a prefix like sk_ or api_ if your service follows a naming convention. Everything runs client-side in your browser, so the token never touches a server.",
+      },
+      {
         question: "Are these tokens truly random and secure?",
         answer:
           "Yes. Tokens are generated using the Web Crypto API (crypto.getRandomValues) which provides cryptographically secure pseudo-random numbers, not Math.random().",
       },
       {
+        question: "What makes a token cryptographically secure?",
+        answer:
+          "A token is cryptographically secure when it comes from a cryptographically secure random number generator (CSPRNG) — such as the Web Crypto API's crypto.getRandomValues() — rather than a plain pseudo-random generator like Math.random(), whose output can be predicted from a few samples. A CSPRNG draws on operating-system entropy sources, so even an attacker who has seen previous tokens cannot guess the next one. Sufficient length matters too: aim for at least 128 bits of entropy so brute-force guessing is computationally infeasible.",
+      },
+      {
         question: "What token length should I use for API keys?",
         answer:
-          "32 characters in hex format provides 128 bits of entropy, suitable for most API keys. Use 64+ characters for signing secrets and HMAC keys.",
+          "32 characters in hex format provides 128 bits of entropy, which is enough to make brute-forcing infeasible and is suitable for most API keys. For signing secrets, HMAC keys, and other long-lived credentials, use 32+ bytes (64 hex characters) for a full 256 bits of entropy.",
       },
       {
         question: "Can I add a prefix like sk_ to generated tokens?",

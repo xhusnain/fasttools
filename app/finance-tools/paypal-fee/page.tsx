@@ -120,6 +120,10 @@ export default function PayPalFeeCalculatorPage() {
         answer: "Enter the transaction amount, choose domestic or international, then select the payment type. For a US PayPal Checkout payment, the common commercial rate is 3.49% + $0.49, so a $100 payment has a $3.98 fee and leaves $96.02. For standard credit/debit card commercial payments, PayPal lists 2.99% + fixed fee."
       },
       {
+        question: "How do I calculate PayPal fees manually?",
+        answer: "Multiply the transaction amount by PayPal's percentage rate, then add the fixed fee per transaction: fee = (amount × rate) + fixed fee. Subtract that fee from the amount to see your net. Keep in mind both the percentage and the fixed fee vary by transaction type, seller country, and whether the payment crosses borders, so check the rate for your specific payment flow — or let the calculator above apply it automatically."
+      },
+      {
         question: "How do I calculate PayPal G&S fee?",
         answer: "To calculate a PayPal Goods and Services fee, enter the amount and choose the Goods and Services option. PayPal's current US merchant fee page lists Send/Receive Money for Goods and Services at 2.99%, while PayPal Checkout, Guest Checkout, and Venmo commercial flows are 3.49% + fixed fee. Pick the payment type that matches how the buyer is paying."
       },
@@ -149,7 +153,7 @@ export default function PayPalFeeCalculatorPage() {
       },
       {
         question: "What is the difference between Goods & Services and Friends & Family fees?",
-        answer: "'Goods & Services' payments are commercial payments and usually charge the seller a fee, while eligible domestic 'Friends & Family' bank or balance transfers can be free but do not provide buyer/seller protection. Do not use Friends & Family for business transactions just to avoid fees."
+        answer: "'Goods & Services' payments are commercial payments and usually charge the seller a fee, while eligible domestic 'Friends & Family' bank or balance transfers can be free but do not provide buyer/seller protection. Do not use Friends & Family for business transactions just to avoid fees. If most of your payments are G&S, our dedicated PayPal Goods and Services fee calculator breaks that rate down in more detail."
       },
       {
         question: "Are PayPal fees tax deductible?",
@@ -206,7 +210,7 @@ export default function PayPalFeeCalculatorPage() {
 
           <h3 className="text-xl font-bold text-foreground mt-6 mb-4">Why Use a PayPal Fee Calculator?</h3>
           <p className="text-base text-muted-foreground mb-4">
-            PayPal’s fees change based on your location, the sender’s country, and the type of transaction. Calculating these manually is prone to error. Our tool helps you:
+            PayPal’s seller fees change based on your location, the sender’s country, and the type of transaction, so the same sale can carry a different transaction fee depending on how the buyer pays. Calculating these manually is prone to error. Our tool helps you:
           </p>
           <ul className="list-none space-y-3">
             <li className="flex items-start gap-2">
