@@ -1,0 +1,151 @@
+---
+title: "HEIC vs JPG vs PNG vs WebP: Which to Use and How to Convert"
+description: "HEIC, JPG, PNG, or WebP? A plain-English image format guide covering what each one does, when to use it, and how to convert between them — backed by Apple, Google, and the W3C."
+publishedAt: "2026-06-15"
+updatedAt: "2026-06-15"
+author: "FastTools Team"
+category: "Guides"
+tags:
+  - image formats
+  - image converter
+  - image tools
+  - file formats
+  - web performance
+keywords:
+  - heic vs jpg
+  - jpg vs png
+  - webp vs jpg
+  - png vs jpg
+  - image format guide
+  - image formats explained
+  - best image format
+  - what is a heic file
+  - what is webp
+  - convert heic to jpg
+  - convert png to jpg
+  - convert webp to jpg
+  - convert jpg to png
+  - jpg vs jpeg
+image: "/images/image-compression-guide.png"
+imageAlt: "Comparison of HEIC, JPG, PNG, and WebP image formats and how to convert between them"
+featured: true
+excerpt: "A practical, evidence-backed guide to the four image formats you meet every day — JPG, PNG, WebP, and HEIC — and how to convert between them without surprises."
+faq:
+  - question: "Is HEIC better than JPG?"
+    answer: "For storage, yes — Apple says HEIC is about half the size of a JPEG at the same visual quality. But JPG opens everywhere, while HEIC needs iOS 11/macOS High Sierra or newer, so most people convert HEIC to JPG for compatibility."
+  - question: "Why won't my WebP image open?"
+    answer: "Every major browser supports WebP, but some desktop apps, editors, and upload forms still don't accept it. Converting the WebP to JPG or PNG produces a file those programs can open."
+  - question: "Does converting PNG to JPG reduce quality?"
+    answer: "JPG is a lossy format, so some compression is applied, but at high quality the difference is hard to see. The bigger change is that transparency is removed and filled with a solid background, because JPG has no alpha channel."
+  - question: "Is converting JPG to PNG lossless?"
+    answer: "The conversion itself is lossless and the PNG reproduces the JPG exactly, but it cannot recover detail the original JPEG compression already discarded. The PNG file is also usually larger than the JPG."
+  - question: "Which image format is best for the web?"
+    answer: "WebP is usually best for the web because it is smaller than JPG and PNG while supporting transparency. JPG remains a safe fallback for photos, and PNG is best when you need lossless graphics or transparency."
+---
+
+<AnswerLead>
+
+**Use JPG for everyday photos, PNG for graphics and anything that needs a transparent background, WebP to make web images smaller, and convert away from HEIC whenever you need a file that opens everywhere.** You can convert any of them in your browser with the [HEIC to JPG](/image-tools/heic-to-jpg), [PNG to JPG](/image-tools/png-to-jpg), [WebP to JPG](/image-tools/webp-to-jpg), and [JPG to PNG](/image-tools/jpg-to-png) converters — no upload required.
+
+</AnswerLead>
+
+Four formats dominate the images you handle every day: JPG, PNG, WebP, and HEIC. They can look identical when you open them, but under the hood they make very different trade-offs in file size, quality, and transparency. Pick the wrong one and you end up with a bloated file, a missing transparent background, or a photo your computer flatly refuses to open.
+
+This guide explains what each format actually is, when to use it, and exactly what happens when you convert between them. Every technical claim below is drawn from primary sources — Apple, Google, Mozilla's MDN, and the W3C — and linked at the end.
+
+## Key Takeaways
+
+- **JPG (JPEG)** is lossy with no transparency — the universal choice for photographs.
+- **PNG** is lossless with full transparency — best for logos, icons, screenshots, and exact reproduction.
+- **WebP** is Google's modern format: roughly 25–35% smaller than JPEG and about 26% smaller than PNG, and it now works in every major browser.
+- **HEIC** is Apple's iPhone photo format: about half the size of a JPEG at the same visual quality, but it does not open everywhere.
+- Converting any image to JPG removes transparency; converting JPG to PNG cannot recover quality that JPEG already discarded.
+
+## The four formats at a glance
+
+| Format | Compression | Transparency | Best for | Watch out for |
+| --- | --- | --- | --- | --- |
+| JPG / JPEG | Lossy | No | Photos, email, uploads | Artifacts at low quality; no transparency |
+| PNG | Lossless | Yes (alpha) | Logos, icons, screenshots, line art | Large files for photographs |
+| WebP | Lossy or lossless | Yes (alpha) | Web images, balancing size and quality | Some desktop apps still don't open it |
+| HEIC / HEIF | Lossy (HEVC) | Yes (auxiliary) | iPhone photo storage | Limited compatibility off Apple devices |
+
+## JPG (JPEG): the universal photo format
+
+JPEG is, in Mozilla's words, "the most widely used lossy compression format for still images." That lossy compression is exactly what makes it great for photographs: it throws away detail your eye barely notices to produce a small file. The downside is built into the standard — JPEG **does not support an alpha channel**, so it cannot store transparency, and pushing quality too low introduces visible compression artifacts.
+
+In practice, JPG is the safe default whenever you need a photo to be small and to open anywhere, from a job-application form to an old Android phone. (JPG and JPEG are the same format — only the file extension differs.)
+
+## PNG: lossless and transparent
+
+PNG sits at the opposite end. The W3C's PNG specification describes it as a format for the "lossless, portable, well-compressed storage" of images, and states that "every reference image can be represented exactly by a PNG datastream" — that is, bit-for-bit perfect. It also supports a full alpha channel, where, per the spec, "an alpha value of zero represents full transparency."
+
+That makes PNG the right tool for logos, icons, screenshots, line art, and anything that must look exact or sit on a transparent background. MDN explicitly recommends PNG for screenshots and "when transparency is needed." The trade-off: for detailed photographs, a lossless PNG is far larger than the equivalent JPG.
+
+## WebP: the modern web all-rounder
+
+WebP is Google's "modern image format that provides superior lossless and lossy compression for images on the web." It offers the best of both worlds: a lossy mode (built on the VP8 video codec) and a lossless mode, plus transparency in either.
+
+The numbers are the selling point. According to Mozilla's MDN, "lossy WebP images are on average 25–35% smaller than JPEG images of visually similar compression levels," and "lossless WebP images are typically 26% smaller than the same images in PNG format." Google reports similar figures for transparency, where a lossy WebP with an alpha channel can be substantially smaller than the equivalent PNG.
+
+WebP launched in 2010 with support limited to Chrome, Opera, and Android — but that has changed completely. It is now supported across every major browser, including Firefox (since 2019) and Safari (since 2020). The remaining friction is off the web: some desktop editors, Office apps, and upload forms still reject `.webp`, which is the usual reason to [convert WebP to JPG](/image-tools/webp-to-jpg) (or to PNG, to keep transparency).
+
+## HEIC: why your iPhone photos look different
+
+If a photo from your iPhone won't open on Windows, it's almost certainly a HEIC file. As Apple's developer documentation explains, HEIC is a **HEIF** (High Efficiency Image File Format) container encoded with the **HEVC** (H.265) codec, and "the extension you will be encountering is `.HEIC`." Apple added support in **iOS 11 and macOS High Sierra in 2017**, which is when iPhones began capturing photos as HEIC by default.
+
+Why? Compression. Apple states that "with HEVC we see an average of 2X compression compared to JPEG containing the same visual quality" — roughly half the file size for the same-looking photo. HEIF can also store extras JPEG cannot, such as depth maps and Live Photo animation.
+
+The catch is compatibility. HEIC viewing and editing require Apple's newer operating systems, and plenty of non-Apple platforms — older Windows installs, some Android phones, many web uploaders — still stumble on it. That is exactly why the most common fix is to [convert HEIC to JPG](/image-tools/heic-to-jpg).
+
+## Which format should you use?
+
+- **Photographs you'll share or upload:** JPG. Small, universal, good enough.
+- **Logos, icons, screenshots, or anything with a transparent background:** PNG.
+- **Images on a website you control:** WebP, to cut page weight without losing quality.
+- **iPhone photo storage:** HEIC is fine on your device — just convert a copy to JPG before sending it to someone on Windows or uploading it somewhere fussy.
+
+## How to convert between them (and what to expect)
+
+Every conversion has a predictable result that follows from the format properties above. Here's what happens, and the right tool for each job — all of them run **entirely in your browser**, so your files are never uploaded:
+
+- **iPhone HEIC that won't open →** [HEIC to JPG Converter](/image-tools/heic-to-jpg). You get a universal JPG; depth data and Live Photo animation are not carried over.
+- **A large PNG, or a form that only accepts JPG →** [PNG to JPG Converter](/image-tools/png-to-jpg). The file shrinks, and any transparent areas are filled with a white background (because JPG has no transparency).
+- **A WebP from a website your editor rejects →** [WebP to JPG Converter](/image-tools/webp-to-jpg). Choose JPG for the smallest, most compatible file, or PNG if you need to keep transparency.
+- **You need a lossless PNG or a transparency workflow →** [JPG to PNG Converter](/image-tools/jpg-to-png). The result is lossless going forward, but it won't restore detail the JPEG already lost, and the file will be larger.
+
+Need to go further? Shrink any result with the [Image Compressor](/image-tools/image-compressor), or change dimensions with the [Image Resizer](/image-tools/image-resizer). You can browse everything on the [Image Tools](/image-tools) hub.
+
+## Quality, transparency, and file size: the trade-offs
+
+Two rules cover almost every conversion. First, **transparency only survives if the target format supports it.** Converting a transparent PNG, WebP, or HEIC to JPG flattens the transparent pixels onto a solid background, because JPEG has no alpha channel. Second, **lossy quality, once lost, doesn't come back.** HEIC, JPG, and lossy WebP all discard some data during compression; re-encoding them (HEIC→JPG, WebP→JPG) can compound artifacts, and converting a JPG to a lossless PNG simply preserves the already-compressed result in a larger file. When you have a choice, convert from the highest-quality original you have.
+
+## Sources and Further Reading
+
+- [Apple — Using HEIF or HEVC media (Support)](https://support.apple.com/en-us/116944)
+- [Apple — Working with HEIF and HEVC (WWDC 2017, session 513)](https://developer.apple.com/videos/play/wwdc2017/513/)
+- [Google — WebP: A new image format for the Web](https://developers.google.com/speed/webp)
+- [Mozilla MDN — Image file type and format guide](https://developer.mozilla.org/en-US/docs/Web/Media/Guides/Formats/Image_types)
+- [W3C — Portable Network Graphics (PNG) Specification](https://www.w3.org/TR/png-3/)
+
+## FAQ
+
+### Is HEIC better than JPG?
+
+For storage, yes — Apple says HEIC is about half the size of a JPEG at the same visual quality. But JPG opens everywhere, while HEIC needs iOS 11 / macOS High Sierra or newer, so most people convert HEIC to JPG when they need broad compatibility.
+
+### Why won't my WebP image open?
+
+Every major browser supports WebP, but some desktop apps, editors, and upload forms still don't accept it. Converting the WebP to JPG or PNG produces a file those programs can open.
+
+### Does converting PNG to JPG reduce quality?
+
+JPG is lossy, so some compression is applied, but at high quality the difference is hard to see. The bigger change is that transparency is removed and replaced with a solid background, because JPG has no alpha channel.
+
+### Is converting JPG to PNG lossless?
+
+The conversion itself is lossless and the PNG reproduces the JPG exactly, but it cannot recover detail the original JPEG compression already discarded — and the PNG file is usually larger than the JPG.
+
+### Which image format is best for websites?
+
+WebP is usually best for the web because it is smaller than JPG and PNG while still supporting transparency. JPG remains a safe fallback for photos, and PNG is best when you need lossless graphics or a transparent background.
