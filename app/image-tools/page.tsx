@@ -3,7 +3,7 @@ import { ToolPageLayout } from "@/components/common/tool-page-layout"
 import { createToolConfig } from "@/lib/create-tool-config"
 import { GToolCard } from "@/ui/gtool-card"
 
-import { FileText, Maximize2, Minimize2, ShieldCheck, Scissors, Crop, Images } from "lucide-react"
+import { FileText, Maximize2, Minimize2, ShieldCheck, Scissors, Crop, Images, Repeat } from "lucide-react"
 
 const imageTools = [
   {
@@ -53,6 +53,34 @@ const imageTools = [
     description: "Crop JPG, PNG, and WebP images online. Drag handles, lock aspect ratio, enter exact pixels, rotate & flip. No upload to server.",
     icon: Crop,
     href: "/image-tools/image-cropper",
+    popular: true,
+  },
+  {
+    title: "HEIC to JPG Converter",
+    description: "Convert iPhone HEIC/HEIF photos to JPG or PNG in your browser. Batch up to 100, adjustable quality, no upload.",
+    icon: Repeat,
+    href: "/image-tools/heic-to-jpg",
+    popular: true,
+  },
+  {
+    title: "PNG to JPG Converter",
+    description: "Convert PNG images to JPG with quality control and optional WebP output. Batch processing, 100% browser-based.",
+    icon: Repeat,
+    href: "/image-tools/png-to-jpg",
+    popular: true,
+  },
+  {
+    title: "WebP to JPG Converter",
+    description: "Convert WebP images to JPG or PNG for universal compatibility. Batch processing, no upload to server.",
+    icon: Repeat,
+    href: "/image-tools/webp-to-jpg",
+    popular: true,
+  },
+  {
+    title: "JPG to PNG Converter",
+    description: "Convert JPG/JPEG images to lossless PNG, with optional WebP output. Batch processing, 100% browser-based.",
+    icon: Repeat,
+    href: "/image-tools/jpg-to-png",
     popular: true,
   },
 ]

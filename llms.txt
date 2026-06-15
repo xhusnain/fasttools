@@ -85,6 +85,18 @@ Free OCR tool. Extract text from images using Tesseract.js, fully client-side.
 https://fasttools.store/image-tools/ai-image-detector
 Free AI image detector. Identifies AI-generated images (Midjourney, DALL-E, Stable Diffusion) using metadata, EXIF, and pattern analysis.
 
+https://fasttools.store/image-tools/heic-to-jpg
+Free HEIC to JPG converter. Convert iPhone/iPad HEIC/HEIF photos to JPG or PNG entirely in the browser (heic2any + HTML5 Canvas), no upload. Batch up to 100, adjustable quality, ZIP download.
+
+https://fasttools.store/image-tools/png-to-jpg
+Free PNG to JPG converter. Convert PNG to JPG with an adjustable quality slider; transparency is flattened to white. Optional WebP output. 100% client-side, batch, no upload.
+
+https://fasttools.store/image-tools/webp-to-jpg
+Free WebP to JPG converter. Convert WebP images to JPG or PNG for universal compatibility. 100% client-side via Canvas, batch up to 100, no upload.
+
+https://fasttools.store/image-tools/jpg-to-png
+Free JPG to PNG converter. Re-save JPG/JPEG photos as lossless PNG, with optional WebP output. 100% client-side, batch, no upload.
+
 ## PDF Tools
 
 https://fasttools.store/pdf-tools/pdf-sign
