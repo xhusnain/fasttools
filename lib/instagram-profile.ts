@@ -16,7 +16,7 @@ import type { RequestInit as UndiciRequestInit, Response as UndiciResponse } fro
 // machinery below still applies (it just iterates over a one-entry list), so a
 // 429/407 or network error triggers a short cooldown + retry on the same proxy.
 const WEBSHARE_PROXY_URLS = [
-  "http://husnain:***REMOVED***@47.84.202.125:8080",
+  "http://clickguard:***REMOVED***@47.84.202.125:8080",
 ];
 
 const proxyDispatchers = new Map<string, ProxyAgent>();
