@@ -46,6 +46,9 @@ export default async function InstagramDpVariantPage(props: Props) {
     .slice(0, 2)
     .map((item) => ({ name: item.headerTitle, href: `/social-media-tools/instagram-dp/${item.slug}` }))
 
+  // Pass authority from this high-traffic DP page out to related (page-2) social
+  // tools. All are genuinely relevant to the same creator / Instagram audience —
+  // contextual, not link-stuffing.
   const relatedSocialTools = [
     { name: "Hashtag Counter — Instagram, TikTok & X", href: "/social-media-tools/hashtag-counter" },
     { name: "YouTube Channel Name & Handle Checker", href: "/social-media-tools/channel-checker" },
@@ -114,30 +117,23 @@ export default async function InstagramDpVariantPage(props: Props) {
       aboutTool: (
         <div className="space-y-6 text-muted-foreground">
           <div>
-            <h3 className="text-lg font-semibold text-foreground mb-2">What This Page Helps With</h3>
+            <h3 className="text-lg font-semibold text-foreground mb-2">Variant Intent</h3>
             <p>
-              {variant.overviewText} Enter a username or profile URL, then use the viewer to load the profile picture, inspect it at a larger size, and save the available image when needed.
+              This page targets users searching for {variant.headerTitle.toLowerCase()} and related query variants. It keeps the same core viewer functionality while narrowing copy and metadata to a specific intent cluster.
             </p>
           </div>
 
           <div>
-            <h3 className="text-lg font-semibold text-foreground mb-2">What You Can View</h3>
+            <h3 className="text-lg font-semibold text-foreground mb-2">Keyword Focus</h3>
             <p>
-              This tool focuses on Instagram profile pictures, also called DPs, PFPs, profile photos, or avatars. It can show the public profile image and basic profile context such as username, account status, and visible profile stats.
+              Primary terms for this route include: {(variant.keywords || ["instagram dp viewer", "insta dp viewer", "instagram profile picture viewer"]).slice(0, 3).join(", ")}. This helps avoid duplicate intent across DP pages and improves long-tail topical coverage.
             </p>
           </div>
 
           <div>
-            <h3 className="text-lg font-semibold text-foreground mb-2">What It Cannot Access</h3>
+            <h3 className="text-lg font-semibold text-foreground mb-2">Scope and Limits</h3>
             <p>
-              This page does not unlock private posts, stories, reels, messages, follower lists, or restricted content. If an account is private, only the profile picture surface may be visible.
-            </p>
-          </div>
-
-          <div>
-            <h3 className="text-lg font-semibold text-foreground mb-2">Tips for Best Results</h3>
-            <p>
-              Use the exact Instagram username, including dots or underscores, or paste the full profile URL. If a profile picture does not load, check the spelling and try again after a minute because Instagram image availability can change.
+              This page is limited to profile-picture workflows and does not provide access to private posts, stories, or restricted account content.
             </p>
           </div>
         </div>
