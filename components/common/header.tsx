@@ -32,9 +32,9 @@ export function Header() {
   return (
     <>
       <header
-        className={`sticky top-0 z-50 w-full transition-all duration-300 border-b ${scrolled
-          ? "bg-white/90 backdrop-blur-md border-border shadow-sm"
-          : "bg-white/75 backdrop-blur-sm border-transparent"
+        className={`sticky top-0 z-50 w-full border-b ${scrolled
+          ? "bg-white border-border shadow-sm"
+          : "bg-white border-transparent"
           }`}
       >
         <div className="w-full h-14 px-4 flex items-center justify-center gap-x-10">
@@ -78,7 +78,7 @@ export function Header() {
 
       {/* Mobile Menu Overlay */}
       <div
-        className={`lg:hidden fixed inset-0 z-40 bg-white/80 backdrop-blur-sm transition-opacity duration-300 ${mobileMenuOpen ? "opacity-100" : "opacity-0 pointer-events-none"
+        className={`lg:hidden fixed inset-0 z-40 bg-white/95 transition-opacity duration-300 ${mobileMenuOpen ? "opacity-100" : "opacity-0 pointer-events-none"
           }`
         }
         onClick={() => setMobileMenuOpen(false)}
@@ -86,7 +86,7 @@ export function Header() {
 
       {/* Mobile Menu Content */}
       <div
-        className={`lg:hidden fixed right-0 top-0 h-full w-[300px] z-50 bg-white/95 backdrop-blur-xl border-l border-border shadow-xl transition-transform duration-300 ease-out transform ${mobileMenuOpen ? "translate-x-0" : "translate-x-full"
+        className={`lg:hidden fixed right-0 top-0 h-full w-[300px] z-50 bg-white border-l border-border shadow-xl transition-transform duration-300 ease-out transform ${mobileMenuOpen ? "translate-x-0" : "translate-x-full"
           }`}
       >
         <div className="flex flex-col h-full">

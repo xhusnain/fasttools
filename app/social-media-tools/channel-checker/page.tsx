@@ -15,9 +15,9 @@ const toolConfig = createToolConfig({
   toolName: "YouTube Channel Name & Handle Checker",
   description:
     "Free YouTube channel name availability checker. Instantly check if a YouTube channel name or @handle is available before launching your channel.",
-  metaTitle: "YouTube Channel Name Availability Checker — Names & @Handles",
+  metaTitle: "YouTube Channel Name Checker — Is Your @Handle Available?",
   metaDescription:
-    "Check YouTube channel name availability instantly — free tool for @handles and usernames. See if a name is taken before you launch your channel.",
+    "Check if a YouTube channel name or @handle is taken or available. Free, instant, no login. Try unlimited names before you create your channel.",
   path: "/social-media-tools/channel-checker",
 
   header: {
@@ -408,6 +408,10 @@ const toolConfig = createToolConfig({
       { name: "Link in Bio Generator", href: "/social-media-tools/link-in-bio" },
       { name: "Instagram DP Viewer", href: "/social-media-tools/instagram-dp" },
       { name: "TikTok Engagement Calculator", href: "/social-media-tools/tiktok-engagement-calculator" },
+      // Cross-category: push authority to creator-relevant finance/calculator tools
+      { name: "Influencer Rate Calculator", href: "/social-media-tools/influencer-rate-calculator" },
+      { name: "Invoice Generator — Free Online", href: "/finance-tools/invoice-generator" },
+      { name: "Freelance Rate Calculator", href: "/finance-tools/freelance-rate-calculator" },
       { name: "All Social Media Tools", href: "/social-media-tools" },
     ],
   },

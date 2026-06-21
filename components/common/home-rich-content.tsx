@@ -39,7 +39,13 @@ export function HomeRichContent() {
                                         </div>
                                         <div>
                                             <h4 className="font-semibold text-foreground mb-1">PDF Tools</h4>
-                                            <p className="text-sm text-muted-foreground">Compress, split, merge, sign, and convert PDFs — all in your browser. No file uploads to external servers.</p>
+                                            <p className="text-sm text-muted-foreground">
+                                                <Link href="/pdf-tools/pdf-compressor" className="underline underline-offset-2 hover:text-foreground">Compress PDF</Link>,{" "}
+                                                <Link href="/pdf-tools/pdf-splitter-merger" className="underline underline-offset-2 hover:text-foreground">split &amp; merge</Link>,{" "}
+                                                <Link href="/pdf-tools/pdf-sign" className="underline underline-offset-2 hover:text-foreground">sign PDFs</Link>,{" "}
+                                                <Link href="/pdf-tools/pdf-unlocker" className="underline underline-offset-2 hover:text-foreground">unlock PDFs</Link>, and{" "}
+                                                <Link href="/pdf-tools/image-to-pdf" className="underline underline-offset-2 hover:text-foreground">convert images to PDF</Link> — all in your browser. No file uploads to external servers.
+                                            </p>
                                         </div>
                                     </div>
 
@@ -48,8 +54,16 @@ export function HomeRichContent() {
                                             <Calculator className="w-6 h-6 text-primary" />
                                         </div>
                                         <div>
-                                            <h4 className="font-semibold text-foreground mb-1">Calculators & Finance</h4>
-                                            <p className="text-sm text-muted-foreground">BMI, age, loan, mortgage, tax, GPA, and scientific calculators. Get accurate results instantly.</p>
+                                            <h4 className="font-semibold text-foreground mb-1">Calculators &amp; Finance</h4>
+                                            <p className="text-sm text-muted-foreground">
+                                                <Link href="/calculator/bmi-calculator" className="underline underline-offset-2 hover:text-foreground">BMI calculator</Link>,{" "}
+                                                <Link href="/calculator/age-calculator" className="underline underline-offset-2 hover:text-foreground">age calculator</Link>,{" "}
+                                                <Link href="/finance-tools/loan-calculator" className="underline underline-offset-2 hover:text-foreground">loan calculator</Link>,{" "}
+                                                <Link href="/finance-tools/mortgage-calculator" className="underline underline-offset-2 hover:text-foreground">mortgage calculator</Link>,{" "}
+                                                <Link href="/finance-tools/tax-calculator" className="underline underline-offset-2 hover:text-foreground">tax calculator</Link>,{" "}
+                                                <Link href="/calculator/gpa-calculator" className="underline underline-offset-2 hover:text-foreground">GPA calculator</Link>, and{" "}
+                                                <Link href="/calculator/scientific-calculator" className="underline underline-offset-2 hover:text-foreground">scientific calculator</Link>.
+                                            </p>
                                         </div>
                                     </div>
 
@@ -68,8 +82,15 @@ export function HomeRichContent() {
                                             <Code className="w-6 h-6 text-primary" />
                                         </div>
                                         <div>
-                                            <h4 className="font-semibold text-foreground mb-1">Developer & Crypto Tools</h4>
-                                            <p className="text-sm text-muted-foreground">JWT decoder, regex tester, JSON diff, UUID generator, hash tools, and 20+ converters for developers.</p>
+                                            <h4 className="font-semibold text-foreground mb-1">Developer &amp; Crypto Tools</h4>
+                                            <p className="text-sm text-muted-foreground">
+                                                <Link href="/dev-tools/jwt-decoder" className="underline underline-offset-2 hover:text-foreground">JWT decoder</Link>,{" "}
+                                                <Link href="/dev-tools/regex-tester" className="underline underline-offset-2 hover:text-foreground">regex tester</Link>,{" "}
+                                                <Link href="/dev-tools/json-diff" className="underline underline-offset-2 hover:text-foreground">JSON diff</Link>,{" "}
+                                                <Link href="/crypto-tools/uuid-generator" className="underline underline-offset-2 hover:text-foreground">UUID generator</Link>,{" "}
+                                                <Link href="/crypto-tools/password-generator" className="underline underline-offset-2 hover:text-foreground">password generator</Link>, and 20+{" "}
+                                                <Link href="/converters" className="underline underline-offset-2 hover:text-foreground">converters</Link> for developers.
+                                            </p>
                                         </div>
                                     </div>
                                 </div>

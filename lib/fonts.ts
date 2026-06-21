@@ -3,7 +3,7 @@ import { Montserrat, Roboto } from "next/font/google";
 export const montserrat = Montserrat({
   subsets: ["latin"],
   variable: "--font-montserrat",
-  weight: ["300", "400", "500", "600", "700", "800", "900"],
+  weight: ["400", "500", "700"],
   display: "swap",
   preload: false, // ✅ prevents timeout during build
 });
@@ -11,7 +11,7 @@ export const montserrat = Montserrat({
 export const roboto = Roboto({
   subsets: ["latin"],
   variable: "--font-roboto",
-  weight: ["300", "400", "500", "700"],
+  weight: ["400", "500", "700"],
   display: "swap",
   preload: false, // ✅ prevents timeout during build
 });
