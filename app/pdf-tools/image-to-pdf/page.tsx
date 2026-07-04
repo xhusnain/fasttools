@@ -216,6 +216,7 @@ const toolConfig = createToolConfig({
     ],
 
     relatedTools: [
+      { name: "PDF Signature Checker", href: "/pdf-tools/pdf-signature-checker" },
       { name: "PDF to Image", href: "/pdf-tools/pdf-to-image" },
       { name: "PDF Compressor", href: "/pdf-tools/pdf-compressor" },
       { name: "Merge PDF", href: "/pdf-tools/pdf-splitter-merger" },

@@ -176,6 +176,8 @@ const toolConfig = createToolConfig({
     ],
 
     relatedTools: [
+      { name: "Verify PDF Signature Online", href: "/pdf-tools/verify-pdf-signature-online" },
+      { name: "Check if a PDF Is Digitally Signed", href: "/pdf-tools/check-if-pdf-is-digitally-signed" },
       { name: "Sign PDF", href: "/pdf-tools/pdf-sign" },
       { name: "Merge PDF", href: "/pdf-tools/pdf-splitter-merger" },
       { name: "PDF Unlocker", href: "/pdf-tools/pdf-unlocker" },

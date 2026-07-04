@@ -13,7 +13,7 @@ const toolConfig = createToolConfig({
   toolName: "JWT Decoder",
   description:
     "Decode and inspect JSON Web Tokens for authentication debugging and implementation checks.",
-  metaTitle: "JWT Decoder — Decode JSON Web Tokens Online (Header & Payload)",
+  metaTitle: "JWT Decoder — Decode JSON Web Tokens Online, No Install",
   metaDescription:
     "Free online JWT decoder. Paste a JWT to reveal its header, payload claims, and signature segment. Inspect exp, iat, nbf, iss, sub, aud, scopes, algorithm, and expiration status.",
   path: "/dev-tools/jwt-decoder",
@@ -21,7 +21,7 @@ const toolConfig = createToolConfig({
   header: {
     title: "Fast JWT Decoder & Token Inspector",
     description:
-      "Fast JWT decoder — decode any JSON Web Token instantly to inspect its header (algorithm, type), payload (claims like sub, iss, exp), and signature. Check token expiration, debug OAuth and API authentication — no secret key required.",
+      "Fast JWT decoder — decode any JSON Web Token instantly to inspect its header (algorithm, type), payload (claims like sub, iss, exp), and signature. Check token expiration, debug OAuth and API authentication — no secret key required, no install, no signup, and the token never leaves your browser.",
     titleSize: "medium",
     descriptionSize: "small",
     color: "blue",

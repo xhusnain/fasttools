@@ -13,7 +13,7 @@ const toolConfig = createToolConfig({
   toolName: "WHOIS & Domain Lookup",
   description:
     "Free WHOIS lookup tool. Check any domain's registration data — registrar, creation/expiry dates, status, nameservers, and DNSSEC. Powered by live RDAP data.",
-  metaTitle: "WHOIS Lookup — Domain Registration & Expiry",
+  metaTitle: "RDAP Lookup — WHOIS Domain Registration & Expiry Data",
   metaDescription:
     "Free WHOIS & RDAP domain lookup. Find a domain's registrar, registration and expiry dates, registry ID, status codes, nameservers, DNSSEC, and contact info. Instant, accurate registry data — no signup.",
   path: "/web-tools/whois-lookup",
@@ -48,7 +48,7 @@ const toolConfig = createToolConfig({
   },
 
   header: {
-    title: "WHOIS & Domain Lookup",
+    title: "RDAP & WHOIS Domain Lookup",
     description:
       "Look up any domain's registration data — registrar, dates, status codes, nameservers, and DNSSEC — using live RDAP data from the registry.",
     titleSize: "medium",

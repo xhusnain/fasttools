@@ -609,6 +609,7 @@ export default function ROASCalculatorPage() {
             }
         ],
         relatedTools: [
+      { name: "Break-Even ROAS Calculator", href: "/ad-tools/break-even-roas-calculator" },
             { name: "SaaS Churn Calculator", href: "/finance-tools/saas-churn-calculator" },
             { name: "SaaS Payback Calculator", href: "/finance-tools/cac-payback-calculator" },
             { name: "Startup Runway Calculator", href: "/finance-tools/startup-runway-calculator" },

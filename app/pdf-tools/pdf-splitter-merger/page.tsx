@@ -169,6 +169,7 @@ const toolConfig = createToolConfig({
     ],
 
     relatedTools: [
+      { name: "PDF Signature Checker", href: "/pdf-tools/pdf-signature-checker" },
       { name: "PDF Compressor", href: "/pdf-tools/pdf-compressor" },
       { name: "PDF Unlocker", href: "/pdf-tools/pdf-unlocker" },
       { name: "PDF to Word Converter", href: "/pdf-tools/pdf-word-converter" },

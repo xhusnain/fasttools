@@ -156,6 +156,7 @@ const toolConfig = createToolConfig({
     ],
 
     relatedTools: [
+      { name: "Tailwind Gradient Generator", href: "/dev-tools/tailwind-gradient-generator" },
       { name: "Color Palette Generator", href: "/dev-tools/color-palette-generator" },
       { name: "Hex to RGB Converter", href: "/dev-tools/hex-to-rgb" },
       { name: "HTML Beautifier", href: "/dev-tools/html-beautifier" },

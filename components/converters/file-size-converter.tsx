@@ -33,9 +33,9 @@ import {
 } from "lucide-react"
 
 
-export function FileSizeConverter() {
+export function FileSizeConverter({ defaultFromUnit }: { defaultFromUnit?: string } = {}) {
   const [value, setValue] = useState("")
-  const [fromUnit, setFromUnit] = useState("MB")
+  const [fromUnit, setFromUnit] = useState(defaultFromUnit ?? "MB")
   const [copiedIndex, setCopiedIndex] = useState<number | null>(null)
   const [activeTab, setActiveTab] = useState("converter")
 

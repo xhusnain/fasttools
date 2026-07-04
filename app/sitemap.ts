@@ -122,9 +122,11 @@ export const sitemapPages = [
   { url: u("/finance-tools/startup-runway-calculator"), lastModified: new Date("2026-03-27"), changeFrequency: "monthly" as const, priority: 0.8 },
   { url: u("/finance-tools/tax-calculator"), lastModified: new Date("2026-03-27"), changeFrequency: "monthly" as const, priority: 0.8 },
   { url: u("/ad-tools/roas-calculator"), lastModified: new Date("2026-03-23"), changeFrequency: "monthly" as const, priority: 0.8 },
+  { url: u("/ad-tools/break-even-roas-calculator"), lastModified: new Date("2026-07-04"), changeFrequency: "monthly" as const, priority: 0.75 },
 
   // ─── AI Tools ────────────────────────────────────────────────────────
   { url: u("/ai-tools/qr-generator"), lastModified: new Date("2026-03-23"), changeFrequency: "monthly" as const, priority: 0.9 },
+  { url: u("/ai-tools/wifi-qr-code-generator"), lastModified: new Date("2026-07-04"), changeFrequency: "monthly" as const, priority: 0.8 },
   { url: u("/ai-tools/caption-generator"), lastModified: new Date("2026-03-23"), changeFrequency: "monthly" as const, priority: 0.9 },
   { url: u("/ai-tools/lyrics-generator"), lastModified: new Date("2026-03-23"), changeFrequency: "monthly" as const, priority: 0.9 },
   { url: u("/ai-tools/pet-names"), lastModified: new Date("2026-03-23"), changeFrequency: "monthly" as const, priority: 0.9 },
@@ -138,7 +140,10 @@ export const sitemapPages = [
 
   // ─── Converters ──────────────────────────────────────────────────────
   { url: u("/converters/currency"), lastModified: new Date("2026-03-23"), changeFrequency: "weekly" as const, priority: 0.8 },
-  { url: u("/converters/file-size"), lastModified: new Date("2026-03-23"), changeFrequency: "monthly" as const, priority: 0.8 },
+  { url: u("/converters/file-size"), lastModified: new Date("2026-07-04"), changeFrequency: "monthly" as const, priority: 0.8 },
+  { url: u("/converters/bytes-to-mb"), lastModified: new Date("2026-07-04"), changeFrequency: "monthly" as const, priority: 0.75 },
+  { url: u("/converters/bytes-to-kb"), lastModified: new Date("2026-07-04"), changeFrequency: "monthly" as const, priority: 0.75 },
+  { url: u("/converters/kb-to-mb"), lastModified: new Date("2026-07-04"), changeFrequency: "monthly" as const, priority: 0.75 },
   { url: u("/converters/length"), lastModified: new Date("2026-03-23"), changeFrequency: "monthly" as const, priority: 0.8 },
   { url: u("/converters/temperature"), lastModified: new Date("2026-03-23"), changeFrequency: "monthly" as const, priority: 0.8 },
   { url: u("/converters/text-case"), lastModified: new Date("2026-03-23"), changeFrequency: "monthly" as const, priority: 0.8 },
@@ -191,6 +196,7 @@ export const sitemapPages = [
   { url: u("/dev-tools/hex-to-rgb"), lastModified: new Date("2026-06-04"), changeFrequency: "monthly" as const, priority: 0.7 },
   { url: u("/dev-tools/color-palette-generator"), lastModified: new Date("2026-06-04"), changeFrequency: "monthly" as const, priority: 0.9 },
   { url: u("/dev-tools/css-gradient-generator"), lastModified: new Date("2026-06-04"), changeFrequency: "monthly" as const, priority: 0.9 },
+  { url: u("/dev-tools/tailwind-gradient-generator"), lastModified: new Date("2026-07-04"), changeFrequency: "monthly" as const, priority: 0.8 },
   { url: u("/dev-tools/diff-checker"), lastModified: new Date("2026-06-04"), changeFrequency: "monthly" as const, priority: 0.9 },
 
   // ─── Education Tools ────────────────────────────────────────────────
@@ -201,6 +207,8 @@ export const sitemapPages = [
   { url: u("/dev-tools/llm-training-cost"), lastModified: new Date("2026-06-04"), changeFrequency: "monthly" as const, priority: 0.7 },
   { url: u("/dev-tools/cloudflare-workers-cost"), lastModified: new Date("2026-06-04"), changeFrequency: "monthly" as const, priority: 0.7 },
   { url: u("/dev-tools/cron-expression-generator"), lastModified: new Date("2026-06-04"), changeFrequency: "monthly" as const, priority: 0.7 },
+  { url: u("/dev-tools/github-actions-cron-generator"), lastModified: new Date("2026-07-04"), changeFrequency: "monthly" as const, priority: 0.8 },
+  { url: u("/dev-tools/kubernetes-cronjob-schedule-generator"), lastModified: new Date("2026-07-04"), changeFrequency: "monthly" as const, priority: 0.8 },
   { url: u("/dev-tools/timestamp-converter"), lastModified: new Date("2026-06-04"), changeFrequency: "monthly" as const, priority: 0.7 },
 
   // ─── SEO Tools ───────────────────────────────────────────────────────
@@ -234,7 +242,9 @@ export const sitemapPages = [
   { url: u("/pdf-tools/pdf-unlocker"), lastModified: new Date("2026-03-23"), changeFrequency: "monthly" as const, priority: 0.9 },
   { url: u("/pdf-tools/pdf-compressor"), lastModified: new Date("2026-06-04"), changeFrequency: "monthly" as const, priority: 0.9 },
   { url: u("/pdf-tools/pdf-to-image"), lastModified: new Date("2026-06-04"), changeFrequency: "monthly" as const, priority: 0.9 },
-  { url: u("/pdf-tools/pdf-signature-checker"), lastModified: new Date("2026-03-23"), changeFrequency: "weekly" as const, priority: 0.9 },
+  { url: u("/pdf-tools/pdf-signature-checker"), lastModified: new Date("2026-07-04"), changeFrequency: "weekly" as const, priority: 0.9 },
+  { url: u("/pdf-tools/verify-pdf-signature-online"), lastModified: new Date("2026-07-04"), changeFrequency: "monthly" as const, priority: 0.8 },
+  { url: u("/pdf-tools/check-if-pdf-is-digitally-signed"), lastModified: new Date("2026-07-04"), changeFrequency: "monthly" as const, priority: 0.8 },
 
   // ─── Fun Tools ───────────────────────────────────────────────────────
   { url: u("/fun-tools/anniversary-calculator"), lastModified: new Date("2026-05-14"), changeFrequency: "monthly" as const, priority: 0.7 },

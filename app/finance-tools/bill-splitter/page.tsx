@@ -9,7 +9,7 @@ import { createMetadata } from "@/lib/metadata-base"
 import { Calculator, Target, TrendingUp, BarChart3, Receipt, Award, Users, DollarSign, Percent, Zap, FileText, HelpCircle, ExternalLink, PiggyBank, CreditCard } from "lucide-react"
 import type { Metadata } from "next"
 
-const TOOL_TITLE = "Bill Splitter — Split Restaurant & Group Bills Fairly"
+const TOOL_TITLE = "Split Bill Calculator — Split Restaurant & Group Bills (+ Tip)"
 const TOOL_NAME = "Bill Splitter"
 const TOOL_META_DESC = "Free bill splitter for restaurants, groups, and shared expenses. Split evenly, by items, or by custom share. Auto-adds tip and tax. Generates a per-person total showing exactly who owes what. Perfect for dining, travel, roommates, and group trips."
 

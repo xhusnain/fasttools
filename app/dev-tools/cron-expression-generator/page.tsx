@@ -156,6 +156,8 @@ const toolConfig = createToolConfig({
     ],
 
     relatedTools: [
+      { name: "GitHub Actions Cron Generator", href: "/dev-tools/github-actions-cron-generator" },
+      { name: "Kubernetes CronJob Schedule Generator", href: "/dev-tools/kubernetes-cronjob-schedule-generator" },
       { name: "Unix Timestamp Converter", href: "/dev-tools/timestamp-converter" },
       { name: "Timezone Converter", href: "/converters/timezone" },
       { name: "Regex Tester", href: "/dev-tools/regex-tester" },

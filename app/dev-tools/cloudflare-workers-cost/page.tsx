@@ -54,7 +54,7 @@ export default function CloudflareWorkersCostPage() {
   const toolContent = {
     toolName: "Cloudflare Workers Cost Calculator",
     overview:
-      "Estimate a Cloudflare Workers monthly bill from request volume, average CPU time, Workers KV usage, R2 storage and operations, and Durable Objects usage. The calculator is intended for planning and comparison; always verify final rates and limits in Cloudflare's billing pages before committing production budgets.",
+      "Estimate a Cloudflare Workers monthly bill from request volume, average CPU time, Workers KV usage, R2 storage and operations, and Durable Objects usage. Rates in this calculator were last verified against Cloudflare's published Workers pricing in July 2026; always confirm final rates and limits in Cloudflare's billing pages before committing production budgets.",
 
     definition:
       "A Cloudflare Workers cost calculator estimates monthly edge-compute spend from Workers requests, billable CPU milliseconds, and optional storage or database services such as Workers KV, R2, and Durable Objects.",

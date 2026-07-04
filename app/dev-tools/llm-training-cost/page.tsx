@@ -147,7 +147,7 @@ export default function LLMTrainingCostPage() {
   return (
     <ToolPageLayout
       header={{
-        title: "LLM Training Cost Estimator",
+        title: "LLM Training Cost Calculator",
         description:
           "Estimate GPU hours, training time, and approximate cloud cost for model pre-training from parameters, tokens, GPU type, precision, and utilization.",
         titleSize: "medium",

@@ -345,6 +345,7 @@ END:VCARD`}</code>
     ],
 
     relatedTools: [
+      { name: "WiFi QR Code Generator", href: "/ai-tools/wifi-qr-code-generator" },
       { name: "TOTP QR Code Generator", href: "/crypto-tools/otp-generator" },
       { name: "OTP Code Generator", href: "/crypto-tools/otp-generator" },
       { name: "URL Encoder Decoder", href: "/web-tools/url-encoder" },
