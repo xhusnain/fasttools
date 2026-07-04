@@ -41,10 +41,6 @@ const toolConfig = createToolConfig({
       "Near-Duplicate Finder",
       "SimHash Comparison Tool",
       "Content Cannibalization Detector",
-      "SEO Duplicate Content Checker",
-      "Two-Document Compare",
-      "Text Match Percentage Tool",
-      "Revision Similarity Checker",
     ],
     featureList: [
       "SimHash-style similarity score from 0-100%",

@@ -42,11 +42,6 @@ const toolConfig = createToolConfig({
       "Chicago Citation Generator",
       "Harvard Reference Generator",
       "Bibliography Maker",
-      "Reference Generator",
-      "BibTeX Generator",
-      "DOI Citation Tool",
-      "ISBN Citation Tool",
-      "Free Citation Tool",
     ],
   },
 

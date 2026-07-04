@@ -32,7 +32,7 @@ const tools = [
     description:
       "Generate headline ideas optimized for readability and search intent.",
     icon: Lightbulb,
-    href: "/seo-tools/blog-titles",
+    href: "/seo-tools/blog-title-generator",
   },
   {
     title: "Keyword Density Checker",

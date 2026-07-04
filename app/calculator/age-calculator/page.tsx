@@ -31,16 +31,6 @@ const baseMetadata = createMetadata({
       "Birthday Age Calculator",
       "Precise Age Calculator",
       "Age in Days Calculator",
-      "Age in Hours Calculator",
-      "Age Difference Calculator",
-      "Zodiac Sign Calculator",
-      "Chinese Zodiac Calculator",
-      "Birthday Countdown Tool",
-      "Passport Age Calculator",
-      "Visa Age Calculator",
-      "Retirement Age Checker",
-      "Birthday Weekday Finder",
-      "Lifetime Stats Calculator",
     ],
     applicationCategory: "UtilityApplication",
     featureList: [
@@ -405,6 +395,42 @@ export default function AgeCalculatorPage() {
             <p className="text-sm font-semibold text-blue-600 dark:text-blue-400 mt-2">— FastTools Engineering</p>
           </div>
         </article>
+
+        <article className="space-y-4">
+          <h2 className="text-2xl font-bold text-foreground">Every Age &amp; Date Question, Answered</h2>
+          <p className="text-base text-muted-foreground leading-relaxed">
+            This calculator tells you how old you are today. The rest of the age and date cluster answers
+            the related questions people ask most:
+          </p>
+          <ul className="list-disc list-inside space-y-2 text-muted-foreground">
+            <li>
+              Looking ahead? See{" "}
+              <a href="/fun-tools/how-old-will-i-be/in-2030" className="text-primary hover:underline">how old you&apos;ll be in 2030</a>,{" "}
+              <a href="/fun-tools/how-old-will-i-be/in-2040" className="text-primary hover:underline">in 2040</a>, or{" "}
+              <a href="/fun-tools/how-old-will-i-be/in-2050" className="text-primary hover:underline">in 2050</a> — or any date with the{" "}
+              <a href="/fun-tools/how-old-will-i-be" className="text-primary hover:underline">future age calculator</a>.
+            </li>
+            <li>
+              Counting a relationship? The{" "}
+              <a href="/fun-tools/anniversary-calculator" className="text-primary hover:underline">anniversary calculator</a> answers
+              &quot;how long have we been together?&quot; and the{" "}
+              <a href="/fun-tools/monthsary-calculator" className="text-primary hover:underline">monthsary calculator</a> finds your monthly date.
+            </li>
+            <li>
+              Counting between any two dates? Use the{" "}
+              <a href="/calculator/date-difference" className="text-primary hover:underline">date difference calculator</a>.
+            </li>
+            <li>
+              Working out a pregnancy timeline? The{" "}
+              <a href="/calculator/pregnancy-conception-calculator" className="text-primary hover:underline">conception date calculator</a> reverse-calculates
+              when a pregnancy began from the due date.
+            </li>
+            <li>
+              Curious how old your body acts, not just how old it is? Try the{" "}
+              <a href="/calculator/biological-age-calculator" className="text-primary hover:underline">biological age calculator</a>.
+            </li>
+          </ul>
+        </article>
       </div>
     ),
 
@@ -536,10 +562,10 @@ export default function AgeCalculatorPage() {
     ],
 
     relatedTools: [
-      { name: "Future Age Predictor", href: "/fun-tools/future-age" },
+      { name: "Future Age Predictor", href: "/fun-tools/how-old-will-i-be" },
       { name: "Date Difference Calculator", href: "/calculator/date-difference" },
       { name: "Time Duration Calculator", href: "/calculator/time-duration" },
-      { name: "Anniversary Calculator", href: "/fun-tools/anniversary" },
+      { name: "Anniversary Calculator", href: "/fun-tools/anniversary-calculator" },
       { name: "Birthday Countdown", href: "/fun-tools/birthday-countdown" },
       { name: "Biological Age Calculator", href: "/calculator/biological-age-calculator" },
       { name: "Pregnancy Calculator", href: "/calculator/pregnancy-calculator" },

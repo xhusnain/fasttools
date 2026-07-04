@@ -42,9 +42,6 @@ const toolConfig = createToolConfig({
       "WYSIWYG HTML Editor Online",
       "HTML Source Generator",
       "Contenteditable HTML Editor",
-      "CMS HTML Editor",
-      "HTML Body Editor",
-      "Online Rich Text Editor",
     ],
     featureList: [
       "Visual rich-text editing area",
@@ -226,7 +223,7 @@ const toolConfig = createToolConfig({
       { name: "Markdown Previewer", href: "/dev-tools/markdown-previewer" },
       { name: "Diff Checker", href: "/dev-tools/diff-checker" },
       { name: "CSS Gradient Generator", href: "/dev-tools/css-gradient-generator" },
-      { name: "Color Palette Generator", href: "/dev-tools/color-palette" },
+      { name: "Color Palette Generator", href: "/dev-tools/color-palette-generator" },
       { name: "Escape HTML Entities", href: "/web-tools/html-escape" },
       { name: "All Developer Tools", href: "/dev-tools" },
     ],

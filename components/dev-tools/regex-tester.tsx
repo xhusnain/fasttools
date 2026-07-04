@@ -40,7 +40,7 @@ const commonPatterns = {
   password: { pattern: "^(?=.*[a-z])(?=.*[A-Z])(?=.*\\d)(?=.*[@$!%*?&])[A-Za-z\\d@$!%*?&]{8,}$", flags: "" },
 }
 
-export function RegexTester() {
+export function RegexTester({ defaultLanguage }: { defaultLanguage?: string } = {}) {
   const [pattern, setPattern] = useState("")
   const [flags, setFlags] = useState("g")
   const [testString, setTestString] = useState("")
@@ -49,7 +49,7 @@ export function RegexTester() {
   const [error, setError] = useState("")
   const [replaceString, setReplaceString] = useState("")
   const [replaceResult, setReplaceResult] = useState("")
-  const [selectedLanguage, setSelectedLanguage] = useState("javascript")
+  const [selectedLanguage, setSelectedLanguage] = useState(defaultLanguage ?? "javascript")
   const [showCodeGenerator, setShowCodeGenerator] = useState(false)
   const [generatedCode, setGeneratedCode] = useState("")
   const [codeCopied, setCodeCopied] = useState(false)

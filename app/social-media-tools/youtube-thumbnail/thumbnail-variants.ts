@@ -301,12 +301,12 @@ export const thumbnailVariants: Record<string, ThumbnailVariantConfig> = {
     keywords: [
       "youtube thumbnail grabber",
       "yt thumbnail grabber",
-      "thumbnail image grabber",
+      "thumbnail grabber",
+      "thumbnail stealer",
       "grab youtube thumbnail",
       "youtube image grabber",
       "extract youtube thumbnail",
       "youtube thumbnail extractor",
-      "youtube thumbnail saver",
     ],
     keyTakeaways: [
       "Grabs the thumbnail of any public YouTube video in every available size",
@@ -356,6 +356,11 @@ export const thumbnailVariants: Record<string, ThumbnailVariantConfig> = {
         question: "What is a YouTube thumbnail grabber?",
         answer:
           "It's a tool that extracts (grabs) a video's thumbnail image directly from YouTube's image servers. You paste a URL or video ID and it returns every available thumbnail size with download buttons. 'Grabber' and 'downloader' mean the same thing.",
+      },
+      {
+        question: "Is a 'thumbnail stealer' legal to use?",
+        answer:
+          "'Thumbnail stealer' is just a slang name for the same grabber tool — it fetches the publicly served thumbnail image, which is legal. What matters is how you use the image: thumbnails belong to their creators, so reusing one on your own video or content without permission can infringe copyright and violate YouTube's terms. Grab for reference, inspiration, or archiving your own work.",
       },
       {
         question: "Can I grab a thumbnail using only the video ID?",

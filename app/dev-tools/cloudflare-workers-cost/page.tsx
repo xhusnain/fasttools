@@ -29,8 +29,6 @@ const baseMetadata = createMetadata({
       "Workers KV Cost Calculator",
       "R2 Cost Calculator",
       "Durable Objects Cost Calculator",
-      "Edge Compute Cost Estimator",
-      "Cloudflare Serverless Cost Calculator",
     ],
     applicationCategory: "DeveloperApplication",
     featureList: [
@@ -136,7 +134,7 @@ export default function CloudflareWorkersCostPage() {
     relatedTools: [
       { name: "LLM Training Cost Calculator", href: "/dev-tools/llm-training-cost" },
       { name: "AI API Cost Calculator", href: "/ai-tools/ai-api-cost-calculator" },
-      { name: "SaaS Payback Calculator", href: "/finance-tools/saas-payback-calculator" },
+      { name: "SaaS Payback Calculator", href: "/finance-tools/cac-payback-calculator" },
       { name: "SaaS Churn Calculator", href: "/finance-tools/saas-churn-calculator" },
       { name: "Startup Runway Calculator", href: "/finance-tools/startup-runway-calculator" },
       { name: "DNS Lookup & SSL Checker", href: "/web-tools/dns-ssl-checker" },

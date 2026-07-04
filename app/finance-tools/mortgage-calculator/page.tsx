@@ -29,14 +29,6 @@ const baseMetadata = createMetadata({
       "PITI Calculator",
       "Mortgage Amortization Calculator",
       "House Payment Calculator",
-      "Home Mortgage Calculator",
-      "Monthly Mortgage Calculator",
-      "Mortgage Calculator with PMI",
-      "Mortgage Calculator with Taxes and Insurance",
-      "Bi-Weekly Mortgage Calculator",
-      "15 vs 30 Year Mortgage Calculator",
-      "FHA Loan Calculator",
-      "Refinance Calculator",
     ],
     applicationCategory: "FinanceApplication",
     featureList: [
@@ -306,31 +298,6 @@ export default function MortgageCalculatorPage() {
             </GTable>
           </div>
         </article>
-
-        <article className="space-y-4">
-          <h2 className="text-2xl font-bold text-foreground">The Same Tool, Many Names</h2>
-          <p className="text-base text-muted-foreground leading-relaxed">
-            This calculator answers every phrasing of the same question:
-          </p>
-          <ul className="grid grid-cols-1 md:grid-cols-2 gap-2 text-sm text-muted-foreground">
-            <li>· mortgage calculator / home loan calculator</li>
-            <li>· mortgage payment calculator</li>
-            <li>· mortgage calculator with PMI</li>
-            <li>· mortgage calculator with taxes and insurance</li>
-            <li>· PITI calculator</li>
-            <li>· house payment calculator</li>
-            <li>· monthly mortgage calculator</li>
-            <li>· mortgage amortization calculator</li>
-            <li>· bi-weekly mortgage calculator</li>
-            <li>· 15 vs 30 year mortgage calculator</li>
-            <li>· FHA loan calculator</li>
-            <li>· VA loan calculator</li>
-            <li>· jumbo loan calculator</li>
-            <li>· refinance calculator</li>
-            <li>· how much house can I afford calculator</li>
-            <li>· extra payment mortgage calculator</li>
-          </ul>
-        </article>
       </div>
     ),
 
@@ -404,13 +371,13 @@ export default function MortgageCalculatorPage() {
     ],
 
     relatedTools: [
-      { name: "Amortization Calculator", href: "/finance-tools/amortization-calculator" },
+      { name: "Amortization Calculator", href: "/finance-tools/loan-calculator" },
       { name: "Home Affordability Calculator", href: "/finance-tools/home-affordability-calculator" },
       { name: "Rent vs Buy Calculator", href: "/finance-tools/rent-vs-buy-calculator" },
       { name: "Loan Calculator", href: "/finance-tools/loan-calculator" },
       { name: "Auto Loan Calculator", href: "/finance-tools/auto-loan-calculator" },
-      { name: "Interest Rate Calculator", href: "/finance-tools/interest-rate-calculator" },
-      { name: "Credit Card Payoff Calculator", href: "/finance-tools/credit-card-payoff" },
+      { name: "Interest Rate Calculator", href: "/finance-tools/loan-calculator" },
+      { name: "Credit Card Payoff Calculator", href: "/finance-tools/debt-payoff-calculator" },
       { name: "Debt Payoff Calculator", href: "/finance-tools/debt-payoff-calculator" },
       { name: "All Finance Tools", href: "/finance-tools" },
     ],

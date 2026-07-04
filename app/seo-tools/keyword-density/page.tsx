@@ -41,8 +41,6 @@ const toolConfig = createToolConfig({
       "Word Frequency Checker",
       "Content Keyword Analyzer",
       "On-Page SEO Density Tool",
-      "Article Keyword Analyzer",
-      "Content Optimization Tool",
     ],
     featureList: [
       "Paste text and calculate total word count",
@@ -212,7 +210,7 @@ const toolConfig = createToolConfig({
     relatedTools: [
       { name: "Word Counter", href: "/seo-tools/word-counter" },
       { name: "Text Similarity Checker", href: "/seo-tools/text-similarity-checker" },
-      { name: "Blog Title Generator", href: "/seo-tools/blog-titles" },
+      { name: "Blog Title Generator", href: "/seo-tools/blog-title-generator" },
       { name: "Open Graph Meta Generator", href: "/seo-tools/meta-tags" },
       { name: "AI Readability Analyzer", href: "/ai-tools/ai-readability-analyzer" },
       { name: "AI Text Summarizer", href: "/ai-tools/text-summarizer" },

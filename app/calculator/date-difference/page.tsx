@@ -343,6 +343,10 @@ export default function DateDifferencePage() {
         answer: "Yes, our date difference calculator can help you determine the exact time span between any two dates, including birth dates of family members. Simply enter the two dates you want to compare, and the calculator will show you the precise difference in years, months, and days. This is useful for tracking time gaps between family events, understanding generational differences, or planning family-related milestones."
       },
       {
+        question: "How do I work out how long we've been together?",
+        answer: "Enter your relationship start date as the first date and today as the second date — the result is your exact time together in years, months, and days. For a relationship-specific version with anniversary countdowns, milestone tracking, and a total-months count, use our dedicated Anniversary Calculator at /fun-tools/anniversary-calculator — it answers \"how long have we been together?\" with celebration dates included."
+      },
+      {
         question: "What calendar system does the calculator use?",
         answer: "Our calculator uses the Gregorian calendar, which is the standard calendar system used internationally. This ensures consistency and accuracy for most everyday date calculations and professional applications. The calculator supports multiple date input formats (US, EU, and ISO) to accommodate different regional preferences, making it accessible to users worldwide while maintaining calculation accuracy."
       },
@@ -462,9 +466,9 @@ export default function DateDifferencePage() {
 
     relatedTools: [
       { name: "Age Calculator", href: "/calculator/age-calculator" },
-      { name: "Future Age Predictor", href: "/fun-tools/future-age" },
+      { name: "Future Age Predictor", href: "/fun-tools/how-old-will-i-be" },
       { name: "Time Duration Calculator", href: "/calculator/time-duration" },
-      { name: "Anniversary Calculator", href: "/fun-tools/anniversary" },
+      { name: "Anniversary Calculator", href: "/fun-tools/anniversary-calculator" },
       { name: "Birthday Countdown", href: "/fun-tools/birthday-countdown" },
       { name: "Countdown Timer & Stopwatch", href: "/fun-tools/countdown-timer" },
       { name: "Timezone Converter", href: "/converters/timezone" },

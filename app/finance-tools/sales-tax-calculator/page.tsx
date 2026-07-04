@@ -28,16 +28,6 @@ const baseMetadata = createMetadata({
       "Reverse Sales Tax Calculator",
       "Sales Tax Reverse Calculator",
       "Pre-Tax Price Calculator",
-      "Sales Tax Rate Calculator",
-      "Sales Tax by State",
-      "Sales Tax by Zip Code Calculator",
-      "Tax-Inclusive Price Calculator",
-      "Out-the-Door Price Calculator",
-      "Add Tax to Price Calculator",
-      "Remove Tax from Total Calculator",
-      "Ecommerce Sales Tax Calculator",
-      "Online Sales Tax Calculator",
-      "Local Sales Tax Calculator",
     ],
     applicationCategory: "BusinessApplication",
     featureList: [
@@ -382,8 +372,8 @@ export default function SalesTaxCalculatorPage() {
 
     relatedTools: [
       { name: "Tax Calculator", href: "/finance-tools/tax-calculator" },
-      { name: "Tax Bracket Calculator", href: "/finance-tools/tax-bracket-calculator" },
-      { name: "Tip Calculator", href: "/finance-tools/tip-calculator" },
+      { name: "Tax Bracket Calculator", href: "/finance-tools/tax-calculator" },
+      { name: "Tip Calculator", href: "/finance-tools/bill-splitter" },
       { name: "Discount Calculator", href: "/finance-tools/discount-calculator" },
       { name: "Bill Splitter", href: "/finance-tools/bill-splitter" },
       { name: "Invoice Generator", href: "/finance-tools/invoice-generator" },

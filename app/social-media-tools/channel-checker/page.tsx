@@ -15,13 +15,13 @@ const toolConfig = createToolConfig({
   toolName: "YouTube Channel Name & Handle Checker",
   description:
     "Free YouTube channel name availability checker. Instantly check if a YouTube channel name or @handle is available before launching your channel.",
-  metaTitle: "YouTube Channel Name Checker — Is Your @Handle Available?",
+  metaTitle: "YouTube Name Checker — Is That Channel Name or @Handle Taken?",
   metaDescription:
-    "Check if a YouTube channel name or @handle is taken or available. Free, instant, no login. Try unlimited names before you create your channel.",
+    "Check any YouTube channel name or @handle in one second — instant taken-or-available answer. Free, unlimited checks, no Google login. Try variations until one is free.",
   path: "/social-media-tools/channel-checker",
 
   header: {
-    title: "YouTube Channel Name Availability Checker — Names & @Handles",
+    title: "YouTube Name & Handle Checker",
     description:
       "Instantly check if a YouTube channel name or @handle is available before you create or rebrand your channel. Free YouTube username checker that covers handle availability, channel name uniqueness, and custom URL — no YouTube login required.",
     titleSize: "medium",
@@ -43,16 +43,6 @@ const toolConfig = createToolConfig({
       "YouTube Channel Name Availability Checker",
       "Check If YouTube Channel Name Is Available",
       "Available YouTube Channel Names",
-      "YouTube Handle Availability Checker",
-      "@Handle Availability Tool",
-      "Channel Name Search Tool",
-      "YouTube Brand Name Checker",
-      "Channel URL Availability",
-      "YouTube ID Availability",
-      "Channel Handle Validator",
-      "Custom URL Checker",
-      "YouTube Vanity URL Checker",
-      "Reserve YouTube Handle Tool",
     ],
     featureList: [
       "YouTube handle availability check",
@@ -263,25 +253,6 @@ const toolConfig = createToolConfig({
             </GTable>
           </div>
         </article>
-
-        <article className="space-y-4">
-          <h2 className="text-2xl font-bold text-foreground">The Same Tool, Many Names</h2>
-          <p>
-            This checker answers all of these phrasings — they all describe the same thing:
-          </p>
-          <ul className="grid grid-cols-1 md:grid-cols-2 gap-3 text-sm">
-            <li className="flex items-start gap-2"><CheckCircle className="h-4 w-4 text-green-500 mt-0.5 flex-shrink-0" /><span>youtube channel name availability checker</span></li>
-            <li className="flex items-start gap-2"><CheckCircle className="h-4 w-4 text-green-500 mt-0.5 flex-shrink-0" /><span>youtube username availability checker</span></li>
-            <li className="flex items-start gap-2"><CheckCircle className="h-4 w-4 text-green-500 mt-0.5 flex-shrink-0" /><span>youtube handle availability check</span></li>
-            <li className="flex items-start gap-2"><CheckCircle className="h-4 w-4 text-green-500 mt-0.5 flex-shrink-0" /><span>how to check if youtube channel name is available</span></li>
-            <li className="flex items-start gap-2"><CheckCircle className="h-4 w-4 text-green-500 mt-0.5 flex-shrink-0" /><span>how to check if a youtube handle is taken</span></li>
-            <li className="flex items-start gap-2"><CheckCircle className="h-4 w-4 text-green-500 mt-0.5 flex-shrink-0" /><span>youtube name checker / yt name checker</span></li>
-            <li className="flex items-start gap-2"><CheckCircle className="h-4 w-4 text-green-500 mt-0.5 flex-shrink-0" /><span>check youtube channel name uniqueness</span></li>
-            <li className="flex items-start gap-2"><CheckCircle className="h-4 w-4 text-green-500 mt-0.5 flex-shrink-0" /><span>available youtube channel names / handles</span></li>
-            <li className="flex items-start gap-2"><CheckCircle className="h-4 w-4 text-green-500 mt-0.5 flex-shrink-0" /><span>is my youtube name taken</span></li>
-            <li className="flex items-start gap-2"><CheckCircle className="h-4 w-4 text-green-500 mt-0.5 flex-shrink-0" /><span>youtube custom URL availability</span></li>
-          </ul>
-        </article>
       </div>
     ),
 
@@ -401,6 +372,10 @@ const toolConfig = createToolConfig({
     ],
 
     relatedTools: [
+      { name: "YouTube Handle Availability Checker", href: "/social-media-tools/channel-checker/handle-availability" },
+      { name: "YouTube Channel Name Availability Checker", href: "/social-media-tools/channel-checker/channel-name-checker" },
+      { name: "Check If a YouTube Handle Is Taken", href: "/social-media-tools/channel-checker/check-if-taken" },
+      { name: "YouTube Username Checker", href: "/social-media-tools/channel-checker/youtube-username-checker" },
       { name: "YouTube Channel Name Generator", href: "/social-media-tools/youtube-channel-name-generator" },
       { name: "YouTube Tag Extractor", href: "/social-media-tools/youtube-tags" },
       { name: "YouTube Thumbnail Downloader", href: "/social-media-tools/youtube-thumbnail" },

@@ -13,8 +13,8 @@ export interface CheckerVariantConfig {
 }
 
 export const checkerVariants: Record<string, CheckerVariantConfig> = {
-  "handle-availability-2026": {
-    slug: "handle-availability-2026",
+  "handle-availability": {
+    slug: "handle-availability",
     toolName: "YouTube Handle Availability Checker",
     metaTitle: "YouTube Handle Availability Checker — Is It Taken?",
     metaDescription:

@@ -68,18 +68,6 @@ const tools = [
     href: "/calculator/bmi-calculator",
   },
   {
-    title: "BMR Calculator",
-    description: "Calculate Basal Metabolic Rate to know how many calories your body burns at rest. Essential for diet planning and weight management.",
-    icon: Flame,
-    href: "/calculator/bmr-calculator",
-  },
-  {
-    title: "Calorie Calculator",
-    description: "Estimate daily calorie needs for weight loss, maintenance, or gain. customized based on activity level and fitness goals.",
-    icon: Utensils,
-    href: "/calculator/calorie-calculator",
-  },
-  {
     title: "TDEE & Macro Calculator",
     description: "Calculate Total Daily Energy Expenditure and personalized macros using Mifflin-St Jeor, Harris-Benedict, and Katch-McArdle equations. Get protein, carbs, and fat targets for any goal.",
     icon: Flame,
@@ -229,7 +217,7 @@ function answerForQuestion(q: string): { answer: string; links?: string[] } {
   if (lower.includes("protein")) {
     return {
       answer: "Estimate your daily protein requirements using our Calorie Calculator combined with the BMR (Basal Metabolic Rate) Calculator. First, use the BMR Calculator to determine your resting metabolic rate based on your age, gender, weight, and height. Then use the Calorie Calculator to set your activity level and fitness goals. The calculator will provide macro breakdowns including recommended protein intake based on your specific needs—typically 0.8-1.2 grams per kilogram of body weight for general health, with higher amounts for athletes and those building muscle.",
-      links: ["/calculator/calorie-calculator", "/calculator/bmr-calculator"]
+      links: ["/calculator/tdee-macro-calculator"]
     }
   }
 
@@ -257,14 +245,14 @@ function answerForQuestion(q: string): { answer: string; links?: string[] } {
   if (lower.includes("calorie")) {
     return {
       answer: "Use our Calorie Calculator to determine your daily caloric needs based on your goals. First, the calculator uses your BMR (calculated from age, gender, weight, height) and applies an activity multiplier to estimate your Total Daily Energy Expenditure (TDEE). Then, based on your goal—weight loss, weight maintenance, or weight gain—it recommends daily calorie intake. For weight loss, it suggests a safe deficit (typically 500-1000 calories below TDEE for 1-2 pounds per week loss). The calculator also provides macro breakdowns (protein, carbohydrates, fats) to help you plan meals effectively.",
-      links: ["/calculator/calorie-calculator", "/calculator/bmi-calculator", "/calculator/bmr-calculator"]
+      links: ["/calculator/tdee-macro-calculator", "/calculator/bmi-calculator"]
     }
   }
 
   if (lower.includes("water")) {
     return {
       answer: "Daily water needs vary by individual factors. While we don't have a dedicated water calculator, you can use our Calorie and BMR Calculators as proxies to estimate needs. A general guideline: multiply your body weight in kilograms by 0.033 to get liters per day, or use the common '8 glasses' rule (approximately 2 liters). Add 0.3-0.5 liters per hour of exercise, more in hot weather. Factors increasing needs include activity level (tracked in our BMR Calculator), climate, pregnancy (use our Pregnancy Calculator), and medical conditions. Always consult healthcare providers for personalized hydration advice.",
-      links: ["/calculator/calorie-calculator", "/calculator/bmr-calculator"]
+      links: ["/calculator/tdee-macro-calculator"]
     }
   }
 
@@ -597,9 +585,7 @@ const toolConfig = createToolConfig({
               <h3 className="font-semibold text-foreground mb-2">Health &amp; Body</h3>
               <ul className="text-sm space-y-1 text-muted-foreground">
                 <li><a href="/calculator/bmi-calculator" className="hover:text-foreground underline">BMI Calculator</a> — body mass index per WHO categories</li>
-                <li><a href="/calculator/bmr-calculator" className="hover:text-foreground underline">BMR Calculator</a> — resting metabolic rate</li>
-                <li><a href="/calculator/calorie-calculator" className="hover:text-foreground underline">Calorie Calculator</a> — daily intake target</li>
-                <li><a href="/calculator/tdee-macro-calculator" className="hover:text-foreground underline">TDEE Macro Calculator</a> — protein/carbs/fat split</li>
+                <li><a href="/calculator/tdee-macro-calculator" className="hover:text-foreground underline">TDEE Macro Calculator</a> — BMR, daily calorie target, and protein/carbs/fat split</li>
                 <li><a href="/calculator/body-fat-calculator" className="hover:text-foreground underline">Body Fat Calculator</a> — Navy method</li>
                 <li><a href="/calculator/biological-age-calculator" className="hover:text-foreground underline">Biological Age Calculator</a></li>
               </ul>
@@ -611,7 +597,7 @@ const toolConfig = createToolConfig({
                 <li><a href="/calculator/pregnancy-conception-calculator" className="hover:text-foreground underline">Conception Date Calculator</a></li>
                 <li><a href="/calculator/ovulation-calculator" className="hover:text-foreground underline">Ovulation Calculator</a></li>
                 <li><a href="/calculator/age-calculator" className="hover:text-foreground underline">Age Calculator</a></li>
-                <li><a href="/fun-tools/future-age" className="hover:text-foreground underline">Future Age Calculator</a></li>
+                <li><a href="/fun-tools/how-old-will-i-be" className="hover:text-foreground underline">Future Age Calculator</a></li>
               </ul>
             </div>
             <div className="p-4 rounded-lg bg-card border border-border">
@@ -631,7 +617,7 @@ const toolConfig = createToolConfig({
                 <li><a href="/calculator/date-difference" className="hover:text-foreground underline">Date Difference Calculator</a></li>
                 <li><a href="/calculator/time-duration" className="hover:text-foreground underline">Time Duration Calculator</a></li>
                 <li><a href="/calculator/age-calculator" className="hover:text-foreground underline">Age Calculator</a></li>
-                <li><a href="/fun-tools/anniversary" className="hover:text-foreground underline">Anniversary Calculator</a></li>
+                <li><a href="/fun-tools/anniversary-calculator" className="hover:text-foreground underline">Anniversary Calculator</a></li>
                 <li><a href="/fun-tools/birthday-countdown" className="hover:text-foreground underline">Birthday Countdown</a></li>
               </ul>
             </div>
@@ -667,10 +653,10 @@ const toolConfig = createToolConfig({
           <h2 className="text-2xl font-bold text-foreground">Calculator Workflows You Can Chain</h2>
           <p className="text-muted-foreground leading-relaxed">Most planning decisions need 2–3 calculators in sequence. Here are common chains:</p>
           <ul className="space-y-2 text-sm text-muted-foreground list-disc list-inside ml-2">
-            <li><strong>Buying a home:</strong> <a href="/finance-tools/home-affordability-calculator" className="underline">Home Affordability</a> → <a href="/finance-tools/mortgage-calculator" className="underline">Mortgage</a> → <a href="/finance-tools/amortization-calculator" className="underline">Amortization</a> → <a href="/finance-tools/rent-vs-buy-calculator" className="underline">Rent vs Buy</a></li>
-            <li><strong>Fitness plan:</strong> <a href="/calculator/bmi-calculator" className="underline">BMI</a> → <a href="/calculator/bmr-calculator" className="underline">BMR</a> → <a href="/calculator/calorie-calculator" className="underline">Calorie</a> → <a href="/calculator/tdee-macro-calculator" className="underline">TDEE Macro</a> → <a href="/calculator/body-fat-calculator" className="underline">Body Fat</a></li>
+            <li><strong>Buying a home:</strong> <a href="/finance-tools/home-affordability-calculator" className="underline">Home Affordability</a> → <a href="/finance-tools/mortgage-calculator" className="underline">Mortgage</a> → <a href="/finance-tools/loan-calculator" className="underline">Loan Amortization</a> → <a href="/finance-tools/rent-vs-buy-calculator" className="underline">Rent vs Buy</a></li>
+            <li><strong>Fitness plan:</strong> <a href="/calculator/bmi-calculator" className="underline">BMI</a> → <a href="/calculator/tdee-macro-calculator" className="underline">TDEE Macro</a> → <a href="/calculator/body-fat-calculator" className="underline">Body Fat</a></li>
             <li><strong>Pregnancy timeline:</strong> <a href="/calculator/ovulation-calculator" className="underline">Ovulation</a> → <a href="/calculator/pregnancy-conception-calculator" className="underline">Conception</a> → <a href="/calculator/pregnancy-calculator" className="underline">Due Date</a></li>
-            <li><strong>Investment plan:</strong> <a href="/finance-tools/compound-interest" className="underline">Compound Interest</a> → <a href="/finance-tools/investment-calculator" className="underline">Investment Growth</a> → <a href="/finance-tools/retirement-calculator" className="underline">Retirement</a></li>
+            <li><strong>Investment plan:</strong> <a href="/finance-tools/compound-interest" className="underline">Compound Interest</a> → <a href="/finance-tools/retirement-calculator" className="underline">Retirement</a></li>
             <li><strong>Concrete project:</strong> <a href="/calculator/concrete-calculator" className="underline">Concrete Calc</a> → <a href="/converters/length" className="underline">Length Converter</a> → <a href="/finance-tools/discount-calculator" className="underline">Discount Calculator</a> (material savings)</li>
           </ul>
         </article>

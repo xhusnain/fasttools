@@ -29,16 +29,6 @@ const baseMetadata = createMetadata({
       "Markdown Calculator",
       "Savings Calculator",
       "Original Price Calculator",
-      "Reverse Discount Calculator",
-      "Discount Percentage Calculator",
-      "Black Friday Calculator",
-      "Cyber Monday Calculator",
-      "BOGO Calculator",
-      "Coupon Calculator",
-      "Stacked Discount Calculator",
-      "Final Price Calculator",
-      "Holiday Sale Calculator",
-      "Clearance Calculator",
     ],
     applicationCategory: "FinanceApplication",
     featureList: [
@@ -226,7 +216,7 @@ export default function DiscountCalculatorPage() {
 
     relatedTools: [
       { name: "Sales Tax Calculator", href: "/finance-tools/sales-tax-calculator" },
-      { name: "Tip Calculator", href: "/finance-tools/tip-calculator" },
+      { name: "Tip Calculator", href: "/finance-tools/bill-splitter" },
       { name: "Bill Splitter", href: "/finance-tools/bill-splitter" },
       { name: "Percentage Calculator", href: "/calculator/percentage-calculator" },
       { name: "Currency Converter", href: "/converters/currency" },

@@ -49,13 +49,6 @@ const cryptoTools = [
     icon: Shield,
   },
   {
-    title: "TOTP QR Code Generator",
-    description:
-      "Create otpauth setup QR codes and live OTP previews for authenticator apps.",
-    href: "/crypto-tools/totp-qr-code-generator",
-    icon: Shield,
-  },
-  {
     title: "Bcrypt Generator",
     description:
       "Hash and verify passwords with bcrypt using configurable cost factors.",
@@ -98,10 +91,10 @@ const cryptoTools = [
     icon: Lock,
   },
   {
-    title: "Password Analyzer",
+    title: "Password Strength Checker",
     description:
       "Estimate password strength and entropy with modern security guidance.",
-    href: "/crypto-tools/password-strength-analyzer",
+    href: "/crypto-tools/password-strength-checker",
     icon: UserRound,
   },
 ]
@@ -162,14 +155,13 @@ const toolConfig = createToolConfig({
     aboutTool: (
       <div className="space-y-6 text-muted-foreground">
         <p>
-          Security-tool SERPs usually favor pages that combine immediate utility
-          with implementation clarity. This category focuses on that pattern by
-          prioritizing direct interaction and concise, standards-aware guidance.
+          Every tool in this category runs directly in your browser and is built
+          for immediate use: paste or generate, get a standards-compliant result,
+          and copy it into your project.
         </p>
         <p>
-          Instead of broad promotional content, each page is organized around
-          practical outcomes: generate, verify, export, and apply securely in a
-          real build workflow.
+          Each page pairs the tool with concise, standards-aware guidance —
+          generate, verify, export, and apply securely in a real build workflow.
         </p>
       </div>
     ),

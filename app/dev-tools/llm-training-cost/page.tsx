@@ -29,12 +29,6 @@ const baseMetadata = createMetadata({
       "GPU Training Cost Calculator",
       "Model Training Budget Calculator",
       "Chinchilla FLOPs Calculator",
-      "GPU Hours Calculator",
-      "H100 Cost Calculator",
-      "A100 Training Cost Calculator",
-      "AI Compute Cost Tool",
-      "Pre-training Budget Calculator",
-      "MFU GPU Hours Calculator",
     ],
     applicationCategory: "DeveloperApplication",
     featureList: [

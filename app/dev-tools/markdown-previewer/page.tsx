@@ -42,9 +42,6 @@ const toolConfig = createToolConfig({
       "Markdown to HTML Preview",
       "GFM Previewer",
       "GitHub README Preview",
-      "Markdown Live Editor",
-      "README Previewer",
-      "Online Markdown Renderer",
     ],
     featureList: [
       "Side-by-side Markdown input and rendered preview",
@@ -180,7 +177,7 @@ const toolConfig = createToolConfig({
       { name: "HTML WYSIWYG Editor", href: "/dev-tools/html-wysiwyg-editor" },
       { name: "Regex Tester", href: "/dev-tools/regex-tester" },
       { name: "Escape HTML Entities", href: "/web-tools/html-escape" },
-      { name: "Slugify String", href: "/dev-tools/slugify-string" },
+      { name: "Slugify String", href: "/dev-tools/url-slug-generator" },
       { name: "Word Counter", href: "/seo-tools/word-counter" },
       { name: "Diff Checker", href: "/dev-tools/diff-checker" },
       { name: "All Developer Tools", href: "/dev-tools" },

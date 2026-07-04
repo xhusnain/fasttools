@@ -29,16 +29,6 @@ const baseMetadata = createMetadata({
       "Macronutrient Calculator",
       "Total Daily Energy Expenditure Calculator",
       "Keto Macro Calculator",
-      "IIFYM Calculator",
-      "Flexible Dieting Calculator",
-      "Protein Calculator",
-      "Carb Calculator",
-      "Fat Macro Calculator",
-      "Cutting Macro Calculator",
-      "Bulking Macro Calculator",
-      "Mifflin-St Jeor Macro Tool",
-      "Katch-McArdle Macro Tool",
-      "Athlete Macro Calculator",
     ],
     applicationCategory: "HealthApplication",
     featureList: [
@@ -675,8 +665,8 @@ export default function TDEEMacroCalculatorPage() {
       }
     ],
     relatedTools: [
-      { name: "BMR Calculator", href: "/calculator/bmr-calculator" },
-      { name: "Calorie Calculator", href: "/calculator/calorie-calculator" },
+      { name: "BMR Calculator", href: "/calculator/tdee-macro-calculator" },
+      { name: "Calorie Calculator", href: "/calculator/tdee-macro-calculator" },
       { name: "Body Fat Calculator", href: "/calculator/body-fat-calculator" },
       { name: "BMI Calculator", href: "/calculator/bmi-calculator" },
       { name: "Biological Age Calculator", href: "/calculator/biological-age-calculator" },

@@ -42,7 +42,7 @@ const financeTools = [
     description:
       "Calculate PayPal processing fees and the amount you receive after transaction costs.",
     icon: DollarSign,
-    href: "/finance-tools/paypal-fee",
+    href: "/finance-tools/paypal-fee-calculator",
   },
   {
     title: "PayPal G&S Fee Calculator",
@@ -59,13 +59,6 @@ const financeTools = [
     href: "/finance-tools/discount-calculator",
   },
   {
-    title: "Tip Calculator",
-    description:
-      "Calculate tips quickly and split bills fairly across multiple people.",
-    icon: Calculator,
-    href: "/finance-tools/tip-calculator",
-  },
-  {
     title: "Savings Goal Tracker",
     description:
       "Track savings progress and estimate when you will reach your goal amount.",
@@ -73,25 +66,11 @@ const financeTools = [
     href: "/finance-tools/savings-tracker",
   },
   {
-    title: "Retirement Goal Planner",
-    description:
-      "Plan retirement contributions and estimate long-term portfolio growth.",
-    icon: TrendingUp,
-    href: "/finance-tools/retirement-planner",
-  },
-  {
     title: "Bill Splitter",
     description:
       "Split shared expenses for friends, trips, or group events with clear totals.",
     icon: Users,
     href: "/finance-tools/bill-splitter",
-  },
-  {
-    title: "Credit Card Payoff Calculator",
-    description:
-      "Estimate debt payoff time and interest costs for credit card balances.",
-    icon: CreditCard,
-    href: "/finance-tools/credit-card-payoff",
   },
   {
     title: "Loan Calculator",
@@ -122,11 +101,11 @@ const financeTools = [
     href: "/finance-tools/tax-calculator",
   },
   {
-    title: "1099 Quarterly Tax Estimator",
+    title: "Quarterly Tax Calculator",
     description:
       "Calculate quarterly estimated tax payments for 1099 income with safe harbor analysis and SE tax breakdown.",
     icon: Shield,
-    href: "/finance-tools/quarterly-tax-estimator",
+    href: "/finance-tools/quarterly-tax-calculator",
   },
   {
     title: "Sales Tax Calculator",
@@ -143,25 +122,11 @@ const financeTools = [
     href: "/finance-tools/retirement-calculator",
   },
   {
-    title: "Investment Calculator",
-    description:
-      "Estimate investment growth over time with recurring contributions and returns.",
-    icon: ChartLine,
-    href: "/finance-tools/investment-calculator",
-  },
-  {
     title: "Compound Interest Calculator",
     description:
       "Visualize compounding effects and compare long-term savings scenarios.",
     icon: Coins,
     href: "/finance-tools/compound-interest",
-  },
-  {
-    title: "Amortization Calculator",
-    description:
-      "Generate payment schedules showing principal and interest for each period.",
-    icon: ScrollText,
-    href: "/finance-tools/amortization-calculator",
   },
   {
     title: "Finance Calculator",
@@ -176,20 +141,6 @@ const financeTools = [
       "Estimate purchasing power changes over time based on inflation assumptions.",
     icon: TrendingDown,
     href: "/finance-tools/inflation-calculator",
-  },
-  {
-    title: "Interest Rate Calculator",
-    description:
-      "Solve for unknown interest rates from payment, term, and principal inputs.",
-    icon: Banknote,
-    href: "/finance-tools/interest-rate-calculator",
-  },
-  {
-    title: "Payment Calculator",
-    description:
-      "Calculate periodic payment amounts for different loan and financing setups.",
-    icon: CreditCard,
-    href: "/finance-tools/payment-calculator",
   },
   {
     title: "Salary Calculator",
@@ -213,13 +164,6 @@ const financeTools = [
     href: "/finance-tools/freelance-rate-calculator",
   },
   {
-    title: "Tax Bracket Calculator",
-    description:
-      "Calculate 2025-2026 US federal income tax by bracket. Marginal vs effective rate, bracket breakdown.",
-    icon: Percent,
-    href: "/finance-tools/tax-bracket-calculator",
-  },
-  {
     title: "Startup Runway Calculator",
     description:
       "Calculate months of runway, burn rate, zero-cash date, and fundraise timing with revenue growth projections.",
@@ -227,11 +171,11 @@ const financeTools = [
     href: "/finance-tools/startup-runway-calculator",
   },
   {
-    title: "SaaS Payback Period Calculator",
+    title: "CAC Payback Calculator",
     description:
       "Calculate months to recover CAC, LTV:CAC ratio, customer lifetime value & 36-month ROI projection.",
     icon: TrendingUp,
-    href: "/finance-tools/saas-payback-calculator",
+    href: "/finance-tools/cac-payback-calculator",
   },
   {
     title: "Remote Work Savings Calculator",

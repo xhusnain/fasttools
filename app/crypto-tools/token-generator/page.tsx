@@ -36,17 +36,6 @@ const toolConfig = createToolConfig({
       "Random Token Generator",
       "Secret Key Generator",
       "Session Token Generator",
-      "CSRF Token Generator",
-      "Webhook Secret Generator",
-      "JWT Secret Generator",
-      "Bearer Token Generator",
-      ".env Secret Generator",
-      "Hex Token Generator",
-      "Base64 Token Generator",
-      "Base64URL Token Generator",
-      "Alphanumeric Key Generator",
-      "Stripe-style Key Generator",
-      "Random Hex String Generator",
     ],
     featureList: [
       "Cryptographically secure via window.crypto.getRandomValues() — never Math.random()",
@@ -158,7 +147,7 @@ const toolConfig = createToolConfig({
         <div>
           <h3 className="text-lg font-semibold text-foreground mb-2">API Key Prefix Conventions</h3>
           <p>
-            Modern services prefix API keys so leaked tokens can be detected and revoked quickly. GitHub scans public commits, Stripe scans pastebin sites, and AWS scans cloud-storage buckets — all matching on these prefixes. Following the convention makes your keys discoverable by automated leak-detection systems:
+            Modern services prefix API keys so that accidentally exposed tokens can be detected and revoked quickly by the providers' own automated secret-scanning systems. Following the convention makes your keys recognizable to those scanners:
           </p>
           <ul className="list-disc pl-6 mt-2 space-y-1">
             <li><strong>Stripe:</strong> <code>sk_live_</code> (secret), <code>pk_live_</code> (publishable), <code>whsec_</code> (webhook)</li>
@@ -274,13 +263,13 @@ const toolConfig = createToolConfig({
     ],
 
     relatedTools: [
-      { name: "TOTP QR Code Generator", href: "/crypto-tools/totp-qr-code-generator" },
+      { name: "TOTP QR Code Generator", href: "/crypto-tools/otp-generator" },
       { name: "OTP Code Generator", href: "/crypto-tools/otp-generator" },
       { name: "Password Generator", href: "/crypto-tools/password-generator" },
       { name: "UUID Generator", href: "/crypto-tools/uuid-generator" },
       { name: "ULID Generator", href: "/crypto-tools/ulid-generator" },
       { name: "JWT Decoder", href: "/dev-tools/jwt-decoder" },
-      { name: "Auth Generator", href: "/web-tools/auth-generator" },
+      { name: "Auth Generator", href: "/web-tools/basic-auth-header-generator" },
       { name: "Hash Text Generator", href: "/crypto-tools/hash-text" },
       { name: "All Crypto Tools", href: "/crypto-tools" },
     ],

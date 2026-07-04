@@ -36,21 +36,11 @@ const toolConfig = createToolConfig({
     description:
       "Link-in-bio page generator and Linktree alternative for creators, influencers, and businesses. Build a multi-link landing page from one bio URL with custom colors, button styles, and mobile-first layout.",
     alternateName: [
-      "Linktree Alternative",
-      "Beacons Alternative",
       "Bio Link Generator",
       "Multi-Link Bio Maker",
       "Instagram Bio Link Tool",
       "TikTok Bio Page Generator",
       "Creator Landing Page Builder",
-      "Bio URL Generator",
-      "One Link Maker",
-      "Carrd Alternative",
-      "Solo.to Alternative",
-      "Lnk.Bio Alternative",
-      "Bio Page Creator",
-      "Social Bio Link Page",
-      "Influencer Landing Page Tool",
     ],
     featureList: [
       "Create multi-link bio landing pages",

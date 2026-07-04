@@ -27,9 +27,6 @@ const toolConfig = createToolConfig({
       "Photo to PDF Converter",
       "Picture to PDF Converter",
       "Multiple Images to PDF",
-      "Screenshot to PDF Converter",
-      "Receipt Photo to PDF",
-      "PDF from Photos",
     ],
     featureList: [
       "Convert JPG, PNG, and WebP images to PDF",

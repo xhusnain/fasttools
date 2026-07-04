@@ -29,16 +29,6 @@ const baseMetadata = createMetadata({
       "Online Invoice Generator",
       "Freelance Invoice Generator",
       "Small Business Invoice Generator",
-      "Professional Invoice Maker",
-      "Free Invoicing Tool",
-      "Invoice Template Generator",
-      "Tax Invoice Generator",
-      "GST Invoice Generator",
-      "Quick Invoice Generator",
-      "Multi-Currency Invoice Maker",
-      "Contractor Invoice Generator",
-      "Consultant Invoice Generator",
-      "Agency Invoice Generator",
     ],
     applicationCategory: "FinanceApplication",
     featureList: [
@@ -135,14 +125,14 @@ export default function InvoiceGeneratorPage() {
     `,
 
     relatedTools: [
-      { name: "PayPal Fee Calculator", href: "/finance-tools/paypal-fee" },
+      { name: "PayPal Fee Calculator", href: "/finance-tools/paypal-fee-calculator" },
       { name: "Freelance Rate Calculator", href: "/finance-tools/freelance-rate-calculator" },
       { name: "Sales Tax Calculator", href: "/finance-tools/sales-tax-calculator" },
       { name: "Discount Calculator", href: "/finance-tools/discount-calculator" },
       { name: "Bill Splitter", href: "/finance-tools/bill-splitter" },
-      { name: "Tip Calculator", href: "/finance-tools/tip-calculator" },
+      { name: "Tip Calculator", href: "/finance-tools/bill-splitter" },
       { name: "Tax Calculator", href: "/finance-tools/tax-calculator" },
-      { name: "Quarterly Tax Estimator", href: "/finance-tools/quarterly-tax-estimator" },
+      { name: "Quarterly Tax Estimator", href: "/finance-tools/quarterly-tax-calculator" },
       { name: "All Finance Tools", href: "/finance-tools" }
     ]
   }

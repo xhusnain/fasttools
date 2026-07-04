@@ -39,12 +39,6 @@ const toolConfig = createToolConfig({
       "Epoch to Date Converter",
       "Date to Epoch Converter",
       "Unix Timestamp to Date",
-      "Timestamp Converter",
-      "Epoch Time Converter",
-      "Unix Epoch Converter",
-      "EpochConverter Alternative",
-      "Current Unix Timestamp",
-      "Milliseconds to Date Converter",
     ],
   },
 

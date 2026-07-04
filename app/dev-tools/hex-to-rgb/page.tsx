@@ -13,7 +13,7 @@ const toolConfig = createToolConfig({
   toolName: "HEX to RGB Converter",
   description:
     "Convert color values between HEX, RGB, HSL, RGBA, and HSLA formats with a live color preview and one-click copy buttons.",
-  metaTitle: "HEX to RGB Converter - HEX, RGB, HSL, RGBA | FastTools",
+  metaTitle: "HEX to RGB Converter - HEX, RGB, HSL, RGBA",
   metaDescription:
     "Free HEX to RGB converter. Convert 6-digit hex colors to RGB and HSL, enter RGB or HSL values in reverse, set alpha, preview the color, and copy CSS-ready values.",
   path: "/dev-tools/hex-to-rgb",
@@ -42,10 +42,6 @@ const toolConfig = createToolConfig({
       "HEX to HSL",
       "HSL to RGB",
       "HSL to HEX",
-      "RGB Color Converter",
-      "CSS Color Tool",
-      "Color Picker",
-      "Color Code Translator",
     ],
     featureList: [
       "Convert 6-digit HEX to RGB and HSL",
@@ -152,7 +148,7 @@ const toolConfig = createToolConfig({
     ],
 
     relatedTools: [
-      { name: "Color Palette Generator", href: "/dev-tools/color-palette" },
+      { name: "Color Palette Generator", href: "/dev-tools/color-palette-generator" },
       { name: "CSS Gradient Generator", href: "/dev-tools/css-gradient-generator" },
       { name: "HTML WYSIWYG Editor", href: "/dev-tools/html-wysiwyg-editor" },
       { name: "HTML Beautifier", href: "/dev-tools/html-beautifier" },

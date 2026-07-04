@@ -48,10 +48,10 @@ const devTools = [
     icon: Code2,
   },
   {
-    title: "Slugify String",
+    title: "URL Slug Generator",
     description:
       "Convert text into URL-safe slugs for routes, filenames, and identifiers.",
-    href: "/dev-tools/slugify-string",
+    href: "/dev-tools/url-slug-generator",
     icon: FileCode,
   },
   {
@@ -121,7 +121,7 @@ const devTools = [
     title: "Color Palette Generator",
     description:
       "7 harmony modes, image extraction, WCAG contrast checker, export to CSS/Tailwind/SCSS/JSON.",
-    href: "/dev-tools/color-palette",
+    href: "/dev-tools/color-palette-generator",
     icon: Palette,
   },
   {

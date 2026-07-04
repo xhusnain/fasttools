@@ -33,16 +33,6 @@ const baseMetadata = createMetadata({
       "Remote Work Cost Calculator",
       "Commute Savings Calculator",
       "WFH vs Office Cost Calculator",
-      "How Much Do I Save Working From Home",
-      "Remote Work Salary Equivalent Calculator",
-      "Commuting Cost Calculator",
-      "Office vs Home Cost Comparison",
-      "Telecommuting Savings Calculator",
-      "Hybrid Work Savings Calculator",
-      "Time Saved Calculator",
-      "Carbon Footprint Commute Calculator",
-      "Effective Hourly Raise WFH Calculator",
-      "Return to Office Cost Calculator",
     ],
     applicationCategory: "FinanceApplication",
     featureList: [
@@ -372,7 +362,7 @@ export default function RemoteWorkSavingsPage() {
       { name: "Net Worth Calculator", href: "/finance-tools/net-worth-calculator" },
       { name: "Savings Goal Tracker", href: "/finance-tools/savings-tracker" },
       { name: "Inflation Calculator", href: "/finance-tools/inflation-calculator" },
-      { name: "Investment Calculator", href: "/finance-tools/investment-calculator" },
+      { name: "Investment Calculator", href: "/finance-tools/compound-interest" },
       { name: "All Finance Tools", href: "/finance-tools" }
     ]
   }

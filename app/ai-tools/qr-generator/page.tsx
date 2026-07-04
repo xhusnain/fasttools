@@ -41,16 +41,6 @@ const toolConfig = createToolConfig({
       "WiFi QR Generator",
       "vCard QR Generator",
       "URL QR Code Maker",
-      "Static QR Code Generator",
-      "Permanent QR Code Tool",
-      "QR Code with Logo",
-      "WhatsApp QR Generator",
-      "SMS QR Generator",
-      "Email QR Generator",
-      "Bulk QR Generator",
-      "QR Tiger Alternative",
-      "QR Code Monkey Alternative",
-      "Custom QR Code Designer",
     ],
     featureList: [
       "9 QR content types: URL, plain text, WiFi, vCard, email, SMS, WhatsApp, phone call, GPS coordinates",
@@ -355,7 +345,7 @@ END:VCARD`}</code>
     ],
 
     relatedTools: [
-      { name: "TOTP QR Code Generator", href: "/crypto-tools/totp-qr-code-generator" },
+      { name: "TOTP QR Code Generator", href: "/crypto-tools/otp-generator" },
       { name: "OTP Code Generator", href: "/crypto-tools/otp-generator" },
       { name: "URL Encoder Decoder", href: "/web-tools/url-encoder" },
       { name: "URL Parser", href: "/web-tools/url-parser" },

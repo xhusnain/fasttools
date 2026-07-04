@@ -33,16 +33,6 @@ const baseMetadata = createMetadata({
       "Contractor Hourly Rate Calculator",
       "Self-Employed Rate Calculator",
       "How Much to Charge as a Freelancer",
-      "Freelancer Pricing Calculator",
-      "Consultant Day Rate Calculator",
-      "Independent Contractor Rate Calculator",
-      "Freelance Income Calculator",
-      "Hourly to Salary for Freelancers",
-      "Freelance Pricing Tool",
-      "Set Your Rate Calculator",
-      "Reverse Salary to Hourly Rate Calculator",
-      "Gig Worker Rate Calculator",
-      "Solopreneur Rate Calculator",
     ],
     applicationCategory: "FinanceApplication",
     featureList: [
@@ -516,12 +506,12 @@ export default function FreelanceRateCalculatorPage() {
     ],
 
     relatedTools: [
-      { name: "Quarterly Tax Estimator", href: "/finance-tools/quarterly-tax-estimator" },
+      { name: "Quarterly Tax Estimator", href: "/finance-tools/quarterly-tax-calculator" },
       { name: "Salary Calculator", href: "/finance-tools/salary-calculator" },
       { name: "Tax Calculator", href: "/finance-tools/tax-calculator" },
-      { name: "Tax Bracket Calculator", href: "/finance-tools/tax-bracket-calculator" },
+      { name: "Tax Bracket Calculator", href: "/finance-tools/tax-calculator" },
       { name: "Invoice Generator", href: "/finance-tools/invoice-generator" },
-      { name: "PayPal Fee Calculator", href: "/finance-tools/paypal-fee" },
+      { name: "PayPal Fee Calculator", href: "/finance-tools/paypal-fee-calculator" },
       { name: "Influencer Rate Calculator", href: "/social-media-tools/influencer-rate-calculator" },
       { name: "All Finance Tools", href: "/finance-tools" }
     ]

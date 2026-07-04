@@ -12,7 +12,7 @@ const TimezoneConverter = dynamic(
 const toolConfig = createToolConfig({
   toolName: "Time Zone Converter",
   description:
-    "Convert time across 20+ global time zones including UTC, EST, PST, CST, IST, JST, AEST, CET, and GMT with daylight saving awareness and 12/24-hour format support.",
+    "Convert time across 20+ global time zones including UTC, EST, PST, CST, IST, JST, AEST, CET, and GMT using standard UTC offsets, with 12/24-hour format support.",
   metaTitle: "Time Zone Converter -- Convert UTC EST PST IST JST Times Free",
   metaDescription:
     "Free time zone converter for 20+ global zones. Instantly convert between UTC, EST, PST, CST, IST, JST, AEST, CET, and GMT. AM/PM and 24-hour toggle, auto-detect local time, no signup required.",
@@ -53,7 +53,7 @@ const toolConfig = createToolConfig({
 
   content: {
     definition:
-      "A Time Zone Converter is a free online tool that converts time between 20+ major global time zones including UTC, EST, PST, CST, IST, JST, AEST, CET, and GMT with instant multi-zone comparison and daylight saving time awareness.",
+      "A Time Zone Converter is a free online tool that converts time between 20+ major global time zones including UTC, EST, PST, CST, IST, JST, AEST, CET, and GMT using standard UTC offsets with instant multi-zone comparison.",
     quickAnswer:
       "Select a source time zone, enter the time, and choose one or more target zones to see the converted time instantly. Supports AM/PM and 24-hour military time formats. Ideal for scheduling international meetings, coordinating remote teams across continents, and planning travel itineraries across multiple time zones.",
     keyTakeaways: [
@@ -64,7 +64,7 @@ const toolConfig = createToolConfig({
       "Essential for remote team scheduling, international client calls, and cross-timezone project management",
     ],
     overview:
-      "This free time zone converter lets you compare and convert time across 20+ major global time zones using precise GMT/UTC offset calculations. Whether you need to convert UTC to EST, PST to IST, or compare CET with JST for international meeting scheduling, this tool provides instant side-by-side time zone comparison. It supports both 12-hour AM/PM and 24-hour military time formats, auto-detects your current local time for quick reference, and handles daylight saving time transitions. Perfect for distributed teams, freelancers working with international clients, digital nomads planning travel, and anyone coordinating across multiple time zones worldwide.",
+      "This free time zone converter lets you compare and convert time across 20+ major global time zones using precise GMT/UTC offset calculations. Whether you need to convert UTC to EST, PST to IST, or compare CET with JST for international meeting scheduling, this tool provides instant side-by-side time zone comparison. It supports both 12-hour AM/PM and 24-hour military time formats and auto-detects your current local time for quick reference. Note that conversions use standard (non-DST) UTC offsets — check whether your target region is currently observing daylight saving time. Perfect for distributed teams, freelancers working with international clients, digital nomads planning travel, and anyone coordinating across multiple time zones worldwide.",
 
     howToSteps: [
       "Enter the time you want to convert or click the auto-detect button to use your current local time as the starting point.",
@@ -132,7 +132,7 @@ const toolConfig = createToolConfig({
       {
         question: "How do I convert UTC to EST or PST?",
         answer:
-          "To convert UTC to EST, subtract 5 hours (UTC-5). To convert UTC to PST, subtract 8 hours (UTC-8). During daylight saving time, EST becomes EDT (UTC-4) and PST becomes PDT (UTC-7). This converter handles these offsets automatically -- simply select UTC as your source zone and read the EST/PST values from the results.",
+          "To convert UTC to EST, subtract 5 hours (UTC-5). To convert UTC to PST, subtract 8 hours (UTC-8). During daylight saving time, EST becomes EDT (UTC-4) and PST becomes PDT (UTC-7). This converter uses the standard (non-DST) offsets — select UTC as your source zone, read the EST/PST values from the results, and add one hour manually if the target region is currently on daylight saving time.",
       },
       {
         question: "Does this time zone converter handle daylight saving time (DST)?",

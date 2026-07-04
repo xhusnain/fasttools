@@ -7,7 +7,7 @@ const toolConfig = createToolConfig({
   toolName: "User-Agent Parser",
   description:
     "Parse a user-agent string into browser, engine, operating system, device, and CPU details using ua-parser-js.",
-  metaTitle: "User-Agent Parser - Browser, OS & Device Lookup | FastTools",
+  metaTitle: "User-Agent Parser - Browser, OS & Device Lookup",
   metaDescription:
     "Parse your current browser user-agent or paste any UA string. Extract browser name/version, rendering engine, OS, device model/vendor/type, and CPU architecture.",
   path: "/dev-tools/user-agent-parser",
@@ -36,11 +36,6 @@ const toolConfig = createToolConfig({
       "UA String Parser",
       "Device Detector",
       "User-Agent Lookup",
-      "What's My User-Agent",
-      "UA Parser Online",
-      "Mobile Desktop Detector",
-      "OS Detector from UA",
-      "HTTP UA Inspector",
     ],
     featureList: [
       "Loads the current browser user-agent",

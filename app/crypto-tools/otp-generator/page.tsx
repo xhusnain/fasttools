@@ -36,16 +36,6 @@ const toolConfig = createToolConfig({
       "2FA Code Generator",
       "Google Authenticator Generator",
       "Authy Code Generator",
-      "RFC 6238 TOTP Generator",
-      "Time-based One-Time Password Generator",
-      "HOTP Generator",
-      "otpauth URI Generator",
-      "2FA QR Code Generator",
-      "Authenticator Secret Generator",
-      "MFA Code Generator",
-      "OATH TOTP Tester",
-      "Two-Factor Auth Tester",
-      "TOTP Debugger",
     ],
     featureList: [
       "RFC 6238 TOTP generation with live 30-second countdown timer",
@@ -231,7 +221,7 @@ const toolConfig = createToolConfig({
     ],
 
     relatedTools: [
-      { name: "TOTP QR Code Generator", href: "/crypto-tools/totp-qr-code-generator" },
+      { name: "TOTP QR Code Generator", href: "/crypto-tools/otp-generator" },
       { name: "Token Generator", href: "/crypto-tools/token-generator" },
       { name: "HMAC Generator", href: "/crypto-tools/hmac-generator" },
       { name: "Bcrypt Generator", href: "/crypto-tools/bcrypt" },

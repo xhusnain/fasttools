@@ -42,9 +42,6 @@ const toolConfig = createToolConfig({
       "HTML to CommonMark",
       "Web Page HTML to Markdown",
       "Article to Markdown",
-      "Blog Post to Markdown",
-      "CMS HTML to Markdown",
-      "README Markdown Converter",
     ],
     featureList: [
       "Converts h1-h6 headings to Markdown headings",
@@ -182,7 +179,7 @@ const toolConfig = createToolConfig({
       { name: "HTML WYSIWYG Editor", href: "/dev-tools/html-wysiwyg-editor" },
       { name: "Escape HTML Entities", href: "/web-tools/html-escape" },
       { name: "JSON to CSV Converter", href: "/dev-tools/json-to-csv" },
-      { name: "Slugify String", href: "/dev-tools/slugify-string" },
+      { name: "Slugify String", href: "/dev-tools/url-slug-generator" },
       { name: "Word Counter", href: "/seo-tools/word-counter" },
       { name: "Diff Checker", href: "/dev-tools/diff-checker" },
       { name: "All Developer Tools", href: "/dev-tools" },

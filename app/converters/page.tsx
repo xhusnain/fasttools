@@ -27,60 +27,53 @@ const converters = [
     href: "/converters/list-converter",
   },
   {
-    title: "JSON to XML Converter",
-    description:
-      "Convert structured JSON data to XML and switch back when needed.",
-    icon: FileCode,
-    href: "/converters/json-xml",
-  },
-  {
     title: "XML to JSON Converter",
     description:
       "Transform XML payloads to JSON for API and app workflows.",
     icon: FileCode,
-    href: "/converters/xml-json",
+    href: "/converters/xml-to-json",
   },
   {
     title: "TOML to YAML Converter",
     description:
       "Convert TOML config files to YAML and back in one workspace.",
     icon: FileCode,
-    href: "/converters/toml-yaml",
+    href: "/converters/toml-to-yaml",
   },
   {
     title: "TOML to JSON Converter",
     description:
       "Parse TOML config into formatted JSON output instantly.",
     icon: FileCode,
-    href: "/converters/toml-json",
+    href: "/converters/toml-to-json",
   },
   {
     title: "JSON to TOML Converter",
     description:
       "Convert JSON objects to TOML for config and tooling use cases.",
     icon: FileCode,
-    href: "/converters/json-toml",
+    href: "/converters/json-to-toml",
   },
   {
     title: "YAML to TOML",
     description:
       "Convert YAML configuration into TOML with clean key formatting.",
     icon: FileCode,
-    href: "/converters/yaml-toml",
+    href: "/converters/yaml-to-toml",
   },
   {
     title: "JSON to YAML Converter",
     description:
       "Convert JSON to readable YAML for config and documentation workflows.",
     icon: FileCode,
-    href: "/converters/json-yaml",
+    href: "/converters/json-to-yaml",
   },
   {
     title: "YAML to JSON Converter",
     description:
       "Convert YAML documents to JSON for APIs and automation pipelines.",
     icon: FileCode,
-    href: "/converters/yaml-json",
+    href: "/converters/yaml-to-json",
   },
   {
     title: "Text to Unicode",
@@ -134,7 +127,7 @@ const converters = [
   {
     title: "Currency Converter",
     description:
-      "Convert between global currencies with live exchange rate data.",
+      "Convert between major currencies using daily ECB reference rates.",
     icon: DollarSign,
     href: "/converters/currency",
   },
@@ -169,16 +162,9 @@ const converters = [
   {
     title: "Time Zone Converter",
     description:
-      "Convert times across cities and zones with DST-aware handling.",
+      "Convert times between major cities and UTC offsets instantly.",
     icon: Globe,
     href: "/converters/timezone",
-  },
-  {
-    title: "Currency Converter",
-    description:
-      "Convert between world currencies with real-time exchange rates.",
-    icon: FileText,
-    href: "/converters/currency",
   },
 ]
 

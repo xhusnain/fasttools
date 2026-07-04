@@ -114,14 +114,13 @@ export const navigationConfig: MegaMenuSection[] = [
                 title: "Converters",
                 items: [
                     { title: "List Converter", href: "/converters/list-converter", icon: Type },
-                    { title: "JSON to XML Converter", href: "/converters/json-xml", icon: FileCode },
-                    { title: "XML to JSON Converter", href: "/converters/xml-json", icon: FileCode },
-                    { title: "TOML to YAML Converter", href: "/converters/toml-yaml", icon: FileCode },
-                    { title: "TOML to JSON Converter", href: "/converters/toml-json", icon: FileCode },
-                    { title: "JSON to TOML Converter", href: "/converters/json-toml", icon: FileCode },
-                    { title: "YAML to TOML", href: "/converters/yaml-toml", icon: FileCode },
-                    { title: "JSON to YAML Converter", href: "/converters/json-yaml", icon: FileCode },
-                    { title: "YAML to JSON Converter", href: "/converters/yaml-json", icon: FileCode },
+                    { title: "XML to JSON Converter", href: "/converters/xml-to-json", icon: FileCode },
+                    { title: "TOML to YAML Converter", href: "/converters/toml-to-yaml", icon: FileCode },
+                    { title: "TOML to JSON Converter", href: "/converters/toml-to-json", icon: FileCode },
+                    { title: "JSON to TOML Converter", href: "/converters/json-to-toml", icon: FileCode },
+                    { title: "YAML to TOML", href: "/converters/yaml-to-toml", icon: FileCode },
+                    { title: "JSON to YAML Converter", href: "/converters/json-to-yaml", icon: FileCode },
+                    { title: "YAML to JSON Converter", href: "/converters/yaml-to-json", icon: FileCode },
                     { title: "Text to Unicode", href: "/converters/unicode", icon: Type },
                     { title: "Text to ASCII Binary", href: "/converters/ascii-binary", icon: Binary },
                     { title: "Text to NATO Alphabet", href: "/converters/nato-phonetic", icon: Radio },
@@ -143,7 +142,7 @@ export const navigationConfig: MegaMenuSection[] = [
                     { title: "Escape HTML Entities", href: "/web-tools/html-escape", icon: Link2 },
                     { title: "URL Parser", href: "/web-tools/url-parser", icon: Link2 },
                     { title: "Device Information", href: "/web-tools/device-info", icon: Link2 },
-                    { title: "Auth Generator", href: "/web-tools/auth-generator", icon: Link2 },
+                    { title: "Basic Auth Header", href: "/web-tools/basic-auth-header-generator", icon: Link2 },
                     { title: "Outlook Safelink Decoder", href: "/web-tools/outlook-safelink-decoder", icon: Link2 },
                     { title: "DNS Lookup & SSL Checker", href: "/web-tools/dns-ssl-checker", icon: Link2 },
                     { title: "WHOIS & Domain Lookup", href: "/web-tools/whois-lookup", icon: Link2 },
@@ -162,11 +161,11 @@ export const navigationConfig: MegaMenuSection[] = [
                     { title: "Base64 Encoder", href: "/dev-tools/base64-encoder", icon: Binary },
                     { title: "MIME Types", href: "/dev-tools/mime-types", icon: FileCode },
                     { title: "Keycode Info", href: "/dev-tools/keycode-info", icon: Code },
-                    { title: "Slugify String", href: "/dev-tools/slugify-string", icon: FileCode },
+                    { title: "URL Slug Generator", href: "/dev-tools/url-slug-generator", icon: FileCode },
                     { title: "HTML WYSIWYG Editor", href: "/dev-tools/html-wysiwyg-editor", icon: Code },
                     { title: "User-Agent Parser", href: "/dev-tools/user-agent-parser", icon: Code },
                     { title: "HTTP Status Codes", href: "/dev-tools/http-status-codes", icon: Code },
-                    { title: "Color Palette", href: "/dev-tools/color-palette", icon: Palette },
+                    { title: "Color Palette", href: "/dev-tools/color-palette-generator", icon: Palette },
                     { title: "Markdown Preview", href: "/dev-tools/markdown-previewer", icon: Eye },
                     { title: "HTML Beautifier", href: "/dev-tools/html-beautifier", icon: Code },
                     { title: "LLM Training Cost", href: "/dev-tools/llm-training-cost", icon: Calculator },
@@ -179,11 +178,10 @@ export const navigationConfig: MegaMenuSection[] = [
                     { title: "Hash Text", href: "/crypto-tools/hash-text", icon: RefreshCw },
                     { title: "UUID Generator", href: "/crypto-tools/uuid-generator", icon: Fingerprint },
                     { title: "Bcrypt Generator", href: "/crypto-tools/bcrypt", icon: Shield },
-                    { title: "Password Analyzer", href: "/crypto-tools/password-strength-analyzer", icon: Shield },
+                    { title: "Password Strength", href: "/crypto-tools/password-strength-checker", icon: Shield },
                     { title: "Password Generator", href: "/crypto-tools/password-generator", icon: Key },
                     { title: "Token Generator", href: "/crypto-tools/token-generator", icon: Key },
                     { title: "OTP Code Generator", href: "/crypto-tools/otp-generator", icon: Shield },
-                    { title: "TOTP QR Generator", href: "/crypto-tools/totp-qr-code-generator", icon: Shield },
                 ]
             }
         ]
@@ -197,9 +195,7 @@ export const navigationConfig: MegaMenuSection[] = [
                     { title: "Loan Calculator", href: "/finance-tools/loan-calculator", icon: DollarSign },
                     { title: "Auto Loan Calc", href: "/finance-tools/auto-loan-calculator", icon: Car },
                     { title: "Mortgage Calc", href: "/finance-tools/mortgage-calculator", icon: DollarSign },
-                    { title: "Credit Card Payoff", href: "/finance-tools/credit-card-payoff", icon: CreditCard },
                     { title: "Debt Payoff", href: "/finance-tools/debt-payoff-calculator", icon: CreditCard },
-                    { title: "Amortization", href: "/finance-tools/amortization-calculator", icon: FileText },
                     { title: "Rent vs Buy", href: "/finance-tools/rent-vs-buy-calculator", icon: Home },
                     { title: "Home Affordability", href: "/finance-tools/home-affordability-calculator", icon: Home },
                 ]
@@ -207,26 +203,24 @@ export const navigationConfig: MegaMenuSection[] = [
             {
                 title: "Investment",
                 items: [
-                    { title: "Investment Calc", href: "/finance-tools/investment-calculator", icon: TrendingUp },
                     { title: "Compound Interest", href: "/finance-tools/compound-interest", icon: BarChart },
                     { title: "Retirement Calc", href: "/finance-tools/retirement-calculator", icon: PiggyBank },
                     { title: "Savings Tracker", href: "/finance-tools/savings-tracker", icon: PiggyBank },
                     { title: "Net Worth", href: "/finance-tools/net-worth-calculator", icon: PiggyBank },
                     { title: "Startup Runway", href: "/finance-tools/startup-runway-calculator", icon: TrendingUp },
                     { title: "SaaS Churn", href: "/finance-tools/saas-churn-calculator", icon: TrendingUp },
-                    { title: "SaaS Payback", href: "/finance-tools/saas-payback-calculator", icon: TrendingUp },
+                    { title: "CAC Payback", href: "/finance-tools/cac-payback-calculator", icon: TrendingUp },
                 ]
             },
             {
                 title: "Daily Finance",
                 items: [
-                    { title: "Tip Calculator", href: "/finance-tools/tip-calculator", icon: Receipt },
                     { title: "Bill Splitter", href: "/finance-tools/bill-splitter", icon: Receipt },
                     { title: "Invoice Generator", href: "/finance-tools/invoice-generator", icon: FileText },
                     { title: "PayPal G&S", href: "/finance-tools/paypal-goods-and-services-fee-calculator", icon: DollarSign },
                     { title: "Discount Calc", href: "/finance-tools/discount-calculator", icon: Percent },
                     { title: "Freelance Rate", href: "/finance-tools/freelance-rate-calculator", icon: DollarSign },
-                    { title: "Quarterly Tax", href: "/finance-tools/quarterly-tax-estimator", icon: Receipt },
+                    { title: "Quarterly Tax", href: "/finance-tools/quarterly-tax-calculator", icon: Receipt },
                     { title: "Remote Savings", href: "/finance-tools/remote-work-savings", icon: Home },
                     { title: "Zakat Calculator", href: "/finance-tools/zakat-calculator", icon: Scale },
                 ]
@@ -286,7 +280,7 @@ export const navigationConfig: MegaMenuSection[] = [
                     { title: "Keyword Density", href: "/seo-tools/keyword-density", icon: BarChart },
                     { title: "Open Graph Meta Generator", href: "/seo-tools/meta-tags", icon: Code },
                     { title: "Lorem Ipsum", href: "/seo-tools/lorem-ipsum", icon: FileText },
-                    { title: "Blog Titles", href: "/seo-tools/blog-titles", icon: Type },
+                    { title: "Blog Title Generator", href: "/seo-tools/blog-title-generator", icon: Type },
                 ]
             },
             {
@@ -320,8 +314,8 @@ export const navigationConfig: MegaMenuSection[] = [
                 items: [
                     { title: "Meme Generator", href: "/fun-tools/meme-generator", icon: Smile },
                     { title: "Birthday Countdown", href: "/fun-tools/birthday-countdown", icon: Calendar },
-                    { title: "Future Age", href: "/fun-tools/future-age", icon: Clock },
-                    { title: "Anniversary Calc", href: "/fun-tools/anniversary", icon: Heart },
+                    { title: "How Old Will I Be", href: "/fun-tools/how-old-will-i-be", icon: Clock },
+                    { title: "Anniversary Calc", href: "/fun-tools/anniversary-calculator", icon: Heart },
                     { title: "Monthsary Calc", href: "/fun-tools/monthsary-calculator", icon: Heart },
                     { title: "Pomodoro Timer", href: "/fun-tools/pomodoro-timer", icon: Clock },
                 ]

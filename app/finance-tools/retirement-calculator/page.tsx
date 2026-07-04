@@ -28,16 +28,6 @@ const baseMetadata = createMetadata({
       "IRA Retirement Calculator",
       "How Much Do I Need to Retire Calculator",
       "Retirement Income Calculator",
-      "Retirement Planning Calculator",
-      "Retirement Nest Egg Calculator",
-      "Retirement Withdrawal Calculator",
-      "4 Percent Rule Calculator",
-      "25x Rule Calculator",
-      "FIRE Calculator",
-      "Coast FIRE Calculator",
-      "Early Retirement Calculator",
-      "Social Security Retirement Calculator",
-      "Roth vs Traditional Calculator",
     ],
     applicationCategory: "FinanceApplication",
     featureList: [
@@ -293,28 +283,6 @@ export default function RetirementCalculatorPage() {
             </GTable>
           </div>
         </article>
-
-        <article className="space-y-4">
-          <h2 className="text-2xl font-bold text-foreground">The Same Tool, Many Names</h2>
-          <ul className="grid grid-cols-1 md:grid-cols-2 gap-2 text-sm text-muted-foreground">
-            <li>· retirement calculator / retirement savings calculator</li>
-            <li>· retirement planning calculator</li>
-            <li>· 401k calculator / 401(k) retirement calculator</li>
-            <li>· IRA calculator / Roth IRA calculator</li>
-            <li>· how much do I need to retire calculator</li>
-            <li>· retirement income calculator</li>
-            <li>· retirement nest egg calculator</li>
-            <li>· retirement withdrawal calculator</li>
-            <li>· 4 percent rule calculator</li>
-            <li>· 25x rule calculator</li>
-            <li>· FIRE calculator / Coast FIRE / Lean FIRE / Fat FIRE</li>
-            <li>· early retirement calculator</li>
-            <li>· Social Security retirement calculator</li>
-            <li>· Roth vs Traditional calculator</li>
-            <li>· retirement age calculator</li>
-            <li>· am I on track to retire calculator</li>
-          </ul>
-        </article>
       </div>
     ),
 
@@ -388,8 +356,8 @@ export default function RetirementCalculatorPage() {
     ],
 
     relatedTools: [
-      { name: "Retirement Planner", href: "/finance-tools/retirement-planner" },
-      { name: "Investment Calculator", href: "/finance-tools/investment-calculator" },
+      { name: "Retirement Planner", href: "/finance-tools/retirement-calculator" },
+      { name: "Investment Calculator", href: "/finance-tools/compound-interest" },
       { name: "Compound Interest Calculator", href: "/finance-tools/compound-interest" },
       { name: "Inflation Calculator", href: "/finance-tools/inflation-calculator" },
       { name: "Net Worth Calculator", href: "/finance-tools/net-worth-calculator" },

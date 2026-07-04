@@ -41,16 +41,6 @@ const toolConfig = createToolConfig({
       "# Counter",
       "Instagram Hashtag Counter",
       "TikTok Hashtag Counter",
-      "Twitter Tag Counter",
-      "Hashtag Extractor",
-      "Caption Tag Reader",
-      "Social Tag Counter",
-      "Hashtag Validator",
-      "Caption Cleaner",
-      "Hashtag Limit Checker",
-      "Instagram 30-Tag Limit Tool",
-      "Hashtag Audit Tool",
-      "Social Media Caption Analyzer",
     ],
     featureList: [
       "Real-time hashtag counting as you type",
@@ -176,23 +166,6 @@ const toolConfig = createToolConfig({
               </tbody>
             </table>
           </div>
-        </article>
-
-        <article className="space-y-4">
-          <h2 className="text-2xl font-bold text-foreground">The Same Tool, Many Names</h2>
-          <p>This counter handles every related search:</p>
-          <ul className="grid grid-cols-1 md:grid-cols-2 gap-2 text-sm">
-            <li>· hashtag counter / hashtags counter</li>
-            <li>· instagram hashtag counter</li>
-            <li>· tiktok hashtag counter</li>
-            <li>· facebook hashtag counter</li>
-            <li>· tag counter / count hashtags</li>
-            <li>· hashtag extractor / tag extractor</li>
-            <li>· hashtag finder in caption</li>
-            <li>· count tags in instagram caption</li>
-            <li>· how many hashtags in this post</li>
-            <li>· keyword frequency analysis (for hashtag overlap)</li>
-          </ul>
         </article>
       </div>
     ),

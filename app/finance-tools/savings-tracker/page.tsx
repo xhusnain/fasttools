@@ -359,30 +359,14 @@ export default function SavingsTrackerPage() {
             </table>
           </div>
         </article>
-
-        <article className="space-y-4">
-          <h2 className="text-2xl font-bold text-foreground">The Same Tool, Many Names</h2>
-          <ul className="grid grid-cols-1 md:grid-cols-2 gap-2 text-sm text-muted-foreground">
-            <li>· savings tracker / savings tracking tool</li>
-            <li>· savings goal calculator</li>
-            <li>· financial goal tracker</li>
-            <li>· money savings calculator</li>
-            <li>· monthly savings planner</li>
-            <li>· multi-goal budget tracker</li>
-            <li>· emergency fund calculator</li>
-            <li>· house down payment savings calculator</li>
-            <li>· vacation savings calculator</li>
-            <li>· how much should I save each month calculator</li>
-          </ul>
-        </article>
       </div>
     ),
 
     relatedTools: [
       { name: "Compound Interest Calculator", href: "/finance-tools/compound-interest" },
-      { name: "Investment Calculator", href: "/finance-tools/investment-calculator" },
+      { name: "Investment Calculator", href: "/finance-tools/compound-interest" },
       { name: "Retirement Calculator", href: "/finance-tools/retirement-calculator" },
-      { name: "Retirement Planner", href: "/finance-tools/retirement-planner" },
+      { name: "Retirement Planner", href: "/finance-tools/retirement-calculator" },
       { name: "Debt Payoff Calculator", href: "/finance-tools/debt-payoff-calculator" },
       { name: "Net Worth Calculator", href: "/finance-tools/net-worth-calculator" },
       { name: "Home Affordability Calculator", href: "/finance-tools/home-affordability-calculator" },

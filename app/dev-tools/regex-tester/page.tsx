@@ -13,7 +13,7 @@ const toolConfig = createToolConfig({
   toolName: "Regex Tester",
   description:
     "Test regular expressions against sample text with match highlights and capture-group inspection.",
-  metaTitle: "Regex Tester — Live JavaScript / Ruby / Python Regex Check Online",
+  metaTitle: "Regex Tester — Test & Debug Regular Expressions Online",
   metaDescription:
     "Free regex tester with real-time match highlighting, capture group inspection, all JavaScript flags (g i m s u y), named groups, and replacement preview. Test JS / Ruby / Python regex syntax. 100% client-side, no signup.",
   path: "/dev-tools/regex-tester",
@@ -42,16 +42,6 @@ const toolConfig = createToolConfig({
       "JavaScript Regex Tester",
       "Ruby Regex Test",
       "Python Regex Tester",
-      "PCRE Tester",
-      "Regex Debugger",
-      "Pattern Matcher",
-      "Live Regex Tester",
-      "regex101 Alternative",
-      "Rubular Alternative",
-      "Pythex Alternative",
-      "Regex Match Highlighter",
-      "Capture Group Tester",
-      "Regex Replacement Tester",
     ],
     featureList: [
       "Real-time match highlighting as you type the pattern",
@@ -321,6 +311,21 @@ const toolConfig = createToolConfig({
         </div>
 
         <div>
+          <h3 className="text-lg font-semibold text-foreground mb-2">Language-Specific Regex Testers</h3>
+          <p>
+            Writing regex for a specific language? Each dedicated tester presets the code-snippet
+            generator to that language and covers its engine&apos;s exact differences and gotchas:
+          </p>
+          <ul className="list-disc pl-6 mt-2 space-y-1">
+            <li><a href="/dev-tools/ruby-regex-tester" className="text-primary hover:underline">Ruby regex tester</a> — Onigmo; /m flag difference, \A \z anchors, POSIX classes</li>
+            <li><a href="/dev-tools/python-regex-tester" className="text-primary hover:underline">Python regex tester</a> — re module; raw strings, (?P&lt;name&gt;), fixed-width lookbehind</li>
+            <li><a href="/dev-tools/golang-regex-tester" className="text-primary hover:underline">Golang regex tester</a> — RE2; no lookarounds/backreferences, ReDoS-immune</li>
+            <li><a href="/dev-tools/php-regex-tester" className="text-primary hover:underline">PHP regex tester</a> — PCRE2; preg_match delimiters, possessive quantifiers, \K</li>
+            <li><a href="/dev-tools/java-regex-tester" className="text-primary hover:underline">Java regex tester</a> — Pattern/Matcher; double-backslash escaping, matches() vs find()</li>
+          </ul>
+        </div>
+
+        <div>
           <h3 className="text-lg font-semibold text-foreground mb-2">Regex vs Alternatives</h3>
           <ul className="list-disc pl-6 space-y-1">
             <li><strong>Parsing HTML/XML:</strong> use a real parser (cheerio, BeautifulSoup, xml2js). Regex can&apos;t handle nested tags correctly.</li>
@@ -391,10 +396,15 @@ const toolConfig = createToolConfig({
     ],
 
     relatedTools: [
+      { name: "Ruby Regex Tester", href: "/dev-tools/ruby-regex-tester" },
+      { name: "Python Regex Tester", href: "/dev-tools/python-regex-tester" },
+      { name: "Golang Regex Tester", href: "/dev-tools/golang-regex-tester" },
+      { name: "PHP Regex Tester", href: "/dev-tools/php-regex-tester" },
+      { name: "Java Regex Tester", href: "/dev-tools/java-regex-tester" },
       { name: "JSON Diff", href: "/dev-tools/json-diff" },
       { name: "Markdown Previewer", href: "/dev-tools/markdown-previewer" },
       { name: "HTTP Status Codes", href: "/dev-tools/http-status-codes" },
-      { name: "Slugify String", href: "/dev-tools/slugify-string" },
+      { name: "Slugify String", href: "/dev-tools/url-slug-generator" },
       { name: "User-Agent Parser", href: "/dev-tools/user-agent-parser" },
       { name: "HTML Beautifier", href: "/dev-tools/html-beautifier" },
       { name: "Base64 Encoder Decoder", href: "/dev-tools/base64-encoder" },

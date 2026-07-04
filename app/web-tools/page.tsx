@@ -39,10 +39,10 @@ const webTools = [
     popular: true,
   },
   {
-    title: "Auth Header Generator",
+    title: "Basic Auth Header Generator",
     description:
       "Generate Basic, Bearer, and API key headers for API clients and testing.",
-    href: "/web-tools/auth-generator",
+    href: "/web-tools/basic-auth-header-generator",
     icon: Link2,
     popular: true,
   },

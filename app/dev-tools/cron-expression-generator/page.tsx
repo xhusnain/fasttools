@@ -13,7 +13,7 @@ const toolConfig = createToolConfig({
   toolName: "Cron Expression Generator",
   description:
     "Build and explain standard 5-field cron expressions with a visual selector, quick presets, next run times, and copy-ready output.",
-  metaTitle: "Cron Expression Generator - 5-Field Crontab Builder | FastTools",
+  metaTitle: "Cron Expression Generator - 5-Field Crontab Builder",
   metaDescription:
     "Free cron expression generator for standard 5-field crontab syntax. Use presets, edit fields, read the English description, preview the next 10 local run times, and copy the expression.",
   path: "/dev-tools/cron-expression-generator",
@@ -38,12 +38,6 @@ const toolConfig = createToolConfig({
       "Cron Schedule Generator",
       "Cron Expression Parser",
       "Cron to English Translator",
-      "Cron Schedule Calculator",
-      "Cronjob Generator",
-      "Linux Cron Calculator",
-      "Kubernetes CronJob Helper",
-      "GitHub Actions Schedule Helper",
-      "Cloudflare Workers Cron Helper",
     ],
   },
 

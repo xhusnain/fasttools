@@ -52,13 +52,13 @@ export function Footer() {
           <div>
             <div className="text-sm font-semibold text-foreground mb-4">Trending</div>
             <ul className="space-y-2">
-              <li><Link href="/calculator/bmi-calculator" className="text-sm text-muted-foreground hover:text-primary transition-colors">BMI Calculator</Link></li>
-              <li><Link href="/ai-tools/qr-generator" className="text-sm text-muted-foreground hover:text-primary transition-colors">AI QR Generator</Link></li>
-              <li><Link href="/pdf-tools/image-to-pdf" className="text-sm text-muted-foreground hover:text-primary transition-colors">Image to PDF</Link></li>
-              <li><Link href="/dev-tools/json-diff" className="text-sm text-muted-foreground hover:text-primary transition-colors">JSON Diff</Link></li>
-              <li><Link href="/pdf-tools/pdf-word-converter" className="text-sm text-muted-foreground hover:text-primary transition-colors">PDF to Word</Link></li>
-              <li><Link href="/converters/currency" className="text-sm text-muted-foreground hover:text-primary transition-colors">Currency Converter</Link></li>
-              <li><Link href="/social-media-tools/channel-checker" className="text-sm text-muted-foreground hover:text-primary transition-colors">Channel Checker</Link></li>
+              <li><Link href="/social-media-tools/instagram-dp" className="text-sm text-muted-foreground hover:text-primary transition-colors">Insta DP Viewer</Link></li>
+              <li><Link href="/social-media-tools/instagram-dp/download" className="text-sm text-muted-foreground hover:text-primary transition-colors">Insta DP Download</Link></li>
+              <li><Link href="/social-media-tools/channel-checker" className="text-sm text-muted-foreground hover:text-primary transition-colors">YouTube Name Checker</Link></li>
+              <li><Link href="/social-media-tools/youtube-thumbnail" className="text-sm text-muted-foreground hover:text-primary transition-colors">YouTube Thumbnail Downloader</Link></li>
+              <li><Link href="/calculator/pregnancy-conception-calculator" className="text-sm text-muted-foreground hover:text-primary transition-colors">Conception Calculator</Link></li>
+              <li><Link href="/finance-tools/paypal-fee-calculator" className="text-sm text-muted-foreground hover:text-primary transition-colors">PayPal Fee Calculator</Link></li>
+              <li><Link href="/image-tools/ai-image-detector" className="text-sm text-muted-foreground hover:text-primary transition-colors">AI Image Detector</Link></li>
             </ul>
           </div>
 

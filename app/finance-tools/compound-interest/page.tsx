@@ -27,16 +27,6 @@ const baseMetadata = createMetadata({
       "Investment Return Calculator",
       "Compound Growth Calculator",
       "SIP Calculator",
-      "Fixed Deposit (FD) Calculator",
-      "Wealth Calculator",
-      "Future Value Calculator",
-      "Simple Interest vs Compound Interest Calculator",
-      "Daily Compound Interest Calculator",
-      "Monthly Compound Interest Calculator",
-      "Annual Compound Interest Calculator",
-      "Rule of 72 Calculator",
-      "Interest on Interest Calculator",
-      "Money Doubling Calculator",
     ],
     applicationCategory: "FinanceApplication",
     featureList: [
@@ -221,22 +211,6 @@ export default function CompoundInterestPage() {
             </tbody>
           </table>
         </div>
-
-        <h3 className="font-semibold text-lg mb-2 mt-6">The Same Tool, Many Names</h3>
-        <ul className="grid grid-cols-1 md:grid-cols-2 gap-2 text-sm mb-6">
-          <li>· compound interest calculator</li>
-          <li>· investment growth calculator</li>
-          <li>· savings calculator</li>
-          <li>· future value calculator</li>
-          <li>· SIP calculator (India)</li>
-          <li>· fixed deposit (FD) calculator</li>
-          <li>· daily / monthly / quarterly compound calculator</li>
-          <li>· rule of 72 calculator</li>
-          <li>· money doubling calculator</li>
-          <li>· interest on interest calculator</li>
-          <li>· wealth accumulation calculator</li>
-          <li>· simple vs compound interest calculator</li>
-        </ul>
       </>
     ),
 
@@ -306,11 +280,11 @@ export default function CompoundInterestPage() {
     ],
 
     relatedTools: [
-      { name: "Investment Calculator", href: "/finance-tools/investment-calculator" },
+      { name: "Investment Calculator", href: "/finance-tools/compound-interest" },
       { name: "Retirement Calculator", href: "/finance-tools/retirement-calculator" },
-      { name: "Retirement Planner", href: "/finance-tools/retirement-planner" },
+      { name: "Retirement Planner", href: "/finance-tools/retirement-calculator" },
       { name: "Inflation Calculator", href: "/finance-tools/inflation-calculator" },
-      { name: "Interest Rate Calculator", href: "/finance-tools/interest-rate-calculator" },
+      { name: "Interest Rate Calculator", href: "/finance-tools/loan-calculator" },
       { name: "Savings Goal Tracker", href: "/finance-tools/savings-tracker" },
       { name: "Net Worth Calculator", href: "/finance-tools/net-worth-calculator" },
       { name: "All Finance Tools", href: "/finance-tools" }
