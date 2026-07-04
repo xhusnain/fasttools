@@ -186,6 +186,7 @@ const toolConfig = createToolConfig({
     ],
 
     relatedTools: [
+      { name: "Song Idea Generator", href: "/ai-tools/song-idea-generator" },
       { name: "AI Caption Generator", href: "/ai-tools/caption-generator" },
       { name: "AI Pet Name Generator", href: "/ai-tools/pet-names" },
       { name: "AI Paraphraser", href: "/ai-tools/ai-paraphraser" },

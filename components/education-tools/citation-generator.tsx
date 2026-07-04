@@ -338,13 +338,13 @@ function genId(): string {
 }
 
 // === Component ===
-export function CitationGenerator() {
+export function CitationGenerator({ defaultAutoFillType }: { defaultAutoFillType?: "doi" | "isbn" } = {}) {
   const [style, setStyle] = useState<CiteStyle>("apa")
   const [sourceType, setSourceType] = useState<SourceType>("book")
   const [data, setData] = useState<SourceData>(defaultData("book"))
   const [bibliography, setBibliography] = useState<Citation[]>([])
   const [autoFillInput, setAutoFillInput] = useState("")
-  const [autoFillType, setAutoFillType] = useState<"doi" | "isbn">("doi")
+  const [autoFillType, setAutoFillType] = useState<"doi" | "isbn">(defaultAutoFillType ?? "doi")
   const [autoFillLoading, setAutoFillLoading] = useState(false)
   const [autoFillError, setAutoFillError] = useState("")
   const [copied, setCopied] = useState<string | null>(null)

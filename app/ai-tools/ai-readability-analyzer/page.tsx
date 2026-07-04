@@ -317,6 +317,9 @@ const toolConfig = createToolConfig({
     ],
 
     relatedTools: [
+      { name: "Flesch-Kincaid Calculator", href: "/ai-tools/flesch-kincaid-calculator" },
+      { name: "Gunning Fog Index Calculator", href: "/ai-tools/gunning-fog-index-calculator" },
+      { name: "SMOG Index Calculator", href: "/ai-tools/smog-index-calculator" },
       { name: "AI Text Summarizer", href: "/ai-tools/text-summarizer" },
       { name: "AI Paraphraser", href: "/ai-tools/ai-paraphraser" },
       { name: "AI Text Detector", href: "/ai-tools/ai-text-detector" },

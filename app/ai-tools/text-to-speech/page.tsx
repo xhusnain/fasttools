@@ -247,6 +247,7 @@ const toolConfig = createToolConfig({
     ],
 
     relatedTools: [
+      { name: "Kokoro TTS Online", href: "/ai-tools/kokoro-tts-online" },
       { name: "AI Text Summarizer", href: "/ai-tools/text-summarizer" },
       { name: "AI Paraphraser", href: "/ai-tools/ai-paraphraser" },
       { name: "AI Readability Analyzer", href: "/ai-tools/ai-readability-analyzer" },

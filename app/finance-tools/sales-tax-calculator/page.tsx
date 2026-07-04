@@ -7,6 +7,7 @@ const SalesTaxCalculator = dynamic(() => import("@/components/finance/sales-tax-
   loading: () => <ToolLoader />
 })
 import { createMetadata } from "@/lib/metadata-base"
+import { stateTaxRates, stateSlug } from "@/lib/sales-tax-rates"
 import { Calculator, BarChart3, TrendingUp, BookOpen, Users, Clock, Target, Home, DollarSign, FileText, Award, Globe, PieChart, Percent } from "lucide-react"
 
 const TOOL_TITLE = "Sales Tax Calculator — All 50 States & Local Rates"
@@ -108,6 +109,26 @@ export default function SalesTaxCalculatorPage() {
 
     aboutTool: (
       <div className="space-y-8">
+        <section className="space-y-4">
+          <h2 className="text-2xl font-bold">Sales Tax by State</h2>
+          <p className="text-muted-foreground text-sm">
+            Every state page shows the state rate, maximum combined rate with local taxes, and
+            precomputed tax on common purchase amounts:
+          </p>
+          <ul className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-2 text-sm">
+            {stateTaxRates.map((s) => (
+              <li key={s.state}>
+                <a
+                  href={`/finance-tools/sales-tax-calculator/${stateSlug(s.state)}`}
+                  className="text-primary hover:underline"
+                >
+                  {s.state} ({s.stateRate}%)
+                </a>
+              </li>
+            ))}
+          </ul>
+        </section>
+
         <section>
           <h2 className="text-2xl font-bold mb-4 flex items-center gap-2">
             <BookOpen className="h-6 w-6 text-primary" />

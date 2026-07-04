@@ -1,6 +1,7 @@
 import type { MetadataRoute } from "next"
 import { noindexPaths } from "@/lib/noindex"
 import { getBlogSitemapPages } from "@/lib/blog"
+import { stateTaxRates, stateSlug } from "@/lib/sales-tax-rates"
 
 export const baseUrl = "https://fasttools.store"
 
@@ -103,7 +104,14 @@ export const sitemapPages = [
   { url: u("/finance-tools/auto-loan-calculator"), lastModified: new Date("2026-03-22"), changeFrequency: "monthly" as const, priority: 0.8 },
   { url: u("/finance-tools/loan-calculator"), lastModified: new Date("2026-03-23"), changeFrequency: "monthly" as const, priority: 0.8 },
   { url: u("/finance-tools/quarterly-tax-calculator"), lastModified: new Date("2026-02-27"), changeFrequency: "monthly" as const, priority: 0.8 },
-  { url: u("/finance-tools/sales-tax-calculator"), lastModified: new Date("2026-03-23"), changeFrequency: "monthly" as const, priority: 0.8 },
+  { url: u("/finance-tools/sales-tax-calculator"), lastModified: new Date("2026-07-04"), changeFrequency: "monthly" as const, priority: 0.8 },
+  // Per-state sales tax pages — generated from the same rate table the calculator uses
+  ...stateTaxRates.map((s) => ({
+    url: u(`/finance-tools/sales-tax-calculator/${stateSlug(s.state)}`),
+    lastModified: new Date("2026-07-04"),
+    changeFrequency: "monthly" as const,
+    priority: 0.7,
+  })),
   { url: u("/finance-tools/bill-splitter"), lastModified: new Date("2026-03-23"), changeFrequency: "monthly" as const, priority: 0.8 },
   { url: u("/finance-tools/discount-calculator"), lastModified: new Date("2026-03-23"), changeFrequency: "monthly" as const, priority: 0.8 },
   { url: u("/finance-tools/invoice-generator"), lastModified: new Date("2026-03-23"), changeFrequency: "monthly" as const, priority: 0.8 },
@@ -129,13 +137,18 @@ export const sitemapPages = [
   { url: u("/ai-tools/wifi-qr-code-generator"), lastModified: new Date("2026-07-04"), changeFrequency: "monthly" as const, priority: 0.8 },
   { url: u("/ai-tools/caption-generator"), lastModified: new Date("2026-03-23"), changeFrequency: "monthly" as const, priority: 0.9 },
   { url: u("/ai-tools/lyrics-generator"), lastModified: new Date("2026-03-23"), changeFrequency: "monthly" as const, priority: 0.9 },
+  { url: u("/ai-tools/song-idea-generator"), lastModified: new Date("2026-07-04"), changeFrequency: "monthly" as const, priority: 0.75 },
   { url: u("/ai-tools/pet-names"), lastModified: new Date("2026-03-23"), changeFrequency: "monthly" as const, priority: 0.9 },
   { url: u("/ai-tools/ai-text-detector"), lastModified: new Date("2026-03-10"), changeFrequency: "weekly" as const, priority: 0.9 },
   { url: u("/ai-tools/ai-code-detector"), lastModified: new Date("2026-03-10"), changeFrequency: "weekly" as const, priority: 0.9 },
   { url: u("/ai-tools/ai-readability-analyzer"), lastModified: new Date("2026-03-10"), changeFrequency: "weekly" as const, priority: 0.9 },
+  { url: u("/ai-tools/flesch-kincaid-calculator"), lastModified: new Date("2026-07-04"), changeFrequency: "monthly" as const, priority: 0.8 },
+  { url: u("/ai-tools/gunning-fog-index-calculator"), lastModified: new Date("2026-07-04"), changeFrequency: "monthly" as const, priority: 0.75 },
+  { url: u("/ai-tools/smog-index-calculator"), lastModified: new Date("2026-07-04"), changeFrequency: "monthly" as const, priority: 0.75 },
   { url: u("/ai-tools/ai-paraphraser"), lastModified: new Date("2026-03-27"), changeFrequency: "weekly" as const, priority: 0.9 },
   { url: u("/ai-tools/text-summarizer"), lastModified: new Date("2026-04-03"), changeFrequency: "weekly" as const, priority: 0.9 },
   { url: u("/ai-tools/text-to-speech"), lastModified: new Date("2026-04-08"), changeFrequency: "monthly" as const, priority: 0.9 },
+  { url: u("/ai-tools/kokoro-tts-online"), lastModified: new Date("2026-07-04"), changeFrequency: "monthly" as const, priority: 0.8 },
   { url: u("/ai-tools/ai-api-cost-calculator"), lastModified: new Date("2026-05-14"), changeFrequency: "weekly" as const, priority: 1.0 },
 
   // ─── Converters ──────────────────────────────────────────────────────
@@ -202,6 +215,7 @@ export const sitemapPages = [
   // ─── Education Tools ────────────────────────────────────────────────
   { url: u("/education-tools"), lastModified: new Date("2026-04-10"), changeFrequency: "weekly" as const, priority: 0.9 },
   { url: u("/education-tools/citation-generator"), lastModified: new Date("2026-06-04"), changeFrequency: "monthly" as const, priority: 0.9 },
+  { url: u("/education-tools/isbn-to-citation"), lastModified: new Date("2026-07-04"), changeFrequency: "monthly" as const, priority: 0.8 },
   { url: u("/dev-tools/html-to-markdown"), lastModified: new Date("2026-06-04"), changeFrequency: "monthly" as const, priority: 0.7 },
   { url: u("/dev-tools/markdown-previewer"), lastModified: new Date("2026-06-04"), changeFrequency: "monthly" as const, priority: 0.7 },
   { url: u("/dev-tools/llm-training-cost"), lastModified: new Date("2026-06-04"), changeFrequency: "monthly" as const, priority: 0.7 },
