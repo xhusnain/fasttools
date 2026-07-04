@@ -27,7 +27,7 @@ import {
 } from "lucide-react"
 
 // === Types ===
-type CiteStyle = "apa" | "mla" | "chicago" | "harvard"
+type CiteStyle = "apa" | "mla" | "chicago" | "harvard" | "bibtex"
 type SourceType = "book" | "journal" | "website" | "newspaper" | "youtube" | "podcast"
 
 interface Author {
@@ -81,6 +81,7 @@ const STYLES: { value: CiteStyle; label: string; description: string }[] = [
   { value: "mla", label: "MLA 9th", description: "Modern Language Association" },
   { value: "chicago", label: "Chicago", description: "Chicago author-date style" },
   { value: "harvard", label: "Harvard", description: "Harvard Referencing Style" },
+  { value: "bibtex", label: "BibTeX", description: "LaTeX bibliography entry" },
 ]
 
 // === Author formatters ===
@@ -134,7 +135,82 @@ function formatAuthorsHarvard(authors: Author[]): string {
 }
 
 // === Citation formatters ===
+// BibTeX escaping for the handful of characters that break entries
+function bibtexEscape(s: string): string {
+  return s.replace(/([&%$#_{}])/g, "\\$1").replace(/~/g, "\\textasciitilde{}")
+}
+
+function formatBibtex(data: SourceData): string {
+  const authors = data.authors
+    .filter((a) => a.first || a.last)
+    .map((a) => (a.first ? `${a.last}, ${a.first}` : a.last))
+    .join(" and ")
+  const year = data.year || ""
+  const keyAuthor = (data.authors[0]?.last || "unknown").toLowerCase().replace(/[^a-z]/g, "")
+  const key = `${keyAuthor}${year || "nd"}`
+
+  const fields: Array<[string, string | undefined]> = []
+  let entryType = "misc"
+
+  switch (data.type) {
+    case "book":
+      entryType = "book"
+      fields.push(
+        ["title", data.title],
+        ["author", authors],
+        ["year", year],
+        ["publisher", data.publisher],
+        ["address", data.place],
+        ["isbn", data.isbn]
+      )
+      break
+    case "journal":
+      entryType = "article"
+      fields.push(
+        ["title", data.title],
+        ["author", authors],
+        ["journal", data.journal],
+        ["volume", data.volume],
+        ["number", data.issue],
+        ["pages", data.pages],
+        ["year", year],
+        ["doi", data.doi?.replace(/^https?:\/\/doi\.org\//, "")]
+      )
+      break
+    case "newspaper":
+      entryType = "article"
+      fields.push(
+        ["title", data.title],
+        ["author", authors],
+        ["journal", data.newspaper],
+        ["year", year],
+        ["url", data.url]
+      )
+      break
+    default:
+      // website, youtube, podcast → @misc with howpublished/url
+      entryType = "misc"
+      fields.push(
+        ["title", data.title],
+        ["author", authors],
+        ["year", year],
+        ["howpublished", data.siteName || data.channel || data.showName],
+        ["url", data.url || (data.videoId ? `https://www.youtube.com/watch?v=${data.videoId}` : undefined)],
+        ["note", data.accessed ? `Accessed: ${data.accessed}` : undefined]
+      )
+  }
+
+  const body = fields
+    .filter(([, v]) => v && v.trim())
+    .map(([k, v]) => `  ${k} = {${k === "url" || k === "doi" ? v : bibtexEscape(v as string)}},`)
+    .join("\n")
+
+  return `@${entryType}{${key},\n${body}\n}`
+}
+
 function formatCitation(data: SourceData, style: CiteStyle): string {
+  if (style === "bibtex") return formatBibtex(data)
+
   const authorFn = {
     apa: formatAuthorsAPA,
     mla: formatAuthorsMLA,
@@ -338,8 +414,11 @@ function genId(): string {
 }
 
 // === Component ===
-export function CitationGenerator({ defaultAutoFillType }: { defaultAutoFillType?: "doi" | "isbn" } = {}) {
-  const [style, setStyle] = useState<CiteStyle>("apa")
+export function CitationGenerator({
+  defaultAutoFillType,
+  defaultStyle,
+}: { defaultAutoFillType?: "doi" | "isbn"; defaultStyle?: CiteStyle } = {}) {
+  const [style, setStyle] = useState<CiteStyle>(defaultStyle ?? "apa")
   const [sourceType, setSourceType] = useState<SourceType>("book")
   const [data, setData] = useState<SourceData>(defaultData("book"))
   const [bibliography, setBibliography] = useState<Citation[]>([])

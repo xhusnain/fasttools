@@ -164,6 +164,7 @@ const toolConfig = createToolConfig({
 
     relatedTools: [
       { name: "Citation Generator (all source types)", href: "/education-tools/citation-generator" },
+      { name: "DOI to BibTeX Converter", href: "/education-tools/doi-to-bibtex" },
       { name: "Word Counter", href: "/seo-tools/word-counter" },
       { name: "AI Readability Analyzer", href: "/ai-tools/ai-readability-analyzer" },
       { name: "Text Similarity Checker", href: "/seo-tools/text-similarity-checker" },

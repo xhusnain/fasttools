@@ -216,6 +216,7 @@ export const sitemapPages = [
   { url: u("/education-tools"), lastModified: new Date("2026-04-10"), changeFrequency: "weekly" as const, priority: 0.9 },
   { url: u("/education-tools/citation-generator"), lastModified: new Date("2026-06-04"), changeFrequency: "monthly" as const, priority: 0.9 },
   { url: u("/education-tools/isbn-to-citation"), lastModified: new Date("2026-07-04"), changeFrequency: "monthly" as const, priority: 0.8 },
+  { url: u("/education-tools/doi-to-bibtex"), lastModified: new Date("2026-07-04"), changeFrequency: "monthly" as const, priority: 0.8 },
   { url: u("/dev-tools/html-to-markdown"), lastModified: new Date("2026-06-04"), changeFrequency: "monthly" as const, priority: 0.7 },
   { url: u("/dev-tools/markdown-previewer"), lastModified: new Date("2026-06-04"), changeFrequency: "monthly" as const, priority: 0.7 },
   { url: u("/dev-tools/llm-training-cost"), lastModified: new Date("2026-06-04"), changeFrequency: "monthly" as const, priority: 0.7 },
