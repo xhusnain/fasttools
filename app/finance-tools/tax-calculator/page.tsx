@@ -300,6 +300,7 @@ export default function TaxCalculatorPage() {
       { name: "Sales Tax Calculator", href: "/finance-tools/sales-tax-calculator" },
       { name: "Freelance Rate Calculator", href: "/finance-tools/freelance-rate-calculator" },
       { name: "Net Worth Calculator", href: "/finance-tools/net-worth-calculator" },
+      { name: "Zakat Calculator", href: "/finance-tools/zakat-calculator" },
       { name: "Inflation Calculator", href: "/finance-tools/inflation-calculator" },
       { name: "All Finance Tools", href: "/finance-tools" }
     ]

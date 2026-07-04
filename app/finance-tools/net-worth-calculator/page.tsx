@@ -365,6 +365,7 @@ export default function NetWorthCalculatorPage() {
       { question: "What is the difference between net worth and income?", answer: "Income is money earned over time. Net worth is a snapshot of what you own vs owe. High income with high spending can mean low net worth." }
     ],
     relatedTools: [
+      { name: "Zakat Calculator", href: "/finance-tools/zakat-calculator" },
       { name: "Retirement Planner", href: "/finance-tools/retirement-calculator" },
       { name: "Investment Calculator", href: "/finance-tools/compound-interest" },
       { name: "Compound Interest Calculator", href: "/finance-tools/compound-interest" },

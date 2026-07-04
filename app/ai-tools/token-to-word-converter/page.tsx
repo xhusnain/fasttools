@@ -18,7 +18,7 @@ const toolConfig = createToolConfig({
     "Estimate token and word counts for LLM prompts and response planning.",
   metaTitle: "Token to Word Converter for GPT, Claude & Gemini",
   metaDescription:
-    "Free token-to-word converter & calculator. Convert tokens ↔ words for GPT-4, GPT-5, Claude 3 / Claude 4, Gemini, Llama, Mistral. Estimate API costs, context window usage, prompt size. Model-specific tokenizer ratios. 100% client-side.",
+    "Convert tokens to words instantly: 1,000 tokens ≈ 750 English words. Model-specific ratios for GPT, Claude, and Gemini tokenizers — estimate prompt size and context usage free.",
   path: "/ai-tools/token-to-word-converter",
 
   header: {
@@ -132,6 +132,29 @@ const toolConfig = createToolConfig({
           standard English prose but can shift significantly for code (more tokens),
           structured data (more tokens), or simple conversational text (fewer tokens).
         </p>
+
+        <div className="space-y-3">
+          <h2 className="text-2xl font-bold text-foreground">How Many Words Is 1,000 Tokens?</h2>
+          <p>
+            About <strong>750 English words</strong> — roughly a page and a half of standard prose.
+            The same ratio scales linearly: 500 tokens ≈ 375 words, 2,000 tokens ≈ 1,500 words,
+            4,000 tokens ≈ 3,000 words, 10,000 tokens ≈ 7,500 words, and a 100,000-token context ≈
+            75,000 words (a full novel). Going the other direction, 1,000 words is about 1,330
+            tokens. These hold for typical English text on GPT- and Claude-family tokenizers;
+            code and non-Latin scripts run heavier (use the converter above with the
+            model-specific setting for those).
+          </p>
+        </div>
+
+        <div className="space-y-3">
+          <h2 className="text-2xl font-bold text-foreground">How Many Tokens Is a Page, an Essay, a Book?</h2>
+          <p>
+            Practical anchors: a single-spaced page (~500 words) ≈ 670 tokens; a 5-paragraph essay
+            (~800 words) ≈ 1,070 tokens; a 10-page paper (~5,000 words) ≈ 6,700 tokens; a 300-page
+            book (~90,000 words) ≈ 120,000 tokens. That last one explains context windows in real
+            terms: a 200K-token window fits a long novel plus your questions about it.
+          </p>
+        </div>
       </div>
     ),
 
