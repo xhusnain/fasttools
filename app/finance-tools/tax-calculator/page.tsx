@@ -28,6 +28,19 @@ const baseMetadata = createMetadata({
       "Tax Refund Calculator",
       "Tax Return Calculator",
       "1040 Calculator",
+      "Take Home Pay Calculator",
+      "After-Tax Income Calculator",
+      "Effective Tax Rate Calculator",
+      "Marginal Tax Rate Calculator",
+      "Tax Bracket Calculator",
+      "Self-Employment Tax Calculator",
+      "1099 Tax Calculator",
+      "AGI Calculator",
+      "Paycheck Tax Calculator",
+      "Estimated Tax Calculator",
+      "UK Income Tax Calculator",
+      "Canada Income Tax Calculator",
+      "Australia Income Tax Calculator",
     ],
     applicationCategory: "FinanceApplication",
     featureList: [
@@ -294,13 +307,12 @@ export default function TaxCalculatorPage() {
     ],
 
     relatedTools: [
-      { name: "Tax Bracket Calculator", href: "/finance-tools/tax-calculator" },
-      { name: "Quarterly Tax Estimator", href: "/finance-tools/quarterly-tax-calculator" },
+      { name: "Tax Bracket Calculator", href: "/finance-tools/tax-bracket-calculator" },
+      { name: "Quarterly Tax Estimator", href: "/finance-tools/quarterly-tax-estimator" },
       { name: "Salary Calculator", href: "/finance-tools/salary-calculator" },
       { name: "Sales Tax Calculator", href: "/finance-tools/sales-tax-calculator" },
       { name: "Freelance Rate Calculator", href: "/finance-tools/freelance-rate-calculator" },
       { name: "Net Worth Calculator", href: "/finance-tools/net-worth-calculator" },
-      { name: "Zakat Calculator", href: "/finance-tools/zakat-calculator" },
       { name: "Inflation Calculator", href: "/finance-tools/inflation-calculator" },
       { name: "All Finance Tools", href: "/finance-tools" }
     ]

@@ -28,6 +28,16 @@ const toolConfig = createToolConfig({
       "PDF to Word Online",
       "Word to PDF Online",
       "Convert PDF to Word",
+      "Convert Word to PDF",
+      "PDF to MS Word",
+      "Editable PDF Converter",
+      "PDF Editor",
+      "Make PDF Editable",
+      "PDF to Google Docs",
+      "ilovepdf PDF to Word Alternative",
+      "Smallpdf PDF to Word Alternative",
+      "Free Word to PDF",
+      "PDF DOCX Converter",
     ],
     featureList: [
       "PDF → editable DOCX conversion",
@@ -169,7 +179,6 @@ const toolConfig = createToolConfig({
     ],
 
     relatedTools: [
-      { name: "PDF Signature Checker", href: "/pdf-tools/pdf-signature-checker" },
       { name: "Merge PDF", href: "/pdf-tools/pdf-splitter-merger" },
       { name: "PDF Compressor", href: "/pdf-tools/pdf-compressor" },
       { name: "PDF Unlocker", href: "/pdf-tools/pdf-unlocker" },

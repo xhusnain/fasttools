@@ -13,7 +13,7 @@ const toolConfig = createToolConfig({
   toolName: "JWT Decoder",
   description:
     "Decode and inspect JSON Web Tokens for authentication debugging and implementation checks.",
-  metaTitle: "JWT Decoder — Decode JSON Web Tokens Online, No Install",
+  metaTitle: "JWT Decoder — Decode JSON Web Tokens Online (Header & Payload)",
   metaDescription:
     "Free online JWT decoder. Paste a JWT to reveal its header, payload claims, and signature segment. Inspect exp, iat, nbf, iss, sub, aud, scopes, algorithm, and expiration status.",
   path: "/dev-tools/jwt-decoder",
@@ -21,7 +21,7 @@ const toolConfig = createToolConfig({
   header: {
     title: "Fast JWT Decoder & Token Inspector",
     description:
-      "Fast JWT decoder — decode any JSON Web Token instantly to inspect its header (algorithm, type), payload (claims like sub, iss, exp), and signature. Check token expiration, debug OAuth and API authentication — no secret key required, no install, no signup, and the token never leaves your browser.",
+      "Fast JWT decoder — decode any JSON Web Token instantly to inspect its header (algorithm, type), payload (claims like sub, iss, exp), and signature. Check token expiration, debug OAuth and API authentication — no secret key required.",
     titleSize: "medium",
     descriptionSize: "small",
     color: "blue",
@@ -42,6 +42,16 @@ const toolConfig = createToolConfig({
       "JWT Parser",
       "JWT Inspector",
       "JWT Debugger",
+      "JWT Viewer",
+      "OAuth Token Decoder",
+      "Bearer Token Decoder",
+      "Access Token Decoder",
+      "ID Token Decoder",
+      "OpenID Connect Token Decoder",
+      "jwt.io Alternative",
+      "JWT.ms Alternative",
+      "Token Inspector Online",
+      "JSON Web Token Reader",
     ],
     featureList: [
       "Instant decode of JWT header, payload, signature — paste-to-view in milliseconds",
@@ -297,7 +307,7 @@ const toolConfig = createToolConfig({
       { name: "HMAC Generator", href: "/crypto-tools/hmac-generator" },
       { name: "RSA Key Generator", href: "/crypto-tools/rsa-generator" },
       { name: "Hash Text Generator", href: "/crypto-tools/hash-text" },
-      { name: "Auth Generator", href: "/web-tools/basic-auth-header-generator" },
+      { name: "Auth Generator", href: "/web-tools/auth-generator" },
       { name: "HTTP Status Codes", href: "/dev-tools/http-status-codes" },
       { name: "User-Agent Parser", href: "/dev-tools/user-agent-parser" },
       { name: "All Developer Tools", href: "/dev-tools" },

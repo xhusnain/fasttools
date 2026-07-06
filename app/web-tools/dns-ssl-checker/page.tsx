@@ -40,6 +40,11 @@ const toolConfig = createToolConfig({
       "TLS Inspector",
       "MX Record Lookup",
       "Domain Health Checker",
+      "SSL Expiry Monitor",
+      "Domain Diagnostic Tool",
+      "DNS Tools",
+      "Cert Inspector",
+      "TLS Cert Viewer",
     ],
   },
 

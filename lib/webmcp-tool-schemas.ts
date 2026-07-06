@@ -48,14 +48,14 @@ export const toolSchemas: Record<string, ToolSchema> = {
             credits: { type: "number", label: "Credits", required: true },
         },
     },
-    "/finance-tools/salary-calculator": {
+    "/calculator/salary-calculator": {
         interactionMode: "button-click",
         inputSchema: {
             salary: { type: "number", label: "Salary Amount", required: true },
             period: { type: "toggle-group", label: "Pay Period", options: ["Hourly", "Daily", "Weekly", "Bi-Weekly", "Monthly", "Annual"] },
         },
     },
-    "/calculator/tdee-macro-calculator": {
+    "/calculator/calorie-calculator": {
         interactionMode: "button-click",
         inputSchema: {
             age: { type: "number", label: "Age", required: true },
@@ -63,6 +63,15 @@ export const toolSchemas: Record<string, ToolSchema> = {
             weight: { type: "number", label: "Weight", required: true },
             height: { type: "number", label: "Height", required: true },
             activity: { type: "radix-select", label: "Activity Level", options: ["Sedentary", "Lightly Active", "Moderately Active", "Very Active", "Extra Active"] },
+        },
+    },
+    "/calculator/bmr-calculator": {
+        interactionMode: "button-click",
+        inputSchema: {
+            age: { type: "number", label: "Age", required: true },
+            gender: { type: "toggle-group", label: "Gender", options: ["Male", "Female"] },
+            weight: { type: "number", label: "Weight", required: true },
+            height: { type: "number", label: "Height", required: true },
         },
     },
     "/calculator/body-fat-calculator": {
@@ -181,6 +190,14 @@ export const toolSchemas: Record<string, ToolSchema> = {
             compound_frequency: { type: "radix-select", label: "Compound Frequency", options: ["Annually", "Semi-Annually", "Quarterly", "Monthly", "Daily"] },
         },
     },
+    "/finance-tools/tip-calculator": {
+        interactionMode: "button-click",
+        inputSchema: {
+            bill_amount: { type: "number", label: "Bill Amount", required: true },
+            tip_percentage: { type: "number", label: "Tip Percentage", required: true },
+            split: { type: "number", label: "Split Between", defaultValue: "1" },
+        },
+    },
     "/finance-tools/discount-calculator": {
         interactionMode: "button-click",
         inputSchema: {
@@ -188,7 +205,7 @@ export const toolSchemas: Record<string, ToolSchema> = {
             discount: { type: "number", label: "Discount (%)", required: true },
         },
     },
-    "/finance-tools/paypal-fee-calculator": {
+    "/finance-tools/paypal-fee": {
         interactionMode: "button-click",
         inputSchema: {
             amount: { type: "number", label: "Amount", required: true },
@@ -337,7 +354,7 @@ export const toolSchemas: Record<string, ToolSchema> = {
             sql: { type: "textarea", label: "SQL INSERT Statement", required: true },
         },
     },
-    "/dev-tools/url-slug-generator": {
+    "/dev-tools/slugify-string": {
         interactionMode: "realtime",
         inputSchema: {
             text: { type: "text", label: "String to Slugify", required: true },
@@ -349,43 +366,49 @@ export const toolSchemas: Record<string, ToolSchema> = {
             user_agent: { type: "textarea", label: "User-Agent String", required: true },
         },
     },
-    "/converters/xml-to-json": {
+    "/converters/json-xml": {
+        interactionMode: "realtime",
+        inputSchema: {
+            json: { type: "textarea", label: "JSON Input", required: true },
+        },
+    },
+    "/converters/xml-json": {
         interactionMode: "realtime",
         inputSchema: {
             xml: { type: "textarea", label: "XML Input", required: true },
         },
     },
-    "/converters/json-to-yaml": {
+    "/converters/json-yaml": {
         interactionMode: "realtime",
         inputSchema: {
             json: { type: "textarea", label: "JSON Input", required: true },
         },
     },
-    "/converters/yaml-to-json": {
+    "/converters/yaml-json": {
         interactionMode: "realtime",
         inputSchema: {
             yaml: { type: "textarea", label: "YAML Input", required: true },
         },
     },
-    "/converters/toml-to-yaml": {
+    "/converters/toml-yaml": {
         interactionMode: "realtime",
         inputSchema: {
             toml: { type: "textarea", label: "TOML Input", required: true },
         },
     },
-    "/converters/toml-to-json": {
+    "/converters/toml-json": {
         interactionMode: "realtime",
         inputSchema: {
             toml: { type: "textarea", label: "TOML Input", required: true },
         },
     },
-    "/converters/json-to-toml": {
+    "/converters/json-toml": {
         interactionMode: "realtime",
         inputSchema: {
             json: { type: "textarea", label: "JSON Input", required: true },
         },
     },
-    "/converters/yaml-to-toml": {
+    "/converters/yaml-toml": {
         interactionMode: "realtime",
         inputSchema: {
             yaml: { type: "textarea", label: "YAML Input", required: true },
@@ -442,7 +465,7 @@ export const toolSchemas: Record<string, ToolSchema> = {
             text2: { type: "textarea", label: "Text 2", required: true },
         },
     },
-    "/crypto-tools/password-strength-checker": {
+    "/crypto-tools/password-strength-analyzer": {
         interactionMode: "realtime",
         inputSchema: {
             password: { type: "text", label: "Password", required: true },
@@ -469,7 +492,7 @@ export const toolSchemas: Record<string, ToolSchema> = {
             url: { type: "textarea", label: "SafeLink URL", required: true },
         },
     },
-    "/web-tools/basic-auth-header-generator": {
+    "/web-tools/auth-generator": {
         interactionMode: "realtime",
         inputSchema: {
             username: { type: "text", label: "Username", required: true },
@@ -528,7 +551,7 @@ export const toolSchemas: Record<string, ToolSchema> = {
             paragraphs: { type: "number", label: "Number of Paragraphs", defaultValue: "3" },
         },
     },
-    "/seo-tools/blog-title-generator": {
+    "/seo-tools/blog-titles": {
         interactionMode: "generator",
         inputSchema: {
             topic: { type: "text", label: "Topic / Keyword", required: true },
@@ -543,7 +566,7 @@ export const toolSchemas: Record<string, ToolSchema> = {
             image: { type: "text", label: "Image URL" },
         },
     },
-    "/dev-tools/color-palette-generator": {
+    "/dev-tools/color-palette": {
         interactionMode: "generator",
         inputSchema: {
             base_color: { type: "text", label: "Base Color", placeholder: "#FF5733" },
@@ -605,7 +628,7 @@ export const toolSchemas: Record<string, ToolSchema> = {
     },
 
     // ── Fun / Misc Tools ─────────────────────────────────────────────
-    "/fun-tools/how-old-will-i-be": {
+    "/fun-tools/future-age": {
         interactionMode: "button-click",
         inputSchema: {
             birthdate: { type: "date", label: "Date of Birth", required: true },
@@ -618,7 +641,7 @@ export const toolSchemas: Record<string, ToolSchema> = {
             birthdate: { type: "date", label: "Date of Birth", required: true },
         },
     },
-    "/fun-tools/anniversary-calculator": {
+    "/fun-tools/anniversary": {
         interactionMode: "button-click",
         inputSchema: {
             start_date: { type: "date", label: "Anniversary Date", required: true },

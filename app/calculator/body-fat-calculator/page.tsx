@@ -27,6 +27,16 @@ const baseMetadata = createMetadata({
       "Navy Body Fat Calculator",
       "BMI Body Fat Estimator",
       "Lean Mass Calculator",
+      "Fat Mass Calculator",
+      "Athletic Body Fat Tool",
+      "Ideal Body Fat Calculator",
+      "Skinfold Body Fat Calculator",
+      "ACE Fitness Body Fat",
+      "Body Fat Range Tool",
+      "BFP Calculator",
+      "Body Fat % Estimator",
+      "Body Fat Tape Measure Tool",
+      "Visceral Fat Estimator",
     ],
     applicationCategory: "HealthApplication",
     featureList: [
@@ -564,8 +574,8 @@ export default function BodyFatCalculatorPage() {
 
     relatedTools: [
       { name: "BMI Calculator", href: "/calculator/bmi-calculator" },
-      { name: "Calorie Calculator", href: "/calculator/tdee-macro-calculator" },
-      { name: "BMR Calculator", href: "/calculator/tdee-macro-calculator" },
+      { name: "Calorie Calculator", href: "/calculator/calorie-calculator" },
+      { name: "BMR Calculator", href: "/calculator/bmr-calculator" },
       { name: "TDEE & Macro Calculator", href: "/calculator/tdee-macro-calculator" },
       { name: "Biological Age Calculator", href: "/calculator/biological-age-calculator" },
       { name: "Pace Calculator", href: "/calculator/pace-calculator" },

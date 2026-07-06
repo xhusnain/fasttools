@@ -69,10 +69,10 @@ const toolConfig = createToolConfig({
       "Used in clock faces, Super Bowl numbering, movie sequels, book chapters, outlines, and tattoo designs",
     ],
     overview:
-      "This Roman numeral converter handles bidirectional conversion between Arabic numbers and Roman numerals for values 1 through 3,999. Enter a number like 2026 to get MMXXVI, or type MCMLXXXIV to decode it to 1984. The date conversion mode lets you format complete dates — including month, day, and year — in Roman numeral notation, which is popular for tattoo designs, wedding invitations, graduation announcements, memorial engravings, and decorative typography. The converter validates Roman numeral input to catch invalid patterns like IIII (which should be IV) or out-of-order symbols, ensuring your results follow standard Roman numeral rules used in classical and modern contexts. Whether you are a student learning Roman numerals, a designer creating typographic elements, or someone planning a tattoo with a meaningful date, this tool provides instant, accurate conversions.",
+      "This Roman numeral converter handles bidirectional conversion between Arabic numbers and Roman numerals for values 1 through 3,999. Enter a number like to get MMXXVI, or type MCMLXXXIV to decode it to 1984. The date conversion mode lets you format complete dates — including month, day, and year — in Roman numeral notation, which is popular for tattoo designs, wedding invitations, graduation announcements, memorial engravings, and decorative typography. The converter validates Roman numeral input to catch invalid patterns like IIII (which should be IV) or out-of-order symbols, ensuring your results follow standard Roman numeral rules used in classical and modern contexts. Whether you are a student learning Roman numerals, a designer creating typographic elements, or someone planning a tattoo with a meaningful date, this tool provides instant, accurate conversions.",
 
     howToSteps: [
-      "Enter any Arabic number from 1 to 3,999 in the number input field to instantly see its Roman numeral equivalent (e.g., 2026 becomes MMXXVI).",
+      "Enter any Arabic number from 1 to 3,999 in the number input field to instantly see its Roman numeral equivalent (e.g., becomes MMXXVI).",
       "Type or paste a Roman numeral string (e.g., MCMXCIV) in the Roman numeral input field to decode it to its Arabic number (1994).",
       "Use the date conversion mode to transform a birthday, anniversary, or wedding date into Roman numeral format with separate month, day, and year values.",
       "Copy the Roman numeral output with one click for use in tattoo designs, invitations, engravings, documents, or educational materials.",
@@ -111,7 +111,7 @@ const toolConfig = createToolConfig({
     ),
 
     proTip:
-      "When converting dates for tattoos or engravings, double-check each component (month, day, year) individually. A common mistake is writing 4 as IIII instead of IV — while IIII appears on some clock faces (known as the 'watchmaker's four'), standard Roman numeral notation uses IV. For years, 2026 is MMXXVI, not MMXXIIIIII.",
+      "When converting dates for tattoos or engravings, double-check each component (month, day, year) individually. A common mistake is writing 4 as IIII instead of IV — while IIII appears on some clock faces (known as the 'watchmaker's four'), standard Roman numeral notation uses IV. For years, is MMXXVI, not MMXXIIIIII.",
 
     faqs: [
       {
@@ -120,9 +120,9 @@ const toolConfig = createToolConfig({
           "Use the date conversion mode to enter your date. The converter transforms the month, day, and year into separate Roman numeral values. For example, July 4, 1776 becomes VII . IV . MDCCLXXVI. You can choose different separator styles (dots, dashes, slashes) for your tattoo design layout. Always verify the output before getting a permanent tattoo.",
       },
       {
-        question: "What is the Roman numeral for 2026 and other recent years?",
+        question: "What is the Roman numeral for and other recent years?",
         answer:
-          "2026 in Roman numerals is MMXXVI. Other common years: 2024 = MMXXIV, 2025 = MMXXV, 2000 = MM, 1999 = MCMXCIX, 1990 = MCMXC, 1984 = MCMLXXXIV, 1776 = MDCCLXXVI. Enter any year from 1 to 3999 in the converter for an instant result.",
+          "in Roman numerals is MMXXVI. Other common years: 2024 = MMXXIV, 2025 = MMXXV, 2000 = MM, 1999 = MCMXCIX, 1990 = MCMXC, 1984 = MCMLXXXIV, 1776 = MDCCLXXVI. Enter any year from 1 to 3999 in the converter for an instant result.",
       },
       {
         question: "How does Roman numeral subtractive notation work (IV, IX, XL, XC)?",

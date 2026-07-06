@@ -34,8 +34,18 @@ const toolConfig = createToolConfig({
       "BIP39 Mnemonic Generator",
       "Seed Phrase Generator",
       "Crypto Recovery Phrase Generator",
+      "12 Word Seed Phrase Generator",
+      "24 Word Seed Phrase Generator",
+      "Bitcoin Seed Phrase Generator",
+      "Ethereum Mnemonic Generator",
+      "Solana Seed Phrase Generator",
+      "Wallet Recovery Phrase Generator",
       "BIP39 Validator",
+      "Seed Phrase Checksum Validator",
       "Mnemonic Checker",
+      "HD Wallet Seed Generator",
+      "Iancoleman BIP39 Alternative",
+      "Mnemonic Phrase Tool",
     ],
     featureList: [
       "12 / 15 / 18 / 21 / 24 word BIP39 mnemonic generation (128 / 160 / 192 / 224 / 256-bit entropy)",
@@ -136,6 +146,13 @@ const toolConfig = createToolConfig({
             The last word of a BIP39 phrase encodes a checksum derived from a SHA-256 hash of the entropy — 4 bits of checksum for a 12-word phrase, 8 bits for 24 words. When you validate a mnemonic, the tool recomputes that hash and compares — if a single word is misspelled or in the wrong position, the checksum fails. Use the Validate tab <strong>before</strong> attempting wallet recovery with a written or hardware-displayed phrase. A failed checksum is almost always a transcription error; a passing checksum confirms the phrase is structurally valid (though it cannot prove it&apos;s the &quot;right&quot; phrase for a specific wallet — only the wallet&apos;s addresses can confirm that).
           </p>
         </div>
+
+        <div>
+          <h3 className="text-lg font-semibold text-foreground mb-2">Same Tool, Many Names</h3>
+          <p>
+            People search for this with many different terms — they all mean the same thing: <em>BIP39 generator, mnemonic generator, seed phrase generator, recovery phrase generator, 12-word phrase generator, 24-word seed generator, wallet backup phrase generator, crypto recovery words, MetaMask seed generator, Bitcoin wallet seed generator.</em> All refer to the BIP39 standard — Bitcoin Improvement Proposal 39 — that nearly every modern cryptocurrency wallet uses to encode the master private key as a human-readable word sequence.
+          </p>
+        </div>
       </div>
     ),
 
@@ -228,7 +245,7 @@ const toolConfig = createToolConfig({
     relatedTools: [
       { name: "Token Generator", href: "/crypto-tools/token-generator" },
       { name: "Password Generator", href: "/crypto-tools/password-generator" },
-      { name: "Password Strength Analyzer", href: "/crypto-tools/password-strength-checker" },
+      { name: "Password Strength Analyzer", href: "/crypto-tools/password-strength-analyzer" },
       { name: "RSA Key Generator", href: "/crypto-tools/rsa-generator" },
       { name: "Hash Text Generator", href: "/crypto-tools/hash-text" },
       { name: "Text Encrypt/Decrypt", href: "/crypto-tools/encrypt-decrypt" },

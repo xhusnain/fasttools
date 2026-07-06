@@ -216,7 +216,7 @@ export const categories = [
             {
                 title: "Blog Title Generator",
                 description: "Create catchy, SEO-friendly titles that boost engagement and traffic",
-                href: "/seo-tools/blog-title-generator",
+                href: "/seo-tools/blog-titles",
                 icon: Sparkles,
                 badge: "Creative",
                 badgeColor: "bg-pink-500/90",
@@ -254,7 +254,7 @@ export const categories = [
             {
                 title: "Password Strength Analyzer",
                 description: "Analyze password entropy, crack time, and common weakness patterns",
-                href: "/crypto-tools/password-strength-checker",
+                href: "/crypto-tools/password-strength-analyzer",
                 icon: Shield,
                 badge: "Secure",
                 badgeColor: "bg-green-600",
@@ -270,7 +270,7 @@ export const categories = [
             {
                 title: "TOTP QR Code Generator",
                 description: "Create otpauth setup QR codes for authenticator apps",
-                href: "/crypto-tools/otp-generator",
+                href: "/crypto-tools/totp-qr-code-generator",
                 icon: Shield,
                 badge: "2FA",
                 badgeColor: "bg-green-600",
@@ -388,7 +388,7 @@ export const categories = [
             {
                 title: "Auth Header Generator",
                 description: "basic auth generator online. Basic Auth encode/decode, Bearer, API Key. Free.",
-                href: "/web-tools/basic-auth-header-generator",
+                href: "/web-tools/auth-generator",
                 icon: Link2,
                 badge: "Web",
                 badgeColor: "bg-blue-500/90",
@@ -434,7 +434,7 @@ export const categories = [
             {
                 title: "Color Palette Generator",
                 description: "Generate balanced color palettes for UI design and branding workflows.",
-                href: "/dev-tools/color-palette-generator",
+                href: "/dev-tools/color-palette",
                 icon: Palette,
                 badge: "Design",
                 badgeColor: "bg-pink-600",
@@ -522,7 +522,7 @@ export const categories = [
             {
                 title: "Slugify String",
                 description: "Convert text into URL-safe slugs for routes, filenames, and content systems.",
-                href: "/dev-tools/url-slug-generator",
+                href: "/dev-tools/slugify-string",
                 icon: FileCode,
                 badge: "URL",
                 badgeColor: "bg-blue-500/90",
@@ -926,7 +926,7 @@ export const categories = [
             {
                 title: "JSON to XML Converter",
                 description: "Convert JSON payloads to XML and back for integration workflows",
-                href: "/converters/xml-to-json",
+                href: "/converters/json-xml",
                 icon: FileCode,
                 badge: "Dev",
                 badgeColor: "bg-purple-500/90",
@@ -934,7 +934,7 @@ export const categories = [
             {
                 title: "XML to JSON Converter",
                 description: "Convert XML documents to JSON and reverse when needed",
-                href: "/converters/xml-to-json",
+                href: "/converters/xml-json",
                 icon: FileCode,
                 badge: "Dev",
                 badgeColor: "bg-purple-500/90",
@@ -942,7 +942,7 @@ export const categories = [
             {
                 title: "TOML to YAML Converter",
                 description: "Convert TOML config files to YAML with reverse support",
-                href: "/converters/toml-to-yaml",
+                href: "/converters/toml-yaml",
                 icon: FileCode,
                 badge: "Dev",
                 badgeColor: "bg-purple-500/90",
@@ -950,7 +950,7 @@ export const categories = [
             {
                 title: "TOML to JSON Converter",
                 description: "Parse TOML into JSON output for tooling and config workflows",
-                href: "/converters/toml-to-json",
+                href: "/converters/toml-json",
                 icon: FileCode,
                 badge: "Dev",
                 badgeColor: "bg-purple-500/90",
@@ -958,7 +958,7 @@ export const categories = [
             {
                 title: "JSON to TOML Converter",
                 description: "Convert JSON objects to TOML for project configuration files",
-                href: "/converters/json-to-toml",
+                href: "/converters/json-toml",
                 icon: FileCode,
                 badge: "Dev",
                 badgeColor: "bg-purple-500/90",
@@ -966,7 +966,7 @@ export const categories = [
             {
                 title: "YAML to TOML",
                 description: "Convert YAML to TOML and TOML to YAML for config management",
-                href: "/converters/yaml-to-toml",
+                href: "/converters/yaml-toml",
                 icon: FileCode,
                 badge: "Dev",
                 badgeColor: "bg-purple-500/90",
@@ -974,7 +974,7 @@ export const categories = [
             {
                 title: "JSON to YAML Converter",
                 description: "Convert JSON to YAML with reverse YAML to JSON support",
-                href: "/converters/json-to-yaml",
+                href: "/converters/json-yaml",
                 icon: FileCode,
                 badge: "Dev",
                 badgeColor: "bg-purple-500/90",
@@ -982,7 +982,7 @@ export const categories = [
             {
                 title: "YAML to JSON Converter",
                 description: "Convert YAML documents to JSON for API and automation workflows",
-                href: "/converters/yaml-to-json",
+                href: "/converters/yaml-json",
                 icon: FileCode,
                 badge: "Dev",
                 badgeColor: "bg-purple-500/90",
@@ -1140,7 +1140,7 @@ export const categories = [
             {
                 title: "PayPal Fee Calculator",
                 description: "Calculate net payouts after PayPal fees for any payment",
-                href: "/finance-tools/paypal-fee-calculator",
+                href: "/finance-tools/paypal-fee",
                 icon: DollarSign,
                 badge: "Payments",
                 badgeColor: "bg-emerald-600",
@@ -1164,7 +1164,7 @@ export const categories = [
             {
                 title: "Tip Calculator",
                 description: "Split bills and calculate tips with custom percentage options",
-                href: "/finance-tools/bill-splitter",
+                href: "/finance-tools/tip-calculator",
                 icon: DollarSign,
                 badge: "Daily",
                 badgeColor: "bg-green-600",
@@ -1220,7 +1220,7 @@ export const categories = [
             {
                 title: "Quarterly Tax Estimator",
                 description: "Estimate 1099 quarterly tax payments with self-employment tax and safe harbor checks",
-                href: "/finance-tools/quarterly-tax-calculator",
+                href: "/finance-tools/quarterly-tax-estimator",
                 icon: DollarSign,
                 badge: "Tax",
                 badgeColor: "bg-primary/90",
@@ -1228,7 +1228,7 @@ export const categories = [
             {
                 title: "Tax Bracket Calculator",
                 description: "Calculate federal tax brackets, marginal rate, and effective tax rate",
-                href: "/finance-tools/tax-calculator",
+                href: "/finance-tools/tax-bracket-calculator",
                 icon: Percent,
                 badge: "Tax",
                 badgeColor: "bg-primary/90",
@@ -1252,7 +1252,7 @@ export const categories = [
             {
                 title: "Retirement Planner",
                 description: "Comprehensive retirement planning with compound interest projections",
-                href: "/finance-tools/retirement-calculator",
+                href: "/finance-tools/retirement-planner",
                 icon: DollarSign,
                 badge: "Planning",
                 badgeColor: "bg-blue-600",
@@ -1268,7 +1268,7 @@ export const categories = [
             {
                 title: "Credit Card Payoff",
                 description: "Calculate payoff time and total interest for credit card debt",
-                href: "/finance-tools/debt-payoff-calculator",
+                href: "/finance-tools/credit-card-payoff",
                 icon: DollarSign,
                 badge: "Debt",
                 badgeColor: "bg-red-500/90",
@@ -1284,7 +1284,7 @@ export const categories = [
             {
                 title: "SaaS Payback Calculator",
                 description: "Calculate CAC payback period, gross-margin payback, and SaaS efficiency metrics",
-                href: "/finance-tools/cac-payback-calculator",
+                href: "/finance-tools/saas-payback-calculator",
                 icon: TrendingUp,
                 badge: "SaaS",
                 badgeColor: "bg-indigo-600",
@@ -1306,7 +1306,7 @@ export const categories = [
             {
                 title: "Future Age Predictor",
                 description: "See how old you'll be on any future date with precision",
-                href: "/fun-tools/how-old-will-i-be",
+                href: "/fun-tools/future-age",
                 icon: Calendar,
                 badge: "Fun",
                 badgeColor: "bg-pink-500/90",
@@ -1322,7 +1322,7 @@ export const categories = [
             {
                 title: "Anniversary Calculator",
                 description: "Calculate how long you've been together with milestones",
-                href: "/fun-tools/anniversary-calculator",
+                href: "/fun-tools/anniversary",
                 icon: Heart,
                 badge: "Love",
                 badgeColor: "bg-pink-500/90",
@@ -1456,7 +1456,7 @@ export const categories = [
             {
                 title: "Investment Calculator",
                 description: "Calculate investment returns and compare options with projections",
-                href: "/finance-tools/compound-interest",
+                href: "/finance-tools/investment-calculator",
                 icon: TrendingUp,
                 badge: "Wealth",
                 badgeColor: "bg-heading-accent/90",
@@ -1472,7 +1472,7 @@ export const categories = [
             {
                 title: "Calorie Calculator",
                 description: "Calculate daily calorie needs based on activity and fitness goals",
-                href: "/calculator/tdee-macro-calculator",
+                href: "/calculator/calorie-calculator",
                 icon: Activity,
                 badge: "Health",
                 badgeColor: "bg-pink-500/90",
@@ -1480,7 +1480,7 @@ export const categories = [
             {
                 title: "BMR Calculator",
                 description: "Calculate Basal Metabolic Rate for daily calorie burn at rest",
-                href: "/calculator/tdee-macro-calculator",
+                href: "/calculator/bmr-calculator",
                 icon: Activity,
                 badge: "Health",
                 badgeColor: "bg-pink-600",
@@ -1640,7 +1640,7 @@ export const categories = [
             {
                 title: "Interest Rate Calculator",
                 description: "Determine the real interest rate on loans or investments",
-                href: "/finance-tools/loan-calculator",
+                href: "/finance-tools/interest-rate-calculator",
                 icon: Percent,
                 badge: "Finance",
                 badgeColor: "bg-blue-500/90",
@@ -1664,7 +1664,7 @@ export const categories = [
             {
                 title: "Amortization Calculator",
                 description: "Create detailed loan amortization schedules with breakdowns",
-                href: "/finance-tools/loan-calculator",
+                href: "/finance-tools/amortization-calculator",
                 icon: DollarSign,
                 badge: "Loan",
                 badgeColor: "bg-blue-600/90",
@@ -1672,7 +1672,7 @@ export const categories = [
             {
                 title: "Payment Calculator",
                 description: "Estimate monthly payments for loans and credit cards",
-                href: "/finance-tools/loan-calculator",
+                href: "/finance-tools/payment-calculator",
                 icon: DollarSign,
                 badge: "Pay",
                 badgeColor: "bg-green-600/90",

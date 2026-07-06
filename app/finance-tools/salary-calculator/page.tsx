@@ -28,6 +28,17 @@ const baseMetadata = createMetadata({
       "Salary to Hourly Calculator",
       "Annual to Hourly Calculator",
       "Take Home Pay Calculator",
+      "Gross to Net Pay Calculator",
+      "Paycheck Calculator",
+      "Net Pay Calculator",
+      "Bi-Weekly Pay Calculator",
+      "Monthly to Annual Salary Calculator",
+      "Wage Calculator",
+      "Income Calculator",
+      "Hourly Rate Calculator",
+      "After-Tax Salary Calculator",
+      "Contractor Rate Calculator",
+      "1099 vs W-2 Calculator",
     ],
     applicationCategory: "FinanceApplication",
     featureList: [
@@ -190,13 +201,13 @@ export default function SalaryCalculatorPage() {
 
     relatedTools: [
       { name: "Tax Calculator", href: "/finance-tools/tax-calculator" },
-      { name: "Tax Bracket Calculator", href: "/finance-tools/tax-calculator" },
+      { name: "Tax Bracket Calculator", href: "/finance-tools/tax-bracket-calculator" },
       { name: "Freelance Rate Calculator", href: "/finance-tools/freelance-rate-calculator" },
-      { name: "Quarterly Tax Estimator", href: "/finance-tools/quarterly-tax-calculator" },
+      { name: "Quarterly Tax Estimator", href: "/finance-tools/quarterly-tax-estimator" },
       { name: "Home Affordability Calculator", href: "/finance-tools/home-affordability-calculator" },
       { name: "Net Worth Calculator", href: "/finance-tools/net-worth-calculator" },
       { name: "Remote Work Savings Calculator", href: "/finance-tools/remote-work-savings" },
-      { name: "Retirement Planner", href: "/finance-tools/retirement-calculator" },
+      { name: "Retirement Planner", href: "/finance-tools/retirement-planner" },
       { name: "All Finance Tools", href: "/finance-tools" }
     ]
   }

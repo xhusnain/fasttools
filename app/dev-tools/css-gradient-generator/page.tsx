@@ -13,7 +13,7 @@ const toolConfig = createToolConfig({
   toolName: "CSS Gradient Generator",
   description:
     "Create linear, radial, and conic CSS gradients with live preview, editable color stops, presets, and copy-ready CSS, Tailwind, and SCSS output.",
-  metaTitle: "CSS Gradient Generator - Linear, Radial & Conic",
+  metaTitle: "CSS Gradient Generator - Linear, Radial & Conic | FastTools",
   metaDescription:
     "Build CSS gradients visually. Edit color stops, angle, radial shape and size, then copy CSS, SCSS, or Tailwind classes for simple linear gradients. Includes 20 presets.",
   path: "/dev-tools/css-gradient-generator",
@@ -41,6 +41,11 @@ const toolConfig = createToolConfig({
       "Radial Gradient Generator",
       "Conic Gradient Generator",
       "Gradient Background Generator",
+      "Tailwind Gradient Generator",
+      "SCSS Gradient Tool",
+      "Multi-Stop Gradient Editor",
+      "Color Stop Editor",
+      "Hero Background Generator",
     ],
   },
 
@@ -156,8 +161,7 @@ const toolConfig = createToolConfig({
     ],
 
     relatedTools: [
-      { name: "Tailwind Gradient Generator", href: "/dev-tools/tailwind-gradient-generator" },
-      { name: "Color Palette Generator", href: "/dev-tools/color-palette-generator" },
+      { name: "Color Palette Generator", href: "/dev-tools/color-palette" },
       { name: "Hex to RGB Converter", href: "/dev-tools/hex-to-rgb" },
       { name: "HTML Beautifier", href: "/dev-tools/html-beautifier" },
       { name: "HTML WYSIWYG Editor", href: "/dev-tools/html-wysiwyg-editor" },

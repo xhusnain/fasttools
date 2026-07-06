@@ -27,6 +27,16 @@ const baseMetadata = createMetadata({
       "Future Value Calculator",
       "Present Value Calculator",
       "Annuity Calculator",
+      "PMT Calculator",
+      "Bond Calculator",
+      "Discounted Cash Flow Calculator",
+      "Financial Calculator Online",
+      "Online HP 10bII Calculator",
+      "BA II Plus Style Calculator",
+      "5-Variable Finance Solver",
+      "Investment Math Calculator",
+      "Annuity Due Calculator",
+      "Lump Sum Future Value Calculator",
     ],
     applicationCategory: "FinanceApplication",
     featureList: [
@@ -167,11 +177,11 @@ export default function FinanceCalculatorPage() {
 
     relatedTools: [
       { name: "Compound Interest Calculator", href: "/finance-tools/compound-interest" },
-      { name: "Investment Calculator", href: "/finance-tools/compound-interest" },
+      { name: "Investment Calculator", href: "/finance-tools/investment-calculator" },
       { name: "Loan Calculator", href: "/finance-tools/loan-calculator" },
-      { name: "Payment Calculator", href: "/finance-tools/loan-calculator" },
-      { name: "Interest Rate Calculator", href: "/finance-tools/loan-calculator" },
-      { name: "Amortization Calculator", href: "/finance-tools/loan-calculator" },
+      { name: "Payment Calculator", href: "/finance-tools/payment-calculator" },
+      { name: "Interest Rate Calculator", href: "/finance-tools/interest-rate-calculator" },
+      { name: "Amortization Calculator", href: "/finance-tools/amortization-calculator" },
       { name: "Retirement Calculator", href: "/finance-tools/retirement-calculator" },
       { name: "Scientific Calculator", href: "/calculator/scientific-calculator" },
       { name: "All Finance Tools", href: "/finance-tools" }

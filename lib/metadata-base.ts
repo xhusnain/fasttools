@@ -81,7 +81,7 @@ export interface MetadataOptions {
 function shouldIncludeSchema(path: string): boolean {
     const normalizedFullPath = (path.startsWith("/") ? path : `/${path}`).toLowerCase()
     // Blog posts are articles, not tools — a slug containing a tool keyword
-    // (e.g. /blog/...-seo-tools) must not get tool schema.
+    // (e.g. /blog/...-seo-tools) must not get tool schema or the "Free " prefix.
     if (normalizedFullPath.startsWith("/blog")) return false
     const toolKeywords = [
         "tools",
@@ -111,11 +111,14 @@ export function buildSchemas(options: MetadataOptions): any[] {
     const includeSchema = options.includeSchema ?? shouldIncludeSchema(path)
     const cleanPath = path.startsWith("/") ? path : `/${path}`
 
-    // Titles ship exactly as written in the page file. No auto "Free " prefix
-    // (it silently pushed titles past 65 chars and demoted the keyword from
-    // position 1) and no brand stripping (it mangled brand pages like the
-    // homepage). Authors own the full title.
-    const fullTitle = title.trim()
+    let processedTitle = title
+        .replace(/\|\s*FastTools/gi, "")
+        .replace(/FastTools\s*[-–—|]?\s*/gi, "")
+        .trim()
+    if (shouldIncludeSchema(path) && !/\bfree\b/i.test(processedTitle)) {
+        processedTitle = `Free ${processedTitle}`
+    }
+    const fullTitle = processedTitle
 
     const schemas: any[] = []
 
@@ -191,9 +194,15 @@ export function createMetadata(options: MetadataOptions): Metadata {
     const keywords = normalizeMetadataKeywords(options.keywords)
 
     const cleanPath = path.startsWith("/") ? path : `/${path}`
-    // Titles ship exactly as written in the page file — no auto "Free " prefix,
-    // no brand stripping. Keep in sync with buildSchemas above.
-    const fullTitle = title.trim()
+    let processedTitle = title
+        .replace(/\|\s*FastTools/gi, "")
+        .replace(/FastTools\s*[-–—|]?\s*/gi, "")
+        .trim()
+    if (shouldIncludeSchema(path) && !/\bfree\b/i.test(processedTitle)) {
+        processedTitle = `Free ${processedTitle}`
+    }
+
+    const fullTitle = processedTitle
     const canonicalUrl = getCanonicalUrl(cleanPath)
     const effectiveNoIndex = noIndex || noindexSet.has(cleanPath.toLowerCase())
 

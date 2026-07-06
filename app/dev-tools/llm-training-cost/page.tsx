@@ -29,6 +29,12 @@ const baseMetadata = createMetadata({
       "GPU Training Cost Calculator",
       "Model Training Budget Calculator",
       "Chinchilla FLOPs Calculator",
+      "GPU Hours Calculator",
+      "H100 Cost Calculator",
+      "A100 Training Cost Calculator",
+      "AI Compute Cost Tool",
+      "Pre-training Budget Calculator",
+      "MFU GPU Hours Calculator",
     ],
     applicationCategory: "DeveloperApplication",
     featureList: [
@@ -147,7 +153,7 @@ export default function LLMTrainingCostPage() {
   return (
     <ToolPageLayout
       header={{
-        title: "LLM Training Cost Calculator",
+        title: "LLM Training Cost Estimator",
         description:
           "Estimate GPU hours, training time, and approximate cloud cost for model pre-training from parameters, tokens, GPU type, precision, and utilization.",
         titleSize: "medium",

@@ -44,6 +44,16 @@ const toolConfig = createToolConfig({
       "Text Reader",
       "AI Voice Reader",
       "Audio Generator from Text",
+      "Natural Voice TTS",
+      "Kokoro TTS Online",
+      "Neural Text to Speech",
+      "Free Voice Over Generator",
+      "ElevenLabs Alternative",
+      "Murf.ai Alternative",
+      "Speechify Alternative",
+      "Natural Reader Alternative",
+      "AI Narrator Tool",
+      "Audiobook Voice Generator",
     ],
   },
 
@@ -247,7 +257,6 @@ const toolConfig = createToolConfig({
     ],
 
     relatedTools: [
-      { name: "Kokoro TTS Online", href: "/ai-tools/kokoro-tts-online" },
       { name: "AI Text Summarizer", href: "/ai-tools/text-summarizer" },
       { name: "AI Paraphraser", href: "/ai-tools/ai-paraphraser" },
       { name: "AI Readability Analyzer", href: "/ai-tools/ai-readability-analyzer" },

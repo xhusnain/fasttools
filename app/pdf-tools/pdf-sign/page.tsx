@@ -27,6 +27,16 @@ const toolConfig = createToolConfig({
       "E-Signature PDF",
       "Add Signature to PDF",
       "Sign PDF Free",
+      "Online PDF Signer",
+      "PDF e-Sign",
+      "Digital Signature PDF (visual)",
+      "DocuSign Alternative",
+      "Adobe Sign Alternative",
+      "HelloSign Alternative",
+      "Free PDF eSignature",
+      "Initials on PDF",
+      "Stamp Date on PDF",
+      "Contract Signing Online",
     ],
     featureList: [
       "Draw signature with mouse or touchscreen (smooth stroke rendering)",
@@ -107,10 +117,7 @@ const toolConfig = createToolConfig({
         <div>
           <h3 className="text-lg font-semibold text-foreground mb-2">Electronic Signatures vs. Digital Signatures</h3>
           <p>
-            This tool creates electronic signatures (e-signatures) — visible signature graphics placed on PDF pages. Electronic signatures are widely accepted for most business, personal, and administrative documents. They differ from digital signatures, which use PKI (Public Key Infrastructure) certificates to cryptographically bind a signer&apos;s identity to the document. For contracts, agreements, and standard business documents, electronic signatures created with this tool are typically sufficient and legally recognized under laws like ESIGN (US) and eIDAS (EU). Received a signed PDF and need to know which kind it carries — or whether it was changed after signing? Use the{" "}
-            <a href="/pdf-tools/pdf-signature-checker" className="text-primary hover:underline">PDF Signature Checker</a>{" "}
-            to <a href="/pdf-tools/check-if-pdf-is-digitally-signed" className="text-primary hover:underline">check if a PDF is digitally signed</a> and{" "}
-            <a href="/pdf-tools/verify-pdf-signature-online" className="text-primary hover:underline">verify the signature online</a>.
+            This tool creates electronic signatures (e-signatures) — visible signature graphics placed on PDF pages. Electronic signatures are widely accepted for most business, personal, and administrative documents. They differ from digital signatures, which use PKI (Public Key Infrastructure) certificates to cryptographically bind a signer&apos;s identity to the document. For contracts, agreements, and standard business documents, electronic signatures created with this tool are typically sufficient and legally recognized under laws like ESIGN (US) and eIDAS (EU).
           </p>
         </div>
 

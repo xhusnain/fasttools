@@ -729,10 +729,10 @@ export default function LoveCalculatorPage() {
     relatedTools: [
       { name: "Age Calculator", href: "/calculator/age-calculator" },
       { name: "Percentage Calculator", href: "/calculator/percentage-calculator" },
-      { name: "Anniversary Calculator", href: "/fun-tools/anniversary-calculator" },
+      { name: "Anniversary Calculator", href: "/fun-tools/anniversary" },
       { name: "Monthsary Calculator", href: "/fun-tools/monthsary-calculator" },
       { name: "Birthday Countdown", href: "/fun-tools/birthday-countdown" },
-      { name: "Future Age Predictor", href: "/fun-tools/how-old-will-i-be" },
+      { name: "Future Age Predictor", href: "/fun-tools/future-age" },
       { name: "Wheel Spinner", href: "/fun-tools/wheel-spinner" },
       { name: "All Calculators", href: "/calculator" }
     ]

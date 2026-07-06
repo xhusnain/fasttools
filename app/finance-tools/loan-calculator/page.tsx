@@ -30,6 +30,15 @@ const baseMetadata = createMetadata({
       "Car Loan Calculator",
       "Student Loan Calculator",
       "Home Loan Calculator",
+      "EMI Calculator",
+      "Loan Payment Calculator",
+      "Monthly Loan Payment Calculator",
+      "Loan Amortization Calculator",
+      "Simple Loan Calculator",
+      "Loan Repayment Calculator",
+      "Loan Installment Calculator",
+      "Loan Interest Calculator",
+      "Loan Affordability Calculator",
     ],
     applicationCategory: "FinanceApplication",
     featureList: [
@@ -304,6 +313,34 @@ export default function LoanCalculatorPage() {
             </GTable>
           </div>
         </article>
+
+        <article className="space-y-4">
+          <h2 className="text-2xl font-bold text-foreground flex items-center gap-2">
+            <BookOpen className="h-6 w-6 text-primary" />
+            The Same Tool, Many Names
+          </h2>
+          <p className="text-base text-muted-foreground leading-relaxed">
+            This calculator handles every flavor of loan math:
+          </p>
+          <ul className="grid grid-cols-1 md:grid-cols-2 gap-2 text-sm text-muted-foreground">
+            <li>· loan calculator / loan payment calculator</li>
+            <li>· monthly loan payment calculator</li>
+            <li>· personal loan calculator</li>
+            <li>· auto loan calculator / car loan calculator</li>
+            <li>· student loan calculator</li>
+            <li>· home loan calculator (also see Mortgage Calculator)</li>
+            <li>· loan amortization calculator</li>
+            <li>· loan repayment calculator</li>
+            <li>· loan installment calculator</li>
+            <li>· EMI calculator (India / South Asia)</li>
+            <li>· loan interest calculator</li>
+            <li>· loan affordability calculator</li>
+            <li>· simple loan calculator</li>
+            <li>· debt consolidation loan calculator</li>
+            <li>· business loan calculator</li>
+            <li>· loan EMI calculator SBI / HDFC / ICICI</li>
+          </ul>
+        </article>
       </div>
     ),
 
@@ -378,11 +415,11 @@ export default function LoanCalculatorPage() {
 
     relatedTools: [
       { name: "Mortgage Calculator", href: "/finance-tools/mortgage-calculator" },
-      { name: "Amortization Calculator", href: "/finance-tools/loan-calculator" },
+      { name: "Amortization Calculator", href: "/finance-tools/amortization-calculator" },
       { name: "Auto Loan Calculator", href: "/finance-tools/auto-loan-calculator" },
-      { name: "Interest Rate Calculator", href: "/finance-tools/loan-calculator" },
+      { name: "Interest Rate Calculator", href: "/finance-tools/interest-rate-calculator" },
       { name: "Compound Interest Calculator", href: "/finance-tools/compound-interest" },
-      { name: "Credit Card Payoff Calculator", href: "/finance-tools/debt-payoff-calculator" },
+      { name: "Credit Card Payoff Calculator", href: "/finance-tools/credit-card-payoff" },
       { name: "Debt Payoff Calculator", href: "/finance-tools/debt-payoff-calculator" },
       { name: "Home Affordability Calculator", href: "/finance-tools/home-affordability-calculator" },
       { name: "All Finance Tools", href: "/finance-tools" }

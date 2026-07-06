@@ -21,12 +21,22 @@ export const metadata: Metadata = createMetadata({
     schemaOptions: {
         name: "ROAS Calculator — Return on Ad Spend",
         alternateName: [
-      "Return on Ad Spend Calculator",
-      "Ad ROI Calculator",
-      "ROAS to ROI Calculator",
-      "CPA Calculator",
-      "Ad Profitability Calculator",
-    ],
+            "Return on Ad Spend Calculator",
+            "Ad ROI Calculator",
+            "ROAS to ROI Calculator",
+            "CPA Calculator",
+            "Ad Profitability Calculator",
+            "Cost Per Acquisition Calculator",
+            "Google Ads ROAS Calculator",
+            "Facebook Ads ROAS Calculator",
+            "TikTok Ads ROAS Calculator",
+            "Meta Ads ROAS Calculator",
+            "Break-Even ROAS Calculator",
+            "Marketing ROI Calculator",
+            "Paid Advertising Calculator",
+            "Ecommerce ROAS Calculator",
+            "Ad Spend Calculator",
+        ],
         applicationCategory: "BusinessApplication",
         featureList: [
             "ROAS = Revenue ÷ Ad Spend (and ROI = (Revenue − Spend) ÷ Spend)",
@@ -609,15 +619,14 @@ export default function ROASCalculatorPage() {
             }
         ],
         relatedTools: [
-      { name: "Break-Even ROAS Calculator", href: "/ad-tools/break-even-roas-calculator" },
             { name: "SaaS Churn Calculator", href: "/finance-tools/saas-churn-calculator" },
-            { name: "SaaS Payback Calculator", href: "/finance-tools/cac-payback-calculator" },
+            { name: "SaaS Payback Calculator", href: "/finance-tools/saas-payback-calculator" },
             { name: "Startup Runway Calculator", href: "/finance-tools/startup-runway-calculator" },
             { name: "Influencer Rate Calculator", href: "/social-media-tools/influencer-rate-calculator" },
             { name: "TikTok Engagement Calculator", href: "/social-media-tools/tiktok-engagement-calculator" },
             { name: "Discount Calculator", href: "/finance-tools/discount-calculator" },
             { name: "Percentage Calculator", href: "/calculator/percentage-calculator" },
-            { name: "Investment Calculator", href: "/finance-tools/compound-interest" },
+            { name: "Investment Calculator", href: "/finance-tools/investment-calculator" },
             { name: "All Finance Tools", href: "/finance-tools" }
         ]
     }

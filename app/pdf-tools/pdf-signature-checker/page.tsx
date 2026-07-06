@@ -23,6 +23,16 @@ const toolConfig = createToolConfig({
       "PDF Digital Signature Validator",
       "PDF Authenticity Checker",
       "PDF Tampering Detector",
+      "PDF Certificate Validator",
+      "Digital Signature Validity Checker",
+      "PDF e-Sign Verifier",
+      "Signed PDF Checker",
+      "PDF Integrity Checker",
+      "PDF Signer Identity Lookup",
+      "Adobe PDF Sign Verify",
+      "DocuSign Verify",
+      "PAdES Validator",
+      "PKCS#7 PDF Signature Validator",
     ],
     featureList: [
       "Digital signature detection and validation",
@@ -176,8 +186,6 @@ const toolConfig = createToolConfig({
     ],
 
     relatedTools: [
-      { name: "Verify PDF Signature Online", href: "/pdf-tools/verify-pdf-signature-online" },
-      { name: "Check if a PDF Is Digitally Signed", href: "/pdf-tools/check-if-pdf-is-digitally-signed" },
       { name: "Sign PDF", href: "/pdf-tools/pdf-sign" },
       { name: "Merge PDF", href: "/pdf-tools/pdf-splitter-merger" },
       { name: "PDF Unlocker", href: "/pdf-tools/pdf-unlocker" },

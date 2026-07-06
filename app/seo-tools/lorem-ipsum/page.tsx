@@ -41,6 +41,11 @@ const toolConfig = createToolConfig({
       "Filler Text Tool",
       "Mock Content Generator",
       "Lipsum Generator",
+      "Mockup Text Tool",
+      "Wireframe Text Generator",
+      "Design Filler Generator",
+      "Random Text Generator",
+      "Test Content Generator",
     ],
     featureList: [
       "Generate 1-10 Lorem Ipsum paragraphs",
@@ -249,12 +254,12 @@ const toolConfig = createToolConfig({
 
     relatedTools: [
       { name: "Word Counter", href: "/seo-tools/word-counter" },
-      { name: "Blog Title Generator", href: "/seo-tools/blog-title-generator" },
+      { name: "Blog Title Generator", href: "/seo-tools/blog-titles" },
       { name: "Keyword Density Checker", href: "/seo-tools/keyword-density" },
       { name: "Open Graph Meta Generator", href: "/seo-tools/meta-tags" },
       { name: "Text Similarity Checker", href: "/seo-tools/text-similarity-checker" },
       { name: "HTML Beautifier", href: "/dev-tools/html-beautifier" },
-      { name: "Slugify String", href: "/dev-tools/url-slug-generator" },
+      { name: "Slugify String", href: "/dev-tools/slugify-string" },
       { name: "All SEO Tools", href: "/seo-tools" },
     ],
   },

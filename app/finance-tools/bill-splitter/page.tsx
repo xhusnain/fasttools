@@ -9,7 +9,7 @@ import { createMetadata } from "@/lib/metadata-base"
 import { Calculator, Target, TrendingUp, BarChart3, Receipt, Award, Users, DollarSign, Percent, Zap, FileText, HelpCircle, ExternalLink, PiggyBank, CreditCard } from "lucide-react"
 import type { Metadata } from "next"
 
-const TOOL_TITLE = "Split Bill Calculator — Split Restaurant & Group Bills (+ Tip)"
+const TOOL_TITLE = "Bill Splitter — Split Restaurant & Group Bills Fairly"
 const TOOL_NAME = "Bill Splitter"
 const TOOL_META_DESC = "Free bill splitter for restaurants, groups, and shared expenses. Split evenly, by items, or by custom share. Auto-adds tip and tax. Generates a per-person total showing exactly who owes what. Perfect for dining, travel, roommates, and group trips."
 
@@ -29,6 +29,16 @@ const baseMetadata = createMetadata({
       "Restaurant Bill Splitter",
       "Dutch Pay Calculator",
       "Group Dining Calculator",
+      "Roommate Bill Splitter",
+      "Travel Expense Splitter",
+      "Shared Expense Calculator",
+      "Bill Split Online",
+      "Pay-Your-Share Calculator",
+      "Fair Split Calculator",
+      "Splitwise Alternative",
+      "Group Trip Cost Splitter",
+      "Per-Person Bill Calculator",
+      "Itemized Bill Splitter",
     ],
     applicationCategory: "FinanceApplication",
     featureList: [
@@ -257,10 +267,10 @@ export default function BillSplitterPage() {
     ],
 
     relatedTools: [
-      { name: "Tip Calculator", href: "/finance-tools/bill-splitter" },
+      { name: "Tip Calculator", href: "/finance-tools/tip-calculator" },
       { name: "Sales Tax Calculator", href: "/finance-tools/sales-tax-calculator" },
       { name: "Discount Calculator", href: "/finance-tools/discount-calculator" },
-      { name: "PayPal Fee Calculator", href: "/finance-tools/paypal-fee-calculator" },
+      { name: "PayPal Fee Calculator", href: "/finance-tools/paypal-fee" },
       { name: "Invoice Generator", href: "/finance-tools/invoice-generator" },
       { name: "Currency Converter", href: "/converters/currency" },
       { name: "Percentage Calculator", href: "/calculator/percentage-calculator" },

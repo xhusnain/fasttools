@@ -46,6 +46,10 @@ const toolConfig = createToolConfig({
       "Text to Morse Code Translator",
       "Morse Code Decoder",
       "Morse Code Encoder",
+      "Morse Code Generator",
+      "Morse to English Translator",
+      "English to Morse Code",
+      "Dot Dash Converter",
     ],
     featureList: [
       "Text to Morse code conversion",

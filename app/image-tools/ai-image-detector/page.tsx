@@ -13,7 +13,7 @@ const toolConfig = createToolConfig({
   toolName: "AI Image Detector",
   description:
     "Free AI image detector that checks if a photo is AI-generated or real. Detects Midjourney, DALL-E, Stable Diffusion, Flux, and deepfake images using 5 forensic signals. No signup, 100% private.",
-  metaTitle: "AI Image Detector — Is This Image AI-Generated? (Free)",
+  metaTitle: "AI Image Detector Free Online - Detect AI Generated Images & Deepfakes",
   metaDescription:
     "Free AI image detector to check if a photo is AI-generated. Detects Midjourney, DALL-E, Stable Diffusion, Flux & deepfake images instantly. No signup. Runs in your browser.",
   path: "/image-tools/ai-image-detector",
@@ -28,6 +28,16 @@ const toolConfig = createToolConfig({
       "Deepfake Detector",
       "AI Generated Image Checker",
       "Midjourney Detector",
+      "DALL-E Detector",
+      "Stable Diffusion Detector",
+      "Flux Image Detector",
+      "ChatGPT Image Detector",
+      "Adobe Firefly Detector",
+      "Real or Fake Photo Checker",
+      "Is This Image AI-Generated",
+      "AI vs Real Photo",
+      "Image Authenticity Checker",
+      "AI Photo Verifier",
     ],
     featureList: [
       "Detect AI images from Midjourney, DALL-E 3, Stable Diffusion, Flux, ChatGPT, Adobe Firefly",
@@ -311,9 +321,6 @@ const toolConfig = createToolConfig({
     ],
 
     relatedTools: [
-      { name: "Midjourney Detector", href: "/image-tools/midjourney-detector" },
-      { name: "Is This Image AI-Generated?", href: "/image-tools/is-this-image-ai-generated" },
-      { name: "AI Profile Picture Detector", href: "/image-tools/ai-profile-picture-detector" },
       { name: "AI Text Detector", href: "/ai-tools/ai-text-detector" },
       { name: "AI Code Detector", href: "/ai-tools/ai-code-detector" },
       { name: "Background Remover", href: "/image-tools/background-remover" },

@@ -41,10 +41,9 @@ export default async function InstagramDpVariantPage(props: Props) {
     notFound()
   }
 
-  // Full sibling mesh: every variant links every other variant so none is
-  // orphaned (zoom/anonymous previously received zero sibling links).
   const relatedVariantLinks = Object.values(dpVariants)
     .filter((item) => item.slug !== slug)
+    .slice(0, 2)
     .map((item) => ({ name: item.headerTitle, href: `/social-media-tools/instagram-dp/${item.slug}` }))
 
   // Pass authority from this high-traffic DP page out to related (page-2) social
@@ -109,51 +108,63 @@ export default async function InstagramDpVariantPage(props: Props) {
       ],
 
       useCases: [
-        "Check how a profile photo looks in full resolution before following",
+        "Long-tail keyword intent matching",
         "Creator and brand profile checks",
-        "Save a copy of your own DP when the original photo is lost",
         "Editorial and design reference workflows",
+        "Team operations with variant-specific routing",
       ],
 
       aboutTool: (
         <div className="space-y-6 text-muted-foreground">
           <div>
-            <h3 className="text-lg font-semibold text-foreground mb-2">How It Works</h3>
+            <h3 className="text-lg font-semibold text-foreground mb-2">Variant Intent</h3>
             <p>
-              Instagram shows profile pictures as tiny thumbnails, but the full-resolution photo (up to 1080×1080 pixels) is publicly available for every account. Enter a username and this tool fetches that full-size image so you can {variant.headerTitle.toLowerCase().includes("download") ? "save it in original quality" : "view it in full detail"} — no Instagram login, no app install.
+              This page targets users searching for {variant.headerTitle.toLowerCase()} and related query variants. It keeps the same core viewer functionality while narrowing copy and metadata to a specific intent cluster.
+            </p>
+          </div>
+
+          <div>
+            <h3 className="text-lg font-semibold text-foreground mb-2">Keyword Focus</h3>
+            <p>
+              Primary terms for this route include: {(variant.keywords || ["instagram dp viewer", "insta dp viewer", "instagram profile picture viewer"]).slice(0, 3).join(", ")}. This helps avoid duplicate intent across DP pages and improves long-tail topical coverage.
             </p>
           </div>
 
           <div>
             <h3 className="text-lg font-semibold text-foreground mb-2">Scope and Limits</h3>
             <p>
-              This tool only shows profile pictures, which Instagram keeps publicly visible on every account. It does not — and cannot — access private posts, stories, reels, or any other restricted content.
+              This page is limited to profile-picture workflows and does not provide access to private posts, stories, or restricted account content.
             </p>
           </div>
         </div>
       ),
 
       proTip:
-        "Type the exact username (the @handle, not the display name) or paste the full profile link for the most reliable lookup.",
+        "Use exact usernames and canonical Instagram profile links for best lookup accuracy.",
 
       faqs: [
         ...(variant.faqOverrides || []),
         {
-          question: "Does this work on mobile browsers?",
-          answer: "Yes. It works in any browser on phones, tablets, and desktops — no app needed.",
-        },
-        {
-          question: "Do I need to log in to use this page?",
-          answer: "No. Just enter a username — no Instagram account or login is required.",
-        },
-        {
-          question: "Will every username return a picture?",
+          question: "What makes this variant different from the main DP page?",
           answer:
-            "Any existing, active account returns its profile picture. Deleted, deactivated, or misspelled usernames return nothing — double-check the exact @handle.",
+            "It targets a narrower query cluster while using the same underlying viewer workflow.",
+        },
+        {
+          question: "Can I use this variant on mobile browsers?",
+          answer: "Yes. Mobile and desktop browsers are supported.",
+        },
+        {
+          question: "Do I need to login to use this page?",
+          answer: "No. It is designed for no-login usage.",
+        },
+        {
+          question: "Will every username return output?",
+          answer:
+            "Output depends on source availability and account visibility.",
         },
         {
           question: "Is this free?",
-          answer: "Yes. It is completely free, with no signup and no watermark.",
+          answer: "Yes. This variant page is free to use.",
         },
       ],
 

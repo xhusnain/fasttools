@@ -28,6 +28,16 @@ const baseMetadata = createMetadata({
       "Purchasing Power Calculator",
       "Historical Value Calculator",
       "Past Value to Present Calculator",
+      "Future Value of Money Calculator",
+      "Cost of Living Calculator (over time)",
+      "Real Value Calculator",
+      "Nominal vs Real Calculator",
+      "Dollar Value Today Calculator",
+      "How Much Was $1 Worth Calculator",
+      "Money in Today's Dollars Calculator",
+      "Inflation Rate Calculator",
+      "BLS CPI Calculator",
+      "Decade Comparison Calculator",
     ],
     applicationCategory: "FinanceApplication",
     featureList: [
@@ -358,11 +368,11 @@ export default function InflationCalculatorPage() {
 
     relatedTools: [
       { name: "Compound Interest Calculator", href: "/finance-tools/compound-interest" },
-      { name: "Investment Calculator", href: "/finance-tools/compound-interest" },
+      { name: "Investment Calculator", href: "/finance-tools/investment-calculator" },
       { name: "Retirement Calculator", href: "/finance-tools/retirement-calculator" },
       { name: "Net Worth Calculator", href: "/finance-tools/net-worth-calculator" },
       { name: "Savings Goal Tracker", href: "/finance-tools/savings-tracker" },
-      { name: "Interest Rate Calculator", href: "/finance-tools/loan-calculator" },
+      { name: "Interest Rate Calculator", href: "/finance-tools/interest-rate-calculator" },
       { name: "Finance Calculator", href: "/finance-tools/finance-calculator" },
       { name: "Currency Converter", href: "/converters/currency" },
       { name: "All Finance Tools", href: "/finance-tools" }

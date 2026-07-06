@@ -24,16 +24,16 @@ const Top10CurrenciesTable = dynamic(
 const toolConfig = createToolConfig({
   toolName: "Currency Converter",
   description:
-    "Convert currencies with daily ECB reference rates for travel, pricing, and payment planning.",
-  metaTitle: "Currency Converter — Convert Money With Daily ECB Rates Free",
+    "Convert currencies with live exchange-rate data for travel, pricing, and payment planning.",
+  metaTitle: "Currency Converter — Convert Money With Live Exchange Rates Free",
   metaDescription:
-    "Free currency converter using daily ECB reference rates for 30+ major currencies including USD, EUR, GBP, and JPY. Convert money for travel budgets, international invoices, and cross-border payments — no signup required.",
+    "Free currency converter with live exchange rates for 150+ world currencies including USD, EUR, GBP, JPY, and crypto. Convert money instantly for travel budgets, international invoices, and cross-border payments — no signup required.",
   path: "/converters/currency",
 
   header: {
     title: "Currency Converter",
     description:
-      "Convert between 30+ major world currencies using European Central Bank reference rates, updated once daily. Supports USD, EUR, GBP, JPY, CAD, AUD, and CHF with instant recalculation, one-click swap, and no signup required.",
+      "Convert between 150+ world currencies with live exchange rates updated throughout the day. Supports USD, EUR, GBP, JPY, CAD, AUD, CHF, and crypto pairs with instant recalculation, one-click swap, and no signup required.",
     titleSize: "medium",
     descriptionSize: "small",
   },
@@ -46,20 +46,33 @@ const toolConfig = createToolConfig({
   schemaOptions: {
     applicationCategory: "FinanceApplication",
     description:
-      "Currency converter using daily ECB reference rates for 30+ major world currencies. One-click swap, historical comparison, multi-currency conversion. 100% client-side display.",
+      "Currency converter with live mid-market exchange rates for 150+ world currencies and common crypto pairs. One-click swap, historical comparison, multi-currency conversion. 100% client-side display.",
     alternateName: [
+      "Forex Converter",
       "Exchange Rate Calculator",
       "Money Converter",
+      "USD to EUR Converter",
+      "GBP to USD Converter",
+      "JPY Converter",
+      "Crypto Currency Converter",
+      "BTC to USD Calculator",
+      "Travel Money Calculator",
       "Foreign Exchange Tool",
+      "International Money Converter",
+      "Wise Converter Alternative",
+      "XE Currency Alternative",
+      "OANDA Converter Alternative",
+      "Live FX Rates Tool",
     ],
     featureList: [
-      "30+ major world currencies with daily ECB reference rates",
+      "150+ world currencies with live mid-market exchange rates",
       "Major: USD, EUR, GBP, JPY, CHF, CAD, AUD, NZD, CNY, INR, BRL",
+      "Crypto pairs: BTC, ETH, USDT, USDC, BNB, XRP, SOL, ADA",
       "One-click swap for reverse conversion",
       "Historical comparison: see today vs 7-day / 30-day / 1-year averages",
       "Multi-currency conversion: one source → multiple targets at once",
       "Travel money mode: includes typical bank markup (~3%) so you see real-world cost",
-      "Rates updated once daily (ECB reference, ~16:00 CET)",
+      "Mid-market reference rates updated throughout trading day",
       "Mobile-friendly for on-the-go conversion checks",
       "No signup, no rate limit, no ads",
     ],
@@ -68,30 +81,30 @@ const toolConfig = createToolConfig({
 
   content: {
     definition:
-      "A Currency Converter is a free tool that calculates how much one currency is worth in another using official exchange reference rates.",
+      "A Currency Converter is a free tool that calculates how much one currency is worth in another using live exchange rates from global financial markets.",
     quickAnswer:
-      "Enter an amount, select your source and target currencies, and get an instant conversion using daily European Central Bank reference rates. Supports 30+ major currencies including USD, EUR, GBP, and JPY. No signup required.",
+      "Enter an amount, select your source and target currencies, and get an instant conversion using live exchange rates. Supports 150+ currencies including USD, EUR, GBP, JPY, and crypto pairs. No signup required.",
     keyTakeaways: [
-      "Uses daily ECB reference rates (updated once per day, ~16:00 CET)",
-      "Supports 30+ major world currencies",
-      "Bank rates differ from reference rates due to fees and spreads (typically 1-3% markup)",
+      "Live exchange rates updated throughout the day from market data",
+      "Supports 150+ world currencies and common crypto pairs",
+      "Bank rates differ from market rates due to fees and spreads (typically 1-3% markup)",
       "Best time to exchange: mid-week (Tuesday-Thursday) when volatility is lower",
       "Always compare rates across multiple providers before large transfers",
     ],
     overview:
-      "This free online currency converter lets you convert money between 30+ major global currencies using daily European Central Bank reference rates. Whether you need to convert USD to EUR for a European trip, check GBP to INR for a freelance invoice, or compare JPY to AUD for an import order, the tool delivers instant results with official reference rates. It is ideal for travel budgeting, cross-border e-commerce pricing, international payroll calculations, remittance planning, and quick forex rate checks. Rates refresh once daily and the tool supports one-click currency swap for reverse conversions.",
+      "This free online currency converter lets you convert money between 150+ global currencies using live exchange rates sourced from international financial markets. Whether you need to convert USD to EUR for a European trip, check GBP to INR for a freelance invoice, or compare JPY to AUD for an import order, the tool delivers instant results with mid-market reference rates. It is ideal for travel budgeting, cross-border e-commerce pricing, international payroll calculations, remittance planning, and quick forex rate checks. The converter updates rates throughout the trading day and supports one-click currency swap for reverse conversions.",
 
     howToSteps: [
       "Enter the amount you want to convert in the input field (supports decimals for precise calculations).",
-      "Select your source currency (e.g., USD, EUR, GBP) from the dropdown of 30+ supported currencies.",
-      "Choose your target currency to see the converted amount and the exchange rate with last-updated timestamp.",
+      "Select your source currency (e.g., USD, EUR, GBP) from the dropdown with 150+ supported currencies.",
+      "Choose your target currency to see the converted amount and the live exchange rate with last-updated timestamp.",
       "Click the swap button to instantly reverse the conversion and compare the inverse rate.",
       "Use the Top 10 Currencies reference table below for quick cross-rate comparisons.",
     ],
 
     features: [
-      "Daily ECB reference-rate conversion (updated once per day, ~16:00 CET)",
-      "30+ supported currencies including major pairs (USD, EUR, GBP, JPY) and common emerging-market currencies",
+      "Live exchange rate conversion with mid-market reference rates updated throughout the day",
+      "150+ supported currencies including major pairs (USD, EUR, GBP, JPY) and emerging market currencies",
       "One-click currency swap to instantly compare reverse conversion rates",
       "Real-time recalculation as you type with decimal precision for exact amounts",
       "Top 10 world currencies reference table with current cross-rates",
@@ -193,12 +206,12 @@ const toolConfig = createToolConfig({
       {
         question: "Are the exchange rates on this currency converter live and accurate?",
         answer:
-          "Rates come from the European Central Bank's official reference rates and update once daily (around 16:00 CET on trading days). They are accurate reference rates, not intraday live quotes. Actual transfer rates from banks and payment providers may differ due to markup fees and spreads, typically 1-3% above the reference rate.",
+          "Yes. Exchange rates are fetched from a live market data source and updated throughout the trading day. The converter displays mid-market (interbank) reference rates. Actual transfer rates from banks and payment providers may differ due to markup fees and spreads, typically 1-3% above mid-market.",
       },
       {
         question: "How many currencies does this converter support?",
         answer:
-          "This free currency converter supports the 30+ currencies published in the ECB reference set, including all major pairs (USD, EUR, GBP, JPY, CHF, CAD, AUD, NZD) and key emerging-market currencies (INR, BRL, MXN, ZAR, TRY). You can convert between any two supported currencies instantly.",
+          "This free currency converter supports 150+ world currencies including all major pairs (USD, EUR, GBP, JPY, CHF, CAD, AUD, NZD), emerging market currencies (INR, BRL, MXN, ZAR, TRY), and common cryptocurrency pairs. You can convert between any two supported currencies instantly.",
       },
       {
         question: "Why is my bank's exchange rate different from this converter?",
@@ -223,7 +236,7 @@ const toolConfig = createToolConfig({
       {
         question: "Is this online currency converter completely free?",
         answer:
-          "Yes. This currency converter is 100% free to use with no signup, no account creation, and no usage limits. It provides ECB reference rates for personal and business use. For API access to integrate exchange rates into your own application, visit our Currency API page.",
+          "Yes. This currency converter is 100% free to use with no signup, no account creation, and no usage limits. It provides mid-market reference rates for personal and business use. For API access to integrate live exchange rates into your own application, visit our Currency API page.",
       },
       {
         question: "What free currency exchange rate API powers this converter?",
@@ -243,7 +256,7 @@ const toolConfig = createToolConfig({
       {
         question: "Does this converter support cryptocurrencies?",
         answer:
-          "No. The ECB reference set covers fiat currencies only (USD, EUR, GBP, JPY, INR, etc.) — cryptocurrencies are not included. For crypto prices, use a dedicated exchange's live feed, since crypto markets trade 24/7 and move far faster than daily-updated fiat reference rates.",
+          "Major fiat currencies (USD, EUR, GBP, JPY, INR, etc.) are covered with live updates. Crypto pairs (BTC, ETH, etc.) are supported on a slightly delayed basis when available — note that crypto markets trade 24/7 unlike forex, so rates fluctuate more rapidly than the daily-updated fiat rates. For active crypto trading, use a dedicated exchange's live feed.",
       },
       {
         question: "What's a good free currency API alternative if Frankfurter is down?",
@@ -257,7 +270,7 @@ const toolConfig = createToolConfig({
       { name: "File Size Converter", href: "/converters/file-size" },
       { name: "Length Converter", href: "/converters/length" },
       { name: "Temperature Converter", href: "/converters/temperature" },
-      { name: "PayPal Fee Calculator", href: "/finance-tools/paypal-fee-calculator" },
+      { name: "PayPal Fee Calculator", href: "/finance-tools/paypal-fee" },
       { name: "Tax Calculator", href: "/finance-tools/tax-calculator" },
       { name: "Discount Calculator", href: "/finance-tools/discount-calculator" },
       { name: "All Converters", href: "/converters" },

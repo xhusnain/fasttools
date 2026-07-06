@@ -28,6 +28,16 @@ const toolConfig = createToolConfig({
       "Shrink PDF",
       "PDF Size Reducer",
       "Compress PDF to Smaller Size",
+      "PDF Optimizer",
+      "PDF File Size Reducer",
+      "Make PDF Smaller",
+      "ilovepdf Compress Alternative",
+      "Smallpdf Compress Alternative",
+      "PDF24 Compress Alternative",
+      "Adobe PDF Compress Alternative",
+      "PDF for Email Compressor",
+      "Scanned PDF Compressor",
+      "Image PDF Compressor",
     ],
     featureList: [
       "Three compression levels: low (best quality), medium, high (smallest)",
@@ -177,7 +187,6 @@ const toolConfig = createToolConfig({
     ],
 
     relatedTools: [
-      { name: "PDF Signature Checker", href: "/pdf-tools/pdf-signature-checker" },
       { name: "Image to PDF Converter", href: "/pdf-tools/image-to-pdf" },
       { name: "Merge PDF", href: "/pdf-tools/pdf-splitter-merger" },
       { name: "PDF Unlocker", href: "/pdf-tools/pdf-unlocker" },

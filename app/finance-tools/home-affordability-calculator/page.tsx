@@ -33,6 +33,16 @@ const baseMetadata = createMetadata({
       "Home Buying Calculator",
       "How Much Home Can I Afford",
       "How Much House Can I Afford",
+      "Maximum Home Price Calculator",
+      "First-Time Home Buyer Affordability",
+      "DTI Affordability Calculator",
+      "28/36 Rule Calculator",
+      "Front-End DTI Calculator",
+      "Back-End DTI Calculator",
+      "Income to Home Price Calculator",
+      "Salary to Mortgage Calculator",
+      "Home Purchase Power Calculator",
+      "House Budget Calculator",
     ],
     applicationCategory: "FinanceApplication",
     featureList: [
@@ -271,7 +281,7 @@ export default function HomeAffordabilityCalculatorPage() {
 
     relatedTools: [
       { name: "Mortgage Calculator", href: "/finance-tools/mortgage-calculator" },
-      { name: "Amortization Calculator", href: "/finance-tools/loan-calculator" },
+      { name: "Amortization Calculator", href: "/finance-tools/amortization-calculator" },
       { name: "Loan Calculator", href: "/finance-tools/loan-calculator" },
       { name: "Rent vs Buy Calculator", href: "/finance-tools/rent-vs-buy-calculator" },
       { name: "Net Worth Calculator", href: "/finance-tools/net-worth-calculator" },

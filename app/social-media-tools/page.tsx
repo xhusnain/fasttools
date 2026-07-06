@@ -46,15 +46,9 @@ const socialTools = [
     icon: User,
   },
   {
-    title: "Insta DP Download",
-    description: "Download any Instagram profile picture in full HD (1080p).",
-    href: "/social-media-tools/instagram-dp/download",
-    icon: User,
-  },
-  {
-    title: "Insta Zoom",
-    description: "Zoom any Instagram profile picture to full size in HD.",
-    href: "/social-media-tools/instagram-dp/zoom-profile-picture",
+    title: "Instagram Profile Picture Viewer",
+    description: "View, zoom, and save full-size Instagram profile pictures.",
+    href: "/social-media-tools/instagram-profile-picture-viewer",
     icon: User,
   },
   {

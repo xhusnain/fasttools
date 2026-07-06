@@ -13,7 +13,7 @@ const toolConfig = createToolConfig({
   toolName: "HTTP Status Codes",
   description:
     "Search HTTP, SMTP, and FTP response codes with short meanings, category filters, and expandable troubleshooting notes.",
-  metaTitle: "HTTP Status Codes Reference - 1xx to 5xx Lookup",
+  metaTitle: "HTTP Status Codes Reference - 1xx to 5xx Lookup | FastTools",
   metaDescription:
     "Search HTTP status codes from 1xx to 5xx, plus SMTP and FTP response codes. Filter by protocol and category, expand each code, and review HTTP method safety/idempotency.",
   path: "/dev-tools/http-status-codes",
@@ -42,6 +42,11 @@ const toolConfig = createToolConfig({
       "REST API Status Codes",
       "HTTP Error Codes",
       "HTTP Codes Cheat Sheet",
+      "REST Status Code Guide",
+      "API Status Code Reference",
+      "SMTP Reply Codes",
+      "FTP Reply Codes",
+      "HTTP Debugging Guide",
     ],
     featureList: [
       "Search by code, name, or description",

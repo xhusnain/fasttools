@@ -11,9 +11,9 @@ import { LoadingSpinner } from "@/components/common/loading-spinner"
 
 import { FutureAgeResult } from "@/types/calculator-types/future-age-predictor.types"
 
-export function FutureAgePredictor({ defaultTargetYear }: { defaultTargetYear?: string } = {}) {
+export function FutureAgePredictor() {
   const [birthDate, setBirthDate] = useState("")
-  const [targetYear, setTargetYear] = useState(defaultTargetYear ?? "")
+  const [targetYear, setTargetYear] = useState("")
   const [result, setResult] = useState<FutureAgeResult | null>(null)
   const [isCalculating, setIsCalculating] = useState(false)
   const [copied, setCopied] = useState(false)

@@ -442,8 +442,8 @@ export default function CortisolPeakCalculatorPage() {
 
     relatedTools: [
       { name: "BMI Calculator", href: "/calculator/bmi-calculator" },
-      { name: "Calorie Calculator", href: "/calculator/tdee-macro-calculator" },
-      { name: "BMR Calculator", href: "/calculator/tdee-macro-calculator" },
+      { name: "Calorie Calculator", href: "/calculator/calorie-calculator" },
+      { name: "BMR Calculator", href: "/calculator/bmr-calculator" },
       { name: "Body Fat Calculator", href: "/calculator/body-fat-calculator" },
       { name: "TDEE & Macro Calculator", href: "/calculator/tdee-macro-calculator" },
       { name: "Biological Age Calculator", href: "/calculator/biological-age-calculator" },

@@ -15,9 +15,9 @@ const InstagramDpViewer = dynamic(
 )
 
 const baseMetadata = createMetadata({
-  title: "Insta DP Viewer — View & Download Instagram DP Full Size (HD)",
+  title: "Instagram DP Viewer — View & Download Full Size Profile Picture Free",
   description:
-    "Type any username, see the full-size Insta DP in seconds. Zoom Instagram profile pictures in HD and download free — no login, no app, works on private accounts.",
+    "Free Instagram DP viewer and profile picture downloader. View any Insta DP in full size HD by username. InstaDp viewer online — anonymous, no login required. Works for public and private account profile photos.",
   path: "/social-media-tools/instagram-dp",
   breadcrumbs: [
     { label: "Social Media Tools", href: "/social-media-tools" },
@@ -32,6 +32,16 @@ const baseMetadata = createMetadata({
       "Instagram Profile Picture Viewer",
       "Instagram Profile Picture Downloader",
       "Instagram DP Download",
+      "Insta DP Download",
+      "Instagram PFP Downloader",
+      "Full Size DP Viewer",
+      "HD Profile Picture Tool",
+      "Instagram Avatar Downloader",
+      "Anonymous Insta DP Viewer",
+      "Private Account DP Viewer",
+      "Insta Profile Photo Saver",
+      "IG DP Zoom Tool",
+      "Instagram Profile Image Downloader",
     ],
     applicationCategory: "UtilitiesApplication",
     featureList: [
@@ -378,12 +388,9 @@ export default function InstagramDpPage() {
       { question: "Can I view my own profile picture?", answer: "Yes. Enter your own username to check image quality, verify the circular crop looks good, or download a backup of your own profile photo." }
     ],
     relatedTools: [
-      { name: "Insta DP Download — Full HD", href: "/social-media-tools/instagram-dp/download" },
       { name: "Insta Zoom Profile Picture Viewer", href: "/social-media-tools/instagram-dp/zoom-profile-picture" },
       { name: "Instagram DP Viewer HD 1080p", href: "/social-media-tools/instagram-dp/hd-1080p" },
       { name: "Private Instagram DP Viewer", href: "/social-media-tools/instagram-dp/private-account" },
-      { name: "Anonymous Instagram DP Viewer", href: "/social-media-tools/instagram-dp/anonymous-viewer" },
-      { name: "Instagram DP Viewer for PC & Mac", href: "/social-media-tools/instagram-dp/pc-viewer" },
       // Out-of-cluster links: push authority to page-2 social tools (same creator audience)
       { name: "Hashtag Counter — Instagram, TikTok & X", href: "/social-media-tools/hashtag-counter" },
       { name: "YouTube Channel Name & Handle Checker", href: "/social-media-tools/channel-checker" },
@@ -400,7 +407,7 @@ export default function InstagramDpPage() {
   return (
     <ToolPageLayout
       header={{
-        title: "Insta DP Viewer — View & Download Full Size Profile Pictures",
+        title: "Instagram DP Viewer — View & Download Full Size Profile Pictures",
         description: "View any Instagram profile picture in full HD resolution by username. Download Insta DP in one click. Anonymous, no login required, works on all devices. Free InstaDp viewer online.",
         titleSize: "medium",
         descriptionSize: "small",

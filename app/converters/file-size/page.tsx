@@ -184,9 +184,6 @@ const toolConfig = createToolConfig({
     ],
 
     relatedTools: [
-      { name: "Bytes to MB Converter", href: "/converters/bytes-to-mb" },
-      { name: "Bytes to KB Converter", href: "/converters/bytes-to-kb" },
-      { name: "KB to MB Converter", href: "/converters/kb-to-mb" },
       { name: "Length Converter", href: "/converters/length" },
       { name: "Temperature Converter", href: "/converters/temperature" },
       { name: "Timezone Converter", href: "/converters/timezone" },

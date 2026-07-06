@@ -29,6 +29,8 @@ const baseMetadata = createMetadata({
       "Workers KV Cost Calculator",
       "R2 Cost Calculator",
       "Durable Objects Cost Calculator",
+      "Edge Compute Cost Estimator",
+      "Cloudflare Serverless Cost Calculator",
     ],
     applicationCategory: "DeveloperApplication",
     featureList: [
@@ -54,7 +56,7 @@ export default function CloudflareWorkersCostPage() {
   const toolContent = {
     toolName: "Cloudflare Workers Cost Calculator",
     overview:
-      "Estimate a Cloudflare Workers monthly bill from request volume, average CPU time, Workers KV usage, R2 storage and operations, and Durable Objects usage. Rates in this calculator were last verified against Cloudflare's published Workers pricing in July 2026; always confirm final rates and limits in Cloudflare's billing pages before committing production budgets.",
+      "Estimate a Cloudflare Workers monthly bill from request volume, average CPU time, Workers KV usage, R2 storage and operations, and Durable Objects usage. The calculator is intended for planning and comparison; always verify final rates and limits in Cloudflare's billing pages before committing production budgets.",
 
     definition:
       "A Cloudflare Workers cost calculator estimates monthly edge-compute spend from Workers requests, billable CPU milliseconds, and optional storage or database services such as Workers KV, R2, and Durable Objects.",
@@ -134,7 +136,7 @@ export default function CloudflareWorkersCostPage() {
     relatedTools: [
       { name: "LLM Training Cost Calculator", href: "/dev-tools/llm-training-cost" },
       { name: "AI API Cost Calculator", href: "/ai-tools/ai-api-cost-calculator" },
-      { name: "SaaS Payback Calculator", href: "/finance-tools/cac-payback-calculator" },
+      { name: "SaaS Payback Calculator", href: "/finance-tools/saas-payback-calculator" },
       { name: "SaaS Churn Calculator", href: "/finance-tools/saas-churn-calculator" },
       { name: "Startup Runway Calculator", href: "/finance-tools/startup-runway-calculator" },
       { name: "DNS Lookup & SSL Checker", href: "/web-tools/dns-ssl-checker" },

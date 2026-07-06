@@ -27,6 +27,16 @@ const baseMetadata = createMetadata({
       "Pace Per Km Calculator",
       "Race Time Calculator",
       "Marathon Pace Calculator",
+      "Half Marathon Pace Calculator",
+      "5K Pace Calculator",
+      "10K Pace Calculator",
+      "Treadmill Pace Calculator",
+      "Heart Rate Zone Calculator",
+      "VO2 Max Estimator",
+      "Negative Split Calculator",
+      "Strava Pace Tool",
+      "Garmin Pace Tool",
+      "Cyclist Speed Calculator",
     ],
     applicationCategory: "SportsApplication",
     featureList: [
@@ -478,8 +488,8 @@ export default function PaceCalculatorPage() {
 
     relatedTools: [
       { name: "BMI Calculator", href: "/calculator/bmi-calculator" },
-      { name: "Calorie Calculator", href: "/calculator/tdee-macro-calculator" },
-      { name: "BMR Calculator", href: "/calculator/tdee-macro-calculator" },
+      { name: "Calorie Calculator", href: "/calculator/calorie-calculator" },
+      { name: "BMR Calculator", href: "/calculator/bmr-calculator" },
       { name: "TDEE & Macro Calculator", href: "/calculator/tdee-macro-calculator" },
       { name: "Body Fat Calculator", href: "/calculator/body-fat-calculator" },
       { name: "Biological Age Calculator", href: "/calculator/biological-age-calculator" },

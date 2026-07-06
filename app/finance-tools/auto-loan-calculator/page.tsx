@@ -29,6 +29,16 @@ const baseMetadata = createMetadata({
       "Vehicle Payment Calculator",
       "Car Finance Calculator",
       "Monthly Car Payment Calculator",
+      "Used Car Loan Calculator",
+      "New Car Loan Calculator",
+      "Car Affordability Calculator",
+      "Auto Refinance Calculator",
+      "Car Loan Amortization Calculator",
+      "Truck Loan Calculator",
+      "Motorcycle Loan Calculator",
+      "Vehicle Finance Calculator",
+      "Car APR Calculator",
+      "How Much Car Can I Afford",
     ],
     applicationCategory: "FinanceApplication",
     featureList: [
@@ -400,6 +410,30 @@ export default function AutoLoanCalculatorPage() {
             </table>
           </div>
         </section>
+
+        <section className="bg-card border border-border rounded-lg p-6">
+          <h2 className="text-2xl font-bold mb-6 flex items-center gap-2 text-foreground">
+            <Info className="h-6 w-6 text-primary" />
+            The Same Tool, Many Names
+          </h2>
+          <p className="text-sm text-muted-foreground mb-3">
+            This calculator answers every phrasing of the same question:
+          </p>
+          <ul className="grid grid-cols-1 md:grid-cols-2 gap-2 text-sm text-muted-foreground">
+            <li>· car payment calculator / monthly car payment calculator</li>
+            <li>· auto loan calculator / car loan calculator</li>
+            <li>· new car loan calculator / used car loan calculator</li>
+            <li>· car finance calculator / vehicle finance calculator</li>
+            <li>· car loan amortization calculator</li>
+            <li>· auto refinance calculator</li>
+            <li>· truck / motorcycle / RV loan calculator</li>
+            <li>· how much car can I afford</li>
+            <li>· car APR calculator</li>
+            <li>· car loan with trade-in calculator</li>
+            <li>· car loan with tax calculator</li>
+            <li>· loan-to-value calculator for autos</li>
+          </ul>
+        </section>
       </div>
     ),
 
@@ -449,10 +483,10 @@ export default function AutoLoanCalculatorPage() {
     relatedTools: [
       { name: "Loan Calculator", href: "/finance-tools/loan-calculator" },
       { name: "Mortgage Calculator", href: "/finance-tools/mortgage-calculator" },
-      { name: "Amortization Calculator", href: "/finance-tools/loan-calculator" },
-      { name: "Interest Rate Calculator", href: "/finance-tools/loan-calculator" },
-      { name: "Payment Calculator", href: "/finance-tools/loan-calculator" },
-      { name: "Credit Card Payoff Calculator", href: "/finance-tools/debt-payoff-calculator" },
+      { name: "Amortization Calculator", href: "/finance-tools/amortization-calculator" },
+      { name: "Interest Rate Calculator", href: "/finance-tools/interest-rate-calculator" },
+      { name: "Payment Calculator", href: "/finance-tools/payment-calculator" },
+      { name: "Credit Card Payoff Calculator", href: "/finance-tools/credit-card-payoff" },
       { name: "Debt Payoff Calculator", href: "/finance-tools/debt-payoff-calculator" },
       { name: "All Finance Tools", href: "/finance-tools" },
     ]

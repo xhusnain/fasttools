@@ -7,10 +7,10 @@ import { Calendar, Cake, Clock, PartyPopper, Code, Globe, Calculator, ArrowRight
 
 const tools = [
   {
-    title: "How Old Will I Be — Future Age Calculator",
+    title: "Future Age Predictor",
     description: "Discover how old you'll be in any future year. Fun way to visualize your future age!",
     icon: Calendar,
-    href: "/fun-tools/how-old-will-i-be",
+    href: "/fun-tools/future-age",
     popular: true,
   },
   {
@@ -24,7 +24,7 @@ const tools = [
     title: "Anniversary Calculator",
     description: "Calculate how long you've been together and when your next anniversary is.",
     icon: PartyPopper,
-    href: "/fun-tools/anniversary-calculator",
+    href: "/fun-tools/anniversary",
     popular: false,
   },
   {

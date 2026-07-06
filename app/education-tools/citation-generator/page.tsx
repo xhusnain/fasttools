@@ -42,6 +42,11 @@ const toolConfig = createToolConfig({
       "Chicago Citation Generator",
       "Harvard Reference Generator",
       "Bibliography Maker",
+      "Reference Generator",
+      "BibTeX Generator",
+      "DOI Citation Tool",
+      "ISBN Citation Tool",
+      "Free Citation Tool",
     ],
   },
 
@@ -251,8 +256,6 @@ const toolConfig = createToolConfig({
     ],
 
     relatedTools: [
-      { name: "ISBN to Citation Converter", href: "/education-tools/isbn-to-citation" },
-      { name: "DOI to BibTeX Converter", href: "/education-tools/doi-to-bibtex" },
       { name: "Word Counter", href: "/seo-tools/word-counter" },
       { name: "Text Similarity Checker", href: "/seo-tools/text-similarity-checker" },
       { name: "Keyword Density Checker", href: "/seo-tools/keyword-density" },

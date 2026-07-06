@@ -27,6 +27,16 @@ const pregnancyMetadataOptions = {
       "Gestational Age Calculator",
       "EDD Calculator",
       "Weeks Pregnant Calculator",
+      "Pregnancy Week Tracker",
+      "LMP Pregnancy Calculator",
+      "Ultrasound Due Date",
+      "IVF Due Date Calculator",
+      "Pregnancy Weight Gain Tracker",
+      "BabyCenter Alternative",
+      "What to Expect Tracker Alternative",
+      "Trimester Calculator",
+      "Pregnancy Conception Tracker",
+      "Naegele's Rule Calculator",
     ],
     applicationCategory: "HealthApplication",
     featureList: [
@@ -478,9 +488,9 @@ export default function PregnancyCalculatorPage() {
       { name: "Pregnancy Conception Calculator", href: "/calculator/pregnancy-conception-calculator" },
       { name: "Ovulation Calculator", href: "/calculator/ovulation-calculator" },
       { name: "Age Calculator", href: "/calculator/age-calculator" },
-      { name: "Future Age Predictor", href: "/fun-tools/how-old-will-i-be" },
+      { name: "Future Age Predictor", href: "/fun-tools/future-age" },
       { name: "BMI Calculator", href: "/calculator/bmi-calculator" },
-      { name: "Calorie Calculator", href: "/calculator/tdee-macro-calculator" },
+      { name: "Calorie Calculator", href: "/calculator/calorie-calculator" },
       { name: "Date Difference Calculator", href: "/calculator/date-difference" },
       { name: "All Calculators", href: "/calculator" }
     ]

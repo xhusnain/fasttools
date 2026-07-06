@@ -54,7 +54,7 @@ export function PersonalizedActionPlan({ bmi, category, riskLevel }: Personalize
                             </div>
                             <div className="bg-white/50 dark:bg-black/20 p-4 rounded-lg border border-blue-100 dark:border-blue-900">
                                 <h4 className="font-semibold mb-2">Helpful Tools</h4>
-                                <a href="/calculator/tdee-macro-calculator" className="flex items-center justify-between p-2 rounded hover:bg-white dark:hover:bg-white/10 transition-colors text-sm font-medium">
+                                <a href="/calculator/calorie-calculator" className="flex items-center justify-between p-2 rounded hover:bg-white dark:hover:bg-white/10 transition-colors text-sm font-medium">
                                     Calorie Calculator
                                     <ArrowRight className="h-4 w-4" />
                                 </a>
@@ -94,7 +94,7 @@ export function PersonalizedActionPlan({ bmi, category, riskLevel }: Personalize
                             </div>
                             <div className="bg-white/50 dark:bg-black/20 p-4 rounded-lg border border-green-100 dark:border-green-900">
                                 <h4 className="font-semibold mb-2">Helpful Tools</h4>
-                                <a href="/calculator/tdee-macro-calculator" className="flex items-center justify-between p-2 rounded hover:bg-white dark:hover:bg-white/10 transition-colors text-sm font-medium">
+                                <a href="/calculator/bmr-calculator" className="flex items-center justify-between p-2 rounded hover:bg-white dark:hover:bg-white/10 transition-colors text-sm font-medium">
                                     BMR Calculator
                                     <ArrowRight className="h-4 w-4" />
                                 </a>
@@ -135,7 +135,7 @@ export function PersonalizedActionPlan({ bmi, category, riskLevel }: Personalize
                             <div className="bg-white/50 dark:bg-black/20 p-4 rounded-lg border border-amber-100 dark:border-amber-900">
                                 <h4 className="font-semibold mb-2">Helpful Tools</h4>
                                 <div className="space-y-1">
-                                    <a href="/calculator/tdee-macro-calculator" className="flex items-center justify-between p-2 rounded hover:bg-white dark:hover:bg-white/10 transition-colors text-sm font-medium border-b border-white/20">
+                                    <a href="/calculator/calorie-calculator" className="flex items-center justify-between p-2 rounded hover:bg-white dark:hover:bg-white/10 transition-colors text-sm font-medium border-b border-white/20">
                                         Calorie Calculator
                                         <ArrowRight className="h-4 w-4" />
                                     </a>
@@ -180,7 +180,7 @@ export function PersonalizedActionPlan({ bmi, category, riskLevel }: Personalize
                             </div>
                             <div className="bg-white/50 dark:bg-black/20 p-4 rounded-lg border border-red-100 dark:border-red-900">
                                 <h4 className="font-semibold mb-2">Support Tools</h4>
-                                <a href="/calculator/tdee-macro-calculator" className="flex items-center justify-between p-2 rounded hover:bg-white dark:hover:bg-white/10 transition-colors text-sm font-medium">
+                                <a href="/calculator/calorie-calculator" className="flex items-center justify-between p-2 rounded hover:bg-white dark:hover:bg-white/10 transition-colors text-sm font-medium">
                                     Calorie Calculator
                                     <ArrowRight className="h-4 w-4" />
                                 </a>

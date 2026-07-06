@@ -27,6 +27,16 @@ const toolConfig = createToolConfig({
       "PDF to WebP Converter",
       "Convert PDF to Image",
       "Extract Images from PDF",
+      "PDF Page to Image",
+      "Save PDF as JPG",
+      "Save PDF as PNG",
+      "PDF Screenshot Converter",
+      "PDF to Picture",
+      "Each PDF Page as Image",
+      "PDF Slide Extractor",
+      "PDF Thumbnail Generator",
+      "ilovepdf PDF to JPG Alternative",
+      "Smallpdf PDF to JPG Alternative",
     ],
     featureList: [
       "Convert PDF to JPG, PNG, or WebP format",
@@ -166,7 +176,6 @@ const toolConfig = createToolConfig({
     ],
 
     relatedTools: [
-      { name: "PDF Signature Checker", href: "/pdf-tools/pdf-signature-checker" },
       { name: "Image to PDF Converter", href: "/pdf-tools/image-to-pdf" },
       { name: "Merge PDF", href: "/pdf-tools/pdf-splitter-merger" },
       { name: "PDF Compressor", href: "/pdf-tools/pdf-compressor" },

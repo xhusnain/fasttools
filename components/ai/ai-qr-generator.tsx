@@ -39,8 +39,8 @@ import type {
   QRType
 } from "@/types/image-tool-types/ai-qr-generator.types"
 
-export function AiQrGenerator({ defaultQrType }: { defaultQrType?: QRType } = {}) {
-  const [qrType, setQrType] = useState<QRType>(defaultQrType ?? "url")
+export function AiQrGenerator() {
+  const [qrType, setQrType] = useState<QRType>("url")
   const [qrImage, setQrImage] = useState<string | null>(null)
   const [loading, setLoading] = useState(false)
   const fileInputRef = useRef<HTMLInputElement>(null)

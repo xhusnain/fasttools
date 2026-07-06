@@ -27,6 +27,9 @@ const toolConfig = createToolConfig({
       "Photo to PDF Converter",
       "Picture to PDF Converter",
       "Multiple Images to PDF",
+      "Screenshot to PDF Converter",
+      "Receipt Photo to PDF",
+      "PDF from Photos",
     ],
     featureList: [
       "Convert JPG, PNG, and WebP images to PDF",
@@ -216,7 +219,6 @@ const toolConfig = createToolConfig({
     ],
 
     relatedTools: [
-      { name: "PDF Signature Checker", href: "/pdf-tools/pdf-signature-checker" },
       { name: "PDF to Image", href: "/pdf-tools/pdf-to-image" },
       { name: "PDF Compressor", href: "/pdf-tools/pdf-compressor" },
       { name: "Merge PDF", href: "/pdf-tools/pdf-splitter-merger" },

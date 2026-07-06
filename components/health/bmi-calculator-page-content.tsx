@@ -469,7 +469,7 @@ export function BMICalculatorPageContent() {
               <h5 className="font-bold text-sm mb-1 group-hover:text-primary">Body Fat Calculator</h5>
               <p className="text-xs text-muted-foreground">Identify actual body fat levels vs muscle mass.</p>
             </a>
-            <a href="/calculator/tdee-macro-calculator" className="block p-4 rounded-xl border border-border bg-card hover:border-primary transition-all group">
+            <a href="/calculator/bmr-calculator" className="block p-4 rounded-xl border border-border bg-card hover:border-primary transition-all group">
               <h5 className="font-bold text-sm mb-1 group-hover:text-primary">BMR Calculator</h5>
               <p className="text-xs text-muted-foreground">Find your Basal Metabolic Rate for calorie needs.</p>
             </a>
@@ -480,7 +480,7 @@ export function BMICalculatorPageContent() {
             <h4 className="font-bold flex items-center gap-2 text-primary border-b border-primary/20 pb-2">
               <Activity className="h-4 w-4" /> Nutrition & Weight
             </h4>
-            <a href="/calculator/tdee-macro-calculator" className="block p-4 rounded-xl border border-border bg-card hover:border-primary transition-all group">
+            <a href="/calculator/calorie-calculator" className="block p-4 rounded-xl border border-border bg-card hover:border-primary transition-all group">
               <h5 className="font-bold text-sm mb-1 group-hover:text-primary">Calorie Calculator</h5>
               <p className="text-xs text-muted-foreground">Determine precise daily needs for your goals.</p>
             </a>

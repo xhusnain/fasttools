@@ -13,7 +13,7 @@ const TikTokEngagementCalculator = dynamic(
   { loading: () => <ToolLoader /> }
 )
 
-const TOOL_TITLE = "TikTok Engagement Rate Calculator — Free Checker with Benchmarks"
+const TOOL_TITLE = "Free TikTok Engagement Rate Calculator — Instant Analysis"
 const TOOL_NAME = "TikTok Engagement Rate Calculator"
 
 const baseMetadata = createMetadata({
@@ -32,6 +32,16 @@ const baseMetadata = createMetadata({
       "TikTok Influencer Rate Calculator",
       "Social Media Engagement Calculator",
       "TikTok Engagement Tool",
+      "TikTok Creator Score",
+      "TikTok Performance Calculator",
+      "Influencer ER Calculator",
+      "TikTok Reach Estimator",
+      "Engagement Rate Tracker",
+      "TikTok Profile Analyzer",
+      "Phlanx Alternative",
+      "Influencer Marketing Hub Alternative",
+      "TikTok Post Performance Tool",
+      "Cross-Platform Engagement Tool",
     ],
     applicationCategory: "UtilityApplication",
     featureList: [

@@ -7,7 +7,7 @@ const toolConfig = createToolConfig({
   toolName: "MIME Types",
   description:
     "Look up MIME types by file extension, or find common extensions for a MIME type, using the mime-db data set.",
-  metaTitle: "MIME Types Lookup - Content-Type by Extension",
+  metaTitle: "MIME Types Lookup - Content-Type by Extension | FastTools",
   metaDescription:
     "Search MIME types and file extensions. Find Content-Type values for .pdf, .json, .png, .mp4, .csv, and more, or look up extensions for a MIME type.",
   path: "/dev-tools/mime-types",
@@ -36,6 +36,10 @@ const toolConfig = createToolConfig({
       "File Extension to MIME",
       "MIME Type Finder",
       "Content-Type Header Lookup",
+      "Media Type Database",
+      "HTTP Content-Type Helper",
+      "File Type Lookup",
+      "Upload Validation Helper",
     ],
     featureList: [
       "MIME type to extension lookup",

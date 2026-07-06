@@ -59,6 +59,16 @@ const baseMetadata = createMetadata({
       "Cubic Yard Calculator",
       "Concrete Volume Calculator",
       "Concrete Bag Calculator",
+      "Driveway Concrete Estimator",
+      "Patio Concrete Calculator",
+      "Footing Concrete Calculator",
+      "Stair Concrete Estimator",
+      "Column Concrete Calculator",
+      "Sidewalk Concrete Calculator",
+      "Foundation Concrete Estimator",
+      "Concrete Cost Estimator",
+      "QUIKRETE Bag Calculator",
+      "Ready-Mix Concrete Tool",
     ],
     applicationCategory: "ConstructionApplication",
     featureList: [
@@ -526,6 +536,28 @@ export default function ConcreteCalculatorPage() {
               </tbody>
             </GTable>
           </div>
+        </article>
+
+        <article className="space-y-4">
+          <h2 className="text-2xl font-bold text-foreground flex items-center gap-2">
+            <ClipboardCheck className="h-6 w-6 text-primary" />
+            The Same Tool, Many Names
+          </h2>
+          <p className="text-base text-muted-foreground leading-relaxed">
+            This calculator handles every concrete-estimation query — whether you call it a calculator, estimator, or cost tool:
+          </p>
+          <ul className="grid grid-cols-1 md:grid-cols-2 gap-3 text-sm">
+            <li className="flex items-start gap-2"><CheckCircle className="h-4 w-4 text-green-500 mt-0.5 flex-shrink-0" /><span>concrete calculator / concrete estimator / cement calculator</span></li>
+            <li className="flex items-start gap-2"><CheckCircle className="h-4 w-4 text-green-500 mt-0.5 flex-shrink-0" /><span>concrete slab calculator / concrete slab cost calculator</span></li>
+            <li className="flex items-start gap-2"><CheckCircle className="h-4 w-4 text-green-500 mt-0.5 flex-shrink-0" /><span>concrete yards calculator / concrete cubic yards calculator</span></li>
+            <li className="flex items-start gap-2"><CheckCircle className="h-4 w-4 text-green-500 mt-0.5 flex-shrink-0" /><span>concrete bag calculator / bag count calculator</span></li>
+            <li className="flex items-start gap-2"><CheckCircle className="h-4 w-4 text-green-500 mt-0.5 flex-shrink-0" /><span>concrete cost calculator / concrete price calculator</span></li>
+            <li className="flex items-start gap-2"><CheckCircle className="h-4 w-4 text-green-500 mt-0.5 flex-shrink-0" /><span>driveway concrete calculator / patio concrete calculator</span></li>
+            <li className="flex items-start gap-2"><CheckCircle className="h-4 w-4 text-green-500 mt-0.5 flex-shrink-0" /><span>sidewalk concrete calculator / curb concrete calculator</span></li>
+            <li className="flex items-start gap-2"><CheckCircle className="h-4 w-4 text-green-500 mt-0.5 flex-shrink-0" /><span>foundation / footing / column concrete calculator</span></li>
+            <li className="flex items-start gap-2"><CheckCircle className="h-4 w-4 text-green-500 mt-0.5 flex-shrink-0" /><span>stair / step concrete calculator</span></li>
+            <li className="flex items-start gap-2"><CheckCircle className="h-4 w-4 text-green-500 mt-0.5 flex-shrink-0" /><span>how much concrete do I need calculator</span></li>
+          </ul>
         </article>
       </div>
     ),

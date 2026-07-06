@@ -2,7 +2,7 @@ import type { Metadata } from "next"
 import { ToolPageLayout } from "@/components/common/tool-page-layout"
 import { createToolConfig } from "@/lib/create-tool-config"
 import { GToolCard } from "@/ui/gtool-card"
-import { BookOpen, Code2, DollarSign, FileSearch, Hash, Heart, ImageIcon, Music, QrCode, Wand2, FileText, Volume2 } from "lucide-react"
+import { BookOpen, Code2, FileSearch, Hash, Heart, ImageIcon, Music, QrCode, Wand2, FileText, Volume2 } from "lucide-react"
 
 const aiTools = [
   {
@@ -11,13 +11,6 @@ const aiTools = [
       "Generate QR codes for URLs, WiFi, contacts, and more with logo and export options.",
     href: "/ai-tools/qr-generator",
     icon: QrCode,
-  },
-  {
-    title: "AI API Cost Calculator",
-    description:
-      "Estimate token costs across OpenAI, Anthropic, and Google models for any workload.",
-    href: "/ai-tools/ai-api-cost-calculator",
-    icon: DollarSign,
   },
   {
     title: "AI Lyrics Generator",

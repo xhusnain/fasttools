@@ -27,6 +27,16 @@ const conceptionMetadataOptions = {
       "Estimated Conception Date",
       "When Did I Conceive Calculator",
       "Reverse Pregnancy Calculator",
+      "Conception From Due Date",
+      "Conception From LMP",
+      "Conception From Ultrasound",
+      "Implantation Date Calculator",
+      "Pregnancy Week to Conception",
+      "DOC Calculator",
+      "Trimester Calculator",
+      "Fertility Date Estimator",
+      "Pregnancy Conception Tracker",
+      "Naegele Rule Conception Reverse",
     ],
     applicationCategory: "HealthApplication",
     featureList: [
@@ -212,24 +222,18 @@ export default function PregnancyConceptionCalculatorPage() {
         </section>
 
         <section className="space-y-4">
-          <h2 className="text-2xl font-bold">When Did I Conceive? — Answers by Due Month</h2>
-          <p className="text-sm text-muted-foreground">
-            Know your due month? Each page below gives the conception window for every due date in that month, with a day-by-day table:
-          </p>
-          <ul className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-2 text-sm">
-            {[
-              "january", "february", "march", "april", "may", "june",
-              "july", "august", "september", "october", "november", "december",
-            ].map((month) => (
-              <li key={month}>
-                <a
-                  href={`/calculator/pregnancy-conception-calculator/due-in-${month}`}
-                  className="text-primary hover:underline capitalize"
-                >
-                  Due in {month}
-                </a>
-              </li>
-            ))}
+          <h2 className="text-2xl font-bold">The Same Tool, Many Names</h2>
+          <ul className="grid grid-cols-1 md:grid-cols-2 gap-2 text-sm text-muted-foreground">
+            <li>· conception calculator / conceive calculator</li>
+            <li>· conception date calculator</li>
+            <li>· date of conception calculator</li>
+            <li>· estimated conception date</li>
+            <li>· accurate conception calculator</li>
+            <li>· conception calendar</li>
+            <li>· determine conception date</li>
+            <li>· when did I conceive calculator</li>
+            <li>· conception date based on due date</li>
+            <li>· pregnancy conception calculator</li>
           </ul>
         </section>
       </div>
@@ -309,9 +313,9 @@ export default function PregnancyConceptionCalculatorPage() {
       { name: "Ovulation Calculator", href: "/calculator/ovulation-calculator" },
       { name: "Age Calculator", href: "/calculator/age-calculator" },
       { name: "Date Difference Calculator", href: "/calculator/date-difference" },
-      { name: "Future Age Predictor", href: "/fun-tools/how-old-will-i-be" },
+      { name: "Future Age Predictor", href: "/fun-tools/future-age" },
       { name: "BMI Calculator", href: "/calculator/bmi-calculator" },
-      { name: "Calorie Calculator", href: "/calculator/tdee-macro-calculator" },
+      { name: "Calorie Calculator", href: "/calculator/calorie-calculator" },
       { name: "All Calculators", href: "/calculator" }
     ]
   }

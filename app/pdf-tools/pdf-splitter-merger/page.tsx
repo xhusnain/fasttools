@@ -28,6 +28,16 @@ const toolConfig = createToolConfig({
       "Combine PDFs",
       "Join PDFs",
       "Extract PDF Pages",
+      "Separate PDF Pages",
+      "PDF Page Extractor",
+      "PDF Page Remover",
+      "PDF Combiner",
+      "Concatenate PDFs",
+      "PDF Joiner",
+      "Rearrange PDF Pages",
+      "PDF Page Organizer",
+      "ilovepdf Alternative",
+      "Smallpdf Alternative",
     ],
     featureList: [
       "Split PDF into individual one-page files",
@@ -169,7 +179,6 @@ const toolConfig = createToolConfig({
     ],
 
     relatedTools: [
-      { name: "PDF Signature Checker", href: "/pdf-tools/pdf-signature-checker" },
       { name: "PDF Compressor", href: "/pdf-tools/pdf-compressor" },
       { name: "PDF Unlocker", href: "/pdf-tools/pdf-unlocker" },
       { name: "PDF to Word Converter", href: "/pdf-tools/pdf-word-converter" },

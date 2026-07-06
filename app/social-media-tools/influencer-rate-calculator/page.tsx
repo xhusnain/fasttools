@@ -13,7 +13,7 @@ const InfluencerRateCalculator = dynamic(
   { loading: () => <ToolLoader /> }
 )
 
-const TOOL_TITLE = "Influencer Rate Calculator — TikTok, Instagram & YouTube Pricing"
+const TOOL_TITLE = "Influencer Price Calculator — TikTok, Instagram & YouTube Rates"
 const TOOL_NAME = "Influencer Sponsorship Rate Calculator"
 
 const baseMetadata = createMetadata({
@@ -32,6 +32,16 @@ const baseMetadata = createMetadata({
       "Creator Rate Card Calculator",
       "Micro-Influencer Pricing Tool",
       "Brand Deal Calculator",
+      "TikTok Rate Calculator",
+      "Instagram Sponsorship Calculator",
+      "YouTube Brand Deal Estimator",
+      "Creator Earnings Calculator",
+      "UGC Rate Calculator",
+      "Influencer Pricing Tool",
+      "Affiliate Earnings Estimator",
+      "Sponsored Post Rate Calculator",
+      "CPM Influencer Tool",
+      "Rate Card Generator",
     ],
     applicationCategory: "UtilityApplication",
     featureList: [
@@ -467,7 +477,7 @@ export default function InfluencerRateCalculatorPage() {
       { name: "AI Caption Generator", href: "/ai-tools/caption-generator" },
       { name: "ROAS Calculator", href: "/ad-tools/roas-calculator" },
       { name: "Freelance Rate Calculator", href: "/finance-tools/freelance-rate-calculator" },
-      { name: "PayPal Fee Calculator", href: "/finance-tools/paypal-fee-calculator" },
+      { name: "PayPal Fee Calculator", href: "/finance-tools/paypal-fee" },
       { name: "All Social Media Tools", href: "/social-media-tools" }
     ]
   }

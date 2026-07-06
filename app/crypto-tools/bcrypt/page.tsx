@@ -36,6 +36,16 @@ const toolConfig = createToolConfig({
       "Password Hash Generator",
       "Bcrypt Online Tool",
       "$2b$ Hash Generator",
+      "Bcrypt Hash Checker",
+      "Bcrypt Test Tool",
+      "Node.js Bcrypt Compatible",
+      "Laravel Bcrypt Compatible",
+      "Django bcrypt Hasher",
+      "Rails BCrypt Compatible",
+      "Salted Password Hash",
+      "Slow Hash Tool",
+      "Login Auth Hash Generator",
+      "Bcrypt Cost Factor Tester",
     ],
     featureList: [
       "Generate bcrypt hash with cost factor 4–16 (10–12 recommended for production)",
@@ -282,7 +292,7 @@ ver cost salt (22 chars)        hash (31 chars)`}</code>
     ],
 
     relatedTools: [
-      { name: "Password Strength Analyzer", href: "/crypto-tools/password-strength-checker" },
+      { name: "Password Strength Analyzer", href: "/crypto-tools/password-strength-analyzer" },
       { name: "Password Generator", href: "/crypto-tools/password-generator" },
       { name: "Hash Text Generator", href: "/crypto-tools/hash-text" },
       { name: "HMAC Generator", href: "/crypto-tools/hmac-generator" },

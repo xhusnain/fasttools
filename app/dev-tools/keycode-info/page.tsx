@@ -7,7 +7,7 @@ const toolConfig = createToolConfig({
   toolName: "Keycode Info",
   description:
     "Press a key to inspect JavaScript KeyboardEvent values including key, keyCode, which, code, location, repeat, composition state, and modifiers.",
-  metaTitle: "JavaScript Keycode Finder - key, code, keyCode",
+  metaTitle: "JavaScript Keycode Finder - key, code, keyCode | FastTools",
   metaDescription:
     "Press any key to see JavaScript KeyboardEvent values: event.key, event.code, keyCode, which, location, repeat, isComposing, and Shift/Ctrl/Alt/Meta modifiers.",
   path: "/dev-tools/keycode-info",
@@ -36,6 +36,12 @@ const toolConfig = createToolConfig({
       "keyCode Reference Tool",
       "Hotkey Tester",
       "Key Code Finder",
+      "keydown Event Debugger",
+      "Keyboard Event Properties Viewer",
+      "JS Key Code Lookup",
+      "Shortcut Debugger",
+      "Browser Key Code Tester",
+      "Key Event Properties",
     ],
     featureList: [
       "Live keydown event capture",

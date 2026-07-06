@@ -32,6 +32,16 @@ const baseMetadata = createMetadata({
       "Customer Attrition Calculator",
       "MRR Churn Calculator",
       "Net MRR Churn Calculator",
+      "Gross Churn Calculator",
+      "Net Revenue Retention Calculator",
+      "NRR Calculator",
+      "GRR Calculator",
+      "Customer Retention Calculator",
+      "Logo Churn Calculator",
+      "Revenue Churn Calculator",
+      "Annual Churn Calculator",
+      "Monthly Churn Calculator",
+      "Subscription Churn Calculator",
     ],
     applicationCategory: "FinanceApplication",
     featureList: [
@@ -498,9 +508,9 @@ export default function SaaSChurnCalculatorPage() {
     ],
 
     relatedTools: [
-      { name: "SaaS Payback Calculator", href: "/finance-tools/cac-payback-calculator" },
+      { name: "SaaS Payback Calculator", href: "/finance-tools/saas-payback-calculator" },
       { name: "Startup Runway Calculator", href: "/finance-tools/startup-runway-calculator" },
-      { name: "Investment Calculator", href: "/finance-tools/compound-interest" },
+      { name: "Investment Calculator", href: "/finance-tools/investment-calculator" },
       { name: "Compound Interest Calculator", href: "/finance-tools/compound-interest" },
       { name: "Percentage Calculator", href: "/calculator/percentage-calculator" },
       { name: "ROAS Calculator", href: "/ad-tools/roas-calculator" },
