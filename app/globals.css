@@ -1,4 +1,10 @@
-@import "tailwindcss";
+/* Restrict Tailwind's class scanning to real source dirs — v4 otherwise scans
+   every non-gitignored file (docs, configs, scripts) and bloats the stylesheet. */
+@import "tailwindcss" source(none);
+@source "../app";
+@source "../components";
+@source "../lib";
+@source "../data";
 @import "tw-animate-css";
 
 @custom-variant dark (&:is(.dark *));

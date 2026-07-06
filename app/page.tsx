@@ -153,7 +153,7 @@ export default function Home() {
           {/* Main Heading */}
           <h1 className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-black text-foreground leading-[1.1] tracking-tight mb-8">
             <span className="block mb-2">Free Online Tools</span>
-            <span className="bg-clip-text text-transparent bg-gradient-to-r from-primary via-blue-500 to-sky-500 animate-gradient-x">
+            <span className="bg-clip-text text-transparent bg-gradient-to-r from-primary via-blue-500 to-sky-500">
               Instagram, YouTube & More
             </span>
           </h1>

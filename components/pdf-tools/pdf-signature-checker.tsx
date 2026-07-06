@@ -2,7 +2,9 @@
 
 import React, { useState, useCallback } from "react"
 import { useDropzone } from "react-dropzone"
-import forge from "node-forge"
+// node-forge is ~300KB minified — load it only when a PDF is actually
+// analyzed instead of on first paint.
+type ForgeModule = typeof import("node-forge")
 import {
     Shield,
     FileCheck,
@@ -52,6 +54,7 @@ export function PdfSignatureCheckerTool() {
     })
 
     const analyzePdf = async (pdfFile: File) => {
+        const forge: ForgeModule = (await import("node-forge")).default as unknown as ForgeModule
         setIsAnalyzing(true)
         setSignatures([])
         setError(null)

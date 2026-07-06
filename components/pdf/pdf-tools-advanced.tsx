@@ -24,7 +24,11 @@ import {
 } from "lucide-react"
 
 import { LoadingSpinner } from "@/components/common/loading-spinner"
-import { PDFDocument } from "pdf-lib"
+import type { PDFDocument as PDFDocumentType } from "pdf-lib"
+
+// pdf-lib is ~300KB minified — load it only when the user actually
+// touches a PDF instead of on first paint.
+const loadPdfLib = () => import("pdf-lib")
 import { downloadPdf } from "@/lib/pdf-utils"
 
 interface FileWithId {
@@ -63,6 +67,7 @@ export function PDFToolsAdvanced() {
 
     try {
       const arrayBuffer = await file.arrayBuffer()
+      const { PDFDocument } = await loadPdfLib()
       await PDFDocument.load(arrayBuffer)
       return true
     } catch (error) {
@@ -75,6 +80,7 @@ export function PDFToolsAdvanced() {
   const getPageCount = async (file: File): Promise<number> => {
     try {
       const arrayBuffer = await file.arrayBuffer()
+      const { PDFDocument } = await loadPdfLib()
       const pdf = await PDFDocument.load(arrayBuffer)
       return pdf.getPageCount()
     } catch (error) {
@@ -194,11 +200,13 @@ export function PDFToolsAdvanced() {
   // Helper to load PDF
   const loadPDF = async (file: File) => {
     const arrayBuffer = await file.arrayBuffer()
+    const { PDFDocument } = await loadPdfLib()
     return await PDFDocument.load(arrayBuffer)
   }
 
   // Helper for page extraction
-  const performPageExtraction = async (pdf: PDFDocument, pageIndices: number[], filename: string, successMessage: string) => {
+  const performPageExtraction = async (pdf: PDFDocumentType, pageIndices: number[], filename: string, successMessage: string) => {
+    const { PDFDocument } = await loadPdfLib()
     const newPdf = await PDFDocument.create()
     setProgress(50)
     const copiedPages = await newPdf.copyPages(pdf, pageIndices)
@@ -223,6 +231,7 @@ export function PDFToolsAdvanced() {
     setProgress(0)
 
     try {
+      const { PDFDocument } = await loadPdfLib()
       const mergedPdf = await PDFDocument.create()
 
       for (let i = 0; i < files.length; i++) {
@@ -261,6 +270,7 @@ export function PDFToolsAdvanced() {
 
     for (let i = 0; i < pageCount; i++) {
       setProgress(((i + 1) / pageCount) * 90)
+      const { PDFDocument } = await loadPdfLib()
       const newPdf = await PDFDocument.create()
       const [copiedPage] = await newPdf.copyPages(pdf, [i])
       newPdf.addPage(copiedPage)

@@ -22,7 +22,6 @@ import {
   type TargetFormat,
 } from "@/lib/image-convert"
 // @ts-ignore - no bundled types
-import JSZip from "jszip"
 
 interface ConvertedFile {
   id: string
@@ -166,6 +165,8 @@ export function ImageConverter({
   }
 
   const downloadAllZip = async () => {
+    // JSZip is only needed for the optional "download all" action — lazy-load it.
+    const JSZip = (await import("jszip")).default
     const zip = new JSZip()
     let count = 0
     files.forEach((item) => {
