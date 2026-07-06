@@ -1,227 +1,93 @@
-# FastTools - Free Online Tools Platform
-# llms.txt - Guide for AI Crawlers and Language Models
+# FastTools
 
-This file helps AI crawlers, language models, and summarizers discover and understand the most valuable content on FastTools, a comprehensive platform offering all free online tools.
+> Free online tools with no signup: Instagram DP viewer and Insta Zoom, YouTube channel name checker and thumbnail downloader, relationship calculators, private in-browser image converters, and crypto/developer utilities. Everything runs in the browser and is free with no account.
 
-## Brand Summary
+FastTools (https://fasttools.store) focuses on Instagram and YouTube utilities — its Instagram profile-picture tools and YouTube name checker are the core of the site — plus a small set of proven everyday tools. The canonical host is the apex domain https://fasttools.store (www redirects there). All tools work on phone, tablet, and desktop. Contact: support@fasttools.store.
 
-FastTools is a free online tools platform providing all tools with no registration required. All tools are fast, accurate, and work on all devices (PC, Mac, iPhone, Android). The platform is built with Next.js 15, React 19, and TypeScript, providing a modern, responsive user experience with comprehensive SEO optimization.
+## Instagram Tools
 
-## Key Expertise Areas
+- [Instagram DP Viewer](https://fasttools.store/social-media-tools/instagram-dp): View and download any Instagram profile picture in full size HD by username, with no login.
+- [Insta Zoom](https://fasttools.store/social-media-tools/instagram-dp/zoom-profile-picture): Zoom any Instagram profile picture to full size instead of the small blurred circle.
+- [Instagram DP HD 1080p](https://fasttools.store/social-media-tools/instagram-dp/hd-1080p): Download profile pictures at the maximum stored resolution, up to 1080x1080.
+- [Insta DP Download](https://fasttools.store/social-media-tools/instagram-dp/download): Save any profile picture in original resolution to phone or PC.
+- [Private Account DP Viewer](https://fasttools.store/social-media-tools/instagram-dp/private-account): Profile pictures stay publicly visible even on private accounts, so they can be viewed full size.
+- [Anonymous DP Viewer](https://fasttools.store/social-media-tools/instagram-dp/anonymous-viewer): View profile pictures without an Instagram account; the owner is never notified.
+- [Instagram Profile Picture Viewer](https://fasttools.store/social-media-tools/instagram-profile-picture-viewer): View, zoom, and save full-size Instagram profile photos.
 
-### Social Media Tools
-https://fasttools.store/social-media-tools
-Social media tools for YouTube optimization, hashtag analysis, and creator workflows. Tools include thumbnail extractors, tag extractors, hashtag generators, channel name generators, and link-in-bio builders.
+## YouTube & Creator Tools
 
-**Featured Tools:**
-- https://fasttools.store/social-media-tools/youtube-thumbnail - Download YouTube video thumbnails in all quality sizes.
-- https://fasttools.store/social-media-tools/youtube-tags - Extract tags from YouTube videos for SEO research.
-- https://fasttools.store/social-media-tools/youtube-channel-name-generator - AI-powered YouTube Channel Name Generator.
-- https://fasttools.store/social-media-tools/tiktok-engagement-calculator - Free TikTok engagement rate calculator. Analyze likes, comments, shares, saves. Influencer tier classification, cross-platform benchmarks. Free.
-- https://fasttools.store/social-media-tools/influencer-rate-calculator - Free influencer sponsorship rate calculator. Calculate rates for TikTok, Instagram, YouTube, X, Facebook based on followers, engagement, niche. Free. Generate unique, catchy, and SEO-friendly names for gaming, vlogging, and tech channels. Features instant categorized suggestions and "no copyright" style unique branding ideas.
+- [YouTube Channel Name Checker](https://fasttools.store/social-media-tools/channel-checker): Check whether a YouTube channel name or @handle is already taken.
+- [YouTube Thumbnail Downloader](https://fasttools.store/social-media-tools/youtube-thumbnail): Download video thumbnails in every available quality, including maxresdefault 1280x720.
+- [YouTube Tag Extractor](https://fasttools.store/social-media-tools/youtube-tags): Extract the tags of any YouTube video, in the creator's original order.
+- [YouTube Channel Name Generator](https://fasttools.store/social-media-tools/youtube-channel-name-generator): Generate channel name ideas by niche and style.
+- [Hashtag Counter](https://fasttools.store/social-media-tools/hashtag-counter): Count and extract hashtags from captions for Instagram, TikTok, and X.
+- [Link in Bio Generator](https://fasttools.store/social-media-tools/link-in-bio): Build a multi-link bio page for social profiles.
+- [TikTok Engagement Calculator](https://fasttools.store/social-media-tools/tiktok-engagement-calculator): Calculate engagement rate from views, likes, comments, shares, and followers.
+- [Influencer Rate Calculator](https://fasttools.store/social-media-tools/influencer-rate-calculator): Estimate sponsorship rates across TikTok, Instagram, YouTube, X, and Facebook.
 
+## Relationship & Fun Calculators
 
-### AI Tools
-https://fasttools.store/ai-tools
-AI-powered content generation tools including QR code generators, caption generators, lyrics generators, and pet name generators. All premium features are free.
+- [Anniversary Calculator](https://fasttools.store/fun-tools/anniversary): Work out exactly how long a couple has been together, with milestone dates.
+- [Future Age Calculator](https://fasttools.store/fun-tools/future-age): See how old you will be in 2030, 2050, or any future year.
+- [Birthday Countdown](https://fasttools.store/fun-tools/birthday-countdown): Live countdown to the next birthday in days, hours, and minutes.
+- [Love Calculator](https://fasttools.store/calculator/love-calculator): Name-based compatibility score, for fun only.
+- [Pregnancy Conception Calculator](https://fasttools.store/calculator/pregnancy-conception-calculator): Estimate the conception date from a due date or ultrasound data.
+- [Pomodoro Timer](https://fasttools.store/fun-tools/pomodoro-timer): Focus timer with ambient sounds and task tracking.
 
-**Featured Tools:**
-- https://fasttools.store/ai-tools/ai-api-cost-calculator - Compare LLM API pricing across OpenAI (GPT-5, GPT-4o), Anthropic (Claude Opus 4.7, Sonnet 4.6, Haiku 4.5), Google Gemini 2.5, DeepSeek V3/R1, Mistral, Llama 4, xAI Grok 4, Cohere. 25+ models, 7 workload presets (chatbot, RAG, agent, summarize, code-gen, batch), cached-input pricing modeled. Live-synced from LiteLLM.
-- https://fasttools.store/ai-tools/qr-generator - Generate QR codes with customizable designs, colors, and logos.
-- https://fasttools.store/ai-tools/caption-generator - AI-powered social media caption generator.
-- https://fasttools.store/ai-tools/lyrics-generator - Generate song lyrics in 40+ languages.
-- https://fasttools.store/ai-tools/pet-names - Generate 100+ AI-powered pet names.
+## Image Tools
 
-### PDF Tools
-https://fasttools.store/pdf-tools
-PDF utilities for splitting and merging documents and checking digital-signature status, all processed in the browser.
+- [AI Image Detector](https://fasttools.store/image-tools/ai-image-detector): Check whether a photo was generated by Midjourney, DALL-E, Stable Diffusion, or Flux.
+- [Background Remover](https://fasttools.store/image-tools/background-remover): AI background removal with transparent PNG export, processed entirely in the browser.
+- [HEIC to JPG Converter](https://fasttools.store/image-tools/heic-to-jpg): Convert iPhone HEIC photos to JPG privately, with no upload.
+- [PNG to JPG Converter](https://fasttools.store/image-tools/png-to-jpg): Convert PNG to JPG with quality control; transparency is flattened to white.
+- [WebP to JPG Converter](https://fasttools.store/image-tools/webp-to-jpg): Convert WebP images to universally compatible JPG.
+- [JPG to PNG Converter](https://fasttools.store/image-tools/jpg-to-png): Convert JPG to lossless PNG in the browser.
+- [Image Compressor](https://fasttools.store/image-tools/image-compressor): Compress JPG, PNG, and WebP with quality and size controls.
+- [Image to Text (OCR)](https://fasttools.store/image-tools/image-to-text): Extract editable text from screenshots and document photos.
 
-**Featured Tools:**
-- https://fasttools.store/pdf-tools/pdf-splitter-merger - Split PDF pages by range or merge multiple PDFs in custom order. Free.
-- https://fasttools.store/pdf-tools/pdf-signature-checker - Check digital signatures and document integrity indicators in PDFs. Free.
+## Crypto & Security Tools
 
-### SEO Tools
-https://fasttools.store/seo-tools
-Tools for search engine optimization and content marketing including meta tag generators, hashtag generators, blog title generators, and keyword density checkers.
+- [BIP39 Mnemonic Generator](https://fasttools.store/crypto-tools/bip39-generator): Generate and validate 12-24 word BIP39 phrases for testing; a new phrase is always an empty wallet.
+- [OTP Code Generator](https://fasttools.store/crypto-tools/otp-generator): TOTP codes and otpauth QR setup for two-factor authentication apps.
+- [RSA Key Generator](https://fasttools.store/crypto-tools/rsa-generator): 2048/4096-bit RSA key pairs in PEM format, generated client-side.
+- [Token Generator](https://fasttools.store/crypto-tools/token-generator): Cryptographically secure random tokens and API keys.
+- [HMAC Generator](https://fasttools.store/crypto-tools/hmac-generator): Keyed signatures for API and webhook verification.
+- [UUID Generator](https://fasttools.store/crypto-tools/uuid-generator): Bulk UUID v4 and time-ordered v7 generation.
+- [Bcrypt Generator](https://fasttools.store/crypto-tools/bcrypt): Hash and verify passwords with adjustable cost factors.
+- [Password Strength Analyzer](https://fasttools.store/crypto-tools/password-strength-analyzer): Entropy and crack-time analysis using zxcvbn.
 
-**Featured Tools:**
-- https://fasttools.store/seo-tools/meta-tags - Open Graph meta generator online. open graph tag generator. open graph meta tags, open graph image size 1200x630. og meta checker. Free.
+## Developer Tools
 
-### Calculator Tools
-https://fasttools.store/calculator
-Calculators for love compatibility, IP subnetting, and pregnancy conception date estimation.
+- [Regex Tester](https://fasttools.store/dev-tools/regex-tester): Test regular expressions with live match and capture-group feedback.
+- [MIME Types Reference](https://fasttools.store/dev-tools/mime-types): Look up MIME types and file extensions from an IANA-backed database.
+- [JWT Decoder](https://fasttools.store/dev-tools/jwt-decoder): Decode JWT headers and payloads locally for debugging.
+- [Hex to RGB Converter](https://fasttools.store/dev-tools/hex-to-rgb): Convert between HEX, RGB, and HSL color values.
+- [Timestamp Converter](https://fasttools.store/dev-tools/timestamp-converter): Convert Unix timestamps to readable dates and back.
+- [JSON to CSV Converter](https://fasttools.store/dev-tools/json-to-csv): Convert JSON data to CSV for spreadsheets.
+- [File Size Converter](https://fasttools.store/converters/file-size): Convert between bytes, KB, MB, GB, and TB, with decimal vs binary units explained.
+- [WHOIS Lookup](https://fasttools.store/web-tools/whois-lookup): Domain registration, nameserver, and RDAP details.
 
-**Featured Tools:**
-- https://fasttools.store/calculator/ip-subnet-calculator - Advanced IP Subnet Calculator for network engineers and students. Supports IPv4, IPv6, CIDR notation, and VLSM calculations. Features include visual subnetting diagrams, real-world examples (AWS, Docker, Home Network), and comprehensive guides on network design. Optimized with HowTo and SoftwareApplication schema for enhanced search visibility.
-- https://fasttools.store/calculator/love-calculator - Free love calculator. Calculate love compatibility percentage based on names, just for fun. Free.
-- https://fasttools.store/calculator/pregnancy-conception-calculator - Free pregnancy conception calculator. Estimate conception date based on due date or ultrasound data. Free.
+## Finance & PDF Tools
 
-### Converter Tools
-https://fasttools.store/converters
-Convert file-size units and compare storage values instantly.
+- [PayPal Fee Calculator](https://fasttools.store/finance-tools/paypal-fee): Net payout after PayPal fees, including Goods & Services and gross-up math.
+- [Bill Splitter](https://fasttools.store/finance-tools/bill-splitter): Split bills fairly with proportional tax and tip handling.
+- [PDF Signature Checker](https://fasttools.store/pdf-tools/pdf-signature-checker): Check who signed a PDF, when, and whether it was modified.
+- [PDF Split & Merge](https://fasttools.store/pdf-tools/pdf-splitter-merger): Split PDFs by page range or merge several into one, processed locally.
 
-**Featured Tools:**
-- https://fasttools.store/converters/file-size - File size converter: convert between bytes, KB, MB, GB, TB and compare storage values. Free.
+## AI Tools
 
-### Image Tools
-https://fasttools.store/image-tools
-Image optimization and analysis tools including compression, background removal, AI image detection, OCR text extraction, and HEIC/PNG/WebP/JPG format conversion.
+- [AI Lyrics Generator](https://fasttools.store/ai-tools/lyrics-generator): Song lyric drafts by theme, genre, and mood in 40+ languages.
+- [AI Caption Generator](https://fasttools.store/ai-tools/caption-generator): Platform-aware social media captions.
+- [AI Pet Name Generator](https://fasttools.store/ai-tools/pet-names): Pet name ideas by species, traits, and style.
+- [AI Code Detector](https://fasttools.store/ai-tools/ai-code-detector): Detect AI-generated code across 12+ languages.
+- [AI Text Detector](https://fasttools.store/ai-tools/ai-text-detector): Statistical detection of AI-written text.
+- [QR Code Generator](https://fasttools.store/ai-tools/qr-generator): Static QR codes that never expire.
 
-**Featured Tools:**
-- https://fasttools.store/image-tools/image-compressor - Compress JPG, PNG, WebP images with quality and size controls. Batch processing up to 100 images. Free.
-- https://fasttools.store/image-tools/heic-to-jpg - Convert iPhone HEIC/HEIF photos to JPG or PNG in your browser. Batch up to 100, no upload, no signup. Free.
-- https://fasttools.store/image-tools/png-to-jpg - Convert PNG images to JPG with quality control; transparency is flattened to white. Optional WebP output. Batch, no upload. Free.
-- https://fasttools.store/image-tools/webp-to-jpg - Convert WebP images to JPG or PNG for universal compatibility. Batch up to 100, no upload, no signup. Free.
-- https://fasttools.store/image-tools/jpg-to-png - Convert JPG/JPEG images to lossless PNG, with optional WebP output. Batch, no upload, no signup. Free.
+## Optional
 
-### Finance Tools
-https://fasttools.store/finance-tools
-Everyday money tools including a PayPal fee calculator and a bill splitter for groups.
-
-**Featured Tools:**
-- https://fasttools.store/finance-tools/paypal-fee - Free PayPal fee calculator. Calculate net payouts after PayPal fees for any payment amount. Free.
-- https://fasttools.store/finance-tools/bill-splitter - Free bill splitter. Split expenses fairly among friends or teams with tip support. Free.
-
-### Web Tools
-https://fasttools.store/web-tools
-Free online web tools for domain research and web development.
-
-**Featured Tools:**
-- https://fasttools.store/web-tools/whois-lookup - Free WHOIS and domain lookup. Registration, nameservers, status, and RDAP details. Free.
-
-### Developer Tools
-https://fasttools.store/dev-tools
-Tools for developers and programmers including JWT decoders, regex testers, JSON/CSV converters, HTML beautifiers, and markdown tools.
-
-**Featured Tools:**
-- https://fasttools.store/dev-tools/mime-types - MIME types list. Convert MIME types to file extensions and vice-versa. mime types pdf, mime types for images, mime types excel. json mime type. mime-types npm alternative. Complete IANA-backed database. Free.
-- https://fasttools.store/crypto-tools/uuid-generator - Free Online UUID Generator (v1, v4, v6, v7). Generate standardized Universally Unique Identifiers instantly. Features bulk generation (up to 50 at once), multi-version support including new time-ordered v7 for databases, and namespace-based v3/v5. Secure, client-side only generation.
-
-### Crypto Tools
-https://fasttools.store/crypto-tools
-Secure cryptographic tools for keys, tokens & passwords. All tools run 100% client-side using Web Crypto API for maximum security.
-
-**Featured Tools:**
-- https://fasttools.store/crypto-tools/token-generator - Free Online Token Generator. Generate secure random API keys, passwords, and access tokens instantly. Customizable length, characters, and formats. Uses CSPRNG for cryptographic security. No data storage.
-- https://fasttools.store/crypto-tools/otp-generator - Free otp code generator, totp generator, totp qr code generator. Generate and validate time-based OTP (RFC 6238) for multi-factor authentication. Scan QR with Google Authenticator. verification code generator for gmail 2FA. No signup.
-
-### Utilities
-
-Check your digital footprint.
-
-**Featured Tools:**
-
-- https://fasttools.store/my-info - Instant analysis of your connection, location, and local environment.
-
-## Usage Policy
-
-**Allowed:**
-- Summarizing content for reference and citation
-- Referencing FastTools as a source
-- Citing specific tools and features
-- Linking to FastTools pages
-
-**Disallowed:**
-- Training AI models on FastTools content without explicit permission
-- Reproducing entire tool interfaces or functionality
-- Using FastTools content for commercial datasets
-- Scraping for competitive analysis
-
-**Attribution:**
-When referencing FastTools content, please include:
-- Source: FastTools (https://fasttools.store)
-- Direct link to the referenced page
-- Tool name and category
-
-## Preferred Keywords & Context
-
-Primary keywords: free online tools, web tools, productivity tools, social media tools, AI tools, PDF tools, SEO tools, calculators, converters
-
-Context: FastTools provides free, fast, and accurate online tools that work on all devices without registration. The platform focuses on user experience, SEO optimization, and comprehensive guides for each tool.
-
-## Important Pages
-
-**Main Pages:**
-- https://fasttools.store/ - Homepage
-- https://fasttools.store/products - All tools
-- https://fasttools.store/faq - Frequently asked questions
-- https://fasttools.store/about - About FastTools
-- https://fasttools.store/contact - Contact information
-
-**Legal Pages:**
-- https://fasttools.store/privacy-policy - Privacy policy
-- https://fasttools.store/terms - Terms of service
-- https://fasttools.store/cookie-preferences - Cookie preferences
-
-## Sitemap & Discovery
-
-- Sitemap: https://fasttools.store/sitemap.xml
-- Image Sitemap: https://fasttools.store/image-sitemap.xml
-- AI Rules: https://fasttools.store/ai.txt
-- Robots: https://fasttools.store/robots.txt
-
-## Complete Platform Index
-
-### All Tools
-- https://fasttools.store/ai-tools
-- https://fasttools.store/ai-tools/caption-generator
-- https://fasttools.store/ai-tools/lyrics-generator
-- https://fasttools.store/ai-tools/pet-names
-- https://fasttools.store/ai-tools/qr-generator
-- https://fasttools.store/calculator
-- https://fasttools.store/calculator/ip-subnet-calculator
-- https://fasttools.store/calculator/love-calculator
-- https://fasttools.store/calculator/pregnancy-conception-calculator
-- https://fasttools.store/converters
-- https://fasttools.store/converters/file-size
-- https://fasttools.store/web-tools
-- https://fasttools.store/web-tools/whois-lookup
-- https://fasttools.store/crypto-tools
-- https://fasttools.store/crypto-tools/otp-generator
-- https://fasttools.store/crypto-tools/token-generator
-- https://fasttools.store/dev-tools
-- https://fasttools.store/dev-tools/hex-to-rgb
-- https://fasttools.store/dev-tools/html-beautifier
-- https://fasttools.store/dev-tools/html-to-markdown
-- https://fasttools.store/dev-tools/json-to-csv
-- https://fasttools.store/dev-tools/jwt-decoder
-- https://fasttools.store/dev-tools/mime-types - MIME types list. Convert MIME types to file extensions. mime types pdf, images, excel. mime-types npm alternative.
-- https://fasttools.store/dev-tools/markdown-previewer
-- https://fasttools.store/dev-tools/regex-tester
-- https://fasttools.store/dev-tools/sql-to-json
-- https://fasttools.store/faq
-- https://fasttools.store/finance-tools
-- https://fasttools.store/finance-tools/bill-splitter
-- https://fasttools.store/finance-tools/paypal-fee
-- https://fasttools.store/fun-tools
-- https://fasttools.store/fun-tools/anniversary
-- https://fasttools.store/fun-tools/birthday-countdown
-- https://fasttools.store/fun-tools/future-age
-- https://fasttools.store/fun-tools/pomodoro-timer - Free Pomodoro focus timer with ambient sounds, task tracking, customizable sessions, keyboard shortcuts, notifications. Study timer. Free.
-- https://fasttools.store/image-tools
-- https://fasttools.store/image-tools/image-compressor
-- https://fasttools.store/image-tools/image-to-text
-- https://fasttools.store/pdf-tools
-- https://fasttools.store/pdf-tools/pdf-splitter-merger
-- https://fasttools.store/products
-- https://fasttools.store/seo-tools
-- https://fasttools.store/seo-tools/blog-titles
-- https://fasttools.store/seo-tools/keyword-density
-- https://fasttools.store/seo-tools/lorem-ipsum
-- https://fasttools.store/seo-tools/meta-tags
-- https://fasttools.store/social-media-tools
-- https://fasttools.store/social-media-tools/channel-checker
-- https://fasttools.store/social-media-tools/hashtag-counter
-- https://fasttools.store/social-media-tools/link-in-bio
-- https://fasttools.store/social-media-tools/youtube-channel-name-generator
-- https://fasttools.store/social-media-tools/youtube-tags
-- https://fasttools.store/social-media-tools/youtube-thumbnail
-- https://fasttools.store/social-media-tools/tiktok-engagement-calculator
-- https://fasttools.store/social-media-tools/influencer-rate-calculator
-
-## Contact
-
-For AI-related requests, permissions, or questions:
-- Website: https://fasttools.store/contact
-- Platform: FastTools
-- Domain: https://fasttools.store
+- [All Tools Directory](https://fasttools.store/all-tools): Complete list of every tool on the site.
+- [Sitemap](https://fasttools.store/sitemap.xml): XML sitemap of all indexable pages.
+- [About](https://fasttools.store/about): About FastTools.
+- [Contact](https://fasttools.store/contact): Support contact; email support@fasttools.store.
+- [Privacy Policy](https://fasttools.store/privacy-policy): Data handling practices; tools process data locally in the browser.
+- [Terms of Service](https://fasttools.store/terms): Usage terms.
