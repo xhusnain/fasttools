@@ -1,33 +1,13 @@
 import { GToolCard } from "@/ui/gtool-card"
 import {
-  FileText,
   DollarSign,
-  Percent,
-  Calculator,
-  Target,
-  TrendingUp,
   Users,
-  CreditCard,
-  Home,
-  BadgePercent,
-  ChartLine,
-  Banknote,
-  Shield,
-  Activity,
-  Car,
 } from "lucide-react"
 import { ToolPageLayout } from "@/components/common/tool-page-layout"
 import { Metadata } from "next"
 import { createMetadata } from "@/lib/metadata-base"
 
 const financeTools = [
-  {
-    title: "Invoice Generator",
-    description:
-      "Create professional invoices for freelance or business work with tax and total calculations.",
-    icon: FileText,
-    href: "/finance-tools/invoice-generator",
-  },
   {
     title: "PayPal Fee Calculator",
     description:
@@ -36,145 +16,19 @@ const financeTools = [
     href: "/finance-tools/paypal-fee",
   },
   {
-    title: "PayPal G&S Fee Calculator",
-    description:
-      "Calculate PayPal Goods and Services fees, seller net amount, and gross-up totals.",
-    icon: DollarSign,
-    href: "/finance-tools/paypal-goods-and-services-fee-calculator",
-  },
-  {
-    title: "Discount Calculator",
-    description:
-      "Calculate sale prices, discount amounts, and final totals for shopping or pricing decisions.",
-    icon: Percent,
-    href: "/finance-tools/discount-calculator",
-  },
-  {
-    title: "Tip Calculator",
-    description:
-      "Calculate tips quickly and split bills fairly across multiple people.",
-    icon: Calculator,
-    href: "/finance-tools/tip-calculator",
-  },
-  {
-    title: "Savings Goal Tracker",
-    description:
-      "Track savings progress and estimate when you will reach your goal amount.",
-    icon: Target,
-    href: "/finance-tools/savings-tracker",
-  },
-  {
-    title: "Retirement Goal Planner",
-    description:
-      "Plan retirement contributions and estimate long-term portfolio growth.",
-    icon: TrendingUp,
-    href: "/finance-tools/retirement-planner",
-  },
-  {
     title: "Bill Splitter",
     description:
       "Split shared expenses for friends, trips, or group events with clear totals.",
     icon: Users,
     href: "/finance-tools/bill-splitter",
   },
-  {
-    title: "Credit Card Payoff Calculator",
-    description:
-      "Estimate debt payoff time and interest costs for credit card balances.",
-    icon: CreditCard,
-    href: "/finance-tools/credit-card-payoff",
-  },
-  {
-    title: "Loan Calculator",
-    description:
-      "Estimate monthly payments, total interest, and amortization for personal loans.",
-    icon: DollarSign,
-    href: "/finance-tools/loan-calculator",
-  },
-  {
-    title: "Auto Loan Calculator",
-    description:
-      "Calculate monthly car payments with trade-in, taxes, credit score rates, and term comparison.",
-    icon: Car,
-    href: "/finance-tools/auto-loan-calculator",
-  },
-  {
-    title: "Tax Calculator",
-    description:
-      "Estimate income tax, GST, or VAT to understand net and gross amounts.",
-    icon: FileText,
-    href: "/finance-tools/tax-calculator",
-  },
-  {
-    title: "1099 Quarterly Tax Estimator",
-    description:
-      "Calculate quarterly estimated tax payments for 1099 income with safe harbor analysis and SE tax breakdown.",
-    icon: Shield,
-    href: "/finance-tools/quarterly-tax-estimator",
-  },
-  {
-    title: "Sales Tax Calculator",
-    description:
-      "Calculate sales tax for US states or custom tax rates with total cost output.",
-    icon: BadgePercent,
-    href: "/finance-tools/sales-tax-calculator",
-  },
-  {
-    title: "Investment Calculator",
-    description:
-      "Estimate investment growth over time with recurring contributions and returns.",
-    icon: ChartLine,
-    href: "/finance-tools/investment-calculator",
-  },
-  {
-    title: "Interest Rate Calculator",
-    description:
-      "Solve for unknown interest rates from payment, term, and principal inputs.",
-    icon: Banknote,
-    href: "/finance-tools/interest-rate-calculator",
-  },
-  {
-    title: "Payment Calculator",
-    description:
-      "Calculate periodic payment amounts for different loan and financing setups.",
-    icon: CreditCard,
-    href: "/finance-tools/payment-calculator",
-  },
-  {
-    title: "Salary Calculator",
-    description:
-      "Convert salary across hourly, monthly, and yearly views with planning support.",
-    icon: Banknote,
-    href: "/finance-tools/salary-calculator",
-  },
-  {
-    title: "SaaS Churn Rate Calculator",
-    description:
-      "Calculate customer churn, revenue churn, retention rate, CLV & 12-month projections for SaaS businesses.",
-    icon: Activity,
-    href: "/finance-tools/saas-churn-calculator",
-  },
-  {
-    title: "SaaS Payback Period Calculator",
-    description:
-      "Calculate months to recover CAC, LTV:CAC ratio, customer lifetime value & 36-month ROI projection.",
-    icon: TrendingUp,
-    href: "/finance-tools/saas-payback-calculator",
-  },
-  {
-    title: "Home Affordability Calculator",
-    description:
-      "Find out how much house you can afford based on income, debts, down payment & mortgage rate.",
-    icon: Home,
-    href: "/finance-tools/home-affordability-calculator",
-  },
 ]
 
 export const metadata: Metadata = createMetadata({
   title:
-    "Finance Calculators — Loans, PayPal Fees & Tax",
+    "Finance Tools — PayPal Fee Calculator & Bill Splitter",
   description:
-    "Use free finance tools for loan, mortgage, tax, salary, savings, and investment planning. Fast, accurate calculators with no signup required.",
+    "Free finance tools: calculate PayPal fees including Goods & Services, and split bills fairly with tips. Fast, accurate, no signup required.",
   path: "/finance-tools",
   includeSchema: false,
   breadcrumbs: [{ label: "Finance Tools", href: "/finance-tools" }],
@@ -193,51 +47,51 @@ export default function FinanceToolsPage() {
   const toolContent = {
     toolName: "Finance Tools",
     overview:
-      "This category focuses on high-intent money decisions: borrowing, budgeting, taxes, debt payoff, and long-term investing. Use these calculators to estimate payments, compare scenarios, and plan with clearer numbers before you commit.",
+      "This category covers everyday money tasks: working out what PayPal actually deducts from a payment, and splitting shared bills fairly among a group. Use these calculators to see exact fee and split breakdowns before money changes hands.",
     howToSteps: [
-      "Choose the specific finance task (loan, tax, retirement, salary, or pricing).",
-      "Enter your values such as amount, rate, term, and payment assumptions.",
-      "Review totals, monthly breakdowns, and scenario comparisons.",
-      "Use the results to plan budgets, pricing, or savings targets with confidence.",
+      "Choose the tool that matches your task (PayPal fees or bill splitting).",
+      "Enter your values such as payment amount, number of people, or tip.",
+      "Review totals and per-person or after-fee breakdowns.",
+      "Adjust inputs to compare scenarios before you send or request money.",
     ],
     features: [
-      "21 focused finance calculators",
+      "Focused fee and bill-splitting calculators",
       "Fast browser-based calculations",
-      "Budgeting, debt, tax, and investment coverage",
-      "Cross-links between related money decisions",
+      "Exact PayPal fee and net-amount breakdowns",
+      "Fair per-person splits with tip handling",
       "No signup required",
       "Mobile-friendly workflows",
     ],
     aboutTool: `
-      ### Built for Real Financial Decisions
-      From monthly payment estimates to long-term retirement projections, these tools help you move from rough guesses to clear, actionable numbers.
+      ### Built for Real Money Moments
+      Whether you're invoicing a client through PayPal or settling a group dinner, these tools turn rough guesses into clear, exact numbers.
 
       ### Useful for Personal and Business Use
-      Individuals can plan debt payoff and savings goals, while freelancers and small businesses can handle invoicing, pricing, and fee calculations.
+      Freelancers and sellers can price payments so fees don't eat their margin, while friends and roommates can split shared costs without awkward math.
 
       ### Better Comparison Before You Commit
-      Test different rates, terms, and contribution levels quickly so you can compare outcomes before selecting a loan, pricing plan, or investment path.
+      Test different amounts, fee types, and group sizes quickly so everyone knows exactly what they owe or will receive.
     `,
     faqs: [
       {
         question: "Which finance calculator should I start with?",
         answer:
-          "Start with the tool that matches your immediate decision: Loan or Auto Loan for borrowing, Tax or Sales Tax for purchase planning, and Investment or Retirement for long-term growth.",
+          "Start with the tool that matches your immediate task: the PayPal Fee Calculator when sending or receiving payments, and the Bill Splitter when dividing shared expenses among a group.",
       },
       {
         question: "Are these finance calculations accurate?",
         answer:
-          "The tools use standard finance formulas and are suitable for planning and comparison. For regulated decisions, confirm numbers with your lender, accountant, or financial advisor.",
+          "The tools use current published fee rates and standard arithmetic, so they are suitable for planning and comparison. For regulated decisions, confirm numbers with your payment provider or accountant.",
       },
       {
         question: "Can I compare multiple scenarios?",
         answer:
-          "Yes. A practical workflow is to run baseline inputs first, then adjust one variable at a time (rate, term, contribution, or tax) and compare the impact.",
+          "Yes. A practical workflow is to run baseline inputs first, then adjust one variable at a time (amount, fee type, group size, or tip) and compare the impact.",
       },
       {
         question: "Do these tools work for business workflows?",
         answer:
-          "Yes. Tools like Invoice Generator, PayPal Fee Calculator, Discount Calculator, and Salary Calculator are useful for day-to-day operations and pricing decisions.",
+          "Yes. The PayPal Fee Calculator helps freelancers and sellers price payments so the net amount covers their costs, and the Bill Splitter works for team lunches and shared office expenses.",
       },
       {
         question: "Are the finance tools free?",
@@ -247,16 +101,15 @@ export default function FinanceToolsPage() {
     ],
     relatedTools: [
       { name: "Online Calculators", href: "/calculator" },
-      { name: "Currency Converter", href: "/converters/currency" },
-      { name: "Percentage Calculator", href: "/calculator/percentage-calculator" },
+      { name: "Influencer Rate Calculator", href: "/social-media-tools/influencer-rate-calculator" },
+      { name: "TikTok Engagement Calculator", href: "/social-media-tools/tiktok-engagement-calculator" },
     ],
     useCases: [
-      "Compare loan and mortgage affordability",
-      "Estimate debt payoff timelines",
-      "Plan retirement and contribution targets",
-      "Calculate tax-inclusive and tax-exclusive totals",
-      "Price products or services with fee awareness",
-      "Track progress toward savings milestones",
+      "Work out the net amount you'll receive from a PayPal payment",
+      "Gross up an invoice so fees don't cut into your price",
+      "Split restaurant bills, trips, and rent fairly",
+      "Add tips and divide totals across any group size",
+      "Settle shared expenses with clear per-person amounts",
     ],
   }
 
@@ -265,7 +118,7 @@ export default function FinanceToolsPage() {
       header={{
         title: "Finance Tools & Calculators",
         description:
-          "Free calculators for borrowing, budgeting, taxes, investments, and pricing decisions.",
+          "Free calculators for PayPal fees and fair bill splitting.",
         titleSize: "large",
         descriptionSize: "medium",
         centered: true,
@@ -288,9 +141,9 @@ export default function FinanceToolsPage() {
       toolContent={toolContent}
       expectedMetadata={{
         title:
-          "Finance Calculators — Loan, Mortgage & Tax",
+          "Finance Tools — PayPal Fee Calculator & Bill Splitter",
         description:
-          "Use free finance tools for loan, mortgage, tax, salary, savings, and investment planning. Fast, accurate calculators with no signup required.",
+          "Free finance tools: calculate PayPal fees including Goods & Services, and split bills fairly with tips. Fast, accurate, no signup required.",
         path: "/finance-tools",
       }}
     />

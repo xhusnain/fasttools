@@ -184,10 +184,8 @@ const toolConfig = createToolConfig({
     ],
 
     relatedTools: [
-      { name: "Length Converter", href: "/converters/length" },
-      { name: "Temperature Converter", href: "/converters/temperature" },
-      { name: "Timezone Converter", href: "/converters/timezone" },
       { name: "Image Compressor", href: "/image-tools/image-compressor" },
+      { name: "PDF Splitter & Merger", href: "/pdf-tools/pdf-splitter-merger" },
       { name: "All Converters", href: "/converters" },
     ],
   },

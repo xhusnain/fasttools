@@ -462,7 +462,6 @@ export default function TikTokEngagementCalculatorPage() {
       { name: "YouTube Tag Extractor", href: "/social-media-tools/youtube-tags" },
       { name: "Link in Bio Generator", href: "/social-media-tools/link-in-bio" },
       { name: "AI Caption Generator", href: "/ai-tools/caption-generator" },
-      { name: "ROAS Calculator", href: "/ad-tools/roas-calculator" },
       { name: "All Social Media Tools", href: "/social-media-tools" },
     ]
   }

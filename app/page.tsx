@@ -16,8 +16,8 @@ const HomeCategories = dynamic(() => import('@/components/common/home-categories
 const HomeRichContent = dynamic(() => import('@/components/common/home-rich-content').then(mod => ({ default: mod.HomeRichContent })))
 
 export const metadata: Metadata = createMetadata({
-  title: "FastTools - 200+ Free Online Tools | Calculators, Converters, PDF & AI Tools",
-  description: "200+ free online tools: calculators, converters, PDF tools, AI generators, developer utilities & more. No signup, no uploads. Everything runs in your browser — private, fast, unlimited.",
+  title: "FastTools — Free Instagram DP Viewer, YouTube Tools & Online Utilities",
+  description: "Free online tools with no signup: Instagram DP viewer & Insta Zoom, YouTube channel name checker, thumbnail downloader, image converters, regex testers & more. Private, fast, unlimited.",
   path: "/",
   includeSchema: false,
 })
@@ -28,14 +28,14 @@ export default function Home() {
   const jsonLd = {
     "@context": "https://schema.org",
     "@type": "WebPage",
-    name: "FastTools - 200+ Free Online Tools | Calculators, Converters, PDF & AI Tools",
-    description: "200+ free online tools — calculators, converters, PDF tools, AI generators, developer utilities & more. No signup, no uploads. Everything runs in your browser.",
+    name: "FastTools — Free Instagram DP Viewer, YouTube Tools & Online Utilities",
+    description: "Free online tools with no signup: Instagram DP viewer & Insta Zoom, YouTube channel name checker, thumbnail downloader, image converters & more. Everything runs in your browser.",
     url: "https://fasttools.store",
     author: {
       "@type": "Organization",
       name: "FastTools",
       url: "https://fasttools.store",
-      description: "Free online tools platform with 200+ calculators, converters, PDF tools, AI generators and developer utilities. All tools run locally in your browser."
+      description: "Free online tools platform focused on Instagram and YouTube utilities, image converters, and developer tools. All tools run locally in your browser."
     },
     publisher: {
       "@type": "Organization",
@@ -74,7 +74,7 @@ export default function Home() {
     about: {
       "@type": "Thing",
       name: "Free Online Tools",
-      description: "A collection of 200+ free browser-based tools including calculators, unit converters, PDF editors, AI content generators, developer utilities, and SEO analyzers."
+      description: "Free browser-based tools: Instagram DP viewer and Insta Zoom, YouTube channel checker and thumbnail downloader, image format converters, crypto generators, and regex testers."
     },
     isPartOf: {
       "@type": "WebSite",
@@ -89,7 +89,7 @@ export default function Home() {
           name: "Are all FastTools really free?",
           acceptedAnswer: {
             "@type": "Answer",
-            text: "Yes, every tool on FastTools is 100% free with no hidden costs, no \"Pro\" tier, and no credit card required. All 200+ tools — including PDF compressor, AI generators, calculators, and converters — are completely free to use with no usage limits."
+            text: "Yes, every tool on FastTools is 100% free with no hidden costs, no \"Pro\" tier, and no credit card required. Every tool — including the Instagram DP viewer, YouTube name checker, and image converters — is completely free to use with no usage limits."
           }
         },
         {
@@ -113,7 +113,7 @@ export default function Home() {
           name: "What types of tools does FastTools offer?",
           acceptedAnswer: {
             "@type": "Answer",
-            text: "FastTools offers 200+ tools across 12 categories: Calculators (BMI, age, loan, GPA), Converters (currency, temperature, JSON/YAML), PDF Tools (compress, split, merge, sign), AI Tools (QR generator, caption generator, text detector), Developer Tools (JWT decoder, regex tester, JSON diff), Social Media Tools (Instagram DP viewer, YouTube channel checker), Finance Tools (tax, mortgage, tip calculator), and more."
+            text: "FastTools focuses on Social Media Tools (Instagram DP viewer, Insta Zoom, YouTube channel name checker, thumbnail downloader), Relationship Calculators (anniversary, future age, birthday countdown), Image Tools (AI image detector, background remover, HEIC/PNG/WebP/JPG converters), Crypto Tools (BIP39, OTP, RSA, UUID, bcrypt), Developer Tools (regex tester, MIME types, JWT decoder), a PayPal fee calculator, and a PDF signature checker."
           }
         },
         {
@@ -122,14 +122,6 @@ export default function Home() {
           acceptedAnswer: {
             "@type": "Answer",
             text: "Yes. Every tool is fully responsive and works on mobile phones, tablets, and desktop browsers. No app download needed — just visit fasttools.store in any modern browser."
-          }
-        },
-        {
-          "@type": "Question",
-          name: "What is the best free PDF compressor online?",
-          acceptedAnswer: {
-            "@type": "Answer",
-            text: "FastTools offers a free PDF compressor that reduces file size directly in your browser. Unlike other tools, it doesn't upload your PDF to any server — compression happens locally on your device, making it faster and more private. It supports files up to 100MB with no daily limits."
           }
         }
       ]
@@ -155,20 +147,20 @@ export default function Home() {
 
           {/* Tool Count Badge */}
           <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 border border-primary/20 text-primary text-sm font-semibold mb-6">
-            200+ Free Tools — No Signup Required
+            Free Tools — No Signup Required
           </div>
 
           {/* Main Heading */}
           <h1 className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-black text-foreground leading-[1.1] tracking-tight mb-8">
             <span className="block mb-2">Free Online Tools</span>
             <span className="bg-clip-text text-transparent bg-gradient-to-r from-primary via-blue-500 to-sky-500 animate-gradient-x">
-              Calculators, Converters & More
+              Instagram, YouTube & More
             </span>
           </h1>
 
           {/* Subheading */}
           <p className="text-lg sm:text-xl md:text-2xl text-muted-foreground font-medium max-w-3xl mx-auto leading-relaxed mb-12 px-4">
-            PDF tools, AI generators, developer utilities, finance calculators & SEO tools.
+            Instagram DP viewer, YouTube name checker, image converters, crypto & developer utilities.
             <strong className="text-foreground"> 100% free, private & instant</strong> — everything runs in your browser, nothing uploaded.
           </p>
 

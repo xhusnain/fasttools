@@ -178,8 +178,7 @@ const toolConfig = createToolConfig({
     relatedTools: [
       { name: "JWT Decoder", href: "/dev-tools/jwt-decoder" },
       { name: "Regex Tester", href: "/dev-tools/regex-tester" },
-      { name: "Timezone Converter", href: "/converters/timezone" },
-      { name: "Date Difference Calculator", href: "/calculator/date-difference" },
+      { name: "JSON to CSV Converter", href: "/dev-tools/json-to-csv" },
       { name: "All Developer Tools", href: "/dev-tools" },
     ],
   },

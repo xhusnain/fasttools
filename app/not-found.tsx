@@ -2,7 +2,7 @@ import Link from "next/link"
 import { GButton } from "@/ui/gbutton"
 import { GToolCard } from "@/ui/gtool-card"
 
-import { Calculator, Home, Search, Activity, Calendar, DollarSign } from "lucide-react"
+import { Calculator, Home, Search, User, Download, Heart } from "lucide-react"
 import type { Metadata } from "next"
 
 export const metadata: Metadata = {
@@ -45,36 +45,36 @@ export default function NotFound() {
             </h2>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
               <GToolCard
-                title="Age Calculator"
-                description="Calculate exact age in years, months, weeks, days, hours, minutes, and seconds with precision accuracy for any date"
-                href="/calculator/age-calculator"
-                icon={Calendar}
-                badge="Essential"
-                badgeColor="bg-primary/90"
+                title="Instagram DP Viewer"
+                description="View and download any Instagram profile picture in full size HD — just enter a username, no login required"
+                href="/social-media-tools/instagram-dp"
+                icon={User}
+                badge="Popular"
+                badgeColor="bg-pink-500/90"
               />
               <GToolCard
-                title="BMI Calculator"
-                description="Calculate your Body Mass Index with detailed health insights and personalized recommendations based on WHO and CDC standards"
-                href="/calculator/bmi-calculator"
-                icon={Activity}
-                badge="Popular"
+                title="YouTube Channel Checker"
+                description="Check YouTube handle and channel-name availability instantly before you launch your channel"
+                href="/social-media-tools/channel-checker"
+                icon={Search}
+                badge="YouTube"
                 badgeColor="bg-blue-500/90"
               />
               <GToolCard
-                title="Loan Calculator"
-                description="Calculate loan payments, total interest, amortization schedules, and compare different loan options easily"
-                href="/finance-tools/loan-calculator"
-                icon={DollarSign}
-                badge="Finance"
-                badgeColor="bg-emerald-500/90"
+                title="YouTube Thumbnail Downloader"
+                description="Download YouTube video thumbnails in every quality size, from default up to full HD and 4K maxres"
+                href="/social-media-tools/youtube-thumbnail"
+                icon={Download}
+                badge="YouTube"
+                badgeColor="bg-red-500/90"
               />
               <GToolCard
-                title="Currency Converter"
-                description="Real-time currency conversion for 150+ world currencies with live exchange rates updated every minute for accurate international transactions"
-                href="/converters/currency"
-                icon={DollarSign}
-                badge="Live"
-                badgeColor="bg-red-500/90"
+                title="Anniversary Calculator"
+                description="Calculate how long you've been together and see upcoming relationship milestones worth celebrating"
+                href="/fun-tools/anniversary"
+                icon={Heart}
+                badge="Love"
+                badgeColor="bg-pink-500/90"
               />
             </div>
           </div>

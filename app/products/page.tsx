@@ -42,14 +42,14 @@ const categories = [
   {
     id: "calculators",
     name: "Professional Calculators",
-    description: "A comprehensive collection of precise calculators for finance, health, business, and everyday life. Get accurate answers instantly.",
+    description: "Handy calculators for everyday questions — from love compatibility and conception dates to IP subnet planning. Get accurate answers instantly.",
     icon: Calculator,
     href: "/calculator",
   },
   {
     id: "finance-tools",
     name: "Finance Tools",
-    description: "Take control of your finances with specialized tools for invoicing, payment calculations, savings goals, and investment planning.",
+    description: "Practical money helpers for everyday situations, including a PayPal fee calculator and a bill splitter for groups and teams.",
     icon: DollarSign,
     href: "/finance-tools",
   },
@@ -63,7 +63,7 @@ const categories = [
   {
     id: "converters",
     name: "Smart Converters",
-    description: "Seamlessly convert between a vast range of units, including currency, measurements, data sizes, and file formats.",
+    description: "Seamlessly convert file sizes and compare storage units, plus image format converters for HEIC, PNG, WebP, and JPG.",
     icon: Wrench,
     href: "/converters",
   },
@@ -129,7 +129,7 @@ const benefits = [
   {
     icon: User,
     title: "Individuals",
-    description: "Simplify daily tasks, from calculating a tip to converting measurements for a recipe. Our tools are here to make your life easier."
+    description: "Simplify daily tasks, from splitting a bill with friends to counting down to your next celebration. Our tools are here to make your life easier."
   },
   {
     icon: Briefcase,

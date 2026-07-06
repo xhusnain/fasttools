@@ -727,8 +727,6 @@ export default function LoveCalculatorPage() {
     ],
 
     relatedTools: [
-      { name: "Age Calculator", href: "/calculator/age-calculator" },
-      { name: "Percentage Calculator", href: "/calculator/percentage-calculator" },
       { name: "Anniversary Calculator", href: "/fun-tools/anniversary" },
       { name: "Birthday Countdown", href: "/fun-tools/birthday-countdown" },
       { name: "Future Age Predictor", href: "/fun-tools/future-age" },

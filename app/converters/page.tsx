@@ -3,43 +3,10 @@ import { GToolCard } from "@/ui/gtool-card"
 import { ToolPageLayout } from "@/components/common/tool-page-layout"
 import { createToolConfig } from "@/lib/create-tool-config"
 import {
-  DollarSign,
-  Globe,
   HardDrive,
-  Ruler,
-  Thermometer,
-  Type,
 } from "lucide-react"
 
 const converters = [
-  {
-    title: "Currency Converter",
-    description:
-      "Convert between global currencies with live exchange rate data.",
-    icon: DollarSign,
-    href: "/converters/currency",
-  },
-  {
-    title: "Text Case Converter",
-    description:
-      "Convert text between uppercase, title case, camelCase, and more.",
-    icon: Type,
-    href: "/converters/text-case",
-  },
-  {
-    title: "Length Converter",
-    description:
-      "Convert length units including meters, feet, inches, and miles.",
-    icon: Ruler,
-    href: "/converters/length",
-  },
-  {
-    title: "Temperature Converter",
-    description:
-      "Convert temperatures between Celsius and Fahrenheit instantly.",
-    icon: Thermometer,
-    href: "/converters/temperature",
-  },
   {
     title: "File Size Converter",
     description:
@@ -47,20 +14,13 @@ const converters = [
     icon: HardDrive,
     href: "/converters/file-size",
   },
-  {
-    title: "Time Zone Converter",
-    description:
-      "Convert times across cities and zones with DST-aware handling.",
-    icon: Globe,
-    href: "/converters/timezone",
-  },
 ]
 
 const toolConfig = createToolConfig({
   toolName: "Online Converters",
   description:
-    "Free online converters for currency, units, file sizes, time zones, and text case.",
-  metaTitle: "Online Converters: Currency, Length, Temperature, Timezone & More",
+    "Free online converters for file sizes and data units.",
+  metaTitle: "File Size Converter — Bytes, KB, MB, GB & Data Units",
   metaDescription:
     "Use free online converters for currency, file size, temperature, text case, JSON/XML/YAML/TOML, and more.",
   path: "/converters",
@@ -68,7 +28,7 @@ const toolConfig = createToolConfig({
   header: {
     title: "Online Converters",
     description:
-      "One place for fast, accurate converters across units, currencies, time zones, and text.",
+      "Fast, accurate conversion tools for data and storage units.",
     titleSize: "medium",
     descriptionSize: "small",
   },
@@ -77,30 +37,28 @@ const toolConfig = createToolConfig({
 
   content: {
     overview:
-      "This category includes practical converter tools for everyday work. Use it to convert measurements, currencies, time zones, file sizes, and text case without switching between multiple websites.",
+      "This category includes practical converter tools for everyday work. Use the File Size Converter to translate between bytes, kilobytes, megabytes, gigabytes, and terabytes when planning storage, uploads, and transfers.",
 
     howToSteps: [
-      "Choose the converter that matches your task.",
-      "Enter or paste your source value or document.",
-      "Review the converted result and copy or download it.",
-      "Open related converters when you need additional format changes.",
+      "Open the converter that matches your task.",
+      "Enter or paste your source value.",
+      "Review the converted result and copy it where you need it.",
+      "Adjust units or values to compare additional scenarios.",
     ],
 
     features: [
-      "Currency, time zone, and unit conversion tools",
-      "File size and length conversion utilities",
-      "Text case conversion for content and code",
+      "File size and data unit conversion",
+      "Decimal (KB/MB/GB) and binary (KiB/MiB/GiB) unit handling",
       "Browser-based processing for instant results",
-      "Mobile-friendly UI across converter pages",
+      "Mobile-friendly UI",
       "No signup required",
     ],
 
     useCases: [
-      "Checking travel budgets and currency equivalents",
-      "Converting measurement values for work or study",
-      "Standardizing text for content and development workflows",
-      "Scheduling meetings across time zones",
       "Planning storage and file transfer sizes",
+      "Estimating upload and download times from file sizes",
+      "Comparing disk and cloud storage capacities",
+      "Interpreting bandwidth and quota limits",
     ],
 
     aboutTool: (
@@ -110,14 +68,13 @@ const toolConfig = createToolConfig({
             Why Use Converter Workflows
           </h2>
           <p className="text-sm text-muted-foreground leading-relaxed mb-4">
-            Conversion work often happens in batches. You may convert
-            currencies while checking prices, switch text case while editing
-            content, or convert units while preparing pricing, documentation,
-            and calculations.
+            Conversion work often happens in batches. You may convert file
+            sizes while planning backups, comparing hosting plans, or
+            estimating how long a transfer will take on your connection.
           </p>
           <p className="text-sm text-muted-foreground leading-relaxed">
-            Keeping these tools in one category reduces friction and helps teams
-            move from raw input to production-ready output faster.
+            Keeping conversion tools in one category reduces friction and helps
+            teams move from raw input to production-ready output faster.
           </p>
         </div>
       </div>
@@ -127,12 +84,12 @@ const toolConfig = createToolConfig({
       {
         question: "Which converter should I start with?",
         answer:
-          "Pick the tool that matches your input: currency for money, length or temperature for measurements, file size for storage values, text case for content, and time zone for scheduling.",
+          "Start with the File Size Converter for anything involving storage values — bytes, KB, MB, GB, or TB. It handles both decimal and binary unit conventions.",
       },
       {
         question: "Do converter tools support both directions?",
         answer:
-          "Yes. The converters in this category work in both directions, so you can switch between units, currencies, or formats without opening another page.",
+          "Yes. The converters in this category work in both directions, so you can switch between units without opening another page.",
       },
       {
         question: "Are these converters free to use?",
@@ -147,7 +104,7 @@ const toolConfig = createToolConfig({
       {
         question: "What is the main advantage of this converter category?",
         answer:
-          "It combines utility, developer, and format-conversion workflows in one place, so you can complete multi-step transformations faster.",
+          "Everything runs in your browser with instant results, so you can complete conversions quickly without installing software or signing up.",
       },
     ],
 

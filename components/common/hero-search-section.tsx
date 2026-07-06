@@ -37,8 +37,8 @@ export function HeroSearchSection() {
                     { name: 'AI QR Generator', path: '/ai-tools/qr-generator' },
                     { name: 'YouTube Thumbnail Downloader', path: '/social-media-tools/youtube-thumbnail' },
                     { name: 'HEIC to JPG', path: '/image-tools/heic-to-jpg' },
-                    { name: 'Currency Converter', path: '/converters/currency' },
-                    { name: 'Age Calculator', path: '/calculator/age-calculator' },
+                    { name: 'PayPal Fee Calculator', path: '/finance-tools/paypal-fee' },
+                    { name: 'Future Age Calculator', path: '/fun-tools/future-age' },
                 ].map((tool) => (
                     <Link
                         key={tool.name}

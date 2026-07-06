@@ -69,38 +69,13 @@ export const sitemapPages = [
   { url: u("/social-media-tools/influencer-rate-calculator"), lastModified: new Date("2026-03-16"), changeFrequency: "monthly" as const, priority: 0.9 },
 
   // ─── Calculators ─────────────────────────────────────────────────────
-  { url: u("/calculator/age-calculator"), lastModified: new Date("2026-03-23"), changeFrequency: "monthly" as const, priority: 0.8 },
-  { url: u("/calculator/bmi-calculator"), lastModified: new Date("2026-03-23"), changeFrequency: "monthly" as const, priority: 0.8 },
-  { url: u("/calculator/percentage-calculator"), lastModified: new Date("2026-03-23"), changeFrequency: "monthly" as const, priority: 0.8 },
-  { url: u("/calculator/gpa-calculator"), lastModified: new Date("2026-03-23"), changeFrequency: "monthly" as const, priority: 0.8 },
-  { url: u("/calculator/scientific-calculator"), lastModified: new Date("2026-03-23"), changeFrequency: "monthly" as const, priority: 0.8 },
-  { url: u("/calculator/date-difference"), lastModified: new Date("2026-03-23"), changeFrequency: "monthly" as const, priority: 0.8 },
   { url: u("/calculator/love-calculator"), lastModified: new Date("2026-03-23"), changeFrequency: "monthly" as const, priority: 0.8 },
   { url: u("/calculator/ip-subnet-calculator"), lastModified: new Date("2026-03-23"), changeFrequency: "monthly" as const, priority: 0.8 },
-  { url: u("/calculator/cortisol-peak-calculator"), lastModified: new Date("2026-03-16"), changeFrequency: "monthly" as const, priority: 0.8 },
-  { url: u("/calculator/biological-age-calculator"), lastModified: new Date("2026-03-16"), changeFrequency: "monthly" as const, priority: 0.8 },
-  { url: u("/calculator/pregnancy-calculator"), lastModified: new Date("2026-03-23"), changeFrequency: "monthly" as const, priority: 0.8 },
   { url: u("/calculator/pregnancy-conception-calculator"), lastModified: new Date("2026-03-23"), changeFrequency: "monthly" as const, priority: 0.8 },
-  { url: u("/calculator/bmr-calculator"), lastModified: new Date("2026-03-23"), changeFrequency: "monthly" as const, priority: 0.8 },
-  { url: u("/calculator/calorie-calculator"), lastModified: new Date("2026-03-23"), changeFrequency: "monthly" as const, priority: 0.8 },
-  { url: u("/calculator/tdee-macro-calculator"), lastModified: new Date("2026-03-24"), changeFrequency: "monthly" as const, priority: 0.8 },
 
   // ─── Finance Tools ───────────────────────────────────────────────────
-  { url: u("/finance-tools/auto-loan-calculator"), lastModified: new Date("2026-03-22"), changeFrequency: "monthly" as const, priority: 0.8 },
-  { url: u("/finance-tools/loan-calculator"), lastModified: new Date("2026-03-23"), changeFrequency: "monthly" as const, priority: 0.8 },
-  { url: u("/finance-tools/quarterly-tax-estimator"), lastModified: new Date("2026-02-27"), changeFrequency: "monthly" as const, priority: 0.8 },
-  { url: u("/finance-tools/sales-tax-calculator"), lastModified: new Date("2026-03-23"), changeFrequency: "monthly" as const, priority: 0.8 },
   { url: u("/finance-tools/bill-splitter"), lastModified: new Date("2026-03-23"), changeFrequency: "monthly" as const, priority: 0.8 },
-  { url: u("/finance-tools/discount-calculator"), lastModified: new Date("2026-03-23"), changeFrequency: "monthly" as const, priority: 0.8 },
-  { url: u("/finance-tools/invoice-generator"), lastModified: new Date("2026-03-23"), changeFrequency: "monthly" as const, priority: 0.8 },
   { url: u("/finance-tools/paypal-fee"), lastModified: new Date("2026-03-23"), changeFrequency: "monthly" as const, priority: 0.8 },
-  { url: u("/finance-tools/paypal-goods-and-services-fee-calculator"), lastModified: new Date("2026-06-03"), changeFrequency: "monthly" as const, priority: 0.8 },
-  { url: u("/finance-tools/tip-calculator"), lastModified: new Date("2026-03-23"), changeFrequency: "monthly" as const, priority: 0.8 },
-  { url: u("/finance-tools/savings-tracker"), lastModified: new Date("2026-03-23"), changeFrequency: "monthly" as const, priority: 0.8 },
-  { url: u("/finance-tools/home-affordability-calculator"), lastModified: new Date("2026-03-18"), changeFrequency: "monthly" as const, priority: 0.8 },
-  { url: u("/finance-tools/saas-churn-calculator"), lastModified: new Date("2026-03-16"), changeFrequency: "monthly" as const, priority: 0.8 },
-  { url: u("/finance-tools/saas-payback-calculator"), lastModified: new Date("2026-03-16"), changeFrequency: "monthly" as const, priority: 0.8 },
-  { url: u("/ad-tools/roas-calculator"), lastModified: new Date("2026-03-23"), changeFrequency: "monthly" as const, priority: 0.8 },
 
   // ─── AI Tools ────────────────────────────────────────────────────────
   { url: u("/ai-tools/qr-generator"), lastModified: new Date("2026-03-23"), changeFrequency: "monthly" as const, priority: 0.9 },
@@ -114,12 +89,7 @@ export const sitemapPages = [
   { url: u("/ai-tools/ai-api-cost-calculator"), lastModified: new Date("2026-05-14"), changeFrequency: "weekly" as const, priority: 1.0 },
 
   // ─── Converters ──────────────────────────────────────────────────────
-  { url: u("/converters/currency"), lastModified: new Date("2026-03-23"), changeFrequency: "weekly" as const, priority: 0.8 },
   { url: u("/converters/file-size"), lastModified: new Date("2026-03-23"), changeFrequency: "monthly" as const, priority: 0.8 },
-  { url: u("/converters/length"), lastModified: new Date("2026-03-23"), changeFrequency: "monthly" as const, priority: 0.8 },
-  { url: u("/converters/temperature"), lastModified: new Date("2026-03-23"), changeFrequency: "monthly" as const, priority: 0.8 },
-  { url: u("/converters/text-case"), lastModified: new Date("2026-03-23"), changeFrequency: "monthly" as const, priority: 0.8 },
-  { url: u("/converters/timezone"), lastModified: new Date("2026-03-23"), changeFrequency: "monthly" as const, priority: 0.8 },
 
   // ─── Web Tools ───────────────────────────────────────────────────────
   { url: u("/web-tools/whois-lookup"), lastModified: new Date("2026-06-04"), changeFrequency: "monthly" as const, priority: 0.7 },
@@ -179,10 +149,6 @@ export const sitemapPages = [
   // AI Tools
 
   // Calculators (high-impression GSC queries: concrete calculator 279 imp, body fat, fraction, triangle, time duration, conversion)
-  { url: u("/calculator/body-fat-calculator"), lastModified: new Date("2026-05-14"), changeFrequency: "monthly" as const, priority: 0.8 },
-  { url: u("/calculator/concrete-calculator"), lastModified: new Date("2026-05-14"), changeFrequency: "monthly" as const, priority: 0.8 },
-  { url: u("/calculator/conversion-calculator"), lastModified: new Date("2026-05-14"), changeFrequency: "monthly" as const, priority: 0.7 },
-  { url: u("/calculator/fraction-calculator"), lastModified: new Date("2026-05-14"), changeFrequency: "monthly" as const, priority: 0.8 },
 
   // Converters (utility tools — low individual volume but high cumulative)
 
@@ -193,13 +159,6 @@ export const sitemapPages = [
   { url: u("/dev-tools/sql-to-json"), lastModified: new Date("2026-06-04"), changeFrequency: "monthly" as const, priority: 0.7 },
 
   // Finance Tools (large untapped category — multiple high-volume queries)
-  { url: u("/finance-tools/credit-card-payoff"), lastModified: new Date("2026-05-14"), changeFrequency: "monthly" as const, priority: 0.8 },
-  { url: u("/finance-tools/interest-rate-calculator"), lastModified: new Date("2026-05-14"), changeFrequency: "monthly" as const, priority: 0.8 },
-  { url: u("/finance-tools/investment-calculator"), lastModified: new Date("2026-05-14"), changeFrequency: "monthly" as const, priority: 0.8 },
-  { url: u("/finance-tools/payment-calculator"), lastModified: new Date("2026-05-14"), changeFrequency: "monthly" as const, priority: 0.7 },
-  { url: u("/finance-tools/retirement-planner"), lastModified: new Date("2026-05-14"), changeFrequency: "monthly" as const, priority: 0.7 },
-  { url: u("/finance-tools/salary-calculator"), lastModified: new Date("2026-05-14"), changeFrequency: "monthly" as const, priority: 0.8 },
-  { url: u("/finance-tools/tax-calculator"), lastModified: new Date("2026-05-14"), changeFrequency: "monthly" as const, priority: 0.8 },
 
   // SEO Tools
 

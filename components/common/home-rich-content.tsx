@@ -11,15 +11,15 @@ export function HomeRichContent() {
                     <div className="grid lg:grid-cols-2 gap-12 lg:gap-16">
                         <div className="space-y-8">
                             <h2 className="text-3xl md:text-4xl font-bold text-foreground">
-                                200+ Tools for Every Task — All Free, All Instant
+                                Free Online Tools — All Free, All Instant
                             </h2>
                             <div className="prose dark:prose-invert max-w-none text-muted-foreground">
                                 <p>
-                                    Whether you need to <strong className="text-foreground">merge a PDF</strong>, calculate your BMI, convert currencies, or generate AI captions — FastTools has you covered. Every tool loads instantly, works on any device, and requires zero signup.
+                                    Whether you need to <strong className="text-foreground">merge a PDF</strong>, view an Instagram profile picture in full size, download a YouTube thumbnail, or generate AI captions — FastTools has you covered. Every tool loads instantly, works on any device, and requires zero signup.
                                 </p>
                                 <h3 className="text-xl font-semibold text-foreground mt-6 mb-3">Built for Real Work, Not Demos</h3>
                                 <p>
-                                    Our calculators handle real formulas — loan payments, tax estimation, IP subnets. Our converters cover currencies, units, time zones, and text case. Our PDF tools let you split, merge, and verify documents without uploading anything.
+                                    Our calculators handle real formulas — PayPal fees, bill splits, IP subnets. Our converters cover file sizes and image formats like HEIC, PNG, and WebP to JPG. Our PDF tools let you split, merge, and verify documents without uploading anything.
                                 </p>
                                 <h3 className="text-xl font-semibold text-foreground mt-6 mb-3">Works on Every Device</h3>
                                 <p>
@@ -53,13 +53,12 @@ export function HomeRichContent() {
                                         <div>
                                             <h4 className="font-semibold text-foreground mb-1">Calculators &amp; Finance</h4>
                                             <p className="text-sm text-muted-foreground">
-                                                <Link href="/calculator/bmi-calculator" className="underline underline-offset-2 hover:text-foreground">BMI calculator</Link>,{" "}
-                                                <Link href="/calculator/age-calculator" className="underline underline-offset-2 hover:text-foreground">age calculator</Link>,{" "}
-                                                <Link href="/finance-tools/loan-calculator" className="underline underline-offset-2 hover:text-foreground">loan calculator</Link>,{" "}
                                                 <Link href="/finance-tools/paypal-fee" className="underline underline-offset-2 hover:text-foreground">PayPal fee calculator</Link>,{" "}
-                                                <Link href="/finance-tools/tax-calculator" className="underline underline-offset-2 hover:text-foreground">tax calculator</Link>,{" "}
-                                                <Link href="/calculator/gpa-calculator" className="underline underline-offset-2 hover:text-foreground">GPA calculator</Link>, and{" "}
-                                                <Link href="/calculator/scientific-calculator" className="underline underline-offset-2 hover:text-foreground">scientific calculator</Link>.
+                                                <Link href="/finance-tools/bill-splitter" className="underline underline-offset-2 hover:text-foreground">bill splitter</Link>,{" "}
+                                                <Link href="/fun-tools/anniversary" className="underline underline-offset-2 hover:text-foreground">anniversary calculator</Link>,{" "}
+                                                <Link href="/fun-tools/future-age" className="underline underline-offset-2 hover:text-foreground">future age calculator</Link>,{" "}
+                                                <Link href="/calculator/love-calculator" className="underline underline-offset-2 hover:text-foreground">love calculator</Link>, and{" "}
+                                                <Link href="/calculator/ip-subnet-calculator" className="underline underline-offset-2 hover:text-foreground">IP subnet calculator</Link>.
                                             </p>
                                         </div>
                                     </div>
@@ -70,7 +69,7 @@ export function HomeRichContent() {
                                         </div>
                                         <div>
                                             <h4 className="font-semibold text-foreground mb-1">Social Media & AI</h4>
-                                            <p className="text-sm text-muted-foreground"><Link href="/social-media-tools/instagram-dp" className="underline underline-offset-2 hover:text-foreground">Instagram DP viewer</Link>, <Link href="/social-media-tools/channel-checker" className="underline underline-offset-2 hover:text-foreground">YouTube channel checker</Link>, <Link href="/ai-tools/qr-generator" className="underline underline-offset-2 hover:text-foreground">AI QR generator</Link>, caption generator, and a <Link href="/social-media-tools/hashtag-counter" className="underline underline-offset-2 hover:text-foreground">hashtag counter</Link>.</p>
+                                            <p className="text-sm text-muted-foreground"><Link href="/social-media-tools/instagram-dp" className="underline underline-offset-2 hover:text-foreground">Instagram DP viewer</Link> with <Link href="/social-media-tools/instagram-dp/zoom-profile-picture" className="underline underline-offset-2 hover:text-foreground">profile picture zoom</Link>, <Link href="/social-media-tools/youtube-thumbnail" className="underline underline-offset-2 hover:text-foreground">YouTube thumbnail downloader</Link>, <Link href="/social-media-tools/channel-checker" className="underline underline-offset-2 hover:text-foreground">YouTube channel checker</Link>, <Link href="/ai-tools/qr-generator" className="underline underline-offset-2 hover:text-foreground">AI QR generator</Link>, <Link href="/image-tools/ai-image-detector" className="underline underline-offset-2 hover:text-foreground">AI image detector</Link>, and a <Link href="/social-media-tools/hashtag-counter" className="underline underline-offset-2 hover:text-foreground">hashtag counter</Link>.</p>
                                         </div>
                                     </div>
 

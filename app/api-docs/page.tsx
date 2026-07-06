@@ -36,7 +36,7 @@ const apis = [
     name: "Currency Converter",
     description: "Real-time currency exchange rates and conversion. Access up-to-date rates for over 150 currencies worldwide.",
     icon: Globe,
-    href: "/converters/currency",
+    href: "#currency-api",
     version: "v1",
     status: "active",
   },
@@ -207,7 +207,7 @@ export default function ApiDocsPage() {
             </div>
 
             <div className="space-y-16 mb-16">
-              <div className="prose prose-lg max-w-none">
+              <div id="currency-api" className="prose prose-lg max-w-none scroll-mt-24">
                 <h2 className="text-2xl md:text-3xl font-bold text-primary mb-4">Getting Started with the FastTools Currency API</h2>
                 <p>Our free Currency Conversion API is designed for simplicity and ease of use, providing real-time exchange rates for over 150 currencies. To get started, you don't need an API key—you can begin making requests immediately. The API provides a simple GET endpoint for fetching conversion rates. For example, to get the latest conversion rate from USD to EUR, you would make a request to an endpoint like <code>/api/v1/currency/convert?from=USD&to=EUR&amount=1</code>. The API will return a clean JSON response containing the requested rate and the converted amount. This straightforward design makes it incredibly easy to integrate into any application, from e-commerce sites to financial dashboards. The data is updated regularly to ensure you're always working with the most current exchange rates available.</p>
               </div>

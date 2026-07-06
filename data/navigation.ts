@@ -98,24 +98,12 @@ export const navigationConfig: MegaMenuSection[] = [
             {
                 title: "Calculators",
                 items: [
-                    { title: "BMI Calculator", href: "/calculator/bmi-calculator", icon: Activity },
-                    { title: "Age Calculator", href: "/calculator/age-calculator", icon: Clock },
-                    { title: "Percentage Calc", href: "/calculator/percentage-calculator", icon: Percent },
-                    { title: "Scientific Calc", href: "/calculator/scientific-calculator", icon: Calculator },
-                    { title: "GPA Calculator", href: "/calculator/gpa-calculator", icon: GraduationCap },
                     { title: "Love Calculator", href: "/calculator/love-calculator", icon: Heart },
-                    { title: "TDEE & Macros", href: "/calculator/tdee-macro-calculator", icon: Activity },
-                    { title: "Biological Age", href: "/calculator/biological-age-calculator", icon: Activity },
-                    { title: "Cortisol Peak", href: "/calculator/cortisol-peak-calculator", icon: Timer },
                 ]
             },
             {
                 title: "Converters",
                 items: [
-                    { title: "Currency Converter", href: "/converters/currency", icon: DollarSign },
-                    { title: "Length Converter", href: "/converters/length", icon: Ruler },
-                    { title: "Temperature", href: "/converters/temperature", icon: Thermometer },
-                    { title: "Timezone", href: "/converters/timezone", icon: Globe },
                     { title: "File Size", href: "/converters/file-size", icon: HardDrive },
                 ]
             },
@@ -153,32 +141,9 @@ export const navigationConfig: MegaMenuSection[] = [
         title: "Finance",
         categories: [
             {
-                title: "Loans & Debt",
-                items: [
-                    { title: "Loan Calculator", href: "/finance-tools/loan-calculator", icon: DollarSign },
-                    { title: "Auto Loan Calc", href: "/finance-tools/auto-loan-calculator", icon: Car },
-                    { title: "Credit Card Payoff", href: "/finance-tools/credit-card-payoff", icon: CreditCard },
-                    { title: "Home Affordability", href: "/finance-tools/home-affordability-calculator", icon: Home },
-                ]
-            },
-            {
-                title: "Investment",
-                items: [
-                    { title: "Investment Calc", href: "/finance-tools/investment-calculator", icon: TrendingUp },
-                    { title: "Savings Tracker", href: "/finance-tools/savings-tracker", icon: PiggyBank },
-                    { title: "SaaS Churn", href: "/finance-tools/saas-churn-calculator", icon: TrendingUp },
-                    { title: "SaaS Payback", href: "/finance-tools/saas-payback-calculator", icon: TrendingUp },
-                ]
-            },
-            {
                 title: "Daily Finance",
                 items: [
-                    { title: "Tip Calculator", href: "/finance-tools/tip-calculator", icon: Receipt },
                     { title: "Bill Splitter", href: "/finance-tools/bill-splitter", icon: Receipt },
-                    { title: "Invoice Generator", href: "/finance-tools/invoice-generator", icon: FileText },
-                    { title: "PayPal G&S", href: "/finance-tools/paypal-goods-and-services-fee-calculator", icon: DollarSign },
-                    { title: "Discount Calc", href: "/finance-tools/discount-calculator", icon: Percent },
-                    { title: "Quarterly Tax", href: "/finance-tools/quarterly-tax-estimator", icon: Receipt },
                 ]
             }
         ]
@@ -273,7 +238,6 @@ export const navigationConfig: MegaMenuSection[] = [
             {
                 title: "Featured",
                 items: [
-                    { title: "ROAS Calculator", href: "/ad-tools/roas-calculator", icon: TrendingUp },
                     { title: "IP Subnet Calc", href: "/calculator/ip-subnet-calculator", icon: Network },
                 ]
             }

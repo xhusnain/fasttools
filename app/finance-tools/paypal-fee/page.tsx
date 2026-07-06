@@ -516,12 +516,8 @@ export default function PayPalFeeCalculatorPage() {
     ),
 
     relatedTools: [
-      { name: "PayPal G&S Fee Calculator", href: "/finance-tools/paypal-goods-and-services-fee-calculator" },
-      { name: "Invoice Generator", href: "/finance-tools/invoice-generator" },
-      { name: "Sales Tax Calculator", href: "/finance-tools/sales-tax-calculator" },
-      { name: "Discount Calculator", href: "/finance-tools/discount-calculator" },
       { name: "Bill Splitter", href: "/finance-tools/bill-splitter" },
-      { name: "Tip Calculator", href: "/finance-tools/tip-calculator" },
+      { name: "Influencer Rate Calculator", href: "/social-media-tools/influencer-rate-calculator" },
       { name: "All Finance Tools", href: "/finance-tools" }
     ]
   }

@@ -19,33 +19,10 @@ export const searchItems: SearchItem[] = [
   { name: "Cookie Preferences", description: "Manage your cookie preferences", path: "/cookie-preferences", category: "Pages" },
 
   // Calculator Tools
-  { name: "ROAS Calculator", description: "Calculate Return on Ad Spend, ROI, and break-even points", path: "/ad-tools/roas-calculator", category: "Calculator" },
-  { name: "BMI Calculator", description: "Calculate your Body Mass Index with detailed health insights", path: "/calculator/bmi-calculator", category: "Calculator" },
-  { name: "Age Calculator", description: "Calculate exact age in years, months, weeks, days, hours, minutes, and seconds", path: "/calculator/age-calculator", category: "Calculator" },
-  { name: "Percentage Calculator", description: "Calculate percentages, discounts, increases, decreases, and percentage differences", path: "/calculator/percentage-calculator", category: "Calculator" },
-  { name: "Loan Calculator", description: "Calculate loan payments, total interest, amortization schedules", path: "/finance-tools/loan-calculator", category: "Calculator" },
   { name: "Salary Calculator", description: "Convert between hourly, daily, weekly, monthly, and annual salary", path: "/calculator/salary-calculator", category: "Calculator" },
-  { name: "Tax Calculator", description: "Calculate federal and state income taxes", path: "/finance-tools/tax-calculator", category: "Calculator" },
-  { name: "Investment Calculator", description: "Calculate investment returns and compare options", path: "/finance-tools/investment-calculator", category: "Calculator" },
-  { name: "GPA Calculator", description: "Calculate semester GPA, cumulative GPA, and weighted GPA", path: "/calculator/gpa-calculator", category: "Calculator" },
-  { name: "Calorie Calculator", description: "Calculate daily calorie needs based on age, gender, activity level", path: "/calculator/calorie-calculator", category: "Calculator" },
-  { name: "BMR Calculator", description: "Calculate your Basal Metabolic Rate", path: "/calculator/bmr-calculator", category: "Calculator" },
-  { name: "Body Fat Calculator", description: "Estimate body fat percentage using multiple methods", path: "/calculator/body-fat-calculator", category: "Calculator" },
-  { name: "TDEE & Macro Calculator", description: "Calculate total daily energy expenditure and macro targets for fitness goals", path: "/calculator/tdee-macro-calculator", category: "Calculator" },
-  { name: "Biological Age Calculator", description: "Estimate biological age from lifestyle, health, and fitness indicators", path: "/calculator/biological-age-calculator", category: "Calculator" },
-  { name: "Cortisol Peak Calculator", description: "Estimate cortisol peak timing for sleep, exercise, and wellness planning", path: "/calculator/cortisol-peak-calculator", category: "Calculator" },
-  { name: "Pregnancy Calculator", description: "Calculate due date, pregnancy timeline, and fetal development", path: "/calculator/pregnancy-calculator", category: "Calculator" },
   { name: "Love Calculator", description: "Calculate love compatibility percentage based on names", path: "/calculator/love-calculator", category: "Calculator" },
-  { name: "Date Difference Calculator", description: "Calculate the exact difference between two dates", path: "/calculator/date-difference", category: "Calculator" },
-  { name: "Conversion Calculator", description: "Convert between 1000+ units instantly", path: "/calculator/conversion-calculator", category: "Calculator" },
-  { name: "Concrete Calculator", description: "Calculate concrete volume, weight, materials, and cost", path: "/calculator/concrete-calculator", category: "Calculator" },
   { name: "IP Subnet Calculator", description: "Calculate IPv4 and IPv6 subnets with CIDR notation", path: "/calculator/ip-subnet-calculator", category: "Calculator" },
-  { name: "Scientific Calculator", description: "Advanced scientific calculator with trigonometric and logarithmic functions", path: "/calculator/scientific-calculator", category: "Calculator" },
-  { name: "Fraction Calculator", description: "Add, subtract, multiply, and divide fractions", path: "/calculator/fraction-calculator", category: "Calculator" },
   { name: "Pregnancy Conception Calculator", description: "Calculate your conception date with personalized guidance", path: "/calculator/pregnancy-conception-calculator", category: "Calculator" },
-  { name: "Sales Tax Calculator", description: "Calculate sales tax for all 50 US states", path: "/finance-tools/sales-tax-calculator", category: "Calculator" },
-  { name: "Interest Rate Calculator", description: "Calculate real interest rates on loans", path: "/finance-tools/interest-rate-calculator", category: "Calculator" },
-  { name: "Payment Calculator", description: "Professional payment calculator for loan analysis", path: "/finance-tools/payment-calculator", category: "Calculator" },
 
   // AI Tools
   { name: "AI QR Code Generator", description: "Create stunning, branded QR codes with AI-powered customization", path: "/ai-tools/qr-generator", category: "AI" },
@@ -58,13 +35,7 @@ export const searchItems: SearchItem[] = [
   { name: "AI API Cost Calculator", description: "Estimate OpenAI, Claude, Gemini, and LLM API costs from token usage", path: "/ai-tools/ai-api-cost-calculator", category: "AI" },
 
   // Converter Tools
-  { name: "Currency Converter", description: "Real-time currency conversion for 150+ world currencies", path: "/converters/currency", category: "Converter" },
-  { name: "Text Case Converter", description: "Transform text between uppercase, lowercase, title case, camelCase", path: "/converters/text-case", category: "Converter" },
-  { name: "Length Converter", description: "Convert between all major length units", path: "/converters/length", category: "Converter" },
-  { name: "Temperature Converter", description: "Convert between Celsius, Fahrenheit, Kelvin, and Rankine", path: "/converters/temperature", category: "Converter" },
   { name: "File Size Converter", description: "Convert between bytes, KB, MB, GB, TB", path: "/converters/file-size", category: "Converter" },
-  { name: "Timezone Converter", description: "Convert time between different time zones worldwide", path: "/converters/timezone", category: "Converter" },
-  { name: "Currency Converter", description: "Convert between world currencies with real-time exchange rates", path: "/converters/currency", category: "Converter" },
 
   // Crypto Tools
   { name: "Crypto Tools", description: "Secure and free online crypto tools", path: "/crypto-tools", category: "Pages" },
@@ -130,21 +101,8 @@ export const searchItems: SearchItem[] = [
   { name: "WHOIS & Domain Lookup", description: "Free WHOIS / RDAP domain lookup. View registrar, creation and expiry dates, status codes, nameservers, DNSSEC, and contact info for any domain.", path: "/web-tools/whois-lookup", category: "Web" },
 
   // Finance Tools
-  { name: "Invoice Generator", description: "Create professional invoices for your business", path: "/finance-tools/invoice-generator", category: "Finance" },
-  { name: "Auto Loan Calculator", description: "Estimate monthly car payments, total interest, and auto loan payoff schedule", path: "/finance-tools/auto-loan-calculator", category: "Finance" },
   { name: "PayPal Fee Calculator", description: "Calculate PayPal transaction fees", path: "/finance-tools/paypal-fee", category: "Finance" },
-  { name: "PayPal G&S Fee Calculator", description: "Calculate PayPal Goods and Services fees, seller net, and gross-up amount", path: "/finance-tools/paypal-goods-and-services-fee-calculator", category: "Finance" },
-  { name: "Discount Calculator", description: "Calculate sale prices and savings", path: "/finance-tools/discount-calculator", category: "Finance" },
-  { name: "Tip Calculator", description: "Calculate tips for restaurants and services", path: "/finance-tools/tip-calculator", category: "Finance" },
-  { name: "Savings Goal Tracker", description: "Track your savings goals", path: "/finance-tools/savings-tracker", category: "Finance" },
-  { name: "Home Affordability Calculator", description: "Estimate how much house you can afford from income, debt, and down payment", path: "/finance-tools/home-affordability-calculator", category: "Finance" },
-  { name: "Quarterly Tax Estimator", description: "Estimate 1099 quarterly tax payments with self-employment tax and safe harbor checks", path: "/finance-tools/quarterly-tax-estimator", category: "Finance" },
-  { name: "Retirement Planner", description: "Plan your retirement with compound interest", path: "/finance-tools/retirement-planner", category: "Finance" },
   { name: "Bill Splitter", description: "Split bills and expenses fairly", path: "/finance-tools/bill-splitter", category: "Finance" },
-  { name: "Credit Card Payoff Calculator", description: "Calculate credit card debt payoff time", path: "/finance-tools/credit-card-payoff", category: "Finance" },
-  { name: "Salary Calculator", description: "Convert salary between hourly, weekly, monthly, and annual pay", path: "/finance-tools/salary-calculator", category: "Finance" },
-  { name: "SaaS Churn Calculator", description: "Calculate customer churn, revenue churn, retention, and CLV for SaaS teams", path: "/finance-tools/saas-churn-calculator", category: "Finance" },
-  { name: "SaaS Payback Calculator", description: "Calculate CAC payback period, gross-margin payback, and SaaS efficiency metrics", path: "/finance-tools/saas-payback-calculator", category: "Finance" },
 
   // Fun Tools
   { name: "Fun Tools", description: "Entertaining tools for celebrations and social content", path: "/fun-tools", category: "Pages" },

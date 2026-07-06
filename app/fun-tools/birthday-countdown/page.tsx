@@ -214,8 +214,7 @@ const toolConfig = createToolConfig({
     relatedTools: [
       { name: "Anniversary Calculator", href: "/fun-tools/anniversary" },
       { name: "Future Age Predictor", href: "/fun-tools/future-age" },
-      { name: "Age Calculator", href: "/calculator/age-calculator" },
-      { name: "Date Difference Calculator", href: "/calculator/date-difference" },
+      { name: "Love Calculator", href: "/calculator/love-calculator" },
       { name: "All Fun Tools", href: "/fun-tools" }
     ]
   }

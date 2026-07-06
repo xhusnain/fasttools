@@ -198,7 +198,6 @@ const toolConfig = createToolConfig({
       }
     ],
     relatedTools: [
-      { name: "Age Calculator", href: "/calculator/age-calculator" },
       { name: "Love Calculator", href: "/calculator/love-calculator" },
       { name: "Hashtag Counter", href: "/social-media-tools/hashtag-counter" },
     ],

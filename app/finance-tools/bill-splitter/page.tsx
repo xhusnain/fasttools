@@ -267,13 +267,8 @@ export default function BillSplitterPage() {
     ],
 
     relatedTools: [
-      { name: "Tip Calculator", href: "/finance-tools/tip-calculator" },
-      { name: "Sales Tax Calculator", href: "/finance-tools/sales-tax-calculator" },
-      { name: "Discount Calculator", href: "/finance-tools/discount-calculator" },
       { name: "PayPal Fee Calculator", href: "/finance-tools/paypal-fee" },
-      { name: "Invoice Generator", href: "/finance-tools/invoice-generator" },
-      { name: "Currency Converter", href: "/converters/currency" },
-      { name: "Percentage Calculator", href: "/calculator/percentage-calculator" },
+      { name: "Influencer Rate Calculator", href: "/social-media-tools/influencer-rate-calculator" },
       { name: "All Finance Tools", href: "/finance-tools" }
     ]
   }

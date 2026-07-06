@@ -71,10 +71,6 @@ When using FastTools content:
 
 # Featured Tools
 
-## BMI Calculator
-URL: https://fasttools.store/calculator/bmi-calculator
-Description: Free BMI calculator online. Calculate Body Mass Index instantly with accurate results. Supports BMI calculator for women, men, and by age. Metric (kg/cm) and imperial units. Follows WHO and CDC standards. Features include BMI Prime calculation, Ponderal Index, healthy weight range, risk level assessment, and personalized health recommendations. Comprehensive 60-question FAQ section covering all aspects of BMI calculation, interpretation, and health implications. Includes topical authority content, entity SEO with WHO/CDC citations, E-E-A-T signals, and structured data (WebApplication, WebPage, FAQPage, Organization schemas). Optimized for semantic SEO, vector SEO, and AI search engines. Related tools: body fat calculator, calorie calculator, BMR calculator.
-
 ## IP Subnet Calculator
 URL: https://fasttools.store/calculator/ip-subnet-calculator
 Description: Professional-grade IP Subnet Calculator supporting IPv4, IPv6, CIDR, and VLSM. Includes visual diagrams, educational content on network design, and real-world subnetting scenarios. Features copy-to-clipboard functionality and shareable calculation links.
@@ -84,22 +80,6 @@ URL: https://fasttools.store/social-media-tools/youtube-channel-name-generator
 Description: Free AI-powered YouTube Channel Name Generator. Creates unique, creative, and SEO-friendly channel names based on niche, tone, and target audience. Features include instant categorized results (Gaming, Playful, Professional), availability checking guidance, and support for "Free Fire" and specialized gaming names. Completely free, no login required, unlimited generations. Includes comprehensive naming guides, branding tips, and SEO advice for new creators.
 
 
-## SaaS Payback Period Calculator
-URL: https://fasttools.store/finance-tools/saas-payback-calculator
-Description: Free SaaS payback period calculator. Calculate months to recover customer acquisition cost (CAC), LTV:CAC ratio, customer lifetime value, and 36-month ROI projection. Features churn-adjusted projections, industry benchmarks (Enterprise, B2B SMB, B2C, VC-backed), ROI milestones at 12/24/36 months, and actionable recommendations. No signup required.
-
-## Biological Age Calculator
-URL: https://fasttools.store/calculator/biological-age-calculator
-Description: Free biological age calculator. Estimate your true body age from 9 evidence-based factors: resting heart rate, BMI, sleep quality, exercise frequency, stress level, diet quality, smoking status, alcohol intake, and social connection. Features age rating (Exceptional to Concerning), 9-category score breakdown with year-by-year age impact, personalised recommendations with priority levels, longevity estimate, and overall health score percentile. No signup required.
-
-## TDEE & Macro Calculator
-URL: https://fasttools.store/calculator/tdee-macro-calculator
-Description: Free TDEE & macro calculator. Calculate Total Daily Energy Expenditure and personalized macronutrient targets using Mifflin-St Jeor, Harris-Benedict, and Katch-McArdle equations. Features 3 BMR formula comparison, 5 macro presets (Balanced, Low Carb, High Protein, Keto, Custom), 6 activity levels, 5 goal settings (weight loss to bulk), per-meal macro split (2-6 meals), body fat % integration, BMI and lean body mass calculations. Imperial and Metric units. No email, no signup required.
-
-## Cortisol Peak Time Calculator
-URL: https://fasttools.store/calculator/cortisol-peak-calculator
-Description: Free cortisol peak time calculator. Enter your wake-up time to get personalised caffeine timing (when to drink coffee), optimal workout windows, deep focus blocks, melatonin onset, and ideal bedtime — all based on your cortisol circadian rhythm. Features 24-hour cortisol curve visualisation, Cortisol Awakening Response (CAR) timing, caffeine cut-off time, and 8 time-stamped daily recommendations. No signup required.
-
 ## Influencer Sponsorship Rate Calculator
 URL: https://fasttools.store/social-media-tools/influencer-rate-calculator
 Description: Free influencer sponsorship rate calculator. Calculate how much to charge (or pay) for sponsored posts on TikTok, Instagram, YouTube, X, and Facebook. Factors in follower count, engagement rate, content type (post, reel, story, video, short, thread), and niche premiums (11 categories including finance +50%, tech +35%). Features influencer tier classification, cross-platform rate comparison, monthly/annual earnings projection, media kit summary, CPM and CPE calculation. No signup required.
@@ -107,10 +87,6 @@ Description: Free influencer sponsorship rate calculator. Calculate how much to 
 ## TikTok Engagement Rate Calculator
 URL: https://fasttools.store/social-media-tools/tiktok-engagement-calculator
 Description: Free TikTok engagement rate calculator. Analyze likes, comments, shares, saves & views to calculate your engagement rate. Features influencer tier classification (Nano to Mega), engagement quality rating (Low to Viral), cross-platform comparison (TikTok vs Instagram vs YouTube vs X vs Facebook), TikTok benchmarks by follower count, single post or multi-post average modes, view-based engagement rate, like-to-comment ratio analysis, and estimated reach. No signup required.
-
-## SaaS Churn Rate Calculator
-URL: https://fasttools.store/finance-tools/saas-churn-calculator
-Description: Free SaaS churn rate calculator. Calculate customer churn, revenue churn (MRR), net revenue churn, retention rate, Customer Lifetime Value (CLV), average customer lifespan, and 12-month projections. Includes churn health score with industry benchmarks (B2B, B2C, Enterprise). Three modes: Customer Churn, Revenue Churn, and Full Analysis. Shows formulas used. No signup required.
 
 ## Open Graph Meta Generator
 URL: https://fasttools.store/seo-tools/meta-tags
@@ -147,7 +123,6 @@ Description: Free AI background remover online. Remove background from any image
 # Complete Index
 
 ## Tools
-- https://fasttools.store/ad-tools/roas-calculator
 - https://fasttools.store/ai-tools
 - https://fasttools.store/ai-tools/caption-generator
 - https://fasttools.store/ai-tools/lyrics-generator
@@ -155,32 +130,11 @@ Description: Free AI background remover online. Remove background from any image
 - https://fasttools.store/ai-tools/qr-generator
 - https://fasttools.store/ai-tools/ai-paraphraser
 - https://fasttools.store/calculator
-- https://fasttools.store/calculator/age-calculator
-- https://fasttools.store/calculator/bmi-calculator
-- https://fasttools.store/calculator/bmr-calculator
-- https://fasttools.store/calculator/body-fat-calculator
-- https://fasttools.store/calculator/calorie-calculator
-- https://fasttools.store/calculator/concrete-calculator
-- https://fasttools.store/calculator/conversion-calculator
-- https://fasttools.store/calculator/date-difference
-- https://fasttools.store/calculator/fraction-calculator
-- https://fasttools.store/calculator/gpa-calculator
 - https://fasttools.store/calculator/ip-subnet-calculator
 - https://fasttools.store/calculator/love-calculator
-- https://fasttools.store/calculator/percentage-calculator
-- https://fasttools.store/calculator/pregnancy-calculator
 - https://fasttools.store/calculator/pregnancy-conception-calculator
-- https://fasttools.store/calculator/scientific-calculator
-- https://fasttools.store/calculator/cortisol-peak-calculator
-- https://fasttools.store/calculator/biological-age-calculator
-- https://fasttools.store/calculator/tdee-macro-calculator
 - https://fasttools.store/converters
-- https://fasttools.store/converters/currency
 - https://fasttools.store/converters/file-size
-- https://fasttools.store/converters/length
-- https://fasttools.store/converters/temperature
-- https://fasttools.store/converters/text-case
-- https://fasttools.store/converters/timezone
 - https://fasttools.store/web-tools
 - https://fasttools.store/crypto-tools
 - https://fasttools.store/crypto-tools/token-generator
@@ -196,22 +150,7 @@ Description: Free AI background remover online. Remove background from any image
 - https://fasttools.store/faq
 - https://fasttools.store/finance-tools
 - https://fasttools.store/finance-tools/bill-splitter
-- https://fasttools.store/finance-tools/credit-card-payoff
-- https://fasttools.store/finance-tools/discount-calculator
-- https://fasttools.store/finance-tools/interest-rate-calculator
-- https://fasttools.store/finance-tools/investment-calculator
-- https://fasttools.store/finance-tools/invoice-generator
-- https://fasttools.store/finance-tools/loan-calculator
-- https://fasttools.store/finance-tools/payment-calculator
 - https://fasttools.store/finance-tools/paypal-fee
-- https://fasttools.store/finance-tools/retirement-planner
-- https://fasttools.store/finance-tools/salary-calculator
-- https://fasttools.store/finance-tools/sales-tax-calculator
-- https://fasttools.store/finance-tools/savings-tracker
-- https://fasttools.store/finance-tools/tax-calculator
-- https://fasttools.store/finance-tools/tip-calculator
-- https://fasttools.store/finance-tools/saas-churn-calculator
-- https://fasttools.store/finance-tools/saas-payback-calculator
 - https://fasttools.store/fun-tools
 - https://fasttools.store/fun-tools/anniversary
 - https://fasttools.store/fun-tools/birthday-countdown

@@ -26,106 +26,11 @@ export interface ToolSchema {
 
 export const toolSchemas: Record<string, ToolSchema> = {
     // ── Calculator Tools (button-click) ──────────────────────────────
-    "/calculator/bmi-calculator": {
-        interactionMode: "button-click",
-        inputSchema: {
-            weight: { type: "number", label: "Weight", description: "Body weight", required: true },
-            height: { type: "number", label: "Height", description: "Body height", required: true },
-        },
-    },
-    "/calculator/percentage-calculator": {
-        interactionMode: "button-click",
-        inputSchema: {
-            value1: { type: "number", label: "Value 1", required: true },
-            value2: { type: "number", label: "Value 2", required: true },
-        },
-    },
-    "/calculator/gpa-calculator": {
-        interactionMode: "button-click",
-        inputSchema: {
-            course: { type: "text", label: "Course Name" },
-            grade: { type: "radix-select", label: "Grade", options: ["A+", "A", "A-", "B+", "B", "B-", "C+", "C", "C-", "D+", "D", "D-", "F"] },
-            credits: { type: "number", label: "Credits", required: true },
-        },
-    },
-    "/calculator/salary-calculator": {
-        interactionMode: "button-click",
-        inputSchema: {
-            salary: { type: "number", label: "Salary Amount", required: true },
-            period: { type: "toggle-group", label: "Pay Period", options: ["Hourly", "Daily", "Weekly", "Bi-Weekly", "Monthly", "Annual"] },
-        },
-    },
-    "/calculator/calorie-calculator": {
-        interactionMode: "button-click",
-        inputSchema: {
-            age: { type: "number", label: "Age", required: true },
-            gender: { type: "toggle-group", label: "Gender", options: ["Male", "Female"] },
-            weight: { type: "number", label: "Weight", required: true },
-            height: { type: "number", label: "Height", required: true },
-            activity: { type: "radix-select", label: "Activity Level", options: ["Sedentary", "Lightly Active", "Moderately Active", "Very Active", "Extra Active"] },
-        },
-    },
-    "/calculator/bmr-calculator": {
-        interactionMode: "button-click",
-        inputSchema: {
-            age: { type: "number", label: "Age", required: true },
-            gender: { type: "toggle-group", label: "Gender", options: ["Male", "Female"] },
-            weight: { type: "number", label: "Weight", required: true },
-            height: { type: "number", label: "Height", required: true },
-        },
-    },
-    "/calculator/body-fat-calculator": {
-        interactionMode: "button-click",
-        inputSchema: {
-            gender: { type: "toggle-group", label: "Gender", options: ["Male", "Female"] },
-            weight: { type: "number", label: "Weight", required: true },
-            height: { type: "number", label: "Height", required: true },
-            waist: { type: "number", label: "Waist", required: true },
-            neck: { type: "number", label: "Neck", required: true },
-        },
-    },
-    "/calculator/age-calculator": {
-        interactionMode: "button-click",
-        inputSchema: {
-            birthdate: { type: "date", label: "Date of Birth", required: true },
-        },
-    },
     "/calculator/love-calculator": {
         interactionMode: "button-click",
         inputSchema: {
             name1: { type: "text", label: "Your Name", required: true },
             name2: { type: "text", label: "Partner's Name", required: true },
-        },
-    },
-    "/calculator/date-difference": {
-        interactionMode: "button-click",
-        inputSchema: {
-            start_date: { type: "date", label: "Start Date", required: true },
-            end_date: { type: "date", label: "End Date", required: true },
-        },
-    },
-    "/calculator/scientific-calculator": {
-        interactionMode: "button-click",
-        inputSchema: {
-            expression: { type: "text", label: "Expression", description: "Math expression to evaluate" },
-        },
-    },
-    "/calculator/fraction-calculator": {
-        interactionMode: "button-click",
-        inputSchema: {
-            numerator1: { type: "number", label: "Numerator 1", required: true },
-            denominator1: { type: "number", label: "Denominator 1", required: true },
-            operation: { type: "radix-select", label: "Operation", options: ["+", "-", "×", "÷"] },
-            numerator2: { type: "number", label: "Numerator 2", required: true },
-            denominator2: { type: "number", label: "Denominator 2", required: true },
-        },
-    },
-    "/calculator/concrete-calculator": {
-        interactionMode: "button-click",
-        inputSchema: {
-            length: { type: "number", label: "Length", required: true },
-            width: { type: "number", label: "Width", required: true },
-            depth: { type: "number", label: "Depth", required: true },
         },
     },
     "/calculator/ip-subnet-calculator": {
@@ -135,49 +40,12 @@ export const toolSchemas: Record<string, ToolSchema> = {
             subnet_mask: { type: "text", label: "Subnet Mask / CIDR", required: true, placeholder: "/24" },
         },
     },
-    "/calculator/pregnancy-calculator": {
-        interactionMode: "button-click",
-        inputSchema: {
-            last_period: { type: "date", label: "Last Menstrual Period", required: true },
-        },
-    },
-
     // ── Finance Tools (button-click) ─────────────────────────────────
-    "/finance-tools/loan-calculator": {
-        interactionMode: "button-click",
-        inputSchema: {
-            amount: { type: "number", label: "Loan Amount", required: true },
-            interest_rate: { type: "number", label: "Interest Rate (%)", required: true },
-            term: { type: "number", label: "Loan Term (years)", required: true },
-        },
-    },
-    "/finance-tools/tip-calculator": {
-        interactionMode: "button-click",
-        inputSchema: {
-            bill_amount: { type: "number", label: "Bill Amount", required: true },
-            tip_percentage: { type: "number", label: "Tip Percentage", required: true },
-            split: { type: "number", label: "Split Between", defaultValue: "1" },
-        },
-    },
-    "/finance-tools/discount-calculator": {
-        interactionMode: "button-click",
-        inputSchema: {
-            original_price: { type: "number", label: "Original Price", required: true },
-            discount: { type: "number", label: "Discount (%)", required: true },
-        },
-    },
     "/finance-tools/paypal-fee": {
         interactionMode: "button-click",
         inputSchema: {
             amount: { type: "number", label: "Amount", required: true },
             transaction_type: { type: "radix-select", label: "Transaction Type", options: ["Domestic", "International"] },
-        },
-    },
-    "/finance-tools/sales-tax-calculator": {
-        interactionMode: "button-click",
-        inputSchema: {
-            amount: { type: "number", label: "Amount", required: true },
-            state: { type: "radix-select", label: "State" },
         },
     },
     "/finance-tools/bill-splitter": {
@@ -188,36 +56,7 @@ export const toolSchemas: Record<string, ToolSchema> = {
             tip: { type: "number", label: "Tip (%)" },
         },
     },
-    "/ad-tools/roas-calculator": {
-        interactionMode: "button-click",
-        inputSchema: {
-            revenue: { type: "number", label: "Revenue", required: true },
-            ad_spend: { type: "number", label: "Ad Spend", required: true },
-        },
-    },
-
     // ── Realtime Tools ───────────────────────────────────────────────
-    "/converters/temperature": {
-        interactionMode: "realtime",
-        inputSchema: {
-            value: { type: "number", label: "Temperature Value", required: true },
-            from_unit: { type: "toggle-group", label: "From Unit", options: ["Celsius", "Fahrenheit", "Kelvin", "Rankine"] },
-        },
-    },
-    "/converters/text-case": {
-        interactionMode: "realtime",
-        inputSchema: {
-            text: { type: "textarea", label: "Input Text", required: true },
-        },
-    },
-    "/converters/length": {
-        interactionMode: "realtime",
-        inputSchema: {
-            value: { type: "number", label: "Value", required: true },
-            from_unit: { type: "radix-select", label: "From Unit" },
-            to_unit: { type: "radix-select", label: "To Unit" },
-        },
-    },
     "/converters/file-size": {
         interactionMode: "realtime",
         inputSchema: {
@@ -377,14 +216,6 @@ export const toolSchemas: Record<string, ToolSchema> = {
     },
 
     // ── API-Dependent Tools ──────────────────────────────────────────
-    "/converters/currency": {
-        interactionMode: "api-dependent",
-        inputSchema: {
-            amount: { type: "number", label: "Amount", required: true },
-            from_currency: { type: "radix-select", label: "From Currency" },
-            to_currency: { type: "radix-select", label: "To Currency" },
-        },
-    },
     "/social-media-tools/youtube-thumbnail": {
         interactionMode: "api-dependent",
         inputSchema: {

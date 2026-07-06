@@ -52,12 +52,12 @@ export function Footer() {
           <div>
             <div className="text-sm font-semibold text-foreground mb-4">Trending</div>
             <ul className="space-y-2">
-              <li><Link href="/calculator/bmi-calculator" className="text-sm text-muted-foreground hover:text-primary transition-colors">BMI Calculator</Link></li>
+              <li><Link href="/fun-tools/anniversary" className="text-sm text-muted-foreground hover:text-primary transition-colors">Anniversary Calculator</Link></li>
               <li><Link href="/ai-tools/qr-generator" className="text-sm text-muted-foreground hover:text-primary transition-colors">AI QR Generator</Link></li>
               <li><Link href="/social-media-tools/instagram-dp" className="text-sm text-muted-foreground hover:text-primary transition-colors">Instagram DP Viewer</Link></li>
               <li><Link href="/image-tools/heic-to-jpg" className="text-sm text-muted-foreground hover:text-primary transition-colors">HEIC to JPG</Link></li>
               <li><Link href="/social-media-tools/youtube-thumbnail" className="text-sm text-muted-foreground hover:text-primary transition-colors">YouTube Thumbnail</Link></li>
-              <li><Link href="/converters/currency" className="text-sm text-muted-foreground hover:text-primary transition-colors">Currency Converter</Link></li>
+              <li><Link href="/image-tools/ai-image-detector" className="text-sm text-muted-foreground hover:text-primary transition-colors">AI Image Detector</Link></li>
               <li><Link href="/social-media-tools/channel-checker" className="text-sm text-muted-foreground hover:text-primary transition-colors">Channel Checker</Link></li>
             </ul>
           </div>

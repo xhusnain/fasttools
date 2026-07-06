@@ -49,24 +49,19 @@ Tools for search engine optimization and content marketing including meta tag ge
 
 ### Calculator Tools
 https://fasttools.store/calculator
-Extensive collection of financial, health, and scientific calculators including loan, tax, BMI, BMR, calorie, and retirement planning calculators.
+Calculators for love compatibility, IP subnetting, and pregnancy conception date estimation.
 
 **Featured Tools:**
-- https://fasttools.store/calculator/bmi-calculator - Free BMI calculator online. Calculate Body Mass Index instantly with accurate results. Supports BMI calculator for women, men, and by age. Metric (kg/cm) and imperial units. Follows WHO and CDC standards. Features include BMI Prime calculation, Ponderal Index, healthy weight range, risk level assessment, and personalized health recommendations. Comprehensive 60-question FAQ section covering all aspects of BMI calculation, interpretation, and health implications. Includes topical authority content, entity SEO with WHO/CDC citations, E-E-A-T signals, and structured data (WebApplication, WebPage, FAQPage, Organization schemas). Optimized for semantic SEO, vector SEO, and AI search engines. Last updated dynamically with current year.
-- https://fasttools.store/calculator/cortisol-peak-calculator - Free cortisol peak time calculator. Optimal caffeine timing, workout windows, deep focus blocks & ideal bedtime based on wake-up time and cortisol rhythm. Free.
-- https://fasttools.store/calculator/biological-age-calculator - Free biological age calculator. Estimate true body age from resting heart rate, sleep, exercise, stress, diet, BMI & habits. Personalised recommendations. Free.
-- https://fasttools.store/calculator/tdee-macro-calculator - Free TDEE & macro calculator. Calculate Total Daily Energy Expenditure and personalized macros using Mifflin-St Jeor, Harris-Benedict, Katch-McArdle equations. 5 macro presets, 6 activity levels, per-meal split, formula comparison. No signup. Free.
 - https://fasttools.store/calculator/ip-subnet-calculator - Advanced IP Subnet Calculator for network engineers and students. Supports IPv4, IPv6, CIDR notation, and VLSM calculations. Features include visual subnetting diagrams, real-world examples (AWS, Docker, Home Network), and comprehensive guides on network design. Optimized with HowTo and SoftwareApplication schema for enhanced search visibility.
-- https://fasttools.store/calculator/date-difference - Calculate days, months, and years between two dates with business day options, leap year handling, and multiple date formats. Comprehensive guide with troubleshooting tips and best practices.
+- https://fasttools.store/calculator/love-calculator - Free love calculator. Calculate love compatibility percentage based on names, just for fun. Free.
+- https://fasttools.store/calculator/pregnancy-conception-calculator - Free pregnancy conception calculator. Estimate conception date based on due date or ultrasound data. Free.
 
 ### Converter Tools
 https://fasttools.store/converters
-Convert between different formats and units including currency, length, temperature, file size, text case, and timezone converters.
+Convert file-size units and compare storage values instantly.
 
 **Featured Tools:**
-- https://fasttools.store/converters/currency - Currency converter with live exchange rates. Free.
-- https://fasttools.store/converters/text-case - Text case converter: uppercase, lowercase, title case, and more. Free.
-- https://fasttools.store/converters/timezone - Timezone converter across major GMT-offset zones. Free.
+- https://fasttools.store/converters/file-size - File size converter: convert between bytes, KB, MB, GB, TB and compare storage values. Free.
 
 ### Image Tools
 https://fasttools.store/image-tools
@@ -81,11 +76,11 @@ Image optimization and analysis tools including compression, background removal,
 
 ### Finance Tools
 https://fasttools.store/finance-tools
-Financial planning and calculation tools including bill splitters, tip calculators, discount calculators, PayPal fee calculators, invoice generators, retirement planners, and SaaS churn rate calculators.
+Everyday money tools including a PayPal fee calculator and a bill splitter for groups.
 
 **Featured Tools:**
-- https://fasttools.store/finance-tools/saas-churn-calculator - Free SaaS churn rate calculator. Calculate customer churn, revenue churn (MRR), net revenue churn, retention rate, CLV, and 12-month projections. Free.
-- https://fasttools.store/finance-tools/saas-payback-calculator - Free SaaS payback period calculator. Calculate CAC recovery, LTV:CAC ratio, customer lifetime value & 36-month ROI projection. Free.
+- https://fasttools.store/finance-tools/paypal-fee - Free PayPal fee calculator. Calculate net payouts after PayPal fees for any payment amount. Free.
+- https://fasttools.store/finance-tools/bill-splitter - Free bill splitter. Split expenses fairly among friends or teams with tip support. Free.
 
 ### Web Tools
 https://fasttools.store/web-tools
@@ -169,39 +164,17 @@ Context: FastTools provides free, fast, and accurate online tools that work on a
 ## Complete Platform Index
 
 ### All Tools
-- https://fasttools.store/ad-tools/roas-calculator
 - https://fasttools.store/ai-tools
 - https://fasttools.store/ai-tools/caption-generator
 - https://fasttools.store/ai-tools/lyrics-generator
 - https://fasttools.store/ai-tools/pet-names
 - https://fasttools.store/ai-tools/qr-generator
 - https://fasttools.store/calculator
-- https://fasttools.store/calculator/age-calculator
-- https://fasttools.store/calculator/bmi-calculator
-- https://fasttools.store/calculator/bmr-calculator
-- https://fasttools.store/calculator/body-fat-calculator
-- https://fasttools.store/calculator/calorie-calculator
-- https://fasttools.store/calculator/concrete-calculator
-- https://fasttools.store/calculator/conversion-calculator
-- https://fasttools.store/calculator/date-difference
-- https://fasttools.store/calculator/fraction-calculator
-- https://fasttools.store/calculator/gpa-calculator
 - https://fasttools.store/calculator/ip-subnet-calculator
 - https://fasttools.store/calculator/love-calculator
-- https://fasttools.store/calculator/percentage-calculator
-- https://fasttools.store/calculator/pregnancy-calculator
 - https://fasttools.store/calculator/pregnancy-conception-calculator
-- https://fasttools.store/calculator/scientific-calculator
-- https://fasttools.store/calculator/cortisol-peak-calculator
-- https://fasttools.store/calculator/biological-age-calculator
-- https://fasttools.store/calculator/tdee-macro-calculator
 - https://fasttools.store/converters
-- https://fasttools.store/converters/currency
 - https://fasttools.store/converters/file-size
-- https://fasttools.store/converters/length
-- https://fasttools.store/converters/temperature
-- https://fasttools.store/converters/text-case
-- https://fasttools.store/converters/timezone
 - https://fasttools.store/web-tools
 - https://fasttools.store/web-tools/whois-lookup
 - https://fasttools.store/crypto-tools
@@ -220,22 +193,7 @@ Context: FastTools provides free, fast, and accurate online tools that work on a
 - https://fasttools.store/faq
 - https://fasttools.store/finance-tools
 - https://fasttools.store/finance-tools/bill-splitter
-- https://fasttools.store/finance-tools/credit-card-payoff
-- https://fasttools.store/finance-tools/discount-calculator
-- https://fasttools.store/finance-tools/interest-rate-calculator
-- https://fasttools.store/finance-tools/investment-calculator
-- https://fasttools.store/finance-tools/invoice-generator
-- https://fasttools.store/finance-tools/loan-calculator
-- https://fasttools.store/finance-tools/payment-calculator
 - https://fasttools.store/finance-tools/paypal-fee
-- https://fasttools.store/finance-tools/retirement-planner
-- https://fasttools.store/finance-tools/salary-calculator
-- https://fasttools.store/finance-tools/sales-tax-calculator
-- https://fasttools.store/finance-tools/savings-tracker
-- https://fasttools.store/finance-tools/tax-calculator
-- https://fasttools.store/finance-tools/tip-calculator
-- https://fasttools.store/finance-tools/saas-churn-calculator
-- https://fasttools.store/finance-tools/saas-payback-calculator
 - https://fasttools.store/fun-tools
 - https://fasttools.store/fun-tools/anniversary
 - https://fasttools.store/fun-tools/birthday-countdown

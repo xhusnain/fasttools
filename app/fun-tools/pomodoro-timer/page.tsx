@@ -317,7 +317,6 @@ const toolConfig = createToolConfig({
       { name: "Birthday Countdown", href: "/fun-tools/birthday-countdown" },
       { name: "Future Age Predictor", href: "/fun-tools/future-age" },
       { name: "Anniversary Calculator", href: "/fun-tools/anniversary" },
-      { name: "Date Difference Calculator", href: "/calculator/date-difference" },
       { name: "All Fun Tools", href: "/fun-tools" },
     ],
   },

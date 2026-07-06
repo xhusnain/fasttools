@@ -309,12 +309,9 @@ export default function PregnancyConceptionCalculatorPage() {
     ],
 
     relatedTools: [
-      { name: "Pregnancy Calculator", href: "/calculator/pregnancy-calculator" },
-      { name: "Age Calculator", href: "/calculator/age-calculator" },
-      { name: "Date Difference Calculator", href: "/calculator/date-difference" },
       { name: "Future Age Predictor", href: "/fun-tools/future-age" },
-      { name: "BMI Calculator", href: "/calculator/bmi-calculator" },
-      { name: "Calorie Calculator", href: "/calculator/calorie-calculator" },
+      { name: "Birthday Countdown", href: "/fun-tools/birthday-countdown" },
+      { name: "Anniversary Calculator", href: "/fun-tools/anniversary" },
       { name: "All Calculators", href: "/calculator" }
     ]
   }
