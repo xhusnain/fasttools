@@ -1,4 +1,11 @@
+import path from "node:path"
+import { fileURLToPath } from "node:url"
 import { permanentRedirects } from "./lib/redirects.mjs"
+
+// Pin the workspace root: a package-lock.json also exists in the home
+// directory (it belongs to the memhub MCP server — do not delete it),
+// and without this Next.js infers the wrong root.
+const projectRoot = path.dirname(fileURLToPath(import.meta.url))
 
 const nextConfig = {
   output: 'standalone',
@@ -13,7 +20,6 @@ const nextConfig = {
     optimizeCss: true,
     optimizePackageImports: [
       'lucide-react',
-      'recharts',
       '@radix-ui/react-accordion',
       '@radix-ui/react-tooltip',
     ],
@@ -56,7 +62,9 @@ const nextConfig = {
     return permanentRedirects
   },
 
-  turbopack: {},
+  turbopack: {
+    root: projectRoot,
+  },
 
   typescript: {
     ignoreBuildErrors: false,
