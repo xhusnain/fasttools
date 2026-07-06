@@ -269,7 +269,7 @@ const toolConfig = createToolConfig({
       {
         question: "Is 'correct horse battery staple' really safe?",
         answer:
-          "The PHRASE itself is famous (from XKCD #936) so attackers explicitly include it in wordlists. But the METHOD — picking 4-6 truly random words from a large list — is sound. Use Diceware or our Password Generator passphrase mode to generate fresh random word combinations. Six random Diceware words give ~77 bits of entropy — strong against any offline attack.",
+          "The PHRASE itself is famous (from XKCD #936) so attackers explicitly include it in wordlists. But the METHOD — picking 4-6 truly random words from a large list — is sound. Use Diceware to generate fresh random word combinations. Six random Diceware words give ~77 bits of entropy — strong against any offline attack.",
       },
       {
         question: "What's a good length for a master password?",
@@ -284,13 +284,10 @@ const toolConfig = createToolConfig({
     ],
 
     relatedTools: [
-      { name: "Password Generator", href: "/crypto-tools/password-generator" },
       { name: "Bcrypt Generator", href: "/crypto-tools/bcrypt" },
       { name: "BIP39 Passphrase Generator", href: "/crypto-tools/bip39-generator" },
       { name: "OTP Code Generator", href: "/crypto-tools/otp-generator" },
       { name: "Token Generator", href: "/crypto-tools/token-generator" },
-      { name: "Hash Text Generator", href: "/crypto-tools/hash-text" },
-      { name: "Auth Generator", href: "/web-tools/auth-generator" },
       { name: "All Crypto Tools", href: "/crypto-tools" },
     ],
   },

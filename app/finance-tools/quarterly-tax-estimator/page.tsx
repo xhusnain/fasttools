@@ -418,13 +418,9 @@ export default function QuarterlyTaxEstimatorPage() {
 
     relatedTools: [
       { name: "Tax Calculator", href: "/finance-tools/tax-calculator" },
-      { name: "Tax Bracket Calculator", href: "/finance-tools/tax-bracket-calculator" },
       { name: "Salary Calculator", href: "/finance-tools/salary-calculator" },
-      { name: "Freelance Rate Calculator", href: "/finance-tools/freelance-rate-calculator" },
       { name: "Invoice Generator", href: "/finance-tools/invoice-generator" },
-      { name: "Retirement Calculator", href: "/finance-tools/retirement-calculator" },
       { name: "Sales Tax Calculator", href: "/finance-tools/sales-tax-calculator" },
-      { name: "Net Worth Calculator", href: "/finance-tools/net-worth-calculator" },
       { name: "All Finance Tools", href: "/finance-tools" }
     ]
   }

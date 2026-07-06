@@ -382,7 +382,6 @@ export default function SalesTaxCalculatorPage() {
 
     relatedTools: [
       { name: "Tax Calculator", href: "/finance-tools/tax-calculator" },
-      { name: "Tax Bracket Calculator", href: "/finance-tools/tax-bracket-calculator" },
       { name: "Tip Calculator", href: "/finance-tools/tip-calculator" },
       { name: "Discount Calculator", href: "/finance-tools/discount-calculator" },
       { name: "Bill Splitter", href: "/finance-tools/bill-splitter" },

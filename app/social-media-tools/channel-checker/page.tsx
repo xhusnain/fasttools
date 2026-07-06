@@ -411,7 +411,6 @@ const toolConfig = createToolConfig({
       // Cross-category: push authority to creator-relevant finance/calculator tools
       { name: "Influencer Rate Calculator", href: "/social-media-tools/influencer-rate-calculator" },
       { name: "Invoice Generator — Free Online", href: "/finance-tools/invoice-generator" },
-      { name: "Freelance Rate Calculator", href: "/finance-tools/freelance-rate-calculator" },
       { name: "All Social Media Tools", href: "/social-media-tools" },
     ],
   },

@@ -391,13 +391,9 @@ const toolConfig = createToolConfig({
     ],
 
     relatedTools: [
-      { name: "JSON Diff", href: "/dev-tools/json-diff" },
       { name: "Markdown Previewer", href: "/dev-tools/markdown-previewer" },
-      { name: "HTTP Status Codes", href: "/dev-tools/http-status-codes" },
-      { name: "Slugify String", href: "/dev-tools/slugify-string" },
-      { name: "User-Agent Parser", href: "/dev-tools/user-agent-parser" },
       { name: "HTML Beautifier", href: "/dev-tools/html-beautifier" },
-      { name: "Base64 Encoder Decoder", href: "/dev-tools/base64-encoder" },
+      { name: "JSON to CSV Converter", href: "/dev-tools/json-to-csv" },
       { name: "All Developer Tools", href: "/dev-tools" },
     ],
   },

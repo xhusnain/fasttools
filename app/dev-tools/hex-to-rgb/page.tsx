@@ -152,9 +152,6 @@ const toolConfig = createToolConfig({
     ],
 
     relatedTools: [
-      { name: "Color Palette Generator", href: "/dev-tools/color-palette" },
-      { name: "CSS Gradient Generator", href: "/dev-tools/css-gradient-generator" },
-      { name: "HTML WYSIWYG Editor", href: "/dev-tools/html-wysiwyg-editor" },
       { name: "HTML Beautifier", href: "/dev-tools/html-beautifier" },
       { name: "Image Compressor", href: "/image-tools/image-compressor" },
       { name: "Background Remover", href: "/image-tools/background-remover" },

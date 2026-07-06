@@ -486,7 +486,6 @@ export default function PregnancyCalculatorPage() {
 
     relatedTools: [
       { name: "Pregnancy Conception Calculator", href: "/calculator/pregnancy-conception-calculator" },
-      { name: "Ovulation Calculator", href: "/calculator/ovulation-calculator" },
       { name: "Age Calculator", href: "/calculator/age-calculator" },
       { name: "Future Age Predictor", href: "/fun-tools/future-age" },
       { name: "BMI Calculator", href: "/calculator/bmi-calculator" },

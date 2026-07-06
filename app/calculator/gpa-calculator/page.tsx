@@ -504,11 +504,7 @@ export default function GPACalculatorPage() {
     relatedTools: [
       { name: "Percentage Calculator", href: "/calculator/percentage-calculator" },
       { name: "Fraction Calculator", href: "/calculator/fraction-calculator" },
-      { name: "Standard Deviation Calculator", href: "/calculator/standard-deviation-calculator" },
       { name: "Scientific Calculator", href: "/calculator/scientific-calculator" },
-      { name: "Citation Generator", href: "/education-tools/citation-generator" },
-      { name: "Word Counter", href: "/seo-tools/word-counter" },
-      { name: "Triangle Calculator", href: "/calculator/triangle-calculator" },
       { name: "All Calculators", href: "/calculator" }
     ]
   }

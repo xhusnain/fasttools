@@ -3,19 +3,14 @@ import { ToolPageLayout } from "@/components/common/tool-page-layout"
 import { createToolConfig } from "@/lib/create-tool-config"
 import { GToolCard } from "@/ui/gtool-card"
 import {
-  Binary,
   Braces,
   Clock,
   Code2,
   Database,
   FileCode,
   FileJson,
-  Globe,
   Hash,
-  Monitor,
   Palette,
-  Sparkles,
-  Cpu,
 } from "lucide-react"
 
 const devTools = [
@@ -27,53 +22,11 @@ const devTools = [
     icon: Code2,
   },
   {
-    title: "Base64 Encoder Decoder",
-    description:
-      "Encode/decode Base64 for strings and common data workflows, including URL-safe cases.",
-    href: "/dev-tools/base64-encoder",
-    icon: Binary,
-  },
-  {
     title: "MIME Types",
     description:
       "Lookup MIME types and file extensions for content-type headers and upload handling.",
     href: "/dev-tools/mime-types",
     icon: FileCode,
-  },
-  {
-    title: "Keycode Info",
-    description:
-      "Inspect keyboard event values including key, code, and modifier states.",
-    href: "/dev-tools/keycode-info",
-    icon: Code2,
-  },
-  {
-    title: "Slugify String",
-    description:
-      "Convert text into URL-safe slugs for routes, filenames, and identifiers.",
-    href: "/dev-tools/slugify-string",
-    icon: FileCode,
-  },
-  {
-    title: "HTML WYSIWYG Editor",
-    description:
-      "Edit rich text and view generated HTML source in a browser-based workflow.",
-    href: "/dev-tools/html-wysiwyg-editor",
-    icon: Braces,
-  },
-  {
-    title: "User-Agent Parser",
-    description:
-      "Parse user-agent strings into browser, OS, engine, device, and CPU details.",
-    href: "/dev-tools/user-agent-parser",
-    icon: Monitor,
-  },
-  {
-    title: "HTTP Status Codes",
-    description:
-      "Browse HTTP status code references and meanings for API and web debugging.",
-    href: "/dev-tools/http-status-codes",
-    icon: Globe,
   },
   {
     title: "Regex Tester",
@@ -90,20 +43,6 @@ const devTools = [
     icon: Database,
   },
   {
-    title: "JSON Diff",
-    description:
-      "Compare two JSON structures and inspect semantic differences quickly.",
-    href: "/dev-tools/json-diff",
-    icon: FileJson,
-  },
-  {
-    title: "Diff Checker",
-    description:
-      "Compare two texts side-by-side with character-level highlighting. Ignore whitespace, export as patch file.",
-    href: "/dev-tools/diff-checker",
-    icon: FileCode,
-  },
-  {
     title: "JSON to CSV Converter",
     description:
       "Transform JSON arrays into CSV for spreadsheet analysis and exports.",
@@ -116,20 +55,6 @@ const devTools = [
       "Format and minify HTML for readability, debugging, and optimization tasks.",
     href: "/dev-tools/html-beautifier",
     icon: Braces,
-  },
-  {
-    title: "Color Palette Generator",
-    description:
-      "7 harmony modes, image extraction, WCAG contrast checker, export to CSS/Tailwind/SCSS/JSON.",
-    href: "/dev-tools/color-palette",
-    icon: Palette,
-  },
-  {
-    title: "CSS Gradient Generator",
-    description:
-      "Create linear, radial, and conic CSS gradients visually with color stops and angle control. Copy CSS, Tailwind, or SCSS.",
-    href: "/dev-tools/css-gradient-generator",
-    icon: Palette,
   },
   {
     title: "Hex to RGB Converter",
@@ -153,27 +78,6 @@ const devTools = [
     icon: FileCode,
   },
   {
-    title: "LLM Training Cost Estimator",
-    description:
-      "Estimate GPU hours, training time & cloud costs for training large language models across providers.",
-    href: "/dev-tools/llm-training-cost",
-    icon: Cpu,
-  },
-  {
-    title: "Cloudflare Workers Cost Calculator",
-    description:
-      "Estimate monthly costs for Workers requests, CPU time, KV, R2 & Durable Objects with scaling projections.",
-    href: "/dev-tools/cloudflare-workers-cost",
-    icon: Globe,
-  },
-  {
-    title: "Cron Expression Generator",
-    description:
-      "Build cron expressions visually with 25+ presets, English descriptions, and next run time preview.",
-    href: "/dev-tools/cron-expression-generator",
-    icon: Clock,
-  },
-  {
     title: "Unix Timestamp Converter",
     description:
       "Convert Unix/epoch timestamps to dates and back — seconds, milliseconds, or microseconds. Live current epoch.",
@@ -186,7 +90,7 @@ const toolConfig = createToolConfig({
   toolName: "Developer Tools",
   description:
     "Browser-based developer utilities for encoding, parsing, formatting, validation, and content transformation workflows.",
-  metaTitle: "Developer Tools: JWT, Base64, Regex, JSON, HTML",
+  metaTitle: "Developer Tools: Regex, JWT, JSON, HTML, MIME Types",
   metaDescription:
     "Free developer tools for JWT decoding, Base64, regex testing, JSON conversion/diffing, HTML formatting, MIME lookup, and more.",
   path: "/dev-tools",
@@ -217,7 +121,7 @@ const toolConfig = createToolConfig({
 
   content: {
     overview:
-      "This category is designed for utility intent: open a tool, complete a technical task, and move on. It covers common development friction points including encoding/decoding, token inspection, HTTP semantics, JSON transforms, HTML/Markdown conversion, and identifier formatting.",
+      "This category is designed for utility intent: open a tool, complete a technical task, and move on. It covers common development friction points including token inspection, regex testing, JSON transforms, HTML/Markdown conversion, and timestamp handling.",
 
     features: [
       "Direct browser-based workflows with minimal setup",
@@ -230,7 +134,7 @@ const toolConfig = createToolConfig({
     useCases: [
       "API and authentication debugging",
       "Format conversion for content and data pipelines",
-      "Frontend utility workflows for colors, slugs, and markup",
+      "Frontend utility workflows for colors and markup",
       "Regex and parsing checks during implementation",
       "Documentation and editor workflows",
     ],

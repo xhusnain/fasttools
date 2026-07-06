@@ -3,16 +3,9 @@ import { ToolPageLayout } from "@/components/common/tool-page-layout"
 import { createToolConfig } from "@/lib/create-tool-config"
 import { GToolCard } from "@/ui/gtool-card"
 
-import { FileText, Maximize2, Minimize2, ShieldCheck, Scissors, Crop, Images, Repeat } from "lucide-react"
+import { FileText, Minimize2, ShieldCheck, Scissors, Repeat } from "lucide-react"
 
 const imageTools = [
-  {
-    title: "Image to PDF Converter",
-    description: "Combine JPG, PNG, and WebP images into one PDF with page size, order, and margin controls.",
-    icon: Images,
-    href: "/pdf-tools/image-to-pdf",
-    popular: true,
-  },
   {
     title: "Image Compressor",
     description: "Compress JPG, PNG, and WebP with quality, size, and resolution controls.",
@@ -28,13 +21,6 @@ const imageTools = [
     popular: true,
   },
   {
-    title: "Image Resizer",
-    description: "Resize images to custom dimensions or social media presets. JPG, PNG, WebP. 100% browser-based.",
-    icon: Maximize2,
-    href: "/image-tools/image-resizer",
-    popular: true,
-  },
-  {
     title: "AI Image Detector",
     description: "Detect AI-generated images using 5 forensic signals — metadata, ELA, noise, color, and frequency analysis.",
     icon: ShieldCheck,
@@ -46,13 +32,6 @@ const imageTools = [
     description: "Remove image backgrounds instantly with AI. Transparent PNG, color replacement, or custom backgrounds. 100% browser-based.",
     icon: Scissors,
     href: "/image-tools/background-remover",
-    popular: true,
-  },
-  {
-    title: "Image Cropper",
-    description: "Crop JPG, PNG, and WebP images online. Drag handles, lock aspect ratio, enter exact pixels, rotate & flip. No upload to server.",
-    icon: Crop,
-    href: "/image-tools/image-cropper",
     popular: true,
   },
   {
@@ -89,7 +68,7 @@ const toolConfig = createToolConfig({
   toolName: "Image Tools",
   description:
     "Use free browser-based image tools to compress files, extract text with OCR, and detect AI-generated images.",
-  metaTitle: "Image Tools — Remover, Resizer, Compressor & OCR",
+  metaTitle: "Image Tools — AI Detector, Background Remover, Compressor & OCR",
   metaDescription:
     "Free image tools: remove backgrounds with AI, resize images for social media, compress JPG/PNG/WebP, extract text with OCR, and detect AI-generated images.",
   path: "/image-tools",
@@ -99,10 +78,10 @@ const toolConfig = createToolConfig({
     description:
       "Category page for browser-based image utilities including image compression and OCR text extraction.",
     featureList: [
-      "Image resizer with 50+ social media presets",
       "Image compression tool",
       "Image to text OCR tool",
-      "Image to PDF document conversion",
+      "AI background remover",
+      "HEIC, PNG, WebP, and JPG format converters",
       "No-login workflows",
       "Desktop and mobile browser support",
     ],
@@ -120,7 +99,7 @@ const toolConfig = createToolConfig({
 
   content: {
     overview:
-      "This category focuses on high-intent image tasks: file-size reduction, OCR text extraction, resizing, cropping, background removal, AI image checks, and document conversion. Use Image to PDF when you need to combine photos, screenshots, or scanned image pages into a shareable PDF.",
+      "This category focuses on high-intent image tasks: file-size reduction, OCR text extraction, background removal, AI image checks, and format conversion. Use the format converters when you need to turn HEIC, PNG, or WebP files into universally compatible JPG or lossless PNG output.",
 
     howToSteps: [
       "Choose the tool based on your goal: compression or OCR extraction.",
@@ -139,7 +118,7 @@ const toolConfig = createToolConfig({
 
     useCases: [
       "Web and app image optimization",
-      "Image-to-PDF document creation",
+      "iPhone HEIC photo conversion for sharing",
       "Document and screenshot text extraction",
       "Marketing asset preparation",
       "Admin workflows that require fast copyable text",
@@ -182,12 +161,12 @@ const toolConfig = createToolConfig({
       {
         question: "What tools are included in this image category?",
         answer:
-          "The category includes Image to PDF, Image Compressor, Image to Text (OCR), Image Resizer, Image Cropper, Background Remover, and AI Image Detector.",
+          "The category includes Image Compressor, Image to Text (OCR), Background Remover, AI Image Detector, and format converters for HEIC, PNG, WebP, and JPG.",
       },
       {
         question: "Which tool should I use first?",
         answer:
-          "Use Image to PDF for document creation, Image Compressor for file-size reduction, Image Resizer or Cropper for dimensions, and Image to Text for extracting editable text from images.",
+          "Use Image Compressor for file-size reduction, a format converter for HEIC, PNG, WebP, or JPG output, and Image to Text for extracting editable text from images.",
       },
       {
         question: "Are these image tools free?",
@@ -207,7 +186,7 @@ const toolConfig = createToolConfig({
       {
         question: "Can I use these tools with PDF workflows?",
         answer:
-          "Yes. Use Image to PDF to create PDFs from photos, PDF to Image to extract page images, and PDF Compressor when the final document is too large.",
+          "Yes. After compressing images or extracting text, you can continue with the PDF Splitter & Merger or PDF Signature Checker in the PDF tools category.",
       },
       {
         question: "How is this category organized for SEO intent?",
@@ -217,13 +196,12 @@ const toolConfig = createToolConfig({
     ],
 
     relatedTools: [
-      { name: "Image to PDF", href: "/pdf-tools/image-to-pdf" },
       { name: "Background Remover", href: "/image-tools/background-remover" },
-      { name: "Image Resizer", href: "/image-tools/image-resizer" },
       { name: "Image Compressor", href: "/image-tools/image-compressor" },
       { name: "Image to Text (OCR)", href: "/image-tools/image-to-text" },
-      { name: "PDF to Image", href: "/pdf-tools/pdf-to-image" },
-      { name: "PDF Compressor", href: "/pdf-tools/pdf-compressor" },
+      { name: "HEIC to JPG Converter", href: "/image-tools/heic-to-jpg" },
+      { name: "AI Image Detector", href: "/image-tools/ai-image-detector" },
+      { name: "PDF Splitter & Merger", href: "/pdf-tools/pdf-splitter-merger" },
     ],
   },
 })

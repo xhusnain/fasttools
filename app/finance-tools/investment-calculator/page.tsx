@@ -336,13 +336,9 @@ export default function InvestmentCalculatorPage() {
     ],
 
     relatedTools: [
-      { name: "Compound Interest Calculator", href: "/finance-tools/compound-interest" },
-      { name: "Retirement Calculator", href: "/finance-tools/retirement-calculator" },
       { name: "Retirement Planner", href: "/finance-tools/retirement-planner" },
-      { name: "Inflation Calculator", href: "/finance-tools/inflation-calculator" },
-      { name: "Net Worth Calculator", href: "/finance-tools/net-worth-calculator" },
       { name: "Savings Goal Tracker", href: "/finance-tools/savings-tracker" },
-      { name: "Finance Calculator", href: "/finance-tools/finance-calculator" },
+      { name: "Interest Rate Calculator", href: "/finance-tools/interest-rate-calculator" },
       { name: "All Finance Tools", href: "/finance-tools" }
     ]
   }

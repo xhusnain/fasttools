@@ -326,7 +326,6 @@ const toolConfig = createToolConfig({
       { name: "Background Remover", href: "/image-tools/background-remover" },
       { name: "Image to Text (OCR)", href: "/image-tools/image-to-text" },
       { name: "Image Compressor", href: "/image-tools/image-compressor" },
-      { name: "Image Steganography", href: "/security-tools/image-steganography" },
       { name: "PDF Signature Checker", href: "/pdf-tools/pdf-signature-checker" },
       { name: "All Image Tools", href: "/image-tools" },
     ],

@@ -186,14 +186,10 @@ const toolConfig = createToolConfig({
     ],
 
     relatedTools: [
-      { name: "Sign PDF", href: "/pdf-tools/pdf-sign" },
       { name: "Merge PDF", href: "/pdf-tools/pdf-splitter-merger" },
-      { name: "PDF Unlocker", href: "/pdf-tools/pdf-unlocker" },
       { name: "AI Image Detector", href: "/image-tools/ai-image-detector" },
-      { name: "Hash Text Generator", href: "/crypto-tools/hash-text" },
       { name: "RSA Key Generator", href: "/crypto-tools/rsa-generator" },
-      { name: "DNS Lookup & SSL Checker", href: "/web-tools/dns-ssl-checker" },
-      { name: "Image Steganography", href: "/security-tools/image-steganography" },
+      { name: "HMAC Generator", href: "/crypto-tools/hmac-generator" },
       { name: "All PDF Tools", href: "/pdf-tools" },
     ],
   },

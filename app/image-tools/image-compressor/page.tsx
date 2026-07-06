@@ -198,12 +198,10 @@ const toolConfig = createToolConfig({
     ],
 
     relatedTools: [
-      { name: "Image Resizer", href: "/image-tools/image-resizer" },
-      { name: "Image Cropper", href: "/image-tools/image-cropper" },
       { name: "Background Remover", href: "/image-tools/background-remover" },
       { name: "Image to Text (OCR)", href: "/image-tools/image-to-text" },
-      { name: "Image to PDF Converter", href: "/pdf-tools/image-to-pdf" },
-      { name: "PDF Compressor", href: "/pdf-tools/pdf-compressor" },
+      { name: "PNG to JPG Converter", href: "/image-tools/png-to-jpg" },
+      { name: "WebP to JPG Converter", href: "/image-tools/webp-to-jpg" },
       { name: "File Size Converter", href: "/converters/file-size" },
       { name: "All Image Tools", href: "/image-tools" },
     ],

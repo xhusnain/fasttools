@@ -509,9 +509,7 @@ export default function SaaSChurnCalculatorPage() {
 
     relatedTools: [
       { name: "SaaS Payback Calculator", href: "/finance-tools/saas-payback-calculator" },
-      { name: "Startup Runway Calculator", href: "/finance-tools/startup-runway-calculator" },
       { name: "Investment Calculator", href: "/finance-tools/investment-calculator" },
-      { name: "Compound Interest Calculator", href: "/finance-tools/compound-interest" },
       { name: "Percentage Calculator", href: "/calculator/percentage-calculator" },
       { name: "ROAS Calculator", href: "/ad-tools/roas-calculator" },
       { name: "TikTok Engagement Calculator", href: "/social-media-tools/tiktok-engagement-calculator" },

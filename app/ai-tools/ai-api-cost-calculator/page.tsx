@@ -101,7 +101,7 @@ const toolConfig = createToolConfig({
 
     howToSteps: [
       "Pick a use-case preset — Light chatbot, Production chatbot, RAG, Agentic workflow, Summarization, Code generation, or Batch processing — to seed realistic numbers, or skip directly to manual entry.",
-      "Adjust input tokens per request, output tokens per request, and requests per month to match your actual workload. Use the Token to Word Converter if you're starting from a word count estimate.",
+      "Adjust input tokens per request, output tokens per request, and requests per month to match your actual workload. If you're starting from a word count, estimate roughly 1.3 tokens per English word.",
       "Set the cacheable input share — the portion of input prompt that repeats across requests (system prompts, RAG context, examples). Most production AI features can cache 40–70% of input for ~90% savings.",
       "Pick which models you want to compare from the model picker. Default selection covers GPT-5, GPT-4o mini, Claude Sonnet 4.6, Haiku 4.5, Gemini Pro/Flash, DeepSeek V3, and Llama 4 — a strong frontier-to-cheap spectrum.",
       "Read the comparison table — cheapest is highlighted green, most expensive in red, and the savings dollar amount + percentage are shown above. Copy the share link or a text summary for team review.",
@@ -281,7 +281,7 @@ monthly_cost = per_request_cost × requests_per_month`}</code>
       {
         question: "How do I count tokens for cost estimation?",
         answer:
-          "Rule of thumb: 1 token ≈ 0.75 English words ≈ 4 characters. So a 1,000-word document is roughly 1,333 tokens. For exact counts, use the official tokenizer for your model — tiktoken for OpenAI, the Anthropic tokenizer API for Claude, Vertex AI's count_tokens for Gemini. Our Token to Word Converter (linked in related tools) provides quick estimates. For cost estimation, exact counts matter less than rough budgeting — being off by ±15% on token count is fine for decision-making; if you're off by 50% you're using the wrong formula.",
+          "Rule of thumb: 1 token ≈ 0.75 English words ≈ 4 characters. So a 1,000-word document is roughly 1,333 tokens. For exact counts, use the official tokenizer for your model — tiktoken for OpenAI, the Anthropic tokenizer API for Claude, Vertex AI's count_tokens for Gemini. For cost estimation, exact counts matter less than rough budgeting — being off by ±15% on token count is fine for decision-making; if you're off by 50% you're using the wrong formula.",
       },
       {
         question: "Should I use OpenAI, Anthropic, or open-source models?",
@@ -316,17 +316,13 @@ monthly_cost = per_request_cost × requests_per_month`}</code>
       {
         question: "Can I compare self-hosted vs hosted model costs?",
         answer:
-          "Not directly. This calculator focuses on hosted commercial APIs where pricing is per-token. Self-hosting open-weight models has different economics: GPU hourly cost + utilization rate, not per-token. As a rough comparison, hosting Llama 4 70B on an 8x H100 cluster ($30-40/hour cloud) at 50% utilization breaks even with Together AI's $0.27/M input pricing at roughly 10–20M tokens/hour throughput. For high-volume continuous workloads self-hosting wins; for bursty or low-volume API calls, hosted is dramatically cheaper. Our LLM Training Cost Calculator covers self-hosted GPU economics in detail.",
+          "Not directly. This calculator focuses on hosted commercial APIs where pricing is per-token. Self-hosting open-weight models has different economics: GPU hourly cost + utilization rate, not per-token. As a rough comparison, hosting Llama 4 70B on an 8x H100 cluster ($30-40/hour cloud) at 50% utilization breaks even with Together AI's $0.27/M input pricing at roughly 10–20M tokens/hour throughput. For high-volume continuous workloads self-hosting wins; for bursty or low-volume API calls, hosted is dramatically cheaper.",
       },
     ],
 
     relatedTools: [
-      { name: "Token to Word Converter", href: "/ai-tools/token-to-word-converter" },
-      { name: "LLM Training Cost Calculator", href: "/dev-tools/llm-training-cost" },
-      { name: "Cloudflare Workers Cost Calculator", href: "/dev-tools/cloudflare-workers-cost" },
       { name: "AI Code Detector", href: "/ai-tools/ai-code-detector" },
       { name: "AI Text Detector", href: "/ai-tools/ai-text-detector" },
-      { name: "AI Text Summarizer", href: "/ai-tools/text-summarizer" },
       { name: "AI Readability Analyzer", href: "/ai-tools/ai-readability-analyzer" },
       { name: "All AI Tools", href: "/ai-tools" },
     ],

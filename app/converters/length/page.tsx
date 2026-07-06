@@ -152,7 +152,6 @@ const toolConfig = createToolConfig({
       { name: "Timezone Converter", href: "/converters/timezone" },
       { name: "Currency Converter", href: "/converters/currency" },
       { name: "Conversion Calculator", href: "/calculator/conversion-calculator" },
-      { name: "Pace Calculator", href: "/calculator/pace-calculator" },
       { name: "Concrete Calculator", href: "/calculator/concrete-calculator" },
       { name: "All Converters", href: "/converters" },
     ],

@@ -15,11 +15,11 @@ export function HomeRichContent() {
                             </h2>
                             <div className="prose dark:prose-invert max-w-none text-muted-foreground">
                                 <p>
-                                    Whether you need to <strong className="text-foreground">compress a PDF</strong>, calculate your BMI, convert currencies, or generate AI captions — FastTools has you covered. Every tool loads instantly, works on any device, and requires zero signup.
+                                    Whether you need to <strong className="text-foreground">merge a PDF</strong>, calculate your BMI, convert currencies, or generate AI captions — FastTools has you covered. Every tool loads instantly, works on any device, and requires zero signup.
                                 </p>
                                 <h3 className="text-xl font-semibold text-foreground mt-6 mb-3">Built for Real Work, Not Demos</h3>
                                 <p>
-                                    Our calculators handle real formulas — loan amortization, tax estimation, IP subnets. Our converters support 30+ formats including JSON, YAML, XML, TOML, and Base64. Our PDF tools let you split, merge, compress, sign, and unlock documents without uploading anything.
+                                    Our calculators handle real formulas — loan payments, tax estimation, IP subnets. Our converters cover currencies, units, time zones, and text case. Our PDF tools let you split, merge, and verify documents without uploading anything.
                                 </p>
                                 <h3 className="text-xl font-semibold text-foreground mt-6 mb-3">Works on Every Device</h3>
                                 <p>
@@ -40,11 +40,8 @@ export function HomeRichContent() {
                                         <div>
                                             <h4 className="font-semibold text-foreground mb-1">PDF Tools</h4>
                                             <p className="text-sm text-muted-foreground">
-                                                <Link href="/pdf-tools/pdf-compressor" className="underline underline-offset-2 hover:text-foreground">Compress PDF</Link>,{" "}
-                                                <Link href="/pdf-tools/pdf-splitter-merger" className="underline underline-offset-2 hover:text-foreground">split &amp; merge</Link>,{" "}
-                                                <Link href="/pdf-tools/pdf-sign" className="underline underline-offset-2 hover:text-foreground">sign PDFs</Link>,{" "}
-                                                <Link href="/pdf-tools/pdf-unlocker" className="underline underline-offset-2 hover:text-foreground">unlock PDFs</Link>, and{" "}
-                                                <Link href="/pdf-tools/image-to-pdf" className="underline underline-offset-2 hover:text-foreground">convert images to PDF</Link> — all in your browser. No file uploads to external servers.
+                                                <Link href="/pdf-tools/pdf-splitter-merger" className="underline underline-offset-2 hover:text-foreground">Split &amp; merge PDFs</Link> and{" "}
+                                                <Link href="/pdf-tools/pdf-signature-checker" className="underline underline-offset-2 hover:text-foreground">check digital signatures</Link> — all in your browser. No file uploads to external servers.
                                             </p>
                                         </div>
                                     </div>
@@ -59,7 +56,7 @@ export function HomeRichContent() {
                                                 <Link href="/calculator/bmi-calculator" className="underline underline-offset-2 hover:text-foreground">BMI calculator</Link>,{" "}
                                                 <Link href="/calculator/age-calculator" className="underline underline-offset-2 hover:text-foreground">age calculator</Link>,{" "}
                                                 <Link href="/finance-tools/loan-calculator" className="underline underline-offset-2 hover:text-foreground">loan calculator</Link>,{" "}
-                                                <Link href="/finance-tools/mortgage-calculator" className="underline underline-offset-2 hover:text-foreground">mortgage calculator</Link>,{" "}
+                                                <Link href="/finance-tools/paypal-fee" className="underline underline-offset-2 hover:text-foreground">PayPal fee calculator</Link>,{" "}
                                                 <Link href="/finance-tools/tax-calculator" className="underline underline-offset-2 hover:text-foreground">tax calculator</Link>,{" "}
                                                 <Link href="/calculator/gpa-calculator" className="underline underline-offset-2 hover:text-foreground">GPA calculator</Link>, and{" "}
                                                 <Link href="/calculator/scientific-calculator" className="underline underline-offset-2 hover:text-foreground">scientific calculator</Link>.
@@ -86,9 +83,9 @@ export function HomeRichContent() {
                                             <p className="text-sm text-muted-foreground">
                                                 <Link href="/dev-tools/jwt-decoder" className="underline underline-offset-2 hover:text-foreground">JWT decoder</Link>,{" "}
                                                 <Link href="/dev-tools/regex-tester" className="underline underline-offset-2 hover:text-foreground">regex tester</Link>,{" "}
-                                                <Link href="/dev-tools/json-diff" className="underline underline-offset-2 hover:text-foreground">JSON diff</Link>,{" "}
+                                                <Link href="/dev-tools/json-to-csv" className="underline underline-offset-2 hover:text-foreground">JSON to CSV</Link>,{" "}
                                                 <Link href="/crypto-tools/uuid-generator" className="underline underline-offset-2 hover:text-foreground">UUID generator</Link>,{" "}
-                                                <Link href="/crypto-tools/password-generator" className="underline underline-offset-2 hover:text-foreground">password generator</Link>, and 20+{" "}
+                                                <Link href="/crypto-tools/bip39-generator" className="underline underline-offset-2 hover:text-foreground">BIP39 generator</Link>, and more{" "}
                                                 <Link href="/converters" className="underline underline-offset-2 hover:text-foreground">converters</Link> for developers.
                                             </p>
                                         </div>

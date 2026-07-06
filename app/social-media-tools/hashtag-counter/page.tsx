@@ -262,7 +262,6 @@ const toolConfig = createToolConfig({
       { name: "Influencer Rate Calculator", href: "/social-media-tools/influencer-rate-calculator" },
       { name: "AI Caption Generator", href: "/ai-tools/caption-generator" },
       { name: "Keyword Density Checker", href: "/seo-tools/keyword-density" },
-      { name: "Word Counter", href: "/seo-tools/word-counter" },
       { name: "All Social Media Tools", href: "/social-media-tools" },
     ],
   },

@@ -204,7 +204,6 @@ const toolConfig = createToolConfig({
       { name: "YouTube Channel Name Generator", href: "/social-media-tools/youtube-channel-name-generator" },
       { name: "Blog Title Generator", href: "/seo-tools/blog-titles" },
       { name: "Love Calculator", href: "/calculator/love-calculator" },
-      { name: "Wheel Spinner", href: "/fun-tools/wheel-spinner" },
       { name: "All AI Tools", href: "/ai-tools" },
     ],
   },

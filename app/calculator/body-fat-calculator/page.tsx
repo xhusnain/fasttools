@@ -578,7 +578,6 @@ export default function BodyFatCalculatorPage() {
       { name: "BMR Calculator", href: "/calculator/bmr-calculator" },
       { name: "TDEE & Macro Calculator", href: "/calculator/tdee-macro-calculator" },
       { name: "Biological Age Calculator", href: "/calculator/biological-age-calculator" },
-      { name: "Pace Calculator", href: "/calculator/pace-calculator" },
       { name: "Cortisol Peak Calculator", href: "/calculator/cortisol-peak-calculator" },
       { name: "Age Calculator", href: "/calculator/age-calculator" },
       { name: "All Calculators", href: "/calculator" }

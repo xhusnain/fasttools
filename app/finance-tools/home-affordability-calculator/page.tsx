@@ -280,12 +280,9 @@ export default function HomeAffordabilityCalculatorPage() {
     ],
 
     relatedTools: [
-      { name: "Mortgage Calculator", href: "/finance-tools/mortgage-calculator" },
-      { name: "Amortization Calculator", href: "/finance-tools/amortization-calculator" },
       { name: "Loan Calculator", href: "/finance-tools/loan-calculator" },
-      { name: "Rent vs Buy Calculator", href: "/finance-tools/rent-vs-buy-calculator" },
-      { name: "Net Worth Calculator", href: "/finance-tools/net-worth-calculator" },
-      { name: "Debt Payoff Calculator", href: "/finance-tools/debt-payoff-calculator" },
+      { name: "Payment Calculator", href: "/finance-tools/payment-calculator" },
+      { name: "Interest Rate Calculator", href: "/finance-tools/interest-rate-calculator" },
       { name: "Savings Goal Tracker", href: "/finance-tools/savings-tracker" },
       { name: "All Finance Tools", href: "/finance-tools" }
     ]

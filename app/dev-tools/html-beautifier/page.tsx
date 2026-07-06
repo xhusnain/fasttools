@@ -179,11 +179,7 @@ const toolConfig = createToolConfig({
     relatedTools: [
       { name: "HTML to Markdown", href: "/dev-tools/html-to-markdown" },
       { name: "Markdown Previewer", href: "/dev-tools/markdown-previewer" },
-      { name: "HTML WYSIWYG Editor", href: "/dev-tools/html-wysiwyg-editor" },
-      { name: "Escape HTML Entities", href: "/web-tools/html-escape" },
       { name: "JSON to CSV Converter", href: "/dev-tools/json-to-csv" },
-      { name: "Slugify String", href: "/dev-tools/slugify-string" },
-      { name: "Diff Checker", href: "/dev-tools/diff-checker" },
       { name: "All Developer Tools", href: "/dev-tools" },
     ],
   },

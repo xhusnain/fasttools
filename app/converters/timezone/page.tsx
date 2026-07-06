@@ -168,7 +168,6 @@ const toolConfig = createToolConfig({
       { name: "File Size Converter", href: "/converters/file-size" },
       { name: "Unix Timestamp Converter", href: "/dev-tools/timestamp-converter" },
       { name: "Age Calculator", href: "/calculator/age-calculator" },
-      { name: "Time Duration Calculator", href: "/calculator/time-duration" },
       { name: "All Converters", href: "/converters" },
     ],
   },

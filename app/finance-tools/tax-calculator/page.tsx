@@ -307,13 +307,9 @@ export default function TaxCalculatorPage() {
     ],
 
     relatedTools: [
-      { name: "Tax Bracket Calculator", href: "/finance-tools/tax-bracket-calculator" },
       { name: "Quarterly Tax Estimator", href: "/finance-tools/quarterly-tax-estimator" },
       { name: "Salary Calculator", href: "/finance-tools/salary-calculator" },
       { name: "Sales Tax Calculator", href: "/finance-tools/sales-tax-calculator" },
-      { name: "Freelance Rate Calculator", href: "/finance-tools/freelance-rate-calculator" },
-      { name: "Net Worth Calculator", href: "/finance-tools/net-worth-calculator" },
-      { name: "Inflation Calculator", href: "/finance-tools/inflation-calculator" },
       { name: "All Finance Tools", href: "/finance-tools" }
     ]
   }

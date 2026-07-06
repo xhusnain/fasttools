@@ -217,13 +217,8 @@ const toolConfig = createToolConfig({
     ],
 
     relatedTools: [
-      { name: "DNS Lookup & SSL Checker", href: "/web-tools/dns-ssl-checker" },
-      { name: "URL Parser", href: "/web-tools/url-parser" },
-      { name: "Device Information", href: "/web-tools/device-info" },
-      { name: "URL Encoder Decoder", href: "/web-tools/url-encoder" },
       { name: "IP Subnet Calculator", href: "/calculator/ip-subnet-calculator" },
-      { name: "User-Agent Parser", href: "/dev-tools/user-agent-parser" },
-      { name: "HTTP Status Codes", href: "/dev-tools/http-status-codes" },
+      { name: "Open Graph Meta Generator", href: "/seo-tools/meta-tags" },
       { name: "All Web Tools", href: "/web-tools" },
     ],
   },

@@ -476,7 +476,6 @@ export default function InfluencerRateCalculatorPage() {
       { name: "Link in Bio Generator", href: "/social-media-tools/link-in-bio" },
       { name: "AI Caption Generator", href: "/ai-tools/caption-generator" },
       { name: "ROAS Calculator", href: "/ad-tools/roas-calculator" },
-      { name: "Freelance Rate Calculator", href: "/finance-tools/freelance-rate-calculator" },
       { name: "PayPal Fee Calculator", href: "/finance-tools/paypal-fee" },
       { name: "All Social Media Tools", href: "/social-media-tools" }
     ]

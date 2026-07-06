@@ -310,7 +310,6 @@ export default function PregnancyConceptionCalculatorPage() {
 
     relatedTools: [
       { name: "Pregnancy Calculator", href: "/calculator/pregnancy-calculator" },
-      { name: "Ovulation Calculator", href: "/calculator/ovulation-calculator" },
       { name: "Age Calculator", href: "/calculator/age-calculator" },
       { name: "Date Difference Calculator", href: "/calculator/date-difference" },
       { name: "Future Age Predictor", href: "/fun-tools/future-age" },

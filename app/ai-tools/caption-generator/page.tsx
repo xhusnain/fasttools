@@ -305,7 +305,6 @@ const toolConfig = createToolConfig({
     relatedTools: [
       { name: "AI Lyrics Generator", href: "/ai-tools/lyrics-generator" },
       { name: "AI Paraphraser", href: "/ai-tools/ai-paraphraser" },
-      { name: "AI Text Summarizer", href: "/ai-tools/text-summarizer" },
       { name: "Blog Title Generator", href: "/seo-tools/blog-titles" },
       { name: "Hashtag Counter", href: "/social-media-tools/hashtag-counter" },
       { name: "Link in Bio Generator", href: "/social-media-tools/link-in-bio" },

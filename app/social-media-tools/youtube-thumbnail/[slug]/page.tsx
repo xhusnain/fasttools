@@ -52,7 +52,6 @@ export default async function YoutubeThumbnailVariantPage(props: Props) {
     { name: "YouTube Thumbnail Downloader", href: "/social-media-tools/youtube-thumbnail" },
     ...siblingVariantLinks,
     { name: "YouTube Tag Extractor", href: "/social-media-tools/youtube-tags" },
-    { name: "Image Resizer", href: "/image-tools/image-resizer" },
     { name: "All Social Media Tools", href: "/social-media-tools" },
   ]
 

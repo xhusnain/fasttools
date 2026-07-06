@@ -10,20 +10,11 @@ import {
   CreditCard,
   Home,
   BadgePercent,
-  PiggyBank,
   ChartLine,
-  Coins,
-  ScrollText,
-  Landmark,
-  TrendingDown,
   Banknote,
   Shield,
   Activity,
-  Briefcase,
-  Heart,
   Car,
-  Wallet,
-  Rocket,
 } from "lucide-react"
 import { ToolPageLayout } from "@/components/common/tool-page-layout"
 import { Metadata } from "next"
@@ -108,13 +99,6 @@ const financeTools = [
     href: "/finance-tools/auto-loan-calculator",
   },
   {
-    title: "Mortgage Calculator",
-    description:
-      "Calculate monthly home loan payments including principal and interest details.",
-    icon: Home,
-    href: "/finance-tools/mortgage-calculator",
-  },
-  {
     title: "Tax Calculator",
     description:
       "Estimate income tax, GST, or VAT to understand net and gross amounts.",
@@ -136,46 +120,11 @@ const financeTools = [
     href: "/finance-tools/sales-tax-calculator",
   },
   {
-    title: "Retirement Calculator",
-    description:
-      "Project retirement savings outcomes using return rates and contribution schedules.",
-    icon: PiggyBank,
-    href: "/finance-tools/retirement-calculator",
-  },
-  {
     title: "Investment Calculator",
     description:
       "Estimate investment growth over time with recurring contributions and returns.",
     icon: ChartLine,
     href: "/finance-tools/investment-calculator",
-  },
-  {
-    title: "Compound Interest Calculator",
-    description:
-      "Visualize compounding effects and compare long-term savings scenarios.",
-    icon: Coins,
-    href: "/finance-tools/compound-interest",
-  },
-  {
-    title: "Amortization Calculator",
-    description:
-      "Generate payment schedules showing principal and interest for each period.",
-    icon: ScrollText,
-    href: "/finance-tools/amortization-calculator",
-  },
-  {
-    title: "Finance Calculator",
-    description:
-      "Solve core time-value-of-money variables for planning and financial analysis.",
-    icon: Landmark,
-    href: "/finance-tools/finance-calculator",
-  },
-  {
-    title: "Inflation Calculator",
-    description:
-      "Estimate purchasing power changes over time based on inflation assumptions.",
-    icon: TrendingDown,
-    href: "/finance-tools/inflation-calculator",
   },
   {
     title: "Interest Rate Calculator",
@@ -206,46 +155,11 @@ const financeTools = [
     href: "/finance-tools/saas-churn-calculator",
   },
   {
-    title: "Freelance Hourly Rate Calculator",
-    description:
-      "Calculate your ideal freelance rate based on desired income, taxes, expenses, billable hours & profit margin.",
-    icon: Briefcase,
-    href: "/finance-tools/freelance-rate-calculator",
-  },
-  {
-    title: "Tax Bracket Calculator",
-    description:
-      "Calculate 2025-2026 US federal income tax by bracket. Marginal vs effective rate, bracket breakdown.",
-    icon: Percent,
-    href: "/finance-tools/tax-bracket-calculator",
-  },
-  {
-    title: "Startup Runway Calculator",
-    description:
-      "Calculate months of runway, burn rate, zero-cash date, and fundraise timing with revenue growth projections.",
-    icon: Rocket,
-    href: "/finance-tools/startup-runway-calculator",
-  },
-  {
     title: "SaaS Payback Period Calculator",
     description:
       "Calculate months to recover CAC, LTV:CAC ratio, customer lifetime value & 36-month ROI projection.",
     icon: TrendingUp,
     href: "/finance-tools/saas-payback-calculator",
-  },
-  {
-    title: "Remote Work Savings Calculator",
-    description:
-      "Calculate how much you save working from home: commute, meals, wardrobe, time & environmental impact.",
-    icon: Home,
-    href: "/finance-tools/remote-work-savings",
-  },
-  {
-    title: "Zakat Calculator",
-    description:
-      "Calculate your Zakat on cash, gold, silver, investments & business assets. Based on Quran & Sunnah.",
-    icon: Heart,
-    href: "/finance-tools/zakat-calculator",
   },
   {
     title: "Home Affordability Calculator",
@@ -254,32 +168,11 @@ const financeTools = [
     icon: Home,
     href: "/finance-tools/home-affordability-calculator",
   },
-  {
-    title: "Rent vs Buy Calculator",
-    description:
-      "Compare the true cost of renting vs buying a home. Includes mortgage, taxes, opportunity cost, equity building, and break-even analysis.",
-    icon: Home,
-    href: "/finance-tools/rent-vs-buy-calculator",
-  },
-  {
-    title: "Debt Payoff Calculator",
-    description:
-      "Compare snowball vs avalanche strategies to pay off multiple debts. See your debt-free date, total interest saved, and month-by-month plan.",
-    icon: TrendingDown,
-    href: "/finance-tools/debt-payoff-calculator",
-  },
-  {
-    title: "Net Worth Calculator",
-    description:
-      "Calculate your personal net worth with asset/liability breakdown, debt-to-asset ratio, financial health grade, and age percentile comparison.",
-    icon: Wallet,
-    href: "/finance-tools/net-worth-calculator",
-  },
 ]
 
 export const metadata: Metadata = createMetadata({
   title:
-    "Finance Calculators — Loan, Mortgage & Tax",
+    "Finance Calculators — Loans, PayPal Fees & Tax",
   description:
     "Use free finance tools for loan, mortgage, tax, salary, savings, and investment planning. Fast, accurate calculators with no signup required.",
   path: "/finance-tools",
@@ -308,7 +201,7 @@ export default function FinanceToolsPage() {
       "Use the results to plan budgets, pricing, or savings targets with confidence.",
     ],
     features: [
-      "27 focused finance calculators",
+      "21 focused finance calculators",
       "Fast browser-based calculations",
       "Budgeting, debt, tax, and investment coverage",
       "Cross-links between related money decisions",
@@ -329,7 +222,7 @@ export default function FinanceToolsPage() {
       {
         question: "Which finance calculator should I start with?",
         answer:
-          "Start with the tool that matches your immediate decision: Loan or Mortgage for borrowing, Tax or Sales Tax for purchase planning, and Investment or Retirement for long-term growth.",
+          "Start with the tool that matches your immediate decision: Loan or Auto Loan for borrowing, Tax or Sales Tax for purchase planning, and Investment or Retirement for long-term growth.",
       },
       {
         question: "Are these finance calculations accurate?",

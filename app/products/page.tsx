@@ -75,13 +75,6 @@ const categories = [
     href: "/crypto-tools",
   },
   {
-    id: "security-tools",
-    name: "Security & Privacy Tools",
-    description: "Advanced tools for data protection, privacy, and secure communication. Encrypt, hide, and protect your sensitive information.",
-    icon: LockIcon,
-    href: "/security-tools",
-  },
-  {
     id: "dev-tools",
     name: "Developer Tools",
     description: "Boost your productivity with essential utilities for developers, from formatters and validators to code generators and debuggers.",
@@ -98,7 +91,7 @@ const categories = [
   {
     id: "image-tools",
     name: "Image Tools",
-    description: "Transform your images with our powerful editing suite. Resize, compress, convert, and apply AI-powered effects with ease.",
+    description: "Transform your images with our powerful toolkit. Compress, convert, remove backgrounds, and apply AI-powered analysis with ease.",
     icon: Image,
     href: "/image-tools",
   },
@@ -129,13 +122,6 @@ const categories = [
     description: "Inject some fun into your day with entertaining tools for social media content, celebrations, and personal enjoyment.",
     icon: Sparkles,
     href: "/fun-tools",
-  },
-  {
-    id: "education-tools",
-    name: "Education Tools",
-    description: "Free tools for students, researchers, and educators. Citation generators (APA, MLA, Chicago, Harvard), study aids, and academic writing helpers.",
-    icon: GraduationCap,
-    href: "/education-tools",
   },
 ]
 
@@ -264,7 +250,7 @@ export default function ProductsPage() {
 
               <div className="prose prose-lg max-w-none">
                 <h2 className="text-2xl md:text-3xl font-bold text-primary mb-4">Your Complete Solution for PDF Management</h2>
-                <p>The PDF is a universal format for documents, but managing them can often be a challenge. Our comprehensive suite of PDF tools puts you back in control. Whether you need to make a quick edit, combine multiple reports into a single file, or prepare a large document for email, we have a free online solution. Use our PDF merger to combine several files, or the splitter to extract specific pages. Our powerful compressor can significantly reduce file size without sacrificing quality, making it easy to share documents. Need to convert a PDF to another format? We offer conversions to Word, JPG, and more. All these tools run securely in your browser, meaning your sensitive documents are never uploaded to our servers. It's a complete, private, and free solution for all your PDF management needs.</p>
+                <p>The PDF is a universal format for documents, but managing them can often be a challenge. Our PDF tools put you back in control. Use our PDF merger to combine multiple reports into a single file, or the splitter to extract specific page ranges from a large document. Need to confirm a contract was properly signed? Our PDF Signature Checker inspects digital-signature data and integrity indicators before you approve or forward a document. All these tools run securely in your browser, meaning your sensitive documents are never uploaded to our servers. It's a private, free solution for everyday PDF page operations and verification.</p>
               </div>
             </div>
 

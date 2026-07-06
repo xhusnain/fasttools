@@ -397,7 +397,6 @@ export default function InstagramDpPage() {
       { name: "Link-in-Bio Generator", href: "/social-media-tools/link-in-bio" },
       { name: "YouTube Tag Extractor", href: "/social-media-tools/youtube-tags" },
       // Cross-category: push authority to high-demand image tools
-      { name: "Image Resizer — Resize Photos Online", href: "/image-tools/image-resizer" },
       { name: "Image Compressor — Compress JPG/PNG", href: "/image-tools/image-compressor" },
       { name: "Background Remover — Remove BG Free", href: "/image-tools/background-remover" },
       { name: "All Social Media Tools", href: "/social-media-tools" },

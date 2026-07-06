@@ -3,7 +3,7 @@ import { ToolPageLayout } from "@/components/common/tool-page-layout"
 import { createToolConfig } from "@/lib/create-tool-config"
 import { GToolCard } from "@/ui/gtool-card"
 
-import { Calendar, Cake, Clock, PartyPopper, Code, Globe, Calculator, ArrowRight, Heart, Smile, Shuffle } from "lucide-react"
+import { Calendar, Cake, Clock, PartyPopper, Code, Globe, Calculator, ArrowRight, Heart } from "lucide-react"
 
 const tools = [
   {
@@ -28,38 +28,10 @@ const tools = [
     popular: false,
   },
   {
-    title: "Monthsary Calculator",
-    description: "Count total months together and find your next monthly relationship milestone.",
-    icon: Heart,
-    href: "/fun-tools/monthsary-calculator",
-    popular: true,
-  },
-  {
     title: "Pomodoro Timer",
     description: "Free focus timer with ambient sounds, task tracking, and customizable sessions. Study and work productively.",
     icon: Clock,
     href: "/fun-tools/pomodoro-timer",
-    popular: true,
-  },
-  {
-    title: "Meme Generator",
-    description: "Create memes with 100+ templates, custom text, fonts, and colors. Download PNG with no watermark.",
-    icon: Smile,
-    href: "/fun-tools/meme-generator",
-    popular: true,
-  },
-  {
-    title: "Countdown Timer & Stopwatch",
-    description: "Online countdown timer and stopwatch with presets, alarm sound, fullscreen mode, and lap times.",
-    icon: Clock,
-    href: "/fun-tools/countdown-timer",
-    popular: true,
-  },
-  {
-    title: "Wheel Spinner",
-    description: "Random name picker wheel. Add names or options, spin to decide. 8 presets, history, no login.",
-    icon: Shuffle,
-    href: "/fun-tools/wheel-spinner",
     popular: true,
   },
 ]
@@ -68,7 +40,7 @@ const toolConfig = createToolConfig({
   toolName: "Fun Tools & Social Helpers",
   description:
     "Free fun tools for countdowns, age milestones, and anniversary tracking. Fast, private, and easy to use.",
-  metaTitle: "Free Fun Tools: Meme Generator, Birthday Countdown, Future Age & More",
+  metaTitle: "Free Fun Tools: Anniversary, Birthday Countdown, Future Age & More",
   metaDescription:
     "Free fun tools: meme generator, birthday countdowns, future age predictor, anniversary calculator, and Pomodoro timer. Quick results, mobile-friendly, no signup.",
   path: "/fun-tools",

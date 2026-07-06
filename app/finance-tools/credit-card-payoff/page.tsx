@@ -347,13 +347,9 @@ export default function CreditCardPayoffPage() {
     proTip: "If you can't pay off your full balance, transferring it to a 0% intro APR card is almost always the math-optimal move — even after the 3-5% transfer fee. Example: $5,000 at 22% APR paying $300/month costs ~$1,000 in interest over 20 months. Transfer to a 0% / 18-month card with 3% fee: $150 fee + $0 interest = save $850. Just stop using the original card and pay off in the promo window.",
 
     relatedTools: [
-      { name: "Debt Payoff Calculator", href: "/finance-tools/debt-payoff-calculator" },
       { name: "Loan Calculator", href: "/finance-tools/loan-calculator" },
-      { name: "Amortization Calculator", href: "/finance-tools/amortization-calculator" },
       { name: "Interest Rate Calculator", href: "/finance-tools/interest-rate-calculator" },
-      { name: "Net Worth Calculator", href: "/finance-tools/net-worth-calculator" },
       { name: "Savings Goal Tracker", href: "/finance-tools/savings-tracker" },
-      { name: "Mortgage Calculator", href: "/finance-tools/mortgage-calculator" },
       { name: "All Finance Tools", href: "/finance-tools" }
     ]
   }

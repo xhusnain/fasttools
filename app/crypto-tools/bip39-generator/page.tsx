@@ -244,11 +244,8 @@ const toolConfig = createToolConfig({
 
     relatedTools: [
       { name: "Token Generator", href: "/crypto-tools/token-generator" },
-      { name: "Password Generator", href: "/crypto-tools/password-generator" },
       { name: "Password Strength Analyzer", href: "/crypto-tools/password-strength-analyzer" },
       { name: "RSA Key Generator", href: "/crypto-tools/rsa-generator" },
-      { name: "Hash Text Generator", href: "/crypto-tools/hash-text" },
-      { name: "Text Encrypt/Decrypt", href: "/crypto-tools/encrypt-decrypt" },
       { name: "Bcrypt Generator", href: "/crypto-tools/bcrypt" },
       { name: "All Crypto Tools", href: "/crypto-tools" },
     ],

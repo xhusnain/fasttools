@@ -194,8 +194,6 @@ const toolConfig = createToolConfig({
       { name: "Link in Bio Generator", href: "/social-media-tools/link-in-bio" },
       { name: "YouTube Channel Checker", href: "/social-media-tools/channel-checker" },
       { name: "Influencer Rate Calculator", href: "/social-media-tools/influencer-rate-calculator" },
-      { name: "Image Cropper", href: "/image-tools/image-cropper" },
-      { name: "Image Resizer", href: "/image-tools/image-resizer" },
       { name: "All Social Media Tools", href: "/social-media-tools" },
     ],
   },

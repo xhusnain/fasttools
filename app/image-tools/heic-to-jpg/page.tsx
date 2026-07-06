@@ -225,8 +225,6 @@ const toolConfig = createToolConfig({
       { name: "WebP to JPG Converter", href: "/image-tools/webp-to-jpg" },
       { name: "JPG to PNG Converter", href: "/image-tools/jpg-to-png" },
       { name: "Image Compressor", href: "/image-tools/image-compressor" },
-      { name: "Image Resizer", href: "/image-tools/image-resizer" },
-      { name: "Image Cropper", href: "/image-tools/image-cropper" },
       { name: "All Image Tools", href: "/image-tools" },
     ],
   },

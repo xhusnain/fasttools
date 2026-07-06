@@ -275,7 +275,6 @@ const toolConfig = createToolConfig({
       { name: "YouTube Live Thumbnail Downloader", href: "/social-media-tools/youtube-thumbnail/live" },
       { name: "YouTube Thumbnail Viewer", href: "/social-media-tools/youtube-thumbnail/viewer" },
       { name: "YouTube Tag Extractor", href: "/social-media-tools/youtube-tags" },
-      { name: "Image Resizer", href: "/image-tools/image-resizer" },
       { name: "All Social Media Tools", href: "/social-media-tools" },
     ],
   },

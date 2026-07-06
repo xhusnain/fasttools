@@ -156,7 +156,6 @@ const toolConfig = createToolConfig({
     relatedTools: [
       { name: "PayPal Fee Calculator", href: "/finance-tools/paypal-fee" },
       { name: "Invoice Generator", href: "/finance-tools/invoice-generator" },
-      { name: "Freelance Rate Calculator", href: "/finance-tools/freelance-rate-calculator" },
       { name: "Discount Calculator", href: "/finance-tools/discount-calculator" },
       { name: "Sales Tax Calculator", href: "/finance-tools/sales-tax-calculator" },
       { name: "Quarterly Tax Estimator", href: "/finance-tools/quarterly-tax-estimator" },

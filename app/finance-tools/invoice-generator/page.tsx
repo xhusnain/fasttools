@@ -136,7 +136,6 @@ export default function InvoiceGeneratorPage() {
 
     relatedTools: [
       { name: "PayPal Fee Calculator", href: "/finance-tools/paypal-fee" },
-      { name: "Freelance Rate Calculator", href: "/finance-tools/freelance-rate-calculator" },
       { name: "Sales Tax Calculator", href: "/finance-tools/sales-tax-calculator" },
       { name: "Discount Calculator", href: "/finance-tools/discount-calculator" },
       { name: "Bill Splitter", href: "/finance-tools/bill-splitter" },

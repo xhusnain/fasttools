@@ -207,18 +207,15 @@ const toolConfig = createToolConfig({
       },
       {
         question: "How is this different from a regular countdown timer?",
-        answer: "A birthday countdown auto-targets the NEXT occurrence of the date you enter — so if their birthday already passed this year, it counts to next year. A regular countdown timer counts down to one specific moment that doesn't repeat. Pick the right tool for the job: this for annual recurring dates, the Countdown Timer for one-time events."
+        answer: "A birthday countdown auto-targets the NEXT occurrence of the date you enter — so if their birthday already passed this year, it counts to next year. A regular countdown timer counts down to one specific moment that doesn't repeat. Pick the right tool for the job: use this one for annual recurring dates, and a regular countdown timer for one-time events."
       }
     ],
 
     relatedTools: [
       { name: "Anniversary Calculator", href: "/fun-tools/anniversary" },
       { name: "Future Age Predictor", href: "/fun-tools/future-age" },
-      { name: "Monthsary Calculator", href: "/fun-tools/monthsary-calculator" },
-      { name: "Countdown Timer & Stopwatch", href: "/fun-tools/countdown-timer" },
       { name: "Age Calculator", href: "/calculator/age-calculator" },
       { name: "Date Difference Calculator", href: "/calculator/date-difference" },
-      { name: "Time Duration Calculator", href: "/calculator/time-duration" },
       { name: "All Fun Tools", href: "/fun-tools" }
     ]
   }

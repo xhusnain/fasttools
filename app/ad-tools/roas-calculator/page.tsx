@@ -621,7 +621,6 @@ export default function ROASCalculatorPage() {
         relatedTools: [
             { name: "SaaS Churn Calculator", href: "/finance-tools/saas-churn-calculator" },
             { name: "SaaS Payback Calculator", href: "/finance-tools/saas-payback-calculator" },
-            { name: "Startup Runway Calculator", href: "/finance-tools/startup-runway-calculator" },
             { name: "Influencer Rate Calculator", href: "/social-media-tools/influencer-rate-calculator" },
             { name: "TikTok Engagement Calculator", href: "/social-media-tools/tiktok-engagement-calculator" },
             { name: "Discount Calculator", href: "/finance-tools/discount-calculator" },

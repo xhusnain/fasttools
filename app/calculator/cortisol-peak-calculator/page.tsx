@@ -447,7 +447,6 @@ export default function CortisolPeakCalculatorPage() {
       { name: "Body Fat Calculator", href: "/calculator/body-fat-calculator" },
       { name: "TDEE & Macro Calculator", href: "/calculator/tdee-macro-calculator" },
       { name: "Biological Age Calculator", href: "/calculator/biological-age-calculator" },
-      { name: "Time Duration Calculator", href: "/calculator/time-duration" },
       { name: "All Calculators", href: "/calculator" }
     ]
   }

@@ -9,9 +9,7 @@ import {
   Calendar,
   Activity,
   Percent,
-  Clock,
   TrendingUp,
-  Triangle,
   BarChart3,
   Heart,
   Flame,
@@ -28,8 +26,6 @@ import {
   HeartPulse,
   CalendarHeart,
   Binary,
-  Sigma,
-  Footprints,
   Sun
 
 } from "lucide-react"
@@ -54,12 +50,6 @@ const tools = [
     description: "Calculate the exact duration between two dates in years, months, weeks, and days. Includes leap year adjustments and business day calculations.",
     icon: Calendar,
     href: "/calculator/date-difference",
-  },
-  {
-    title: "Time Duration Calculator",
-    description: "Calculate time differences in hours, minutes, and seconds. Perfect for tracking work hours, event durations, and time intervals.",
-    icon: Clock,
-    href: "/calculator/time-duration",
   },
   {
     title: "BMI Calculator",
@@ -116,12 +106,6 @@ const tools = [
     href: "/calculator/pregnancy-calculator",
   },
   {
-    title: "Ovulation & Fertility Calculator",
-    description: "Calculate ovulation date, fertile window, and best days to conceive. 6-cycle forecast with visual calendar.",
-    icon: Heart,
-    href: "/calculator/ovulation-calculator",
-  },
-  {
     title: "Pregnancy Conception Calculator",
     description: "Calculate optimal conception dates and fertile windows. Plan pregnancy with ovulation tracking.",
     icon: CalendarHeart,
@@ -133,25 +117,6 @@ const tools = [
     icon: Binary,
     href: "/calculator/fraction-calculator",
   },
-  {
-    title: "Standard Deviation Calculator",
-    description: "Calculate mean, variance, and standard deviation. Essential for statistical analysis and data science.",
-    icon: Sigma,
-    href: "/calculator/standard-deviation-calculator",
-  },
-  {
-    title: "Triangle Calculator",
-    description: "Solve triangle problems. Calculate area, perimeter, angles, and side lengths using various theorems.",
-    icon: Triangle,
-    href: "/calculator/triangle-calculator",
-  },
-  {
-    title: "Pace Calculator",
-    description: "Calculate running or cycling pace. Plan training targets and race strategies.",
-    icon: Footprints,
-    href: "/calculator/pace-calculator",
-  },
-
   {
     title: "Body Fat Calculator",
     description: "Estimate body fat percentage using various measurement methods. Track fitness progress beyond weight alone.",
@@ -186,7 +151,6 @@ const tools = [
 
 const userFaqQuestions: string[] = [
   "How do I calculate the difference between two dates in years, months, and weeks?",
-  "How can I calculate the time duration in hours between two specific times?",
   "How do I calculate my daily protein and calorie needs?",
   "How do I calculate percentage increase or decrease?",
   "When can I retire and how much do I need to save?",
@@ -207,8 +171,8 @@ function answerForQuestion(q: string): { answer: string; links?: string[] } {
 
   if (lower.includes("toll")) {
     return {
-      answer: "For calculating tolls, consult official toll authority websites for your region. They provide route-specific toll calculators with current rates. For trip planning and time estimation, combine our Time Duration calculator (calculates driving time) and Date Difference calculator (estimates arrival dates) to plan your complete journey including stops and toll payment locations.",
-      links: ["/calculator/time-duration", "/calculator/date-difference"]
+      answer: "For calculating tolls, consult official toll authority websites for your region. They provide route-specific toll calculators with current rates. For trip planning and time estimation, use our Date Difference calculator (estimates arrival dates) to plan your complete journey including stops and toll payment locations.",
+      links: ["/calculator/date-difference"]
     }
   }
 
@@ -216,13 +180,6 @@ function answerForQuestion(q: string): { answer: string; links?: string[] } {
     return {
       answer: "Use our Date Difference calculator to compute precise differences between any two dates. The calculator accounts for leap years, variable month lengths, and provides results in multiple formats: total days, weeks, months, and years. This is perfect for age calculations, project timelines, contract durations, and deadline tracking. Simply enter your start and end dates to get comprehensive time period breakdowns.",
       links: ["/calculator/date-difference"]
-    }
-  }
-
-  if (lower.includes("hours")) {
-    return {
-      answer: "Our Time Duration calculator computes exact time differences between two timestamps in hours, minutes, and seconds format. The tool handles 24-hour time format and provides detailed breakdowns for work hour tracking, event duration analysis, and time interval calculations. Whether you need to track billable hours, calculate travel time, or measure event durations, this calculator provides precise results with clear formatting.",
-      links: ["/calculator/time-duration"]
     }
   }
 
@@ -242,8 +199,8 @@ function answerForQuestion(q: string): { answer: string; links?: string[] } {
 
   if (lower.includes("retire") || lower.includes("social security")) {
     return {
-      answer: "Plan your retirement timeline using our comprehensive Retirement Calculator. Enter your current age, desired retirement age, current savings, expected annual contributions, expected rate of return, and inflation assumptions. The calculator projects your retirement corpus, monthly income potential, and helps determine if you're on track to meet your retirement goals. For Social Security timing, consider factors like full retirement age (typically 66-67) and how early or delayed claiming affects benefits. The calculator provides actionable insights for adjusting savings strategies to achieve financial independence.",
-      links: ["/finance-tools/retirement-calculator"]
+      answer: "Plan your retirement timeline using our comprehensive Retirement Planner. Enter your current age, desired retirement age, current savings, expected annual contributions, expected rate of return, and inflation assumptions. The calculator projects your retirement corpus, monthly income potential, and helps determine if you're on track to meet your retirement goals. For Social Security timing, consider factors like full retirement age (typically 66-67) and how early or delayed claiming affects benefits. The calculator provides actionable insights for adjusting savings strategies to achieve financial independence.",
+      links: ["/finance-tools/retirement-planner"]
     }
   }
 
@@ -291,22 +248,22 @@ function answerForQuestion(q: string): { answer: string; links?: string[] } {
 
   if (lower.includes("geometry") || lower.includes("area")) {
     return {
-      answer: "For geometric calculations, use our Triangle Calculator which solves triangles using multiple methods (SSS, SAS, ASA, AAS, SSA) and computes area, perimeter, angles, heights, medians, inradius, and circumradius. For area conversions and unit transformations, combine this with our Length Converter which handles conversions between meters, feet, inches, kilometers, miles, and more. The Triangle Calculator is perfect for construction projects, engineering designs, academic geometry problems, and any scenario requiring precise triangle measurements and area calculations.",
-      links: ["/calculator/triangle-calculator", "/converters/length"]
+      answer: "For geometric calculations, use our Scientific Calculator which provides the trigonometric functions (sin, cos, tan) needed to work out angles, side lengths, and areas. For area conversions and unit transformations, combine this with our Length Converter which handles conversions between meters, feet, inches, kilometers, miles, and more. Together these tools cover construction projects, engineering designs, academic geometry problems, and any scenario requiring precise measurements and area calculations.",
+      links: ["/calculator/scientific-calculator", "/converters/length"]
     }
   }
 
   if (lower.includes("tax")) {
     return {
       answer: "Use our Tax Calculator and Sales Tax Calculator for comprehensive tax computations. The Tax Calculator handles income tax, GST, VAT calculations with support for inclusive and exclusive tax scenarios—providing gross amounts, net amounts, and tax amounts separately. The Sales Tax Calculator includes state-specific rates for all 50 US states with automatic rate application and detailed breakdowns. Both calculators are useful for budgeting, financial planning, business accounting, and understanding tax implications of purchases. Enter your amount and tax rate (or select your state) to get instant, accurate tax calculations.",
-      links: ["/finance-tools/tax-calculator", "/calculator/sales-tax-calculator"]
+      links: ["/finance-tools/tax-calculator", "/finance-tools/sales-tax-calculator"]
     }
   }
 
   if (lower.includes("algebra 2") || lower.includes("algebra") || lower.includes("geometry") || lower.includes("statistics") || lower.includes("calculus")) {
     return {
-      answer: "For algebra, calculus, and advanced mathematics, use our Scientific Calculator which provides trigonometric functions (sin, cos, tan), logarithmic operations, exponentiation, and root calculations with support for both degree and radian modes. For geometry, combine it with our Triangle Calculator for area, perimeter, and angle calculations. For statistics courses, use our Standard Deviation Calculator which computes population and sample standard deviation, variance, mean, and confidence intervals. These tools work together to support coursework from basic algebra through advanced calculus and statistics.",
-      links: ["/calculator/scientific-calculator", "/calculator/triangle-calculator", "/calculator/standard-deviation-calculator"]
+      answer: "For algebra, calculus, and advanced mathematics, use our Scientific Calculator which provides trigonometric functions (sin, cos, tan), logarithmic operations, exponentiation, and root calculations with support for both degree and radian modes. For coursework involving ratios and proportions, combine it with our Fraction Calculator and Percentage Calculator. These tools work together to support coursework from basic algebra through advanced calculus and statistics.",
+      links: ["/calculator/scientific-calculator", "/calculator/fraction-calculator", "/calculator/percentage-calculator"]
     }
   }
 
@@ -364,8 +321,8 @@ function answerForQuestion(q: string): { answer: string; links?: string[] } {
 
   if (lower.includes("tool cost")) {
     return {
-      answer: "To calculate tool costs, ROI, and depreciation, use our Percentage Calculator for markup and discount calculations, and our Compound Interest Calculator for investment growth projections. For cost estimation: (1) Calculate percentage increases for price adjustments, (2) Use compound interest formulas to project tool investment returns over time, (3) Apply percentage discounts for bulk purchases. These calculators help determine tool pricing, estimate depreciation schedules, calculate profit margins, and analyze whether tool investments are financially viable over their expected lifespan.",
-      links: ["/calculator/percentage-calculator", "/finance-tools/compound-interest"]
+      answer: "To calculate tool costs, ROI, and depreciation, use our Percentage Calculator for markup and discount calculations, and our Investment Calculator for investment growth projections. For cost estimation: (1) Calculate percentage increases for price adjustments, (2) Use compound interest formulas to project tool investment returns over time, (3) Apply percentage discounts for bulk purchases. These calculators help determine tool pricing, estimate depreciation schedules, calculate profit margins, and analyze whether tool investments are financially viable over their expected lifespan.",
+      links: ["/calculator/percentage-calculator", "/finance-tools/investment-calculator"]
     }
   }
 
@@ -377,8 +334,7 @@ function answerForQuestion(q: string): { answer: string; links?: string[] } {
 
   if (lower.includes("sample size")) {
     return {
-      answer: "We don't currently offer a dedicated sample size calculator, but our Standard Deviation Calculator can assist with statistical analysis once you have data. For sample size determination in research, consult statistical software like R, Python's scipy, or online tools specifically designed for power analysis and sample size calculations. These tools consider effect size, statistical power (typically 0.80), significance level (typically 0.05), and population parameters. WHO and biostatistics resources provide guidelines for various study designs including clinical trials, surveys, and observational studies.",
-      links: ["/calculator/standard-deviation-calculator"]
+      answer: "We don't currently offer a dedicated sample size calculator. For sample size determination in research, consult statistical software like R, Python's scipy, or online tools specifically designed for power analysis and sample size calculations. These tools consider effect size, statistical power (typically 0.80), significance level (typically 0.05), and population parameters. WHO and biostatistics resources provide guidelines for various study designs including clinical trials, surveys, and observational studies.",
     }
   }
 
@@ -464,8 +420,8 @@ function answerForQuestion(q: string): { answer: string; links?: string[] } {
 
   if (lower.includes("calculators for calculus") || lower.includes("calculators for algebra") || lower.includes("calculators for engineers")) {
     return {
-      answer: "For calculus and algebra courses, use our Scientific Calculator which provides trigonometric functions (sin, cos, tan), logarithmic operations, exponential functions, and root calculations essential for these subjects. Engineers benefit from multiple tools: our Scientific Calculator for math, Triangle Calculator for geometry and area calculations, IP Subnet Calculator for network engineering, and Standard Deviation Calculator for statistical analysis. These tools work together to support engineering coursework and professional calculations, from basic algebra through advanced calculus, trigonometry, and statistical analysis required in engineering disciplines.",
-      links: ["/calculator/scientific-calculator", "/calculator/triangle-calculator", "/calculator/ip-subnet-calculator", "/calculator/standard-deviation-calculator"]
+      answer: "For calculus and algebra courses, use our Scientific Calculator which provides trigonometric functions (sin, cos, tan), logarithmic operations, exponential functions, and root calculations essential for these subjects. Engineers benefit from multiple tools: our Scientific Calculator for math, IP Subnet Calculator for network engineering, and Conversion Calculator for unit conversions. These tools work together to support engineering coursework and professional calculations, from basic algebra through advanced calculus and trigonometry required in engineering disciplines.",
+      links: ["/calculator/scientific-calculator", "/calculator/ip-subnet-calculator", "/calculator/conversion-calculator"]
     }
   }
 
@@ -498,7 +454,7 @@ function answerForQuestion(q: string): { answer: string; links?: string[] } {
 
   if (lower.includes("calculators online") || lower.includes("calculators online free")) {
     return {
-      answer: "Yes, all our calculators are completely free and run entirely online—no downloads, no installation, no registration required. Simply visit our calculator pages in any web browser on any device (computer, tablet, smartphone) and start calculating instantly. Our collection includes 50+ calculators covering finance (loan, mortgage, tax), health (BMI, BMR, calorie), mathematics (scientific, percentage, standard deviation), time (date difference, time duration), and specialized tools (IP subnet, triangle). All tools are mobile-optimized, always updated, and accessible 24/7 from anywhere with internet connectivity.",
+      answer: "Yes, all our calculators are completely free and run entirely online—no downloads, no installation, no registration required. Simply visit our calculator pages in any web browser on any device (computer, tablet, smartphone) and start calculating instantly. Our collection includes 50+ calculators covering finance (loan, payment, tax), health (BMI, BMR, calorie), mathematics (scientific, percentage, fraction), time (date difference, age), and specialized tools (IP subnet, concrete). All tools are mobile-optimized, always updated, and accessible 24/7 from anywhere with internet connectivity.",
     }
   }
 
@@ -522,7 +478,7 @@ function answerForQuestion(q: string): { answer: string; links?: string[] } {
   }
 
   return {
-    answer: "We offer 50+ specialized calculators for various needs. For finance, try our Loan Calculator, Mortgage Calculator, and Tax Calculator. For health, use BMI Calculator, BMR Calculator, and Calorie Calculator. For mathematics, access our Scientific Calculator, Percentage Calculator, and Standard Deviation Calculator. For time calculations, use Date Difference and Time Duration calculators. For technical work, try IP Subnet Calculator and Triangle Calculator. Each tool is designed for specific calculation types, providing accurate results with clear explanations. Browse our calculator collection to find the perfect tool for your needs.",
+    answer: "We offer 50+ specialized calculators for various needs. For finance, try our Loan Calculator, Payment Calculator, and Tax Calculator. For health, use BMI Calculator, BMR Calculator, and Calorie Calculator. For mathematics, access our Scientific Calculator, Percentage Calculator, and Fraction Calculator. For time calculations, use Date Difference and Age calculators. For technical work, try IP Subnet Calculator and Concrete Calculator. Each tool is designed for specific calculation types, providing accurate results with clear explanations. Browse our calculator collection to find the perfect tool for your needs.",
     links: ["/calculator"]
   }
 }
@@ -566,7 +522,7 @@ const toolConfig = createToolConfig({
       "Use the result for planning, study, reporting, or day-to-day decisions.",
     ],
     features: [
-      "20+ focused calculator pages in one category",
+      "19 focused calculator pages in one category",
       "Browser-based calculations with no signup",
       "Coverage across finance, health, math, and utility workflows",
       "Clear result formatting for quick interpretation",
@@ -586,7 +542,7 @@ const toolConfig = createToolConfig({
         <article className="space-y-4">
           <h2 className="text-2xl font-bold text-foreground">Every Free Online Calculator You Need, In One Place</h2>
           <p className="text-muted-foreground leading-relaxed">
-            FastTools is a free online calculator hub with 30+ purpose-built calculators across finance, health, math, statistics, dates, and everyday planning. Every calculator is browser-based, runs locally on your device, requires no signup, and has no ads inside the calculator itself. Use whichever one you need — or jump between them to build a complete picture (e.g. BMI → BMR → Calorie → TDEE for a full fitness plan, or Loan → Amortization → Mortgage → Affordability for a home purchase).
+            FastTools is a free online calculator hub with 30+ purpose-built calculators across finance, health, math, statistics, dates, and everyday planning. Every calculator is browser-based, runs locally on your device, requires no signup, and has no ads inside the calculator itself. Use whichever one you need — or jump between them to build a complete picture (e.g. BMI → BMR → Calorie → TDEE for a full fitness plan, or Loan → Payment → Affordability for a home purchase).
           </p>
         </article>
 
@@ -609,7 +565,6 @@ const toolConfig = createToolConfig({
               <ul className="text-sm space-y-1 text-muted-foreground">
                 <li><a href="/calculator/pregnancy-calculator" className="hover:text-foreground underline">Pregnancy Due Date Calculator</a></li>
                 <li><a href="/calculator/pregnancy-conception-calculator" className="hover:text-foreground underline">Conception Date Calculator</a></li>
-                <li><a href="/calculator/ovulation-calculator" className="hover:text-foreground underline">Ovulation Calculator</a></li>
                 <li><a href="/calculator/age-calculator" className="hover:text-foreground underline">Age Calculator</a></li>
                 <li><a href="/fun-tools/future-age" className="hover:text-foreground underline">Future Age Calculator</a></li>
               </ul>
@@ -620,8 +575,6 @@ const toolConfig = createToolConfig({
                 <li><a href="/calculator/scientific-calculator" className="hover:text-foreground underline">Scientific Calculator</a> — trig, log, exp</li>
                 <li><a href="/calculator/percentage-calculator" className="hover:text-foreground underline">Percentage Calculator</a></li>
                 <li><a href="/calculator/fraction-calculator" className="hover:text-foreground underline">Fraction Calculator</a></li>
-                <li><a href="/calculator/triangle-calculator" className="hover:text-foreground underline">Triangle Calculator</a></li>
-                <li><a href="/calculator/standard-deviation-calculator" className="hover:text-foreground underline">Standard Deviation Calculator</a></li>
                 <li><a href="/calculator/gpa-calculator" className="hover:text-foreground underline">GPA Calculator</a></li>
               </ul>
             </div>
@@ -629,7 +582,6 @@ const toolConfig = createToolConfig({
               <h3 className="font-semibold text-foreground mb-2">Date &amp; Time</h3>
               <ul className="text-sm space-y-1 text-muted-foreground">
                 <li><a href="/calculator/date-difference" className="hover:text-foreground underline">Date Difference Calculator</a></li>
-                <li><a href="/calculator/time-duration" className="hover:text-foreground underline">Time Duration Calculator</a></li>
                 <li><a href="/calculator/age-calculator" className="hover:text-foreground underline">Age Calculator</a></li>
                 <li><a href="/fun-tools/anniversary" className="hover:text-foreground underline">Anniversary Calculator</a></li>
                 <li><a href="/fun-tools/birthday-countdown" className="hover:text-foreground underline">Birthday Countdown</a></li>
@@ -640,7 +592,6 @@ const toolConfig = createToolConfig({
               <ul className="text-sm space-y-1 text-muted-foreground">
                 <li><a href="/calculator/concrete-calculator" className="hover:text-foreground underline">Concrete Calculator</a> — cubic yards, bags, cost</li>
                 <li><a href="/calculator/conversion-calculator" className="hover:text-foreground underline">Unit Conversion Calculator</a></li>
-                <li><a href="/calculator/pace-calculator" className="hover:text-foreground underline">Running Pace Calculator</a></li>
               </ul>
             </div>
             <div className="p-4 rounded-lg bg-card border border-border">
@@ -667,10 +618,10 @@ const toolConfig = createToolConfig({
           <h2 className="text-2xl font-bold text-foreground">Calculator Workflows You Can Chain</h2>
           <p className="text-muted-foreground leading-relaxed">Most planning decisions need 2–3 calculators in sequence. Here are common chains:</p>
           <ul className="space-y-2 text-sm text-muted-foreground list-disc list-inside ml-2">
-            <li><strong>Buying a home:</strong> <a href="/finance-tools/home-affordability-calculator" className="underline">Home Affordability</a> → <a href="/finance-tools/mortgage-calculator" className="underline">Mortgage</a> → <a href="/finance-tools/amortization-calculator" className="underline">Amortization</a> → <a href="/finance-tools/rent-vs-buy-calculator" className="underline">Rent vs Buy</a></li>
+            <li><strong>Buying a home:</strong> <a href="/finance-tools/home-affordability-calculator" className="underline">Home Affordability</a> → <a href="/finance-tools/loan-calculator" className="underline">Loan</a> → <a href="/finance-tools/payment-calculator" className="underline">Payment</a></li>
             <li><strong>Fitness plan:</strong> <a href="/calculator/bmi-calculator" className="underline">BMI</a> → <a href="/calculator/bmr-calculator" className="underline">BMR</a> → <a href="/calculator/calorie-calculator" className="underline">Calorie</a> → <a href="/calculator/tdee-macro-calculator" className="underline">TDEE Macro</a> → <a href="/calculator/body-fat-calculator" className="underline">Body Fat</a></li>
-            <li><strong>Pregnancy timeline:</strong> <a href="/calculator/ovulation-calculator" className="underline">Ovulation</a> → <a href="/calculator/pregnancy-conception-calculator" className="underline">Conception</a> → <a href="/calculator/pregnancy-calculator" className="underline">Due Date</a></li>
-            <li><strong>Investment plan:</strong> <a href="/finance-tools/compound-interest" className="underline">Compound Interest</a> → <a href="/finance-tools/investment-calculator" className="underline">Investment Growth</a> → <a href="/finance-tools/retirement-calculator" className="underline">Retirement</a></li>
+            <li><strong>Pregnancy timeline:</strong> <a href="/calculator/pregnancy-conception-calculator" className="underline">Conception</a> → <a href="/calculator/pregnancy-calculator" className="underline">Due Date</a></li>
+            <li><strong>Investment plan:</strong> <a href="/finance-tools/investment-calculator" className="underline">Investment Growth</a> → <a href="/finance-tools/retirement-planner" className="underline">Retirement Planner</a></li>
             <li><strong>Concrete project:</strong> <a href="/calculator/concrete-calculator" className="underline">Concrete Calc</a> → <a href="/converters/length" className="underline">Length Converter</a> → <a href="/finance-tools/discount-calculator" className="underline">Discount Calculator</a> (material savings)</li>
           </ul>
         </article>

@@ -231,12 +231,9 @@ const toolConfig = createToolConfig({
     ],
 
     relatedTools: [
-      { name: "TOTP QR Code Generator", href: "/crypto-tools/totp-qr-code-generator" },
       { name: "Token Generator", href: "/crypto-tools/token-generator" },
       { name: "HMAC Generator", href: "/crypto-tools/hmac-generator" },
       { name: "Bcrypt Generator", href: "/crypto-tools/bcrypt" },
-      { name: "Hash Text Generator", href: "/crypto-tools/hash-text" },
-      { name: "Password Generator", href: "/crypto-tools/password-generator" },
       { name: "AI QR Code Generator", href: "/ai-tools/qr-generator" },
       { name: "BIP39 Passphrase Generator", href: "/crypto-tools/bip39-generator" },
       { name: "All Crypto Tools", href: "/crypto-tools" },

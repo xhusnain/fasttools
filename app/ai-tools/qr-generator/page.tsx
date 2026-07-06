@@ -355,10 +355,7 @@ END:VCARD`}</code>
     ],
 
     relatedTools: [
-      { name: "TOTP QR Code Generator", href: "/crypto-tools/totp-qr-code-generator" },
       { name: "OTP Code Generator", href: "/crypto-tools/otp-generator" },
-      { name: "URL Encoder Decoder", href: "/web-tools/url-encoder" },
-      { name: "URL Parser", href: "/web-tools/url-parser" },
       { name: "Link in Bio Generator", href: "/social-media-tools/link-in-bio" },
       { name: "AI Caption Generator", href: "/ai-tools/caption-generator" },
       { name: "Background Remover", href: "/image-tools/background-remover" },

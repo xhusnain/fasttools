@@ -2,7 +2,7 @@ import type { Metadata } from "next"
 import { ToolPageLayout } from "@/components/common/tool-page-layout"
 import { createToolConfig } from "@/lib/create-tool-config"
 import { GToolCard } from "@/ui/gtool-card"
-import { BookOpen, Code2, FileSearch, Hash, Heart, ImageIcon, Music, QrCode, Wand2, FileText, Volume2 } from "lucide-react"
+import { BookOpen, Code2, FileSearch, Heart, ImageIcon, Music, QrCode, Wand2 } from "lucide-react"
 
 const aiTools = [
   {
@@ -34,13 +34,6 @@ const aiTools = [
     icon: Heart,
   },
   {
-    title: "Token to Word Converter",
-    description:
-      "Estimate token and word counts for LLM planning, prompt sizing, and cost checks.",
-    href: "/ai-tools/token-to-word-converter",
-    icon: Hash,
-  },
-  {
     title: "AI Text Detector",
     description:
       "Detect AI-written content from ChatGPT, Claude, Gemini using 5 statistical writing signals.",
@@ -68,27 +61,13 @@ const aiTools = [
     href: "/ai-tools/ai-paraphraser",
     icon: Wand2,
   },
-  {
-    title: "AI Text Summarizer",
-    description:
-      "Summarize articles, essays, and reports into paragraphs, bullet points, key takeaways, or TL;DR.",
-    href: "/ai-tools/text-summarizer",
-    icon: FileText,
-  },
-  {
-    title: "Text to Speech",
-    description:
-      "Convert text to natural speech with 50+ languages, adjustable speed, pitch & volume. Word highlighting.",
-    href: "/ai-tools/text-to-speech",
-    icon: Volume2,
-  },
 ]
 
 const toolConfig = createToolConfig({
   toolName: "AI Tools",
   description:
-    "AI-assisted utilities for QR generation, lyric drafting, caption writing, pet naming, and token-to-word estimation.",
-  metaTitle: "AI Tools: Text Summarizer, Paraphraser, QR, Captions & More",
+    "AI-assisted utilities for QR generation, lyric drafting, caption writing, pet naming, and AI content detection.",
+  metaTitle: "AI Tools: Paraphraser, QR Codes, Captions, Lyrics & More",
   metaDescription:
     "Free AI tools: text summarizer, paraphraser, QR code generator, captions, lyrics, pet names, and more. Fast workflows for students, creators, and teams.",
   path: "/ai-tools",
@@ -96,7 +75,7 @@ const toolConfig = createToolConfig({
     itemList: {
       name: "AI Tools Collection",
       description:
-        "A collection of AI-driven tools for content creation, naming, QR generation, and token planning.",
+        "A collection of AI-driven tools for content creation, naming, QR generation, and AI content detection.",
       items: aiTools.map((tool) => ({
         name: tool.title,
         description: tool.description,
@@ -117,7 +96,7 @@ const toolConfig = createToolConfig({
 
   content: {
     overview:
-      "This AI tools category groups task-focused utilities that turn a single input into a finished result you can copy, download, or refine. Generate QR codes for campaigns, draft song lyrics and social captions in seconds, brainstorm pet names, detect AI-written text or code, summarize long articles, check readability, paraphrase paragraphs, convert text to natural speech, and estimate token usage before you send prompts to an LLM API. Every tool runs in your browser with no signup, so you get fast, private output for content, publishing, and developer workflows.",
+      "This AI tools category groups task-focused utilities that turn a single input into a finished result you can copy, download, or refine. Generate QR codes for campaigns, draft song lyrics and social captions in seconds, brainstorm pet names, detect AI-written text or code, check readability, paraphrase paragraphs, and estimate API costs before you send prompts to an LLM. Every tool runs in your browser with no signup, so you get fast, private output for content, publishing, and developer workflows.",
 
     features: [
       "Tool-specific AI workflows instead of generic chat prompts",
@@ -132,7 +111,7 @@ const toolConfig = createToolConfig({
       "Musicians and creators drafting lyric ideas from a theme or mood",
       "Businesses publishing WiFi, menu, and contact QR codes",
       "Pet owners and shelters creating naming shortlists",
-      "Prompt engineers estimating context size and API budget",
+      "Prompt engineers estimating LLM API budgets",
     ],
 
     aboutTool: (
@@ -165,17 +144,17 @@ const toolConfig = createToolConfig({
       {
         question: "Are these AI tools focused on one workflow?",
         answer:
-          "No. The category covers distinct tasks including QR creation, creative text generation, naming support, and token planning.",
+          "No. The category covers distinct tasks including QR creation, creative text generation, naming support, and AI content detection.",
       },
       {
         question: "How should I pick the right tool?",
         answer:
-          "Start with your immediate deliverable. If you need a shareable code, use QR Generator. For social text, use Caption Generator. For songwriting drafts, use Lyrics Generator. For naming ideas, use Pet Name Generator. For LLM planning, use Token to Word Converter.",
+          "Start with your immediate deliverable. If you need a shareable code, use QR Generator. For social text, use Caption Generator. For songwriting drafts, use Lyrics Generator. For naming ideas, use Pet Name Generator. For LLM budgeting, use the AI API Cost Calculator.",
       },
       {
         question: "Can I use this category as part of a content pipeline?",
         answer:
-          "Yes. Many teams use these tools in sequence: draft copy, convert token length estimates, then publish assets with QR links and supporting metadata.",
+          "Yes. Many teams use these tools in sequence: draft copy, check readability and AI-detection signals, then publish assets with QR links and supporting metadata.",
       },
       {
         question: "Are these tools free?",

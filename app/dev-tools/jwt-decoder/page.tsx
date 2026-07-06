@@ -303,13 +303,9 @@ const toolConfig = createToolConfig({
     ],
 
     relatedTools: [
-      { name: "Base64 Encoder Decoder", href: "/dev-tools/base64-encoder" },
       { name: "HMAC Generator", href: "/crypto-tools/hmac-generator" },
       { name: "RSA Key Generator", href: "/crypto-tools/rsa-generator" },
-      { name: "Hash Text Generator", href: "/crypto-tools/hash-text" },
-      { name: "Auth Generator", href: "/web-tools/auth-generator" },
-      { name: "HTTP Status Codes", href: "/dev-tools/http-status-codes" },
-      { name: "User-Agent Parser", href: "/dev-tools/user-agent-parser" },
+      { name: "Token Generator", href: "/crypto-tools/token-generator" },
       { name: "All Developer Tools", href: "/dev-tools" },
     ],
   },

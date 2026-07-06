@@ -521,11 +521,8 @@ export default function FractionCalculatorPage() {
     relatedTools: [
       { name: "Percentage Calculator", href: "/calculator/percentage-calculator" },
       { name: "Scientific Calculator", href: "/calculator/scientific-calculator" },
-      { name: "Triangle Calculator", href: "/calculator/triangle-calculator" },
-      { name: "Standard Deviation Calculator", href: "/calculator/standard-deviation-calculator" },
       { name: "GPA Calculator", href: "/calculator/gpa-calculator" },
       { name: "Conversion Calculator", href: "/calculator/conversion-calculator" },
-      { name: "Integer Base Converter", href: "/converters/integer-base" },
       { name: "All Calculators", href: "/calculator" }
     ]
   }

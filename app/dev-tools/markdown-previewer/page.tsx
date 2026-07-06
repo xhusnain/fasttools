@@ -177,12 +177,7 @@ const toolConfig = createToolConfig({
     relatedTools: [
       { name: "HTML to Markdown", href: "/dev-tools/html-to-markdown" },
       { name: "HTML Beautifier", href: "/dev-tools/html-beautifier" },
-      { name: "HTML WYSIWYG Editor", href: "/dev-tools/html-wysiwyg-editor" },
       { name: "Regex Tester", href: "/dev-tools/regex-tester" },
-      { name: "Escape HTML Entities", href: "/web-tools/html-escape" },
-      { name: "Slugify String", href: "/dev-tools/slugify-string" },
-      { name: "Word Counter", href: "/seo-tools/word-counter" },
-      { name: "Diff Checker", href: "/dev-tools/diff-checker" },
       { name: "All Developer Tools", href: "/dev-tools" },
     ],
   },

@@ -3,134 +3,15 @@ import { GToolCard } from "@/ui/gtool-card"
 import { ToolPageLayout } from "@/components/common/tool-page-layout"
 import { createToolConfig } from "@/lib/create-tool-config"
 import {
-  Binary,
-  BookOpen,
   DollarSign,
-  FileCode,
-  FileImage,
-  FileText,
   Globe,
   HardDrive,
-  Radio,
   Ruler,
   Thermometer,
   Type,
-  AudioLines,
 } from "lucide-react"
 
 const converters = [
-  {
-    title: "List Converter",
-    description:
-      "Convert between comma-separated, line-separated, and cleaned list formats.",
-    icon: Type,
-    href: "/converters/list-converter",
-  },
-  {
-    title: "JSON to XML Converter",
-    description:
-      "Convert structured JSON data to XML and switch back when needed.",
-    icon: FileCode,
-    href: "/converters/json-xml",
-  },
-  {
-    title: "XML to JSON Converter",
-    description:
-      "Transform XML payloads to JSON for API and app workflows.",
-    icon: FileCode,
-    href: "/converters/xml-json",
-  },
-  {
-    title: "TOML to YAML Converter",
-    description:
-      "Convert TOML config files to YAML and back in one workspace.",
-    icon: FileCode,
-    href: "/converters/toml-yaml",
-  },
-  {
-    title: "TOML to JSON Converter",
-    description:
-      "Parse TOML config into formatted JSON output instantly.",
-    icon: FileCode,
-    href: "/converters/toml-json",
-  },
-  {
-    title: "JSON to TOML Converter",
-    description:
-      "Convert JSON objects to TOML for config and tooling use cases.",
-    icon: FileCode,
-    href: "/converters/json-toml",
-  },
-  {
-    title: "YAML to TOML",
-    description:
-      "Convert YAML configuration into TOML with clean key formatting.",
-    icon: FileCode,
-    href: "/converters/yaml-toml",
-  },
-  {
-    title: "JSON to YAML Converter",
-    description:
-      "Convert JSON to readable YAML for config and documentation workflows.",
-    icon: FileCode,
-    href: "/converters/json-yaml",
-  },
-  {
-    title: "YAML to JSON Converter",
-    description:
-      "Convert YAML documents to JSON for APIs and automation pipelines.",
-    icon: FileCode,
-    href: "/converters/yaml-json",
-  },
-  {
-    title: "Text to Unicode",
-    description:
-      "Encode text into Unicode code points and decode back to plain text.",
-    icon: Type,
-    href: "/converters/unicode",
-  },
-  {
-    title: "Text to ASCII Binary",
-    description:
-      "Encode text as binary and decode binary values into readable text.",
-    icon: Binary,
-    href: "/converters/ascii-binary",
-  },
-  {
-    title: "Text to NATO Alphabet",
-    description:
-      "Convert text to NATO phonetic words and decode in reverse.",
-    icon: Radio,
-    href: "/converters/nato-phonetic",
-  },
-  {
-    title: "Morse Code Translator",
-    description:
-      "Translate text to Morse code and decode Morse to English with audio playback.",
-    icon: AudioLines,
-    href: "/converters/morse-code",
-  },
-  {
-    title: "Base64 File Converter",
-    description:
-      "Encode files to Base64 and decode Base64 back to downloadable files.",
-    icon: FileImage,
-    href: "/converters/base64-file",
-  },
-  {
-    title: "Roman Numeral Converter",
-    description:
-      "Convert numbers to Roman numerals and Roman numerals back to numbers.",
-    icon: BookOpen,
-    href: "/converters/roman-numeral",
-  },
-  {
-    title: "Integer Base Converter",
-    description:
-      "Convert numbers across binary, decimal, hex, and custom bases.",
-    icon: Binary,
-    href: "/converters/integer-base",
-  },
   {
     title: "Currency Converter",
     description:
@@ -173,20 +54,13 @@ const converters = [
     icon: Globe,
     href: "/converters/timezone",
   },
-  {
-    title: "Currency Converter",
-    description:
-      "Convert between world currencies with real-time exchange rates.",
-    icon: FileText,
-    href: "/converters/currency",
-  },
 ]
 
 const toolConfig = createToolConfig({
   toolName: "Online Converters",
   description:
-    "Free online converters for currency, units, text formatting, number bases, and developer data formats.",
-  metaTitle: "Online Converters: Currency, Units, Text, and Data Formats",
+    "Free online converters for currency, units, file sizes, time zones, and text case.",
+  metaTitle: "Online Converters: Currency, Length, Temperature, Timezone & More",
   metaDescription:
     "Use free online converters for currency, file size, temperature, text case, JSON/XML/YAML/TOML, and more.",
   path: "/converters",
@@ -194,7 +68,7 @@ const toolConfig = createToolConfig({
   header: {
     title: "Online Converters",
     description:
-      "One place for fast, accurate converters across units, currencies, text, and structured data formats.",
+      "One place for fast, accurate converters across units, currencies, time zones, and text.",
     titleSize: "medium",
     descriptionSize: "small",
   },
@@ -203,7 +77,7 @@ const toolConfig = createToolConfig({
 
   content: {
     overview:
-      "This category includes practical converter tools for everyday work. Use it to convert measurements, currencies, text formats, and data formats without switching between multiple websites.",
+      "This category includes practical converter tools for everyday work. Use it to convert measurements, currencies, time zones, file sizes, and text case without switching between multiple websites.",
 
     howToSteps: [
       "Choose the converter that matches your task.",
@@ -214,19 +88,19 @@ const toolConfig = createToolConfig({
 
     features: [
       "Currency, time zone, and unit conversion tools",
-      "Structured data converters (JSON, XML, YAML, TOML)",
-      "Text, encoding, and number-base conversion utilities",
+      "File size and length conversion utilities",
+      "Text case conversion for content and code",
       "Browser-based processing for instant results",
       "Mobile-friendly UI across converter pages",
       "No signup required",
     ],
 
     useCases: [
-      "Preparing API payloads and configuration files",
       "Checking travel budgets and currency equivalents",
       "Converting measurement values for work or study",
       "Standardizing text for content and development workflows",
-      "Validating data during debugging and QA",
+      "Scheduling meetings across time zones",
+      "Planning storage and file transfer sizes",
     ],
 
     aboutTool: (
@@ -236,9 +110,10 @@ const toolConfig = createToolConfig({
             Why Use Converter Workflows
           </h2>
           <p className="text-sm text-muted-foreground leading-relaxed mb-4">
-            Conversion work often happens in batches. You may convert JSON to
-            YAML, then YAML to TOML, or convert units while preparing pricing,
-            documentation, and calculations.
+            Conversion work often happens in batches. You may convert
+            currencies while checking prices, switch text case while editing
+            content, or convert units while preparing pricing, documentation,
+            and calculations.
           </p>
           <p className="text-sm text-muted-foreground leading-relaxed">
             Keeping these tools in one category reduces friction and helps teams
@@ -250,14 +125,14 @@ const toolConfig = createToolConfig({
 
     faqs: [
       {
-        question: "Which converter should I start with for config files?",
+        question: "Which converter should I start with?",
         answer:
-          "Start with the source format you already have, such as JSON, YAML, XML, or TOML, then use the matching two-way converter.",
+          "Pick the tool that matches your input: currency for money, length or temperature for measurements, file size for storage values, text case for content, and time zone for scheduling.",
       },
       {
         question: "Do converter tools support both directions?",
         answer:
-          "Most data-format tools in this category support two-way conversion so you can switch formats without opening another page.",
+          "Yes. The converters in this category work in both directions, so you can switch between units, currencies, or formats without opening another page.",
       },
       {
         question: "Are these converters free to use?",

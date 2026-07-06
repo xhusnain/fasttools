@@ -295,11 +295,8 @@ const toolConfig = createToolConfig({
     relatedTools: [
       { name: "UUID Generator", href: "/crypto-tools/uuid-generator" },
       { name: "Token Generator", href: "/crypto-tools/token-generator" },
-      { name: "Password Generator", href: "/crypto-tools/password-generator" },
-      { name: "Hash Text Generator", href: "/crypto-tools/hash-text" },
       { name: "RSA Key Generator", href: "/crypto-tools/rsa-generator" },
       { name: "Unix Timestamp Converter", href: "/dev-tools/timestamp-converter" },
-      { name: "Slugify String", href: "/dev-tools/slugify-string" },
       { name: "All Crypto Tools", href: "/crypto-tools" },
     ],
   },

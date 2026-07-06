@@ -574,7 +574,6 @@ export default function PercentageCalculatorPage() {
       { name: "Tip Calculator", href: "/finance-tools/tip-calculator" },
       { name: "Sales Tax Calculator", href: "/finance-tools/sales-tax-calculator" },
       { name: "GPA Calculator", href: "/calculator/gpa-calculator" },
-      { name: "Standard Deviation Calculator", href: "/calculator/standard-deviation-calculator" },
       { name: "All Calculators", href: "/calculator" }
     ]
   }

@@ -230,12 +230,8 @@ const toolConfig = createToolConfig({
 
     relatedTools: [
       { name: "JSON to CSV Converter", href: "/dev-tools/json-to-csv" },
-      { name: "JSON Diff", href: "/dev-tools/json-diff" },
       { name: "Regex Tester", href: "/dev-tools/regex-tester" },
       { name: "HTML Beautifier", href: "/dev-tools/html-beautifier" },
-      { name: "Diff Checker", href: "/dev-tools/diff-checker" },
-      { name: "JSON to YAML Converter", href: "/converters/json-yaml" },
-      { name: "Slugify String", href: "/dev-tools/slugify-string" },
       { name: "All Developer Tools", href: "/dev-tools" },
     ],
   },

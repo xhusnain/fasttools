@@ -174,17 +174,12 @@ const toolConfig = createToolConfig({
       {
         question: "Can I split or merge password-protected PDF files?",
         answer:
-          "Password-protected PDFs must be unlocked before splitting or merging. Use our free PDF Unlocker tool to remove password protection first, then upload the unlocked file for split or merge operations.",
+          "Password-protected PDFs must be unlocked before splitting or merging. Remove the password first (for example, by re-saving the file from your PDF viewer with the password entered), then upload the unlocked file for split or merge operations.",
       },
     ],
 
     relatedTools: [
-      { name: "PDF Compressor", href: "/pdf-tools/pdf-compressor" },
-      { name: "PDF Unlocker", href: "/pdf-tools/pdf-unlocker" },
-      { name: "PDF to Word Converter", href: "/pdf-tools/pdf-word-converter" },
-      { name: "PDF to Image", href: "/pdf-tools/pdf-to-image" },
-      { name: "Image to PDF Converter", href: "/pdf-tools/image-to-pdf" },
-      { name: "Sign PDF", href: "/pdf-tools/pdf-sign" },
+      { name: "PDF Signature Checker", href: "/pdf-tools/pdf-signature-checker" },
       { name: "Image to Text (OCR)", href: "/image-tools/image-to-text" },
       { name: "File Size Converter", href: "/converters/file-size" },
       { name: "All PDF Tools", href: "/pdf-tools" },

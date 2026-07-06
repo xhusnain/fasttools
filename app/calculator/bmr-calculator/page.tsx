@@ -223,7 +223,6 @@ export default function BMRCalculatorPage() {
       { name: "BMI Calculator", href: "/calculator/bmi-calculator" },
       { name: "Body Fat Calculator", href: "/calculator/body-fat-calculator" },
       { name: "Biological Age Calculator", href: "/calculator/biological-age-calculator" },
-      { name: "Pace Calculator", href: "/calculator/pace-calculator" },
       { name: "Cortisol Peak Calculator", href: "/calculator/cortisol-peak-calculator" },
       { name: "All Calculators", href: "/calculator" }
     ]

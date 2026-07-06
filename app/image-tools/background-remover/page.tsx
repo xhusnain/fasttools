@@ -250,13 +250,10 @@ const toolConfig = createToolConfig({
     ],
 
     relatedTools: [
-      { name: "Image Resizer", href: "/image-tools/image-resizer" },
       { name: "Image Compressor", href: "/image-tools/image-compressor" },
-      { name: "Image Cropper", href: "/image-tools/image-cropper" },
       { name: "Image to Text (OCR)", href: "/image-tools/image-to-text" },
       { name: "AI Image Detector", href: "/image-tools/ai-image-detector" },
-      { name: "Image to PDF Converter", href: "/pdf-tools/image-to-pdf" },
-      { name: "Color Palette Generator", href: "/dev-tools/color-palette" },
+      { name: "PNG to JPG Converter", href: "/image-tools/png-to-jpg" },
       { name: "All Image Tools", href: "/image-tools" },
     ],
   },

@@ -3,7 +3,7 @@ import { GToolCard } from "@/ui/gtool-card"
 
 import { ToolPageLayout } from "@/components/common/tool-page-layout"
 import { createToolConfig } from "@/lib/create-tool-config"
-import { Braces, Code, FileText, Hash, Lightbulb, Search, LetterText } from "lucide-react"
+import { Code, FileText, Lightbulb, Search } from "lucide-react"
 
 const tools = [
   {
@@ -12,13 +12,6 @@ const tools = [
       "Generate Open Graph and Twitter card tags with live-friendly formatting.",
     icon: Code,
     href: "/seo-tools/meta-tags",
-  },
-  {
-    title: "Text Similarity Checker",
-    description:
-      "Compare two texts and get similarity score with fingerprint-based analysis.",
-    icon: Hash,
-    href: "/seo-tools/text-similarity-checker",
   },
   {
     title: "Lorem Ipsum Generator",
@@ -41,27 +34,13 @@ const tools = [
     icon: Search,
     href: "/seo-tools/keyword-density",
   },
-  {
-    title: "Schema Markup Generator",
-    description:
-      "Generate JSON-LD structured data for 11 schema types. Article, FAQ, Product, LocalBusiness, Event, Recipe & more.",
-    icon: Braces,
-    href: "/seo-tools/schema-markup-generator",
-  },
-  {
-    title: "Word Counter",
-    description:
-      "Count words, characters, sentences. Reading time, keyword density, readability score & social media limits.",
-    icon: LetterText,
-    href: "/seo-tools/word-counter",
-  },
 ]
 
 const toolConfig = createToolConfig({
   toolName: "SEO Tools",
   description:
-    "A practical SEO toolkit for metadata generation, keyword analysis, headline ideation, duplicate-content review, and placeholder content creation.",
-  metaTitle: "SEO Tools: Word Counter, Meta Tags, Keyword Density & More",
+    "A practical SEO toolkit for metadata generation, keyword analysis, headline ideation, and placeholder content creation.",
+  metaTitle: "SEO Tools: Meta Tags, Keyword Density, Blog Titles & More",
   metaDescription:
     "Free SEO tools: word counter, keyword density, meta tag generator, schema markup, text similarity, blog titles, and lorem ipsum. No signup.",
   path: "/seo-tools",
@@ -78,13 +57,12 @@ const toolConfig = createToolConfig({
 
   content: {
     overview:
-      "This category is built for content teams, SEOs, developers, and publishers who need quick on-page diagnostics and optimization helpers. Use it to generate social metadata, review keyword distribution, compare similar content, brainstorm stronger titles, and create neutral placeholder copy for drafts.",
+      "This category is built for content teams, SEOs, developers, and publishers who need quick on-page diagnostics and optimization helpers. Use it to generate social metadata, review keyword distribution, brainstorm stronger titles, and create neutral placeholder copy for drafts.",
 
     features: [
       "Metadata and social-preview preparation",
       "On-page keyword distribution checks",
       "Headline ideation for editorial planning",
-      "Duplicate and near-duplicate text comparison",
       "Placeholder text generation for design workflows",
       "Client-side processing for normal text inputs",
     ],
@@ -92,7 +70,6 @@ const toolConfig = createToolConfig({
     useCases: [
       "Pre-publish SEO QA for blog posts and landing pages",
       "Team workflows for title and metadata drafting",
-      "Content audits for duplication risk",
       "Template and prototype preparation for design systems",
       "Cross-team handoff between SEO, content, and development",
     ],
@@ -106,8 +83,8 @@ const toolConfig = createToolConfig({
           <p className="text-sm text-muted-foreground leading-relaxed mb-4">
             SEO performance depends on both content quality and technical
             implementation. This toolkit focuses on common friction points:
-            metadata completeness, headline quality, keyword balance, duplicate
-            text risk, and publishing readiness.
+            metadata completeness, headline quality, keyword balance, and
+            publishing readiness.
           </p>
           <p className="text-sm text-muted-foreground leading-relaxed">
             Each tool is task-focused and designed for fast iteration. Instead
@@ -132,7 +109,7 @@ const toolConfig = createToolConfig({
       {
         question: "What should I run before publishing a page?",
         answer:
-          "A practical flow is: generate metadata, review keyword density, validate title options, and compare against related content for duplication.",
+          "A practical flow is: generate metadata, review keyword density, and validate title options before you ship the page.",
       },
       {
         question: "Are these tools useful for non-SEO teams too?",

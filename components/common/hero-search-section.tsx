@@ -35,8 +35,8 @@ export function HeroSearchSection() {
                     { name: 'Anniversary Calculator', path: '/fun-tools/anniversary' },
                     { name: 'Hashtag Counter', path: '/social-media-tools/hashtag-counter' },
                     { name: 'AI QR Generator', path: '/ai-tools/qr-generator' },
-                    { name: 'Image to PDF', path: '/pdf-tools/image-to-pdf' },
-                    { name: 'PDF Compressor', path: '/pdf-tools/pdf-compressor' },
+                    { name: 'YouTube Thumbnail Downloader', path: '/social-media-tools/youtube-thumbnail' },
+                    { name: 'HEIC to JPG', path: '/image-tools/heic-to-jpg' },
                     { name: 'Currency Converter', path: '/converters/currency' },
                     { name: 'Age Calculator', path: '/calculator/age-calculator' },
                 ].map((tool) => (

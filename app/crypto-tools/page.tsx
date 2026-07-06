@@ -28,13 +28,6 @@ const cryptoTools = [
     icon: Hash,
   },
   {
-    title: "Password Generator",
-    description:
-      "Strong passwords & passphrases with entropy meter, HIBP breach check, and bulk generation. Cryptographically secure.",
-    href: "/crypto-tools/password-generator",
-    icon: Key,
-  },
-  {
     title: "Token Generator",
     description:
       "Generate secure random tokens, API keys, PINs, and formatted secrets.",
@@ -49,32 +42,11 @@ const cryptoTools = [
     icon: Shield,
   },
   {
-    title: "TOTP QR Code Generator",
-    description:
-      "Create otpauth setup QR codes and live OTP previews for authenticator apps.",
-    href: "/crypto-tools/totp-qr-code-generator",
-    icon: Shield,
-  },
-  {
     title: "Bcrypt Generator",
     description:
       "Hash and verify passwords with bcrypt using configurable cost factors.",
     href: "/crypto-tools/bcrypt",
     icon: ShieldCheck,
-  },
-  {
-    title: "Hash Text",
-    description:
-      "Generate message digests with MD5, SHA families, and related algorithms.",
-    href: "/crypto-tools/hash-text",
-    icon: Fingerprint,
-  },
-  {
-    title: "Text Encrypt/Decrypt",
-    description:
-      "Encrypt and decrypt plain text using common symmetric algorithms.",
-    href: "/crypto-tools/encrypt-decrypt",
-    icon: Lock,
   },
   {
     title: "BIP39 Generator",

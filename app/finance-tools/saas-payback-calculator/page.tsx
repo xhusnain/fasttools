@@ -339,13 +339,8 @@ export default function SaaSPaybackCalculatorPage() {
 
     relatedTools: [
       { name: "SaaS Churn Calculator", href: "/finance-tools/saas-churn-calculator" },
-      { name: "Startup Runway Calculator", href: "/finance-tools/startup-runway-calculator" },
       { name: "ROAS Calculator", href: "/ad-tools/roas-calculator" },
-      { name: "Freelance Rate Calculator", href: "/finance-tools/freelance-rate-calculator" },
       { name: "Investment Calculator", href: "/finance-tools/investment-calculator" },
-      { name: "Compound Interest Calculator", href: "/finance-tools/compound-interest" },
-      { name: "LLM Training Cost Calculator", href: "/dev-tools/llm-training-cost" },
-      { name: "Cloudflare Workers Cost Calculator", href: "/dev-tools/cloudflare-workers-cost" },
       { name: "All Finance Tools", href: "/finance-tools" }
     ]
   }

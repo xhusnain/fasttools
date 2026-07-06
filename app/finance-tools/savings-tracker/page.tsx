@@ -379,14 +379,9 @@ export default function SavingsTrackerPage() {
     ),
 
     relatedTools: [
-      { name: "Compound Interest Calculator", href: "/finance-tools/compound-interest" },
       { name: "Investment Calculator", href: "/finance-tools/investment-calculator" },
-      { name: "Retirement Calculator", href: "/finance-tools/retirement-calculator" },
       { name: "Retirement Planner", href: "/finance-tools/retirement-planner" },
-      { name: "Debt Payoff Calculator", href: "/finance-tools/debt-payoff-calculator" },
-      { name: "Net Worth Calculator", href: "/finance-tools/net-worth-calculator" },
       { name: "Home Affordability Calculator", href: "/finance-tools/home-affordability-calculator" },
-      { name: "Inflation Calculator", href: "/finance-tools/inflation-calculator" },
       { name: "All Finance Tools", href: "/finance-tools" }
     ]
   }
