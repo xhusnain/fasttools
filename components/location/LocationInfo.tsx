@@ -191,7 +191,7 @@ export function LocationInfo() {
                                         <p className="text-sm text-muted-foreground mb-1">Your IP Address</p>
                                         <div className="flex items-center gap-2">
                                             <p className="text-2xl font-bold font-mono tracking-tight">{data.ip}</p>
-                                            <button onClick={handleCopyIp} className="p-1 hover:bg-muted rounded text-muted-foreground hover:text-foreground transition-colors">
+                                            <button onClick={handleCopyIp} aria-label="Copy IP address" className="p-1 hover:bg-muted rounded text-muted-foreground hover:text-foreground transition-colors">
                                                 {copied ? <Check className="h-4 w-4 text-green-500" /> : <Copy className="h-4 w-4" />}
                                             </button>
                                         </div>

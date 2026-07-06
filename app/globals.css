@@ -123,7 +123,7 @@
 
   /* UI Elements */
   --muted: #EEF2F7;
-  --muted-foreground: #64748B;
+  --muted-foreground: #475569; /* slate-600: >=4.5:1 contrast on white, #F8FAFC, and #EEF2F7 */
   --destructive: #DC2626;
   --destructive-foreground: #FFFFFF;
   --border: #D1DEEE;

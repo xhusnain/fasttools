@@ -488,6 +488,7 @@ export function PomodoroTimer() {
                   MODE_BTN_COLORS[mode]
                 )}
                 title={isRunning ? "Pause (Space)" : "Start (Space)"}
+                aria-label={isRunning ? "Pause timer" : "Start timer"}
               >
                 {isRunning ? <Pause className="h-7 w-7" /> : <Play className="h-7 w-7 ml-1" />}
               </button>

@@ -105,6 +105,7 @@ export function Header() {
             </div>
             <button
               onClick={() => setMobileMenuOpen(false)}
+              aria-label="Close menu"
               className="p-2 rounded-lg hover:bg-primary/10 text-muted-foreground hover:text-primary"
             >
               <X className="h-5 w-5" />
