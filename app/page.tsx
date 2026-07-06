@@ -3,7 +3,6 @@ import dynamic from "next/dynamic"
 
 import { PremiumHeroBackground } from "@/components/common/premium-hero-background"
 import { HeroSearchSection } from "@/components/common/hero-search-section"
-import { HomeLatestInsight } from "@/components/common/home-latest-insight"
 
 import { CategoriesSkeleton } from "@/components/skeletons/categories-skeleton"
 import { categories } from "@/app/data/categories-data"
@@ -184,7 +183,6 @@ export default function Home() {
         <HomeCategories categories={categories} />
       </div>
 
-      <HomeLatestInsight />
 
       {/* Ad between categories and content */}
       <div className="container mx-auto max-w-4xl px-4 py-8">

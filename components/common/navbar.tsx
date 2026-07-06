@@ -63,14 +63,6 @@ export function Navbar() {
 
                 <NavigationMenuItem>
                     <NavigationMenuLink asChild>
-                        <Link href="/blog" className={navigationMenuTriggerStyle()}>
-                            Blog
-                        </Link>
-                    </NavigationMenuLink>
-                </NavigationMenuItem>
-
-                <NavigationMenuItem>
-                    <NavigationMenuLink asChild>
                         <Link href="/products" className={navigationMenuTriggerStyle()}>
                             All Categories
                         </Link>

@@ -318,7 +318,6 @@ const toolConfig = createToolConfig({
     ],
 
     relatedTools: [
-      { name: "Guide: Why Google Doesn't Use Third-Party SEO Tools", href: "/blog/why-google-doesnt-use-third-party-seo-tools" },
       { name: "Schema Markup Generator", href: "/seo-tools/schema-markup-generator" },
       { name: "Blog Title Generator", href: "/seo-tools/blog-titles" },
       { name: "Keyword Density Checker", href: "/seo-tools/keyword-density" },

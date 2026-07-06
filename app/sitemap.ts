@@ -1,6 +1,5 @@
 import type { MetadataRoute } from "next"
 import { noindexPaths } from "@/lib/noindex"
-import { getBlogSitemapPages } from "@/lib/blog"
 
 export const baseUrl = "https://fasttools.store"
 
@@ -19,7 +18,6 @@ export const sitemapPages = [
   { url: u("/about"), lastModified: new Date("2026-03-23"), changeFrequency: "monthly" as const, priority: 0.5 },
   { url: u("/contact"), lastModified: new Date("2026-03-23"), changeFrequency: "monthly" as const, priority: 0.5 },
   { url: u("/faq"), lastModified: new Date("2026-03-23"), changeFrequency: "monthly" as const, priority: 0.6 },
-  { url: u("/blog"), lastModified: new Date("2026-06-02"), changeFrequency: "weekly" as const, priority: 0.7 },
   { url: u("/all-tools"), lastModified: new Date(), changeFrequency: "weekly" as const, priority: 0.8 },
   { url: u("/privacy-policy"), lastModified: new Date("2025-11-25"), changeFrequency: "yearly" as const, priority: 0.3 },
   { url: u("/terms"), lastModified: new Date("2025-11-25"), changeFrequency: "yearly" as const, priority: 0.3 },
@@ -286,8 +284,6 @@ export const sitemapPages = [
   // SEO Tools
   { url: u("/seo-tools/text-similarity-checker"), lastModified: new Date("2026-06-04"), changeFrequency: "monthly" as const, priority: 0.7 },
 
-  // ─── Blog Content ────────────────────────────────────────────────────
-  ...getBlogSitemapPages(),
 ]
 
 // Indexable pages only — noindex pages are removed so they never leak into the
@@ -300,7 +296,6 @@ const mainPagePaths = new Set([
   "/about",
   "/contact",
   "/faq",
-  "/blog",
   "/all-tools",
   "/privacy-policy",
   "/terms",

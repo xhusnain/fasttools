@@ -19,7 +19,6 @@ import { ClickFortifyAd } from "@/components/custom-ads/cf-ads/ClickFortifyAd"
 import { WebMCPToolRegistration } from "@/components/common/webmcp-tool-registration"
 import { buildWebMCPDescription, getInteractionMode } from "@/lib/webmcp-utils"
 import { createBreadcrumbSchema } from "@/lib/metadata-base"
-import { getRecentBlogPosts } from "@/lib/blog"
 
 export function ToolPageLayout({
     header,
@@ -50,10 +49,6 @@ export function ToolPageLayout({
         !hasBreadcrumbSchema && breadcrumbs && breadcrumbs.length > 0
             ? createBreadcrumbSchema(breadcrumbs, breadcrumbs[breadcrumbs.length - 1]?.href || "/")
             : null
-
-    // Latest blog posts surfaced on every tool page — internal links that help Google
-    // discover and recrawl the blog (the posts are otherwise only linked from /blog).
-    const blogPosts = getRecentBlogPosts(4)
 
     return (
         <div className={`min-h-screen bg-background overflow-x-hidden ${className}`}>
@@ -385,42 +380,6 @@ export function ToolPageLayout({
                                     ))}
                                 </dl>
                             </section>
-
-                            {/* From Our Blog — internal links to latest guides */}
-                            {blogPosts.length > 0 && (
-                                <section
-                                    className="bg-card border border-border rounded-lg p-6"
-                                    data-ai-section="from-blog"
-                                >
-                                    <div className="flex items-center gap-3 mb-4">
-                                        <div className={sectionIconClass}>
-                                            <BookOpen className={sectionIconColor} />
-                                        </div>
-                                        <h2 className="text-2xl font-bold text-foreground">
-                                            From Our Blog
-                                        </h2>
-                                    </div>
-                                    <div className="grid sm:grid-cols-2 gap-3">
-                                        {blogPosts.map((post) => (
-                                            <Link
-                                                key={post.slug}
-                                                href={post.canonicalPath}
-                                                className="block p-4 rounded-lg bg-muted/50 hover:bg-muted transition-colors border border-border hover:border-primary"
-                                            >
-                                                <span className="block text-sm font-bold text-foreground mb-1">{post.title}</span>
-                                                <span className="block text-xs text-muted-foreground line-clamp-2">{post.excerpt}</span>
-                                            </Link>
-                                        ))}
-                                    </div>
-                                    <Link
-                                        href="/blog"
-                                        className="mt-4 inline-flex items-center gap-1 text-sm font-medium text-primary"
-                                    >
-                                        Read all guides
-                                        <ChevronRight className="h-4 w-4" />
-                                    </Link>
-                                </section>
-                            )}
 
                             {/* Related Tools — mobile */}
                             {toolContent.relatedTools && toolContent.relatedTools.length > 0 && (
