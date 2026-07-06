@@ -9,7 +9,6 @@ export interface SearchItem {
 export const searchItems: SearchItem[] = [
   // Main Pages
   { name: "Products", description: "Explore all our product categories and tools", path: "/products", category: "Pages" },
-  { name: "API Docs", description: "Comprehensive API documentation for developers", path: "/api-docs", category: "Pages" },
   { name: "About Us", description: "Learn about FastTools and our mission", path: "/about", category: "Pages" },
   { name: "My Info", description: "View your digital footprint, IP address, and location information", path: "/my-info", category: "Pages" },
 

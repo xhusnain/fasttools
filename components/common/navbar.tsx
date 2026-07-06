@@ -69,14 +69,6 @@ export function Navbar() {
                     </NavigationMenuLink>
                 </NavigationMenuItem>
 
-                <NavigationMenuItem>
-                    <NavigationMenuLink asChild>
-                        <Link href="/api-docs" className={navigationMenuTriggerStyle()}>
-                            API Docs
-                        </Link>
-                    </NavigationMenuLink>
-                </NavigationMenuItem>
-
             </NavigationMenuList>
         </NavigationMenu>
     )

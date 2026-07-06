@@ -66,7 +66,6 @@ export function Footer() {
           <div>
             <div className="text-sm font-semibold text-foreground mb-4">Resources</div>
             <ul className="space-y-2">
-              <li><Link href="/api-docs" title="FastTools API Documentation" className="text-sm text-muted-foreground hover:text-primary transition-colors">API Docs</Link></li>
               <li><Link href="/products" title="Browse all FastTools products" className="text-sm text-muted-foreground hover:text-primary transition-colors">Products</Link></li>
               <li><Link href="/faq" title="Frequently Asked Questions" className="text-sm text-muted-foreground hover:text-primary transition-colors">FAQ</Link></li>
             </ul>

@@ -14,7 +14,6 @@ export const sitemapPages = [
   // ─── Main Pages ──────────────────────────────────────────────────────
   { url: baseUrl, lastModified: new Date("2026-03-23"), changeFrequency: "weekly" as const, priority: 1.0 },
   { url: u("/products"), lastModified: new Date("2026-03-23"), changeFrequency: "monthly" as const, priority: 0.8 },
-  { url: u("/api-docs"), lastModified: new Date("2026-03-23"), changeFrequency: "monthly" as const, priority: 0.7 },
   { url: u("/about"), lastModified: new Date("2026-03-23"), changeFrequency: "monthly" as const, priority: 0.5 },
   { url: u("/contact"), lastModified: new Date("2026-03-23"), changeFrequency: "monthly" as const, priority: 0.5 },
   { url: u("/faq"), lastModified: new Date("2026-03-23"), changeFrequency: "monthly" as const, priority: 0.6 },
@@ -170,7 +169,6 @@ export const indexablePages = sitemapPages.filter((p) => !noindexUrlSet.has(p.ur
 
 const mainPagePaths = new Set([
   "/products",
-  "/api-docs",
   "/about",
   "/contact",
   "/faq",

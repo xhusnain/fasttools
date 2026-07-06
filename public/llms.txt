@@ -144,7 +144,6 @@ Context: FastTools provides free, fast, and accurate online tools that work on a
 **Main Pages:**
 - https://fasttools.store/ - Homepage
 - https://fasttools.store/products - All tools
-- https://fasttools.store/api-docs - API documentation
 - https://fasttools.store/faq - Frequently asked questions
 - https://fasttools.store/about - About FastTools
 - https://fasttools.store/contact - Contact information

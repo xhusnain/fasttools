@@ -16,8 +16,6 @@ import {
 import type { ToolPageLayoutProps } from "@/types/tool-page-layout.types"
 import { SquareAd } from "@/components/ads/square-ad"
 import { ClickFortifyAd } from "@/components/custom-ads/cf-ads/ClickFortifyAd"
-import { WebMCPToolRegistration } from "@/components/common/webmcp-tool-registration"
-import { buildWebMCPDescription, getInteractionMode } from "@/lib/webmcp-utils"
 import { createBreadcrumbSchema } from "@/lib/metadata-base"
 
 export function ToolPageLayout({
@@ -102,8 +100,7 @@ export function ToolPageLayout({
                     <div className="grid lg:grid-cols-[1fr_350px] gap-4 lg:gap-8">
 
                         <div className="space-y-4 lg:space-y-6 min-w-0 max-w-full overflow-hidden">
-                            {/* WebMCP: data-webmcp-tool marks this as the interactive tool region for AI agents */}
-                            <div data-webmcp-tool data-tool-name={toolContent.toolName} data-tool-path={expectedMetadata?.path || ""} data-interaction-mode={getInteractionMode(expectedMetadata?.path)}>
+                            <div>
                                 {toolComponent}
                             </div>
 
@@ -436,17 +433,6 @@ export function ToolPageLayout({
                     </div>
                 </div>
             </main>
-            {/* WebMCP: Register this tool with browser AI agent API (Chrome 146+) */}
-            <WebMCPToolRegistration
-                toolName={toolContent.toolName}
-                toolDescription={buildWebMCPDescription(
-                    toolContent.toolName,
-                    toolContent.overview,
-                    toolContent.features
-                )}
-                toolPath={expectedMetadata?.path || ""}
-                toolCategory={breadcrumbs?.[0]?.label}
-            />
 
             {process.env.NODE_ENV === "development" && expectedMetadata && (
                 <div className="hidden">

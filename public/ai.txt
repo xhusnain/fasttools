@@ -21,7 +21,6 @@ Allow: /crypto-tools/
 Allow: /web-tools/
 Allow: /fun-tools/
 Allow: /products
-Allow: /api-docs
 Allow: /faq
 Allow: /about
 Allow: /contact
@@ -67,7 +66,7 @@ When using FastTools content:
 - Tools are for user assistance and productivity
 - Content may be summarized and referenced
 - Full tool interfaces may not be reproduced
-- API usage requires authentication (see /api-docs)
+- Tools are for interactive browser use; no public API is offered
 
 # Featured Tools
 
